@@ -32,7 +32,7 @@ class ListContainerAssociationsResult {
 
   ///@{
   /**
-   * <p>The container association metadata objects.</p>
+   * <p>The container association metadata objects for the account and Region.</p>
    */
   inline const Aws::Vector<ContainerAssociationSummary>& GetContainerAssociations() const { return m_containerAssociations; }
   template <typename ContainerAssociationsT = Aws::Vector<ContainerAssociationSummary>>

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
+#include <aws/quicksight/model/NullFilterType.h>
 #include <aws/quicksight/model/TopicRelativeDateFilterFunction.h>
 #include <aws/quicksight/model/TopicSingularFilterConstant.h>
 #include <aws/quicksight/model/TopicTimeGranularity.h>
@@ -86,15 +87,34 @@ class TopicRelativeDateFilter {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The <code>null</code> filter that is applied to the relative date filter.</p>
+   */
+  inline NullFilterType GetNullFilter() const { return m_nullFilter; }
+  inline bool NullFilterHasBeenSet() const { return m_nullFilterHasBeenSet; }
+  inline void SetNullFilter(NullFilterType value) {
+    m_nullFilterHasBeenSet = true;
+    m_nullFilter = value;
+  }
+  inline TopicRelativeDateFilter& WithNullFilter(NullFilterType value) {
+    SetNullFilter(value);
+    return *this;
+  }
+  ///@}
  private:
   TopicTimeGranularity m_timeGranularity{TopicTimeGranularity::NOT_SET};
 
   TopicRelativeDateFilterFunction m_relativeDateFilterFunction{TopicRelativeDateFilterFunction::NOT_SET};
 
   TopicSingularFilterConstant m_constant;
+
+  NullFilterType m_nullFilter{NullFilterType::NOT_SET};
   bool m_timeGranularityHasBeenSet = false;
   bool m_relativeDateFilterFunctionHasBeenSet = false;
   bool m_constantHasBeenSet = false;
+  bool m_nullFilterHasBeenSet = false;
 };
 
 }  // namespace Model

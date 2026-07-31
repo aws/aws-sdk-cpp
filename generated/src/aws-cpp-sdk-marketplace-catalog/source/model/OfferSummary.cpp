@@ -60,6 +60,19 @@ OfferSummary& OfferSummary::operator=(JsonView jsonValue) {
     m_offerSetId = jsonValue.GetString("OfferSetId");
     m_offerSetIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("TargetAgreementId")) {
+    m_targetAgreementId = jsonValue.GetString("TargetAgreementId");
+    m_targetAgreementIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("TargetAgreementIntent")) {
+    m_targetAgreementIntent =
+        OfferTargetAgreementIntentStringMapper::GetOfferTargetAgreementIntentStringForName(jsonValue.GetString("TargetAgreementIntent"));
+    m_targetAgreementIntentHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreatedBySource")) {
+    m_createdBySource = OfferCreatedBySourceStringMapper::GetOfferCreatedBySourceStringForName(jsonValue.GetString("CreatedBySource"));
+    m_createdBySourceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -108,6 +121,19 @@ JsonValue OfferSummary::Jsonize() const {
 
   if (m_offerSetIdHasBeenSet) {
     payload.WithString("OfferSetId", m_offerSetId);
+  }
+
+  if (m_targetAgreementIdHasBeenSet) {
+    payload.WithString("TargetAgreementId", m_targetAgreementId);
+  }
+
+  if (m_targetAgreementIntentHasBeenSet) {
+    payload.WithString("TargetAgreementIntent",
+                       OfferTargetAgreementIntentStringMapper::GetNameForOfferTargetAgreementIntentString(m_targetAgreementIntent));
+  }
+
+  if (m_createdBySourceHasBeenSet) {
+    payload.WithString("CreatedBySource", OfferCreatedBySourceStringMapper::GetNameForOfferCreatedBySourceString(m_createdBySource));
   }
 
   return payload;

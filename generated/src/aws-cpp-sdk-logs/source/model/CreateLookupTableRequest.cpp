@@ -27,6 +27,10 @@ Aws::String CreateLookupTableRequest::SerializePayload() const {
     payload.WithString("tableBody", m_tableBody);
   }
 
+  if (m_queryIdHasBeenSet) {
+    payload.WithString("queryId", m_queryId);
+  }
+
   if (m_kmsKeyIdHasBeenSet) {
     payload.WithString("kmsKeyId", m_kmsKeyId);
   }

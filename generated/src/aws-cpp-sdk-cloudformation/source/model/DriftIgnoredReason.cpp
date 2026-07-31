@@ -17,6 +17,7 @@ namespace DriftIgnoredReasonMapper {
 
 static const int MANAGED_BY_AWS_HASH = HashingUtils::HashString("MANAGED_BY_AWS");
 static const int WRITE_ONLY_PROPERTY_HASH = HashingUtils::HashString("WRITE_ONLY_PROPERTY");
+static const int SENSITIVE_PROPERTY_HASH = HashingUtils::HashString("SENSITIVE_PROPERTY");
 
 DriftIgnoredReason GetDriftIgnoredReasonForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ DriftIgnoredReason GetDriftIgnoredReasonForName(const Aws::String& name) {
     return DriftIgnoredReason::MANAGED_BY_AWS;
   } else if (hashCode == WRITE_ONLY_PROPERTY_HASH) {
     return DriftIgnoredReason::WRITE_ONLY_PROPERTY;
+  } else if (hashCode == SENSITIVE_PROPERTY_HASH) {
+    return DriftIgnoredReason::SENSITIVE_PROPERTY;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForDriftIgnoredReason(DriftIgnoredReason enumValue) {
       return "MANAGED_BY_AWS";
     case DriftIgnoredReason::WRITE_ONLY_PROPERTY:
       return "WRITE_ONLY_PROPERTY";
+    case DriftIgnoredReason::SENSITIVE_PROPERTY:
+      return "SENSITIVE_PROPERTY";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

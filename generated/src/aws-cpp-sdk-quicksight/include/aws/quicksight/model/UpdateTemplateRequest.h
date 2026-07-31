@@ -81,7 +81,9 @@ class UpdateTemplateRequest : public QuickSightRequest {
    * <p>Use the <code>DataSetReferences</code> entity within
    * <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the
    * replacement datasets for the placeholders listed in the original. The schema in
-   * each dataset must match its placeholder. </p>
+   * each dataset must match its placeholder. Use the <code>TopicReferences</code>
+   * entity to list the replacement topics for the topic placeholders listed in the
+   * original. The schema in each topic must match its placeholder.</p>
    */
   inline const TemplateSourceEntity& GetSourceEntity() const { return m_sourceEntity; }
   inline bool SourceEntityHasBeenSet() const { return m_sourceEntityHasBeenSet; }

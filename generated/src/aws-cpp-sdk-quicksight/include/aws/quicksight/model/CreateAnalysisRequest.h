@@ -143,8 +143,9 @@ class CreateAnalysisRequest : public QuickSightRequest {
   /**
    * <p>A source entity to use for the analysis that you're creating. This metadata
    * structure contains details that describe a source template and one or more
-   * datasets.</p> <p>Either a <code>SourceEntity</code> or a <code>Definition</code>
-   * must be provided in order for the request to be valid.</p>
+   * datasets or topics.</p> <p>Either a <code>SourceEntity</code> or a
+   * <code>Definition</code> must be provided in order for the request to be
+   * valid.</p>
    */
   inline const AnalysisSourceEntity& GetSourceEntity() const { return m_sourceEntity; }
   inline bool SourceEntityHasBeenSet() const { return m_sourceEntityHasBeenSet; }

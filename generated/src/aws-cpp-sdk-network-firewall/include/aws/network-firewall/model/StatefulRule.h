@@ -27,7 +27,7 @@ namespace Model {
  * this option to specify a simple Suricata rule with protocol, source and
  * destination, ports, direction, and rule options. For information about the
  * Suricata <code>Rules</code> format, see <a
- * href="https://suricata.readthedocs.io/en/suricata-7.0.3/rules/intro.html">Rules
+ * href="https://suricata.readthedocs.io/en/suricata-7.0.8/rules/intro.html">Rules
  * Format</a>. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/StatefulRule">AWS
  * API Reference</a></p>

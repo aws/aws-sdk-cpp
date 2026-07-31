@@ -148,7 +148,7 @@ class DashboardVersion {
 
   ///@{
   /**
-   * <p>The Amazon Resource Numbers (ARNs) for the datasets that are associated with
+   * <p>The Amazon Resource Names (ARNs) for the datasets that are associated with
    * this version of the dashboard.</p>
    */
   inline const Aws::Vector<Aws::String>& GetDataSetArns() const { return m_dataSetArns; }
@@ -167,6 +167,31 @@ class DashboardVersion {
   DashboardVersion& AddDataSetArns(DataSetArnsT&& value) {
     m_dataSetArnsHasBeenSet = true;
     m_dataSetArns.emplace_back(std::forward<DataSetArnsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Names (ARNs) for the topics that are associated with this
+   * version of the dashboard.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetTopicArns() const { return m_topicArns; }
+  inline bool TopicArnsHasBeenSet() const { return m_topicArnsHasBeenSet; }
+  template <typename TopicArnsT = Aws::Vector<Aws::String>>
+  void SetTopicArns(TopicArnsT&& value) {
+    m_topicArnsHasBeenSet = true;
+    m_topicArns = std::forward<TopicArnsT>(value);
+  }
+  template <typename TopicArnsT = Aws::Vector<Aws::String>>
+  DashboardVersion& WithTopicArns(TopicArnsT&& value) {
+    SetTopicArns(std::forward<TopicArnsT>(value));
+    return *this;
+  }
+  template <typename TopicArnsT = Aws::String>
+  DashboardVersion& AddTopicArns(TopicArnsT&& value) {
+    m_topicArnsHasBeenSet = true;
+    m_topicArns.emplace_back(std::forward<TopicArnsT>(value));
     return *this;
   }
   ///@}
@@ -246,6 +271,8 @@ class DashboardVersion {
 
   Aws::Vector<Aws::String> m_dataSetArns;
 
+  Aws::Vector<Aws::String> m_topicArns;
+
   Aws::String m_description;
 
   Aws::String m_themeArn;
@@ -258,6 +285,7 @@ class DashboardVersion {
   bool m_arnHasBeenSet = false;
   bool m_sourceEntityArnHasBeenSet = false;
   bool m_dataSetArnsHasBeenSet = false;
+  bool m_topicArnsHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_themeArnHasBeenSet = false;
   bool m_sheetsHasBeenSet = false;

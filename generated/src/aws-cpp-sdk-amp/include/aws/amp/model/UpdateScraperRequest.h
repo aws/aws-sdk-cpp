@@ -7,10 +7,12 @@
 #include <aws/amp/PrometheusServiceRequest.h>
 #include <aws/amp/PrometheusService_EXPORTS.h>
 #include <aws/amp/model/Destination.h>
+#include <aws/amp/model/ExporterConfiguration.h>
 #include <aws/amp/model/RoleConfiguration.h>
 #include <aws/amp/model/ScrapeConfiguration.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -146,6 +148,32 @@ class UpdateScraperRequest : public PrometheusServiceRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The exporter configurations for the scraper. You can configure at most one
+   * Amazon OpenSearch Service domain. If you don't specify a value, the existing
+   * exporter configuration remains unchanged.</p>
+   */
+  inline const Aws::Vector<ExporterConfiguration>& GetExporters() const { return m_exporters; }
+  inline bool ExportersHasBeenSet() const { return m_exportersHasBeenSet; }
+  template <typename ExportersT = Aws::Vector<ExporterConfiguration>>
+  void SetExporters(ExportersT&& value) {
+    m_exportersHasBeenSet = true;
+    m_exporters = std::forward<ExportersT>(value);
+  }
+  template <typename ExportersT = Aws::Vector<ExporterConfiguration>>
+  UpdateScraperRequest& WithExporters(ExportersT&& value) {
+    SetExporters(std::forward<ExportersT>(value));
+    return *this;
+  }
+  template <typename ExportersT = ExporterConfiguration>
+  UpdateScraperRequest& AddExporters(ExportersT&& value) {
+    m_exportersHasBeenSet = true;
+    m_exporters.emplace_back(std::forward<ExportersT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_scraperId;
 
@@ -158,12 +186,15 @@ class UpdateScraperRequest : public PrometheusServiceRequest {
   RoleConfiguration m_roleConfiguration;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+
+  Aws::Vector<ExporterConfiguration> m_exporters;
   bool m_scraperIdHasBeenSet = false;
   bool m_aliasHasBeenSet = false;
   bool m_scrapeConfigurationHasBeenSet = false;
   bool m_destinationHasBeenSet = false;
   bool m_roleConfigurationHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
+  bool m_exportersHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -16,6 +16,7 @@
 #include <aws/quicksight/model/SheetDefinition.h>
 #include <aws/quicksight/model/StaticFile.h>
 #include <aws/quicksight/model/TooltipSheetDefinition.h>
+#include <aws/quicksight/model/TopicIdentifierDeclaration.h>
 
 #include <utility>
 
@@ -65,6 +66,32 @@ class DashboardVersionDefinition {
   DashboardVersionDefinition& AddDataSetIdentifierDeclarations(DataSetIdentifierDeclarationsT&& value) {
     m_dataSetIdentifierDeclarationsHasBeenSet = true;
     m_dataSetIdentifierDeclarations.emplace_back(std::forward<DataSetIdentifierDeclarationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An array of topic identifier declarations. With this mapping, you can use
+   * topic identifiers instead of topic Amazon Resource Names (ARNs) throughout the
+   * dashboard's sub-structures.</p>
+   */
+  inline const Aws::Vector<TopicIdentifierDeclaration>& GetTopicIdentifierDeclarations() const { return m_topicIdentifierDeclarations; }
+  inline bool TopicIdentifierDeclarationsHasBeenSet() const { return m_topicIdentifierDeclarationsHasBeenSet; }
+  template <typename TopicIdentifierDeclarationsT = Aws::Vector<TopicIdentifierDeclaration>>
+  void SetTopicIdentifierDeclarations(TopicIdentifierDeclarationsT&& value) {
+    m_topicIdentifierDeclarationsHasBeenSet = true;
+    m_topicIdentifierDeclarations = std::forward<TopicIdentifierDeclarationsT>(value);
+  }
+  template <typename TopicIdentifierDeclarationsT = Aws::Vector<TopicIdentifierDeclaration>>
+  DashboardVersionDefinition& WithTopicIdentifierDeclarations(TopicIdentifierDeclarationsT&& value) {
+    SetTopicIdentifierDeclarations(std::forward<TopicIdentifierDeclarationsT>(value));
+    return *this;
+  }
+  template <typename TopicIdentifierDeclarationsT = TopicIdentifierDeclaration>
+  DashboardVersionDefinition& AddTopicIdentifierDeclarations(TopicIdentifierDeclarationsT&& value) {
+    m_topicIdentifierDeclarationsHasBeenSet = true;
+    m_topicIdentifierDeclarations.emplace_back(std::forward<TopicIdentifierDeclarationsT>(value));
     return *this;
   }
   ///@}
@@ -281,6 +308,8 @@ class DashboardVersionDefinition {
  private:
   Aws::Vector<DataSetIdentifierDeclaration> m_dataSetIdentifierDeclarations;
 
+  Aws::Vector<TopicIdentifierDeclaration> m_topicIdentifierDeclarations;
+
   Aws::Vector<SheetDefinition> m_sheets;
 
   Aws::Vector<TooltipSheetDefinition> m_tooltipSheets;
@@ -299,6 +328,7 @@ class DashboardVersionDefinition {
 
   Aws::Vector<StaticFile> m_staticFiles;
   bool m_dataSetIdentifierDeclarationsHasBeenSet = false;
+  bool m_topicIdentifierDeclarationsHasBeenSet = false;
   bool m_sheetsHasBeenSet = false;
   bool m_tooltipSheetsHasBeenSet = false;
   bool m_calculatedFieldsHasBeenSet = false;

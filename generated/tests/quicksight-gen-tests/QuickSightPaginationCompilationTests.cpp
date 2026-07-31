@@ -8,6 +8,7 @@
 
 #include <aws/quicksight/QuickSightClientPagination.h>
 #include <aws/quicksight/QuickSightPaginationBase.h>
+#include <aws/quicksight/model/SearchTopicsV2PaginationTraits.h>
 #include <aws/quicksight/model/ListOAuthClientApplicationsPaginationTraits.h>
 #include <aws/quicksight/model/ListDashboardsPaginationTraits.h>
 #include <aws/quicksight/model/ListAnalysesPaginationTraits.h>
@@ -23,6 +24,7 @@
 #include <aws/quicksight/model/ListTemplateVersionsPaginationTraits.h>
 #include <aws/quicksight/model/ListAssetBundleImportJobsPaginationTraits.h>
 #include <aws/quicksight/model/ListIAMPolicyAssignmentsForUserPaginationTraits.h>
+#include <aws/quicksight/model/ListTopicsV2PaginationTraits.h>
 #include <aws/quicksight/model/ListFolderMembersPaginationTraits.h>
 #include <aws/quicksight/model/ListDataSourcesPaginationTraits.h>
 #include <aws/quicksight/model/ListIAMPolicyAssignmentsPaginationTraits.h>

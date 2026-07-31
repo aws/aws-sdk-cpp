@@ -73,9 +73,10 @@ class CreateContainerAssociationRequest : public NetworkFirewallRequest {
 
   ///@{
   /**
-   * <p>The type of container orchestration platform for the clusters in this
-   * association. Valid values are <code>ECS</code> and <code>EKS</code>. You can't
-   * change the type after creation.</p>
+   * <p>The type of containers to monitor. You can't change the container type after
+   * creation. Valid values:</p> <ul> <li> <p> <code>ECS</code> - Amazon Elastic
+   * Container Service</p> </li> <li> <p> <code>EKS</code> - Amazon Elastic
+   * Kubernetes Service</p> </li> </ul>
    */
   inline ContainerMonitoringType GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -91,8 +92,9 @@ class CreateContainerAssociationRequest : public NetworkFirewallRequest {
 
   ///@{
   /**
-   * <p>The list of container monitoring configurations that define which clusters
-   * and container attributes to monitor.</p>
+   * <p>The monitoring configurations for the container association. Each
+   * configuration specifies an Amazon ECS or Amazon EKS cluster to monitor and
+   * optional attribute filters to narrow which containers are tracked.</p>
    */
   inline const Aws::Vector<ContainerMonitoringConfiguration>& GetContainerMonitoringConfigurations() const {
     return m_containerMonitoringConfigurations;

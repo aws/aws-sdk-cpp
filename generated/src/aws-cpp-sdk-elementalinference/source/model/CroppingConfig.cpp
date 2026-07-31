@@ -18,12 +18,26 @@ namespace Model {
 CroppingConfig::CroppingConfig(JsonView jsonValue) { *this = jsonValue; }
 
 CroppingConfig& CroppingConfig::operator=(JsonView jsonValue) {
-  AWS_UNREFERENCED_PARAM(jsonValue);
+  if (jsonValue.ValueExists("templateGroups")) {
+    Aws::Utils::Array<JsonView> templateGroupsJsonList = jsonValue.GetArray("templateGroups");
+    for (unsigned templateGroupsIndex = 0; templateGroupsIndex < templateGroupsJsonList.GetLength(); ++templateGroupsIndex) {
+      m_templateGroups.push_back(templateGroupsJsonList[templateGroupsIndex].AsObject());
+    }
+    m_templateGroupsHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue CroppingConfig::Jsonize() const {
   JsonValue payload;
+
+  if (m_templateGroupsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> templateGroupsJsonList(m_templateGroups.size());
+    for (unsigned templateGroupsIndex = 0; templateGroupsIndex < templateGroupsJsonList.GetLength(); ++templateGroupsIndex) {
+      templateGroupsJsonList[templateGroupsIndex].AsObject(m_templateGroups[templateGroupsIndex].Jsonize());
+    }
+    payload.WithArray("templateGroups", std::move(templateGroupsJsonList));
+  }
 
   return payload;
 }

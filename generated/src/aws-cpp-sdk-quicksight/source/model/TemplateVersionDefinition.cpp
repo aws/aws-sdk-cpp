@@ -26,6 +26,14 @@ TemplateVersionDefinition& TemplateVersionDefinition::operator=(JsonView jsonVal
     }
     m_dataSetConfigurationsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("TopicConfigurations")) {
+    Aws::Utils::Array<JsonView> topicConfigurationsJsonList = jsonValue.GetArray("TopicConfigurations");
+    for (unsigned topicConfigurationsIndex = 0; topicConfigurationsIndex < topicConfigurationsJsonList.GetLength();
+         ++topicConfigurationsIndex) {
+      m_topicConfigurations.push_back(topicConfigurationsJsonList[topicConfigurationsIndex].AsObject());
+    }
+    m_topicConfigurationsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Sheets")) {
     Aws::Utils::Array<JsonView> sheetsJsonList = jsonValue.GetArray("Sheets");
     for (unsigned sheetsIndex = 0; sheetsIndex < sheetsJsonList.GetLength(); ++sheetsIndex) {
@@ -102,6 +110,15 @@ JsonValue TemplateVersionDefinition::Jsonize() const {
       dataSetConfigurationsJsonList[dataSetConfigurationsIndex].AsObject(m_dataSetConfigurations[dataSetConfigurationsIndex].Jsonize());
     }
     payload.WithArray("DataSetConfigurations", std::move(dataSetConfigurationsJsonList));
+  }
+
+  if (m_topicConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> topicConfigurationsJsonList(m_topicConfigurations.size());
+    for (unsigned topicConfigurationsIndex = 0; topicConfigurationsIndex < topicConfigurationsJsonList.GetLength();
+         ++topicConfigurationsIndex) {
+      topicConfigurationsJsonList[topicConfigurationsIndex].AsObject(m_topicConfigurations[topicConfigurationsIndex].Jsonize());
+    }
+    payload.WithArray("TopicConfigurations", std::move(topicConfigurationsJsonList));
   }
 
   if (m_sheetsHasBeenSet) {

@@ -18,6 +18,9 @@ namespace MediaEncodingMapper {
 static const int pcm_HASH = HashingUtils::HashString("pcm");
 static const int ogg_opus_HASH = HashingUtils::HashString("ogg-opus");
 static const int flac_HASH = HashingUtils::HashString("flac");
+static const int g711_alaw_HASH = HashingUtils::HashString("g711-alaw");
+static const int g711_ulaw_HASH = HashingUtils::HashString("g711-ulaw");
+static const int g729_HASH = HashingUtils::HashString("g729");
 
 MediaEncoding GetMediaEncodingForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +30,12 @@ MediaEncoding GetMediaEncodingForName(const Aws::String& name) {
     return MediaEncoding::ogg_opus;
   } else if (hashCode == flac_HASH) {
     return MediaEncoding::flac;
+  } else if (hashCode == g711_alaw_HASH) {
+    return MediaEncoding::g711_alaw;
+  } else if (hashCode == g711_ulaw_HASH) {
+    return MediaEncoding::g711_ulaw;
+  } else if (hashCode == g729_HASH) {
+    return MediaEncoding::g729;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +56,12 @@ Aws::String GetNameForMediaEncoding(MediaEncoding enumValue) {
       return "ogg-opus";
     case MediaEncoding::flac:
       return "flac";
+    case MediaEncoding::g711_alaw:
+      return "g711-alaw";
+    case MediaEncoding::g711_ulaw:
+      return "g711-ulaw";
+    case MediaEncoding::g729:
+      return "g729";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

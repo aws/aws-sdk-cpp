@@ -22,6 +22,10 @@ CalculatedField& CalculatedField::operator=(JsonView jsonValue) {
     m_dataSetIdentifier = jsonValue.GetString("DataSetIdentifier");
     m_dataSetIdentifierHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("TopicIdentifier")) {
+    m_topicIdentifier = jsonValue.GetString("TopicIdentifier");
+    m_topicIdentifierHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
@@ -38,6 +42,10 @@ JsonValue CalculatedField::Jsonize() const {
 
   if (m_dataSetIdentifierHasBeenSet) {
     payload.WithString("DataSetIdentifier", m_dataSetIdentifier);
+  }
+
+  if (m_topicIdentifierHasBeenSet) {
+    payload.WithString("TopicIdentifier", m_topicIdentifier);
   }
 
   if (m_nameHasBeenSet) {

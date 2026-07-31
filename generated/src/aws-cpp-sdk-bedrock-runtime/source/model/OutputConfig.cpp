@@ -22,6 +22,10 @@ OutputConfig& OutputConfig::operator=(JsonView jsonValue) {
     m_textFormat = jsonValue.GetObject("textFormat");
     m_textFormatHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("effort")) {
+    m_effort = jsonValue.GetString("effort");
+    m_effortHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue OutputConfig::Jsonize() const {
 
   if (m_textFormatHasBeenSet) {
     payload.WithObject("textFormat", m_textFormat.Jsonize());
+  }
+
+  if (m_effortHasBeenSet) {
+    payload.WithString("effort", m_effort);
   }
 
   return payload;

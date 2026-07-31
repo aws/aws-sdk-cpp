@@ -43,6 +43,10 @@ AssetOptions& AssetOptions::operator=(JsonView jsonValue) {
     m_customActionDefaults = jsonValue.GetObject("CustomActionDefaults");
     m_customActionDefaultsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("VisualMessages")) {
+    m_visualMessages = jsonValue.GetObject("VisualMessages");
+    m_visualMessagesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -73,6 +77,10 @@ JsonValue AssetOptions::Jsonize() const {
 
   if (m_customActionDefaultsHasBeenSet) {
     payload.WithObject("CustomActionDefaults", m_customActionDefaults.Jsonize());
+  }
+
+  if (m_visualMessagesHasBeenSet) {
+    payload.WithObject("VisualMessages", m_visualMessages.Jsonize());
   }
 
   return payload;

@@ -13,6 +13,8 @@
 #include <aws/bedrock-runtime/model/ImageBlock.h>
 #include <aws/bedrock-runtime/model/ReasoningContentBlock.h>
 #include <aws/bedrock-runtime/model/SearchResultBlock.h>
+#include <aws/bedrock-runtime/model/ToolAdditionBlock.h>
+#include <aws/bedrock-runtime/model/ToolRemovalBlock.h>
 #include <aws/bedrock-runtime/model/ToolResultBlock.h>
 #include <aws/bedrock-runtime/model/ToolUseBlock.h>
 #include <aws/bedrock-runtime/model/VideoBlock.h>
@@ -271,6 +273,38 @@ class ContentBlock {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const ToolAdditionBlock& GetToolAddition() const { return m_toolAddition; }
+  inline bool ToolAdditionHasBeenSet() const { return m_toolAdditionHasBeenSet; }
+  template <typename ToolAdditionT = ToolAdditionBlock>
+  void SetToolAddition(ToolAdditionT&& value) {
+    m_toolAdditionHasBeenSet = true;
+    m_toolAddition = std::forward<ToolAdditionT>(value);
+  }
+  template <typename ToolAdditionT = ToolAdditionBlock>
+  ContentBlock& WithToolAddition(ToolAdditionT&& value) {
+    SetToolAddition(std::forward<ToolAdditionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const ToolRemovalBlock& GetToolRemoval() const { return m_toolRemoval; }
+  inline bool ToolRemovalHasBeenSet() const { return m_toolRemovalHasBeenSet; }
+  template <typename ToolRemovalT = ToolRemovalBlock>
+  void SetToolRemoval(ToolRemovalT&& value) {
+    m_toolRemovalHasBeenSet = true;
+    m_toolRemoval = std::forward<ToolRemovalT>(value);
+  }
+  template <typename ToolRemovalT = ToolRemovalBlock>
+  ContentBlock& WithToolRemoval(ToolRemovalT&& value) {
+    SetToolRemoval(std::forward<ToolRemovalT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_text;
 
@@ -295,6 +329,10 @@ class ContentBlock {
   CitationsContentBlock m_citationsContent;
 
   SearchResultBlock m_searchResult;
+
+  ToolAdditionBlock m_toolAddition;
+
+  ToolRemovalBlock m_toolRemoval;
   bool m_textHasBeenSet = false;
   bool m_imageHasBeenSet = false;
   bool m_documentHasBeenSet = false;
@@ -307,6 +345,8 @@ class ContentBlock {
   bool m_reasoningContentHasBeenSet = false;
   bool m_citationsContentHasBeenSet = false;
   bool m_searchResultHasBeenSet = false;
+  bool m_toolAdditionHasBeenSet = false;
+  bool m_toolRemovalHasBeenSet = false;
 };
 
 }  // namespace Model

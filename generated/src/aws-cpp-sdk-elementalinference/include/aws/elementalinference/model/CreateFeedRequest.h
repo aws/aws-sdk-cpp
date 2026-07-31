@@ -51,6 +51,27 @@ class CreateFeedRequest : public ElementalInferenceRequest {
 
   ///@{
   /**
+   * <p>The ARN of an IAM role that Elemental Inference assumes to access resources
+   * in your account on your behalf. For example, the smart crop feature uses this
+   * role to read graphics-compositing templates from your Amazon S3 bucket. You
+   * specify one access role for each feed. </p>
+   */
+  inline const Aws::String& GetAccessRoleArn() const { return m_accessRoleArn; }
+  inline bool AccessRoleArnHasBeenSet() const { return m_accessRoleArnHasBeenSet; }
+  template <typename AccessRoleArnT = Aws::String>
+  void SetAccessRoleArn(AccessRoleArnT&& value) {
+    m_accessRoleArnHasBeenSet = true;
+    m_accessRoleArn = std::forward<AccessRoleArnT>(value);
+  }
+  template <typename AccessRoleArnT = Aws::String>
+  CreateFeedRequest& WithAccessRoleArn(AccessRoleArnT&& value) {
+    SetAccessRoleArn(std::forward<AccessRoleArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>An array of outputs for this feed. Each output represents a specific
    * Elemental Inference feature. For example, there is one output type for the smart
    * crop feature. You must specify at least one output, but you can later add
@@ -103,10 +124,13 @@ class CreateFeedRequest : public ElementalInferenceRequest {
  private:
   Aws::String m_name;
 
+  Aws::String m_accessRoleArn;
+
   Aws::Vector<CreateOutput> m_outputs;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_nameHasBeenSet = false;
+  bool m_accessRoleArnHasBeenSet = false;
   bool m_outputsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };

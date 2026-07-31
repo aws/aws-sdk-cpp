@@ -178,6 +178,188 @@ Capabilities& Capabilities::operator=(JsonView jsonValue) {
     m_knowledgeBase = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("KnowledgeBase"));
     m_knowledgeBaseHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CreateAndUpdateKnowledgeBases")) {
+    m_createAndUpdateKnowledgeBases =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateKnowledgeBases"));
+    m_createAndUpdateKnowledgeBasesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareKnowledgeBases")) {
+    m_shareKnowledgeBases = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareKnowledgeBases"));
+    m_shareKnowledgeBasesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SharePointKnowledgeBase")) {
+    m_sharePointKnowledgeBase = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("SharePointKnowledgeBase"));
+    m_sharePointKnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateSharePointKnowledgeBase")) {
+    m_createAndUpdateSharePointKnowledgeBase =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateSharePointKnowledgeBase"));
+    m_createAndUpdateSharePointKnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareSharePointKnowledgeBase")) {
+    m_shareSharePointKnowledgeBase = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareSharePointKnowledgeBase"));
+    m_shareSharePointKnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseSharePointKnowledgeBase")) {
+    m_useSharePointKnowledgeBase = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseSharePointKnowledgeBase"));
+    m_useSharePointKnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("GoogleDriveKnowledgeBase")) {
+    m_googleDriveKnowledgeBase = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("GoogleDriveKnowledgeBase"));
+    m_googleDriveKnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateGoogleDriveKnowledgeBase")) {
+    m_createAndUpdateGoogleDriveKnowledgeBase =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateGoogleDriveKnowledgeBase"));
+    m_createAndUpdateGoogleDriveKnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareGoogleDriveKnowledgeBase")) {
+    m_shareGoogleDriveKnowledgeBase =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareGoogleDriveKnowledgeBase"));
+    m_shareGoogleDriveKnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseGoogleDriveKnowledgeBase")) {
+    m_useGoogleDriveKnowledgeBase = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseGoogleDriveKnowledgeBase"));
+    m_useGoogleDriveKnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("WebCrawlerKnowledgeBase")) {
+    m_webCrawlerKnowledgeBase = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("WebCrawlerKnowledgeBase"));
+    m_webCrawlerKnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateWebCrawlerKnowledgeBase")) {
+    m_createAndUpdateWebCrawlerKnowledgeBase =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateWebCrawlerKnowledgeBase"));
+    m_createAndUpdateWebCrawlerKnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareWebCrawlerKnowledgeBase")) {
+    m_shareWebCrawlerKnowledgeBase = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareWebCrawlerKnowledgeBase"));
+    m_shareWebCrawlerKnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseWebCrawlerKnowledgeBase")) {
+    m_useWebCrawlerKnowledgeBase = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseWebCrawlerKnowledgeBase"));
+    m_useWebCrawlerKnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("S3KnowledgeBase")) {
+    m_s3KnowledgeBase = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("S3KnowledgeBase"));
+    m_s3KnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateS3KnowledgeBase")) {
+    m_createAndUpdateS3KnowledgeBase =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateS3KnowledgeBase"));
+    m_createAndUpdateS3KnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareS3KnowledgeBase")) {
+    m_shareS3KnowledgeBase = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareS3KnowledgeBase"));
+    m_shareS3KnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseS3KnowledgeBase")) {
+    m_useS3KnowledgeBase = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseS3KnowledgeBase"));
+    m_useS3KnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ConfluenceKnowledgeBase")) {
+    m_confluenceKnowledgeBase = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ConfluenceKnowledgeBase"));
+    m_confluenceKnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateConfluenceKnowledgeBase")) {
+    m_createAndUpdateConfluenceKnowledgeBase =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateConfluenceKnowledgeBase"));
+    m_createAndUpdateConfluenceKnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareConfluenceKnowledgeBase")) {
+    m_shareConfluenceKnowledgeBase = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareConfluenceKnowledgeBase"));
+    m_shareConfluenceKnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseConfluenceKnowledgeBase")) {
+    m_useConfluenceKnowledgeBase = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseConfluenceKnowledgeBase"));
+    m_useConfluenceKnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("OneDriveKnowledgeBase")) {
+    m_oneDriveKnowledgeBase = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("OneDriveKnowledgeBase"));
+    m_oneDriveKnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateOneDriveKnowledgeBase")) {
+    m_createAndUpdateOneDriveKnowledgeBase =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateOneDriveKnowledgeBase"));
+    m_createAndUpdateOneDriveKnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareOneDriveKnowledgeBase")) {
+    m_shareOneDriveKnowledgeBase = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareOneDriveKnowledgeBase"));
+    m_shareOneDriveKnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseOneDriveKnowledgeBase")) {
+    m_useOneDriveKnowledgeBase = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseOneDriveKnowledgeBase"));
+    m_useOneDriveKnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("QBusinessKnowledgeBase")) {
+    m_qBusinessKnowledgeBase = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("QBusinessKnowledgeBase"));
+    m_qBusinessKnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateQBusinessKnowledgeBase")) {
+    m_createAndUpdateQBusinessKnowledgeBase =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateQBusinessKnowledgeBase"));
+    m_createAndUpdateQBusinessKnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareQBusinessKnowledgeBase")) {
+    m_shareQBusinessKnowledgeBase = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareQBusinessKnowledgeBase"));
+    m_shareQBusinessKnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseQBusinessKnowledgeBase")) {
+    m_useQBusinessKnowledgeBase = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseQBusinessKnowledgeBase"));
+    m_useQBusinessKnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("BedrockManagedKnowledgeBase")) {
+    m_bedrockManagedKnowledgeBase = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("BedrockManagedKnowledgeBase"));
+    m_bedrockManagedKnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateBedrockManagedKnowledgeBase")) {
+    m_createAndUpdateBedrockManagedKnowledgeBase =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateBedrockManagedKnowledgeBase"));
+    m_createAndUpdateBedrockManagedKnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareBedrockManagedKnowledgeBase")) {
+    m_shareBedrockManagedKnowledgeBase =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareBedrockManagedKnowledgeBase"));
+    m_shareBedrockManagedKnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseBedrockManagedKnowledgeBase")) {
+    m_useBedrockManagedKnowledgeBase =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseBedrockManagedKnowledgeBase"));
+    m_useBedrockManagedKnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("BoxKnowledgeBase")) {
+    m_boxKnowledgeBase = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("BoxKnowledgeBase"));
+    m_boxKnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateBoxKnowledgeBase")) {
+    m_createAndUpdateBoxKnowledgeBase =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateBoxKnowledgeBase"));
+    m_createAndUpdateBoxKnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareBoxKnowledgeBase")) {
+    m_shareBoxKnowledgeBase = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareBoxKnowledgeBase"));
+    m_shareBoxKnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseBoxKnowledgeBase")) {
+    m_useBoxKnowledgeBase = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseBoxKnowledgeBase"));
+    m_useBoxKnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("IDCKnowledgeBase")) {
+    m_iDCKnowledgeBase = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("IDCKnowledgeBase"));
+    m_iDCKnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateIDCKnowledgeBase")) {
+    m_createAndUpdateIDCKnowledgeBase =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateIDCKnowledgeBase"));
+    m_createAndUpdateIDCKnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareIDCKnowledgeBase")) {
+    m_shareIDCKnowledgeBase = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareIDCKnowledgeBase"));
+    m_shareIDCKnowledgeBaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseIDCKnowledgeBase")) {
+    m_useIDCKnowledgeBase = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseIDCKnowledgeBase"));
+    m_useIDCKnowledgeBaseHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Action")) {
     m_action = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("Action"));
     m_actionHasBeenSet = true;
@@ -1172,6 +1354,186 @@ JsonValue Capabilities::Jsonize() const {
 
   if (m_knowledgeBaseHasBeenSet) {
     payload.WithString("KnowledgeBase", CapabilityStateMapper::GetNameForCapabilityState(m_knowledgeBase));
+  }
+
+  if (m_createAndUpdateKnowledgeBasesHasBeenSet) {
+    payload.WithString("CreateAndUpdateKnowledgeBases", CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateKnowledgeBases));
+  }
+
+  if (m_shareKnowledgeBasesHasBeenSet) {
+    payload.WithString("ShareKnowledgeBases", CapabilityStateMapper::GetNameForCapabilityState(m_shareKnowledgeBases));
+  }
+
+  if (m_sharePointKnowledgeBaseHasBeenSet) {
+    payload.WithString("SharePointKnowledgeBase", CapabilityStateMapper::GetNameForCapabilityState(m_sharePointKnowledgeBase));
+  }
+
+  if (m_createAndUpdateSharePointKnowledgeBaseHasBeenSet) {
+    payload.WithString("CreateAndUpdateSharePointKnowledgeBase",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateSharePointKnowledgeBase));
+  }
+
+  if (m_shareSharePointKnowledgeBaseHasBeenSet) {
+    payload.WithString("ShareSharePointKnowledgeBase", CapabilityStateMapper::GetNameForCapabilityState(m_shareSharePointKnowledgeBase));
+  }
+
+  if (m_useSharePointKnowledgeBaseHasBeenSet) {
+    payload.WithString("UseSharePointKnowledgeBase", CapabilityStateMapper::GetNameForCapabilityState(m_useSharePointKnowledgeBase));
+  }
+
+  if (m_googleDriveKnowledgeBaseHasBeenSet) {
+    payload.WithString("GoogleDriveKnowledgeBase", CapabilityStateMapper::GetNameForCapabilityState(m_googleDriveKnowledgeBase));
+  }
+
+  if (m_createAndUpdateGoogleDriveKnowledgeBaseHasBeenSet) {
+    payload.WithString("CreateAndUpdateGoogleDriveKnowledgeBase",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateGoogleDriveKnowledgeBase));
+  }
+
+  if (m_shareGoogleDriveKnowledgeBaseHasBeenSet) {
+    payload.WithString("ShareGoogleDriveKnowledgeBase", CapabilityStateMapper::GetNameForCapabilityState(m_shareGoogleDriveKnowledgeBase));
+  }
+
+  if (m_useGoogleDriveKnowledgeBaseHasBeenSet) {
+    payload.WithString("UseGoogleDriveKnowledgeBase", CapabilityStateMapper::GetNameForCapabilityState(m_useGoogleDriveKnowledgeBase));
+  }
+
+  if (m_webCrawlerKnowledgeBaseHasBeenSet) {
+    payload.WithString("WebCrawlerKnowledgeBase", CapabilityStateMapper::GetNameForCapabilityState(m_webCrawlerKnowledgeBase));
+  }
+
+  if (m_createAndUpdateWebCrawlerKnowledgeBaseHasBeenSet) {
+    payload.WithString("CreateAndUpdateWebCrawlerKnowledgeBase",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateWebCrawlerKnowledgeBase));
+  }
+
+  if (m_shareWebCrawlerKnowledgeBaseHasBeenSet) {
+    payload.WithString("ShareWebCrawlerKnowledgeBase", CapabilityStateMapper::GetNameForCapabilityState(m_shareWebCrawlerKnowledgeBase));
+  }
+
+  if (m_useWebCrawlerKnowledgeBaseHasBeenSet) {
+    payload.WithString("UseWebCrawlerKnowledgeBase", CapabilityStateMapper::GetNameForCapabilityState(m_useWebCrawlerKnowledgeBase));
+  }
+
+  if (m_s3KnowledgeBaseHasBeenSet) {
+    payload.WithString("S3KnowledgeBase", CapabilityStateMapper::GetNameForCapabilityState(m_s3KnowledgeBase));
+  }
+
+  if (m_createAndUpdateS3KnowledgeBaseHasBeenSet) {
+    payload.WithString("CreateAndUpdateS3KnowledgeBase",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateS3KnowledgeBase));
+  }
+
+  if (m_shareS3KnowledgeBaseHasBeenSet) {
+    payload.WithString("ShareS3KnowledgeBase", CapabilityStateMapper::GetNameForCapabilityState(m_shareS3KnowledgeBase));
+  }
+
+  if (m_useS3KnowledgeBaseHasBeenSet) {
+    payload.WithString("UseS3KnowledgeBase", CapabilityStateMapper::GetNameForCapabilityState(m_useS3KnowledgeBase));
+  }
+
+  if (m_confluenceKnowledgeBaseHasBeenSet) {
+    payload.WithString("ConfluenceKnowledgeBase", CapabilityStateMapper::GetNameForCapabilityState(m_confluenceKnowledgeBase));
+  }
+
+  if (m_createAndUpdateConfluenceKnowledgeBaseHasBeenSet) {
+    payload.WithString("CreateAndUpdateConfluenceKnowledgeBase",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateConfluenceKnowledgeBase));
+  }
+
+  if (m_shareConfluenceKnowledgeBaseHasBeenSet) {
+    payload.WithString("ShareConfluenceKnowledgeBase", CapabilityStateMapper::GetNameForCapabilityState(m_shareConfluenceKnowledgeBase));
+  }
+
+  if (m_useConfluenceKnowledgeBaseHasBeenSet) {
+    payload.WithString("UseConfluenceKnowledgeBase", CapabilityStateMapper::GetNameForCapabilityState(m_useConfluenceKnowledgeBase));
+  }
+
+  if (m_oneDriveKnowledgeBaseHasBeenSet) {
+    payload.WithString("OneDriveKnowledgeBase", CapabilityStateMapper::GetNameForCapabilityState(m_oneDriveKnowledgeBase));
+  }
+
+  if (m_createAndUpdateOneDriveKnowledgeBaseHasBeenSet) {
+    payload.WithString("CreateAndUpdateOneDriveKnowledgeBase",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateOneDriveKnowledgeBase));
+  }
+
+  if (m_shareOneDriveKnowledgeBaseHasBeenSet) {
+    payload.WithString("ShareOneDriveKnowledgeBase", CapabilityStateMapper::GetNameForCapabilityState(m_shareOneDriveKnowledgeBase));
+  }
+
+  if (m_useOneDriveKnowledgeBaseHasBeenSet) {
+    payload.WithString("UseOneDriveKnowledgeBase", CapabilityStateMapper::GetNameForCapabilityState(m_useOneDriveKnowledgeBase));
+  }
+
+  if (m_qBusinessKnowledgeBaseHasBeenSet) {
+    payload.WithString("QBusinessKnowledgeBase", CapabilityStateMapper::GetNameForCapabilityState(m_qBusinessKnowledgeBase));
+  }
+
+  if (m_createAndUpdateQBusinessKnowledgeBaseHasBeenSet) {
+    payload.WithString("CreateAndUpdateQBusinessKnowledgeBase",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateQBusinessKnowledgeBase));
+  }
+
+  if (m_shareQBusinessKnowledgeBaseHasBeenSet) {
+    payload.WithString("ShareQBusinessKnowledgeBase", CapabilityStateMapper::GetNameForCapabilityState(m_shareQBusinessKnowledgeBase));
+  }
+
+  if (m_useQBusinessKnowledgeBaseHasBeenSet) {
+    payload.WithString("UseQBusinessKnowledgeBase", CapabilityStateMapper::GetNameForCapabilityState(m_useQBusinessKnowledgeBase));
+  }
+
+  if (m_bedrockManagedKnowledgeBaseHasBeenSet) {
+    payload.WithString("BedrockManagedKnowledgeBase", CapabilityStateMapper::GetNameForCapabilityState(m_bedrockManagedKnowledgeBase));
+  }
+
+  if (m_createAndUpdateBedrockManagedKnowledgeBaseHasBeenSet) {
+    payload.WithString("CreateAndUpdateBedrockManagedKnowledgeBase",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateBedrockManagedKnowledgeBase));
+  }
+
+  if (m_shareBedrockManagedKnowledgeBaseHasBeenSet) {
+    payload.WithString("ShareBedrockManagedKnowledgeBase",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_shareBedrockManagedKnowledgeBase));
+  }
+
+  if (m_useBedrockManagedKnowledgeBaseHasBeenSet) {
+    payload.WithString("UseBedrockManagedKnowledgeBase",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_useBedrockManagedKnowledgeBase));
+  }
+
+  if (m_boxKnowledgeBaseHasBeenSet) {
+    payload.WithString("BoxKnowledgeBase", CapabilityStateMapper::GetNameForCapabilityState(m_boxKnowledgeBase));
+  }
+
+  if (m_createAndUpdateBoxKnowledgeBaseHasBeenSet) {
+    payload.WithString("CreateAndUpdateBoxKnowledgeBase",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateBoxKnowledgeBase));
+  }
+
+  if (m_shareBoxKnowledgeBaseHasBeenSet) {
+    payload.WithString("ShareBoxKnowledgeBase", CapabilityStateMapper::GetNameForCapabilityState(m_shareBoxKnowledgeBase));
+  }
+
+  if (m_useBoxKnowledgeBaseHasBeenSet) {
+    payload.WithString("UseBoxKnowledgeBase", CapabilityStateMapper::GetNameForCapabilityState(m_useBoxKnowledgeBase));
+  }
+
+  if (m_iDCKnowledgeBaseHasBeenSet) {
+    payload.WithString("IDCKnowledgeBase", CapabilityStateMapper::GetNameForCapabilityState(m_iDCKnowledgeBase));
+  }
+
+  if (m_createAndUpdateIDCKnowledgeBaseHasBeenSet) {
+    payload.WithString("CreateAndUpdateIDCKnowledgeBase",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateIDCKnowledgeBase));
+  }
+
+  if (m_shareIDCKnowledgeBaseHasBeenSet) {
+    payload.WithString("ShareIDCKnowledgeBase", CapabilityStateMapper::GetNameForCapabilityState(m_shareIDCKnowledgeBase));
+  }
+
+  if (m_useIDCKnowledgeBaseHasBeenSet) {
+    payload.WithString("UseIDCKnowledgeBase", CapabilityStateMapper::GetNameForCapabilityState(m_useIDCKnowledgeBase));
   }
 
   if (m_actionHasBeenSet) {

@@ -7,6 +7,7 @@
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/CategoryFilterFunction.h>
 #include <aws/quicksight/model/CategoryFilterType.h>
+#include <aws/quicksight/model/NullFilterType.h>
 #include <aws/quicksight/model/TopicCategoryFilterConstant.h>
 
 #include <utility>
@@ -100,6 +101,22 @@ class TopicCategoryFilter {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The <code>null</code> filter that is applied to the category filter.</p>
+   */
+  inline NullFilterType GetNullFilter() const { return m_nullFilter; }
+  inline bool NullFilterHasBeenSet() const { return m_nullFilterHasBeenSet; }
+  inline void SetNullFilter(NullFilterType value) {
+    m_nullFilterHasBeenSet = true;
+    m_nullFilter = value;
+  }
+  inline TopicCategoryFilter& WithNullFilter(NullFilterType value) {
+    SetNullFilter(value);
+    return *this;
+  }
+  ///@}
  private:
   CategoryFilterFunction m_categoryFilterFunction{CategoryFilterFunction::NOT_SET};
 
@@ -108,10 +125,13 @@ class TopicCategoryFilter {
   TopicCategoryFilterConstant m_constant;
 
   bool m_inverse{false};
+
+  NullFilterType m_nullFilter{NullFilterType::NOT_SET};
   bool m_categoryFilterFunctionHasBeenSet = false;
   bool m_categoryFilterTypeHasBeenSet = false;
   bool m_constantHasBeenSet = false;
   bool m_inverseHasBeenSet = false;
+  bool m_nullFilterHasBeenSet = false;
 };
 
 }  // namespace Model

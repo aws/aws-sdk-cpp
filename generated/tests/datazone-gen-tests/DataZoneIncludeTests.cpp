@@ -384,6 +384,9 @@
 #include <aws/datazone/model/GetUserProfileRequest.h>
 #include <aws/datazone/model/GetUserProfileResult.h>
 #include <aws/datazone/model/GitMetadata.h>
+#include <aws/datazone/model/GitPropertiesInput.h>
+#include <aws/datazone/model/GitPropertiesOutput.h>
+#include <aws/datazone/model/GitPropertiesPatch.h>
 #include <aws/datazone/model/GlossaryItem.h>
 #include <aws/datazone/model/GlossaryItemAdditionalAttributes.h>
 #include <aws/datazone/model/GlossaryStatus.h>

@@ -59,7 +59,7 @@ class EmptyVisual {
   ///@{
   /**
    * <p>The data set that is used in the empty visual. Every visual requires a
-   * dataset to render.</p>
+   * dataset or a topic to render.</p>
    */
   inline const Aws::String& GetDataSetIdentifier() const { return m_dataSetIdentifier; }
   inline bool DataSetIdentifierHasBeenSet() const { return m_dataSetIdentifierHasBeenSet; }
@@ -71,6 +71,25 @@ class EmptyVisual {
   template <typename DataSetIdentifierT = Aws::String>
   EmptyVisual& WithDataSetIdentifier(DataSetIdentifierT&& value) {
     SetDataSetIdentifier(std::forward<DataSetIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The topic that is used in the empty visual. Every visual requires a dataset
+   * or a topic to render.</p>
+   */
+  inline const Aws::String& GetTopicIdentifier() const { return m_topicIdentifier; }
+  inline bool TopicIdentifierHasBeenSet() const { return m_topicIdentifierHasBeenSet; }
+  template <typename TopicIdentifierT = Aws::String>
+  void SetTopicIdentifier(TopicIdentifierT&& value) {
+    m_topicIdentifierHasBeenSet = true;
+    m_topicIdentifier = std::forward<TopicIdentifierT>(value);
+  }
+  template <typename TopicIdentifierT = Aws::String>
+  EmptyVisual& WithTopicIdentifier(TopicIdentifierT&& value) {
+    SetTopicIdentifier(std::forward<TopicIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -103,9 +122,12 @@ class EmptyVisual {
 
   Aws::String m_dataSetIdentifier;
 
+  Aws::String m_topicIdentifier;
+
   Aws::Vector<VisualCustomAction> m_actions;
   bool m_visualIdHasBeenSet = false;
   bool m_dataSetIdentifierHasBeenSet = false;
+  bool m_topicIdentifierHasBeenSet = false;
   bool m_actionsHasBeenSet = false;
 };
 

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/NamedFilterAggType.h>
+#include <aws/quicksight/model/NullFilterType.h>
 #include <aws/quicksight/model/TopicSingularFilterConstant.h>
 
 #include <utility>
@@ -72,12 +73,51 @@ class TopicNumericEqualityFilter {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A Boolean value that indicates if the filter is inverse.</p>
+   */
+  inline bool GetInverse() const { return m_inverse; }
+  inline bool InverseHasBeenSet() const { return m_inverseHasBeenSet; }
+  inline void SetInverse(bool value) {
+    m_inverseHasBeenSet = true;
+    m_inverse = value;
+  }
+  inline TopicNumericEqualityFilter& WithInverse(bool value) {
+    SetInverse(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The <code>null</code> filter that is applied to the numeric equality
+   * filter.</p>
+   */
+  inline NullFilterType GetNullFilter() const { return m_nullFilter; }
+  inline bool NullFilterHasBeenSet() const { return m_nullFilterHasBeenSet; }
+  inline void SetNullFilter(NullFilterType value) {
+    m_nullFilterHasBeenSet = true;
+    m_nullFilter = value;
+  }
+  inline TopicNumericEqualityFilter& WithNullFilter(NullFilterType value) {
+    SetNullFilter(value);
+    return *this;
+  }
+  ///@}
  private:
   TopicSingularFilterConstant m_constant;
 
   NamedFilterAggType m_aggregation{NamedFilterAggType::NOT_SET};
+
+  bool m_inverse{false};
+
+  NullFilterType m_nullFilter{NullFilterType::NOT_SET};
   bool m_constantHasBeenSet = false;
   bool m_aggregationHasBeenSet = false;
+  bool m_inverseHasBeenSet = false;
+  bool m_nullFilterHasBeenSet = false;
 };
 
 }  // namespace Model

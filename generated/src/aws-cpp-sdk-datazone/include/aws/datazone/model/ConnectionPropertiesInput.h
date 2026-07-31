@@ -7,6 +7,7 @@
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/datazone/model/AmazonQPropertiesInput.h>
 #include <aws/datazone/model/AthenaPropertiesInput.h>
+#include <aws/datazone/model/GitPropertiesInput.h>
 #include <aws/datazone/model/GluePropertiesInput.h>
 #include <aws/datazone/model/HyperPodPropertiesInput.h>
 #include <aws/datazone/model/IamPropertiesInput.h>
@@ -315,6 +316,24 @@ class ConnectionPropertiesInput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Git properties of a connection.</p>
+   */
+  inline const GitPropertiesInput& GetGitProperties() const { return m_gitProperties; }
+  inline bool GitPropertiesHasBeenSet() const { return m_gitPropertiesHasBeenSet; }
+  template <typename GitPropertiesT = GitPropertiesInput>
+  void SetGitProperties(GitPropertiesT&& value) {
+    m_gitPropertiesHasBeenSet = true;
+    m_gitProperties = std::forward<GitPropertiesT>(value);
+  }
+  template <typename GitPropertiesT = GitPropertiesInput>
+  ConnectionPropertiesInput& WithGitProperties(GitPropertiesT&& value) {
+    SetGitProperties(std::forward<GitPropertiesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   AthenaPropertiesInput m_athenaProperties;
 
@@ -345,6 +364,8 @@ class ConnectionPropertiesInput {
   LakehousePropertiesInput m_lakehouseProperties;
 
   VpcPropertiesInput m_vpcProperties;
+
+  GitPropertiesInput m_gitProperties;
   bool m_athenaPropertiesHasBeenSet = false;
   bool m_gluePropertiesHasBeenSet = false;
   bool m_hyperPodPropertiesHasBeenSet = false;
@@ -360,6 +381,7 @@ class ConnectionPropertiesInput {
   bool m_workflowsServerlessPropertiesHasBeenSet = false;
   bool m_lakehousePropertiesHasBeenSet = false;
   bool m_vpcPropertiesHasBeenSet = false;
+  bool m_gitPropertiesHasBeenSet = false;
 };
 
 }  // namespace Model

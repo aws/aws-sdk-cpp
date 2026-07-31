@@ -33,6 +33,17 @@ AdditionalStorageVolumeOutput& AdditionalStorageVolumeOutput::operator=(const Xm
       m_storageVolumeStatus = Aws::Utils::Xml::DecodeEscapedXmlText(storageVolumeStatusNode.GetText());
       m_storageVolumeStatusHasBeenSet = true;
     }
+    XmlNode storageOperationStatusNode = resultNode.FirstChild("StorageOperationStatus");
+    if (!storageOperationStatusNode.IsNull()) {
+      m_storageOperationStatus = Aws::Utils::Xml::DecodeEscapedXmlText(storageOperationStatusNode.GetText());
+      m_storageOperationStatusHasBeenSet = true;
+    }
+    XmlNode storageOperationPercentProgressNode = resultNode.FirstChild("StorageOperationPercentProgress");
+    if (!storageOperationPercentProgressNode.IsNull()) {
+      m_storageOperationPercentProgress = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageOperationPercentProgressNode.GetText()).c_str()).c_str());
+      m_storageOperationPercentProgressHasBeenSet = true;
+    }
     XmlNode allocatedStorageNode = resultNode.FirstChild("AllocatedStorage");
     if (!allocatedStorageNode.IsNull()) {
       m_allocatedStorage = StringUtils::ConvertToInt32(
@@ -77,6 +88,15 @@ void AdditionalStorageVolumeOutput::OutputToStream(Aws::OStream& oStream, const 
             << "&";
   }
 
+  if (m_storageOperationStatusHasBeenSet) {
+    oStream << location << index << locationValue << ".StorageOperationStatus=" << StringUtils::URLEncode(m_storageOperationStatus.c_str())
+            << "&";
+  }
+
+  if (m_storageOperationPercentProgressHasBeenSet) {
+    oStream << location << index << locationValue << ".StorageOperationPercentProgress=" << m_storageOperationPercentProgress << "&";
+  }
+
   if (m_allocatedStorageHasBeenSet) {
     oStream << location << index << locationValue << ".AllocatedStorage=" << m_allocatedStorage << "&";
   }
@@ -104,6 +124,12 @@ void AdditionalStorageVolumeOutput::OutputToStream(Aws::OStream& oStream, const 
   }
   if (m_storageVolumeStatusHasBeenSet) {
     oStream << location << ".StorageVolumeStatus=" << StringUtils::URLEncode(m_storageVolumeStatus.c_str()) << "&";
+  }
+  if (m_storageOperationStatusHasBeenSet) {
+    oStream << location << ".StorageOperationStatus=" << StringUtils::URLEncode(m_storageOperationStatus.c_str()) << "&";
+  }
+  if (m_storageOperationPercentProgressHasBeenSet) {
+    oStream << location << ".StorageOperationPercentProgress=" << m_storageOperationPercentProgress << "&";
   }
   if (m_allocatedStorageHasBeenSet) {
     oStream << location << ".AllocatedStorage=" << m_allocatedStorage << "&";

@@ -51,6 +51,24 @@ class ColumnIdentifier {
 
   ///@{
   /**
+   * <p>The topic that the column belongs to.</p>
+   */
+  inline const Aws::String& GetTopicIdentifier() const { return m_topicIdentifier; }
+  inline bool TopicIdentifierHasBeenSet() const { return m_topicIdentifierHasBeenSet; }
+  template <typename TopicIdentifierT = Aws::String>
+  void SetTopicIdentifier(TopicIdentifierT&& value) {
+    m_topicIdentifierHasBeenSet = true;
+    m_topicIdentifier = std::forward<TopicIdentifierT>(value);
+  }
+  template <typename TopicIdentifierT = Aws::String>
+  ColumnIdentifier& WithTopicIdentifier(TopicIdentifierT&& value) {
+    SetTopicIdentifier(std::forward<TopicIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The name of the column.</p>
    */
   inline const Aws::String& GetColumnName() const { return m_columnName; }
@@ -69,8 +87,11 @@ class ColumnIdentifier {
  private:
   Aws::String m_dataSetIdentifier;
 
+  Aws::String m_topicIdentifier;
+
   Aws::String m_columnName;
   bool m_dataSetIdentifierHasBeenSet = false;
+  bool m_topicIdentifierHasBeenSet = false;
   bool m_columnNameHasBeenSet = false;
 };
 

@@ -1907,6 +1907,51 @@ class DBInstance {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The status of an in-progress storage operation on the DB instance. This field
+   * appears only while a storage operation is in progress. It isn't present when no
+   * storage operation is active. Possible values:</p> <ul> <li> <p>
+   * <code>Initializing</code> - The volume is initializing from a snapshot, such as
+   * during a snapshot restore, point-in-time restore, read replica creation, or
+   * blue/green deployment. Performance can be lower than provisioned until
+   * initialization completes.</p> </li> <li> <p> <code>Optimizing</code> - The
+   * volume is optimizing following a storage scaling or modification operation.</p>
+   * </li> </ul>
+   */
+  inline const Aws::String& GetStorageOperationStatus() const { return m_storageOperationStatus; }
+  inline bool StorageOperationStatusHasBeenSet() const { return m_storageOperationStatusHasBeenSet; }
+  template <typename StorageOperationStatusT = Aws::String>
+  void SetStorageOperationStatus(StorageOperationStatusT&& value) {
+    m_storageOperationStatusHasBeenSet = true;
+    m_storageOperationStatus = std::forward<StorageOperationStatusT>(value);
+  }
+  template <typename StorageOperationStatusT = Aws::String>
+  DBInstance& WithStorageOperationStatus(StorageOperationStatusT&& value) {
+    SetStorageOperationStatus(std::forward<StorageOperationStatusT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The percentage of the in-progress storage operation on the DB instance that
+   * has completed, from <code>0</code> to <code>100</code>. This field appears only
+   * while a storage operation is in progress. It isn't present when no storage
+   * operation is active.</p>
+   */
+  inline int GetStorageOperationPercentProgress() const { return m_storageOperationPercentProgress; }
+  inline bool StorageOperationPercentProgressHasBeenSet() const { return m_storageOperationPercentProgressHasBeenSet; }
+  inline void SetStorageOperationPercentProgress(int value) {
+    m_storageOperationPercentProgressHasBeenSet = true;
+    m_storageOperationPercentProgress = value;
+  }
+  inline DBInstance& WithStorageOperationPercentProgress(int value) {
+    SetStorageOperationPercentProgress(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_dBInstanceIdentifier;
 
@@ -2089,6 +2134,10 @@ class DBInstance {
   Aws::Vector<AdditionalStorageVolumeOutput> m_additionalStorageVolumes;
 
   Aws::String m_storageVolumeStatus;
+
+  Aws::String m_storageOperationStatus;
+
+  int m_storageOperationPercentProgress{0};
   bool m_dBInstanceIdentifierHasBeenSet = false;
   bool m_dBInstanceClassHasBeenSet = false;
   bool m_engineHasBeenSet = false;
@@ -2180,6 +2229,8 @@ class DBInstance {
   bool m_engineLifecycleSupportHasBeenSet = false;
   bool m_additionalStorageVolumesHasBeenSet = false;
   bool m_storageVolumeStatusHasBeenSet = false;
+  bool m_storageOperationStatusHasBeenSet = false;
+  bool m_storageOperationPercentProgressHasBeenSet = false;
 };
 
 }  // namespace Model

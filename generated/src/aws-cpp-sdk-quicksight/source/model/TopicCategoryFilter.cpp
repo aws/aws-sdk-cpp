@@ -35,6 +35,10 @@ TopicCategoryFilter& TopicCategoryFilter::operator=(JsonView jsonValue) {
     m_inverse = jsonValue.GetBool("Inverse");
     m_inverseHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("NullFilter")) {
+    m_nullFilter = NullFilterTypeMapper::GetNullFilterTypeForName(jsonValue.GetString("NullFilter"));
+    m_nullFilterHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -55,6 +59,10 @@ JsonValue TopicCategoryFilter::Jsonize() const {
 
   if (m_inverseHasBeenSet) {
     payload.WithBool("Inverse", m_inverse);
+  }
+
+  if (m_nullFilterHasBeenSet) {
+    payload.WithString("NullFilter", NullFilterTypeMapper::GetNameForNullFilterType(m_nullFilter));
   }
 
   return payload;

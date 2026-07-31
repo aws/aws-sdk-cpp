@@ -16,11 +16,14 @@ namespace Model {
 namespace ScheduledQueryDestinationTypeMapper {
 
 static const int S3_HASH = HashingUtils::HashString("S3");
+static const int LOOKUP_TABLE_HASH = HashingUtils::HashString("LOOKUP_TABLE");
 
 ScheduledQueryDestinationType GetScheduledQueryDestinationTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == S3_HASH) {
     return ScheduledQueryDestinationType::S3;
+  } else if (hashCode == LOOKUP_TABLE_HASH) {
+    return ScheduledQueryDestinationType::LOOKUP_TABLE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForScheduledQueryDestinationType(ScheduledQueryDestinationTyp
       return {};
     case ScheduledQueryDestinationType::S3:
       return "S3";
+    case ScheduledQueryDestinationType::LOOKUP_TABLE:
+      return "LOOKUP_TABLE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

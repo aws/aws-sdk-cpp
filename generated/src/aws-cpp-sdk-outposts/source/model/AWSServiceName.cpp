@@ -17,6 +17,7 @@ namespace AWSServiceNameMapper {
 
 static const int AWS_HASH = HashingUtils::HashString("AWS");
 static const int EC2_HASH = HashingUtils::HashString("EC2");
+static const int EKS_HASH = HashingUtils::HashString("EKS");
 static const int ELASTICACHE_HASH = HashingUtils::HashString("ELASTICACHE");
 static const int ELB_HASH = HashingUtils::HashString("ELB");
 static const int RDS_HASH = HashingUtils::HashString("RDS");
@@ -28,6 +29,8 @@ AWSServiceName GetAWSServiceNameForName(const Aws::String& name) {
     return AWSServiceName::AWS;
   } else if (hashCode == EC2_HASH) {
     return AWSServiceName::EC2;
+  } else if (hashCode == EKS_HASH) {
+    return AWSServiceName::EKS;
   } else if (hashCode == ELASTICACHE_HASH) {
     return AWSServiceName::ELASTICACHE;
   } else if (hashCode == ELB_HASH) {
@@ -54,6 +57,8 @@ Aws::String GetNameForAWSServiceName(AWSServiceName enumValue) {
       return "AWS";
     case AWSServiceName::EC2:
       return "EC2";
+    case AWSServiceName::EKS:
+      return "EKS";
     case AWSServiceName::ELASTICACHE:
       return "ELASTICACHE";
     case AWSServiceName::ELB:

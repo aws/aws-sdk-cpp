@@ -52,6 +52,13 @@ DashboardVersion& DashboardVersion::operator=(JsonView jsonValue) {
     }
     m_dataSetArnsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("TopicArns")) {
+    Aws::Utils::Array<JsonView> topicArnsJsonList = jsonValue.GetArray("TopicArns");
+    for (unsigned topicArnsIndex = 0; topicArnsIndex < topicArnsJsonList.GetLength(); ++topicArnsIndex) {
+      m_topicArns.push_back(topicArnsJsonList[topicArnsIndex].AsString());
+    }
+    m_topicArnsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
@@ -107,6 +114,14 @@ JsonValue DashboardVersion::Jsonize() const {
       dataSetArnsJsonList[dataSetArnsIndex].AsString(m_dataSetArns[dataSetArnsIndex]);
     }
     payload.WithArray("DataSetArns", std::move(dataSetArnsJsonList));
+  }
+
+  if (m_topicArnsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> topicArnsJsonList(m_topicArns.size());
+    for (unsigned topicArnsIndex = 0; topicArnsIndex < topicArnsJsonList.GetLength(); ++topicArnsIndex) {
+      topicArnsJsonList[topicArnsIndex].AsString(m_topicArns[topicArnsIndex]);
+    }
+    payload.WithArray("TopicArns", std::move(topicArnsJsonList));
   }
 
   if (m_descriptionHasBeenSet) {

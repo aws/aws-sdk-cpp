@@ -128,7 +128,9 @@ class CreateTemplateRequest : public QuickSightRequest {
    * <p>Use the <code>DataSetReferences</code> entity within
    * <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the
    * replacement datasets for the placeholders listed in the original. The schema in
-   * each dataset must match its placeholder. </p> <p>Either a
+   * each dataset must match its placeholder. Use the <code>TopicReferences</code>
+   * entity to list the replacement topics for the topic placeholders listed in the
+   * original. The schema in each topic must match its placeholder.</p> <p>Either a
    * <code>SourceEntity</code> or a <code>Definition</code> must be provided in order
    * for the request to be valid.</p>
    */

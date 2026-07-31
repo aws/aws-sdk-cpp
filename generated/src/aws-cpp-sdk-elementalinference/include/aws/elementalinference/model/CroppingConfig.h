@@ -4,7 +4,11 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elementalinference/ElementalInference_EXPORTS.h>
+#include <aws/elementalinference/model/TemplateGroup.h>
+
+#include <utility>
 
 namespace Aws {
 namespace Utils {
@@ -28,6 +32,35 @@ class CroppingConfig {
   AWS_ELEMENTALINFERENCE_API CroppingConfig(Aws::Utils::Json::JsonView jsonValue);
   AWS_ELEMENTALINFERENCE_API CroppingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_ELEMENTALINFERENCE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>An array of template groups for the crop output. Each template group provides
+   * the graphics-compositing templates that Elemental Inference applies to the
+   * cropped video. You can specify from 1 to 4 template groups. </p>
+   */
+  inline const Aws::Vector<TemplateGroup>& GetTemplateGroups() const { return m_templateGroups; }
+  inline bool TemplateGroupsHasBeenSet() const { return m_templateGroupsHasBeenSet; }
+  template <typename TemplateGroupsT = Aws::Vector<TemplateGroup>>
+  void SetTemplateGroups(TemplateGroupsT&& value) {
+    m_templateGroupsHasBeenSet = true;
+    m_templateGroups = std::forward<TemplateGroupsT>(value);
+  }
+  template <typename TemplateGroupsT = Aws::Vector<TemplateGroup>>
+  CroppingConfig& WithTemplateGroups(TemplateGroupsT&& value) {
+    SetTemplateGroups(std::forward<TemplateGroupsT>(value));
+    return *this;
+  }
+  template <typename TemplateGroupsT = TemplateGroup>
+  CroppingConfig& AddTemplateGroups(TemplateGroupsT&& value) {
+    m_templateGroupsHasBeenSet = true;
+    m_templateGroups.emplace_back(std::forward<TemplateGroupsT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<TemplateGroup> m_templateGroups;
+  bool m_templateGroupsHasBeenSet = false;
 };
 
 }  // namespace Model

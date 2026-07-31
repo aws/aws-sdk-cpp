@@ -15,6 +15,7 @@
 #include <aws/transcribestreaming/model/MediaEncoding.h>
 #include <aws/transcribestreaming/model/PartialResultsStability.h>
 #include <aws/transcribestreaming/model/StartStreamTranscriptionHandler.h>
+#include <aws/transcribestreaming/model/TranscriptFormat.h>
 #include <aws/transcribestreaming/model/VocabularyFilterMethod.h>
 
 #include <memory>
@@ -642,6 +643,29 @@ class StartStreamTranscriptionRequest : public TranscribeStreamingServiceRequest
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specify how numbers, dates, and other alphanumeric entities are rendered in
+   * your transcription results.</p> <ul> <li> <p> <code>WRITTEN</code> renders these
+   * entities in their standard written form (for example, <code>$50</code>,
+   * <code>10:30 AM</code>, and <code>101</code>).</p> </li> <li> <p>
+   * <code>SPOKEN</code> renders these entities as words, exactly as they were spoken
+   * (for example, <code>fifty dollars</code>, <code>ten thirty a m</code>, and
+   * <code>one oh one</code>).</p> </li> </ul> <p>If you don't specify a value,
+   * Amazon Transcribe uses <code>WRITTEN</code> by default.</p>
+   */
+  inline TranscriptFormat GetTranscriptFormat() const { return m_transcriptFormat; }
+  inline bool TranscriptFormatHasBeenSet() const { return m_transcriptFormatHasBeenSet; }
+  inline void SetTranscriptFormat(TranscriptFormat value) {
+    m_transcriptFormatHasBeenSet = true;
+    m_transcriptFormat = value;
+  }
+  inline StartStreamTranscriptionRequest& WithTranscriptFormat(TranscriptFormat value) {
+    SetTranscriptFormat(value);
+    return *this;
+  }
+  ///@}
  private:
   LanguageCode m_languageCode{LanguageCode::NOT_SET};
 
@@ -690,6 +714,8 @@ class StartStreamTranscriptionRequest : public TranscribeStreamingServiceRequest
   Aws::String m_vocabularyFilterNames;
 
   int m_sessionResumeWindow{0};
+
+  TranscriptFormat m_transcriptFormat{TranscriptFormat::NOT_SET};
   StartStreamTranscriptionHandler m_handler;
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
 
@@ -717,6 +743,7 @@ class StartStreamTranscriptionRequest : public TranscribeStreamingServiceRequest
   bool m_vocabularyNamesHasBeenSet = false;
   bool m_vocabularyFilterNamesHasBeenSet = false;
   bool m_sessionResumeWindowHasBeenSet = false;
+  bool m_transcriptFormatHasBeenSet = false;
 };
 
 }  // namespace Model

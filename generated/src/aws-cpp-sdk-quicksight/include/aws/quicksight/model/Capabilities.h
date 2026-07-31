@@ -644,6 +644,596 @@ class Capabilities {
   ///@}
 
   ///@{
+
+  inline CapabilityState GetCreateAndUpdateKnowledgeBases() const { return m_createAndUpdateKnowledgeBases; }
+  inline bool CreateAndUpdateKnowledgeBasesHasBeenSet() const { return m_createAndUpdateKnowledgeBasesHasBeenSet; }
+  inline void SetCreateAndUpdateKnowledgeBases(CapabilityState value) {
+    m_createAndUpdateKnowledgeBasesHasBeenSet = true;
+    m_createAndUpdateKnowledgeBases = value;
+  }
+  inline Capabilities& WithCreateAndUpdateKnowledgeBases(CapabilityState value) {
+    SetCreateAndUpdateKnowledgeBases(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetShareKnowledgeBases() const { return m_shareKnowledgeBases; }
+  inline bool ShareKnowledgeBasesHasBeenSet() const { return m_shareKnowledgeBasesHasBeenSet; }
+  inline void SetShareKnowledgeBases(CapabilityState value) {
+    m_shareKnowledgeBasesHasBeenSet = true;
+    m_shareKnowledgeBases = value;
+  }
+  inline Capabilities& WithShareKnowledgeBases(CapabilityState value) {
+    SetShareKnowledgeBases(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetSharePointKnowledgeBase() const { return m_sharePointKnowledgeBase; }
+  inline bool SharePointKnowledgeBaseHasBeenSet() const { return m_sharePointKnowledgeBaseHasBeenSet; }
+  inline void SetSharePointKnowledgeBase(CapabilityState value) {
+    m_sharePointKnowledgeBaseHasBeenSet = true;
+    m_sharePointKnowledgeBase = value;
+  }
+  inline Capabilities& WithSharePointKnowledgeBase(CapabilityState value) {
+    SetSharePointKnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetCreateAndUpdateSharePointKnowledgeBase() const { return m_createAndUpdateSharePointKnowledgeBase; }
+  inline bool CreateAndUpdateSharePointKnowledgeBaseHasBeenSet() const { return m_createAndUpdateSharePointKnowledgeBaseHasBeenSet; }
+  inline void SetCreateAndUpdateSharePointKnowledgeBase(CapabilityState value) {
+    m_createAndUpdateSharePointKnowledgeBaseHasBeenSet = true;
+    m_createAndUpdateSharePointKnowledgeBase = value;
+  }
+  inline Capabilities& WithCreateAndUpdateSharePointKnowledgeBase(CapabilityState value) {
+    SetCreateAndUpdateSharePointKnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetShareSharePointKnowledgeBase() const { return m_shareSharePointKnowledgeBase; }
+  inline bool ShareSharePointKnowledgeBaseHasBeenSet() const { return m_shareSharePointKnowledgeBaseHasBeenSet; }
+  inline void SetShareSharePointKnowledgeBase(CapabilityState value) {
+    m_shareSharePointKnowledgeBaseHasBeenSet = true;
+    m_shareSharePointKnowledgeBase = value;
+  }
+  inline Capabilities& WithShareSharePointKnowledgeBase(CapabilityState value) {
+    SetShareSharePointKnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetUseSharePointKnowledgeBase() const { return m_useSharePointKnowledgeBase; }
+  inline bool UseSharePointKnowledgeBaseHasBeenSet() const { return m_useSharePointKnowledgeBaseHasBeenSet; }
+  inline void SetUseSharePointKnowledgeBase(CapabilityState value) {
+    m_useSharePointKnowledgeBaseHasBeenSet = true;
+    m_useSharePointKnowledgeBase = value;
+  }
+  inline Capabilities& WithUseSharePointKnowledgeBase(CapabilityState value) {
+    SetUseSharePointKnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetGoogleDriveKnowledgeBase() const { return m_googleDriveKnowledgeBase; }
+  inline bool GoogleDriveKnowledgeBaseHasBeenSet() const { return m_googleDriveKnowledgeBaseHasBeenSet; }
+  inline void SetGoogleDriveKnowledgeBase(CapabilityState value) {
+    m_googleDriveKnowledgeBaseHasBeenSet = true;
+    m_googleDriveKnowledgeBase = value;
+  }
+  inline Capabilities& WithGoogleDriveKnowledgeBase(CapabilityState value) {
+    SetGoogleDriveKnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetCreateAndUpdateGoogleDriveKnowledgeBase() const { return m_createAndUpdateGoogleDriveKnowledgeBase; }
+  inline bool CreateAndUpdateGoogleDriveKnowledgeBaseHasBeenSet() const { return m_createAndUpdateGoogleDriveKnowledgeBaseHasBeenSet; }
+  inline void SetCreateAndUpdateGoogleDriveKnowledgeBase(CapabilityState value) {
+    m_createAndUpdateGoogleDriveKnowledgeBaseHasBeenSet = true;
+    m_createAndUpdateGoogleDriveKnowledgeBase = value;
+  }
+  inline Capabilities& WithCreateAndUpdateGoogleDriveKnowledgeBase(CapabilityState value) {
+    SetCreateAndUpdateGoogleDriveKnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetShareGoogleDriveKnowledgeBase() const { return m_shareGoogleDriveKnowledgeBase; }
+  inline bool ShareGoogleDriveKnowledgeBaseHasBeenSet() const { return m_shareGoogleDriveKnowledgeBaseHasBeenSet; }
+  inline void SetShareGoogleDriveKnowledgeBase(CapabilityState value) {
+    m_shareGoogleDriveKnowledgeBaseHasBeenSet = true;
+    m_shareGoogleDriveKnowledgeBase = value;
+  }
+  inline Capabilities& WithShareGoogleDriveKnowledgeBase(CapabilityState value) {
+    SetShareGoogleDriveKnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetUseGoogleDriveKnowledgeBase() const { return m_useGoogleDriveKnowledgeBase; }
+  inline bool UseGoogleDriveKnowledgeBaseHasBeenSet() const { return m_useGoogleDriveKnowledgeBaseHasBeenSet; }
+  inline void SetUseGoogleDriveKnowledgeBase(CapabilityState value) {
+    m_useGoogleDriveKnowledgeBaseHasBeenSet = true;
+    m_useGoogleDriveKnowledgeBase = value;
+  }
+  inline Capabilities& WithUseGoogleDriveKnowledgeBase(CapabilityState value) {
+    SetUseGoogleDriveKnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetWebCrawlerKnowledgeBase() const { return m_webCrawlerKnowledgeBase; }
+  inline bool WebCrawlerKnowledgeBaseHasBeenSet() const { return m_webCrawlerKnowledgeBaseHasBeenSet; }
+  inline void SetWebCrawlerKnowledgeBase(CapabilityState value) {
+    m_webCrawlerKnowledgeBaseHasBeenSet = true;
+    m_webCrawlerKnowledgeBase = value;
+  }
+  inline Capabilities& WithWebCrawlerKnowledgeBase(CapabilityState value) {
+    SetWebCrawlerKnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetCreateAndUpdateWebCrawlerKnowledgeBase() const { return m_createAndUpdateWebCrawlerKnowledgeBase; }
+  inline bool CreateAndUpdateWebCrawlerKnowledgeBaseHasBeenSet() const { return m_createAndUpdateWebCrawlerKnowledgeBaseHasBeenSet; }
+  inline void SetCreateAndUpdateWebCrawlerKnowledgeBase(CapabilityState value) {
+    m_createAndUpdateWebCrawlerKnowledgeBaseHasBeenSet = true;
+    m_createAndUpdateWebCrawlerKnowledgeBase = value;
+  }
+  inline Capabilities& WithCreateAndUpdateWebCrawlerKnowledgeBase(CapabilityState value) {
+    SetCreateAndUpdateWebCrawlerKnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetShareWebCrawlerKnowledgeBase() const { return m_shareWebCrawlerKnowledgeBase; }
+  inline bool ShareWebCrawlerKnowledgeBaseHasBeenSet() const { return m_shareWebCrawlerKnowledgeBaseHasBeenSet; }
+  inline void SetShareWebCrawlerKnowledgeBase(CapabilityState value) {
+    m_shareWebCrawlerKnowledgeBaseHasBeenSet = true;
+    m_shareWebCrawlerKnowledgeBase = value;
+  }
+  inline Capabilities& WithShareWebCrawlerKnowledgeBase(CapabilityState value) {
+    SetShareWebCrawlerKnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetUseWebCrawlerKnowledgeBase() const { return m_useWebCrawlerKnowledgeBase; }
+  inline bool UseWebCrawlerKnowledgeBaseHasBeenSet() const { return m_useWebCrawlerKnowledgeBaseHasBeenSet; }
+  inline void SetUseWebCrawlerKnowledgeBase(CapabilityState value) {
+    m_useWebCrawlerKnowledgeBaseHasBeenSet = true;
+    m_useWebCrawlerKnowledgeBase = value;
+  }
+  inline Capabilities& WithUseWebCrawlerKnowledgeBase(CapabilityState value) {
+    SetUseWebCrawlerKnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetS3KnowledgeBase() const { return m_s3KnowledgeBase; }
+  inline bool S3KnowledgeBaseHasBeenSet() const { return m_s3KnowledgeBaseHasBeenSet; }
+  inline void SetS3KnowledgeBase(CapabilityState value) {
+    m_s3KnowledgeBaseHasBeenSet = true;
+    m_s3KnowledgeBase = value;
+  }
+  inline Capabilities& WithS3KnowledgeBase(CapabilityState value) {
+    SetS3KnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetCreateAndUpdateS3KnowledgeBase() const { return m_createAndUpdateS3KnowledgeBase; }
+  inline bool CreateAndUpdateS3KnowledgeBaseHasBeenSet() const { return m_createAndUpdateS3KnowledgeBaseHasBeenSet; }
+  inline void SetCreateAndUpdateS3KnowledgeBase(CapabilityState value) {
+    m_createAndUpdateS3KnowledgeBaseHasBeenSet = true;
+    m_createAndUpdateS3KnowledgeBase = value;
+  }
+  inline Capabilities& WithCreateAndUpdateS3KnowledgeBase(CapabilityState value) {
+    SetCreateAndUpdateS3KnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetShareS3KnowledgeBase() const { return m_shareS3KnowledgeBase; }
+  inline bool ShareS3KnowledgeBaseHasBeenSet() const { return m_shareS3KnowledgeBaseHasBeenSet; }
+  inline void SetShareS3KnowledgeBase(CapabilityState value) {
+    m_shareS3KnowledgeBaseHasBeenSet = true;
+    m_shareS3KnowledgeBase = value;
+  }
+  inline Capabilities& WithShareS3KnowledgeBase(CapabilityState value) {
+    SetShareS3KnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetUseS3KnowledgeBase() const { return m_useS3KnowledgeBase; }
+  inline bool UseS3KnowledgeBaseHasBeenSet() const { return m_useS3KnowledgeBaseHasBeenSet; }
+  inline void SetUseS3KnowledgeBase(CapabilityState value) {
+    m_useS3KnowledgeBaseHasBeenSet = true;
+    m_useS3KnowledgeBase = value;
+  }
+  inline Capabilities& WithUseS3KnowledgeBase(CapabilityState value) {
+    SetUseS3KnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetConfluenceKnowledgeBase() const { return m_confluenceKnowledgeBase; }
+  inline bool ConfluenceKnowledgeBaseHasBeenSet() const { return m_confluenceKnowledgeBaseHasBeenSet; }
+  inline void SetConfluenceKnowledgeBase(CapabilityState value) {
+    m_confluenceKnowledgeBaseHasBeenSet = true;
+    m_confluenceKnowledgeBase = value;
+  }
+  inline Capabilities& WithConfluenceKnowledgeBase(CapabilityState value) {
+    SetConfluenceKnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetCreateAndUpdateConfluenceKnowledgeBase() const { return m_createAndUpdateConfluenceKnowledgeBase; }
+  inline bool CreateAndUpdateConfluenceKnowledgeBaseHasBeenSet() const { return m_createAndUpdateConfluenceKnowledgeBaseHasBeenSet; }
+  inline void SetCreateAndUpdateConfluenceKnowledgeBase(CapabilityState value) {
+    m_createAndUpdateConfluenceKnowledgeBaseHasBeenSet = true;
+    m_createAndUpdateConfluenceKnowledgeBase = value;
+  }
+  inline Capabilities& WithCreateAndUpdateConfluenceKnowledgeBase(CapabilityState value) {
+    SetCreateAndUpdateConfluenceKnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetShareConfluenceKnowledgeBase() const { return m_shareConfluenceKnowledgeBase; }
+  inline bool ShareConfluenceKnowledgeBaseHasBeenSet() const { return m_shareConfluenceKnowledgeBaseHasBeenSet; }
+  inline void SetShareConfluenceKnowledgeBase(CapabilityState value) {
+    m_shareConfluenceKnowledgeBaseHasBeenSet = true;
+    m_shareConfluenceKnowledgeBase = value;
+  }
+  inline Capabilities& WithShareConfluenceKnowledgeBase(CapabilityState value) {
+    SetShareConfluenceKnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetUseConfluenceKnowledgeBase() const { return m_useConfluenceKnowledgeBase; }
+  inline bool UseConfluenceKnowledgeBaseHasBeenSet() const { return m_useConfluenceKnowledgeBaseHasBeenSet; }
+  inline void SetUseConfluenceKnowledgeBase(CapabilityState value) {
+    m_useConfluenceKnowledgeBaseHasBeenSet = true;
+    m_useConfluenceKnowledgeBase = value;
+  }
+  inline Capabilities& WithUseConfluenceKnowledgeBase(CapabilityState value) {
+    SetUseConfluenceKnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetOneDriveKnowledgeBase() const { return m_oneDriveKnowledgeBase; }
+  inline bool OneDriveKnowledgeBaseHasBeenSet() const { return m_oneDriveKnowledgeBaseHasBeenSet; }
+  inline void SetOneDriveKnowledgeBase(CapabilityState value) {
+    m_oneDriveKnowledgeBaseHasBeenSet = true;
+    m_oneDriveKnowledgeBase = value;
+  }
+  inline Capabilities& WithOneDriveKnowledgeBase(CapabilityState value) {
+    SetOneDriveKnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetCreateAndUpdateOneDriveKnowledgeBase() const { return m_createAndUpdateOneDriveKnowledgeBase; }
+  inline bool CreateAndUpdateOneDriveKnowledgeBaseHasBeenSet() const { return m_createAndUpdateOneDriveKnowledgeBaseHasBeenSet; }
+  inline void SetCreateAndUpdateOneDriveKnowledgeBase(CapabilityState value) {
+    m_createAndUpdateOneDriveKnowledgeBaseHasBeenSet = true;
+    m_createAndUpdateOneDriveKnowledgeBase = value;
+  }
+  inline Capabilities& WithCreateAndUpdateOneDriveKnowledgeBase(CapabilityState value) {
+    SetCreateAndUpdateOneDriveKnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetShareOneDriveKnowledgeBase() const { return m_shareOneDriveKnowledgeBase; }
+  inline bool ShareOneDriveKnowledgeBaseHasBeenSet() const { return m_shareOneDriveKnowledgeBaseHasBeenSet; }
+  inline void SetShareOneDriveKnowledgeBase(CapabilityState value) {
+    m_shareOneDriveKnowledgeBaseHasBeenSet = true;
+    m_shareOneDriveKnowledgeBase = value;
+  }
+  inline Capabilities& WithShareOneDriveKnowledgeBase(CapabilityState value) {
+    SetShareOneDriveKnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetUseOneDriveKnowledgeBase() const { return m_useOneDriveKnowledgeBase; }
+  inline bool UseOneDriveKnowledgeBaseHasBeenSet() const { return m_useOneDriveKnowledgeBaseHasBeenSet; }
+  inline void SetUseOneDriveKnowledgeBase(CapabilityState value) {
+    m_useOneDriveKnowledgeBaseHasBeenSet = true;
+    m_useOneDriveKnowledgeBase = value;
+  }
+  inline Capabilities& WithUseOneDriveKnowledgeBase(CapabilityState value) {
+    SetUseOneDriveKnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetQBusinessKnowledgeBase() const { return m_qBusinessKnowledgeBase; }
+  inline bool QBusinessKnowledgeBaseHasBeenSet() const { return m_qBusinessKnowledgeBaseHasBeenSet; }
+  inline void SetQBusinessKnowledgeBase(CapabilityState value) {
+    m_qBusinessKnowledgeBaseHasBeenSet = true;
+    m_qBusinessKnowledgeBase = value;
+  }
+  inline Capabilities& WithQBusinessKnowledgeBase(CapabilityState value) {
+    SetQBusinessKnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetCreateAndUpdateQBusinessKnowledgeBase() const { return m_createAndUpdateQBusinessKnowledgeBase; }
+  inline bool CreateAndUpdateQBusinessKnowledgeBaseHasBeenSet() const { return m_createAndUpdateQBusinessKnowledgeBaseHasBeenSet; }
+  inline void SetCreateAndUpdateQBusinessKnowledgeBase(CapabilityState value) {
+    m_createAndUpdateQBusinessKnowledgeBaseHasBeenSet = true;
+    m_createAndUpdateQBusinessKnowledgeBase = value;
+  }
+  inline Capabilities& WithCreateAndUpdateQBusinessKnowledgeBase(CapabilityState value) {
+    SetCreateAndUpdateQBusinessKnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetShareQBusinessKnowledgeBase() const { return m_shareQBusinessKnowledgeBase; }
+  inline bool ShareQBusinessKnowledgeBaseHasBeenSet() const { return m_shareQBusinessKnowledgeBaseHasBeenSet; }
+  inline void SetShareQBusinessKnowledgeBase(CapabilityState value) {
+    m_shareQBusinessKnowledgeBaseHasBeenSet = true;
+    m_shareQBusinessKnowledgeBase = value;
+  }
+  inline Capabilities& WithShareQBusinessKnowledgeBase(CapabilityState value) {
+    SetShareQBusinessKnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetUseQBusinessKnowledgeBase() const { return m_useQBusinessKnowledgeBase; }
+  inline bool UseQBusinessKnowledgeBaseHasBeenSet() const { return m_useQBusinessKnowledgeBaseHasBeenSet; }
+  inline void SetUseQBusinessKnowledgeBase(CapabilityState value) {
+    m_useQBusinessKnowledgeBaseHasBeenSet = true;
+    m_useQBusinessKnowledgeBase = value;
+  }
+  inline Capabilities& WithUseQBusinessKnowledgeBase(CapabilityState value) {
+    SetUseQBusinessKnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetBedrockManagedKnowledgeBase() const { return m_bedrockManagedKnowledgeBase; }
+  inline bool BedrockManagedKnowledgeBaseHasBeenSet() const { return m_bedrockManagedKnowledgeBaseHasBeenSet; }
+  inline void SetBedrockManagedKnowledgeBase(CapabilityState value) {
+    m_bedrockManagedKnowledgeBaseHasBeenSet = true;
+    m_bedrockManagedKnowledgeBase = value;
+  }
+  inline Capabilities& WithBedrockManagedKnowledgeBase(CapabilityState value) {
+    SetBedrockManagedKnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetCreateAndUpdateBedrockManagedKnowledgeBase() const { return m_createAndUpdateBedrockManagedKnowledgeBase; }
+  inline bool CreateAndUpdateBedrockManagedKnowledgeBaseHasBeenSet() const {
+    return m_createAndUpdateBedrockManagedKnowledgeBaseHasBeenSet;
+  }
+  inline void SetCreateAndUpdateBedrockManagedKnowledgeBase(CapabilityState value) {
+    m_createAndUpdateBedrockManagedKnowledgeBaseHasBeenSet = true;
+    m_createAndUpdateBedrockManagedKnowledgeBase = value;
+  }
+  inline Capabilities& WithCreateAndUpdateBedrockManagedKnowledgeBase(CapabilityState value) {
+    SetCreateAndUpdateBedrockManagedKnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetShareBedrockManagedKnowledgeBase() const { return m_shareBedrockManagedKnowledgeBase; }
+  inline bool ShareBedrockManagedKnowledgeBaseHasBeenSet() const { return m_shareBedrockManagedKnowledgeBaseHasBeenSet; }
+  inline void SetShareBedrockManagedKnowledgeBase(CapabilityState value) {
+    m_shareBedrockManagedKnowledgeBaseHasBeenSet = true;
+    m_shareBedrockManagedKnowledgeBase = value;
+  }
+  inline Capabilities& WithShareBedrockManagedKnowledgeBase(CapabilityState value) {
+    SetShareBedrockManagedKnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetUseBedrockManagedKnowledgeBase() const { return m_useBedrockManagedKnowledgeBase; }
+  inline bool UseBedrockManagedKnowledgeBaseHasBeenSet() const { return m_useBedrockManagedKnowledgeBaseHasBeenSet; }
+  inline void SetUseBedrockManagedKnowledgeBase(CapabilityState value) {
+    m_useBedrockManagedKnowledgeBaseHasBeenSet = true;
+    m_useBedrockManagedKnowledgeBase = value;
+  }
+  inline Capabilities& WithUseBedrockManagedKnowledgeBase(CapabilityState value) {
+    SetUseBedrockManagedKnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetBoxKnowledgeBase() const { return m_boxKnowledgeBase; }
+  inline bool BoxKnowledgeBaseHasBeenSet() const { return m_boxKnowledgeBaseHasBeenSet; }
+  inline void SetBoxKnowledgeBase(CapabilityState value) {
+    m_boxKnowledgeBaseHasBeenSet = true;
+    m_boxKnowledgeBase = value;
+  }
+  inline Capabilities& WithBoxKnowledgeBase(CapabilityState value) {
+    SetBoxKnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetCreateAndUpdateBoxKnowledgeBase() const { return m_createAndUpdateBoxKnowledgeBase; }
+  inline bool CreateAndUpdateBoxKnowledgeBaseHasBeenSet() const { return m_createAndUpdateBoxKnowledgeBaseHasBeenSet; }
+  inline void SetCreateAndUpdateBoxKnowledgeBase(CapabilityState value) {
+    m_createAndUpdateBoxKnowledgeBaseHasBeenSet = true;
+    m_createAndUpdateBoxKnowledgeBase = value;
+  }
+  inline Capabilities& WithCreateAndUpdateBoxKnowledgeBase(CapabilityState value) {
+    SetCreateAndUpdateBoxKnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetShareBoxKnowledgeBase() const { return m_shareBoxKnowledgeBase; }
+  inline bool ShareBoxKnowledgeBaseHasBeenSet() const { return m_shareBoxKnowledgeBaseHasBeenSet; }
+  inline void SetShareBoxKnowledgeBase(CapabilityState value) {
+    m_shareBoxKnowledgeBaseHasBeenSet = true;
+    m_shareBoxKnowledgeBase = value;
+  }
+  inline Capabilities& WithShareBoxKnowledgeBase(CapabilityState value) {
+    SetShareBoxKnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetUseBoxKnowledgeBase() const { return m_useBoxKnowledgeBase; }
+  inline bool UseBoxKnowledgeBaseHasBeenSet() const { return m_useBoxKnowledgeBaseHasBeenSet; }
+  inline void SetUseBoxKnowledgeBase(CapabilityState value) {
+    m_useBoxKnowledgeBaseHasBeenSet = true;
+    m_useBoxKnowledgeBase = value;
+  }
+  inline Capabilities& WithUseBoxKnowledgeBase(CapabilityState value) {
+    SetUseBoxKnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetIDCKnowledgeBase() const { return m_iDCKnowledgeBase; }
+  inline bool IDCKnowledgeBaseHasBeenSet() const { return m_iDCKnowledgeBaseHasBeenSet; }
+  inline void SetIDCKnowledgeBase(CapabilityState value) {
+    m_iDCKnowledgeBaseHasBeenSet = true;
+    m_iDCKnowledgeBase = value;
+  }
+  inline Capabilities& WithIDCKnowledgeBase(CapabilityState value) {
+    SetIDCKnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetCreateAndUpdateIDCKnowledgeBase() const { return m_createAndUpdateIDCKnowledgeBase; }
+  inline bool CreateAndUpdateIDCKnowledgeBaseHasBeenSet() const { return m_createAndUpdateIDCKnowledgeBaseHasBeenSet; }
+  inline void SetCreateAndUpdateIDCKnowledgeBase(CapabilityState value) {
+    m_createAndUpdateIDCKnowledgeBaseHasBeenSet = true;
+    m_createAndUpdateIDCKnowledgeBase = value;
+  }
+  inline Capabilities& WithCreateAndUpdateIDCKnowledgeBase(CapabilityState value) {
+    SetCreateAndUpdateIDCKnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetShareIDCKnowledgeBase() const { return m_shareIDCKnowledgeBase; }
+  inline bool ShareIDCKnowledgeBaseHasBeenSet() const { return m_shareIDCKnowledgeBaseHasBeenSet; }
+  inline void SetShareIDCKnowledgeBase(CapabilityState value) {
+    m_shareIDCKnowledgeBaseHasBeenSet = true;
+    m_shareIDCKnowledgeBase = value;
+  }
+  inline Capabilities& WithShareIDCKnowledgeBase(CapabilityState value) {
+    SetShareIDCKnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline CapabilityState GetUseIDCKnowledgeBase() const { return m_useIDCKnowledgeBase; }
+  inline bool UseIDCKnowledgeBaseHasBeenSet() const { return m_useIDCKnowledgeBaseHasBeenSet; }
+  inline void SetUseIDCKnowledgeBase(CapabilityState value) {
+    m_useIDCKnowledgeBaseHasBeenSet = true;
+    m_useIDCKnowledgeBase = value;
+  }
+  inline Capabilities& WithUseIDCKnowledgeBase(CapabilityState value) {
+    SetUseIDCKnowledgeBase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
    * <p>The ability to perform actions in external services through Action
    * connectors. Actions allow users to interact with third-party systems.</p>
@@ -3917,6 +4507,90 @@ class Capabilities {
 
   CapabilityState m_knowledgeBase{CapabilityState::NOT_SET};
 
+  CapabilityState m_createAndUpdateKnowledgeBases{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareKnowledgeBases{CapabilityState::NOT_SET};
+
+  CapabilityState m_sharePointKnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateSharePointKnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareSharePointKnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_useSharePointKnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_googleDriveKnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateGoogleDriveKnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareGoogleDriveKnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_useGoogleDriveKnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_webCrawlerKnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateWebCrawlerKnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareWebCrawlerKnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_useWebCrawlerKnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_s3KnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateS3KnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareS3KnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_useS3KnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_confluenceKnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateConfluenceKnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareConfluenceKnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_useConfluenceKnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_oneDriveKnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateOneDriveKnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareOneDriveKnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_useOneDriveKnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_qBusinessKnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateQBusinessKnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareQBusinessKnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_useQBusinessKnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_bedrockManagedKnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateBedrockManagedKnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareBedrockManagedKnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_useBedrockManagedKnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_boxKnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateBoxKnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareBoxKnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_useBoxKnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_iDCKnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateIDCKnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareIDCKnowledgeBase{CapabilityState::NOT_SET};
+
+  CapabilityState m_useIDCKnowledgeBase{CapabilityState::NOT_SET};
+
   CapabilityState m_action{CapabilityState::NOT_SET};
 
   CapabilityState m_genericHTTPAction{CapabilityState::NOT_SET};
@@ -4352,6 +5026,48 @@ class Capabilities {
   bool m_approveFlowShareRequestsHasBeenSet = false;
   bool m_useAgentWebSearchHasBeenSet = false;
   bool m_knowledgeBaseHasBeenSet = false;
+  bool m_createAndUpdateKnowledgeBasesHasBeenSet = false;
+  bool m_shareKnowledgeBasesHasBeenSet = false;
+  bool m_sharePointKnowledgeBaseHasBeenSet = false;
+  bool m_createAndUpdateSharePointKnowledgeBaseHasBeenSet = false;
+  bool m_shareSharePointKnowledgeBaseHasBeenSet = false;
+  bool m_useSharePointKnowledgeBaseHasBeenSet = false;
+  bool m_googleDriveKnowledgeBaseHasBeenSet = false;
+  bool m_createAndUpdateGoogleDriveKnowledgeBaseHasBeenSet = false;
+  bool m_shareGoogleDriveKnowledgeBaseHasBeenSet = false;
+  bool m_useGoogleDriveKnowledgeBaseHasBeenSet = false;
+  bool m_webCrawlerKnowledgeBaseHasBeenSet = false;
+  bool m_createAndUpdateWebCrawlerKnowledgeBaseHasBeenSet = false;
+  bool m_shareWebCrawlerKnowledgeBaseHasBeenSet = false;
+  bool m_useWebCrawlerKnowledgeBaseHasBeenSet = false;
+  bool m_s3KnowledgeBaseHasBeenSet = false;
+  bool m_createAndUpdateS3KnowledgeBaseHasBeenSet = false;
+  bool m_shareS3KnowledgeBaseHasBeenSet = false;
+  bool m_useS3KnowledgeBaseHasBeenSet = false;
+  bool m_confluenceKnowledgeBaseHasBeenSet = false;
+  bool m_createAndUpdateConfluenceKnowledgeBaseHasBeenSet = false;
+  bool m_shareConfluenceKnowledgeBaseHasBeenSet = false;
+  bool m_useConfluenceKnowledgeBaseHasBeenSet = false;
+  bool m_oneDriveKnowledgeBaseHasBeenSet = false;
+  bool m_createAndUpdateOneDriveKnowledgeBaseHasBeenSet = false;
+  bool m_shareOneDriveKnowledgeBaseHasBeenSet = false;
+  bool m_useOneDriveKnowledgeBaseHasBeenSet = false;
+  bool m_qBusinessKnowledgeBaseHasBeenSet = false;
+  bool m_createAndUpdateQBusinessKnowledgeBaseHasBeenSet = false;
+  bool m_shareQBusinessKnowledgeBaseHasBeenSet = false;
+  bool m_useQBusinessKnowledgeBaseHasBeenSet = false;
+  bool m_bedrockManagedKnowledgeBaseHasBeenSet = false;
+  bool m_createAndUpdateBedrockManagedKnowledgeBaseHasBeenSet = false;
+  bool m_shareBedrockManagedKnowledgeBaseHasBeenSet = false;
+  bool m_useBedrockManagedKnowledgeBaseHasBeenSet = false;
+  bool m_boxKnowledgeBaseHasBeenSet = false;
+  bool m_createAndUpdateBoxKnowledgeBaseHasBeenSet = false;
+  bool m_shareBoxKnowledgeBaseHasBeenSet = false;
+  bool m_useBoxKnowledgeBaseHasBeenSet = false;
+  bool m_iDCKnowledgeBaseHasBeenSet = false;
+  bool m_createAndUpdateIDCKnowledgeBaseHasBeenSet = false;
+  bool m_shareIDCKnowledgeBaseHasBeenSet = false;
+  bool m_useIDCKnowledgeBaseHasBeenSet = false;
   bool m_actionHasBeenSet = false;
   bool m_genericHTTPActionHasBeenSet = false;
   bool m_createAndUpdateGenericHTTPActionHasBeenSet = false;

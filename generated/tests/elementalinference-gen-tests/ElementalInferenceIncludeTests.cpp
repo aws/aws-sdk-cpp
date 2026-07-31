@@ -54,6 +54,7 @@
 #include <aws/elementalinference/model/ProfanityFilterMode.h>
 #include <aws/elementalinference/model/SubtitlingConfig.h>
 #include <aws/elementalinference/model/TagResourceRequest.h>
+#include <aws/elementalinference/model/TemplateGroup.h>
 #include <aws/elementalinference/model/TranscriptionLanguage.h>
 #include <aws/elementalinference/model/UntagResourceRequest.h>
 #include <aws/elementalinference/model/UpdateDictionaryRequest.h>

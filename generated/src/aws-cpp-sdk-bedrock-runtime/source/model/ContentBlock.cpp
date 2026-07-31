@@ -66,6 +66,14 @@ ContentBlock& ContentBlock::operator=(JsonView jsonValue) {
     m_searchResult = jsonValue.GetObject("searchResult");
     m_searchResultHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("toolAddition")) {
+    m_toolAddition = jsonValue.GetObject("toolAddition");
+    m_toolAdditionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("toolRemoval")) {
+    m_toolRemoval = jsonValue.GetObject("toolRemoval");
+    m_toolRemovalHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -118,6 +126,14 @@ JsonValue ContentBlock::Jsonize() const {
 
   if (m_searchResultHasBeenSet) {
     payload.WithObject("searchResult", m_searchResult.Jsonize());
+  }
+
+  if (m_toolAdditionHasBeenSet) {
+    payload.WithObject("toolAddition", m_toolAddition.Jsonize());
+  }
+
+  if (m_toolRemovalHasBeenSet) {
+    payload.WithObject("toolRemoval", m_toolRemoval.Jsonize());
   }
 
   return payload;

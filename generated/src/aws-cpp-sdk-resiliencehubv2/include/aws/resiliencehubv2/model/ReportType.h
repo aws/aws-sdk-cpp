@@ -10,7 +10,7 @@
 namespace Aws {
 namespace resiliencehubv2 {
 namespace Model {
-enum class ReportType { NOT_SET, FAILURE_MODE };
+enum class ReportType { NOT_SET, FAILURE_MODE, TESTING };
 
 namespace ReportTypeMapper {
 AWS_RESILIENCEHUBV2_API ReportType GetReportTypeForName(const Aws::String& name);

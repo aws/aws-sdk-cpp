@@ -157,6 +157,30 @@ class Analysis {
 
   ///@{
   /**
+   * <p>The ARNs of the topics associated with the analysis.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetTopicArns() const { return m_topicArns; }
+  inline bool TopicArnsHasBeenSet() const { return m_topicArnsHasBeenSet; }
+  template <typename TopicArnsT = Aws::Vector<Aws::String>>
+  void SetTopicArns(TopicArnsT&& value) {
+    m_topicArnsHasBeenSet = true;
+    m_topicArns = std::forward<TopicArnsT>(value);
+  }
+  template <typename TopicArnsT = Aws::Vector<Aws::String>>
+  Analysis& WithTopicArns(TopicArnsT&& value) {
+    SetTopicArns(std::forward<TopicArnsT>(value));
+    return *this;
+  }
+  template <typename TopicArnsT = Aws::String>
+  Analysis& AddTopicArns(TopicArnsT&& value) {
+    m_topicArnsHasBeenSet = true;
+    m_topicArns.emplace_back(std::forward<TopicArnsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ARN of the theme of the analysis.</p>
    */
   inline const Aws::String& GetThemeArn() const { return m_themeArn; }
@@ -246,6 +270,8 @@ class Analysis {
 
   Aws::Vector<Aws::String> m_dataSetArns;
 
+  Aws::Vector<Aws::String> m_topicArns;
+
   Aws::String m_themeArn;
 
   Aws::Utils::DateTime m_createdTime{};
@@ -259,6 +285,7 @@ class Analysis {
   bool m_statusHasBeenSet = false;
   bool m_errorsHasBeenSet = false;
   bool m_dataSetArnsHasBeenSet = false;
+  bool m_topicArnsHasBeenSet = false;
   bool m_themeArnHasBeenSet = false;
   bool m_createdTimeHasBeenSet = false;
   bool m_lastUpdatedTimeHasBeenSet = false;

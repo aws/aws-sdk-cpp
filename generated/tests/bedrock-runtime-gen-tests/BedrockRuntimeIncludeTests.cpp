@@ -226,9 +226,12 @@
 #include <aws/bedrock-runtime/model/Tag.h>
 #include <aws/bedrock-runtime/model/TokenUsage.h>
 #include <aws/bedrock-runtime/model/Tool.h>
+#include <aws/bedrock-runtime/model/ToolAdditionBlock.h>
 #include <aws/bedrock-runtime/model/ToolChoice.h>
 #include <aws/bedrock-runtime/model/ToolConfiguration.h>
 #include <aws/bedrock-runtime/model/ToolInputSchema.h>
+#include <aws/bedrock-runtime/model/ToolReference.h>
+#include <aws/bedrock-runtime/model/ToolRemovalBlock.h>
 #include <aws/bedrock-runtime/model/ToolResultBlock.h>
 #include <aws/bedrock-runtime/model/ToolResultBlockDelta.h>
 #include <aws/bedrock-runtime/model/ToolResultBlockStart.h>

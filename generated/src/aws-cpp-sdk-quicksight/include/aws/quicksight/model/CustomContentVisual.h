@@ -140,7 +140,7 @@ class CustomContentVisual {
   ///@{
   /**
    * <p>The dataset that is used to create the custom content visual. You can't
-   * create a visual without a dataset.</p>
+   * create a visual without a dataset or a topic.</p>
    */
   inline const Aws::String& GetDataSetIdentifier() const { return m_dataSetIdentifier; }
   inline bool DataSetIdentifierHasBeenSet() const { return m_dataSetIdentifierHasBeenSet; }
@@ -152,6 +152,25 @@ class CustomContentVisual {
   template <typename DataSetIdentifierT = Aws::String>
   CustomContentVisual& WithDataSetIdentifier(DataSetIdentifierT&& value) {
     SetDataSetIdentifier(std::forward<DataSetIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The topic that is used in the custom content visual. You can't create a
+   * visual without a dataset or a topic.</p>
+   */
+  inline const Aws::String& GetTopicIdentifier() const { return m_topicIdentifier; }
+  inline bool TopicIdentifierHasBeenSet() const { return m_topicIdentifierHasBeenSet; }
+  template <typename TopicIdentifierT = Aws::String>
+  void SetTopicIdentifier(TopicIdentifierT&& value) {
+    m_topicIdentifierHasBeenSet = true;
+    m_topicIdentifier = std::forward<TopicIdentifierT>(value);
+  }
+  template <typename TopicIdentifierT = Aws::String>
+  CustomContentVisual& WithTopicIdentifier(TopicIdentifierT&& value) {
+    SetTopicIdentifier(std::forward<TopicIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -186,6 +205,8 @@ class CustomContentVisual {
 
   Aws::String m_dataSetIdentifier;
 
+  Aws::String m_topicIdentifier;
+
   Aws::String m_visualContentAltText;
   bool m_visualIdHasBeenSet = false;
   bool m_titleHasBeenSet = false;
@@ -193,6 +214,7 @@ class CustomContentVisual {
   bool m_chartConfigurationHasBeenSet = false;
   bool m_actionsHasBeenSet = false;
   bool m_dataSetIdentifierHasBeenSet = false;
+  bool m_topicIdentifierHasBeenSet = false;
   bool m_visualContentAltTextHasBeenSet = false;
 };
 

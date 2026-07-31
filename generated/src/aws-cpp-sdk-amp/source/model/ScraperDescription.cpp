@@ -73,6 +73,13 @@ ScraperDescription& ScraperDescription::operator=(JsonView jsonValue) {
     m_roleConfiguration = jsonValue.GetObject("roleConfiguration");
     m_roleConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("exporters")) {
+    Aws::Utils::Array<JsonView> exportersJsonList = jsonValue.GetArray("exporters");
+    for (unsigned exportersIndex = 0; exportersIndex < exportersJsonList.GetLength(); ++exportersIndex) {
+      m_exporters.push_back(exportersJsonList[exportersIndex].AsObject());
+    }
+    m_exportersHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -133,6 +140,14 @@ JsonValue ScraperDescription::Jsonize() const {
 
   if (m_roleConfigurationHasBeenSet) {
     payload.WithObject("roleConfiguration", m_roleConfiguration.Jsonize());
+  }
+
+  if (m_exportersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> exportersJsonList(m_exporters.size());
+    for (unsigned exportersIndex = 0; exportersIndex < exportersJsonList.GetLength(); ++exportersIndex) {
+      exportersJsonList[exportersIndex].AsObject(m_exporters[exportersIndex].Jsonize());
+    }
+    payload.WithArray("exporters", std::move(exportersJsonList));
   }
 
   return payload;

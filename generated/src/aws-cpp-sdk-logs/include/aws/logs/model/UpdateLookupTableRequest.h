@@ -70,7 +70,8 @@ class UpdateLookupTableRequest : public CloudWatchLogsRequest {
   /**
    * <p>The new CSV content to replace the existing data. The first row must be a
    * header row with column names. The content must use UTF-8 encoding and not exceed
-   * 10 MB.</p>
+   * 10 MB.</p> <p>You must specify either <code>tableBody</code> or
+   * <code>queryId</code>, but not both.</p>
    */
   inline const Aws::String& GetTableBody() const { return m_tableBody; }
   inline bool TableBodyHasBeenSet() const { return m_tableBodyHasBeenSet; }
@@ -82,6 +83,26 @@ class UpdateLookupTableRequest : public CloudWatchLogsRequest {
   template <typename TableBodyT = Aws::String>
   UpdateLookupTableRequest& WithTableBody(TableBodyT&& value) {
     SetTableBody(std::forward<TableBodyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of a completed CloudWatch Logs query whose results replace the lookup
+   * table content.</p> <p>You must specify either <code>tableBody</code> or
+   * <code>queryId</code>, but not both.</p>
+   */
+  inline const Aws::String& GetQueryId() const { return m_queryId; }
+  inline bool QueryIdHasBeenSet() const { return m_queryIdHasBeenSet; }
+  template <typename QueryIdT = Aws::String>
+  void SetQueryId(QueryIdT&& value) {
+    m_queryIdHasBeenSet = true;
+    m_queryId = std::forward<QueryIdT>(value);
+  }
+  template <typename QueryIdT = Aws::String>
+  UpdateLookupTableRequest& WithQueryId(QueryIdT&& value) {
+    SetQueryId(std::forward<QueryIdT>(value));
     return *this;
   }
   ///@}
@@ -112,10 +133,13 @@ class UpdateLookupTableRequest : public CloudWatchLogsRequest {
 
   Aws::String m_tableBody;
 
+  Aws::String m_queryId;
+
   Aws::String m_kmsKeyId;
   bool m_lookupTableArnHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_tableBodyHasBeenSet = false;
+  bool m_queryIdHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
 };
 

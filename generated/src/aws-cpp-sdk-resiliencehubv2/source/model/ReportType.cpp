@@ -16,11 +16,14 @@ namespace Model {
 namespace ReportTypeMapper {
 
 static const int FAILURE_MODE_HASH = HashingUtils::HashString("FAILURE_MODE");
+static const int TESTING_HASH = HashingUtils::HashString("TESTING");
 
 ReportType GetReportTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == FAILURE_MODE_HASH) {
     return ReportType::FAILURE_MODE;
+  } else if (hashCode == TESTING_HASH) {
+    return ReportType::TESTING;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForReportType(ReportType enumValue) {
       return {};
     case ReportType::FAILURE_MODE:
       return "FAILURE_MODE";
+    case ReportType::TESTING:
+      return "TESTING";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

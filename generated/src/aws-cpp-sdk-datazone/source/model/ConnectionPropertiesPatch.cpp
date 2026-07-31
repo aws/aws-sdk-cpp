@@ -62,6 +62,10 @@ ConnectionPropertiesPatch& ConnectionPropertiesPatch::operator=(JsonView jsonVal
     m_vpcProperties = jsonValue.GetObject("vpcProperties");
     m_vpcPropertiesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("gitProperties")) {
+    m_gitProperties = jsonValue.GetObject("gitProperties");
+    m_gitPropertiesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -110,6 +114,10 @@ JsonValue ConnectionPropertiesPatch::Jsonize() const {
 
   if (m_vpcPropertiesHasBeenSet) {
     payload.WithObject("vpcProperties", m_vpcProperties.Jsonize());
+  }
+
+  if (m_gitPropertiesHasBeenSet) {
+    payload.WithObject("gitProperties", m_gitProperties.Jsonize());
   }
 
   return payload;

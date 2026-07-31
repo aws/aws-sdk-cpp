@@ -10,7 +10,7 @@
 namespace Aws {
 namespace TranscribeStreamingService {
 namespace Model {
-enum class MediaEncoding { NOT_SET, pcm, ogg_opus, flac };
+enum class MediaEncoding { NOT_SET, pcm, ogg_opus, flac, g711_alaw, g711_ulaw, g729 };
 
 namespace MediaEncodingMapper {
 AWS_TRANSCRIBESTREAMINGSERVICE_API MediaEncoding GetMediaEncodingForName(const Aws::String& name);

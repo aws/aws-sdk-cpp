@@ -29,6 +29,13 @@ TemplateSourceAnalysis& TemplateSourceAnalysis::operator=(JsonView jsonValue) {
     }
     m_dataSetReferencesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("TopicReferences")) {
+    Aws::Utils::Array<JsonView> topicReferencesJsonList = jsonValue.GetArray("TopicReferences");
+    for (unsigned topicReferencesIndex = 0; topicReferencesIndex < topicReferencesJsonList.GetLength(); ++topicReferencesIndex) {
+      m_topicReferences.push_back(topicReferencesJsonList[topicReferencesIndex].AsObject());
+    }
+    m_topicReferencesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -45,6 +52,14 @@ JsonValue TemplateSourceAnalysis::Jsonize() const {
       dataSetReferencesJsonList[dataSetReferencesIndex].AsObject(m_dataSetReferences[dataSetReferencesIndex].Jsonize());
     }
     payload.WithArray("DataSetReferences", std::move(dataSetReferencesJsonList));
+  }
+
+  if (m_topicReferencesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> topicReferencesJsonList(m_topicReferences.size());
+    for (unsigned topicReferencesIndex = 0; topicReferencesIndex < topicReferencesJsonList.GetLength(); ++topicReferencesIndex) {
+      topicReferencesJsonList[topicReferencesIndex].AsObject(m_topicReferences[topicReferencesIndex].Jsonize());
+    }
+    payload.WithArray("TopicReferences", std::move(topicReferencesJsonList));
   }
 
   return payload;

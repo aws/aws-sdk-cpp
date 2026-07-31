@@ -7,6 +7,7 @@
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/datazone/model/AmazonQPropertiesPatch.h>
 #include <aws/datazone/model/AthenaPropertiesPatch.h>
+#include <aws/datazone/model/GitPropertiesPatch.h>
 #include <aws/datazone/model/GluePropertiesPatch.h>
 #include <aws/datazone/model/IamPropertiesPatch.h>
 #include <aws/datazone/model/LakehousePropertiesPatch.h>
@@ -238,6 +239,24 @@ class ConnectionPropertiesPatch {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Git properties of a connection properties patch.</p>
+   */
+  inline const GitPropertiesPatch& GetGitProperties() const { return m_gitProperties; }
+  inline bool GitPropertiesHasBeenSet() const { return m_gitPropertiesHasBeenSet; }
+  template <typename GitPropertiesT = GitPropertiesPatch>
+  void SetGitProperties(GitPropertiesT&& value) {
+    m_gitPropertiesHasBeenSet = true;
+    m_gitProperties = std::forward<GitPropertiesT>(value);
+  }
+  template <typename GitPropertiesT = GitPropertiesPatch>
+  ConnectionPropertiesPatch& WithGitProperties(GitPropertiesT&& value) {
+    SetGitProperties(std::forward<GitPropertiesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   AthenaPropertiesPatch m_athenaProperties;
 
@@ -260,6 +279,8 @@ class ConnectionPropertiesPatch {
   LakehousePropertiesPatch m_lakehouseProperties;
 
   VpcPropertiesPatch m_vpcProperties;
+
+  GitPropertiesPatch m_gitProperties;
   bool m_athenaPropertiesHasBeenSet = false;
   bool m_gluePropertiesHasBeenSet = false;
   bool m_iamPropertiesHasBeenSet = false;
@@ -271,6 +292,7 @@ class ConnectionPropertiesPatch {
   bool m_mlflowPropertiesHasBeenSet = false;
   bool m_lakehousePropertiesHasBeenSet = false;
   bool m_vpcPropertiesHasBeenSet = false;
+  bool m_gitPropertiesHasBeenSet = false;
 };
 
 }  // namespace Model

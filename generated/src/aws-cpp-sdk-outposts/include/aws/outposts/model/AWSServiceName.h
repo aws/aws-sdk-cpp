@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Outposts {
 namespace Model {
-enum class AWSServiceName { NOT_SET, AWS, EC2, ELASTICACHE, ELB, RDS, ROUTE53 };
+enum class AWSServiceName { NOT_SET, AWS, EC2, EKS, ELASTICACHE, ELB, RDS, ROUTE53 };
 
 namespace AWSServiceNameMapper {
 AWS_OUTPOSTS_API AWSServiceName GetAWSServiceNameForName(const Aws::String& name);

@@ -90,6 +90,8 @@
 #include <aws/marketplace-catalog/model/OfferAvailabilityEndDateFilter.h>
 #include <aws/marketplace-catalog/model/OfferAvailabilityEndDateFilterDateRange.h>
 #include <aws/marketplace-catalog/model/OfferBuyerAccountsFilter.h>
+#include <aws/marketplace-catalog/model/OfferCreatedBySourceFilter.h>
+#include <aws/marketplace-catalog/model/OfferCreatedBySourceString.h>
 #include <aws/marketplace-catalog/model/OfferEntityIdFilter.h>
 #include <aws/marketplace-catalog/model/OfferFilters.h>
 #include <aws/marketplace-catalog/model/OfferLastModifiedDateFilter.h>
@@ -119,6 +121,9 @@
 #include <aws/marketplace-catalog/model/OfferStateFilter.h>
 #include <aws/marketplace-catalog/model/OfferStateString.h>
 #include <aws/marketplace-catalog/model/OfferSummary.h>
+#include <aws/marketplace-catalog/model/OfferTargetAgreementIdFilter.h>
+#include <aws/marketplace-catalog/model/OfferTargetAgreementIntentFilter.h>
+#include <aws/marketplace-catalog/model/OfferTargetAgreementIntentString.h>
 #include <aws/marketplace-catalog/model/OfferTargetingFilter.h>
 #include <aws/marketplace-catalog/model/OfferTargetingString.h>
 #include <aws/marketplace-catalog/model/OwnershipType.h>

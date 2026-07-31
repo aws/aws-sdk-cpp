@@ -22,7 +22,10 @@ enum class OfferSortBy {
   State,
   Targeting,
   LastModifiedDate,
-  OfferSetId
+  OfferSetId,
+  TargetAgreementId,
+  TargetAgreementIntent,
+  CreatedBySource
 };
 
 namespace OfferSortByMapper {

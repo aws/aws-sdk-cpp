@@ -23,7 +23,11 @@ namespace Model {
 
 /**
  * <p>Configuration settings for the handling of the stateful rule groups in a
- * firewall policy. </p><p><h3>See Also:</h3>   <a
+ * firewall policy. </p>  <p>Updating any setting in
+ * <code>StatefulEngineOptions</code> may require a restart of the stateful engine
+ * in order to apply the changes. When this occurs, existing connections will be
+ * treated according to your stream exception policy configuration.</p>
+ * <p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/StatefulEngineOptions">AWS
  * API Reference</a></p>
  */

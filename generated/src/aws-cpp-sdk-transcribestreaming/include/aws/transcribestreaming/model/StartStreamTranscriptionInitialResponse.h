@@ -12,6 +12,7 @@
 #include <aws/transcribestreaming/model/LanguageCode.h>
 #include <aws/transcribestreaming/model/MediaEncoding.h>
 #include <aws/transcribestreaming/model/PartialResultsStability.h>
+#include <aws/transcribestreaming/model/TranscriptFormat.h>
 #include <aws/transcribestreaming/model/VocabularyFilterMethod.h>
 
 #include <utility>
@@ -444,6 +445,22 @@ class StartStreamTranscriptionInitialResponse {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Provides the transcript format that you specified in your request.</p>
+   */
+  inline TranscriptFormat GetTranscriptFormat() const { return m_transcriptFormat; }
+  inline bool TranscriptFormatHasBeenSet() const { return m_transcriptFormatHasBeenSet; }
+  inline void SetTranscriptFormat(TranscriptFormat value) {
+    m_transcriptFormatHasBeenSet = true;
+    m_transcriptFormat = value;
+  }
+  inline StartStreamTranscriptionInitialResponse& WithTranscriptFormat(TranscriptFormat value) {
+    SetTranscriptFormat(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_requestId;
 
@@ -492,6 +509,8 @@ class StartStreamTranscriptionInitialResponse {
   Aws::String m_vocabularyFilterNames;
 
   int m_sessionResumeWindow{0};
+
+  TranscriptFormat m_transcriptFormat{TranscriptFormat::NOT_SET};
   bool m_requestIdHasBeenSet = false;
   bool m_languageCodeHasBeenSet = false;
   bool m_mediaSampleRateHertzHasBeenSet = false;
@@ -516,6 +535,7 @@ class StartStreamTranscriptionInitialResponse {
   bool m_vocabularyNamesHasBeenSet = false;
   bool m_vocabularyFilterNamesHasBeenSet = false;
   bool m_sessionResumeWindowHasBeenSet = false;
+  bool m_transcriptFormatHasBeenSet = false;
 };
 
 }  // namespace Model

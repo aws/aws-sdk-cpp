@@ -308,6 +308,65 @@ class AWS_BILLING_API BillingClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns a summary of Enterprise Support data aggregated across all accounts
+   * in the Enterprise Support profile.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/GetEnterpriseSupportChargeSummary">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetEnterpriseSupportChargeSummaryOutcome GetEnterpriseSupportChargeSummary(
+      const Model::GetEnterpriseSupportChargeSummaryRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetEnterpriseSupportChargeSummary that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename GetEnterpriseSupportChargeSummaryRequestT = Model::GetEnterpriseSupportChargeSummaryRequest>
+  Model::GetEnterpriseSupportChargeSummaryOutcomeCallable GetEnterpriseSupportChargeSummaryCallable(
+      const GetEnterpriseSupportChargeSummaryRequestT& request) const {
+    return SubmitCallable(&BillingClient::GetEnterpriseSupportChargeSummary, request);
+  }
+
+  /**
+   * An Async wrapper for GetEnterpriseSupportChargeSummary that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetEnterpriseSupportChargeSummaryRequestT = Model::GetEnterpriseSupportChargeSummaryRequest>
+  void GetEnterpriseSupportChargeSummaryAsync(const GetEnterpriseSupportChargeSummaryRequestT& request,
+                                              const GetEnterpriseSupportChargeSummaryResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BillingClient::GetEnterpriseSupportChargeSummary, request, handler, context);
+  }
+
+  /**
+   * <p>Returns Enterprise Support contract details.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/GetEnterpriseSupportContractDetails">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetEnterpriseSupportContractDetailsOutcome GetEnterpriseSupportContractDetails(
+      const Model::GetEnterpriseSupportContractDetailsRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetEnterpriseSupportContractDetails that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename GetEnterpriseSupportContractDetailsRequestT = Model::GetEnterpriseSupportContractDetailsRequest>
+  Model::GetEnterpriseSupportContractDetailsOutcomeCallable GetEnterpriseSupportContractDetailsCallable(
+      const GetEnterpriseSupportContractDetailsRequestT& request) const {
+    return SubmitCallable(&BillingClient::GetEnterpriseSupportContractDetails, request);
+  }
+
+  /**
+   * An Async wrapper for GetEnterpriseSupportContractDetails that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename GetEnterpriseSupportContractDetailsRequestT = Model::GetEnterpriseSupportContractDetailsRequest>
+  void GetEnterpriseSupportContractDetailsAsync(const GetEnterpriseSupportContractDetailsRequestT& request,
+                                                const GetEnterpriseSupportContractDetailsResponseReceivedHandler& handler,
+                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BillingClient::GetEnterpriseSupportContractDetails, request, handler, context);
+  }
+
+  /**
    * <p>Returns the resource-based policy document attached to the resource in
    * <code>JSON</code> format. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/GetResourcePolicy">AWS
@@ -364,6 +423,37 @@ class AWS_BILLING_API BillingClient : public Aws::Client::AWSJsonClient,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                              const ListBillingViewsRequestT& request = {}) const {
     return SubmitAsync(&BillingClient::ListBillingViews, request, handler, context);
+  }
+
+  /**
+   * <p>Returns Support-eligible spend broken down at linked account
+   * level.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListEnterpriseSupportLinkedAccountCharges">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListEnterpriseSupportLinkedAccountChargesOutcome ListEnterpriseSupportLinkedAccountCharges(
+      const Model::ListEnterpriseSupportLinkedAccountChargesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListEnterpriseSupportLinkedAccountCharges that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename ListEnterpriseSupportLinkedAccountChargesRequestT = Model::ListEnterpriseSupportLinkedAccountChargesRequest>
+  Model::ListEnterpriseSupportLinkedAccountChargesOutcomeCallable ListEnterpriseSupportLinkedAccountChargesCallable(
+      const ListEnterpriseSupportLinkedAccountChargesRequestT& request) const {
+    return SubmitCallable(&BillingClient::ListEnterpriseSupportLinkedAccountCharges, request);
+  }
+
+  /**
+   * An Async wrapper for ListEnterpriseSupportLinkedAccountCharges that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename ListEnterpriseSupportLinkedAccountChargesRequestT = Model::ListEnterpriseSupportLinkedAccountChargesRequest>
+  void ListEnterpriseSupportLinkedAccountChargesAsync(
+      const ListEnterpriseSupportLinkedAccountChargesRequestT& request,
+      const ListEnterpriseSupportLinkedAccountChargesResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BillingClient::ListEnterpriseSupportLinkedAccountCharges, request, handler, context);
   }
 
   /**

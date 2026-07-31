@@ -51,6 +51,26 @@ class UpdateFeedRequest : public ElementalInferenceRequest {
 
   ///@{
   /**
+   * <p>The ARN of an IAM role that Elemental Inference assumes to access resources
+   * in your account on your behalf. You can specify the existing role (to leave it
+   * unchanged) or a new role. You specify one access role for each feed. </p>
+   */
+  inline const Aws::String& GetAccessRoleArn() const { return m_accessRoleArn; }
+  inline bool AccessRoleArnHasBeenSet() const { return m_accessRoleArnHasBeenSet; }
+  template <typename AccessRoleArnT = Aws::String>
+  void SetAccessRoleArn(AccessRoleArnT&& value) {
+    m_accessRoleArnHasBeenSet = true;
+    m_accessRoleArn = std::forward<AccessRoleArnT>(value);
+  }
+  template <typename AccessRoleArnT = Aws::String>
+  UpdateFeedRequest& WithAccessRoleArn(AccessRoleArnT&& value) {
+    SetAccessRoleArn(std::forward<AccessRoleArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ID of the feed to update.</p>
    */
   inline const Aws::String& GetId() const { return m_id; }
@@ -94,10 +114,13 @@ class UpdateFeedRequest : public ElementalInferenceRequest {
  private:
   Aws::String m_name;
 
+  Aws::String m_accessRoleArn;
+
   Aws::String m_id;
 
   Aws::Vector<UpdateOutput> m_outputs;
   bool m_nameHasBeenSet = false;
+  bool m_accessRoleArnHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_outputsHasBeenSet = false;
 };

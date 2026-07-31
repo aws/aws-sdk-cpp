@@ -19,6 +19,10 @@ Aws::String CreateFeedRequest::SerializePayload() const {
     payload.WithString("name", m_name);
   }
 
+  if (m_accessRoleArnHasBeenSet) {
+    payload.WithString("accessRoleArn", m_accessRoleArn);
+  }
+
   if (m_outputsHasBeenSet) {
     Aws::Utils::Array<JsonValue> outputsJsonList(m_outputs.size());
     for (unsigned outputsIndex = 0; outputsIndex < outputsJsonList.GetLength(); ++outputsIndex) {

@@ -95,7 +95,7 @@ class ServiceSummary {
 
   ///@{
   /**
-   * <p>The AWS Regions where the service operates.</p>
+   * <p>The Regions where the service operates.</p>
    */
   inline const Aws::Vector<Aws::String>& GetRegions() const { return m_regions; }
   inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }

@@ -148,5 +148,9 @@ Aws::Http::HeaderValueCollection StartStreamTranscriptionRequest::GetRequestSpec
     ss.str("");
   }
 
+  if (m_transcriptFormatHasBeenSet && m_transcriptFormat != TranscriptFormat::NOT_SET) {
+    headers.emplace("x-amzn-transcribe-transcript-format", TranscriptFormatMapper::GetNameForTranscriptFormat(m_transcriptFormat));
+  }
+
   return headers;
 }

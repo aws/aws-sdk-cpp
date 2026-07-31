@@ -18,6 +18,7 @@ namespace ContainerAssociationStatusMapper {
 static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
 static const int CREATING_HASH = HashingUtils::HashString("CREATING");
 static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
 
 ContainerAssociationStatus GetContainerAssociationStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ ContainerAssociationStatus GetContainerAssociationStatusForName(const Aws::Strin
     return ContainerAssociationStatus::CREATING;
   } else if (hashCode == DELETING_HASH) {
     return ContainerAssociationStatus::DELETING;
+  } else if (hashCode == UPDATING_HASH) {
+    return ContainerAssociationStatus::UPDATING;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForContainerAssociationStatus(ContainerAssociationStatus enum
       return "CREATING";
     case ContainerAssociationStatus::DELETING:
       return "DELETING";
+    case ContainerAssociationStatus::UPDATING:
+      return "UPDATING";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

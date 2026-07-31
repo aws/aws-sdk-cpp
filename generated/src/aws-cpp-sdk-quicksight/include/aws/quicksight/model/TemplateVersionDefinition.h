@@ -17,6 +17,7 @@
 #include <aws/quicksight/model/SheetDefinition.h>
 #include <aws/quicksight/model/StaticFile.h>
 #include <aws/quicksight/model/TooltipSheetDefinition.h>
+#include <aws/quicksight/model/TopicConfiguration.h>
 
 #include <utility>
 
@@ -63,6 +64,31 @@ class TemplateVersionDefinition {
   TemplateVersionDefinition& AddDataSetConfigurations(DataSetConfigurationsT&& value) {
     m_dataSetConfigurationsHasBeenSet = true;
     m_dataSetConfigurations.emplace_back(std::forward<DataSetConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An array of topic configurations. These configurations define the required
+   * columns for each topic used within a template.</p>
+   */
+  inline const Aws::Vector<TopicConfiguration>& GetTopicConfigurations() const { return m_topicConfigurations; }
+  inline bool TopicConfigurationsHasBeenSet() const { return m_topicConfigurationsHasBeenSet; }
+  template <typename TopicConfigurationsT = Aws::Vector<TopicConfiguration>>
+  void SetTopicConfigurations(TopicConfigurationsT&& value) {
+    m_topicConfigurationsHasBeenSet = true;
+    m_topicConfigurations = std::forward<TopicConfigurationsT>(value);
+  }
+  template <typename TopicConfigurationsT = Aws::Vector<TopicConfiguration>>
+  TemplateVersionDefinition& WithTopicConfigurations(TopicConfigurationsT&& value) {
+    SetTopicConfigurations(std::forward<TopicConfigurationsT>(value));
+    return *this;
+  }
+  template <typename TopicConfigurationsT = TopicConfiguration>
+  TemplateVersionDefinition& AddTopicConfigurations(TopicConfigurationsT&& value) {
+    m_topicConfigurationsHasBeenSet = true;
+    m_topicConfigurations.emplace_back(std::forward<TopicConfigurationsT>(value));
     return *this;
   }
   ///@}
@@ -295,6 +321,8 @@ class TemplateVersionDefinition {
  private:
   Aws::Vector<DataSetConfiguration> m_dataSetConfigurations;
 
+  Aws::Vector<TopicConfiguration> m_topicConfigurations;
+
   Aws::Vector<SheetDefinition> m_sheets;
 
   Aws::Vector<TooltipSheetDefinition> m_tooltipSheets;
@@ -315,6 +343,7 @@ class TemplateVersionDefinition {
 
   Aws::Vector<StaticFile> m_staticFiles;
   bool m_dataSetConfigurationsHasBeenSet = false;
+  bool m_topicConfigurationsHasBeenSet = false;
   bool m_sheetsHasBeenSet = false;
   bool m_tooltipSheetsHasBeenSet = false;
   bool m_calculatedFieldsHasBeenSet = false;

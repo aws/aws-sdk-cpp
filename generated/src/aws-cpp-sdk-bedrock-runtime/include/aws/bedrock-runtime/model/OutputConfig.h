@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
 #include <aws/bedrock-runtime/model/OutputFormat.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
 
@@ -52,9 +53,36 @@ class OutputConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The effort level for the model to use when generating a response. Higher
+   * effort levels allow the model to spend more time reasoning before responding.
+   * Supported values are <code>low</code>, <code>medium</code>, <code>high</code>,
+   * <code>xhigh</code>, and <code>max</code>.</p>  <p>When extended thinking
+   * is disabled, the effort level is capped at <code>high</code>. Use effort
+   * <code>high</code> or below, or enable thinking to use higher effort levels.</p>
+   *
+   */
+  inline const Aws::String& GetEffort() const { return m_effort; }
+  inline bool EffortHasBeenSet() const { return m_effortHasBeenSet; }
+  template <typename EffortT = Aws::String>
+  void SetEffort(EffortT&& value) {
+    m_effortHasBeenSet = true;
+    m_effort = std::forward<EffortT>(value);
+  }
+  template <typename EffortT = Aws::String>
+  OutputConfig& WithEffort(EffortT&& value) {
+    SetEffort(std::forward<EffortT>(value));
+    return *this;
+  }
+  ///@}
  private:
   OutputFormat m_textFormat;
+
+  Aws::String m_effort;
   bool m_textFormatHasBeenSet = false;
+  bool m_effortHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -7,6 +7,7 @@
 #include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
 #include <aws/marketplace-catalog/model/OfferAvailabilityEndDateFilter.h>
 #include <aws/marketplace-catalog/model/OfferBuyerAccountsFilter.h>
+#include <aws/marketplace-catalog/model/OfferCreatedBySourceFilter.h>
 #include <aws/marketplace-catalog/model/OfferEntityIdFilter.h>
 #include <aws/marketplace-catalog/model/OfferLastModifiedDateFilter.h>
 #include <aws/marketplace-catalog/model/OfferNameFilter.h>
@@ -15,6 +16,8 @@
 #include <aws/marketplace-catalog/model/OfferResaleAuthorizationIdFilter.h>
 #include <aws/marketplace-catalog/model/OfferSetIdFilter.h>
 #include <aws/marketplace-catalog/model/OfferStateFilter.h>
+#include <aws/marketplace-catalog/model/OfferTargetAgreementIdFilter.h>
+#include <aws/marketplace-catalog/model/OfferTargetAgreementIntentFilter.h>
 #include <aws/marketplace-catalog/model/OfferTargetingFilter.h>
 
 #include <utility>
@@ -242,6 +245,60 @@ class OfferFilters {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Allows filtering on the <code>TargetAgreementId</code> of an offer.</p>
+   */
+  inline const OfferTargetAgreementIdFilter& GetTargetAgreementId() const { return m_targetAgreementId; }
+  inline bool TargetAgreementIdHasBeenSet() const { return m_targetAgreementIdHasBeenSet; }
+  template <typename TargetAgreementIdT = OfferTargetAgreementIdFilter>
+  void SetTargetAgreementId(TargetAgreementIdT&& value) {
+    m_targetAgreementIdHasBeenSet = true;
+    m_targetAgreementId = std::forward<TargetAgreementIdT>(value);
+  }
+  template <typename TargetAgreementIdT = OfferTargetAgreementIdFilter>
+  OfferFilters& WithTargetAgreementId(TargetAgreementIdT&& value) {
+    SetTargetAgreementId(std::forward<TargetAgreementIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Allows filtering on the <code>TargetAgreementIntent</code> of an offer.</p>
+   */
+  inline const OfferTargetAgreementIntentFilter& GetTargetAgreementIntent() const { return m_targetAgreementIntent; }
+  inline bool TargetAgreementIntentHasBeenSet() const { return m_targetAgreementIntentHasBeenSet; }
+  template <typename TargetAgreementIntentT = OfferTargetAgreementIntentFilter>
+  void SetTargetAgreementIntent(TargetAgreementIntentT&& value) {
+    m_targetAgreementIntentHasBeenSet = true;
+    m_targetAgreementIntent = std::forward<TargetAgreementIntentT>(value);
+  }
+  template <typename TargetAgreementIntentT = OfferTargetAgreementIntentFilter>
+  OfferFilters& WithTargetAgreementIntent(TargetAgreementIntentT&& value) {
+    SetTargetAgreementIntent(std::forward<TargetAgreementIntentT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Allows filtering on the <code>CreatedBySource</code> of an offer.</p>
+   */
+  inline const OfferCreatedBySourceFilter& GetCreatedBySource() const { return m_createdBySource; }
+  inline bool CreatedBySourceHasBeenSet() const { return m_createdBySourceHasBeenSet; }
+  template <typename CreatedBySourceT = OfferCreatedBySourceFilter>
+  void SetCreatedBySource(CreatedBySourceT&& value) {
+    m_createdBySourceHasBeenSet = true;
+    m_createdBySource = std::forward<CreatedBySourceT>(value);
+  }
+  template <typename CreatedBySourceT = OfferCreatedBySourceFilter>
+  OfferFilters& WithCreatedBySource(CreatedBySourceT&& value) {
+    SetCreatedBySource(std::forward<CreatedBySourceT>(value));
+    return *this;
+  }
+  ///@}
  private:
   OfferEntityIdFilter m_entityId;
 
@@ -264,6 +321,12 @@ class OfferFilters {
   OfferLastModifiedDateFilter m_lastModifiedDate;
 
   OfferSetIdFilter m_offerSetId;
+
+  OfferTargetAgreementIdFilter m_targetAgreementId;
+
+  OfferTargetAgreementIntentFilter m_targetAgreementIntent;
+
+  OfferCreatedBySourceFilter m_createdBySource;
   bool m_entityIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_productIdHasBeenSet = false;
@@ -275,6 +338,9 @@ class OfferFilters {
   bool m_targetingHasBeenSet = false;
   bool m_lastModifiedDateHasBeenSet = false;
   bool m_offerSetIdHasBeenSet = false;
+  bool m_targetAgreementIdHasBeenSet = false;
+  bool m_targetAgreementIntentHasBeenSet = false;
+  bool m_createdBySourceHasBeenSet = false;
 };
 
 }  // namespace Model

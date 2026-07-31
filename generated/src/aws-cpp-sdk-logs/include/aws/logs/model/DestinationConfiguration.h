@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
+#include <aws/logs/model/LookupTableConfiguration.h>
 #include <aws/logs/model/S3Configuration.h>
 
 #include <utility>
@@ -50,9 +51,32 @@ class DestinationConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration for delivering query results to a lookup table. The query
+   * results automatically populate or refresh the specified lookup table on each
+   * scheduled execution.</p>
+   */
+  inline const LookupTableConfiguration& GetLookupTableConfiguration() const { return m_lookupTableConfiguration; }
+  inline bool LookupTableConfigurationHasBeenSet() const { return m_lookupTableConfigurationHasBeenSet; }
+  template <typename LookupTableConfigurationT = LookupTableConfiguration>
+  void SetLookupTableConfiguration(LookupTableConfigurationT&& value) {
+    m_lookupTableConfigurationHasBeenSet = true;
+    m_lookupTableConfiguration = std::forward<LookupTableConfigurationT>(value);
+  }
+  template <typename LookupTableConfigurationT = LookupTableConfiguration>
+  DestinationConfiguration& WithLookupTableConfiguration(LookupTableConfigurationT&& value) {
+    SetLookupTableConfiguration(std::forward<LookupTableConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   S3Configuration m_s3Configuration;
+
+  LookupTableConfiguration m_lookupTableConfiguration;
   bool m_s3ConfigurationHasBeenSet = false;
+  bool m_lookupTableConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

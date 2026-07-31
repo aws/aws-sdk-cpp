@@ -10,7 +10,7 @@
 namespace Aws {
 namespace QuickSight {
 namespace Model {
-enum class FilterClass { NOT_SET, ENFORCED_VALUE_FILTER, CONDITIONAL_VALUE_FILTER, NAMED_VALUE_FILTER };
+enum class FilterClass { NOT_SET, ENFORCED_VALUE_FILTER, CONDITIONAL_VALUE_FILTER, NAMED_VALUE_FILTER, DASHBOARD_DEFAULT_FILTER };
 
 namespace FilterClassMapper {
 AWS_QUICKSIGHT_API FilterClass GetFilterClassForName(const Aws::String& name);

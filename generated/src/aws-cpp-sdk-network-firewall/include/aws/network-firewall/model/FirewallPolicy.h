@@ -192,8 +192,12 @@ class FirewallPolicy {
    * rules. The stateful default action is optional, and is only valid when using the
    * strict rule order.</p> <p>Valid values of the stateful default action:</p> <ul>
    * <li> <p>aws:drop_strict</p> </li> <li> <p>aws:drop_established</p> </li> <li>
-   * <p>aws:alert_strict</p> </li> <li> <p>aws:alert_established</p> </li> </ul>
-   * <p>For more information, see <a
+   * <p>aws:alert_strict</p> </li> <li> <p>aws:alert_established</p> </li> <li>
+   * <p>aws:drop_established_app_layer</p> </li> <li>
+   * <p>aws:alert_established_app_layer</p> </li> <li>
+   * <p>aws:drop_established_app_layer_to_server</p> </li> <li>
+   * <p>aws:alert_established_app_layer_to_server</p> </li> </ul> <p>For more
+   * information, see <a
    * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html#suricata-strict-rule-evaluation-order.html">Strict
    * evaluation order</a> in the <i>Network Firewall Developer Guide</i>. </p>
    */

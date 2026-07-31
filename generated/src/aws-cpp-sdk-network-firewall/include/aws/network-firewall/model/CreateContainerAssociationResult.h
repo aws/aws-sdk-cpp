@@ -86,8 +86,9 @@ class CreateContainerAssociationResult {
 
   ///@{
   /**
-   * <p>The type of container orchestration platform. Either <code>ECS</code> or
-   * <code>EKS</code>.</p>
+   * <p>The container type. Valid values:</p> <ul> <li> <p> <code>ECS</code> - Amazon
+   * Elastic Container Service</p> </li> <li> <p> <code>EKS</code> - Amazon Elastic
+   * Kubernetes Service</p> </li> </ul>
    */
   inline ContainerMonitoringType GetType() const { return m_type; }
   inline void SetType(ContainerMonitoringType value) {
@@ -102,7 +103,7 @@ class CreateContainerAssociationResult {
 
   ///@{
   /**
-   * <p>The container monitoring configurations for this container association.</p>
+   * <p>The monitoring configurations for the container association.</p>
    */
   inline const Aws::Vector<ContainerMonitoringConfiguration>& GetContainerMonitoringConfigurations() const {
     return m_containerMonitoringConfigurations;
@@ -127,7 +128,8 @@ class CreateContainerAssociationResult {
 
   ///@{
   /**
-   * <p>The current status of the container association.</p>
+   * <p>The current status of the container association. For a new container
+   * association, the status is <code>CREATING</code>.</p>
    */
   inline ContainerAssociationStatus GetStatus() const { return m_status; }
   inline void SetStatus(ContainerAssociationStatus value) {
@@ -142,7 +144,7 @@ class CreateContainerAssociationResult {
 
   ///@{
   /**
-   * <p>The key:value pairs associated with the resource.</p>
+   * <p>The key:value pairs to associate with the resource.</p>
    */
   inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
   template <typename TagsT = Aws::Vector<Tag>>
@@ -167,12 +169,12 @@ class CreateContainerAssociationResult {
   /**
    * <p>A token used for optimistic locking. Network Firewall returns a token to your
    * requests that access the container association. The token marks the state of the
-   * container association resource at the time of the request. To make an update to
-   * the container association, provide the token in your request. Network Firewall
-   * uses the token to ensure that the container association hasn't changed since you
-   * last retrieved it. If it has changed, the operation fails with an
-   * <code>InvalidTokenException</code>. If this happens, retrieve the container
-   * association again to get a current copy of it with a new token. Reapply your
+   * container association resource at the time of the request.</p> <p>To make
+   * changes to the container association, you provide the token in your request.
+   * Network Firewall uses the token to ensure that the container association hasn't
+   * changed since you last retrieved it. If it has changed, the operation fails with
+   * an <code>InvalidTokenException</code>. If this happens, retrieve the container
+   * association again to get a current copy of it with a current token. Reapply your
    * changes as needed, then try the operation again using the new token.</p>
    */
   inline const Aws::String& GetUpdateToken() const { return m_updateToken; }

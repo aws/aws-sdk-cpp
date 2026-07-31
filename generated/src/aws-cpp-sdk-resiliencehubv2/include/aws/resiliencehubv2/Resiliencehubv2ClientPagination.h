@@ -13,6 +13,7 @@
 #include <aws/resiliencehubv2/model/ListInputSourcesPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListPoliciesPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListReportsPaginationTraits.h>
+#include <aws/resiliencehubv2/model/ListResolvedTestRunTargetResourcesPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListResourcesPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListServiceEventsPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListServiceFunctionsPaginationTraits.h>
@@ -20,6 +21,11 @@
 #include <aws/resiliencehubv2/model/ListServicesPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListSystemEventsPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListSystemsPaginationTraits.h>
+#include <aws/resiliencehubv2/model/ListTestRunEventsPaginationTraits.h>
+#include <aws/resiliencehubv2/model/ListTestRunSourcesPaginationTraits.h>
+#include <aws/resiliencehubv2/model/ListTestRunsPaginationTraits.h>
+#include <aws/resiliencehubv2/model/ListTestSourcesPaginationTraits.h>
+#include <aws/resiliencehubv2/model/ListTestsPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListUserJourneysPaginationTraits.h>
 
 namespace Aws {
@@ -41,6 +47,9 @@ using ListPoliciesPaginator = Aws::Utils::Pagination::Paginator<Resiliencehubv2C
                                                                 Pagination::ListPoliciesPaginationTraits<Resiliencehubv2Client>>;
 using ListReportsPaginator = Aws::Utils::Pagination::Paginator<Resiliencehubv2Client, Model::ListReportsRequest,
                                                                Pagination::ListReportsPaginationTraits<Resiliencehubv2Client>>;
+using ListResolvedTestRunTargetResourcesPaginator =
+    Aws::Utils::Pagination::Paginator<Resiliencehubv2Client, Model::ListResolvedTestRunTargetResourcesRequest,
+                                      Pagination::ListResolvedTestRunTargetResourcesPaginationTraits<Resiliencehubv2Client>>;
 using ListResourcesPaginator = Aws::Utils::Pagination::Paginator<Resiliencehubv2Client, Model::ListResourcesRequest,
                                                                  Pagination::ListResourcesPaginationTraits<Resiliencehubv2Client>>;
 using ListServiceEventsPaginator = Aws::Utils::Pagination::Paginator<Resiliencehubv2Client, Model::ListServiceEventsRequest,
@@ -57,6 +66,17 @@ using ListSystemEventsPaginator = Aws::Utils::Pagination::Paginator<Resiliencehu
                                                                     Pagination::ListSystemEventsPaginationTraits<Resiliencehubv2Client>>;
 using ListSystemsPaginator = Aws::Utils::Pagination::Paginator<Resiliencehubv2Client, Model::ListSystemsRequest,
                                                                Pagination::ListSystemsPaginationTraits<Resiliencehubv2Client>>;
+using ListTestRunEventsPaginator = Aws::Utils::Pagination::Paginator<Resiliencehubv2Client, Model::ListTestRunEventsRequest,
+                                                                     Pagination::ListTestRunEventsPaginationTraits<Resiliencehubv2Client>>;
+using ListTestRunsPaginator = Aws::Utils::Pagination::Paginator<Resiliencehubv2Client, Model::ListTestRunsRequest,
+                                                                Pagination::ListTestRunsPaginationTraits<Resiliencehubv2Client>>;
+using ListTestRunSourcesPaginator =
+    Aws::Utils::Pagination::Paginator<Resiliencehubv2Client, Model::ListTestRunSourcesRequest,
+                                      Pagination::ListTestRunSourcesPaginationTraits<Resiliencehubv2Client>>;
+using ListTestsPaginator = Aws::Utils::Pagination::Paginator<Resiliencehubv2Client, Model::ListTestsRequest,
+                                                             Pagination::ListTestsPaginationTraits<Resiliencehubv2Client>>;
+using ListTestSourcesPaginator = Aws::Utils::Pagination::Paginator<Resiliencehubv2Client, Model::ListTestSourcesRequest,
+                                                                   Pagination::ListTestSourcesPaginationTraits<Resiliencehubv2Client>>;
 using ListUserJourneysPaginator = Aws::Utils::Pagination::Paginator<Resiliencehubv2Client, Model::ListUserJourneysRequest,
                                                                     Pagination::ListUserJourneysPaginationTraits<Resiliencehubv2Client>>;
 

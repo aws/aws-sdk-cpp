@@ -12,6 +12,7 @@
 #include <aws/quicksight/model/ResourceStatus.h>
 #include <aws/quicksight/model/Sheet.h>
 #include <aws/quicksight/model/TemplateError.h>
+#include <aws/quicksight/model/TopicConfiguration.h>
 
 #include <utility>
 
@@ -145,6 +146,32 @@ class TemplateVersion {
 
   ///@{
   /**
+   * <p>Schema of the topic identified by the placeholder. Any dashboard created from
+   * this template should be bound to new topics matching the same schema described
+   * through this API operation.</p>
+   */
+  inline const Aws::Vector<TopicConfiguration>& GetTopicConfigurations() const { return m_topicConfigurations; }
+  inline bool TopicConfigurationsHasBeenSet() const { return m_topicConfigurationsHasBeenSet; }
+  template <typename TopicConfigurationsT = Aws::Vector<TopicConfiguration>>
+  void SetTopicConfigurations(TopicConfigurationsT&& value) {
+    m_topicConfigurationsHasBeenSet = true;
+    m_topicConfigurations = std::forward<TopicConfigurationsT>(value);
+  }
+  template <typename TopicConfigurationsT = Aws::Vector<TopicConfiguration>>
+  TemplateVersion& WithTopicConfigurations(TopicConfigurationsT&& value) {
+    SetTopicConfigurations(std::forward<TopicConfigurationsT>(value));
+    return *this;
+  }
+  template <typename TopicConfigurationsT = TopicConfiguration>
+  TemplateVersion& AddTopicConfigurations(TopicConfigurationsT&& value) {
+    m_topicConfigurationsHasBeenSet = true;
+    m_topicConfigurations.emplace_back(std::forward<TopicConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The description of the template.</p>
    */
   inline const Aws::String& GetDescription() const { return m_description; }
@@ -233,6 +260,8 @@ class TemplateVersion {
 
   Aws::Vector<DataSetConfiguration> m_dataSetConfigurations;
 
+  Aws::Vector<TopicConfiguration> m_topicConfigurations;
+
   Aws::String m_description;
 
   Aws::String m_sourceEntityArn;
@@ -245,6 +274,7 @@ class TemplateVersion {
   bool m_versionNumberHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_dataSetConfigurationsHasBeenSet = false;
+  bool m_topicConfigurationsHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_sourceEntityArnHasBeenSet = false;
   bool m_themeArnHasBeenSet = false;

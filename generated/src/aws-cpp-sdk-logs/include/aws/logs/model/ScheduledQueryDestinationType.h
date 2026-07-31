@@ -10,7 +10,7 @@
 namespace Aws {
 namespace CloudWatchLogs {
 namespace Model {
-enum class ScheduledQueryDestinationType { NOT_SET, S3 };
+enum class ScheduledQueryDestinationType { NOT_SET, S3, LOOKUP_TABLE };
 
 namespace ScheduledQueryDestinationTypeMapper {
 AWS_CLOUDWATCHLOGS_API ScheduledQueryDestinationType GetScheduledQueryDestinationTypeForName(const Aws::String& name);

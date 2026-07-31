@@ -157,6 +157,24 @@ class InsightVisual {
 
   ///@{
   /**
+   * <p>The topic that is used in the insight visual.</p>
+   */
+  inline const Aws::String& GetTopicIdentifier() const { return m_topicIdentifier; }
+  inline bool TopicIdentifierHasBeenSet() const { return m_topicIdentifierHasBeenSet; }
+  template <typename TopicIdentifierT = Aws::String>
+  void SetTopicIdentifier(TopicIdentifierT&& value) {
+    m_topicIdentifierHasBeenSet = true;
+    m_topicIdentifier = std::forward<TopicIdentifierT>(value);
+  }
+  template <typename TopicIdentifierT = Aws::String>
+  InsightVisual& WithTopicIdentifier(TopicIdentifierT&& value) {
+    SetTopicIdentifier(std::forward<TopicIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The alt text for the visual.</p>
    */
   inline const Aws::String& GetVisualContentAltText() const { return m_visualContentAltText; }
@@ -185,6 +203,8 @@ class InsightVisual {
 
   Aws::String m_dataSetIdentifier;
 
+  Aws::String m_topicIdentifier;
+
   Aws::String m_visualContentAltText;
   bool m_visualIdHasBeenSet = false;
   bool m_titleHasBeenSet = false;
@@ -192,6 +212,7 @@ class InsightVisual {
   bool m_insightConfigurationHasBeenSet = false;
   bool m_actionsHasBeenSet = false;
   bool m_dataSetIdentifierHasBeenSet = false;
+  bool m_topicIdentifierHasBeenSet = false;
   bool m_visualContentAltTextHasBeenSet = false;
 };
 

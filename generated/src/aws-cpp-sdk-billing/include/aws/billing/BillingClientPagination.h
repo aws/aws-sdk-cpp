@@ -7,6 +7,7 @@
 #include <aws/billing/BillingClient.h>
 #include <aws/billing/model/GetCreditAllocationHistoryPaginationTraits.h>
 #include <aws/billing/model/ListBillingViewsPaginationTraits.h>
+#include <aws/billing/model/ListEnterpriseSupportLinkedAccountChargesPaginationTraits.h>
 #include <aws/billing/model/ListSourceViewsForBillingViewPaginationTraits.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
@@ -18,6 +19,9 @@ using GetCreditAllocationHistoryPaginator =
                                       Pagination::GetCreditAllocationHistoryPaginationTraits<BillingClient>>;
 using ListBillingViewsPaginator = Aws::Utils::Pagination::Paginator<BillingClient, Model::ListBillingViewsRequest,
                                                                     Pagination::ListBillingViewsPaginationTraits<BillingClient>>;
+using ListEnterpriseSupportLinkedAccountChargesPaginator =
+    Aws::Utils::Pagination::Paginator<BillingClient, Model::ListEnterpriseSupportLinkedAccountChargesRequest,
+                                      Pagination::ListEnterpriseSupportLinkedAccountChargesPaginationTraits<BillingClient>>;
 using ListSourceViewsForBillingViewPaginator =
     Aws::Utils::Pagination::Paginator<BillingClient, Model::ListSourceViewsForBillingViewRequest,
                                       Pagination::ListSourceViewsForBillingViewPaginationTraits<BillingClient>>;

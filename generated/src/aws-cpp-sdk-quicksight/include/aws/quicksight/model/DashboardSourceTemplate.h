@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/DataSetReference.h>
+#include <aws/quicksight/model/TopicReference.h>
 
 #include <utility>
 
@@ -59,6 +60,30 @@ class DashboardSourceTemplate {
 
   ///@{
   /**
+   * <p>The topic references for the source template of a dashboard.</p>
+   */
+  inline const Aws::Vector<TopicReference>& GetTopicReferences() const { return m_topicReferences; }
+  inline bool TopicReferencesHasBeenSet() const { return m_topicReferencesHasBeenSet; }
+  template <typename TopicReferencesT = Aws::Vector<TopicReference>>
+  void SetTopicReferences(TopicReferencesT&& value) {
+    m_topicReferencesHasBeenSet = true;
+    m_topicReferences = std::forward<TopicReferencesT>(value);
+  }
+  template <typename TopicReferencesT = Aws::Vector<TopicReference>>
+  DashboardSourceTemplate& WithTopicReferences(TopicReferencesT&& value) {
+    SetTopicReferences(std::forward<TopicReferencesT>(value));
+    return *this;
+  }
+  template <typename TopicReferencesT = TopicReference>
+  DashboardSourceTemplate& AddTopicReferences(TopicReferencesT&& value) {
+    m_topicReferencesHasBeenSet = true;
+    m_topicReferences.emplace_back(std::forward<TopicReferencesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Amazon Resource Name (ARN) of the resource.</p>
    */
   inline const Aws::String& GetArn() const { return m_arn; }
@@ -77,8 +102,11 @@ class DashboardSourceTemplate {
  private:
   Aws::Vector<DataSetReference> m_dataSetReferences;
 
+  Aws::Vector<TopicReference> m_topicReferences;
+
   Aws::String m_arn;
   bool m_dataSetReferencesHasBeenSet = false;
+  bool m_topicReferencesHasBeenSet = false;
   bool m_arnHasBeenSet = false;
 };
 

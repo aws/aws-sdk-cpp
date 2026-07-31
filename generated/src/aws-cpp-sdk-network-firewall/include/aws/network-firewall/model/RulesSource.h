@@ -87,7 +87,7 @@ class RulesSource {
    * in a stateful rule group. Use this option to specify simple Suricata rules with
    * protocol, source and destination, ports, direction, and rule options. For
    * information about the Suricata <code>Rules</code> format, see <a
-   * href="https://suricata.readthedocs.io/en/suricata-7.0.3/rules/intro.html">Rules
+   * href="https://suricata.readthedocs.io/en/suricata-7.0.8/rules/intro.html">Rules
    * Format</a>. </p>
    */
   inline const Aws::Vector<StatefulRule>& GetStatefulRules() const { return m_statefulRules; }

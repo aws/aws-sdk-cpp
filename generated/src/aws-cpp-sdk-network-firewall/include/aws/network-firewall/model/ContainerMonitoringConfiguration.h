@@ -22,9 +22,9 @@ namespace NetworkFirewall {
 namespace Model {
 
 /**
- * <p>Defines a container cluster to monitor, along with optional attribute filters
- * that narrow the scope of monitored containers within the cluster.</p><p><h3>See
- * Also:</h3>   <a
+ * <p>Contains the monitoring configuration for a single cluster in a container
+ * association. Specifies the cluster ARN and optional attribute filters to narrow
+ * which containers are tracked.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ContainerMonitoringConfiguration">AWS
  * API Reference</a></p>
  */
@@ -37,7 +37,8 @@ class ContainerMonitoringConfiguration {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the container cluster to monitor.</p>
+   * <p>The ARN of the Amazon ECS or Amazon EKS cluster to monitor. The cluster must
+   * be in the same Region and account as the container association.</p>
    */
   inline const Aws::String& GetClusterArn() const { return m_clusterArn; }
   inline bool ClusterArnHasBeenSet() const { return m_clusterArnHasBeenSet; }
@@ -55,8 +56,9 @@ class ContainerMonitoringConfiguration {
 
   ///@{
   /**
-   * <p>A list of key-value pairs that filter which containers within the cluster are
-   * monitored. Only containers that match the specified attributes are included.</p>
+   * <p>Key-value pairs that filter which containers are tracked. For Amazon EKS, you
+   * can filter by namespace and Kubernetes labels. For Amazon ECS, you can filter by
+   * container instance attributes (EC2 launch type only).</p>
    */
   inline const Aws::Vector<ContainerAttribute>& GetAttributeFilters() const { return m_attributeFilters; }
   inline bool AttributeFiltersHasBeenSet() const { return m_attributeFiltersHasBeenSet; }

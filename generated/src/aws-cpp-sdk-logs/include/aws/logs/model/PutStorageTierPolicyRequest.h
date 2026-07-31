@@ -32,8 +32,9 @@ class PutStorageTierPolicyRequest : public CloudWatchLogsRequest {
 
   ///@{
   /**
-   * <p>The storage tier to set for the account. Valid values are
-   * <code>STANDARD</code> and <code>INTELLIGENT_TIERING</code>.</p>
+   * <p>The storage tier to set for the account. Use <code>INTELLIGENT_TIERING</code>
+   * to automatically optimize storage costs by moving log data to the appropriate
+   * tier based on access frequency.</p>
    */
   inline StorageTier GetStorageTier() const { return m_storageTier; }
   inline bool StorageTierHasBeenSet() const { return m_storageTierHasBeenSet; }

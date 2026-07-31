@@ -46,7 +46,7 @@ class GetStorageTierPolicyResult {
   ///@{
   /**
    * <p>The time when the storage tier policy was last updated, expressed as the
-   * number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
+   * number of milliseconds after <code>January 1, 1970 00:00:00 UTC</code>.</p>
    */
   inline long long GetLastUpdatedTime() const { return m_lastUpdatedTime; }
   inline void SetLastUpdatedTime(long long value) {

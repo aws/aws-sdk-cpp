@@ -44,6 +44,21 @@ TopicNamedEntity& TopicNamedEntity::operator=(JsonView jsonValue) {
     }
     m_definitionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Sort")) {
+    Aws::Utils::Array<JsonView> sortJsonList = jsonValue.GetArray("Sort");
+    for (unsigned sortIndex = 0; sortIndex < sortJsonList.GetLength(); ++sortIndex) {
+      m_sort.push_back(sortJsonList[sortIndex].AsObject());
+    }
+    m_sortHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("RankOrder")) {
+    m_rankOrder = jsonValue.GetInteger("RankOrder");
+    m_rankOrderHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("PresentationOrder")) {
+    m_presentationOrder = jsonValue.GetInteger("PresentationOrder");
+    m_presentationOrderHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -76,6 +91,22 @@ JsonValue TopicNamedEntity::Jsonize() const {
       definitionJsonList[definitionIndex].AsObject(m_definition[definitionIndex].Jsonize());
     }
     payload.WithArray("Definition", std::move(definitionJsonList));
+  }
+
+  if (m_sortHasBeenSet) {
+    Aws::Utils::Array<JsonValue> sortJsonList(m_sort.size());
+    for (unsigned sortIndex = 0; sortIndex < sortJsonList.GetLength(); ++sortIndex) {
+      sortJsonList[sortIndex].AsObject(m_sort[sortIndex].Jsonize());
+    }
+    payload.WithArray("Sort", std::move(sortJsonList));
+  }
+
+  if (m_rankOrderHasBeenSet) {
+    payload.WithInteger("RankOrder", m_rankOrder);
+  }
+
+  if (m_presentationOrderHasBeenSet) {
+    payload.WithInteger("PresentationOrder", m_presentationOrder);
   }
 
   return payload;

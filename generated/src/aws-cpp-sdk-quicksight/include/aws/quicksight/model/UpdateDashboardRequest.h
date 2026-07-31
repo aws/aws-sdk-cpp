@@ -102,7 +102,9 @@ class UpdateDashboardRequest : public QuickSightRequest {
    * Amazon Web Services Region. </p> <p>Use the <code>DataSetReferences</code>
    * entity within <code>SourceTemplate</code> to list the replacement datasets for
    * the placeholders listed in the original. The schema in each dataset must match
-   * its placeholder. </p>
+   * its placeholder. Use the <code>TopicReferences</code> entity to list the
+   * replacement topics for the topic placeholders listed in the original. The schema
+   * in each topic must match its placeholder.</p>
    */
   inline const DashboardSourceEntity& GetSourceEntity() const { return m_sourceEntity; }
   inline bool SourceEntityHasBeenSet() const { return m_sourceEntityHasBeenSet; }

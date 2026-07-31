@@ -104,6 +104,38 @@ class ReportGenerationResult {
   ///@}
 
   ///@{
+
+  inline const Aws::String& GetTestRunId() const { return m_testRunId; }
+  inline bool TestRunIdHasBeenSet() const { return m_testRunIdHasBeenSet; }
+  template <typename TestRunIdT = Aws::String>
+  void SetTestRunId(TestRunIdT&& value) {
+    m_testRunIdHasBeenSet = true;
+    m_testRunId = std::forward<TestRunIdT>(value);
+  }
+  template <typename TestRunIdT = Aws::String>
+  ReportGenerationResult& WithTestRunId(TestRunIdT&& value) {
+    SetTestRunId(std::forward<TestRunIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetTestTemplateArn() const { return m_testTemplateArn; }
+  inline bool TestTemplateArnHasBeenSet() const { return m_testTemplateArnHasBeenSet; }
+  template <typename TestTemplateArnT = Aws::String>
+  void SetTestTemplateArn(TestTemplateArnT&& value) {
+    m_testTemplateArnHasBeenSet = true;
+    m_testTemplateArn = std::forward<TestTemplateArnT>(value);
+  }
+  template <typename TestTemplateArnT = Aws::String>
+  ReportGenerationResult& WithTestTemplateArn(TestTemplateArnT&& value) {
+    SetTestTemplateArn(std::forward<TestTemplateArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
    * <p>The timestamp when the report was created.</p>
    */
@@ -147,6 +179,10 @@ class ReportGenerationResult {
 
   Aws::String m_assessmentId;
 
+  Aws::String m_testRunId;
+
+  Aws::String m_testTemplateArn;
+
   Aws::Utils::DateTime m_createdAt{};
 
   ReportOutput m_reportOutput;
@@ -154,6 +190,8 @@ class ReportGenerationResult {
   bool m_statusHasBeenSet = false;
   bool m_serviceArnHasBeenSet = false;
   bool m_assessmentIdHasBeenSet = false;
+  bool m_testRunIdHasBeenSet = false;
+  bool m_testTemplateArnHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_reportOutputHasBeenSet = false;
 };

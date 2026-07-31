@@ -22,6 +22,10 @@ DestinationConfiguration& DestinationConfiguration::operator=(JsonView jsonValue
     m_s3Configuration = jsonValue.GetObject("s3Configuration");
     m_s3ConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("lookupTableConfiguration")) {
+    m_lookupTableConfiguration = jsonValue.GetObject("lookupTableConfiguration");
+    m_lookupTableConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue DestinationConfiguration::Jsonize() const {
 
   if (m_s3ConfigurationHasBeenSet) {
     payload.WithObject("s3Configuration", m_s3Configuration.Jsonize());
+  }
+
+  if (m_lookupTableConfigurationHasBeenSet) {
+    payload.WithObject("lookupTableConfiguration", m_lookupTableConfiguration.Jsonize());
   }
 
   return payload;

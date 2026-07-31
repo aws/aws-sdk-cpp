@@ -32,8 +32,8 @@ class DeleteContainerAssociationRequest : public NetworkFirewallRequest {
 
   ///@{
   /**
-   * <p>The descriptive name of the container association. You must specify the ARN
-   * or the name, and you can specify both.</p>
+   * <p>The descriptive name of the container association.</p> <p>You must specify
+   * the ARN or the name, and you can specify both. </p>
    */
   inline const Aws::String& GetContainerAssociationName() const { return m_containerAssociationName; }
   inline bool ContainerAssociationNameHasBeenSet() const { return m_containerAssociationNameHasBeenSet; }
@@ -51,8 +51,8 @@ class DeleteContainerAssociationRequest : public NetworkFirewallRequest {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the container association. You must specify
-   * the ARN or the name, and you can specify both.</p>
+   * <p>The Amazon Resource Name (ARN) of the container association.</p> <p>You must
+   * specify the ARN or the name, and you can specify both. </p>
    */
   inline const Aws::String& GetContainerAssociationArn() const { return m_containerAssociationArn; }
   inline bool ContainerAssociationArnHasBeenSet() const { return m_containerAssociationArnHasBeenSet; }

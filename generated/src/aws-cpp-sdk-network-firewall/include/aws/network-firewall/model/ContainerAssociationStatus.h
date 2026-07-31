@@ -10,7 +10,7 @@
 namespace Aws {
 namespace NetworkFirewall {
 namespace Model {
-enum class ContainerAssociationStatus { NOT_SET, ACTIVE, CREATING, DELETING };
+enum class ContainerAssociationStatus { NOT_SET, ACTIVE, CREATING, DELETING, UPDATING };
 
 namespace ContainerAssociationStatusMapper {
 AWS_NETWORKFIREWALL_API ContainerAssociationStatus GetContainerAssociationStatusForName(const Aws::String& name);

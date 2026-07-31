@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/amp/PrometheusService_EXPORTS.h>
 #include <aws/amp/model/Destination.h>
+#include <aws/amp/model/ExporterConfiguration.h>
 #include <aws/amp/model/RoleConfiguration.h>
 #include <aws/amp/model/ScrapeConfiguration.h>
 #include <aws/amp/model/ScraperStatus.h>
@@ -13,6 +14,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -284,6 +286,31 @@ class ScraperDescription {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The exporter configurations for the scraper, if configured. The list contains
+   * at most one configuration for an Amazon OpenSearch Service domain.</p>
+   */
+  inline const Aws::Vector<ExporterConfiguration>& GetExporters() const { return m_exporters; }
+  inline bool ExportersHasBeenSet() const { return m_exportersHasBeenSet; }
+  template <typename ExportersT = Aws::Vector<ExporterConfiguration>>
+  void SetExporters(ExportersT&& value) {
+    m_exportersHasBeenSet = true;
+    m_exporters = std::forward<ExportersT>(value);
+  }
+  template <typename ExportersT = Aws::Vector<ExporterConfiguration>>
+  ScraperDescription& WithExporters(ExportersT&& value) {
+    SetExporters(std::forward<ExportersT>(value));
+    return *this;
+  }
+  template <typename ExportersT = ExporterConfiguration>
+  ScraperDescription& AddExporters(ExportersT&& value) {
+    m_exportersHasBeenSet = true;
+    m_exporters.emplace_back(std::forward<ExportersT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_alias;
 
@@ -310,6 +337,8 @@ class ScraperDescription {
   Destination m_destination;
 
   RoleConfiguration m_roleConfiguration;
+
+  Aws::Vector<ExporterConfiguration> m_exporters;
   bool m_aliasHasBeenSet = false;
   bool m_scraperIdHasBeenSet = false;
   bool m_arnHasBeenSet = false;
@@ -323,6 +352,7 @@ class ScraperDescription {
   bool m_sourceHasBeenSet = false;
   bool m_destinationHasBeenSet = false;
   bool m_roleConfigurationHasBeenSet = false;
+  bool m_exportersHasBeenSet = false;
 };
 
 }  // namespace Model

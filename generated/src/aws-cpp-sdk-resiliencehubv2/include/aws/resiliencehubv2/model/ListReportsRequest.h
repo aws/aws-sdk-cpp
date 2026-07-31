@@ -70,6 +70,22 @@ class ListReportsRequest : public Resiliencehubv2Request {
 
   ///@{
 
+  inline const Aws::String& GetTestRunId() const { return m_testRunId; }
+  inline bool TestRunIdHasBeenSet() const { return m_testRunIdHasBeenSet; }
+  template <typename TestRunIdT = Aws::String>
+  void SetTestRunId(TestRunIdT&& value) {
+    m_testRunIdHasBeenSet = true;
+    m_testRunId = std::forward<TestRunIdT>(value);
+  }
+  template <typename TestRunIdT = Aws::String>
+  ListReportsRequest& WithTestRunId(TestRunIdT&& value) {
+    SetTestRunId(std::forward<TestRunIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
   inline void SetMaxResults(int value) {
@@ -102,11 +118,14 @@ class ListReportsRequest : public Resiliencehubv2Request {
 
   ReportType m_reportType{ReportType::NOT_SET};
 
+  Aws::String m_testRunId;
+
   int m_maxResults{0};
 
   Aws::String m_nextToken;
   bool m_serviceArnHasBeenSet = false;
   bool m_reportTypeHasBeenSet = false;
+  bool m_testRunIdHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };

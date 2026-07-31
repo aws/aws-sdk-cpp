@@ -26,6 +26,9 @@ static const int State_HASH = HashingUtils::HashString("State");
 static const int Targeting_HASH = HashingUtils::HashString("Targeting");
 static const int LastModifiedDate_HASH = HashingUtils::HashString("LastModifiedDate");
 static const int OfferSetId_HASH = HashingUtils::HashString("OfferSetId");
+static const int TargetAgreementId_HASH = HashingUtils::HashString("TargetAgreementId");
+static const int TargetAgreementIntent_HASH = HashingUtils::HashString("TargetAgreementIntent");
+static const int CreatedBySource_HASH = HashingUtils::HashString("CreatedBySource");
 
 OfferSortBy GetOfferSortByForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -51,6 +54,12 @@ OfferSortBy GetOfferSortByForName(const Aws::String& name) {
     return OfferSortBy::LastModifiedDate;
   } else if (hashCode == OfferSetId_HASH) {
     return OfferSortBy::OfferSetId;
+  } else if (hashCode == TargetAgreementId_HASH) {
+    return OfferSortBy::TargetAgreementId;
+  } else if (hashCode == TargetAgreementIntent_HASH) {
+    return OfferSortBy::TargetAgreementIntent;
+  } else if (hashCode == CreatedBySource_HASH) {
+    return OfferSortBy::CreatedBySource;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -87,6 +96,12 @@ Aws::String GetNameForOfferSortBy(OfferSortBy enumValue) {
       return "LastModifiedDate";
     case OfferSortBy::OfferSetId:
       return "OfferSetId";
+    case OfferSortBy::TargetAgreementId:
+      return "TargetAgreementId";
+    case OfferSortBy::TargetAgreementIntent:
+      return "TargetAgreementIntent";
+    case OfferSortBy::CreatedBySource:
+      return "CreatedBySource";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -36,8 +36,8 @@ class UpdateContainerAssociationRequest : public NetworkFirewallRequest {
 
   ///@{
   /**
-   * <p>The descriptive name of the container association. You must specify the ARN
-   * or the name, and you can specify both.</p>
+   * <p>The descriptive name of the container association.</p> <p>You must specify
+   * the ARN or the name, and you can specify both. </p>
    */
   inline const Aws::String& GetContainerAssociationName() const { return m_containerAssociationName; }
   inline bool ContainerAssociationNameHasBeenSet() const { return m_containerAssociationNameHasBeenSet; }
@@ -55,8 +55,8 @@ class UpdateContainerAssociationRequest : public NetworkFirewallRequest {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the container association. You must specify
-   * the ARN or the name, and you can specify both.</p>
+   * <p>The Amazon Resource Name (ARN) of the container association.</p> <p>You must
+   * specify the ARN or the name, and you can specify both. </p>
    */
   inline const Aws::String& GetContainerAssociationArn() const { return m_containerAssociationArn; }
   inline bool ContainerAssociationArnHasBeenSet() const { return m_containerAssociationArnHasBeenSet; }
@@ -74,7 +74,9 @@ class UpdateContainerAssociationRequest : public NetworkFirewallRequest {
 
   ///@{
   /**
-   * <p>A description of the container association.</p>
+   * <p>A description of the container association. When omitted, the existing
+   * description remains unchanged. To clear the description, pass an empty
+   * string.</p>
    */
   inline const Aws::String& GetDescription() const { return m_description; }
   inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -92,8 +94,10 @@ class UpdateContainerAssociationRequest : public NetworkFirewallRequest {
 
   ///@{
   /**
-   * <p>The type of container orchestration platform. This must match the type
-   * specified when the container association was created.</p>
+   * <p>The container type. This value must match the existing type and can't be
+   * changed. Valid values:</p> <ul> <li> <p> <code>ECS</code> - Amazon Elastic
+   * Container Service</p> </li> <li> <p> <code>EKS</code> - Amazon Elastic
+   * Kubernetes Service</p> </li> </ul>
    */
   inline ContainerMonitoringType GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -109,8 +113,9 @@ class UpdateContainerAssociationRequest : public NetworkFirewallRequest {
 
   ///@{
   /**
-   * <p>The updated list of container monitoring configurations that define which
-   * clusters and container attributes to monitor.</p>
+   * <p>The updated monitoring configurations for the container association. Each
+   * configuration specifies an Amazon ECS or Amazon EKS cluster to monitor and
+   * optional attribute filters.</p>
    */
   inline const Aws::Vector<ContainerMonitoringConfiguration>& GetContainerMonitoringConfigurations() const {
     return m_containerMonitoringConfigurations;
@@ -136,7 +141,7 @@ class UpdateContainerAssociationRequest : public NetworkFirewallRequest {
 
   ///@{
   /**
-   * <p>The key:value pairs associated with the resource.</p>
+   * <p>The key:value pairs to associate with the resource.</p>
    */
   inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
   inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -162,12 +167,12 @@ class UpdateContainerAssociationRequest : public NetworkFirewallRequest {
   /**
    * <p>A token used for optimistic locking. Network Firewall returns a token to your
    * requests that access the container association. The token marks the state of the
-   * container association resource at the time of the request. To make an update to
-   * the container association, provide the token in your request. Network Firewall
-   * uses the token to ensure that the container association hasn't changed since you
-   * last retrieved it. If it has changed, the operation fails with an
-   * <code>InvalidTokenException</code>. If this happens, retrieve the container
-   * association again to get a current copy of it with a new token. Reapply your
+   * container association resource at the time of the request.</p> <p>To make
+   * changes to the container association, you provide the token in your request.
+   * Network Firewall uses the token to ensure that the container association hasn't
+   * changed since you last retrieved it. If it has changed, the operation fails with
+   * an <code>InvalidTokenException</code>. If this happens, retrieve the container
+   * association again to get a current copy of it with a current token. Reapply your
    * changes as needed, then try the operation again using the new token.</p>
    */
   inline const Aws::String& GetUpdateToken() const { return m_updateToken; }

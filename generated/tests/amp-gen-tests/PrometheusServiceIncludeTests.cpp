@@ -74,6 +74,7 @@
 #include <aws/amp/model/DescribeWorkspaceResult.h>
 #include <aws/amp/model/Destination.h>
 #include <aws/amp/model/EksConfiguration.h>
+#include <aws/amp/model/ExporterConfiguration.h>
 #include <aws/amp/model/GetDefaultScraperConfigurationRequest.h>
 #include <aws/amp/model/GetDefaultScraperConfigurationResult.h>
 #include <aws/amp/model/IgnoreNearExpected.h>
@@ -95,6 +96,7 @@
 #include <aws/amp/model/LoggingConfigurationStatusCode.h>
 #include <aws/amp/model/LoggingDestination.h>
 #include <aws/amp/model/LoggingFilter.h>
+#include <aws/amp/model/OpenSearchExporterConfiguration.h>
 #include <aws/amp/model/PutAlertManagerDefinitionRequest.h>
 #include <aws/amp/model/PutAlertManagerDefinitionResult.h>
 #include <aws/amp/model/PutAnomalyDetectorRequest.h>

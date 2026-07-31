@@ -105,7 +105,7 @@ class LayerMapVisual {
   ///@{
   /**
    * <p>The dataset that is used to create the layer map visual. You can't create a
-   * visual without a dataset.</p>
+   * visual without a dataset or a topic.</p>
    */
   inline const Aws::String& GetDataSetIdentifier() const { return m_dataSetIdentifier; }
   inline bool DataSetIdentifierHasBeenSet() const { return m_dataSetIdentifierHasBeenSet; }
@@ -117,6 +117,25 @@ class LayerMapVisual {
   template <typename DataSetIdentifierT = Aws::String>
   LayerMapVisual& WithDataSetIdentifier(DataSetIdentifierT&& value) {
     SetDataSetIdentifier(std::forward<DataSetIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The topic that is used in the layer map visual. You can't create a visual
+   * without a dataset or a topic.</p>
+   */
+  inline const Aws::String& GetTopicIdentifier() const { return m_topicIdentifier; }
+  inline bool TopicIdentifierHasBeenSet() const { return m_topicIdentifierHasBeenSet; }
+  template <typename TopicIdentifierT = Aws::String>
+  void SetTopicIdentifier(TopicIdentifierT&& value) {
+    m_topicIdentifierHasBeenSet = true;
+    m_topicIdentifier = std::forward<TopicIdentifierT>(value);
+  }
+  template <typename TopicIdentifierT = Aws::String>
+  LayerMapVisual& WithTopicIdentifier(TopicIdentifierT&& value) {
+    SetTopicIdentifier(std::forward<TopicIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -149,12 +168,15 @@ class LayerMapVisual {
 
   Aws::String m_dataSetIdentifier;
 
+  Aws::String m_topicIdentifier;
+
   Aws::String m_visualContentAltText;
   bool m_visualIdHasBeenSet = false;
   bool m_titleHasBeenSet = false;
   bool m_subtitleHasBeenSet = false;
   bool m_chartConfigurationHasBeenSet = false;
   bool m_dataSetIdentifierHasBeenSet = false;
+  bool m_topicIdentifierHasBeenSet = false;
   bool m_visualContentAltTextHasBeenSet = false;
 };
 

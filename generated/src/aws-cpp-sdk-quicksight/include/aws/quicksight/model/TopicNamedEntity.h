@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/NamedEntityDefinition.h>
+#include <aws/quicksight/model/NamedEntitySort.h>
 #include <aws/quicksight/model/SemanticEntityType.h>
 
 #include <utility>
@@ -135,6 +136,62 @@ class TopicNamedEntity {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The sort configuration of the named entity.</p>
+   */
+  inline const Aws::Vector<NamedEntitySort>& GetSort() const { return m_sort; }
+  inline bool SortHasBeenSet() const { return m_sortHasBeenSet; }
+  template <typename SortT = Aws::Vector<NamedEntitySort>>
+  void SetSort(SortT&& value) {
+    m_sortHasBeenSet = true;
+    m_sort = std::forward<SortT>(value);
+  }
+  template <typename SortT = Aws::Vector<NamedEntitySort>>
+  TopicNamedEntity& WithSort(SortT&& value) {
+    SetSort(std::forward<SortT>(value));
+    return *this;
+  }
+  template <typename SortT = NamedEntitySort>
+  TopicNamedEntity& AddSort(SortT&& value) {
+    m_sortHasBeenSet = true;
+    m_sort.emplace_back(std::forward<SortT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The rank order of the named entity.</p>
+   */
+  inline int GetRankOrder() const { return m_rankOrder; }
+  inline bool RankOrderHasBeenSet() const { return m_rankOrderHasBeenSet; }
+  inline void SetRankOrder(int value) {
+    m_rankOrderHasBeenSet = true;
+    m_rankOrder = value;
+  }
+  inline TopicNamedEntity& WithRankOrder(int value) {
+    SetRankOrder(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The presentation order of the named entity.</p>
+   */
+  inline int GetPresentationOrder() const { return m_presentationOrder; }
+  inline bool PresentationOrderHasBeenSet() const { return m_presentationOrderHasBeenSet; }
+  inline void SetPresentationOrder(int value) {
+    m_presentationOrderHasBeenSet = true;
+    m_presentationOrder = value;
+  }
+  inline TopicNamedEntity& WithPresentationOrder(int value) {
+    SetPresentationOrder(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_entityName;
 
@@ -145,11 +202,20 @@ class TopicNamedEntity {
   SemanticEntityType m_semanticEntityType;
 
   Aws::Vector<NamedEntityDefinition> m_definition;
+
+  Aws::Vector<NamedEntitySort> m_sort;
+
+  int m_rankOrder{0};
+
+  int m_presentationOrder{0};
   bool m_entityNameHasBeenSet = false;
   bool m_entityDescriptionHasBeenSet = false;
   bool m_entitySynonymsHasBeenSet = false;
   bool m_semanticEntityTypeHasBeenSet = false;
   bool m_definitionHasBeenSet = false;
+  bool m_sortHasBeenSet = false;
+  bool m_rankOrderHasBeenSet = false;
+  bool m_presentationOrderHasBeenSet = false;
 };
 
 }  // namespace Model

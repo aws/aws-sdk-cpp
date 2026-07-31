@@ -171,6 +171,12 @@ StartStreamTranscriptionInitialResponse::StartStreamTranscriptionInitialResponse
     m_sessionResumeWindow = StringUtils::ConvertToInt32(sessionResumeWindowIter->second.c_str());
     m_sessionResumeWindowHasBeenSet = true;
   }
+
+  const auto& transcriptFormatIter = headers.find("x-amzn-transcribe-transcript-format");
+  if (transcriptFormatIter != headers.end()) {
+    m_transcriptFormat = TranscriptFormatMapper::GetTranscriptFormatForName(transcriptFormatIter->second);
+    m_transcriptFormatHasBeenSet = true;
+  }
 }
 
 JsonValue StartStreamTranscriptionInitialResponse::Jsonize() const {

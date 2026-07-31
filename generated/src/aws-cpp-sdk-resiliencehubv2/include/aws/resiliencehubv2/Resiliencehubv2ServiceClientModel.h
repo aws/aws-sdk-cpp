@@ -27,6 +27,7 @@
 #include <aws/resiliencehubv2/model/CreateServiceFunctionResult.h>
 #include <aws/resiliencehubv2/model/CreateServiceResult.h>
 #include <aws/resiliencehubv2/model/CreateSystemResult.h>
+#include <aws/resiliencehubv2/model/CreateTestResult.h>
 #include <aws/resiliencehubv2/model/CreateUserJourneyResult.h>
 #include <aws/resiliencehubv2/model/DeleteAssertionResult.h>
 #include <aws/resiliencehubv2/model/DeleteInputSourceResult.h>
@@ -35,11 +36,16 @@
 #include <aws/resiliencehubv2/model/DeleteServiceFunctionResult.h>
 #include <aws/resiliencehubv2/model/DeleteServiceResult.h>
 #include <aws/resiliencehubv2/model/DeleteSystemResult.h>
+#include <aws/resiliencehubv2/model/DeleteTestResult.h>
+#include <aws/resiliencehubv2/model/DeleteTestSourcesResult.h>
 #include <aws/resiliencehubv2/model/DeleteUserJourneyResult.h>
 #include <aws/resiliencehubv2/model/GetFailureModeFindingResult.h>
 #include <aws/resiliencehubv2/model/GetPolicyResult.h>
 #include <aws/resiliencehubv2/model/GetServiceResult.h>
 #include <aws/resiliencehubv2/model/GetSystemResult.h>
+#include <aws/resiliencehubv2/model/GetTestResult.h>
+#include <aws/resiliencehubv2/model/GetTestRunResult.h>
+#include <aws/resiliencehubv2/model/GetTestTemplateResult.h>
 #include <aws/resiliencehubv2/model/GetUserJourneyResult.h>
 #include <aws/resiliencehubv2/model/ImportAppResult.h>
 #include <aws/resiliencehubv2/model/ImportPolicyResult.h>
@@ -53,6 +59,7 @@
 #include <aws/resiliencehubv2/model/ListPoliciesResult.h>
 #include <aws/resiliencehubv2/model/ListReportsRequest.h>
 #include <aws/resiliencehubv2/model/ListReportsResult.h>
+#include <aws/resiliencehubv2/model/ListResolvedTestRunTargetResourcesResult.h>
 #include <aws/resiliencehubv2/model/ListResourcesResult.h>
 #include <aws/resiliencehubv2/model/ListServiceEventsResult.h>
 #include <aws/resiliencehubv2/model/ListServiceFunctionsResult.h>
@@ -63,8 +70,18 @@
 #include <aws/resiliencehubv2/model/ListSystemsRequest.h>
 #include <aws/resiliencehubv2/model/ListSystemsResult.h>
 #include <aws/resiliencehubv2/model/ListTagsForResourceResult.h>
+#include <aws/resiliencehubv2/model/ListTestRunEventsResult.h>
+#include <aws/resiliencehubv2/model/ListTestRunSourcesResult.h>
+#include <aws/resiliencehubv2/model/ListTestRunsResult.h>
+#include <aws/resiliencehubv2/model/ListTestSourcesResult.h>
+#include <aws/resiliencehubv2/model/ListTestTemplatesRequest.h>
+#include <aws/resiliencehubv2/model/ListTestTemplatesResult.h>
+#include <aws/resiliencehubv2/model/ListTestsResult.h>
 #include <aws/resiliencehubv2/model/ListUserJourneysResult.h>
+#include <aws/resiliencehubv2/model/PutTestSourcesResult.h>
 #include <aws/resiliencehubv2/model/StartFailureModeAssessmentResult.h>
+#include <aws/resiliencehubv2/model/StartTestRunResult.h>
+#include <aws/resiliencehubv2/model/StopTestRunResult.h>
 #include <aws/resiliencehubv2/model/TagResourceResult.h>
 #include <aws/resiliencehubv2/model/UntagResourceResult.h>
 #include <aws/resiliencehubv2/model/UpdateAssertionResult.h>
@@ -74,6 +91,7 @@
 #include <aws/resiliencehubv2/model/UpdateServiceFunctionResult.h>
 #include <aws/resiliencehubv2/model/UpdateServiceResult.h>
 #include <aws/resiliencehubv2/model/UpdateSystemResult.h>
+#include <aws/resiliencehubv2/model/UpdateTestResult.h>
 #include <aws/resiliencehubv2/model/UpdateUserJourneyResult.h>
 /* End of service model headers required in Resiliencehubv2Client header */
 
@@ -116,6 +134,7 @@ class CreateServiceRequest;
 class CreateServiceFunctionRequest;
 class CreateServiceFunctionResourcesRequest;
 class CreateSystemRequest;
+class CreateTestRequest;
 class CreateUserJourneyRequest;
 class DeleteAssertionRequest;
 class DeleteInputSourceRequest;
@@ -124,11 +143,16 @@ class DeleteServiceRequest;
 class DeleteServiceFunctionRequest;
 class DeleteServiceFunctionResourcesRequest;
 class DeleteSystemRequest;
+class DeleteTestRequest;
+class DeleteTestSourcesRequest;
 class DeleteUserJourneyRequest;
 class GetFailureModeFindingRequest;
 class GetPolicyRequest;
 class GetServiceRequest;
 class GetSystemRequest;
+class GetTestRequest;
+class GetTestRunRequest;
+class GetTestTemplateRequest;
 class GetUserJourneyRequest;
 class ImportAppRequest;
 class ImportPolicyRequest;
@@ -139,6 +163,7 @@ class ListFailureModeFindingsRequest;
 class ListInputSourcesRequest;
 class ListPoliciesRequest;
 class ListReportsRequest;
+class ListResolvedTestRunTargetResourcesRequest;
 class ListResourcesRequest;
 class ListServiceEventsRequest;
 class ListServiceFunctionsRequest;
@@ -147,8 +172,17 @@ class ListServicesRequest;
 class ListSystemEventsRequest;
 class ListSystemsRequest;
 class ListTagsForResourceRequest;
+class ListTestRunEventsRequest;
+class ListTestRunSourcesRequest;
+class ListTestRunsRequest;
+class ListTestSourcesRequest;
+class ListTestTemplatesRequest;
+class ListTestsRequest;
 class ListUserJourneysRequest;
+class PutTestSourcesRequest;
 class StartFailureModeAssessmentRequest;
+class StartTestRunRequest;
+class StopTestRunRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
 class UpdateAssertionRequest;
@@ -158,6 +192,7 @@ class UpdatePolicyRequest;
 class UpdateServiceRequest;
 class UpdateServiceFunctionRequest;
 class UpdateSystemRequest;
+class UpdateTestRequest;
 class UpdateUserJourneyRequest;
 /* End of service model forward declarations required in Resiliencehubv2Client header */
 
@@ -170,6 +205,7 @@ typedef Aws::Utils::Outcome<CreateServiceResult, Resiliencehubv2Error> CreateSer
 typedef Aws::Utils::Outcome<CreateServiceFunctionResult, Resiliencehubv2Error> CreateServiceFunctionOutcome;
 typedef Aws::Utils::Outcome<CreateServiceFunctionResourcesResult, Resiliencehubv2Error> CreateServiceFunctionResourcesOutcome;
 typedef Aws::Utils::Outcome<CreateSystemResult, Resiliencehubv2Error> CreateSystemOutcome;
+typedef Aws::Utils::Outcome<CreateTestResult, Resiliencehubv2Error> CreateTestOutcome;
 typedef Aws::Utils::Outcome<CreateUserJourneyResult, Resiliencehubv2Error> CreateUserJourneyOutcome;
 typedef Aws::Utils::Outcome<DeleteAssertionResult, Resiliencehubv2Error> DeleteAssertionOutcome;
 typedef Aws::Utils::Outcome<DeleteInputSourceResult, Resiliencehubv2Error> DeleteInputSourceOutcome;
@@ -178,11 +214,16 @@ typedef Aws::Utils::Outcome<DeleteServiceResult, Resiliencehubv2Error> DeleteSer
 typedef Aws::Utils::Outcome<DeleteServiceFunctionResult, Resiliencehubv2Error> DeleteServiceFunctionOutcome;
 typedef Aws::Utils::Outcome<DeleteServiceFunctionResourcesResult, Resiliencehubv2Error> DeleteServiceFunctionResourcesOutcome;
 typedef Aws::Utils::Outcome<DeleteSystemResult, Resiliencehubv2Error> DeleteSystemOutcome;
+typedef Aws::Utils::Outcome<DeleteTestResult, Resiliencehubv2Error> DeleteTestOutcome;
+typedef Aws::Utils::Outcome<DeleteTestSourcesResult, Resiliencehubv2Error> DeleteTestSourcesOutcome;
 typedef Aws::Utils::Outcome<DeleteUserJourneyResult, Resiliencehubv2Error> DeleteUserJourneyOutcome;
 typedef Aws::Utils::Outcome<GetFailureModeFindingResult, Resiliencehubv2Error> GetFailureModeFindingOutcome;
 typedef Aws::Utils::Outcome<GetPolicyResult, Resiliencehubv2Error> GetPolicyOutcome;
 typedef Aws::Utils::Outcome<GetServiceResult, Resiliencehubv2Error> GetServiceOutcome;
 typedef Aws::Utils::Outcome<GetSystemResult, Resiliencehubv2Error> GetSystemOutcome;
+typedef Aws::Utils::Outcome<GetTestResult, Resiliencehubv2Error> GetTestOutcome;
+typedef Aws::Utils::Outcome<GetTestRunResult, Resiliencehubv2Error> GetTestRunOutcome;
+typedef Aws::Utils::Outcome<GetTestTemplateResult, Resiliencehubv2Error> GetTestTemplateOutcome;
 typedef Aws::Utils::Outcome<GetUserJourneyResult, Resiliencehubv2Error> GetUserJourneyOutcome;
 typedef Aws::Utils::Outcome<ImportAppResult, Resiliencehubv2Error> ImportAppOutcome;
 typedef Aws::Utils::Outcome<ImportPolicyResult, Resiliencehubv2Error> ImportPolicyOutcome;
@@ -193,6 +234,7 @@ typedef Aws::Utils::Outcome<ListFailureModeFindingsResult, Resiliencehubv2Error>
 typedef Aws::Utils::Outcome<ListInputSourcesResult, Resiliencehubv2Error> ListInputSourcesOutcome;
 typedef Aws::Utils::Outcome<ListPoliciesResult, Resiliencehubv2Error> ListPoliciesOutcome;
 typedef Aws::Utils::Outcome<ListReportsResult, Resiliencehubv2Error> ListReportsOutcome;
+typedef Aws::Utils::Outcome<ListResolvedTestRunTargetResourcesResult, Resiliencehubv2Error> ListResolvedTestRunTargetResourcesOutcome;
 typedef Aws::Utils::Outcome<ListResourcesResult, Resiliencehubv2Error> ListResourcesOutcome;
 typedef Aws::Utils::Outcome<ListServiceEventsResult, Resiliencehubv2Error> ListServiceEventsOutcome;
 typedef Aws::Utils::Outcome<ListServiceFunctionsResult, Resiliencehubv2Error> ListServiceFunctionsOutcome;
@@ -201,8 +243,17 @@ typedef Aws::Utils::Outcome<ListServicesResult, Resiliencehubv2Error> ListServic
 typedef Aws::Utils::Outcome<ListSystemEventsResult, Resiliencehubv2Error> ListSystemEventsOutcome;
 typedef Aws::Utils::Outcome<ListSystemsResult, Resiliencehubv2Error> ListSystemsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, Resiliencehubv2Error> ListTagsForResourceOutcome;
+typedef Aws::Utils::Outcome<ListTestRunEventsResult, Resiliencehubv2Error> ListTestRunEventsOutcome;
+typedef Aws::Utils::Outcome<ListTestRunSourcesResult, Resiliencehubv2Error> ListTestRunSourcesOutcome;
+typedef Aws::Utils::Outcome<ListTestRunsResult, Resiliencehubv2Error> ListTestRunsOutcome;
+typedef Aws::Utils::Outcome<ListTestSourcesResult, Resiliencehubv2Error> ListTestSourcesOutcome;
+typedef Aws::Utils::Outcome<ListTestTemplatesResult, Resiliencehubv2Error> ListTestTemplatesOutcome;
+typedef Aws::Utils::Outcome<ListTestsResult, Resiliencehubv2Error> ListTestsOutcome;
 typedef Aws::Utils::Outcome<ListUserJourneysResult, Resiliencehubv2Error> ListUserJourneysOutcome;
+typedef Aws::Utils::Outcome<PutTestSourcesResult, Resiliencehubv2Error> PutTestSourcesOutcome;
 typedef Aws::Utils::Outcome<StartFailureModeAssessmentResult, Resiliencehubv2Error> StartFailureModeAssessmentOutcome;
+typedef Aws::Utils::Outcome<StartTestRunResult, Resiliencehubv2Error> StartTestRunOutcome;
+typedef Aws::Utils::Outcome<StopTestRunResult, Resiliencehubv2Error> StopTestRunOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, Resiliencehubv2Error> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, Resiliencehubv2Error> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateAssertionResult, Resiliencehubv2Error> UpdateAssertionOutcome;
@@ -212,6 +263,7 @@ typedef Aws::Utils::Outcome<UpdatePolicyResult, Resiliencehubv2Error> UpdatePoli
 typedef Aws::Utils::Outcome<UpdateServiceResult, Resiliencehubv2Error> UpdateServiceOutcome;
 typedef Aws::Utils::Outcome<UpdateServiceFunctionResult, Resiliencehubv2Error> UpdateServiceFunctionOutcome;
 typedef Aws::Utils::Outcome<UpdateSystemResult, Resiliencehubv2Error> UpdateSystemOutcome;
+typedef Aws::Utils::Outcome<UpdateTestResult, Resiliencehubv2Error> UpdateTestOutcome;
 typedef Aws::Utils::Outcome<UpdateUserJourneyResult, Resiliencehubv2Error> UpdateUserJourneyOutcome;
 /* End of service model Outcome class definitions */
 
@@ -224,6 +276,7 @@ typedef std::future<CreateServiceOutcome> CreateServiceOutcomeCallable;
 typedef std::future<CreateServiceFunctionOutcome> CreateServiceFunctionOutcomeCallable;
 typedef std::future<CreateServiceFunctionResourcesOutcome> CreateServiceFunctionResourcesOutcomeCallable;
 typedef std::future<CreateSystemOutcome> CreateSystemOutcomeCallable;
+typedef std::future<CreateTestOutcome> CreateTestOutcomeCallable;
 typedef std::future<CreateUserJourneyOutcome> CreateUserJourneyOutcomeCallable;
 typedef std::future<DeleteAssertionOutcome> DeleteAssertionOutcomeCallable;
 typedef std::future<DeleteInputSourceOutcome> DeleteInputSourceOutcomeCallable;
@@ -232,11 +285,16 @@ typedef std::future<DeleteServiceOutcome> DeleteServiceOutcomeCallable;
 typedef std::future<DeleteServiceFunctionOutcome> DeleteServiceFunctionOutcomeCallable;
 typedef std::future<DeleteServiceFunctionResourcesOutcome> DeleteServiceFunctionResourcesOutcomeCallable;
 typedef std::future<DeleteSystemOutcome> DeleteSystemOutcomeCallable;
+typedef std::future<DeleteTestOutcome> DeleteTestOutcomeCallable;
+typedef std::future<DeleteTestSourcesOutcome> DeleteTestSourcesOutcomeCallable;
 typedef std::future<DeleteUserJourneyOutcome> DeleteUserJourneyOutcomeCallable;
 typedef std::future<GetFailureModeFindingOutcome> GetFailureModeFindingOutcomeCallable;
 typedef std::future<GetPolicyOutcome> GetPolicyOutcomeCallable;
 typedef std::future<GetServiceOutcome> GetServiceOutcomeCallable;
 typedef std::future<GetSystemOutcome> GetSystemOutcomeCallable;
+typedef std::future<GetTestOutcome> GetTestOutcomeCallable;
+typedef std::future<GetTestRunOutcome> GetTestRunOutcomeCallable;
+typedef std::future<GetTestTemplateOutcome> GetTestTemplateOutcomeCallable;
 typedef std::future<GetUserJourneyOutcome> GetUserJourneyOutcomeCallable;
 typedef std::future<ImportAppOutcome> ImportAppOutcomeCallable;
 typedef std::future<ImportPolicyOutcome> ImportPolicyOutcomeCallable;
@@ -247,6 +305,7 @@ typedef std::future<ListFailureModeFindingsOutcome> ListFailureModeFindingsOutco
 typedef std::future<ListInputSourcesOutcome> ListInputSourcesOutcomeCallable;
 typedef std::future<ListPoliciesOutcome> ListPoliciesOutcomeCallable;
 typedef std::future<ListReportsOutcome> ListReportsOutcomeCallable;
+typedef std::future<ListResolvedTestRunTargetResourcesOutcome> ListResolvedTestRunTargetResourcesOutcomeCallable;
 typedef std::future<ListResourcesOutcome> ListResourcesOutcomeCallable;
 typedef std::future<ListServiceEventsOutcome> ListServiceEventsOutcomeCallable;
 typedef std::future<ListServiceFunctionsOutcome> ListServiceFunctionsOutcomeCallable;
@@ -255,8 +314,17 @@ typedef std::future<ListServicesOutcome> ListServicesOutcomeCallable;
 typedef std::future<ListSystemEventsOutcome> ListSystemEventsOutcomeCallable;
 typedef std::future<ListSystemsOutcome> ListSystemsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+typedef std::future<ListTestRunEventsOutcome> ListTestRunEventsOutcomeCallable;
+typedef std::future<ListTestRunSourcesOutcome> ListTestRunSourcesOutcomeCallable;
+typedef std::future<ListTestRunsOutcome> ListTestRunsOutcomeCallable;
+typedef std::future<ListTestSourcesOutcome> ListTestSourcesOutcomeCallable;
+typedef std::future<ListTestTemplatesOutcome> ListTestTemplatesOutcomeCallable;
+typedef std::future<ListTestsOutcome> ListTestsOutcomeCallable;
 typedef std::future<ListUserJourneysOutcome> ListUserJourneysOutcomeCallable;
+typedef std::future<PutTestSourcesOutcome> PutTestSourcesOutcomeCallable;
 typedef std::future<StartFailureModeAssessmentOutcome> StartFailureModeAssessmentOutcomeCallable;
+typedef std::future<StartTestRunOutcome> StartTestRunOutcomeCallable;
+typedef std::future<StopTestRunOutcome> StopTestRunOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateAssertionOutcome> UpdateAssertionOutcomeCallable;
@@ -266,6 +334,7 @@ typedef std::future<UpdatePolicyOutcome> UpdatePolicyOutcomeCallable;
 typedef std::future<UpdateServiceOutcome> UpdateServiceOutcomeCallable;
 typedef std::future<UpdateServiceFunctionOutcome> UpdateServiceFunctionOutcomeCallable;
 typedef std::future<UpdateSystemOutcome> UpdateSystemOutcomeCallable;
+typedef std::future<UpdateTestOutcome> UpdateTestOutcomeCallable;
 typedef std::future<UpdateUserJourneyOutcome> UpdateUserJourneyOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
@@ -298,6 +367,9 @@ typedef std::function<void(const Resiliencehubv2Client*, const Model::CreateServ
 typedef std::function<void(const Resiliencehubv2Client*, const Model::CreateSystemRequest&, const Model::CreateSystemOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateSystemResponseReceivedHandler;
+typedef std::function<void(const Resiliencehubv2Client*, const Model::CreateTestRequest&, const Model::CreateTestOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateTestResponseReceivedHandler;
 typedef std::function<void(const Resiliencehubv2Client*, const Model::CreateUserJourneyRequest&, const Model::CreateUserJourneyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateUserJourneyResponseReceivedHandler;
@@ -323,6 +395,12 @@ typedef std::function<void(const Resiliencehubv2Client*, const Model::DeleteServ
 typedef std::function<void(const Resiliencehubv2Client*, const Model::DeleteSystemRequest&, const Model::DeleteSystemOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteSystemResponseReceivedHandler;
+typedef std::function<void(const Resiliencehubv2Client*, const Model::DeleteTestRequest&, const Model::DeleteTestOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteTestResponseReceivedHandler;
+typedef std::function<void(const Resiliencehubv2Client*, const Model::DeleteTestSourcesRequest&, const Model::DeleteTestSourcesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteTestSourcesResponseReceivedHandler;
 typedef std::function<void(const Resiliencehubv2Client*, const Model::DeleteUserJourneyRequest&, const Model::DeleteUserJourneyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteUserJourneyResponseReceivedHandler;
@@ -338,6 +416,15 @@ typedef std::function<void(const Resiliencehubv2Client*, const Model::GetService
 typedef std::function<void(const Resiliencehubv2Client*, const Model::GetSystemRequest&, const Model::GetSystemOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetSystemResponseReceivedHandler;
+typedef std::function<void(const Resiliencehubv2Client*, const Model::GetTestRequest&, const Model::GetTestOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetTestResponseReceivedHandler;
+typedef std::function<void(const Resiliencehubv2Client*, const Model::GetTestRunRequest&, const Model::GetTestRunOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetTestRunResponseReceivedHandler;
+typedef std::function<void(const Resiliencehubv2Client*, const Model::GetTestTemplateRequest&, const Model::GetTestTemplateOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetTestTemplateResponseReceivedHandler;
 typedef std::function<void(const Resiliencehubv2Client*, const Model::GetUserJourneyRequest&, const Model::GetUserJourneyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetUserJourneyResponseReceivedHandler;
@@ -368,6 +455,10 @@ typedef std::function<void(const Resiliencehubv2Client*, const Model::ListPolici
 typedef std::function<void(const Resiliencehubv2Client*, const Model::ListReportsRequest&, const Model::ListReportsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListReportsResponseReceivedHandler;
+typedef std::function<void(const Resiliencehubv2Client*, const Model::ListResolvedTestRunTargetResourcesRequest&,
+                           const Model::ListResolvedTestRunTargetResourcesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListResolvedTestRunTargetResourcesResponseReceivedHandler;
 typedef std::function<void(const Resiliencehubv2Client*, const Model::ListResourcesRequest&, const Model::ListResourcesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListResourcesResponseReceivedHandler;
@@ -392,12 +483,39 @@ typedef std::function<void(const Resiliencehubv2Client*, const Model::ListSystem
 typedef std::function<void(const Resiliencehubv2Client*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;
+typedef std::function<void(const Resiliencehubv2Client*, const Model::ListTestRunEventsRequest&, const Model::ListTestRunEventsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListTestRunEventsResponseReceivedHandler;
+typedef std::function<void(const Resiliencehubv2Client*, const Model::ListTestRunSourcesRequest&, const Model::ListTestRunSourcesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListTestRunSourcesResponseReceivedHandler;
+typedef std::function<void(const Resiliencehubv2Client*, const Model::ListTestRunsRequest&, const Model::ListTestRunsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListTestRunsResponseReceivedHandler;
+typedef std::function<void(const Resiliencehubv2Client*, const Model::ListTestSourcesRequest&, const Model::ListTestSourcesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListTestSourcesResponseReceivedHandler;
+typedef std::function<void(const Resiliencehubv2Client*, const Model::ListTestTemplatesRequest&, const Model::ListTestTemplatesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListTestTemplatesResponseReceivedHandler;
+typedef std::function<void(const Resiliencehubv2Client*, const Model::ListTestsRequest&, const Model::ListTestsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListTestsResponseReceivedHandler;
 typedef std::function<void(const Resiliencehubv2Client*, const Model::ListUserJourneysRequest&, const Model::ListUserJourneysOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListUserJourneysResponseReceivedHandler;
+typedef std::function<void(const Resiliencehubv2Client*, const Model::PutTestSourcesRequest&, const Model::PutTestSourcesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutTestSourcesResponseReceivedHandler;
 typedef std::function<void(const Resiliencehubv2Client*, const Model::StartFailureModeAssessmentRequest&,
                            const Model::StartFailureModeAssessmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartFailureModeAssessmentResponseReceivedHandler;
+typedef std::function<void(const Resiliencehubv2Client*, const Model::StartTestRunRequest&, const Model::StartTestRunOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartTestRunResponseReceivedHandler;
+typedef std::function<void(const Resiliencehubv2Client*, const Model::StopTestRunRequest&, const Model::StopTestRunOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StopTestRunResponseReceivedHandler;
 typedef std::function<void(const Resiliencehubv2Client*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     TagResourceResponseReceivedHandler;
@@ -425,6 +543,9 @@ typedef std::function<void(const Resiliencehubv2Client*, const Model::UpdateServ
 typedef std::function<void(const Resiliencehubv2Client*, const Model::UpdateSystemRequest&, const Model::UpdateSystemOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateSystemResponseReceivedHandler;
+typedef std::function<void(const Resiliencehubv2Client*, const Model::UpdateTestRequest&, const Model::UpdateTestOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateTestResponseReceivedHandler;
 typedef std::function<void(const Resiliencehubv2Client*, const Model::UpdateUserJourneyRequest&, const Model::UpdateUserJourneyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateUserJourneyResponseReceivedHandler;

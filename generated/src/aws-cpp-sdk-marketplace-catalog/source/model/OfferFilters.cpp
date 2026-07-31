@@ -62,6 +62,18 @@ OfferFilters& OfferFilters::operator=(JsonView jsonValue) {
     m_offerSetId = jsonValue.GetObject("OfferSetId");
     m_offerSetIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("TargetAgreementId")) {
+    m_targetAgreementId = jsonValue.GetObject("TargetAgreementId");
+    m_targetAgreementIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("TargetAgreementIntent")) {
+    m_targetAgreementIntent = jsonValue.GetObject("TargetAgreementIntent");
+    m_targetAgreementIntentHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreatedBySource")) {
+    m_createdBySource = jsonValue.GetObject("CreatedBySource");
+    m_createdBySourceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -110,6 +122,18 @@ JsonValue OfferFilters::Jsonize() const {
 
   if (m_offerSetIdHasBeenSet) {
     payload.WithObject("OfferSetId", m_offerSetId.Jsonize());
+  }
+
+  if (m_targetAgreementIdHasBeenSet) {
+    payload.WithObject("TargetAgreementId", m_targetAgreementId.Jsonize());
+  }
+
+  if (m_targetAgreementIntentHasBeenSet) {
+    payload.WithObject("TargetAgreementIntent", m_targetAgreementIntent.Jsonize());
+  }
+
+  if (m_createdBySourceHasBeenSet) {
+    payload.WithObject("CreatedBySource", m_createdBySource.Jsonize());
   }
 
   return payload;

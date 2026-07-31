@@ -14,6 +14,7 @@
 #include <aws/connectcampaignsv2/ConnectCampaignsV2ServiceClientModel.h>
 #include <aws/connectcampaignsv2/ConnectCampaignsV2_EXPORTS.h>
 #include <aws/connectcampaignsv2/internal/ConnectCampaignsV2EndpointRules.h>
+#include <aws/connectcampaignsv2/model/AbandonmentRatePacingConfig.h>
 #include <aws/connectcampaignsv2/model/AccessDeniedException.h>
 #include <aws/connectcampaignsv2/model/AgentAction.h>
 #include <aws/connectcampaignsv2/model/AgentlessConfig.h>
@@ -35,6 +36,7 @@
 #include <aws/connectcampaignsv2/model/CommunicationTimeConfig.h>
 #include <aws/connectcampaignsv2/model/CommunicationTimeConfigType.h>
 #include <aws/connectcampaignsv2/model/ConflictException.h>
+#include <aws/connectcampaignsv2/model/ConnectionStartPoint.h>
 #include <aws/connectcampaignsv2/model/CreateCampaignRequest.h>
 #include <aws/connectcampaignsv2/model/CreateCampaignResult.h>
 #include <aws/connectcampaignsv2/model/CustomerProfilesIntegrationConfig.h>
@@ -105,6 +107,7 @@
 #include <aws/connectcampaignsv2/model/LocalTimeZoneDetectionType.h>
 #include <aws/connectcampaignsv2/model/OpenHours.h>
 #include <aws/connectcampaignsv2/model/OutboundRequest.h>
+#include <aws/connectcampaignsv2/model/PacingStrategy.h>
 #include <aws/connectcampaignsv2/model/PauseCampaignRequest.h>
 #include <aws/connectcampaignsv2/model/PredictiveConfig.h>
 #include <aws/connectcampaignsv2/model/PreviewConfig.h>

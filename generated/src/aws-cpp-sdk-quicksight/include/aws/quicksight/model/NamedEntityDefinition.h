@@ -121,6 +121,55 @@ class NamedEntityDefinition {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The rank order of the named entity definition.</p>
+   */
+  inline int GetRankOrder() const { return m_rankOrder; }
+  inline bool RankOrderHasBeenSet() const { return m_rankOrderHasBeenSet; }
+  inline void SetRankOrder(int value) {
+    m_rankOrderHasBeenSet = true;
+    m_rankOrder = value;
+  }
+  inline NamedEntityDefinition& WithRankOrder(int value) {
+    SetRankOrder(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The presentation order of the named entity definition.</p>
+   */
+  inline int GetPresentationOrder() const { return m_presentationOrder; }
+  inline bool PresentationOrderHasBeenSet() const { return m_presentationOrderHasBeenSet; }
+  inline void SetPresentationOrder(int value) {
+    m_presentationOrderHasBeenSet = true;
+    m_presentationOrder = value;
+  }
+  inline NamedEntityDefinition& WithPresentationOrder(int value) {
+    SetPresentationOrder(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A Boolean value that indicates whether the named entity definition is
+   * hidden.</p>
+   */
+  inline bool GetIsHidden() const { return m_isHidden; }
+  inline bool IsHiddenHasBeenSet() const { return m_isHiddenHasBeenSet; }
+  inline void SetIsHidden(bool value) {
+    m_isHiddenHasBeenSet = true;
+    m_isHidden = value;
+  }
+  inline NamedEntityDefinition& WithIsHidden(bool value) {
+    SetIsHidden(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_fieldName;
 
@@ -131,11 +180,20 @@ class NamedEntityDefinition {
   PropertyUsage m_propertyUsage{PropertyUsage::NOT_SET};
 
   NamedEntityDefinitionMetric m_metric;
+
+  int m_rankOrder{0};
+
+  int m_presentationOrder{0};
+
+  bool m_isHidden{false};
   bool m_fieldNameHasBeenSet = false;
   bool m_propertyNameHasBeenSet = false;
   bool m_propertyRoleHasBeenSet = false;
   bool m_propertyUsageHasBeenSet = false;
   bool m_metricHasBeenSet = false;
+  bool m_rankOrderHasBeenSet = false;
+  bool m_presentationOrderHasBeenSet = false;
+  bool m_isHiddenHasBeenSet = false;
 };
 
 }  // namespace Model

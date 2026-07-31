@@ -10,6 +10,7 @@
 #include <aws/quicksight/model/DayOfTheWeek.h>
 #include <aws/quicksight/model/QBusinessInsightsStatus.h>
 #include <aws/quicksight/model/VisualCustomActionDefaults.h>
+#include <aws/quicksight/model/VisualMessages.h>
 
 #include <utility>
 
@@ -127,6 +128,25 @@ class AssetOptions {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration options for the messages that are displayed on visuals in
+   * the analysis.</p>
+   */
+  inline const VisualMessages& GetVisualMessages() const { return m_visualMessages; }
+  inline bool VisualMessagesHasBeenSet() const { return m_visualMessagesHasBeenSet; }
+  template <typename VisualMessagesT = VisualMessages>
+  void SetVisualMessages(VisualMessagesT&& value) {
+    m_visualMessagesHasBeenSet = true;
+    m_visualMessages = std::forward<VisualMessagesT>(value);
+  }
+  template <typename VisualMessagesT = VisualMessages>
+  AssetOptions& WithVisualMessages(VisualMessagesT&& value) {
+    SetVisualMessages(std::forward<VisualMessagesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_timezone;
 
@@ -137,11 +157,14 @@ class AssetOptions {
   Aws::Vector<Aws::String> m_excludedDataSetArns;
 
   VisualCustomActionDefaults m_customActionDefaults;
+
+  VisualMessages m_visualMessages;
   bool m_timezoneHasBeenSet = false;
   bool m_weekStartHasBeenSet = false;
   bool m_qBusinessInsightsStatusHasBeenSet = false;
   bool m_excludedDataSetArnsHasBeenSet = false;
   bool m_customActionDefaultsHasBeenSet = false;
+  bool m_visualMessagesHasBeenSet = false;
 };
 
 }  // namespace Model

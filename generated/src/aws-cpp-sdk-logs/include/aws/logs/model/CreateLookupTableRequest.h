@@ -74,6 +74,8 @@ class CreateLookupTableRequest : public CloudWatchLogsRequest {
   /**
    * <p>The CSV content of the lookup table. The first row must be a header row with
    * column names. The content must use UTF-8 encoding and not exceed 10 MB.</p>
+   * <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but
+   * not both.</p>
    */
   inline const Aws::String& GetTableBody() const { return m_tableBody; }
   inline bool TableBodyHasBeenSet() const { return m_tableBodyHasBeenSet; }
@@ -85,6 +87,26 @@ class CreateLookupTableRequest : public CloudWatchLogsRequest {
   template <typename TableBodyT = Aws::String>
   CreateLookupTableRequest& WithTableBody(TableBodyT&& value) {
     SetTableBody(std::forward<TableBodyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of a completed CloudWatch Logs query whose results populate the lookup
+   * table.</p> <p>You must specify either <code>tableBody</code> or
+   * <code>queryId</code>, but not both.</p>
+   */
+  inline const Aws::String& GetQueryId() const { return m_queryId; }
+  inline bool QueryIdHasBeenSet() const { return m_queryIdHasBeenSet; }
+  template <typename QueryIdT = Aws::String>
+  void SetQueryId(QueryIdT&& value) {
+    m_queryIdHasBeenSet = true;
+    m_queryId = std::forward<QueryIdT>(value);
+  }
+  template <typename QueryIdT = Aws::String>
+  CreateLookupTableRequest& WithQueryId(QueryIdT&& value) {
+    SetQueryId(std::forward<QueryIdT>(value));
     return *this;
   }
   ///@}
@@ -140,12 +162,15 @@ class CreateLookupTableRequest : public CloudWatchLogsRequest {
 
   Aws::String m_tableBody;
 
+  Aws::String m_queryId;
+
   Aws::String m_kmsKeyId;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_lookupTableNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_tableBodyHasBeenSet = false;
+  bool m_queryIdHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };

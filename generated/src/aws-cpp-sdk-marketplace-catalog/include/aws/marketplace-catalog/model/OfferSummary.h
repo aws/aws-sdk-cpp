@@ -7,7 +7,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
+#include <aws/marketplace-catalog/model/OfferCreatedBySourceString.h>
 #include <aws/marketplace-catalog/model/OfferStateString.h>
+#include <aws/marketplace-catalog/model/OfferTargetAgreementIntentString.h>
 #include <aws/marketplace-catalog/model/OfferTargetingString.h>
 
 #include <utility>
@@ -204,6 +206,56 @@ class OfferSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The target agreement ID of the offer.</p>
+   */
+  inline const Aws::String& GetTargetAgreementId() const { return m_targetAgreementId; }
+  inline bool TargetAgreementIdHasBeenSet() const { return m_targetAgreementIdHasBeenSet; }
+  template <typename TargetAgreementIdT = Aws::String>
+  void SetTargetAgreementId(TargetAgreementIdT&& value) {
+    m_targetAgreementIdHasBeenSet = true;
+    m_targetAgreementId = std::forward<TargetAgreementIdT>(value);
+  }
+  template <typename TargetAgreementIdT = Aws::String>
+  OfferSummary& WithTargetAgreementId(TargetAgreementIdT&& value) {
+    SetTargetAgreementId(std::forward<TargetAgreementIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The target agreement intent of the offer.</p>
+   */
+  inline OfferTargetAgreementIntentString GetTargetAgreementIntent() const { return m_targetAgreementIntent; }
+  inline bool TargetAgreementIntentHasBeenSet() const { return m_targetAgreementIntentHasBeenSet; }
+  inline void SetTargetAgreementIntent(OfferTargetAgreementIntentString value) {
+    m_targetAgreementIntentHasBeenSet = true;
+    m_targetAgreementIntent = value;
+  }
+  inline OfferSummary& WithTargetAgreementIntent(OfferTargetAgreementIntentString value) {
+    SetTargetAgreementIntent(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The creation source of the offer.</p>
+   */
+  inline OfferCreatedBySourceString GetCreatedBySource() const { return m_createdBySource; }
+  inline bool CreatedBySourceHasBeenSet() const { return m_createdBySourceHasBeenSet; }
+  inline void SetCreatedBySource(OfferCreatedBySourceString value) {
+    m_createdBySourceHasBeenSet = true;
+    m_createdBySource = value;
+  }
+  inline OfferSummary& WithCreatedBySource(OfferCreatedBySourceString value) {
+    SetCreatedBySource(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -222,6 +274,12 @@ class OfferSummary {
   Aws::Vector<OfferTargetingString> m_targeting;
 
   Aws::String m_offerSetId;
+
+  Aws::String m_targetAgreementId;
+
+  OfferTargetAgreementIntentString m_targetAgreementIntent{OfferTargetAgreementIntentString::NOT_SET};
+
+  OfferCreatedBySourceString m_createdBySource{OfferCreatedBySourceString::NOT_SET};
   bool m_nameHasBeenSet = false;
   bool m_productIdHasBeenSet = false;
   bool m_resaleAuthorizationIdHasBeenSet = false;
@@ -231,6 +289,9 @@ class OfferSummary {
   bool m_stateHasBeenSet = false;
   bool m_targetingHasBeenSet = false;
   bool m_offerSetIdHasBeenSet = false;
+  bool m_targetAgreementIdHasBeenSet = false;
+  bool m_targetAgreementIntentHasBeenSet = false;
+  bool m_createdBySourceHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -14,8 +14,11 @@
 #include <aws/billing/model/GetBillingViewRequest.h>
 #include <aws/billing/model/GetCreditAllocationHistoryRequest.h>
 #include <aws/billing/model/GetCreditsRequest.h>
+#include <aws/billing/model/GetEnterpriseSupportChargeSummaryRequest.h>
+#include <aws/billing/model/GetEnterpriseSupportContractDetailsRequest.h>
 #include <aws/billing/model/GetResourcePolicyRequest.h>
 #include <aws/billing/model/ListBillingViewsRequest.h>
+#include <aws/billing/model/ListEnterpriseSupportLinkedAccountChargesRequest.h>
 #include <aws/billing/model/ListSourceViewsForBillingViewRequest.h>
 #include <aws/billing/model/ListTagsForResourceRequest.h>
 #include <aws/billing/model/RedeemCreditsRequest.h>
@@ -234,6 +237,20 @@ GetCreditsOutcome BillingClient::GetCredits(const GetCreditsRequest& request) co
   return result.IsSuccess() ? GetCreditsOutcome(result.GetResultWithOwnership()) : GetCreditsOutcome(std::move(result.GetError()));
 }
 
+GetEnterpriseSupportChargeSummaryOutcome BillingClient::GetEnterpriseSupportChargeSummary(
+    const GetEnterpriseSupportChargeSummaryRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetEnterpriseSupportChargeSummaryOutcome(result.GetResultWithOwnership())
+                            : GetEnterpriseSupportChargeSummaryOutcome(std::move(result.GetError()));
+}
+
+GetEnterpriseSupportContractDetailsOutcome BillingClient::GetEnterpriseSupportContractDetails(
+    const GetEnterpriseSupportContractDetailsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetEnterpriseSupportContractDetailsOutcome(result.GetResultWithOwnership())
+                            : GetEnterpriseSupportContractDetailsOutcome(std::move(result.GetError()));
+}
+
 GetResourcePolicyOutcome BillingClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetResourcePolicyOutcome(result.GetResultWithOwnership())
@@ -244,6 +261,13 @@ ListBillingViewsOutcome BillingClient::ListBillingViews(const ListBillingViewsRe
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListBillingViewsOutcome(result.GetResultWithOwnership())
                             : ListBillingViewsOutcome(std::move(result.GetError()));
+}
+
+ListEnterpriseSupportLinkedAccountChargesOutcome BillingClient::ListEnterpriseSupportLinkedAccountCharges(
+    const ListEnterpriseSupportLinkedAccountChargesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEnterpriseSupportLinkedAccountChargesOutcome(result.GetResultWithOwnership())
+                            : ListEnterpriseSupportLinkedAccountChargesOutcome(std::move(result.GetError()));
 }
 
 ListSourceViewsForBillingViewOutcome BillingClient::ListSourceViewsForBillingView(

@@ -20,8 +20,9 @@ namespace NetworkFirewall {
 namespace Model {
 
 /**
- * <p>A key-value pair that defines a container attribute filter for a container
- * monitoring configuration.</p><p><h3>See Also:</h3>   <a
+ * <p>A key-value filter pair used in container association monitoring
+ * configurations to narrow which containers are tracked.</p><p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ContainerAttribute">AWS
  * API Reference</a></p>
  */
@@ -34,7 +35,7 @@ class ContainerAttribute {
 
   ///@{
   /**
-   * <p>The key of the container attribute to filter on.</p>
+   * <p>The attribute key to filter on.</p>
    */
   inline const Aws::String& GetKey() const { return m_key; }
   inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
@@ -52,7 +53,7 @@ class ContainerAttribute {
 
   ///@{
   /**
-   * <p>The value of the container attribute to filter on.</p>
+   * <p>The attribute value to match.</p>
    */
   inline const Aws::String& GetValue() const { return m_value; }
   inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }

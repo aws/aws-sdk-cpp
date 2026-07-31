@@ -74,6 +74,51 @@ class AdditionalStorageVolumeOutput {
 
   ///@{
   /**
+   * <p>The status of an in-progress storage operation on the additional storage
+   * volume. This field appears only while a storage operation is in progress. It
+   * isn't present when no storage operation is active. Possible values:</p> <ul>
+   * <li> <p> <code>Initializing</code> - The volume is initializing from a snapshot,
+   * such as during a snapshot restore, point-in-time restore, read replica creation,
+   * or blue/green deployment. Performance can be lower than provisioned until
+   * initialization completes.</p> </li> <li> <p> <code>Optimizing</code> - The
+   * volume is optimizing following a storage scaling or modification operation.</p>
+   * </li> </ul>
+   */
+  inline const Aws::String& GetStorageOperationStatus() const { return m_storageOperationStatus; }
+  inline bool StorageOperationStatusHasBeenSet() const { return m_storageOperationStatusHasBeenSet; }
+  template <typename StorageOperationStatusT = Aws::String>
+  void SetStorageOperationStatus(StorageOperationStatusT&& value) {
+    m_storageOperationStatusHasBeenSet = true;
+    m_storageOperationStatus = std::forward<StorageOperationStatusT>(value);
+  }
+  template <typename StorageOperationStatusT = Aws::String>
+  AdditionalStorageVolumeOutput& WithStorageOperationStatus(StorageOperationStatusT&& value) {
+    SetStorageOperationStatus(std::forward<StorageOperationStatusT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The percentage of the in-progress storage operation on the additional storage
+   * volume that has completed, from <code>0</code> to <code>100</code>. This field
+   * appears only while a storage operation is in progress. It isn't present when no
+   * storage operation is active.</p>
+   */
+  inline int GetStorageOperationPercentProgress() const { return m_storageOperationPercentProgress; }
+  inline bool StorageOperationPercentProgressHasBeenSet() const { return m_storageOperationPercentProgressHasBeenSet; }
+  inline void SetStorageOperationPercentProgress(int value) {
+    m_storageOperationPercentProgressHasBeenSet = true;
+    m_storageOperationPercentProgress = value;
+  }
+  inline AdditionalStorageVolumeOutput& WithStorageOperationPercentProgress(int value) {
+    SetStorageOperationPercentProgress(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The amount of storage allocated for the additional storage volume, in
    * gibibytes (GiB). The minimum is 20 GiB. The maximum is 65,536 GiB (64 TiB).</p>
    */
@@ -163,6 +208,10 @@ class AdditionalStorageVolumeOutput {
 
   Aws::String m_storageVolumeStatus;
 
+  Aws::String m_storageOperationStatus;
+
+  int m_storageOperationPercentProgress{0};
+
   int m_allocatedStorage{0};
 
   int m_iOPS{0};
@@ -174,6 +223,8 @@ class AdditionalStorageVolumeOutput {
   Aws::String m_storageType;
   bool m_volumeNameHasBeenSet = false;
   bool m_storageVolumeStatusHasBeenSet = false;
+  bool m_storageOperationStatusHasBeenSet = false;
+  bool m_storageOperationPercentProgressHasBeenSet = false;
   bool m_allocatedStorageHasBeenSet = false;
   bool m_iOPSHasBeenSet = false;
   bool m_maxAllocatedStorageHasBeenSet = false;

@@ -95,6 +95,7 @@
 #include <aws/transcribestreaming/model/TimestampRange.h>
 #include <aws/transcribestreaming/model/Transcript.h>
 #include <aws/transcribestreaming/model/TranscriptEvent.h>
+#include <aws/transcribestreaming/model/TranscriptFormat.h>
 #include <aws/transcribestreaming/model/TranscriptResultStream.h>
 #include <aws/transcribestreaming/model/Type.h>
 #include <aws/transcribestreaming/model/UtteranceEvent.h>

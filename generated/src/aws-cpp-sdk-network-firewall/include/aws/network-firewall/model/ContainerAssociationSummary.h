@@ -20,10 +20,10 @@ namespace NetworkFirewall {
 namespace Model {
 
 /**
- * <p>High-level information about a container association, returned by the
- * <a>ListContainerAssociations</a> operation. You can use this information to
- * retrieve the full details of a container association using
- * <a>DescribeContainerAssociation</a>.</p><p><h3>See Also:</h3>   <a
+ * <p>The metadata for a container association returned by
+ * <code>ListContainerAssociations</code>. Contains the ARN and name that you use
+ * to identify the container association in other operations.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ContainerAssociationSummary">AWS
  * API Reference</a></p>
  */

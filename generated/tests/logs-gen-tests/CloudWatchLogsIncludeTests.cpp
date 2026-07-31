@@ -236,6 +236,7 @@
 #include <aws/logs/model/LogGroupSummary.h>
 #include <aws/logs/model/LogStream.h>
 #include <aws/logs/model/LookupTable.h>
+#include <aws/logs/model/LookupTableConfiguration.h>
 #include <aws/logs/model/LowerCaseString.h>
 #include <aws/logs/model/MalformedQueryException.h>
 #include <aws/logs/model/MetricFilter.h>

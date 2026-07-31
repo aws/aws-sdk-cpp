@@ -5,6 +5,10 @@
 
 #pragma once
 #include <aws/connectcampaignsv2/ConnectCampaignsV2_EXPORTS.h>
+#include <aws/connectcampaignsv2/model/PacingStrategy.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+
+#include <utility>
 
 namespace Aws {
 namespace Utils {
@@ -41,9 +45,36 @@ class PredictiveConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Pacing strategies the dialer enforces simultaneously.</p>
+   */
+  inline const Aws::Vector<PacingStrategy>& GetPacingStrategies() const { return m_pacingStrategies; }
+  inline bool PacingStrategiesHasBeenSet() const { return m_pacingStrategiesHasBeenSet; }
+  template <typename PacingStrategiesT = Aws::Vector<PacingStrategy>>
+  void SetPacingStrategies(PacingStrategiesT&& value) {
+    m_pacingStrategiesHasBeenSet = true;
+    m_pacingStrategies = std::forward<PacingStrategiesT>(value);
+  }
+  template <typename PacingStrategiesT = Aws::Vector<PacingStrategy>>
+  PredictiveConfig& WithPacingStrategies(PacingStrategiesT&& value) {
+    SetPacingStrategies(std::forward<PacingStrategiesT>(value));
+    return *this;
+  }
+  template <typename PacingStrategiesT = PacingStrategy>
+  PredictiveConfig& AddPacingStrategies(PacingStrategiesT&& value) {
+    m_pacingStrategiesHasBeenSet = true;
+    m_pacingStrategies.emplace_back(std::forward<PacingStrategiesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   double m_bandwidthAllocation{0.0};
+
+  Aws::Vector<PacingStrategy> m_pacingStrategies;
   bool m_bandwidthAllocationHasBeenSet = false;
+  bool m_pacingStrategiesHasBeenSet = false;
 };
 
 }  // namespace Model

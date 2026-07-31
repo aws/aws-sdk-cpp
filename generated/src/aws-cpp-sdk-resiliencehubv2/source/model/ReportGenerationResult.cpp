@@ -34,6 +34,14 @@ ReportGenerationResult& ReportGenerationResult::operator=(JsonView jsonValue) {
     m_assessmentId = jsonValue.GetString("assessmentId");
     m_assessmentIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("testRunId")) {
+    m_testRunId = jsonValue.GetString("testRunId");
+    m_testRunIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("testTemplateArn")) {
+    m_testTemplateArn = jsonValue.GetString("testTemplateArn");
+    m_testTemplateArnHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetDouble("createdAt");
     m_createdAtHasBeenSet = true;
@@ -62,6 +70,14 @@ JsonValue ReportGenerationResult::Jsonize() const {
 
   if (m_assessmentIdHasBeenSet) {
     payload.WithString("assessmentId", m_assessmentId);
+  }
+
+  if (m_testRunIdHasBeenSet) {
+    payload.WithString("testRunId", m_testRunId);
+  }
+
+  if (m_testTemplateArnHasBeenSet) {
+    payload.WithString("testTemplateArn", m_testTemplateArn);
   }
 
   if (m_createdAtHasBeenSet) {

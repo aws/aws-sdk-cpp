@@ -112,7 +112,7 @@ class UpdateAnalysisRequest : public QuickSightRequest {
   /**
    * <p>A source entity to use for the analysis that you're updating. This metadata
    * structure contains details that describe a source template and one or more
-   * datasets.</p>
+   * datasets or topics.</p>
    */
   inline const AnalysisSourceEntity& GetSourceEntity() const { return m_sourceEntity; }
   inline bool SourceEntityHasBeenSet() const { return m_sourceEntityHasBeenSet; }

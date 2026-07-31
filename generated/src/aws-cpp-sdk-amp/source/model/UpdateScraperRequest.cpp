@@ -35,5 +35,13 @@ Aws::String UpdateScraperRequest::SerializePayload() const {
     payload.WithString("clientToken", m_clientToken);
   }
 
+  if (m_exportersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> exportersJsonList(m_exporters.size());
+    for (unsigned exportersIndex = 0; exportersIndex < exportersJsonList.GetLength(); ++exportersIndex) {
+      exportersJsonList[exportersIndex].AsObject(m_exporters[exportersIndex].Jsonize());
+    }
+    payload.WithArray("exporters", std::move(exportersJsonList));
+  }
+
   return payload.View().WriteReadable();
 }

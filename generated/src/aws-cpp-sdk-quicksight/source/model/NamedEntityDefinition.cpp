@@ -38,6 +38,18 @@ NamedEntityDefinition& NamedEntityDefinition::operator=(JsonView jsonValue) {
     m_metric = jsonValue.GetObject("Metric");
     m_metricHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RankOrder")) {
+    m_rankOrder = jsonValue.GetInteger("RankOrder");
+    m_rankOrderHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("PresentationOrder")) {
+    m_presentationOrder = jsonValue.GetInteger("PresentationOrder");
+    m_presentationOrderHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("IsHidden")) {
+    m_isHidden = jsonValue.GetBool("IsHidden");
+    m_isHiddenHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +74,18 @@ JsonValue NamedEntityDefinition::Jsonize() const {
 
   if (m_metricHasBeenSet) {
     payload.WithObject("Metric", m_metric.Jsonize());
+  }
+
+  if (m_rankOrderHasBeenSet) {
+    payload.WithInteger("RankOrder", m_rankOrder);
+  }
+
+  if (m_presentationOrderHasBeenSet) {
+    payload.WithInteger("PresentationOrder", m_presentationOrder);
+  }
+
+  if (m_isHiddenHasBeenSet) {
+    payload.WithBool("IsHidden", m_isHidden);
   }
 
   return payload;

@@ -38,6 +38,7 @@
 #include <aws/quicksight/model/ListThemeVersionsPaginationTraits.h>
 #include <aws/quicksight/model/ListThemesPaginationTraits.h>
 #include <aws/quicksight/model/ListTopicsPaginationTraits.h>
+#include <aws/quicksight/model/ListTopicsV2PaginationTraits.h>
 #include <aws/quicksight/model/ListUserGroupsPaginationTraits.h>
 #include <aws/quicksight/model/ListUsersPaginationTraits.h>
 #include <aws/quicksight/model/ListVPCConnectionsPaginationTraits.h>
@@ -51,6 +52,7 @@
 #include <aws/quicksight/model/SearchGroupsPaginationTraits.h>
 #include <aws/quicksight/model/SearchKnowledgeBasesPaginationTraits.h>
 #include <aws/quicksight/model/SearchTopicsPaginationTraits.h>
+#include <aws/quicksight/model/SearchTopicsV2PaginationTraits.h>
 
 #include <memory>
 
@@ -420,6 +422,17 @@ class QuickSightPaginationBase {
   }
 
   /**
+   * Create a paginator for ListTopicsV2 operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTopicsV2Request, Pagination::ListTopicsV2PaginationTraits<DerivedClient>>
+  ListTopicsV2Paginator(const Model::ListTopicsV2Request& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTopicsV2Request,
+                                             Pagination::ListTopicsV2PaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                      request};
+  }
+
+  /**
    * Create a paginator for ListUserGroups operation
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListUserGroupsRequest, Pagination::ListUserGroupsPaginationTraits<DerivedClient>>
@@ -564,6 +577,17 @@ class QuickSightPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchTopicsRequest,
                                              Pagination::SearchTopicsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
+  }
+
+  /**
+   * Create a paginator for SearchTopicsV2 operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchTopicsV2Request, Pagination::SearchTopicsV2PaginationTraits<DerivedClient>>
+  SearchTopicsV2Paginator(const Model::SearchTopicsV2Request& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchTopicsV2Request,
+                                             Pagination::SearchTopicsV2PaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                        request};
   }
 };
 }  // namespace QuickSight

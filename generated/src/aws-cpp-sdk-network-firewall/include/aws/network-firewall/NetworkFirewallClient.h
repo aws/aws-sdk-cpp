@@ -44,9 +44,9 @@ namespace NetworkFirewall {
  * and coming from an internet gateway, NAT gateway, or over VPN or Direct Connect.
  * Network Firewall uses rules that are compatible with Suricata, a free, open
  * source network analysis and threat detection engine. Network Firewall supports
- * Suricata version 7.0.3. For information about Suricata, see the <a
+ * Suricata version 7.0.8. For information about Suricata, see the <a
  * href="https://suricata.io/">Suricata website</a> and the <a
- * href="https://suricata.readthedocs.io/en/suricata-7.0.3/">Suricata User
+ * href="https://suricata.readthedocs.io/en/suricata-7.0.8/">Suricata User
  * Guide</a>. </p> <p>You can use Network Firewall to monitor and protect your VPC
  * traffic in a number of ways. The following are just a few examples: </p> <ul>
  * <li> <p>Allow domains or IP addresses for known Amazon Web Services service
@@ -311,14 +311,10 @@ class AWS_NETWORKFIREWALL_API NetworkFirewallClient : public Aws::Client::AWSJso
   }
 
   /**
-   * <p>Creates a container association for Network Firewall. A container association
-   * links container clusters (ECS or EKS) to Network Firewall, enabling dynamic IP
-   * resolution for firewall rules based on container attributes.</p> <p>To manage a
-   * container association's tags, use the standard Amazon Web Services resource
-   * tagging operations, <a>ListTagsForResource</a>, <a>TagResource</a>, and
-   * <a>UntagResource</a>.</p> <p>To retrieve information about container
-   * associations, use <a>ListContainerAssociations</a> and
-   * <a>DescribeContainerAssociation</a>.</p><p><h3>See Also:</h3>   <a
+   * <p>Creates a Network Firewall container association. The association monitors
+   * container lifecycle events in your Amazon ECS or Amazon EKS clusters and
+   * resolves running container addresses for use in firewall rules.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateContainerAssociation">AWS
    * API Reference</a></p>
    */
@@ -654,10 +650,11 @@ class AWS_NETWORKFIREWALL_API NetworkFirewallClient : public Aws::Client::AWSJso
   }
 
   /**
-   * <p>Deletes the specified container association. When you delete a container
-   * association, Network Firewall stops monitoring the associated container clusters
-   * and removes the resolved IP addresses from firewall rules.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Deletes a container association. The resource transitions to a
+   * <code>DELETING</code> state. Deletion is asynchronous - Network Firewall returns
+   * immediately while cleanup proceeds in the background. You can't delete a
+   * container association while a rule group references it.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteContainerAssociation">AWS
    * API Reference</a></p>
    */
@@ -1013,8 +1010,8 @@ class AWS_NETWORKFIREWALL_API NetworkFirewallClient : public Aws::Client::AWSJso
   }
 
   /**
-   * <p>Returns the properties of a container association.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Retrieves the configuration and status of a container
+   * association.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeContainerAssociation">AWS
    * API Reference</a></p>
    */
@@ -1635,8 +1632,9 @@ class AWS_NETWORKFIREWALL_API NetworkFirewallClient : public Aws::Client::AWSJso
   }
 
   /**
-   * <p>Retrieves the metadata for the container associations that you have defined.
-   * You can optionally page through results.</p><p><h3>See Also:</h3>   <a
+   * <p>Lists the container associations in your account and Region. Use the
+   * <code>NextToken</code> parameter in subsequent requests to retrieve additional
+   * results.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListContainerAssociations">AWS
    * API Reference</a></p>
    */
@@ -2283,9 +2281,10 @@ class AWS_NETWORKFIREWALL_API NetworkFirewallClient : public Aws::Client::AWSJso
   }
 
   /**
-   * <p>Updates the properties of an existing container association. Use this to
-   * modify the container monitoring configurations or description.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Updates the monitoring configurations and description of a container
+   * association. You can't change the container type after creation. Provide an
+   * update token to enable optimistic concurrency control.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateContainerAssociation">AWS
    * API Reference</a></p>
    */

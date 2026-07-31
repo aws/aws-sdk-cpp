@@ -65,7 +65,8 @@ class DeleteContainerAssociationResult {
 
   ///@{
   /**
-   * <p>The current status of the container association.</p>
+   * <p>The current status of the container association. After deletion is initiated,
+   * the status is <code>DELETING</code>.</p>
    */
   inline ContainerAssociationStatus GetStatus() const { return m_status; }
   inline void SetStatus(ContainerAssociationStatus value) {

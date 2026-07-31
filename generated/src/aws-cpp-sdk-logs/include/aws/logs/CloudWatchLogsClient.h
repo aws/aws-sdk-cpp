@@ -556,10 +556,12 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   }
 
   /**
-   * <p>Creates a lookup table by uploading CSV data. You can use lookup tables to
-   * enrich log data in CloudWatch Logs Insights queries with reference data such as
-   * user details, application names, or error descriptions.</p> <p>The table name
-   * must be unique within your account and Region. The CSV content must include a
+   * <p>Creates a lookup table by uploading CSV data or from CloudWatch Logs query
+   * results. You can use lookup tables to enrich log data in CloudWatch Logs queries
+   * with reference data such as user details, application names, or error
+   * descriptions.</p> <p>The table name must be unique within your account and
+   * Region. You must specify either <code>tableBody</code> or <code>queryId</code>,
+   * but not both. If you use <code>tableBody</code>, the CSV content must include a
    * header row with column names, use UTF-8 encoding, and not exceed 10
    * MB.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLookupTable">AWS
@@ -2561,7 +2563,7 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   }
 
   /**
-   * <p>Returns the storage tier policy for your account.</p><p><h3>See Also:</h3>
+   * <p>Returns the storage tier policy for the account.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetStorageTierPolicy">AWS
    * API Reference</a></p>
@@ -3912,10 +3914,10 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   }
 
   /**
-   * <p>Sets the storage tier policy for your account. When you set the storage tier
-   * to <code>INTELLIGENT_TIERING</code>, CloudWatch Logs automatically moves your
-   * log data between storage tiers based on access patterns to optimize
-   * costs.</p><p><h3>See Also:</h3>   <a
+   * <p>Sets the storage tier policy for the account. When you set the storage tier
+   * to <code>INTELLIGENT_TIERING</code>, the service automatically moves log data to
+   * the most cost-effective storage tier based on access frequency.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutStorageTierPolicy">AWS
    * API Reference</a></p>
    */
@@ -4456,10 +4458,11 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   }
 
   /**
-   * <p>Updates an existing lookup table by replacing all of its CSV content. After
-   * the update completes, queries that use this table will use the new data.</p>
-   * <p>This is a full replacement operation. All existing content is replaced with
-   * the new CSV data.</p><p><h3>See Also:</h3>   <a
+   * <p>Updates an existing lookup table by replacing all of its content with new CSV
+   * data or CloudWatch Logs query results. After the update completes, queries that
+   * use this table use the new data.</p> <p>This is a full replacement operation.
+   * All existing content is replaced. You must specify either <code>tableBody</code>
+   * or <code>queryId</code>, but not both.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UpdateLookupTable">AWS
    * API Reference</a></p>
    */

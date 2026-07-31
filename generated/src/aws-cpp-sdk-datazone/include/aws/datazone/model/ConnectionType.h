@@ -34,7 +34,8 @@ enum class ConnectionType {
   WORKFLOWS_MWAA,
   AMAZON_Q,
   MLFLOW,
-  VPC
+  VPC,
+  GIT
 };
 
 namespace ConnectionTypeMapper {

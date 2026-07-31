@@ -18,6 +18,7 @@ namespace FilterClassMapper {
 static const int ENFORCED_VALUE_FILTER_HASH = HashingUtils::HashString("ENFORCED_VALUE_FILTER");
 static const int CONDITIONAL_VALUE_FILTER_HASH = HashingUtils::HashString("CONDITIONAL_VALUE_FILTER");
 static const int NAMED_VALUE_FILTER_HASH = HashingUtils::HashString("NAMED_VALUE_FILTER");
+static const int DASHBOARD_DEFAULT_FILTER_HASH = HashingUtils::HashString("DASHBOARD_DEFAULT_FILTER");
 
 FilterClass GetFilterClassForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ FilterClass GetFilterClassForName(const Aws::String& name) {
     return FilterClass::CONDITIONAL_VALUE_FILTER;
   } else if (hashCode == NAMED_VALUE_FILTER_HASH) {
     return FilterClass::NAMED_VALUE_FILTER;
+  } else if (hashCode == DASHBOARD_DEFAULT_FILTER_HASH) {
+    return FilterClass::DASHBOARD_DEFAULT_FILTER;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForFilterClass(FilterClass enumValue) {
       return "CONDITIONAL_VALUE_FILTER";
     case FilterClass::NAMED_VALUE_FILTER:
       return "NAMED_VALUE_FILTER";
+    case FilterClass::DASHBOARD_DEFAULT_FILTER:
+      return "DASHBOARD_DEFAULT_FILTER";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -31,6 +31,12 @@ void ListReportsRequest::AddQueryStringParameters(URI& uri) const {
     ss.str("");
   }
 
+  if (m_testRunIdHasBeenSet) {
+    ss << m_testRunId;
+    uri.AddQueryStringParameter("testRunId", ss.str());
+    ss.str("");
+  }
+
   if (m_maxResultsHasBeenSet) {
     ss << m_maxResults;
     uri.AddQueryStringParameter("maxResults", ss.str());

@@ -22,6 +22,13 @@ PredictiveConfig& PredictiveConfig::operator=(JsonView jsonValue) {
     m_bandwidthAllocation = jsonValue.GetDouble("bandwidthAllocation");
     m_bandwidthAllocationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("pacingStrategies")) {
+    Aws::Utils::Array<JsonView> pacingStrategiesJsonList = jsonValue.GetArray("pacingStrategies");
+    for (unsigned pacingStrategiesIndex = 0; pacingStrategiesIndex < pacingStrategiesJsonList.GetLength(); ++pacingStrategiesIndex) {
+      m_pacingStrategies.push_back(pacingStrategiesJsonList[pacingStrategiesIndex].AsObject());
+    }
+    m_pacingStrategiesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +37,14 @@ JsonValue PredictiveConfig::Jsonize() const {
 
   if (m_bandwidthAllocationHasBeenSet) {
     payload.WithDouble("bandwidthAllocation", m_bandwidthAllocation);
+  }
+
+  if (m_pacingStrategiesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> pacingStrategiesJsonList(m_pacingStrategies.size());
+    for (unsigned pacingStrategiesIndex = 0; pacingStrategiesIndex < pacingStrategiesJsonList.GetLength(); ++pacingStrategiesIndex) {
+      pacingStrategiesJsonList[pacingStrategiesIndex].AsObject(m_pacingStrategies[pacingStrategiesIndex].Jsonize());
+    }
+    payload.WithArray("pacingStrategies", std::move(pacingStrategiesJsonList));
   }
 
   return payload;
