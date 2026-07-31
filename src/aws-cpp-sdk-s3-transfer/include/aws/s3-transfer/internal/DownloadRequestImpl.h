@@ -36,16 +36,16 @@ class AWS_CORE_LOCAL DownloadRequestImpl {
   DownloadRequestImpl(DownloadRequestImpl&&) = delete;
   DownloadRequestImpl& operator=(DownloadRequestImpl&&) = delete;
 
-  virtual Aws::Client::AWSError<Aws::S3::S3Errors> Validate() const {
-    return Aws::Client::AWSError<Aws::S3::S3Errors>();
-  }
+  // Empty when the request is usable; otherwise the validation error.
+  virtual OptionalError Validate() const { return OptionalError(); }
 
   // Runs once the transfer succeeds; the file destination promotes its temp file here.
-  virtual Aws::Client::AWSError<Aws::S3::S3Errors> FinalizeOnSuccess(
+  virtual OptionalError FinalizeOnSuccess(
       const std::shared_ptr<DownloadTransferState>& state) const = 0;
 
-  // Runs on failure; the file destination removes the temp file the CRT left behind.
-  virtual void CleanupOnFailure(const std::shared_ptr<DownloadTransferState>& state) const = 0;
+  // Runs on failure; the file destination removes the temp file the CRT left behind. Empty on
+  // success; otherwise an error the caller can surface alongside the transfer's own failure.
+  virtual OptionalError CleanupOnFailure(const std::shared_ptr<DownloadTransferState>& state) const = 0;
 
   // Empty unless this request downloads to a file, in which case the CRT writes the file directly.
   virtual const Aws::String& GetDestinationFilePath() const;
@@ -69,10 +69,10 @@ class AWS_CORE_LOCAL FileDownloadImpl final : public DownloadRequestImpl {
                    Aws::String destinationFilePath,
                    Aws::Vector<std::shared_ptr<DownloadProgressListener>> transferListeners);
 
-  Aws::Client::AWSError<Aws::S3::S3Errors> Validate() const override;
-  Aws::Client::AWSError<Aws::S3::S3Errors> FinalizeOnSuccess(
+  OptionalError Validate() const override;
+  OptionalError FinalizeOnSuccess(
       const std::shared_ptr<DownloadTransferState>& state) const override;
-  void CleanupOnFailure(const std::shared_ptr<DownloadTransferState>& state) const override;
+  OptionalError CleanupOnFailure(const std::shared_ptr<DownloadTransferState>& state) const override;
   const Aws::String& GetDestinationFilePath() const override { return m_destinationFilePath; }
   const Aws::String& GetTempFilePath() const override { return m_tempFilePath; }
 
@@ -88,9 +88,9 @@ class AWS_CORE_LOCAL StreamDownloadImpl final : public DownloadRequestImpl {
                      std::shared_ptr<DownloadDataReceiver> dataReceiver,
                      Aws::Vector<std::shared_ptr<DownloadProgressListener>> transferListeners);
 
-  Aws::Client::AWSError<Aws::S3::S3Errors> FinalizeOnSuccess(
+  OptionalError FinalizeOnSuccess(
       const std::shared_ptr<DownloadTransferState>& state) const override;
-  void CleanupOnFailure(const std::shared_ptr<DownloadTransferState>& state) const override;
+  OptionalError CleanupOnFailure(const std::shared_ptr<DownloadTransferState>& state) const override;
   const std::shared_ptr<DownloadDataReceiver>& GetDataReceiver() const override { return m_dataReceiver; }
 
  private:

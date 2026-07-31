@@ -33,6 +33,9 @@ S3TransferManagerImpl::S3TransferManagerImpl(
     // An already-built client cannot be reconfigured, so adopt its settings: endpoint resolution
     // below must agree with the region it signs for. Zero means the client set nothing.
     m_config.region = m_crtClient->GetRegion().c_str();
+    // Adopt the client's provider too, so per-request endpoint signing overrides are built from the
+    // same credentials the client signs with rather than from an unset provider.
+    m_credentialsProvider = m_crtClient->GetCredentialsProvider();
     if (m_crtClient->GetPartSize() > 0) {
       m_config.partSize = m_crtClient->GetPartSize();
     }

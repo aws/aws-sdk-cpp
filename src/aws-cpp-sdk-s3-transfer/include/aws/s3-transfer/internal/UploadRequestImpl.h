@@ -36,8 +36,8 @@ class AWS_CORE_LOCAL UploadRequestImpl {
   UploadRequestImpl(UploadRequestImpl&&) = delete;
   UploadRequestImpl& operator=(UploadRequestImpl&&) = delete;
 
-  // Validates the source and seeds any state the transfer needs before dispatch.
-  virtual Aws::Client::AWSError<Aws::S3::S3Errors> PrepareTransferState(
+  // Validates the source and seeds any state the transfer needs before dispatch; empty on success.
+  virtual OptionalError PrepareTransferState(
       const std::shared_ptr<UploadTransferState>& state) const = 0;
 
   // Empty unless this request uploads from a file, in which case the CRT reads the file directly.
@@ -64,7 +64,7 @@ class AWS_CORE_LOCAL FileUploadImpl final : public UploadRequestImpl {
                  Aws::String sourceFilePath,
                  Aws::Vector<std::shared_ptr<UploadProgressListener>> transferListeners);
 
-  Aws::Client::AWSError<Aws::S3::S3Errors> PrepareTransferState(
+  OptionalError PrepareTransferState(
       const std::shared_ptr<UploadTransferState>& state) const override;
   const Aws::String& GetSourceFilePath() const override { return m_sourceFilePath; }
 
@@ -79,7 +79,7 @@ class AWS_CORE_LOCAL StreamUploadImpl final : public UploadRequestImpl {
                    std::shared_ptr<Aws::IOStream> body,
                    Aws::Vector<std::shared_ptr<UploadProgressListener>> transferListeners);
 
-  Aws::Client::AWSError<Aws::S3::S3Errors> PrepareTransferState(
+  OptionalError PrepareTransferState(
       const std::shared_ptr<UploadTransferState>& state) const override;
   bool IsStreamUpload() const override { return true; }
 };

@@ -88,8 +88,10 @@ Aws::Client::CoreErrors MapCrtErrorCode(Aws::Crt::S3::S3ErrorCode crtErrorCode) 
   }
 }
 
-// SEP checksum validation drops error bodies on non-2xx GETs; recover RequestId from headers.
-Aws::String ExtractHeader(const Aws::Crt::Vector<Aws::Crt::Http::HttpHeader>& headers, const char* name) {
+// SEP checksum validation drops error bodies on non-2xx GETs; recover RequestId from headers. Returns
+// nothing when the header is absent, which is distinct from a header S3 sent with an empty value.
+Aws::Crt::Optional<Aws::String> ExtractHeader(const Aws::Crt::Vector<Aws::Crt::Http::HttpHeader>& headers,
+                                              const char* name) {
   for (const auto& header : headers) {
     const Aws::String key = Aws::Utils::StringUtils::FromByteCursor(header.name);
     if (Aws::Utils::StringUtils::CaselessCompare(key.c_str(), name)) {
@@ -139,7 +141,11 @@ Aws::Client::AWSError<Aws::S3::S3Errors> MapCrtError(const Aws::Crt::S3::S3MetaR
           /*isRetryable*/ false);
     }
     error.SetResponseCode(static_cast<Aws::Http::HttpResponseCode>(result.responseStatus));
-    error.SetRequestId(ExtractHeader(result.errorResponseHeaders, "x-amz-request-id"));
+    // Only overwrite the request ID when S3 sent the header; an absent one must not blank it.
+    const Aws::Crt::Optional<Aws::String> requestId = ExtractHeader(result.errorResponseHeaders, "x-amz-request-id");
+    if (requestId) {
+      error.SetRequestId(requestId.value());
+    }
     error.SetResponseHeaders(ToHeaderCollection(result.errorResponseHeaders));
     return error;
   }
@@ -423,9 +429,9 @@ UploadHandle CrtOperations::DispatchUpload(S3TransferManagerImpl& impl, const Up
   }
 
   {
-    Aws::Client::AWSError<Aws::S3::S3Errors> prepareError = state->request.PrepareTransferState(state);
-    if (!prepareError.GetExceptionName().empty()) {
-      NotifyEarlyUploadFailure(state, std::move(prepareError));
+    Internal::OptionalError prepareError = state->request.PrepareTransferState(state);
+    if (prepareError) {
+      NotifyEarlyUploadFailure(state, prepareError.value());
       return UploadHandle(std::move(handleImpl));
     }
   }
@@ -564,9 +570,9 @@ DownloadHandle CrtOperations::DispatchDownload(S3TransferManagerImpl& impl, cons
   }
 
   {
-    Aws::Client::AWSError<Aws::S3::S3Errors> validationError = state->request.Validate();
-    if (!validationError.GetExceptionName().empty()) {
-      NotifyEarlyDownloadFailure(state, std::move(validationError));
+    Internal::OptionalError validationError = state->request.Validate();
+    if (validationError) {
+      NotifyEarlyDownloadFailure(state, validationError.value());
       return DownloadHandle(std::move(handleImpl));
     }
   }
@@ -648,11 +654,11 @@ DownloadHandle CrtOperations::DispatchDownload(S3TransferManagerImpl& impl, cons
 
   options->SetFinishCallback([state](const Aws::Crt::S3::S3MetaRequestResult& result) {
     if (result.GetErrorCode() == Aws::Crt::S3::S3ErrorCode::Success) {
-      Aws::Client::AWSError<Aws::S3::S3Errors> finalizeError = state->request.FinalizeOnSuccess(state);
-      if (!finalizeError.GetExceptionName().empty()) {
+      Internal::OptionalError finalizeError = state->request.FinalizeOnSuccess(state);
+      if (finalizeError) {
         NotifyListeners(state, &DownloadProgressListener::OnTransferFailed,
                         MakeDownloadSnapshot(state, state->transferredBytes.load()));
-        state->promise.set_value(DownloadOutcome(std::move(finalizeError)));
+        state->promise.set_value(DownloadOutcome(finalizeError.value()));
         return;
       }
 
@@ -667,8 +673,13 @@ DownloadHandle CrtOperations::DispatchDownload(S3TransferManagerImpl& impl, cons
               Aws::MakeShared<DownloadResponse>(CRT_OPERATIONS_LOG_TAG, MakeDownloadResponse(state))));
       state->promise.set_value(DownloadOutcome(MakeDownloadResponse(state)));
     } else {
-      state->request.CleanupOnFailure(state);
       auto error = MapCrtError(result);
+      // The download already failed; if wiping the temp file also failed, fold that into the message
+      // so the customer learns a partial file was left behind rather than losing it silently.
+      Internal::OptionalError cleanupError = state->request.CleanupOnFailure(state);
+      if (cleanupError) {
+        error.SetMessage(error.GetMessage() + " (" + cleanupError.value().GetMessage() + ")");
+      }
       NotifyListeners(state, &DownloadProgressListener::OnTransferFailed,
                       MakeDownloadSnapshot(state, state->transferredBytes.load()));
       state->promise.set_value(DownloadOutcome(std::move(error)));

@@ -7,6 +7,7 @@
 #include <aws/s3-transfer/ProgressListener.h>
 #include <aws/s3-transfer/DownloadDataReceiver.h>
 #include <aws/core/client/AWSError.h>
+#include <aws/crt/Optional.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -25,6 +26,8 @@ struct DownloadTransferState;
 
 namespace Internal {
 class DownloadRequestImpl;
+
+using OptionalError = Aws::Crt::Optional<Aws::Client::AWSError<Aws::S3::S3Errors>>;
 }
 
 /**
@@ -74,10 +77,10 @@ class AWS_S3_TRANSFER_API DownloadRequest final {
 
   const Aws::S3::Model::GetObjectRequest& GetS3Request() const;
 
-  Aws::Client::AWSError<Aws::S3::S3Errors> Validate() const;
-  Aws::Client::AWSError<Aws::S3::S3Errors> FinalizeOnSuccess(
+  Internal::OptionalError Validate() const;
+  Internal::OptionalError FinalizeOnSuccess(
       const std::shared_ptr<DownloadTransferState>& state) const;
-  void CleanupOnFailure(const std::shared_ptr<DownloadTransferState>& state) const;
+  Internal::OptionalError CleanupOnFailure(const std::shared_ptr<DownloadTransferState>& state) const;
 
  private:
   std::shared_ptr<Internal::DownloadRequestImpl> m_impl;

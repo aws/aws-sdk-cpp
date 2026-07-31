@@ -31,6 +31,8 @@ struct UploadTransferState;
 
 namespace Internal {
 class UploadRequestImpl;
+
+using OptionalError = Aws::Crt::Optional<Aws::Client::AWSError<Aws::S3::S3Errors>>;
 }
 
 /**
@@ -104,7 +106,7 @@ class AWS_S3_TRANSFER_API UploadRequest final {
 
   const Aws::S3::Model::PutObjectRequest& GetS3Request() const;
 
-  Aws::Client::AWSError<Aws::S3::S3Errors> PrepareTransferState(
+  Internal::OptionalError PrepareTransferState(
       const std::shared_ptr<UploadTransferState>& state) const;
 
  private:

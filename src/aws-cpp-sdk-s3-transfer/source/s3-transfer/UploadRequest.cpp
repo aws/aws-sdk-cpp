@@ -43,9 +43,9 @@ FileUploadImpl::FileUploadImpl(Aws::String bucket,
   assert(!m_sourceFilePath.empty() && "UploadRequest file source path must not be empty");
 }
 
-Aws::Client::AWSError<Aws::S3::S3Errors> FileUploadImpl::PrepareTransferState(
+OptionalError FileUploadImpl::PrepareTransferState(
     const std::shared_ptr<UploadTransferState>&) const {
-  return Aws::Client::AWSError<Aws::S3::S3Errors>();
+  return OptionalError();
 }
 
 StreamUploadImpl::StreamUploadImpl(Aws::String bucket,
@@ -57,7 +57,7 @@ StreamUploadImpl::StreamUploadImpl(Aws::String bucket,
   m_s3Request.SetBody(std::move(body));
 }
 
-Aws::Client::AWSError<Aws::S3::S3Errors> StreamUploadImpl::PrepareTransferState(
+OptionalError StreamUploadImpl::PrepareTransferState(
     const std::shared_ptr<UploadTransferState>& state) const {
   const auto& body = m_s3Request.GetBody();
   if (!body) {
@@ -75,7 +75,7 @@ Aws::Client::AWSError<Aws::S3::S3Errors> StreamUploadImpl::PrepareTransferState(
   if (m_declaredLength) {
     state->totalBytes = m_declaredLength;
   }
-  return Aws::Client::AWSError<Aws::S3::S3Errors>();
+  return OptionalError();
 }
 
 }  // namespace Internal
@@ -210,7 +210,7 @@ const Aws::S3::Model::PutObjectRequest& UploadRequest::GetS3Request() const {
   return m_impl->GetS3Request();
 }
 
-Aws::Client::AWSError<Aws::S3::S3Errors> UploadRequest::PrepareTransferState(
+Internal::OptionalError UploadRequest::PrepareTransferState(
     const std::shared_ptr<UploadTransferState>& state) const {
   return m_impl->PrepareTransferState(state);
 }

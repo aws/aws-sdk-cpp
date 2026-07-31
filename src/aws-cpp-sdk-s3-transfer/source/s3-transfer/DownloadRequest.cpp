@@ -7,6 +7,7 @@
 #include <aws/s3-transfer/internal/TransferState.h>
 #include <aws/core/platform/FileSystem.h>
 #include <aws/core/utils/UUID.h>
+#include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 
 #include <cassert>
@@ -56,33 +57,43 @@ FileDownloadImpl::FileDownloadImpl(
                    Aws::String(Aws::Utils::UUID::RandomUUID()).substr(0, 8);
 }
 
-Aws::Client::AWSError<Aws::S3::S3Errors> FileDownloadImpl::Validate() const {
+OptionalError FileDownloadImpl::Validate() const {
   if (m_destinationFilePath.empty()) {
     return Aws::Client::AWSError<Aws::S3::S3Errors>(
         Aws::S3::S3Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER_VALUE",
         "DownloadRequest destination file path must not be empty", false);
   }
-  return Aws::Client::AWSError<Aws::S3::S3Errors>();
+  return OptionalError();
 }
 
-Aws::Client::AWSError<Aws::S3::S3Errors> FileDownloadImpl::FinalizeOnSuccess(
+OptionalError FileDownloadImpl::FinalizeOnSuccess(
     const std::shared_ptr<DownloadTransferState>&) const {
   // Windows MoveFileW won't overwrite; remove first (non-atomic).
 #ifdef _WIN32
   Aws::FileSystem::RemoveFileIfExists(m_destinationFilePath.c_str());
 #endif
   if (!Aws::FileSystem::RelocateFileOrDirectory(m_tempFilePath.c_str(), m_destinationFilePath.c_str())) {
-    Aws::FileSystem::RemoveFileIfExists(m_tempFilePath.c_str());
+    if (!Aws::FileSystem::RemoveFileIfExists(m_tempFilePath.c_str())) {
+      AWS_LOGSTREAM_WARN(DOWNLOAD_REQUEST_ALLOCATION_TAG,
+                         "Could not remove the temp file after a failed rename; it remains at "
+                             << m_tempFilePath);
+    }
     return Aws::Client::AWSError<Aws::S3::S3Errors>(
         Aws::S3::S3Errors::UNKNOWN, "FileRenameFailure",
         "Downloaded data could not be moved to the destination path.", false);
   }
-  return Aws::Client::AWSError<Aws::S3::S3Errors>();
+  return OptionalError();
 }
 
-void FileDownloadImpl::CleanupOnFailure(const std::shared_ptr<DownloadTransferState>&) const {
-  // aws-c-s3 leaves recv_filepath in place on failure.
-  Aws::FileSystem::RemoveFileIfExists(m_tempFilePath.c_str());
+OptionalError FileDownloadImpl::CleanupOnFailure(const std::shared_ptr<DownloadTransferState>&) const {
+  // aws-c-s3 leaves recv_filepath in place on failure. If it cannot be removed, tell the caller so
+  // the customer knows a partial file remains at the temp path.
+  if (!Aws::FileSystem::RemoveFileIfExists(m_tempFilePath.c_str())) {
+    return Aws::Client::AWSError<Aws::S3::S3Errors>(
+        Aws::S3::S3Errors::UNKNOWN, "TempFileCleanupFailure",
+        "Could not remove the temporary download file left at " + m_tempFilePath, false);
+  }
+  return OptionalError();
 }
 
 StreamDownloadImpl::StreamDownloadImpl(
@@ -93,12 +104,14 @@ StreamDownloadImpl::StreamDownloadImpl(
   assert(m_dataReceiver && "DownloadRequest data receiver must not be null");
 }
 
-Aws::Client::AWSError<Aws::S3::S3Errors> StreamDownloadImpl::FinalizeOnSuccess(
+OptionalError StreamDownloadImpl::FinalizeOnSuccess(
     const std::shared_ptr<DownloadTransferState>&) const {
-  return Aws::Client::AWSError<Aws::S3::S3Errors>();
+  return OptionalError();
 }
 
-void StreamDownloadImpl::CleanupOnFailure(const std::shared_ptr<DownloadTransferState>&) const {}
+OptionalError StreamDownloadImpl::CleanupOnFailure(const std::shared_ptr<DownloadTransferState>&) const {
+  return OptionalError();
+}
 
 }  // namespace Internal
 
@@ -195,15 +208,15 @@ const Aws::S3::Model::GetObjectRequest& DownloadRequest::GetS3Request() const {
   return m_impl->GetS3Request();
 }
 
-Aws::Client::AWSError<Aws::S3::S3Errors> DownloadRequest::Validate() const { return m_impl->Validate(); }
+Internal::OptionalError DownloadRequest::Validate() const { return m_impl->Validate(); }
 
-Aws::Client::AWSError<Aws::S3::S3Errors> DownloadRequest::FinalizeOnSuccess(
+Internal::OptionalError DownloadRequest::FinalizeOnSuccess(
     const std::shared_ptr<DownloadTransferState>& state) const {
   return m_impl->FinalizeOnSuccess(state);
 }
 
-void DownloadRequest::CleanupOnFailure(const std::shared_ptr<DownloadTransferState>& state) const {
-  m_impl->CleanupOnFailure(state);
+Internal::OptionalError DownloadRequest::CleanupOnFailure(const std::shared_ptr<DownloadTransferState>& state) const {
+  return m_impl->CleanupOnFailure(state);
 }
 
 }  // namespace Transfer
