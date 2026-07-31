@@ -1,0 +1,6 @@
+{
+  "type": "bug",
+  "category": "aws-cpp-sdk-core",
+  "descripton": "Add changelog fragment check GitHub Actions workflow",
+  "contributor": "kai lin"
+}
