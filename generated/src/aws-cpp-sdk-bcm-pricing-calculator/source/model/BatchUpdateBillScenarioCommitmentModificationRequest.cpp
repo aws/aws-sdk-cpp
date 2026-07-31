@@ -4,48 +4,36 @@
  */
 
 #include <aws/bcm-pricing-calculator/model/BatchUpdateBillScenarioCommitmentModificationRequest.h>
-#include <aws/crt/cbor/Cbor.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
 
 using namespace Aws::BCMPricingCalculator::Model;
-using namespace Aws::Crt::Cbor;
+using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 Aws::String BatchUpdateBillScenarioCommitmentModificationRequest::SerializePayload() const {
-  Aws::Crt::Cbor::CborEncoder encoder;
-
-  // Calculate map size
-  size_t mapSize = 0;
-  if (m_billScenarioIdHasBeenSet) {
-    mapSize++;
-  }
-  if (m_commitmentModificationsHasBeenSet) {
-    mapSize++;
-  }
-
-  encoder.WriteMapStart(mapSize);
+  JsonValue payload;
 
   if (m_billScenarioIdHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("billScenarioId"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_billScenarioId.c_str()));
+    payload.WithString("billScenarioId", m_billScenarioId);
   }
 
   if (m_commitmentModificationsHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("commitmentModifications"));
-    encoder.WriteArrayStart(m_commitmentModifications.size());
-    for (const auto& item_0 : m_commitmentModifications) {
-      item_0.CborEncode(encoder);
+    Aws::Utils::Array<JsonValue> commitmentModificationsJsonList(m_commitmentModifications.size());
+    for (unsigned commitmentModificationsIndex = 0; commitmentModificationsIndex < commitmentModificationsJsonList.GetLength();
+         ++commitmentModificationsIndex) {
+      commitmentModificationsJsonList[commitmentModificationsIndex].AsObject(
+          m_commitmentModifications[commitmentModificationsIndex].Jsonize());
     }
+    payload.WithArray("commitmentModifications", std::move(commitmentModificationsJsonList));
   }
-  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
-  return str;
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection BatchUpdateBillScenarioCommitmentModificationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
-  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
-  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSBCMPricingCalculator.BatchUpdateBillScenarioCommitmentModification"));
   return headers;
 }

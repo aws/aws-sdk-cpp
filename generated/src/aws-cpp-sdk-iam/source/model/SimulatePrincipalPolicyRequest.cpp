@@ -42,6 +42,18 @@ Aws::String SimulatePrincipalPolicyRequest::SerializePayload() const {
     }
   }
 
+  if (m_policyExclusionListHasBeenSet) {
+    if (m_policyExclusionList.empty()) {
+      ss << "PolicyExclusionList=&";
+    } else {
+      unsigned policyExclusionListCount = 1;
+      for (auto& item : m_policyExclusionList) {
+        item.OutputToStream(ss, "PolicyExclusionList.member.", policyExclusionListCount, "");
+        policyExclusionListCount++;
+      }
+    }
+  }
+
   if (m_actionNamesHasBeenSet) {
     if (m_actionNames.empty()) {
       ss << "ActionNames=&";

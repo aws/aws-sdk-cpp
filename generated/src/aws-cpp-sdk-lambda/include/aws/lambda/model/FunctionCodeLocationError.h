@@ -20,8 +20,8 @@ namespace Lambda {
 namespace Model {
 
 /**
- * <p>Details about an error related to retrieving a function's deployment
- * package.</p><p><h3>See Also:</h3>   <a
+ * <p>Contains details about an error that occurred when Lambda attempted to
+ * retrieve a function's deployment package.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/FunctionCodeLocationError">AWS
  * API Reference</a></p>
  */
@@ -34,7 +34,8 @@ class FunctionCodeLocationError {
 
   ///@{
   /**
-   * <p>The error code for the failed retrieval.</p>
+   * <p>The error code that identifies why Lambda failed to retrieve the deployment
+   * package.</p>
    */
   inline const Aws::String& GetErrorCode() const { return m_errorCode; }
   inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
@@ -52,7 +53,8 @@ class FunctionCodeLocationError {
 
   ///@{
   /**
-   * <p>A description of the error.</p>
+   * <p>The human-readable message that describes why Lambda failed to retrieve the
+   * deployment package.</p>
    */
   inline const Aws::String& GetMessage() const { return m_message; }
   inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }

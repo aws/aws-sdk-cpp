@@ -138,10 +138,10 @@ class UpdateFunctionCodeRequest : public LambdaRequest {
 
   ///@{
   /**
-   * <p>Specifies how the deployment package is stored. Use <code>COPY</code>
-   * (default) to upload a copy of your deployment package to Lambda. Use
-   * <code>REFERENCE</code> to have Lambda reference the deployment package from the
-   * specified Amazon S3 bucket.</p>
+   * <p>Specifies how the deployment package is stored. Valid values:</p> <ul> <li>
+   * <p> <code>COPY</code> (default) – Uploads a copy of your deployment package to
+   * Lambda.</p> </li> <li> <p> <code>REFERENCE</code> – Lambda references the
+   * deployment package from the specified Amazon S3 bucket.</p> </li> </ul>
    */
   inline S3ObjectStorageMode GetS3ObjectStorageMode() const { return m_s3ObjectStorageMode; }
   inline bool S3ObjectStorageModeHasBeenSet() const { return m_s3ObjectStorageModeHasBeenSet; }

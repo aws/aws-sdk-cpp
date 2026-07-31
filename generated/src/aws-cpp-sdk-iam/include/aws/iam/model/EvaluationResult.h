@@ -32,7 +32,21 @@ namespace Model {
  * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulateCustomPolicy.html">SimulateCustomPolicy</a>
  * </code> and <code> <a
  * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulatePrincipalPolicy.html">SimulatePrincipalPolicy</a>
- * </code>.</p><p><h3>See Also:</h3>   <a
+ * </code>.</p>  <p>The simulator now returns a single
+ * <code>EvaluationResult</code> per action, regardless of how many resource ARNs
+ * are provided. Previously, simulating one action against N resources returned N
+ * evaluation results, each containing the same aggregate decision. The top-level
+ * fields (<code>EvalDecision</code>, <code>MatchedStatements</code>,
+ * <code>MissingContextValues</code>, <code>EvalDecisionDetails</code>) now
+ * represent the <i>aggregate</i> decision across all requested resources. The
+ * top-level <code>EvalDecision</code> reflects the most restrictive decision
+ * across all resources (for example, if any resource produces
+ * <code>explicitDeny</code>, the top-level decision is
+ * <code>explicitDeny</code>).</p> <p>To see the decision for each individual
+ * resource, use <code>ResourceSpecificResults</code>. If your application parses
+ * evaluation results per resource ARN, update your code to read per-resource
+ * decisions from <code>ResourceSpecificResults</code> rather than from the
+ * top-level result.</p> <p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EvaluationResult">AWS
  * API Reference</a></p>
  */
@@ -65,7 +79,14 @@ class EvaluationResult {
 
   ///@{
   /**
-   * <p>The ARN of the resource that the indicated API operation was tested on.</p>
+   * <p>The ARN template for the simulated resource type (for example,
+   * <code>arn:${Partition}:s3:::${BucketName}/${KeyName}</code>), or <code>*</code>
+   * if no ARN format is defined for the action. This is not a specific
+   * customer-provided resource ARN. To find the decision for a specific resource,
+   * use <code>ResourceSpecificResults</code>.</p>  <p>If you previously relied
+   * on <code>EvalResourceName</code> to identify which specific resource a result
+   * applies to, you must now use the <code>EvalResourceName</code> field within
+   * individual entries in <code>ResourceSpecificResults</code> instead.</p>
    */
   inline const Aws::String& GetEvalResourceName() const { return m_evalResourceName; }
   inline bool EvalResourceNameHasBeenSet() const { return m_evalResourceNameHasBeenSet; }
@@ -103,7 +124,12 @@ class EvaluationResult {
    * this scenario. Remember that even if multiple statements allow the operation on
    * the resource, if only one statement denies that operation, then the explicit
    * deny overrides any allow. In addition, the deny statement is the only entry
-   * included in the result.</p>
+   * included in the result.</p> <p>In the top-level result, this field contains the
+   * union of matched statements across all requested resources. Only statements that
+   * contributed to the reported decision are included. For per-resource matched
+   * statements, see <code>ResourceSpecificResults</code>. This field doesn't include
+   * statements from service control policies (SCPs). Only statements from
+   * identity-based and resource-based policies appear here.</p>
    */
   inline const Aws::Vector<Statement>& GetMatchedStatements() const { return m_matchedStatements; }
   inline bool MatchedStatementsHasBeenSet() const { return m_matchedStatementsHasBeenSet; }
@@ -137,6 +163,10 @@ class EvaluationResult {
    * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForCustomPolicy.html">GetContextKeysForCustomPolicy</a>
    * or <a
    * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html">GetContextKeysForPrincipalPolicy</a>.</p>
+   * <p>In the top-level result, this field contains the deduplicated set of missing
+   * context values across all requested resources. This field doesn't include
+   * context keys referenced by service control policies (SCPs). Only context keys
+   * referenced by identity-based and resource-based policies appear here.</p>
    */
   inline const Aws::Vector<Aws::String>& GetMissingContextValues() const { return m_missingContextValues; }
   inline bool MissingContextValuesHasBeenSet() const { return m_missingContextValuesHasBeenSet; }
@@ -162,7 +192,9 @@ class EvaluationResult {
   /**
    * <p>A structure that details how Organizations and its service control policies
    * affect the results of the simulation. Only applies if the simulated user's
-   * account is part of an organization.</p>
+   * account is part of an organization.</p> <p>For resources that don't support
+   * organization-level evaluation, this field is omitted from the top-level result.
+   * For per-resource details, see <code>ResourceSpecificResults</code>.</p>
    */
   inline const OrganizationsDecisionDetail& GetOrganizationsDecisionDetail() const { return m_organizationsDecisionDetail; }
   inline bool OrganizationsDecisionDetailHasBeenSet() const { return m_organizationsDecisionDetailHasBeenSet; }
@@ -204,14 +236,16 @@ class EvaluationResult {
    * <p>Additional details about the results of the cross-account evaluation
    * decision. This parameter is populated for only cross-account simulations. It
    * contains a brief summary of how each policy type contributes to the final
-   * evaluation decision.</p> <p>If the simulation evaluates policies within the same
-   * account and includes a resource ARN, then the parameter is present but the
-   * response is empty. If the simulation evaluates policies within the same account
-   * and specifies all resources (<code>*</code>), then the parameter is not
-   * returned.</p> <p>When you make a cross-account request, Amazon Web Services
-   * evaluates the request in the trusting account and the trusted account. The
-   * request is allowed only if both evaluations return <code>true</code>. For more
-   * information about how policies are evaluated, see <a
+   * evaluation decision.</p> <p>In the top-level result, this map reports the most
+   * restrictive decision per policy type across all requested resources.</p> <p>If
+   * the simulation evaluates policies within the same account and includes a
+   * resource ARN, then the parameter is present but the response is empty. If the
+   * simulation evaluates policies within the same account and specifies all
+   * resources (<code>*</code>), then the parameter is not returned.</p> <p>When you
+   * make a cross-account request, Amazon Web Services evaluates the request in the
+   * trusting account and the trusted account. The request is allowed only if both
+   * evaluations return <code>true</code>. For more information about how policies
+   * are evaluated, see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics">Evaluating
    * policies within a single account</a>.</p> <p>If an Organizations SCP included in
    * the evaluation denies access, the simulation ends. In this case, policy

@@ -22,18 +22,21 @@
 #include <aws/kafka/KafkaErrorMarshaller.h>
 #include <aws/kafka/model/BatchAssociateScramSecretRequest.h>
 #include <aws/kafka/model/BatchDisassociateScramSecretRequest.h>
+#include <aws/kafka/model/CreateChannelRequest.h>
 #include <aws/kafka/model/CreateClusterRequest.h>
 #include <aws/kafka/model/CreateClusterV2Request.h>
 #include <aws/kafka/model/CreateConfigurationRequest.h>
 #include <aws/kafka/model/CreateReplicatorRequest.h>
 #include <aws/kafka/model/CreateTopicRequest.h>
 #include <aws/kafka/model/CreateVpcConnectionRequest.h>
+#include <aws/kafka/model/DeleteChannelRequest.h>
 #include <aws/kafka/model/DeleteClusterPolicyRequest.h>
 #include <aws/kafka/model/DeleteClusterRequest.h>
 #include <aws/kafka/model/DeleteConfigurationRequest.h>
 #include <aws/kafka/model/DeleteReplicatorRequest.h>
 #include <aws/kafka/model/DeleteTopicRequest.h>
 #include <aws/kafka/model/DeleteVpcConnectionRequest.h>
+#include <aws/kafka/model/DescribeChannelRequest.h>
 #include <aws/kafka/model/DescribeClusterOperationRequest.h>
 #include <aws/kafka/model/DescribeClusterOperationV2Request.h>
 #include <aws/kafka/model/DescribeClusterRequest.h>
@@ -47,6 +50,7 @@
 #include <aws/kafka/model/GetBootstrapBrokersRequest.h>
 #include <aws/kafka/model/GetClusterPolicyRequest.h>
 #include <aws/kafka/model/GetCompatibleKafkaVersionsRequest.h>
+#include <aws/kafka/model/ListChannelsRequest.h>
 #include <aws/kafka/model/ListClientVpcConnectionsRequest.h>
 #include <aws/kafka/model/ListClusterOperationsRequest.h>
 #include <aws/kafka/model/ListClusterOperationsV2Request.h>
@@ -69,6 +73,7 @@
 #include <aws/kafka/model/UpdateBrokerCountRequest.h>
 #include <aws/kafka/model/UpdateBrokerStorageRequest.h>
 #include <aws/kafka/model/UpdateBrokerTypeRequest.h>
+#include <aws/kafka/model/UpdateChannelRequest.h>
 #include <aws/kafka/model/UpdateClusterConfigurationRequest.h>
 #include <aws/kafka/model/UpdateClusterKafkaVersionRequest.h>
 #include <aws/kafka/model/UpdateConfigurationRequest.h>
@@ -271,6 +276,24 @@ BatchDisassociateScramSecretOutcome KafkaClient::BatchDisassociateScramSecret(co
                             : BatchDisassociateScramSecretOutcome(std::move(result.GetError()));
 }
 
+CreateChannelOutcome KafkaClient::CreateChannel(const CreateChannelRequest& request) const {
+  if (!request.ClusterArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateChannel", "Required field: ClusterArn, is not set");
+    return CreateChannelOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                   "Missing required field [ClusterArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/clusters/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/channels");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateChannelOutcome(result.GetResultWithOwnership()) : CreateChannelOutcome(std::move(result.GetError()));
+}
+
 CreateClusterOutcome KafkaClient::CreateCluster(const CreateClusterRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -341,6 +364,30 @@ CreateVpcConnectionOutcome KafkaClient::CreateVpcConnection(const CreateVpcConne
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateVpcConnectionOutcome(result.GetResultWithOwnership())
                             : CreateVpcConnectionOutcome(std::move(result.GetError()));
+}
+
+DeleteChannelOutcome KafkaClient::DeleteChannel(const DeleteChannelRequest& request) const {
+  if (!request.ChannelArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteChannel", "Required field: ChannelArn, is not set");
+    return DeleteChannelOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                   "Missing required field [ChannelArn]", false));
+  }
+  if (!request.ClusterArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteChannel", "Required field: ClusterArn, is not set");
+    return DeleteChannelOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                   "Missing required field [ClusterArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/clusters/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteChannelOutcome(result.GetResultWithOwnership()) : DeleteChannelOutcome(std::move(result.GetError()));
 }
 
 DeleteClusterOutcome KafkaClient::DeleteCluster(const DeleteClusterRequest& request) const {
@@ -455,6 +502,31 @@ DeleteVpcConnectionOutcome KafkaClient::DeleteVpcConnection(const DeleteVpcConne
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteVpcConnectionOutcome(result.GetResultWithOwnership())
                             : DeleteVpcConnectionOutcome(std::move(result.GetError()));
+}
+
+DescribeChannelOutcome KafkaClient::DescribeChannel(const DescribeChannelRequest& request) const {
+  if (!request.ChannelArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeChannel", "Required field: ChannelArn, is not set");
+    return DescribeChannelOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                     "Missing required field [ChannelArn]", false));
+  }
+  if (!request.ClusterArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeChannel", "Required field: ClusterArn, is not set");
+    return DescribeChannelOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                     "Missing required field [ClusterArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/clusters/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeChannelOutcome(result.GetResultWithOwnership())
+                            : DescribeChannelOutcome(std::move(result.GetError()));
 }
 
 DescribeClusterOutcome KafkaClient::DescribeCluster(const DescribeClusterRequest& request) const {
@@ -705,6 +777,24 @@ GetCompatibleKafkaVersionsOutcome KafkaClient::GetCompatibleKafkaVersions(const 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetCompatibleKafkaVersionsOutcome(result.GetResultWithOwnership())
                             : GetCompatibleKafkaVersionsOutcome(std::move(result.GetError()));
+}
+
+ListChannelsOutcome KafkaClient::ListChannels(const ListChannelsRequest& request) const {
+  if (!request.ClusterArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListChannels", "Required field: ClusterArn, is not set");
+    return ListChannelsOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                  "Missing required field [ClusterArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/clusters/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/channels");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListChannelsOutcome(result.GetResultWithOwnership()) : ListChannelsOutcome(std::move(result.GetError()));
 }
 
 ListClientVpcConnectionsOutcome KafkaClient::ListClientVpcConnections(const ListClientVpcConnectionsRequest& request) const {
@@ -1070,6 +1160,30 @@ UpdateBrokerTypeOutcome KafkaClient::UpdateBrokerType(const UpdateBrokerTypeRequ
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? UpdateBrokerTypeOutcome(result.GetResultWithOwnership())
                             : UpdateBrokerTypeOutcome(std::move(result.GetError()));
+}
+
+UpdateChannelOutcome KafkaClient::UpdateChannel(const UpdateChannelRequest& request) const {
+  if (!request.ChannelArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateChannel", "Required field: ChannelArn, is not set");
+    return UpdateChannelOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                   "Missing required field [ChannelArn]", false));
+  }
+  if (!request.ClusterArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateChannel", "Required field: ClusterArn, is not set");
+    return UpdateChannelOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                   "Missing required field [ClusterArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/clusters/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateChannelOutcome(result.GetResultWithOwnership()) : UpdateChannelOutcome(std::move(result.GetError()));
 }
 
 UpdateClusterConfigurationOutcome KafkaClient::UpdateClusterConfiguration(const UpdateClusterConfigurationRequest& request) const {

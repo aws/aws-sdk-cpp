@@ -9,15 +9,15 @@
 #include <aws/bcm-pricing-calculator/model/AddSavingsPlanAction.h>
 #include <aws/bcm-pricing-calculator/model/NegateReservedInstanceAction.h>
 #include <aws/bcm-pricing-calculator/model/NegateSavingsPlanAction.h>
-#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Cbor {
-class CborValue;
-}  // namespace Cbor
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
 }  // namespace Utils
 namespace BCMPricingCalculator {
 namespace Model {
@@ -31,10 +31,9 @@ namespace Model {
 class BillScenarioCommitmentModificationAction {
  public:
   AWS_BCMPRICINGCALCULATOR_API BillScenarioCommitmentModificationAction() = default;
-  AWS_BCMPRICINGCALCULATOR_API BillScenarioCommitmentModificationAction(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
-  AWS_BCMPRICINGCALCULATOR_API BillScenarioCommitmentModificationAction& operator=(
-      const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
-  AWS_BCMPRICINGCALCULATOR_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
+  AWS_BCMPRICINGCALCULATOR_API BillScenarioCommitmentModificationAction(Aws::Utils::Json::JsonView jsonValue);
+  AWS_BCMPRICINGCALCULATOR_API BillScenarioCommitmentModificationAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_BCMPRICINGCALCULATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
   /**

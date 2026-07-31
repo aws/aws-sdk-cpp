@@ -58,6 +58,8 @@ enum class Runtime {
   provided,
   provided_al2,
   provided_al2023,
+  nodejs26_x,
+  python3_15,
   java8_al2023,
   java11_al2023,
   java17_al2023

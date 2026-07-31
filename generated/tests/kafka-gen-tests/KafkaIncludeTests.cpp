@@ -28,6 +28,12 @@
 #include <aws/kafka/model/BrokerNodeGroupInfo.h>
 #include <aws/kafka/model/BrokerNodeInfo.h>
 #include <aws/kafka/model/BrokerSoftwareInfo.h>
+#include <aws/kafka/model/Catalog.h>
+#include <aws/kafka/model/ChannelDestinationType.h>
+#include <aws/kafka/model/ChannelInfo.h>
+#include <aws/kafka/model/ChannelLoggingInfo.h>
+#include <aws/kafka/model/ChannelStateInfo.h>
+#include <aws/kafka/model/ChannelStatus.h>
 #include <aws/kafka/model/ClientAuthentication.h>
 #include <aws/kafka/model/ClientBroker.h>
 #include <aws/kafka/model/ClientVpcConnection.h>
@@ -56,6 +62,8 @@
 #include <aws/kafka/model/ConsumerGroupReplicationUpdate.h>
 #include <aws/kafka/model/ControllerMovedException.h>
 #include <aws/kafka/model/ControllerNodeInfo.h>
+#include <aws/kafka/model/CreateChannelRequest.h>
+#include <aws/kafka/model/CreateChannelResult.h>
 #include <aws/kafka/model/CreateClusterRequest.h>
 #include <aws/kafka/model/CreateClusterResult.h>
 #include <aws/kafka/model/CreateClusterV2Request.h>
@@ -69,6 +77,9 @@
 #include <aws/kafka/model/CreateVpcConnectionRequest.h>
 #include <aws/kafka/model/CreateVpcConnectionResult.h>
 #include <aws/kafka/model/CustomerActionStatus.h>
+#include <aws/kafka/model/DeadLetterQueueS3.h>
+#include <aws/kafka/model/DeleteChannelRequest.h>
+#include <aws/kafka/model/DeleteChannelResult.h>
 #include <aws/kafka/model/DeleteClusterPolicyRequest.h>
 #include <aws/kafka/model/DeleteClusterPolicyResult.h>
 #include <aws/kafka/model/DeleteClusterRequest.h>
@@ -81,6 +92,8 @@
 #include <aws/kafka/model/DeleteTopicResult.h>
 #include <aws/kafka/model/DeleteVpcConnectionRequest.h>
 #include <aws/kafka/model/DeleteVpcConnectionResult.h>
+#include <aws/kafka/model/DescribeChannelRequest.h>
+#include <aws/kafka/model/DescribeChannelResult.h>
 #include <aws/kafka/model/DescribeClusterOperationRequest.h>
 #include <aws/kafka/model/DescribeClusterOperationResult.h>
 #include <aws/kafka/model/DescribeClusterOperationV2Request.h>
@@ -101,8 +114,10 @@
 #include <aws/kafka/model/DescribeTopicResult.h>
 #include <aws/kafka/model/DescribeVpcConnectionRequest.h>
 #include <aws/kafka/model/DescribeVpcConnectionResult.h>
+#include <aws/kafka/model/DestinationTable.h>
 #include <aws/kafka/model/EBSStorageInfo.h>
 #include <aws/kafka/model/EncryptionAtRest.h>
+#include <aws/kafka/model/EncryptionConfiguration.h>
 #include <aws/kafka/model/EncryptionInTransit.h>
 #include <aws/kafka/model/EncryptionInfo.h>
 #include <aws/kafka/model/EnhancedMonitoring.h>
@@ -117,6 +132,9 @@
 #include <aws/kafka/model/GetCompatibleKafkaVersionsResult.h>
 #include <aws/kafka/model/GroupSubscribedToTopicException.h>
 #include <aws/kafka/model/Iam.h>
+#include <aws/kafka/model/IcebergCompressionType.h>
+#include <aws/kafka/model/IcebergDestinationConfiguration.h>
+#include <aws/kafka/model/IcebergDestinationUpdate.h>
 #include <aws/kafka/model/InternalServerErrorException.h>
 #include <aws/kafka/model/JmxExporter.h>
 #include <aws/kafka/model/JmxExporterInfo.h>
@@ -134,6 +152,8 @@
 #include <aws/kafka/model/KafkaTimeoutException.h>
 #include <aws/kafka/model/KafkaVersion.h>
 #include <aws/kafka/model/KafkaVersionStatus.h>
+#include <aws/kafka/model/ListChannelsRequest.h>
+#include <aws/kafka/model/ListChannelsResult.h>
 #include <aws/kafka/model/ListClientVpcConnectionsRequest.h>
 #include <aws/kafka/model/ListClientVpcConnectionsResult.h>
 #include <aws/kafka/model/ListClusterOperationsRequest.h>
@@ -174,6 +194,9 @@
 #include <aws/kafka/model/NotFoundException.h>
 #include <aws/kafka/model/OpenMonitoring.h>
 #include <aws/kafka/model/OpenMonitoringInfo.h>
+#include <aws/kafka/model/PartitionSource.h>
+#include <aws/kafka/model/PartitionSpec.h>
+#include <aws/kafka/model/PartitionStrategy.h>
 #include <aws/kafka/model/Prometheus.h>
 #include <aws/kafka/model/PrometheusInfo.h>
 #include <aws/kafka/model/Provisioned.h>
@@ -187,6 +210,8 @@
 #include <aws/kafka/model/RebalancingStatus.h>
 #include <aws/kafka/model/RebootBrokerRequest.h>
 #include <aws/kafka/model/RebootBrokerResult.h>
+#include <aws/kafka/model/RecordConverter.h>
+#include <aws/kafka/model/RecordSchema.h>
 #include <aws/kafka/model/RejectClientVpcConnectionRequest.h>
 #include <aws/kafka/model/RejectClientVpcConnectionResult.h>
 #include <aws/kafka/model/ReplicationInfo.h>
@@ -204,7 +229,13 @@
 #include <aws/kafka/model/ReplicatorState.h>
 #include <aws/kafka/model/ReplicatorSummary.h>
 #include <aws/kafka/model/S3.h>
+#include <aws/kafka/model/S3CompressionType.h>
+#include <aws/kafka/model/S3DestinationConfiguration.h>
+#include <aws/kafka/model/S3DestinationUpdate.h>
+#include <aws/kafka/model/S3Storage.h>
+#include <aws/kafka/model/S3StorageClass.h>
 #include <aws/kafka/model/Sasl.h>
+#include <aws/kafka/model/SchemaEvolution.h>
 #include <aws/kafka/model/Scram.h>
 #include <aws/kafka/model/Serverless.h>
 #include <aws/kafka/model/ServerlessClientAuthentication.h>
@@ -215,10 +246,12 @@
 #include <aws/kafka/model/StateInfo.h>
 #include <aws/kafka/model/StorageInfo.h>
 #include <aws/kafka/model/StorageMode.h>
+#include <aws/kafka/model/TableCreation.h>
 #include <aws/kafka/model/TagResourceRequest.h>
 #include <aws/kafka/model/TargetCompressionType.h>
 #include <aws/kafka/model/Tls.h>
 #include <aws/kafka/model/TooManyRequestsException.h>
+#include <aws/kafka/model/TopicConfiguration.h>
 #include <aws/kafka/model/TopicExistsException.h>
 #include <aws/kafka/model/TopicInfo.h>
 #include <aws/kafka/model/TopicPartitionInfo.h>
@@ -236,6 +269,8 @@
 #include <aws/kafka/model/UpdateBrokerStorageResult.h>
 #include <aws/kafka/model/UpdateBrokerTypeRequest.h>
 #include <aws/kafka/model/UpdateBrokerTypeResult.h>
+#include <aws/kafka/model/UpdateChannelRequest.h>
+#include <aws/kafka/model/UpdateChannelResult.h>
 #include <aws/kafka/model/UpdateClusterConfigurationRequest.h>
 #include <aws/kafka/model/UpdateClusterConfigurationResult.h>
 #include <aws/kafka/model/UpdateClusterKafkaVersionRequest.h>
@@ -258,6 +293,7 @@
 #include <aws/kafka/model/UpdateTopicResult.h>
 #include <aws/kafka/model/UserIdentity.h>
 #include <aws/kafka/model/UserIdentityType.h>
+#include <aws/kafka/model/ValueConverter.h>
 #include <aws/kafka/model/VpcConfig.h>
 #include <aws/kafka/model/VpcConnection.h>
 #include <aws/kafka/model/VpcConnectionInfo.h>

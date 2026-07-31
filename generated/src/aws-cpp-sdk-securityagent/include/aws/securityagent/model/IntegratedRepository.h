@@ -68,12 +68,33 @@ class IntegratedRepository {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An optional override for the repository branch.</p>
+   */
+  inline const Aws::String& GetBranch() const { return m_branch; }
+  inline bool BranchHasBeenSet() const { return m_branchHasBeenSet; }
+  template <typename BranchT = Aws::String>
+  void SetBranch(BranchT&& value) {
+    m_branchHasBeenSet = true;
+    m_branch = std::forward<BranchT>(value);
+  }
+  template <typename BranchT = Aws::String>
+  IntegratedRepository& WithBranch(BranchT&& value) {
+    SetBranch(std::forward<BranchT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_integrationId;
 
   Aws::String m_providerResourceId;
+
+  Aws::String m_branch;
   bool m_integrationIdHasBeenSet = false;
   bool m_providerResourceIdHasBeenSet = false;
+  bool m_branchHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -11,7 +11,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/crt/cbor/Cbor.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 
 namespace Aws {
 namespace BCMRecommendedActions {
@@ -23,12 +23,12 @@ namespace BCMRecommendedActions {
  * https://bcm-recommended-actions.us-east-1.api.aws</p> </li> </ul>
  */
 class AWS_BCMRECOMMENDEDACTIONS_API BCMRecommendedActionsClient
-    : public Aws::Client::AWSRpcV2CborClient,
+    : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<BCMRecommendedActionsClient>,
       public BCMRecommendedActionsPaginationBase<BCMRecommendedActionsClient>,
       public BCMRecommendedActionsWaiter<BCMRecommendedActionsClient> {
  public:
-  typedef Aws::Client::AWSRpcV2CborClient BASECLASS;
+  typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
 

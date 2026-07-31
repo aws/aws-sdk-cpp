@@ -2661,8 +2661,11 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient,
    * <a
    * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html">GetContextKeysForPrincipalPolicy</a>
    * to understand what key names and values you must supply when you call <a
-   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulatePrincipalPolicy.html">SimulatePrincipalPolicy</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulatePrincipalPolicy.html">SimulatePrincipalPolicy</a>.
+   * This operation doesn't return context keys referenced by service control
+   * policies (SCPs). Only context keys referenced by the identity-based policies
+   * attached to the specified entity, and any additional policies that you provide,
+   * are included.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForPrincipalPolicy">AWS
    * API Reference</a></p>
    */
@@ -5383,8 +5386,9 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient,
    * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForCustomPolicy.html">GetContextKeysForCustomPolicy</a>.</p>
    * <p>If the output is long, you can use <code>MaxItems</code> and
    * <code>Marker</code> parameters to paginate the results.</p>  <p>The IAM
-   * policy simulator evaluates statements in the identity-based policy and the
-   * inputs that you provide during simulation. The policy simulator results can
+   * policy simulator evaluates statements in identity-based policies, service
+   * control policies (SCPs) including their condition keys and resource scoping, and
+   * the inputs that you provide during simulation. The policy simulator results can
    * differ from your live Amazon Web Services environment. We recommend that you
    * check your policies against your live Amazon Web Services environment after
    * testing using the policy simulator to confirm that you have the desired results.
@@ -5430,9 +5434,14 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient,
    * evaluated with each of the resources included in the simulation for IAM users
    * only.</p> <p>The simulation does not perform the API operations; it only checks
    * the authorization to determine if the simulated policies allow or deny the
-   * operations.</p> <p> <b>Note:</b> This operation discloses information about the
-   * permissions granted to other users. If you do not want users to see other user's
-   * permissions, then consider allowing them to use <a
+   * operations.</p> <p>For cross-account simulations,
+   * <code>EvalDecisionDetails</code> returns the decision for each policy type
+   * (identity-based policy, resource-based policy, and permissions boundary). This
+   * helps you identify which policy type is responsible for an allow or deny
+   * decision when policies span multiple accounts.</p> <p> <b>Note:</b> This
+   * operation discloses information about the permissions granted to other users. If
+   * you do not want users to see other user's permissions, then consider allowing
+   * them to use <a
    * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulateCustomPolicy.html">SimulateCustomPolicy</a>
    * instead.</p> <p>Context keys are variables maintained by Amazon Web Services and
    * its services that provide details about the context of an API query request. You
@@ -5442,8 +5451,9 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient,
    * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html">GetContextKeysForPrincipalPolicy</a>.</p>
    * <p>If the output is long, you can use the <code>MaxItems</code> and
    * <code>Marker</code> parameters to paginate the results.</p>  <p>The IAM
-   * policy simulator evaluates statements in the identity-based policy and the
-   * inputs that you provide during simulation. The policy simulator results can
+   * policy simulator evaluates statements in identity-based policies, service
+   * control policies (SCPs) including their condition keys and resource scoping, and
+   * the inputs that you provide during simulation. The policy simulator results can
    * differ from your live Amazon Web Services environment. We recommend that you
    * check your policies against your live Amazon Web Services environment after
    * testing using the policy simulator to confirm that you have the desired results.

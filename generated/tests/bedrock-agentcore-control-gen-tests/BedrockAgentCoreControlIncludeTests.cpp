@@ -545,6 +545,7 @@
 #include <aws/bedrock-agentcore-control/model/OnlineEvaluationConfigStatus.h>
 #include <aws/bedrock-agentcore-control/model/OnlineEvaluationConfigSummary.h>
 #include <aws/bedrock-agentcore-control/model/OnlineEvaluationExecutionStatus.h>
+#include <aws/bedrock-agentcore-control/model/OpenResponsesEvaluatorModelConfig.h>
 #include <aws/bedrock-agentcore-control/model/OutputConfig.h>
 #include <aws/bedrock-agentcore-control/model/OverrideType.h>
 #include <aws/bedrock-agentcore-control/model/PassthroughProtocolType.h>
@@ -584,6 +585,7 @@
 #include <aws/bedrock-agentcore-control/model/PutResourcePolicyRequest.h>
 #include <aws/bedrock-agentcore-control/model/PutResourcePolicyResult.h>
 #include <aws/bedrock-agentcore-control/model/RatingScale.h>
+#include <aws/bedrock-agentcore-control/model/ReasoningConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/RecordingConfig.h>
 #include <aws/bedrock-agentcore-control/model/ReflectionConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/RegistryAuthorizerType.h>

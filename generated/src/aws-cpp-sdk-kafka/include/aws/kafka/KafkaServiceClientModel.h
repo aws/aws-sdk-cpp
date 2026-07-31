@@ -22,18 +22,21 @@
 #include <aws/core/NoResult.h>
 #include <aws/kafka/model/BatchAssociateScramSecretResult.h>
 #include <aws/kafka/model/BatchDisassociateScramSecretResult.h>
+#include <aws/kafka/model/CreateChannelResult.h>
 #include <aws/kafka/model/CreateClusterResult.h>
 #include <aws/kafka/model/CreateClusterV2Result.h>
 #include <aws/kafka/model/CreateConfigurationResult.h>
 #include <aws/kafka/model/CreateReplicatorResult.h>
 #include <aws/kafka/model/CreateTopicResult.h>
 #include <aws/kafka/model/CreateVpcConnectionResult.h>
+#include <aws/kafka/model/DeleteChannelResult.h>
 #include <aws/kafka/model/DeleteClusterPolicyResult.h>
 #include <aws/kafka/model/DeleteClusterResult.h>
 #include <aws/kafka/model/DeleteConfigurationResult.h>
 #include <aws/kafka/model/DeleteReplicatorResult.h>
 #include <aws/kafka/model/DeleteTopicResult.h>
 #include <aws/kafka/model/DeleteVpcConnectionResult.h>
+#include <aws/kafka/model/DescribeChannelResult.h>
 #include <aws/kafka/model/DescribeClusterOperationResult.h>
 #include <aws/kafka/model/DescribeClusterOperationV2Result.h>
 #include <aws/kafka/model/DescribeClusterResult.h>
@@ -48,6 +51,7 @@
 #include <aws/kafka/model/GetClusterPolicyResult.h>
 #include <aws/kafka/model/GetCompatibleKafkaVersionsRequest.h>
 #include <aws/kafka/model/GetCompatibleKafkaVersionsResult.h>
+#include <aws/kafka/model/ListChannelsResult.h>
 #include <aws/kafka/model/ListClientVpcConnectionsResult.h>
 #include <aws/kafka/model/ListClusterOperationsResult.h>
 #include <aws/kafka/model/ListClusterOperationsV2Result.h>
@@ -74,6 +78,7 @@
 #include <aws/kafka/model/UpdateBrokerCountResult.h>
 #include <aws/kafka/model/UpdateBrokerStorageResult.h>
 #include <aws/kafka/model/UpdateBrokerTypeResult.h>
+#include <aws/kafka/model/UpdateChannelResult.h>
 #include <aws/kafka/model/UpdateClusterConfigurationResult.h>
 #include <aws/kafka/model/UpdateClusterKafkaVersionResult.h>
 #include <aws/kafka/model/UpdateConfigurationResult.h>
@@ -119,18 +124,21 @@ namespace Model {
 /* Service model forward declarations required in KafkaClient header */
 class BatchAssociateScramSecretRequest;
 class BatchDisassociateScramSecretRequest;
+class CreateChannelRequest;
 class CreateClusterRequest;
 class CreateClusterV2Request;
 class CreateConfigurationRequest;
 class CreateReplicatorRequest;
 class CreateTopicRequest;
 class CreateVpcConnectionRequest;
+class DeleteChannelRequest;
 class DeleteClusterRequest;
 class DeleteClusterPolicyRequest;
 class DeleteConfigurationRequest;
 class DeleteReplicatorRequest;
 class DeleteTopicRequest;
 class DeleteVpcConnectionRequest;
+class DescribeChannelRequest;
 class DescribeClusterRequest;
 class DescribeClusterOperationRequest;
 class DescribeClusterOperationV2Request;
@@ -144,6 +152,7 @@ class DescribeVpcConnectionRequest;
 class GetBootstrapBrokersRequest;
 class GetClusterPolicyRequest;
 class GetCompatibleKafkaVersionsRequest;
+class ListChannelsRequest;
 class ListClientVpcConnectionsRequest;
 class ListClusterOperationsRequest;
 class ListClusterOperationsV2Request;
@@ -166,6 +175,7 @@ class UntagResourceRequest;
 class UpdateBrokerCountRequest;
 class UpdateBrokerStorageRequest;
 class UpdateBrokerTypeRequest;
+class UpdateChannelRequest;
 class UpdateClusterConfigurationRequest;
 class UpdateClusterKafkaVersionRequest;
 class UpdateConfigurationRequest;
@@ -181,18 +191,21 @@ class UpdateTopicRequest;
 /* Service model Outcome class definitions */
 typedef Aws::Utils::Outcome<BatchAssociateScramSecretResult, KafkaError> BatchAssociateScramSecretOutcome;
 typedef Aws::Utils::Outcome<BatchDisassociateScramSecretResult, KafkaError> BatchDisassociateScramSecretOutcome;
+typedef Aws::Utils::Outcome<CreateChannelResult, KafkaError> CreateChannelOutcome;
 typedef Aws::Utils::Outcome<CreateClusterResult, KafkaError> CreateClusterOutcome;
 typedef Aws::Utils::Outcome<CreateClusterV2Result, KafkaError> CreateClusterV2Outcome;
 typedef Aws::Utils::Outcome<CreateConfigurationResult, KafkaError> CreateConfigurationOutcome;
 typedef Aws::Utils::Outcome<CreateReplicatorResult, KafkaError> CreateReplicatorOutcome;
 typedef Aws::Utils::Outcome<CreateTopicResult, KafkaError> CreateTopicOutcome;
 typedef Aws::Utils::Outcome<CreateVpcConnectionResult, KafkaError> CreateVpcConnectionOutcome;
+typedef Aws::Utils::Outcome<DeleteChannelResult, KafkaError> DeleteChannelOutcome;
 typedef Aws::Utils::Outcome<DeleteClusterResult, KafkaError> DeleteClusterOutcome;
 typedef Aws::Utils::Outcome<DeleteClusterPolicyResult, KafkaError> DeleteClusterPolicyOutcome;
 typedef Aws::Utils::Outcome<DeleteConfigurationResult, KafkaError> DeleteConfigurationOutcome;
 typedef Aws::Utils::Outcome<DeleteReplicatorResult, KafkaError> DeleteReplicatorOutcome;
 typedef Aws::Utils::Outcome<DeleteTopicResult, KafkaError> DeleteTopicOutcome;
 typedef Aws::Utils::Outcome<DeleteVpcConnectionResult, KafkaError> DeleteVpcConnectionOutcome;
+typedef Aws::Utils::Outcome<DescribeChannelResult, KafkaError> DescribeChannelOutcome;
 typedef Aws::Utils::Outcome<DescribeClusterResult, KafkaError> DescribeClusterOutcome;
 typedef Aws::Utils::Outcome<DescribeClusterOperationResult, KafkaError> DescribeClusterOperationOutcome;
 typedef Aws::Utils::Outcome<DescribeClusterOperationV2Result, KafkaError> DescribeClusterOperationV2Outcome;
@@ -206,6 +219,7 @@ typedef Aws::Utils::Outcome<DescribeVpcConnectionResult, KafkaError> DescribeVpc
 typedef Aws::Utils::Outcome<GetBootstrapBrokersResult, KafkaError> GetBootstrapBrokersOutcome;
 typedef Aws::Utils::Outcome<GetClusterPolicyResult, KafkaError> GetClusterPolicyOutcome;
 typedef Aws::Utils::Outcome<GetCompatibleKafkaVersionsResult, KafkaError> GetCompatibleKafkaVersionsOutcome;
+typedef Aws::Utils::Outcome<ListChannelsResult, KafkaError> ListChannelsOutcome;
 typedef Aws::Utils::Outcome<ListClientVpcConnectionsResult, KafkaError> ListClientVpcConnectionsOutcome;
 typedef Aws::Utils::Outcome<ListClusterOperationsResult, KafkaError> ListClusterOperationsOutcome;
 typedef Aws::Utils::Outcome<ListClusterOperationsV2Result, KafkaError> ListClusterOperationsV2Outcome;
@@ -228,6 +242,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, KafkaError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateBrokerCountResult, KafkaError> UpdateBrokerCountOutcome;
 typedef Aws::Utils::Outcome<UpdateBrokerStorageResult, KafkaError> UpdateBrokerStorageOutcome;
 typedef Aws::Utils::Outcome<UpdateBrokerTypeResult, KafkaError> UpdateBrokerTypeOutcome;
+typedef Aws::Utils::Outcome<UpdateChannelResult, KafkaError> UpdateChannelOutcome;
 typedef Aws::Utils::Outcome<UpdateClusterConfigurationResult, KafkaError> UpdateClusterConfigurationOutcome;
 typedef Aws::Utils::Outcome<UpdateClusterKafkaVersionResult, KafkaError> UpdateClusterKafkaVersionOutcome;
 typedef Aws::Utils::Outcome<UpdateConfigurationResult, KafkaError> UpdateConfigurationOutcome;
@@ -243,18 +258,21 @@ typedef Aws::Utils::Outcome<UpdateTopicResult, KafkaError> UpdateTopicOutcome;
 /* Service model Outcome callable definitions */
 typedef std::future<BatchAssociateScramSecretOutcome> BatchAssociateScramSecretOutcomeCallable;
 typedef std::future<BatchDisassociateScramSecretOutcome> BatchDisassociateScramSecretOutcomeCallable;
+typedef std::future<CreateChannelOutcome> CreateChannelOutcomeCallable;
 typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
 typedef std::future<CreateClusterV2Outcome> CreateClusterV2OutcomeCallable;
 typedef std::future<CreateConfigurationOutcome> CreateConfigurationOutcomeCallable;
 typedef std::future<CreateReplicatorOutcome> CreateReplicatorOutcomeCallable;
 typedef std::future<CreateTopicOutcome> CreateTopicOutcomeCallable;
 typedef std::future<CreateVpcConnectionOutcome> CreateVpcConnectionOutcomeCallable;
+typedef std::future<DeleteChannelOutcome> DeleteChannelOutcomeCallable;
 typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
 typedef std::future<DeleteClusterPolicyOutcome> DeleteClusterPolicyOutcomeCallable;
 typedef std::future<DeleteConfigurationOutcome> DeleteConfigurationOutcomeCallable;
 typedef std::future<DeleteReplicatorOutcome> DeleteReplicatorOutcomeCallable;
 typedef std::future<DeleteTopicOutcome> DeleteTopicOutcomeCallable;
 typedef std::future<DeleteVpcConnectionOutcome> DeleteVpcConnectionOutcomeCallable;
+typedef std::future<DescribeChannelOutcome> DescribeChannelOutcomeCallable;
 typedef std::future<DescribeClusterOutcome> DescribeClusterOutcomeCallable;
 typedef std::future<DescribeClusterOperationOutcome> DescribeClusterOperationOutcomeCallable;
 typedef std::future<DescribeClusterOperationV2Outcome> DescribeClusterOperationV2OutcomeCallable;
@@ -268,6 +286,7 @@ typedef std::future<DescribeVpcConnectionOutcome> DescribeVpcConnectionOutcomeCa
 typedef std::future<GetBootstrapBrokersOutcome> GetBootstrapBrokersOutcomeCallable;
 typedef std::future<GetClusterPolicyOutcome> GetClusterPolicyOutcomeCallable;
 typedef std::future<GetCompatibleKafkaVersionsOutcome> GetCompatibleKafkaVersionsOutcomeCallable;
+typedef std::future<ListChannelsOutcome> ListChannelsOutcomeCallable;
 typedef std::future<ListClientVpcConnectionsOutcome> ListClientVpcConnectionsOutcomeCallable;
 typedef std::future<ListClusterOperationsOutcome> ListClusterOperationsOutcomeCallable;
 typedef std::future<ListClusterOperationsV2Outcome> ListClusterOperationsV2OutcomeCallable;
@@ -290,6 +309,7 @@ typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateBrokerCountOutcome> UpdateBrokerCountOutcomeCallable;
 typedef std::future<UpdateBrokerStorageOutcome> UpdateBrokerStorageOutcomeCallable;
 typedef std::future<UpdateBrokerTypeOutcome> UpdateBrokerTypeOutcomeCallable;
+typedef std::future<UpdateChannelOutcome> UpdateChannelOutcomeCallable;
 typedef std::future<UpdateClusterConfigurationOutcome> UpdateClusterConfigurationOutcomeCallable;
 typedef std::future<UpdateClusterKafkaVersionOutcome> UpdateClusterKafkaVersionOutcomeCallable;
 typedef std::future<UpdateConfigurationOutcome> UpdateConfigurationOutcomeCallable;
@@ -313,6 +333,9 @@ typedef std::function<void(const KafkaClient*, const Model::BatchDisassociateScr
                            const Model::BatchDisassociateScramSecretOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     BatchDisassociateScramSecretResponseReceivedHandler;
+typedef std::function<void(const KafkaClient*, const Model::CreateChannelRequest&, const Model::CreateChannelOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateChannelResponseReceivedHandler;
 typedef std::function<void(const KafkaClient*, const Model::CreateClusterRequest&, const Model::CreateClusterOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateClusterResponseReceivedHandler;
@@ -331,6 +354,9 @@ typedef std::function<void(const KafkaClient*, const Model::CreateTopicRequest&,
 typedef std::function<void(const KafkaClient*, const Model::CreateVpcConnectionRequest&, const Model::CreateVpcConnectionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateVpcConnectionResponseReceivedHandler;
+typedef std::function<void(const KafkaClient*, const Model::DeleteChannelRequest&, const Model::DeleteChannelOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteChannelResponseReceivedHandler;
 typedef std::function<void(const KafkaClient*, const Model::DeleteClusterRequest&, const Model::DeleteClusterOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteClusterResponseReceivedHandler;
@@ -349,6 +375,9 @@ typedef std::function<void(const KafkaClient*, const Model::DeleteTopicRequest&,
 typedef std::function<void(const KafkaClient*, const Model::DeleteVpcConnectionRequest&, const Model::DeleteVpcConnectionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteVpcConnectionResponseReceivedHandler;
+typedef std::function<void(const KafkaClient*, const Model::DescribeChannelRequest&, const Model::DescribeChannelOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeChannelResponseReceivedHandler;
 typedef std::function<void(const KafkaClient*, const Model::DescribeClusterRequest&, const Model::DescribeClusterOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeClusterResponseReceivedHandler;
@@ -389,6 +418,9 @@ typedef std::function<void(const KafkaClient*, const Model::GetClusterPolicyRequ
 typedef std::function<void(const KafkaClient*, const Model::GetCompatibleKafkaVersionsRequest&,
                            const Model::GetCompatibleKafkaVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetCompatibleKafkaVersionsResponseReceivedHandler;
+typedef std::function<void(const KafkaClient*, const Model::ListChannelsRequest&, const Model::ListChannelsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListChannelsResponseReceivedHandler;
 typedef std::function<void(const KafkaClient*, const Model::ListClientVpcConnectionsRequest&, const Model::ListClientVpcConnectionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListClientVpcConnectionsResponseReceivedHandler;
@@ -455,6 +487,9 @@ typedef std::function<void(const KafkaClient*, const Model::UpdateBrokerStorageR
 typedef std::function<void(const KafkaClient*, const Model::UpdateBrokerTypeRequest&, const Model::UpdateBrokerTypeOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateBrokerTypeResponseReceivedHandler;
+typedef std::function<void(const KafkaClient*, const Model::UpdateChannelRequest&, const Model::UpdateChannelOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateChannelResponseReceivedHandler;
 typedef std::function<void(const KafkaClient*, const Model::UpdateClusterConfigurationRequest&,
                            const Model::UpdateClusterConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateClusterConfigurationResponseReceivedHandler;
