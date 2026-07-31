@@ -1,0 +1,19 @@
+{
+  "version" : 2,
+  "testCases" : [ {
+    "id" : "GetWorkloadEstimate",
+    "operationName" : "GetWorkloadEstimate",
+    "input" : {
+      "identifier" : "9bb1df8b-5978-4fcb-9c5c-99f5b2670076"
+    },
+    "expectation" : {
+      "failure" : { }
+    },
+    "config" : {
+      "region" : "us-west-2",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  } ]
+}

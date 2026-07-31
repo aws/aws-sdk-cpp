@@ -1,0 +1,19 @@
+{
+  "version" : 2,
+  "testCases" : [ {
+    "id" : "ListRecommendedActionsSuccess",
+    "operationName" : "ListRecommendedActions",
+    "input" : {
+      "maxResults" : 5
+    },
+    "expectation" : {
+      "success" : { }
+    },
+    "config" : {
+      "region" : "us-west-2",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  } ]
+}
