@@ -5,6 +5,7 @@
 #include <aws/s3-transfer/S3TransferManager.h>
 #include <aws/s3-transfer/internal/S3TransferManagerImpl.h>
 #include <aws/s3-transfer/internal/CrtOperations.h>
+#include <aws/s3-transfer/internal/DirectoryOps.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 
@@ -43,6 +44,14 @@ UploadHandle S3TransferManager::Upload(const UploadRequest& request) {
 
 DownloadHandle S3TransferManager::Download(const DownloadRequest& request) {
   return Internal::CrtOperations::DispatchDownload(*m_impl, request);
+}
+
+UploadDirectoryHandle S3TransferManager::UploadDirectory(const UploadDirectoryRequest& request) {
+  return Internal::DirectoryOps::UploadDirectory(*m_impl, request);
+}
+
+DownloadDirectoryHandle S3TransferManager::DownloadDirectory(const DownloadDirectoryRequest& request) {
+  return Internal::DirectoryOps::DownloadDirectory(*m_impl, request);
 }
 
 }  // namespace Transfer

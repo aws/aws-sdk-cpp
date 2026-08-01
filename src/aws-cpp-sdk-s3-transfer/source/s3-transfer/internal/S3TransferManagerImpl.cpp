@@ -28,6 +28,18 @@ S3TransferManagerImpl::S3TransferManagerImpl(
     m_endpointProvider = Aws::MakeShared<Aws::S3::Endpoint::S3EndpointProvider>(S3_TRANSFER_LOG_TAG);
   }
 
+  // Directory operations run their orchestrator on this executor. Honor a customer-supplied one,
+  // else build from the config's factory; mirrors AwsSmithyClientBase::baseInit(). Falling back to a
+  // DefaultExecutor keeps a config whose factory was cleared from leaving us without one.
+  if (!m_config.executor) {
+    if (m_config.configFactories.executorCreateFn) {
+      m_config.executor = m_config.configFactories.executorCreateFn();
+    }
+    if (!m_config.executor) {
+      m_config.executor = Aws::MakeShared<Aws::Utils::Threading::DefaultExecutor>(S3_TRANSFER_LOG_TAG);
+    }
+  }
+
   if (m_config.crtClient) {
     m_crtClient = m_config.crtClient;
     // An already-built client cannot be reconfigured, so adopt its settings: endpoint resolution

@@ -13,6 +13,7 @@
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/threading/Executor.h>
 #include <aws/s3/S3EndpointProvider.h>
 #include <aws/s3/S3Errors.h>
 #include <aws/crt/s3/S3.h>
@@ -54,6 +55,10 @@ class AWS_CORE_LOCAL S3TransferManagerImpl final {
   bool IsInitialized() const { return m_isInitialized.load(); }
   const Aws::Client::AWSError<Aws::S3::S3Errors>& GetInitializationError() const { return m_initError; }
   const Aws::String& GetUserAgentString() const { return m_userAgent; }
+  // Runs the directory orchestrator tasks, so UploadDirectory()/DownloadDirectory() can return a
+  // handle immediately. Taken from the config's executor, or built from its executor factory the way
+  // the generated clients do; never null once construction succeeds.
+  const std::shared_ptr<Aws::Utils::Threading::Executor>& GetExecutor() const { return m_config.executor; }
 
  private:
   S3TransferManagerConfiguration m_config;

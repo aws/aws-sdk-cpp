@@ -28,6 +28,7 @@
 #include <aws/crt/io/Stream.h>
 #include <aws/s3/S3Errors.h>
 #include <aws/s3/S3ErrorMarshaller.h>
+#include <aws/s3/model/ListObjectsV2Request.h>
 
 #include <cassert>
 #include <future>
@@ -760,6 +761,120 @@ DownloadHandle CrtOperations::DispatchDownload(S3TransferManagerImpl& impl, cons
   handleImpl->metaRequest = std::move(metaRequest);
 
   return DownloadHandle(std::move(handleImpl));
+}
+
+CrtOperations::ListObjectsV2Outcome CrtOperations::DispatchListObjectsV2(S3TransferManagerImpl& impl,
+                                                                        const Aws::String& bucket,
+                                                                        const Aws::String& prefix,
+                                                                        const Aws::String& continuationToken) {
+  if (!impl.IsInitialized()) {
+    return ListObjectsV2Outcome(impl.GetInitializationError());
+  }
+
+  // Build the model request so it supplies the endpoint context params and the query string the
+  // generated client would. Delimiter is deliberately left unset: the SEP wants a flat listing, so
+  // every key under the prefix comes back rather than being rolled up into CommonPrefixes.
+  Aws::S3::Model::ListObjectsV2Request listRequest;
+  listRequest.SetBucket(bucket);
+  if (!prefix.empty()) {
+    listRequest.SetPrefix(prefix);
+  }
+  if (!continuationToken.empty()) {
+    listRequest.SetContinuationToken(continuationToken);
+  }
+
+  // A bucket-level operation with no object key, so resolve with an empty key; list-type, prefix and
+  // continuation-token all ride in the query string.
+  Aws::Http::URI uri;
+  Aws::String endpointError;
+  ResolvedSigning signing;
+  if (!ResolveEndpointUri(impl.GetEndpointProvider(), listRequest, Aws::String(), uri, endpointError, &signing)) {
+    return ListObjectsV2Outcome(Aws::Client::AWSError<Aws::Client::CoreErrors>(
+        Aws::Client::CoreErrors::ENDPOINT_RESOLUTION_FAILURE, "ENDPOINT_RESOLUTION_FAILURE", endpointError, false));
+  }
+  // Identifies the V2 listing API. The generated client adds it to the resolved URI rather than to
+  // the request's own query params, so it has to be set here too.
+  uri.AddQueryStringParameter("list-type", "2");
+
+  auto crtRequest = BuildCrtHttpRequest(listRequest, uri, Aws::Http::HttpMethod::HTTP_GET, impl.GetUserAgentString());
+  if (!crtRequest) {
+    return ListObjectsV2Outcome(Aws::Client::AWSError<Aws::S3::S3Errors>(
+        Aws::S3::S3Errors::INTERNAL_FAILURE, "INTERNAL_FAILURE",
+        "Failed to build CRT HTTP request for ListObjectsV2", false));
+  }
+
+  // The listing arrives as an XML body spread across body-callback chunks, so accumulate it and
+  // parse once at the finish. The CRT serializes the body and finish callbacks for a meta request on
+  // its event loop, so the buffer needs no lock; the promise carries the result back to this thread.
+  struct ListState {
+    Aws::String body;
+    Aws::Http::HeaderValueCollection responseHeaders;
+    int responseStatus = 0;
+    std::promise<ListObjectsV2Outcome> promise;
+  };
+  auto listState = Aws::MakeShared<ListState>(CRT_OPERATIONS_LOG_TAG);
+  if (!listState) {
+    return ListObjectsV2Outcome(Aws::Client::AWSError<Aws::S3::S3Errors>(
+        Aws::S3::S3Errors::INTERNAL_FAILURE, "INTERNAL_FAILURE",
+        "Failed to allocate ListObjectsV2 accumulation state", false));
+  }
+  auto future = listState->promise.get_future();
+
+  // The operationName-only overload installs no body sink and would discard the listing, so the
+  // body-callback overload is required here.
+  auto options = Aws::Crt::S3::S3DefaultObjectMetaRequestOptions::Create(
+      crtRequest, Aws::Crt::String("ListObjectsV2"),
+      Aws::Crt::S3::S3MetaRequestOptions::BodyCallback(
+          [listState](Aws::Crt::ByteCursor body, uint64_t /*rangeStart*/) -> bool {
+            listState->body.append(reinterpret_cast<const char*>(body.ptr), body.len);
+            return true;
+          }));
+  if (!options) {
+    return ListObjectsV2Outcome(Aws::Client::AWSError<Aws::S3::S3Errors>(
+        Aws::S3::S3Errors::UNKNOWN, "MetaRequestOptionsAllocationFailure",
+        "Failed to allocate CRT meta request options.", false));
+  }
+
+  // Apply the resolved endpoint's signing attributes (S3 Express for a directory bucket, or a
+  // region/name override for e.g. a cross-region access point); a same-region bucket keeps the
+  // client-level SigV4 default.
+  ConfigureEndpointSigning(*options, signing, impl);
+
+  options->SetHeadersCallback(
+      [listState](const Aws::Crt::Vector<Aws::Crt::Http::HttpHeader>& headers, int responseStatus) -> bool {
+        listState->responseHeaders = ToHeaderValueCollection(headers);
+        listState->responseStatus = responseStatus;
+        return true;
+      });
+
+  options->SetFinishCallback([listState](const Aws::Crt::S3::S3MetaRequestResult& result) {
+    if (result.GetErrorCode() != Aws::Crt::S3::S3ErrorCode::Success) {
+      listState->promise.set_value(ListObjectsV2Outcome(MapCrtError(result)));
+      return;
+    }
+    // Parse the accumulated XML the way the generated client does: the document, headers and status
+    // wrapped in an AmazonWebServiceResult.
+    Aws::Utils::Xml::XmlDocument xmlDoc = Aws::Utils::Xml::XmlDocument::CreateFromXmlString(listState->body);
+    if (!xmlDoc.WasParseSuccessful()) {
+      listState->promise.set_value(ListObjectsV2Outcome(Aws::Client::AWSError<Aws::S3::S3Errors>(
+          Aws::S3::S3Errors::UNKNOWN, "XmlParseError", xmlDoc.GetErrorMessage(), false)));
+      return;
+    }
+    listState->promise.set_value(
+        ListObjectsV2Outcome(Aws::S3::Model::ListObjectsV2Result(
+            Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>(
+                std::move(xmlDoc), listState->responseHeaders,
+                static_cast<Aws::Http::HttpResponseCode>(listState->responseStatus)))));
+  });
+
+  auto metaRequest = impl.GetCrtClient()->MakeMetaRequest(*options);
+  if (!metaRequest) {
+    return ListObjectsV2Outcome(Aws::Client::AWSError<Aws::S3::S3Errors>(
+        Aws::S3::S3Errors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Unable to create s3 meta request", false));
+  }
+
+  // Blocks until the finish callback resolves the promise. See the header for why blocking is safe.
+  return future.get();
 }
 
 }  // namespace Internal
