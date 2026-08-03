@@ -174,4 +174,42 @@ class ProtocolResolverTest {
         assertTrue(Protocol.EC2.isXmlLike());
         assertFalse(Protocol.EC2.isJsonLike());
     }
+
+    // ---------- traitsFor: the single protocol -> strategy selection point ----------
+
+    @Test
+    void traitsFor_jsonAndCbor_returnJsonTraits() {
+        assertInstanceOf(com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol
+            .JsonProtocolTraits.class, ProtocolResolver.traitsFor(Protocol.JSON));
+        assertInstanceOf(com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol
+            .JsonProtocolTraits.class, ProtocolResolver.traitsFor(Protocol.CBOR));
+    }
+
+    @Test
+    void traitsFor_restXml_returnsRestXmlTraits() {
+        assertInstanceOf(com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol
+            .RestXmlProtocolTraits.class, ProtocolResolver.traitsFor(Protocol.REST_XML));
+    }
+
+    @Test
+    void traitsFor_queryAndEc2_returnQueryXmlTraits() {
+        assertInstanceOf(com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol
+            .QueryXmlProtocolTraits.class, ProtocolResolver.traitsFor(Protocol.QUERY_XML));
+        assertInstanceOf(com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol
+            .QueryXmlProtocolTraits.class, ProtocolResolver.traitsFor(Protocol.EC2));
+    }
+
+    /** Every protocol must have a strategy, and each must report its own identity back. */
+    @Test
+    void traitsFor_coversEveryProtocol_andPreservesIdentity() {
+        for (Protocol p : Protocol.values()) {
+            assertEquals(p, ProtocolResolver.traitsFor(p).protocol(),
+                "traitsFor(" + p + ") returned traits reporting a different protocol");
+        }
+    }
+
+    @Test
+    void traitsFor_rejectsNull() {
+        assertThrows(UnsupportedOperationException.class, () -> ProtocolResolver.traitsFor(null));
+    }
 }
