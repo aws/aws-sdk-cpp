@@ -132,6 +132,18 @@ RebootDbInstanceResult& RebootDbInstanceResult::operator=(const Aws::AmazonWebSe
     m_nextMaintenanceTime = jsonValue.GetString("nextMaintenanceTime");
     m_nextMaintenanceTimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("dbBackupConfigurations")) {
+    Aws::Utils::Array<JsonView> dbBackupConfigurationsJsonList = jsonValue.GetArray("dbBackupConfigurations");
+    for (unsigned dbBackupConfigurationsIndex = 0; dbBackupConfigurationsIndex < dbBackupConfigurationsJsonList.GetLength();
+         ++dbBackupConfigurationsIndex) {
+      m_dbBackupConfigurations.push_back(dbBackupConfigurationsJsonList[dbBackupConfigurationsIndex].AsObject());
+    }
+    m_dbBackupConfigurationsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("kmsKeyId")) {
+    m_kmsKeyId = jsonValue.GetString("kmsKeyId");
+    m_kmsKeyIdHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -319,9 +319,9 @@ class InfluxDBv2Parameters {
 
   ///@{
   /**
-   * <p>Maximum number of queries allowed in execution queue. When queue limit is
-   * reached, new queries are rejected. Setting to 0 allows an unlimited number of
-   * queries in the queue.</p> <p>Default: 0</p>
+   * <p>Maximum total bytes of memory allowed for all running queries. When this
+   * limit is reached, new queries are rejected. Setting to 0 allows unlimited memory
+   * usage.</p> <p>Default: 0</p>
    */
   inline long long GetQueryMaxMemoryBytes() const { return m_queryMaxMemoryBytes; }
   inline bool QueryMaxMemoryBytesHasBeenSet() const { return m_queryMaxMemoryBytesHasBeenSet; }

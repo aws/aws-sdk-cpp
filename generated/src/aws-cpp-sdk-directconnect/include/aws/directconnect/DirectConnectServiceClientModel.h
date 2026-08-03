@@ -83,6 +83,8 @@
 #include <aws/directconnect/model/DescribeVirtualInterfacesResult.h>
 #include <aws/directconnect/model/DisassociateConnectionFromLagResult.h>
 #include <aws/directconnect/model/DisassociateMacSecKeyResult.h>
+#include <aws/directconnect/model/ListVirtualInterfaceRoutesRequest.h>
+#include <aws/directconnect/model/ListVirtualInterfaceRoutesResult.h>
 #include <aws/directconnect/model/ListVirtualInterfaceTestHistoryRequest.h>
 #include <aws/directconnect/model/ListVirtualInterfaceTestHistoryResult.h>
 #include <aws/directconnect/model/StartBgpFailoverTestResult.h>
@@ -177,6 +179,7 @@ class DescribeVirtualGatewaysRequest;
 class DescribeVirtualInterfacesRequest;
 class DisassociateConnectionFromLagRequest;
 class DisassociateMacSecKeyRequest;
+class ListVirtualInterfaceRoutesRequest;
 class ListVirtualInterfaceTestHistoryRequest;
 class StartBgpFailoverTestRequest;
 class StopBgpFailoverTestRequest;
@@ -245,6 +248,7 @@ typedef Aws::Utils::Outcome<DescribeVirtualGatewaysResult, DirectConnectError> D
 typedef Aws::Utils::Outcome<DescribeVirtualInterfacesResult, DirectConnectError> DescribeVirtualInterfacesOutcome;
 typedef Aws::Utils::Outcome<DisassociateConnectionFromLagResult, DirectConnectError> DisassociateConnectionFromLagOutcome;
 typedef Aws::Utils::Outcome<DisassociateMacSecKeyResult, DirectConnectError> DisassociateMacSecKeyOutcome;
+typedef Aws::Utils::Outcome<ListVirtualInterfaceRoutesResult, DirectConnectError> ListVirtualInterfaceRoutesOutcome;
 typedef Aws::Utils::Outcome<ListVirtualInterfaceTestHistoryResult, DirectConnectError> ListVirtualInterfaceTestHistoryOutcome;
 typedef Aws::Utils::Outcome<StartBgpFailoverTestResult, DirectConnectError> StartBgpFailoverTestOutcome;
 typedef Aws::Utils::Outcome<StopBgpFailoverTestResult, DirectConnectError> StopBgpFailoverTestOutcome;
@@ -308,6 +312,7 @@ typedef std::future<DescribeVirtualGatewaysOutcome> DescribeVirtualGatewaysOutco
 typedef std::future<DescribeVirtualInterfacesOutcome> DescribeVirtualInterfacesOutcomeCallable;
 typedef std::future<DisassociateConnectionFromLagOutcome> DisassociateConnectionFromLagOutcomeCallable;
 typedef std::future<DisassociateMacSecKeyOutcome> DisassociateMacSecKeyOutcomeCallable;
+typedef std::future<ListVirtualInterfaceRoutesOutcome> ListVirtualInterfaceRoutesOutcomeCallable;
 typedef std::future<ListVirtualInterfaceTestHistoryOutcome> ListVirtualInterfaceTestHistoryOutcomeCallable;
 typedef std::future<StartBgpFailoverTestOutcome> StartBgpFailoverTestOutcomeCallable;
 typedef std::future<StopBgpFailoverTestOutcome> StopBgpFailoverTestOutcomeCallable;
@@ -490,6 +495,9 @@ typedef std::function<void(const DirectConnectClient*, const Model::Disassociate
 typedef std::function<void(const DirectConnectClient*, const Model::DisassociateMacSecKeyRequest&,
                            const Model::DisassociateMacSecKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DisassociateMacSecKeyResponseReceivedHandler;
+typedef std::function<void(const DirectConnectClient*, const Model::ListVirtualInterfaceRoutesRequest&,
+                           const Model::ListVirtualInterfaceRoutesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListVirtualInterfaceRoutesResponseReceivedHandler;
 typedef std::function<void(const DirectConnectClient*, const Model::ListVirtualInterfaceTestHistoryRequest&,
                            const Model::ListVirtualInterfaceTestHistoryOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

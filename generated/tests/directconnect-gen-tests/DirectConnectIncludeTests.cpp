@@ -25,6 +25,8 @@
 #include <aws/directconnect/model/AllocatePublicVirtualInterfaceResult.h>
 #include <aws/directconnect/model/AllocateTransitVirtualInterfaceRequest.h>
 #include <aws/directconnect/model/AllocateTransitVirtualInterfaceResult.h>
+#include <aws/directconnect/model/AsPathSegment.h>
+#include <aws/directconnect/model/AsPathType.h>
 #include <aws/directconnect/model/AssociateConnectionWithLagRequest.h>
 #include <aws/directconnect/model/AssociateConnectionWithLagResult.h>
 #include <aws/directconnect/model/AssociateHostedConnectionRequest.h>
@@ -136,6 +138,8 @@
 #include <aws/directconnect/model/InterconnectState.h>
 #include <aws/directconnect/model/Lag.h>
 #include <aws/directconnect/model/LagState.h>
+#include <aws/directconnect/model/ListVirtualInterfaceRoutesRequest.h>
+#include <aws/directconnect/model/ListVirtualInterfaceRoutesResult.h>
 #include <aws/directconnect/model/ListVirtualInterfaceTestHistoryRequest.h>
 #include <aws/directconnect/model/ListVirtualInterfaceTestHistoryResult.h>
 #include <aws/directconnect/model/Loa.h>
@@ -152,7 +156,10 @@
 #include <aws/directconnect/model/NniPartnerType.h>
 #include <aws/directconnect/model/RateLimiterStatus.h>
 #include <aws/directconnect/model/ResourceTag.h>
+#include <aws/directconnect/model/Route.h>
+#include <aws/directconnect/model/RouteDirection.h>
 #include <aws/directconnect/model/RouteFilterPrefix.h>
+#include <aws/directconnect/model/RouteFilters.h>
 #include <aws/directconnect/model/RouterType.h>
 #include <aws/directconnect/model/StartBgpFailoverTestRequest.h>
 #include <aws/directconnect/model/StartBgpFailoverTestResult.h>

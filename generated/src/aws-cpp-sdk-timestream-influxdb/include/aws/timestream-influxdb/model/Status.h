@@ -23,7 +23,9 @@ enum class Status {
   UPDATING_INSTANCE_TYPE,
   MAINTENANCE,
   REBOOTING,
-  REBOOT_FAILED
+  REBOOT_FAILED,
+  RESTORING,
+  RESTORE_FAILED
 };
 
 namespace StatusMapper {

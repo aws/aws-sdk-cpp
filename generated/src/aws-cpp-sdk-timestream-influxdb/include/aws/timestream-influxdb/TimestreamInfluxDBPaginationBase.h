@@ -7,6 +7,7 @@
 
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
+#include <aws/timestream-influxdb/model/ListDbBackupsPaginationTraits.h>
 #include <aws/timestream-influxdb/model/ListDbClustersPaginationTraits.h>
 #include <aws/timestream-influxdb/model/ListDbInstancesForClusterPaginationTraits.h>
 #include <aws/timestream-influxdb/model/ListDbInstancesPaginationTraits.h>
@@ -20,6 +21,17 @@ namespace TimestreamInfluxDB {
 template <typename DerivedClient>
 class TimestreamInfluxDBPaginationBase {
  public:
+  /**
+   * Create a paginator for ListDbBackups operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDbBackupsRequest, Pagination::ListDbBackupsPaginationTraits<DerivedClient>>
+  ListDbBackupsPaginator(const Model::ListDbBackupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDbBackupsRequest,
+                                             Pagination::ListDbBackupsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                       request};
+  }
+
   /**
    * Create a paginator for ListDbClusters operation
    */

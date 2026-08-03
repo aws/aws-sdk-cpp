@@ -148,7 +148,7 @@ class ByteMatchStatement {
    * parses it into individual query arguments. They are applied before the standard
    * text transformations. Pre-parse text transformations are only supported when
    * <code>FieldToMatch</code> is <code>SingleQueryArgument</code> or
-   * <code>AllQueryArguments</code>. You can specify up to 3 pre-parse text
+   * <code>AllQueryArguments</code>. You can specify up to 10 pre-parse text
    * transformations per rule statement.</p>
    */
   inline const Aws::Vector<PreParseTextTransformation>& GetPreParseTextTransformations() const { return m_preParseTextTransformations; }

@@ -169,8 +169,9 @@ class TelemetryDestinationConfiguration {
 
   ///@{
   /**
-   * <p>Configuration parameters specific to Amazon Bedrock AgentCore logging when
-   * Amazon Bedrock AgentCore is the resource type.</p>
+   * <p>The configuration parameters for log delivery when the resource type supports
+   * configurable log types, such as Amazon Bedrock Knowledge Bases or Elastic Load
+   * Balancing Application Load Balancers.</p>
    */
   inline const LogDeliveryParameters& GetLogDeliveryParameters() const { return m_logDeliveryParameters; }
   inline bool LogDeliveryParametersHasBeenSet() const { return m_logDeliveryParametersHasBeenSet; }
@@ -204,6 +205,26 @@ class TelemetryDestinationConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The Amazon Resource Name (ARN) of the customer-managed Amazon Web Services
+   * KMS key used to encrypt the log groups created during telemetry rule
+   * remediation. </p>
+   */
+  inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+  inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
+  template <typename KmsKeyArnT = Aws::String>
+  void SetKmsKeyArn(KmsKeyArnT&& value) {
+    m_kmsKeyArnHasBeenSet = true;
+    m_kmsKeyArn = std::forward<KmsKeyArnT>(value);
+  }
+  template <typename KmsKeyArnT = Aws::String>
+  TelemetryDestinationConfiguration& WithKmsKeyArn(KmsKeyArnT&& value) {
+    SetKmsKeyArn(std::forward<KmsKeyArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   DestinationType m_destinationType{DestinationType::NOT_SET};
 
@@ -222,6 +243,8 @@ class TelemetryDestinationConfiguration {
   LogDeliveryParameters m_logDeliveryParameters;
 
   MskMonitoringParameters m_mskMonitoringParameters;
+
+  Aws::String m_kmsKeyArn;
   bool m_destinationTypeHasBeenSet = false;
   bool m_destinationPatternHasBeenSet = false;
   bool m_retentionInDaysHasBeenSet = false;
@@ -231,6 +254,7 @@ class TelemetryDestinationConfiguration {
   bool m_wAFLoggingParametersHasBeenSet = false;
   bool m_logDeliveryParametersHasBeenSet = false;
   bool m_mskMonitoringParametersHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
 };
 
 }  // namespace Model

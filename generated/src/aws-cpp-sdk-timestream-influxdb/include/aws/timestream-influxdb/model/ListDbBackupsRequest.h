@@ -1,0 +1,102 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/timestream-influxdb/TimestreamInfluxDBRequest.h>
+#include <aws/timestream-influxdb/TimestreamInfluxDB_EXPORTS.h>
+
+#include <utility>
+
+namespace Aws {
+namespace TimestreamInfluxDB {
+namespace Model {
+
+/**
+ */
+class ListDbBackupsRequest : public TimestreamInfluxDBRequest {
+ public:
+  AWS_TIMESTREAMINFLUXDB_API ListDbBackupsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "ListDbBackups"; }
+
+  AWS_TIMESTREAMINFLUXDB_API Aws::String SerializePayload() const override;
+
+  AWS_TIMESTREAMINFLUXDB_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
+  /**
+   * <p>The identifier of the DB instance or DB cluster to list backups for. If not
+   * specified, returns all backups in the account and region.</p>
+   */
+  inline const Aws::String& GetDbResourceId() const { return m_dbResourceId; }
+  inline bool DbResourceIdHasBeenSet() const { return m_dbResourceIdHasBeenSet; }
+  template <typename DbResourceIdT = Aws::String>
+  void SetDbResourceId(DbResourceIdT&& value) {
+    m_dbResourceIdHasBeenSet = true;
+    m_dbResourceId = std::forward<DbResourceIdT>(value);
+  }
+  template <typename DbResourceIdT = Aws::String>
+  ListDbBackupsRequest& WithDbResourceId(DbResourceIdT&& value) {
+    SetDbResourceId(std::forward<DbResourceIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The pagination token. To resume pagination, provide the nextToken value as an
+   * argument of a subsequent API invocation.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListDbBackupsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The maximum number of items to return in the output. If the total number of
+   * items available is more than the value specified, a nextToken is provided in the
+   * output. To resume pagination, provide the nextToken value as an argument of a
+   * subsequent API invocation.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline ListDbBackupsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_dbResourceId;
+
+  Aws::String m_nextToken;
+
+  int m_maxResults{0};
+  bool m_dbResourceIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace TimestreamInfluxDB
+}  // namespace Aws

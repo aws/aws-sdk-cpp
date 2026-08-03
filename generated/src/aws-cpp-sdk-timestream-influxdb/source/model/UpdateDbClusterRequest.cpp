@@ -43,6 +43,15 @@ Aws::String UpdateDbClusterRequest::SerializePayload() const {
     payload.WithObject("maintenanceSchedule", m_maintenanceSchedule.Jsonize());
   }
 
+  if (m_dbBackupConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> dbBackupConfigurationsJsonList(m_dbBackupConfigurations.size());
+    for (unsigned dbBackupConfigurationsIndex = 0; dbBackupConfigurationsIndex < dbBackupConfigurationsJsonList.GetLength();
+         ++dbBackupConfigurationsIndex) {
+      dbBackupConfigurationsJsonList[dbBackupConfigurationsIndex].AsObject(m_dbBackupConfigurations[dbBackupConfigurationsIndex].Jsonize());
+    }
+    payload.WithArray("dbBackupConfigurations", std::move(dbBackupConfigurationsJsonList));
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -22,7 +22,9 @@ enum class ClusterStatus {
   UPDATING_INSTANCE_TYPE,
   REBOOTING,
   REBOOT_FAILED,
-  PARTIALLY_AVAILABLE
+  PARTIALLY_AVAILABLE,
+  RESTORING,
+  RESTORE_FAILED
 };
 
 namespace ClusterStatusMapper {

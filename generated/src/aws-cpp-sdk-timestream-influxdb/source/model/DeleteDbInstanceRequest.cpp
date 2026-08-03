@@ -19,6 +19,10 @@ Aws::String DeleteDbInstanceRequest::SerializePayload() const {
     payload.WithString("identifier", m_identifier);
   }
 
+  if (m_retainAutomatedBackupsHasBeenSet) {
+    payload.WithBool("retainAutomatedBackups", m_retainAutomatedBackups);
+  }
+
   return payload.View().WriteReadable();
 }
 

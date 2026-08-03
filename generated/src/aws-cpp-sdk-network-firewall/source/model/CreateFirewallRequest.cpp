@@ -91,6 +91,27 @@ Aws::String CreateFirewallRequest::SerializePayload() const {
     payload.WithBool("AvailabilityZoneChangeProtection", m_availabilityZoneChangeProtection);
   }
 
+  if (m_natGatewayMappingsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> natGatewayMappingsJsonList(m_natGatewayMappings.size());
+    for (unsigned natGatewayMappingsIndex = 0; natGatewayMappingsIndex < natGatewayMappingsJsonList.GetLength();
+         ++natGatewayMappingsIndex) {
+      natGatewayMappingsJsonList[natGatewayMappingsIndex].AsObject(m_natGatewayMappings[natGatewayMappingsIndex].Jsonize());
+    }
+    payload.WithArray("NatGatewayMappings", std::move(natGatewayMappingsJsonList));
+  }
+
+  if (m_proxySettingsHasBeenSet) {
+    payload.WithObject("ProxySettings", m_proxySettings.Jsonize());
+  }
+
+  if (m_noSourcePreservationHasBeenSet) {
+    payload.WithBool("NoSourcePreservation", m_noSourcePreservation);
+  }
+
+  if (m_vpcEndpointHasBeenSet) {
+    payload.WithObject("VpcEndpoint", m_vpcEndpoint.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

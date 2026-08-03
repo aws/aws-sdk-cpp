@@ -38,6 +38,10 @@ CodecMetadata& CodecMetadata::operator=(JsonView jsonValue) {
     m_contentLightLevel = jsonValue.GetObject("contentLightLevel");
     m_contentLightLevelHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("fieldOrder")) {
+    m_fieldOrder = jsonValue.GetString("fieldOrder");
+    m_fieldOrderHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("height")) {
     m_height = jsonValue.GetInteger("height");
     m_heightHasBeenSet = true;
@@ -95,6 +99,10 @@ JsonValue CodecMetadata::Jsonize() const {
 
   if (m_contentLightLevelHasBeenSet) {
     payload.WithObject("contentLightLevel", m_contentLightLevel.Jsonize());
+  }
+
+  if (m_fieldOrderHasBeenSet) {
+    payload.WithString("fieldOrder", m_fieldOrder);
   }
 
   if (m_heightHasBeenSet) {

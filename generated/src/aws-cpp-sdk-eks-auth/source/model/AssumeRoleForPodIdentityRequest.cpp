@@ -19,5 +19,17 @@ Aws::String AssumeRoleForPodIdentityRequest::SerializePayload() const {
     payload.WithString("token", m_token);
   }
 
+  if (m_eksNodeNameHasBeenSet) {
+    payload.WithString("eksNodeName", m_eksNodeName);
+  }
+
+  if (m_instanceIdHasBeenSet) {
+    payload.WithString("instanceId", m_instanceId);
+  }
+
+  if (m_zoneHasBeenSet) {
+    payload.WithString("zone", m_zone);
+  }
+
   return payload.View().WriteReadable();
 }

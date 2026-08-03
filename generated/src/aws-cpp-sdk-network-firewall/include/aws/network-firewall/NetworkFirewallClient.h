@@ -2679,6 +2679,36 @@ class AWS_NETWORKFIREWALL_API NetworkFirewallClient : public Aws::Client::AWSJso
   }
 
   /**
+   * <p>Modifies the proxy listener configuration of a proxy mode firewall. Proxy
+   * mode firewalls are created with <code>NoSourcePreservation</code> set to
+   * <code>TRUE</code>. Use this operation to change the ports and protocols on which
+   * the firewall's proxy listens for traffic. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateProxySettings">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateProxySettingsOutcome UpdateProxySettings(const Model::UpdateProxySettingsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for UpdateProxySettings that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateProxySettingsRequestT = Model::UpdateProxySettingsRequest>
+  Model::UpdateProxySettingsOutcomeCallable UpdateProxySettingsCallable(const UpdateProxySettingsRequestT& request = {}) const {
+    return SubmitCallable(&NetworkFirewallClient::UpdateProxySettings, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateProxySettings that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateProxySettingsRequestT = Model::UpdateProxySettingsRequest>
+  void UpdateProxySettingsAsync(const UpdateProxySettingsResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                const UpdateProxySettingsRequestT& request = {}) const {
+    return SubmitAsync(&NetworkFirewallClient::UpdateProxySettings, request, handler, context);
+  }
+
+  /**
    * <p>Updates the rule settings for the specified rule group. You use a rule group
    * by reference in one or more firewall policies. When you modify a rule group, you
    * modify all firewall policies that use the rule group. </p> <p>To update a rule

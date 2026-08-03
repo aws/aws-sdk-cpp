@@ -26,6 +26,8 @@ static const int UPDATING_INSTANCE_TYPE_HASH = HashingUtils::HashString("UPDATIN
 static const int REBOOTING_HASH = HashingUtils::HashString("REBOOTING");
 static const int REBOOT_FAILED_HASH = HashingUtils::HashString("REBOOT_FAILED");
 static const int PARTIALLY_AVAILABLE_HASH = HashingUtils::HashString("PARTIALLY_AVAILABLE");
+static const int RESTORING_HASH = HashingUtils::HashString("RESTORING");
+static const int RESTORE_FAILED_HASH = HashingUtils::HashString("RESTORE_FAILED");
 
 ClusterStatus GetClusterStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -51,6 +53,10 @@ ClusterStatus GetClusterStatusForName(const Aws::String& name) {
     return ClusterStatus::REBOOT_FAILED;
   } else if (hashCode == PARTIALLY_AVAILABLE_HASH) {
     return ClusterStatus::PARTIALLY_AVAILABLE;
+  } else if (hashCode == RESTORING_HASH) {
+    return ClusterStatus::RESTORING;
+  } else if (hashCode == RESTORE_FAILED_HASH) {
+    return ClusterStatus::RESTORE_FAILED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -87,6 +93,10 @@ Aws::String GetNameForClusterStatus(ClusterStatus enumValue) {
       return "REBOOT_FAILED";
     case ClusterStatus::PARTIALLY_AVAILABLE:
       return "PARTIALLY_AVAILABLE";
+    case ClusterStatus::RESTORING:
+      return "RESTORING";
+    case ClusterStatus::RESTORE_FAILED:
+      return "RESTORE_FAILED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

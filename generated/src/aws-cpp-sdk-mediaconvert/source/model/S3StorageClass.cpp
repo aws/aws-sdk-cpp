@@ -22,6 +22,7 @@ static const int ONEZONE_IA_HASH = HashingUtils::HashString("ONEZONE_IA");
 static const int INTELLIGENT_TIERING_HASH = HashingUtils::HashString("INTELLIGENT_TIERING");
 static const int GLACIER_HASH = HashingUtils::HashString("GLACIER");
 static const int DEEP_ARCHIVE_HASH = HashingUtils::HashString("DEEP_ARCHIVE");
+static const int GLACIER_IR_HASH = HashingUtils::HashString("GLACIER_IR");
 
 S3StorageClass GetS3StorageClassForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -39,6 +40,8 @@ S3StorageClass GetS3StorageClassForName(const Aws::String& name) {
     return S3StorageClass::GLACIER;
   } else if (hashCode == DEEP_ARCHIVE_HASH) {
     return S3StorageClass::DEEP_ARCHIVE;
+  } else if (hashCode == GLACIER_IR_HASH) {
+    return S3StorageClass::GLACIER_IR;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -67,6 +70,8 @@ Aws::String GetNameForS3StorageClass(S3StorageClass enumValue) {
       return "GLACIER";
     case S3StorageClass::DEEP_ARCHIVE:
       return "DEEP_ARCHIVE";
+    case S3StorageClass::GLACIER_IR:
+      return "GLACIER_IR";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

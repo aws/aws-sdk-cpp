@@ -6,8 +6,10 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/model/Attachment.h>
+#include <aws/network-firewall/model/NatGatewayAttachment.h>
 #include <aws/network-firewall/model/PerObjectStatus.h>
 
 #include <utility>
@@ -90,12 +92,41 @@ class SyncState {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The status of the NAT gateway attachments for a proxy mode firewall in the
+   * Availability Zone. This reflects the attachment of the firewall to each NAT
+   * gateway that proxies its traffic. </p>
+   */
+  inline const Aws::Vector<NatGatewayAttachment>& GetNatGatewayAttachments() const { return m_natGatewayAttachments; }
+  inline bool NatGatewayAttachmentsHasBeenSet() const { return m_natGatewayAttachmentsHasBeenSet; }
+  template <typename NatGatewayAttachmentsT = Aws::Vector<NatGatewayAttachment>>
+  void SetNatGatewayAttachments(NatGatewayAttachmentsT&& value) {
+    m_natGatewayAttachmentsHasBeenSet = true;
+    m_natGatewayAttachments = std::forward<NatGatewayAttachmentsT>(value);
+  }
+  template <typename NatGatewayAttachmentsT = Aws::Vector<NatGatewayAttachment>>
+  SyncState& WithNatGatewayAttachments(NatGatewayAttachmentsT&& value) {
+    SetNatGatewayAttachments(std::forward<NatGatewayAttachmentsT>(value));
+    return *this;
+  }
+  template <typename NatGatewayAttachmentsT = NatGatewayAttachment>
+  SyncState& AddNatGatewayAttachments(NatGatewayAttachmentsT&& value) {
+    m_natGatewayAttachmentsHasBeenSet = true;
+    m_natGatewayAttachments.emplace_back(std::forward<NatGatewayAttachmentsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Attachment m_attachment;
 
   Aws::Map<Aws::String, PerObjectStatus> m_config;
+
+  Aws::Vector<NatGatewayAttachment> m_natGatewayAttachments;
   bool m_attachmentHasBeenSet = false;
   bool m_configHasBeenSet = false;
+  bool m_natGatewayAttachmentsHasBeenSet = false;
 };
 
 }  // namespace Model

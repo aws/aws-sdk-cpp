@@ -20,14 +20,18 @@
 #include <aws/timestream-influxdb/TimestreamInfluxDBClient.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDBEndpointProvider.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDBErrorMarshaller.h>
+#include <aws/timestream-influxdb/model/CreateDbBackupRequest.h>
 #include <aws/timestream-influxdb/model/CreateDbClusterRequest.h>
 #include <aws/timestream-influxdb/model/CreateDbInstanceRequest.h>
 #include <aws/timestream-influxdb/model/CreateDbParameterGroupRequest.h>
+#include <aws/timestream-influxdb/model/DeleteDbBackupRequest.h>
 #include <aws/timestream-influxdb/model/DeleteDbClusterRequest.h>
 #include <aws/timestream-influxdb/model/DeleteDbInstanceRequest.h>
+#include <aws/timestream-influxdb/model/GetDbBackupRequest.h>
 #include <aws/timestream-influxdb/model/GetDbClusterRequest.h>
 #include <aws/timestream-influxdb/model/GetDbInstanceRequest.h>
 #include <aws/timestream-influxdb/model/GetDbParameterGroupRequest.h>
+#include <aws/timestream-influxdb/model/ListDbBackupsRequest.h>
 #include <aws/timestream-influxdb/model/ListDbClustersRequest.h>
 #include <aws/timestream-influxdb/model/ListDbInstancesForClusterRequest.h>
 #include <aws/timestream-influxdb/model/ListDbInstancesRequest.h>
@@ -35,6 +39,7 @@
 #include <aws/timestream-influxdb/model/ListTagsForResourceRequest.h>
 #include <aws/timestream-influxdb/model/RebootDbClusterRequest.h>
 #include <aws/timestream-influxdb/model/RebootDbInstanceRequest.h>
+#include <aws/timestream-influxdb/model/RestoreFromDbBackupRequest.h>
 #include <aws/timestream-influxdb/model/TagResourceRequest.h>
 #include <aws/timestream-influxdb/model/UntagResourceRequest.h>
 #include <aws/timestream-influxdb/model/UpdateDbClusterRequest.h>
@@ -195,6 +200,11 @@ TimestreamInfluxDBClient::InvokeOperationOutcome TimestreamInfluxDBClient::Invok
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 
+CreateDbBackupOutcome TimestreamInfluxDBClient::CreateDbBackup(const CreateDbBackupRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDbBackupOutcome(result.GetResultWithOwnership()) : CreateDbBackupOutcome(std::move(result.GetError()));
+}
+
 CreateDbClusterOutcome TimestreamInfluxDBClient::CreateDbCluster(const CreateDbClusterRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateDbClusterOutcome(result.GetResultWithOwnership())
@@ -213,6 +223,11 @@ CreateDbParameterGroupOutcome TimestreamInfluxDBClient::CreateDbParameterGroup(c
                             : CreateDbParameterGroupOutcome(std::move(result.GetError()));
 }
 
+DeleteDbBackupOutcome TimestreamInfluxDBClient::DeleteDbBackup(const DeleteDbBackupRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDbBackupOutcome(result.GetResultWithOwnership()) : DeleteDbBackupOutcome(std::move(result.GetError()));
+}
+
 DeleteDbClusterOutcome TimestreamInfluxDBClient::DeleteDbCluster(const DeleteDbClusterRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteDbClusterOutcome(result.GetResultWithOwnership())
@@ -223,6 +238,11 @@ DeleteDbInstanceOutcome TimestreamInfluxDBClient::DeleteDbInstance(const DeleteD
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteDbInstanceOutcome(result.GetResultWithOwnership())
                             : DeleteDbInstanceOutcome(std::move(result.GetError()));
+}
+
+GetDbBackupOutcome TimestreamInfluxDBClient::GetDbBackup(const GetDbBackupRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDbBackupOutcome(result.GetResultWithOwnership()) : GetDbBackupOutcome(std::move(result.GetError()));
 }
 
 GetDbClusterOutcome TimestreamInfluxDBClient::GetDbCluster(const GetDbClusterRequest& request) const {
@@ -239,6 +259,11 @@ GetDbParameterGroupOutcome TimestreamInfluxDBClient::GetDbParameterGroup(const G
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetDbParameterGroupOutcome(result.GetResultWithOwnership())
                             : GetDbParameterGroupOutcome(std::move(result.GetError()));
+}
+
+ListDbBackupsOutcome TimestreamInfluxDBClient::ListDbBackups(const ListDbBackupsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDbBackupsOutcome(result.GetResultWithOwnership()) : ListDbBackupsOutcome(std::move(result.GetError()));
 }
 
 ListDbClustersOutcome TimestreamInfluxDBClient::ListDbClusters(const ListDbClustersRequest& request) const {
@@ -281,6 +306,12 @@ RebootDbInstanceOutcome TimestreamInfluxDBClient::RebootDbInstance(const RebootD
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? RebootDbInstanceOutcome(result.GetResultWithOwnership())
                             : RebootDbInstanceOutcome(std::move(result.GetError()));
+}
+
+RestoreFromDbBackupOutcome TimestreamInfluxDBClient::RestoreFromDbBackup(const RestoreFromDbBackupRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RestoreFromDbBackupOutcome(result.GetResultWithOwnership())
+                            : RestoreFromDbBackupOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome TimestreamInfluxDBClient::TagResource(const TagResourceRequest& request) const {

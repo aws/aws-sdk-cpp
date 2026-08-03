@@ -1730,6 +1730,40 @@ class AWS_DIRECTCONNECT_API DirectConnectClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Lists the routes for the specified virtual interface.</p> <p>Use the
+   * <code>routeDirection</code> filter to control which routes are returned:</p>
+   * <ul> <li> <p> <code>accepted</code>: routes received from the customer network
+   * over the virtual interface.</p> </li> <li> <p> <code>advertised</code>: routes
+   * advertised to the customer network over the virtual interface.</p> </li>
+   * </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ListVirtualInterfaceRoutes">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListVirtualInterfaceRoutesOutcome ListVirtualInterfaceRoutes(
+      const Model::ListVirtualInterfaceRoutesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListVirtualInterfaceRoutes that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListVirtualInterfaceRoutesRequestT = Model::ListVirtualInterfaceRoutesRequest>
+  Model::ListVirtualInterfaceRoutesOutcomeCallable ListVirtualInterfaceRoutesCallable(
+      const ListVirtualInterfaceRoutesRequestT& request = {}) const {
+    return SubmitCallable(&DirectConnectClient::ListVirtualInterfaceRoutes, request);
+  }
+
+  /**
+   * An Async wrapper for ListVirtualInterfaceRoutes that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListVirtualInterfaceRoutesRequestT = Model::ListVirtualInterfaceRoutesRequest>
+  void ListVirtualInterfaceRoutesAsync(const ListVirtualInterfaceRoutesResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                       const ListVirtualInterfaceRoutesRequestT& request = {}) const {
+    return SubmitAsync(&DirectConnectClient::ListVirtualInterfaceRoutes, request, handler, context);
+  }
+
+  /**
    * <p>Lists the virtual interface failover test history.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ListVirtualInterfaceTestHistory">AWS

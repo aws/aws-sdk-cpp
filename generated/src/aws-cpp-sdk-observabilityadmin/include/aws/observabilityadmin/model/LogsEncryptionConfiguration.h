@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/observabilityadmin/ObservabilityAdmin_EXPORTS.h>
 #include <aws/observabilityadmin/model/EncryptionConflictResolutionStrategy.h>
+#include <aws/observabilityadmin/model/EncryptionScope.h>
 #include <aws/observabilityadmin/model/EncryptionStrategy.h>
 
 #include <utility>
@@ -22,10 +23,11 @@ namespace ObservabilityAdmin {
 namespace Model {
 
 /**
- * <p>Configuration for encrypting centralized log groups. This configuration is
- * only applied to destination log groups for which the corresponding source log
- * groups are encrypted using Customer Managed KMS Keys.</p><p><h3>See Also:</h3>
- * <a
+ * <p>Configuration for encrypting centralized destination log groups. By default,
+ * this configuration applies only to destination log groups whose corresponding
+ * source log groups are encrypted using customer managed KMS keys. To encrypt all
+ * destination log groups created by the rule, set <code>EncryptionScope</code> to
+ * <code>NEW_DESTINATION_LOG_GROUPS</code>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/LogsEncryptionConfiguration">AWS
  * API Reference</a></p>
  */
@@ -93,15 +95,45 @@ class LogsEncryptionConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Determines which newly created destination log groups are encrypted with the
+   * configured <code>KmsKeyArn</code> when <code>EncryptionStrategy</code> is
+   * <code>CUSTOMER_MANAGED</code>.</p> <p>If you set this to
+   * <code>ENCRYPTED_SOURCE_ONLY</code> (the default), only destination log groups
+   * whose source log group is encrypted with a customer managed KMS key use the
+   * configured <code>KmsKeyArn</code>. Destination log groups derived from Amazon
+   * Web Services owned encrypted source log groups remain Amazon Web Services owned
+   * encrypted.</p> <p>If you set this to <code>NEW_DESTINATION_LOG_GROUPS</code>,
+   * every new destination log group created by this rule uses the configured
+   * <code>KmsKeyArn</code>, regardless of the source log group's encryption
+   * posture.</p> <p>This field is not valid when <code>EncryptionStrategy</code> is
+   * <code>AWS_OWNED</code>.</p>
+   */
+  inline EncryptionScope GetEncryptionScope() const { return m_encryptionScope; }
+  inline bool EncryptionScopeHasBeenSet() const { return m_encryptionScopeHasBeenSet; }
+  inline void SetEncryptionScope(EncryptionScope value) {
+    m_encryptionScopeHasBeenSet = true;
+    m_encryptionScope = value;
+  }
+  inline LogsEncryptionConfiguration& WithEncryptionScope(EncryptionScope value) {
+    SetEncryptionScope(value);
+    return *this;
+  }
+  ///@}
  private:
   EncryptionStrategy m_encryptionStrategy{EncryptionStrategy::NOT_SET};
 
   Aws::String m_kmsKeyArn;
 
   EncryptionConflictResolutionStrategy m_encryptionConflictResolutionStrategy{EncryptionConflictResolutionStrategy::NOT_SET};
+
+  EncryptionScope m_encryptionScope{EncryptionScope::NOT_SET};
   bool m_encryptionStrategyHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
   bool m_encryptionConflictResolutionStrategyHasBeenSet = false;
+  bool m_encryptionScopeHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -96,6 +96,19 @@ Aws::String CreateDbClusterRequest::SerializePayload() const {
     payload.WithObject("maintenanceSchedule", m_maintenanceSchedule.Jsonize());
   }
 
+  if (m_dbBackupConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> dbBackupConfigurationsJsonList(m_dbBackupConfigurations.size());
+    for (unsigned dbBackupConfigurationsIndex = 0; dbBackupConfigurationsIndex < dbBackupConfigurationsJsonList.GetLength();
+         ++dbBackupConfigurationsIndex) {
+      dbBackupConfigurationsJsonList[dbBackupConfigurationsIndex].AsObject(m_dbBackupConfigurations[dbBackupConfigurationsIndex].Jsonize());
+    }
+    payload.WithArray("dbBackupConfigurations", std::move(dbBackupConfigurationsJsonList));
+  }
+
+  if (m_kmsKeyIdHasBeenSet) {
+    payload.WithString("kmsKeyId", m_kmsKeyId);
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {

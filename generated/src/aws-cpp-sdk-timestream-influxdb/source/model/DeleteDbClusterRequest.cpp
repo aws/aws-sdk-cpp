@@ -19,6 +19,10 @@ Aws::String DeleteDbClusterRequest::SerializePayload() const {
     payload.WithString("dbClusterId", m_dbClusterId);
   }
 
+  if (m_retainAutomatedBackupsHasBeenSet) {
+    payload.WithBool("retainAutomatedBackups", m_retainAutomatedBackups);
+  }
+
   return payload.View().WriteReadable();
 }
 

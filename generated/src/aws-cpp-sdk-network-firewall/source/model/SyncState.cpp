@@ -29,6 +29,14 @@ SyncState& SyncState::operator=(JsonView jsonValue) {
     }
     m_configHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("NatGatewayAttachments")) {
+    Aws::Utils::Array<JsonView> natGatewayAttachmentsJsonList = jsonValue.GetArray("NatGatewayAttachments");
+    for (unsigned natGatewayAttachmentsIndex = 0; natGatewayAttachmentsIndex < natGatewayAttachmentsJsonList.GetLength();
+         ++natGatewayAttachmentsIndex) {
+      m_natGatewayAttachments.push_back(natGatewayAttachmentsJsonList[natGatewayAttachmentsIndex].AsObject());
+    }
+    m_natGatewayAttachmentsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -45,6 +53,15 @@ JsonValue SyncState::Jsonize() const {
       configJsonMap.WithObject(configItem.first, configItem.second.Jsonize());
     }
     payload.WithObject("Config", std::move(configJsonMap));
+  }
+
+  if (m_natGatewayAttachmentsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> natGatewayAttachmentsJsonList(m_natGatewayAttachments.size());
+    for (unsigned natGatewayAttachmentsIndex = 0; natGatewayAttachmentsIndex < natGatewayAttachmentsJsonList.GetLength();
+         ++natGatewayAttachmentsIndex) {
+      natGatewayAttachmentsJsonList[natGatewayAttachmentsIndex].AsObject(m_natGatewayAttachments[natGatewayAttachmentsIndex].Jsonize());
+    }
+    payload.WithArray("NatGatewayAttachments", std::move(natGatewayAttachmentsJsonList));
   }
 
   return payload;

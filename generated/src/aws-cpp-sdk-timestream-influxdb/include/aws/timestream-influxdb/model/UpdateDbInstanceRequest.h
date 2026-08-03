@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDBRequest.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDB_EXPORTS.h>
+#include <aws/timestream-influxdb/model/DbBackupConfiguration.h>
 #include <aws/timestream-influxdb/model/DbInstanceType.h>
 #include <aws/timestream-influxdb/model/DbStorageType.h>
 #include <aws/timestream-influxdb/model/DeploymentType.h>
@@ -195,6 +197,30 @@ class UpdateDbInstanceRequest : public TimestreamInfluxDBRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of backup configurations to update for the DB instance.</p>
+   */
+  inline const Aws::Vector<DbBackupConfiguration>& GetDbBackupConfigurations() const { return m_dbBackupConfigurations; }
+  inline bool DbBackupConfigurationsHasBeenSet() const { return m_dbBackupConfigurationsHasBeenSet; }
+  template <typename DbBackupConfigurationsT = Aws::Vector<DbBackupConfiguration>>
+  void SetDbBackupConfigurations(DbBackupConfigurationsT&& value) {
+    m_dbBackupConfigurationsHasBeenSet = true;
+    m_dbBackupConfigurations = std::forward<DbBackupConfigurationsT>(value);
+  }
+  template <typename DbBackupConfigurationsT = Aws::Vector<DbBackupConfiguration>>
+  UpdateDbInstanceRequest& WithDbBackupConfigurations(DbBackupConfigurationsT&& value) {
+    SetDbBackupConfigurations(std::forward<DbBackupConfigurationsT>(value));
+    return *this;
+  }
+  template <typename DbBackupConfigurationsT = DbBackupConfiguration>
+  UpdateDbInstanceRequest& AddDbBackupConfigurations(DbBackupConfigurationsT&& value) {
+    m_dbBackupConfigurationsHasBeenSet = true;
+    m_dbBackupConfigurations.emplace_back(std::forward<DbBackupConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_identifier;
 
@@ -213,6 +239,8 @@ class UpdateDbInstanceRequest : public TimestreamInfluxDBRequest {
   int m_allocatedStorage{0};
 
   MaintenanceSchedule m_maintenanceSchedule;
+
+  Aws::Vector<DbBackupConfiguration> m_dbBackupConfigurations;
   bool m_identifierHasBeenSet = false;
   bool m_logDeliveryConfigurationHasBeenSet = false;
   bool m_dbParameterGroupIdentifierHasBeenSet = false;
@@ -222,6 +250,7 @@ class UpdateDbInstanceRequest : public TimestreamInfluxDBRequest {
   bool m_dbStorageTypeHasBeenSet = false;
   bool m_allocatedStorageHasBeenSet = false;
   bool m_maintenanceScheduleHasBeenSet = false;
+  bool m_dbBackupConfigurationsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -34,6 +34,10 @@ Attachment& Attachment::operator=(JsonView jsonValue) {
     m_statusMessage = jsonValue.GetString("StatusMessage");
     m_statusMessageHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DnsName")) {
+    m_dnsName = jsonValue.GetString("DnsName");
+    m_dnsNameHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue Attachment::Jsonize() const {
 
   if (m_statusMessageHasBeenSet) {
     payload.WithString("StatusMessage", m_statusMessage);
+  }
+
+  if (m_dnsNameHasBeenSet) {
+    payload.WithString("DnsName", m_dnsName);
   }
 
   return payload;

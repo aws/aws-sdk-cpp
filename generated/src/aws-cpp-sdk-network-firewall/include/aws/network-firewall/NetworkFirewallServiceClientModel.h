@@ -133,6 +133,8 @@
 #include <aws/network-firewall/model/UpdateProxyRuleGroupPrioritiesResult.h>
 #include <aws/network-firewall/model/UpdateProxyRulePrioritiesResult.h>
 #include <aws/network-firewall/model/UpdateProxyRuleResult.h>
+#include <aws/network-firewall/model/UpdateProxySettingsRequest.h>
+#include <aws/network-firewall/model/UpdateProxySettingsResult.h>
 #include <aws/network-firewall/model/UpdateRuleGroupResult.h>
 #include <aws/network-firewall/model/UpdateSubnetChangeProtectionResult.h>
 #include <aws/network-firewall/model/UpdateTLSInspectionConfigurationResult.h>
@@ -250,6 +252,7 @@ class UpdateProxyConfigurationRequest;
 class UpdateProxyRuleRequest;
 class UpdateProxyRuleGroupPrioritiesRequest;
 class UpdateProxyRulePrioritiesRequest;
+class UpdateProxySettingsRequest;
 class UpdateRuleGroupRequest;
 class UpdateSubnetChangeProtectionRequest;
 class UpdateTLSInspectionConfigurationRequest;
@@ -342,6 +345,7 @@ typedef Aws::Utils::Outcome<UpdateProxyConfigurationResult, NetworkFirewallError
 typedef Aws::Utils::Outcome<UpdateProxyRuleResult, NetworkFirewallError> UpdateProxyRuleOutcome;
 typedef Aws::Utils::Outcome<UpdateProxyRuleGroupPrioritiesResult, NetworkFirewallError> UpdateProxyRuleGroupPrioritiesOutcome;
 typedef Aws::Utils::Outcome<UpdateProxyRulePrioritiesResult, NetworkFirewallError> UpdateProxyRulePrioritiesOutcome;
+typedef Aws::Utils::Outcome<UpdateProxySettingsResult, NetworkFirewallError> UpdateProxySettingsOutcome;
 typedef Aws::Utils::Outcome<UpdateRuleGroupResult, NetworkFirewallError> UpdateRuleGroupOutcome;
 typedef Aws::Utils::Outcome<UpdateSubnetChangeProtectionResult, NetworkFirewallError> UpdateSubnetChangeProtectionOutcome;
 typedef Aws::Utils::Outcome<UpdateTLSInspectionConfigurationResult, NetworkFirewallError> UpdateTLSInspectionConfigurationOutcome;
@@ -429,6 +433,7 @@ typedef std::future<UpdateProxyConfigurationOutcome> UpdateProxyConfigurationOut
 typedef std::future<UpdateProxyRuleOutcome> UpdateProxyRuleOutcomeCallable;
 typedef std::future<UpdateProxyRuleGroupPrioritiesOutcome> UpdateProxyRuleGroupPrioritiesOutcomeCallable;
 typedef std::future<UpdateProxyRulePrioritiesOutcome> UpdateProxyRulePrioritiesOutcomeCallable;
+typedef std::future<UpdateProxySettingsOutcome> UpdateProxySettingsOutcomeCallable;
 typedef std::future<UpdateRuleGroupOutcome> UpdateRuleGroupOutcomeCallable;
 typedef std::future<UpdateSubnetChangeProtectionOutcome> UpdateSubnetChangeProtectionOutcomeCallable;
 typedef std::future<UpdateTLSInspectionConfigurationOutcome> UpdateTLSInspectionConfigurationOutcomeCallable;
@@ -702,6 +707,9 @@ typedef std::function<void(const NetworkFirewallClient*, const Model::UpdateProx
 typedef std::function<void(const NetworkFirewallClient*, const Model::UpdateProxyRulePrioritiesRequest&,
                            const Model::UpdateProxyRulePrioritiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateProxyRulePrioritiesResponseReceivedHandler;
+typedef std::function<void(const NetworkFirewallClient*, const Model::UpdateProxySettingsRequest&, const Model::UpdateProxySettingsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateProxySettingsResponseReceivedHandler;
 typedef std::function<void(const NetworkFirewallClient*, const Model::UpdateRuleGroupRequest&, const Model::UpdateRuleGroupOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateRuleGroupResponseReceivedHandler;

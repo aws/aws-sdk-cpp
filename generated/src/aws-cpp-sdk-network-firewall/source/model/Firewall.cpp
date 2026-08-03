@@ -105,6 +105,26 @@ Firewall& Firewall::operator=(JsonView jsonValue) {
     m_availabilityZoneChangeProtection = jsonValue.GetBool("AvailabilityZoneChangeProtection");
     m_availabilityZoneChangeProtectionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("NatGatewayMappings")) {
+    Aws::Utils::Array<JsonView> natGatewayMappingsJsonList = jsonValue.GetArray("NatGatewayMappings");
+    for (unsigned natGatewayMappingsIndex = 0; natGatewayMappingsIndex < natGatewayMappingsJsonList.GetLength();
+         ++natGatewayMappingsIndex) {
+      m_natGatewayMappings.push_back(natGatewayMappingsJsonList[natGatewayMappingsIndex].AsObject());
+    }
+    m_natGatewayMappingsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ProxySettings")) {
+    m_proxySettings = jsonValue.GetObject("ProxySettings");
+    m_proxySettingsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("NoSourcePreservation")) {
+    m_noSourcePreservation = jsonValue.GetBool("NoSourcePreservation");
+    m_noSourcePreservationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("VpcEndpoint")) {
+    m_vpcEndpoint = jsonValue.GetObject("VpcEndpoint");
+    m_vpcEndpointHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -201,6 +221,27 @@ JsonValue Firewall::Jsonize() const {
 
   if (m_availabilityZoneChangeProtectionHasBeenSet) {
     payload.WithBool("AvailabilityZoneChangeProtection", m_availabilityZoneChangeProtection);
+  }
+
+  if (m_natGatewayMappingsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> natGatewayMappingsJsonList(m_natGatewayMappings.size());
+    for (unsigned natGatewayMappingsIndex = 0; natGatewayMappingsIndex < natGatewayMappingsJsonList.GetLength();
+         ++natGatewayMappingsIndex) {
+      natGatewayMappingsJsonList[natGatewayMappingsIndex].AsObject(m_natGatewayMappings[natGatewayMappingsIndex].Jsonize());
+    }
+    payload.WithArray("NatGatewayMappings", std::move(natGatewayMappingsJsonList));
+  }
+
+  if (m_proxySettingsHasBeenSet) {
+    payload.WithObject("ProxySettings", m_proxySettings.Jsonize());
+  }
+
+  if (m_noSourcePreservationHasBeenSet) {
+    payload.WithBool("NoSourcePreservation", m_noSourcePreservation);
+  }
+
+  if (m_vpcEndpointHasBeenSet) {
+    payload.WithObject("VpcEndpoint", m_vpcEndpoint.Jsonize());
   }
 
   return payload;

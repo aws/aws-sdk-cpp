@@ -101,6 +101,7 @@
 #include <aws/network-firewall/model/UpdateProxyRuleGroupPrioritiesRequest.h>
 #include <aws/network-firewall/model/UpdateProxyRulePrioritiesRequest.h>
 #include <aws/network-firewall/model/UpdateProxyRuleRequest.h>
+#include <aws/network-firewall/model/UpdateProxySettingsRequest.h>
 #include <aws/network-firewall/model/UpdateRuleGroupRequest.h>
 #include <aws/network-firewall/model/UpdateSubnetChangeProtectionRequest.h>
 #include <aws/network-firewall/model/UpdateTLSInspectionConfigurationRequest.h>
@@ -759,6 +760,12 @@ UpdateProxyRulePrioritiesOutcome NetworkFirewallClient::UpdateProxyRulePrioritie
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateProxyRulePrioritiesOutcome(result.GetResultWithOwnership())
                             : UpdateProxyRulePrioritiesOutcome(std::move(result.GetError()));
+}
+
+UpdateProxySettingsOutcome NetworkFirewallClient::UpdateProxySettings(const UpdateProxySettingsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateProxySettingsOutcome(result.GetResultWithOwnership())
+                            : UpdateProxySettingsOutcome(std::move(result.GetError()));
 }
 
 UpdateRuleGroupOutcome NetworkFirewallClient::UpdateRuleGroup(const UpdateRuleGroupRequest& request) const {

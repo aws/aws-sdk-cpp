@@ -63,12 +63,75 @@ class AssumeRoleForPodIdentityRequest : public EKSAuthRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Kubernetes node name of the worker node where the pod is running.</p>
+   */
+  inline const Aws::String& GetEksNodeName() const { return m_eksNodeName; }
+  inline bool EksNodeNameHasBeenSet() const { return m_eksNodeNameHasBeenSet; }
+  template <typename EksNodeNameT = Aws::String>
+  void SetEksNodeName(EksNodeNameT&& value) {
+    m_eksNodeNameHasBeenSet = true;
+    m_eksNodeName = std::forward<EksNodeNameT>(value);
+  }
+  template <typename EksNodeNameT = Aws::String>
+  AssumeRoleForPodIdentityRequest& WithEksNodeName(EksNodeNameT&& value) {
+    SetEksNodeName(std::forward<EksNodeNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon EC2 instance ID of the worker node where the pod is running.</p>
+   */
+  inline const Aws::String& GetInstanceId() const { return m_instanceId; }
+  inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+  template <typename InstanceIdT = Aws::String>
+  void SetInstanceId(InstanceIdT&& value) {
+    m_instanceIdHasBeenSet = true;
+    m_instanceId = std::forward<InstanceIdT>(value);
+  }
+  template <typename InstanceIdT = Aws::String>
+  AssumeRoleForPodIdentityRequest& WithInstanceId(InstanceIdT&& value) {
+    SetInstanceId(std::forward<InstanceIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Availability Zone ID of the worker node where the pod is running.</p>
+   */
+  inline const Aws::String& GetZone() const { return m_zone; }
+  inline bool ZoneHasBeenSet() const { return m_zoneHasBeenSet; }
+  template <typename ZoneT = Aws::String>
+  void SetZone(ZoneT&& value) {
+    m_zoneHasBeenSet = true;
+    m_zone = std::forward<ZoneT>(value);
+  }
+  template <typename ZoneT = Aws::String>
+  AssumeRoleForPodIdentityRequest& WithZone(ZoneT&& value) {
+    SetZone(std::forward<ZoneT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clusterName;
 
   Aws::String m_token;
+
+  Aws::String m_eksNodeName;
+
+  Aws::String m_instanceId;
+
+  Aws::String m_zone;
   bool m_clusterNameHasBeenSet = false;
   bool m_tokenHasBeenSet = false;
+  bool m_eksNodeNameHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_zoneHasBeenSet = false;
 };
 
 }  // namespace Model

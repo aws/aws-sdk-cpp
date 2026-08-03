@@ -10,6 +10,7 @@
 #include <aws/timestream-influxdb/TimestreamInfluxDBRequest.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDB_EXPORTS.h>
 #include <aws/timestream-influxdb/model/ClusterDeploymentType.h>
+#include <aws/timestream-influxdb/model/DbBackupConfiguration.h>
 #include <aws/timestream-influxdb/model/DbInstanceType.h>
 #include <aws/timestream-influxdb/model/DbStorageType.h>
 #include <aws/timestream-influxdb/model/FailoverMode.h>
@@ -394,6 +395,50 @@ class CreateDbClusterRequest : public TimestreamInfluxDBRequest {
 
   ///@{
   /**
+   * <p>A list of backup configurations to enable automated backups for the DB
+   * cluster.</p>
+   */
+  inline const Aws::Vector<DbBackupConfiguration>& GetDbBackupConfigurations() const { return m_dbBackupConfigurations; }
+  inline bool DbBackupConfigurationsHasBeenSet() const { return m_dbBackupConfigurationsHasBeenSet; }
+  template <typename DbBackupConfigurationsT = Aws::Vector<DbBackupConfiguration>>
+  void SetDbBackupConfigurations(DbBackupConfigurationsT&& value) {
+    m_dbBackupConfigurationsHasBeenSet = true;
+    m_dbBackupConfigurations = std::forward<DbBackupConfigurationsT>(value);
+  }
+  template <typename DbBackupConfigurationsT = Aws::Vector<DbBackupConfiguration>>
+  CreateDbClusterRequest& WithDbBackupConfigurations(DbBackupConfigurationsT&& value) {
+    SetDbBackupConfigurations(std::forward<DbBackupConfigurationsT>(value));
+    return *this;
+  }
+  template <typename DbBackupConfigurationsT = DbBackupConfiguration>
+  CreateDbClusterRequest& AddDbBackupConfigurations(DbBackupConfigurationsT&& value) {
+    m_dbBackupConfigurationsHasBeenSet = true;
+    m_dbBackupConfigurations.emplace_back(std::forward<DbBackupConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services KMS key identifier to use for encryption of the DB
+   * cluster. Can be a key ID, key ARN, alias name, or alias ARN.</p>
+   */
+  inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
+  inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
+  template <typename KmsKeyIdT = Aws::String>
+  void SetKmsKeyId(KmsKeyIdT&& value) {
+    m_kmsKeyIdHasBeenSet = true;
+    m_kmsKeyId = std::forward<KmsKeyIdT>(value);
+  }
+  template <typename KmsKeyIdT = Aws::String>
+  CreateDbClusterRequest& WithKmsKeyId(KmsKeyIdT&& value) {
+    SetKmsKeyId(std::forward<KmsKeyIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A list of key-value pairs to associate with the DB instance.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
@@ -452,6 +497,10 @@ class CreateDbClusterRequest : public TimestreamInfluxDBRequest {
 
   MaintenanceSchedule m_maintenanceSchedule;
 
+  Aws::Vector<DbBackupConfiguration> m_dbBackupConfigurations;
+
+  Aws::String m_kmsKeyId;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_nameHasBeenSet = false;
   bool m_usernameHasBeenSet = false;
@@ -471,6 +520,8 @@ class CreateDbClusterRequest : public TimestreamInfluxDBRequest {
   bool m_failoverModeHasBeenSet = false;
   bool m_logDeliveryConfigurationHasBeenSet = false;
   bool m_maintenanceScheduleHasBeenSet = false;
+  bool m_dbBackupConfigurationsHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

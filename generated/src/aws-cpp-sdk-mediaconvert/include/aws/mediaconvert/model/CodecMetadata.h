@@ -138,6 +138,28 @@ class CodecMetadata {
 
   ///@{
   /**
+   * The field order of interlaced video, which indicates whether the top or bottom
+   * field is displayed first. Use this to select the correct deinterlacing behavior.
+   * One of "TopFieldFirst" or "BottomFieldFirst". This field is present only for
+   * interlaced video; it is omitted for progressive video and when the field order
+   * is not indicated by the source.
+   */
+  inline const Aws::String& GetFieldOrder() const { return m_fieldOrder; }
+  inline bool FieldOrderHasBeenSet() const { return m_fieldOrderHasBeenSet; }
+  template <typename FieldOrderT = Aws::String>
+  void SetFieldOrder(FieldOrderT&& value) {
+    m_fieldOrderHasBeenSet = true;
+    m_fieldOrder = std::forward<FieldOrderT>(value);
+  }
+  template <typename FieldOrderT = Aws::String>
+  CodecMetadata& WithFieldOrder(FieldOrderT&& value) {
+    SetFieldOrder(std::forward<FieldOrderT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * The height in pixels as coded by the codec. This represents the actual encoded
    * video height as specified in the video stream headers.
    */
@@ -295,6 +317,8 @@ class CodecMetadata {
 
   ContentLightLevel m_contentLightLevel;
 
+  Aws::String m_fieldOrder;
+
   int m_height{0};
 
   Aws::String m_level;
@@ -315,6 +339,7 @@ class CodecMetadata {
   bool m_codedFrameRateHasBeenSet = false;
   bool m_colorPrimariesHasBeenSet = false;
   bool m_contentLightLevelHasBeenSet = false;
+  bool m_fieldOrderHasBeenSet = false;
   bool m_heightHasBeenSet = false;
   bool m_levelHasBeenSet = false;
   bool m_matrixCoefficientsHasBeenSet = false;

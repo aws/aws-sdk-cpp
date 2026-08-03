@@ -21,8 +21,10 @@ namespace ObservabilityAdmin {
 namespace Model {
 
 /**
- * <p>Configuration parameters for Amazon Bedrock AgentCore logging, including
- * <code>logType</code> settings.</p><p><h3>See Also:</h3>   <a
+ * <p>The configuration parameters for log delivery, including <code>logType</code>
+ * settings. Applies to resource types that support configurable log delivery, such
+ * as Amazon Bedrock Knowledge Bases and Elastic Load Balancing Application Load
+ * Balancers.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/LogDeliveryParameters">AWS
  * API Reference</a></p>
  */
@@ -35,7 +37,7 @@ class LogDeliveryParameters {
 
   ///@{
   /**
-   * <p>The type of log that the source is sending.</p>
+   * <p>The types of logs to collect from the resource.</p>
    */
   inline const Aws::Vector<LogType>& GetLogTypes() const { return m_logTypes; }
   inline bool LogTypesHasBeenSet() const { return m_logTypesHasBeenSet; }

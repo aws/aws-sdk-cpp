@@ -52,6 +52,7 @@
 #include <aws/observabilityadmin/model/EncryptedLogGroupStrategy.h>
 #include <aws/observabilityadmin/model/Encryption.h>
 #include <aws/observabilityadmin/model/EncryptionConflictResolutionStrategy.h>
+#include <aws/observabilityadmin/model/EncryptionScope.h>
 #include <aws/observabilityadmin/model/EncryptionStrategy.h>
 #include <aws/observabilityadmin/model/FieldToMatch.h>
 #include <aws/observabilityadmin/model/Filter.h>

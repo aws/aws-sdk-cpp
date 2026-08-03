@@ -85,6 +85,32 @@ class AWS_TIMESTREAMINFLUXDB_API TimestreamInfluxDBClient : public Aws::Client::
   virtual ~TimestreamInfluxDBClient();
 
   /**
+   * <p>Creates a new on-demand backup of a Timestream for InfluxDB
+   * resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/CreateDbBackup">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateDbBackupOutcome CreateDbBackup(const Model::CreateDbBackupRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateDbBackup that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateDbBackupRequestT = Model::CreateDbBackupRequest>
+  Model::CreateDbBackupOutcomeCallable CreateDbBackupCallable(const CreateDbBackupRequestT& request) const {
+    return SubmitCallable(&TimestreamInfluxDBClient::CreateDbBackup, request);
+  }
+
+  /**
+   * An Async wrapper for CreateDbBackup that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateDbBackupRequestT = Model::CreateDbBackupRequest>
+  void CreateDbBackupAsync(const CreateDbBackupRequestT& request, const CreateDbBackupResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&TimestreamInfluxDBClient::CreateDbBackup, request, handler, context);
+  }
+
+  /**
    * <p>Creates a new Timestream for InfluxDB cluster.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/CreateDbCluster">AWS
    * API Reference</a></p>
@@ -165,6 +191,31 @@ class AWS_TIMESTREAMINFLUXDB_API TimestreamInfluxDBClient : public Aws::Client::
   }
 
   /**
+   * <p>Deletes a Timestream for InfluxDB backup.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/DeleteDbBackup">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteDbBackupOutcome DeleteDbBackup(const Model::DeleteDbBackupRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteDbBackup that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteDbBackupRequestT = Model::DeleteDbBackupRequest>
+  Model::DeleteDbBackupOutcomeCallable DeleteDbBackupCallable(const DeleteDbBackupRequestT& request) const {
+    return SubmitCallable(&TimestreamInfluxDBClient::DeleteDbBackup, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteDbBackup that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteDbBackupRequestT = Model::DeleteDbBackupRequest>
+  void DeleteDbBackupAsync(const DeleteDbBackupRequestT& request, const DeleteDbBackupResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&TimestreamInfluxDBClient::DeleteDbBackup, request, handler, context);
+  }
+
+  /**
    * <p>Deletes a Timestream for InfluxDB cluster.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/DeleteDbCluster">AWS
    * API Reference</a></p>
@@ -213,6 +264,32 @@ class AWS_TIMESTREAMINFLUXDB_API TimestreamInfluxDBClient : public Aws::Client::
   void DeleteDbInstanceAsync(const DeleteDbInstanceRequestT& request, const DeleteDbInstanceResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&TimestreamInfluxDBClient::DeleteDbInstance, request, handler, context);
+  }
+
+  /**
+   * <p>Returns information about a specific Timestream for InfluxDB
+   * backup.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/GetDbBackup">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetDbBackupOutcome GetDbBackup(const Model::GetDbBackupRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetDbBackup that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetDbBackupRequestT = Model::GetDbBackupRequest>
+  Model::GetDbBackupOutcomeCallable GetDbBackupCallable(const GetDbBackupRequestT& request) const {
+    return SubmitCallable(&TimestreamInfluxDBClient::GetDbBackup, request);
+  }
+
+  /**
+   * An Async wrapper for GetDbBackup that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetDbBackupRequestT = Model::GetDbBackupRequest>
+  void GetDbBackupAsync(const GetDbBackupRequestT& request, const GetDbBackupResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&TimestreamInfluxDBClient::GetDbBackup, request, handler, context);
   }
 
   /**
@@ -291,6 +368,33 @@ class AWS_TIMESTREAMINFLUXDB_API TimestreamInfluxDBClient : public Aws::Client::
   void GetDbParameterGroupAsync(const GetDbParameterGroupRequestT& request, const GetDbParameterGroupResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&TimestreamInfluxDBClient::GetDbParameterGroup, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a list of Timestream for InfluxDB backups.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/ListDbBackups">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListDbBackupsOutcome ListDbBackups(const Model::ListDbBackupsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListDbBackups that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListDbBackupsRequestT = Model::ListDbBackupsRequest>
+  Model::ListDbBackupsOutcomeCallable ListDbBackupsCallable(const ListDbBackupsRequestT& request = {}) const {
+    return SubmitCallable(&TimestreamInfluxDBClient::ListDbBackups, request);
+  }
+
+  /**
+   * An Async wrapper for ListDbBackups that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListDbBackupsRequestT = Model::ListDbBackupsRequest>
+  void ListDbBackupsAsync(const ListDbBackupsResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                          const ListDbBackupsRequestT& request = {}) const {
+    return SubmitAsync(&TimestreamInfluxDBClient::ListDbBackups, request, handler, context);
   }
 
   /**
@@ -479,6 +583,34 @@ class AWS_TIMESTREAMINFLUXDB_API TimestreamInfluxDBClient : public Aws::Client::
   void RebootDbInstanceAsync(const RebootDbInstanceRequestT& request, const RebootDbInstanceResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&TimestreamInfluxDBClient::RebootDbInstance, request, handler, context);
+  }
+
+  /**
+   * <p>Restores a Timestream for InfluxDB resource from a backup. By default, a new
+   * resource is created. You can optionally restore to the same resource using the
+   * REPLACE_EXISTING restore mode.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/RestoreFromDbBackup">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RestoreFromDbBackupOutcome RestoreFromDbBackup(const Model::RestoreFromDbBackupRequest& request) const;
+
+  /**
+   * A Callable wrapper for RestoreFromDbBackup that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename RestoreFromDbBackupRequestT = Model::RestoreFromDbBackupRequest>
+  Model::RestoreFromDbBackupOutcomeCallable RestoreFromDbBackupCallable(const RestoreFromDbBackupRequestT& request) const {
+    return SubmitCallable(&TimestreamInfluxDBClient::RestoreFromDbBackup, request);
+  }
+
+  /**
+   * An Async wrapper for RestoreFromDbBackup that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename RestoreFromDbBackupRequestT = Model::RestoreFromDbBackupRequest>
+  void RestoreFromDbBackupAsync(const RestoreFromDbBackupRequestT& request, const RestoreFromDbBackupResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&TimestreamInfluxDBClient::RestoreFromDbBackup, request, handler, context);
   }
 
   /**

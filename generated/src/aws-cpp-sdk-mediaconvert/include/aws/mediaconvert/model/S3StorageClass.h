@@ -10,7 +10,17 @@
 namespace Aws {
 namespace MediaConvert {
 namespace Model {
-enum class S3StorageClass { NOT_SET, STANDARD, REDUCED_REDUNDANCY, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, DEEP_ARCHIVE };
+enum class S3StorageClass {
+  NOT_SET,
+  STANDARD,
+  REDUCED_REDUNDANCY,
+  STANDARD_IA,
+  ONEZONE_IA,
+  INTELLIGENT_TIERING,
+  GLACIER,
+  DEEP_ARCHIVE,
+  GLACIER_IR
+};
 
 namespace S3StorageClassMapper {
 AWS_MEDIACONVERT_API S3StorageClass GetS3StorageClassForName(const Aws::String& name);

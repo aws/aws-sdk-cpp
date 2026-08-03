@@ -18,6 +18,10 @@ namespace Model {
 Container::Container(JsonView jsonValue) { *this = jsonValue; }
 
 Container& Container::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("bitRate")) {
+    m_bitRate = jsonValue.GetInt64("bitRate");
+    m_bitRateHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("duration")) {
     m_duration = jsonValue.GetDouble("duration");
     m_durationHasBeenSet = true;
@@ -42,6 +46,10 @@ Container& Container::operator=(JsonView jsonValue) {
 
 JsonValue Container::Jsonize() const {
   JsonValue payload;
+
+  if (m_bitRateHasBeenSet) {
+    payload.WithInt64("bitRate", m_bitRate);
+  }
 
   if (m_durationHasBeenSet) {
     payload.WithDouble("duration", m_duration);

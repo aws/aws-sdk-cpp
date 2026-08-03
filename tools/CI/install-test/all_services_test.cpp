@@ -313,6 +313,7 @@
 #include <aws/pinpoint/PinpointClient.h>
 #include <aws/pipes/PipesClient.h>
 #include <aws/polly/PollyClient.h>
+#include <aws/pricing-plan-manager/PricingPlanManagerClient.h>
 #include <aws/pricing/PricingClient.h>
 #include <aws/proton/ProtonClient.h>
 #include <aws/qapps/QAppsClient.h>

@@ -191,6 +191,9 @@
 #include <aws/network-firewall/model/LogType.h>
 #include <aws/network-firewall/model/LoggingConfiguration.h>
 #include <aws/network-firewall/model/MatchAttributes.h>
+#include <aws/network-firewall/model/NatGatewayAttachment.h>
+#include <aws/network-firewall/model/NatGatewayAttachmentStatus.h>
+#include <aws/network-firewall/model/NatGatewayMapping.h>
 #include <aws/network-firewall/model/OverrideAction.h>
 #include <aws/network-firewall/model/PerObjectStatus.h>
 #include <aws/network-firewall/model/PerObjectSyncStatus.h>
@@ -214,6 +217,7 @@
 #include <aws/network-firewall/model/ProxyRulePhaseAction.h>
 #include <aws/network-firewall/model/ProxyRulePriority.h>
 #include <aws/network-firewall/model/ProxyRulesByRequestPhase.h>
+#include <aws/network-firewall/model/ProxySettings.h>
 #include <aws/network-firewall/model/ProxyState.h>
 #include <aws/network-firewall/model/PublishMetricAction.h>
 #include <aws/network-firewall/model/PutResourcePolicyRequest.h>
@@ -311,12 +315,15 @@
 #include <aws/network-firewall/model/UpdateProxyRulePrioritiesResult.h>
 #include <aws/network-firewall/model/UpdateProxyRuleRequest.h>
 #include <aws/network-firewall/model/UpdateProxyRuleResult.h>
+#include <aws/network-firewall/model/UpdateProxySettingsRequest.h>
+#include <aws/network-firewall/model/UpdateProxySettingsResult.h>
 #include <aws/network-firewall/model/UpdateRuleGroupRequest.h>
 #include <aws/network-firewall/model/UpdateRuleGroupResult.h>
 #include <aws/network-firewall/model/UpdateSubnetChangeProtectionRequest.h>
 #include <aws/network-firewall/model/UpdateSubnetChangeProtectionResult.h>
 #include <aws/network-firewall/model/UpdateTLSInspectionConfigurationRequest.h>
 #include <aws/network-firewall/model/UpdateTLSInspectionConfigurationResult.h>
+#include <aws/network-firewall/model/VpcEndpoint.h>
 #include <aws/network-firewall/model/VpcEndpointAssociation.h>
 #include <aws/network-firewall/model/VpcEndpointAssociationMetadata.h>
 #include <aws/network-firewall/model/VpcEndpointAssociationStatus.h>

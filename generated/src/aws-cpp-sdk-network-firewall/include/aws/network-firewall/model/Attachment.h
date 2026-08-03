@@ -127,6 +127,26 @@ class Attachment {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The DNS name that resolves to the firewall endpoint in the subnet. This is
+   * populated for proxy mode firewalls, where clients direct traffic to the
+   * firewall's proxy using this name. </p>
+   */
+  inline const Aws::String& GetDnsName() const { return m_dnsName; }
+  inline bool DnsNameHasBeenSet() const { return m_dnsNameHasBeenSet; }
+  template <typename DnsNameT = Aws::String>
+  void SetDnsName(DnsNameT&& value) {
+    m_dnsNameHasBeenSet = true;
+    m_dnsName = std::forward<DnsNameT>(value);
+  }
+  template <typename DnsNameT = Aws::String>
+  Attachment& WithDnsName(DnsNameT&& value) {
+    SetDnsName(std::forward<DnsNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_subnetId;
 
@@ -135,10 +155,13 @@ class Attachment {
   AttachmentStatus m_status{AttachmentStatus::NOT_SET};
 
   Aws::String m_statusMessage;
+
+  Aws::String m_dnsName;
   bool m_subnetIdHasBeenSet = false;
   bool m_endpointIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
+  bool m_dnsNameHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -18,6 +18,10 @@ namespace Model {
 MovSettings::MovSettings(JsonView jsonValue) { *this = jsonValue; }
 
 MovSettings& MovSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("audioDuration")) {
+    m_audioDuration = CmfcAudioDurationMapper::GetCmfcAudioDurationForName(jsonValue.GetString("audioDuration"));
+    m_audioDurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("clapAtom")) {
     m_clapAtom = MovClapAtomMapper::GetMovClapAtomForName(jsonValue.GetString("clapAtom"));
     m_clapAtomHasBeenSet = true;
@@ -43,6 +47,10 @@ MovSettings& MovSettings::operator=(JsonView jsonValue) {
 
 JsonValue MovSettings::Jsonize() const {
   JsonValue payload;
+
+  if (m_audioDurationHasBeenSet) {
+    payload.WithString("audioDuration", CmfcAudioDurationMapper::GetNameForCmfcAudioDuration(m_audioDuration));
+  }
 
   if (m_clapAtomHasBeenSet) {
     payload.WithString("clapAtom", MovClapAtomMapper::GetNameForMovClapAtom(m_clapAtom));

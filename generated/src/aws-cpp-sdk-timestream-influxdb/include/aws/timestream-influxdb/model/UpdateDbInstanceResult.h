@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDB_EXPORTS.h>
+#include <aws/timestream-influxdb/model/DbBackupConfigurationOutput.h>
 #include <aws/timestream-influxdb/model/DbInstanceType.h>
 #include <aws/timestream-influxdb/model/DbStorageType.h>
 #include <aws/timestream-influxdb/model/DeploymentType.h>
@@ -474,6 +475,47 @@ class UpdateDbInstanceResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The backup configurations for the DB instance.</p>
+   */
+  inline const Aws::Vector<DbBackupConfigurationOutput>& GetDbBackupConfigurations() const { return m_dbBackupConfigurations; }
+  template <typename DbBackupConfigurationsT = Aws::Vector<DbBackupConfigurationOutput>>
+  void SetDbBackupConfigurations(DbBackupConfigurationsT&& value) {
+    m_dbBackupConfigurationsHasBeenSet = true;
+    m_dbBackupConfigurations = std::forward<DbBackupConfigurationsT>(value);
+  }
+  template <typename DbBackupConfigurationsT = Aws::Vector<DbBackupConfigurationOutput>>
+  UpdateDbInstanceResult& WithDbBackupConfigurations(DbBackupConfigurationsT&& value) {
+    SetDbBackupConfigurations(std::forward<DbBackupConfigurationsT>(value));
+    return *this;
+  }
+  template <typename DbBackupConfigurationsT = DbBackupConfigurationOutput>
+  UpdateDbInstanceResult& AddDbBackupConfigurations(DbBackupConfigurationsT&& value) {
+    m_dbBackupConfigurationsHasBeenSet = true;
+    m_dbBackupConfigurations.emplace_back(std::forward<DbBackupConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services KMS key ARN used for encryption of the DB
+   * instance.</p>
+   */
+  inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
+  template <typename KmsKeyIdT = Aws::String>
+  void SetKmsKeyId(KmsKeyIdT&& value) {
+    m_kmsKeyIdHasBeenSet = true;
+    m_kmsKeyId = std::forward<KmsKeyIdT>(value);
+  }
+  template <typename KmsKeyIdT = Aws::String>
+  UpdateDbInstanceResult& WithKmsKeyId(KmsKeyIdT&& value) {
+    SetKmsKeyId(std::forward<KmsKeyIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -540,6 +582,10 @@ class UpdateDbInstanceResult {
 
   Aws::Utils::DateTime m_nextMaintenanceTime{};
 
+  Aws::Vector<DbBackupConfigurationOutput> m_dbBackupConfigurations;
+
+  Aws::String m_kmsKeyId;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_idHasBeenSet = false;
@@ -567,6 +613,8 @@ class UpdateDbInstanceResult {
   bool m_maintenanceScheduleHasBeenSet = false;
   bool m_lastMaintenanceTimeHasBeenSet = false;
   bool m_nextMaintenanceTimeHasBeenSet = false;
+  bool m_dbBackupConfigurationsHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -39,8 +39,10 @@ class TelemetryRule {
 
   ///@{
   /**
-   * <p> The type of Amazon Web Services resource to configure telemetry for (e.g.,
-   * "AWS::EC2::VPC", "AWS::EKS::Cluster", "AWS::WAFv2::WebACL"). </p>
+   * <p> The type of Amazon Web Services resource to configure telemetry for (for
+   * example, <code>AWS::EC2::VPC</code>, <code>AWS::EKS::Cluster</code>,
+   * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, or
+   * <code>AWS::Bedrock::KnowledgeBase</code>). </p>
    */
   inline ResourceType GetResourceType() const { return m_resourceType; }
   inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }

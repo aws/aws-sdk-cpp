@@ -31,6 +31,10 @@ LogsEncryptionConfiguration& LogsEncryptionConfiguration::operator=(JsonView jso
         jsonValue.GetString("EncryptionConflictResolutionStrategy"));
     m_encryptionConflictResolutionStrategyHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EncryptionScope")) {
+    m_encryptionScope = EncryptionScopeMapper::GetEncryptionScopeForName(jsonValue.GetString("EncryptionScope"));
+    m_encryptionScopeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -49,6 +53,10 @@ JsonValue LogsEncryptionConfiguration::Jsonize() const {
     payload.WithString(
         "EncryptionConflictResolutionStrategy",
         EncryptionConflictResolutionStrategyMapper::GetNameForEncryptionConflictResolutionStrategy(m_encryptionConflictResolutionStrategy));
+  }
+
+  if (m_encryptionScopeHasBeenSet) {
+    payload.WithString("EncryptionScope", EncryptionScopeMapper::GetNameForEncryptionScope(m_encryptionScope));
   }
 
   return payload;

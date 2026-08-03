@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/mediaconvert/model/CmfcAudioDuration.h>
 #include <aws/mediaconvert/model/MovClapAtom.h>
 #include <aws/mediaconvert/model/MovCslgAtom.h>
 #include <aws/mediaconvert/model/MovMpeg2FourCCControl.h>
@@ -35,6 +36,33 @@ class MovSettings {
   AWS_MEDIACONVERT_API MovSettings(Aws::Utils::Json::JsonView jsonValue);
   AWS_MEDIACONVERT_API MovSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * Specify this setting only when your output will be consumed by a downstream
+   * repackaging workflow that is sensitive to very small duration differences
+   * between video and audio. For this situation, choose Match video duration. In all
+   * other cases, keep the default value, Default codec duration. When you choose
+   * Match video duration, MediaConvert pads the output audio streams with silence or
+   * trims them to ensure that the total duration of each audio stream is at least as
+   * long as the total duration of the video stream. After padding or trimming, the
+   * audio stream duration is no more than one frame longer than the video stream.
+   * MediaConvert applies audio padding or trimming only to the end of the last
+   * segment of the output. For unsegmented outputs, MediaConvert adds padding only
+   * to the end of the file. When you keep the default value, any minor discrepancies
+   * between audio and video duration will depend on your output audio codec.
+   */
+  inline CmfcAudioDuration GetAudioDuration() const { return m_audioDuration; }
+  inline bool AudioDurationHasBeenSet() const { return m_audioDurationHasBeenSet; }
+  inline void SetAudioDuration(CmfcAudioDuration value) {
+    m_audioDurationHasBeenSet = true;
+    m_audioDuration = value;
+  }
+  inline MovSettings& WithAudioDuration(CmfcAudioDuration value) {
+    SetAudioDuration(value);
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -126,6 +154,8 @@ class MovSettings {
   }
   ///@}
  private:
+  CmfcAudioDuration m_audioDuration{CmfcAudioDuration::NOT_SET};
+
   MovClapAtom m_clapAtom{MovClapAtom::NOT_SET};
 
   MovCslgAtom m_cslgAtom{MovCslgAtom::NOT_SET};
@@ -135,6 +165,7 @@ class MovSettings {
   MovPaddingControl m_paddingControl{MovPaddingControl::NOT_SET};
 
   MovReference m_reference{MovReference::NOT_SET};
+  bool m_audioDurationHasBeenSet = false;
   bool m_clapAtomHasBeenSet = false;
   bool m_cslgAtomHasBeenSet = false;
   bool m_mpeg2FourCCControlHasBeenSet = false;

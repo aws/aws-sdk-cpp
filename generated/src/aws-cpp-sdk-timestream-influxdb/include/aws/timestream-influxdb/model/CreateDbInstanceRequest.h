@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDBRequest.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDB_EXPORTS.h>
+#include <aws/timestream-influxdb/model/DbBackupConfiguration.h>
 #include <aws/timestream-influxdb/model/DbInstanceType.h>
 #include <aws/timestream-influxdb/model/DbStorageType.h>
 #include <aws/timestream-influxdb/model/DeploymentType.h>
@@ -395,6 +396,50 @@ class CreateDbInstanceRequest : public TimestreamInfluxDBRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of backup configurations to enable automated backups for the DB
+   * instance.</p>
+   */
+  inline const Aws::Vector<DbBackupConfiguration>& GetDbBackupConfigurations() const { return m_dbBackupConfigurations; }
+  inline bool DbBackupConfigurationsHasBeenSet() const { return m_dbBackupConfigurationsHasBeenSet; }
+  template <typename DbBackupConfigurationsT = Aws::Vector<DbBackupConfiguration>>
+  void SetDbBackupConfigurations(DbBackupConfigurationsT&& value) {
+    m_dbBackupConfigurationsHasBeenSet = true;
+    m_dbBackupConfigurations = std::forward<DbBackupConfigurationsT>(value);
+  }
+  template <typename DbBackupConfigurationsT = Aws::Vector<DbBackupConfiguration>>
+  CreateDbInstanceRequest& WithDbBackupConfigurations(DbBackupConfigurationsT&& value) {
+    SetDbBackupConfigurations(std::forward<DbBackupConfigurationsT>(value));
+    return *this;
+  }
+  template <typename DbBackupConfigurationsT = DbBackupConfiguration>
+  CreateDbInstanceRequest& AddDbBackupConfigurations(DbBackupConfigurationsT&& value) {
+    m_dbBackupConfigurationsHasBeenSet = true;
+    m_dbBackupConfigurations.emplace_back(std::forward<DbBackupConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services KMS key identifier to use for encryption of the DB
+   * instance. Can be a key ID, key ARN, alias name, or alias ARN.</p>
+   */
+  inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
+  inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
+  template <typename KmsKeyIdT = Aws::String>
+  void SetKmsKeyId(KmsKeyIdT&& value) {
+    m_kmsKeyIdHasBeenSet = true;
+    m_kmsKeyId = std::forward<KmsKeyIdT>(value);
+  }
+  template <typename KmsKeyIdT = Aws::String>
+  CreateDbInstanceRequest& WithKmsKeyId(KmsKeyIdT&& value) {
+    SetKmsKeyId(std::forward<KmsKeyIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -431,6 +476,10 @@ class CreateDbInstanceRequest : public TimestreamInfluxDBRequest {
   int m_port{0};
 
   NetworkType m_networkType{NetworkType::NOT_SET};
+
+  Aws::Vector<DbBackupConfiguration> m_dbBackupConfigurations;
+
+  Aws::String m_kmsKeyId;
   bool m_nameHasBeenSet = false;
   bool m_usernameHasBeenSet = false;
   bool m_passwordHasBeenSet = false;
@@ -449,6 +498,8 @@ class CreateDbInstanceRequest : public TimestreamInfluxDBRequest {
   bool m_tagsHasBeenSet = false;
   bool m_portHasBeenSet = false;
   bool m_networkTypeHasBeenSet = false;
+  bool m_dbBackupConfigurationsHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -47,9 +47,30 @@ class DeleteDbInstanceRequest : public TimestreamInfluxDBRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to retain automated backups after the DB instance is
+   * deleted. If set to true, automated backups are not deleted and can be restored
+   * later.</p>
+   */
+  inline bool GetRetainAutomatedBackups() const { return m_retainAutomatedBackups; }
+  inline bool RetainAutomatedBackupsHasBeenSet() const { return m_retainAutomatedBackupsHasBeenSet; }
+  inline void SetRetainAutomatedBackups(bool value) {
+    m_retainAutomatedBackupsHasBeenSet = true;
+    m_retainAutomatedBackups = value;
+  }
+  inline DeleteDbInstanceRequest& WithRetainAutomatedBackups(bool value) {
+    SetRetainAutomatedBackups(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_identifier;
+
+  bool m_retainAutomatedBackups{false};
   bool m_identifierHasBeenSet = false;
+  bool m_retainAutomatedBackupsHasBeenSet = false;
 };
 
 }  // namespace Model

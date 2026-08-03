@@ -54,6 +54,10 @@ TelemetryDestinationConfiguration& TelemetryDestinationConfiguration::operator=(
     m_mskMonitoringParameters = jsonValue.GetObject("MskMonitoringParameters");
     m_mskMonitoringParametersHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("KmsKeyArn")) {
+    m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
+    m_kmsKeyArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -94,6 +98,10 @@ JsonValue TelemetryDestinationConfiguration::Jsonize() const {
 
   if (m_mskMonitoringParametersHasBeenSet) {
     payload.WithObject("MskMonitoringParameters", m_mskMonitoringParameters.Jsonize());
+  }
+
+  if (m_kmsKeyArnHasBeenSet) {
+    payload.WithString("KmsKeyArn", m_kmsKeyArn);
   }
 
   return payload;

@@ -8,6 +8,7 @@
 
 #include <aws/timestream-influxdb/TimestreamInfluxDBClientPagination.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDBPaginationBase.h>
+#include <aws/timestream-influxdb/model/ListDbBackupsPaginationTraits.h>
 #include <aws/timestream-influxdb/model/ListDbParameterGroupsPaginationTraits.h>
 #include <aws/timestream-influxdb/model/ListDbClustersPaginationTraits.h>
 #include <aws/timestream-influxdb/model/ListDbInstancesPaginationTraits.h>

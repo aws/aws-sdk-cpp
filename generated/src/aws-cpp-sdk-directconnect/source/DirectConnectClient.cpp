@@ -69,6 +69,7 @@
 #include <aws/directconnect/model/DescribeVirtualInterfacesRequest.h>
 #include <aws/directconnect/model/DisassociateConnectionFromLagRequest.h>
 #include <aws/directconnect/model/DisassociateMacSecKeyRequest.h>
+#include <aws/directconnect/model/ListVirtualInterfaceRoutesRequest.h>
 #include <aws/directconnect/model/ListVirtualInterfaceTestHistoryRequest.h>
 #include <aws/directconnect/model/StartBgpFailoverTestRequest.h>
 #include <aws/directconnect/model/StopBgpFailoverTestRequest.h>
@@ -536,6 +537,12 @@ DisassociateMacSecKeyOutcome DirectConnectClient::DisassociateMacSecKey(const Di
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DisassociateMacSecKeyOutcome(result.GetResultWithOwnership())
                             : DisassociateMacSecKeyOutcome(std::move(result.GetError()));
+}
+
+ListVirtualInterfaceRoutesOutcome DirectConnectClient::ListVirtualInterfaceRoutes(const ListVirtualInterfaceRoutesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListVirtualInterfaceRoutesOutcome(result.GetResultWithOwnership())
+                            : ListVirtualInterfaceRoutesOutcome(std::move(result.GetError()));
 }
 
 ListVirtualInterfaceTestHistoryOutcome DirectConnectClient::ListVirtualInterfaceTestHistory(

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDBClient.h>
+#include <aws/timestream-influxdb/model/ListDbBackupsPaginationTraits.h>
 #include <aws/timestream-influxdb/model/ListDbClustersPaginationTraits.h>
 #include <aws/timestream-influxdb/model/ListDbInstancesForClusterPaginationTraits.h>
 #include <aws/timestream-influxdb/model/ListDbInstancesPaginationTraits.h>
@@ -14,6 +15,8 @@
 namespace Aws {
 namespace TimestreamInfluxDB {
 
+using ListDbBackupsPaginator = Aws::Utils::Pagination::Paginator<TimestreamInfluxDBClient, Model::ListDbBackupsRequest,
+                                                                 Pagination::ListDbBackupsPaginationTraits<TimestreamInfluxDBClient>>;
 using ListDbClustersPaginator = Aws::Utils::Pagination::Paginator<TimestreamInfluxDBClient, Model::ListDbClustersRequest,
                                                                   Pagination::ListDbClustersPaginationTraits<TimestreamInfluxDBClient>>;
 using ListDbInstancesPaginator = Aws::Utils::Pagination::Paginator<TimestreamInfluxDBClient, Model::ListDbInstancesRequest,
