@@ -12,6 +12,7 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.Ev
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.RequestRenderer;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.ResultRenderer;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.SubObjectRenderer;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.ProtocolTraits;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.ServiceShape;
 
@@ -34,6 +35,7 @@ public class ModelGenerator {
     private final String exportMacro;
     private final String namespace;
     private final Protocol protocol;
+    private final ProtocolTraits protocolTraits;
 
     public ModelGenerator(Model model, ServiceShape service, CppWriterDelegator writerDelegator,
                           String serviceName, String smithyServiceName,
@@ -46,6 +48,7 @@ public class ModelGenerator {
         this.exportMacro = exportMacro;
         this.namespace = namespace;
         this.protocol = ProtocolResolver.resolve(service, model);
+        this.protocolTraits = ProtocolResolver.traitsFor(this.protocol);
     }
 
     public void generateAll() {
@@ -64,7 +67,7 @@ public class ModelGenerator {
             classified.enums(), namespace, exportMacro, smithyServiceName));
 
         renderers.add(new SubObjectRenderer(
-            classified.subObjects(), model, service, protocol,
+            classified.subObjects(), model, service, protocolTraits,
             namespace, exportMacro, serviceName, smithyServiceName));
 
         renderers.add(new RequestRenderer(

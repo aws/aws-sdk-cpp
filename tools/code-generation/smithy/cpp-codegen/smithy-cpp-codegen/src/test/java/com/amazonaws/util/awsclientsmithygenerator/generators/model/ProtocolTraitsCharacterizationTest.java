@@ -9,6 +9,7 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolReso
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.RequestRenderer;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.ResultRenderer;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.SubObjectRenderer;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.ProtocolTraits;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
@@ -104,7 +105,8 @@ class ProtocolTraitsCharacterizationTest {
 
         // NOTE (Tasks 4-7): when a renderer's ctor switches from Protocol to
         // ProtocolTraits, change ONLY the argument below -- never the assertions.
-        new SubObjectRenderer(classified.subObjects(), model, service, resolved,
+        ProtocolTraits traits = ProtocolResolver.traitsFor(resolved);
+        new SubObjectRenderer(classified.subObjects(), model, service, traits,
             "Example", "AWS_EXAMPLE_API", "Example", "example").render(delegator);
         new RequestRenderer(classified.requests(), model, service, resolved,
             "Example", "AWS_EXAMPLE_API", "example").render(delegator);

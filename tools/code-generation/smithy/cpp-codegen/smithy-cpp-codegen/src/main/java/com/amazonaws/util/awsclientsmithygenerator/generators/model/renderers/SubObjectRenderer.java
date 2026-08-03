@@ -8,8 +8,7 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.CppTypeMapper;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.MemberRenderer;
-import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
-import com.amazonaws.util.awsclientsmithygenerator.generators.model.SerdeStub;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.ProtocolTraits;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeRenderer;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.ServiceShape;
@@ -28,19 +27,19 @@ public final class SubObjectRenderer implements ShapeRenderer {
     private final List<Shape> subObjects;
     private final Model model;
     private final ServiceShape service;
-    private final Protocol protocol;
+    private final ProtocolTraits protocolTraits;
     private final String namespace;
     private final String exportMacro;
     private final String serviceName;
     private final String smithyServiceName;
 
     public SubObjectRenderer(List<Shape> subObjects, Model model, ServiceShape service,
-                             Protocol protocol, String namespace, String exportMacro,
+                             ProtocolTraits protocolTraits, String namespace, String exportMacro,
                              String serviceName, String smithyServiceName) {
         this.subObjects = subObjects;
         this.model = model;
         this.service = service;
-        this.protocol = protocol;
+        this.protocolTraits = protocolTraits;
         this.namespace = namespace;
         this.exportMacro = exportMacro;
         this.serviceName = serviceName;
@@ -83,7 +82,7 @@ public final class SubObjectRenderer implements ShapeRenderer {
             writer.write("");
 
             writer.writeNamespaceOpen("Aws");
-            renderForwardDeclarations(writer);
+            protocolTraits.writeShapeForwardDeclarations(writer);
             writer.writeNamespaceOpen(namespace);
             writer.writeNamespaceOpen("Model");
             writer.write("");
@@ -92,7 +91,7 @@ public final class SubObjectRenderer implements ShapeRenderer {
 
             writer.openBlock("class $L {", "};", className, () -> {
                 writer.write("public:");
-                SerdeStub.renderHeaderDeclarations(writer, protocol, exportMacro, className);
+                protocolTraits.writeSerdeMethodDecls(writer, exportMacro, className, null);
                 writer.write("");
                 MemberRenderer.renderPublicSection(writer, shape, model, exportMacro, className);
                 writer.dedent();
@@ -113,23 +112,13 @@ public final class SubObjectRenderer implements ShapeRenderer {
         String fileName = "source/model/" + className + ".cpp";
         writerDelegator.useFileWriter(fileName, writer -> {
 
-            if (protocol.isJsonLike()) {
-                writer.write("#include <aws/core/utils/json/JsonSerializer.h>");
-            } else {
-                writer.write("#include <aws/core/utils/xml/XmlSerializer.h>");
-            }
+            protocolTraits.writeSerdeInclude(writer);
             writer.write("#include <aws/$L/model/$L.h>", smithyServiceName, className);
             writer.write("");
             writer.write("#include <utility>");
             writer.write("");
 
-            if (protocol.isJsonLike()) {
-                writer.write("using namespace Aws::Utils::Json;");
-                writer.write("using namespace Aws::Utils;");
-            } else {
-                writer.write("using namespace Aws::Utils::Xml;");
-                writer.write("using namespace Aws::Utils;");
-            }
+            protocolTraits.writeSerdeUsingDeclarations(writer);
             writer.write("");
 
             writer.writeNamespaceOpen("Aws");
@@ -137,31 +126,13 @@ public final class SubObjectRenderer implements ShapeRenderer {
             writer.writeNamespaceOpen("Model");
             writer.write("");
 
-            SerdeStub.renderSourceImplementation(writer, shape, model, protocol,
-                className, serviceName, smithyServiceName);
+            protocolTraits.writeSerdeMethodImpls(writer, className);
             writer.write("");
 
             writer.writeNamespaceClose("Model");
             writer.writeNamespaceClose(namespace);
             writer.writeNamespaceClose("Aws");
         });
-    }
-
-    private void renderForwardDeclarations(CppWriter writer) {
-        if (protocol.isJsonLike()) {
-            writer.writeNamespaceOpen("Utils");
-            writer.writeNamespaceOpen("Json");
-            writer.write("class JsonValue;");
-            writer.write("class JsonView;");
-            writer.writeNamespaceClose("Json");
-            writer.writeNamespaceClose("Utils");
-        } else {
-            writer.writeNamespaceOpen("Utils");
-            writer.writeNamespaceOpen("Xml");
-            writer.write("class XmlNode;");
-            writer.writeNamespaceClose("Xml");
-            writer.writeNamespaceClose("Utils");
-        }
     }
 
 }
