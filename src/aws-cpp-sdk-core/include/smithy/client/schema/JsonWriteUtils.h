@@ -5,6 +5,7 @@ namespace Aws {
 namespace Schema {
 
 void WriteQuotedJsonString(Aws::String& buf, const Aws::String& value);
+void WriteJsonDouble(Aws::String& buf, double value);
 
 }  // namespace Schema
 }  // namespace Aws
