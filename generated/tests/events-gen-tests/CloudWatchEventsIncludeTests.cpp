@@ -13,7 +13,6 @@
 #include <aws/events/CloudWatchEventsRequest.h>
 #include <aws/events/CloudWatchEventsServiceClientModel.h>
 #include <aws/events/CloudWatchEvents_EXPORTS.h>
-#include <aws/events/internal/CloudWatchEventsEndpointRules.h>
 #include <aws/events/model/ActivateEventSourceRequest.h>
 #include <aws/events/model/ApiDestination.h>
 #include <aws/events/model/ApiDestinationHttpMethod.h>

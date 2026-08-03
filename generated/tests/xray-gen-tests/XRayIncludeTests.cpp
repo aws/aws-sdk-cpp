@@ -13,7 +13,6 @@
 #include <aws/xray/XRayRequest.h>
 #include <aws/xray/XRayServiceClientModel.h>
 #include <aws/xray/XRay_EXPORTS.h>
-#include <aws/xray/internal/XRayEndpointRules.h>
 #include <aws/xray/model/Alias.h>
 #include <aws/xray/model/AnnotationValue.h>
 #include <aws/xray/model/AnomalousService.h>

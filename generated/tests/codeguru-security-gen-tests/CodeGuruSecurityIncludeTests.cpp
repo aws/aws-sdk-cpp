@@ -13,7 +13,6 @@
 #include <aws/codeguru-security/CodeGuruSecurityRequest.h>
 #include <aws/codeguru-security/CodeGuruSecurityServiceClientModel.h>
 #include <aws/codeguru-security/CodeGuruSecurity_EXPORTS.h>
-#include <aws/codeguru-security/internal/CodeGuruSecurityEndpointRules.h>
 #include <aws/codeguru-security/model/AccessDeniedException.h>
 #include <aws/codeguru-security/model/AccountFindingsMetric.h>
 #include <aws/codeguru-security/model/AnalysisType.h>

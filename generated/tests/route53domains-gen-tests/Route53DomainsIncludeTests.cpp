@@ -13,7 +13,6 @@
 #include <aws/route53domains/Route53DomainsRequest.h>
 #include <aws/route53domains/Route53DomainsServiceClientModel.h>
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
-#include <aws/route53domains/internal/Route53DomainsEndpointRules.h>
 #include <aws/route53domains/model/AcceptDomainTransferFromAnotherAwsAccountRequest.h>
 #include <aws/route53domains/model/AcceptDomainTransferFromAnotherAwsAccountResult.h>
 #include <aws/route53domains/model/AssociateDelegationSignerToDomainRequest.h>

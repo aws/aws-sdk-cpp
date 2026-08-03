@@ -13,7 +13,6 @@
 #include <aws/m2/MainframeModernizationRequest.h>
 #include <aws/m2/MainframeModernizationServiceClientModel.h>
 #include <aws/m2/MainframeModernization_EXPORTS.h>
-#include <aws/m2/internal/MainframeModernizationEndpointRules.h>
 #include <aws/m2/model/AlternateKey.h>
 #include <aws/m2/model/ApplicationDeploymentLifecycle.h>
 #include <aws/m2/model/ApplicationLifecycle.h>

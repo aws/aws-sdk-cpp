@@ -6,7 +6,7 @@
 #pragma once
 #include <aws/autoscaling-plans/AutoScalingPlans_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
-#include <aws/core/endpoint/DefaultEndpointProvider.h>
+#include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -15,7 +15,7 @@ namespace Aws {
 namespace AutoScalingPlans {
 namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using AutoScalingPlansClientContextParameters = Aws::Endpoint::ClientContextParameters;
@@ -32,8 +32,7 @@ using AutoScalingPlansEndpointProviderBase =
     EndpointProviderBase<AutoScalingPlansClientConfiguration, AutoScalingPlansBuiltInParameters, AutoScalingPlansClientContextParameters>;
 
 using AutoScalingPlansDefaultEpProviderBase =
-    DefaultEndpointProvider<AutoScalingPlansClientConfiguration, AutoScalingPlansBuiltInParameters,
-                            AutoScalingPlansClientContextParameters>;
+    BDDEndpointProvider<AutoScalingPlansClientConfiguration, AutoScalingPlansBuiltInParameters, AutoScalingPlansClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service

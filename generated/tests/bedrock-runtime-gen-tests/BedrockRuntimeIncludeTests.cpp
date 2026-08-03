@@ -15,7 +15,6 @@
 #include <aws/bedrock-runtime/BedrockRuntimeRequest.h>
 #include <aws/bedrock-runtime/BedrockRuntimeServiceClientModel.h>
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
-#include <aws/bedrock-runtime/internal/BedrockRuntimeEndpointRules.h>
 #include <aws/bedrock-runtime/model/AnyToolChoice.h>
 #include <aws/bedrock-runtime/model/AppliedGuardrailDetails.h>
 #include <aws/bedrock-runtime/model/ApplyGuardrailRequest.h>

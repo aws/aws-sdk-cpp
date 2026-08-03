@@ -13,7 +13,6 @@
 #include <aws/memorydb/MemoryDBRequest.h>
 #include <aws/memorydb/MemoryDBServiceClientModel.h>
 #include <aws/memorydb/MemoryDB_EXPORTS.h>
-#include <aws/memorydb/internal/MemoryDBEndpointRules.h>
 #include <aws/memorydb/model/ACL.h>
 #include <aws/memorydb/model/ACLPendingChanges.h>
 #include <aws/memorydb/model/ACLsUpdateStatus.h>

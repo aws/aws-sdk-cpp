@@ -13,7 +13,6 @@
 #include <aws/proton/ProtonRequest.h>
 #include <aws/proton/ProtonServiceClientModel.h>
 #include <aws/proton/Proton_EXPORTS.h>
-#include <aws/proton/internal/ProtonEndpointRules.h>
 #include <aws/proton/model/AccountSettings.h>
 #include <aws/proton/model/BlockerStatus.h>
 #include <aws/proton/model/BlockerType.h>

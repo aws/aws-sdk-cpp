@@ -81,12 +81,14 @@ def parse_arguments() -> dict:
                         help="Comma-separated list of services to generate models from Smithy. "
                              "Only effective with --use-smithy-models. "
                              "Defaults to all services in --client_list if omitted.")
-    parser.add_argument("--use-smithy-bdd-endpoints",
-                        help="Use Smithy-generated BDD bytecode for endpoint resolution instead of the C2J "
-                             "JSON ruleset. C2J skips the JSON endpoint-rules blob and emits a BDD-backed "
-                             "provider; Smithy codegen produces the compiled bytecode blob. When omitted, "
-                             "endpoint resolution keeps using the C2J JSON path.",
-                        action="store_true")
+    parser.add_argument("--disable-bdd-endpoints",
+                        dest="use_smithy_bdd_endpoints",
+                        help="Fall back to the C2J JSON endpoint ruleset instead of Smithy-generated BDD "
+                             "bytecode. By default C2J skips the JSON endpoint-rules blob and emits a "
+                             "BDD-backed provider, and Smithy codegen produces the compiled bytecode blob. "
+                             "Services whose Smithy model lacks the endpointBdd trait keep the JSON path "
+                             "either way.",
+                        action="store_false")
 
     args = vars(parser.parse_args())
     arg_map = {"debug": args.get("debug", False)}
@@ -148,7 +150,7 @@ def parse_arguments() -> dict:
     arg_map["generate_protocol_tests"] = args.get("generate_protocol_tests", None)
     arg_map["generate_install_tests"] = args.get("generate_install_tests", None)
     arg_map["use_smithy_models"] = args.get("use_smithy_models", False)
-    arg_map["use_smithy_bdd_endpoints"] = args.get("use_smithy_bdd_endpoints", False)
+    arg_map["use_smithy_bdd_endpoints"] = args.get("use_smithy_bdd_endpoints", True)
     smithy_model_services_raw = args.get("smithy_model_services", None)
     if smithy_model_services_raw:
         arg_map["smithy_model_services"] = set(smithy_model_services_raw.replace(";", ",").split(","))
@@ -200,6 +202,7 @@ def main():
             # Disable smithy generation for protocol tests
             protocol_args = args.copy()
             protocol_args["disable_smithy_generation"] = True
+            protocol_args["use_smithy_bdd_endpoints"] = False
             protocol_tests_generator = ProtocolTestsGen(protocol_args)
             if protocol_tests_generator.generate(executor, max_workers) != 0:
                 print("ERROR: Failed to generate protocol test(s)!")

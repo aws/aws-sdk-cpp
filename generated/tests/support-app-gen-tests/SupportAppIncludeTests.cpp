@@ -13,7 +13,6 @@
 #include <aws/support-app/SupportAppRequest.h>
 #include <aws/support-app/SupportAppServiceClientModel.h>
 #include <aws/support-app/SupportApp_EXPORTS.h>
-#include <aws/support-app/internal/SupportAppEndpointRules.h>
 #include <aws/support-app/model/AccountType.h>
 #include <aws/support-app/model/CreateSlackChannelConfigurationRequest.h>
 #include <aws/support-app/model/CreateSlackChannelConfigurationResult.h>

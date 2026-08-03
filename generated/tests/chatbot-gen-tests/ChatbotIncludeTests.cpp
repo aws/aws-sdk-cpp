@@ -13,7 +13,6 @@
 #include <aws/chatbot/ChatbotRequest.h>
 #include <aws/chatbot/ChatbotServiceClientModel.h>
 #include <aws/chatbot/Chatbot_EXPORTS.h>
-#include <aws/chatbot/internal/ChatbotEndpointRules.h>
 #include <aws/chatbot/model/AccountPreferences.h>
 #include <aws/chatbot/model/AssociateToConfigurationRequest.h>
 #include <aws/chatbot/model/AssociateToConfigurationResult.h>

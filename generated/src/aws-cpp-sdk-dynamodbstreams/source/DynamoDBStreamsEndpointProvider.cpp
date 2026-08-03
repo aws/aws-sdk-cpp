@@ -16,9 +16,9 @@ template class Aws::Endpoint::EndpointProviderBase<DynamoDBStreams::Endpoint::Dy
                                                    DynamoDBStreams::Endpoint::DynamoDBStreamsBuiltInParameters,
                                                    DynamoDBStreams::Endpoint::DynamoDBStreamsClientContextParameters>;
 
-template class Aws::Endpoint::DefaultEndpointProvider<DynamoDBStreams::Endpoint::DynamoDBStreamsClientConfiguration,
-                                                      DynamoDBStreams::Endpoint::DynamoDBStreamsBuiltInParameters,
-                                                      DynamoDBStreams::Endpoint::DynamoDBStreamsClientContextParameters>;
+template class Aws::Endpoint::BDDEndpointProvider<DynamoDBStreams::Endpoint::DynamoDBStreamsClientConfiguration,
+                                                  DynamoDBStreams::Endpoint::DynamoDBStreamsBuiltInParameters,
+                                                  DynamoDBStreams::Endpoint::DynamoDBStreamsClientContextParameters>;
 }  // namespace Endpoint
 #endif
 

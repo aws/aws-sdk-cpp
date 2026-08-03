@@ -13,7 +13,6 @@
 #include <aws/apigatewayv2/ApiGatewayV2Request.h>
 #include <aws/apigatewayv2/ApiGatewayV2ServiceClientModel.h>
 #include <aws/apigatewayv2/ApiGatewayV2_EXPORTS.h>
-#include <aws/apigatewayv2/internal/ApiGatewayV2EndpointRules.h>
 #include <aws/apigatewayv2/model/ACMManaged.h>
 #include <aws/apigatewayv2/model/AccessLogSettings.h>
 #include <aws/apigatewayv2/model/Api.h>

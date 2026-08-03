@@ -13,7 +13,6 @@
 #include <aws/partnercentral-channel/PartnerCentralChannelRequest.h>
 #include <aws/partnercentral-channel/PartnerCentralChannelServiceClientModel.h>
 #include <aws/partnercentral-channel/PartnerCentralChannel_EXPORTS.h>
-#include <aws/partnercentral-channel/internal/PartnerCentralChannelEndpointRules.h>
 #include <aws/partnercentral-channel/model/AcceptChannelHandshakeDetail.h>
 #include <aws/partnercentral-channel/model/AcceptChannelHandshakeRequest.h>
 #include <aws/partnercentral-channel/model/AcceptChannelHandshakeResult.h>

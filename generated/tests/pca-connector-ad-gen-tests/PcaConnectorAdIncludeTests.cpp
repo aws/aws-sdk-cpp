@@ -13,7 +13,6 @@
 #include <aws/pca-connector-ad/PcaConnectorAdRequest.h>
 #include <aws/pca-connector-ad/PcaConnectorAdServiceClientModel.h>
 #include <aws/pca-connector-ad/PcaConnectorAd_EXPORTS.h>
-#include <aws/pca-connector-ad/internal/PcaConnectorAdEndpointRules.h>
 #include <aws/pca-connector-ad/model/AccessControlEntry.h>
 #include <aws/pca-connector-ad/model/AccessControlEntrySummary.h>
 #include <aws/pca-connector-ad/model/AccessRight.h>

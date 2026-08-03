@@ -15,7 +15,6 @@
 #include <aws/bedrock-agent/BedrockAgentRequest.h>
 #include <aws/bedrock-agent/BedrockAgentServiceClientModel.h>
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/bedrock-agent/internal/BedrockAgentEndpointRules.h>
 #include <aws/bedrock-agent/model/APISchema.h>
 #include <aws/bedrock-agent/model/AccessControlAccess.h>
 #include <aws/bedrock-agent/model/AccessControlPrincipalType.h>

@@ -13,7 +13,6 @@
 #include <aws/inspector/InspectorRequest.h>
 #include <aws/inspector/InspectorServiceClientModel.h>
 #include <aws/inspector/Inspector_EXPORTS.h>
-#include <aws/inspector/internal/InspectorEndpointRules.h>
 #include <aws/inspector/model/AccessDeniedErrorCode.h>
 #include <aws/inspector/model/AccessDeniedException.h>
 #include <aws/inspector/model/AddAttributesToFindingsRequest.h>

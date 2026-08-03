@@ -16,9 +16,9 @@ template class Aws::Endpoint::EndpointProviderBase<DynamoDB::Endpoint::DynamoDBC
                                                    DynamoDB::Endpoint::DynamoDBBuiltInParameters,
                                                    DynamoDB::Endpoint::DynamoDBClientContextParameters>;
 
-template class Aws::Endpoint::DefaultEndpointProvider<DynamoDB::Endpoint::DynamoDBClientConfiguration,
-                                                      DynamoDB::Endpoint::DynamoDBBuiltInParameters,
-                                                      DynamoDB::Endpoint::DynamoDBClientContextParameters>;
+template class Aws::Endpoint::BDDEndpointProvider<DynamoDB::Endpoint::DynamoDBClientConfiguration,
+                                                  DynamoDB::Endpoint::DynamoDBBuiltInParameters,
+                                                  DynamoDB::Endpoint::DynamoDBClientContextParameters>;
 }  // namespace Endpoint
 #endif
 

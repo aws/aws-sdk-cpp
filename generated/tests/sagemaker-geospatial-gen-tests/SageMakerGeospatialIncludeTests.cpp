@@ -13,7 +13,6 @@
 #include <aws/sagemaker-geospatial/SageMakerGeospatialRequest.h>
 #include <aws/sagemaker-geospatial/SageMakerGeospatialServiceClientModel.h>
 #include <aws/sagemaker-geospatial/SageMakerGeospatial_EXPORTS.h>
-#include <aws/sagemaker-geospatial/internal/SageMakerGeospatialEndpointRules.h>
 #include <aws/sagemaker-geospatial/model/AlgorithmNameCloudRemoval.h>
 #include <aws/sagemaker-geospatial/model/AlgorithmNameGeoMosaic.h>
 #include <aws/sagemaker-geospatial/model/AlgorithmNameResampling.h>

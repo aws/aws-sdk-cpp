@@ -13,7 +13,6 @@
 #include <aws/simpledbv2/SimpleDBv2Request.h>
 #include <aws/simpledbv2/SimpleDBv2ServiceClientModel.h>
 #include <aws/simpledbv2/SimpleDBv2_EXPORTS.h>
-#include <aws/simpledbv2/internal/SimpleDBv2EndpointRules.h>
 #include <aws/simpledbv2/model/ExportStatus.h>
 #include <aws/simpledbv2/model/ExportSummary.h>
 #include <aws/simpledbv2/model/GetExportRequest.h>

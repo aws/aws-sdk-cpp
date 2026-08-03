@@ -13,7 +13,6 @@
 #include <aws/geo-places/GeoPlacesRequest.h>
 #include <aws/geo-places/GeoPlacesServiceClientModel.h>
 #include <aws/geo-places/GeoPlaces_EXPORTS.h>
-#include <aws/geo-places/internal/GeoPlacesEndpointRules.h>
 #include <aws/geo-places/model/AccessPoint.h>
 #include <aws/geo-places/model/AccessPointType.h>
 #include <aws/geo-places/model/AccessRestriction.h>

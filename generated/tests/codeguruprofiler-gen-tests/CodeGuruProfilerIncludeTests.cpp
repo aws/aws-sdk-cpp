@@ -13,7 +13,6 @@
 #include <aws/codeguruprofiler/CodeGuruProfilerRequest.h>
 #include <aws/codeguruprofiler/CodeGuruProfilerServiceClientModel.h>
 #include <aws/codeguruprofiler/CodeGuruProfiler_EXPORTS.h>
-#include <aws/codeguruprofiler/internal/CodeGuruProfilerEndpointRules.h>
 #include <aws/codeguruprofiler/model/ActionGroup.h>
 #include <aws/codeguruprofiler/model/AddNotificationChannelsRequest.h>
 #include <aws/codeguruprofiler/model/AddNotificationChannelsResult.h>

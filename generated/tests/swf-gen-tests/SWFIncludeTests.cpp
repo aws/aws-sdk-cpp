@@ -13,7 +13,6 @@
 #include <aws/swf/SWFRequest.h>
 #include <aws/swf/SWFServiceClientModel.h>
 #include <aws/swf/SWF_EXPORTS.h>
-#include <aws/swf/internal/SWFEndpointRules.h>
 #include <aws/swf/model/ActivityTaskCancelRequestedEventAttributes.h>
 #include <aws/swf/model/ActivityTaskCanceledEventAttributes.h>
 #include <aws/swf/model/ActivityTaskCompletedEventAttributes.h>

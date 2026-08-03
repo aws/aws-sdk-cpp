@@ -13,7 +13,6 @@
 #include <aws/dsql/DSQLRequest.h>
 #include <aws/dsql/DSQLServiceClientModel.h>
 #include <aws/dsql/DSQL_EXPORTS.h>
-#include <aws/dsql/internal/DSQLEndpointRules.h>
 #include <aws/dsql/model/ClusterStatus.h>
 #include <aws/dsql/model/ClusterSummary.h>
 #include <aws/dsql/model/ConflictException.h>

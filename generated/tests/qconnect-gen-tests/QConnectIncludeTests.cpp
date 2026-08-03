@@ -13,7 +13,6 @@
 #include <aws/qconnect/QConnectRequest.h>
 #include <aws/qconnect/QConnectServiceClientModel.h>
 #include <aws/qconnect/QConnect_EXPORTS.h>
-#include <aws/qconnect/internal/QConnectEndpointRules.h>
 #include <aws/qconnect/model/AIAgentAssociationConfigurationType.h>
 #include <aws/qconnect/model/AIAgentConfiguration.h>
 #include <aws/qconnect/model/AIAgentConfigurationData.h>

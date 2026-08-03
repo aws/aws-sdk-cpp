@@ -13,7 +13,6 @@
 #include <aws/bcm-recommended-actions/BCMRecommendedActionsRequest.h>
 #include <aws/bcm-recommended-actions/BCMRecommendedActionsServiceClientModel.h>
 #include <aws/bcm-recommended-actions/BCMRecommendedActions_EXPORTS.h>
-#include <aws/bcm-recommended-actions/internal/BCMRecommendedActionsEndpointRules.h>
 #include <aws/bcm-recommended-actions/model/ActionFilter.h>
 #include <aws/bcm-recommended-actions/model/ActionType.h>
 #include <aws/bcm-recommended-actions/model/Feature.h>

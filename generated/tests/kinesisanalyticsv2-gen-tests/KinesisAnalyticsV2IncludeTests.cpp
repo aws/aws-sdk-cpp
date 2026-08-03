@@ -13,7 +13,6 @@
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2Request.h>
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2ServiceClientModel.h>
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2_EXPORTS.h>
-#include <aws/kinesisanalyticsv2/internal/KinesisAnalyticsV2EndpointRules.h>
 #include <aws/kinesisanalyticsv2/model/AddApplicationCloudWatchLoggingOptionRequest.h>
 #include <aws/kinesisanalyticsv2/model/AddApplicationCloudWatchLoggingOptionResult.h>
 #include <aws/kinesisanalyticsv2/model/AddApplicationInputProcessingConfigurationRequest.h>

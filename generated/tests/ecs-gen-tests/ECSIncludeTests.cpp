@@ -13,7 +13,6 @@
 #include <aws/ecs/ECSRequest.h>
 #include <aws/ecs/ECSServiceClientModel.h>
 #include <aws/ecs/ECS_EXPORTS.h>
-#include <aws/ecs/internal/ECSEndpointRules.h>
 #include <aws/ecs/model/AcceleratorCountRequest.h>
 #include <aws/ecs/model/AcceleratorManufacturer.h>
 #include <aws/ecs/model/AcceleratorName.h>

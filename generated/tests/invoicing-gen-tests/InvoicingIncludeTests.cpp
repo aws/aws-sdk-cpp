@@ -13,7 +13,6 @@
 #include <aws/invoicing/InvoicingRequest.h>
 #include <aws/invoicing/InvoicingServiceClientModel.h>
 #include <aws/invoicing/Invoicing_EXPORTS.h>
-#include <aws/invoicing/internal/InvoicingEndpointRules.h>
 #include <aws/invoicing/model/AccessDeniedException.h>
 #include <aws/invoicing/model/AmountBreakdown.h>
 #include <aws/invoicing/model/BatchGetInvoiceProfileRequest.h>

@@ -13,7 +13,6 @@
 #include <aws/cur/CostandUsageReportServiceRequest.h>
 #include <aws/cur/CostandUsageReportServiceServiceClientModel.h>
 #include <aws/cur/CostandUsageReportService_EXPORTS.h>
-#include <aws/cur/internal/CostandUsageReportServiceEndpointRules.h>
 #include <aws/cur/model/AWSRegion.h>
 #include <aws/cur/model/AdditionalArtifact.h>
 #include <aws/cur/model/CompressionFormat.h>

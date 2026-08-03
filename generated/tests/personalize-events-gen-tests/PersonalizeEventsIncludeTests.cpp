@@ -13,7 +13,6 @@
 #include <aws/personalize-events/PersonalizeEventsRequest.h>
 #include <aws/personalize-events/PersonalizeEventsServiceClientModel.h>
 #include <aws/personalize-events/PersonalizeEvents_EXPORTS.h>
-#include <aws/personalize-events/internal/PersonalizeEventsEndpointRules.h>
 #include <aws/personalize-events/model/Action.h>
 #include <aws/personalize-events/model/ActionInteraction.h>
 #include <aws/personalize-events/model/Event.h>

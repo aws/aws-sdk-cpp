@@ -13,7 +13,6 @@
 #include <aws/billing/BillingRequest.h>
 #include <aws/billing/BillingServiceClientModel.h>
 #include <aws/billing/Billing_EXPORTS.h>
-#include <aws/billing/internal/BillingEndpointRules.h>
 #include <aws/billing/model/ActiveTimeRange.h>
 #include <aws/billing/model/AdditionalCharge.h>
 #include <aws/billing/model/Amount.h>

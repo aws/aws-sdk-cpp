@@ -13,7 +13,6 @@
 #include <aws/cloudhsmv2/CloudHSMV2Request.h>
 #include <aws/cloudhsmv2/CloudHSMV2ServiceClientModel.h>
 #include <aws/cloudhsmv2/CloudHSMV2_EXPORTS.h>
-#include <aws/cloudhsmv2/internal/CloudHSMV2EndpointRules.h>
 #include <aws/cloudhsmv2/model/Backup.h>
 #include <aws/cloudhsmv2/model/BackupPolicy.h>
 #include <aws/cloudhsmv2/model/BackupRetentionPolicy.h>

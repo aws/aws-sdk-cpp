@@ -13,7 +13,6 @@
 #include <aws/imagebuilder/ImagebuilderRequest.h>
 #include <aws/imagebuilder/ImagebuilderServiceClientModel.h>
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
-#include <aws/imagebuilder/internal/ImagebuilderEndpointRules.h>
 #include <aws/imagebuilder/model/AccountAggregation.h>
 #include <aws/imagebuilder/model/AdditionalInstanceConfiguration.h>
 #include <aws/imagebuilder/model/Ami.h>

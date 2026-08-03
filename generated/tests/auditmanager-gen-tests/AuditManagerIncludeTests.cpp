@@ -13,7 +13,6 @@
 #include <aws/auditmanager/AuditManagerRequest.h>
 #include <aws/auditmanager/AuditManagerServiceClientModel.h>
 #include <aws/auditmanager/AuditManager_EXPORTS.h>
-#include <aws/auditmanager/internal/AuditManagerEndpointRules.h>
 #include <aws/auditmanager/model/AWSAccount.h>
 #include <aws/auditmanager/model/AWSService.h>
 #include <aws/auditmanager/model/AccountStatus.h>

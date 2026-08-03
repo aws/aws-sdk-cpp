@@ -13,7 +13,6 @@
 #include <aws/fms/FMSRequest.h>
 #include <aws/fms/FMSServiceClientModel.h>
 #include <aws/fms/FMS_EXPORTS.h>
-#include <aws/fms/internal/FMSEndpointRules.h>
 #include <aws/fms/model/AccountRoleStatus.h>
 #include <aws/fms/model/AccountScope.h>
 #include <aws/fms/model/ActionTarget.h>

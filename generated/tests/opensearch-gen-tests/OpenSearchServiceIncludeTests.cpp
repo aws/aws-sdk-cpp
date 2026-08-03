@@ -13,7 +13,6 @@
 #include <aws/opensearch/OpenSearchServiceRequest.h>
 #include <aws/opensearch/OpenSearchServiceServiceClientModel.h>
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
-#include <aws/opensearch/internal/OpenSearchServiceEndpointRules.h>
 #include <aws/opensearch/model/AIConfig.h>
 #include <aws/opensearch/model/AIMLOptionsInput.h>
 #include <aws/opensearch/model/AIMLOptionsOutput.h>

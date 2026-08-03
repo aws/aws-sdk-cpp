@@ -13,7 +13,6 @@
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2Request.h>
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2ServiceClientModel.h>
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
-#include <aws/pinpoint-sms-voice-v2/internal/PinpointSMSVoiceV2EndpointRules.h>
 #include <aws/pinpoint-sms-voice-v2/model/AccessDeniedException.h>
 #include <aws/pinpoint-sms-voice-v2/model/AccessDeniedExceptionReason.h>
 #include <aws/pinpoint-sms-voice-v2/model/AccountAttribute.h>

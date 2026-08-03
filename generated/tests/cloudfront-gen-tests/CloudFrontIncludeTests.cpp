@@ -13,7 +13,6 @@
 #include <aws/cloudfront/CloudFrontRequest.h>
 #include <aws/cloudfront/CloudFrontServiceClientModel.h>
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
-#include <aws/cloudfront/internal/CloudFrontEndpointRules.h>
 #include <aws/cloudfront/model/ActiveTrustedKeyGroups.h>
 #include <aws/cloudfront/model/ActiveTrustedSigners.h>
 #include <aws/cloudfront/model/AliasICPRecordal.h>

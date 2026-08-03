@@ -13,7 +13,6 @@
 #include <aws/elasticloadbalancing/ElasticLoadBalancingRequest.h>
 #include <aws/elasticloadbalancing/ElasticLoadBalancingServiceClientModel.h>
 #include <aws/elasticloadbalancing/ElasticLoadBalancing_EXPORTS.h>
-#include <aws/elasticloadbalancing/internal/ElasticLoadBalancingEndpointRules.h>
 #include <aws/elasticloadbalancing/model/AccessLog.h>
 #include <aws/elasticloadbalancing/model/AddTagsRequest.h>
 #include <aws/elasticloadbalancing/model/AddTagsResult.h>

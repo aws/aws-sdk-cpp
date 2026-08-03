@@ -13,7 +13,6 @@
 #include <aws/ecr-public/ECRPublicRequest.h>
 #include <aws/ecr-public/ECRPublicServiceClientModel.h>
 #include <aws/ecr-public/ECRPublic_EXPORTS.h>
-#include <aws/ecr-public/internal/ECRPublicEndpointRules.h>
 #include <aws/ecr-public/model/AuthorizationData.h>
 #include <aws/ecr-public/model/BatchCheckLayerAvailabilityRequest.h>
 #include <aws/ecr-public/model/BatchCheckLayerAvailabilityResult.h>

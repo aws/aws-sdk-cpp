@@ -13,7 +13,6 @@
 #include <aws/verifiedpermissions/VerifiedPermissionsRequest.h>
 #include <aws/verifiedpermissions/VerifiedPermissionsServiceClientModel.h>
 #include <aws/verifiedpermissions/VerifiedPermissions_EXPORTS.h>
-#include <aws/verifiedpermissions/internal/VerifiedPermissionsEndpointRules.h>
 #include <aws/verifiedpermissions/model/ActionIdentifier.h>
 #include <aws/verifiedpermissions/model/AliasState.h>
 #include <aws/verifiedpermissions/model/AttributeValue.h>

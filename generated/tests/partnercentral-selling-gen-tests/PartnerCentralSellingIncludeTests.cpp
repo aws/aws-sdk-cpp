@@ -13,7 +13,6 @@
 #include <aws/partnercentral-selling/PartnerCentralSellingRequest.h>
 #include <aws/partnercentral-selling/PartnerCentralSellingServiceClientModel.h>
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
-#include <aws/partnercentral-selling/internal/PartnerCentralSellingEndpointRules.h>
 #include <aws/partnercentral-selling/model/AcceptEngagementInvitationRequest.h>
 #include <aws/partnercentral-selling/model/AccessDeniedException.h>
 #include <aws/partnercentral-selling/model/AccessDeniedExceptionErrorCode.h>

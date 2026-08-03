@@ -13,7 +13,6 @@
 #include <aws/service-quotas/ServiceQuotasRequest.h>
 #include <aws/service-quotas/ServiceQuotasServiceClientModel.h>
 #include <aws/service-quotas/ServiceQuotas_EXPORTS.h>
-#include <aws/service-quotas/internal/ServiceQuotasEndpointRules.h>
 #include <aws/service-quotas/model/AppliedLevelEnum.h>
 #include <aws/service-quotas/model/AssociateServiceQuotaTemplateRequest.h>
 #include <aws/service-quotas/model/AssociateServiceQuotaTemplateResult.h>

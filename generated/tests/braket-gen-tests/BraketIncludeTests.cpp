@@ -13,7 +13,6 @@
 #include <aws/braket/BraketRequest.h>
 #include <aws/braket/BraketServiceClientModel.h>
 #include <aws/braket/Braket_EXPORTS.h>
-#include <aws/braket/internal/BraketEndpointRules.h>
 #include <aws/braket/model/ActionMetadata.h>
 #include <aws/braket/model/AlgorithmSpecification.h>
 #include <aws/braket/model/Association.h>

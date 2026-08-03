@@ -15,7 +15,6 @@
 #include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntimeRequest.h>
 #include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntimeServiceClientModel.h>
 #include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntime_EXPORTS.h>
-#include <aws/bedrock-data-automation-runtime/internal/BedrockDataAutomationRuntimeEndpointRules.h>
 #include <aws/bedrock-data-automation-runtime/model/AssetProcessingConfiguration.h>
 #include <aws/bedrock-data-automation-runtime/model/AutomationJobStatus.h>
 #include <aws/bedrock-data-automation-runtime/model/Blueprint.h>

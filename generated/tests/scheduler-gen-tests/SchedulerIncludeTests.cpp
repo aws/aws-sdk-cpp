@@ -13,7 +13,6 @@
 #include <aws/scheduler/SchedulerRequest.h>
 #include <aws/scheduler/SchedulerServiceClientModel.h>
 #include <aws/scheduler/Scheduler_EXPORTS.h>
-#include <aws/scheduler/internal/SchedulerEndpointRules.h>
 #include <aws/scheduler/model/ActionAfterCompletion.h>
 #include <aws/scheduler/model/AssignPublicIp.h>
 #include <aws/scheduler/model/AwsVpcConfiguration.h>

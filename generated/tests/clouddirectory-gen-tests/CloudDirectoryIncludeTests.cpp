@@ -13,7 +13,6 @@
 #include <aws/clouddirectory/CloudDirectoryRequest.h>
 #include <aws/clouddirectory/CloudDirectoryServiceClientModel.h>
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
-#include <aws/clouddirectory/internal/CloudDirectoryEndpointRules.h>
 #include <aws/clouddirectory/model/AddFacetToObjectRequest.h>
 #include <aws/clouddirectory/model/AddFacetToObjectResult.h>
 #include <aws/clouddirectory/model/ApplySchemaRequest.h>

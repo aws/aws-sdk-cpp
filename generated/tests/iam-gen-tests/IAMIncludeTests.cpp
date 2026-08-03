@@ -13,7 +13,6 @@
 #include <aws/iam/IAMRequest.h>
 #include <aws/iam/IAMServiceClientModel.h>
 #include <aws/iam/IAM_EXPORTS.h>
-#include <aws/iam/internal/IAMEndpointRules.h>
 #include <aws/iam/model/AcceptDelegationRequestRequest.h>
 #include <aws/iam/model/AccessAdvisorUsageGranularityType.h>
 #include <aws/iam/model/AccessDetail.h>

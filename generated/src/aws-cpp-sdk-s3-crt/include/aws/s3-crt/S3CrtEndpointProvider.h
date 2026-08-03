@@ -4,7 +4,7 @@
  */
 
 #pragma once
-#include <aws/core/endpoint/DefaultEndpointProvider.h>
+#include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -16,7 +16,7 @@ namespace S3Crt {
 namespace Endpoint {
 using S3CrtClientConfiguration = Aws::S3Crt::S3CrtClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 class AWS_S3CRT_API S3CrtClientContextParameters : public Aws::Endpoint::ClientContextParameters {
@@ -73,7 +73,7 @@ class AWS_S3CRT_API S3CrtBuiltInParameters : public Aws::Endpoint::BuiltInParame
  */
 using S3CrtEndpointProviderBase = EndpointProviderBase<S3CrtClientConfiguration, S3CrtBuiltInParameters, S3CrtClientContextParameters>;
 
-using S3CrtDefaultEpProviderBase = DefaultEndpointProvider<S3CrtClientConfiguration, S3CrtBuiltInParameters, S3CrtClientContextParameters>;
+using S3CrtDefaultEpProviderBase = BDDEndpointProvider<S3CrtClientConfiguration, S3CrtBuiltInParameters, S3CrtClientContextParameters>;
 
 }  // namespace Endpoint
 }  // namespace S3Crt
@@ -85,7 +85,7 @@ namespace Endpoint {
 AWS_S3CRT_EXTERN template class AWS_S3CRT_API Aws::Endpoint::EndpointProviderBase<
     S3Crt::Endpoint::S3CrtClientConfiguration, S3Crt::Endpoint::S3CrtBuiltInParameters, S3Crt::Endpoint::S3CrtClientContextParameters>;
 
-AWS_S3CRT_EXTERN template class AWS_S3CRT_API Aws::Endpoint::DefaultEndpointProvider<
+AWS_S3CRT_EXTERN template class AWS_S3CRT_API Aws::Endpoint::BDDEndpointProvider<
     S3Crt::Endpoint::S3CrtClientConfiguration, S3Crt::Endpoint::S3CrtBuiltInParameters, S3Crt::Endpoint::S3CrtClientContextParameters>;
 }  // namespace Endpoint
 

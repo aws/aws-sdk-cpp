@@ -13,7 +13,6 @@
 #include <aws/vpc-lattice/VPCLatticeRequest.h>
 #include <aws/vpc-lattice/VPCLatticeServiceClientModel.h>
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
-#include <aws/vpc-lattice/internal/VPCLatticeEndpointRules.h>
 #include <aws/vpc-lattice/model/AccessLogSubscriptionSummary.h>
 #include <aws/vpc-lattice/model/ArnResource.h>
 #include <aws/vpc-lattice/model/AuthPolicyState.h>

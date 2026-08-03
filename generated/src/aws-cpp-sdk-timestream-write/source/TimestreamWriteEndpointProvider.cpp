@@ -16,9 +16,9 @@ template class Aws::Endpoint::EndpointProviderBase<TimestreamWrite::Endpoint::Ti
                                                    TimestreamWrite::Endpoint::TimestreamWriteBuiltInParameters,
                                                    TimestreamWrite::Endpoint::TimestreamWriteClientContextParameters>;
 
-template class Aws::Endpoint::DefaultEndpointProvider<TimestreamWrite::Endpoint::TimestreamWriteClientConfiguration,
-                                                      TimestreamWrite::Endpoint::TimestreamWriteBuiltInParameters,
-                                                      TimestreamWrite::Endpoint::TimestreamWriteClientContextParameters>;
+template class Aws::Endpoint::BDDEndpointProvider<TimestreamWrite::Endpoint::TimestreamWriteClientConfiguration,
+                                                  TimestreamWrite::Endpoint::TimestreamWriteBuiltInParameters,
+                                                  TimestreamWrite::Endpoint::TimestreamWriteClientContextParameters>;
 }  // namespace Endpoint
 #endif
 

@@ -6,7 +6,7 @@
 #pragma once
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
-#include <aws/core/endpoint/DefaultEndpointProvider.h>
+#include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -15,7 +15,7 @@ namespace Aws {
 namespace CodeCommit {
 namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using CodeCommitClientContextParameters = Aws::Endpoint::ClientContextParameters;
@@ -32,7 +32,7 @@ using CodeCommitEndpointProviderBase =
     EndpointProviderBase<CodeCommitClientConfiguration, CodeCommitBuiltInParameters, CodeCommitClientContextParameters>;
 
 using CodeCommitDefaultEpProviderBase =
-    DefaultEndpointProvider<CodeCommitClientConfiguration, CodeCommitBuiltInParameters, CodeCommitClientContextParameters>;
+    BDDEndpointProvider<CodeCommitClientConfiguration, CodeCommitBuiltInParameters, CodeCommitClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service

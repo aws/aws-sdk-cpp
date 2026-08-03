@@ -13,7 +13,6 @@
 #include <aws/mwaa-serverless/MWAAServerlessRequest.h>
 #include <aws/mwaa-serverless/MWAAServerlessServiceClientModel.h>
 #include <aws/mwaa-serverless/MWAAServerless_EXPORTS.h>
-#include <aws/mwaa-serverless/internal/MWAAServerlessEndpointRules.h>
 #include <aws/mwaa-serverless/model/ConflictException.h>
 #include <aws/mwaa-serverless/model/CreateWorkflowRequest.h>
 #include <aws/mwaa-serverless/model/CreateWorkflowResult.h>

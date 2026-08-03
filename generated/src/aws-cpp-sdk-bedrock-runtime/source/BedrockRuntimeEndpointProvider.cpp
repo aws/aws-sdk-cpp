@@ -16,9 +16,9 @@ template class Aws::Endpoint::EndpointProviderBase<BedrockRuntime::Endpoint::Bed
                                                    BedrockRuntime::Endpoint::BedrockRuntimeBuiltInParameters,
                                                    BedrockRuntime::Endpoint::BedrockRuntimeClientContextParameters>;
 
-template class Aws::Endpoint::DefaultEndpointProvider<BedrockRuntime::Endpoint::BedrockRuntimeClientConfiguration,
-                                                      BedrockRuntime::Endpoint::BedrockRuntimeBuiltInParameters,
-                                                      BedrockRuntime::Endpoint::BedrockRuntimeClientContextParameters>;
+template class Aws::Endpoint::BDDEndpointProvider<BedrockRuntime::Endpoint::BedrockRuntimeClientConfiguration,
+                                                  BedrockRuntime::Endpoint::BedrockRuntimeBuiltInParameters,
+                                                  BedrockRuntime::Endpoint::BedrockRuntimeClientContextParameters>;
 }  // namespace Endpoint
 #endif
 

@@ -13,7 +13,6 @@
 #include <aws/sesv2/SESV2Request.h>
 #include <aws/sesv2/SESV2ServiceClientModel.h>
 #include <aws/sesv2/SESV2_EXPORTS.h>
-#include <aws/sesv2/internal/SESV2EndpointRules.h>
 #include <aws/sesv2/model/AccountDetails.h>
 #include <aws/sesv2/model/ArchivingOptions.h>
 #include <aws/sesv2/model/Attachment.h>

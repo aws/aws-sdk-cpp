@@ -13,7 +13,6 @@
 #include <aws/amp/PrometheusServiceRequest.h>
 #include <aws/amp/PrometheusServiceServiceClientModel.h>
 #include <aws/amp/PrometheusService_EXPORTS.h>
-#include <aws/amp/internal/PrometheusServiceEndpointRules.h>
 #include <aws/amp/model/AlertManagerDefinitionDescription.h>
 #include <aws/amp/model/AlertManagerDefinitionStatus.h>
 #include <aws/amp/model/AlertManagerDefinitionStatusCode.h>

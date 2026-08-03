@@ -13,7 +13,6 @@
 #include <aws/ds/DirectoryServiceRequest.h>
 #include <aws/ds/DirectoryServiceServiceClientModel.h>
 #include <aws/ds/DirectoryService_EXPORTS.h>
-#include <aws/ds/internal/DirectoryServiceEndpointRules.h>
 #include <aws/ds/model/ADAssessmentLimitExceededException.h>
 #include <aws/ds/model/AcceptSharedDirectoryRequest.h>
 #include <aws/ds/model/AcceptSharedDirectoryResult.h>

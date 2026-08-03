@@ -13,7 +13,6 @@
 #include <aws/codeartifact/CodeArtifactRequest.h>
 #include <aws/codeartifact/CodeArtifactServiceClientModel.h>
 #include <aws/codeartifact/CodeArtifact_EXPORTS.h>
-#include <aws/codeartifact/internal/CodeArtifactEndpointRules.h>
 #include <aws/codeartifact/model/AllowPublish.h>
 #include <aws/codeartifact/model/AllowUpstream.h>
 #include <aws/codeartifact/model/AssetSummary.h>

@@ -13,7 +13,6 @@
 #include <aws/aiops/AIOpsRequest.h>
 #include <aws/aiops/AIOpsServiceClientModel.h>
 #include <aws/aiops/AIOps_EXPORTS.h>
-#include <aws/aiops/internal/AIOpsEndpointRules.h>
 #include <aws/aiops/model/CreateInvestigationGroupRequest.h>
 #include <aws/aiops/model/CreateInvestigationGroupResult.h>
 #include <aws/aiops/model/CrossAccountConfiguration.h>

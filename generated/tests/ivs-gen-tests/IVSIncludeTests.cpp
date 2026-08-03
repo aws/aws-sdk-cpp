@@ -13,7 +13,6 @@
 #include <aws/ivs/IVSRequest.h>
 #include <aws/ivs/IVSServiceClientModel.h>
 #include <aws/ivs/IVS_EXPORTS.h>
-#include <aws/ivs/internal/IVSEndpointRules.h>
 #include <aws/ivs/model/AccessDeniedException.h>
 #include <aws/ivs/model/AdConfiguration.h>
 #include <aws/ivs/model/AdConfigurationSummary.h>

@@ -13,7 +13,6 @@
 #include <aws/networkmonitor/NetworkMonitorRequest.h>
 #include <aws/networkmonitor/NetworkMonitorServiceClientModel.h>
 #include <aws/networkmonitor/NetworkMonitor_EXPORTS.h>
-#include <aws/networkmonitor/internal/NetworkMonitorEndpointRules.h>
 #include <aws/networkmonitor/model/AddressFamily.h>
 #include <aws/networkmonitor/model/CreateMonitorProbeInput.h>
 #include <aws/networkmonitor/model/CreateMonitorRequest.h>

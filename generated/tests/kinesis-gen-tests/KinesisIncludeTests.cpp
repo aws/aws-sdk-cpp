@@ -13,7 +13,6 @@
 #include <aws/kinesis/KinesisRequest.h>
 #include <aws/kinesis/KinesisServiceClientModel.h>
 #include <aws/kinesis/Kinesis_EXPORTS.h>
-#include <aws/kinesis/internal/KinesisEndpointRules.h>
 #include <aws/kinesis/model/AddTagsToStreamRequest.h>
 #include <aws/kinesis/model/ChildShard.h>
 #include <aws/kinesis/model/Consumer.h>

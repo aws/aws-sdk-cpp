@@ -16,9 +16,9 @@ template class Aws::Endpoint::EndpointProviderBase<BedrockDataAutomation::Endpoi
                                                    BedrockDataAutomation::Endpoint::BedrockDataAutomationBuiltInParameters,
                                                    BedrockDataAutomation::Endpoint::BedrockDataAutomationClientContextParameters>;
 
-template class Aws::Endpoint::DefaultEndpointProvider<BedrockDataAutomation::Endpoint::BedrockDataAutomationClientConfiguration,
-                                                      BedrockDataAutomation::Endpoint::BedrockDataAutomationBuiltInParameters,
-                                                      BedrockDataAutomation::Endpoint::BedrockDataAutomationClientContextParameters>;
+template class Aws::Endpoint::BDDEndpointProvider<BedrockDataAutomation::Endpoint::BedrockDataAutomationClientConfiguration,
+                                                  BedrockDataAutomation::Endpoint::BedrockDataAutomationBuiltInParameters,
+                                                  BedrockDataAutomation::Endpoint::BedrockDataAutomationClientContextParameters>;
 }  // namespace Endpoint
 #endif
 

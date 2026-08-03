@@ -5,7 +5,7 @@
 
 #pragma once
 #include <aws/core/client/GenericClientConfiguration.h>
-#include <aws/core/endpoint/DefaultEndpointProvider.h>
+#include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -15,7 +15,7 @@ namespace Aws {
 namespace Inspector2 {
 namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using Inspector2ClientContextParameters = Aws::Endpoint::ClientContextParameters;
@@ -32,7 +32,7 @@ using Inspector2EndpointProviderBase =
     EndpointProviderBase<Inspector2ClientConfiguration, Inspector2BuiltInParameters, Inspector2ClientContextParameters>;
 
 using Inspector2DefaultEpProviderBase =
-    DefaultEndpointProvider<Inspector2ClientConfiguration, Inspector2BuiltInParameters, Inspector2ClientContextParameters>;
+    BDDEndpointProvider<Inspector2ClientConfiguration, Inspector2BuiltInParameters, Inspector2ClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service

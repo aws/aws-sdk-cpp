@@ -13,7 +13,6 @@
 #include <aws/appfabric/AppFabricRequest.h>
 #include <aws/appfabric/AppFabricServiceClientModel.h>
 #include <aws/appfabric/AppFabric_EXPORTS.h>
-#include <aws/appfabric/internal/AppFabricEndpointRules.h>
 #include <aws/appfabric/model/ApiKeyCredential.h>
 #include <aws/appfabric/model/AppAuthorization.h>
 #include <aws/appfabric/model/AppAuthorizationStatus.h>

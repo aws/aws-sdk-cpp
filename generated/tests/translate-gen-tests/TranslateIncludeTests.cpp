@@ -13,7 +13,6 @@
 #include <aws/translate/TranslateRequest.h>
 #include <aws/translate/TranslateServiceClientModel.h>
 #include <aws/translate/Translate_EXPORTS.h>
-#include <aws/translate/internal/TranslateEndpointRules.h>
 #include <aws/translate/model/AppliedTerminology.h>
 #include <aws/translate/model/Brevity.h>
 #include <aws/translate/model/CreateParallelDataRequest.h>

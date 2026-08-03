@@ -13,7 +13,6 @@
 #include <aws/appconfigdata/AppConfigDataRequest.h>
 #include <aws/appconfigdata/AppConfigDataServiceClientModel.h>
 #include <aws/appconfigdata/AppConfigData_EXPORTS.h>
-#include <aws/appconfigdata/internal/AppConfigDataEndpointRules.h>
 #include <aws/appconfigdata/model/BadRequestDetails.h>
 #include <aws/appconfigdata/model/BadRequestException.h>
 #include <aws/appconfigdata/model/BadRequestReason.h>

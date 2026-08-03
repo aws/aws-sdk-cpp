@@ -13,7 +13,6 @@
 #include <aws/timestream-influxdb/TimestreamInfluxDBRequest.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDBServiceClientModel.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDB_EXPORTS.h>
-#include <aws/timestream-influxdb/internal/TimestreamInfluxDBEndpointRules.h>
 #include <aws/timestream-influxdb/model/ClusterConfiguration.h>
 #include <aws/timestream-influxdb/model/ClusterDeploymentType.h>
 #include <aws/timestream-influxdb/model/ClusterStatus.h>

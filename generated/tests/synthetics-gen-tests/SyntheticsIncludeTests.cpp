@@ -13,7 +13,6 @@
 #include <aws/synthetics/SyntheticsRequest.h>
 #include <aws/synthetics/SyntheticsServiceClientModel.h>
 #include <aws/synthetics/Synthetics_EXPORTS.h>
-#include <aws/synthetics/internal/SyntheticsEndpointRules.h>
 #include <aws/synthetics/model/AddReplicaLocationInput.h>
 #include <aws/synthetics/model/ArtifactConfigInput.h>
 #include <aws/synthetics/model/ArtifactConfigOutput.h>

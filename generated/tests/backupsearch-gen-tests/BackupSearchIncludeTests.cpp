@@ -13,7 +13,6 @@
 #include <aws/backupsearch/BackupSearchRequest.h>
 #include <aws/backupsearch/BackupSearchServiceClientModel.h>
 #include <aws/backupsearch/BackupSearch_EXPORTS.h>
-#include <aws/backupsearch/internal/BackupSearchEndpointRules.h>
 #include <aws/backupsearch/model/BackupCreationTimeFilter.h>
 #include <aws/backupsearch/model/ConflictException.h>
 #include <aws/backupsearch/model/CurrentSearchProgress.h>

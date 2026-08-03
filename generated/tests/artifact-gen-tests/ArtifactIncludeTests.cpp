@@ -13,7 +13,6 @@
 #include <aws/artifact/ArtifactRequest.h>
 #include <aws/artifact/ArtifactServiceClientModel.h>
 #include <aws/artifact/Artifact_EXPORTS.h>
-#include <aws/artifact/internal/ArtifactEndpointRules.h>
 #include <aws/artifact/model/AcceptanceType.h>
 #include <aws/artifact/model/AccountSettings.h>
 #include <aws/artifact/model/AgreementType.h>

@@ -6,7 +6,7 @@
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
-#include <aws/core/endpoint/DefaultEndpointProvider.h>
+#include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -15,7 +15,7 @@ namespace Aws {
 namespace CodePipeline {
 namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using CodePipelineClientContextParameters = Aws::Endpoint::ClientContextParameters;
@@ -32,7 +32,7 @@ using CodePipelineEndpointProviderBase =
     EndpointProviderBase<CodePipelineClientConfiguration, CodePipelineBuiltInParameters, CodePipelineClientContextParameters>;
 
 using CodePipelineDefaultEpProviderBase =
-    DefaultEndpointProvider<CodePipelineClientConfiguration, CodePipelineBuiltInParameters, CodePipelineClientContextParameters>;
+    BDDEndpointProvider<CodePipelineClientConfiguration, CodePipelineBuiltInParameters, CodePipelineClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service

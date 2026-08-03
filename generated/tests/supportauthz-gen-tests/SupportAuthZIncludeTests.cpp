@@ -13,7 +13,6 @@
 #include <aws/supportauthz/SupportAuthZRequest.h>
 #include <aws/supportauthz/SupportAuthZServiceClientModel.h>
 #include <aws/supportauthz/SupportAuthZ_EXPORTS.h>
-#include <aws/supportauthz/internal/SupportAuthZEndpointRules.h>
 #include <aws/supportauthz/model/ActionSet.h>
 #include <aws/supportauthz/model/ActionSummary.h>
 #include <aws/supportauthz/model/Condition.h>

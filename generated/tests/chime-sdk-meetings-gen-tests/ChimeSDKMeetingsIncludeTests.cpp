@@ -13,7 +13,6 @@
 #include <aws/chime-sdk-meetings/ChimeSDKMeetingsRequest.h>
 #include <aws/chime-sdk-meetings/ChimeSDKMeetingsServiceClientModel.h>
 #include <aws/chime-sdk-meetings/ChimeSDKMeetings_EXPORTS.h>
-#include <aws/chime-sdk-meetings/internal/ChimeSDKMeetingsEndpointRules.h>
 #include <aws/chime-sdk-meetings/model/Attendee.h>
 #include <aws/chime-sdk-meetings/model/AttendeeCapabilities.h>
 #include <aws/chime-sdk-meetings/model/AttendeeFeatures.h>

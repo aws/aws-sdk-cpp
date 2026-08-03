@@ -13,7 +13,6 @@
 #include <aws/amplifyuibuilder/AmplifyUIBuilderRequest.h>
 #include <aws/amplifyuibuilder/AmplifyUIBuilderServiceClientModel.h>
 #include <aws/amplifyuibuilder/AmplifyUIBuilder_EXPORTS.h>
-#include <aws/amplifyuibuilder/internal/AmplifyUIBuilderEndpointRules.h>
 #include <aws/amplifyuibuilder/model/ActionParameters.h>
 #include <aws/amplifyuibuilder/model/ApiConfiguration.h>
 #include <aws/amplifyuibuilder/model/CodegenDependency.h>

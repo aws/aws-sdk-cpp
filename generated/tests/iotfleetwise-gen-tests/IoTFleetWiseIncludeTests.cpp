@@ -13,7 +13,6 @@
 #include <aws/iotfleetwise/IoTFleetWiseRequest.h>
 #include <aws/iotfleetwise/IoTFleetWiseServiceClientModel.h>
 #include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
-#include <aws/iotfleetwise/internal/IoTFleetWiseEndpointRules.h>
 #include <aws/iotfleetwise/model/Actuator.h>
 #include <aws/iotfleetwise/model/AssociateVehicleFleetRequest.h>
 #include <aws/iotfleetwise/model/AssociateVehicleFleetResult.h>
