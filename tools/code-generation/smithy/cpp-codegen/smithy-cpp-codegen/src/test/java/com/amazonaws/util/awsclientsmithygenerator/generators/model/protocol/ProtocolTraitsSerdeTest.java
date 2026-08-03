@@ -15,10 +15,10 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * Replaces the former SerdeStubTest. Pins the invariant that the event- and
- * error-payload stubs stay protocol-agnostic for EVERY protocol -- they are
- * {@code default} methods on ProtocolTraits and no implementation should override
- * them with protocol-specific text until schema-based serde lands.
+ * Pins the invariant that the event- and error-payload stubs stay protocol-agnostic
+ * for EVERY protocol -- they are {@code default} methods on {@link ProtocolTraits} and
+ * no implementation should override them with protocol-specific text until
+ * schema-based serde lands.
  */
 class ProtocolTraitsSerdeTest {
 
@@ -54,7 +54,7 @@ class ProtocolTraitsSerdeTest {
         assertFalse(out.contains("XmlNode"), "Should not emit XML tokens for " + p + ": " + out);
     }
 
-    /** The JSON stub bodies formerly asserted in SerdeStubTest. */
+    /** The JSON serde method bodies are empty stubs pending schema-based serde. */
     @Test
     void jsonSerdeMethodImpls_emitEmptyBodies() {
         ProtocolTraits traits = ProtocolResolver.traitsFor(Protocol.JSON);

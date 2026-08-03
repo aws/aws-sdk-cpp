@@ -27,11 +27,13 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * Characterization tests: they assert the generated C++ text produced TODAY, so that
- * the ProtocolTraits refactor can be proven output-preserving.
+ * Characterization tests pinning the exact generated C++ text for every supported
+ * protocol, so that changes to the model renderers or their {@link ProtocolTraits}
+ * strategies cannot silently alter generated output.
  *
- * <p>If one of these fails during the refactor, the refactor changed generated output.
- * Fix the production code, NOT the assertion.
+ * <p>A failure here means generated output changed. Unless the change is intentional,
+ * fix the production code rather than the assertion; if it is intentional, update the
+ * assertion in the same commit that changes the renderer.
  */
 class ProtocolTraitsCharacterizationTest {
 
@@ -103,8 +105,6 @@ class ProtocolTraitsCharacterizationTest {
         MockManifest manifest = new MockManifest();
         CppWriterDelegator delegator = new CppWriterDelegator(manifest);
 
-        // NOTE (Tasks 4-7): when a renderer's ctor switches from Protocol to
-        // ProtocolTraits, change ONLY the argument below -- never the assertions.
         ProtocolTraits traits = ProtocolResolver.traitsFor(resolved);
         new SubObjectRenderer(classified.subObjects(), model, service, traits,
             "Example", "AWS_EXAMPLE_API", "Example", "example").render(delegator);

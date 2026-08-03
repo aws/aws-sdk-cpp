@@ -408,7 +408,7 @@ public final class EventStreamRenderer implements ShapeRenderer {
         });
     }
 
-    // ---- Placeholders filled in by Tasks 4 and 5 ----------------------------
+    // ---- Initial response / event stream union ------------------------------
 
     private void renderInitialResponse(CppWriterDelegator writerDelegator, String opName) {
         String className = opName + "InitialResponse";

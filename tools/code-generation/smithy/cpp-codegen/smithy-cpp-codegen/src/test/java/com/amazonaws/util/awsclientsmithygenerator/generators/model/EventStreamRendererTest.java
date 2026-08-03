@@ -159,7 +159,7 @@ class EventStreamRendererTest {
     }
 
     @Test
-    void initialResponseSource_hasHeaderCtorAndSerdeStub() {
+    void initialResponseSource_hasHeaderCtorDefinition() {
         String c = render("DoStreamInitialResponse.cpp");
         assertTrue(c.contains("DoStreamInitialResponse::DoStreamInitialResponse(const Http::HeaderValueCollection&"),
             "Missing header ctor definition: " + c);
