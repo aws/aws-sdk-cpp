@@ -132,7 +132,7 @@ public final class ServiceNameUtil {
     }
     
     // Match C2jModelToGeneratorModelTransformer.sanitizeServiceAbbreviation() exactly
-    private static String sanitizeServiceAbbreviation(String serviceAbbreviation) {
+    public static String sanitizeServiceAbbreviation(String serviceAbbreviation) {
         return serviceAbbreviation.replace(" ", "").replace("-", "").replace("_", "").replace("Amazon", "").replace("AWS", "").replace("/", "");
     }
     
@@ -163,6 +163,19 @@ public final class ServiceNameUtil {
     public static String getExportMacro(ServiceShape service, Map<String, String> serviceMap) {
         String serviceName = getServiceName(service);
         return "AWS_" + serviceName.toUpperCase() + "_API";
+    }
+
+    /**
+     * Returns the hidden-visibility macro for a service (e.g., "AWS_KINESIS_LOCAL").
+     * Follows C2J convention: AWS_{UPPERCASED_SERVICE_NAME}_LOCAL
+     *
+     * @param service The service shape to generate the macro for
+     * @param serviceMap Service ID mappings for namespace overrides (reserved for future consistency with getSmithyServiceName)
+     * @return The local macro in format AWS_{SERVICE_NAME}_LOCAL
+     */
+    public static String getLocalMacro(ServiceShape service, Map<String, String> serviceMap) {
+        String serviceName = getServiceName(service);
+        return "AWS_" + serviceName.toUpperCase() + "_LOCAL";
     }
 
     public static boolean isS3CrtProjection(ServiceShape service) {

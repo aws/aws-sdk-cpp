@@ -6,6 +6,11 @@
 #set($endpointPrefix = $metadata.endpointPrefix)
 #set($epContextClassName = "${metadata.classNamePrefix}ClientContextParameters")
 #set($epBuiltInClassName = "${metadata.classNamePrefix}BuiltInParameters")
+#if($serviceModel.skipEndpointRulesBlob)
+#set($epProviderType = "BDDEndpointProvider")
+#else
+#set($epProviderType = "DefaultEndpointProvider")
+#end
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}EndpointProvider.h>
 #if ($serviceModel.endpointRules)
 \#include <aws/${metadata.projectName}/internal/${metadata.classNamePrefix}EndpointRules.h>
@@ -24,7 +29,7 @@ template class Aws::Endpoint::EndpointProviderBase<${serviceNamespace}::Endpoint
     ${serviceNamespace}::Endpoint::${epBuiltInClassName},
     ${serviceNamespace}::Endpoint::${epContextClassName}>;
 
-template class Aws::Endpoint::DefaultEndpointProvider<${serviceNamespace}::Endpoint::${metadata.classNamePrefix}ClientConfiguration,
+template class Aws::Endpoint::${epProviderType}<${serviceNamespace}::Endpoint::${metadata.classNamePrefix}ClientConfiguration,
     ${serviceNamespace}::Endpoint::${epBuiltInClassName},
     ${serviceNamespace}::Endpoint::${epContextClassName}>;
 } // namespace Endpoint

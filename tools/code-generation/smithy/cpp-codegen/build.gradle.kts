@@ -45,6 +45,9 @@ tasks.register("generate-smithy-build") {
         val c2jMapStr: String = project.findProperty("c2jMap")?.toString() ?: "{}"
         val namespaceMappings: String = project.findProperty("namespaceMappings")?.toString() ?: "{}"
         val generateModels: Boolean = project.findProperty("generateModels")?.toString()?.toBoolean() ?: false
+        val generateEndpointRules: Boolean = project.findProperty("generateEndpointRules")?.toString()?.toBoolean() ?: false
+        val bddBytecoderPath: String = project.findProperty("bddBytecoderPath")?.toString() ?: ""
+        val pythonExecutable: String = project.findProperty("pythonExecutable")?.toString() ?: "python3"
 
         fileTree(models).filter { it.isFile }.files.forEach eachFile@{ file ->
             val model = Model.assembler()
@@ -72,6 +75,14 @@ tasks.register("generate-smithy-build") {
                 pluginsNode = pluginsNode.withMember("smithy-cpp-codegen-models", Node.objectNodeBuilder()
                     .withMember("c2jMap", Node.from(c2jMapStr))
                     .withMember("namespaceMappings", Node.from(namespaceMappings))
+                    .build())
+            }
+            if (generateEndpointRules) {
+                pluginsNode = pluginsNode.withMember("smithy-cpp-codegen-endpoint-rules", Node.objectNodeBuilder()
+                    .withMember("c2jMap", Node.from(c2jMapStr))
+                    .withMember("namespaceMappings", Node.from(namespaceMappings))
+                    .withMember("bddBytecoderPath", Node.from(bddBytecoderPath))
+                    .withMember("pythonExecutable", Node.from(pythonExecutable))
                     .build())
             }
 
@@ -125,6 +136,14 @@ tasks.register("generate-smithy-build") {
                     s3CrtPluginsNode = s3CrtPluginsNode.withMember("smithy-cpp-codegen-models", Node.objectNodeBuilder()
                         .withMember("c2jMap", Node.from(c2jMapStr))
                         .withMember("namespaceMappings", Node.from(namespaceMappings))
+                        .build())
+                }
+                if (generateEndpointRules) {
+                    s3CrtPluginsNode = s3CrtPluginsNode.withMember("smithy-cpp-codegen-endpoint-rules", Node.objectNodeBuilder()
+                        .withMember("c2jMap", Node.from(c2jMapStr))
+                        .withMember("namespaceMappings", Node.from(namespaceMappings))
+                        .withMember("bddBytecoderPath", Node.from(bddBytecoderPath))
+                        .withMember("pythonExecutable", Node.from(pythonExecutable))
                         .build())
                 }
                 val s3CrtProjectionContents = Node.objectNodeBuilder()
