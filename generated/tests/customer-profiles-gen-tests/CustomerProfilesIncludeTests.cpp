@@ -13,7 +13,6 @@
 #include <aws/customer-profiles/CustomerProfilesRequest.h>
 #include <aws/customer-profiles/CustomerProfilesServiceClientModel.h>
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
-#include <aws/customer-profiles/internal/CustomerProfilesEndpointRules.h>
 #include <aws/customer-profiles/model/ActionType.h>
 #include <aws/customer-profiles/model/AddProfileKeyRequest.h>
 #include <aws/customer-profiles/model/AddProfileKeyResult.h>

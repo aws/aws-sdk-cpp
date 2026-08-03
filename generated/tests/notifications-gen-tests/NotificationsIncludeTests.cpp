@@ -13,7 +13,6 @@
 #include <aws/notifications/NotificationsRequest.h>
 #include <aws/notifications/NotificationsServiceClientModel.h>
 #include <aws/notifications/Notifications_EXPORTS.h>
-#include <aws/notifications/internal/NotificationsEndpointRules.h>
 #include <aws/notifications/model/AccessStatus.h>
 #include <aws/notifications/model/AccountContactType.h>
 #include <aws/notifications/model/AggregationDetail.h>

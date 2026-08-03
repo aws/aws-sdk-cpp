@@ -13,7 +13,6 @@
 #include <aws/sms-voice/PinpointSMSVoiceRequest.h>
 #include <aws/sms-voice/PinpointSMSVoiceServiceClientModel.h>
 #include <aws/sms-voice/PinpointSMSVoice_EXPORTS.h>
-#include <aws/sms-voice/internal/PinpointSMSVoiceEndpointRules.h>
 #include <aws/sms-voice/model/CallInstructionsMessageType.h>
 #include <aws/sms-voice/model/CloudWatchLogsDestination.h>
 #include <aws/sms-voice/model/CreateConfigurationSetEventDestinationRequest.h>

@@ -13,7 +13,6 @@
 #include <aws/ram/RAMRequest.h>
 #include <aws/ram/RAMServiceClientModel.h>
 #include <aws/ram/RAM_EXPORTS.h>
-#include <aws/ram/internal/RAMEndpointRules.h>
 #include <aws/ram/model/AcceptResourceShareInvitationRequest.h>
 #include <aws/ram/model/AcceptResourceShareInvitationResult.h>
 #include <aws/ram/model/AssociateResourceSharePermissionRequest.h>

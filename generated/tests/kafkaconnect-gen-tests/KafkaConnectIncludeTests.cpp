@@ -13,7 +13,6 @@
 #include <aws/kafkaconnect/KafkaConnectRequest.h>
 #include <aws/kafkaconnect/KafkaConnectServiceClientModel.h>
 #include <aws/kafkaconnect/KafkaConnect_EXPORTS.h>
-#include <aws/kafkaconnect/internal/KafkaConnectEndpointRules.h>
 #include <aws/kafkaconnect/model/ApacheKafkaCluster.h>
 #include <aws/kafkaconnect/model/ApacheKafkaClusterDescription.h>
 #include <aws/kafkaconnect/model/AutoScaling.h>

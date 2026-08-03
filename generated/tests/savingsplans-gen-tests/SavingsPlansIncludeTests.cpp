@@ -13,7 +13,6 @@
 #include <aws/savingsplans/SavingsPlansRequest.h>
 #include <aws/savingsplans/SavingsPlansServiceClientModel.h>
 #include <aws/savingsplans/SavingsPlans_EXPORTS.h>
-#include <aws/savingsplans/internal/SavingsPlansEndpointRules.h>
 #include <aws/savingsplans/model/CreateSavingsPlanRequest.h>
 #include <aws/savingsplans/model/CreateSavingsPlanResult.h>
 #include <aws/savingsplans/model/CurrencyCode.h>

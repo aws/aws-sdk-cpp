@@ -13,7 +13,6 @@
 #include <aws/workspaces/WorkSpacesRequest.h>
 #include <aws/workspaces/WorkSpacesServiceClientModel.h>
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
-#include <aws/workspaces/internal/WorkSpacesEndpointRules.h>
 #include <aws/workspaces/model/AGAModeForDirectoryEnum.h>
 #include <aws/workspaces/model/AGAModeForWorkSpaceEnum.h>
 #include <aws/workspaces/model/AGAPreferredProtocolForDirectory.h>

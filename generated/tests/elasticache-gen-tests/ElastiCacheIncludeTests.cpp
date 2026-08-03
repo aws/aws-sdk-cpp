@@ -13,7 +13,6 @@
 #include <aws/elasticache/ElastiCacheRequest.h>
 #include <aws/elasticache/ElastiCacheServiceClientModel.h>
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
-#include <aws/elasticache/internal/ElastiCacheEndpointRules.h>
 #include <aws/elasticache/model/AZMode.h>
 #include <aws/elasticache/model/AddTagsToResourceRequest.h>
 #include <aws/elasticache/model/AddTagsToResourceResult.h>

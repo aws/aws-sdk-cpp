@@ -13,7 +13,6 @@
 #include <aws/taxsettings/TaxSettingsRequest.h>
 #include <aws/taxsettings/TaxSettingsServiceClientModel.h>
 #include <aws/taxsettings/TaxSettings_EXPORTS.h>
-#include <aws/taxsettings/internal/TaxSettingsEndpointRules.h>
 #include <aws/taxsettings/model/AccountDetails.h>
 #include <aws/taxsettings/model/AccountMetaData.h>
 #include <aws/taxsettings/model/AdditionalInfoRequest.h>

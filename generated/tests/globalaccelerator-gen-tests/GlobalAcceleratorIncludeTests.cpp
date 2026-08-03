@@ -13,7 +13,6 @@
 #include <aws/globalaccelerator/GlobalAcceleratorRequest.h>
 #include <aws/globalaccelerator/GlobalAcceleratorServiceClientModel.h>
 #include <aws/globalaccelerator/GlobalAccelerator_EXPORTS.h>
-#include <aws/globalaccelerator/internal/GlobalAcceleratorEndpointRules.h>
 #include <aws/globalaccelerator/model/Accelerator.h>
 #include <aws/globalaccelerator/model/AcceleratorAttributes.h>
 #include <aws/globalaccelerator/model/AcceleratorEvent.h>

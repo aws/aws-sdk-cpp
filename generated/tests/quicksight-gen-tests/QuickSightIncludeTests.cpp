@@ -13,7 +13,6 @@
 #include <aws/quicksight/QuickSightRequest.h>
 #include <aws/quicksight/QuickSightServiceClientModel.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
-#include <aws/quicksight/internal/QuickSightEndpointRules.h>
 #include <aws/quicksight/model/APIKeyConnectionMetadata.h>
 #include <aws/quicksight/model/AccessControlConfiguration.h>
 #include <aws/quicksight/model/AccessDeniedException.h>

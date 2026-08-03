@@ -13,7 +13,6 @@
 #include <aws/connectcampaignsv2/ConnectCampaignsV2Request.h>
 #include <aws/connectcampaignsv2/ConnectCampaignsV2ServiceClientModel.h>
 #include <aws/connectcampaignsv2/ConnectCampaignsV2_EXPORTS.h>
-#include <aws/connectcampaignsv2/internal/ConnectCampaignsV2EndpointRules.h>
 #include <aws/connectcampaignsv2/model/AbandonmentRatePacingConfig.h>
 #include <aws/connectcampaignsv2/model/AccessDeniedException.h>
 #include <aws/connectcampaignsv2/model/AgentAction.h>

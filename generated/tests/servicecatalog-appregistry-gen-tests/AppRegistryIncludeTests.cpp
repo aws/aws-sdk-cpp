@@ -13,7 +13,6 @@
 #include <aws/servicecatalog-appregistry/AppRegistryRequest.h>
 #include <aws/servicecatalog-appregistry/AppRegistryServiceClientModel.h>
 #include <aws/servicecatalog-appregistry/AppRegistry_EXPORTS.h>
-#include <aws/servicecatalog-appregistry/internal/AppRegistryEndpointRules.h>
 #include <aws/servicecatalog-appregistry/model/AppRegistryConfiguration.h>
 #include <aws/servicecatalog-appregistry/model/Application.h>
 #include <aws/servicecatalog-appregistry/model/ApplicationSummary.h>

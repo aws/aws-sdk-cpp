@@ -13,7 +13,6 @@
 #include <aws/dax/DAXRequest.h>
 #include <aws/dax/DAXServiceClientModel.h>
 #include <aws/dax/DAX_EXPORTS.h>
-#include <aws/dax/internal/DAXEndpointRules.h>
 #include <aws/dax/model/ChangeType.h>
 #include <aws/dax/model/Cluster.h>
 #include <aws/dax/model/ClusterEndpointEncryptionType.h>

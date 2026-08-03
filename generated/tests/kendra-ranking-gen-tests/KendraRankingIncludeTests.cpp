@@ -13,7 +13,6 @@
 #include <aws/kendra-ranking/KendraRankingRequest.h>
 #include <aws/kendra-ranking/KendraRankingServiceClientModel.h>
 #include <aws/kendra-ranking/KendraRanking_EXPORTS.h>
-#include <aws/kendra-ranking/internal/KendraRankingEndpointRules.h>
 #include <aws/kendra-ranking/model/CapacityUnitsConfiguration.h>
 #include <aws/kendra-ranking/model/CreateRescoreExecutionPlanRequest.h>
 #include <aws/kendra-ranking/model/CreateRescoreExecutionPlanResult.h>

@@ -13,7 +13,6 @@
 #include <aws/autoscaling-plans/AutoScalingPlansRequest.h>
 #include <aws/autoscaling-plans/AutoScalingPlansServiceClientModel.h>
 #include <aws/autoscaling-plans/AutoScalingPlans_EXPORTS.h>
-#include <aws/autoscaling-plans/internal/AutoScalingPlansEndpointRules.h>
 #include <aws/autoscaling-plans/model/ApplicationSource.h>
 #include <aws/autoscaling-plans/model/CreateScalingPlanRequest.h>
 #include <aws/autoscaling-plans/model/CreateScalingPlanResult.h>

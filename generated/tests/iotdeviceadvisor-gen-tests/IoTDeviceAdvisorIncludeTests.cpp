@@ -13,7 +13,6 @@
 #include <aws/iotdeviceadvisor/IoTDeviceAdvisorRequest.h>
 #include <aws/iotdeviceadvisor/IoTDeviceAdvisorServiceClientModel.h>
 #include <aws/iotdeviceadvisor/IoTDeviceAdvisor_EXPORTS.h>
-#include <aws/iotdeviceadvisor/internal/IoTDeviceAdvisorEndpointRules.h>
 #include <aws/iotdeviceadvisor/model/AuthenticationMethod.h>
 #include <aws/iotdeviceadvisor/model/CreateSuiteDefinitionRequest.h>
 #include <aws/iotdeviceadvisor/model/CreateSuiteDefinitionResult.h>

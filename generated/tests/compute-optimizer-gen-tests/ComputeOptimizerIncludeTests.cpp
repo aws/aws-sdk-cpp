@@ -13,7 +13,6 @@
 #include <aws/compute-optimizer/ComputeOptimizerRequest.h>
 #include <aws/compute-optimizer/ComputeOptimizerServiceClientModel.h>
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
-#include <aws/compute-optimizer/internal/ComputeOptimizerEndpointRules.h>
 #include <aws/compute-optimizer/model/AccountEnrollmentStatus.h>
 #include <aws/compute-optimizer/model/AllocationStrategy.h>
 #include <aws/compute-optimizer/model/AsgType.h>

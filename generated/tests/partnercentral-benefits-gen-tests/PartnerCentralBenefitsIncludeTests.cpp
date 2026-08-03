@@ -13,7 +13,6 @@
 #include <aws/partnercentral-benefits/PartnerCentralBenefitsRequest.h>
 #include <aws/partnercentral-benefits/PartnerCentralBenefitsServiceClientModel.h>
 #include <aws/partnercentral-benefits/PartnerCentralBenefits_EXPORTS.h>
-#include <aws/partnercentral-benefits/internal/PartnerCentralBenefitsEndpointRules.h>
 #include <aws/partnercentral-benefits/model/AccessDetails.h>
 #include <aws/partnercentral-benefits/model/AmendBenefitApplicationRequest.h>
 #include <aws/partnercentral-benefits/model/AmendBenefitApplicationResult.h>

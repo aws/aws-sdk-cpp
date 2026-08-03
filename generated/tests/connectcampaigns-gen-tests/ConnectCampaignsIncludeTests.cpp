@@ -13,7 +13,6 @@
 #include <aws/connectcampaigns/ConnectCampaignsRequest.h>
 #include <aws/connectcampaigns/ConnectCampaignsServiceClientModel.h>
 #include <aws/connectcampaigns/ConnectCampaigns_EXPORTS.h>
-#include <aws/connectcampaigns/internal/ConnectCampaignsEndpointRules.h>
 #include <aws/connectcampaigns/model/AccessDeniedException.h>
 #include <aws/connectcampaigns/model/AgentlessDialerConfig.h>
 #include <aws/connectcampaigns/model/AnswerMachineDetectionConfig.h>

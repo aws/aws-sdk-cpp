@@ -13,7 +13,6 @@
 #include <aws/outposts/OutpostsRequest.h>
 #include <aws/outposts/OutpostsServiceClientModel.h>
 #include <aws/outposts/Outposts_EXPORTS.h>
-#include <aws/outposts/internal/OutpostsEndpointRules.h>
 #include <aws/outposts/model/AWSServiceName.h>
 #include <aws/outposts/model/Address.h>
 #include <aws/outposts/model/AddressType.h>

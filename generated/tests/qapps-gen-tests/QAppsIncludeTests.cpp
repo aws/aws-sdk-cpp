@@ -13,7 +13,6 @@
 #include <aws/qapps/QAppsRequest.h>
 #include <aws/qapps/QAppsServiceClientModel.h>
 #include <aws/qapps/QApps_EXPORTS.h>
-#include <aws/qapps/internal/QAppsEndpointRules.h>
 #include <aws/qapps/model/AppDefinition.h>
 #include <aws/qapps/model/AppDefinitionInput.h>
 #include <aws/qapps/model/AppRequiredCapability.h>

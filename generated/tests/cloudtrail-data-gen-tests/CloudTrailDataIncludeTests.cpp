@@ -13,7 +13,6 @@
 #include <aws/cloudtrail-data/CloudTrailDataRequest.h>
 #include <aws/cloudtrail-data/CloudTrailDataServiceClientModel.h>
 #include <aws/cloudtrail-data/CloudTrailData_EXPORTS.h>
-#include <aws/cloudtrail-data/internal/CloudTrailDataEndpointRules.h>
 #include <aws/cloudtrail-data/model/AuditEvent.h>
 #include <aws/cloudtrail-data/model/AuditEventResultEntry.h>
 #include <aws/cloudtrail-data/model/PutAuditEventsRequest.h>

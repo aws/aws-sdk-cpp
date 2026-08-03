@@ -13,7 +13,6 @@
 #include <aws/workspaces-instances/WorkspacesInstancesRequest.h>
 #include <aws/workspaces-instances/WorkspacesInstancesServiceClientModel.h>
 #include <aws/workspaces-instances/WorkspacesInstances_EXPORTS.h>
-#include <aws/workspaces-instances/internal/WorkspacesInstancesEndpointRules.h>
 #include <aws/workspaces-instances/model/AmdSevSnpEnum.h>
 #include <aws/workspaces-instances/model/AssociateVolumeRequest.h>
 #include <aws/workspaces-instances/model/AssociateVolumeResult.h>

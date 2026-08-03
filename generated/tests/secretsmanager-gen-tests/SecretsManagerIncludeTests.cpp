@@ -13,7 +13,6 @@
 #include <aws/secretsmanager/SecretsManagerRequest.h>
 #include <aws/secretsmanager/SecretsManagerServiceClientModel.h>
 #include <aws/secretsmanager/SecretsManager_EXPORTS.h>
-#include <aws/secretsmanager/internal/SecretsManagerEndpointRules.h>
 #include <aws/secretsmanager/model/APIErrorType.h>
 #include <aws/secretsmanager/model/BatchGetSecretValueRequest.h>
 #include <aws/secretsmanager/model/BatchGetSecretValueResult.h>

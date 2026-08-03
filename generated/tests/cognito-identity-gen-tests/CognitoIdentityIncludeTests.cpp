@@ -13,7 +13,6 @@
 #include <aws/cognito-identity/CognitoIdentityRequest.h>
 #include <aws/cognito-identity/CognitoIdentityServiceClientModel.h>
 #include <aws/cognito-identity/CognitoIdentity_EXPORTS.h>
-#include <aws/cognito-identity/internal/CognitoIdentityEndpointRules.h>
 #include <aws/cognito-identity/model/AmbiguousRoleResolutionType.h>
 #include <aws/cognito-identity/model/CognitoIdentityProvider.h>
 #include <aws/cognito-identity/model/CreateIdentityPoolRequest.h>

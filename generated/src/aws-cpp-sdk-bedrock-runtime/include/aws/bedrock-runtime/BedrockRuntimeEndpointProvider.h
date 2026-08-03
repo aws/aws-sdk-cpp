@@ -6,7 +6,7 @@
 #pragma once
 #include <aws/bedrock-runtime/BedrockRuntimeClientConfiguration.h>
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
-#include <aws/core/endpoint/DefaultEndpointProvider.h>
+#include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -16,7 +16,7 @@ namespace BedrockRuntime {
 namespace Endpoint {
 using BedrockRuntimeClientConfiguration = Aws::BedrockRuntime::BedrockRuntimeClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using BedrockRuntimeClientContextParameters = Aws::Endpoint::ClientContextParameters;
@@ -37,7 +37,7 @@ using BedrockRuntimeEndpointProviderBase =
     EndpointProviderBase<BedrockRuntimeClientConfiguration, BedrockRuntimeBuiltInParameters, BedrockRuntimeClientContextParameters>;
 
 using BedrockRuntimeDefaultEpProviderBase =
-    DefaultEndpointProvider<BedrockRuntimeClientConfiguration, BedrockRuntimeBuiltInParameters, BedrockRuntimeClientContextParameters>;
+    BDDEndpointProvider<BedrockRuntimeClientConfiguration, BedrockRuntimeBuiltInParameters, BedrockRuntimeClientContextParameters>;
 
 }  // namespace Endpoint
 }  // namespace BedrockRuntime
@@ -50,7 +50,7 @@ AWS_BEDROCKRUNTIME_EXTERN template class AWS_BEDROCKRUNTIME_API Aws::Endpoint::E
     BedrockRuntime::Endpoint::BedrockRuntimeClientConfiguration, BedrockRuntime::Endpoint::BedrockRuntimeBuiltInParameters,
     BedrockRuntime::Endpoint::BedrockRuntimeClientContextParameters>;
 
-AWS_BEDROCKRUNTIME_EXTERN template class AWS_BEDROCKRUNTIME_API Aws::Endpoint::DefaultEndpointProvider<
+AWS_BEDROCKRUNTIME_EXTERN template class AWS_BEDROCKRUNTIME_API Aws::Endpoint::BDDEndpointProvider<
     BedrockRuntime::Endpoint::BedrockRuntimeClientConfiguration, BedrockRuntime::Endpoint::BedrockRuntimeBuiltInParameters,
     BedrockRuntime::Endpoint::BedrockRuntimeClientContextParameters>;
 }  // namespace Endpoint

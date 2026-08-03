@@ -13,7 +13,6 @@
 #include <aws/snowball/SnowballRequest.h>
 #include <aws/snowball/SnowballServiceClientModel.h>
 #include <aws/snowball/Snowball_EXPORTS.h>
-#include <aws/snowball/internal/SnowballEndpointRules.h>
 #include <aws/snowball/model/Address.h>
 #include <aws/snowball/model/AddressType.h>
 #include <aws/snowball/model/CancelClusterRequest.h>

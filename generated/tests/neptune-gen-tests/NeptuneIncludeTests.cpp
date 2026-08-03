@@ -13,7 +13,6 @@
 #include <aws/neptune/NeptuneRequest.h>
 #include <aws/neptune/NeptuneServiceClientModel.h>
 #include <aws/neptune/Neptune_EXPORTS.h>
-#include <aws/neptune/internal/NeptuneEndpointRules.h>
 #include <aws/neptune/model/AddRoleToDBClusterRequest.h>
 #include <aws/neptune/model/AddSourceIdentifierToSubscriptionRequest.h>
 #include <aws/neptune/model/AddSourceIdentifierToSubscriptionResult.h>

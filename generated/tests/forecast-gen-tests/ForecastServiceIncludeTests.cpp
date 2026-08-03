@@ -13,7 +13,6 @@
 #include <aws/forecast/ForecastServiceRequest.h>
 #include <aws/forecast/ForecastServiceServiceClientModel.h>
 #include <aws/forecast/ForecastService_EXPORTS.h>
-#include <aws/forecast/internal/ForecastServiceEndpointRules.h>
 #include <aws/forecast/model/Action.h>
 #include <aws/forecast/model/AdditionalDataset.h>
 #include <aws/forecast/model/AttributeConfig.h>

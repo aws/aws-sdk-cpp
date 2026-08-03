@@ -5,7 +5,7 @@
 
 #pragma once
 #include <aws/core/client/GenericClientConfiguration.h>
-#include <aws/core/endpoint/DefaultEndpointProvider.h>
+#include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -15,7 +15,7 @@ namespace Aws {
 namespace Omics {
 namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using OmicsClientContextParameters = Aws::Endpoint::ClientContextParameters;
@@ -30,7 +30,7 @@ using OmicsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
  */
 using OmicsEndpointProviderBase = EndpointProviderBase<OmicsClientConfiguration, OmicsBuiltInParameters, OmicsClientContextParameters>;
 
-using OmicsDefaultEpProviderBase = DefaultEndpointProvider<OmicsClientConfiguration, OmicsBuiltInParameters, OmicsClientContextParameters>;
+using OmicsDefaultEpProviderBase = BDDEndpointProvider<OmicsClientConfiguration, OmicsBuiltInParameters, OmicsClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service

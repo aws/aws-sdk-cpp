@@ -13,7 +13,6 @@
 #include <aws/sagemaker-metrics/SageMakerMetricsRequest.h>
 #include <aws/sagemaker-metrics/SageMakerMetricsServiceClientModel.h>
 #include <aws/sagemaker-metrics/SageMakerMetrics_EXPORTS.h>
-#include <aws/sagemaker-metrics/internal/SageMakerMetricsEndpointRules.h>
 #include <aws/sagemaker-metrics/model/BatchGetMetricsRequest.h>
 #include <aws/sagemaker-metrics/model/BatchGetMetricsResult.h>
 #include <aws/sagemaker-metrics/model/BatchPutMetricsError.h>

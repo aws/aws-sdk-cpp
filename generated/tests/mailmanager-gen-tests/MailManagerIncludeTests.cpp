@@ -13,7 +13,6 @@
 #include <aws/mailmanager/MailManagerRequest.h>
 #include <aws/mailmanager/MailManagerServiceClientModel.h>
 #include <aws/mailmanager/MailManager_EXPORTS.h>
-#include <aws/mailmanager/internal/MailManagerEndpointRules.h>
 #include <aws/mailmanager/model/AcceptAction.h>
 #include <aws/mailmanager/model/ActionFailurePolicy.h>
 #include <aws/mailmanager/model/AddHeaderAction.h>

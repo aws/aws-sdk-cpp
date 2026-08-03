@@ -13,7 +13,6 @@
 #include <aws/cloudcontrol/CloudControlApiRequest.h>
 #include <aws/cloudcontrol/CloudControlApiServiceClientModel.h>
 #include <aws/cloudcontrol/CloudControlApi_EXPORTS.h>
-#include <aws/cloudcontrol/internal/CloudControlApiEndpointRules.h>
 #include <aws/cloudcontrol/model/CancelResourceRequestRequest.h>
 #include <aws/cloudcontrol/model/CancelResourceRequestResult.h>
 #include <aws/cloudcontrol/model/CreateResourceRequest.h>

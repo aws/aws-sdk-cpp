@@ -13,7 +13,6 @@
 #include <aws/codepipeline/CodePipelineRequest.h>
 #include <aws/codepipeline/CodePipelineServiceClientModel.h>
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
-#include <aws/codepipeline/internal/CodePipelineEndpointRules.h>
 #include <aws/codepipeline/model/AWSSessionCredentials.h>
 #include <aws/codepipeline/model/AcknowledgeJobRequest.h>
 #include <aws/codepipeline/model/AcknowledgeJobResult.h>

@@ -13,7 +13,6 @@
 #include <aws/accessanalyzer/AccessAnalyzerRequest.h>
 #include <aws/accessanalyzer/AccessAnalyzerServiceClientModel.h>
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
-#include <aws/accessanalyzer/internal/AccessAnalyzerEndpointRules.h>
 #include <aws/accessanalyzer/model/Access.h>
 #include <aws/accessanalyzer/model/AccessCheckPolicyType.h>
 #include <aws/accessanalyzer/model/AccessCheckResourceType.h>

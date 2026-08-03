@@ -13,7 +13,6 @@
 #include <aws/payment-cryptography/PaymentCryptographyRequest.h>
 #include <aws/payment-cryptography/PaymentCryptographyServiceClientModel.h>
 #include <aws/payment-cryptography/PaymentCryptography_EXPORTS.h>
-#include <aws/payment-cryptography/internal/PaymentCryptographyEndpointRules.h>
 #include <aws/payment-cryptography/model/AddKeyReplicationRegionsRequest.h>
 #include <aws/payment-cryptography/model/AddKeyReplicationRegionsResult.h>
 #include <aws/payment-cryptography/model/Alias.h>

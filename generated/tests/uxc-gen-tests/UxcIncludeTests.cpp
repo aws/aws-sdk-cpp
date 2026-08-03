@@ -13,7 +13,6 @@
 #include <aws/uxc/UxcRequest.h>
 #include <aws/uxc/UxcServiceClientModel.h>
 #include <aws/uxc/Uxc_EXPORTS.h>
-#include <aws/uxc/internal/UxcEndpointRules.h>
 #include <aws/uxc/model/AccountColor.h>
 #include <aws/uxc/model/GetAccountCustomizationsRequest.h>
 #include <aws/uxc/model/GetAccountCustomizationsResult.h>

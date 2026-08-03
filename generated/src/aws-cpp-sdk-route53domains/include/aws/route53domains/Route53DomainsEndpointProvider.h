@@ -5,7 +5,7 @@
 
 #pragma once
 #include <aws/core/client/GenericClientConfiguration.h>
-#include <aws/core/endpoint/DefaultEndpointProvider.h>
+#include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -15,7 +15,7 @@ namespace Aws {
 namespace Route53Domains {
 namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using Route53DomainsClientContextParameters = Aws::Endpoint::ClientContextParameters;
@@ -32,7 +32,7 @@ using Route53DomainsEndpointProviderBase =
     EndpointProviderBase<Route53DomainsClientConfiguration, Route53DomainsBuiltInParameters, Route53DomainsClientContextParameters>;
 
 using Route53DomainsDefaultEpProviderBase =
-    DefaultEndpointProvider<Route53DomainsClientConfiguration, Route53DomainsBuiltInParameters, Route53DomainsClientContextParameters>;
+    BDDEndpointProvider<Route53DomainsClientConfiguration, Route53DomainsBuiltInParameters, Route53DomainsClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service

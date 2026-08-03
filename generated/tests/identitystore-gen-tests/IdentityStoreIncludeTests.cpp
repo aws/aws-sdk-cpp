@@ -13,7 +13,6 @@
 #include <aws/identitystore/IdentityStoreRequest.h>
 #include <aws/identitystore/IdentityStoreServiceClientModel.h>
 #include <aws/identitystore/IdentityStore_EXPORTS.h>
-#include <aws/identitystore/internal/IdentityStoreEndpointRules.h>
 #include <aws/identitystore/model/AccessDeniedException.h>
 #include <aws/identitystore/model/AccessDeniedExceptionReason.h>
 #include <aws/identitystore/model/Address.h>

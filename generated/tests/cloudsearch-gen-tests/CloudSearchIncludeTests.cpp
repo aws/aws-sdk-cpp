@@ -13,7 +13,6 @@
 #include <aws/cloudsearch/CloudSearchRequest.h>
 #include <aws/cloudsearch/CloudSearchServiceClientModel.h>
 #include <aws/cloudsearch/CloudSearch_EXPORTS.h>
-#include <aws/cloudsearch/internal/CloudSearchEndpointRules.h>
 #include <aws/cloudsearch/model/AccessPoliciesStatus.h>
 #include <aws/cloudsearch/model/AlgorithmicStemming.h>
 #include <aws/cloudsearch/model/AnalysisOptions.h>

@@ -6,7 +6,7 @@
 #pragma once
 #include <aws/bedrock/BedrockClientConfiguration.h>
 #include <aws/bedrock/Bedrock_EXPORTS.h>
-#include <aws/core/endpoint/DefaultEndpointProvider.h>
+#include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -16,7 +16,7 @@ namespace Bedrock {
 namespace Endpoint {
 using BedrockClientConfiguration = Aws::Bedrock::BedrockClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using BedrockClientContextParameters = Aws::Endpoint::ClientContextParameters;
@@ -37,7 +37,7 @@ using BedrockEndpointProviderBase =
     EndpointProviderBase<BedrockClientConfiguration, BedrockBuiltInParameters, BedrockClientContextParameters>;
 
 using BedrockDefaultEpProviderBase =
-    DefaultEndpointProvider<BedrockClientConfiguration, BedrockBuiltInParameters, BedrockClientContextParameters>;
+    BDDEndpointProvider<BedrockClientConfiguration, BedrockBuiltInParameters, BedrockClientContextParameters>;
 
 }  // namespace Endpoint
 }  // namespace Bedrock
@@ -51,8 +51,8 @@ AWS_BEDROCK_EXTERN template class AWS_BEDROCK_API
                                         Bedrock::Endpoint::BedrockClientContextParameters>;
 
 AWS_BEDROCK_EXTERN template class AWS_BEDROCK_API
-    Aws::Endpoint::DefaultEndpointProvider<Bedrock::Endpoint::BedrockClientConfiguration, Bedrock::Endpoint::BedrockBuiltInParameters,
-                                           Bedrock::Endpoint::BedrockClientContextParameters>;
+    Aws::Endpoint::BDDEndpointProvider<Bedrock::Endpoint::BedrockClientConfiguration, Bedrock::Endpoint::BedrockBuiltInParameters,
+                                       Bedrock::Endpoint::BedrockClientContextParameters>;
 }  // namespace Endpoint
 
 namespace Bedrock {

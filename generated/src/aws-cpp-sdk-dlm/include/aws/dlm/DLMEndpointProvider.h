@@ -5,7 +5,7 @@
 
 #pragma once
 #include <aws/core/client/GenericClientConfiguration.h>
-#include <aws/core/endpoint/DefaultEndpointProvider.h>
+#include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -15,7 +15,7 @@ namespace Aws {
 namespace DLM {
 namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using DLMClientContextParameters = Aws::Endpoint::ClientContextParameters;
@@ -30,7 +30,7 @@ using DLMBuiltInParameters = Aws::Endpoint::BuiltInParameters;
  */
 using DLMEndpointProviderBase = EndpointProviderBase<DLMClientConfiguration, DLMBuiltInParameters, DLMClientContextParameters>;
 
-using DLMDefaultEpProviderBase = DefaultEndpointProvider<DLMClientConfiguration, DLMBuiltInParameters, DLMClientContextParameters>;
+using DLMDefaultEpProviderBase = BDDEndpointProvider<DLMClientConfiguration, DLMBuiltInParameters, DLMClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service

@@ -16,9 +16,9 @@ template class Aws::Endpoint::EndpointProviderBase<Bedrock::Endpoint::BedrockCli
                                                    Bedrock::Endpoint::BedrockBuiltInParameters,
                                                    Bedrock::Endpoint::BedrockClientContextParameters>;
 
-template class Aws::Endpoint::DefaultEndpointProvider<Bedrock::Endpoint::BedrockClientConfiguration,
-                                                      Bedrock::Endpoint::BedrockBuiltInParameters,
-                                                      Bedrock::Endpoint::BedrockClientContextParameters>;
+template class Aws::Endpoint::BDDEndpointProvider<Bedrock::Endpoint::BedrockClientConfiguration,
+                                                  Bedrock::Endpoint::BedrockBuiltInParameters,
+                                                  Bedrock::Endpoint::BedrockClientContextParameters>;
 }  // namespace Endpoint
 #endif
 

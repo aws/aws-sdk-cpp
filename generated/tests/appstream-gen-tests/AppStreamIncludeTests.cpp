@@ -13,7 +13,6 @@
 #include <aws/appstream/AppStreamRequest.h>
 #include <aws/appstream/AppStreamServiceClientModel.h>
 #include <aws/appstream/AppStream_EXPORTS.h>
-#include <aws/appstream/internal/AppStreamEndpointRules.h>
 #include <aws/appstream/model/AccessEndpoint.h>
 #include <aws/appstream/model/AccessEndpointType.h>
 #include <aws/appstream/model/Action.h>

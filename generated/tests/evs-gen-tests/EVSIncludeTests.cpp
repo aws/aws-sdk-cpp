@@ -13,7 +13,6 @@
 #include <aws/evs/EVSRequest.h>
 #include <aws/evs/EVSServiceClientModel.h>
 #include <aws/evs/EVS_EXPORTS.h>
-#include <aws/evs/internal/EVSEndpointRules.h>
 #include <aws/evs/model/AssociateEipToVlanRequest.h>
 #include <aws/evs/model/AssociateEipToVlanResult.h>
 #include <aws/evs/model/Check.h>

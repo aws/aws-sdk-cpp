@@ -13,7 +13,6 @@
 #include <aws/bcm-dashboards/BCMDashboardsRequest.h>
 #include <aws/bcm-dashboards/BCMDashboardsServiceClientModel.h>
 #include <aws/bcm-dashboards/BCMDashboards_EXPORTS.h>
-#include <aws/bcm-dashboards/internal/BCMDashboardsEndpointRules.h>
 #include <aws/bcm-dashboards/model/CostAndUsageQuery.h>
 #include <aws/bcm-dashboards/model/CostCategoryValues.h>
 #include <aws/bcm-dashboards/model/CreateDashboardRequest.h>

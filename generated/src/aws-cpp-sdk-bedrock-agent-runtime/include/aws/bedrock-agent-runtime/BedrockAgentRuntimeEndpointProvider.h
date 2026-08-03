@@ -6,7 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeClientConfiguration.h>
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/core/endpoint/DefaultEndpointProvider.h>
+#include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -16,7 +16,7 @@ namespace BedrockAgentRuntime {
 namespace Endpoint {
 using BedrockAgentRuntimeClientConfiguration = Aws::BedrockAgentRuntime::BedrockAgentRuntimeClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using BedrockAgentRuntimeClientContextParameters = Aws::Endpoint::ClientContextParameters;
@@ -38,8 +38,8 @@ using BedrockAgentRuntimeEndpointProviderBase =
                          BedrockAgentRuntimeClientContextParameters>;
 
 using BedrockAgentRuntimeDefaultEpProviderBase =
-    DefaultEndpointProvider<BedrockAgentRuntimeClientConfiguration, BedrockAgentRuntimeBuiltInParameters,
-                            BedrockAgentRuntimeClientContextParameters>;
+    BDDEndpointProvider<BedrockAgentRuntimeClientConfiguration, BedrockAgentRuntimeBuiltInParameters,
+                        BedrockAgentRuntimeClientContextParameters>;
 
 }  // namespace Endpoint
 }  // namespace BedrockAgentRuntime
@@ -54,9 +54,9 @@ AWS_BEDROCKAGENTRUNTIME_EXTERN template class AWS_BEDROCKAGENTRUNTIME_API
                                         BedrockAgentRuntime::Endpoint::BedrockAgentRuntimeClientContextParameters>;
 
 AWS_BEDROCKAGENTRUNTIME_EXTERN template class AWS_BEDROCKAGENTRUNTIME_API
-    Aws::Endpoint::DefaultEndpointProvider<BedrockAgentRuntime::Endpoint::BedrockAgentRuntimeClientConfiguration,
-                                           BedrockAgentRuntime::Endpoint::BedrockAgentRuntimeBuiltInParameters,
-                                           BedrockAgentRuntime::Endpoint::BedrockAgentRuntimeClientContextParameters>;
+    Aws::Endpoint::BDDEndpointProvider<BedrockAgentRuntime::Endpoint::BedrockAgentRuntimeClientConfiguration,
+                                       BedrockAgentRuntime::Endpoint::BedrockAgentRuntimeBuiltInParameters,
+                                       BedrockAgentRuntime::Endpoint::BedrockAgentRuntimeClientContextParameters>;
 }  // namespace Endpoint
 
 namespace BedrockAgentRuntime {

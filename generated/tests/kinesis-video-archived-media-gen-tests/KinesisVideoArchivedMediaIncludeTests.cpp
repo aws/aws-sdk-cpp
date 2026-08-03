@@ -13,7 +13,6 @@
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaRequest.h>
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaServiceClientModel.h>
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMedia_EXPORTS.h>
-#include <aws/kinesis-video-archived-media/internal/KinesisVideoArchivedMediaEndpointRules.h>
 #include <aws/kinesis-video-archived-media/model/ClipFragmentSelector.h>
 #include <aws/kinesis-video-archived-media/model/ClipFragmentSelectorType.h>
 #include <aws/kinesis-video-archived-media/model/ClipTimestampRange.h>

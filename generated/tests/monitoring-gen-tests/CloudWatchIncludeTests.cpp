@@ -13,7 +13,6 @@
 #include <aws/monitoring/CloudWatchRequest.h>
 #include <aws/monitoring/CloudWatchServiceClientModel.h>
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
-#include <aws/monitoring/internal/CloudWatchEndpointRules.h>
 #include <aws/monitoring/model/ActionsSuppressedBy.h>
 #include <aws/monitoring/model/AlarmContributor.h>
 #include <aws/monitoring/model/AlarmHistoryItem.h>

@@ -5,7 +5,7 @@
 
 #pragma once
 #include <aws/core/client/GenericClientConfiguration.h>
-#include <aws/core/endpoint/DefaultEndpointProvider.h>
+#include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -15,7 +15,7 @@ namespace Aws {
 namespace LexRuntimeV2 {
 namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using LexRuntimeV2ClientContextParameters = Aws::Endpoint::ClientContextParameters;
@@ -32,7 +32,7 @@ using LexRuntimeV2EndpointProviderBase =
     EndpointProviderBase<LexRuntimeV2ClientConfiguration, LexRuntimeV2BuiltInParameters, LexRuntimeV2ClientContextParameters>;
 
 using LexRuntimeV2DefaultEpProviderBase =
-    DefaultEndpointProvider<LexRuntimeV2ClientConfiguration, LexRuntimeV2BuiltInParameters, LexRuntimeV2ClientContextParameters>;
+    BDDEndpointProvider<LexRuntimeV2ClientConfiguration, LexRuntimeV2BuiltInParameters, LexRuntimeV2ClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service

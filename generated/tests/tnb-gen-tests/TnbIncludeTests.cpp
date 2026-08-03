@@ -13,7 +13,6 @@
 #include <aws/tnb/TnbRequest.h>
 #include <aws/tnb/TnbServiceClientModel.h>
 #include <aws/tnb/Tnb_EXPORTS.h>
-#include <aws/tnb/internal/TnbEndpointRules.h>
 #include <aws/tnb/model/CancelSolNetworkOperationRequest.h>
 #include <aws/tnb/model/CreateSolFunctionPackageRequest.h>
 #include <aws/tnb/model/CreateSolFunctionPackageResult.h>

@@ -13,7 +13,6 @@
 #include <aws/health/HealthRequest.h>
 #include <aws/health/HealthServiceClientModel.h>
 #include <aws/health/Health_EXPORTS.h>
-#include <aws/health/internal/HealthEndpointRules.h>
 #include <aws/health/model/AccountEntityAggregate.h>
 #include <aws/health/model/AffectedEntity.h>
 #include <aws/health/model/DateTimeRange.h>

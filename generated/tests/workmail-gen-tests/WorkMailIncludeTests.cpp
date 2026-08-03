@@ -13,7 +13,6 @@
 #include <aws/workmail/WorkMailRequest.h>
 #include <aws/workmail/WorkMailServiceClientModel.h>
 #include <aws/workmail/WorkMail_EXPORTS.h>
-#include <aws/workmail/internal/WorkMailEndpointRules.h>
 #include <aws/workmail/model/AccessControlRule.h>
 #include <aws/workmail/model/AccessControlRuleEffect.h>
 #include <aws/workmail/model/AccessEffect.h>

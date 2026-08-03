@@ -13,7 +13,6 @@
 #include <aws/devops-guru/DevOpsGuruRequest.h>
 #include <aws/devops-guru/DevOpsGuruServiceClientModel.h>
 #include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
-#include <aws/devops-guru/internal/DevOpsGuruEndpointRules.h>
 #include <aws/devops-guru/model/AccountHealth.h>
 #include <aws/devops-guru/model/AccountInsightHealth.h>
 #include <aws/devops-guru/model/AddNotificationChannelRequest.h>

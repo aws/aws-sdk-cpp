@@ -13,7 +13,6 @@
 #include <aws/license-manager-linux-subscriptions/LicenseManagerLinuxSubscriptionsRequest.h>
 #include <aws/license-manager-linux-subscriptions/LicenseManagerLinuxSubscriptionsServiceClientModel.h>
 #include <aws/license-manager-linux-subscriptions/LicenseManagerLinuxSubscriptions_EXPORTS.h>
-#include <aws/license-manager-linux-subscriptions/internal/LicenseManagerLinuxSubscriptionsEndpointRules.h>
 #include <aws/license-manager-linux-subscriptions/model/DeregisterSubscriptionProviderRequest.h>
 #include <aws/license-manager-linux-subscriptions/model/DeregisterSubscriptionProviderResult.h>
 #include <aws/license-manager-linux-subscriptions/model/Filter.h>

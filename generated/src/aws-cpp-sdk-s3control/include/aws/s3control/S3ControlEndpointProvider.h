@@ -4,7 +4,7 @@
  */
 
 #pragma once
-#include <aws/core/endpoint/DefaultEndpointProvider.h>
+#include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -16,7 +16,7 @@ namespace S3Control {
 namespace Endpoint {
 using S3ControlClientConfiguration = Aws::S3Control::S3ControlClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 class AWS_S3CONTROL_API S3ControlClientContextParameters : public Aws::Endpoint::ClientContextParameters {
@@ -46,7 +46,7 @@ using S3ControlEndpointProviderBase =
     EndpointProviderBase<S3ControlClientConfiguration, S3ControlBuiltInParameters, S3ControlClientContextParameters>;
 
 using S3ControlDefaultEpProviderBase =
-    DefaultEndpointProvider<S3ControlClientConfiguration, S3ControlBuiltInParameters, S3ControlClientContextParameters>;
+    BDDEndpointProvider<S3ControlClientConfiguration, S3ControlBuiltInParameters, S3ControlClientContextParameters>;
 
 }  // namespace Endpoint
 }  // namespace S3Control
@@ -59,9 +59,9 @@ AWS_S3CONTROL_EXTERN template class AWS_S3CONTROL_API
     Aws::Endpoint::EndpointProviderBase<S3Control::Endpoint::S3ControlClientConfiguration, S3Control::Endpoint::S3ControlBuiltInParameters,
                                         S3Control::Endpoint::S3ControlClientContextParameters>;
 
-AWS_S3CONTROL_EXTERN template class AWS_S3CONTROL_API Aws::Endpoint::DefaultEndpointProvider<
-    S3Control::Endpoint::S3ControlClientConfiguration, S3Control::Endpoint::S3ControlBuiltInParameters,
-    S3Control::Endpoint::S3ControlClientContextParameters>;
+AWS_S3CONTROL_EXTERN template class AWS_S3CONTROL_API
+    Aws::Endpoint::BDDEndpointProvider<S3Control::Endpoint::S3ControlClientConfiguration, S3Control::Endpoint::S3ControlBuiltInParameters,
+                                       S3Control::Endpoint::S3ControlClientContextParameters>;
 }  // namespace Endpoint
 
 namespace S3Control {

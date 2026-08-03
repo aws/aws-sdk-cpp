@@ -13,7 +13,6 @@
 #include <aws/sagemakerjobruntime/SagemakerJobRuntimeRequest.h>
 #include <aws/sagemakerjobruntime/SagemakerJobRuntimeServiceClientModel.h>
 #include <aws/sagemakerjobruntime/SagemakerJobRuntime_EXPORTS.h>
-#include <aws/sagemakerjobruntime/internal/SagemakerJobRuntimeEndpointRules.h>
 #include <aws/sagemakerjobruntime/model/CompleteRolloutRequest.h>
 #include <aws/sagemakerjobruntime/model/CompleteRolloutResult.h>
 #include <aws/sagemakerjobruntime/model/CompletionStatus.h>

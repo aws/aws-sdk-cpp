@@ -13,7 +13,6 @@
 #include <aws/athena/AthenaRequest.h>
 #include <aws/athena/AthenaServiceClientModel.h>
 #include <aws/athena/Athena_EXPORTS.h>
-#include <aws/athena/internal/AthenaEndpointRules.h>
 #include <aws/athena/model/AclConfiguration.h>
 #include <aws/athena/model/ApplicationDPUSizes.h>
 #include <aws/athena/model/AthenaError.h>

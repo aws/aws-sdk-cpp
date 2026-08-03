@@ -13,7 +13,6 @@
 #include <aws/appmesh/AppMeshRequest.h>
 #include <aws/appmesh/AppMeshServiceClientModel.h>
 #include <aws/appmesh/AppMesh_EXPORTS.h>
-#include <aws/appmesh/internal/AppMeshEndpointRules.h>
 #include <aws/appmesh/model/AccessLog.h>
 #include <aws/appmesh/model/AwsCloudMapInstanceAttribute.h>
 #include <aws/appmesh/model/AwsCloudMapServiceDiscovery.h>

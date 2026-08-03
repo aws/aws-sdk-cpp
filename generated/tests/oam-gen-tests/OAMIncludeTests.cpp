@@ -13,7 +13,6 @@
 #include <aws/oam/OAMRequest.h>
 #include <aws/oam/OAMServiceClientModel.h>
 #include <aws/oam/OAM_EXPORTS.h>
-#include <aws/oam/internal/OAMEndpointRules.h>
 #include <aws/oam/model/ConflictException.h>
 #include <aws/oam/model/CreateLinkRequest.h>
 #include <aws/oam/model/CreateLinkResult.h>

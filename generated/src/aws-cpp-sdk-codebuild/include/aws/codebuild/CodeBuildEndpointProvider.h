@@ -6,7 +6,7 @@
 #pragma once
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
-#include <aws/core/endpoint/DefaultEndpointProvider.h>
+#include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -15,7 +15,7 @@ namespace Aws {
 namespace CodeBuild {
 namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using CodeBuildClientContextParameters = Aws::Endpoint::ClientContextParameters;
@@ -32,7 +32,7 @@ using CodeBuildEndpointProviderBase =
     EndpointProviderBase<CodeBuildClientConfiguration, CodeBuildBuiltInParameters, CodeBuildClientContextParameters>;
 
 using CodeBuildDefaultEpProviderBase =
-    DefaultEndpointProvider<CodeBuildClientConfiguration, CodeBuildBuiltInParameters, CodeBuildClientContextParameters>;
+    BDDEndpointProvider<CodeBuildClientConfiguration, CodeBuildBuiltInParameters, CodeBuildClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service

@@ -13,7 +13,6 @@
 #include <aws/sagemaker/SageMakerRequest.h>
 #include <aws/sagemaker/SageMakerServiceClientModel.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
-#include <aws/sagemaker/internal/SageMakerEndpointRules.h>
 #include <aws/sagemaker/model/AIAdapterModelPackageEntry.h>
 #include <aws/sagemaker/model/AIAdapterS3Entry.h>
 #include <aws/sagemaker/model/AIAdapterSource.h>

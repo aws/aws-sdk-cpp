@@ -13,7 +13,6 @@
 #include <aws/amplify/AmplifyRequest.h>
 #include <aws/amplify/AmplifyServiceClientModel.h>
 #include <aws/amplify/Amplify_EXPORTS.h>
-#include <aws/amplify/internal/AmplifyEndpointRules.h>
 #include <aws/amplify/model/App.h>
 #include <aws/amplify/model/Artifact.h>
 #include <aws/amplify/model/AutoBranchCreationConfig.h>

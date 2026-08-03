@@ -13,7 +13,6 @@
 #include <aws/serverlessrepo/ServerlessApplicationRepositoryRequest.h>
 #include <aws/serverlessrepo/ServerlessApplicationRepositoryServiceClientModel.h>
 #include <aws/serverlessrepo/ServerlessApplicationRepository_EXPORTS.h>
-#include <aws/serverlessrepo/internal/ServerlessApplicationRepositoryEndpointRules.h>
 #include <aws/serverlessrepo/model/ApplicationDependencySummary.h>
 #include <aws/serverlessrepo/model/ApplicationPolicyStatement.h>
 #include <aws/serverlessrepo/model/ApplicationSummary.h>

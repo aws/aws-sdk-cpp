@@ -13,7 +13,6 @@
 #include <aws/signer-data/SignerDataRequest.h>
 #include <aws/signer-data/SignerDataServiceClientModel.h>
 #include <aws/signer-data/SignerData_EXPORTS.h>
-#include <aws/signer-data/internal/SignerDataEndpointRules.h>
 #include <aws/signer-data/model/AccessDeniedException.h>
 #include <aws/signer-data/model/GetRevocationStatusRequest.h>
 #include <aws/signer-data/model/GetRevocationStatusResult.h>

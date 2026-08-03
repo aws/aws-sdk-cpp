@@ -13,7 +13,6 @@
 #include <aws/backup-gateway/BackupGatewayRequest.h>
 #include <aws/backup-gateway/BackupGatewayServiceClientModel.h>
 #include <aws/backup-gateway/BackupGateway_EXPORTS.h>
-#include <aws/backup-gateway/internal/BackupGatewayEndpointRules.h>
 #include <aws/backup-gateway/model/AccessDeniedException.h>
 #include <aws/backup-gateway/model/AssociateGatewayToServerRequest.h>
 #include <aws/backup-gateway/model/AssociateGatewayToServerResult.h>

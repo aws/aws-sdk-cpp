@@ -13,7 +13,6 @@
 #include <aws/rolesanywhere/RolesAnywhereRequest.h>
 #include <aws/rolesanywhere/RolesAnywhereServiceClientModel.h>
 #include <aws/rolesanywhere/RolesAnywhere_EXPORTS.h>
-#include <aws/rolesanywhere/internal/RolesAnywhereEndpointRules.h>
 #include <aws/rolesanywhere/model/AttributeMapping.h>
 #include <aws/rolesanywhere/model/CertificateField.h>
 #include <aws/rolesanywhere/model/CreateProfileRequest.h>

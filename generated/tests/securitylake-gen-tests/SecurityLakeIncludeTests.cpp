@@ -13,7 +13,6 @@
 #include <aws/securitylake/SecurityLakeRequest.h>
 #include <aws/securitylake/SecurityLakeServiceClientModel.h>
 #include <aws/securitylake/SecurityLake_EXPORTS.h>
-#include <aws/securitylake/internal/SecurityLakeEndpointRules.h>
 #include <aws/securitylake/model/AccessDeniedException.h>
 #include <aws/securitylake/model/AccessType.h>
 #include <aws/securitylake/model/AwsIdentity.h>

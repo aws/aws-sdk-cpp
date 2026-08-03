@@ -13,7 +13,6 @@
 #include <aws/ivschat/IvschatRequest.h>
 #include <aws/ivschat/IvschatServiceClientModel.h>
 #include <aws/ivschat/Ivschat_EXPORTS.h>
-#include <aws/ivschat/internal/IvschatEndpointRules.h>
 #include <aws/ivschat/model/ChatTokenCapability.h>
 #include <aws/ivschat/model/CloudWatchLogsDestinationConfiguration.h>
 #include <aws/ivschat/model/ConflictException.h>

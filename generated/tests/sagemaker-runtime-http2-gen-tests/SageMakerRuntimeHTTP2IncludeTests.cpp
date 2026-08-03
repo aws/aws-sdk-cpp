@@ -13,7 +13,6 @@
 #include <aws/sagemaker-runtime-http2/SageMakerRuntimeHTTP2Request.h>
 #include <aws/sagemaker-runtime-http2/SageMakerRuntimeHTTP2ServiceClientModel.h>
 #include <aws/sagemaker-runtime-http2/SageMakerRuntimeHTTP2_EXPORTS.h>
-#include <aws/sagemaker-runtime-http2/internal/SageMakerRuntimeHTTP2EndpointRules.h>
 #include <aws/sagemaker-runtime-http2/model/InputValidationError.h>
 #include <aws/sagemaker-runtime-http2/model/InternalServerError.h>
 #include <aws/sagemaker-runtime-http2/model/InvokeEndpointWithBidirectionalStreamHandler.h>

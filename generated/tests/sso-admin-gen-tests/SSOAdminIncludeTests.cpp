@@ -13,7 +13,6 @@
 #include <aws/sso-admin/SSOAdminRequest.h>
 #include <aws/sso-admin/SSOAdminServiceClientModel.h>
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
-#include <aws/sso-admin/internal/SSOAdminEndpointRules.h>
 #include <aws/sso-admin/model/AccessControlAttribute.h>
 #include <aws/sso-admin/model/AccessControlAttributeValue.h>
 #include <aws/sso-admin/model/AccessDeniedException.h>

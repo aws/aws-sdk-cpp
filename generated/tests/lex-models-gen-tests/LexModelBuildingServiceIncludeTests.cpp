@@ -13,7 +13,6 @@
 #include <aws/lex-models/LexModelBuildingServiceRequest.h>
 #include <aws/lex-models/LexModelBuildingServiceServiceClientModel.h>
 #include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
-#include <aws/lex-models/internal/LexModelBuildingServiceEndpointRules.h>
 #include <aws/lex-models/model/BotAliasMetadata.h>
 #include <aws/lex-models/model/BotChannelAssociation.h>
 #include <aws/lex-models/model/BotMetadata.h>

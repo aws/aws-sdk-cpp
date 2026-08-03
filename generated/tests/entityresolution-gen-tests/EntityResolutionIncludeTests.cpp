@@ -13,7 +13,6 @@
 #include <aws/entityresolution/EntityResolutionRequest.h>
 #include <aws/entityresolution/EntityResolutionServiceClientModel.h>
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
-#include <aws/entityresolution/internal/EntityResolutionEndpointRules.h>
 #include <aws/entityresolution/model/AddPolicyStatementRequest.h>
 #include <aws/entityresolution/model/AddPolicyStatementResult.h>
 #include <aws/entityresolution/model/AttributeMatchingModel.h>

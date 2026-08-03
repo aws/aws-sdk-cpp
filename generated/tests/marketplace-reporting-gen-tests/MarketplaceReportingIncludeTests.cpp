@@ -13,7 +13,6 @@
 #include <aws/marketplace-reporting/MarketplaceReportingRequest.h>
 #include <aws/marketplace-reporting/MarketplaceReportingServiceClientModel.h>
 #include <aws/marketplace-reporting/MarketplaceReporting_EXPORTS.h>
-#include <aws/marketplace-reporting/internal/MarketplaceReportingEndpointRules.h>
 #include <aws/marketplace-reporting/model/GetBuyerDashboardRequest.h>
 #include <aws/marketplace-reporting/model/GetBuyerDashboardResult.h>
 

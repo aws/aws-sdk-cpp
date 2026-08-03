@@ -13,7 +13,6 @@
 #include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalyticsRequest.h>
 #include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalyticsServiceClientModel.h>
 #include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalytics_EXPORTS.h>
-#include <aws/marketplacecommerceanalytics/internal/MarketplaceCommerceAnalyticsEndpointRules.h>
 #include <aws/marketplacecommerceanalytics/model/DataSetType.h>
 #include <aws/marketplacecommerceanalytics/model/GenerateDataSetRequest.h>
 #include <aws/marketplacecommerceanalytics/model/GenerateDataSetResult.h>

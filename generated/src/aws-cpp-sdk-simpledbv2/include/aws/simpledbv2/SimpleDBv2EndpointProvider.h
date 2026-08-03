@@ -5,7 +5,7 @@
 
 #pragma once
 #include <aws/core/client/GenericClientConfiguration.h>
-#include <aws/core/endpoint/DefaultEndpointProvider.h>
+#include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -15,7 +15,7 @@ namespace Aws {
 namespace SimpleDBv2 {
 namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using SimpleDBv2ClientContextParameters = Aws::Endpoint::ClientContextParameters;
@@ -32,7 +32,7 @@ using SimpleDBv2EndpointProviderBase =
     EndpointProviderBase<SimpleDBv2ClientConfiguration, SimpleDBv2BuiltInParameters, SimpleDBv2ClientContextParameters>;
 
 using SimpleDBv2DefaultEpProviderBase =
-    DefaultEndpointProvider<SimpleDBv2ClientConfiguration, SimpleDBv2BuiltInParameters, SimpleDBv2ClientContextParameters>;
+    BDDEndpointProvider<SimpleDBv2ClientConfiguration, SimpleDBv2BuiltInParameters, SimpleDBv2ClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service

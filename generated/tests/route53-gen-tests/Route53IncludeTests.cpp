@@ -13,7 +13,6 @@
 #include <aws/route53/Route53Request.h>
 #include <aws/route53/Route53ServiceClientModel.h>
 #include <aws/route53/Route53_EXPORTS.h>
-#include <aws/route53/internal/Route53EndpointRules.h>
 #include <aws/route53/model/AcceleratedRecoveryStatus.h>
 #include <aws/route53/model/AccountLimit.h>
 #include <aws/route53/model/AccountLimitType.h>

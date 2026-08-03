@@ -13,7 +13,6 @@
 #include <aws/datapipeline/DataPipelineRequest.h>
 #include <aws/datapipeline/DataPipelineServiceClientModel.h>
 #include <aws/datapipeline/DataPipeline_EXPORTS.h>
-#include <aws/datapipeline/internal/DataPipelineEndpointRules.h>
 #include <aws/datapipeline/model/ActivatePipelineRequest.h>
 #include <aws/datapipeline/model/ActivatePipelineResult.h>
 #include <aws/datapipeline/model/AddTagsRequest.h>

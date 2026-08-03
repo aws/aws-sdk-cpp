@@ -13,7 +13,6 @@
 #include <aws/repostspace/RepostspaceRequest.h>
 #include <aws/repostspace/RepostspaceServiceClientModel.h>
 #include <aws/repostspace/Repostspace_EXPORTS.h>
-#include <aws/repostspace/internal/RepostspaceEndpointRules.h>
 #include <aws/repostspace/model/BatchAddChannelRoleToAccessorsRequest.h>
 #include <aws/repostspace/model/BatchAddChannelRoleToAccessorsResult.h>
 #include <aws/repostspace/model/BatchAddRoleRequest.h>

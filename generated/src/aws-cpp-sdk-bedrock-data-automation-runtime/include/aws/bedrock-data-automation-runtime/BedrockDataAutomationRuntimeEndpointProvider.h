@@ -6,7 +6,7 @@
 #pragma once
 #include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntimeClientConfiguration.h>
 #include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntime_EXPORTS.h>
-#include <aws/core/endpoint/DefaultEndpointProvider.h>
+#include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -16,7 +16,7 @@ namespace BedrockDataAutomationRuntime {
 namespace Endpoint {
 using BedrockDataAutomationRuntimeClientConfiguration = Aws::BedrockDataAutomationRuntime::BedrockDataAutomationRuntimeClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using BedrockDataAutomationRuntimeClientContextParameters = Aws::Endpoint::ClientContextParameters;
@@ -38,8 +38,8 @@ using BedrockDataAutomationRuntimeEndpointProviderBase =
                          BedrockDataAutomationRuntimeClientContextParameters>;
 
 using BedrockDataAutomationRuntimeDefaultEpProviderBase =
-    DefaultEndpointProvider<BedrockDataAutomationRuntimeClientConfiguration, BedrockDataAutomationRuntimeBuiltInParameters,
-                            BedrockDataAutomationRuntimeClientContextParameters>;
+    BDDEndpointProvider<BedrockDataAutomationRuntimeClientConfiguration, BedrockDataAutomationRuntimeBuiltInParameters,
+                        BedrockDataAutomationRuntimeClientContextParameters>;
 
 }  // namespace Endpoint
 }  // namespace BedrockDataAutomationRuntime
@@ -54,9 +54,9 @@ AWS_BEDROCKDATAAUTOMATIONRUNTIME_EXTERN template class AWS_BEDROCKDATAAUTOMATION
                                         BedrockDataAutomationRuntime::Endpoint::BedrockDataAutomationRuntimeClientContextParameters>;
 
 AWS_BEDROCKDATAAUTOMATIONRUNTIME_EXTERN template class AWS_BEDROCKDATAAUTOMATIONRUNTIME_API
-    Aws::Endpoint::DefaultEndpointProvider<BedrockDataAutomationRuntime::Endpoint::BedrockDataAutomationRuntimeClientConfiguration,
-                                           BedrockDataAutomationRuntime::Endpoint::BedrockDataAutomationRuntimeBuiltInParameters,
-                                           BedrockDataAutomationRuntime::Endpoint::BedrockDataAutomationRuntimeClientContextParameters>;
+    Aws::Endpoint::BDDEndpointProvider<BedrockDataAutomationRuntime::Endpoint::BedrockDataAutomationRuntimeClientConfiguration,
+                                       BedrockDataAutomationRuntime::Endpoint::BedrockDataAutomationRuntimeBuiltInParameters,
+                                       BedrockDataAutomationRuntime::Endpoint::BedrockDataAutomationRuntimeClientContextParameters>;
 }  // namespace Endpoint
 
 namespace BedrockDataAutomationRuntime {

@@ -13,7 +13,6 @@
 #include <aws/waf/WAFRequest.h>
 #include <aws/waf/WAFServiceClientModel.h>
 #include <aws/waf/WAF_EXPORTS.h>
-#include <aws/waf/internal/WAFEndpointRules.h>
 #include <aws/waf/model/ActivatedRule.h>
 #include <aws/waf/model/ByteMatchSet.h>
 #include <aws/waf/model/ByteMatchSetSummary.h>
