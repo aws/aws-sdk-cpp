@@ -13,7 +13,6 @@
 #include <aws/sustainability/SustainabilityRequest.h>
 #include <aws/sustainability/SustainabilityServiceClientModel.h>
 #include <aws/sustainability/Sustainability_EXPORTS.h>
-#include <aws/sustainability/internal/SustainabilityEndpointRules.h>
 #include <aws/sustainability/model/Dimension.h>
 #include <aws/sustainability/model/DimensionEntry.h>
 #include <aws/sustainability/model/Emissions.h>

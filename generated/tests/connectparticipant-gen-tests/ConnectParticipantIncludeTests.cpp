@@ -13,7 +13,6 @@
 #include <aws/connectparticipant/ConnectParticipantRequest.h>
 #include <aws/connectparticipant/ConnectParticipantServiceClientModel.h>
 #include <aws/connectparticipant/ConnectParticipant_EXPORTS.h>
-#include <aws/connectparticipant/internal/ConnectParticipantEndpointRules.h>
 #include <aws/connectparticipant/model/ArtifactStatus.h>
 #include <aws/connectparticipant/model/AttachmentItem.h>
 #include <aws/connectparticipant/model/Attendee.h>

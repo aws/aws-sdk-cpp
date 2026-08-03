@@ -13,7 +13,6 @@
 #include <aws/mpa/MPARequest.h>
 #include <aws/mpa/MPAServiceClientModel.h>
 #include <aws/mpa/MPA_EXPORTS.h>
-#include <aws/mpa/internal/MPAEndpointRules.h>
 #include <aws/mpa/model/ActionCompletionStrategy.h>
 #include <aws/mpa/model/AdditionalSecurityRequirement.h>
 #include <aws/mpa/model/ApprovalStrategy.h>

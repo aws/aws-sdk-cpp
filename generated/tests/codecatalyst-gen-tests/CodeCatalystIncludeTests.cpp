@@ -13,7 +13,6 @@
 #include <aws/codecatalyst/CodeCatalystRequest.h>
 #include <aws/codecatalyst/CodeCatalystServiceClientModel.h>
 #include <aws/codecatalyst/CodeCatalyst_EXPORTS.h>
-#include <aws/codecatalyst/internal/CodeCatalystEndpointRules.h>
 #include <aws/codecatalyst/model/AccessTokenSummary.h>
 #include <aws/codecatalyst/model/ComparisonOperator.h>
 #include <aws/codecatalyst/model/CreateAccessTokenRequest.h>

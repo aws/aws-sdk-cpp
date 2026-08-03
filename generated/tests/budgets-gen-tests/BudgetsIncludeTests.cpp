@@ -13,7 +13,6 @@
 #include <aws/budgets/BudgetsRequest.h>
 #include <aws/budgets/BudgetsServiceClientModel.h>
 #include <aws/budgets/Budgets_EXPORTS.h>
-#include <aws/budgets/internal/BudgetsEndpointRules.h>
 #include <aws/budgets/model/Action.h>
 #include <aws/budgets/model/ActionHistory.h>
 #include <aws/budgets/model/ActionHistoryDetails.h>

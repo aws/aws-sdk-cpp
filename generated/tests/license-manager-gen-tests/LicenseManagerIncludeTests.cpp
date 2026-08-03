@@ -13,7 +13,6 @@
 #include <aws/license-manager/LicenseManagerRequest.h>
 #include <aws/license-manager/LicenseManagerServiceClientModel.h>
 #include <aws/license-manager/LicenseManager_EXPORTS.h>
-#include <aws/license-manager/internal/LicenseManagerEndpointRules.h>
 #include <aws/license-manager/model/AcceptGrantRequest.h>
 #include <aws/license-manager/model/AcceptGrantResult.h>
 #include <aws/license-manager/model/ActivationOverrideBehavior.h>

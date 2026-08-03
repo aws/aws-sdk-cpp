@@ -4,7 +4,7 @@
  */
 
 #pragma once
-#include <aws/core/endpoint/DefaultEndpointProvider.h>
+#include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -16,7 +16,7 @@ namespace TimestreamWrite {
 namespace Endpoint {
 using TimestreamWriteClientConfiguration = Aws::TimestreamWrite::TimestreamWriteClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using TimestreamWriteClientContextParameters = Aws::Endpoint::ClientContextParameters;
@@ -37,7 +37,7 @@ using TimestreamWriteEndpointProviderBase =
     EndpointProviderBase<TimestreamWriteClientConfiguration, TimestreamWriteBuiltInParameters, TimestreamWriteClientContextParameters>;
 
 using TimestreamWriteDefaultEpProviderBase =
-    DefaultEndpointProvider<TimestreamWriteClientConfiguration, TimestreamWriteBuiltInParameters, TimestreamWriteClientContextParameters>;
+    BDDEndpointProvider<TimestreamWriteClientConfiguration, TimestreamWriteBuiltInParameters, TimestreamWriteClientContextParameters>;
 
 }  // namespace Endpoint
 }  // namespace TimestreamWrite
@@ -50,7 +50,7 @@ AWS_TIMESTREAMWRITE_EXTERN template class AWS_TIMESTREAMWRITE_API Aws::Endpoint:
     TimestreamWrite::Endpoint::TimestreamWriteClientConfiguration, TimestreamWrite::Endpoint::TimestreamWriteBuiltInParameters,
     TimestreamWrite::Endpoint::TimestreamWriteClientContextParameters>;
 
-AWS_TIMESTREAMWRITE_EXTERN template class AWS_TIMESTREAMWRITE_API Aws::Endpoint::DefaultEndpointProvider<
+AWS_TIMESTREAMWRITE_EXTERN template class AWS_TIMESTREAMWRITE_API Aws::Endpoint::BDDEndpointProvider<
     TimestreamWrite::Endpoint::TimestreamWriteClientConfiguration, TimestreamWrite::Endpoint::TimestreamWriteBuiltInParameters,
     TimestreamWrite::Endpoint::TimestreamWriteClientContextParameters>;
 }  // namespace Endpoint

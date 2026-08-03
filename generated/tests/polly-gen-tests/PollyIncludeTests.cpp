@@ -13,7 +13,6 @@
 #include <aws/polly/PollyRequest.h>
 #include <aws/polly/PollyServiceClientModel.h>
 #include <aws/polly/Polly_EXPORTS.h>
-#include <aws/polly/internal/PollyEndpointRules.h>
 #include <aws/polly/model/AudioEvent.h>
 #include <aws/polly/model/CloseStreamEvent.h>
 #include <aws/polly/model/DeleteLexiconRequest.h>

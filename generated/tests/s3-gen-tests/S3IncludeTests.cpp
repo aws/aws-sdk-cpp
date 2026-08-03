@@ -18,7 +18,6 @@
 #include <aws/s3/S3Request.h>
 #include <aws/s3/S3ServiceClientModel.h>
 #include <aws/s3/S3_EXPORTS.h>
-#include <aws/s3/internal/S3EndpointRules.h>
 #include <aws/s3/model/AbacStatus.h>
 #include <aws/s3/model/AbortIncompleteMultipartUpload.h>
 #include <aws/s3/model/AbortMultipartUploadRequest.h>

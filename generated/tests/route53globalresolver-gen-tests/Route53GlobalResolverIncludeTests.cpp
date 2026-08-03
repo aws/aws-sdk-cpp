@@ -13,7 +13,6 @@
 #include <aws/route53globalresolver/Route53GlobalResolverRequest.h>
 #include <aws/route53globalresolver/Route53GlobalResolverServiceClientModel.h>
 #include <aws/route53globalresolver/Route53GlobalResolver_EXPORTS.h>
-#include <aws/route53globalresolver/internal/Route53GlobalResolverEndpointRules.h>
 #include <aws/route53globalresolver/model/AccessSourcesItem.h>
 #include <aws/route53globalresolver/model/AccessTokenItem.h>
 #include <aws/route53globalresolver/model/AssociateHostedZoneRequest.h>

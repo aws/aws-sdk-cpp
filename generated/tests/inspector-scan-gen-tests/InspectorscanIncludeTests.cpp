@@ -13,7 +13,6 @@
 #include <aws/inspector-scan/InspectorscanRequest.h>
 #include <aws/inspector-scan/InspectorscanServiceClientModel.h>
 #include <aws/inspector-scan/Inspectorscan_EXPORTS.h>
-#include <aws/inspector-scan/internal/InspectorscanEndpointRules.h>
 #include <aws/inspector-scan/model/InternalServerException.h>
 #include <aws/inspector-scan/model/InternalServerExceptionReason.h>
 #include <aws/inspector-scan/model/OutputFormat.h>

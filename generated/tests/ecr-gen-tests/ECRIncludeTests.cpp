@@ -13,7 +13,6 @@
 #include <aws/ecr/ECRRequest.h>
 #include <aws/ecr/ECRServiceClientModel.h>
 #include <aws/ecr/ECR_EXPORTS.h>
-#include <aws/ecr/internal/ECREndpointRules.h>
 #include <aws/ecr/model/ArtifactStatus.h>
 #include <aws/ecr/model/ArtifactStatusFilter.h>
 #include <aws/ecr/model/Attribute.h>

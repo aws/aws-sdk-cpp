@@ -13,7 +13,6 @@
 #include <aws/ssm-guiconnect/SSMGuiConnectRequest.h>
 #include <aws/ssm-guiconnect/SSMGuiConnectServiceClientModel.h>
 #include <aws/ssm-guiconnect/SSMGuiConnect_EXPORTS.h>
-#include <aws/ssm-guiconnect/internal/SSMGuiConnectEndpointRules.h>
 #include <aws/ssm-guiconnect/model/ConnectionRecordingPreferences.h>
 #include <aws/ssm-guiconnect/model/DeleteConnectionRecordingPreferencesRequest.h>
 #include <aws/ssm-guiconnect/model/DeleteConnectionRecordingPreferencesResult.h>

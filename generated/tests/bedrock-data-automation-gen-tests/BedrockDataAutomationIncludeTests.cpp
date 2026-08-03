@@ -15,7 +15,6 @@
 #include <aws/bedrock-data-automation/BedrockDataAutomationRequest.h>
 #include <aws/bedrock-data-automation/BedrockDataAutomationServiceClientModel.h>
 #include <aws/bedrock-data-automation/BedrockDataAutomation_EXPORTS.h>
-#include <aws/bedrock-data-automation/internal/BedrockDataAutomationEndpointRules.h>
 #include <aws/bedrock-data-automation/model/AudioExtractionCategory.h>
 #include <aws/bedrock-data-automation/model/AudioExtractionCategoryType.h>
 #include <aws/bedrock-data-automation/model/AudioExtractionCategoryTypeConfiguration.h>

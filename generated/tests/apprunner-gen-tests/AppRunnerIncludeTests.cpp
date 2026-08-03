@@ -13,7 +13,6 @@
 #include <aws/apprunner/AppRunnerRequest.h>
 #include <aws/apprunner/AppRunnerServiceClientModel.h>
 #include <aws/apprunner/AppRunner_EXPORTS.h>
-#include <aws/apprunner/internal/AppRunnerEndpointRules.h>
 #include <aws/apprunner/model/AssociateCustomDomainRequest.h>
 #include <aws/apprunner/model/AssociateCustomDomainResult.h>
 #include <aws/apprunner/model/AuthenticationConfiguration.h>

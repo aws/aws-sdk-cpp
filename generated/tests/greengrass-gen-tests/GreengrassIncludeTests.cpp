@@ -13,7 +13,6 @@
 #include <aws/greengrass/GreengrassRequest.h>
 #include <aws/greengrass/GreengrassServiceClientModel.h>
 #include <aws/greengrass/Greengrass_EXPORTS.h>
-#include <aws/greengrass/internal/GreengrassEndpointRules.h>
 #include <aws/greengrass/model/AssociateRoleToGroupRequest.h>
 #include <aws/greengrass/model/AssociateRoleToGroupResult.h>
 #include <aws/greengrass/model/AssociateServiceRoleToAccountRequest.h>

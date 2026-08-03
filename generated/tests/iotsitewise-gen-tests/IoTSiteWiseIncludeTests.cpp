@@ -13,7 +13,6 @@
 #include <aws/iotsitewise/IoTSiteWiseRequest.h>
 #include <aws/iotsitewise/IoTSiteWiseServiceClientModel.h>
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
-#include <aws/iotsitewise/internal/IoTSiteWiseEndpointRules.h>
 #include <aws/iotsitewise/model/AccessPolicySummary.h>
 #include <aws/iotsitewise/model/ActionDefinition.h>
 #include <aws/iotsitewise/model/ActionPayload.h>

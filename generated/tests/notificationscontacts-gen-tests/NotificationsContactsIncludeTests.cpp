@@ -13,7 +13,6 @@
 #include <aws/notificationscontacts/NotificationsContactsRequest.h>
 #include <aws/notificationscontacts/NotificationsContactsServiceClientModel.h>
 #include <aws/notificationscontacts/NotificationsContacts_EXPORTS.h>
-#include <aws/notificationscontacts/internal/NotificationsContactsEndpointRules.h>
 #include <aws/notificationscontacts/model/ActivateEmailContactRequest.h>
 #include <aws/notificationscontacts/model/ActivateEmailContactResult.h>
 #include <aws/notificationscontacts/model/ConflictException.h>

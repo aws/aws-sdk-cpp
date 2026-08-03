@@ -13,7 +13,6 @@
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/apigateway/APIGatewayServiceClientModel.h>
 #include <aws/apigateway/APIGateway_EXPORTS.h>
-#include <aws/apigateway/internal/APIGatewayEndpointRules.h>
 #include <aws/apigateway/model/AccessAssociationSourceType.h>
 #include <aws/apigateway/model/AccessLogSettings.h>
 #include <aws/apigateway/model/ApiKey.h>

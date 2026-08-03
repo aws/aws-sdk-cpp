@@ -16,9 +16,9 @@ template class Aws::Endpoint::EndpointProviderBase<BedrockAgent::Endpoint::Bedro
                                                    BedrockAgent::Endpoint::BedrockAgentBuiltInParameters,
                                                    BedrockAgent::Endpoint::BedrockAgentClientContextParameters>;
 
-template class Aws::Endpoint::DefaultEndpointProvider<BedrockAgent::Endpoint::BedrockAgentClientConfiguration,
-                                                      BedrockAgent::Endpoint::BedrockAgentBuiltInParameters,
-                                                      BedrockAgent::Endpoint::BedrockAgentClientContextParameters>;
+template class Aws::Endpoint::BDDEndpointProvider<BedrockAgent::Endpoint::BedrockAgentClientConfiguration,
+                                                  BedrockAgent::Endpoint::BedrockAgentBuiltInParameters,
+                                                  BedrockAgent::Endpoint::BedrockAgentClientContextParameters>;
 }  // namespace Endpoint
 #endif
 

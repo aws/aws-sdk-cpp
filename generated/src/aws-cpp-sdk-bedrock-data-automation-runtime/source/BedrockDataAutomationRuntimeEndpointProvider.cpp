@@ -17,7 +17,7 @@ template class Aws::Endpoint::EndpointProviderBase<
     BedrockDataAutomationRuntime::Endpoint::BedrockDataAutomationRuntimeBuiltInParameters,
     BedrockDataAutomationRuntime::Endpoint::BedrockDataAutomationRuntimeClientContextParameters>;
 
-template class Aws::Endpoint::DefaultEndpointProvider<
+template class Aws::Endpoint::BDDEndpointProvider<
     BedrockDataAutomationRuntime::Endpoint::BedrockDataAutomationRuntimeClientConfiguration,
     BedrockDataAutomationRuntime::Endpoint::BedrockDataAutomationRuntimeBuiltInParameters,
     BedrockDataAutomationRuntime::Endpoint::BedrockDataAutomationRuntimeClientContextParameters>;

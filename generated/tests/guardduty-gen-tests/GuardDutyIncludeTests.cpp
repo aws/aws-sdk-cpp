@@ -13,7 +13,6 @@
 #include <aws/guardduty/GuardDutyRequest.h>
 #include <aws/guardduty/GuardDutyServiceClientModel.h>
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
-#include <aws/guardduty/internal/GuardDutyEndpointRules.h>
 #include <aws/guardduty/model/AcceptAdministratorInvitationRequest.h>
 #include <aws/guardduty/model/AcceptAdministratorInvitationResult.h>
 #include <aws/guardduty/model/AccessControlList.h>

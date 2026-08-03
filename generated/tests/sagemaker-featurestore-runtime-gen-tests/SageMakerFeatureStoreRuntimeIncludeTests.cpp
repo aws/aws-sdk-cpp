@@ -13,7 +13,6 @@
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeRequest.h>
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeServiceClientModel.h>
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntime_EXPORTS.h>
-#include <aws/sagemaker-featurestore-runtime/internal/SageMakerFeatureStoreRuntimeEndpointRules.h>
 #include <aws/sagemaker-featurestore-runtime/model/BatchGetRecordError.h>
 #include <aws/sagemaker-featurestore-runtime/model/BatchGetRecordIdentifier.h>
 #include <aws/sagemaker-featurestore-runtime/model/BatchGetRecordRequest.h>

@@ -13,7 +13,6 @@
 #include <aws/keyspaces/KeyspacesRequest.h>
 #include <aws/keyspaces/KeyspacesServiceClientModel.h>
 #include <aws/keyspaces/Keyspaces_EXPORTS.h>
-#include <aws/keyspaces/internal/KeyspacesEndpointRules.h>
 #include <aws/keyspaces/model/AutoScalingPolicy.h>
 #include <aws/keyspaces/model/AutoScalingSettings.h>
 #include <aws/keyspaces/model/AutoScalingSpecification.h>

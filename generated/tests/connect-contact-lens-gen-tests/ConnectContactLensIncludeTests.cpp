@@ -13,7 +13,6 @@
 #include <aws/connect-contact-lens/ConnectContactLensRequest.h>
 #include <aws/connect-contact-lens/ConnectContactLensServiceClientModel.h>
 #include <aws/connect-contact-lens/ConnectContactLens_EXPORTS.h>
-#include <aws/connect-contact-lens/internal/ConnectContactLensEndpointRules.h>
 #include <aws/connect-contact-lens/model/Categories.h>
 #include <aws/connect-contact-lens/model/CategoryDetails.h>
 #include <aws/connect-contact-lens/model/CharacterOffsets.h>

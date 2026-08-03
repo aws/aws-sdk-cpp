@@ -13,7 +13,6 @@
 #include <aws/config/ConfigServiceRequest.h>
 #include <aws/config/ConfigServiceServiceClientModel.h>
 #include <aws/config/ConfigService_EXPORTS.h>
-#include <aws/config/internal/ConfigServiceEndpointRules.h>
 #include <aws/config/model/AccountAggregationSource.h>
 #include <aws/config/model/AggregateComplianceByConfigRule.h>
 #include <aws/config/model/AggregateComplianceByConformancePack.h>

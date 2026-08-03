@@ -13,7 +13,6 @@
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesRequest.h>
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesServiceClientModel.h>
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelines_EXPORTS.h>
-#include <aws/chime-sdk-media-pipelines/internal/ChimeSDKMediaPipelinesEndpointRules.h>
 #include <aws/chime-sdk-media-pipelines/model/ActiveSpeakerOnlyConfiguration.h>
 #include <aws/chime-sdk-media-pipelines/model/ActiveSpeakerPosition.h>
 #include <aws/chime-sdk-media-pipelines/model/AmazonTranscribeCallAnalyticsProcessorConfiguration.h>

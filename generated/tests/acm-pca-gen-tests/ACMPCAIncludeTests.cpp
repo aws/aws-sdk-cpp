@@ -13,7 +13,6 @@
 #include <aws/acm-pca/ACMPCARequest.h>
 #include <aws/acm-pca/ACMPCAServiceClientModel.h>
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
-#include <aws/acm-pca/internal/ACMPCAEndpointRules.h>
 #include <aws/acm-pca/model/ASN1Subject.h>
 #include <aws/acm-pca/model/AccessDescription.h>
 #include <aws/acm-pca/model/AccessMethod.h>

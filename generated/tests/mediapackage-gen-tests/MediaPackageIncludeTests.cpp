@@ -13,7 +13,6 @@
 #include <aws/mediapackage/MediaPackageRequest.h>
 #include <aws/mediapackage/MediaPackageServiceClientModel.h>
 #include <aws/mediapackage/MediaPackage_EXPORTS.h>
-#include <aws/mediapackage/internal/MediaPackageEndpointRules.h>
 #include <aws/mediapackage/model/AdMarkers.h>
 #include <aws/mediapackage/model/AdsOnDeliveryRestrictions.h>
 #include <aws/mediapackage/model/Authorization.h>

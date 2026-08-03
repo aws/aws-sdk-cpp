@@ -13,7 +13,6 @@
 #include <aws/marketplace-catalog/MarketplaceCatalogRequest.h>
 #include <aws/marketplace-catalog/MarketplaceCatalogServiceClientModel.h>
 #include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
-#include <aws/marketplace-catalog/internal/MarketplaceCatalogEndpointRules.h>
 #include <aws/marketplace-catalog/model/AmiProductEntityIdFilter.h>
 #include <aws/marketplace-catalog/model/AmiProductFilters.h>
 #include <aws/marketplace-catalog/model/AmiProductLastModifiedDateFilter.h>

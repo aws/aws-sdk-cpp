@@ -6,7 +6,7 @@
 #pragma once
 #include <aws/b2bi/B2BI_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
-#include <aws/core/endpoint/DefaultEndpointProvider.h>
+#include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -15,7 +15,7 @@ namespace Aws {
 namespace B2BI {
 namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using B2BIClientContextParameters = Aws::Endpoint::ClientContextParameters;
@@ -30,7 +30,7 @@ using B2BIBuiltInParameters = Aws::Endpoint::BuiltInParameters;
  */
 using B2BIEndpointProviderBase = EndpointProviderBase<B2BIClientConfiguration, B2BIBuiltInParameters, B2BIClientContextParameters>;
 
-using B2BIDefaultEpProviderBase = DefaultEndpointProvider<B2BIClientConfiguration, B2BIBuiltInParameters, B2BIClientContextParameters>;
+using B2BIDefaultEpProviderBase = BDDEndpointProvider<B2BIClientConfiguration, B2BIBuiltInParameters, B2BIClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service

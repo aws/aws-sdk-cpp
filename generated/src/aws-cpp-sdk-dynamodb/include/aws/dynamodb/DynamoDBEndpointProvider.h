@@ -4,7 +4,7 @@
  */
 
 #pragma once
-#include <aws/core/endpoint/DefaultEndpointProvider.h>
+#include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -16,7 +16,7 @@ namespace DynamoDB {
 namespace Endpoint {
 using DynamoDBClientConfiguration = Aws::DynamoDB::DynamoDBClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using DynamoDBClientContextParameters = Aws::Endpoint::ClientContextParameters;
@@ -37,7 +37,7 @@ using DynamoDBEndpointProviderBase =
     EndpointProviderBase<DynamoDBClientConfiguration, DynamoDBBuiltInParameters, DynamoDBClientContextParameters>;
 
 using DynamoDBDefaultEpProviderBase =
-    DefaultEndpointProvider<DynamoDBClientConfiguration, DynamoDBBuiltInParameters, DynamoDBClientContextParameters>;
+    BDDEndpointProvider<DynamoDBClientConfiguration, DynamoDBBuiltInParameters, DynamoDBClientContextParameters>;
 
 }  // namespace Endpoint
 }  // namespace DynamoDB
@@ -51,8 +51,8 @@ AWS_DYNAMODB_EXTERN template class AWS_DYNAMODB_API
                                         DynamoDB::Endpoint::DynamoDBClientContextParameters>;
 
 AWS_DYNAMODB_EXTERN template class AWS_DYNAMODB_API
-    Aws::Endpoint::DefaultEndpointProvider<DynamoDB::Endpoint::DynamoDBClientConfiguration, DynamoDB::Endpoint::DynamoDBBuiltInParameters,
-                                           DynamoDB::Endpoint::DynamoDBClientContextParameters>;
+    Aws::Endpoint::BDDEndpointProvider<DynamoDB::Endpoint::DynamoDBClientConfiguration, DynamoDB::Endpoint::DynamoDBBuiltInParameters,
+                                       DynamoDB::Endpoint::DynamoDBClientContextParameters>;
 }  // namespace Endpoint
 
 namespace DynamoDB {

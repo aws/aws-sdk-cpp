@@ -5,7 +5,7 @@
 
 #pragma once
 #include <aws/core/client/GenericClientConfiguration.h>
-#include <aws/core/endpoint/DefaultEndpointProvider.h>
+#include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -15,7 +15,7 @@ namespace Aws {
 namespace LicenseManager {
 namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using LicenseManagerClientContextParameters = Aws::Endpoint::ClientContextParameters;
@@ -32,7 +32,7 @@ using LicenseManagerEndpointProviderBase =
     EndpointProviderBase<LicenseManagerClientConfiguration, LicenseManagerBuiltInParameters, LicenseManagerClientContextParameters>;
 
 using LicenseManagerDefaultEpProviderBase =
-    DefaultEndpointProvider<LicenseManagerClientConfiguration, LicenseManagerBuiltInParameters, LicenseManagerClientContextParameters>;
+    BDDEndpointProvider<LicenseManagerClientConfiguration, LicenseManagerBuiltInParameters, LicenseManagerClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service

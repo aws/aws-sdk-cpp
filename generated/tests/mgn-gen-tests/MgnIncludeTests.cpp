@@ -13,7 +13,6 @@
 #include <aws/mgn/MgnRequest.h>
 #include <aws/mgn/MgnServiceClientModel.h>
 #include <aws/mgn/Mgn_EXPORTS.h>
-#include <aws/mgn/internal/MgnEndpointRules.h>
 #include <aws/mgn/model/AccessDeniedException.h>
 #include <aws/mgn/model/ActionCategory.h>
 #include <aws/mgn/model/AnalyzerType.h>

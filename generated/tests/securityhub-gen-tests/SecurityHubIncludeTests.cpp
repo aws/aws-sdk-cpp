@@ -13,7 +13,6 @@
 #include <aws/securityhub/SecurityHubRequest.h>
 #include <aws/securityhub/SecurityHubServiceClientModel.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
-#include <aws/securityhub/internal/SecurityHubEndpointRules.h>
 #include <aws/securityhub/model/AIDetails.h>
 #include <aws/securityhub/model/AcceptAdministratorInvitationRequest.h>
 #include <aws/securityhub/model/AcceptAdministratorInvitationResult.h>

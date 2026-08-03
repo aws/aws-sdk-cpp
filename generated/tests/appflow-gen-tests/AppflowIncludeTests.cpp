@@ -13,7 +13,6 @@
 #include <aws/appflow/AppflowRequest.h>
 #include <aws/appflow/AppflowServiceClientModel.h>
 #include <aws/appflow/Appflow_EXPORTS.h>
-#include <aws/appflow/internal/AppflowEndpointRules.h>
 #include <aws/appflow/model/AggregationConfig.h>
 #include <aws/appflow/model/AggregationType.h>
 #include <aws/appflow/model/AmplitudeConnectorOperator.h>

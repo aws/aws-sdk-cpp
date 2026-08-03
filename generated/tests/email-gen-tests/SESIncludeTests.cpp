@@ -13,7 +13,6 @@
 #include <aws/email/SESRequest.h>
 #include <aws/email/SESServiceClientModel.h>
 #include <aws/email/SES_EXPORTS.h>
-#include <aws/email/internal/SESEndpointRules.h>
 #include <aws/email/model/AddHeaderAction.h>
 #include <aws/email/model/AlreadyExistsException.h>
 #include <aws/email/model/BehaviorOnMXFailure.h>

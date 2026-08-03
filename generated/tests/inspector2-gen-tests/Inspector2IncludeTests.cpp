@@ -13,7 +13,6 @@
 #include <aws/inspector2/Inspector2Request.h>
 #include <aws/inspector2/Inspector2ServiceClientModel.h>
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/inspector2/internal/Inspector2EndpointRules.h>
 #include <aws/inspector2/model/Account.h>
 #include <aws/inspector2/model/AccountAggregation.h>
 #include <aws/inspector2/model/AccountAggregationResponse.h>

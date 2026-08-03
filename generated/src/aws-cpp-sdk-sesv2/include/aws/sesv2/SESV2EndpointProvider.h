@@ -5,7 +5,7 @@
 
 #pragma once
 #include <aws/core/client/GenericClientConfiguration.h>
-#include <aws/core/endpoint/DefaultEndpointProvider.h>
+#include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -15,7 +15,7 @@ namespace Aws {
 namespace SESV2 {
 namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using SESV2ClientContextParameters = Aws::Endpoint::ClientContextParameters;
@@ -30,7 +30,7 @@ using SESV2BuiltInParameters = Aws::Endpoint::BuiltInParameters;
  */
 using SESV2EndpointProviderBase = EndpointProviderBase<SESV2ClientConfiguration, SESV2BuiltInParameters, SESV2ClientContextParameters>;
 
-using SESV2DefaultEpProviderBase = DefaultEndpointProvider<SESV2ClientConfiguration, SESV2BuiltInParameters, SESV2ClientContextParameters>;
+using SESV2DefaultEpProviderBase = BDDEndpointProvider<SESV2ClientConfiguration, SESV2BuiltInParameters, SESV2ClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service

@@ -13,7 +13,6 @@
 #include <aws/states/SFNRequest.h>
 #include <aws/states/SFNServiceClientModel.h>
 #include <aws/states/SFN_EXPORTS.h>
-#include <aws/states/internal/SFNEndpointRules.h>
 #include <aws/states/model/ActivityFailedEventDetails.h>
 #include <aws/states/model/ActivityListItem.h>
 #include <aws/states/model/ActivityScheduleFailedEventDetails.h>

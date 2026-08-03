@@ -13,7 +13,6 @@
 #include <aws/trustedadvisor/TrustedAdvisorRequest.h>
 #include <aws/trustedadvisor/TrustedAdvisorServiceClientModel.h>
 #include <aws/trustedadvisor/TrustedAdvisor_EXPORTS.h>
-#include <aws/trustedadvisor/internal/TrustedAdvisorEndpointRules.h>
 #include <aws/trustedadvisor/model/AccountRecommendationLifecycleSummary.h>
 #include <aws/trustedadvisor/model/BatchUpdateRecommendationResourceExclusionRequest.h>
 #include <aws/trustedadvisor/model/BatchUpdateRecommendationResourceExclusionResult.h>

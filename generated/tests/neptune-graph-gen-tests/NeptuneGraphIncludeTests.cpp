@@ -13,7 +13,6 @@
 #include <aws/neptune-graph/NeptuneGraphRequest.h>
 #include <aws/neptune-graph/NeptuneGraphServiceClientModel.h>
 #include <aws/neptune-graph/NeptuneGraph_EXPORTS.h>
-#include <aws/neptune-graph/internal/NeptuneGraphEndpointRules.h>
 #include <aws/neptune-graph/model/BlankNodeHandling.h>
 #include <aws/neptune-graph/model/CancelExportTaskRequest.h>
 #include <aws/neptune-graph/model/CancelExportTaskResult.h>

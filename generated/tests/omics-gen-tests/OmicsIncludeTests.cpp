@@ -13,7 +13,6 @@
 #include <aws/omics/OmicsRequest.h>
 #include <aws/omics/OmicsServiceClientModel.h>
 #include <aws/omics/Omics_EXPORTS.h>
-#include <aws/omics/internal/OmicsEndpointRules.h>
 #include <aws/omics/model/AbortMultipartReadSetUploadRequest.h>
 #include <aws/omics/model/AbortMultipartReadSetUploadResult.h>
 #include <aws/omics/model/Accelerators.h>

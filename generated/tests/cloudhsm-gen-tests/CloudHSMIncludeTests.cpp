@@ -13,7 +13,6 @@
 #include <aws/cloudhsm/CloudHSMRequest.h>
 #include <aws/cloudhsm/CloudHSMServiceClientModel.h>
 #include <aws/cloudhsm/CloudHSM_EXPORTS.h>
-#include <aws/cloudhsm/internal/CloudHSMEndpointRules.h>
 #include <aws/cloudhsm/model/ClientVersion.h>
 #include <aws/cloudhsm/model/CloudHsmObjectState.h>
 #include <aws/cloudhsm/model/HsmStatus.h>

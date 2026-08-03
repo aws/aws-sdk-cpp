@@ -6,7 +6,7 @@
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
-#include <aws/core/endpoint/DefaultEndpointProvider.h>
+#include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -15,7 +15,7 @@ namespace Aws {
 namespace CloudFront {
 namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using CloudFrontClientContextParameters = Aws::Endpoint::ClientContextParameters;
@@ -32,7 +32,7 @@ using CloudFrontEndpointProviderBase =
     EndpointProviderBase<CloudFrontClientConfiguration, CloudFrontBuiltInParameters, CloudFrontClientContextParameters>;
 
 using CloudFrontDefaultEpProviderBase =
-    DefaultEndpointProvider<CloudFrontClientConfiguration, CloudFrontBuiltInParameters, CloudFrontClientContextParameters>;
+    BDDEndpointProvider<CloudFrontClientConfiguration, CloudFrontBuiltInParameters, CloudFrontClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service

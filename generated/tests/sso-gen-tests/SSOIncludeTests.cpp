@@ -13,7 +13,6 @@
 #include <aws/sso/SSORequest.h>
 #include <aws/sso/SSOServiceClientModel.h>
 #include <aws/sso/SSO_EXPORTS.h>
-#include <aws/sso/internal/SSOEndpointRules.h>
 #include <aws/sso/model/AccountInfo.h>
 #include <aws/sso/model/GetRoleCredentialsRequest.h>
 #include <aws/sso/model/GetRoleCredentialsResult.h>

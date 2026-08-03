@@ -13,7 +13,6 @@
 #include <aws/wisdom/ConnectWisdomServiceRequest.h>
 #include <aws/wisdom/ConnectWisdomServiceServiceClientModel.h>
 #include <aws/wisdom/ConnectWisdomService_EXPORTS.h>
-#include <aws/wisdom/internal/ConnectWisdomServiceEndpointRules.h>
 #include <aws/wisdom/model/AppIntegrationsConfiguration.h>
 #include <aws/wisdom/model/AssistantAssociationData.h>
 #include <aws/wisdom/model/AssistantAssociationInputData.h>

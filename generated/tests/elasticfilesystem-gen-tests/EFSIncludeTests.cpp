@@ -13,7 +13,6 @@
 #include <aws/elasticfilesystem/EFSRequest.h>
 #include <aws/elasticfilesystem/EFSServiceClientModel.h>
 #include <aws/elasticfilesystem/EFS_EXPORTS.h>
-#include <aws/elasticfilesystem/internal/EFSEndpointRules.h>
 #include <aws/elasticfilesystem/model/AccessPointAlreadyExists.h>
 #include <aws/elasticfilesystem/model/AccessPointDescription.h>
 #include <aws/elasticfilesystem/model/AccessPointLimitExceeded.h>

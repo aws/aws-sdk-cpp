@@ -13,7 +13,6 @@
 #include <aws/signer/SignerRequest.h>
 #include <aws/signer/SignerServiceClientModel.h>
 #include <aws/signer/Signer_EXPORTS.h>
-#include <aws/signer/internal/SignerEndpointRules.h>
 #include <aws/signer/model/AccessDeniedException.h>
 #include <aws/signer/model/AddProfilePermissionRequest.h>
 #include <aws/signer/model/AddProfilePermissionResult.h>

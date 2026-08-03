@@ -13,7 +13,6 @@
 #include <aws/gameliftstreams/GameLiftStreamsRequest.h>
 #include <aws/gameliftstreams/GameLiftStreamsServiceClientModel.h>
 #include <aws/gameliftstreams/GameLiftStreams_EXPORTS.h>
-#include <aws/gameliftstreams/internal/GameLiftStreamsEndpointRules.h>
 #include <aws/gameliftstreams/model/AddStreamGroupLocationsRequest.h>
 #include <aws/gameliftstreams/model/AddStreamGroupLocationsResult.h>
 #include <aws/gameliftstreams/model/ApplicationStatus.h>

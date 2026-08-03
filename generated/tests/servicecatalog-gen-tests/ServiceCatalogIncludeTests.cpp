@@ -13,7 +13,6 @@
 #include <aws/servicecatalog/ServiceCatalogRequest.h>
 #include <aws/servicecatalog/ServiceCatalogServiceClientModel.h>
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
-#include <aws/servicecatalog/internal/ServiceCatalogEndpointRules.h>
 #include <aws/servicecatalog/model/AcceptPortfolioShareRequest.h>
 #include <aws/servicecatalog/model/AcceptPortfolioShareResult.h>
 #include <aws/servicecatalog/model/AccessLevelFilter.h>

@@ -15,8 +15,8 @@ namespace Endpoint {
 template class Aws::Endpoint::EndpointProviderBase<S3Crt::Endpoint::S3CrtClientConfiguration, S3Crt::Endpoint::S3CrtBuiltInParameters,
                                                    S3Crt::Endpoint::S3CrtClientContextParameters>;
 
-template class Aws::Endpoint::DefaultEndpointProvider<S3Crt::Endpoint::S3CrtClientConfiguration, S3Crt::Endpoint::S3CrtBuiltInParameters,
-                                                      S3Crt::Endpoint::S3CrtClientContextParameters>;
+template class Aws::Endpoint::BDDEndpointProvider<S3Crt::Endpoint::S3CrtClientConfiguration, S3Crt::Endpoint::S3CrtBuiltInParameters,
+                                                  S3Crt::Endpoint::S3CrtClientContextParameters>;
 }  // namespace Endpoint
 #endif
 

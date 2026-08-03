@@ -13,7 +13,6 @@
 #include <aws/connectcases/ConnectCasesRequest.h>
 #include <aws/connectcases/ConnectCasesServiceClientModel.h>
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
-#include <aws/connectcases/internal/ConnectCasesEndpointRules.h>
 #include <aws/connectcases/model/AuditEvent.h>
 #include <aws/connectcases/model/AuditEventField.h>
 #include <aws/connectcases/model/AuditEventFieldValueUnion.h>

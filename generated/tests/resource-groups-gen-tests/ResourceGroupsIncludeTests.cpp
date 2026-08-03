@@ -13,7 +13,6 @@
 #include <aws/resource-groups/ResourceGroupsRequest.h>
 #include <aws/resource-groups/ResourceGroupsServiceClientModel.h>
 #include <aws/resource-groups/ResourceGroups_EXPORTS.h>
-#include <aws/resource-groups/internal/ResourceGroupsEndpointRules.h>
 #include <aws/resource-groups/model/AccountSettings.h>
 #include <aws/resource-groups/model/CancelTagSyncTaskRequest.h>
 #include <aws/resource-groups/model/CreateGroupRequest.h>

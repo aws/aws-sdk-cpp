@@ -15,7 +15,6 @@
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeRequest.h>
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeServiceClientModel.h>
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/bedrock-agent-runtime/internal/BedrockAgentRuntimeEndpointRules.h>
 #include <aws/bedrock-agent-runtime/model/APISchema.h>
 #include <aws/bedrock-agent-runtime/model/ActionGroupExecutor.h>
 #include <aws/bedrock-agent-runtime/model/ActionGroupInvocationInput.h>

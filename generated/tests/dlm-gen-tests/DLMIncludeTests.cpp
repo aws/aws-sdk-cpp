@@ -13,7 +13,6 @@
 #include <aws/dlm/DLMRequest.h>
 #include <aws/dlm/DLMServiceClientModel.h>
 #include <aws/dlm/DLM_EXPORTS.h>
-#include <aws/dlm/internal/DLMEndpointRules.h>
 #include <aws/dlm/model/Action.h>
 #include <aws/dlm/model/ArchiveRetainRule.h>
 #include <aws/dlm/model/ArchiveRule.h>

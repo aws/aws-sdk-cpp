@@ -13,7 +13,6 @@
 #include <aws/kinesis-video-signaling/KinesisVideoSignalingChannelsRequest.h>
 #include <aws/kinesis-video-signaling/KinesisVideoSignalingChannelsServiceClientModel.h>
 #include <aws/kinesis-video-signaling/KinesisVideoSignalingChannels_EXPORTS.h>
-#include <aws/kinesis-video-signaling/internal/KinesisVideoSignalingChannelsEndpointRules.h>
 #include <aws/kinesis-video-signaling/model/GetIceServerConfigRequest.h>
 #include <aws/kinesis-video-signaling/model/GetIceServerConfigResult.h>
 #include <aws/kinesis-video-signaling/model/IceServer.h>

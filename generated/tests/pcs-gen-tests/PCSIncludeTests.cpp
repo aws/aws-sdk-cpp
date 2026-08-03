@@ -13,7 +13,6 @@
 #include <aws/pcs/PCSRequest.h>
 #include <aws/pcs/PCSServiceClientModel.h>
 #include <aws/pcs/PCS_EXPORTS.h>
-#include <aws/pcs/internal/PCSEndpointRules.h>
 #include <aws/pcs/model/Accounting.h>
 #include <aws/pcs/model/AccountingMode.h>
 #include <aws/pcs/model/AccountingRequest.h>

@@ -13,7 +13,6 @@
 #include <aws/connecthealth/ConnectHealthRequest.h>
 #include <aws/connecthealth/ConnectHealthServiceClientModel.h>
 #include <aws/connecthealth/ConnectHealth_EXPORTS.h>
-#include <aws/connecthealth/internal/ConnectHealthEndpointRules.h>
 #include <aws/connecthealth/model/ActivateSubscriptionRequest.h>
 #include <aws/connecthealth/model/ActivateSubscriptionResult.h>
 #include <aws/connecthealth/model/ArtifactDetails.h>

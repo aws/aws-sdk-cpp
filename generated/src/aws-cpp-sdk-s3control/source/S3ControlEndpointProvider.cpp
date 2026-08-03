@@ -16,9 +16,9 @@ template class Aws::Endpoint::EndpointProviderBase<S3Control::Endpoint::S3Contro
                                                    S3Control::Endpoint::S3ControlBuiltInParameters,
                                                    S3Control::Endpoint::S3ControlClientContextParameters>;
 
-template class Aws::Endpoint::DefaultEndpointProvider<S3Control::Endpoint::S3ControlClientConfiguration,
-                                                      S3Control::Endpoint::S3ControlBuiltInParameters,
-                                                      S3Control::Endpoint::S3ControlClientContextParameters>;
+template class Aws::Endpoint::BDDEndpointProvider<S3Control::Endpoint::S3ControlClientConfiguration,
+                                                  S3Control::Endpoint::S3ControlBuiltInParameters,
+                                                  S3Control::Endpoint::S3ControlClientContextParameters>;
 }  // namespace Endpoint
 #endif
 

@@ -13,7 +13,6 @@
 #include <aws/codecommit/CodeCommitRequest.h>
 #include <aws/codecommit/CodeCommitServiceClientModel.h>
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
-#include <aws/codecommit/internal/CodeCommitEndpointRules.h>
 #include <aws/codecommit/model/Approval.h>
 #include <aws/codecommit/model/ApprovalRule.h>
 #include <aws/codecommit/model/ApprovalRuleEventMetadata.h>

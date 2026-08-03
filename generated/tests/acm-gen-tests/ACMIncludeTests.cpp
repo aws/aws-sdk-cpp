@@ -13,7 +13,6 @@
 #include <aws/acm/ACMRequest.h>
 #include <aws/acm/ACMServiceClientModel.h>
 #include <aws/acm/ACM_EXPORTS.h>
-#include <aws/acm/internal/ACMEndpointRules.h>
 #include <aws/acm/model/AcmCertificateMetadata.h>
 #include <aws/acm/model/AcmCertificateMetadataFilter.h>
 #include <aws/acm/model/AcmeAccount.h>

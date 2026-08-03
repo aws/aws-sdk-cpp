@@ -13,7 +13,6 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalkRequest.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalkServiceClientModel.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
-#include <aws/elasticbeanstalk/internal/ElasticBeanstalkEndpointRules.h>
 #include <aws/elasticbeanstalk/model/AbortEnvironmentUpdateRequest.h>
 #include <aws/elasticbeanstalk/model/ActionHistoryStatus.h>
 #include <aws/elasticbeanstalk/model/ActionStatus.h>

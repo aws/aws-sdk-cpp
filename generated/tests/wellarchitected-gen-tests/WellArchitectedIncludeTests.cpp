@@ -13,7 +13,6 @@
 #include <aws/wellarchitected/WellArchitectedRequest.h>
 #include <aws/wellarchitected/WellArchitectedServiceClientModel.h>
 #include <aws/wellarchitected/WellArchitected_EXPORTS.h>
-#include <aws/wellarchitected/internal/WellArchitectedEndpointRules.h>
 #include <aws/wellarchitected/model/AccountJiraConfigurationInput.h>
 #include <aws/wellarchitected/model/AccountJiraConfigurationOutput.h>
 #include <aws/wellarchitected/model/AccountJiraIssueManagementStatus.h>

@@ -13,7 +13,6 @@
 #include <aws/signin/SigninRequest.h>
 #include <aws/signin/SigninServiceClientModel.h>
 #include <aws/signin/Signin_EXPORTS.h>
-#include <aws/signin/internal/SigninEndpointRules.h>
 #include <aws/signin/model/AccessDeniedException.h>
 #include <aws/signin/model/AccessToken.h>
 #include <aws/signin/model/ConflictException.h>

@@ -13,7 +13,6 @@
 #include <aws/ce/CostExplorerRequest.h>
 #include <aws/ce/CostExplorerServiceClientModel.h>
 #include <aws/ce/CostExplorer_EXPORTS.h>
-#include <aws/ce/internal/CostExplorerEndpointRules.h>
 #include <aws/ce/model/AccountScope.h>
 #include <aws/ce/model/AnalysisDetails.h>
 #include <aws/ce/model/AnalysisStatus.h>

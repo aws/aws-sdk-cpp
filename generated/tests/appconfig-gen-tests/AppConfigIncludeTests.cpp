@@ -13,7 +13,6 @@
 #include <aws/appconfig/AppConfigRequest.h>
 #include <aws/appconfig/AppConfigServiceClientModel.h>
 #include <aws/appconfig/AppConfig_EXPORTS.h>
-#include <aws/appconfig/internal/AppConfigEndpointRules.h>
 #include <aws/appconfig/model/Action.h>
 #include <aws/appconfig/model/ActionInvocation.h>
 #include <aws/appconfig/model/ActionPoint.h>

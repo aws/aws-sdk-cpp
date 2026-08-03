@@ -13,7 +13,6 @@
 #include <aws/eventbridge/EventBridgeRequest.h>
 #include <aws/eventbridge/EventBridgeServiceClientModel.h>
 #include <aws/eventbridge/EventBridge_EXPORTS.h>
-#include <aws/eventbridge/internal/EventBridgeEndpointRules.h>
 #include <aws/eventbridge/model/ActivateEventSourceRequest.h>
 #include <aws/eventbridge/model/ApiDestination.h>
 #include <aws/eventbridge/model/ApiDestinationHttpMethod.h>

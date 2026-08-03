@@ -13,7 +13,6 @@
 #include <aws/cloudfront-keyvaluestore/CloudFrontKeyValueStoreRequest.h>
 #include <aws/cloudfront-keyvaluestore/CloudFrontKeyValueStoreServiceClientModel.h>
 #include <aws/cloudfront-keyvaluestore/CloudFrontKeyValueStore_EXPORTS.h>
-#include <aws/cloudfront-keyvaluestore/internal/CloudFrontKeyValueStoreEndpointRules.h>
 #include <aws/cloudfront-keyvaluestore/model/DeleteKeyRequest.h>
 #include <aws/cloudfront-keyvaluestore/model/DeleteKeyRequestListItem.h>
 #include <aws/cloudfront-keyvaluestore/model/DeleteKeyResult.h>

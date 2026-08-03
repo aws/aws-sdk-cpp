@@ -15,8 +15,8 @@ namespace Endpoint {
 template class Aws::Endpoint::EndpointProviderBase<S3::Endpoint::S3ClientConfiguration, S3::Endpoint::S3BuiltInParameters,
                                                    S3::Endpoint::S3ClientContextParameters>;
 
-template class Aws::Endpoint::DefaultEndpointProvider<S3::Endpoint::S3ClientConfiguration, S3::Endpoint::S3BuiltInParameters,
-                                                      S3::Endpoint::S3ClientContextParameters>;
+template class Aws::Endpoint::BDDEndpointProvider<S3::Endpoint::S3ClientConfiguration, S3::Endpoint::S3BuiltInParameters,
+                                                  S3::Endpoint::S3ClientContextParameters>;
 }  // namespace Endpoint
 #endif
 

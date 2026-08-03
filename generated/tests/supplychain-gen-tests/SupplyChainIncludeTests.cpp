@@ -13,7 +13,6 @@
 #include <aws/supplychain/SupplyChainRequest.h>
 #include <aws/supplychain/SupplyChainServiceClientModel.h>
 #include <aws/supplychain/SupplyChain_EXPORTS.h>
-#include <aws/supplychain/internal/SupplyChainEndpointRules.h>
 #include <aws/supplychain/model/BillOfMaterialsImportJob.h>
 #include <aws/supplychain/model/ConfigurationJobStatus.h>
 #include <aws/supplychain/model/CreateBillOfMaterialsImportJobRequest.h>

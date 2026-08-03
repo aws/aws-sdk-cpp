@@ -13,7 +13,6 @@
 #include <aws/chime-sdk-voice/ChimeSDKVoiceRequest.h>
 #include <aws/chime-sdk-voice/ChimeSDKVoiceServiceClientModel.h>
 #include <aws/chime-sdk-voice/ChimeSDKVoice_EXPORTS.h>
-#include <aws/chime-sdk-voice/internal/ChimeSDKVoiceEndpointRules.h>
 #include <aws/chime-sdk-voice/model/Address.h>
 #include <aws/chime-sdk-voice/model/AlexaSkillStatus.h>
 #include <aws/chime-sdk-voice/model/AssociatePhoneNumbersWithVoiceConnectorGroupRequest.h>

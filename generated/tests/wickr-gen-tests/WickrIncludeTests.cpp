@@ -13,7 +13,6 @@
 #include <aws/wickr/WickrRequest.h>
 #include <aws/wickr/WickrServiceClientModel.h>
 #include <aws/wickr/Wickr_EXPORTS.h>
-#include <aws/wickr/internal/WickrEndpointRules.h>
 #include <aws/wickr/model/AccessLevel.h>
 #include <aws/wickr/model/BasicDeviceObject.h>
 #include <aws/wickr/model/BatchCreateUserRequest.h>

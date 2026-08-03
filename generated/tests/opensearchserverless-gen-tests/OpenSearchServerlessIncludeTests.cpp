@@ -13,7 +13,6 @@
 #include <aws/opensearchserverless/OpenSearchServerlessRequest.h>
 #include <aws/opensearchserverless/OpenSearchServerlessServiceClientModel.h>
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
-#include <aws/opensearchserverless/internal/OpenSearchServerlessEndpointRules.h>
 #include <aws/opensearchserverless/model/AccessPolicyDetail.h>
 #include <aws/opensearchserverless/model/AccessPolicyStats.h>
 #include <aws/opensearchserverless/model/AccessPolicySummary.h>

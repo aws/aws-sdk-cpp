@@ -13,7 +13,6 @@
 #include <aws/fsx/FSxRequest.h>
 #include <aws/fsx/FSxServiceClientModel.h>
 #include <aws/fsx/FSx_EXPORTS.h>
-#include <aws/fsx/internal/FSxEndpointRules.h>
 #include <aws/fsx/model/AccessPointAlreadyOwnedByYou.h>
 #include <aws/fsx/model/ActiveDirectoryBackupAttributes.h>
 #include <aws/fsx/model/ActiveDirectoryError.h>

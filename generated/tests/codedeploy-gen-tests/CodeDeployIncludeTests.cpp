@@ -13,7 +13,6 @@
 #include <aws/codedeploy/CodeDeployRequest.h>
 #include <aws/codedeploy/CodeDeployServiceClientModel.h>
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
-#include <aws/codedeploy/internal/CodeDeployEndpointRules.h>
 #include <aws/codedeploy/model/AddTagsToOnPremisesInstancesRequest.h>
 #include <aws/codedeploy/model/Alarm.h>
 #include <aws/codedeploy/model/AlarmConfiguration.h>

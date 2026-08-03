@@ -13,7 +13,6 @@
 #include <aws/partnercentral-account/PartnerCentralAccountRequest.h>
 #include <aws/partnercentral-account/PartnerCentralAccountServiceClientModel.h>
 #include <aws/partnercentral-account/PartnerCentralAccount_EXPORTS.h>
-#include <aws/partnercentral-account/internal/PartnerCentralAccountEndpointRules.h>
 #include <aws/partnercentral-account/model/AcceptConnectionInvitationRequest.h>
 #include <aws/partnercentral-account/model/AcceptConnectionInvitationResult.h>
 #include <aws/partnercentral-account/model/AccessDeniedException.h>

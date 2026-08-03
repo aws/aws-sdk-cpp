@@ -13,7 +13,6 @@
 #include <aws/pricing-plan-manager/PricingPlanManagerRequest.h>
 #include <aws/pricing-plan-manager/PricingPlanManagerServiceClientModel.h>
 #include <aws/pricing-plan-manager/PricingPlanManager_EXPORTS.h>
-#include <aws/pricing-plan-manager/internal/PricingPlanManagerEndpointRules.h>
 #include <aws/pricing-plan-manager/model/ApprovalMode.h>
 #include <aws/pricing-plan-manager/model/ApprovePaidSubscriptionRequest.h>
 #include <aws/pricing-plan-manager/model/ApprovePaidSubscriptionResult.h>

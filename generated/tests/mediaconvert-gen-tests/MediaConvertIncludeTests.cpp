@@ -13,7 +13,6 @@
 #include <aws/mediaconvert/MediaConvertRequest.h>
 #include <aws/mediaconvert/MediaConvertServiceClientModel.h>
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
-#include <aws/mediaconvert/internal/MediaConvertEndpointRules.h>
 #include <aws/mediaconvert/model/AacAudioDescriptionBroadcasterMix.h>
 #include <aws/mediaconvert/model/AacCodecProfile.h>
 #include <aws/mediaconvert/model/AacCodingMode.h>
