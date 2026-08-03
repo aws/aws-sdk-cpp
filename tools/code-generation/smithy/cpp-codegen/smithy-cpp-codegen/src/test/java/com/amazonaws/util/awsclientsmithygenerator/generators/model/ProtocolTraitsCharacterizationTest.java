@@ -108,7 +108,7 @@ class ProtocolTraitsCharacterizationTest {
         ProtocolTraits traits = ProtocolResolver.traitsFor(resolved);
         new SubObjectRenderer(classified.subObjects(), model, service, traits,
             "Example", "AWS_EXAMPLE_API", "Example", "example").render(delegator);
-        new RequestRenderer(classified.requests(), model, service, resolved,
+        new RequestRenderer(classified.requests(), model, service, traits,
             "Example", "AWS_EXAMPLE_API", "example").render(delegator);
         new ResultRenderer(classified.results(), model, service, traits,
             "Example", "AWS_EXAMPLE_API", "example").render(delegator);

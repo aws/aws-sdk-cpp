@@ -71,7 +71,7 @@ public class ModelGenerator {
             namespace, exportMacro, serviceName, smithyServiceName));
 
         renderers.add(new RequestRenderer(
-            classified.requests(), model, service, protocol,
+            classified.requests(), model, service, protocolTraits,
             namespace, exportMacro, smithyServiceName));
 
         renderers.add(new ResultRenderer(

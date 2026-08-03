@@ -69,7 +69,8 @@ class RequestRendererTest {
         CppWriterDelegator delegator = new CppWriterDelegator(manifest);
         RequestRenderer renderer = new RequestRenderer(
             ShapeClassifier.classify(model, service).requests(),
-            model, service, ProtocolResolver.resolve(service, model),
+            model, service,
+            ProtocolResolver.traitsFor(ProtocolResolver.resolve(service, model)),
             "Example", "AWS_EXAMPLE_API", "example");
         renderer.render(delegator);
         delegator.flushWriters();

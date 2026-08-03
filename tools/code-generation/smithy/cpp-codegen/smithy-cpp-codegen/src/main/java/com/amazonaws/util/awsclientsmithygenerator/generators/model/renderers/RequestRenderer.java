@@ -8,7 +8,7 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.CppTypeMapper;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.MemberRenderer;
-import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.ProtocolTraits;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassifier;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassifier.RequestInfo;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeRenderer;
@@ -33,18 +33,18 @@ public final class RequestRenderer implements ShapeRenderer {
     private final List<RequestInfo> requests;
     private final Model model;
     private final ServiceShape service;
-    private final Protocol protocol;
+    private final ProtocolTraits protocolTraits;
     private final String namespace;
     private final String exportMacro;
     private final String smithyServiceName;
 
     public RequestRenderer(List<RequestInfo> requests, Model model, ServiceShape service,
-                           Protocol protocol, String namespace, String exportMacro,
+                           ProtocolTraits protocolTraits, String namespace, String exportMacro,
                            String smithyServiceName) {
         this.requests = requests;
         this.model = model;
         this.service = service;
-        this.protocol = protocol;
+        this.protocolTraits = protocolTraits;
         this.namespace = namespace;
         this.exportMacro = exportMacro;
         this.smithyServiceName = smithyServiceName;
@@ -194,24 +194,14 @@ public final class RequestRenderer implements ShapeRenderer {
         String fileName = "source/model/" + className + ".cpp";
         writerDelegator.useFileWriter(fileName, writer -> {
 
-            if (protocol.isJsonLike()) {
-                writer.write("#include <aws/core/utils/json/JsonSerializer.h>");
-            } else {
-                writer.write("#include <aws/core/utils/xml/XmlSerializer.h>");
-            }
+            protocolTraits.writeSerdeInclude(writer);
             writer.write("#include <aws/$L/model/$L.h>", smithyServiceName, className);
             writer.write("");
             writer.write("#include <utility>");
             writer.write("");
 
             writer.write("using namespace Aws::$L::Model;", namespace);
-            if (protocol.isJsonLike()) {
-                writer.write("using namespace Aws::Utils::Json;");
-                writer.write("using namespace Aws::Utils;");
-            } else {
-                writer.write("using namespace Aws::Utils::Xml;");
-                writer.write("using namespace Aws::Utils;");
-            }
+            protocolTraits.writeSerdeUsingDeclarations(writer);
             writer.write("");
 
             writer.write("Aws::String $L::SerializePayload() const { return \"{}\"; }", className);
