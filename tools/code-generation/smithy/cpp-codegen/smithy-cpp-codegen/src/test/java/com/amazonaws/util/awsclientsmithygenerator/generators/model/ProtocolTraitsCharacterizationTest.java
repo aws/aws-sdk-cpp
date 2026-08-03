@@ -110,7 +110,7 @@ class ProtocolTraitsCharacterizationTest {
             "Example", "AWS_EXAMPLE_API", "Example", "example").render(delegator);
         new RequestRenderer(classified.requests(), model, service, resolved,
             "Example", "AWS_EXAMPLE_API", "example").render(delegator);
-        new ResultRenderer(classified.results(), model, service, resolved,
+        new ResultRenderer(classified.results(), model, service, traits,
             "Example", "AWS_EXAMPLE_API", "example").render(delegator);
 
         delegator.flushWriters();

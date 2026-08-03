@@ -4,11 +4,10 @@
  */
 package com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers;
 
-import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.CppTypeMapper;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.MemberRenderer;
-import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.ProtocolTraits;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassifier.ResultInfo;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeRenderer;
 import software.amazon.smithy.model.Model;
@@ -29,18 +28,18 @@ public final class ResultRenderer implements ShapeRenderer {
     private final List<ResultInfo> results;
     private final Model model;
     private final ServiceShape service;
-    private final Protocol protocol;
+    private final ProtocolTraits protocolTraits;
     private final String namespace;
     private final String exportMacro;
     private final String smithyServiceName;
 
     public ResultRenderer(List<ResultInfo> results, Model model, ServiceShape service,
-                          Protocol protocol, String namespace, String exportMacro,
+                          ProtocolTraits protocolTraits, String namespace, String exportMacro,
                           String smithyServiceName) {
         this.results = results;
         this.model = model;
         this.service = service;
-        this.protocol = protocol;
+        this.protocolTraits = protocolTraits;
         this.namespace = namespace;
         this.exportMacro = exportMacro;
         this.smithyServiceName = smithyServiceName;
@@ -79,7 +78,7 @@ public final class ResultRenderer implements ShapeRenderer {
             writer.write("template <typename RESULT_TYPE>");
             writer.write("class AmazonWebServiceResult;");
             writer.write("");
-            renderForwardDeclarations(writer);
+            protocolTraits.writeResultForwardDeclarations(writer);
 
             writer.writeNamespaceOpen(namespace);
             writer.writeNamespaceOpen("Model");
@@ -91,13 +90,7 @@ public final class ResultRenderer implements ShapeRenderer {
             writer.openBlock("class $L {", "};", className, () -> {
                 writer.write("public:");
                 writer.write("$L $L() = default;", exportMacro, className);
-                if (protocol.isJsonLike()) {
-                    writer.write("$L $L(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);", exportMacro, className);
-                    writer.write("$L $L& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);", exportMacro, className);
-                } else {
-                    writer.write("$L $L(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);", exportMacro, className);
-                    writer.write("$L $L& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);", exportMacro, className);
-                }
+                protocolTraits.writeResultSerdeDecls(writer, exportMacro, className);
                 writer.write("");
 
                 MemberRenderer.renderPublicSectionForResult(writer, shape, model, exportMacro, className);
@@ -148,59 +141,19 @@ public final class ResultRenderer implements ShapeRenderer {
             writer.write("#include <aws/core/AmazonWebServiceResult.h>");
             writer.write("#include <aws/core/utils/StringUtils.h>");
             writer.write("#include <aws/core/utils/UnreferencedParam.h>");
-            if (protocol.isJsonLike()) {
-                writer.write("#include <aws/core/utils/json/JsonSerializer.h>");
-            } else {
-                writer.write("#include <aws/core/utils/xml/XmlSerializer.h>");
-            }
+            protocolTraits.writeSerdeInclude(writer);
             writer.write("#include <aws/core/utils/memory/stl/AWSStringStream.h>");
             writer.write("#include <aws/$L/model/$L.h>", smithyServiceName, className);
             writer.write("");
             writer.write("#include <utility>");
             writer.write("");
-            if (protocol.isJsonLike()) {
-                writer.write("using namespace Aws::$L::Model;", namespace);
-                writer.write("using namespace Aws::Utils::Json;");
-                writer.write("using namespace Aws::Utils;");
-                writer.write("using namespace Aws;");
-            } else {
-                writer.write("using namespace Aws::$L::Model;", namespace);
-                writer.write("using namespace Aws::Utils::Xml;");
-                writer.write("using namespace Aws::Utils;");
-                writer.write("using namespace Aws;");
-            }
+            writer.write("using namespace Aws::$L::Model;", namespace);
+            protocolTraits.writeSerdeUsingDeclarations(writer);
+            writer.write("using namespace Aws;");
             writer.write("");
 
-            if (protocol.isJsonLike()) {
-                writer.openBlock("$L::$L(const Aws::AmazonWebServiceResult<JsonValue>& result) {", "}",
-                    className, className, () -> writer.write("*this = result;"));
-                writer.write("");
-                writer.openBlock("$L& $L::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {", "}",
-                    className, className, () -> writer.write("return *this;"));
-            } else {
-                writer.openBlock("$L::$L(const Aws::AmazonWebServiceResult<XmlDocument>& result) {", "}",
-                    className, className, () -> writer.write("*this = result;"));
-                writer.write("");
-                writer.openBlock("$L& $L::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {", "}",
-                    className, className, () -> writer.write("return *this;"));
-            }
+            protocolTraits.writeResultSerdeImpls(writer, className);
             writer.write("");
         });
-    }
-
-    private void renderForwardDeclarations(CppWriter writer) {
-        if (protocol.isJsonLike()) {
-            writer.writeNamespaceOpen("Utils");
-            writer.writeNamespaceOpen("Json");
-            writer.write("class JsonValue;");
-            writer.writeNamespaceClose("Json");
-            writer.writeNamespaceClose("Utils");
-        } else {
-            writer.writeNamespaceOpen("Utils");
-            writer.writeNamespaceOpen("Xml");
-            writer.write("class XmlDocument;");
-            writer.writeNamespaceClose("Xml");
-            writer.writeNamespaceClose("Utils");
-        }
     }
 }
