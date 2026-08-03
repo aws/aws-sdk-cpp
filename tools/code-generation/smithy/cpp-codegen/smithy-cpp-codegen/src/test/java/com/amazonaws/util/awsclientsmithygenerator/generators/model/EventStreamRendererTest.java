@@ -5,6 +5,7 @@
 package com.amazonaws.util.awsclientsmithygenerator.generators.model;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.EventStreamRenderer;
 import org.junit.jupiter.api.Test;
 import software.amazon.smithy.build.MockManifest;
@@ -74,10 +75,10 @@ class EventStreamRendererTest {
         ServiceShape service = model.expectShape(ShapeId.from("com.example#Example"), ServiceShape.class);
         MockManifest manifest = new MockManifest();
         CppWriterDelegator delegator = new CppWriterDelegator(manifest);
+        Protocol protocol = ProtocolResolver.resolve(service, model);
         EventStreamRenderer renderer = new EventStreamRenderer(
-            ShapeClassifier.classify(model, service).eventStreamHandlers(),
-            model, service,
-            ProtocolResolver.traitsFor(ProtocolResolver.resolve(service, model)),
+            ShapeClassifier.classify(model, service, protocol).eventStreamHandlers(),
+            model, service, ProtocolResolver.traitsFor(protocol),
             "Example", "AWS_EXAMPLE_API", "example");
         renderer.render(delegator);
         delegator.flushWriters();

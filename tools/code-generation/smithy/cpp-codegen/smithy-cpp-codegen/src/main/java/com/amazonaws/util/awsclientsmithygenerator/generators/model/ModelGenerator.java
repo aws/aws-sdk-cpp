@@ -52,7 +52,7 @@ public class ModelGenerator {
     }
 
     public void generateAll() {
-        ClassifiedShapes classified = ShapeClassifier.classify(model, service);
+        ClassifiedShapes classified = ShapeClassifier.classify(model, service, protocol);
         List<ShapeRenderer> renderers = buildRenderers(classified);
 
         for (ShapeRenderer renderer : renderers) {

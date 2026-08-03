@@ -94,12 +94,13 @@ public final class ShapeClassifier {
     /**
      * Classifies all shapes reachable from the given service into generation buckets.
      *
-     * @param model   the Smithy model
-     * @param service the service shape whose operations define the root set
+     * @param model    the Smithy model
+     * @param service  the service shape whose operations define the root set
+     * @param protocol the already-resolved protocol; passed in rather than re-resolved so
+     *                 that {@code ModelGenerator} remains the single resolution point
      * @return classified shapes grouped by generation bucket
      */
-    public static ClassifiedShapes classify(Model model, ServiceShape service) {
-        Protocol protocol = ProtocolResolver.resolve(service, model);
+    public static ClassifiedShapes classify(Model model, ServiceShape service, Protocol protocol) {
         TopDownIndex index = TopDownIndex.of(model);
         Set<ShapeId> reachable = GlobalTransforms.computeReachableShapes(model, service);
 

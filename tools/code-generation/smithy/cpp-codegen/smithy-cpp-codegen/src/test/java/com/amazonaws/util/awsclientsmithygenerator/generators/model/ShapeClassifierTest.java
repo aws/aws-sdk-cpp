@@ -51,7 +51,7 @@ class ShapeClassifierTest {
     void classifiesRequestShape() {
         Model model = buildSimpleModel();
         ServiceShape service = model.expectShape(ShapeId.from("com.example#TestService"), ServiceShape.class);
-        var classified = ShapeClassifier.classify(model, service);
+        var classified = ShapeClassifier.classify(model, service, ProtocolResolver.resolve(service, model));
         assertTrue(classified.requests().stream()
             .anyMatch(r -> r.shape().getId().getName().equals("GetItemRequest")));
     }
@@ -60,7 +60,7 @@ class ShapeClassifierTest {
     void classifiesResultShape() {
         Model model = buildSimpleModel();
         ServiceShape service = model.expectShape(ShapeId.from("com.example#TestService"), ServiceShape.class);
-        var classified = ShapeClassifier.classify(model, service);
+        var classified = ShapeClassifier.classify(model, service, ProtocolResolver.resolve(service, model));
         assertTrue(classified.results().stream()
             .anyMatch(r -> r.shape().getId().getName().equals("GetItemResponse")));
     }
@@ -69,7 +69,7 @@ class ShapeClassifierTest {
     void classifiesSubObject() {
         Model model = buildSimpleModel();
         ServiceShape service = model.expectShape(ShapeId.from("com.example#TestService"), ServiceShape.class);
-        var classified = ShapeClassifier.classify(model, service);
+        var classified = ShapeClassifier.classify(model, service, ProtocolResolver.resolve(service, model));
         assertTrue(classified.subObjects().stream()
             .anyMatch(s -> s.getId().getName().equals("ItemData")));
     }
@@ -97,7 +97,7 @@ class ShapeClassifierTest {
             .build();
         StringShape str = StringShape.builder().id("com.example#String").build();
         Model model = Model.builder().addShapes(doc, request, response, op, service, str).build();
-        var classified = ShapeClassifier.classify(model, service);
+        var classified = ShapeClassifier.classify(model, service, ProtocolResolver.resolve(service, model));
         // Document should not appear in any list
         assertTrue(classified.subObjects().stream()
             .noneMatch(s -> s.getId().getName().equals("Doc")));
@@ -128,7 +128,7 @@ class ShapeClassifierTest {
             .addTrait(software.amazon.smithy.aws.traits.protocols.RestJson1Trait.builder().build())
             .build();
         Model model = Model.builder().addShapes(str, exception, request, response, op, service).build();
-        var classified = ShapeClassifier.classify(model, service);
+        var classified = ShapeClassifier.classify(model, service, ProtocolResolver.resolve(service, model));
         assertTrue(classified.subObjects().stream()
             .noneMatch(s -> s.getId().getName().equals("NotFoundException")));
     }
@@ -159,7 +159,7 @@ class ShapeClassifierTest {
             .addTrait(software.amazon.smithy.aws.traits.protocols.RestJson1Trait.builder().build())
             .build();
         Model model = Model.builder().addShapes(str, exception, request, response, op, service).build();
-        var classified = ShapeClassifier.classify(model, service);
+        var classified = ShapeClassifier.classify(model, service, ProtocolResolver.resolve(service, model));
         assertTrue(classified.subObjects().stream()
             .anyMatch(s -> s.getId().getName().equals("DetailedException")));
     }
@@ -190,7 +190,7 @@ class ShapeClassifierTest {
             .addTrait(software.amazon.smithy.aws.traits.protocols.RestXmlTrait.builder().build())
             .build();
         Model model = Model.builder().addShapes(str, exception, request, response, op, service).build();
-        var classified = ShapeClassifier.classify(model, service);
+        var classified = ShapeClassifier.classify(model, service, ProtocolResolver.resolve(service, model));
         assertTrue(classified.subObjects().stream()
             .noneMatch(s -> s.getId().getName().equals("NotFoundException")));
     }
@@ -230,7 +230,7 @@ class ShapeClassifierTest {
         Model model = Model.builder()
             .addShapes(str, eventA, eventStream, request, response, op, service)
             .build();
-        var classified = ShapeClassifier.classify(model, service);
+        var classified = ShapeClassifier.classify(model, service, ProtocolResolver.resolve(service, model));
 
         // Event stream handler should be recorded
         assertEquals(1, classified.eventStreamHandlers().size());
@@ -334,7 +334,7 @@ class ShapeClassifierTest {
         Model model = Model.builder()
             .addShapes(enumStr, request, response, op, service)
             .build();
-        var classified = ShapeClassifier.classify(model, service);
+        var classified = ShapeClassifier.classify(model, service, ProtocolResolver.resolve(service, model));
         assertTrue(classified.enums().stream()
             .anyMatch(s -> s.getId().getName().equals("Status")));
     }

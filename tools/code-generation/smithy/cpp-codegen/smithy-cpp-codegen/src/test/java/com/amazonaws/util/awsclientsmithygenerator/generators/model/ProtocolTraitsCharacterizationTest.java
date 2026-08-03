@@ -99,7 +99,7 @@ class ProtocolTraitsCharacterizationTest {
         Protocol resolved = ProtocolResolver.resolve(service, model);
         assertEquals(p, resolved, "Fixture trait did not resolve to the intended protocol");
 
-        ShapeClassifier.ClassifiedShapes classified = ShapeClassifier.classify(model, service);
+        ShapeClassifier.ClassifiedShapes classified = ShapeClassifier.classify(model, service, resolved);
         MockManifest manifest = new MockManifest();
         CppWriterDelegator delegator = new CppWriterDelegator(manifest);
 
