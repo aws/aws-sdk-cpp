@@ -79,7 +79,7 @@ public class ModelGenerator {
             namespace, exportMacro, smithyServiceName));
 
         renderers.add(new EventStreamRenderer(
-            classified.eventStreamHandlers(), model, service, protocol,
+            classified.eventStreamHandlers(), model, service, protocolTraits,
             namespace, exportMacro, smithyServiceName));
 
         return renderers;

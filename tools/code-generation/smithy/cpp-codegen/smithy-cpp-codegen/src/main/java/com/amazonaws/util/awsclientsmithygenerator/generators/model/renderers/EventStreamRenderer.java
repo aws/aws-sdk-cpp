@@ -8,8 +8,7 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.CppTypeMapper;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.MemberRenderer;
-import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
-import com.amazonaws.util.awsclientsmithygenerator.generators.model.SerdeStub;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.ProtocolTraits;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassifier.EventStreamInfo;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeRenderer;
 import software.amazon.smithy.model.Model;
@@ -33,25 +32,25 @@ import java.util.Optional;
  * elsewhere (as reachable sub-objects) and only referenced here.
  *
  * <p>No protocol-specific serialization is emitted; payload (de)serialization points
- * are protocol-agnostic TODO stubs via {@link SerdeStub}.
+ * are protocol-agnostic TODO stubs via {@link ProtocolTraits}.
  */
 public final class EventStreamRenderer implements ShapeRenderer {
 
     private final List<EventStreamInfo> eventStreams;
     private final Model model;
     private final ServiceShape service;
-    private final Protocol protocol;
+    private final ProtocolTraits protocolTraits;
     private final String namespace;
     private final String exportMacro;
     private final String smithyServiceName;
 
     public EventStreamRenderer(List<EventStreamInfo> eventStreams, Model model, ServiceShape service,
-                               Protocol protocol, String namespace, String exportMacro,
+                               ProtocolTraits protocolTraits, String namespace, String exportMacro,
                                String smithyServiceName) {
         this.eventStreams = eventStreams;
         this.model = model;
         this.service = service;
-        this.protocol = protocol;
+        this.protocolTraits = protocolTraits;
         this.namespace = namespace;
         this.exportMacro = exportMacro;
         this.smithyServiceName = smithyServiceName;
@@ -307,7 +306,8 @@ public final class EventStreamRenderer implements ShapeRenderer {
                     });
                     for (MemberShape event : events) {
                         writer.openBlock("case $1LEventType::$2L: {", "}", opName, enumConstant(event), () -> {
-                            SerdeStub.renderEventPayloadDecodeStub(writer, eventShapeName(event), "m_on" + eventShapeName(event));
+                            protocolTraits.writeEventPayloadDecode(writer, eventShapeName(event),
+                                "m_on" + eventShapeName(event));
                             writer.write("break;");
                         });
                     }
@@ -335,7 +335,7 @@ public final class EventStreamRenderer implements ShapeRenderer {
                 writer.write("errorHeaderIter = headers.find(ERROR_MESSAGE_HEADER);");
                 writer.openBlock("if (errorHeaderIter == headers.end()) {", "}", () -> {
                     writer.write("// TODO: read error message from payload once protocol-specific serde lands");
-                    SerdeStub.renderErrorPayloadParseStub(writer);
+                    protocolTraits.writeErrorPayloadParse(writer);
                 });
                 writer.openBlock("else {", "}", () -> {
                     writer.write("errorMessage = errorHeaderIter->second.GetEventHeaderValueAsString();");
@@ -420,14 +420,14 @@ public final class EventStreamRenderer implements ShapeRenderer {
             writer.write("#include <aws/$1L/$2L_EXPORTS.h>", smithyServiceName, namespace);
             writer.write("");
             writer.writeNamespaceOpen("Aws");
-            renderSerdeForwardDeclarations(writer);
+            protocolTraits.writeShapeForwardDeclarations(writer);
             writer.writeNamespaceOpen(namespace);
             writer.writeNamespaceOpen("Model");
             writer.write("");
             writer.openBlock("class $L {", "};", className, () -> {
                 writer.write("public:");
                 // The header-collection ctor sits before the serialize method (mainline ordering).
-                SerdeStub.renderHeaderDeclarations(writer, protocol, exportMacro, className,
+                protocolTraits.writeSerdeMethodDecls(writer, exportMacro, className,
                     () -> writer.write("$1L $2L(const Http::HeaderValueCollection& responseHeaders);", exportMacro, className));
             });
             writer.write("");
@@ -438,46 +438,19 @@ public final class EventStreamRenderer implements ShapeRenderer {
 
         String sourceFile = "source/model/" + className + ".cpp";
         writerDelegator.useFileWriter(sourceFile, writer -> {
-            if (protocol.isJsonLike()) {
-                writer.write("#include <aws/core/utils/json/JsonSerializer.h>");
-            } else {
-                writer.write("#include <aws/core/utils/xml/XmlSerializer.h>");
-            }
+            protocolTraits.writeSerdeInclude(writer);
             writer.write("#include <aws/core/utils/UnreferencedParam.h>");
             writer.write("#include <aws/$1L/model/$2L.h>", smithyServiceName, className);
             writer.write("");
             writer.write("using namespace Aws::$1L::Model;", namespace);
-            if (protocol.isJsonLike()) {
-                writer.write("using namespace Aws::Utils::Json;");
-            } else {
-                writer.write("using namespace Aws::Utils::Xml;");
-            }
-            writer.write("using namespace Aws::Utils;");
+            protocolTraits.writeSerdeUsingDeclarations(writer);
             writer.write("");
-            SerdeStub.renderSerdeSourceStub(writer, protocol, className);
+            protocolTraits.writeSerdeMethodImpls(writer, className);
             writer.write("");
             writer.openBlock("$1L::$1L(const Http::HeaderValueCollection& responseHeaders) {", "}", className, () -> {
                 writer.write("AWS_UNREFERENCED_PARAM(responseHeaders);");
             });
         });
-    }
-
-    /** Forward-declares the protocol serde types under Aws:: for header use. */
-    private void renderSerdeForwardDeclarations(CppWriter writer) {
-        if (protocol.isJsonLike()) {
-            writer.writeNamespaceOpen("Utils");
-            writer.writeNamespaceOpen("Json");
-            writer.write("class JsonValue;");
-            writer.write("class JsonView;");
-            writer.writeNamespaceClose("Json");
-            writer.writeNamespaceClose("Utils");
-        } else {
-            writer.writeNamespaceOpen("Utils");
-            writer.writeNamespaceOpen("Xml");
-            writer.write("class XmlNode;");
-            writer.writeNamespaceClose("Xml");
-            writer.writeNamespaceClose("Utils");
-        }
     }
 
     private void renderEventStreamUnion(CppWriterDelegator writerDelegator, String opName,
@@ -498,14 +471,14 @@ public final class EventStreamRenderer implements ShapeRenderer {
             writer.write("#include <utility>");
             writer.write("");
             writer.writeNamespaceOpen("Aws");
-            renderSerdeForwardDeclarations(writer);
+            protocolTraits.writeShapeForwardDeclarations(writer);
             writer.writeNamespaceOpen(namespace);
             writer.writeNamespaceOpen("Model");
             writer.write("");
             MemberRenderer.renderClassDocComment(writer, union, smithyServiceName, service.getVersion());
             writer.openBlock("class $L {", "};", className, () -> {
                 writer.write("public:");
-                SerdeStub.renderHeaderDeclarations(writer, protocol, exportMacro, className);
+                protocolTraits.writeSerdeMethodDecls(writer, exportMacro, className, null);
                 writer.write("");
                 // Event member accessors, typed as their concrete shape.
                 for (MemberShape event : events) {

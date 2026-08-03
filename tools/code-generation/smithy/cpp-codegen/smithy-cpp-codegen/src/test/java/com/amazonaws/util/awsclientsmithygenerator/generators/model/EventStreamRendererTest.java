@@ -76,7 +76,8 @@ class EventStreamRendererTest {
         CppWriterDelegator delegator = new CppWriterDelegator(manifest);
         EventStreamRenderer renderer = new EventStreamRenderer(
             ShapeClassifier.classify(model, service).eventStreamHandlers(),
-            model, service, ProtocolResolver.resolve(service, model),
+            model, service,
+            ProtocolResolver.traitsFor(ProtocolResolver.resolve(service, model)),
             "Example", "AWS_EXAMPLE_API", "example");
         renderer.render(delegator);
         delegator.flushWriters();
