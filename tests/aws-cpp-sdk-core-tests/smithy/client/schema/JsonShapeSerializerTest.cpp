@@ -6,6 +6,7 @@
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <smithy/client/schema/JsonShapeSerializer.h>
 #include <smithy/client/schema/JsonTraits.h>
+#include <smithy/client/schema/SerdeTraits.h>
 
 using namespace smithy::schema;
 
@@ -488,4 +489,119 @@ TEST_F(JsonShapeSerializerTest, FloatNegativeValue) {
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   EXPECT_EQ(outcome.GetResult(), "{\"f\":-2.25}");
+}
+
+// --- Double precision ---
+
+TEST_F(JsonShapeSerializerTest, DoubleLargeValueFullPrecision) {
+  JsonShapeSerializer s;
+  Schema root;
+  Schema member("d", ShapeType::Double);
+  s.BeginStructure(root);
+  s.WriteDouble(member, 1234567890.5);
+  s.EndStructure();
+  auto outcome = s.GetPayload();
+  ASSERT_TRUE(outcome.IsSuccess());
+  EXPECT_EQ(outcome.GetResult(), "{\"d\":1234567890.5}");
+}
+
+TEST_F(JsonShapeSerializerTest, DoubleSmallFractionFullPrecision) {
+  JsonShapeSerializer s;
+  Schema root;
+  Schema member("d", ShapeType::Double);
+  s.BeginStructure(root);
+  s.WriteDouble(member, 3.141592653589793);
+  s.EndStructure();
+  auto outcome = s.GetPayload();
+  ASSERT_TRUE(outcome.IsSuccess());
+  EXPECT_NE(outcome.GetResult().find("3.141592653589793"), Aws::String::npos);
+}
+
+TEST_F(JsonShapeSerializerTest, DoubleWholeNumberNoTrailingDecimal) {
+  JsonShapeSerializer s;
+  Schema root;
+  Schema member("d", ShapeType::Double);
+  s.BeginStructure(root);
+  s.WriteDouble(member, 42.0);
+  s.EndStructure();
+  auto outcome = s.GetPayload();
+  ASSERT_TRUE(outcome.IsSuccess());
+  EXPECT_EQ(outcome.GetResult(), "{\"d\":42}");
+}
+
+// --- TimestampFormatTrait ---
+
+TEST_F(JsonShapeSerializerTest, TimestampDefaultEpochSeconds) {
+  JsonShapeSerializer s;
+  Schema root;
+  Schema member("ts", ShapeType::Timestamp);
+  s.BeginStructure(root);
+  Aws::Utils::DateTime dt(1398796238.0);
+  s.WriteTimestamp(member, dt);
+  s.EndStructure();
+  auto outcome = s.GetPayload();
+  ASSERT_TRUE(outcome.IsSuccess());
+  EXPECT_EQ(outcome.GetResult(), "{\"ts\":1398796238}");
+}
+
+TEST_F(JsonShapeSerializerTest, TimestampEpochSecondsWithMillis) {
+  JsonShapeSerializer s;
+  Schema root;
+  Schema member("ts", ShapeType::Timestamp);
+  s.BeginStructure(root);
+  Aws::Utils::DateTime dt(1398796238.123);
+  s.WriteTimestamp(member, dt);
+  s.EndStructure();
+  auto outcome = s.GetPayload();
+  ASSERT_TRUE(outcome.IsSuccess());
+  EXPECT_EQ(outcome.GetResult(), "{\"ts\":1398796238.123}");
+}
+
+TEST_F(JsonShapeSerializerTest, TimestampFormatTraitDateTime) {
+  JsonShapeSerializer s;
+  Schema root;
+  Schema member("ts", ShapeType::Timestamp);
+  member.SetTrait(TimestampFormatTrait::KEY(),
+                  Aws::MakeShared<TimestampFormatTrait>("Schema", TimestampFormatTrait::Format::DATE_TIME));
+  s.BeginStructure(root);
+  Aws::Utils::DateTime dt(1398796238.0);
+  s.WriteTimestamp(member, dt);
+  s.EndStructure();
+  auto outcome = s.GetPayload();
+  ASSERT_TRUE(outcome.IsSuccess());
+  auto payload = outcome.GetResult();
+  EXPECT_NE(payload.find("\"ts\":\""), Aws::String::npos);
+  EXPECT_NE(payload.find("2014"), Aws::String::npos);
+}
+
+TEST_F(JsonShapeSerializerTest, TimestampFormatTraitHttpDate) {
+  JsonShapeSerializer s;
+  Schema root;
+  Schema member("ts", ShapeType::Timestamp);
+  member.SetTrait(TimestampFormatTrait::KEY(),
+                  Aws::MakeShared<TimestampFormatTrait>("Schema", TimestampFormatTrait::Format::HTTP_DATE));
+  s.BeginStructure(root);
+  Aws::Utils::DateTime dt(1398796238.0);
+  s.WriteTimestamp(member, dt);
+  s.EndStructure();
+  auto outcome = s.GetPayload();
+  ASSERT_TRUE(outcome.IsSuccess());
+  auto payload = outcome.GetResult();
+  EXPECT_NE(payload.find("\"ts\":\""), Aws::String::npos);
+  EXPECT_NE(payload.find("2014"), Aws::String::npos);
+}
+
+TEST_F(JsonShapeSerializerTest, TimestampFormatTraitEpochSeconds) {
+  JsonShapeSerializer s;
+  Schema root;
+  Schema member("ts", ShapeType::Timestamp);
+  member.SetTrait(TimestampFormatTrait::KEY(),
+                  Aws::MakeShared<TimestampFormatTrait>("Schema", TimestampFormatTrait::Format::EPOCH_SECONDS));
+  s.BeginStructure(root);
+  Aws::Utils::DateTime dt(1398796238.0);
+  s.WriteTimestamp(member, dt);
+  s.EndStructure();
+  auto outcome = s.GetPayload();
+  ASSERT_TRUE(outcome.IsSuccess());
+  EXPECT_EQ(outcome.GetResult(), "{\"ts\":1398796238}");
 }

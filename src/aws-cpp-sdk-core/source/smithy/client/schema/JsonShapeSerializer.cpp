@@ -7,6 +7,7 @@
 #include <smithy/client/schema/JsonShapeSerializer.h>
 #include <smithy/client/schema/JsonTraits.h>
 #include <smithy/client/schema/JsonWriteUtils.h>
+#include <smithy/client/schema/SerdeTraits.h>
 
 #include <array>
 
@@ -61,12 +62,12 @@ class JsonShapeSerializer::Impl {
 
   void WriteFloat(const Schema& schema, float value) {
     WriteFieldName(schema);
-    m_buf += StringUtils::to_string(value);
+    Aws::Schema::WriteJsonDouble(m_buf, static_cast<double>(value));
   }
 
   void WriteDouble(const Schema& schema, double value) {
     WriteFieldName(schema);
-    m_buf += StringUtils::to_string(value);
+    Aws::Schema::WriteJsonDouble(m_buf, value);
   }
 
   void WriteString(const Schema& schema, const Aws::String& value) {
@@ -76,7 +77,20 @@ class JsonShapeSerializer::Impl {
 
   void WriteTimestamp(const Schema& schema, const DateTime& value) {
     WriteFieldName(schema);
-    m_buf += StringUtils::to_string(value.SecondsWithMSPrecision());
+    auto trait = schema.GetTrait(TimestampFormatTrait::KEY());
+    if (trait) {
+      switch (trait->GetFormat()) {
+        case TimestampFormatTrait::Format::DATE_TIME:
+          Aws::Schema::WriteQuotedJsonString(m_buf, value.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+          return;
+        case TimestampFormatTrait::Format::HTTP_DATE:
+          Aws::Schema::WriteQuotedJsonString(m_buf, value.ToGmtString(Aws::Utils::DateFormat::RFC822));
+          return;
+        case TimestampFormatTrait::Format::EPOCH_SECONDS:
+          break;
+      }
+    }
+    Aws::Schema::WriteJsonDouble(m_buf, value.SecondsWithMSPrecision());
   }
 
   void WriteBlob(const Schema& schema, const ByteBuffer& value) {

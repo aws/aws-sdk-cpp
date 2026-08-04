@@ -5,8 +5,12 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSArray.h>
+#include <smithy/client/schema/SerdeTraits.h>
 #include <smithy/client/schema/XmlShapeSerializer.h>
 #include <smithy/client/schema/XmlTraits.h>
+
+#include <cstdio>
+#include <cstdlib>
 
 using namespace smithy::schema;
 using namespace Aws::Utils;
@@ -71,13 +75,41 @@ class XmlShapeSerializer::Impl {
 
   void WriteLong(const Schema& schema, int64_t value) { WrapValue(GetXmlName(schema), StringUtils::to_string(value)); }
 
-  void WriteFloat(const Schema& schema, float value) { WrapValue(GetXmlName(schema), StringUtils::to_string(value)); }
+  void WriteFloat(const Schema& schema, float value) { WriteDouble(schema, static_cast<double>(value)); }
 
-  void WriteDouble(const Schema& schema, double value) { WrapValue(GetXmlName(schema), StringUtils::to_string(value)); }
+  void WriteDouble(const Schema& schema, double value) {
+    char tmp[64];
+    int n = snprintf(tmp, sizeof(tmp), "%1.15g", value);
+    double reparsed = strtod(tmp, nullptr);
+    if (reparsed != value) {
+      n = snprintf(tmp, sizeof(tmp), "%1.17g", value);
+    }
+    WrapValue(GetXmlName(schema), Aws::String(tmp, n));
+  }
 
   void WriteString(const Schema& schema, const Aws::String& value) { WrapEscapedValue(GetXmlName(schema), value); }
 
   void WriteTimestamp(const Schema& schema, const DateTime& value) {
+    auto trait = schema.GetTrait(TimestampFormatTrait::KEY());
+    if (trait) {
+      switch (trait->GetFormat()) {
+        case TimestampFormatTrait::Format::EPOCH_SECONDS: {
+          char tmp[64];
+          int n = snprintf(tmp, sizeof(tmp), "%1.15g", value.SecondsWithMSPrecision());
+          double reparsed = strtod(tmp, nullptr);
+          if (reparsed != value.SecondsWithMSPrecision()) {
+            n = snprintf(tmp, sizeof(tmp), "%1.17g", value.SecondsWithMSPrecision());
+          }
+          WrapValue(GetXmlName(schema), Aws::String(tmp, n));
+          return;
+        }
+        case TimestampFormatTrait::Format::HTTP_DATE:
+          WrapValue(GetXmlName(schema), value.ToGmtString(Aws::Utils::DateFormat::RFC822));
+          return;
+        case TimestampFormatTrait::Format::DATE_TIME:
+          break;
+      }
+    }
     WrapValue(GetXmlName(schema), value.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 

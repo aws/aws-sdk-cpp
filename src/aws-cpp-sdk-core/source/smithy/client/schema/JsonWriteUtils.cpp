@@ -5,6 +5,9 @@
 #include <aws/core/utils/memory/stl/AWSArray.h>
 #include <smithy/client/schema/JsonWriteUtils.h>
 
+#include <cstdio>
+#include <cstdlib>
+
 namespace {
 
 static const Aws::Array<char, 16> HEX = {{'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'}};
@@ -69,6 +72,16 @@ void WriteQuotedJsonString(Aws::String& buf, const Aws::String& value) {
     }
   }
   buf += '"';
+}
+
+void WriteJsonDouble(Aws::String& buf, double value) {
+  char tmp[64];
+  int n = snprintf(tmp, sizeof(tmp), "%1.15g", value);
+  double reparsed = strtod(tmp, nullptr);
+  if (reparsed != value) {
+    n = snprintf(tmp, sizeof(tmp), "%1.17g", value);
+  }
+  buf.append(tmp, n);
 }
 
 }  // namespace Schema

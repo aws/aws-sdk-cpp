@@ -4,6 +4,7 @@
  */
 #include <aws/core/utils/DateTime.h>
 #include <aws/testing/AwsCppSdkGTestSuite.h>
+#include <smithy/client/schema/SerdeTraits.h>
 #include <smithy/client/schema/XmlShapeSerializer.h>
 #include <smithy/client/schema/XmlTraits.h>
 
@@ -524,4 +525,89 @@ TEST_F(XmlShapeSerializerTest, FloatNegativeValue) {
   s.EndStructure();
   auto payload = s.GetPayload().GetResult();
   EXPECT_NE(payload.find("<val>-2.25</val>"), Aws::String::npos);
+}
+
+// --- Double precision ---
+
+TEST_F(XmlShapeSerializerTest, DoubleLargeValueFullPrecision) {
+  XmlShapeSerializer s;
+  Schema root("Root", ShapeType::Structure);
+  Schema member("d", ShapeType::Double);
+  s.BeginStructure(root);
+  s.WriteDouble(member, 1234567890.5);
+  s.EndStructure();
+  auto payload = s.GetPayload().GetResult();
+  EXPECT_NE(payload.find("<d>1234567890.5</d>"), Aws::String::npos);
+}
+
+TEST_F(XmlShapeSerializerTest, DoubleSmallFractionFullPrecision) {
+  XmlShapeSerializer s;
+  Schema root("Root", ShapeType::Structure);
+  Schema member("d", ShapeType::Double);
+  s.BeginStructure(root);
+  s.WriteDouble(member, 3.141592653589793);
+  s.EndStructure();
+  auto payload = s.GetPayload().GetResult();
+  EXPECT_NE(payload.find("3.141592653589793"), Aws::String::npos);
+}
+
+// --- TimestampFormatTrait ---
+
+TEST_F(XmlShapeSerializerTest, TimestampDefaultDateTime) {
+  XmlShapeSerializer s;
+  Schema root("Root", ShapeType::Structure);
+  Schema member("ts", ShapeType::Timestamp);
+  s.BeginStructure(root);
+  Aws::Utils::DateTime dt(1398796238.0);
+  s.WriteTimestamp(member, dt);
+  s.EndStructure();
+  auto payload = s.GetPayload().GetResult();
+  EXPECT_NE(payload.find("<ts>"), Aws::String::npos);
+  EXPECT_NE(payload.find("2014"), Aws::String::npos);
+  EXPECT_NE(payload.find("T"), Aws::String::npos);
+}
+
+TEST_F(XmlShapeSerializerTest, TimestampFormatTraitEpochSeconds) {
+  XmlShapeSerializer s;
+  Schema root("Root", ShapeType::Structure);
+  Schema member("ts", ShapeType::Timestamp);
+  member.SetTrait(TimestampFormatTrait::KEY(),
+                  Aws::MakeShared<TimestampFormatTrait>("Schema", TimestampFormatTrait::Format::EPOCH_SECONDS));
+  s.BeginStructure(root);
+  Aws::Utils::DateTime dt(1398796238.0);
+  s.WriteTimestamp(member, dt);
+  s.EndStructure();
+  auto payload = s.GetPayload().GetResult();
+  EXPECT_NE(payload.find("<ts>1398796238</ts>"), Aws::String::npos);
+}
+
+TEST_F(XmlShapeSerializerTest, TimestampFormatTraitHttpDate) {
+  XmlShapeSerializer s;
+  Schema root("Root", ShapeType::Structure);
+  Schema member("ts", ShapeType::Timestamp);
+  member.SetTrait(TimestampFormatTrait::KEY(),
+                  Aws::MakeShared<TimestampFormatTrait>("Schema", TimestampFormatTrait::Format::HTTP_DATE));
+  s.BeginStructure(root);
+  Aws::Utils::DateTime dt(1398796238.0);
+  s.WriteTimestamp(member, dt);
+  s.EndStructure();
+  auto payload = s.GetPayload().GetResult();
+  EXPECT_NE(payload.find("<ts>"), Aws::String::npos);
+  EXPECT_NE(payload.find("2014"), Aws::String::npos);
+}
+
+TEST_F(XmlShapeSerializerTest, TimestampFormatTraitDateTime) {
+  XmlShapeSerializer s;
+  Schema root("Root", ShapeType::Structure);
+  Schema member("ts", ShapeType::Timestamp);
+  member.SetTrait(TimestampFormatTrait::KEY(),
+                  Aws::MakeShared<TimestampFormatTrait>("Schema", TimestampFormatTrait::Format::DATE_TIME));
+  s.BeginStructure(root);
+  Aws::Utils::DateTime dt(1398796238.0);
+  s.WriteTimestamp(member, dt);
+  s.EndStructure();
+  auto payload = s.GetPayload().GetResult();
+  EXPECT_NE(payload.find("<ts>"), Aws::String::npos);
+  EXPECT_NE(payload.find("2014"), Aws::String::npos);
+  EXPECT_NE(payload.find("T"), Aws::String::npos);
 }
