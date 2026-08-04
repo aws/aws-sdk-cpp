@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/ApplicationStatusSummary.h>
 #include <aws/ec2/model/EbsStatusSummary.h>
 #include <aws/ec2/model/InstanceState.h>
 #include <aws/ec2/model/InstanceStatusEvent.h>
@@ -26,7 +27,9 @@ namespace EC2 {
 namespace Model {
 
 /**
- * <p>Describes the status of an instance.</p><p><h3>See Also:</h3>   <a
+ * <p>Describes the status of an instance, including system status, instance
+ * status, attached EBS status, and application status.</p><p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstanceStatus">AWS
  * API Reference</a></p>
  */
@@ -229,6 +232,25 @@ class InstanceStatus {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Reports impaired functionality that stems from issues with applications
+   * running on the instance.</p>
+   */
+  inline const ApplicationStatusSummary& GetApplicationStatus() const { return m_applicationStatus; }
+  inline bool ApplicationStatusHasBeenSet() const { return m_applicationStatusHasBeenSet; }
+  template <typename ApplicationStatusT = ApplicationStatusSummary>
+  void SetApplicationStatus(ApplicationStatusT&& value) {
+    m_applicationStatusHasBeenSet = true;
+    m_applicationStatus = std::forward<ApplicationStatusT>(value);
+  }
+  template <typename ApplicationStatusT = ApplicationStatusSummary>
+  InstanceStatus& WithApplicationStatus(ApplicationStatusT&& value) {
+    SetApplicationStatus(std::forward<ApplicationStatusT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_availabilityZone;
 
@@ -249,6 +271,8 @@ class InstanceStatus {
   InstanceStatusSummary m_systemStatus;
 
   EbsStatusSummary m_attachedEbsStatus;
+
+  ApplicationStatusSummary m_applicationStatus;
   bool m_availabilityZoneHasBeenSet = false;
   bool m_availabilityZoneIdHasBeenSet = false;
   bool m_outpostArnHasBeenSet = false;
@@ -259,6 +283,7 @@ class InstanceStatus {
   bool m_instanceStatusHasBeenSet = false;
   bool m_systemStatusHasBeenSet = false;
   bool m_attachedEbsStatusHasBeenSet = false;
+  bool m_applicationStatusHasBeenSet = false;
 };
 
 }  // namespace Model

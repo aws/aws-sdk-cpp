@@ -20,6 +20,12 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/DescribeClientVpnAuthorizationRulesRequest.h>
+#include <aws/ec2/model/DescribeClientVpnConnectionsRequest.h>
+#include <aws/ec2/model/DescribeClientVpnEndpointsRequest.h>
+#include <aws/ec2/model/DescribeClientVpnRoutesRequest.h>
+#include <aws/ec2/model/DescribeClientVpnTargetNetworksRequest.h>
+#include <aws/ec2/model/DescribeCoipPoolsRequest.h>
 #include <aws/ec2/model/DescribeConversionTasksRequest.h>
 #include <aws/ec2/model/DescribeCustomerGatewaysRequest.h>
 #include <aws/ec2/model/DescribeDeclarativePoliciesReportsRequest.h>
@@ -114,12 +120,6 @@
 #include <aws/ec2/model/DescribeRouteServersRequest.h>
 #include <aws/ec2/model/DescribeRouteTablesRequest.h>
 #include <aws/ec2/model/DescribeScheduledInstanceAvailabilityRequest.h>
-#include <aws/ec2/model/DescribeScheduledInstancesRequest.h>
-#include <aws/ec2/model/DescribeSecondaryInterfacesRequest.h>
-#include <aws/ec2/model/DescribeSecondaryNetworksRequest.h>
-#include <aws/ec2/model/DescribeSecondarySubnetsRequest.h>
-#include <aws/ec2/model/DescribeSecurityGroupReferencesRequest.h>
-#include <aws/ec2/model/DescribeSecurityGroupRulesRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,44 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DescribeClientVpnAuthorizationRulesOutcome EC2Client::DescribeClientVpnAuthorizationRules(
+    const DescribeClientVpnAuthorizationRulesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeClientVpnAuthorizationRulesOutcome(result.GetResultWithOwnership())
+                            : DescribeClientVpnAuthorizationRulesOutcome(std::move(result.GetError()));
+}
+
+DescribeClientVpnConnectionsOutcome EC2Client::DescribeClientVpnConnections(const DescribeClientVpnConnectionsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeClientVpnConnectionsOutcome(result.GetResultWithOwnership())
+                            : DescribeClientVpnConnectionsOutcome(std::move(result.GetError()));
+}
+
+DescribeClientVpnEndpointsOutcome EC2Client::DescribeClientVpnEndpoints(const DescribeClientVpnEndpointsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeClientVpnEndpointsOutcome(result.GetResultWithOwnership())
+                            : DescribeClientVpnEndpointsOutcome(std::move(result.GetError()));
+}
+
+DescribeClientVpnRoutesOutcome EC2Client::DescribeClientVpnRoutes(const DescribeClientVpnRoutesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeClientVpnRoutesOutcome(result.GetResultWithOwnership())
+                            : DescribeClientVpnRoutesOutcome(std::move(result.GetError()));
+}
+
+DescribeClientVpnTargetNetworksOutcome EC2Client::DescribeClientVpnTargetNetworks(
+    const DescribeClientVpnTargetNetworksRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeClientVpnTargetNetworksOutcome(result.GetResultWithOwnership())
+                            : DescribeClientVpnTargetNetworksOutcome(std::move(result.GetError()));
+}
+
+DescribeCoipPoolsOutcome EC2Client::DescribeCoipPools(const DescribeCoipPoolsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCoipPoolsOutcome(result.GetResultWithOwnership())
+                            : DescribeCoipPoolsOutcome(std::move(result.GetError()));
+}
 
 DescribeConversionTasksOutcome EC2Client::DescribeConversionTasks(const DescribeConversionTasksRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -721,41 +759,4 @@ DescribeScheduledInstanceAvailabilityOutcome EC2Client::DescribeScheduledInstanc
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeScheduledInstanceAvailabilityOutcome(result.GetResultWithOwnership())
                             : DescribeScheduledInstanceAvailabilityOutcome(std::move(result.GetError()));
-}
-
-DescribeScheduledInstancesOutcome EC2Client::DescribeScheduledInstances(const DescribeScheduledInstancesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeScheduledInstancesOutcome(result.GetResultWithOwnership())
-                            : DescribeScheduledInstancesOutcome(std::move(result.GetError()));
-}
-
-DescribeSecondaryInterfacesOutcome EC2Client::DescribeSecondaryInterfaces(const DescribeSecondaryInterfacesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeSecondaryInterfacesOutcome(result.GetResultWithOwnership())
-                            : DescribeSecondaryInterfacesOutcome(std::move(result.GetError()));
-}
-
-DescribeSecondaryNetworksOutcome EC2Client::DescribeSecondaryNetworks(const DescribeSecondaryNetworksRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeSecondaryNetworksOutcome(result.GetResultWithOwnership())
-                            : DescribeSecondaryNetworksOutcome(std::move(result.GetError()));
-}
-
-DescribeSecondarySubnetsOutcome EC2Client::DescribeSecondarySubnets(const DescribeSecondarySubnetsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeSecondarySubnetsOutcome(result.GetResultWithOwnership())
-                            : DescribeSecondarySubnetsOutcome(std::move(result.GetError()));
-}
-
-DescribeSecurityGroupReferencesOutcome EC2Client::DescribeSecurityGroupReferences(
-    const DescribeSecurityGroupReferencesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeSecurityGroupReferencesOutcome(result.GetResultWithOwnership())
-                            : DescribeSecurityGroupReferencesOutcome(std::move(result.GetError()));
-}
-
-DescribeSecurityGroupRulesOutcome EC2Client::DescribeSecurityGroupRules(const DescribeSecurityGroupRulesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeSecurityGroupRulesOutcome(result.GetResultWithOwnership())
-                            : DescribeSecurityGroupRulesOutcome(std::move(result.GetError()));
 }

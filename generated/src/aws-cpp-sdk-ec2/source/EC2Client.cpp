@@ -38,6 +38,7 @@
 #include <aws/ec2/model/AssignPrivateIpAddressesRequest.h>
 #include <aws/ec2/model/AssignPrivateNatGatewayAddressRequest.h>
 #include <aws/ec2/model/AssociateAddressRequest.h>
+#include <aws/ec2/model/AssociateApplicationStatusCheckRequest.h>
 #include <aws/ec2/model/AssociateCapacityReservationBillingOwnerRequest.h>
 #include <aws/ec2/model/AssociateClientVpnTargetNetworkRequest.h>
 #include <aws/ec2/model/AssociateDhcpOptionsRequest.h>
@@ -83,6 +84,7 @@
 #include <aws/ec2/model/CopyImageRequest.h>
 #include <aws/ec2/model/CopySnapshotRequest.h>
 #include <aws/ec2/model/CopyVolumesRequest.h>
+#include <aws/ec2/model/CreateApplicationStatusCheckRequest.h>
 #include <aws/ec2/model/CreateCapacityManagerDataExportRequest.h>
 #include <aws/ec2/model/CreateCapacityReservationBySplittingRequest.h>
 #include <aws/ec2/model/CreateCapacityReservationCancellationQuoteRequest.h>
@@ -118,8 +120,6 @@
 #include <aws/ec2/model/CreateIpamResourceDiscoveryRequest.h>
 #include <aws/ec2/model/CreateIpamScopeRequest.h>
 #include <aws/ec2/model/CreateKeyPairRequest.h>
-#include <aws/ec2/model/CreateLaunchTemplateRequest.h>
-#include <aws/ec2/model/CreateLaunchTemplateVersionRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -382,6 +382,13 @@ AssociateAddressOutcome EC2Client::AssociateAddress(const AssociateAddressReques
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? AssociateAddressOutcome(result.GetResultWithOwnership())
                             : AssociateAddressOutcome(std::move(result.GetError()));
+}
+
+AssociateApplicationStatusCheckOutcome EC2Client::AssociateApplicationStatusCheck(
+    const AssociateApplicationStatusCheckRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateApplicationStatusCheckOutcome(result.GetResultWithOwnership())
+                            : AssociateApplicationStatusCheckOutcome(std::move(result.GetError()));
 }
 
 AssociateCapacityReservationBillingOwnerOutcome EC2Client::AssociateCapacityReservationBillingOwner(
@@ -674,6 +681,12 @@ CopyVolumesOutcome EC2Client::CopyVolumes(const CopyVolumesRequest& request) con
   return result.IsSuccess() ? CopyVolumesOutcome(result.GetResultWithOwnership()) : CopyVolumesOutcome(std::move(result.GetError()));
 }
 
+CreateApplicationStatusCheckOutcome EC2Client::CreateApplicationStatusCheck(const CreateApplicationStatusCheckRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateApplicationStatusCheckOutcome(result.GetResultWithOwnership())
+                            : CreateApplicationStatusCheckOutcome(std::move(result.GetError()));
+}
+
 CreateCapacityManagerDataExportOutcome EC2Client::CreateCapacityManagerDataExport(
     const CreateCapacityManagerDataExportRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -883,16 +896,4 @@ CreateIpamScopeOutcome EC2Client::CreateIpamScope(const CreateIpamScopeRequest& 
 CreateKeyPairOutcome EC2Client::CreateKeyPair(const CreateKeyPairRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateKeyPairOutcome(result.GetResultWithOwnership()) : CreateKeyPairOutcome(std::move(result.GetError()));
-}
-
-CreateLaunchTemplateOutcome EC2Client::CreateLaunchTemplate(const CreateLaunchTemplateRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? CreateLaunchTemplateOutcome(result.GetResultWithOwnership())
-                            : CreateLaunchTemplateOutcome(std::move(result.GetError()));
-}
-
-CreateLaunchTemplateVersionOutcome EC2Client::CreateLaunchTemplateVersion(const CreateLaunchTemplateVersionRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? CreateLaunchTemplateVersionOutcome(result.GetResultWithOwnership())
-                            : CreateLaunchTemplateVersionOutcome(std::move(result.GetError()));
 }

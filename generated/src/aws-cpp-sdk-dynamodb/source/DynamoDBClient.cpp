@@ -62,6 +62,7 @@
 #include <aws/dynamodb/model/RestoreTableFromBackupRequest.h>
 #include <aws/dynamodb/model/RestoreTableToPointInTimeRequest.h>
 #include <aws/dynamodb/model/ScanRequest.h>
+#include <aws/dynamodb/model/SearchVectorsRequest.h>
 #include <aws/dynamodb/model/TagResourceRequest.h>
 #include <aws/dynamodb/model/TransactGetItemsRequest.h>
 #include <aws/dynamodb/model/TransactWriteItemsRequest.h>
@@ -420,6 +421,10 @@ RestoreTableToPointInTimeOutcome DynamoDBClient::RestoreTableToPointInTime(const
 ScanOutcome DynamoDBClient::Scan(const ScanRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ScanOutcome(result.GetResultWithOwnership()) : ScanOutcome(std::move(result.GetError()));
+}
+SearchVectorsOutcome DynamoDBClient::SearchVectors(const SearchVectorsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchVectorsOutcome(result.GetResultWithOwnership()) : SearchVectorsOutcome(std::move(result.GetError()));
 }
 TagResourceOutcome DynamoDBClient::TagResource(const TagResourceRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);

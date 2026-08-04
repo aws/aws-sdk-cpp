@@ -20,6 +20,9 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/DeleteLocalGatewayRouteTableRequest.h>
+#include <aws/ec2/model/DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest.h>
+#include <aws/ec2/model/DeleteLocalGatewayRouteTableVpcAssociationRequest.h>
 #include <aws/ec2/model/DeleteLocalGatewayVirtualInterfaceGroupRequest.h>
 #include <aws/ec2/model/DeleteLocalGatewayVirtualInterfaceRequest.h>
 #include <aws/ec2/model/DeleteManagedPrefixListRequest.h>
@@ -97,6 +100,9 @@
 #include <aws/ec2/model/DescribeAddressesAttributeRequest.h>
 #include <aws/ec2/model/DescribeAddressesRequest.h>
 #include <aws/ec2/model/DescribeAggregateIdFormatRequest.h>
+#include <aws/ec2/model/DescribeApplicationStatusCheckAssociationsRequest.h>
+#include <aws/ec2/model/DescribeApplicationStatusChecksRequest.h>
+#include <aws/ec2/model/DescribeApplicationStatusRequest.h>
 #include <aws/ec2/model/DescribeAvailabilityZonesRequest.h>
 #include <aws/ec2/model/DescribeAwsNetworkPerformanceMetricSubscriptionsRequest.h>
 #include <aws/ec2/model/DescribeBundleTasksRequest.h>
@@ -114,12 +120,6 @@
 #include <aws/ec2/model/DescribeCapacityReservationsRequest.h>
 #include <aws/ec2/model/DescribeCarrierGatewaysRequest.h>
 #include <aws/ec2/model/DescribeClassicLinkInstancesRequest.h>
-#include <aws/ec2/model/DescribeClientVpnAuthorizationRulesRequest.h>
-#include <aws/ec2/model/DescribeClientVpnConnectionsRequest.h>
-#include <aws/ec2/model/DescribeClientVpnEndpointsRequest.h>
-#include <aws/ec2/model/DescribeClientVpnRoutesRequest.h>
-#include <aws/ec2/model/DescribeClientVpnTargetNetworksRequest.h>
-#include <aws/ec2/model/DescribeCoipPoolsRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,26 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DeleteLocalGatewayRouteTableOutcome EC2Client::DeleteLocalGatewayRouteTable(const DeleteLocalGatewayRouteTableRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLocalGatewayRouteTableOutcome(result.GetResultWithOwnership())
+                            : DeleteLocalGatewayRouteTableOutcome(std::move(result.GetError()));
+}
+
+DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome EC2Client::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation(
+    const DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome(result.GetResultWithOwnership())
+                            : DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome(std::move(result.GetError()));
+}
+
+DeleteLocalGatewayRouteTableVpcAssociationOutcome EC2Client::DeleteLocalGatewayRouteTableVpcAssociation(
+    const DeleteLocalGatewayRouteTableVpcAssociationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLocalGatewayRouteTableVpcAssociationOutcome(result.GetResultWithOwnership())
+                            : DeleteLocalGatewayRouteTableVpcAssociationOutcome(std::move(result.GetError()));
+}
 
 DeleteLocalGatewayVirtualInterfaceOutcome EC2Client::DeleteLocalGatewayVirtualInterface(
     const DeleteLocalGatewayVirtualInterfaceRequest& request) const {
@@ -614,6 +634,26 @@ DescribeAggregateIdFormatOutcome EC2Client::DescribeAggregateIdFormat(const Desc
                             : DescribeAggregateIdFormatOutcome(std::move(result.GetError()));
 }
 
+DescribeApplicationStatusOutcome EC2Client::DescribeApplicationStatus(const DescribeApplicationStatusRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeApplicationStatusOutcome(result.GetResultWithOwnership())
+                            : DescribeApplicationStatusOutcome(std::move(result.GetError()));
+}
+
+DescribeApplicationStatusCheckAssociationsOutcome EC2Client::DescribeApplicationStatusCheckAssociations(
+    const DescribeApplicationStatusCheckAssociationsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeApplicationStatusCheckAssociationsOutcome(result.GetResultWithOwnership())
+                            : DescribeApplicationStatusCheckAssociationsOutcome(std::move(result.GetError()));
+}
+
+DescribeApplicationStatusChecksOutcome EC2Client::DescribeApplicationStatusChecks(
+    const DescribeApplicationStatusChecksRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeApplicationStatusChecksOutcome(result.GetResultWithOwnership())
+                            : DescribeApplicationStatusChecksOutcome(std::move(result.GetError()));
+}
+
 DescribeAvailabilityZonesOutcome EC2Client::DescribeAvailabilityZones(const DescribeAvailabilityZonesRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeAvailabilityZonesOutcome(result.GetResultWithOwnership())
@@ -723,42 +763,4 @@ DescribeClassicLinkInstancesOutcome EC2Client::DescribeClassicLinkInstances(cons
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeClassicLinkInstancesOutcome(result.GetResultWithOwnership())
                             : DescribeClassicLinkInstancesOutcome(std::move(result.GetError()));
-}
-
-DescribeClientVpnAuthorizationRulesOutcome EC2Client::DescribeClientVpnAuthorizationRules(
-    const DescribeClientVpnAuthorizationRulesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeClientVpnAuthorizationRulesOutcome(result.GetResultWithOwnership())
-                            : DescribeClientVpnAuthorizationRulesOutcome(std::move(result.GetError()));
-}
-
-DescribeClientVpnConnectionsOutcome EC2Client::DescribeClientVpnConnections(const DescribeClientVpnConnectionsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeClientVpnConnectionsOutcome(result.GetResultWithOwnership())
-                            : DescribeClientVpnConnectionsOutcome(std::move(result.GetError()));
-}
-
-DescribeClientVpnEndpointsOutcome EC2Client::DescribeClientVpnEndpoints(const DescribeClientVpnEndpointsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeClientVpnEndpointsOutcome(result.GetResultWithOwnership())
-                            : DescribeClientVpnEndpointsOutcome(std::move(result.GetError()));
-}
-
-DescribeClientVpnRoutesOutcome EC2Client::DescribeClientVpnRoutes(const DescribeClientVpnRoutesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeClientVpnRoutesOutcome(result.GetResultWithOwnership())
-                            : DescribeClientVpnRoutesOutcome(std::move(result.GetError()));
-}
-
-DescribeClientVpnTargetNetworksOutcome EC2Client::DescribeClientVpnTargetNetworks(
-    const DescribeClientVpnTargetNetworksRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeClientVpnTargetNetworksOutcome(result.GetResultWithOwnership())
-                            : DescribeClientVpnTargetNetworksOutcome(std::move(result.GetError()));
-}
-
-DescribeCoipPoolsOutcome EC2Client::DescribeCoipPools(const DescribeCoipPoolsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeCoipPoolsOutcome(result.GetResultWithOwnership())
-                            : DescribeCoipPoolsOutcome(std::move(result.GetError()));
 }

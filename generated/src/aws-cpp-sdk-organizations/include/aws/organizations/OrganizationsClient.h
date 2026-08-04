@@ -191,12 +191,12 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * is accepted, Organizations logs membership events in CloudTrail, available only
    * in the management account's event history. If the account was standalone and
    * joined a new organization, an <code>AccountJoinedOrganization</code> event is
-   * logged with <code>joinedMethod:Invited</code> and <code>joinedTime</code>
+   * logged with <code>joinedMethod:INVITED</code> and <code>joinedTime</code>
    * fields. If the account departed one organization and joined another, both an
    * <code>AccountDepartedOrganization</code> event with
-   * <code>departedMethod:Left</code> and <code>departedTime</code> and an
+   * <code>departureMethod:LEFT</code> and <code>departureTime</code> and an
    * <code>AccountJoinedOrganization</code> event with
-   * <code>joinedMethod:Invited</code> and <code>joinedTime</code> are logged in
+   * <code>joinedMethod:INVITED</code> and <code>joinedTime</code> are logged in
    * their respective management accounts.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/AcceptHandshake">AWS
    * API Reference</a></p>
@@ -353,8 +353,8 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * termination of the account after the 90-day waiting period, Organizations logs a
    * membership event in CloudTrail. The event is an
    * <code>AccountDepartedOrganization</code> event with
-   * <code>departedMethod:Cleaned</code> and <code>departedTime</code>. This event is
-   * available only in the management account's event history.</p><p><h3>See
+   * <code>departureMethod:CLEANED</code> and <code>departureTime</code>. This event
+   * is available only in the management account's event history.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CloseAccount">AWS
    * API Reference</a></p>
@@ -617,7 +617,7 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * you can't use organization policies.</p> <p>The
    * <code>AccountJoinedOrganization</code> event is logged in CloudTrail and is
    * available only in the management account's event history. This event includes
-   * <code>joinedMethod:Invited</code> and <code>joinedTime</code> fields to provide
+   * <code>joinedMethod:INVITED</code> and <code>joinedTime</code> fields to provide
    * context on how and when the account joined the organization.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateOrganization">AWS
@@ -750,7 +750,7 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * member accounts.</p> <p>When an organization is deleted, Organizations logs a
    * membership event in CloudTrail. The event is an
    * <code>AccountDepartedOrganization</code> event with
-   * <code>departedMethod:Left</code> and <code>departedTime</code>. This event is
+   * <code>departureMethod:LEFT</code> and <code>departureTime</code>. This event is
    * available only in the management account's event history.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeleteOrganization">AWS
@@ -1553,7 +1553,7 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * operation from a member account.</p> <p>When an account leaves an organization,
    * Organizations logs a membership event in CloudTrail. The event is an
    * <code>AccountDepartedOrganization</code> event with
-   * <code>departedMethod:Left</code> and <code>departedTime</code>. This event is
+   * <code>departureMethod:LEFT</code> and <code>departureTime</code>. This event is
    * available only in the management account's event history.</p>  <ul>
    * <li> <p>The management account in an organization with all features enabled can
    * set service control policies (SCPs) that can restrict what administrators of
@@ -2427,13 +2427,13 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * instead.</p> <p>When an account is removed from an organization, Organizations
    * logs a membership event in CloudTrail. The event is an
    * <code>AccountDepartedOrganization</code> event with
-   * <code>departedMethod:Removed</code> and <code>departedTime</code>. This event is
-   * available only in the management account's event history.</p>  <ul>
-   * <li> <p>You can remove an account from your organization only if the account is
-   * configured with the information required to operate as a standalone account.
-   * When you create an account in an organization using the Organizations console,
-   * API, or CLI commands, the information required of standalone accounts is
-   * <i>not</i> automatically collected. For more information, see <a
+   * <code>departureMethod:REMOVED</code> and <code>departureTime</code>. This event
+   * is available only in the management account's event history.</p>
+   * <ul> <li> <p>You can remove an account from your organization only if the
+   * account is configured with the information required to operate as a standalone
+   * account. When you create an account in an organization using the Organizations
+   * console, API, or CLI commands, the information required of standalone accounts
+   * is <i>not</i> automatically collected. For more information, see <a
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_account-before-remove.html">Considerations
    * before removing an account from an organization</a> in the <i>Organizations User
    * Guide</i>.</p> </li> <li> <p>The account that you want to leave must not be a

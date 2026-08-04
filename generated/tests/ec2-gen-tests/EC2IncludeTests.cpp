@@ -66,6 +66,7 @@
 #include <aws/ec2/model/AdvertiseByoipCidrRequest.h>
 #include <aws/ec2/model/AdvertiseByoipCidrResponse.h>
 #include <aws/ec2/model/Affinity.h>
+#include <aws/ec2/model/AggregationStatusEnum.h>
 #include <aws/ec2/model/AllocateAddressRequest.h>
 #include <aws/ec2/model/AllocateAddressResponse.h>
 #include <aws/ec2/model/AllocateHostsRequest.h>
@@ -91,6 +92,15 @@
 #include <aws/ec2/model/AnalysisSecurityGroupRule.h>
 #include <aws/ec2/model/AnalysisStatus.h>
 #include <aws/ec2/model/ApplianceModeSupportValue.h>
+#include <aws/ec2/model/ApplicationStatus.h>
+#include <aws/ec2/model/ApplicationStatusCheckAssociationObject.h>
+#include <aws/ec2/model/ApplicationStatusCheckEnum.h>
+#include <aws/ec2/model/ApplicationStatusCheckResponseObject.h>
+#include <aws/ec2/model/ApplicationStatusDetail.h>
+#include <aws/ec2/model/ApplicationStatusEnum.h>
+#include <aws/ec2/model/ApplicationStatusReason.h>
+#include <aws/ec2/model/ApplicationStatusSummary.h>
+#include <aws/ec2/model/ApplicationStatusesResponseType.h>
 #include <aws/ec2/model/ApplyCancellationCharges.h>
 #include <aws/ec2/model/ApplySecurityGroupsToClientVpnTargetNetworkRequest.h>
 #include <aws/ec2/model/ApplySecurityGroupsToClientVpnTargetNetworkResponse.h>
@@ -109,6 +119,8 @@
 #include <aws/ec2/model/AssignedPrivateIpAddress.h>
 #include <aws/ec2/model/AssociateAddressRequest.h>
 #include <aws/ec2/model/AssociateAddressResponse.h>
+#include <aws/ec2/model/AssociateApplicationStatusCheckRequest.h>
+#include <aws/ec2/model/AssociateApplicationStatusCheckResponse.h>
 #include <aws/ec2/model/AssociateCapacityReservationBillingOwnerRequest.h>
 #include <aws/ec2/model/AssociateCapacityReservationBillingOwnerResponse.h>
 #include <aws/ec2/model/AssociateClientVpnTargetNetworkRequest.h>
@@ -149,6 +161,7 @@
 #include <aws/ec2/model/AssociatedTargetNetwork.h>
 #include <aws/ec2/model/AssociationStatus.h>
 #include <aws/ec2/model/AssociationStatusCode.h>
+#include <aws/ec2/model/AssociationTypeEnum.h>
 #include <aws/ec2/model/AthenaIntegration.h>
 #include <aws/ec2/model/AttachClassicLinkVpcRequest.h>
 #include <aws/ec2/model/AttachClassicLinkVpcResponse.h>
@@ -358,6 +371,8 @@
 #include <aws/ec2/model/CpuOptionsRequest.h>
 #include <aws/ec2/model/CpuPerformanceFactor.h>
 #include <aws/ec2/model/CpuPerformanceFactorRequest.h>
+#include <aws/ec2/model/CreateApplicationStatusCheckRequest.h>
+#include <aws/ec2/model/CreateApplicationStatusCheckResponse.h>
 #include <aws/ec2/model/CreateCapacityManagerDataExportRequest.h>
 #include <aws/ec2/model/CreateCapacityManagerDataExportResponse.h>
 #include <aws/ec2/model/CreateCapacityReservationBySplittingRequest.h>
@@ -588,6 +603,8 @@
 #include <aws/ec2/model/CreditSpecification.h>
 #include <aws/ec2/model/CreditSpecificationRequest.h>
 #include <aws/ec2/model/CurrencyCodeValues.h>
+#include <aws/ec2/model/CustomTagKeyValueRequestPair.h>
+#include <aws/ec2/model/CustomTagKeyValueResponsePair.h>
 #include <aws/ec2/model/CustomerGateway.h>
 #include <aws/ec2/model/DataQuery.h>
 #include <aws/ec2/model/DataResponse.h>
@@ -600,6 +617,8 @@
 #include <aws/ec2/model/DefaultRouteTableAssociationValue.h>
 #include <aws/ec2/model/DefaultRouteTablePropagationValue.h>
 #include <aws/ec2/model/DefaultTargetCapacityType.h>
+#include <aws/ec2/model/DeleteApplicationStatusCheckRequest.h>
+#include <aws/ec2/model/DeleteApplicationStatusCheckResponse.h>
 #include <aws/ec2/model/DeleteCapacityManagerDataExportRequest.h>
 #include <aws/ec2/model/DeleteCapacityManagerDataExportResponse.h>
 #include <aws/ec2/model/DeleteCarrierGatewayRequest.h>
@@ -810,6 +829,12 @@
 #include <aws/ec2/model/DescribeAddressesResponse.h>
 #include <aws/ec2/model/DescribeAggregateIdFormatRequest.h>
 #include <aws/ec2/model/DescribeAggregateIdFormatResponse.h>
+#include <aws/ec2/model/DescribeApplicationStatusCheckAssociationsRequest.h>
+#include <aws/ec2/model/DescribeApplicationStatusCheckAssociationsResponse.h>
+#include <aws/ec2/model/DescribeApplicationStatusChecksRequest.h>
+#include <aws/ec2/model/DescribeApplicationStatusChecksResponse.h>
+#include <aws/ec2/model/DescribeApplicationStatusRequest.h>
+#include <aws/ec2/model/DescribeApplicationStatusResponse.h>
 #include <aws/ec2/model/DescribeAvailabilityZonesRequest.h>
 #include <aws/ec2/model/DescribeAvailabilityZonesResponse.h>
 #include <aws/ec2/model/DescribeAwsNetworkPerformanceMetricSubscriptionsRequest.h>
@@ -1204,6 +1229,8 @@
 #include <aws/ec2/model/DisableAddressTransferResponse.h>
 #include <aws/ec2/model/DisableAllowedImagesSettingsRequest.h>
 #include <aws/ec2/model/DisableAllowedImagesSettingsResponse.h>
+#include <aws/ec2/model/DisableApplicationStatusCheckSuppressionRequest.h>
+#include <aws/ec2/model/DisableApplicationStatusCheckSuppressionResponse.h>
 #include <aws/ec2/model/DisableAwsNetworkPerformanceMetricSubscriptionRequest.h>
 #include <aws/ec2/model/DisableAwsNetworkPerformanceMetricSubscriptionResponse.h>
 #include <aws/ec2/model/DisableCapacityManagerRequest.h>
@@ -1246,6 +1273,8 @@
 #include <aws/ec2/model/DisableVpcClassicLinkRequest.h>
 #include <aws/ec2/model/DisableVpcClassicLinkResponse.h>
 #include <aws/ec2/model/DisassociateAddressRequest.h>
+#include <aws/ec2/model/DisassociateApplicationStatusCheckRequest.h>
+#include <aws/ec2/model/DisassociateApplicationStatusCheckResponse.h>
 #include <aws/ec2/model/DisassociateCapacityReservationBillingOwnerRequest.h>
 #include <aws/ec2/model/DisassociateCapacityReservationBillingOwnerResponse.h>
 #include <aws/ec2/model/DisassociateClientVpnTargetNetworkRequest.h>
@@ -1331,6 +1360,8 @@
 #include <aws/ec2/model/EnableAddressTransferResponse.h>
 #include <aws/ec2/model/EnableAllowedImagesSettingsRequest.h>
 #include <aws/ec2/model/EnableAllowedImagesSettingsResponse.h>
+#include <aws/ec2/model/EnableApplicationStatusCheckSuppressionRequest.h>
+#include <aws/ec2/model/EnableApplicationStatusCheckSuppressionResponse.h>
 #include <aws/ec2/model/EnableAwsNetworkPerformanceMetricSubscriptionRequest.h>
 #include <aws/ec2/model/EnableAwsNetworkPerformanceMetricSubscriptionResponse.h>
 #include <aws/ec2/model/EnableCapacityManagerRequest.h>
@@ -1612,6 +1643,12 @@
 #include <aws/ec2/model/GroupBy.h>
 #include <aws/ec2/model/GroupIdentifier.h>
 #include <aws/ec2/model/HaStatus.h>
+#include <aws/ec2/model/HealthCheckPathDestinationRequestObject.h>
+#include <aws/ec2/model/HealthCheckPathDestinationResponseObject.h>
+#include <aws/ec2/model/HealthCheckPathRequestObject.h>
+#include <aws/ec2/model/HealthCheckPathResponseObject.h>
+#include <aws/ec2/model/HealthCheckPathSourceRequestObject.h>
+#include <aws/ec2/model/HealthCheckPathSourceResponseObject.h>
 #include <aws/ec2/model/HibernationOptions.h>
 #include <aws/ec2/model/HibernationOptionsRequest.h>
 #include <aws/ec2/model/HistoryRecord.h>
@@ -1691,6 +1728,7 @@
 #include <aws/ec2/model/InitializationStatusDetails.h>
 #include <aws/ec2/model/InitializationType.h>
 #include <aws/ec2/model/Instance.h>
+#include <aws/ec2/model/InstanceApplicationStatus.h>
 #include <aws/ec2/model/InstanceAttachmentEnaSrdSpecification.h>
 #include <aws/ec2/model/InstanceAttachmentEnaSrdUdpSpecification.h>
 #include <aws/ec2/model/InstanceAttributeName.h>
@@ -1785,7 +1823,9 @@
 #include <aws/ec2/model/IpAddressType.h>
 #include <aws/ec2/model/IpPermission.h>
 #include <aws/ec2/model/IpRange.h>
+#include <aws/ec2/model/IpScopeEnum.h>
 #include <aws/ec2/model/IpSource.h>
+#include <aws/ec2/model/IpVersionEnum.h>
 #include <aws/ec2/model/Ipam.h>
 #include <aws/ec2/model/IpamAddressHistoryRecord.h>
 #include <aws/ec2/model/IpamAddressHistoryResourceType.h>
@@ -2001,6 +2041,8 @@
 #include <aws/ec2/model/ModifyAccountVpcEncryptionControlResponse.h>
 #include <aws/ec2/model/ModifyAddressAttributeRequest.h>
 #include <aws/ec2/model/ModifyAddressAttributeResponse.h>
+#include <aws/ec2/model/ModifyApplicationStatusCheckRequest.h>
+#include <aws/ec2/model/ModifyApplicationStatusCheckResponse.h>
 #include <aws/ec2/model/ModifyAvailabilityZoneGroupRequest.h>
 #include <aws/ec2/model/ModifyAvailabilityZoneGroupResponse.h>
 #include <aws/ec2/model/ModifyAvailabilityZoneOptInStatus.h>
@@ -2214,6 +2256,7 @@
 #include <aws/ec2/model/NetworkInterfacePrivateIpAddress.h>
 #include <aws/ec2/model/NetworkInterfaceStatus.h>
 #include <aws/ec2/model/NetworkInterfaceType.h>
+#include <aws/ec2/model/NetworkProtocolEnum.h>
 #include <aws/ec2/model/NeuronDeviceCoreInfo.h>
 #include <aws/ec2/model/NeuronDeviceInfo.h>
 #include <aws/ec2/model/NeuronDeviceMemoryInfo.h>
@@ -2630,8 +2673,10 @@
 #include <aws/ec2/model/SubnetIpv6CidrBlockAssociation.h>
 #include <aws/ec2/model/SubnetState.h>
 #include <aws/ec2/model/Subscription.h>
+#include <aws/ec2/model/SuccessfulAssociationResponseObject.h>
 #include <aws/ec2/model/SuccessfulInstanceCreditSpecificationItem.h>
 #include <aws/ec2/model/SuccessfulQueuedPurchaseDeletion.h>
+#include <aws/ec2/model/SuccessfulSuppressionResponseObject.h>
 #include <aws/ec2/model/SummaryStatus.h>
 #include <aws/ec2/model/SupportedAdditionalProcessorFeature.h>
 #include <aws/ec2/model/SupportedRegionDetail.h>
@@ -2764,11 +2809,13 @@
 #include <aws/ec2/model/UnlockSnapshotResponse.h>
 #include <aws/ec2/model/UnmonitorInstancesRequest.h>
 #include <aws/ec2/model/UnmonitorInstancesResponse.h>
+#include <aws/ec2/model/UnsuccessfulAssociationResponseObject.h>
 #include <aws/ec2/model/UnsuccessfulInstanceCreditSpecificationErrorCode.h>
 #include <aws/ec2/model/UnsuccessfulInstanceCreditSpecificationItem.h>
 #include <aws/ec2/model/UnsuccessfulInstanceCreditSpecificationItemError.h>
 #include <aws/ec2/model/UnsuccessfulItem.h>
 #include <aws/ec2/model/UnsuccessfulItemError.h>
+#include <aws/ec2/model/UnsuccessfulSuppressionResponseObject.h>
 #include <aws/ec2/model/UpdateCapacityManagerMonitoredTagKeysRequest.h>
 #include <aws/ec2/model/UpdateCapacityManagerMonitoredTagKeysResponse.h>
 #include <aws/ec2/model/UpdateCapacityManagerOrganizationsAccessRequest.h>

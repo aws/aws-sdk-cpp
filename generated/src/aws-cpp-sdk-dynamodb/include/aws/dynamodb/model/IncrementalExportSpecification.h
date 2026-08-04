@@ -80,7 +80,15 @@ class IncrementalExportSpecification {
   /**
    * <p>The view type that was chosen for the export. Valid values are
    * <code>NEW_AND_OLD_IMAGES</code> and <code>NEW_IMAGES</code>. The default value
-   * is <code>NEW_AND_OLD_IMAGES</code>.</p>
+   * is <code>NEW_AND_OLD_IMAGES</code>.</p> <p> <code>NEW_AND_OLD_IMAGES</code>
+   * exports both the new and old images of each changed item, while
+   * <code>NEW_IMAGES</code> exports only the new (latest) image. The view type you
+   * choose determines the structure of each item in the output for
+   * <code>insert</code>, <code>update</code>, and <code>delete</code> operations.
+   * For details and examples of how each view type shapes the export output, see <a
+   * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/S3DataExport.Output.html">DynamoDB
+   * table export output format</a> in the <i>Amazon DynamoDB Developer
+   * Guide</i>.</p>
    */
   inline ExportViewType GetExportViewType() const { return m_exportViewType; }
   inline bool ExportViewTypeHasBeenSet() const { return m_exportViewTypeHasBeenSet; }

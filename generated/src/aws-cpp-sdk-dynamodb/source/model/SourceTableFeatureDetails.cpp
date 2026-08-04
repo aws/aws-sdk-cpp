@@ -46,6 +46,13 @@ SourceTableFeatureDetails& SourceTableFeatureDetails::operator=(JsonView jsonVal
     m_sSEDescription = jsonValue.GetObject("SSEDescription");
     m_sSEDescriptionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("VectorIndexes")) {
+    Aws::Utils::Array<JsonView> vectorIndexesJsonList = jsonValue.GetArray("VectorIndexes");
+    for (unsigned vectorIndexesIndex = 0; vectorIndexesIndex < vectorIndexesJsonList.GetLength(); ++vectorIndexesIndex) {
+      m_vectorIndexes.push_back(vectorIndexesJsonList[vectorIndexesIndex].AsObject());
+    }
+    m_vectorIndexesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -80,6 +87,14 @@ JsonValue SourceTableFeatureDetails::Jsonize() const {
 
   if (m_sSEDescriptionHasBeenSet) {
     payload.WithObject("SSEDescription", m_sSEDescription.Jsonize());
+  }
+
+  if (m_vectorIndexesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> vectorIndexesJsonList(m_vectorIndexes.size());
+    for (unsigned vectorIndexesIndex = 0; vectorIndexesIndex < vectorIndexesJsonList.GetLength(); ++vectorIndexesIndex) {
+      vectorIndexesJsonList[vectorIndexesIndex].AsObject(m_vectorIndexes[vectorIndexesIndex].Jsonize());
+    }
+    payload.WithArray("VectorIndexes", std::move(vectorIndexesJsonList));
   }
 
   return payload;

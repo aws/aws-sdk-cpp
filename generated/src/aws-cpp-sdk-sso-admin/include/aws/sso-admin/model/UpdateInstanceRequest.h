@@ -90,15 +90,39 @@ class UpdateInstanceRequest : public SSOAdminRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Enables permission sets for this Identity Center instance. The only accepted
+   * value is <code>true </code>. After permission sets are enabled, they cannot be
+   * disabled.</p>  <p>You can't set <code>EncryptionConfiguration</code> and
+   * <code>PermissionSetsEnabled</code> in the same request. To configure both, make
+   * two separate <code>UpdateInstance</code> calls. These calls can be made in
+   * parallel.</p>
+   */
+  inline bool GetPermissionSetsEnabled() const { return m_permissionSetsEnabled; }
+  inline bool PermissionSetsEnabledHasBeenSet() const { return m_permissionSetsEnabledHasBeenSet; }
+  inline void SetPermissionSetsEnabled(bool value) {
+    m_permissionSetsEnabledHasBeenSet = true;
+    m_permissionSetsEnabled = value;
+  }
+  inline UpdateInstanceRequest& WithPermissionSetsEnabled(bool value) {
+    SetPermissionSetsEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
   Aws::String m_instanceArn;
 
   EncryptionConfiguration m_encryptionConfiguration;
+
+  bool m_permissionSetsEnabled{false};
   bool m_nameHasBeenSet = false;
   bool m_instanceArnHasBeenSet = false;
   bool m_encryptionConfigurationHasBeenSet = false;
+  bool m_permissionSetsEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

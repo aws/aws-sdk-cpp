@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/dynamodb/model/Capacity.h>
+#include <aws/dynamodb/model/VectorCapacity.h>
 
 #include <utility>
 
@@ -174,6 +175,33 @@ class ConsumedCapacity {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The amount of throughput consumed on each vector index affected by the
+   * operation. Each entry contains <code>VectorWriteRequestBytes</code> (for write
+   * operations) or <code>VectorSearchRequestBytes</code> (for search
+   * operations).</p>
+   */
+  inline const Aws::Map<Aws::String, VectorCapacity>& GetVectorIndexes() const { return m_vectorIndexes; }
+  inline bool VectorIndexesHasBeenSet() const { return m_vectorIndexesHasBeenSet; }
+  template <typename VectorIndexesT = Aws::Map<Aws::String, VectorCapacity>>
+  void SetVectorIndexes(VectorIndexesT&& value) {
+    m_vectorIndexesHasBeenSet = true;
+    m_vectorIndexes = std::forward<VectorIndexesT>(value);
+  }
+  template <typename VectorIndexesT = Aws::Map<Aws::String, VectorCapacity>>
+  ConsumedCapacity& WithVectorIndexes(VectorIndexesT&& value) {
+    SetVectorIndexes(std::forward<VectorIndexesT>(value));
+    return *this;
+  }
+  template <typename VectorIndexesKeyT = Aws::String, typename VectorIndexesValueT = VectorCapacity>
+  ConsumedCapacity& AddVectorIndexes(VectorIndexesKeyT&& key, VectorIndexesValueT&& value) {
+    m_vectorIndexesHasBeenSet = true;
+    m_vectorIndexes.emplace(std::forward<VectorIndexesKeyT>(key), std::forward<VectorIndexesValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_tableName;
 
@@ -188,6 +216,8 @@ class ConsumedCapacity {
   Aws::Map<Aws::String, Capacity> m_localSecondaryIndexes;
 
   Aws::Map<Aws::String, Capacity> m_globalSecondaryIndexes;
+
+  Aws::Map<Aws::String, VectorCapacity> m_vectorIndexes;
   bool m_tableNameHasBeenSet = false;
   bool m_capacityUnitsHasBeenSet = false;
   bool m_readCapacityUnitsHasBeenSet = false;
@@ -195,6 +225,7 @@ class ConsumedCapacity {
   bool m_tableHasBeenSet = false;
   bool m_localSecondaryIndexesHasBeenSet = false;
   bool m_globalSecondaryIndexesHasBeenSet = false;
+  bool m_vectorIndexesHasBeenSet = false;
 };
 
 }  // namespace Model

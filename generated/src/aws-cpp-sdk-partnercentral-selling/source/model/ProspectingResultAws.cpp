@@ -18,6 +18,14 @@ namespace Model {
 ProspectingResultAws::ProspectingResultAws(JsonView jsonValue) { *this = jsonValue; }
 
 ProspectingResultAws& ProspectingResultAws::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Customer")) {
+    m_customer = jsonValue.GetObject("Customer");
+    m_customerHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Insights")) {
+    m_insights = jsonValue.GetObject("Insights");
+    m_insightsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("StartTime")) {
     m_startTime = jsonValue.GetString("StartTime");
     m_startTimeHasBeenSet = true;
@@ -38,19 +46,19 @@ ProspectingResultAws& ProspectingResultAws::operator=(JsonView jsonValue) {
     m_taskName = jsonValue.GetString("TaskName");
     m_taskNameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("Customer")) {
-    m_customer = jsonValue.GetObject("Customer");
-    m_customerHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Insights")) {
-    m_insights = jsonValue.GetObject("Insights");
-    m_insightsHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue ProspectingResultAws::Jsonize() const {
   JsonValue payload;
+
+  if (m_customerHasBeenSet) {
+    payload.WithObject("Customer", m_customer.Jsonize());
+  }
+
+  if (m_insightsHasBeenSet) {
+    payload.WithObject("Insights", m_insights.Jsonize());
+  }
 
   if (m_startTimeHasBeenSet) {
     payload.WithString("StartTime", m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
@@ -70,14 +78,6 @@ JsonValue ProspectingResultAws::Jsonize() const {
 
   if (m_taskNameHasBeenSet) {
     payload.WithString("TaskName", m_taskName);
-  }
-
-  if (m_customerHasBeenSet) {
-    payload.WithObject("Customer", m_customer.Jsonize());
-  }
-
-  if (m_insightsHasBeenSet) {
-    payload.WithObject("Insights", m_insights.Jsonize());
   }
 
   return payload;

@@ -20,6 +20,8 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/CreateLaunchTemplateRequest.h>
+#include <aws/ec2/model/CreateLaunchTemplateVersionRequest.h>
 #include <aws/ec2/model/CreateLocalGatewayRouteRequest.h>
 #include <aws/ec2/model/CreateLocalGatewayRouteTableRequest.h>
 #include <aws/ec2/model/CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest.h>
@@ -89,6 +91,7 @@
 #include <aws/ec2/model/CreateVpnConnectionRequest.h>
 #include <aws/ec2/model/CreateVpnConnectionRouteRequest.h>
 #include <aws/ec2/model/CreateVpnGatewayRequest.h>
+#include <aws/ec2/model/DeleteApplicationStatusCheckRequest.h>
 #include <aws/ec2/model/DeleteCapacityManagerDataExportRequest.h>
 #include <aws/ec2/model/DeleteCarrierGatewayRequest.h>
 #include <aws/ec2/model/DeleteClientVpnEndpointRequest.h>
@@ -117,9 +120,6 @@
 #include <aws/ec2/model/DeleteLaunchTemplateRequest.h>
 #include <aws/ec2/model/DeleteLaunchTemplateVersionsRequest.h>
 #include <aws/ec2/model/DeleteLocalGatewayRouteRequest.h>
-#include <aws/ec2/model/DeleteLocalGatewayRouteTableRequest.h>
-#include <aws/ec2/model/DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest.h>
-#include <aws/ec2/model/DeleteLocalGatewayRouteTableVpcAssociationRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,18 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+CreateLaunchTemplateOutcome EC2Client::CreateLaunchTemplate(const CreateLaunchTemplateRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLaunchTemplateOutcome(result.GetResultWithOwnership())
+                            : CreateLaunchTemplateOutcome(std::move(result.GetError()));
+}
+
+CreateLaunchTemplateVersionOutcome EC2Client::CreateLaunchTemplateVersion(const CreateLaunchTemplateVersionRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLaunchTemplateVersionOutcome(result.GetResultWithOwnership())
+                            : CreateLaunchTemplateVersionOutcome(std::move(result.GetError()));
+}
 
 CreateLocalGatewayRouteOutcome EC2Client::CreateLocalGatewayRoute(const CreateLocalGatewayRouteRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -564,6 +576,12 @@ CreateVpnGatewayOutcome EC2Client::CreateVpnGateway(const CreateVpnGatewayReques
                             : CreateVpnGatewayOutcome(std::move(result.GetError()));
 }
 
+DeleteApplicationStatusCheckOutcome EC2Client::DeleteApplicationStatusCheck(const DeleteApplicationStatusCheckRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteApplicationStatusCheckOutcome(result.GetResultWithOwnership())
+                            : DeleteApplicationStatusCheckOutcome(std::move(result.GetError()));
+}
+
 DeleteCapacityManagerDataExportOutcome EC2Client::DeleteCapacityManagerDataExport(
     const DeleteCapacityManagerDataExportRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -727,24 +745,4 @@ DeleteLocalGatewayRouteOutcome EC2Client::DeleteLocalGatewayRoute(const DeleteLo
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteLocalGatewayRouteOutcome(result.GetResultWithOwnership())
                             : DeleteLocalGatewayRouteOutcome(std::move(result.GetError()));
-}
-
-DeleteLocalGatewayRouteTableOutcome EC2Client::DeleteLocalGatewayRouteTable(const DeleteLocalGatewayRouteTableRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteLocalGatewayRouteTableOutcome(result.GetResultWithOwnership())
-                            : DeleteLocalGatewayRouteTableOutcome(std::move(result.GetError()));
-}
-
-DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome EC2Client::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation(
-    const DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome(result.GetResultWithOwnership())
-                            : DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome(std::move(result.GetError()));
-}
-
-DeleteLocalGatewayRouteTableVpcAssociationOutcome EC2Client::DeleteLocalGatewayRouteTableVpcAssociation(
-    const DeleteLocalGatewayRouteTableVpcAssociationRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteLocalGatewayRouteTableVpcAssociationOutcome(result.GetResultWithOwnership())
-                            : DeleteLocalGatewayRouteTableVpcAssociationOutcome(std::move(result.GetError()));
 }

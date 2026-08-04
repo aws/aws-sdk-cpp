@@ -26,6 +26,10 @@ ClientProperties& ClientProperties::operator=(JsonView jsonValue) {
     m_logUploadEnabled = LogUploadEnumMapper::GetLogUploadEnumForName(jsonValue.GetString("LogUploadEnabled"));
     m_logUploadEnabledHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ClientExperiencePolicy")) {
+    m_clientExperiencePolicy = jsonValue.GetString("ClientExperiencePolicy");
+    m_clientExperiencePolicyHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue ClientProperties::Jsonize() const {
 
   if (m_logUploadEnabledHasBeenSet) {
     payload.WithString("LogUploadEnabled", LogUploadEnumMapper::GetNameForLogUploadEnum(m_logUploadEnabled));
+  }
+
+  if (m_clientExperiencePolicyHasBeenSet) {
+    payload.WithString("ClientExperiencePolicy", m_clientExperiencePolicy);
   }
 
   return payload;

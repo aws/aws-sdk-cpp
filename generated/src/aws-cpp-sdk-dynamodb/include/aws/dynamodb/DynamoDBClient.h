@@ -230,20 +230,20 @@ class AWS_DYNAMODB_API DynamoDBClient
    * You can investigate and optionally resend the requests. Typically, you would
    * call <code>BatchWriteItem</code> in a loop. Each iteration would check for
    * unprocessed items and submit a new <code>BatchWriteItem</code> request with
-   * those unprocessed items until all items have been processed.</p> <p>For tables
-   * and indexes with provisioned capacity, if none of the items can be processed due
-   * to insufficient provisioned throughput on all of the tables in the request, then
-   * <code>BatchWriteItem</code> returns a
-   * <code>ProvisionedThroughputExceededException</code>. For all tables and indexes,
-   * if none of the items can be processed due to other throttling scenarios (such as
-   * exceeding partition level limits), then <code>BatchWriteItem</code> returns a
-   * <code>ThrottlingException</code>.</p>  <p>If DynamoDB returns any
-   * unprocessed items, you should retry the batch operation on those items. However,
-   * <i>we strongly recommend that you use an exponential backoff algorithm</i>. If
-   * you retry the batch operation immediately, the underlying read or write requests
-   * can still fail due to throttling on the individual tables. If you delay the
-   * batch operation using exponential backoff, the individual requests in the batch
-   * are much more likely to succeed.</p> <p>For more information, see <a
+   * those unprocessed items until all items have been processed.</p> <p>If
+   * <code>BatchWriteItem</code> cannot process any items due to throttling (for
+   * example, insufficient provisioned throughput on the tables in the request, or
+   * partition-level or account-level limits), it returns a
+   * <code>ProvisionedThroughputExceededException</code> or a
+   * <code>ThrottlingException</code>. Both indicate that the request was throttled;
+   * check the <code>ThrottlingReason</code> field in the returned exception for
+   * details.</p>  <p>If DynamoDB returns any unprocessed items, you
+   * should retry the batch operation on those items. However, <i>we strongly
+   * recommend that you use an exponential backoff algorithm</i>. If you retry the
+   * batch operation immediately, the underlying read or write requests can still
+   * fail due to throttling on the individual tables. If you delay the batch
+   * operation using exponential backoff, the individual requests in the batch are
+   * much more likely to succeed.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#Programming.Errors.BatchOperations">Batch
    * Operations and Error Handling</a> in the <i>Amazon DynamoDB Developer
    * Guide</i>.</p>  <p>With <code>BatchWriteItem</code>, you can
@@ -1816,6 +1816,42 @@ class AWS_DYNAMODB_API DynamoDBClient
   void ScanAsync(const ScanRequestT& request, const ScanResponseReceivedHandler& handler,
                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&DynamoDBClient::Scan, request, handler, context);
+  }
+
+  /**
+   * <p>Performs a vector similarity search on a vector index associated with an
+   * Amazon DynamoDB table, and returns the most similar items sorted by similarity
+   * score based on the distance function configured for the index.</p> <p>Score
+   * interpretation depends on the distance function:</p> <ul> <li> <p>
+   * <code>COSINE</code> - Returns the items with the <i>k smallest</i> scores.
+   * Scores range from 0 (identical) to 2 (opposite). Lower scores indicate higher
+   * similarity.</p> </li> <li> <p> <code>EUCLIDEAN</code> - Returns the items with
+   * the <i>k smallest</i> scores. Scores represent the Euclidean distance between
+   * vectors. Lower scores indicate higher similarity.</p> </li> <li> <p>
+   * <code>DOT_PRODUCT</code> - Returns the items with the <i>k highest</i> scores.
+   * Higher scores indicate higher similarity.</p> </li> </ul><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/SearchVectors">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SearchVectorsOutcome SearchVectors(const Model::SearchVectorsRequest& request) const;
+
+  /**
+   * A Callable wrapper for SearchVectors that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename SearchVectorsRequestT = Model::SearchVectorsRequest>
+  Model::SearchVectorsOutcomeCallable SearchVectorsCallable(const SearchVectorsRequestT& request) const {
+    return SubmitCallable(&DynamoDBClient::SearchVectors, request);
+  }
+
+  /**
+   * An Async wrapper for SearchVectors that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename SearchVectorsRequestT = Model::SearchVectorsRequest>
+  void SearchVectorsAsync(const SearchVectorsRequestT& request, const SearchVectorsResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DynamoDBClient::SearchVectors, request, handler, context);
   }
 
   /**

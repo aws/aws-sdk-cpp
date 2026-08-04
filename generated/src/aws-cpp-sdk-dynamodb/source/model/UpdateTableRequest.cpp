@@ -98,6 +98,15 @@ Aws::String UpdateTableRequest::SerializePayload() const {
         GlobalTableSettingsReplicationModeMapper::GetNameForGlobalTableSettingsReplicationMode(m_globalTableSettingsReplicationMode));
   }
 
+  if (m_vectorIndexUpdatesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> vectorIndexUpdatesJsonList(m_vectorIndexUpdates.size());
+    for (unsigned vectorIndexUpdatesIndex = 0; vectorIndexUpdatesIndex < vectorIndexUpdatesJsonList.GetLength();
+         ++vectorIndexUpdatesIndex) {
+      vectorIndexUpdatesJsonList[vectorIndexUpdatesIndex].AsObject(m_vectorIndexUpdates[vectorIndexUpdatesIndex].Jsonize());
+    }
+    payload.WithArray("VectorIndexUpdates", std::move(vectorIndexUpdatesJsonList));
+  }
+
   return payload.View().WriteReadable();
 }
 

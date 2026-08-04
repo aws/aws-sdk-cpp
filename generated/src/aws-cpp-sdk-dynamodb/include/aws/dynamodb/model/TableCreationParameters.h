@@ -14,6 +14,7 @@
 #include <aws/dynamodb/model/OnDemandThroughput.h>
 #include <aws/dynamodb/model/ProvisionedThroughput.h>
 #include <aws/dynamodb/model/SSESpecification.h>
+#include <aws/dynamodb/model/VectorIndex.h>
 
 #include <utility>
 
@@ -196,6 +197,31 @@ class TableCreationParameters {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The vector indexes of the table to be created as part of the import
+   * operation.</p>
+   */
+  inline const Aws::Vector<VectorIndex>& GetVectorIndexes() const { return m_vectorIndexes; }
+  inline bool VectorIndexesHasBeenSet() const { return m_vectorIndexesHasBeenSet; }
+  template <typename VectorIndexesT = Aws::Vector<VectorIndex>>
+  void SetVectorIndexes(VectorIndexesT&& value) {
+    m_vectorIndexesHasBeenSet = true;
+    m_vectorIndexes = std::forward<VectorIndexesT>(value);
+  }
+  template <typename VectorIndexesT = Aws::Vector<VectorIndex>>
+  TableCreationParameters& WithVectorIndexes(VectorIndexesT&& value) {
+    SetVectorIndexes(std::forward<VectorIndexesT>(value));
+    return *this;
+  }
+  template <typename VectorIndexesT = VectorIndex>
+  TableCreationParameters& AddVectorIndexes(VectorIndexesT&& value) {
+    m_vectorIndexesHasBeenSet = true;
+    m_vectorIndexes.emplace_back(std::forward<VectorIndexesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_tableName;
 
@@ -212,6 +238,8 @@ class TableCreationParameters {
   SSESpecification m_sSESpecification;
 
   Aws::Vector<GlobalSecondaryIndex> m_globalSecondaryIndexes;
+
+  Aws::Vector<VectorIndex> m_vectorIndexes;
   bool m_tableNameHasBeenSet = false;
   bool m_attributeDefinitionsHasBeenSet = false;
   bool m_keySchemaHasBeenSet = false;
@@ -220,6 +248,7 @@ class TableCreationParameters {
   bool m_onDemandThroughputHasBeenSet = false;
   bool m_sSESpecificationHasBeenSet = false;
   bool m_globalSecondaryIndexesHasBeenSet = false;
+  bool m_vectorIndexesHasBeenSet = false;
 };
 
 }  // namespace Model

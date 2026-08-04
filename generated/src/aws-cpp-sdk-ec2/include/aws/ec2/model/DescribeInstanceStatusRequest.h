@@ -183,7 +183,10 @@ class DescribeInstanceStatusRequest : public EC2Request {
    * <p> <code>attached-ebs-status.status</code> - The status of the attached EBS
    * volume for the instance (<code>ok</code> | <code>impaired</code> |
    * <code>initializing</code> | <code>insufficient-data</code> |
-   * <code>not-applicable</code>).</p> </li> </ul>
+   * <code>not-applicable</code>).</p> </li> <li> <p>
+   * <code>application-status.status</code> - The application status of the instance
+   * (<code>ok</code> | <code>impaired</code> | <code>initializing</code> |
+   * <code>insufficient-data</code> | <code>not-applicable</code>).</p> </li> </ul>
    */
   inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
   inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }

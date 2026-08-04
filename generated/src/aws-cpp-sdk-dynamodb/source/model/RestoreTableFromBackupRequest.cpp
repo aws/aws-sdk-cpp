@@ -59,6 +59,15 @@ Aws::String RestoreTableFromBackupRequest::SerializePayload() const {
     payload.WithObject("SSESpecificationOverride", m_sSESpecificationOverride.Jsonize());
   }
 
+  if (m_vectorIndexOverrideHasBeenSet) {
+    Aws::Utils::Array<JsonValue> vectorIndexOverrideJsonList(m_vectorIndexOverride.size());
+    for (unsigned vectorIndexOverrideIndex = 0; vectorIndexOverrideIndex < vectorIndexOverrideJsonList.GetLength();
+         ++vectorIndexOverrideIndex) {
+      vectorIndexOverrideJsonList[vectorIndexOverrideIndex].AsObject(m_vectorIndexOverride[vectorIndexOverrideIndex].Jsonize());
+    }
+    payload.WithArray("VectorIndexOverride", std::move(vectorIndexOverrideJsonList));
+  }
+
   return payload.View().WriteReadable();
 }
 

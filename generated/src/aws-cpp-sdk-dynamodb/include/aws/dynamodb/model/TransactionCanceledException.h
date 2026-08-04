@@ -49,18 +49,21 @@ namespace Model {
  * format.</p> </li> </ul>  <p>DynamoDB lists the cancellation reasons on the
  * <code>CancellationReasons</code> property. Transaction cancellation reasons are
  * ordered in the order of requested items, if an item has no error it will have
- * <code>None</code> code and <code>Null</code> message.</p>
- * <p>Cancellation reason codes and possible error messages:</p> <ul> <li> <p>No
- * Errors:</p> <ul> <li> <p>Code: <code>None</code> </p> </li> <li> <p>Message:
- * <code>null</code> </p> </li> </ul> </li> <li> <p>Conditional Check Failed:</p>
- * <ul> <li> <p>Code: <code>ConditionalCheckFailed</code> </p> </li> <li>
- * <p>Message: The conditional request failed. </p> </li> </ul> </li> <li> <p>Item
- * Collection Size Limit Exceeded:</p> <ul> <li> <p>Code:
- * <code>ItemCollectionSizeLimitExceeded</code> </p> </li> <li> <p>Message:
- * Collection size exceeded.</p> </li> </ul> </li> <li> <p>Transaction
- * Conflict:</p> <ul> <li> <p>Code: <code>TransactionConflict</code> </p> </li>
- * <li> <p>Message: Transaction is ongoing for the item.</p> </li> </ul> </li> <li>
- * <p>Provisioned Throughput Exceeded:</p> <ul> <li> <p>Code:
+ * <code>None</code> code and <code>Null</code> message. The <code>None</code> code
+ * is returned as the literal string <code>"None"</code>, not a null or absent
+ * value; the message field is omitted entirely for an item that has no error. This
+ * is important to note when using an SDK that surfaces the code as an optional or
+ * nullable type.</p>  <p>Cancellation reason codes and possible error
+ * messages:</p> <ul> <li> <p>No Errors:</p> <ul> <li> <p>Code: <code>None</code>
+ * </p> </li> <li> <p>Message: <code>null</code> </p> </li> </ul> </li> <li>
+ * <p>Conditional Check Failed:</p> <ul> <li> <p>Code:
+ * <code>ConditionalCheckFailed</code> </p> </li> <li> <p>Message: The conditional
+ * request failed. </p> </li> </ul> </li> <li> <p>Item Collection Size Limit
+ * Exceeded:</p> <ul> <li> <p>Code: <code>ItemCollectionSizeLimitExceeded</code>
+ * </p> </li> <li> <p>Message: Collection size exceeded.</p> </li> </ul> </li> <li>
+ * <p>Transaction Conflict:</p> <ul> <li> <p>Code: <code>TransactionConflict</code>
+ * </p> </li> <li> <p>Message: Transaction is ongoing for the item.</p> </li> </ul>
+ * </li> <li> <p>Provisioned Throughput Exceeded:</p> <ul> <li> <p>Code:
  * <code>ProvisionedThroughputExceeded</code> </p> </li> <li> <p>Messages:</p> <ul>
  * <li> <p>The level of configured provisioned throughput for the table was
  * exceeded. Consider increasing your provisioning level with the UpdateTable

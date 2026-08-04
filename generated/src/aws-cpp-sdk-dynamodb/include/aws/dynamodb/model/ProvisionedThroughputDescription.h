@@ -96,7 +96,10 @@ class ProvisionedThroughputDescription {
    * DynamoDB returns a <code>ThrottlingException</code>. Eventually consistent reads
    * require less effort than strongly consistent reads, so a setting of 50
    * <code>ReadCapacityUnits</code> per second provides 100 eventually consistent
-   * <code>ReadCapacityUnits</code> per second.</p>
+   * <code>ReadCapacityUnits</code> per second.</p> <p>For a table or global
+   * secondary index that uses on-demand capacity mode
+   * (<code>PAY_PER_REQUEST</code>), this value is <code>0</code>, because on-demand
+   * mode does not use provisioned throughput.</p>
    */
   inline long long GetReadCapacityUnits() const { return m_readCapacityUnits; }
   inline bool ReadCapacityUnitsHasBeenSet() const { return m_readCapacityUnitsHasBeenSet; }
@@ -113,7 +116,9 @@ class ProvisionedThroughputDescription {
   ///@{
   /**
    * <p>The maximum number of writes consumed per second before DynamoDB returns a
-   * <code>ThrottlingException</code>.</p>
+   * <code>ThrottlingException</code>.</p> <p>For a table or global secondary index
+   * that uses on-demand capacity mode (<code>PAY_PER_REQUEST</code>), this value is
+   * <code>0</code>, because on-demand mode does not use provisioned throughput.</p>
    */
   inline long long GetWriteCapacityUnits() const { return m_writeCapacityUnits; }
   inline bool WriteCapacityUnitsHasBeenSet() const { return m_writeCapacityUnitsHasBeenSet; }

@@ -20,6 +20,15 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/GetTransitGatewayPolicyTableAssociationsRequest.h>
+#include <aws/ec2/model/GetTransitGatewayPolicyTableEntriesRequest.h>
+#include <aws/ec2/model/GetTransitGatewayPrefixListReferencesRequest.h>
+#include <aws/ec2/model/GetTransitGatewayRouteTableAssociationsRequest.h>
+#include <aws/ec2/model/GetTransitGatewayRouteTablePropagationsRequest.h>
+#include <aws/ec2/model/GetVerifiedAccessEndpointPolicyRequest.h>
+#include <aws/ec2/model/GetVerifiedAccessEndpointTargetsRequest.h>
+#include <aws/ec2/model/GetVerifiedAccessGroupPolicyRequest.h>
+#include <aws/ec2/model/GetVpcResourcesBlockingEncryptionEnforcementRequest.h>
 #include <aws/ec2/model/GetVpnConnectionDeviceSampleConfigurationRequest.h>
 #include <aws/ec2/model/GetVpnConnectionDeviceTypesRequest.h>
 #include <aws/ec2/model/GetVpnTunnelReplacementStatusRequest.h>
@@ -35,6 +44,7 @@
 #include <aws/ec2/model/LockSnapshotRequest.h>
 #include <aws/ec2/model/ModifyAccountVpcEncryptionControlRequest.h>
 #include <aws/ec2/model/ModifyAddressAttributeRequest.h>
+#include <aws/ec2/model/ModifyApplicationStatusCheckRequest.h>
 #include <aws/ec2/model/ModifyAvailabilityZoneGroupRequest.h>
 #include <aws/ec2/model/ModifyCapacityReservationFleetRequest.h>
 #include <aws/ec2/model/ModifyCapacityReservationRequest.h>
@@ -110,16 +120,6 @@
 #include <aws/ec2/model/ModifyVpcEndpointServicePayerResponsibilityRequest.h>
 #include <aws/ec2/model/ModifyVpcEndpointServicePermissionsRequest.h>
 #include <aws/ec2/model/ModifyVpcPeeringConnectionOptionsRequest.h>
-#include <aws/ec2/model/ModifyVpcTenancyRequest.h>
-#include <aws/ec2/model/ModifyVpnConnectionOptionsRequest.h>
-#include <aws/ec2/model/ModifyVpnConnectionRequest.h>
-#include <aws/ec2/model/ModifyVpnTunnelCertificateRequest.h>
-#include <aws/ec2/model/ModifyVpnTunnelOptionsRequest.h>
-#include <aws/ec2/model/MonitorInstancesRequest.h>
-#include <aws/ec2/model/MoveAddressToVpcRequest.h>
-#include <aws/ec2/model/MoveByoipCidrToIpamRequest.h>
-#include <aws/ec2/model/MoveCapacityReservationInstancesRequest.h>
-#include <aws/ec2/model/ProvisionByoipCidrRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,68 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+GetTransitGatewayPolicyTableAssociationsOutcome EC2Client::GetTransitGatewayPolicyTableAssociations(
+    const GetTransitGatewayPolicyTableAssociationsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTransitGatewayPolicyTableAssociationsOutcome(result.GetResultWithOwnership())
+                            : GetTransitGatewayPolicyTableAssociationsOutcome(std::move(result.GetError()));
+}
+
+GetTransitGatewayPolicyTableEntriesOutcome EC2Client::GetTransitGatewayPolicyTableEntries(
+    const GetTransitGatewayPolicyTableEntriesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTransitGatewayPolicyTableEntriesOutcome(result.GetResultWithOwnership())
+                            : GetTransitGatewayPolicyTableEntriesOutcome(std::move(result.GetError()));
+}
+
+GetTransitGatewayPrefixListReferencesOutcome EC2Client::GetTransitGatewayPrefixListReferences(
+    const GetTransitGatewayPrefixListReferencesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTransitGatewayPrefixListReferencesOutcome(result.GetResultWithOwnership())
+                            : GetTransitGatewayPrefixListReferencesOutcome(std::move(result.GetError()));
+}
+
+GetTransitGatewayRouteTableAssociationsOutcome EC2Client::GetTransitGatewayRouteTableAssociations(
+    const GetTransitGatewayRouteTableAssociationsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTransitGatewayRouteTableAssociationsOutcome(result.GetResultWithOwnership())
+                            : GetTransitGatewayRouteTableAssociationsOutcome(std::move(result.GetError()));
+}
+
+GetTransitGatewayRouteTablePropagationsOutcome EC2Client::GetTransitGatewayRouteTablePropagations(
+    const GetTransitGatewayRouteTablePropagationsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTransitGatewayRouteTablePropagationsOutcome(result.GetResultWithOwnership())
+                            : GetTransitGatewayRouteTablePropagationsOutcome(std::move(result.GetError()));
+}
+
+GetVerifiedAccessEndpointPolicyOutcome EC2Client::GetVerifiedAccessEndpointPolicy(
+    const GetVerifiedAccessEndpointPolicyRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetVerifiedAccessEndpointPolicyOutcome(result.GetResultWithOwnership())
+                            : GetVerifiedAccessEndpointPolicyOutcome(std::move(result.GetError()));
+}
+
+GetVerifiedAccessEndpointTargetsOutcome EC2Client::GetVerifiedAccessEndpointTargets(
+    const GetVerifiedAccessEndpointTargetsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetVerifiedAccessEndpointTargetsOutcome(result.GetResultWithOwnership())
+                            : GetVerifiedAccessEndpointTargetsOutcome(std::move(result.GetError()));
+}
+
+GetVerifiedAccessGroupPolicyOutcome EC2Client::GetVerifiedAccessGroupPolicy(const GetVerifiedAccessGroupPolicyRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetVerifiedAccessGroupPolicyOutcome(result.GetResultWithOwnership())
+                            : GetVerifiedAccessGroupPolicyOutcome(std::move(result.GetError()));
+}
+
+GetVpcResourcesBlockingEncryptionEnforcementOutcome EC2Client::GetVpcResourcesBlockingEncryptionEnforcement(
+    const GetVpcResourcesBlockingEncryptionEnforcementRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetVpcResourcesBlockingEncryptionEnforcementOutcome(result.GetResultWithOwnership())
+                            : GetVpcResourcesBlockingEncryptionEnforcementOutcome(std::move(result.GetError()));
+}
 
 GetVpnConnectionDeviceSampleConfigurationOutcome EC2Client::GetVpnConnectionDeviceSampleConfiguration(
     const GetVpnConnectionDeviceSampleConfigurationRequest& request) const {
@@ -217,6 +279,12 @@ ModifyAddressAttributeOutcome EC2Client::ModifyAddressAttribute(const ModifyAddr
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ModifyAddressAttributeOutcome(result.GetResultWithOwnership())
                             : ModifyAddressAttributeOutcome(std::move(result.GetError()));
+}
+
+ModifyApplicationStatusCheckOutcome EC2Client::ModifyApplicationStatusCheck(const ModifyApplicationStatusCheckRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyApplicationStatusCheckOutcome(result.GetResultWithOwnership())
+                            : ModifyApplicationStatusCheckOutcome(std::move(result.GetError()));
 }
 
 ModifyAvailabilityZoneGroupOutcome EC2Client::ModifyAvailabilityZoneGroup(const ModifyAvailabilityZoneGroupRequest& request) const {
@@ -689,65 +757,4 @@ ModifyVpcPeeringConnectionOptionsOutcome EC2Client::ModifyVpcPeeringConnectionOp
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ModifyVpcPeeringConnectionOptionsOutcome(result.GetResultWithOwnership())
                             : ModifyVpcPeeringConnectionOptionsOutcome(std::move(result.GetError()));
-}
-
-ModifyVpcTenancyOutcome EC2Client::ModifyVpcTenancy(const ModifyVpcTenancyRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ModifyVpcTenancyOutcome(result.GetResultWithOwnership())
-                            : ModifyVpcTenancyOutcome(std::move(result.GetError()));
-}
-
-ModifyVpnConnectionOutcome EC2Client::ModifyVpnConnection(const ModifyVpnConnectionRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ModifyVpnConnectionOutcome(result.GetResultWithOwnership())
-                            : ModifyVpnConnectionOutcome(std::move(result.GetError()));
-}
-
-ModifyVpnConnectionOptionsOutcome EC2Client::ModifyVpnConnectionOptions(const ModifyVpnConnectionOptionsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ModifyVpnConnectionOptionsOutcome(result.GetResultWithOwnership())
-                            : ModifyVpnConnectionOptionsOutcome(std::move(result.GetError()));
-}
-
-ModifyVpnTunnelCertificateOutcome EC2Client::ModifyVpnTunnelCertificate(const ModifyVpnTunnelCertificateRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ModifyVpnTunnelCertificateOutcome(result.GetResultWithOwnership())
-                            : ModifyVpnTunnelCertificateOutcome(std::move(result.GetError()));
-}
-
-ModifyVpnTunnelOptionsOutcome EC2Client::ModifyVpnTunnelOptions(const ModifyVpnTunnelOptionsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ModifyVpnTunnelOptionsOutcome(result.GetResultWithOwnership())
-                            : ModifyVpnTunnelOptionsOutcome(std::move(result.GetError()));
-}
-
-MonitorInstancesOutcome EC2Client::MonitorInstances(const MonitorInstancesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? MonitorInstancesOutcome(result.GetResultWithOwnership())
-                            : MonitorInstancesOutcome(std::move(result.GetError()));
-}
-
-MoveAddressToVpcOutcome EC2Client::MoveAddressToVpc(const MoveAddressToVpcRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? MoveAddressToVpcOutcome(result.GetResultWithOwnership())
-                            : MoveAddressToVpcOutcome(std::move(result.GetError()));
-}
-
-MoveByoipCidrToIpamOutcome EC2Client::MoveByoipCidrToIpam(const MoveByoipCidrToIpamRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? MoveByoipCidrToIpamOutcome(result.GetResultWithOwnership())
-                            : MoveByoipCidrToIpamOutcome(std::move(result.GetError()));
-}
-
-MoveCapacityReservationInstancesOutcome EC2Client::MoveCapacityReservationInstances(
-    const MoveCapacityReservationInstancesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? MoveCapacityReservationInstancesOutcome(result.GetResultWithOwnership())
-                            : MoveCapacityReservationInstancesOutcome(std::move(result.GetError()));
-}
-
-ProvisionByoipCidrOutcome EC2Client::ProvisionByoipCidr(const ProvisionByoipCidrRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ProvisionByoipCidrOutcome(result.GetResultWithOwnership())
-                            : ProvisionByoipCidrOutcome(std::move(result.GetError()));
 }

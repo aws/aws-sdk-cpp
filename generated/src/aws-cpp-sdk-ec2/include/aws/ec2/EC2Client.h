@@ -731,6 +731,50 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Associates an application status check with instances or <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">tags</a>.
+   * Once you create an association, health monitoring automatically begins for the
+   * specified instances or for instances that match the specified tags. The
+   * following rules apply:</p> <ul> <li> <p>You must specify either
+   * <code>TargetTagAssociations</code> or <code>InstanceIds</code>, but not both.
+   * Specifying both results in an <code>InvalidParameterCombination</code>
+   * error.</p> </li> <li> <p>The application status check must already exist and
+   * belong to your account.</p> </li> <li> <p>Tag keys must not be blank.</p> </li>
+   * <li> <p>Maximum 50 tag associations per application status check.</p> </li> <li>
+   * <p>Use <code>DisassociateApplicationStatusCheck</code> to remove
+   * associations.</p> </li> <li> <p>When you associate <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">tags</a>,
+   * the application status check automatically monitors all current and future
+   * instances that have the specified tags.</p> </li> </ul><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateApplicationStatusCheck">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AssociateApplicationStatusCheckOutcome AssociateApplicationStatusCheck(
+      const Model::AssociateApplicationStatusCheckRequest& request) const;
+
+  /**
+   * A Callable wrapper for AssociateApplicationStatusCheck that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename AssociateApplicationStatusCheckRequestT = Model::AssociateApplicationStatusCheckRequest>
+  Model::AssociateApplicationStatusCheckOutcomeCallable AssociateApplicationStatusCheckCallable(
+      const AssociateApplicationStatusCheckRequestT& request) const {
+    return SubmitCallable(&EC2Client::AssociateApplicationStatusCheck, request);
+  }
+
+  /**
+   * An Async wrapper for AssociateApplicationStatusCheck that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename AssociateApplicationStatusCheckRequestT = Model::AssociateApplicationStatusCheckRequest>
+  void AssociateApplicationStatusCheckAsync(const AssociateApplicationStatusCheckRequestT& request,
+                                            const AssociateApplicationStatusCheckResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::AssociateApplicationStatusCheck, request, handler, context);
+  }
+
+  /**
    * <p>Initiates a request to assign billing of the unused capacity of a shared
    * Capacity Reservation to a consumer account that is consolidated under the same
    * Amazon Web Services organizations payer account. For more information, see <a
@@ -1712,10 +1756,10 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   /**
    * <p>Bundles an Amazon instance store-backed Windows instance.</p> <p>During
    * bundling, only the root device volume (C:\) is bundled. Data on other instance
-   * store volumes is not preserved.</p>  <p>This action is no longer
+   * store volumes is not preserved.</p>  <p>BundleInstance is no longer
    * supported. To create an AMI, use <a
-   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
-   * For more information, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>
+   * instead. For more information about creating an Amazon EBS-backed AMI, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">
    * Create an Amazon EBS-backed AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
    * <p><h3>See Also:</h3>   <a
@@ -1744,7 +1788,10 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
 
   /**
    * <p>Cancels a bundling operation for an instance store-backed Windows
-   * instance.</p><p><h3>See Also:</h3>   <a
+   * instance.</p>  <p>CancelBundleTask is no longer supported because <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BundleInstance.html">BundleInstance</a>,
+   * the operation it cancels, is no longer supported.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelBundleTask">AWS
    * API Reference</a></p>
    */
@@ -2312,6 +2359,53 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   void CopyVolumesAsync(const CopyVolumesRequestT& request, const CopyVolumesResponseReceivedHandler& handler,
                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::CopyVolumes, request, handler, context);
+  }
+
+  /**
+   * <p>Creates an application status check for monitoring the health of applications
+   * running on your instances. You can configure the protocol, port, path, and
+   * thresholds for the health check. The following rules apply:</p> <ul> <li> <p>You
+   * can create a maximum of 50 application status checks per account.</p> </li> <li>
+   * <p>Health checks do not start until you associate the check with instances or
+   * tags using <code>AssociateApplicationStatusCheck</code>.</p> </li> <li> <p>The
+   * <code>Timeout</code> value must be less than the <code>Interval</code>
+   * value.</p> </li> <li> <p>The <code>Path</code> must start with a forward slash
+   * (<code>/</code>). Default: <code>/</code>.</p> </li> <li> <p>If you do not
+   * specify <code>Aggregation</code>, it defaults to <code>included</code>, which
+   * means the check contributes to the instance-level application status.</p> </li>
+   * <li> <p>Default values: <code>Interval</code> is 60 seconds,
+   * <code>Timeout</code> is 6 seconds, <code>FailureThreshold</code> is 2,
+   * <code>SuccessThreshold</code> is 5, <code>StatusCodeMatcher</code> is
+   * <code>200</code>, <code>InitializationGracePeriodSeconds</code> is 300
+   * seconds.</p> </li> <li> <p>You can tag the application status check during
+   * creation. For more information, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag
+   * your Amazon EC2 resources</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateApplicationStatusCheck">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateApplicationStatusCheckOutcome CreateApplicationStatusCheck(
+      const Model::CreateApplicationStatusCheckRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateApplicationStatusCheck that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CreateApplicationStatusCheckRequestT = Model::CreateApplicationStatusCheckRequest>
+  Model::CreateApplicationStatusCheckOutcomeCallable CreateApplicationStatusCheckCallable(
+      const CreateApplicationStatusCheckRequestT& request) const {
+    return SubmitCallable(&EC2Client::CreateApplicationStatusCheck, request);
+  }
+
+  /**
+   * An Async wrapper for CreateApplicationStatusCheck that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateApplicationStatusCheckRequestT = Model::CreateApplicationStatusCheckRequest>
+  void CreateApplicationStatusCheckAsync(const CreateApplicationStatusCheckRequestT& request,
+                                         const CreateApplicationStatusCheckResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::CreateApplicationStatusCheck, request, handler, context);
   }
 
   /**
@@ -6032,6 +6126,38 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Deletes an application status check. The following rules apply:</p> <ul> <li>
+   * <p>Deleting a check automatically removes all of its associations.</p> </li>
+   * <li> <p>Use <code>DescribeApplicationStatusChecks</code> to view existing checks
+   * before deleting.</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteApplicationStatusCheck">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteApplicationStatusCheckOutcome DeleteApplicationStatusCheck(
+      const Model::DeleteApplicationStatusCheckRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteApplicationStatusCheck that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteApplicationStatusCheckRequestT = Model::DeleteApplicationStatusCheckRequest>
+  Model::DeleteApplicationStatusCheckOutcomeCallable DeleteApplicationStatusCheckCallable(
+      const DeleteApplicationStatusCheckRequestT& request) const {
+    return SubmitCallable(&EC2Client::DeleteApplicationStatusCheck, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteApplicationStatusCheck that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteApplicationStatusCheckRequestT = Model::DeleteApplicationStatusCheckRequest>
+  void DeleteApplicationStatusCheckAsync(const DeleteApplicationStatusCheckRequestT& request,
+                                         const DeleteApplicationStatusCheckResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::DeleteApplicationStatusCheck, request, handler, context);
+  }
+
+  /**
    * <p> Deletes an existing Capacity Manager data export configuration. This stops
    * future scheduled exports but does not delete previously exported files from S3.
    * </p><p><h3>See Also:</h3>   <a
@@ -9380,6 +9506,113 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Describes the application status for the specified instances. Returns the
+   * aggregated application health status for each instance. The following rules
+   * apply:</p> <ul> <li> <p>The instance-level status is derived from all
+   * application status checks with the aggregation setting set to
+   * <code>included</code>.</p> </li> <li> <p>Use
+   * <code>DescribeApplicationStatusChecks</code> to view the configuration of
+   * individual checks.</p> </li> <li> <p>Use
+   * <code>EnableApplicationStatusCheckSuppression</code> to temporarily suppress
+   * health check results from affecting the instance-level status.</p> </li>
+   * </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeApplicationStatus">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeApplicationStatusOutcome DescribeApplicationStatus(
+      const Model::DescribeApplicationStatusRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeApplicationStatus that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeApplicationStatusRequestT = Model::DescribeApplicationStatusRequest>
+  Model::DescribeApplicationStatusOutcomeCallable DescribeApplicationStatusCallable(
+      const DescribeApplicationStatusRequestT& request = {}) const {
+    return SubmitCallable(&EC2Client::DescribeApplicationStatus, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeApplicationStatus that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeApplicationStatusRequestT = Model::DescribeApplicationStatusRequest>
+  void DescribeApplicationStatusAsync(const DescribeApplicationStatusResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                      const DescribeApplicationStatusRequestT& request = {}) const {
+    return SubmitAsync(&EC2Client::DescribeApplicationStatus, request, handler, context);
+  }
+
+  /**
+   * <p>Describes the associations for one or more application status checks. For
+   * more information, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-application-status-checks.html">Application
+   * status checks</a>. To avoid timeouts and retrieve complete results, use the
+   * pagination parameters.</p>  <p>The order of the elements in the response,
+   * including those within nested structures, might vary.</p> <p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeApplicationStatusCheckAssociations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeApplicationStatusCheckAssociationsOutcome DescribeApplicationStatusCheckAssociations(
+      const Model::DescribeApplicationStatusCheckAssociationsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeApplicationStatusCheckAssociations that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DescribeApplicationStatusCheckAssociationsRequestT = Model::DescribeApplicationStatusCheckAssociationsRequest>
+  Model::DescribeApplicationStatusCheckAssociationsOutcomeCallable DescribeApplicationStatusCheckAssociationsCallable(
+      const DescribeApplicationStatusCheckAssociationsRequestT& request = {}) const {
+    return SubmitCallable(&EC2Client::DescribeApplicationStatusCheckAssociations, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeApplicationStatusCheckAssociations that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DescribeApplicationStatusCheckAssociationsRequestT = Model::DescribeApplicationStatusCheckAssociationsRequest>
+  void DescribeApplicationStatusCheckAssociationsAsync(const DescribeApplicationStatusCheckAssociationsResponseReceivedHandler& handler,
+                                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                                       const DescribeApplicationStatusCheckAssociationsRequestT& request = {}) const {
+    return SubmitAsync(&EC2Client::DescribeApplicationStatusCheckAssociations, request, handler, context);
+  }
+
+  /**
+   * <p>Describes one or more application status checks. Returns configuration
+   * details for your application status checks, including protocol, port, path,
+   * thresholds, and associations. The following rules apply:</p> <ul> <li> <p>If you
+   * do not specify any application status check IDs, all checks in your account are
+   * returned.</p> </li> <li> <p>Use <code>DescribeApplicationStatus</code> to see
+   * the actual health status of instances.</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeApplicationStatusChecks">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeApplicationStatusChecksOutcome DescribeApplicationStatusChecks(
+      const Model::DescribeApplicationStatusChecksRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeApplicationStatusChecks that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeApplicationStatusChecksRequestT = Model::DescribeApplicationStatusChecksRequest>
+  Model::DescribeApplicationStatusChecksOutcomeCallable DescribeApplicationStatusChecksCallable(
+      const DescribeApplicationStatusChecksRequestT& request = {}) const {
+    return SubmitCallable(&EC2Client::DescribeApplicationStatusChecks, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeApplicationStatusChecks that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DescribeApplicationStatusChecksRequestT = Model::DescribeApplicationStatusChecksRequest>
+  void DescribeApplicationStatusChecksAsync(const DescribeApplicationStatusChecksResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                            const DescribeApplicationStatusChecksRequestT& request = {}) const {
+    return SubmitAsync(&EC2Client::DescribeApplicationStatusChecks, request, handler, context);
+  }
+
+  /**
    * <p>Describes the Availability Zones, Local Zones, and Wavelength Zones that are
    * available to you.</p> <p>For more information about Availability Zones, Local
    * Zones, and Wavelength Zones, see <a
@@ -11373,9 +11606,12 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
    * checks for your instances</a> and <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshoot
    * instances with failed status checks</a> in the <i>Amazon EC2 User Guide</i>.</p>
-   * </li> <li> <p> <b>Scheduled events</b> - Amazon EC2 can schedule events (such as
-   * reboot, stop, or terminate) for your instances related to hardware issues,
-   * software updates, or system maintenance. For more information, see <a
+   * </li> <li> <p> <b>Application status checks</b> - Amazon EC2 reports
+   * application-level health status for instances, indicating whether applications
+   * running on the instance are functioning properly.</p> </li> <li> <p>
+   * <b>Scheduled events</b> - Amazon EC2 can schedule events (such as reboot, stop,
+   * or terminate) for your instances related to hardware issues, software updates,
+   * or system maintenance. For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html">Scheduled
    * events for your instances</a> in the <i>Amazon EC2 User Guide</i>.</p> </li>
    * <li> <p> <b>Instance state</b> - You can manage your instances from the moment
@@ -15664,6 +15900,38 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Disables suppression of application status checks for the specified
+   * instances. After suppression is disabled, health check results resume affecting
+   * the instance-level application status. You can specify a maximum of 100 instance
+   * IDs per request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableApplicationStatusCheckSuppression">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DisableApplicationStatusCheckSuppressionOutcome DisableApplicationStatusCheckSuppression(
+      const Model::DisableApplicationStatusCheckSuppressionRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DisableApplicationStatusCheckSuppression that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DisableApplicationStatusCheckSuppressionRequestT = Model::DisableApplicationStatusCheckSuppressionRequest>
+  Model::DisableApplicationStatusCheckSuppressionOutcomeCallable DisableApplicationStatusCheckSuppressionCallable(
+      const DisableApplicationStatusCheckSuppressionRequestT& request = {}) const {
+    return SubmitCallable(&EC2Client::DisableApplicationStatusCheckSuppression, request);
+  }
+
+  /**
+   * An Async wrapper for DisableApplicationStatusCheckSuppression that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DisableApplicationStatusCheckSuppressionRequestT = Model::DisableApplicationStatusCheckSuppressionRequest>
+  void DisableApplicationStatusCheckSuppressionAsync(const DisableApplicationStatusCheckSuppressionResponseReceivedHandler& handler,
+                                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                                     const DisableApplicationStatusCheckSuppressionRequestT& request = {}) const {
+    return SubmitAsync(&EC2Client::DisableApplicationStatusCheckSuppression, request, handler, context);
+  }
+
+  /**
    * <p>Disables Infrastructure Performance metric subscriptions.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAwsNetworkPerformanceMetricSubscription">AWS
@@ -16340,6 +16608,43 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Disassociates an application status check from instances or <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">tags</a>.
+   * After disassociation, health monitoring stops for the affected instances. The
+   * following rules apply:</p> <ul> <li> <p>You must specify either
+   * <code>TargetTagAssociations</code> or <code>InstanceIds</code>, but not both.
+   * Specifying both results in an <code>InvalidParameterCombination</code>
+   * error.</p> </li> <li> <p>The application status check must already exist and
+   * belong to your account.</p> </li> <li> <p>Tag keys must not be blank.</p> </li>
+   * </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateApplicationStatusCheck">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DisassociateApplicationStatusCheckOutcome DisassociateApplicationStatusCheck(
+      const Model::DisassociateApplicationStatusCheckRequest& request) const;
+
+  /**
+   * A Callable wrapper for DisassociateApplicationStatusCheck that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename DisassociateApplicationStatusCheckRequestT = Model::DisassociateApplicationStatusCheckRequest>
+  Model::DisassociateApplicationStatusCheckOutcomeCallable DisassociateApplicationStatusCheckCallable(
+      const DisassociateApplicationStatusCheckRequestT& request) const {
+    return SubmitCallable(&EC2Client::DisassociateApplicationStatusCheck, request);
+  }
+
+  /**
+   * An Async wrapper for DisassociateApplicationStatusCheck that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DisassociateApplicationStatusCheckRequestT = Model::DisassociateApplicationStatusCheckRequest>
+  void DisassociateApplicationStatusCheckAsync(const DisassociateApplicationStatusCheckRequestT& request,
+                                               const DisassociateApplicationStatusCheckResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::DisassociateApplicationStatusCheck, request, handler, context);
+  }
+
+  /**
    * <p>Cancels a pending request to assign billing of the unused capacity of a
    * Capacity Reservation to a consumer account, or revokes a request that has
    * already been accepted. For more information, see <a
@@ -16967,6 +17272,43 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
                                         const EnableAllowedImagesSettingsResponseReceivedHandler& handler,
                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::EnableAllowedImagesSettings, request, handler, context);
+  }
+
+  /**
+   * <p>Suppresses application status checks for the specified instances. While
+   * suppressed, health checks continue to run but do not affect the instance-level
+   * application status. The following rules apply:</p> <ul> <li> <p>Maximum 100
+   * instance IDs per request.</p> </li> <li> <p>Use
+   * <code>DisableApplicationStatusCheckSuppression</code> to resume normal health
+   * check reporting.</p> </li> <li> <p>If you do not specify
+   * <code>DurationSeconds</code>, suppression continues indefinitely until you call
+   * <code>DisableApplicationStatusCheckSuppression</code>.</p> </li> </ul><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableApplicationStatusCheckSuppression">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::EnableApplicationStatusCheckSuppressionOutcome EnableApplicationStatusCheckSuppression(
+      const Model::EnableApplicationStatusCheckSuppressionRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for EnableApplicationStatusCheckSuppression that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename EnableApplicationStatusCheckSuppressionRequestT = Model::EnableApplicationStatusCheckSuppressionRequest>
+  Model::EnableApplicationStatusCheckSuppressionOutcomeCallable EnableApplicationStatusCheckSuppressionCallable(
+      const EnableApplicationStatusCheckSuppressionRequestT& request = {}) const {
+    return SubmitCallable(&EC2Client::EnableApplicationStatusCheckSuppression, request);
+  }
+
+  /**
+   * An Async wrapper for EnableApplicationStatusCheckSuppression that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename EnableApplicationStatusCheckSuppressionRequestT = Model::EnableApplicationStatusCheckSuppressionRequest>
+  void EnableApplicationStatusCheckSuppressionAsync(const EnableApplicationStatusCheckSuppressionResponseReceivedHandler& handler,
+                                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                                    const EnableApplicationStatusCheckSuppressionRequestT& request = {}) const {
+    return SubmitAsync(&EC2Client::EnableApplicationStatusCheckSuppression, request, handler, context);
   }
 
   /**
@@ -20547,6 +20889,39 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Modifies an existing application status check. You can update the protocol,
+   * port, path, thresholds, and other configuration settings. The following rules
+   * apply:</p> <ul> <li> <p>The application status check must exist and belong to
+   * your account.</p> </li> <li> <p>Changes take effect on the next health check
+   * interval.</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyApplicationStatusCheck">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ModifyApplicationStatusCheckOutcome ModifyApplicationStatusCheck(
+      const Model::ModifyApplicationStatusCheckRequest& request) const;
+
+  /**
+   * A Callable wrapper for ModifyApplicationStatusCheck that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ModifyApplicationStatusCheckRequestT = Model::ModifyApplicationStatusCheckRequest>
+  Model::ModifyApplicationStatusCheckOutcomeCallable ModifyApplicationStatusCheckCallable(
+      const ModifyApplicationStatusCheckRequestT& request) const {
+    return SubmitCallable(&EC2Client::ModifyApplicationStatusCheck, request);
+  }
+
+  /**
+   * An Async wrapper for ModifyApplicationStatusCheck that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ModifyApplicationStatusCheckRequestT = Model::ModifyApplicationStatusCheckRequest>
+  void ModifyApplicationStatusCheckAsync(const ModifyApplicationStatusCheckRequestT& request,
+                                         const ModifyApplicationStatusCheckResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::ModifyApplicationStatusCheck, request, handler, context);
+  }
+
+  /**
    * <p>Changes the opt-in status of the specified zone group for your
    * account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyAvailabilityZoneGroup">AWS
@@ -23409,7 +23784,10 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
    * to be advertised.</p> <p>Amazon Web Services verifies that you own the address
    * range and are authorized to advertise it. You must ensure that the address range
    * is registered to you and that you created an RPKI ROA to authorize Amazon ASNs
-   * 16509 and 14618 to advertise the address range. For more information, see <a
+   * 16509 and 14618 to advertise the address range. For the Amazon Web Services
+   * GovCloud (US) Regions, authorize only ASN 8987. For the Amazon Web Services
+   * European Sovereign Cloud, authorize ASNs 16509 and 214101. For more information,
+   * see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
    * your own IP addresses (BYOIP)</a> in the <i>Amazon EC2 User Guide</i>.</p>
    * <p>Provisioning an address range is an asynchronous operation, so the call

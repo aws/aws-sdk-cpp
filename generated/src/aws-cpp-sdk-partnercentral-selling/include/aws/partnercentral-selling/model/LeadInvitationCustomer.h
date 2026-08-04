@@ -6,9 +6,6 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
-#include <aws/partnercentral-selling/model/CountryCode.h>
-#include <aws/partnercentral-selling/model/Industry.h>
-#include <aws/partnercentral-selling/model/MarketSegment.h>
 
 #include <utility>
 
@@ -43,14 +40,16 @@ class LeadInvitationCustomer {
    * lead invitation. This categorization helps partners understand the customer's
    * business context and assess solution fit.</p>
    */
-  inline Industry GetIndustry() const { return m_industry; }
+  inline const Aws::String& GetIndustry() const { return m_industry; }
   inline bool IndustryHasBeenSet() const { return m_industryHasBeenSet; }
-  inline void SetIndustry(Industry value) {
+  template <typename IndustryT = Aws::String>
+  void SetIndustry(IndustryT&& value) {
     m_industryHasBeenSet = true;
-    m_industry = value;
+    m_industry = std::forward<IndustryT>(value);
   }
-  inline LeadInvitationCustomer& WithIndustry(Industry value) {
-    SetIndustry(value);
+  template <typename IndustryT = Aws::String>
+  LeadInvitationCustomer& WithIndustry(IndustryT&& value) {
+    SetIndustry(std::forward<IndustryT>(value));
     return *this;
   }
   ///@}
@@ -101,14 +100,16 @@ class LeadInvitationCustomer {
    * This information helps partners understand regional requirements and assess
    * their ability to serve the customer effectively.</p>
    */
-  inline CountryCode GetCountryCode() const { return m_countryCode; }
+  inline const Aws::String& GetCountryCode() const { return m_countryCode; }
   inline bool CountryCodeHasBeenSet() const { return m_countryCodeHasBeenSet; }
-  inline void SetCountryCode(CountryCode value) {
+  template <typename CountryCodeT = Aws::String>
+  void SetCountryCode(CountryCodeT&& value) {
     m_countryCodeHasBeenSet = true;
-    m_countryCode = value;
+    m_countryCode = std::forward<CountryCodeT>(value);
   }
-  inline LeadInvitationCustomer& WithCountryCode(CountryCode value) {
-    SetCountryCode(value);
+  template <typename CountryCodeT = Aws::String>
+  LeadInvitationCustomer& WithCountryCode(CountryCodeT&& value) {
+    SetCountryCode(std::forward<CountryCodeT>(value));
     return *this;
   }
   ///@}
@@ -139,29 +140,31 @@ class LeadInvitationCustomer {
    * enterprise, mid-market, or small business. This segmentation helps partners
    * determine the appropriate solution complexity and engagement strategy.</p>
    */
-  inline MarketSegment GetMarketSegment() const { return m_marketSegment; }
+  inline const Aws::String& GetMarketSegment() const { return m_marketSegment; }
   inline bool MarketSegmentHasBeenSet() const { return m_marketSegmentHasBeenSet; }
-  inline void SetMarketSegment(MarketSegment value) {
+  template <typename MarketSegmentT = Aws::String>
+  void SetMarketSegment(MarketSegmentT&& value) {
     m_marketSegmentHasBeenSet = true;
-    m_marketSegment = value;
+    m_marketSegment = std::forward<MarketSegmentT>(value);
   }
-  inline LeadInvitationCustomer& WithMarketSegment(MarketSegment value) {
-    SetMarketSegment(value);
+  template <typename MarketSegmentT = Aws::String>
+  LeadInvitationCustomer& WithMarketSegment(MarketSegmentT&& value) {
+    SetMarketSegment(std::forward<MarketSegmentT>(value));
     return *this;
   }
   ///@}
  private:
-  Industry m_industry{Industry::NOT_SET};
+  Aws::String m_industry;
 
   Aws::String m_companyName;
 
   Aws::String m_websiteUrl;
 
-  CountryCode m_countryCode{CountryCode::NOT_SET};
+  Aws::String m_countryCode;
 
   Aws::String m_awsMaturity;
 
-  MarketSegment m_marketSegment{MarketSegment::NOT_SET};
+  Aws::String m_marketSegment;
   bool m_industryHasBeenSet = false;
   bool m_companyNameHasBeenSet = false;
   bool m_websiteUrlHasBeenSet = false;

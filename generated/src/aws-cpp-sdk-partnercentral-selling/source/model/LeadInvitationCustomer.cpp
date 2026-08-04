@@ -19,7 +19,7 @@ LeadInvitationCustomer::LeadInvitationCustomer(JsonView jsonValue) { *this = jso
 
 LeadInvitationCustomer& LeadInvitationCustomer::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("Industry")) {
-    m_industry = IndustryMapper::GetIndustryForName(jsonValue.GetString("Industry"));
+    m_industry = jsonValue.GetString("Industry");
     m_industryHasBeenSet = true;
   }
   if (jsonValue.ValueExists("CompanyName")) {
@@ -31,7 +31,7 @@ LeadInvitationCustomer& LeadInvitationCustomer::operator=(JsonView jsonValue) {
     m_websiteUrlHasBeenSet = true;
   }
   if (jsonValue.ValueExists("CountryCode")) {
-    m_countryCode = CountryCodeMapper::GetCountryCodeForName(jsonValue.GetString("CountryCode"));
+    m_countryCode = jsonValue.GetString("CountryCode");
     m_countryCodeHasBeenSet = true;
   }
   if (jsonValue.ValueExists("AwsMaturity")) {
@@ -39,7 +39,7 @@ LeadInvitationCustomer& LeadInvitationCustomer::operator=(JsonView jsonValue) {
     m_awsMaturityHasBeenSet = true;
   }
   if (jsonValue.ValueExists("MarketSegment")) {
-    m_marketSegment = MarketSegmentMapper::GetMarketSegmentForName(jsonValue.GetString("MarketSegment"));
+    m_marketSegment = jsonValue.GetString("MarketSegment");
     m_marketSegmentHasBeenSet = true;
   }
   return *this;
@@ -49,7 +49,7 @@ JsonValue LeadInvitationCustomer::Jsonize() const {
   JsonValue payload;
 
   if (m_industryHasBeenSet) {
-    payload.WithString("Industry", IndustryMapper::GetNameForIndustry(m_industry));
+    payload.WithString("Industry", m_industry);
   }
 
   if (m_companyNameHasBeenSet) {
@@ -61,7 +61,7 @@ JsonValue LeadInvitationCustomer::Jsonize() const {
   }
 
   if (m_countryCodeHasBeenSet) {
-    payload.WithString("CountryCode", CountryCodeMapper::GetNameForCountryCode(m_countryCode));
+    payload.WithString("CountryCode", m_countryCode);
   }
 
   if (m_awsMaturityHasBeenSet) {
@@ -69,7 +69,7 @@ JsonValue LeadInvitationCustomer::Jsonize() const {
   }
 
   if (m_marketSegmentHasBeenSet) {
-    payload.WithString("MarketSegment", MarketSegmentMapper::GetNameForMarketSegment(m_marketSegment));
+    payload.WithString("MarketSegment", m_marketSegment);
   }
 
   return payload;

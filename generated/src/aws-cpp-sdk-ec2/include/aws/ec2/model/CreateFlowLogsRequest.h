@@ -144,7 +144,7 @@ class CreateFlowLogsRequest : public EC2Request {
   /**
    * <p>The IDs of the resources to monitor. For example, if the resource type is
    * <code>VPC</code>, specify the IDs of the VPCs.</p> <p>Constraints: Maximum of 25
-   * for transit gateway resource types. Maximum of 1000 for the other resource
+   * for transit gateway resource types. Maximum of 300 for the other resource
    * types.</p>
    */
   inline const Aws::Vector<Aws::String>& GetResourceIds() const { return m_resourceIds; }

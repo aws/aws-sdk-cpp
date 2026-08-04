@@ -11,6 +11,7 @@
 #include <aws/dynamodb/model/SSEDescription.h>
 #include <aws/dynamodb/model/StreamSpecification.h>
 #include <aws/dynamodb/model/TimeToLiveDescription.h>
+#include <aws/dynamodb/model/VectorIndexInfo.h>
 
 #include <utility>
 
@@ -143,6 +144,32 @@ class SourceTableFeatureDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The vector index properties for the table at the time the backup was created,
+   * including the index name, vector attribute, dimensions, distance function,
+   * search schema, and projection.</p>
+   */
+  inline const Aws::Vector<VectorIndexInfo>& GetVectorIndexes() const { return m_vectorIndexes; }
+  inline bool VectorIndexesHasBeenSet() const { return m_vectorIndexesHasBeenSet; }
+  template <typename VectorIndexesT = Aws::Vector<VectorIndexInfo>>
+  void SetVectorIndexes(VectorIndexesT&& value) {
+    m_vectorIndexesHasBeenSet = true;
+    m_vectorIndexes = std::forward<VectorIndexesT>(value);
+  }
+  template <typename VectorIndexesT = Aws::Vector<VectorIndexInfo>>
+  SourceTableFeatureDetails& WithVectorIndexes(VectorIndexesT&& value) {
+    SetVectorIndexes(std::forward<VectorIndexesT>(value));
+    return *this;
+  }
+  template <typename VectorIndexesT = VectorIndexInfo>
+  SourceTableFeatureDetails& AddVectorIndexes(VectorIndexesT&& value) {
+    m_vectorIndexesHasBeenSet = true;
+    m_vectorIndexes.emplace_back(std::forward<VectorIndexesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<LocalSecondaryIndexInfo> m_localSecondaryIndexes;
 
@@ -153,11 +180,14 @@ class SourceTableFeatureDetails {
   TimeToLiveDescription m_timeToLiveDescription;
 
   SSEDescription m_sSEDescription;
+
+  Aws::Vector<VectorIndexInfo> m_vectorIndexes;
   bool m_localSecondaryIndexesHasBeenSet = false;
   bool m_globalSecondaryIndexesHasBeenSet = false;
   bool m_streamDescriptionHasBeenSet = false;
   bool m_timeToLiveDescriptionHasBeenSet = false;
   bool m_sSEDescriptionHasBeenSet = false;
+  bool m_vectorIndexesHasBeenSet = false;
 };
 
 }  // namespace Model

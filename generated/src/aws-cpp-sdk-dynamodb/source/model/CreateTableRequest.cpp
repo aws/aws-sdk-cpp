@@ -108,6 +108,14 @@ Aws::String CreateTableRequest::SerializePayload() const {
         GlobalTableSettingsReplicationModeMapper::GetNameForGlobalTableSettingsReplicationMode(m_globalTableSettingsReplicationMode));
   }
 
+  if (m_vectorIndexesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> vectorIndexesJsonList(m_vectorIndexes.size());
+    for (unsigned vectorIndexesIndex = 0; vectorIndexesIndex < vectorIndexesJsonList.GetLength(); ++vectorIndexesIndex) {
+      vectorIndexesJsonList[vectorIndexesIndex].AsObject(m_vectorIndexes[vectorIndexesIndex].Jsonize());
+    }
+    payload.WithArray("VectorIndexes", std::move(vectorIndexesJsonList));
+  }
+
   return payload.View().WriteReadable();
 }
 

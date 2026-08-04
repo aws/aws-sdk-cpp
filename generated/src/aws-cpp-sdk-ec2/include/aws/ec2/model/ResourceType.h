@@ -120,7 +120,8 @@ enum class ResourceType {
   capacity_manager_data_export,
   vpn_concentrator,
   ipam_pool_allocation,
-  capacity_reservation_cancellation_quote
+  capacity_reservation_cancellation_quote,
+  application_status_check
 };
 
 namespace ResourceTypeMapper {

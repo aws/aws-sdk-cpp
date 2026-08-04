@@ -2456,7 +2456,15 @@ class AWS_SSOADMIN_API SSOAdminClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Update the details for the instance of IAM Identity Center that is owned by
-   * the Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
+   * the Amazon Web Services account.</p> <p>In a single <code>UpdateInstance</code>
+   * request, you can perform only one of the following operations:</p> <ul> <li>
+   * <p>Update the encryption configuration of the instance by specifying
+   * <code>EncryptionConfiguration</code>.</p> </li> <li> <p>Enable permission sets
+   * for the instance by specifying <code>PermissionSetsEnabled</code>.</p> </li>
+   * </ul> <p>A request that specifies both <code>EncryptionConfiguration</code> and
+   * <code>PermissionSetsEnabled</code> returns a <code>ValidationException</code>.
+   * To perform both operations, call <code>UpdateInstance</code> separately for
+   * each. The two calls can be made in parallel.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateInstance">AWS
    * API Reference</a></p>
    */

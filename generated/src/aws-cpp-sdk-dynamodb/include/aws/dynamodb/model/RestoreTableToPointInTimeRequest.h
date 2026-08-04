@@ -15,6 +15,7 @@
 #include <aws/dynamodb/model/OnDemandThroughput.h>
 #include <aws/dynamodb/model/ProvisionedThroughput.h>
 #include <aws/dynamodb/model/SSESpecification.h>
+#include <aws/dynamodb/model/VectorIndex.h>
 
 #include <utility>
 
@@ -154,7 +155,12 @@ class RestoreTableToPointInTimeRequest : public DynamoDBRequest {
   /**
    * <p>List of global secondary indexes for the restored table. The indexes provided
    * should match existing secondary indexes. You can choose to exclude some or all
-   * of the indexes at the time of restore.</p>
+   * of the indexes at the time of restore.</p> <p>The <code>WarmThroughput</code>
+   * setting is not supported on global secondary indexes when you use
+   * <code>RestoreTableToPointInTime</code>. Although <code>WarmThroughput</code>
+   * appears in the shared index definition, including it in a
+   * <code>GlobalSecondaryIndexOverride</code> entry causes the request to fail with
+   * a validation error.</p>
    */
   inline const Aws::Vector<GlobalSecondaryIndex>& GetGlobalSecondaryIndexOverride() const { return m_globalSecondaryIndexOverride; }
   inline bool GlobalSecondaryIndexOverrideHasBeenSet() const { return m_globalSecondaryIndexOverrideHasBeenSet; }
@@ -253,6 +259,33 @@ class RestoreTableToPointInTimeRequest : public DynamoDBRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The vector indexes for the restored table. If not specified, all vector
+   * indexes from the source table are restored. The indexes provided must match
+   * existing vector indexes from the source table. You can choose to exclude some or
+   * all of the vector indexes at the time of restore.</p>
+   */
+  inline const Aws::Vector<VectorIndex>& GetVectorIndexOverride() const { return m_vectorIndexOverride; }
+  inline bool VectorIndexOverrideHasBeenSet() const { return m_vectorIndexOverrideHasBeenSet; }
+  template <typename VectorIndexOverrideT = Aws::Vector<VectorIndex>>
+  void SetVectorIndexOverride(VectorIndexOverrideT&& value) {
+    m_vectorIndexOverrideHasBeenSet = true;
+    m_vectorIndexOverride = std::forward<VectorIndexOverrideT>(value);
+  }
+  template <typename VectorIndexOverrideT = Aws::Vector<VectorIndex>>
+  RestoreTableToPointInTimeRequest& WithVectorIndexOverride(VectorIndexOverrideT&& value) {
+    SetVectorIndexOverride(std::forward<VectorIndexOverrideT>(value));
+    return *this;
+  }
+  template <typename VectorIndexOverrideT = VectorIndex>
+  RestoreTableToPointInTimeRequest& AddVectorIndexOverride(VectorIndexOverrideT&& value) {
+    m_vectorIndexOverrideHasBeenSet = true;
+    m_vectorIndexOverride.emplace_back(std::forward<VectorIndexOverrideT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_sourceTableArn;
 
@@ -275,6 +308,8 @@ class RestoreTableToPointInTimeRequest : public DynamoDBRequest {
   OnDemandThroughput m_onDemandThroughputOverride;
 
   SSESpecification m_sSESpecificationOverride;
+
+  Aws::Vector<VectorIndex> m_vectorIndexOverride;
   bool m_sourceTableArnHasBeenSet = false;
   bool m_sourceTableNameHasBeenSet = false;
   bool m_targetTableNameHasBeenSet = false;
@@ -286,6 +321,7 @@ class RestoreTableToPointInTimeRequest : public DynamoDBRequest {
   bool m_provisionedThroughputOverrideHasBeenSet = false;
   bool m_onDemandThroughputOverrideHasBeenSet = false;
   bool m_sSESpecificationOverrideHasBeenSet = false;
+  bool m_vectorIndexOverrideHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/workspaces/model/LogUploadEnum.h>
 #include <aws/workspaces/model/ReconnectEnum.h>
@@ -68,12 +69,36 @@ class ClientProperties {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The client experience policy that determines which client experience the user
+   * sees. Administrators can set this policy to control the client experience for
+   * users in a directory. Valid values include <code>FORCE_CLASSIC</code>,
+   * <code>FORCE_UI_2026</code>, and <code>USER_CHOICE</code>.</p>
+   */
+  inline const Aws::String& GetClientExperiencePolicy() const { return m_clientExperiencePolicy; }
+  inline bool ClientExperiencePolicyHasBeenSet() const { return m_clientExperiencePolicyHasBeenSet; }
+  template <typename ClientExperiencePolicyT = Aws::String>
+  void SetClientExperiencePolicy(ClientExperiencePolicyT&& value) {
+    m_clientExperiencePolicyHasBeenSet = true;
+    m_clientExperiencePolicy = std::forward<ClientExperiencePolicyT>(value);
+  }
+  template <typename ClientExperiencePolicyT = Aws::String>
+  ClientProperties& WithClientExperiencePolicy(ClientExperiencePolicyT&& value) {
+    SetClientExperiencePolicy(std::forward<ClientExperiencePolicyT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ReconnectEnum m_reconnectEnabled{ReconnectEnum::NOT_SET};
 
   LogUploadEnum m_logUploadEnabled{LogUploadEnum::NOT_SET};
+
+  Aws::String m_clientExperiencePolicy;
   bool m_reconnectEnabledHasBeenSet = false;
   bool m_logUploadEnabledHasBeenSet = false;
+  bool m_clientExperiencePolicyHasBeenSet = false;
 };
 
 }  // namespace Model

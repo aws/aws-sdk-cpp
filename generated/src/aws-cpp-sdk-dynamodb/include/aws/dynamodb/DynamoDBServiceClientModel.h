@@ -73,6 +73,7 @@
 #include <aws/dynamodb/model/RestoreTableFromBackupResult.h>
 #include <aws/dynamodb/model/RestoreTableToPointInTimeResult.h>
 #include <aws/dynamodb/model/ScanResult.h>
+#include <aws/dynamodb/model/SearchVectorsResult.h>
 #include <aws/dynamodb/model/TransactGetItemsResult.h>
 #include <aws/dynamodb/model/TransactWriteItemsResult.h>
 #include <aws/dynamodb/model/UpdateContinuousBackupsResult.h>
@@ -160,6 +161,7 @@ class QueryRequest;
 class RestoreTableFromBackupRequest;
 class RestoreTableToPointInTimeRequest;
 class ScanRequest;
+class SearchVectorsRequest;
 class TagResourceRequest;
 class TransactGetItemsRequest;
 class TransactWriteItemsRequest;
@@ -220,6 +222,7 @@ typedef Aws::Utils::Outcome<QueryResult, DynamoDBError> QueryOutcome;
 typedef Aws::Utils::Outcome<RestoreTableFromBackupResult, DynamoDBError> RestoreTableFromBackupOutcome;
 typedef Aws::Utils::Outcome<RestoreTableToPointInTimeResult, DynamoDBError> RestoreTableToPointInTimeOutcome;
 typedef Aws::Utils::Outcome<ScanResult, DynamoDBError> ScanOutcome;
+typedef Aws::Utils::Outcome<SearchVectorsResult, DynamoDBError> SearchVectorsOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, DynamoDBError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<TransactGetItemsResult, DynamoDBError> TransactGetItemsOutcome;
 typedef Aws::Utils::Outcome<TransactWriteItemsResult, DynamoDBError> TransactWriteItemsOutcome;
@@ -280,6 +283,7 @@ typedef std::future<QueryOutcome> QueryOutcomeCallable;
 typedef std::future<RestoreTableFromBackupOutcome> RestoreTableFromBackupOutcomeCallable;
 typedef std::future<RestoreTableToPointInTimeOutcome> RestoreTableToPointInTimeOutcomeCallable;
 typedef std::future<ScanOutcome> ScanOutcomeCallable;
+typedef std::future<SearchVectorsOutcome> SearchVectorsOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<TransactGetItemsOutcome> TransactGetItemsOutcomeCallable;
 typedef std::future<TransactWriteItemsOutcome> TransactWriteItemsOutcomeCallable;
@@ -435,6 +439,9 @@ typedef std::function<void(const DynamoDBClient*, const Model::RestoreTableToPoi
 typedef std::function<void(const DynamoDBClient*, const Model::ScanRequest&, const Model::ScanOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ScanResponseReceivedHandler;
+typedef std::function<void(const DynamoDBClient*, const Model::SearchVectorsRequest&, const Model::SearchVectorsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    SearchVectorsResponseReceivedHandler;
 typedef std::function<void(const DynamoDBClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     TagResourceResponseReceivedHandler;

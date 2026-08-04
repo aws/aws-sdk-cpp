@@ -82,6 +82,7 @@
 #include <aws/partnercentral-selling/model/EngagementSort.h>
 #include <aws/partnercentral-selling/model/EngagementSortName.h>
 #include <aws/partnercentral-selling/model/EngagementSummary.h>
+#include <aws/partnercentral-selling/model/EnrichmentContext.h>
 #include <aws/partnercentral-selling/model/ExpectedContractDuration.h>
 #include <aws/partnercentral-selling/model/ExpectedContractDurationTerm.h>
 #include <aws/partnercentral-selling/model/ExpectedCustomerSpend.h>
@@ -103,9 +104,11 @@
 #include <aws/partnercentral-selling/model/GetSellingSystemSettingsResult.h>
 #include <aws/partnercentral-selling/model/Industry.h>
 #include <aws/partnercentral-selling/model/Invitation.h>
+#include <aws/partnercentral-selling/model/InvitationProspectingResultAws.h>
 #include <aws/partnercentral-selling/model/InvitationStatus.h>
 #include <aws/partnercentral-selling/model/InvolvementTypeChangeReason.h>
 #include <aws/partnercentral-selling/model/LastModifiedDate.h>
+#include <aws/partnercentral-selling/model/LeadAddress.h>
 #include <aws/partnercentral-selling/model/LeadContact.h>
 #include <aws/partnercentral-selling/model/LeadContext.h>
 #include <aws/partnercentral-selling/model/LeadCustomer.h>
@@ -148,7 +151,6 @@
 #include <aws/partnercentral-selling/model/ListTagsForResourceResult.h>
 #include <aws/partnercentral-selling/model/ListTasksSortBase.h>
 #include <aws/partnercentral-selling/model/ListTasksSortName.h>
-#include <aws/partnercentral-selling/model/MarketSegment.h>
 #include <aws/partnercentral-selling/model/Marketing.h>
 #include <aws/partnercentral-selling/model/MarketingSource.h>
 #include <aws/partnercentral-selling/model/MonetaryValue.h>

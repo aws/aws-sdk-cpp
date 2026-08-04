@@ -27,6 +27,10 @@ Aws::String UpdateInstanceRequest::SerializePayload() const {
     payload.WithObject("EncryptionConfiguration", m_encryptionConfiguration.Jsonize());
   }
 
+  if (m_permissionSetsEnabledHasBeenSet) {
+    payload.WithBool("PermissionSetsEnabled", m_permissionSetsEnabled);
+  }
+
   return payload.View().WriteReadable();
 }
 

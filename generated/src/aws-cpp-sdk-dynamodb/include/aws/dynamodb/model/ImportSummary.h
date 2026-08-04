@@ -164,8 +164,7 @@ class ImportSummary {
 
   ///@{
   /**
-   * <p> The time at which this import task ended. (Does this include the successful
-   * complete creation of the table it was imported to?) </p>
+   * <p> The time at which this import task ended. </p>
    */
   inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
   inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }

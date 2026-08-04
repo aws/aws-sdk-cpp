@@ -52,6 +52,13 @@ ConsumedCapacity& ConsumedCapacity::operator=(JsonView jsonValue) {
     }
     m_globalSecondaryIndexesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("VectorIndexes")) {
+    Aws::Map<Aws::String, JsonView> vectorIndexesJsonMap = jsonValue.GetObject("VectorIndexes").GetAllObjects();
+    for (auto& vectorIndexesItem : vectorIndexesJsonMap) {
+      m_vectorIndexes[vectorIndexesItem.first] = vectorIndexesItem.second.AsObject();
+    }
+    m_vectorIndexesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -92,6 +99,14 @@ JsonValue ConsumedCapacity::Jsonize() const {
       globalSecondaryIndexesJsonMap.WithObject(globalSecondaryIndexesItem.first, globalSecondaryIndexesItem.second.Jsonize());
     }
     payload.WithObject("GlobalSecondaryIndexes", std::move(globalSecondaryIndexesJsonMap));
+  }
+
+  if (m_vectorIndexesHasBeenSet) {
+    JsonValue vectorIndexesJsonMap;
+    for (auto& vectorIndexesItem : m_vectorIndexes) {
+      vectorIndexesJsonMap.WithObject(vectorIndexesItem.first, vectorIndexesItem.second.Jsonize());
+    }
+    payload.WithObject("VectorIndexes", std::move(vectorIndexesJsonMap));
   }
 
   return payload;

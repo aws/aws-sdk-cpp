@@ -19,7 +19,7 @@ LeadCustomer::LeadCustomer(JsonView jsonValue) { *this = jsonValue; }
 
 LeadCustomer& LeadCustomer::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("Industry")) {
-    m_industry = IndustryMapper::GetIndustryForName(jsonValue.GetString("Industry"));
+    m_industry = jsonValue.GetString("Industry");
     m_industryHasBeenSet = true;
   }
   if (jsonValue.ValueExists("CompanyName")) {
@@ -39,7 +39,7 @@ LeadCustomer& LeadCustomer::operator=(JsonView jsonValue) {
     m_awsMaturityHasBeenSet = true;
   }
   if (jsonValue.ValueExists("MarketSegment")) {
-    m_marketSegment = MarketSegmentMapper::GetMarketSegmentForName(jsonValue.GetString("MarketSegment"));
+    m_marketSegment = jsonValue.GetString("MarketSegment");
     m_marketSegmentHasBeenSet = true;
   }
   return *this;
@@ -49,7 +49,7 @@ JsonValue LeadCustomer::Jsonize() const {
   JsonValue payload;
 
   if (m_industryHasBeenSet) {
-    payload.WithString("Industry", IndustryMapper::GetNameForIndustry(m_industry));
+    payload.WithString("Industry", m_industry);
   }
 
   if (m_companyNameHasBeenSet) {
@@ -69,7 +69,7 @@ JsonValue LeadCustomer::Jsonize() const {
   }
 
   if (m_marketSegmentHasBeenSet) {
-    payload.WithString("MarketSegment", MarketSegmentMapper::GetNameForMarketSegment(m_marketSegment));
+    payload.WithString("MarketSegment", m_marketSegment);
   }
 
   return payload;

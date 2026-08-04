@@ -20,6 +20,7 @@
 #include <aws/dynamodb/model/SSESpecification.h>
 #include <aws/dynamodb/model/StreamSpecification.h>
 #include <aws/dynamodb/model/TableClass.h>
+#include <aws/dynamodb/model/VectorIndexUpdate.h>
 #include <aws/dynamodb/model/WarmThroughput.h>
 
 #include <utility>
@@ -403,6 +404,35 @@ class UpdateTableRequest : public DynamoDBRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of vector indexes to be added to or removed from the table. You can
+   * add or remove one vector index for each <code>UpdateTable</code> operation.</p>
+   * <p>To add a vector index, specify <code>IndexName</code>,
+   * <code>VectorAttribute</code>, <code>Dimensions</code>,
+   * <code>DistanceFunction</code>, and <code>Projection</code>. To remove a vector
+   * index, specify only the <code>IndexName</code>.</p>
+   */
+  inline const Aws::Vector<VectorIndexUpdate>& GetVectorIndexUpdates() const { return m_vectorIndexUpdates; }
+  inline bool VectorIndexUpdatesHasBeenSet() const { return m_vectorIndexUpdatesHasBeenSet; }
+  template <typename VectorIndexUpdatesT = Aws::Vector<VectorIndexUpdate>>
+  void SetVectorIndexUpdates(VectorIndexUpdatesT&& value) {
+    m_vectorIndexUpdatesHasBeenSet = true;
+    m_vectorIndexUpdates = std::forward<VectorIndexUpdatesT>(value);
+  }
+  template <typename VectorIndexUpdatesT = Aws::Vector<VectorIndexUpdate>>
+  UpdateTableRequest& WithVectorIndexUpdates(VectorIndexUpdatesT&& value) {
+    SetVectorIndexUpdates(std::forward<VectorIndexUpdatesT>(value));
+    return *this;
+  }
+  template <typename VectorIndexUpdatesT = VectorIndexUpdate>
+  UpdateTableRequest& AddVectorIndexUpdates(VectorIndexUpdatesT&& value) {
+    m_vectorIndexUpdatesHasBeenSet = true;
+    m_vectorIndexUpdates.emplace_back(std::forward<VectorIndexUpdatesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<AttributeDefinition> m_attributeDefinitions;
 
@@ -433,6 +463,8 @@ class UpdateTableRequest : public DynamoDBRequest {
   WarmThroughput m_warmThroughput;
 
   GlobalTableSettingsReplicationMode m_globalTableSettingsReplicationMode{GlobalTableSettingsReplicationMode::NOT_SET};
+
+  Aws::Vector<VectorIndexUpdate> m_vectorIndexUpdates;
   bool m_attributeDefinitionsHasBeenSet = false;
   bool m_tableNameHasBeenSet = false;
   bool m_billingModeHasBeenSet = false;
@@ -448,6 +480,7 @@ class UpdateTableRequest : public DynamoDBRequest {
   bool m_onDemandThroughputHasBeenSet = false;
   bool m_warmThroughputHasBeenSet = false;
   bool m_globalTableSettingsReplicationModeHasBeenSet = false;
+  bool m_vectorIndexUpdatesHasBeenSet = false;
 };
 
 }  // namespace Model

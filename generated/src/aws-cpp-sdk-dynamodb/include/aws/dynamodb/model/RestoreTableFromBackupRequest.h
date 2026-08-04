@@ -14,6 +14,7 @@
 #include <aws/dynamodb/model/OnDemandThroughput.h>
 #include <aws/dynamodb/model/ProvisionedThroughput.h>
 #include <aws/dynamodb/model/SSESpecification.h>
+#include <aws/dynamodb/model/VectorIndex.h>
 
 #include <utility>
 
@@ -197,6 +198,33 @@ class RestoreTableFromBackupRequest : public DynamoDBRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The vector indexes for the restored table. If not specified, all vector
+   * indexes from the backup are restored. The indexes provided must match existing
+   * vector indexes from the backup. You can choose to exclude some or all of the
+   * vector indexes at the time of restore.</p>
+   */
+  inline const Aws::Vector<VectorIndex>& GetVectorIndexOverride() const { return m_vectorIndexOverride; }
+  inline bool VectorIndexOverrideHasBeenSet() const { return m_vectorIndexOverrideHasBeenSet; }
+  template <typename VectorIndexOverrideT = Aws::Vector<VectorIndex>>
+  void SetVectorIndexOverride(VectorIndexOverrideT&& value) {
+    m_vectorIndexOverrideHasBeenSet = true;
+    m_vectorIndexOverride = std::forward<VectorIndexOverrideT>(value);
+  }
+  template <typename VectorIndexOverrideT = Aws::Vector<VectorIndex>>
+  RestoreTableFromBackupRequest& WithVectorIndexOverride(VectorIndexOverrideT&& value) {
+    SetVectorIndexOverride(std::forward<VectorIndexOverrideT>(value));
+    return *this;
+  }
+  template <typename VectorIndexOverrideT = VectorIndex>
+  RestoreTableFromBackupRequest& AddVectorIndexOverride(VectorIndexOverrideT&& value) {
+    m_vectorIndexOverrideHasBeenSet = true;
+    m_vectorIndexOverride.emplace_back(std::forward<VectorIndexOverrideT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_targetTableName;
 
@@ -213,6 +241,8 @@ class RestoreTableFromBackupRequest : public DynamoDBRequest {
   OnDemandThroughput m_onDemandThroughputOverride;
 
   SSESpecification m_sSESpecificationOverride;
+
+  Aws::Vector<VectorIndex> m_vectorIndexOverride;
   bool m_targetTableNameHasBeenSet = false;
   bool m_backupArnHasBeenSet = false;
   bool m_billingModeOverrideHasBeenSet = false;
@@ -221,6 +251,7 @@ class RestoreTableFromBackupRequest : public DynamoDBRequest {
   bool m_provisionedThroughputOverrideHasBeenSet = false;
   bool m_onDemandThroughputOverrideHasBeenSet = false;
   bool m_sSESpecificationOverrideHasBeenSet = false;
+  bool m_vectorIndexOverrideHasBeenSet = false;
 };
 
 }  // namespace Model

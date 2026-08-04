@@ -72,7 +72,10 @@ class DeleteItemResult {
    * <code>ReturnConsumedCapacity</code> parameter was specified. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html">Provisioned
-   * capacity mode</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+   * capacity mode</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>If the
+   * table has vector indexes, the response includes a <code>VectorIndexes</code>
+   * field with <code>VectorWriteRequestBytes</code> consumed for each affected
+   * vector index.</p>
    */
   inline const ConsumedCapacity& GetConsumedCapacity() const { return m_consumedCapacity; }
   template <typename ConsumedCapacityT = ConsumedCapacity>

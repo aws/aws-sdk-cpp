@@ -177,6 +177,22 @@ class DescribeInstanceResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Indicates whether permission sets are enabled for this Identity Center
+   * instance.</p>
+   */
+  inline bool GetPermissionSetsEnabled() const { return m_permissionSetsEnabled; }
+  inline void SetPermissionSetsEnabled(bool value) {
+    m_permissionSetsEnabledHasBeenSet = true;
+    m_permissionSetsEnabled = value;
+  }
+  inline DescribeInstanceResult& WithPermissionSetsEnabled(bool value) {
+    SetPermissionSetsEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -209,6 +225,8 @@ class DescribeInstanceResult {
 
   EncryptionConfigurationDetails m_encryptionConfigurationDetails;
 
+  bool m_permissionSetsEnabled{false};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_instanceArnHasBeenSet = false;
@@ -219,6 +237,7 @@ class DescribeInstanceResult {
   bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
   bool m_encryptionConfigurationDetailsHasBeenSet = false;
+  bool m_permissionSetsEnabledHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

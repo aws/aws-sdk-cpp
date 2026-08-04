@@ -54,6 +54,10 @@ DescribeInstanceResult& DescribeInstanceResult::operator=(const Aws::AmazonWebSe
     m_encryptionConfigurationDetails = jsonValue.GetObject("EncryptionConfigurationDetails");
     m_encryptionConfigurationDetailsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("PermissionSetsEnabled")) {
+    m_permissionSetsEnabled = jsonValue.GetBool("PermissionSetsEnabled");
+    m_permissionSetsEnabledHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

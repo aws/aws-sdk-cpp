@@ -6,9 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
-#include <aws/partnercentral-selling/model/AddressSummary.h>
-#include <aws/partnercentral-selling/model/Industry.h>
-#include <aws/partnercentral-selling/model/MarketSegment.h>
+#include <aws/partnercentral-selling/model/LeadAddress.h>
 
 #include <utility>
 
@@ -43,14 +41,16 @@ class LeadCustomer {
    * This categorization helps in understanding the customer's business context and
    * tailoring appropriate solutions.</p>
    */
-  inline Industry GetIndustry() const { return m_industry; }
+  inline const Aws::String& GetIndustry() const { return m_industry; }
   inline bool IndustryHasBeenSet() const { return m_industryHasBeenSet; }
-  inline void SetIndustry(Industry value) {
+  template <typename IndustryT = Aws::String>
+  void SetIndustry(IndustryT&& value) {
     m_industryHasBeenSet = true;
-    m_industry = value;
+    m_industry = std::forward<IndustryT>(value);
   }
-  inline LeadCustomer& WithIndustry(Industry value) {
-    SetIndustry(value);
+  template <typename IndustryT = Aws::String>
+  LeadCustomer& WithIndustry(IndustryT&& value) {
+    SetIndustry(std::forward<IndustryT>(value));
     return *this;
   }
   ///@}
@@ -95,15 +95,17 @@ class LeadCustomer {
   ///@}
 
   ///@{
-
-  inline const AddressSummary& GetAddress() const { return m_address; }
+  /**
+   * <p>The address information for the lead customer.</p>
+   */
+  inline const LeadAddress& GetAddress() const { return m_address; }
   inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
-  template <typename AddressT = AddressSummary>
+  template <typename AddressT = LeadAddress>
   void SetAddress(AddressT&& value) {
     m_addressHasBeenSet = true;
     m_address = std::forward<AddressT>(value);
   }
-  template <typename AddressT = AddressSummary>
+  template <typename AddressT = LeadAddress>
   LeadCustomer& WithAddress(AddressT&& value) {
     SetAddress(std::forward<AddressT>(value));
     return *this;
@@ -136,29 +138,31 @@ class LeadCustomer {
    * enterprise, mid-market, or small business. This segmentation helps in targeting
    * appropriate solutions and engagement strategies.</p>
    */
-  inline MarketSegment GetMarketSegment() const { return m_marketSegment; }
+  inline const Aws::String& GetMarketSegment() const { return m_marketSegment; }
   inline bool MarketSegmentHasBeenSet() const { return m_marketSegmentHasBeenSet; }
-  inline void SetMarketSegment(MarketSegment value) {
+  template <typename MarketSegmentT = Aws::String>
+  void SetMarketSegment(MarketSegmentT&& value) {
     m_marketSegmentHasBeenSet = true;
-    m_marketSegment = value;
+    m_marketSegment = std::forward<MarketSegmentT>(value);
   }
-  inline LeadCustomer& WithMarketSegment(MarketSegment value) {
-    SetMarketSegment(value);
+  template <typename MarketSegmentT = Aws::String>
+  LeadCustomer& WithMarketSegment(MarketSegmentT&& value) {
+    SetMarketSegment(std::forward<MarketSegmentT>(value));
     return *this;
   }
   ///@}
  private:
-  Industry m_industry{Industry::NOT_SET};
+  Aws::String m_industry;
 
   Aws::String m_companyName;
 
   Aws::String m_websiteUrl;
 
-  AddressSummary m_address;
+  LeadAddress m_address;
 
   Aws::String m_awsMaturity;
 
-  MarketSegment m_marketSegment{MarketSegment::NOT_SET};
+  Aws::String m_marketSegment;
   bool m_industryHasBeenSet = false;
   bool m_companyNameHasBeenSet = false;
   bool m_websiteUrlHasBeenSet = false;

@@ -96,7 +96,7 @@ class DescribeCapacityReservationTopologyRequest : public EC2Request {
   ///@{
   /**
    * <p>The Capacity Reservation IDs.</p> <p>Default: Describes all your Capacity
-   * Reservations.</p> <p>Constraints: Maximum 100 explicitly specified Capacity
+   * Reservations.</p> <p>Constraints: Maximum 10 explicitly specified Capacity
    * Reservation IDs.</p>
    */
   inline const Aws::Vector<Aws::String>& GetCapacityReservationIds() const { return m_capacityReservationIds; }

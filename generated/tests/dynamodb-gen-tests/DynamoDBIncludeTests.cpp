@@ -70,6 +70,7 @@
 #include <aws/dynamodb/model/CreateReplicationGroupMemberAction.h>
 #include <aws/dynamodb/model/CreateTableRequest.h>
 #include <aws/dynamodb/model/CreateTableResult.h>
+#include <aws/dynamodb/model/CreateVectorIndexAction.h>
 #include <aws/dynamodb/model/CsvOptions.h>
 #include <aws/dynamodb/model/Delete.h>
 #include <aws/dynamodb/model/DeleteBackupRequest.h>
@@ -85,6 +86,7 @@
 #include <aws/dynamodb/model/DeleteResourcePolicyResult.h>
 #include <aws/dynamodb/model/DeleteTableRequest.h>
 #include <aws/dynamodb/model/DeleteTableResult.h>
+#include <aws/dynamodb/model/DeleteVectorIndexAction.h>
 #include <aws/dynamodb/model/DescribeBackupRequest.h>
 #include <aws/dynamodb/model/DescribeBackupResult.h>
 #include <aws/dynamodb/model/DescribeContinuousBackupsRequest.h>
@@ -238,6 +240,11 @@
 #include <aws/dynamodb/model/ScalarAttributeType.h>
 #include <aws/dynamodb/model/ScanRequest.h>
 #include <aws/dynamodb/model/ScanResult.h>
+#include <aws/dynamodb/model/SearchResultItem.h>
+#include <aws/dynamodb/model/SearchSchemaElement.h>
+#include <aws/dynamodb/model/SearchSchemaElementType.h>
+#include <aws/dynamodb/model/SearchVectorsRequest.h>
+#include <aws/dynamodb/model/SearchVectorsResult.h>
 #include <aws/dynamodb/model/Select.h>
 #include <aws/dynamodb/model/SourceTableDetails.h>
 #include <aws/dynamodb/model/SourceTableFeatureDetails.h>
@@ -287,6 +294,13 @@
 #include <aws/dynamodb/model/UpdateTableResult.h>
 #include <aws/dynamodb/model/UpdateTimeToLiveRequest.h>
 #include <aws/dynamodb/model/UpdateTimeToLiveResult.h>
+#include <aws/dynamodb/model/VectorAttributeDefinition.h>
+#include <aws/dynamodb/model/VectorCapacity.h>
+#include <aws/dynamodb/model/VectorDistanceFunction.h>
+#include <aws/dynamodb/model/VectorIndex.h>
+#include <aws/dynamodb/model/VectorIndexDescription.h>
+#include <aws/dynamodb/model/VectorIndexInfo.h>
+#include <aws/dynamodb/model/VectorIndexUpdate.h>
 #include <aws/dynamodb/model/WarmThroughput.h>
 #include <aws/dynamodb/model/WitnessStatus.h>
 #include <aws/dynamodb/model/WriteRequest.h>

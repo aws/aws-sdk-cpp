@@ -20,6 +20,14 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/DisassociateInstanceEventWindowRequest.h>
+#include <aws/ec2/model/DisassociateIpamByoasnRequest.h>
+#include <aws/ec2/model/DisassociateIpamResourceDiscoveryRequest.h>
+#include <aws/ec2/model/DisassociateNatGatewayAddressRequest.h>
+#include <aws/ec2/model/DisassociateRouteServerRequest.h>
+#include <aws/ec2/model/DisassociateRouteTableRequest.h>
+#include <aws/ec2/model/DisassociateSecurityGroupVpcRequest.h>
+#include <aws/ec2/model/DisassociateSubnetCidrBlockRequest.h>
 #include <aws/ec2/model/DisassociateTransitGatewayMulticastDomainRequest.h>
 #include <aws/ec2/model/DisassociateTransitGatewayPolicyTableRequest.h>
 #include <aws/ec2/model/DisassociateTransitGatewayRouteTableRequest.h>
@@ -27,6 +35,7 @@
 #include <aws/ec2/model/DisassociateVpcCidrBlockRequest.h>
 #include <aws/ec2/model/EnableAddressTransferRequest.h>
 #include <aws/ec2/model/EnableAllowedImagesSettingsRequest.h>
+#include <aws/ec2/model/EnableApplicationStatusCheckSuppressionRequest.h>
 #include <aws/ec2/model/EnableAwsNetworkPerformanceMetricSubscriptionRequest.h>
 #include <aws/ec2/model/EnableCapacityManagerRequest.h>
 #include <aws/ec2/model/EnableEbsEncryptionByDefaultRequest.h>
@@ -111,15 +120,6 @@
 #include <aws/ec2/model/GetTransitGatewayAttachmentPropagationsRequest.h>
 #include <aws/ec2/model/GetTransitGatewayMeteringPolicyEntriesRequest.h>
 #include <aws/ec2/model/GetTransitGatewayMulticastDomainAssociationsRequest.h>
-#include <aws/ec2/model/GetTransitGatewayPolicyTableAssociationsRequest.h>
-#include <aws/ec2/model/GetTransitGatewayPolicyTableEntriesRequest.h>
-#include <aws/ec2/model/GetTransitGatewayPrefixListReferencesRequest.h>
-#include <aws/ec2/model/GetTransitGatewayRouteTableAssociationsRequest.h>
-#include <aws/ec2/model/GetTransitGatewayRouteTablePropagationsRequest.h>
-#include <aws/ec2/model/GetVerifiedAccessEndpointPolicyRequest.h>
-#include <aws/ec2/model/GetVerifiedAccessEndpointTargetsRequest.h>
-#include <aws/ec2/model/GetVerifiedAccessGroupPolicyRequest.h>
-#include <aws/ec2/model/GetVpcResourcesBlockingEncryptionEnforcementRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,56 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DisassociateInstanceEventWindowOutcome EC2Client::DisassociateInstanceEventWindow(
+    const DisassociateInstanceEventWindowRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateInstanceEventWindowOutcome(result.GetResultWithOwnership())
+                            : DisassociateInstanceEventWindowOutcome(std::move(result.GetError()));
+}
+
+DisassociateIpamByoasnOutcome EC2Client::DisassociateIpamByoasn(const DisassociateIpamByoasnRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateIpamByoasnOutcome(result.GetResultWithOwnership())
+                            : DisassociateIpamByoasnOutcome(std::move(result.GetError()));
+}
+
+DisassociateIpamResourceDiscoveryOutcome EC2Client::DisassociateIpamResourceDiscovery(
+    const DisassociateIpamResourceDiscoveryRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateIpamResourceDiscoveryOutcome(result.GetResultWithOwnership())
+                            : DisassociateIpamResourceDiscoveryOutcome(std::move(result.GetError()));
+}
+
+DisassociateNatGatewayAddressOutcome EC2Client::DisassociateNatGatewayAddress(const DisassociateNatGatewayAddressRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateNatGatewayAddressOutcome(result.GetResultWithOwnership())
+                            : DisassociateNatGatewayAddressOutcome(std::move(result.GetError()));
+}
+
+DisassociateRouteServerOutcome EC2Client::DisassociateRouteServer(const DisassociateRouteServerRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateRouteServerOutcome(result.GetResultWithOwnership())
+                            : DisassociateRouteServerOutcome(std::move(result.GetError()));
+}
+
+DisassociateRouteTableOutcome EC2Client::DisassociateRouteTable(const DisassociateRouteTableRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateRouteTableOutcome(result.GetResultWithOwnership())
+                            : DisassociateRouteTableOutcome(std::move(result.GetError()));
+}
+
+DisassociateSecurityGroupVpcOutcome EC2Client::DisassociateSecurityGroupVpc(const DisassociateSecurityGroupVpcRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateSecurityGroupVpcOutcome(result.GetResultWithOwnership())
+                            : DisassociateSecurityGroupVpcOutcome(std::move(result.GetError()));
+}
+
+DisassociateSubnetCidrBlockOutcome EC2Client::DisassociateSubnetCidrBlock(const DisassociateSubnetCidrBlockRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateSubnetCidrBlockOutcome(result.GetResultWithOwnership())
+                            : DisassociateSubnetCidrBlockOutcome(std::move(result.GetError()));
+}
 
 DisassociateTransitGatewayMulticastDomainOutcome EC2Client::DisassociateTransitGatewayMulticastDomain(
     const DisassociateTransitGatewayMulticastDomainRequest& request) const {
@@ -175,6 +225,13 @@ EnableAllowedImagesSettingsOutcome EC2Client::EnableAllowedImagesSettings(const 
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? EnableAllowedImagesSettingsOutcome(result.GetResultWithOwnership())
                             : EnableAllowedImagesSettingsOutcome(std::move(result.GetError()));
+}
+
+EnableApplicationStatusCheckSuppressionOutcome EC2Client::EnableApplicationStatusCheckSuppression(
+    const EnableApplicationStatusCheckSuppressionRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableApplicationStatusCheckSuppressionOutcome(result.GetResultWithOwnership())
+                            : EnableApplicationStatusCheckSuppressionOutcome(std::move(result.GetError()));
 }
 
 EnableAwsNetworkPerformanceMetricSubscriptionOutcome EC2Client::EnableAwsNetworkPerformanceMetricSubscription(
@@ -710,66 +767,4 @@ GetTransitGatewayMulticastDomainAssociationsOutcome EC2Client::GetTransitGateway
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetTransitGatewayMulticastDomainAssociationsOutcome(result.GetResultWithOwnership())
                             : GetTransitGatewayMulticastDomainAssociationsOutcome(std::move(result.GetError()));
-}
-
-GetTransitGatewayPolicyTableAssociationsOutcome EC2Client::GetTransitGatewayPolicyTableAssociations(
-    const GetTransitGatewayPolicyTableAssociationsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetTransitGatewayPolicyTableAssociationsOutcome(result.GetResultWithOwnership())
-                            : GetTransitGatewayPolicyTableAssociationsOutcome(std::move(result.GetError()));
-}
-
-GetTransitGatewayPolicyTableEntriesOutcome EC2Client::GetTransitGatewayPolicyTableEntries(
-    const GetTransitGatewayPolicyTableEntriesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetTransitGatewayPolicyTableEntriesOutcome(result.GetResultWithOwnership())
-                            : GetTransitGatewayPolicyTableEntriesOutcome(std::move(result.GetError()));
-}
-
-GetTransitGatewayPrefixListReferencesOutcome EC2Client::GetTransitGatewayPrefixListReferences(
-    const GetTransitGatewayPrefixListReferencesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetTransitGatewayPrefixListReferencesOutcome(result.GetResultWithOwnership())
-                            : GetTransitGatewayPrefixListReferencesOutcome(std::move(result.GetError()));
-}
-
-GetTransitGatewayRouteTableAssociationsOutcome EC2Client::GetTransitGatewayRouteTableAssociations(
-    const GetTransitGatewayRouteTableAssociationsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetTransitGatewayRouteTableAssociationsOutcome(result.GetResultWithOwnership())
-                            : GetTransitGatewayRouteTableAssociationsOutcome(std::move(result.GetError()));
-}
-
-GetTransitGatewayRouteTablePropagationsOutcome EC2Client::GetTransitGatewayRouteTablePropagations(
-    const GetTransitGatewayRouteTablePropagationsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetTransitGatewayRouteTablePropagationsOutcome(result.GetResultWithOwnership())
-                            : GetTransitGatewayRouteTablePropagationsOutcome(std::move(result.GetError()));
-}
-
-GetVerifiedAccessEndpointPolicyOutcome EC2Client::GetVerifiedAccessEndpointPolicy(
-    const GetVerifiedAccessEndpointPolicyRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetVerifiedAccessEndpointPolicyOutcome(result.GetResultWithOwnership())
-                            : GetVerifiedAccessEndpointPolicyOutcome(std::move(result.GetError()));
-}
-
-GetVerifiedAccessEndpointTargetsOutcome EC2Client::GetVerifiedAccessEndpointTargets(
-    const GetVerifiedAccessEndpointTargetsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetVerifiedAccessEndpointTargetsOutcome(result.GetResultWithOwnership())
-                            : GetVerifiedAccessEndpointTargetsOutcome(std::move(result.GetError()));
-}
-
-GetVerifiedAccessGroupPolicyOutcome EC2Client::GetVerifiedAccessGroupPolicy(const GetVerifiedAccessGroupPolicyRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetVerifiedAccessGroupPolicyOutcome(result.GetResultWithOwnership())
-                            : GetVerifiedAccessGroupPolicyOutcome(std::move(result.GetError()));
-}
-
-GetVpcResourcesBlockingEncryptionEnforcementOutcome EC2Client::GetVpcResourcesBlockingEncryptionEnforcement(
-    const GetVpcResourcesBlockingEncryptionEnforcementRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetVpcResourcesBlockingEncryptionEnforcementOutcome(result.GetResultWithOwnership())
-                            : GetVpcResourcesBlockingEncryptionEnforcementOutcome(std::move(result.GetError()));
 }

@@ -93,6 +93,10 @@ GetEngagementInvitationResult& GetEngagementInvitationResult::operator=(const Aw
     }
     m_existingMembersHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EnrichmentContext")) {
+    m_enrichmentContext = jsonValue.GetObject("EnrichmentContext");
+    m_enrichmentContextHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

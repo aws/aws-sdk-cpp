@@ -38,6 +38,45 @@ class ProspectingResultAws {
 
   ///@{
   /**
+   * <p>Contains details about the prospected customer account, including geographic,
+   * industry, and segment classifications.</p>
+   */
+  inline const ProspectingResultCustomer& GetCustomer() const { return m_customer; }
+  inline bool CustomerHasBeenSet() const { return m_customerHasBeenSet; }
+  template <typename CustomerT = ProspectingResultCustomer>
+  void SetCustomer(CustomerT&& value) {
+    m_customerHasBeenSet = true;
+    m_customer = std::forward<CustomerT>(value);
+  }
+  template <typename CustomerT = ProspectingResultCustomer>
+  ProspectingResultAws& WithCustomer(CustomerT&& value) {
+    SetCustomer(std::forward<CustomerT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Insights that AI generates from the prospecting analysis. These insights
+   * include engagement scores and solution fit assessments for the prospected
+   * customer.</p>
+   */
+  inline const ProspectingInsights& GetInsights() const { return m_insights; }
+  inline bool InsightsHasBeenSet() const { return m_insightsHasBeenSet; }
+  template <typename InsightsT = ProspectingInsights>
+  void SetInsights(InsightsT&& value) {
+    m_insightsHasBeenSet = true;
+    m_insights = std::forward<InsightsT>(value);
+  }
+  template <typename InsightsT = ProspectingInsights>
+  ProspectingResultAws& WithInsights(InsightsT&& value) {
+    SetInsights(std::forward<InsightsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The timestamp when the prospecting result context was created. The format is
    * ISO 8601 (UTC).</p>
    */
@@ -129,46 +168,11 @@ class ProspectingResultAws {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Contains details about the prospected customer account, including geographic,
-   * industry, and segment classifications.</p>
-   */
-  inline const ProspectingResultCustomer& GetCustomer() const { return m_customer; }
-  inline bool CustomerHasBeenSet() const { return m_customerHasBeenSet; }
-  template <typename CustomerT = ProspectingResultCustomer>
-  void SetCustomer(CustomerT&& value) {
-    m_customerHasBeenSet = true;
-    m_customer = std::forward<CustomerT>(value);
-  }
-  template <typename CustomerT = ProspectingResultCustomer>
-  ProspectingResultAws& WithCustomer(CustomerT&& value) {
-    SetCustomer(std::forward<CustomerT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Insights that AI generates from the prospecting analysis. These insights
-   * include engagement scores and solution fit assessments for the prospected
-   * customer.</p>
-   */
-  inline const ProspectingInsights& GetInsights() const { return m_insights; }
-  inline bool InsightsHasBeenSet() const { return m_insightsHasBeenSet; }
-  template <typename InsightsT = ProspectingInsights>
-  void SetInsights(InsightsT&& value) {
-    m_insightsHasBeenSet = true;
-    m_insights = std::forward<InsightsT>(value);
-  }
-  template <typename InsightsT = ProspectingInsights>
-  ProspectingResultAws& WithInsights(InsightsT&& value) {
-    SetInsights(std::forward<InsightsT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  ProspectingResultCustomer m_customer;
+
+  ProspectingInsights m_insights;
+
   Aws::Utils::DateTime m_startTime{};
 
   Aws::Utils::DateTime m_endTime{};
@@ -178,17 +182,13 @@ class ProspectingResultAws {
   Aws::String m_taskArn;
 
   Aws::String m_taskName;
-
-  ProspectingResultCustomer m_customer;
-
-  ProspectingInsights m_insights;
+  bool m_customerHasBeenSet = false;
+  bool m_insightsHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
   bool m_taskIdHasBeenSet = false;
   bool m_taskArnHasBeenSet = false;
   bool m_taskNameHasBeenSet = false;
-  bool m_customerHasBeenSet = false;
-  bool m_insightsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -35,7 +35,10 @@ class TransactWriteItemsResult {
   /**
    * <p>The capacity units consumed by the entire <code>TransactWriteItems</code>
    * operation. The values of the list are ordered according to the ordering of the
-   * <code>TransactItems</code> request parameter. </p>
+   * <code>TransactItems</code> request parameter. </p> <p>If the table has vector
+   * indexes, each element also includes a <code>VectorIndexes</code> field with
+   * <code>VectorWriteRequestBytes</code> consumed for each affected vector
+   * index.</p>
    */
   inline const Aws::Vector<ConsumedCapacity>& GetConsumedCapacity() const { return m_consumedCapacity; }
   template <typename ConsumedCapacityT = Aws::Vector<ConsumedCapacity>>

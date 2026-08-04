@@ -11,6 +11,7 @@
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 #include <aws/partnercentral-selling/model/EngagementInvitationPayloadType.h>
 #include <aws/partnercentral-selling/model/EngagementMemberSummary.h>
+#include <aws/partnercentral-selling/model/EnrichmentContext.h>
 #include <aws/partnercentral-selling/model/InvitationStatus.h>
 #include <aws/partnercentral-selling/model/Payload.h>
 #include <aws/partnercentral-selling/model/Receiver.h>
@@ -343,6 +344,25 @@ class GetEngagementInvitationResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The enrichment data for the engagement associated with this invitation. You
+   * can view propensity scores, program eligibility, and lead readiness assessments
+   * before taking action on the invitation.</p>
+   */
+  inline const EnrichmentContext& GetEnrichmentContext() const { return m_enrichmentContext; }
+  template <typename EnrichmentContextT = EnrichmentContext>
+  void SetEnrichmentContext(EnrichmentContextT&& value) {
+    m_enrichmentContextHasBeenSet = true;
+    m_enrichmentContext = std::forward<EnrichmentContextT>(value);
+  }
+  template <typename EnrichmentContextT = EnrichmentContext>
+  GetEngagementInvitationResult& WithEnrichmentContext(EnrichmentContextT&& value) {
+    SetEnrichmentContext(std::forward<EnrichmentContextT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -393,6 +413,8 @@ class GetEngagementInvitationResult {
 
   Aws::Vector<EngagementMemberSummary> m_existingMembers;
 
+  EnrichmentContext m_enrichmentContext;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
@@ -412,6 +434,7 @@ class GetEngagementInvitationResult {
   bool m_invitationMessageHasBeenSet = false;
   bool m_engagementDescriptionHasBeenSet = false;
   bool m_existingMembersHasBeenSet = false;
+  bool m_enrichmentContextHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 
