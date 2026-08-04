@@ -46,11 +46,7 @@ public abstract class BaseTraitsGenerator<T> {
     }
 
     private void writeHeader(CppWriter writer) {
-        writer.write("/**")
-              .write(" * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.")
-              .write(" * SPDX-License-Identifier: Apache-2.0.")
-              .write(" */")
-              .write("")
-              .write("#pragma once");
+        // Copyright/SPDX header is emitted by CppWriterDelegator when the file is created.
+        writer.write("#pragma once");
     }
 }

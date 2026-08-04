@@ -116,8 +116,10 @@ class EnumRendererTest {
         CppWriter writer = new CppWriter();
         EnumRenderer.renderSource(writer, enumShape, "Kinesis", "AWS_KINESIS_API", "kinesis");
         String output = writer.toString();
-        assertTrue(output.contains("Aws::String GetNameForStatus(Status value)"),
+        assertTrue(output.contains("Aws::String GetNameForStatus(Status enumValue)"),
             "Missing GetNameFor function: " + output);
+        assertTrue(output.contains("case Status::NOT_SET:"),
+            "Missing NOT_SET case: " + output);
         assertTrue(output.contains("case Status::CREATING:"),
             "Missing CREATING case: " + output);
         assertTrue(output.contains("case Status::ACTIVE:"),
@@ -137,7 +139,7 @@ class EnumRendererTest {
             "Missing overflow container in GetForName: " + output);
         assertTrue(output.contains("overflowContainer->StoreOverflow(hashCode, name)"),
             "Missing StoreOverflow: " + output);
-        assertTrue(output.contains("overflowContainer->RetrieveOverflow(static_cast<int>(value))"),
+        assertTrue(output.contains("overflowContainer->RetrieveOverflow(static_cast<int>(enumValue))"),
             "Missing RetrieveOverflow: " + output);
     }
 
@@ -281,5 +283,13 @@ class EnumRendererTest {
         assertEquals("DELETE_", EnumRenderer.sanitizeEnumValue("DELETE"));
         assertEquals("NULL_", EnumRenderer.sanitizeEnumValue("NULL"));
         assertEquals("OVERFLOW_", EnumRenderer.sanitizeEnumValue("OVERFLOW"));
+    }
+
+    @Test
+    void sanitizeEnumValue_handlesCorrectedForbiddenWords() {
+        // Verify co_yield (was misspelled as co_yeild) is now correctly forbidden
+        assertEquals("co_yield_", EnumRenderer.sanitizeEnumValue("co_yield"));
+        // Verify module (was misspelled as moduel) is now correctly forbidden
+        assertEquals("module_", EnumRenderer.sanitizeEnumValue("module"));
     }
 }

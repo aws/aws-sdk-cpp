@@ -34,6 +34,19 @@ public class CppWriter extends SymbolWriter<CppWriter, CppImportContainer> {
         write("#include <$L>", header);
         return this;
     }
+
+    /**
+     * Writes the standard Amazon copyright / SPDX license header that begins every
+     * generated file, followed by a blank line.
+     */
+    public CppWriter writeCopyright() {
+        write("/**");
+        write(" * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.");
+        write(" * SPDX-License-Identifier: Apache-2.0.");
+        write(" */");
+        write("");
+        return this;
+    }
     
     public CppWriter writeNamespaceOpen(String namespace) {
         openBlock("namespace $L\n{", namespace);

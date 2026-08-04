@@ -4,6 +4,8 @@
  */
 package com.amazonaws.util.awsclientsmithygenerator.generators.model;
 
+import static com.amazonaws.util.awsclientsmithygenerator.generators.model.CppTypeMapper.isPrimitive;
+
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.ListShape;
@@ -37,7 +39,7 @@ public final class MemberRenderer {
      *   <li>HasBeenSet check</li>
      *   <li>Templated Set method</li>
      *   <li>Templated With method (fluent)</li>
-     *   <li>Templated Add method (list members only)</li>
+     *   <li>Templated Add method (list/map members only)</li>
      * </ul>
      *
      * @param writer      the CppWriter to write to
@@ -48,6 +50,36 @@ public final class MemberRenderer {
      */
     public static void renderPublicSection(CppWriter writer, StructureShape shape,
                                            Model model, String exportMacro, String className) {
+        renderMembers(writer, shape, model, exportMacro, className, true);
+    }
+
+    /**
+     * Writes public accessor methods for result shapes (no HasBeenSet methods).
+     *
+     * @param writer      the CppWriter to write to
+     * @param shape       the structure shape whose members to render
+     * @param model       the model (for resolving member targets)
+     * @param exportMacro the export macro (e.g., "AWS_KINESIS_API")
+     * @param className   the C++ class name (e.g., "GetItemResult")
+     */
+    public static void renderPublicSectionForResult(CppWriter writer, StructureShape shape,
+                                                    Model model, String exportMacro, String className) {
+        renderMembers(writer, shape, model, exportMacro, className, false);
+    }
+
+    /**
+     * Shared implementation for rendering public accessor methods.
+     *
+     * @param writer         the CppWriter to write to
+     * @param shape          the structure shape whose members to render
+     * @param model          the model (for resolving member targets)
+     * @param exportMacro    the export macro (e.g., "AWS_KINESIS_API")
+     * @param className      the C++ class name (e.g., "ChildShard")
+     * @param emitHasBeenSet whether to emit HasBeenSet() accessor methods
+     */
+    private static void renderMembers(CppWriter writer, StructureShape shape,
+                                      Model model, String exportMacro, String className,
+                                      boolean emitHasBeenSet) {
         java.util.List<Map.Entry<String, MemberShape>> members =
             new java.util.ArrayList<>(shape.getAllMembers().entrySet());
         for (int i = 0; i < members.size(); i++) {
@@ -61,14 +93,8 @@ public final class MemberRenderer {
 
             writer.write("///@{");
 
-            // Documentation comment
             if (member.getTrait(DocumentationTrait.class).isPresent()) {
-                String doc = member.getTrait(DocumentationTrait.class).get().getValue();
-                writer.write("/**");
-                for (String line : sanitizeDoc(doc).split("\n")) {
-                    writer.write(" $L", "* " + line);
-                }
-                writer.write(" */");
+                writeDocComment(writer, collapseWhitespace(member.getTrait(DocumentationTrait.class).get().getValue()));
             } else {
                 writer.write("");
             }
@@ -80,42 +106,37 @@ public final class MemberRenderer {
                 writer.write("inline const $L& Get$L() const { return $L; }", cppType, memberName, fieldName);
             }
 
-            // HasBeenSet
-            writer.write("inline bool $LHasBeenSet() const { return $LHasBeenSet; }", memberName, fieldName);
+            // HasBeenSet (only for non-result shapes)
+            if (emitHasBeenSet) {
+                writer.write("inline bool $LHasBeenSet() const { return $LHasBeenSet; }", memberName, fieldName);
+            }
 
             if (targetShape.isEnumShape() || isPrimitive(targetShape)) {
-                // Enum and primitive members use non-templated value setters
                 writer.openBlock("inline void Set$L($L value) {", "}", memberName, cppType, () -> {
                     writer.write("$LHasBeenSet = true;", fieldName);
                     writer.write("$L = value;", fieldName);
                 });
-
                 writer.openBlock("inline $L& With$L($L value) {", "}", className, memberName, cppType, () -> {
                     writer.write("Set$L(value);", memberName);
                     writer.write("return *this;");
                 });
             } else {
-                // Templated Set
                 writer.write("template <typename $L = $L>", templateParam, cppType);
                 writer.openBlock("void Set$L($L&& value) {", "}", memberName, templateParam, () -> {
                     writer.write("$LHasBeenSet = true;", fieldName);
                     writer.write("$L = std::forward<$L>(value);", fieldName, templateParam);
                 });
-
-                // Templated With (fluent)
                 writer.write("template <typename $L = $L>", templateParam, cppType);
                 writer.openBlock("$L& With$L($L&& value) {", "}", className, memberName, templateParam, () -> {
                     writer.write("Set$L(std::forward<$L>(value));", memberName, templateParam);
                     writer.write("return *this;");
                 });
 
-                // Add method for list types
                 if (targetShape.isListShape()) {
                     Shape elementShape = model.expectShape(
                         targetShape.asListShape().get().getMember().getTarget());
                     String elementType = CppTypeMapper.getCppType(elementShape, model);
                     if (elementShape.isEnumShape()) {
-                        // Enum elements use non-templated value Add
                         writer.openBlock("inline $L& Add$L($L value) {", "}", className, memberName, elementType, () -> {
                             writer.write("$LHasBeenSet = true;", fieldName);
                             writer.write("$L.push_back(value);", fieldName);
@@ -130,10 +151,26 @@ public final class MemberRenderer {
                         });
                     }
                 }
+
+                if (targetShape.isMapShape()) {
+                    Shape keyShape = model.expectShape(
+                        targetShape.asMapShape().get().getKey().getTarget());
+                    Shape valueShape = model.expectShape(
+                        targetShape.asMapShape().get().getValue().getTarget());
+                    String keyType = CppTypeMapper.getCppType(keyShape, model);
+                    String valueType = CppTypeMapper.getCppType(valueShape, model);
+                    String keyParam = memberName + "KeyT";
+                    String valueParam = memberName + "ValueT";
+                    writer.write("template <typename $L = $L, typename $L = $L>", keyParam, keyType, valueParam, valueType);
+                    writer.openBlock("$L& Add$L($L&& key, $L&& value) {", "}", className, memberName, keyParam, valueParam, () -> {
+                        writer.write("$LHasBeenSet = true;", fieldName);
+                        writer.write("$L.emplace(std::forward<$L>(key), std::forward<$L>(value));", fieldName, keyParam, valueParam);
+                        writer.write("return *this;");
+                    });
+                }
             }
 
             writer.write("///@}");
-            // Blank line between member blocks, but not after the last one
             if (i < members.size() - 1) {
                 writer.write("");
             }
@@ -154,7 +191,14 @@ public final class MemberRenderer {
      * @param model  the model (for resolving member targets)
      */
     public static void renderPrivateSection(CppWriter writer, StructureShape shape, Model model) {
-        // First: data members with blank lines between each (except after the last)
+        renderPrivateDataMembers(writer, shape, model);
+        renderPrivateHasBeenSetFlags(writer, shape, model);
+    }
+
+    /**
+     * Writes only the data member declarations (with blank lines between each).
+     */
+    public static void renderPrivateDataMembers(CppWriter writer, StructureShape shape, Model model) {
         java.util.List<Map.Entry<String, MemberShape>> entries =
             new java.util.ArrayList<>(shape.getAllMembers().entrySet());
         for (int i = 0; i < entries.size(); i++) {
@@ -169,13 +213,16 @@ public final class MemberRenderer {
                 defaultVal -> writer.write("$L $L{$L};", cppType, fieldName, defaultVal),
                 () -> writer.write("$L $L;", cppType, fieldName)
             );
-            // Blank line between data members, but not after the last one
             if (i < entries.size() - 1) {
                 writer.write("");
             }
         }
+    }
 
-        // Then: hasBeenSet flags grouped together (no leading blank line)
+    /**
+     * Writes only the HasBeenSet boolean flags (one per member, no blank lines between).
+     */
+    public static void renderPrivateHasBeenSetFlags(CppWriter writer, StructureShape shape, Model model) {
         for (Map.Entry<String, MemberShape> entry : shape.getAllMembers().entrySet()) {
             String memberName = entry.getKey();
             String fieldName = "m_" + decapitalize(memberName);
@@ -183,17 +230,93 @@ public final class MemberRenderer {
         }
     }
 
-    private static boolean isPrimitive(Shape shape) {
-        return shape.isIntegerShape() || shape.isLongShape()
-            || shape.isBooleanShape() || shape.isDoubleShape() || shape.isFloatShape();
-    }
-
     private static String decapitalize(String name) {
         if (name.isEmpty()) return name;
         return Character.toLowerCase(name.charAt(0)) + name.substring(1);
     }
 
-    private static String sanitizeDoc(String doc) {
-        return doc.replace("\n", "\n * ");
+    private static final String[] UNSUPPORTED_HTML_TAGS = {
+        "<note>", "</note>", "<important>", "</important>"
+    };
+
+    public static void writeDocComment(CppWriter writer, String doc) {
+        writer.write("/**");
+        String formatted = formatDocumentation(doc);
+        for (String line : formatted.split("\n")) {
+            writer.write(" * $L", line);
+        }
+        writer.write(" */");
+    }
+
+    /**
+     * Renders the class-level documentation comment for a shape: its {@code @documentation}
+     * text followed by a "See Also" link to the AWS API reference. Emits an empty doc comment
+     * ({@code /** *}{@code /}) when the shape carries no documentation. Shared by the
+     * request, result, sub-object, and event-stream union renderers.
+     *
+     * @param writer            the CppWriter to write to
+     * @param shape             the shape whose class doc to render (structure or union)
+     * @param smithyServiceName the service name used in the reference URL (e.g. "kinesis")
+     * @param version           the service API version used in the reference URL
+     */
+    public static void renderClassDocComment(CppWriter writer, Shape shape,
+                                             String smithyServiceName, String version) {
+        if (shape.getTrait(DocumentationTrait.class).isPresent()) {
+            String docText = collapseWhitespace(shape.getTrait(DocumentationTrait.class).get().getValue());
+            String seeAlso = String.format(
+                "<p><h3>See Also:</h3>   <a href=\"http://docs.aws.amazon.com/goto/WebAPI/%s-%s/%s\">AWS API Reference</a></p>",
+                smithyServiceName, version, shape.getId().getName());
+            writeDocComment(writer, docText + seeAlso);
+        } else {
+            writer.write("/**");
+            writer.write(" */");
+        }
+    }
+
+    /**
+     * Collapses all runs of whitespace in {@code text} to single spaces and trims the result.
+     *
+     * @param text the documentation text to normalize; must not be null
+     * @return the whitespace-collapsed text
+     */
+    public static String collapseWhitespace(String text) {
+        return text.replaceAll("\\s+", " ").trim();
+    }
+
+    static String formatDocumentation(String documentation) {
+        if (documentation == null) {
+            return "";
+        }
+        String text = documentation.replace("/*", "/ *").replace("*/", "* /");
+        for (String tag : UNSUPPORTED_HTML_TAGS) {
+            text = text.replace(tag, "");
+        }
+        return wrapText(text, 80);
+    }
+
+    private static String wrapText(String text, int wrapLength) {
+        if (text == null || text.length() <= wrapLength) {
+            return text;
+        }
+        StringBuilder result = new StringBuilder();
+        int offset = 0;
+        while (offset < text.length()) {
+            if (text.length() - offset <= wrapLength) {
+                result.append(text, offset, text.length());
+                break;
+            }
+            int spaceToWrapAt = text.lastIndexOf(' ', offset + wrapLength);
+            if (spaceToWrapAt <= offset) {
+                spaceToWrapAt = text.indexOf(' ', offset + wrapLength);
+                if (spaceToWrapAt < 0) {
+                    result.append(text, offset, text.length());
+                    break;
+                }
+            }
+            result.append(text, offset, spaceToWrapAt);
+            result.append('\n');
+            offset = spaceToWrapAt + 1;
+        }
+        return result.toString();
     }
 }

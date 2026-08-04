@@ -45,11 +45,6 @@ public final class EnumRenderer {
         String enumName = enumShape.getId().getName();
         List<String> values = getEnumValues(enumShape);
 
-        writer.write("/**");
-        writer.write(" * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.");
-        writer.write(" * SPDX-License-Identifier: Apache-2.0.");
-        writer.write(" */");
-        writer.write("");
         writer.write("#pragma once");
         writer.write("#include <aws/core/utils/memory/stl/AWSString.h>");
         writer.write("#include <aws/$1L/$2L_EXPORTS.h>",
@@ -107,11 +102,6 @@ public final class EnumRenderer {
         List<String> values = getEnumValues(enumShape);
         List<String> wireValues = getEnumWireValues(enumShape);
 
-        writer.write("/**");
-        writer.write(" * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.");
-        writer.write(" * SPDX-License-Identifier: Apache-2.0.");
-        writer.write(" */");
-        writer.write("");
         writer.write("#include <aws/$1L/model/$2L.h>", projectName, enumName);
         writer.write("#include <aws/core/utils/HashingUtils.h>");
         writer.write("#include <aws/core/Globals.h>");
@@ -151,8 +141,10 @@ public final class EnumRenderer {
         writer.write("");
 
         // GetNameFor
-        writer.write("  Aws::String GetNameFor$1L($1L value) {", enumName);
-        writer.write("    switch (value) {");
+        writer.write("  Aws::String GetNameFor$1L($1L enumValue) {", enumName);
+        writer.write("    switch (enumValue) {");
+        writer.write("    case $1L::NOT_SET:", enumName);
+        writer.write("      return {};");
         for (int i = 0; i < values.size(); i++) {
             writer.write("    case $1L::$2L:", enumName, values.get(i));
             writer.write("      return \"$L\";", wireValues.get(i));
@@ -160,7 +152,7 @@ public final class EnumRenderer {
         writer.write("    default:");
         writer.write("      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();");
         writer.write("      if (overflowContainer) {");
-        writer.write("        return overflowContainer->RetrieveOverflow(static_cast<int>(value));");
+        writer.write("        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));");
         writer.write("      }");
         writer.write("      return {};");
         writer.write("    }");
@@ -215,11 +207,11 @@ public final class EnumRenderer {
         "atomic_cancel", "atomic_commit", "atomic_noexcept", "auto",
         "bitand", "bitor", "bool", "break", "case", "catch", "char",
         "char16_t", "char32_t", "class", "compl", "concept", "const",
-        "constexpr", "const_cast", "continue", "co_await", "co_return", "co_yeild",
+        "constexpr", "const_cast", "continue", "co_await", "co_return", "co_yield",
         "decltype", "default", "delete", "do", "double", "dynamic_cast",
         "else", "enum", "explicit", "export", "extern", "false", "float",
         "for", "friend", "goto", "if", "import", "inline", "int", "long",
-        "moduel", "mutable", "namespace", "new", "noexcept", "not", "not_eq",
+        "module", "mutable", "namespace", "new", "noexcept", "not", "not_eq",
         "nullptr", "operator", "or", "or_eq", "private", "protected", "public",
         "reflexpr", "register", "reinterpret_cast", "requires", "return",
         "short", "signed", "sizeof", "static", "static_assert", "static_cast",

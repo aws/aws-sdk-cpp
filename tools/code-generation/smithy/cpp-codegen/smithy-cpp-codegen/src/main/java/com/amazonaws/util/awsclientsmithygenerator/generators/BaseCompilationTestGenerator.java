@@ -58,12 +58,8 @@ public abstract class BaseCompilationTestGenerator<T> {
     }
 
     private void writeHeader(CppWriter writer, String serviceName) {
-        writer.write("/**")
-              .write(" * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.")
-              .write(" * SPDX-License-Identifier: Apache-2.0.")
-              .write(" */")
-              .write("")
-              .write("// Header compilation test for " + serviceName + " " + getTestType().toLowerCase() + " headers")
+        // Copyright/SPDX header is emitted by CppWriterDelegator when the file is created.
+        writer.write("// Header compilation test for " + serviceName + " " + getTestType().toLowerCase() + " headers")
               .write("// " + getTestDescription())
               .write("");
     }

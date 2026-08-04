@@ -8,10 +8,22 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolReso
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.GlobalTransforms;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.knowledge.TopDownIndex;
-import software.amazon.smithy.model.shapes.*;
-import software.amazon.smithy.model.traits.*;
+import software.amazon.smithy.model.shapes.EnumShape;
+import software.amazon.smithy.model.shapes.MemberShape;
+import software.amazon.smithy.model.shapes.OperationShape;
+import software.amazon.smithy.model.shapes.ServiceShape;
+import software.amazon.smithy.model.shapes.Shape;
+import software.amazon.smithy.model.shapes.ShapeId;
+import software.amazon.smithy.model.shapes.StructureShape;
+import software.amazon.smithy.model.shapes.UnionShape;
+import software.amazon.smithy.model.traits.EnumTrait;
+import software.amazon.smithy.model.traits.ErrorTrait;
+import software.amazon.smithy.model.traits.StreamingTrait;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
@@ -32,6 +44,22 @@ public final class ShapeClassifier {
     }
 
     /**
+     * Associates an operation input shape with its parent operation.
+     *
+     * @param shape     the request structure shape
+     * @param operation the operation shape that uses this as input
+     */
+    public record RequestInfo(StructureShape shape, OperationShape operation) {}
+
+    /**
+     * Associates an operation output shape with its parent operation.
+     *
+     * @param shape     the result structure shape
+     * @param operation the operation shape that uses this as output
+     */
+    public record ResultInfo(StructureShape shape, OperationShape operation) {}
+
+    /**
      * Metadata about an operation whose output contains an event stream.
      *
      * @param operationName the operation name (e.g., "SubscribeToShard")
@@ -43,8 +71,8 @@ public final class ShapeClassifier {
     /**
      * The full classification result for a service.
      *
-     * @param requests            operation input shapes
-     * @param results             operation output shapes (excluding event-stream-bearing)
+     * @param requests            operation input shapes with their operations
+     * @param results             operation output shapes with their operations (excluding event-stream-bearing)
      * @param subObjects          remaining StructureShape/UnionShape reachable from operations
      * @param enums               EnumShape or StringShape with @enum trait
      * @param eventStreamHandlers operation + request/result shape tuples for event stream handlers
@@ -52,8 +80,8 @@ public final class ShapeClassifier {
      * @param outgoingEventStreams outgoing event stream shapes (header only)
      */
     public record ClassifiedShapes(
-        List<StructureShape> requests,
-        List<StructureShape> results,
+        List<RequestInfo> requests,
+        List<ResultInfo> results,
         List<Shape> subObjects,
         List<Shape> enums,
         List<EventStreamInfo> eventStreamHandlers,
@@ -66,20 +94,21 @@ public final class ShapeClassifier {
     /**
      * Classifies all shapes reachable from the given service into generation buckets.
      *
-     * @param model   the Smithy model
-     * @param service the service shape whose operations define the root set
+     * @param model    the Smithy model
+     * @param service  the service shape whose operations define the root set
+     * @param protocol the already-resolved protocol; passed in rather than re-resolved so
+     *                 that {@code ModelGenerator} remains the single resolution point
      * @return classified shapes grouped by generation bucket
      */
-    public static ClassifiedShapes classify(Model model, ServiceShape service) {
-        Protocol protocol = ProtocolResolver.resolve(service, model);
+    public static ClassifiedShapes classify(Model model, ServiceShape service, Protocol protocol) {
         TopDownIndex index = TopDownIndex.of(model);
         Set<ShapeId> reachable = GlobalTransforms.computeReachableShapes(model, service);
 
         Set<ShapeId> inputShapeIds = new HashSet<>();
         Set<ShapeId> outputShapeIds = new HashSet<>();
 
-        List<StructureShape> requests = new ArrayList<>();
-        List<StructureShape> results = new ArrayList<>();
+        List<RequestInfo> requests = new ArrayList<>();
+        List<ResultInfo> results = new ArrayList<>();
         List<Shape> subObjects = new ArrayList<>();
         List<Shape> enums = new ArrayList<>();
         List<EventStreamInfo> eventStreamHandlers = new ArrayList<>();
@@ -91,7 +120,7 @@ public final class ShapeClassifier {
             op.getInput().ifPresent(id -> {
                 inputShapeIds.add(id);
                 model.getShape(id).flatMap(Shape::asStructureShape).ifPresent(s -> {
-                    requests.add(s);
+                    requests.add(new RequestInfo(s, op));
 
                     // Check if operation has event-stream-bearing result
                     boolean resultHasEventStream = op.getOutput()
@@ -109,7 +138,7 @@ public final class ShapeClassifier {
                 outputShapeIds.add(id);
                 model.getShape(id).flatMap(Shape::asStructureShape).ifPresent(s -> {
                     if (!hasEventStreamMembers(s, model)) {
-                        results.add(s);
+                        results.add(new ResultInfo(s, op));
                     }
                     // If has event stream members, result is skipped (handler generated instead)
                 });
@@ -163,5 +192,39 @@ public final class ShapeClassifier {
             Shape target = model.expectShape(member.getTarget());
             return target.isUnionShape() && target.hasTrait(StreamingTrait.class);
         });
+    }
+
+    /**
+     * Returns true if the operation's output structure has an event stream (a member
+     * targeting a {@code @streaming} union). This is the response-side (read) test.
+     *
+     * @param op    the operation
+     * @param model the Smithy model
+     * @return true if the operation produces an event stream response
+     */
+    public static boolean isEventStreamResponseOperation(OperationShape op, Model model) {
+        return op.getOutput()
+            .flatMap(model::getShape)
+            .flatMap(Shape::asStructureShape)
+            .map(out -> hasEventStreamMembers(out, model))
+            .orElse(false);
+    }
+
+    /**
+     * Returns true if the operation's input structure has an event stream (a member
+     * targeting a {@code @streaming} union). This is the request-side (write) test,
+     * used only to flag bidirectional requests; input-stream encoder generation is
+     * out of scope.
+     *
+     * @param op    the operation
+     * @param model the Smithy model
+     * @return true if the operation consumes an event stream request
+     */
+    public static boolean isEventStreamRequestOperation(OperationShape op, Model model) {
+        return op.getInput()
+            .flatMap(model::getShape)
+            .flatMap(Shape::asStructureShape)
+            .map(in -> hasEventStreamMembers(in, model))
+            .orElse(false);
     }
 }

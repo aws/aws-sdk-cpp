@@ -13,12 +13,18 @@ import software.amazon.smithy.aws.traits.protocols.Ec2QueryTrait;
 import software.amazon.smithy.aws.traits.protocols.RestJson1Trait;
 import software.amazon.smithy.aws.traits.protocols.RestXmlTrait;
 import software.amazon.smithy.protocol.traits.Rpcv2CborTrait;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.JsonProtocolTraits;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.ProtocolTraits;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.QueryXmlProtocolTraits;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.RestXmlProtocolTraits;
 
 /**
- * Resolves the wire protocol for a Smithy service shape.
+ * Resolves the wire protocol for a Smithy service shape, and maps a resolved
+ * protocol to the {@link ProtocolTraits} strategy that owns its rendering.
  *
- * <p>The resolved {@link Protocol} enum carries all serde-related metadata needed
- * by downstream template generators (namespace, view/value types, method names).
+ * <p>{@link #traitsFor} is the single protocol-to-behavior switch in the generator;
+ * downstream generators hold a {@code ProtocolTraits} and never branch on
+ * {@link Protocol} themselves.
  */
 public final class ProtocolResolver {
 
@@ -113,5 +119,36 @@ public final class ProtocolResolver {
         }
         // Default: JSON (covers RestJson1, AwsJson1_0, AwsJson1_1)
         return Protocol.JSON;
+    }
+
+    /**
+     * Returns the rendering strategy for a resolved protocol.
+     *
+     * <p>This is the <em>only</em> place in the generator that switches on
+     * {@link Protocol}. Every other class receives a {@link ProtocolTraits} and calls
+     * it, so adding a protocol means adding a case here plus (if its C++ surface is
+     * genuinely new) one implementation class.
+     *
+     * @param protocol the protocol returned by {@link #resolve}
+     * @return the strategy that owns this protocol's serde rendering
+     * @throws UnsupportedOperationException if the protocol has no strategy
+     */
+    public static ProtocolTraits traitsFor(Protocol protocol) {
+        if (protocol == null) {
+            throw new UnsupportedOperationException("Cannot resolve ProtocolTraits for a null protocol");
+        }
+        switch (protocol) {
+            case JSON:
+            case CBOR:
+                return new JsonProtocolTraits(protocol);
+            case REST_XML:
+                return new RestXmlProtocolTraits();
+            case QUERY_XML:
+            case EC2:
+                return new QueryXmlProtocolTraits(protocol);
+            default:
+                throw new UnsupportedOperationException(
+                    "No ProtocolTraits implementation for protocol: " + protocol);
+        }
     }
 }

@@ -5,12 +5,14 @@
 package com.amazonaws.util.awsclientsmithygenerator.generators;
 
 import software.amazon.smithy.build.FileManifest;
-import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
 
 public class CppWriterDelegator {
+    /** UTF-8 byte order mark (U+FEFF), prepended to every file to match C2J-generated output. */
+    private static final String UTF8_BOM = "\uFEFF";
+
     private final FileManifest fileManifest;
     private final Map<String, CppWriter> writers = new HashMap<>();
     
@@ -19,21 +21,18 @@ public class CppWriterDelegator {
     }
     
     public void useFileWriter(String filename, Consumer<CppWriter> writerConsumer) {
-        CppWriter writer = writers.computeIfAbsent(filename, k -> new CppWriter());
+        // Every generated file begins with the standard copyright/SPDX header. Emit it once,
+        // when the writer is first created, so callers don't repeat it (and reopening a file
+        // for appending does not duplicate it).
+        CppWriter writer = writers.computeIfAbsent(filename, k -> new CppWriter().writeCopyright());
         writerConsumer.accept(writer);
     }
     
     public void flushWriters() {
         writers.forEach((filename, writer) -> {
-            try {
-                Path outputPath = fileManifest.getBaseDir().resolve(filename);
-                java.nio.file.Files.createDirectories(outputPath.getParent());
-                // Add UTF-8 BOM to match C2J-generated file format
-                String content = "﻿" + writer.toString();
-                java.nio.file.Files.writeString(outputPath, content);
-            } catch (Exception e) {
-                throw new RuntimeException("Failed to write file: " + filename, e);
-            }
+            // Add UTF-8 BOM to match C2J-generated file format
+            String content = UTF8_BOM + writer.toString();
+            fileManifest.writeFile(filename, content);
         });
     }
 }
