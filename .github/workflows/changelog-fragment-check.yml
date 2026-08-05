@@ -1,0 +1,42 @@
+name: Changelog Fragment Check
+
+# Emulates the pull-request path of the internal Catapult ChangelogStep so the
+# fragment validator can be exercised on a real GitHub PR (the Catapult build
+# cannot be triggered manually). Behavior-affecting changes under src/, cmake/,
+# or tools/scripts/ must add a .changelog/*.json fragment.
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  changelog-fragment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR (full history for merge-base)
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: '3.x'
+      - name: Validate changelog fragment
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          set -euo pipefail
+          # Merge base with the PR's target branch, matching what the Catapult
+          # ChangelogStep computes from origin/<baseBranch>.
+          BASE="$(git merge-base "$BASE_SHA" HEAD)"
+          if [ -z "$BASE" ]; then
+            echo "changelog: no merge base between HEAD and PR base; cannot determine changed files" >&2
+            exit 1
+          fi
+          echo "Diffing $BASE..HEAD"
+          git diff --name-only "$BASE" HEAD \
+            | python3 .github/scripts/validate-changelog --repo-root .

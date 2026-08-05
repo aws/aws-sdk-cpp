@@ -1,0 +1,187 @@
+#!/usr/bin/env python3
+"""Check that a pull request adds a changelog fragment.
+
+Reads the files the pull request changed on stdin (one path per line, as
+produced by `git diff --name-only`) and exits non-zero when the pull request
+changes hand-written SDK sources but adds no fragment under .changelog/.
+
+Fragments accumulate in .changelog/ until a release consumes them, so the check
+looks at what THIS pull request added rather than whether the directory is
+non-empty.
+
+Usage::
+
+    git diff --name-only "$(git merge-base origin/main HEAD)" HEAD \
+        | python3 validate-changelog --repo-root /path/to/aws-sdk-cpp
+"""
+import argparse
+import json
+import os
+import sys
+
+# The three constants below mirror tools/scripts/new-change, which lives in the
+# SDK repository -- keep them in sync by hand.
+VALID_TYPES = [
+    'feature',
+    'bugfix',
+    'deprecation',
+    'removal',
+    'documentation',
+    'dependency',
+    'breaking-change',
+]
+
+REQUIRED_FIELDS = ['type', 'category', 'description']
+
+# Reject anything outside this set: the formatter ignores unknown keys, so a
+# misspelled 'descripton' would drop the entry from the changelog with no warning.
+KNOWN_FIELDS = REQUIRED_FIELDS + ['contributor']
+
+CHANGELOG_DIR_NAME = '.changelog'
+
+# Path prefixes that require a fragment. Anchored, so 'src/' does not also
+# match 'generated/src/'.
+BEHAVIOR_PATH_PREFIXES = (
+    'src/',
+    'cmake/',
+    'tools/scripts/',
+)
+
+# Checked first, so these win. Generated output and API models get their release
+# notes from Trebuchet service metadata, not hand-authored fragments.
+EXEMPT_PATH_PREFIXES = (
+    'generated/',
+    'tools/code-generation/api-descriptions/',
+    'tools/code-generation/smithy/api-descriptions/',
+    'tools/code-generation/endpoints/',
+    'tools/code-generation/defaults/',
+    'tools/code-generation/partitions/',
+)
+
+
+def requires_fragment(changed_files):
+    """Return the changed files that require a changelog fragment."""
+    triggering = []
+    for path in changed_files:
+        if path.startswith(EXEMPT_PATH_PREFIXES):
+            continue
+        if path.startswith(BEHAVIOR_PATH_PREFIXES):
+            triggering.append(path)
+    return triggering
+
+
+def added_fragments(changed_files, repo_root):
+    """Return the changed files that are fragments present under .changelog/.
+
+    A deleted fragment still shows up in the diff, so filter to paths that
+    exist on disk -- otherwise deleting a fragment would satisfy the gate.
+    """
+    prefix = CHANGELOG_DIR_NAME + '/'
+    return [
+        p for p in changed_files
+        if p.startswith(prefix) and not os.path.basename(p).startswith('.')
+        and not os.path.basename(p).upper().startswith('README')
+        and os.path.isfile(os.path.join(repo_root, p))
+    ]
+
+
+def validate_fragment(path, repo_root):
+    """Validate one fragment. Returns a list of error strings."""
+    full = os.path.join(repo_root, path)
+
+    if not os.path.isfile(full):
+        # Deleted or renamed by this pull request; nothing to validate.
+        return []
+
+    if not path.endswith('.json'):
+        return ['%s: fragments must be .json files '
+                '(run tools/scripts/new-change)' % path]
+
+    try:
+        with open(full) as f:
+            fragment = json.load(f)
+    except ValueError as e:
+        return ['%s: not valid JSON (%s)' % (path, e)]
+    except OSError as e:
+        return ['%s: could not be read (%s)' % (path, e)]
+
+    if not isinstance(fragment, dict):
+        return ['%s: must contain a JSON object' % path]
+
+    errors = []
+    for field in REQUIRED_FIELDS:
+        value = fragment.get(field)
+        if not isinstance(value, str) or not value.strip():
+            errors.append(
+                "%s: missing or empty required field '%s'" % (path, field))
+
+    change_type = fragment.get('type')
+    if isinstance(change_type, str) and change_type.strip() \
+            and change_type.strip() not in VALID_TYPES:
+        errors.append("%s: invalid type '%s'. Must be one of: %s"
+                      % (path, change_type.strip(), ', '.join(VALID_TYPES)))
+
+    unknown = sorted(set(fragment) - set(KNOWN_FIELDS))
+    if unknown:
+        errors.append(
+            '%s: unrecognized field(s) %s. Expected only: %s. Hand-edited '
+            'fragments are easy to typo -- prefer tools/scripts/new-change.'
+            % (path, ', '.join("'%s'" % f for f in unknown),
+               ', '.join(KNOWN_FIELDS)))
+
+    return errors
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description='Check that a pull request adds a changelog fragment')
+    parser.add_argument(
+        '--repo-root', default='.',
+        help='Root of the SDK repository holding %s/. Defaults to the working '
+             'directory.' % CHANGELOG_DIR_NAME)
+    args = parser.parse_args()
+
+    repo_root = os.path.abspath(args.repo_root)
+    changed_files = [line.strip() for line in sys.stdin if line.strip()]
+
+    fragments = added_fragments(changed_files, repo_root)
+
+    # Validate any fragment this pull request touched, even if none was
+    # required: a malformed fragment should fail here rather than be silently
+    # dropped when the release assembles the changelog.
+    errors = []
+    for path in fragments:
+        errors.extend(validate_fragment(path, repo_root))
+    if errors:
+        sys.stderr.write('Invalid changelog fragment(s):\n')
+        for error in errors:
+            sys.stderr.write('  - %s\n' % error)
+        return 1
+
+    triggering = requires_fragment(changed_files)
+    if not triggering:
+        print('No changelog fragment required for this change.')
+        return 0
+
+    if not fragments:
+        sys.stderr.write(
+            'This pull request changes SDK behavior but adds no changelog '
+            'fragment.\n\nFiles that require a fragment:\n')
+        for path in triggering[:20]:
+            sys.stderr.write('  - %s\n' % path)
+        if len(triggering) > 20:
+            sys.stderr.write('  ... and %d more\n' % (len(triggering) - 20))
+        sys.stderr.write(
+            '\nRun `tools/scripts/new-change` to generate one, then commit the '
+            'file it creates in %s/.\n'
+            'See the Changelog section of CONTRIBUTING.md for details.\n'
+            % CHANGELOG_DIR_NAME)
+        return 1
+
+    print('Found %d changelog fragment(s): %s'
+          % (len(fragments), ', '.join(fragments)))
+    return 0
+
+
+if __name__ == '__main__':
+    sys.exit(main())

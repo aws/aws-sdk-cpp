@@ -1,0 +1,6 @@
+Placeholder change under src/ used to exercise the changelog fragment
+validator (.github/workflows/changelog-fragment-check.yml).
+
+Because this path is under src/, the validator requires the pull request to
+also add a .changelog/*.json fragment. Delete this file and the demo branch
+once the validator has been verified.
