@@ -17,6 +17,7 @@
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/http/HttpRequest.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -41,51 +42,102 @@ static const char* const CRT_OPERATIONS_LOG_TAG = "CrtOperations";
 
 namespace {
 
-Aws::Client::CoreErrors MapCrtErrorCode(Aws::Crt::S3::S3ErrorCode crtErrorCode) {
-  using Aws::Crt::S3::S3ErrorCode;
-  switch (crtErrorCode) {
-    case S3ErrorCode::MissingContentRangeHeader:
-    case S3ErrorCode::MissingContentLengthHeader:
-    case S3ErrorCode::MissingETag:
-    case S3ErrorCode::MissingUploadId:
-      return Aws::Client::CoreErrors::MISSING_PARAMETER;
-    case S3ErrorCode::InvalidContentRangeHeader:
-    case S3ErrorCode::InvalidContentLengthHeader:
-    case S3ErrorCode::InvalidRangeHeader:
-    case S3ErrorCode::MultirangeHeaderUnsupported:
-    case S3ErrorCode::IncorrectContentLength:
-    case S3ErrorCode::InvalidMemoryLimitConfig:
-      return Aws::Client::CoreErrors::INVALID_PARAMETER_VALUE;
-    case S3ErrorCode::InternalError:
-    case S3ErrorCode::ProxyParseFailed:
-    case S3ErrorCode::UnsupportedProxyScheme:
-    case S3ErrorCode::NonRecoverableAsyncError:
-    case S3ErrorCode::MetricDataNotAvailable:
-    case S3ErrorCode::ExceedsMemoryLimit:
-      return Aws::Client::CoreErrors::INTERNAL_FAILURE;
-    case S3ErrorCode::SlowDown:
-      return Aws::Client::CoreErrors::SLOW_DOWN;
-    case S3ErrorCode::InvalidResponseStatus:
-    case S3ErrorCode::ResponseChecksumMismatch:
-    case S3ErrorCode::ChecksumCalculationFailed:
-    case S3ErrorCode::ListPartsParseFailed:
-    case S3ErrorCode::ResumedPartChecksumMismatch:
-    case S3ErrorCode::FileModified:
-    case S3ErrorCode::InternalPartSizeMismatchRetryingWithRange:
-    case S3ErrorCode::RecvFileAlreadyExists:
-    case S3ErrorCode::RecvFileNotFound:
-      return Aws::Client::CoreErrors::VALIDATION;
-    case S3ErrorCode::Canceled:
-      return Aws::Client::CoreErrors::USER_CANCELLED;
-    case S3ErrorCode::RequestTimeTooSkewed:
-      return Aws::Client::CoreErrors::REQUEST_TIME_TOO_SKEWED;
-    case S3ErrorCode::S3ExpressCreateSessionFailed:
-      return Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE;
-    case S3ErrorCode::RequestTimeout:
-      return Aws::Client::CoreErrors::REQUEST_TIMEOUT;
-    default:
-      return Aws::Client::CoreErrors::INTERNAL_FAILURE;
+// CRT error names, hashed once at startup so mapping a failure is an int comparison rather than a
+// string one. Mirrors the GetErrorForName mappers the generated service clients use.
+static const int MISSING_CONTENT_RANGE_HEADER_HASH =
+    Aws::Utils::HashingUtils::HashString("AWS_ERROR_S3_MISSING_CONTENT_RANGE_HEADER");
+static const int MISSING_CONTENT_LENGTH_HEADER_HASH =
+    Aws::Utils::HashingUtils::HashString("AWS_ERROR_S3_MISSING_CONTENT_LENGTH_HEADER");
+static const int MISSING_ETAG_HASH = Aws::Utils::HashingUtils::HashString("AWS_ERROR_S3_MISSING_ETAG");
+static const int MISSING_UPLOAD_ID_HASH = Aws::Utils::HashingUtils::HashString("AWS_ERROR_S3_MISSING_UPLOAD_ID");
+static const int INVALID_CONTENT_RANGE_HEADER_HASH =
+    Aws::Utils::HashingUtils::HashString("AWS_ERROR_S3_INVALID_CONTENT_RANGE_HEADER");
+static const int INVALID_CONTENT_LENGTH_HEADER_HASH =
+    Aws::Utils::HashingUtils::HashString("AWS_ERROR_S3_INVALID_CONTENT_LENGTH_HEADER");
+static const int INVALID_RANGE_HEADER_HASH = Aws::Utils::HashingUtils::HashString("AWS_ERROR_S3_INVALID_RANGE_HEADER");
+static const int MULTIRANGE_HEADER_UNSUPPORTED_HASH =
+    Aws::Utils::HashingUtils::HashString("AWS_ERROR_S3_MULTIRANGE_HEADER_UNSUPPORTED");
+static const int INCORRECT_CONTENT_LENGTH_HASH =
+    Aws::Utils::HashingUtils::HashString("AWS_ERROR_S3_INCORRECT_CONTENT_LENGTH");
+static const int INVALID_MEMORY_LIMIT_CONFIG_HASH =
+    Aws::Utils::HashingUtils::HashString("AWS_ERROR_S3_INVALID_MEMORY_LIMIT_CONFIG");
+static const int INTERNAL_ERROR_HASH = Aws::Utils::HashingUtils::HashString("AWS_ERROR_S3_INTERNAL_ERROR");
+static const int PROXY_PARSE_FAILED_HASH = Aws::Utils::HashingUtils::HashString("AWS_ERROR_S3_PROXY_PARSE_FAILED");
+static const int UNSUPPORTED_PROXY_SCHEME_HASH =
+    Aws::Utils::HashingUtils::HashString("AWS_ERROR_S3_UNSUPPORTED_PROXY_SCHEME");
+static const int NON_RECOVERABLE_ASYNC_ERROR_HASH =
+    Aws::Utils::HashingUtils::HashString("AWS_ERROR_S3_NON_RECOVERABLE_ASYNC_ERROR");
+static const int METRIC_DATA_NOT_AVAILABLE_HASH =
+    Aws::Utils::HashingUtils::HashString("AWS_ERROR_S3_METRIC_DATA_NOT_AVAILABLE");
+static const int EXCEEDS_MEMORY_LIMIT_HASH = Aws::Utils::HashingUtils::HashString("AWS_ERROR_S3_EXCEEDS_MEMORY_LIMIT");
+static const int BUFFER_ALLOCATION_FAILED_HASH =
+    Aws::Utils::HashingUtils::HashString("AWS_ERROR_S3_BUFFER_ALLOCATION_FAILED");
+static const int SLOW_DOWN_HASH = Aws::Utils::HashingUtils::HashString("AWS_ERROR_S3_SLOW_DOWN");
+static const int INVALID_RESPONSE_STATUS_HASH =
+    Aws::Utils::HashingUtils::HashString("AWS_ERROR_S3_INVALID_RESPONSE_STATUS");
+static const int RESPONSE_CHECKSUM_MISMATCH_HASH =
+    Aws::Utils::HashingUtils::HashString("AWS_ERROR_S3_RESPONSE_CHECKSUM_MISMATCH");
+static const int CHECKSUM_CALCULATION_FAILED_HASH =
+    Aws::Utils::HashingUtils::HashString("AWS_ERROR_S3_CHECKSUM_CALCULATION_FAILED");
+static const int LIST_PARTS_PARSE_FAILED_HASH =
+    Aws::Utils::HashingUtils::HashString("AWS_ERROR_S3_LIST_PARTS_PARSE_FAILED");
+static const int RESUMED_PART_CHECKSUM_MISMATCH_HASH =
+    Aws::Utils::HashingUtils::HashString("AWS_ERROR_S3_RESUMED_PART_CHECKSUM_MISMATCH");
+static const int FILE_MODIFIED_HASH = Aws::Utils::HashingUtils::HashString("AWS_ERROR_S3_FILE_MODIFIED");
+static const int OBJECT_MODIFIED_HASH = Aws::Utils::HashingUtils::HashString("AWS_ERROR_S3_OBJECT_MODIFIED");
+static const int INTERNAL_BUFFER_SIZE_MISMATCH_HASH =
+    Aws::Utils::HashingUtils::HashString("AWS_ERROR_S3_INTERNAL_BUFFER_SIZE_MISMATCH_RETRYING_WITH_RANGE");
+static const int RECV_FILE_ALREADY_EXISTS_HASH =
+    Aws::Utils::HashingUtils::HashString("AWS_ERROR_S3_RECV_FILE_ALREADY_EXISTS");
+static const int RECV_FILE_NOT_FOUND_HASH = Aws::Utils::HashingUtils::HashString("AWS_ERROR_S3_RECV_FILE_NOT_FOUND");
+static const int CANCELED_HASH = Aws::Utils::HashingUtils::HashString("AWS_ERROR_S3_CANCELED");
+static const int REQUEST_TIME_TOO_SKEWED_HASH =
+    Aws::Utils::HashingUtils::HashString("AWS_ERROR_S3_REQUEST_TIME_TOO_SKEWED");
+static const int S3EXPRESS_CREATE_SESSION_FAILED_HASH =
+    Aws::Utils::HashingUtils::HashString("AWS_ERROR_S3EXPRESS_CREATE_SESSION_FAILED");
+static const int REQUEST_TIMEOUT_HASH = Aws::Utils::HashingUtils::HashString("AWS_ERROR_S3_REQUEST_TIMEOUT");
+
+Aws::Client::CoreErrors MapCrtErrorCode(int crtErrorCode) {
+  const int hashCode = Aws::Utils::HashingUtils::HashString(Aws::Crt::ErrorName(crtErrorCode));
+
+  if (hashCode == MISSING_CONTENT_RANGE_HEADER_HASH || hashCode == MISSING_CONTENT_LENGTH_HEADER_HASH ||
+      hashCode == MISSING_ETAG_HASH || hashCode == MISSING_UPLOAD_ID_HASH) {
+    return Aws::Client::CoreErrors::MISSING_PARAMETER;
   }
+  if (hashCode == INVALID_CONTENT_RANGE_HEADER_HASH || hashCode == INVALID_CONTENT_LENGTH_HEADER_HASH ||
+      hashCode == INVALID_RANGE_HEADER_HASH || hashCode == MULTIRANGE_HEADER_UNSUPPORTED_HASH ||
+      hashCode == INCORRECT_CONTENT_LENGTH_HASH || hashCode == INVALID_MEMORY_LIMIT_CONFIG_HASH) {
+    return Aws::Client::CoreErrors::INVALID_PARAMETER_VALUE;
+  }
+  if (hashCode == INTERNAL_ERROR_HASH || hashCode == PROXY_PARSE_FAILED_HASH ||
+      hashCode == UNSUPPORTED_PROXY_SCHEME_HASH || hashCode == NON_RECOVERABLE_ASYNC_ERROR_HASH ||
+      hashCode == METRIC_DATA_NOT_AVAILABLE_HASH || hashCode == EXCEEDS_MEMORY_LIMIT_HASH ||
+      hashCode == BUFFER_ALLOCATION_FAILED_HASH) {
+    return Aws::Client::CoreErrors::INTERNAL_FAILURE;
+  }
+  if (hashCode == SLOW_DOWN_HASH) {
+    return Aws::Client::CoreErrors::SLOW_DOWN;
+  }
+  if (hashCode == INVALID_RESPONSE_STATUS_HASH || hashCode == RESPONSE_CHECKSUM_MISMATCH_HASH ||
+      hashCode == CHECKSUM_CALCULATION_FAILED_HASH || hashCode == LIST_PARTS_PARSE_FAILED_HASH ||
+      hashCode == RESUMED_PART_CHECKSUM_MISMATCH_HASH || hashCode == FILE_MODIFIED_HASH ||
+      hashCode == OBJECT_MODIFIED_HASH || hashCode == INTERNAL_BUFFER_SIZE_MISMATCH_HASH ||
+      hashCode == RECV_FILE_ALREADY_EXISTS_HASH || hashCode == RECV_FILE_NOT_FOUND_HASH) {
+    return Aws::Client::CoreErrors::VALIDATION;
+  }
+  if (hashCode == CANCELED_HASH) {
+    return Aws::Client::CoreErrors::USER_CANCELLED;
+  }
+  if (hashCode == REQUEST_TIME_TOO_SKEWED_HASH) {
+    return Aws::Client::CoreErrors::REQUEST_TIME_TOO_SKEWED;
+  }
+  if (hashCode == S3EXPRESS_CREATE_SESSION_FAILED_HASH) {
+    return Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE;
+  }
+  if (hashCode == REQUEST_TIMEOUT_HASH) {
+    return Aws::Client::CoreErrors::REQUEST_TIMEOUT;
+  }
+  return Aws::Client::CoreErrors::INTERNAL_FAILURE;
 }
 
 // SEP checksum validation drops error bodies on non-2xx GETs; recover RequestId from headers. Returns
@@ -111,9 +163,20 @@ Aws::Http::HeaderValueCollection ToHeaderCollection(const Aws::Crt::Vector<Aws::
 }
 
 Aws::Client::AWSError<Aws::S3::S3Errors> MapCrtError(const Aws::Crt::S3::S3MetaRequestResult& result) {
-  const Aws::Crt::S3::S3ErrorCode crtErrorCode = result.GetErrorCode();
-  const bool crtFailed = crtErrorCode != Aws::Crt::S3::S3ErrorCode::Success;
+  const bool crtFailed = !result.IsSuccess();
   const bool hasBody = result.errorResponseBody.ptr != nullptr && result.errorResponseBody.len > 0;
+
+  // A cancel usually lands before any response arrives, so classify it ahead of the transport-layer
+  // case below; it is the caller's own doing and must not be reported as a retryable network error.
+  if (crtFailed && Aws::Utils::HashingUtils::HashString(Aws::Crt::ErrorName(result.errorCode)) == CANCELED_HASH) {
+    Aws::StringStream ss;
+    ss << Aws::Crt::ErrorDebugString(result.errorCode);
+    Aws::Client::AWSError<Aws::S3::S3Errors> error(
+        static_cast<Aws::S3::S3Errors>(Aws::Client::CoreErrors::USER_CANCELLED), "", ss.str(), /*isRetryable*/ false);
+    // No response code is set: AWSError defaults it to REQUEST_NOT_MADE, which is what a cancel
+    // before any response is. result.responseStatus is 0 here, which is not a valid enumerator.
+    return error;
+  }
 
   // Transport-layer failure: no HTTP response ever came back.
   if (crtFailed && result.responseStatus == 0) {
@@ -131,13 +194,13 @@ Aws::Client::AWSError<Aws::S3::S3Errors> MapCrtError(const Aws::Crt::S3::S3MetaR
     ss << Aws::Crt::ErrorDebugString(result.errorCode);
 
     Aws::Client::AWSError<Aws::S3::S3Errors> error;
-    if (crtErrorCode == Aws::Crt::S3::S3ErrorCode::InvalidResponseStatus) {
+    if (Aws::Utils::HashingUtils::HashString(Aws::Crt::ErrorName(result.errorCode)) == INVALID_RESPONSE_STATUS_HASH) {
       error = Aws::Client::CoreErrorsMapper::GetErrorForHttpResponseCode(
           static_cast<Aws::Http::HttpResponseCode>(result.responseStatus));
       error.SetMessage(ss.str());
     } else {
       error = Aws::Client::AWSError<Aws::S3::S3Errors>(
-          static_cast<Aws::S3::S3Errors>(MapCrtErrorCode(crtErrorCode)), "", ss.str(),
+          static_cast<Aws::S3::S3Errors>(MapCrtErrorCode(result.errorCode)), "", ss.str(),
           /*isRetryable*/ false);
     }
     error.SetResponseCode(static_cast<Aws::Http::HttpResponseCode>(result.responseStatus));
@@ -415,6 +478,7 @@ void NotifyEarlyDownloadFailure(const std::shared_ptr<DownloadTransferState>& st
 
 }  // namespace
 
+
 UploadHandle CrtOperations::DispatchUpload(S3TransferManagerImpl& impl, const UploadRequest& request) {
   auto state = Aws::MakeShared<UploadTransferState>(CRT_OPERATIONS_LOG_TAG, request);
 
@@ -525,7 +589,7 @@ UploadHandle CrtOperations::DispatchUpload(S3TransferManagerImpl& impl, const Up
   });
 
   options->SetFinishCallback([state](const Aws::Crt::S3::S3MetaRequestResult& result) {
-    if (result.GetErrorCode() == Aws::Crt::S3::S3ErrorCode::Success) {
+    if (result.IsSuccess()) {
       // A listener may retain the snapshot's response, so the future gets a separate one rather than
       // taking the value out of the shared object.
       const uint64_t total = state->totalBytes ? *state->totalBytes : 0;
@@ -653,7 +717,7 @@ DownloadHandle CrtOperations::DispatchDownload(S3TransferManagerImpl& impl, cons
   });
 
   options->SetFinishCallback([state](const Aws::Crt::S3::S3MetaRequestResult& result) {
-    if (result.GetErrorCode() == Aws::Crt::S3::S3ErrorCode::Success) {
+    if (result.IsSuccess()) {
       Internal::OptionalError finalizeError = state->request.FinalizeOnSuccess(state);
       if (finalizeError) {
         NotifyListeners(state, &DownloadProgressListener::OnTransferFailed,

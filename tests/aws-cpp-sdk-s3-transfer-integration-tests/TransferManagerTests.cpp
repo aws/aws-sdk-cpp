@@ -9,6 +9,7 @@
 #include <RecordingProgressListener.h>
 #include <S3TransferTestFixture.h>
 
+#include <aws/core/client/CoreErrors.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/s3-transfer/S3TransferManager.h>
@@ -381,6 +382,39 @@ TEST_F(TransferManagerTests, DownloadWithIfNoneMatchReturns304) {
   ASSERT_FALSE(outcome.IsSuccess());
   EXPECT_EQ(Aws::Http::HttpResponseCode::NOT_MODIFIED, outcome.GetError().GetResponseCode());
 }
+
+// -------- CRT error surface --------
+// These drive real failures through the transfer manager and assert what the CRT error is reported
+// as, so they cover the CRT-error-to-S3Errors mapping end to end.
+
+TEST_F(TransferManagerTests, CancelledUploadReportsUserCancelled) {
+  const uint64_t size = 100 * 1024 * 1024;  // large enough that cancel usually wins the race
+  const Aws::String key = UniqueKey();
+  Aws::String sourcePath = MakeLocalFileOfSize(size, "cancel-error-type");
+
+  UploadRequest request(s_bucketName, key, sourcePath);
+
+  S3TransferManager manager(MakeConfig());
+  UploadHandle handle = manager.Upload(request);
+  handle.Cancel();
+  UploadOutcome outcome = handle.CompletionFuture().get();
+
+  // A cancel that lands must surface as USER_CANCELLED rather than a generic failure. If the
+  // transfer beat the cancel there is no error to classify.
+  if (!outcome.IsSuccess()) {
+    EXPECT_EQ(static_cast<Aws::S3::S3Errors>(Aws::Client::CoreErrors::USER_CANCELLED),
+              outcome.GetError().GetErrorType());
+    // The CRT error name is carried in the message for diagnosis.
+    EXPECT_NE(Aws::String::npos, outcome.GetError().GetMessage().find("AWS_ERROR_S3_CANCELED"));
+    // Retrying a transfer the caller cancelled would be wrong.
+    EXPECT_FALSE(outcome.GetError().ShouldRetry());
+    // No HTTP exchange completed, so there is no status to report.
+    EXPECT_EQ(Aws::Http::HttpResponseCode::REQUEST_NOT_MADE, outcome.GetError().GetResponseCode());
+  }
+
+  Aws::FileSystem::RemoveFileIfExists(sourcePath.c_str());
+}
+
 
 
 }  // namespace
