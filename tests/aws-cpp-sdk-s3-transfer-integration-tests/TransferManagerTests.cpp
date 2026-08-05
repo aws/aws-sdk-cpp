@@ -261,10 +261,12 @@ TEST_F(TransferManagerTests, ParallelDownloadsShareManagerCleanly) {
     handles.emplace_back(manager.Download(request));
   }
 
-  Aws::Vector<DownloadOutcome> outcomes;
-  outcomes.reserve(kNumTransfers);
-  for (auto& handle : handles) {
-    outcomes.emplace_back(handle.CompletionFuture().get());
+  // DownloadOutcome wraps a move-only DownloadResponse, so a growing/relocating vector would select
+  // Outcome's (ill-formed) copy path. Size it up front and move-assign by index to avoid any
+  // reallocation.
+  Aws::Vector<DownloadOutcome> outcomes(kNumTransfers);
+  for (size_t i = 0; i < kNumTransfers; ++i) {
+    outcomes[i] = handles[i].CompletionFuture().get();
   }
 
   for (size_t i = 0; i < kNumTransfers; ++i) {
