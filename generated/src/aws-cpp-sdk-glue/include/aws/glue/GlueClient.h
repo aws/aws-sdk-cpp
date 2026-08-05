@@ -3617,6 +3617,37 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Retrieves the current export configuration for the Glue Data Catalog. The
+   * export configuration controls whether catalog metadata is exported to S3
+   * Tables.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataCatalogExportConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetDataCatalogExportConfigurationOutcome GetDataCatalogExportConfiguration(
+      const Model::GetDataCatalogExportConfigurationRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for GetDataCatalogExportConfiguration that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename GetDataCatalogExportConfigurationRequestT = Model::GetDataCatalogExportConfigurationRequest>
+  Model::GetDataCatalogExportConfigurationOutcomeCallable GetDataCatalogExportConfigurationCallable(
+      const GetDataCatalogExportConfigurationRequestT& request = {}) const {
+    return SubmitCallable(&GlueClient::GetDataCatalogExportConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for GetDataCatalogExportConfiguration that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetDataCatalogExportConfigurationRequestT = Model::GetDataCatalogExportConfigurationRequest>
+  void GetDataCatalogExportConfigurationAsync(const GetDataCatalogExportConfigurationResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                              const GetDataCatalogExportConfigurationRequestT& request = {}) const {
+    return SubmitAsync(&GlueClient::GetDataCatalogExportConfiguration, request, handler, context);
+  }
+
+  /**
    * <p>Retrieve the training status of the model along with more information
    * (CompletedOn, StartedOn, FailureReason).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityModel">AWS
@@ -6459,6 +6490,37 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient,
                                              const PutDataCatalogEncryptionSettingsResponseReceivedHandler& handler,
                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&GlueClient::PutDataCatalogEncryptionSettings, request, handler, context);
+  }
+
+  /**
+   * <p>Creates or updates the export configuration for the Glue Data Catalog. Use
+   * this operation to enable or disable the export of catalog metadata to S3
+   * Tables.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutDataCatalogExportConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutDataCatalogExportConfigurationOutcome PutDataCatalogExportConfiguration(
+      const Model::PutDataCatalogExportConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutDataCatalogExportConfiguration that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename PutDataCatalogExportConfigurationRequestT = Model::PutDataCatalogExportConfigurationRequest>
+  Model::PutDataCatalogExportConfigurationOutcomeCallable PutDataCatalogExportConfigurationCallable(
+      const PutDataCatalogExportConfigurationRequestT& request) const {
+    return SubmitCallable(&GlueClient::PutDataCatalogExportConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for PutDataCatalogExportConfiguration that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename PutDataCatalogExportConfigurationRequestT = Model::PutDataCatalogExportConfigurationRequest>
+  void PutDataCatalogExportConfigurationAsync(const PutDataCatalogExportConfigurationRequestT& request,
+                                              const PutDataCatalogExportConfigurationResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::PutDataCatalogExportConfiguration, request, handler, context);
   }
 
   /**

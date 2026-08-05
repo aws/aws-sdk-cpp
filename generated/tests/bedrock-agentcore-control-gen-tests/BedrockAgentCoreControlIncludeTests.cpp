@@ -383,6 +383,8 @@
 #include <aws/bedrock-agentcore-control/model/HarnessVersionSummary.h>
 #include <aws/bedrock-agentcore-control/model/HostingEnvironment.h>
 #include <aws/bedrock-agentcore-control/model/HttpApiSchemaConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/HttpConnectorSource.h>
+#include <aws/bedrock-agentcore-control/model/HttpConnectorTargetConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/HttpTargetConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/IamCredentialProvider.h>
 #include <aws/bedrock-agentcore-control/model/IamPrincipal.h>

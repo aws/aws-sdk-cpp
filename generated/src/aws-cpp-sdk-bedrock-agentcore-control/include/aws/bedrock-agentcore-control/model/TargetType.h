@@ -20,7 +20,8 @@ enum class TargetType {
   CONNECTOR,
   AGENTCORE_RUNTIME,
   PASSTHROUGH,
-  PROVIDER
+  PROVIDER,
+  HTTP_CONNECTOR
 };
 
 namespace TargetTypeMapper {

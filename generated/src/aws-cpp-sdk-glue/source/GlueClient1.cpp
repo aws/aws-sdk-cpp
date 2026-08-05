@@ -45,6 +45,7 @@
 #include <aws/glue/model/GetCustomEntityTypeRequest.h>
 #include <aws/glue/model/GetDashboardUrlRequest.h>
 #include <aws/glue/model/GetDataCatalogEncryptionSettingsRequest.h>
+#include <aws/glue/model/GetDataCatalogExportConfigurationRequest.h>
 #include <aws/glue/model/GetDataQualityModelRequest.h>
 #include <aws/glue/model/GetDataQualityModelResultRequest.h>
 #include <aws/glue/model/GetDataQualityResultRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/glue/model/ListDataQualityResultsRequest.h>
 #include <aws/glue/model/ListDataQualityRuleRecommendationRunsRequest.h>
 #include <aws/glue/model/ListDataQualityRulesetEvaluationRunsRequest.h>
-#include <aws/glue/model/ListDataQualityRulesetsRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -272,6 +272,13 @@ GetDataCatalogEncryptionSettingsOutcome GlueClient::GetDataCatalogEncryptionSett
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetDataCatalogEncryptionSettingsOutcome(result.GetResultWithOwnership())
                             : GetDataCatalogEncryptionSettingsOutcome(std::move(result.GetError()));
+}
+
+GetDataCatalogExportConfigurationOutcome GlueClient::GetDataCatalogExportConfiguration(
+    const GetDataCatalogExportConfigurationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDataCatalogExportConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetDataCatalogExportConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetDataQualityModelOutcome GlueClient::GetDataQualityModel(const GetDataQualityModelRequest& request) const {
@@ -693,10 +700,4 @@ ListDataQualityRulesetEvaluationRunsOutcome GlueClient::ListDataQualityRulesetEv
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListDataQualityRulesetEvaluationRunsOutcome(result.GetResultWithOwnership())
                             : ListDataQualityRulesetEvaluationRunsOutcome(std::move(result.GetError()));
-}
-
-ListDataQualityRulesetsOutcome GlueClient::ListDataQualityRulesets(const ListDataQualityRulesetsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ListDataQualityRulesetsOutcome(result.GetResultWithOwnership())
-                            : ListDataQualityRulesetsOutcome(std::move(result.GetError()));
 }

@@ -62,7 +62,8 @@ class CertificateAuthorityConfiguration {
   /**
    * <p>Name of the algorithm your private CA uses to sign certificate requests.</p>
    * <p>This parameter should not be confused with the <code>SigningAlgorithm</code>
-   * parameter used to sign certificates when they are issued.</p>
+   * parameter of the <code>IssueCertificate</code> API action, which is used to sign
+   * certificates when they are issued.</p>
    */
   inline SigningAlgorithm GetSigningAlgorithm() const { return m_signingAlgorithm; }
   inline bool SigningAlgorithmHasBeenSet() const { return m_signingAlgorithmHasBeenSet; }

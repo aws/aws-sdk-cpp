@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/HttpConnectorTargetConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/PassthroughTargetConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/RuntimeTargetConfiguration.h>
 
@@ -70,12 +71,34 @@ class HttpTargetConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The connector-based configuration for the HTTP target. Use this configuration
+   * when you want to route HTTP requests through a managed connector.</p>
+   */
+  inline const HttpConnectorTargetConfiguration& GetConnector() const { return m_connector; }
+  inline bool ConnectorHasBeenSet() const { return m_connectorHasBeenSet; }
+  template <typename ConnectorT = HttpConnectorTargetConfiguration>
+  void SetConnector(ConnectorT&& value) {
+    m_connectorHasBeenSet = true;
+    m_connector = std::forward<ConnectorT>(value);
+  }
+  template <typename ConnectorT = HttpConnectorTargetConfiguration>
+  HttpTargetConfiguration& WithConnector(ConnectorT&& value) {
+    SetConnector(std::forward<ConnectorT>(value));
+    return *this;
+  }
+  ///@}
  private:
   RuntimeTargetConfiguration m_agentcoreRuntime;
 
   PassthroughTargetConfiguration m_passthrough;
+
+  HttpConnectorTargetConfiguration m_connector;
   bool m_agentcoreRuntimeHasBeenSet = false;
   bool m_passthroughHasBeenSet = false;
+  bool m_connectorHasBeenSet = false;
 };
 
 }  // namespace Model

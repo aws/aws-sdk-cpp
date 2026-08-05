@@ -39,7 +39,7 @@ class CrlDistributionPointExtensionConfiguration {
    * with the default URL to the CRL. If set to <code>true</code>, then the CDP
    * extension will not be present in any certificates issued by that CA unless
    * otherwise specified through CSR or API passthrough.</p>  <p>Only set this
-   * if you have another way to distribute the CRL Distribution Points ffor
+   * if you have another way to distribute the CRL Distribution Points for
    * certificates issued by your CA, such as the Matter Distributed Compliance
    * Ledger</p> <p>This configuration cannot be enabled with a custom CNAME set.</p>
    *

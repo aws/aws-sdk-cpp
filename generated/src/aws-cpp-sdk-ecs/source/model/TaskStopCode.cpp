@@ -21,6 +21,7 @@ static const int UserInitiated_HASH = HashingUtils::HashString("UserInitiated");
 static const int ServiceSchedulerInitiated_HASH = HashingUtils::HashString("ServiceSchedulerInitiated");
 static const int SpotInterruption_HASH = HashingUtils::HashString("SpotInterruption");
 static const int TerminationNotice_HASH = HashingUtils::HashString("TerminationNotice");
+static const int InfrastructureHealth_HASH = HashingUtils::HashString("InfrastructureHealth");
 
 TaskStopCode GetTaskStopCodeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +37,8 @@ TaskStopCode GetTaskStopCodeForName(const Aws::String& name) {
     return TaskStopCode::SpotInterruption;
   } else if (hashCode == TerminationNotice_HASH) {
     return TaskStopCode::TerminationNotice;
+  } else if (hashCode == InfrastructureHealth_HASH) {
+    return TaskStopCode::InfrastructureHealth;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +65,8 @@ Aws::String GetNameForTaskStopCode(TaskStopCode enumValue) {
       return "SpotInterruption";
     case TaskStopCode::TerminationNotice:
       return "TerminationNotice";
+    case TaskStopCode::InfrastructureHealth:
+      return "InfrastructureHealth";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -8,7 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/deadline/model/JobAttachmentSettings.h>
+#include <aws/deadline/model/JobDetailsJobAttachmentSettings.h>
 #include <aws/deadline/model/JobParameter.h>
 #include <aws/deadline/model/JobRunAsUser.h>
 #include <aws/deadline/model/PathMappingRule.h>
@@ -59,14 +59,14 @@ class JobDetailsEntity {
   /**
    * <p>The job attachment settings.</p>
    */
-  inline const JobAttachmentSettings& GetJobAttachmentSettings() const { return m_jobAttachmentSettings; }
+  inline const JobDetailsJobAttachmentSettings& GetJobAttachmentSettings() const { return m_jobAttachmentSettings; }
   inline bool JobAttachmentSettingsHasBeenSet() const { return m_jobAttachmentSettingsHasBeenSet; }
-  template <typename JobAttachmentSettingsT = JobAttachmentSettings>
+  template <typename JobAttachmentSettingsT = JobDetailsJobAttachmentSettings>
   void SetJobAttachmentSettings(JobAttachmentSettingsT&& value) {
     m_jobAttachmentSettingsHasBeenSet = true;
     m_jobAttachmentSettings = std::forward<JobAttachmentSettingsT>(value);
   }
-  template <typename JobAttachmentSettingsT = JobAttachmentSettings>
+  template <typename JobAttachmentSettingsT = JobDetailsJobAttachmentSettings>
   JobDetailsEntity& WithJobAttachmentSettings(JobAttachmentSettingsT&& value) {
     SetJobAttachmentSettings(std::forward<JobAttachmentSettingsT>(value));
     return *this;
@@ -195,7 +195,7 @@ class JobDetailsEntity {
  private:
   Aws::String m_jobId;
 
-  JobAttachmentSettings m_jobAttachmentSettings;
+  JobDetailsJobAttachmentSettings m_jobAttachmentSettings;
 
   JobRunAsUser m_jobRunAsUser;
 

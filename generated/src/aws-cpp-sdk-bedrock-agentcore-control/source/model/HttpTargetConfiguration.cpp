@@ -26,6 +26,10 @@ HttpTargetConfiguration& HttpTargetConfiguration::operator=(JsonView jsonValue) 
     m_passthrough = jsonValue.GetObject("passthrough");
     m_passthroughHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("connector")) {
+    m_connector = jsonValue.GetObject("connector");
+    m_connectorHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue HttpTargetConfiguration::Jsonize() const {
 
   if (m_passthroughHasBeenSet) {
     payload.WithObject("passthrough", m_passthrough.Jsonize());
+  }
+
+  if (m_connectorHasBeenSet) {
+    payload.WithObject("connector", m_connector.Jsonize());
   }
 
   return payload;

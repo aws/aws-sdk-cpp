@@ -438,7 +438,10 @@
 #include <aws/glue/model/ExecutionProperty.h>
 #include <aws/glue/model/ExecutionStatus.h>
 #include <aws/glue/model/ExistCondition.h>
+#include <aws/glue/model/ExportEncryptionConfiguration.h>
 #include <aws/glue/model/ExportLabelsTaskRunProperties.h>
+#include <aws/glue/model/ExportSetting.h>
+#include <aws/glue/model/ExportStatus.h>
 #include <aws/glue/model/ExtractedParameter.h>
 #include <aws/glue/model/FederatedCatalog.h>
 #include <aws/glue/model/FederatedDatabase.h>
@@ -515,6 +518,8 @@
 #include <aws/glue/model/GetDashboardUrlResult.h>
 #include <aws/glue/model/GetDataCatalogEncryptionSettingsRequest.h>
 #include <aws/glue/model/GetDataCatalogEncryptionSettingsResult.h>
+#include <aws/glue/model/GetDataCatalogExportConfigurationRequest.h>
+#include <aws/glue/model/GetDataCatalogExportConfigurationResult.h>
 #include <aws/glue/model/GetDataQualityModelRequest.h>
 #include <aws/glue/model/GetDataQualityModelResult.h>
 #include <aws/glue/model/GetDataQualityModelResultRequest.h>
@@ -879,6 +884,8 @@
 #include <aws/glue/model/PutAttachmentResult.h>
 #include <aws/glue/model/PutDataCatalogEncryptionSettingsRequest.h>
 #include <aws/glue/model/PutDataCatalogEncryptionSettingsResult.h>
+#include <aws/glue/model/PutDataCatalogExportConfigurationRequest.h>
+#include <aws/glue/model/PutDataCatalogExportConfigurationResult.h>
 #include <aws/glue/model/PutDataQualityProfileAnnotationRequest.h>
 #include <aws/glue/model/PutDataQualityProfileAnnotationResult.h>
 #include <aws/glue/model/PutFormTypeRequest.h>

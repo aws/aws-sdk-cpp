@@ -17,7 +17,8 @@ enum class TaskStopCode {
   UserInitiated,
   ServiceSchedulerInitiated,
   SpotInterruption,
-  TerminationNotice
+  TerminationNotice,
+  InfrastructureHealth
 };
 
 namespace TaskStopCodeMapper {

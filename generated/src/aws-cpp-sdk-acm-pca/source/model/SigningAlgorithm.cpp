@@ -21,6 +21,9 @@ static const int SHA512WITHECDSA_HASH = HashingUtils::HashString("SHA512WITHECDS
 static const int SHA256WITHRSA_HASH = HashingUtils::HashString("SHA256WITHRSA");
 static const int SHA384WITHRSA_HASH = HashingUtils::HashString("SHA384WITHRSA");
 static const int SHA512WITHRSA_HASH = HashingUtils::HashString("SHA512WITHRSA");
+static const int SHA256WITHRSA_PSS_HASH = HashingUtils::HashString("SHA256WITHRSA_PSS");
+static const int SHA384WITHRSA_PSS_HASH = HashingUtils::HashString("SHA384WITHRSA_PSS");
+static const int SHA512WITHRSA_PSS_HASH = HashingUtils::HashString("SHA512WITHRSA_PSS");
 static const int SM3WITHSM2_HASH = HashingUtils::HashString("SM3WITHSM2");
 static const int ML_DSA_44_HASH = HashingUtils::HashString("ML_DSA_44");
 static const int ML_DSA_65_HASH = HashingUtils::HashString("ML_DSA_65");
@@ -40,6 +43,12 @@ SigningAlgorithm GetSigningAlgorithmForName(const Aws::String& name) {
     return SigningAlgorithm::SHA384WITHRSA;
   } else if (hashCode == SHA512WITHRSA_HASH) {
     return SigningAlgorithm::SHA512WITHRSA;
+  } else if (hashCode == SHA256WITHRSA_PSS_HASH) {
+    return SigningAlgorithm::SHA256WITHRSA_PSS;
+  } else if (hashCode == SHA384WITHRSA_PSS_HASH) {
+    return SigningAlgorithm::SHA384WITHRSA_PSS;
+  } else if (hashCode == SHA512WITHRSA_PSS_HASH) {
+    return SigningAlgorithm::SHA512WITHRSA_PSS;
   } else if (hashCode == SM3WITHSM2_HASH) {
     return SigningAlgorithm::SM3WITHSM2;
   } else if (hashCode == ML_DSA_44_HASH) {
@@ -74,6 +83,12 @@ Aws::String GetNameForSigningAlgorithm(SigningAlgorithm enumValue) {
       return "SHA384WITHRSA";
     case SigningAlgorithm::SHA512WITHRSA:
       return "SHA512WITHRSA";
+    case SigningAlgorithm::SHA256WITHRSA_PSS:
+      return "SHA256WITHRSA_PSS";
+    case SigningAlgorithm::SHA384WITHRSA_PSS:
+      return "SHA384WITHRSA_PSS";
+    case SigningAlgorithm::SHA512WITHRSA_PSS:
+      return "SHA512WITHRSA_PSS";
     case SigningAlgorithm::SM3WITHSM2:
       return "SM3WITHSM2";
     case SigningAlgorithm::ML_DSA_44:

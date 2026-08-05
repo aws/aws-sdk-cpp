@@ -20,6 +20,7 @@
 #include <aws/glue/GlueClient.h>
 #include <aws/glue/GlueEndpointProvider.h>
 #include <aws/glue/GlueErrorMarshaller.h>
+#include <aws/glue/model/ListDataQualityRulesetsRequest.h>
 #include <aws/glue/model/ListDataQualityStatisticAnnotationsRequest.h>
 #include <aws/glue/model/ListDataQualityStatisticsRequest.h>
 #include <aws/glue/model/ListDevEndpointsRequest.h>
@@ -46,6 +47,7 @@
 #include <aws/glue/model/PutAssetTypeRequest.h>
 #include <aws/glue/model/PutAttachmentRequest.h>
 #include <aws/glue/model/PutDataCatalogEncryptionSettingsRequest.h>
+#include <aws/glue/model/PutDataCatalogExportConfigurationRequest.h>
 #include <aws/glue/model/PutDataQualityProfileAnnotationRequest.h>
 #include <aws/glue/model/PutFormTypeRequest.h>
 #include <aws/glue/model/PutResourcePolicyRequest.h>
@@ -128,6 +130,12 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+ListDataQualityRulesetsOutcome GlueClient::ListDataQualityRulesets(const ListDataQualityRulesetsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDataQualityRulesetsOutcome(result.GetResultWithOwnership())
+                            : ListDataQualityRulesetsOutcome(std::move(result.GetError()));
+}
 
 ListDataQualityStatisticAnnotationsOutcome GlueClient::ListDataQualityStatisticAnnotations(
     const ListDataQualityStatisticAnnotationsRequest& request) const {
@@ -274,6 +282,13 @@ PutDataCatalogEncryptionSettingsOutcome GlueClient::PutDataCatalogEncryptionSett
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? PutDataCatalogEncryptionSettingsOutcome(result.GetResultWithOwnership())
                             : PutDataCatalogEncryptionSettingsOutcome(std::move(result.GetError()));
+}
+
+PutDataCatalogExportConfigurationOutcome GlueClient::PutDataCatalogExportConfiguration(
+    const PutDataCatalogExportConfigurationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutDataCatalogExportConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutDataCatalogExportConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutDataQualityProfileAnnotationOutcome GlueClient::PutDataQualityProfileAnnotation(

@@ -17,6 +17,7 @@ namespace UsageTypeMapper {
 
 static const int COMPUTE_HASH = HashingUtils::HashString("COMPUTE");
 static const int LICENSE_HASH = HashingUtils::HashString("LICENSE");
+static const int PERSISTENT_VOLUME_HASH = HashingUtils::HashString("PERSISTENT_VOLUME");
 
 UsageType GetUsageTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ UsageType GetUsageTypeForName(const Aws::String& name) {
     return UsageType::COMPUTE;
   } else if (hashCode == LICENSE_HASH) {
     return UsageType::LICENSE;
+  } else if (hashCode == PERSISTENT_VOLUME_HASH) {
+    return UsageType::PERSISTENT_VOLUME;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForUsageType(UsageType enumValue) {
       return "COMPUTE";
     case UsageType::LICENSE:
       return "LICENSE";
+    case UsageType::PERSISTENT_VOLUME:
+      return "PERSISTENT_VOLUME";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

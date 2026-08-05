@@ -24,6 +24,7 @@ static const int CONNECTOR_HASH = HashingUtils::HashString("CONNECTOR");
 static const int AGENTCORE_RUNTIME_HASH = HashingUtils::HashString("AGENTCORE_RUNTIME");
 static const int PASSTHROUGH_HASH = HashingUtils::HashString("PASSTHROUGH");
 static const int PROVIDER_HASH = HashingUtils::HashString("PROVIDER");
+static const int HTTP_CONNECTOR_HASH = HashingUtils::HashString("HTTP_CONNECTOR");
 
 TargetType GetTargetTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -45,6 +46,8 @@ TargetType GetTargetTypeForName(const Aws::String& name) {
     return TargetType::PASSTHROUGH;
   } else if (hashCode == PROVIDER_HASH) {
     return TargetType::PROVIDER;
+  } else if (hashCode == HTTP_CONNECTOR_HASH) {
+    return TargetType::HTTP_CONNECTOR;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -77,6 +80,8 @@ Aws::String GetNameForTargetType(TargetType enumValue) {
       return "PASSTHROUGH";
     case TargetType::PROVIDER:
       return "PROVIDER";
+    case TargetType::HTTP_CONNECTOR:
+      return "HTTP_CONNECTOR";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

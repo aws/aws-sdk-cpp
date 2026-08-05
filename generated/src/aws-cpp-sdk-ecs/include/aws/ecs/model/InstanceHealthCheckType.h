@@ -10,7 +10,7 @@
 namespace Aws {
 namespace ECS {
 namespace Model {
-enum class InstanceHealthCheckType { NOT_SET, CONTAINER_RUNTIME, ACCELERATED_COMPUTE, DAEMON };
+enum class InstanceHealthCheckType { NOT_SET, CONTAINER_RUNTIME, ACCELERATED_COMPUTE, DAEMON, AGENT_CONNECTIVITY };
 
 namespace InstanceHealthCheckTypeMapper {
 AWS_ECS_API InstanceHealthCheckType GetInstanceHealthCheckTypeForName(const Aws::String& name);

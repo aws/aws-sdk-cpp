@@ -157,6 +157,8 @@
 #include <aws/glue/model/GetDashboardUrlResult.h>
 #include <aws/glue/model/GetDataCatalogEncryptionSettingsRequest.h>
 #include <aws/glue/model/GetDataCatalogEncryptionSettingsResult.h>
+#include <aws/glue/model/GetDataCatalogExportConfigurationRequest.h>
+#include <aws/glue/model/GetDataCatalogExportConfigurationResult.h>
 #include <aws/glue/model/GetDataQualityModelResult.h>
 #include <aws/glue/model/GetDataQualityModelResultResult.h>
 #include <aws/glue/model/GetDataQualityResultResult.h>
@@ -295,6 +297,7 @@
 #include <aws/glue/model/PutAssetTypeResult.h>
 #include <aws/glue/model/PutAttachmentResult.h>
 #include <aws/glue/model/PutDataCatalogEncryptionSettingsResult.h>
+#include <aws/glue/model/PutDataCatalogExportConfigurationResult.h>
 #include <aws/glue/model/PutDataQualityProfileAnnotationResult.h>
 #include <aws/glue/model/PutFormTypeResult.h>
 #include <aws/glue/model/PutResourcePolicyResult.h>
@@ -532,6 +535,7 @@ class GetCrawlersRequest;
 class GetCustomEntityTypeRequest;
 class GetDashboardUrlRequest;
 class GetDataCatalogEncryptionSettingsRequest;
+class GetDataCatalogExportConfigurationRequest;
 class GetDataQualityModelRequest;
 class GetDataQualityModelResultRequest;
 class GetDataQualityResultRequest;
@@ -633,6 +637,7 @@ class PutAssetRequest;
 class PutAssetTypeRequest;
 class PutAttachmentRequest;
 class PutDataCatalogEncryptionSettingsRequest;
+class PutDataCatalogExportConfigurationRequest;
 class PutDataQualityProfileAnnotationRequest;
 class PutFormTypeRequest;
 class PutResourcePolicyRequest;
@@ -832,6 +837,7 @@ typedef Aws::Utils::Outcome<GetCrawlersResult, GlueError> GetCrawlersOutcome;
 typedef Aws::Utils::Outcome<GetCustomEntityTypeResult, GlueError> GetCustomEntityTypeOutcome;
 typedef Aws::Utils::Outcome<GetDashboardUrlResult, GlueError> GetDashboardUrlOutcome;
 typedef Aws::Utils::Outcome<GetDataCatalogEncryptionSettingsResult, GlueError> GetDataCatalogEncryptionSettingsOutcome;
+typedef Aws::Utils::Outcome<GetDataCatalogExportConfigurationResult, GlueError> GetDataCatalogExportConfigurationOutcome;
 typedef Aws::Utils::Outcome<GetDataQualityModelResult, GlueError> GetDataQualityModelOutcome;
 typedef Aws::Utils::Outcome<GetDataQualityModelResultResult, GlueError> GetDataQualityModelResultOutcome;
 typedef Aws::Utils::Outcome<GetDataQualityResultResult, GlueError> GetDataQualityResultOutcome;
@@ -933,6 +939,7 @@ typedef Aws::Utils::Outcome<PutAssetResult, GlueError> PutAssetOutcome;
 typedef Aws::Utils::Outcome<PutAssetTypeResult, GlueError> PutAssetTypeOutcome;
 typedef Aws::Utils::Outcome<PutAttachmentResult, GlueError> PutAttachmentOutcome;
 typedef Aws::Utils::Outcome<PutDataCatalogEncryptionSettingsResult, GlueError> PutDataCatalogEncryptionSettingsOutcome;
+typedef Aws::Utils::Outcome<PutDataCatalogExportConfigurationResult, GlueError> PutDataCatalogExportConfigurationOutcome;
 typedef Aws::Utils::Outcome<PutDataQualityProfileAnnotationResult, GlueError> PutDataQualityProfileAnnotationOutcome;
 typedef Aws::Utils::Outcome<PutFormTypeResult, GlueError> PutFormTypeOutcome;
 typedef Aws::Utils::Outcome<PutResourcePolicyResult, GlueError> PutResourcePolicyOutcome;
@@ -1132,6 +1139,7 @@ typedef std::future<GetCrawlersOutcome> GetCrawlersOutcomeCallable;
 typedef std::future<GetCustomEntityTypeOutcome> GetCustomEntityTypeOutcomeCallable;
 typedef std::future<GetDashboardUrlOutcome> GetDashboardUrlOutcomeCallable;
 typedef std::future<GetDataCatalogEncryptionSettingsOutcome> GetDataCatalogEncryptionSettingsOutcomeCallable;
+typedef std::future<GetDataCatalogExportConfigurationOutcome> GetDataCatalogExportConfigurationOutcomeCallable;
 typedef std::future<GetDataQualityModelOutcome> GetDataQualityModelOutcomeCallable;
 typedef std::future<GetDataQualityModelResultOutcome> GetDataQualityModelResultOutcomeCallable;
 typedef std::future<GetDataQualityResultOutcome> GetDataQualityResultOutcomeCallable;
@@ -1233,6 +1241,7 @@ typedef std::future<PutAssetOutcome> PutAssetOutcomeCallable;
 typedef std::future<PutAssetTypeOutcome> PutAssetTypeOutcomeCallable;
 typedef std::future<PutAttachmentOutcome> PutAttachmentOutcomeCallable;
 typedef std::future<PutDataCatalogEncryptionSettingsOutcome> PutDataCatalogEncryptionSettingsOutcomeCallable;
+typedef std::future<PutDataCatalogExportConfigurationOutcome> PutDataCatalogExportConfigurationOutcomeCallable;
 typedef std::future<PutDataQualityProfileAnnotationOutcome> PutDataQualityProfileAnnotationOutcomeCallable;
 typedef std::future<PutFormTypeOutcome> PutFormTypeOutcomeCallable;
 typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
@@ -1702,6 +1711,10 @@ typedef std::function<void(const GlueClient*, const Model::GetDataCatalogEncrypt
                            const Model::GetDataCatalogEncryptionSettingsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetDataCatalogEncryptionSettingsResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::GetDataCatalogExportConfigurationRequest&,
+                           const Model::GetDataCatalogExportConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetDataCatalogExportConfigurationResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::GetDataQualityModelRequest&, const Model::GetDataQualityModelOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetDataQualityModelResponseReceivedHandler;
@@ -2020,6 +2033,10 @@ typedef std::function<void(const GlueClient*, const Model::PutDataCatalogEncrypt
                            const Model::PutDataCatalogEncryptionSettingsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutDataCatalogEncryptionSettingsResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::PutDataCatalogExportConfigurationRequest&,
+                           const Model::PutDataCatalogExportConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutDataCatalogExportConfigurationResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::PutDataQualityProfileAnnotationRequest&,
                            const Model::PutDataQualityProfileAnnotationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

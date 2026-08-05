@@ -18,6 +18,7 @@ namespace InstanceHealthCheckTypeMapper {
 static const int CONTAINER_RUNTIME_HASH = HashingUtils::HashString("CONTAINER_RUNTIME");
 static const int ACCELERATED_COMPUTE_HASH = HashingUtils::HashString("ACCELERATED_COMPUTE");
 static const int DAEMON_HASH = HashingUtils::HashString("DAEMON");
+static const int AGENT_CONNECTIVITY_HASH = HashingUtils::HashString("AGENT_CONNECTIVITY");
 
 InstanceHealthCheckType GetInstanceHealthCheckTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ InstanceHealthCheckType GetInstanceHealthCheckTypeForName(const Aws::String& nam
     return InstanceHealthCheckType::ACCELERATED_COMPUTE;
   } else if (hashCode == DAEMON_HASH) {
     return InstanceHealthCheckType::DAEMON;
+  } else if (hashCode == AGENT_CONNECTIVITY_HASH) {
+    return InstanceHealthCheckType::AGENT_CONNECTIVITY;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForInstanceHealthCheckType(InstanceHealthCheckType enumValue)
       return "ACCELERATED_COMPUTE";
     case InstanceHealthCheckType::DAEMON:
       return "DAEMON";
+    case InstanceHealthCheckType::AGENT_CONNECTIVITY:
+      return "AGENT_CONNECTIVITY";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

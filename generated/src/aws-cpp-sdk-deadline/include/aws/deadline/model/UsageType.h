@@ -10,7 +10,7 @@
 namespace Aws {
 namespace deadline {
 namespace Model {
-enum class UsageType { NOT_SET, COMPUTE, LICENSE };
+enum class UsageType { NOT_SET, COMPUTE, LICENSE, PERSISTENT_VOLUME };
 
 namespace UsageTypeMapper {
 AWS_DEADLINE_API UsageType GetUsageTypeForName(const Aws::String& name);

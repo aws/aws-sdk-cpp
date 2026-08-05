@@ -152,7 +152,7 @@ class CrlConfiguration {
    * change the name of your bucket by calling the <a
    * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
    * operation. You must specify a <a
-   * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#s3-policies">bucket
+   * href="https://docs.aws.amazon.com/privateca/latest/userguide/crl-planning.html#s3-policies">bucket
    * policy</a> that allows Amazon Web Services Private CA to write the CRL to your
    * bucket.</p>  <p>The <code>S3BucketName</code> parameter must conform to
    * the <a
@@ -187,7 +187,7 @@ class CrlConfiguration {
    * results in an error. If you have disabled BPA in S3, then you can specify either
    * <code>BUCKET_OWNER_FULL_CONTROL</code> or <code>PUBLIC_READ</code> as the
    * value.</p> <p>For more information, see <a
-   * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking
+   * href="https://docs.aws.amazon.com/privateca/latest/userguide/crl-planning.html#s3-bpa">Blocking
    * public access to the S3 bucket</a>.</p>
    */
   inline S3ObjectAcl GetS3ObjectAcl() const { return m_s3ObjectAcl; }
@@ -232,12 +232,12 @@ class CrlConfiguration {
    * <p>Specifies whether to create a complete or partitioned CRL. This setting
    * determines the maximum number of certificates that the certificate authority can
    * issue and revoke. For more information, see <a
-   * href="privateca/latest/userguide/pca.html#limits_pca">Amazon Web Services
-   * Private CA quotas</a>.</p> <ul> <li> <p> <code>COMPLETE</code> - The default
-   * setting. Amazon Web Services Private CA maintains a single CRL ﬁle for all
-   * unexpired certiﬁcates issued by a CA that have been revoked for any reason. Each
-   * certiﬁcate that Amazon Web Services Private CA issues is bound to a speciﬁc CRL
-   * through its CRL distribution point (CDP) extension, deﬁned in <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/pca.html#limits_pca">Amazon
+   * Web Services Private CA quotas</a>.</p> <ul> <li> <p> <code>COMPLETE</code> -
+   * The default setting. Amazon Web Services Private CA maintains a single CRL ﬁle
+   * for all unexpired certiﬁcates issued by a CA that have been revoked for any
+   * reason. Each certiﬁcate that Amazon Web Services Private CA issues is bound to a
+   * speciﬁc CRL through its CRL distribution point (CDP) extension, deﬁned in <a
    * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.9"> RFC
    * 5280</a>.</p> </li> <li> <p> <code>PARTITIONED</code> - Compared to complete
    * CRLs, partitioned CRLs dramatically increase the number of certiﬁcates your

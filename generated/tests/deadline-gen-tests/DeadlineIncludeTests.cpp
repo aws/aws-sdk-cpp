@@ -265,6 +265,7 @@
 #include <aws/deadline/model/JobDetailsEntity.h>
 #include <aws/deadline/model/JobDetailsError.h>
 #include <aws/deadline/model/JobDetailsIdentifiers.h>
+#include <aws/deadline/model/JobDetailsJobAttachmentSettings.h>
 #include <aws/deadline/model/JobEntity.h>
 #include <aws/deadline/model/JobEntityErrorCode.h>
 #include <aws/deadline/model/JobEntityIdentifiersUnion.h>
