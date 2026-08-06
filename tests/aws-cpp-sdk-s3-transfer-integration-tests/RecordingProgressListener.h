@@ -4,6 +4,7 @@
  */
 #pragma once
 
+#include <aws/s3-transfer/DirectoryProgressListener.h>
 #include <aws/s3-transfer/ProgressListener.h>
 
 #include <atomic>
@@ -60,5 +61,69 @@ using RecordingUploadListener =
 using RecordingDownloadListener =
     RecordingProgressListenerT<Aws::S3::Transfer::DownloadProgressListener, Aws::S3::Transfer::DownloadRequest,
                                Aws::S3::Transfer::DownloadProgressSnapshot>;
+
+/**
+ * Directory counterpart of RecordingProgressListenerT. Same lifecycle assertions, but a directory
+ * snapshot counts files rather than bytes, so it records the file tally and whether the total was
+ * reported as known.
+ */
+template <typename ListenerBase, typename RequestT, typename SnapshotT>
+class RecordingDirectoryListenerT : public ListenerBase {
+ public:
+  std::atomic<size_t> initiatedCount{0};
+  std::atomic<size_t> progressCount{0};
+  std::atomic<size_t> completeCount{0};
+  std::atomic<size_t> failedCount{0};
+  std::atomic<uint64_t> lastTransferredFiles{0};
+  std::atomic<uint64_t> maxTransferredFiles{0};
+  // Total files reported by the terminal event, and whether it was flagged as known there.
+  std::atomic<uint64_t> finalTotalFiles{0};
+  std::atomic<bool> finalTotalKnown{false};
+  std::atomic<bool> sawProgressBeforeInitiated{false};
+  std::atomic<bool> sawNonMonotonic{false};
+
+  void OnTransferInitiated(const RequestT&, const SnapshotT&) override { initiatedCount++; }
+
+  void OnBytesTransferred(const RequestT&, const SnapshotT& snapshot) override {
+    progressCount++;
+    if (initiatedCount.load() == 0) {
+      sawProgressBeforeInitiated = true;
+    }
+    const uint64_t transferred = snapshot.GetTransferredFiles();
+    if (transferred < lastTransferredFiles.load()) {
+      sawNonMonotonic = true;
+    }
+    lastTransferredFiles = transferred;
+    uint64_t prevMax = maxTransferredFiles.load();
+    while (transferred > prevMax && !maxTransferredFiles.compare_exchange_weak(prevMax, transferred)) {
+    }
+  }
+
+  void OnTransferComplete(const RequestT&, const SnapshotT& snapshot) override {
+    completeCount++;
+    RecordTerminal(snapshot);
+  }
+
+  void OnTransferFailed(const RequestT&, const SnapshotT& snapshot) override {
+    failedCount++;
+    RecordTerminal(snapshot);
+  }
+
+ private:
+  void RecordTerminal(const SnapshotT& snapshot) {
+    finalTotalFiles = snapshot.GetTotalFiles();
+    finalTotalKnown = snapshot.TotalFilesHasBeenSet();
+  }
+};
+
+using RecordingUploadDirectoryListener =
+    RecordingDirectoryListenerT<Aws::S3::Transfer::UploadDirectoryProgressListener,
+                                Aws::S3::Transfer::UploadDirectoryRequest,
+                                Aws::S3::Transfer::UploadDirectoryProgressSnapshot>;
+
+using RecordingDownloadDirectoryListener =
+    RecordingDirectoryListenerT<Aws::S3::Transfer::DownloadDirectoryProgressListener,
+                                Aws::S3::Transfer::DownloadDirectoryRequest,
+                                Aws::S3::Transfer::DownloadDirectoryProgressSnapshot>;
 
 }  // namespace S3TransferIntegrationTests

@@ -29,8 +29,10 @@
 #include <aws/s3/model/ListMultipartUploadsRequest.h>
 #include <aws/s3/model/AbortMultipartUploadRequest.h>
 #include <aws/s3/model/ListObjectsV2Request.h>
+#include <aws/s3/model/PutObjectRequest.h>
 #include <aws/s3/model/BucketLocationConstraint.h>
 
+#include <algorithm>
 #include <chrono>
 #include <fstream>
 #include <thread>
@@ -140,22 +142,10 @@ class S3TransferTestFixture : public Aws::Testing::AwsCppSdkGTestSuite {
     return Aws::FileSystem::Join(GetTestFilesDirectory(), fileName);
   }
 
-  // Write a file of exactly `size` deterministic bytes; returns the path.
+  // Write a file of exactly `size` deterministic bytes at a fresh unique path; returns the path.
   static Aws::String MakeLocalFileOfSize(uint64_t size, const Aws::String& tag) {
     Aws::String path = LocalTempPath(tag);
-    Aws::OFStream out(path.c_str(), std::ios_base::out | std::ios_base::binary | std::ios_base::trunc);
-    const Aws::String chunk(64 * 1024, '\0');
-    Aws::String buffer = chunk;
-    for (size_t i = 0; i < buffer.size(); ++i) {
-      buffer[i] = static_cast<char>(i % 251);  // deterministic, non-trivial pattern
-    }
-    uint64_t written = 0;
-    while (written < size) {
-      const uint64_t toWrite = std::min<uint64_t>(buffer.size(), size - written);
-      out.write(buffer.data(), static_cast<std::streamsize>(toWrite));
-      written += toWrite;
-    }
-    out.close();
+    WriteDeterministicFile(path, size);
     return path;
   }
 
@@ -212,6 +202,114 @@ class S3TransferTestFixture : public Aws::Testing::AwsCppSdkGTestSuite {
     head.SetBucket(s_bucketName);
     head.SetKey(key);
     return s_s3Client->HeadObject(head).IsSuccess();
+  }
+
+  // ---- directory helpers ----
+
+  // RAII wrapper around a local scratch directory tree. The constructor creates an empty unique
+  // directory; AddFile() populates it (creating intermediate directories, so a relative path with
+  // '/' separators builds a nested tree). The destructor deep-deletes the whole thing.
+  class ScopedTestDirectory {
+   public:
+    explicit ScopedTestDirectory(const Aws::String& tag) : m_path(LocalTempPath(tag)) {
+      Aws::FileSystem::CreateDirectoryIfNotExists(m_path.c_str(), /*createParentDirs*/ true);
+    }
+
+    ~ScopedTestDirectory() { Aws::FileSystem::DeepDeleteDirectory(m_path.c_str()); }
+
+    ScopedTestDirectory(const ScopedTestDirectory&) = delete;
+    ScopedTestDirectory& operator=(const ScopedTestDirectory&) = delete;
+
+    // Write `size` deterministic bytes at `relativePath` under this directory, creating any
+    // intermediate directories. `relativePath` uses '/' separators regardless of platform.
+    // Returns the absolute path written.
+    Aws::String AddFile(const Aws::String& relativePath, uint64_t size) const {
+      const Aws::String full = Resolve(relativePath);
+      const size_t slash = full.find_last_of(Aws::FileSystem::PATH_DELIM);
+      if (slash != Aws::String::npos) {
+        Aws::FileSystem::CreateDirectoryIfNotExists(full.substr(0, slash).c_str(), /*createParentDirs*/ true);
+      }
+      WriteDeterministicFile(full, size);
+      return full;
+    }
+
+    // Create an empty subdirectory; used to assert that empty directories produce no objects.
+    void AddEmptySubdirectory(const Aws::String& relativePath) const {
+      Aws::FileSystem::CreateDirectoryIfNotExists(Resolve(relativePath).c_str(), /*createParentDirs*/ true);
+    }
+
+    // Map a '/'-separated relative path onto a platform path under this directory.
+    Aws::String Resolve(const Aws::String& relativePath) const {
+      Aws::String full = m_path;
+      full += Aws::FileSystem::PATH_DELIM;
+      for (char c : relativePath) {
+        full += (c == '/') ? Aws::FileSystem::PATH_DELIM : c;
+      }
+      return full;
+    }
+
+    const Aws::String& Path() const { return m_path; }
+    operator const Aws::String&() const { return m_path; }
+
+   private:
+    Aws::String m_path;
+  };
+
+  // Write exactly `size` deterministic bytes to `path`. Same byte pattern as MakeLocalFileOfSize,
+  // which delegates here; split out so ScopedTestDirectory can write to a caller-chosen path.
+  static void WriteDeterministicFile(const Aws::String& path, uint64_t size) {
+    Aws::OFStream out(path.c_str(), std::ios_base::out | std::ios_base::binary | std::ios_base::trunc);
+    Aws::String buffer(64 * 1024, '\0');
+    for (size_t i = 0; i < buffer.size(); ++i) {
+      buffer[i] = static_cast<char>(i % 251);  // deterministic, non-trivial pattern
+    }
+    uint64_t written = 0;
+    while (written < size) {
+      const uint64_t toWrite = std::min<uint64_t>(buffer.size(), size - written);
+      out.write(buffer.data(), static_cast<std::streamsize>(toWrite));
+      written += toWrite;
+    }
+  }
+
+  // Every object key under `prefix` in the shared test bucket, paging through the listing.
+  static Aws::Vector<Aws::String> ListKeysUnderPrefix(const Aws::String& prefix) {
+    Aws::Vector<Aws::String> keys;
+    Aws::String continuationToken;
+    do {
+      Aws::S3::Model::ListObjectsV2Request listRequest;
+      listRequest.SetBucket(s_bucketName);
+      if (!prefix.empty()) {
+        listRequest.SetPrefix(prefix);
+      }
+      if (!continuationToken.empty()) {
+        listRequest.SetContinuationToken(continuationToken);
+      }
+      auto outcome = s_s3Client->ListObjectsV2(listRequest);
+      if (!outcome.IsSuccess()) {
+        break;
+      }
+      for (const auto& object : outcome.GetResult().GetContents()) {
+        keys.push_back(object.GetKey());
+      }
+      continuationToken =
+          outcome.GetResult().GetIsTruncated() ? outcome.GetResult().GetNextContinuationToken() : Aws::String();
+    } while (!continuationToken.empty());
+    std::sort(keys.begin(), keys.end());
+    return keys;
+  }
+
+  // Upload one object of `size` deterministic bytes, so a directory download has something to find.
+  static bool PutObjectOfSize(const Aws::String& key, uint64_t size) {
+    const Aws::String path = LocalTempPath("put-source");
+    WriteDeterministicFile(path, size);
+    Aws::S3::Model::PutObjectRequest put;
+    put.SetBucket(s_bucketName);
+    put.SetKey(key);
+    put.SetBody(Aws::MakeShared<Aws::FStream>(ALLOCATION_TAG, path.c_str(),
+                                              std::ios_base::in | std::ios_base::binary));
+    const bool ok = s_s3Client->PutObject(put).IsSuccess();
+    Aws::FileSystem::RemoveFileIfExists(path.c_str());
+    return ok;
   }
 
   // Byte-identical file comparator via SHA256. Adapted from TM 1.0's AreFilesSame helper
