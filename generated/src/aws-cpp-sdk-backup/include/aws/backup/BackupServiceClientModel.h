@@ -20,6 +20,7 @@
 
 /* Service model headers required in BackupClient header */
 #include <aws/backup/model/CancelLegalHoldResult.h>
+#include <aws/backup/model/CreateBackupAccessPointResult.h>
 #include <aws/backup/model/CreateBackupPlanResult.h>
 #include <aws/backup/model/CreateBackupSelectionResult.h>
 #include <aws/backup/model/CreateBackupVaultResult.h>
@@ -33,6 +34,7 @@
 #include <aws/backup/model/CreateTieringConfigurationResult.h>
 #include <aws/backup/model/DeleteBackupPlanResult.h>
 #include <aws/backup/model/DeleteTieringConfigurationResult.h>
+#include <aws/backup/model/DescribeBackupAccessPointResult.h>
 #include <aws/backup/model/DescribeBackupJobResult.h>
 #include <aws/backup/model/DescribeBackupVaultResult.h>
 #include <aws/backup/model/DescribeCopyJobResult.h>
@@ -65,6 +67,10 @@
 #include <aws/backup/model/GetSupportedResourceTypesRequest.h>
 #include <aws/backup/model/GetSupportedResourceTypesResult.h>
 #include <aws/backup/model/GetTieringConfigurationResult.h>
+#include <aws/backup/model/ListBackupAccessPointsByRecoveryPointResult.h>
+#include <aws/backup/model/ListBackupAccessPointsByResourceResult.h>
+#include <aws/backup/model/ListBackupAccessPointsRequest.h>
+#include <aws/backup/model/ListBackupAccessPointsResult.h>
 #include <aws/backup/model/ListBackupJobSummariesRequest.h>
 #include <aws/backup/model/ListBackupJobSummariesResult.h>
 #include <aws/backup/model/ListBackupJobsRequest.h>
@@ -164,6 +170,7 @@ namespace Model {
 /* Service model forward declarations required in BackupClient header */
 class AssociateBackupVaultMpaApprovalTeamRequest;
 class CancelLegalHoldRequest;
+class CreateBackupAccessPointRequest;
 class CreateBackupPlanRequest;
 class CreateBackupSelectionRequest;
 class CreateBackupVaultRequest;
@@ -175,6 +182,7 @@ class CreateRestoreAccessBackupVaultRequest;
 class CreateRestoreTestingPlanRequest;
 class CreateRestoreTestingSelectionRequest;
 class CreateTieringConfigurationRequest;
+class DeleteBackupAccessPointRequest;
 class DeleteBackupPlanRequest;
 class DeleteBackupSelectionRequest;
 class DeleteBackupVaultRequest;
@@ -187,6 +195,7 @@ class DeleteReportPlanRequest;
 class DeleteRestoreTestingPlanRequest;
 class DeleteRestoreTestingSelectionRequest;
 class DeleteTieringConfigurationRequest;
+class DescribeBackupAccessPointRequest;
 class DescribeBackupJobRequest;
 class DescribeBackupVaultRequest;
 class DescribeCopyJobRequest;
@@ -219,6 +228,9 @@ class GetRestoreTestingPlanRequest;
 class GetRestoreTestingSelectionRequest;
 class GetSupportedResourceTypesRequest;
 class GetTieringConfigurationRequest;
+class ListBackupAccessPointsRequest;
+class ListBackupAccessPointsByRecoveryPointRequest;
+class ListBackupAccessPointsByResourceRequest;
 class ListBackupJobSummariesRequest;
 class ListBackupJobsRequest;
 class ListBackupPlanTemplatesRequest;
@@ -276,6 +288,7 @@ class UpdateTieringConfigurationRequest;
 /* Service model Outcome class definitions */
 typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> AssociateBackupVaultMpaApprovalTeamOutcome;
 typedef Aws::Utils::Outcome<CancelLegalHoldResult, BackupError> CancelLegalHoldOutcome;
+typedef Aws::Utils::Outcome<CreateBackupAccessPointResult, BackupError> CreateBackupAccessPointOutcome;
 typedef Aws::Utils::Outcome<CreateBackupPlanResult, BackupError> CreateBackupPlanOutcome;
 typedef Aws::Utils::Outcome<CreateBackupSelectionResult, BackupError> CreateBackupSelectionOutcome;
 typedef Aws::Utils::Outcome<CreateBackupVaultResult, BackupError> CreateBackupVaultOutcome;
@@ -287,6 +300,7 @@ typedef Aws::Utils::Outcome<CreateRestoreAccessBackupVaultResult, BackupError> C
 typedef Aws::Utils::Outcome<CreateRestoreTestingPlanResult, BackupError> CreateRestoreTestingPlanOutcome;
 typedef Aws::Utils::Outcome<CreateRestoreTestingSelectionResult, BackupError> CreateRestoreTestingSelectionOutcome;
 typedef Aws::Utils::Outcome<CreateTieringConfigurationResult, BackupError> CreateTieringConfigurationOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> DeleteBackupAccessPointOutcome;
 typedef Aws::Utils::Outcome<DeleteBackupPlanResult, BackupError> DeleteBackupPlanOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> DeleteBackupSelectionOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> DeleteBackupVaultOutcome;
@@ -299,6 +313,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> DeleteReportPlanOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> DeleteRestoreTestingPlanOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> DeleteRestoreTestingSelectionOutcome;
 typedef Aws::Utils::Outcome<DeleteTieringConfigurationResult, BackupError> DeleteTieringConfigurationOutcome;
+typedef Aws::Utils::Outcome<DescribeBackupAccessPointResult, BackupError> DescribeBackupAccessPointOutcome;
 typedef Aws::Utils::Outcome<DescribeBackupJobResult, BackupError> DescribeBackupJobOutcome;
 typedef Aws::Utils::Outcome<DescribeBackupVaultResult, BackupError> DescribeBackupVaultOutcome;
 typedef Aws::Utils::Outcome<DescribeCopyJobResult, BackupError> DescribeCopyJobOutcome;
@@ -331,6 +346,9 @@ typedef Aws::Utils::Outcome<GetRestoreTestingPlanResult, BackupError> GetRestore
 typedef Aws::Utils::Outcome<GetRestoreTestingSelectionResult, BackupError> GetRestoreTestingSelectionOutcome;
 typedef Aws::Utils::Outcome<GetSupportedResourceTypesResult, BackupError> GetSupportedResourceTypesOutcome;
 typedef Aws::Utils::Outcome<GetTieringConfigurationResult, BackupError> GetTieringConfigurationOutcome;
+typedef Aws::Utils::Outcome<ListBackupAccessPointsResult, BackupError> ListBackupAccessPointsOutcome;
+typedef Aws::Utils::Outcome<ListBackupAccessPointsByRecoveryPointResult, BackupError> ListBackupAccessPointsByRecoveryPointOutcome;
+typedef Aws::Utils::Outcome<ListBackupAccessPointsByResourceResult, BackupError> ListBackupAccessPointsByResourceOutcome;
 typedef Aws::Utils::Outcome<ListBackupJobSummariesResult, BackupError> ListBackupJobSummariesOutcome;
 typedef Aws::Utils::Outcome<ListBackupJobsResult, BackupError> ListBackupJobsOutcome;
 typedef Aws::Utils::Outcome<ListBackupPlanTemplatesResult, BackupError> ListBackupPlanTemplatesOutcome;
@@ -388,6 +406,7 @@ typedef Aws::Utils::Outcome<UpdateTieringConfigurationResult, BackupError> Updat
 /* Service model Outcome callable definitions */
 typedef std::future<AssociateBackupVaultMpaApprovalTeamOutcome> AssociateBackupVaultMpaApprovalTeamOutcomeCallable;
 typedef std::future<CancelLegalHoldOutcome> CancelLegalHoldOutcomeCallable;
+typedef std::future<CreateBackupAccessPointOutcome> CreateBackupAccessPointOutcomeCallable;
 typedef std::future<CreateBackupPlanOutcome> CreateBackupPlanOutcomeCallable;
 typedef std::future<CreateBackupSelectionOutcome> CreateBackupSelectionOutcomeCallable;
 typedef std::future<CreateBackupVaultOutcome> CreateBackupVaultOutcomeCallable;
@@ -399,6 +418,7 @@ typedef std::future<CreateRestoreAccessBackupVaultOutcome> CreateRestoreAccessBa
 typedef std::future<CreateRestoreTestingPlanOutcome> CreateRestoreTestingPlanOutcomeCallable;
 typedef std::future<CreateRestoreTestingSelectionOutcome> CreateRestoreTestingSelectionOutcomeCallable;
 typedef std::future<CreateTieringConfigurationOutcome> CreateTieringConfigurationOutcomeCallable;
+typedef std::future<DeleteBackupAccessPointOutcome> DeleteBackupAccessPointOutcomeCallable;
 typedef std::future<DeleteBackupPlanOutcome> DeleteBackupPlanOutcomeCallable;
 typedef std::future<DeleteBackupSelectionOutcome> DeleteBackupSelectionOutcomeCallable;
 typedef std::future<DeleteBackupVaultOutcome> DeleteBackupVaultOutcomeCallable;
@@ -411,6 +431,7 @@ typedef std::future<DeleteReportPlanOutcome> DeleteReportPlanOutcomeCallable;
 typedef std::future<DeleteRestoreTestingPlanOutcome> DeleteRestoreTestingPlanOutcomeCallable;
 typedef std::future<DeleteRestoreTestingSelectionOutcome> DeleteRestoreTestingSelectionOutcomeCallable;
 typedef std::future<DeleteTieringConfigurationOutcome> DeleteTieringConfigurationOutcomeCallable;
+typedef std::future<DescribeBackupAccessPointOutcome> DescribeBackupAccessPointOutcomeCallable;
 typedef std::future<DescribeBackupJobOutcome> DescribeBackupJobOutcomeCallable;
 typedef std::future<DescribeBackupVaultOutcome> DescribeBackupVaultOutcomeCallable;
 typedef std::future<DescribeCopyJobOutcome> DescribeCopyJobOutcomeCallable;
@@ -443,6 +464,9 @@ typedef std::future<GetRestoreTestingPlanOutcome> GetRestoreTestingPlanOutcomeCa
 typedef std::future<GetRestoreTestingSelectionOutcome> GetRestoreTestingSelectionOutcomeCallable;
 typedef std::future<GetSupportedResourceTypesOutcome> GetSupportedResourceTypesOutcomeCallable;
 typedef std::future<GetTieringConfigurationOutcome> GetTieringConfigurationOutcomeCallable;
+typedef std::future<ListBackupAccessPointsOutcome> ListBackupAccessPointsOutcomeCallable;
+typedef std::future<ListBackupAccessPointsByRecoveryPointOutcome> ListBackupAccessPointsByRecoveryPointOutcomeCallable;
+typedef std::future<ListBackupAccessPointsByResourceOutcome> ListBackupAccessPointsByResourceOutcomeCallable;
 typedef std::future<ListBackupJobSummariesOutcome> ListBackupJobSummariesOutcomeCallable;
 typedef std::future<ListBackupJobsOutcome> ListBackupJobsOutcomeCallable;
 typedef std::future<ListBackupPlanTemplatesOutcome> ListBackupPlanTemplatesOutcomeCallable;
@@ -508,6 +532,9 @@ typedef std::function<void(const BackupClient*, const Model::AssociateBackupVaul
 typedef std::function<void(const BackupClient*, const Model::CancelLegalHoldRequest&, const Model::CancelLegalHoldOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CancelLegalHoldResponseReceivedHandler;
+typedef std::function<void(const BackupClient*, const Model::CreateBackupAccessPointRequest&, const Model::CreateBackupAccessPointOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateBackupAccessPointResponseReceivedHandler;
 typedef std::function<void(const BackupClient*, const Model::CreateBackupPlanRequest&, const Model::CreateBackupPlanOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateBackupPlanResponseReceivedHandler;
@@ -544,6 +571,9 @@ typedef std::function<void(const BackupClient*, const Model::CreateRestoreTestin
 typedef std::function<void(const BackupClient*, const Model::CreateTieringConfigurationRequest&,
                            const Model::CreateTieringConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateTieringConfigurationResponseReceivedHandler;
+typedef std::function<void(const BackupClient*, const Model::DeleteBackupAccessPointRequest&, const Model::DeleteBackupAccessPointOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteBackupAccessPointResponseReceivedHandler;
 typedef std::function<void(const BackupClient*, const Model::DeleteBackupPlanRequest&, const Model::DeleteBackupPlanOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteBackupPlanResponseReceivedHandler;
@@ -584,6 +614,9 @@ typedef std::function<void(const BackupClient*, const Model::DeleteRestoreTestin
 typedef std::function<void(const BackupClient*, const Model::DeleteTieringConfigurationRequest&,
                            const Model::DeleteTieringConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteTieringConfigurationResponseReceivedHandler;
+typedef std::function<void(const BackupClient*, const Model::DescribeBackupAccessPointRequest&,
+                           const Model::DescribeBackupAccessPointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeBackupAccessPointResponseReceivedHandler;
 typedef std::function<void(const BackupClient*, const Model::DescribeBackupJobRequest&, const Model::DescribeBackupJobOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeBackupJobResponseReceivedHandler;
@@ -685,6 +718,17 @@ typedef std::function<void(const BackupClient*, const Model::GetSupportedResourc
 typedef std::function<void(const BackupClient*, const Model::GetTieringConfigurationRequest&, const Model::GetTieringConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetTieringConfigurationResponseReceivedHandler;
+typedef std::function<void(const BackupClient*, const Model::ListBackupAccessPointsRequest&, const Model::ListBackupAccessPointsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListBackupAccessPointsResponseReceivedHandler;
+typedef std::function<void(const BackupClient*, const Model::ListBackupAccessPointsByRecoveryPointRequest&,
+                           const Model::ListBackupAccessPointsByRecoveryPointOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListBackupAccessPointsByRecoveryPointResponseReceivedHandler;
+typedef std::function<void(const BackupClient*, const Model::ListBackupAccessPointsByResourceRequest&,
+                           const Model::ListBackupAccessPointsByResourceOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListBackupAccessPointsByResourceResponseReceivedHandler;
 typedef std::function<void(const BackupClient*, const Model::ListBackupJobSummariesRequest&, const Model::ListBackupJobSummariesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListBackupJobSummariesResponseReceivedHandler;

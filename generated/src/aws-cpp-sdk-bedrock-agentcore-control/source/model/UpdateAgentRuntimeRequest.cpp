@@ -69,6 +69,10 @@ Aws::String UpdateAgentRuntimeRequest::SerializePayload() const {
     payload.WithArray("filesystemConfigurations", std::move(filesystemConfigurationsJsonList));
   }
 
+  if (m_capacityProviderConfigurationHasBeenSet) {
+    payload.WithObject("capacityProviderConfiguration", m_capacityProviderConfiguration.Jsonize());
+  }
+
   if (m_clientTokenHasBeenSet) {
     payload.WithString("clientToken", m_clientToken);
   }

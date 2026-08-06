@@ -219,6 +219,25 @@ class GetSpotPlacementScoresRequest : public EC2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specify <code>true</code> so that the response returns scores that include
+   * Local Zones. Otherwise, the response ignores Local Zones.</p> <p>When you
+   * request regional scores, Local Zone capacity counts toward its parent
+   * Region.</p>
+   */
+  inline bool GetIncludeLocalZones() const { return m_includeLocalZones; }
+  inline bool IncludeLocalZonesHasBeenSet() const { return m_includeLocalZonesHasBeenSet; }
+  inline void SetIncludeLocalZones(bool value) {
+    m_includeLocalZonesHasBeenSet = true;
+    m_includeLocalZones = value;
+  }
+  inline GetSpotPlacementScoresRequest& WithIncludeLocalZones(bool value) {
+    SetIncludeLocalZones(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_instanceTypes;
 
@@ -237,6 +256,8 @@ class GetSpotPlacementScoresRequest : public EC2Request {
   int m_maxResults{0};
 
   Aws::String m_nextToken;
+
+  bool m_includeLocalZones{false};
   bool m_instanceTypesHasBeenSet = false;
   bool m_targetCapacityHasBeenSet = false;
   bool m_targetCapacityUnitTypeHasBeenSet = false;
@@ -246,6 +267,7 @@ class GetSpotPlacementScoresRequest : public EC2Request {
   bool m_dryRunHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
+  bool m_includeLocalZonesHasBeenSet = false;
 };
 
 }  // namespace Model

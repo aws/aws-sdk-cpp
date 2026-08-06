@@ -191,6 +191,7 @@
 #include <aws/logs/model/ImportFilter.h>
 #include <aws/logs/model/ImportStatistics.h>
 #include <aws/logs/model/ImportStatus.h>
+#include <aws/logs/model/IndexCategory.h>
 #include <aws/logs/model/IndexPolicy.h>
 #include <aws/logs/model/IndexSource.h>
 #include <aws/logs/model/IndexType.h>

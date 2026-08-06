@@ -109,6 +109,7 @@
 #include <aws/securityhub/model/ListConnectorsV2Request.h>
 #include <aws/securityhub/model/ListEnabledProductsForImportRequest.h>
 #include <aws/securityhub/model/ListFindingAggregatorsRequest.h>
+#include <aws/securityhub/model/ListFreeTrialStatusesV2Request.h>
 #include <aws/securityhub/model/ListInvitationsRequest.h>
 #include <aws/securityhub/model/ListMembersRequest.h>
 #include <aws/securityhub/model/ListOrganizationAdminAccountsRequest.h>
@@ -1416,6 +1417,17 @@ ListFindingAggregatorsOutcome SecurityHubClient::ListFindingAggregators(const Li
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListFindingAggregatorsOutcome(result.GetResultWithOwnership())
                             : ListFindingAggregatorsOutcome(std::move(result.GetError()));
+}
+
+ListFreeTrialStatusesV2Outcome SecurityHubClient::ListFreeTrialStatusesV2(const ListFreeTrialStatusesV2Request& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/freetrial/statusv2/list");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFreeTrialStatusesV2Outcome(result.GetResultWithOwnership())
+                            : ListFreeTrialStatusesV2Outcome(std::move(result.GetError()));
 }
 
 ListInvitationsOutcome SecurityHubClient::ListInvitations(const ListInvitationsRequest& request) const {

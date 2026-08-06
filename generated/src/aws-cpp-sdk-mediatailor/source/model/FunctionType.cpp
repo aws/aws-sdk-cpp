@@ -17,6 +17,7 @@ namespace FunctionTypeMapper {
 
 static const int HTTP_REQUEST_HASH = HashingUtils::HashString("HTTP_REQUEST");
 static const int CUSTOM_OUTPUT_HASH = HashingUtils::HashString("CUSTOM_OUTPUT");
+static const int CONCURRENT_EXECUTOR_HASH = HashingUtils::HashString("CONCURRENT_EXECUTOR");
 static const int SEQUENTIAL_EXECUTOR_HASH = HashingUtils::HashString("SEQUENTIAL_EXECUTOR");
 
 FunctionType GetFunctionTypeForName(const Aws::String& name) {
@@ -25,6 +26,8 @@ FunctionType GetFunctionTypeForName(const Aws::String& name) {
     return FunctionType::HTTP_REQUEST;
   } else if (hashCode == CUSTOM_OUTPUT_HASH) {
     return FunctionType::CUSTOM_OUTPUT;
+  } else if (hashCode == CONCURRENT_EXECUTOR_HASH) {
+    return FunctionType::CONCURRENT_EXECUTOR;
   } else if (hashCode == SEQUENTIAL_EXECUTOR_HASH) {
     return FunctionType::SEQUENTIAL_EXECUTOR;
   }
@@ -45,6 +48,8 @@ Aws::String GetNameForFunctionType(FunctionType enumValue) {
       return "HTTP_REQUEST";
     case FunctionType::CUSTOM_OUTPUT:
       return "CUSTOM_OUTPUT";
+    case FunctionType::CONCURRENT_EXECUTOR:
+      return "CONCURRENT_EXECUTOR";
     case FunctionType::SEQUENTIAL_EXECUTOR:
       return "SEQUENTIAL_EXECUTOR";
     default:

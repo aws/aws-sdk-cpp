@@ -71,12 +71,34 @@ class FunctionRef {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An optional alternate name for the function within the executor. If omitted,
+   * MediaTailor uses the function identifier.</p>
+   */
+  inline const Aws::String& GetAlias() const { return m_alias; }
+  inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }
+  template <typename AliasT = Aws::String>
+  void SetAlias(AliasT&& value) {
+    m_aliasHasBeenSet = true;
+    m_alias = std::forward<AliasT>(value);
+  }
+  template <typename AliasT = Aws::String>
+  FunctionRef& WithAlias(AliasT&& value) {
+    SetAlias(std::forward<AliasT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_runCondition;
 
   Aws::String m_functionId;
+
+  Aws::String m_alias;
   bool m_runConditionHasBeenSet = false;
   bool m_functionIdHasBeenSet = false;
+  bool m_aliasHasBeenSet = false;
 };
 
 }  // namespace Model

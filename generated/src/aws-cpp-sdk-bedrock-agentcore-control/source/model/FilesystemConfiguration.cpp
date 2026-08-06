@@ -30,6 +30,10 @@ FilesystemConfiguration& FilesystemConfiguration::operator=(JsonView jsonValue) 
     m_efsAccessPoint = jsonValue.GetObject("efsAccessPoint");
     m_efsAccessPointHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("capacityProviderVolume")) {
+    m_capacityProviderVolume = jsonValue.GetObject("capacityProviderVolume");
+    m_capacityProviderVolumeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue FilesystemConfiguration::Jsonize() const {
 
   if (m_efsAccessPointHasBeenSet) {
     payload.WithObject("efsAccessPoint", m_efsAccessPoint.Jsonize());
+  }
+
+  if (m_capacityProviderVolumeHasBeenSet) {
+    payload.WithObject("capacityProviderVolume", m_capacityProviderVolume.Jsonize());
   }
 
   return payload;

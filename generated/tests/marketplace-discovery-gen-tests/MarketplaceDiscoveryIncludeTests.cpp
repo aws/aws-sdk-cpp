@@ -67,6 +67,7 @@
 #include <aws/marketplace-discovery/model/ListingFacet.h>
 #include <aws/marketplace-discovery/model/ListingSummary.h>
 #include <aws/marketplace-discovery/model/ListingSummaryAssociatedEntity.h>
+#include <aws/marketplace-discovery/model/NetPaymentTerm.h>
 #include <aws/marketplace-discovery/model/OfferAssociatedEntity.h>
 #include <aws/marketplace-discovery/model/OfferInformation.h>
 #include <aws/marketplace-discovery/model/OfferSetAssociatedEntity.h>

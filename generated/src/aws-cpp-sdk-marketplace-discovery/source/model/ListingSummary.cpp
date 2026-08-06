@@ -30,6 +30,14 @@ ListingSummary& ListingSummary::operator=(JsonView jsonValue) {
     m_publisher = jsonValue.GetObject("publisher");
     m_publisherHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("fulfillmentOptionSummaries")) {
+    Aws::Utils::Array<JsonView> fulfillmentOptionSummariesJsonList = jsonValue.GetArray("fulfillmentOptionSummaries");
+    for (unsigned fulfillmentOptionSummariesIndex = 0; fulfillmentOptionSummariesIndex < fulfillmentOptionSummariesJsonList.GetLength();
+         ++fulfillmentOptionSummariesIndex) {
+      m_fulfillmentOptionSummaries.push_back(fulfillmentOptionSummariesJsonList[fulfillmentOptionSummariesIndex].AsObject());
+    }
+    m_fulfillmentOptionSummariesHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("catalog")) {
     m_catalog = jsonValue.GetString("catalog");
     m_catalogHasBeenSet = true;
@@ -48,14 +56,6 @@ ListingSummary& ListingSummary::operator=(JsonView jsonValue) {
       m_categories.push_back(categoriesJsonList[categoriesIndex].AsObject());
     }
     m_categoriesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("fulfillmentOptionSummaries")) {
-    Aws::Utils::Array<JsonView> fulfillmentOptionSummariesJsonList = jsonValue.GetArray("fulfillmentOptionSummaries");
-    for (unsigned fulfillmentOptionSummariesIndex = 0; fulfillmentOptionSummariesIndex < fulfillmentOptionSummariesJsonList.GetLength();
-         ++fulfillmentOptionSummariesIndex) {
-      m_fulfillmentOptionSummaries.push_back(fulfillmentOptionSummariesJsonList[fulfillmentOptionSummariesIndex].AsObject());
-    }
-    m_fulfillmentOptionSummariesHasBeenSet = true;
   }
   if (jsonValue.ValueExists("badges")) {
     Aws::Utils::Array<JsonView> badgesJsonList = jsonValue.GetArray("badges");
@@ -108,6 +108,16 @@ JsonValue ListingSummary::Jsonize() const {
     payload.WithObject("publisher", m_publisher.Jsonize());
   }
 
+  if (m_fulfillmentOptionSummariesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> fulfillmentOptionSummariesJsonList(m_fulfillmentOptionSummaries.size());
+    for (unsigned fulfillmentOptionSummariesIndex = 0; fulfillmentOptionSummariesIndex < fulfillmentOptionSummariesJsonList.GetLength();
+         ++fulfillmentOptionSummariesIndex) {
+      fulfillmentOptionSummariesJsonList[fulfillmentOptionSummariesIndex].AsObject(
+          m_fulfillmentOptionSummaries[fulfillmentOptionSummariesIndex].Jsonize());
+    }
+    payload.WithArray("fulfillmentOptionSummaries", std::move(fulfillmentOptionSummariesJsonList));
+  }
+
   if (m_catalogHasBeenSet) {
     payload.WithString("catalog", m_catalog);
   }
@@ -126,16 +136,6 @@ JsonValue ListingSummary::Jsonize() const {
       categoriesJsonList[categoriesIndex].AsObject(m_categories[categoriesIndex].Jsonize());
     }
     payload.WithArray("categories", std::move(categoriesJsonList));
-  }
-
-  if (m_fulfillmentOptionSummariesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> fulfillmentOptionSummariesJsonList(m_fulfillmentOptionSummaries.size());
-    for (unsigned fulfillmentOptionSummariesIndex = 0; fulfillmentOptionSummariesIndex < fulfillmentOptionSummariesJsonList.GetLength();
-         ++fulfillmentOptionSummariesIndex) {
-      fulfillmentOptionSummariesJsonList[fulfillmentOptionSummariesIndex].AsObject(
-          m_fulfillmentOptionSummaries[fulfillmentOptionSummariesIndex].Jsonize());
-    }
-    payload.WithArray("fulfillmentOptionSummaries", std::move(fulfillmentOptionSummariesJsonList));
   }
 
   if (m_badgesHasBeenSet) {

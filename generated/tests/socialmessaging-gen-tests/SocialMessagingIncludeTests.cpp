@@ -16,6 +16,8 @@
 #include <aws/socialmessaging/internal/SocialMessagingEndpointRules.h>
 #include <aws/socialmessaging/model/AssociateWhatsAppBusinessAccountRequest.h>
 #include <aws/socialmessaging/model/AssociateWhatsAppBusinessAccountResult.h>
+#include <aws/socialmessaging/model/CreateWhatsAppDatasetRequest.h>
+#include <aws/socialmessaging/model/CreateWhatsAppDatasetResult.h>
 #include <aws/socialmessaging/model/CreateWhatsAppFlowRequest.h>
 #include <aws/socialmessaging/model/CreateWhatsAppFlowResult.h>
 #include <aws/socialmessaging/model/CreateWhatsAppMessageTemplateFromLibraryRequest.h>
@@ -83,6 +85,8 @@
 #include <aws/socialmessaging/model/RegistrationStatus.h>
 #include <aws/socialmessaging/model/S3File.h>
 #include <aws/socialmessaging/model/S3PresignedUrl.h>
+#include <aws/socialmessaging/model/SendWhatsAppConversionEventRequest.h>
+#include <aws/socialmessaging/model/SendWhatsAppConversionEventResult.h>
 #include <aws/socialmessaging/model/SendWhatsAppMessageRequest.h>
 #include <aws/socialmessaging/model/SendWhatsAppMessageResult.h>
 #include <aws/socialmessaging/model/Tag.h>

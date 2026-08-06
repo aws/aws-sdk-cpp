@@ -78,6 +78,10 @@ Job& Job::operator=(JsonView jsonValue) {
     m_videoCapture = jsonValue.GetBool("videoCapture");
     m_videoCaptureHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("insights")) {
+    m_insights = jsonValue.GetObject("insights");
+    m_insightsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -142,6 +146,10 @@ JsonValue Job::Jsonize() const {
 
   if (m_videoCaptureHasBeenSet) {
     payload.WithBool("videoCapture", m_videoCapture);
+  }
+
+  if (m_insightsHasBeenSet) {
+    payload.WithObject("insights", m_insights.Jsonize());
   }
 
   return payload;

@@ -5,6 +5,9 @@
 
 #pragma once
 #include <aws/backup/BackupClient.h>
+#include <aws/backup/model/ListBackupAccessPointsByRecoveryPointPaginationTraits.h>
+#include <aws/backup/model/ListBackupAccessPointsByResourcePaginationTraits.h>
+#include <aws/backup/model/ListBackupAccessPointsPaginationTraits.h>
 #include <aws/backup/model/ListBackupJobSummariesPaginationTraits.h>
 #include <aws/backup/model/ListBackupJobsPaginationTraits.h>
 #include <aws/backup/model/ListBackupPlanTemplatesPaginationTraits.h>
@@ -39,6 +42,14 @@
 namespace Aws {
 namespace Backup {
 
+using ListBackupAccessPointsPaginator = Aws::Utils::Pagination::Paginator<BackupClient, Model::ListBackupAccessPointsRequest,
+                                                                          Pagination::ListBackupAccessPointsPaginationTraits<BackupClient>>;
+using ListBackupAccessPointsByRecoveryPointPaginator =
+    Aws::Utils::Pagination::Paginator<BackupClient, Model::ListBackupAccessPointsByRecoveryPointRequest,
+                                      Pagination::ListBackupAccessPointsByRecoveryPointPaginationTraits<BackupClient>>;
+using ListBackupAccessPointsByResourcePaginator =
+    Aws::Utils::Pagination::Paginator<BackupClient, Model::ListBackupAccessPointsByResourceRequest,
+                                      Pagination::ListBackupAccessPointsByResourcePaginationTraits<BackupClient>>;
 using ListBackupJobsPaginator =
     Aws::Utils::Pagination::Paginator<BackupClient, Model::ListBackupJobsRequest, Pagination::ListBackupJobsPaginationTraits<BackupClient>>;
 using ListBackupJobSummariesPaginator = Aws::Utils::Pagination::Paginator<BackupClient, Model::ListBackupJobSummariesRequest,

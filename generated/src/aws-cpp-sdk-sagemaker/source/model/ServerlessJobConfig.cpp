@@ -47,6 +47,10 @@ ServerlessJobConfig& ServerlessJobConfig::operator=(JsonView jsonValue) {
     m_evaluatorArn = jsonValue.GetString("EvaluatorArn");
     m_evaluatorArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SequenceLength")) {
+    m_sequenceLength = jsonValue.GetString("SequenceLength");
+    m_sequenceLengthHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -79,6 +83,10 @@ JsonValue ServerlessJobConfig::Jsonize() const {
 
   if (m_evaluatorArnHasBeenSet) {
     payload.WithString("EvaluatorArn", m_evaluatorArn);
+  }
+
+  if (m_sequenceLengthHasBeenSet) {
+    payload.WithString("SequenceLength", m_sequenceLength);
   }
 
   return payload;

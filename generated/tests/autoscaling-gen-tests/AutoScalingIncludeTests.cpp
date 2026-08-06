@@ -180,6 +180,7 @@
 #include <aws/autoscaling/model/NetworkBandwidthGbpsRequest.h>
 #include <aws/autoscaling/model/NetworkInterfaceCountRequest.h>
 #include <aws/autoscaling/model/NotificationConfiguration.h>
+#include <aws/autoscaling/model/Operator.h>
 #include <aws/autoscaling/model/PerformanceFactorReferenceRequest.h>
 #include <aws/autoscaling/model/PredefinedLoadMetricType.h>
 #include <aws/autoscaling/model/PredefinedMetricPairType.h>

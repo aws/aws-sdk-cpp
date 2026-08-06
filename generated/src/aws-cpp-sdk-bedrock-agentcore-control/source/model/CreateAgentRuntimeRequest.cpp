@@ -73,6 +73,10 @@ Aws::String CreateAgentRuntimeRequest::SerializePayload() const {
     payload.WithArray("filesystemConfigurations", std::move(filesystemConfigurationsJsonList));
   }
 
+  if (m_capacityProviderConfigurationHasBeenSet) {
+    payload.WithObject("capacityProviderConfiguration", m_capacityProviderConfiguration.Jsonize());
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {

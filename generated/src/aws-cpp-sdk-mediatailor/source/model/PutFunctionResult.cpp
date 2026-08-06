@@ -42,6 +42,10 @@ PutFunctionResult& PutFunctionResult::operator=(const Aws::AmazonWebServiceResul
     m_customOutputConfiguration = jsonValue.GetObject("CustomOutputConfiguration");
     m_customOutputConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ConcurrentExecutorConfiguration")) {
+    m_concurrentExecutorConfiguration = jsonValue.GetObject("ConcurrentExecutorConfiguration");
+    m_concurrentExecutorConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("SequentialExecutorConfiguration")) {
     m_sequentialExecutorConfiguration = jsonValue.GetObject("SequentialExecutorConfiguration");
     m_sequentialExecutorConfigurationHasBeenSet = true;

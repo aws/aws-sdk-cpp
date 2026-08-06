@@ -15,6 +15,7 @@
 #include <aws/autoscaling/model/InstanceMaintenancePolicy.h>
 #include <aws/autoscaling/model/LaunchTemplateSpecification.h>
 #include <aws/autoscaling/model/MixedInstancesPolicy.h>
+#include <aws/autoscaling/model/Operator.h>
 #include <aws/autoscaling/model/SuspendedProcess.h>
 #include <aws/autoscaling/model/TagDescription.h>
 #include <aws/autoscaling/model/TrafficSourceIdentifier.h>
@@ -843,6 +844,25 @@ class AutoScalingGroup {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The entity that manages the Auto Scaling group, if applicable. When set, only
+   * the designated operator can make changes to the group configuration.</p>
+   */
+  inline const Operator& GetOperator() const { return m_operator; }
+  inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
+  template <typename OperatorT = Operator>
+  void SetOperator(OperatorT&& value) {
+    m_operatorHasBeenSet = true;
+    m_operator = std::forward<OperatorT>(value);
+  }
+  template <typename OperatorT = Operator>
+  AutoScalingGroup& WithOperator(OperatorT&& value) {
+    SetOperator(std::forward<OperatorT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_autoScalingGroupName;
 
@@ -925,6 +945,8 @@ class AutoScalingGroup {
   CapacityReservationSpecification m_capacityReservationSpecification;
 
   InstanceLifecyclePolicy m_instanceLifecyclePolicy;
+
+  Operator m_operator;
   bool m_autoScalingGroupNameHasBeenSet = false;
   bool m_autoScalingGroupARNHasBeenSet = false;
   bool m_launchConfigurationNameHasBeenSet = false;
@@ -966,6 +988,7 @@ class AutoScalingGroup {
   bool m_availabilityZoneImpairmentPolicyHasBeenSet = false;
   bool m_capacityReservationSpecificationHasBeenSet = false;
   bool m_instanceLifecyclePolicyHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
 };
 
 }  // namespace Model

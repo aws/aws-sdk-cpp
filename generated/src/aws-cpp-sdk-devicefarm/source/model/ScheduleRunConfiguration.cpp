@@ -77,6 +77,13 @@ ScheduleRunConfiguration& ScheduleRunConfiguration::operator=(JsonView jsonValue
     m_executionRoleArn = jsonValue.GetString("executionRoleArn");
     m_executionRoleArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("insightsTypes")) {
+    Aws::Utils::Array<JsonView> insightsTypesJsonList = jsonValue.GetArray("insightsTypes");
+    for (unsigned insightsTypesIndex = 0; insightsTypesIndex < insightsTypesJsonList.GetLength(); ++insightsTypesIndex) {
+      m_insightsTypes.push_back(InsightsTypeMapper::GetInsightsTypeForName(insightsTypesJsonList[insightsTypesIndex].AsString()));
+    }
+    m_insightsTypesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -143,6 +150,14 @@ JsonValue ScheduleRunConfiguration::Jsonize() const {
 
   if (m_executionRoleArnHasBeenSet) {
     payload.WithString("executionRoleArn", m_executionRoleArn);
+  }
+
+  if (m_insightsTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> insightsTypesJsonList(m_insightsTypes.size());
+    for (unsigned insightsTypesIndex = 0; insightsTypesIndex < insightsTypesJsonList.GetLength(); ++insightsTypesIndex) {
+      insightsTypesJsonList[insightsTypesIndex].AsString(InsightsTypeMapper::GetNameForInsightsType(m_insightsTypes[insightsTypesIndex]));
+    }
+    payload.WithArray("insightsTypes", std::move(insightsTypesJsonList));
   }
 
   return payload;

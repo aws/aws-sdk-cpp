@@ -186,6 +186,26 @@ class LinkedWhatsAppBusinessAccountSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Meta Conversions API dataset ID associated with this WhatsApp Business
+   * Account. This value is a numeric string of 10 to 20 digits. This field is not
+   * present when no dataset has been created for this account.</p>
+   */
+  inline const Aws::String& GetDatasetId() const { return m_datasetId; }
+  inline bool DatasetIdHasBeenSet() const { return m_datasetIdHasBeenSet; }
+  template <typename DatasetIdT = Aws::String>
+  void SetDatasetId(DatasetIdT&& value) {
+    m_datasetIdHasBeenSet = true;
+    m_datasetId = std::forward<DatasetIdT>(value);
+  }
+  template <typename DatasetIdT = Aws::String>
+  LinkedWhatsAppBusinessAccountSummary& WithDatasetId(DatasetIdT&& value) {
+    SetDatasetId(std::forward<DatasetIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -202,6 +222,8 @@ class LinkedWhatsAppBusinessAccountSummary {
   Aws::Vector<WhatsAppBusinessAccountEventDestination> m_eventDestinations;
 
   Aws::String m_marketingMessagesOnboardingStatus;
+
+  Aws::String m_datasetId;
   bool m_arnHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_wabaIdHasBeenSet = false;
@@ -210,6 +232,7 @@ class LinkedWhatsAppBusinessAccountSummary {
   bool m_wabaNameHasBeenSet = false;
   bool m_eventDestinationsHasBeenSet = false;
   bool m_marketingMessagesOnboardingStatusHasBeenSet = false;
+  bool m_datasetIdHasBeenSet = false;
 };
 
 }  // namespace Model

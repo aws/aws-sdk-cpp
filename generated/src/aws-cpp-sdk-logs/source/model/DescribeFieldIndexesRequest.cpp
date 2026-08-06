@@ -24,6 +24,15 @@ Aws::String DescribeFieldIndexesRequest::SerializePayload() const {
     payload.WithArray("logGroupIdentifiers", std::move(logGroupIdentifiersJsonList));
   }
 
+  if (m_indexCategoriesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> indexCategoriesJsonList(m_indexCategories.size());
+    for (unsigned indexCategoriesIndex = 0; indexCategoriesIndex < indexCategoriesJsonList.GetLength(); ++indexCategoriesIndex) {
+      indexCategoriesJsonList[indexCategoriesIndex].AsString(
+          IndexCategoryMapper::GetNameForIndexCategory(m_indexCategories[indexCategoriesIndex]));
+    }
+    payload.WithArray("indexCategories", std::move(indexCategoriesJsonList));
+  }
+
   if (m_nextTokenHasBeenSet) {
     payload.WithString("nextToken", m_nextToken);
   }

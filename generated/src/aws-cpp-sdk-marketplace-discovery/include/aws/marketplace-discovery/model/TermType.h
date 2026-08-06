@@ -23,7 +23,8 @@ enum class TermType {
   RenewalTerm,
   SupportTerm,
   ValidityTerm,
-  VariablePaymentTerm
+  VariablePaymentTerm,
+  NetPaymentTerm
 };
 
 namespace TermTypeMapper {

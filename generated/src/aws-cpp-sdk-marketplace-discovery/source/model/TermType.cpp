@@ -27,6 +27,7 @@ static const int RenewalTerm_HASH = HashingUtils::HashString("RenewalTerm");
 static const int SupportTerm_HASH = HashingUtils::HashString("SupportTerm");
 static const int ValidityTerm_HASH = HashingUtils::HashString("ValidityTerm");
 static const int VariablePaymentTerm_HASH = HashingUtils::HashString("VariablePaymentTerm");
+static const int NetPaymentTerm_HASH = HashingUtils::HashString("NetPaymentTerm");
 
 TermType GetTermTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -54,6 +55,8 @@ TermType GetTermTypeForName(const Aws::String& name) {
     return TermType::ValidityTerm;
   } else if (hashCode == VariablePaymentTerm_HASH) {
     return TermType::VariablePaymentTerm;
+  } else if (hashCode == NetPaymentTerm_HASH) {
+    return TermType::NetPaymentTerm;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -92,6 +95,8 @@ Aws::String GetNameForTermType(TermType enumValue) {
       return "ValidityTerm";
     case TermType::VariablePaymentTerm:
       return "VariablePaymentTerm";
+    case TermType::NetPaymentTerm:
+      return "NetPaymentTerm";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

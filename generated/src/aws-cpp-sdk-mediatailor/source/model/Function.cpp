@@ -38,6 +38,10 @@ Function& Function::operator=(JsonView jsonValue) {
     m_customOutputConfiguration = jsonValue.GetObject("CustomOutputConfiguration");
     m_customOutputConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ConcurrentExecutorConfiguration")) {
+    m_concurrentExecutorConfiguration = jsonValue.GetObject("ConcurrentExecutorConfiguration");
+    m_concurrentExecutorConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("SequentialExecutorConfiguration")) {
     m_sequentialExecutorConfiguration = jsonValue.GetObject("SequentialExecutorConfiguration");
     m_sequentialExecutorConfigurationHasBeenSet = true;
@@ -77,6 +81,10 @@ JsonValue Function::Jsonize() const {
 
   if (m_customOutputConfigurationHasBeenSet) {
     payload.WithObject("CustomOutputConfiguration", m_customOutputConfiguration.Jsonize());
+  }
+
+  if (m_concurrentExecutorConfigurationHasBeenSet) {
+    payload.WithObject("ConcurrentExecutorConfiguration", m_concurrentExecutorConfiguration.Jsonize());
   }
 
   if (m_sequentialExecutorConfigurationHasBeenSet) {

@@ -29,6 +29,7 @@
 #include <aws/bedrock-agentcore/model/CreatePaymentSessionResult.h>
 #include <aws/bedrock-agentcore/model/DeleteABTestResult.h>
 #include <aws/bedrock-agentcore/model/DeleteBatchEvaluationResult.h>
+#include <aws/bedrock-agentcore/model/DeleteCapacityProviderSessionResult.h>
 #include <aws/bedrock-agentcore/model/DeleteEventResult.h>
 #include <aws/bedrock-agentcore/model/DeleteMemoryRecordResult.h>
 #include <aws/bedrock-agentcore/model/DeletePaymentInstrumentResult.h>
@@ -128,6 +129,7 @@ class CreatePaymentInstrumentRequest;
 class CreatePaymentSessionRequest;
 class DeleteABTestRequest;
 class DeleteBatchEvaluationRequest;
+class DeleteCapacityProviderSessionRequest;
 class DeleteEventRequest;
 class DeleteMemoryRecordRequest;
 class DeletePaymentInstrumentRequest;
@@ -196,6 +198,7 @@ typedef Aws::Utils::Outcome<CreatePaymentInstrumentResult, BedrockAgentCoreError
 typedef Aws::Utils::Outcome<CreatePaymentSessionResult, BedrockAgentCoreError> CreatePaymentSessionOutcome;
 typedef Aws::Utils::Outcome<DeleteABTestResult, BedrockAgentCoreError> DeleteABTestOutcome;
 typedef Aws::Utils::Outcome<DeleteBatchEvaluationResult, BedrockAgentCoreError> DeleteBatchEvaluationOutcome;
+typedef Aws::Utils::Outcome<DeleteCapacityProviderSessionResult, BedrockAgentCoreError> DeleteCapacityProviderSessionOutcome;
 typedef Aws::Utils::Outcome<DeleteEventResult, BedrockAgentCoreError> DeleteEventOutcome;
 typedef Aws::Utils::Outcome<DeleteMemoryRecordResult, BedrockAgentCoreError> DeleteMemoryRecordOutcome;
 typedef Aws::Utils::Outcome<DeletePaymentInstrumentResult, BedrockAgentCoreError> DeletePaymentInstrumentOutcome;
@@ -264,6 +267,7 @@ typedef std::future<CreatePaymentInstrumentOutcome> CreatePaymentInstrumentOutco
 typedef std::future<CreatePaymentSessionOutcome> CreatePaymentSessionOutcomeCallable;
 typedef std::future<DeleteABTestOutcome> DeleteABTestOutcomeCallable;
 typedef std::future<DeleteBatchEvaluationOutcome> DeleteBatchEvaluationOutcomeCallable;
+typedef std::future<DeleteCapacityProviderSessionOutcome> DeleteCapacityProviderSessionOutcomeCallable;
 typedef std::future<DeleteEventOutcome> DeleteEventOutcomeCallable;
 typedef std::future<DeleteMemoryRecordOutcome> DeleteMemoryRecordOutcomeCallable;
 typedef std::future<DeletePaymentInstrumentOutcome> DeletePaymentInstrumentOutcomeCallable;
@@ -355,6 +359,10 @@ typedef std::function<void(const BedrockAgentCoreClient*, const Model::DeleteABT
 typedef std::function<void(const BedrockAgentCoreClient*, const Model::DeleteBatchEvaluationRequest&,
                            const Model::DeleteBatchEvaluationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteBatchEvaluationResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreClient*, const Model::DeleteCapacityProviderSessionRequest&,
+                           const Model::DeleteCapacityProviderSessionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteCapacityProviderSessionResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreClient*, const Model::DeleteEventRequest&, const Model::DeleteEventOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteEventResponseReceivedHandler;

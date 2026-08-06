@@ -96,7 +96,8 @@ class ListRecoveryPointsByResourceRequest : public BackupRequest {
    * set to <code>TRUE</code>, the response will contain recovery points associated
    * with the selected resources that are managed by Backup.</p> <p>If this is set to
    * <code>FALSE</code>, the response will contain all recovery points associated
-   * with the selected resource.</p> <p>Type: Boolean</p>
+   * with the selected resource, except for EBS snapshots copied within the same
+   * Region and account.</p> <p>Type: Boolean</p>
    */
   inline bool GetManagedByAWSBackupOnly() const { return m_managedByAWSBackupOnly; }
   inline bool ManagedByAWSBackupOnlyHasBeenSet() const { return m_managedByAWSBackupOnlyHasBeenSet; }

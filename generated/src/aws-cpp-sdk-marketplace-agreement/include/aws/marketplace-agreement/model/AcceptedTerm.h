@@ -10,6 +10,7 @@
 #include <aws/marketplace-agreement/model/FixedUpfrontPricingTerm.h>
 #include <aws/marketplace-agreement/model/FreeTrialPricingTerm.h>
 #include <aws/marketplace-agreement/model/LegalTerm.h>
+#include <aws/marketplace-agreement/model/NetPaymentTerm.h>
 #include <aws/marketplace-agreement/model/PaymentScheduleTerm.h>
 #include <aws/marketplace-agreement/model/RecurringPaymentTerm.h>
 #include <aws/marketplace-agreement/model/RenewalTerm.h>
@@ -279,6 +280,25 @@ class AcceptedTerm {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Defines the net payment due period for the agreement, specifying when payment
+   * is due after an invoice is issued.</p>
+   */
+  inline const NetPaymentTerm& GetNetPaymentTerm() const { return m_netPaymentTerm; }
+  inline bool NetPaymentTermHasBeenSet() const { return m_netPaymentTermHasBeenSet; }
+  template <typename NetPaymentTermT = NetPaymentTerm>
+  void SetNetPaymentTerm(NetPaymentTermT&& value) {
+    m_netPaymentTermHasBeenSet = true;
+    m_netPaymentTerm = std::forward<NetPaymentTermT>(value);
+  }
+  template <typename NetPaymentTermT = NetPaymentTerm>
+  AcceptedTerm& WithNetPaymentTerm(NetPaymentTermT&& value) {
+    SetNetPaymentTerm(std::forward<NetPaymentTermT>(value));
+    return *this;
+  }
+  ///@}
  private:
   LegalTerm m_legalTerm;
 
@@ -303,6 +323,8 @@ class AcceptedTerm {
   FixedUpfrontPricingTerm m_fixedUpfrontPricingTerm;
 
   VariablePaymentTerm m_variablePaymentTerm;
+
+  NetPaymentTerm m_netPaymentTerm;
   bool m_legalTermHasBeenSet = false;
   bool m_supportTermHasBeenSet = false;
   bool m_renewalTermHasBeenSet = false;
@@ -315,6 +337,7 @@ class AcceptedTerm {
   bool m_freeTrialPricingTermHasBeenSet = false;
   bool m_fixedUpfrontPricingTermHasBeenSet = false;
   bool m_variablePaymentTermHasBeenSet = false;
+  bool m_netPaymentTermHasBeenSet = false;
 };
 
 }  // namespace Model

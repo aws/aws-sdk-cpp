@@ -19,6 +19,12 @@ Aws::String DeleteAgentRuntimeRequest::SerializePayload() const { return {}; }
 
 void DeleteAgentRuntimeRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;
+  if (m_agentRuntimeVersionHasBeenSet) {
+    ss << m_agentRuntimeVersion;
+    uri.AddQueryStringParameter("version", ss.str());
+    ss.str("");
+  }
+
   if (m_clientTokenHasBeenSet) {
     ss << m_clientToken;
     uri.AddQueryStringParameter("clientToken", ss.str());

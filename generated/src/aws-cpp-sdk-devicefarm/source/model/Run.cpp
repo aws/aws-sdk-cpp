@@ -162,6 +162,17 @@ Run& Run::operator=(JsonView jsonValue) {
     }
     m_environmentVariablesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("insightsTypes")) {
+    Aws::Utils::Array<JsonView> insightsTypesJsonList = jsonValue.GetArray("insightsTypes");
+    for (unsigned insightsTypesIndex = 0; insightsTypesIndex < insightsTypesJsonList.GetLength(); ++insightsTypesIndex) {
+      m_insightsTypes.push_back(InsightsTypeMapper::GetInsightsTypeForName(insightsTypesJsonList[insightsTypesIndex].AsString()));
+    }
+    m_insightsTypesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("insights")) {
+    m_insights = jsonValue.GetObject("insights");
+    m_insightsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -311,6 +322,18 @@ JsonValue Run::Jsonize() const {
       environmentVariablesJsonList[environmentVariablesIndex].AsObject(m_environmentVariables[environmentVariablesIndex].Jsonize());
     }
     payload.WithArray("environmentVariables", std::move(environmentVariablesJsonList));
+  }
+
+  if (m_insightsTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> insightsTypesJsonList(m_insightsTypes.size());
+    for (unsigned insightsTypesIndex = 0; insightsTypesIndex < insightsTypesJsonList.GetLength(); ++insightsTypesIndex) {
+      insightsTypesJsonList[insightsTypesIndex].AsString(InsightsTypeMapper::GetNameForInsightsType(m_insightsTypes[insightsTypesIndex]));
+    }
+    payload.WithArray("insightsTypes", std::move(insightsTypesJsonList));
+  }
+
+  if (m_insightsHasBeenSet) {
+    payload.WithObject("insights", m_insights.Jsonize());
   }
 
   return payload;

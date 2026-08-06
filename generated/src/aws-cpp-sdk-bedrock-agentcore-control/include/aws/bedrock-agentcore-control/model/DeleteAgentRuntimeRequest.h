@@ -54,6 +54,26 @@ class DeleteAgentRuntimeRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
+   * <p>The version of the AgentCore Runtime to delete. When you provide this value,
+   * only that version is deleted. When you omit it, the entire AgentCore Runtime and
+   * all of its versions are deleted.</p>
+   */
+  inline const Aws::String& GetAgentRuntimeVersion() const { return m_agentRuntimeVersion; }
+  inline bool AgentRuntimeVersionHasBeenSet() const { return m_agentRuntimeVersionHasBeenSet; }
+  template <typename AgentRuntimeVersionT = Aws::String>
+  void SetAgentRuntimeVersion(AgentRuntimeVersionT&& value) {
+    m_agentRuntimeVersionHasBeenSet = true;
+    m_agentRuntimeVersion = std::forward<AgentRuntimeVersionT>(value);
+  }
+  template <typename AgentRuntimeVersionT = Aws::String>
+  DeleteAgentRuntimeRequest& WithAgentRuntimeVersion(AgentRuntimeVersionT&& value) {
+    SetAgentRuntimeVersion(std::forward<AgentRuntimeVersionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A unique, case-sensitive identifier to ensure that the operation completes no
    * more than one time. If this token matches a previous request, the service
    * ignores the request but does not return an error.</p>
@@ -74,8 +94,11 @@ class DeleteAgentRuntimeRequest : public BedrockAgentCoreControlRequest {
  private:
   Aws::String m_agentRuntimeId;
 
+  Aws::String m_agentRuntimeVersion;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_agentRuntimeIdHasBeenSet = false;
+  bool m_agentRuntimeVersionHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

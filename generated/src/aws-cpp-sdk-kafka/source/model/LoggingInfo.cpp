@@ -18,6 +18,10 @@ namespace Model {
 LoggingInfo::LoggingInfo(JsonView jsonValue) { *this = jsonValue; }
 
 LoggingInfo& LoggingInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("authorizerLogs")) {
+    m_authorizerLogs = jsonValue.GetObject("authorizerLogs");
+    m_authorizerLogsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("brokerLogs")) {
     m_brokerLogs = jsonValue.GetObject("brokerLogs");
     m_brokerLogsHasBeenSet = true;
@@ -27,6 +31,10 @@ LoggingInfo& LoggingInfo::operator=(JsonView jsonValue) {
 
 JsonValue LoggingInfo::Jsonize() const {
   JsonValue payload;
+
+  if (m_authorizerLogsHasBeenSet) {
+    payload.WithObject("authorizerLogs", m_authorizerLogs.Jsonize());
+  }
 
   if (m_brokerLogsHasBeenSet) {
     payload.WithObject("brokerLogs", m_brokerLogs.Jsonize());

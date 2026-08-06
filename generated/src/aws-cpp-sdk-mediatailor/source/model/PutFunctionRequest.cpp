@@ -31,6 +31,10 @@ Aws::String PutFunctionRequest::SerializePayload() const {
     payload.WithObject("CustomOutputConfiguration", m_customOutputConfiguration.Jsonize());
   }
 
+  if (m_concurrentExecutorConfigurationHasBeenSet) {
+    payload.WithObject("ConcurrentExecutorConfiguration", m_concurrentExecutorConfiguration.Jsonize());
+  }
+
   if (m_sequentialExecutorConfigurationHasBeenSet) {
     payload.WithObject("SequentialExecutorConfiguration", m_sequentialExecutorConfiguration.Jsonize());
   }

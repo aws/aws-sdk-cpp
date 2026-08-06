@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/logs/CloudWatchLogsRequest.h>
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
+#include <aws/logs/model/IndexCategory.h>
 
 #include <utility>
 
@@ -57,6 +58,48 @@ class DescribeFieldIndexesRequest : public CloudWatchLogsRequest {
   ///@}
 
   ///@{
+  /**
+   * <p>The index categories to return. The following values are supported:</p> <ul>
+   * <li> <p> <code>DEFAULT</code>: Fields that CloudWatch Logs indexes by default.
+   * Examples include <code>@logStream</code> and <code>@data_format</code>.</p>
+   * </li> <li> <p> <code>CUSTOM</code>: Fields that you added manually to the field
+   * index policy. CloudWatch Logs always indexes these fields. These fields count
+   * toward the quota of 20 fields for each log group.</p> </li> <li> <p>
+   * <code>AUTO</code>: Fields that CloudWatch Logs indexes automatically based on
+   * your query patterns and usage. These fields do not count toward the field index
+   * quota. CloudWatch Logs might update these fields based on changes in your query
+   * patterns. To keep a field indexed permanently, add it to an account-level or
+   * log-group level field index policy.</p> </li> <li> <p> <code>INACTIVE</code>:
+   * Fields that CloudWatch Logs indexed before but does not index now. This happens
+   * if you remove a field from the field index policy or if CloudWatch Logs
+   * automatically selects a different field based on your queries.</p> </li> </ul>
+   * <p>If you omit this parameter, the response includes the <code>DEFAULT</code>,
+   * <code>CUSTOM</code>, and <code>INACTIVE</code> categories.</p> <p>For more
+   * information about automatically indexed fields and using the <code>AUTO</code>
+   * category, see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing-Automatic.html">Automatically
+   * indexed fields</a>.</p>
+   */
+  inline const Aws::Vector<IndexCategory>& GetIndexCategories() const { return m_indexCategories; }
+  inline bool IndexCategoriesHasBeenSet() const { return m_indexCategoriesHasBeenSet; }
+  template <typename IndexCategoriesT = Aws::Vector<IndexCategory>>
+  void SetIndexCategories(IndexCategoriesT&& value) {
+    m_indexCategoriesHasBeenSet = true;
+    m_indexCategories = std::forward<IndexCategoriesT>(value);
+  }
+  template <typename IndexCategoriesT = Aws::Vector<IndexCategory>>
+  DescribeFieldIndexesRequest& WithIndexCategories(IndexCategoriesT&& value) {
+    SetIndexCategories(std::forward<IndexCategoriesT>(value));
+    return *this;
+  }
+  inline DescribeFieldIndexesRequest& AddIndexCategories(IndexCategory value) {
+    m_indexCategoriesHasBeenSet = true;
+    m_indexCategories.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
@@ -74,8 +117,11 @@ class DescribeFieldIndexesRequest : public CloudWatchLogsRequest {
  private:
   Aws::Vector<Aws::String> m_logGroupIdentifiers;
 
+  Aws::Vector<IndexCategory> m_indexCategories;
+
   Aws::String m_nextToken;
   bool m_logGroupIdentifiersHasBeenSet = false;
+  bool m_indexCategoriesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

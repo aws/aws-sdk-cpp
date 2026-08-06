@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
+#include <aws/mediatailor/model/ConcurrentExecutorConfiguration.h>
 #include <aws/mediatailor/model/CustomOutputConfiguration.h>
 #include <aws/mediatailor/model/FunctionType.h>
 #include <aws/mediatailor/model/HttpRequestConfiguration.h>
@@ -131,6 +132,24 @@ class Function {
 
   ///@{
   /**
+   * <p>The configuration for a <code>CONCURRENT_EXECUTOR</code> function.</p>
+   */
+  inline const ConcurrentExecutorConfiguration& GetConcurrentExecutorConfiguration() const { return m_concurrentExecutorConfiguration; }
+  inline bool ConcurrentExecutorConfigurationHasBeenSet() const { return m_concurrentExecutorConfigurationHasBeenSet; }
+  template <typename ConcurrentExecutorConfigurationT = ConcurrentExecutorConfiguration>
+  void SetConcurrentExecutorConfiguration(ConcurrentExecutorConfigurationT&& value) {
+    m_concurrentExecutorConfigurationHasBeenSet = true;
+    m_concurrentExecutorConfiguration = std::forward<ConcurrentExecutorConfigurationT>(value);
+  }
+  template <typename ConcurrentExecutorConfigurationT = ConcurrentExecutorConfiguration>
+  Function& WithConcurrentExecutorConfiguration(ConcurrentExecutorConfigurationT&& value) {
+    SetConcurrentExecutorConfiguration(std::forward<ConcurrentExecutorConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The configuration for a <code>SEQUENTIAL_EXECUTOR</code> function.</p>
    */
   inline const SequentialExecutorConfiguration& GetSequentialExecutorConfiguration() const { return m_sequentialExecutorConfiguration; }
@@ -203,6 +222,8 @@ class Function {
 
   CustomOutputConfiguration m_customOutputConfiguration;
 
+  ConcurrentExecutorConfiguration m_concurrentExecutorConfiguration;
+
   SequentialExecutorConfiguration m_sequentialExecutorConfiguration;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
@@ -213,6 +234,7 @@ class Function {
   bool m_descriptionHasBeenSet = false;
   bool m_httpRequestConfigurationHasBeenSet = false;
   bool m_customOutputConfigurationHasBeenSet = false;
+  bool m_concurrentExecutorConfigurationHasBeenSet = false;
   bool m_sequentialExecutorConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_arnHasBeenSet = false;

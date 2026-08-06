@@ -301,6 +301,11 @@ AutoScalingGroup& AutoScalingGroup::operator=(const XmlNode& xmlNode) {
       m_instanceLifecyclePolicy = instanceLifecyclePolicyNode;
       m_instanceLifecyclePolicyHasBeenSet = true;
     }
+    XmlNode operatorNode = resultNode.FirstChild("Operator");
+    if (!operatorNode.IsNull()) {
+      m_operator = operatorNode;
+      m_operatorHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -539,6 +544,12 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
     instanceLifecyclePolicyLocationAndMemberSs << location << index << locationValue << ".InstanceLifecyclePolicy";
     m_instanceLifecyclePolicy.OutputToStream(oStream, instanceLifecyclePolicyLocationAndMemberSs.str().c_str());
   }
+
+  if (m_operatorHasBeenSet) {
+    Aws::StringStream operatorLocationAndMemberSs;
+    operatorLocationAndMemberSs << location << index << locationValue << ".Operator";
+    m_operator.OutputToStream(oStream, operatorLocationAndMemberSs.str().c_str());
+  }
 }
 
 void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -724,6 +735,11 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
     Aws::String instanceLifecyclePolicyLocationAndMember(location);
     instanceLifecyclePolicyLocationAndMember += ".InstanceLifecyclePolicy";
     m_instanceLifecyclePolicy.OutputToStream(oStream, instanceLifecyclePolicyLocationAndMember.c_str());
+  }
+  if (m_operatorHasBeenSet) {
+    Aws::String operatorLocationAndMember(location);
+    operatorLocationAndMember += ".Operator";
+    m_operator.OutputToStream(oStream, operatorLocationAndMember.c_str());
   }
 }
 

@@ -2934,6 +2934,36 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Lists the free trial status of Security Hub features. A delegated Security
+   * Hub administrator can list the status for accounts in its organization. Any
+   * other account can list the status only for itself. Free trial status remains
+   * available after a feature is disabled.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListFreeTrialStatusesV2">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListFreeTrialStatusesV2Outcome ListFreeTrialStatusesV2(const Model::ListFreeTrialStatusesV2Request& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListFreeTrialStatusesV2 that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListFreeTrialStatusesV2RequestT = Model::ListFreeTrialStatusesV2Request>
+  Model::ListFreeTrialStatusesV2OutcomeCallable ListFreeTrialStatusesV2Callable(const ListFreeTrialStatusesV2RequestT& request = {}) const {
+    return SubmitCallable(&SecurityHubClient::ListFreeTrialStatusesV2, request);
+  }
+
+  /**
+   * An Async wrapper for ListFreeTrialStatusesV2 that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListFreeTrialStatusesV2RequestT = Model::ListFreeTrialStatusesV2Request>
+  void ListFreeTrialStatusesV2Async(const ListFreeTrialStatusesV2ResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                    const ListFreeTrialStatusesV2RequestT& request = {}) const {
+    return SubmitAsync(&SecurityHubClient::ListFreeTrialStatusesV2, request, handler, context);
+  }
+
+  /**
    *  <p>We recommend using Organizations instead of Security Hub CSPM
    * invitations to manage your member accounts. For information, see <a
    * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing

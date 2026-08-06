@@ -17,6 +17,7 @@ namespace ServerSideEncryptionMapper {
 
 static const int AES256_HASH = HashingUtils::HashString("AES256");
 static const int aws_fsx_HASH = HashingUtils::HashString("aws:fsx");
+static const int aws_backup_HASH = HashingUtils::HashString("aws:backup");
 static const int aws_kms_HASH = HashingUtils::HashString("aws:kms");
 static const int aws_kms_dsse_HASH = HashingUtils::HashString("aws:kms:dsse");
 
@@ -26,6 +27,8 @@ ServerSideEncryption GetServerSideEncryptionForName(const Aws::String& name) {
     return ServerSideEncryption::AES256;
   } else if (hashCode == aws_fsx_HASH) {
     return ServerSideEncryption::aws_fsx;
+  } else if (hashCode == aws_backup_HASH) {
+    return ServerSideEncryption::aws_backup;
   } else if (hashCode == aws_kms_HASH) {
     return ServerSideEncryption::aws_kms;
   } else if (hashCode == aws_kms_dsse_HASH) {
@@ -48,6 +51,8 @@ Aws::String GetNameForServerSideEncryption(ServerSideEncryption enumValue) {
       return "AES256";
     case ServerSideEncryption::aws_fsx:
       return "aws:fsx";
+    case ServerSideEncryption::aws_backup:
+      return "aws:backup";
     case ServerSideEncryption::aws_kms:
       return "aws:kms";
     case ServerSideEncryption::aws_kms_dsse:

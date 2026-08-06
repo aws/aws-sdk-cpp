@@ -10,6 +10,7 @@
 #include <aws/marketplace-discovery/model/FixedUpfrontPricingTerm.h>
 #include <aws/marketplace-discovery/model/FreeTrialPricingTerm.h>
 #include <aws/marketplace-discovery/model/LegalTerm.h>
+#include <aws/marketplace-discovery/model/NetPaymentTerm.h>
 #include <aws/marketplace-discovery/model/PaymentScheduleTerm.h>
 #include <aws/marketplace-discovery/model/RecurringPaymentTerm.h>
 #include <aws/marketplace-discovery/model/RenewalTerm.h>
@@ -235,6 +236,24 @@ class OfferTerm {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A net payment term.</p>
+   */
+  inline const NetPaymentTerm& GetNetPaymentTerm() const { return m_netPaymentTerm; }
+  inline bool NetPaymentTermHasBeenSet() const { return m_netPaymentTermHasBeenSet; }
+  template <typename NetPaymentTermT = NetPaymentTerm>
+  void SetNetPaymentTerm(NetPaymentTermT&& value) {
+    m_netPaymentTermHasBeenSet = true;
+    m_netPaymentTerm = std::forward<NetPaymentTermT>(value);
+  }
+  template <typename NetPaymentTermT = NetPaymentTerm>
+  OfferTerm& WithNetPaymentTerm(NetPaymentTermT&& value) {
+    SetNetPaymentTerm(std::forward<NetPaymentTermT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ByolPricingTerm m_byolPricingTerm;
 
@@ -259,6 +278,8 @@ class OfferTerm {
   ValidityTerm m_validityTerm;
 
   VariablePaymentTerm m_variablePaymentTerm;
+
+  NetPaymentTerm m_netPaymentTerm;
   bool m_byolPricingTermHasBeenSet = false;
   bool m_configurableUpfrontPricingTermHasBeenSet = false;
   bool m_fixedUpfrontPricingTermHasBeenSet = false;
@@ -271,6 +292,7 @@ class OfferTerm {
   bool m_usageBasedPricingTermHasBeenSet = false;
   bool m_validityTermHasBeenSet = false;
   bool m_variablePaymentTermHasBeenSet = false;
+  bool m_netPaymentTermHasBeenSet = false;
 };
 
 }  // namespace Model

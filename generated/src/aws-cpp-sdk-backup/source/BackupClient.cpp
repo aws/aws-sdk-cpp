@@ -8,6 +8,7 @@
 #include <aws/backup/BackupErrorMarshaller.h>
 #include <aws/backup/model/AssociateBackupVaultMpaApprovalTeamRequest.h>
 #include <aws/backup/model/CancelLegalHoldRequest.h>
+#include <aws/backup/model/CreateBackupAccessPointRequest.h>
 #include <aws/backup/model/CreateBackupPlanRequest.h>
 #include <aws/backup/model/CreateBackupSelectionRequest.h>
 #include <aws/backup/model/CreateBackupVaultRequest.h>
@@ -19,6 +20,7 @@
 #include <aws/backup/model/CreateRestoreTestingPlanRequest.h>
 #include <aws/backup/model/CreateRestoreTestingSelectionRequest.h>
 #include <aws/backup/model/CreateTieringConfigurationRequest.h>
+#include <aws/backup/model/DeleteBackupAccessPointRequest.h>
 #include <aws/backup/model/DeleteBackupPlanRequest.h>
 #include <aws/backup/model/DeleteBackupSelectionRequest.h>
 #include <aws/backup/model/DeleteBackupVaultAccessPolicyRequest.h>
@@ -31,6 +33,7 @@
 #include <aws/backup/model/DeleteRestoreTestingPlanRequest.h>
 #include <aws/backup/model/DeleteRestoreTestingSelectionRequest.h>
 #include <aws/backup/model/DeleteTieringConfigurationRequest.h>
+#include <aws/backup/model/DescribeBackupAccessPointRequest.h>
 #include <aws/backup/model/DescribeBackupJobRequest.h>
 #include <aws/backup/model/DescribeBackupVaultRequest.h>
 #include <aws/backup/model/DescribeCopyJobRequest.h>
@@ -63,6 +66,9 @@
 #include <aws/backup/model/GetRestoreTestingSelectionRequest.h>
 #include <aws/backup/model/GetSupportedResourceTypesRequest.h>
 #include <aws/backup/model/GetTieringConfigurationRequest.h>
+#include <aws/backup/model/ListBackupAccessPointsByRecoveryPointRequest.h>
+#include <aws/backup/model/ListBackupAccessPointsByResourceRequest.h>
+#include <aws/backup/model/ListBackupAccessPointsRequest.h>
 #include <aws/backup/model/ListBackupJobSummariesRequest.h>
 #include <aws/backup/model/ListBackupJobsRequest.h>
 #include <aws/backup/model/ListBackupPlanTemplatesRequest.h>
@@ -326,6 +332,17 @@ CancelLegalHoldOutcome BackupClient::CancelLegalHold(const CancelLegalHoldReques
                             : CancelLegalHoldOutcome(std::move(result.GetError()));
 }
 
+CreateBackupAccessPointOutcome BackupClient::CreateBackupAccessPoint(const CreateBackupAccessPointRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/backup-access-point/create");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateBackupAccessPointOutcome(result.GetResultWithOwnership())
+                            : CreateBackupAccessPointOutcome(std::move(result.GetError()));
+}
+
 CreateBackupPlanOutcome BackupClient::CreateBackupPlan(const CreateBackupPlanRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -478,6 +495,24 @@ CreateTieringConfigurationOutcome BackupClient::CreateTieringConfiguration(const
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? CreateTieringConfigurationOutcome(result.GetResultWithOwnership())
                             : CreateTieringConfigurationOutcome(std::move(result.GetError()));
+}
+
+DeleteBackupAccessPointOutcome BackupClient::DeleteBackupAccessPoint(const DeleteBackupAccessPointRequest& request) const {
+  if (!request.AccessPointArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteBackupAccessPoint", "Required field: AccessPointArn, is not set");
+    return DeleteBackupAccessPointOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                              "Missing required field [AccessPointArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/backup-access-point/delete/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccessPointArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBackupAccessPointOutcome(result.GetResultWithOwnership())
+                            : DeleteBackupAccessPointOutcome(std::move(result.GetError()));
 }
 
 DeleteBackupPlanOutcome BackupClient::DeleteBackupPlan(const DeleteBackupPlanRequest& request) const {
@@ -722,6 +757,24 @@ DeleteTieringConfigurationOutcome BackupClient::DeleteTieringConfiguration(const
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteTieringConfigurationOutcome(result.GetResultWithOwnership())
                             : DeleteTieringConfigurationOutcome(std::move(result.GetError()));
+}
+
+DescribeBackupAccessPointOutcome BackupClient::DescribeBackupAccessPoint(const DescribeBackupAccessPointRequest& request) const {
+  if (!request.AccessPointArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeBackupAccessPoint", "Required field: AccessPointArn, is not set");
+    return DescribeBackupAccessPointOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                "Missing required field [AccessPointArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/backup-access-point/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccessPointArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeBackupAccessPointOutcome(result.GetResultWithOwnership())
+                            : DescribeBackupAccessPointOutcome(std::move(result.GetError()));
 }
 
 DescribeBackupJobOutcome BackupClient::DescribeBackupJob(const DescribeBackupJobRequest& request) const {
@@ -1352,6 +1405,55 @@ GetTieringConfigurationOutcome BackupClient::GetTieringConfiguration(const GetTi
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetTieringConfigurationOutcome(result.GetResultWithOwnership())
                             : GetTieringConfigurationOutcome(std::move(result.GetError()));
+}
+
+ListBackupAccessPointsOutcome BackupClient::ListBackupAccessPoints(const ListBackupAccessPointsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/backup-access-point");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListBackupAccessPointsOutcome(result.GetResultWithOwnership())
+                            : ListBackupAccessPointsOutcome(std::move(result.GetError()));
+}
+
+ListBackupAccessPointsByRecoveryPointOutcome BackupClient::ListBackupAccessPointsByRecoveryPoint(
+    const ListBackupAccessPointsByRecoveryPointRequest& request) const {
+  if (!request.RecoveryPointArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListBackupAccessPointsByRecoveryPoint", "Required field: RecoveryPointArn, is not set");
+    return ListBackupAccessPointsByRecoveryPointOutcome(Aws::Client::AWSError<BackupErrors>(
+        BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecoveryPointArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/backup-access-point/recovery-point/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecoveryPointArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBackupAccessPointsByRecoveryPointOutcome(result.GetResultWithOwnership())
+                            : ListBackupAccessPointsByRecoveryPointOutcome(std::move(result.GetError()));
+}
+
+ListBackupAccessPointsByResourceOutcome BackupClient::ListBackupAccessPointsByResource(
+    const ListBackupAccessPointsByResourceRequest& request) const {
+  if (!request.ResourceArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListBackupAccessPointsByResource", "Required field: ResourceArn, is not set");
+    return ListBackupAccessPointsByResourceOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                       "Missing required field [ResourceArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/backup-access-point/resource/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBackupAccessPointsByResourceOutcome(result.GetResultWithOwnership())
+                            : ListBackupAccessPointsByResourceOutcome(std::move(result.GetError()));
 }
 
 ListBackupJobSummariesOutcome BackupClient::ListBackupJobSummaries(const ListBackupJobSummariesRequest& request) const {

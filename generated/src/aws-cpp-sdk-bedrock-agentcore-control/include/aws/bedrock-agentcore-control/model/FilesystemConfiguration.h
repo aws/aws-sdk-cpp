@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/CapacityProviderVolumeConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/EfsAccessPointConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/S3FilesAccessPointConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/SessionStorageConfiguration.h>
@@ -90,15 +91,38 @@ class FilesystemConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration for a capacity provider volume to mount into the AgentCore
+   * Runtime. This mounts a persistent volume that is defined on the capacity
+   * provider, referenced by its logical name.</p>
+   */
+  inline const CapacityProviderVolumeConfiguration& GetCapacityProviderVolume() const { return m_capacityProviderVolume; }
+  inline bool CapacityProviderVolumeHasBeenSet() const { return m_capacityProviderVolumeHasBeenSet; }
+  template <typename CapacityProviderVolumeT = CapacityProviderVolumeConfiguration>
+  void SetCapacityProviderVolume(CapacityProviderVolumeT&& value) {
+    m_capacityProviderVolumeHasBeenSet = true;
+    m_capacityProviderVolume = std::forward<CapacityProviderVolumeT>(value);
+  }
+  template <typename CapacityProviderVolumeT = CapacityProviderVolumeConfiguration>
+  FilesystemConfiguration& WithCapacityProviderVolume(CapacityProviderVolumeT&& value) {
+    SetCapacityProviderVolume(std::forward<CapacityProviderVolumeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   SessionStorageConfiguration m_sessionStorage;
 
   S3FilesAccessPointConfiguration m_s3FilesAccessPoint;
 
   EfsAccessPointConfiguration m_efsAccessPoint;
+
+  CapacityProviderVolumeConfiguration m_capacityProviderVolume;
   bool m_sessionStorageHasBeenSet = false;
   bool m_s3FilesAccessPointHasBeenSet = false;
   bool m_efsAccessPointHasBeenSet = false;
+  bool m_capacityProviderVolumeHasBeenSet = false;
 };
 
 }  // namespace Model

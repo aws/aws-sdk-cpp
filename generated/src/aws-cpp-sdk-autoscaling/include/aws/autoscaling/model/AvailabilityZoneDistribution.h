@@ -44,7 +44,7 @@ class AvailabilityZoneDistribution {
    * another healthy Availability Zone instead.</p> </li> <li> <p>
    * <code>reservations-then-balanced</code> - Auto Scaling will first attempt to
    * launch into your Capacity Reservations, and then balance any remaining capacity
-   * across the healthy Availability Zones.</p> </li> </ul>
+   * across healthy Availability Zones.</p> </li> </ul>
    */
   inline CapacityDistributionStrategy GetCapacityDistributionStrategy() const { return m_capacityDistributionStrategy; }
   inline bool CapacityDistributionStrategyHasBeenSet() const { return m_capacityDistributionStrategyHasBeenSet; }

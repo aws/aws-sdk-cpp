@@ -516,7 +516,28 @@ enum class EC2InstanceType {
   m7i_48xlarge,
   r7a_24xlarge,
   r7a_32xlarge,
-  r7a_48xlarge
+  r7a_48xlarge,
+  c8a_medium,
+  c8a_large,
+  c8a_xlarge,
+  c8a_2xlarge,
+  c8i_large,
+  c8i_xlarge,
+  c8i_2xlarge,
+  c9g_medium,
+  c9g_large,
+  c9g_xlarge,
+  c9g_2xlarge,
+  m8a_medium,
+  m8a_large,
+  m8a_xlarge,
+  m8a_2xlarge,
+  m8i_large,
+  m8i_xlarge,
+  m8i_2xlarge,
+  m9g_large,
+  m9g_xlarge,
+  m9g_2xlarge
 };
 
 namespace EC2InstanceTypeMapper {

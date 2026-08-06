@@ -5,6 +5,9 @@
 
 #pragma once
 
+#include <aws/backup/model/ListBackupAccessPointsByRecoveryPointPaginationTraits.h>
+#include <aws/backup/model/ListBackupAccessPointsByResourcePaginationTraits.h>
+#include <aws/backup/model/ListBackupAccessPointsPaginationTraits.h>
 #include <aws/backup/model/ListBackupJobSummariesPaginationTraits.h>
 #include <aws/backup/model/ListBackupJobsPaginationTraits.h>
 #include <aws/backup/model/ListBackupPlanTemplatesPaginationTraits.h>
@@ -45,6 +48,42 @@ namespace Backup {
 template <typename DerivedClient>
 class BackupPaginationBase {
  public:
+  /**
+   * Create a paginator for ListBackupAccessPoints operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBackupAccessPointsRequest,
+                                    Pagination::ListBackupAccessPointsPaginationTraits<DerivedClient>>
+  ListBackupAccessPointsPaginator(const Model::ListBackupAccessPointsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBackupAccessPointsRequest,
+                                             Pagination::ListBackupAccessPointsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListBackupAccessPointsByRecoveryPoint operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBackupAccessPointsByRecoveryPointRequest,
+                                    Pagination::ListBackupAccessPointsByRecoveryPointPaginationTraits<DerivedClient>>
+  ListBackupAccessPointsByRecoveryPointPaginator(const Model::ListBackupAccessPointsByRecoveryPointRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBackupAccessPointsByRecoveryPointRequest,
+                                             Pagination::ListBackupAccessPointsByRecoveryPointPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListBackupAccessPointsByResource operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBackupAccessPointsByResourceRequest,
+                                    Pagination::ListBackupAccessPointsByResourcePaginationTraits<DerivedClient>>
+  ListBackupAccessPointsByResourcePaginator(const Model::ListBackupAccessPointsByResourceRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBackupAccessPointsByResourceRequest,
+                                             Pagination::ListBackupAccessPointsByResourcePaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
   /**
    * Create a paginator for ListBackupJobs operation
    */

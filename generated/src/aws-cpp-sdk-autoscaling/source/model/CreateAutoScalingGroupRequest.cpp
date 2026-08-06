@@ -218,6 +218,10 @@ Aws::String CreateAutoScalingGroupRequest::SerializePayload() const {
     m_instanceLifecyclePolicy.OutputToStream(ss, "InstanceLifecyclePolicy");
   }
 
+  if (m_operatorHasBeenSet) {
+    m_operator.OutputToStream(ss, "Operator");
+  }
+
   ss << "Version=2011-01-01";
   return ss.str();
 }

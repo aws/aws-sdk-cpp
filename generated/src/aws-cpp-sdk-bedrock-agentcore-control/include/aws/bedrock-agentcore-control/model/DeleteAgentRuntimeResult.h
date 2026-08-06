@@ -62,6 +62,24 @@ class DeleteAgentRuntimeResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The version of the AgentCore Runtime that was deleted. This value is present
+   * only when you delete a single version.</p>
+   */
+  inline const Aws::String& GetAgentRuntimeVersion() const { return m_agentRuntimeVersion; }
+  template <typename AgentRuntimeVersionT = Aws::String>
+  void SetAgentRuntimeVersion(AgentRuntimeVersionT&& value) {
+    m_agentRuntimeVersionHasBeenSet = true;
+    m_agentRuntimeVersion = std::forward<AgentRuntimeVersionT>(value);
+  }
+  template <typename AgentRuntimeVersionT = Aws::String>
+  DeleteAgentRuntimeResult& WithAgentRuntimeVersion(AgentRuntimeVersionT&& value) {
+    SetAgentRuntimeVersion(std::forward<AgentRuntimeVersionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -82,10 +100,13 @@ class DeleteAgentRuntimeResult {
 
   Aws::String m_agentRuntimeId;
 
+  Aws::String m_agentRuntimeVersion;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_agentRuntimeIdHasBeenSet = false;
+  bool m_agentRuntimeVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

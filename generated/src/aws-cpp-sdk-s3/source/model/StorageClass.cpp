@@ -28,6 +28,8 @@ static const int SNOW_HASH = HashingUtils::HashString("SNOW");
 static const int EXPRESS_ONEZONE_HASH = HashingUtils::HashString("EXPRESS_ONEZONE");
 static const int FSX_OPENZFS_HASH = HashingUtils::HashString("FSX_OPENZFS");
 static const int FSX_ONTAP_HASH = HashingUtils::HashString("FSX_ONTAP");
+static const int AWS_BACKUP_WARM_HASH = HashingUtils::HashString("AWS_BACKUP_WARM");
+static const int AWS_BACKUP_LOW_COST_WARM_HASH = HashingUtils::HashString("AWS_BACKUP_LOW_COST_WARM");
 
 StorageClass GetStorageClassForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -57,6 +59,10 @@ StorageClass GetStorageClassForName(const Aws::String& name) {
     return StorageClass::FSX_OPENZFS;
   } else if (hashCode == FSX_ONTAP_HASH) {
     return StorageClass::FSX_ONTAP;
+  } else if (hashCode == AWS_BACKUP_WARM_HASH) {
+    return StorageClass::AWS_BACKUP_WARM;
+  } else if (hashCode == AWS_BACKUP_LOW_COST_WARM_HASH) {
+    return StorageClass::AWS_BACKUP_LOW_COST_WARM;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -97,6 +103,10 @@ Aws::String GetNameForStorageClass(StorageClass enumValue) {
       return "FSX_OPENZFS";
     case StorageClass::FSX_ONTAP:
       return "FSX_ONTAP";
+    case StorageClass::AWS_BACKUP_WARM:
+      return "AWS_BACKUP_WARM";
+    case StorageClass::AWS_BACKUP_LOW_COST_WARM:
+      return "AWS_BACKUP_LOW_COST_WARM";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

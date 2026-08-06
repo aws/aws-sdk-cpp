@@ -1493,8 +1493,11 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   }
 
   /**
-   * <p>Returns a list of custom and default field indexes which are discovered in
-   * log data. For more information about field index policies, see <a
+   * <p>Returns a list of field indexes discovered in log data. By default, the
+   * response includes the <code>DEFAULT</code>, <code>CUSTOM</code>, and
+   * <code>INACTIVE</code> index categories. To return indexes from other categories,
+   * use the <code>indexCategories</code> parameter.</p> <p>For more information
+   * about field index policies, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIndexPolicy.html">PutIndexPolicy</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeFieldIndexes">AWS

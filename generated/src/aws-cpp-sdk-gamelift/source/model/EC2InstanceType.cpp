@@ -520,6 +520,27 @@ static const int m7i_48xlarge_HASH = HashingUtils::HashString("m7i.48xlarge");
 static const int r7a_24xlarge_HASH = HashingUtils::HashString("r7a.24xlarge");
 static const int r7a_32xlarge_HASH = HashingUtils::HashString("r7a.32xlarge");
 static const int r7a_48xlarge_HASH = HashingUtils::HashString("r7a.48xlarge");
+static const int c8a_medium_HASH = HashingUtils::HashString("c8a.medium");
+static const int c8a_large_HASH = HashingUtils::HashString("c8a.large");
+static const int c8a_xlarge_HASH = HashingUtils::HashString("c8a.xlarge");
+static const int c8a_2xlarge_HASH = HashingUtils::HashString("c8a.2xlarge");
+static const int c8i_large_HASH = HashingUtils::HashString("c8i.large");
+static const int c8i_xlarge_HASH = HashingUtils::HashString("c8i.xlarge");
+static const int c8i_2xlarge_HASH = HashingUtils::HashString("c8i.2xlarge");
+static const int c9g_medium_HASH = HashingUtils::HashString("c9g.medium");
+static const int c9g_large_HASH = HashingUtils::HashString("c9g.large");
+static const int c9g_xlarge_HASH = HashingUtils::HashString("c9g.xlarge");
+static const int c9g_2xlarge_HASH = HashingUtils::HashString("c9g.2xlarge");
+static const int m8a_medium_HASH = HashingUtils::HashString("m8a.medium");
+static const int m8a_large_HASH = HashingUtils::HashString("m8a.large");
+static const int m8a_xlarge_HASH = HashingUtils::HashString("m8a.xlarge");
+static const int m8a_2xlarge_HASH = HashingUtils::HashString("m8a.2xlarge");
+static const int m8i_large_HASH = HashingUtils::HashString("m8i.large");
+static const int m8i_xlarge_HASH = HashingUtils::HashString("m8i.xlarge");
+static const int m8i_2xlarge_HASH = HashingUtils::HashString("m8i.2xlarge");
+static const int m9g_large_HASH = HashingUtils::HashString("m9g.large");
+static const int m9g_xlarge_HASH = HashingUtils::HashString("m9g.xlarge");
+static const int m9g_2xlarge_HASH = HashingUtils::HashString("m9g.2xlarge");
 
 /*
 The if-else chains in this file are converted into a jump table by the compiler,
@@ -2057,6 +2078,69 @@ static bool GetEnumForNameHelper4(int hashCode, EC2InstanceType& enumValue) {
     return true;
   } else if (hashCode == r7a_48xlarge_HASH) {
     enumValue = EC2InstanceType::r7a_48xlarge;
+    return true;
+  } else if (hashCode == c8a_medium_HASH) {
+    enumValue = EC2InstanceType::c8a_medium;
+    return true;
+  } else if (hashCode == c8a_large_HASH) {
+    enumValue = EC2InstanceType::c8a_large;
+    return true;
+  } else if (hashCode == c8a_xlarge_HASH) {
+    enumValue = EC2InstanceType::c8a_xlarge;
+    return true;
+  } else if (hashCode == c8a_2xlarge_HASH) {
+    enumValue = EC2InstanceType::c8a_2xlarge;
+    return true;
+  } else if (hashCode == c8i_large_HASH) {
+    enumValue = EC2InstanceType::c8i_large;
+    return true;
+  } else if (hashCode == c8i_xlarge_HASH) {
+    enumValue = EC2InstanceType::c8i_xlarge;
+    return true;
+  } else if (hashCode == c8i_2xlarge_HASH) {
+    enumValue = EC2InstanceType::c8i_2xlarge;
+    return true;
+  } else if (hashCode == c9g_medium_HASH) {
+    enumValue = EC2InstanceType::c9g_medium;
+    return true;
+  } else if (hashCode == c9g_large_HASH) {
+    enumValue = EC2InstanceType::c9g_large;
+    return true;
+  } else if (hashCode == c9g_xlarge_HASH) {
+    enumValue = EC2InstanceType::c9g_xlarge;
+    return true;
+  } else if (hashCode == c9g_2xlarge_HASH) {
+    enumValue = EC2InstanceType::c9g_2xlarge;
+    return true;
+  } else if (hashCode == m8a_medium_HASH) {
+    enumValue = EC2InstanceType::m8a_medium;
+    return true;
+  } else if (hashCode == m8a_large_HASH) {
+    enumValue = EC2InstanceType::m8a_large;
+    return true;
+  } else if (hashCode == m8a_xlarge_HASH) {
+    enumValue = EC2InstanceType::m8a_xlarge;
+    return true;
+  } else if (hashCode == m8a_2xlarge_HASH) {
+    enumValue = EC2InstanceType::m8a_2xlarge;
+    return true;
+  } else if (hashCode == m8i_large_HASH) {
+    enumValue = EC2InstanceType::m8i_large;
+    return true;
+  } else if (hashCode == m8i_xlarge_HASH) {
+    enumValue = EC2InstanceType::m8i_xlarge;
+    return true;
+  } else if (hashCode == m8i_2xlarge_HASH) {
+    enumValue = EC2InstanceType::m8i_2xlarge;
+    return true;
+  } else if (hashCode == m9g_large_HASH) {
+    enumValue = EC2InstanceType::m9g_large;
+    return true;
+  } else if (hashCode == m9g_xlarge_HASH) {
+    enumValue = EC2InstanceType::m9g_xlarge;
+    return true;
+  } else if (hashCode == m9g_2xlarge_HASH) {
+    enumValue = EC2InstanceType::m9g_2xlarge;
     return true;
   }
   return false;
@@ -3602,6 +3686,69 @@ static bool GetNameForEnumHelper4(EC2InstanceType enumValue, Aws::String& value)
       return true;
     case EC2InstanceType::r7a_48xlarge:
       value = "r7a.48xlarge";
+      return true;
+    case EC2InstanceType::c8a_medium:
+      value = "c8a.medium";
+      return true;
+    case EC2InstanceType::c8a_large:
+      value = "c8a.large";
+      return true;
+    case EC2InstanceType::c8a_xlarge:
+      value = "c8a.xlarge";
+      return true;
+    case EC2InstanceType::c8a_2xlarge:
+      value = "c8a.2xlarge";
+      return true;
+    case EC2InstanceType::c8i_large:
+      value = "c8i.large";
+      return true;
+    case EC2InstanceType::c8i_xlarge:
+      value = "c8i.xlarge";
+      return true;
+    case EC2InstanceType::c8i_2xlarge:
+      value = "c8i.2xlarge";
+      return true;
+    case EC2InstanceType::c9g_medium:
+      value = "c9g.medium";
+      return true;
+    case EC2InstanceType::c9g_large:
+      value = "c9g.large";
+      return true;
+    case EC2InstanceType::c9g_xlarge:
+      value = "c9g.xlarge";
+      return true;
+    case EC2InstanceType::c9g_2xlarge:
+      value = "c9g.2xlarge";
+      return true;
+    case EC2InstanceType::m8a_medium:
+      value = "m8a.medium";
+      return true;
+    case EC2InstanceType::m8a_large:
+      value = "m8a.large";
+      return true;
+    case EC2InstanceType::m8a_xlarge:
+      value = "m8a.xlarge";
+      return true;
+    case EC2InstanceType::m8a_2xlarge:
+      value = "m8a.2xlarge";
+      return true;
+    case EC2InstanceType::m8i_large:
+      value = "m8i.large";
+      return true;
+    case EC2InstanceType::m8i_xlarge:
+      value = "m8i.xlarge";
+      return true;
+    case EC2InstanceType::m8i_2xlarge:
+      value = "m8i.2xlarge";
+      return true;
+    case EC2InstanceType::m9g_large:
+      value = "m9g.large";
+      return true;
+    case EC2InstanceType::m9g_xlarge:
+      value = "m9g.xlarge";
+      return true;
+    case EC2InstanceType::m9g_2xlarge:
+      value = "m9g.2xlarge";
       return true;
     default:
       return false;

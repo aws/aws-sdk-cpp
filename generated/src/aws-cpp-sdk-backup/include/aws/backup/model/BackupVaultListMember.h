@@ -177,7 +177,8 @@ class BackupVaultListMember {
 
   ///@{
   /**
-   * <p>The number of recovery points that are stored in a backup vault.</p>
+   * <p>The number of recovery points that are stored in a backup vault. Recovery
+   * point count value displayed in the console can be an approximation.</p>
    */
   inline long long GetNumberOfRecoveryPoints() const { return m_numberOfRecoveryPoints; }
   inline bool NumberOfRecoveryPointsHasBeenSet() const { return m_numberOfRecoveryPointsHasBeenSet; }

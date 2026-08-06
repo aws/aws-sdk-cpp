@@ -39,6 +39,12 @@ static const int RECOVERY_POINT_INDEXING_FAILED_HASH = HashingUtils::HashString(
 static const int EKS_RESTORE_OBJECT_FAILED_HASH = HashingUtils::HashString("EKS_RESTORE_OBJECT_FAILED");
 static const int EKS_RESTORE_OBJECT_SKIPPED_HASH = HashingUtils::HashString("EKS_RESTORE_OBJECT_SKIPPED");
 static const int EKS_BACKUP_OBJECT_FAILED_HASH = HashingUtils::HashString("EKS_BACKUP_OBJECT_FAILED");
+static const int ACCESS_POINT_AVAILABLE_HASH = HashingUtils::HashString("ACCESS_POINT_AVAILABLE");
+static const int ACCESS_POINT_CREATION_FAILED_HASH = HashingUtils::HashString("ACCESS_POINT_CREATION_FAILED");
+static const int ACCESS_POINT_DELETED_HASH = HashingUtils::HashString("ACCESS_POINT_DELETED");
+static const int ACCESS_POINT_DELETION_FAILED_HASH = HashingUtils::HashString("ACCESS_POINT_DELETION_FAILED");
+static const int ACCESS_POINT_EXPIRED_HASH = HashingUtils::HashString("ACCESS_POINT_EXPIRED");
+static const int ACCESS_POINT_DISASSOCIATED_HASH = HashingUtils::HashString("ACCESS_POINT_DISASSOCIATED");
 
 BackupVaultEvent GetBackupVaultEventForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -90,6 +96,18 @@ BackupVaultEvent GetBackupVaultEventForName(const Aws::String& name) {
     return BackupVaultEvent::EKS_RESTORE_OBJECT_SKIPPED;
   } else if (hashCode == EKS_BACKUP_OBJECT_FAILED_HASH) {
     return BackupVaultEvent::EKS_BACKUP_OBJECT_FAILED;
+  } else if (hashCode == ACCESS_POINT_AVAILABLE_HASH) {
+    return BackupVaultEvent::ACCESS_POINT_AVAILABLE;
+  } else if (hashCode == ACCESS_POINT_CREATION_FAILED_HASH) {
+    return BackupVaultEvent::ACCESS_POINT_CREATION_FAILED;
+  } else if (hashCode == ACCESS_POINT_DELETED_HASH) {
+    return BackupVaultEvent::ACCESS_POINT_DELETED;
+  } else if (hashCode == ACCESS_POINT_DELETION_FAILED_HASH) {
+    return BackupVaultEvent::ACCESS_POINT_DELETION_FAILED;
+  } else if (hashCode == ACCESS_POINT_EXPIRED_HASH) {
+    return BackupVaultEvent::ACCESS_POINT_EXPIRED;
+  } else if (hashCode == ACCESS_POINT_DISASSOCIATED_HASH) {
+    return BackupVaultEvent::ACCESS_POINT_DISASSOCIATED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -152,6 +170,18 @@ Aws::String GetNameForBackupVaultEvent(BackupVaultEvent enumValue) {
       return "EKS_RESTORE_OBJECT_SKIPPED";
     case BackupVaultEvent::EKS_BACKUP_OBJECT_FAILED:
       return "EKS_BACKUP_OBJECT_FAILED";
+    case BackupVaultEvent::ACCESS_POINT_AVAILABLE:
+      return "ACCESS_POINT_AVAILABLE";
+    case BackupVaultEvent::ACCESS_POINT_CREATION_FAILED:
+      return "ACCESS_POINT_CREATION_FAILED";
+    case BackupVaultEvent::ACCESS_POINT_DELETED:
+      return "ACCESS_POINT_DELETED";
+    case BackupVaultEvent::ACCESS_POINT_DELETION_FAILED:
+      return "ACCESS_POINT_DELETION_FAILED";
+    case BackupVaultEvent::ACCESS_POINT_EXPIRED:
+      return "ACCESS_POINT_EXPIRED";
+    case BackupVaultEvent::ACCESS_POINT_DISASSOCIATED:
+      return "ACCESS_POINT_DISASSOCIATED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

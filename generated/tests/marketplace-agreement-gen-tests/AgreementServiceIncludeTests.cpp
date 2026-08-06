@@ -98,6 +98,7 @@
 #include <aws/marketplace-agreement/model/ListAgreementPaymentRequestsResult.h>
 #include <aws/marketplace-agreement/model/ListBillingAdjustmentRequestsRequest.h>
 #include <aws/marketplace-agreement/model/ListBillingAdjustmentRequestsResult.h>
+#include <aws/marketplace-agreement/model/NetPaymentTerm.h>
 #include <aws/marketplace-agreement/model/PaymentRequestApprovalStrategy.h>
 #include <aws/marketplace-agreement/model/PaymentRequestStatus.h>
 #include <aws/marketplace-agreement/model/PaymentRequestSummary.h>

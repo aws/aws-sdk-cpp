@@ -112,6 +112,37 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
+   * <p>Atomically creates or updates multiple rate limits for a gateway. The
+   * operation updates existing limits with matching keys and creates new limits for
+   * new keys. If the operation fails, the service applies no changes. Retry the
+   * request after resolving the issue.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/BatchPutGatewayRateLimits">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchPutGatewayRateLimitsOutcome BatchPutGatewayRateLimits(const Model::BatchPutGatewayRateLimitsRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchPutGatewayRateLimits that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename BatchPutGatewayRateLimitsRequestT = Model::BatchPutGatewayRateLimitsRequest>
+  Model::BatchPutGatewayRateLimitsOutcomeCallable BatchPutGatewayRateLimitsCallable(
+      const BatchPutGatewayRateLimitsRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::BatchPutGatewayRateLimits, request);
+  }
+
+  /**
+   * An Async wrapper for BatchPutGatewayRateLimits that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename BatchPutGatewayRateLimitsRequestT = Model::BatchPutGatewayRateLimitsRequest>
+  void BatchPutGatewayRateLimitsAsync(const BatchPutGatewayRateLimitsRequestT& request,
+                                      const BatchPutGatewayRateLimitsResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::BatchPutGatewayRateLimits, request, handler, context);
+  }
+
+  /**
    * <p>Creates an Amazon Bedrock AgentCore Runtime.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateAgentRuntime">AWS
    * API Reference</a></p>
@@ -247,6 +278,39 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   void CreateBrowserProfileAsync(const CreateBrowserProfileRequestT& request, const CreateBrowserProfileResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::CreateBrowserProfile, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a capacity provider. A capacity provider defines the Amazon EC2
+   * infrastructure for AgentCore Runtime, including the operating system, allowed
+   * instance types, networking, and storage. It also specifies the IAM permissions
+   * that AgentCore uses to manage those instances.</p> <p>The capacity provider name
+   * must be unique within your account. After you create the capacity provider, it
+   * enters a <code>CREATING</code> state and transitions to <code>READY</code> when
+   * it is available for use.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateCapacityProvider">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateCapacityProviderOutcome CreateCapacityProvider(const Model::CreateCapacityProviderRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateCapacityProvider that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateCapacityProviderRequestT = Model::CreateCapacityProviderRequest>
+  Model::CreateCapacityProviderOutcomeCallable CreateCapacityProviderCallable(const CreateCapacityProviderRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::CreateCapacityProvider, request);
+  }
+
+  /**
+   * An Async wrapper for CreateCapacityProvider that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateCapacityProviderRequestT = Model::CreateCapacityProviderRequest>
+  void CreateCapacityProviderAsync(const CreateCapacityProviderRequestT& request,
+                                   const CreateCapacityProviderResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::CreateCapacityProvider, request, handler, context);
   }
 
   /**
@@ -416,6 +480,35 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   void CreateGatewayAsync(const CreateGatewayRequestT& request, const CreateGatewayResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::CreateGateway, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a rate limit for a gateway. Rate limits define throttling rules for
+   * each dimension that control request rates, token consumption rates, and
+   * concurrent connections through the gateway.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateGatewayRateLimit">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateGatewayRateLimitOutcome CreateGatewayRateLimit(const Model::CreateGatewayRateLimitRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateGatewayRateLimit that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateGatewayRateLimitRequestT = Model::CreateGatewayRateLimitRequest>
+  Model::CreateGatewayRateLimitOutcomeCallable CreateGatewayRateLimitCallable(const CreateGatewayRateLimitRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::CreateGatewayRateLimit, request);
+  }
+
+  /**
+   * An Async wrapper for CreateGatewayRateLimit that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateGatewayRateLimitRequestT = Model::CreateGatewayRateLimitRequest>
+  void CreateGatewayRateLimitAsync(const CreateGatewayRateLimitRequestT& request,
+                                   const CreateGatewayRateLimitResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::CreateGatewayRateLimit, request, handler, context);
   }
 
   /**
@@ -861,7 +954,9 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
-   * <p>Deletes an Amazon Bedrock AgentCore Runtime.</p><p><h3>See Also:</h3>   <a
+   * <p>Deletes an Amazon Bedrock AgentCore Runtime, or a single version of an
+   * AgentCore Runtime when you provide the version qualifier.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteAgentRuntime">AWS
    * API Reference</a></p>
    */
@@ -887,7 +982,7 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
-   * <p>Deletes an AAgentCore Runtime endpoint.</p><p><h3>See Also:</h3>   <a
+   * <p>Deletes an AgentCore Runtime endpoint.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteAgentRuntimeEndpoint">AWS
    * API Reference</a></p>
    */
@@ -993,6 +1088,35 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   void DeleteBrowserProfileAsync(const DeleteBrowserProfileRequestT& request, const DeleteBrowserProfileResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::DeleteBrowserProfile, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a capacity provider. Before you delete a capacity provider,
+   * disassociate all agent runtimes and runtime versions that reference it. If any
+   * references remain, the operation fails.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteCapacityProvider">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteCapacityProviderOutcome DeleteCapacityProvider(const Model::DeleteCapacityProviderRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteCapacityProvider that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteCapacityProviderRequestT = Model::DeleteCapacityProviderRequest>
+  Model::DeleteCapacityProviderOutcomeCallable DeleteCapacityProviderCallable(const DeleteCapacityProviderRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::DeleteCapacityProvider, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteCapacityProvider that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteCapacityProviderRequestT = Model::DeleteCapacityProviderRequest>
+  void DeleteCapacityProviderAsync(const DeleteCapacityProviderRequestT& request,
+                                   const DeleteCapacityProviderResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::DeleteCapacityProvider, request, handler, context);
   }
 
   /**
@@ -1156,6 +1280,33 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   void DeleteGatewayAsync(const DeleteGatewayRequestT& request, const DeleteGatewayResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::DeleteGateway, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a gateway rate limit.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteGatewayRateLimit">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteGatewayRateLimitOutcome DeleteGatewayRateLimit(const Model::DeleteGatewayRateLimitRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteGatewayRateLimit that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteGatewayRateLimitRequestT = Model::DeleteGatewayRateLimitRequest>
+  Model::DeleteGatewayRateLimitOutcomeCallable DeleteGatewayRateLimitCallable(const DeleteGatewayRateLimitRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::DeleteGatewayRateLimit, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteGatewayRateLimit that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteGatewayRateLimitRequestT = Model::DeleteGatewayRateLimitRequest>
+  void DeleteGatewayRateLimitAsync(const DeleteGatewayRateLimitRequestT& request,
+                                   const DeleteGatewayRateLimitResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::DeleteGatewayRateLimit, request, handler, context);
   }
 
   /**
@@ -1741,6 +1892,34 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
+   * <p>Retrieves information about a capacity provider, including its status,
+   * permissions configuration, and compute configuration.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetCapacityProvider">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetCapacityProviderOutcome GetCapacityProvider(const Model::GetCapacityProviderRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetCapacityProvider that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetCapacityProviderRequestT = Model::GetCapacityProviderRequest>
+  Model::GetCapacityProviderOutcomeCallable GetCapacityProviderCallable(const GetCapacityProviderRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::GetCapacityProvider, request);
+  }
+
+  /**
+   * An Async wrapper for GetCapacityProvider that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetCapacityProviderRequestT = Model::GetCapacityProviderRequest>
+  void GetCapacityProviderAsync(const GetCapacityProviderRequestT& request, const GetCapacityProviderResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::GetCapacityProvider, request, handler, context);
+  }
+
+  /**
    * <p>Gets information about a custom code interpreter.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetCodeInterpreter">AWS
@@ -1905,6 +2084,33 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   void GetGatewayAsync(const GetGatewayRequestT& request, const GetGatewayResponseReceivedHandler& handler,
                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::GetGateway, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about a gateway rate limit.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetGatewayRateLimit">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetGatewayRateLimitOutcome GetGatewayRateLimit(const Model::GetGatewayRateLimitRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetGatewayRateLimit that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetGatewayRateLimitRequestT = Model::GetGatewayRateLimitRequest>
+  Model::GetGatewayRateLimitOutcomeCallable GetGatewayRateLimitCallable(const GetGatewayRateLimitRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::GetGatewayRateLimit, request);
+  }
+
+  /**
+   * An Async wrapper for GetGatewayRateLimit that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetGatewayRateLimitRequestT = Model::GetGatewayRateLimitRequest>
+  void GetGatewayRateLimitAsync(const GetGatewayRateLimitRequestT& request, const GetGatewayRateLimitResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::GetGatewayRateLimit, request, handler, context);
   }
 
   /**
@@ -2557,6 +2763,40 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
+   * <p>Lists the agent runtime versions that are associated with a capacity
+   * provider. Use this operation to identify the runtimes you must disassociate
+   * before you can delete the capacity provider. Results are paginated; use the
+   * <code>nextToken</code> parameter to retrieve additional results.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListAgentRuntimeVersionsByCapacityProvider">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAgentRuntimeVersionsByCapacityProviderOutcome ListAgentRuntimeVersionsByCapacityProvider(
+      const Model::ListAgentRuntimeVersionsByCapacityProviderRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListAgentRuntimeVersionsByCapacityProvider that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename ListAgentRuntimeVersionsByCapacityProviderRequestT = Model::ListAgentRuntimeVersionsByCapacityProviderRequest>
+  Model::ListAgentRuntimeVersionsByCapacityProviderOutcomeCallable ListAgentRuntimeVersionsByCapacityProviderCallable(
+      const ListAgentRuntimeVersionsByCapacityProviderRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::ListAgentRuntimeVersionsByCapacityProvider, request);
+  }
+
+  /**
+   * An Async wrapper for ListAgentRuntimeVersionsByCapacityProvider that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename ListAgentRuntimeVersionsByCapacityProviderRequestT = Model::ListAgentRuntimeVersionsByCapacityProviderRequest>
+  void ListAgentRuntimeVersionsByCapacityProviderAsync(
+      const ListAgentRuntimeVersionsByCapacityProviderRequestT& request,
+      const ListAgentRuntimeVersionsByCapacityProviderResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::ListAgentRuntimeVersionsByCapacityProvider, request, handler, context);
+  }
+
+  /**
    * <p>Lists all Amazon Secure Agents in your account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListAgentRuntimes">AWS
    * API Reference</a></p>
@@ -2664,6 +2904,37 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                          const ListBrowsersRequestT& request = {}) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::ListBrowsers, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the capacity providers in your account and returns summary information
+   * for each one. To retrieve the full configuration for a specific capacity
+   * provider, use <code>GetCapacityProvider</code>. Results are paginated; use the
+   * <code>nextToken</code> parameter to retrieve additional results.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListCapacityProviders">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListCapacityProvidersOutcome ListCapacityProviders(const Model::ListCapacityProvidersRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListCapacityProviders that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListCapacityProvidersRequestT = Model::ListCapacityProvidersRequest>
+  Model::ListCapacityProvidersOutcomeCallable ListCapacityProvidersCallable(const ListCapacityProvidersRequestT& request = {}) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::ListCapacityProviders, request);
+  }
+
+  /**
+   * An Async wrapper for ListCapacityProviders that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListCapacityProvidersRequestT = Model::ListCapacityProvidersRequest>
+  void ListCapacityProvidersAsync(const ListCapacityProvidersResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                  const ListCapacityProvidersRequestT& request = {}) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::ListCapacityProviders, request, handler, context);
   }
 
   /**
@@ -2862,6 +3133,34 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                            const ListEvaluatorsRequestT& request = {}) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::ListEvaluators, request, handler, context);
+  }
+
+  /**
+   * <p>Lists all rate limits for a gateway. Results are paginated. Use the
+   * <code>nextToken</code> parameter to retrieve additional results.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListGatewayRateLimits">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListGatewayRateLimitsOutcome ListGatewayRateLimits(const Model::ListGatewayRateLimitsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListGatewayRateLimits that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListGatewayRateLimitsRequestT = Model::ListGatewayRateLimitsRequest>
+  Model::ListGatewayRateLimitsOutcomeCallable ListGatewayRateLimitsCallable(const ListGatewayRateLimitsRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::ListGatewayRateLimits, request);
+  }
+
+  /**
+   * An Async wrapper for ListGatewayRateLimits that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListGatewayRateLimitsRequestT = Model::ListGatewayRateLimitsRequest>
+  void ListGatewayRateLimitsAsync(const ListGatewayRateLimitsRequestT& request, const ListGatewayRateLimitsResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::ListGatewayRateLimits, request, handler, context);
   }
 
   /**
@@ -3832,6 +4131,35 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
+   * <p>Updates a capacity provider. Only the description can be changed. To change
+   * other configuration, such as instance types, networking, or storage, create a
+   * new capacity provider.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateCapacityProvider">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateCapacityProviderOutcome UpdateCapacityProvider(const Model::UpdateCapacityProviderRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateCapacityProvider that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateCapacityProviderRequestT = Model::UpdateCapacityProviderRequest>
+  Model::UpdateCapacityProviderOutcomeCallable UpdateCapacityProviderCallable(const UpdateCapacityProviderRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::UpdateCapacityProvider, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateCapacityProvider that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateCapacityProviderRequestT = Model::UpdateCapacityProviderRequest>
+  void UpdateCapacityProviderAsync(const UpdateCapacityProviderRequestT& request,
+                                   const UpdateCapacityProviderResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::UpdateCapacityProvider, request, handler, context);
+  }
+
+  /**
    * <p>Updates a configuration bundle by creating a new version with the specified
    * changes. Each update creates a new version in the version history.</p><p><h3>See
    * Also:</h3>   <a
@@ -3968,6 +4296,34 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   void UpdateGatewayAsync(const UpdateGatewayRequestT& request, const UpdateGatewayResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::UpdateGateway, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the entries of a gateway rate limit. The dimension keys are immutable
+   * after creation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateGatewayRateLimit">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateGatewayRateLimitOutcome UpdateGatewayRateLimit(const Model::UpdateGatewayRateLimitRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateGatewayRateLimit that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateGatewayRateLimitRequestT = Model::UpdateGatewayRateLimitRequest>
+  Model::UpdateGatewayRateLimitOutcomeCallable UpdateGatewayRateLimitCallable(const UpdateGatewayRateLimitRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::UpdateGatewayRateLimit, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateGatewayRateLimit that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateGatewayRateLimitRequestT = Model::UpdateGatewayRateLimitRequest>
+  void UpdateGatewayRateLimitAsync(const UpdateGatewayRateLimitRequestT& request,
+                                   const UpdateGatewayRateLimitResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::UpdateGatewayRateLimit, request, handler, context);
   }
 
   /**

@@ -31,6 +31,7 @@ static const int RESOURCE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("Resour
 static const int DECRYPTION_FAILURE_HASH = HashingUtils::HashString("DecryptionFailure");
 static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
 static const int SERVICE_HASH = HashingUtils::HashString("ServiceException");
+static const int RETRYABLE_CONFLICT_HASH = HashingUtils::HashString("RetryableConflictException");
 static const int ENCRYPTION_FAILURE_HASH = HashingUtils::HashString("EncryptionFailure");
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName) {
@@ -55,6 +56,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
                                 RetryableType::NOT_RETRYABLE);
   } else if (hashCode == SERVICE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockAgentCoreControlErrors::SERVICE), RetryableType::RETRYABLE);
+  } else if (hashCode == RETRYABLE_CONFLICT_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockAgentCoreControlErrors::RETRYABLE_CONFLICT), RetryableType::RETRYABLE);
   } else if (hashCode == ENCRYPTION_FAILURE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockAgentCoreControlErrors::ENCRYPTION_FAILURE), RetryableType::NOT_RETRYABLE);
   }

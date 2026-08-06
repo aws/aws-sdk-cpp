@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/kafka/Kafka_EXPORTS.h>
+#include <aws/kafka/model/AuthorizerLogs.h>
 #include <aws/kafka/model/BrokerLogs.h>
 
 #include <utility>
@@ -27,6 +28,25 @@ class LoggingInfo {
   AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
+  /**
+   * <p>You can configure your MSK cluster to send authorizer logs to different
+   * destination types.</p>
+   */
+  inline const AuthorizerLogs& GetAuthorizerLogs() const { return m_authorizerLogs; }
+  inline bool AuthorizerLogsHasBeenSet() const { return m_authorizerLogsHasBeenSet; }
+  template <typename AuthorizerLogsT = AuthorizerLogs>
+  void SetAuthorizerLogs(AuthorizerLogsT&& value) {
+    m_authorizerLogsHasBeenSet = true;
+    m_authorizerLogs = std::forward<AuthorizerLogsT>(value);
+  }
+  template <typename AuthorizerLogsT = AuthorizerLogs>
+  LoggingInfo& WithAuthorizerLogs(AuthorizerLogsT&& value) {
+    SetAuthorizerLogs(std::forward<AuthorizerLogsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const BrokerLogs& GetBrokerLogs() const { return m_brokerLogs; }
   inline bool BrokerLogsHasBeenSet() const { return m_brokerLogsHasBeenSet; }
@@ -42,7 +62,10 @@ class LoggingInfo {
   }
   ///@}
  private:
+  AuthorizerLogs m_authorizerLogs;
+
   BrokerLogs m_brokerLogs;
+  bool m_authorizerLogsHasBeenSet = false;
   bool m_brokerLogsHasBeenSet = false;
 };
 

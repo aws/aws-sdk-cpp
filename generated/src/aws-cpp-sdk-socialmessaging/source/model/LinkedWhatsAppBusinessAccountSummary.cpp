@@ -53,6 +53,10 @@ LinkedWhatsAppBusinessAccountSummary& LinkedWhatsAppBusinessAccountSummary::oper
     m_marketingMessagesOnboardingStatus = jsonValue.GetString("marketingMessagesOnboardingStatus");
     m_marketingMessagesOnboardingStatusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("datasetId")) {
+    m_datasetId = jsonValue.GetString("datasetId");
+    m_datasetIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -93,6 +97,10 @@ JsonValue LinkedWhatsAppBusinessAccountSummary::Jsonize() const {
 
   if (m_marketingMessagesOnboardingStatusHasBeenSet) {
     payload.WithString("marketingMessagesOnboardingStatus", m_marketingMessagesOnboardingStatus);
+  }
+
+  if (m_datasetIdHasBeenSet) {
+    payload.WithString("datasetId", m_datasetId);
   }
 
   return payload;

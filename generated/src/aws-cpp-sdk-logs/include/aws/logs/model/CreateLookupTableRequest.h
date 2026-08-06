@@ -93,9 +93,10 @@ class CreateLookupTableRequest : public CloudWatchLogsRequest {
 
   ///@{
   /**
-   * <p>The ID of a completed CloudWatch Logs query whose results populate the lookup
-   * table.</p> <p>You must specify either <code>tableBody</code> or
-   * <code>queryId</code>, but not both.</p>
+   * <p>The ID of a completed or cancelled CloudWatch Logs query whose results
+   * populate the lookup table. A cancelled query populates the table with the
+   * partial results that were available when the query was stopped.</p> <p>You must
+   * specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
    */
   inline const Aws::String& GetQueryId() const { return m_queryId; }
   inline bool QueryIdHasBeenSet() const { return m_queryIdHasBeenSet; }

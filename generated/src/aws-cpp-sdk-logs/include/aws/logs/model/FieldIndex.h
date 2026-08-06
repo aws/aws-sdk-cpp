@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
+#include <aws/logs/model/IndexCategory.h>
 #include <aws/logs/model/IndexType.h>
 
 #include <utility>
@@ -139,6 +140,38 @@ class FieldIndex {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The category of the field index:</p> <ul> <li> <p> <code>DEFAULT</code>:
+   * Fields that CloudWatch Logs indexes by default. Examples include
+   * <code>@logStream</code> and <code>@data_format</code>.</p> </li> <li> <p>
+   * <code>CUSTOM</code>: Fields that you added manually to the field index policy.
+   * CloudWatch Logs always indexes these fields. These fields count toward the quota
+   * of 20 fields for each log group.</p> </li> <li> <p> <code>AUTO</code>: Fields
+   * that CloudWatch Logs indexes automatically based on your query patterns and
+   * usage. These fields do not count toward the field index quota. CloudWatch Logs
+   * might update these fields based on changes in your query patterns. To keep a
+   * field indexed permanently, add it to an account-level or log-group level field
+   * index policy.</p> </li> <li> <p> <code>INACTIVE</code>: Fields that CloudWatch
+   * Logs indexed before but does not index now. This happens if you remove a field
+   * from the field index policy or if CloudWatch Logs automatically selects a
+   * different field based on your queries.</p> </li> </ul> <p>For more information
+   * about automatically indexed fields, see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing-Automatic.html">Automatically
+   * indexed fields</a>.</p>
+   */
+  inline IndexCategory GetIndexCategory() const { return m_indexCategory; }
+  inline bool IndexCategoryHasBeenSet() const { return m_indexCategoryHasBeenSet; }
+  inline void SetIndexCategory(IndexCategory value) {
+    m_indexCategoryHasBeenSet = true;
+    m_indexCategory = value;
+  }
+  inline FieldIndex& WithIndexCategory(IndexCategory value) {
+    SetIndexCategory(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_logGroupIdentifier;
 
@@ -151,12 +184,15 @@ class FieldIndex {
   long long m_lastEventTime{0};
 
   IndexType m_type{IndexType::NOT_SET};
+
+  IndexCategory m_indexCategory{IndexCategory::NOT_SET};
   bool m_logGroupIdentifierHasBeenSet = false;
   bool m_fieldIndexNameHasBeenSet = false;
   bool m_lastScanTimeHasBeenSet = false;
   bool m_firstEventTimeHasBeenSet = false;
   bool m_lastEventTimeHasBeenSet = false;
   bool m_typeHasBeenSet = false;
+  bool m_indexCategoryHasBeenSet = false;
 };
 
 }  // namespace Model

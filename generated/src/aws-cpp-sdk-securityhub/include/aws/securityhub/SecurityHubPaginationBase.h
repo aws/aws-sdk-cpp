@@ -26,6 +26,7 @@
 #include <aws/securityhub/model/ListConfigurationPolicyAssociationsPaginationTraits.h>
 #include <aws/securityhub/model/ListEnabledProductsForImportPaginationTraits.h>
 #include <aws/securityhub/model/ListFindingAggregatorsPaginationTraits.h>
+#include <aws/securityhub/model/ListFreeTrialStatusesV2PaginationTraits.h>
 #include <aws/securityhub/model/ListInvitationsPaginationTraits.h>
 #include <aws/securityhub/model/ListMembersPaginationTraits.h>
 #include <aws/securityhub/model/ListOrganizationAdminAccountsPaginationTraits.h>
@@ -261,6 +262,18 @@ class SecurityHubPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFindingAggregatorsRequest,
                                              Pagination::ListFindingAggregatorsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListFreeTrialStatusesV2 operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFreeTrialStatusesV2Request,
+                                    Pagination::ListFreeTrialStatusesV2PaginationTraits<DerivedClient>>
+  ListFreeTrialStatusesV2Paginator(const Model::ListFreeTrialStatusesV2Request& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFreeTrialStatusesV2Request,
+                                             Pagination::ListFreeTrialStatusesV2PaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

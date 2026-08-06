@@ -53,6 +53,7 @@
 #include <aws/bedrock-agentcore/model/BrowserSessionStatus.h>
 #include <aws/bedrock-agentcore/model/BrowserSessionStream.h>
 #include <aws/bedrock-agentcore/model/BrowserSessionSummary.h>
+#include <aws/bedrock-agentcore/model/CapacityProviderSessionStatus.h>
 #include <aws/bedrock-agentcore/model/Certificate.h>
 #include <aws/bedrock-agentcore/model/CertificateLocation.h>
 #include <aws/bedrock-agentcore/model/CloudWatchFilterConfig.h>
@@ -101,6 +102,8 @@
 #include <aws/bedrock-agentcore/model/DeleteABTestResult.h>
 #include <aws/bedrock-agentcore/model/DeleteBatchEvaluationRequest.h>
 #include <aws/bedrock-agentcore/model/DeleteBatchEvaluationResult.h>
+#include <aws/bedrock-agentcore/model/DeleteCapacityProviderSessionRequest.h>
+#include <aws/bedrock-agentcore/model/DeleteCapacityProviderSessionResult.h>
 #include <aws/bedrock-agentcore/model/DeleteEventRequest.h>
 #include <aws/bedrock-agentcore/model/DeleteEventResult.h>
 #include <aws/bedrock-agentcore/model/DeleteMemoryRecordRequest.h>

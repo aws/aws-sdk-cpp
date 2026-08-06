@@ -8,6 +8,7 @@
 #include <aws/bedrock-agentcore-control/model/AgentRuntimeArtifact.h>
 #include <aws/bedrock-agentcore-control/model/AgentRuntimeStatus.h>
 #include <aws/bedrock-agentcore-control/model/AuthorizerConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/CapacityProviderConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/FilesystemConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/LifecycleConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/NetworkConfiguration.h>
@@ -391,6 +392,23 @@ class GetAgentRuntimeResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The capacity provider configuration for the AgentCore Runtime.</p>
+   */
+  inline const CapacityProviderConfiguration& GetCapacityProviderConfiguration() const { return m_capacityProviderConfiguration; }
+  template <typename CapacityProviderConfigurationT = CapacityProviderConfiguration>
+  void SetCapacityProviderConfiguration(CapacityProviderConfigurationT&& value) {
+    m_capacityProviderConfigurationHasBeenSet = true;
+    m_capacityProviderConfiguration = std::forward<CapacityProviderConfigurationT>(value);
+  }
+  template <typename CapacityProviderConfigurationT = CapacityProviderConfiguration>
+  GetAgentRuntimeResult& WithCapacityProviderConfiguration(CapacityProviderConfigurationT&& value) {
+    SetCapacityProviderConfiguration(std::forward<CapacityProviderConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -447,6 +465,8 @@ class GetAgentRuntimeResult {
 
   Aws::Vector<FilesystemConfiguration> m_filesystemConfigurations;
 
+  CapacityProviderConfiguration m_capacityProviderConfiguration;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_agentRuntimeArnHasBeenSet = false;
@@ -469,6 +489,7 @@ class GetAgentRuntimeResult {
   bool m_requestHeaderConfigurationHasBeenSet = false;
   bool m_metadataConfigurationHasBeenSet = false;
   bool m_filesystemConfigurationsHasBeenSet = false;
+  bool m_capacityProviderConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

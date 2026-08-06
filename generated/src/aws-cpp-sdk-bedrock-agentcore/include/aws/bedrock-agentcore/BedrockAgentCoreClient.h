@@ -359,6 +359,39 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>Deletes a session associated with a capacity provider in Amazon Bedrock
+   * AgentCore and makes the session unavailable for further use. To delete a
+   * capacity provider session, specify both the capacity provider identifier and the
+   * session ID. After you delete a session, you cannot restart it.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/DeleteCapacityProviderSession">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteCapacityProviderSessionOutcome DeleteCapacityProviderSession(
+      const Model::DeleteCapacityProviderSessionRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteCapacityProviderSession that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteCapacityProviderSessionRequestT = Model::DeleteCapacityProviderSessionRequest>
+  Model::DeleteCapacityProviderSessionOutcomeCallable DeleteCapacityProviderSessionCallable(
+      const DeleteCapacityProviderSessionRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::DeleteCapacityProviderSession, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteCapacityProviderSession that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteCapacityProviderSessionRequestT = Model::DeleteCapacityProviderSessionRequest>
+  void DeleteCapacityProviderSessionAsync(const DeleteCapacityProviderSessionRequestT& request,
+                                          const DeleteCapacityProviderSessionResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::DeleteCapacityProviderSession, request, handler, context);
+  }
+
+  /**
    * <p>Deletes an event from an AgentCore Memory resource. When you delete an event,
    * it is permanently removed.</p> <p>To use this operation, you must have the
    * <code>bedrock-agentcore:DeleteEvent</code> permission.</p><p><h3>See Also:</h3>

@@ -21,6 +21,7 @@
 #include <aws/socialmessaging/SocialMessagingEndpointProvider.h>
 #include <aws/socialmessaging/SocialMessagingErrorMarshaller.h>
 #include <aws/socialmessaging/model/AssociateWhatsAppBusinessAccountRequest.h>
+#include <aws/socialmessaging/model/CreateWhatsAppDatasetRequest.h>
 #include <aws/socialmessaging/model/CreateWhatsAppFlowRequest.h>
 #include <aws/socialmessaging/model/CreateWhatsAppMessageTemplateFromLibraryRequest.h>
 #include <aws/socialmessaging/model/CreateWhatsAppMessageTemplateMediaRequest.h>
@@ -45,6 +46,7 @@
 #include <aws/socialmessaging/model/PostWhatsAppMessageMediaRequest.h>
 #include <aws/socialmessaging/model/PublishWhatsAppFlowRequest.h>
 #include <aws/socialmessaging/model/PutWhatsAppBusinessAccountEventDestinationsRequest.h>
+#include <aws/socialmessaging/model/SendWhatsAppConversionEventRequest.h>
 #include <aws/socialmessaging/model/SendWhatsAppMessageRequest.h>
 #include <aws/socialmessaging/model/TagResourceRequest.h>
 #include <aws/socialmessaging/model/UntagResourceRequest.h>
@@ -219,6 +221,17 @@ AssociateWhatsAppBusinessAccountOutcome SocialMessagingClient::AssociateWhatsApp
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? AssociateWhatsAppBusinessAccountOutcome(result.GetResultWithOwnership())
                             : AssociateWhatsAppBusinessAccountOutcome(std::move(result.GetError()));
+}
+
+CreateWhatsAppDatasetOutcome SocialMessagingClient::CreateWhatsAppDataset(const CreateWhatsAppDatasetRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/whatsapp/waba/dataset");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWhatsAppDatasetOutcome(result.GetResultWithOwnership())
+                            : CreateWhatsAppDatasetOutcome(std::move(result.GetError()));
 }
 
 CreateWhatsAppFlowOutcome SocialMessagingClient::CreateWhatsAppFlow(const CreateWhatsAppFlowRequest& request) const {
@@ -610,6 +623,18 @@ PutWhatsAppBusinessAccountEventDestinationsOutcome SocialMessagingClient::PutWha
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? PutWhatsAppBusinessAccountEventDestinationsOutcome(result.GetResultWithOwnership())
                             : PutWhatsAppBusinessAccountEventDestinationsOutcome(std::move(result.GetError()));
+}
+
+SendWhatsAppConversionEventOutcome SocialMessagingClient::SendWhatsAppConversionEvent(
+    const SendWhatsAppConversionEventRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/whatsapp/waba/dataset/events");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendWhatsAppConversionEventOutcome(result.GetResultWithOwnership())
+                            : SendWhatsAppConversionEventOutcome(std::move(result.GetError()));
 }
 
 SendWhatsAppMessageOutcome SocialMessagingClient::SendWhatsAppMessage(const SendWhatsAppMessageRequest& request) const {

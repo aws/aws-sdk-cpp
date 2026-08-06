@@ -24,7 +24,9 @@ enum class ObjectStorageClass {
   SNOW,
   EXPRESS_ONEZONE,
   FSX_OPENZFS,
-  FSX_ONTAP
+  FSX_ONTAP,
+  AWS_BACKUP_WARM,
+  AWS_BACKUP_LOW_COST_WARM
 };
 
 namespace ObjectStorageClassMapper {

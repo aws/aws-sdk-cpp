@@ -163,6 +163,33 @@ class ServerlessJobConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The maximum sequence length, in tokens, that the customization job supports.
+   * SageMaker uses this value to select a training configuration for the base model
+   * that you specify. The parameter supports the following values: </p> <ul> <li>
+   * <p> <code>1K</code> </p> </li> <li> <p> <code>2K</code> </p> </li> <li> <p>
+   * <code>4K</code> </p> </li> <li> <p> <code>8K</code> </p> </li> <li> <p>
+   * <code>16K</code> </p> </li> <li> <p> <code>32K</code> </p> </li> <li> <p>
+   * <code>64K</code> </p> </li> <li> <p> <code>128K</code> </p> </li> </ul> <p> If
+   * you don't specify a value, SageMaker selects a training configuration based on
+   * the other values that you specify. The selection is not restricted to a
+   * particular sequence length. </p>
+   */
+  inline const Aws::String& GetSequenceLength() const { return m_sequenceLength; }
+  inline bool SequenceLengthHasBeenSet() const { return m_sequenceLengthHasBeenSet; }
+  template <typename SequenceLengthT = Aws::String>
+  void SetSequenceLength(SequenceLengthT&& value) {
+    m_sequenceLengthHasBeenSet = true;
+    m_sequenceLength = std::forward<SequenceLengthT>(value);
+  }
+  template <typename SequenceLengthT = Aws::String>
+  ServerlessJobConfig& WithSequenceLength(SequenceLengthT&& value) {
+    SetSequenceLength(std::forward<SequenceLengthT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_baseModelArn;
 
@@ -177,6 +204,8 @@ class ServerlessJobConfig {
   EvaluationType m_evaluationType{EvaluationType::NOT_SET};
 
   Aws::String m_evaluatorArn;
+
+  Aws::String m_sequenceLength;
   bool m_baseModelArnHasBeenSet = false;
   bool m_acceptEulaHasBeenSet = false;
   bool m_jobTypeHasBeenSet = false;
@@ -184,6 +213,7 @@ class ServerlessJobConfig {
   bool m_peftHasBeenSet = false;
   bool m_evaluationTypeHasBeenSet = false;
   bool m_evaluatorArnHasBeenSet = false;
+  bool m_sequenceLengthHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -135,6 +135,38 @@ class AWS_BACKUP_API BackupClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates a backup access point for an Amazon S3 recovery point. A backup
+   * access point provides on-demand, read-only access to the backup data in a
+   * recovery point through an Amazon S3 access point, without initiating a
+   * restore.</p> <p>While a backup access point is active for a recovery point,
+   * Backup pauses lifecycle transitions and blocks deletion of that recovery
+   * point.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateBackupAccessPoint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateBackupAccessPointOutcome CreateBackupAccessPoint(const Model::CreateBackupAccessPointRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateBackupAccessPoint that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateBackupAccessPointRequestT = Model::CreateBackupAccessPointRequest>
+  Model::CreateBackupAccessPointOutcomeCallable CreateBackupAccessPointCallable(const CreateBackupAccessPointRequestT& request) const {
+    return SubmitCallable(&BackupClient::CreateBackupAccessPoint, request);
+  }
+
+  /**
+   * An Async wrapper for CreateBackupAccessPoint that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateBackupAccessPointRequestT = Model::CreateBackupAccessPointRequest>
+  void CreateBackupAccessPointAsync(const CreateBackupAccessPointRequestT& request,
+                                    const CreateBackupAccessPointResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BackupClient::CreateBackupAccessPoint, request, handler, context);
+  }
+
+  /**
    * <p>Creates a backup plan using a backup plan name and backup rules. A backup
    * plan is a document that contains information that Backup uses to schedule tasks
    * that create recovery points for resources.</p> <p>If you call
@@ -475,6 +507,37 @@ class AWS_BACKUP_API BackupClient : public Aws::Client::AWSJsonClient,
                                        const CreateTieringConfigurationResponseReceivedHandler& handler,
                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BackupClient::CreateTieringConfiguration, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a backup access point. This deletes the underlying Amazon S3 access
+   * point and, if no other backup access points remain for the recovery point,
+   * resumes lifecycle transitions for that recovery point.</p> <p>Always delete
+   * backup access points using this operation rather than deleting the underlying
+   * Amazon S3 access point directly.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteBackupAccessPoint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteBackupAccessPointOutcome DeleteBackupAccessPoint(const Model::DeleteBackupAccessPointRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteBackupAccessPoint that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteBackupAccessPointRequestT = Model::DeleteBackupAccessPointRequest>
+  Model::DeleteBackupAccessPointOutcomeCallable DeleteBackupAccessPointCallable(const DeleteBackupAccessPointRequestT& request) const {
+    return SubmitCallable(&BackupClient::DeleteBackupAccessPoint, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteBackupAccessPoint that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteBackupAccessPointRequestT = Model::DeleteBackupAccessPointRequest>
+  void DeleteBackupAccessPointAsync(const DeleteBackupAccessPointRequestT& request,
+                                    const DeleteBackupAccessPointResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BackupClient::DeleteBackupAccessPoint, request, handler, context);
   }
 
   /**
@@ -834,6 +897,38 @@ class AWS_BACKUP_API BackupClient : public Aws::Client::AWSJsonClient,
                                        const DeleteTieringConfigurationResponseReceivedHandler& handler,
                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BackupClient::DeleteTieringConfiguration, request, handler, context);
+  }
+
+  /**
+   * <p>Returns metadata about a backup access point, including its status and the
+   * details of the underlying Amazon S3 access point.</p> <p>After a backup access
+   * point reaches the <code>AVAILABLE</code> status, use this operation to retrieve
+   * the Amazon S3 access point ARN and alias that you need to read the backup
+   * data.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeBackupAccessPoint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeBackupAccessPointOutcome DescribeBackupAccessPoint(const Model::DescribeBackupAccessPointRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeBackupAccessPoint that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeBackupAccessPointRequestT = Model::DescribeBackupAccessPointRequest>
+  Model::DescribeBackupAccessPointOutcomeCallable DescribeBackupAccessPointCallable(
+      const DescribeBackupAccessPointRequestT& request) const {
+    return SubmitCallable(&BackupClient::DescribeBackupAccessPoint, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeBackupAccessPoint that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeBackupAccessPointRequestT = Model::DescribeBackupAccessPointRequest>
+  void DescribeBackupAccessPointAsync(const DescribeBackupAccessPointRequestT& request,
+                                      const DescribeBackupAccessPointResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BackupClient::DescribeBackupAccessPoint, request, handler, context);
   }
 
   /**
@@ -1758,6 +1853,96 @@ class AWS_BACKUP_API BackupClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns a list of the backup access points in your account and
+   * Region.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupAccessPoints">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListBackupAccessPointsOutcome ListBackupAccessPoints(const Model::ListBackupAccessPointsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListBackupAccessPoints that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListBackupAccessPointsRequestT = Model::ListBackupAccessPointsRequest>
+  Model::ListBackupAccessPointsOutcomeCallable ListBackupAccessPointsCallable(const ListBackupAccessPointsRequestT& request = {}) const {
+    return SubmitCallable(&BackupClient::ListBackupAccessPoints, request);
+  }
+
+  /**
+   * An Async wrapper for ListBackupAccessPoints that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListBackupAccessPointsRequestT = Model::ListBackupAccessPointsRequest>
+  void ListBackupAccessPointsAsync(const ListBackupAccessPointsResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                   const ListBackupAccessPointsRequestT& request = {}) const {
+    return SubmitAsync(&BackupClient::ListBackupAccessPoints, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the backup access points associated with the specified recovery
+   * point.</p> <p>If you own the recovery point and have shared it with other
+   * accounts, the response includes backup access points created by those
+   * accounts.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupAccessPointsByRecoveryPoint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListBackupAccessPointsByRecoveryPointOutcome ListBackupAccessPointsByRecoveryPoint(
+      const Model::ListBackupAccessPointsByRecoveryPointRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListBackupAccessPointsByRecoveryPoint that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename ListBackupAccessPointsByRecoveryPointRequestT = Model::ListBackupAccessPointsByRecoveryPointRequest>
+  Model::ListBackupAccessPointsByRecoveryPointOutcomeCallable ListBackupAccessPointsByRecoveryPointCallable(
+      const ListBackupAccessPointsByRecoveryPointRequestT& request) const {
+    return SubmitCallable(&BackupClient::ListBackupAccessPointsByRecoveryPoint, request);
+  }
+
+  /**
+   * An Async wrapper for ListBackupAccessPointsByRecoveryPoint that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename ListBackupAccessPointsByRecoveryPointRequestT = Model::ListBackupAccessPointsByRecoveryPointRequest>
+  void ListBackupAccessPointsByRecoveryPointAsync(const ListBackupAccessPointsByRecoveryPointRequestT& request,
+                                                  const ListBackupAccessPointsByRecoveryPointResponseReceivedHandler& handler,
+                                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BackupClient::ListBackupAccessPointsByRecoveryPoint, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the backup access points associated with the specified resource, such
+   * as an Amazon S3 bucket.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupAccessPointsByResource">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListBackupAccessPointsByResourceOutcome ListBackupAccessPointsByResource(
+      const Model::ListBackupAccessPointsByResourceRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListBackupAccessPointsByResource that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename ListBackupAccessPointsByResourceRequestT = Model::ListBackupAccessPointsByResourceRequest>
+  Model::ListBackupAccessPointsByResourceOutcomeCallable ListBackupAccessPointsByResourceCallable(
+      const ListBackupAccessPointsByResourceRequestT& request) const {
+    return SubmitCallable(&BackupClient::ListBackupAccessPointsByResource, request);
+  }
+
+  /**
+   * An Async wrapper for ListBackupAccessPointsByResource that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListBackupAccessPointsByResourceRequestT = Model::ListBackupAccessPointsByResourceRequest>
+  void ListBackupAccessPointsByResourceAsync(const ListBackupAccessPointsByResourceRequestT& request,
+                                             const ListBackupAccessPointsByResourceResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BackupClient::ListBackupAccessPointsByResource, request, handler, context);
+  }
+
+  /**
    * <p>This is a request for a summary of backup jobs created or running within the
    * most recent 30 days. You can include parameters AccountID, State, ResourceType,
    * MessageCategory, AggregationPeriod, MaxResults, or NextToken to filter
@@ -2100,9 +2285,11 @@ class AWS_BACKUP_API BackupClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Returns an array of resources successfully backed up by Backup, including the
-   * time the resource was saved, an Amazon Resource Name (ARN) of the resource, and
-   * a resource type.</p><p><h3>See Also:</h3>   <a
+   * <p>Returns an array of resources with recovery points created by Backup
+   * (regardless of the recovery point's <a
+   * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeRecoveryPoint.html#Backup-DescribeRecoveryPoint-response-Status">status</a>),
+   * including the time the resource was saved, an Amazon Resource Name (ARN) of the
+   * resource, and a resource type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListProtectedResources">AWS
    * API Reference</a></p>
    */

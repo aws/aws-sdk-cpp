@@ -16,6 +16,7 @@
 #include <aws/bedrock-agentcore/model/CreatePaymentSessionRequest.h>
 #include <aws/bedrock-agentcore/model/DeleteABTestRequest.h>
 #include <aws/bedrock-agentcore/model/DeleteBatchEvaluationRequest.h>
+#include <aws/bedrock-agentcore/model/DeleteCapacityProviderSessionRequest.h>
 #include <aws/bedrock-agentcore/model/DeleteEventRequest.h>
 #include <aws/bedrock-agentcore/model/DeleteMemoryRecordRequest.h>
 #include <aws/bedrock-agentcore/model/DeletePaymentInstrumentRequest.h>
@@ -400,6 +401,32 @@ DeleteBatchEvaluationOutcome BedrockAgentCoreClient::DeleteBatchEvaluation(const
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteBatchEvaluationOutcome(result.GetResultWithOwnership())
                             : DeleteBatchEvaluationOutcome(std::move(result.GetError()));
+}
+
+DeleteCapacityProviderSessionOutcome BedrockAgentCoreClient::DeleteCapacityProviderSession(
+    const DeleteCapacityProviderSessionRequest& request) const {
+  if (!request.CapacityProviderIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteCapacityProviderSession", "Required field: CapacityProviderId, is not set");
+    return DeleteCapacityProviderSessionOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(
+        BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CapacityProviderId]", false));
+  }
+  if (!request.SessionIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteCapacityProviderSession", "Required field: SessionId, is not set");
+    return DeleteCapacityProviderSessionOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(
+        BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SessionId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/capacity-providers/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCapacityProviderId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/sessions/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCapacityProviderSessionOutcome(result.GetResultWithOwnership())
+                            : DeleteCapacityProviderSessionOutcome(std::move(result.GetError()));
 }
 
 DeleteEventOutcome BedrockAgentCoreClient::DeleteEvent(const DeleteEventRequest& request) const {

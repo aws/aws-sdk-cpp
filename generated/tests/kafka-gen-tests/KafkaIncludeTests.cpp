@@ -16,6 +16,7 @@
 #include <aws/kafka/internal/KafkaEndpointRules.h>
 #include <aws/kafka/model/AmazonMskCluster.h>
 #include <aws/kafka/model/ApacheKafkaCluster.h>
+#include <aws/kafka/model/AuthorizerLogs.h>
 #include <aws/kafka/model/BadRequestException.h>
 #include <aws/kafka/model/BatchAssociateScramSecretRequest.h>
 #include <aws/kafka/model/BatchAssociateScramSecretResult.h>

@@ -137,6 +137,8 @@
 #include <aws/securityhub/model/ListEnabledProductsForImportResult.h>
 #include <aws/securityhub/model/ListFindingAggregatorsRequest.h>
 #include <aws/securityhub/model/ListFindingAggregatorsResult.h>
+#include <aws/securityhub/model/ListFreeTrialStatusesV2Request.h>
+#include <aws/securityhub/model/ListFreeTrialStatusesV2Result.h>
 #include <aws/securityhub/model/ListInvitationsRequest.h>
 #include <aws/securityhub/model/ListInvitationsResult.h>
 #include <aws/securityhub/model/ListMembersRequest.h>
@@ -288,6 +290,7 @@ class ListConnectorsRequest;
 class ListConnectorsV2Request;
 class ListEnabledProductsForImportRequest;
 class ListFindingAggregatorsRequest;
+class ListFreeTrialStatusesV2Request;
 class ListInvitationsRequest;
 class ListMembersRequest;
 class ListOrganizationAdminAccountsRequest;
@@ -404,6 +407,7 @@ typedef Aws::Utils::Outcome<ListConnectorsResult, SecurityHubError> ListConnecto
 typedef Aws::Utils::Outcome<ListConnectorsV2Result, SecurityHubError> ListConnectorsV2Outcome;
 typedef Aws::Utils::Outcome<ListEnabledProductsForImportResult, SecurityHubError> ListEnabledProductsForImportOutcome;
 typedef Aws::Utils::Outcome<ListFindingAggregatorsResult, SecurityHubError> ListFindingAggregatorsOutcome;
+typedef Aws::Utils::Outcome<ListFreeTrialStatusesV2Result, SecurityHubError> ListFreeTrialStatusesV2Outcome;
 typedef Aws::Utils::Outcome<ListInvitationsResult, SecurityHubError> ListInvitationsOutcome;
 typedef Aws::Utils::Outcome<ListMembersResult, SecurityHubError> ListMembersOutcome;
 typedef Aws::Utils::Outcome<ListOrganizationAdminAccountsResult, SecurityHubError> ListOrganizationAdminAccountsOutcome;
@@ -520,6 +524,7 @@ typedef std::future<ListConnectorsOutcome> ListConnectorsOutcomeCallable;
 typedef std::future<ListConnectorsV2Outcome> ListConnectorsV2OutcomeCallable;
 typedef std::future<ListEnabledProductsForImportOutcome> ListEnabledProductsForImportOutcomeCallable;
 typedef std::future<ListFindingAggregatorsOutcome> ListFindingAggregatorsOutcomeCallable;
+typedef std::future<ListFreeTrialStatusesV2Outcome> ListFreeTrialStatusesV2OutcomeCallable;
 typedef std::future<ListInvitationsOutcome> ListInvitationsOutcomeCallable;
 typedef std::future<ListMembersOutcome> ListMembersOutcomeCallable;
 typedef std::future<ListOrganizationAdminAccountsOutcome> ListOrganizationAdminAccountsOutcomeCallable;
@@ -831,6 +836,9 @@ typedef std::function<void(const SecurityHubClient*, const Model::ListEnabledPro
 typedef std::function<void(const SecurityHubClient*, const Model::ListFindingAggregatorsRequest&,
                            const Model::ListFindingAggregatorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListFindingAggregatorsResponseReceivedHandler;
+typedef std::function<void(const SecurityHubClient*, const Model::ListFreeTrialStatusesV2Request&,
+                           const Model::ListFreeTrialStatusesV2Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListFreeTrialStatusesV2ResponseReceivedHandler;
 typedef std::function<void(const SecurityHubClient*, const Model::ListInvitationsRequest&, const Model::ListInvitationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListInvitationsResponseReceivedHandler;

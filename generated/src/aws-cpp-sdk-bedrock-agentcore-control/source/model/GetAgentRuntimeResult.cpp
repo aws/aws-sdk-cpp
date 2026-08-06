@@ -109,6 +109,10 @@ GetAgentRuntimeResult& GetAgentRuntimeResult::operator=(const Aws::AmazonWebServ
     }
     m_filesystemConfigurationsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("capacityProviderConfiguration")) {
+    m_capacityProviderConfiguration = jsonValue.GetObject("capacityProviderConfiguration");
+    m_capacityProviderConfigurationHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

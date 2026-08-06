@@ -12,6 +12,7 @@
 #include <aws/devicefarm/model/DeviceMinutes.h>
 #include <aws/devicefarm/model/ExecutionResult.h>
 #include <aws/devicefarm/model/ExecutionStatus.h>
+#include <aws/devicefarm/model/JobInsights.h>
 #include <aws/devicefarm/model/TestType.h>
 
 #include <utility>
@@ -314,6 +315,26 @@ class Job {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The insights for the job, including the report status and test-level metrics.
+   * This field contains data only if you specified <code>insightsTypes</code> when
+   * you scheduled the run.</p>
+   */
+  inline const JobInsights& GetInsights() const { return m_insights; }
+  inline bool InsightsHasBeenSet() const { return m_insightsHasBeenSet; }
+  template <typename InsightsT = JobInsights>
+  void SetInsights(InsightsT&& value) {
+    m_insightsHasBeenSet = true;
+    m_insights = std::forward<InsightsT>(value);
+  }
+  template <typename InsightsT = JobInsights>
+  Job& WithInsights(InsightsT&& value) {
+    SetInsights(std::forward<InsightsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -344,6 +365,8 @@ class Job {
   Aws::String m_videoEndpoint;
 
   bool m_videoCapture{false};
+
+  JobInsights m_insights;
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
@@ -359,6 +382,7 @@ class Job {
   bool m_deviceMinutesHasBeenSet = false;
   bool m_videoEndpointHasBeenSet = false;
   bool m_videoCaptureHasBeenSet = false;
+  bool m_insightsHasBeenSet = false;
 };
 
 }  // namespace Model

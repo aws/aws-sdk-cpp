@@ -8,6 +8,8 @@
 #include <aws/account/AccountClient.h>
 #include <aws/acm-pca/ACMPCAClient.h>
 #include <aws/acm/ACMClient.h>
+#include <aws/agent-registry-control/AgentRegistryControlClient.h>
+#include <aws/agent-registry/AgentRegistryClient.h>
 #include <aws/aiops/AIOpsClient.h>
 #include <aws/amp/PrometheusServiceClient.h>
 #include <aws/amplify/AmplifyClient.h>

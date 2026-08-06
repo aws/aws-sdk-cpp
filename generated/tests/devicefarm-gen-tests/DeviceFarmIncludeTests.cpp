@@ -117,11 +117,15 @@
 #include <aws/devicefarm/model/GetVPCEConfigurationRequest.h>
 #include <aws/devicefarm/model/GetVPCEConfigurationResult.h>
 #include <aws/devicefarm/model/IncompatibilityMessage.h>
+#include <aws/devicefarm/model/InsightsType.h>
 #include <aws/devicefarm/model/InstallToRemoteAccessSessionRequest.h>
 #include <aws/devicefarm/model/InstallToRemoteAccessSessionResult.h>
 #include <aws/devicefarm/model/InstanceProfile.h>
 #include <aws/devicefarm/model/InstanceStatus.h>
 #include <aws/devicefarm/model/Job.h>
+#include <aws/devicefarm/model/JobInsights.h>
+#include <aws/devicefarm/model/JobReport.h>
+#include <aws/devicefarm/model/JobReportMetrics.h>
 #include <aws/devicefarm/model/ListArtifactsRequest.h>
 #include <aws/devicefarm/model/ListArtifactsResult.h>
 #include <aws/devicefarm/model/ListDeviceInstancesRequest.h>
@@ -192,10 +196,12 @@
 #include <aws/devicefarm/model/RemoteAccessSession.h>
 #include <aws/devicefarm/model/RenewOfferingRequest.h>
 #include <aws/devicefarm/model/RenewOfferingResult.h>
+#include <aws/devicefarm/model/ReportStatus.h>
 #include <aws/devicefarm/model/Resolution.h>
 #include <aws/devicefarm/model/Rule.h>
 #include <aws/devicefarm/model/RuleOperator.h>
 #include <aws/devicefarm/model/Run.h>
+#include <aws/devicefarm/model/RunInsights.h>
 #include <aws/devicefarm/model/Sample.h>
 #include <aws/devicefarm/model/SampleType.h>
 #include <aws/devicefarm/model/ScheduleRunConfiguration.h>
@@ -223,6 +229,8 @@
 #include <aws/devicefarm/model/TestGridSessionArtifactType.h>
 #include <aws/devicefarm/model/TestGridSessionStatus.h>
 #include <aws/devicefarm/model/TestGridVpcConfig.h>
+#include <aws/devicefarm/model/TestReport.h>
+#include <aws/devicefarm/model/TestReportMetrics.h>
 #include <aws/devicefarm/model/TestType.h>
 #include <aws/devicefarm/model/TooManyTagsException.h>
 #include <aws/devicefarm/model/TrialMinutes.h>

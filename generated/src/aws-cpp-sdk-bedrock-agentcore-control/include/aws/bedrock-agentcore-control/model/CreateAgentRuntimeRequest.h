@@ -8,6 +8,7 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/AgentRuntimeArtifact.h>
 #include <aws/bedrock-agentcore-control/model/AuthorizerConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/CapacityProviderConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/FilesystemConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/LifecycleConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/NetworkConfiguration.h>
@@ -269,6 +270,26 @@ class CreateAgentRuntimeRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
+   * <p>The capacity provider configuration for the AgentCore Runtime. Use a capacity
+   * provider to run the AgentCore Runtime on the Instances compute type, which
+   * provisions Amazon Web Services managed compute in your account.</p>
+   */
+  inline const CapacityProviderConfiguration& GetCapacityProviderConfiguration() const { return m_capacityProviderConfiguration; }
+  inline bool CapacityProviderConfigurationHasBeenSet() const { return m_capacityProviderConfigurationHasBeenSet; }
+  template <typename CapacityProviderConfigurationT = CapacityProviderConfiguration>
+  void SetCapacityProviderConfiguration(CapacityProviderConfigurationT&& value) {
+    m_capacityProviderConfigurationHasBeenSet = true;
+    m_capacityProviderConfiguration = std::forward<CapacityProviderConfigurationT>(value);
+  }
+  template <typename CapacityProviderConfigurationT = CapacityProviderConfiguration>
+  CreateAgentRuntimeRequest& WithCapacityProviderConfiguration(CapacityProviderConfigurationT&& value) {
+    SetCapacityProviderConfiguration(std::forward<CapacityProviderConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A map of tag keys and values to assign to the agent runtime. Tags enable you
    * to categorize your resources in different ways, for example, by purpose, owner,
    * or environment.</p>
@@ -317,6 +338,8 @@ class CreateAgentRuntimeRequest : public BedrockAgentCoreControlRequest {
 
   Aws::Vector<FilesystemConfiguration> m_filesystemConfigurations;
 
+  CapacityProviderConfiguration m_capacityProviderConfiguration;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_agentRuntimeNameHasBeenSet = false;
   bool m_agentRuntimeArtifactHasBeenSet = false;
@@ -330,6 +353,7 @@ class CreateAgentRuntimeRequest : public BedrockAgentCoreControlRequest {
   bool m_lifecycleConfigurationHasBeenSet = false;
   bool m_environmentVariablesHasBeenSet = false;
   bool m_filesystemConfigurationsHasBeenSet = false;
+  bool m_capacityProviderConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

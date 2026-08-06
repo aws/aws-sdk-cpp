@@ -58,6 +58,10 @@ Aws::String GetSpotPlacementScoresRequest::SerializePayload() const {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
+  if (m_includeLocalZonesHasBeenSet) {
+    ss << "IncludeLocalZones=" << std::boolalpha << m_includeLocalZones << "&";
+  }
+
   ss << "Version=2016-11-15";
   return ss.str();
 }

@@ -39,6 +39,7 @@
 #include <aws/mediatailor/model/ChannelState.h>
 #include <aws/mediatailor/model/ClipRange.h>
 #include <aws/mediatailor/model/CompressionMethod.h>
+#include <aws/mediatailor/model/ConcurrentExecutorConfiguration.h>
 #include <aws/mediatailor/model/ConfigureLogsForChannelRequest.h>
 #include <aws/mediatailor/model/ConfigureLogsForChannelResult.h>
 #include <aws/mediatailor/model/ConfigureLogsForPlaybackConfigurationRequest.h>

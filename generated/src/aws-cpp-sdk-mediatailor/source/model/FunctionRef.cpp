@@ -26,6 +26,10 @@ FunctionRef& FunctionRef::operator=(JsonView jsonValue) {
     m_functionId = jsonValue.GetString("FunctionId");
     m_functionIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Alias")) {
+    m_alias = jsonValue.GetString("Alias");
+    m_aliasHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue FunctionRef::Jsonize() const {
 
   if (m_functionIdHasBeenSet) {
     payload.WithString("FunctionId", m_functionId);
+  }
+
+  if (m_aliasHasBeenSet) {
+    payload.WithString("Alias", m_alias);
   }
 
   return payload;

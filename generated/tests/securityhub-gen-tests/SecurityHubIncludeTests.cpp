@@ -19,6 +19,7 @@
 #include <aws/securityhub/model/AcceptAdministratorInvitationResult.h>
 #include <aws/securityhub/model/AccessDeniedException.h>
 #include <aws/securityhub/model/AccountDetails.h>
+#include <aws/securityhub/model/AccountFreeTrialStatus.h>
 #include <aws/securityhub/model/Action.h>
 #include <aws/securityhub/model/ActionLocalIpDetails.h>
 #include <aws/securityhub/model/ActionLocalPortDetails.h>
@@ -743,6 +744,9 @@
 #include <aws/securityhub/model/FirewallPolicyStatefulRuleGroupReferencesDetails.h>
 #include <aws/securityhub/model/FirewallPolicyStatelessCustomActionsDetails.h>
 #include <aws/securityhub/model/FirewallPolicyStatelessRuleGroupReferencesDetails.h>
+#include <aws/securityhub/model/FreeTrialStatus.h>
+#include <aws/securityhub/model/FreeTrialStatusValue.h>
+#include <aws/securityhub/model/FreeTrialType.h>
 #include <aws/securityhub/model/GenerateRecommendedPolicyV2Request.h>
 #include <aws/securityhub/model/GenerateRecommendedPolicyV2Result.h>
 #include <aws/securityhub/model/GeneratorDetails.h>
@@ -844,6 +848,8 @@
 #include <aws/securityhub/model/ListEnabledProductsForImportResult.h>
 #include <aws/securityhub/model/ListFindingAggregatorsRequest.h>
 #include <aws/securityhub/model/ListFindingAggregatorsResult.h>
+#include <aws/securityhub/model/ListFreeTrialStatusesV2Request.h>
+#include <aws/securityhub/model/ListFreeTrialStatusesV2Result.h>
 #include <aws/securityhub/model/ListInvitationsRequest.h>
 #include <aws/securityhub/model/ListInvitationsResult.h>
 #include <aws/securityhub/model/ListMembersRequest.h>

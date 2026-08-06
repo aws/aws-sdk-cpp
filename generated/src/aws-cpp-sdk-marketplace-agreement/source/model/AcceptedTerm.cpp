@@ -66,6 +66,10 @@ AcceptedTerm& AcceptedTerm::operator=(JsonView jsonValue) {
     m_variablePaymentTerm = jsonValue.GetObject("variablePaymentTerm");
     m_variablePaymentTermHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("netPaymentTerm")) {
+    m_netPaymentTerm = jsonValue.GetObject("netPaymentTerm");
+    m_netPaymentTermHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -118,6 +122,10 @@ JsonValue AcceptedTerm::Jsonize() const {
 
   if (m_variablePaymentTermHasBeenSet) {
     payload.WithObject("variablePaymentTerm", m_variablePaymentTerm.Jsonize());
+  }
+
+  if (m_netPaymentTermHasBeenSet) {
+    payload.WithObject("netPaymentTerm", m_netPaymentTerm.Jsonize());
   }
 
   return payload;

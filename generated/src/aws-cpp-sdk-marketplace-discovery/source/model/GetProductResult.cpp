@@ -34,6 +34,10 @@ GetProductResult& GetProductResult::operator=(const Aws::AmazonWebServiceResult<
     m_productName = jsonValue.GetString("productName");
     m_productNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("manufacturer")) {
+    m_manufacturer = jsonValue.GetObject("manufacturer");
+    m_manufacturerHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("deployedOnAws")) {
     m_deployedOnAws = DeployedOnAwsStatusMapper::GetDeployedOnAwsStatusForName(jsonValue.GetString("deployedOnAws"));
     m_deployedOnAwsHasBeenSet = true;
@@ -45,10 +49,6 @@ GetProductResult& GetProductResult::operator=(const Aws::AmazonWebServiceResult<
   if (jsonValue.ValueExists("longDescription")) {
     m_longDescription = jsonValue.GetString("longDescription");
     m_longDescriptionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("manufacturer")) {
-    m_manufacturer = jsonValue.GetObject("manufacturer");
-    m_manufacturerHasBeenSet = true;
   }
   if (jsonValue.ValueExists("logoThumbnailUrl")) {
     m_logoThumbnailUrl = jsonValue.GetString("logoThumbnailUrl");

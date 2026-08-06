@@ -53,6 +53,10 @@ LinkedWhatsAppBusinessAccount& LinkedWhatsAppBusinessAccount::operator=(JsonView
     m_marketingMessagesOnboardingStatus = jsonValue.GetString("marketingMessagesOnboardingStatus");
     m_marketingMessagesOnboardingStatusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("datasetId")) {
+    m_datasetId = jsonValue.GetString("datasetId");
+    m_datasetIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("phoneNumbers")) {
     Aws::Utils::Array<JsonView> phoneNumbersJsonList = jsonValue.GetArray("phoneNumbers");
     for (unsigned phoneNumbersIndex = 0; phoneNumbersIndex < phoneNumbersJsonList.GetLength(); ++phoneNumbersIndex) {
@@ -100,6 +104,10 @@ JsonValue LinkedWhatsAppBusinessAccount::Jsonize() const {
 
   if (m_marketingMessagesOnboardingStatusHasBeenSet) {
     payload.WithString("marketingMessagesOnboardingStatus", m_marketingMessagesOnboardingStatus);
+  }
+
+  if (m_datasetIdHasBeenSet) {
+    payload.WithString("datasetId", m_datasetId);
   }
 
   if (m_phoneNumbersHasBeenSet) {

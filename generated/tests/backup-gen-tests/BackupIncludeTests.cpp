@@ -14,6 +14,7 @@
 #include <aws/backup/BackupServiceClientModel.h>
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/backup/internal/BackupEndpointRules.h>
+#include <aws/backup/model/AccessPointStatus.h>
 #include <aws/backup/model/AdvancedBackupSetting.h>
 #include <aws/backup/model/AggregatedScanResult.h>
 #include <aws/backup/model/AggregationPeriod.h>
@@ -48,6 +49,8 @@
 #include <aws/backup/model/CopyJobState.h>
 #include <aws/backup/model/CopyJobStatus.h>
 #include <aws/backup/model/CopyJobSummary.h>
+#include <aws/backup/model/CreateBackupAccessPointRequest.h>
+#include <aws/backup/model/CreateBackupAccessPointResult.h>
 #include <aws/backup/model/CreateBackupPlanRequest.h>
 #include <aws/backup/model/CreateBackupPlanResult.h>
 #include <aws/backup/model/CreateBackupSelectionRequest.h>
@@ -71,6 +74,7 @@
 #include <aws/backup/model/CreateTieringConfigurationRequest.h>
 #include <aws/backup/model/CreateTieringConfigurationResult.h>
 #include <aws/backup/model/DateRange.h>
+#include <aws/backup/model/DeleteBackupAccessPointRequest.h>
 #include <aws/backup/model/DeleteBackupPlanRequest.h>
 #include <aws/backup/model/DeleteBackupPlanResult.h>
 #include <aws/backup/model/DeleteBackupSelectionRequest.h>
@@ -86,6 +90,8 @@
 #include <aws/backup/model/DeleteTieringConfigurationRequest.h>
 #include <aws/backup/model/DeleteTieringConfigurationResult.h>
 #include <aws/backup/model/DependencyFailureException.h>
+#include <aws/backup/model/DescribeBackupAccessPointRequest.h>
+#include <aws/backup/model/DescribeBackupAccessPointResult.h>
 #include <aws/backup/model/DescribeBackupJobRequest.h>
 #include <aws/backup/model/DescribeBackupJobResult.h>
 #include <aws/backup/model/DescribeBackupVaultRequest.h>
@@ -165,6 +171,13 @@
 #include <aws/backup/model/Lifecycle.h>
 #include <aws/backup/model/LifecycleDeleteAfterEvent.h>
 #include <aws/backup/model/LimitExceededException.h>
+#include <aws/backup/model/ListAccessPointsMember.h>
+#include <aws/backup/model/ListBackupAccessPointsByRecoveryPointRequest.h>
+#include <aws/backup/model/ListBackupAccessPointsByRecoveryPointResult.h>
+#include <aws/backup/model/ListBackupAccessPointsByResourceRequest.h>
+#include <aws/backup/model/ListBackupAccessPointsByResourceResult.h>
+#include <aws/backup/model/ListBackupAccessPointsRequest.h>
+#include <aws/backup/model/ListBackupAccessPointsResult.h>
 #include <aws/backup/model/ListBackupJobSummariesRequest.h>
 #include <aws/backup/model/ListBackupJobSummariesResult.h>
 #include <aws/backup/model/ListBackupJobsRequest.h>

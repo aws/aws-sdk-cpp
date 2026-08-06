@@ -8,6 +8,7 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/AgentRuntimeArtifact.h>
 #include <aws/bedrock-agentcore-control/model/AuthorizerConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/CapacityProviderConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/FilesystemConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/LifecycleConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/NetworkConfiguration.h>
@@ -272,6 +273,24 @@ class UpdateAgentRuntimeRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
+   * <p>The updated capacity provider configuration for the AgentCore Runtime.</p>
+   */
+  inline const CapacityProviderConfiguration& GetCapacityProviderConfiguration() const { return m_capacityProviderConfiguration; }
+  inline bool CapacityProviderConfigurationHasBeenSet() const { return m_capacityProviderConfigurationHasBeenSet; }
+  template <typename CapacityProviderConfigurationT = CapacityProviderConfiguration>
+  void SetCapacityProviderConfiguration(CapacityProviderConfigurationT&& value) {
+    m_capacityProviderConfigurationHasBeenSet = true;
+    m_capacityProviderConfiguration = std::forward<CapacityProviderConfigurationT>(value);
+  }
+  template <typename CapacityProviderConfigurationT = CapacityProviderConfiguration>
+  UpdateAgentRuntimeRequest& WithCapacityProviderConfiguration(CapacityProviderConfigurationT&& value) {
+    SetCapacityProviderConfiguration(std::forward<CapacityProviderConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
    */
   inline const Aws::String& GetClientToken() const { return m_clientToken; }
@@ -312,6 +331,8 @@ class UpdateAgentRuntimeRequest : public BedrockAgentCoreControlRequest {
 
   Aws::Vector<FilesystemConfiguration> m_filesystemConfigurations;
 
+  CapacityProviderConfiguration m_capacityProviderConfiguration;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_agentRuntimeIdHasBeenSet = false;
   bool m_agentRuntimeArtifactHasBeenSet = false;
@@ -325,6 +346,7 @@ class UpdateAgentRuntimeRequest : public BedrockAgentCoreControlRequest {
   bool m_metadataConfigurationHasBeenSet = false;
   bool m_environmentVariablesHasBeenSet = false;
   bool m_filesystemConfigurationsHasBeenSet = false;
+  bool m_capacityProviderConfigurationHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

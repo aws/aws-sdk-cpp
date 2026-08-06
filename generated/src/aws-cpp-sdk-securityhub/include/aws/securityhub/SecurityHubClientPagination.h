@@ -25,6 +25,7 @@
 #include <aws/securityhub/model/ListConfigurationPolicyAssociationsPaginationTraits.h>
 #include <aws/securityhub/model/ListEnabledProductsForImportPaginationTraits.h>
 #include <aws/securityhub/model/ListFindingAggregatorsPaginationTraits.h>
+#include <aws/securityhub/model/ListFreeTrialStatusesV2PaginationTraits.h>
 #include <aws/securityhub/model/ListInvitationsPaginationTraits.h>
 #include <aws/securityhub/model/ListMembersPaginationTraits.h>
 #include <aws/securityhub/model/ListOrganizationAdminAccountsPaginationTraits.h>
@@ -80,6 +81,9 @@ using ListEnabledProductsForImportPaginator =
 using ListFindingAggregatorsPaginator =
     Aws::Utils::Pagination::Paginator<SecurityHubClient, Model::ListFindingAggregatorsRequest,
                                       Pagination::ListFindingAggregatorsPaginationTraits<SecurityHubClient>>;
+using ListFreeTrialStatusesV2Paginator =
+    Aws::Utils::Pagination::Paginator<SecurityHubClient, Model::ListFreeTrialStatusesV2Request,
+                                      Pagination::ListFreeTrialStatusesV2PaginationTraits<SecurityHubClient>>;
 using ListInvitationsPaginator = Aws::Utils::Pagination::Paginator<SecurityHubClient, Model::ListInvitationsRequest,
                                                                    Pagination::ListInvitationsPaginationTraits<SecurityHubClient>>;
 using ListMembersPaginator = Aws::Utils::Pagination::Paginator<SecurityHubClient, Model::ListMembersRequest,

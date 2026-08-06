@@ -88,6 +88,23 @@ class GetProductResult {
 
   ///@{
   /**
+   * <p>The entity who manufactured the product.</p>
+   */
+  inline const SellerInformation& GetManufacturer() const { return m_manufacturer; }
+  template <typename ManufacturerT = SellerInformation>
+  void SetManufacturer(ManufacturerT&& value) {
+    m_manufacturerHasBeenSet = true;
+    m_manufacturer = std::forward<ManufacturerT>(value);
+  }
+  template <typename ManufacturerT = SellerInformation>
+  GetProductResult& WithManufacturer(ManufacturerT&& value) {
+    SetManufacturer(std::forward<ManufacturerT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Indicates whether the product is deployed on AWS infrastructure.</p>
    */
   inline DeployedOnAwsStatus GetDeployedOnAws() const { return m_deployedOnAws; }
@@ -131,23 +148,6 @@ class GetProductResult {
   template <typename LongDescriptionT = Aws::String>
   GetProductResult& WithLongDescription(LongDescriptionT&& value) {
     SetLongDescription(std::forward<LongDescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The entity who manufactured the product.</p>
-   */
-  inline const SellerInformation& GetManufacturer() const { return m_manufacturer; }
-  template <typename ManufacturerT = SellerInformation>
-  void SetManufacturer(ManufacturerT&& value) {
-    m_manufacturerHasBeenSet = true;
-    m_manufacturer = std::forward<ManufacturerT>(value);
-  }
-  template <typename ManufacturerT = SellerInformation>
-  GetProductResult& WithManufacturer(ManufacturerT&& value) {
-    SetManufacturer(std::forward<ManufacturerT>(value));
     return *this;
   }
   ///@}
@@ -335,13 +335,13 @@ class GetProductResult {
 
   Aws::String m_productName;
 
+  SellerInformation m_manufacturer;
+
   DeployedOnAwsStatus m_deployedOnAws{DeployedOnAwsStatus::NOT_SET};
 
   Aws::String m_shortDescription;
 
   Aws::String m_longDescription;
-
-  SellerInformation m_manufacturer;
 
   Aws::String m_logoThumbnailUrl;
 
@@ -362,10 +362,10 @@ class GetProductResult {
   bool m_productIdHasBeenSet = false;
   bool m_catalogHasBeenSet = false;
   bool m_productNameHasBeenSet = false;
+  bool m_manufacturerHasBeenSet = false;
   bool m_deployedOnAwsHasBeenSet = false;
   bool m_shortDescriptionHasBeenSet = false;
   bool m_longDescriptionHasBeenSet = false;
-  bool m_manufacturerHasBeenSet = false;
   bool m_logoThumbnailUrlHasBeenSet = false;
   bool m_fulfillmentOptionSummariesHasBeenSet = false;
   bool m_categoriesHasBeenSet = false;

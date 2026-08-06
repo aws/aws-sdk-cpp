@@ -149,6 +149,33 @@ class AWS_SOCIALMESSAGING_API SocialMessagingClient : public Aws::Client::AWSJso
   }
 
   /**
+   * <p>Creates a Meta Conversions API dataset for a WhatsApp Business
+   * Account.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/CreateWhatsAppDataset">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateWhatsAppDatasetOutcome CreateWhatsAppDataset(const Model::CreateWhatsAppDatasetRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateWhatsAppDataset that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateWhatsAppDatasetRequestT = Model::CreateWhatsAppDatasetRequest>
+  Model::CreateWhatsAppDatasetOutcomeCallable CreateWhatsAppDatasetCallable(const CreateWhatsAppDatasetRequestT& request) const {
+    return SubmitCallable(&SocialMessagingClient::CreateWhatsAppDataset, request);
+  }
+
+  /**
+   * An Async wrapper for CreateWhatsAppDataset that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateWhatsAppDatasetRequestT = Model::CreateWhatsAppDatasetRequest>
+  void CreateWhatsAppDatasetAsync(const CreateWhatsAppDatasetRequestT& request, const CreateWhatsAppDatasetResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SocialMessagingClient::CreateWhatsAppDataset, request, handler, context);
+  }
+
+  /**
    * <p>Creates a new WhatsApp Flow. Flows enable businesses to create rich,
    * interactive forms and experiences that users can complete without leaving
    * WhatsApp. The Flow is created in DRAFT status. If <code>publish</code> is set to
@@ -860,6 +887,36 @@ class AWS_SOCIALMESSAGING_API SocialMessagingClient : public Aws::Client::AWSJso
       const PutWhatsAppBusinessAccountEventDestinationsResponseReceivedHandler& handler,
       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SocialMessagingClient::PutWhatsAppBusinessAccountEventDestinations, request, handler, context);
+  }
+
+  /**
+   * <p>Sends a conversion event to Meta's Conversions API for the specified WhatsApp
+   * Business Account dataset.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/SendWhatsAppConversionEvent">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SendWhatsAppConversionEventOutcome SendWhatsAppConversionEvent(
+      const Model::SendWhatsAppConversionEventRequest& request) const;
+
+  /**
+   * A Callable wrapper for SendWhatsAppConversionEvent that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename SendWhatsAppConversionEventRequestT = Model::SendWhatsAppConversionEventRequest>
+  Model::SendWhatsAppConversionEventOutcomeCallable SendWhatsAppConversionEventCallable(
+      const SendWhatsAppConversionEventRequestT& request) const {
+    return SubmitCallable(&SocialMessagingClient::SendWhatsAppConversionEvent, request);
+  }
+
+  /**
+   * An Async wrapper for SendWhatsAppConversionEvent that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename SendWhatsAppConversionEventRequestT = Model::SendWhatsAppConversionEventRequest>
+  void SendWhatsAppConversionEventAsync(const SendWhatsAppConversionEventRequestT& request,
+                                        const SendWhatsAppConversionEventResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SocialMessagingClient::SendWhatsAppConversionEvent, request, handler, context);
   }
 
   /**

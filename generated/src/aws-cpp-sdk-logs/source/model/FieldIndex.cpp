@@ -42,6 +42,10 @@ FieldIndex& FieldIndex::operator=(JsonView jsonValue) {
     m_type = IndexTypeMapper::GetIndexTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("indexCategory")) {
+    m_indexCategory = IndexCategoryMapper::GetIndexCategoryForName(jsonValue.GetString("indexCategory"));
+    m_indexCategoryHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +74,10 @@ JsonValue FieldIndex::Jsonize() const {
 
   if (m_typeHasBeenSet) {
     payload.WithString("type", IndexTypeMapper::GetNameForIndexType(m_type));
+  }
+
+  if (m_indexCategoryHasBeenSet) {
+    payload.WithString("indexCategory", IndexCategoryMapper::GetNameForIndexCategory(m_indexCategory));
   }
 
   return payload;

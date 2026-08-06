@@ -98,6 +98,30 @@ class ListingSummary {
 
   ///@{
   /**
+   * <p>A summary of fulfillment options available for the listing.</p>
+   */
+  inline const Aws::Vector<FulfillmentOptionSummary>& GetFulfillmentOptionSummaries() const { return m_fulfillmentOptionSummaries; }
+  inline bool FulfillmentOptionSummariesHasBeenSet() const { return m_fulfillmentOptionSummariesHasBeenSet; }
+  template <typename FulfillmentOptionSummariesT = Aws::Vector<FulfillmentOptionSummary>>
+  void SetFulfillmentOptionSummaries(FulfillmentOptionSummariesT&& value) {
+    m_fulfillmentOptionSummariesHasBeenSet = true;
+    m_fulfillmentOptionSummaries = std::forward<FulfillmentOptionSummariesT>(value);
+  }
+  template <typename FulfillmentOptionSummariesT = Aws::Vector<FulfillmentOptionSummary>>
+  ListingSummary& WithFulfillmentOptionSummaries(FulfillmentOptionSummariesT&& value) {
+    SetFulfillmentOptionSummaries(std::forward<FulfillmentOptionSummariesT>(value));
+    return *this;
+  }
+  template <typename FulfillmentOptionSummariesT = FulfillmentOptionSummary>
+  ListingSummary& AddFulfillmentOptionSummaries(FulfillmentOptionSummariesT&& value) {
+    m_fulfillmentOptionSummariesHasBeenSet = true;
+    m_fulfillmentOptionSummaries.emplace_back(std::forward<FulfillmentOptionSummariesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The name of the catalog that the listing belongs to.</p>
    */
   inline const Aws::String& GetCatalog() const { return m_catalog; }
@@ -170,30 +194,6 @@ class ListingSummary {
   ListingSummary& AddCategories(CategoriesT&& value) {
     m_categoriesHasBeenSet = true;
     m_categories.emplace_back(std::forward<CategoriesT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>A summary of fulfillment options available for the listing.</p>
-   */
-  inline const Aws::Vector<FulfillmentOptionSummary>& GetFulfillmentOptionSummaries() const { return m_fulfillmentOptionSummaries; }
-  inline bool FulfillmentOptionSummariesHasBeenSet() const { return m_fulfillmentOptionSummariesHasBeenSet; }
-  template <typename FulfillmentOptionSummariesT = Aws::Vector<FulfillmentOptionSummary>>
-  void SetFulfillmentOptionSummaries(FulfillmentOptionSummariesT&& value) {
-    m_fulfillmentOptionSummariesHasBeenSet = true;
-    m_fulfillmentOptionSummaries = std::forward<FulfillmentOptionSummariesT>(value);
-  }
-  template <typename FulfillmentOptionSummariesT = Aws::Vector<FulfillmentOptionSummary>>
-  ListingSummary& WithFulfillmentOptionSummaries(FulfillmentOptionSummariesT&& value) {
-    SetFulfillmentOptionSummaries(std::forward<FulfillmentOptionSummariesT>(value));
-    return *this;
-  }
-  template <typename FulfillmentOptionSummariesT = FulfillmentOptionSummary>
-  ListingSummary& AddFulfillmentOptionSummaries(FulfillmentOptionSummariesT&& value) {
-    m_fulfillmentOptionSummariesHasBeenSet = true;
-    m_fulfillmentOptionSummaries.emplace_back(std::forward<FulfillmentOptionSummariesT>(value));
     return *this;
   }
   ///@}
@@ -319,6 +319,8 @@ class ListingSummary {
 
   SellerInformation m_publisher;
 
+  Aws::Vector<FulfillmentOptionSummary> m_fulfillmentOptionSummaries;
+
   Aws::String m_catalog;
 
   Aws::String m_shortDescription;
@@ -326,8 +328,6 @@ class ListingSummary {
   Aws::String m_logoThumbnailUrl;
 
   Aws::Vector<Category> m_categories;
-
-  Aws::Vector<FulfillmentOptionSummary> m_fulfillmentOptionSummaries;
 
   Aws::Vector<ListingBadge> m_badges;
 
@@ -341,11 +341,11 @@ class ListingSummary {
   bool m_listingIdHasBeenSet = false;
   bool m_listingNameHasBeenSet = false;
   bool m_publisherHasBeenSet = false;
+  bool m_fulfillmentOptionSummariesHasBeenSet = false;
   bool m_catalogHasBeenSet = false;
   bool m_shortDescriptionHasBeenSet = false;
   bool m_logoThumbnailUrlHasBeenSet = false;
   bool m_categoriesHasBeenSet = false;
-  bool m_fulfillmentOptionSummariesHasBeenSet = false;
   bool m_badgesHasBeenSet = false;
   bool m_reviewSummaryHasBeenSet = false;
   bool m_pricingModelsHasBeenSet = false;

@@ -26,6 +26,7 @@
 #include <aws/bedrock-agentcore-control/model/AgentRuntimeEndpoint.h>
 #include <aws/bedrock-agentcore-control/model/AgentRuntimeEndpointStatus.h>
 #include <aws/bedrock-agentcore-control/model/AgentRuntimeStatus.h>
+#include <aws/bedrock-agentcore-control/model/AgentRuntimeVersionSummary.h>
 #include <aws/bedrock-agentcore-control/model/AgentSkillsDescriptor.h>
 #include <aws/bedrock-agentcore-control/model/AllowedWorkloadConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ApiGatewayTargetConfiguration.h>
@@ -43,6 +44,9 @@
 #include <aws/bedrock-agentcore-control/model/AuthorizerConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/AuthorizerType.h>
 #include <aws/bedrock-agentcore-control/model/AuthorizingClaimMatchValueType.h>
+#include <aws/bedrock-agentcore-control/model/BatchPutGatewayRateLimitsRequest.h>
+#include <aws/bedrock-agentcore-control/model/BatchPutGatewayRateLimitsResult.h>
+#include <aws/bedrock-agentcore-control/model/BatchPutLimitEntry.h>
 #include <aws/bedrock-agentcore-control/model/BedrockEvaluatorModelConfig.h>
 #include <aws/bedrock-agentcore-control/model/BrowserEnterprisePolicy.h>
 #include <aws/bedrock-agentcore-control/model/BrowserEnterprisePolicyType.h>
@@ -54,6 +58,14 @@
 #include <aws/bedrock-agentcore-control/model/BrowserSigningConfigOutput.h>
 #include <aws/bedrock-agentcore-control/model/BrowserStatus.h>
 #include <aws/bedrock-agentcore-control/model/BrowserSummary.h>
+#include <aws/bedrock-agentcore-control/model/CapacityProviderConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/CapacityProviderStatus.h>
+#include <aws/bedrock-agentcore-control/model/CapacityProviderStatusCode.h>
+#include <aws/bedrock-agentcore-control/model/CapacityProviderSummary.h>
+#include <aws/bedrock-agentcore-control/model/CapacityProviderVolumeConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/CapacityReservationPreference.h>
+#include <aws/bedrock-agentcore-control/model/CapacityReservationSpecification.h>
+#include <aws/bedrock-agentcore-control/model/CapacityReservationTarget.h>
 #include <aws/bedrock-agentcore-control/model/CategoricalScaleDefinition.h>
 #include <aws/bedrock-agentcore-control/model/CedarPolicy.h>
 #include <aws/bedrock-agentcore-control/model/Certificate.h>
@@ -75,6 +87,7 @@
 #include <aws/bedrock-agentcore-control/model/CoinbaseCdpConfigurationInput.h>
 #include <aws/bedrock-agentcore-control/model/CoinbaseCdpConfigurationOutput.h>
 #include <aws/bedrock-agentcore-control/model/ComponentConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/ComputeConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/Condition.h>
 #include <aws/bedrock-agentcore-control/model/ConfigurationBundleAction.h>
 #include <aws/bedrock-agentcore-control/model/ConfigurationBundleReference.h>
@@ -101,6 +114,8 @@
 #include <aws/bedrock-agentcore-control/model/CreateBrowserProfileResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateBrowserRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateBrowserResult.h>
+#include <aws/bedrock-agentcore-control/model/CreateCapacityProviderRequest.h>
+#include <aws/bedrock-agentcore-control/model/CreateCapacityProviderResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateCodeInterpreterRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateCodeInterpreterResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateConfigurationBundleRequest.h>
@@ -111,6 +126,8 @@
 #include <aws/bedrock-agentcore-control/model/CreateDatasetVersionResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateEvaluatorRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateEvaluatorResult.h>
+#include <aws/bedrock-agentcore-control/model/CreateGatewayRateLimitRequest.h>
+#include <aws/bedrock-agentcore-control/model/CreateGatewayRateLimitResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateGatewayRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateGatewayResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateGatewayRuleRequest.h>
@@ -178,6 +195,8 @@
 #include <aws/bedrock-agentcore-control/model/DeleteBrowserProfileResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteBrowserRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteBrowserResult.h>
+#include <aws/bedrock-agentcore-control/model/DeleteCapacityProviderRequest.h>
+#include <aws/bedrock-agentcore-control/model/DeleteCapacityProviderResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteCodeInterpreterRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteCodeInterpreterResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteConfigurationBundleRequest.h>
@@ -188,6 +207,8 @@
 #include <aws/bedrock-agentcore-control/model/DeleteDatasetResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteEvaluatorRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteEvaluatorResult.h>
+#include <aws/bedrock-agentcore-control/model/DeleteGatewayRateLimitRequest.h>
+#include <aws/bedrock-agentcore-control/model/DeleteGatewayRateLimitResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteGatewayRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteGatewayResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteGatewayRuleRequest.h>
@@ -226,10 +247,15 @@
 #include <aws/bedrock-agentcore-control/model/DescriptorType.h>
 #include <aws/bedrock-agentcore-control/model/Descriptors.h>
 #include <aws/bedrock-agentcore-control/model/DraftStatus.h>
+#include <aws/bedrock-agentcore-control/model/EbsVolumeConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/EbsVolumeType.h>
+#include <aws/bedrock-agentcore-control/model/Ec2Configuration.h>
 #include <aws/bedrock-agentcore-control/model/EfsAccessPointConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/EfsConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/EndpointIpAddressType.h>
 #include <aws/bedrock-agentcore-control/model/EnforcementMode.h>
+#include <aws/bedrock-agentcore-control/model/EphemeralBlockDeviceMapping.h>
+#include <aws/bedrock-agentcore-control/model/EphemeralEBSVolumeConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/EpisodicConsolidationOverride.h>
 #include <aws/bedrock-agentcore-control/model/EpisodicExtractionOverride.h>
 #include <aws/bedrock-agentcore-control/model/EpisodicMemoryStrategyInput.h>
@@ -264,6 +290,8 @@
 #include <aws/bedrock-agentcore-control/model/GatewayPolicyEngineMode.h>
 #include <aws/bedrock-agentcore-control/model/GatewayProtocolConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/GatewayProtocolType.h>
+#include <aws/bedrock-agentcore-control/model/GatewayRateLimitDetail.h>
+#include <aws/bedrock-agentcore-control/model/GatewayRateLimitStatus.h>
 #include <aws/bedrock-agentcore-control/model/GatewayRuleDetail.h>
 #include <aws/bedrock-agentcore-control/model/GatewayRuleStatus.h>
 #include <aws/bedrock-agentcore-control/model/GatewayStatus.h>
@@ -279,6 +307,8 @@
 #include <aws/bedrock-agentcore-control/model/GetBrowserProfileResult.h>
 #include <aws/bedrock-agentcore-control/model/GetBrowserRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetBrowserResult.h>
+#include <aws/bedrock-agentcore-control/model/GetCapacityProviderRequest.h>
+#include <aws/bedrock-agentcore-control/model/GetCapacityProviderResult.h>
 #include <aws/bedrock-agentcore-control/model/GetCodeInterpreterRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetCodeInterpreterResult.h>
 #include <aws/bedrock-agentcore-control/model/GetConfigurationBundleRequest.h>
@@ -289,6 +319,8 @@
 #include <aws/bedrock-agentcore-control/model/GetDatasetResult.h>
 #include <aws/bedrock-agentcore-control/model/GetEvaluatorRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetEvaluatorResult.h>
+#include <aws/bedrock-agentcore-control/model/GetGatewayRateLimitRequest.h>
+#include <aws/bedrock-agentcore-control/model/GetGatewayRateLimitResult.h>
 #include <aws/bedrock-agentcore-control/model/GetGatewayRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetGatewayResult.h>
 #include <aws/bedrock-agentcore-control/model/GetGatewayRuleRequest.h>
@@ -401,6 +433,8 @@
 #include <aws/bedrock-agentcore-control/model/InferenceTargetConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/InlineExamplesSource.h>
 #include <aws/bedrock-agentcore-control/model/Insight.h>
+#include <aws/bedrock-agentcore-control/model/InstanceLifecycleConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/InstanceRequirements.h>
 #include <aws/bedrock-agentcore-control/model/InterceptorConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/InterceptorInputConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/InterceptorPayloadExclusion.h>
@@ -415,11 +449,17 @@
 #include <aws/bedrock-agentcore-control/model/LambdaEvaluatorConfig.h>
 #include <aws/bedrock-agentcore-control/model/LambdaInterceptorConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/LambdaTransformConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/LaunchParameters.h>
+#include <aws/bedrock-agentcore-control/model/LaunchTemplateSource.h>
+#include <aws/bedrock-agentcore-control/model/LicenseSpecification.h>
 #include <aws/bedrock-agentcore-control/model/LifecycleConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/LimitEntry.h>
 #include <aws/bedrock-agentcore-control/model/LinkedinOauth2ProviderConfigInput.h>
 #include <aws/bedrock-agentcore-control/model/LinkedinOauth2ProviderConfigOutput.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimeEndpointsRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimeEndpointsResult.h>
+#include <aws/bedrock-agentcore-control/model/ListAgentRuntimeVersionsByCapacityProviderRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListAgentRuntimeVersionsByCapacityProviderResult.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimeVersionsRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimeVersionsResult.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimesRequest.h>
@@ -430,6 +470,8 @@
 #include <aws/bedrock-agentcore-control/model/ListBrowserProfilesResult.h>
 #include <aws/bedrock-agentcore-control/model/ListBrowsersRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListBrowsersResult.h>
+#include <aws/bedrock-agentcore-control/model/ListCapacityProvidersRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListCapacityProvidersResult.h>
 #include <aws/bedrock-agentcore-control/model/ListCodeInterpretersRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListCodeInterpretersResult.h>
 #include <aws/bedrock-agentcore-control/model/ListConfigurationBundleVersionsRequest.h>
@@ -444,6 +486,8 @@
 #include <aws/bedrock-agentcore-control/model/ListDatasetsResult.h>
 #include <aws/bedrock-agentcore-control/model/ListEvaluatorsRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListEvaluatorsResult.h>
+#include <aws/bedrock-agentcore-control/model/ListGatewayRateLimitsRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListGatewayRateLimitsResult.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewayRulesRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewayRulesResult.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewayTargetsRequest.h>
@@ -530,6 +574,7 @@
 #include <aws/bedrock-agentcore-control/model/ModifyReflectionConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ModifySelfManagedConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ModifyStrategyConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/Monitoring.h>
 #include <aws/bedrock-agentcore-control/model/NetworkConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/NetworkMode.h>
 #include <aws/bedrock-agentcore-control/model/NumberValidation.h>
@@ -548,6 +593,7 @@
 #include <aws/bedrock-agentcore-control/model/OnlineEvaluationConfigSummary.h>
 #include <aws/bedrock-agentcore-control/model/OnlineEvaluationExecutionStatus.h>
 #include <aws/bedrock-agentcore-control/model/OpenResponsesEvaluatorModelConfig.h>
+#include <aws/bedrock-agentcore-control/model/OperatingSystem.h>
 #include <aws/bedrock-agentcore-control/model/OutputConfig.h>
 #include <aws/bedrock-agentcore-control/model/OverrideType.h>
 #include <aws/bedrock-agentcore-control/model/PassthroughProtocolType.h>
@@ -563,6 +609,8 @@
 #include <aws/bedrock-agentcore-control/model/PaymentProviderConfigurationInput.h>
 #include <aws/bedrock-agentcore-control/model/PaymentProviderConfigurationOutput.h>
 #include <aws/bedrock-agentcore-control/model/PaymentsAuthorizerType.h>
+#include <aws/bedrock-agentcore-control/model/Period.h>
+#include <aws/bedrock-agentcore-control/model/PermissionsConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/Policy.h>
 #include <aws/bedrock-agentcore-control/model/PolicyDefinition.h>
 #include <aws/bedrock-agentcore-control/model/PolicyEngine.h>
@@ -586,6 +634,7 @@
 #include <aws/bedrock-agentcore-control/model/ProviderPrefix.h>
 #include <aws/bedrock-agentcore-control/model/PutResourcePolicyRequest.h>
 #include <aws/bedrock-agentcore-control/model/PutResourcePolicyResult.h>
+#include <aws/bedrock-agentcore-control/model/RateConfig.h>
 #include <aws/bedrock-agentcore-control/model/RatingScale.h>
 #include <aws/bedrock-agentcore-control/model/ReasoningConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/RecordingConfig.h>
@@ -606,6 +655,7 @@
 #include <aws/bedrock-agentcore-control/model/ResourceLocation.h>
 #include <aws/bedrock-agentcore-control/model/ResourceType.h>
 #include <aws/bedrock-agentcore-control/model/RestApiMethod.h>
+#include <aws/bedrock-agentcore-control/model/RootVolumeConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/RouteToTargetAction.h>
 #include <aws/bedrock-agentcore-control/model/Rule.h>
 #include <aws/bedrock-agentcore-control/model/RuntimeMetadataConfiguration.h>
@@ -700,6 +750,8 @@
 #include <aws/bedrock-agentcore-control/model/UpdateAgentRuntimeResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateApiKeyCredentialProviderRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateApiKeyCredentialProviderResult.h>
+#include <aws/bedrock-agentcore-control/model/UpdateCapacityProviderRequest.h>
+#include <aws/bedrock-agentcore-control/model/UpdateCapacityProviderResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateConfigurationBundleRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateConfigurationBundleResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateDatasetExamplesRequest.h>
@@ -708,6 +760,8 @@
 #include <aws/bedrock-agentcore-control/model/UpdateDatasetResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateEvaluatorRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateEvaluatorResult.h>
+#include <aws/bedrock-agentcore-control/model/UpdateGatewayRateLimitRequest.h>
+#include <aws/bedrock-agentcore-control/model/UpdateGatewayRateLimitResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateGatewayRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateGatewayResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateGatewayRuleRequest.h>
@@ -774,7 +828,9 @@
 #include <aws/bedrock-agentcore-control/model/VersionCreatedBySource.h>
 #include <aws/bedrock-agentcore-control/model/VersionFilter.h>
 #include <aws/bedrock-agentcore-control/model/VersionLineageMetadata.h>
+#include <aws/bedrock-agentcore-control/model/VolumeConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/VpcConfig.h>
+#include <aws/bedrock-agentcore-control/model/VpcConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/WafConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/WafFailureMode.h>
 #include <aws/bedrock-agentcore-control/model/WeightedOverride.h>

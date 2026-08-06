@@ -10,7 +10,7 @@
 namespace Aws {
 namespace S3 {
 namespace Model {
-enum class ServerSideEncryption { NOT_SET, AES256, aws_fsx, aws_kms, aws_kms_dsse };
+enum class ServerSideEncryption { NOT_SET, AES256, aws_fsx, aws_backup, aws_kms, aws_kms_dsse };
 
 namespace ServerSideEncryptionMapper {
 AWS_S3_API ServerSideEncryption GetServerSideEncryptionForName(const Aws::String& name);
