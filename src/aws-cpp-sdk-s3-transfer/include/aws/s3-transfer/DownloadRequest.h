@@ -4,50 +4,88 @@
  */
 #pragma once
 #include <aws/s3-transfer/S3Transfer_EXPORTS.h>
-#include <aws/s3-transfer/DownloadProgressListener.h>
+#include <aws/s3-transfer/ProgressListener.h>
+#include <aws/s3-transfer/DownloadDataReceiver.h>
+#include <aws/core/client/AWSError.h>
+#include <aws/crt/Optional.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/stream/ResponseStream.h>
+#include <aws/s3/S3Errors.h>
+#include <aws/s3/model/ChecksumMode.h>
 #include <aws/s3/model/GetObjectRequest.h>
+#include <aws/s3/model/RequestPayer.h>
 #include <memory>
-#include <utility>
 
 namespace Aws {
 namespace S3 {
 namespace Transfer {
 
+struct DownloadTransferState;
+
+namespace Internal {
+class DownloadRequestImpl;
+
+using OptionalError = Aws::Crt::Optional<Aws::Client::AWSError<Aws::S3::S3Errors>>;
+}
+
 /**
- * Request type for S3TransferManager::Download. Carries the inner S3 GetObjectRequest along
- * with the local destination (file path or stream factory) and any request-level progress
- * listeners. The transfer manager parallelizes large objects via ranged GETs internally.
+ * Request type for S3TransferManager::Download. All state lives behind m_impl, whose concrete type
+ * is chosen by the constructor: a destination file path selects the file strategy, a data receiver
+ * the stream strategy. Move-only, because that impl is uniquely owned; pass with std::move.
  */
 class AWS_S3_TRANSFER_API DownloadRequest final {
  public:
-  explicit DownloadRequest(
-    Aws::S3::Model::GetObjectRequest s3Request,
-    Aws::String destinationFilePath,
-    Aws::IOStreamFactory responseStreamFactory,
-    Aws::Vector<std::shared_ptr<DownloadProgressListener>> transferListeners = {})
-  : m_s3Request(std::move(s3Request)),
-    m_destinationFilePath(std::move(destinationFilePath)),
-    m_responseStreamFactory(std::move(responseStreamFactory)),
-    m_transferListeners(std::move(transferListeners)) {}
+  DownloadRequest(Aws::String bucket,
+                  Aws::String key,
+                  Aws::String destinationFilePath,
+                  Aws::Vector<std::shared_ptr<DownloadProgressListener>> transferListeners = {});
 
-  inline const Aws::S3::Model::GetObjectRequest& GetS3Request() const { return m_s3Request; }
-  inline const Aws::String& GetDestinationFilePath() const { return m_destinationFilePath; }
-  inline const Aws::IOStreamFactory& GetResponseStreamFactory() const { return m_responseStreamFactory; }
-  inline const Aws::Vector<std::shared_ptr<DownloadProgressListener>>& GetTransferListeners() const {
-    return m_transferListeners;
-  }
+  DownloadRequest(Aws::String bucket,
+                  Aws::String key,
+                  std::shared_ptr<DownloadDataReceiver> dataReceiver,
+                  Aws::Vector<std::shared_ptr<DownloadProgressListener>> transferListeners = {});
 
+  ~DownloadRequest();
+
+  const Aws::Vector<std::shared_ptr<DownloadProgressListener>>& GetTransferListeners() const;
+  // Empty for a receiver-backed download; otherwise where the object lands once it completes.
+  const Aws::String& GetDestinationFilePath() const;
+  const Aws::String& GetTempFilePath() const;
+  // Null for a file-backed download; otherwise the sink the CRT delivers body chunks to.
+  const std::shared_ptr<DownloadDataReceiver>& GetDataReceiver() const;
+
+  DownloadRequest& SetChecksumMode(Aws::S3::Model::ChecksumMode v);
+  DownloadRequest& SetExpectedBucketOwner(Aws::String v);
+  DownloadRequest& SetIfMatch(Aws::String v);
+  DownloadRequest& SetIfModifiedSince(Aws::Utils::DateTime v);
+  DownloadRequest& SetIfNoneMatch(Aws::String v);
+  DownloadRequest& SetIfUnmodifiedSince(Aws::Utils::DateTime v);
+  DownloadRequest& SetRange(Aws::String v);
+  DownloadRequest& SetRequestPayer(Aws::S3::Model::RequestPayer v);
+  DownloadRequest& SetResponseCacheControl(Aws::String v);
+  DownloadRequest& SetResponseContentDisposition(Aws::String v);
+  DownloadRequest& SetResponseContentEncoding(Aws::String v);
+  DownloadRequest& SetResponseContentLanguage(Aws::String v);
+  DownloadRequest& SetResponseContentType(Aws::String v);
+  DownloadRequest& SetResponseExpires(Aws::Utils::DateTime v);
+  DownloadRequest& SetSSECustomerAlgorithm(Aws::String v);
+  DownloadRequest& SetSSECustomerKey(Aws::String v);
+  DownloadRequest& SetSSECustomerKeyMD5(Aws::String v);
+  DownloadRequest& SetVersionId(Aws::String v);
+
+  const Aws::S3::Model::GetObjectRequest& GetS3Request() const;
+
+  Internal::OptionalError Validate() const;
+  Internal::OptionalError FinalizeOnSuccess(
+      const std::shared_ptr<DownloadTransferState>& state) const;
+  Internal::OptionalError CleanupOnFailure(const std::shared_ptr<DownloadTransferState>& state) const;
 
  private:
-  Aws::S3::Model::GetObjectRequest m_s3Request;
-  Aws::String m_destinationFilePath;
-  Aws::IOStreamFactory m_responseStreamFactory;
-  Aws::Vector<std::shared_ptr<DownloadProgressListener>> m_transferListeners;
+  std::shared_ptr<Internal::DownloadRequestImpl> m_impl;
 };
 
-}
-}
-}
+}  // namespace Transfer
+}  // namespace S3
+}  // namespace Aws
