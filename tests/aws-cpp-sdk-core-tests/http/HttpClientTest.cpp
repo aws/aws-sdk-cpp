@@ -67,6 +67,11 @@ class HttpClientTest : public Aws::Testing::AwsCppSdkGTestSuite
 {
 };
 
+class CURLHttpClientTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+
 TEST_F(HttpClientTest, TestRandomURLWithNoProxy)
 {
     auto httpClient = CreateHttpClient(Aws::Client::ClientConfiguration());
@@ -381,6 +386,96 @@ TEST_F(CURLHttpClientTest, TestHttpRequestWorksFine)
     ASSERT_FALSE(response->HasClientError());
     EXPECT_EQ(Aws::Http::HttpResponseCode::OK, response->GetResponseCode());
     EXPECT_EQ("", response->GetClientErrorMessage());
+}
+
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <streambuf>
+
+// A streambuf that supports writing but does NOT support seeking.
+// This reproduces the behavior of many filtering / transforming streams.
+class NonSeekableWriteBuf final : public std::streambuf
+{
+public:
+    explicit NonSeekableWriteBuf(Aws::Vector<char>& out) : m_out(out) {}
+
+protected:
+    std::streamsize xsputn(const char* s, std::streamsize n) override
+    {
+        if (n > 0)
+        {
+            m_out.insert(m_out.end(), s, s + static_cast<size_t>(n));
+        }
+        return n;
+    }
+
+    int overflow(int ch) override
+    {
+        if (ch == traits_type::eof())
+        {
+            return traits_type::not_eof(ch);
+        }
+        m_out.push_back(static_cast<char>(ch));
+        return ch;
+    }
+
+    // Disallow positioning (seek/tell)
+    pos_type seekoff(off_type, std::ios_base::seekdir, std::ios_base::openmode) override
+    {
+        return pos_type(off_type(-1));
+    }
+
+    pos_type seekpos(pos_type, std::ios_base::openmode) override
+    {
+        return pos_type(off_type(-1));
+    }
+
+private:
+    Aws::Vector<char>& m_out;
+};
+
+class NonSeekableIOStream final : public Aws::IOStream
+{
+public:
+    NonSeekableIOStream(const Aws::String& /*allocationTag*/, Aws::Vector<char>& out)
+        : Aws::IOStream(nullptr), m_buf(out)
+    {
+        rdbuf(&m_buf);
+    }
+
+private:
+    NonSeekableWriteBuf m_buf;
+};
+
+// Regression test:
+// Ensure CurlHttpClient can write response bodies into a non-seekable output stream.
+// Older implementations that call tellp() as part of the write callback may fail here.
+TEST_F(CURLHttpClientTest, TestNonSeekableResponseStreamDoesNotAbortTransfer)
+{
+    Aws::Vector<char> captured;
+
+    auto request = CreateHttpRequest(
+        Aws::String("http://127.0.0.1:8778"),
+        HttpMethod::HTTP_GET,
+        Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+        
+    request->SetHeaderValue("WaitSeconds", "1");
+
+    request->SetResponseStreamFactory([&captured]() -> Aws::IOStream*
+    {
+        return Aws::New<NonSeekableIOStream>(ALLOCATION_TAG, ALLOCATION_TAG, captured);
+    });
+
+    Aws::Client::ClientConfiguration config;
+    config.requestTimeoutMs = 10000;
+
+    auto httpClient = CreateHttpClient(config);
+    auto response = httpClient->MakeRequest(request);
+
+    ASSERT_NE(nullptr, response);
+
+    ASSERT_FALSE(response->HasClientError()) << response->GetClientErrorMessage();
+    EXPECT_EQ(Aws::Http::HttpResponseCode::OK, response->GetResponseCode());
+   
 }
 #endif // ENABLE_CURL_CLIENT
 #endif // ENABLE_HTTP_CLIENT_TESTING
