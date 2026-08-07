@@ -20,6 +20,21 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/ModifyVerifiedAccessInstanceLoggingConfigurationRequest.h>
+#include <aws/ec2/model/ModifyVerifiedAccessTrustProviderRequest.h>
+#include <aws/ec2/model/ModifyVolumeAttributeRequest.h>
+#include <aws/ec2/model/ModifyVolumeRequest.h>
+#include <aws/ec2/model/ModifyVpcAttributeRequest.h>
+#include <aws/ec2/model/ModifyVpcBlockPublicAccessExclusionRequest.h>
+#include <aws/ec2/model/ModifyVpcBlockPublicAccessOptionsRequest.h>
+#include <aws/ec2/model/ModifyVpcEncryptionControlRequest.h>
+#include <aws/ec2/model/ModifyVpcEndpointConnectionNotificationRequest.h>
+#include <aws/ec2/model/ModifyVpcEndpointPayerResponsibilityRequest.h>
+#include <aws/ec2/model/ModifyVpcEndpointRequest.h>
+#include <aws/ec2/model/ModifyVpcEndpointServiceConfigurationRequest.h>
+#include <aws/ec2/model/ModifyVpcEndpointServicePayerResponsibilityRequest.h>
+#include <aws/ec2/model/ModifyVpcEndpointServicePermissionsRequest.h>
+#include <aws/ec2/model/ModifyVpcPeeringConnectionOptionsRequest.h>
 #include <aws/ec2/model/ModifyVpcTenancyRequest.h>
 #include <aws/ec2/model/ModifyVpnConnectionOptionsRequest.h>
 #include <aws/ec2/model/ModifyVpnConnectionRequest.h>
@@ -116,6 +131,105 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+ModifyVerifiedAccessInstanceLoggingConfigurationOutcome EC2Client::ModifyVerifiedAccessInstanceLoggingConfiguration(
+    const ModifyVerifiedAccessInstanceLoggingConfigurationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyVerifiedAccessInstanceLoggingConfigurationOutcome(result.GetResultWithOwnership())
+                            : ModifyVerifiedAccessInstanceLoggingConfigurationOutcome(std::move(result.GetError()));
+}
+
+ModifyVerifiedAccessTrustProviderOutcome EC2Client::ModifyVerifiedAccessTrustProvider(
+    const ModifyVerifiedAccessTrustProviderRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyVerifiedAccessTrustProviderOutcome(result.GetResultWithOwnership())
+                            : ModifyVerifiedAccessTrustProviderOutcome(std::move(result.GetError()));
+}
+
+ModifyVolumeOutcome EC2Client::ModifyVolume(const ModifyVolumeRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyVolumeOutcome(result.GetResultWithOwnership()) : ModifyVolumeOutcome(std::move(result.GetError()));
+}
+
+ModifyVolumeAttributeOutcome EC2Client::ModifyVolumeAttribute(const ModifyVolumeAttributeRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyVolumeAttributeOutcome(result.GetResultWithOwnership())
+                            : ModifyVolumeAttributeOutcome(std::move(result.GetError()));
+}
+
+ModifyVpcAttributeOutcome EC2Client::ModifyVpcAttribute(const ModifyVpcAttributeRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyVpcAttributeOutcome(result.GetResultWithOwnership())
+                            : ModifyVpcAttributeOutcome(std::move(result.GetError()));
+}
+
+ModifyVpcBlockPublicAccessExclusionOutcome EC2Client::ModifyVpcBlockPublicAccessExclusion(
+    const ModifyVpcBlockPublicAccessExclusionRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyVpcBlockPublicAccessExclusionOutcome(result.GetResultWithOwnership())
+                            : ModifyVpcBlockPublicAccessExclusionOutcome(std::move(result.GetError()));
+}
+
+ModifyVpcBlockPublicAccessOptionsOutcome EC2Client::ModifyVpcBlockPublicAccessOptions(
+    const ModifyVpcBlockPublicAccessOptionsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyVpcBlockPublicAccessOptionsOutcome(result.GetResultWithOwnership())
+                            : ModifyVpcBlockPublicAccessOptionsOutcome(std::move(result.GetError()));
+}
+
+ModifyVpcEncryptionControlOutcome EC2Client::ModifyVpcEncryptionControl(const ModifyVpcEncryptionControlRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyVpcEncryptionControlOutcome(result.GetResultWithOwnership())
+                            : ModifyVpcEncryptionControlOutcome(std::move(result.GetError()));
+}
+
+ModifyVpcEndpointOutcome EC2Client::ModifyVpcEndpoint(const ModifyVpcEndpointRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyVpcEndpointOutcome(result.GetResultWithOwnership())
+                            : ModifyVpcEndpointOutcome(std::move(result.GetError()));
+}
+
+ModifyVpcEndpointConnectionNotificationOutcome EC2Client::ModifyVpcEndpointConnectionNotification(
+    const ModifyVpcEndpointConnectionNotificationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyVpcEndpointConnectionNotificationOutcome(result.GetResultWithOwnership())
+                            : ModifyVpcEndpointConnectionNotificationOutcome(std::move(result.GetError()));
+}
+
+ModifyVpcEndpointPayerResponsibilityOutcome EC2Client::ModifyVpcEndpointPayerResponsibility(
+    const ModifyVpcEndpointPayerResponsibilityRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyVpcEndpointPayerResponsibilityOutcome(result.GetResultWithOwnership())
+                            : ModifyVpcEndpointPayerResponsibilityOutcome(std::move(result.GetError()));
+}
+
+ModifyVpcEndpointServiceConfigurationOutcome EC2Client::ModifyVpcEndpointServiceConfiguration(
+    const ModifyVpcEndpointServiceConfigurationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyVpcEndpointServiceConfigurationOutcome(result.GetResultWithOwnership())
+                            : ModifyVpcEndpointServiceConfigurationOutcome(std::move(result.GetError()));
+}
+
+ModifyVpcEndpointServicePayerResponsibilityOutcome EC2Client::ModifyVpcEndpointServicePayerResponsibility(
+    const ModifyVpcEndpointServicePayerResponsibilityRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyVpcEndpointServicePayerResponsibilityOutcome(result.GetResultWithOwnership())
+                            : ModifyVpcEndpointServicePayerResponsibilityOutcome(std::move(result.GetError()));
+}
+
+ModifyVpcEndpointServicePermissionsOutcome EC2Client::ModifyVpcEndpointServicePermissions(
+    const ModifyVpcEndpointServicePermissionsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyVpcEndpointServicePermissionsOutcome(result.GetResultWithOwnership())
+                            : ModifyVpcEndpointServicePermissionsOutcome(std::move(result.GetError()));
+}
+
+ModifyVpcPeeringConnectionOptionsOutcome EC2Client::ModifyVpcPeeringConnectionOptions(
+    const ModifyVpcPeeringConnectionOptionsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyVpcPeeringConnectionOptionsOutcome(result.GetResultWithOwnership())
+                            : ModifyVpcPeeringConnectionOptionsOutcome(std::move(result.GetError()));
+}
 
 ModifyVpcTenancyOutcome EC2Client::ModifyVpcTenancy(const ModifyVpcTenancyRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);

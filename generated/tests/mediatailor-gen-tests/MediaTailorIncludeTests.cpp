@@ -22,6 +22,7 @@
 #include <aws/mediatailor/model/AdDecisionServerConfiguration.h>
 #include <aws/mediatailor/model/AdMarkerPassthrough.h>
 #include <aws/mediatailor/model/AdMarkupType.h>
+#include <aws/mediatailor/model/AdSequencingMode.h>
 #include <aws/mediatailor/model/AdsInteractionExcludeEventType.h>
 #include <aws/mediatailor/model/AdsInteractionLog.h>
 #include <aws/mediatailor/model/AdsInteractionPublishOptInEventType.h>
@@ -149,6 +150,9 @@
 #include <aws/mediatailor/model/OriginManifestType.h>
 #include <aws/mediatailor/model/PlaybackConfiguration.h>
 #include <aws/mediatailor/model/PlaybackMode.h>
+#include <aws/mediatailor/model/PreRollAdDecisionServerConfiguration.h>
+#include <aws/mediatailor/model/PreRollAdSequencingMode.h>
+#include <aws/mediatailor/model/PreRollVastResponse.h>
 #include <aws/mediatailor/model/PrefetchConsumption.h>
 #include <aws/mediatailor/model/PrefetchRetrieval.h>
 #include <aws/mediatailor/model/PrefetchSchedule.h>
@@ -204,6 +208,7 @@
 #include <aws/mediatailor/model/UpdateSourceLocationResult.h>
 #include <aws/mediatailor/model/UpdateVodSourceRequest.h>
 #include <aws/mediatailor/model/UpdateVodSourceResult.h>
+#include <aws/mediatailor/model/VastResponse.h>
 #include <aws/mediatailor/model/VodSource.h>
 
 using MediaTailorIncludeTest = ::testing::Test;

@@ -37,6 +37,14 @@ Actor& Actor::operator=(JsonView jsonValue) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("enableEmailMfa")) {
+    m_enableEmailMfa = jsonValue.GetBool("enableEmailMfa");
+    m_enableEmailMfaHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("mfaForwardingAddress")) {
+    m_mfaForwardingAddress = jsonValue.GetString("mfaForwardingAddress");
+    m_mfaForwardingAddressHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -61,6 +69,14 @@ JsonValue Actor::Jsonize() const {
 
   if (m_descriptionHasBeenSet) {
     payload.WithString("description", m_description);
+  }
+
+  if (m_enableEmailMfaHasBeenSet) {
+    payload.WithBool("enableEmailMfa", m_enableEmailMfa);
+  }
+
+  if (m_mfaForwardingAddressHasBeenSet) {
+    payload.WithString("mfaForwardingAddress", m_mfaForwardingAddress);
   }
 
   return payload;

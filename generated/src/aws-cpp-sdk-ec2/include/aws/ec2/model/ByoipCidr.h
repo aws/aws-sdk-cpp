@@ -198,6 +198,42 @@ class ByoipCidr {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the address pool associated with the CIDR.</p>
+   */
+  inline const Aws::String& GetPoolId() const { return m_poolId; }
+  inline bool PoolIdHasBeenSet() const { return m_poolIdHasBeenSet; }
+  template <typename PoolIdT = Aws::String>
+  void SetPoolId(PoolIdT&& value) {
+    m_poolIdHasBeenSet = true;
+    m_poolId = std::forward<PoolIdT>(value);
+  }
+  template <typename PoolIdT = Aws::String>
+  ByoipCidr& WithPoolId(PoolIdT&& value) {
+    SetPoolId(std::forward<PoolIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the IPAM pool associated with the CIDR.</p>
+   */
+  inline const Aws::String& GetIpamPoolId() const { return m_ipamPoolId; }
+  inline bool IpamPoolIdHasBeenSet() const { return m_ipamPoolIdHasBeenSet; }
+  template <typename IpamPoolIdT = Aws::String>
+  void SetIpamPoolId(IpamPoolIdT&& value) {
+    m_ipamPoolIdHasBeenSet = true;
+    m_ipamPoolId = std::forward<IpamPoolIdT>(value);
+  }
+  template <typename IpamPoolIdT = Aws::String>
+  ByoipCidr& WithIpamPoolId(IpamPoolIdT&& value) {
+    SetIpamPoolId(std::forward<IpamPoolIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_cidr;
 
@@ -212,6 +248,10 @@ class ByoipCidr {
   Aws::String m_networkBorderGroup;
 
   Aws::String m_advertisementType;
+
+  Aws::String m_poolId;
+
+  Aws::String m_ipamPoolId;
   bool m_cidrHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_asnAssociationsHasBeenSet = false;
@@ -219,6 +259,8 @@ class ByoipCidr {
   bool m_stateHasBeenSet = false;
   bool m_networkBorderGroupHasBeenSet = false;
   bool m_advertisementTypeHasBeenSet = false;
+  bool m_poolIdHasBeenSet = false;
+  bool m_ipamPoolIdHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -52,7 +52,7 @@ class DeleteContactDataRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The identifier of the contact. PII can be deleted only from a contact that
+   * <p>The identifier of the contact. You can delete PII only from a contact that
    * has been disconnected (is in a terminated state).</p>
    */
   inline const Aws::String& GetContactId() const { return m_contactId; }
@@ -71,11 +71,12 @@ class DeleteContactDataRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The categories of PII to redact from the contact. Valid values are
-   * <code>CUSTOMER_ENDPOINT</code>, <code>ADDITIONAL_EMAIL_RECIPIENTS</code>, and
-   * <code>EMAIL_SUBJECT</code>. <code>ADDITIONAL_EMAIL_RECIPIENTS</code> and
-   * <code>EMAIL_SUBJECT</code> are supported only for contacts in the email
-   * channel.</p>
+   * <p>The categories of PII to redact from the contact. Specify one or more of the
+   * following values:</p> <ul> <li> <p> <code>CUSTOMER_ENDPOINT</code> – The
+   * customer's contact endpoint.</p> </li> <li> <p>
+   * <code>ADDITIONAL_EMAIL_RECIPIENTS</code> – Additional recipients on an email
+   * contact (email channel only).</p> </li> <li> <p> <code>EMAIL_SUBJECT</code> –
+   * The subject line of an email contact (email channel only).</p> </li> </ul>
    */
   inline const Aws::Vector<ContactField>& GetContactFields() const { return m_contactFields; }
   inline bool ContactFieldsHasBeenSet() const { return m_contactFieldsHasBeenSet; }

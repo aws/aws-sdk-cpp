@@ -77,6 +77,10 @@ Aws::String CreateOriginEndpointRequest::SerializePayload() const {
     payload.WithString("UriSeparator", UriSeparatorMapper::GetNameForUriSeparator(m_uriSeparator));
   }
 
+  if (m_streamNameOutputModeHasBeenSet) {
+    payload.WithString("StreamNameOutputMode", StreamNameOutputModeMapper::GetNameForStreamNameOutputMode(m_streamNameOutputMode));
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {

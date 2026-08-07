@@ -35,6 +35,7 @@
 #include <aws/connect/model/UpdateContactRequest.h>
 #include <aws/connect/model/UpdateContactRoutingDataRequest.h>
 #include <aws/connect/model/UpdateContactScheduleRequest.h>
+#include <aws/connect/model/UpdateContactTaskTemplateRequest.h>
 #include <aws/connect/model/UpdateDataTableAttributeRequest.h>
 #include <aws/connect/model/UpdateDataTableMetadataRequest.h>
 #include <aws/connect/model/UpdateDataTablePrimaryValuesRequest.h>
@@ -679,6 +680,17 @@ UpdateContactScheduleOutcome ConnectClient::UpdateContactSchedule(const UpdateCo
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateContactScheduleOutcome(result.GetResultWithOwnership())
                             : UpdateContactScheduleOutcome(std::move(result.GetError()));
+}
+
+UpdateContactTaskTemplateOutcome ConnectClient::UpdateContactTaskTemplate(const UpdateContactTaskTemplateRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/contact/task-template");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateContactTaskTemplateOutcome(result.GetResultWithOwnership())
+                            : UpdateContactTaskTemplateOutcome(std::move(result.GetError()));
 }
 
 UpdateDataTableAttributeOutcome ConnectClient::UpdateDataTableAttribute(const UpdateDataTableAttributeRequest& request) const {

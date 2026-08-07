@@ -15,6 +15,7 @@
 #include <aws/mediapackagev2/model/CreateMssManifestConfiguration.h>
 #include <aws/mediapackagev2/model/ForceEndpointErrorConfiguration.h>
 #include <aws/mediapackagev2/model/Segment.h>
+#include <aws/mediapackagev2/model/StreamNameOutputMode.h>
 #include <aws/mediapackagev2/model/UriSeparator.h>
 
 #include <utility>
@@ -310,6 +311,24 @@ class UpdateOriginEndpointRequest : public Mediapackagev2Request {
 
   ///@{
   /**
+   * <p>The output mode for stream names in egress manifests. If you provide a value,
+   * it must match the current value. You can't change the stream name output mode
+   * after you create the endpoint.</p>
+   */
+  inline StreamNameOutputMode GetStreamNameOutputMode() const { return m_streamNameOutputMode; }
+  inline bool StreamNameOutputModeHasBeenSet() const { return m_streamNameOutputModeHasBeenSet; }
+  inline void SetStreamNameOutputMode(StreamNameOutputMode value) {
+    m_streamNameOutputModeHasBeenSet = true;
+    m_streamNameOutputMode = value;
+  }
+  inline UpdateOriginEndpointRequest& WithStreamNameOutputMode(StreamNameOutputMode value) {
+    SetStreamNameOutputMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The expected current Entity Tag (ETag) for the resource. If the specified
    * ETag does not match the resource's current entity tag, the update request will
    * be rejected.</p>
@@ -354,6 +373,8 @@ class UpdateOriginEndpointRequest : public Mediapackagev2Request {
 
   UriSeparator m_uriSeparator{UriSeparator::NOT_SET};
 
+  StreamNameOutputMode m_streamNameOutputMode{StreamNameOutputMode::NOT_SET};
+
   Aws::String m_eTag;
   bool m_channelGroupNameHasBeenSet = false;
   bool m_channelNameHasBeenSet = false;
@@ -368,6 +389,7 @@ class UpdateOriginEndpointRequest : public Mediapackagev2Request {
   bool m_mssManifestsHasBeenSet = false;
   bool m_forceEndpointErrorConfigurationHasBeenSet = false;
   bool m_uriSeparatorHasBeenSet = false;
+  bool m_streamNameOutputModeHasBeenSet = false;
   bool m_eTagHasBeenSet = false;
 };
 

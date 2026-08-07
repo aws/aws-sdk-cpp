@@ -1314,6 +1314,8 @@
 #include <aws/connect/model/UpdateContactRoutingDataResult.h>
 #include <aws/connect/model/UpdateContactScheduleRequest.h>
 #include <aws/connect/model/UpdateContactScheduleResult.h>
+#include <aws/connect/model/UpdateContactTaskTemplateRequest.h>
+#include <aws/connect/model/UpdateContactTaskTemplateResult.h>
 #include <aws/connect/model/UpdateDataTableAttributeRequest.h>
 #include <aws/connect/model/UpdateDataTableAttributeResult.h>
 #include <aws/connect/model/UpdateDataTableMetadataRequest.h>

@@ -103,6 +103,10 @@ GetOriginEndpointResult& GetOriginEndpointResult::operator=(const Aws::AmazonWeb
     m_uriSeparator = UriSeparatorMapper::GetUriSeparatorForName(jsonValue.GetString("UriSeparator"));
     m_uriSeparatorHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("StreamNameOutputMode")) {
+    m_streamNameOutputMode = StreamNameOutputModeMapper::GetStreamNameOutputModeForName(jsonValue.GetString("StreamNameOutputMode"));
+    m_streamNameOutputModeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ETag")) {
     m_eTag = jsonValue.GetString("ETag");
     m_eTagHasBeenSet = true;

@@ -202,6 +202,22 @@ class StartFHIRImportJobRequest : public HealthLakeRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to enable provenance for the import job.</p>
+   */
+  inline bool GetProvenanceEnabled() const { return m_provenanceEnabled; }
+  inline bool ProvenanceEnabledHasBeenSet() const { return m_provenanceEnabledHasBeenSet; }
+  inline void SetProvenanceEnabled(bool value) {
+    m_provenanceEnabledHasBeenSet = true;
+    m_provenanceEnabled = value;
+  }
+  inline StartFHIRImportJobRequest& WithProvenanceEnabled(bool value) {
+    SetProvenanceEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_jobName;
 
@@ -222,6 +238,8 @@ class StartFHIRImportJobRequest : public HealthLakeRequest {
   Aws::String m_inputFormat;
 
   bool m_driftDetectionEnabled{false};
+
+  bool m_provenanceEnabled{false};
   bool m_jobNameHasBeenSet = false;
   bool m_inputDataConfigHasBeenSet = false;
   bool m_jobOutputDataConfigHasBeenSet = false;
@@ -232,6 +250,7 @@ class StartFHIRImportJobRequest : public HealthLakeRequest {
   bool m_profileIdHasBeenSet = false;
   bool m_inputFormatHasBeenSet = false;
   bool m_driftDetectionEnabledHasBeenSet = false;
+  bool m_provenanceEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

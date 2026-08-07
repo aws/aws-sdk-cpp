@@ -114,6 +114,7 @@ enum class ResourceType {
   ipam_prefix_list_resolver,
   ipam_policy,
   ipam_prefix_list_resolver_target,
+  ipam_internet_registry_association,
   secondary_interface,
   secondary_network,
   secondary_subnet,

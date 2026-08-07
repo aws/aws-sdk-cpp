@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
 #include <aws/mediatailor/model/HttpRequest.h>
+#include <aws/mediatailor/model/VastResponse.h>
 
 #include <utility>
 
@@ -51,9 +52,31 @@ class AdDecisionServerConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The settings that control how MediaTailor processes VAST responses from the
+   * ad decision server.</p>
+   */
+  inline const VastResponse& GetVastResponse() const { return m_vastResponse; }
+  inline bool VastResponseHasBeenSet() const { return m_vastResponseHasBeenSet; }
+  template <typename VastResponseT = VastResponse>
+  void SetVastResponse(VastResponseT&& value) {
+    m_vastResponseHasBeenSet = true;
+    m_vastResponse = std::forward<VastResponseT>(value);
+  }
+  template <typename VastResponseT = VastResponse>
+  AdDecisionServerConfiguration& WithVastResponse(VastResponseT&& value) {
+    SetVastResponse(std::forward<VastResponseT>(value));
+    return *this;
+  }
+  ///@}
  private:
   HttpRequest m_httpRequest;
+
+  VastResponse m_vastResponse;
   bool m_httpRequestHasBeenSet = false;
+  bool m_vastResponseHasBeenSet = false;
 };
 
 }  // namespace Model

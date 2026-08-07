@@ -22,6 +22,10 @@ AdDecisionServerConfiguration& AdDecisionServerConfiguration::operator=(JsonView
     m_httpRequest = jsonValue.GetObject("HttpRequest");
     m_httpRequestHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("VastResponse")) {
+    m_vastResponse = jsonValue.GetObject("VastResponse");
+    m_vastResponseHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue AdDecisionServerConfiguration::Jsonize() const {
 
   if (m_httpRequestHasBeenSet) {
     payload.WithObject("HttpRequest", m_httpRequest.Jsonize());
+  }
+
+  if (m_vastResponseHasBeenSet) {
+    payload.WithObject("VastResponse", m_vastResponse.Jsonize());
   }
 
   return payload;

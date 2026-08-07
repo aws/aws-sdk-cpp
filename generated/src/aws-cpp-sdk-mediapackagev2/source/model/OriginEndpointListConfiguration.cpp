@@ -87,6 +87,10 @@ OriginEndpointListConfiguration& OriginEndpointListConfiguration::operator=(Json
     m_uriSeparator = UriSeparatorMapper::GetUriSeparatorForName(jsonValue.GetString("UriSeparator"));
     m_uriSeparatorHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("StreamNameOutputMode")) {
+    m_streamNameOutputMode = StreamNameOutputModeMapper::GetStreamNameOutputModeForName(jsonValue.GetString("StreamNameOutputMode"));
+    m_streamNameOutputModeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -164,6 +168,10 @@ JsonValue OriginEndpointListConfiguration::Jsonize() const {
 
   if (m_uriSeparatorHasBeenSet) {
     payload.WithString("UriSeparator", UriSeparatorMapper::GetNameForUriSeparator(m_uriSeparator));
+  }
+
+  if (m_streamNameOutputModeHasBeenSet) {
+    payload.WithString("StreamNameOutputMode", StreamNameOutputModeMapper::GetNameForStreamNameOutputMode(m_streamNameOutputMode));
   }
 
   return payload;

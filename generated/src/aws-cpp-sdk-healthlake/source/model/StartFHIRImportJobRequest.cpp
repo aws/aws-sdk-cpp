@@ -55,6 +55,10 @@ Aws::String StartFHIRImportJobRequest::SerializePayload() const {
     payload.WithBool("DriftDetectionEnabled", m_driftDetectionEnabled);
   }
 
+  if (m_provenanceEnabledHasBeenSet) {
+    payload.WithBool("ProvenanceEnabled", m_provenanceEnabled);
+  }
+
   return payload.View().WriteReadable();
 }
 

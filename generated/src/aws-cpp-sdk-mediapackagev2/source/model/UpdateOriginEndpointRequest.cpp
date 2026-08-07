@@ -73,6 +73,10 @@ Aws::String UpdateOriginEndpointRequest::SerializePayload() const {
     payload.WithString("UriSeparator", UriSeparatorMapper::GetNameForUriSeparator(m_uriSeparator));
   }
 
+  if (m_streamNameOutputModeHasBeenSet) {
+    payload.WithString("StreamNameOutputMode", StreamNameOutputModeMapper::GetNameForStreamNameOutputMode(m_streamNameOutputMode));
+  }
+
   return payload.View().WriteReadable();
 }
 

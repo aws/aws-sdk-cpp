@@ -20,6 +20,12 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/DescribeReservedInstancesOfferingsRequest.h>
+#include <aws/ec2/model/DescribeRouteServerEndpointsRequest.h>
+#include <aws/ec2/model/DescribeRouteServerPeersRequest.h>
+#include <aws/ec2/model/DescribeRouteServersRequest.h>
+#include <aws/ec2/model/DescribeRouteTablesRequest.h>
+#include <aws/ec2/model/DescribeScheduledInstanceAvailabilityRequest.h>
 #include <aws/ec2/model/DescribeScheduledInstancesRequest.h>
 #include <aws/ec2/model/DescribeSecondaryInterfacesRequest.h>
 #include <aws/ec2/model/DescribeSecondaryNetworksRequest.h>
@@ -114,12 +120,6 @@
 #include <aws/ec2/model/DisableVgwRoutePropagationRequest.h>
 #include <aws/ec2/model/DisableVpcClassicLinkDnsSupportRequest.h>
 #include <aws/ec2/model/DisableVpcClassicLinkRequest.h>
-#include <aws/ec2/model/DisassociateAddressRequest.h>
-#include <aws/ec2/model/DisassociateApplicationStatusCheckRequest.h>
-#include <aws/ec2/model/DisassociateCapacityReservationBillingOwnerRequest.h>
-#include <aws/ec2/model/DisassociateClientVpnTargetNetworkRequest.h>
-#include <aws/ec2/model/DisassociateEnclaveCertificateIamRoleRequest.h>
-#include <aws/ec2/model/DisassociateIamInstanceProfileRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,44 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DescribeReservedInstancesOfferingsOutcome EC2Client::DescribeReservedInstancesOfferings(
+    const DescribeReservedInstancesOfferingsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeReservedInstancesOfferingsOutcome(result.GetResultWithOwnership())
+                            : DescribeReservedInstancesOfferingsOutcome(std::move(result.GetError()));
+}
+
+DescribeRouteServerEndpointsOutcome EC2Client::DescribeRouteServerEndpoints(const DescribeRouteServerEndpointsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRouteServerEndpointsOutcome(result.GetResultWithOwnership())
+                            : DescribeRouteServerEndpointsOutcome(std::move(result.GetError()));
+}
+
+DescribeRouteServerPeersOutcome EC2Client::DescribeRouteServerPeers(const DescribeRouteServerPeersRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRouteServerPeersOutcome(result.GetResultWithOwnership())
+                            : DescribeRouteServerPeersOutcome(std::move(result.GetError()));
+}
+
+DescribeRouteServersOutcome EC2Client::DescribeRouteServers(const DescribeRouteServersRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRouteServersOutcome(result.GetResultWithOwnership())
+                            : DescribeRouteServersOutcome(std::move(result.GetError()));
+}
+
+DescribeRouteTablesOutcome EC2Client::DescribeRouteTables(const DescribeRouteTablesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRouteTablesOutcome(result.GetResultWithOwnership())
+                            : DescribeRouteTablesOutcome(std::move(result.GetError()));
+}
+
+DescribeScheduledInstanceAvailabilityOutcome EC2Client::DescribeScheduledInstanceAvailability(
+    const DescribeScheduledInstanceAvailabilityRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeScheduledInstanceAvailabilityOutcome(result.GetResultWithOwnership())
+                            : DescribeScheduledInstanceAvailabilityOutcome(std::move(result.GetError()));
+}
 
 DescribeScheduledInstancesOutcome EC2Client::DescribeScheduledInstances(const DescribeScheduledInstancesRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -728,45 +766,4 @@ DisableVpcClassicLinkDnsSupportOutcome EC2Client::DisableVpcClassicLinkDnsSuppor
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DisableVpcClassicLinkDnsSupportOutcome(result.GetResultWithOwnership())
                             : DisableVpcClassicLinkDnsSupportOutcome(std::move(result.GetError()));
-}
-
-DisassociateAddressOutcome EC2Client::DisassociateAddress(const DisassociateAddressRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DisassociateAddressOutcome(result.GetResultWithOwnership())
-                            : DisassociateAddressOutcome(std::move(result.GetError()));
-}
-
-DisassociateApplicationStatusCheckOutcome EC2Client::DisassociateApplicationStatusCheck(
-    const DisassociateApplicationStatusCheckRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DisassociateApplicationStatusCheckOutcome(result.GetResultWithOwnership())
-                            : DisassociateApplicationStatusCheckOutcome(std::move(result.GetError()));
-}
-
-DisassociateCapacityReservationBillingOwnerOutcome EC2Client::DisassociateCapacityReservationBillingOwner(
-    const DisassociateCapacityReservationBillingOwnerRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DisassociateCapacityReservationBillingOwnerOutcome(result.GetResultWithOwnership())
-                            : DisassociateCapacityReservationBillingOwnerOutcome(std::move(result.GetError()));
-}
-
-DisassociateClientVpnTargetNetworkOutcome EC2Client::DisassociateClientVpnTargetNetwork(
-    const DisassociateClientVpnTargetNetworkRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DisassociateClientVpnTargetNetworkOutcome(result.GetResultWithOwnership())
-                            : DisassociateClientVpnTargetNetworkOutcome(std::move(result.GetError()));
-}
-
-DisassociateEnclaveCertificateIamRoleOutcome EC2Client::DisassociateEnclaveCertificateIamRole(
-    const DisassociateEnclaveCertificateIamRoleRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DisassociateEnclaveCertificateIamRoleOutcome(result.GetResultWithOwnership())
-                            : DisassociateEnclaveCertificateIamRoleOutcome(std::move(result.GetError()));
-}
-
-DisassociateIamInstanceProfileOutcome EC2Client::DisassociateIamInstanceProfile(
-    const DisassociateIamInstanceProfileRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DisassociateIamInstanceProfileOutcome(result.GetResultWithOwnership())
-                            : DisassociateIamInstanceProfileOutcome(std::move(result.GetError()));
 }

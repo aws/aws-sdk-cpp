@@ -70,6 +70,7 @@
 #include <aws/ec2/model/AuthorizeSecurityGroupEgressResponse.h>
 #include <aws/ec2/model/AuthorizeSecurityGroupIngressRequest.h>
 #include <aws/ec2/model/AuthorizeSecurityGroupIngressResponse.h>
+#include <aws/ec2/model/BatchModifyIpamRoutingPolicyRegistrationsResponse.h>
 #include <aws/ec2/model/BundleInstanceResponse.h>
 #include <aws/ec2/model/CancelBundleTaskResponse.h>
 #include <aws/ec2/model/CancelCapacityReservationFleetsResponse.h>
@@ -118,6 +119,7 @@
 #include <aws/ec2/model/CreateInternetGatewayResponse.h>
 #include <aws/ec2/model/CreateInterruptibleCapacityReservationAllocationResponse.h>
 #include <aws/ec2/model/CreateIpamExternalResourceVerificationTokenResponse.h>
+#include <aws/ec2/model/CreateIpamInternetRegistryAssociationResponse.h>
 #include <aws/ec2/model/CreateIpamPolicyResponse.h>
 #include <aws/ec2/model/CreateIpamPoolResponse.h>
 #include <aws/ec2/model/CreateIpamPrefixListResolverResponse.h>
@@ -126,6 +128,7 @@
 #include <aws/ec2/model/CreateIpamResourceDiscoveryRequest.h>
 #include <aws/ec2/model/CreateIpamResourceDiscoveryResponse.h>
 #include <aws/ec2/model/CreateIpamResponse.h>
+#include <aws/ec2/model/CreateIpamRoutingPolicyRegistrationResponse.h>
 #include <aws/ec2/model/CreateIpamScopeResponse.h>
 #include <aws/ec2/model/CreateKeyPairResponse.h>
 #include <aws/ec2/model/CreateLaunchTemplateResponse.h>
@@ -221,12 +224,14 @@
 #include <aws/ec2/model/DeleteInstanceConnectEndpointResponse.h>
 #include <aws/ec2/model/DeleteInstanceEventWindowResponse.h>
 #include <aws/ec2/model/DeleteIpamExternalResourceVerificationTokenResponse.h>
+#include <aws/ec2/model/DeleteIpamInternetRegistryAssociationResponse.h>
 #include <aws/ec2/model/DeleteIpamPolicyResponse.h>
 #include <aws/ec2/model/DeleteIpamPoolResponse.h>
 #include <aws/ec2/model/DeleteIpamPrefixListResolverResponse.h>
 #include <aws/ec2/model/DeleteIpamPrefixListResolverTargetResponse.h>
 #include <aws/ec2/model/DeleteIpamResourceDiscoveryResponse.h>
 #include <aws/ec2/model/DeleteIpamResponse.h>
+#include <aws/ec2/model/DeleteIpamRoutingPolicyRegistrationResponse.h>
 #include <aws/ec2/model/DeleteIpamScopeResponse.h>
 #include <aws/ec2/model/DeleteKeyPairRequest.h>
 #include <aws/ec2/model/DeleteKeyPairResponse.h>
@@ -436,6 +441,8 @@
 #include <aws/ec2/model/DescribeIpamByoasnResponse.h>
 #include <aws/ec2/model/DescribeIpamExternalResourceVerificationTokensRequest.h>
 #include <aws/ec2/model/DescribeIpamExternalResourceVerificationTokensResponse.h>
+#include <aws/ec2/model/DescribeIpamInternetRegistryAssociationsRequest.h>
+#include <aws/ec2/model/DescribeIpamInternetRegistryAssociationsResponse.h>
 #include <aws/ec2/model/DescribeIpamPoliciesRequest.h>
 #include <aws/ec2/model/DescribeIpamPoliciesResponse.h>
 #include <aws/ec2/model/DescribeIpamPoolAllocationsRequest.h>
@@ -723,6 +730,7 @@
 #include <aws/ec2/model/EnableImageDeregistrationProtectionResponse.h>
 #include <aws/ec2/model/EnableImageResponse.h>
 #include <aws/ec2/model/EnableInstanceSqlHaStandbyDetectionsResponse.h>
+#include <aws/ec2/model/EnableIpamInternetRegistryAssociationResponse.h>
 #include <aws/ec2/model/EnableIpamOrganizationAdminAccountResponse.h>
 #include <aws/ec2/model/EnableIpamPolicyResponse.h>
 #include <aws/ec2/model/EnableReachabilityAnalyzerOrganizationSharingRequest.h>
@@ -780,6 +788,9 @@
 #include <aws/ec2/model/GetIpamDiscoveredAccountsResponse.h>
 #include <aws/ec2/model/GetIpamDiscoveredPublicAddressesResponse.h>
 #include <aws/ec2/model/GetIpamDiscoveredResourceCidrsResponse.h>
+#include <aws/ec2/model/GetIpamDiscoveredRoutesResponse.h>
+#include <aws/ec2/model/GetIpamInternetRegistryAssociationAsnsResponse.h>
+#include <aws/ec2/model/GetIpamInternetRegistryAssociationCidrsResponse.h>
 #include <aws/ec2/model/GetIpamPolicyAllocationRulesResponse.h>
 #include <aws/ec2/model/GetIpamPolicyOrganizationTargetsResponse.h>
 #include <aws/ec2/model/GetIpamPoolAllocationsResponse.h>
@@ -788,6 +799,10 @@
 #include <aws/ec2/model/GetIpamPrefixListResolverVersionEntriesResponse.h>
 #include <aws/ec2/model/GetIpamPrefixListResolverVersionsResponse.h>
 #include <aws/ec2/model/GetIpamResourceCidrsResponse.h>
+#include <aws/ec2/model/GetIpamRouteOriginAuthorizationsResponse.h>
+#include <aws/ec2/model/GetIpamRouteProtectionFindingsResponse.h>
+#include <aws/ec2/model/GetIpamRoutingPolicyRegistrationDeltasResponse.h>
+#include <aws/ec2/model/GetIpamRoutingPolicyRegistrationsResponse.h>
 #include <aws/ec2/model/GetLaunchTemplateDataResponse.h>
 #include <aws/ec2/model/GetManagedPrefixListAssociationsResponse.h>
 #include <aws/ec2/model/GetManagedPrefixListEntriesResponse.h>
@@ -871,6 +886,7 @@
 #include <aws/ec2/model/ModifyIpamResourceCidrResponse.h>
 #include <aws/ec2/model/ModifyIpamResourceDiscoveryResponse.h>
 #include <aws/ec2/model/ModifyIpamResponse.h>
+#include <aws/ec2/model/ModifyIpamRoutingPolicyRegistrationResponse.h>
 #include <aws/ec2/model/ModifyIpamScopeResponse.h>
 #include <aws/ec2/model/ModifyLaunchTemplateRequest.h>
 #include <aws/ec2/model/ModifyLaunchTemplateResponse.h>
@@ -1073,6 +1089,7 @@ class AttachVpnGatewayRequest;
 class AuthorizeClientVpnIngressRequest;
 class AuthorizeSecurityGroupEgressRequest;
 class AuthorizeSecurityGroupIngressRequest;
+class BatchModifyIpamRoutingPolicyRegistrationsRequest;
 class BundleInstanceRequest;
 class CancelBundleTaskRequest;
 class CancelCapacityReservationRequest;
@@ -1119,11 +1136,13 @@ class CreateInternetGatewayRequest;
 class CreateInterruptibleCapacityReservationAllocationRequest;
 class CreateIpamRequest;
 class CreateIpamExternalResourceVerificationTokenRequest;
+class CreateIpamInternetRegistryAssociationRequest;
 class CreateIpamPolicyRequest;
 class CreateIpamPoolRequest;
 class CreateIpamPrefixListResolverRequest;
 class CreateIpamPrefixListResolverTargetRequest;
 class CreateIpamResourceDiscoveryRequest;
+class CreateIpamRoutingPolicyRegistrationRequest;
 class CreateIpamScopeRequest;
 class CreateKeyPairRequest;
 class CreateLaunchTemplateRequest;
@@ -1216,11 +1235,13 @@ class DeleteInstanceEventWindowRequest;
 class DeleteInternetGatewayRequest;
 class DeleteIpamRequest;
 class DeleteIpamExternalResourceVerificationTokenRequest;
+class DeleteIpamInternetRegistryAssociationRequest;
 class DeleteIpamPolicyRequest;
 class DeleteIpamPoolRequest;
 class DeleteIpamPrefixListResolverRequest;
 class DeleteIpamPrefixListResolverTargetRequest;
 class DeleteIpamResourceDiscoveryRequest;
+class DeleteIpamRoutingPolicyRegistrationRequest;
 class DeleteIpamScopeRequest;
 class DeleteKeyPairRequest;
 class DeleteLaunchTemplateRequest;
@@ -1377,6 +1398,7 @@ class DescribeInstancesRequest;
 class DescribeInternetGatewaysRequest;
 class DescribeIpamByoasnRequest;
 class DescribeIpamExternalResourceVerificationTokensRequest;
+class DescribeIpamInternetRegistryAssociationsRequest;
 class DescribeIpamPoliciesRequest;
 class DescribeIpamPoolAllocationsRequest;
 class DescribeIpamPoolsRequest;
@@ -1552,6 +1574,7 @@ class EnableImageBlockPublicAccessRequest;
 class EnableImageDeprecationRequest;
 class EnableImageDeregistrationProtectionRequest;
 class EnableInstanceSqlHaStandbyDetectionsRequest;
+class EnableIpamInternetRegistryAssociationRequest;
 class EnableIpamOrganizationAdminAccountRequest;
 class EnableIpamPolicyRequest;
 class EnableReachabilityAnalyzerOrganizationSharingRequest;
@@ -1599,6 +1622,9 @@ class GetIpamAddressHistoryRequest;
 class GetIpamDiscoveredAccountsRequest;
 class GetIpamDiscoveredPublicAddressesRequest;
 class GetIpamDiscoveredResourceCidrsRequest;
+class GetIpamDiscoveredRoutesRequest;
+class GetIpamInternetRegistryAssociationAsnsRequest;
+class GetIpamInternetRegistryAssociationCidrsRequest;
 class GetIpamPolicyAllocationRulesRequest;
 class GetIpamPolicyOrganizationTargetsRequest;
 class GetIpamPoolAllocationsRequest;
@@ -1607,6 +1633,10 @@ class GetIpamPrefixListResolverRulesRequest;
 class GetIpamPrefixListResolverVersionEntriesRequest;
 class GetIpamPrefixListResolverVersionsRequest;
 class GetIpamResourceCidrsRequest;
+class GetIpamRouteOriginAuthorizationsRequest;
+class GetIpamRouteProtectionFindingsRequest;
+class GetIpamRoutingPolicyRegistrationDeltasRequest;
+class GetIpamRoutingPolicyRegistrationsRequest;
 class GetLaunchTemplateDataRequest;
 class GetManagedPrefixListAssociationsRequest;
 class GetManagedPrefixListEntriesRequest;
@@ -1683,6 +1713,7 @@ class ModifyIpamPrefixListResolverRequest;
 class ModifyIpamPrefixListResolverTargetRequest;
 class ModifyIpamResourceCidrRequest;
 class ModifyIpamResourceDiscoveryRequest;
+class ModifyIpamRoutingPolicyRegistrationRequest;
 class ModifyIpamScopeRequest;
 class ModifyLaunchTemplateRequest;
 class ModifyLocalGatewayRouteRequest;
@@ -1863,6 +1894,7 @@ typedef Aws::Utils::Outcome<AttachVpnGatewayResponse, EC2Error> AttachVpnGateway
 typedef Aws::Utils::Outcome<AuthorizeClientVpnIngressResponse, EC2Error> AuthorizeClientVpnIngressOutcome;
 typedef Aws::Utils::Outcome<AuthorizeSecurityGroupEgressResponse, EC2Error> AuthorizeSecurityGroupEgressOutcome;
 typedef Aws::Utils::Outcome<AuthorizeSecurityGroupIngressResponse, EC2Error> AuthorizeSecurityGroupIngressOutcome;
+typedef Aws::Utils::Outcome<BatchModifyIpamRoutingPolicyRegistrationsResponse, EC2Error> BatchModifyIpamRoutingPolicyRegistrationsOutcome;
 typedef Aws::Utils::Outcome<BundleInstanceResponse, EC2Error> BundleInstanceOutcome;
 typedef Aws::Utils::Outcome<CancelBundleTaskResponse, EC2Error> CancelBundleTaskOutcome;
 typedef Aws::Utils::Outcome<CancelCapacityReservationResponse, EC2Error> CancelCapacityReservationOutcome;
@@ -1911,11 +1943,13 @@ typedef Aws::Utils::Outcome<CreateInterruptibleCapacityReservationAllocationResp
 typedef Aws::Utils::Outcome<CreateIpamResponse, EC2Error> CreateIpamOutcome;
 typedef Aws::Utils::Outcome<CreateIpamExternalResourceVerificationTokenResponse, EC2Error>
     CreateIpamExternalResourceVerificationTokenOutcome;
+typedef Aws::Utils::Outcome<CreateIpamInternetRegistryAssociationResponse, EC2Error> CreateIpamInternetRegistryAssociationOutcome;
 typedef Aws::Utils::Outcome<CreateIpamPolicyResponse, EC2Error> CreateIpamPolicyOutcome;
 typedef Aws::Utils::Outcome<CreateIpamPoolResponse, EC2Error> CreateIpamPoolOutcome;
 typedef Aws::Utils::Outcome<CreateIpamPrefixListResolverResponse, EC2Error> CreateIpamPrefixListResolverOutcome;
 typedef Aws::Utils::Outcome<CreateIpamPrefixListResolverTargetResponse, EC2Error> CreateIpamPrefixListResolverTargetOutcome;
 typedef Aws::Utils::Outcome<CreateIpamResourceDiscoveryResponse, EC2Error> CreateIpamResourceDiscoveryOutcome;
+typedef Aws::Utils::Outcome<CreateIpamRoutingPolicyRegistrationResponse, EC2Error> CreateIpamRoutingPolicyRegistrationOutcome;
 typedef Aws::Utils::Outcome<CreateIpamScopeResponse, EC2Error> CreateIpamScopeOutcome;
 typedef Aws::Utils::Outcome<CreateKeyPairResponse, EC2Error> CreateKeyPairOutcome;
 typedef Aws::Utils::Outcome<CreateLaunchTemplateResponse, EC2Error> CreateLaunchTemplateOutcome;
@@ -2011,11 +2045,13 @@ typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteInternetGatewayOutcom
 typedef Aws::Utils::Outcome<DeleteIpamResponse, EC2Error> DeleteIpamOutcome;
 typedef Aws::Utils::Outcome<DeleteIpamExternalResourceVerificationTokenResponse, EC2Error>
     DeleteIpamExternalResourceVerificationTokenOutcome;
+typedef Aws::Utils::Outcome<DeleteIpamInternetRegistryAssociationResponse, EC2Error> DeleteIpamInternetRegistryAssociationOutcome;
 typedef Aws::Utils::Outcome<DeleteIpamPolicyResponse, EC2Error> DeleteIpamPolicyOutcome;
 typedef Aws::Utils::Outcome<DeleteIpamPoolResponse, EC2Error> DeleteIpamPoolOutcome;
 typedef Aws::Utils::Outcome<DeleteIpamPrefixListResolverResponse, EC2Error> DeleteIpamPrefixListResolverOutcome;
 typedef Aws::Utils::Outcome<DeleteIpamPrefixListResolverTargetResponse, EC2Error> DeleteIpamPrefixListResolverTargetOutcome;
 typedef Aws::Utils::Outcome<DeleteIpamResourceDiscoveryResponse, EC2Error> DeleteIpamResourceDiscoveryOutcome;
+typedef Aws::Utils::Outcome<DeleteIpamRoutingPolicyRegistrationResponse, EC2Error> DeleteIpamRoutingPolicyRegistrationOutcome;
 typedef Aws::Utils::Outcome<DeleteIpamScopeResponse, EC2Error> DeleteIpamScopeOutcome;
 typedef Aws::Utils::Outcome<DeleteKeyPairResponse, EC2Error> DeleteKeyPairOutcome;
 typedef Aws::Utils::Outcome<DeleteLaunchTemplateResponse, EC2Error> DeleteLaunchTemplateOutcome;
@@ -2180,6 +2216,7 @@ typedef Aws::Utils::Outcome<DescribeInternetGatewaysResponse, EC2Error> Describe
 typedef Aws::Utils::Outcome<DescribeIpamByoasnResponse, EC2Error> DescribeIpamByoasnOutcome;
 typedef Aws::Utils::Outcome<DescribeIpamExternalResourceVerificationTokensResponse, EC2Error>
     DescribeIpamExternalResourceVerificationTokensOutcome;
+typedef Aws::Utils::Outcome<DescribeIpamInternetRegistryAssociationsResponse, EC2Error> DescribeIpamInternetRegistryAssociationsOutcome;
 typedef Aws::Utils::Outcome<DescribeIpamPoliciesResponse, EC2Error> DescribeIpamPoliciesOutcome;
 typedef Aws::Utils::Outcome<DescribeIpamPoolAllocationsResponse, EC2Error> DescribeIpamPoolAllocationsOutcome;
 typedef Aws::Utils::Outcome<DescribeIpamPoolsResponse, EC2Error> DescribeIpamPoolsOutcome;
@@ -2362,6 +2399,7 @@ typedef Aws::Utils::Outcome<EnableImageBlockPublicAccessResponse, EC2Error> Enab
 typedef Aws::Utils::Outcome<EnableImageDeprecationResponse, EC2Error> EnableImageDeprecationOutcome;
 typedef Aws::Utils::Outcome<EnableImageDeregistrationProtectionResponse, EC2Error> EnableImageDeregistrationProtectionOutcome;
 typedef Aws::Utils::Outcome<EnableInstanceSqlHaStandbyDetectionsResponse, EC2Error> EnableInstanceSqlHaStandbyDetectionsOutcome;
+typedef Aws::Utils::Outcome<EnableIpamInternetRegistryAssociationResponse, EC2Error> EnableIpamInternetRegistryAssociationOutcome;
 typedef Aws::Utils::Outcome<EnableIpamOrganizationAdminAccountResponse, EC2Error> EnableIpamOrganizationAdminAccountOutcome;
 typedef Aws::Utils::Outcome<EnableIpamPolicyResponse, EC2Error> EnableIpamPolicyOutcome;
 typedef Aws::Utils::Outcome<EnableReachabilityAnalyzerOrganizationSharingResponse, EC2Error>
@@ -2412,6 +2450,9 @@ typedef Aws::Utils::Outcome<GetIpamAddressHistoryResponse, EC2Error> GetIpamAddr
 typedef Aws::Utils::Outcome<GetIpamDiscoveredAccountsResponse, EC2Error> GetIpamDiscoveredAccountsOutcome;
 typedef Aws::Utils::Outcome<GetIpamDiscoveredPublicAddressesResponse, EC2Error> GetIpamDiscoveredPublicAddressesOutcome;
 typedef Aws::Utils::Outcome<GetIpamDiscoveredResourceCidrsResponse, EC2Error> GetIpamDiscoveredResourceCidrsOutcome;
+typedef Aws::Utils::Outcome<GetIpamDiscoveredRoutesResponse, EC2Error> GetIpamDiscoveredRoutesOutcome;
+typedef Aws::Utils::Outcome<GetIpamInternetRegistryAssociationAsnsResponse, EC2Error> GetIpamInternetRegistryAssociationAsnsOutcome;
+typedef Aws::Utils::Outcome<GetIpamInternetRegistryAssociationCidrsResponse, EC2Error> GetIpamInternetRegistryAssociationCidrsOutcome;
 typedef Aws::Utils::Outcome<GetIpamPolicyAllocationRulesResponse, EC2Error> GetIpamPolicyAllocationRulesOutcome;
 typedef Aws::Utils::Outcome<GetIpamPolicyOrganizationTargetsResponse, EC2Error> GetIpamPolicyOrganizationTargetsOutcome;
 typedef Aws::Utils::Outcome<GetIpamPoolAllocationsResponse, EC2Error> GetIpamPoolAllocationsOutcome;
@@ -2420,6 +2461,10 @@ typedef Aws::Utils::Outcome<GetIpamPrefixListResolverRulesResponse, EC2Error> Ge
 typedef Aws::Utils::Outcome<GetIpamPrefixListResolverVersionEntriesResponse, EC2Error> GetIpamPrefixListResolverVersionEntriesOutcome;
 typedef Aws::Utils::Outcome<GetIpamPrefixListResolverVersionsResponse, EC2Error> GetIpamPrefixListResolverVersionsOutcome;
 typedef Aws::Utils::Outcome<GetIpamResourceCidrsResponse, EC2Error> GetIpamResourceCidrsOutcome;
+typedef Aws::Utils::Outcome<GetIpamRouteOriginAuthorizationsResponse, EC2Error> GetIpamRouteOriginAuthorizationsOutcome;
+typedef Aws::Utils::Outcome<GetIpamRouteProtectionFindingsResponse, EC2Error> GetIpamRouteProtectionFindingsOutcome;
+typedef Aws::Utils::Outcome<GetIpamRoutingPolicyRegistrationDeltasResponse, EC2Error> GetIpamRoutingPolicyRegistrationDeltasOutcome;
+typedef Aws::Utils::Outcome<GetIpamRoutingPolicyRegistrationsResponse, EC2Error> GetIpamRoutingPolicyRegistrationsOutcome;
 typedef Aws::Utils::Outcome<GetLaunchTemplateDataResponse, EC2Error> GetLaunchTemplateDataOutcome;
 typedef Aws::Utils::Outcome<GetManagedPrefixListAssociationsResponse, EC2Error> GetManagedPrefixListAssociationsOutcome;
 typedef Aws::Utils::Outcome<GetManagedPrefixListEntriesResponse, EC2Error> GetManagedPrefixListEntriesOutcome;
@@ -2501,6 +2546,7 @@ typedef Aws::Utils::Outcome<ModifyIpamPrefixListResolverResponse, EC2Error> Modi
 typedef Aws::Utils::Outcome<ModifyIpamPrefixListResolverTargetResponse, EC2Error> ModifyIpamPrefixListResolverTargetOutcome;
 typedef Aws::Utils::Outcome<ModifyIpamResourceCidrResponse, EC2Error> ModifyIpamResourceCidrOutcome;
 typedef Aws::Utils::Outcome<ModifyIpamResourceDiscoveryResponse, EC2Error> ModifyIpamResourceDiscoveryOutcome;
+typedef Aws::Utils::Outcome<ModifyIpamRoutingPolicyRegistrationResponse, EC2Error> ModifyIpamRoutingPolicyRegistrationOutcome;
 typedef Aws::Utils::Outcome<ModifyIpamScopeResponse, EC2Error> ModifyIpamScopeOutcome;
 typedef Aws::Utils::Outcome<ModifyLaunchTemplateResponse, EC2Error> ModifyLaunchTemplateOutcome;
 typedef Aws::Utils::Outcome<ModifyLocalGatewayRouteResponse, EC2Error> ModifyLocalGatewayRouteOutcome;
@@ -2688,6 +2734,7 @@ typedef std::future<AttachVpnGatewayOutcome> AttachVpnGatewayOutcomeCallable;
 typedef std::future<AuthorizeClientVpnIngressOutcome> AuthorizeClientVpnIngressOutcomeCallable;
 typedef std::future<AuthorizeSecurityGroupEgressOutcome> AuthorizeSecurityGroupEgressOutcomeCallable;
 typedef std::future<AuthorizeSecurityGroupIngressOutcome> AuthorizeSecurityGroupIngressOutcomeCallable;
+typedef std::future<BatchModifyIpamRoutingPolicyRegistrationsOutcome> BatchModifyIpamRoutingPolicyRegistrationsOutcomeCallable;
 typedef std::future<BundleInstanceOutcome> BundleInstanceOutcomeCallable;
 typedef std::future<CancelBundleTaskOutcome> CancelBundleTaskOutcomeCallable;
 typedef std::future<CancelCapacityReservationOutcome> CancelCapacityReservationOutcomeCallable;
@@ -2735,11 +2782,13 @@ typedef std::future<CreateInterruptibleCapacityReservationAllocationOutcome>
     CreateInterruptibleCapacityReservationAllocationOutcomeCallable;
 typedef std::future<CreateIpamOutcome> CreateIpamOutcomeCallable;
 typedef std::future<CreateIpamExternalResourceVerificationTokenOutcome> CreateIpamExternalResourceVerificationTokenOutcomeCallable;
+typedef std::future<CreateIpamInternetRegistryAssociationOutcome> CreateIpamInternetRegistryAssociationOutcomeCallable;
 typedef std::future<CreateIpamPolicyOutcome> CreateIpamPolicyOutcomeCallable;
 typedef std::future<CreateIpamPoolOutcome> CreateIpamPoolOutcomeCallable;
 typedef std::future<CreateIpamPrefixListResolverOutcome> CreateIpamPrefixListResolverOutcomeCallable;
 typedef std::future<CreateIpamPrefixListResolverTargetOutcome> CreateIpamPrefixListResolverTargetOutcomeCallable;
 typedef std::future<CreateIpamResourceDiscoveryOutcome> CreateIpamResourceDiscoveryOutcomeCallable;
+typedef std::future<CreateIpamRoutingPolicyRegistrationOutcome> CreateIpamRoutingPolicyRegistrationOutcomeCallable;
 typedef std::future<CreateIpamScopeOutcome> CreateIpamScopeOutcomeCallable;
 typedef std::future<CreateKeyPairOutcome> CreateKeyPairOutcomeCallable;
 typedef std::future<CreateLaunchTemplateOutcome> CreateLaunchTemplateOutcomeCallable;
@@ -2834,11 +2883,13 @@ typedef std::future<DeleteInstanceEventWindowOutcome> DeleteInstanceEventWindowO
 typedef std::future<DeleteInternetGatewayOutcome> DeleteInternetGatewayOutcomeCallable;
 typedef std::future<DeleteIpamOutcome> DeleteIpamOutcomeCallable;
 typedef std::future<DeleteIpamExternalResourceVerificationTokenOutcome> DeleteIpamExternalResourceVerificationTokenOutcomeCallable;
+typedef std::future<DeleteIpamInternetRegistryAssociationOutcome> DeleteIpamInternetRegistryAssociationOutcomeCallable;
 typedef std::future<DeleteIpamPolicyOutcome> DeleteIpamPolicyOutcomeCallable;
 typedef std::future<DeleteIpamPoolOutcome> DeleteIpamPoolOutcomeCallable;
 typedef std::future<DeleteIpamPrefixListResolverOutcome> DeleteIpamPrefixListResolverOutcomeCallable;
 typedef std::future<DeleteIpamPrefixListResolverTargetOutcome> DeleteIpamPrefixListResolverTargetOutcomeCallable;
 typedef std::future<DeleteIpamResourceDiscoveryOutcome> DeleteIpamResourceDiscoveryOutcomeCallable;
+typedef std::future<DeleteIpamRoutingPolicyRegistrationOutcome> DeleteIpamRoutingPolicyRegistrationOutcomeCallable;
 typedef std::future<DeleteIpamScopeOutcome> DeleteIpamScopeOutcomeCallable;
 typedef std::future<DeleteKeyPairOutcome> DeleteKeyPairOutcomeCallable;
 typedef std::future<DeleteLaunchTemplateOutcome> DeleteLaunchTemplateOutcomeCallable;
@@ -2997,6 +3048,7 @@ typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
 typedef std::future<DescribeInternetGatewaysOutcome> DescribeInternetGatewaysOutcomeCallable;
 typedef std::future<DescribeIpamByoasnOutcome> DescribeIpamByoasnOutcomeCallable;
 typedef std::future<DescribeIpamExternalResourceVerificationTokensOutcome> DescribeIpamExternalResourceVerificationTokensOutcomeCallable;
+typedef std::future<DescribeIpamInternetRegistryAssociationsOutcome> DescribeIpamInternetRegistryAssociationsOutcomeCallable;
 typedef std::future<DescribeIpamPoliciesOutcome> DescribeIpamPoliciesOutcomeCallable;
 typedef std::future<DescribeIpamPoolAllocationsOutcome> DescribeIpamPoolAllocationsOutcomeCallable;
 typedef std::future<DescribeIpamPoolsOutcome> DescribeIpamPoolsOutcomeCallable;
@@ -3174,6 +3226,7 @@ typedef std::future<EnableImageBlockPublicAccessOutcome> EnableImageBlockPublicA
 typedef std::future<EnableImageDeprecationOutcome> EnableImageDeprecationOutcomeCallable;
 typedef std::future<EnableImageDeregistrationProtectionOutcome> EnableImageDeregistrationProtectionOutcomeCallable;
 typedef std::future<EnableInstanceSqlHaStandbyDetectionsOutcome> EnableInstanceSqlHaStandbyDetectionsOutcomeCallable;
+typedef std::future<EnableIpamInternetRegistryAssociationOutcome> EnableIpamInternetRegistryAssociationOutcomeCallable;
 typedef std::future<EnableIpamOrganizationAdminAccountOutcome> EnableIpamOrganizationAdminAccountOutcomeCallable;
 typedef std::future<EnableIpamPolicyOutcome> EnableIpamPolicyOutcomeCallable;
 typedef std::future<EnableReachabilityAnalyzerOrganizationSharingOutcome> EnableReachabilityAnalyzerOrganizationSharingOutcomeCallable;
@@ -3221,6 +3274,9 @@ typedef std::future<GetIpamAddressHistoryOutcome> GetIpamAddressHistoryOutcomeCa
 typedef std::future<GetIpamDiscoveredAccountsOutcome> GetIpamDiscoveredAccountsOutcomeCallable;
 typedef std::future<GetIpamDiscoveredPublicAddressesOutcome> GetIpamDiscoveredPublicAddressesOutcomeCallable;
 typedef std::future<GetIpamDiscoveredResourceCidrsOutcome> GetIpamDiscoveredResourceCidrsOutcomeCallable;
+typedef std::future<GetIpamDiscoveredRoutesOutcome> GetIpamDiscoveredRoutesOutcomeCallable;
+typedef std::future<GetIpamInternetRegistryAssociationAsnsOutcome> GetIpamInternetRegistryAssociationAsnsOutcomeCallable;
+typedef std::future<GetIpamInternetRegistryAssociationCidrsOutcome> GetIpamInternetRegistryAssociationCidrsOutcomeCallable;
 typedef std::future<GetIpamPolicyAllocationRulesOutcome> GetIpamPolicyAllocationRulesOutcomeCallable;
 typedef std::future<GetIpamPolicyOrganizationTargetsOutcome> GetIpamPolicyOrganizationTargetsOutcomeCallable;
 typedef std::future<GetIpamPoolAllocationsOutcome> GetIpamPoolAllocationsOutcomeCallable;
@@ -3229,6 +3285,10 @@ typedef std::future<GetIpamPrefixListResolverRulesOutcome> GetIpamPrefixListReso
 typedef std::future<GetIpamPrefixListResolverVersionEntriesOutcome> GetIpamPrefixListResolverVersionEntriesOutcomeCallable;
 typedef std::future<GetIpamPrefixListResolverVersionsOutcome> GetIpamPrefixListResolverVersionsOutcomeCallable;
 typedef std::future<GetIpamResourceCidrsOutcome> GetIpamResourceCidrsOutcomeCallable;
+typedef std::future<GetIpamRouteOriginAuthorizationsOutcome> GetIpamRouteOriginAuthorizationsOutcomeCallable;
+typedef std::future<GetIpamRouteProtectionFindingsOutcome> GetIpamRouteProtectionFindingsOutcomeCallable;
+typedef std::future<GetIpamRoutingPolicyRegistrationDeltasOutcome> GetIpamRoutingPolicyRegistrationDeltasOutcomeCallable;
+typedef std::future<GetIpamRoutingPolicyRegistrationsOutcome> GetIpamRoutingPolicyRegistrationsOutcomeCallable;
 typedef std::future<GetLaunchTemplateDataOutcome> GetLaunchTemplateDataOutcomeCallable;
 typedef std::future<GetManagedPrefixListAssociationsOutcome> GetManagedPrefixListAssociationsOutcomeCallable;
 typedef std::future<GetManagedPrefixListEntriesOutcome> GetManagedPrefixListEntriesOutcomeCallable;
@@ -3305,6 +3365,7 @@ typedef std::future<ModifyIpamPrefixListResolverOutcome> ModifyIpamPrefixListRes
 typedef std::future<ModifyIpamPrefixListResolverTargetOutcome> ModifyIpamPrefixListResolverTargetOutcomeCallable;
 typedef std::future<ModifyIpamResourceCidrOutcome> ModifyIpamResourceCidrOutcomeCallable;
 typedef std::future<ModifyIpamResourceDiscoveryOutcome> ModifyIpamResourceDiscoveryOutcomeCallable;
+typedef std::future<ModifyIpamRoutingPolicyRegistrationOutcome> ModifyIpamRoutingPolicyRegistrationOutcomeCallable;
 typedef std::future<ModifyIpamScopeOutcome> ModifyIpamScopeOutcomeCallable;
 typedef std::future<ModifyLaunchTemplateOutcome> ModifyLaunchTemplateOutcomeCallable;
 typedef std::future<ModifyLocalGatewayRouteOutcome> ModifyLocalGatewayRouteOutcomeCallable;
@@ -3603,6 +3664,10 @@ typedef std::function<void(const EC2Client*, const Model::AuthorizeSecurityGroup
                            const Model::AuthorizeSecurityGroupIngressOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AuthorizeSecurityGroupIngressResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::BatchModifyIpamRoutingPolicyRegistrationsRequest&,
+                           const Model::BatchModifyIpamRoutingPolicyRegistrationsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchModifyIpamRoutingPolicyRegistrationsResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::BundleInstanceRequest&, const Model::BundleInstanceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     BundleInstanceResponseReceivedHandler;
@@ -3754,6 +3819,10 @@ typedef std::function<void(const EC2Client*, const Model::CreateIpamExternalReso
                            const Model::CreateIpamExternalResourceVerificationTokenOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateIpamExternalResourceVerificationTokenResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::CreateIpamInternetRegistryAssociationRequest&,
+                           const Model::CreateIpamInternetRegistryAssociationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateIpamInternetRegistryAssociationResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::CreateIpamPolicyRequest&, const Model::CreateIpamPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateIpamPolicyResponseReceivedHandler;
@@ -3771,6 +3840,10 @@ typedef std::function<void(const EC2Client*, const Model::CreateIpamPrefixListRe
 typedef std::function<void(const EC2Client*, const Model::CreateIpamResourceDiscoveryRequest&,
                            const Model::CreateIpamResourceDiscoveryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateIpamResourceDiscoveryResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::CreateIpamRoutingPolicyRegistrationRequest&,
+                           const Model::CreateIpamRoutingPolicyRegistrationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateIpamRoutingPolicyRegistrationResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::CreateIpamScopeRequest&, const Model::CreateIpamScopeOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateIpamScopeResponseReceivedHandler;
@@ -4080,6 +4153,10 @@ typedef std::function<void(const EC2Client*, const Model::DeleteIpamExternalReso
                            const Model::DeleteIpamExternalResourceVerificationTokenOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteIpamExternalResourceVerificationTokenResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DeleteIpamInternetRegistryAssociationRequest&,
+                           const Model::DeleteIpamInternetRegistryAssociationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteIpamInternetRegistryAssociationResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::DeleteIpamPolicyRequest&, const Model::DeleteIpamPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteIpamPolicyResponseReceivedHandler;
@@ -4097,6 +4174,10 @@ typedef std::function<void(const EC2Client*, const Model::DeleteIpamPrefixListRe
 typedef std::function<void(const EC2Client*, const Model::DeleteIpamResourceDiscoveryRequest&,
                            const Model::DeleteIpamResourceDiscoveryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteIpamResourceDiscoveryResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DeleteIpamRoutingPolicyRegistrationRequest&,
+                           const Model::DeleteIpamRoutingPolicyRegistrationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteIpamRoutingPolicyRegistrationResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::DeleteIpamScopeRequest&, const Model::DeleteIpamScopeOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteIpamScopeResponseReceivedHandler;
@@ -4631,6 +4712,10 @@ typedef std::function<void(const EC2Client*, const Model::DescribeIpamExternalRe
                            const Model::DescribeIpamExternalResourceVerificationTokensOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeIpamExternalResourceVerificationTokensResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DescribeIpamInternetRegistryAssociationsRequest&,
+                           const Model::DescribeIpamInternetRegistryAssociationsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeIpamInternetRegistryAssociationsResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::DescribeIpamPoliciesRequest&, const Model::DescribeIpamPoliciesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeIpamPoliciesResponseReceivedHandler;
@@ -5247,6 +5332,10 @@ typedef std::function<void(const EC2Client*, const Model::EnableInstanceSqlHaSta
                            const Model::EnableInstanceSqlHaStandbyDetectionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     EnableInstanceSqlHaStandbyDetectionsResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::EnableIpamInternetRegistryAssociationRequest&,
+                           const Model::EnableIpamInternetRegistryAssociationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    EnableIpamInternetRegistryAssociationResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::EnableIpamOrganizationAdminAccountRequest&,
                            const Model::EnableIpamOrganizationAdminAccountOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -5412,6 +5501,17 @@ typedef std::function<void(const EC2Client*, const Model::GetIpamDiscoveredResou
                            const Model::GetIpamDiscoveredResourceCidrsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetIpamDiscoveredResourceCidrsResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::GetIpamDiscoveredRoutesRequest&, const Model::GetIpamDiscoveredRoutesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetIpamDiscoveredRoutesResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::GetIpamInternetRegistryAssociationAsnsRequest&,
+                           const Model::GetIpamInternetRegistryAssociationAsnsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetIpamInternetRegistryAssociationAsnsResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::GetIpamInternetRegistryAssociationCidrsRequest&,
+                           const Model::GetIpamInternetRegistryAssociationCidrsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetIpamInternetRegistryAssociationCidrsResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::GetIpamPolicyAllocationRulesRequest&,
                            const Model::GetIpamPolicyAllocationRulesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -5441,6 +5541,22 @@ typedef std::function<void(const EC2Client*, const Model::GetIpamPrefixListResol
 typedef std::function<void(const EC2Client*, const Model::GetIpamResourceCidrsRequest&, const Model::GetIpamResourceCidrsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetIpamResourceCidrsResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::GetIpamRouteOriginAuthorizationsRequest&,
+                           const Model::GetIpamRouteOriginAuthorizationsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetIpamRouteOriginAuthorizationsResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::GetIpamRouteProtectionFindingsRequest&,
+                           const Model::GetIpamRouteProtectionFindingsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetIpamRouteProtectionFindingsResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::GetIpamRoutingPolicyRegistrationDeltasRequest&,
+                           const Model::GetIpamRoutingPolicyRegistrationDeltasOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetIpamRoutingPolicyRegistrationDeltasResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::GetIpamRoutingPolicyRegistrationsRequest&,
+                           const Model::GetIpamRoutingPolicyRegistrationsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetIpamRoutingPolicyRegistrationsResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::GetLaunchTemplateDataRequest&, const Model::GetLaunchTemplateDataOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetLaunchTemplateDataResponseReceivedHandler;
@@ -5707,6 +5823,10 @@ typedef std::function<void(const EC2Client*, const Model::ModifyIpamResourceCidr
 typedef std::function<void(const EC2Client*, const Model::ModifyIpamResourceDiscoveryRequest&,
                            const Model::ModifyIpamResourceDiscoveryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ModifyIpamResourceDiscoveryResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::ModifyIpamRoutingPolicyRegistrationRequest&,
+                           const Model::ModifyIpamRoutingPolicyRegistrationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ModifyIpamRoutingPolicyRegistrationResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::ModifyIpamScopeRequest&, const Model::ModifyIpamScopeOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ModifyIpamScopeResponseReceivedHandler;

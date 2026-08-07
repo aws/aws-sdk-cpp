@@ -137,6 +137,9 @@ static const int ONLY_NON_EPOCH_LOCKED_ALLOW_OUTPUT_TIMESTAMP_MODE_HASH =
 static const int OUTPUT_TIMESTAMP_MODE_IMMUTABLE_HASH = HashingUtils::HashString("OUTPUT_TIMESTAMP_MODE_IMMUTABLE");
 static const int NON_EPOCH_LOCKED_WITH_FORCE_ENDPOINT_ERROR_CONFIGURATION_HASH =
     HashingUtils::HashString("NON_EPOCH_LOCKED_WITH_FORCE_ENDPOINT_ERROR_CONFIGURATION");
+static const int ONLY_HLS_INPUT_TYPE_ALLOW_STREAM_NAME_OUTPUT_MODE_HASH =
+    HashingUtils::HashString("ONLY_HLS_INPUT_TYPE_ALLOW_STREAM_NAME_OUTPUT_MODE");
+static const int STREAM_NAME_OUTPUT_MODE_IMMUTABLE_HASH = HashingUtils::HashString("STREAM_NAME_OUTPUT_MODE_IMMUTABLE");
 
 ValidationExceptionType GetValidationExceptionTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -348,6 +351,10 @@ ValidationExceptionType GetValidationExceptionTypeForName(const Aws::String& nam
     return ValidationExceptionType::OUTPUT_TIMESTAMP_MODE_IMMUTABLE;
   } else if (hashCode == NON_EPOCH_LOCKED_WITH_FORCE_ENDPOINT_ERROR_CONFIGURATION_HASH) {
     return ValidationExceptionType::NON_EPOCH_LOCKED_WITH_FORCE_ENDPOINT_ERROR_CONFIGURATION;
+  } else if (hashCode == ONLY_HLS_INPUT_TYPE_ALLOW_STREAM_NAME_OUTPUT_MODE_HASH) {
+    return ValidationExceptionType::ONLY_HLS_INPUT_TYPE_ALLOW_STREAM_NAME_OUTPUT_MODE;
+  } else if (hashCode == STREAM_NAME_OUTPUT_MODE_IMMUTABLE_HASH) {
+    return ValidationExceptionType::STREAM_NAME_OUTPUT_MODE_IMMUTABLE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -570,6 +577,10 @@ Aws::String GetNameForValidationExceptionType(ValidationExceptionType enumValue)
       return "OUTPUT_TIMESTAMP_MODE_IMMUTABLE";
     case ValidationExceptionType::NON_EPOCH_LOCKED_WITH_FORCE_ENDPOINT_ERROR_CONFIGURATION:
       return "NON_EPOCH_LOCKED_WITH_FORCE_ENDPOINT_ERROR_CONFIGURATION";
+    case ValidationExceptionType::ONLY_HLS_INPUT_TYPE_ALLOW_STREAM_NAME_OUTPUT_MODE:
+      return "ONLY_HLS_INPUT_TYPE_ALLOW_STREAM_NAME_OUTPUT_MODE";
+    case ValidationExceptionType::STREAM_NAME_OUTPUT_MODE_IMMUTABLE:
+      return "STREAM_NAME_OUTPUT_MODE_IMMUTABLE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

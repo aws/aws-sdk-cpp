@@ -141,6 +141,7 @@
 #include <aws/mediapackagev2/model/Segment.h>
 #include <aws/mediapackagev2/model/SpekeKeyProvider.h>
 #include <aws/mediapackagev2/model/StartTag.h>
+#include <aws/mediapackagev2/model/StreamNameOutputMode.h>
 #include <aws/mediapackagev2/model/TagResourceRequest.h>
 #include <aws/mediapackagev2/model/TsEncryptionMethod.h>
 #include <aws/mediapackagev2/model/UntagResourceRequest.h>

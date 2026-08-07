@@ -21,6 +21,7 @@ static const int REFERENCED_RESOURCE_NOT_FOUND_HASH = HashingUtils::HashString("
 static const int RESOURCE_NAME_ALREADY_EXISTS_HASH = HashingUtils::HashString("RESOURCE_NAME_ALREADY_EXISTS");
 static const int REQUIRED_PROPERTY_MISSING_HASH = HashingUtils::HashString("REQUIRED_PROPERTY_MISSING");
 static const int NOT_SUPPORTED_HASH = HashingUtils::HashString("NOT_SUPPORTED");
+static const int TYPE_MISMATCH_HASH = HashingUtils::HashString("TYPE_MISMATCH");
 
 PropertyValidationExceptionReason GetPropertyValidationExceptionReasonForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +37,8 @@ PropertyValidationExceptionReason GetPropertyValidationExceptionReasonForName(co
     return PropertyValidationExceptionReason::REQUIRED_PROPERTY_MISSING;
   } else if (hashCode == NOT_SUPPORTED_HASH) {
     return PropertyValidationExceptionReason::NOT_SUPPORTED;
+  } else if (hashCode == TYPE_MISMATCH_HASH) {
+    return PropertyValidationExceptionReason::TYPE_MISMATCH;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +65,8 @@ Aws::String GetNameForPropertyValidationExceptionReason(PropertyValidationExcept
       return "REQUIRED_PROPERTY_MISSING";
     case PropertyValidationExceptionReason::NOT_SUPPORTED:
       return "NOT_SUPPORTED";
+    case PropertyValidationExceptionReason::TYPE_MISMATCH:
+      return "TYPE_MISMATCH";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

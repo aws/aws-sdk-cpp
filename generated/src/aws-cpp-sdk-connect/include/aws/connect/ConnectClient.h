@@ -2454,15 +2454,16 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Deletes the specified fields containing personally identifiable information
-   * (PII) from a contact in the specified Connect Customer instance. This operation
-   * redacts PII (such as customer endpoints, additional email recipients, and the
-   * email subject) from the contact and its associated contact trace record (CTR).
-   * The contact must be in a terminated state.</p>  <p>This operation
-   * performs a hard deletion of the specified PII and cannot be undone. There is no
-   * retention period; after the data is deleted, it cannot be recovered. Only fields
-   * that Connect Customer identifies and stores as PII are removed. Any PII that you
-   * place in fields outside the scope of this operation remains your responsibility
-   * to remove.</p> <p><h3>See Also:</h3>   <a
+   * (PII) from a contact in the specified Connect Customer instance. We redact PII
+   * (such as customer endpoints, additional email recipients, and the email subject)
+   * from the contact and its associated contact trace record (CTR). The contact must
+   * be in a terminated state.</p>  <p> <b>This deletion is permanent and
+   * cannot be undone.</b> Performing this operation permanently deletes the
+   * specified PII. There is no retention period; you cannot recover the data after
+   * deletion. We remove only the fields that Connect Customer identifies and stores
+   * as PII. Any PII that you place in fields outside the scope of this operation
+   * remains your responsibility to remove.</p> <p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactData">AWS
    * API Reference</a></p>
    */
@@ -8961,12 +8962,14 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Provides a pre-signed Amazon S3 URL in response for uploading your
-   * content.</p>  <p>You may only use this API to upload attachments to
-   * an <a
+   * content.</p>  <p>You may only use this API to upload attachments to a
+   * <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Connect
-   * Customer Case</a> or <a
+   * Customer Case</a>, <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Connect
-   * Customer Email</a>. </p> <p><h3>See Also:</h3>   <a
+   * Customer Email</a>, or <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-getting-started-tasks.html">Connect
+   * Customer Task</a>. </p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartAttachedFileUpload">AWS
    * API Reference</a></p>
    */
@@ -10363,6 +10366,66 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   void UpdateContactScheduleAsync(const UpdateContactScheduleRequestT& request, const UpdateContactScheduleResponseReceivedHandler& handler,
                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::UpdateContactSchedule, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the task template association on an existing task contact. You can
+   * update the task template on a contact before assignment to support tasks that
+   * are created without a template (for example <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-rules.html">Rules</a>
+   * or <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/set-disconnect-flow.html">disconnect
+   * flows</a>) or change the agent interaction form to represent the latest task
+   * data (for example an initial request that was submitted as a refund gets updated
+   * to an account cancellation and requires a new template).</p> <p>This operation
+   * can only be used with task contacts that are in progress and not connected to an
+   * agent. A task template can be updated a maximum of 5 times per contact.</p>
+   * <p>The task's references must be compatible with the fields of the target task
+   * template. If the target template has a required field, the task must have a
+   * corresponding reference with a matching name and compatible type. The following
+   * task template field types map to reference types:</p> <ul> <li> <p>
+   * <code>TEXT</code>, <code>TEXT_AREA</code>, <code>BOOLEAN</code>, and
+   * <code>SINGLE_SELECT</code> map to references of type <code>STRING</code>.</p>
+   * </li> <li> <p> <code>NUMBER</code> maps to references of type
+   * <code>NUMBER</code>.</p> </li> <li> <p> <code>DATE_TIME</code> maps to
+   * references of type <code>DATE</code>.</p> </li> <li> <p> <code>URL</code> maps
+   * to references of type <code>URL</code>.</p> </li> <li> <p> <code>EMAIL</code>
+   * maps to references of type <code>EMAIL</code>.</p> </li> </ul> <p>References
+   * corresponding to <code>TEXT</code> fields must be fewer than 512 characters.
+   * <code>TEXT_AREA</code> fields must be fewer than 4,096 characters.
+   * <code>BOOLEAN</code> fields must have a value of <code>true</code> or
+   * <code>false</code>.</p> <p>An <code>InvalidRequestException</code> occurs when
+   * <code>UpdateContactTaskTemplate</code> is called on a connected or terminated
+   * task, when it is called on non-task contacts, and when the task contact already
+   * uses the provided task template. A <code>PropertyValidationException</code>
+   * occurs when the task's references conflict with the task template's fields, for
+   * example if the task is missing a reference that matches a required field, or if
+   * the task has a reference that matches a required field's name but not its
+   * datatype.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactTaskTemplate">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateContactTaskTemplateOutcome UpdateContactTaskTemplate(const Model::UpdateContactTaskTemplateRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateContactTaskTemplate that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateContactTaskTemplateRequestT = Model::UpdateContactTaskTemplateRequest>
+  Model::UpdateContactTaskTemplateOutcomeCallable UpdateContactTaskTemplateCallable(
+      const UpdateContactTaskTemplateRequestT& request) const {
+    return SubmitCallable(&ConnectClient::UpdateContactTaskTemplate, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateContactTaskTemplate that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateContactTaskTemplateRequestT = Model::UpdateContactTaskTemplateRequest>
+  void UpdateContactTaskTemplateAsync(const UpdateContactTaskTemplateRequestT& request,
+                                      const UpdateContactTaskTemplateResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::UpdateContactTaskTemplate, request, handler, context);
   }
 
   /**

@@ -20,6 +20,9 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/CreateIpamRoutingPolicyRegistrationRequest.h>
+#include <aws/ec2/model/CreateIpamScopeRequest.h>
+#include <aws/ec2/model/CreateKeyPairRequest.h>
 #include <aws/ec2/model/CreateLaunchTemplateRequest.h>
 #include <aws/ec2/model/CreateLaunchTemplateVersionRequest.h>
 #include <aws/ec2/model/CreateLocalGatewayRouteRequest.h>
@@ -109,17 +112,14 @@
 #include <aws/ec2/model/DeleteInstanceEventWindowRequest.h>
 #include <aws/ec2/model/DeleteInternetGatewayRequest.h>
 #include <aws/ec2/model/DeleteIpamExternalResourceVerificationTokenRequest.h>
+#include <aws/ec2/model/DeleteIpamInternetRegistryAssociationRequest.h>
 #include <aws/ec2/model/DeleteIpamPolicyRequest.h>
 #include <aws/ec2/model/DeleteIpamPoolRequest.h>
 #include <aws/ec2/model/DeleteIpamPrefixListResolverRequest.h>
 #include <aws/ec2/model/DeleteIpamPrefixListResolverTargetRequest.h>
 #include <aws/ec2/model/DeleteIpamRequest.h>
 #include <aws/ec2/model/DeleteIpamResourceDiscoveryRequest.h>
-#include <aws/ec2/model/DeleteIpamScopeRequest.h>
-#include <aws/ec2/model/DeleteKeyPairRequest.h>
-#include <aws/ec2/model/DeleteLaunchTemplateRequest.h>
-#include <aws/ec2/model/DeleteLaunchTemplateVersionsRequest.h>
-#include <aws/ec2/model/DeleteLocalGatewayRouteRequest.h>
+#include <aws/ec2/model/DeleteIpamRoutingPolicyRegistrationRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,24 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+CreateIpamRoutingPolicyRegistrationOutcome EC2Client::CreateIpamRoutingPolicyRegistration(
+    const CreateIpamRoutingPolicyRegistrationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIpamRoutingPolicyRegistrationOutcome(result.GetResultWithOwnership())
+                            : CreateIpamRoutingPolicyRegistrationOutcome(std::move(result.GetError()));
+}
+
+CreateIpamScopeOutcome EC2Client::CreateIpamScope(const CreateIpamScopeRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIpamScopeOutcome(result.GetResultWithOwnership())
+                            : CreateIpamScopeOutcome(std::move(result.GetError()));
+}
+
+CreateKeyPairOutcome EC2Client::CreateKeyPair(const CreateKeyPairRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateKeyPairOutcome(result.GetResultWithOwnership()) : CreateKeyPairOutcome(std::move(result.GetError()));
+}
 
 CreateLaunchTemplateOutcome EC2Client::CreateLaunchTemplate(const CreateLaunchTemplateRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -688,6 +706,13 @@ DeleteIpamExternalResourceVerificationTokenOutcome EC2Client::DeleteIpamExternal
                             : DeleteIpamExternalResourceVerificationTokenOutcome(std::move(result.GetError()));
 }
 
+DeleteIpamInternetRegistryAssociationOutcome EC2Client::DeleteIpamInternetRegistryAssociation(
+    const DeleteIpamInternetRegistryAssociationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteIpamInternetRegistryAssociationOutcome(result.GetResultWithOwnership())
+                            : DeleteIpamInternetRegistryAssociationOutcome(std::move(result.GetError()));
+}
+
 DeleteIpamPolicyOutcome EC2Client::DeleteIpamPolicy(const DeleteIpamPolicyRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteIpamPolicyOutcome(result.GetResultWithOwnership())
@@ -718,31 +743,9 @@ DeleteIpamResourceDiscoveryOutcome EC2Client::DeleteIpamResourceDiscovery(const 
                             : DeleteIpamResourceDiscoveryOutcome(std::move(result.GetError()));
 }
 
-DeleteIpamScopeOutcome EC2Client::DeleteIpamScope(const DeleteIpamScopeRequest& request) const {
+DeleteIpamRoutingPolicyRegistrationOutcome EC2Client::DeleteIpamRoutingPolicyRegistration(
+    const DeleteIpamRoutingPolicyRegistrationRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteIpamScopeOutcome(result.GetResultWithOwnership())
-                            : DeleteIpamScopeOutcome(std::move(result.GetError()));
-}
-
-DeleteKeyPairOutcome EC2Client::DeleteKeyPair(const DeleteKeyPairRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteKeyPairOutcome(result.GetResultWithOwnership()) : DeleteKeyPairOutcome(std::move(result.GetError()));
-}
-
-DeleteLaunchTemplateOutcome EC2Client::DeleteLaunchTemplate(const DeleteLaunchTemplateRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteLaunchTemplateOutcome(result.GetResultWithOwnership())
-                            : DeleteLaunchTemplateOutcome(std::move(result.GetError()));
-}
-
-DeleteLaunchTemplateVersionsOutcome EC2Client::DeleteLaunchTemplateVersions(const DeleteLaunchTemplateVersionsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteLaunchTemplateVersionsOutcome(result.GetResultWithOwnership())
-                            : DeleteLaunchTemplateVersionsOutcome(std::move(result.GetError()));
-}
-
-DeleteLocalGatewayRouteOutcome EC2Client::DeleteLocalGatewayRoute(const DeleteLocalGatewayRouteRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteLocalGatewayRouteOutcome(result.GetResultWithOwnership())
-                            : DeleteLocalGatewayRouteOutcome(std::move(result.GetError()));
+  return result.IsSuccess() ? DeleteIpamRoutingPolicyRegistrationOutcome(result.GetResultWithOwnership())
+                            : DeleteIpamRoutingPolicyRegistrationOutcome(std::move(result.GetError()));
 }

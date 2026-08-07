@@ -17,6 +17,7 @@
 #include <aws/mediapackagev2/model/GetLowLatencyHlsManifestConfiguration.h>
 #include <aws/mediapackagev2/model/GetMssManifestConfiguration.h>
 #include <aws/mediapackagev2/model/Segment.h>
+#include <aws/mediapackagev2/model/StreamNameOutputMode.h>
 #include <aws/mediapackagev2/model/UriSeparator.h>
 
 #include <utility>
@@ -354,6 +355,22 @@ class GetOriginEndpointResult {
 
   ///@{
   /**
+   * <p>The output mode for stream names in egress manifests for this origin
+   * endpoint.</p>
+   */
+  inline StreamNameOutputMode GetStreamNameOutputMode() const { return m_streamNameOutputMode; }
+  inline void SetStreamNameOutputMode(StreamNameOutputMode value) {
+    m_streamNameOutputModeHasBeenSet = true;
+    m_streamNameOutputMode = value;
+  }
+  inline GetOriginEndpointResult& WithStreamNameOutputMode(StreamNameOutputMode value) {
+    SetStreamNameOutputMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The current Entity Tag (ETag) associated with this resource. The entity tag
    * can be used to safely make concurrent updates to the resource.</p>
    */
@@ -445,6 +462,8 @@ class GetOriginEndpointResult {
 
   UriSeparator m_uriSeparator{UriSeparator::NOT_SET};
 
+  StreamNameOutputMode m_streamNameOutputMode{StreamNameOutputMode::NOT_SET};
+
   Aws::String m_eTag;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
@@ -468,6 +487,7 @@ class GetOriginEndpointResult {
   bool m_mssManifestsHasBeenSet = false;
   bool m_forceEndpointErrorConfigurationHasBeenSet = false;
   bool m_uriSeparatorHasBeenSet = false;
+  bool m_streamNameOutputModeHasBeenSet = false;
   bool m_eTagHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

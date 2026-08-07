@@ -1754,6 +1754,38 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Modifies multiple routing policy registrations in a single operation. You can
+   * create, update, or delete Route Origin Authorizations (ROAs) in
+   * batch.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/BatchModifyIpamRoutingPolicyRegistrations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchModifyIpamRoutingPolicyRegistrationsOutcome BatchModifyIpamRoutingPolicyRegistrations(
+      const Model::BatchModifyIpamRoutingPolicyRegistrationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchModifyIpamRoutingPolicyRegistrations that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename BatchModifyIpamRoutingPolicyRegistrationsRequestT = Model::BatchModifyIpamRoutingPolicyRegistrationsRequest>
+  Model::BatchModifyIpamRoutingPolicyRegistrationsOutcomeCallable BatchModifyIpamRoutingPolicyRegistrationsCallable(
+      const BatchModifyIpamRoutingPolicyRegistrationsRequestT& request) const {
+    return SubmitCallable(&EC2Client::BatchModifyIpamRoutingPolicyRegistrations, request);
+  }
+
+  /**
+   * An Async wrapper for BatchModifyIpamRoutingPolicyRegistrations that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename BatchModifyIpamRoutingPolicyRegistrationsRequestT = Model::BatchModifyIpamRoutingPolicyRegistrationsRequest>
+  void BatchModifyIpamRoutingPolicyRegistrationsAsync(
+      const BatchModifyIpamRoutingPolicyRegistrationsRequestT& request,
+      const BatchModifyIpamRoutingPolicyRegistrationsResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::BatchModifyIpamRoutingPolicyRegistrations, request, handler, context);
+  }
+
+  /**
    * <p>Bundles an Amazon instance store-backed Windows instance.</p> <p>During
    * bundling, only the root device volume (C:\) is bundled. Data on other instance
    * store volumes is not preserved.</p>  <p>BundleInstance is no longer
@@ -2375,7 +2407,7 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
    * means the check contributes to the instance-level application status.</p> </li>
    * <li> <p>Default values: <code>Interval</code> is 60 seconds,
    * <code>Timeout</code> is 6 seconds, <code>FailureThreshold</code> is 2,
-   * <code>SuccessThreshold</code> is 5, <code>StatusCodeMatcher</code> is
+   * <code>SuccessThreshold</code> is 2, <code>StatusCodeMatcher</code> is
    * <code>200</code>, <code>InitializationGracePeriodSeconds</code> is 300
    * seconds.</p> </li> <li> <p>You can tag the application status check during
    * creation. For more information, see <a
@@ -3373,6 +3405,39 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Creates an association between an IPAM and a Regional Internet Registry (RIR)
+   * for Resource Public Key Infrastructure (RPKI) management. You can use this
+   * association to create Route Origin Authorizations (ROAs) for IP address prefixes
+   * registered with the internet registry. Your IPAM must be in the Advanced tier to
+   * use this feature.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamInternetRegistryAssociation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateIpamInternetRegistryAssociationOutcome CreateIpamInternetRegistryAssociation(
+      const Model::CreateIpamInternetRegistryAssociationRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateIpamInternetRegistryAssociation that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename CreateIpamInternetRegistryAssociationRequestT = Model::CreateIpamInternetRegistryAssociationRequest>
+  Model::CreateIpamInternetRegistryAssociationOutcomeCallable CreateIpamInternetRegistryAssociationCallable(
+      const CreateIpamInternetRegistryAssociationRequestT& request) const {
+    return SubmitCallable(&EC2Client::CreateIpamInternetRegistryAssociation, request);
+  }
+
+  /**
+   * An Async wrapper for CreateIpamInternetRegistryAssociation that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename CreateIpamInternetRegistryAssociationRequestT = Model::CreateIpamInternetRegistryAssociationRequest>
+  void CreateIpamInternetRegistryAssociationAsync(const CreateIpamInternetRegistryAssociationRequestT& request,
+                                                  const CreateIpamInternetRegistryAssociationResponseReceivedHandler& handler,
+                                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::CreateIpamInternetRegistryAssociation, request, handler, context);
+  }
+
+  /**
    * <p>Creates an IPAM policy.</p> <p>An IPAM policy is a set of rules that define
    * how public IPv4 addresses from IPAM pools are allocated to Amazon Web Services
    * resources. Each rule maps an Amazon Web Services service to IPAM pools that the
@@ -3545,6 +3610,37 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                         const CreateIpamResourceDiscoveryRequestT& request = {}) const {
     return SubmitAsync(&EC2Client::CreateIpamResourceDiscovery, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a routing policy registration and publishes Route Origin
+   * Authorizations (ROAs) to the RPKI for the specified CIDR prefix and
+   * ASNs.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamRoutingPolicyRegistration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateIpamRoutingPolicyRegistrationOutcome CreateIpamRoutingPolicyRegistration(
+      const Model::CreateIpamRoutingPolicyRegistrationRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateIpamRoutingPolicyRegistration that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename CreateIpamRoutingPolicyRegistrationRequestT = Model::CreateIpamRoutingPolicyRegistrationRequest>
+  Model::CreateIpamRoutingPolicyRegistrationOutcomeCallable CreateIpamRoutingPolicyRegistrationCallable(
+      const CreateIpamRoutingPolicyRegistrationRequestT& request) const {
+    return SubmitCallable(&EC2Client::CreateIpamRoutingPolicyRegistration, request);
+  }
+
+  /**
+   * An Async wrapper for CreateIpamRoutingPolicyRegistration that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename CreateIpamRoutingPolicyRegistrationRequestT = Model::CreateIpamRoutingPolicyRegistrationRequest>
+  void CreateIpamRoutingPolicyRegistrationAsync(const CreateIpamRoutingPolicyRegistrationRequestT& request,
+                                                const CreateIpamRoutingPolicyRegistrationResponseReceivedHandler& handler,
+                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::CreateIpamRoutingPolicyRegistration, request, handler, context);
   }
 
   /**
@@ -6702,6 +6798,37 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Deletes an IPAM internet registry association. Before deleting, you must
+   * remove all routing policy registrations associated with the internet
+   * registry.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamInternetRegistryAssociation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteIpamInternetRegistryAssociationOutcome DeleteIpamInternetRegistryAssociation(
+      const Model::DeleteIpamInternetRegistryAssociationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteIpamInternetRegistryAssociation that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DeleteIpamInternetRegistryAssociationRequestT = Model::DeleteIpamInternetRegistryAssociationRequest>
+  Model::DeleteIpamInternetRegistryAssociationOutcomeCallable DeleteIpamInternetRegistryAssociationCallable(
+      const DeleteIpamInternetRegistryAssociationRequestT& request) const {
+    return SubmitCallable(&EC2Client::DeleteIpamInternetRegistryAssociation, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteIpamInternetRegistryAssociation that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DeleteIpamInternetRegistryAssociationRequestT = Model::DeleteIpamInternetRegistryAssociationRequest>
+  void DeleteIpamInternetRegistryAssociationAsync(const DeleteIpamInternetRegistryAssociationRequestT& request,
+                                                  const DeleteIpamInternetRegistryAssociationResponseReceivedHandler& handler,
+                                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::DeleteIpamInternetRegistryAssociation, request, handler, context);
+  }
+
+  /**
    * <p>Deletes an IPAM policy.</p> <p>An IPAM policy is a set of rules that define
    * how public IPv4 addresses from IPAM pools are allocated to Amazon Web Services
    * resources. Each rule maps an Amazon Web Services service to IPAM pools that the
@@ -6862,6 +6989,36 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
                                         const DeleteIpamResourceDiscoveryResponseReceivedHandler& handler,
                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::DeleteIpamResourceDiscovery, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a routing policy registration for a specified CIDR
+   * prefix.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamRoutingPolicyRegistration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteIpamRoutingPolicyRegistrationOutcome DeleteIpamRoutingPolicyRegistration(
+      const Model::DeleteIpamRoutingPolicyRegistrationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteIpamRoutingPolicyRegistration that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DeleteIpamRoutingPolicyRegistrationRequestT = Model::DeleteIpamRoutingPolicyRegistrationRequest>
+  Model::DeleteIpamRoutingPolicyRegistrationOutcomeCallable DeleteIpamRoutingPolicyRegistrationCallable(
+      const DeleteIpamRoutingPolicyRegistrationRequestT& request) const {
+    return SubmitCallable(&EC2Client::DeleteIpamRoutingPolicyRegistration, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteIpamRoutingPolicyRegistration that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DeleteIpamRoutingPolicyRegistrationRequestT = Model::DeleteIpamRoutingPolicyRegistrationRequest>
+  void DeleteIpamRoutingPolicyRegistrationAsync(const DeleteIpamRoutingPolicyRegistrationRequestT& request,
+                                                const DeleteIpamRoutingPolicyRegistrationResponseReceivedHandler& handler,
+                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::DeleteIpamRoutingPolicyRegistration, request, handler, context);
   }
 
   /**
@@ -11909,6 +12066,37 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
       const DescribeIpamExternalResourceVerificationTokensRequestT& request = {}) const {
     return SubmitAsync(&EC2Client::DescribeIpamExternalResourceVerificationTokens, request, handler, context);
+  }
+
+  /**
+   * <p>Describes one or more IPAM internet registry associations. We recommend using
+   * pagination to ensure that the operation returns quickly and
+   * successfully.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamInternetRegistryAssociations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeIpamInternetRegistryAssociationsOutcome DescribeIpamInternetRegistryAssociations(
+      const Model::DescribeIpamInternetRegistryAssociationsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeIpamInternetRegistryAssociations that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DescribeIpamInternetRegistryAssociationsRequestT = Model::DescribeIpamInternetRegistryAssociationsRequest>
+  Model::DescribeIpamInternetRegistryAssociationsOutcomeCallable DescribeIpamInternetRegistryAssociationsCallable(
+      const DescribeIpamInternetRegistryAssociationsRequestT& request = {}) const {
+    return SubmitCallable(&EC2Client::DescribeIpamInternetRegistryAssociations, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeIpamInternetRegistryAssociations that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DescribeIpamInternetRegistryAssociationsRequestT = Model::DescribeIpamInternetRegistryAssociationsRequest>
+  void DescribeIpamInternetRegistryAssociationsAsync(const DescribeIpamInternetRegistryAssociationsResponseReceivedHandler& handler,
+                                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                                     const DescribeIpamInternetRegistryAssociationsRequestT& request = {}) const {
+    return SubmitAsync(&EC2Client::DescribeIpamInternetRegistryAssociations, request, handler, context);
   }
 
   /**
@@ -17663,6 +17851,39 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Enables Resource Public Key Infrastructure (RPKI) on an existing IPAM
+   * internet registry association by providing BGP Public Key Infrastructure (BPKI)
+   * certificate details. After enabling, you can create Route Origin Authorizations
+   * (ROAs) for prefixes registered with the internet registry.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableIpamInternetRegistryAssociation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::EnableIpamInternetRegistryAssociationOutcome EnableIpamInternetRegistryAssociation(
+      const Model::EnableIpamInternetRegistryAssociationRequest& request) const;
+
+  /**
+   * A Callable wrapper for EnableIpamInternetRegistryAssociation that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename EnableIpamInternetRegistryAssociationRequestT = Model::EnableIpamInternetRegistryAssociationRequest>
+  Model::EnableIpamInternetRegistryAssociationOutcomeCallable EnableIpamInternetRegistryAssociationCallable(
+      const EnableIpamInternetRegistryAssociationRequestT& request) const {
+    return SubmitCallable(&EC2Client::EnableIpamInternetRegistryAssociation, request);
+  }
+
+  /**
+   * An Async wrapper for EnableIpamInternetRegistryAssociation that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename EnableIpamInternetRegistryAssociationRequestT = Model::EnableIpamInternetRegistryAssociationRequest>
+  void EnableIpamInternetRegistryAssociationAsync(const EnableIpamInternetRegistryAssociationRequestT& request,
+                                                  const EnableIpamInternetRegistryAssociationResponseReceivedHandler& handler,
+                                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::EnableIpamInternetRegistryAssociation, request, handler, context);
+  }
+
+  /**
    * <p>Enable an Organizations member account as the IPAM admin account. You cannot
    * select the Organizations management account as the IPAM admin account. For more
    * information, see <a
@@ -19211,6 +19432,100 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Retrieves Border Gateway Protocol (BGP) routes discovered by IPAM resource
+   * discovery for a specified Region. Use this operation to view the Bring Your Own
+   * IP (BYOIP) address ranges that are currently advertised through BGP. We
+   * recommend using pagination to ensure that the operation returns quickly and
+   * successfully.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredRoutes">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetIpamDiscoveredRoutesOutcome GetIpamDiscoveredRoutes(const Model::GetIpamDiscoveredRoutesRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetIpamDiscoveredRoutes that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetIpamDiscoveredRoutesRequestT = Model::GetIpamDiscoveredRoutesRequest>
+  Model::GetIpamDiscoveredRoutesOutcomeCallable GetIpamDiscoveredRoutesCallable(const GetIpamDiscoveredRoutesRequestT& request) const {
+    return SubmitCallable(&EC2Client::GetIpamDiscoveredRoutes, request);
+  }
+
+  /**
+   * An Async wrapper for GetIpamDiscoveredRoutes that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetIpamDiscoveredRoutesRequestT = Model::GetIpamDiscoveredRoutesRequest>
+  void GetIpamDiscoveredRoutesAsync(const GetIpamDiscoveredRoutesRequestT& request,
+                                    const GetIpamDiscoveredRoutesResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::GetIpamDiscoveredRoutes, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves Autonomous System Numbers (ASNs) registered with an internet
+   * registry for an IPAM internet registry association. We recommend using
+   * pagination to ensure that the operation returns quickly and
+   * successfully.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamInternetRegistryAssociationAsns">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetIpamInternetRegistryAssociationAsnsOutcome GetIpamInternetRegistryAssociationAsns(
+      const Model::GetIpamInternetRegistryAssociationAsnsRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetIpamInternetRegistryAssociationAsns that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename GetIpamInternetRegistryAssociationAsnsRequestT = Model::GetIpamInternetRegistryAssociationAsnsRequest>
+  Model::GetIpamInternetRegistryAssociationAsnsOutcomeCallable GetIpamInternetRegistryAssociationAsnsCallable(
+      const GetIpamInternetRegistryAssociationAsnsRequestT& request) const {
+    return SubmitCallable(&EC2Client::GetIpamInternetRegistryAssociationAsns, request);
+  }
+
+  /**
+   * An Async wrapper for GetIpamInternetRegistryAssociationAsns that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename GetIpamInternetRegistryAssociationAsnsRequestT = Model::GetIpamInternetRegistryAssociationAsnsRequest>
+  void GetIpamInternetRegistryAssociationAsnsAsync(const GetIpamInternetRegistryAssociationAsnsRequestT& request,
+                                                   const GetIpamInternetRegistryAssociationAsnsResponseReceivedHandler& handler,
+                                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::GetIpamInternetRegistryAssociationAsns, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves IP address CIDRs registered with an internet registry for an IPAM
+   * internet registry association. We recommend using pagination to ensure that the
+   * operation returns quickly and successfully.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamInternetRegistryAssociationCidrs">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetIpamInternetRegistryAssociationCidrsOutcome GetIpamInternetRegistryAssociationCidrs(
+      const Model::GetIpamInternetRegistryAssociationCidrsRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetIpamInternetRegistryAssociationCidrs that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename GetIpamInternetRegistryAssociationCidrsRequestT = Model::GetIpamInternetRegistryAssociationCidrsRequest>
+  Model::GetIpamInternetRegistryAssociationCidrsOutcomeCallable GetIpamInternetRegistryAssociationCidrsCallable(
+      const GetIpamInternetRegistryAssociationCidrsRequestT& request) const {
+    return SubmitCallable(&EC2Client::GetIpamInternetRegistryAssociationCidrs, request);
+  }
+
+  /**
+   * An Async wrapper for GetIpamInternetRegistryAssociationCidrs that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename GetIpamInternetRegistryAssociationCidrsRequestT = Model::GetIpamInternetRegistryAssociationCidrsRequest>
+  void GetIpamInternetRegistryAssociationCidrsAsync(const GetIpamInternetRegistryAssociationCidrsRequestT& request,
+                                                    const GetIpamInternetRegistryAssociationCidrsResponseReceivedHandler& handler,
+                                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::GetIpamInternetRegistryAssociationCidrs, request, handler, context);
+  }
+
+  /**
    * <p>Gets the allocation rules for an IPAM policy.</p> <p>An IPAM policy is a set
    * of rules that define how public IPv4 addresses from IPAM pools are allocated to
    * Amazon Web Services resources. Each rule maps an Amazon Web Services service to
@@ -19482,6 +19797,136 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   void GetIpamResourceCidrsAsync(const GetIpamResourceCidrsRequestT& request, const GetIpamResourceCidrsResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::GetIpamResourceCidrs, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the current Route Origin Authorizations (ROAs) published to the
+   * RPKI for an IPAM internet registry association. We recommend using pagination to
+   * ensure that the operation returns quickly and successfully.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamRouteOriginAuthorizations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetIpamRouteOriginAuthorizationsOutcome GetIpamRouteOriginAuthorizations(
+      const Model::GetIpamRouteOriginAuthorizationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetIpamRouteOriginAuthorizations that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename GetIpamRouteOriginAuthorizationsRequestT = Model::GetIpamRouteOriginAuthorizationsRequest>
+  Model::GetIpamRouteOriginAuthorizationsOutcomeCallable GetIpamRouteOriginAuthorizationsCallable(
+      const GetIpamRouteOriginAuthorizationsRequestT& request) const {
+    return SubmitCallable(&EC2Client::GetIpamRouteOriginAuthorizations, request);
+  }
+
+  /**
+   * An Async wrapper for GetIpamRouteOriginAuthorizations that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetIpamRouteOriginAuthorizationsRequestT = Model::GetIpamRouteOriginAuthorizationsRequest>
+  void GetIpamRouteOriginAuthorizationsAsync(const GetIpamRouteOriginAuthorizationsRequestT& request,
+                                             const GetIpamRouteOriginAuthorizationsResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::GetIpamRouteOriginAuthorizations, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves route protection findings for an IPAM. Route protection findings
+   * show the Resource Public Key Infrastructure (RPKI) validation status of your
+   * Bring Your Own IP (BYOIP) routes. Findings identify routes that have valid,
+   * invalid, or unknown validation states. We recommend using pagination to ensure
+   * that the operation returns quickly and successfully.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamRouteProtectionFindings">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetIpamRouteProtectionFindingsOutcome GetIpamRouteProtectionFindings(
+      const Model::GetIpamRouteProtectionFindingsRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetIpamRouteProtectionFindings that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetIpamRouteProtectionFindingsRequestT = Model::GetIpamRouteProtectionFindingsRequest>
+  Model::GetIpamRouteProtectionFindingsOutcomeCallable GetIpamRouteProtectionFindingsCallable(
+      const GetIpamRouteProtectionFindingsRequestT& request) const {
+    return SubmitCallable(&EC2Client::GetIpamRouteProtectionFindings, request);
+  }
+
+  /**
+   * An Async wrapper for GetIpamRouteProtectionFindings that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetIpamRouteProtectionFindingsRequestT = Model::GetIpamRouteProtectionFindingsRequest>
+  void GetIpamRouteProtectionFindingsAsync(const GetIpamRouteProtectionFindingsRequestT& request,
+                                           const GetIpamRouteProtectionFindingsResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::GetIpamRouteProtectionFindings, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the history of routing policy registration changes for an IPAM
+   * internet registry association. We recommend using pagination to ensure that the
+   * operation returns quickly and successfully.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamRoutingPolicyRegistrationDeltas">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetIpamRoutingPolicyRegistrationDeltasOutcome GetIpamRoutingPolicyRegistrationDeltas(
+      const Model::GetIpamRoutingPolicyRegistrationDeltasRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetIpamRoutingPolicyRegistrationDeltas that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename GetIpamRoutingPolicyRegistrationDeltasRequestT = Model::GetIpamRoutingPolicyRegistrationDeltasRequest>
+  Model::GetIpamRoutingPolicyRegistrationDeltasOutcomeCallable GetIpamRoutingPolicyRegistrationDeltasCallable(
+      const GetIpamRoutingPolicyRegistrationDeltasRequestT& request) const {
+    return SubmitCallable(&EC2Client::GetIpamRoutingPolicyRegistrationDeltas, request);
+  }
+
+  /**
+   * An Async wrapper for GetIpamRoutingPolicyRegistrationDeltas that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename GetIpamRoutingPolicyRegistrationDeltasRequestT = Model::GetIpamRoutingPolicyRegistrationDeltasRequest>
+  void GetIpamRoutingPolicyRegistrationDeltasAsync(const GetIpamRoutingPolicyRegistrationDeltasRequestT& request,
+                                                   const GetIpamRoutingPolicyRegistrationDeltasResponseReceivedHandler& handler,
+                                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::GetIpamRoutingPolicyRegistrationDeltas, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves routing policy registrations for an IPAM internet registry
+   * association. Each registration represents a Route Origin Authorization (ROA)
+   * that has been created or is pending publication to the RPKI. We recommend using
+   * pagination to ensure that the operation returns quickly and
+   * successfully.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamRoutingPolicyRegistrations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetIpamRoutingPolicyRegistrationsOutcome GetIpamRoutingPolicyRegistrations(
+      const Model::GetIpamRoutingPolicyRegistrationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetIpamRoutingPolicyRegistrations that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename GetIpamRoutingPolicyRegistrationsRequestT = Model::GetIpamRoutingPolicyRegistrationsRequest>
+  Model::GetIpamRoutingPolicyRegistrationsOutcomeCallable GetIpamRoutingPolicyRegistrationsCallable(
+      const GetIpamRoutingPolicyRegistrationsRequestT& request) const {
+    return SubmitCallable(&EC2Client::GetIpamRoutingPolicyRegistrations, request);
+  }
+
+  /**
+   * An Async wrapper for GetIpamRoutingPolicyRegistrations that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetIpamRoutingPolicyRegistrationsRequestT = Model::GetIpamRoutingPolicyRegistrationsRequest>
+  void GetIpamRoutingPolicyRegistrationsAsync(const GetIpamRoutingPolicyRegistrationsRequestT& request,
+                                              const GetIpamRoutingPolicyRegistrationsResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::GetIpamRoutingPolicyRegistrations, request, handler, context);
   }
 
   /**
@@ -22066,6 +22511,37 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
                                         const ModifyIpamResourceDiscoveryResponseReceivedHandler& handler,
                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::ModifyIpamResourceDiscovery, request, handler, context);
+  }
+
+  /**
+   * <p>Modifies an existing routing policy registration. You can update the
+   * authorized ASNs, maximum prefix length, and other properties of a Route Origin
+   * Authorization (ROA).</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamRoutingPolicyRegistration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ModifyIpamRoutingPolicyRegistrationOutcome ModifyIpamRoutingPolicyRegistration(
+      const Model::ModifyIpamRoutingPolicyRegistrationRequest& request) const;
+
+  /**
+   * A Callable wrapper for ModifyIpamRoutingPolicyRegistration that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename ModifyIpamRoutingPolicyRegistrationRequestT = Model::ModifyIpamRoutingPolicyRegistrationRequest>
+  Model::ModifyIpamRoutingPolicyRegistrationOutcomeCallable ModifyIpamRoutingPolicyRegistrationCallable(
+      const ModifyIpamRoutingPolicyRegistrationRequestT& request) const {
+    return SubmitCallable(&EC2Client::ModifyIpamRoutingPolicyRegistration, request);
+  }
+
+  /**
+   * An Async wrapper for ModifyIpamRoutingPolicyRegistration that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename ModifyIpamRoutingPolicyRegistrationRequestT = Model::ModifyIpamRoutingPolicyRegistrationRequest>
+  void ModifyIpamRoutingPolicyRegistrationAsync(const ModifyIpamRoutingPolicyRegistrationRequestT& request,
+                                                const ModifyIpamRoutingPolicyRegistrationResponseReceivedHandler& handler,
+                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::ModifyIpamRoutingPolicyRegistration, request, handler, context);
   }
 
   /**

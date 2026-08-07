@@ -20,6 +20,11 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/DeleteIpamScopeRequest.h>
+#include <aws/ec2/model/DeleteKeyPairRequest.h>
+#include <aws/ec2/model/DeleteLaunchTemplateRequest.h>
+#include <aws/ec2/model/DeleteLaunchTemplateVersionsRequest.h>
+#include <aws/ec2/model/DeleteLocalGatewayRouteRequest.h>
 #include <aws/ec2/model/DeleteLocalGatewayRouteTableRequest.h>
 #include <aws/ec2/model/DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest.h>
 #include <aws/ec2/model/DeleteLocalGatewayRouteTableVpcAssociationRequest.h>
@@ -115,11 +120,6 @@
 #include <aws/ec2/model/DescribeCapacityManagerDataExportsRequest.h>
 #include <aws/ec2/model/DescribeCapacityReservationBillingRequestsRequest.h>
 #include <aws/ec2/model/DescribeCapacityReservationCancellationQuotesRequest.h>
-#include <aws/ec2/model/DescribeCapacityReservationFleetsRequest.h>
-#include <aws/ec2/model/DescribeCapacityReservationTopologyRequest.h>
-#include <aws/ec2/model/DescribeCapacityReservationsRequest.h>
-#include <aws/ec2/model/DescribeCarrierGatewaysRequest.h>
-#include <aws/ec2/model/DescribeClassicLinkInstancesRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,35 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DeleteIpamScopeOutcome EC2Client::DeleteIpamScope(const DeleteIpamScopeRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteIpamScopeOutcome(result.GetResultWithOwnership())
+                            : DeleteIpamScopeOutcome(std::move(result.GetError()));
+}
+
+DeleteKeyPairOutcome EC2Client::DeleteKeyPair(const DeleteKeyPairRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteKeyPairOutcome(result.GetResultWithOwnership()) : DeleteKeyPairOutcome(std::move(result.GetError()));
+}
+
+DeleteLaunchTemplateOutcome EC2Client::DeleteLaunchTemplate(const DeleteLaunchTemplateRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLaunchTemplateOutcome(result.GetResultWithOwnership())
+                            : DeleteLaunchTemplateOutcome(std::move(result.GetError()));
+}
+
+DeleteLaunchTemplateVersionsOutcome EC2Client::DeleteLaunchTemplateVersions(const DeleteLaunchTemplateVersionsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLaunchTemplateVersionsOutcome(result.GetResultWithOwnership())
+                            : DeleteLaunchTemplateVersionsOutcome(std::move(result.GetError()));
+}
+
+DeleteLocalGatewayRouteOutcome EC2Client::DeleteLocalGatewayRoute(const DeleteLocalGatewayRouteRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLocalGatewayRouteOutcome(result.GetResultWithOwnership())
+                            : DeleteLocalGatewayRouteOutcome(std::move(result.GetError()));
+}
 
 DeleteLocalGatewayRouteTableOutcome EC2Client::DeleteLocalGatewayRouteTable(const DeleteLocalGatewayRouteTableRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -731,36 +760,4 @@ DescribeCapacityReservationCancellationQuotesOutcome EC2Client::DescribeCapacity
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeCapacityReservationCancellationQuotesOutcome(result.GetResultWithOwnership())
                             : DescribeCapacityReservationCancellationQuotesOutcome(std::move(result.GetError()));
-}
-
-DescribeCapacityReservationFleetsOutcome EC2Client::DescribeCapacityReservationFleets(
-    const DescribeCapacityReservationFleetsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeCapacityReservationFleetsOutcome(result.GetResultWithOwnership())
-                            : DescribeCapacityReservationFleetsOutcome(std::move(result.GetError()));
-}
-
-DescribeCapacityReservationTopologyOutcome EC2Client::DescribeCapacityReservationTopology(
-    const DescribeCapacityReservationTopologyRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeCapacityReservationTopologyOutcome(result.GetResultWithOwnership())
-                            : DescribeCapacityReservationTopologyOutcome(std::move(result.GetError()));
-}
-
-DescribeCapacityReservationsOutcome EC2Client::DescribeCapacityReservations(const DescribeCapacityReservationsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeCapacityReservationsOutcome(result.GetResultWithOwnership())
-                            : DescribeCapacityReservationsOutcome(std::move(result.GetError()));
-}
-
-DescribeCarrierGatewaysOutcome EC2Client::DescribeCarrierGateways(const DescribeCarrierGatewaysRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeCarrierGatewaysOutcome(result.GetResultWithOwnership())
-                            : DescribeCarrierGatewaysOutcome(std::move(result.GetError()));
-}
-
-DescribeClassicLinkInstancesOutcome EC2Client::DescribeClassicLinkInstances(const DescribeClassicLinkInstancesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeClassicLinkInstancesOutcome(result.GetResultWithOwnership())
-                            : DescribeClassicLinkInstancesOutcome(std::move(result.GetError()));
 }

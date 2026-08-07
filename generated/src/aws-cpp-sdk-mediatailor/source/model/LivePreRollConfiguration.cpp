@@ -26,6 +26,10 @@ LivePreRollConfiguration& LivePreRollConfiguration::operator=(JsonView jsonValue
     m_maxDurationSeconds = jsonValue.GetInteger("MaxDurationSeconds");
     m_maxDurationSecondsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AdDecisionServerConfiguration")) {
+    m_adDecisionServerConfiguration = jsonValue.GetObject("AdDecisionServerConfiguration");
+    m_adDecisionServerConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue LivePreRollConfiguration::Jsonize() const {
 
   if (m_maxDurationSecondsHasBeenSet) {
     payload.WithInteger("MaxDurationSeconds", m_maxDurationSeconds);
+  }
+
+  if (m_adDecisionServerConfigurationHasBeenSet) {
+    payload.WithObject("AdDecisionServerConfiguration", m_adDecisionServerConfiguration.Jsonize());
   }
 
   return payload;

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
+#include <aws/mediatailor/model/PreRollAdDecisionServerConfiguration.h>
 
 #include <utility>
 
@@ -70,12 +71,35 @@ class LivePreRollConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration for the ad decision server (ADS) for live pre-roll ads. The
+   * configuration contains settings that control how MediaTailor processes VAST
+   * responses for pre-roll ad breaks.</p>
+   */
+  inline const PreRollAdDecisionServerConfiguration& GetAdDecisionServerConfiguration() const { return m_adDecisionServerConfiguration; }
+  inline bool AdDecisionServerConfigurationHasBeenSet() const { return m_adDecisionServerConfigurationHasBeenSet; }
+  template <typename AdDecisionServerConfigurationT = PreRollAdDecisionServerConfiguration>
+  void SetAdDecisionServerConfiguration(AdDecisionServerConfigurationT&& value) {
+    m_adDecisionServerConfigurationHasBeenSet = true;
+    m_adDecisionServerConfiguration = std::forward<AdDecisionServerConfigurationT>(value);
+  }
+  template <typename AdDecisionServerConfigurationT = PreRollAdDecisionServerConfiguration>
+  LivePreRollConfiguration& WithAdDecisionServerConfiguration(AdDecisionServerConfigurationT&& value) {
+    SetAdDecisionServerConfiguration(std::forward<AdDecisionServerConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_adDecisionServerUrl;
 
   int m_maxDurationSeconds{0};
+
+  PreRollAdDecisionServerConfiguration m_adDecisionServerConfiguration;
   bool m_adDecisionServerUrlHasBeenSet = false;
   bool m_maxDurationSecondsHasBeenSet = false;
+  bool m_adDecisionServerConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

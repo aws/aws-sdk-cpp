@@ -10,7 +10,18 @@
 namespace Aws {
 namespace SageMaker {
 namespace Model {
-enum class NotebookInstanceStatus { NOT_SET, Pending, InService, Stopping, Stopped, Failed, Deleting, Updating };
+enum class NotebookInstanceStatus {
+  NOT_SET,
+  Pending,
+  InService,
+  Stopping,
+  Stopped,
+  Failed,
+  Deleting,
+  Updating,
+  PendingMaintenance,
+  InMaintenance
+};
 
 namespace NotebookInstanceStatusMapper {
 AWS_SAGEMAKER_API NotebookInstanceStatus GetNotebookInstanceStatusForName(const Aws::String& name);

@@ -17,7 +17,8 @@ enum class PropertyValidationExceptionReason {
   REFERENCED_RESOURCE_NOT_FOUND,
   RESOURCE_NAME_ALREADY_EXISTS,
   REQUIRED_PROPERTY_MISSING,
-  NOT_SUPPORTED
+  NOT_SUPPORTED,
+  TYPE_MISMATCH
 };
 
 namespace PropertyValidationExceptionReasonMapper {

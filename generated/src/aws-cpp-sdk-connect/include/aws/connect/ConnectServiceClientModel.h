@@ -306,6 +306,7 @@
 #include <aws/connect/model/UpdateContactResult.h>
 #include <aws/connect/model/UpdateContactRoutingDataResult.h>
 #include <aws/connect/model/UpdateContactScheduleResult.h>
+#include <aws/connect/model/UpdateContactTaskTemplateResult.h>
 #include <aws/connect/model/UpdateDataTableAttributeResult.h>
 #include <aws/connect/model/UpdateDataTableMetadataResult.h>
 #include <aws/connect/model/UpdateDataTablePrimaryValuesResult.h>
@@ -689,6 +690,7 @@ class UpdateContactFlowModuleMetadataRequest;
 class UpdateContactFlowNameRequest;
 class UpdateContactRoutingDataRequest;
 class UpdateContactScheduleRequest;
+class UpdateContactTaskTemplateRequest;
 class UpdateDataTableAttributeRequest;
 class UpdateDataTableMetadataRequest;
 class UpdateDataTablePrimaryValuesRequest;
@@ -1071,6 +1073,7 @@ typedef Aws::Utils::Outcome<UpdateContactFlowModuleMetadataResult, ConnectError>
 typedef Aws::Utils::Outcome<UpdateContactFlowNameResult, ConnectError> UpdateContactFlowNameOutcome;
 typedef Aws::Utils::Outcome<UpdateContactRoutingDataResult, ConnectError> UpdateContactRoutingDataOutcome;
 typedef Aws::Utils::Outcome<UpdateContactScheduleResult, ConnectError> UpdateContactScheduleOutcome;
+typedef Aws::Utils::Outcome<UpdateContactTaskTemplateResult, ConnectError> UpdateContactTaskTemplateOutcome;
 typedef Aws::Utils::Outcome<UpdateDataTableAttributeResult, ConnectError> UpdateDataTableAttributeOutcome;
 typedef Aws::Utils::Outcome<UpdateDataTableMetadataResult, ConnectError> UpdateDataTableMetadataOutcome;
 typedef Aws::Utils::Outcome<UpdateDataTablePrimaryValuesResult, ConnectError> UpdateDataTablePrimaryValuesOutcome;
@@ -1453,6 +1456,7 @@ typedef std::future<UpdateContactFlowModuleMetadataOutcome> UpdateContactFlowMod
 typedef std::future<UpdateContactFlowNameOutcome> UpdateContactFlowNameOutcomeCallable;
 typedef std::future<UpdateContactRoutingDataOutcome> UpdateContactRoutingDataOutcomeCallable;
 typedef std::future<UpdateContactScheduleOutcome> UpdateContactScheduleOutcomeCallable;
+typedef std::future<UpdateContactTaskTemplateOutcome> UpdateContactTaskTemplateOutcomeCallable;
 typedef std::future<UpdateDataTableAttributeOutcome> UpdateDataTableAttributeOutcomeCallable;
 typedef std::future<UpdateDataTableMetadataOutcome> UpdateDataTableMetadataOutcomeCallable;
 typedef std::future<UpdateDataTablePrimaryValuesOutcome> UpdateDataTablePrimaryValuesOutcomeCallable;
@@ -2557,6 +2561,9 @@ typedef std::function<void(const ConnectClient*, const Model::UpdateContactRouti
 typedef std::function<void(const ConnectClient*, const Model::UpdateContactScheduleRequest&, const Model::UpdateContactScheduleOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateContactScheduleResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::UpdateContactTaskTemplateRequest&,
+                           const Model::UpdateContactTaskTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateContactTaskTemplateResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::UpdateDataTableAttributeRequest&,
                            const Model::UpdateDataTableAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateDataTableAttributeResponseReceivedHandler;

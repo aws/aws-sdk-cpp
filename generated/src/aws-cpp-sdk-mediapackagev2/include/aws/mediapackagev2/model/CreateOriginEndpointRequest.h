@@ -17,6 +17,7 @@
 #include <aws/mediapackagev2/model/CreateMssManifestConfiguration.h>
 #include <aws/mediapackagev2/model/ForceEndpointErrorConfiguration.h>
 #include <aws/mediapackagev2/model/Segment.h>
+#include <aws/mediapackagev2/model/StreamNameOutputMode.h>
 #include <aws/mediapackagev2/model/UriSeparator.h>
 
 #include <utility>
@@ -333,6 +334,27 @@ class CreateOriginEndpointRequest : public Mediapackagev2Request {
 
   ///@{
   /**
+   * <p>The output mode for stream names in egress manifests. This setting is valid
+   * only when the associated channel's <code>InputType</code> is <code>HLS</code>.
+   * You can't change the stream name output mode after you create the endpoint.</p>
+   * <p> <code>INDEX</code> uses numeric indices for stream names (for example, 1, 2,
+   * 3). <code>PASSTHROUGH_NAME</code> uses the stream names from the input manifest.
+   * If you don't specify a value, the default is <code>INDEX</code>.</p>
+   */
+  inline StreamNameOutputMode GetStreamNameOutputMode() const { return m_streamNameOutputMode; }
+  inline bool StreamNameOutputModeHasBeenSet() const { return m_streamNameOutputModeHasBeenSet; }
+  inline void SetStreamNameOutputMode(StreamNameOutputMode value) {
+    m_streamNameOutputModeHasBeenSet = true;
+    m_streamNameOutputMode = value;
+  }
+  inline CreateOriginEndpointRequest& WithStreamNameOutputMode(StreamNameOutputMode value) {
+    SetStreamNameOutputMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A comma-separated list of tag key:value pairs that you define. For
    * example:</p> <p> <code>"Key1": "Value1",</code> </p> <p> <code>"Key2":
    * "Value2"</code> </p>
@@ -385,6 +407,8 @@ class CreateOriginEndpointRequest : public Mediapackagev2Request {
 
   UriSeparator m_uriSeparator{UriSeparator::NOT_SET};
 
+  StreamNameOutputMode m_streamNameOutputMode{StreamNameOutputMode::NOT_SET};
+
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_channelGroupNameHasBeenSet = false;
   bool m_channelNameHasBeenSet = false;
@@ -400,6 +424,7 @@ class CreateOriginEndpointRequest : public Mediapackagev2Request {
   bool m_mssManifestsHasBeenSet = false;
   bool m_forceEndpointErrorConfigurationHasBeenSet = false;
   bool m_uriSeparatorHasBeenSet = false;
+  bool m_streamNameOutputModeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

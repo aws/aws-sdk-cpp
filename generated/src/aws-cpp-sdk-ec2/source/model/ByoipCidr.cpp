@@ -65,6 +65,16 @@ ByoipCidr& ByoipCidr::operator=(const XmlNode& xmlNode) {
       m_advertisementType = Aws::Utils::Xml::DecodeEscapedXmlText(advertisementTypeNode.GetText());
       m_advertisementTypeHasBeenSet = true;
     }
+    XmlNode poolIdNode = resultNode.FirstChild("poolId");
+    if (!poolIdNode.IsNull()) {
+      m_poolId = Aws::Utils::Xml::DecodeEscapedXmlText(poolIdNode.GetText());
+      m_poolIdHasBeenSet = true;
+    }
+    XmlNode ipamPoolIdNode = resultNode.FirstChild("ipamPoolId");
+    if (!ipamPoolIdNode.IsNull()) {
+      m_ipamPoolId = Aws::Utils::Xml::DecodeEscapedXmlText(ipamPoolIdNode.GetText());
+      m_ipamPoolIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -104,6 +114,14 @@ void ByoipCidr::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   if (m_advertisementTypeHasBeenSet) {
     oStream << location << index << locationValue << ".AdvertisementType=" << StringUtils::URLEncode(m_advertisementType.c_str()) << "&";
   }
+
+  if (m_poolIdHasBeenSet) {
+    oStream << location << index << locationValue << ".PoolId=" << StringUtils::URLEncode(m_poolId.c_str()) << "&";
+  }
+
+  if (m_ipamPoolIdHasBeenSet) {
+    oStream << location << index << locationValue << ".IpamPoolId=" << StringUtils::URLEncode(m_ipamPoolId.c_str()) << "&";
+  }
 }
 
 void ByoipCidr::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -132,6 +150,12 @@ void ByoipCidr::OutputToStream(Aws::OStream& oStream, const char* location) cons
   }
   if (m_advertisementTypeHasBeenSet) {
     oStream << location << ".AdvertisementType=" << StringUtils::URLEncode(m_advertisementType.c_str()) << "&";
+  }
+  if (m_poolIdHasBeenSet) {
+    oStream << location << ".PoolId=" << StringUtils::URLEncode(m_poolId.c_str()) << "&";
+  }
+  if (m_ipamPoolIdHasBeenSet) {
+    oStream << location << ".IpamPoolId=" << StringUtils::URLEncode(m_ipamPoolId.c_str()) << "&";
   }
 }
 

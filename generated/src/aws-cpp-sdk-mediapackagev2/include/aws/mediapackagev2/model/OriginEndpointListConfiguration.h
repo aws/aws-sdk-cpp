@@ -14,6 +14,7 @@
 #include <aws/mediapackagev2/model/ListHlsManifestConfiguration.h>
 #include <aws/mediapackagev2/model/ListLowLatencyHlsManifestConfiguration.h>
 #include <aws/mediapackagev2/model/ListMssManifestConfiguration.h>
+#include <aws/mediapackagev2/model/StreamNameOutputMode.h>
 #include <aws/mediapackagev2/model/UriSeparator.h>
 
 #include <utility>
@@ -322,6 +323,23 @@ class OriginEndpointListConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The output mode for stream names in egress manifests for this origin
+   * endpoint.</p>
+   */
+  inline StreamNameOutputMode GetStreamNameOutputMode() const { return m_streamNameOutputMode; }
+  inline bool StreamNameOutputModeHasBeenSet() const { return m_streamNameOutputModeHasBeenSet; }
+  inline void SetStreamNameOutputMode(StreamNameOutputMode value) {
+    m_streamNameOutputModeHasBeenSet = true;
+    m_streamNameOutputMode = value;
+  }
+  inline OriginEndpointListConfiguration& WithStreamNameOutputMode(StreamNameOutputMode value) {
+    SetStreamNameOutputMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -350,6 +368,8 @@ class OriginEndpointListConfiguration {
   ForceEndpointErrorConfiguration m_forceEndpointErrorConfiguration;
 
   UriSeparator m_uriSeparator{UriSeparator::NOT_SET};
+
+  StreamNameOutputMode m_streamNameOutputMode{StreamNameOutputMode::NOT_SET};
   bool m_arnHasBeenSet = false;
   bool m_channelGroupNameHasBeenSet = false;
   bool m_channelNameHasBeenSet = false;
@@ -364,6 +384,7 @@ class OriginEndpointListConfiguration {
   bool m_mssManifestsHasBeenSet = false;
   bool m_forceEndpointErrorConfigurationHasBeenSet = false;
   bool m_uriSeparatorHasBeenSet = false;
+  bool m_streamNameOutputModeHasBeenSet = false;
 };
 
 }  // namespace Model

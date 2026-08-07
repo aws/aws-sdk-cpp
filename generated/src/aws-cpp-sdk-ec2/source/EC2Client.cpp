@@ -67,6 +67,7 @@
 #include <aws/ec2/model/AuthorizeClientVpnIngressRequest.h>
 #include <aws/ec2/model/AuthorizeSecurityGroupEgressRequest.h>
 #include <aws/ec2/model/AuthorizeSecurityGroupIngressRequest.h>
+#include <aws/ec2/model/BatchModifyIpamRoutingPolicyRegistrationsRequest.h>
 #include <aws/ec2/model/BundleInstanceRequest.h>
 #include <aws/ec2/model/CancelBundleTaskRequest.h>
 #include <aws/ec2/model/CancelCapacityReservationFleetsRequest.h>
@@ -112,14 +113,13 @@
 #include <aws/ec2/model/CreateInternetGatewayRequest.h>
 #include <aws/ec2/model/CreateInterruptibleCapacityReservationAllocationRequest.h>
 #include <aws/ec2/model/CreateIpamExternalResourceVerificationTokenRequest.h>
+#include <aws/ec2/model/CreateIpamInternetRegistryAssociationRequest.h>
 #include <aws/ec2/model/CreateIpamPolicyRequest.h>
 #include <aws/ec2/model/CreateIpamPoolRequest.h>
 #include <aws/ec2/model/CreateIpamPrefixListResolverRequest.h>
 #include <aws/ec2/model/CreateIpamPrefixListResolverTargetRequest.h>
 #include <aws/ec2/model/CreateIpamRequest.h>
 #include <aws/ec2/model/CreateIpamResourceDiscoveryRequest.h>
-#include <aws/ec2/model/CreateIpamScopeRequest.h>
-#include <aws/ec2/model/CreateKeyPairRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -566,6 +566,13 @@ AuthorizeSecurityGroupIngressOutcome EC2Client::AuthorizeSecurityGroupIngress(co
                             : AuthorizeSecurityGroupIngressOutcome(std::move(result.GetError()));
 }
 
+BatchModifyIpamRoutingPolicyRegistrationsOutcome EC2Client::BatchModifyIpamRoutingPolicyRegistrations(
+    const BatchModifyIpamRoutingPolicyRegistrationsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchModifyIpamRoutingPolicyRegistrationsOutcome(result.GetResultWithOwnership())
+                            : BatchModifyIpamRoutingPolicyRegistrationsOutcome(std::move(result.GetError()));
+}
+
 BundleInstanceOutcome EC2Client::BundleInstance(const BundleInstanceRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? BundleInstanceOutcome(result.GetResultWithOwnership()) : BundleInstanceOutcome(std::move(result.GetError()));
@@ -857,6 +864,13 @@ CreateIpamExternalResourceVerificationTokenOutcome EC2Client::CreateIpamExternal
                             : CreateIpamExternalResourceVerificationTokenOutcome(std::move(result.GetError()));
 }
 
+CreateIpamInternetRegistryAssociationOutcome EC2Client::CreateIpamInternetRegistryAssociation(
+    const CreateIpamInternetRegistryAssociationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIpamInternetRegistryAssociationOutcome(result.GetResultWithOwnership())
+                            : CreateIpamInternetRegistryAssociationOutcome(std::move(result.GetError()));
+}
+
 CreateIpamPolicyOutcome EC2Client::CreateIpamPolicy(const CreateIpamPolicyRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateIpamPolicyOutcome(result.GetResultWithOwnership())
@@ -885,15 +899,4 @@ CreateIpamResourceDiscoveryOutcome EC2Client::CreateIpamResourceDiscovery(const 
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateIpamResourceDiscoveryOutcome(result.GetResultWithOwnership())
                             : CreateIpamResourceDiscoveryOutcome(std::move(result.GetError()));
-}
-
-CreateIpamScopeOutcome EC2Client::CreateIpamScope(const CreateIpamScopeRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? CreateIpamScopeOutcome(result.GetResultWithOwnership())
-                            : CreateIpamScopeOutcome(std::move(result.GetError()));
-}
-
-CreateKeyPairOutcome EC2Client::CreateKeyPair(const CreateKeyPairRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? CreateKeyPairOutcome(result.GetResultWithOwnership()) : CreateKeyPairOutcome(std::move(result.GetError()));
 }

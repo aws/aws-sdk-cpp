@@ -22,6 +22,8 @@ static const int Stopped_HASH = HashingUtils::HashString("Stopped");
 static const int Failed_HASH = HashingUtils::HashString("Failed");
 static const int Deleting_HASH = HashingUtils::HashString("Deleting");
 static const int Updating_HASH = HashingUtils::HashString("Updating");
+static const int PendingMaintenance_HASH = HashingUtils::HashString("PendingMaintenance");
+static const int InMaintenance_HASH = HashingUtils::HashString("InMaintenance");
 
 NotebookInstanceStatus GetNotebookInstanceStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -39,6 +41,10 @@ NotebookInstanceStatus GetNotebookInstanceStatusForName(const Aws::String& name)
     return NotebookInstanceStatus::Deleting;
   } else if (hashCode == Updating_HASH) {
     return NotebookInstanceStatus::Updating;
+  } else if (hashCode == PendingMaintenance_HASH) {
+    return NotebookInstanceStatus::PendingMaintenance;
+  } else if (hashCode == InMaintenance_HASH) {
+    return NotebookInstanceStatus::InMaintenance;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -67,6 +73,10 @@ Aws::String GetNameForNotebookInstanceStatus(NotebookInstanceStatus enumValue) {
       return "Deleting";
     case NotebookInstanceStatus::Updating:
       return "Updating";
+    case NotebookInstanceStatus::PendingMaintenance:
+      return "PendingMaintenance";
+    case NotebookInstanceStatus::InMaintenance:
+      return "InMaintenance";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

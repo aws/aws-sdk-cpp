@@ -112,6 +112,40 @@ class Actor {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Whether email-based MFA is enabled for this actor.</p>
+   */
+  inline bool GetEnableEmailMfa() const { return m_enableEmailMfa; }
+  inline bool EnableEmailMfaHasBeenSet() const { return m_enableEmailMfaHasBeenSet; }
+  inline void SetEnableEmailMfa(bool value) {
+    m_enableEmailMfaHasBeenSet = true;
+    m_enableEmailMfa = value;
+  }
+  inline Actor& WithEnableEmailMfa(bool value) {
+    SetEnableEmailMfa(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Server-generated email forwarding address for receiving MFA codes.</p>
+   */
+  inline const Aws::String& GetMfaForwardingAddress() const { return m_mfaForwardingAddress; }
+  inline bool MfaForwardingAddressHasBeenSet() const { return m_mfaForwardingAddressHasBeenSet; }
+  template <typename MfaForwardingAddressT = Aws::String>
+  void SetMfaForwardingAddress(MfaForwardingAddressT&& value) {
+    m_mfaForwardingAddressHasBeenSet = true;
+    m_mfaForwardingAddress = std::forward<MfaForwardingAddressT>(value);
+  }
+  template <typename MfaForwardingAddressT = Aws::String>
+  Actor& WithMfaForwardingAddress(MfaForwardingAddressT&& value) {
+    SetMfaForwardingAddress(std::forward<MfaForwardingAddressT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_identifier;
 
@@ -120,10 +154,16 @@ class Actor {
   Authentication m_authentication;
 
   Aws::String m_description;
+
+  bool m_enableEmailMfa{false};
+
+  Aws::String m_mfaForwardingAddress;
   bool m_identifierHasBeenSet = false;
   bool m_urisHasBeenSet = false;
   bool m_authenticationHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
+  bool m_enableEmailMfaHasBeenSet = false;
+  bool m_mfaForwardingAddressHasBeenSet = false;
 };
 
 }  // namespace Model
