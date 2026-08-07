@@ -7,6 +7,7 @@
 #include <aws/s3-transfer/internal/CrtOperations.h>
 #include <aws/s3-transfer/internal/DirectoryTransferState.h>
 #include <aws/s3-transfer/internal/HandleImpls.h>
+#include <aws/s3-transfer/internal/NotifyListeners.h>
 #include <aws/s3-transfer/internal/S3TransferManagerImpl.h>
 
 #include <aws/core/client/AWSError.h>
@@ -37,10 +38,13 @@ static const char* const DIRECTORY_OPS_LOG_TAG = "DirectoryOps";
 
 namespace {
 
-// One file to transfer: the S3 key and the local path, whichever direction derived which.
+// One file to transfer: the S3 key and the local path, whichever direction derived which, plus its
+// size in bytes (from the directory walk for upload, the listing for download) so the orchestrator
+// can report byte progress alongside the file count.
 struct WorkItem {
   Aws::String key;
   Aws::String localPath;
+  uint64_t size = 0;
 };
 
 // Rewrite platform separators as '/', per the SEP key-derivation rule. A no-op on POSIX.
@@ -136,20 +140,6 @@ bool EnsureParentDirectory(const Aws::String& filePath) {
   return Aws::FileSystem::CreateDirectoryIfNotExists(parent.c_str(), /*createParentDirs*/ true);
 }
 
-// Invokes one listener callback on every registered listener, skipping null entries. `event` is a
-// pointer to the listener member to call, e.g. &UploadDirectoryProgressListener::OnTransferComplete.
-// Mirrors NotifyListeners in CrtOperations, over the directory listeners and snapshots.
-template <typename StateT, typename ListenerT, typename RequestT, typename SnapshotT>
-void NotifyListeners(const std::shared_ptr<StateT>& state,
-                     void (ListenerT::*event)(const RequestT&, const SnapshotT&), const SnapshotT& snapshot) {
-  assert(state && "NotifyListeners requires a live directory transfer state");
-  for (const auto& listener : state->request.GetTransferListeners()) {
-    if (listener) {
-      (listener.get()->*event)(state->request, snapshot);
-    }
-  }
-}
-
 /**
  * The tallies an orchestrator accumulates, and why it stopped. Only the orchestrator task touches
  * these, so they need no synchronization; the shared state carries only the child-handle map.
@@ -157,6 +147,9 @@ void NotifyListeners(const std::shared_ptr<StateT>& state,
 struct Tally {
   uint64_t succeeded = 0;
   uint64_t failed = 0;
+  // Bytes across every file attempted (succeeded or failed), summed from each item's known size as
+  // it is harvested. Reported as the snapshot's transferredBytes.
+  uint64_t transferredBytes = 0;
   // Set when the failure policy or a cancel ended the operation before every file was attempted.
   bool stopped = false;
 
@@ -174,7 +167,8 @@ using LocalFailureSink =
     std::function<bool(const WorkItem& item, const char* exceptionName, const Aws::String& message)>;
 
 // Empty on success; otherwise the error that failed the whole operation, which no failure policy can
-// waive. Reports the final item count through totalItems, unless it was cut short.
+// waive. Reports the final item count through totalItems and the summed byte total through
+// totalBytes, unless it was cut short.
 using EnumerateResult = Aws::Crt::Optional<Aws::Client::AWSError<Aws::S3::S3Errors>>;
 
 /**
@@ -185,13 +179,15 @@ using EnumerateResult = Aws::Crt::Optional<Aws::Client::AWSError<Aws::S3::S3Erro
  *
  * `enumerate` hands items over one at a time through the sink it is given, and decides for itself
  * whether to collect the work list first or stream it: the upload walk is local and cheap so it
- * collects, which makes the total known before the first dispatch, while the download lists pages
- * over the network and streams so transfers overlap the remaining pages. It reports the final count
- * through totalItems, and returns an error to fail the whole operation (a traversal or listing
- * failure), which no failure policy can waive; the policy governs per-file failures only.
+ * collects, which makes the totals known before the first dispatch, while the download lists pages
+ * over the network and streams so transfers overlap the remaining pages. It reports the final file
+ * count through totalItems and the summed byte total through totalBytes, and returns an error to
+ * fail the whole operation (a traversal or listing failure), which no failure policy can waive; the
+ * policy governs per-file failures only.
  *
- * A totalItems of nothing means the count is not yet known, which snapshots report as a zero total
- * with a false known-total flag.
+ * A totalItems/totalBytes of nothing means that total is not yet known, which snapshots report as a
+ * zero total with a false known-total flag. Each WorkItem carries its own size, summed into the
+ * tally as files are attempted so the snapshot's transferredBytes climbs alongside the file count.
  */
 template <typename StateT, typename ListenerT, typename SnapshotT, typename ResponseT,
           typename ChildHandleT, typename ChildOutcomeT, typename DispatchFn, typename EnumerateFn>
@@ -202,8 +198,10 @@ void RunDirectoryTransfer(const std::shared_ptr<StateT>& state, uint64_t maxConc
   const uint64_t windowSize = maxConcurrency == 0 ? 1 : maxConcurrency;
 
   Tally tally;
-  // Known once enumeration finishes; until then snapshots report the total as not-yet-set.
+  // Known once enumeration finishes; until then snapshots report the totals as not-yet-set. The
+  // byte total is only meaningful when every item's size is known, which both enumerators supply.
   Aws::Crt::Optional<uint64_t> totalItems;
+  Aws::Crt::Optional<uint64_t> totalBytes;
 
   struct InFlight {
     uint64_t id;
@@ -213,7 +211,13 @@ void RunDirectoryTransfer(const std::shared_ptr<StateT>& state, uint64_t maxConc
   std::deque<InFlight> inFlight;
   uint64_t nextId = 0;
 
-  NotifyListeners(state, &ListenerT::OnTransferInitiated, SnapshotT(0, 0, nullptr, false));
+  // Build a progress snapshot from the running tally and whatever totals enumeration has settled.
+  auto makeSnapshot = [&]() {
+    return SnapshotT(tally.transferredBytes, totalBytes ? *totalBytes : 0, nullptr, totalBytes.has_value(),
+                     tally.Attempted(), totalItems ? *totalItems : 0, totalItems.has_value());
+  };
+
+  NotifyListeners(state, &ListenerT::OnTransferInitiated, SnapshotT(0, 0, nullptr, false, 0, 0, false));
 
   // Harvest the oldest in-flight transfer, folding its outcome into the tally and firing progress.
   auto harvestOne = [&]() {
@@ -225,6 +229,9 @@ void RunDirectoryTransfer(const std::shared_ptr<StateT>& state, uint64_t maxConc
     state->RemoveInFlight(id);
 
     ChildOutcomeT outcome = future.get();
+    // Count the file's bytes as transferred once it has been attempted, mirroring the file tally
+    // which counts both successes and failures.
+    tally.transferredBytes += item.size;
     if (outcome.IsSuccess()) {
       ++tally.succeeded;
     } else {
@@ -235,9 +242,7 @@ void RunDirectoryTransfer(const std::shared_ptr<StateT>& state, uint64_t maxConc
         tally.stopped = true;
       }
     }
-    NotifyListeners(state, &ListenerT::OnBytesTransferred,
-                    SnapshotT(tally.Attempted(), totalItems ? *totalItems : 0, nullptr,
-                              totalItems.has_value()));
+    NotifyListeners(state, &ListenerT::OnBytesTransferred, makeSnapshot());
   };
 
   // Record a per-file failure the orchestrator itself detected, before any transfer was dispatched
@@ -246,6 +251,9 @@ void RunDirectoryTransfer(const std::shared_ptr<StateT>& state, uint64_t maxConc
   const LocalFailureSink recordLocalFailure = [&](const WorkItem& item, const char* exceptionName,
                                                   const Aws::String& message) -> bool {
     ++tally.failed;
+    // Counted as attempted on the byte axis too, so the two axes stay consistent (both count every
+    // file the operation took a swing at, successful or not).
+    tally.transferredBytes += item.size;
     const FailureContext context{
         item.key, item.localPath,
         Aws::Client::AWSError<Aws::S3::S3Errors>(Aws::S3::S3Errors::UNKNOWN, exceptionName, message, false)};
@@ -253,9 +261,7 @@ void RunDirectoryTransfer(const std::shared_ptr<StateT>& state, uint64_t maxConc
       tally.stopped = true;
       return false;
     }
-    NotifyListeners(state, &ListenerT::OnBytesTransferred,
-                    SnapshotT(tally.Attempted(), totalItems ? *totalItems : 0, nullptr,
-                              totalItems.has_value()));
+    NotifyListeners(state, &ListenerT::OnBytesTransferred, makeSnapshot());
     return true;
   };
 
@@ -284,7 +290,7 @@ void RunDirectoryTransfer(const std::shared_ptr<StateT>& state, uint64_t maxConc
 
   // Enumerate and dispatch. A failure here ends the whole operation regardless of the policy.
   Aws::Crt::Optional<Aws::Client::AWSError<Aws::S3::S3Errors>> enumerateError =
-      enumerate(submit, recordLocalFailure, totalItems, tally);
+      enumerate(submit, recordLocalFailure, totalItems, totalBytes, tally);
 
   // Drain whatever is still in flight. If we are stopping early, cancel first so the drain does not
   // wait out transfers whose results no longer matter — but still harvest every future, since each
@@ -316,8 +322,11 @@ void RunDirectoryTransfer(const std::shared_ptr<StateT>& state, uint64_t maxConc
   const bool canceled = state->canceled.load();
   const bool operationFailed = enumerateError.has_value() || canceled || tally.stopped;
 
-  const SnapshotT finalSnapshot(tally.Attempted(), totalItems ? *totalItems : tally.Attempted(), nullptr,
-                                true);
+  // Both totals are settled at the end: fall back to what was attempted if enumeration never
+  // reported one (it was cut short), and mark both axes known.
+  const SnapshotT finalSnapshot(tally.transferredBytes, totalBytes ? *totalBytes : tally.transferredBytes,
+                                nullptr, true, tally.Attempted(),
+                                totalItems ? *totalItems : tally.Attempted(), true);
   NotifyListeners(state, operationFailed ? &ListenerT::OnTransferFailed : &ListenerT::OnTransferComplete,
                   finalSnapshot);
 
@@ -347,9 +356,9 @@ UploadDirectoryHandle DirectoryOps::UploadDirectory(S3TransferManagerImpl& impl,
   // itself instead of a tally of files that each failed for that reason.
   if (!impl.IsInitialized()) {
     NotifyListeners(state, &UploadDirectoryProgressListener::OnTransferInitiated,
-                    UploadDirectoryProgressSnapshot(0, 0, nullptr, false));
+                    UploadDirectoryProgressSnapshot(0, 0, nullptr, false, 0, 0, false));
     NotifyListeners(state, &UploadDirectoryProgressListener::OnTransferFailed,
-                    UploadDirectoryProgressSnapshot(0, 0, nullptr, false));
+                    UploadDirectoryProgressSnapshot(0, 0, nullptr, false, 0, 0, false));
     state->promise.set_value(UploadDirectoryOutcome(impl.GetInitializationError()));
     return UploadDirectoryHandle(std::move(handleImpl));
   }
@@ -380,12 +389,14 @@ UploadDirectoryHandle DirectoryOps::UploadDirectory(S3TransferManagerImpl& impl,
         // first file goes out, so every progress snapshot can report a real "N of M" instead of
         // counting up against an unknown total.
         [&request](const SubmitSink& submit, const LocalFailureSink& /*recordLocalFailure*/,
-                   Aws::Crt::Optional<uint64_t>& totalItems, Tally& /*tally*/) -> EnumerateResult {
+                   Aws::Crt::Optional<uint64_t>& totalItems, Aws::Crt::Optional<uint64_t>& totalBytes,
+                   Tally& /*tally*/) -> EnumerateResult {
           Aws::Crt::S3::DirectoryTraversalOptions options;
           options.followSymbolicLinks = request.GetFollowSymbolicLinks();
           options.maxDepth = request.GetMaxDepth();
 
           Aws::Vector<WorkItem> work;
+          uint64_t bytes = 0;
           const int traversalRc = Aws::Crt::S3::TraverseDirectory(
               Aws::Crt::String(request.GetSourceDirectory().c_str()), options,
               [&](const Aws::Crt::S3::DirectoryEntry& entry) -> bool {
@@ -399,6 +410,10 @@ UploadDirectoryHandle DirectoryOps::UploadDirectory(S3TransferManagerImpl& impl,
                 WorkItem item;
                 item.key = DeriveObjectKey(request.GetS3Prefix(), Aws::String(entry.relativePath.c_str()));
                 item.localPath = Aws::String(entry.path.c_str());
+                // The walker already stat'd the file, so its size rides along for free — no extra
+                // filesystem call to total the upload's bytes.
+                item.size = entry.fileSize > 0 ? static_cast<uint64_t>(entry.fileSize) : 0;
+                bytes += item.size;
                 work.push_back(std::move(item));
                 return true;
               });
@@ -409,7 +424,9 @@ UploadDirectoryHandle DirectoryOps::UploadDirectory(S3TransferManagerImpl& impl,
                 "Failed to traverse source directory '" + request.GetSourceDirectory() + "'", false);
           }
 
+          // The walk is complete, so both totals are known before the first file goes out.
           totalItems = static_cast<uint64_t>(work.size());
+          totalBytes = bytes;
           for (WorkItem& item : work) {
             // False means a cancel or the failure policy ended things; stop dispatching the rest.
             if (!submit(std::move(item))) {
@@ -422,9 +439,9 @@ UploadDirectoryHandle DirectoryOps::UploadDirectory(S3TransferManagerImpl& impl,
 
   if (!submitted) {
     NotifyListeners(state, &UploadDirectoryProgressListener::OnTransferInitiated,
-                    UploadDirectoryProgressSnapshot(0, 0, nullptr, false));
+                    UploadDirectoryProgressSnapshot(0, 0, nullptr, false, 0, 0, false));
     NotifyListeners(state, &UploadDirectoryProgressListener::OnTransferFailed,
-                    UploadDirectoryProgressSnapshot(0, 0, nullptr, false));
+                    UploadDirectoryProgressSnapshot(0, 0, nullptr, false, 0, 0, false));
     state->promise.set_value(UploadDirectoryOutcome(Aws::Client::AWSError<Aws::S3::S3Errors>(
         Aws::S3::S3Errors::INTERNAL_FAILURE, "INTERNAL_FAILURE",
         "Failed to submit the directory upload to the executor.", false)));
@@ -444,9 +461,9 @@ DownloadDirectoryHandle DirectoryOps::DownloadDirectory(S3TransferManagerImpl& i
   // See UploadDirectory for why the initialization check lives here.
   if (!impl.IsInitialized()) {
     NotifyListeners(state, &DownloadDirectoryProgressListener::OnTransferInitiated,
-                    DownloadDirectoryProgressSnapshot(0, 0, nullptr, false));
+                    DownloadDirectoryProgressSnapshot(0, 0, nullptr, false, 0, 0, false));
     NotifyListeners(state, &DownloadDirectoryProgressListener::OnTransferFailed,
-                    DownloadDirectoryProgressSnapshot(0, 0, nullptr, false));
+                    DownloadDirectoryProgressSnapshot(0, 0, nullptr, false, 0, 0, false));
     state->promise.set_value(DownloadDirectoryOutcome(impl.GetInitializationError()));
     return DownloadDirectoryHandle(std::move(handleImpl));
   }
@@ -468,7 +485,8 @@ DownloadDirectoryHandle DirectoryOps::DownloadDirectory(S3TransferManagerImpl& i
         // Enumerate: page through the listing, submitting each object as it is discovered so the
         // transfers overlap the remaining pages.
         [&impl, &request, &state](const SubmitSink& submit, const LocalFailureSink& recordLocalFailure,
-                                  Aws::Crt::Optional<uint64_t>& totalItems, Tally& tally)
+                                  Aws::Crt::Optional<uint64_t>& totalItems,
+                                  Aws::Crt::Optional<uint64_t>& totalBytes, Tally& tally)
             -> EnumerateResult {
           // Create the destination root up front: a failure here means no file can land, so it fails
           // the operation rather than counting against any one object.
@@ -481,6 +499,7 @@ DownloadDirectoryHandle DirectoryOps::DownloadDirectory(S3TransferManagerImpl& i
 
           const Aws::String& prefix = request.GetS3Prefix();
           uint64_t discovered = 0;
+          uint64_t discoveredBytes = 0;
           Aws::String continuationToken;
           bool keepGoing = true;
 
@@ -514,12 +533,16 @@ DownloadDirectoryHandle DirectoryOps::DownloadDirectory(S3TransferManagerImpl& i
 
               WorkItem item;
               item.key = key;
+              // The listing already carries each object's size, so the download's byte total needs
+              // no HeadObject calls.
+              item.size = object.GetSize() > 0 ? static_cast<uint64_t>(object.GetSize()) : 0;
               if (!DeriveLocalPath(request.GetDestinationDirectory(), prefix, key, item.localPath)) {
                 // The prefix folder itself maps to nothing to write; skip it silently. Anything
                 // longer than the prefix that still failed to map would have escaped the destination
                 // directory, which counts as a per-file failure.
                 if (key.size() > prefix.size()) {
                   ++discovered;
+                  discoveredBytes += item.size;
                   if (!recordLocalFailure(item, "PathTraversalRejected",
                                           "Object key '" + key + "' maps outside the destination directory.")) {
                     keepGoing = false;
@@ -530,6 +553,7 @@ DownloadDirectoryHandle DirectoryOps::DownloadDirectory(S3TransferManagerImpl& i
               }
 
               ++discovered;
+              discoveredBytes += item.size;
               if (!EnsureParentDirectory(item.localPath)) {
                 if (!recordLocalFailure(item, "CreateDirectoryFailure",
                                         "Failed to create local directory for '" + item.localPath + "'")) {
@@ -555,6 +579,7 @@ DownloadDirectoryHandle DirectoryOps::DownloadDirectory(S3TransferManagerImpl& i
           // The listing is only fully enumerated if we were not cut short.
           if (!tally.stopped) {
             totalItems = discovered;
+            totalBytes = discoveredBytes;
           }
           return {};
         });
@@ -562,9 +587,9 @@ DownloadDirectoryHandle DirectoryOps::DownloadDirectory(S3TransferManagerImpl& i
 
   if (!submitted) {
     NotifyListeners(state, &DownloadDirectoryProgressListener::OnTransferInitiated,
-                    DownloadDirectoryProgressSnapshot(0, 0, nullptr, false));
+                    DownloadDirectoryProgressSnapshot(0, 0, nullptr, false, 0, 0, false));
     NotifyListeners(state, &DownloadDirectoryProgressListener::OnTransferFailed,
-                    DownloadDirectoryProgressSnapshot(0, 0, nullptr, false));
+                    DownloadDirectoryProgressSnapshot(0, 0, nullptr, false, 0, 0, false));
     state->promise.set_value(DownloadDirectoryOutcome(Aws::Client::AWSError<Aws::S3::S3Errors>(
         Aws::S3::S3Errors::INTERNAL_FAILURE, "INTERNAL_FAILURE",
         "Failed to submit the directory download to the executor.", false)));

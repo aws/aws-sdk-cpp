@@ -4,7 +4,7 @@
  */
 #pragma once
 #include <aws/s3-transfer/S3Transfer_EXPORTS.h>
-#include <aws/s3-transfer/DirectoryProgressListener.h>
+#include <aws/s3-transfer/ProgressListener.h>
 #include <aws/s3-transfer/FailurePolicy.h>
 #include <aws/s3-transfer/UploadRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>

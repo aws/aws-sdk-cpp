@@ -6,6 +6,8 @@
 #include <aws/s3-transfer/S3Transfer_EXPORTS.h>
 #include <aws/s3-transfer/DownloadResponse.h>
 #include <aws/s3-transfer/UploadResponse.h>
+#include <aws/s3-transfer/DownloadDirectoryResponse.h>
+#include <aws/s3-transfer/UploadDirectoryResponse.h>
 #include <cstdint>
 #include <memory>
 #include <utility>
@@ -63,6 +65,72 @@ class AWS_S3_TRANSFER_API UploadProgressSnapshot final : public ProgressSnapshot
 class AWS_S3_TRANSFER_API DownloadProgressSnapshot final : public ProgressSnapshot<DownloadResponse> {
  public:
   using ProgressSnapshot<DownloadResponse>::ProgressSnapshot;
+};
+
+// ---------------------------------------------------------------------------
+// Directory transfer snapshots
+// ---------------------------------------------------------------------------
+
+/**
+ * Immutable snapshot of directory transfer progress passed to the directory ProgressListener
+ * callbacks. Extends the single-file ProgressSnapshot with a file axis: on top of the bytes
+ * transferred and total bytes it inherits, it reports how many files have finished out of how many
+ * there are. Per the SEP, a directory snapshot carries both axes — the byte counts aggregate across
+ * the per-file transfers, and the file counts track "N of M" objects.
+ *
+ * Either total is only known once enumeration finishes — the local walk for an upload, the last
+ * listing page for a download — so early snapshots carry a zero total alongside a false
+ * known-total flag, mirroring how ProgressSnapshot reports a download's not-yet-known size.
+ *
+ * Specialized via the UploadDirectoryProgressSnapshot and DownloadDirectoryProgressSnapshot
+ * subclasses.
+ */
+template <typename ResponseT>
+class DirectoryProgressSnapshot : public ProgressSnapshot<ResponseT> {
+ public:
+  DirectoryProgressSnapshot(uint64_t transferredBytes,
+                            uint64_t totalBytes,
+                            std::shared_ptr<ResponseT> response,
+                            bool totalBytesHasBeenSet,
+                            uint64_t transferredFiles,
+                            uint64_t totalFiles,
+                            bool totalFilesHasBeenSet)
+      : ProgressSnapshot<ResponseT>(transferredBytes, totalBytes, std::move(response),
+                                    totalBytesHasBeenSet),
+        m_transferredFiles(transferredFiles),
+        m_totalFiles(totalFiles),
+        m_totalFilesHasBeenSet(totalFilesHasBeenSet) {}
+
+  // Byte-axis accessors (GetTransferredBytes / GetTotalBytes / TotalBytesHasBeenSet / GetResponse)
+  // are inherited from ProgressSnapshot.
+  inline uint64_t GetTransferredFiles() const { return m_transferredFiles; }
+  inline uint64_t GetTotalFiles() const { return m_totalFiles; }
+  inline bool TotalFilesHasBeenSet() const { return m_totalFilesHasBeenSet; }
+
+ private:
+  uint64_t m_transferredFiles = 0;
+  uint64_t m_totalFiles = 0;
+  bool m_totalFilesHasBeenSet = false;
+};
+
+/**
+ * Immutable snapshot of directory-upload progress passed to UploadDirectoryProgressListener
+ * callbacks. Counts files attempted against the total discovered by walking the source directory.
+ */
+class AWS_S3_TRANSFER_API UploadDirectoryProgressSnapshot final
+    : public DirectoryProgressSnapshot<UploadDirectoryResponse> {
+ public:
+  using DirectoryProgressSnapshot<UploadDirectoryResponse>::DirectoryProgressSnapshot;
+};
+
+/**
+ * Immutable snapshot of directory-download progress passed to DownloadDirectoryProgressListener
+ * callbacks. Counts objects attempted; the total stays unknown until the listing is fully paged.
+ */
+class AWS_S3_TRANSFER_API DownloadDirectoryProgressSnapshot final
+    : public DirectoryProgressSnapshot<DownloadDirectoryResponse> {
+ public:
+  using DirectoryProgressSnapshot<DownloadDirectoryResponse>::DirectoryProgressSnapshot;
 };
 
 }  // namespace Transfer

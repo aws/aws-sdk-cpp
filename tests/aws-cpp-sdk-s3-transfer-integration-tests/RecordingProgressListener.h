@@ -4,7 +4,6 @@
  */
 #pragma once
 
-#include <aws/s3-transfer/DirectoryProgressListener.h>
 #include <aws/s3-transfer/ProgressListener.h>
 
 #include <atomic>

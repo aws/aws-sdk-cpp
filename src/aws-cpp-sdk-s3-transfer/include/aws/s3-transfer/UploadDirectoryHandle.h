@@ -4,11 +4,11 @@
  */
 #pragma once
 #include <aws/s3-transfer/S3Transfer_EXPORTS.h>
-#include <future>
-#include <memory>
+#include <aws/s3-transfer/TransferHandle.h>
 #include <aws/s3-transfer/UploadDirectoryResponse.h>
 #include <aws/core/utils/memory/AWSMemory.h>
-
+#include <memory>
+#include <utility>
 
 namespace Aws {
 namespace S3 {
@@ -16,26 +16,15 @@ namespace Transfer {
 
 class UploadDirectoryHandleImpl;
 
-// Move-only handle for a single in-flight directory upload.
-class AWS_S3_TRANSFER_API UploadDirectoryHandle final {
-public:
-  explicit UploadDirectoryHandle(Aws::UniquePtr<UploadDirectoryHandleImpl> impl);
-  ~UploadDirectoryHandle();
-  UploadDirectoryHandle(const UploadDirectoryHandle&) = delete;
-  UploadDirectoryHandle& operator=(const UploadDirectoryHandle&) = delete;
-  UploadDirectoryHandle(UploadDirectoryHandle&&) noexcept;
-  UploadDirectoryHandle& operator=(UploadDirectoryHandle&&) noexcept;
-
-  // Resolves once every file has been attempted, or earlier if the traversal fails or the failure
-  // policy stops the operation.
-  std::future<UploadDirectoryOutcome> CompletionFuture();
-
-  // Returns immediately; no further files are dispatched and the in-flight per-file uploads are
-  // cancelled. The completion future resolves with a failure once the cancel takes effect.
-  void Cancel();
-
-private:
-  Aws::UniquePtr<UploadDirectoryHandleImpl> m_impl;
+// Move-only handle for a single in-flight directory upload. All behavior lives on the TransferHandle
+// base; this only pins the impl/outcome types and the log tag. Its Cancel stops further dispatch and
+// cancels the in-flight per-file uploads.
+class AWS_S3_TRANSFER_API UploadDirectoryHandle final
+    : public TransferHandle<UploadDirectoryHandleImpl, UploadDirectoryOutcome> {
+ public:
+  explicit UploadDirectoryHandle(Aws::UniquePtr<UploadDirectoryHandleImpl> impl)
+      : TransferHandle<UploadDirectoryHandleImpl, UploadDirectoryOutcome>(std::move(impl),
+                                                                          "UploadDirectoryHandle") {}
 };
 
 }  // namespace Transfer

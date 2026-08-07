@@ -6,6 +6,7 @@
 #include <aws/s3-transfer/internal/CrtOperations.h>
 #include <aws/s3-transfer/internal/S3TransferManagerImpl.h>
 #include <aws/s3-transfer/internal/HandleImpls.h>
+#include <aws/s3-transfer/internal/NotifyListeners.h>
 #include <aws/s3-transfer/internal/TransferState.h>
 #include <aws/s3-transfer/internal/UploadRequestImpl.h>
 #include <aws/s3-transfer/internal/DownloadRequestImpl.h>
@@ -393,19 +394,6 @@ bool MapChecksumAlgorithm(Aws::S3::Model::ChecksumAlgorithm sdkAlgorithm,
 // The helpers below take the state as the shared_ptr their callers already hold, so no call site has
 // to unwrap it. Dispatch creates it before any callback exists and the callbacks keep it alive, so
 // each asserts non-null rather than handling it.
-
-// Invokes one listener callback on every registered listener, skipping null entries. `event` is a
-// pointer to the ProgressListener member to call, e.g. &UploadProgressListener::OnTransferComplete.
-template <typename StateT, typename ListenerT, typename RequestT, typename SnapshotT>
-void NotifyListeners(const std::shared_ptr<StateT>& state,
-                     void (ListenerT::*event)(const RequestT&, const SnapshotT&), const SnapshotT& snapshot) {
-  assert(state && "NotifyListeners requires a live transfer state");
-  for (const auto& listener : state->request.GetTransferListeners()) {
-    if (listener) {
-      (listener.get()->*event)(state->request, snapshot);
-    }
-  }
-}
 
 // A response carrying the reply's headers and status. Called once per consumer — the listeners and
 // the completion future each get their own — so neither can observe the other's being moved from.
