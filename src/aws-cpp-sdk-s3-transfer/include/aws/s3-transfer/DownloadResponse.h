@@ -15,32 +15,30 @@ namespace S3 {
 namespace Transfer {
 
 /**
- * Response type returned via the DownloadHandle's future once the transfer completes. Wraps
- * the underlying S3 GetObjectResult with whole-object content length and range, regardless
- * of how many ranged GETs were issued internally.
+ * Response type returned via the DownloadHandle's future once the transfer completes. Wraps the
+ * underlying S3 GetObjectResult with whole-object content length and range. The S3 result is set
+ * at construction time so a DownloadResponse is never in a half-populated state; access it via
+ * GetS3Result().
  */
 class AWS_S3_TRANSFER_API DownloadResponse final {
  public:
+  // Default constructor exists to satisfy Aws::Utils::Outcome<R, E>, which default-constructs
+  // its R on the error path. On the success path the S3 result is always provided via the
+  // constructor below; a default-constructed instance is unreachable through DownloadOutcome
+  // because Outcome::GetResult() is only meaningful when IsSuccess() is true.
+  DownloadResponse() = default;
+
+  explicit DownloadResponse(Aws::S3::Model::GetObjectResult s3Result)
+    : m_s3Result(std::move(s3Result)) {}
+
   inline const Aws::S3::Model::GetObjectResult& GetS3Result() const { return m_s3Result; }
-  inline bool S3ResultHasBeenSet() const { return m_s3ResultHasBeenSet; }
-  template <typename GetObjectResultT = Aws::S3::Model::GetObjectResult>
-  void SetS3Result(GetObjectResultT&& getS3Result) {
-    m_s3ResultHasBeenSet = true;
-    m_s3Result = std::forward<GetObjectResultT>(getS3Result);
-  }
-  template <typename GetObjectResultT = Aws::S3::Model::GetObjectResult>
-  DownloadResponse& WithS3Result(GetObjectResultT&& getS3Result) {
-    SetS3Result(std::forward<GetObjectResultT>(getS3Result));
-    return *this;
-  }
 
  private:
   Aws::S3::Model::GetObjectResult m_s3Result;
-  bool m_s3ResultHasBeenSet = false;
 };
 
 using DownloadOutcome = Aws::Utils::Outcome<DownloadResponse, Aws::Client::AWSError<Aws::S3::S3Errors>>;
 
-}
-}
-}
+}  // namespace Transfer
+}  // namespace S3
+}  // namespace Aws
