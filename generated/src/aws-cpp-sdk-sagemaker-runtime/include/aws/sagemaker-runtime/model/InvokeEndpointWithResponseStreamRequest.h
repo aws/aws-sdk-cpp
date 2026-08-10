@@ -233,6 +233,29 @@ class InvokeEndpointWithResponseStreamRequest : public StreamingSageMakerRuntime
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An optional, stable identifier that serves as a routing hint for prefix-aware
+   * routing. The service routes requests with the same prefix and the same
+   * identifier to the same instance. If requests from different applications might
+   * have the same prompt prefix, set a different identifier for each application to
+   * differentiate their routing decisions.</p> <p>Applies only to endpoints
+   * configured with a <code>RoutingStrategy</code> of <code>PREFIX_AWARE</code>.</p>
+   */
+  inline const Aws::String& GetPrefixAwareId() const { return m_prefixAwareId; }
+  inline bool PrefixAwareIdHasBeenSet() const { return m_prefixAwareIdHasBeenSet; }
+  template <typename PrefixAwareIdT = Aws::String>
+  void SetPrefixAwareId(PrefixAwareIdT&& value) {
+    m_prefixAwareIdHasBeenSet = true;
+    m_prefixAwareId = std::forward<PrefixAwareIdT>(value);
+  }
+  template <typename PrefixAwareIdT = Aws::String>
+  InvokeEndpointWithResponseStreamRequest& WithPrefixAwareId(PrefixAwareIdT&& value) {
+    SetPrefixAwareId(std::forward<PrefixAwareIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_endpointName;
 
@@ -249,6 +272,8 @@ class InvokeEndpointWithResponseStreamRequest : public StreamingSageMakerRuntime
   Aws::String m_inferenceComponentName;
 
   Aws::String m_sessionId;
+
+  Aws::String m_prefixAwareId;
   InvokeEndpointWithResponseStreamHandler m_handler;
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
 
@@ -260,6 +285,7 @@ class InvokeEndpointWithResponseStreamRequest : public StreamingSageMakerRuntime
   bool m_inferenceIdHasBeenSet = false;
   bool m_inferenceComponentNameHasBeenSet = false;
   bool m_sessionIdHasBeenSet = false;
+  bool m_prefixAwareIdHasBeenSet = false;
 };
 
 }  // namespace Model

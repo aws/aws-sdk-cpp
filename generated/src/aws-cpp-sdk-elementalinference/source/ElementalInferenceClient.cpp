@@ -32,6 +32,7 @@
 #include <aws/elementalinference/model/ListDictionariesRequest.h>
 #include <aws/elementalinference/model/ListFeedsRequest.h>
 #include <aws/elementalinference/model/ListTagsForResourceRequest.h>
+#include <aws/elementalinference/model/SearchFixturesRequest.h>
 #include <aws/elementalinference/model/TagResourceRequest.h>
 #include <aws/elementalinference/model/UntagResourceRequest.h>
 #include <aws/elementalinference/model/UpdateDictionaryRequest.h>
@@ -378,6 +379,16 @@ ListTagsForResourceOutcome ElementalInferenceClient::ListTagsForResource(const L
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
                             : ListTagsForResourceOutcome(std::move(result.GetError()));
+}
+
+SearchFixturesOutcome ElementalInferenceClient::SearchFixtures(const SearchFixturesRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/fixtures");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchFixturesOutcome(result.GetResultWithOwnership()) : SearchFixturesOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome ElementalInferenceClient::TagResource(const TagResourceRequest& request) const {

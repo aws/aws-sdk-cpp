@@ -10,6 +10,7 @@
 #include <aws/elementalinference/ElementalInferencePaginationBase.h>
 #include <aws/elementalinference/model/ListDictionariesPaginationTraits.h>
 #include <aws/elementalinference/model/ListFeedsPaginationTraits.h>
+#include <aws/elementalinference/model/SearchFixturesPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

@@ -34,6 +34,10 @@ OutputDestinationSettings& OutputDestinationSettings::operator=(JsonView jsonVal
     m_username = jsonValue.GetString("username");
     m_usernameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("virtualSourceAddress")) {
+    m_virtualSourceAddress = jsonValue.GetString("virtualSourceAddress");
+    m_virtualSourceAddressHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue OutputDestinationSettings::Jsonize() const {
 
   if (m_usernameHasBeenSet) {
     payload.WithString("username", m_username);
+  }
+
+  if (m_virtualSourceAddressHasBeenSet) {
+    payload.WithString("virtualSourceAddress", m_virtualSourceAddress);
   }
 
   return payload;

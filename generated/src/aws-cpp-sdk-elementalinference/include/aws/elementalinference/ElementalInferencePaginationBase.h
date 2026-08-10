@@ -9,6 +9,7 @@
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/elementalinference/model/ListDictionariesPaginationTraits.h>
 #include <aws/elementalinference/model/ListFeedsPaginationTraits.h>
+#include <aws/elementalinference/model/SearchFixturesPaginationTraits.h>
 
 #include <memory>
 
@@ -38,6 +39,17 @@ class ElementalInferencePaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFeedsRequest, Pagination::ListFeedsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for SearchFixtures operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchFixturesRequest, Pagination::SearchFixturesPaginationTraits<DerivedClient>>
+  SearchFixturesPaginator(const Model::SearchFixturesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchFixturesRequest,
+                                             Pagination::SearchFixturesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                        request};
   }
 };
 }  // namespace ElementalInference

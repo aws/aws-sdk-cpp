@@ -45,6 +45,7 @@ enum class ElementalInferenceErrors {
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  GATEWAY_TIMED_OUT,
   INTERNAL_SERVER_ERROR,
   SERVICE_QUOTA_EXCEEDED,
   TOO_MANY_REQUEST

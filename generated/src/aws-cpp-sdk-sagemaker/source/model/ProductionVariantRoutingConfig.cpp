@@ -22,6 +22,10 @@ ProductionVariantRoutingConfig& ProductionVariantRoutingConfig::operator=(JsonVi
     m_routingStrategy = RoutingStrategyMapper::GetRoutingStrategyForName(jsonValue.GetString("RoutingStrategy"));
     m_routingStrategyHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("PrefixAwareRoutingConfig")) {
+    m_prefixAwareRoutingConfig = jsonValue.GetObject("PrefixAwareRoutingConfig");
+    m_prefixAwareRoutingConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue ProductionVariantRoutingConfig::Jsonize() const {
 
   if (m_routingStrategyHasBeenSet) {
     payload.WithString("RoutingStrategy", RoutingStrategyMapper::GetNameForRoutingStrategy(m_routingStrategy));
+  }
+
+  if (m_prefixAwareRoutingConfigHasBeenSet) {
+    payload.WithObject("PrefixAwareRoutingConfig", m_prefixAwareRoutingConfig.Jsonize());
   }
 
   return payload;

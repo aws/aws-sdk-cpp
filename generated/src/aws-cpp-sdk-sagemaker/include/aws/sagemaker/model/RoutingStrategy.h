@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SageMaker {
 namespace Model {
-enum class RoutingStrategy { NOT_SET, LEAST_OUTSTANDING_REQUESTS, RANDOM };
+enum class RoutingStrategy { NOT_SET, LEAST_OUTSTANDING_REQUESTS, RANDOM, PREFIX_AWARE };
 
 namespace RoutingStrategyMapper {
 AWS_SAGEMAKER_API RoutingStrategy GetRoutingStrategyForName(const Aws::String& name);

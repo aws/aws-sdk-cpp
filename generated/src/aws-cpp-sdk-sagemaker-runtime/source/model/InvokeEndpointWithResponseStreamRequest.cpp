@@ -60,5 +60,11 @@ Aws::Http::HeaderValueCollection InvokeEndpointWithResponseStreamRequest::GetReq
     ss.str("");
   }
 
+  if (m_prefixAwareIdHasBeenSet) {
+    ss << m_prefixAwareId;
+    headers.emplace("x-amzn-sagemaker-prefix-aware-id", ss.str());
+    ss.str("");
+  }
+
   return headers;
 }

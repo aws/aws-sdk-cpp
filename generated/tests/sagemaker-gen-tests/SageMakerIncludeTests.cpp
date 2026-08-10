@@ -1455,6 +1455,7 @@
 #include <aws/sagemaker/model/PlacementSpecification.h>
 #include <aws/sagemaker/model/PredefinedMetricSpecification.h>
 #include <aws/sagemaker/model/PreemptTeamTasks.h>
+#include <aws/sagemaker/model/PrefixAwareRoutingConfig.h>
 #include <aws/sagemaker/model/PresignedUrlAccessConfig.h>
 #include <aws/sagemaker/model/PriorityClass.h>
 #include <aws/sagemaker/model/ProblemType.h>

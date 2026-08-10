@@ -103,6 +103,24 @@ class OutputDestinationSettings {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * Specifies the source IP address for outbound multicast packets.
+   */
+  inline const Aws::String& GetVirtualSourceAddress() const { return m_virtualSourceAddress; }
+  inline bool VirtualSourceAddressHasBeenSet() const { return m_virtualSourceAddressHasBeenSet; }
+  template <typename VirtualSourceAddressT = Aws::String>
+  void SetVirtualSourceAddress(VirtualSourceAddressT&& value) {
+    m_virtualSourceAddressHasBeenSet = true;
+    m_virtualSourceAddress = std::forward<VirtualSourceAddressT>(value);
+  }
+  template <typename VirtualSourceAddressT = Aws::String>
+  OutputDestinationSettings& WithVirtualSourceAddress(VirtualSourceAddressT&& value) {
+    SetVirtualSourceAddress(std::forward<VirtualSourceAddressT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_passwordParam;
 
@@ -111,10 +129,13 @@ class OutputDestinationSettings {
   Aws::String m_url;
 
   Aws::String m_username;
+
+  Aws::String m_virtualSourceAddress;
   bool m_passwordParamHasBeenSet = false;
   bool m_streamNameHasBeenSet = false;
   bool m_urlHasBeenSet = false;
   bool m_usernameHasBeenSet = false;
+  bool m_virtualSourceAddressHasBeenSet = false;
 };
 
 }  // namespace Model

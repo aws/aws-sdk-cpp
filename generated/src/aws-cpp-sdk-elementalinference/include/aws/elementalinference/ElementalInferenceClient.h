@@ -428,6 +428,37 @@ class AWS_ELEMENTALINFERENCE_API ElementalInferenceClient : public Aws::Client::
   }
 
   /**
+   * <p>Searches for the fixtures (sports events, such as a specific basketball game)
+   * that are available for a sport in a date window. Each fixture in the response
+   * includes a fixtureId that you specify in the clipping output of a feed, so that
+   * Elemental Inference maps the event data for that fixture onto the clipping
+   * metadata. This operation is paginated: if there are more fixtures than fit in
+   * one page, the response includes a nextToken that you pass in a subsequent
+   * request. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/SearchFixtures">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SearchFixturesOutcome SearchFixtures(const Model::SearchFixturesRequest& request) const;
+
+  /**
+   * A Callable wrapper for SearchFixtures that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename SearchFixturesRequestT = Model::SearchFixturesRequest>
+  Model::SearchFixturesOutcomeCallable SearchFixturesCallable(const SearchFixturesRequestT& request) const {
+    return SubmitCallable(&ElementalInferenceClient::SearchFixtures, request);
+  }
+
+  /**
+   * An Async wrapper for SearchFixtures that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename SearchFixturesRequestT = Model::SearchFixturesRequest>
+  void SearchFixturesAsync(const SearchFixturesRequestT& request, const SearchFixturesResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ElementalInferenceClient::SearchFixtures, request, handler, context);
+  }
+
+  /**
    * <p>Associates the specified tags to the resource identified by the specified
    * resourceArn in the current region. If existing tags on a resource are not
    * specified in the request parameters, they are not changed. When a resource is

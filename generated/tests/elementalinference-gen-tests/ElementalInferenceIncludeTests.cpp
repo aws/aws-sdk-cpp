@@ -18,12 +18,15 @@
 #include <aws/elementalinference/model/AssociateFeedRequest.h>
 #include <aws/elementalinference/model/AssociateFeedResult.h>
 #include <aws/elementalinference/model/ClippingConfig.h>
+#include <aws/elementalinference/model/Competitor.h>
 #include <aws/elementalinference/model/CreateDictionaryRequest.h>
 #include <aws/elementalinference/model/CreateDictionaryResult.h>
 #include <aws/elementalinference/model/CreateFeedRequest.h>
 #include <aws/elementalinference/model/CreateFeedResult.h>
 #include <aws/elementalinference/model/CreateOutput.h>
 #include <aws/elementalinference/model/CroppingConfig.h>
+#include <aws/elementalinference/model/DataSourceConfiguration.h>
+#include <aws/elementalinference/model/DataSourceSport.h>
 #include <aws/elementalinference/model/DeleteDictionaryRequest.h>
 #include <aws/elementalinference/model/DeleteDictionaryResult.h>
 #include <aws/elementalinference/model/DeleteFeedRequest.h>
@@ -38,6 +41,8 @@
 #include <aws/elementalinference/model/FeedAssociation.h>
 #include <aws/elementalinference/model/FeedStatus.h>
 #include <aws/elementalinference/model/FeedSummary.h>
+#include <aws/elementalinference/model/FilterName.h>
+#include <aws/elementalinference/model/FixtureSummary.h>
 #include <aws/elementalinference/model/GetDictionaryRequest.h>
 #include <aws/elementalinference/model/GetDictionaryResult.h>
 #include <aws/elementalinference/model/GetFeedRequest.h>
@@ -52,6 +57,9 @@
 #include <aws/elementalinference/model/OutputConfig.h>
 #include <aws/elementalinference/model/OutputStatus.h>
 #include <aws/elementalinference/model/ProfanityFilterMode.h>
+#include <aws/elementalinference/model/SearchFilter.h>
+#include <aws/elementalinference/model/SearchFixturesRequest.h>
+#include <aws/elementalinference/model/SearchFixturesResult.h>
 #include <aws/elementalinference/model/SubtitlingConfig.h>
 #include <aws/elementalinference/model/TagResourceRequest.h>
 #include <aws/elementalinference/model/TemplateGroup.h>

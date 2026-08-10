@@ -22,6 +22,10 @@ ClippingConfig& ClippingConfig::operator=(JsonView jsonValue) {
     m_callbackMetadata = jsonValue.GetString("callbackMetadata");
     m_callbackMetadataHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("dataSourceConfiguration")) {
+    m_dataSourceConfiguration = jsonValue.GetObject("dataSourceConfiguration");
+    m_dataSourceConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue ClippingConfig::Jsonize() const {
 
   if (m_callbackMetadataHasBeenSet) {
     payload.WithString("callbackMetadata", m_callbackMetadata);
+  }
+
+  if (m_dataSourceConfigurationHasBeenSet) {
+    payload.WithObject("dataSourceConfiguration", m_dataSourceConfiguration.Jsonize());
   }
 
   return payload;
