@@ -176,6 +176,11 @@ namespace Aws
                  */
                 Aws::String ConvertToString() const;
                 /**
+                 * Convert entire document to string. When compact is true, the output omits pretty-printing
+                 * whitespace (indentation and newlines), producing a smaller payload.
+                 */
+                Aws::String ConvertToString(bool compact) const;
+                /**
                  * Returns true if the call to CreateFromXml* was successful, otherwise false.
                  * if this returns false, you can call GetErrorMessage() to see details.
                  */

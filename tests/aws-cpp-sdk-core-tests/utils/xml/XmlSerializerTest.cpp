@@ -77,6 +77,31 @@ TEST_F(XmlSerializerTest, TestXmlSerialize)
     ASSERT_TRUE(doc.GetErrorMessage().empty());
 }
 
+TEST_F(XmlSerializerTest, TestXmlSerializeCompact)
+{
+    XmlDocument doc = XmlDocument::CreateWithRootNode("ToDo");
+    XmlNode rootElement = doc.GetRootElement();
+    XmlNode item1 = rootElement.CreateChildElement("Item");
+    item1.SetAttributeValue("priority", "1");
+    item1.SetText("Go to the <bold>Toy store!</bold>");
+    XmlNode item2 = rootElement.CreateChildElement("Item");
+    item2.SetAttributeValue("priority", "2");
+    item2.SetText("Do bills");
+
+    Aws::String serializedXml = doc.ConvertToString(true);
+
+    Aws::String toCompare = "<?xml version=\"1.0\"?>"
+        "<ToDo>"
+        "<Item priority=\"1\">Go to the &lt;bold&gt;Toy store!&lt;/bold&gt;</Item>"
+        "<Item priority=\"2\">Do bills</Item>"
+        "</ToDo>";
+    ASSERT_EQ(toCompare, serializedXml);
+    ASSERT_TRUE(doc.GetErrorMessage().empty());
+
+    // The no-arg overload preserves the pretty-printed default.
+    ASSERT_EQ(doc.ConvertToString(false), doc.ConvertToString());
+}
+
 TEST_F(XmlSerializerTest, TestXmlSerializeNewlines)
 {
     XmlDocument doc = XmlDocument::CreateWithRootNode("Newlines");

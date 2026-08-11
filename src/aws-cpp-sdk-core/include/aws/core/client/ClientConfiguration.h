@@ -399,6 +399,12 @@ namespace Aws
             bool enableHttpClientTrace = false;
 
             /**
+             * Serialize XML request payloads without pretty-printing whitespace (indentation and newlines),
+             * producing a smaller payload. Defaults to false to preserve existing serialization behavior.
+             */
+            bool compactXmlSerialization = false;
+
+            /**
              * profileName in config file that will be used by this object to resolve more configurations.
              */
             Aws::String profileName;

@@ -275,9 +275,14 @@ Aws::String XmlDocument::GetErrorMessage() const
 
 Aws::String XmlDocument::ConvertToString() const
 {
+    return ConvertToString(false);
+}
+
+Aws::String XmlDocument::ConvertToString(bool compact) const
+{
     if (!m_doc) return "";
 
-    Aws::External::tinyxml2::XMLPrinter printer(nullptr,/*compact=*/true);
+    Aws::External::tinyxml2::XMLPrinter printer(nullptr, compact);
     printer.PushHeader(false, true);
     m_doc->Accept(&printer);
 
