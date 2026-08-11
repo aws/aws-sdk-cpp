@@ -13,7 +13,6 @@
 #include <aws/medical-imaging/MedicalImagingRequest.h>
 #include <aws/medical-imaging/MedicalImagingServiceClientModel.h>
 #include <aws/medical-imaging/MedicalImaging_EXPORTS.h>
-#include <aws/medical-imaging/internal/MedicalImagingEndpointRules.h>
 #include <aws/medical-imaging/model/CopyDestinationImageSet.h>
 #include <aws/medical-imaging/model/CopyDestinationImageSetProperties.h>
 #include <aws/medical-imaging/model/CopyImageSetInformation.h>

@@ -13,7 +13,6 @@
 #include <aws/location/LocationServiceRequest.h>
 #include <aws/location/LocationServiceServiceClientModel.h>
 #include <aws/location/LocationService_EXPORTS.h>
-#include <aws/location/internal/LocationServiceEndpointRules.h>
 #include <aws/location/model/AndroidApp.h>
 #include <aws/location/model/ApiKeyFilter.h>
 #include <aws/location/model/ApiKeyRestrictions.h>

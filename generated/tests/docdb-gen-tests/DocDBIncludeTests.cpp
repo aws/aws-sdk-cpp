@@ -13,7 +13,6 @@
 #include <aws/docdb/DocDBRequest.h>
 #include <aws/docdb/DocDBServiceClientModel.h>
 #include <aws/docdb/DocDB_EXPORTS.h>
-#include <aws/docdb/internal/DocDBEndpointRules.h>
 #include <aws/docdb/model/AddSourceIdentifierToSubscriptionRequest.h>
 #include <aws/docdb/model/AddSourceIdentifierToSubscriptionResult.h>
 #include <aws/docdb/model/AddTagsToResourceRequest.h>

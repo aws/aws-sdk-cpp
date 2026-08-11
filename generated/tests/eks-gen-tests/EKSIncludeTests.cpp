@@ -13,7 +13,6 @@
 #include <aws/eks/EKSRequest.h>
 #include <aws/eks/EKSServiceClientModel.h>
 #include <aws/eks/EKS_EXPORTS.h>
-#include <aws/eks/internal/EKSEndpointRules.h>
 #include <aws/eks/model/AMITypes.h>
 #include <aws/eks/model/AccessConfigResponse.h>
 #include <aws/eks/model/AccessEntry.h>

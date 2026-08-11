@@ -16,9 +16,9 @@ template class Aws::Endpoint::EndpointProviderBase<TimestreamQuery::Endpoint::Ti
                                                    TimestreamQuery::Endpoint::TimestreamQueryBuiltInParameters,
                                                    TimestreamQuery::Endpoint::TimestreamQueryClientContextParameters>;
 
-template class Aws::Endpoint::DefaultEndpointProvider<TimestreamQuery::Endpoint::TimestreamQueryClientConfiguration,
-                                                      TimestreamQuery::Endpoint::TimestreamQueryBuiltInParameters,
-                                                      TimestreamQuery::Endpoint::TimestreamQueryClientContextParameters>;
+template class Aws::Endpoint::BDDEndpointProvider<TimestreamQuery::Endpoint::TimestreamQueryClientConfiguration,
+                                                  TimestreamQuery::Endpoint::TimestreamQueryBuiltInParameters,
+                                                  TimestreamQuery::Endpoint::TimestreamQueryClientContextParameters>;
 }  // namespace Endpoint
 #endif
 

@@ -13,7 +13,6 @@
 #include <aws/security-ir/SecurityIRRequest.h>
 #include <aws/security-ir/SecurityIRServiceClientModel.h>
 #include <aws/security-ir/SecurityIR_EXPORTS.h>
-#include <aws/security-ir/internal/SecurityIREndpointRules.h>
 #include <aws/security-ir/model/ActionType.h>
 #include <aws/security-ir/model/AwsRegion.h>
 #include <aws/security-ir/model/BatchGetMemberAccountDetailsRequest.h>

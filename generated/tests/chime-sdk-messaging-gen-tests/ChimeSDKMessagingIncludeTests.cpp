@@ -13,7 +13,6 @@
 #include <aws/chime-sdk-messaging/ChimeSDKMessagingRequest.h>
 #include <aws/chime-sdk-messaging/ChimeSDKMessagingServiceClientModel.h>
 #include <aws/chime-sdk-messaging/ChimeSDKMessaging_EXPORTS.h>
-#include <aws/chime-sdk-messaging/internal/ChimeSDKMessagingEndpointRules.h>
 #include <aws/chime-sdk-messaging/model/AllowNotifications.h>
 #include <aws/chime-sdk-messaging/model/AppInstanceUserMembershipSummary.h>
 #include <aws/chime-sdk-messaging/model/AssociateChannelFlowRequest.h>

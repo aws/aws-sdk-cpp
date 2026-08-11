@@ -13,7 +13,6 @@
 #include <aws/devops-agent/DevOpsAgentRequest.h>
 #include <aws/devops-agent/DevOpsAgentServiceClientModel.h>
 #include <aws/devops-agent/DevOpsAgent_EXPORTS.h>
-#include <aws/devops-agent/internal/DevOpsAgentEndpointRules.h>
 #include <aws/devops-agent/model/AWSConfiguration.h>
 #include <aws/devops-agent/model/AdditionalServiceDetails.h>
 #include <aws/devops-agent/model/AdditionalServiceRegistrationStep.h>

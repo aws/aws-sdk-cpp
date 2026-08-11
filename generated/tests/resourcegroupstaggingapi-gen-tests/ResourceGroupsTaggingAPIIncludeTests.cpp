@@ -13,7 +13,6 @@
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPIRequest.h>
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPIServiceClientModel.h>
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPI_EXPORTS.h>
-#include <aws/resourcegroupstaggingapi/internal/ResourceGroupsTaggingAPIEndpointRules.h>
 #include <aws/resourcegroupstaggingapi/model/ComplianceDetails.h>
 #include <aws/resourcegroupstaggingapi/model/DescribeReportCreationRequest.h>
 #include <aws/resourcegroupstaggingapi/model/DescribeReportCreationResult.h>

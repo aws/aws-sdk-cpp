@@ -13,7 +13,6 @@
 #include <aws/cleanrooms/CleanRoomsRequest.h>
 #include <aws/cleanrooms/CleanRoomsServiceClientModel.h>
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
-#include <aws/cleanrooms/internal/CleanRoomsEndpointRules.h>
 #include <aws/cleanrooms/model/AccessBudget.h>
 #include <aws/cleanrooms/model/AccessBudgetDetails.h>
 #include <aws/cleanrooms/model/AccessBudgetType.h>

@@ -13,7 +13,6 @@
 #include <aws/qbusiness/QBusinessRequest.h>
 #include <aws/qbusiness/QBusinessServiceClientModel.h>
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
-#include <aws/qbusiness/internal/QBusinessEndpointRules.h>
 #include <aws/qbusiness/model/APISchema.h>
 #include <aws/qbusiness/model/APISchemaType.h>
 #include <aws/qbusiness/model/AccessConfiguration.h>

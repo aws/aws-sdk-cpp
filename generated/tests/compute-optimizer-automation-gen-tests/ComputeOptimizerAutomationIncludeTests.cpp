@@ -13,7 +13,6 @@
 #include <aws/compute-optimizer-automation/ComputeOptimizerAutomationRequest.h>
 #include <aws/compute-optimizer-automation/ComputeOptimizerAutomationServiceClientModel.h>
 #include <aws/compute-optimizer-automation/ComputeOptimizerAutomation_EXPORTS.h>
-#include <aws/compute-optimizer-automation/internal/ComputeOptimizerAutomationEndpointRules.h>
 #include <aws/compute-optimizer-automation/model/AccountInfo.h>
 #include <aws/compute-optimizer-automation/model/AssociateAccountsRequest.h>
 #include <aws/compute-optimizer-automation/model/AssociateAccountsResult.h>

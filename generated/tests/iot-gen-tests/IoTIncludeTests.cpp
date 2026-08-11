@@ -13,7 +13,6 @@
 #include <aws/iot/IoTRequest.h>
 #include <aws/iot/IoTServiceClientModel.h>
 #include <aws/iot/IoT_EXPORTS.h>
-#include <aws/iot/internal/IoTEndpointRules.h>
 #include <aws/iot/model/AbortAction.h>
 #include <aws/iot/model/AbortConfig.h>
 #include <aws/iot/model/AbortCriteria.h>

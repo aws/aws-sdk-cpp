@@ -14,7 +14,6 @@
 #include <aws/timestream-query/TimestreamQueryRequest.h>
 #include <aws/timestream-query/TimestreamQueryServiceClientModel.h>
 #include <aws/timestream-query/TimestreamQuery_EXPORTS.h>
-#include <aws/timestream-query/internal/TimestreamQueryEndpointRules.h>
 #include <aws/timestream-query/model/AccountSettingsNotificationConfiguration.h>
 #include <aws/timestream-query/model/CancelQueryRequest.h>
 #include <aws/timestream-query/model/CancelQueryResult.h>

@@ -13,7 +13,6 @@
 #include <aws/discovery/ApplicationDiscoveryServiceRequest.h>
 #include <aws/discovery/ApplicationDiscoveryServiceServiceClientModel.h>
 #include <aws/discovery/ApplicationDiscoveryService_EXPORTS.h>
-#include <aws/discovery/internal/ApplicationDiscoveryServiceEndpointRules.h>
 #include <aws/discovery/model/AgentConfigurationStatus.h>
 #include <aws/discovery/model/AgentInfo.h>
 #include <aws/discovery/model/AgentNetworkInfo.h>

@@ -13,7 +13,6 @@
 #include <aws/lambda/LambdaRequest.h>
 #include <aws/lambda/LambdaServiceClientModel.h>
 #include <aws/lambda/Lambda_EXPORTS.h>
-#include <aws/lambda/internal/LambdaEndpointRules.h>
 #include <aws/lambda/model/AccountLimit.h>
 #include <aws/lambda/model/AccountUsage.h>
 #include <aws/lambda/model/AddLayerVersionPermissionRequest.h>

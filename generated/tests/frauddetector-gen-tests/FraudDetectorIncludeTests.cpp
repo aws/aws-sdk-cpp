@@ -13,7 +13,6 @@
 #include <aws/frauddetector/FraudDetectorRequest.h>
 #include <aws/frauddetector/FraudDetectorServiceClientModel.h>
 #include <aws/frauddetector/FraudDetector_EXPORTS.h>
-#include <aws/frauddetector/internal/FraudDetectorEndpointRules.h>
 #include <aws/frauddetector/model/ATIMetricDataPoint.h>
 #include <aws/frauddetector/model/ATIModelPerformance.h>
 #include <aws/frauddetector/model/ATITrainingMetricsValue.h>

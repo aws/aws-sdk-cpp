@@ -13,7 +13,6 @@
 #include <aws/iotwireless/IoTWirelessRequest.h>
 #include <aws/iotwireless/IoTWirelessServiceClientModel.h>
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
-#include <aws/iotwireless/internal/IoTWirelessEndpointRules.h>
 #include <aws/iotwireless/model/AbpV1_0_x.h>
 #include <aws/iotwireless/model/AbpV1_1.h>
 #include <aws/iotwireless/model/Accuracy.h>

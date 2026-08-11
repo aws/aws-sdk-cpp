@@ -15,7 +15,6 @@
 #include <aws/bedrock/BedrockRequest.h>
 #include <aws/bedrock/BedrockServiceClientModel.h>
 #include <aws/bedrock/Bedrock_EXPORTS.h>
-#include <aws/bedrock/internal/BedrockEndpointRules.h>
 #include <aws/bedrock/model/AccountEnforcedGuardrailInferenceInputConfiguration.h>
 #include <aws/bedrock/model/AccountEnforcedGuardrailOutputConfiguration.h>
 #include <aws/bedrock/model/AdvancedPromptOptimizationInputConfig.h>

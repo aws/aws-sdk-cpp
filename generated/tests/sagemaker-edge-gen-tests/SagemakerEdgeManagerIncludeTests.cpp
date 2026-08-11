@@ -13,7 +13,6 @@
 #include <aws/sagemaker-edge/SagemakerEdgeManagerRequest.h>
 #include <aws/sagemaker-edge/SagemakerEdgeManagerServiceClientModel.h>
 #include <aws/sagemaker-edge/SagemakerEdgeManager_EXPORTS.h>
-#include <aws/sagemaker-edge/internal/SagemakerEdgeManagerEndpointRules.h>
 #include <aws/sagemaker-edge/model/Checksum.h>
 #include <aws/sagemaker-edge/model/ChecksumType.h>
 #include <aws/sagemaker-edge/model/Definition.h>

@@ -13,7 +13,6 @@
 #include <aws/forecastquery/ForecastQueryServiceRequest.h>
 #include <aws/forecastquery/ForecastQueryServiceServiceClientModel.h>
 #include <aws/forecastquery/ForecastQueryService_EXPORTS.h>
-#include <aws/forecastquery/internal/ForecastQueryServiceEndpointRules.h>
 #include <aws/forecastquery/model/DataPoint.h>
 #include <aws/forecastquery/model/Forecast.h>
 #include <aws/forecastquery/model/QueryForecastRequest.h>

@@ -13,7 +13,6 @@
 #include <aws/mediaconnect/MediaConnectRequest.h>
 #include <aws/mediaconnect/MediaConnectServiceClientModel.h>
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
-#include <aws/mediaconnect/internal/MediaConnectEndpointRules.h>
 #include <aws/mediaconnect/model/AddBridgeFlowSourceRequest.h>
 #include <aws/mediaconnect/model/AddBridgeNetworkOutputRequest.h>
 #include <aws/mediaconnect/model/AddBridgeNetworkSourceRequest.h>

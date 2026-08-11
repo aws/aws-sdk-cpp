@@ -13,7 +13,6 @@
 #include <aws/pinpoint/PinpointRequest.h>
 #include <aws/pinpoint/PinpointServiceClientModel.h>
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
-#include <aws/pinpoint/internal/PinpointEndpointRules.h>
 #include <aws/pinpoint/model/ADMChannelRequest.h>
 #include <aws/pinpoint/model/ADMChannelResponse.h>
 #include <aws/pinpoint/model/ADMMessage.h>

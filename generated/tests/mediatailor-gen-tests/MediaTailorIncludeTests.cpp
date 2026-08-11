@@ -13,7 +13,6 @@
 #include <aws/mediatailor/MediaTailorRequest.h>
 #include <aws/mediatailor/MediaTailorServiceClientModel.h>
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
-#include <aws/mediatailor/internal/MediaTailorEndpointRules.h>
 #include <aws/mediatailor/model/AccessConfiguration.h>
 #include <aws/mediatailor/model/AccessType.h>
 #include <aws/mediatailor/model/AdBreak.h>

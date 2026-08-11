@@ -13,7 +13,6 @@
 #include <aws/comprehend/ComprehendRequest.h>
 #include <aws/comprehend/ComprehendServiceClientModel.h>
 #include <aws/comprehend/Comprehend_EXPORTS.h>
-#include <aws/comprehend/internal/ComprehendEndpointRules.h>
 #include <aws/comprehend/model/AugmentedManifestsDocumentTypeFormat.h>
 #include <aws/comprehend/model/AugmentedManifestsListItem.h>
 #include <aws/comprehend/model/BatchDetectDominantLanguageItemResult.h>

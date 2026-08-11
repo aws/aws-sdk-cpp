@@ -13,7 +13,6 @@
 #include <aws/medialive/MediaLiveRequest.h>
 #include <aws/medialive/MediaLiveServiceClientModel.h>
 #include <aws/medialive/MediaLive_EXPORTS.h>
-#include <aws/medialive/internal/MediaLiveEndpointRules.h>
 #include <aws/medialive/model/AacCodingMode.h>
 #include <aws/medialive/model/AacInputType.h>
 #include <aws/medialive/model/AacProfile.h>

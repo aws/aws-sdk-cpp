@@ -13,7 +13,6 @@
 #include <aws/securityagent/SecurityAgentRequest.h>
 #include <aws/securityagent/SecurityAgentServiceClientModel.h>
 #include <aws/securityagent/SecurityAgent_EXPORTS.h>
-#include <aws/securityagent/internal/SecurityAgentEndpointRules.h>
 #include <aws/securityagent/model/AWSResources.h>
 #include <aws/securityagent/model/AccessType.h>
 #include <aws/securityagent/model/Actor.h>

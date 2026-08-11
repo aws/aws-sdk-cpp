@@ -13,7 +13,6 @@
 #include <aws/schemas/SchemasRequest.h>
 #include <aws/schemas/SchemasServiceClientModel.h>
 #include <aws/schemas/Schemas_EXPORTS.h>
-#include <aws/schemas/internal/SchemasEndpointRules.h>
 #include <aws/schemas/model/BadRequestException.h>
 #include <aws/schemas/model/CodeGenerationStatus.h>
 #include <aws/schemas/model/ConflictException.h>

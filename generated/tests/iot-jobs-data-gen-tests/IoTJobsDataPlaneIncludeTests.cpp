@@ -13,7 +13,6 @@
 #include <aws/iot-jobs-data/IoTJobsDataPlaneRequest.h>
 #include <aws/iot-jobs-data/IoTJobsDataPlaneServiceClientModel.h>
 #include <aws/iot-jobs-data/IoTJobsDataPlane_EXPORTS.h>
-#include <aws/iot-jobs-data/internal/IoTJobsDataPlaneEndpointRules.h>
 #include <aws/iot-jobs-data/model/CommandParameterValue.h>
 #include <aws/iot-jobs-data/model/ConflictException.h>
 #include <aws/iot-jobs-data/model/DescribeJobExecutionRequest.h>

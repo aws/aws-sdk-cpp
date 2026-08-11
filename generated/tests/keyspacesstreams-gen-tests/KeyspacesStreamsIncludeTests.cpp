@@ -13,7 +13,6 @@
 #include <aws/keyspacesstreams/KeyspacesStreamsRequest.h>
 #include <aws/keyspacesstreams/KeyspacesStreamsServiceClientModel.h>
 #include <aws/keyspacesstreams/KeyspacesStreams_EXPORTS.h>
-#include <aws/keyspacesstreams/internal/KeyspacesStreamsEndpointRules.h>
 #include <aws/keyspacesstreams/model/GetRecordsRequest.h>
 #include <aws/keyspacesstreams/model/GetRecordsResult.h>
 #include <aws/keyspacesstreams/model/GetShardIteratorRequest.h>

@@ -13,7 +13,6 @@
 #include <aws/cloudformation/CloudFormationRequest.h>
 #include <aws/cloudformation/CloudFormationServiceClientModel.h>
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
-#include <aws/cloudformation/internal/CloudFormationEndpointRules.h>
 #include <aws/cloudformation/model/AccountFilterType.h>
 #include <aws/cloudformation/model/AccountGateResult.h>
 #include <aws/cloudformation/model/AccountGateStatus.h>

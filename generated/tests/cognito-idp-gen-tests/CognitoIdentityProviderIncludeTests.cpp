@@ -13,7 +13,6 @@
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
 #include <aws/cognito-idp/CognitoIdentityProviderServiceClientModel.h>
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
-#include <aws/cognito-idp/internal/CognitoIdentityProviderEndpointRules.h>
 #include <aws/cognito-idp/model/AccountRecoverySettingType.h>
 #include <aws/cognito-idp/model/AccountTakeoverActionType.h>
 #include <aws/cognito-idp/model/AccountTakeoverActionsType.h>

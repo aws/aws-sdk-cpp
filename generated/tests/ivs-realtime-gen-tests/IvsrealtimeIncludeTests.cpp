@@ -13,7 +13,6 @@
 #include <aws/ivs-realtime/IvsrealtimeRequest.h>
 #include <aws/ivs-realtime/IvsrealtimeServiceClientModel.h>
 #include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
-#include <aws/ivs-realtime/internal/IvsrealtimeEndpointRules.h>
 #include <aws/ivs-realtime/model/AccessDeniedException.h>
 #include <aws/ivs-realtime/model/AutoParticipantRecordingConfiguration.h>
 #include <aws/ivs-realtime/model/ChannelDestinationConfiguration.h>

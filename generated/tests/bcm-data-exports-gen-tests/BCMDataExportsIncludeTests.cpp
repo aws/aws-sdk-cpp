@@ -13,7 +13,6 @@
 #include <aws/bcm-data-exports/BCMDataExportsRequest.h>
 #include <aws/bcm-data-exports/BCMDataExportsServiceClientModel.h>
 #include <aws/bcm-data-exports/BCMDataExports_EXPORTS.h>
-#include <aws/bcm-data-exports/internal/BCMDataExportsEndpointRules.h>
 #include <aws/bcm-data-exports/model/Column.h>
 #include <aws/bcm-data-exports/model/CompressionOption.h>
 #include <aws/bcm-data-exports/model/CreateExportRequest.h>

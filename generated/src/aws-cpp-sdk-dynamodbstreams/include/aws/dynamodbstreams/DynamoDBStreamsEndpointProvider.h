@@ -4,7 +4,7 @@
  */
 
 #pragma once
-#include <aws/core/endpoint/DefaultEndpointProvider.h>
+#include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -16,7 +16,7 @@ namespace DynamoDBStreams {
 namespace Endpoint {
 using DynamoDBStreamsClientConfiguration = Aws::DynamoDBStreams::DynamoDBStreamsClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using DynamoDBStreamsClientContextParameters = Aws::Endpoint::ClientContextParameters;
@@ -37,7 +37,7 @@ using DynamoDBStreamsEndpointProviderBase =
     EndpointProviderBase<DynamoDBStreamsClientConfiguration, DynamoDBStreamsBuiltInParameters, DynamoDBStreamsClientContextParameters>;
 
 using DynamoDBStreamsDefaultEpProviderBase =
-    DefaultEndpointProvider<DynamoDBStreamsClientConfiguration, DynamoDBStreamsBuiltInParameters, DynamoDBStreamsClientContextParameters>;
+    BDDEndpointProvider<DynamoDBStreamsClientConfiguration, DynamoDBStreamsBuiltInParameters, DynamoDBStreamsClientContextParameters>;
 
 }  // namespace Endpoint
 }  // namespace DynamoDBStreams
@@ -50,7 +50,7 @@ AWS_DYNAMODBSTREAMS_EXTERN template class AWS_DYNAMODBSTREAMS_API Aws::Endpoint:
     DynamoDBStreams::Endpoint::DynamoDBStreamsClientConfiguration, DynamoDBStreams::Endpoint::DynamoDBStreamsBuiltInParameters,
     DynamoDBStreams::Endpoint::DynamoDBStreamsClientContextParameters>;
 
-AWS_DYNAMODBSTREAMS_EXTERN template class AWS_DYNAMODBSTREAMS_API Aws::Endpoint::DefaultEndpointProvider<
+AWS_DYNAMODBSTREAMS_EXTERN template class AWS_DYNAMODBSTREAMS_API Aws::Endpoint::BDDEndpointProvider<
     DynamoDBStreams::Endpoint::DynamoDBStreamsClientConfiguration, DynamoDBStreams::Endpoint::DynamoDBStreamsBuiltInParameters,
     DynamoDBStreams::Endpoint::DynamoDBStreamsClientContextParameters>;
 }  // namespace Endpoint

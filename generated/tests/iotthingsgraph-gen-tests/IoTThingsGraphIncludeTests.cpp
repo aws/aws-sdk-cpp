@@ -13,7 +13,6 @@
 #include <aws/iotthingsgraph/IoTThingsGraphRequest.h>
 #include <aws/iotthingsgraph/IoTThingsGraphServiceClientModel.h>
 #include <aws/iotthingsgraph/IoTThingsGraph_EXPORTS.h>
-#include <aws/iotthingsgraph/internal/IoTThingsGraphEndpointRules.h>
 #include <aws/iotthingsgraph/model/DefinitionDocument.h>
 #include <aws/iotthingsgraph/model/DefinitionLanguage.h>
 #include <aws/iotthingsgraph/model/DependencyRevision.h>

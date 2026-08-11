@@ -13,7 +13,6 @@
 #include <aws/textract/TextractRequest.h>
 #include <aws/textract/TextractServiceClientModel.h>
 #include <aws/textract/Textract_EXPORTS.h>
-#include <aws/textract/internal/TextractEndpointRules.h>
 #include <aws/textract/model/Adapter.h>
 #include <aws/textract/model/AdapterOverview.h>
 #include <aws/textract/model/AdapterVersionDatasetConfig.h>

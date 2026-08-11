@@ -13,7 +13,6 @@
 #include <aws/codestar-connections/CodeStarconnectionsRequest.h>
 #include <aws/codestar-connections/CodeStarconnectionsServiceClientModel.h>
 #include <aws/codestar-connections/CodeStarconnections_EXPORTS.h>
-#include <aws/codestar-connections/internal/CodeStarconnectionsEndpointRules.h>
 #include <aws/codestar-connections/model/BlockerStatus.h>
 #include <aws/codestar-connections/model/BlockerType.h>
 #include <aws/codestar-connections/model/Connection.h>

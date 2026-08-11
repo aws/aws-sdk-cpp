@@ -13,7 +13,6 @@
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/gamelift/GameLiftServiceClientModel.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
-#include <aws/gamelift/internal/GameLiftEndpointRules.h>
 #include <aws/gamelift/model/AcceptMatchRequest.h>
 #include <aws/gamelift/model/AcceptMatchResult.h>
 #include <aws/gamelift/model/AcceptanceType.h>

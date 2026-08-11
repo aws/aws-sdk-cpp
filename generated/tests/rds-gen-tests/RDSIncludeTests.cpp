@@ -13,7 +13,6 @@
 #include <aws/rds/RDSRequest.h>
 #include <aws/rds/RDSServiceClientModel.h>
 #include <aws/rds/RDS_EXPORTS.h>
-#include <aws/rds/internal/RDSEndpointRules.h>
 #include <aws/rds/model/AccountQuota.h>
 #include <aws/rds/model/ActivityStreamMode.h>
 #include <aws/rds/model/ActivityStreamPolicyStatus.h>

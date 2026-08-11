@@ -13,7 +13,6 @@
 #include <aws/snow-device-management/SnowDeviceManagementRequest.h>
 #include <aws/snow-device-management/SnowDeviceManagementServiceClientModel.h>
 #include <aws/snow-device-management/SnowDeviceManagement_EXPORTS.h>
-#include <aws/snow-device-management/internal/SnowDeviceManagementEndpointRules.h>
 #include <aws/snow-device-management/model/AttachmentStatus.h>
 #include <aws/snow-device-management/model/CancelTaskRequest.h>
 #include <aws/snow-device-management/model/CancelTaskResult.h>

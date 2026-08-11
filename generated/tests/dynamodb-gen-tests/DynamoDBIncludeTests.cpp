@@ -14,7 +14,6 @@
 #include <aws/dynamodb/DynamoDBRequest.h>
 #include <aws/dynamodb/DynamoDBServiceClientModel.h>
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
-#include <aws/dynamodb/internal/DynamoDBEndpointRules.h>
 #include <aws/dynamodb/model/ApproximateCreationDateTimePrecision.h>
 #include <aws/dynamodb/model/ArchivalSummary.h>
 #include <aws/dynamodb/model/AttributeAction.h>

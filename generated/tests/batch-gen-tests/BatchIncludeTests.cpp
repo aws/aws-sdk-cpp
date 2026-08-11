@@ -13,7 +13,6 @@
 #include <aws/batch/BatchRequest.h>
 #include <aws/batch/BatchServiceClientModel.h>
 #include <aws/batch/Batch_EXPORTS.h>
-#include <aws/batch/internal/BatchEndpointRules.h>
 #include <aws/batch/model/ArrayJobDependency.h>
 #include <aws/batch/model/ArrayProperties.h>
 #include <aws/batch/model/ArrayPropertiesDetail.h>

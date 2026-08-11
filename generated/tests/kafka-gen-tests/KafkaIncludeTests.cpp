@@ -13,7 +13,6 @@
 #include <aws/kafka/KafkaRequest.h>
 #include <aws/kafka/KafkaServiceClientModel.h>
 #include <aws/kafka/Kafka_EXPORTS.h>
-#include <aws/kafka/internal/KafkaEndpointRules.h>
 #include <aws/kafka/model/AmazonMskCluster.h>
 #include <aws/kafka/model/ApacheKafkaCluster.h>
 #include <aws/kafka/model/AuthorizerLogs.h>

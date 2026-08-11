@@ -13,7 +13,6 @@
 #include <aws/s3vectors/S3VectorsRequest.h>
 #include <aws/s3vectors/S3VectorsServiceClientModel.h>
 #include <aws/s3vectors/S3Vectors_EXPORTS.h>
-#include <aws/s3vectors/internal/S3VectorsEndpointRules.h>
 #include <aws/s3vectors/model/CreateIndexRequest.h>
 #include <aws/s3vectors/model/CreateIndexResult.h>
 #include <aws/s3vectors/model/CreateVectorBucketRequest.h>

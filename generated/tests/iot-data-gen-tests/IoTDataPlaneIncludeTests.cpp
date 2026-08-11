@@ -13,7 +13,6 @@
 #include <aws/iot-data/IoTDataPlaneRequest.h>
 #include <aws/iot-data/IoTDataPlaneServiceClientModel.h>
 #include <aws/iot-data/IoTDataPlane_EXPORTS.h>
-#include <aws/iot-data/internal/IoTDataPlaneEndpointRules.h>
 #include <aws/iot-data/model/DeleteConnectionRequest.h>
 #include <aws/iot-data/model/DeleteThingShadowRequest.h>
 #include <aws/iot-data/model/DeleteThingShadowResult.h>

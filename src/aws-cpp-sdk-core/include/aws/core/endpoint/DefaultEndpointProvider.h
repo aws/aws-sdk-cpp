@@ -33,6 +33,10 @@ namespace Aws
 
         /**
          * Resolves endpoints from a JSON ruleset blob via the CRT Aws::Crt::Endpoints::RuleEngine.
+         *
+         * DEPRECATED: superseded by BDDEndpointProvider, which resolves from compiled BDD bytecode.
+         * Retained for services whose Smithy model carries no endpointBdd trait and for
+         * protocol-test clients, which keep the JSON ruleset path.
          */
         template<typename ClientConfigurationT = Aws::Client::GenericClientConfiguration,
                  typename BuiltInParametersT = Aws::Endpoint::BuiltInParameters,

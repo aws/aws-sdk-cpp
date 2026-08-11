@@ -13,7 +13,6 @@
 #include <aws/lakeformation/LakeFormationRequest.h>
 #include <aws/lakeformation/LakeFormationServiceClientModel.h>
 #include <aws/lakeformation/LakeFormation_EXPORTS.h>
-#include <aws/lakeformation/internal/LakeFormationEndpointRules.h>
 #include <aws/lakeformation/model/AddLFTagsToResourceRequest.h>
 #include <aws/lakeformation/model/AddLFTagsToResourceResult.h>
 #include <aws/lakeformation/model/AddObjectInput.h>

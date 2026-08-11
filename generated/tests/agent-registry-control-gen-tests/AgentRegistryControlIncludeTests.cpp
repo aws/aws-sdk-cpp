@@ -13,7 +13,6 @@
 #include <aws/agent-registry-control/AgentRegistryControlRequest.h>
 #include <aws/agent-registry-control/AgentRegistryControlServiceClientModel.h>
 #include <aws/agent-registry-control/AgentRegistryControl_EXPORTS.h>
-#include <aws/agent-registry-control/internal/AgentRegistryControlEndpointRules.h>
 #include <aws/agent-registry-control/model/A2aAgentCardDescriptor.h>
 #include <aws/agent-registry-control/model/AgentSkillsAdditionalData.h>
 #include <aws/agent-registry-control/model/AgentSkillsDefinitionDescriptor.h>

@@ -13,7 +13,6 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlRequest.h>
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlServiceClientModel.h>
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
-#include <aws/bedrock-agentcore-control/internal/BedrockAgentCoreControlEndpointRules.h>
 #include <aws/bedrock-agentcore-control/model/A2aDescriptor.h>
 #include <aws/bedrock-agentcore-control/model/Action.h>
 #include <aws/bedrock-agentcore-control/model/ActorTokenContentType.h>

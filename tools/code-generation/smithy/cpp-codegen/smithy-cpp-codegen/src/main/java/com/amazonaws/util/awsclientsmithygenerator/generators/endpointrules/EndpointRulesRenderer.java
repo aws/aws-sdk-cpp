@@ -14,11 +14,6 @@ public final class EndpointRulesRenderer {
 
     public static void renderHeader(CppWriter writer, String namespace, String classPrefix,
                                     String smithyServiceName, String localMacro) {
-        writer.write("/**");
-        writer.write(" * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.");
-        writer.write(" * SPDX-License-Identifier: Apache-2.0.");
-        writer.write(" */");
-        writer.write("");
         writer.write("#pragma once");
         writer.write("#include <aws/$1L/$2L_EXPORTS.h>", smithyServiceName, classPrefix);
         writer.write("");
@@ -39,11 +34,6 @@ public final class EndpointRulesRenderer {
 
     public static void renderSource(CppWriter writer, String namespace, String classPrefix,
                                     String smithyServiceName, byte[] bytecode) {
-        writer.write("/**");
-        writer.write(" * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.");
-        writer.write(" * SPDX-License-Identifier: Apache-2.0.");
-        writer.write(" */");
-        writer.write("");
         writer.write("#include <aws/core/utils/memory/stl/AWSArray.h>");
         writer.write("#include <aws/$1L/internal/$2LEndpointRules.h>", smithyServiceName, classPrefix);
         writer.write("");

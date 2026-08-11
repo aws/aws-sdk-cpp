@@ -13,7 +13,6 @@
 #include <aws/cloudtrail/CloudTrailRequest.h>
 #include <aws/cloudtrail/CloudTrailServiceClientModel.h>
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
-#include <aws/cloudtrail/internal/CloudTrailEndpointRules.h>
 #include <aws/cloudtrail/model/AddTagsRequest.h>
 #include <aws/cloudtrail/model/AddTagsResult.h>
 #include <aws/cloudtrail/model/AdvancedEventSelector.h>

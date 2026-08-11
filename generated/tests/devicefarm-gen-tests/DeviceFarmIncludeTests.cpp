@@ -13,7 +13,6 @@
 #include <aws/devicefarm/DeviceFarmRequest.h>
 #include <aws/devicefarm/DeviceFarmServiceClientModel.h>
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
-#include <aws/devicefarm/internal/DeviceFarmEndpointRules.h>
 #include <aws/devicefarm/model/AccountSettings.h>
 #include <aws/devicefarm/model/Artifact.h>
 #include <aws/devicefarm/model/ArtifactCategory.h>

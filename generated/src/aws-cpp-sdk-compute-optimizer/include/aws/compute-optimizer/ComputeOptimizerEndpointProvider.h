@@ -6,7 +6,7 @@
 #pragma once
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
-#include <aws/core/endpoint/DefaultEndpointProvider.h>
+#include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -15,7 +15,7 @@ namespace Aws {
 namespace ComputeOptimizer {
 namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using ComputeOptimizerClientContextParameters = Aws::Endpoint::ClientContextParameters;
@@ -32,8 +32,7 @@ using ComputeOptimizerEndpointProviderBase =
     EndpointProviderBase<ComputeOptimizerClientConfiguration, ComputeOptimizerBuiltInParameters, ComputeOptimizerClientContextParameters>;
 
 using ComputeOptimizerDefaultEpProviderBase =
-    DefaultEndpointProvider<ComputeOptimizerClientConfiguration, ComputeOptimizerBuiltInParameters,
-                            ComputeOptimizerClientContextParameters>;
+    BDDEndpointProvider<ComputeOptimizerClientConfiguration, ComputeOptimizerBuiltInParameters, ComputeOptimizerClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service

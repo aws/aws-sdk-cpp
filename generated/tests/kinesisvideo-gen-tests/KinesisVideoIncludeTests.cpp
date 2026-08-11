@@ -13,7 +13,6 @@
 #include <aws/kinesisvideo/KinesisVideoRequest.h>
 #include <aws/kinesisvideo/KinesisVideoServiceClientModel.h>
 #include <aws/kinesisvideo/KinesisVideo_EXPORTS.h>
-#include <aws/kinesisvideo/internal/KinesisVideoEndpointRules.h>
 #include <aws/kinesisvideo/model/APIName.h>
 #include <aws/kinesisvideo/model/ChannelInfo.h>
 #include <aws/kinesisvideo/model/ChannelNameCondition.h>

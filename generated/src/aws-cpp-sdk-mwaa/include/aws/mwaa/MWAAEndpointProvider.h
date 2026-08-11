@@ -5,7 +5,7 @@
 
 #pragma once
 #include <aws/core/client/GenericClientConfiguration.h>
-#include <aws/core/endpoint/DefaultEndpointProvider.h>
+#include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -15,7 +15,7 @@ namespace Aws {
 namespace MWAA {
 namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using MWAAClientContextParameters = Aws::Endpoint::ClientContextParameters;
@@ -30,7 +30,7 @@ using MWAABuiltInParameters = Aws::Endpoint::BuiltInParameters;
  */
 using MWAAEndpointProviderBase = EndpointProviderBase<MWAAClientConfiguration, MWAABuiltInParameters, MWAAClientContextParameters>;
 
-using MWAADefaultEpProviderBase = DefaultEndpointProvider<MWAAClientConfiguration, MWAABuiltInParameters, MWAAClientContextParameters>;
+using MWAADefaultEpProviderBase = BDDEndpointProvider<MWAAClientConfiguration, MWAABuiltInParameters, MWAAClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service

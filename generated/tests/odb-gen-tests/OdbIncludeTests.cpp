@@ -13,7 +13,6 @@
 #include <aws/odb/OdbRequest.h>
 #include <aws/odb/OdbServiceClientModel.h>
 #include <aws/odb/Odb_EXPORTS.h>
-#include <aws/odb/internal/OdbEndpointRules.h>
 #include <aws/odb/model/AcceptMarketplaceRegistrationRequest.h>
 #include <aws/odb/model/AcceptMarketplaceRegistrationResult.h>
 #include <aws/odb/model/Access.h>

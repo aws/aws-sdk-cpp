@@ -13,7 +13,6 @@
 #include <aws/organizations/OrganizationsRequest.h>
 #include <aws/organizations/OrganizationsServiceClientModel.h>
 #include <aws/organizations/Organizations_EXPORTS.h>
-#include <aws/organizations/internal/OrganizationsEndpointRules.h>
 #include <aws/organizations/model/AcceptHandshakeRequest.h>
 #include <aws/organizations/model/AcceptHandshakeResult.h>
 #include <aws/organizations/model/AccessDeniedForDependencyException.h>

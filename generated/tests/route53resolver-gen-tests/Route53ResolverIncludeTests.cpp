@@ -13,7 +13,6 @@
 #include <aws/route53resolver/Route53ResolverRequest.h>
 #include <aws/route53resolver/Route53ResolverServiceClientModel.h>
 #include <aws/route53resolver/Route53Resolver_EXPORTS.h>
-#include <aws/route53resolver/internal/Route53ResolverEndpointRules.h>
 #include <aws/route53resolver/model/Action.h>
 #include <aws/route53resolver/model/AssociateFirewallRuleGroupRequest.h>
 #include <aws/route53resolver/model/AssociateFirewallRuleGroupResult.h>

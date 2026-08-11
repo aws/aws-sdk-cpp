@@ -13,7 +13,6 @@
 #include <aws/s3tables/S3TablesRequest.h>
 #include <aws/s3tables/S3TablesServiceClientModel.h>
 #include <aws/s3tables/S3Tables_EXPORTS.h>
-#include <aws/s3tables/internal/S3TablesEndpointRules.h>
 #include <aws/s3tables/model/CreateNamespaceRequest.h>
 #include <aws/s3tables/model/CreateNamespaceResult.h>
 #include <aws/s3tables/model/CreateTableBucketRequest.h>

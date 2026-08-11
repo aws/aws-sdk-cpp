@@ -13,7 +13,6 @@
 #include <aws/s3outposts/S3OutpostsRequest.h>
 #include <aws/s3outposts/S3OutpostsServiceClientModel.h>
 #include <aws/s3outposts/S3Outposts_EXPORTS.h>
-#include <aws/s3outposts/internal/S3OutpostsEndpointRules.h>
 #include <aws/s3outposts/model/CreateEndpointRequest.h>
 #include <aws/s3outposts/model/CreateEndpointResult.h>
 #include <aws/s3outposts/model/DeleteEndpointRequest.h>

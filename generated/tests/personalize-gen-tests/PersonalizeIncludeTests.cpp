@@ -13,7 +13,6 @@
 #include <aws/personalize/PersonalizeRequest.h>
 #include <aws/personalize/PersonalizeServiceClientModel.h>
 #include <aws/personalize/Personalize_EXPORTS.h>
-#include <aws/personalize/internal/PersonalizeEndpointRules.h>
 #include <aws/personalize/model/Algorithm.h>
 #include <aws/personalize/model/AlgorithmImage.h>
 #include <aws/personalize/model/AutoMLConfig.h>

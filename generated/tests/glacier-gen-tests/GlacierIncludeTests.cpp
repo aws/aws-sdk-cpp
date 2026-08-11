@@ -13,7 +13,6 @@
 #include <aws/glacier/GlacierRequest.h>
 #include <aws/glacier/GlacierServiceClientModel.h>
 #include <aws/glacier/Glacier_EXPORTS.h>
-#include <aws/glacier/internal/GlacierEndpointRules.h>
 #include <aws/glacier/model/AbortMultipartUploadRequest.h>
 #include <aws/glacier/model/AbortVaultLockRequest.h>
 #include <aws/glacier/model/ActionCode.h>

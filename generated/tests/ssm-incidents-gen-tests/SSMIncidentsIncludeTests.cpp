@@ -13,7 +13,6 @@
 #include <aws/ssm-incidents/SSMIncidentsRequest.h>
 #include <aws/ssm-incidents/SSMIncidentsServiceClientModel.h>
 #include <aws/ssm-incidents/SSMIncidents_EXPORTS.h>
-#include <aws/ssm-incidents/internal/SSMIncidentsEndpointRules.h>
 #include <aws/ssm-incidents/model/Action.h>
 #include <aws/ssm-incidents/model/AddRegionAction.h>
 #include <aws/ssm-incidents/model/AttributeValueList.h>

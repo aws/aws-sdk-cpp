@@ -13,7 +13,6 @@
 #include <aws/sts/STSRequest.h>
 #include <aws/sts/STSServiceClientModel.h>
 #include <aws/sts/STS_EXPORTS.h>
-#include <aws/sts/internal/STSEndpointRules.h>
 #include <aws/sts/model/AssumeRoleRequest.h>
 #include <aws/sts/model/AssumeRoleResult.h>
 #include <aws/sts/model/AssumeRoleWithSAMLRequest.h>

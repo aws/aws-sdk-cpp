@@ -13,7 +13,6 @@
 #include <aws/personalize-runtime/PersonalizeRuntimeRequest.h>
 #include <aws/personalize-runtime/PersonalizeRuntimeServiceClientModel.h>
 #include <aws/personalize-runtime/PersonalizeRuntime_EXPORTS.h>
-#include <aws/personalize-runtime/internal/PersonalizeRuntimeEndpointRules.h>
 #include <aws/personalize-runtime/model/GetActionRecommendationsRequest.h>
 #include <aws/personalize-runtime/model/GetActionRecommendationsResult.h>
 #include <aws/personalize-runtime/model/GetPersonalizedRankingRequest.h>

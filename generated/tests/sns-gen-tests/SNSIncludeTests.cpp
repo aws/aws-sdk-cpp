@@ -13,7 +13,6 @@
 #include <aws/sns/SNSRequest.h>
 #include <aws/sns/SNSServiceClientModel.h>
 #include <aws/sns/SNS_EXPORTS.h>
-#include <aws/sns/internal/SNSEndpointRules.h>
 #include <aws/sns/model/AddPermissionRequest.h>
 #include <aws/sns/model/BatchResultErrorEntry.h>
 #include <aws/sns/model/CheckIfPhoneNumberIsOptedOutRequest.h>

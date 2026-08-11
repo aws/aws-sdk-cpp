@@ -13,7 +13,6 @@
 #include <aws/nova-act/NovaActRequest.h>
 #include <aws/nova-act/NovaActServiceClientModel.h>
 #include <aws/nova-act/NovaAct_EXPORTS.h>
-#include <aws/nova-act/internal/NovaActEndpointRules.h>
 #include <aws/nova-act/model/ActError.h>
 #include <aws/nova-act/model/ActStatus.h>
 #include <aws/nova-act/model/ActSummary.h>

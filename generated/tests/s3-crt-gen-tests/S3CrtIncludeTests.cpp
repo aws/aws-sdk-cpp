@@ -20,7 +20,6 @@
 #include <aws/s3-crt/S3ExpressIdentityProvider.h>
 #include <aws/s3-crt/S3ExpressSigner.h>
 #include <aws/s3-crt/S3ExpressSignerProvider.h>
-#include <aws/s3-crt/internal/S3CrtEndpointRules.h>
 #include <aws/s3-crt/model/AbacStatus.h>
 #include <aws/s3-crt/model/AbortIncompleteMultipartUpload.h>
 #include <aws/s3-crt/model/AbortMultipartUploadRequest.h>

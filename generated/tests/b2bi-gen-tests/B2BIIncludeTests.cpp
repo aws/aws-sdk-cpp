@@ -13,7 +13,6 @@
 #include <aws/b2bi/B2BIRequest.h>
 #include <aws/b2bi/B2BIServiceClientModel.h>
 #include <aws/b2bi/B2BI_EXPORTS.h>
-#include <aws/b2bi/internal/B2BIEndpointRules.h>
 #include <aws/b2bi/model/AdvancedOptions.h>
 #include <aws/b2bi/model/CapabilityConfiguration.h>
 #include <aws/b2bi/model/CapabilityDirection.h>

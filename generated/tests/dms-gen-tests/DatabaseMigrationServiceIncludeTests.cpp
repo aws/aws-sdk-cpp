@@ -13,7 +13,6 @@
 #include <aws/dms/DatabaseMigrationServiceRequest.h>
 #include <aws/dms/DatabaseMigrationServiceServiceClientModel.h>
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
-#include <aws/dms/internal/DatabaseMigrationServiceEndpointRules.h>
 #include <aws/dms/model/AccountQuota.h>
 #include <aws/dms/model/AddTagsToResourceRequest.h>
 #include <aws/dms/model/AddTagsToResourceResult.h>

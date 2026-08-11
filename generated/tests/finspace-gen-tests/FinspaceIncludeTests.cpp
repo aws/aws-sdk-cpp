@@ -13,7 +13,6 @@
 #include <aws/finspace/FinspaceRequest.h>
 #include <aws/finspace/FinspaceServiceClientModel.h>
 #include <aws/finspace/Finspace_EXPORTS.h>
-#include <aws/finspace/internal/FinspaceEndpointRules.h>
 #include <aws/finspace/model/AutoScalingConfiguration.h>
 #include <aws/finspace/model/AutoScalingMetric.h>
 #include <aws/finspace/model/CapacityConfiguration.h>

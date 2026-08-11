@@ -13,7 +13,6 @@
 #include <aws/databrew/GlueDataBrewRequest.h>
 #include <aws/databrew/GlueDataBrewServiceClientModel.h>
 #include <aws/databrew/GlueDataBrew_EXPORTS.h>
-#include <aws/databrew/internal/GlueDataBrewEndpointRules.h>
 #include <aws/databrew/model/AllowedStatistics.h>
 #include <aws/databrew/model/AnalyticsMode.h>
 #include <aws/databrew/model/BatchDeleteRecipeVersionRequest.h>

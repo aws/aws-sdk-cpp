@@ -13,7 +13,6 @@
 #include <aws/redshift-data/RedshiftDataAPIServiceRequest.h>
 #include <aws/redshift-data/RedshiftDataAPIServiceServiceClientModel.h>
 #include <aws/redshift-data/RedshiftDataAPIService_EXPORTS.h>
-#include <aws/redshift-data/internal/RedshiftDataAPIServiceEndpointRules.h>
 #include <aws/redshift-data/model/BatchExecuteStatementException.h>
 #include <aws/redshift-data/model/BatchExecuteStatementRequest.h>
 #include <aws/redshift-data/model/BatchExecuteStatementResult.h>

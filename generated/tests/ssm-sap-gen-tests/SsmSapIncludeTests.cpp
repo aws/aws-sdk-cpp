@@ -13,7 +13,6 @@
 #include <aws/ssm-sap/SsmSapRequest.h>
 #include <aws/ssm-sap/SsmSapServiceClientModel.h>
 #include <aws/ssm-sap/SsmSap_EXPORTS.h>
-#include <aws/ssm-sap/internal/SsmSapEndpointRules.h>
 #include <aws/ssm-sap/model/AllocationType.h>
 #include <aws/ssm-sap/model/Application.h>
 #include <aws/ssm-sap/model/ApplicationCredential.h>

@@ -13,7 +13,6 @@
 #include <aws/internetmonitor/InternetMonitorRequest.h>
 #include <aws/internetmonitor/InternetMonitorServiceClientModel.h>
 #include <aws/internetmonitor/InternetMonitor_EXPORTS.h>
-#include <aws/internetmonitor/internal/InternetMonitorEndpointRules.h>
 #include <aws/internetmonitor/model/AvailabilityMeasurement.h>
 #include <aws/internetmonitor/model/ClientLocation.h>
 #include <aws/internetmonitor/model/CreateMonitorRequest.h>

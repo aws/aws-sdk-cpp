@@ -13,7 +13,6 @@
 #include <aws/pipes/PipesRequest.h>
 #include <aws/pipes/PipesServiceClientModel.h>
 #include <aws/pipes/Pipes_EXPORTS.h>
-#include <aws/pipes/internal/PipesEndpointRules.h>
 #include <aws/pipes/model/AssignPublicIp.h>
 #include <aws/pipes/model/AwsVpcConfiguration.h>
 #include <aws/pipes/model/BatchArrayProperties.h>

@@ -13,7 +13,6 @@
 #include <aws/pricing/PricingRequest.h>
 #include <aws/pricing/PricingServiceClientModel.h>
 #include <aws/pricing/Pricing_EXPORTS.h>
-#include <aws/pricing/internal/PricingEndpointRules.h>
 #include <aws/pricing/model/AttributeValue.h>
 #include <aws/pricing/model/DescribeServicesRequest.h>
 #include <aws/pricing/model/DescribeServicesResult.h>

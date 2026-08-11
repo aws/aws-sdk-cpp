@@ -13,7 +13,6 @@
 #include <aws/lex/LexRuntimeServiceRequest.h>
 #include <aws/lex/LexRuntimeServiceServiceClientModel.h>
 #include <aws/lex/LexRuntimeService_EXPORTS.h>
-#include <aws/lex/internal/LexRuntimeServiceEndpointRules.h>
 #include <aws/lex/model/ActiveContext.h>
 #include <aws/lex/model/ActiveContextTimeToLive.h>
 #include <aws/lex/model/Button.h>

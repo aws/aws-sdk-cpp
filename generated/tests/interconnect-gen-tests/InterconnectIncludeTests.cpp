@@ -13,7 +13,6 @@
 #include <aws/interconnect/InterconnectRequest.h>
 #include <aws/interconnect/InterconnectServiceClientModel.h>
 #include <aws/interconnect/Interconnect_EXPORTS.h>
-#include <aws/interconnect/internal/InterconnectEndpointRules.h>
 #include <aws/interconnect/model/AcceptConnectionProposalRequest.h>
 #include <aws/interconnect/model/AcceptConnectionProposalResult.h>
 #include <aws/interconnect/model/AttachPoint.h>

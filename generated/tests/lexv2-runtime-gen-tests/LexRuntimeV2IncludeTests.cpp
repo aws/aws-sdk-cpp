@@ -13,7 +13,6 @@
 #include <aws/lexv2-runtime/LexRuntimeV2Request.h>
 #include <aws/lexv2-runtime/LexRuntimeV2ServiceClientModel.h>
 #include <aws/lexv2-runtime/LexRuntimeV2_EXPORTS.h>
-#include <aws/lexv2-runtime/internal/LexRuntimeV2EndpointRules.h>
 #include <aws/lexv2-runtime/model/ActiveContext.h>
 #include <aws/lexv2-runtime/model/ActiveContextTimeToLive.h>
 #include <aws/lexv2-runtime/model/AudioInputEvent.h>
