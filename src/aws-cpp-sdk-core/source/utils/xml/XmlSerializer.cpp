@@ -277,7 +277,7 @@ Aws::String XmlDocument::ConvertToString() const
 {
     if (!m_doc) return "";
 
-    Aws::External::tinyxml2::XMLPrinter printer;
+    Aws::External::tinyxml2::XMLPrinter printer(nullptr,/*compact=*/true);
     printer.PushHeader(false, true);
     m_doc->Accept(&printer);
 
