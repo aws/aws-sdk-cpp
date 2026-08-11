@@ -6,6 +6,8 @@
 #include <aws/connect/ConnectClient.h>
 #include <aws/connect/ConnectEndpointProvider.h>
 #include <aws/connect/ConnectErrorMarshaller.h>
+#include <aws/connect/model/DeleteTaskTemplateRequest.h>
+#include <aws/connect/model/DeleteTestCaseRequest.h>
 #include <aws/connect/model/DeleteTrafficDistributionGroupRequest.h>
 #include <aws/connect/model/DeleteUseCaseRequest.h>
 #include <aws/connect/model/DeleteUserHierarchyGroupRequest.h>
@@ -33,6 +35,7 @@
 #include <aws/connect/model/DescribeInstanceAttributeRequest.h>
 #include <aws/connect/model/DescribeInstanceRequest.h>
 #include <aws/connect/model/DescribeInstanceStorageConfigRequest.h>
+#include <aws/connect/model/DescribeMetricRequest.h>
 #include <aws/connect/model/DescribeNotificationRequest.h>
 #include <aws/connect/model/DescribePhoneNumberRequest.h>
 #include <aws/connect/model/DescribePredefinedAttributeRequest.h>
@@ -103,9 +106,6 @@
 #include <aws/connect/model/ListContactFlowVersionsRequest.h>
 #include <aws/connect/model/ListContactFlowsRequest.h>
 #include <aws/connect/model/ListContactReferencesRequest.h>
-#include <aws/connect/model/ListDataTableAttributesRequest.h>
-#include <aws/connect/model/ListDataTablePrimaryValuesRequest.h>
-#include <aws/connect/model/ListDataTableValuesRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/CoreErrors.h>
@@ -131,6 +131,54 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DeleteTaskTemplateOutcome ConnectClient::DeleteTaskTemplate(const DeleteTaskTemplateRequest& request) const {
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteTaskTemplate", "Required field: InstanceId, is not set");
+    return DeleteTaskTemplateOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [InstanceId]", false));
+  }
+  if (!request.TaskTemplateIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteTaskTemplate", "Required field: TaskTemplateId, is not set");
+    return DeleteTaskTemplateOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [TaskTemplateId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/instance/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/task/template/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTaskTemplateId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTaskTemplateOutcome(result.GetResultWithOwnership())
+                            : DeleteTaskTemplateOutcome(std::move(result.GetError()));
+}
+
+DeleteTestCaseOutcome ConnectClient::DeleteTestCase(const DeleteTestCaseRequest& request) const {
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteTestCase", "Required field: InstanceId, is not set");
+    return DeleteTestCaseOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                      "Missing required field [InstanceId]", false));
+  }
+  if (!request.TestCaseIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteTestCase", "Required field: TestCaseId, is not set");
+    return DeleteTestCaseOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                      "Missing required field [TestCaseId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/test-cases/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTestCaseId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTestCaseOutcome(result.GetResultWithOwnership()) : DeleteTestCaseOutcome(std::move(result.GetError()));
+}
 
 DeleteTrafficDistributionGroupOutcome ConnectClient::DeleteTrafficDistributionGroup(
     const DeleteTrafficDistributionGroupRequest& request) const {
@@ -826,6 +874,29 @@ DescribeInstanceStorageConfigOutcome ConnectClient::DescribeInstanceStorageConfi
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? DescribeInstanceStorageConfigOutcome(result.GetResultWithOwnership())
                             : DescribeInstanceStorageConfigOutcome(std::move(result.GetError()));
+}
+
+DescribeMetricOutcome ConnectClient::DescribeMetric(const DescribeMetricRequest& request) const {
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeMetric", "Required field: InstanceId, is not set");
+    return DescribeMetricOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                      "Missing required field [InstanceId]", false));
+  }
+  if (!request.MetricIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeMetric", "Required field: MetricId, is not set");
+    return DescribeMetricOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                      "Missing required field [MetricId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/metrics/definitions/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMetricId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeMetricOutcome(result.GetResultWithOwnership()) : DescribeMetricOutcome(std::move(result.GetError()));
 }
 
 DescribeNotificationOutcome ConnectClient::DescribeNotification(const DescribeNotificationRequest& request) const {
@@ -2439,79 +2510,4 @@ ListContactReferencesOutcome ConnectClient::ListContactReferences(const ListCont
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListContactReferencesOutcome(result.GetResultWithOwnership())
                             : ListContactReferencesOutcome(std::move(result.GetError()));
-}
-
-ListDataTableAttributesOutcome ConnectClient::ListDataTableAttributes(const ListDataTableAttributesRequest& request) const {
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListDataTableAttributes", "Required field: InstanceId, is not set");
-    return ListDataTableAttributesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                               "Missing required field [InstanceId]", false));
-  }
-  if (!request.DataTableIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListDataTableAttributes", "Required field: DataTableId, is not set");
-    return ListDataTableAttributesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                               "Missing required field [DataTableId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/data-tables/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataTableId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/attributes");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ListDataTableAttributesOutcome(result.GetResultWithOwnership())
-                            : ListDataTableAttributesOutcome(std::move(result.GetError()));
-}
-
-ListDataTablePrimaryValuesOutcome ConnectClient::ListDataTablePrimaryValues(const ListDataTablePrimaryValuesRequest& request) const {
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListDataTablePrimaryValues", "Required field: InstanceId, is not set");
-    return ListDataTablePrimaryValuesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                                  "Missing required field [InstanceId]", false));
-  }
-  if (!request.DataTableIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListDataTablePrimaryValues", "Required field: DataTableId, is not set");
-    return ListDataTablePrimaryValuesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                                  "Missing required field [DataTableId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/data-tables/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataTableId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/values/list-primary");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ListDataTablePrimaryValuesOutcome(result.GetResultWithOwnership())
-                            : ListDataTablePrimaryValuesOutcome(std::move(result.GetError()));
-}
-
-ListDataTableValuesOutcome ConnectClient::ListDataTableValues(const ListDataTableValuesRequest& request) const {
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListDataTableValues", "Required field: InstanceId, is not set");
-    return ListDataTableValuesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                           "Missing required field [InstanceId]", false));
-  }
-  if (!request.DataTableIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListDataTableValues", "Required field: DataTableId, is not set");
-    return ListDataTableValuesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                           "Missing required field [DataTableId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/data-tables/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataTableId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/values/list");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ListDataTableValuesOutcome(result.GetResultWithOwnership())
-                            : ListDataTableValuesOutcome(std::move(result.GetError()));
 }

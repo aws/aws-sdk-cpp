@@ -81,7 +81,8 @@ class Geometry {
 
   ///@{
   /**
-   * <p>Provides a numerical value corresponding to the rotation of the text.</p>
+   * <p>Provides a numerical value corresponding to the rotation of the WORD block.
+   * Possible values are 0, 90, 180, and 270.</p>
    */
   inline double GetRotationAngle() const { return m_rotationAngle; }
   inline bool RotationAngleHasBeenSet() const { return m_rotationAngleHasBeenSet; }

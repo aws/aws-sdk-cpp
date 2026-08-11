@@ -40,6 +40,7 @@
 #include <aws/connect/model/ListIntegrationAssociationsPaginationTraits.h>
 #include <aws/connect/model/ListLambdaFunctionsPaginationTraits.h>
 #include <aws/connect/model/ListLexBotsPaginationTraits.h>
+#include <aws/connect/model/ListMetricsPaginationTraits.h>
 #include <aws/connect/model/ListPhoneNumbersPaginationTraits.h>
 #include <aws/connect/model/ListPhoneNumbersV2PaginationTraits.h>
 #include <aws/connect/model/ListPredefinedAttributesPaginationTraits.h>
@@ -77,6 +78,7 @@
 #include <aws/connect/model/SearchDataTablesPaginationTraits.h>
 #include <aws/connect/model/SearchHoursOfOperationOverridesPaginationTraits.h>
 #include <aws/connect/model/SearchHoursOfOperationsPaginationTraits.h>
+#include <aws/connect/model/SearchMetricsPaginationTraits.h>
 #include <aws/connect/model/SearchPredefinedAttributesPaginationTraits.h>
 #include <aws/connect/model/SearchPromptsPaginationTraits.h>
 #include <aws/connect/model/SearchQueuesPaginationTraits.h>
@@ -518,6 +520,17 @@ class ConnectPaginationBase {
   }
 
   /**
+   * Create a paginator for ListMetrics operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMetricsRequest, Pagination::ListMetricsPaginationTraits<DerivedClient>>
+  ListMetricsPaginator(const Model::ListMetricsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMetricsRequest,
+                                             Pagination::ListMetricsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                     request};
+  }
+
+  /**
    * Create a paginator for ListPhoneNumbers operation
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPhoneNumbersRequest,
@@ -947,6 +960,17 @@ class ConnectPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchHoursOfOperationsRequest,
                                              Pagination::SearchHoursOfOperationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for SearchMetrics operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchMetricsRequest, Pagination::SearchMetricsPaginationTraits<DerivedClient>>
+  SearchMetricsPaginator(const Model::SearchMetricsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchMetricsRequest,
+                                             Pagination::SearchMetricsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                       request};
   }
 
   /**

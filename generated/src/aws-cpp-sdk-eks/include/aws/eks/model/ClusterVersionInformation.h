@@ -6,8 +6,11 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/eks/EKS_EXPORTS.h>
 #include <aws/eks/model/ClusterVersionStatus.h>
+#include <aws/eks/model/ControlPlaneConfigInfo.h>
+#include <aws/eks/model/ControlPlaneScalingTierInfo.h>
 #include <aws/eks/model/VersionStatus.h>
 
 #include <utility>
@@ -210,6 +213,50 @@ class ClusterVersionInformation {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The available provisioned control plane scaling tiers and their capabilities
+   * for this Kubernetes version.</p>
+   */
+  inline const Aws::Vector<ControlPlaneScalingTierInfo>& GetControlPlaneScalingTiers() const { return m_controlPlaneScalingTiers; }
+  inline bool ControlPlaneScalingTiersHasBeenSet() const { return m_controlPlaneScalingTiersHasBeenSet; }
+  template <typename ControlPlaneScalingTiersT = Aws::Vector<ControlPlaneScalingTierInfo>>
+  void SetControlPlaneScalingTiers(ControlPlaneScalingTiersT&& value) {
+    m_controlPlaneScalingTiersHasBeenSet = true;
+    m_controlPlaneScalingTiers = std::forward<ControlPlaneScalingTiersT>(value);
+  }
+  template <typename ControlPlaneScalingTiersT = Aws::Vector<ControlPlaneScalingTierInfo>>
+  ClusterVersionInformation& WithControlPlaneScalingTiers(ControlPlaneScalingTiersT&& value) {
+    SetControlPlaneScalingTiers(std::forward<ControlPlaneScalingTiersT>(value));
+    return *this;
+  }
+  template <typename ControlPlaneScalingTiersT = ControlPlaneScalingTierInfo>
+  ClusterVersionInformation& AddControlPlaneScalingTiers(ControlPlaneScalingTiersT&& value) {
+    m_controlPlaneScalingTiersHasBeenSet = true;
+    m_controlPlaneScalingTiers.emplace_back(std::forward<ControlPlaneScalingTiersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The default control plane component configuration and constraints for this
+   * Kubernetes version.</p>
+   */
+  inline const ControlPlaneConfigInfo& GetControlPlaneComponentConfig() const { return m_controlPlaneComponentConfig; }
+  inline bool ControlPlaneComponentConfigHasBeenSet() const { return m_controlPlaneComponentConfigHasBeenSet; }
+  template <typename ControlPlaneComponentConfigT = ControlPlaneConfigInfo>
+  void SetControlPlaneComponentConfig(ControlPlaneComponentConfigT&& value) {
+    m_controlPlaneComponentConfigHasBeenSet = true;
+    m_controlPlaneComponentConfig = std::forward<ControlPlaneComponentConfigT>(value);
+  }
+  template <typename ControlPlaneComponentConfigT = ControlPlaneConfigInfo>
+  ClusterVersionInformation& WithControlPlaneComponentConfig(ControlPlaneComponentConfigT&& value) {
+    SetControlPlaneComponentConfig(std::forward<ControlPlaneComponentConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clusterVersion;
 
@@ -230,6 +277,10 @@ class ClusterVersionInformation {
   VersionStatus m_versionStatus{VersionStatus::NOT_SET};
 
   Aws::String m_kubernetesPatchVersion;
+
+  Aws::Vector<ControlPlaneScalingTierInfo> m_controlPlaneScalingTiers;
+
+  ControlPlaneConfigInfo m_controlPlaneComponentConfig;
   bool m_clusterVersionHasBeenSet = false;
   bool m_clusterTypeHasBeenSet = false;
   bool m_defaultPlatformVersionHasBeenSet = false;
@@ -240,6 +291,8 @@ class ClusterVersionInformation {
   bool m_statusHasBeenSet = false;
   bool m_versionStatusHasBeenSet = false;
   bool m_kubernetesPatchVersionHasBeenSet = false;
+  bool m_controlPlaneScalingTiersHasBeenSet = false;
+  bool m_controlPlaneComponentConfigHasBeenSet = false;
 };
 
 }  // namespace Model

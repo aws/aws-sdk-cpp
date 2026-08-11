@@ -33,6 +33,10 @@ AssetScope& AssetScope::operator=(JsonView jsonValue) {
     m_status = jsonValue.GetString("status");
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("scopeName")) {
+    m_scopeName = jsonValue.GetString("scopeName");
+    m_scopeNameHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("errorMessage")) {
     m_errorMessage = jsonValue.GetString("errorMessage");
     m_errorMessageHasBeenSet = true;
@@ -57,6 +61,10 @@ JsonValue AssetScope::Jsonize() const {
 
   if (m_statusHasBeenSet) {
     payload.WithString("status", m_status);
+  }
+
+  if (m_scopeNameHasBeenSet) {
+    payload.WithString("scopeName", m_scopeName);
   }
 
   if (m_errorMessageHasBeenSet) {

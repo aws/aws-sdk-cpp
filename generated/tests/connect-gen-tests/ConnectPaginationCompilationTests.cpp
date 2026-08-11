@@ -11,6 +11,7 @@
 #include <aws/connect/model/SearchResourceTagsPaginationTraits.h>
 #include <aws/connect/model/ListTrafficDistributionGroupsPaginationTraits.h>
 #include <aws/connect/model/ListEvaluationFormsPaginationTraits.h>
+#include <aws/connect/model/ListMetricsPaginationTraits.h>
 #include <aws/connect/model/ListUserProficienciesPaginationTraits.h>
 #include <aws/connect/model/ListSecurityProfileFlowModulesPaginationTraits.h>
 #include <aws/connect/model/EvaluateDataTableValuesPaginationTraits.h>
@@ -25,6 +26,7 @@
 #include <aws/connect/model/GetMetricDataPaginationTraits.h>
 #include <aws/connect/model/ListTestCasesPaginationTraits.h>
 #include <aws/connect/model/SearchHoursOfOperationsPaginationTraits.h>
+#include <aws/connect/model/SearchMetricsPaginationTraits.h>
 #include <aws/connect/model/ListSecurityProfilesPaginationTraits.h>
 #include <aws/connect/model/ListDefaultVocabulariesPaginationTraits.h>
 #include <aws/connect/model/ListInstanceAttributesPaginationTraits.h>

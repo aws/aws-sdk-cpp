@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/cleanrooms/model/ListAnalysisLogExportsPaginationTraits.h>
 #include <aws/cleanrooms/model/ListAnalysisTemplatesPaginationTraits.h>
 #include <aws/cleanrooms/model/ListCollaborationAnalysisTemplatesPaginationTraits.h>
 #include <aws/cleanrooms/model/ListCollaborationChangeRequestsPaginationTraits.h>
@@ -38,6 +39,18 @@ namespace CleanRooms {
 template <typename DerivedClient>
 class CleanRoomsPaginationBase {
  public:
+  /**
+   * Create a paginator for ListAnalysisLogExports operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAnalysisLogExportsRequest,
+                                    Pagination::ListAnalysisLogExportsPaginationTraits<DerivedClient>>
+  ListAnalysisLogExportsPaginator(const Model::ListAnalysisLogExportsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAnalysisLogExportsRequest,
+                                             Pagination::ListAnalysisLogExportsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
   /**
    * Create a paginator for ListAnalysisTemplates operation
    */

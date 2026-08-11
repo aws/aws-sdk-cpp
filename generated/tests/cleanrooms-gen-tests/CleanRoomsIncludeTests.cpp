@@ -27,6 +27,13 @@
 #include <aws/cleanrooms/model/AggregationConstraint.h>
 #include <aws/cleanrooms/model/AggregationType.h>
 #include <aws/cleanrooms/model/AnalysisFormat.h>
+#include <aws/cleanrooms/model/AnalysisLogExport.h>
+#include <aws/cleanrooms/model/AnalysisLogExportError.h>
+#include <aws/cleanrooms/model/AnalysisLogExportOutputConfiguration.h>
+#include <aws/cleanrooms/model/AnalysisLogExportResultConfiguration.h>
+#include <aws/cleanrooms/model/AnalysisLogExportS3OutputConfiguration.h>
+#include <aws/cleanrooms/model/AnalysisLogExportStatus.h>
+#include <aws/cleanrooms/model/AnalysisLogExportSummary.h>
 #include <aws/cleanrooms/model/AnalysisMethod.h>
 #include <aws/cleanrooms/model/AnalysisParameter.h>
 #include <aws/cleanrooms/model/AnalysisRule.h>
@@ -203,6 +210,8 @@
 #include <aws/cleanrooms/model/ErrorMessageConfiguration.h>
 #include <aws/cleanrooms/model/ErrorMessageType.h>
 #include <aws/cleanrooms/model/FilterableMemberStatus.h>
+#include <aws/cleanrooms/model/GetAnalysisLogExportRequest.h>
+#include <aws/cleanrooms/model/GetAnalysisLogExportResult.h>
 #include <aws/cleanrooms/model/GetAnalysisTemplateRequest.h>
 #include <aws/cleanrooms/model/GetAnalysisTemplateResult.h>
 #include <aws/cleanrooms/model/GetCollaborationAnalysisTemplateRequest.h>
@@ -291,6 +300,8 @@
 #include <aws/cleanrooms/model/JobType.h>
 #include <aws/cleanrooms/model/JoinOperator.h>
 #include <aws/cleanrooms/model/JoinRequiredOption.h>
+#include <aws/cleanrooms/model/ListAnalysisLogExportsRequest.h>
+#include <aws/cleanrooms/model/ListAnalysisLogExportsResult.h>
 #include <aws/cleanrooms/model/ListAnalysisTemplatesRequest.h>
 #include <aws/cleanrooms/model/ListAnalysisTemplatesResult.h>
 #include <aws/cleanrooms/model/ListCollaborationAnalysisTemplatesRequest.h>
@@ -337,6 +348,7 @@
 #include <aws/cleanrooms/model/ListSchemasResult.h>
 #include <aws/cleanrooms/model/ListTagsForResourceRequest.h>
 #include <aws/cleanrooms/model/ListTagsForResourceResult.h>
+#include <aws/cleanrooms/model/LogExportAnalysisType.h>
 #include <aws/cleanrooms/model/MLMemberAbilities.h>
 #include <aws/cleanrooms/model/MLPaymentConfig.h>
 #include <aws/cleanrooms/model/MLSyntheticDataParameters.h>
@@ -454,6 +466,8 @@
 #include <aws/cleanrooms/model/SnowflakeTableReference.h>
 #include <aws/cleanrooms/model/SnowflakeTableSchema.h>
 #include <aws/cleanrooms/model/SnowflakeTableSchemaV1.h>
+#include <aws/cleanrooms/model/StartAnalysisLogExportRequest.h>
+#include <aws/cleanrooms/model/StartAnalysisLogExportResult.h>
 #include <aws/cleanrooms/model/StartProtectedJobRequest.h>
 #include <aws/cleanrooms/model/StartProtectedJobResult.h>
 #include <aws/cleanrooms/model/StartProtectedQueryRequest.h>

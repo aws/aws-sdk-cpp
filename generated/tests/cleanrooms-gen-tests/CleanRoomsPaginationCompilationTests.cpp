@@ -29,6 +29,7 @@
 #include <aws/cleanrooms/model/ListIdNamespaceAssociationsPaginationTraits.h>
 #include <aws/cleanrooms/model/ListCollaborationsPaginationTraits.h>
 #include <aws/cleanrooms/model/ListPrivacyBudgetTemplatesPaginationTraits.h>
+#include <aws/cleanrooms/model/ListAnalysisLogExportsPaginationTraits.h>
 #include <aws/cleanrooms/model/ListProtectedJobsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>

@@ -1694,6 +1694,34 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates a new metric definition for the specified Connect Customer instance.
+   * You can create custom metrics that use formulas referencing existing Amazon Web
+   * Services-managed metrics, optionally with filters applied.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateMetric">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateMetricOutcome CreateMetric(const Model::CreateMetricRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateMetric that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateMetricRequestT = Model::CreateMetricRequest>
+  Model::CreateMetricOutcomeCallable CreateMetricCallable(const CreateMetricRequestT& request) const {
+    return SubmitCallable(&ConnectClient::CreateMetric, request);
+  }
+
+  /**
+   * An Async wrapper for CreateMetric that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateMetricRequestT = Model::CreateMetricRequest>
+  void CreateMetricAsync(const CreateMetricRequestT& request, const CreateMetricResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::CreateMetric, request, handler, context);
+  }
+
+  /**
    * <p>Creates a new notification to be delivered to specified recipients.
    * Notifications can include localized content with links, and an optional
    * expiration time. Recipients can be specified as individual user ARNs or instance
@@ -2899,6 +2927,33 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Deletes an existing metric from the specified Connect Customer instance. This
+   * operation fails with <code>ResourceConflictException</code> if the metric is
+   * currently in use in a dashboard.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteMetric">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteMetricOutcome DeleteMetric(const Model::DeleteMetricRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteMetric that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteMetricRequestT = Model::DeleteMetricRequest>
+  Model::DeleteMetricOutcomeCallable DeleteMetricCallable(const DeleteMetricRequestT& request) const {
+    return SubmitCallable(&ConnectClient::DeleteMetric, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteMetric that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteMetricRequestT = Model::DeleteMetricRequest>
+  void DeleteMetricAsync(const DeleteMetricRequestT& request, const DeleteMetricResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::DeleteMetric, request, handler, context);
+  }
+
+  /**
    * <p>Deletes a notification. Once deleted, the notification is no longer visible
    * to all users and cannot be managed through the Admin Website or
    * APIs.</p><p><h3>See Also:</h3>   <a
@@ -4044,6 +4099,32 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
                                           const DescribeInstanceStorageConfigResponseReceivedHandler& handler,
                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::DescribeInstanceStorageConfig, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the full definition of an existing metric from the specified
+   * Connect Customer instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeMetric">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeMetricOutcome DescribeMetric(const Model::DescribeMetricRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeMetric that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DescribeMetricRequestT = Model::DescribeMetricRequest>
+  Model::DescribeMetricOutcomeCallable DescribeMetricCallable(const DescribeMetricRequestT& request) const {
+    return SubmitCallable(&ConnectClient::DescribeMetric, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeMetric that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DescribeMetricRequestT = Model::DescribeMetricRequest>
+  void DescribeMetricAsync(const DescribeMetricRequestT& request, const DescribeMetricResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::DescribeMetric, request, handler, context);
   }
 
   /**
@@ -6749,6 +6830,33 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Retrieves a paginated list of metric summaries for the specified Connect
+   * Customer instance. Use pagination to ensure that the operation returns quickly
+   * and successfully.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListMetrics">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListMetricsOutcome ListMetrics(const Model::ListMetricsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListMetrics that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListMetricsRequestT = Model::ListMetricsRequest>
+  Model::ListMetricsOutcomeCallable ListMetricsCallable(const ListMetricsRequestT& request) const {
+    return SubmitCallable(&ConnectClient::ListMetrics, request);
+  }
+
+  /**
+   * An Async wrapper for ListMetrics that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListMetricsRequestT = Model::ListMetricsRequest>
+  void ListMetricsAsync(const ListMetricsRequestT& request, const ListMetricsResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::ListMetrics, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves a paginated list of all notifications in the Amazon Connect
    * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListNotifications">AWS
@@ -8394,6 +8502,33 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Searches for metrics in the specified Connect Customer instance using search
+   * criteria and optional tag-based filters. Use pagination to ensure that the
+   * operation returns quickly and successfully.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchMetrics">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SearchMetricsOutcome SearchMetrics(const Model::SearchMetricsRequest& request) const;
+
+  /**
+   * A Callable wrapper for SearchMetrics that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename SearchMetricsRequestT = Model::SearchMetricsRequest>
+  Model::SearchMetricsOutcomeCallable SearchMetricsCallable(const SearchMetricsRequestT& request) const {
+    return SubmitCallable(&ConnectClient::SearchMetrics, request);
+  }
+
+  /**
+   * An Async wrapper for SearchMetrics that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename SearchMetricsRequestT = Model::SearchMetricsRequest>
+  void SearchMetricsAsync(const SearchMetricsRequestT& request, const SearchMetricsResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::SearchMetrics, request, handler, context);
+  }
+
+  /**
    * <p>Searches for notifications based on specified criteria and filters. Returns a
    * paginated list of notifications matching the search parameters, ordered by
    * descending creation time. Supports filtering by content and tags.</p><p><h3>See
@@ -9802,8 +9937,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   /**
    * <p>Adds the specified tags to the specified resource.</p> <p>Some of the
    * supported resource types are agents, routing profiles, queues, quick connects,
-   * flows, agent statuses, hours of operation, phone numbers, security profiles, and
-   * task templates. For a complete list, see <a
+   * flows, agent statuses, hours of operation, phone numbers, security profiles,
+   * task templates, and custom metrics. For a complete list, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/tagging.html">Tagging
    * resources in Connect Customer</a>.</p> <p>For sample policies that use tags, see
    * <a
@@ -10701,6 +10836,60 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
                                         const UpdateInstanceStorageConfigResponseReceivedHandler& handler,
                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::UpdateInstanceStorageConfig, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the calculation, unit, and/or trend indicator of an existing metric
+   * in the specified Connect Customer instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateMetricContent">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateMetricContentOutcome UpdateMetricContent(const Model::UpdateMetricContentRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateMetricContent that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateMetricContentRequestT = Model::UpdateMetricContentRequest>
+  Model::UpdateMetricContentOutcomeCallable UpdateMetricContentCallable(const UpdateMetricContentRequestT& request) const {
+    return SubmitCallable(&ConnectClient::UpdateMetricContent, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateMetricContent that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateMetricContentRequestT = Model::UpdateMetricContentRequest>
+  void UpdateMetricContentAsync(const UpdateMetricContentRequestT& request, const UpdateMetricContentResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::UpdateMetricContent, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the name and/or description of an existing metric in the specified
+   * Connect Customer instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateMetricMetadata">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateMetricMetadataOutcome UpdateMetricMetadata(const Model::UpdateMetricMetadataRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateMetricMetadata that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateMetricMetadataRequestT = Model::UpdateMetricMetadataRequest>
+  Model::UpdateMetricMetadataOutcomeCallable UpdateMetricMetadataCallable(const UpdateMetricMetadataRequestT& request) const {
+    return SubmitCallable(&ConnectClient::UpdateMetricMetadata, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateMetricMetadata that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateMetricMetadataRequestT = Model::UpdateMetricMetadataRequest>
+  void UpdateMetricMetadataAsync(const UpdateMetricMetadataRequestT& request, const UpdateMetricMetadataResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::UpdateMetricMetadata, request, handler, context);
   }
 
   /**

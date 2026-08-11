@@ -327,6 +327,7 @@
 #include <aws/bedrock-agentcore/model/OAuthGrantType.h>
 #include <aws/bedrock-agentcore/model/Oauth2FlowType.h>
 #include <aws/bedrock-agentcore/model/OnlineEvaluationConfigSource.h>
+#include <aws/bedrock-agentcore/model/OnlineEvaluationTraceConfig.h>
 #include <aws/bedrock-agentcore/model/OperatorType.h>
 #include <aws/bedrock-agentcore/model/OutputConfig.h>
 #include <aws/bedrock-agentcore/model/PayloadType.h>

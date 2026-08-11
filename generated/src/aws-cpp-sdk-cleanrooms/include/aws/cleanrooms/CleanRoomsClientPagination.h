@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/cleanrooms/CleanRoomsClient.h>
+#include <aws/cleanrooms/model/ListAnalysisLogExportsPaginationTraits.h>
 #include <aws/cleanrooms/model/ListAnalysisTemplatesPaginationTraits.h>
 #include <aws/cleanrooms/model/ListCollaborationAnalysisTemplatesPaginationTraits.h>
 #include <aws/cleanrooms/model/ListCollaborationChangeRequestsPaginationTraits.h>
@@ -32,6 +33,9 @@
 namespace Aws {
 namespace CleanRooms {
 
+using ListAnalysisLogExportsPaginator =
+    Aws::Utils::Pagination::Paginator<CleanRoomsClient, Model::ListAnalysisLogExportsRequest,
+                                      Pagination::ListAnalysisLogExportsPaginationTraits<CleanRoomsClient>>;
 using ListAnalysisTemplatesPaginator =
     Aws::Utils::Pagination::Paginator<CleanRoomsClient, Model::ListAnalysisTemplatesRequest,
                                       Pagination::ListAnalysisTemplatesPaginationTraits<CleanRoomsClient>>;

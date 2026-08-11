@@ -94,6 +94,24 @@ class AssetScope {
 
   ///@{
   /**
+   * <p>The name of the materialized asset scope.</p>
+   */
+  inline const Aws::String& GetScopeName() const { return m_scopeName; }
+  inline bool ScopeNameHasBeenSet() const { return m_scopeNameHasBeenSet; }
+  template <typename ScopeNameT = Aws::String>
+  void SetScopeName(ScopeNameT&& value) {
+    m_scopeNameHasBeenSet = true;
+    m_scopeName = std::forward<ScopeNameT>(value);
+  }
+  template <typename ScopeNameT = Aws::String>
+  AssetScope& WithScopeName(ScopeNameT&& value) {
+    SetScopeName(std::forward<ScopeNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The error message of the asset scope.</p>
    */
   inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
@@ -116,10 +134,13 @@ class AssetScope {
 
   Aws::String m_status;
 
+  Aws::String m_scopeName;
+
   Aws::String m_errorMessage;
   bool m_assetIdHasBeenSet = false;
   bool m_filterIdsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_scopeNameHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

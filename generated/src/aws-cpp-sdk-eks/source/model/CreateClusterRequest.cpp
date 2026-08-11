@@ -99,5 +99,17 @@ Aws::String CreateClusterRequest::SerializePayload() const {
     payload.WithObject("controlPlaneScalingConfig", m_controlPlaneScalingConfig.Jsonize());
   }
 
+  if (m_kubeApiServerConfigHasBeenSet) {
+    payload.WithObject("kubeApiServerConfig", m_kubeApiServerConfig.Jsonize());
+  }
+
+  if (m_kubeSchedulerConfigHasBeenSet) {
+    payload.WithObject("kubeSchedulerConfig", m_kubeSchedulerConfig.Jsonize());
+  }
+
+  if (m_kubeControllerManagerConfigHasBeenSet) {
+    payload.WithObject("kubeControllerManagerConfig", m_kubeControllerManagerConfig.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

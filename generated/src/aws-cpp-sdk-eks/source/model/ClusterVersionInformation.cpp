@@ -58,6 +58,18 @@ ClusterVersionInformation& ClusterVersionInformation::operator=(JsonView jsonVal
     m_kubernetesPatchVersion = jsonValue.GetString("kubernetesPatchVersion");
     m_kubernetesPatchVersionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("controlPlaneScalingTiers")) {
+    Aws::Utils::Array<JsonView> controlPlaneScalingTiersJsonList = jsonValue.GetArray("controlPlaneScalingTiers");
+    for (unsigned controlPlaneScalingTiersIndex = 0; controlPlaneScalingTiersIndex < controlPlaneScalingTiersJsonList.GetLength();
+         ++controlPlaneScalingTiersIndex) {
+      m_controlPlaneScalingTiers.push_back(controlPlaneScalingTiersJsonList[controlPlaneScalingTiersIndex].AsObject());
+    }
+    m_controlPlaneScalingTiersHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("controlPlaneComponentConfig")) {
+    m_controlPlaneComponentConfig = jsonValue.GetObject("controlPlaneComponentConfig");
+    m_controlPlaneComponentConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -102,6 +114,20 @@ JsonValue ClusterVersionInformation::Jsonize() const {
 
   if (m_kubernetesPatchVersionHasBeenSet) {
     payload.WithString("kubernetesPatchVersion", m_kubernetesPatchVersion);
+  }
+
+  if (m_controlPlaneScalingTiersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> controlPlaneScalingTiersJsonList(m_controlPlaneScalingTiers.size());
+    for (unsigned controlPlaneScalingTiersIndex = 0; controlPlaneScalingTiersIndex < controlPlaneScalingTiersJsonList.GetLength();
+         ++controlPlaneScalingTiersIndex) {
+      controlPlaneScalingTiersJsonList[controlPlaneScalingTiersIndex].AsObject(
+          m_controlPlaneScalingTiers[controlPlaneScalingTiersIndex].Jsonize());
+    }
+    payload.WithArray("controlPlaneScalingTiers", std::move(controlPlaneScalingTiersJsonList));
+  }
+
+  if (m_controlPlaneComponentConfigHasBeenSet) {
+    payload.WithObject("controlPlaneComponentConfig", m_controlPlaneComponentConfig.Jsonize());
   }
 
   return payload;

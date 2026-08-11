@@ -88,8 +88,7 @@ class CreateIntermediateTableRequest : public CleanRoomsRequest {
   ///@{
   /**
    * <p>The configuration that defines the analysis used to populate the intermediate
-   * table. This configuration contains the SQL query or analysis template
-   * reference.</p>
+   * table.</p>
    */
   inline const PopulationAnalysisConfiguration& GetPopulationAnalysisConfiguration() const { return m_populationAnalysisConfiguration; }
   inline bool PopulationAnalysisConfigurationHasBeenSet() const { return m_populationAnalysisConfigurationHasBeenSet; }
@@ -126,8 +125,7 @@ class CreateIntermediateTableRequest : public CleanRoomsRequest {
 
   ///@{
   /**
-   * <p>The number of days to retain populated data versions. Minimum value of 1,
-   * maximum value of 365.</p>
+   * <p>The number of days to retain populated data versions.</p>
    */
   inline int GetRetentionInDays() const { return m_retentionInDays; }
   inline bool RetentionInDaysHasBeenSet() const { return m_retentionInDaysHasBeenSet; }

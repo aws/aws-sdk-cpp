@@ -20,7 +20,7 @@ namespace CleanRooms {
 namespace Model {
 
 /**
- * <p>The compute configuration for an intermediate table population
+ * <p>Contains the compute configuration for an intermediate table population
  * operation.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/IntermediateTableComputeConfiguration">AWS
  * API Reference</a></p>

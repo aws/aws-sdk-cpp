@@ -59,7 +59,7 @@ class SearchResourceTagsRequest : public ConnectRequest {
    * <p>standard-queue</p> </li> <li> <p>security-profile</p> </li> <li>
    * <p>operating-hours</p> </li> <li> <p>prompt</p> </li> <li> <p>contact-flow</p>
    * </li> <li> <p>flow- module</p> </li> <li> <p>transfer-destination (also known as
-   * quick connect)</p> </li> </ul>
+   * quick connect)</p> </li> <li> <p>metric</p> </li> </ul>
    */
   inline const Aws::Vector<Aws::String>& GetResourceTypes() const { return m_resourceTypes; }
   inline bool ResourceTypesHasBeenSet() const { return m_resourceTypesHasBeenSet; }

@@ -110,6 +110,8 @@
 #include <aws/connect/model/AutoEvaluationDetails.h>
 #include <aws/connect/model/AutoEvaluationStatus.h>
 #include <aws/connect/model/AutomaticFailConfiguration.h>
+#include <aws/connect/model/AvailableFilter.h>
+#include <aws/connect/model/AvailableFilterType.h>
 #include <aws/connect/model/AvailableNumberSummary.h>
 #include <aws/connect/model/BatchAssociateAnalyticsDataSetRequest.h>
 #include <aws/connect/model/BatchAssociateAnalyticsDataSetResult.h>
@@ -141,6 +143,7 @@
 #include <aws/connect/model/BehaviorType.h>
 #include <aws/connect/model/BooleanComparisonType.h>
 #include <aws/connect/model/BooleanCondition.h>
+#include <aws/connect/model/CalculationComponent.h>
 #include <aws/connect/model/Campaign.h>
 #include <aws/connect/model/CaseSlaConfiguration.h>
 #include <aws/connect/model/Channel.h>
@@ -250,6 +253,8 @@
 #include <aws/connect/model/CreateInstanceResult.h>
 #include <aws/connect/model/CreateIntegrationAssociationRequest.h>
 #include <aws/connect/model/CreateIntegrationAssociationResult.h>
+#include <aws/connect/model/CreateMetricRequest.h>
+#include <aws/connect/model/CreateMetricResult.h>
 #include <aws/connect/model/CreateNotificationRequest.h>
 #include <aws/connect/model/CreateNotificationResult.h>
 #include <aws/connect/model/CreateParticipantRequest.h>
@@ -356,6 +361,8 @@
 #include <aws/connect/model/DeleteHoursOfOperationRequest.h>
 #include <aws/connect/model/DeleteInstanceRequest.h>
 #include <aws/connect/model/DeleteIntegrationAssociationRequest.h>
+#include <aws/connect/model/DeleteMetricRequest.h>
+#include <aws/connect/model/DeleteMetricResult.h>
 #include <aws/connect/model/DeleteNotificationRequest.h>
 #include <aws/connect/model/DeleteNotificationResult.h>
 #include <aws/connect/model/DeletePredefinedAttributeRequest.h>
@@ -424,6 +431,8 @@
 #include <aws/connect/model/DescribeInstanceResult.h>
 #include <aws/connect/model/DescribeInstanceStorageConfigRequest.h>
 #include <aws/connect/model/DescribeInstanceStorageConfigResult.h>
+#include <aws/connect/model/DescribeMetricRequest.h>
+#include <aws/connect/model/DescribeMetricResult.h>
 #include <aws/connect/model/DescribeNotificationRequest.h>
 #include <aws/connect/model/DescribeNotificationResult.h>
 #include <aws/connect/model/DescribePhoneNumberRequest.h>
@@ -795,6 +804,8 @@
 #include <aws/connect/model/ListLambdaFunctionsResult.h>
 #include <aws/connect/model/ListLexBotsRequest.h>
 #include <aws/connect/model/ListLexBotsResult.h>
+#include <aws/connect/model/ListMetricsRequest.h>
+#include <aws/connect/model/ListMetricsResult.h>
 #include <aws/connect/model/ListNotificationsRequest.h>
 #include <aws/connect/model/ListNotificationsResult.h>
 #include <aws/connect/model/ListPhoneNumbersRequest.h>
@@ -879,10 +890,26 @@
 #include <aws/connect/model/Meeting.h>
 #include <aws/connect/model/MeetingFeatureStatus.h>
 #include <aws/connect/model/MeetingFeaturesConfiguration.h>
+#include <aws/connect/model/MetricCalculation.h>
+#include <aws/connect/model/MetricCreationMethod.h>
 #include <aws/connect/model/MetricDataV2.h>
+#include <aws/connect/model/MetricDefinition.h>
+#include <aws/connect/model/MetricFilter.h>
+#include <aws/connect/model/MetricFilterBooleanCondition.h>
+#include <aws/connect/model/MetricFilterBooleanConditionComparison.h>
+#include <aws/connect/model/MetricFilterNumberCondition.h>
+#include <aws/connect/model/MetricFilterNumberConditionComparison.h>
+#include <aws/connect/model/MetricFilterStringCondition.h>
+#include <aws/connect/model/MetricFilterStringConditionComparison.h>
 #include <aws/connect/model/MetricFilterV2.h>
 #include <aws/connect/model/MetricInterval.h>
 #include <aws/connect/model/MetricResultV2.h>
+#include <aws/connect/model/MetricSearchCriteria.h>
+#include <aws/connect/model/MetricSearchFilter.h>
+#include <aws/connect/model/MetricStatus.h>
+#include <aws/connect/model/MetricSummary.h>
+#include <aws/connect/model/MetricType.h>
+#include <aws/connect/model/MetricUnit.h>
 #include <aws/connect/model/MetricV2.h>
 #include <aws/connect/model/MonitorCapability.h>
 #include <aws/connect/model/MonitorContactRequest.h>
@@ -1112,6 +1139,8 @@
 #include <aws/connect/model/SearchHoursOfOperationOverridesResult.h>
 #include <aws/connect/model/SearchHoursOfOperationsRequest.h>
 #include <aws/connect/model/SearchHoursOfOperationsResult.h>
+#include <aws/connect/model/SearchMetricsRequest.h>
+#include <aws/connect/model/SearchMetricsResult.h>
 #include <aws/connect/model/SearchNotificationsRequest.h>
 #include <aws/connect/model/SearchNotificationsResult.h>
 #include <aws/connect/model/SearchPredefinedAttributesRequest.h>
@@ -1282,6 +1311,7 @@
 #include <aws/connect/model/TranscriptCriteria.h>
 #include <aws/connect/model/TransferContactRequest.h>
 #include <aws/connect/model/TransferContactResult.h>
+#include <aws/connect/model/TrendIndicator.h>
 #include <aws/connect/model/Unit.h>
 #include <aws/connect/model/UntagContactRequest.h>
 #include <aws/connect/model/UntagContactResult.h>
@@ -1329,6 +1359,10 @@
 #include <aws/connect/model/UpdateHoursOfOperationRequest.h>
 #include <aws/connect/model/UpdateInstanceAttributeRequest.h>
 #include <aws/connect/model/UpdateInstanceStorageConfigRequest.h>
+#include <aws/connect/model/UpdateMetricContentRequest.h>
+#include <aws/connect/model/UpdateMetricContentResult.h>
+#include <aws/connect/model/UpdateMetricMetadataRequest.h>
+#include <aws/connect/model/UpdateMetricMetadataResult.h>
 #include <aws/connect/model/UpdateNotificationContentRequest.h>
 #include <aws/connect/model/UpdateNotificationContentResult.h>
 #include <aws/connect/model/UpdateParticipantAuthenticationRequest.h>

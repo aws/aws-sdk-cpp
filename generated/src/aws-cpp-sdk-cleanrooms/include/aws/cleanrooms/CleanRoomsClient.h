@@ -463,11 +463,10 @@ class AWS_CLEANROOMS_API CleanRoomsClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates an intermediate table in a membership. An intermediate table stores a
-   * query definition that you can execute later using
-   * <code>PopulateIntermediateTable</code> to materialize cached results. The
-   * intermediate table is owned by the member with the CAN_QUERY ability. This
-   * operation does not execute the stored query.</p><p><h3>See Also:</h3>   <a
+   * <p>Creates an intermediate table in a membership. The intermediate table is
+   * owned by the member with the CAN_QUERY ability. To populate the table with
+   * results, use <code>PopulateIntermediateTable</code>.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateIntermediateTable">AWS
    * API Reference</a></p>
    */
@@ -495,9 +494,7 @@ class AWS_CLEANROOMS_API CleanRoomsClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Creates an analysis rule for an intermediate table. Only the CUSTOM analysis
-   * rule type is supported. The service automatically determines whether the rule is
-   * first-party or multi-party restricted based on the intermediate table's
-   * inherited constraints. Only the intermediate table owner can call this
+   * rule type is supported. Only the intermediate table owner can call this
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateIntermediateTableAnalysisRule">AWS
    * API Reference</a></p>
@@ -841,10 +838,8 @@ class AWS_CLEANROOMS_API CleanRoomsClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Deletes an intermediate table. When you delete the table, the service marks
-   * it as DELETED, removes its analysis rule and schema, and triggers storage
-   * cleanup. This operation is idempotent. Only the intermediate table owner can
-   * call this operation.</p><p><h3>See Also:</h3>   <a
+   * <p>Deletes an intermediate table. The delete is idempotent. Only the
+   * intermediate table owner can call this operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteIntermediateTable">AWS
    * API Reference</a></p>
    */
@@ -988,10 +983,10 @@ class AWS_CLEANROOMS_API CleanRoomsClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Invalidates a specific intermediate table that references the caller's base
+   * <p>Marks an intermediate table as invalid when it references the caller's base
    * table. The data provider (base table owner) calls this operation, not the
-   * intermediate table owner. By default, invalidation cascades to descendant
-   * intermediate tables.</p><p><h3>See Also:</h3>   <a
+   * intermediate table owner. By default, the operation also marks all descendant
+   * intermediate tables as invalid.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DisallowIntermediateTable">AWS
    * API Reference</a></p>
    */
@@ -1016,6 +1011,36 @@ class AWS_CLEANROOMS_API CleanRoomsClient : public Aws::Client::AWSJsonClient,
                                       const DisallowIntermediateTableResponseReceivedHandler& handler,
                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CleanRoomsClient::DisallowIntermediateTable, request, handler, context);
+  }
+
+  /**
+   * <p>Returns information about an analysis log export, including its current
+   * status and, if the export failed, the reason for the failure.</p> <p>Poll this
+   * operation until the <code>status</code> is <code>SUCCESS</code> or
+   * <code>FAILED</code>. An export can't be canceled after it starts.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetAnalysisLogExport">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetAnalysisLogExportOutcome GetAnalysisLogExport(const Model::GetAnalysisLogExportRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetAnalysisLogExport that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetAnalysisLogExportRequestT = Model::GetAnalysisLogExportRequest>
+  Model::GetAnalysisLogExportOutcomeCallable GetAnalysisLogExportCallable(const GetAnalysisLogExportRequestT& request) const {
+    return SubmitCallable(&CleanRoomsClient::GetAnalysisLogExport, request);
+  }
+
+  /**
+   * An Async wrapper for GetAnalysisLogExport that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetAnalysisLogExportRequestT = Model::GetAnalysisLogExportRequest>
+  void GetAnalysisLogExportAsync(const GetAnalysisLogExportRequestT& request, const GetAnalysisLogExportResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CleanRoomsClient::GetAnalysisLogExport, request, handler, context);
   }
 
   /**
@@ -1636,6 +1661,35 @@ class AWS_CLEANROOMS_API CleanRoomsClient : public Aws::Client::AWSJsonClient,
   void GetSchemaAnalysisRuleAsync(const GetSchemaAnalysisRuleRequestT& request, const GetSchemaAnalysisRuleResponseReceivedHandler& handler,
                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CleanRoomsClient::GetSchemaAnalysisRule, request, handler, context);
+  }
+
+  /**
+   * <p>Lists analysis log exports, sorted by the most recent export. Results are
+   * paginated. Use the <code>nextToken</code> parameter to retrieve additional
+   * results.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListAnalysisLogExports">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAnalysisLogExportsOutcome ListAnalysisLogExports(const Model::ListAnalysisLogExportsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListAnalysisLogExports that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListAnalysisLogExportsRequestT = Model::ListAnalysisLogExportsRequest>
+  Model::ListAnalysisLogExportsOutcomeCallable ListAnalysisLogExportsCallable(const ListAnalysisLogExportsRequestT& request) const {
+    return SubmitCallable(&CleanRoomsClient::ListAnalysisLogExports, request);
+  }
+
+  /**
+   * An Async wrapper for ListAnalysisLogExports that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListAnalysisLogExportsRequestT = Model::ListAnalysisLogExportsRequest>
+  void ListAnalysisLogExportsAsync(const ListAnalysisLogExportsRequestT& request,
+                                   const ListAnalysisLogExportsResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CleanRoomsClient::ListAnalysisLogExports, request, handler, context);
   }
 
   /**
@@ -2325,11 +2379,11 @@ class AWS_CLEANROOMS_API CleanRoomsClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Executes the stored query of an intermediate table to materialize data into
-   * managed storage. With this operation, you can perform initial population and
-   * subsequent refreshes. Each call creates a new version. The returned analysis ID
-   * can be tracked using <code>GetProtectedQuery</code>. Only the intermediate table
-   * owner can call this operation.</p><p><h3>See Also:</h3>   <a
+   * <p>Runs the stored query of an intermediate table and makes the results
+   * available for querying. Each call creates a new version. Use
+   * <code>GetProtectedQuery</code> with the returned analysis ID to track progress.
+   * Only the intermediate table owner can call this operation.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/PopulateIntermediateTable">AWS
    * API Reference</a></p>
    */
@@ -2381,6 +2435,53 @@ class AWS_CLEANROOMS_API CleanRoomsClient : public Aws::Client::AWSJsonClient,
   void PreviewPrivacyImpactAsync(const PreviewPrivacyImpactRequestT& request, const PreviewPrivacyImpactResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CleanRoomsClient::PreviewPrivacyImpact, request, handler, context);
+  }
+
+  /**
+   * <p>Starts an export of the Apache Spark logs for a protected query to an Amazon
+   * S3 bucket that you own. Use the exported logs to diagnose a query that failed or
+   * that ran more slowly than you expected.</p> <p>Clean Rooms exports a redacted
+   * copy of the Spark logs instead of the raw logs. Analyze the exported logs with
+   * the tooling of your choice, such as Spark History Server. For details about what
+   * the exported logs contain, see <a
+   * href="https://docs.aws.amazon.com/clean-rooms/latest/userguide/export-analysis-logs-contents.html">https://docs.aws.amazon.com/clean-rooms/latest/userguide/export-analysis-logs-contents.html</a>.</p>
+   * <p>The export runs asynchronously and returns with a <code>status</code> of
+   * <code>IN_PROGRESS</code>. Call <code>GetAnalysisLogExport</code> to poll for the
+   * final status.</p>  <p>To use this operation, you must have the
+   * <code>CAN_EXPORT_QUERY_ANALYSIS_LOG</code> ability for your membership. You must
+   * also be the query runner or the query payer. Having the ability alone is not
+   * sufficient.</p> <p>The query must have reached a terminal state, and it must
+   * have reached the execution stage. A query that failed validation or that was
+   * canceled before it started produces no Spark logs.</p> <p>Log export isn't
+   * supported for queries that use differential privacy, and isn't supported for
+   * PySpark jobs.</p> <p>The destination bucket must be in the same Amazon Web
+   * Services Region as the collaboration. Cross-Region export isn't supported.</p>
+   *  <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/clean-rooms/latest/userguide/export-analysis-logs.html">https://docs.aws.amazon.com/clean-rooms/latest/userguide/export-analysis-logs.html</a>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/StartAnalysisLogExport">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartAnalysisLogExportOutcome StartAnalysisLogExport(const Model::StartAnalysisLogExportRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartAnalysisLogExport that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartAnalysisLogExportRequestT = Model::StartAnalysisLogExportRequest>
+  Model::StartAnalysisLogExportOutcomeCallable StartAnalysisLogExportCallable(const StartAnalysisLogExportRequestT& request) const {
+    return SubmitCallable(&CleanRoomsClient::StartAnalysisLogExport, request);
+  }
+
+  /**
+   * An Async wrapper for StartAnalysisLogExport that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StartAnalysisLogExportRequestT = Model::StartAnalysisLogExportRequest>
+  void StartAnalysisLogExportAsync(const StartAnalysisLogExportRequestT& request,
+                                   const StartAnalysisLogExportResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CleanRoomsClient::StartAnalysisLogExport, request, handler, context);
   }
 
   /**

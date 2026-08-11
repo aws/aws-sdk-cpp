@@ -40,6 +40,7 @@
 #include <aws/connect/model/ListIntegrationAssociationsPaginationTraits.h>
 #include <aws/connect/model/ListLambdaFunctionsPaginationTraits.h>
 #include <aws/connect/model/ListLexBotsPaginationTraits.h>
+#include <aws/connect/model/ListMetricsPaginationTraits.h>
 #include <aws/connect/model/ListPhoneNumbersPaginationTraits.h>
 #include <aws/connect/model/ListPhoneNumbersV2PaginationTraits.h>
 #include <aws/connect/model/ListPredefinedAttributesPaginationTraits.h>
@@ -77,6 +78,7 @@
 #include <aws/connect/model/SearchDataTablesPaginationTraits.h>
 #include <aws/connect/model/SearchHoursOfOperationOverridesPaginationTraits.h>
 #include <aws/connect/model/SearchHoursOfOperationsPaginationTraits.h>
+#include <aws/connect/model/SearchMetricsPaginationTraits.h>
 #include <aws/connect/model/SearchPredefinedAttributesPaginationTraits.h>
 #include <aws/connect/model/SearchPromptsPaginationTraits.h>
 #include <aws/connect/model/SearchQueuesPaginationTraits.h>
@@ -185,6 +187,8 @@ using ListLambdaFunctionsPaginator = Aws::Utils::Pagination::Paginator<ConnectCl
                                                                        Pagination::ListLambdaFunctionsPaginationTraits<ConnectClient>>;
 using ListLexBotsPaginator =
     Aws::Utils::Pagination::Paginator<ConnectClient, Model::ListLexBotsRequest, Pagination::ListLexBotsPaginationTraits<ConnectClient>>;
+using ListMetricsPaginator =
+    Aws::Utils::Pagination::Paginator<ConnectClient, Model::ListMetricsRequest, Pagination::ListMetricsPaginationTraits<ConnectClient>>;
 using ListPhoneNumbersPaginator = Aws::Utils::Pagination::Paginator<ConnectClient, Model::ListPhoneNumbersRequest,
                                                                     Pagination::ListPhoneNumbersPaginationTraits<ConnectClient>>;
 using ListPhoneNumbersV2Paginator = Aws::Utils::Pagination::Paginator<ConnectClient, Model::ListPhoneNumbersV2Request,
@@ -274,6 +278,8 @@ using SearchHoursOfOperationOverridesPaginator =
 using SearchHoursOfOperationsPaginator =
     Aws::Utils::Pagination::Paginator<ConnectClient, Model::SearchHoursOfOperationsRequest,
                                       Pagination::SearchHoursOfOperationsPaginationTraits<ConnectClient>>;
+using SearchMetricsPaginator =
+    Aws::Utils::Pagination::Paginator<ConnectClient, Model::SearchMetricsRequest, Pagination::SearchMetricsPaginationTraits<ConnectClient>>;
 using SearchPredefinedAttributesPaginator =
     Aws::Utils::Pagination::Paginator<ConnectClient, Model::SearchPredefinedAttributesRequest,
                                       Pagination::SearchPredefinedAttributesPaginationTraits<ConnectClient>>;

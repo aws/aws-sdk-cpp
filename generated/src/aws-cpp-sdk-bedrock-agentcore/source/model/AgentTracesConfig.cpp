@@ -33,6 +33,10 @@ AgentTracesConfig& AgentTracesConfig::operator=(JsonView jsonValue) {
     m_batchEvaluation = jsonValue.GetObject("batchEvaluation");
     m_batchEvaluationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("onlineEvaluation")) {
+    m_onlineEvaluation = jsonValue.GetObject("onlineEvaluation");
+    m_onlineEvaluationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -53,6 +57,10 @@ JsonValue AgentTracesConfig::Jsonize() const {
 
   if (m_batchEvaluationHasBeenSet) {
     payload.WithObject("batchEvaluation", m_batchEvaluation.Jsonize());
+  }
+
+  if (m_onlineEvaluationHasBeenSet) {
+    payload.WithObject("onlineEvaluation", m_onlineEvaluation.Jsonize());
   }
 
   return payload;

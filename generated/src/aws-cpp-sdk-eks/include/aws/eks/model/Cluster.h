@@ -18,6 +18,9 @@
 #include <aws/eks/model/ControlPlaneScalingConfig.h>
 #include <aws/eks/model/EncryptionConfig.h>
 #include <aws/eks/model/Identity.h>
+#include <aws/eks/model/KubeApiServerConfigResponse.h>
+#include <aws/eks/model/KubeControllerManagerConfigResponse.h>
+#include <aws/eks/model/KubeSchedulerConfigResponse.h>
 #include <aws/eks/model/KubernetesNetworkConfigResponse.h>
 #include <aws/eks/model/Logging.h>
 #include <aws/eks/model/OutpostConfigResponse.h>
@@ -601,6 +604,60 @@ class Cluster {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Kubernetes API server configuration for the cluster.</p>
+   */
+  inline const KubeApiServerConfigResponse& GetKubeApiServerConfig() const { return m_kubeApiServerConfig; }
+  inline bool KubeApiServerConfigHasBeenSet() const { return m_kubeApiServerConfigHasBeenSet; }
+  template <typename KubeApiServerConfigT = KubeApiServerConfigResponse>
+  void SetKubeApiServerConfig(KubeApiServerConfigT&& value) {
+    m_kubeApiServerConfigHasBeenSet = true;
+    m_kubeApiServerConfig = std::forward<KubeApiServerConfigT>(value);
+  }
+  template <typename KubeApiServerConfigT = KubeApiServerConfigResponse>
+  Cluster& WithKubeApiServerConfig(KubeApiServerConfigT&& value) {
+    SetKubeApiServerConfig(std::forward<KubeApiServerConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Kubernetes scheduler configuration for the cluster.</p>
+   */
+  inline const KubeSchedulerConfigResponse& GetKubeSchedulerConfig() const { return m_kubeSchedulerConfig; }
+  inline bool KubeSchedulerConfigHasBeenSet() const { return m_kubeSchedulerConfigHasBeenSet; }
+  template <typename KubeSchedulerConfigT = KubeSchedulerConfigResponse>
+  void SetKubeSchedulerConfig(KubeSchedulerConfigT&& value) {
+    m_kubeSchedulerConfigHasBeenSet = true;
+    m_kubeSchedulerConfig = std::forward<KubeSchedulerConfigT>(value);
+  }
+  template <typename KubeSchedulerConfigT = KubeSchedulerConfigResponse>
+  Cluster& WithKubeSchedulerConfig(KubeSchedulerConfigT&& value) {
+    SetKubeSchedulerConfig(std::forward<KubeSchedulerConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Kubernetes controller manager configuration for the cluster.</p>
+   */
+  inline const KubeControllerManagerConfigResponse& GetKubeControllerManagerConfig() const { return m_kubeControllerManagerConfig; }
+  inline bool KubeControllerManagerConfigHasBeenSet() const { return m_kubeControllerManagerConfigHasBeenSet; }
+  template <typename KubeControllerManagerConfigT = KubeControllerManagerConfigResponse>
+  void SetKubeControllerManagerConfig(KubeControllerManagerConfigT&& value) {
+    m_kubeControllerManagerConfigHasBeenSet = true;
+    m_kubeControllerManagerConfig = std::forward<KubeControllerManagerConfigT>(value);
+  }
+  template <typename KubeControllerManagerConfigT = KubeControllerManagerConfigResponse>
+  Cluster& WithKubeControllerManagerConfig(KubeControllerManagerConfigT&& value) {
+    SetKubeControllerManagerConfig(std::forward<KubeControllerManagerConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -657,6 +714,12 @@ class Cluster {
   bool m_deletionProtection{false};
 
   ControlPlaneScalingConfig m_controlPlaneScalingConfig;
+
+  KubeApiServerConfigResponse m_kubeApiServerConfig;
+
+  KubeSchedulerConfigResponse m_kubeSchedulerConfig;
+
+  KubeControllerManagerConfigResponse m_kubeControllerManagerConfig;
   bool m_nameHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
@@ -685,6 +748,9 @@ class Cluster {
   bool m_storageConfigHasBeenSet = false;
   bool m_deletionProtectionHasBeenSet = false;
   bool m_controlPlaneScalingConfigHasBeenSet = false;
+  bool m_kubeApiServerConfigHasBeenSet = false;
+  bool m_kubeSchedulerConfigHasBeenSet = false;
+  bool m_kubeControllerManagerConfigHasBeenSet = false;
 };
 
 }  // namespace Model

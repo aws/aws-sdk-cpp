@@ -18,6 +18,7 @@ namespace MemberAbilityMapper {
 static const int CAN_QUERY_HASH = HashingUtils::HashString("CAN_QUERY");
 static const int CAN_RECEIVE_RESULTS_HASH = HashingUtils::HashString("CAN_RECEIVE_RESULTS");
 static const int CAN_RUN_JOB_HASH = HashingUtils::HashString("CAN_RUN_JOB");
+static const int CAN_EXPORT_QUERY_ANALYSIS_LOG_HASH = HashingUtils::HashString("CAN_EXPORT_QUERY_ANALYSIS_LOG");
 
 MemberAbility GetMemberAbilityForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ MemberAbility GetMemberAbilityForName(const Aws::String& name) {
     return MemberAbility::CAN_RECEIVE_RESULTS;
   } else if (hashCode == CAN_RUN_JOB_HASH) {
     return MemberAbility::CAN_RUN_JOB;
+  } else if (hashCode == CAN_EXPORT_QUERY_ANALYSIS_LOG_HASH) {
+    return MemberAbility::CAN_EXPORT_QUERY_ANALYSIS_LOG;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForMemberAbility(MemberAbility enumValue) {
       return "CAN_RECEIVE_RESULTS";
     case MemberAbility::CAN_RUN_JOB:
       return "CAN_RUN_JOB";
+    case MemberAbility::CAN_EXPORT_QUERY_ANALYSIS_LOG:
+      return "CAN_EXPORT_QUERY_ANALYSIS_LOG";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

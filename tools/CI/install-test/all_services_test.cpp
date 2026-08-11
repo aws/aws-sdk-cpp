@@ -5,6 +5,7 @@
 #include <aws/core/Aws.h>
 #include <aws/AWSMigrationHub/MigrationHubClient.h>
 #include <aws/accessanalyzer/AccessAnalyzerClient.h>
+#include <aws/account-access/AccountAccessClient.h>
 #include <aws/account/AccountClient.h>
 #include <aws/acm-pca/ACMPCAClient.h>
 #include <aws/acm/ACMClient.h>

@@ -7,6 +7,7 @@
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
 #include <aws/bedrock-agentcore/model/BatchEvaluationTraceConfig.h>
 #include <aws/bedrock-agentcore/model/CloudWatchLogsTraceConfig.h>
+#include <aws/bedrock-agentcore/model/OnlineEvaluationTraceConfig.h>
 #include <aws/core/utils/Document.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -94,15 +95,37 @@ class AgentTracesConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Agent traces from an online evaluation configuration over a specified time
+   * range.</p>
+   */
+  inline const OnlineEvaluationTraceConfig& GetOnlineEvaluation() const { return m_onlineEvaluation; }
+  inline bool OnlineEvaluationHasBeenSet() const { return m_onlineEvaluationHasBeenSet; }
+  template <typename OnlineEvaluationT = OnlineEvaluationTraceConfig>
+  void SetOnlineEvaluation(OnlineEvaluationT&& value) {
+    m_onlineEvaluationHasBeenSet = true;
+    m_onlineEvaluation = std::forward<OnlineEvaluationT>(value);
+  }
+  template <typename OnlineEvaluationT = OnlineEvaluationTraceConfig>
+  AgentTracesConfig& WithOnlineEvaluation(OnlineEvaluationT&& value) {
+    SetOnlineEvaluation(std::forward<OnlineEvaluationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::Utils::Document> m_sessionSpans;
 
   CloudWatchLogsTraceConfig m_cloudwatchLogs;
 
   BatchEvaluationTraceConfig m_batchEvaluation;
+
+  OnlineEvaluationTraceConfig m_onlineEvaluation;
   bool m_sessionSpansHasBeenSet = false;
   bool m_cloudwatchLogsHasBeenSet = false;
   bool m_batchEvaluationHasBeenSet = false;
+  bool m_onlineEvaluationHasBeenSet = false;
 };
 
 }  // namespace Model

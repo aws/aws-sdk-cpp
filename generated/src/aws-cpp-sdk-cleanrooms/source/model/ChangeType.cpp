@@ -25,6 +25,8 @@ static const int GRANT_CAN_RECEIVE_MODEL_OUTPUT_HASH = HashingUtils::HashString(
 static const int GRANT_CAN_RECEIVE_INFERENCE_OUTPUT_HASH = HashingUtils::HashString("GRANT_CAN_RECEIVE_INFERENCE_OUTPUT");
 static const int REVOKE_CAN_RECEIVE_MODEL_OUTPUT_HASH = HashingUtils::HashString("REVOKE_CAN_RECEIVE_MODEL_OUTPUT");
 static const int REVOKE_CAN_RECEIVE_INFERENCE_OUTPUT_HASH = HashingUtils::HashString("REVOKE_CAN_RECEIVE_INFERENCE_OUTPUT");
+static const int GRANT_EXPORT_QUERY_ANALYSIS_LOG_ABILITY_HASH = HashingUtils::HashString("GRANT_EXPORT_QUERY_ANALYSIS_LOG_ABILITY");
+static const int REVOKE_EXPORT_QUERY_ANALYSIS_LOG_ABILITY_HASH = HashingUtils::HashString("REVOKE_EXPORT_QUERY_ANALYSIS_LOG_ABILITY");
 
 ChangeType GetChangeTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -48,6 +50,10 @@ ChangeType GetChangeTypeForName(const Aws::String& name) {
     return ChangeType::REVOKE_CAN_RECEIVE_MODEL_OUTPUT;
   } else if (hashCode == REVOKE_CAN_RECEIVE_INFERENCE_OUTPUT_HASH) {
     return ChangeType::REVOKE_CAN_RECEIVE_INFERENCE_OUTPUT;
+  } else if (hashCode == GRANT_EXPORT_QUERY_ANALYSIS_LOG_ABILITY_HASH) {
+    return ChangeType::GRANT_EXPORT_QUERY_ANALYSIS_LOG_ABILITY;
+  } else if (hashCode == REVOKE_EXPORT_QUERY_ANALYSIS_LOG_ABILITY_HASH) {
+    return ChangeType::REVOKE_EXPORT_QUERY_ANALYSIS_LOG_ABILITY;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -82,6 +88,10 @@ Aws::String GetNameForChangeType(ChangeType enumValue) {
       return "REVOKE_CAN_RECEIVE_MODEL_OUTPUT";
     case ChangeType::REVOKE_CAN_RECEIVE_INFERENCE_OUTPUT:
       return "REVOKE_CAN_RECEIVE_INFERENCE_OUTPUT";
+    case ChangeType::GRANT_EXPORT_QUERY_ANALYSIS_LOG_ABILITY:
+      return "GRANT_EXPORT_QUERY_ANALYSIS_LOG_ABILITY";
+    case ChangeType::REVOKE_EXPORT_QUERY_ANALYSIS_LOG_ABILITY:
+      return "REVOKE_EXPORT_QUERY_ANALYSIS_LOG_ABILITY";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

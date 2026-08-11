@@ -51,6 +51,7 @@
 #include <aws/cleanrooms/model/DeleteMembershipResult.h>
 #include <aws/cleanrooms/model/DeletePrivacyBudgetTemplateResult.h>
 #include <aws/cleanrooms/model/DisallowIntermediateTableResult.h>
+#include <aws/cleanrooms/model/GetAnalysisLogExportResult.h>
 #include <aws/cleanrooms/model/GetAnalysisTemplateResult.h>
 #include <aws/cleanrooms/model/GetCollaborationAnalysisTemplateResult.h>
 #include <aws/cleanrooms/model/GetCollaborationChangeRequestResult.h>
@@ -73,6 +74,7 @@
 #include <aws/cleanrooms/model/GetProtectedQueryResult.h>
 #include <aws/cleanrooms/model/GetSchemaAnalysisRuleResult.h>
 #include <aws/cleanrooms/model/GetSchemaResult.h>
+#include <aws/cleanrooms/model/ListAnalysisLogExportsResult.h>
 #include <aws/cleanrooms/model/ListAnalysisTemplatesResult.h>
 #include <aws/cleanrooms/model/ListCollaborationAnalysisTemplatesResult.h>
 #include <aws/cleanrooms/model/ListCollaborationChangeRequestsResult.h>
@@ -102,6 +104,7 @@
 #include <aws/cleanrooms/model/PopulateIdMappingTableResult.h>
 #include <aws/cleanrooms/model/PopulateIntermediateTableResult.h>
 #include <aws/cleanrooms/model/PreviewPrivacyImpactResult.h>
+#include <aws/cleanrooms/model/StartAnalysisLogExportResult.h>
 #include <aws/cleanrooms/model/StartProtectedJobResult.h>
 #include <aws/cleanrooms/model/StartProtectedQueryResult.h>
 #include <aws/cleanrooms/model/TagResourceResult.h>
@@ -187,6 +190,7 @@ class DeleteMemberRequest;
 class DeleteMembershipRequest;
 class DeletePrivacyBudgetTemplateRequest;
 class DisallowIntermediateTableRequest;
+class GetAnalysisLogExportRequest;
 class GetAnalysisTemplateRequest;
 class GetCollaborationRequest;
 class GetCollaborationAnalysisTemplateRequest;
@@ -209,6 +213,7 @@ class GetProtectedJobRequest;
 class GetProtectedQueryRequest;
 class GetSchemaRequest;
 class GetSchemaAnalysisRuleRequest;
+class ListAnalysisLogExportsRequest;
 class ListAnalysisTemplatesRequest;
 class ListCollaborationAnalysisTemplatesRequest;
 class ListCollaborationChangeRequestsRequest;
@@ -235,6 +240,7 @@ class ListTagsForResourceRequest;
 class PopulateIdMappingTableRequest;
 class PopulateIntermediateTableRequest;
 class PreviewPrivacyImpactRequest;
+class StartAnalysisLogExportRequest;
 class StartProtectedJobRequest;
 class StartProtectedQueryRequest;
 class TagResourceRequest;
@@ -294,6 +300,7 @@ typedef Aws::Utils::Outcome<DeleteMemberResult, CleanRoomsError> DeleteMemberOut
 typedef Aws::Utils::Outcome<DeleteMembershipResult, CleanRoomsError> DeleteMembershipOutcome;
 typedef Aws::Utils::Outcome<DeletePrivacyBudgetTemplateResult, CleanRoomsError> DeletePrivacyBudgetTemplateOutcome;
 typedef Aws::Utils::Outcome<DisallowIntermediateTableResult, CleanRoomsError> DisallowIntermediateTableOutcome;
+typedef Aws::Utils::Outcome<GetAnalysisLogExportResult, CleanRoomsError> GetAnalysisLogExportOutcome;
 typedef Aws::Utils::Outcome<GetAnalysisTemplateResult, CleanRoomsError> GetAnalysisTemplateOutcome;
 typedef Aws::Utils::Outcome<GetCollaborationResult, CleanRoomsError> GetCollaborationOutcome;
 typedef Aws::Utils::Outcome<GetCollaborationAnalysisTemplateResult, CleanRoomsError> GetCollaborationAnalysisTemplateOutcome;
@@ -318,6 +325,7 @@ typedef Aws::Utils::Outcome<GetProtectedJobResult, CleanRoomsError> GetProtected
 typedef Aws::Utils::Outcome<GetProtectedQueryResult, CleanRoomsError> GetProtectedQueryOutcome;
 typedef Aws::Utils::Outcome<GetSchemaResult, CleanRoomsError> GetSchemaOutcome;
 typedef Aws::Utils::Outcome<GetSchemaAnalysisRuleResult, CleanRoomsError> GetSchemaAnalysisRuleOutcome;
+typedef Aws::Utils::Outcome<ListAnalysisLogExportsResult, CleanRoomsError> ListAnalysisLogExportsOutcome;
 typedef Aws::Utils::Outcome<ListAnalysisTemplatesResult, CleanRoomsError> ListAnalysisTemplatesOutcome;
 typedef Aws::Utils::Outcome<ListCollaborationAnalysisTemplatesResult, CleanRoomsError> ListCollaborationAnalysisTemplatesOutcome;
 typedef Aws::Utils::Outcome<ListCollaborationChangeRequestsResult, CleanRoomsError> ListCollaborationChangeRequestsOutcome;
@@ -346,6 +354,7 @@ typedef Aws::Utils::Outcome<ListTagsForResourceResult, CleanRoomsError> ListTags
 typedef Aws::Utils::Outcome<PopulateIdMappingTableResult, CleanRoomsError> PopulateIdMappingTableOutcome;
 typedef Aws::Utils::Outcome<PopulateIntermediateTableResult, CleanRoomsError> PopulateIntermediateTableOutcome;
 typedef Aws::Utils::Outcome<PreviewPrivacyImpactResult, CleanRoomsError> PreviewPrivacyImpactOutcome;
+typedef Aws::Utils::Outcome<StartAnalysisLogExportResult, CleanRoomsError> StartAnalysisLogExportOutcome;
 typedef Aws::Utils::Outcome<StartProtectedJobResult, CleanRoomsError> StartProtectedJobOutcome;
 typedef Aws::Utils::Outcome<StartProtectedQueryResult, CleanRoomsError> StartProtectedQueryOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, CleanRoomsError> TagResourceOutcome;
@@ -403,6 +412,7 @@ typedef std::future<DeleteMemberOutcome> DeleteMemberOutcomeCallable;
 typedef std::future<DeleteMembershipOutcome> DeleteMembershipOutcomeCallable;
 typedef std::future<DeletePrivacyBudgetTemplateOutcome> DeletePrivacyBudgetTemplateOutcomeCallable;
 typedef std::future<DisallowIntermediateTableOutcome> DisallowIntermediateTableOutcomeCallable;
+typedef std::future<GetAnalysisLogExportOutcome> GetAnalysisLogExportOutcomeCallable;
 typedef std::future<GetAnalysisTemplateOutcome> GetAnalysisTemplateOutcomeCallable;
 typedef std::future<GetCollaborationOutcome> GetCollaborationOutcomeCallable;
 typedef std::future<GetCollaborationAnalysisTemplateOutcome> GetCollaborationAnalysisTemplateOutcomeCallable;
@@ -426,6 +436,7 @@ typedef std::future<GetProtectedJobOutcome> GetProtectedJobOutcomeCallable;
 typedef std::future<GetProtectedQueryOutcome> GetProtectedQueryOutcomeCallable;
 typedef std::future<GetSchemaOutcome> GetSchemaOutcomeCallable;
 typedef std::future<GetSchemaAnalysisRuleOutcome> GetSchemaAnalysisRuleOutcomeCallable;
+typedef std::future<ListAnalysisLogExportsOutcome> ListAnalysisLogExportsOutcomeCallable;
 typedef std::future<ListAnalysisTemplatesOutcome> ListAnalysisTemplatesOutcomeCallable;
 typedef std::future<ListCollaborationAnalysisTemplatesOutcome> ListCollaborationAnalysisTemplatesOutcomeCallable;
 typedef std::future<ListCollaborationChangeRequestsOutcome> ListCollaborationChangeRequestsOutcomeCallable;
@@ -453,6 +464,7 @@ typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallab
 typedef std::future<PopulateIdMappingTableOutcome> PopulateIdMappingTableOutcomeCallable;
 typedef std::future<PopulateIntermediateTableOutcome> PopulateIntermediateTableOutcomeCallable;
 typedef std::future<PreviewPrivacyImpactOutcome> PreviewPrivacyImpactOutcomeCallable;
+typedef std::future<StartAnalysisLogExportOutcome> StartAnalysisLogExportOutcomeCallable;
 typedef std::future<StartProtectedJobOutcome> StartProtectedJobOutcomeCallable;
 typedef std::future<StartProtectedQueryOutcome> StartProtectedQueryOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -589,6 +601,9 @@ typedef std::function<void(const CleanRoomsClient*, const Model::DeletePrivacyBu
 typedef std::function<void(const CleanRoomsClient*, const Model::DisallowIntermediateTableRequest&,
                            const Model::DisallowIntermediateTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DisallowIntermediateTableResponseReceivedHandler;
+typedef std::function<void(const CleanRoomsClient*, const Model::GetAnalysisLogExportRequest&, const Model::GetAnalysisLogExportOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetAnalysisLogExportResponseReceivedHandler;
 typedef std::function<void(const CleanRoomsClient*, const Model::GetAnalysisTemplateRequest&, const Model::GetAnalysisTemplateOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetAnalysisTemplateResponseReceivedHandler;
@@ -665,6 +680,9 @@ typedef std::function<void(const CleanRoomsClient*, const Model::GetSchemaReques
 typedef std::function<void(const CleanRoomsClient*, const Model::GetSchemaAnalysisRuleRequest&, const Model::GetSchemaAnalysisRuleOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetSchemaAnalysisRuleResponseReceivedHandler;
+typedef std::function<void(const CleanRoomsClient*, const Model::ListAnalysisLogExportsRequest&,
+                           const Model::ListAnalysisLogExportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListAnalysisLogExportsResponseReceivedHandler;
 typedef std::function<void(const CleanRoomsClient*, const Model::ListAnalysisTemplatesRequest&, const Model::ListAnalysisTemplatesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAnalysisTemplatesResponseReceivedHandler;
@@ -752,6 +770,9 @@ typedef std::function<void(const CleanRoomsClient*, const Model::PopulateInterme
 typedef std::function<void(const CleanRoomsClient*, const Model::PreviewPrivacyImpactRequest&, const Model::PreviewPrivacyImpactOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PreviewPrivacyImpactResponseReceivedHandler;
+typedef std::function<void(const CleanRoomsClient*, const Model::StartAnalysisLogExportRequest&,
+                           const Model::StartAnalysisLogExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartAnalysisLogExportResponseReceivedHandler;
 typedef std::function<void(const CleanRoomsClient*, const Model::StartProtectedJobRequest&, const Model::StartProtectedJobOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartProtectedJobResponseReceivedHandler;

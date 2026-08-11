@@ -62,7 +62,10 @@ enum class UpdateParamType {
   WarmPoolMinSize,
   WarmPoolState,
   WarmPoolReuseOnScaleIn,
-  ControlPlaneEgressMode
+  ControlPlaneEgressMode,
+  KubeApiServerConfig,
+  KubeSchedulerConfig,
+  KubeControllerManagerConfig
 };
 
 namespace UpdateParamTypeMapper {

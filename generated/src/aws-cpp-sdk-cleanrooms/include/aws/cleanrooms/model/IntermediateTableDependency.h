@@ -88,9 +88,9 @@ class IntermediateTableDependency {
 
   ///@{
   /**
-   * <p>Whether the dependency is direct or indirect. A direct dependency is a table
-   * explicitly referenced in the stored query, while an indirect dependency is
-   * referenced through another intermediate table.</p>
+   * <p>The type of dependency, either direct or indirect. A direct dependency is a
+   * table explicitly referenced in the stored query. An indirect dependency is a
+   * table referenced through another intermediate table.</p>
    */
   inline BaseTableParentType GetParentType() const { return m_parentType; }
   inline bool ParentTypeHasBeenSet() const { return m_parentTypeHasBeenSet; }

@@ -30,8 +30,8 @@ class PopulateIntermediateTableResult {
 
   ///@{
   /**
-   * <p>The identifier for the protected query execution. Use this value with
-   * <code>GetProtectedQuery</code> to track the population progress.</p>
+   * <p>The identifier for the protected query execution that populated the
+   * intermediate table.</p>
    */
   inline const Aws::String& GetAnalysisId() const { return m_analysisId; }
   template <typename AnalysisIdT = Aws::String>

@@ -6,6 +6,9 @@
 #include <aws/connect/ConnectClient.h>
 #include <aws/connect/ConnectEndpointProvider.h>
 #include <aws/connect/ConnectErrorMarshaller.h>
+#include <aws/connect/model/ListDataTableAttributesRequest.h>
+#include <aws/connect/model/ListDataTablePrimaryValuesRequest.h>
+#include <aws/connect/model/ListDataTableValuesRequest.h>
 #include <aws/connect/model/ListDataTablesRequest.h>
 #include <aws/connect/model/ListDefaultVocabulariesRequest.h>
 #include <aws/connect/model/ListEntitySecurityProfilesRequest.h>
@@ -20,6 +23,7 @@
 #include <aws/connect/model/ListIntegrationAssociationsRequest.h>
 #include <aws/connect/model/ListLambdaFunctionsRequest.h>
 #include <aws/connect/model/ListLexBotsRequest.h>
+#include <aws/connect/model/ListMetricsRequest.h>
 #include <aws/connect/model/ListNotificationsRequest.h>
 #include <aws/connect/model/ListPhoneNumbersRequest.h>
 #include <aws/connect/model/ListPhoneNumbersV2Request.h>
@@ -74,6 +78,7 @@
 #include <aws/connect/model/SearchEvaluationFormsRequest.h>
 #include <aws/connect/model/SearchHoursOfOperationOverridesRequest.h>
 #include <aws/connect/model/SearchHoursOfOperationsRequest.h>
+#include <aws/connect/model/SearchMetricsRequest.h>
 #include <aws/connect/model/SearchNotificationsRequest.h>
 #include <aws/connect/model/SearchPredefinedAttributesRequest.h>
 #include <aws/connect/model/SearchPromptsRequest.h>
@@ -101,11 +106,6 @@
 #include <aws/connect/model/StartContactRecordingRequest.h>
 #include <aws/connect/model/StartContactStreamingRequest.h>
 #include <aws/connect/model/StartEmailContactRequest.h>
-#include <aws/connect/model/StartEvaluationFormValidationRequest.h>
-#include <aws/connect/model/StartOutboundChatContactRequest.h>
-#include <aws/connect/model/StartOutboundEmailContactRequest.h>
-#include <aws/connect/model/StartOutboundVoiceContactRequest.h>
-#include <aws/connect/model/StartScreenSharingRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/CoreErrors.h>
@@ -131,6 +131,81 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+ListDataTableAttributesOutcome ConnectClient::ListDataTableAttributes(const ListDataTableAttributesRequest& request) const {
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListDataTableAttributes", "Required field: InstanceId, is not set");
+    return ListDataTableAttributesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                               "Missing required field [InstanceId]", false));
+  }
+  if (!request.DataTableIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListDataTableAttributes", "Required field: DataTableId, is not set");
+    return ListDataTableAttributesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                               "Missing required field [DataTableId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/data-tables/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataTableId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/attributes");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDataTableAttributesOutcome(result.GetResultWithOwnership())
+                            : ListDataTableAttributesOutcome(std::move(result.GetError()));
+}
+
+ListDataTablePrimaryValuesOutcome ConnectClient::ListDataTablePrimaryValues(const ListDataTablePrimaryValuesRequest& request) const {
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListDataTablePrimaryValues", "Required field: InstanceId, is not set");
+    return ListDataTablePrimaryValuesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                  "Missing required field [InstanceId]", false));
+  }
+  if (!request.DataTableIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListDataTablePrimaryValues", "Required field: DataTableId, is not set");
+    return ListDataTablePrimaryValuesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                  "Missing required field [DataTableId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/data-tables/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataTableId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/values/list-primary");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDataTablePrimaryValuesOutcome(result.GetResultWithOwnership())
+                            : ListDataTablePrimaryValuesOutcome(std::move(result.GetError()));
+}
+
+ListDataTableValuesOutcome ConnectClient::ListDataTableValues(const ListDataTableValuesRequest& request) const {
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListDataTableValues", "Required field: InstanceId, is not set");
+    return ListDataTableValuesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [InstanceId]", false));
+  }
+  if (!request.DataTableIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListDataTableValues", "Required field: DataTableId, is not set");
+    return ListDataTableValuesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [DataTableId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/data-tables/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataTableId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/values/list");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDataTableValuesOutcome(result.GetResultWithOwnership())
+                            : ListDataTableValuesOutcome(std::move(result.GetError()));
+}
 
 ListDataTablesOutcome ConnectClient::ListDataTables(const ListDataTablesRequest& request) const {
   if (!request.InstanceIdHasBeenSet()) {
@@ -397,6 +472,23 @@ ListLexBotsOutcome ConnectClient::ListLexBots(const ListLexBotsRequest& request)
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListLexBotsOutcome(result.GetResultWithOwnership()) : ListLexBotsOutcome(std::move(result.GetError()));
+}
+
+ListMetricsOutcome ConnectClient::ListMetrics(const ListMetricsRequest& request) const {
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListMetrics", "Required field: InstanceId, is not set");
+    return ListMetricsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                   "Missing required field [InstanceId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/metrics/definitions/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMetricsOutcome(result.GetResultWithOwnership()) : ListMetricsOutcome(std::move(result.GetError()));
 }
 
 ListNotificationsOutcome ConnectClient::ListNotifications(const ListNotificationsRequest& request) const {
@@ -1366,6 +1458,16 @@ SearchHoursOfOperationsOutcome ConnectClient::SearchHoursOfOperations(const Sear
                             : SearchHoursOfOperationsOutcome(std::move(result.GetError()));
 }
 
+SearchMetricsOutcome ConnectClient::SearchMetrics(const SearchMetricsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/search-metrics");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchMetricsOutcome(result.GetResultWithOwnership()) : SearchMetricsOutcome(std::move(result.GetError()));
+}
+
 SearchNotificationsOutcome ConnectClient::SearchNotifications(const SearchNotificationsRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -1712,74 +1814,4 @@ StartEmailContactOutcome ConnectClient::StartEmailContact(const StartEmailContac
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? StartEmailContactOutcome(result.GetResultWithOwnership())
                             : StartEmailContactOutcome(std::move(result.GetError()));
-}
-
-StartEvaluationFormValidationOutcome ConnectClient::StartEvaluationFormValidation(
-    const StartEvaluationFormValidationRequest& request) const {
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("StartEvaluationFormValidation", "Required field: InstanceId, is not set");
-    return StartEvaluationFormValidationOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                                     "Missing required field [InstanceId]", false));
-  }
-  if (!request.EvaluationFormIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("StartEvaluationFormValidation", "Required field: EvaluationFormId, is not set");
-    return StartEvaluationFormValidationOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                                     "Missing required field [EvaluationFormId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/evaluation-forms/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEvaluationFormId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/validate");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? StartEvaluationFormValidationOutcome(result.GetResultWithOwnership())
-                            : StartEvaluationFormValidationOutcome(std::move(result.GetError()));
-}
-
-StartOutboundChatContactOutcome ConnectClient::StartOutboundChatContact(const StartOutboundChatContactRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/contact/outbound-chat");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? StartOutboundChatContactOutcome(result.GetResultWithOwnership())
-                            : StartOutboundChatContactOutcome(std::move(result.GetError()));
-}
-
-StartOutboundEmailContactOutcome ConnectClient::StartOutboundEmailContact(const StartOutboundEmailContactRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/contact/outbound-email");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? StartOutboundEmailContactOutcome(result.GetResultWithOwnership())
-                            : StartOutboundEmailContactOutcome(std::move(result.GetError()));
-}
-
-StartOutboundVoiceContactOutcome ConnectClient::StartOutboundVoiceContact(const StartOutboundVoiceContactRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/contact/outbound-voice");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? StartOutboundVoiceContactOutcome(result.GetResultWithOwnership())
-                            : StartOutboundVoiceContactOutcome(std::move(result.GetError()));
-}
-
-StartScreenSharingOutcome ConnectClient::StartScreenSharing(const StartScreenSharingRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/contact/screen-sharing");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? StartScreenSharingOutcome(result.GetResultWithOwnership())
-                            : StartScreenSharingOutcome(std::move(result.GetError()));
 }

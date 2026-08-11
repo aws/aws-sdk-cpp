@@ -56,7 +56,9 @@ class HandshakeParty {
 
   ///@{
   /**
-   * <p>The type of ID for the participant.</p>
+   * <p>The type of ID for the participant.</p>  <p>ORGANIZATION is valid only
+   * in the response context (identifying the inviting organization). Valid input
+   * values for the Target parameter are ACCOUNT and EMAIL only.</p>
    */
   inline HandshakePartyType GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

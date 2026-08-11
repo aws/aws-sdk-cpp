@@ -10,6 +10,9 @@
 #include <aws/eks/EKS_EXPORTS.h>
 #include <aws/eks/model/ComputeConfigRequest.h>
 #include <aws/eks/model/ControlPlaneScalingConfig.h>
+#include <aws/eks/model/KubeApiServerConfigRequest.h>
+#include <aws/eks/model/KubeControllerManagerConfigRequest.h>
+#include <aws/eks/model/KubeSchedulerConfigRequest.h>
 #include <aws/eks/model/KubernetesNetworkConfigRequest.h>
 #include <aws/eks/model/Logging.h>
 #include <aws/eks/model/RemoteNetworkConfigRequest.h>
@@ -300,6 +303,60 @@ class UpdateClusterConfigRequest : public EKSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Kubernetes API server configuration for the updated cluster.</p>
+   */
+  inline const KubeApiServerConfigRequest& GetKubeApiServerConfig() const { return m_kubeApiServerConfig; }
+  inline bool KubeApiServerConfigHasBeenSet() const { return m_kubeApiServerConfigHasBeenSet; }
+  template <typename KubeApiServerConfigT = KubeApiServerConfigRequest>
+  void SetKubeApiServerConfig(KubeApiServerConfigT&& value) {
+    m_kubeApiServerConfigHasBeenSet = true;
+    m_kubeApiServerConfig = std::forward<KubeApiServerConfigT>(value);
+  }
+  template <typename KubeApiServerConfigT = KubeApiServerConfigRequest>
+  UpdateClusterConfigRequest& WithKubeApiServerConfig(KubeApiServerConfigT&& value) {
+    SetKubeApiServerConfig(std::forward<KubeApiServerConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Kubernetes scheduler configuration for the updated cluster.</p>
+   */
+  inline const KubeSchedulerConfigRequest& GetKubeSchedulerConfig() const { return m_kubeSchedulerConfig; }
+  inline bool KubeSchedulerConfigHasBeenSet() const { return m_kubeSchedulerConfigHasBeenSet; }
+  template <typename KubeSchedulerConfigT = KubeSchedulerConfigRequest>
+  void SetKubeSchedulerConfig(KubeSchedulerConfigT&& value) {
+    m_kubeSchedulerConfigHasBeenSet = true;
+    m_kubeSchedulerConfig = std::forward<KubeSchedulerConfigT>(value);
+  }
+  template <typename KubeSchedulerConfigT = KubeSchedulerConfigRequest>
+  UpdateClusterConfigRequest& WithKubeSchedulerConfig(KubeSchedulerConfigT&& value) {
+    SetKubeSchedulerConfig(std::forward<KubeSchedulerConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Kubernetes controller manager configuration for the updated cluster.</p>
+   */
+  inline const KubeControllerManagerConfigRequest& GetKubeControllerManagerConfig() const { return m_kubeControllerManagerConfig; }
+  inline bool KubeControllerManagerConfigHasBeenSet() const { return m_kubeControllerManagerConfigHasBeenSet; }
+  template <typename KubeControllerManagerConfigT = KubeControllerManagerConfigRequest>
+  void SetKubeControllerManagerConfig(KubeControllerManagerConfigT&& value) {
+    m_kubeControllerManagerConfigHasBeenSet = true;
+    m_kubeControllerManagerConfig = std::forward<KubeControllerManagerConfigT>(value);
+  }
+  template <typename KubeControllerManagerConfigT = KubeControllerManagerConfigRequest>
+  UpdateClusterConfigRequest& WithKubeControllerManagerConfig(KubeControllerManagerConfigT&& value) {
+    SetKubeControllerManagerConfig(std::forward<KubeControllerManagerConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -326,6 +383,12 @@ class UpdateClusterConfigRequest : public EKSRequest {
   bool m_deletionProtection{false};
 
   ControlPlaneScalingConfig m_controlPlaneScalingConfig;
+
+  KubeApiServerConfigRequest m_kubeApiServerConfig;
+
+  KubeSchedulerConfigRequest m_kubeSchedulerConfig;
+
+  KubeControllerManagerConfigRequest m_kubeControllerManagerConfig;
   bool m_nameHasBeenSet = false;
   bool m_resourcesVpcConfigHasBeenSet = false;
   bool m_loggingHasBeenSet = false;
@@ -339,6 +402,9 @@ class UpdateClusterConfigRequest : public EKSRequest {
   bool m_remoteNetworkConfigHasBeenSet = false;
   bool m_deletionProtectionHasBeenSet = false;
   bool m_controlPlaneScalingConfigHasBeenSet = false;
+  bool m_kubeApiServerConfigHasBeenSet = false;
+  bool m_kubeSchedulerConfigHasBeenSet = false;
+  bool m_kubeControllerManagerConfigHasBeenSet = false;
 };
 
 }  // namespace Model

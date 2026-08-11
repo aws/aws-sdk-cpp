@@ -34,8 +34,7 @@ class PopulationAnalysisSqlParameters {
 
   ///@{
   /**
-   * <p>The SQL query string used to populate the intermediate table. Maximum length
-   * of 500,000 characters.</p>
+   * <p>The SQL query string used to populate the intermediate table.</p>
    */
   inline const Aws::String& GetQueryString() const { return m_queryString; }
   inline bool QueryStringHasBeenSet() const { return m_queryStringHasBeenSet; }

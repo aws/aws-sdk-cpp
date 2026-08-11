@@ -10,7 +10,7 @@
 namespace Aws {
 namespace CleanRooms {
 namespace Model {
-enum class MemberAbility { NOT_SET, CAN_QUERY, CAN_RECEIVE_RESULTS, CAN_RUN_JOB };
+enum class MemberAbility { NOT_SET, CAN_QUERY, CAN_RECEIVE_RESULTS, CAN_RUN_JOB, CAN_EXPORT_QUERY_ANALYSIS_LOG };
 
 namespace MemberAbilityMapper {
 AWS_CLEANROOMS_API MemberAbility GetMemberAbilityForName(const Aws::String& name);

@@ -66,6 +66,9 @@ static const int WarmPoolMinSize_HASH = HashingUtils::HashString("WarmPoolMinSiz
 static const int WarmPoolState_HASH = HashingUtils::HashString("WarmPoolState");
 static const int WarmPoolReuseOnScaleIn_HASH = HashingUtils::HashString("WarmPoolReuseOnScaleIn");
 static const int ControlPlaneEgressMode_HASH = HashingUtils::HashString("ControlPlaneEgressMode");
+static const int KubeApiServerConfig_HASH = HashingUtils::HashString("KubeApiServerConfig");
+static const int KubeSchedulerConfig_HASH = HashingUtils::HashString("KubeSchedulerConfig");
+static const int KubeControllerManagerConfig_HASH = HashingUtils::HashString("KubeControllerManagerConfig");
 
 UpdateParamType GetUpdateParamTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -171,6 +174,12 @@ UpdateParamType GetUpdateParamTypeForName(const Aws::String& name) {
     return UpdateParamType::WarmPoolReuseOnScaleIn;
   } else if (hashCode == ControlPlaneEgressMode_HASH) {
     return UpdateParamType::ControlPlaneEgressMode;
+  } else if (hashCode == KubeApiServerConfig_HASH) {
+    return UpdateParamType::KubeApiServerConfig;
+  } else if (hashCode == KubeSchedulerConfig_HASH) {
+    return UpdateParamType::KubeSchedulerConfig;
+  } else if (hashCode == KubeControllerManagerConfig_HASH) {
+    return UpdateParamType::KubeControllerManagerConfig;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -287,6 +296,12 @@ Aws::String GetNameForUpdateParamType(UpdateParamType enumValue) {
       return "WarmPoolReuseOnScaleIn";
     case UpdateParamType::ControlPlaneEgressMode:
       return "ControlPlaneEgressMode";
+    case UpdateParamType::KubeApiServerConfig:
+      return "KubeApiServerConfig";
+    case UpdateParamType::KubeSchedulerConfig:
+      return "KubeSchedulerConfig";
+    case UpdateParamType::KubeControllerManagerConfig:
+      return "KubeControllerManagerConfig";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

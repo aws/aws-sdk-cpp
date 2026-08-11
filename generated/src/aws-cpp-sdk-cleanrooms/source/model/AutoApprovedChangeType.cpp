@@ -18,6 +18,8 @@ namespace AutoApprovedChangeTypeMapper {
 static const int ADD_MEMBER_HASH = HashingUtils::HashString("ADD_MEMBER");
 static const int GRANT_RECEIVE_RESULTS_ABILITY_HASH = HashingUtils::HashString("GRANT_RECEIVE_RESULTS_ABILITY");
 static const int REVOKE_RECEIVE_RESULTS_ABILITY_HASH = HashingUtils::HashString("REVOKE_RECEIVE_RESULTS_ABILITY");
+static const int GRANT_EXPORT_QUERY_ANALYSIS_LOG_ABILITY_HASH = HashingUtils::HashString("GRANT_EXPORT_QUERY_ANALYSIS_LOG_ABILITY");
+static const int REVOKE_EXPORT_QUERY_ANALYSIS_LOG_ABILITY_HASH = HashingUtils::HashString("REVOKE_EXPORT_QUERY_ANALYSIS_LOG_ABILITY");
 
 AutoApprovedChangeType GetAutoApprovedChangeTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +29,10 @@ AutoApprovedChangeType GetAutoApprovedChangeTypeForName(const Aws::String& name)
     return AutoApprovedChangeType::GRANT_RECEIVE_RESULTS_ABILITY;
   } else if (hashCode == REVOKE_RECEIVE_RESULTS_ABILITY_HASH) {
     return AutoApprovedChangeType::REVOKE_RECEIVE_RESULTS_ABILITY;
+  } else if (hashCode == GRANT_EXPORT_QUERY_ANALYSIS_LOG_ABILITY_HASH) {
+    return AutoApprovedChangeType::GRANT_EXPORT_QUERY_ANALYSIS_LOG_ABILITY;
+  } else if (hashCode == REVOKE_EXPORT_QUERY_ANALYSIS_LOG_ABILITY_HASH) {
+    return AutoApprovedChangeType::REVOKE_EXPORT_QUERY_ANALYSIS_LOG_ABILITY;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +53,10 @@ Aws::String GetNameForAutoApprovedChangeType(AutoApprovedChangeType enumValue) {
       return "GRANT_RECEIVE_RESULTS_ABILITY";
     case AutoApprovedChangeType::REVOKE_RECEIVE_RESULTS_ABILITY:
       return "REVOKE_RECEIVE_RESULTS_ABILITY";
+    case AutoApprovedChangeType::GRANT_EXPORT_QUERY_ANALYSIS_LOG_ABILITY:
+      return "GRANT_EXPORT_QUERY_ANALYSIS_LOG_ABILITY";
+    case AutoApprovedChangeType::REVOKE_EXPORT_QUERY_ANALYSIS_LOG_ABILITY:
+      return "REVOKE_EXPORT_QUERY_ANALYSIS_LOG_ABILITY";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {
