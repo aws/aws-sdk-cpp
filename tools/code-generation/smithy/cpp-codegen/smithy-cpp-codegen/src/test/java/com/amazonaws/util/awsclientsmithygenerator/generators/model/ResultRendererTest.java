@@ -6,6 +6,7 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.RenderContext;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.ResultRenderer;
 import org.junit.jupiter.api.Test;
 import software.amazon.smithy.build.MockManifest;
@@ -49,8 +50,8 @@ class ResultRendererTest {
         Protocol protocol = ProtocolResolver.resolve(service, model);
         new ResultRenderer(
             ShapeClassifier.classify(model, service, protocol).results(),
-            model, service, ProtocolResolver.traitsFor(protocol),
-            "Example", "AWS_EXAMPLE_API", "example").render(delegator);
+            new RenderContext(model, service, ProtocolResolver.traitsFor(protocol),
+                "Example", "AWS_EXAMPLE_API", "example")).render(delegator);
         delegator.flushWriters();
         return manifest.getFileString(manifest.getFiles().stream()
             .filter(p -> p.toString().endsWith("DoThingResult.h")).findFirst().orElseThrow()).orElseThrow();
@@ -101,8 +102,8 @@ class ResultRendererTest {
         Protocol protocol = ProtocolResolver.resolve(service, model);
         new ResultRenderer(
             ShapeClassifier.classify(model, service, protocol).results(),
-            model, service, ProtocolResolver.traitsFor(protocol),
-            "Example", "AWS_EXAMPLE_API", "example").render(delegator);
+            new RenderContext(model, service, ProtocolResolver.traitsFor(protocol),
+                "Example", "AWS_EXAMPLE_API", "example")).render(delegator);
         delegator.flushWriters();
         return manifest.getFileString(manifest.getFiles().stream()
             .filter(p -> p.toString().endsWith(fileSuffix)).findFirst().orElseThrow()).orElseThrow();
@@ -259,8 +260,8 @@ class ResultRendererTest {
         Protocol protocol = ProtocolResolver.resolve(service, model);
         new ResultRenderer(
             ShapeClassifier.classify(model, service, protocol).results(),
-            model, service, ProtocolResolver.traitsFor(protocol),
-            "Example", "AWS_EXAMPLE_API", "example").render(delegator);
+            new RenderContext(model, service, ProtocolResolver.traitsFor(protocol),
+                "Example", "AWS_EXAMPLE_API", "example")).render(delegator);
         delegator.flushWriters();
         return manifest.getFileString(manifest.getFiles().stream()
             .filter(p -> p.toString().endsWith(fileSuffix)).findFirst().orElseThrow()).orElseThrow();

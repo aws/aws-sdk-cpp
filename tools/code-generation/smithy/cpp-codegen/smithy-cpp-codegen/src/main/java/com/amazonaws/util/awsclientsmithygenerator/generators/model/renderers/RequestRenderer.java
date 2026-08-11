@@ -6,21 +6,27 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.CppNames;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.CppTypeMapper;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.MemberRenderer;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.FileKind;
-import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.ProtocolTraits;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.RenderContext;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassifier;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassifier.RequestInfo;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeRenderer;
-import software.amazon.smithy.model.Model;
+import software.amazon.smithy.model.node.BooleanNode;
+import software.amazon.smithy.model.node.Node;
+import software.amazon.smithy.model.node.NodeVisitor;
+import software.amazon.smithy.model.node.StringNode;
 import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.OperationShape;
-import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.model.shapes.StructureShape;
+import software.amazon.smithy.model.traits.DocumentationTrait;
 import software.amazon.smithy.rulesengine.traits.ContextParamTrait;
 import software.amazon.smithy.rulesengine.traits.StaticContextParamsTrait;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -33,23 +39,11 @@ import java.util.TreeSet;
 public final class RequestRenderer implements ShapeRenderer {
 
     private final List<RequestInfo> requests;
-    private final Model model;
-    private final ServiceShape service;
-    private final ProtocolTraits protocolTraits;
-    private final String namespace;
-    private final String exportMacro;
-    private final String smithyServiceName;
+    private final RenderContext ctx;
 
-    public RequestRenderer(List<RequestInfo> requests, Model model, ServiceShape service,
-                           ProtocolTraits protocolTraits, String namespace, String exportMacro,
-                           String smithyServiceName) {
+    public RequestRenderer(List<RequestInfo> requests, RenderContext ctx) {
         this.requests = requests;
-        this.model = model;
-        this.service = service;
-        this.protocolTraits = protocolTraits;
-        this.namespace = namespace;
-        this.exportMacro = exportMacro;
-        this.smithyServiceName = smithyServiceName;
+        this.ctx = ctx;
     }
 
     @Override
@@ -68,17 +62,17 @@ public final class RequestRenderer implements ShapeRenderer {
         // GetContentType/SetContentType, and emits no SerializePayload. Matching C2J: contentType
         // is stripped from the model entirely (affects includes AND rendering), while the payload
         // member stays for include computation but is skipped in accessor/private rendering.
-        boolean rawStreamingPayload = ShapeClassifier.isRawStreamingPayloadRequest(operation, model);
+        boolean rawStreamingPayload = ShapeClassifier.isRawStreamingPayloadRequest(operation, ctx.model());
         // An event-stream (input) member targets a @streaming union: C2J renders it as a
         // std::shared_ptr<Union> with a collision-renamed getter and an inline empty
         // SerializePayload + GetBody() override, so it is excluded from the generic member path.
-        Optional<String> eventStreamMember = ShapeClassifier.eventStreamMemberName(rawShape, model);
+        Optional<String> eventStreamMember = ShapeClassifier.eventStreamMemberName(rawShape, ctx.model());
         StructureShape includeShape = rawStreamingPayload
             ? shapeExcluding(rawShape, Set.of("contentType", "ContentType")) : rawShape;
-        Set<String> genericExcluded = new java.util.HashSet<>();
+        Set<String> genericExcluded = new HashSet<>();
         if (rawStreamingPayload) {
             // isRawStreamingPayloadRequest guarantees a payload member; absence is a codegen bug.
-            String payloadMember = ShapeClassifier.rawStreamingPayloadMemberName(rawShape, model)
+            String payloadMember = ShapeClassifier.rawStreamingPayloadMemberName(rawShape, ctx.model())
                 .orElseThrow(() -> new IllegalStateException(
                     "Raw streaming payload request without a payload member: " + rawShape.getId()));
             genericExcluded.add("contentType");
@@ -87,25 +81,23 @@ public final class RequestRenderer implements ShapeRenderer {
         }
         eventStreamMember.ifPresent(genericExcluded::add);
         StructureShape shape = genericExcluded.isEmpty() ? rawShape : shapeExcluding(rawShape, genericExcluded);
-        String fileName = "include/aws/" + smithyServiceName + "/model/" + className + ".h";
+        String fileName = "include/aws/" + ctx.smithyServiceName() + "/model/" + className + ".h";
         writerDelegator.useFileWriter(fileName, writer -> {
             writer.write("#pragma once");
 
             Set<String> includes = new TreeSet<>();
-            includes.add("<aws/" + smithyServiceName + "/" + namespace + "_EXPORTS.h>");
-            includes.add("<aws/" + smithyServiceName + "/" + namespace + "Request.h>");
+            includes.add("<aws/" + ctx.smithyServiceName() + "/" + ctx.namespace() + "_EXPORTS.h>");
+            includes.add("<aws/" + ctx.smithyServiceName() + "/" + ctx.namespace() + "Request.h>");
             // NOTE: request headers do NOT include <aws/core/http/URI.h> even when they
             // declare URI-taking methods (DumpBodyToUrl / AddQueryStringParameters). The
             // base AmazonWebServiceRequest.h forward-declares Aws::Http::URI, which is
             // sufficient for a reference parameter, and C2J relies on that forward decl.
-            List<String> memberIncludes = CppTypeMapper.getIncludesForShape(includeShape, model, smithyServiceName);
+            List<String> memberIncludes = CppTypeMapper.getIncludesForShape(includeShape, ctx.model(), ctx.smithyServiceName());
             includes.addAll(memberIncludes);
-            for (String include : includes) {
-                writer.write("#include $L", include);
-            }
+            IncludeSets.emitAngleIncludes(writer, includes);
 
             boolean allPrimitive = shape.getAllMembers().values().stream()
-                .map(m -> model.expectShape(m.getTarget()))
+                .map(m -> ctx.model().expectShape(m.getTarget()))
                 .allMatch(CppTypeMapper::isPrimitive);
             if (eventStreamMember.isPresent()) {
                 // The event-stream member is stored as std::shared_ptr<Union>.
@@ -117,27 +109,25 @@ public final class RequestRenderer implements ShapeRenderer {
                 writer.write("#include <utility>");
             }
 
-            boolean streamingResponse = ShapeClassifier.isEventStreamResponseOperation(operation, model);
-            boolean streamingRequest = ShapeClassifier.isEventStreamRequestOperation(operation, model);
+            boolean streamingResponse = ShapeClassifier.isEventStreamResponseOperation(operation, ctx.model());
+            boolean streamingRequest = ShapeClassifier.isEventStreamRequestOperation(operation, ctx.model());
             if (streamingResponse) {
                 writer.write("#include <aws/core/utils/event/EventStreamDecoder.h>");
-                writer.write("#include <aws/$1L/model/$2LHandler.h>", smithyServiceName, operation.getId().getName());
+                writer.write("#include <aws/$1L/model/$2LHandler.h>", ctx.smithyServiceName(), operation.getId().getName());
             }
             writer.write("");
 
-            writer.writeNamespaceOpen("Aws");
-            writer.writeNamespaceOpen(namespace);
-            writer.writeNamespaceOpen("Model");
+            ModelFile.modelNamespace(writer, ctx.namespace(), () -> {
             writer.write("");
 
-            MemberRenderer.renderClassDocComment(writer, shape, smithyServiceName, service.getVersion());
+            MemberRenderer.renderClassDocComment(writer, shape, ctx.smithyServiceName(), ctx.service().getVersion());
 
             // Raw-streaming-payload requests derive from Streaming<Prefix>Request (a typedef for
             // AmazonStreamingWebServiceRequest declared in <Prefix>Request.h), matching C2J.
-            String baseClass = (rawStreamingPayload ? "Streaming" + namespace : namespace) + "Request";
+            String baseClass = (rawStreamingPayload ? "Streaming" + ctx.namespace() : ctx.namespace()) + "Request";
             writer.openBlock("class $L : public $L {", "};", className, baseClass, () -> {
                 writer.write("public:");
-                writer.write("$L $L() = default;", exportMacro, className);
+                writer.write("$L $L() = default;", ctx.exportMacro(), className);
                 writer.write("");
 
                 writer.write("// Service request name is the Operation name which will send this request out,");
@@ -158,10 +148,10 @@ public final class RequestRenderer implements ShapeRenderer {
                     // SerializePayload is an inline no-op (matches C2J RequestHeader.vm).
                     writer.write("// SerializePayload will not be invoked.");
                     writer.write("// This request is sent by encoding its data in event-streams which is sent as IOStream via GetBody()");
-                    writer.write("$L Aws::String SerializePayload() const override { return {}; }", exportMacro);
-                    writer.write("$L std::shared_ptr<Aws::IOStream> GetBody() const override;", exportMacro);
+                    writer.write("$L Aws::String SerializePayload() const override { return {}; }", ctx.exportMacro());
+                    writer.write("$L std::shared_ptr<Aws::IOStream> GetBody() const override;", ctx.exportMacro());
                 }
-                protocolTraits.writeRequestMethodDecls(writer, exportMacro, shape, operation, model);
+                ctx.protocolTraits().writeRequestMethodDecls(writer, ctx.exportMacro(), shape, operation, ctx.model());
 
                 if (streamingResponse) {
                     String handlerType = operation.getId().getName() + "Handler";
@@ -199,11 +189,11 @@ public final class RequestRenderer implements ShapeRenderer {
                     writer.write("/**");
                     writer.write(" * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.");
                     writer.write(" */");
-                    writer.write("$L EndpointParameters GetEndpointContextParams() const override;", exportMacro);
+                    writer.write("$L EndpointParameters GetEndpointContextParams() const override;", ctx.exportMacro());
                 }
 
                 writer.write("");
-                MemberRenderer.renderPublicSection(writer, shape, model, exportMacro, className);
+                MemberRenderer.renderPublicSection(writer, shape, ctx.model(), ctx.exportMacro(), className);
                 eventStreamMember.ifPresent(m ->
                     renderEventStreamMemberAccessor(writer, className, rawShape, m));
 
@@ -215,33 +205,30 @@ public final class RequestRenderer implements ShapeRenderer {
                     if (streamingResponse) {
                         // Mainline places the event-stream member, then the handler/decoder, after
                         // the data members and before the HasBeenSet flags.
-                        MemberRenderer.renderPrivateDataMembers(writer, shape, model);
+                        MemberRenderer.renderPrivateDataMembers(writer, shape, ctx.model());
                         eventStreamMember.ifPresent(m -> writer.write("std::shared_ptr<$1L> m_$2L;",
-                            eventStreamUnionType(rawShape, m), decapitalize(m)));
+                            eventStreamUnionType(rawShape, m), CppNames.decapitalize(m)));
                         String handlerType = operation.getId().getName() + "Handler";
                         writer.write("$1L m_handler;", handlerType);
                         writer.write("Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};");
                         writer.write("");
-                        MemberRenderer.renderPrivateHasBeenSetFlags(writer, shape, model);
+                        MemberRenderer.renderPrivateHasBeenSetFlags(writer, shape, ctx.model());
                         eventStreamMember.ifPresent(m ->
-                            writer.write("bool m_$1LHasBeenSet = false;", decapitalize(m)));
+                            writer.write("bool m_$1LHasBeenSet = false;", CppNames.decapitalize(m)));
                     } else {
-                        MemberRenderer.renderPrivateSection(writer, shape, model);
+                        MemberRenderer.renderPrivateSection(writer, shape, ctx.model());
                     }
                 }
             });
             writer.write("");
-
-            writer.writeNamespaceClose("Model");
-            writer.writeNamespaceClose(namespace);
-            writer.writeNamespaceClose("Aws");
+            });
         });
     }
 
     private void renderSource(CppWriterDelegator writerDelegator,
                               StructureShape shape, OperationShape operation) {
         String className = operation.getId().getName() + "Request";
-        Optional<String> eventStreamMember = ShapeClassifier.eventStreamMemberName(shape, model);
+        Optional<String> eventStreamMember = ShapeClassifier.eventStreamMemberName(shape, ctx.model());
         String fileName = "source/model/" + className + ".cpp";
         writerDelegator.useFileWriter(fileName, writer -> {
 
@@ -250,28 +237,28 @@ public final class RequestRenderer implements ShapeRenderer {
             // it through StreamRequestSource.vm: AmazonWebServiceResult.h + the Stream/Utils/Aws
             // usings (not the JSON serde header/usings). The event-stream sub-case also defines
             // GetBody() returning its encoder member.
-            boolean streaming = ShapeClassifier.isRawStreamingPayloadRequest(operation, model)
+            boolean streaming = ShapeClassifier.isRawStreamingPayloadRequest(operation, ctx.model())
                 || eventStreamMember.isPresent();
             if (streaming) {
-                List<String> includes = new java.util.ArrayList<>(
-                    IncludeSets.requestSourceBase(smithyServiceName, className));
+                List<String> includes = new ArrayList<>(
+                    IncludeSets.requestSourceBase(ctx.smithyServiceName(), className));
                 includes.add("aws/core/AmazonWebServiceResult.h");
                 includes.add("utility");
-                includes.addAll(CppTypeMapper.getSourceIncludesForShape(shape, model, smithyServiceName));
+                includes.addAll(CppTypeMapper.getSourceIncludesForShape(shape, ctx.model(), ctx.smithyServiceName()));
                 IncludeSets.emit(writer, includes);
                 writer.write("");
-                writer.write("using namespace Aws::$L::Model;", namespace);
+                writer.write("using namespace Aws::$L::Model;", ctx.namespace());
                 writer.write("using namespace Aws::Utils::Stream;");
                 writer.write("using namespace Aws::Utils;");
                 writer.write("using namespace Aws;");
                 writer.write("");
                 eventStreamMember.ifPresent(m -> {
                     writer.write("std::shared_ptr<Aws::IOStream> $L::GetBody() const { return m_$L; }",
-                        className, decapitalize(m));
+                        className, CppNames.decapitalize(m));
                     writer.write("");
                 });
                 // Header/query method bodies (SerializePayload is gated off for streaming requests).
-                protocolTraits.writeRequestMethodImpls(writer, className, shape, operation, service, model);
+                ctx.protocolTraits().writeRequestMethodImpls(writer, className, shape, operation, ctx.service(), ctx.model());
                 if (hasEndpointContextParams(operation, shape)) {
                     writer.write("");
                     renderEndpointContextParams(writer, className, operation, shape);
@@ -280,20 +267,20 @@ public final class RequestRenderer implements ShapeRenderer {
                 return;
             }
 
-            List<String> includes = new java.util.ArrayList<>(
-                IncludeSets.requestSourceBase(smithyServiceName, className));
-            includes.addAll(protocolTraits.serdeIncludes(FileKind.REQUEST_SOURCE));
+            List<String> includes = new ArrayList<>(
+                IncludeSets.requestSourceBase(ctx.smithyServiceName(), className));
+            includes.addAll(ctx.protocolTraits().serdeIncludes(FileKind.REQUEST_SOURCE));
             // Serde-implementation includes derived from members (HashingUtils.h for blob Base64
             // serde, AWSStringStream.h for header/query members), matching C2J computeSourceIncludes.
-            includes.addAll(CppTypeMapper.getSourceIncludesForShape(shape, model, smithyServiceName));
+            includes.addAll(CppTypeMapper.getSourceIncludesForShape(shape, ctx.model(), ctx.smithyServiceName()));
             IncludeSets.emit(writer, includes);
             writer.write("");
 
-            writer.write("using namespace Aws::$L::Model;", namespace);
-            IncludeSets.emitUsings(writer, protocolTraits.serdeUsings(FileKind.REQUEST_SOURCE));
+            writer.write("using namespace Aws::$L::Model;", ctx.namespace());
+            IncludeSets.emitUsings(writer, ctx.protocolTraits().serdeUsings(FileKind.REQUEST_SOURCE));
             writer.write("");
 
-            protocolTraits.writeRequestMethodImpls(writer, className, shape, operation, service, model);
+            ctx.protocolTraits().writeRequestMethodImpls(writer, className, shape, operation, ctx.service(), ctx.model());
 
             if (hasEndpointContextParams(operation, shape)) {
                 writer.write("");
@@ -331,35 +318,27 @@ public final class RequestRenderer implements ShapeRenderer {
     private void renderEventStreamMemberAccessor(CppWriter writer, String className,
                                                  StructureShape shape, String memberName) {
         String unionType = eventStreamUnionType(shape, memberName);
-        String cap = capitalize(memberName);
-        String field = "m_" + decapitalize(memberName);
+        String cap = CppNames.capitalize(memberName);
+        String field = CppNames.fieldName(memberName);
         String getter = cap.equals("Body") ? "GetMemberBody" : "Get" + cap;
         writer.write("");
         writer.write("///@{");
         MemberShape member = shape.getAllMembers().get(memberName);
-        if (member.getTrait(software.amazon.smithy.model.traits.DocumentationTrait.class).isPresent()) {
+        if (member.getTrait(DocumentationTrait.class).isPresent()) {
             MemberRenderer.writeDocComment(writer, MemberRenderer.collapseWhitespace(
-                member.getTrait(software.amazon.smithy.model.traits.DocumentationTrait.class).get().getValue()));
+                member.getTrait(DocumentationTrait.class).get().getValue()));
         }
-        writer.write("$1L std::shared_ptr<$2L> $3L() const { return $4L; }", exportMacro, unionType, getter, field);
-        writer.openBlock("$1L void Set$2L(const std::shared_ptr<$3L>& value) {", "}", exportMacro, cap, unionType, () -> {
+        writer.write("$1L std::shared_ptr<$2L> $3L() const { return $4L; }", ctx.exportMacro(), unionType, getter, field);
+        writer.openBlock("$1L void Set$2L(const std::shared_ptr<$3L>& value) {", "}", ctx.exportMacro(), cap, unionType, () -> {
             writer.write("$1LHasBeenSet = true;", field);
             writer.write("$1L = value;", field);
         });
         writer.openBlock("$1L $2L& With$3L(const std::shared_ptr<$4L>& value) {", "}",
-            exportMacro, className, cap, unionType, () -> {
+            ctx.exportMacro(), className, cap, unionType, () -> {
             writer.write("Set$1L(value);", cap);
             writer.write("return *this;");
         });
         writer.write("///@}");
-    }
-
-    private static String capitalize(String s) {
-        return s.isEmpty() ? s : Character.toUpperCase(s.charAt(0)) + s.substring(1);
-    }
-
-    private static String decapitalize(String s) {
-        return s.isEmpty() ? s : Character.toLowerCase(s.charAt(0)) + s.substring(1);
     }
 
     private boolean hasEndpointContextParams(OperationShape operation, StructureShape shape) {
@@ -383,26 +362,8 @@ public final class RequestRenderer implements ShapeRenderer {
             if (operation.hasTrait(StaticContextParamsTrait.class)) {
                 writer.write("// Static context parameters");
                 StaticContextParamsTrait staticParams = operation.expectTrait(StaticContextParamsTrait.class);
-                staticParams.getParameters().forEach((name, def) -> {
-                    def.getValue().accept(new software.amazon.smithy.model.node.NodeVisitor.Default<Void>() {
-                        @Override
-                        protected Void getDefault(software.amazon.smithy.model.node.Node node) {
-                            return null;
-                        }
-                        @Override
-                        public Void stringNode(software.amazon.smithy.model.node.StringNode node) {
-                            writer.write("parameters.emplace_back(Aws::String(\"$L\"), \"$L\", Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);",
-                                name, node.getValue());
-                            return null;
-                        }
-                        @Override
-                        public Void booleanNode(software.amazon.smithy.model.node.BooleanNode node) {
-                            writer.write("parameters.emplace_back(Aws::String(\"$L\"), $L, Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);",
-                                name, node.getValue());
-                            return null;
-                        }
-                    });
-                });
+                staticParams.getParameters().forEach((name, def) ->
+                    appendStaticContextParam(writer, name, def.getValue()));
             }
 
             boolean hasContextParams = shape.getAllMembers().values().stream()
@@ -415,7 +376,7 @@ public final class RequestRenderer implements ShapeRenderer {
                         ContextParamTrait contextParam = member.expectTrait(ContextParamTrait.class);
                         String paramName = contextParam.getName();
                         String memberName = entry.getKey();
-                        String capitalizedMember = memberName.substring(0, 1).toUpperCase() + memberName.substring(1);
+                        String capitalizedMember = CppNames.capitalize(memberName);
                         writer.openBlock("if ($LHasBeenSet()) {", "}", capitalizedMember, () -> {
                             writer.write("parameters.emplace_back(Aws::String(\"$L\"), this->Get$L(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);",
                                 paramName, capitalizedMember);
@@ -425,6 +386,27 @@ public final class RequestRenderer implements ShapeRenderer {
             }
 
             writer.write("return parameters;");
+        });
+    }
+
+    private void appendStaticContextParam(CppWriter writer, String name, Node value) {
+        value.accept(new NodeVisitor.Default<Void>() {
+            @Override
+            protected Void getDefault(Node node) {
+                return null;
+            }
+            @Override
+            public Void stringNode(StringNode node) {
+                writer.write("parameters.emplace_back(Aws::String(\"$L\"), \"$L\", Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);",
+                    name, node.getValue());
+                return null;
+            }
+            @Override
+            public Void booleanNode(BooleanNode node) {
+                writer.write("parameters.emplace_back(Aws::String(\"$L\"), $L, Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);",
+                    name, node.getValue());
+                return null;
+            }
         });
     }
 

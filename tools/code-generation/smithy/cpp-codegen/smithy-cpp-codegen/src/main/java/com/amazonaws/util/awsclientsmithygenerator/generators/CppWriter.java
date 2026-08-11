@@ -57,4 +57,16 @@ public class CppWriter extends SymbolWriter<CppWriter, CppImportContainer> {
         closeBlock("} // namespace $L", namespace);
         return this;
     }
+
+    /**
+     * Opens {@code namespace}, runs {@code body}, then closes it — so the open and
+     * close can never drift out of sync. Equivalent to
+     * {@code writeNamespaceOpen(namespace); body.run(); writeNamespaceClose(namespace);}
+     */
+    public CppWriter withNamespace(String namespace, Runnable body) {
+        writeNamespaceOpen(namespace);
+        body.run();
+        writeNamespaceClose(namespace);
+        return this;
+    }
 }

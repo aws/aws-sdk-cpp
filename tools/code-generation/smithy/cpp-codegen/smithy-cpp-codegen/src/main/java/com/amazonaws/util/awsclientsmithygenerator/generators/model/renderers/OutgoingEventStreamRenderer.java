@@ -6,13 +6,13 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.CppNames;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.CppTypeMapper;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.MemberRenderer;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.RenderContext;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeRenderer;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.ProtocolTraits;
-import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.MemberShape;
-import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.model.shapes.Shape;
 import software.amazon.smithy.model.shapes.StructureShape;
 import software.amazon.smithy.model.shapes.UnionShape;
@@ -38,23 +38,11 @@ public final class OutgoingEventStreamRenderer implements ShapeRenderer {
     private enum PayloadKind { BLOB, STRING, STRUCTURE, NONE }
 
     private final List<Shape> outgoingEventStreams;
-    private final Model model;
-    private final ServiceShape service;
-    private final ProtocolTraits protocolTraits;
-    private final String namespace;
-    private final String exportMacro;
-    private final String smithyServiceName;
+    private final RenderContext ctx;
 
-    public OutgoingEventStreamRenderer(List<Shape> outgoingEventStreams, Model model, ServiceShape service,
-                                       ProtocolTraits protocolTraits, String namespace, String exportMacro,
-                                       String smithyServiceName) {
+    public OutgoingEventStreamRenderer(List<Shape> outgoingEventStreams, RenderContext ctx) {
         this.outgoingEventStreams = outgoingEventStreams;
-        this.model = model;
-        this.service = service;
-        this.protocolTraits = protocolTraits;
-        this.namespace = namespace;
-        this.exportMacro = exportMacro;
-        this.smithyServiceName = smithyServiceName;
+        this.ctx = ctx;
     }
 
     @Override
@@ -66,30 +54,26 @@ public final class OutgoingEventStreamRenderer implements ShapeRenderer {
 
     private void renderHeader(CppWriterDelegator writerDelegator, UnionShape union) {
         String className = CppTypeMapper.cppShapeName(union);
-        String fileName = "include/aws/" + smithyServiceName + "/model/" + className + ".h";
+        String fileName = "include/aws/" + ctx.smithyServiceName() + "/model/" + className + ".h";
         writerDelegator.useFileWriter(fileName, writer -> {
             writer.write("#pragma once");
             java.util.Set<String> includes = new java.util.TreeSet<>();
-            includes.add("<aws/" + smithyServiceName + "/" + namespace + "_EXPORTS.h>");
+            includes.add("<aws/" + ctx.smithyServiceName() + "/" + ctx.namespace() + "_EXPORTS.h>");
             includes.add("<aws/core/utils/event/EventStream.h>");
             includes.add("<aws/core/utils/stream/HttpWriteDataStreamBuf.h>");
             for (MemberShape event : union.getAllMembers().values()) {
-                includes.add("<aws/" + smithyServiceName + "/model/" + event.getTarget().getName() + ".h>");
+                includes.add("<aws/" + ctx.smithyServiceName() + "/model/" + event.getTarget().getName() + ".h>");
             }
-            for (String include : includes) {
-                writer.write("#include $L", include);
-            }
+            IncludeSets.emitAngleIncludes(writer, includes);
             writer.write("");
             writer.write("#include <utility>");
             writer.write("");
 
-            writer.writeNamespaceOpen("Aws");
-            writer.writeNamespaceOpen(namespace);
-            writer.writeNamespaceOpen("Model");
+            ModelFile.modelNamespace(writer, ctx.namespace(), () -> {
             writer.write("");
-            MemberRenderer.renderClassDocComment(writer, union, smithyServiceName, service.getVersion());
+            MemberRenderer.renderClassDocComment(writer, union, ctx.smithyServiceName(), ctx.service().getVersion());
             writer.openBlock("class $L $L : public Aws::Utils::Event::EventEncoderStream {", "};",
-                exportMacro, className, () -> {
+                ctx.exportMacro(), className, () -> {
                 writer.write("public:");
                 writer.write("$L() = default;", className);
                 writer.write("explicit $L(std::shared_ptr<Aws::Utils::Stream::HttpWriteDataStreamBuf> streambuf)",
@@ -100,9 +84,7 @@ public final class OutgoingEventStreamRenderer implements ShapeRenderer {
                 }
             });
             writer.write("");
-            writer.writeNamespaceClose("Model");
-            writer.writeNamespaceClose(namespace);
-            writer.writeNamespaceClose("Aws");
+            });
         });
     }
 
@@ -110,13 +92,13 @@ public final class OutgoingEventStreamRenderer implements ShapeRenderer {
     private void writeEventWriter(CppWriter writer, String className, MemberShape unionMember) {
         String eventShapeName = unionMember.getTarget().getName();
         String wireKey = unionMember.getMemberName();
-        StructureShape event = model.expectShape(unionMember.getTarget(), StructureShape.class);
+        StructureShape event = ctx.model().expectShape(unionMember.getTarget(), StructureShape.class);
         writer.openBlock("$L& Write$L(const $L& value) {", "}", className, eventShapeName, eventShapeName, () -> {
             writer.write("Aws::Utils::Event::Message msg;");
             PayloadKind kind = payloadKind(event);
             switch (kind) {
                 case BLOB: {
-                    String getter = "value.Get" + capitalize(requirePayloadMember(event, kind)) + "()";
+                    String getter = "value.Get" + CppNames.capitalize(requirePayloadMember(event, kind)) + "()";
                     writer.openBlock("if (!$L.empty()) {", "}", getter, () -> {
                         writeEventHeaders(writer, wireKey);
                         writer.write("msg.InsertEventHeader(\":content-type\", Aws::String(\"application/octet-stream\"));");
@@ -127,11 +109,11 @@ public final class OutgoingEventStreamRenderer implements ShapeRenderer {
                 case STRING:
                     writeEventHeaders(writer, wireKey);
                     writer.write("msg.InsertEventHeader(\":content-type\", Aws::String(\"text/plain\"));");
-                    writer.write("msg.WriteEventPayload(value.Get$L());", capitalize(requirePayloadMember(event, kind)));
+                    writer.write("msg.WriteEventPayload(value.Get$L());", CppNames.capitalize(requirePayloadMember(event, kind)));
                     break;
                 case STRUCTURE:
                     writeEventHeaders(writer, wireKey);
-                    protocolTraits.writeStructureEventPayload(writer, "msg", "value");
+                    ctx.protocolTraits().writeStructureEventPayload(writer, "msg", "value");
                     break;
                 case NONE:
                 default:
@@ -164,7 +146,7 @@ public final class OutgoingEventStreamRenderer implements ShapeRenderer {
         }
         if (nonHeader.size() == 1) {
             MemberShape member = nonHeader.get(0).getValue();
-            Shape target = model.expectShape(member.getTarget());
+            Shape target = ctx.model().expectShape(member.getTarget());
             if (target.isStringShape()) {
                 return PayloadKind.STRING;
             }
@@ -189,9 +171,5 @@ public final class OutgoingEventStreamRenderer implements ShapeRenderer {
             .findFirst()
             .orElseThrow(() -> new IllegalStateException(
                 "Event " + event.getId() + " classified as " + kind + " but has no payload member"));
-    }
-
-    private static String capitalize(String s) {
-        return s.isEmpty() ? s : Character.toUpperCase(s.charAt(0)) + s.substring(1);
     }
 }

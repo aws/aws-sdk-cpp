@@ -73,8 +73,8 @@ class ProtocolTraitsSerdeTest {
             software.amazon.smithy.model.Model.builder().addShapes(str, req).build();
 
         ProtocolTraits t = ProtocolResolver.traitsFor(ProtocolResolver.Protocol.JSON);
-        assertTrue(t.requestHasHeaderMembers(req, model));
-        assertTrue(t.requestHasQueryStringMembers(req, model));
+        assertTrue(RequestBindings.hasHeaderMembers(req, model));
+        assertTrue(RequestBindings.hasQueryStringMembers(req, model));
     }
 
     @Test
@@ -90,8 +90,8 @@ class ProtocolTraitsSerdeTest {
         software.amazon.smithy.model.Model model =
             software.amazon.smithy.model.Model.builder().addShapes(str, req).build();
         ProtocolTraits t = ProtocolResolver.traitsFor(ProtocolResolver.Protocol.REST_XML);
-        assertFalse(t.requestHasHeaderMembers(req, model));
-        assertFalse(t.requestHasQueryStringMembers(req, model));
+        assertFalse(RequestBindings.hasHeaderMembers(req, model));
+        assertFalse(RequestBindings.hasQueryStringMembers(req, model));
     }
 
     /** The JSON serde method bodies are empty stubs pending schema-based serde. */

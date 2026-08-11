@@ -6,16 +6,16 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.CppNames;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.CppTypeMapper;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.MemberRenderer;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.FileKind;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.ProtocolTraits;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.RenderContext;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassifier;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassifier.EventStreamInfo;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeRenderer;
-import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.MemberShape;
-import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.model.shapes.Shape;
 import software.amazon.smithy.model.shapes.StructureShape;
 import software.amazon.smithy.model.shapes.UnionShape;
@@ -39,23 +39,11 @@ import java.util.Optional;
 public final class EventStreamRenderer implements ShapeRenderer {
 
     private final List<EventStreamInfo> eventStreams;
-    private final Model model;
-    private final ServiceShape service;
-    private final ProtocolTraits protocolTraits;
-    private final String namespace;
-    private final String exportMacro;
-    private final String smithyServiceName;
+    private final RenderContext ctx;
 
-    public EventStreamRenderer(List<EventStreamInfo> eventStreams, Model model, ServiceShape service,
-                               ProtocolTraits protocolTraits, String namespace, String exportMacro,
-                               String smithyServiceName) {
+    public EventStreamRenderer(List<EventStreamInfo> eventStreams, RenderContext ctx) {
         this.eventStreams = eventStreams;
-        this.model = model;
-        this.service = service;
-        this.protocolTraits = protocolTraits;
-        this.namespace = namespace;
-        this.exportMacro = exportMacro;
-        this.smithyServiceName = smithyServiceName;
+        this.ctx = ctx;
     }
 
     @Override
@@ -80,7 +68,7 @@ public final class EventStreamRenderer implements ShapeRenderer {
     /** Finds the @streaming union targeted by a member of the result structure, if any. */
     private Optional<UnionShape> findStreamingUnion(StructureShape resultShape) {
         for (MemberShape member : resultShape.getAllMembers().values()) {
-            Shape target = model.expectShape(member.getTarget());
+            Shape target = ctx.model().expectShape(member.getTarget());
             if (target.isUnionShape() && target.hasTrait(StreamingTrait.class)) {
                 return target.asUnionShape();
             }
@@ -91,7 +79,7 @@ public final class EventStreamRenderer implements ShapeRenderer {
     /** Splits union members into events (non-exception) and exceptions, preserving order. */
     private void partitionMembers(UnionShape union, List<MemberShape> events, List<MemberShape> exceptions) {
         for (MemberShape member : union.getAllMembers().values()) {
-            Shape target = model.expectShape(member.getTarget());
+            Shape target = ctx.model().expectShape(member.getTarget());
             if (target.hasTrait(ErrorTrait.class)) {
                 exceptions.add(member);
             } else {
@@ -111,8 +99,8 @@ public final class EventStreamRenderer implements ShapeRenderer {
      * and non-modeled ones as the generic {@code <namespace>Error} wrapper.
      */
     private boolean isModeledException(MemberShape exc) {
-        StructureShape target = model.expectShape(exc.getTarget(), StructureShape.class);
-        return ShapeClassifier.isModeledException(target, protocolTraits.protocol());
+        StructureShape target = ctx.model().expectShape(exc.getTarget(), StructureShape.class);
+        return ShapeClassifier.isModeledException(target, ctx.protocolTraits().protocol());
     }
 
     /** The C++ type for an exception member: concrete shape name if modeled, else {@code errorType}. */
@@ -135,22 +123,20 @@ public final class EventStreamRenderer implements ShapeRenderer {
     private void renderHandlerHeader(CppWriterDelegator writerDelegator, String opName,
                                      List<MemberShape> events) {
         String className = opName + "Handler";
-        String fileName = "include/aws/" + smithyServiceName + "/model/" + className + ".h";
+        String fileName = "include/aws/" + ctx.smithyServiceName() + "/model/" + className + ".h";
         writerDelegator.useFileWriter(fileName, writer -> {
             writer.write("#pragma once");
             writer.write("#include <aws/core/client/AWSError.h>");
             writer.write("#include <aws/core/utils/HashingUtils.h>");
             writer.write("#include <aws/core/utils/event/EventStreamHandler.h>");
-            writer.write("#include <aws/$1L/$2LErrors.h>", smithyServiceName, namespace);
-            writer.write("#include <aws/$1L/$2L_EXPORTS.h>", smithyServiceName, namespace);
-            writer.write("#include <aws/$1L/model/$2LInitialResponse.h>", smithyServiceName, opName);
+            writer.write("#include <aws/$1L/$2LErrors.h>", ctx.smithyServiceName(), ctx.namespace());
+            writer.write("#include <aws/$1L/$2L_EXPORTS.h>", ctx.smithyServiceName(), ctx.namespace());
+            writer.write("#include <aws/$1L/model/$2LInitialResponse.h>", ctx.smithyServiceName(), opName);
             for (MemberShape event : events) {
-                writer.write("#include <aws/$1L/model/$2L.h>", smithyServiceName, eventShapeName(event));
+                writer.write("#include <aws/$1L/model/$2L.h>", ctx.smithyServiceName(), eventShapeName(event));
             }
             writer.write("");
-            writer.writeNamespaceOpen("Aws");
-            writer.writeNamespaceOpen(namespace);
-            writer.writeNamespaceOpen("Model");
+            ModelFile.modelNamespace(writer, ctx.namespace(), () -> {
 
             // EventType enum
             StringBuilder enumBody = new StringBuilder("enum class ")
@@ -170,16 +156,16 @@ public final class EventStreamRenderer implements ShapeRenderer {
                     String ev = eventShapeName(event);
                     writer.write("typedef std::function<void(const $1L&)> $1LCallback;", ev);
                 }
-                writer.write("typedef std::function<void(const Aws::Client::AWSError<$1LErrors>& error)> ErrorCallback;", namespace);
+                writer.write("typedef std::function<void(const Aws::Client::AWSError<$1LErrors>& error)> ErrorCallback;", ctx.namespace());
                 writer.write("");
                 writer.dedent();
                 writer.write("public:");
                 writer.indent();
-                writer.write("$1L $2L();", exportMacro, className);
-                writer.write("$1L $2L& operator=(const $2L&) = default;", exportMacro, className);
-                writer.write("$1L $2L(const $2L&) = default;", exportMacro, className);
+                writer.write("$1L $2L();", ctx.exportMacro(), className);
+                writer.write("$1L $2L& operator=(const $2L&) = default;", ctx.exportMacro(), className);
+                writer.write("$1L $2L(const $2L&) = default;", ctx.exportMacro(), className);
                 writer.write("");
-                writer.write("$1L virtual void OnEvent() override;", exportMacro);
+                writer.write("$1L virtual void OnEvent() override;", ctx.exportMacro());
                 writer.write("");
                 writer.write("///@{");
                 writer.write("/**");
@@ -209,9 +195,9 @@ public final class EventStreamRenderer implements ShapeRenderer {
                 writer.dedent();
                 writer.write("private:");
                 writer.indent();
-                writer.write("$1L void HandleEventInMessage();", exportMacro);
-                writer.write("$1L void HandleErrorInMessage();", exportMacro);
-                writer.write("$1L void MarshallError(const Aws::String& errorCode, const Aws::String& errorMessage);", exportMacro);
+                writer.write("$1L void HandleEventInMessage();", ctx.exportMacro());
+                writer.write("$1L void HandleErrorInMessage();", ctx.exportMacro());
+                writer.write("$1L void MarshallError(const Aws::String& errorCode, const Aws::String& errorMessage);", ctx.exportMacro());
                 writer.write("");
                 writer.write("$1LInitialResponseCallbackEx m_onInitialResponse;", opName);
                 for (MemberShape event : events) {
@@ -223,14 +209,11 @@ public final class EventStreamRenderer implements ShapeRenderer {
             writer.write("");
 
             writer.writeNamespaceOpen(opName + "EventMapper");
-            writer.write("$1L $2LEventType Get$2LEventTypeForName(const Aws::String& name);", exportMacro, opName);
+            writer.write("$1L $2LEventType Get$2LEventTypeForName(const Aws::String& name);", ctx.exportMacro(), opName);
             writer.write("");
-            writer.write("$1L Aws::String GetNameFor$2LEventType($2LEventType value);", exportMacro, opName);
+            writer.write("$1L Aws::String GetNameFor$2LEventType($2LEventType value);", ctx.exportMacro(), opName);
             writer.writeNamespaceClose(opName + "EventMapper");
-
-            writer.writeNamespaceClose("Model");
-            writer.writeNamespaceClose(namespace);
-            writer.writeNamespaceClose("Aws");
+            });
         });
     }
 
@@ -245,21 +228,19 @@ public final class EventStreamRenderer implements ShapeRenderer {
             includes.add("aws/core/client/CoreErrors.h");
             includes.add("aws/core/utils/event/EventStreamErrors.h");
             includes.add("aws/core/utils/logging/LogMacros.h");
-            includes.add("aws/" + smithyServiceName + "/" + namespace + "ErrorMarshaller.h");
-            includes.add("aws/" + smithyServiceName + "/model/" + opName + "Handler.h");
-            includes.addAll(protocolTraits.serdeIncludes(FileKind.EVENT_HANDLER_SOURCE));
+            includes.add("aws/" + ctx.smithyServiceName() + "/" + ctx.namespace() + "ErrorMarshaller.h");
+            includes.add("aws/" + ctx.smithyServiceName() + "/model/" + opName + "Handler.h");
+            includes.addAll(ctx.protocolTraits().serdeIncludes(FileKind.EVENT_HANDLER_SOURCE));
             IncludeSets.emit(writer, includes);
             writer.write("");
-            writer.write("using namespace Aws::$1L::Model;", namespace);
+            writer.write("using namespace Aws::$1L::Model;", ctx.namespace());
             writer.write("using namespace Aws::Utils::Event;");
-            IncludeSets.emitUsings(writer, protocolTraits.serdeUsings(FileKind.EVENT_HANDLER_SOURCE));
+            IncludeSets.emitUsings(writer, ctx.protocolTraits().serdeUsings(FileKind.EVENT_HANDLER_SOURCE));
             writer.write("");
             writer.write("AWS_CORE_API extern const char MESSAGE_LOWER_CASE[];");
             writer.write("AWS_CORE_API extern const char MESSAGE_CAMEL_CASE[];");
             writer.write("");
-            writer.writeNamespaceOpen("Aws");
-            writer.writeNamespaceOpen(namespace);
-            writer.writeNamespaceOpen("Model");
+            ModelFile.modelNamespace(writer, ctx.namespace(), () -> {
             writer.write("using namespace Aws::Client;");
             writer.write("");
             writer.write("static const char $1L[] = \"$2LHandler\";", tag, opName);
@@ -276,8 +257,8 @@ public final class EventStreamRenderer implements ShapeRenderer {
                         writer.write("AWS_LOGSTREAM_TRACE($1L, \"$2L received.\");", tag, ev);
                     });
                 }
-                writer.openBlock("m_onError = [&](const AWSError<$1LErrors>& error) {", "};", namespace, () -> {
-                    writer.write("AWS_LOGSTREAM_TRACE($1L, \"$2L Errors received, \" << error);", tag, namespace);
+                writer.openBlock("m_onError = [&](const AWSError<$1LErrors>& error) {", "};", ctx.namespace(), () -> {
+                    writer.write("AWS_LOGSTREAM_TRACE($1L, \"$2L Errors received, \" << error);", tag, ctx.namespace());
                 });
             });
             writer.write("");
@@ -287,7 +268,7 @@ public final class EventStreamRenderer implements ShapeRenderer {
                 writer.openBlock("if (!*this) {", "}", () -> {
                     writer.write("AWSError<CoreErrors> error = EventStreamErrorsMapper::GetAwsErrorForEventStreamError(GetInternalError());");
                     writer.write("error.SetMessage(GetEventPayloadAsString());");
-                    writer.write("m_onError(AWSError<$1LErrors>(error));", namespace);
+                    writer.write("m_onError(AWSError<$1LErrors>(error));", ctx.namespace());
                     writer.write("return;");
                 });
                 writer.write("const auto& headers = GetEventHeaders();");
@@ -328,7 +309,7 @@ public final class EventStreamRenderer implements ShapeRenderer {
                     });
                     for (MemberShape event : events) {
                         writer.openBlock("case $1LEventType::$2L: {", "}", opName, enumConstant(event), () -> {
-                            protocolTraits.writeEventPayloadDecode(writer, eventShapeName(event),
+                            ctx.protocolTraits().writeEventPayloadDecode(writer, eventShapeName(event),
                                 "m_on" + eventShapeName(event));
                             writer.write("break;");
                         });
@@ -357,7 +338,7 @@ public final class EventStreamRenderer implements ShapeRenderer {
                 writer.write("errorHeaderIter = headers.find(ERROR_MESSAGE_HEADER);");
                 writer.openBlock("if (errorHeaderIter == headers.end()) {", "}", () -> {
                     writer.write("// TODO: read error message from payload once protocol-specific serde lands");
-                    protocolTraits.writeErrorPayloadParse(writer);
+                    ctx.protocolTraits().writeErrorPayloadParse(writer);
                 });
                 writer.openBlock("else {", "}", () -> {
                     writer.write("errorMessage = errorHeaderIter->second.GetEventHeaderValueAsString();");
@@ -368,7 +349,7 @@ public final class EventStreamRenderer implements ShapeRenderer {
 
             // MarshallError (verbatim from C2J)
             writer.openBlock("void $1L::MarshallError(const Aws::String& errorCode, const Aws::String& errorMessage) {", "}", className, () -> {
-                writer.write("$1LErrorMarshaller errorMarshaller;", namespace);
+                writer.write("$1LErrorMarshaller errorMarshaller;", ctx.namespace());
                 writer.write("AWSError<CoreErrors> error;");
                 writer.openBlock("if (errorCode.empty()) {", "}", () -> {
                     writer.write("error = AWSError<CoreErrors>(CoreErrors::UNKNOWN, \"\", errorMessage, false);");
@@ -385,7 +366,7 @@ public final class EventStreamRenderer implements ShapeRenderer {
                         writer.write("error = AWSError<CoreErrors>(CoreErrors::UNKNOWN, errorCode, \"Unable to parse ExceptionName: \" + errorCode + \" Message: \" + errorMessage, false);");
                     });
                 });
-                writer.write("m_onError(AWSError<$1LErrors>(error));", namespace);
+                writer.write("m_onError(AWSError<$1LErrors>(error));", ctx.namespace());
             });
             writer.write("");
 
@@ -423,10 +404,7 @@ public final class EventStreamRenderer implements ShapeRenderer {
                 });
             });
             writer.writeNamespaceClose(opName + "EventMapper");
-
-            writer.writeNamespaceClose("Model");
-            writer.writeNamespaceClose(namespace);
-            writer.writeNamespaceClose("Aws");
+            });
         });
     }
 
@@ -441,7 +419,7 @@ public final class EventStreamRenderer implements ShapeRenderer {
         StructureShape.Builder builder = StructureShape.builder()
             .id("com.amazonaws.smithy.synthetic#" + opName + "InitialResponse");
         for (MemberShape member : resultShape.getAllMembers().values()) {
-            Shape target = model.expectShape(member.getTarget());
+            Shape target = ctx.model().expectShape(member.getTarget());
             if (target.isUnionShape() && target.hasTrait(StreamingTrait.class)) {
                 continue;
             }
@@ -457,79 +435,72 @@ public final class EventStreamRenderer implements ShapeRenderer {
         StructureShape shape = initialResponseShape(opName, resultShape);
         boolean hasMembers = !shape.getAllMembers().isEmpty();
 
-        String headerFile = "include/aws/" + smithyServiceName + "/model/" + className + ".h";
+        String headerFile = "include/aws/" + ctx.smithyServiceName() + "/model/" + className + ".h";
         writerDelegator.useFileWriter(headerFile, writer -> {
             writer.write("#pragma once");
             List<String> includes = new java.util.ArrayList<>();
             includes.add("<aws/core/http/HttpTypes.h>");
-            includes.add("<aws/" + smithyServiceName + "/" + namespace + "_EXPORTS.h>");
-            includes.addAll(CppTypeMapper.getIncludesForShape(shape, model, smithyServiceName));
-            for (String include : new java.util.TreeSet<>(includes)) {
-                writer.write("#include $L", include);
-            }
+            includes.add("<aws/" + ctx.smithyServiceName() + "/" + ctx.namespace() + "_EXPORTS.h>");
+            includes.addAll(CppTypeMapper.getIncludesForShape(shape, ctx.model(), ctx.smithyServiceName()));
+            IncludeSets.emitAngleIncludes(writer, includes);
             if (hasMembers) {
                 writer.write("");
                 writer.write("#include <utility>");
             }
             writer.write("");
-            writer.writeNamespaceOpen("Aws");
-            protocolTraits.writeShapeForwardDeclarations(writer);
-            writer.writeNamespaceOpen(namespace);
-            writer.writeNamespaceOpen("Model");
+            writer.withNamespace("Aws", () -> {
+            ctx.protocolTraits().writeShapeForwardDeclarations(writer);
+            writer.withNamespace(ctx.namespace(), () ->
+                writer.withNamespace("Model", () -> {
             writer.write("");
             writer.openBlock("class $L {", "};", className, () -> {
                 writer.write("public:");
                 // The header-collection ctor sits before the serialize method (mainline ordering).
-                protocolTraits.writeSerdeMethodDecls(writer, exportMacro, className,
-                    () -> writer.write("$1L $2L(const Http::HeaderValueCollection& responseHeaders);", exportMacro, className));
+                ctx.protocolTraits().writeSerdeMethodDecls(writer, ctx.exportMacro(), className,
+                    () -> writer.write("$1L $2L(const Http::HeaderValueCollection& responseHeaders);", ctx.exportMacro(), className));
                 // Accessors + private section for the result's non-streaming members. A memberless
                 // InitialResponse ends right after its serde decls (no private:), matching C2J.
                 if (hasMembers) {
-                    boolean wideIntegers = protocolTraits.widensIntegers();
+                    boolean wideIntegers = ctx.protocolTraits().widensIntegers();
                     writer.write("");
-                    MemberRenderer.renderPublicSection(writer, shape, model, exportMacro, className, wideIntegers);
+                    MemberRenderer.renderPublicSection(writer, shape, ctx.model(), ctx.exportMacro(), className, wideIntegers);
                     writer.dedent();
                     writer.write("private:");
                     writer.indent();
-                    MemberRenderer.renderPrivateSection(writer, shape, model, wideIntegers);
+                    MemberRenderer.renderPrivateSection(writer, shape, ctx.model(), wideIntegers);
                 }
             });
             writer.write("");
-            writer.writeNamespaceClose("Model");
-            writer.writeNamespaceClose(namespace);
-            writer.writeNamespaceClose("Aws");
+                }));
+            });
         });
 
         String sourceFile = "source/model/" + className + ".cpp";
         writerDelegator.useFileWriter(sourceFile, writer -> {
             List<String> includes = new java.util.ArrayList<>();
             includes.add("aws/core/utils/StringUtils.h");
-            includes.add("aws/" + smithyServiceName + "/model/" + className + ".h");
+            includes.add("aws/" + ctx.smithyServiceName() + "/model/" + className + ".h");
             includes.add("utility");
-            includes.addAll(protocolTraits.serdeIncludes(FileKind.INITIAL_RESPONSE_SOURCE));
+            includes.addAll(ctx.protocolTraits().serdeIncludes(FileKind.INITIAL_RESPONSE_SOURCE));
             // Serde-implementation includes derived from the initial-response members (e.g.
             // AWSStringStream.h for the header-bound members), matching C2J computeSourceIncludes.
-            includes.addAll(CppTypeMapper.getSourceIncludesForShape(shape, model, smithyServiceName));
+            includes.addAll(CppTypeMapper.getSourceIncludesForShape(shape, ctx.model(), ctx.smithyServiceName()));
             IncludeSets.emit(writer, includes);
             writer.write("");
-            IncludeSets.emitUsings(writer, protocolTraits.serdeUsings(FileKind.INITIAL_RESPONSE_SOURCE));
+            IncludeSets.emitUsings(writer, ctx.protocolTraits().serdeUsings(FileKind.INITIAL_RESPONSE_SOURCE));
             writer.write("");
             // The serde impls are wrapped in an explicit namespace block (not a `using`),
             // matching C2J, which renders InitialResponse via the sub-object source template.
-            writer.writeNamespaceOpen("Aws");
-            writer.writeNamespaceOpen(namespace);
-            writer.writeNamespaceOpen("Model");
+            ModelFile.modelNamespace(writer, ctx.namespace(), () -> {
             writer.write("");
-            protocolTraits.writeSerdeMethodImpls(writer, className);
+            ctx.protocolTraits().writeSerdeMethodImpls(writer, className);
             writer.write("");
             // Delegate to the default ctor so all members are value-initialized before the
             // header-derived ones are set (matches C2J).
             writer.openBlock("$1L::$1L(const Http::HeaderValueCollection& responseHeaders) : $1L() {", "}",
                 className, () -> writer.write("AWS_UNREFERENCED_PARAM(responseHeaders);"));
             writer.write("");
-            writer.writeNamespaceClose("Model");
-            writer.writeNamespaceClose(namespace);
-            writer.writeNamespaceClose("Aws");
+            });
         });
     }
 
@@ -537,40 +508,40 @@ public final class EventStreamRenderer implements ShapeRenderer {
                                         UnionShape union, List<MemberShape> events,
                                         List<MemberShape> exceptions) {
         String className = union.getId().getName();
-        String errorType = namespace + "Error";
+        String errorType = ctx.namespace() + "Error";
 
-        String headerFile = "include/aws/" + smithyServiceName + "/model/" + className + ".h";
+        String headerFile = "include/aws/" + ctx.smithyServiceName() + "/model/" + className + ".h";
         writerDelegator.useFileWriter(headerFile, writer -> {
             writer.write("#pragma once");
-            writer.write("#include <aws/$1L/$2L_EXPORTS.h>", smithyServiceName, namespace);
+            writer.write("#include <aws/$1L/$2L_EXPORTS.h>", ctx.smithyServiceName(), ctx.namespace());
             // C2J omits the service Errors include: its header-include computation skips non-modeled
             // exception members (CppViewHelper: `if (next.isException() && !next.isModeledException())
             // continue;`), which are the generic <namespace>Error wrapper and resolve transitively.
             // Concrete event shapes AND modeled exceptions get their own model include.
             for (MemberShape event : events) {
-                writer.write("#include <aws/$1L/model/$2L.h>", smithyServiceName, eventShapeName(event));
+                writer.write("#include <aws/$1L/model/$2L.h>", ctx.smithyServiceName(), eventShapeName(event));
             }
             for (MemberShape exc : exceptions) {
                 if (isModeledException(exc)) {
-                    writer.write("#include <aws/$1L/model/$2L.h>", smithyServiceName, exc.getTarget().getName());
+                    writer.write("#include <aws/$1L/model/$2L.h>", ctx.smithyServiceName(), exc.getTarget().getName());
                 }
             }
             writer.write("");
             writer.write("#include <utility>");
             writer.write("");
-            writer.writeNamespaceOpen("Aws");
-            protocolTraits.writeShapeForwardDeclarations(writer);
-            writer.writeNamespaceOpen(namespace);
-            writer.writeNamespaceOpen("Model");
+            writer.withNamespace("Aws", () -> {
+            ctx.protocolTraits().writeShapeForwardDeclarations(writer);
+            writer.withNamespace(ctx.namespace(), () ->
+                writer.withNamespace("Model", () -> {
             writer.write("");
-            MemberRenderer.renderClassDocComment(writer, union, smithyServiceName, service.getVersion());
+            MemberRenderer.renderClassDocComment(writer, union, ctx.smithyServiceName(), ctx.service().getVersion());
             writer.openBlock("class $L {", "};", className, () -> {
                 writer.write("public:");
-                protocolTraits.writeSerdeMethodDecls(writer, exportMacro, className, null);
+                ctx.protocolTraits().writeSerdeMethodDecls(writer, ctx.exportMacro(), className, null);
                 writer.write("");
                 // Event member accessors, typed as their concrete shape.
                 for (MemberShape event : events) {
-                    String cppType = CppTypeMapper.getCppType(model.expectShape(event.getTarget()), model);
+                    String cppType = CppTypeMapper.getCppType(ctx.model().expectShape(event.getTarget()), ctx.model());
                     renderShapeAccessor(writer, className, cppType, event.getMemberName(), event);
                 }
                 // Exception member accessors: modeled -> concrete type; non-modeled -> <namespace>Error.
@@ -582,24 +553,23 @@ public final class EventStreamRenderer implements ShapeRenderer {
                 writer.indent();
                 // Data members
                 for (MemberShape event : events) {
-                    String cppType = CppTypeMapper.getCppType(model.expectShape(event.getTarget()), model);
-                    writer.write("$1L $2L;", cppType, "m_" + decapitalize(event.getMemberName()));
+                    String cppType = CppTypeMapper.getCppType(ctx.model().expectShape(event.getTarget()), ctx.model());
+                    writer.write("$1L $2L;", cppType, CppNames.fieldName(event.getMemberName()));
                 }
                 for (MemberShape exc : exceptions) {
-                    writer.write("$1L $2L;", exceptionType(exc, errorType), "m_" + decapitalize(exc.getMemberName()));
+                    writer.write("$1L $2L;", exceptionType(exc, errorType), CppNames.fieldName(exc.getMemberName()));
                 }
                 // HasBeenSet flags
                 for (MemberShape event : events) {
-                    writer.write("bool $1LHasBeenSet = false;", "m_" + decapitalize(event.getMemberName()));
+                    writer.write("bool $1LHasBeenSet = false;", CppNames.fieldName(event.getMemberName()));
                 }
                 for (MemberShape exc : exceptions) {
-                    writer.write("bool $1LHasBeenSet = false;", "m_" + decapitalize(exc.getMemberName()));
+                    writer.write("bool $1LHasBeenSet = false;", CppNames.fieldName(exc.getMemberName()));
                 }
             });
             writer.write("");
-            writer.writeNamespaceClose("Model");
-            writer.writeNamespaceClose(namespace);
-            writer.writeNamespaceClose("Aws");
+                }));
+            });
         });
 
         // C2J generates the event stream union as a header-only type: the serde methods are
@@ -615,8 +585,8 @@ public final class EventStreamRenderer implements ShapeRenderer {
      */
     private void renderShapeAccessor(CppWriter writer, String className, String cppType, String memberName,
                                      MemberShape member) {
-        String getter = capitalize(memberName);
-        String field = "m_" + decapitalize(memberName);
+        String getter = CppNames.capitalize(memberName);
+        String field = CppNames.fieldName(memberName);
         String templateParam = getter + "T";
         writer.write("///@{");
         if (member.getTrait(DocumentationTrait.class).isPresent()) {
@@ -639,13 +609,4 @@ public final class EventStreamRenderer implements ShapeRenderer {
         });
         writer.write("///@}");
     }
-
-    private static String capitalize(String s) {
-        return s.substring(0, 1).toUpperCase() + s.substring(1);
-    }
-
-    private static String decapitalize(String s) {
-        return s.substring(0, 1).toLowerCase() + s.substring(1);
-    }
-
 }

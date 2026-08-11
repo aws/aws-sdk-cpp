@@ -88,7 +88,7 @@ class ProtocolTraitsStreamingPayloadTest {
     void allProtocols_omitSerializePayload_forRawStreamingPayloadRequest() {
         Model model = streamingPayloadModel();
         for (ProtocolTraits traits : allTraits()) {
-            assertFalse(traits.emitsSerializePayload(op(model), model),
+            assertFalse(RequestBindings.emitsSerializePayload(op(model), model),
                 traits.getClass().getSimpleName() + "/" + traits.protocol()
                     + " must report emitsSerializePayload=false for a streaming-payload request");
             assertFalse(renderDecls(traits, model).contains("SerializePayload"),
@@ -101,7 +101,7 @@ class ProtocolTraitsStreamingPayloadTest {
     void allProtocols_emitSerializePayload_forPlainRequest() {
         Model model = plainModel();
         for (ProtocolTraits traits : allTraits()) {
-            assertTrue(traits.emitsSerializePayload(op(model), model),
+            assertTrue(RequestBindings.emitsSerializePayload(op(model), model),
                 traits.getClass().getSimpleName() + "/" + traits.protocol()
                     + " must report emitsSerializePayload=true for a plain request");
             assertTrue(renderDecls(traits, model).contains("SerializePayload"),

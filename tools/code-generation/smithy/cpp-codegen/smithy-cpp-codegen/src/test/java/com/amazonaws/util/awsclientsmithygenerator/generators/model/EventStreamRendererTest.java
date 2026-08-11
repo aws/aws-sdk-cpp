@@ -6,6 +6,7 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.RenderContext;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.EventStreamRenderer;
 import org.junit.jupiter.api.Test;
 import software.amazon.smithy.build.MockManifest;
@@ -94,8 +95,8 @@ class EventStreamRendererTest {
         Protocol protocol = ProtocolResolver.resolve(service, model);
         EventStreamRenderer renderer = new EventStreamRenderer(
             ShapeClassifier.classify(model, service, protocol).eventStreamHandlers(),
-            model, service, ProtocolResolver.traitsFor(protocol),
-            "Example", "AWS_EXAMPLE_API", "example");
+            new RenderContext(model, service, ProtocolResolver.traitsFor(protocol),
+                "Example", "AWS_EXAMPLE_API", "example"));
         renderer.render(delegator);
         delegator.flushWriters();
         return manifest.getFileString(

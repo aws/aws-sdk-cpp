@@ -7,6 +7,7 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model;
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.ProtocolTraits;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.RenderContext;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.SubObjectRenderer;
 import org.junit.jupiter.api.Test;
 import software.amazon.smithy.build.MockManifest;
@@ -90,8 +91,9 @@ class SubObjectRendererTest {
             model.expectShape(ShapeId.from("com.example#BidirectionalInput")),
             model.expectShape(ShapeId.from("com.example#AnyToolChoice")),
             model.expectShape(ShapeId.from("com.example#AudioSource")));
-        new SubObjectRenderer(subObjects, model, service, traits,
-            "Example", "AWS_EXAMPLE_API", "Example", "example").render(delegator);
+        new SubObjectRenderer(subObjects,
+            new RenderContext(model, service, traits,
+                "Example", "AWS_EXAMPLE_API", "example")).render(delegator);
         delegator.flushWriters();
         java.util.Map<String, String> out = new java.util.TreeMap<>();
         for (java.nio.file.Path path : manifest.getFiles()) {

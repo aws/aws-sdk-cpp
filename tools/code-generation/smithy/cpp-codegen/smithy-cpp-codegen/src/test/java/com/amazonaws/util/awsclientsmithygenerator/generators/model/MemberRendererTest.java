@@ -377,4 +377,46 @@ class MemberRendererTest {
         assertTrue(nameFieldPos < nameHasBeenSetPos, "Data members should precede HasBeenSet flags");
         assertTrue(countFieldPos < countHasBeenSetPos, "Data members should precede HasBeenSet flags");
     }
+
+    @Test
+    void renderRequestIdAccessors_emitsTemplatedGetSetWith() {
+        com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter writer =
+            new com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter();
+        MemberRenderer.renderRequestIdAccessors(writer, "GetFooResult");
+        String out = writer.toString();
+        assertTrue(out.contains("inline const Aws::String& GetRequestId() const { return m_requestId; }"));
+        assertTrue(out.contains("template <typename RequestIdT = Aws::String>"));
+        assertTrue(out.contains("void SetRequestId(RequestIdT&& value)"));
+        assertTrue(out.contains("m_requestIdHasBeenSet = true;"));
+        assertTrue(out.contains("m_requestId = std::forward<RequestIdT>(value);"));
+        assertTrue(out.contains("GetFooResult& WithRequestId(RequestIdT&& value)"));
+        assertTrue(out.contains("SetRequestId(std::forward<RequestIdT>(value));"));
+        assertTrue(out.contains("///@{"));
+        assertTrue(out.contains("///@}"));
+    }
+
+    @Test
+    void render_withOptions_matchesRenderPublicSection() {
+        // Build the same shape twice and assert the options-object path equals the legacy path.
+        software.amazon.smithy.model.shapes.StringShape str =
+            software.amazon.smithy.model.shapes.StringShape.builder().id("com.example#String").build();
+        software.amazon.smithy.model.shapes.StructureShape shape =
+            software.amazon.smithy.model.shapes.StructureShape.builder()
+                .id("com.example#Foo")
+                .addMember("ShardId", str.getId())
+                .build();
+        software.amazon.smithy.model.Model model =
+            software.amazon.smithy.model.Model.builder().addShapes(str, shape).build();
+
+        com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter legacy =
+            new com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter();
+        MemberRenderer.renderPublicSection(legacy, shape, model, "AWS_EXAMPLE_API", "Foo");
+
+        com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter viaOpts =
+            new com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter();
+        MemberRenderer.render(viaOpts, shape, model,
+            new MemberOptions().exportMacro("AWS_EXAMPLE_API").className("Foo").emitHasBeenSet(true));
+
+        assertEquals(legacy.toString(), viaOpts.toString());
+    }
 }

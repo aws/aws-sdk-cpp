@@ -71,6 +71,19 @@ class IncludeSetsTest {
     }
 
     @Test
+    void emitAngleIncludes_normalizesBracketsDedupesAndSorts() {
+        com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter writer =
+            new com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter();
+        IncludeSets.emitAngleIncludes(writer, java.util.List.of(
+            "<aws/b/B.h>", "aws/a/A.h", "<aws/b/B.h>"));
+        String out = writer.toString();
+        // deduped to two, each bracketed exactly once, sorted A before B
+        assertEquals(
+            "#include <aws/a/A.h>\n#include <aws/b/B.h>\n",
+            out);
+    }
+
+    @Test
     void emitUsings_preservesOrder() {
         com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter w =
             new com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter();

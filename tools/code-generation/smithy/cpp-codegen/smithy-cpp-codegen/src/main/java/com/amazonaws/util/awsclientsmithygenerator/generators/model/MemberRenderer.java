@@ -30,6 +30,30 @@ public final class MemberRenderer {
     }
 
     /**
+     * Renders the top-level {@code RequestId} accessor group emitted by result headers:
+     * {@code GetRequestId} / templated {@code SetRequestId} / templated {@code WithRequestId}.
+     * Callers decide whether to emit it (Query/EC2 do not) and separately emit the
+     * {@code m_requestId} field and its {@code HasBeenSet} flag in the private section.
+     */
+    public static void renderRequestIdAccessors(CppWriter writer, String className) {
+        writer.write("");
+        writer.write("///@{");
+        writer.write("");
+        writer.write("inline const Aws::String& GetRequestId() const { return m_requestId; }");
+        writer.write("template <typename RequestIdT = Aws::String>");
+        writer.openBlock("void SetRequestId(RequestIdT&& value) {", "}", () -> {
+            writer.write("m_requestIdHasBeenSet = true;");
+            writer.write("m_requestId = std::forward<RequestIdT>(value);");
+        });
+        writer.write("template <typename RequestIdT = Aws::String>");
+        writer.openBlock("$L& WithRequestId(RequestIdT&& value) {", "}", className, () -> {
+            writer.write("SetRequestId(std::forward<RequestIdT>(value));");
+            writer.write("return *this;");
+        });
+        writer.write("///@}");
+    }
+
+    /**
      * Writes the public accessor methods for all members of a structure shape.
      *
      * <p>For each member, generates:
@@ -51,7 +75,8 @@ public final class MemberRenderer {
      */
     public static void renderPublicSection(CppWriter writer, Shape shape,
                                            Model model, String exportMacro, String className) {
-        renderMembers(writer, shape, model, exportMacro, className, true, null, false);
+        render(writer, shape, model,
+            new MemberOptions().exportMacro(exportMacro).className(className).emitHasBeenSet(true));
     }
 
     /**
@@ -61,7 +86,8 @@ public final class MemberRenderer {
     public static void renderPublicSection(CppWriter writer, Shape shape,
                                            Model model, String exportMacro, String className,
                                            boolean wideIntegers) {
-        renderMembers(writer, shape, model, exportMacro, className, true, null, wideIntegers);
+        render(writer, shape, model, new MemberOptions()
+            .exportMacro(exportMacro).className(className).emitHasBeenSet(true).wideIntegers(wideIntegers));
     }
 
     /**
@@ -78,7 +104,8 @@ public final class MemberRenderer {
     public static void renderPublicSectionForResult(CppWriter writer, StructureShape shape,
                                                     Model model, String exportMacro, String className,
                                                     boolean wideIntegers) {
-        renderMembers(writer, shape, model, exportMacro, className, false, null, wideIntegers);
+        render(writer, shape, model, new MemberOptions()
+            .exportMacro(exportMacro).className(className).emitHasBeenSet(false).wideIntegers(wideIntegers));
     }
 
     /**
@@ -90,7 +117,18 @@ public final class MemberRenderer {
     public static void renderPublicSectionForResultExcluding(CppWriter writer, StructureShape shape,
                                                              Model model, String exportMacro, String className,
                                                              String excludeMemberName, boolean wideIntegers) {
-        renderMembers(writer, shape, model, exportMacro, className, false, excludeMemberName, wideIntegers);
+        render(writer, shape, model, new MemberOptions()
+            .exportMacro(exportMacro).className(className).emitHasBeenSet(false)
+            .exclude(excludeMemberName).wideIntegers(wideIntegers));
+    }
+
+    /**
+     * Single entry point for rendering a structure's public accessor methods.
+     * See {@link MemberOptions} for the rendering axes.
+     */
+    public static void render(CppWriter writer, Shape shape, Model model, MemberOptions opts) {
+        renderMembers(writer, shape, model, opts.exportMacro(), opts.className(),
+            opts.emitHasBeenSet(), opts.exclude(), opts.wideIntegers());
     }
 
     /** Writes data member declarations, skipping {@code excludeMemberName}. */
@@ -127,22 +165,6 @@ public final class MemberRenderer {
     }
 
     /**
-     * Shared implementation for rendering public accessor methods.
-     *
-     * @param writer         the CppWriter to write to
-     * @param shape          the structure shape whose members to render
-     * @param model          the model (for resolving member targets)
-     * @param exportMacro    the export macro (e.g., "AWS_KINESIS_API")
-     * @param className      the C++ class name (e.g., "ChildShard")
-     * @param emitHasBeenSet whether to emit HasBeenSet() accessor methods
-     */
-    private static void renderMembers(CppWriter writer, Shape shape,
-                                      Model model, String exportMacro, String className,
-                                      boolean emitHasBeenSet) {
-        renderMembers(writer, shape, model, exportMacro, className, emitHasBeenSet, null, false);
-    }
-
-    /**
      * Shared member-rendering implementation with an optional excluded member. Streaming
      * results emit their {@code @httpPayload} member via a dedicated {@code GetBody()} /
      * {@code ReplaceBody} accessor pair, so that member is skipped here.
@@ -161,7 +183,7 @@ public final class MemberRenderer {
             MemberShape member = entry.getValue();
             Shape targetShape = model.expectShape(member.getTarget());
             String cppType = CppTypeMapper.getCppType(targetShape, model, wideIntegers);
-            String fieldName = "m_" + decapitalize(memberName);
+            String fieldName = CppNames.fieldName(memberName);
             // Method names and template params use the capitalized member name to match the
             // legacy C2J convention (e.g. member "extendedKeyUsage" -> GetExtendedKeyUsage,
             // ExtendedKeyUsageHasBeenSet, template param ExtendedKeyUsageT). Field names keep
@@ -335,7 +357,7 @@ public final class MemberRenderer {
                                         boolean wideIntegers) {
         Shape targetShape = model.expectShape(member.getTarget());
         String cppType = CppTypeMapper.getCppType(targetShape, model, wideIntegers);
-        String fieldName = "m_" + decapitalize(memberName);
+        String fieldName = CppNames.fieldName(memberName);
         if (member.hasTrait(IdempotencyTokenTrait.class)) {
             writer.write("$L $L{Aws::Utils::UUID::PseudoRandomUUID()};", cppType, fieldName);
             return;
@@ -352,14 +374,9 @@ public final class MemberRenderer {
      * Matches C2J's ModelClassMembersAndInlines.vm.
      */
     private static void writeHasBeenSetFlag(CppWriter writer, MemberShape member, String memberName) {
-        String fieldName = "m_" + decapitalize(memberName);
+        String fieldName = CppNames.fieldName(memberName);
         boolean initialValue = member.hasTrait(IdempotencyTokenTrait.class);
         writer.write("bool $LHasBeenSet = $L;", fieldName, initialValue);
-    }
-
-    private static String decapitalize(String name) {
-        if (name.isEmpty()) return name;
-        return Character.toLowerCase(name.charAt(0)) + name.substring(1);
     }
 
     /**
@@ -372,8 +389,7 @@ public final class MemberRenderer {
     }
 
     private static String capitalize(String name) {
-        if (name.isEmpty()) return name;
-        return Character.toUpperCase(name.charAt(0)) + name.substring(1);
+        return CppNames.capitalize(name);
     }
 
     private static final String[] UNSUPPORTED_HTML_TAGS = {

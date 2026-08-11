@@ -10,6 +10,7 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.Re
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.ResultRenderer;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.SubObjectRenderer;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.ProtocolTraits;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.RenderContext;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
@@ -122,12 +123,11 @@ class ProtocolTraitsCharacterizationTest {
         CppWriterDelegator delegator = new CppWriterDelegator(manifest);
 
         ProtocolTraits traits = ProtocolResolver.traitsFor(resolved);
-        new SubObjectRenderer(classified.subObjects(), model, service, traits,
-            "Example", "AWS_EXAMPLE_API", "Example", "example").render(delegator);
-        new RequestRenderer(classified.requests(), model, service, traits,
-            "Example", "AWS_EXAMPLE_API", "example").render(delegator);
-        new ResultRenderer(classified.results(), model, service, traits,
-            "Example", "AWS_EXAMPLE_API", "example").render(delegator);
+        RenderContext ctx = new RenderContext(model, service, traits,
+            "Example", "AWS_EXAMPLE_API", "example");
+        new SubObjectRenderer(classified.subObjects(), ctx).render(delegator);
+        new RequestRenderer(classified.requests(), ctx).render(delegator);
+        new ResultRenderer(classified.results(), ctx).render(delegator);
 
         delegator.flushWriters();
 

@@ -6,6 +6,7 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.RenderContext;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.OutgoingEventStreamRenderer;
 import org.junit.jupiter.api.Test;
 import software.amazon.smithy.build.MockManifest;
@@ -97,8 +98,9 @@ class OutgoingEventStreamRendererTest {
         CppWriterDelegator delegator = new CppWriterDelegator(manifest);
         List<software.amazon.smithy.model.shapes.Shape> outgoing =
             List.of(model.expectShape(ShapeId.from("com.example#BidirectionalInput")));
-        new OutgoingEventStreamRenderer(outgoing, model, service, ProtocolResolver.traitsFor(protocol),
-            "Example", "AWS_EXAMPLE_API", "example").render(delegator);
+        new OutgoingEventStreamRenderer(outgoing,
+            new RenderContext(model, service, ProtocolResolver.traitsFor(protocol),
+                "Example", "AWS_EXAMPLE_API", "example")).render(delegator);
         delegator.flushWriters();
         return manifest.getFileString(manifest.getFiles().stream()
             .filter(p -> p.toString().endsWith("BidirectionalInput.h")).findFirst().orElseThrow()).orElseThrow();

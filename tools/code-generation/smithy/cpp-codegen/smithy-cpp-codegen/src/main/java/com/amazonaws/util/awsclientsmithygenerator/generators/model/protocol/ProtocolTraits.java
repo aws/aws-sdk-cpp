@@ -5,17 +5,13 @@
 package com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.CppNames;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
-import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassifier;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.model.shapes.StructureShape;
-import software.amazon.smithy.model.traits.HttpHeaderTrait;
-import software.amazon.smithy.model.traits.HttpPrefixHeadersTrait;
-import software.amazon.smithy.model.traits.HttpQueryTrait;
-import software.amazon.smithy.model.traits.HttpQueryParamsTrait;
 
 /**
  * Owns every protocol-specific rendering decision for generated model code.
@@ -109,7 +105,7 @@ public interface ProtocolTraits {
         for (java.util.Map.Entry<String, MemberShape> entry : shape.getAllMembers().entrySet()) {
             if (entry.getValue().hasTrait(software.amazon.smithy.model.traits.HttpResponseCodeTrait.class)) {
                 String name = entry.getKey();
-                String field = "m_" + Character.toLowerCase(name.charAt(0)) + name.substring(1);
+                String field = CppNames.fieldName(name);
                 writer.write("$L = static_cast<int>(result.GetResponseCode());", field);
                 writer.write("$LHasBeenSet = true;", field);
             }
@@ -168,39 +164,6 @@ public interface ProtocolTraits {
      */
     default boolean resultHasTopLevelRequestId() {
         return true;
-    }
-
-    /** True when any request member binds to an HTTP header (httpHeader / httpPrefixHeaders). */
-    default boolean requestHasHeaderMembers(StructureShape shape, Model model) {
-        for (MemberShape m : shape.getAllMembers().values()) {
-            if (m.hasTrait(HttpHeaderTrait.class) || m.hasTrait(HttpPrefixHeadersTrait.class)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    /** True when any request member binds to the query string (httpQuery / httpQueryParams). */
-    default boolean requestHasQueryStringMembers(StructureShape shape, Model model) {
-        for (MemberShape m : shape.getAllMembers().values()) {
-            if (m.hasTrait(HttpQueryTrait.class) || m.hasTrait(HttpQueryParamsTrait.class)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    /**
-     * True when the request should emit a declared {@code SerializePayload()} method through the
-     * normal path. C2J omits it (RequestHeader.vm keys only on {@code hasStreamMembers()} /
-     * {@code hasEventStreamMembers()}) for both a raw streaming {@code @httpPayload} member (the
-     * streaming base class sends the body via {@code GetBody}) and an event-stream input member
-     * (which gets an inline empty SerializePayload + {@code GetBody()} override rendered by the
-     * request renderer). The gate is protocol-agnostic, so every protocol shares it.
-     */
-    default boolean emitsSerializePayload(OperationShape operation, Model model) {
-        return !ShapeClassifier.isRawStreamingPayloadRequest(operation, model)
-            && !ShapeClassifier.isEventStreamRequestOperation(operation, model);
     }
 
     default void writeGetRequestSpecificHeadersDecl(CppWriter writer, String exportMacro) {

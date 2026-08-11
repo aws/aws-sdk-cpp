@@ -4,7 +4,6 @@
  */
 package com.amazonaws.util.awsclientsmithygenerator.generators.model;
 
-import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassifier.Classification;
 import org.junit.jupiter.api.Test;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.*;

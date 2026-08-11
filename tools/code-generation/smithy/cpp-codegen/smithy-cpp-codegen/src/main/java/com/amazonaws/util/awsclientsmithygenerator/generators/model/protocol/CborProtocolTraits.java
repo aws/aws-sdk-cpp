@@ -165,14 +165,14 @@ public final class CborProtocolTraits implements ProtocolTraits {
     @Override
     public void writeRequestMethodDecls(CppWriter writer, String exportMacro,
                                         StructureShape shape, OperationShape operation, Model model) {
-        if (emitsSerializePayload(operation, model)) {
+        if (RequestBindings.emitsSerializePayload(operation, model)) {
             writer.write("$L Aws::String SerializePayload() const override;", exportMacro);
         }
         // CBOR always emits GetRequestSpecificHeaders: it attaches protocol headers
         // (content-type / smithy-protocol / accept) regardless of member bindings.
         writer.write("");
         writeGetRequestSpecificHeadersDecl(writer, exportMacro);
-        if (requestHasQueryStringMembers(shape, model)) {
+        if (RequestBindings.hasQueryStringMembers(shape, model)) {
             writer.write("");
             writeAddQueryStringParametersDecl(writer, exportMacro);
         }
@@ -183,7 +183,7 @@ public final class CborProtocolTraits implements ProtocolTraits {
                                         StructureShape shape, OperationShape operation,
                                         ServiceShape service, Model model) {
         boolean hasRequest = !operation.getInputShape().equals(UnitTypeTrait.UNIT);
-        if (emitsSerializePayload(operation, model)) {
+        if (RequestBindings.emitsSerializePayload(operation, model)) {
             if (hasRequest) {
                 writer.openBlock("Aws::String $L::SerializePayload() const {", "}", className, () -> {
                     writer.write("Aws::Crt::Cbor::CborEncoder encoder;");
@@ -212,7 +212,7 @@ public final class CborProtocolTraits implements ProtocolTraits {
             writer.write("headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);");
             writer.write("return headers;");
         });
-        if (requestHasQueryStringMembers(shape, model)) {
+        if (RequestBindings.hasQueryStringMembers(shape, model)) {
             writer.write("");
             writeAddQueryStringParametersImpl(writer, className);
         }

@@ -162,14 +162,14 @@ public final class JsonProtocolTraits implements ProtocolTraits {
                                         StructureShape shape, OperationShape operation, Model model) {
         // A raw-streaming-payload request sends its body via the streaming base class, so no
         // SerializePayload is emitted (matches C2J).
-        if (emitsSerializePayload(operation, model)) {
+        if (RequestBindings.emitsSerializePayload(operation, model)) {
             writer.write("$L Aws::String SerializePayload() const override;", exportMacro);
         }
-        if (hasTargetHeader() || requestHasHeaderMembers(shape, model)) {
+        if (hasTargetHeader() || RequestBindings.hasHeaderMembers(shape, model)) {
             writer.write("");
             writeGetRequestSpecificHeadersDecl(writer, exportMacro);
         }
-        if (requestHasQueryStringMembers(shape, model)) {
+        if (RequestBindings.hasQueryStringMembers(shape, model)) {
             writer.write("");
             writeAddQueryStringParametersDecl(writer, exportMacro);
         }
@@ -179,15 +179,15 @@ public final class JsonProtocolTraits implements ProtocolTraits {
     public void writeRequestMethodImpls(CppWriter writer, String className,
                                         StructureShape shape, OperationShape operation,
                                         ServiceShape service, Model model) {
-        if (emitsSerializePayload(operation, model)) {
+        if (RequestBindings.emitsSerializePayload(operation, model)) {
             String payloadBody = protocol == Protocol.JSON ? "\"{}\"" : "{}";
             writer.write("Aws::String $L::SerializePayload() const { return $L; }", className, payloadBody);
         }
-        if (hasTargetHeader() || requestHasHeaderMembers(shape, model)) {
+        if (hasTargetHeader() || RequestBindings.hasHeaderMembers(shape, model)) {
             writer.write("");
             writeGetRequestSpecificHeadersImpl(writer, className, shape, operation, service, model);
         }
-        if (requestHasQueryStringMembers(shape, model)) {
+        if (RequestBindings.hasQueryStringMembers(shape, model)) {
             writer.write("");
             writeAddQueryStringParametersImpl(writer, className);
         }

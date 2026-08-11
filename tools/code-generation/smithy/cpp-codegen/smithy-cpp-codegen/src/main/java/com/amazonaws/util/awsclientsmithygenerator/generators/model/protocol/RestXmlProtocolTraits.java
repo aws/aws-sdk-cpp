@@ -137,14 +137,14 @@ public final class RestXmlProtocolTraits implements ProtocolTraits {
     @Override
     public void writeRequestMethodDecls(CppWriter writer, String exportMacro,
                                         StructureShape shape, OperationShape operation, Model model) {
-        if (emitsSerializePayload(operation, model)) {
+        if (RequestBindings.emitsSerializePayload(operation, model)) {
             writer.write("$L Aws::String SerializePayload() const override;", exportMacro);
         }
-        if (requestHasHeaderMembers(shape, model)) {
+        if (RequestBindings.hasHeaderMembers(shape, model)) {
             writer.write("");
             writeGetRequestSpecificHeadersDecl(writer, exportMacro);
         }
-        if (requestHasQueryStringMembers(shape, model)) {
+        if (RequestBindings.hasQueryStringMembers(shape, model)) {
             writer.write("");
             writeAddQueryStringParametersDecl(writer, exportMacro);
         }
@@ -154,14 +154,14 @@ public final class RestXmlProtocolTraits implements ProtocolTraits {
     public void writeRequestMethodImpls(CppWriter writer, String className,
                                         StructureShape shape, OperationShape operation,
                                         ServiceShape service, Model model) {
-        if (emitsSerializePayload(operation, model)) {
+        if (RequestBindings.emitsSerializePayload(operation, model)) {
             writer.write("Aws::String $L::SerializePayload() const { return {}; }", className);
         }
-        if (requestHasHeaderMembers(shape, model)) {
+        if (RequestBindings.hasHeaderMembers(shape, model)) {
             writer.write("");
             writeGetRequestSpecificHeadersImpl(writer, className, shape, operation, service, model);
         }
-        if (requestHasQueryStringMembers(shape, model)) {
+        if (RequestBindings.hasQueryStringMembers(shape, model)) {
             writer.write("");
             writeAddQueryStringParametersImpl(writer, className);
         }

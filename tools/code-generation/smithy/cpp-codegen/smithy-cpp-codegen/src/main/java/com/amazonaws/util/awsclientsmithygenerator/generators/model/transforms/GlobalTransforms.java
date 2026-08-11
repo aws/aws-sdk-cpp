@@ -51,6 +51,11 @@ public final class GlobalTransforms {
 
     private GlobalTransforms() {}
 
+    // NOTE: This reserved-member rename is intentionally NOT wired into the transform
+    // pipeline yet. It encodes a known C2J-parity requirement (body -> requestBody,
+    // headers -> headerValues) that is validated by GlobalTransformsTest but not applied
+    // during generation. Do not delete it and do not hook it up as part of a cleanup pass —
+    // wiring it in changes generated output and must be its own reviewed change.
     /**
      * Returns the renamed C++ member name if this member is reserved.
      * Only applies to request shape members (caller must filter).

@@ -83,6 +83,22 @@ final class IncludeSets {
         }
     }
 
+    /**
+     * Emits {@code #include <path>} for each path, normalizing brackets so a caller may
+     * pass either {@code <aws/x/X.h>} or {@code aws/x/X.h}. Deduped and sorted CaseSensitive,
+     * matching {@link #emit}. This is the single place bracket policy for header includes lives.
+     */
+    static void emitAngleIncludes(com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter writer,
+                                  java.util.Collection<String> includePaths) {
+        java.util.TreeSet<String> sorted = new java.util.TreeSet<>();
+        for (String p : includePaths) {
+            sorted.add(p.replaceAll("^<|>$", ""));
+        }
+        for (String path : sorted) {
+            writer.write("#include <$L>", path);
+        }
+    }
+
     /** Writes each namespace as {@code using namespace X;} in the given order (not sorted). */
     static void emitUsings(com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter writer,
                            List<String> namespaces) {

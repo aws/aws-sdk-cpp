@@ -38,14 +38,6 @@ import java.util.stream.Collectors;
 public final class ShapeClassifier {
 
     /**
-     * Classification bucket for a shape.
-     */
-    public enum Classification {
-        REQUEST, RESULT, SUB_OBJECT, ENUM,
-        EVENT_STREAM_HANDLER, BLOB_PAYLOAD_EVENT, OUTGOING_EVENT_STREAM, SKIP
-    }
-
-    /**
      * Associates an operation input shape with its parent operation.
      *
      * @param shape     the request structure shape
@@ -79,7 +71,6 @@ public final class ShapeClassifier {
      * @param subObjects          remaining StructureShape/UnionShape reachable from operations
      * @param enums               EnumShape or StringShape with @enum trait
      * @param eventStreamHandlers operation + request/result shape tuples for event stream handlers
-     * @param blobPayloadEvents   event shapes with blob payloads (header only)
      * @param outgoingEventStreams outgoing event stream shapes (header only)
      */
     public record ClassifiedShapes(
@@ -88,7 +79,6 @@ public final class ShapeClassifier {
         List<Shape> subObjects,
         List<Shape> enums,
         List<EventStreamInfo> eventStreamHandlers,
-        List<StructureShape> blobPayloadEvents,
         List<Shape> outgoingEventStreams
     ) {}
 
@@ -118,7 +108,6 @@ public final class ShapeClassifier {
         List<Shape> subObjects = new ArrayList<>();
         List<Shape> enums = new ArrayList<>();
         List<EventStreamInfo> eventStreamHandlers = new ArrayList<>();
-        List<StructureShape> blobPayloadEvents = new ArrayList<>();
         List<Shape> outgoingEventStreams = new ArrayList<>();
 
         // Collect operation inputs/outputs and identify event stream handlers
@@ -181,7 +170,7 @@ public final class ShapeClassifier {
         }
 
         return new ClassifiedShapes(requests, results, subObjects, enums,
-            eventStreamHandlers, blobPayloadEvents, outgoingEventStreams);
+            eventStreamHandlers, outgoingEventStreams);
     }
 
     /**
