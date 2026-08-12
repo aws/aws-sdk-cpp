@@ -11,7 +11,6 @@ import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.ListShape;
 import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.Shape;
-import software.amazon.smithy.model.shapes.StructureShape;
 import software.amazon.smithy.model.traits.DocumentationTrait;
 import software.amazon.smithy.model.traits.IdempotencyTokenTrait;
 
@@ -26,157 +25,52 @@ import java.util.Map;
  */
 public final class MemberRenderer {
 
-    private MemberRenderer() {
+    private final Model model;
+    private final Shape shape;
+    private final String className;
+    private final boolean emitHasBeenSet;
+    private boolean wideIntegers;
+    private String exclude;
+
+    private MemberRenderer(Model model, Shape shape, String className, boolean emitHasBeenSet) {
+        this.model = model;
+        this.shape = shape;
+        this.className = className;
+        this.emitHasBeenSet = emitHasBeenSet;
+        this.wideIntegers = false;
+        this.exclude = null;
+    }
+
+    /** Renderer for a request / sub-object / event structure: emits {@code HasBeenSet} accessors. */
+    public static MemberRenderer forStructure(Model model, Shape shape, String className) {
+        return new MemberRenderer(model, shape, className, true);
+    }
+
+    /** Renderer for a result structure: never emits {@code HasBeenSet} accessors. */
+    public static MemberRenderer forResult(Model model, Shape shape, String className) {
+        return new MemberRenderer(model, shape, className, false);
+    }
+
+    /** Widen {@code integer} members to {@code int64_t} (CBOR sub-objects / events). */
+    public MemberRenderer wideIntegers(boolean value) {
+        this.wideIntegers = value;
+        return this;
     }
 
     /**
-     * Renders the top-level {@code RequestId} accessor group emitted by result headers:
-     * {@code GetRequestId} / templated {@code SetRequestId} / templated {@code WithRequestId}.
-     * Callers decide whether to emit it (Query/EC2 do not) and separately emit the
-     * {@code m_requestId} field and its {@code HasBeenSet} flag in the private section.
+     * Skip {@code memberName} across all fragments. Streaming results render their
+     * {@code @httpPayload} member separately as a {@code GetBody()} / {@code ReplaceBody} pair.
      */
-    public static void renderRequestIdAccessors(CppWriter writer, String className) {
-        writer.write("");
-        writer.write("///@{");
-        writer.write("");
-        writer.write("inline const Aws::String& GetRequestId() const { return m_requestId; }");
-        writer.write("template <typename RequestIdT = Aws::String>");
-        writer.openBlock("void SetRequestId(RequestIdT&& value) {", "}", () -> {
-            writer.write("m_requestIdHasBeenSet = true;");
-            writer.write("m_requestId = std::forward<RequestIdT>(value);");
-        });
-        writer.write("template <typename RequestIdT = Aws::String>");
-        writer.openBlock("$L& WithRequestId(RequestIdT&& value) {", "}", className, () -> {
-            writer.write("SetRequestId(std::forward<RequestIdT>(value));");
-            writer.write("return *this;");
-        });
-        writer.write("///@}");
+    public MemberRenderer excluding(String memberName) {
+        this.exclude = memberName;
+        return this;
     }
 
-    /**
-     * Writes the public accessor methods for all members of a structure shape.
-     *
-     * <p>For each member, generates:
-     * <ul>
-     *   <li>Doxygen group markers ({@code ///@\{} and {@code ///@\}})</li>
-     *   <li>Documentation comment (if present)</li>
-     *   <li>Getter (const ref for non-primitives, value for primitives)</li>
-     *   <li>HasBeenSet check</li>
-     *   <li>Templated Set method</li>
-     *   <li>Templated With method (fluent)</li>
-     *   <li>Templated Add method (list/map members only)</li>
-     * </ul>
-     *
-     * @param writer      the CppWriter to write to
-     * @param shape       the structure shape whose members to render
-     * @param model       the model (for resolving member targets)
-     * @param exportMacro the export macro (e.g., "AWS_KINESIS_API")
-     * @param className   the C++ class name (e.g., "ChildShard")
-     */
-    public static void renderPublicSection(CppWriter writer, Shape shape,
-                                           Model model, String exportMacro, String className) {
-        render(writer, shape, model,
-            new MemberOptions().exportMacro(exportMacro).className(className).emitHasBeenSet(true));
-    }
-
-    /**
-     * Like {@link #renderPublicSection(CppWriter, Shape, Model, String, String)} but widens
-     * {@code integer} members to {@code int64_t} when {@code wideIntegers} is set (CBOR sub-objects).
-     */
-    public static void renderPublicSection(CppWriter writer, Shape shape,
-                                           Model model, String exportMacro, String className,
-                                           boolean wideIntegers) {
-        render(writer, shape, model, new MemberOptions()
-            .exportMacro(exportMacro).className(className).emitHasBeenSet(true).wideIntegers(wideIntegers));
-    }
-
-    /**
-     * Writes public accessor methods for result shapes. Result classes never emit
-     * {@code HasBeenSet()} accessors: every protocol's result header sets
-     * {@code useRequiredField=false} in C2J (only sub-object / request headers set it true).
-     *
-     * @param writer      the CppWriter to write to
-     * @param shape       the structure shape whose members to render
-     * @param model       the model (for resolving member targets)
-     * @param exportMacro    the export macro (e.g., "AWS_KINESIS_API")
-     * @param className      the C++ class name (e.g., "GetItemResult")
-     */
-    public static void renderPublicSectionForResult(CppWriter writer, StructureShape shape,
-                                                    Model model, String exportMacro, String className,
-                                                    boolean wideIntegers) {
-        render(writer, shape, model, new MemberOptions()
-            .exportMacro(exportMacro).className(className).emitHasBeenSet(false).wideIntegers(wideIntegers));
-    }
-
-    /**
-     * Renders result accessors for every member except {@code excludeMemberName}. Used by
-     * streaming results, whose {@code @httpPayload} member is rendered separately as a
-     * {@code GetBody()} / {@code ReplaceBody} pair. Like {@link #renderPublicSectionForResult},
-     * result members never get {@code HasBeenSet()} accessors.
-     */
-    public static void renderPublicSectionForResultExcluding(CppWriter writer, StructureShape shape,
-                                                             Model model, String exportMacro, String className,
-                                                             String excludeMemberName, boolean wideIntegers) {
-        render(writer, shape, model, new MemberOptions()
-            .exportMacro(exportMacro).className(className).emitHasBeenSet(false)
-            .exclude(excludeMemberName).wideIntegers(wideIntegers));
-    }
-
-    /**
-     * Single entry point for rendering a structure's public accessor methods.
-     * See {@link MemberOptions} for the rendering axes.
-     */
-    public static void render(CppWriter writer, Shape shape, Model model, MemberOptions opts) {
-        renderMembers(writer, shape, model, opts.exportMacro(), opts.className(),
-            opts.emitHasBeenSet(), opts.exclude(), opts.wideIntegers());
-    }
-
-    /** Writes data member declarations, skipping {@code excludeMemberName}. */
-    public static void renderPrivateDataMembersExcluding(CppWriter writer, StructureShape shape,
-                                                         Model model, String excludeMemberName) {
-        renderPrivateDataMembersExcluding(writer, shape, model, excludeMemberName, false);
-    }
-
-    /** Data member declarations excluding one member, widening {@code integer} when requested. */
-    public static void renderPrivateDataMembersExcluding(CppWriter writer, StructureShape shape,
-                                                         Model model, String excludeMemberName,
-                                                         boolean wideIntegers) {
-        java.util.List<Map.Entry<String, MemberShape>> entries =
-            new java.util.ArrayList<>(shape.getAllMembers().entrySet());
-        entries.removeIf(e -> e.getKey().equals(excludeMemberName));
-        for (int i = 0; i < entries.size(); i++) {
-            Map.Entry<String, MemberShape> entry = entries.get(i);
-            writeDataMember(writer, entry.getValue(), entry.getKey(), model, wideIntegers);
-            if (i < entries.size() - 1) {
-                writer.write("");
-            }
-        }
-    }
-
-    /** Writes HasBeenSet flags, skipping {@code excludeMemberName}. */
-    public static void renderPrivateHasBeenSetFlagsExcluding(CppWriter writer, StructureShape shape,
-                                                            Model model, String excludeMemberName) {
-        for (Map.Entry<String, MemberShape> entry : shape.getAllMembers().entrySet()) {
-            if (entry.getKey().equals(excludeMemberName)) {
-                continue;
-            }
-            writeHasBeenSetFlag(writer, entry.getValue(), entry.getKey());
-        }
-    }
-
-    /**
-     * Shared member-rendering implementation with an optional excluded member. Streaming
-     * results emit their {@code @httpPayload} member via a dedicated {@code GetBody()} /
-     * {@code ReplaceBody} accessor pair, so that member is skipped here.
-     *
-     * @param excludeMemberName member name to skip, or {@code null} to render all members
-     */
-    private static void renderMembers(CppWriter writer, Shape shape,
-                                      Model model, String exportMacro, String className,
-                                      boolean emitHasBeenSet, String excludeMemberName, boolean wideIntegers) {
+    /** Public Get/Set/With/Add accessor group for every (non-excluded) member. */
+    public void renderPublicAccessors(CppWriter writer) {
         java.util.List<Map.Entry<String, MemberShape>> members =
             new java.util.ArrayList<>(shape.getAllMembers().entrySet());
-        members.removeIf(e -> e.getKey().equals(excludeMemberName));
+        members.removeIf(e -> e.getKey().equals(exclude));
         for (int i = 0; i < members.size(); i++) {
             Map.Entry<String, MemberShape> entry = members.get(i);
             String memberName = entry.getKey();
@@ -184,10 +78,6 @@ public final class MemberRenderer {
             Shape targetShape = model.expectShape(member.getTarget());
             String cppType = CppTypeMapper.getCppType(targetShape, model, wideIntegers);
             String fieldName = CppNames.fieldName(memberName);
-            // Method names and template params use the capitalized member name to match the
-            // legacy C2J convention (e.g. member "extendedKeyUsage" -> GetExtendedKeyUsage,
-            // ExtendedKeyUsageHasBeenSet, template param ExtendedKeyUsageT). Field names keep
-            // the decapitalized form (m_extendedKeyUsage).
             String methodName = capitalize(memberName);
             String templateParam = methodName + "T";
 
@@ -199,9 +89,6 @@ public final class MemberRenderer {
                 writer.write("");
             }
 
-            // Getter. Documents are special-cased to return Aws::Utils::DocumentView by value
-            // (the field and setter keep Aws::Utils::Document), matching C2J's
-            // ModelClassMembersAndInlines.vm $returnType handling.
             if (targetShape.isDocumentShape()) {
                 writer.write("inline Aws::Utils::DocumentView Get$L() const { return $L; }", methodName, fieldName);
             } else if (isPrimitive(targetShape) || targetShape.isEnumShape()) {
@@ -210,7 +97,6 @@ public final class MemberRenderer {
                 writer.write("inline const $L& Get$L() const { return $L; }", cppType, methodName, fieldName);
             }
 
-            // HasBeenSet (only for non-result shapes)
             if (emitHasBeenSet) {
                 writer.write("inline bool $LHasBeenSet() const { return $LHasBeenSet; }", methodName, fieldName);
             }
@@ -263,8 +149,6 @@ public final class MemberRenderer {
                         targetShape.asMapShape().get().getValue().getTarget());
                     String keyType = CppTypeMapper.getCppType(keyShape, model, wideIntegers);
                     String valueType = CppTypeMapper.getCppType(valueShape, model, wideIntegers);
-                    // C2J uses a templated perfect-forwarding Add only when BOTH key and value
-                    // are non-primitive AND non-enum; otherwise a plain by-value Add.
                     boolean bothForwardable = !isByValueType(keyShape) && !isByValueType(valueShape);
                     if (bothForwardable) {
                         String keyParam = methodName + "KeyT";
@@ -292,43 +176,11 @@ public final class MemberRenderer {
         }
     }
 
-    /**
-     * Writes the private member fields and HasBeenSet flags for a structure.
-     *
-     * <p>Layout:
-     * <ol>
-     *   <li>Data members (with blank line between each), primitives get brace-initialized defaults</li>
-     *   <li>HasBeenSet boolean flags grouped together at the end</li>
-     * </ol>
-     *
-     * @param writer the CppWriter to write to
-     * @param shape  the structure shape whose members to render
-     * @param model  the model (for resolving member targets)
-     */
-    public static void renderPrivateSection(CppWriter writer, Shape shape, Model model) {
-        renderPrivateSection(writer, shape, model, false);
-    }
-
-    /**
-     * Like {@link #renderPrivateSection(CppWriter, Shape, Model)} but widens {@code integer}
-     * data members to {@code int64_t} when {@code wideIntegers} is set (CBOR sub-objects).
-     */
-    public static void renderPrivateSection(CppWriter writer, Shape shape, Model model, boolean wideIntegers) {
-        renderPrivateDataMembers(writer, shape, model, wideIntegers);
-        renderPrivateHasBeenSetFlags(writer, shape, model);
-    }
-
-    /**
-     * Writes only the data member declarations (with blank lines between each).
-     */
-    public static void renderPrivateDataMembers(CppWriter writer, Shape shape, Model model) {
-        renderPrivateDataMembers(writer, shape, model, false);
-    }
-
-    /** Data member declarations, widening {@code integer} to {@code int64_t} when requested. */
-    public static void renderPrivateDataMembers(CppWriter writer, Shape shape, Model model, boolean wideIntegers) {
+    /** Private data member declarations (blank line between each), skipping the excluded member. */
+    public void renderDataMembers(CppWriter writer) {
         java.util.List<Map.Entry<String, MemberShape>> entries =
             new java.util.ArrayList<>(shape.getAllMembers().entrySet());
+        entries.removeIf(e -> e.getKey().equals(exclude));
         for (int i = 0; i < entries.size(); i++) {
             Map.Entry<String, MemberShape> entry = entries.get(i);
             writeDataMember(writer, entry.getValue(), entry.getKey(), model, wideIntegers);
@@ -338,13 +190,44 @@ public final class MemberRenderer {
         }
     }
 
-    /**
-     * Writes only the HasBeenSet boolean flags (one per member, no blank lines between).
-     */
-    public static void renderPrivateHasBeenSetFlags(CppWriter writer, Shape shape, Model model) {
+    /** Private {@code HasBeenSet} flags (one per member, no blank lines), skipping the excluded member. */
+    public void renderHasBeenSetFlags(CppWriter writer) {
         for (Map.Entry<String, MemberShape> entry : shape.getAllMembers().entrySet()) {
+            if (entry.getKey().equals(exclude)) {
+                continue;
+            }
             writeHasBeenSetFlag(writer, entry.getValue(), entry.getKey());
         }
+    }
+
+    /** Data members immediately followed by the {@code HasBeenSet} flags (no separating blank line). */
+    public void renderPrivateSection(CppWriter writer) {
+        renderDataMembers(writer);
+        renderHasBeenSetFlags(writer);
+    }
+
+    /**
+     * Renders the top-level {@code RequestId} accessor group emitted by result headers:
+     * {@code GetRequestId} / templated {@code SetRequestId} / templated {@code WithRequestId}.
+     * Callers decide whether to emit it (Query/EC2 do not) and separately emit the
+     * {@code m_requestId} field and its {@code HasBeenSet} flag in the private section.
+     */
+    public static void renderRequestIdAccessors(CppWriter writer, String className) {
+        writer.write("");
+        writer.write("///@{");
+        writer.write("");
+        writer.write("inline const Aws::String& GetRequestId() const { return m_requestId; }");
+        writer.write("template <typename RequestIdT = Aws::String>");
+        writer.openBlock("void SetRequestId(RequestIdT&& value) {", "}", () -> {
+            writer.write("m_requestIdHasBeenSet = true;");
+            writer.write("m_requestId = std::forward<RequestIdT>(value);");
+        });
+        writer.write("template <typename RequestIdT = Aws::String>");
+        writer.openBlock("$L& WithRequestId(RequestIdT&& value) {", "}", className, () -> {
+            writer.write("SetRequestId(std::forward<RequestIdT>(value));");
+            writer.write("return *this;");
+        });
+        writer.write("///@}");
     }
 
     /**

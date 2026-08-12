@@ -83,13 +83,14 @@ public final class SubObjectRenderer implements ShapeRenderer {
                 // and no private: section (ModelClassMembersAndInlines.vm gates both on
                 // $shape.members.size() > 0).
                 if (!shape.getAllMembers().isEmpty()) {
-                    boolean wideIntegers = ctx.protocolTraits().widensIntegers();
+                    MemberRenderer members = MemberRenderer.forStructure(ctx.model(), shape, className)
+                        .wideIntegers(ctx.protocolTraits().widensIntegers());
                     writer.write("");
-                    MemberRenderer.renderPublicSection(writer, shape, ctx.model(), ctx.exportMacro(), className, wideIntegers);
+                    members.renderPublicAccessors(writer);
                     writer.dedent();
                     writer.write("private:");
                     writer.indent();
-                    MemberRenderer.renderPrivateSection(writer, shape, ctx.model(), wideIntegers);
+                    members.renderPrivateSection(writer);
                 }
             });
             writer.write("");

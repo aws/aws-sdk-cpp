@@ -28,7 +28,7 @@ class MemberRendererTest {
             .build();
         Model model = Model.builder().addShapes(str, shape).build();
         CppWriter writer = new CppWriter();
-        MemberRenderer.renderPublicSection(writer, shape, model, "AWS_TEST_API", "MyShape");
+        MemberRenderer.forStructure(model, shape, "MyShape").renderPublicAccessors(writer);
         String output = writer.toString();
         assertTrue(output.contains("inline const Aws::String& GetName() const"), "Missing getter: " + output);
         assertTrue(output.contains("inline bool NameHasBeenSet() const"), "Missing HasBeenSet: " + output);
@@ -48,7 +48,7 @@ class MemberRendererTest {
             .build();
         Model model = Model.builder().addShapes(str, shape).build();
         CppWriter writer = new CppWriter();
-        MemberRenderer.renderPublicSection(writer, shape, model, "AWS_TEST_API", "MyShape");
+        MemberRenderer.forStructure(model, shape, "MyShape").renderPublicAccessors(writer);
         String output = writer.toString();
         assertTrue(output.contains("GetExtendedKeyUsage() const"), "Getter should be capitalized: " + output);
         assertTrue(output.contains("ExtendedKeyUsageHasBeenSet() const"), "HasBeenSet should be capitalized: " + output);
@@ -73,7 +73,7 @@ class MemberRendererTest {
             .build();
         Model model = Model.builder().addShapes(str, list, shape).build();
         CppWriter writer = new CppWriter();
-        MemberRenderer.renderPublicSection(writer, shape, model, "AWS_TEST_API", "MyShape");
+        MemberRenderer.forStructure(model, shape, "MyShape").renderPublicAccessors(writer);
         String output = writer.toString();
         assertTrue(output.contains("MyShape& AddItems(ItemsT&& value)"), "Missing Add: " + output);
         assertTrue(output.contains("m_items.emplace_back(std::forward<ItemsT>(value))"), "Missing emplace_back: " + output);
@@ -92,7 +92,7 @@ class MemberRendererTest {
             .build();
         Model model = Model.builder().addShapes(str, list, shape).build();
         CppWriter writer = new CppWriter();
-        MemberRenderer.renderPublicSection(writer, shape, model, "AWS_TEST_API", "MyShape");
+        MemberRenderer.forStructure(model, shape, "MyShape").renderPublicAccessors(writer);
         String output = writer.toString();
         // The Add method's template default should be the element type, not the list type
         assertTrue(output.contains("template <typename ItemsT = Aws::String>\nMyShape& AddItems"),
@@ -114,7 +114,7 @@ class MemberRendererTest {
             .build();
         Model model = Model.builder().addShapes(intShape, list, shape).build();
         CppWriter writer = new CppWriter();
-        MemberRenderer.renderPublicSection(writer, shape, model, "AWS_TEST_API", "MyShape");
+        MemberRenderer.forStructure(model, shape, "MyShape").renderPublicAccessors(writer);
         String output = writer.toString();
         assertTrue(output.contains("inline MyShape& AddCounts(int value)"),
             "List of primitive should get by-value Add: " + output);
@@ -141,7 +141,7 @@ class MemberRendererTest {
             .build();
         Model model = Model.builder().addShapes(str, intShape, map, shape).build();
         CppWriter writer = new CppWriter();
-        MemberRenderer.renderPublicSection(writer, shape, model, "AWS_TEST_API", "MyShape");
+        MemberRenderer.forStructure(model, shape, "MyShape").renderPublicAccessors(writer);
         String output = writer.toString();
         assertTrue(output.contains("MyShape& AddSummaryMap(Aws::String key, int value)"),
             "Map with primitive value should get by-value Add: " + output);
@@ -167,7 +167,7 @@ class MemberRendererTest {
             .build();
         Model model = Model.builder().addShapes(str, valueStruct, map, shape).build();
         CppWriter writer = new CppWriter();
-        MemberRenderer.renderPublicSection(writer, shape, model, "AWS_TEST_API", "MyShape");
+        MemberRenderer.forStructure(model, shape, "MyShape").renderPublicAccessors(writer);
         String output = writer.toString();
         assertTrue(output.contains("MyShape& AddThingMap(ThingMapKeyT&& key, ThingMapValueT&& value)"),
             "Map with non-primitive key/value should get templated Add: " + output);
@@ -188,7 +188,7 @@ class MemberRendererTest {
             .build();
         Model model = Model.builder().addShapes(doc, shape).build();
         CppWriter writer = new CppWriter();
-        MemberRenderer.renderPublicSection(writer, shape, model, "AWS_TEST_API", "MyShape");
+        MemberRenderer.forStructure(model, shape, "MyShape").renderPublicAccessors(writer);
         String output = writer.toString();
         assertTrue(output.contains("inline Aws::Utils::DocumentView GetJson() const { return m_json; }"),
             "Document getter must return DocumentView by value: " + output);
@@ -209,7 +209,7 @@ class MemberRendererTest {
             .build();
         Model model = Model.builder().addShapes(doc, shape).build();
         CppWriter writer = new CppWriter();
-        MemberRenderer.renderPrivateSection(writer, shape, model);
+        MemberRenderer.forStructure(model, shape, null).renderPrivateSection(writer);
         String output = writer.toString();
         assertTrue(output.contains("Aws::Utils::Document m_json;"),
             "Document field must be Aws::Utils::Document: " + output);
@@ -228,14 +228,14 @@ class MemberRendererTest {
             .build();
         Model model = Model.builder().addShapes(sensitive, shape).build();
         CppWriter pub = new CppWriter();
-        MemberRenderer.renderPublicSection(pub, shape, model, "AWS_TEST_API", "MyShape");
+        MemberRenderer.forStructure(model, shape, "MyShape").renderPublicAccessors(pub);
         String pubOut = pub.toString();
         assertTrue(pubOut.contains("inline const Aws::Utils::CryptoBuffer& GetBytes() const"),
             "Sensitive blob getter must be CryptoBuffer: " + pubOut);
         assertTrue(pubOut.contains("template <typename BytesT = Aws::Utils::CryptoBuffer>"),
             "Sensitive blob setter template default must be CryptoBuffer: " + pubOut);
         CppWriter priv = new CppWriter();
-        MemberRenderer.renderPrivateSection(priv, shape, model);
+        MemberRenderer.forStructure(model, shape, null).renderPrivateSection(priv);
         assertTrue(priv.toString().contains("Aws::Utils::CryptoBuffer m_bytes{};"),
             "Sensitive blob field must be CryptoBuffer: " + priv);
     }
@@ -249,7 +249,7 @@ class MemberRendererTest {
             .build();
         Model model = Model.builder().addShapes(intShape, shape).build();
         CppWriter writer = new CppWriter();
-        MemberRenderer.renderPublicSection(writer, shape, model, "AWS_TEST_API", "MyShape");
+        MemberRenderer.forStructure(model, shape, "MyShape").renderPublicAccessors(writer);
         String output = writer.toString();
         // Primitive getter should return by value, not const ref
         assertTrue(output.contains("inline int GetCount() const"), "Primitive should return by value: " + output);
@@ -265,7 +265,7 @@ class MemberRendererTest {
             .build();
         Model model = Model.builder().addShapes(str, shape).build();
         CppWriter writer = new CppWriter();
-        MemberRenderer.renderPublicSection(writer, shape, model, "AWS_TEST_API", "MyShape");
+        MemberRenderer.forStructure(model, shape, "MyShape").renderPublicAccessors(writer);
         String output = writer.toString();
         assertTrue(output.contains("///@{"), "Missing doxygen open: " + output);
         assertTrue(output.contains("///@}"), "Missing doxygen close: " + output);
@@ -282,7 +282,7 @@ class MemberRendererTest {
             .build();
         Model model = Model.builder().addShapes(intShape, boolShape, shape).build();
         CppWriter writer = new CppWriter();
-        MemberRenderer.renderPrivateSection(writer, shape, model);
+        MemberRenderer.forStructure(model, shape, null).renderPrivateSection(writer);
         String output = writer.toString();
         assertTrue(output.contains("int m_count{0}"), "Missing int default: " + output);
         assertTrue(output.contains("bool m_enabled{false}"), "Missing bool default: " + output);
@@ -299,7 +299,7 @@ class MemberRendererTest {
             .build();
         Model model = Model.builder().addShapes(str, shape).build();
         CppWriter writer = new CppWriter();
-        MemberRenderer.renderPrivateSection(writer, shape, model);
+        MemberRenderer.forStructure(model, shape, null).renderPrivateSection(writer);
         String output = writer.toString();
         assertTrue(output.contains("Aws::String m_name;"), "Missing string field: " + output);
         assertFalse(output.contains("m_name{"), "String should NOT have brace init: " + output);
@@ -322,7 +322,7 @@ class MemberRendererTest {
             .build();
         Model model = Model.builder().addShapes(str, shape).build();
         CppWriter writer = new CppWriter();
-        MemberRenderer.renderPrivateSection(writer, shape, model);
+        MemberRenderer.forStructure(model, shape, null).renderPrivateSection(writer);
         String output = writer.toString();
         assertTrue(output.contains("Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};"),
             "Idempotency token should be initialized with PseudoRandomUUID: " + output);
@@ -345,12 +345,12 @@ class MemberRendererTest {
             .build();
         Model model = Model.builder().addShapes(str, shape).build();
         CppWriter writer = new CppWriter();
-        MemberRenderer.renderPrivateDataMembersExcluding(writer, shape, model, "other");
+        MemberRenderer.forStructure(model, shape, null).excluding("other").renderDataMembers(writer);
         String dataOut = writer.toString();
         assertTrue(dataOut.contains("Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};"),
             "Excluding overload should also emit the idempotency-token initializer: " + dataOut);
         CppWriter flagWriter = new CppWriter();
-        MemberRenderer.renderPrivateHasBeenSetFlagsExcluding(flagWriter, shape, model, "other");
+        MemberRenderer.forStructure(model, shape, null).excluding("other").renderHasBeenSetFlags(flagWriter);
         String flagOut = flagWriter.toString();
         assertTrue(flagOut.contains("bool m_clientTokenHasBeenSet = true;"),
             "Excluding overload should also emit HasBeenSet = true: " + flagOut);
@@ -367,7 +367,7 @@ class MemberRendererTest {
             .build();
         Model model = Model.builder().addShapes(str, intShape, shape).build();
         CppWriter writer = new CppWriter();
-        MemberRenderer.renderPrivateSection(writer, shape, model);
+        MemberRenderer.forStructure(model, shape, null).renderPrivateSection(writer);
         String output = writer.toString();
         // HasBeenSet flags should come after data members
         int nameFieldPos = output.indexOf("Aws::String m_name;");
@@ -393,30 +393,5 @@ class MemberRendererTest {
         assertTrue(out.contains("SetRequestId(std::forward<RequestIdT>(value));"));
         assertTrue(out.contains("///@{"));
         assertTrue(out.contains("///@}"));
-    }
-
-    @Test
-    void render_withOptions_matchesRenderPublicSection() {
-        // Build the same shape twice and assert the options-object path equals the legacy path.
-        software.amazon.smithy.model.shapes.StringShape str =
-            software.amazon.smithy.model.shapes.StringShape.builder().id("com.example#String").build();
-        software.amazon.smithy.model.shapes.StructureShape shape =
-            software.amazon.smithy.model.shapes.StructureShape.builder()
-                .id("com.example#Foo")
-                .addMember("ShardId", str.getId())
-                .build();
-        software.amazon.smithy.model.Model model =
-            software.amazon.smithy.model.Model.builder().addShapes(str, shape).build();
-
-        com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter legacy =
-            new com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter();
-        MemberRenderer.renderPublicSection(legacy, shape, model, "AWS_EXAMPLE_API", "Foo");
-
-        com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter viaOpts =
-            new com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter();
-        MemberRenderer.render(viaOpts, shape, model,
-            new MemberOptions().exportMacro("AWS_EXAMPLE_API").className("Foo").emitHasBeenSet(true));
-
-        assertEquals(legacy.toString(), viaOpts.toString());
     }
 }

@@ -34,7 +34,7 @@ class MemberRendererOutputTest {
         Model model = Model.builder().addShapes(str, list, nested, shape).build();
 
         CppWriter pubWriter = new CppWriter();
-        MemberRenderer.renderPublicSection(pubWriter, shape, model, "AWS_KINESIS_API", "ChildShard");
+        MemberRenderer.forStructure(model, shape, "ChildShard").renderPublicAccessors(pubWriter);
         String pubOutput = pubWriter.toString();
         System.out.println("=== PUBLIC ===");
         System.out.println(pubOutput);
@@ -60,7 +60,7 @@ class MemberRendererOutputTest {
 
         // Private section
         CppWriter privWriter = new CppWriter();
-        MemberRenderer.renderPrivateSection(privWriter, shape, model);
+        MemberRenderer.forStructure(model, shape, null).renderPrivateSection(privWriter);
         String privOutput = privWriter.toString();
         System.out.println("=== PRIVATE ===");
         System.out.println(privOutput);

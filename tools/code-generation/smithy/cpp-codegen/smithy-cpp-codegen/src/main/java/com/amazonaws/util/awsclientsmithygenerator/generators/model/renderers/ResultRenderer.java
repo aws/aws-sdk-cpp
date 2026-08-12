@@ -104,8 +104,9 @@ public final class ResultRenderer implements ShapeRenderer {
                 ctx.protocolTraits().writeResultSerdeDecls(writer, ctx.exportMacro(), className);
                 writer.write("");
 
-                MemberRenderer.renderPublicSectionForResult(writer, shape, ctx.model(), ctx.exportMacro(), className,
-                    ctx.protocolTraits().widensIntegers());
+                MemberRenderer members = MemberRenderer.forResult(ctx.model(), shape, className)
+                    .wideIntegers(ctx.protocolTraits().widensIntegers());
+                members.renderPublicAccessors(writer);
 
                 boolean topLevelRequestId = ctx.protocolTraits().resultHasTopLevelRequestId();
                 if (topLevelRequestId) {
@@ -118,7 +119,7 @@ public final class ResultRenderer implements ShapeRenderer {
                 writer.dedent();
                 writer.write("private:");
                 writer.indent();
-                MemberRenderer.renderPrivateDataMembers(writer, shape, ctx.model(), ctx.protocolTraits().widensIntegers());
+                members.renderDataMembers(writer);
                 if (topLevelRequestId) {
                     // The blank line separates the modeled members from the m_requestId group;
                     // C2J omits it (and m_requestId) for Query/EC2 results.
@@ -126,7 +127,7 @@ public final class ResultRenderer implements ShapeRenderer {
                     writer.write("Aws::String m_requestId;");
                 }
                 writer.write("Aws::Http::HttpResponseCode m_HttpResponseCode;");
-                MemberRenderer.renderPrivateHasBeenSetFlags(writer, shape, ctx.model());
+                members.renderHasBeenSetFlags(writer);
                 if (topLevelRequestId) {
                     writer.write("bool m_requestIdHasBeenSet = false;");
                 }
@@ -223,8 +224,10 @@ public final class ResultRenderer implements ShapeRenderer {
                     + "$L = Aws::Utils::Stream::ResponseStream(body); }", streamField);
                 writer.write("///@}");
 
-                MemberRenderer.renderPublicSectionForResultExcluding(writer, shape, ctx.model(), ctx.exportMacro(),
-                    className, streamMember, ctx.protocolTraits().widensIntegers());
+                MemberRenderer members = MemberRenderer.forResult(ctx.model(), shape, className)
+                    .wideIntegers(ctx.protocolTraits().widensIntegers())
+                    .excluding(streamMember);
+                members.renderPublicAccessors(writer);
 
                 MemberRenderer.renderRequestIdAccessors(writer, className);
 
@@ -235,13 +238,12 @@ public final class ResultRenderer implements ShapeRenderer {
                 writer.write("private:");
                 writer.indent();
                 writer.write("Aws::Utils::Stream::ResponseStream $L{};", streamField);
-                MemberRenderer.renderPrivateDataMembersExcluding(writer, shape, ctx.model(), streamMember,
-                    ctx.protocolTraits().widensIntegers());
+                members.renderDataMembers(writer);
                 writer.write("");
                 writer.write("Aws::String m_requestId;");
                 writer.write("Aws::Http::HttpResponseCode m_HttpResponseCode;");
                 writer.write("bool $LHasBeenSet = false;", streamField);
-                MemberRenderer.renderPrivateHasBeenSetFlagsExcluding(writer, shape, ctx.model(), streamMember);
+                members.renderHasBeenSetFlags(writer);
                 writer.write("bool m_requestIdHasBeenSet = false;");
             });
             writer.write("");

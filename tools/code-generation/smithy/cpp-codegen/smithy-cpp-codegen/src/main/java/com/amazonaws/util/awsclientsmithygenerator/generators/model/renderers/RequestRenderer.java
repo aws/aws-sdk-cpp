@@ -193,7 +193,8 @@ public final class RequestRenderer implements ShapeRenderer {
                 }
 
                 writer.write("");
-                MemberRenderer.renderPublicSection(writer, shape, ctx.model(), ctx.exportMacro(), className);
+                MemberRenderer members = MemberRenderer.forStructure(ctx.model(), shape, className);
+                members.renderPublicAccessors(writer);
                 eventStreamMember.ifPresent(m ->
                     renderEventStreamMemberAccessor(writer, className, rawShape, m));
 
@@ -205,18 +206,18 @@ public final class RequestRenderer implements ShapeRenderer {
                     if (streamingResponse) {
                         // Mainline places the event-stream member, then the handler/decoder, after
                         // the data members and before the HasBeenSet flags.
-                        MemberRenderer.renderPrivateDataMembers(writer, shape, ctx.model());
+                        members.renderDataMembers(writer);
                         eventStreamMember.ifPresent(m -> writer.write("std::shared_ptr<$1L> m_$2L;",
                             eventStreamUnionType(rawShape, m), CppNames.decapitalize(m)));
                         String handlerType = operation.getId().getName() + "Handler";
                         writer.write("$1L m_handler;", handlerType);
                         writer.write("Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};");
                         writer.write("");
-                        MemberRenderer.renderPrivateHasBeenSetFlags(writer, shape, ctx.model());
+                        members.renderHasBeenSetFlags(writer);
                         eventStreamMember.ifPresent(m ->
                             writer.write("bool m_$1LHasBeenSet = false;", CppNames.decapitalize(m)));
                     } else {
-                        MemberRenderer.renderPrivateSection(writer, shape, ctx.model());
+                        members.renderPrivateSection(writer);
                     }
                 }
             });

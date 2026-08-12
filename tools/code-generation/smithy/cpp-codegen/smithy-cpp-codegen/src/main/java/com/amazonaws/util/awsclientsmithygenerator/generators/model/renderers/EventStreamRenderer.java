@@ -460,13 +460,14 @@ public final class EventStreamRenderer implements ShapeRenderer {
                 // Accessors + private section for the result's non-streaming members. A memberless
                 // InitialResponse ends right after its serde decls (no private:), matching C2J.
                 if (hasMembers) {
-                    boolean wideIntegers = ctx.protocolTraits().widensIntegers();
+                    MemberRenderer members = MemberRenderer.forStructure(ctx.model(), shape, className)
+                        .wideIntegers(ctx.protocolTraits().widensIntegers());
                     writer.write("");
-                    MemberRenderer.renderPublicSection(writer, shape, ctx.model(), ctx.exportMacro(), className, wideIntegers);
+                    members.renderPublicAccessors(writer);
                     writer.dedent();
                     writer.write("private:");
                     writer.indent();
-                    MemberRenderer.renderPrivateSection(writer, shape, ctx.model(), wideIntegers);
+                    members.renderPrivateSection(writer);
                 }
             });
             writer.write("");
