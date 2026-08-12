@@ -39,7 +39,7 @@ Aws::String CreateAccessGrantsLocationRequest::SerializePayload() const {
     }
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }
 
 Aws::Http::HeaderValueCollection CreateAccessGrantsLocationRequest::GetRequestSpecificHeaders() const {

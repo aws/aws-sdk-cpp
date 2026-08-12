@@ -78,7 +78,7 @@ Aws::String CreateJobRequest::SerializePayload() const {
     m_manifestGenerator.AddToNode(manifestGeneratorNode);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }
 
 Aws::Http::HeaderValueCollection CreateJobRequest::GetRequestSpecificHeaders() const {

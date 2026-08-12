@@ -125,5 +125,5 @@ Aws::String UpdateHealthCheckRequest::SerializePayload() const {
     }
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }

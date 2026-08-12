@@ -41,7 +41,7 @@ Aws::String PutPublicAccessBlockRequest::SerializePayload() const {
 
   m_publicAccessBlockConfiguration.AddToNode(parentNode);
   if (parentNode.HasChildren()) {
-    return payloadDoc.ConvertToString();
+    return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
   }
 
   return {};

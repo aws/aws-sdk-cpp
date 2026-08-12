@@ -41,7 +41,7 @@ Aws::String PutBucketLoggingRequest::SerializePayload() const {
 
   m_bucketLoggingStatus.AddToNode(parentNode);
   if (parentNode.HasChildren()) {
-    return payloadDoc.ConvertToString();
+    return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
   }
 
   return {};

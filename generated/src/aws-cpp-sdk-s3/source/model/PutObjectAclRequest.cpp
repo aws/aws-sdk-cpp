@@ -41,7 +41,7 @@ Aws::String PutObjectAclRequest::SerializePayload() const {
 
   m_accessControlPolicy.AddToNode(parentNode);
   if (parentNode.HasChildren()) {
-    return payloadDoc.ConvertToString();
+    return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
   }
 
   return {};

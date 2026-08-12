@@ -22,7 +22,7 @@ Aws::String UpdateVpcOrigin2020_05_31Request::SerializePayload() const {
 
   m_vpcOriginEndpointConfig.AddToNode(parentNode);
   if (parentNode.HasChildren()) {
-    return payloadDoc.ConvertToString();
+    return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
   }
 
   return {};

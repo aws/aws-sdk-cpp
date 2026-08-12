@@ -26,7 +26,7 @@ Aws::String PutBucketPolicyRequest::SerializePayload() const {
     policyNode.SetText(m_policy);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }
 
 Aws::Http::HeaderValueCollection PutBucketPolicyRequest::GetRequestSpecificHeaders() const {

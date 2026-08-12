@@ -34,7 +34,7 @@ Aws::String CreateStorageLensGroupRequest::SerializePayload() const {
     }
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }
 
 Aws::Http::HeaderValueCollection CreateStorageLensGroupRequest::GetRequestSpecificHeaders() const {

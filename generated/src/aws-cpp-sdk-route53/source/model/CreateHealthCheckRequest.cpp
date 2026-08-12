@@ -31,5 +31,5 @@ Aws::String CreateHealthCheckRequest::SerializePayload() const {
     m_healthCheckConfig.AddToNode(healthCheckConfigNode);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }

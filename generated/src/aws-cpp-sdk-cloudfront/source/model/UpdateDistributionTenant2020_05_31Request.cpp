@@ -64,7 +64,7 @@ Aws::String UpdateDistributionTenant2020_05_31Request::SerializePayload() const 
     ss.str("");
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }
 
 Aws::Http::HeaderValueCollection UpdateDistributionTenant2020_05_31Request::GetRequestSpecificHeaders() const {

@@ -54,7 +54,7 @@ Aws::String CreateAccessPointRequest::SerializePayload() const {
     }
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }
 
 Aws::Http::HeaderValueCollection CreateAccessPointRequest::GetRequestSpecificHeaders() const {

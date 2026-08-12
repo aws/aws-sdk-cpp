@@ -24,7 +24,7 @@ Aws::String UntagResource2020_05_31Request::SerializePayload() const {
 
   m_tagKeys.AddToNode(parentNode);
   if (parentNode.HasChildren()) {
-    return payloadDoc.ConvertToString();
+    return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
   }
 
   return {};

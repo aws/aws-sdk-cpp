@@ -41,7 +41,7 @@ Aws::String DeleteObjectsRequest::SerializePayload() const {
 
   m_delete.AddToNode(parentNode);
   if (parentNode.HasChildren()) {
-    return payloadDoc.ConvertToString();
+    return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
   }
 
   return {};

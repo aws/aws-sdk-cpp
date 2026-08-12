@@ -24,7 +24,7 @@ Aws::String PutBucketAbacRequest::SerializePayload() const {
 
   m_abacStatus.AddToNode(parentNode);
   if (parentNode.HasChildren()) {
-    return payloadDoc.ConvertToString();
+    return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
   }
 
   return {};

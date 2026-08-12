@@ -46,5 +46,5 @@ Aws::String CreateKeySigningKeyRequest::SerializePayload() const {
     statusNode.SetText(m_status);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }

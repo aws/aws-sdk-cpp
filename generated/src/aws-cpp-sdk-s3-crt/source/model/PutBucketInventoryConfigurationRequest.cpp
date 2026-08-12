@@ -41,7 +41,7 @@ Aws::String PutBucketInventoryConfigurationRequest::SerializePayload() const {
 
   m_inventoryConfiguration.AddToNode(parentNode);
   if (parentNode.HasChildren()) {
-    return payloadDoc.ConvertToString();
+    return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
   }
 
   return {};

@@ -31,7 +31,7 @@ Aws::String CreateMultiRegionAccessPointRequest::SerializePayload() const {
     m_details.AddToNode(detailsNode);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }
 
 Aws::Http::HeaderValueCollection CreateMultiRegionAccessPointRequest::GetRequestSpecificHeaders() const {

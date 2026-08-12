@@ -41,7 +41,7 @@ Aws::String PutObjectRetentionRequest::SerializePayload() const {
 
   m_retention.AddToNode(parentNode);
   if (parentNode.HasChildren()) {
-    return payloadDoc.ConvertToString();
+    return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
   }
 
   return {};

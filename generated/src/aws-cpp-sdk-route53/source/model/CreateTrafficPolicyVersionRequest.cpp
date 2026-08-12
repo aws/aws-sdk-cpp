@@ -31,5 +31,5 @@ Aws::String CreateTrafficPolicyVersionRequest::SerializePayload() const {
     commentNode.SetText(m_comment);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }

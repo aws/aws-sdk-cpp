@@ -36,5 +36,5 @@ Aws::String ChangeCidrCollectionRequest::SerializePayload() const {
     }
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }

@@ -26,7 +26,7 @@ Aws::String PutAccessPointPolicyForObjectLambdaRequest::SerializePayload() const
     policyNode.SetText(m_policy);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }
 
 Aws::Http::HeaderValueCollection PutAccessPointPolicyForObjectLambdaRequest::GetRequestSpecificHeaders() const {

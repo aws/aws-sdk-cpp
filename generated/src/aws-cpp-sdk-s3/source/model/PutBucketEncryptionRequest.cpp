@@ -41,7 +41,7 @@ Aws::String PutBucketEncryptionRequest::SerializePayload() const {
 
   m_serverSideEncryptionConfiguration.AddToNode(parentNode);
   if (parentNode.HasChildren()) {
-    return payloadDoc.ConvertToString();
+    return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
   }
 
   return {};

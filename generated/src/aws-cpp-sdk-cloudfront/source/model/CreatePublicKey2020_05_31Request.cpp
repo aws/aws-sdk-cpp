@@ -22,7 +22,7 @@ Aws::String CreatePublicKey2020_05_31Request::SerializePayload() const {
 
   m_publicKeyConfig.AddToNode(parentNode);
   if (parentNode.HasChildren()) {
-    return payloadDoc.ConvertToString();
+    return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
   }
 
   return {};

@@ -26,5 +26,5 @@ Aws::String GetResourcePolicy2020_05_31Request::SerializePayload() const {
     resourceArnNode.SetText(m_resourceArn);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }

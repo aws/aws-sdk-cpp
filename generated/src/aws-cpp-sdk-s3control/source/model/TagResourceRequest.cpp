@@ -29,7 +29,7 @@ Aws::String TagResourceRequest::SerializePayload() const {
     }
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }
 
 Aws::Http::HeaderValueCollection TagResourceRequest::GetRequestSpecificHeaders() const {

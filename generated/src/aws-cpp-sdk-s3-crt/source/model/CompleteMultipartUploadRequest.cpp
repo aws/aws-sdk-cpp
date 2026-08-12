@@ -41,7 +41,7 @@ Aws::String CompleteMultipartUploadRequest::SerializePayload() const {
 
   m_multipartUpload.AddToNode(parentNode);
   if (parentNode.HasChildren()) {
-    return payloadDoc.ConvertToString();
+    return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
   }
 
   return {};

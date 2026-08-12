@@ -31,5 +31,5 @@ Aws::String CreateQueryLoggingConfigRequest::SerializePayload() const {
     cloudWatchLogsLogGroupArnNode.SetText(m_cloudWatchLogsLogGroupArn);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }

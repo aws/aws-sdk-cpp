@@ -22,7 +22,7 @@ Aws::String PutBucketReplicationRequest::SerializePayload() const {
 
   m_replicationConfiguration.AddToNode(parentNode);
   if (parentNode.HasChildren()) {
-    return payloadDoc.ConvertToString();
+    return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
   }
 
   return {};

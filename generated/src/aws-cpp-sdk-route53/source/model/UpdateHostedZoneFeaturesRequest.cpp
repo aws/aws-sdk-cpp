@@ -28,5 +28,5 @@ Aws::String UpdateHostedZoneFeaturesRequest::SerializePayload() const {
     ss.str("");
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }

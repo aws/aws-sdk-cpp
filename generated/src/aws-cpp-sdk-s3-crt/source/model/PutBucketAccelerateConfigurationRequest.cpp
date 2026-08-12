@@ -41,7 +41,7 @@ Aws::String PutBucketAccelerateConfigurationRequest::SerializePayload() const {
 
   m_accelerateConfiguration.AddToNode(parentNode);
   if (parentNode.HasChildren()) {
-    return payloadDoc.ConvertToString();
+    return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
   }
 
   return {};

@@ -34,7 +34,7 @@ Aws::String UpdateAnycastIpList2020_05_31Request::SerializePayload() const {
     }
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }
 
 Aws::Http::HeaderValueCollection UpdateAnycastIpList2020_05_31Request::GetRequestSpecificHeaders() const {

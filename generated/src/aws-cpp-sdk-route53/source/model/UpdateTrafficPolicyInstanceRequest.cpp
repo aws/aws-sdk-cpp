@@ -40,5 +40,5 @@ Aws::String UpdateTrafficPolicyInstanceRequest::SerializePayload() const {
     ss.str("");
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }

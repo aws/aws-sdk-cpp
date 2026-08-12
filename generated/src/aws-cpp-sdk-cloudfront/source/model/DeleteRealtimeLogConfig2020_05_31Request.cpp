@@ -31,5 +31,5 @@ Aws::String DeleteRealtimeLogConfig2020_05_31Request::SerializePayload() const {
     aRNNode.SetText(m_aRN);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }

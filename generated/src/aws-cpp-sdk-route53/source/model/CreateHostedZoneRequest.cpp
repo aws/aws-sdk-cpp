@@ -46,5 +46,5 @@ Aws::String CreateHostedZoneRequest::SerializePayload() const {
     delegationSetIdNode.SetText(m_delegationSetId);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }

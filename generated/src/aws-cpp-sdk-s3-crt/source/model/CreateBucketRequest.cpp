@@ -41,7 +41,7 @@ Aws::String CreateBucketRequest::SerializePayload() const {
 
   m_createBucketConfiguration.AddToNode(parentNode);
   if (parentNode.HasChildren()) {
-    return payloadDoc.ConvertToString();
+    return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
   }
 
   return {};

@@ -32,7 +32,7 @@ Aws::String UpdateConnectionFunction2020_05_31Request::SerializePayload() const 
     connectionFunctionCodeNode.SetText(HashingUtils::Base64Encode(m_connectionFunctionCode));
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }
 
 Aws::Http::HeaderValueCollection UpdateConnectionFunction2020_05_31Request::GetRequestSpecificHeaders() const {

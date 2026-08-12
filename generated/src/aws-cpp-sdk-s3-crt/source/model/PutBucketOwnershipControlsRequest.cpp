@@ -41,7 +41,7 @@ Aws::String PutBucketOwnershipControlsRequest::SerializePayload() const {
 
   m_ownershipControls.AddToNode(parentNode);
   if (parentNode.HasChildren()) {
-    return payloadDoc.ConvertToString();
+    return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
   }
 
   return {};

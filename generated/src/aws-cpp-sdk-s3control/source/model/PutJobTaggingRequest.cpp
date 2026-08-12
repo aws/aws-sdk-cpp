@@ -29,7 +29,7 @@ Aws::String PutJobTaggingRequest::SerializePayload() const {
     }
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }
 
 Aws::Http::HeaderValueCollection PutJobTaggingRequest::GetRequestSpecificHeaders() const {

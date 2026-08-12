@@ -41,5 +41,5 @@ Aws::String ListDistributionsByRealtimeLogConfig2020_05_31Request::SerializePayl
     realtimeLogConfigArnNode.SetText(m_realtimeLogConfigArn);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }

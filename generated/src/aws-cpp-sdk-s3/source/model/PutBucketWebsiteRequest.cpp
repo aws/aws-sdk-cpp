@@ -41,7 +41,7 @@ Aws::String PutBucketWebsiteRequest::SerializePayload() const {
 
   m_websiteConfiguration.AddToNode(parentNode);
   if (parentNode.HasChildren()) {
-    return payloadDoc.ConvertToString();
+    return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
   }
 
   return {};

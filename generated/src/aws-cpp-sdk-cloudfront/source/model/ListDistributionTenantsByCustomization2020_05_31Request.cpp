@@ -43,5 +43,5 @@ Aws::String ListDistributionTenantsByCustomization2020_05_31Request::SerializePa
     ss.str("");
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }

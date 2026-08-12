@@ -41,7 +41,7 @@ Aws::String PutBucketVersioningRequest::SerializePayload() const {
 
   m_versioningConfiguration.AddToNode(parentNode);
   if (parentNode.HasChildren()) {
-    return payloadDoc.ConvertToString();
+    return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
   }
 
   return {};

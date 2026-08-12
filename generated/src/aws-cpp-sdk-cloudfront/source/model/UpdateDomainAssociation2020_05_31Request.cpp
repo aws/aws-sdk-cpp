@@ -31,7 +31,7 @@ Aws::String UpdateDomainAssociation2020_05_31Request::SerializePayload() const {
     m_targetResource.AddToNode(targetResourceNode);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }
 
 Aws::Http::HeaderValueCollection UpdateDomainAssociation2020_05_31Request::GetRequestSpecificHeaders() const {

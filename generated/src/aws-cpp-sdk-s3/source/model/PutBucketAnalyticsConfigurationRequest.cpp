@@ -41,7 +41,7 @@ Aws::String PutBucketAnalyticsConfigurationRequest::SerializePayload() const {
 
   m_analyticsConfiguration.AddToNode(parentNode);
   if (parentNode.HasChildren()) {
-    return payloadDoc.ConvertToString();
+    return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
   }
 
   return {};

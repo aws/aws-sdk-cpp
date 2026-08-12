@@ -26,7 +26,7 @@ Aws::String PutAccessPointPolicyRequest::SerializePayload() const {
     policyNode.SetText(m_policy);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }
 
 Aws::Http::HeaderValueCollection PutAccessPointPolicyRequest::GetRequestSpecificHeaders() const {

@@ -22,7 +22,7 @@ Aws::String CreateInvalidationForDistributionTenant2020_05_31Request::SerializeP
 
   m_invalidationBatch.AddToNode(parentNode);
   if (parentNode.HasChildren()) {
-    return payloadDoc.ConvertToString();
+    return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
   }
 
   return {};

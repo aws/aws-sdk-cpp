@@ -22,7 +22,7 @@ Aws::String CreateStreamingDistribution2020_05_31Request::SerializePayload() con
 
   m_streamingDistributionConfig.AddToNode(parentNode);
   if (parentNode.HasChildren()) {
-    return payloadDoc.ConvertToString();
+    return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
   }
 
   return {};

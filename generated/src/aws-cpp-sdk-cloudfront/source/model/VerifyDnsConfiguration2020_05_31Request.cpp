@@ -31,5 +31,5 @@ Aws::String VerifyDnsConfiguration2020_05_31Request::SerializePayload() const {
     identifierNode.SetText(m_identifier);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }

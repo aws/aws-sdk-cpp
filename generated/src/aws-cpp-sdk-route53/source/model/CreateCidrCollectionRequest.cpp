@@ -31,5 +31,5 @@ Aws::String CreateCidrCollectionRequest::SerializePayload() const {
     callerReferenceNode.SetText(m_callerReference);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }

@@ -24,7 +24,7 @@ Aws::String UpdateObjectEncryptionRequest::SerializePayload() const {
 
   m_objectEncryption.AddToNode(parentNode);
   if (parentNode.HasChildren()) {
-    return payloadDoc.ConvertToString();
+    return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
   }
 
   return {};

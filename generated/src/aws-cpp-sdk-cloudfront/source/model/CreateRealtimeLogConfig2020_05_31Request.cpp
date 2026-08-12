@@ -49,5 +49,5 @@ Aws::String CreateRealtimeLogConfig2020_05_31Request::SerializePayload() const {
     ss.str("");
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }

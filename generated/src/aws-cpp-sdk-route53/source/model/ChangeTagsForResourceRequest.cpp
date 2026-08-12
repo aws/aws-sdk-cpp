@@ -37,5 +37,5 @@ Aws::String ChangeTagsForResourceRequest::SerializePayload() const {
     }
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }

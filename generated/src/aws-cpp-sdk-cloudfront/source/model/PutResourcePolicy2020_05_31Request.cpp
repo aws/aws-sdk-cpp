@@ -31,5 +31,5 @@ Aws::String PutResourcePolicy2020_05_31Request::SerializePayload() const {
     policyDocumentNode.SetText(m_policyDocument);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }

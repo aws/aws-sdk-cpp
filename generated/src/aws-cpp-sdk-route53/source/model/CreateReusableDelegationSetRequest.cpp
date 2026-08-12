@@ -31,5 +31,5 @@ Aws::String CreateReusableDelegationSetRequest::SerializePayload() const {
     hostedZoneIdNode.SetText(m_hostedZoneId);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }

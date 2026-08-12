@@ -24,7 +24,7 @@ Aws::String CreateBucketMetadataTableConfigurationRequest::SerializePayload() co
 
   m_metadataTableConfiguration.AddToNode(parentNode);
   if (parentNode.HasChildren()) {
-    return payloadDoc.ConvertToString();
+    return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
   }
 
   return {};

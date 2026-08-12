@@ -43,5 +43,5 @@ Aws::String CreateTrustStore2020_05_31Request::SerializePayload() const {
     m_tags.AddToNode(tagsNode);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }

@@ -22,7 +22,7 @@ Aws::String UpdateFieldLevelEncryptionConfig2020_05_31Request::SerializePayload(
 
   m_fieldLevelEncryptionConfig.AddToNode(parentNode);
   if (parentNode.HasChildren()) {
-    return payloadDoc.ConvertToString();
+    return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
   }
 
   return {};

@@ -41,7 +41,7 @@ Aws::String PutBucketCorsRequest::SerializePayload() const {
 
   m_cORSConfiguration.AddToNode(parentNode);
   if (parentNode.HasChildren()) {
-    return payloadDoc.ConvertToString();
+    return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
   }
 
   return {};

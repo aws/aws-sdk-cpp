@@ -22,7 +22,7 @@ Aws::String CreateContinuousDeploymentPolicy2020_05_31Request::SerializePayload(
 
   m_continuousDeploymentPolicyConfig.AddToNode(parentNode);
   if (parentNode.HasChildren()) {
-    return payloadDoc.ConvertToString();
+    return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
   }
 
   return {};

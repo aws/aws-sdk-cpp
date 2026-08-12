@@ -26,5 +26,5 @@ Aws::String ChangeResourceRecordSetsRequest::SerializePayload() const {
     m_changeBatch.AddToNode(changeBatchNode);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }

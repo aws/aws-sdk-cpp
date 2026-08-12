@@ -43,5 +43,5 @@ Aws::String ListDomainConflicts2020_05_31Request::SerializePayload() const {
     markerNode.SetText(m_marker);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }

@@ -38,5 +38,5 @@ Aws::String ListConnectionFunctions2020_05_31Request::SerializePayload() const {
     stageNode.SetText(FunctionStageMapper::GetNameForFunctionStage(m_stage));
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }

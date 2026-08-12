@@ -26,7 +26,7 @@ Aws::String UpdateKeyValueStore2020_05_31Request::SerializePayload() const {
     commentNode.SetText(m_comment);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }
 
 Aws::Http::HeaderValueCollection UpdateKeyValueStore2020_05_31Request::GetRequestSpecificHeaders() const {

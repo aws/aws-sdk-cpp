@@ -26,5 +26,5 @@ Aws::String CreateVPCAssociationAuthorizationRequest::SerializePayload() const {
     m_vPC.AddToNode(vPCNode);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }

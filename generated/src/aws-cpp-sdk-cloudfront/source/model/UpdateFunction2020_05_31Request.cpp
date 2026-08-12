@@ -32,7 +32,7 @@ Aws::String UpdateFunction2020_05_31Request::SerializePayload() const {
     functionCodeNode.SetText(HashingUtils::Base64Encode(m_functionCode));
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }
 
 Aws::Http::HeaderValueCollection UpdateFunction2020_05_31Request::GetRequestSpecificHeaders() const {

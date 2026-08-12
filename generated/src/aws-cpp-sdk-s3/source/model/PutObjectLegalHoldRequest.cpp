@@ -41,7 +41,7 @@ Aws::String PutObjectLegalHoldRequest::SerializePayload() const {
 
   m_legalHold.AddToNode(parentNode);
   if (parentNode.HasChildren()) {
-    return payloadDoc.ConvertToString();
+    return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
   }
 
   return {};

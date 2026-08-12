@@ -51,5 +51,5 @@ Aws::String CreateAnycastIpList2020_05_31Request::SerializePayload() const {
     }
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }

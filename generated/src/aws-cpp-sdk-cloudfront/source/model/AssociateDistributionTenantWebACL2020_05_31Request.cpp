@@ -26,7 +26,7 @@ Aws::String AssociateDistributionTenantWebACL2020_05_31Request::SerializePayload
     webACLArnNode.SetText(m_webACLArn);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 }
 
 Aws::Http::HeaderValueCollection AssociateDistributionTenantWebACL2020_05_31Request::GetRequestSpecificHeaders() const {

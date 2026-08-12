@@ -24,7 +24,7 @@ Aws::String UpdateBucketMetadataInventoryTableConfigurationRequest::SerializePay
 
   m_inventoryTableConfiguration.AddToNode(parentNode);
   if (parentNode.HasChildren()) {
-    return payloadDoc.ConvertToString();
+    return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
   }
 
   return {};

@@ -22,7 +22,7 @@ Aws::String CreateStreamingDistributionWithTags2020_05_31Request::SerializePaylo
 
   m_streamingDistributionConfigWithTags.AddToNode(parentNode);
   if (parentNode.HasChildren()) {
-    return payloadDoc.ConvertToString();
+    return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
   }
 
   return {};
