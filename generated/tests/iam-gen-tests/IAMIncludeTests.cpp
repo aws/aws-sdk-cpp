@@ -19,6 +19,8 @@
 #include <aws/iam/model/AccessKey.h>
 #include <aws/iam/model/AccessKeyLastUsed.h>
 #include <aws/iam/model/AccessKeyMetadata.h>
+#include <aws/iam/model/AcquireRoleRequest.h>
+#include <aws/iam/model/AcquireRoleResult.h>
 #include <aws/iam/model/AddClientIDToOpenIDConnectProviderRequest.h>
 #include <aws/iam/model/AddRoleToInstanceProfileRequest.h>
 #include <aws/iam/model/AddUserToGroupRequest.h>
@@ -126,6 +128,8 @@
 #include <aws/iam/model/GetAccountAuthorizationDetailsResult.h>
 #include <aws/iam/model/GetAccountPasswordPolicyRequest.h>
 #include <aws/iam/model/GetAccountPasswordPolicyResult.h>
+#include <aws/iam/model/GetAccountPropertiesRequest.h>
+#include <aws/iam/model/GetAccountPropertiesResult.h>
 #include <aws/iam/model/GetAccountSummaryRequest.h>
 #include <aws/iam/model/GetAccountSummaryResult.h>
 #include <aws/iam/model/GetContextKeysForCustomPolicyRequest.h>
@@ -162,6 +166,8 @@
 #include <aws/iam/model/GetRolePolicyResult.h>
 #include <aws/iam/model/GetRoleRequest.h>
 #include <aws/iam/model/GetRoleResult.h>
+#include <aws/iam/model/GetRoleTemplateVersionRequest.h>
+#include <aws/iam/model/GetRoleTemplateVersionResult.h>
 #include <aws/iam/model/GetSAMLProviderRequest.h>
 #include <aws/iam/model/GetSAMLProviderResult.h>
 #include <aws/iam/model/GetSSHPublicKeyRequest.h>
@@ -181,6 +187,7 @@
 #include <aws/iam/model/GlobalEndpointTokenVersion.h>
 #include <aws/iam/model/Group.h>
 #include <aws/iam/model/GroupDetail.h>
+#include <aws/iam/model/InlinePolicy.h>
 #include <aws/iam/model/InlinePolicyIdentifierType.h>
 #include <aws/iam/model/InstanceProfile.h>
 #include <aws/iam/model/JobStatusType.h>
@@ -259,10 +266,13 @@
 #include <aws/iam/model/ListVirtualMFADevicesResult.h>
 #include <aws/iam/model/LoginProfile.h>
 #include <aws/iam/model/MFADevice.h>
+#include <aws/iam/model/ManagedByTypeType.h>
 #include <aws/iam/model/ManagedPolicyDetail.h>
 #include <aws/iam/model/OpenIDConnectProviderListEntry.h>
 #include <aws/iam/model/OrderedOrganizationPolicyType.h>
 #include <aws/iam/model/OrganizationsDecisionDetail.h>
+#include <aws/iam/model/ParameterDefinition.h>
+#include <aws/iam/model/ParameterTypeType.h>
 #include <aws/iam/model/PasswordPolicy.h>
 #include <aws/iam/model/PermissionCheckResultType.h>
 #include <aws/iam/model/PermissionCheckStatusType.h>
@@ -286,6 +296,8 @@
 #include <aws/iam/model/PolicyUser.h>
 #include <aws/iam/model/PolicyVersion.h>
 #include <aws/iam/model/Position.h>
+#include <aws/iam/model/PutAccountPropertiesRequest.h>
+#include <aws/iam/model/PutAccountPropertiesResult.h>
 #include <aws/iam/model/PutGroupPolicyRequest.h>
 #include <aws/iam/model/PutRolePermissionsBoundaryRequest.h>
 #include <aws/iam/model/PutRolePolicyRequest.h>
@@ -295,6 +307,7 @@
 #include <aws/iam/model/RemoveClientIDFromOpenIDConnectProviderRequest.h>
 #include <aws/iam/model/RemoveRoleFromInstanceProfileRequest.h>
 #include <aws/iam/model/RemoveUserFromGroupRequest.h>
+#include <aws/iam/model/ReplacementValueEntry.h>
 #include <aws/iam/model/ReportFormatType.h>
 #include <aws/iam/model/ReportStateType.h>
 #include <aws/iam/model/ResetServiceSpecificCredentialRequest.h>
@@ -305,6 +318,7 @@
 #include <aws/iam/model/Role.h>
 #include <aws/iam/model/RoleDetail.h>
 #include <aws/iam/model/RoleLastUsed.h>
+#include <aws/iam/model/RoleTemplateVersion.h>
 #include <aws/iam/model/RoleUsageType.h>
 #include <aws/iam/model/SAMLPrivateKey.h>
 #include <aws/iam/model/SAMLProviderListEntry.h>
@@ -324,6 +338,7 @@
 #include <aws/iam/model/SimulatePrincipalPolicyRequest.h>
 #include <aws/iam/model/SimulatePrincipalPolicyResult.h>
 #include <aws/iam/model/SortKeyType.h>
+#include <aws/iam/model/SourceRoleTemplate.h>
 #include <aws/iam/model/StateType.h>
 #include <aws/iam/model/Statement.h>
 #include <aws/iam/model/StatusType.h>
@@ -337,6 +352,7 @@
 #include <aws/iam/model/TagRoleRequest.h>
 #include <aws/iam/model/TagSAMLProviderRequest.h>
 #include <aws/iam/model/TagServerCertificateRequest.h>
+#include <aws/iam/model/TagTemplate.h>
 #include <aws/iam/model/TagUserRequest.h>
 #include <aws/iam/model/TrackedActionLastAccessed.h>
 #include <aws/iam/model/UntagInstanceProfileRequest.h>

@@ -21,6 +21,7 @@
 #include <aws/iam/IAMEndpointProvider.h>
 #include <aws/iam/IAMErrorMarshaller.h>
 #include <aws/iam/model/AcceptDelegationRequestRequest.h>
+#include <aws/iam/model/AcquireRoleRequest.h>
 #include <aws/iam/model/AddClientIDToOpenIDConnectProviderRequest.h>
 #include <aws/iam/model/AddRoleToInstanceProfileRequest.h>
 #include <aws/iam/model/AddUserToGroupRequest.h>
@@ -84,6 +85,7 @@
 #include <aws/iam/model/GetAccessKeyLastUsedRequest.h>
 #include <aws/iam/model/GetAccountAuthorizationDetailsRequest.h>
 #include <aws/iam/model/GetAccountPasswordPolicyRequest.h>
+#include <aws/iam/model/GetAccountPropertiesRequest.h>
 #include <aws/iam/model/GetAccountSummaryRequest.h>
 #include <aws/iam/model/GetContextKeysForCustomPolicyRequest.h>
 #include <aws/iam/model/GetContextKeysForPrincipalPolicyRequest.h>
@@ -102,6 +104,7 @@
 #include <aws/iam/model/GetPolicyVersionRequest.h>
 #include <aws/iam/model/GetRolePolicyRequest.h>
 #include <aws/iam/model/GetRoleRequest.h>
+#include <aws/iam/model/GetRoleTemplateVersionRequest.h>
 #include <aws/iam/model/GetSAMLProviderRequest.h>
 #include <aws/iam/model/GetSSHPublicKeyRequest.h>
 #include <aws/iam/model/GetServerCertificateRequest.h>
@@ -146,6 +149,7 @@
 #include <aws/iam/model/ListUserTagsRequest.h>
 #include <aws/iam/model/ListUsersRequest.h>
 #include <aws/iam/model/ListVirtualMFADevicesRequest.h>
+#include <aws/iam/model/PutAccountPropertiesRequest.h>
 #include <aws/iam/model/PutGroupPolicyRequest.h>
 #include <aws/iam/model/PutRolePermissionsBoundaryRequest.h>
 #include <aws/iam/model/PutRolePolicyRequest.h>
@@ -368,6 +372,11 @@ AcceptDelegationRequestOutcome IAMClient::AcceptDelegationRequest(const AcceptDe
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? AcceptDelegationRequestOutcome(result.GetResultWithOwnership())
                             : AcceptDelegationRequestOutcome(std::move(result.GetError()));
+}
+
+AcquireRoleOutcome IAMClient::AcquireRole(const AcquireRoleRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcquireRoleOutcome(result.GetResultWithOwnership()) : AcquireRoleOutcome(std::move(result.GetError()));
 }
 
 AddClientIDToOpenIDConnectProviderOutcome IAMClient::AddClientIDToOpenIDConnectProvider(
@@ -750,6 +759,12 @@ GetAccountPasswordPolicyOutcome IAMClient::GetAccountPasswordPolicy(const GetAcc
                             : GetAccountPasswordPolicyOutcome(std::move(result.GetError()));
 }
 
+GetAccountPropertiesOutcome IAMClient::GetAccountProperties(const GetAccountPropertiesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAccountPropertiesOutcome(result.GetResultWithOwnership())
+                            : GetAccountPropertiesOutcome(std::move(result.GetError()));
+}
+
 GetAccountSummaryOutcome IAMClient::GetAccountSummary(const GetAccountSummaryRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetAccountSummaryOutcome(result.GetResultWithOwnership())
@@ -852,6 +867,12 @@ GetRoleOutcome IAMClient::GetRole(const GetRoleRequest& request) const {
 GetRolePolicyOutcome IAMClient::GetRolePolicy(const GetRolePolicyRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetRolePolicyOutcome(result.GetResultWithOwnership()) : GetRolePolicyOutcome(std::move(result.GetError()));
+}
+
+GetRoleTemplateVersionOutcome IAMClient::GetRoleTemplateVersion(const GetRoleTemplateVersionRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRoleTemplateVersionOutcome(result.GetResultWithOwnership())
+                            : GetRoleTemplateVersionOutcome(std::move(result.GetError()));
 }
 
 GetSAMLProviderOutcome IAMClient::GetSAMLProvider(const GetSAMLProviderRequest& request) const {
@@ -1109,6 +1130,12 @@ ListVirtualMFADevicesOutcome IAMClient::ListVirtualMFADevices(const ListVirtualM
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListVirtualMFADevicesOutcome(result.GetResultWithOwnership())
                             : ListVirtualMFADevicesOutcome(std::move(result.GetError()));
+}
+
+PutAccountPropertiesOutcome IAMClient::PutAccountProperties(const PutAccountPropertiesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutAccountPropertiesOutcome(result.GetResultWithOwnership())
+                            : PutAccountPropertiesOutcome(std::move(result.GetError()));
 }
 
 PutGroupPolicyOutcome IAMClient::PutGroupPolicy(const PutGroupPolicyRequest& request) const {

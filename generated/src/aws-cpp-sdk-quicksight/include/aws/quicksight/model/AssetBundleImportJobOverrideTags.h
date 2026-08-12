@@ -12,6 +12,7 @@
 #include <aws/quicksight/model/AssetBundleImportJobDataSourceOverrideTags.h>
 #include <aws/quicksight/model/AssetBundleImportJobFolderOverrideTags.h>
 #include <aws/quicksight/model/AssetBundleImportJobThemeOverrideTags.h>
+#include <aws/quicksight/model/AssetBundleImportJobTopicV2OverrideTags.h>
 #include <aws/quicksight/model/AssetBundleImportJobVPCConnectionOverrideTags.h>
 
 #include <utility>
@@ -214,6 +215,31 @@ class AssetBundleImportJobOverrideTags {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of tag overrides for any <code>Topic</code> resources that are present
+   * in the asset bundle that is imported.</p>
+   */
+  inline const Aws::Vector<AssetBundleImportJobTopicV2OverrideTags>& GetTopicsV2() const { return m_topicsV2; }
+  inline bool TopicsV2HasBeenSet() const { return m_topicsV2HasBeenSet; }
+  template <typename TopicsV2T = Aws::Vector<AssetBundleImportJobTopicV2OverrideTags>>
+  void SetTopicsV2(TopicsV2T&& value) {
+    m_topicsV2HasBeenSet = true;
+    m_topicsV2 = std::forward<TopicsV2T>(value);
+  }
+  template <typename TopicsV2T = Aws::Vector<AssetBundleImportJobTopicV2OverrideTags>>
+  AssetBundleImportJobOverrideTags& WithTopicsV2(TopicsV2T&& value) {
+    SetTopicsV2(std::forward<TopicsV2T>(value));
+    return *this;
+  }
+  template <typename TopicsV2T = AssetBundleImportJobTopicV2OverrideTags>
+  AssetBundleImportJobOverrideTags& AddTopicsV2(TopicsV2T&& value) {
+    m_topicsV2HasBeenSet = true;
+    m_topicsV2.emplace_back(std::forward<TopicsV2T>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<AssetBundleImportJobVPCConnectionOverrideTags> m_vPCConnections;
 
@@ -228,6 +254,8 @@ class AssetBundleImportJobOverrideTags {
   Aws::Vector<AssetBundleImportJobDashboardOverrideTags> m_dashboards;
 
   Aws::Vector<AssetBundleImportJobFolderOverrideTags> m_folders;
+
+  Aws::Vector<AssetBundleImportJobTopicV2OverrideTags> m_topicsV2;
   bool m_vPCConnectionsHasBeenSet = false;
   bool m_dataSourcesHasBeenSet = false;
   bool m_dataSetsHasBeenSet = false;
@@ -235,6 +263,7 @@ class AssetBundleImportJobOverrideTags {
   bool m_analysesHasBeenSet = false;
   bool m_dashboardsHasBeenSet = false;
   bool m_foldersHasBeenSet = false;
+  bool m_topicsV2HasBeenSet = false;
 };
 
 }  // namespace Model

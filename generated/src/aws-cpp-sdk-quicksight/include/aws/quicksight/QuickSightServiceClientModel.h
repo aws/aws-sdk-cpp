@@ -22,17 +22,20 @@
 #include <aws/quicksight/model/BatchCreateTopicReviewedAnswerResult.h>
 #include <aws/quicksight/model/BatchDeleteKnowledgeBaseResult.h>
 #include <aws/quicksight/model/BatchDeleteTopicReviewedAnswerResult.h>
+#include <aws/quicksight/model/BatchDescribeUserLimitsResult.h>
 #include <aws/quicksight/model/CancelIngestionResult.h>
 #include <aws/quicksight/model/CreateAccountCustomizationResult.h>
 #include <aws/quicksight/model/CreateAccountSubscriptionResult.h>
 #include <aws/quicksight/model/CreateActionConnectorResult.h>
 #include <aws/quicksight/model/CreateAgentResult.h>
 #include <aws/quicksight/model/CreateAnalysisResult.h>
+#include <aws/quicksight/model/CreateApprovalPolicyResult.h>
 #include <aws/quicksight/model/CreateBrandResult.h>
 #include <aws/quicksight/model/CreateCustomPermissionsResult.h>
 #include <aws/quicksight/model/CreateDashboardResult.h>
 #include <aws/quicksight/model/CreateDataSetResult.h>
 #include <aws/quicksight/model/CreateDataSourceResult.h>
+#include <aws/quicksight/model/CreateDlpSettingResult.h>
 #include <aws/quicksight/model/CreateFlowResult.h>
 #include <aws/quicksight/model/CreateFolderMembershipResult.h>
 #include <aws/quicksight/model/CreateFolderResult.h>
@@ -41,6 +44,7 @@
 #include <aws/quicksight/model/CreateIAMPolicyAssignmentResult.h>
 #include <aws/quicksight/model/CreateIngestionResult.h>
 #include <aws/quicksight/model/CreateKnowledgeBaseResult.h>
+#include <aws/quicksight/model/CreateLimitsProfileResult.h>
 #include <aws/quicksight/model/CreateNamespaceResult.h>
 #include <aws/quicksight/model/CreateOAuthClientApplicationResult.h>
 #include <aws/quicksight/model/CreateRefreshScheduleResult.h>
@@ -60,6 +64,7 @@
 #include <aws/quicksight/model/DeleteActionConnectorResult.h>
 #include <aws/quicksight/model/DeleteAgentResult.h>
 #include <aws/quicksight/model/DeleteAnalysisResult.h>
+#include <aws/quicksight/model/DeleteApprovalPolicyResult.h>
 #include <aws/quicksight/model/DeleteBrandAssignmentResult.h>
 #include <aws/quicksight/model/DeleteBrandResult.h>
 #include <aws/quicksight/model/DeleteCustomPermissionsResult.h>
@@ -68,6 +73,7 @@
 #include <aws/quicksight/model/DeleteDataSetResult.h>
 #include <aws/quicksight/model/DeleteDataSourceResult.h>
 #include <aws/quicksight/model/DeleteDefaultQBusinessApplicationResult.h>
+#include <aws/quicksight/model/DeleteDlpSettingResult.h>
 #include <aws/quicksight/model/DeleteFlowResult.h>
 #include <aws/quicksight/model/DeleteFolderMembershipResult.h>
 #include <aws/quicksight/model/DeleteFolderResult.h>
@@ -76,6 +82,7 @@
 #include <aws/quicksight/model/DeleteIAMPolicyAssignmentResult.h>
 #include <aws/quicksight/model/DeleteIdentityPropagationConfigResult.h>
 #include <aws/quicksight/model/DeleteKnowledgeBaseResult.h>
+#include <aws/quicksight/model/DeleteLimitsProfileResult.h>
 #include <aws/quicksight/model/DeleteNamespaceResult.h>
 #include <aws/quicksight/model/DeleteOAuthClientApplicationResult.h>
 #include <aws/quicksight/model/DeleteRefreshScheduleResult.h>
@@ -104,6 +111,7 @@
 #include <aws/quicksight/model/DescribeAnalysisDefinitionResult.h>
 #include <aws/quicksight/model/DescribeAnalysisPermissionsResult.h>
 #include <aws/quicksight/model/DescribeAnalysisResult.h>
+#include <aws/quicksight/model/DescribeApprovalPolicyResult.h>
 #include <aws/quicksight/model/DescribeAssetBundleExportJobResult.h>
 #include <aws/quicksight/model/DescribeAssetBundleImportJobResult.h>
 #include <aws/quicksight/model/DescribeAutomationJobResult.h>
@@ -123,6 +131,7 @@
 #include <aws/quicksight/model/DescribeDataSourcePermissionsResult.h>
 #include <aws/quicksight/model/DescribeDataSourceResult.h>
 #include <aws/quicksight/model/DescribeDefaultQBusinessApplicationResult.h>
+#include <aws/quicksight/model/DescribeDlpSettingResult.h>
 #include <aws/quicksight/model/DescribeFlowResult.h>
 #include <aws/quicksight/model/DescribeFolderPermissionsResult.h>
 #include <aws/quicksight/model/DescribeFolderResolvedPermissionsResult.h>
@@ -135,6 +144,7 @@
 #include <aws/quicksight/model/DescribeKeyRegistrationResult.h>
 #include <aws/quicksight/model/DescribeKnowledgeBasePermissionsResult.h>
 #include <aws/quicksight/model/DescribeKnowledgeBaseResult.h>
+#include <aws/quicksight/model/DescribeLimitsProfileResult.h>
 #include <aws/quicksight/model/DescribeNamespaceResult.h>
 #include <aws/quicksight/model/DescribeOAuthClientApplicationResult.h>
 #include <aws/quicksight/model/DescribeQPersonalizationConfigurationResult.h>
@@ -170,6 +180,8 @@
 #include <aws/quicksight/model/ListActionConnectorsResult.h>
 #include <aws/quicksight/model/ListAgentsResult.h>
 #include <aws/quicksight/model/ListAnalysesResult.h>
+#include <aws/quicksight/model/ListApprovalPoliciesRequest.h>
+#include <aws/quicksight/model/ListApprovalPoliciesResult.h>
 #include <aws/quicksight/model/ListAssetBundleExportJobsResult.h>
 #include <aws/quicksight/model/ListAssetBundleImportJobsResult.h>
 #include <aws/quicksight/model/ListBrandsResult.h>
@@ -178,6 +190,7 @@
 #include <aws/quicksight/model/ListDashboardsResult.h>
 #include <aws/quicksight/model/ListDataSetsResult.h>
 #include <aws/quicksight/model/ListDataSourcesResult.h>
+#include <aws/quicksight/model/ListDlpSettingsResult.h>
 #include <aws/quicksight/model/ListFlowsResult.h>
 #include <aws/quicksight/model/ListFolderMembersResult.h>
 #include <aws/quicksight/model/ListFoldersForResourceResult.h>
@@ -189,6 +202,7 @@
 #include <aws/quicksight/model/ListIdentityPropagationConfigsResult.h>
 #include <aws/quicksight/model/ListIngestionsResult.h>
 #include <aws/quicksight/model/ListKnowledgeBasesResult.h>
+#include <aws/quicksight/model/ListLimitsProfilesResult.h>
 #include <aws/quicksight/model/ListNamespacesResult.h>
 #include <aws/quicksight/model/ListOAuthClientApplicationsResult.h>
 #include <aws/quicksight/model/ListRefreshSchedulesResult.h>
@@ -245,6 +259,7 @@
 #include <aws/quicksight/model/UpdateAnalysisPermissionsResult.h>
 #include <aws/quicksight/model/UpdateAnalysisResult.h>
 #include <aws/quicksight/model/UpdateApplicationWithTokenExchangeGrantResult.h>
+#include <aws/quicksight/model/UpdateApprovalPolicyResult.h>
 #include <aws/quicksight/model/UpdateBrandAssignmentResult.h>
 #include <aws/quicksight/model/UpdateBrandPublishedVersionResult.h>
 #include <aws/quicksight/model/UpdateBrandResult.h>
@@ -259,6 +274,7 @@
 #include <aws/quicksight/model/UpdateDataSourcePermissionsResult.h>
 #include <aws/quicksight/model/UpdateDataSourceResult.h>
 #include <aws/quicksight/model/UpdateDefaultQBusinessApplicationResult.h>
+#include <aws/quicksight/model/UpdateDlpSettingResult.h>
 #include <aws/quicksight/model/UpdateFlowPermissionsResult.h>
 #include <aws/quicksight/model/UpdateFlowResult.h>
 #include <aws/quicksight/model/UpdateFolderPermissionsResult.h>
@@ -270,6 +286,7 @@
 #include <aws/quicksight/model/UpdateKeyRegistrationResult.h>
 #include <aws/quicksight/model/UpdateKnowledgeBasePermissionsResult.h>
 #include <aws/quicksight/model/UpdateKnowledgeBaseResult.h>
+#include <aws/quicksight/model/UpdateLimitsProfileResult.h>
 #include <aws/quicksight/model/UpdateOAuthClientApplicationResult.h>
 #include <aws/quicksight/model/UpdatePublicSharingSettingsResult.h>
 #include <aws/quicksight/model/UpdateQPersonalizationConfigurationResult.h>
@@ -332,17 +349,20 @@ namespace Model {
 class BatchCreateTopicReviewedAnswerRequest;
 class BatchDeleteKnowledgeBaseRequest;
 class BatchDeleteTopicReviewedAnswerRequest;
+class BatchDescribeUserLimitsRequest;
 class CancelIngestionRequest;
 class CreateAccountCustomizationRequest;
 class CreateAccountSubscriptionRequest;
 class CreateActionConnectorRequest;
 class CreateAgentRequest;
 class CreateAnalysisRequest;
+class CreateApprovalPolicyRequest;
 class CreateBrandRequest;
 class CreateCustomPermissionsRequest;
 class CreateDashboardRequest;
 class CreateDataSetRequest;
 class CreateDataSourceRequest;
+class CreateDlpSettingRequest;
 class CreateFlowRequest;
 class CreateFolderRequest;
 class CreateFolderMembershipRequest;
@@ -351,6 +371,7 @@ class CreateGroupMembershipRequest;
 class CreateIAMPolicyAssignmentRequest;
 class CreateIngestionRequest;
 class CreateKnowledgeBaseRequest;
+class CreateLimitsProfileRequest;
 class CreateNamespaceRequest;
 class CreateOAuthClientApplicationRequest;
 class CreateRefreshScheduleRequest;
@@ -370,6 +391,7 @@ class DeleteAccountSubscriptionRequest;
 class DeleteActionConnectorRequest;
 class DeleteAgentRequest;
 class DeleteAnalysisRequest;
+class DeleteApprovalPolicyRequest;
 class DeleteBrandRequest;
 class DeleteBrandAssignmentRequest;
 class DeleteCustomPermissionsRequest;
@@ -378,6 +400,7 @@ class DeleteDataSetRequest;
 class DeleteDataSetRefreshPropertiesRequest;
 class DeleteDataSourceRequest;
 class DeleteDefaultQBusinessApplicationRequest;
+class DeleteDlpSettingRequest;
 class DeleteFlowRequest;
 class DeleteFolderRequest;
 class DeleteFolderMembershipRequest;
@@ -386,6 +409,7 @@ class DeleteGroupMembershipRequest;
 class DeleteIAMPolicyAssignmentRequest;
 class DeleteIdentityPropagationConfigRequest;
 class DeleteKnowledgeBaseRequest;
+class DeleteLimitsProfileRequest;
 class DeleteNamespaceRequest;
 class DeleteOAuthClientApplicationRequest;
 class DeleteRefreshScheduleRequest;
@@ -414,6 +438,7 @@ class DescribeAgentPermissionsRequest;
 class DescribeAnalysisRequest;
 class DescribeAnalysisDefinitionRequest;
 class DescribeAnalysisPermissionsRequest;
+class DescribeApprovalPolicyRequest;
 class DescribeAssetBundleExportJobRequest;
 class DescribeAssetBundleImportJobRequest;
 class DescribeAutomationJobRequest;
@@ -433,6 +458,7 @@ class DescribeDataSetRefreshPropertiesRequest;
 class DescribeDataSourceRequest;
 class DescribeDataSourcePermissionsRequest;
 class DescribeDefaultQBusinessApplicationRequest;
+class DescribeDlpSettingRequest;
 class DescribeFlowRequest;
 class DescribeFolderRequest;
 class DescribeFolderPermissionsRequest;
@@ -445,6 +471,7 @@ class DescribeIpRestrictionRequest;
 class DescribeKeyRegistrationRequest;
 class DescribeKnowledgeBaseRequest;
 class DescribeKnowledgeBasePermissionsRequest;
+class DescribeLimitsProfileRequest;
 class DescribeNamespaceRequest;
 class DescribeOAuthClientApplicationRequest;
 class DescribeQPersonalizationConfigurationRequest;
@@ -480,6 +507,7 @@ class GetSessionEmbedUrlRequest;
 class ListActionConnectorsRequest;
 class ListAgentsRequest;
 class ListAnalysesRequest;
+class ListApprovalPoliciesRequest;
 class ListAssetBundleExportJobsRequest;
 class ListAssetBundleImportJobsRequest;
 class ListBrandsRequest;
@@ -488,6 +516,7 @@ class ListDashboardVersionsRequest;
 class ListDashboardsRequest;
 class ListDataSetsRequest;
 class ListDataSourcesRequest;
+class ListDlpSettingsRequest;
 class ListFlowsRequest;
 class ListFolderMembersRequest;
 class ListFoldersRequest;
@@ -499,6 +528,7 @@ class ListIAMPolicyAssignmentsForUserRequest;
 class ListIdentityPropagationConfigsRequest;
 class ListIngestionsRequest;
 class ListKnowledgeBasesRequest;
+class ListLimitsProfilesRequest;
 class ListNamespacesRequest;
 class ListOAuthClientApplicationsRequest;
 class ListRefreshSchedulesRequest;
@@ -555,6 +585,7 @@ class UpdateAgentPermissionsRequest;
 class UpdateAnalysisRequest;
 class UpdateAnalysisPermissionsRequest;
 class UpdateApplicationWithTokenExchangeGrantRequest;
+class UpdateApprovalPolicyRequest;
 class UpdateBrandRequest;
 class UpdateBrandAssignmentRequest;
 class UpdateBrandPublishedVersionRequest;
@@ -569,6 +600,7 @@ class UpdateDataSetPermissionsRequest;
 class UpdateDataSourceRequest;
 class UpdateDataSourcePermissionsRequest;
 class UpdateDefaultQBusinessApplicationRequest;
+class UpdateDlpSettingRequest;
 class UpdateFlowRequest;
 class UpdateFlowPermissionsRequest;
 class UpdateFolderRequest;
@@ -580,6 +612,7 @@ class UpdateIpRestrictionRequest;
 class UpdateKeyRegistrationRequest;
 class UpdateKnowledgeBaseRequest;
 class UpdateKnowledgeBasePermissionsRequest;
+class UpdateLimitsProfileRequest;
 class UpdateOAuthClientApplicationRequest;
 class UpdatePublicSharingSettingsRequest;
 class UpdateQPersonalizationConfigurationRequest;
@@ -612,17 +645,20 @@ class UpdateVPCConnectionRequest;
 typedef Aws::Utils::Outcome<BatchCreateTopicReviewedAnswerResult, QuickSightError> BatchCreateTopicReviewedAnswerOutcome;
 typedef Aws::Utils::Outcome<BatchDeleteKnowledgeBaseResult, QuickSightError> BatchDeleteKnowledgeBaseOutcome;
 typedef Aws::Utils::Outcome<BatchDeleteTopicReviewedAnswerResult, QuickSightError> BatchDeleteTopicReviewedAnswerOutcome;
+typedef Aws::Utils::Outcome<BatchDescribeUserLimitsResult, QuickSightError> BatchDescribeUserLimitsOutcome;
 typedef Aws::Utils::Outcome<CancelIngestionResult, QuickSightError> CancelIngestionOutcome;
 typedef Aws::Utils::Outcome<CreateAccountCustomizationResult, QuickSightError> CreateAccountCustomizationOutcome;
 typedef Aws::Utils::Outcome<CreateAccountSubscriptionResult, QuickSightError> CreateAccountSubscriptionOutcome;
 typedef Aws::Utils::Outcome<CreateActionConnectorResult, QuickSightError> CreateActionConnectorOutcome;
 typedef Aws::Utils::Outcome<CreateAgentResult, QuickSightError> CreateAgentOutcome;
 typedef Aws::Utils::Outcome<CreateAnalysisResult, QuickSightError> CreateAnalysisOutcome;
+typedef Aws::Utils::Outcome<CreateApprovalPolicyResult, QuickSightError> CreateApprovalPolicyOutcome;
 typedef Aws::Utils::Outcome<CreateBrandResult, QuickSightError> CreateBrandOutcome;
 typedef Aws::Utils::Outcome<CreateCustomPermissionsResult, QuickSightError> CreateCustomPermissionsOutcome;
 typedef Aws::Utils::Outcome<CreateDashboardResult, QuickSightError> CreateDashboardOutcome;
 typedef Aws::Utils::Outcome<CreateDataSetResult, QuickSightError> CreateDataSetOutcome;
 typedef Aws::Utils::Outcome<CreateDataSourceResult, QuickSightError> CreateDataSourceOutcome;
+typedef Aws::Utils::Outcome<CreateDlpSettingResult, QuickSightError> CreateDlpSettingOutcome;
 typedef Aws::Utils::Outcome<CreateFlowResult, QuickSightError> CreateFlowOutcome;
 typedef Aws::Utils::Outcome<CreateFolderResult, QuickSightError> CreateFolderOutcome;
 typedef Aws::Utils::Outcome<CreateFolderMembershipResult, QuickSightError> CreateFolderMembershipOutcome;
@@ -631,6 +667,7 @@ typedef Aws::Utils::Outcome<CreateGroupMembershipResult, QuickSightError> Create
 typedef Aws::Utils::Outcome<CreateIAMPolicyAssignmentResult, QuickSightError> CreateIAMPolicyAssignmentOutcome;
 typedef Aws::Utils::Outcome<CreateIngestionResult, QuickSightError> CreateIngestionOutcome;
 typedef Aws::Utils::Outcome<CreateKnowledgeBaseResult, QuickSightError> CreateKnowledgeBaseOutcome;
+typedef Aws::Utils::Outcome<CreateLimitsProfileResult, QuickSightError> CreateLimitsProfileOutcome;
 typedef Aws::Utils::Outcome<CreateNamespaceResult, QuickSightError> CreateNamespaceOutcome;
 typedef Aws::Utils::Outcome<CreateOAuthClientApplicationResult, QuickSightError> CreateOAuthClientApplicationOutcome;
 typedef Aws::Utils::Outcome<CreateRefreshScheduleResult, QuickSightError> CreateRefreshScheduleOutcome;
@@ -650,6 +687,7 @@ typedef Aws::Utils::Outcome<DeleteAccountSubscriptionResult, QuickSightError> De
 typedef Aws::Utils::Outcome<DeleteActionConnectorResult, QuickSightError> DeleteActionConnectorOutcome;
 typedef Aws::Utils::Outcome<DeleteAgentResult, QuickSightError> DeleteAgentOutcome;
 typedef Aws::Utils::Outcome<DeleteAnalysisResult, QuickSightError> DeleteAnalysisOutcome;
+typedef Aws::Utils::Outcome<DeleteApprovalPolicyResult, QuickSightError> DeleteApprovalPolicyOutcome;
 typedef Aws::Utils::Outcome<DeleteBrandResult, QuickSightError> DeleteBrandOutcome;
 typedef Aws::Utils::Outcome<DeleteBrandAssignmentResult, QuickSightError> DeleteBrandAssignmentOutcome;
 typedef Aws::Utils::Outcome<DeleteCustomPermissionsResult, QuickSightError> DeleteCustomPermissionsOutcome;
@@ -658,6 +696,7 @@ typedef Aws::Utils::Outcome<DeleteDataSetResult, QuickSightError> DeleteDataSetO
 typedef Aws::Utils::Outcome<DeleteDataSetRefreshPropertiesResult, QuickSightError> DeleteDataSetRefreshPropertiesOutcome;
 typedef Aws::Utils::Outcome<DeleteDataSourceResult, QuickSightError> DeleteDataSourceOutcome;
 typedef Aws::Utils::Outcome<DeleteDefaultQBusinessApplicationResult, QuickSightError> DeleteDefaultQBusinessApplicationOutcome;
+typedef Aws::Utils::Outcome<DeleteDlpSettingResult, QuickSightError> DeleteDlpSettingOutcome;
 typedef Aws::Utils::Outcome<DeleteFlowResult, QuickSightError> DeleteFlowOutcome;
 typedef Aws::Utils::Outcome<DeleteFolderResult, QuickSightError> DeleteFolderOutcome;
 typedef Aws::Utils::Outcome<DeleteFolderMembershipResult, QuickSightError> DeleteFolderMembershipOutcome;
@@ -666,6 +705,7 @@ typedef Aws::Utils::Outcome<DeleteGroupMembershipResult, QuickSightError> Delete
 typedef Aws::Utils::Outcome<DeleteIAMPolicyAssignmentResult, QuickSightError> DeleteIAMPolicyAssignmentOutcome;
 typedef Aws::Utils::Outcome<DeleteIdentityPropagationConfigResult, QuickSightError> DeleteIdentityPropagationConfigOutcome;
 typedef Aws::Utils::Outcome<DeleteKnowledgeBaseResult, QuickSightError> DeleteKnowledgeBaseOutcome;
+typedef Aws::Utils::Outcome<DeleteLimitsProfileResult, QuickSightError> DeleteLimitsProfileOutcome;
 typedef Aws::Utils::Outcome<DeleteNamespaceResult, QuickSightError> DeleteNamespaceOutcome;
 typedef Aws::Utils::Outcome<DeleteOAuthClientApplicationResult, QuickSightError> DeleteOAuthClientApplicationOutcome;
 typedef Aws::Utils::Outcome<DeleteRefreshScheduleResult, QuickSightError> DeleteRefreshScheduleOutcome;
@@ -694,6 +734,7 @@ typedef Aws::Utils::Outcome<DescribeAgentPermissionsResult, QuickSightError> Des
 typedef Aws::Utils::Outcome<DescribeAnalysisResult, QuickSightError> DescribeAnalysisOutcome;
 typedef Aws::Utils::Outcome<DescribeAnalysisDefinitionResult, QuickSightError> DescribeAnalysisDefinitionOutcome;
 typedef Aws::Utils::Outcome<DescribeAnalysisPermissionsResult, QuickSightError> DescribeAnalysisPermissionsOutcome;
+typedef Aws::Utils::Outcome<DescribeApprovalPolicyResult, QuickSightError> DescribeApprovalPolicyOutcome;
 typedef Aws::Utils::Outcome<DescribeAssetBundleExportJobResult, QuickSightError> DescribeAssetBundleExportJobOutcome;
 typedef Aws::Utils::Outcome<DescribeAssetBundleImportJobResult, QuickSightError> DescribeAssetBundleImportJobOutcome;
 typedef Aws::Utils::Outcome<DescribeAutomationJobResult, QuickSightError> DescribeAutomationJobOutcome;
@@ -713,6 +754,7 @@ typedef Aws::Utils::Outcome<DescribeDataSetRefreshPropertiesResult, QuickSightEr
 typedef Aws::Utils::Outcome<DescribeDataSourceResult, QuickSightError> DescribeDataSourceOutcome;
 typedef Aws::Utils::Outcome<DescribeDataSourcePermissionsResult, QuickSightError> DescribeDataSourcePermissionsOutcome;
 typedef Aws::Utils::Outcome<DescribeDefaultQBusinessApplicationResult, QuickSightError> DescribeDefaultQBusinessApplicationOutcome;
+typedef Aws::Utils::Outcome<DescribeDlpSettingResult, QuickSightError> DescribeDlpSettingOutcome;
 typedef Aws::Utils::Outcome<DescribeFlowResult, QuickSightError> DescribeFlowOutcome;
 typedef Aws::Utils::Outcome<DescribeFolderResult, QuickSightError> DescribeFolderOutcome;
 typedef Aws::Utils::Outcome<DescribeFolderPermissionsResult, QuickSightError> DescribeFolderPermissionsOutcome;
@@ -725,6 +767,7 @@ typedef Aws::Utils::Outcome<DescribeIpRestrictionResult, QuickSightError> Descri
 typedef Aws::Utils::Outcome<DescribeKeyRegistrationResult, QuickSightError> DescribeKeyRegistrationOutcome;
 typedef Aws::Utils::Outcome<DescribeKnowledgeBaseResult, QuickSightError> DescribeKnowledgeBaseOutcome;
 typedef Aws::Utils::Outcome<DescribeKnowledgeBasePermissionsResult, QuickSightError> DescribeKnowledgeBasePermissionsOutcome;
+typedef Aws::Utils::Outcome<DescribeLimitsProfileResult, QuickSightError> DescribeLimitsProfileOutcome;
 typedef Aws::Utils::Outcome<DescribeNamespaceResult, QuickSightError> DescribeNamespaceOutcome;
 typedef Aws::Utils::Outcome<DescribeOAuthClientApplicationResult, QuickSightError> DescribeOAuthClientApplicationOutcome;
 typedef Aws::Utils::Outcome<DescribeQPersonalizationConfigurationResult, QuickSightError> DescribeQPersonalizationConfigurationOutcome;
@@ -761,6 +804,7 @@ typedef Aws::Utils::Outcome<GetSessionEmbedUrlResult, QuickSightError> GetSessio
 typedef Aws::Utils::Outcome<ListActionConnectorsResult, QuickSightError> ListActionConnectorsOutcome;
 typedef Aws::Utils::Outcome<ListAgentsResult, QuickSightError> ListAgentsOutcome;
 typedef Aws::Utils::Outcome<ListAnalysesResult, QuickSightError> ListAnalysesOutcome;
+typedef Aws::Utils::Outcome<ListApprovalPoliciesResult, QuickSightError> ListApprovalPoliciesOutcome;
 typedef Aws::Utils::Outcome<ListAssetBundleExportJobsResult, QuickSightError> ListAssetBundleExportJobsOutcome;
 typedef Aws::Utils::Outcome<ListAssetBundleImportJobsResult, QuickSightError> ListAssetBundleImportJobsOutcome;
 typedef Aws::Utils::Outcome<ListBrandsResult, QuickSightError> ListBrandsOutcome;
@@ -769,6 +813,7 @@ typedef Aws::Utils::Outcome<ListDashboardVersionsResult, QuickSightError> ListDa
 typedef Aws::Utils::Outcome<ListDashboardsResult, QuickSightError> ListDashboardsOutcome;
 typedef Aws::Utils::Outcome<ListDataSetsResult, QuickSightError> ListDataSetsOutcome;
 typedef Aws::Utils::Outcome<ListDataSourcesResult, QuickSightError> ListDataSourcesOutcome;
+typedef Aws::Utils::Outcome<ListDlpSettingsResult, QuickSightError> ListDlpSettingsOutcome;
 typedef Aws::Utils::Outcome<ListFlowsResult, QuickSightError> ListFlowsOutcome;
 typedef Aws::Utils::Outcome<ListFolderMembersResult, QuickSightError> ListFolderMembersOutcome;
 typedef Aws::Utils::Outcome<ListFoldersResult, QuickSightError> ListFoldersOutcome;
@@ -780,6 +825,7 @@ typedef Aws::Utils::Outcome<ListIAMPolicyAssignmentsForUserResult, QuickSightErr
 typedef Aws::Utils::Outcome<ListIdentityPropagationConfigsResult, QuickSightError> ListIdentityPropagationConfigsOutcome;
 typedef Aws::Utils::Outcome<ListIngestionsResult, QuickSightError> ListIngestionsOutcome;
 typedef Aws::Utils::Outcome<ListKnowledgeBasesResult, QuickSightError> ListKnowledgeBasesOutcome;
+typedef Aws::Utils::Outcome<ListLimitsProfilesResult, QuickSightError> ListLimitsProfilesOutcome;
 typedef Aws::Utils::Outcome<ListNamespacesResult, QuickSightError> ListNamespacesOutcome;
 typedef Aws::Utils::Outcome<ListOAuthClientApplicationsResult, QuickSightError> ListOAuthClientApplicationsOutcome;
 typedef Aws::Utils::Outcome<ListRefreshSchedulesResult, QuickSightError> ListRefreshSchedulesOutcome;
@@ -836,6 +882,7 @@ typedef Aws::Utils::Outcome<UpdateAgentPermissionsResult, QuickSightError> Updat
 typedef Aws::Utils::Outcome<UpdateAnalysisResult, QuickSightError> UpdateAnalysisOutcome;
 typedef Aws::Utils::Outcome<UpdateAnalysisPermissionsResult, QuickSightError> UpdateAnalysisPermissionsOutcome;
 typedef Aws::Utils::Outcome<UpdateApplicationWithTokenExchangeGrantResult, QuickSightError> UpdateApplicationWithTokenExchangeGrantOutcome;
+typedef Aws::Utils::Outcome<UpdateApprovalPolicyResult, QuickSightError> UpdateApprovalPolicyOutcome;
 typedef Aws::Utils::Outcome<UpdateBrandResult, QuickSightError> UpdateBrandOutcome;
 typedef Aws::Utils::Outcome<UpdateBrandAssignmentResult, QuickSightError> UpdateBrandAssignmentOutcome;
 typedef Aws::Utils::Outcome<UpdateBrandPublishedVersionResult, QuickSightError> UpdateBrandPublishedVersionOutcome;
@@ -850,6 +897,7 @@ typedef Aws::Utils::Outcome<UpdateDataSetPermissionsResult, QuickSightError> Upd
 typedef Aws::Utils::Outcome<UpdateDataSourceResult, QuickSightError> UpdateDataSourceOutcome;
 typedef Aws::Utils::Outcome<UpdateDataSourcePermissionsResult, QuickSightError> UpdateDataSourcePermissionsOutcome;
 typedef Aws::Utils::Outcome<UpdateDefaultQBusinessApplicationResult, QuickSightError> UpdateDefaultQBusinessApplicationOutcome;
+typedef Aws::Utils::Outcome<UpdateDlpSettingResult, QuickSightError> UpdateDlpSettingOutcome;
 typedef Aws::Utils::Outcome<UpdateFlowResult, QuickSightError> UpdateFlowOutcome;
 typedef Aws::Utils::Outcome<UpdateFlowPermissionsResult, QuickSightError> UpdateFlowPermissionsOutcome;
 typedef Aws::Utils::Outcome<UpdateFolderResult, QuickSightError> UpdateFolderOutcome;
@@ -861,6 +909,7 @@ typedef Aws::Utils::Outcome<UpdateIpRestrictionResult, QuickSightError> UpdateIp
 typedef Aws::Utils::Outcome<UpdateKeyRegistrationResult, QuickSightError> UpdateKeyRegistrationOutcome;
 typedef Aws::Utils::Outcome<UpdateKnowledgeBaseResult, QuickSightError> UpdateKnowledgeBaseOutcome;
 typedef Aws::Utils::Outcome<UpdateKnowledgeBasePermissionsResult, QuickSightError> UpdateKnowledgeBasePermissionsOutcome;
+typedef Aws::Utils::Outcome<UpdateLimitsProfileResult, QuickSightError> UpdateLimitsProfileOutcome;
 typedef Aws::Utils::Outcome<UpdateOAuthClientApplicationResult, QuickSightError> UpdateOAuthClientApplicationOutcome;
 typedef Aws::Utils::Outcome<UpdatePublicSharingSettingsResult, QuickSightError> UpdatePublicSharingSettingsOutcome;
 typedef Aws::Utils::Outcome<UpdateQPersonalizationConfigurationResult, QuickSightError> UpdateQPersonalizationConfigurationOutcome;
@@ -893,17 +942,20 @@ typedef Aws::Utils::Outcome<UpdateVPCConnectionResult, QuickSightError> UpdateVP
 typedef std::future<BatchCreateTopicReviewedAnswerOutcome> BatchCreateTopicReviewedAnswerOutcomeCallable;
 typedef std::future<BatchDeleteKnowledgeBaseOutcome> BatchDeleteKnowledgeBaseOutcomeCallable;
 typedef std::future<BatchDeleteTopicReviewedAnswerOutcome> BatchDeleteTopicReviewedAnswerOutcomeCallable;
+typedef std::future<BatchDescribeUserLimitsOutcome> BatchDescribeUserLimitsOutcomeCallable;
 typedef std::future<CancelIngestionOutcome> CancelIngestionOutcomeCallable;
 typedef std::future<CreateAccountCustomizationOutcome> CreateAccountCustomizationOutcomeCallable;
 typedef std::future<CreateAccountSubscriptionOutcome> CreateAccountSubscriptionOutcomeCallable;
 typedef std::future<CreateActionConnectorOutcome> CreateActionConnectorOutcomeCallable;
 typedef std::future<CreateAgentOutcome> CreateAgentOutcomeCallable;
 typedef std::future<CreateAnalysisOutcome> CreateAnalysisOutcomeCallable;
+typedef std::future<CreateApprovalPolicyOutcome> CreateApprovalPolicyOutcomeCallable;
 typedef std::future<CreateBrandOutcome> CreateBrandOutcomeCallable;
 typedef std::future<CreateCustomPermissionsOutcome> CreateCustomPermissionsOutcomeCallable;
 typedef std::future<CreateDashboardOutcome> CreateDashboardOutcomeCallable;
 typedef std::future<CreateDataSetOutcome> CreateDataSetOutcomeCallable;
 typedef std::future<CreateDataSourceOutcome> CreateDataSourceOutcomeCallable;
+typedef std::future<CreateDlpSettingOutcome> CreateDlpSettingOutcomeCallable;
 typedef std::future<CreateFlowOutcome> CreateFlowOutcomeCallable;
 typedef std::future<CreateFolderOutcome> CreateFolderOutcomeCallable;
 typedef std::future<CreateFolderMembershipOutcome> CreateFolderMembershipOutcomeCallable;
@@ -912,6 +964,7 @@ typedef std::future<CreateGroupMembershipOutcome> CreateGroupMembershipOutcomeCa
 typedef std::future<CreateIAMPolicyAssignmentOutcome> CreateIAMPolicyAssignmentOutcomeCallable;
 typedef std::future<CreateIngestionOutcome> CreateIngestionOutcomeCallable;
 typedef std::future<CreateKnowledgeBaseOutcome> CreateKnowledgeBaseOutcomeCallable;
+typedef std::future<CreateLimitsProfileOutcome> CreateLimitsProfileOutcomeCallable;
 typedef std::future<CreateNamespaceOutcome> CreateNamespaceOutcomeCallable;
 typedef std::future<CreateOAuthClientApplicationOutcome> CreateOAuthClientApplicationOutcomeCallable;
 typedef std::future<CreateRefreshScheduleOutcome> CreateRefreshScheduleOutcomeCallable;
@@ -931,6 +984,7 @@ typedef std::future<DeleteAccountSubscriptionOutcome> DeleteAccountSubscriptionO
 typedef std::future<DeleteActionConnectorOutcome> DeleteActionConnectorOutcomeCallable;
 typedef std::future<DeleteAgentOutcome> DeleteAgentOutcomeCallable;
 typedef std::future<DeleteAnalysisOutcome> DeleteAnalysisOutcomeCallable;
+typedef std::future<DeleteApprovalPolicyOutcome> DeleteApprovalPolicyOutcomeCallable;
 typedef std::future<DeleteBrandOutcome> DeleteBrandOutcomeCallable;
 typedef std::future<DeleteBrandAssignmentOutcome> DeleteBrandAssignmentOutcomeCallable;
 typedef std::future<DeleteCustomPermissionsOutcome> DeleteCustomPermissionsOutcomeCallable;
@@ -939,6 +993,7 @@ typedef std::future<DeleteDataSetOutcome> DeleteDataSetOutcomeCallable;
 typedef std::future<DeleteDataSetRefreshPropertiesOutcome> DeleteDataSetRefreshPropertiesOutcomeCallable;
 typedef std::future<DeleteDataSourceOutcome> DeleteDataSourceOutcomeCallable;
 typedef std::future<DeleteDefaultQBusinessApplicationOutcome> DeleteDefaultQBusinessApplicationOutcomeCallable;
+typedef std::future<DeleteDlpSettingOutcome> DeleteDlpSettingOutcomeCallable;
 typedef std::future<DeleteFlowOutcome> DeleteFlowOutcomeCallable;
 typedef std::future<DeleteFolderOutcome> DeleteFolderOutcomeCallable;
 typedef std::future<DeleteFolderMembershipOutcome> DeleteFolderMembershipOutcomeCallable;
@@ -947,6 +1002,7 @@ typedef std::future<DeleteGroupMembershipOutcome> DeleteGroupMembershipOutcomeCa
 typedef std::future<DeleteIAMPolicyAssignmentOutcome> DeleteIAMPolicyAssignmentOutcomeCallable;
 typedef std::future<DeleteIdentityPropagationConfigOutcome> DeleteIdentityPropagationConfigOutcomeCallable;
 typedef std::future<DeleteKnowledgeBaseOutcome> DeleteKnowledgeBaseOutcomeCallable;
+typedef std::future<DeleteLimitsProfileOutcome> DeleteLimitsProfileOutcomeCallable;
 typedef std::future<DeleteNamespaceOutcome> DeleteNamespaceOutcomeCallable;
 typedef std::future<DeleteOAuthClientApplicationOutcome> DeleteOAuthClientApplicationOutcomeCallable;
 typedef std::future<DeleteRefreshScheduleOutcome> DeleteRefreshScheduleOutcomeCallable;
@@ -975,6 +1031,7 @@ typedef std::future<DescribeAgentPermissionsOutcome> DescribeAgentPermissionsOut
 typedef std::future<DescribeAnalysisOutcome> DescribeAnalysisOutcomeCallable;
 typedef std::future<DescribeAnalysisDefinitionOutcome> DescribeAnalysisDefinitionOutcomeCallable;
 typedef std::future<DescribeAnalysisPermissionsOutcome> DescribeAnalysisPermissionsOutcomeCallable;
+typedef std::future<DescribeApprovalPolicyOutcome> DescribeApprovalPolicyOutcomeCallable;
 typedef std::future<DescribeAssetBundleExportJobOutcome> DescribeAssetBundleExportJobOutcomeCallable;
 typedef std::future<DescribeAssetBundleImportJobOutcome> DescribeAssetBundleImportJobOutcomeCallable;
 typedef std::future<DescribeAutomationJobOutcome> DescribeAutomationJobOutcomeCallable;
@@ -994,6 +1051,7 @@ typedef std::future<DescribeDataSetRefreshPropertiesOutcome> DescribeDataSetRefr
 typedef std::future<DescribeDataSourceOutcome> DescribeDataSourceOutcomeCallable;
 typedef std::future<DescribeDataSourcePermissionsOutcome> DescribeDataSourcePermissionsOutcomeCallable;
 typedef std::future<DescribeDefaultQBusinessApplicationOutcome> DescribeDefaultQBusinessApplicationOutcomeCallable;
+typedef std::future<DescribeDlpSettingOutcome> DescribeDlpSettingOutcomeCallable;
 typedef std::future<DescribeFlowOutcome> DescribeFlowOutcomeCallable;
 typedef std::future<DescribeFolderOutcome> DescribeFolderOutcomeCallable;
 typedef std::future<DescribeFolderPermissionsOutcome> DescribeFolderPermissionsOutcomeCallable;
@@ -1006,6 +1064,7 @@ typedef std::future<DescribeIpRestrictionOutcome> DescribeIpRestrictionOutcomeCa
 typedef std::future<DescribeKeyRegistrationOutcome> DescribeKeyRegistrationOutcomeCallable;
 typedef std::future<DescribeKnowledgeBaseOutcome> DescribeKnowledgeBaseOutcomeCallable;
 typedef std::future<DescribeKnowledgeBasePermissionsOutcome> DescribeKnowledgeBasePermissionsOutcomeCallable;
+typedef std::future<DescribeLimitsProfileOutcome> DescribeLimitsProfileOutcomeCallable;
 typedef std::future<DescribeNamespaceOutcome> DescribeNamespaceOutcomeCallable;
 typedef std::future<DescribeOAuthClientApplicationOutcome> DescribeOAuthClientApplicationOutcomeCallable;
 typedef std::future<DescribeQPersonalizationConfigurationOutcome> DescribeQPersonalizationConfigurationOutcomeCallable;
@@ -1041,6 +1100,7 @@ typedef std::future<GetSessionEmbedUrlOutcome> GetSessionEmbedUrlOutcomeCallable
 typedef std::future<ListActionConnectorsOutcome> ListActionConnectorsOutcomeCallable;
 typedef std::future<ListAgentsOutcome> ListAgentsOutcomeCallable;
 typedef std::future<ListAnalysesOutcome> ListAnalysesOutcomeCallable;
+typedef std::future<ListApprovalPoliciesOutcome> ListApprovalPoliciesOutcomeCallable;
 typedef std::future<ListAssetBundleExportJobsOutcome> ListAssetBundleExportJobsOutcomeCallable;
 typedef std::future<ListAssetBundleImportJobsOutcome> ListAssetBundleImportJobsOutcomeCallable;
 typedef std::future<ListBrandsOutcome> ListBrandsOutcomeCallable;
@@ -1049,6 +1109,7 @@ typedef std::future<ListDashboardVersionsOutcome> ListDashboardVersionsOutcomeCa
 typedef std::future<ListDashboardsOutcome> ListDashboardsOutcomeCallable;
 typedef std::future<ListDataSetsOutcome> ListDataSetsOutcomeCallable;
 typedef std::future<ListDataSourcesOutcome> ListDataSourcesOutcomeCallable;
+typedef std::future<ListDlpSettingsOutcome> ListDlpSettingsOutcomeCallable;
 typedef std::future<ListFlowsOutcome> ListFlowsOutcomeCallable;
 typedef std::future<ListFolderMembersOutcome> ListFolderMembersOutcomeCallable;
 typedef std::future<ListFoldersOutcome> ListFoldersOutcomeCallable;
@@ -1060,6 +1121,7 @@ typedef std::future<ListIAMPolicyAssignmentsForUserOutcome> ListIAMPolicyAssignm
 typedef std::future<ListIdentityPropagationConfigsOutcome> ListIdentityPropagationConfigsOutcomeCallable;
 typedef std::future<ListIngestionsOutcome> ListIngestionsOutcomeCallable;
 typedef std::future<ListKnowledgeBasesOutcome> ListKnowledgeBasesOutcomeCallable;
+typedef std::future<ListLimitsProfilesOutcome> ListLimitsProfilesOutcomeCallable;
 typedef std::future<ListNamespacesOutcome> ListNamespacesOutcomeCallable;
 typedef std::future<ListOAuthClientApplicationsOutcome> ListOAuthClientApplicationsOutcomeCallable;
 typedef std::future<ListRefreshSchedulesOutcome> ListRefreshSchedulesOutcomeCallable;
@@ -1116,6 +1178,7 @@ typedef std::future<UpdateAgentPermissionsOutcome> UpdateAgentPermissionsOutcome
 typedef std::future<UpdateAnalysisOutcome> UpdateAnalysisOutcomeCallable;
 typedef std::future<UpdateAnalysisPermissionsOutcome> UpdateAnalysisPermissionsOutcomeCallable;
 typedef std::future<UpdateApplicationWithTokenExchangeGrantOutcome> UpdateApplicationWithTokenExchangeGrantOutcomeCallable;
+typedef std::future<UpdateApprovalPolicyOutcome> UpdateApprovalPolicyOutcomeCallable;
 typedef std::future<UpdateBrandOutcome> UpdateBrandOutcomeCallable;
 typedef std::future<UpdateBrandAssignmentOutcome> UpdateBrandAssignmentOutcomeCallable;
 typedef std::future<UpdateBrandPublishedVersionOutcome> UpdateBrandPublishedVersionOutcomeCallable;
@@ -1130,6 +1193,7 @@ typedef std::future<UpdateDataSetPermissionsOutcome> UpdateDataSetPermissionsOut
 typedef std::future<UpdateDataSourceOutcome> UpdateDataSourceOutcomeCallable;
 typedef std::future<UpdateDataSourcePermissionsOutcome> UpdateDataSourcePermissionsOutcomeCallable;
 typedef std::future<UpdateDefaultQBusinessApplicationOutcome> UpdateDefaultQBusinessApplicationOutcomeCallable;
+typedef std::future<UpdateDlpSettingOutcome> UpdateDlpSettingOutcomeCallable;
 typedef std::future<UpdateFlowOutcome> UpdateFlowOutcomeCallable;
 typedef std::future<UpdateFlowPermissionsOutcome> UpdateFlowPermissionsOutcomeCallable;
 typedef std::future<UpdateFolderOutcome> UpdateFolderOutcomeCallable;
@@ -1141,6 +1205,7 @@ typedef std::future<UpdateIpRestrictionOutcome> UpdateIpRestrictionOutcomeCallab
 typedef std::future<UpdateKeyRegistrationOutcome> UpdateKeyRegistrationOutcomeCallable;
 typedef std::future<UpdateKnowledgeBaseOutcome> UpdateKnowledgeBaseOutcomeCallable;
 typedef std::future<UpdateKnowledgeBasePermissionsOutcome> UpdateKnowledgeBasePermissionsOutcomeCallable;
+typedef std::future<UpdateLimitsProfileOutcome> UpdateLimitsProfileOutcomeCallable;
 typedef std::future<UpdateOAuthClientApplicationOutcome> UpdateOAuthClientApplicationOutcomeCallable;
 typedef std::future<UpdatePublicSharingSettingsOutcome> UpdatePublicSharingSettingsOutcomeCallable;
 typedef std::future<UpdateQPersonalizationConfigurationOutcome> UpdateQPersonalizationConfigurationOutcomeCallable;
@@ -1184,6 +1249,9 @@ typedef std::function<void(const QuickSightClient*, const Model::BatchDeleteTopi
                            const Model::BatchDeleteTopicReviewedAnswerOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     BatchDeleteTopicReviewedAnswerResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::BatchDescribeUserLimitsRequest&,
+                           const Model::BatchDescribeUserLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchDescribeUserLimitsResponseReceivedHandler;
 typedef std::function<void(const QuickSightClient*, const Model::CancelIngestionRequest&, const Model::CancelIngestionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CancelIngestionResponseReceivedHandler;
@@ -1202,6 +1270,9 @@ typedef std::function<void(const QuickSightClient*, const Model::CreateAgentRequ
 typedef std::function<void(const QuickSightClient*, const Model::CreateAnalysisRequest&, const Model::CreateAnalysisOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateAnalysisResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::CreateApprovalPolicyRequest&, const Model::CreateApprovalPolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateApprovalPolicyResponseReceivedHandler;
 typedef std::function<void(const QuickSightClient*, const Model::CreateBrandRequest&, const Model::CreateBrandOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateBrandResponseReceivedHandler;
@@ -1217,6 +1288,9 @@ typedef std::function<void(const QuickSightClient*, const Model::CreateDataSetRe
 typedef std::function<void(const QuickSightClient*, const Model::CreateDataSourceRequest&, const Model::CreateDataSourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateDataSourceResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::CreateDlpSettingRequest&, const Model::CreateDlpSettingOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateDlpSettingResponseReceivedHandler;
 typedef std::function<void(const QuickSightClient*, const Model::CreateFlowRequest&, const Model::CreateFlowOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateFlowResponseReceivedHandler;
@@ -1241,6 +1315,9 @@ typedef std::function<void(const QuickSightClient*, const Model::CreateIngestion
 typedef std::function<void(const QuickSightClient*, const Model::CreateKnowledgeBaseRequest&, const Model::CreateKnowledgeBaseOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateKnowledgeBaseResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::CreateLimitsProfileRequest&, const Model::CreateLimitsProfileOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateLimitsProfileResponseReceivedHandler;
 typedef std::function<void(const QuickSightClient*, const Model::CreateNamespaceRequest&, const Model::CreateNamespaceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateNamespaceResponseReceivedHandler;
@@ -1300,6 +1377,9 @@ typedef std::function<void(const QuickSightClient*, const Model::DeleteAgentRequ
 typedef std::function<void(const QuickSightClient*, const Model::DeleteAnalysisRequest&, const Model::DeleteAnalysisOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteAnalysisResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::DeleteApprovalPolicyRequest&, const Model::DeleteApprovalPolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteApprovalPolicyResponseReceivedHandler;
 typedef std::function<void(const QuickSightClient*, const Model::DeleteBrandRequest&, const Model::DeleteBrandOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteBrandResponseReceivedHandler;
@@ -1326,6 +1406,9 @@ typedef std::function<void(const QuickSightClient*, const Model::DeleteDefaultQB
                            const Model::DeleteDefaultQBusinessApplicationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteDefaultQBusinessApplicationResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::DeleteDlpSettingRequest&, const Model::DeleteDlpSettingOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteDlpSettingResponseReceivedHandler;
 typedef std::function<void(const QuickSightClient*, const Model::DeleteFlowRequest&, const Model::DeleteFlowOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteFlowResponseReceivedHandler;
@@ -1351,6 +1434,9 @@ typedef std::function<void(const QuickSightClient*, const Model::DeleteIdentityP
 typedef std::function<void(const QuickSightClient*, const Model::DeleteKnowledgeBaseRequest&, const Model::DeleteKnowledgeBaseOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteKnowledgeBaseResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::DeleteLimitsProfileRequest&, const Model::DeleteLimitsProfileOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteLimitsProfileResponseReceivedHandler;
 typedef std::function<void(const QuickSightClient*, const Model::DeleteNamespaceRequest&, const Model::DeleteNamespaceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteNamespaceResponseReceivedHandler;
@@ -1439,6 +1525,9 @@ typedef std::function<void(const QuickSightClient*, const Model::DescribeAnalysi
 typedef std::function<void(const QuickSightClient*, const Model::DescribeAnalysisPermissionsRequest&,
                            const Model::DescribeAnalysisPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeAnalysisPermissionsResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::DescribeApprovalPolicyRequest&,
+                           const Model::DescribeApprovalPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeApprovalPolicyResponseReceivedHandler;
 typedef std::function<void(const QuickSightClient*, const Model::DescribeAssetBundleExportJobRequest&,
                            const Model::DescribeAssetBundleExportJobOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -1506,6 +1595,9 @@ typedef std::function<void(const QuickSightClient*, const Model::DescribeDefault
                            const Model::DescribeDefaultQBusinessApplicationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeDefaultQBusinessApplicationResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::DescribeDlpSettingRequest&, const Model::DescribeDlpSettingOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeDlpSettingResponseReceivedHandler;
 typedef std::function<void(const QuickSightClient*, const Model::DescribeFlowRequest&, const Model::DescribeFlowOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeFlowResponseReceivedHandler;
@@ -1544,6 +1636,9 @@ typedef std::function<void(const QuickSightClient*, const Model::DescribeKnowled
                            const Model::DescribeKnowledgeBasePermissionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeKnowledgeBasePermissionsResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::DescribeLimitsProfileRequest&, const Model::DescribeLimitsProfileOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeLimitsProfileResponseReceivedHandler;
 typedef std::function<void(const QuickSightClient*, const Model::DescribeNamespaceRequest&, const Model::DescribeNamespaceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeNamespaceResponseReceivedHandler;
@@ -1658,6 +1753,9 @@ typedef std::function<void(const QuickSightClient*, const Model::ListAgentsReque
 typedef std::function<void(const QuickSightClient*, const Model::ListAnalysesRequest&, const Model::ListAnalysesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAnalysesResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::ListApprovalPoliciesRequest&, const Model::ListApprovalPoliciesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListApprovalPoliciesResponseReceivedHandler;
 typedef std::function<void(const QuickSightClient*, const Model::ListAssetBundleExportJobsRequest&,
                            const Model::ListAssetBundleExportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAssetBundleExportJobsResponseReceivedHandler;
@@ -1682,6 +1780,9 @@ typedef std::function<void(const QuickSightClient*, const Model::ListDataSetsReq
 typedef std::function<void(const QuickSightClient*, const Model::ListDataSourcesRequest&, const Model::ListDataSourcesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListDataSourcesResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::ListDlpSettingsRequest&, const Model::ListDlpSettingsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListDlpSettingsResponseReceivedHandler;
 typedef std::function<void(const QuickSightClient*, const Model::ListFlowsRequest&, const Model::ListFlowsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListFlowsResponseReceivedHandler;
@@ -1717,6 +1818,9 @@ typedef std::function<void(const QuickSightClient*, const Model::ListIngestionsR
 typedef std::function<void(const QuickSightClient*, const Model::ListKnowledgeBasesRequest&, const Model::ListKnowledgeBasesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListKnowledgeBasesResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::ListLimitsProfilesRequest&, const Model::ListLimitsProfilesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListLimitsProfilesResponseReceivedHandler;
 typedef std::function<void(const QuickSightClient*, const Model::ListNamespacesRequest&, const Model::ListNamespacesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListNamespacesResponseReceivedHandler;
@@ -1889,6 +1993,9 @@ typedef std::function<void(const QuickSightClient*, const Model::UpdateApplicati
                            const Model::UpdateApplicationWithTokenExchangeGrantOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateApplicationWithTokenExchangeGrantResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::UpdateApprovalPolicyRequest&, const Model::UpdateApprovalPolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateApprovalPolicyResponseReceivedHandler;
 typedef std::function<void(const QuickSightClient*, const Model::UpdateBrandRequest&, const Model::UpdateBrandOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateBrandResponseReceivedHandler;
@@ -1934,6 +2041,9 @@ typedef std::function<void(const QuickSightClient*, const Model::UpdateDefaultQB
                            const Model::UpdateDefaultQBusinessApplicationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateDefaultQBusinessApplicationResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::UpdateDlpSettingRequest&, const Model::UpdateDlpSettingOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateDlpSettingResponseReceivedHandler;
 typedef std::function<void(const QuickSightClient*, const Model::UpdateFlowRequest&, const Model::UpdateFlowOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateFlowResponseReceivedHandler;
@@ -1969,6 +2079,9 @@ typedef std::function<void(const QuickSightClient*, const Model::UpdateKnowledge
                            const Model::UpdateKnowledgeBasePermissionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateKnowledgeBasePermissionsResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::UpdateLimitsProfileRequest&, const Model::UpdateLimitsProfileOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateLimitsProfileResponseReceivedHandler;
 typedef std::function<void(const QuickSightClient*, const Model::UpdateOAuthClientApplicationRequest&,
                            const Model::UpdateOAuthClientApplicationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

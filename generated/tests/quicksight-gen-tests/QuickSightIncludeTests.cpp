@@ -72,7 +72,10 @@
 #include <aws/quicksight/model/AnonymousUserSnapshotJobResult.h>
 #include <aws/quicksight/model/AppendOperation.h>
 #include <aws/quicksight/model/AppendedColumn.h>
+#include <aws/quicksight/model/ApplicableTo.h>
+#include <aws/quicksight/model/ApplicableToType.h>
 #include <aws/quicksight/model/ApplicationTheme.h>
+#include <aws/quicksight/model/ApprovalPolicy.h>
 #include <aws/quicksight/model/ArcAxisConfiguration.h>
 #include <aws/quicksight/model/ArcAxisDisplayRange.h>
 #include <aws/quicksight/model/ArcConfiguration.h>
@@ -99,6 +102,8 @@
 #include <aws/quicksight/model/AssetBundleExportJobSummary.h>
 #include <aws/quicksight/model/AssetBundleExportJobThemeOverrideProperties.h>
 #include <aws/quicksight/model/AssetBundleExportJobThemePropertyToOverride.h>
+#include <aws/quicksight/model/AssetBundleExportJobTopicV2OverrideProperties.h>
+#include <aws/quicksight/model/AssetBundleExportJobTopicV2PropertyToOverride.h>
 #include <aws/quicksight/model/AssetBundleExportJobVPCConnectionOverrideProperties.h>
 #include <aws/quicksight/model/AssetBundleExportJobVPCConnectionPropertyToOverride.h>
 #include <aws/quicksight/model/AssetBundleExportJobValidationStrategy.h>
@@ -133,6 +138,9 @@
 #include <aws/quicksight/model/AssetBundleImportJobThemeOverrideParameters.h>
 #include <aws/quicksight/model/AssetBundleImportJobThemeOverridePermissions.h>
 #include <aws/quicksight/model/AssetBundleImportJobThemeOverrideTags.h>
+#include <aws/quicksight/model/AssetBundleImportJobTopicV2OverrideParameters.h>
+#include <aws/quicksight/model/AssetBundleImportJobTopicV2OverridePermissions.h>
+#include <aws/quicksight/model/AssetBundleImportJobTopicV2OverrideTags.h>
 #include <aws/quicksight/model/AssetBundleImportJobVPCConnectionOverrideParameters.h>
 #include <aws/quicksight/model/AssetBundleImportJobVPCConnectionOverrideTags.h>
 #include <aws/quicksight/model/AssetBundleImportJobWarning.h>
@@ -141,6 +149,7 @@
 #include <aws/quicksight/model/AssetBundleResourceLinkSharingConfiguration.h>
 #include <aws/quicksight/model/AssetBundleResourcePermissions.h>
 #include <aws/quicksight/model/AssetOptions.h>
+#include <aws/quicksight/model/AssetType.h>
 #include <aws/quicksight/model/AssignmentStatus.h>
 #include <aws/quicksight/model/AthenaParameters.h>
 #include <aws/quicksight/model/AttributeAggregationFunction.h>
@@ -193,6 +202,9 @@
 #include <aws/quicksight/model/BatchDeleteKnowledgeBaseSuccess.h>
 #include <aws/quicksight/model/BatchDeleteTopicReviewedAnswerRequest.h>
 #include <aws/quicksight/model/BatchDeleteTopicReviewedAnswerResult.h>
+#include <aws/quicksight/model/BatchDescribeUserLimitsError.h>
+#include <aws/quicksight/model/BatchDescribeUserLimitsRequest.h>
+#include <aws/quicksight/model/BatchDescribeUserLimitsResult.h>
 #include <aws/quicksight/model/BigQueryParameters.h>
 #include <aws/quicksight/model/BinCountOptions.h>
 #include <aws/quicksight/model/BinWidthOptions.h>
@@ -331,6 +343,8 @@
 #include <aws/quicksight/model/CreateAgentResult.h>
 #include <aws/quicksight/model/CreateAnalysisRequest.h>
 #include <aws/quicksight/model/CreateAnalysisResult.h>
+#include <aws/quicksight/model/CreateApprovalPolicyRequest.h>
+#include <aws/quicksight/model/CreateApprovalPolicyResult.h>
 #include <aws/quicksight/model/CreateBrandRequest.h>
 #include <aws/quicksight/model/CreateBrandResult.h>
 #include <aws/quicksight/model/CreateColumnsOperation.h>
@@ -342,6 +356,8 @@
 #include <aws/quicksight/model/CreateDataSetResult.h>
 #include <aws/quicksight/model/CreateDataSourceRequest.h>
 #include <aws/quicksight/model/CreateDataSourceResult.h>
+#include <aws/quicksight/model/CreateDlpSettingRequest.h>
+#include <aws/quicksight/model/CreateDlpSettingResult.h>
 #include <aws/quicksight/model/CreateFlowRequest.h>
 #include <aws/quicksight/model/CreateFlowResult.h>
 #include <aws/quicksight/model/CreateFolderMembershipRequest.h>
@@ -358,6 +374,8 @@
 #include <aws/quicksight/model/CreateIngestionResult.h>
 #include <aws/quicksight/model/CreateKnowledgeBaseRequest.h>
 #include <aws/quicksight/model/CreateKnowledgeBaseResult.h>
+#include <aws/quicksight/model/CreateLimitsProfileRequest.h>
+#include <aws/quicksight/model/CreateLimitsProfileResult.h>
 #include <aws/quicksight/model/CreateNamespaceRequest.h>
 #include <aws/quicksight/model/CreateNamespaceResult.h>
 #include <aws/quicksight/model/CreateOAuthClientApplicationRequest.h>
@@ -564,6 +582,8 @@
 #include <aws/quicksight/model/DeleteAgentResult.h>
 #include <aws/quicksight/model/DeleteAnalysisRequest.h>
 #include <aws/quicksight/model/DeleteAnalysisResult.h>
+#include <aws/quicksight/model/DeleteApprovalPolicyRequest.h>
+#include <aws/quicksight/model/DeleteApprovalPolicyResult.h>
 #include <aws/quicksight/model/DeleteBrandAssignmentRequest.h>
 #include <aws/quicksight/model/DeleteBrandAssignmentResult.h>
 #include <aws/quicksight/model/DeleteBrandRequest.h>
@@ -580,6 +600,8 @@
 #include <aws/quicksight/model/DeleteDataSourceResult.h>
 #include <aws/quicksight/model/DeleteDefaultQBusinessApplicationRequest.h>
 #include <aws/quicksight/model/DeleteDefaultQBusinessApplicationResult.h>
+#include <aws/quicksight/model/DeleteDlpSettingRequest.h>
+#include <aws/quicksight/model/DeleteDlpSettingResult.h>
 #include <aws/quicksight/model/DeleteFlowRequest.h>
 #include <aws/quicksight/model/DeleteFlowResult.h>
 #include <aws/quicksight/model/DeleteFolderMembershipRequest.h>
@@ -596,6 +618,8 @@
 #include <aws/quicksight/model/DeleteIdentityPropagationConfigResult.h>
 #include <aws/quicksight/model/DeleteKnowledgeBaseRequest.h>
 #include <aws/quicksight/model/DeleteKnowledgeBaseResult.h>
+#include <aws/quicksight/model/DeleteLimitsProfileRequest.h>
+#include <aws/quicksight/model/DeleteLimitsProfileResult.h>
 #include <aws/quicksight/model/DeleteNamespaceRequest.h>
 #include <aws/quicksight/model/DeleteNamespaceResult.h>
 #include <aws/quicksight/model/DeleteOAuthClientApplicationRequest.h>
@@ -652,6 +676,8 @@
 #include <aws/quicksight/model/DescribeAnalysisPermissionsResult.h>
 #include <aws/quicksight/model/DescribeAnalysisRequest.h>
 #include <aws/quicksight/model/DescribeAnalysisResult.h>
+#include <aws/quicksight/model/DescribeApprovalPolicyRequest.h>
+#include <aws/quicksight/model/DescribeApprovalPolicyResult.h>
 #include <aws/quicksight/model/DescribeAssetBundleExportJobRequest.h>
 #include <aws/quicksight/model/DescribeAssetBundleExportJobResult.h>
 #include <aws/quicksight/model/DescribeAssetBundleImportJobRequest.h>
@@ -690,6 +716,8 @@
 #include <aws/quicksight/model/DescribeDataSourceResult.h>
 #include <aws/quicksight/model/DescribeDefaultQBusinessApplicationRequest.h>
 #include <aws/quicksight/model/DescribeDefaultQBusinessApplicationResult.h>
+#include <aws/quicksight/model/DescribeDlpSettingRequest.h>
+#include <aws/quicksight/model/DescribeDlpSettingResult.h>
 #include <aws/quicksight/model/DescribeFlowRequest.h>
 #include <aws/quicksight/model/DescribeFlowResult.h>
 #include <aws/quicksight/model/DescribeFolderPermissionsRequest.h>
@@ -714,6 +742,8 @@
 #include <aws/quicksight/model/DescribeKnowledgeBasePermissionsResult.h>
 #include <aws/quicksight/model/DescribeKnowledgeBaseRequest.h>
 #include <aws/quicksight/model/DescribeKnowledgeBaseResult.h>
+#include <aws/quicksight/model/DescribeLimitsProfileRequest.h>
+#include <aws/quicksight/model/DescribeLimitsProfileResult.h>
 #include <aws/quicksight/model/DescribeNamespaceRequest.h>
 #include <aws/quicksight/model/DescribeNamespaceResult.h>
 #include <aws/quicksight/model/DescribeOAuthClientApplicationRequest.h>
@@ -769,6 +799,11 @@
 #include <aws/quicksight/model/DimensionField.h>
 #include <aws/quicksight/model/DisplayFormat.h>
 #include <aws/quicksight/model/DisplayFormatOptions.h>
+#include <aws/quicksight/model/DlpAction.h>
+#include <aws/quicksight/model/DlpProviderType.h>
+#include <aws/quicksight/model/DlpSettingDetails.h>
+#include <aws/quicksight/model/DlpSettingStatus.h>
+#include <aws/quicksight/model/DlpSettingSummary.h>
 #include <aws/quicksight/model/DomainNotWhitelistedException.h>
 #include <aws/quicksight/model/DonutCenterOptions.h>
 #include <aws/quicksight/model/DonutOptions.h>
@@ -776,6 +811,7 @@
 #include <aws/quicksight/model/DropDownControlDisplayOptions.h>
 #include <aws/quicksight/model/DynamicDefaultValue.h>
 #include <aws/quicksight/model/Edition.h>
+#include <aws/quicksight/model/EffectiveLimit.h>
 #include <aws/quicksight/model/EmbeddingIdentityType.h>
 #include <aws/quicksight/model/EmptyVisual.h>
 #include <aws/quicksight/model/Entity.h>
@@ -951,6 +987,7 @@
 #include <aws/quicksight/model/GlobalTableBorderOptions.h>
 #include <aws/quicksight/model/GoogleDriveParameters.h>
 #include <aws/quicksight/model/Governance.h>
+#include <aws/quicksight/model/GovernedAction.h>
 #include <aws/quicksight/model/GradientColor.h>
 #include <aws/quicksight/model/GradientStop.h>
 #include <aws/quicksight/model/GridLayoutCanvasSizeOptions.h>
@@ -1069,6 +1106,7 @@
 #include <aws/quicksight/model/KnowledgeBaseSortBy.h>
 #include <aws/quicksight/model/KnowledgeBaseSortByField.h>
 #include <aws/quicksight/model/KnowledgeBaseSummary.h>
+#include <aws/quicksight/model/LabelActionMapping.h>
 #include <aws/quicksight/model/LabelOptions.h>
 #include <aws/quicksight/model/LayerCustomAction.h>
 #include <aws/quicksight/model/LayerCustomActionOperation.h>
@@ -1080,6 +1118,9 @@
 #include <aws/quicksight/model/LegendOptions.h>
 #include <aws/quicksight/model/LegendPosition.h>
 #include <aws/quicksight/model/LimitExceededException.h>
+#include <aws/quicksight/model/LimitSource.h>
+#include <aws/quicksight/model/LimitUnit.h>
+#include <aws/quicksight/model/LimitsProfile.h>
 #include <aws/quicksight/model/LineChartAggregatedFieldWells.h>
 #include <aws/quicksight/model/LineChartConfiguration.h>
 #include <aws/quicksight/model/LineChartDefaultSeriesSettings.h>
@@ -1101,6 +1142,8 @@
 #include <aws/quicksight/model/ListAgentsResult.h>
 #include <aws/quicksight/model/ListAnalysesRequest.h>
 #include <aws/quicksight/model/ListAnalysesResult.h>
+#include <aws/quicksight/model/ListApprovalPoliciesRequest.h>
+#include <aws/quicksight/model/ListApprovalPoliciesResult.h>
 #include <aws/quicksight/model/ListAssetBundleExportJobsRequest.h>
 #include <aws/quicksight/model/ListAssetBundleExportJobsResult.h>
 #include <aws/quicksight/model/ListAssetBundleImportJobsRequest.h>
@@ -1120,6 +1163,8 @@
 #include <aws/quicksight/model/ListDataSetsResult.h>
 #include <aws/quicksight/model/ListDataSourcesRequest.h>
 #include <aws/quicksight/model/ListDataSourcesResult.h>
+#include <aws/quicksight/model/ListDlpSettingsRequest.h>
+#include <aws/quicksight/model/ListDlpSettingsResult.h>
 #include <aws/quicksight/model/ListFlowsRequest.h>
 #include <aws/quicksight/model/ListFlowsResult.h>
 #include <aws/quicksight/model/ListFolderMembersRequest.h>
@@ -1142,6 +1187,8 @@
 #include <aws/quicksight/model/ListIngestionsResult.h>
 #include <aws/quicksight/model/ListKnowledgeBasesRequest.h>
 #include <aws/quicksight/model/ListKnowledgeBasesResult.h>
+#include <aws/quicksight/model/ListLimitsProfilesRequest.h>
+#include <aws/quicksight/model/ListLimitsProfilesResult.h>
 #include <aws/quicksight/model/ListNamespacesRequest.h>
 #include <aws/quicksight/model/ListNamespacesResult.h>
 #include <aws/quicksight/model/ListOAuthClientApplicationsRequest.h>
@@ -1210,6 +1257,8 @@
 #include <aws/quicksight/model/MemberIdArnPair.h>
 #include <aws/quicksight/model/MemberType.h>
 #include <aws/quicksight/model/MetricComparisonComputation.h>
+#include <aws/quicksight/model/MicrosoftPurviewCredentials.h>
+#include <aws/quicksight/model/MicrosoftPurviewProviderConfig.h>
 #include <aws/quicksight/model/MinimumLabelType.h>
 #include <aws/quicksight/model/MissingDataConfiguration.h>
 #include <aws/quicksight/model/MissingDataTreatmentOption.h>
@@ -1344,10 +1393,12 @@
 #include <aws/quicksight/model/PredictQAResultsResult.h>
 #include <aws/quicksight/model/PrestoParameters.h>
 #include <aws/quicksight/model/PrimaryValueDisplayType.h>
+#include <aws/quicksight/model/ProfileLimitValue.h>
 #include <aws/quicksight/model/ProgressBarOptions.h>
 #include <aws/quicksight/model/ProjectOperation.h>
 #include <aws/quicksight/model/PropertyRole.h>
 #include <aws/quicksight/model/PropertyUsage.h>
+#include <aws/quicksight/model/ProviderConfig.h>
 #include <aws/quicksight/model/PurchaseMode.h>
 #include <aws/quicksight/model/PutDataSetRefreshPropertiesRequest.h>
 #include <aws/quicksight/model/PutDataSetRefreshPropertiesResult.h>
@@ -1435,6 +1486,7 @@
 #include <aws/quicksight/model/ResourceNotFoundException.h>
 #include <aws/quicksight/model/ResourcePermission.h>
 #include <aws/quicksight/model/ResourceStatus.h>
+#include <aws/quicksight/model/ResourceType.h>
 #include <aws/quicksight/model/ResourceUnavailableException.h>
 #include <aws/quicksight/model/RestoreAnalysisRequest.h>
 #include <aws/quicksight/model/RestoreAnalysisResult.h>
@@ -1838,6 +1890,8 @@
 #include <aws/quicksight/model/UpdateAnalysisResult.h>
 #include <aws/quicksight/model/UpdateApplicationWithTokenExchangeGrantRequest.h>
 #include <aws/quicksight/model/UpdateApplicationWithTokenExchangeGrantResult.h>
+#include <aws/quicksight/model/UpdateApprovalPolicyRequest.h>
+#include <aws/quicksight/model/UpdateApprovalPolicyResult.h>
 #include <aws/quicksight/model/UpdateBrandAssignmentRequest.h>
 #include <aws/quicksight/model/UpdateBrandAssignmentResult.h>
 #include <aws/quicksight/model/UpdateBrandPublishedVersionRequest.h>
@@ -1866,6 +1920,8 @@
 #include <aws/quicksight/model/UpdateDataSourceResult.h>
 #include <aws/quicksight/model/UpdateDefaultQBusinessApplicationRequest.h>
 #include <aws/quicksight/model/UpdateDefaultQBusinessApplicationResult.h>
+#include <aws/quicksight/model/UpdateDlpSettingRequest.h>
+#include <aws/quicksight/model/UpdateDlpSettingResult.h>
 #include <aws/quicksight/model/UpdateFlowPermissionsRequest.h>
 #include <aws/quicksight/model/UpdateFlowPermissionsResult.h>
 #include <aws/quicksight/model/UpdateFlowRequest.h>
@@ -1888,6 +1944,8 @@
 #include <aws/quicksight/model/UpdateKnowledgeBasePermissionsResult.h>
 #include <aws/quicksight/model/UpdateKnowledgeBaseRequest.h>
 #include <aws/quicksight/model/UpdateKnowledgeBaseResult.h>
+#include <aws/quicksight/model/UpdateLimitsProfileRequest.h>
+#include <aws/quicksight/model/UpdateLimitsProfileResult.h>
 #include <aws/quicksight/model/UpdateOAuthClientApplicationRequest.h>
 #include <aws/quicksight/model/UpdateOAuthClientApplicationResult.h>
 #include <aws/quicksight/model/UpdatePublicSharingSettingsRequest.h>
@@ -1948,6 +2006,8 @@
 #include <aws/quicksight/model/UserIndexCapacityFilter.h>
 #include <aws/quicksight/model/UserIndexCapacitySortBy.h>
 #include <aws/quicksight/model/UserIndexCapacitySortOrder.h>
+#include <aws/quicksight/model/UserLimits.h>
+#include <aws/quicksight/model/UserLimitsEntry.h>
 #include <aws/quicksight/model/UserNameOrEmailFilter.h>
 #include <aws/quicksight/model/UserRole.h>
 #include <aws/quicksight/model/VPCConnection.h>

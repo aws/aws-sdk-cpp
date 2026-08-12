@@ -60,6 +60,13 @@ AssetBundleImportJobOverridePermissions& AssetBundleImportJobOverridePermissions
     }
     m_foldersHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("TopicsV2")) {
+    Aws::Utils::Array<JsonView> topicsV2JsonList = jsonValue.GetArray("TopicsV2");
+    for (unsigned topicsV2Index = 0; topicsV2Index < topicsV2JsonList.GetLength(); ++topicsV2Index) {
+      m_topicsV2.push_back(topicsV2JsonList[topicsV2Index].AsObject());
+    }
+    m_topicsV2HasBeenSet = true;
+  }
   return *this;
 }
 
@@ -112,6 +119,14 @@ JsonValue AssetBundleImportJobOverridePermissions::Jsonize() const {
       foldersJsonList[foldersIndex].AsObject(m_folders[foldersIndex].Jsonize());
     }
     payload.WithArray("Folders", std::move(foldersJsonList));
+  }
+
+  if (m_topicsV2HasBeenSet) {
+    Aws::Utils::Array<JsonValue> topicsV2JsonList(m_topicsV2.size());
+    for (unsigned topicsV2Index = 0; topicsV2Index < topicsV2JsonList.GetLength(); ++topicsV2Index) {
+      topicsV2JsonList[topicsV2Index].AsObject(m_topicsV2[topicsV2Index].Jsonize());
+    }
+    payload.WithArray("TopicsV2", std::move(topicsV2JsonList));
   }
 
   return payload;

@@ -12,6 +12,7 @@
 #include <aws/quicksight/model/AssetBundleImportJobDataSourceOverridePermissions.h>
 #include <aws/quicksight/model/AssetBundleImportJobFolderOverridePermissions.h>
 #include <aws/quicksight/model/AssetBundleImportJobThemeOverridePermissions.h>
+#include <aws/quicksight/model/AssetBundleImportJobTopicV2OverridePermissions.h>
 
 #include <utility>
 
@@ -188,6 +189,30 @@ class AssetBundleImportJobOverridePermissions {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of permissions for the topics that you want to apply overrides to.</p>
+   */
+  inline const Aws::Vector<AssetBundleImportJobTopicV2OverridePermissions>& GetTopicsV2() const { return m_topicsV2; }
+  inline bool TopicsV2HasBeenSet() const { return m_topicsV2HasBeenSet; }
+  template <typename TopicsV2T = Aws::Vector<AssetBundleImportJobTopicV2OverridePermissions>>
+  void SetTopicsV2(TopicsV2T&& value) {
+    m_topicsV2HasBeenSet = true;
+    m_topicsV2 = std::forward<TopicsV2T>(value);
+  }
+  template <typename TopicsV2T = Aws::Vector<AssetBundleImportJobTopicV2OverridePermissions>>
+  AssetBundleImportJobOverridePermissions& WithTopicsV2(TopicsV2T&& value) {
+    SetTopicsV2(std::forward<TopicsV2T>(value));
+    return *this;
+  }
+  template <typename TopicsV2T = AssetBundleImportJobTopicV2OverridePermissions>
+  AssetBundleImportJobOverridePermissions& AddTopicsV2(TopicsV2T&& value) {
+    m_topicsV2HasBeenSet = true;
+    m_topicsV2.emplace_back(std::forward<TopicsV2T>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<AssetBundleImportJobDataSourceOverridePermissions> m_dataSources;
 
@@ -200,12 +225,15 @@ class AssetBundleImportJobOverridePermissions {
   Aws::Vector<AssetBundleImportJobDashboardOverridePermissions> m_dashboards;
 
   Aws::Vector<AssetBundleImportJobFolderOverridePermissions> m_folders;
+
+  Aws::Vector<AssetBundleImportJobTopicV2OverridePermissions> m_topicsV2;
   bool m_dataSourcesHasBeenSet = false;
   bool m_dataSetsHasBeenSet = false;
   bool m_themesHasBeenSet = false;
   bool m_analysesHasBeenSet = false;
   bool m_dashboardsHasBeenSet = false;
   bool m_foldersHasBeenSet = false;
+  bool m_topicsV2HasBeenSet = false;
 };
 
 }  // namespace Model

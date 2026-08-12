@@ -104,6 +104,24 @@ class ListDbSystemShapesRequest : public OdbRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The shape family to filter results by.</p>
+   */
+  inline const Aws::String& GetShapeFamily() const { return m_shapeFamily; }
+  inline bool ShapeFamilyHasBeenSet() const { return m_shapeFamilyHasBeenSet; }
+  template <typename ShapeFamilyT = Aws::String>
+  void SetShapeFamily(ShapeFamilyT&& value) {
+    m_shapeFamilyHasBeenSet = true;
+    m_shapeFamily = std::forward<ShapeFamilyT>(value);
+  }
+  template <typename ShapeFamilyT = Aws::String>
+  ListDbSystemShapesRequest& WithShapeFamily(ShapeFamilyT&& value) {
+    SetShapeFamily(std::forward<ShapeFamilyT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_maxResults{0};
 
@@ -112,10 +130,13 @@ class ListDbSystemShapesRequest : public OdbRequest {
   Aws::String m_availabilityZone;
 
   Aws::String m_availabilityZoneId;
+
+  Aws::String m_shapeFamily;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_availabilityZoneHasBeenSet = false;
   bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_shapeFamilyHasBeenSet = false;
 };
 
 }  // namespace Model

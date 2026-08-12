@@ -237,7 +237,9 @@ class CheckDetail {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The date and time when the check was last updated.</p>
+   */
   inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
   inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
   template <typename UpdatedAtT = Aws::Utils::DateTime>

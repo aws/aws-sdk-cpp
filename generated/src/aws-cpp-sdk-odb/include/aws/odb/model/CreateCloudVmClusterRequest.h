@@ -229,7 +229,7 @@ class CreateCloudVmClusterRequest : public OdbRequest {
 
   ///@{
   /**
-   * <p>The amount of local node storage, in gigabytes (GBs), to allocate for the VM
+   * <p>The amount of local node storage, in gigabytes (GB), to allocate for the VM
    * cluster.</p>
    */
   inline int GetDbNodeStorageSizeInGBs() const { return m_dbNodeStorageSizeInGBs; }
@@ -344,7 +344,7 @@ class CreateCloudVmClusterRequest : public OdbRequest {
 
   ///@{
   /**
-   * <p>The amount of memory, in gigabytes (GBs), to allocate for the VM cluster.</p>
+   * <p>The amount of memory, in gigabytes (GB), to allocate for the VM cluster.</p>
    */
   inline int GetMemorySizeInGBs() const { return m_memorySizeInGBs; }
   inline bool MemorySizeInGBsHasBeenSet() const { return m_memorySizeInGBsHasBeenSet; }

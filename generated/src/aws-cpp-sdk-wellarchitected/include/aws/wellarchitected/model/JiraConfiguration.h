@@ -51,7 +51,9 @@ class JiraConfiguration {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The date and time when the Jira configuration was last synced.</p>
+   */
   inline const Aws::Utils::DateTime& GetLastSyncedTime() const { return m_lastSyncedTime; }
   inline bool LastSyncedTimeHasBeenSet() const { return m_lastSyncedTimeHasBeenSet; }
   template <typename LastSyncedTimeT = Aws::Utils::DateTime>

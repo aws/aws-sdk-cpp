@@ -34,7 +34,10 @@ class KnowledgeBaseConfiguration {
 
   ///@{
   /**
-   * <p>The template configuration for the knowledge base.</p>
+   * <p>The template configuration that defines how the data source connector crawls
+   * and indexes data for the knowledge base. The template structure varies by
+   * connector type. See <code>KbTemplateConfiguration</code> for connector-specific
+   * details.</p>
    */
   inline const KbTemplateConfiguration& GetTemplateConfiguration() const { return m_templateConfiguration; }
   inline bool TemplateConfigurationHasBeenSet() const { return m_templateConfigurationHasBeenSet; }

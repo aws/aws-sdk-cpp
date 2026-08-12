@@ -23,9 +23,11 @@ static const int FEATURE_DISABLED_HASH = HashingUtils::HashString("FeatureDisabl
 static const int INVALID_AUTHENTICATION_CODE_HASH = HashingUtils::HashString("InvalidAuthenticationCode");
 static const int INVALID_USER_TYPE_HASH = HashingUtils::HashString("InvalidUserType");
 static const int MALFORMED_POLICY_DOCUMENT_HASH = HashingUtils::HashString("MalformedPolicyDocument");
+static const int NAME_CONFLICT_HASH = HashingUtils::HashString("NameConflict");
 static const int SERVICE_NOT_SUPPORTED_HASH = HashingUtils::HashString("NotSupportedService");
 static const int UNMODIFIABLE_ENTITY_HASH = HashingUtils::HashString("UnmodifiableEntity");
 static const int NO_SUCH_ENTITY_HASH = HashingUtils::HashString("NoSuchEntity");
+static const int ROLE_MODIFIED_HASH = HashingUtils::HashString("RoleModified");
 static const int DUPLICATE_S_S_H_PUBLIC_KEY_HASH = HashingUtils::HashString("DuplicateSSHPublicKey");
 static const int INVALID_CERTIFICATE_HASH = HashingUtils::HashString("InvalidCertificate");
 static const int INVALID_PUBLIC_KEY_HASH = HashingUtils::HashString("InvalidPublicKey");
@@ -44,6 +46,7 @@ static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInput");
 static const int CREDENTIAL_REPORT_NOT_READY_HASH = HashingUtils::HashString("ReportInProgress");
 static const int CREDENTIAL_REPORT_NOT_PRESENT_HASH = HashingUtils::HashString("ReportNotPresent");
 static const int CREDENTIAL_REPORT_EXPIRED_HASH = HashingUtils::HashString("ReportExpired");
+static const int ROLE_TEMPLATE_DISABLED_HASH = HashingUtils::HashString("RoleTemplateDisabled");
 static const int KEY_PAIR_MISMATCH_HASH = HashingUtils::HashString("KeyPairMismatch");
 static const int MALFORMED_CERTIFICATE_HASH = HashingUtils::HashString("MalformedCertificate");
 static const int SERVICE_FAILURE_HASH = HashingUtils::HashString("ServiceFailure");
@@ -71,12 +74,16 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::INVALID_USER_TYPE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == MALFORMED_POLICY_DOCUMENT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::MALFORMED_POLICY_DOCUMENT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == NAME_CONFLICT_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::NAME_CONFLICT), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == SERVICE_NOT_SUPPORTED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::SERVICE_NOT_SUPPORTED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == UNMODIFIABLE_ENTITY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::UNMODIFIABLE_ENTITY), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == NO_SUCH_ENTITY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::NO_SUCH_ENTITY), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == ROLE_MODIFIED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::ROLE_MODIFIED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == DUPLICATE_S_S_H_PUBLIC_KEY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::DUPLICATE_S_S_H_PUBLIC_KEY), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_CERTIFICATE_HASH) {
@@ -112,6 +119,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::CREDENTIAL_REPORT_NOT_PRESENT), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == CREDENTIAL_REPORT_EXPIRED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::CREDENTIAL_REPORT_EXPIRED), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == ROLE_TEMPLATE_DISABLED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::ROLE_TEMPLATE_DISABLED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == KEY_PAIR_MISMATCH_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::KEY_PAIR_MISMATCH), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == MALFORMED_CERTIFICATE_HASH) {

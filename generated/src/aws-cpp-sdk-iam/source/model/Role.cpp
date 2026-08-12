@@ -86,6 +86,11 @@ Role& Role::operator=(const XmlNode& xmlNode) {
       m_roleLastUsed = roleLastUsedNode;
       m_roleLastUsedHasBeenSet = true;
     }
+    XmlNode sourceRoleTemplateNode = resultNode.FirstChild("SourceRoleTemplate");
+    if (!sourceRoleTemplateNode.IsNull()) {
+      m_sourceRoleTemplate = sourceRoleTemplateNode;
+      m_sourceRoleTemplateHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -146,6 +151,12 @@ void Role::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
     roleLastUsedLocationAndMemberSs << location << index << locationValue << ".RoleLastUsed";
     m_roleLastUsed.OutputToStream(oStream, roleLastUsedLocationAndMemberSs.str().c_str());
   }
+
+  if (m_sourceRoleTemplateHasBeenSet) {
+    Aws::StringStream sourceRoleTemplateLocationAndMemberSs;
+    sourceRoleTemplateLocationAndMemberSs << location << index << locationValue << ".SourceRoleTemplate";
+    m_sourceRoleTemplate.OutputToStream(oStream, sourceRoleTemplateLocationAndMemberSs.str().c_str());
+  }
 }
 
 void Role::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -191,6 +202,11 @@ void Role::OutputToStream(Aws::OStream& oStream, const char* location) const {
     Aws::String roleLastUsedLocationAndMember(location);
     roleLastUsedLocationAndMember += ".RoleLastUsed";
     m_roleLastUsed.OutputToStream(oStream, roleLastUsedLocationAndMember.c_str());
+  }
+  if (m_sourceRoleTemplateHasBeenSet) {
+    Aws::String sourceRoleTemplateLocationAndMember(location);
+    sourceRoleTemplateLocationAndMember += ".SourceRoleTemplate";
+    m_sourceRoleTemplate.OutputToStream(oStream, sourceRoleTemplateLocationAndMember.c_str());
   }
 }
 

@@ -117,6 +117,10 @@ RouterOutput& RouterOutput::operator=(JsonView jsonValue) {
     m_maintenanceSchedule = jsonValue.GetObject("maintenanceSchedule");
     m_maintenanceScheduleHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("fabricConfiguration")) {
+    m_fabricConfiguration = jsonValue.GetObject("fabricConfiguration");
+    m_fabricConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -222,6 +226,10 @@ JsonValue RouterOutput::Jsonize() const {
 
   if (m_maintenanceScheduleHasBeenSet) {
     payload.WithObject("maintenanceSchedule", m_maintenanceSchedule.Jsonize());
+  }
+
+  if (m_fabricConfigurationHasBeenSet) {
+    payload.WithObject("fabricConfiguration", m_fabricConfiguration.Jsonize());
   }
 
   return payload;

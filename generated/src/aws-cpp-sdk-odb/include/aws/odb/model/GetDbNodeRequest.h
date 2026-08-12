@@ -32,7 +32,8 @@ class GetDbNodeRequest : public OdbRequest {
 
   ///@{
   /**
-   * <p>The unique identifier of the VM cluster that contains the DB node.</p>
+   * <p>The unique identifier of the VM cluster that contains the DB node. You must
+   * specify either this parameter or <code>exadbVmClusterId</code>.</p>
    */
   inline const Aws::String& GetCloudVmClusterId() const { return m_cloudVmClusterId; }
   inline bool CloudVmClusterIdHasBeenSet() const { return m_cloudVmClusterIdHasBeenSet; }
@@ -44,6 +45,25 @@ class GetDbNodeRequest : public OdbRequest {
   template <typename CloudVmClusterIdT = Aws::String>
   GetDbNodeRequest& WithCloudVmClusterId(CloudVmClusterIdT&& value) {
     SetCloudVmClusterId(std::forward<CloudVmClusterIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the Exascale VM cluster that contains the DB node.
+   * You must specify either this parameter or <code>cloudVmClusterId</code>.</p>
+   */
+  inline const Aws::String& GetExadbVmClusterId() const { return m_exadbVmClusterId; }
+  inline bool ExadbVmClusterIdHasBeenSet() const { return m_exadbVmClusterIdHasBeenSet; }
+  template <typename ExadbVmClusterIdT = Aws::String>
+  void SetExadbVmClusterId(ExadbVmClusterIdT&& value) {
+    m_exadbVmClusterIdHasBeenSet = true;
+    m_exadbVmClusterId = std::forward<ExadbVmClusterIdT>(value);
+  }
+  template <typename ExadbVmClusterIdT = Aws::String>
+  GetDbNodeRequest& WithExadbVmClusterId(ExadbVmClusterIdT&& value) {
+    SetExadbVmClusterId(std::forward<ExadbVmClusterIdT>(value));
     return *this;
   }
   ///@}
@@ -68,8 +88,11 @@ class GetDbNodeRequest : public OdbRequest {
  private:
   Aws::String m_cloudVmClusterId;
 
+  Aws::String m_exadbVmClusterId;
+
   Aws::String m_dbNodeId;
   bool m_cloudVmClusterIdHasBeenSet = false;
+  bool m_exadbVmClusterIdHasBeenSet = false;
   bool m_dbNodeIdHasBeenSet = false;
 };
 

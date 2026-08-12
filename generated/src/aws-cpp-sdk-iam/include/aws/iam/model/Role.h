@@ -11,6 +11,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/model/AttachedPermissionsBoundary.h>
 #include <aws/iam/model/RoleLastUsed.h>
+#include <aws/iam/model/SourceRoleTemplate.h>
 #include <aws/iam/model/Tag.h>
 
 #include <utility>
@@ -265,6 +266,26 @@ class Role {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Contains information about the role template that this role was created from.
+   * This member is present only for roles created with <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AcquireRole.html">AcquireRole</a>.</p>
+   */
+  inline const SourceRoleTemplate& GetSourceRoleTemplate() const { return m_sourceRoleTemplate; }
+  inline bool SourceRoleTemplateHasBeenSet() const { return m_sourceRoleTemplateHasBeenSet; }
+  template <typename SourceRoleTemplateT = SourceRoleTemplate>
+  void SetSourceRoleTemplate(SourceRoleTemplateT&& value) {
+    m_sourceRoleTemplateHasBeenSet = true;
+    m_sourceRoleTemplate = std::forward<SourceRoleTemplateT>(value);
+  }
+  template <typename SourceRoleTemplateT = SourceRoleTemplate>
+  Role& WithSourceRoleTemplate(SourceRoleTemplateT&& value) {
+    SetSourceRoleTemplate(std::forward<SourceRoleTemplateT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_path;
 
@@ -287,6 +308,8 @@ class Role {
   Aws::Vector<Tag> m_tags;
 
   RoleLastUsed m_roleLastUsed;
+
+  SourceRoleTemplate m_sourceRoleTemplate;
   bool m_pathHasBeenSet = false;
   bool m_roleNameHasBeenSet = false;
   bool m_roleIdHasBeenSet = false;
@@ -298,6 +321,7 @@ class Role {
   bool m_permissionsBoundaryHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_roleLastUsedHasBeenSet = false;
+  bool m_sourceRoleTemplateHasBeenSet = false;
 };
 
 }  // namespace Model

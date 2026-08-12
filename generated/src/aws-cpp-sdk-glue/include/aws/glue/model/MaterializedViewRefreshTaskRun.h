@@ -91,7 +91,7 @@ class MaterializedViewRefreshTaskRun {
 
   ///@{
   /**
-   * <p>The name of the table for which statistics is generated.</p>
+   * <p>The name of the materialized view.</p>
    */
   inline const Aws::String& GetTableName() const { return m_tableName; }
   inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
@@ -128,7 +128,8 @@ class MaterializedViewRefreshTaskRun {
 
   ///@{
   /**
-   * <p>The IAM role that the service assumes to generate statistics.</p>
+   * <p>The IAM role that the service assumes to run the materialized view refresh
+   * task.</p>
    */
   inline const Aws::String& GetRole() const { return m_role; }
   inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }

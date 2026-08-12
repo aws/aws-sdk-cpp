@@ -148,7 +148,9 @@ class Profile {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The date and time when the profile was created.</p>
+   */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
   inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
   template <typename CreatedAtT = Aws::Utils::DateTime>
@@ -164,7 +166,9 @@ class Profile {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The date and time when the profile was last updated.</p>
+   */
   inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
   inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
   template <typename UpdatedAtT = Aws::Utils::DateTime>

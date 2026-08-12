@@ -10,23 +10,29 @@
 #include <aws/wellarchitected/WellArchitectedPaginationBase.h>
 #include <aws/wellarchitected/model/ListLensReviewsPaginationTraits.h>
 #include <aws/wellarchitected/model/ListReviewTemplateAnswersPaginationTraits.h>
-#include <aws/wellarchitected/model/ListProfileSharesPaginationTraits.h>
 #include <aws/wellarchitected/model/ListWorkloadsPaginationTraits.h>
-#include <aws/wellarchitected/model/ListAnswersPaginationTraits.h>
 #include <aws/wellarchitected/model/ListProfileNotificationsPaginationTraits.h>
 #include <aws/wellarchitected/model/ListShareInvitationsPaginationTraits.h>
+#include <aws/wellarchitected/model/ListAgentRecommendationItemsPaginationTraits.h>
 #include <aws/wellarchitected/model/ListCheckSummariesPaginationTraits.h>
 #include <aws/wellarchitected/model/ListProfilesPaginationTraits.h>
+#include <aws/wellarchitected/model/ListAgentGoalsPaginationTraits.h>
+#include <aws/wellarchitected/model/ListTemplateSharesPaginationTraits.h>
+#include <aws/wellarchitected/model/ListLensesPaginationTraits.h>
+#include <aws/wellarchitected/model/ListMilestonesPaginationTraits.h>
+#include <aws/wellarchitected/model/ListLensReviewImprovementsPaginationTraits.h>
+#include <aws/wellarchitected/model/ListAgentContextsPaginationTraits.h>
+#include <aws/wellarchitected/model/ListProfileSharesPaginationTraits.h>
+#include <aws/wellarchitected/model/ListAnswersPaginationTraits.h>
+#include <aws/wellarchitected/model/ListAgentRecommendationGenerationsPaginationTraits.h>
+#include <aws/wellarchitected/model/ListAgentRecommendationsPaginationTraits.h>
+#include <aws/wellarchitected/model/ListAgentProfilesPaginationTraits.h>
 #include <aws/wellarchitected/model/ListCheckDetailsPaginationTraits.h>
 #include <aws/wellarchitected/model/ListWorkloadSharesPaginationTraits.h>
 #include <aws/wellarchitected/model/ListNotificationsPaginationTraits.h>
 #include <aws/wellarchitected/model/ListReviewTemplatesPaginationTraits.h>
-#include <aws/wellarchitected/model/ListTemplateSharesPaginationTraits.h>
 #include <aws/wellarchitected/model/GetConsolidatedReportPaginationTraits.h>
-#include <aws/wellarchitected/model/ListLensesPaginationTraits.h>
-#include <aws/wellarchitected/model/ListMilestonesPaginationTraits.h>
 #include <aws/wellarchitected/model/ListLensSharesPaginationTraits.h>
-#include <aws/wellarchitected/model/ListLensReviewImprovementsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

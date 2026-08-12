@@ -119,7 +119,9 @@ class Workload {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The date and time when the workload was last updated.</p>
+   */
   inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
   inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
   template <typename UpdatedAtT = Aws::Utils::DateTime>
@@ -233,7 +235,9 @@ class Workload {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The review restriction date for the workload.</p>
+   */
   inline const Aws::Utils::DateTime& GetReviewRestrictionDate() const { return m_reviewRestrictionDate; }
   inline bool ReviewRestrictionDateHasBeenSet() const { return m_reviewRestrictionDateHasBeenSet; }
   template <typename ReviewRestrictionDateT = Aws::Utils::DateTime>

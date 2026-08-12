@@ -538,8 +538,9 @@ class CloudVmCluster {
 
   ///@{
   /**
-   * <p>The FQDN of the DNS record for the Single Client Access Name (SCAN) IP
-   * addresses that are associated with the VM cluster.</p>
+   * <p>The fully qualified domain name (FQDN) of the DNS record for the Single
+   * Client Access Name (SCAN) IP addresses that are associated with the VM
+   * cluster.</p>
    */
   inline const Aws::String& GetScanDnsName() const { return m_scanDnsName; }
   inline bool ScanDnsNameHasBeenSet() const { return m_scanDnsNameHasBeenSet; }

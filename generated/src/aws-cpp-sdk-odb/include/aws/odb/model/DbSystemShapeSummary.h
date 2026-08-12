@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/odb/Odb_EXPORTS.h>
 #include <aws/odb/model/ComputeModel.h>
+#include <aws/odb/model/ShapeAttribute.h>
 #include <aws/odb/model/ShapeType.h>
 
 #include <utility>
@@ -391,6 +393,30 @@ class DbSystemShapeSummary {
 
   ///@{
   /**
+   * <p>If provided and applicable, return DB System shape parameters based on the
+   * shape attribute provided.</p>
+   */
+  inline const Aws::Vector<ShapeAttribute>& GetShapeAttributes() const { return m_shapeAttributes; }
+  inline bool ShapeAttributesHasBeenSet() const { return m_shapeAttributesHasBeenSet; }
+  template <typename ShapeAttributesT = Aws::Vector<ShapeAttribute>>
+  void SetShapeAttributes(ShapeAttributesT&& value) {
+    m_shapeAttributesHasBeenSet = true;
+    m_shapeAttributes = std::forward<ShapeAttributesT>(value);
+  }
+  template <typename ShapeAttributesT = Aws::Vector<ShapeAttribute>>
+  DbSystemShapeSummary& WithShapeAttributes(ShapeAttributesT&& value) {
+    SetShapeAttributes(std::forward<ShapeAttributesT>(value));
+    return *this;
+  }
+  inline DbSystemShapeSummary& AddShapeAttributes(ShapeAttribute value) {
+    m_shapeAttributesHasBeenSet = true;
+    m_shapeAttributes.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The name of the shape.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
@@ -486,6 +512,8 @@ class DbSystemShapeSummary {
 
   ShapeType m_shapeType{ShapeType::NOT_SET};
 
+  Aws::Vector<ShapeAttribute> m_shapeAttributes;
+
   Aws::String m_name;
 
   ComputeModel m_computeModel{ComputeModel::NOT_SET};
@@ -512,6 +540,7 @@ class DbSystemShapeSummary {
   bool m_runtimeMinimumCoreCountHasBeenSet = false;
   bool m_shapeFamilyHasBeenSet = false;
   bool m_shapeTypeHasBeenSet = false;
+  bool m_shapeAttributesHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_computeModelHasBeenSet = false;
   bool m_areServerTypesSupportedHasBeenSet = false;

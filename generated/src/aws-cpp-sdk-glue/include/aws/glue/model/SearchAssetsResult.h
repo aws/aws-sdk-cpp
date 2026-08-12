@@ -23,6 +23,12 @@ class JsonValue;
 }  // namespace Utils
 namespace Glue {
 namespace Model {
+/**
+ * <p>The search results returned by the <code>SearchAssets</code>
+ * operation.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SearchAssetsOutput">AWS
+ * API Reference</a></p>
+ */
 class SearchAssetsResult {
  public:
   AWS_GLUE_API SearchAssetsResult() = default;

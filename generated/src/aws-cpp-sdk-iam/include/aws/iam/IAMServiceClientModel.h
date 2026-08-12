@@ -20,6 +20,7 @@
 
 /* Service model headers required in IAMClient header */
 #include <aws/core/NoResult.h>
+#include <aws/iam/model/AcquireRoleResult.h>
 #include <aws/iam/model/CreateAccessKeyRequest.h>
 #include <aws/iam/model/CreateAccessKeyResult.h>
 #include <aws/iam/model/CreateDelegationRequestResult.h>
@@ -59,6 +60,8 @@
 #include <aws/iam/model/GetAccountAuthorizationDetailsResult.h>
 #include <aws/iam/model/GetAccountPasswordPolicyRequest.h>
 #include <aws/iam/model/GetAccountPasswordPolicyResult.h>
+#include <aws/iam/model/GetAccountPropertiesRequest.h>
+#include <aws/iam/model/GetAccountPropertiesResult.h>
 #include <aws/iam/model/GetAccountSummaryRequest.h>
 #include <aws/iam/model/GetAccountSummaryResult.h>
 #include <aws/iam/model/GetContextKeysForCustomPolicyResult.h>
@@ -81,6 +84,7 @@
 #include <aws/iam/model/GetPolicyVersionResult.h>
 #include <aws/iam/model/GetRolePolicyResult.h>
 #include <aws/iam/model/GetRoleResult.h>
+#include <aws/iam/model/GetRoleTemplateVersionResult.h>
 #include <aws/iam/model/GetSAMLProviderResult.h>
 #include <aws/iam/model/GetSSHPublicKeyResult.h>
 #include <aws/iam/model/GetServerCertificateResult.h>
@@ -143,6 +147,7 @@
 #include <aws/iam/model/ListUsersResult.h>
 #include <aws/iam/model/ListVirtualMFADevicesRequest.h>
 #include <aws/iam/model/ListVirtualMFADevicesResult.h>
+#include <aws/iam/model/PutAccountPropertiesResult.h>
 #include <aws/iam/model/ResetServiceSpecificCredentialResult.h>
 #include <aws/iam/model/SimulateCustomPolicyResult.h>
 #include <aws/iam/model/SimulatePrincipalPolicyResult.h>
@@ -187,6 +192,7 @@ using IAMEndpointProvider = Aws::IAM::Endpoint::IAMEndpointProvider;
 namespace Model {
 /* Service model forward declarations required in IAMClient header */
 class AcceptDelegationRequestRequest;
+class AcquireRoleRequest;
 class AddClientIDToOpenIDConnectProviderRequest;
 class AddRoleToInstanceProfileRequest;
 class AddUserToGroupRequest;
@@ -250,6 +256,7 @@ class GenerateServiceLastAccessedDetailsRequest;
 class GetAccessKeyLastUsedRequest;
 class GetAccountAuthorizationDetailsRequest;
 class GetAccountPasswordPolicyRequest;
+class GetAccountPropertiesRequest;
 class GetAccountSummaryRequest;
 class GetContextKeysForCustomPolicyRequest;
 class GetContextKeysForPrincipalPolicyRequest;
@@ -268,6 +275,7 @@ class GetPolicyRequest;
 class GetPolicyVersionRequest;
 class GetRoleRequest;
 class GetRolePolicyRequest;
+class GetRoleTemplateVersionRequest;
 class GetSAMLProviderRequest;
 class GetSSHPublicKeyRequest;
 class GetServerCertificateRequest;
@@ -312,6 +320,7 @@ class ListUserPoliciesRequest;
 class ListUserTagsRequest;
 class ListUsersRequest;
 class ListVirtualMFADevicesRequest;
+class PutAccountPropertiesRequest;
 class PutGroupPolicyRequest;
 class PutRolePermissionsBoundaryRequest;
 class PutRolePolicyRequest;
@@ -366,6 +375,7 @@ class UploadSigningCertificateRequest;
 
 /* Service model Outcome class definitions */
 typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> AcceptDelegationRequestOutcome;
+typedef Aws::Utils::Outcome<AcquireRoleResult, IAMError> AcquireRoleOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> AddClientIDToOpenIDConnectProviderOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> AddRoleToInstanceProfileOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> AddUserToGroupOutcome;
@@ -431,6 +441,7 @@ typedef Aws::Utils::Outcome<GenerateServiceLastAccessedDetailsResult, IAMError> 
 typedef Aws::Utils::Outcome<GetAccessKeyLastUsedResult, IAMError> GetAccessKeyLastUsedOutcome;
 typedef Aws::Utils::Outcome<GetAccountAuthorizationDetailsResult, IAMError> GetAccountAuthorizationDetailsOutcome;
 typedef Aws::Utils::Outcome<GetAccountPasswordPolicyResult, IAMError> GetAccountPasswordPolicyOutcome;
+typedef Aws::Utils::Outcome<GetAccountPropertiesResult, IAMError> GetAccountPropertiesOutcome;
 typedef Aws::Utils::Outcome<GetAccountSummaryResult, IAMError> GetAccountSummaryOutcome;
 typedef Aws::Utils::Outcome<GetContextKeysForCustomPolicyResult, IAMError> GetContextKeysForCustomPolicyOutcome;
 typedef Aws::Utils::Outcome<GetContextKeysForPrincipalPolicyResult, IAMError> GetContextKeysForPrincipalPolicyOutcome;
@@ -449,6 +460,7 @@ typedef Aws::Utils::Outcome<GetPolicyResult, IAMError> GetPolicyOutcome;
 typedef Aws::Utils::Outcome<GetPolicyVersionResult, IAMError> GetPolicyVersionOutcome;
 typedef Aws::Utils::Outcome<GetRoleResult, IAMError> GetRoleOutcome;
 typedef Aws::Utils::Outcome<GetRolePolicyResult, IAMError> GetRolePolicyOutcome;
+typedef Aws::Utils::Outcome<GetRoleTemplateVersionResult, IAMError> GetRoleTemplateVersionOutcome;
 typedef Aws::Utils::Outcome<GetSAMLProviderResult, IAMError> GetSAMLProviderOutcome;
 typedef Aws::Utils::Outcome<GetSSHPublicKeyResult, IAMError> GetSSHPublicKeyOutcome;
 typedef Aws::Utils::Outcome<GetServerCertificateResult, IAMError> GetServerCertificateOutcome;
@@ -493,6 +505,7 @@ typedef Aws::Utils::Outcome<ListUserPoliciesResult, IAMError> ListUserPoliciesOu
 typedef Aws::Utils::Outcome<ListUserTagsResult, IAMError> ListUserTagsOutcome;
 typedef Aws::Utils::Outcome<ListUsersResult, IAMError> ListUsersOutcome;
 typedef Aws::Utils::Outcome<ListVirtualMFADevicesResult, IAMError> ListVirtualMFADevicesOutcome;
+typedef Aws::Utils::Outcome<PutAccountPropertiesResult, IAMError> PutAccountPropertiesOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> PutGroupPolicyOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> PutRolePermissionsBoundaryOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> PutRolePolicyOutcome;
@@ -547,6 +560,7 @@ typedef Aws::Utils::Outcome<UploadSigningCertificateResult, IAMError> UploadSign
 
 /* Service model Outcome callable definitions */
 typedef std::future<AcceptDelegationRequestOutcome> AcceptDelegationRequestOutcomeCallable;
+typedef std::future<AcquireRoleOutcome> AcquireRoleOutcomeCallable;
 typedef std::future<AddClientIDToOpenIDConnectProviderOutcome> AddClientIDToOpenIDConnectProviderOutcomeCallable;
 typedef std::future<AddRoleToInstanceProfileOutcome> AddRoleToInstanceProfileOutcomeCallable;
 typedef std::future<AddUserToGroupOutcome> AddUserToGroupOutcomeCallable;
@@ -610,6 +624,7 @@ typedef std::future<GenerateServiceLastAccessedDetailsOutcome> GenerateServiceLa
 typedef std::future<GetAccessKeyLastUsedOutcome> GetAccessKeyLastUsedOutcomeCallable;
 typedef std::future<GetAccountAuthorizationDetailsOutcome> GetAccountAuthorizationDetailsOutcomeCallable;
 typedef std::future<GetAccountPasswordPolicyOutcome> GetAccountPasswordPolicyOutcomeCallable;
+typedef std::future<GetAccountPropertiesOutcome> GetAccountPropertiesOutcomeCallable;
 typedef std::future<GetAccountSummaryOutcome> GetAccountSummaryOutcomeCallable;
 typedef std::future<GetContextKeysForCustomPolicyOutcome> GetContextKeysForCustomPolicyOutcomeCallable;
 typedef std::future<GetContextKeysForPrincipalPolicyOutcome> GetContextKeysForPrincipalPolicyOutcomeCallable;
@@ -628,6 +643,7 @@ typedef std::future<GetPolicyOutcome> GetPolicyOutcomeCallable;
 typedef std::future<GetPolicyVersionOutcome> GetPolicyVersionOutcomeCallable;
 typedef std::future<GetRoleOutcome> GetRoleOutcomeCallable;
 typedef std::future<GetRolePolicyOutcome> GetRolePolicyOutcomeCallable;
+typedef std::future<GetRoleTemplateVersionOutcome> GetRoleTemplateVersionOutcomeCallable;
 typedef std::future<GetSAMLProviderOutcome> GetSAMLProviderOutcomeCallable;
 typedef std::future<GetSSHPublicKeyOutcome> GetSSHPublicKeyOutcomeCallable;
 typedef std::future<GetServerCertificateOutcome> GetServerCertificateOutcomeCallable;
@@ -672,6 +688,7 @@ typedef std::future<ListUserPoliciesOutcome> ListUserPoliciesOutcomeCallable;
 typedef std::future<ListUserTagsOutcome> ListUserTagsOutcomeCallable;
 typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
 typedef std::future<ListVirtualMFADevicesOutcome> ListVirtualMFADevicesOutcomeCallable;
+typedef std::future<PutAccountPropertiesOutcome> PutAccountPropertiesOutcomeCallable;
 typedef std::future<PutGroupPolicyOutcome> PutGroupPolicyOutcomeCallable;
 typedef std::future<PutRolePermissionsBoundaryOutcome> PutRolePermissionsBoundaryOutcomeCallable;
 typedef std::future<PutRolePolicyOutcome> PutRolePolicyOutcomeCallable;
@@ -731,6 +748,9 @@ class IAMClient;
 typedef std::function<void(const IAMClient*, const Model::AcceptDelegationRequestRequest&, const Model::AcceptDelegationRequestOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AcceptDelegationRequestResponseReceivedHandler;
+typedef std::function<void(const IAMClient*, const Model::AcquireRoleRequest&, const Model::AcquireRoleOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    AcquireRoleResponseReceivedHandler;
 typedef std::function<void(const IAMClient*, const Model::AddClientIDToOpenIDConnectProviderRequest&,
                            const Model::AddClientIDToOpenIDConnectProviderOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -934,6 +954,9 @@ typedef std::function<void(const IAMClient*, const Model::GetAccountAuthorizatio
 typedef std::function<void(const IAMClient*, const Model::GetAccountPasswordPolicyRequest&, const Model::GetAccountPasswordPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetAccountPasswordPolicyResponseReceivedHandler;
+typedef std::function<void(const IAMClient*, const Model::GetAccountPropertiesRequest&, const Model::GetAccountPropertiesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetAccountPropertiesResponseReceivedHandler;
 typedef std::function<void(const IAMClient*, const Model::GetAccountSummaryRequest&, const Model::GetAccountSummaryOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetAccountSummaryResponseReceivedHandler;
@@ -992,6 +1015,9 @@ typedef std::function<void(const IAMClient*, const Model::GetRoleRequest&, const
 typedef std::function<void(const IAMClient*, const Model::GetRolePolicyRequest&, const Model::GetRolePolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetRolePolicyResponseReceivedHandler;
+typedef std::function<void(const IAMClient*, const Model::GetRoleTemplateVersionRequest&, const Model::GetRoleTemplateVersionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetRoleTemplateVersionResponseReceivedHandler;
 typedef std::function<void(const IAMClient*, const Model::GetSAMLProviderRequest&, const Model::GetSAMLProviderOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetSAMLProviderResponseReceivedHandler;
@@ -1130,6 +1156,9 @@ typedef std::function<void(const IAMClient*, const Model::ListUsersRequest&, con
 typedef std::function<void(const IAMClient*, const Model::ListVirtualMFADevicesRequest&, const Model::ListVirtualMFADevicesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListVirtualMFADevicesResponseReceivedHandler;
+typedef std::function<void(const IAMClient*, const Model::PutAccountPropertiesRequest&, const Model::PutAccountPropertiesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutAccountPropertiesResponseReceivedHandler;
 typedef std::function<void(const IAMClient*, const Model::PutGroupPolicyRequest&, const Model::PutGroupPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutGroupPolicyResponseReceivedHandler;

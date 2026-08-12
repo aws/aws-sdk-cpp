@@ -20,7 +20,8 @@ namespace WellArchitected {
 namespace Model {
 
 /**
- * <p>The choice level improvement plan.</p><p><h3>See Also:</h3>   <a
+ * <p>The choice level improvement plan.</p> <p>This value is only applicable to
+ * custom lenses.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ChoiceImprovementPlan">AWS
  * API Reference</a></p>
  */

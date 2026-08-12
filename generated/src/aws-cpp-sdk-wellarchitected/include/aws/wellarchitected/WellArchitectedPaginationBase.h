@@ -8,6 +8,12 @@
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/wellarchitected/model/GetConsolidatedReportPaginationTraits.h>
+#include <aws/wellarchitected/model/ListAgentContextsPaginationTraits.h>
+#include <aws/wellarchitected/model/ListAgentGoalsPaginationTraits.h>
+#include <aws/wellarchitected/model/ListAgentProfilesPaginationTraits.h>
+#include <aws/wellarchitected/model/ListAgentRecommendationGenerationsPaginationTraits.h>
+#include <aws/wellarchitected/model/ListAgentRecommendationItemsPaginationTraits.h>
+#include <aws/wellarchitected/model/ListAgentRecommendationsPaginationTraits.h>
 #include <aws/wellarchitected/model/ListAnswersPaginationTraits.h>
 #include <aws/wellarchitected/model/ListCheckDetailsPaginationTraits.h>
 #include <aws/wellarchitected/model/ListCheckSummariesPaginationTraits.h>
@@ -44,6 +50,77 @@ class WellArchitectedPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetConsolidatedReportRequest,
                                              Pagination::GetConsolidatedReportPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListAgentContexts operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAgentContextsRequest,
+                                    Pagination::ListAgentContextsPaginationTraits<DerivedClient>>
+  ListAgentContextsPaginator(const Model::ListAgentContextsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAgentContextsRequest,
+                                             Pagination::ListAgentContextsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListAgentGoals operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAgentGoalsRequest, Pagination::ListAgentGoalsPaginationTraits<DerivedClient>>
+  ListAgentGoalsPaginator(const Model::ListAgentGoalsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAgentGoalsRequest,
+                                             Pagination::ListAgentGoalsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                        request};
+  }
+
+  /**
+   * Create a paginator for ListAgentProfiles operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAgentProfilesRequest,
+                                    Pagination::ListAgentProfilesPaginationTraits<DerivedClient>>
+  ListAgentProfilesPaginator(const Model::ListAgentProfilesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAgentProfilesRequest,
+                                             Pagination::ListAgentProfilesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListAgentRecommendationGenerations operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAgentRecommendationGenerationsRequest,
+                                    Pagination::ListAgentRecommendationGenerationsPaginationTraits<DerivedClient>>
+  ListAgentRecommendationGenerationsPaginator(const Model::ListAgentRecommendationGenerationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAgentRecommendationGenerationsRequest,
+                                             Pagination::ListAgentRecommendationGenerationsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListAgentRecommendationItems operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAgentRecommendationItemsRequest,
+                                    Pagination::ListAgentRecommendationItemsPaginationTraits<DerivedClient>>
+  ListAgentRecommendationItemsPaginator(const Model::ListAgentRecommendationItemsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAgentRecommendationItemsRequest,
+                                             Pagination::ListAgentRecommendationItemsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListAgentRecommendations operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAgentRecommendationsRequest,
+                                    Pagination::ListAgentRecommendationsPaginationTraits<DerivedClient>>
+  ListAgentRecommendationsPaginator(const Model::ListAgentRecommendationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAgentRecommendationsRequest,
+                                             Pagination::ListAgentRecommendationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

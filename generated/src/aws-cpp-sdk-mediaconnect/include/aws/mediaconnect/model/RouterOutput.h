@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
+#include <aws/mediaconnect/model/FabricConfiguration.h>
 #include <aws/mediaconnect/model/MaintenanceConfiguration.h>
 #include <aws/mediaconnect/model/MaintenanceSchedule.h>
 #include <aws/mediaconnect/model/MaintenanceScheduleType.h>
@@ -457,6 +458,24 @@ class RouterOutput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The fabric configuration settings for the router output.</p>
+   */
+  inline const FabricConfiguration& GetFabricConfiguration() const { return m_fabricConfiguration; }
+  inline bool FabricConfigurationHasBeenSet() const { return m_fabricConfigurationHasBeenSet; }
+  template <typename FabricConfigurationT = FabricConfiguration>
+  void SetFabricConfiguration(FabricConfigurationT&& value) {
+    m_fabricConfigurationHasBeenSet = true;
+    m_fabricConfiguration = std::forward<FabricConfigurationT>(value);
+  }
+  template <typename FabricConfigurationT = FabricConfiguration>
+  RouterOutput& WithFabricConfiguration(FabricConfigurationT&& value) {
+    SetFabricConfiguration(std::forward<FabricConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -503,6 +522,8 @@ class RouterOutput {
   MaintenanceScheduleType m_maintenanceScheduleType{MaintenanceScheduleType::NOT_SET};
 
   MaintenanceSchedule m_maintenanceSchedule;
+
+  FabricConfiguration m_fabricConfiguration;
   bool m_nameHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_idHasBeenSet = false;
@@ -526,6 +547,7 @@ class RouterOutput {
   bool m_maintenanceConfigurationHasBeenSet = false;
   bool m_maintenanceScheduleTypeHasBeenSet = false;
   bool m_maintenanceScheduleHasBeenSet = false;
+  bool m_fabricConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -102,6 +102,13 @@ DbSystemShapeSummary& DbSystemShapeSummary::operator=(JsonView jsonValue) {
     m_shapeType = ShapeTypeMapper::GetShapeTypeForName(jsonValue.GetString("shapeType"));
     m_shapeTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("shapeAttributes")) {
+    Aws::Utils::Array<JsonView> shapeAttributesJsonList = jsonValue.GetArray("shapeAttributes");
+    for (unsigned shapeAttributesIndex = 0; shapeAttributesIndex < shapeAttributesJsonList.GetLength(); ++shapeAttributesIndex) {
+      m_shapeAttributes.push_back(ShapeAttributeMapper::GetShapeAttributeForName(shapeAttributesJsonList[shapeAttributesIndex].AsString()));
+    }
+    m_shapeAttributesHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
@@ -202,6 +209,15 @@ JsonValue DbSystemShapeSummary::Jsonize() const {
 
   if (m_shapeTypeHasBeenSet) {
     payload.WithString("shapeType", ShapeTypeMapper::GetNameForShapeType(m_shapeType));
+  }
+
+  if (m_shapeAttributesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> shapeAttributesJsonList(m_shapeAttributes.size());
+    for (unsigned shapeAttributesIndex = 0; shapeAttributesIndex < shapeAttributesJsonList.GetLength(); ++shapeAttributesIndex) {
+      shapeAttributesJsonList[shapeAttributesIndex].AsString(
+          ShapeAttributeMapper::GetNameForShapeAttribute(m_shapeAttributes[shapeAttributesIndex]));
+    }
+    payload.WithArray("shapeAttributes", std::move(shapeAttributesJsonList));
   }
 
   if (m_nameHasBeenSet) {

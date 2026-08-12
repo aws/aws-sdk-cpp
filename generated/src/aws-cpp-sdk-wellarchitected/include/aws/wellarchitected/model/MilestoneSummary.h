@@ -64,7 +64,9 @@ class MilestoneSummary {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The date and time when the milestone was recorded.</p>
+   */
   inline const Aws::Utils::DateTime& GetRecordedAt() const { return m_recordedAt; }
   inline bool RecordedAtHasBeenSet() const { return m_recordedAtHasBeenSet; }
   template <typename RecordedAtT = Aws::Utils::DateTime>

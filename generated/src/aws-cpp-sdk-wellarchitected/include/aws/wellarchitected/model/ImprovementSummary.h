@@ -116,7 +116,8 @@ class ImprovementSummary {
 
   ///@{
   /**
-   * <p>The improvement plan details.</p>
+   * <p>The improvement plan details.</p> <p>This value is only applicable to custom
+   * lenses.</p>
    */
   inline const Aws::Vector<ChoiceImprovementPlan>& GetImprovementPlans() const { return m_improvementPlans; }
   inline bool ImprovementPlansHasBeenSet() const { return m_improvementPlansHasBeenSet; }

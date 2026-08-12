@@ -69,7 +69,7 @@ class StopMaterializedViewRefreshTaskRunRequest : public GlueRequest {
 
   ///@{
   /**
-   * <p>The name of the table to generate statistics.</p>
+   * <p>The name of the materialized view.</p>
    */
   inline const Aws::String& GetTableName() const { return m_tableName; }
   inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }

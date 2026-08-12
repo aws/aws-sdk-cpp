@@ -25,6 +25,13 @@ class JsonValue;
 }  // namespace Utils
 namespace Glue {
 namespace Model {
+/**
+ * <p>The export configuration returned by the
+ * <code>GetDataCatalogExportConfiguration</code> operation.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataCatalogExportConfigurationOutput">AWS
+ * API Reference</a></p>
+ */
 class GetDataCatalogExportConfigurationResult {
  public:
   AWS_GLUE_API GetDataCatalogExportConfigurationResult() = default;

@@ -14,6 +14,7 @@
 #include <aws/quicksight/model/AssetBundleExportJobRefreshScheduleOverrideProperties.h>
 #include <aws/quicksight/model/AssetBundleExportJobResourceIdOverrideConfiguration.h>
 #include <aws/quicksight/model/AssetBundleExportJobThemeOverrideProperties.h>
+#include <aws/quicksight/model/AssetBundleExportJobTopicV2OverrideProperties.h>
 #include <aws/quicksight/model/AssetBundleExportJobVPCConnectionOverrideProperties.h>
 
 #include <utility>
@@ -263,6 +264,31 @@ class AssetBundleCloudFormationOverridePropertyConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An optional list of structures that controls how <code>Topic</code> resources
+   * are parameterized in the returned CloudFormation template.</p>
+   */
+  inline const Aws::Vector<AssetBundleExportJobTopicV2OverrideProperties>& GetTopicsV2() const { return m_topicsV2; }
+  inline bool TopicsV2HasBeenSet() const { return m_topicsV2HasBeenSet; }
+  template <typename TopicsV2T = Aws::Vector<AssetBundleExportJobTopicV2OverrideProperties>>
+  void SetTopicsV2(TopicsV2T&& value) {
+    m_topicsV2HasBeenSet = true;
+    m_topicsV2 = std::forward<TopicsV2T>(value);
+  }
+  template <typename TopicsV2T = Aws::Vector<AssetBundleExportJobTopicV2OverrideProperties>>
+  AssetBundleCloudFormationOverridePropertyConfiguration& WithTopicsV2(TopicsV2T&& value) {
+    SetTopicsV2(std::forward<TopicsV2T>(value));
+    return *this;
+  }
+  template <typename TopicsV2T = AssetBundleExportJobTopicV2OverrideProperties>
+  AssetBundleCloudFormationOverridePropertyConfiguration& AddTopicsV2(TopicsV2T&& value) {
+    m_topicsV2HasBeenSet = true;
+    m_topicsV2.emplace_back(std::forward<TopicsV2T>(value));
+    return *this;
+  }
+  ///@}
  private:
   AssetBundleExportJobResourceIdOverrideConfiguration m_resourceIdOverrideConfiguration;
 
@@ -281,6 +307,8 @@ class AssetBundleCloudFormationOverridePropertyConfiguration {
   Aws::Vector<AssetBundleExportJobDashboardOverrideProperties> m_dashboards;
 
   Aws::Vector<AssetBundleExportJobFolderOverrideProperties> m_folders;
+
+  Aws::Vector<AssetBundleExportJobTopicV2OverrideProperties> m_topicsV2;
   bool m_resourceIdOverrideConfigurationHasBeenSet = false;
   bool m_vPCConnectionsHasBeenSet = false;
   bool m_refreshSchedulesHasBeenSet = false;
@@ -290,6 +318,7 @@ class AssetBundleCloudFormationOverridePropertyConfiguration {
   bool m_analysesHasBeenSet = false;
   bool m_dashboardsHasBeenSet = false;
   bool m_foldersHasBeenSet = false;
+  bool m_topicsV2HasBeenSet = false;
 };
 
 }  // namespace Model

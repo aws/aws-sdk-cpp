@@ -14,6 +14,7 @@
 #include <aws/quicksight/model/AssetBundleImportJobRefreshScheduleOverrideParameters.h>
 #include <aws/quicksight/model/AssetBundleImportJobResourceIdOverrideConfiguration.h>
 #include <aws/quicksight/model/AssetBundleImportJobThemeOverrideParameters.h>
+#include <aws/quicksight/model/AssetBundleImportJobTopicV2OverrideParameters.h>
 #include <aws/quicksight/model/AssetBundleImportJobVPCConnectionOverrideParameters.h>
 
 #include <utility>
@@ -263,6 +264,31 @@ class AssetBundleImportJobOverrideParameters {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of overrides for any <code>Topic</code> resources that are present in
+   * the asset bundle that is imported.</p>
+   */
+  inline const Aws::Vector<AssetBundleImportJobTopicV2OverrideParameters>& GetTopicsV2() const { return m_topicsV2; }
+  inline bool TopicsV2HasBeenSet() const { return m_topicsV2HasBeenSet; }
+  template <typename TopicsV2T = Aws::Vector<AssetBundleImportJobTopicV2OverrideParameters>>
+  void SetTopicsV2(TopicsV2T&& value) {
+    m_topicsV2HasBeenSet = true;
+    m_topicsV2 = std::forward<TopicsV2T>(value);
+  }
+  template <typename TopicsV2T = Aws::Vector<AssetBundleImportJobTopicV2OverrideParameters>>
+  AssetBundleImportJobOverrideParameters& WithTopicsV2(TopicsV2T&& value) {
+    SetTopicsV2(std::forward<TopicsV2T>(value));
+    return *this;
+  }
+  template <typename TopicsV2T = AssetBundleImportJobTopicV2OverrideParameters>
+  AssetBundleImportJobOverrideParameters& AddTopicsV2(TopicsV2T&& value) {
+    m_topicsV2HasBeenSet = true;
+    m_topicsV2.emplace_back(std::forward<TopicsV2T>(value));
+    return *this;
+  }
+  ///@}
  private:
   AssetBundleImportJobResourceIdOverrideConfiguration m_resourceIdOverrideConfiguration;
 
@@ -281,6 +307,8 @@ class AssetBundleImportJobOverrideParameters {
   Aws::Vector<AssetBundleImportJobDashboardOverrideParameters> m_dashboards;
 
   Aws::Vector<AssetBundleImportJobFolderOverrideParameters> m_folders;
+
+  Aws::Vector<AssetBundleImportJobTopicV2OverrideParameters> m_topicsV2;
   bool m_resourceIdOverrideConfigurationHasBeenSet = false;
   bool m_vPCConnectionsHasBeenSet = false;
   bool m_refreshSchedulesHasBeenSet = false;
@@ -290,6 +318,7 @@ class AssetBundleImportJobOverrideParameters {
   bool m_analysesHasBeenSet = false;
   bool m_dashboardsHasBeenSet = false;
   bool m_foldersHasBeenSet = false;
+  bool m_topicsV2HasBeenSet = false;
 };
 
 }  // namespace Model

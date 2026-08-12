@@ -10,6 +10,7 @@
 #include <aws/quicksight/model/DescribeFolderResolvedPermissionsPaginationTraits.h>
 #include <aws/quicksight/model/ListActionConnectorsPaginationTraits.h>
 #include <aws/quicksight/model/ListAnalysesPaginationTraits.h>
+#include <aws/quicksight/model/ListApprovalPoliciesPaginationTraits.h>
 #include <aws/quicksight/model/ListAssetBundleExportJobsPaginationTraits.h>
 #include <aws/quicksight/model/ListAssetBundleImportJobsPaginationTraits.h>
 #include <aws/quicksight/model/ListBrandsPaginationTraits.h>
@@ -18,6 +19,7 @@
 #include <aws/quicksight/model/ListDashboardsPaginationTraits.h>
 #include <aws/quicksight/model/ListDataSetsPaginationTraits.h>
 #include <aws/quicksight/model/ListDataSourcesPaginationTraits.h>
+#include <aws/quicksight/model/ListDlpSettingsPaginationTraits.h>
 #include <aws/quicksight/model/ListFlowsPaginationTraits.h>
 #include <aws/quicksight/model/ListFolderMembersPaginationTraits.h>
 #include <aws/quicksight/model/ListFoldersForResourcePaginationTraits.h>
@@ -28,6 +30,7 @@
 #include <aws/quicksight/model/ListIAMPolicyAssignmentsPaginationTraits.h>
 #include <aws/quicksight/model/ListIngestionsPaginationTraits.h>
 #include <aws/quicksight/model/ListKnowledgeBasesPaginationTraits.h>
+#include <aws/quicksight/model/ListLimitsProfilesPaginationTraits.h>
 #include <aws/quicksight/model/ListNamespacesPaginationTraits.h>
 #include <aws/quicksight/model/ListOAuthClientApplicationsPaginationTraits.h>
 #include <aws/quicksight/model/ListRoleMembershipsPaginationTraits.h>
@@ -66,6 +69,8 @@ using ListActionConnectorsPaginator = Aws::Utils::Pagination::Paginator<QuickSig
                                                                         Pagination::ListActionConnectorsPaginationTraits<QuickSightClient>>;
 using ListAnalysesPaginator = Aws::Utils::Pagination::Paginator<QuickSightClient, Model::ListAnalysesRequest,
                                                                 Pagination::ListAnalysesPaginationTraits<QuickSightClient>>;
+using ListApprovalPoliciesPaginator = Aws::Utils::Pagination::Paginator<QuickSightClient, Model::ListApprovalPoliciesRequest,
+                                                                        Pagination::ListApprovalPoliciesPaginationTraits<QuickSightClient>>;
 using ListAssetBundleExportJobsPaginator =
     Aws::Utils::Pagination::Paginator<QuickSightClient, Model::ListAssetBundleExportJobsRequest,
                                       Pagination::ListAssetBundleExportJobsPaginationTraits<QuickSightClient>>;
@@ -86,6 +91,8 @@ using ListDataSetsPaginator = Aws::Utils::Pagination::Paginator<QuickSightClient
                                                                 Pagination::ListDataSetsPaginationTraits<QuickSightClient>>;
 using ListDataSourcesPaginator = Aws::Utils::Pagination::Paginator<QuickSightClient, Model::ListDataSourcesRequest,
                                                                    Pagination::ListDataSourcesPaginationTraits<QuickSightClient>>;
+using ListDlpSettingsPaginator = Aws::Utils::Pagination::Paginator<QuickSightClient, Model::ListDlpSettingsRequest,
+                                                                   Pagination::ListDlpSettingsPaginationTraits<QuickSightClient>>;
 using ListFlowsPaginator =
     Aws::Utils::Pagination::Paginator<QuickSightClient, Model::ListFlowsRequest, Pagination::ListFlowsPaginationTraits<QuickSightClient>>;
 using ListFolderMembersPaginator = Aws::Utils::Pagination::Paginator<QuickSightClient, Model::ListFolderMembersRequest,
@@ -109,6 +116,8 @@ using ListIngestionsPaginator = Aws::Utils::Pagination::Paginator<QuickSightClie
                                                                   Pagination::ListIngestionsPaginationTraits<QuickSightClient>>;
 using ListKnowledgeBasesPaginator = Aws::Utils::Pagination::Paginator<QuickSightClient, Model::ListKnowledgeBasesRequest,
                                                                       Pagination::ListKnowledgeBasesPaginationTraits<QuickSightClient>>;
+using ListLimitsProfilesPaginator = Aws::Utils::Pagination::Paginator<QuickSightClient, Model::ListLimitsProfilesRequest,
+                                                                      Pagination::ListLimitsProfilesPaginationTraits<QuickSightClient>>;
 using ListNamespacesPaginator = Aws::Utils::Pagination::Paginator<QuickSightClient, Model::ListNamespacesRequest,
                                                                   Pagination::ListNamespacesPaginationTraits<QuickSightClient>>;
 using ListOAuthClientApplicationsPaginator =

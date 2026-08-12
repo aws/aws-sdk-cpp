@@ -19,6 +19,10 @@ Aws::String RebootDbNodeRequest::SerializePayload() const {
     payload.WithString("cloudVmClusterId", m_cloudVmClusterId);
   }
 
+  if (m_exadbVmClusterIdHasBeenSet) {
+    payload.WithString("exadbVmClusterId", m_exadbVmClusterId);
+  }
+
   if (m_dbNodeIdHasBeenSet) {
     payload.WithString("dbNodeId", m_dbNodeId);
   }

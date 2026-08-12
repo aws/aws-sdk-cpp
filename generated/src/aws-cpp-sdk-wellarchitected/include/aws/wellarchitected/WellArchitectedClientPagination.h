@@ -7,6 +7,12 @@
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/wellarchitected/WellArchitectedClient.h>
 #include <aws/wellarchitected/model/GetConsolidatedReportPaginationTraits.h>
+#include <aws/wellarchitected/model/ListAgentContextsPaginationTraits.h>
+#include <aws/wellarchitected/model/ListAgentGoalsPaginationTraits.h>
+#include <aws/wellarchitected/model/ListAgentProfilesPaginationTraits.h>
+#include <aws/wellarchitected/model/ListAgentRecommendationGenerationsPaginationTraits.h>
+#include <aws/wellarchitected/model/ListAgentRecommendationItemsPaginationTraits.h>
+#include <aws/wellarchitected/model/ListAgentRecommendationsPaginationTraits.h>
 #include <aws/wellarchitected/model/ListAnswersPaginationTraits.h>
 #include <aws/wellarchitected/model/ListCheckDetailsPaginationTraits.h>
 #include <aws/wellarchitected/model/ListCheckSummariesPaginationTraits.h>
@@ -32,6 +38,21 @@ namespace WellArchitected {
 using GetConsolidatedReportPaginator =
     Aws::Utils::Pagination::Paginator<WellArchitectedClient, Model::GetConsolidatedReportRequest,
                                       Pagination::GetConsolidatedReportPaginationTraits<WellArchitectedClient>>;
+using ListAgentContextsPaginator = Aws::Utils::Pagination::Paginator<WellArchitectedClient, Model::ListAgentContextsRequest,
+                                                                     Pagination::ListAgentContextsPaginationTraits<WellArchitectedClient>>;
+using ListAgentGoalsPaginator = Aws::Utils::Pagination::Paginator<WellArchitectedClient, Model::ListAgentGoalsRequest,
+                                                                  Pagination::ListAgentGoalsPaginationTraits<WellArchitectedClient>>;
+using ListAgentProfilesPaginator = Aws::Utils::Pagination::Paginator<WellArchitectedClient, Model::ListAgentProfilesRequest,
+                                                                     Pagination::ListAgentProfilesPaginationTraits<WellArchitectedClient>>;
+using ListAgentRecommendationGenerationsPaginator =
+    Aws::Utils::Pagination::Paginator<WellArchitectedClient, Model::ListAgentRecommendationGenerationsRequest,
+                                      Pagination::ListAgentRecommendationGenerationsPaginationTraits<WellArchitectedClient>>;
+using ListAgentRecommendationItemsPaginator =
+    Aws::Utils::Pagination::Paginator<WellArchitectedClient, Model::ListAgentRecommendationItemsRequest,
+                                      Pagination::ListAgentRecommendationItemsPaginationTraits<WellArchitectedClient>>;
+using ListAgentRecommendationsPaginator =
+    Aws::Utils::Pagination::Paginator<WellArchitectedClient, Model::ListAgentRecommendationsRequest,
+                                      Pagination::ListAgentRecommendationsPaginationTraits<WellArchitectedClient>>;
 using ListAnswersPaginator = Aws::Utils::Pagination::Paginator<WellArchitectedClient, Model::ListAnswersRequest,
                                                                Pagination::ListAnswersPaginationTraits<WellArchitectedClient>>;
 using ListCheckDetailsPaginator = Aws::Utils::Pagination::Paginator<WellArchitectedClient, Model::ListCheckDetailsRequest,

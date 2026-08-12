@@ -69,7 +69,7 @@ class StartMaterializedViewRefreshTaskRunRequest : public GlueRequest {
 
   ///@{
   /**
-   * <p>The name of the table to generate run the materialized view refresh task.</p>
+   * <p>The name of the materialized view to run the refresh task for.</p>
    */
   inline const Aws::String& GetTableName() const { return m_tableName; }
   inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }

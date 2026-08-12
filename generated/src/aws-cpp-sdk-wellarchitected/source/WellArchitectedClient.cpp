@@ -22,6 +22,9 @@
 #include <aws/wellarchitected/WellArchitectedErrorMarshaller.h>
 #include <aws/wellarchitected/model/AssociateLensesRequest.h>
 #include <aws/wellarchitected/model/AssociateProfilesRequest.h>
+#include <aws/wellarchitected/model/CreateAgentContextRequest.h>
+#include <aws/wellarchitected/model/CreateAgentGoalRequest.h>
+#include <aws/wellarchitected/model/CreateAgentProfileRequest.h>
 #include <aws/wellarchitected/model/CreateLensShareRequest.h>
 #include <aws/wellarchitected/model/CreateLensVersionRequest.h>
 #include <aws/wellarchitected/model/CreateMilestoneRequest.h>
@@ -31,6 +34,9 @@
 #include <aws/wellarchitected/model/CreateTemplateShareRequest.h>
 #include <aws/wellarchitected/model/CreateWorkloadRequest.h>
 #include <aws/wellarchitected/model/CreateWorkloadShareRequest.h>
+#include <aws/wellarchitected/model/DeleteAgentContextRequest.h>
+#include <aws/wellarchitected/model/DeleteAgentGoalRequest.h>
+#include <aws/wellarchitected/model/DeleteAgentProfileRequest.h>
 #include <aws/wellarchitected/model/DeleteLensRequest.h>
 #include <aws/wellarchitected/model/DeleteLensShareRequest.h>
 #include <aws/wellarchitected/model/DeleteProfileRequest.h>
@@ -42,6 +48,11 @@
 #include <aws/wellarchitected/model/DisassociateLensesRequest.h>
 #include <aws/wellarchitected/model/DisassociateProfilesRequest.h>
 #include <aws/wellarchitected/model/ExportLensRequest.h>
+#include <aws/wellarchitected/model/GetAgentContextRequest.h>
+#include <aws/wellarchitected/model/GetAgentGoalRequest.h>
+#include <aws/wellarchitected/model/GetAgentProfileRequest.h>
+#include <aws/wellarchitected/model/GetAgentRecommendationGenerationRequest.h>
+#include <aws/wellarchitected/model/GetAgentRecommendationRequest.h>
 #include <aws/wellarchitected/model/GetAnswerRequest.h>
 #include <aws/wellarchitected/model/GetConsolidatedReportRequest.h>
 #include <aws/wellarchitected/model/GetGlobalSettingsRequest.h>
@@ -57,6 +68,12 @@
 #include <aws/wellarchitected/model/GetReviewTemplateRequest.h>
 #include <aws/wellarchitected/model/GetWorkloadRequest.h>
 #include <aws/wellarchitected/model/ImportLensRequest.h>
+#include <aws/wellarchitected/model/ListAgentContextsRequest.h>
+#include <aws/wellarchitected/model/ListAgentGoalsRequest.h>
+#include <aws/wellarchitected/model/ListAgentProfilesRequest.h>
+#include <aws/wellarchitected/model/ListAgentRecommendationGenerationsRequest.h>
+#include <aws/wellarchitected/model/ListAgentRecommendationItemsRequest.h>
+#include <aws/wellarchitected/model/ListAgentRecommendationsRequest.h>
 #include <aws/wellarchitected/model/ListAnswersRequest.h>
 #include <aws/wellarchitected/model/ListCheckDetailsRequest.h>
 #include <aws/wellarchitected/model/ListCheckSummariesRequest.h>
@@ -76,8 +93,14 @@
 #include <aws/wellarchitected/model/ListTemplateSharesRequest.h>
 #include <aws/wellarchitected/model/ListWorkloadSharesRequest.h>
 #include <aws/wellarchitected/model/ListWorkloadsRequest.h>
+#include <aws/wellarchitected/model/PutAgentRecommendationFeedbackRequest.h>
+#include <aws/wellarchitected/model/StartAgentRecommendationGenerationRequest.h>
 #include <aws/wellarchitected/model/TagResourceRequest.h>
 #include <aws/wellarchitected/model/UntagResourceRequest.h>
+#include <aws/wellarchitected/model/UpdateAgentContextRequest.h>
+#include <aws/wellarchitected/model/UpdateAgentGoalRequest.h>
+#include <aws/wellarchitected/model/UpdateAgentProfileRequest.h>
+#include <aws/wellarchitected/model/UpdateAgentRecommendationStatusRequest.h>
 #include <aws/wellarchitected/model/UpdateAnswerRequest.h>
 #include <aws/wellarchitected/model/UpdateGlobalSettingsRequest.h>
 #include <aws/wellarchitected/model/UpdateIntegrationRequest.h>
@@ -288,6 +311,55 @@ AssociateProfilesOutcome WellArchitectedClient::AssociateProfiles(const Associat
                             : AssociateProfilesOutcome(std::move(result.GetError()));
 }
 
+CreateAgentContextOutcome WellArchitectedClient::CreateAgentContext(const CreateAgentContextRequest& request) const {
+  if (!request.ProfileArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateAgentContext", "Required field: ProfileArn, is not set");
+    return CreateAgentContextOutcome(Aws::Client::AWSError<WellArchitectedErrors>(
+        WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/agent-profiles/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/contexts");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAgentContextOutcome(result.GetResultWithOwnership())
+                            : CreateAgentContextOutcome(std::move(result.GetError()));
+}
+
+CreateAgentGoalOutcome WellArchitectedClient::CreateAgentGoal(const CreateAgentGoalRequest& request) const {
+  if (!request.ProfileArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateAgentGoal", "Required field: ProfileArn, is not set");
+    return CreateAgentGoalOutcome(Aws::Client::AWSError<WellArchitectedErrors>(
+        WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/agent-profiles/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/goals");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAgentGoalOutcome(result.GetResultWithOwnership())
+                            : CreateAgentGoalOutcome(std::move(result.GetError()));
+}
+
+CreateAgentProfileOutcome WellArchitectedClient::CreateAgentProfile(const CreateAgentProfileRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/agent-profiles");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAgentProfileOutcome(result.GetResultWithOwnership())
+                            : CreateAgentProfileOutcome(std::move(result.GetError()));
+}
+
 CreateLensShareOutcome WellArchitectedClient::CreateLensShare(const CreateLensShareRequest& request) const {
   if (!request.LensAliasHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("CreateLensShare", "Required field: LensAlias, is not set");
@@ -430,6 +502,74 @@ CreateWorkloadShareOutcome WellArchitectedClient::CreateWorkloadShare(const Crea
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateWorkloadShareOutcome(result.GetResultWithOwnership())
                             : CreateWorkloadShareOutcome(std::move(result.GetError()));
+}
+
+DeleteAgentContextOutcome WellArchitectedClient::DeleteAgentContext(const DeleteAgentContextRequest& request) const {
+  if (!request.ProfileArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteAgentContext", "Required field: ProfileArn, is not set");
+    return DeleteAgentContextOutcome(Aws::Client::AWSError<WellArchitectedErrors>(
+        WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileArn]", false));
+  }
+  if (!request.IdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteAgentContext", "Required field: Id, is not set");
+    return DeleteAgentContextOutcome(Aws::Client::AWSError<WellArchitectedErrors>(
+        WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/agent-profiles/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/contexts/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAgentContextOutcome(result.GetResultWithOwnership())
+                            : DeleteAgentContextOutcome(std::move(result.GetError()));
+}
+
+DeleteAgentGoalOutcome WellArchitectedClient::DeleteAgentGoal(const DeleteAgentGoalRequest& request) const {
+  if (!request.ProfileArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteAgentGoal", "Required field: ProfileArn, is not set");
+    return DeleteAgentGoalOutcome(Aws::Client::AWSError<WellArchitectedErrors>(
+        WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileArn]", false));
+  }
+  if (!request.IdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteAgentGoal", "Required field: Id, is not set");
+    return DeleteAgentGoalOutcome(Aws::Client::AWSError<WellArchitectedErrors>(WellArchitectedErrors::MISSING_PARAMETER,
+                                                                               "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/agent-profiles/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/goals/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAgentGoalOutcome(result.GetResultWithOwnership())
+                            : DeleteAgentGoalOutcome(std::move(result.GetError()));
+}
+
+DeleteAgentProfileOutcome WellArchitectedClient::DeleteAgentProfile(const DeleteAgentProfileRequest& request) const {
+  if (!request.ProfileArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteAgentProfile", "Required field: ProfileArn, is not set");
+    return DeleteAgentProfileOutcome(Aws::Client::AWSError<WellArchitectedErrors>(
+        WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/agent-profiles/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAgentProfileOutcome(result.GetResultWithOwnership())
+                            : DeleteAgentProfileOutcome(std::move(result.GetError()));
 }
 
 DeleteLensOutcome WellArchitectedClient::DeleteLens(const DeleteLensRequest& request) const {
@@ -699,6 +839,117 @@ ExportLensOutcome WellArchitectedClient::ExportLens(const ExportLensRequest& req
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ExportLensOutcome(result.GetResultWithOwnership()) : ExportLensOutcome(std::move(result.GetError()));
+}
+
+GetAgentContextOutcome WellArchitectedClient::GetAgentContext(const GetAgentContextRequest& request) const {
+  if (!request.ProfileArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetAgentContext", "Required field: ProfileArn, is not set");
+    return GetAgentContextOutcome(Aws::Client::AWSError<WellArchitectedErrors>(
+        WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileArn]", false));
+  }
+  if (!request.IdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetAgentContext", "Required field: Id, is not set");
+    return GetAgentContextOutcome(Aws::Client::AWSError<WellArchitectedErrors>(WellArchitectedErrors::MISSING_PARAMETER,
+                                                                               "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/agent-profiles/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/contexts/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAgentContextOutcome(result.GetResultWithOwnership())
+                            : GetAgentContextOutcome(std::move(result.GetError()));
+}
+
+GetAgentGoalOutcome WellArchitectedClient::GetAgentGoal(const GetAgentGoalRequest& request) const {
+  if (!request.ProfileArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetAgentGoal", "Required field: ProfileArn, is not set");
+    return GetAgentGoalOutcome(Aws::Client::AWSError<WellArchitectedErrors>(WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [ProfileArn]", false));
+  }
+  if (!request.IdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetAgentGoal", "Required field: Id, is not set");
+    return GetAgentGoalOutcome(Aws::Client::AWSError<WellArchitectedErrors>(WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [Id]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/agent-profiles/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/goals/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAgentGoalOutcome(result.GetResultWithOwnership()) : GetAgentGoalOutcome(std::move(result.GetError()));
+}
+
+GetAgentProfileOutcome WellArchitectedClient::GetAgentProfile(const GetAgentProfileRequest& request) const {
+  if (!request.ProfileArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetAgentProfile", "Required field: ProfileArn, is not set");
+    return GetAgentProfileOutcome(Aws::Client::AWSError<WellArchitectedErrors>(
+        WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/agent-profiles/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAgentProfileOutcome(result.GetResultWithOwnership())
+                            : GetAgentProfileOutcome(std::move(result.GetError()));
+}
+
+GetAgentRecommendationOutcome WellArchitectedClient::GetAgentRecommendation(const GetAgentRecommendationRequest& request) const {
+  if (!request.RecommendationArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetAgentRecommendation", "Required field: RecommendationArn, is not set");
+    return GetAgentRecommendationOutcome(Aws::Client::AWSError<WellArchitectedErrors>(
+        WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecommendationArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/agent-recommendations/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommendationArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAgentRecommendationOutcome(result.GetResultWithOwnership())
+                            : GetAgentRecommendationOutcome(std::move(result.GetError()));
+}
+
+GetAgentRecommendationGenerationOutcome WellArchitectedClient::GetAgentRecommendationGeneration(
+    const GetAgentRecommendationGenerationRequest& request) const {
+  if (!request.ProfileArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetAgentRecommendationGeneration", "Required field: ProfileArn, is not set");
+    return GetAgentRecommendationGenerationOutcome(Aws::Client::AWSError<WellArchitectedErrors>(
+        WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileArn]", false));
+  }
+  if (!request.GenerationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetAgentRecommendationGeneration", "Required field: GenerationId, is not set");
+    return GetAgentRecommendationGenerationOutcome(Aws::Client::AWSError<WellArchitectedErrors>(
+        WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GenerationId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/agent-profiles/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/generations/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGenerationId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAgentRecommendationGenerationOutcome(result.GetResultWithOwnership())
+                            : GetAgentRecommendationGenerationOutcome(std::move(result.GetError()));
 }
 
 GetAnswerOutcome WellArchitectedClient::GetAnswer(const GetAnswerRequest& request) const {
@@ -1001,6 +1252,113 @@ ImportLensOutcome WellArchitectedClient::ImportLens(const ImportLensRequest& req
   return result.IsSuccess() ? ImportLensOutcome(result.GetResultWithOwnership()) : ImportLensOutcome(std::move(result.GetError()));
 }
 
+ListAgentContextsOutcome WellArchitectedClient::ListAgentContexts(const ListAgentContextsRequest& request) const {
+  if (!request.ProfileArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListAgentContexts", "Required field: ProfileArn, is not set");
+    return ListAgentContextsOutcome(Aws::Client::AWSError<WellArchitectedErrors>(
+        WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/agent-profiles/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/contexts");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAgentContextsOutcome(result.GetResultWithOwnership())
+                            : ListAgentContextsOutcome(std::move(result.GetError()));
+}
+
+ListAgentGoalsOutcome WellArchitectedClient::ListAgentGoals(const ListAgentGoalsRequest& request) const {
+  if (!request.ProfileArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListAgentGoals", "Required field: ProfileArn, is not set");
+    return ListAgentGoalsOutcome(Aws::Client::AWSError<WellArchitectedErrors>(WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                              "Missing required field [ProfileArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/agent-profiles/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/goals");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAgentGoalsOutcome(result.GetResultWithOwnership()) : ListAgentGoalsOutcome(std::move(result.GetError()));
+}
+
+ListAgentProfilesOutcome WellArchitectedClient::ListAgentProfiles(const ListAgentProfilesRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/agent-profiles");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAgentProfilesOutcome(result.GetResultWithOwnership())
+                            : ListAgentProfilesOutcome(std::move(result.GetError()));
+}
+
+ListAgentRecommendationGenerationsOutcome WellArchitectedClient::ListAgentRecommendationGenerations(
+    const ListAgentRecommendationGenerationsRequest& request) const {
+  if (!request.ProfileArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListAgentRecommendationGenerations", "Required field: ProfileArn, is not set");
+    return ListAgentRecommendationGenerationsOutcome(Aws::Client::AWSError<WellArchitectedErrors>(
+        WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/agent-profiles/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/generations");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAgentRecommendationGenerationsOutcome(result.GetResultWithOwnership())
+                            : ListAgentRecommendationGenerationsOutcome(std::move(result.GetError()));
+}
+
+ListAgentRecommendationItemsOutcome WellArchitectedClient::ListAgentRecommendationItems(
+    const ListAgentRecommendationItemsRequest& request) const {
+  if (!request.RecommendationArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListAgentRecommendationItems", "Required field: RecommendationArn, is not set");
+    return ListAgentRecommendationItemsOutcome(Aws::Client::AWSError<WellArchitectedErrors>(
+        WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecommendationArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/agent-recommendations/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommendationArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/items");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAgentRecommendationItemsOutcome(result.GetResultWithOwnership())
+                            : ListAgentRecommendationItemsOutcome(std::move(result.GetError()));
+}
+
+ListAgentRecommendationsOutcome WellArchitectedClient::ListAgentRecommendations(const ListAgentRecommendationsRequest& request) const {
+  if (!request.ProfileArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListAgentRecommendations", "Required field: ProfileArn, is not set");
+    return ListAgentRecommendationsOutcome(Aws::Client::AWSError<WellArchitectedErrors>(
+        WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/agent-profiles/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/recommendations");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAgentRecommendationsOutcome(result.GetResultWithOwnership())
+                            : ListAgentRecommendationsOutcome(std::move(result.GetError()));
+}
+
 ListAnswersOutcome WellArchitectedClient::ListAnswers(const ListAnswersRequest& request) const {
   if (!request.WorkloadIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListAnswers", "Required field: WorkloadId, is not set");
@@ -1170,7 +1528,7 @@ ListNotificationsOutcome WellArchitectedClient::ListNotifications(const ListNoti
 ListProfileNotificationsOutcome WellArchitectedClient::ListProfileNotifications(const ListProfileNotificationsRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/profileNotifications/");
+    endpointResolutionOutcome.GetResult().AddPathSegments("/profileNotifications");
   };
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
@@ -1320,6 +1678,46 @@ ListWorkloadsOutcome WellArchitectedClient::ListWorkloads(const ListWorkloadsReq
   return result.IsSuccess() ? ListWorkloadsOutcome(result.GetResultWithOwnership()) : ListWorkloadsOutcome(std::move(result.GetError()));
 }
 
+PutAgentRecommendationFeedbackOutcome WellArchitectedClient::PutAgentRecommendationFeedback(
+    const PutAgentRecommendationFeedbackRequest& request) const {
+  if (!request.RecommendationArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("PutAgentRecommendationFeedback", "Required field: RecommendationArn, is not set");
+    return PutAgentRecommendationFeedbackOutcome(Aws::Client::AWSError<WellArchitectedErrors>(
+        WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecommendationArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/agent-recommendations/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommendationArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/feedback");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutAgentRecommendationFeedbackOutcome(result.GetResultWithOwnership())
+                            : PutAgentRecommendationFeedbackOutcome(std::move(result.GetError()));
+}
+
+StartAgentRecommendationGenerationOutcome WellArchitectedClient::StartAgentRecommendationGeneration(
+    const StartAgentRecommendationGenerationRequest& request) const {
+  if (!request.ProfileArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartAgentRecommendationGeneration", "Required field: ProfileArn, is not set");
+    return StartAgentRecommendationGenerationOutcome(Aws::Client::AWSError<WellArchitectedErrors>(
+        WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/agent-profiles/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/generations");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartAgentRecommendationGenerationOutcome(result.GetResultWithOwnership())
+                            : StartAgentRecommendationGenerationOutcome(std::move(result.GetError()));
+}
+
 TagResourceOutcome WellArchitectedClient::TagResource(const TagResourceRequest& request) const {
   if (!request.WorkloadArnHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("TagResource", "Required field: WorkloadArn, is not set");
@@ -1357,6 +1755,94 @@ UntagResourceOutcome WellArchitectedClient::UntagResource(const UntagResourceReq
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
+}
+
+UpdateAgentContextOutcome WellArchitectedClient::UpdateAgentContext(const UpdateAgentContextRequest& request) const {
+  if (!request.ProfileArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateAgentContext", "Required field: ProfileArn, is not set");
+    return UpdateAgentContextOutcome(Aws::Client::AWSError<WellArchitectedErrors>(
+        WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileArn]", false));
+  }
+  if (!request.IdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateAgentContext", "Required field: Id, is not set");
+    return UpdateAgentContextOutcome(Aws::Client::AWSError<WellArchitectedErrors>(
+        WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/agent-profiles/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/contexts/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateAgentContextOutcome(result.GetResultWithOwnership())
+                            : UpdateAgentContextOutcome(std::move(result.GetError()));
+}
+
+UpdateAgentGoalOutcome WellArchitectedClient::UpdateAgentGoal(const UpdateAgentGoalRequest& request) const {
+  if (!request.ProfileArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateAgentGoal", "Required field: ProfileArn, is not set");
+    return UpdateAgentGoalOutcome(Aws::Client::AWSError<WellArchitectedErrors>(
+        WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileArn]", false));
+  }
+  if (!request.IdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateAgentGoal", "Required field: Id, is not set");
+    return UpdateAgentGoalOutcome(Aws::Client::AWSError<WellArchitectedErrors>(WellArchitectedErrors::MISSING_PARAMETER,
+                                                                               "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/agent-profiles/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/goals/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateAgentGoalOutcome(result.GetResultWithOwnership())
+                            : UpdateAgentGoalOutcome(std::move(result.GetError()));
+}
+
+UpdateAgentProfileOutcome WellArchitectedClient::UpdateAgentProfile(const UpdateAgentProfileRequest& request) const {
+  if (!request.ProfileArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateAgentProfile", "Required field: ProfileArn, is not set");
+    return UpdateAgentProfileOutcome(Aws::Client::AWSError<WellArchitectedErrors>(
+        WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/agent-profiles/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateAgentProfileOutcome(result.GetResultWithOwnership())
+                            : UpdateAgentProfileOutcome(std::move(result.GetError()));
+}
+
+UpdateAgentRecommendationStatusOutcome WellArchitectedClient::UpdateAgentRecommendationStatus(
+    const UpdateAgentRecommendationStatusRequest& request) const {
+  if (!request.RecommendationArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateAgentRecommendationStatus", "Required field: RecommendationArn, is not set");
+    return UpdateAgentRecommendationStatusOutcome(Aws::Client::AWSError<WellArchitectedErrors>(
+        WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecommendationArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/agent-recommendations/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommendationArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/status");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateAgentRecommendationStatusOutcome(result.GetResultWithOwnership())
+                            : UpdateAgentRecommendationStatusOutcome(std::move(result.GetError()));
 }
 
 UpdateAnswerOutcome WellArchitectedClient::UpdateAnswer(const UpdateAnswerRequest& request) const {

@@ -69,7 +69,8 @@ class ListDbNodesRequest : public OdbRequest {
 
   ///@{
   /**
-   * <p>The unique identifier of the VM cluster.</p>
+   * <p>The unique identifier of the VM cluster. You must specify either this
+   * parameter or <code>exadbVmClusterId</code>.</p>
    */
   inline const Aws::String& GetCloudVmClusterId() const { return m_cloudVmClusterId; }
   inline bool CloudVmClusterIdHasBeenSet() const { return m_cloudVmClusterIdHasBeenSet; }
@@ -84,15 +85,37 @@ class ListDbNodesRequest : public OdbRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the Exascale VM cluster. You must specify either
+   * this parameter or <code>cloudVmClusterId</code>.</p>
+   */
+  inline const Aws::String& GetExadbVmClusterId() const { return m_exadbVmClusterId; }
+  inline bool ExadbVmClusterIdHasBeenSet() const { return m_exadbVmClusterIdHasBeenSet; }
+  template <typename ExadbVmClusterIdT = Aws::String>
+  void SetExadbVmClusterId(ExadbVmClusterIdT&& value) {
+    m_exadbVmClusterIdHasBeenSet = true;
+    m_exadbVmClusterId = std::forward<ExadbVmClusterIdT>(value);
+  }
+  template <typename ExadbVmClusterIdT = Aws::String>
+  ListDbNodesRequest& WithExadbVmClusterId(ExadbVmClusterIdT&& value) {
+    SetExadbVmClusterId(std::forward<ExadbVmClusterIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_maxResults{0};
 
   Aws::String m_nextToken;
 
   Aws::String m_cloudVmClusterId;
+
+  Aws::String m_exadbVmClusterId;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_cloudVmClusterIdHasBeenSet = false;
+  bool m_exadbVmClusterIdHasBeenSet = false;
 };
 
 }  // namespace Model

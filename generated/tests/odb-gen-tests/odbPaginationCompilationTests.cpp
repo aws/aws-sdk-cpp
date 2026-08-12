@@ -8,7 +8,9 @@
 
 #include <aws/odb/OdbClientPagination.h>
 #include <aws/odb/OdbPaginationBase.h>
+#include <aws/odb/model/ListExadbVmClustersPaginationTraits.h>
 #include <aws/odb/model/ListAutonomousDatabasesPaginationTraits.h>
+#include <aws/odb/model/ListGiMinorVersionsPaginationTraits.h>
 #include <aws/odb/model/ListOdbPeeringConnectionsPaginationTraits.h>
 #include <aws/odb/model/ListDbSystemShapesPaginationTraits.h>
 #include <aws/odb/model/ListSystemVersionsPaginationTraits.h>
@@ -18,6 +20,7 @@
 #include <aws/odb/model/ListAutonomousDatabaseBackupsPaginationTraits.h>
 #include <aws/odb/model/ListAutonomousDatabaseVersionsPaginationTraits.h>
 #include <aws/odb/model/ListCloudVmClustersPaginationTraits.h>
+#include <aws/odb/model/ListExascaleDbStorageVaultsPaginationTraits.h>
 #include <aws/odb/model/ListAutonomousDatabasePeersPaginationTraits.h>
 #include <aws/odb/model/ListCloudAutonomousVmClustersPaginationTraits.h>
 #include <aws/odb/model/ListAutonomousDatabaseCharacterSetsPaginationTraits.h>

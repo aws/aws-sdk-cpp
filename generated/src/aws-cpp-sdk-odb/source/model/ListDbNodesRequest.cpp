@@ -27,6 +27,10 @@ Aws::String ListDbNodesRequest::SerializePayload() const {
     payload.WithString("cloudVmClusterId", m_cloudVmClusterId);
   }
 
+  if (m_exadbVmClusterIdHasBeenSet) {
+    payload.WithString("exadbVmClusterId", m_exadbVmClusterId);
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -120,6 +120,8 @@
 #include <aws/mediaconnect/model/Encryption.h>
 #include <aws/mediaconnect/model/Entitlement.h>
 #include <aws/mediaconnect/model/EntitlementStatus.h>
+#include <aws/mediaconnect/model/FabricConfiguration.h>
+#include <aws/mediaconnect/model/FabricLatencyMode.h>
 #include <aws/mediaconnect/model/FailoverConfig.h>
 #include <aws/mediaconnect/model/FailoverInputSourcePriorityMode.h>
 #include <aws/mediaconnect/model/FailoverMode.h>

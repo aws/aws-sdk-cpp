@@ -195,7 +195,7 @@ class DbNode {
 
   ///@{
   /**
-   * <p>The amount of local node storage, in gigabytes (GBs), that's allocated on the
+   * <p>The amount of local node storage, in gigabytes (GB), that's allocated on the
    * DB node.</p>
    */
   inline int GetDbNodeStorageSizeInGBs() const { return m_dbNodeStorageSizeInGBs; }

@@ -165,6 +165,39 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Creates an IAM role from the specified role template. The new role takes its
+   * configuration—including its name, path, trust policy, inline and managed
+   * policies, permissions boundary, tags, and maximum session duration—from the role
+   * template version that you specify. For more information about roles, see <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+   * roles</a> in the <i>IAM User Guide</i>.</p> <p>If the template version defines
+   * parameters, use the <code>ReplacementValues</code> parameter to supply the
+   * values that the service substitutes into the role during creation.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AcquireRole">AWS API
+   * Reference</a></p>
+   */
+  virtual Model::AcquireRoleOutcome AcquireRole(const Model::AcquireRoleRequest& request) const;
+
+  /**
+   * A Callable wrapper for AcquireRole that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename AcquireRoleRequestT = Model::AcquireRoleRequest>
+  Model::AcquireRoleOutcomeCallable AcquireRoleCallable(const AcquireRoleRequestT& request) const {
+    return SubmitCallable(&IAMClient::AcquireRole, request);
+  }
+
+  /**
+   * An Async wrapper for AcquireRole that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename AcquireRoleRequestT = Model::AcquireRoleRequest>
+  void AcquireRoleAsync(const AcquireRoleRequestT& request, const AcquireRoleResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&IAMClient::AcquireRole, request, handler, context);
+  }
+
+  /**
    * <p>Adds a new client ID (also known as audience) to the list of client IDs
    * already registered for the specified IAM OpenID Connect (OIDC) provider
    * resource.</p> <p>This operation is idempotent; it does not fail or return an
@@ -2573,6 +2606,39 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Retrieves the account-level properties for the caller's Amazon Web Services
+   * account. Account properties are configuration settings that control account-wide
+   * IAM features such as Role Manager.</p> <p>The service returns properties as
+   * key-value pairs in <code>Namespace/PropertyName</code> format. Each namespace
+   * groups related configuration settings. Use <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutAccountProperties.html">PutAccountProperties</a>
+   * to modify these properties.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountProperties">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetAccountPropertiesOutcome GetAccountProperties(const Model::GetAccountPropertiesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for GetAccountProperties that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetAccountPropertiesRequestT = Model::GetAccountPropertiesRequest>
+  Model::GetAccountPropertiesOutcomeCallable GetAccountPropertiesCallable(const GetAccountPropertiesRequestT& request = {}) const {
+    return SubmitCallable(&IAMClient::GetAccountProperties, request);
+  }
+
+  /**
+   * An Async wrapper for GetAccountProperties that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetAccountPropertiesRequestT = Model::GetAccountPropertiesRequest>
+  void GetAccountPropertiesAsync(const GetAccountPropertiesResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                 const GetAccountPropertiesRequestT& request = {}) const {
+    return SubmitAsync(&IAMClient::GetAccountProperties, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves information about IAM entity usage and IAM quotas in the Amazon Web
    * Services account.</p> <p> For information about IAM quotas, see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
@@ -3247,6 +3313,39 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient,
   void GetRolePolicyAsync(const GetRolePolicyRequestT& request, const GetRolePolicyResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&IAMClient::GetRolePolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about a version of the specified role template. Role
+   * templates define a reusable configuration—including role name and path patterns,
+   * trust policy, inline and managed policies, permissions boundary, tags, and
+   * maximum session duration—that you use to create IAM roles with <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AcquireRole.html">AcquireRole</a>.</p>
+   * <p>If you do not specify a minor version, the service returns the template's
+   * default minor version.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetRoleTemplateVersion">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetRoleTemplateVersionOutcome GetRoleTemplateVersion(const Model::GetRoleTemplateVersionRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetRoleTemplateVersion that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetRoleTemplateVersionRequestT = Model::GetRoleTemplateVersionRequest>
+  Model::GetRoleTemplateVersionOutcomeCallable GetRoleTemplateVersionCallable(const GetRoleTemplateVersionRequestT& request) const {
+    return SubmitCallable(&IAMClient::GetRoleTemplateVersion, request);
+  }
+
+  /**
+   * An Async wrapper for GetRoleTemplateVersion that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetRoleTemplateVersionRequestT = Model::GetRoleTemplateVersionRequest>
+  void GetRoleTemplateVersionAsync(const GetRoleTemplateVersionRequestT& request,
+                                   const GetRoleTemplateVersionResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&IAMClient::GetRoleTemplateVersion, request, handler, context);
   }
 
   /**
@@ -4833,6 +4932,38 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient,
                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                   const ListVirtualMFADevicesRequestT& request = {}) const {
     return SubmitAsync(&IAMClient::ListVirtualMFADevices, request, handler, context);
+  }
+
+  /**
+   * <p>Sets account-level properties for the caller's Amazon Web Services account.
+   * Account properties are configuration settings that control account-wide IAM
+   * features such as Role Manager.</p> <p>Specify properties as key-value pairs in
+   * <code>Namespace/PropertyName</code> format. All properties in a single request
+   * must belong to the same namespace. Use <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountProperties.html">GetAccountProperties</a>
+   * to view the current properties.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutAccountProperties">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutAccountPropertiesOutcome PutAccountProperties(const Model::PutAccountPropertiesRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutAccountProperties that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename PutAccountPropertiesRequestT = Model::PutAccountPropertiesRequest>
+  Model::PutAccountPropertiesOutcomeCallable PutAccountPropertiesCallable(const PutAccountPropertiesRequestT& request) const {
+    return SubmitCallable(&IAMClient::PutAccountProperties, request);
+  }
+
+  /**
+   * An Async wrapper for PutAccountProperties that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename PutAccountPropertiesRequestT = Model::PutAccountPropertiesRequest>
+  void PutAccountPropertiesAsync(const PutAccountPropertiesRequestT& request, const PutAccountPropertiesResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&IAMClient::PutAccountProperties, request, handler, context);
   }
 
   /**

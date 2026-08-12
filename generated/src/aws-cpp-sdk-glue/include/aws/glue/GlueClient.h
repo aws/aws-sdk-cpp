@@ -7341,8 +7341,8 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Starts a materialized view refresh task run, for a specified table and
-   * columns.</p><p><h3>See Also:</h3>   <a
+   * <p>Starts a materialized view refresh task run for a specified materialized
+   * view.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartMaterializedViewRefreshTaskRun">AWS
    * API Reference</a></p>
    */
@@ -7537,8 +7537,8 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Stops a materialized view refresh task run, for a specified table and
-   * columns.</p><p><h3>See Also:</h3>   <a
+   * <p>Stops a materialized view refresh task run for a specified materialized
+   * view.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopMaterializedViewRefreshTaskRun">AWS
    * API Reference</a></p>
    */

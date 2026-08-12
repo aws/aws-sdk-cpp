@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconnect/MediaConnectRequest.h>
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
+#include <aws/mediaconnect/model/FabricConfiguration.h>
 #include <aws/mediaconnect/model/MaintenanceConfiguration.h>
 #include <aws/mediaconnect/model/RouterOutputConfiguration.h>
 #include <aws/mediaconnect/model/RouterOutputTier.h>
@@ -156,6 +157,26 @@ class UpdateRouterOutputRequest : public MediaConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The updated fabric configuration settings for the router output. You cannot
+   * update the fabric configuration while the output has an active route. You must
+   * unroute the output before updating the fabric configuration.</p>
+   */
+  inline const FabricConfiguration& GetFabricConfiguration() const { return m_fabricConfiguration; }
+  inline bool FabricConfigurationHasBeenSet() const { return m_fabricConfigurationHasBeenSet; }
+  template <typename FabricConfigurationT = FabricConfiguration>
+  void SetFabricConfiguration(FabricConfigurationT&& value) {
+    m_fabricConfigurationHasBeenSet = true;
+    m_fabricConfiguration = std::forward<FabricConfigurationT>(value);
+  }
+  template <typename FabricConfigurationT = FabricConfiguration>
+  UpdateRouterOutputRequest& WithFabricConfiguration(FabricConfigurationT&& value) {
+    SetFabricConfiguration(std::forward<FabricConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -170,6 +191,8 @@ class UpdateRouterOutputRequest : public MediaConnectRequest {
   RouterOutputTier m_tier{RouterOutputTier::NOT_SET};
 
   MaintenanceConfiguration m_maintenanceConfiguration;
+
+  FabricConfiguration m_fabricConfiguration;
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
@@ -177,6 +200,7 @@ class UpdateRouterOutputRequest : public MediaConnectRequest {
   bool m_routingScopeHasBeenSet = false;
   bool m_tierHasBeenSet = false;
   bool m_maintenanceConfigurationHasBeenSet = false;
+  bool m_fabricConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

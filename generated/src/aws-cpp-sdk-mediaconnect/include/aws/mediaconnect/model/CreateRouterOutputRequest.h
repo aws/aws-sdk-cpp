@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconnect/MediaConnectRequest.h>
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
+#include <aws/mediaconnect/model/FabricConfiguration.h>
 #include <aws/mediaconnect/model/MaintenanceConfiguration.h>
 #include <aws/mediaconnect/model/RouterOutputConfiguration.h>
 #include <aws/mediaconnect/model/RouterOutputTier.h>
@@ -205,6 +206,24 @@ class CreateRouterOutputRequest : public MediaConnectRequest {
 
   ///@{
   /**
+   * <p>The fabric configuration settings for the router output.</p>
+   */
+  inline const FabricConfiguration& GetFabricConfiguration() const { return m_fabricConfiguration; }
+  inline bool FabricConfigurationHasBeenSet() const { return m_fabricConfigurationHasBeenSet; }
+  template <typename FabricConfigurationT = FabricConfiguration>
+  void SetFabricConfiguration(FabricConfigurationT&& value) {
+    m_fabricConfigurationHasBeenSet = true;
+    m_fabricConfiguration = std::forward<FabricConfigurationT>(value);
+  }
+  template <typename FabricConfigurationT = FabricConfiguration>
+  CreateRouterOutputRequest& WithFabricConfiguration(FabricConfigurationT&& value) {
+    SetFabricConfiguration(std::forward<FabricConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A unique identifier for the request to ensure idempotency.</p>
    */
   inline const Aws::String& GetClientToken() const { return m_clientToken; }
@@ -239,6 +258,8 @@ class CreateRouterOutputRequest : public MediaConnectRequest {
 
   Aws::Map<Aws::String, Aws::String> m_tags;
 
+  FabricConfiguration m_fabricConfiguration;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_nameHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
@@ -249,6 +270,7 @@ class CreateRouterOutputRequest : public MediaConnectRequest {
   bool m_availabilityZoneHasBeenSet = false;
   bool m_maintenanceConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_fabricConfigurationHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

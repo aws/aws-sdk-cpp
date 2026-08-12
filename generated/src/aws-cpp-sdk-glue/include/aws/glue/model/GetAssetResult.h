@@ -26,6 +26,12 @@ class JsonValue;
 }  // namespace Utils
 namespace Glue {
 namespace Model {
+/**
+ * <p>The asset metadata returned by the <code>GetAsset</code>
+ * operation.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetAssetOutput">AWS
+ * API Reference</a></p>
+ */
 class GetAssetResult {
  public:
   AWS_GLUE_API GetAssetResult() = default;

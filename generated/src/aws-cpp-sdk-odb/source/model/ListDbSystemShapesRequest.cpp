@@ -31,6 +31,10 @@ Aws::String ListDbSystemShapesRequest::SerializePayload() const {
     payload.WithString("availabilityZoneId", m_availabilityZoneId);
   }
 
+  if (m_shapeFamilyHasBeenSet) {
+    payload.WithString("shapeFamily", m_shapeFamily);
+  }
+
   return payload.View().WriteReadable();
 }
 
