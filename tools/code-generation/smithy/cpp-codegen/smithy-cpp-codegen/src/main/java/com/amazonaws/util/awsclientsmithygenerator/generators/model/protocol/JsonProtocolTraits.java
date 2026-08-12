@@ -81,18 +81,29 @@ public final class JsonProtocolTraits implements ProtocolTraits {
 
     @Override
     public java.util.List<String> serdeIncludes(FileKind kind) {
-        // Headers forward-declare JsonValue/JsonView; no serializer include.
-        if (kind == FileKind.SUBOBJECT_HEADER || kind == FileKind.RESULT_HEADER) {
-            return java.util.List.of();
+        switch (kind) {
+            // Headers forward-declare JsonValue/JsonView; no serializer include.
+            case SUBOBJECT_HEADER:
+            case RESULT_HEADER:
+                return java.util.List.of();
+            // All source kinds share one union (supersets allowed: a .cpp may carry an
+            // include it doesn't strictly use). Usings are unchanged; only #includes widen.
+            case SUBOBJECT_SOURCE:
+            case REQUEST_SOURCE:
+            case RESULT_SOURCE:
+            case STREAMING_RESULT_SOURCE:
+            case EVENT_HANDLER_SOURCE:
+            case INITIAL_RESPONSE_SOURCE:
+                return java.util.List.of(
+                    "aws/core/utils/json/JsonSerializer.h",
+                    "aws/core/utils/UnreferencedParam.h",
+                    "aws/core/utils/memory/stl/AWSStringStream.h",
+                    "aws/core/utils/HashingUtils.h",
+                    "utility");
+            default:
+                throw new UnsupportedOperationException(
+                    "No serde includes defined for FileKind " + kind + " in JsonProtocolTraits");
         }
-        // All source kinds share one union (supersets allowed: a .cpp may carry an
-        // include it doesn't strictly use). Usings are unchanged; only #includes widen.
-        return java.util.List.of(
-            "aws/core/utils/json/JsonSerializer.h",
-            "aws/core/utils/UnreferencedParam.h",
-            "aws/core/utils/memory/stl/AWSStringStream.h",
-            "aws/core/utils/HashingUtils.h",
-            "utility");
     }
 
     @Override

@@ -67,17 +67,28 @@ public final class RestXmlProtocolTraits implements ProtocolTraits {
 
     @Override
     public java.util.List<String> serdeIncludes(FileKind kind) {
-        // Sub-object and result headers forward-declare XmlNode/XmlDocument; no serializer include.
-        if (kind == FileKind.SUBOBJECT_HEADER || kind == FileKind.RESULT_HEADER) {
-            return java.util.List.of();
+        switch (kind) {
+            // Sub-object and result headers forward-declare XmlNode/XmlDocument; no serializer include.
+            case SUBOBJECT_HEADER:
+            case RESULT_HEADER:
+                return java.util.List.of();
+            // All source kinds share one union (supersets allowed). Usings are unchanged.
+            case SUBOBJECT_SOURCE:
+            case REQUEST_SOURCE:
+            case RESULT_SOURCE:
+            case STREAMING_RESULT_SOURCE:
+            case EVENT_HANDLER_SOURCE:
+            case INITIAL_RESPONSE_SOURCE:
+                return java.util.List.of(
+                    "aws/core/utils/xml/XmlSerializer.h",
+                    "aws/core/utils/memory/stl/AWSStringStream.h",
+                    "aws/core/utils/UnreferencedParam.h",
+                    "aws/core/utils/HashingUtils.h",
+                    "utility");
+            default:
+                throw new UnsupportedOperationException(
+                    "No serde includes defined for FileKind " + kind + " in RestXmlProtocolTraits");
         }
-        // All source kinds share one union (supersets allowed). Usings are unchanged.
-        return java.util.List.of(
-            "aws/core/utils/xml/XmlSerializer.h",
-            "aws/core/utils/memory/stl/AWSStringStream.h",
-            "aws/core/utils/UnreferencedParam.h",
-            "aws/core/utils/HashingUtils.h",
-            "utility");
     }
 
     @Override

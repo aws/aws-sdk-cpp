@@ -93,7 +93,12 @@ public final class QueryXmlProtocolTraits implements ProtocolTraits {
             case RESULT_HEADER:
                 // Query/EC2 result headers forward-declare XmlDocument; no serde include.
                 return java.util.List.of();
-            default:
+            case SUBOBJECT_SOURCE:
+            case REQUEST_SOURCE:
+            case RESULT_SOURCE:
+            case STREAMING_RESULT_SOURCE:
+            case EVENT_HANDLER_SOURCE:
+            case INITIAL_RESPONSE_SOURCE:
                 // All source kinds share one union (supersets allowed). Usings are unchanged.
                 // No Query source arm carried <utility>, so the union omits it.
                 return java.util.List.of(
@@ -103,6 +108,9 @@ public final class QueryXmlProtocolTraits implements ProtocolTraits {
                     "aws/core/utils/StringUtils.h",
                     "aws/core/utils/memory/stl/AWSStringStream.h",
                     "aws/core/utils/HashingUtils.h");
+            default:
+                throw new UnsupportedOperationException(
+                    "No serde includes defined for FileKind " + kind + " in QueryXmlProtocolTraits");
         }
     }
 
