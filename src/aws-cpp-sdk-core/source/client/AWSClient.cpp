@@ -145,7 +145,8 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
         configuration.awsChunkedBufferSize),
         m_userAgentInterceptor},
     m_enableNewRetries{Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) == "true"},
-    m_disableExpectHeader(configuration.disableExpectHeader)
+    m_disableExpectHeader(configuration.disableExpectHeader),
+    m_compactXmlSerialization(configuration.compactXmlSerialization)
 {
 }
 
@@ -176,7 +177,8 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
         configuration.awsChunkedBufferSize),
         m_userAgentInterceptor},
     m_enableNewRetries{Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) == "true"},
-    m_disableExpectHeader(configuration.disableExpectHeader)
+    m_disableExpectHeader(configuration.disableExpectHeader),
+    m_compactXmlSerialization(configuration.compactXmlSerialization)
 {
 }
 
@@ -916,6 +918,9 @@ void AWSClient::BuildHttpRequest(const Aws::AmazonWebServiceRequest& request, co
     //do headers first since the request likely will set content-length as its own header.
     AddHeadersToRequest(httpRequest, request.GetHeaders());
     AddHeadersToRequest(httpRequest, request.GetAdditionalCustomHeaders());
+
+    // Propagate the compact XML serialization preference to the request before its payload is serialized.
+    request.SetUseCompactXmlPayload(m_compactXmlSerialization);
 
     if (request.IsEventStreamRequest())
     {

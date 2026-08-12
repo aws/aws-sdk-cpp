@@ -248,6 +248,17 @@ namespace Aws
          * @return true of a request has a user set checksum
          */
         inline virtual bool ChecksumAlgorithmIsSet() const { return false; }
+
+        /**
+         * Set by the client from ClientConfiguration::compactXmlSerialization before the payload is
+         * serialized. When true, XML request payloads are serialized without pretty-printing
+         * whitespace (indentation and newlines), producing a smaller payload.
+         */
+        void SetUseCompactXmlPayload(bool useCompactXmlPayload) const { m_useCompactXmlPayload = useCompactXmlPayload; }
+        /**
+         * Whether the XML request payload should be serialized in compact form.
+         */
+        bool ShouldUseCompactXmlPayload() const { return m_useCompactXmlPayload; }
     protected:
         /**
          * Default does nothing. Override this to convert what would otherwise be the payload of the
@@ -268,6 +279,7 @@ namespace Aws
         mutable std::shared_ptr<Aws::Http::ServiceSpecificParameters> m_serviceSpecificParameters;
         mutable Aws::Set<Client::UserAgentFeature> m_userAgentFeatures;
         mutable Aws::RetryContext m_retryContext;
+        mutable bool m_useCompactXmlPayload = false;
     };
 
 } // namespace Aws

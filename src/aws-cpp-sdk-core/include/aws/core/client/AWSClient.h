@@ -365,6 +365,7 @@ namespace Aws
             Aws::Vector<std::shared_ptr<smithy::interceptor::Interceptor>> m_interceptors;
             bool m_enableNewRetries;
             bool m_disableExpectHeader;
+            bool m_compactXmlSerialization;
         };
 
         AWS_CORE_API Aws::String GetAuthorizationHeader(const Aws::Http::HttpRequest& httpRequest);

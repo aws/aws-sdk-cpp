@@ -119,7 +119,7 @@ Aws::String ${typeInfo.className}::SerializePayload() const
   ${CppViewHelper.computeMemberVariableName($shape.payload)}.AddToNode(parentNode);
   if(parentNode.HasChildren())
   {
-    return payloadDoc.ConvertToString();
+    return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
   }
 
   return {};
@@ -128,7 +128,7 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 #set($useRequiredField = true)
 #set($callFromRequestShape = true)
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/ModelClassMembersXmlizeSource.vm")
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToString(ShouldUseCompactXmlPayload());
 #end
 #else
   return {};
