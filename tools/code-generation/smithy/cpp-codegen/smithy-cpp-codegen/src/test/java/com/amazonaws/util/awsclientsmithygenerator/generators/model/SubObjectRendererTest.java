@@ -150,13 +150,6 @@ class SubObjectRendererTest {
     }
 
     @Test
-    void nonBlobSource_omitsHashingUtils() {
-        String c = renderAll().get("ContentBlock.cpp");
-        assertFalse(c.contains("HashingUtils.h"),
-            "A sub-object without a blob member must not include HashingUtils.h: " + c);
-    }
-
-    @Test
     void memberlessShape_omitsPrivateSection() {
         // C2J emits the private: section only when the shape has members
         // (ModelClassMembersAndInlines.vm: `#if($shape.members.size() > 0 ...`). A memberless

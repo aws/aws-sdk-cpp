@@ -85,14 +85,14 @@ public final class ResultRenderer implements ShapeRenderer {
             writer.write("#include <utility>");
             writer.write("");
 
-            writer.withNamespace("Aws", () -> {
+            ModelFile.modelNamespace(writer, ctx.namespace(),
+                () -> {
             writer.write("template <typename RESULT_TYPE>");
             writer.write("class AmazonWebServiceResult;");
             writer.write("");
             ctx.protocolTraits().writeResultForwardDeclarations(writer);
-
-            writer.withNamespace(ctx.namespace(), () ->
-                writer.withNamespace("Model", () -> {
+                },
+                () -> {
 
             if (shape.getTrait(DocumentationTrait.class).isPresent()) {
                 MemberRenderer.renderClassDocComment(writer, shape, ctx.smithyServiceName(), ctx.service().getVersion());
@@ -132,8 +132,7 @@ public final class ResultRenderer implements ShapeRenderer {
                 }
             });
             writer.write("");
-                }));
-            });
+                });
         });
     }
 
@@ -143,13 +142,9 @@ public final class ResultRenderer implements ShapeRenderer {
         String fileName = "source/model/" + className + ".cpp";
         writerDelegator.useFileWriter(fileName, writer -> {
 
-            List<String> includes = new java.util.ArrayList<>(
-                IncludeSets.resultSourceBase(ctx.smithyServiceName(), className));
-            includes.addAll(ctx.protocolTraits().serdeIncludes(FileKind.RESULT_SOURCE));
-            // Serde-implementation includes derived from members (HashingUtils.h for blob Base64
-            // serde, AWSStringStream.h for header/query members), matching C2J computeSourceIncludes.
-            includes.addAll(CppTypeMapper.getSourceIncludesForShape(shape, ctx.model(), ctx.smithyServiceName()));
-            IncludeSets.emit(writer, includes);
+            IncludeSets.emitSourceIncludes(writer,
+                IncludeSets.resultSourceBase(ctx.smithyServiceName(), className),
+                ctx.protocolTraits(), FileKind.RESULT_SOURCE);
             writer.write("");
             writer.write("using namespace Aws::$L::Model;", ctx.namespace());
             IncludeSets.emitUsings(writer, ctx.protocolTraits().serdeUsings(FileKind.RESULT_SOURCE));
@@ -185,13 +180,13 @@ public final class ResultRenderer implements ShapeRenderer {
             writer.write("#include <utility>");
             writer.write("");
 
-            writer.withNamespace("Aws", () -> {
+            ModelFile.modelNamespace(writer, ctx.namespace(),
+                () -> {
             writer.write("template <typename RESULT_TYPE>");
             writer.write("class AmazonWebServiceResult;");
             writer.write("");
-
-            writer.withNamespace(ctx.namespace(), () ->
-                writer.withNamespace("Model", () -> {
+                },
+                () -> {
 
             if (shape.getTrait(DocumentationTrait.class).isPresent()) {
                 MemberRenderer.renderClassDocComment(writer, shape, ctx.smithyServiceName(), ctx.service().getVersion());
@@ -250,8 +245,7 @@ public final class ResultRenderer implements ShapeRenderer {
                 writer.write("bool m_requestIdHasBeenSet = false;");
             });
             writer.write("");
-                }));
-            });
+                });
         });
     }
 
@@ -265,13 +259,9 @@ public final class ResultRenderer implements ShapeRenderer {
         String streamField = CppNames.fieldName(streamingPayloadMemberName(shape));
         String fileName = "source/model/" + className + ".cpp";
         writerDelegator.useFileWriter(fileName, writer -> {
-            List<String> includes = new java.util.ArrayList<>(
-                IncludeSets.streamingResultSourceBase(ctx.smithyServiceName(), className));
-            includes.addAll(ctx.protocolTraits().serdeIncludes(FileKind.STREAMING_RESULT_SOURCE));
-            // Serde-implementation includes derived from members (e.g. HashingUtils.h for the
-            // blob payload member's Base64 serde), matching C2J computeSourceIncludes.
-            includes.addAll(CppTypeMapper.getSourceIncludesForShape(shape, ctx.model(), ctx.smithyServiceName()));
-            IncludeSets.emit(writer, includes);
+            IncludeSets.emitSourceIncludes(writer,
+                IncludeSets.streamingResultSourceBase(ctx.smithyServiceName(), className),
+                ctx.protocolTraits(), FileKind.STREAMING_RESULT_SOURCE);
             writer.write("");
             writer.write("using namespace Aws::$L::Model;", ctx.namespace());
             writer.write("using namespace Aws::Utils::Stream;");

@@ -21,4 +21,17 @@ final class ModelFile {
             writer.withNamespace(namespace, () ->
                 writer.withNamespace("Model", body)));
     }
+
+    /**
+     * Like {@link #modelNamespace(CppWriter, String, Runnable)} but emits {@code awsProlog}
+     * directly inside {@code Aws} — before opening {@code namespace} — for headers that must
+     * place forward declarations (e.g. {@code AmazonWebServiceResult}, serde value types) at
+     * {@code Aws} scope. The body still renders inside {@code Aws::<namespace>::Model}.
+     */
+    static void modelNamespace(CppWriter writer, String namespace, Runnable awsProlog, Runnable body) {
+        writer.withNamespace("Aws", () -> {
+            awsProlog.run();
+            writer.withNamespace(namespace, () -> writer.withNamespace("Model", body));
+        });
+    }
 }

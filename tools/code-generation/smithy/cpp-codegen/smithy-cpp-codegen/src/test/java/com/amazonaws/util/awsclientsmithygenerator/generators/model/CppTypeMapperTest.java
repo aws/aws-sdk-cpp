@@ -426,45 +426,4 @@ class CppTypeMapperTest {
         assertTrue(includes.contains("<aws/core/utils/memory/stl/AWSString.h>"));
         assertTrue(includes.contains("<aws/myservice/model/Item.h>"));
     }
-
-    // --- getSourceIncludesForShape tests (serde-implementation includes) ---
-
-    @Test
-    void getSourceIncludesForShape_withBlobMember_includesHashingUtils() {
-        // C2J adds HashingUtils.h to the SOURCE of any shape with a blob member (or list/map of
-        // blobs) because blob serde uses Base64Encode/Decode (CppViewHelper.computeSourceIncludes).
-        BlobShape blob = BlobShape.builder().id("com.example#Body").build();
-        StructureShape struct = StructureShape.builder()
-            .id("com.example#AudioSource").addMember("bytes", blob.getId()).build();
-        Model model = Model.builder().addShapes(blob, struct).build();
-
-        List<String> inc = CppTypeMapper.getSourceIncludesForShape(struct, model, "myservice");
-        assertTrue(inc.contains("aws/core/utils/HashingUtils.h"), inc.toString());
-    }
-
-    @Test
-    void getSourceIncludesForShape_withListOfBlobs_includesHashingUtils() {
-        BlobShape blob = BlobShape.builder().id("com.example#Body").build();
-        ListShape list = ListShape.builder()
-            .id("com.example#BodyList")
-            .member(MemberShape.builder().id("com.example#BodyList$member").target("com.example#Body").build())
-            .build();
-        StructureShape struct = StructureShape.builder()
-            .id("com.example#MyShape").addMember("chunks", list.getId()).build();
-        Model model = Model.builder().addShapes(blob, list, struct).build();
-
-        List<String> inc = CppTypeMapper.getSourceIncludesForShape(struct, model, "myservice");
-        assertTrue(inc.contains("aws/core/utils/HashingUtils.h"), inc.toString());
-    }
-
-    @Test
-    void getSourceIncludesForShape_withoutBlob_noHashingUtils() {
-        StringShape str = StringShape.builder().id("com.example#Str").build();
-        StructureShape struct = StructureShape.builder()
-            .id("com.example#MyShape").addMember("name", str.getId()).build();
-        Model model = Model.builder().addShapes(str, struct).build();
-
-        List<String> inc = CppTypeMapper.getSourceIncludesForShape(struct, model, "myservice");
-        assertFalse(inc.contains("aws/core/utils/HashingUtils.h"), inc.toString());
-    }
 }

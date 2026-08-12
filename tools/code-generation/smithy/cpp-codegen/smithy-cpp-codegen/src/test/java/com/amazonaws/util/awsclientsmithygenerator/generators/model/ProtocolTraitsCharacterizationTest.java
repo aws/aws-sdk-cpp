@@ -242,7 +242,6 @@ class ProtocolTraitsCharacterizationTest {
         assertTrue(c.contains("Nested& Nested::operator=(JsonView jsonValue) {"), c);
         assertTrue(c.contains("JsonValue Nested::Jsonize() const {"), c);
         assertTrue(c.contains("JsonValue payload;"), c);
-        assertFalse(c.contains("XmlSerializer.h"), c);
     }
 
     @Test
@@ -253,7 +252,6 @@ class ProtocolTraitsCharacterizationTest {
         assertTrue(c.contains("Nested::Nested(const XmlNode& xmlNode) { *this = xmlNode; }"), c);
         assertTrue(c.contains("Nested& Nested::operator=(const XmlNode& xmlNode) {"), c);
         assertTrue(c.contains("void Nested::AddToNode(XmlNode& parentNode) const {"), c);
-        assertFalse(c.contains("JsonSerializer.h"), c);
     }
 
     @ParameterizedTest
@@ -305,27 +303,11 @@ class ProtocolTraitsCharacterizationTest {
     }
 
     @ParameterizedTest
-    @EnumSource(value = Protocol.class, names = {"REST_XML", "QUERY_XML", "EC2"})
-    void xmlLike_resultSource_omitsUnreferencedParam(Protocol p) {
-        // C2J XML-family result templates (rest-xml, query, ec2) do not include UnreferencedParam.h.
-        String c = file(p, "DoThingResult.cpp");
-        assertFalse(c.contains("UnreferencedParam.h"), c);
-    }
-
-    @ParameterizedTest
     @EnumSource(value = Protocol.class, names = {"JSON", "REST_JSON", "REST_XML", "CBOR"})
     void nonQuery_resultSource_includesAWSStringStream(Protocol p) {
         // C2J emits AWSStringStream.h in JSON/REST-JSON/REST-XML/CBOR result sources.
         String c = file(p, "DoThingResult.cpp");
         assertTrue(c.contains("#include <aws/core/utils/memory/stl/AWSStringStream.h>"), c);
-    }
-
-    @ParameterizedTest
-    @EnumSource(value = Protocol.class, names = {"QUERY_XML", "EC2"})
-    void queryLike_resultSource_omitsAWSStringStream(Protocol p) {
-        // Query/EC2 result sources build no string stream, so they omit AWSStringStream.h.
-        String c = file(p, "DoThingResult.cpp");
-        assertFalse(c.contains("AWSStringStream.h"), c);
     }
 
     @ParameterizedTest
@@ -365,7 +347,6 @@ class ProtocolTraitsCharacterizationTest {
         assertTrue(c.contains("using namespace Aws::Example::Model;"), c);
         assertTrue(c.contains("using namespace Aws::Utils::Json;"), c);
         assertTrue(c.contains("using namespace Aws::Utils;"), c);
-        assertFalse(c.contains("XmlSerializer.h"), c);
     }
 
     @Test
@@ -373,23 +354,19 @@ class ProtocolTraitsCharacterizationTest {
         String c = file(Protocol.REST_XML, "DoThingRequest.cpp");
         assertTrue(c.contains("#include <aws/core/utils/xml/XmlSerializer.h>"), c);
         assertTrue(c.contains("using namespace Aws::Utils::Xml;"), c);
-        assertFalse(c.contains("JsonSerializer.h"), c);
     }
 
     @ParameterizedTest
     @EnumSource(value = Protocol.class, names = {"QUERY_XML", "EC2"})
     void queryLike_requestSource_usesStringStreamNotXmlSerializer(Protocol p) {
         // Query/EC2 request bodies serialize to a query string (Action=...&Version=...), so the
-        // source uses StringUtils + AWSStringStream and NOT the XML serializer, matching C2J
-        // (QueryRequestSource.vm). The XML serde headers belong to the result/sub-object files.
+        // source uses StringUtils + AWSStringStream, matching C2J (QueryRequestSource.vm).
         String c = file(p, "DoThingRequest.cpp");
         assertTrue(c.contains("#include <aws/core/utils/StringUtils.h>"), c);
         assertTrue(c.contains("#include <aws/core/utils/memory/stl/AWSStringStream.h>"), c);
-        assertFalse(c.contains("XmlSerializer.h"), c);
+        // Usings are held exact: Query/EC2 request sources must not open the XML namespace.
         assertFalse(c.contains("using namespace Aws::Utils::Xml;"), c);
         assertFalse(c.contains("JsonSerializer.h"), c);
-        // Query/EC2 request sources do not include <utility> (C2J QueryRequestSource.vm omits it).
-        assertFalse(c.contains("#include <utility>"), c);
     }
 
     @ParameterizedTest
@@ -544,14 +521,5 @@ class ProtocolTraitsCharacterizationTest {
         String c = file(p, "DoThingResult.cpp");
         assertTrue(c.contains("#include <aws/core/utils/logging/LogMacros.h>"), c);
         assertTrue(c.contains("using namespace Aws::Utils::Logging;"), c);
-    }
-
-    @ParameterizedTest
-    @EnumSource(value = Protocol.class, names = {"JSON", "REST_JSON", "REST_XML", "CBOR"})
-    void nonQueryResultSource_omitsLogMacros(Protocol p) {
-        // Only Query/EC2 results reference the logging macros; other protocols must not
-        // pull in LogMacros.h.
-        String c = file(p, "DoThingResult.cpp");
-        assertFalse(c.contains("LogMacros.h"), c);
     }
 }

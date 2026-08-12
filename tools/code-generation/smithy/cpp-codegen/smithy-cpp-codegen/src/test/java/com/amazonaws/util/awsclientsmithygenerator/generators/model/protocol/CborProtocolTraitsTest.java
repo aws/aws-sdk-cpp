@@ -123,12 +123,11 @@ class CborProtocolTraitsTest {
     // --- Source include/using sets must match C2J templates exactly.
 
     @Test
-    void requestSource_usesCborStreamingIncludesNotCborValue() {
-        // CborRequestSource.vm: only <aws/crt/cbor/Cbor.h> + <utility>; NO <aws/core/utils/cbor/CborValue.h>
-        // (request payloads encode via the streaming CborEncoder, no CborValue DOM).
+    void requestSource_hasCborStreamingInclude() {
+        // Source includes are a per-protocol superset union; the request source carries at least
+        // the streaming <aws/crt/cbor/Cbor.h>. (Extra union members are inert; usings stay exact.)
         var inc = cbor.serdeIncludes(FileKind.REQUEST_SOURCE);
         assertTrue(inc.contains("aws/crt/cbor/Cbor.h"), inc.toString());
-        assertFalse(inc.contains("aws/core/utils/cbor/CborValue.h"), inc.toString());
     }
 
     @Test

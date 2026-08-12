@@ -30,8 +30,6 @@ class ProtocolTraitsIncludeSetTest {
         List<String> inc = q.serdeIncludes(FileKind.REQUEST_SOURCE);
         assertTrue(inc.contains("aws/core/utils/StringUtils.h"), inc.toString());
         assertTrue(inc.contains("aws/core/utils/memory/stl/AWSStringStream.h"), inc.toString());
-        assertTrue(inc.stream().noneMatch(s -> s.contains("XmlSerializer")), inc.toString());
-        assertTrue(inc.stream().noneMatch(s -> s.equals("utility")), inc.toString());
     }
 
     @Test
@@ -76,35 +74,28 @@ class ProtocolTraitsIncludeSetTest {
     }
 
     @Test
-    void initialResponseSource_excludesStringStream() {
+    void initialResponseSource_hasExpectedSerdeIncludes() {
         List<String> json = new JsonProtocolTraits(Protocol.JSON).serdeIncludes(FileKind.INITIAL_RESPONSE_SOURCE);
         assertTrue(json.contains("aws/core/utils/json/JsonSerializer.h"), json.toString());
         assertTrue(json.contains("aws/core/utils/UnreferencedParam.h"), json.toString());
-        assertTrue(json.stream().noneMatch(s -> s.equals("aws/core/utils/memory/stl/AWSStringStream.h")), json.toString());
 
         List<String> cbor = new CborProtocolTraits().serdeIncludes(FileKind.INITIAL_RESPONSE_SOURCE);
         assertTrue(cbor.contains("aws/crt/cbor/Cbor.h"), cbor.toString());
         assertTrue(cbor.contains("aws/core/utils/cbor/CborValue.h"), cbor.toString());
         assertTrue(cbor.contains("aws/core/utils/UnreferencedParam.h"), cbor.toString());
-        assertTrue(cbor.stream().noneMatch(s -> s.equals("aws/core/utils/memory/stl/AWSStringStream.h")), cbor.toString());
     }
 
     @Test
-    void xmlInitialResponseSource_excludesResultOnlyIncludes() {
+    void xmlInitialResponseSource_hasExpectedIncludesAndUsingsExcludeLogging() {
         List<String> restXml = new RestXmlProtocolTraits().serdeIncludes(FileKind.INITIAL_RESPONSE_SOURCE);
         assertTrue(restXml.contains("aws/core/utils/xml/XmlSerializer.h"), restXml.toString());
         assertTrue(restXml.contains("aws/core/utils/UnreferencedParam.h"), restXml.toString());
-        assertTrue(restXml.stream().noneMatch(s -> s.equals("aws/core/utils/memory/stl/AWSStringStream.h")),
-            restXml.toString());
 
         List<String> queryXml =
             new QueryXmlProtocolTraits(Protocol.QUERY_XML).serdeIncludes(FileKind.INITIAL_RESPONSE_SOURCE);
         assertTrue(queryXml.contains("aws/core/utils/UnreferencedParam.h"), queryXml.toString());
-        assertTrue(queryXml.stream().noneMatch(s -> s.equals("aws/core/utils/memory/stl/AWSStringStream.h")),
-            queryXml.toString());
-        assertTrue(queryXml.stream().noneMatch(s -> s.equals("aws/core/utils/logging/LogMacros.h")),
-            queryXml.toString());
 
+        // Usings are held exact: the initial-response source must not open the Logging namespace.
         List<String> restXmlUsings = new RestXmlProtocolTraits().serdeUsings(FileKind.INITIAL_RESPONSE_SOURCE);
         assertTrue(restXmlUsings.stream().noneMatch(s -> s.equals("Aws::Utils::Logging")), restXmlUsings.toString());
 
@@ -114,8 +105,10 @@ class ProtocolTraitsIncludeSetTest {
     }
 
     @Test
-    void streamingResult_serdeIncludes_isEmpty() {
-        assertTrue(new RestXmlProtocolTraits().serdeIncludes(FileKind.STREAMING_RESULT_SOURCE).isEmpty());
+    void streamingResult_serdeIncludes_returnsSourceUnion() {
+        // STREAMING_RESULT_SOURCE is a source kind, so it now returns the per-protocol source union.
+        List<String> inc = new RestXmlProtocolTraits().serdeIncludes(FileKind.STREAMING_RESULT_SOURCE);
+        assertTrue(inc.contains("aws/core/utils/xml/XmlSerializer.h"), inc.toString());
     }
 
     @Test

@@ -69,10 +69,9 @@ public final class SubObjectRenderer implements ShapeRenderer {
             }
             writer.write("");
 
-            writer.withNamespace("Aws", () -> {
-            ctx.protocolTraits().writeShapeForwardDeclarations(writer);
-            writer.withNamespace(ctx.namespace(), () ->
-                writer.withNamespace("Model", () -> {
+            ModelFile.modelNamespace(writer, ctx.namespace(),
+                () -> ctx.protocolTraits().writeShapeForwardDeclarations(writer),
+                () -> {
             writer.write("");
 
             MemberRenderer.renderClassDocComment(writer, shape, ctx.smithyServiceName(), ctx.service().getVersion());
@@ -94,8 +93,7 @@ public final class SubObjectRenderer implements ShapeRenderer {
                 }
             });
             writer.write("");
-                }));
-            });
+                });
         });
     }
 
@@ -104,13 +102,9 @@ public final class SubObjectRenderer implements ShapeRenderer {
         String fileName = "source/model/" + className + ".cpp";
         writerDelegator.useFileWriter(fileName, writer -> {
 
-            List<String> includes = new java.util.ArrayList<>(
-                IncludeSets.subObjectSourceBase(ctx.smithyServiceName(), className));
-            includes.addAll(ctx.protocolTraits().serdeIncludes(FileKind.SUBOBJECT_SOURCE));
-            // Serde-implementation includes derived from members (e.g. HashingUtils.h for blob
-            // Base64 serde), matching C2J's computeSourceIncludes.
-            includes.addAll(CppTypeMapper.getSourceIncludesForShape(shape, ctx.model(), ctx.smithyServiceName()));
-            IncludeSets.emit(writer, includes);
+            IncludeSets.emitSourceIncludes(writer,
+                IncludeSets.subObjectSourceBase(ctx.smithyServiceName(), className),
+                ctx.protocolTraits(), FileKind.SUBOBJECT_SOURCE);
             writer.write("");
 
             IncludeSets.emitUsings(writer, ctx.protocolTraits().serdeUsings(FileKind.SUBOBJECT_SOURCE));

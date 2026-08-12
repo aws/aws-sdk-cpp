@@ -230,8 +230,8 @@ public final class EventStreamRenderer implements ShapeRenderer {
             includes.add("aws/core/utils/logging/LogMacros.h");
             includes.add("aws/" + ctx.smithyServiceName() + "/" + ctx.namespace() + "ErrorMarshaller.h");
             includes.add("aws/" + ctx.smithyServiceName() + "/model/" + opName + "Handler.h");
-            includes.addAll(ctx.protocolTraits().serdeIncludes(FileKind.EVENT_HANDLER_SOURCE));
-            IncludeSets.emit(writer, includes);
+            IncludeSets.emitSourceIncludes(writer, includes,
+                ctx.protocolTraits(), FileKind.EVENT_HANDLER_SOURCE);
             writer.write("");
             writer.write("using namespace Aws::$1L::Model;", ctx.namespace());
             writer.write("using namespace Aws::Utils::Event;");
@@ -448,10 +448,9 @@ public final class EventStreamRenderer implements ShapeRenderer {
                 writer.write("#include <utility>");
             }
             writer.write("");
-            writer.withNamespace("Aws", () -> {
-            ctx.protocolTraits().writeShapeForwardDeclarations(writer);
-            writer.withNamespace(ctx.namespace(), () ->
-                writer.withNamespace("Model", () -> {
+            ModelFile.modelNamespace(writer, ctx.namespace(),
+                () -> ctx.protocolTraits().writeShapeForwardDeclarations(writer),
+                () -> {
             writer.write("");
             writer.openBlock("class $L {", "};", className, () -> {
                 writer.write("public:");
@@ -471,8 +470,7 @@ public final class EventStreamRenderer implements ShapeRenderer {
                 }
             });
             writer.write("");
-                }));
-            });
+                });
         });
 
         String sourceFile = "source/model/" + className + ".cpp";
@@ -481,11 +479,8 @@ public final class EventStreamRenderer implements ShapeRenderer {
             includes.add("aws/core/utils/StringUtils.h");
             includes.add("aws/" + ctx.smithyServiceName() + "/model/" + className + ".h");
             includes.add("utility");
-            includes.addAll(ctx.protocolTraits().serdeIncludes(FileKind.INITIAL_RESPONSE_SOURCE));
-            // Serde-implementation includes derived from the initial-response members (e.g.
-            // AWSStringStream.h for the header-bound members), matching C2J computeSourceIncludes.
-            includes.addAll(CppTypeMapper.getSourceIncludesForShape(shape, ctx.model(), ctx.smithyServiceName()));
-            IncludeSets.emit(writer, includes);
+            IncludeSets.emitSourceIncludes(writer, includes,
+                ctx.protocolTraits(), FileKind.INITIAL_RESPONSE_SOURCE);
             writer.write("");
             IncludeSets.emitUsings(writer, ctx.protocolTraits().serdeUsings(FileKind.INITIAL_RESPONSE_SOURCE));
             writer.write("");
@@ -529,10 +524,9 @@ public final class EventStreamRenderer implements ShapeRenderer {
             writer.write("");
             writer.write("#include <utility>");
             writer.write("");
-            writer.withNamespace("Aws", () -> {
-            ctx.protocolTraits().writeShapeForwardDeclarations(writer);
-            writer.withNamespace(ctx.namespace(), () ->
-                writer.withNamespace("Model", () -> {
+            ModelFile.modelNamespace(writer, ctx.namespace(),
+                () -> ctx.protocolTraits().writeShapeForwardDeclarations(writer),
+                () -> {
             writer.write("");
             MemberRenderer.renderClassDocComment(writer, union, ctx.smithyServiceName(), ctx.service().getVersion());
             writer.openBlock("class $L {", "};", className, () -> {
@@ -568,8 +562,7 @@ public final class EventStreamRenderer implements ShapeRenderer {
                 }
             });
             writer.write("");
-                }));
-            });
+                });
         });
 
         // C2J generates the event stream union as a header-only type: the serde methods are

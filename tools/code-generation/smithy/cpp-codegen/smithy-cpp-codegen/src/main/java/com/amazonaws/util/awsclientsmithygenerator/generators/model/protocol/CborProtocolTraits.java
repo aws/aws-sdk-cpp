@@ -78,38 +78,19 @@ public final class CborProtocolTraits implements ProtocolTraits {
 
     @Override
     public java.util.List<String> serdeIncludes(FileKind kind) {
-        switch (kind) {
-            case RESULT_SOURCE:
-                return java.util.List.of(
-                    "aws/crt/cbor/Cbor.h",
-                    "aws/core/utils/cbor/CborValue.h",
-                    "aws/core/utils/UnreferencedParam.h",
-                    "aws/core/utils/memory/stl/AWSStringStream.h");
-            case INITIAL_RESPONSE_SOURCE:
-                return java.util.List.of(
-                    "aws/crt/cbor/Cbor.h",
-                    "aws/core/utils/cbor/CborValue.h",
-                    "aws/core/utils/UnreferencedParam.h");
-            case REQUEST_SOURCE:
-                // CborRequestSource.vm: request payloads encode via the streaming CborEncoder,
-                // so NO <aws/core/utils/cbor/CborValue.h> DOM header here.
-                return java.util.List.of("aws/crt/cbor/Cbor.h", "utility");
-            case STREAMING_RESULT_SOURCE:
-                return java.util.List.of();
-            case SUBOBJECT_HEADER:
-                // CborSubObjectHeader.vm hard-includes <aws/crt/cbor/Cbor.h>: the ctor/operator=
-                // reference Aws::Crt::Cbor::CborDecoder and CborEncode takes a CborEncoder&.
-                return java.util.List.of("aws/crt/cbor/Cbor.h");
-            case RESULT_HEADER:
-                // CborResultHeader.vm hard-includes <aws/crt/cbor/Cbor.h> as well.
-                return java.util.List.of("aws/crt/cbor/Cbor.h");
-            case SUBOBJECT_SOURCE:
-            case EVENT_HANDLER_SOURCE:
-                return java.util.List.of("aws/crt/cbor/Cbor.h", "aws/core/utils/cbor/CborValue.h");
-            default:
-                throw new UnsupportedOperationException(
-                    "No serde includes defined for FileKind " + kind + " in CborProtocolTraits");
+        // CborSubObjectHeader.vm / CborResultHeader.vm hard-include <aws/crt/cbor/Cbor.h>: the
+        // header signatures reference Aws::Crt::Cbor::CborDecoder / CborEncoder directly.
+        if (kind == FileKind.SUBOBJECT_HEADER || kind == FileKind.RESULT_HEADER) {
+            return java.util.List.of("aws/crt/cbor/Cbor.h");
         }
+        // All source kinds share one union (supersets allowed). Usings are unchanged.
+        return java.util.List.of(
+            "aws/crt/cbor/Cbor.h",
+            "aws/core/utils/cbor/CborValue.h",
+            "aws/core/utils/UnreferencedParam.h",
+            "aws/core/utils/memory/stl/AWSStringStream.h",
+            "aws/core/utils/HashingUtils.h",
+            "utility");
     }
 
     @Override

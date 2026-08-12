@@ -244,7 +244,12 @@ public final class RequestRenderer implements ShapeRenderer {
                     IncludeSets.requestSourceBase(ctx.smithyServiceName(), className));
                 includes.add("aws/core/AmazonWebServiceResult.h");
                 includes.add("utility");
-                includes.addAll(CppTypeMapper.getSourceIncludesForShape(shape, ctx.model(), ctx.smithyServiceName()));
+                // A raw-streaming-payload request sends its body via the streaming base class (no
+                // protocol serde), but its header/query members still serialize, so the source
+                // needs HashingUtils.h (blob Base64) and AWSStringStream.h unconditionally. It must
+                // NOT pull the protocol serde header (e.g. JsonSerializer.h), matching C2J.
+                includes.add("aws/core/utils/HashingUtils.h");
+                includes.add("aws/core/utils/memory/stl/AWSStringStream.h");
                 IncludeSets.emit(writer, includes);
                 writer.write("");
                 writer.write("using namespace Aws::$L::Model;", ctx.namespace());
@@ -267,13 +272,9 @@ public final class RequestRenderer implements ShapeRenderer {
                 return;
             }
 
-            List<String> includes = new ArrayList<>(
-                IncludeSets.requestSourceBase(ctx.smithyServiceName(), className));
-            includes.addAll(ctx.protocolTraits().serdeIncludes(FileKind.REQUEST_SOURCE));
-            // Serde-implementation includes derived from members (HashingUtils.h for blob Base64
-            // serde, AWSStringStream.h for header/query members), matching C2J computeSourceIncludes.
-            includes.addAll(CppTypeMapper.getSourceIncludesForShape(shape, ctx.model(), ctx.smithyServiceName()));
-            IncludeSets.emit(writer, includes);
+            IncludeSets.emitSourceIncludes(writer,
+                IncludeSets.requestSourceBase(ctx.smithyServiceName(), className),
+                ctx.protocolTraits(), FileKind.REQUEST_SOURCE);
             writer.write("");
 
             writer.write("using namespace Aws::$L::Model;", ctx.namespace());

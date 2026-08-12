@@ -4,6 +4,10 @@
  */
 package com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers;
 
+import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.FileKind;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.ProtocolTraits;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -72,6 +76,20 @@ final class IncludeSets {
         inc.add("aws/" + smithyServiceName + "/model/" + className + ".h");
         inc.add("utility");
         return inc;
+    }
+
+    /**
+     * Assembles and emits a source file's {@code #include} block: the per-site {@code base}
+     * (self-header, {@code AmazonWebServiceResult.h}, etc.) plus the protocol's source-include
+     * union for {@code kind}. The two lists are concatenated then emitted via {@link #emit},
+     * which dedups, sorts (CaseSensitive) and brackets. Usings are emitted separately by the
+     * caller via {@link #emitUsings} — this method never touches usings.
+     */
+    static void emitSourceIncludes(CppWriter writer, List<String> base,
+                                   ProtocolTraits traits, FileKind kind) {
+        List<String> includes = new ArrayList<>(base);
+        includes.addAll(traits.serdeIncludes(kind));
+        emit(writer, includes);
     }
 
     /** Writes each path as {@code #include <path>}, deduped and sorted (CaseSensitive). */

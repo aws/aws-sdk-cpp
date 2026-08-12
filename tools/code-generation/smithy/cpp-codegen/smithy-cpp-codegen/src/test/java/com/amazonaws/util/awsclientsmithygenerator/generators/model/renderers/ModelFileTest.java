@@ -26,4 +26,24 @@ class ModelFileTest {
 
         assertEquals(manual.toString(), viaHelper.toString());
     }
+
+    @Test
+    void modelNamespace_withProlog_emitsPrologInsideAwsBeforeNamespace() {
+        CppWriter manual = new CppWriter();
+        manual.writeNamespaceOpen("Aws");
+        manual.write("class Fwd;");
+        manual.writeNamespaceOpen("S3");
+        manual.writeNamespaceOpen("Model");
+        manual.write("int x = 1;");
+        manual.writeNamespaceClose("Model");
+        manual.writeNamespaceClose("S3");
+        manual.writeNamespaceClose("Aws");
+
+        CppWriter helper = new CppWriter();
+        ModelFile.modelNamespace(helper, "S3",
+            () -> helper.write("class Fwd;"),
+            () -> helper.write("int x = 1;"));
+
+        assertEquals(manual.toString(), helper.toString());
+    }
 }

@@ -10,10 +10,6 @@ import software.amazon.smithy.model.shapes.MapShape;
 import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.Shape;
 import software.amazon.smithy.model.shapes.StructureShape;
-import software.amazon.smithy.model.traits.HttpHeaderTrait;
-import software.amazon.smithy.model.traits.HttpPrefixHeadersTrait;
-import software.amazon.smithy.model.traits.HttpQueryParamsTrait;
-import software.amazon.smithy.model.traits.HttpQueryTrait;
 import software.amazon.smithy.model.traits.IdempotencyTokenTrait;
 import software.amazon.smithy.model.traits.SensitiveTrait;
 
@@ -258,44 +254,4 @@ public final class CppTypeMapper {
         return new ArrayList<>(includes);
     }
 
-    /**
-     * Returns the serde-implementation includes a shape's <em>source</em> file needs, as bare
-     * paths (no angle brackets). Mirrors C2J's {@code CppViewHelper.computeSourceIncludes}:
-     * a blob member (or list/map of blobs) pulls {@code HashingUtils.h} for Base64 serde, and a
-     * header/query-bound member pulls {@code AWSStringStream.h}. These are distinct from the
-     * member-<em>type</em> includes returned by {@link #getIncludesForShape} (which serve the
-     * header); C2J keeps the two sets separate and lists in the source only what the header does
-     * not already provide.
-     */
-    public static List<String> getSourceIncludesForShape(Shape structureShape, Model model, String projectName) {
-        Set<String> includes = new TreeSet<>();
-        for (MemberShape member : structureShape.getAllMembers().values()) {
-            Shape target = model.expectShape(member.getTarget());
-            if (referencesBlob(target, model)) {
-                includes.add("aws/core/utils/HashingUtils.h");
-            } else if (member.hasTrait(HttpHeaderTrait.class)
-                    || member.hasTrait(HttpPrefixHeadersTrait.class)
-                    || member.hasTrait(HttpQueryTrait.class)
-                    || member.hasTrait(HttpQueryParamsTrait.class)) {
-                includes.add("aws/core/utils/memory/stl/AWSStringStream.h");
-            }
-        }
-        return new ArrayList<>(includes);
-    }
-
-    /** True if {@code shape} is a blob, a list of blobs, or a map whose key or value is a blob. */
-    private static boolean referencesBlob(Shape shape, Model model) {
-        if (shape.isBlobShape()) {
-            return true;
-        }
-        if (shape.isListShape()) {
-            return model.expectShape(shape.asListShape().get().getMember().getTarget()).isBlobShape();
-        }
-        if (shape.isMapShape()) {
-            MapShape map = shape.asMapShape().get();
-            return model.expectShape(map.getKey().getTarget()).isBlobShape()
-                || model.expectShape(map.getValue().getTarget()).isBlobShape();
-        }
-        return false;
-    }
 }
