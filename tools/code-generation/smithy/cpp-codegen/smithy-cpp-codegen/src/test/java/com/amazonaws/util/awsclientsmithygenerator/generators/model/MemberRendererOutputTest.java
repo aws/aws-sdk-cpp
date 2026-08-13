@@ -72,4 +72,61 @@ class MemberRendererOutputTest {
         assertTrue(privOutput.contains("bool m_parentShardsHasBeenSet = false;"));
         assertTrue(privOutput.contains("bool m_hashKeyRangeHasBeenSet = false;"));
     }
+
+    @Test
+    void sparseListAndMap_emitOptionalTypesAndAddOverloads() {
+        // Mirrors C2J's generated SparseNullsOperationRequest.h: a @sparse list/map wraps its
+        // element/value in Aws::Crt::Optional, and gets an extra Add overload accepting the
+        // Optional element/value directly.
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        ListShape sparseList = ListShape.builder()
+            .id("com.example#SparseStringList")
+            .member(MemberShape.builder().id("com.example#SparseStringList$member").target("com.example#String").build())
+            .addTrait(new software.amazon.smithy.model.traits.SparseTrait())
+            .build();
+        MapShape sparseMap = MapShape.builder()
+            .id("com.example#SparseStringMap")
+            .key(MemberShape.builder().id("com.example#SparseStringMap$key").target("com.example#String").build())
+            .value(MemberShape.builder().id("com.example#SparseStringMap$value").target("com.example#String").build())
+            .addTrait(new software.amazon.smithy.model.traits.SparseTrait())
+            .build();
+        StructureShape shape = StructureShape.builder()
+            .id("com.example#SparseNullsOperationRequest")
+            .addMember("SparseStringList", sparseList.getId())
+            .addMember("SparseStringMap", sparseMap.getId())
+            .build();
+        Model model = Model.builder().addShapes(str, sparseList, sparseMap, shape).build();
+
+        CppWriter writer = new CppWriter();
+        MemberRenderer.forStructure(model, shape, "SparseNullsOperationRequest").renderPublicAccessors(writer);
+        String out = writer.toString();
+        System.out.println(out);
+
+        // --- sparse list ---
+        assertTrue(out.contains(
+            "inline const Aws::Vector<Aws::Crt::Optional<Aws::String>>& GetSparseStringList() const { return m_sparseStringList; }"),
+            out);
+        // main forwarding Add keeps the UNWRAPPED element type as its template default (matches C2J)
+        assertTrue(out.contains("template <typename SparseStringListT = Aws::String>"), out);
+        assertTrue(out.contains("m_sparseStringList.emplace_back(std::forward<SparseStringListT>(value));"), out);
+        // extra overload takes the Optional element by value and push_backs it
+        assertTrue(out.contains(
+            "inline SparseNullsOperationRequest& AddSparseStringList(Aws::Crt::Optional<Aws::String> value) {"),
+            out);
+        assertTrue(out.contains("m_sparseStringList.push_back(value);"), out);
+
+        // --- sparse map ---
+        assertTrue(out.contains(
+            "inline const Aws::Map<Aws::String, Aws::Crt::Optional<Aws::String>>& GetSparseStringMap() const { return m_sparseStringMap; }"),
+            out);
+        // templated Add value default IS the wrapped Optional type for maps (matches C2J)
+        assertTrue(out.contains(
+            "template <typename SparseStringMapKeyT = Aws::String, typename SparseStringMapValueT = Aws::Crt::Optional<Aws::String>>"),
+            out);
+        // extra overload takes the raw key and the Optional value
+        assertTrue(out.contains(
+            "inline SparseNullsOperationRequest& AddSparseStringMap(Aws::String key, Aws::Crt::Optional<Aws::String> value) {"),
+            out);
+        assertTrue(out.contains("m_sparseStringMap.emplace(key, value);"), out);
+    }
 }

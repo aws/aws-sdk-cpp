@@ -13,6 +13,7 @@ import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.Shape;
 import software.amazon.smithy.model.traits.DocumentationTrait;
 import software.amazon.smithy.model.traits.IdempotencyTokenTrait;
+import software.amazon.smithy.model.traits.SparseTrait;
 
 import java.util.Map;
 
@@ -123,6 +124,7 @@ public final class MemberRenderer {
                 });
 
                 if (targetShape.isListShape()) {
+                    boolean sparse = targetShape.hasTrait(SparseTrait.class);
                     Shape elementShape = model.expectShape(
                         targetShape.asListShape().get().getMember().getTarget());
                     String elementType = CppTypeMapper.getCppType(elementShape, model, wideIntegers);
@@ -140,9 +142,19 @@ public final class MemberRenderer {
                             writer.write("return *this;");
                         });
                     }
+                    // A @sparse list also accepts the Optional element directly (matches C2J).
+                    if (sparse) {
+                        writer.openBlock("inline $L& Add$L(Aws::Crt::Optional<$L> value) {", "}",
+                            className, methodName, elementType, () -> {
+                            writer.write("$LHasBeenSet = true;", fieldName);
+                            writer.write("$L.push_back(value);", fieldName);
+                            writer.write("return *this;");
+                        });
+                    }
                 }
 
                 if (targetShape.isMapShape()) {
+                    boolean sparse = targetShape.hasTrait(SparseTrait.class);
                     Shape keyShape = model.expectShape(
                         targetShape.asMapShape().get().getKey().getTarget());
                     Shape valueShape = model.expectShape(
@@ -153,7 +165,10 @@ public final class MemberRenderer {
                     if (bothForwardable) {
                         String keyParam = methodName + "KeyT";
                         String valueParam = methodName + "ValueT";
-                        writer.write("template <typename $L = $L, typename $L = $L>", keyParam, keyType, valueParam, valueType);
+                        // A @sparse map's forwarding Add defaults its value template to the wrapped
+                        // Optional type (matches C2J); the key is untouched.
+                        String valueParamDefault = sparse ? "Aws::Crt::Optional<" + valueType + ">" : valueType;
+                        writer.write("template <typename $L = $L, typename $L = $L>", keyParam, keyType, valueParam, valueParamDefault);
                         writer.openBlock("$L& Add$L($L&& key, $L&& value) {", "}", className, methodName, keyParam, valueParam, () -> {
                             writer.write("$LHasBeenSet = true;", fieldName);
                             writer.write("$L.emplace(std::forward<$L>(key), std::forward<$L>(value));", fieldName, keyParam, valueParam);
@@ -161,6 +176,15 @@ public final class MemberRenderer {
                         });
                     } else {
                         writer.openBlock("inline $L& Add$L($L key, $L value) {", "}", className, methodName, keyType, valueType, () -> {
+                            writer.write("$LHasBeenSet = true;", fieldName);
+                            writer.write("$L.emplace(key, value);", fieldName);
+                            writer.write("return *this;");
+                        });
+                    }
+                    // A @sparse map also accepts the raw key and the Optional value directly.
+                    if (sparse) {
+                        writer.openBlock("inline $L& Add$L($L key, Aws::Crt::Optional<$L> value) {", "}",
+                            className, methodName, keyType, valueType, () -> {
                             writer.write("$LHasBeenSet = true;", fieldName);
                             writer.write("$L.emplace(key, value);", fieldName);
                             writer.write("return *this;");

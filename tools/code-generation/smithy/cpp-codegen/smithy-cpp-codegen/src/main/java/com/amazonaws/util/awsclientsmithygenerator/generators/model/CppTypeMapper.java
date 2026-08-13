@@ -11,6 +11,7 @@ import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.Shape;
 import software.amazon.smithy.model.traits.IdempotencyTokenTrait;
 import software.amazon.smithy.model.traits.SensitiveTrait;
+import software.amazon.smithy.model.traits.SparseTrait;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -106,20 +107,37 @@ public final class CppTypeMapper {
         if (shape.isListShape()) {
             ListShape list = shape.asListShape().get();
             Shape member = model.expectShape(list.getMember().getTarget());
-            return "Aws::Vector<" + getCppType(member, model, wideIntegers) + ">";
+            // A @sparse list wraps its element type in Aws::Crt::Optional (matches C2J's
+            // CppViewHelper), giving Aws::Vector<Aws::Crt::Optional<T>>.
+            return "Aws::Vector<" + wrapSparse(shape, getCppType(member, model, wideIntegers)) + ">";
         }
         if (shape.isMapShape()) {
             MapShape map = shape.asMapShape().get();
             Shape key = model.expectShape(map.getKey().getTarget());
             Shape value = model.expectShape(map.getValue().getTarget());
+            // A @sparse map wraps its value type (not its key) in Aws::Crt::Optional.
             return "Aws::Map<" + getCppType(key, model, wideIntegers) + ", "
-                + getCppType(value, model, wideIntegers) + ">";
+                + wrapSparse(shape, getCppType(value, model, wideIntegers)) + ">";
         }
         if (shape.isDocumentShape()) {
             return "Aws::Utils::Document";
         }
         throw new UnsupportedOperationException(
             "Unsupported shape type " + shape.getType() + " for shape " + shape.getId());
+    }
+
+    /**
+     * Wraps {@code innerType} in {@code Aws::Crt::Optional<...>} when {@code collectionShape}
+     * (a list or map) carries the {@code @sparse} trait; otherwise returns {@code innerType}
+     * unchanged. For lists the inner type is the element; for maps it is the value.
+     *
+     * @param collectionShape the list or map shape that may be sparse
+     * @param innerType       the element / value C++ type
+     * @return the (possibly Optional-wrapped) type
+     */
+    public static String wrapSparse(Shape collectionShape, String innerType) {
+        return collectionShape.hasTrait(SparseTrait.class)
+            ? "Aws::Crt::Optional<" + innerType + ">" : innerType;
     }
 
     /**
@@ -242,6 +260,11 @@ public final class CppTypeMapper {
                 Shape value = model.expectShape(map.getValue().getTarget());
                 getIncludeForMemberType(key, model, projectName).ifPresent(includes::add);
                 getIncludeForMemberType(value, model, projectName).ifPresent(includes::add);
+            }
+            // A @sparse list/map wraps its element/value in Aws::Crt::Optional, declared in
+            // <aws/crt/Optional.h>. Matches C2J's generated SparseNullsOperationRequest.h.
+            if ((target.isListShape() || target.isMapShape()) && target.hasTrait(SparseTrait.class)) {
+                includes.add("<aws/crt/Optional.h>");
             }
             // @idempotencyToken members are brace-initialized with
             // Aws::Utils::UUID::PseudoRandomUUID(), which requires UUID.h. Matches C2J

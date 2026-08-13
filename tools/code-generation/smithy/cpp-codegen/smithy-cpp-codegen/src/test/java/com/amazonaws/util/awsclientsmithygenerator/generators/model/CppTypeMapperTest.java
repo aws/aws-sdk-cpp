@@ -135,6 +135,93 @@ class CppTypeMapperTest {
     }
 
     @Test
+    void sparseListOfStrings_wrapsElementInOptional() {
+        // C2J wraps a @sparse list's element type in Aws::Crt::Optional (CppViewHelper), so the
+        // member type becomes Aws::Vector<Aws::Crt::Optional<Aws::String>>.
+        StringShape str = StringShape.builder().id("com.example#Str").build();
+        ListShape list = ListShape.builder()
+            .id("com.example#SparseStringList")
+            .member(MemberShape.builder().id("com.example#SparseStringList$member").target("com.example#Str").build())
+            .addTrait(new software.amazon.smithy.model.traits.SparseTrait())
+            .build();
+        Model model = Model.builder().addShapes(str, list).build();
+        assertEquals("Aws::Vector<Aws::Crt::Optional<Aws::String>>", CppTypeMapper.getCppType(list, model));
+    }
+
+    @Test
+    void sparseMapOfStringToString_wrapsValueInOptional() {
+        // C2J wraps a @sparse map's value type in Aws::Crt::Optional; the key is untouched.
+        StringShape str = StringShape.builder().id("com.example#Str").build();
+        MapShape map = MapShape.builder()
+            .id("com.example#SparseStringMap")
+            .key(MemberShape.builder().id("com.example#SparseStringMap$key").target("com.example#Str").build())
+            .value(MemberShape.builder().id("com.example#SparseStringMap$value").target("com.example#Str").build())
+            .addTrait(new software.amazon.smithy.model.traits.SparseTrait())
+            .build();
+        Model model = Model.builder().addShapes(str, map).build();
+        assertEquals("Aws::Map<Aws::String, Aws::Crt::Optional<Aws::String>>", CppTypeMapper.getCppType(map, model));
+    }
+
+    @Test
+    void getIncludesForShape_withSparseListMember_includesOptionalHeader() {
+        // A @sparse list/map member wraps its element/value in Aws::Crt::Optional, which lives in
+        // <aws/crt/Optional.h>. Matches C2J's generated SparseNullsOperationRequest.h.
+        StringShape str = StringShape.builder().id("com.example#Str").build();
+        ListShape list = ListShape.builder()
+            .id("com.example#SparseStringList")
+            .member(MemberShape.builder().id("com.example#SparseStringList$member").target("com.example#Str").build())
+            .addTrait(new software.amazon.smithy.model.traits.SparseTrait())
+            .build();
+        StructureShape struct = StructureShape.builder()
+            .id("com.example#MyRequest")
+            .addMember("items", list.getId())
+            .build();
+        Model model = Model.builder().addShapes(str, list, struct).build();
+
+        List<String> includes = CppTypeMapper.getIncludesForShape(struct, model, "myservice");
+        assertTrue(includes.contains("<aws/crt/Optional.h>"),
+            "Shape with sparse list member should include Optional.h: " + includes);
+    }
+
+    @Test
+    void getIncludesForShape_withSparseMapMember_includesOptionalHeader() {
+        StringShape str = StringShape.builder().id("com.example#Str").build();
+        MapShape map = MapShape.builder()
+            .id("com.example#SparseStringMap")
+            .key(MemberShape.builder().id("com.example#SparseStringMap$key").target("com.example#Str").build())
+            .value(MemberShape.builder().id("com.example#SparseStringMap$value").target("com.example#Str").build())
+            .addTrait(new software.amazon.smithy.model.traits.SparseTrait())
+            .build();
+        StructureShape struct = StructureShape.builder()
+            .id("com.example#MyRequest")
+            .addMember("data", map.getId())
+            .build();
+        Model model = Model.builder().addShapes(str, map, struct).build();
+
+        List<String> includes = CppTypeMapper.getIncludesForShape(struct, model, "myservice");
+        assertTrue(includes.contains("<aws/crt/Optional.h>"),
+            "Shape with sparse map member should include Optional.h: " + includes);
+    }
+
+    @Test
+    void getIncludesForShape_withoutSparse_noOptionalHeader() {
+        StringShape str = StringShape.builder().id("com.example#Str").build();
+        ListShape list = ListShape.builder()
+            .id("com.example#StringList")
+            .member(MemberShape.builder().id("com.example#StringList$member").target("com.example#Str").build())
+            .build();
+        StructureShape struct = StructureShape.builder()
+            .id("com.example#MyRequest")
+            .addMember("items", list.getId())
+            .build();
+        Model model = Model.builder().addShapes(str, list, struct).build();
+
+        List<String> includes = CppTypeMapper.getIncludesForShape(struct, model, "myservice");
+        assertFalse(includes.contains("<aws/crt/Optional.h>"),
+            "Non-sparse list member should not include Optional.h: " + includes);
+    }
+
+    @Test
     void structureShape_mapsToShapeName() {
         StructureShape struct = StructureShape.builder().id("com.example#MyStruct").build();
         Model model = Model.builder().addShape(struct).build();
