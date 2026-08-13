@@ -76,7 +76,7 @@ public class EndpointRulesCodegenPlugin implements SmithyBuildPlugin {
                                        Map<String, String> namespaceMap, String pythonExecutable,
                                        String bddBytecoderPath, CppWriterDelegator writerDelegator) {
         String smithyServiceName = ServiceNameUtil.getSmithyServiceName(service, serviceMap);
-        String localMacro = ServiceNameUtil.getLocalMacro(service, serviceMap);
+        String localMacro = ServiceNameUtil.getLocalMacro(service, serviceMap, namespaceMap);
         String namespace = namespaceMap.getOrDefault(smithyServiceName, ServiceNameUtil.getServiceName(service));
         String classPrefix = Optional.ofNullable(namespaceMap.get(smithyServiceName))
             .map(ServiceNameUtil::capitalize)
