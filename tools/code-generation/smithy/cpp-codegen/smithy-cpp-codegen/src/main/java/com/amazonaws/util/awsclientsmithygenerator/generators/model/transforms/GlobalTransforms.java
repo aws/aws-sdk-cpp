@@ -17,7 +17,9 @@ import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.model.shapes.Shape;
 import software.amazon.smithy.model.shapes.ShapeId;
 import software.amazon.smithy.model.shapes.StructureShape;
+import software.amazon.smithy.model.traits.DeprecatedTrait;
 import software.amazon.smithy.model.traits.RequiredTrait;
+import software.amazon.smithy.model.transform.ModelTransformer;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -26,6 +28,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * Global model transforms applied before code generation.
@@ -135,10 +138,39 @@ public final class GlobalTransforms {
     /**
      * Returns this class as a ModelTransform.
      *
-     * <p>Currently the only pre-generation model mutation is {@link #injectResponseMetadata}.
+     * <p>Runs {@link #dropDeprecatedMembers} first (so reachability filtering sees the pruned
+     * model and orphaned targets drop out), then {@link #injectResponseMetadata}.
      */
     public static ModelTransform asTransform() {
-        return GlobalTransforms::injectResponseMetadata;
+        return (model, service) -> injectResponseMetadata(dropDeprecatedMembers(model, service), service);
+    }
+
+    /**
+     * Removes {@code @deprecated} members from the shapes this service actually generates. This
+     * mirrors the legacy C2J transformer, which drops {@code "deprecated": true} member references
+     * ({@code C2jModelToGeneratorModelTransformer}), so deprecated members never appear in
+     * generated model classes. A target shape referenced only through dropped members becomes
+     * unreachable and is likewise omitted, matching C2J.
+     *
+     * <p>Removal is scoped to members whose container is reachable from the service's operations.
+     * This is the "only touch what we emit" rule: it leaves framework trait definitions untouched
+     * (the {@code smithy.api} prelude, {@code smithy.rules}, {@code aws.*}, etc.), some of which
+     * declare their own {@code @deprecated} members that we must not mutate.
+     *
+     * @param model   the current model
+     * @param service the service being generated (defines the reachable, emitted shapes)
+     * @return the model with deprecated members removed, or the input model if there are none
+     */
+    public static Model dropDeprecatedMembers(Model model, ServiceShape service) {
+        Set<ShapeId> reachable = computeReachableShapes(model, service);
+        Set<Shape> deprecatedMembers = model.shapes(MemberShape.class)
+            .filter(member -> member.hasTrait(DeprecatedTrait.class))
+            .filter(member -> reachable.contains(member.getContainer()))
+            .collect(Collectors.toSet());
+        if (deprecatedMembers.isEmpty()) {
+            return model;
+        }
+        return ModelTransformer.create().removeShapes(model, deprecatedMembers);
     }
 
     /**

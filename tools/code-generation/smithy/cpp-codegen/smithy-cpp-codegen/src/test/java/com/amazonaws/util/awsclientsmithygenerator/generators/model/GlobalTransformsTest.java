@@ -374,6 +374,90 @@ class GlobalTransformsTest {
         assertTrue(reachable.contains(ShapeId.from("com.example#MyError")));
     }
 
+    // --- dropDeprecatedMembers tests ---
+
+    @Test
+    void dropDeprecatedMembers_removesDeprecatedMember_keepsOthers() {
+        // Mirrors C2J: a member with @deprecated is dropped from the generated shape; siblings stay.
+        // The shape must be reachable from the service (used as an operation input here) so that the
+        // reachability-scoped transform considers it.
+        StructureShape config = StructureShape.builder()
+            .id("com.example#LocationConfiguration")
+            .addMember(MemberShape.builder()
+                .id("com.example#LocationConfiguration$location").target("smithy.api#String").build())
+            .addMember(MemberShape.builder()
+                .id("com.example#LocationConfiguration$onDemandCapacity").target("smithy.api#Integer")
+                .addTrait(software.amazon.smithy.model.traits.DeprecatedTrait.builder().build())
+                .build())
+            .build();
+        StructureShape output = StructureShape.builder().id("com.example#MyOutput").build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#MyOperation").input(config.getId()).output(output.getId()).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#MyService").version("2024-01-01").addOperation(op.getId()).build();
+        Model model = Model.assembler().addShapes(config, output, op, service).assemble().unwrap();
+
+        Model out = GlobalTransforms.dropDeprecatedMembers(model, service);
+        StructureShape transformed = out.expectShape(
+            ShapeId.from("com.example#LocationConfiguration"), StructureShape.class);
+        assertFalse(transformed.getMember("onDemandCapacity").isPresent(),
+            "deprecated member must be dropped");
+        assertTrue(transformed.getMember("location").isPresent(),
+            "non-deprecated sibling must remain");
+    }
+
+    @Test
+    void dropDeprecatedMembers_noDeprecated_returnsSameModel() {
+        StructureShape input = StructureShape.builder()
+            .id("com.example#MyInput")
+            .addMember(MemberShape.builder().id("com.example#MyInput$a").target("smithy.api#String").build())
+            .build();
+        StructureShape output = StructureShape.builder().id("com.example#MyOutput").build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#MyOperation").input(input.getId()).output(output.getId()).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#MyService").version("2024-01-01").addOperation(op.getId()).build();
+        Model model = Model.assembler().addShapes(input, output, op, service).assemble().unwrap();
+        // The prelude declares its own @deprecated member (protocolDefinition$noInlineDocumentSupport),
+        // but it is not reachable from the service, so the transform is a true no-op here.
+        assertSame(model, GlobalTransforms.dropDeprecatedMembers(model, service),
+            "models without service-reachable deprecated members should be returned unchanged");
+    }
+
+    @Test
+    void dropDeprecatedMembers_orphanedTargetBecomesUnreachable() {
+        // A struct referenced ONLY through a deprecated member drops out of the reachable set,
+        // matching C2J's omission of the orphaned shape file.
+        StructureShape orphan = StructureShape.builder()
+            .id("com.example#OrphanDetail")
+            .addMember(MemberShape.builder()
+                .id("com.example#OrphanDetail$x").target("smithy.api#String").build())
+            .build();
+        StructureShape input = StructureShape.builder()
+            .id("com.example#MyInput")
+            .addMember(MemberShape.builder()
+                .id("com.example#MyInput$detail").target(orphan.getId())
+                .addTrait(software.amazon.smithy.model.traits.DeprecatedTrait.builder().build())
+                .build())
+            .build();
+        StructureShape output = StructureShape.builder().id("com.example#MyOutput").build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#MyOperation").input(input.getId()).output(output.getId()).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#MyService").version("2024-01-01").addOperation(op.getId()).build();
+        Model model = Model.assembler()
+            .addShapes(orphan, input, output, op, service).assemble().unwrap();
+
+        Model out = GlobalTransforms.dropDeprecatedMembers(model, service);
+        Set<ShapeId> reachable = GlobalTransforms.computeReachableShapes(out, serviceOf(out, "MyService"));
+        assertFalse(reachable.contains(ShapeId.from("com.example#OrphanDetail")),
+            "shape referenced only via a deprecated member must become unreachable");
+    }
+
+    private static ServiceShape serviceOf(Model model, String name) {
+        return model.expectShape(ShapeId.from("com.example#" + name), ServiceShape.class);
+    }
+
     // --- injectResponseMetadata tests ---
 
     /** A single-operation service under the given protocol trait, output has one plain member. */
