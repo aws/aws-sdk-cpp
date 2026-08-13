@@ -303,4 +303,67 @@ class RequestRendererTest {
         assertFalse(c.contains("using namespace Aws::Utils::Json;"),
             "Streaming-payload request source must not use the Json namespace: " + c);
     }
+
+    /**
+     * Same as {@link #rawStreamingPayloadRequestModel()} but under REST-JSON, where {@code contentType}
+     * (stripped, supplied by the streaming base) is the ONLY header-bound member and
+     * {@code hasTargetHeader()} is false. This is the combination that exposes header/source drift.
+     */
+    private static Model rawStreamingPayloadRestJsonRequestModel() {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        software.amazon.smithy.model.shapes.BlobShape blob =
+            software.amazon.smithy.model.shapes.BlobShape.builder().id("com.example#Body").build();
+        StructureShape input = StructureShape.builder()
+            .id("com.example#DoStreamInput")
+            .addMember(MemberShape.builder()
+                .id("com.example#DoStreamInput$body").target(blob.getId())
+                .addTrait(new software.amazon.smithy.model.traits.HttpPayloadTrait()).build())
+            .addMember(MemberShape.builder()
+                .id("com.example#DoStreamInput$contentType").target(str.getId())
+                .addTrait(new software.amazon.smithy.model.traits.HttpHeaderTrait("Content-Type")).build())
+            .addMember("modelId", str.getId())
+            .build();
+        StructureShape output = StructureShape.builder()
+            .id("com.example#DoStreamOutput").addMember("r", str.getId()).build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#DoStream").input(input.getId()).output(output.getId())
+            .addTrait(software.amazon.smithy.aws.traits.protocols.RestJson1Trait.builder().build())
+            .build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#Example").version("2024-01-01")
+            .addTrait(software.amazon.smithy.aws.traits.protocols.RestJson1Trait.builder().build())
+            .addOperation(op.getId()).build();
+        return Model.builder().addShapes(str, blob, input, output, op, service).build();
+    }
+
+    private static String renderRawStreamingPayloadRestJsonRequest(String fileSuffix) {
+        Model model = rawStreamingPayloadRestJsonRequestModel();
+        ServiceShape service = model.expectShape(ShapeId.from("com.example#Example"), ServiceShape.class);
+        MockManifest manifest = new MockManifest();
+        CppWriterDelegator delegator = new CppWriterDelegator(manifest);
+        Protocol protocol = ProtocolResolver.resolve(service, model);
+        new RequestRenderer(
+            ShapeClassifier.classify(model, service, protocol).requests(),
+            new RenderContext(model, service, ProtocolResolver.traitsFor(protocol),
+                "Example", "AWS_EXAMPLE_API", "example")).render(delegator);
+        delegator.flushWriters();
+        return manifest.getFileString(manifest.getFiles().stream()
+            .filter(p -> p.toString().endsWith(fileSuffix)).findFirst().orElseThrow()).orElseThrow();
+    }
+
+    @Test
+    void rawStreamingPayloadRequestRestJson_headerAndSourceAgreeOnRequestSpecificHeaders() {
+        // Under a REST protocol (hasTargetHeader() == false), a raw-streaming-payload request whose
+        // ONLY header-bound member is the stripped contentType must emit GetRequestSpecificHeaders in
+        // NEITHER the header nor the source. The header renders from the contentType-excluded shape;
+        // the source MUST render from the same shape. Otherwise the source defines
+        // GetRequestSpecificHeaders() out-of-line for a method the header never declares (a C++
+        // compile error).
+        String h = renderRawStreamingPayloadRestJsonRequest("DoStreamRequest.h");
+        String c = renderRawStreamingPayloadRestJsonRequest("DoStreamRequest.cpp");
+        assertFalse(h.contains("GetRequestSpecificHeaders"),
+            "Header must not declare GetRequestSpecificHeaders (contentType is stripped): " + h);
+        assertFalse(c.contains("GetRequestSpecificHeaders"),
+            "Source must not define GetRequestSpecificHeaders (contentType is stripped): " + c);
+    }
 }

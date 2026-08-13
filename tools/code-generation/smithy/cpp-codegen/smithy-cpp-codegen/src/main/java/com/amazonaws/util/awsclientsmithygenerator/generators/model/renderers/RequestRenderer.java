@@ -69,18 +69,7 @@ public final class RequestRenderer implements ShapeRenderer {
         Optional<String> eventStreamMember = ShapeClassifier.eventStreamMemberName(rawShape, ctx.model());
         StructureShape includeShape = rawStreamingPayload
             ? shapeExcluding(rawShape, Set.of("contentType", "ContentType")) : rawShape;
-        Set<String> genericExcluded = new HashSet<>();
-        if (rawStreamingPayload) {
-            // isRawStreamingPayloadRequest guarantees a payload member; absence is a codegen bug.
-            String payloadMember = ShapeClassifier.rawStreamingPayloadMemberName(rawShape, ctx.model())
-                .orElseThrow(() -> new IllegalStateException(
-                    "Raw streaming payload request without a payload member: " + rawShape.getId()));
-            genericExcluded.add("contentType");
-            genericExcluded.add("ContentType");
-            genericExcluded.add(payloadMember);
-        }
-        eventStreamMember.ifPresent(genericExcluded::add);
-        StructureShape shape = genericExcluded.isEmpty() ? rawShape : shapeExcluding(rawShape, genericExcluded);
+        StructureShape shape = renderedShape(rawShape, operation);
         String fileName = "include/aws/" + ctx.smithyServiceName() + "/model/" + className + ".h";
         writerDelegator.useFileWriter(fileName, writer -> {
             writer.write("#pragma once");
@@ -227,9 +216,14 @@ public final class RequestRenderer implements ShapeRenderer {
     }
 
     private void renderSource(CppWriterDelegator writerDelegator,
-                              StructureShape shape, OperationShape operation) {
+                              StructureShape rawShape, OperationShape operation) {
         String className = operation.getId().getName() + "Request";
-        Optional<String> eventStreamMember = ShapeClassifier.eventStreamMemberName(shape, ctx.model());
+        Optional<String> eventStreamMember = ShapeClassifier.eventStreamMemberName(rawShape, ctx.model());
+        // Render request-method impls from the same member-stripped shape as the header (see
+        // renderedShape): the declaration and definition gate GetRequestSpecificHeaders /
+        // AddQueryStringParameters on this shape, so they must agree or the source emits an
+        // out-of-line definition of a method the class never declares.
+        StructureShape shape = renderedShape(rawShape, operation);
         String fileName = "source/model/" + className + ".cpp";
         writerDelegator.useFileWriter(fileName, writer -> {
 
@@ -290,6 +284,29 @@ public final class RequestRenderer implements ShapeRenderer {
             }
             writer.write("");
         });
+    }
+
+    /**
+     * The shape whose members drive request-method rendering. Raw-streaming-payload requests strip
+     * {@code contentType} (supplied by the streaming base's GetContentType/SetContentType) and the
+     * {@code @httpPayload} member (sent via the body stream); an event-stream input member is
+     * rendered separately, not through the generic member path. Both the header (declarations) and
+     * the source (definitions) MUST render from this same shape so their emitted method sets stay
+     * in sync.
+     */
+    private StructureShape renderedShape(StructureShape rawShape, OperationShape operation) {
+        Set<String> excluded = new HashSet<>();
+        if (ShapeClassifier.isRawStreamingPayloadRequest(operation, ctx.model())) {
+            // isRawStreamingPayloadRequest guarantees a payload member; absence is a codegen bug.
+            String payloadMember = ShapeClassifier.rawStreamingPayloadMemberName(rawShape, ctx.model())
+                .orElseThrow(() -> new IllegalStateException(
+                    "Raw streaming payload request without a payload member: " + rawShape.getId()));
+            excluded.add("contentType");
+            excluded.add("ContentType");
+            excluded.add(payloadMember);
+        }
+        ShapeClassifier.eventStreamMemberName(rawShape, ctx.model()).ifPresent(excluded::add);
+        return excluded.isEmpty() ? rawShape : shapeExcluding(rawShape, excluded);
     }
 
     /** Builds a copy of {@code shape} with the named members removed (null names are ignored). */
