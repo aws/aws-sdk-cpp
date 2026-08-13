@@ -72,6 +72,11 @@ public final class SubObjectRenderer implements ShapeRenderer {
             ModelFile.modelNamespace(writer, ctx.namespace(),
                 () -> ctx.protocolTraits().writeShapeForwardDeclarations(writer),
                 () -> {
+            // Recursive member targets are forward-declared here (at Model scope) instead of
+            // included, breaking the reference cycle. Matches C2J's computeForwardDeclarations.
+            for (String fwd : CppTypeMapper.getForwardDeclarations(shape, ctx.model())) {
+                writer.write("class $L;", fwd);
+            }
             writer.write("");
 
             MemberRenderer.renderClassDocComment(writer, shape, ctx.smithyServiceName(), ctx.service().getVersion());
@@ -103,9 +108,12 @@ public final class SubObjectRenderer implements ShapeRenderer {
         String fileName = "source/model/" + className + ".cpp";
         writerDelegator.useFileWriter(fileName, writer -> {
 
-            IncludeSets.emitSourceIncludes(writer,
-                IncludeSets.subObjectSourceBase(ctx.smithyServiceName(), className),
-                ctx.protocolTraits(), FileKind.SUBOBJECT_SOURCE);
+            List<String> sourceBase = IncludeSets.subObjectSourceBase(ctx.smithyServiceName(), className);
+            // Recursive member types are forward-declared in the header, so the source must include
+            // them for the out-of-line MakeShared / serde bodies. Matches C2J.
+            sourceBase.addAll(CppTypeMapper.getRecursiveMemberSourceIncludes(
+                shape, ctx.model(), ctx.smithyServiceName()));
+            IncludeSets.emitSourceIncludes(writer, sourceBase, ctx.protocolTraits(), FileKind.SUBOBJECT_SOURCE);
             writer.write("");
 
             IncludeSets.emitUsings(writer, ctx.protocolTraits().serdeUsings(FileKind.SUBOBJECT_SOURCE));

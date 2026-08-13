@@ -81,6 +81,7 @@ public final class MemberRenderer {
             String fieldName = CppNames.fieldName(memberName);
             String methodName = capitalize(memberName);
             String templateParam = methodName + "T";
+            boolean recursive = isRecursiveMember(member);
 
             writer.write("///@{");
 
@@ -94,6 +95,9 @@ public final class MemberRenderer {
                 writer.write("inline Aws::Utils::DocumentView Get$L() const { return $L; }", methodName, fieldName);
             } else if (isPrimitive(targetShape) || CppTypeMapper.isEnum(targetShape)) {
                 writer.write("inline $L Get$L() const { return $L; }", cppType, methodName, fieldName);
+            } else if (recursive) {
+                // Stored as std::shared_ptr<T>; dereference for the const-ref getter. Matches C2J.
+                writer.write("inline const $L& Get$L() const { return *$L; }", cppType, methodName, fieldName);
             } else {
                 writer.write("inline const $L& Get$L() const { return $L; }", cppType, methodName, fieldName);
             }
@@ -115,7 +119,15 @@ public final class MemberRenderer {
                 writer.write("template <typename $L = $L>", templateParam, cppType);
                 writer.openBlock("void Set$L($L&& value) {", "}", methodName, templateParam, () -> {
                     writer.write("$LHasBeenSet = true;", fieldName);
-                    writer.write("$L = std::forward<$L>(value);", fieldName, templateParam);
+                    if (recursive) {
+                        // Wrap the value in a shared_ptr, tagged with the enclosing class name for
+                        // the allocator. The template setter is only instantiated at call sites,
+                        // where T is complete, so the header can forward-declare T. Matches C2J.
+                        writer.write("$L = Aws::MakeShared<$L>(\"$L\", std::forward<$L>(value));",
+                            fieldName, cppType, className, templateParam);
+                    } else {
+                        writer.write("$L = std::forward<$L>(value);", fieldName, templateParam);
+                    }
                 });
                 writer.write("template <typename $L = $L>", templateParam, cppType);
                 writer.openBlock("$L& With$L($L&& value) {", "}", className, methodName, templateParam, () -> {
@@ -207,11 +219,18 @@ public final class MemberRenderer {
         entries.removeIf(e -> e.getKey().equals(exclude));
         for (int i = 0; i < entries.size(); i++) {
             Map.Entry<String, MemberShape> entry = entries.get(i);
-            writeDataMember(writer, entry.getValue(), entry.getKey(), model, wideIntegers);
+            writeDataMember(writer, entry.getValue(), entry.getKey(), model, wideIntegers,
+                isRecursiveMember(entry.getValue()));
             if (i < entries.size() - 1) {
                 writer.write("");
             }
         }
+    }
+
+    /** True if this member's direct target forms a reference cycle with the enclosing shape. */
+    private boolean isRecursiveMember(MemberShape member) {
+        Shape target = model.expectShape(member.getTarget());
+        return CppTypeMapper.isRecursiveStructMember(shape, target, model);
     }
 
     /** Private {@code HasBeenSet} flags (one per member, no blank lines), skipping the excluded member. */
@@ -260,10 +279,15 @@ public final class MemberRenderer {
      * initializer (or none). Matches C2J's ServiceClientModelHeaderMemberDeclaration.vm.
      */
     private static void writeDataMember(CppWriter writer, MemberShape member, String memberName, Model model,
-                                        boolean wideIntegers) {
+                                        boolean wideIntegers, boolean recursive) {
         Shape targetShape = model.expectShape(member.getTarget());
         String cppType = CppTypeMapper.getCppType(targetShape, model, wideIntegers);
         String fieldName = CppNames.fieldName(memberName);
+        if (recursive) {
+            // Recursive member: break the cycle with a shared_ptr (no default initializer). C2J parity.
+            writer.write("std::shared_ptr<$L> $L;", cppType, fieldName);
+            return;
+        }
         if (member.hasTrait(IdempotencyTokenTrait.class)) {
             writer.write("$L $L{Aws::Utils::UUID::PseudoRandomUUID()};", cppType, fieldName);
             return;

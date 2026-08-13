@@ -9,12 +9,16 @@ import software.amazon.smithy.model.shapes.ListShape;
 import software.amazon.smithy.model.shapes.MapShape;
 import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.Shape;
+import software.amazon.smithy.model.shapes.ShapeId;
 import software.amazon.smithy.model.traits.EnumTrait;
 import software.amazon.smithy.model.traits.IdempotencyTokenTrait;
 import software.amazon.smithy.model.traits.SensitiveTrait;
 import software.amazon.smithy.model.traits.SparseTrait;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -259,26 +263,38 @@ public final class CppTypeMapper {
      */
     public static List<String> getIncludesForShape(Shape structureShape, Model model, String projectName) {
         Set<String> includes = new TreeSet<>();
+        ShapeId selfId = structureShape.getId();
         for (MemberShape member : structureShape.getAllMembers().values()) {
             Shape target = model.expectShape(member.getTarget());
-            getIncludeForMemberType(target, model, projectName).ifPresent(includes::add);
-            // For list/map, also include the element/key/value types
-            if (target.isListShape()) {
-                ListShape list = target.asListShape().get();
-                Shape elem = model.expectShape(list.getMember().getTarget());
-                getIncludeForMemberType(elem, model, projectName).ifPresent(includes::add);
-            }
-            if (target.isMapShape()) {
-                MapShape map = target.asMapShape().get();
-                Shape key = model.expectShape(map.getKey().getTarget());
-                Shape value = model.expectShape(map.getValue().getTarget());
-                getIncludeForMemberType(key, model, projectName).ifPresent(includes::add);
-                getIncludeForMemberType(value, model, projectName).ifPresent(includes::add);
-            }
-            // A @sparse list/map wraps its element/value in Aws::Crt::Optional, declared in
-            // <aws/crt/Optional.h>. Matches C2J's generated SparseNullsOperationRequest.h.
-            if ((target.isListShape() || target.isMapShape()) && target.hasTrait(SparseTrait.class)) {
-                includes.add("<aws/crt/Optional.h>");
+            if (isRecursiveStructMember(structureShape, target, model)) {
+                // A recursive member is stored as std::shared_ptr<T>. A mutually-referenced T is
+                // forward-declared (see getForwardDeclarations), so the header needs the allocator
+                // header for the inline MakeShared setter rather than T's own header. A directly
+                // self-referential member (T == enclosing) needs neither: the class declares itself
+                // and MakeShared resolves transitively. Both match C2J.
+                if (!target.getId().equals(selfId)) {
+                    includes.add("<aws/core/utils/memory/stl/AWSAllocator.h>");
+                }
+            } else {
+                addMemberInclude(includes, target, selfId, model, projectName);
+                // For list/map, also include the element/key/value types
+                if (target.isListShape()) {
+                    ListShape list = target.asListShape().get();
+                    addMemberInclude(includes, model.expectShape(list.getMember().getTarget()),
+                        selfId, model, projectName);
+                }
+                if (target.isMapShape()) {
+                    MapShape map = target.asMapShape().get();
+                    addMemberInclude(includes, model.expectShape(map.getKey().getTarget()),
+                        selfId, model, projectName);
+                    addMemberInclude(includes, model.expectShape(map.getValue().getTarget()),
+                        selfId, model, projectName);
+                }
+                // A @sparse list/map wraps its element/value in Aws::Crt::Optional, declared in
+                // <aws/crt/Optional.h>. Matches C2J's generated SparseNullsOperationRequest.h.
+                if ((target.isListShape() || target.isMapShape()) && target.hasTrait(SparseTrait.class)) {
+                    includes.add("<aws/crt/Optional.h>");
+                }
             }
             // @idempotencyToken members are brace-initialized with
             // Aws::Utils::UUID::PseudoRandomUUID(), which requires UUID.h. Matches C2J
@@ -288,6 +304,133 @@ public final class CppTypeMapper {
             }
         }
         return new ArrayList<>(includes);
+    }
+
+    /**
+     * Adds the member-type include for {@code shape}, unless it is the enclosing shape itself.
+     * C2J never emits a self-include (the class is being defined in that header); a recursive
+     * self-referential member reaches its own type through the shared_ptr member instead.
+     */
+    private static void addMemberInclude(Set<String> includes, Shape shape, ShapeId selfId,
+                                         Model model, String projectName) {
+        if (!shape.getId().equals(selfId)) {
+            getIncludeForMemberType(shape, model, projectName).ifPresent(includes::add);
+        }
+    }
+
+    /**
+     * Returns the sorted C++ class names of every direct member whose target forms a reference
+     * cycle with {@code structureShape} (see {@link #isRecursiveStructMember}). These are stored
+     * as {@code std::shared_ptr<T>} and must be forward-declared (not included) in the header to
+     * break the otherwise-infinite by-value member. Matches C2J's {@code computeForwardDeclarations}.
+     *
+     * @param structureShape the enclosing structure/union
+     * @param model          the model
+     * @return sorted, deduplicated list of forward-declared C++ class names
+     */
+    public static List<String> getForwardDeclarations(Shape structureShape, Model model) {
+        Set<String> names = new TreeSet<>();
+        for (MemberShape member : structureShape.getAllMembers().values()) {
+            Shape target = model.expectShape(member.getTarget());
+            // A directly self-referential member needs no forward declaration (the class declares
+            // itself); only distinct mutually-referenced types do.
+            if (isRecursiveStructMember(structureShape, target, model)
+                    && !target.getId().equals(structureShape.getId())) {
+                names.add(cppShapeName(target));
+            }
+        }
+        return new ArrayList<>(names);
+    }
+
+    /**
+     * Returns the (bracket-less) model {@code #include} paths for every recursive member's target.
+     * The header forward-declares these types, so the {@code .cpp} must include them for the
+     * out-of-line MakeShared / serde bodies. Matches C2J's source-side include of the referenced type.
+     *
+     * @param structureShape the enclosing structure/union
+     * @param model          the model
+     * @param projectName    the service project name for model-relative includes
+     * @return sorted, deduplicated list of include paths without angle brackets
+     */
+    public static List<String> getRecursiveMemberSourceIncludes(Shape structureShape, Model model,
+                                                                String projectName) {
+        Set<String> inc = new TreeSet<>();
+        for (MemberShape member : structureShape.getAllMembers().values()) {
+            Shape target = model.expectShape(member.getTarget());
+            // The self header is already included by the source's base includes; only distinct
+            // mutually-referenced types need to be added here.
+            if (isRecursiveStructMember(structureShape, target, model)
+                    && !target.getId().equals(structureShape.getId())) {
+                inc.add("aws/" + projectName + "/model/" + cppShapeName(target) + ".h");
+            }
+        }
+        return new ArrayList<>(inc);
+    }
+
+    /**
+     * Returns true if a direct member of {@code enclosing} whose target is {@code memberTarget}
+     * forms a reference cycle that must be broken with {@code std::shared_ptr}. This holds when
+     * {@code memberTarget} is an aggregate (structure/union) mutually referenced with
+     * {@code enclosing}. Members that reach back only through a list/map container do not qualify
+     * (the container already breaks the by-value cycle).
+     *
+     * @param enclosing    the shape declaring the member
+     * @param memberTarget the member's direct target shape
+     * @param model        the model
+     * @return true if the member must be rendered as a shared_ptr to avoid an infinite-size type
+     */
+    public static boolean isRecursiveStructMember(Shape enclosing, Shape memberTarget, Model model) {
+        if (!isAggregate(memberTarget)) {
+            return false;
+        }
+        // C2J renders a member as shared_ptr when its target is either the enclosing shape itself
+        // (direct self-reference) or a distinct shape mutually referenced with it. Both otherwise
+        // form an infinite-size by-value member, illegal under C++11.
+        return memberTarget.getId().equals(enclosing.getId())
+            || isMutuallyReferenced(enclosing, memberTarget, model);
+    }
+
+    private static boolean isAggregate(Shape shape) {
+        return shape.isStructureShape() || shape.isUnionShape();
+    }
+
+    /**
+     * Mirrors C2J's {@code Shape.isMutuallyReferencedWith}: true when {@code a} and {@code b} are
+     * distinct aggregate shapes and each is reachable from the other through the member graph,
+     * descending one level transparently through list containers (not maps).
+     */
+    private static boolean isMutuallyReferenced(Shape a, Shape b, Model model) {
+        if (a.getId().equals(b.getId()) || !isAggregate(a) || !isAggregate(b)) {
+            return false;
+        }
+        return reachableAggregates(a, model).contains(b.getId())
+            && reachableAggregates(b, model).contains(a.getId());
+    }
+
+    private static Set<ShapeId> reachableAggregates(Shape root, Model model) {
+        Set<ShapeId> reachable = new HashSet<>();
+        Set<ShapeId> visited = new HashSet<>();
+        Deque<Shape> stack = new ArrayDeque<>();
+        stack.push(root);
+        visited.add(root.getId());
+        while (!stack.isEmpty()) {
+            Shape current = stack.pop();
+            for (MemberShape member : current.getAllMembers().values()) {
+                // C2J descends one level through a list container (list -> element), treating the
+                // list edge as transparent; it does not descend through maps.
+                Shape target = model.expectShape(member.getTarget());
+                if (target.isListShape()) {
+                    target = model.expectShape(target.asListShape().get().getMember().getTarget());
+                }
+                if (isAggregate(target)) {
+                    reachable.add(target.getId());
+                    if (visited.add(target.getId())) {
+                        stack.push(target);
+                    }
+                }
+            }
+        }
+        return reachable;
     }
 
 }

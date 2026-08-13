@@ -129,4 +129,50 @@ class MemberRendererOutputTest {
             out);
         assertTrue(out.contains("m_sparseStringMap.emplace(key, value);"), out);
     }
+
+    @Test
+    void recursiveMember_rendersSharedPtrFieldGetterAndMakeSharedSetter() {
+        // Mirrors connectcases BooleanCondition.h: the andAll member targets CompoundCondition,
+        // which lists BooleanCondition back — a cycle C2J breaks with std::shared_ptr, a *m_x
+        // getter, and a MakeShared setter tagged with the enclosing class name.
+        StructureShape operands = StructureShape.builder().id("com.example#BooleanOperands").build();
+        UnionShape booleanCondition = UnionShape.builder()
+            .id("com.example#BooleanCondition")
+            .addMember("equalTo", operands.getId())
+            .addMember("andAll", software.amazon.smithy.model.shapes.ShapeId.from("com.example#CompoundCondition"))
+            .build();
+        ListShape conditionList = ListShape.builder()
+            .id("com.example#BooleanConditionList")
+            .member(MemberShape.builder().id("com.example#BooleanConditionList$member")
+                .target(booleanCondition.getId()).build())
+            .build();
+        StructureShape compound = StructureShape.builder()
+            .id("com.example#CompoundCondition")
+            .addMember("conditions", conditionList.getId())
+            .build();
+        Model model = Model.builder().addShapes(operands, booleanCondition, conditionList, compound).build();
+
+        CppWriter pub = new CppWriter();
+        MemberRenderer.forStructure(model, booleanCondition, "BooleanCondition").renderPublicAccessors(pub);
+        String pubOut = pub.toString();
+        System.out.println(pubOut);
+
+        // Recursive andAll: deref getter + MakeShared setter tagged with enclosing class name.
+        assertTrue(pubOut.contains("inline const CompoundCondition& GetAndAll() const { return *m_andAll; }"), pubOut);
+        assertTrue(pubOut.contains("template <typename AndAllT = CompoundCondition>"), pubOut);
+        assertTrue(pubOut.contains(
+            "m_andAll = Aws::MakeShared<CompoundCondition>(\"BooleanCondition\", std::forward<AndAllT>(value));"),
+            pubOut);
+        // Non-recursive equalTo stays a plain by-value struct member.
+        assertTrue(pubOut.contains("inline const BooleanOperands& GetEqualTo() const { return m_equalTo; }"), pubOut);
+
+        CppWriter priv = new CppWriter();
+        MemberRenderer.forStructure(model, booleanCondition, "BooleanCondition").renderPrivateSection(priv);
+        String privOut = priv.toString();
+        System.out.println(privOut);
+
+        assertTrue(privOut.contains("std::shared_ptr<CompoundCondition> m_andAll;"), privOut);
+        assertTrue(privOut.contains("BooleanOperands m_equalTo;"), privOut);
+        assertTrue(privOut.contains("bool m_andAllHasBeenSet = false;"), privOut);
+    }
 }

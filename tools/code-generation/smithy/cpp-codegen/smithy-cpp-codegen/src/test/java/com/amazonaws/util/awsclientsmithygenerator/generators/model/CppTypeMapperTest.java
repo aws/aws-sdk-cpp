@@ -16,6 +16,7 @@ import software.amazon.smithy.model.shapes.ListShape;
 import software.amazon.smithy.model.shapes.LongShape;
 import software.amazon.smithy.model.shapes.MapShape;
 import software.amazon.smithy.model.shapes.MemberShape;
+import software.amazon.smithy.model.shapes.Shape;
 import software.amazon.smithy.model.shapes.StringShape;
 import software.amazon.smithy.model.shapes.StructureShape;
 import software.amazon.smithy.model.shapes.TimestampShape;
@@ -312,6 +313,114 @@ class CppTypeMapperTest {
             .build();
         Model model = Model.builder().addShapes(str, struct, map).build();
         assertEquals("Aws::Map<Aws::String, MyData>", CppTypeMapper.getCppType(map, model));
+    }
+
+    // --- recursive (mutually-referenced) shape tests ---
+
+    /**
+     * Builds the connectcases-style mutual cycle: a union {@code BooleanCondition} with a direct
+     * member targeting struct {@code CompoundCondition}, which holds a list of
+     * {@code BooleanCondition}. The two aggregates are mutually referenced through the list.
+     */
+    private static Model mutualCycleModel() {
+        StructureShape operands = StructureShape.builder().id("com.example#BooleanOperands").build();
+        // Forward references are fine; Model.builder resolves them at build().
+        UnionShape booleanCondition = UnionShape.builder()
+            .id("com.example#BooleanCondition")
+            .addMember("equalTo", operands.getId())
+            .addMember("andAll", software.amazon.smithy.model.shapes.ShapeId.from("com.example#CompoundCondition"))
+            .build();
+        ListShape conditionList = ListShape.builder()
+            .id("com.example#BooleanConditionList")
+            .member(MemberShape.builder().id("com.example#BooleanConditionList$member")
+                .target(booleanCondition.getId()).build())
+            .build();
+        StructureShape compound = StructureShape.builder()
+            .id("com.example#CompoundCondition")
+            .addMember("conditions", conditionList.getId())
+            .build();
+        return Model.builder().addShapes(operands, booleanCondition, conditionList, compound).build();
+    }
+
+    @Test
+    void mutuallyReferencedDirectMember_isRecursiveStructMember() {
+        Model model = mutualCycleModel();
+        Shape booleanCondition = model.expectShape(
+            software.amazon.smithy.model.shapes.ShapeId.from("com.example#BooleanCondition"));
+        Shape compound = model.expectShape(
+            software.amazon.smithy.model.shapes.ShapeId.from("com.example#CompoundCondition"));
+        Shape operands = model.expectShape(
+            software.amazon.smithy.model.shapes.ShapeId.from("com.example#BooleanOperands"));
+        // andAll -> CompoundCondition is a direct member forming a cycle -> recursive
+        assertTrue(CppTypeMapper.isRecursiveStructMember(booleanCondition, compound, model));
+        // equalTo -> BooleanOperands does not cycle back -> not recursive
+        assertFalse(CppTypeMapper.isRecursiveStructMember(booleanCondition, operands, model));
+    }
+
+    @Test
+    void recursiveMember_headerSwapsStructIncludeForAllocator_andForwardDeclares() {
+        Model model = mutualCycleModel();
+        Shape booleanCondition = model.expectShape(
+            software.amazon.smithy.model.shapes.ShapeId.from("com.example#BooleanCondition"));
+
+        List<String> includes = CppTypeMapper.getIncludesForShape(booleanCondition, model, "connectcases");
+        // The recursive CompoundCondition is forward-declared, not included; allocator comes in instead.
+        assertTrue(includes.contains("<aws/core/utils/memory/stl/AWSAllocator.h>"), includes.toString());
+        assertFalse(includes.contains("<aws/connectcases/model/CompoundCondition.h>"), includes.toString());
+        // Non-recursive struct member keeps its normal include.
+        assertTrue(includes.contains("<aws/connectcases/model/BooleanOperands.h>"), includes.toString());
+
+        assertEquals(List.of("CompoundCondition"),
+            CppTypeMapper.getForwardDeclarations(booleanCondition, model));
+        assertEquals(List.of("aws/connectcases/model/CompoundCondition.h"),
+            CppTypeMapper.getRecursiveMemberSourceIncludes(booleanCondition, model, "connectcases"));
+    }
+
+    @Test
+    void directSelfReference_isRecursive_butNotForwardDeclaredOrSelfIncluded() {
+        // connectcases CaseFilter has a `not` member targeting CaseFilter itself. C2J renders it as
+        // std::shared_ptr<CaseFilter> but adds neither a self forward-declaration nor a self-include
+        // (the class declares itself) — and, unlike the mutual case, no AWSAllocator.h either.
+        StructureShape filter = StructureShape.builder()
+            .id("com.example#CaseFilter")
+            .addMember("not", software.amazon.smithy.model.shapes.ShapeId.from("com.example#CaseFilter"))
+            .build();
+        Model model = Model.builder().addShape(filter).build();
+        Shape caseFilter = model.expectShape(
+            software.amazon.smithy.model.shapes.ShapeId.from("com.example#CaseFilter"));
+
+        assertTrue(CppTypeMapper.isRecursiveStructMember(caseFilter, caseFilter, model));
+        assertEquals(List.of(), CppTypeMapper.getForwardDeclarations(caseFilter, model));
+        assertEquals(List.of(),
+            CppTypeMapper.getRecursiveMemberSourceIncludes(caseFilter, model, "connectcases"));
+        List<String> includes = CppTypeMapper.getIncludesForShape(caseFilter, model, "connectcases");
+        assertFalse(includes.contains("<aws/connectcases/model/CaseFilter.h>"),
+            "must not self-include: " + includes);
+        assertFalse(includes.contains("<aws/core/utils/memory/stl/AWSAllocator.h>"),
+            "self-reference needs no AWSAllocator.h: " + includes);
+    }
+
+    @Test
+    void selfReferenceThroughListElement_isNotSelfIncluded() {
+        // CaseFilter also has andAll -> list<CaseFilter>. The list stays by-value, but its element
+        // include must not become a self-include.
+        StructureShape filter = StructureShape.builder()
+            .id("com.example#CaseFilter")
+            .addMember("andAll", software.amazon.smithy.model.shapes.ShapeId.from("com.example#CaseFilterList"))
+            .build();
+        ListShape list = ListShape.builder()
+            .id("com.example#CaseFilterList")
+            .member(MemberShape.builder().id("com.example#CaseFilterList$member")
+                .target("com.example#CaseFilter").build())
+            .build();
+        Model model = Model.builder().addShapes(filter, list).build();
+        Shape caseFilter = model.expectShape(
+            software.amazon.smithy.model.shapes.ShapeId.from("com.example#CaseFilter"));
+
+        List<String> includes = CppTypeMapper.getIncludesForShape(caseFilter, model, "connectcases");
+        assertTrue(includes.contains("<aws/core/utils/memory/stl/AWSVector.h>"), includes.toString());
+        assertFalse(includes.contains("<aws/connectcases/model/CaseFilter.h>"),
+            "list-of-self must not self-include: " + includes);
     }
 
     // --- getDefaultValue tests ---
