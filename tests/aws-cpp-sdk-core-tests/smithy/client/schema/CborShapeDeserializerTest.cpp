@@ -7,6 +7,7 @@
 #include <smithy/client/schema/CborShapeDeserializer.h>
 #include <smithy/client/schema/CborShapeSerializer.h>
 #include <smithy/client/schema/Schema.h>
+#include <smithy/client/schema/SchemaBuilder.h>
 
 using namespace smithy::schema;
 
@@ -16,10 +17,10 @@ class CborShapeDeserializerTest : public Aws::Testing::AwsCppSdkGTestSuite {};
 
 TEST_F(CborShapeDeserializerTest, BooleanTrue) {
   CborShapeSerializer s;
-  Schema root;
-  s.BeginStructure(root);
+  auto root = Schema::StructureBuilder("Root").Build();
+  s.BeginStructure(*root);
   s.WriteMapKey("enabled");
-  s.WriteBoolean(root, true);
+  s.WriteBoolean(*root, true);
   s.EndStructure();
   auto payload = s.GetPayload().GetResult();
 
@@ -38,10 +39,10 @@ TEST_F(CborShapeDeserializerTest, BooleanTrue) {
 
 TEST_F(CborShapeDeserializerTest, BooleanFalse) {
   CborShapeSerializer s;
-  Schema root;
-  s.BeginStructure(root);
+  auto root = Schema::StructureBuilder("Root").Build();
+  s.BeginStructure(*root);
   s.WriteMapKey("ok");
-  s.WriteBoolean(root, false);
+  s.WriteBoolean(*root, false);
   s.EndStructure();
   auto payload = s.GetPayload().GetResult();
 
@@ -59,10 +60,10 @@ TEST_F(CborShapeDeserializerTest, BooleanFalse) {
 
 TEST_F(CborShapeDeserializerTest, IntegerSmall) {
   CborShapeSerializer s;
-  Schema root;
-  s.BeginStructure(root);
+  auto root = Schema::StructureBuilder("Root").Build();
+  s.BeginStructure(*root);
   s.WriteMapKey("n");
-  s.WriteInteger(root, 7);
+  s.WriteInteger(*root, 7);
   s.EndStructure();
   auto payload = s.GetPayload().GetResult();
 
@@ -80,10 +81,10 @@ TEST_F(CborShapeDeserializerTest, IntegerSmall) {
 
 TEST_F(CborShapeDeserializerTest, IntegerNegative) {
   CborShapeSerializer s;
-  Schema root;
-  s.BeginStructure(root);
+  auto root = Schema::StructureBuilder("Root").Build();
+  s.BeginStructure(*root);
   s.WriteMapKey("n");
-  s.WriteInteger(root, -42);
+  s.WriteInteger(*root, -42);
   s.EndStructure();
   auto payload = s.GetPayload().GetResult();
 
@@ -101,10 +102,10 @@ TEST_F(CborShapeDeserializerTest, IntegerNegative) {
 
 TEST_F(CborShapeDeserializerTest, LongValue) {
   CborShapeSerializer s;
-  Schema root;
-  s.BeginStructure(root);
+  auto root = Schema::StructureBuilder("Root").Build();
+  s.BeginStructure(*root);
   s.WriteMapKey("big");
-  s.WriteLong(root, 5000000000LL);
+  s.WriteLong(*root, 5000000000LL);
   s.EndStructure();
   auto payload = s.GetPayload().GetResult();
 
@@ -122,10 +123,10 @@ TEST_F(CborShapeDeserializerTest, LongValue) {
 
 TEST_F(CborShapeDeserializerTest, DoubleValue) {
   CborShapeSerializer s;
-  Schema root;
-  s.BeginStructure(root);
+  auto root = Schema::StructureBuilder("Root").Build();
+  s.BeginStructure(*root);
   s.WriteMapKey("d");
-  s.WriteDouble(root, 3.14);
+  s.WriteDouble(*root, 3.14);
   s.EndStructure();
   auto payload = s.GetPayload().GetResult();
 
@@ -144,10 +145,10 @@ TEST_F(CborShapeDeserializerTest, DoubleValue) {
 TEST_F(CborShapeDeserializerTest, DoubleWholeNumber) {
   // CRT encodes 5.0 as integer 5 — deserializer must handle this
   CborShapeSerializer s;
-  Schema root;
-  s.BeginStructure(root);
+  auto root = Schema::StructureBuilder("Root").Build();
+  s.BeginStructure(*root);
   s.WriteMapKey("d");
-  s.WriteDouble(root, 5.0);
+  s.WriteDouble(*root, 5.0);
   s.EndStructure();
   auto payload = s.GetPayload().GetResult();
 
@@ -165,10 +166,10 @@ TEST_F(CborShapeDeserializerTest, DoubleWholeNumber) {
 
 TEST_F(CborShapeDeserializerTest, FloatValue) {
   CborShapeSerializer s;
-  Schema root;
-  s.BeginStructure(root);
+  auto root = Schema::StructureBuilder("Root").Build();
+  s.BeginStructure(*root);
   s.WriteMapKey("f");
-  s.WriteFloat(root, 1.5f);
+  s.WriteFloat(*root, 1.5f);
   s.EndStructure();
   auto payload = s.GetPayload().GetResult();
 
@@ -186,10 +187,10 @@ TEST_F(CborShapeDeserializerTest, FloatValue) {
 
 TEST_F(CborShapeDeserializerTest, StringValue) {
   CborShapeSerializer s;
-  Schema root;
-  s.BeginStructure(root);
+  auto root = Schema::StructureBuilder("Root").Build();
+  s.BeginStructure(*root);
   s.WriteMapKey("name");
-  s.WriteString(root, "hello");
+  s.WriteString(*root, "hello");
   s.EndStructure();
   auto payload = s.GetPayload().GetResult();
 
@@ -207,15 +208,15 @@ TEST_F(CborShapeDeserializerTest, StringValue) {
 
 TEST_F(CborShapeDeserializerTest, BlobValue) {
   CborShapeSerializer s;
-  Schema root;
+  auto root = Schema::StructureBuilder("Root").Build();
   Aws::Utils::ByteBuffer blob(4);
   blob[0] = 0xDE;
   blob[1] = 0xAD;
   blob[2] = 0xBE;
   blob[3] = 0xEF;
-  s.BeginStructure(root);
+  s.BeginStructure(*root);
   s.WriteMapKey("data");
-  s.WriteBlob(root, blob);
+  s.WriteBlob(*root, blob);
   s.EndStructure();
   auto payload = s.GetPayload().GetResult();
 
@@ -237,11 +238,11 @@ TEST_F(CborShapeDeserializerTest, BlobValue) {
 
 TEST_F(CborShapeDeserializerTest, TimestampValue) {
   CborShapeSerializer s;
-  Schema root;
+  auto root = Schema::StructureBuilder("Root").Build();
   Aws::Utils::DateTime dt(1234567890.0);  // seconds since epoch
-  s.BeginStructure(root);
+  s.BeginStructure(*root);
   s.WriteMapKey("ts");
-  s.WriteTimestamp(root, dt);
+  s.WriteTimestamp(*root, dt);
   s.EndStructure();
   auto payload = s.GetPayload().GetResult();
 
@@ -259,10 +260,10 @@ TEST_F(CborShapeDeserializerTest, TimestampValue) {
 
 TEST_F(CborShapeDeserializerTest, NullValue) {
   CborShapeSerializer s;
-  Schema root;
-  s.BeginStructure(root);
+  auto root = Schema::StructureBuilder("Root").Build();
+  s.BeginStructure(*root);
   s.WriteMapKey("item");
-  s.WriteNull(root);
+  s.WriteNull(*root);
   s.EndStructure();
   auto payload = s.GetPayload().GetResult();
 
@@ -281,13 +282,13 @@ TEST_F(CborShapeDeserializerTest, NullValue) {
 
 TEST_F(CborShapeDeserializerTest, ListOfIntegers) {
   CborShapeSerializer s;
-  Schema root;
-  s.BeginStructure(root);
+  auto root = Schema::StructureBuilder("Root").Build();
+  s.BeginStructure(*root);
   s.WriteMapKey("nums");
-  s.BeginList(root, 3);
-  s.WriteInteger(root, 10);
-  s.WriteInteger(root, 20);
-  s.WriteInteger(root, 30);
+  s.BeginList(*root, 3);
+  s.WriteInteger(*root, 10);
+  s.WriteInteger(*root, 20);
+  s.WriteInteger(*root, 30);
   s.EndList();
   s.EndStructure();
   auto payload = s.GetPayload().GetResult();
@@ -315,14 +316,14 @@ TEST_F(CborShapeDeserializerTest, ListOfIntegers) {
 
 TEST_F(CborShapeDeserializerTest, MapOfStrings) {
   CborShapeSerializer s;
-  Schema root;
-  s.BeginStructure(root);
+  auto root = Schema::StructureBuilder("Root").Build();
+  s.BeginStructure(*root);
   s.WriteMapKey("headers");
-  s.BeginMap(root, 2);
+  s.BeginMap(*root, 2);
   s.WriteMapKey("foo");
-  s.WriteString(root, "bar");
+  s.WriteString(*root, "bar");
   s.WriteMapKey("baz");
-  s.WriteString(root, "qux");
+  s.WriteString(*root, "qux");
   s.EndMap();
   s.EndStructure();
   auto payload = s.GetPayload().GetResult();
@@ -353,12 +354,12 @@ TEST_F(CborShapeDeserializerTest, MapOfStrings) {
 
 TEST_F(CborShapeDeserializerTest, NestedStructure) {
   CborShapeSerializer s;
-  Schema root;
-  s.BeginStructure(root);
+  auto root = Schema::StructureBuilder("Root").Build();
+  s.BeginStructure(*root);
   s.WriteMapKey("meta");
-  s.BeginNestedStructure(root);
+  s.BeginNestedStructure(*root);
   s.WriteMapKey("key");
-  s.WriteString(root, "val");
+  s.WriteString(*root, "val");
   s.EndNestedStructure();
   s.EndStructure();
   auto payload = s.GetPayload().GetResult();
@@ -385,14 +386,14 @@ TEST_F(CborShapeDeserializerTest, NestedStructure) {
 
 TEST_F(CborShapeDeserializerTest, SkipUnknownField) {
   CborShapeSerializer s;
-  Schema root;
-  s.BeginStructure(root);
+  auto root = Schema::StructureBuilder("Root").Build();
+  s.BeginStructure(*root);
   s.WriteMapKey("known");
-  s.WriteInteger(root, 1);
+  s.WriteInteger(*root, 1);
   s.WriteMapKey("unknown");
-  s.WriteString(root, "skip me");
+  s.WriteString(*root, "skip me");
   s.WriteMapKey("also_known");
-  s.WriteInteger(root, 2);
+  s.WriteInteger(*root, 2);
   s.EndStructure();
   auto payload = s.GetPayload().GetResult();
 
@@ -420,17 +421,17 @@ TEST_F(CborShapeDeserializerTest, SkipUnknownField) {
 
 TEST_F(CborShapeDeserializerTest, SkipNestedUnknown) {
   CborShapeSerializer s;
-  Schema root;
-  s.BeginStructure(root);
+  auto root = Schema::StructureBuilder("Root").Build();
+  s.BeginStructure(*root);
   s.WriteMapKey("unknown_struct");
-  s.BeginNestedStructure(root);
+  s.BeginNestedStructure(*root);
   s.WriteMapKey("a");
-  s.WriteInteger(root, 1);
+  s.WriteInteger(*root, 1);
   s.WriteMapKey("b");
-  s.WriteString(root, "nested");
+  s.WriteString(*root, "nested");
   s.EndNestedStructure();
   s.WriteMapKey("known");
-  s.WriteInteger(root, 42);
+  s.WriteInteger(*root, 42);
   s.EndStructure();
   auto payload = s.GetPayload().GetResult();
 
@@ -454,14 +455,14 @@ TEST_F(CborShapeDeserializerTest, SkipNestedUnknown) {
 
 TEST_F(CborShapeDeserializerTest, MultipleScalars) {
   CborShapeSerializer s;
-  Schema root;
-  s.BeginStructure(root);
+  auto root = Schema::StructureBuilder("Root").Build();
+  s.BeginStructure(*root);
   s.WriteMapKey("a");
-  s.WriteBoolean(root, true);
+  s.WriteBoolean(*root, true);
   s.WriteMapKey("b");
-  s.WriteInteger(root, 7);
+  s.WriteInteger(*root, 7);
   s.WriteMapKey("c");
-  s.WriteString(root, "x");
+  s.WriteString(*root, "x");
   s.EndStructure();
   auto payload = s.GetPayload().GetResult();
 
@@ -500,10 +501,10 @@ TEST_F(CborShapeDeserializerTest, EmptyOptionalOnEmptyPayload) {
 
 TEST_F(CborShapeDeserializerTest, EmptyOptionalOnTypeMismatch) {
   CborShapeSerializer s;
-  Schema root;
-  s.BeginStructure(root);
+  auto root = Schema::StructureBuilder("Root").Build();
+  s.BeginStructure(*root);
   s.WriteMapKey("val");
-  s.WriteString(root, "hello");
+  s.WriteString(*root, "hello");
   s.EndStructure();
   auto payload = s.GetPayload().GetResult();
 
@@ -518,10 +519,10 @@ TEST_F(CborShapeDeserializerTest, EmptyOptionalOnTypeMismatch) {
 
 TEST_F(CborShapeDeserializerTest, ValidOptionalOnSuccess) {
   CborShapeSerializer s;
-  Schema root;
-  s.BeginStructure(root);
+  auto root = Schema::StructureBuilder("Root").Build();
+  s.BeginStructure(*root);
   s.WriteMapKey("n");
-  s.WriteInteger(root, 42);
+  s.WriteInteger(*root, 42);
   s.EndStructure();
   auto payload = s.GetPayload().GetResult();
 
@@ -565,10 +566,10 @@ TEST_F(CborShapeDeserializerTest, BeginStructDefiniteLengthMap) {
 
 TEST_F(CborShapeDeserializerTest, BeginStructIndefiniteLengthMap) {
   CborShapeSerializer s;
-  Schema root;
-  s.BeginStructure(root);
+  auto root = Schema::StructureBuilder("Root").Build();
+  s.BeginStructure(*root);
   s.WriteMapKey("x");
-  s.WriteInteger(root, 99);
+  s.WriteInteger(*root, 99);
   s.EndStructure();
   auto payload = s.GetPayload().GetResult();
 
