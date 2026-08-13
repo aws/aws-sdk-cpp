@@ -92,7 +92,7 @@ public final class MemberRenderer {
 
             if (targetShape.isDocumentShape()) {
                 writer.write("inline Aws::Utils::DocumentView Get$L() const { return $L; }", methodName, fieldName);
-            } else if (isPrimitive(targetShape) || targetShape.isEnumShape()) {
+            } else if (isPrimitive(targetShape) || CppTypeMapper.isEnum(targetShape)) {
                 writer.write("inline $L Get$L() const { return $L; }", cppType, methodName, fieldName);
             } else {
                 writer.write("inline const $L& Get$L() const { return $L; }", cppType, methodName, fieldName);
@@ -102,7 +102,7 @@ public final class MemberRenderer {
                 writer.write("inline bool $LHasBeenSet() const { return $LHasBeenSet; }", methodName, fieldName);
             }
 
-            if (targetShape.isEnumShape() || isPrimitive(targetShape)) {
+            if (CppTypeMapper.isEnum(targetShape) || isPrimitive(targetShape)) {
                 writer.openBlock("inline void Set$L($L value) {", "}", methodName, cppType, () -> {
                     writer.write("$LHasBeenSet = true;", fieldName);
                     writer.write("$L = value;", fieldName);
@@ -291,7 +291,7 @@ public final class MemberRenderer {
      * (they are cheap and trivially copyable), everything else is forwarded.
      */
     private static boolean isByValueType(Shape shape) {
-        return CppTypeMapper.isPrimitive(shape) || shape.isEnumShape();
+        return CppTypeMapper.isPrimitive(shape) || CppTypeMapper.isEnum(shape);
     }
 
     private static String capitalize(String name) {

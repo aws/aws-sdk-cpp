@@ -252,6 +252,25 @@ class CppTypeMapperTest {
     }
 
     @Test
+    void legacyEnumStringShape_mapsToEnumType() {
+        // Smithy 1.0 models a closed set as a `string` shape carrying the @enum trait (not a 2.0
+        // EnumShape). C2J treats these as enums, so a member targeting one must resolve to the
+        // enum C++ type, NOT Aws::String. Mirrors ShapeClassifier / EnumResolver detection.
+        software.amazon.smithy.model.traits.EnumTrait enumTrait =
+            software.amazon.smithy.model.traits.EnumTrait.builder()
+                .addEnum(software.amazon.smithy.model.traits.EnumDefinition.builder()
+                    .value("Case.Created").name("Case_Created").build())
+                .build();
+        StringShape shape = StringShape.builder().id("com.example#AuditEventType")
+            .addTrait(enumTrait).build();
+        Model model = Model.builder().addShape(shape).build();
+        assertEquals("AuditEventType", CppTypeMapper.getCppType(shape, model));
+        assertEquals(java.util.Optional.of("AuditEventType::NOT_SET"), CppTypeMapper.getDefaultValue(shape));
+        assertEquals(java.util.Optional.of("<aws/connectcases/model/AuditEventType.h>"),
+            CppTypeMapper.getIncludeForMemberType(shape, model, "connectcases"));
+    }
+
+    @Test
     void structureShape_lowerCamelName_mapsToUpperCamelType() {
         StructureShape struct = StructureShape.builder().id("com.example#nestedThing").build();
         Model model = Model.builder().addShape(struct).build();

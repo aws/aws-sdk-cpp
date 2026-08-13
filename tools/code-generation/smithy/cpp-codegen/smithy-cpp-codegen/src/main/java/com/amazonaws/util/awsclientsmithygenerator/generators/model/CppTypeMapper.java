@@ -9,6 +9,7 @@ import software.amazon.smithy.model.shapes.ListShape;
 import software.amazon.smithy.model.shapes.MapShape;
 import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.Shape;
+import software.amazon.smithy.model.traits.EnumTrait;
 import software.amazon.smithy.model.traits.IdempotencyTokenTrait;
 import software.amazon.smithy.model.traits.SensitiveTrait;
 import software.amazon.smithy.model.traits.SparseTrait;
@@ -73,8 +74,9 @@ public final class CppTypeMapper {
      *        {@code long long} in every mapping and is unaffected.
      */
     public static String getCppType(Shape shape, Model model, boolean wideIntegers) {
-        // Check enum BEFORE string — EnumShape extends StringShape in Smithy
-        if (shape.isEnumShape()) {
+        // Check enum BEFORE string — a Smithy 2.0 EnumShape extends StringShape, and a Smithy 1.0
+        // enum is a plain string carrying the @enum trait; both map to the enum C++ type.
+        if (isEnum(shape)) {
             return cppShapeName(shape);
         }
         if (shape.isStringShape()) {
@@ -148,7 +150,7 @@ public final class CppTypeMapper {
      * @return the initializer string (e.g., {@code "0"}, {@code "false"}) or empty
      */
     public static Optional<String> getDefaultValue(Shape shape) {
-        if (shape.isEnumShape()) {
+        if (isEnum(shape)) {
             return Optional.of(cppShapeName(shape) + "::NOT_SET");
         }
         if (shape.isIntegerShape() || shape.isLongShape()) {
@@ -175,6 +177,18 @@ public final class CppTypeMapper {
     public static boolean isPrimitive(Shape shape) {
         return shape.isIntegerShape() || shape.isLongShape()
             || shape.isBooleanShape() || shape.isDoubleShape() || shape.isFloatShape();
+    }
+
+    /**
+     * Returns true if the shape is an enum — either a Smithy 2.0 {@code EnumShape} or a Smithy 1.0
+     * {@code string} shape carrying the {@code @enum} trait. Both generate a dedicated C++ enum
+     * type. Mirrors the detection in {@code ShapeClassifier} and {@code EnumResolver}.
+     *
+     * @param shape the shape to check
+     * @return true if the shape maps to a generated C++ enum type
+     */
+    public static boolean isEnum(Shape shape) {
+        return shape.isEnumShape() || (shape.isStringShape() && shape.hasTrait(EnumTrait.class));
     }
 
     /**
@@ -205,8 +219,8 @@ public final class CppTypeMapper {
      * @return the include path string, or empty for primitives that need no include
      */
     public static Optional<String> getIncludeForMemberType(Shape shape, Model model, String projectName) {
-        // Check enum BEFORE string — EnumShape extends StringShape in Smithy
-        if (shape.isEnumShape()) {
+        // Check enum BEFORE string — see getCppType: covers both 2.0 EnumShape and 1.0 @enum string.
+        if (isEnum(shape)) {
             return Optional.of("<aws/" + projectName + "/model/" + cppShapeName(shape) + ".h>");
         }
         if (shape.isStringShape()) {
