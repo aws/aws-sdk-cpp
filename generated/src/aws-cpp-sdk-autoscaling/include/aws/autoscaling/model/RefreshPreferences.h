@@ -263,7 +263,17 @@ class RefreshPreferences {
    * greater than 100. A larger range increases the number of instances that can be
    * replaced at the same time.</p> <p>If you do not specify this property, the
    * default is 100 percent, or the percentage set in the instance maintenance policy
-   * for the Auto Scaling group, if defined.</p>
+   * for the Auto Scaling group, if defined.</p>  <p>Explicitly setting
+   * <code>MaxHealthyPercentage</code> to 100 is not equivalent to omitting it. When
+   * <code>MaxHealthyPercentage</code> is explicitly set and it is mathematically
+   * impossible to replace instances while honoring both
+   * <code>MinHealthyPercentage</code> and <code>MaxHealthyPercentage</code> bounds
+   * simultaneously, Auto Scaling launches a new instance before terminating an old
+   * one (temporarily exceeding the desired capacity). When
+   * <code>MaxHealthyPercentage</code> is omitted, Auto Scaling terminates an
+   * instance and launches its replacement simultaneously. This behavioral difference
+   * can affect workflows that depend on instance replacement ordering.</p>
+   *
    */
   inline int GetMaxHealthyPercentage() const { return m_maxHealthyPercentage; }
   inline bool MaxHealthyPercentageHasBeenSet() const { return m_maxHealthyPercentageHasBeenSet; }

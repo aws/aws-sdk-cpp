@@ -8,6 +8,7 @@
 #include <aws/autoscaling/model/Activity.h>
 #include <aws/autoscaling/model/ResponseMetadata.h>
 #include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -47,6 +48,30 @@ class TerminateInstanceInAutoScalingGroupResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The scaling activities related to terminating the instances from the Auto
+   * Scaling group.</p>
+   */
+  inline const Aws::Vector<Activity>& GetActivities() const { return m_activities; }
+  template <typename ActivitiesT = Aws::Vector<Activity>>
+  void SetActivities(ActivitiesT&& value) {
+    m_activitiesHasBeenSet = true;
+    m_activities = std::forward<ActivitiesT>(value);
+  }
+  template <typename ActivitiesT = Aws::Vector<Activity>>
+  TerminateInstanceInAutoScalingGroupResult& WithActivities(ActivitiesT&& value) {
+    SetActivities(std::forward<ActivitiesT>(value));
+    return *this;
+  }
+  template <typename ActivitiesT = Activity>
+  TerminateInstanceInAutoScalingGroupResult& AddActivities(ActivitiesT&& value) {
+    m_activitiesHasBeenSet = true;
+    m_activities.emplace_back(std::forward<ActivitiesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
   template <typename ResponseMetadataT = ResponseMetadata>
@@ -65,9 +90,12 @@ class TerminateInstanceInAutoScalingGroupResult {
  private:
   Activity m_activity;
 
+  Aws::Vector<Activity> m_activities;
+
   ResponseMetadata m_responseMetadata;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_activityHasBeenSet = false;
+  bool m_activitiesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -58,12 +58,11 @@ class UpdateCertificateOptionsRequest : public ACMRequest {
 
   ///@{
   /**
-   * <p>Use to update the options for your certificate. Currently, you can specify
-   * whether to export your certificate. Certificate transparency logging opt-out is
-   * no longer available. All public certificates are recorded in a certificate
-   * transparency log. For more information, see <a
-   * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate
-   * Transparency Logging</a>.</p>
+   * <p>Use to update the options for your certificate. Currently, you can change the
+   * domain validation method or specify whether to export your certificate. For more
+   * information about migrating from email to DNS validation, see <a
+   * href="https://docs.aws.amazon.com/acm/latest/userguide/email-to-dns-migration.html">Migrate
+   * from email to DNS validation</a>.</p>
    */
   inline const CertificateOptions& GetOptions() const { return m_options; }
   inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }

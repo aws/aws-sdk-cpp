@@ -70,11 +70,15 @@
 #include <aws/acm/model/DnsNameFilter.h>
 #include <aws/acm/model/DnsPrevalidationDetails.h>
 #include <aws/acm/model/DnsPrevalidationOptions.h>
+#include <aws/acm/model/DnsValidationChallenge.h>
 #include <aws/acm/model/DomainScope.h>
 #include <aws/acm/model/DomainScopeOption.h>
 #include <aws/acm/model/DomainStatus.h>
 #include <aws/acm/model/DomainValidation.h>
+#include <aws/acm/model/DomainValidationMethodUpdateSummary.h>
 #include <aws/acm/model/DomainValidationOption.h>
+#include <aws/acm/model/DomainValidationSummary.h>
+#include <aws/acm/model/EmailValidationChallenge.h>
 #include <aws/acm/model/Expiration.h>
 #include <aws/acm/model/ExpiryEventsConfiguration.h>
 #include <aws/acm/model/ExportCertificateRequest.h>
@@ -105,6 +109,8 @@
 #include <aws/acm/model/ListAcmeEndpointsResult.h>
 #include <aws/acm/model/ListAcmeExternalAccountBindingsRequest.h>
 #include <aws/acm/model/ListAcmeExternalAccountBindingsResult.h>
+#include <aws/acm/model/ListCertificateDomainValidationsRequest.h>
+#include <aws/acm/model/ListCertificateDomainValidationsResult.h>
 #include <aws/acm/model/ListCertificatesRequest.h>
 #include <aws/acm/model/ListCertificatesResult.h>
 #include <aws/acm/model/ListTagsForCertificateRequest.h>
@@ -151,6 +157,11 @@
 #include <aws/acm/model/UpdateAcmeDomainValidationRequest.h>
 #include <aws/acm/model/UpdateAcmeEndpointRequest.h>
 #include <aws/acm/model/UpdateCertificateOptionsRequest.h>
+#include <aws/acm/model/UpdateStatus.h>
+#include <aws/acm/model/UpdateSummary.h>
+#include <aws/acm/model/UpdateType.h>
+#include <aws/acm/model/ValidationChallenge.h>
+#include <aws/acm/model/ValidationConfiguration.h>
 #include <aws/acm/model/ValidationMethod.h>
 #include <aws/acm/model/X509AttributeFilter.h>
 #include <aws/acm/model/X509Attributes.h>

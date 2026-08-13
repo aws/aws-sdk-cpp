@@ -9,6 +9,7 @@
 #include <aws/connect/model/AllowedCapabilities.h>
 #include <aws/connect/model/ParticipantDetails.h>
 #include <aws/connect/model/Reference.h>
+#include <aws/connect/model/SegmentAttributeValue.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -228,6 +229,33 @@ class StartWebRTCContactRequest : public ConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Use this map to specify system-defined attributes for the WebRTC contact
+   * segment. Use the <code>connect:Subtype</code> attribute to specify the channel
+   * subtype, such as <code>connect:WebRTC</code>.</p> <p>Attribute keys can contain
+   * only alphanumeric characters, hyphens, and underscores.</p>
+   */
+  inline const Aws::Map<Aws::String, SegmentAttributeValue>& GetSegmentAttributes() const { return m_segmentAttributes; }
+  inline bool SegmentAttributesHasBeenSet() const { return m_segmentAttributesHasBeenSet; }
+  template <typename SegmentAttributesT = Aws::Map<Aws::String, SegmentAttributeValue>>
+  void SetSegmentAttributes(SegmentAttributesT&& value) {
+    m_segmentAttributesHasBeenSet = true;
+    m_segmentAttributes = std::forward<SegmentAttributesT>(value);
+  }
+  template <typename SegmentAttributesT = Aws::Map<Aws::String, SegmentAttributeValue>>
+  StartWebRTCContactRequest& WithSegmentAttributes(SegmentAttributesT&& value) {
+    SetSegmentAttributes(std::forward<SegmentAttributesT>(value));
+    return *this;
+  }
+  template <typename SegmentAttributesKeyT = Aws::String, typename SegmentAttributesValueT = SegmentAttributeValue>
+  StartWebRTCContactRequest& AddSegmentAttributes(SegmentAttributesKeyT&& key, SegmentAttributesValueT&& value) {
+    m_segmentAttributesHasBeenSet = true;
+    m_segmentAttributes.emplace(std::forward<SegmentAttributesKeyT>(key), std::forward<SegmentAttributesValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_attributes;
 
@@ -246,6 +274,8 @@ class StartWebRTCContactRequest : public ConnectRequest {
   Aws::Map<Aws::String, Reference> m_references;
 
   Aws::String m_description;
+
+  Aws::Map<Aws::String, SegmentAttributeValue> m_segmentAttributes;
   bool m_attributesHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_contactFlowIdHasBeenSet = false;
@@ -255,6 +285,7 @@ class StartWebRTCContactRequest : public ConnectRequest {
   bool m_relatedContactIdHasBeenSet = false;
   bool m_referencesHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
+  bool m_segmentAttributesHasBeenSet = false;
 };
 
 }  // namespace Model

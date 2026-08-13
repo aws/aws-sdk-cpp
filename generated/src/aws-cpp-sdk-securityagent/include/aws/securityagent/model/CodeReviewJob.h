@@ -324,6 +324,24 @@ class CodeReviewJob {
 
   ///@{
   /**
+   * <p>The maximum number of billable task hours allowed for this code review job.
+   * If the cumulative task hours reach this limit, the job is gracefully
+   * stopped.</p>
+   */
+  inline double GetMaxTaskHours() const { return m_maxTaskHours; }
+  inline bool MaxTaskHoursHasBeenSet() const { return m_maxTaskHoursHasBeenSet; }
+  inline void SetMaxTaskHours(double value) {
+    m_maxTaskHoursHasBeenSet = true;
+    m_maxTaskHours = value;
+  }
+  inline CodeReviewJob& WithMaxTaskHours(double value) {
+    SetMaxTaskHours(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The date and time the code review job was created, in UTC format.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -386,6 +404,8 @@ class CodeReviewJob {
 
   CodeRemediationStrategy m_codeRemediationStrategy{CodeRemediationStrategy::NOT_SET};
 
+  double m_maxTaskHours{0.0};
+
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
@@ -403,6 +423,7 @@ class CodeReviewJob {
   bool m_errorInformationHasBeenSet = false;
   bool m_integratedRepositoriesHasBeenSet = false;
   bool m_codeRemediationStrategyHasBeenSet = false;
+  bool m_maxTaskHoursHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };

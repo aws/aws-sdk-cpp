@@ -189,6 +189,7 @@
 #include <aws/securityagent/model/IntegrationSummary.h>
 #include <aws/securityagent/model/IpAddressType.h>
 #include <aws/securityagent/model/JobStatus.h>
+#include <aws/securityagent/model/JobType.h>
 #include <aws/securityagent/model/ListAgentSpacesRequest.h>
 #include <aws/securityagent/model/ListAgentSpacesResult.h>
 #include <aws/securityagent/model/ListApplicationsRequest.h>

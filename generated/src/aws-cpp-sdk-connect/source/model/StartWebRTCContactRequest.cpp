@@ -59,5 +59,13 @@ Aws::String StartWebRTCContactRequest::SerializePayload() const {
     payload.WithString("Description", m_description);
   }
 
+  if (m_segmentAttributesHasBeenSet) {
+    JsonValue segmentAttributesJsonMap;
+    for (auto& segmentAttributesItem : m_segmentAttributes) {
+      segmentAttributesJsonMap.WithObject(segmentAttributesItem.first, segmentAttributesItem.second.Jsonize());
+    }
+    payload.WithObject("SegmentAttributes", std::move(segmentAttributesJsonMap));
+  }
+
   return payload.View().WriteReadable();
 }

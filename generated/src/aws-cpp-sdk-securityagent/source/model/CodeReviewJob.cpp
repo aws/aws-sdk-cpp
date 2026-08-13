@@ -91,6 +91,10 @@ CodeReviewJob& CodeReviewJob::operator=(JsonView jsonValue) {
         CodeRemediationStrategyMapper::GetCodeRemediationStrategyForName(jsonValue.GetString("codeRemediationStrategy"));
     m_codeRemediationStrategyHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("maxTaskHours")) {
+    m_maxTaskHours = jsonValue.GetDouble("maxTaskHours");
+    m_maxTaskHoursHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
@@ -181,6 +185,10 @@ JsonValue CodeReviewJob::Jsonize() const {
   if (m_codeRemediationStrategyHasBeenSet) {
     payload.WithString("codeRemediationStrategy",
                        CodeRemediationStrategyMapper::GetNameForCodeRemediationStrategy(m_codeRemediationStrategy));
+  }
+
+  if (m_maxTaskHoursHasBeenSet) {
+    payload.WithDouble("maxTaskHours", m_maxTaskHours);
   }
 
   if (m_createdAtHasBeenSet) {

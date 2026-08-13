@@ -175,6 +175,23 @@ class UpdateCodeReviewRequest : public SecurityAgentRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The updated maximum number of billable task hours allowed for jobs started
+   * from this code review.</p>
+   */
+  inline double GetMaxTaskHours() const { return m_maxTaskHours; }
+  inline bool MaxTaskHoursHasBeenSet() const { return m_maxTaskHoursHasBeenSet; }
+  inline void SetMaxTaskHours(double value) {
+    m_maxTaskHoursHasBeenSet = true;
+    m_maxTaskHours = value;
+  }
+  inline UpdateCodeReviewRequest& WithMaxTaskHours(double value) {
+    SetMaxTaskHours(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_codeReviewId;
 
@@ -191,6 +208,8 @@ class UpdateCodeReviewRequest : public SecurityAgentRequest {
   CodeRemediationStrategy m_codeRemediationStrategy{CodeRemediationStrategy::NOT_SET};
 
   ValidationMode m_validationMode{ValidationMode::NOT_SET};
+
+  double m_maxTaskHours{0.0};
   bool m_codeReviewIdHasBeenSet = false;
   bool m_agentSpaceIdHasBeenSet = false;
   bool m_titleHasBeenSet = false;
@@ -199,6 +218,7 @@ class UpdateCodeReviewRequest : public SecurityAgentRequest {
   bool m_logConfigHasBeenSet = false;
   bool m_codeRemediationStrategyHasBeenSet = false;
   bool m_validationModeHasBeenSet = false;
+  bool m_maxTaskHoursHasBeenSet = false;
 };
 
 }  // namespace Model

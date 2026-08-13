@@ -1,0 +1,48 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/acm/model/DomainValidationMethodUpdateSummary.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace ACM {
+namespace Model {
+
+DomainValidationMethodUpdateSummary::DomainValidationMethodUpdateSummary(JsonView jsonValue) { *this = jsonValue; }
+
+DomainValidationMethodUpdateSummary& DomainValidationMethodUpdateSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("From")) {
+    m_from = ValidationMethodMapper::GetValidationMethodForName(jsonValue.GetString("From"));
+    m_fromHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("To")) {
+    m_to = ValidationMethodMapper::GetValidationMethodForName(jsonValue.GetString("To"));
+    m_toHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue DomainValidationMethodUpdateSummary::Jsonize() const {
+  JsonValue payload;
+
+  if (m_fromHasBeenSet) {
+    payload.WithString("From", ValidationMethodMapper::GetNameForValidationMethod(m_from));
+  }
+
+  if (m_toHasBeenSet) {
+    payload.WithString("To", ValidationMethodMapper::GetNameForValidationMethod(m_to));
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace ACM
+}  // namespace Aws

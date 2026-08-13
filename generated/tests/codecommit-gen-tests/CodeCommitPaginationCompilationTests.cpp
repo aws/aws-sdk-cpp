@@ -16,6 +16,7 @@
 #include <aws/codecommit/model/GetMergeConflictsPaginationTraits.h>
 #include <aws/codecommit/model/ListPullRequestsPaginationTraits.h>
 #include <aws/codecommit/model/GetDifferencesPaginationTraits.h>
+#include <aws/codecommit/model/GetBlobDifferencesPaginationTraits.h>
 #include <aws/codecommit/model/GetCommentReactionsPaginationTraits.h>
 #include <aws/codecommit/model/ListApprovalRuleTemplatesPaginationTraits.h>
 #include <aws/codecommit/model/DescribeMergeConflictsPaginationTraits.h>

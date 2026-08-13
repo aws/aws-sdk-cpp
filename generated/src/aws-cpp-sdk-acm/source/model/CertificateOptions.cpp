@@ -22,6 +22,10 @@ CertificateOptions& CertificateOptions::operator=(JsonView jsonValue) {
     m_export = CertificateExportMapper::GetCertificateExportForName(jsonValue.GetString("Export"));
     m_exportHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ValidationMethod")) {
+    m_validationMethod = ValidationMethodMapper::GetValidationMethodForName(jsonValue.GetString("ValidationMethod"));
+    m_validationMethodHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue CertificateOptions::Jsonize() const {
 
   if (m_exportHasBeenSet) {
     payload.WithString("Export", CertificateExportMapper::GetNameForCertificateExport(m_export));
+  }
+
+  if (m_validationMethodHasBeenSet) {
+    payload.WithString("ValidationMethod", ValidationMethodMapper::GetNameForValidationMethod(m_validationMethod));
   }
 
   return payload;

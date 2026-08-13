@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/cleanrooms/model/AdditionalAnalyses.h>
+#include <aws/cleanrooms/model/AggregationThreshold.h>
+#include <aws/cleanrooms/model/ComparisonControls.h>
 #include <aws/cleanrooms/model/DifferentialPrivacyConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -141,6 +143,48 @@ class ConsolidatedPolicyCustom {
 
   ///@{
   /**
+   * <p> The aggregation thresholds for the consolidated policy.</p>
+   */
+  inline const Aws::Vector<AggregationThreshold>& GetAggregationThresholds() const { return m_aggregationThresholds; }
+  inline bool AggregationThresholdsHasBeenSet() const { return m_aggregationThresholdsHasBeenSet; }
+  template <typename AggregationThresholdsT = Aws::Vector<AggregationThreshold>>
+  void SetAggregationThresholds(AggregationThresholdsT&& value) {
+    m_aggregationThresholdsHasBeenSet = true;
+    m_aggregationThresholds = std::forward<AggregationThresholdsT>(value);
+  }
+  template <typename AggregationThresholdsT = Aws::Vector<AggregationThreshold>>
+  ConsolidatedPolicyCustom& WithAggregationThresholds(AggregationThresholdsT&& value) {
+    SetAggregationThresholds(std::forward<AggregationThresholdsT>(value));
+    return *this;
+  }
+  template <typename AggregationThresholdsT = AggregationThreshold>
+  ConsolidatedPolicyCustom& AddAggregationThresholds(AggregationThresholdsT&& value) {
+    m_aggregationThresholdsHasBeenSet = true;
+    m_aggregationThresholds.emplace_back(std::forward<AggregationThresholdsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The comparison controls for the consolidated policy.</p>
+   */
+  inline const ComparisonControls& GetComparisonControls() const { return m_comparisonControls; }
+  inline bool ComparisonControlsHasBeenSet() const { return m_comparisonControlsHasBeenSet; }
+  template <typename ComparisonControlsT = ComparisonControls>
+  void SetComparisonControls(ComparisonControlsT&& value) {
+    m_comparisonControlsHasBeenSet = true;
+    m_comparisonControls = std::forward<ComparisonControlsT>(value);
+  }
+  template <typename ComparisonControlsT = ComparisonControls>
+  ConsolidatedPolicyCustom& WithComparisonControls(ComparisonControlsT&& value) {
+    SetComparisonControls(std::forward<ComparisonControlsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p> The allowed result receivers.</p>
    */
   inline const Aws::Vector<Aws::String>& GetAllowedResultReceivers() const { return m_allowedResultReceivers; }
@@ -197,6 +241,10 @@ class ConsolidatedPolicyCustom {
 
   DifferentialPrivacyConfiguration m_differentialPrivacy;
 
+  Aws::Vector<AggregationThreshold> m_aggregationThresholds;
+
+  ComparisonControls m_comparisonControls;
+
   Aws::Vector<Aws::String> m_allowedResultReceivers;
 
   Aws::Vector<Aws::String> m_allowedAdditionalAnalyses;
@@ -205,6 +253,8 @@ class ConsolidatedPolicyCustom {
   bool m_additionalAnalysesHasBeenSet = false;
   bool m_disallowedOutputColumnsHasBeenSet = false;
   bool m_differentialPrivacyHasBeenSet = false;
+  bool m_aggregationThresholdsHasBeenSet = false;
+  bool m_comparisonControlsHasBeenSet = false;
   bool m_allowedResultReceiversHasBeenSet = false;
   bool m_allowedAdditionalAnalysesHasBeenSet = false;
 };

@@ -38,6 +38,7 @@
 #include <aws/acm/model/ListAcmeEndpointsRequest.h>
 #include <aws/acm/model/ListAcmeEndpointsResult.h>
 #include <aws/acm/model/ListAcmeExternalAccountBindingsResult.h>
+#include <aws/acm/model/ListCertificateDomainValidationsResult.h>
 #include <aws/acm/model/ListCertificatesRequest.h>
 #include <aws/acm/model/ListCertificatesResult.h>
 #include <aws/acm/model/ListTagsForCertificateResult.h>
@@ -102,6 +103,7 @@ class ListAcmeAccountsRequest;
 class ListAcmeDomainValidationsRequest;
 class ListAcmeEndpointsRequest;
 class ListAcmeExternalAccountBindingsRequest;
+class ListCertificateDomainValidationsRequest;
 class ListCertificatesRequest;
 class ListTagsForCertificateRequest;
 class ListTagsForResourceRequest;
@@ -144,6 +146,7 @@ typedef Aws::Utils::Outcome<ListAcmeAccountsResult, ACMError> ListAcmeAccountsOu
 typedef Aws::Utils::Outcome<ListAcmeDomainValidationsResult, ACMError> ListAcmeDomainValidationsOutcome;
 typedef Aws::Utils::Outcome<ListAcmeEndpointsResult, ACMError> ListAcmeEndpointsOutcome;
 typedef Aws::Utils::Outcome<ListAcmeExternalAccountBindingsResult, ACMError> ListAcmeExternalAccountBindingsOutcome;
+typedef Aws::Utils::Outcome<ListCertificateDomainValidationsResult, ACMError> ListCertificateDomainValidationsOutcome;
 typedef Aws::Utils::Outcome<ListCertificatesResult, ACMError> ListCertificatesOutcome;
 typedef Aws::Utils::Outcome<ListTagsForCertificateResult, ACMError> ListTagsForCertificateOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, ACMError> ListTagsForResourceOutcome;
@@ -186,6 +189,7 @@ typedef std::future<ListAcmeAccountsOutcome> ListAcmeAccountsOutcomeCallable;
 typedef std::future<ListAcmeDomainValidationsOutcome> ListAcmeDomainValidationsOutcomeCallable;
 typedef std::future<ListAcmeEndpointsOutcome> ListAcmeEndpointsOutcomeCallable;
 typedef std::future<ListAcmeExternalAccountBindingsOutcome> ListAcmeExternalAccountBindingsOutcomeCallable;
+typedef std::future<ListCertificateDomainValidationsOutcome> ListCertificateDomainValidationsOutcomeCallable;
 typedef std::future<ListCertificatesOutcome> ListCertificatesOutcomeCallable;
 typedef std::future<ListTagsForCertificateOutcome> ListTagsForCertificateOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -281,6 +285,10 @@ typedef std::function<void(const ACMClient*, const Model::ListAcmeExternalAccoun
                            const Model::ListAcmeExternalAccountBindingsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAcmeExternalAccountBindingsResponseReceivedHandler;
+typedef std::function<void(const ACMClient*, const Model::ListCertificateDomainValidationsRequest&,
+                           const Model::ListCertificateDomainValidationsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListCertificateDomainValidationsResponseReceivedHandler;
 typedef std::function<void(const ACMClient*, const Model::ListCertificatesRequest&, const Model::ListCertificatesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListCertificatesResponseReceivedHandler;

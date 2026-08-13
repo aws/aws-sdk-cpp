@@ -38,6 +38,17 @@ TerminateInstanceInAutoScalingGroupResult& TerminateInstanceInAutoScalingGroupRe
       m_activity = activityNode;
       m_activityHasBeenSet = true;
     }
+    XmlNode activitiesNode = resultNode.FirstChild("Activities");
+    if (!activitiesNode.IsNull()) {
+      XmlNode activitiesMember = activitiesNode.FirstChild("member");
+      m_activitiesHasBeenSet = !activitiesMember.IsNull();
+      while (!activitiesMember.IsNull()) {
+        m_activities.push_back(activitiesMember);
+        activitiesMember = activitiesMember.NextNode("member");
+      }
+
+      m_activitiesHasBeenSet = true;
+    }
   }
 
   if (!rootNode.IsNull()) {

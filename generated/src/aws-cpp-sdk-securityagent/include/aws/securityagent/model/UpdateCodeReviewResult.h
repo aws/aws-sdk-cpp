@@ -204,6 +204,22 @@ class UpdateCodeReviewResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The maximum number of billable task hours configured for jobs started from
+   * this code review. Null if no budget cap is set.</p>
+   */
+  inline double GetMaxTaskHours() const { return m_maxTaskHours; }
+  inline void SetMaxTaskHours(double value) {
+    m_maxTaskHoursHasBeenSet = true;
+    m_maxTaskHours = value;
+  }
+  inline UpdateCodeReviewResult& WithMaxTaskHours(double value) {
+    SetMaxTaskHours(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -240,6 +256,8 @@ class UpdateCodeReviewResult {
 
   ValidationMode m_validationMode{ValidationMode::NOT_SET};
 
+  double m_maxTaskHours{0.0};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_codeReviewIdHasBeenSet = false;
@@ -252,6 +270,7 @@ class UpdateCodeReviewResult {
   bool m_agentSpaceIdHasBeenSet = false;
   bool m_codeRemediationStrategyHasBeenSet = false;
   bool m_validationModeHasBeenSet = false;
+  bool m_maxTaskHoursHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

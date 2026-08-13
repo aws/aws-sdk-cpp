@@ -6,6 +6,7 @@
 #include <aws/connect/ConnectClient.h>
 #include <aws/connect/ConnectEndpointProvider.h>
 #include <aws/connect/ConnectErrorMarshaller.h>
+#include <aws/connect/model/StartEmailContactRequest.h>
 #include <aws/connect/model/StartEvaluationFormValidationRequest.h>
 #include <aws/connect/model/StartOutboundChatContactRequest.h>
 #include <aws/connect/model/StartOutboundEmailContactRequest.h>
@@ -118,6 +119,17 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+StartEmailContactOutcome ConnectClient::StartEmailContact(const StartEmailContactRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/contact/email");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StartEmailContactOutcome(result.GetResultWithOwnership())
+                            : StartEmailContactOutcome(std::move(result.GetError()));
+}
 
 StartEvaluationFormValidationOutcome ConnectClient::StartEvaluationFormValidation(
     const StartEvaluationFormValidationRequest& request) const {

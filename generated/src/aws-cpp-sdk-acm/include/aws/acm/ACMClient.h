@@ -813,6 +813,40 @@ class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns per-domain validation summaries for an ACM certificate. Each summary
+   * includes the domain name, the active validation configuration, and the requested
+   * validation configuration when a validation method migration is in progress. You
+   * can use the results to monitor the progress of an email-to-DNS validation
+   * migration and to retrieve the CNAME records required for DNS
+   * validation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListCertificateDomainValidations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListCertificateDomainValidationsOutcome ListCertificateDomainValidations(
+      const Model::ListCertificateDomainValidationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListCertificateDomainValidations that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename ListCertificateDomainValidationsRequestT = Model::ListCertificateDomainValidationsRequest>
+  Model::ListCertificateDomainValidationsOutcomeCallable ListCertificateDomainValidationsCallable(
+      const ListCertificateDomainValidationsRequestT& request) const {
+    return SubmitCallable(&ACMClient::ListCertificateDomainValidations, request);
+  }
+
+  /**
+   * An Async wrapper for ListCertificateDomainValidations that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListCertificateDomainValidationsRequestT = Model::ListCertificateDomainValidationsRequest>
+  void ListCertificateDomainValidationsAsync(const ListCertificateDomainValidationsRequestT& request,
+                                             const ListCertificateDomainValidationsResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ACMClient::ListCertificateDomainValidations, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves a list of certificate ARNs and domain names. You can request that
    * only certificates that match a specific status be listed. You can also filter by
    * specific attributes of the certificate. Default filtering returns only
@@ -1334,11 +1368,11 @@ class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates a certificate. You can use this function to specify whether to export
-   * your certificate. Certificate transparency logging opt-out is no longer
-   * available. For more information, see <a
-   * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate
-   * Transparency Logging</a> and <a
+   * <p>Updates certificate options. You can use this operation to change the domain
+   * validation method or specify whether to export your certificate. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/acm/latest/userguide/email-to-dns-migration.html">Migrate
+   * from email to DNS validation</a> and <a
    * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-exportable-certificates.html">Certificate
    * Manager Exportable Managed Certificates</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/UpdateCertificateOptions">AWS
