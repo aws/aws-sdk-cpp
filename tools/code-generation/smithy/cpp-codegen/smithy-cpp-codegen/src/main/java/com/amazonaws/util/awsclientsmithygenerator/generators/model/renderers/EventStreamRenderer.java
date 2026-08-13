@@ -420,11 +420,11 @@ public final class EventStreamRenderer implements ShapeRenderer {
             .id("com.amazonaws.smithy.synthetic#" + opName + "InitialResponse");
         for (MemberShape member : resultShape.getAllMembers().values()) {
             Shape target = ctx.model().expectShape(member.getTarget());
-            if (target.isUnionShape() && target.hasTrait(StreamingTrait.class)) {
-                continue;
+            boolean isEventStream = target.isUnionShape() && target.hasTrait(StreamingTrait.class);
+            if (!isEventStream) {
+                builder.addMember(member.getMemberName(), member.getTarget(),
+                    b -> member.getAllTraits().values().forEach(b::addTrait));
             }
-            builder.addMember(member.getMemberName(), member.getTarget(),
-                b -> member.getAllTraits().values().forEach(b::addTrait));
         }
         return builder.build();
     }

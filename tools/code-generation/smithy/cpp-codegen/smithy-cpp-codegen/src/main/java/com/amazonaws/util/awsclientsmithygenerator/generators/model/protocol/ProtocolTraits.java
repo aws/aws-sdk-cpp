@@ -13,6 +13,8 @@ import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.model.shapes.StructureShape;
 
+import java.util.List;
+
 /**
  * Owns every protocol-specific rendering decision for generated model code.
  *
@@ -37,10 +39,10 @@ public interface ProtocolTraits {
     // ------------------------------------------------------------------
 
     /** Protocol-specific serde {@code #include} paths (no angle brackets) for the given file kind. */
-    java.util.List<String> serdeIncludes(FileKind kind);
+    List<String> serdeIncludes(FileKind kind);
 
     /** {@code using namespace} targets for the given file kind. */
-    java.util.List<String> serdeUsings(FileKind kind);
+    List<String> serdeUsings(FileKind kind);
 
     // ------------------------------------------------------------------
     // Header side

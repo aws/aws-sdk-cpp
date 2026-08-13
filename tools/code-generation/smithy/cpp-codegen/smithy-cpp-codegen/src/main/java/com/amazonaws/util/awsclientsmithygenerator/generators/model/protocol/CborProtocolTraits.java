@@ -12,6 +12,8 @@ import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.model.shapes.StructureShape;
 import software.amazon.smithy.model.traits.UnitTypeTrait;
 
+import java.util.List;
+
 /**
  * CBOR (Smithy {@code rpcv2Cbor}) serde rendering. Distinct from the JSON family: it
  * uses {@code Aws::Utils::Cbor::CborValue} model/result types, includes the CRT and core
@@ -77,13 +79,13 @@ public final class CborProtocolTraits implements ProtocolTraits {
     }
 
     @Override
-    public java.util.List<String> serdeIncludes(FileKind kind) {
+    public List<String> serdeIncludes(FileKind kind) {
         switch (kind) {
             // CborSubObjectHeader.vm / CborResultHeader.vm hard-include <aws/crt/cbor/Cbor.h>: the
             // header signatures reference Aws::Crt::Cbor::CborDecoder / CborEncoder directly.
             case SUBOBJECT_HEADER:
             case RESULT_HEADER:
-                return java.util.List.of("aws/crt/cbor/Cbor.h");
+                return List.of("aws/crt/cbor/Cbor.h");
             // All source kinds share one union (supersets allowed). Usings are unchanged.
             case SUBOBJECT_SOURCE:
             case REQUEST_SOURCE:
@@ -91,7 +93,7 @@ public final class CborProtocolTraits implements ProtocolTraits {
             case STREAMING_RESULT_SOURCE:
             case EVENT_HANDLER_SOURCE:
             case INITIAL_RESPONSE_SOURCE:
-                return java.util.List.of(
+                return List.of(
                     "aws/crt/cbor/Cbor.h",
                     "aws/core/utils/cbor/CborValue.h",
                     "aws/core/utils/UnreferencedParam.h",
@@ -105,19 +107,19 @@ public final class CborProtocolTraits implements ProtocolTraits {
     }
 
     @Override
-    public java.util.List<String> serdeUsings(FileKind kind) {
+    public List<String> serdeUsings(FileKind kind) {
         switch (kind) {
             case EVENT_HANDLER_SOURCE:
-                return java.util.List.of(serdeNamespace());
+                return List.of(serdeNamespace());
             case RESULT_SOURCE:
             case INITIAL_RESPONSE_SOURCE:
                 // CborResultSource.vm pulls the full set (result payloads use the CborValue DOM).
-                return java.util.List.of("Aws::Crt", "Aws::Crt::Cbor", "Aws::Utils", "Aws::Utils::Cbor");
+                return List.of("Aws::Crt", "Aws::Crt::Cbor", "Aws::Utils", "Aws::Utils::Cbor");
             case REQUEST_SOURCE:
             case SUBOBJECT_SOURCE:
                 // CborRequestSource.vm / CborSubObjectSource.vm: streaming encode/decode only —
                 // just Aws::Crt::Cbor + Aws::Utils, no Aws::Crt / Aws::Utils::Cbor.
-                return java.util.List.of("Aws::Crt::Cbor", "Aws::Utils");
+                return List.of("Aws::Crt::Cbor", "Aws::Utils");
             default:
                 throw new UnsupportedOperationException(
                     "No serde usings defined for FileKind " + kind + " in CborProtocolTraits");

@@ -193,10 +193,9 @@ public final class MemberRenderer {
     /** Private {@code HasBeenSet} flags (one per member, no blank lines), skipping the excluded member. */
     public void renderHasBeenSetFlags(CppWriter writer) {
         for (Map.Entry<String, MemberShape> entry : shape.getAllMembers().entrySet()) {
-            if (entry.getKey().equals(exclude)) {
-                continue;
+            if (!entry.getKey().equals(exclude)) {
+                writeHasBeenSetFlag(writer, entry.getValue(), entry.getKey());
             }
-            writeHasBeenSetFlag(writer, entry.getValue(), entry.getKey());
         }
     }
 

@@ -11,6 +11,8 @@ import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.model.shapes.StructureShape;
 
+import java.util.List;
+
 /**
  * JSON-flavored serde rendering. Serves {@link Protocol#JSON} (awsJson-RPC) and
  * {@link Protocol#REST_JSON} (rest-json), which share an identical C++ serde surface and
@@ -80,12 +82,12 @@ public final class JsonProtocolTraits implements ProtocolTraits {
     }
 
     @Override
-    public java.util.List<String> serdeIncludes(FileKind kind) {
+    public List<String> serdeIncludes(FileKind kind) {
         switch (kind) {
             // Headers forward-declare JsonValue/JsonView; no serializer include.
             case SUBOBJECT_HEADER:
             case RESULT_HEADER:
-                return java.util.List.of();
+                return List.of();
             // All source kinds share one union (supersets allowed: a .cpp may carry an
             // include it doesn't strictly use). Usings are unchanged; only #includes widen.
             case SUBOBJECT_SOURCE:
@@ -94,7 +96,7 @@ public final class JsonProtocolTraits implements ProtocolTraits {
             case STREAMING_RESULT_SOURCE:
             case EVENT_HANDLER_SOURCE:
             case INITIAL_RESPONSE_SOURCE:
-                return java.util.List.of(
+                return List.of(
                     "aws/core/utils/json/JsonSerializer.h",
                     "aws/core/utils/UnreferencedParam.h",
                     "aws/core/utils/memory/stl/AWSStringStream.h",
@@ -107,15 +109,15 @@ public final class JsonProtocolTraits implements ProtocolTraits {
     }
 
     @Override
-    public java.util.List<String> serdeUsings(FileKind kind) {
+    public List<String> serdeUsings(FileKind kind) {
         switch (kind) {
             case EVENT_HANDLER_SOURCE:
-                return java.util.List.of(serdeNamespace());
+                return List.of(serdeNamespace());
             case RESULT_SOURCE:
             case INITIAL_RESPONSE_SOURCE:
             case REQUEST_SOURCE:
             case SUBOBJECT_SOURCE:
-                return java.util.List.of("Aws::Utils::Json", "Aws::Utils");
+                return List.of("Aws::Utils::Json", "Aws::Utils");
             default:
                 throw new UnsupportedOperationException(
                     "No serde usings defined for FileKind " + kind + " in JsonProtocolTraits");

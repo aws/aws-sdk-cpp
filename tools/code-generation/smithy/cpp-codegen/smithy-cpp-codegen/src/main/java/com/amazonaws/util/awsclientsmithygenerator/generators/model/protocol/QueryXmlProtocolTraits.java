@@ -11,6 +11,8 @@ import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.model.shapes.StructureShape;
 
+import java.util.List;
+
 /**
  * Query-XML serde rendering. Serves both {@link Protocol#QUERY_XML} and
  * {@link Protocol#EC2}: shapes serialize into a flat, indexed query string via two
@@ -86,13 +88,13 @@ public final class QueryXmlProtocolTraits implements ProtocolTraits {
     }
 
     @Override
-    public java.util.List<String> serdeIncludes(FileKind kind) {
+    public List<String> serdeIncludes(FileKind kind) {
         switch (kind) {
             case SUBOBJECT_HEADER:
-                return java.util.List.of("aws/core/utils/memory/stl/AWSStreamFwd.h");
+                return List.of("aws/core/utils/memory/stl/AWSStreamFwd.h");
             case RESULT_HEADER:
                 // Query/EC2 result headers forward-declare XmlDocument; no serde include.
-                return java.util.List.of();
+                return List.of();
             case SUBOBJECT_SOURCE:
             case REQUEST_SOURCE:
             case RESULT_SOURCE:
@@ -101,7 +103,7 @@ public final class QueryXmlProtocolTraits implements ProtocolTraits {
             case INITIAL_RESPONSE_SOURCE:
                 // All source kinds share one union (supersets allowed). Usings are unchanged.
                 // No Query source arm carried <utility>, so the union omits it.
-                return java.util.List.of(
+                return List.of(
                     "aws/core/utils/xml/XmlSerializer.h",
                     "aws/core/utils/logging/LogMacros.h",
                     "aws/core/utils/UnreferencedParam.h",
@@ -115,18 +117,18 @@ public final class QueryXmlProtocolTraits implements ProtocolTraits {
     }
 
     @Override
-    public java.util.List<String> serdeUsings(FileKind kind) {
+    public List<String> serdeUsings(FileKind kind) {
         switch (kind) {
             case RESULT_SOURCE:
-                return java.util.List.of("Aws::Utils::Xml", "Aws::Utils::Logging", "Aws::Utils");
+                return List.of("Aws::Utils::Xml", "Aws::Utils::Logging", "Aws::Utils");
             case INITIAL_RESPONSE_SOURCE:
-                return java.util.List.of("Aws::Utils::Xml", "Aws::Utils");
+                return List.of("Aws::Utils::Xml", "Aws::Utils");
             case REQUEST_SOURCE:
-                return java.util.List.of("Aws::Utils");
+                return List.of("Aws::Utils");
             case EVENT_HANDLER_SOURCE:
-                return java.util.List.of(serdeNamespace());
+                return List.of(serdeNamespace());
             case SUBOBJECT_SOURCE:
-                return java.util.List.of("Aws::Utils::Xml", "Aws::Utils");
+                return List.of("Aws::Utils::Xml", "Aws::Utils");
             default:
                 throw new UnsupportedOperationException(
                     "No serde usings defined for FileKind " + kind + " in QueryXmlProtocolTraits");
