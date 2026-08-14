@@ -8,6 +8,7 @@
 #include <aws/observabilityadmin/model/LogGroupNameConfiguration.h>
 #include <aws/observabilityadmin/model/LogsBackupConfiguration.h>
 #include <aws/observabilityadmin/model/LogsEncryptionConfiguration.h>
+#include <aws/observabilityadmin/model/TagPropagationConfiguration.h>
 
 #include <utility>
 
@@ -91,15 +92,39 @@ class DestinationLogsConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the tag propagation configuration for this centralization rule.
+   * When present, <code>LogGroupNameConfiguration</code> must use a
+   * <code>LogGroupNamePattern</code> that contains <code>${source.logGroup}</code>,
+   * <code>${source.accountId}</code>, and <code>${source.region}</code>.</p>
+   */
+  inline const TagPropagationConfiguration& GetTagPropagationConfiguration() const { return m_tagPropagationConfiguration; }
+  inline bool TagPropagationConfigurationHasBeenSet() const { return m_tagPropagationConfigurationHasBeenSet; }
+  template <typename TagPropagationConfigurationT = TagPropagationConfiguration>
+  void SetTagPropagationConfiguration(TagPropagationConfigurationT&& value) {
+    m_tagPropagationConfigurationHasBeenSet = true;
+    m_tagPropagationConfiguration = std::forward<TagPropagationConfigurationT>(value);
+  }
+  template <typename TagPropagationConfigurationT = TagPropagationConfiguration>
+  DestinationLogsConfiguration& WithTagPropagationConfiguration(TagPropagationConfigurationT&& value) {
+    SetTagPropagationConfiguration(std::forward<TagPropagationConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   LogsEncryptionConfiguration m_logsEncryptionConfiguration;
 
   LogsBackupConfiguration m_backupConfiguration;
 
   LogGroupNameConfiguration m_logGroupNameConfiguration;
+
+  TagPropagationConfiguration m_tagPropagationConfiguration;
   bool m_logsEncryptionConfigurationHasBeenSet = false;
   bool m_backupConfigurationHasBeenSet = false;
   bool m_logGroupNameConfigurationHasBeenSet = false;
+  bool m_tagPropagationConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

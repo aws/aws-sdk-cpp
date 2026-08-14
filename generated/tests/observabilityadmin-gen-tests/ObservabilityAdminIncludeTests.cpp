@@ -127,6 +127,10 @@
 #include <aws/observabilityadmin/model/StopTelemetryEnrichmentResult.h>
 #include <aws/observabilityadmin/model/StopTelemetryEvaluationForOrganizationRequest.h>
 #include <aws/observabilityadmin/model/StopTelemetryEvaluationRequest.h>
+#include <aws/observabilityadmin/model/TagConflictResolutionStrategy.h>
+#include <aws/observabilityadmin/model/TagPropagationConfiguration.h>
+#include <aws/observabilityadmin/model/TagPropagationFailureReason.h>
+#include <aws/observabilityadmin/model/TagPropagationStatus.h>
 #include <aws/observabilityadmin/model/TagResourceRequest.h>
 #include <aws/observabilityadmin/model/TelemetryConfiguration.h>
 #include <aws/observabilityadmin/model/TelemetryDestinationConfiguration.h>

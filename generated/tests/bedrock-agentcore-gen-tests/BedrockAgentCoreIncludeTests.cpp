@@ -322,6 +322,8 @@
 #include <aws/bedrock-agentcore/model/MouseMoveResult.h>
 #include <aws/bedrock-agentcore/model/MouseScrollArguments.h>
 #include <aws/bedrock-agentcore/model/MouseScrollResult.h>
+#include <aws/bedrock-agentcore/model/MppPaymentInput.h>
+#include <aws/bedrock-agentcore/model/MppPaymentOutput.h>
 #include <aws/bedrock-agentcore/model/OAuth2Authentication.h>
 #include <aws/bedrock-agentcore/model/OAuthCredentialProvider.h>
 #include <aws/bedrock-agentcore/model/OAuthGrantType.h>
@@ -415,6 +417,7 @@
 #include <aws/bedrock-agentcore/model/StreamUpdate.h>
 #include <aws/bedrock-agentcore/model/StripePrivyTokenRequestInput.h>
 #include <aws/bedrock-agentcore/model/StripePrivyTokenResponseOutput.h>
+#include <aws/bedrock-agentcore/model/SubscriptionRequiredException.h>
 #include <aws/bedrock-agentcore/model/SystemPromptConfig.h>
 #include <aws/bedrock-agentcore/model/SystemPromptConfigurationBundle.h>
 #include <aws/bedrock-agentcore/model/SystemPromptRecommendationConfig.h>

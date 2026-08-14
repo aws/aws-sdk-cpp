@@ -103,7 +103,11 @@ class GetDocumentContentRequest : public BedrockAgentRuntimeRequest {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Contains information about the user making the request. This is used for
+   * access control filtering to ensure that results only include documents the user
+   * is authorized to access.</p>
+   */
   inline const UserContext& GetUserContext() const { return m_userContext; }
   inline bool UserContextHasBeenSet() const { return m_userContextHasBeenSet; }
   template <typename UserContextT = UserContext>

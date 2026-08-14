@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
 #include <aws/bedrock-agentcore/model/CryptoX402PaymentInput.h>
+#include <aws/bedrock-agentcore/model/MppPaymentInput.h>
 
 #include <utility>
 
@@ -49,9 +50,28 @@ class PaymentInput {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const MppPaymentInput& GetMpp() const { return m_mpp; }
+  inline bool MppHasBeenSet() const { return m_mppHasBeenSet; }
+  template <typename MppT = MppPaymentInput>
+  void SetMpp(MppT&& value) {
+    m_mppHasBeenSet = true;
+    m_mpp = std::forward<MppT>(value);
+  }
+  template <typename MppT = MppPaymentInput>
+  PaymentInput& WithMpp(MppT&& value) {
+    SetMpp(std::forward<MppT>(value));
+    return *this;
+  }
+  ///@}
  private:
   CryptoX402PaymentInput m_cryptoX402;
+
+  MppPaymentInput m_mpp;
   bool m_cryptoX402HasBeenSet = false;
+  bool m_mppHasBeenSet = false;
 };
 
 }  // namespace Model

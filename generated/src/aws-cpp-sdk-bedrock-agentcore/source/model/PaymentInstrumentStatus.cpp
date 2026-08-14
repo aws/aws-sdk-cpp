@@ -19,6 +19,7 @@ static const int INITIATED_HASH = HashingUtils::HashString("INITIATED");
 static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
 static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 static const int DELETED_HASH = HashingUtils::HashString("DELETED");
+static const int BLOCKED_HASH = HashingUtils::HashString("BLOCKED");
 
 PaymentInstrumentStatus GetPaymentInstrumentStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ PaymentInstrumentStatus GetPaymentInstrumentStatusForName(const Aws::String& nam
     return PaymentInstrumentStatus::FAILED;
   } else if (hashCode == DELETED_HASH) {
     return PaymentInstrumentStatus::DELETED;
+  } else if (hashCode == BLOCKED_HASH) {
+    return PaymentInstrumentStatus::BLOCKED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForPaymentInstrumentStatus(PaymentInstrumentStatus enumValue)
       return "FAILED";
     case PaymentInstrumentStatus::DELETED:
       return "DELETED";
+    case PaymentInstrumentStatus::BLOCKED:
+      return "BLOCKED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

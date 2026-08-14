@@ -10,7 +10,7 @@
 namespace Aws {
 namespace BedrockAgentCore {
 namespace Model {
-enum class PaymentInstrumentStatus { NOT_SET, INITIATED, ACTIVE, FAILED, DELETED };
+enum class PaymentInstrumentStatus { NOT_SET, INITIATED, ACTIVE, FAILED, DELETED, BLOCKED };
 
 namespace PaymentInstrumentStatusMapper {
 AWS_BEDROCKAGENTCORE_API PaymentInstrumentStatus GetPaymentInstrumentStatusForName(const Aws::String& name);

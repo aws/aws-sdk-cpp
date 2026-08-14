@@ -47,6 +47,40 @@ class DisassociateGlossaryTermsResult {
 
   ///@{
   /**
+   * <p>The name of the iterable form, if the disassociation targets an item.</p>
+   */
+  inline const Aws::String& GetIterableFormName() const { return m_iterableFormName; }
+  template <typename IterableFormNameT = Aws::String>
+  void SetIterableFormName(IterableFormNameT&& value) {
+    m_iterableFormNameHasBeenSet = true;
+    m_iterableFormName = std::forward<IterableFormNameT>(value);
+  }
+  template <typename IterableFormNameT = Aws::String>
+  DisassociateGlossaryTermsResult& WithIterableFormName(IterableFormNameT&& value) {
+    SetIterableFormName(std::forward<IterableFormNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of the item within the iterable form, if applicable.</p>
+   */
+  inline const Aws::String& GetItemIdentifier() const { return m_itemIdentifier; }
+  template <typename ItemIdentifierT = Aws::String>
+  void SetItemIdentifier(ItemIdentifierT&& value) {
+    m_itemIdentifierHasBeenSet = true;
+    m_itemIdentifier = std::forward<ItemIdentifierT>(value);
+  }
+  template <typename ItemIdentifierT = Aws::String>
+  DisassociateGlossaryTermsResult& WithItemIdentifier(ItemIdentifierT&& value) {
+    SetItemIdentifier(std::forward<ItemIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The remaining glossary terms associated with the asset.</p>
    */
   inline const Aws::Vector<Aws::String>& GetGlossaryTerms() const { return m_glossaryTerms; }
@@ -87,11 +121,17 @@ class DisassociateGlossaryTermsResult {
  private:
   Aws::String m_assetIdentifier;
 
+  Aws::String m_iterableFormName;
+
+  Aws::String m_itemIdentifier;
+
   Aws::Vector<Aws::String> m_glossaryTerms;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_assetIdentifierHasBeenSet = false;
+  bool m_iterableFormNameHasBeenSet = false;
+  bool m_itemIdentifierHasBeenSet = false;
   bool m_glossaryTermsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -20,8 +20,13 @@ namespace Aws {
 namespace BedrockAgentRuntime {
 AWS_BEDROCKAGENTRUNTIME_API extern const char SERVICE_NAME[];
 /**
- * <p>Contains APIs related to model invocation and querying of knowledge
- * bases.</p>
+ * <p> <p>Amazon Bedrock Agents (now Amazon Bedrock Agents Classic) is no
+ * longer open to new customers. For capabilities similar to Bedrock Agents
+ * Classic, explore Amazon Bedrock AgentCore. Existing customers can continue to
+ * use the service as normal. For more information, see <a
+ * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-classic-maintenance-mode.html">Amazon
+ * Bedrock Agents Classic availability change</a>.</p>  <p>Contains APIs
+ * related to model invocation and querying of knowledge bases.</p></p>
  */
 class AWS_BEDROCKAGENTRUNTIME_API BedrockAgentRuntimeClient
     : Aws::Client::ClientWithAsyncTemplateMethods<BedrockAgentRuntimeClient>,
@@ -120,6 +125,38 @@ class AWS_BEDROCKAGENTRUNTIME_API BedrockAgentRuntimeClient
   void AgenticRetrieveStreamAsync(AgenticRetrieveStreamRequestT& request, const AgenticRetrieveStreamResponseReceivedHandler& handler,
                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentRuntimeClient::AgenticRetrieveStream, request, handler, context);
+  }
+
+  /**
+   * <p>Checks whether a user has access to a specific document by verifying against
+   * the ingested access control list (ACL) in a knowledge base. Use this operation
+   * to validate that document-level access control is working as expected after
+   * ingestion. To use this operation, you must have the
+   * <code>bedrock:CheckIngestedDocumentAcl</code> permission.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/CheckIngestedDocumentAcl">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CheckIngestedDocumentAclOutcome CheckIngestedDocumentAcl(const Model::CheckIngestedDocumentAclRequest& request) const;
+
+  /**
+   * A Callable wrapper for CheckIngestedDocumentAcl that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CheckIngestedDocumentAclRequestT = Model::CheckIngestedDocumentAclRequest>
+  Model::CheckIngestedDocumentAclOutcomeCallable CheckIngestedDocumentAclCallable(const CheckIngestedDocumentAclRequestT& request) const {
+    return SubmitCallable(&BedrockAgentRuntimeClient::CheckIngestedDocumentAcl, request);
+  }
+
+  /**
+   * An Async wrapper for CheckIngestedDocumentAcl that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CheckIngestedDocumentAclRequestT = Model::CheckIngestedDocumentAclRequest>
+  void CheckIngestedDocumentAclAsync(const CheckIngestedDocumentAclRequestT& request,
+                                     const CheckIngestedDocumentAclResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentRuntimeClient::CheckIngestedDocumentAcl, request, handler, context);
   }
 
   /**
@@ -442,6 +479,37 @@ class AWS_BEDROCKAGENTRUNTIME_API BedrockAgentRuntimeClient
   }
 
   /**
+   * <p>Retrieves the ingested access control list (ACL) for a specific document in a
+   * knowledge base. Use this operation to inspect the allow and deny lists that were
+   * ingested for a document to troubleshoot access control issues. To use this
+   * operation, you must have the <code>bedrock:GetIngestedDocumentAcl</code>
+   * permission.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GetIngestedDocumentAcl">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetIngestedDocumentAclOutcome GetIngestedDocumentAcl(const Model::GetIngestedDocumentAclRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetIngestedDocumentAcl that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetIngestedDocumentAclRequestT = Model::GetIngestedDocumentAclRequest>
+  Model::GetIngestedDocumentAclOutcomeCallable GetIngestedDocumentAclCallable(const GetIngestedDocumentAclRequestT& request) const {
+    return SubmitCallable(&BedrockAgentRuntimeClient::GetIngestedDocumentAcl, request);
+  }
+
+  /**
+   * An Async wrapper for GetIngestedDocumentAcl that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetIngestedDocumentAclRequestT = Model::GetIngestedDocumentAclRequest>
+  void GetIngestedDocumentAclAsync(const GetIngestedDocumentAclRequestT& request,
+                                   const GetIngestedDocumentAclResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentRuntimeClient::GetIngestedDocumentAcl, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves the details of a specific invocation step within an invocation in a
    * session. For more information about sessions, see <a
    * href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html">Store
@@ -501,13 +569,19 @@ class AWS_BEDROCKAGENTRUNTIME_API BedrockAgentRuntimeClient
   }
 
   /**
-   * <p>  <p>Sends a prompt for the agent to process and respond to.
-   * Note the following fields for the request:</p> <ul> <li> <p>To continue the same
-   * conversation with an agent, use the same <code>sessionId</code> value in the
-   * request.</p> </li> <li> <p>To activate trace enablement, turn
-   * <code>enableTrace</code> to <code>true</code>. Trace enablement helps you follow
-   * the agent's reasoning process that led it to the information it processed, the
-   * actions it took, and the final result it yielded. For more information, see <a
+   * <p> <p>Amazon Bedrock Agents (now Amazon Bedrock Agents Classic) is no
+   * longer open to new customers. For capabilities similar to Bedrock Agents
+   * Classic, explore Amazon Bedrock AgentCore. Existing customers can continue to
+   * use the service as normal. For more information, see <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-classic-maintenance-mode.html">Amazon
+   * Bedrock Agents Classic availability change</a>.</p>
+   * <p>Sends a prompt for the agent to process and respond to. Note the following
+   * fields for the request:</p> <ul> <li> <p>To continue the same conversation with
+   * an agent, use the same <code>sessionId</code> value in the request.</p> </li>
+   * <li> <p>To activate trace enablement, turn <code>enableTrace</code> to
+   * <code>true</code>. Trace enablement helps you follow the agent's reasoning
+   * process that led it to the information it processed, the actions it took, and
+   * the final result it yielded. For more information, see <a
    * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-events">Trace
    * enablement</a>.</p> </li> <li> <p>End a conversation by setting
    * <code>endSession</code> to <code>true</code>.</p> </li> <li> <p>In the

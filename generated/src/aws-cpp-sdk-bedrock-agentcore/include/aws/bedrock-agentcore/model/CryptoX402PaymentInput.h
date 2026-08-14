@@ -67,12 +67,42 @@ class CryptoX402PaymentInput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The maximum on-chain Permit2 allowance to grant before signing the payment
+   * authorization, in the asset's smallest denomination. This field is valid only
+   * for the <code>upto</code> (metered) scheme; supplying it for the
+   * <code>exact</code> scheme returns a validation error.</p> <p>When set, the
+   * service approves an ERC-20 allowance for this amount before processing the
+   * payment. The approval sets, rather than adds to, the wallet's allowance. Set
+   * this field only when the wallet needs approving, for example on its first
+   * <code>upto</code> payment, to avoid a redundant on-chain transaction. Omit the
+   * field to skip allowance handling. This is the default, and the only behavior for
+   * the <code>exact</code> scheme.</p>
+   */
+  inline const Aws::String& GetPermit2AllowanceLimit() const { return m_permit2AllowanceLimit; }
+  inline bool Permit2AllowanceLimitHasBeenSet() const { return m_permit2AllowanceLimitHasBeenSet; }
+  template <typename Permit2AllowanceLimitT = Aws::String>
+  void SetPermit2AllowanceLimit(Permit2AllowanceLimitT&& value) {
+    m_permit2AllowanceLimitHasBeenSet = true;
+    m_permit2AllowanceLimit = std::forward<Permit2AllowanceLimitT>(value);
+  }
+  template <typename Permit2AllowanceLimitT = Aws::String>
+  CryptoX402PaymentInput& WithPermit2AllowanceLimit(Permit2AllowanceLimitT&& value) {
+    SetPermit2AllowanceLimit(std::forward<Permit2AllowanceLimitT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_version;
 
   Aws::Utils::Document m_payload;
+
+  Aws::String m_permit2AllowanceLimit;
   bool m_versionHasBeenSet = false;
   bool m_payloadHasBeenSet = false;
+  bool m_permit2AllowanceLimitHasBeenSet = false;
 };
 
 }  // namespace Model

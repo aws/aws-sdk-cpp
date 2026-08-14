@@ -10,7 +10,21 @@
 namespace Aws {
 namespace BedrockAgentCoreControl {
 namespace Model {
-enum class PaymentConnectorStatus { NOT_SET, CREATING, UPDATING, DELETING, READY, CREATE_FAILED, UPDATE_FAILED, DELETE_FAILED };
+enum class PaymentConnectorStatus {
+  NOT_SET,
+  CREATING,
+  UPDATING,
+  DELETING,
+  READY,
+  CREATE_FAILED,
+  UPDATE_FAILED,
+  DELETE_FAILED,
+  AWS_MARKETPLACE_SUBSCRIPTION_REQUIRED,
+  PENDING_AUTHENTICATION,
+  PROVISIONING,
+  AUTHENTICATION_EXPIRED,
+  AUTHENTICATION_FAILED
+};
 
 namespace PaymentConnectorStatusMapper {
 AWS_BEDROCKAGENTCORECONTROL_API PaymentConnectorStatus GetPaymentConnectorStatusForName(const Aws::String& name);

@@ -73,6 +73,10 @@ GetPaymentManagerResult& GetPaymentManagerResult::operator=(const Aws::AmazonWeb
     }
     m_tagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("kmsKeyArn")) {
+    m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
+    m_kmsKeyArnHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -7,6 +7,7 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlRequest.h>
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/CredentialsProviderConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/PaymentConnectorProvisionMode.h>
 #include <aws/bedrock-agentcore-control/model/PaymentConnectorType.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -133,6 +134,26 @@ class CreatePaymentConnectorRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
+   * <p>The provision mode for creating the payment connector. If you don't specify a
+   * value, the default is <code>MANUAL</code>.</p> <ul> <li> <p> <code>MANUAL</code>
+   * - You provide the credential provider configurations directly.</p> </li> <li>
+   * <p> <code>QUICK_CREATE</code> - The service orchestrates OAuth consent and
+   * provisions the credential provider for you.</p> </li> </ul>
+   */
+  inline PaymentConnectorProvisionMode GetProvisionMode() const { return m_provisionMode; }
+  inline bool ProvisionModeHasBeenSet() const { return m_provisionModeHasBeenSet; }
+  inline void SetProvisionMode(PaymentConnectorProvisionMode value) {
+    m_provisionModeHasBeenSet = true;
+    m_provisionMode = value;
+  }
+  inline CreatePaymentConnectorRequest& WithProvisionMode(PaymentConnectorProvisionMode value) {
+    SetProvisionMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A unique, case-sensitive identifier to ensure that the API request completes
    * no more than one time. If you don't specify this field, a value is randomly
    * generated for you. If this token matches a previous request, the service ignores
@@ -164,12 +185,15 @@ class CreatePaymentConnectorRequest : public BedrockAgentCoreControlRequest {
 
   Aws::Vector<CredentialsProviderConfiguration> m_credentialProviderConfigurations;
 
+  PaymentConnectorProvisionMode m_provisionMode{PaymentConnectorProvisionMode::NOT_SET};
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_paymentManagerIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_typeHasBeenSet = false;
   bool m_credentialProviderConfigurationsHasBeenSet = false;
+  bool m_provisionModeHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

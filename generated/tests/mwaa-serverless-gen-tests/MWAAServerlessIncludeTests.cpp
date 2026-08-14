@@ -13,6 +13,7 @@
 #include <aws/mwaa-serverless/MWAAServerlessRequest.h>
 #include <aws/mwaa-serverless/MWAAServerlessServiceClientModel.h>
 #include <aws/mwaa-serverless/MWAAServerless_EXPORTS.h>
+#include <aws/mwaa-serverless/model/Code.h>
 #include <aws/mwaa-serverless/model/ConflictException.h>
 #include <aws/mwaa-serverless/model/CreateWorkflowRequest.h>
 #include <aws/mwaa-serverless/model/CreateWorkflowResult.h>
@@ -43,6 +44,7 @@
 #include <aws/mwaa-serverless/model/ResourceNotFoundException.h>
 #include <aws/mwaa-serverless/model/RunDetailSummary.h>
 #include <aws/mwaa-serverless/model/RunType.h>
+#include <aws/mwaa-serverless/model/S3Location.h>
 #include <aws/mwaa-serverless/model/ScheduleConfiguration.h>
 #include <aws/mwaa-serverless/model/ServiceQuotaExceededException.h>
 #include <aws/mwaa-serverless/model/StartWorkflowRunRequest.h>

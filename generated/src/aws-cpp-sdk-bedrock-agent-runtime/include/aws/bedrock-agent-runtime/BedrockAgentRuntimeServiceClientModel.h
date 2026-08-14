@@ -19,6 +19,7 @@
 /* End of generic header includes */
 
 /* Service model headers required in BedrockAgentRuntimeClient header */
+#include <aws/bedrock-agent-runtime/model/CheckIngestedDocumentAclResult.h>
 #include <aws/bedrock-agent-runtime/model/CreateInvocationResult.h>
 #include <aws/bedrock-agent-runtime/model/CreateSessionRequest.h>
 #include <aws/bedrock-agent-runtime/model/CreateSessionResult.h>
@@ -30,6 +31,7 @@
 #include <aws/bedrock-agent-runtime/model/GetDocumentContentResult.h>
 #include <aws/bedrock-agent-runtime/model/GetExecutionFlowSnapshotResult.h>
 #include <aws/bedrock-agent-runtime/model/GetFlowExecutionResult.h>
+#include <aws/bedrock-agent-runtime/model/GetIngestedDocumentAclResult.h>
 #include <aws/bedrock-agent-runtime/model/GetInvocationStepResult.h>
 #include <aws/bedrock-agent-runtime/model/GetSessionResult.h>
 #include <aws/bedrock-agent-runtime/model/ListFlowExecutionEventsResult.h>
@@ -82,6 +84,7 @@ using BedrockAgentRuntimeEndpointProvider = Aws::BedrockAgentRuntime::Endpoint::
 namespace Model {
 /* Service model forward declarations required in BedrockAgentRuntimeClient header */
 class AgenticRetrieveStreamRequest;
+class CheckIngestedDocumentAclRequest;
 class CreateInvocationRequest;
 class CreateSessionRequest;
 class DeleteAgentMemoryRequest;
@@ -92,6 +95,7 @@ class GetAgentMemoryRequest;
 class GetDocumentContentRequest;
 class GetExecutionFlowSnapshotRequest;
 class GetFlowExecutionRequest;
+class GetIngestedDocumentAclRequest;
 class GetInvocationStepRequest;
 class GetSessionRequest;
 class InvokeAgentRequest;
@@ -118,6 +122,7 @@ class UpdateSessionRequest;
 
 /* Service model Outcome class definitions */
 typedef Aws::Utils::Outcome<Aws::NoResult, BedrockAgentRuntimeError> AgenticRetrieveStreamOutcome;
+typedef Aws::Utils::Outcome<CheckIngestedDocumentAclResult, BedrockAgentRuntimeError> CheckIngestedDocumentAclOutcome;
 typedef Aws::Utils::Outcome<CreateInvocationResult, BedrockAgentRuntimeError> CreateInvocationOutcome;
 typedef Aws::Utils::Outcome<CreateSessionResult, BedrockAgentRuntimeError> CreateSessionOutcome;
 typedef Aws::Utils::Outcome<DeleteAgentMemoryResult, BedrockAgentRuntimeError> DeleteAgentMemoryOutcome;
@@ -128,6 +133,7 @@ typedef Aws::Utils::Outcome<GetAgentMemoryResult, BedrockAgentRuntimeError> GetA
 typedef Aws::Utils::Outcome<GetDocumentContentResult, BedrockAgentRuntimeError> GetDocumentContentOutcome;
 typedef Aws::Utils::Outcome<GetExecutionFlowSnapshotResult, BedrockAgentRuntimeError> GetExecutionFlowSnapshotOutcome;
 typedef Aws::Utils::Outcome<GetFlowExecutionResult, BedrockAgentRuntimeError> GetFlowExecutionOutcome;
+typedef Aws::Utils::Outcome<GetIngestedDocumentAclResult, BedrockAgentRuntimeError> GetIngestedDocumentAclOutcome;
 typedef Aws::Utils::Outcome<GetInvocationStepResult, BedrockAgentRuntimeError> GetInvocationStepOutcome;
 typedef Aws::Utils::Outcome<GetSessionResult, BedrockAgentRuntimeError> GetSessionOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, BedrockAgentRuntimeError> InvokeAgentOutcome;
@@ -154,6 +160,7 @@ typedef Aws::Utils::Outcome<UpdateSessionResult, BedrockAgentRuntimeError> Updat
 
 /* Service model Outcome callable definitions */
 typedef std::future<AgenticRetrieveStreamOutcome> AgenticRetrieveStreamOutcomeCallable;
+typedef std::future<CheckIngestedDocumentAclOutcome> CheckIngestedDocumentAclOutcomeCallable;
 typedef std::future<CreateInvocationOutcome> CreateInvocationOutcomeCallable;
 typedef std::future<CreateSessionOutcome> CreateSessionOutcomeCallable;
 typedef std::future<DeleteAgentMemoryOutcome> DeleteAgentMemoryOutcomeCallable;
@@ -164,6 +171,7 @@ typedef std::future<GetAgentMemoryOutcome> GetAgentMemoryOutcomeCallable;
 typedef std::future<GetDocumentContentOutcome> GetDocumentContentOutcomeCallable;
 typedef std::future<GetExecutionFlowSnapshotOutcome> GetExecutionFlowSnapshotOutcomeCallable;
 typedef std::future<GetFlowExecutionOutcome> GetFlowExecutionOutcomeCallable;
+typedef std::future<GetIngestedDocumentAclOutcome> GetIngestedDocumentAclOutcomeCallable;
 typedef std::future<GetInvocationStepOutcome> GetInvocationStepOutcomeCallable;
 typedef std::future<GetSessionOutcome> GetSessionOutcomeCallable;
 typedef std::future<InvokeAgentOutcome> InvokeAgentOutcomeCallable;
@@ -195,6 +203,9 @@ class BedrockAgentRuntimeClient;
 typedef std::function<void(const BedrockAgentRuntimeClient*, const Model::AgenticRetrieveStreamRequest&,
                            const Model::AgenticRetrieveStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AgenticRetrieveStreamResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentRuntimeClient*, const Model::CheckIngestedDocumentAclRequest&,
+                           const Model::CheckIngestedDocumentAclOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CheckIngestedDocumentAclResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentRuntimeClient*, const Model::CreateInvocationRequest&, const Model::CreateInvocationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateInvocationResponseReceivedHandler;
@@ -225,6 +236,9 @@ typedef std::function<void(const BedrockAgentRuntimeClient*, const Model::GetExe
 typedef std::function<void(const BedrockAgentRuntimeClient*, const Model::GetFlowExecutionRequest&, const Model::GetFlowExecutionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetFlowExecutionResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentRuntimeClient*, const Model::GetIngestedDocumentAclRequest&,
+                           const Model::GetIngestedDocumentAclOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetIngestedDocumentAclResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentRuntimeClient*, const Model::GetInvocationStepRequest&, const Model::GetInvocationStepOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetInvocationStepResponseReceivedHandler;

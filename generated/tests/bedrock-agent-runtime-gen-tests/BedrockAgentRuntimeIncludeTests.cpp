@@ -81,6 +81,8 @@
 #include <aws/bedrock-agent-runtime/model/ByteContentDoc.h>
 #include <aws/bedrock-agent-runtime/model/ByteContentFile.h>
 #include <aws/bedrock-agent-runtime/model/Caller.h>
+#include <aws/bedrock-agent-runtime/model/CheckIngestedDocumentAclRequest.h>
+#include <aws/bedrock-agent-runtime/model/CheckIngestedDocumentAclResult.h>
 #include <aws/bedrock-agent-runtime/model/Citation.h>
 #include <aws/bedrock-agent-runtime/model/CitationEvent.h>
 #include <aws/bedrock-agent-runtime/model/CodeInterpreterInvocationInput.h>
@@ -107,6 +109,13 @@
 #include <aws/bedrock-agent-runtime/model/DeleteSessionRequest.h>
 #include <aws/bedrock-agent-runtime/model/DeleteSessionResult.h>
 #include <aws/bedrock-agent-runtime/model/DependencyFailedException.h>
+#include <aws/bedrock-agent-runtime/model/DocumentAcl.h>
+#include <aws/bedrock-agent-runtime/model/DocumentAclCondition.h>
+#include <aws/bedrock-agent-runtime/model/DocumentAclGroup.h>
+#include <aws/bedrock-agent-runtime/model/DocumentAclMemberRelation.h>
+#include <aws/bedrock-agent-runtime/model/DocumentAclMembership.h>
+#include <aws/bedrock-agent-runtime/model/DocumentAclMembershipType.h>
+#include <aws/bedrock-agent-runtime/model/DocumentAclUser.h>
 #include <aws/bedrock-agent-runtime/model/DocumentOutputFormat.h>
 #include <aws/bedrock-agent-runtime/model/EndSessionRequest.h>
 #include <aws/bedrock-agent-runtime/model/EndSessionResult.h>
@@ -185,6 +194,8 @@
 #include <aws/bedrock-agent-runtime/model/GetExecutionFlowSnapshotResult.h>
 #include <aws/bedrock-agent-runtime/model/GetFlowExecutionRequest.h>
 #include <aws/bedrock-agent-runtime/model/GetFlowExecutionResult.h>
+#include <aws/bedrock-agent-runtime/model/GetIngestedDocumentAclRequest.h>
+#include <aws/bedrock-agent-runtime/model/GetIngestedDocumentAclResult.h>
 #include <aws/bedrock-agent-runtime/model/GetInvocationStepRequest.h>
 #include <aws/bedrock-agent-runtime/model/GetInvocationStepResult.h>
 #include <aws/bedrock-agent-runtime/model/GetSessionRequest.h>

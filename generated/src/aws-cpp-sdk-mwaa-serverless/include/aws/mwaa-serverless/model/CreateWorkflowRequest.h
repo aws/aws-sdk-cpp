@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mwaa-serverless/MWAAServerlessRequest.h>
 #include <aws/mwaa-serverless/MWAAServerless_EXPORTS.h>
+#include <aws/mwaa-serverless/model/Code.h>
 #include <aws/mwaa-serverless/model/DefinitionS3Location.h>
 #include <aws/mwaa-serverless/model/EncryptionConfiguration.h>
 #include <aws/mwaa-serverless/model/LoggingConfiguration.h>
@@ -98,6 +99,25 @@ class CreateWorkflowRequest : public MWAAServerlessRequest {
   template <typename DefinitionS3LocationT = DefinitionS3Location>
   CreateWorkflowRequest& WithDefinitionS3Location(DefinitionS3LocationT&& value) {
     SetDefinitionS3Location(std::forward<DefinitionS3LocationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The location of code artifacts in Amazon S3 for the workflow. The service
+   * copies the code from this location at the time of the request.</p>
+   */
+  inline const Code& GetCode() const { return m_code; }
+  inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+  template <typename CodeT = Code>
+  void SetCode(CodeT&& value) {
+    m_codeHasBeenSet = true;
+    m_code = std::forward<CodeT>(value);
+  }
+  template <typename CodeT = Code>
+  CreateWorkflowRequest& WithCode(CodeT&& value) {
+    SetCode(std::forward<CodeT>(value));
     return *this;
   }
   ///@}
@@ -284,6 +304,8 @@ class CreateWorkflowRequest : public MWAAServerlessRequest {
 
   DefinitionS3Location m_definitionS3Location;
 
+  Code m_code;
+
   Aws::String m_roleArn;
 
   Aws::String m_description;
@@ -302,6 +324,7 @@ class CreateWorkflowRequest : public MWAAServerlessRequest {
   bool m_nameHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_definitionS3LocationHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_encryptionConfigurationHasBeenSet = false;

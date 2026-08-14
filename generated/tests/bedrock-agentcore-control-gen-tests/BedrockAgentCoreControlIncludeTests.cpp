@@ -597,6 +597,7 @@
 #include <aws/bedrock-agentcore-control/model/OverrideType.h>
 #include <aws/bedrock-agentcore-control/model/PassthroughProtocolType.h>
 #include <aws/bedrock-agentcore-control/model/PassthroughTargetConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/PaymentConnectorProvisionMode.h>
 #include <aws/bedrock-agentcore-control/model/PaymentConnectorStatus.h>
 #include <aws/bedrock-agentcore-control/model/PaymentConnectorSummary.h>
 #include <aws/bedrock-agentcore-control/model/PaymentConnectorType.h>
@@ -711,6 +712,7 @@
 #include <aws/bedrock-agentcore-control/model/StripePrivyConfigurationOutput.h>
 #include <aws/bedrock-agentcore-control/model/SubmitRegistryRecordForApprovalRequest.h>
 #include <aws/bedrock-agentcore-control/model/SubmitRegistryRecordForApprovalResult.h>
+#include <aws/bedrock-agentcore-control/model/SubscriptionRequiredException.h>
 #include <aws/bedrock-agentcore-control/model/SummaryConsolidationOverride.h>
 #include <aws/bedrock-agentcore-control/model/SummaryMemoryStrategyInput.h>
 #include <aws/bedrock-agentcore-control/model/SummaryOverrideConfigurationInput.h>

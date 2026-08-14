@@ -19,6 +19,14 @@ Aws::String AssociateGlossaryTermsRequest::SerializePayload() const {
     payload.WithString("AssetIdentifier", m_assetIdentifier);
   }
 
+  if (m_iterableFormNameHasBeenSet) {
+    payload.WithString("IterableFormName", m_iterableFormName);
+  }
+
+  if (m_itemIdentifierHasBeenSet) {
+    payload.WithString("ItemIdentifier", m_itemIdentifier);
+  }
+
   if (m_glossaryTermIdentifiersHasBeenSet) {
     Aws::Utils::Array<JsonValue> glossaryTermIdentifiersJsonList(m_glossaryTermIdentifiers.size());
     for (unsigned glossaryTermIdentifiersIndex = 0; glossaryTermIdentifiersIndex < glossaryTermIdentifiersJsonList.GetLength();

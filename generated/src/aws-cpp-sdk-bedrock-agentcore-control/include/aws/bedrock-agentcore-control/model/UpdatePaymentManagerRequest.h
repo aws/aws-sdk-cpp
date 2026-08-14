@@ -142,6 +142,25 @@ class UpdatePaymentManagerRequest : public BedrockAgentCoreControlRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The updated Amazon Resource Name (ARN) of the customer managed KMS key used
+   * to encrypt sensitive payment manager data at rest.</p>
+   */
+  inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+  inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
+  template <typename KmsKeyArnT = Aws::String>
+  void SetKmsKeyArn(KmsKeyArnT&& value) {
+    m_kmsKeyArnHasBeenSet = true;
+    m_kmsKeyArn = std::forward<KmsKeyArnT>(value);
+  }
+  template <typename KmsKeyArnT = Aws::String>
+  UpdatePaymentManagerRequest& WithKmsKeyArn(KmsKeyArnT&& value) {
+    SetKmsKeyArn(std::forward<KmsKeyArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_paymentManagerId;
 
@@ -154,12 +173,15 @@ class UpdatePaymentManagerRequest : public BedrockAgentCoreControlRequest {
   Aws::String m_roleArn;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+
+  Aws::String m_kmsKeyArn;
   bool m_paymentManagerIdHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_authorizerTypeHasBeenSet = false;
   bool m_authorizerConfigurationHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
+  bool m_kmsKeyArnHasBeenSet = false;
 };
 
 }  // namespace Model

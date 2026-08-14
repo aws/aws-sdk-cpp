@@ -16,11 +16,14 @@ namespace Model {
 namespace PaymentTypeMapper {
 
 static const int CRYPTO_X402_HASH = HashingUtils::HashString("CRYPTO_X402");
+static const int MPP_HASH = HashingUtils::HashString("MPP");
 
 PaymentType GetPaymentTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == CRYPTO_X402_HASH) {
     return PaymentType::CRYPTO_X402;
+  } else if (hashCode == MPP_HASH) {
+    return PaymentType::MPP;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForPaymentType(PaymentType enumValue) {
       return {};
     case PaymentType::CRYPTO_X402:
       return "CRYPTO_X402";
+    case PaymentType::MPP:
+      return "MPP";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {
