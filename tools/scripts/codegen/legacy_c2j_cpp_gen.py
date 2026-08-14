@@ -17,7 +17,6 @@ import zipfile
 from concurrent.futures import ProcessPoolExecutor, wait, FIRST_COMPLETED, ALL_COMPLETED
 from pathlib import Path
 
-from codegen.include_tests_util import IncludeTestsUtil
 from codegen.model_utils import ServiceModel
 from codegen.smithy_cpp_gen import bdd_endpoint_services
 
@@ -272,9 +271,9 @@ class LegacyC2jCppGen(object):
 
         if model_files.endpoint_rule_set and model_files.endpoint_tests:
             self._generate_client_endpoint_tests(service_name, model_files, f"{output_dir}/tests", tmp_dir)
-            IncludeTestsUtil.generate(service_name,
-                                      f"{output_dir}/src/aws-cpp-sdk-{service_name}",
-                                      f"{output_dir}/tests/{service_name}-gen-tests")
+            # NOTE: the include test is generated later (in run_code_generation.main), after the
+            # Smithy pass writes model/*.h. Generating it here would miss those headers for
+            # --use-smithy-models services, whose model generation C2J skips.
 
         return service_name, status
 
