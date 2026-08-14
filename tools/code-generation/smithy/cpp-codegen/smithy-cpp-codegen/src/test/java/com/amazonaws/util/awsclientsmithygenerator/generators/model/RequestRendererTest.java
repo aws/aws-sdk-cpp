@@ -351,6 +351,157 @@ class RequestRendererTest {
             .filter(p -> p.toString().endsWith(fileSuffix)).findFirst().orElseThrow()).orElseThrow();
     }
 
+    // --- @httpChecksum ---
+
+    /**
+     * A JSON operation with @httpChecksum. The input carries a {@code checksumAlgorithm} enum member
+     * (for requestAlgorithmMember) and a {@code checksumMode} enum member (for
+     * requestValidationModeMember); the trait is configured from the given values.
+     */
+    private static Model httpChecksumModel(software.amazon.smithy.aws.traits.HttpChecksumTrait trait) {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        software.amazon.smithy.model.shapes.EnumShape algo =
+            software.amazon.smithy.model.shapes.EnumShape.builder()
+                .id("com.example#ChecksumAlgorithm").addMember("CRC32", "CRC32").build();
+        software.amazon.smithy.model.shapes.EnumShape mode =
+            software.amazon.smithy.model.shapes.EnumShape.builder()
+                .id("com.example#ChecksumMode").addMember("ENABLED", "ENABLED").build();
+        StructureShape input = StructureShape.builder()
+            .id("com.example#PutThingInput")
+            .addMember("checksumAlgorithm", algo.getId())
+            .addMember("checksumMode", mode.getId())
+            .addMember("name", str.getId())
+            .build();
+        StructureShape output = StructureShape.builder().id("com.example#PutThingOutput")
+            .addMember("r", str.getId()).build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#PutThing").input(input.getId()).output(output.getId())
+            .addTrait(trait).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#Example").version("2024-01-01").addOperation(op.getId()).build();
+        return Model.builder().addShapes(str, algo, mode, input, output, op, service).build();
+    }
+
+    private static String renderChecksumRequest(software.amazon.smithy.aws.traits.HttpChecksumTrait trait,
+                                                 String fileSuffix) {
+        Model model = httpChecksumModel(trait);
+        ServiceShape service = model.expectShape(ShapeId.from("com.example#Example"), ServiceShape.class);
+        MockManifest manifest = new MockManifest();
+        CppWriterDelegator delegator = new CppWriterDelegator(manifest);
+        Protocol protocol = ProtocolResolver.resolve(service, model);
+        new RequestRenderer(
+            ShapeClassifier.classify(model, service, protocol).requests(),
+            new RenderContext(model, service, ProtocolResolver.traitsFor(protocol),
+                "Example", "AWS_EXAMPLE_API", "example")).render(delegator);
+        delegator.flushWriters();
+        return manifest.getFileString(manifest.getFiles().stream()
+            .filter(p -> p.toString().endsWith(fileSuffix)).findFirst().orElseThrow()).orElseThrow();
+    }
+
+    @Test
+    void httpChecksumRequestAlgorithm_rendersAlgorithmNameAndIsSet() {
+        // requestAlgorithmMember → GetChecksumAlgorithmName (crc64nvme default, else Mapper) +
+        // ChecksumAlgorithmIsSet. Matches C2J ModelClassChecksumMembers.vm / PutObjectRequest.
+        software.amazon.smithy.aws.traits.HttpChecksumTrait trait =
+            software.amazon.smithy.aws.traits.HttpChecksumTrait.builder()
+                .requestAlgorithmMember("checksumAlgorithm").build();
+        String h = renderChecksumRequest(trait, "PutThingRequest.h");
+        String c = renderChecksumRequest(trait, "PutThingRequest.cpp");
+
+        assertTrue(h.contains("AWS_EXAMPLE_API Aws::String GetChecksumAlgorithmName() const override;"), h);
+        assertTrue(h.contains("AWS_EXAMPLE_API bool ChecksumAlgorithmIsSet() const override;"), h);
+
+        assertTrue(c.contains("Aws::String PutThingRequest::GetChecksumAlgorithmName() const {"), c);
+        assertTrue(c.contains("if (m_checksumAlgorithm == ChecksumAlgorithm::NOT_SET) {"), c);
+        assertTrue(c.contains("return \"crc64nvme\";"), c);
+        assertTrue(c.contains("return ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm);"), c);
+        assertTrue(c.contains("return m_checksumAlgorithm != ChecksumAlgorithm::NOT_SET;"), c);
+    }
+
+    @Test
+    void httpChecksumValidationAndResponseAlgorithms_render() {
+        // requestValidationModeMember → ShouldValidateResponseChecksum; responseAlgorithms →
+        // GetResponseChecksumAlgorithmNames (one push_back per algorithm, in order).
+        software.amazon.smithy.aws.traits.HttpChecksumTrait trait =
+            software.amazon.smithy.aws.traits.HttpChecksumTrait.builder()
+                .requestValidationModeMember("checksumMode")
+                .responseAlgorithms(java.util.List.of("CRC64NVME", "CRC32")).build();
+        String h = renderChecksumRequest(trait, "PutThingRequest.h");
+        String c = renderChecksumRequest(trait, "PutThingRequest.cpp");
+
+        assertTrue(h.contains("AWS_EXAMPLE_API bool ShouldValidateResponseChecksum() const override;"), h);
+        assertTrue(h.contains("AWS_EXAMPLE_API Aws::Vector<Aws::String> GetResponseChecksumAlgorithmNames() const override;"), h);
+
+        assertTrue(c.contains("return m_checksumMode == ChecksumMode::ENABLED;"), c);
+        assertTrue(c.contains("responseChecksumAlgorithmNames.push_back(\"CRC64NVME\");"), c);
+        assertTrue(c.contains("responseChecksumAlgorithmNames.push_back(\"CRC32\");"), c);
+        assertTrue(c.contains("return responseChecksumAlgorithmNames;"), c);
+    }
+
+    @Test
+    void httpChecksumRequestChecksumRequired_rendersInlineOverride() {
+        // requestChecksumRequired → inline RequestChecksumRequired() in the header (no .cpp body),
+        // matching C2J's PutBucketPolicyRequest.h (note the trailing semicolon after the brace).
+        software.amazon.smithy.aws.traits.HttpChecksumTrait trait =
+            software.amazon.smithy.aws.traits.HttpChecksumTrait.builder()
+                .requestAlgorithmMember("checksumAlgorithm").requestChecksumRequired(true).build();
+        String h = renderChecksumRequest(trait, "PutThingRequest.h");
+        assertTrue(h.contains("inline bool RequestChecksumRequired() const override { return true; };"), h);
+    }
+
+    @Test
+    void httpChecksumRequired_rendersInlineShouldComputeContentMd5() {
+        // The legacy smithy.api#httpChecksumRequired trait (s3control uses it) requests a
+        // Content-MD5 header. C2J derives Shape.computeContentMd5 from it and emits an inline
+        // ShouldComputeContentMd5() override (RequestHeader.vm:105-108, no .cpp body). Distinct
+        // from the flexible @httpChecksum trait.
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        StructureShape input = StructureShape.builder().id("com.example#PutThingInput")
+            .addMember("name", str.getId()).build();
+        StructureShape output = StructureShape.builder().id("com.example#PutThingOutput")
+            .addMember("r", str.getId()).build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#PutThing").input(input.getId()).output(output.getId())
+            .addTrait(new software.amazon.smithy.model.traits.HttpChecksumRequiredTrait()).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#Example").version("2024-01-01").addOperation(op.getId()).build();
+        Model model = Model.builder().addShapes(str, input, output, op, service).build();
+
+        ServiceShape svc = model.expectShape(ShapeId.from("com.example#Example"), ServiceShape.class);
+        MockManifest manifest = new MockManifest();
+        CppWriterDelegator delegator = new CppWriterDelegator(manifest);
+        Protocol protocol = ProtocolResolver.resolve(svc, model);
+        new RequestRenderer(
+            ShapeClassifier.classify(model, svc, protocol).requests(),
+            new RenderContext(model, svc, ProtocolResolver.traitsFor(protocol),
+                "Example", "AWS_EXAMPLE_API", "example")).render(delegator);
+        delegator.flushWriters();
+        String h = manifest.getFileString(manifest.getFiles().stream()
+            .filter(p -> p.toString().endsWith("PutThingRequest.h")).findFirst().orElseThrow()).orElseThrow();
+        String c = manifest.getFileString(manifest.getFiles().stream()
+            .filter(p -> p.toString().endsWith("PutThingRequest.cpp")).findFirst().orElseThrow()).orElseThrow();
+        assertTrue(h.contains("AWS_EXAMPLE_API inline bool ShouldComputeContentMd5() const override { return true; }"), h);
+        assertFalse(c.contains("ShouldComputeContentMd5"), "inline method must have no out-of-line body: " + c);
+    }
+
+    @Test
+    void requestWithoutHttpChecksum_emitsNoChecksumMethods() {
+        Model model = queryMemberModel();
+        ServiceShape service = model.expectShape(ShapeId.from("com.example#Example"), ServiceShape.class);
+        MockManifest manifest = new MockManifest();
+        CppWriterDelegator delegator = new CppWriterDelegator(manifest);
+        Protocol protocol = ProtocolResolver.resolve(service, model);
+        new RequestRenderer(
+            ShapeClassifier.classify(model, service, protocol).requests(),
+            new RenderContext(model, service, ProtocolResolver.traitsFor(protocol),
+                "Example", "AWS_EXAMPLE_API", "example")).render(delegator);
+        delegator.flushWriters();
+        String h = manifest.getFileString(manifest.getFiles().stream()
+            .filter(p -> p.toString().endsWith("DoThingRequest.h")).findFirst().orElseThrow()).orElseThrow();
+        assertFalse(h.contains("GetChecksumAlgorithmName"), h);
+        assertFalse(h.contains("RequestChecksumRequired"), h);
+    }
+
     // --- @requestCompression ---
 
     /**

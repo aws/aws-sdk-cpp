@@ -18,10 +18,12 @@ import software.amazon.smithy.model.node.BooleanNode;
 import software.amazon.smithy.model.node.Node;
 import software.amazon.smithy.model.node.NodeVisitor;
 import software.amazon.smithy.model.node.StringNode;
+import software.amazon.smithy.aws.traits.HttpChecksumTrait;
 import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.StructureShape;
 import software.amazon.smithy.model.traits.DocumentationTrait;
+import software.amazon.smithy.model.traits.HttpChecksumRequiredTrait;
 import software.amazon.smithy.model.traits.RequestCompressionTrait;
 import software.amazon.smithy.rulesengine.traits.ContextParamTrait;
 import software.amazon.smithy.rulesengine.traits.StaticContextParamsTrait;
@@ -142,9 +144,10 @@ public final class RequestRenderer implements ShapeRenderer {
                     writer.write("$L std::shared_ptr<Aws::IOStream> GetBody() const override;", ctx.exportMacro());
                 }
                 ctx.protocolTraits().writeRequestMethodDecls(writer, ctx.exportMacro(), shape, operation, ctx.model());
-                // Request-feature methods driven by operation traits. Today: @requestCompression.
-                // @httpChecksum (aws.protocols) for s3 will render alongside here when s3 moves to
-                // the Smithy path (its own transform pipeline supplies the model; this seam stays).
+                // Request-feature methods driven by operation traits, in C2J RequestHeader.vm order:
+                // @httpChecksum, @httpChecksumRequired (legacy Content-MD5), then @requestCompression.
+                renderChecksumDecls(writer, shape, operation);
+                renderContentMd5Decl(writer, operation);
                 renderRequestCompressionDecl(writer, operation);
 
                 if (streamingResponse) {
@@ -264,6 +267,7 @@ public final class RequestRenderer implements ShapeRenderer {
                 });
                 // Header/query method bodies (SerializePayload is gated off for streaming requests).
                 ctx.protocolTraits().writeRequestMethodImpls(writer, className, shape, operation, ctx.service(), ctx.model());
+                renderChecksumImpls(writer, className, shape, operation);
                 renderRequestCompressionImpl(writer, className, operation, true);
                 if (hasEndpointContextParams(operation, shape)) {
                     writer.write("");
@@ -283,6 +287,7 @@ public final class RequestRenderer implements ShapeRenderer {
             writer.write("");
 
             ctx.protocolTraits().writeRequestMethodImpls(writer, className, shape, operation, ctx.service(), ctx.model());
+            renderChecksumImpls(writer, className, shape, operation);
             renderRequestCompressionImpl(writer, className, operation, false);
 
             if (hasEndpointContextParams(operation, shape)) {
@@ -365,6 +370,109 @@ public final class RequestRenderer implements ShapeRenderer {
             writer.write("return *this;");
         });
         writer.write("///@}");
+    }
+
+    /**
+     * Declares the request methods for an operation carrying {@code @httpChecksum}, gated per
+     * sub-field, matching C2J's RequestHeader.vm:89-104:
+     * <ul>
+     *   <li>{@code requestAlgorithmMember} → {@code GetChecksumAlgorithmName} / {@code ChecksumAlgorithmIsSet}</li>
+     *   <li>{@code requestValidationModeMember} → {@code ShouldValidateResponseChecksum}</li>
+     *   <li>{@code requestChecksumRequired} → inline {@code RequestChecksumRequired}</li>
+     *   <li>{@code responseAlgorithms} → {@code GetResponseChecksumAlgorithmNames}</li>
+     * </ul>
+     * All override base {@code AmazonWebServiceRequest} virtuals; no extra includes are needed.
+     */
+    private void renderChecksumDecls(CppWriter writer, StructureShape shape, OperationShape operation) {
+        Optional<HttpChecksumTrait> maybeTrait = operation.getTrait(HttpChecksumTrait.class);
+        if (maybeTrait.isEmpty()) {
+            return;
+        }
+        HttpChecksumTrait trait = maybeTrait.get();
+        if (trait.getRequestAlgorithmMember().isPresent()) {
+            writer.write("$L Aws::String GetChecksumAlgorithmName() const override;", ctx.exportMacro());
+            writer.write("$L bool ChecksumAlgorithmIsSet() const override;", ctx.exportMacro());
+        }
+        if (trait.getRequestValidationModeMember().isPresent()) {
+            writer.write("$L bool ShouldValidateResponseChecksum() const override;", ctx.exportMacro());
+        }
+        if (trait.isRequestChecksumRequired()) {
+            writer.write("inline bool RequestChecksumRequired() const override { return true; };");
+        }
+        if (!trait.getResponseAlgorithms().isEmpty()) {
+            writer.write("$L Aws::Vector<Aws::String> GetResponseChecksumAlgorithmNames() const override;", ctx.exportMacro());
+        }
+    }
+
+    /**
+     * Defines the {@code @httpChecksum} request methods, matching C2J's ModelClassChecksumMembers.vm.
+     * {@code GetChecksumAlgorithmName} defaults to {@code "crc64nvme"} when the algorithm member is
+     * unset, else maps the enum via its generated Mapper. The bodies read only the request's own
+     * enum members, so they are independent of the (stubbed) payload serde.
+     */
+    private void renderChecksumImpls(CppWriter writer, String className, StructureShape shape,
+                                     OperationShape operation) {
+        Optional<HttpChecksumTrait> maybeTrait = operation.getTrait(HttpChecksumTrait.class);
+        if (maybeTrait.isEmpty()) {
+            return;
+        }
+        HttpChecksumTrait trait = maybeTrait.get();
+        trait.getRequestAlgorithmMember().ifPresent(memberName -> {
+            String enumType = checksumMemberEnumType(shape, operation, memberName);
+            String field = CppNames.fieldName(memberName);
+            writer.openBlock("Aws::String $L::GetChecksumAlgorithmName() const {", "}", className, () -> {
+                writer.openBlock("if ($L == $L::NOT_SET) {", "}", field, enumType, () ->
+                    writer.write("return \"crc64nvme\";"));
+                writer.openBlock("else {", "}", () ->
+                    writer.write("return $1LMapper::GetNameFor$1L($2L);", enumType, field));
+            });
+            writer.write("");
+            writer.openBlock("bool $L::ChecksumAlgorithmIsSet() const {", "}", className, () ->
+                writer.write("return $L != $L::NOT_SET;", field, enumType));
+            writer.write("");
+        });
+        trait.getRequestValidationModeMember().ifPresent(memberName -> {
+            String enumType = checksumMemberEnumType(shape, operation, memberName);
+            String field = CppNames.fieldName(memberName);
+            writer.openBlock("bool $L::ShouldValidateResponseChecksum() const {", "}", className, () ->
+                writer.write("return $L == $L::ENABLED;", field, enumType));
+            writer.write("");
+        });
+        if (!trait.getResponseAlgorithms().isEmpty()) {
+            writer.openBlock("Aws::Vector<Aws::String> $L::GetResponseChecksumAlgorithmNames() const {", "}",
+                className, () -> {
+                writer.write("Aws::Vector<Aws::String> responseChecksumAlgorithmNames;");
+                for (String algorithm : trait.getResponseAlgorithms()) {
+                    writer.write("responseChecksumAlgorithmNames.push_back(\"$L\");", algorithm);
+                }
+                writer.write("return responseChecksumAlgorithmNames;");
+            });
+            writer.write("");
+        }
+    }
+
+    /**
+     * Declares the inline {@code ShouldComputeContentMd5} override for an operation carrying the
+     * legacy {@code @httpChecksumRequired} trait ({@code smithy.api#httpChecksumRequired}), which
+     * requests a {@code Content-MD5} header. Distinct from the flexible {@code @httpChecksum} trait.
+     * C2J derives an internal {@code Shape.computeContentMd5} flag from it; here it reads the trait
+     * directly. Matches RequestHeader.vm:105-108 (no {@code .cpp} body).
+     */
+    private void renderContentMd5Decl(CppWriter writer, OperationShape operation) {
+        if (operation.hasTrait(HttpChecksumRequiredTrait.class)) {
+            writer.write("");
+            writer.write("$L inline bool ShouldComputeContentMd5() const override { return true; }", ctx.exportMacro());
+        }
+    }
+
+    /** The C++ enum type name of a checksum algorithm/validation-mode member named by @httpChecksum. */
+    private String checksumMemberEnumType(StructureShape shape, OperationShape operation, String memberName) {
+        MemberShape member = shape.getAllMembers().get(memberName);
+        if (member == null) {
+            throw new RuntimeException("@httpChecksum on " + operation.getId()
+                + " references member '" + memberName + "' not present on " + shape.getId());
+        }
+        return CppTypeMapper.cppShapeName(ctx.model().expectShape(member.getTarget()));
     }
 
     /**
