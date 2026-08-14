@@ -117,6 +117,9 @@
 #include <aws/acm/model/ListAcmeExternalAccountBindingsPaginationTraits.h>
 #include <aws/acm/model/ListAcmeExternalAccountBindingsRequest.h>
 #include <aws/acm/model/ListAcmeExternalAccountBindingsResult.h>
+#include <aws/acm/model/ListCertificateDomainValidationsPaginationTraits.h>
+#include <aws/acm/model/ListCertificateDomainValidationsRequest.h>
+#include <aws/acm/model/ListCertificateDomainValidationsResult.h>
 #include <aws/acm/model/ListCertificatesPaginationTraits.h>
 #include <aws/acm/model/ListCertificatesRequest.h>
 #include <aws/acm/model/ListCertificatesResult.h>

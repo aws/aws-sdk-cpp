@@ -102,6 +102,7 @@
 #include <aws/codecommit/model/Folder.h>
 #include <aws/codecommit/model/GetApprovalRuleTemplateRequest.h>
 #include <aws/codecommit/model/GetApprovalRuleTemplateResult.h>
+#include <aws/codecommit/model/GetBlobDifferencesPaginationTraits.h>
 #include <aws/codecommit/model/GetBlobDifferencesRequest.h>
 #include <aws/codecommit/model/GetBlobDifferencesResult.h>
 #include <aws/codecommit/model/GetBlobRequest.h>
