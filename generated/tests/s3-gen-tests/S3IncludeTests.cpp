@@ -8,6 +8,7 @@
 
 #include <aws/s3/S3Client.h>
 #include <aws/s3/S3ClientConfiguration.h>
+#include <aws/s3/S3ClientPagination.h>
 #include <aws/s3/S3EndpointProvider.h>
 #include <aws/s3/S3ErrorMarshaller.h>
 #include <aws/s3/S3Errors.h>
@@ -15,9 +16,12 @@
 #include <aws/s3/S3ExpressIdentityProvider.h>
 #include <aws/s3/S3ExpressSigner.h>
 #include <aws/s3/S3ExpressSignerProvider.h>
+#include <aws/s3/S3PaginationBase.h>
 #include <aws/s3/S3Request.h>
 #include <aws/s3/S3ServiceClientModel.h>
+#include <aws/s3/S3Waiter.h>
 #include <aws/s3/S3_EXPORTS.h>
+#include <aws/s3/internal/S3EndpointRules.h>
 #include <aws/s3/model/AbacStatus.h>
 #include <aws/s3/model/AbortIncompleteMultipartUpload.h>
 #include <aws/s3/model/AbortMultipartUploadRequest.h>
@@ -249,20 +253,25 @@
 #include <aws/s3/model/ListBucketInventoryConfigurationsResult.h>
 #include <aws/s3/model/ListBucketMetricsConfigurationsRequest.h>
 #include <aws/s3/model/ListBucketMetricsConfigurationsResult.h>
+#include <aws/s3/model/ListBucketsPaginationTraits.h>
 #include <aws/s3/model/ListBucketsRequest.h>
 #include <aws/s3/model/ListBucketsResult.h>
+#include <aws/s3/model/ListDirectoryBucketsPaginationTraits.h>
 #include <aws/s3/model/ListDirectoryBucketsRequest.h>
 #include <aws/s3/model/ListDirectoryBucketsResult.h>
 #include <aws/s3/model/ListMultipartUploadsRequest.h>
 #include <aws/s3/model/ListMultipartUploadsResult.h>
+#include <aws/s3/model/ListObjectAnnotationsPaginationTraits.h>
 #include <aws/s3/model/ListObjectAnnotationsRequest.h>
 #include <aws/s3/model/ListObjectAnnotationsResult.h>
 #include <aws/s3/model/ListObjectVersionsRequest.h>
 #include <aws/s3/model/ListObjectVersionsResult.h>
 #include <aws/s3/model/ListObjectsRequest.h>
 #include <aws/s3/model/ListObjectsResult.h>
+#include <aws/s3/model/ListObjectsV2PaginationTraits.h>
 #include <aws/s3/model/ListObjectsV2Request.h>
 #include <aws/s3/model/ListObjectsV2Result.h>
+#include <aws/s3/model/ListPartsPaginationTraits.h>
 #include <aws/s3/model/ListPartsRequest.h>
 #include <aws/s3/model/ListPartsResult.h>
 #include <aws/s3/model/LocationInfo.h>

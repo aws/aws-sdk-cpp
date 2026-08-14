@@ -10,9 +10,12 @@
 #include <aws/transcribestreaming/TranscribeStreamingServiceEndpointProvider.h>
 #include <aws/transcribestreaming/TranscribeStreamingServiceErrorMarshaller.h>
 #include <aws/transcribestreaming/TranscribeStreamingServiceErrors.h>
+#include <aws/transcribestreaming/TranscribeStreamingServicePaginationBase.h>
 #include <aws/transcribestreaming/TranscribeStreamingServiceRequest.h>
 #include <aws/transcribestreaming/TranscribeStreamingServiceServiceClientModel.h>
+#include <aws/transcribestreaming/TranscribeStreamingServiceWaiter.h>
 #include <aws/transcribestreaming/TranscribeStreamingService_EXPORTS.h>
+#include <aws/transcribestreaming/internal/TranscribeStreamingServiceEndpointRules.h>
 #include <aws/transcribestreaming/model/Alternative.h>
 #include <aws/transcribestreaming/model/AudioEvent.h>
 #include <aws/transcribestreaming/model/AudioStream.h>

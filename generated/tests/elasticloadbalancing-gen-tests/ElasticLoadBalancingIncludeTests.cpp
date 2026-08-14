@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/elasticloadbalancing/ElasticLoadBalancingClient.h>
+#include <aws/elasticloadbalancing/ElasticLoadBalancingClientPagination.h>
 #include <aws/elasticloadbalancing/ElasticLoadBalancingEndpointProvider.h>
 #include <aws/elasticloadbalancing/ElasticLoadBalancingErrorMarshaller.h>
 #include <aws/elasticloadbalancing/ElasticLoadBalancingErrors.h>
+#include <aws/elasticloadbalancing/ElasticLoadBalancingPaginationBase.h>
 #include <aws/elasticloadbalancing/ElasticLoadBalancingRequest.h>
 #include <aws/elasticloadbalancing/ElasticLoadBalancingServiceClientModel.h>
+#include <aws/elasticloadbalancing/ElasticLoadBalancingWaiter.h>
 #include <aws/elasticloadbalancing/ElasticLoadBalancing_EXPORTS.h>
+#include <aws/elasticloadbalancing/internal/ElasticLoadBalancingEndpointRules.h>
 #include <aws/elasticloadbalancing/model/AccessLog.h>
 #include <aws/elasticloadbalancing/model/AddTagsRequest.h>
 #include <aws/elasticloadbalancing/model/AddTagsResult.h>
@@ -56,6 +60,7 @@
 #include <aws/elasticloadbalancing/model/DescribeLoadBalancerPoliciesResult.h>
 #include <aws/elasticloadbalancing/model/DescribeLoadBalancerPolicyTypesRequest.h>
 #include <aws/elasticloadbalancing/model/DescribeLoadBalancerPolicyTypesResult.h>
+#include <aws/elasticloadbalancing/model/DescribeLoadBalancersPaginationTraits.h>
 #include <aws/elasticloadbalancing/model/DescribeLoadBalancersRequest.h>
 #include <aws/elasticloadbalancing/model/DescribeLoadBalancersResult.h>
 #include <aws/elasticloadbalancing/model/DescribeTagsRequest.h>

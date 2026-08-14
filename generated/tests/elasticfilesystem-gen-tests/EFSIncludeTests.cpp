@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/elasticfilesystem/EFSClient.h>
+#include <aws/elasticfilesystem/EFSClientPagination.h>
 #include <aws/elasticfilesystem/EFSEndpointProvider.h>
 #include <aws/elasticfilesystem/EFSErrorMarshaller.h>
 #include <aws/elasticfilesystem/EFSErrors.h>
+#include <aws/elasticfilesystem/EFSPaginationBase.h>
 #include <aws/elasticfilesystem/EFSRequest.h>
 #include <aws/elasticfilesystem/EFSServiceClientModel.h>
+#include <aws/elasticfilesystem/EFSWaiter.h>
 #include <aws/elasticfilesystem/EFS_EXPORTS.h>
+#include <aws/elasticfilesystem/internal/EFSEndpointRules.h>
 #include <aws/elasticfilesystem/model/AccessPointAlreadyExists.h>
 #include <aws/elasticfilesystem/model/AccessPointDescription.h>
 #include <aws/elasticfilesystem/model/AccessPointLimitExceeded.h>
@@ -37,6 +41,7 @@
 #include <aws/elasticfilesystem/model/DeleteReplicationConfigurationRequest.h>
 #include <aws/elasticfilesystem/model/DeletionMode.h>
 #include <aws/elasticfilesystem/model/DependencyTimeout.h>
+#include <aws/elasticfilesystem/model/DescribeAccessPointsPaginationTraits.h>
 #include <aws/elasticfilesystem/model/DescribeAccessPointsRequest.h>
 #include <aws/elasticfilesystem/model/DescribeAccessPointsResult.h>
 #include <aws/elasticfilesystem/model/DescribeAccountPreferencesRequest.h>
@@ -45,14 +50,17 @@
 #include <aws/elasticfilesystem/model/DescribeBackupPolicyResult.h>
 #include <aws/elasticfilesystem/model/DescribeFileSystemPolicyRequest.h>
 #include <aws/elasticfilesystem/model/DescribeFileSystemPolicyResult.h>
+#include <aws/elasticfilesystem/model/DescribeFileSystemsPaginationTraits.h>
 #include <aws/elasticfilesystem/model/DescribeFileSystemsRequest.h>
 #include <aws/elasticfilesystem/model/DescribeFileSystemsResult.h>
 #include <aws/elasticfilesystem/model/DescribeLifecycleConfigurationRequest.h>
 #include <aws/elasticfilesystem/model/DescribeLifecycleConfigurationResult.h>
 #include <aws/elasticfilesystem/model/DescribeMountTargetSecurityGroupsRequest.h>
 #include <aws/elasticfilesystem/model/DescribeMountTargetSecurityGroupsResult.h>
+#include <aws/elasticfilesystem/model/DescribeMountTargetsPaginationTraits.h>
 #include <aws/elasticfilesystem/model/DescribeMountTargetsRequest.h>
 #include <aws/elasticfilesystem/model/DescribeMountTargetsResult.h>
+#include <aws/elasticfilesystem/model/DescribeReplicationConfigurationsPaginationTraits.h>
 #include <aws/elasticfilesystem/model/DescribeReplicationConfigurationsRequest.h>
 #include <aws/elasticfilesystem/model/DescribeReplicationConfigurationsResult.h>
 #include <aws/elasticfilesystem/model/Destination.h>
@@ -73,6 +81,7 @@
 #include <aws/elasticfilesystem/model/IpAddressType.h>
 #include <aws/elasticfilesystem/model/LifeCycleState.h>
 #include <aws/elasticfilesystem/model/LifecyclePolicy.h>
+#include <aws/elasticfilesystem/model/ListTagsForResourcePaginationTraits.h>
 #include <aws/elasticfilesystem/model/ListTagsForResourceRequest.h>
 #include <aws/elasticfilesystem/model/ListTagsForResourceResult.h>
 #include <aws/elasticfilesystem/model/ModifyMountTargetSecurityGroupsRequest.h>

@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/s3files/S3FilesClient.h>
+#include <aws/s3files/S3FilesClientPagination.h>
 #include <aws/s3files/S3FilesEndpointProvider.h>
 #include <aws/s3files/S3FilesErrorMarshaller.h>
 #include <aws/s3files/S3FilesErrors.h>
+#include <aws/s3files/S3FilesPaginationBase.h>
 #include <aws/s3files/S3FilesRequest.h>
 #include <aws/s3files/S3FilesServiceClientModel.h>
+#include <aws/s3files/S3FilesWaiter.h>
 #include <aws/s3files/S3Files_EXPORTS.h>
+#include <aws/s3files/internal/S3FilesEndpointRules.h>
 #include <aws/s3files/model/ConflictException.h>
 #include <aws/s3files/model/CreateAccessPointRequest.h>
 #include <aws/s3files/model/CreateAccessPointResult.h>
@@ -42,14 +46,18 @@
 #include <aws/s3files/model/IpAddressType.h>
 #include <aws/s3files/model/LifeCycleState.h>
 #include <aws/s3files/model/ListAccessPointsDescription.h>
+#include <aws/s3files/model/ListAccessPointsPaginationTraits.h>
 #include <aws/s3files/model/ListAccessPointsRequest.h>
 #include <aws/s3files/model/ListAccessPointsResult.h>
 #include <aws/s3files/model/ListFileSystemsDescription.h>
+#include <aws/s3files/model/ListFileSystemsPaginationTraits.h>
 #include <aws/s3files/model/ListFileSystemsRequest.h>
 #include <aws/s3files/model/ListFileSystemsResult.h>
 #include <aws/s3files/model/ListMountTargetsDescription.h>
+#include <aws/s3files/model/ListMountTargetsPaginationTraits.h>
 #include <aws/s3files/model/ListMountTargetsRequest.h>
 #include <aws/s3files/model/ListMountTargetsResult.h>
+#include <aws/s3files/model/ListTagsForResourcePaginationTraits.h>
 #include <aws/s3files/model/ListTagsForResourceRequest.h>
 #include <aws/s3files/model/ListTagsForResourceResult.h>
 #include <aws/s3files/model/PosixUser.h>

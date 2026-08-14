@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/sqs/SQSClient.h>
+#include <aws/sqs/SQSClientPagination.h>
 #include <aws/sqs/SQSEndpointProvider.h>
 #include <aws/sqs/SQSErrorMarshaller.h>
 #include <aws/sqs/SQSErrors.h>
+#include <aws/sqs/SQSPaginationBase.h>
 #include <aws/sqs/SQSRequest.h>
 #include <aws/sqs/SQSServiceClientModel.h>
+#include <aws/sqs/SQSWaiter.h>
 #include <aws/sqs/SQS_EXPORTS.h>
+#include <aws/sqs/internal/SQSEndpointRules.h>
 #include <aws/sqs/model/AddPermissionRequest.h>
 #include <aws/sqs/model/BatchResultErrorEntry.h>
 #include <aws/sqs/model/CancelMessageMoveTaskRequest.h>
@@ -34,6 +38,7 @@
 #include <aws/sqs/model/GetQueueAttributesResult.h>
 #include <aws/sqs/model/GetQueueUrlRequest.h>
 #include <aws/sqs/model/GetQueueUrlResult.h>
+#include <aws/sqs/model/ListDeadLetterSourceQueuesPaginationTraits.h>
 #include <aws/sqs/model/ListDeadLetterSourceQueuesRequest.h>
 #include <aws/sqs/model/ListDeadLetterSourceQueuesResult.h>
 #include <aws/sqs/model/ListMessageMoveTasksRequest.h>
@@ -41,6 +46,7 @@
 #include <aws/sqs/model/ListMessageMoveTasksResultEntry.h>
 #include <aws/sqs/model/ListQueueTagsRequest.h>
 #include <aws/sqs/model/ListQueueTagsResult.h>
+#include <aws/sqs/model/ListQueuesPaginationTraits.h>
 #include <aws/sqs/model/ListQueuesRequest.h>
 #include <aws/sqs/model/ListQueuesResult.h>
 #include <aws/sqs/model/Message.h>

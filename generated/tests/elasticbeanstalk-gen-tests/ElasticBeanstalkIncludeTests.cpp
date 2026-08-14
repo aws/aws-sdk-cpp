@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/elasticbeanstalk/ElasticBeanstalkClient.h>
+#include <aws/elasticbeanstalk/ElasticBeanstalkClientPagination.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalkEndpointProvider.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalkErrorMarshaller.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalkErrors.h>
+#include <aws/elasticbeanstalk/ElasticBeanstalkPaginationBase.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalkRequest.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalkServiceClientModel.h>
+#include <aws/elasticbeanstalk/ElasticBeanstalkWaiter.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
+#include <aws/elasticbeanstalk/internal/ElasticBeanstalkEndpointRules.h>
 #include <aws/elasticbeanstalk/model/AbortEnvironmentUpdateRequest.h>
 #include <aws/elasticbeanstalk/model/ActionHistoryStatus.h>
 #include <aws/elasticbeanstalk/model/ActionStatus.h>
@@ -72,6 +76,7 @@
 #include <aws/elasticbeanstalk/model/DescribeConfigurationSettingsResult.h>
 #include <aws/elasticbeanstalk/model/DescribeEnvironmentHealthRequest.h>
 #include <aws/elasticbeanstalk/model/DescribeEnvironmentHealthResult.h>
+#include <aws/elasticbeanstalk/model/DescribeEnvironmentManagedActionHistoryPaginationTraits.h>
 #include <aws/elasticbeanstalk/model/DescribeEnvironmentManagedActionHistoryRequest.h>
 #include <aws/elasticbeanstalk/model/DescribeEnvironmentManagedActionHistoryResult.h>
 #include <aws/elasticbeanstalk/model/DescribeEnvironmentManagedActionsRequest.h>
@@ -80,6 +85,7 @@
 #include <aws/elasticbeanstalk/model/DescribeEnvironmentResourcesResult.h>
 #include <aws/elasticbeanstalk/model/DescribeEnvironmentsRequest.h>
 #include <aws/elasticbeanstalk/model/DescribeEnvironmentsResult.h>
+#include <aws/elasticbeanstalk/model/DescribeEventsPaginationTraits.h>
 #include <aws/elasticbeanstalk/model/DescribeEventsRequest.h>
 #include <aws/elasticbeanstalk/model/DescribeEventsResult.h>
 #include <aws/elasticbeanstalk/model/DescribeInstancesHealthRequest.h>
@@ -109,8 +115,10 @@
 #include <aws/elasticbeanstalk/model/LaunchTemplate.h>
 #include <aws/elasticbeanstalk/model/ListAvailableSolutionStacksRequest.h>
 #include <aws/elasticbeanstalk/model/ListAvailableSolutionStacksResult.h>
+#include <aws/elasticbeanstalk/model/ListPlatformBranchesPaginationTraits.h>
 #include <aws/elasticbeanstalk/model/ListPlatformBranchesRequest.h>
 #include <aws/elasticbeanstalk/model/ListPlatformBranchesResult.h>
+#include <aws/elasticbeanstalk/model/ListPlatformVersionsPaginationTraits.h>
 #include <aws/elasticbeanstalk/model/ListPlatformVersionsRequest.h>
 #include <aws/elasticbeanstalk/model/ListPlatformVersionsResult.h>
 #include <aws/elasticbeanstalk/model/ListTagsForResourceRequest.h>

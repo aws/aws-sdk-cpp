@@ -7,16 +7,21 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/simpledbv2/SimpleDBv2Client.h>
+#include <aws/simpledbv2/SimpleDBv2ClientPagination.h>
 #include <aws/simpledbv2/SimpleDBv2EndpointProvider.h>
 #include <aws/simpledbv2/SimpleDBv2ErrorMarshaller.h>
 #include <aws/simpledbv2/SimpleDBv2Errors.h>
+#include <aws/simpledbv2/SimpleDBv2PaginationBase.h>
 #include <aws/simpledbv2/SimpleDBv2Request.h>
 #include <aws/simpledbv2/SimpleDBv2ServiceClientModel.h>
+#include <aws/simpledbv2/SimpleDBv2Waiter.h>
 #include <aws/simpledbv2/SimpleDBv2_EXPORTS.h>
+#include <aws/simpledbv2/internal/SimpleDBv2EndpointRules.h>
 #include <aws/simpledbv2/model/ExportStatus.h>
 #include <aws/simpledbv2/model/ExportSummary.h>
 #include <aws/simpledbv2/model/GetExportRequest.h>
 #include <aws/simpledbv2/model/GetExportResult.h>
+#include <aws/simpledbv2/model/ListExportsPaginationTraits.h>
 #include <aws/simpledbv2/model/ListExportsRequest.h>
 #include <aws/simpledbv2/model/ListExportsResult.h>
 #include <aws/simpledbv2/model/S3SseAlgorithm.h>

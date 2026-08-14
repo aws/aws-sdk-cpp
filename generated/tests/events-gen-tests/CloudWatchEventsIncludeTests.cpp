@@ -10,9 +10,12 @@
 #include <aws/events/CloudWatchEventsEndpointProvider.h>
 #include <aws/events/CloudWatchEventsErrorMarshaller.h>
 #include <aws/events/CloudWatchEventsErrors.h>
+#include <aws/events/CloudWatchEventsPaginationBase.h>
 #include <aws/events/CloudWatchEventsRequest.h>
 #include <aws/events/CloudWatchEventsServiceClientModel.h>
+#include <aws/events/CloudWatchEventsWaiter.h>
 #include <aws/events/CloudWatchEvents_EXPORTS.h>
+#include <aws/events/internal/CloudWatchEventsEndpointRules.h>
 #include <aws/events/model/ActivateEventSourceRequest.h>
 #include <aws/events/model/ApiDestination.h>
 #include <aws/events/model/ApiDestinationHttpMethod.h>

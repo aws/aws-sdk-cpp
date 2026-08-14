@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/backup-gateway/BackupGatewayClient.h>
+#include <aws/backup-gateway/BackupGatewayClientPagination.h>
 #include <aws/backup-gateway/BackupGatewayEndpointProvider.h>
 #include <aws/backup-gateway/BackupGatewayErrorMarshaller.h>
 #include <aws/backup-gateway/BackupGatewayErrors.h>
+#include <aws/backup-gateway/BackupGatewayPaginationBase.h>
 #include <aws/backup-gateway/BackupGatewayRequest.h>
 #include <aws/backup-gateway/BackupGatewayServiceClientModel.h>
+#include <aws/backup-gateway/BackupGatewayWaiter.h>
 #include <aws/backup-gateway/BackupGateway_EXPORTS.h>
+#include <aws/backup-gateway/internal/BackupGatewayEndpointRules.h>
 #include <aws/backup-gateway/model/AccessDeniedException.h>
 #include <aws/backup-gateway/model/AssociateGatewayToServerRequest.h>
 #include <aws/backup-gateway/model/AssociateGatewayToServerResult.h>
@@ -45,12 +49,15 @@
 #include <aws/backup-gateway/model/ImportHypervisorConfigurationRequest.h>
 #include <aws/backup-gateway/model/ImportHypervisorConfigurationResult.h>
 #include <aws/backup-gateway/model/InternalServerException.h>
+#include <aws/backup-gateway/model/ListGatewaysPaginationTraits.h>
 #include <aws/backup-gateway/model/ListGatewaysRequest.h>
 #include <aws/backup-gateway/model/ListGatewaysResult.h>
+#include <aws/backup-gateway/model/ListHypervisorsPaginationTraits.h>
 #include <aws/backup-gateway/model/ListHypervisorsRequest.h>
 #include <aws/backup-gateway/model/ListHypervisorsResult.h>
 #include <aws/backup-gateway/model/ListTagsForResourceRequest.h>
 #include <aws/backup-gateway/model/ListTagsForResourceResult.h>
+#include <aws/backup-gateway/model/ListVirtualMachinesPaginationTraits.h>
 #include <aws/backup-gateway/model/ListVirtualMachinesRequest.h>
 #include <aws/backup-gateway/model/ListVirtualMachinesResult.h>
 #include <aws/backup-gateway/model/MaintenanceStartTime.h>

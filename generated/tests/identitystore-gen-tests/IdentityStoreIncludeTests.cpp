@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/identitystore/IdentityStoreClient.h>
+#include <aws/identitystore/IdentityStoreClientPagination.h>
 #include <aws/identitystore/IdentityStoreEndpointProvider.h>
 #include <aws/identitystore/IdentityStoreErrorMarshaller.h>
 #include <aws/identitystore/IdentityStoreErrors.h>
+#include <aws/identitystore/IdentityStorePaginationBase.h>
 #include <aws/identitystore/IdentityStoreRequest.h>
 #include <aws/identitystore/IdentityStoreServiceClientModel.h>
+#include <aws/identitystore/IdentityStoreWaiter.h>
 #include <aws/identitystore/IdentityStore_EXPORTS.h>
+#include <aws/identitystore/internal/IdentityStoreEndpointRules.h>
 #include <aws/identitystore/model/AccessDeniedException.h>
 #include <aws/identitystore/model/AccessDeniedExceptionReason.h>
 #include <aws/identitystore/model/Address.h>
@@ -53,12 +57,16 @@
 #include <aws/identitystore/model/InternalServerException.h>
 #include <aws/identitystore/model/IsMemberInGroupsRequest.h>
 #include <aws/identitystore/model/IsMemberInGroupsResult.h>
+#include <aws/identitystore/model/ListGroupMembershipsForMemberPaginationTraits.h>
 #include <aws/identitystore/model/ListGroupMembershipsForMemberRequest.h>
 #include <aws/identitystore/model/ListGroupMembershipsForMemberResult.h>
+#include <aws/identitystore/model/ListGroupMembershipsPaginationTraits.h>
 #include <aws/identitystore/model/ListGroupMembershipsRequest.h>
 #include <aws/identitystore/model/ListGroupMembershipsResult.h>
+#include <aws/identitystore/model/ListGroupsPaginationTraits.h>
 #include <aws/identitystore/model/ListGroupsRequest.h>
 #include <aws/identitystore/model/ListGroupsResult.h>
+#include <aws/identitystore/model/ListUsersPaginationTraits.h>
 #include <aws/identitystore/model/ListUsersRequest.h>
 #include <aws/identitystore/model/ListUsersResult.h>
 #include <aws/identitystore/model/MemberId.h>

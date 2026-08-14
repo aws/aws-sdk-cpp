@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/marketplace-discovery/MarketplaceDiscoveryClient.h>
+#include <aws/marketplace-discovery/MarketplaceDiscoveryClientPagination.h>
 #include <aws/marketplace-discovery/MarketplaceDiscoveryEndpointProvider.h>
 #include <aws/marketplace-discovery/MarketplaceDiscoveryErrorMarshaller.h>
 #include <aws/marketplace-discovery/MarketplaceDiscoveryErrors.h>
+#include <aws/marketplace-discovery/MarketplaceDiscoveryPaginationBase.h>
 #include <aws/marketplace-discovery/MarketplaceDiscoveryRequest.h>
 #include <aws/marketplace-discovery/MarketplaceDiscoveryServiceClientModel.h>
+#include <aws/marketplace-discovery/MarketplaceDiscoveryWaiter.h>
 #include <aws/marketplace-discovery/MarketplaceDiscovery_EXPORTS.h>
+#include <aws/marketplace-discovery/internal/MarketplaceDiscoveryEndpointRules.h>
 #include <aws/marketplace-discovery/model/AmazonMachineImageFulfillmentOption.h>
 #include <aws/marketplace-discovery/model/AmazonMachineImageOperatingSystem.h>
 #include <aws/marketplace-discovery/model/AmazonMachineImageRecommendation.h>
@@ -47,6 +51,7 @@
 #include <aws/marketplace-discovery/model/GetOfferResult.h>
 #include <aws/marketplace-discovery/model/GetOfferSetRequest.h>
 #include <aws/marketplace-discovery/model/GetOfferSetResult.h>
+#include <aws/marketplace-discovery/model/GetOfferTermsPaginationTraits.h>
 #include <aws/marketplace-discovery/model/GetOfferTermsRequest.h>
 #include <aws/marketplace-discovery/model/GetOfferTermsResult.h>
 #include <aws/marketplace-discovery/model/GetProductRequest.h>
@@ -56,8 +61,10 @@
 #include <aws/marketplace-discovery/model/HelmOperatingSystem.h>
 #include <aws/marketplace-discovery/model/LegalDocumentType.h>
 #include <aws/marketplace-discovery/model/LegalTerm.h>
+#include <aws/marketplace-discovery/model/ListFulfillmentOptionsPaginationTraits.h>
 #include <aws/marketplace-discovery/model/ListFulfillmentOptionsRequest.h>
 #include <aws/marketplace-discovery/model/ListFulfillmentOptionsResult.h>
+#include <aws/marketplace-discovery/model/ListPurchaseOptionsPaginationTraits.h>
 #include <aws/marketplace-discovery/model/ListPurchaseOptionsRequest.h>
 #include <aws/marketplace-discovery/model/ListPurchaseOptionsResult.h>
 #include <aws/marketplace-discovery/model/ListingAssociatedEntity.h>
@@ -106,10 +113,12 @@
 #include <aws/marketplace-discovery/model/SageMakerModelRecommendation.h>
 #include <aws/marketplace-discovery/model/ScheduleItem.h>
 #include <aws/marketplace-discovery/model/SearchFacetType.h>
+#include <aws/marketplace-discovery/model/SearchFacetsPaginationTraits.h>
 #include <aws/marketplace-discovery/model/SearchFacetsRequest.h>
 #include <aws/marketplace-discovery/model/SearchFacetsResult.h>
 #include <aws/marketplace-discovery/model/SearchFilter.h>
 #include <aws/marketplace-discovery/model/SearchFilterType.h>
+#include <aws/marketplace-discovery/model/SearchListingsPaginationTraits.h>
 #include <aws/marketplace-discovery/model/SearchListingsRequest.h>
 #include <aws/marketplace-discovery/model/SearchListingsResult.h>
 #include <aws/marketplace-discovery/model/SearchListingsSortBy.h>

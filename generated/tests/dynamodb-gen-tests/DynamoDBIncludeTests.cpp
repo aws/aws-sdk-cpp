@@ -8,12 +8,16 @@
 
 #include <aws/dynamodb/DynamoDBClient.h>
 #include <aws/dynamodb/DynamoDBClientConfiguration.h>
+#include <aws/dynamodb/DynamoDBClientPagination.h>
 #include <aws/dynamodb/DynamoDBEndpointProvider.h>
 #include <aws/dynamodb/DynamoDBErrorMarshaller.h>
 #include <aws/dynamodb/DynamoDBErrors.h>
+#include <aws/dynamodb/DynamoDBPaginationBase.h>
 #include <aws/dynamodb/DynamoDBRequest.h>
 #include <aws/dynamodb/DynamoDBServiceClientModel.h>
+#include <aws/dynamodb/DynamoDBWaiter.h>
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
+#include <aws/dynamodb/internal/DynamoDBEndpointRules.h>
 #include <aws/dynamodb/model/ApproximateCreationDateTimePrecision.h>
 #include <aws/dynamodb/model/ArchivalSummary.h>
 #include <aws/dynamodb/model/AttributeAction.h>
@@ -169,14 +173,18 @@
 #include <aws/dynamodb/model/KinesisDataStreamDestination.h>
 #include <aws/dynamodb/model/ListBackupsRequest.h>
 #include <aws/dynamodb/model/ListBackupsResult.h>
+#include <aws/dynamodb/model/ListContributorInsightsPaginationTraits.h>
 #include <aws/dynamodb/model/ListContributorInsightsRequest.h>
 #include <aws/dynamodb/model/ListContributorInsightsResult.h>
+#include <aws/dynamodb/model/ListExportsPaginationTraits.h>
 #include <aws/dynamodb/model/ListExportsRequest.h>
 #include <aws/dynamodb/model/ListExportsResult.h>
 #include <aws/dynamodb/model/ListGlobalTablesRequest.h>
 #include <aws/dynamodb/model/ListGlobalTablesResult.h>
+#include <aws/dynamodb/model/ListImportsPaginationTraits.h>
 #include <aws/dynamodb/model/ListImportsRequest.h>
 #include <aws/dynamodb/model/ListImportsResult.h>
+#include <aws/dynamodb/model/ListTablesPaginationTraits.h>
 #include <aws/dynamodb/model/ListTablesRequest.h>
 #include <aws/dynamodb/model/ListTablesResult.h>
 #include <aws/dynamodb/model/ListTagsOfResourceRequest.h>
@@ -203,6 +211,7 @@
 #include <aws/dynamodb/model/PutRequest.h>
 #include <aws/dynamodb/model/PutResourcePolicyRequest.h>
 #include <aws/dynamodb/model/PutResourcePolicyResult.h>
+#include <aws/dynamodb/model/QueryPaginationTraits.h>
 #include <aws/dynamodb/model/QueryRequest.h>
 #include <aws/dynamodb/model/QueryResult.h>
 #include <aws/dynamodb/model/Replica.h>
@@ -237,6 +246,7 @@
 #include <aws/dynamodb/model/SSEStatus.h>
 #include <aws/dynamodb/model/SSEType.h>
 #include <aws/dynamodb/model/ScalarAttributeType.h>
+#include <aws/dynamodb/model/ScanPaginationTraits.h>
 #include <aws/dynamodb/model/ScanRequest.h>
 #include <aws/dynamodb/model/ScanResult.h>
 #include <aws/dynamodb/model/SearchResultItem.h>

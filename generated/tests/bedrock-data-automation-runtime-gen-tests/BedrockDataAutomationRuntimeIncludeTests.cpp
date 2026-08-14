@@ -12,9 +12,12 @@
 #include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntimeEndpointProvider.h>
 #include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntimeErrorMarshaller.h>
 #include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntimeErrors.h>
+#include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntimePaginationBase.h>
 #include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntimeRequest.h>
 #include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntimeServiceClientModel.h>
+#include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntimeWaiter.h>
 #include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntime_EXPORTS.h>
+#include <aws/bedrock-data-automation-runtime/internal/BedrockDataAutomationRuntimeEndpointRules.h>
 #include <aws/bedrock-data-automation-runtime/model/AssetProcessingConfiguration.h>
 #include <aws/bedrock-data-automation-runtime/model/AutomationJobStatus.h>
 #include <aws/bedrock-data-automation-runtime/model/Blueprint.h>

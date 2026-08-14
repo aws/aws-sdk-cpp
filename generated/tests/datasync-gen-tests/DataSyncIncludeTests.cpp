@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/datasync/DataSyncClient.h>
+#include <aws/datasync/DataSyncClientPagination.h>
 #include <aws/datasync/DataSyncEndpointProvider.h>
 #include <aws/datasync/DataSyncErrorMarshaller.h>
 #include <aws/datasync/DataSyncErrors.h>
+#include <aws/datasync/DataSyncPaginationBase.h>
 #include <aws/datasync/DataSyncRequest.h>
 #include <aws/datasync/DataSyncServiceClientModel.h>
+#include <aws/datasync/DataSyncWaiter.h>
 #include <aws/datasync/DataSync_EXPORTS.h>
+#include <aws/datasync/internal/DataSyncEndpointRules.h>
 #include <aws/datasync/model/AgentListEntry.h>
 #include <aws/datasync/model/AgentStatus.h>
 #include <aws/datasync/model/Atime.h>
@@ -101,14 +105,19 @@
 #include <aws/datasync/model/HdfsRpcProtection.h>
 #include <aws/datasync/model/InternalException.h>
 #include <aws/datasync/model/InvalidRequestException.h>
+#include <aws/datasync/model/ListAgentsPaginationTraits.h>
 #include <aws/datasync/model/ListAgentsRequest.h>
 #include <aws/datasync/model/ListAgentsResult.h>
+#include <aws/datasync/model/ListLocationsPaginationTraits.h>
 #include <aws/datasync/model/ListLocationsRequest.h>
 #include <aws/datasync/model/ListLocationsResult.h>
+#include <aws/datasync/model/ListTagsForResourcePaginationTraits.h>
 #include <aws/datasync/model/ListTagsForResourceRequest.h>
 #include <aws/datasync/model/ListTagsForResourceResult.h>
+#include <aws/datasync/model/ListTaskExecutionsPaginationTraits.h>
 #include <aws/datasync/model/ListTaskExecutionsRequest.h>
 #include <aws/datasync/model/ListTaskExecutionsResult.h>
+#include <aws/datasync/model/ListTasksPaginationTraits.h>
 #include <aws/datasync/model/ListTasksRequest.h>
 #include <aws/datasync/model/ListTasksResult.h>
 #include <aws/datasync/model/LocationFilter.h>

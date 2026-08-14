@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/verifiedpermissions/VerifiedPermissionsClient.h>
+#include <aws/verifiedpermissions/VerifiedPermissionsClientPagination.h>
 #include <aws/verifiedpermissions/VerifiedPermissionsEndpointProvider.h>
 #include <aws/verifiedpermissions/VerifiedPermissionsErrorMarshaller.h>
 #include <aws/verifiedpermissions/VerifiedPermissionsErrors.h>
+#include <aws/verifiedpermissions/VerifiedPermissionsPaginationBase.h>
 #include <aws/verifiedpermissions/VerifiedPermissionsRequest.h>
 #include <aws/verifiedpermissions/VerifiedPermissionsServiceClientModel.h>
+#include <aws/verifiedpermissions/VerifiedPermissionsWaiter.h>
 #include <aws/verifiedpermissions/VerifiedPermissions_EXPORTS.h>
+#include <aws/verifiedpermissions/internal/VerifiedPermissionsEndpointRules.h>
 #include <aws/verifiedpermissions/model/ActionIdentifier.h>
 #include <aws/verifiedpermissions/model/AliasState.h>
 #include <aws/verifiedpermissions/model/AttributeValue.h>
@@ -94,14 +98,19 @@
 #include <aws/verifiedpermissions/model/IsAuthorizedWithTokenResult.h>
 #include <aws/verifiedpermissions/model/KmsEncryptionSettings.h>
 #include <aws/verifiedpermissions/model/KmsEncryptionState.h>
+#include <aws/verifiedpermissions/model/ListIdentitySourcesPaginationTraits.h>
 #include <aws/verifiedpermissions/model/ListIdentitySourcesRequest.h>
 #include <aws/verifiedpermissions/model/ListIdentitySourcesResult.h>
+#include <aws/verifiedpermissions/model/ListPoliciesPaginationTraits.h>
 #include <aws/verifiedpermissions/model/ListPoliciesRequest.h>
 #include <aws/verifiedpermissions/model/ListPoliciesResult.h>
+#include <aws/verifiedpermissions/model/ListPolicyStoreAliasesPaginationTraits.h>
 #include <aws/verifiedpermissions/model/ListPolicyStoreAliasesRequest.h>
 #include <aws/verifiedpermissions/model/ListPolicyStoreAliasesResult.h>
+#include <aws/verifiedpermissions/model/ListPolicyStoresPaginationTraits.h>
 #include <aws/verifiedpermissions/model/ListPolicyStoresRequest.h>
 #include <aws/verifiedpermissions/model/ListPolicyStoresResult.h>
+#include <aws/verifiedpermissions/model/ListPolicyTemplatesPaginationTraits.h>
 #include <aws/verifiedpermissions/model/ListPolicyTemplatesRequest.h>
 #include <aws/verifiedpermissions/model/ListPolicyTemplatesResult.h>
 #include <aws/verifiedpermissions/model/ListTagsForResourceRequest.h>

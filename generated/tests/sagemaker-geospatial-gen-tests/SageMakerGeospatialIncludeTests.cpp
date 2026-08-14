@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/sagemaker-geospatial/SageMakerGeospatialClient.h>
+#include <aws/sagemaker-geospatial/SageMakerGeospatialClientPagination.h>
 #include <aws/sagemaker-geospatial/SageMakerGeospatialEndpointProvider.h>
 #include <aws/sagemaker-geospatial/SageMakerGeospatialErrorMarshaller.h>
 #include <aws/sagemaker-geospatial/SageMakerGeospatialErrors.h>
+#include <aws/sagemaker-geospatial/SageMakerGeospatialPaginationBase.h>
 #include <aws/sagemaker-geospatial/SageMakerGeospatialRequest.h>
 #include <aws/sagemaker-geospatial/SageMakerGeospatialServiceClientModel.h>
+#include <aws/sagemaker-geospatial/SageMakerGeospatialWaiter.h>
 #include <aws/sagemaker-geospatial/SageMakerGeospatial_EXPORTS.h>
+#include <aws/sagemaker-geospatial/internal/SageMakerGeospatialEndpointRules.h>
 #include <aws/sagemaker-geospatial/model/AlgorithmNameCloudRemoval.h>
 #include <aws/sagemaker-geospatial/model/AlgorithmNameGeoMosaic.h>
 #include <aws/sagemaker-geospatial/model/AlgorithmNameResampling.h>
@@ -64,13 +68,16 @@
 #include <aws/sagemaker-geospatial/model/LandCoverSegmentationConfigInput.h>
 #include <aws/sagemaker-geospatial/model/LandsatCloudCoverLandInput.h>
 #include <aws/sagemaker-geospatial/model/ListEarthObservationJobOutputConfig.h>
+#include <aws/sagemaker-geospatial/model/ListEarthObservationJobsPaginationTraits.h>
 #include <aws/sagemaker-geospatial/model/ListEarthObservationJobsRequest.h>
 #include <aws/sagemaker-geospatial/model/ListEarthObservationJobsResult.h>
+#include <aws/sagemaker-geospatial/model/ListRasterDataCollectionsPaginationTraits.h>
 #include <aws/sagemaker-geospatial/model/ListRasterDataCollectionsRequest.h>
 #include <aws/sagemaker-geospatial/model/ListRasterDataCollectionsResult.h>
 #include <aws/sagemaker-geospatial/model/ListTagsForResourceRequest.h>
 #include <aws/sagemaker-geospatial/model/ListTagsForResourceResult.h>
 #include <aws/sagemaker-geospatial/model/ListVectorEnrichmentJobOutputConfig.h>
+#include <aws/sagemaker-geospatial/model/ListVectorEnrichmentJobsPaginationTraits.h>
 #include <aws/sagemaker-geospatial/model/ListVectorEnrichmentJobsRequest.h>
 #include <aws/sagemaker-geospatial/model/ListVectorEnrichmentJobsResult.h>
 #include <aws/sagemaker-geospatial/model/LogicalOperator.h>
@@ -96,6 +103,7 @@
 #include <aws/sagemaker-geospatial/model/ResamplingConfigInput.h>
 #include <aws/sagemaker-geospatial/model/ResourceNotFoundException.h>
 #include <aws/sagemaker-geospatial/model/ReverseGeocodingConfig.h>
+#include <aws/sagemaker-geospatial/model/SearchRasterDataCollectionPaginationTraits.h>
 #include <aws/sagemaker-geospatial/model/SearchRasterDataCollectionRequest.h>
 #include <aws/sagemaker-geospatial/model/SearchRasterDataCollectionResult.h>
 #include <aws/sagemaker-geospatial/model/ServiceQuotaExceededException.h>

@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/compute-optimizer/ComputeOptimizerClient.h>
+#include <aws/compute-optimizer/ComputeOptimizerClientPagination.h>
 #include <aws/compute-optimizer/ComputeOptimizerEndpointProvider.h>
 #include <aws/compute-optimizer/ComputeOptimizerErrorMarshaller.h>
 #include <aws/compute-optimizer/ComputeOptimizerErrors.h>
+#include <aws/compute-optimizer/ComputeOptimizerPaginationBase.h>
 #include <aws/compute-optimizer/ComputeOptimizerRequest.h>
 #include <aws/compute-optimizer/ComputeOptimizerServiceClientModel.h>
+#include <aws/compute-optimizer/ComputeOptimizerWaiter.h>
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
+#include <aws/compute-optimizer/internal/ComputeOptimizerEndpointRules.h>
 #include <aws/compute-optimizer/model/AccountEnrollmentStatus.h>
 #include <aws/compute-optimizer/model/AllocationStrategy.h>
 #include <aws/compute-optimizer/model/AsgType.h>
@@ -35,6 +39,7 @@
 #include <aws/compute-optimizer/model/DBStorageConfiguration.h>
 #include <aws/compute-optimizer/model/DeleteRecommendationPreferencesRequest.h>
 #include <aws/compute-optimizer/model/DeleteRecommendationPreferencesResult.h>
+#include <aws/compute-optimizer/model/DescribeRecommendationExportJobsPaginationTraits.h>
 #include <aws/compute-optimizer/model/DescribeRecommendationExportJobsRequest.h>
 #include <aws/compute-optimizer/model/DescribeRecommendationExportJobsResult.h>
 #include <aws/compute-optimizer/model/Dimension.h>
@@ -122,10 +127,12 @@
 #include <aws/compute-optimizer/model/GetEffectiveRecommendationPreferencesResult.h>
 #include <aws/compute-optimizer/model/GetEnrollmentStatusRequest.h>
 #include <aws/compute-optimizer/model/GetEnrollmentStatusResult.h>
+#include <aws/compute-optimizer/model/GetEnrollmentStatusesForOrganizationPaginationTraits.h>
 #include <aws/compute-optimizer/model/GetEnrollmentStatusesForOrganizationRequest.h>
 #include <aws/compute-optimizer/model/GetEnrollmentStatusesForOrganizationResult.h>
 #include <aws/compute-optimizer/model/GetIdleRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/GetIdleRecommendationsResult.h>
+#include <aws/compute-optimizer/model/GetLambdaFunctionRecommendationsPaginationTraits.h>
 #include <aws/compute-optimizer/model/GetLambdaFunctionRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/GetLambdaFunctionRecommendationsResult.h>
 #include <aws/compute-optimizer/model/GetLicenseRecommendationsRequest.h>
@@ -135,8 +142,10 @@
 #include <aws/compute-optimizer/model/GetRDSDatabaseRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/GetRDSDatabaseRecommendationsResult.h>
 #include <aws/compute-optimizer/model/GetRecommendationError.h>
+#include <aws/compute-optimizer/model/GetRecommendationPreferencesPaginationTraits.h>
 #include <aws/compute-optimizer/model/GetRecommendationPreferencesRequest.h>
 #include <aws/compute-optimizer/model/GetRecommendationPreferencesResult.h>
+#include <aws/compute-optimizer/model/GetRecommendationSummariesPaginationTraits.h>
 #include <aws/compute-optimizer/model/GetRecommendationSummariesRequest.h>
 #include <aws/compute-optimizer/model/GetRecommendationSummariesResult.h>
 #include <aws/compute-optimizer/model/Gpu.h>

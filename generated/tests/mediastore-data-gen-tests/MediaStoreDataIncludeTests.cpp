@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/mediastore-data/MediaStoreDataClient.h>
+#include <aws/mediastore-data/MediaStoreDataClientPagination.h>
 #include <aws/mediastore-data/MediaStoreDataEndpointProvider.h>
 #include <aws/mediastore-data/MediaStoreDataErrorMarshaller.h>
 #include <aws/mediastore-data/MediaStoreDataErrors.h>
+#include <aws/mediastore-data/MediaStoreDataPaginationBase.h>
 #include <aws/mediastore-data/MediaStoreDataRequest.h>
 #include <aws/mediastore-data/MediaStoreDataServiceClientModel.h>
+#include <aws/mediastore-data/MediaStoreDataWaiter.h>
 #include <aws/mediastore-data/MediaStoreData_EXPORTS.h>
+#include <aws/mediastore-data/internal/MediaStoreDataEndpointRules.h>
 #include <aws/mediastore-data/model/DeleteObjectRequest.h>
 #include <aws/mediastore-data/model/DeleteObjectResult.h>
 #include <aws/mediastore-data/model/DescribeObjectRequest.h>
@@ -21,6 +25,7 @@
 #include <aws/mediastore-data/model/GetObjectResult.h>
 #include <aws/mediastore-data/model/Item.h>
 #include <aws/mediastore-data/model/ItemType.h>
+#include <aws/mediastore-data/model/ListItemsPaginationTraits.h>
 #include <aws/mediastore-data/model/ListItemsRequest.h>
 #include <aws/mediastore-data/model/ListItemsResult.h>
 #include <aws/mediastore-data/model/PutObjectRequest.h>

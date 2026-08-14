@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/arc-zonal-shift/ARCZonalShiftClient.h>
+#include <aws/arc-zonal-shift/ARCZonalShiftClientPagination.h>
 #include <aws/arc-zonal-shift/ARCZonalShiftEndpointProvider.h>
 #include <aws/arc-zonal-shift/ARCZonalShiftErrorMarshaller.h>
 #include <aws/arc-zonal-shift/ARCZonalShiftErrors.h>
+#include <aws/arc-zonal-shift/ARCZonalShiftPaginationBase.h>
 #include <aws/arc-zonal-shift/ARCZonalShiftRequest.h>
 #include <aws/arc-zonal-shift/ARCZonalShiftServiceClientModel.h>
+#include <aws/arc-zonal-shift/ARCZonalShiftWaiter.h>
 #include <aws/arc-zonal-shift/ARCZonalShift_EXPORTS.h>
+#include <aws/arc-zonal-shift/internal/ARCZonalShiftEndpointRules.h>
 #include <aws/arc-zonal-shift/model/AppliedStatus.h>
 #include <aws/arc-zonal-shift/model/AutoshiftAppliedStatus.h>
 #include <aws/arc-zonal-shift/model/AutoshiftExecutionStatus.h>
@@ -35,10 +39,13 @@
 #include <aws/arc-zonal-shift/model/GetAutoshiftObserverNotificationStatusResult.h>
 #include <aws/arc-zonal-shift/model/GetManagedResourceRequest.h>
 #include <aws/arc-zonal-shift/model/GetManagedResourceResult.h>
+#include <aws/arc-zonal-shift/model/ListAutoshiftsPaginationTraits.h>
 #include <aws/arc-zonal-shift/model/ListAutoshiftsRequest.h>
 #include <aws/arc-zonal-shift/model/ListAutoshiftsResult.h>
+#include <aws/arc-zonal-shift/model/ListManagedResourcesPaginationTraits.h>
 #include <aws/arc-zonal-shift/model/ListManagedResourcesRequest.h>
 #include <aws/arc-zonal-shift/model/ListManagedResourcesResult.h>
+#include <aws/arc-zonal-shift/model/ListZonalShiftsPaginationTraits.h>
 #include <aws/arc-zonal-shift/model/ListZonalShiftsRequest.h>
 #include <aws/arc-zonal-shift/model/ListZonalShiftsResult.h>
 #include <aws/arc-zonal-shift/model/ManagedResourceSummary.h>

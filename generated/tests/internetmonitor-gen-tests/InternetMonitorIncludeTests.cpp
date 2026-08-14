@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/internetmonitor/InternetMonitorClient.h>
+#include <aws/internetmonitor/InternetMonitorClientPagination.h>
 #include <aws/internetmonitor/InternetMonitorEndpointProvider.h>
 #include <aws/internetmonitor/InternetMonitorErrorMarshaller.h>
 #include <aws/internetmonitor/InternetMonitorErrors.h>
+#include <aws/internetmonitor/InternetMonitorPaginationBase.h>
 #include <aws/internetmonitor/InternetMonitorRequest.h>
 #include <aws/internetmonitor/InternetMonitorServiceClientModel.h>
+#include <aws/internetmonitor/InternetMonitorWaiter.h>
 #include <aws/internetmonitor/InternetMonitor_EXPORTS.h>
+#include <aws/internetmonitor/internal/InternetMonitorEndpointRules.h>
 #include <aws/internetmonitor/model/AvailabilityMeasurement.h>
 #include <aws/internetmonitor/model/ClientLocation.h>
 #include <aws/internetmonitor/model/CreateMonitorRequest.h>
@@ -26,6 +30,7 @@
 #include <aws/internetmonitor/model/GetInternetEventResult.h>
 #include <aws/internetmonitor/model/GetMonitorRequest.h>
 #include <aws/internetmonitor/model/GetMonitorResult.h>
+#include <aws/internetmonitor/model/GetQueryResultsPaginationTraits.h>
 #include <aws/internetmonitor/model/GetQueryResultsRequest.h>
 #include <aws/internetmonitor/model/GetQueryResultsResult.h>
 #include <aws/internetmonitor/model/GetQueryStatusRequest.h>
@@ -40,10 +45,13 @@
 #include <aws/internetmonitor/model/InternetEventType.h>
 #include <aws/internetmonitor/model/InternetHealth.h>
 #include <aws/internetmonitor/model/InternetMeasurementsLogDelivery.h>
+#include <aws/internetmonitor/model/ListHealthEventsPaginationTraits.h>
 #include <aws/internetmonitor/model/ListHealthEventsRequest.h>
 #include <aws/internetmonitor/model/ListHealthEventsResult.h>
+#include <aws/internetmonitor/model/ListInternetEventsPaginationTraits.h>
 #include <aws/internetmonitor/model/ListInternetEventsRequest.h>
 #include <aws/internetmonitor/model/ListInternetEventsResult.h>
+#include <aws/internetmonitor/model/ListMonitorsPaginationTraits.h>
 #include <aws/internetmonitor/model/ListMonitorsRequest.h>
 #include <aws/internetmonitor/model/ListMonitorsResult.h>
 #include <aws/internetmonitor/model/ListTagsForResourceRequest.h>

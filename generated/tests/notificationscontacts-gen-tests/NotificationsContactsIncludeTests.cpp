@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/notificationscontacts/NotificationsContactsClient.h>
+#include <aws/notificationscontacts/NotificationsContactsClientPagination.h>
 #include <aws/notificationscontacts/NotificationsContactsEndpointProvider.h>
 #include <aws/notificationscontacts/NotificationsContactsErrorMarshaller.h>
 #include <aws/notificationscontacts/NotificationsContactsErrors.h>
+#include <aws/notificationscontacts/NotificationsContactsPaginationBase.h>
 #include <aws/notificationscontacts/NotificationsContactsRequest.h>
 #include <aws/notificationscontacts/NotificationsContactsServiceClientModel.h>
+#include <aws/notificationscontacts/NotificationsContactsWaiter.h>
 #include <aws/notificationscontacts/NotificationsContacts_EXPORTS.h>
+#include <aws/notificationscontacts/internal/NotificationsContactsEndpointRules.h>
 #include <aws/notificationscontacts/model/ActivateEmailContactRequest.h>
 #include <aws/notificationscontacts/model/ActivateEmailContactResult.h>
 #include <aws/notificationscontacts/model/ConflictException.h>
@@ -24,6 +28,7 @@
 #include <aws/notificationscontacts/model/EmailContactStatus.h>
 #include <aws/notificationscontacts/model/GetEmailContactRequest.h>
 #include <aws/notificationscontacts/model/GetEmailContactResult.h>
+#include <aws/notificationscontacts/model/ListEmailContactsPaginationTraits.h>
 #include <aws/notificationscontacts/model/ListEmailContactsRequest.h>
 #include <aws/notificationscontacts/model/ListEmailContactsResult.h>
 #include <aws/notificationscontacts/model/ListTagsForResourceRequest.h>

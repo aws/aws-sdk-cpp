@@ -10,9 +10,12 @@
 #include <aws/cognito-sync/CognitoSyncEndpointProvider.h>
 #include <aws/cognito-sync/CognitoSyncErrorMarshaller.h>
 #include <aws/cognito-sync/CognitoSyncErrors.h>
+#include <aws/cognito-sync/CognitoSyncPaginationBase.h>
 #include <aws/cognito-sync/CognitoSyncRequest.h>
 #include <aws/cognito-sync/CognitoSyncServiceClientModel.h>
+#include <aws/cognito-sync/CognitoSyncWaiter.h>
 #include <aws/cognito-sync/CognitoSync_EXPORTS.h>
+#include <aws/cognito-sync/internal/CognitoSyncEndpointRules.h>
 #include <aws/cognito-sync/model/BulkPublishRequest.h>
 #include <aws/cognito-sync/model/BulkPublishResult.h>
 #include <aws/cognito-sync/model/BulkPublishStatus.h>

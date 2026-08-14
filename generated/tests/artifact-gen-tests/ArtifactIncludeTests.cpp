@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/artifact/ArtifactClient.h>
+#include <aws/artifact/ArtifactClientPagination.h>
 #include <aws/artifact/ArtifactEndpointProvider.h>
 #include <aws/artifact/ArtifactErrorMarshaller.h>
 #include <aws/artifact/ArtifactErrors.h>
+#include <aws/artifact/ArtifactPaginationBase.h>
 #include <aws/artifact/ArtifactRequest.h>
 #include <aws/artifact/ArtifactServiceClientModel.h>
+#include <aws/artifact/ArtifactWaiter.h>
 #include <aws/artifact/Artifact_EXPORTS.h>
+#include <aws/artifact/internal/ArtifactEndpointRules.h>
 #include <aws/artifact/model/AcceptanceType.h>
 #include <aws/artifact/model/AccountSettings.h>
 #include <aws/artifact/model/AgreementType.h>
@@ -45,14 +49,19 @@
 #include <aws/artifact/model/InquirySummary.h>
 #include <aws/artifact/model/InquirySupportMode.h>
 #include <aws/artifact/model/InternalServerException.h>
+#include <aws/artifact/model/ListComplianceInquiriesPaginationTraits.h>
 #include <aws/artifact/model/ListComplianceInquiriesRequest.h>
 #include <aws/artifact/model/ListComplianceInquiriesResult.h>
+#include <aws/artifact/model/ListComplianceInquiryQueriesPaginationTraits.h>
 #include <aws/artifact/model/ListComplianceInquiryQueriesRequest.h>
 #include <aws/artifact/model/ListComplianceInquiryQueriesResult.h>
+#include <aws/artifact/model/ListCustomerAgreementsPaginationTraits.h>
 #include <aws/artifact/model/ListCustomerAgreementsRequest.h>
 #include <aws/artifact/model/ListCustomerAgreementsResult.h>
+#include <aws/artifact/model/ListReportVersionsPaginationTraits.h>
 #include <aws/artifact/model/ListReportVersionsRequest.h>
 #include <aws/artifact/model/ListReportVersionsResult.h>
+#include <aws/artifact/model/ListReportsPaginationTraits.h>
 #include <aws/artifact/model/ListReportsRequest.h>
 #include <aws/artifact/model/ListReportsResult.h>
 #include <aws/artifact/model/ListTagsForResourceRequest.h>

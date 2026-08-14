@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesClient.h>
+#include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesClientPagination.h>
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesEndpointProvider.h>
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesErrorMarshaller.h>
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesErrors.h>
+#include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesPaginationBase.h>
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesRequest.h>
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesServiceClientModel.h>
+#include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesWaiter.h>
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelines_EXPORTS.h>
+#include <aws/chime-sdk-media-pipelines/internal/ChimeSDKMediaPipelinesEndpointRules.h>
 #include <aws/chime-sdk-media-pipelines/model/ActiveSpeakerOnlyConfiguration.h>
 #include <aws/chime-sdk-media-pipelines/model/ActiveSpeakerPosition.h>
 #include <aws/chime-sdk-media-pipelines/model/AmazonTranscribeCallAnalyticsProcessorConfiguration.h>
@@ -99,12 +103,16 @@
 #include <aws/chime-sdk-media-pipelines/model/KinesisVideoStreamSourceTaskConfiguration.h>
 #include <aws/chime-sdk-media-pipelines/model/LambdaFunctionSinkConfiguration.h>
 #include <aws/chime-sdk-media-pipelines/model/LayoutOption.h>
+#include <aws/chime-sdk-media-pipelines/model/ListMediaCapturePipelinesPaginationTraits.h>
 #include <aws/chime-sdk-media-pipelines/model/ListMediaCapturePipelinesRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/ListMediaCapturePipelinesResult.h>
+#include <aws/chime-sdk-media-pipelines/model/ListMediaInsightsPipelineConfigurationsPaginationTraits.h>
 #include <aws/chime-sdk-media-pipelines/model/ListMediaInsightsPipelineConfigurationsRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/ListMediaInsightsPipelineConfigurationsResult.h>
+#include <aws/chime-sdk-media-pipelines/model/ListMediaPipelineKinesisVideoStreamPoolsPaginationTraits.h>
 #include <aws/chime-sdk-media-pipelines/model/ListMediaPipelineKinesisVideoStreamPoolsRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/ListMediaPipelineKinesisVideoStreamPoolsResult.h>
+#include <aws/chime-sdk-media-pipelines/model/ListMediaPipelinesPaginationTraits.h>
 #include <aws/chime-sdk-media-pipelines/model/ListMediaPipelinesRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/ListMediaPipelinesResult.h>
 #include <aws/chime-sdk-media-pipelines/model/ListTagsForResourceRequest.h>

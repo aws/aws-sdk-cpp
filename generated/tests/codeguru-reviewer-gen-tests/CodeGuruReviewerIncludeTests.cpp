@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/codeguru-reviewer/CodeGuruReviewerClient.h>
+#include <aws/codeguru-reviewer/CodeGuruReviewerClientPagination.h>
 #include <aws/codeguru-reviewer/CodeGuruReviewerEndpointProvider.h>
 #include <aws/codeguru-reviewer/CodeGuruReviewerErrorMarshaller.h>
 #include <aws/codeguru-reviewer/CodeGuruReviewerErrors.h>
+#include <aws/codeguru-reviewer/CodeGuruReviewerPaginationBase.h>
 #include <aws/codeguru-reviewer/CodeGuruReviewerRequest.h>
 #include <aws/codeguru-reviewer/CodeGuruReviewerServiceClientModel.h>
+#include <aws/codeguru-reviewer/CodeGuruReviewerWaiter.h>
 #include <aws/codeguru-reviewer/CodeGuruReviewer_EXPORTS.h>
+#include <aws/codeguru-reviewer/internal/CodeGuruReviewerEndpointRules.h>
 #include <aws/codeguru-reviewer/model/AnalysisType.h>
 #include <aws/codeguru-reviewer/model/AssociateRepositoryRequest.h>
 #include <aws/codeguru-reviewer/model/AssociateRepositoryResult.h>
@@ -38,12 +42,16 @@
 #include <aws/codeguru-reviewer/model/EventInfo.h>
 #include <aws/codeguru-reviewer/model/JobState.h>
 #include <aws/codeguru-reviewer/model/KMSKeyDetails.h>
+#include <aws/codeguru-reviewer/model/ListCodeReviewsPaginationTraits.h>
 #include <aws/codeguru-reviewer/model/ListCodeReviewsRequest.h>
 #include <aws/codeguru-reviewer/model/ListCodeReviewsResult.h>
+#include <aws/codeguru-reviewer/model/ListRecommendationFeedbackPaginationTraits.h>
 #include <aws/codeguru-reviewer/model/ListRecommendationFeedbackRequest.h>
 #include <aws/codeguru-reviewer/model/ListRecommendationFeedbackResult.h>
+#include <aws/codeguru-reviewer/model/ListRecommendationsPaginationTraits.h>
 #include <aws/codeguru-reviewer/model/ListRecommendationsRequest.h>
 #include <aws/codeguru-reviewer/model/ListRecommendationsResult.h>
+#include <aws/codeguru-reviewer/model/ListRepositoryAssociationsPaginationTraits.h>
 #include <aws/codeguru-reviewer/model/ListRepositoryAssociationsRequest.h>
 #include <aws/codeguru-reviewer/model/ListRepositoryAssociationsResult.h>
 #include <aws/codeguru-reviewer/model/ListTagsForResourceRequest.h>

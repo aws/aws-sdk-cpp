@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/snowball/SnowballClient.h>
+#include <aws/snowball/SnowballClientPagination.h>
 #include <aws/snowball/SnowballEndpointProvider.h>
 #include <aws/snowball/SnowballErrorMarshaller.h>
 #include <aws/snowball/SnowballErrors.h>
+#include <aws/snowball/SnowballPaginationBase.h>
 #include <aws/snowball/SnowballRequest.h>
 #include <aws/snowball/SnowballServiceClientModel.h>
+#include <aws/snowball/SnowballWaiter.h>
 #include <aws/snowball/Snowball_EXPORTS.h>
+#include <aws/snowball/internal/SnowballEndpointRules.h>
 #include <aws/snowball/model/Address.h>
 #include <aws/snowball/model/AddressType.h>
 #include <aws/snowball/model/CancelClusterRequest.h>
@@ -38,6 +42,7 @@
 #include <aws/snowball/model/DependentService.h>
 #include <aws/snowball/model/DescribeAddressRequest.h>
 #include <aws/snowball/model/DescribeAddressResult.h>
+#include <aws/snowball/model/DescribeAddressesPaginationTraits.h>
 #include <aws/snowball/model/DescribeAddressesRequest.h>
 #include <aws/snowball/model/DescribeAddressesResult.h>
 #include <aws/snowball/model/DescribeClusterRequest.h>
@@ -70,16 +75,22 @@
 #include <aws/snowball/model/JobType.h>
 #include <aws/snowball/model/KeyRange.h>
 #include <aws/snowball/model/LambdaResource.h>
+#include <aws/snowball/model/ListClusterJobsPaginationTraits.h>
 #include <aws/snowball/model/ListClusterJobsRequest.h>
 #include <aws/snowball/model/ListClusterJobsResult.h>
+#include <aws/snowball/model/ListClustersPaginationTraits.h>
 #include <aws/snowball/model/ListClustersRequest.h>
 #include <aws/snowball/model/ListClustersResult.h>
+#include <aws/snowball/model/ListCompatibleImagesPaginationTraits.h>
 #include <aws/snowball/model/ListCompatibleImagesRequest.h>
 #include <aws/snowball/model/ListCompatibleImagesResult.h>
+#include <aws/snowball/model/ListJobsPaginationTraits.h>
 #include <aws/snowball/model/ListJobsRequest.h>
 #include <aws/snowball/model/ListJobsResult.h>
+#include <aws/snowball/model/ListLongTermPricingPaginationTraits.h>
 #include <aws/snowball/model/ListLongTermPricingRequest.h>
 #include <aws/snowball/model/ListLongTermPricingResult.h>
+#include <aws/snowball/model/ListPickupLocationsPaginationTraits.h>
 #include <aws/snowball/model/ListPickupLocationsRequest.h>
 #include <aws/snowball/model/ListPickupLocationsResult.h>
 #include <aws/snowball/model/ListServiceVersionsRequest.h>

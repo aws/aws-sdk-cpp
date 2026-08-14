@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/mediastore/MediaStoreClient.h>
+#include <aws/mediastore/MediaStoreClientPagination.h>
 #include <aws/mediastore/MediaStoreEndpointProvider.h>
 #include <aws/mediastore/MediaStoreErrorMarshaller.h>
 #include <aws/mediastore/MediaStoreErrors.h>
+#include <aws/mediastore/MediaStorePaginationBase.h>
 #include <aws/mediastore/MediaStoreRequest.h>
 #include <aws/mediastore/MediaStoreServiceClientModel.h>
+#include <aws/mediastore/MediaStoreWaiter.h>
 #include <aws/mediastore/MediaStore_EXPORTS.h>
+#include <aws/mediastore/internal/MediaStoreEndpointRules.h>
 #include <aws/mediastore/model/Container.h>
 #include <aws/mediastore/model/ContainerLevelMetrics.h>
 #include <aws/mediastore/model/ContainerStatus.h>
@@ -39,6 +43,7 @@
 #include <aws/mediastore/model/GetLifecyclePolicyResult.h>
 #include <aws/mediastore/model/GetMetricPolicyRequest.h>
 #include <aws/mediastore/model/GetMetricPolicyResult.h>
+#include <aws/mediastore/model/ListContainersPaginationTraits.h>
 #include <aws/mediastore/model/ListContainersRequest.h>
 #include <aws/mediastore/model/ListContainersResult.h>
 #include <aws/mediastore/model/ListTagsForResourceRequest.h>

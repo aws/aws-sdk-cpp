@@ -10,9 +10,12 @@
 #include <aws/comprehendmedical/ComprehendMedicalEndpointProvider.h>
 #include <aws/comprehendmedical/ComprehendMedicalErrorMarshaller.h>
 #include <aws/comprehendmedical/ComprehendMedicalErrors.h>
+#include <aws/comprehendmedical/ComprehendMedicalPaginationBase.h>
 #include <aws/comprehendmedical/ComprehendMedicalRequest.h>
 #include <aws/comprehendmedical/ComprehendMedicalServiceClientModel.h>
+#include <aws/comprehendmedical/ComprehendMedicalWaiter.h>
 #include <aws/comprehendmedical/ComprehendMedical_EXPORTS.h>
+#include <aws/comprehendmedical/internal/ComprehendMedicalEndpointRules.h>
 #include <aws/comprehendmedical/model/Attribute.h>
 #include <aws/comprehendmedical/model/AttributeName.h>
 #include <aws/comprehendmedical/model/Characters.h>

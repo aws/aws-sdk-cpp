@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/textract/TextractClient.h>
+#include <aws/textract/TextractClientPagination.h>
 #include <aws/textract/TextractEndpointProvider.h>
 #include <aws/textract/TextractErrorMarshaller.h>
 #include <aws/textract/TextractErrors.h>
+#include <aws/textract/TextractPaginationBase.h>
 #include <aws/textract/TextractRequest.h>
 #include <aws/textract/TextractServiceClientModel.h>
+#include <aws/textract/TextractWaiter.h>
 #include <aws/textract/Textract_EXPORTS.h>
+#include <aws/textract/internal/TextractEndpointRules.h>
 #include <aws/textract/model/Adapter.h>
 #include <aws/textract/model/AdapterOverview.h>
 #include <aws/textract/model/AdapterVersionDatasetConfig.h>
@@ -86,8 +90,10 @@
 #include <aws/textract/model/LendingSummary.h>
 #include <aws/textract/model/LineItemFields.h>
 #include <aws/textract/model/LineItemGroup.h>
+#include <aws/textract/model/ListAdapterVersionsPaginationTraits.h>
 #include <aws/textract/model/ListAdapterVersionsRequest.h>
 #include <aws/textract/model/ListAdapterVersionsResult.h>
+#include <aws/textract/model/ListAdaptersPaginationTraits.h>
 #include <aws/textract/model/ListAdaptersRequest.h>
 #include <aws/textract/model/ListAdaptersResult.h>
 #include <aws/textract/model/ListTagsForResourceRequest.h>

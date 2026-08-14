@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2Client.h>
+#include <aws/kinesisanalyticsv2/KinesisAnalyticsV2ClientPagination.h>
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2EndpointProvider.h>
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2ErrorMarshaller.h>
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2Errors.h>
+#include <aws/kinesisanalyticsv2/KinesisAnalyticsV2PaginationBase.h>
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2Request.h>
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2ServiceClientModel.h>
+#include <aws/kinesisanalyticsv2/KinesisAnalyticsV2Waiter.h>
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2_EXPORTS.h>
+#include <aws/kinesisanalyticsv2/internal/KinesisAnalyticsV2EndpointRules.h>
 #include <aws/kinesisanalyticsv2/model/AddApplicationCloudWatchLoggingOptionRequest.h>
 #include <aws/kinesisanalyticsv2/model/AddApplicationCloudWatchLoggingOptionResult.h>
 #include <aws/kinesisanalyticsv2/model/AddApplicationInputProcessingConfigurationRequest.h>
@@ -146,12 +150,16 @@
 #include <aws/kinesisanalyticsv2/model/LambdaOutput.h>
 #include <aws/kinesisanalyticsv2/model/LambdaOutputDescription.h>
 #include <aws/kinesisanalyticsv2/model/LambdaOutputUpdate.h>
+#include <aws/kinesisanalyticsv2/model/ListApplicationOperationsPaginationTraits.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationOperationsRequest.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationOperationsResult.h>
+#include <aws/kinesisanalyticsv2/model/ListApplicationSnapshotsPaginationTraits.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationSnapshotsRequest.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationSnapshotsResult.h>
+#include <aws/kinesisanalyticsv2/model/ListApplicationVersionsPaginationTraits.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationVersionsRequest.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationVersionsResult.h>
+#include <aws/kinesisanalyticsv2/model/ListApplicationsPaginationTraits.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationsRequest.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationsResult.h>
 #include <aws/kinesisanalyticsv2/model/ListTagsForResourceRequest.h>

@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/interconnect/InterconnectClient.h>
+#include <aws/interconnect/InterconnectClientPagination.h>
 #include <aws/interconnect/InterconnectEndpointProvider.h>
 #include <aws/interconnect/InterconnectErrorMarshaller.h>
 #include <aws/interconnect/InterconnectErrors.h>
+#include <aws/interconnect/InterconnectPaginationBase.h>
 #include <aws/interconnect/InterconnectRequest.h>
 #include <aws/interconnect/InterconnectServiceClientModel.h>
+#include <aws/interconnect/InterconnectWaiter.h>
 #include <aws/interconnect/Interconnect_EXPORTS.h>
+#include <aws/interconnect/internal/InterconnectEndpointRules.h>
 #include <aws/interconnect/model/AcceptConnectionProposalRequest.h>
 #include <aws/interconnect/model/AcceptConnectionProposalResult.h>
 #include <aws/interconnect/model/AttachPoint.h>
@@ -34,10 +38,13 @@
 #include <aws/interconnect/model/GetConnectionResult.h>
 #include <aws/interconnect/model/GetEnvironmentRequest.h>
 #include <aws/interconnect/model/GetEnvironmentResult.h>
+#include <aws/interconnect/model/ListAttachPointsPaginationTraits.h>
 #include <aws/interconnect/model/ListAttachPointsRequest.h>
 #include <aws/interconnect/model/ListAttachPointsResult.h>
+#include <aws/interconnect/model/ListConnectionsPaginationTraits.h>
 #include <aws/interconnect/model/ListConnectionsRequest.h>
 #include <aws/interconnect/model/ListConnectionsResult.h>
+#include <aws/interconnect/model/ListEnvironmentsPaginationTraits.h>
 #include <aws/interconnect/model/ListEnvironmentsRequest.h>
 #include <aws/interconnect/model/ListEnvironmentsResult.h>
 #include <aws/interconnect/model/ListTagsForResourceRequest.h>

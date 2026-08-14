@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/neptune-graph/NeptuneGraphClient.h>
+#include <aws/neptune-graph/NeptuneGraphClientPagination.h>
 #include <aws/neptune-graph/NeptuneGraphEndpointProvider.h>
 #include <aws/neptune-graph/NeptuneGraphErrorMarshaller.h>
 #include <aws/neptune-graph/NeptuneGraphErrors.h>
+#include <aws/neptune-graph/NeptuneGraphPaginationBase.h>
 #include <aws/neptune-graph/NeptuneGraphRequest.h>
 #include <aws/neptune-graph/NeptuneGraphServiceClientModel.h>
+#include <aws/neptune-graph/NeptuneGraphWaiter.h>
 #include <aws/neptune-graph/NeptuneGraph_EXPORTS.h>
+#include <aws/neptune-graph/internal/NeptuneGraphEndpointRules.h>
 #include <aws/neptune-graph/model/BlankNodeHandling.h>
 #include <aws/neptune-graph/model/CancelExportTaskRequest.h>
 #include <aws/neptune-graph/model/CancelExportTaskResult.h>
@@ -70,14 +74,19 @@
 #include <aws/neptune-graph/model/ImportTaskDetails.h>
 #include <aws/neptune-graph/model/ImportTaskStatus.h>
 #include <aws/neptune-graph/model/ImportTaskSummary.h>
+#include <aws/neptune-graph/model/ListExportTasksPaginationTraits.h>
 #include <aws/neptune-graph/model/ListExportTasksRequest.h>
 #include <aws/neptune-graph/model/ListExportTasksResult.h>
+#include <aws/neptune-graph/model/ListGraphSnapshotsPaginationTraits.h>
 #include <aws/neptune-graph/model/ListGraphSnapshotsRequest.h>
 #include <aws/neptune-graph/model/ListGraphSnapshotsResult.h>
+#include <aws/neptune-graph/model/ListGraphsPaginationTraits.h>
 #include <aws/neptune-graph/model/ListGraphsRequest.h>
 #include <aws/neptune-graph/model/ListGraphsResult.h>
+#include <aws/neptune-graph/model/ListImportTasksPaginationTraits.h>
 #include <aws/neptune-graph/model/ListImportTasksRequest.h>
 #include <aws/neptune-graph/model/ListImportTasksResult.h>
+#include <aws/neptune-graph/model/ListPrivateGraphEndpointsPaginationTraits.h>
 #include <aws/neptune-graph/model/ListPrivateGraphEndpointsRequest.h>
 #include <aws/neptune-graph/model/ListPrivateGraphEndpointsResult.h>
 #include <aws/neptune-graph/model/ListQueriesRequest.h>

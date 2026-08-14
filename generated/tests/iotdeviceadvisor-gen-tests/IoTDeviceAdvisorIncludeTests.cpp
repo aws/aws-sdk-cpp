@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/iotdeviceadvisor/IoTDeviceAdvisorClient.h>
+#include <aws/iotdeviceadvisor/IoTDeviceAdvisorClientPagination.h>
 #include <aws/iotdeviceadvisor/IoTDeviceAdvisorEndpointProvider.h>
 #include <aws/iotdeviceadvisor/IoTDeviceAdvisorErrorMarshaller.h>
 #include <aws/iotdeviceadvisor/IoTDeviceAdvisorErrors.h>
+#include <aws/iotdeviceadvisor/IoTDeviceAdvisorPaginationBase.h>
 #include <aws/iotdeviceadvisor/IoTDeviceAdvisorRequest.h>
 #include <aws/iotdeviceadvisor/IoTDeviceAdvisorServiceClientModel.h>
+#include <aws/iotdeviceadvisor/IoTDeviceAdvisorWaiter.h>
 #include <aws/iotdeviceadvisor/IoTDeviceAdvisor_EXPORTS.h>
+#include <aws/iotdeviceadvisor/internal/IoTDeviceAdvisorEndpointRules.h>
 #include <aws/iotdeviceadvisor/model/AuthenticationMethod.h>
 #include <aws/iotdeviceadvisor/model/CreateSuiteDefinitionRequest.h>
 #include <aws/iotdeviceadvisor/model/CreateSuiteDefinitionResult.h>
@@ -28,8 +32,10 @@
 #include <aws/iotdeviceadvisor/model/GetSuiteRunRequest.h>
 #include <aws/iotdeviceadvisor/model/GetSuiteRunResult.h>
 #include <aws/iotdeviceadvisor/model/GroupResult.h>
+#include <aws/iotdeviceadvisor/model/ListSuiteDefinitionsPaginationTraits.h>
 #include <aws/iotdeviceadvisor/model/ListSuiteDefinitionsRequest.h>
 #include <aws/iotdeviceadvisor/model/ListSuiteDefinitionsResult.h>
+#include <aws/iotdeviceadvisor/model/ListSuiteRunsPaginationTraits.h>
 #include <aws/iotdeviceadvisor/model/ListSuiteRunsRequest.h>
 #include <aws/iotdeviceadvisor/model/ListSuiteRunsResult.h>
 #include <aws/iotdeviceadvisor/model/ListTagsForResourceRequest.h>

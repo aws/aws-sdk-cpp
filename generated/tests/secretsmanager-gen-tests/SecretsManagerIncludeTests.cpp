@@ -7,13 +7,18 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/secretsmanager/SecretsManagerClient.h>
+#include <aws/secretsmanager/SecretsManagerClientPagination.h>
 #include <aws/secretsmanager/SecretsManagerEndpointProvider.h>
 #include <aws/secretsmanager/SecretsManagerErrorMarshaller.h>
 #include <aws/secretsmanager/SecretsManagerErrors.h>
+#include <aws/secretsmanager/SecretsManagerPaginationBase.h>
 #include <aws/secretsmanager/SecretsManagerRequest.h>
 #include <aws/secretsmanager/SecretsManagerServiceClientModel.h>
+#include <aws/secretsmanager/SecretsManagerWaiter.h>
 #include <aws/secretsmanager/SecretsManager_EXPORTS.h>
+#include <aws/secretsmanager/internal/SecretsManagerEndpointRules.h>
 #include <aws/secretsmanager/model/APIErrorType.h>
+#include <aws/secretsmanager/model/BatchGetSecretValuePaginationTraits.h>
 #include <aws/secretsmanager/model/BatchGetSecretValueRequest.h>
 #include <aws/secretsmanager/model/BatchGetSecretValueResult.h>
 #include <aws/secretsmanager/model/CancelRotateSecretRequest.h>
@@ -35,8 +40,10 @@
 #include <aws/secretsmanager/model/GetResourcePolicyResult.h>
 #include <aws/secretsmanager/model/GetSecretValueRequest.h>
 #include <aws/secretsmanager/model/GetSecretValueResult.h>
+#include <aws/secretsmanager/model/ListSecretVersionIdsPaginationTraits.h>
 #include <aws/secretsmanager/model/ListSecretVersionIdsRequest.h>
 #include <aws/secretsmanager/model/ListSecretVersionIdsResult.h>
+#include <aws/secretsmanager/model/ListSecretsPaginationTraits.h>
 #include <aws/secretsmanager/model/ListSecretsRequest.h>
 #include <aws/secretsmanager/model/ListSecretsResult.h>
 #include <aws/secretsmanager/model/PutResourcePolicyRequest.h>

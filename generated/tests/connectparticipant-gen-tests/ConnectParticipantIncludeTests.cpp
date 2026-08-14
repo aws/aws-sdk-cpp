@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/connectparticipant/ConnectParticipantClient.h>
+#include <aws/connectparticipant/ConnectParticipantClientPagination.h>
 #include <aws/connectparticipant/ConnectParticipantEndpointProvider.h>
 #include <aws/connectparticipant/ConnectParticipantErrorMarshaller.h>
 #include <aws/connectparticipant/ConnectParticipantErrors.h>
+#include <aws/connectparticipant/ConnectParticipantPaginationBase.h>
 #include <aws/connectparticipant/ConnectParticipantRequest.h>
 #include <aws/connectparticipant/ConnectParticipantServiceClientModel.h>
+#include <aws/connectparticipant/ConnectParticipantWaiter.h>
 #include <aws/connectparticipant/ConnectParticipant_EXPORTS.h>
+#include <aws/connectparticipant/internal/ConnectParticipantEndpointRules.h>
 #include <aws/connectparticipant/model/ArtifactStatus.h>
 #include <aws/connectparticipant/model/AttachmentItem.h>
 #include <aws/connectparticipant/model/Attendee.h>
@@ -34,6 +38,7 @@
 #include <aws/connectparticipant/model/GetAttachmentResult.h>
 #include <aws/connectparticipant/model/GetAuthenticationUrlRequest.h>
 #include <aws/connectparticipant/model/GetAuthenticationUrlResult.h>
+#include <aws/connectparticipant/model/GetTranscriptPaginationTraits.h>
 #include <aws/connectparticipant/model/GetTranscriptRequest.h>
 #include <aws/connectparticipant/model/GetTranscriptResult.h>
 #include <aws/connectparticipant/model/Item.h>

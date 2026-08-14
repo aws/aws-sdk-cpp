@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/route53-recovery-control-config/Route53RecoveryControlConfigClient.h>
+#include <aws/route53-recovery-control-config/Route53RecoveryControlConfigClientPagination.h>
 #include <aws/route53-recovery-control-config/Route53RecoveryControlConfigEndpointProvider.h>
 #include <aws/route53-recovery-control-config/Route53RecoveryControlConfigErrorMarshaller.h>
 #include <aws/route53-recovery-control-config/Route53RecoveryControlConfigErrors.h>
+#include <aws/route53-recovery-control-config/Route53RecoveryControlConfigPaginationBase.h>
 #include <aws/route53-recovery-control-config/Route53RecoveryControlConfigRequest.h>
 #include <aws/route53-recovery-control-config/Route53RecoveryControlConfigServiceClientModel.h>
+#include <aws/route53-recovery-control-config/Route53RecoveryControlConfigWaiter.h>
 #include <aws/route53-recovery-control-config/Route53RecoveryControlConfig_EXPORTS.h>
+#include <aws/route53-recovery-control-config/internal/Route53RecoveryControlConfigEndpointRules.h>
 #include <aws/route53-recovery-control-config/model/AssertionRule.h>
 #include <aws/route53-recovery-control-config/model/AssertionRuleUpdate.h>
 #include <aws/route53-recovery-control-config/model/Cluster.h>
@@ -46,14 +50,19 @@
 #include <aws/route53-recovery-control-config/model/GatingRuleUpdate.h>
 #include <aws/route53-recovery-control-config/model/GetResourcePolicyRequest.h>
 #include <aws/route53-recovery-control-config/model/GetResourcePolicyResult.h>
+#include <aws/route53-recovery-control-config/model/ListAssociatedRoute53HealthChecksPaginationTraits.h>
 #include <aws/route53-recovery-control-config/model/ListAssociatedRoute53HealthChecksRequest.h>
 #include <aws/route53-recovery-control-config/model/ListAssociatedRoute53HealthChecksResult.h>
+#include <aws/route53-recovery-control-config/model/ListClustersPaginationTraits.h>
 #include <aws/route53-recovery-control-config/model/ListClustersRequest.h>
 #include <aws/route53-recovery-control-config/model/ListClustersResult.h>
+#include <aws/route53-recovery-control-config/model/ListControlPanelsPaginationTraits.h>
 #include <aws/route53-recovery-control-config/model/ListControlPanelsRequest.h>
 #include <aws/route53-recovery-control-config/model/ListControlPanelsResult.h>
+#include <aws/route53-recovery-control-config/model/ListRoutingControlsPaginationTraits.h>
 #include <aws/route53-recovery-control-config/model/ListRoutingControlsRequest.h>
 #include <aws/route53-recovery-control-config/model/ListRoutingControlsResult.h>
+#include <aws/route53-recovery-control-config/model/ListSafetyRulesPaginationTraits.h>
 #include <aws/route53-recovery-control-config/model/ListSafetyRulesRequest.h>
 #include <aws/route53-recovery-control-config/model/ListSafetyRulesResult.h>
 #include <aws/route53-recovery-control-config/model/ListTagsForResourceRequest.h>

@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/acm-pca/ACMPCAClient.h>
+#include <aws/acm-pca/ACMPCAClientPagination.h>
 #include <aws/acm-pca/ACMPCAEndpointProvider.h>
 #include <aws/acm-pca/ACMPCAErrorMarshaller.h>
 #include <aws/acm-pca/ACMPCAErrors.h>
+#include <aws/acm-pca/ACMPCAPaginationBase.h>
 #include <aws/acm-pca/ACMPCARequest.h>
 #include <aws/acm-pca/ACMPCAServiceClientModel.h>
+#include <aws/acm-pca/ACMPCAWaiter.h>
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
+#include <aws/acm-pca/internal/ACMPCAEndpointRules.h>
 #include <aws/acm-pca/model/ASN1Subject.h>
 #include <aws/acm-pca/model/AccessDescription.h>
 #include <aws/acm-pca/model/AccessMethod.h>
@@ -64,10 +68,13 @@
 #include <aws/acm-pca/model/KeyAlgorithm.h>
 #include <aws/acm-pca/model/KeyStorageSecurityStandard.h>
 #include <aws/acm-pca/model/KeyUsage.h>
+#include <aws/acm-pca/model/ListCertificateAuthoritiesPaginationTraits.h>
 #include <aws/acm-pca/model/ListCertificateAuthoritiesRequest.h>
 #include <aws/acm-pca/model/ListCertificateAuthoritiesResult.h>
+#include <aws/acm-pca/model/ListPermissionsPaginationTraits.h>
 #include <aws/acm-pca/model/ListPermissionsRequest.h>
 #include <aws/acm-pca/model/ListPermissionsResult.h>
+#include <aws/acm-pca/model/ListTagsPaginationTraits.h>
 #include <aws/acm-pca/model/ListTagsRequest.h>
 #include <aws/acm-pca/model/ListTagsResult.h>
 #include <aws/acm-pca/model/OcspConfiguration.h>

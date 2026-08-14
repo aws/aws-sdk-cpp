@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/chime-sdk-meetings/ChimeSDKMeetingsClient.h>
+#include <aws/chime-sdk-meetings/ChimeSDKMeetingsClientPagination.h>
 #include <aws/chime-sdk-meetings/ChimeSDKMeetingsEndpointProvider.h>
 #include <aws/chime-sdk-meetings/ChimeSDKMeetingsErrorMarshaller.h>
 #include <aws/chime-sdk-meetings/ChimeSDKMeetingsErrors.h>
+#include <aws/chime-sdk-meetings/ChimeSDKMeetingsPaginationBase.h>
 #include <aws/chime-sdk-meetings/ChimeSDKMeetingsRequest.h>
 #include <aws/chime-sdk-meetings/ChimeSDKMeetingsServiceClientModel.h>
+#include <aws/chime-sdk-meetings/ChimeSDKMeetingsWaiter.h>
 #include <aws/chime-sdk-meetings/ChimeSDKMeetings_EXPORTS.h>
+#include <aws/chime-sdk-meetings/internal/ChimeSDKMeetingsEndpointRules.h>
 #include <aws/chime-sdk-meetings/model/Attendee.h>
 #include <aws/chime-sdk-meetings/model/AttendeeCapabilities.h>
 #include <aws/chime-sdk-meetings/model/AttendeeFeatures.h>
@@ -43,6 +47,7 @@
 #include <aws/chime-sdk-meetings/model/GetMeetingRequest.h>
 #include <aws/chime-sdk-meetings/model/GetMeetingResult.h>
 #include <aws/chime-sdk-meetings/model/LimitExceededException.h>
+#include <aws/chime-sdk-meetings/model/ListAttendeesPaginationTraits.h>
 #include <aws/chime-sdk-meetings/model/ListAttendeesRequest.h>
 #include <aws/chime-sdk-meetings/model/ListAttendeesResult.h>
 #include <aws/chime-sdk-meetings/model/ListTagsForResourceRequest.h>

@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/connectcampaignsv2/ConnectCampaignsV2Client.h>
+#include <aws/connectcampaignsv2/ConnectCampaignsV2ClientPagination.h>
 #include <aws/connectcampaignsv2/ConnectCampaignsV2EndpointProvider.h>
 #include <aws/connectcampaignsv2/ConnectCampaignsV2ErrorMarshaller.h>
 #include <aws/connectcampaignsv2/ConnectCampaignsV2Errors.h>
+#include <aws/connectcampaignsv2/ConnectCampaignsV2PaginationBase.h>
 #include <aws/connectcampaignsv2/ConnectCampaignsV2Request.h>
 #include <aws/connectcampaignsv2/ConnectCampaignsV2ServiceClientModel.h>
+#include <aws/connectcampaignsv2/ConnectCampaignsV2Waiter.h>
 #include <aws/connectcampaignsv2/ConnectCampaignsV2_EXPORTS.h>
+#include <aws/connectcampaignsv2/internal/ConnectCampaignsV2EndpointRules.h>
 #include <aws/connectcampaignsv2/model/AbandonmentRatePacingConfig.h>
 #include <aws/connectcampaignsv2/model/AccessDeniedException.h>
 #include <aws/connectcampaignsv2/model/AgentAction.h>
@@ -95,8 +99,10 @@
 #include <aws/connectcampaignsv2/model/LambdaIntegrationConfig.h>
 #include <aws/connectcampaignsv2/model/LambdaIntegrationIdentifier.h>
 #include <aws/connectcampaignsv2/model/LambdaIntegrationSummary.h>
+#include <aws/connectcampaignsv2/model/ListCampaignsPaginationTraits.h>
 #include <aws/connectcampaignsv2/model/ListCampaignsRequest.h>
 #include <aws/connectcampaignsv2/model/ListCampaignsResult.h>
+#include <aws/connectcampaignsv2/model/ListConnectInstanceIntegrationsPaginationTraits.h>
 #include <aws/connectcampaignsv2/model/ListConnectInstanceIntegrationsRequest.h>
 #include <aws/connectcampaignsv2/model/ListConnectInstanceIntegrationsResult.h>
 #include <aws/connectcampaignsv2/model/ListTagsForResourceRequest.h>

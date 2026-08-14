@@ -8,12 +8,16 @@
 
 #include <aws/timestream-write/TimestreamWriteClient.h>
 #include <aws/timestream-write/TimestreamWriteClientConfiguration.h>
+#include <aws/timestream-write/TimestreamWriteClientPagination.h>
 #include <aws/timestream-write/TimestreamWriteEndpointProvider.h>
 #include <aws/timestream-write/TimestreamWriteErrorMarshaller.h>
 #include <aws/timestream-write/TimestreamWriteErrors.h>
+#include <aws/timestream-write/TimestreamWritePaginationBase.h>
 #include <aws/timestream-write/TimestreamWriteRequest.h>
 #include <aws/timestream-write/TimestreamWriteServiceClientModel.h>
+#include <aws/timestream-write/TimestreamWriteWaiter.h>
 #include <aws/timestream-write/TimestreamWrite_EXPORTS.h>
+#include <aws/timestream-write/internal/TimestreamWriteEndpointRules.h>
 #include <aws/timestream-write/model/BatchLoadDataFormat.h>
 #include <aws/timestream-write/model/BatchLoadProgressReport.h>
 #include <aws/timestream-write/model/BatchLoadStatus.h>
@@ -46,10 +50,13 @@
 #include <aws/timestream-write/model/DimensionMapping.h>
 #include <aws/timestream-write/model/DimensionValueType.h>
 #include <aws/timestream-write/model/Endpoint.h>
+#include <aws/timestream-write/model/ListBatchLoadTasksPaginationTraits.h>
 #include <aws/timestream-write/model/ListBatchLoadTasksRequest.h>
 #include <aws/timestream-write/model/ListBatchLoadTasksResult.h>
+#include <aws/timestream-write/model/ListDatabasesPaginationTraits.h>
 #include <aws/timestream-write/model/ListDatabasesRequest.h>
 #include <aws/timestream-write/model/ListDatabasesResult.h>
+#include <aws/timestream-write/model/ListTablesPaginationTraits.h>
 #include <aws/timestream-write/model/ListTablesRequest.h>
 #include <aws/timestream-write/model/ListTablesResult.h>
 #include <aws/timestream-write/model/ListTagsForResourceRequest.h>

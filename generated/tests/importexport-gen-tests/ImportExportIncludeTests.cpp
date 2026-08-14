@@ -10,8 +10,10 @@
 #include <aws/importexport/ImportExportEndpointProvider.h>
 #include <aws/importexport/ImportExportErrorMarshaller.h>
 #include <aws/importexport/ImportExportErrors.h>
+#include <aws/importexport/ImportExportPaginationBase.h>
 #include <aws/importexport/ImportExportRequest.h>
 #include <aws/importexport/ImportExportServiceClientModel.h>
+#include <aws/importexport/ImportExportWaiter.h>
 #include <aws/importexport/ImportExport_EXPORTS.h>
 #include <aws/importexport/internal/ImportExportEndpointRules.h>
 #include <aws/importexport/model/Artifact.h>

@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/agent-registry-control/AgentRegistryControlClient.h>
+#include <aws/agent-registry-control/AgentRegistryControlClientPagination.h>
 #include <aws/agent-registry-control/AgentRegistryControlEndpointProvider.h>
 #include <aws/agent-registry-control/AgentRegistryControlErrorMarshaller.h>
 #include <aws/agent-registry-control/AgentRegistryControlErrors.h>
+#include <aws/agent-registry-control/AgentRegistryControlPaginationBase.h>
 #include <aws/agent-registry-control/AgentRegistryControlRequest.h>
 #include <aws/agent-registry-control/AgentRegistryControlServiceClientModel.h>
+#include <aws/agent-registry-control/AgentRegistryControlWaiter.h>
 #include <aws/agent-registry-control/AgentRegistryControl_EXPORTS.h>
+#include <aws/agent-registry-control/internal/AgentRegistryControlEndpointRules.h>
 #include <aws/agent-registry-control/model/A2aAgentCardDescriptor.h>
 #include <aws/agent-registry-control/model/AgentSkillsAdditionalData.h>
 #include <aws/agent-registry-control/model/AgentSkillsDefinitionDescriptor.h>
@@ -44,8 +48,10 @@
 #include <aws/agent-registry-control/model/GetRegistryRequest.h>
 #include <aws/agent-registry-control/model/GetRegistryResult.h>
 #include <aws/agent-registry-control/model/InboundTokenClaimValueType.h>
+#include <aws/agent-registry-control/model/ListRegistriesPaginationTraits.h>
 #include <aws/agent-registry-control/model/ListRegistriesRequest.h>
 #include <aws/agent-registry-control/model/ListRegistriesResult.h>
+#include <aws/agent-registry-control/model/ListRegistryRecordsPaginationTraits.h>
 #include <aws/agent-registry-control/model/ListRegistryRecordsRequest.h>
 #include <aws/agent-registry-control/model/ListRegistryRecordsResult.h>
 #include <aws/agent-registry-control/model/ListTagsForResourceRequest.h>

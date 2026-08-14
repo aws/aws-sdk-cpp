@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/polly/PollyClient.h>
+#include <aws/polly/PollyClientPagination.h>
 #include <aws/polly/PollyEndpointProvider.h>
 #include <aws/polly/PollyErrorMarshaller.h>
 #include <aws/polly/PollyErrors.h>
+#include <aws/polly/PollyPaginationBase.h>
 #include <aws/polly/PollyRequest.h>
 #include <aws/polly/PollyServiceClientModel.h>
+#include <aws/polly/PollyWaiter.h>
 #include <aws/polly/Polly_EXPORTS.h>
+#include <aws/polly/internal/PollyEndpointRules.h>
 #include <aws/polly/model/AudioEvent.h>
 #include <aws/polly/model/CloseStreamEvent.h>
 #include <aws/polly/model/DeleteLexiconRequest.h>
@@ -32,6 +36,7 @@
 #include <aws/polly/model/LexiconDescription.h>
 #include <aws/polly/model/ListLexiconsRequest.h>
 #include <aws/polly/model/ListLexiconsResult.h>
+#include <aws/polly/model/ListSpeechSynthesisTasksPaginationTraits.h>
 #include <aws/polly/model/ListSpeechSynthesisTasksRequest.h>
 #include <aws/polly/model/ListSpeechSynthesisTasksResult.h>
 #include <aws/polly/model/OutputFormat.h>

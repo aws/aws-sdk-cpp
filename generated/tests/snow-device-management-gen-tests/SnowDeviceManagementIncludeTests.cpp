@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/snow-device-management/SnowDeviceManagementClient.h>
+#include <aws/snow-device-management/SnowDeviceManagementClientPagination.h>
 #include <aws/snow-device-management/SnowDeviceManagementEndpointProvider.h>
 #include <aws/snow-device-management/SnowDeviceManagementErrorMarshaller.h>
 #include <aws/snow-device-management/SnowDeviceManagementErrors.h>
+#include <aws/snow-device-management/SnowDeviceManagementPaginationBase.h>
 #include <aws/snow-device-management/SnowDeviceManagementRequest.h>
 #include <aws/snow-device-management/SnowDeviceManagementServiceClientModel.h>
+#include <aws/snow-device-management/SnowDeviceManagementWaiter.h>
 #include <aws/snow-device-management/SnowDeviceManagement_EXPORTS.h>
+#include <aws/snow-device-management/internal/SnowDeviceManagementEndpointRules.h>
 #include <aws/snow-device-management/model/AttachmentStatus.h>
 #include <aws/snow-device-management/model/CancelTaskRequest.h>
 #include <aws/snow-device-management/model/CancelTaskResult.h>
@@ -39,14 +43,18 @@
 #include <aws/snow-device-management/model/InstanceStateName.h>
 #include <aws/snow-device-management/model/InstanceSummary.h>
 #include <aws/snow-device-management/model/IpAddressAssignment.h>
+#include <aws/snow-device-management/model/ListDeviceResourcesPaginationTraits.h>
 #include <aws/snow-device-management/model/ListDeviceResourcesRequest.h>
 #include <aws/snow-device-management/model/ListDeviceResourcesResult.h>
+#include <aws/snow-device-management/model/ListDevicesPaginationTraits.h>
 #include <aws/snow-device-management/model/ListDevicesRequest.h>
 #include <aws/snow-device-management/model/ListDevicesResult.h>
+#include <aws/snow-device-management/model/ListExecutionsPaginationTraits.h>
 #include <aws/snow-device-management/model/ListExecutionsRequest.h>
 #include <aws/snow-device-management/model/ListExecutionsResult.h>
 #include <aws/snow-device-management/model/ListTagsForResourceRequest.h>
 #include <aws/snow-device-management/model/ListTagsForResourceResult.h>
+#include <aws/snow-device-management/model/ListTasksPaginationTraits.h>
 #include <aws/snow-device-management/model/ListTasksRequest.h>
 #include <aws/snow-device-management/model/ListTasksResult.h>
 #include <aws/snow-device-management/model/PhysicalConnectorType.h>

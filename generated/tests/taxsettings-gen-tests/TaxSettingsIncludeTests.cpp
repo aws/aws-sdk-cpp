@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/taxsettings/TaxSettingsClient.h>
+#include <aws/taxsettings/TaxSettingsClientPagination.h>
 #include <aws/taxsettings/TaxSettingsEndpointProvider.h>
 #include <aws/taxsettings/TaxSettingsErrorMarshaller.h>
 #include <aws/taxsettings/TaxSettingsErrors.h>
+#include <aws/taxsettings/TaxSettingsPaginationBase.h>
 #include <aws/taxsettings/TaxSettingsRequest.h>
 #include <aws/taxsettings/TaxSettingsServiceClientModel.h>
+#include <aws/taxsettings/TaxSettingsWaiter.h>
 #include <aws/taxsettings/TaxSettings_EXPORTS.h>
+#include <aws/taxsettings/internal/TaxSettingsEndpointRules.h>
 #include <aws/taxsettings/model/AccountDetails.h>
 #include <aws/taxsettings/model/AccountMetaData.h>
 #include <aws/taxsettings/model/AdditionalInfoRequest.h>
@@ -67,10 +71,13 @@
 #include <aws/taxsettings/model/ItalyAdditionalInfo.h>
 #include <aws/taxsettings/model/Jurisdiction.h>
 #include <aws/taxsettings/model/KenyaAdditionalInfo.h>
+#include <aws/taxsettings/model/ListSupplementalTaxRegistrationsPaginationTraits.h>
 #include <aws/taxsettings/model/ListSupplementalTaxRegistrationsRequest.h>
 #include <aws/taxsettings/model/ListSupplementalTaxRegistrationsResult.h>
+#include <aws/taxsettings/model/ListTaxExemptionsPaginationTraits.h>
 #include <aws/taxsettings/model/ListTaxExemptionsRequest.h>
 #include <aws/taxsettings/model/ListTaxExemptionsResult.h>
+#include <aws/taxsettings/model/ListTaxRegistrationsPaginationTraits.h>
 #include <aws/taxsettings/model/ListTaxRegistrationsRequest.h>
 #include <aws/taxsettings/model/ListTaxRegistrationsResult.h>
 #include <aws/taxsettings/model/MalaysiaAdditionalInfo.h>

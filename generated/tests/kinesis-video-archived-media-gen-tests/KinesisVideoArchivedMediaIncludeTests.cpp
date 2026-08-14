@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaClient.h>
+#include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaClientPagination.h>
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaEndpointProvider.h>
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaErrorMarshaller.h>
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaErrors.h>
+#include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaPaginationBase.h>
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaRequest.h>
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaServiceClientModel.h>
+#include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaWaiter.h>
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMedia_EXPORTS.h>
+#include <aws/kinesis-video-archived-media/internal/KinesisVideoArchivedMediaEndpointRules.h>
 #include <aws/kinesis-video-archived-media/model/ClipFragmentSelector.h>
 #include <aws/kinesis-video-archived-media/model/ClipFragmentSelectorType.h>
 #include <aws/kinesis-video-archived-media/model/ClipTimestampRange.h>
@@ -34,6 +38,7 @@
 #include <aws/kinesis-video-archived-media/model/GetDASHStreamingSessionURLResult.h>
 #include <aws/kinesis-video-archived-media/model/GetHLSStreamingSessionURLRequest.h>
 #include <aws/kinesis-video-archived-media/model/GetHLSStreamingSessionURLResult.h>
+#include <aws/kinesis-video-archived-media/model/GetImagesPaginationTraits.h>
 #include <aws/kinesis-video-archived-media/model/GetImagesRequest.h>
 #include <aws/kinesis-video-archived-media/model/GetImagesResult.h>
 #include <aws/kinesis-video-archived-media/model/GetMediaForFragmentListRequest.h>
@@ -47,6 +52,7 @@
 #include <aws/kinesis-video-archived-media/model/Image.h>
 #include <aws/kinesis-video-archived-media/model/ImageError.h>
 #include <aws/kinesis-video-archived-media/model/ImageSelectorType.h>
+#include <aws/kinesis-video-archived-media/model/ListFragmentsPaginationTraits.h>
 #include <aws/kinesis-video-archived-media/model/ListFragmentsRequest.h>
 #include <aws/kinesis-video-archived-media/model/ListFragmentsResult.h>
 #include <aws/kinesis-video-archived-media/model/TimestampRange.h>

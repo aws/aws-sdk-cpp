@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/kafkaconnect/KafkaConnectClient.h>
+#include <aws/kafkaconnect/KafkaConnectClientPagination.h>
 #include <aws/kafkaconnect/KafkaConnectEndpointProvider.h>
 #include <aws/kafkaconnect/KafkaConnectErrorMarshaller.h>
 #include <aws/kafkaconnect/KafkaConnectErrors.h>
+#include <aws/kafkaconnect/KafkaConnectPaginationBase.h>
 #include <aws/kafkaconnect/KafkaConnectRequest.h>
 #include <aws/kafkaconnect/KafkaConnectServiceClientModel.h>
+#include <aws/kafkaconnect/KafkaConnectWaiter.h>
 #include <aws/kafkaconnect/KafkaConnect_EXPORTS.h>
+#include <aws/kafkaconnect/internal/KafkaConnectEndpointRules.h>
 #include <aws/kafkaconnect/model/ApacheKafkaCluster.h>
 #include <aws/kafkaconnect/model/ApacheKafkaClusterDescription.h>
 #include <aws/kafkaconnect/model/AutoScaling.h>
@@ -70,14 +74,18 @@
 #include <aws/kafkaconnect/model/KafkaClusterEncryptionInTransit.h>
 #include <aws/kafkaconnect/model/KafkaClusterEncryptionInTransitDescription.h>
 #include <aws/kafkaconnect/model/KafkaClusterEncryptionInTransitType.h>
+#include <aws/kafkaconnect/model/ListConnectorOperationsPaginationTraits.h>
 #include <aws/kafkaconnect/model/ListConnectorOperationsRequest.h>
 #include <aws/kafkaconnect/model/ListConnectorOperationsResult.h>
+#include <aws/kafkaconnect/model/ListConnectorsPaginationTraits.h>
 #include <aws/kafkaconnect/model/ListConnectorsRequest.h>
 #include <aws/kafkaconnect/model/ListConnectorsResult.h>
+#include <aws/kafkaconnect/model/ListCustomPluginsPaginationTraits.h>
 #include <aws/kafkaconnect/model/ListCustomPluginsRequest.h>
 #include <aws/kafkaconnect/model/ListCustomPluginsResult.h>
 #include <aws/kafkaconnect/model/ListTagsForResourceRequest.h>
 #include <aws/kafkaconnect/model/ListTagsForResourceResult.h>
+#include <aws/kafkaconnect/model/ListWorkerConfigurationsPaginationTraits.h>
 #include <aws/kafkaconnect/model/ListWorkerConfigurationsRequest.h>
 #include <aws/kafkaconnect/model/ListWorkerConfigurationsResult.h>
 #include <aws/kafkaconnect/model/LogDelivery.h>

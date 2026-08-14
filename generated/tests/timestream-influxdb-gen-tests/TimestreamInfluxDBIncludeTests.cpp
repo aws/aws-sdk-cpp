@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/timestream-influxdb/TimestreamInfluxDBClient.h>
+#include <aws/timestream-influxdb/TimestreamInfluxDBClientPagination.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDBEndpointProvider.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDBErrorMarshaller.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDBErrors.h>
+#include <aws/timestream-influxdb/TimestreamInfluxDBPaginationBase.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDBRequest.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDBServiceClientModel.h>
+#include <aws/timestream-influxdb/TimestreamInfluxDBWaiter.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDB_EXPORTS.h>
+#include <aws/timestream-influxdb/internal/TimestreamInfluxDBEndpointRules.h>
 #include <aws/timestream-influxdb/model/AutomatedDbBackupType.h>
 #include <aws/timestream-influxdb/model/ClusterConfiguration.h>
 #include <aws/timestream-influxdb/model/ClusterDeploymentType.h>
@@ -61,14 +65,19 @@
 #include <aws/timestream-influxdb/model/InfluxDBv3CoreParameters.h>
 #include <aws/timestream-influxdb/model/InfluxDBv3EnterpriseParameters.h>
 #include <aws/timestream-influxdb/model/InstanceMode.h>
+#include <aws/timestream-influxdb/model/ListDbBackupsPaginationTraits.h>
 #include <aws/timestream-influxdb/model/ListDbBackupsRequest.h>
 #include <aws/timestream-influxdb/model/ListDbBackupsResult.h>
+#include <aws/timestream-influxdb/model/ListDbClustersPaginationTraits.h>
 #include <aws/timestream-influxdb/model/ListDbClustersRequest.h>
 #include <aws/timestream-influxdb/model/ListDbClustersResult.h>
+#include <aws/timestream-influxdb/model/ListDbInstancesForClusterPaginationTraits.h>
 #include <aws/timestream-influxdb/model/ListDbInstancesForClusterRequest.h>
 #include <aws/timestream-influxdb/model/ListDbInstancesForClusterResult.h>
+#include <aws/timestream-influxdb/model/ListDbInstancesPaginationTraits.h>
 #include <aws/timestream-influxdb/model/ListDbInstancesRequest.h>
 #include <aws/timestream-influxdb/model/ListDbInstancesResult.h>
+#include <aws/timestream-influxdb/model/ListDbParameterGroupsPaginationTraits.h>
 #include <aws/timestream-influxdb/model/ListDbParameterGroupsRequest.h>
 #include <aws/timestream-influxdb/model/ListDbParameterGroupsResult.h>
 #include <aws/timestream-influxdb/model/ListTagsForResourceRequest.h>

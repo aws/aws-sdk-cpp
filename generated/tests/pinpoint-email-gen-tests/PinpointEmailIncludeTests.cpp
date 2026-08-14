@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/pinpoint-email/PinpointEmailClient.h>
+#include <aws/pinpoint-email/PinpointEmailClientPagination.h>
 #include <aws/pinpoint-email/PinpointEmailEndpointProvider.h>
 #include <aws/pinpoint-email/PinpointEmailErrorMarshaller.h>
 #include <aws/pinpoint-email/PinpointEmailErrors.h>
+#include <aws/pinpoint-email/PinpointEmailPaginationBase.h>
 #include <aws/pinpoint-email/PinpointEmailRequest.h>
 #include <aws/pinpoint-email/PinpointEmailServiceClientModel.h>
+#include <aws/pinpoint-email/PinpointEmailWaiter.h>
 #include <aws/pinpoint-email/PinpointEmail_EXPORTS.h>
+#include <aws/pinpoint-email/internal/PinpointEmailEndpointRules.h>
 #include <aws/pinpoint-email/model/BehaviorOnMxFailure.h>
 #include <aws/pinpoint-email/model/BlacklistEntry.h>
 #include <aws/pinpoint-email/model/Body.h>
@@ -64,6 +68,7 @@
 #include <aws/pinpoint-email/model/GetConfigurationSetResult.h>
 #include <aws/pinpoint-email/model/GetDedicatedIpRequest.h>
 #include <aws/pinpoint-email/model/GetDedicatedIpResult.h>
+#include <aws/pinpoint-email/model/GetDedicatedIpsPaginationTraits.h>
 #include <aws/pinpoint-email/model/GetDedicatedIpsRequest.h>
 #include <aws/pinpoint-email/model/GetDedicatedIpsResult.h>
 #include <aws/pinpoint-email/model/GetDeliverabilityDashboardOptionsRequest.h>
@@ -81,14 +86,19 @@
 #include <aws/pinpoint-email/model/InboxPlacementTrackingOption.h>
 #include <aws/pinpoint-email/model/IspPlacement.h>
 #include <aws/pinpoint-email/model/KinesisFirehoseDestination.h>
+#include <aws/pinpoint-email/model/ListConfigurationSetsPaginationTraits.h>
 #include <aws/pinpoint-email/model/ListConfigurationSetsRequest.h>
 #include <aws/pinpoint-email/model/ListConfigurationSetsResult.h>
+#include <aws/pinpoint-email/model/ListDedicatedIpPoolsPaginationTraits.h>
 #include <aws/pinpoint-email/model/ListDedicatedIpPoolsRequest.h>
 #include <aws/pinpoint-email/model/ListDedicatedIpPoolsResult.h>
+#include <aws/pinpoint-email/model/ListDeliverabilityTestReportsPaginationTraits.h>
 #include <aws/pinpoint-email/model/ListDeliverabilityTestReportsRequest.h>
 #include <aws/pinpoint-email/model/ListDeliverabilityTestReportsResult.h>
+#include <aws/pinpoint-email/model/ListDomainDeliverabilityCampaignsPaginationTraits.h>
 #include <aws/pinpoint-email/model/ListDomainDeliverabilityCampaignsRequest.h>
 #include <aws/pinpoint-email/model/ListDomainDeliverabilityCampaignsResult.h>
+#include <aws/pinpoint-email/model/ListEmailIdentitiesPaginationTraits.h>
 #include <aws/pinpoint-email/model/ListEmailIdentitiesRequest.h>
 #include <aws/pinpoint-email/model/ListEmailIdentitiesResult.h>
 #include <aws/pinpoint-email/model/ListTagsForResourceRequest.h>

@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/bcm-data-exports/BCMDataExportsClient.h>
+#include <aws/bcm-data-exports/BCMDataExportsClientPagination.h>
 #include <aws/bcm-data-exports/BCMDataExportsEndpointProvider.h>
 #include <aws/bcm-data-exports/BCMDataExportsErrorMarshaller.h>
 #include <aws/bcm-data-exports/BCMDataExportsErrors.h>
+#include <aws/bcm-data-exports/BCMDataExportsPaginationBase.h>
 #include <aws/bcm-data-exports/BCMDataExportsRequest.h>
 #include <aws/bcm-data-exports/BCMDataExportsServiceClientModel.h>
+#include <aws/bcm-data-exports/BCMDataExportsWaiter.h>
 #include <aws/bcm-data-exports/BCMDataExports_EXPORTS.h>
+#include <aws/bcm-data-exports/internal/BCMDataExportsEndpointRules.h>
 #include <aws/bcm-data-exports/model/Column.h>
 #include <aws/bcm-data-exports/model/CompressionOption.h>
 #include <aws/bcm-data-exports/model/CreateExportRequest.h>
@@ -37,10 +41,13 @@
 #include <aws/bcm-data-exports/model/GetExportResult.h>
 #include <aws/bcm-data-exports/model/GetTableRequest.h>
 #include <aws/bcm-data-exports/model/GetTableResult.h>
+#include <aws/bcm-data-exports/model/ListExecutionsPaginationTraits.h>
 #include <aws/bcm-data-exports/model/ListExecutionsRequest.h>
 #include <aws/bcm-data-exports/model/ListExecutionsResult.h>
+#include <aws/bcm-data-exports/model/ListExportsPaginationTraits.h>
 #include <aws/bcm-data-exports/model/ListExportsRequest.h>
 #include <aws/bcm-data-exports/model/ListExportsResult.h>
+#include <aws/bcm-data-exports/model/ListTablesPaginationTraits.h>
 #include <aws/bcm-data-exports/model/ListTablesRequest.h>
 #include <aws/bcm-data-exports/model/ListTablesResult.h>
 #include <aws/bcm-data-exports/model/ListTagsForResourceRequest.h>

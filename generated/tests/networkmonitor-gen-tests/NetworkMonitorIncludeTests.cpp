@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/networkmonitor/NetworkMonitorClient.h>
+#include <aws/networkmonitor/NetworkMonitorClientPagination.h>
 #include <aws/networkmonitor/NetworkMonitorEndpointProvider.h>
 #include <aws/networkmonitor/NetworkMonitorErrorMarshaller.h>
 #include <aws/networkmonitor/NetworkMonitorErrors.h>
+#include <aws/networkmonitor/NetworkMonitorPaginationBase.h>
 #include <aws/networkmonitor/NetworkMonitorRequest.h>
 #include <aws/networkmonitor/NetworkMonitorServiceClientModel.h>
+#include <aws/networkmonitor/NetworkMonitorWaiter.h>
 #include <aws/networkmonitor/NetworkMonitor_EXPORTS.h>
+#include <aws/networkmonitor/internal/NetworkMonitorEndpointRules.h>
 #include <aws/networkmonitor/model/AddressFamily.h>
 #include <aws/networkmonitor/model/CreateMonitorProbeInput.h>
 #include <aws/networkmonitor/model/CreateMonitorRequest.h>
@@ -27,6 +31,7 @@
 #include <aws/networkmonitor/model/GetMonitorResult.h>
 #include <aws/networkmonitor/model/GetProbeRequest.h>
 #include <aws/networkmonitor/model/GetProbeResult.h>
+#include <aws/networkmonitor/model/ListMonitorsPaginationTraits.h>
 #include <aws/networkmonitor/model/ListMonitorsRequest.h>
 #include <aws/networkmonitor/model/ListMonitorsResult.h>
 #include <aws/networkmonitor/model/ListTagsForResourceRequest.h>

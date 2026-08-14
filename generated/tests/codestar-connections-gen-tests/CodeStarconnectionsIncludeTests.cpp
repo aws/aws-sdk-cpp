@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/codestar-connections/CodeStarconnectionsClient.h>
+#include <aws/codestar-connections/CodeStarconnectionsClientPagination.h>
 #include <aws/codestar-connections/CodeStarconnectionsEndpointProvider.h>
 #include <aws/codestar-connections/CodeStarconnectionsErrorMarshaller.h>
 #include <aws/codestar-connections/CodeStarconnectionsErrors.h>
+#include <aws/codestar-connections/CodeStarconnectionsPaginationBase.h>
 #include <aws/codestar-connections/CodeStarconnectionsRequest.h>
 #include <aws/codestar-connections/CodeStarconnectionsServiceClientModel.h>
+#include <aws/codestar-connections/CodeStarconnectionsWaiter.h>
 #include <aws/codestar-connections/CodeStarconnections_EXPORTS.h>
+#include <aws/codestar-connections/internal/CodeStarconnectionsEndpointRules.h>
 #include <aws/codestar-connections/model/BlockerStatus.h>
 #include <aws/codestar-connections/model/BlockerType.h>
 #include <aws/codestar-connections/model/Connection.h>
@@ -48,14 +52,18 @@
 #include <aws/codestar-connections/model/GetSyncConfigurationRequest.h>
 #include <aws/codestar-connections/model/GetSyncConfigurationResult.h>
 #include <aws/codestar-connections/model/Host.h>
+#include <aws/codestar-connections/model/ListConnectionsPaginationTraits.h>
 #include <aws/codestar-connections/model/ListConnectionsRequest.h>
 #include <aws/codestar-connections/model/ListConnectionsResult.h>
+#include <aws/codestar-connections/model/ListHostsPaginationTraits.h>
 #include <aws/codestar-connections/model/ListHostsRequest.h>
 #include <aws/codestar-connections/model/ListHostsResult.h>
+#include <aws/codestar-connections/model/ListRepositoryLinksPaginationTraits.h>
 #include <aws/codestar-connections/model/ListRepositoryLinksRequest.h>
 #include <aws/codestar-connections/model/ListRepositoryLinksResult.h>
 #include <aws/codestar-connections/model/ListRepositorySyncDefinitionsRequest.h>
 #include <aws/codestar-connections/model/ListRepositorySyncDefinitionsResult.h>
+#include <aws/codestar-connections/model/ListSyncConfigurationsPaginationTraits.h>
 #include <aws/codestar-connections/model/ListSyncConfigurationsRequest.h>
 #include <aws/codestar-connections/model/ListSyncConfigurationsResult.h>
 #include <aws/codestar-connections/model/ListTagsForResourceRequest.h>

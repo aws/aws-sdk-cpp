@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/ivschat/IvschatClient.h>
+#include <aws/ivschat/IvschatClientPagination.h>
 #include <aws/ivschat/IvschatEndpointProvider.h>
 #include <aws/ivschat/IvschatErrorMarshaller.h>
 #include <aws/ivschat/IvschatErrors.h>
+#include <aws/ivschat/IvschatPaginationBase.h>
 #include <aws/ivschat/IvschatRequest.h>
 #include <aws/ivschat/IvschatServiceClientModel.h>
+#include <aws/ivschat/IvschatWaiter.h>
 #include <aws/ivschat/Ivschat_EXPORTS.h>
+#include <aws/ivschat/internal/IvschatEndpointRules.h>
 #include <aws/ivschat/model/ChatTokenCapability.h>
 #include <aws/ivschat/model/CloudWatchLogsDestinationConfiguration.h>
 #include <aws/ivschat/model/ConflictException.h>
@@ -36,8 +40,10 @@
 #include <aws/ivschat/model/GetLoggingConfigurationResult.h>
 #include <aws/ivschat/model/GetRoomRequest.h>
 #include <aws/ivschat/model/GetRoomResult.h>
+#include <aws/ivschat/model/ListLoggingConfigurationsPaginationTraits.h>
 #include <aws/ivschat/model/ListLoggingConfigurationsRequest.h>
 #include <aws/ivschat/model/ListLoggingConfigurationsResult.h>
+#include <aws/ivschat/model/ListRoomsPaginationTraits.h>
 #include <aws/ivschat/model/ListRoomsRequest.h>
 #include <aws/ivschat/model/ListRoomsResult.h>
 #include <aws/ivschat/model/ListTagsForResourceRequest.h>

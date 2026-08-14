@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/s3vectors/S3VectorsClient.h>
+#include <aws/s3vectors/S3VectorsClientPagination.h>
 #include <aws/s3vectors/S3VectorsEndpointProvider.h>
 #include <aws/s3vectors/S3VectorsErrorMarshaller.h>
 #include <aws/s3vectors/S3VectorsErrors.h>
+#include <aws/s3vectors/S3VectorsPaginationBase.h>
 #include <aws/s3vectors/S3VectorsRequest.h>
 #include <aws/s3vectors/S3VectorsServiceClientModel.h>
+#include <aws/s3vectors/S3VectorsWaiter.h>
 #include <aws/s3vectors/S3Vectors_EXPORTS.h>
+#include <aws/s3vectors/internal/S3VectorsEndpointRules.h>
 #include <aws/s3vectors/model/CreateIndexRequest.h>
 #include <aws/s3vectors/model/CreateIndexResult.h>
 #include <aws/s3vectors/model/CreateVectorBucketRequest.h>
@@ -39,13 +43,16 @@
 #include <aws/s3vectors/model/GetVectorsResult.h>
 #include <aws/s3vectors/model/Index.h>
 #include <aws/s3vectors/model/IndexSummary.h>
+#include <aws/s3vectors/model/ListIndexesPaginationTraits.h>
 #include <aws/s3vectors/model/ListIndexesRequest.h>
 #include <aws/s3vectors/model/ListIndexesResult.h>
 #include <aws/s3vectors/model/ListOutputVector.h>
 #include <aws/s3vectors/model/ListTagsForResourceRequest.h>
 #include <aws/s3vectors/model/ListTagsForResourceResult.h>
+#include <aws/s3vectors/model/ListVectorBucketsPaginationTraits.h>
 #include <aws/s3vectors/model/ListVectorBucketsRequest.h>
 #include <aws/s3vectors/model/ListVectorBucketsResult.h>
+#include <aws/s3vectors/model/ListVectorsPaginationTraits.h>
 #include <aws/s3vectors/model/ListVectorsRequest.h>
 #include <aws/s3vectors/model/ListVectorsResult.h>
 #include <aws/s3vectors/model/MetadataConfiguration.h>
@@ -55,6 +62,7 @@
 #include <aws/s3vectors/model/PutVectorsRequest.h>
 #include <aws/s3vectors/model/PutVectorsResult.h>
 #include <aws/s3vectors/model/QueryOutputVector.h>
+#include <aws/s3vectors/model/QueryVectorsPaginationTraits.h>
 #include <aws/s3vectors/model/QueryVectorsRequest.h>
 #include <aws/s3vectors/model/QueryVectorsResult.h>
 #include <aws/s3vectors/model/SseType.h>

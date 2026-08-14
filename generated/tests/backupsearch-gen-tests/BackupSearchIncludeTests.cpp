@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/backupsearch/BackupSearchClient.h>
+#include <aws/backupsearch/BackupSearchClientPagination.h>
 #include <aws/backupsearch/BackupSearchEndpointProvider.h>
 #include <aws/backupsearch/BackupSearchErrorMarshaller.h>
 #include <aws/backupsearch/BackupSearchErrors.h>
+#include <aws/backupsearch/BackupSearchPaginationBase.h>
 #include <aws/backupsearch/BackupSearchRequest.h>
 #include <aws/backupsearch/BackupSearchServiceClientModel.h>
+#include <aws/backupsearch/BackupSearchWaiter.h>
 #include <aws/backupsearch/BackupSearch_EXPORTS.h>
+#include <aws/backupsearch/internal/BackupSearchEndpointRules.h>
 #include <aws/backupsearch/model/BackupCreationTimeFilter.h>
 #include <aws/backupsearch/model/ConflictException.h>
 #include <aws/backupsearch/model/CurrentSearchProgress.h>
@@ -27,12 +31,16 @@
 #include <aws/backupsearch/model/GetSearchResultExportJobResult.h>
 #include <aws/backupsearch/model/InternalServerException.h>
 #include <aws/backupsearch/model/ItemFilters.h>
+#include <aws/backupsearch/model/ListSearchJobBackupsPaginationTraits.h>
 #include <aws/backupsearch/model/ListSearchJobBackupsRequest.h>
 #include <aws/backupsearch/model/ListSearchJobBackupsResult.h>
+#include <aws/backupsearch/model/ListSearchJobResultsPaginationTraits.h>
 #include <aws/backupsearch/model/ListSearchJobResultsRequest.h>
 #include <aws/backupsearch/model/ListSearchJobResultsResult.h>
+#include <aws/backupsearch/model/ListSearchJobsPaginationTraits.h>
 #include <aws/backupsearch/model/ListSearchJobsRequest.h>
 #include <aws/backupsearch/model/ListSearchJobsResult.h>
+#include <aws/backupsearch/model/ListSearchResultExportJobsPaginationTraits.h>
 #include <aws/backupsearch/model/ListSearchResultExportJobsRequest.h>
 #include <aws/backupsearch/model/ListSearchResultExportJobsResult.h>
 #include <aws/backupsearch/model/ListTagsForResourceRequest.h>

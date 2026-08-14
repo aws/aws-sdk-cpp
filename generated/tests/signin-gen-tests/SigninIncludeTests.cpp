@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/signin/SigninClient.h>
+#include <aws/signin/SigninClientPagination.h>
 #include <aws/signin/SigninEndpointProvider.h>
 #include <aws/signin/SigninErrorMarshaller.h>
 #include <aws/signin/SigninErrors.h>
+#include <aws/signin/SigninPaginationBase.h>
 #include <aws/signin/SigninRequest.h>
 #include <aws/signin/SigninServiceClientModel.h>
+#include <aws/signin/SigninWaiter.h>
 #include <aws/signin/Signin_EXPORTS.h>
+#include <aws/signin/internal/SigninEndpointRules.h>
 #include <aws/signin/model/AccessDeniedException.h>
 #include <aws/signin/model/AccessToken.h>
 #include <aws/signin/model/ConflictException.h>
@@ -33,6 +37,7 @@
 #include <aws/signin/model/InternalServerException.h>
 #include <aws/signin/model/IntrospectOAuth2TokenWithIAMRequest.h>
 #include <aws/signin/model/IntrospectOAuth2TokenWithIAMResult.h>
+#include <aws/signin/model/ListResourcePermissionStatementsPaginationTraits.h>
 #include <aws/signin/model/ListResourcePermissionStatementsRequest.h>
 #include <aws/signin/model/ListResourcePermissionStatementsResult.h>
 #include <aws/signin/model/OAuth2ErrorCode.h>

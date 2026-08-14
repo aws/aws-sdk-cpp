@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/chime-sdk-identity/ChimeSDKIdentityClient.h>
+#include <aws/chime-sdk-identity/ChimeSDKIdentityClientPagination.h>
 #include <aws/chime-sdk-identity/ChimeSDKIdentityEndpointProvider.h>
 #include <aws/chime-sdk-identity/ChimeSDKIdentityErrorMarshaller.h>
 #include <aws/chime-sdk-identity/ChimeSDKIdentityErrors.h>
+#include <aws/chime-sdk-identity/ChimeSDKIdentityPaginationBase.h>
 #include <aws/chime-sdk-identity/ChimeSDKIdentityRequest.h>
 #include <aws/chime-sdk-identity/ChimeSDKIdentityServiceClientModel.h>
+#include <aws/chime-sdk-identity/ChimeSDKIdentityWaiter.h>
 #include <aws/chime-sdk-identity/ChimeSDKIdentity_EXPORTS.h>
+#include <aws/chime-sdk-identity/internal/ChimeSDKIdentityEndpointRules.h>
 #include <aws/chime-sdk-identity/model/AllowMessages.h>
 #include <aws/chime-sdk-identity/model/AppInstance.h>
 #include <aws/chime-sdk-identity/model/AppInstanceAdmin.h>
@@ -66,14 +70,19 @@
 #include <aws/chime-sdk-identity/model/Identity.h>
 #include <aws/chime-sdk-identity/model/InvokedBy.h>
 #include <aws/chime-sdk-identity/model/LexConfiguration.h>
+#include <aws/chime-sdk-identity/model/ListAppInstanceAdminsPaginationTraits.h>
 #include <aws/chime-sdk-identity/model/ListAppInstanceAdminsRequest.h>
 #include <aws/chime-sdk-identity/model/ListAppInstanceAdminsResult.h>
+#include <aws/chime-sdk-identity/model/ListAppInstanceBotsPaginationTraits.h>
 #include <aws/chime-sdk-identity/model/ListAppInstanceBotsRequest.h>
 #include <aws/chime-sdk-identity/model/ListAppInstanceBotsResult.h>
+#include <aws/chime-sdk-identity/model/ListAppInstanceUserEndpointsPaginationTraits.h>
 #include <aws/chime-sdk-identity/model/ListAppInstanceUserEndpointsRequest.h>
 #include <aws/chime-sdk-identity/model/ListAppInstanceUserEndpointsResult.h>
+#include <aws/chime-sdk-identity/model/ListAppInstanceUsersPaginationTraits.h>
 #include <aws/chime-sdk-identity/model/ListAppInstanceUsersRequest.h>
 #include <aws/chime-sdk-identity/model/ListAppInstanceUsersResult.h>
+#include <aws/chime-sdk-identity/model/ListAppInstancesPaginationTraits.h>
 #include <aws/chime-sdk-identity/model/ListAppInstancesRequest.h>
 #include <aws/chime-sdk-identity/model/ListAppInstancesResult.h>
 #include <aws/chime-sdk-identity/model/ListTagsForResourceRequest.h>

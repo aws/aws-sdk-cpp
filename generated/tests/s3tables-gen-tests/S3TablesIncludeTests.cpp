@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/s3tables/S3TablesClient.h>
+#include <aws/s3tables/S3TablesClientPagination.h>
 #include <aws/s3tables/S3TablesEndpointProvider.h>
 #include <aws/s3tables/S3TablesErrorMarshaller.h>
 #include <aws/s3tables/S3TablesErrors.h>
+#include <aws/s3tables/S3TablesPaginationBase.h>
 #include <aws/s3tables/S3TablesRequest.h>
 #include <aws/s3tables/S3TablesServiceClientModel.h>
+#include <aws/s3tables/S3TablesWaiter.h>
 #include <aws/s3tables/S3Tables_EXPORTS.h>
+#include <aws/s3tables/internal/S3TablesEndpointRules.h>
 #include <aws/s3tables/model/CreateNamespaceRequest.h>
 #include <aws/s3tables/model/CreateNamespaceResult.h>
 #include <aws/s3tables/model/CreateTableBucketRequest.h>
@@ -82,10 +86,13 @@
 #include <aws/s3tables/model/IcebergUnreferencedFileRemovalSettings.h>
 #include <aws/s3tables/model/JobStatus.h>
 #include <aws/s3tables/model/LastSuccessfulReplicatedUpdate.h>
+#include <aws/s3tables/model/ListNamespacesPaginationTraits.h>
 #include <aws/s3tables/model/ListNamespacesRequest.h>
 #include <aws/s3tables/model/ListNamespacesResult.h>
+#include <aws/s3tables/model/ListTableBucketsPaginationTraits.h>
 #include <aws/s3tables/model/ListTableBucketsRequest.h>
 #include <aws/s3tables/model/ListTableBucketsResult.h>
+#include <aws/s3tables/model/ListTablesPaginationTraits.h>
 #include <aws/s3tables/model/ListTablesRequest.h>
 #include <aws/s3tables/model/ListTablesResult.h>
 #include <aws/s3tables/model/ListTagsForResourceRequest.h>

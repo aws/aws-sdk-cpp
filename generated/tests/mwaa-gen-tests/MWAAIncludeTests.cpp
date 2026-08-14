@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/mwaa/MWAAClient.h>
+#include <aws/mwaa/MWAAClientPagination.h>
 #include <aws/mwaa/MWAAEndpointProvider.h>
 #include <aws/mwaa/MWAAErrorMarshaller.h>
 #include <aws/mwaa/MWAAErrors.h>
+#include <aws/mwaa/MWAAPaginationBase.h>
 #include <aws/mwaa/MWAARequest.h>
 #include <aws/mwaa/MWAAServiceClientModel.h>
+#include <aws/mwaa/MWAAWaiter.h>
 #include <aws/mwaa/MWAA_EXPORTS.h>
+#include <aws/mwaa/internal/MWAAEndpointRules.h>
 #include <aws/mwaa/model/CreateCliTokenRequest.h>
 #include <aws/mwaa/model/CreateCliTokenResult.h>
 #include <aws/mwaa/model/CreateEnvironmentRequest.h>
@@ -30,6 +34,7 @@
 #include <aws/mwaa/model/InvokeRestApiRequest.h>
 #include <aws/mwaa/model/InvokeRestApiResult.h>
 #include <aws/mwaa/model/LastUpdate.h>
+#include <aws/mwaa/model/ListEnvironmentsPaginationTraits.h>
 #include <aws/mwaa/model/ListEnvironmentsRequest.h>
 #include <aws/mwaa/model/ListEnvironmentsResult.h>
 #include <aws/mwaa/model/ListTagsForResourceRequest.h>

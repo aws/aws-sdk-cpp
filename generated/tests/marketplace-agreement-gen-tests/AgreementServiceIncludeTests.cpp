@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/marketplace-agreement/AgreementServiceClient.h>
+#include <aws/marketplace-agreement/AgreementServiceClientPagination.h>
 #include <aws/marketplace-agreement/AgreementServiceEndpointProvider.h>
 #include <aws/marketplace-agreement/AgreementServiceErrorMarshaller.h>
 #include <aws/marketplace-agreement/AgreementServiceErrors.h>
+#include <aws/marketplace-agreement/AgreementServicePaginationBase.h>
 #include <aws/marketplace-agreement/AgreementServiceRequest.h>
 #include <aws/marketplace-agreement/AgreementServiceServiceClientModel.h>
+#include <aws/marketplace-agreement/AgreementServiceWaiter.h>
 #include <aws/marketplace-agreement/AgreementService_EXPORTS.h>
+#include <aws/marketplace-agreement/internal/AgreementServiceEndpointRules.h>
 #include <aws/marketplace-agreement/model/AcceptAgreementCancellationRequestRequest.h>
 #include <aws/marketplace-agreement/model/AcceptAgreementCancellationRequestResult.h>
 #include <aws/marketplace-agreement/model/AcceptAgreementPaymentRequestRequest.h>
@@ -70,10 +74,12 @@
 #include <aws/marketplace-agreement/model/FreeTrialPricingTerm.h>
 #include <aws/marketplace-agreement/model/GetAgreementCancellationRequestRequest.h>
 #include <aws/marketplace-agreement/model/GetAgreementCancellationRequestResult.h>
+#include <aws/marketplace-agreement/model/GetAgreementEntitlementsPaginationTraits.h>
 #include <aws/marketplace-agreement/model/GetAgreementEntitlementsRequest.h>
 #include <aws/marketplace-agreement/model/GetAgreementEntitlementsResult.h>
 #include <aws/marketplace-agreement/model/GetAgreementPaymentRequestRequest.h>
 #include <aws/marketplace-agreement/model/GetAgreementPaymentRequestResult.h>
+#include <aws/marketplace-agreement/model/GetAgreementTermsPaginationTraits.h>
 #include <aws/marketplace-agreement/model/GetAgreementTermsRequest.h>
 #include <aws/marketplace-agreement/model/GetAgreementTermsResult.h>
 #include <aws/marketplace-agreement/model/GetBillingAdjustmentRequestRequest.h>
@@ -87,14 +93,19 @@
 #include <aws/marketplace-agreement/model/ItemizedCharge.h>
 #include <aws/marketplace-agreement/model/LegalTerm.h>
 #include <aws/marketplace-agreement/model/LineItemGroupBy.h>
+#include <aws/marketplace-agreement/model/ListAgreementCancellationRequestsPaginationTraits.h>
 #include <aws/marketplace-agreement/model/ListAgreementCancellationRequestsRequest.h>
 #include <aws/marketplace-agreement/model/ListAgreementCancellationRequestsResult.h>
+#include <aws/marketplace-agreement/model/ListAgreementChargesPaginationTraits.h>
 #include <aws/marketplace-agreement/model/ListAgreementChargesRequest.h>
 #include <aws/marketplace-agreement/model/ListAgreementChargesResult.h>
+#include <aws/marketplace-agreement/model/ListAgreementInvoiceLineItemsPaginationTraits.h>
 #include <aws/marketplace-agreement/model/ListAgreementInvoiceLineItemsRequest.h>
 #include <aws/marketplace-agreement/model/ListAgreementInvoiceLineItemsResult.h>
+#include <aws/marketplace-agreement/model/ListAgreementPaymentRequestsPaginationTraits.h>
 #include <aws/marketplace-agreement/model/ListAgreementPaymentRequestsRequest.h>
 #include <aws/marketplace-agreement/model/ListAgreementPaymentRequestsResult.h>
+#include <aws/marketplace-agreement/model/ListBillingAdjustmentRequestsPaginationTraits.h>
 #include <aws/marketplace-agreement/model/ListBillingAdjustmentRequestsRequest.h>
 #include <aws/marketplace-agreement/model/ListBillingAdjustmentRequestsResult.h>
 #include <aws/marketplace-agreement/model/NetPaymentTerm.h>
@@ -120,6 +131,7 @@
 #include <aws/marketplace-agreement/model/ResourceNotFoundException.h>
 #include <aws/marketplace-agreement/model/ResourceType.h>
 #include <aws/marketplace-agreement/model/ScheduleItem.h>
+#include <aws/marketplace-agreement/model/SearchAgreementsPaginationTraits.h>
 #include <aws/marketplace-agreement/model/SearchAgreementsRequest.h>
 #include <aws/marketplace-agreement/model/SearchAgreementsResult.h>
 #include <aws/marketplace-agreement/model/Selector.h>

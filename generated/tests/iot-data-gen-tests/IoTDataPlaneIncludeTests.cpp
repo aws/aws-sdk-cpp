@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/iot-data/IoTDataPlaneClient.h>
+#include <aws/iot-data/IoTDataPlaneClientPagination.h>
 #include <aws/iot-data/IoTDataPlaneEndpointProvider.h>
 #include <aws/iot-data/IoTDataPlaneErrorMarshaller.h>
 #include <aws/iot-data/IoTDataPlaneErrors.h>
+#include <aws/iot-data/IoTDataPlanePaginationBase.h>
 #include <aws/iot-data/IoTDataPlaneRequest.h>
 #include <aws/iot-data/IoTDataPlaneServiceClientModel.h>
+#include <aws/iot-data/IoTDataPlaneWaiter.h>
 #include <aws/iot-data/IoTDataPlane_EXPORTS.h>
+#include <aws/iot-data/internal/IoTDataPlaneEndpointRules.h>
 #include <aws/iot-data/model/DeleteConnectionRequest.h>
 #include <aws/iot-data/model/DeleteThingShadowRequest.h>
 #include <aws/iot-data/model/DeleteThingShadowResult.h>
@@ -24,8 +28,10 @@
 #include <aws/iot-data/model/GetThingShadowResult.h>
 #include <aws/iot-data/model/ListNamedShadowsForThingRequest.h>
 #include <aws/iot-data/model/ListNamedShadowsForThingResult.h>
+#include <aws/iot-data/model/ListRetainedMessagesPaginationTraits.h>
 #include <aws/iot-data/model/ListRetainedMessagesRequest.h>
 #include <aws/iot-data/model/ListRetainedMessagesResult.h>
+#include <aws/iot-data/model/ListSubscriptionsPaginationTraits.h>
 #include <aws/iot-data/model/ListSubscriptionsRequest.h>
 #include <aws/iot-data/model/ListSubscriptionsResult.h>
 #include <aws/iot-data/model/PayloadFormatIndicator.h>

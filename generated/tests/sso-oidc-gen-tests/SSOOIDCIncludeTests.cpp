@@ -10,9 +10,12 @@
 #include <aws/sso-oidc/SSOOIDCEndpointProvider.h>
 #include <aws/sso-oidc/SSOOIDCErrorMarshaller.h>
 #include <aws/sso-oidc/SSOOIDCErrors.h>
+#include <aws/sso-oidc/SSOOIDCPaginationBase.h>
 #include <aws/sso-oidc/SSOOIDCRequest.h>
 #include <aws/sso-oidc/SSOOIDCServiceClientModel.h>
+#include <aws/sso-oidc/SSOOIDCWaiter.h>
 #include <aws/sso-oidc/SSOOIDC_EXPORTS.h>
+#include <aws/sso-oidc/internal/SSOOIDCEndpointRules.h>
 #include <aws/sso-oidc/model/AccessDeniedException.h>
 #include <aws/sso-oidc/model/AccessDeniedExceptionReason.h>
 #include <aws/sso-oidc/model/AuthorizationPendingException.h>

@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/pricing-plan-manager/PricingPlanManagerClient.h>
+#include <aws/pricing-plan-manager/PricingPlanManagerClientPagination.h>
 #include <aws/pricing-plan-manager/PricingPlanManagerEndpointProvider.h>
 #include <aws/pricing-plan-manager/PricingPlanManagerErrorMarshaller.h>
 #include <aws/pricing-plan-manager/PricingPlanManagerErrors.h>
+#include <aws/pricing-plan-manager/PricingPlanManagerPaginationBase.h>
 #include <aws/pricing-plan-manager/PricingPlanManagerRequest.h>
 #include <aws/pricing-plan-manager/PricingPlanManagerServiceClientModel.h>
+#include <aws/pricing-plan-manager/PricingPlanManagerWaiter.h>
 #include <aws/pricing-plan-manager/PricingPlanManager_EXPORTS.h>
+#include <aws/pricing-plan-manager/internal/PricingPlanManagerEndpointRules.h>
 #include <aws/pricing-plan-manager/model/ApprovalMode.h>
 #include <aws/pricing-plan-manager/model/ApprovePaidSubscriptionRequest.h>
 #include <aws/pricing-plan-manager/model/ApprovePaidSubscriptionResult.h>
@@ -29,6 +33,7 @@
 #include <aws/pricing-plan-manager/model/DisassociateResourcesFromSubscriptionResult.h>
 #include <aws/pricing-plan-manager/model/GetSubscriptionRequest.h>
 #include <aws/pricing-plan-manager/model/GetSubscriptionResult.h>
+#include <aws/pricing-plan-manager/model/ListSubscriptionsPaginationTraits.h>
 #include <aws/pricing-plan-manager/model/ListSubscriptionsRequest.h>
 #include <aws/pricing-plan-manager/model/ListSubscriptionsResult.h>
 #include <aws/pricing-plan-manager/model/ResourceNotFoundException.h>

@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/apigatewayv2/ApiGatewayV2Client.h>
+#include <aws/apigatewayv2/ApiGatewayV2ClientPagination.h>
 #include <aws/apigatewayv2/ApiGatewayV2EndpointProvider.h>
 #include <aws/apigatewayv2/ApiGatewayV2ErrorMarshaller.h>
 #include <aws/apigatewayv2/ApiGatewayV2Errors.h>
+#include <aws/apigatewayv2/ApiGatewayV2PaginationBase.h>
 #include <aws/apigatewayv2/ApiGatewayV2Request.h>
 #include <aws/apigatewayv2/ApiGatewayV2ServiceClientModel.h>
+#include <aws/apigatewayv2/ApiGatewayV2Waiter.h>
 #include <aws/apigatewayv2/ApiGatewayV2_EXPORTS.h>
+#include <aws/apigatewayv2/internal/ApiGatewayV2EndpointRules.h>
 #include <aws/apigatewayv2/model/ACMManaged.h>
 #include <aws/apigatewayv2/model/AccessLogSettings.h>
 #include <aws/apigatewayv2/model/Api.h>
@@ -179,6 +183,7 @@
 #include <aws/apigatewayv2/model/ListProductPagesResult.h>
 #include <aws/apigatewayv2/model/ListProductRestEndpointPagesRequest.h>
 #include <aws/apigatewayv2/model/ListProductRestEndpointPagesResult.h>
+#include <aws/apigatewayv2/model/ListRoutingRulesPaginationTraits.h>
 #include <aws/apigatewayv2/model/ListRoutingRulesRequest.h>
 #include <aws/apigatewayv2/model/ListRoutingRulesResult.h>
 #include <aws/apigatewayv2/model/LoggingLevel.h>

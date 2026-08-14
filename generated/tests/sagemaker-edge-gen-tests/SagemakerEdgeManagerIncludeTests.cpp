@@ -10,9 +10,12 @@
 #include <aws/sagemaker-edge/SagemakerEdgeManagerEndpointProvider.h>
 #include <aws/sagemaker-edge/SagemakerEdgeManagerErrorMarshaller.h>
 #include <aws/sagemaker-edge/SagemakerEdgeManagerErrors.h>
+#include <aws/sagemaker-edge/SagemakerEdgeManagerPaginationBase.h>
 #include <aws/sagemaker-edge/SagemakerEdgeManagerRequest.h>
 #include <aws/sagemaker-edge/SagemakerEdgeManagerServiceClientModel.h>
+#include <aws/sagemaker-edge/SagemakerEdgeManagerWaiter.h>
 #include <aws/sagemaker-edge/SagemakerEdgeManager_EXPORTS.h>
+#include <aws/sagemaker-edge/internal/SagemakerEdgeManagerEndpointRules.h>
 #include <aws/sagemaker-edge/model/Checksum.h>
 #include <aws/sagemaker-edge/model/ChecksumType.h>
 #include <aws/sagemaker-edge/model/Definition.h>

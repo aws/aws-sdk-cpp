@@ -9,12 +9,16 @@
 #include <aws/bedrock-runtime/BedrockRuntimeAwsBearerTokenIdentityResolver.h>
 #include <aws/bedrock-runtime/BedrockRuntimeClient.h>
 #include <aws/bedrock-runtime/BedrockRuntimeClientConfiguration.h>
+#include <aws/bedrock-runtime/BedrockRuntimeClientPagination.h>
 #include <aws/bedrock-runtime/BedrockRuntimeEndpointProvider.h>
 #include <aws/bedrock-runtime/BedrockRuntimeErrorMarshaller.h>
 #include <aws/bedrock-runtime/BedrockRuntimeErrors.h>
+#include <aws/bedrock-runtime/BedrockRuntimePaginationBase.h>
 #include <aws/bedrock-runtime/BedrockRuntimeRequest.h>
 #include <aws/bedrock-runtime/BedrockRuntimeServiceClientModel.h>
+#include <aws/bedrock-runtime/BedrockRuntimeWaiter.h>
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
+#include <aws/bedrock-runtime/internal/BedrockRuntimeEndpointRules.h>
 #include <aws/bedrock-runtime/model/AnyToolChoice.h>
 #include <aws/bedrock-runtime/model/AppliedGuardrailDetails.h>
 #include <aws/bedrock-runtime/model/ApplyGuardrailRequest.h>
@@ -188,6 +192,7 @@
 #include <aws/bedrock-runtime/model/InvokeModelWithResponseStreamInitialResponse.h>
 #include <aws/bedrock-runtime/model/InvokeModelWithResponseStreamRequest.h>
 #include <aws/bedrock-runtime/model/JsonSchemaDefinition.h>
+#include <aws/bedrock-runtime/model/ListAsyncInvokesPaginationTraits.h>
 #include <aws/bedrock-runtime/model/ListAsyncInvokesRequest.h>
 #include <aws/bedrock-runtime/model/ListAsyncInvokesResult.h>
 #include <aws/bedrock-runtime/model/Message.h>

@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/kendra-ranking/KendraRankingClient.h>
+#include <aws/kendra-ranking/KendraRankingClientPagination.h>
 #include <aws/kendra-ranking/KendraRankingEndpointProvider.h>
 #include <aws/kendra-ranking/KendraRankingErrorMarshaller.h>
 #include <aws/kendra-ranking/KendraRankingErrors.h>
+#include <aws/kendra-ranking/KendraRankingPaginationBase.h>
 #include <aws/kendra-ranking/KendraRankingRequest.h>
 #include <aws/kendra-ranking/KendraRankingServiceClientModel.h>
+#include <aws/kendra-ranking/KendraRankingWaiter.h>
 #include <aws/kendra-ranking/KendraRanking_EXPORTS.h>
+#include <aws/kendra-ranking/internal/KendraRankingEndpointRules.h>
 #include <aws/kendra-ranking/model/CapacityUnitsConfiguration.h>
 #include <aws/kendra-ranking/model/CreateRescoreExecutionPlanRequest.h>
 #include <aws/kendra-ranking/model/CreateRescoreExecutionPlanResult.h>
@@ -20,6 +24,7 @@
 #include <aws/kendra-ranking/model/DescribeRescoreExecutionPlanRequest.h>
 #include <aws/kendra-ranking/model/DescribeRescoreExecutionPlanResult.h>
 #include <aws/kendra-ranking/model/Document.h>
+#include <aws/kendra-ranking/model/ListRescoreExecutionPlansPaginationTraits.h>
 #include <aws/kendra-ranking/model/ListRescoreExecutionPlansRequest.h>
 #include <aws/kendra-ranking/model/ListRescoreExecutionPlansResult.h>
 #include <aws/kendra-ranking/model/ListTagsForResourceRequest.h>

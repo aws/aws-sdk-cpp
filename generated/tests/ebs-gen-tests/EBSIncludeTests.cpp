@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/ebs/EBSClient.h>
+#include <aws/ebs/EBSClientPagination.h>
 #include <aws/ebs/EBSEndpointProvider.h>
 #include <aws/ebs/EBSErrorMarshaller.h>
 #include <aws/ebs/EBSErrors.h>
+#include <aws/ebs/EBSPaginationBase.h>
 #include <aws/ebs/EBSRequest.h>
 #include <aws/ebs/EBSServiceClientModel.h>
+#include <aws/ebs/EBSWaiter.h>
 #include <aws/ebs/EBS_EXPORTS.h>
+#include <aws/ebs/internal/EBSEndpointRules.h>
 #include <aws/ebs/model/AccessDeniedException.h>
 #include <aws/ebs/model/AccessDeniedExceptionReason.h>
 #include <aws/ebs/model/Block.h>
@@ -23,8 +27,10 @@
 #include <aws/ebs/model/CompleteSnapshotResult.h>
 #include <aws/ebs/model/GetSnapshotBlockRequest.h>
 #include <aws/ebs/model/GetSnapshotBlockResult.h>
+#include <aws/ebs/model/ListChangedBlocksPaginationTraits.h>
 #include <aws/ebs/model/ListChangedBlocksRequest.h>
 #include <aws/ebs/model/ListChangedBlocksResult.h>
+#include <aws/ebs/model/ListSnapshotBlocksPaginationTraits.h>
 #include <aws/ebs/model/ListSnapshotBlocksRequest.h>
 #include <aws/ebs/model/ListSnapshotBlocksResult.h>
 #include <aws/ebs/model/PutSnapshotBlockRequest.h>

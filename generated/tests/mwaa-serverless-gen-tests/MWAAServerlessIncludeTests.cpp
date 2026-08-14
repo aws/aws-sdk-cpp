@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/mwaa-serverless/MWAAServerlessClient.h>
+#include <aws/mwaa-serverless/MWAAServerlessClientPagination.h>
 #include <aws/mwaa-serverless/MWAAServerlessEndpointProvider.h>
 #include <aws/mwaa-serverless/MWAAServerlessErrorMarshaller.h>
 #include <aws/mwaa-serverless/MWAAServerlessErrors.h>
+#include <aws/mwaa-serverless/MWAAServerlessPaginationBase.h>
 #include <aws/mwaa-serverless/MWAAServerlessRequest.h>
 #include <aws/mwaa-serverless/MWAAServerlessServiceClientModel.h>
+#include <aws/mwaa-serverless/MWAAServerlessWaiter.h>
 #include <aws/mwaa-serverless/MWAAServerless_EXPORTS.h>
+#include <aws/mwaa-serverless/internal/MWAAServerlessEndpointRules.h>
 #include <aws/mwaa-serverless/model/ConflictException.h>
 #include <aws/mwaa-serverless/model/CreateWorkflowRequest.h>
 #include <aws/mwaa-serverless/model/CreateWorkflowResult.h>
@@ -30,12 +34,16 @@
 #include <aws/mwaa-serverless/model/InternalServerException.h>
 #include <aws/mwaa-serverless/model/ListTagsForResourceRequest.h>
 #include <aws/mwaa-serverless/model/ListTagsForResourceResult.h>
+#include <aws/mwaa-serverless/model/ListTaskInstancesPaginationTraits.h>
 #include <aws/mwaa-serverless/model/ListTaskInstancesRequest.h>
 #include <aws/mwaa-serverless/model/ListTaskInstancesResult.h>
+#include <aws/mwaa-serverless/model/ListWorkflowRunsPaginationTraits.h>
 #include <aws/mwaa-serverless/model/ListWorkflowRunsRequest.h>
 #include <aws/mwaa-serverless/model/ListWorkflowRunsResult.h>
+#include <aws/mwaa-serverless/model/ListWorkflowVersionsPaginationTraits.h>
 #include <aws/mwaa-serverless/model/ListWorkflowVersionsRequest.h>
 #include <aws/mwaa-serverless/model/ListWorkflowVersionsResult.h>
+#include <aws/mwaa-serverless/model/ListWorkflowsPaginationTraits.h>
 #include <aws/mwaa-serverless/model/ListWorkflowsRequest.h>
 #include <aws/mwaa-serverless/model/ListWorkflowsResult.h>
 #include <aws/mwaa-serverless/model/LoggingConfiguration.h>

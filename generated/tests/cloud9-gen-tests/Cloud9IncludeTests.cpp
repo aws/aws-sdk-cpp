@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/cloud9/Cloud9Client.h>
+#include <aws/cloud9/Cloud9ClientPagination.h>
 #include <aws/cloud9/Cloud9EndpointProvider.h>
 #include <aws/cloud9/Cloud9ErrorMarshaller.h>
 #include <aws/cloud9/Cloud9Errors.h>
+#include <aws/cloud9/Cloud9PaginationBase.h>
 #include <aws/cloud9/Cloud9Request.h>
 #include <aws/cloud9/Cloud9ServiceClientModel.h>
+#include <aws/cloud9/Cloud9Waiter.h>
 #include <aws/cloud9/Cloud9_EXPORTS.h>
+#include <aws/cloud9/internal/Cloud9EndpointRules.h>
 #include <aws/cloud9/model/ConnectionType.h>
 #include <aws/cloud9/model/CreateEnvironmentEC2Request.h>
 #include <aws/cloud9/model/CreateEnvironmentEC2Result.h>
@@ -22,6 +26,7 @@
 #include <aws/cloud9/model/DeleteEnvironmentMembershipResult.h>
 #include <aws/cloud9/model/DeleteEnvironmentRequest.h>
 #include <aws/cloud9/model/DeleteEnvironmentResult.h>
+#include <aws/cloud9/model/DescribeEnvironmentMembershipsPaginationTraits.h>
 #include <aws/cloud9/model/DescribeEnvironmentMembershipsRequest.h>
 #include <aws/cloud9/model/DescribeEnvironmentMembershipsResult.h>
 #include <aws/cloud9/model/DescribeEnvironmentStatusRequest.h>
@@ -34,6 +39,7 @@
 #include <aws/cloud9/model/EnvironmentMember.h>
 #include <aws/cloud9/model/EnvironmentStatus.h>
 #include <aws/cloud9/model/EnvironmentType.h>
+#include <aws/cloud9/model/ListEnvironmentsPaginationTraits.h>
 #include <aws/cloud9/model/ListEnvironmentsRequest.h>
 #include <aws/cloud9/model/ListEnvironmentsResult.h>
 #include <aws/cloud9/model/ListTagsForResourceRequest.h>

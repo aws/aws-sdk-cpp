@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/route53domains/Route53DomainsClient.h>
+#include <aws/route53domains/Route53DomainsClientPagination.h>
 #include <aws/route53domains/Route53DomainsEndpointProvider.h>
 #include <aws/route53domains/Route53DomainsErrorMarshaller.h>
 #include <aws/route53domains/Route53DomainsErrors.h>
+#include <aws/route53domains/Route53DomainsPaginationBase.h>
 #include <aws/route53domains/Route53DomainsRequest.h>
 #include <aws/route53domains/Route53DomainsServiceClientModel.h>
+#include <aws/route53domains/Route53DomainsWaiter.h>
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
+#include <aws/route53domains/internal/Route53DomainsEndpointRules.h>
 #include <aws/route53domains/model/AcceptDomainTransferFromAnotherAwsAccountRequest.h>
 #include <aws/route53domains/model/AcceptDomainTransferFromAnotherAwsAccountResult.h>
 #include <aws/route53domains/model/AssociateDelegationSignerToDomainRequest.h>
@@ -62,11 +66,14 @@
 #include <aws/route53domains/model/GetOperationDetailRequest.h>
 #include <aws/route53domains/model/GetOperationDetailResult.h>
 #include <aws/route53domains/model/ListDomainsAttributeName.h>
+#include <aws/route53domains/model/ListDomainsPaginationTraits.h>
 #include <aws/route53domains/model/ListDomainsRequest.h>
 #include <aws/route53domains/model/ListDomainsResult.h>
+#include <aws/route53domains/model/ListOperationsPaginationTraits.h>
 #include <aws/route53domains/model/ListOperationsRequest.h>
 #include <aws/route53domains/model/ListOperationsResult.h>
 #include <aws/route53domains/model/ListOperationsSortAttributeName.h>
+#include <aws/route53domains/model/ListPricesPaginationTraits.h>
 #include <aws/route53domains/model/ListPricesRequest.h>
 #include <aws/route53domains/model/ListPricesResult.h>
 #include <aws/route53domains/model/ListTagsForDomainRequest.h>
@@ -108,6 +115,7 @@
 #include <aws/route53domains/model/UpdateDomainNameserversResult.h>
 #include <aws/route53domains/model/UpdateTagsForDomainRequest.h>
 #include <aws/route53domains/model/UpdateTagsForDomainResult.h>
+#include <aws/route53domains/model/ViewBillingPaginationTraits.h>
 #include <aws/route53domains/model/ViewBillingRequest.h>
 #include <aws/route53domains/model/ViewBillingResult.h>
 

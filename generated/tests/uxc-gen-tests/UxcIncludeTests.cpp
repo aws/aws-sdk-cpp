@@ -7,15 +7,20 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/uxc/UxcClient.h>
+#include <aws/uxc/UxcClientPagination.h>
 #include <aws/uxc/UxcEndpointProvider.h>
 #include <aws/uxc/UxcErrorMarshaller.h>
 #include <aws/uxc/UxcErrors.h>
+#include <aws/uxc/UxcPaginationBase.h>
 #include <aws/uxc/UxcRequest.h>
 #include <aws/uxc/UxcServiceClientModel.h>
+#include <aws/uxc/UxcWaiter.h>
 #include <aws/uxc/Uxc_EXPORTS.h>
+#include <aws/uxc/internal/UxcEndpointRules.h>
 #include <aws/uxc/model/AccountColor.h>
 #include <aws/uxc/model/GetAccountCustomizationsRequest.h>
 #include <aws/uxc/model/GetAccountCustomizationsResult.h>
+#include <aws/uxc/model/ListServicesPaginationTraits.h>
 #include <aws/uxc/model/ListServicesRequest.h>
 #include <aws/uxc/model/ListServicesResult.h>
 #include <aws/uxc/model/UpdateAccountCustomizationsRequest.h>

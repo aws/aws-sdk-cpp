@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/rbin/RecycleBinClient.h>
+#include <aws/rbin/RecycleBinClientPagination.h>
 #include <aws/rbin/RecycleBinEndpointProvider.h>
 #include <aws/rbin/RecycleBinErrorMarshaller.h>
 #include <aws/rbin/RecycleBinErrors.h>
+#include <aws/rbin/RecycleBinPaginationBase.h>
 #include <aws/rbin/RecycleBinRequest.h>
 #include <aws/rbin/RecycleBinServiceClientModel.h>
+#include <aws/rbin/RecycleBinWaiter.h>
 #include <aws/rbin/RecycleBin_EXPORTS.h>
+#include <aws/rbin/internal/RecycleBinEndpointRules.h>
 #include <aws/rbin/model/ConflictException.h>
 #include <aws/rbin/model/ConflictExceptionReason.h>
 #include <aws/rbin/model/CreateRuleRequest.h>
@@ -21,6 +25,7 @@
 #include <aws/rbin/model/DeleteRuleResult.h>
 #include <aws/rbin/model/GetRuleRequest.h>
 #include <aws/rbin/model/GetRuleResult.h>
+#include <aws/rbin/model/ListRulesPaginationTraits.h>
 #include <aws/rbin/model/ListRulesRequest.h>
 #include <aws/rbin/model/ListRulesResult.h>
 #include <aws/rbin/model/ListTagsForResourceRequest.h>

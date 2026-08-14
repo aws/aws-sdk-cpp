@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/scheduler/SchedulerClient.h>
+#include <aws/scheduler/SchedulerClientPagination.h>
 #include <aws/scheduler/SchedulerEndpointProvider.h>
 #include <aws/scheduler/SchedulerErrorMarshaller.h>
 #include <aws/scheduler/SchedulerErrors.h>
+#include <aws/scheduler/SchedulerPaginationBase.h>
 #include <aws/scheduler/SchedulerRequest.h>
 #include <aws/scheduler/SchedulerServiceClientModel.h>
+#include <aws/scheduler/SchedulerWaiter.h>
 #include <aws/scheduler/Scheduler_EXPORTS.h>
+#include <aws/scheduler/internal/SchedulerEndpointRules.h>
 #include <aws/scheduler/model/ActionAfterCompletion.h>
 #include <aws/scheduler/model/AssignPublicIp.h>
 #include <aws/scheduler/model/AwsVpcConfiguration.h>
@@ -36,8 +40,10 @@
 #include <aws/scheduler/model/GetScheduleResult.h>
 #include <aws/scheduler/model/KinesisParameters.h>
 #include <aws/scheduler/model/LaunchType.h>
+#include <aws/scheduler/model/ListScheduleGroupsPaginationTraits.h>
 #include <aws/scheduler/model/ListScheduleGroupsRequest.h>
 #include <aws/scheduler/model/ListScheduleGroupsResult.h>
+#include <aws/scheduler/model/ListSchedulesPaginationTraits.h>
 #include <aws/scheduler/model/ListSchedulesRequest.h>
 #include <aws/scheduler/model/ListSchedulesResult.h>
 #include <aws/scheduler/model/ListTagsForResourceRequest.h>

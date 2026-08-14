@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/ssm-quicksetup/SSMQuickSetupClient.h>
+#include <aws/ssm-quicksetup/SSMQuickSetupClientPagination.h>
 #include <aws/ssm-quicksetup/SSMQuickSetupEndpointProvider.h>
 #include <aws/ssm-quicksetup/SSMQuickSetupErrorMarshaller.h>
 #include <aws/ssm-quicksetup/SSMQuickSetupErrors.h>
+#include <aws/ssm-quicksetup/SSMQuickSetupPaginationBase.h>
 #include <aws/ssm-quicksetup/SSMQuickSetupRequest.h>
 #include <aws/ssm-quicksetup/SSMQuickSetupServiceClientModel.h>
+#include <aws/ssm-quicksetup/SSMQuickSetupWaiter.h>
 #include <aws/ssm-quicksetup/SSMQuickSetup_EXPORTS.h>
+#include <aws/ssm-quicksetup/internal/SSMQuickSetupEndpointRules.h>
 #include <aws/ssm-quicksetup/model/ConfigurationDefinition.h>
 #include <aws/ssm-quicksetup/model/ConfigurationDefinitionInput.h>
 #include <aws/ssm-quicksetup/model/ConfigurationDefinitionSummary.h>
@@ -28,8 +32,10 @@
 #include <aws/ssm-quicksetup/model/GetConfigurationResult.h>
 #include <aws/ssm-quicksetup/model/GetServiceSettingsRequest.h>
 #include <aws/ssm-quicksetup/model/GetServiceSettingsResult.h>
+#include <aws/ssm-quicksetup/model/ListConfigurationManagersPaginationTraits.h>
 #include <aws/ssm-quicksetup/model/ListConfigurationManagersRequest.h>
 #include <aws/ssm-quicksetup/model/ListConfigurationManagersResult.h>
+#include <aws/ssm-quicksetup/model/ListConfigurationsPaginationTraits.h>
 #include <aws/ssm-quicksetup/model/ListConfigurationsRequest.h>
 #include <aws/ssm-quicksetup/model/ListConfigurationsResult.h>
 #include <aws/ssm-quicksetup/model/ListQuickSetupTypesRequest.h>
