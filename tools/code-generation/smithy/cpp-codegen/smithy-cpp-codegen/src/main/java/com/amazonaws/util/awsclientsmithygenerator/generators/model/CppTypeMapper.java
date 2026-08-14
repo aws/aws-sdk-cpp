@@ -5,6 +5,7 @@
 package com.amazonaws.util.awsclientsmithygenerator.generators.model;
 
 import software.amazon.smithy.model.Model;
+import software.amazon.smithy.model.neighbor.Walker;
 import software.amazon.smithy.model.shapes.ListShape;
 import software.amazon.smithy.model.shapes.MapShape;
 import software.amazon.smithy.model.shapes.MemberShape;
@@ -15,10 +16,7 @@ import software.amazon.smithy.model.traits.IdempotencyTokenTrait;
 import software.amazon.smithy.model.traits.SensitiveTrait;
 import software.amazon.smithy.model.traits.SparseTrait;
 
-import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Deque;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -395,42 +393,16 @@ public final class CppTypeMapper {
     }
 
     /**
-     * Mirrors C2J's {@code Shape.isMutuallyReferencedWith}: true when {@code a} and {@code b} are
-     * distinct aggregate shapes and each is reachable from the other through the member graph,
-     * descending one level transparently through list containers (not maps).
+     * True when {@code a} and {@code b} are distinct aggregate shapes that each reach the other
+     * through the shape graph (a reference cycle).
      */
     private static boolean isMutuallyReferenced(Shape a, Shape b, Model model) {
         if (a.getId().equals(b.getId()) || !isAggregate(a) || !isAggregate(b)) {
             return false;
         }
-        return reachableAggregates(a, model).contains(b.getId())
-            && reachableAggregates(b, model).contains(a.getId());
-    }
-
-    private static Set<ShapeId> reachableAggregates(Shape root, Model model) {
-        Set<ShapeId> reachable = new HashSet<>();
-        Set<ShapeId> visited = new HashSet<>();
-        Deque<Shape> stack = new ArrayDeque<>();
-        stack.push(root);
-        visited.add(root.getId());
-        while (!stack.isEmpty()) {
-            Shape current = stack.pop();
-            for (MemberShape member : current.getAllMembers().values()) {
-                // C2J descends one level through a list container (list -> element), treating the
-                // list edge as transparent; it does not descend through maps.
-                Shape target = model.expectShape(member.getTarget());
-                if (target.isListShape()) {
-                    target = model.expectShape(target.asListShape().get().getMember().getTarget());
-                }
-                if (isAggregate(target)) {
-                    reachable.add(target.getId());
-                    if (visited.add(target.getId())) {
-                        stack.push(target);
-                    }
-                }
-            }
-        }
-        return reachable;
+        Walker walker = new Walker(model);
+        return walker.walkShapeIds(a).contains(b.getId())
+            && walker.walkShapeIds(b).contains(a.getId());
     }
 
 }

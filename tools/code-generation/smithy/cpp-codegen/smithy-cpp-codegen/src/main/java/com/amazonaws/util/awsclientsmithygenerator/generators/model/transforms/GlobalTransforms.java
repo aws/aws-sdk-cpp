@@ -9,6 +9,7 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolReso
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.knowledge.TopDownIndex;
+import software.amazon.smithy.model.neighbor.Walker;
 import software.amazon.smithy.model.shapes.ListShape;
 import software.amazon.smithy.model.shapes.MapShape;
 import software.amazon.smithy.model.shapes.MemberShape;
@@ -21,9 +22,7 @@ import software.amazon.smithy.model.traits.DeprecatedTrait;
 import software.amazon.smithy.model.traits.RequiredTrait;
 import software.amazon.smithy.model.transform.ModelTransformer;
 
-import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Deque;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
@@ -88,51 +87,29 @@ public final class GlobalTransforms {
     }
 
     /**
-     * Computes the set of shape IDs reachable from service operations.
-     * Only reachable shapes should generate model files.
-     *
-     * Traversal starts from operation inputs, outputs, and errors, then walks
-     * structure members, list members, and map keys/values transitively.
+     * Computes the set of shape IDs reachable from the service's operations; only these shapes
+     * generate model files. Roots are each operation's input (including {@code smithy.api#Unit}
+     * for input-less operations), output, and error shapes, from which {@link Walker} walks the
+     * shape graph transitively. Each root id is included even when its shape is absent from the model.
      *
      * @param model the Smithy model
      * @param service the service shape whose operations define the root set
      * @return set of ShapeIds reachable from the service's operations
      */
     public static Set<ShapeId> computeReachableShapes(Model model, ServiceShape service) {
+        Walker walker = new Walker(model);
         Set<ShapeId> reachable = new HashSet<>();
-        TopDownIndex index = TopDownIndex.of(model);
-        Deque<ShapeId> queue = new ArrayDeque<>();
-
-        // Seed queue with all operation input/output/error shapes. Use getInputShape()
-        // so no-input operations (input target smithy.api#Unit) stay reachable, keeping
-        // the classifier and reachability set in agreement. The BFS below null-guards via
-        // model.getShape(id).ifPresent(...), so a possibly-absent Unit id is safe to add.
-        for (OperationShape op : index.getContainedOperations(service)) {
-            queue.add(op.getInputShape());
-            op.getOutput().ifPresent(queue::add);
-            op.getErrors().forEach(queue::add);
-        }
-
-        // BFS traversal
-        while (!queue.isEmpty()) {
-            ShapeId id = queue.poll();
-            if (!reachable.add(id)) continue;
-            model.getShape(id).ifPresent(shape -> {
-                if (shape.isStructureShape() || shape.isUnionShape()) {
-                    for (MemberShape member : shape.getAllMembers().values()) {
-                        queue.add(member.getTarget());
-                    }
-                } else if (shape.isListShape()) {
-                    shape.asListShape().ifPresent(l -> queue.add(l.getMember().getTarget()));
-                } else if (shape.isMapShape()) {
-                    shape.asMapShape().ifPresent(m -> {
-                        queue.add(m.getKey().getTarget());
-                        queue.add(m.getValue().getTarget());
-                    });
-                }
-            });
+        for (OperationShape op : TopDownIndex.of(model).getContainedOperations(service)) {
+            addReachableFrom(op.getInputShape(), walker, model, reachable);
+            op.getOutput().ifPresent(id -> addReachableFrom(id, walker, model, reachable));
+            op.getErrors().forEach(id -> addReachableFrom(id, walker, model, reachable));
         }
         return reachable;
+    }
+
+    private static void addReachableFrom(ShapeId root, Walker walker, Model model, Set<ShapeId> out) {
+        out.add(root);
+        model.getShape(root).ifPresent(shape -> out.addAll(walker.walkShapeIds(shape)));
     }
 
     /**
