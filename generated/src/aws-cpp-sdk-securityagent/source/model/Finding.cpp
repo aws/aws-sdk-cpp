@@ -113,6 +113,18 @@ Finding& Finding::operator=(JsonView jsonValue) {
     m_alignmentRationale = jsonValue.GetString("alignmentRationale");
     m_alignmentRationaleHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("revalidationJobIds")) {
+    Aws::Utils::Array<JsonView> revalidationJobIdsJsonList = jsonValue.GetArray("revalidationJobIds");
+    for (unsigned revalidationJobIdsIndex = 0; revalidationJobIdsIndex < revalidationJobIdsJsonList.GetLength();
+         ++revalidationJobIdsIndex) {
+      m_revalidationJobIds.push_back(revalidationJobIdsJsonList[revalidationJobIdsIndex].AsString());
+    }
+    m_revalidationJobIdsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("originalFindingId")) {
+    m_originalFindingId = jsonValue.GetString("originalFindingId");
+    m_originalFindingIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
@@ -221,6 +233,19 @@ JsonValue Finding::Jsonize() const {
 
   if (m_alignmentRationaleHasBeenSet) {
     payload.WithString("alignmentRationale", m_alignmentRationale);
+  }
+
+  if (m_revalidationJobIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> revalidationJobIdsJsonList(m_revalidationJobIds.size());
+    for (unsigned revalidationJobIdsIndex = 0; revalidationJobIdsIndex < revalidationJobIdsJsonList.GetLength();
+         ++revalidationJobIdsIndex) {
+      revalidationJobIdsJsonList[revalidationJobIdsIndex].AsString(m_revalidationJobIds[revalidationJobIdsIndex]);
+    }
+    payload.WithArray("revalidationJobIds", std::move(revalidationJobIdsJsonList));
+  }
+
+  if (m_originalFindingIdHasBeenSet) {
+    payload.WithString("originalFindingId", m_originalFindingId);
   }
 
   if (m_createdAtHasBeenSet) {

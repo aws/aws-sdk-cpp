@@ -17,6 +17,22 @@ Aws::String TerminateInstanceInAutoScalingGroupRequest::SerializePayload() const
     ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
 
+  if (m_instanceIdsHasBeenSet) {
+    if (m_instanceIds.empty()) {
+      ss << "InstanceIds=&";
+    } else {
+      unsigned instanceIdsCount = 1;
+      for (auto& item : m_instanceIds) {
+        ss << "InstanceIds.member." << instanceIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        instanceIdsCount++;
+      }
+    }
+  }
+
+  if (m_autoScalingGroupNameHasBeenSet) {
+    ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
+  }
+
   if (m_shouldDecrementDesiredCapacityHasBeenSet) {
     ss << "ShouldDecrementDesiredCapacity=" << std::boolalpha << m_shouldDecrementDesiredCapacity << "&";
   }

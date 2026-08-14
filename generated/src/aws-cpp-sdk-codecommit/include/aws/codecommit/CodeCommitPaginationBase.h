@@ -7,6 +7,7 @@
 
 #include <aws/codecommit/model/DescribeMergeConflictsPaginationTraits.h>
 #include <aws/codecommit/model/DescribePullRequestEventsPaginationTraits.h>
+#include <aws/codecommit/model/GetBlobDifferencesPaginationTraits.h>
 #include <aws/codecommit/model/GetCommentReactionsPaginationTraits.h>
 #include <aws/codecommit/model/GetCommentsForComparedCommitPaginationTraits.h>
 #include <aws/codecommit/model/GetCommentsForPullRequestPaginationTraits.h>
@@ -51,6 +52,18 @@ class CodeCommitPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribePullRequestEventsRequest,
                                              Pagination::DescribePullRequestEventsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for GetBlobDifferences operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetBlobDifferencesRequest,
+                                    Pagination::GetBlobDifferencesPaginationTraits<DerivedClient>>
+  GetBlobDifferencesPaginator(const Model::GetBlobDifferencesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetBlobDifferencesRequest,
+                                             Pagination::GetBlobDifferencesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

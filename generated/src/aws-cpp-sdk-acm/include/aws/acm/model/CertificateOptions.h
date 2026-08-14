@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/acm/ACM_EXPORTS.h>
 #include <aws/acm/model/CertificateExport.h>
+#include <aws/acm/model/ValidationMethod.h>
 
 #include <utility>
 
@@ -21,9 +22,9 @@ namespace Model {
 
 /**
  * <p>Structure that contains options for your certificate. You can use this
- * structure to specify whether to export your certificate.</p> <p>Certificate
- * transparency logging opt-out is no longer available. All public certificates are
- * recorded in a certificate transparency log. For general information, see <a
+ * structure to change the domain validation method or specify whether to export
+ * your certificate.</p> <p>All public certificates are recorded in a certificate
+ * transparency log. For general information, see <a
  * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate
  * Transparency Logging</a>.</p> <p>You can export public ACM certificates to use
  * with Amazon Web Services services as well as outside Amazon Web Services Cloud.
@@ -57,9 +58,29 @@ class CertificateOptions {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The domain validation method for the certificate. To migrate from email to
+   * DNS validation, specify <code>DNS</code>.</p>
+   */
+  inline ValidationMethod GetValidationMethod() const { return m_validationMethod; }
+  inline bool ValidationMethodHasBeenSet() const { return m_validationMethodHasBeenSet; }
+  inline void SetValidationMethod(ValidationMethod value) {
+    m_validationMethodHasBeenSet = true;
+    m_validationMethod = value;
+  }
+  inline CertificateOptions& WithValidationMethod(ValidationMethod value) {
+    SetValidationMethod(value);
+    return *this;
+  }
+  ///@}
  private:
   CertificateExport m_export{CertificateExport::NOT_SET};
+
+  ValidationMethod m_validationMethod{ValidationMethod::NOT_SET};
   bool m_exportHasBeenSet = false;
+  bool m_validationMethodHasBeenSet = false;
 };
 
 }  // namespace Model

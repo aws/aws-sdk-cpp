@@ -18,6 +18,7 @@
 #include <aws/acm/model/RenewalEligibility.h>
 #include <aws/acm/model/RenewalSummary.h>
 #include <aws/acm/model/RevocationReason.h>
+#include <aws/acm/model/UpdateSummary.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -609,6 +610,26 @@ class CertificateDetail {
 
   ///@{
   /**
+   * <p>Contains information about the most recent update to the certificate. This
+   * field exists only when the certificate type is <code>AMAZON_ISSUED</code> and a
+   * certificate update has been requested.</p>
+   */
+  inline const UpdateSummary& GetUpdateSummary() const { return m_updateSummary; }
+  inline bool UpdateSummaryHasBeenSet() const { return m_updateSummaryHasBeenSet; }
+  template <typename UpdateSummaryT = UpdateSummary>
+  void SetUpdateSummary(UpdateSummaryT&& value) {
+    m_updateSummaryHasBeenSet = true;
+    m_updateSummary = std::forward<UpdateSummaryT>(value);
+  }
+  template <typename UpdateSummaryT = UpdateSummary>
+  CertificateDetail& WithUpdateSummary(UpdateSummaryT&& value) {
+    SetUpdateSummary(std::forward<UpdateSummaryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The origin of the certificate's key pair.</p>
    */
   inline CertificateKeyPairOrigin GetCertificateKeyPairOrigin() const { return m_certificateKeyPairOrigin; }
@@ -713,6 +734,8 @@ class CertificateDetail {
 
   CertificateOptions m_options;
 
+  UpdateSummary m_updateSummary;
+
   CertificateKeyPairOrigin m_certificateKeyPairOrigin{CertificateKeyPairOrigin::NOT_SET};
 
   Aws::String m_acmeEndpointArn;
@@ -745,6 +768,7 @@ class CertificateDetail {
   bool m_certificateAuthorityArnHasBeenSet = false;
   bool m_renewalEligibilityHasBeenSet = false;
   bool m_optionsHasBeenSet = false;
+  bool m_updateSummaryHasBeenSet = false;
   bool m_certificateKeyPairOriginHasBeenSet = false;
   bool m_acmeEndpointArnHasBeenSet = false;
   bool m_acmeAccountIdHasBeenSet = false;

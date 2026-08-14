@@ -65,6 +65,18 @@ IntermediateTableAnalysisRuleCustom& IntermediateTableAnalysisRuleCustom::operat
     }
     m_disallowedOutputColumnsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("aggregationThresholds")) {
+    Aws::Utils::Array<JsonView> aggregationThresholdsJsonList = jsonValue.GetArray("aggregationThresholds");
+    for (unsigned aggregationThresholdsIndex = 0; aggregationThresholdsIndex < aggregationThresholdsJsonList.GetLength();
+         ++aggregationThresholdsIndex) {
+      m_aggregationThresholds.push_back(aggregationThresholdsJsonList[aggregationThresholdsIndex].AsObject());
+    }
+    m_aggregationThresholdsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("comparisonControls")) {
+    m_comparisonControls = jsonValue.GetObject("comparisonControls");
+    m_comparisonControlsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -122,6 +134,19 @@ JsonValue IntermediateTableAnalysisRuleCustom::Jsonize() const {
       disallowedOutputColumnsJsonList[disallowedOutputColumnsIndex].AsString(m_disallowedOutputColumns[disallowedOutputColumnsIndex]);
     }
     payload.WithArray("disallowedOutputColumns", std::move(disallowedOutputColumnsJsonList));
+  }
+
+  if (m_aggregationThresholdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> aggregationThresholdsJsonList(m_aggregationThresholds.size());
+    for (unsigned aggregationThresholdsIndex = 0; aggregationThresholdsIndex < aggregationThresholdsJsonList.GetLength();
+         ++aggregationThresholdsIndex) {
+      aggregationThresholdsJsonList[aggregationThresholdsIndex].AsObject(m_aggregationThresholds[aggregationThresholdsIndex].Jsonize());
+    }
+    payload.WithArray("aggregationThresholds", std::move(aggregationThresholdsJsonList));
+  }
+
+  if (m_comparisonControlsHasBeenSet) {
+    payload.WithObject("comparisonControls", m_comparisonControls.Jsonize());
   }
 
   return payload;

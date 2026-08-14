@@ -465,6 +465,50 @@ class Finding {
 
   ///@{
   /**
+   * <p>The list of pentest job identifiers for revalidation jobs that retested this
+   * finding.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetRevalidationJobIds() const { return m_revalidationJobIds; }
+  inline bool RevalidationJobIdsHasBeenSet() const { return m_revalidationJobIdsHasBeenSet; }
+  template <typename RevalidationJobIdsT = Aws::Vector<Aws::String>>
+  void SetRevalidationJobIds(RevalidationJobIdsT&& value) {
+    m_revalidationJobIdsHasBeenSet = true;
+    m_revalidationJobIds = std::forward<RevalidationJobIdsT>(value);
+  }
+  template <typename RevalidationJobIdsT = Aws::Vector<Aws::String>>
+  Finding& WithRevalidationJobIds(RevalidationJobIdsT&& value) {
+    SetRevalidationJobIds(std::forward<RevalidationJobIdsT>(value));
+    return *this;
+  }
+  template <typename RevalidationJobIdsT = Aws::String>
+  Finding& AddRevalidationJobIds(RevalidationJobIdsT&& value) {
+    m_revalidationJobIdsHasBeenSet = true;
+    m_revalidationJobIds.emplace_back(std::forward<RevalidationJobIdsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of the original finding that this revalidation finding was
+   * produced from.</p>
+   */
+  inline const Aws::String& GetOriginalFindingId() const { return m_originalFindingId; }
+  inline bool OriginalFindingIdHasBeenSet() const { return m_originalFindingIdHasBeenSet; }
+  template <typename OriginalFindingIdT = Aws::String>
+  void SetOriginalFindingId(OriginalFindingIdT&& value) {
+    m_originalFindingIdHasBeenSet = true;
+    m_originalFindingId = std::forward<OriginalFindingIdT>(value);
+  }
+  template <typename OriginalFindingIdT = Aws::String>
+  Finding& WithOriginalFindingId(OriginalFindingIdT&& value) {
+    SetOriginalFindingId(std::forward<OriginalFindingIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The date and time the finding was created, in UTC format.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -545,6 +589,10 @@ class Finding {
 
   Aws::String m_alignmentRationale;
 
+  Aws::Vector<Aws::String> m_revalidationJobIds;
+
+  Aws::String m_originalFindingId;
+
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
@@ -571,6 +619,8 @@ class Finding {
   bool m_codeLocationsHasBeenSet = false;
   bool m_verificationScriptHasBeenSet = false;
   bool m_alignmentRationaleHasBeenSet = false;
+  bool m_revalidationJobIdsHasBeenSet = false;
+  bool m_originalFindingIdHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };

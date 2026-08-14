@@ -8,6 +8,7 @@ import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.aws.traits.ServiceTrait;
 
 import java.util.Map;
+import java.util.Optional;
 
 public final class ServiceNameUtil {
     
@@ -170,12 +171,18 @@ public final class ServiceNameUtil {
      * Follows C2J convention: AWS_{UPPERCASED_SERVICE_NAME}_LOCAL
      *
      * @param service The service shape to generate the macro for
-     * @param serviceMap Service ID mappings for namespace overrides (reserved for future consistency with getSmithyServiceName)
+     * @param serviceMap Service ID mappings, used to resolve the key into namespaceMap
+     * @param namespaceMap Namespace overrides, keyed by smithy service name; the macro must follow the
+     *                     override because the C2J-generated {@code <Prefix>_EXPORTS.h} defines it off
+     *                     {@code metadata.classNamePrefix}
      * @return The local macro in format AWS_{SERVICE_NAME}_LOCAL
      */
-    public static String getLocalMacro(ServiceShape service, Map<String, String> serviceMap) {
-        String serviceName = getServiceName(service);
-        return "AWS_" + serviceName.toUpperCase() + "_LOCAL";
+    public static String getLocalMacro(ServiceShape service, Map<String, String> serviceMap,
+                                       Map<String, String> namespaceMap) {
+        return Optional.ofNullable(namespaceMap.get(getSmithyServiceName(service, serviceMap)))
+            .orElseGet(() -> getServiceName(service))
+            .toUpperCase()
+            .transform(name -> "AWS_" + name + "_LOCAL");
     }
 
     public static boolean isS3CrtProjection(ServiceShape service) {

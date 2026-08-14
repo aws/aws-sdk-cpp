@@ -63,6 +63,10 @@ CreateCodeReviewResult& CreateCodeReviewResult::operator=(const Aws::AmazonWebSe
     m_validationMode = ValidationModeMapper::GetValidationModeForName(jsonValue.GetString("validationMode"));
     m_validationModeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("maxTaskHours")) {
+    m_maxTaskHours = jsonValue.GetDouble("maxTaskHours");
+    m_maxTaskHoursHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

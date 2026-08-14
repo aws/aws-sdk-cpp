@@ -43,6 +43,7 @@
 #include <aws/connect/model/AgentStatusType.h>
 #include <aws/connect/model/AgentsCriteria.h>
 #include <aws/connect/model/AiAgentInfo.h>
+#include <aws/connect/model/AiAgentInput.h>
 #include <aws/connect/model/AiAgentSearchCriteria.h>
 #include <aws/connect/model/AiAgentsCriteria.h>
 #include <aws/connect/model/AiUseCase.h>
@@ -1303,6 +1304,8 @@
 #include <aws/connect/model/SortableFieldName.h>
 #include <aws/connect/model/SourceCampaign.h>
 #include <aws/connect/model/SourceType.h>
+#include <aws/connect/model/StartAssistantContactRequest.h>
+#include <aws/connect/model/StartAssistantContactResult.h>
 #include <aws/connect/model/StartAttachedFileUploadRequest.h>
 #include <aws/connect/model/StartAttachedFileUploadResult.h>
 #include <aws/connect/model/StartChatContactRequest.h>

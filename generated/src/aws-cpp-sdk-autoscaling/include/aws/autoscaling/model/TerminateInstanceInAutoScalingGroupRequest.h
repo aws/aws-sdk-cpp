@@ -7,6 +7,7 @@
 #include <aws/autoscaling/AutoScalingRequest.h>
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -52,6 +53,50 @@ class TerminateInstanceInAutoScalingGroupRequest : public AutoScalingRequest {
 
   ///@{
   /**
+   * <p>The IDs of the instances. You can specify up to 100 instances.</p> <p>This
+   * parameter requires that you also specify <code>AutoScalingGroupName</code>.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetInstanceIds() const { return m_instanceIds; }
+  inline bool InstanceIdsHasBeenSet() const { return m_instanceIdsHasBeenSet; }
+  template <typename InstanceIdsT = Aws::Vector<Aws::String>>
+  void SetInstanceIds(InstanceIdsT&& value) {
+    m_instanceIdsHasBeenSet = true;
+    m_instanceIds = std::forward<InstanceIdsT>(value);
+  }
+  template <typename InstanceIdsT = Aws::Vector<Aws::String>>
+  TerminateInstanceInAutoScalingGroupRequest& WithInstanceIds(InstanceIdsT&& value) {
+    SetInstanceIds(std::forward<InstanceIdsT>(value));
+    return *this;
+  }
+  template <typename InstanceIdsT = Aws::String>
+  TerminateInstanceInAutoScalingGroupRequest& AddInstanceIds(InstanceIdsT&& value) {
+    m_instanceIdsHasBeenSet = true;
+    m_instanceIds.emplace_back(std::forward<InstanceIdsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the Auto Scaling group. Required when using
+   * <code>InstanceIds</code>.</p>
+   */
+  inline const Aws::String& GetAutoScalingGroupName() const { return m_autoScalingGroupName; }
+  inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
+  template <typename AutoScalingGroupNameT = Aws::String>
+  void SetAutoScalingGroupName(AutoScalingGroupNameT&& value) {
+    m_autoScalingGroupNameHasBeenSet = true;
+    m_autoScalingGroupName = std::forward<AutoScalingGroupNameT>(value);
+  }
+  template <typename AutoScalingGroupNameT = Aws::String>
+  TerminateInstanceInAutoScalingGroupRequest& WithAutoScalingGroupName(AutoScalingGroupNameT&& value) {
+    SetAutoScalingGroupName(std::forward<AutoScalingGroupNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Indicates whether terminating the instance also decrements the size of the
    * Auto Scaling group.</p>
    */
@@ -69,8 +114,14 @@ class TerminateInstanceInAutoScalingGroupRequest : public AutoScalingRequest {
  private:
   Aws::String m_instanceId;
 
+  Aws::Vector<Aws::String> m_instanceIds;
+
+  Aws::String m_autoScalingGroupName;
+
   bool m_shouldDecrementDesiredCapacity{false};
   bool m_instanceIdHasBeenSet = false;
+  bool m_instanceIdsHasBeenSet = false;
+  bool m_autoScalingGroupNameHasBeenSet = false;
   bool m_shouldDecrementDesiredCapacityHasBeenSet = false;
 };
 

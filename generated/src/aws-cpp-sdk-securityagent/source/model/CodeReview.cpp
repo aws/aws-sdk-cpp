@@ -51,6 +51,10 @@ CodeReview& CodeReview::operator=(JsonView jsonValue) {
     m_validationMode = ValidationModeMapper::GetValidationModeForName(jsonValue.GetString("validationMode"));
     m_validationModeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("maxTaskHours")) {
+    m_maxTaskHours = jsonValue.GetDouble("maxTaskHours");
+    m_maxTaskHoursHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
@@ -96,6 +100,10 @@ JsonValue CodeReview::Jsonize() const {
 
   if (m_validationModeHasBeenSet) {
     payload.WithString("validationMode", ValidationModeMapper::GetNameForValidationMode(m_validationMode));
+  }
+
+  if (m_maxTaskHoursHasBeenSet) {
+    payload.WithDouble("maxTaskHours", m_maxTaskHours);
   }
 
   if (m_createdAtHasBeenSet) {

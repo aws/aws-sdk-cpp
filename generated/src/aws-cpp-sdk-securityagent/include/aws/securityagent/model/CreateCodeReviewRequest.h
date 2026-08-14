@@ -159,6 +159,24 @@ class CreateCodeReviewRequest : public SecurityAgentRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The maximum number of billable task hours allowed for jobs started from this
+   * code review. Must be a positive number. If not set, jobs run to completion with
+   * no budget cap.</p>
+   */
+  inline double GetMaxTaskHours() const { return m_maxTaskHours; }
+  inline bool MaxTaskHoursHasBeenSet() const { return m_maxTaskHoursHasBeenSet; }
+  inline void SetMaxTaskHours(double value) {
+    m_maxTaskHoursHasBeenSet = true;
+    m_maxTaskHours = value;
+  }
+  inline CreateCodeReviewRequest& WithMaxTaskHours(double value) {
+    SetMaxTaskHours(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_title;
 
@@ -173,6 +191,8 @@ class CreateCodeReviewRequest : public SecurityAgentRequest {
   CodeRemediationStrategy m_codeRemediationStrategy{CodeRemediationStrategy::NOT_SET};
 
   ValidationMode m_validationMode{ValidationMode::NOT_SET};
+
+  double m_maxTaskHours{0.0};
   bool m_titleHasBeenSet = false;
   bool m_agentSpaceIdHasBeenSet = false;
   bool m_assetsHasBeenSet = false;
@@ -180,6 +200,7 @@ class CreateCodeReviewRequest : public SecurityAgentRequest {
   bool m_logConfigHasBeenSet = false;
   bool m_codeRemediationStrategyHasBeenSet = false;
   bool m_validationModeHasBeenSet = false;
+  bool m_maxTaskHoursHasBeenSet = false;
 };
 
 }  // namespace Model

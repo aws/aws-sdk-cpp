@@ -44,5 +44,9 @@ Aws::String CreateCodeReviewRequest::SerializePayload() const {
     payload.WithString("validationMode", ValidationModeMapper::GetNameForValidationMode(m_validationMode));
   }
 
+  if (m_maxTaskHoursHasBeenSet) {
+    payload.WithDouble("maxTaskHours", m_maxTaskHours);
+  }
+
   return payload.View().WriteReadable();
 }

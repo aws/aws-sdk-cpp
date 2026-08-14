@@ -40,6 +40,7 @@
 #include <aws/codecommit/model/DescribePullRequestEventsResult.h>
 #include <aws/codecommit/model/EvaluatePullRequestApprovalRulesResult.h>
 #include <aws/codecommit/model/GetApprovalRuleTemplateResult.h>
+#include <aws/codecommit/model/GetBlobDifferencesResult.h>
 #include <aws/codecommit/model/GetBlobResult.h>
 #include <aws/codecommit/model/GetBranchRequest.h>
 #include <aws/codecommit/model/GetBranchResult.h>
@@ -149,6 +150,7 @@ class DisassociateApprovalRuleTemplateFromRepositoryRequest;
 class EvaluatePullRequestApprovalRulesRequest;
 class GetApprovalRuleTemplateRequest;
 class GetBlobRequest;
+class GetBlobDifferencesRequest;
 class GetBranchRequest;
 class GetCommentRequest;
 class GetCommentReactionsRequest;
@@ -233,6 +235,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, CodeCommitError> DisassociateApproval
 typedef Aws::Utils::Outcome<EvaluatePullRequestApprovalRulesResult, CodeCommitError> EvaluatePullRequestApprovalRulesOutcome;
 typedef Aws::Utils::Outcome<GetApprovalRuleTemplateResult, CodeCommitError> GetApprovalRuleTemplateOutcome;
 typedef Aws::Utils::Outcome<GetBlobResult, CodeCommitError> GetBlobOutcome;
+typedef Aws::Utils::Outcome<GetBlobDifferencesResult, CodeCommitError> GetBlobDifferencesOutcome;
 typedef Aws::Utils::Outcome<GetBranchResult, CodeCommitError> GetBranchOutcome;
 typedef Aws::Utils::Outcome<GetCommentResult, CodeCommitError> GetCommentOutcome;
 typedef Aws::Utils::Outcome<GetCommentReactionsResult, CodeCommitError> GetCommentReactionsOutcome;
@@ -318,6 +321,7 @@ typedef std::future<DisassociateApprovalRuleTemplateFromRepositoryOutcome> Disas
 typedef std::future<EvaluatePullRequestApprovalRulesOutcome> EvaluatePullRequestApprovalRulesOutcomeCallable;
 typedef std::future<GetApprovalRuleTemplateOutcome> GetApprovalRuleTemplateOutcomeCallable;
 typedef std::future<GetBlobOutcome> GetBlobOutcomeCallable;
+typedef std::future<GetBlobDifferencesOutcome> GetBlobDifferencesOutcomeCallable;
 typedef std::future<GetBranchOutcome> GetBranchOutcomeCallable;
 typedef std::future<GetCommentOutcome> GetCommentOutcomeCallable;
 typedef std::future<GetCommentReactionsOutcome> GetCommentReactionsOutcomeCallable;
@@ -462,6 +466,9 @@ typedef std::function<void(const CodeCommitClient*, const Model::GetApprovalRule
 typedef std::function<void(const CodeCommitClient*, const Model::GetBlobRequest&, const Model::GetBlobOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetBlobResponseReceivedHandler;
+typedef std::function<void(const CodeCommitClient*, const Model::GetBlobDifferencesRequest&, const Model::GetBlobDifferencesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetBlobDifferencesResponseReceivedHandler;
 typedef std::function<void(const CodeCommitClient*, const Model::GetBranchRequest&, const Model::GetBranchOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetBranchResponseReceivedHandler;

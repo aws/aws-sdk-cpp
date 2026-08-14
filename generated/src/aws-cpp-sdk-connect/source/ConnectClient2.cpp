@@ -98,6 +98,7 @@
 #include <aws/connect/model/SendChatIntegrationEventRequest.h>
 #include <aws/connect/model/SendOutboundEmailRequest.h>
 #include <aws/connect/model/SendOutboundWebNotificationRequest.h>
+#include <aws/connect/model/StartAssistantContactRequest.h>
 #include <aws/connect/model/StartAttachedFileUploadRequest.h>
 #include <aws/connect/model/StartChatContactRequest.h>
 #include <aws/connect/model/StartContactConversationalAnalyticsJobRequest.h>
@@ -105,7 +106,6 @@
 #include <aws/connect/model/StartContactMediaProcessingRequest.h>
 #include <aws/connect/model/StartContactRecordingRequest.h>
 #include <aws/connect/model/StartContactStreamingRequest.h>
-#include <aws/connect/model/StartEmailContactRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/CoreErrors.h>
@@ -1695,6 +1695,17 @@ SendOutboundWebNotificationOutcome ConnectClient::SendOutboundWebNotification(co
                             : SendOutboundWebNotificationOutcome(std::move(result.GetError()));
 }
 
+StartAssistantContactOutcome ConnectClient::StartAssistantContact(const StartAssistantContactRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/contact/assistant");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StartAssistantContactOutcome(result.GetResultWithOwnership())
+                            : StartAssistantContactOutcome(std::move(result.GetError()));
+}
+
 StartAttachedFileUploadOutcome ConnectClient::StartAttachedFileUpload(const StartAttachedFileUploadRequest& request) const {
   if (!request.InstanceIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("StartAttachedFileUpload", "Required field: InstanceId, is not set");
@@ -1803,15 +1814,4 @@ StartContactStreamingOutcome ConnectClient::StartContactStreaming(const StartCon
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? StartContactStreamingOutcome(result.GetResultWithOwnership())
                             : StartContactStreamingOutcome(std::move(result.GetError()));
-}
-
-StartEmailContactOutcome ConnectClient::StartEmailContact(const StartEmailContactRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/contact/email");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? StartEmailContactOutcome(result.GetResultWithOwnership())
-                            : StartEmailContactOutcome(std::move(result.GetError()));
 }

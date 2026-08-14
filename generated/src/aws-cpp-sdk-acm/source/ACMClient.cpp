@@ -28,6 +28,7 @@
 #include <aws/acm/model/ListAcmeDomainValidationsRequest.h>
 #include <aws/acm/model/ListAcmeEndpointsRequest.h>
 #include <aws/acm/model/ListAcmeExternalAccountBindingsRequest.h>
+#include <aws/acm/model/ListCertificateDomainValidationsRequest.h>
 #include <aws/acm/model/ListCertificatesRequest.h>
 #include <aws/acm/model/ListTagsForCertificateRequest.h>
 #include <aws/acm/model/ListTagsForResourceRequest.h>
@@ -342,6 +343,13 @@ ListAcmeExternalAccountBindingsOutcome ACMClient::ListAcmeExternalAccountBinding
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListAcmeExternalAccountBindingsOutcome(result.GetResultWithOwnership())
                             : ListAcmeExternalAccountBindingsOutcome(std::move(result.GetError()));
+}
+
+ListCertificateDomainValidationsOutcome ACMClient::ListCertificateDomainValidations(
+    const ListCertificateDomainValidationsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCertificateDomainValidationsOutcome(result.GetResultWithOwnership())
+                            : ListCertificateDomainValidationsOutcome(std::move(result.GetError()));
 }
 
 ListCertificatesOutcome ACMClient::ListCertificates(const ListCertificatesRequest& request) const {

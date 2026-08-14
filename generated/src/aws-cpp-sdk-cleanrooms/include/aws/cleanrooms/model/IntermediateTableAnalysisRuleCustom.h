@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/cleanrooms/model/AdditionalAnalyses.h>
+#include <aws/cleanrooms/model/AggregationThreshold.h>
+#include <aws/cleanrooms/model/ComparisonControls.h>
 #include <aws/cleanrooms/model/DifferentialPrivacyConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -190,6 +192,54 @@ class IntermediateTableAnalysisRuleCustom {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The aggregation thresholds that each query output group must satisfy. Clean
+   * Rooms filters out any group that represents fewer than the specified number of
+   * distinct identities. You can specify at most one threshold. You can't use
+   * aggregation thresholds with differential privacy, or when
+   * <code>allowedAnalyses</code> allows only jobs.</p>
+   */
+  inline const Aws::Vector<AggregationThreshold>& GetAggregationThresholds() const { return m_aggregationThresholds; }
+  inline bool AggregationThresholdsHasBeenSet() const { return m_aggregationThresholdsHasBeenSet; }
+  template <typename AggregationThresholdsT = Aws::Vector<AggregationThreshold>>
+  void SetAggregationThresholds(AggregationThresholdsT&& value) {
+    m_aggregationThresholdsHasBeenSet = true;
+    m_aggregationThresholds = std::forward<AggregationThresholdsT>(value);
+  }
+  template <typename AggregationThresholdsT = Aws::Vector<AggregationThreshold>>
+  IntermediateTableAnalysisRuleCustom& WithAggregationThresholds(AggregationThresholdsT&& value) {
+    SetAggregationThresholds(std::forward<AggregationThresholdsT>(value));
+    return *this;
+  }
+  template <typename AggregationThresholdsT = AggregationThreshold>
+  IntermediateTableAnalysisRuleCustom& AddAggregationThresholds(AggregationThresholdsT&& value) {
+    m_aggregationThresholdsHasBeenSet = true;
+    m_aggregationThresholds.emplace_back(std::forward<AggregationThresholdsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The controls that restrict how a query can compare the columns in the
+   * intermediate table. You can't use comparison controls with differential privacy,
+   * or when <code>allowedAnalyses</code> allows only jobs.</p>
+   */
+  inline const ComparisonControls& GetComparisonControls() const { return m_comparisonControls; }
+  inline bool ComparisonControlsHasBeenSet() const { return m_comparisonControlsHasBeenSet; }
+  template <typename ComparisonControlsT = ComparisonControls>
+  void SetComparisonControls(ComparisonControlsT&& value) {
+    m_comparisonControlsHasBeenSet = true;
+    m_comparisonControls = std::forward<ComparisonControlsT>(value);
+  }
+  template <typename ComparisonControlsT = ComparisonControls>
+  IntermediateTableAnalysisRuleCustom& WithComparisonControls(ComparisonControlsT&& value) {
+    SetComparisonControls(std::forward<ComparisonControlsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_allowedAnalyses;
 
@@ -204,6 +254,10 @@ class IntermediateTableAnalysisRuleCustom {
   DifferentialPrivacyConfiguration m_differentialPrivacy;
 
   Aws::Vector<Aws::String> m_disallowedOutputColumns;
+
+  Aws::Vector<AggregationThreshold> m_aggregationThresholds;
+
+  ComparisonControls m_comparisonControls;
   bool m_allowedAnalysesHasBeenSet = false;
   bool m_additionalAnalysesHasBeenSet = false;
   bool m_allowedAdditionalAnalysesHasBeenSet = false;
@@ -211,6 +265,8 @@ class IntermediateTableAnalysisRuleCustom {
   bool m_allowedResultReceiversHasBeenSet = false;
   bool m_differentialPrivacyHasBeenSet = false;
   bool m_disallowedOutputColumnsHasBeenSet = false;
+  bool m_aggregationThresholdsHasBeenSet = false;
+  bool m_comparisonControlsHasBeenSet = false;
 };
 
 }  // namespace Model

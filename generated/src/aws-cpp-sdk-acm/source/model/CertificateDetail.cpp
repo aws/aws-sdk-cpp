@@ -143,6 +143,10 @@ CertificateDetail& CertificateDetail::operator=(JsonView jsonValue) {
     m_options = jsonValue.GetObject("Options");
     m_optionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("UpdateSummary")) {
+    m_updateSummary = jsonValue.GetObject("UpdateSummary");
+    m_updateSummaryHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("CertificateKeyPairOrigin")) {
     m_certificateKeyPairOrigin =
         CertificateKeyPairOriginMapper::GetCertificateKeyPairOriginForName(jsonValue.GetString("CertificateKeyPairOrigin"));
@@ -291,6 +295,10 @@ JsonValue CertificateDetail::Jsonize() const {
 
   if (m_optionsHasBeenSet) {
     payload.WithObject("Options", m_options.Jsonize());
+  }
+
+  if (m_updateSummaryHasBeenSet) {
+    payload.WithObject("UpdateSummary", m_updateSummary.Jsonize());
   }
 
   if (m_certificateKeyPairOriginHasBeenSet) {

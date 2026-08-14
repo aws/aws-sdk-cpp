@@ -85,6 +85,9 @@
 #include <aws/codecommit/model/DescribePullRequestEventsPaginationTraits.h>
 #include <aws/codecommit/model/DescribePullRequestEventsRequest.h>
 #include <aws/codecommit/model/DescribePullRequestEventsResult.h>
+#include <aws/codecommit/model/DiffChange.h>
+#include <aws/codecommit/model/DiffChangeType.h>
+#include <aws/codecommit/model/DiffHunk.h>
 #include <aws/codecommit/model/Difference.h>
 #include <aws/codecommit/model/DisassociateApprovalRuleTemplateFromRepositoryRequest.h>
 #include <aws/codecommit/model/EvaluatePullRequestApprovalRulesRequest.h>
@@ -99,6 +102,8 @@
 #include <aws/codecommit/model/Folder.h>
 #include <aws/codecommit/model/GetApprovalRuleTemplateRequest.h>
 #include <aws/codecommit/model/GetApprovalRuleTemplateResult.h>
+#include <aws/codecommit/model/GetBlobDifferencesRequest.h>
+#include <aws/codecommit/model/GetBlobDifferencesResult.h>
 #include <aws/codecommit/model/GetBlobRequest.h>
 #include <aws/codecommit/model/GetBlobResult.h>
 #include <aws/codecommit/model/GetBranchRequest.h>

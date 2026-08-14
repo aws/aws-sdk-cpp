@@ -19,6 +19,7 @@ static const int INSTANCE_REFRESH_IN_PROGRESS_FAULT_HASH = HashingUtils::HashStr
 static const int ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("AlreadyExists");
 static const int LIMIT_EXCEEDED_FAULT_HASH = HashingUtils::HashString("LimitExceeded");
 static const int RESOURCE_CONTENTION_FAULT_HASH = HashingUtils::HashString("ResourceContention");
+static const int IDEMPOTENT_CALL_IN_PROGRESS_FAULT_HASH = HashingUtils::HashString("IdempotentCallInProgress");
 static const int SERVICE_LINKED_ROLE_FAILURE_HASH = HashingUtils::HashString("ServiceLinkedRoleFailure");
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextToken");
 static const int SCALING_ACTIVITY_IN_PROGRESS_FAULT_HASH = HashingUtils::HashString("ScalingActivityInProgress");
@@ -39,6 +40,9 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::LIMIT_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == RESOURCE_CONTENTION_FAULT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::RESOURCE_CONTENTION_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == IDEMPOTENT_CALL_IN_PROGRESS_FAULT_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::IDEMPOTENT_CALL_IN_PROGRESS_FAULT),
+                                RetryableType::NOT_RETRYABLE);
   } else if (hashCode == SERVICE_LINKED_ROLE_FAILURE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::SERVICE_LINKED_ROLE_FAILURE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_NEXT_TOKEN_HASH) {

@@ -181,6 +181,24 @@ class CodeReview {
 
   ///@{
   /**
+   * <p>The maximum number of billable task hours allowed for jobs started from this
+   * code review. If a job reaches the configured limit, it is gracefully stopped. If
+   * not set, jobs run to completion with no budget cap.</p>
+   */
+  inline double GetMaxTaskHours() const { return m_maxTaskHours; }
+  inline bool MaxTaskHoursHasBeenSet() const { return m_maxTaskHoursHasBeenSet; }
+  inline void SetMaxTaskHours(double value) {
+    m_maxTaskHoursHasBeenSet = true;
+    m_maxTaskHours = value;
+  }
+  inline CodeReview& WithMaxTaskHours(double value) {
+    SetMaxTaskHours(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The date and time the code review was created, in UTC format.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -231,6 +249,8 @@ class CodeReview {
 
   ValidationMode m_validationMode{ValidationMode::NOT_SET};
 
+  double m_maxTaskHours{0.0};
+
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
@@ -242,6 +262,7 @@ class CodeReview {
   bool m_logConfigHasBeenSet = false;
   bool m_codeRemediationStrategyHasBeenSet = false;
   bool m_validationModeHasBeenSet = false;
+  bool m_maxTaskHoursHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };

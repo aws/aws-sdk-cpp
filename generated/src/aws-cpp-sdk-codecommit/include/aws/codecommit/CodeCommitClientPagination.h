@@ -7,6 +7,7 @@
 #include <aws/codecommit/CodeCommitClient.h>
 #include <aws/codecommit/model/DescribeMergeConflictsPaginationTraits.h>
 #include <aws/codecommit/model/DescribePullRequestEventsPaginationTraits.h>
+#include <aws/codecommit/model/GetBlobDifferencesPaginationTraits.h>
 #include <aws/codecommit/model/GetCommentReactionsPaginationTraits.h>
 #include <aws/codecommit/model/GetCommentsForComparedCommitPaginationTraits.h>
 #include <aws/codecommit/model/GetCommentsForPullRequestPaginationTraits.h>
@@ -30,6 +31,8 @@ using DescribeMergeConflictsPaginator =
 using DescribePullRequestEventsPaginator =
     Aws::Utils::Pagination::Paginator<CodeCommitClient, Model::DescribePullRequestEventsRequest,
                                       Pagination::DescribePullRequestEventsPaginationTraits<CodeCommitClient>>;
+using GetBlobDifferencesPaginator = Aws::Utils::Pagination::Paginator<CodeCommitClient, Model::GetBlobDifferencesRequest,
+                                                                      Pagination::GetBlobDifferencesPaginationTraits<CodeCommitClient>>;
 using GetCommentReactionsPaginator = Aws::Utils::Pagination::Paginator<CodeCommitClient, Model::GetCommentReactionsRequest,
                                                                        Pagination::GetCommentReactionsPaginationTraits<CodeCommitClient>>;
 using GetCommentsForComparedCommitPaginator =

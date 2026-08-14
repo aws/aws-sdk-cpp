@@ -9,6 +9,7 @@
 #include <aws/acm/model/ListAcmeDomainValidationsPaginationTraits.h>
 #include <aws/acm/model/ListAcmeEndpointsPaginationTraits.h>
 #include <aws/acm/model/ListAcmeExternalAccountBindingsPaginationTraits.h>
+#include <aws/acm/model/ListCertificateDomainValidationsPaginationTraits.h>
 #include <aws/acm/model/ListCertificatesPaginationTraits.h>
 #include <aws/acm/model/SearchCertificatesPaginationTraits.h>
 #include <aws/core/client/UserAgent.h>
@@ -67,6 +68,18 @@ class ACMPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAcmeExternalAccountBindingsRequest,
                                              Pagination::ListAcmeExternalAccountBindingsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListCertificateDomainValidations operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCertificateDomainValidationsRequest,
+                                    Pagination::ListCertificateDomainValidationsPaginationTraits<DerivedClient>>
+  ListCertificateDomainValidationsPaginator(const Model::ListCertificateDomainValidationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCertificateDomainValidationsRequest,
+                                             Pagination::ListCertificateDomainValidationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

@@ -9,6 +9,7 @@
 #include <aws/acm/model/ListAcmeDomainValidationsPaginationTraits.h>
 #include <aws/acm/model/ListAcmeEndpointsPaginationTraits.h>
 #include <aws/acm/model/ListAcmeExternalAccountBindingsPaginationTraits.h>
+#include <aws/acm/model/ListCertificateDomainValidationsPaginationTraits.h>
 #include <aws/acm/model/ListCertificatesPaginationTraits.h>
 #include <aws/acm/model/SearchCertificatesPaginationTraits.h>
 #include <aws/core/utils/pagination/Paginator.h>
@@ -26,6 +27,9 @@ using ListAcmeEndpointsPaginator =
 using ListAcmeExternalAccountBindingsPaginator =
     Aws::Utils::Pagination::Paginator<ACMClient, Model::ListAcmeExternalAccountBindingsRequest,
                                       Pagination::ListAcmeExternalAccountBindingsPaginationTraits<ACMClient>>;
+using ListCertificateDomainValidationsPaginator =
+    Aws::Utils::Pagination::Paginator<ACMClient, Model::ListCertificateDomainValidationsRequest,
+                                      Pagination::ListCertificateDomainValidationsPaginationTraits<ACMClient>>;
 using ListCertificatesPaginator =
     Aws::Utils::Pagination::Paginator<ACMClient, Model::ListCertificatesRequest, Pagination::ListCertificatesPaginationTraits<ACMClient>>;
 using SearchCertificatesPaginator = Aws::Utils::Pagination::Paginator<ACMClient, Model::SearchCertificatesRequest,

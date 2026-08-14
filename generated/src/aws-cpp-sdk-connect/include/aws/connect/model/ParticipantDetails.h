@@ -20,7 +20,8 @@ namespace Connect {
 namespace Model {
 
 /**
- * <p>The customer's details.</p><p><h3>See Also:</h3>   <a
+ * <p>The details of the participant, including their display name.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ParticipantDetails">AWS
  * API Reference</a></p>
  */

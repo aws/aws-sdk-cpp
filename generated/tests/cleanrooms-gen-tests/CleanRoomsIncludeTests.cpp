@@ -29,7 +29,10 @@
 #include <aws/cleanrooms/model/AggregateColumn.h>
 #include <aws/cleanrooms/model/AggregateFunctionName.h>
 #include <aws/cleanrooms/model/AggregationConstraint.h>
+#include <aws/cleanrooms/model/AggregationThreshold.h>
+#include <aws/cleanrooms/model/AggregationThresholdType.h>
 #include <aws/cleanrooms/model/AggregationType.h>
+#include <aws/cleanrooms/model/AllowedAggregateExpressionType.h>
 #include <aws/cleanrooms/model/AnalysisFormat.h>
 #include <aws/cleanrooms/model/AnalysisLogExport.h>
 #include <aws/cleanrooms/model/AnalysisLogExportError.h>
@@ -110,6 +113,7 @@
 #include <aws/cleanrooms/model/ColumnClassificationDetails.h>
 #include <aws/cleanrooms/model/ColumnLineageEntry.h>
 #include <aws/cleanrooms/model/CommercialRegion.h>
+#include <aws/cleanrooms/model/ComparisonControls.h>
 #include <aws/cleanrooms/model/ComputeConfiguration.h>
 #include <aws/cleanrooms/model/ConfigurationDetails.h>
 #include <aws/cleanrooms/model/ConfiguredAudienceModelAssociation.h>
@@ -402,6 +406,7 @@
 #include <aws/cleanrooms/model/MembershipSyntheticDataGenerationPaymentConfig.h>
 #include <aws/cleanrooms/model/ModelInferencePaymentConfig.h>
 #include <aws/cleanrooms/model/ModelTrainingPaymentConfig.h>
+#include <aws/cleanrooms/model/OutputColumnThreshold.h>
 #include <aws/cleanrooms/model/ParameterType.h>
 #include <aws/cleanrooms/model/PaymentConfiguration.h>
 #include <aws/cleanrooms/model/PopulateIdMappingTableRequest.h>

@@ -9096,6 +9096,42 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Starts a chat contact with an AI agent.</p> <p>Use the returned
+   * <code>ParticipantToken</code> to call the <a
+   * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
+   * API.</p> <p>For more information about chat, see the following topics in the
+   * <i>Connect Customer Administrator Guide</i>: </p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/web-and-mobile-chat.html">Concepts:
+   * Web and mobile messaging capabilities in Connect Customer</a> </p> </li> <li>
+   * <p> <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Connect
+   * Customer Chat security best practices</a> </p> </li> </ul><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartAssistantContact">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartAssistantContactOutcome StartAssistantContact(const Model::StartAssistantContactRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartAssistantContact that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartAssistantContactRequestT = Model::StartAssistantContactRequest>
+  Model::StartAssistantContactOutcomeCallable StartAssistantContactCallable(const StartAssistantContactRequestT& request) const {
+    return SubmitCallable(&ConnectClient::StartAssistantContact, request);
+  }
+
+  /**
+   * An Async wrapper for StartAssistantContact that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StartAssistantContactRequestT = Model::StartAssistantContactRequest>
+  void StartAssistantContactAsync(const StartAssistantContactRequestT& request, const StartAssistantContactResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::StartAssistantContact, request, handler, context);
+  }
+
+  /**
    * <p>Provides a pre-signed Amazon S3 URL in response for uploading your
    * content.</p>  <p>You may only use this API to upload attachments to a
    * <a

@@ -49,6 +49,18 @@ AnalysisRuleCustom& AnalysisRuleCustom::operator=(JsonView jsonValue) {
     m_differentialPrivacy = jsonValue.GetObject("differentialPrivacy");
     m_differentialPrivacyHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("aggregationThresholds")) {
+    Aws::Utils::Array<JsonView> aggregationThresholdsJsonList = jsonValue.GetArray("aggregationThresholds");
+    for (unsigned aggregationThresholdsIndex = 0; aggregationThresholdsIndex < aggregationThresholdsJsonList.GetLength();
+         ++aggregationThresholdsIndex) {
+      m_aggregationThresholds.push_back(aggregationThresholdsJsonList[aggregationThresholdsIndex].AsObject());
+    }
+    m_aggregationThresholdsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("comparisonControls")) {
+    m_comparisonControls = jsonValue.GetObject("comparisonControls");
+    m_comparisonControlsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("allowedResultReceivers")) {
     Aws::Utils::Array<JsonView> allowedResultReceiversJsonList = jsonValue.GetArray("allowedResultReceivers");
     for (unsigned allowedResultReceiversIndex = 0; allowedResultReceiversIndex < allowedResultReceiversJsonList.GetLength();
@@ -103,6 +115,19 @@ JsonValue AnalysisRuleCustom::Jsonize() const {
 
   if (m_differentialPrivacyHasBeenSet) {
     payload.WithObject("differentialPrivacy", m_differentialPrivacy.Jsonize());
+  }
+
+  if (m_aggregationThresholdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> aggregationThresholdsJsonList(m_aggregationThresholds.size());
+    for (unsigned aggregationThresholdsIndex = 0; aggregationThresholdsIndex < aggregationThresholdsJsonList.GetLength();
+         ++aggregationThresholdsIndex) {
+      aggregationThresholdsJsonList[aggregationThresholdsIndex].AsObject(m_aggregationThresholds[aggregationThresholdsIndex].Jsonize());
+    }
+    payload.WithArray("aggregationThresholds", std::move(aggregationThresholdsJsonList));
+  }
+
+  if (m_comparisonControlsHasBeenSet) {
+    payload.WithObject("comparisonControls", m_comparisonControls.Jsonize());
   }
 
   if (m_allowedResultReceiversHasBeenSet) {

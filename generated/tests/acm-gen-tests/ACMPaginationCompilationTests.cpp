@@ -13,6 +13,7 @@
 #include <aws/acm/model/ListAcmeExternalAccountBindingsPaginationTraits.h>
 #include <aws/acm/model/ListAcmeEndpointsPaginationTraits.h>
 #include <aws/acm/model/ListAcmeDomainValidationsPaginationTraits.h>
+#include <aws/acm/model/ListCertificateDomainValidationsPaginationTraits.h>
 #include <aws/acm/model/ListAcmeAccountsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
