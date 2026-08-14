@@ -351,6 +351,150 @@ class RequestRendererTest {
             .filter(p -> p.toString().endsWith(fileSuffix)).findFirst().orElseThrow()).orElseThrow();
     }
 
+    // --- @requestCompression ---
+
+    /**
+     * Model for a JSON operation carrying {@code @requestCompression(encodings: ["gzip"])} on
+     * either a plain input (streaming = false) or a raw {@code @httpPayload} blob body input
+     * (streaming = true).
+     */
+    private static Model requestCompressionModel(boolean streaming, java.util.List<String> encodings) {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        StructureShape.Builder input = StructureShape.builder().id("com.example#PutThingInput");
+        if (streaming) {
+            software.amazon.smithy.model.shapes.BlobShape blob =
+                software.amazon.smithy.model.shapes.BlobShape.builder().id("com.example#Body").build();
+            input.addMember(MemberShape.builder()
+                .id("com.example#PutThingInput$body").target(blob.getId())
+                .addTrait(new software.amazon.smithy.model.traits.HttpPayloadTrait()).build());
+            input.addMember(MemberShape.builder()
+                .id("com.example#PutThingInput$contentType").target(str.getId())
+                .addTrait(new software.amazon.smithy.model.traits.HttpHeaderTrait("Content-Type")).build());
+            Model.Builder mb = Model.builder().addShape(blob);
+            return finishCompressionModel(mb, str, input.build(), encodings);
+        }
+        input.addMember("name", str.getId());
+        return finishCompressionModel(Model.builder(), str, input.build(), encodings);
+    }
+
+    private static Model finishCompressionModel(Model.Builder mb, StringShape str,
+                                                StructureShape input, java.util.List<String> encodings) {
+        StructureShape output = StructureShape.builder().id("com.example#PutThingOutput")
+            .addMember("r", str.getId()).build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#PutThing").input(input.getId()).output(output.getId())
+            .addTrait(software.amazon.smithy.model.traits.RequestCompressionTrait.builder()
+                .encodings(encodings).build())
+            .build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#Example").version("2024-01-01").addOperation(op.getId()).build();
+        return mb.addShapes(str, input, output, op, service).build();
+    }
+
+    private static String renderCompressionRequest(boolean streaming, String fileSuffix) {
+        Model model = requestCompressionModel(streaming, java.util.List.of("gzip"));
+        ServiceShape service = model.expectShape(ShapeId.from("com.example#Example"), ServiceShape.class);
+        MockManifest manifest = new MockManifest();
+        CppWriterDelegator delegator = new CppWriterDelegator(manifest);
+        Protocol protocol = ProtocolResolver.resolve(service, model);
+        new RequestRenderer(
+            ShapeClassifier.classify(model, service, protocol).requests(),
+            new RenderContext(model, service, ProtocolResolver.traitsFor(protocol),
+                "Example", "AWS_EXAMPLE_API", "example")).render(delegator);
+        delegator.flushWriters();
+        return manifest.getFileString(manifest.getFiles().stream()
+            .filter(p -> p.toString().endsWith(fileSuffix)).findFirst().orElseThrow()).orElseThrow();
+    }
+
+    @Test
+    void requestCompressionGzip_headerDeclaresGuardedVirtualOverride() {
+        // C2J's RequestHeader.vm:148-156 emits GetSelectedCompressionAlgorithm as a virtual override
+        // gated by ENABLED_ZLIB_REQUEST_COMPRESSION. The types (CompressionAlgorithm,
+        // RequestCompressionConfig) come from the base AmazonWebServiceRequest.h transitively —
+        // NO extra include in the request header.
+        String h = renderCompressionRequest(false, "PutThingRequest.h");
+        assertTrue(h.contains("#ifdef ENABLED_ZLIB_REQUEST_COMPRESSION"),
+            "Missing ENABLED_ZLIB_REQUEST_COMPRESSION guard: " + h);
+        assertTrue(h.contains(
+            "virtual Aws::Client::CompressionAlgorithm GetSelectedCompressionAlgorithm(Aws::Client::RequestCompressionConfig config) const override;"),
+            "Missing GetSelectedCompressionAlgorithm decl: " + h);
+        assertFalse(h.contains("#include <aws/core/client/RequestCompression"),
+            "Header must not include RequestCompression header (transitively provided): " + h);
+    }
+
+    @Test
+    void requestCompressionGzip_nonStreamingSourceUsesBodySizeCheck() {
+        // Non-streaming variant (ModelClassRequiredCompression.vm): DISABLE -> NONE, then read the
+        // already-serialized body via AmazonSerializableWebServiceRequest::GetBody(), compare its
+        // size to config.requestMinCompressionSizeBytes, and either NONE or GZIP. Matches cloudwatch
+        // PutMetricDataRequest.cpp exactly. Body only touches base state; NOT serde-blocked.
+        String c = renderCompressionRequest(false, "PutThingRequest.cpp");
+        assertTrue(c.contains("#ifdef ENABLED_ZLIB_REQUEST_COMPRESSION"), c);
+        assertTrue(c.contains(
+            "Aws::Client::CompressionAlgorithm PutThingRequest::GetSelectedCompressionAlgorithm(Aws::Client::RequestCompressionConfig config) const {"),
+            c);
+        assertTrue(c.contains("config.useRequestCompression == Aws::Client::UseRequestCompression::DISABLE"), c);
+        assertTrue(c.contains("const auto& body = AmazonSerializableWebServiceRequest::GetBody();"), c);
+        assertTrue(c.contains("bodySize < config.requestMinCompressionSizeBytes"), c);
+        assertTrue(c.contains("return Aws::Client::CompressionAlgorithm::NONE;"), c);
+        assertTrue(c.contains("return Aws::Client::CompressionAlgorithm::GZIP;"), c);
+    }
+
+    @Test
+    void requestCompressionGzip_streamingSourceCompressesWheneverEnabled() {
+        // Streaming variant (ModelClassRequiredCompressionStream.vm): the body isn't sized up front,
+        // so DISABLE -> NONE, else GZIP unconditionally. No body-size check.
+        String c = renderCompressionRequest(true, "PutThingRequest.cpp");
+        assertTrue(c.contains("#ifdef ENABLED_ZLIB_REQUEST_COMPRESSION"), c);
+        assertTrue(c.contains("PutThingRequest::GetSelectedCompressionAlgorithm"), c);
+        assertTrue(c.contains("return Aws::Client::CompressionAlgorithm::GZIP;"), c);
+        assertFalse(c.contains("requestMinCompressionSizeBytes"),
+            "Streaming variant must not do a body-size check: " + c);
+        assertFalse(c.contains("AmazonSerializableWebServiceRequest::GetBody"),
+            "Streaming variant must not query the body: " + c);
+    }
+
+    @Test
+    void requestCompression_nonGzipEncoding_throws() {
+        // C2J transformer:795-800 rejects non-gzip encodings; the plugin must match. Rendering
+        // aborts at request time (the renderer walks operations and encounters the trait).
+        Model model = requestCompressionModel(false, java.util.List.of("deflate"));
+        ServiceShape service = model.expectShape(ShapeId.from("com.example#Example"), ServiceShape.class);
+        MockManifest manifest = new MockManifest();
+        CppWriterDelegator delegator = new CppWriterDelegator(manifest);
+        Protocol protocol = ProtocolResolver.resolve(service, model);
+        RequestRenderer renderer = new RequestRenderer(
+            ShapeClassifier.classify(model, service, protocol).requests(),
+            new RenderContext(model, service, ProtocolResolver.traitsFor(protocol),
+                "Example", "AWS_EXAMPLE_API", "example"));
+        RuntimeException ex = org.junit.jupiter.api.Assertions.assertThrows(
+            RuntimeException.class, () -> renderer.render(delegator));
+        assertTrue(ex.getMessage().contains("gzip"), "Should mention gzip: " + ex.getMessage());
+    }
+
+    @Test
+    void requestWithoutCompressionTrait_emitsNothingCompressionRelated() {
+        // Regression guard: operations without @requestCompression must not gain the override or
+        // its #ifdef. Reuses the query-member model which has no compression trait.
+        Model model = queryMemberModel();
+        ServiceShape service = model.expectShape(ShapeId.from("com.example#Example"), ServiceShape.class);
+        MockManifest manifest = new MockManifest();
+        CppWriterDelegator delegator = new CppWriterDelegator(manifest);
+        Protocol protocol = ProtocolResolver.resolve(service, model);
+        new RequestRenderer(
+            ShapeClassifier.classify(model, service, protocol).requests(),
+            new RenderContext(model, service, ProtocolResolver.traitsFor(protocol),
+                "Example", "AWS_EXAMPLE_API", "example")).render(delegator);
+        delegator.flushWriters();
+        String h = manifest.getFileString(manifest.getFiles().stream()
+            .filter(p -> p.toString().endsWith("DoThingRequest.h")).findFirst().orElseThrow()).orElseThrow();
+        String c = manifest.getFileString(manifest.getFiles().stream()
+            .filter(p -> p.toString().endsWith("DoThingRequest.cpp")).findFirst().orElseThrow()).orElseThrow();
+        assertFalse(h.contains("GetSelectedCompressionAlgorithm"), h);
+        assertFalse(c.contains("GetSelectedCompressionAlgorithm"), c);
+        assertFalse(h.contains("ENABLED_ZLIB_REQUEST_COMPRESSION"), h);
+    }
+
     @Test
     void rawStreamingPayloadRequestRestJson_headerAndSourceAgreeOnRequestSpecificHeaders() {
         // Under a REST protocol (hasTargetHeader() == false), a raw-streaming-payload request whose

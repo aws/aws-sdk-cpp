@@ -22,6 +22,7 @@ import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.StructureShape;
 import software.amazon.smithy.model.traits.DocumentationTrait;
+import software.amazon.smithy.model.traits.RequestCompressionTrait;
 import software.amazon.smithy.rulesengine.traits.ContextParamTrait;
 import software.amazon.smithy.rulesengine.traits.StaticContextParamsTrait;
 
@@ -141,6 +142,10 @@ public final class RequestRenderer implements ShapeRenderer {
                     writer.write("$L std::shared_ptr<Aws::IOStream> GetBody() const override;", ctx.exportMacro());
                 }
                 ctx.protocolTraits().writeRequestMethodDecls(writer, ctx.exportMacro(), shape, operation, ctx.model());
+                // Request-feature methods driven by operation traits. Today: @requestCompression.
+                // @httpChecksum (aws.protocols) for s3 will render alongside here when s3 moves to
+                // the Smithy path (its own transform pipeline supplies the model; this seam stays).
+                renderRequestCompressionDecl(writer, operation);
 
                 if (streamingResponse) {
                     String handlerType = operation.getId().getName() + "Handler";
@@ -259,6 +264,7 @@ public final class RequestRenderer implements ShapeRenderer {
                 });
                 // Header/query method bodies (SerializePayload is gated off for streaming requests).
                 ctx.protocolTraits().writeRequestMethodImpls(writer, className, shape, operation, ctx.service(), ctx.model());
+                renderRequestCompressionImpl(writer, className, operation, true);
                 if (hasEndpointContextParams(operation, shape)) {
                     writer.write("");
                     renderEndpointContextParams(writer, className, operation, shape);
@@ -277,6 +283,7 @@ public final class RequestRenderer implements ShapeRenderer {
             writer.write("");
 
             ctx.protocolTraits().writeRequestMethodImpls(writer, className, shape, operation, ctx.service(), ctx.model());
+            renderRequestCompressionImpl(writer, className, operation, false);
 
             if (hasEndpointContextParams(operation, shape)) {
                 writer.write("");
@@ -358,6 +365,76 @@ public final class RequestRenderer implements ShapeRenderer {
             writer.write("return *this;");
         });
         writer.write("///@}");
+    }
+
+    /**
+     * Declares {@code GetSelectedCompressionAlgorithm} for an operation carrying
+     * {@code @requestCompression}. The method overrides a base {@code AmazonWebServiceRequest}
+     * virtual, so no extra include is needed. Only gzip is supported (validated), so the
+     * declaration is always guarded by {@code ENABLED_ZLIB_REQUEST_COMPRESSION}. Matches C2J's
+     * {@code RequestHeader.vm}.
+     */
+    private void renderRequestCompressionDecl(CppWriter writer, OperationShape operation) {
+        if (!operation.hasTrait(RequestCompressionTrait.class)) {
+            return;
+        }
+        validateGzipEncoding(operation);
+        writer.write("");
+        writer.write("#ifdef ENABLED_ZLIB_REQUEST_COMPRESSION");
+        writer.write("virtual Aws::Client::CompressionAlgorithm GetSelectedCompressionAlgorithm(Aws::Client::RequestCompressionConfig config) const override;");
+        writer.write("#endif");
+    }
+
+    /**
+     * Defines {@code GetSelectedCompressionAlgorithm}. Streaming requests can't size their body up
+     * front, so they compress whenever enabled; non-streaming requests skip compression below the
+     * configured minimum body size. Matches C2J's ModelClassRequiredCompression[Stream].vm. This
+     * body only reads the already-serialized body via the base {@code GetBody()}, so it is
+     * independent of the (currently stubbed) payload serde.
+     */
+    private void renderRequestCompressionImpl(CppWriter writer, String className,
+                                              OperationShape operation, boolean streaming) {
+        if (!operation.hasTrait(RequestCompressionTrait.class)) {
+            return;
+        }
+        writer.write("#ifdef ENABLED_ZLIB_REQUEST_COMPRESSION");
+        writer.openBlock("Aws::Client::CompressionAlgorithm $L::GetSelectedCompressionAlgorithm(Aws::Client::RequestCompressionConfig config) const {", "}",
+            className, () -> {
+            writer.openBlock("if (config.useRequestCompression == Aws::Client::UseRequestCompression::DISABLE) {", "}", () ->
+                writer.write("return Aws::Client::CompressionAlgorithm::NONE;"));
+            if (streaming) {
+                writer.openBlock("else {", "}", () ->
+                    writer.write("return Aws::Client::CompressionAlgorithm::GZIP;"));
+            } else {
+                writer.write("");
+                writer.write("const auto& body = AmazonSerializableWebServiceRequest::GetBody();");
+                writer.write("body->seekg(0, body->end);");
+                writer.write("size_t bodySize = body->tellg();");
+                writer.write("body->seekg(0, body->beg);");
+                writer.openBlock("if (bodySize < config.requestMinCompressionSizeBytes) {", "}", () ->
+                    writer.write("return Aws::Client::CompressionAlgorithm::NONE;"));
+                writer.openBlock("else {", "}", () ->
+                    writer.write("return Aws::Client::CompressionAlgorithm::GZIP;"));
+            }
+        });
+        writer.write("#endif");
+    }
+
+    /**
+     * Enforces the C2J contract that {@code @requestCompression} declares exactly the gzip encoding
+     * (the only algorithm the SDK supports). Fails fast on an empty or unsupported encoding list,
+     * mirroring the legacy C2J transformer.
+     */
+    private static void validateGzipEncoding(OperationShape operation) {
+        List<String> encodings = operation.expectTrait(RequestCompressionTrait.class).getEncodings();
+        if (encodings.isEmpty()) {
+            throw new RuntimeException("@requestCompression on " + operation.getId()
+                + " must declare at least one encoding.");
+        }
+        if (encodings.size() != 1 || !"gzip".equals(encodings.get(0))) {
+            throw new RuntimeException("@requestCompression only supports the gzip algorithm, but "
+                + operation.getId() + " declares: " + encodings);
+        }
     }
 
     private boolean hasEndpointContextParams(OperationShape operation, StructureShape shape) {
