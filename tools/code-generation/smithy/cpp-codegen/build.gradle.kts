@@ -6,6 +6,7 @@ import org.gradle.api.logging.Logging
 import kotlin.streams.toList
 
 val logger = Logging.getLogger("MyLogger")
+val smithyVersion = "1.73.0"
 
 plugins {
     id("java-library")
@@ -18,22 +19,24 @@ repositories {
 }
 
 buildscript {
+    // buildscript is evaluated before script-body vals, so it keeps its own copy in sync
+    val smithyVersion = "1.73.0"
     dependencies {
-        classpath("software.amazon.smithy:smithy-model:1.70.0")
-        classpath("software.amazon.smithy:smithy-aws-traits:1.70.0")
-        classpath("software.amazon.smithy:smithy-rules-engine:1.70.0")
+        classpath("software.amazon.smithy:smithy-model:$smithyVersion")
+        classpath("software.amazon.smithy:smithy-aws-traits:$smithyVersion")
+        classpath("software.amazon.smithy:smithy-rules-engine:$smithyVersion")
     }
 }
 
 dependencies {
     implementation(project(":smithy-cpp-codegen"))
-    implementation("software.amazon.smithy:smithy-aws-traits:1.70.0")
-    implementation("software.amazon.smithy:smithy-aws-cloudformation-traits:1.70.0")
-    implementation("software.amazon.smithy:smithy-aws-iam-traits:1.70.0")
-    implementation("software.amazon.smithy:smithy-aws-endpoints:1.70.0")
-    implementation("software.amazon.smithy:smithy-smoke-test-traits:1.70.0")
-    implementation("software.amazon.smithy:smithy-aws-smoke-test-model:1.70.0")
-    implementation("software.amazon.smithy:smithy-waiters:1.70.0")
+    implementation("software.amazon.smithy:smithy-aws-traits:$smithyVersion")
+    implementation("software.amazon.smithy:smithy-aws-cloudformation-traits:$smithyVersion")
+    implementation("software.amazon.smithy:smithy-aws-iam-traits:$smithyVersion")
+    implementation("software.amazon.smithy:smithy-aws-endpoints:$smithyVersion")
+    implementation("software.amazon.smithy:smithy-smoke-test-traits:$smithyVersion")
+    implementation("software.amazon.smithy:smithy-aws-smoke-test-model:$smithyVersion")
+    implementation("software.amazon.smithy:smithy-waiters:$smithyVersion")
 }
 
 tasks.register("generate-smithy-build") {
