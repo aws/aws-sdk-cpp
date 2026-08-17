@@ -10,7 +10,7 @@
 namespace Aws {
 namespace BedrockAgentRuntime {
 namespace Model {
-enum class AgenticRetrieveType { NOT_SET, BedrockKnowledgeBase };
+enum class AgenticRetrieveType { NOT_SET, BedrockKnowledgeBase, BedrockAgentCoreMemory };
 
 namespace AgenticRetrieveTypeMapper {
 AWS_BEDROCKAGENTRUNTIME_API AgenticRetrieveType GetAgenticRetrieveTypeForName(const Aws::String& name);

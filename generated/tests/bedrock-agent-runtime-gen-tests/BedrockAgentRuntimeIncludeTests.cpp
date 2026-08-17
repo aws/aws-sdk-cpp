@@ -39,6 +39,16 @@
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveFullDocExpansionDetails.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveGeneratedResponse.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveGuardrailWarning.h>
+#include <aws/bedrock-agent-runtime/model/AgenticRetrieveMemoryConfiguration.h>
+#include <aws/bedrock-agent-runtime/model/AgenticRetrieveMemoryMetadataFilter.h>
+#include <aws/bedrock-agent-runtime/model/AgenticRetrieveMemoryMetadataFilterLeft.h>
+#include <aws/bedrock-agent-runtime/model/AgenticRetrieveMemoryMetadataFilterOperator.h>
+#include <aws/bedrock-agent-runtime/model/AgenticRetrieveMemoryMetadataFilterRight.h>
+#include <aws/bedrock-agent-runtime/model/AgenticRetrieveMemoryMetadataValue.h>
+#include <aws/bedrock-agent-runtime/model/AgenticRetrieveMemoryPersistenceMode.h>
+#include <aws/bedrock-agent-runtime/model/AgenticRetrieveMemoryRetrievalConfig.h>
+#include <aws/bedrock-agent-runtime/model/AgenticRetrieveMemoryRetrieveDetails.h>
+#include <aws/bedrock-agent-runtime/model/AgenticRetrieveMemorySessionBinding.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveMessage.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveMessageContent.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrievePolicyConfiguration.h>

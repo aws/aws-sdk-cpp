@@ -22,6 +22,10 @@ AgenticRetrieveAction& AgenticRetrieveAction::operator=(JsonView jsonValue) {
     m_fullDocumentExpansion = jsonValue.GetObject("fullDocumentExpansion");
     m_fullDocumentExpansionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("memoryRetrieve")) {
+    m_memoryRetrieve = jsonValue.GetObject("memoryRetrieve");
+    m_memoryRetrieveHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("retrieve")) {
     m_retrieve = jsonValue.GetObject("retrieve");
     m_retrieveHasBeenSet = true;
@@ -34,6 +38,10 @@ JsonValue AgenticRetrieveAction::Jsonize() const {
 
   if (m_fullDocumentExpansionHasBeenSet) {
     payload.WithObject("fullDocumentExpansion", m_fullDocumentExpansion.Jsonize());
+  }
+
+  if (m_memoryRetrieveHasBeenSet) {
+    payload.WithObject("memoryRetrieve", m_memoryRetrieve.Jsonize());
   }
 
   if (m_retrieveHasBeenSet) {

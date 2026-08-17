@@ -8,6 +8,7 @@
 #include <aws/bedrock-agentcore-control/model/EvaluatorLevel.h>
 #include <aws/bedrock-agentcore-control/model/EvaluatorStatus.h>
 #include <aws/bedrock-agentcore-control/model/EvaluatorType.h>
+#include <aws/bedrock-agentcore-control/model/Provider.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -121,6 +122,23 @@ class EvaluatorSummary {
   }
   inline EvaluatorSummary& WithEvaluatorType(EvaluatorType value) {
     SetEvaluatorType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The source of the evaluator's logic: Amazon Web Services, a third-party
+   * library, or you. </p>
+   */
+  inline Provider GetProvider() const { return m_provider; }
+  inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
+  inline void SetProvider(Provider value) {
+    m_providerHasBeenSet = true;
+    m_provider = value;
+  }
+  inline EvaluatorSummary& WithProvider(Provider value) {
+    SetProvider(value);
     return *this;
   }
   ///@}
@@ -241,6 +259,8 @@ class EvaluatorSummary {
 
   EvaluatorType m_evaluatorType{EvaluatorType::NOT_SET};
 
+  Provider m_provider{Provider::NOT_SET};
+
   EvaluatorLevel m_level{EvaluatorLevel::NOT_SET};
 
   EvaluatorStatus m_status{EvaluatorStatus::NOT_SET};
@@ -257,6 +277,7 @@ class EvaluatorSummary {
   bool m_evaluatorNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_evaluatorTypeHasBeenSet = false;
+  bool m_providerHasBeenSet = false;
   bool m_levelHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;

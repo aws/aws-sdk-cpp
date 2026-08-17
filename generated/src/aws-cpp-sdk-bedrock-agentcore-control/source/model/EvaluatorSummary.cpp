@@ -38,6 +38,10 @@ EvaluatorSummary& EvaluatorSummary::operator=(JsonView jsonValue) {
     m_evaluatorType = EvaluatorTypeMapper::GetEvaluatorTypeForName(jsonValue.GetString("evaluatorType"));
     m_evaluatorTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("provider")) {
+    m_provider = ProviderMapper::GetProviderForName(jsonValue.GetString("provider"));
+    m_providerHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("level")) {
     m_level = EvaluatorLevelMapper::GetEvaluatorLevelForName(jsonValue.GetString("level"));
     m_levelHasBeenSet = true;
@@ -86,6 +90,10 @@ JsonValue EvaluatorSummary::Jsonize() const {
 
   if (m_evaluatorTypeHasBeenSet) {
     payload.WithString("evaluatorType", EvaluatorTypeMapper::GetNameForEvaluatorType(m_evaluatorType));
+  }
+
+  if (m_providerHasBeenSet) {
+    payload.WithString("provider", ProviderMapper::GetNameForProvider(m_provider));
   }
 
   if (m_levelHasBeenSet) {

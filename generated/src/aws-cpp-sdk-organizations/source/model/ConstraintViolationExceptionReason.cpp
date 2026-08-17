@@ -74,6 +74,10 @@ static const int TRANSFER_RESPONSIBILITY_TARGET_DELETION_IN_PROGRESS_HASH =
 static const int TRANSFER_RESPONSIBILITY_SOURCE_DELETION_IN_PROGRESS_HASH =
     HashingUtils::HashString("TRANSFER_RESPONSIBILITY_SOURCE_DELETION_IN_PROGRESS");
 static const int UNSUPPORTED_PRICING_HASH = HashingUtils::HashString("UNSUPPORTED_PRICING");
+static const int UNMET_BILLING_PREREQUISITE_HASH = HashingUtils::HashString("UNMET_BILLING_PREREQUISITE");
+static const int ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY_HASH =
+    HashingUtils::HashString("ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY");
+static const int TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED_HASH = HashingUtils::HashString("TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED");
 
 ConstraintViolationExceptionReason GetConstraintViolationExceptionReasonForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -167,6 +171,12 @@ ConstraintViolationExceptionReason GetConstraintViolationExceptionReasonForName(
     return ConstraintViolationExceptionReason::TRANSFER_RESPONSIBILITY_SOURCE_DELETION_IN_PROGRESS;
   } else if (hashCode == UNSUPPORTED_PRICING_HASH) {
     return ConstraintViolationExceptionReason::UNSUPPORTED_PRICING;
+  } else if (hashCode == UNMET_BILLING_PREREQUISITE_HASH) {
+    return ConstraintViolationExceptionReason::UNMET_BILLING_PREREQUISITE;
+  } else if (hashCode == ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY_HASH) {
+    return ConstraintViolationExceptionReason::ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY;
+  } else if (hashCode == TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED_HASH) {
+    return ConstraintViolationExceptionReason::TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -271,6 +281,12 @@ Aws::String GetNameForConstraintViolationExceptionReason(ConstraintViolationExce
       return "TRANSFER_RESPONSIBILITY_SOURCE_DELETION_IN_PROGRESS";
     case ConstraintViolationExceptionReason::UNSUPPORTED_PRICING:
       return "UNSUPPORTED_PRICING";
+    case ConstraintViolationExceptionReason::UNMET_BILLING_PREREQUISITE:
+      return "UNMET_BILLING_PREREQUISITE";
+    case ConstraintViolationExceptionReason::ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY:
+      return "ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY";
+    case ConstraintViolationExceptionReason::TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED:
+      return "TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

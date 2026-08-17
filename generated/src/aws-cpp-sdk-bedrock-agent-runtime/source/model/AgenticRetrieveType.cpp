@@ -16,11 +16,14 @@ namespace Model {
 namespace AgenticRetrieveTypeMapper {
 
 static const int BedrockKnowledgeBase_HASH = HashingUtils::HashString("BedrockKnowledgeBase");
+static const int BedrockAgentCoreMemory_HASH = HashingUtils::HashString("BedrockAgentCoreMemory");
 
 AgenticRetrieveType GetAgenticRetrieveTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == BedrockKnowledgeBase_HASH) {
     return AgenticRetrieveType::BedrockKnowledgeBase;
+  } else if (hashCode == BedrockAgentCoreMemory_HASH) {
+    return AgenticRetrieveType::BedrockAgentCoreMemory;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForAgenticRetrieveType(AgenticRetrieveType enumValue) {
       return {};
     case AgenticRetrieveType::BedrockKnowledgeBase:
       return "BedrockKnowledgeBase";
+    case AgenticRetrieveType::BedrockAgentCoreMemory:
+      return "BedrockAgentCoreMemory";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

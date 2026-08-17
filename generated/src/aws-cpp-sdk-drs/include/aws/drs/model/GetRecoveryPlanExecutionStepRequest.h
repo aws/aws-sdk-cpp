@@ -1,0 +1,55 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/drs/DrsRequest.h>
+#include <aws/drs/Drs_EXPORTS.h>
+
+#include <utility>
+
+namespace Aws {
+namespace drs {
+namespace Model {
+
+/**
+ */
+class GetRecoveryPlanExecutionStepRequest : public DrsRequest {
+ public:
+  AWS_DRS_API GetRecoveryPlanExecutionStepRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "GetRecoveryPlanExecutionStep"; }
+
+  AWS_DRS_API Aws::String SerializePayload() const override;
+
+  ///@{
+  /**
+   * <p>The ARN of the execution step.</p>
+   */
+  inline const Aws::String& GetRecoveryPlanExecutionStepArn() const { return m_recoveryPlanExecutionStepArn; }
+  inline bool RecoveryPlanExecutionStepArnHasBeenSet() const { return m_recoveryPlanExecutionStepArnHasBeenSet; }
+  template <typename RecoveryPlanExecutionStepArnT = Aws::String>
+  void SetRecoveryPlanExecutionStepArn(RecoveryPlanExecutionStepArnT&& value) {
+    m_recoveryPlanExecutionStepArnHasBeenSet = true;
+    m_recoveryPlanExecutionStepArn = std::forward<RecoveryPlanExecutionStepArnT>(value);
+  }
+  template <typename RecoveryPlanExecutionStepArnT = Aws::String>
+  GetRecoveryPlanExecutionStepRequest& WithRecoveryPlanExecutionStepArn(RecoveryPlanExecutionStepArnT&& value) {
+    SetRecoveryPlanExecutionStepArn(std::forward<RecoveryPlanExecutionStepArnT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_recoveryPlanExecutionStepArn;
+  bool m_recoveryPlanExecutionStepArnHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace drs
+}  // namespace Aws

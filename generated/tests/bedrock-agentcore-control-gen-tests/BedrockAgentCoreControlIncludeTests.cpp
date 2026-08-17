@@ -243,6 +243,7 @@
 #include <aws/bedrock-agentcore-control/model/DeleteResourcePolicyResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteWorkloadIdentityRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteWorkloadIdentityResult.h>
+#include <aws/bedrock-agentcore-control/model/DerivedEvaluatorConfig.h>
 #include <aws/bedrock-agentcore-control/model/DescriptorType.h>
 #include <aws/bedrock-agentcore-control/model/Descriptors.h>
 #include <aws/bedrock-agentcore-control/model/DraftStatus.h>
@@ -631,6 +632,7 @@
 #include <aws/bedrock-agentcore-control/model/PrivateKeyJwtConfig.h>
 #include <aws/bedrock-agentcore-control/model/PrivateKeySource.h>
 #include <aws/bedrock-agentcore-control/model/ProtocolConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/Provider.h>
 #include <aws/bedrock-agentcore-control/model/ProviderPrefix.h>
 #include <aws/bedrock-agentcore-control/model/PutResourcePolicyRequest.h>
 #include <aws/bedrock-agentcore-control/model/PutResourcePolicyResult.h>

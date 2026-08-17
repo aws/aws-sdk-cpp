@@ -29,6 +29,8 @@
 #include <aws/geo-maps/model/LabelSize.h>
 #include <aws/geo-maps/model/MapFeatureMode.h>
 #include <aws/geo-maps/model/MapStyle.h>
+#include <aws/geo-maps/model/PoiCategory.h>
+#include <aws/geo-maps/model/PoiDensity.h>
 #include <aws/geo-maps/model/ScaleBarUnit.h>
 #include <aws/geo-maps/model/StaticMapStyle.h>
 #include <aws/geo-maps/model/Terrain.h>

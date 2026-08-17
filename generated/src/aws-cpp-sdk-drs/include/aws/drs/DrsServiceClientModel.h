@@ -21,14 +21,20 @@
 /* Service model headers required in DrsClient header */
 #include <aws/core/NoResult.h>
 #include <aws/drs/model/AssociateSourceNetworkStackResult.h>
+#include <aws/drs/model/CancelRecoveryPlanExecutionResult.h>
 #include <aws/drs/model/CreateExtendedSourceServerResult.h>
 #include <aws/drs/model/CreateLaunchConfigurationTemplateRequest.h>
 #include <aws/drs/model/CreateLaunchConfigurationTemplateResult.h>
+#include <aws/drs/model/CreateRecoveryPlanResult.h>
+#include <aws/drs/model/CreateRecoveryPlanStepResult.h>
 #include <aws/drs/model/CreateReplicationConfigurationTemplateResult.h>
 #include <aws/drs/model/CreateSourceNetworkResult.h>
 #include <aws/drs/model/DeleteJobResult.h>
 #include <aws/drs/model/DeleteLaunchActionResult.h>
 #include <aws/drs/model/DeleteLaunchConfigurationTemplateResult.h>
+#include <aws/drs/model/DeleteRecoveryPlanExecutionResult.h>
+#include <aws/drs/model/DeleteRecoveryPlanResult.h>
+#include <aws/drs/model/DeleteRecoveryPlanStepResult.h>
 #include <aws/drs/model/DeleteReplicationConfigurationTemplateResult.h>
 #include <aws/drs/model/DeleteSourceNetworkResult.h>
 #include <aws/drs/model/DeleteSourceServerResult.h>
@@ -50,17 +56,30 @@
 #include <aws/drs/model/ExportSourceNetworkCfnTemplateResult.h>
 #include <aws/drs/model/GetFailbackReplicationConfigurationResult.h>
 #include <aws/drs/model/GetLaunchConfigurationResult.h>
+#include <aws/drs/model/GetRecoveryPlanExecutionResult.h>
+#include <aws/drs/model/GetRecoveryPlanExecutionStepResult.h>
+#include <aws/drs/model/GetRecoveryPlanResult.h>
+#include <aws/drs/model/GetRecoveryPlanStepResult.h>
 #include <aws/drs/model/GetReplicationConfigurationResult.h>
 #include <aws/drs/model/InitializeServiceRequest.h>
 #include <aws/drs/model/InitializeServiceResult.h>
 #include <aws/drs/model/ListExtensibleSourceServersResult.h>
 #include <aws/drs/model/ListLaunchActionsResult.h>
+#include <aws/drs/model/ListRecoveryPlanExecutionStepsResult.h>
+#include <aws/drs/model/ListRecoveryPlanExecutionsRequest.h>
+#include <aws/drs/model/ListRecoveryPlanExecutionsResult.h>
+#include <aws/drs/model/ListRecoveryPlanStepsResult.h>
+#include <aws/drs/model/ListRecoveryPlansRequest.h>
+#include <aws/drs/model/ListRecoveryPlansResult.h>
 #include <aws/drs/model/ListStagingAccountsRequest.h>
 #include <aws/drs/model/ListStagingAccountsResult.h>
 #include <aws/drs/model/ListTagsForResourceResult.h>
 #include <aws/drs/model/PutLaunchActionResult.h>
+#include <aws/drs/model/ReorderRecoveryPlanStepsResult.h>
+#include <aws/drs/model/RetryRecoveryPlanExecutionStepResult.h>
 #include <aws/drs/model/ReverseReplicationResult.h>
 #include <aws/drs/model/StartFailbackLaunchResult.h>
+#include <aws/drs/model/StartRecoveryPlanExecutionResult.h>
 #include <aws/drs/model/StartRecoveryResult.h>
 #include <aws/drs/model/StartReplicationResult.h>
 #include <aws/drs/model/StartSourceNetworkRecoveryResult.h>
@@ -70,6 +89,9 @@
 #include <aws/drs/model/TerminateRecoveryInstancesResult.h>
 #include <aws/drs/model/UpdateLaunchConfigurationResult.h>
 #include <aws/drs/model/UpdateLaunchConfigurationTemplateResult.h>
+#include <aws/drs/model/UpdateRecoveryPlanExecutionStepResult.h>
+#include <aws/drs/model/UpdateRecoveryPlanResult.h>
+#include <aws/drs/model/UpdateRecoveryPlanStepResult.h>
 #include <aws/drs/model/UpdateReplicationConfigurationResult.h>
 #include <aws/drs/model/UpdateReplicationConfigurationTemplateResult.h>
 /* End of service model headers required in DrsClient header */
@@ -106,14 +128,20 @@ using DrsEndpointProvider = Aws::drs::Endpoint::DrsEndpointProvider;
 namespace Model {
 /* Service model forward declarations required in DrsClient header */
 class AssociateSourceNetworkStackRequest;
+class CancelRecoveryPlanExecutionRequest;
 class CreateExtendedSourceServerRequest;
 class CreateLaunchConfigurationTemplateRequest;
+class CreateRecoveryPlanRequest;
+class CreateRecoveryPlanStepRequest;
 class CreateReplicationConfigurationTemplateRequest;
 class CreateSourceNetworkRequest;
 class DeleteJobRequest;
 class DeleteLaunchActionRequest;
 class DeleteLaunchConfigurationTemplateRequest;
 class DeleteRecoveryInstanceRequest;
+class DeleteRecoveryPlanRequest;
+class DeleteRecoveryPlanExecutionRequest;
+class DeleteRecoveryPlanStepRequest;
 class DeleteReplicationConfigurationTemplateRequest;
 class DeleteSourceNetworkRequest;
 class DeleteSourceServerRequest;
@@ -130,16 +158,27 @@ class DisconnectSourceServerRequest;
 class ExportSourceNetworkCfnTemplateRequest;
 class GetFailbackReplicationConfigurationRequest;
 class GetLaunchConfigurationRequest;
+class GetRecoveryPlanRequest;
+class GetRecoveryPlanExecutionRequest;
+class GetRecoveryPlanExecutionStepRequest;
+class GetRecoveryPlanStepRequest;
 class GetReplicationConfigurationRequest;
 class InitializeServiceRequest;
 class ListExtensibleSourceServersRequest;
 class ListLaunchActionsRequest;
+class ListRecoveryPlanExecutionStepsRequest;
+class ListRecoveryPlanExecutionsRequest;
+class ListRecoveryPlanStepsRequest;
+class ListRecoveryPlansRequest;
 class ListStagingAccountsRequest;
 class ListTagsForResourceRequest;
 class PutLaunchActionRequest;
+class ReorderRecoveryPlanStepsRequest;
+class RetryRecoveryPlanExecutionStepRequest;
 class ReverseReplicationRequest;
 class StartFailbackLaunchRequest;
 class StartRecoveryRequest;
+class StartRecoveryPlanExecutionRequest;
 class StartReplicationRequest;
 class StartSourceNetworkRecoveryRequest;
 class StartSourceNetworkReplicationRequest;
@@ -152,20 +191,29 @@ class UntagResourceRequest;
 class UpdateFailbackReplicationConfigurationRequest;
 class UpdateLaunchConfigurationRequest;
 class UpdateLaunchConfigurationTemplateRequest;
+class UpdateRecoveryPlanRequest;
+class UpdateRecoveryPlanExecutionStepRequest;
+class UpdateRecoveryPlanStepRequest;
 class UpdateReplicationConfigurationRequest;
 class UpdateReplicationConfigurationTemplateRequest;
 /* End of service model forward declarations required in DrsClient header */
 
 /* Service model Outcome class definitions */
 typedef Aws::Utils::Outcome<AssociateSourceNetworkStackResult, DrsError> AssociateSourceNetworkStackOutcome;
+typedef Aws::Utils::Outcome<CancelRecoveryPlanExecutionResult, DrsError> CancelRecoveryPlanExecutionOutcome;
 typedef Aws::Utils::Outcome<CreateExtendedSourceServerResult, DrsError> CreateExtendedSourceServerOutcome;
 typedef Aws::Utils::Outcome<CreateLaunchConfigurationTemplateResult, DrsError> CreateLaunchConfigurationTemplateOutcome;
+typedef Aws::Utils::Outcome<CreateRecoveryPlanResult, DrsError> CreateRecoveryPlanOutcome;
+typedef Aws::Utils::Outcome<CreateRecoveryPlanStepResult, DrsError> CreateRecoveryPlanStepOutcome;
 typedef Aws::Utils::Outcome<CreateReplicationConfigurationTemplateResult, DrsError> CreateReplicationConfigurationTemplateOutcome;
 typedef Aws::Utils::Outcome<CreateSourceNetworkResult, DrsError> CreateSourceNetworkOutcome;
 typedef Aws::Utils::Outcome<DeleteJobResult, DrsError> DeleteJobOutcome;
 typedef Aws::Utils::Outcome<DeleteLaunchActionResult, DrsError> DeleteLaunchActionOutcome;
 typedef Aws::Utils::Outcome<DeleteLaunchConfigurationTemplateResult, DrsError> DeleteLaunchConfigurationTemplateOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, DrsError> DeleteRecoveryInstanceOutcome;
+typedef Aws::Utils::Outcome<DeleteRecoveryPlanResult, DrsError> DeleteRecoveryPlanOutcome;
+typedef Aws::Utils::Outcome<DeleteRecoveryPlanExecutionResult, DrsError> DeleteRecoveryPlanExecutionOutcome;
+typedef Aws::Utils::Outcome<DeleteRecoveryPlanStepResult, DrsError> DeleteRecoveryPlanStepOutcome;
 typedef Aws::Utils::Outcome<DeleteReplicationConfigurationTemplateResult, DrsError> DeleteReplicationConfigurationTemplateOutcome;
 typedef Aws::Utils::Outcome<DeleteSourceNetworkResult, DrsError> DeleteSourceNetworkOutcome;
 typedef Aws::Utils::Outcome<DeleteSourceServerResult, DrsError> DeleteSourceServerOutcome;
@@ -182,16 +230,27 @@ typedef Aws::Utils::Outcome<DisconnectSourceServerResult, DrsError> DisconnectSo
 typedef Aws::Utils::Outcome<ExportSourceNetworkCfnTemplateResult, DrsError> ExportSourceNetworkCfnTemplateOutcome;
 typedef Aws::Utils::Outcome<GetFailbackReplicationConfigurationResult, DrsError> GetFailbackReplicationConfigurationOutcome;
 typedef Aws::Utils::Outcome<GetLaunchConfigurationResult, DrsError> GetLaunchConfigurationOutcome;
+typedef Aws::Utils::Outcome<GetRecoveryPlanResult, DrsError> GetRecoveryPlanOutcome;
+typedef Aws::Utils::Outcome<GetRecoveryPlanExecutionResult, DrsError> GetRecoveryPlanExecutionOutcome;
+typedef Aws::Utils::Outcome<GetRecoveryPlanExecutionStepResult, DrsError> GetRecoveryPlanExecutionStepOutcome;
+typedef Aws::Utils::Outcome<GetRecoveryPlanStepResult, DrsError> GetRecoveryPlanStepOutcome;
 typedef Aws::Utils::Outcome<GetReplicationConfigurationResult, DrsError> GetReplicationConfigurationOutcome;
 typedef Aws::Utils::Outcome<InitializeServiceResult, DrsError> InitializeServiceOutcome;
 typedef Aws::Utils::Outcome<ListExtensibleSourceServersResult, DrsError> ListExtensibleSourceServersOutcome;
 typedef Aws::Utils::Outcome<ListLaunchActionsResult, DrsError> ListLaunchActionsOutcome;
+typedef Aws::Utils::Outcome<ListRecoveryPlanExecutionStepsResult, DrsError> ListRecoveryPlanExecutionStepsOutcome;
+typedef Aws::Utils::Outcome<ListRecoveryPlanExecutionsResult, DrsError> ListRecoveryPlanExecutionsOutcome;
+typedef Aws::Utils::Outcome<ListRecoveryPlanStepsResult, DrsError> ListRecoveryPlanStepsOutcome;
+typedef Aws::Utils::Outcome<ListRecoveryPlansResult, DrsError> ListRecoveryPlansOutcome;
 typedef Aws::Utils::Outcome<ListStagingAccountsResult, DrsError> ListStagingAccountsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, DrsError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<PutLaunchActionResult, DrsError> PutLaunchActionOutcome;
+typedef Aws::Utils::Outcome<ReorderRecoveryPlanStepsResult, DrsError> ReorderRecoveryPlanStepsOutcome;
+typedef Aws::Utils::Outcome<RetryRecoveryPlanExecutionStepResult, DrsError> RetryRecoveryPlanExecutionStepOutcome;
 typedef Aws::Utils::Outcome<ReverseReplicationResult, DrsError> ReverseReplicationOutcome;
 typedef Aws::Utils::Outcome<StartFailbackLaunchResult, DrsError> StartFailbackLaunchOutcome;
 typedef Aws::Utils::Outcome<StartRecoveryResult, DrsError> StartRecoveryOutcome;
+typedef Aws::Utils::Outcome<StartRecoveryPlanExecutionResult, DrsError> StartRecoveryPlanExecutionOutcome;
 typedef Aws::Utils::Outcome<StartReplicationResult, DrsError> StartReplicationOutcome;
 typedef Aws::Utils::Outcome<StartSourceNetworkRecoveryResult, DrsError> StartSourceNetworkRecoveryOutcome;
 typedef Aws::Utils::Outcome<StartSourceNetworkReplicationResult, DrsError> StartSourceNetworkReplicationOutcome;
@@ -204,20 +263,29 @@ typedef Aws::Utils::Outcome<Aws::NoResult, DrsError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, DrsError> UpdateFailbackReplicationConfigurationOutcome;
 typedef Aws::Utils::Outcome<UpdateLaunchConfigurationResult, DrsError> UpdateLaunchConfigurationOutcome;
 typedef Aws::Utils::Outcome<UpdateLaunchConfigurationTemplateResult, DrsError> UpdateLaunchConfigurationTemplateOutcome;
+typedef Aws::Utils::Outcome<UpdateRecoveryPlanResult, DrsError> UpdateRecoveryPlanOutcome;
+typedef Aws::Utils::Outcome<UpdateRecoveryPlanExecutionStepResult, DrsError> UpdateRecoveryPlanExecutionStepOutcome;
+typedef Aws::Utils::Outcome<UpdateRecoveryPlanStepResult, DrsError> UpdateRecoveryPlanStepOutcome;
 typedef Aws::Utils::Outcome<UpdateReplicationConfigurationResult, DrsError> UpdateReplicationConfigurationOutcome;
 typedef Aws::Utils::Outcome<UpdateReplicationConfigurationTemplateResult, DrsError> UpdateReplicationConfigurationTemplateOutcome;
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
 typedef std::future<AssociateSourceNetworkStackOutcome> AssociateSourceNetworkStackOutcomeCallable;
+typedef std::future<CancelRecoveryPlanExecutionOutcome> CancelRecoveryPlanExecutionOutcomeCallable;
 typedef std::future<CreateExtendedSourceServerOutcome> CreateExtendedSourceServerOutcomeCallable;
 typedef std::future<CreateLaunchConfigurationTemplateOutcome> CreateLaunchConfigurationTemplateOutcomeCallable;
+typedef std::future<CreateRecoveryPlanOutcome> CreateRecoveryPlanOutcomeCallable;
+typedef std::future<CreateRecoveryPlanStepOutcome> CreateRecoveryPlanStepOutcomeCallable;
 typedef std::future<CreateReplicationConfigurationTemplateOutcome> CreateReplicationConfigurationTemplateOutcomeCallable;
 typedef std::future<CreateSourceNetworkOutcome> CreateSourceNetworkOutcomeCallable;
 typedef std::future<DeleteJobOutcome> DeleteJobOutcomeCallable;
 typedef std::future<DeleteLaunchActionOutcome> DeleteLaunchActionOutcomeCallable;
 typedef std::future<DeleteLaunchConfigurationTemplateOutcome> DeleteLaunchConfigurationTemplateOutcomeCallable;
 typedef std::future<DeleteRecoveryInstanceOutcome> DeleteRecoveryInstanceOutcomeCallable;
+typedef std::future<DeleteRecoveryPlanOutcome> DeleteRecoveryPlanOutcomeCallable;
+typedef std::future<DeleteRecoveryPlanExecutionOutcome> DeleteRecoveryPlanExecutionOutcomeCallable;
+typedef std::future<DeleteRecoveryPlanStepOutcome> DeleteRecoveryPlanStepOutcomeCallable;
 typedef std::future<DeleteReplicationConfigurationTemplateOutcome> DeleteReplicationConfigurationTemplateOutcomeCallable;
 typedef std::future<DeleteSourceNetworkOutcome> DeleteSourceNetworkOutcomeCallable;
 typedef std::future<DeleteSourceServerOutcome> DeleteSourceServerOutcomeCallable;
@@ -234,16 +302,27 @@ typedef std::future<DisconnectSourceServerOutcome> DisconnectSourceServerOutcome
 typedef std::future<ExportSourceNetworkCfnTemplateOutcome> ExportSourceNetworkCfnTemplateOutcomeCallable;
 typedef std::future<GetFailbackReplicationConfigurationOutcome> GetFailbackReplicationConfigurationOutcomeCallable;
 typedef std::future<GetLaunchConfigurationOutcome> GetLaunchConfigurationOutcomeCallable;
+typedef std::future<GetRecoveryPlanOutcome> GetRecoveryPlanOutcomeCallable;
+typedef std::future<GetRecoveryPlanExecutionOutcome> GetRecoveryPlanExecutionOutcomeCallable;
+typedef std::future<GetRecoveryPlanExecutionStepOutcome> GetRecoveryPlanExecutionStepOutcomeCallable;
+typedef std::future<GetRecoveryPlanStepOutcome> GetRecoveryPlanStepOutcomeCallable;
 typedef std::future<GetReplicationConfigurationOutcome> GetReplicationConfigurationOutcomeCallable;
 typedef std::future<InitializeServiceOutcome> InitializeServiceOutcomeCallable;
 typedef std::future<ListExtensibleSourceServersOutcome> ListExtensibleSourceServersOutcomeCallable;
 typedef std::future<ListLaunchActionsOutcome> ListLaunchActionsOutcomeCallable;
+typedef std::future<ListRecoveryPlanExecutionStepsOutcome> ListRecoveryPlanExecutionStepsOutcomeCallable;
+typedef std::future<ListRecoveryPlanExecutionsOutcome> ListRecoveryPlanExecutionsOutcomeCallable;
+typedef std::future<ListRecoveryPlanStepsOutcome> ListRecoveryPlanStepsOutcomeCallable;
+typedef std::future<ListRecoveryPlansOutcome> ListRecoveryPlansOutcomeCallable;
 typedef std::future<ListStagingAccountsOutcome> ListStagingAccountsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<PutLaunchActionOutcome> PutLaunchActionOutcomeCallable;
+typedef std::future<ReorderRecoveryPlanStepsOutcome> ReorderRecoveryPlanStepsOutcomeCallable;
+typedef std::future<RetryRecoveryPlanExecutionStepOutcome> RetryRecoveryPlanExecutionStepOutcomeCallable;
 typedef std::future<ReverseReplicationOutcome> ReverseReplicationOutcomeCallable;
 typedef std::future<StartFailbackLaunchOutcome> StartFailbackLaunchOutcomeCallable;
 typedef std::future<StartRecoveryOutcome> StartRecoveryOutcomeCallable;
+typedef std::future<StartRecoveryPlanExecutionOutcome> StartRecoveryPlanExecutionOutcomeCallable;
 typedef std::future<StartReplicationOutcome> StartReplicationOutcomeCallable;
 typedef std::future<StartSourceNetworkRecoveryOutcome> StartSourceNetworkRecoveryOutcomeCallable;
 typedef std::future<StartSourceNetworkReplicationOutcome> StartSourceNetworkReplicationOutcomeCallable;
@@ -256,6 +335,9 @@ typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateFailbackReplicationConfigurationOutcome> UpdateFailbackReplicationConfigurationOutcomeCallable;
 typedef std::future<UpdateLaunchConfigurationOutcome> UpdateLaunchConfigurationOutcomeCallable;
 typedef std::future<UpdateLaunchConfigurationTemplateOutcome> UpdateLaunchConfigurationTemplateOutcomeCallable;
+typedef std::future<UpdateRecoveryPlanOutcome> UpdateRecoveryPlanOutcomeCallable;
+typedef std::future<UpdateRecoveryPlanExecutionStepOutcome> UpdateRecoveryPlanExecutionStepOutcomeCallable;
+typedef std::future<UpdateRecoveryPlanStepOutcome> UpdateRecoveryPlanStepOutcomeCallable;
 typedef std::future<UpdateReplicationConfigurationOutcome> UpdateReplicationConfigurationOutcomeCallable;
 typedef std::future<UpdateReplicationConfigurationTemplateOutcome> UpdateReplicationConfigurationTemplateOutcomeCallable;
 /* End of service model Outcome callable definitions */
@@ -267,6 +349,9 @@ class DrsClient;
 typedef std::function<void(const DrsClient*, const Model::AssociateSourceNetworkStackRequest&,
                            const Model::AssociateSourceNetworkStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AssociateSourceNetworkStackResponseReceivedHandler;
+typedef std::function<void(const DrsClient*, const Model::CancelRecoveryPlanExecutionRequest&,
+                           const Model::CancelRecoveryPlanExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CancelRecoveryPlanExecutionResponseReceivedHandler;
 typedef std::function<void(const DrsClient*, const Model::CreateExtendedSourceServerRequest&,
                            const Model::CreateExtendedSourceServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateExtendedSourceServerResponseReceivedHandler;
@@ -274,6 +359,12 @@ typedef std::function<void(const DrsClient*, const Model::CreateLaunchConfigurat
                            const Model::CreateLaunchConfigurationTemplateOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateLaunchConfigurationTemplateResponseReceivedHandler;
+typedef std::function<void(const DrsClient*, const Model::CreateRecoveryPlanRequest&, const Model::CreateRecoveryPlanOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateRecoveryPlanResponseReceivedHandler;
+typedef std::function<void(const DrsClient*, const Model::CreateRecoveryPlanStepRequest&, const Model::CreateRecoveryPlanStepOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateRecoveryPlanStepResponseReceivedHandler;
 typedef std::function<void(const DrsClient*, const Model::CreateReplicationConfigurationTemplateRequest&,
                            const Model::CreateReplicationConfigurationTemplateOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -294,6 +385,15 @@ typedef std::function<void(const DrsClient*, const Model::DeleteLaunchConfigurat
 typedef std::function<void(const DrsClient*, const Model::DeleteRecoveryInstanceRequest&, const Model::DeleteRecoveryInstanceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteRecoveryInstanceResponseReceivedHandler;
+typedef std::function<void(const DrsClient*, const Model::DeleteRecoveryPlanRequest&, const Model::DeleteRecoveryPlanOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteRecoveryPlanResponseReceivedHandler;
+typedef std::function<void(const DrsClient*, const Model::DeleteRecoveryPlanExecutionRequest&,
+                           const Model::DeleteRecoveryPlanExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteRecoveryPlanExecutionResponseReceivedHandler;
+typedef std::function<void(const DrsClient*, const Model::DeleteRecoveryPlanStepRequest&, const Model::DeleteRecoveryPlanStepOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteRecoveryPlanStepResponseReceivedHandler;
 typedef std::function<void(const DrsClient*, const Model::DeleteReplicationConfigurationTemplateRequest&,
                            const Model::DeleteReplicationConfigurationTemplateOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -347,6 +447,19 @@ typedef std::function<void(const DrsClient*, const Model::GetFailbackReplication
 typedef std::function<void(const DrsClient*, const Model::GetLaunchConfigurationRequest&, const Model::GetLaunchConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetLaunchConfigurationResponseReceivedHandler;
+typedef std::function<void(const DrsClient*, const Model::GetRecoveryPlanRequest&, const Model::GetRecoveryPlanOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetRecoveryPlanResponseReceivedHandler;
+typedef std::function<void(const DrsClient*, const Model::GetRecoveryPlanExecutionRequest&, const Model::GetRecoveryPlanExecutionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetRecoveryPlanExecutionResponseReceivedHandler;
+typedef std::function<void(const DrsClient*, const Model::GetRecoveryPlanExecutionStepRequest&,
+                           const Model::GetRecoveryPlanExecutionStepOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetRecoveryPlanExecutionStepResponseReceivedHandler;
+typedef std::function<void(const DrsClient*, const Model::GetRecoveryPlanStepRequest&, const Model::GetRecoveryPlanStepOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetRecoveryPlanStepResponseReceivedHandler;
 typedef std::function<void(const DrsClient*, const Model::GetReplicationConfigurationRequest&,
                            const Model::GetReplicationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetReplicationConfigurationResponseReceivedHandler;
@@ -359,6 +472,19 @@ typedef std::function<void(const DrsClient*, const Model::ListExtensibleSourceSe
 typedef std::function<void(const DrsClient*, const Model::ListLaunchActionsRequest&, const Model::ListLaunchActionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListLaunchActionsResponseReceivedHandler;
+typedef std::function<void(const DrsClient*, const Model::ListRecoveryPlanExecutionStepsRequest&,
+                           const Model::ListRecoveryPlanExecutionStepsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListRecoveryPlanExecutionStepsResponseReceivedHandler;
+typedef std::function<void(const DrsClient*, const Model::ListRecoveryPlanExecutionsRequest&,
+                           const Model::ListRecoveryPlanExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListRecoveryPlanExecutionsResponseReceivedHandler;
+typedef std::function<void(const DrsClient*, const Model::ListRecoveryPlanStepsRequest&, const Model::ListRecoveryPlanStepsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListRecoveryPlanStepsResponseReceivedHandler;
+typedef std::function<void(const DrsClient*, const Model::ListRecoveryPlansRequest&, const Model::ListRecoveryPlansOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListRecoveryPlansResponseReceivedHandler;
 typedef std::function<void(const DrsClient*, const Model::ListStagingAccountsRequest&, const Model::ListStagingAccountsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListStagingAccountsResponseReceivedHandler;
@@ -368,6 +494,13 @@ typedef std::function<void(const DrsClient*, const Model::ListTagsForResourceReq
 typedef std::function<void(const DrsClient*, const Model::PutLaunchActionRequest&, const Model::PutLaunchActionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutLaunchActionResponseReceivedHandler;
+typedef std::function<void(const DrsClient*, const Model::ReorderRecoveryPlanStepsRequest&, const Model::ReorderRecoveryPlanStepsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ReorderRecoveryPlanStepsResponseReceivedHandler;
+typedef std::function<void(const DrsClient*, const Model::RetryRecoveryPlanExecutionStepRequest&,
+                           const Model::RetryRecoveryPlanExecutionStepOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    RetryRecoveryPlanExecutionStepResponseReceivedHandler;
 typedef std::function<void(const DrsClient*, const Model::ReverseReplicationRequest&, const Model::ReverseReplicationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ReverseReplicationResponseReceivedHandler;
@@ -377,6 +510,9 @@ typedef std::function<void(const DrsClient*, const Model::StartFailbackLaunchReq
 typedef std::function<void(const DrsClient*, const Model::StartRecoveryRequest&, const Model::StartRecoveryOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartRecoveryResponseReceivedHandler;
+typedef std::function<void(const DrsClient*, const Model::StartRecoveryPlanExecutionRequest&,
+                           const Model::StartRecoveryPlanExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartRecoveryPlanExecutionResponseReceivedHandler;
 typedef std::function<void(const DrsClient*, const Model::StartReplicationRequest&, const Model::StartReplicationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartReplicationResponseReceivedHandler;
@@ -417,6 +553,16 @@ typedef std::function<void(const DrsClient*, const Model::UpdateLaunchConfigurat
                            const Model::UpdateLaunchConfigurationTemplateOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateLaunchConfigurationTemplateResponseReceivedHandler;
+typedef std::function<void(const DrsClient*, const Model::UpdateRecoveryPlanRequest&, const Model::UpdateRecoveryPlanOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateRecoveryPlanResponseReceivedHandler;
+typedef std::function<void(const DrsClient*, const Model::UpdateRecoveryPlanExecutionStepRequest&,
+                           const Model::UpdateRecoveryPlanExecutionStepOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateRecoveryPlanExecutionStepResponseReceivedHandler;
+typedef std::function<void(const DrsClient*, const Model::UpdateRecoveryPlanStepRequest&, const Model::UpdateRecoveryPlanStepOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateRecoveryPlanStepResponseReceivedHandler;
 typedef std::function<void(const DrsClient*, const Model::UpdateReplicationConfigurationRequest&,
                            const Model::UpdateReplicationConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

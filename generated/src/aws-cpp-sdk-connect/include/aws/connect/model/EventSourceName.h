@@ -16,6 +16,8 @@ enum class EventSourceName {
   OnRealTimeCallAnalysisAvailable,
   OnRealTimeChatAnalysisAvailable,
   OnPostChatAnalysisAvailable,
+  OnAfterCallWorkAvailable,
+  OnAfterChatWorkAvailable,
   OnEmailAnalysisAvailable,
   OnZendeskTicketCreate,
   OnZendeskTicketStatusUpdate,

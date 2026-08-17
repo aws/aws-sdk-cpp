@@ -31,6 +31,7 @@
 #include <aws/connect/model/ListEntitySecurityProfilesPaginationTraits.h>
 #include <aws/connect/model/ListEvaluationFormVersionsPaginationTraits.h>
 #include <aws/connect/model/ListEvaluationFormsPaginationTraits.h>
+#include <aws/connect/model/ListExtractionDefinitionsPaginationTraits.h>
 #include <aws/connect/model/ListFlowAssociationsPaginationTraits.h>
 #include <aws/connect/model/ListHoursOfOperationOverridesPaginationTraits.h>
 #include <aws/connect/model/ListHoursOfOperationsPaginationTraits.h>
@@ -165,6 +166,9 @@ using ListEvaluationFormsPaginator = Aws::Utils::Pagination::Paginator<ConnectCl
 using ListEvaluationFormVersionsPaginator =
     Aws::Utils::Pagination::Paginator<ConnectClient, Model::ListEvaluationFormVersionsRequest,
                                       Pagination::ListEvaluationFormVersionsPaginationTraits<ConnectClient>>;
+using ListExtractionDefinitionsPaginator =
+    Aws::Utils::Pagination::Paginator<ConnectClient, Model::ListExtractionDefinitionsRequest,
+                                      Pagination::ListExtractionDefinitionsPaginationTraits<ConnectClient>>;
 using ListFlowAssociationsPaginator = Aws::Utils::Pagination::Paginator<ConnectClient, Model::ListFlowAssociationsRequest,
                                                                         Pagination::ListFlowAssociationsPaginationTraits<ConnectClient>>;
 using ListHoursOfOperationOverridesPaginator =

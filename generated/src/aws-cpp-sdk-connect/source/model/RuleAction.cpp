@@ -58,6 +58,10 @@ RuleAction& RuleAction::operator=(JsonView jsonValue) {
     m_submitAutoEvaluationAction = jsonValue.GetObject("SubmitAutoEvaluationAction");
     m_submitAutoEvaluationActionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ExtractInformationAction")) {
+    m_extractInformationAction = jsonValue.GetObject("ExtractInformationAction");
+    m_extractInformationActionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -102,6 +106,10 @@ JsonValue RuleAction::Jsonize() const {
 
   if (m_submitAutoEvaluationActionHasBeenSet) {
     payload.WithObject("SubmitAutoEvaluationAction", m_submitAutoEvaluationAction.Jsonize());
+  }
+
+  if (m_extractInformationActionHasBeenSet) {
+    payload.WithObject("ExtractInformationAction", m_extractInformationAction.Jsonize());
   }
 
   return payload;

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace BedrockAgentRuntime {
 namespace Model {
-enum class AgenticRetrieveStep { NOT_SET, Planning, Retrieval, SpeculativeRetrieval, FullDocumentExpansion };
+enum class AgenticRetrieveStep { NOT_SET, Planning, Retrieval, SpeculativeRetrieval, FullDocumentExpansion, SessionHistoryLoad };
 
 namespace AgenticRetrieveStepMapper {
 AWS_BEDROCKAGENTRUNTIME_API AgenticRetrieveStep GetAgenticRetrieveStepForName(const Aws::String& name);

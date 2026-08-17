@@ -210,7 +210,7 @@ GetGlyphsOutcome GeoMapsClient::GetGlyphs(const GetGlyphsRequest& request) const
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetGlyphs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/glyphs/");
+        endpointResolutionOutcome.GetResult().AddPathSegments("/v2/glyphs/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFontStack());
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFontUnicodeRange());
         auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
@@ -262,7 +262,7 @@ GetSpritesOutcome GeoMapsClient::GetSprites(const GetSpritesRequest& request) co
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSprites, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/styles/");
+        endpointResolutionOutcome.GetResult().AddPathSegments("/v2/styles/");
         endpointResolutionOutcome.GetResult().AddPathSegment(MapStyleMapper::GetNameForMapStyle(request.GetStyle()));
         endpointResolutionOutcome.GetResult().AddPathSegment(ColorSchemeMapper::GetNameForColorScheme(request.GetColorScheme()));
         endpointResolutionOutcome.GetResult().AddPathSegment(VariantMapper::GetNameForVariant(request.GetVariant()));
@@ -312,7 +312,7 @@ GetStaticMapOutcome GeoMapsClient::GetStaticMap(const GetStaticMapRequest& reque
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetStaticMap, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/static/");
+        endpointResolutionOutcome.GetResult().AddPathSegments("/v2/static/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFileName());
         auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
         return result.IsSuccess() ? GetStaticMapOutcome(result.GetResultWithOwnership())
@@ -349,7 +349,7 @@ GetStyleDescriptorOutcome GeoMapsClient::GetStyleDescriptor(const GetStyleDescri
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetStyleDescriptor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/styles/");
+        endpointResolutionOutcome.GetResult().AddPathSegments("/v2/styles/");
         endpointResolutionOutcome.GetResult().AddPathSegment(MapStyleMapper::GetNameForMapStyle(request.GetStyle()));
         endpointResolutionOutcome.GetResult().AddPathSegments("/descriptor");
         auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
@@ -402,7 +402,7 @@ GetTileOutcome GeoMapsClient::GetTile(const GetTileRequest& request) const {
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetTile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/tiles/");
+        endpointResolutionOutcome.GetResult().AddPathSegments("/v2/tiles/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTileset());
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetZ());
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetX());

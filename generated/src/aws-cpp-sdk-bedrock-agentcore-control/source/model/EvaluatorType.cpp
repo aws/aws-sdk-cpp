@@ -16,17 +16,23 @@ namespace Model {
 namespace EvaluatorTypeMapper {
 
 static const int Builtin_HASH = HashingUtils::HashString("Builtin");
+static const int ThirdParty_HASH = HashingUtils::HashString("ThirdParty");
 static const int Custom_HASH = HashingUtils::HashString("Custom");
 static const int CustomCode_HASH = HashingUtils::HashString("CustomCode");
+static const int CustomDerived_HASH = HashingUtils::HashString("CustomDerived");
 
 EvaluatorType GetEvaluatorTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == Builtin_HASH) {
     return EvaluatorType::Builtin;
+  } else if (hashCode == ThirdParty_HASH) {
+    return EvaluatorType::ThirdParty;
   } else if (hashCode == Custom_HASH) {
     return EvaluatorType::Custom;
   } else if (hashCode == CustomCode_HASH) {
     return EvaluatorType::CustomCode;
+  } else if (hashCode == CustomDerived_HASH) {
+    return EvaluatorType::CustomDerived;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -43,10 +49,14 @@ Aws::String GetNameForEvaluatorType(EvaluatorType enumValue) {
       return {};
     case EvaluatorType::Builtin:
       return "Builtin";
+    case EvaluatorType::ThirdParty:
+      return "ThirdParty";
     case EvaluatorType::Custom:
       return "Custom";
     case EvaluatorType::CustomCode:
       return "CustomCode";
+    case EvaluatorType::CustomDerived:
+      return "CustomDerived";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

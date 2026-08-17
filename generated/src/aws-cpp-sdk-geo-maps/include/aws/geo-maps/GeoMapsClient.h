@@ -19,14 +19,18 @@ namespace GeoMaps {
  * <p> Integrate high-quality base map data into your applications using <a
  * href="https://maplibre.org">MapLibre</a>. Capabilities include: </p> <ul> <li>
  * <p>Access to comprehensive base map data, allowing you to tailor the map display
- * to your specific needs.</p> </li> <li> <p>Multiple pre-designed map styles
- * suited for various application types, such as navigation, logistics, or data
- * visualization.</p> </li> <li> <p>Generation of static map images for scenarios
- * where interactive maps aren't suitable, such as:</p> <ul> <li> <p>Embedding in
- * emails or documents</p> </li> <li> <p>Displaying in low-bandwidth
- * environments</p> </li> <li> <p>Creating printable maps</p> </li> <li>
- * <p>Enhancing application performance by reducing client-side rendering</p> </li>
- * </ul> </li> </ul>
+ * to your specific needs. See <a
+ * href="https://docs.aws.amazon.com/location/latest/APIReference/API_geomaps_GetTile.html">GetTile</a>.</p>
+ * </li> <li> <p>Multiple pre-designed map styles suited for various application
+ * types, such as navigation, logistics, or data visualization. See <a
+ * href="https://docs.aws.amazon.com/location/latest/APIReference/API_geomaps_GetStyleDescriptor.html">GetStyleDescriptor</a>.</p>
+ * </li> <li> <p>Generation of static map images for scenarios where interactive
+ * maps aren't suitable. See <a
+ * href="https://docs.aws.amazon.com/location/latest/APIReference/API_geomaps_GetStaticMap.html">GetStaticMap</a>.
+ * Use cases include:</p> <ul> <li> <p>Embedding in emails or documents</p> </li>
+ * <li> <p>Displaying in low-bandwidth environments</p> </li> <li> <p>Creating
+ * printable maps</p> </li> <li> <p>Enhancing application performance by reducing
+ * client-side rendering</p> </li> </ul> </li> </ul>
  */
 class AWS_GEOMAPS_API GeoMapsClient : public Aws::Client::AWSJsonClient,
                                       public Aws::Client::ClientWithAsyncTemplateMethods<GeoMapsClient>,
@@ -144,21 +148,20 @@ class AWS_GEOMAPS_API GeoMapsClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> <p>This operation is not supported in <code>ap-southeast-1</code> and
+   * <p> <code>GetStaticMap</code> provides high-quality static map images with
+   * customizable options. You can modify the map's appearance and overlay additional
+   * information. It's an ideal solution for applications requiring tailored static
+   * map snapshots. Not supported in <code>ap-southeast-1</code> and
    * <code>ap-southeast-5</code> regions for <a
    * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
-   * customers. </p>  <p> <code>GetStaticMap</code> provides high-quality
-   * static map images with customizable options. You can modify the map's appearance
-   * and overlay additional information. It's an ideal solution for applications
-   * requiring tailored static map snapshots.</p> <p>For more information, see the
-   * following topics in the <i>Amazon Location Service Developer Guide</i>:</p> <ul>
-   * <li> <p> <a
+   * customers.</p> <p>For more information, see the following topics in the
+   * <i>Amazon Location Service Developer Guide</i>:</p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/location/latest/developerguide/static-maps.html">Static
    * maps</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/location/latest/developerguide/customizing-static-maps.html">Customize
    * static maps</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/location/latest/developerguide/overlaying-static-map.html">Overlay
-   * on the static map</a> </p> </li> </ul></p><p><h3>See Also:</h3>   <a
+   * on the static map</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/geo-maps-2020-11-19/GetStaticMap">AWS
    * API Reference</a></p>
    */

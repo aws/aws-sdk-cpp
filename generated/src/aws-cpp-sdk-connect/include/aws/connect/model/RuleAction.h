@@ -11,6 +11,7 @@
 #include <aws/connect/model/CreateCaseActionDefinition.h>
 #include <aws/connect/model/EndAssociatedTasksActionDefinition.h>
 #include <aws/connect/model/EventBridgeActionDefinition.h>
+#include <aws/connect/model/ExtractInformationActionDefinition.h>
 #include <aws/connect/model/SendNotificationActionDefinition.h>
 #include <aws/connect/model/SubmitAutoEvaluationActionDefinition.h>
 #include <aws/connect/model/TaskActionDefinition.h>
@@ -242,6 +243,24 @@ class RuleAction {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Information about the extract information action.</p>
+   */
+  inline const ExtractInformationActionDefinition& GetExtractInformationAction() const { return m_extractInformationAction; }
+  inline bool ExtractInformationActionHasBeenSet() const { return m_extractInformationActionHasBeenSet; }
+  template <typename ExtractInformationActionT = ExtractInformationActionDefinition>
+  void SetExtractInformationAction(ExtractInformationActionT&& value) {
+    m_extractInformationActionHasBeenSet = true;
+    m_extractInformationAction = std::forward<ExtractInformationActionT>(value);
+  }
+  template <typename ExtractInformationActionT = ExtractInformationActionDefinition>
+  RuleAction& WithExtractInformationAction(ExtractInformationActionT&& value) {
+    SetExtractInformationAction(std::forward<ExtractInformationActionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ActionType m_actionType{ActionType::NOT_SET};
 
@@ -262,6 +281,8 @@ class RuleAction {
   EndAssociatedTasksActionDefinition m_endAssociatedTasksAction;
 
   SubmitAutoEvaluationActionDefinition m_submitAutoEvaluationAction;
+
+  ExtractInformationActionDefinition m_extractInformationAction;
   bool m_actionTypeHasBeenSet = false;
   bool m_taskActionHasBeenSet = false;
   bool m_eventBridgeActionHasBeenSet = false;
@@ -272,6 +293,7 @@ class RuleAction {
   bool m_assignSlaActionHasBeenSet = false;
   bool m_endAssociatedTasksActionHasBeenSet = false;
   bool m_submitAutoEvaluationActionHasBeenSet = false;
+  bool m_extractInformationActionHasBeenSet = false;
 };
 
 }  // namespace Model
