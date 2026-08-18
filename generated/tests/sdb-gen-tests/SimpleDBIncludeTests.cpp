@@ -10,8 +10,10 @@
 #include <aws/sdb/SimpleDBEndpointProvider.h>
 #include <aws/sdb/SimpleDBErrorMarshaller.h>
 #include <aws/sdb/SimpleDBErrors.h>
+#include <aws/sdb/SimpleDBPaginationBase.h>
 #include <aws/sdb/SimpleDBRequest.h>
 #include <aws/sdb/SimpleDBServiceClientModel.h>
+#include <aws/sdb/SimpleDBWaiter.h>
 #include <aws/sdb/SimpleDB_EXPORTS.h>
 #include <aws/sdb/internal/SimpleDBEndpointRules.h>
 #include <aws/sdb/model/Attribute.h>

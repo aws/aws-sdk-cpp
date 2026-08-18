@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/codeguru-security/CodeGuruSecurityClient.h>
+#include <aws/codeguru-security/CodeGuruSecurityClientPagination.h>
 #include <aws/codeguru-security/CodeGuruSecurityEndpointProvider.h>
 #include <aws/codeguru-security/CodeGuruSecurityErrorMarshaller.h>
 #include <aws/codeguru-security/CodeGuruSecurityErrors.h>
+#include <aws/codeguru-security/CodeGuruSecurityPaginationBase.h>
 #include <aws/codeguru-security/CodeGuruSecurityRequest.h>
 #include <aws/codeguru-security/CodeGuruSecurityServiceClientModel.h>
+#include <aws/codeguru-security/CodeGuruSecurityWaiter.h>
 #include <aws/codeguru-security/CodeGuruSecurity_EXPORTS.h>
+#include <aws/codeguru-security/internal/CodeGuruSecurityEndpointRules.h>
 #include <aws/codeguru-security/model/AccessDeniedException.h>
 #include <aws/codeguru-security/model/AccountFindingsMetric.h>
 #include <aws/codeguru-security/model/AnalysisType.h>
@@ -34,6 +38,7 @@
 #include <aws/codeguru-security/model/FindingMetricsValuePerSeverity.h>
 #include <aws/codeguru-security/model/GetAccountConfigurationRequest.h>
 #include <aws/codeguru-security/model/GetAccountConfigurationResult.h>
+#include <aws/codeguru-security/model/GetFindingsPaginationTraits.h>
 #include <aws/codeguru-security/model/GetFindingsRequest.h>
 #include <aws/codeguru-security/model/GetFindingsResult.h>
 #include <aws/codeguru-security/model/GetMetricsSummaryRequest.h>
@@ -41,8 +46,10 @@
 #include <aws/codeguru-security/model/GetScanRequest.h>
 #include <aws/codeguru-security/model/GetScanResult.h>
 #include <aws/codeguru-security/model/InternalServerException.h>
+#include <aws/codeguru-security/model/ListFindingsMetricsPaginationTraits.h>
 #include <aws/codeguru-security/model/ListFindingsMetricsRequest.h>
 #include <aws/codeguru-security/model/ListFindingsMetricsResult.h>
+#include <aws/codeguru-security/model/ListScansPaginationTraits.h>
 #include <aws/codeguru-security/model/ListScansRequest.h>
 #include <aws/codeguru-security/model/ListScansResult.h>
 #include <aws/codeguru-security/model/ListTagsForResourceRequest.h>

@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/workspaces-instances/WorkspacesInstancesClient.h>
+#include <aws/workspaces-instances/WorkspacesInstancesClientPagination.h>
 #include <aws/workspaces-instances/WorkspacesInstancesEndpointProvider.h>
 #include <aws/workspaces-instances/WorkspacesInstancesErrorMarshaller.h>
 #include <aws/workspaces-instances/WorkspacesInstancesErrors.h>
+#include <aws/workspaces-instances/WorkspacesInstancesPaginationBase.h>
 #include <aws/workspaces-instances/WorkspacesInstancesRequest.h>
 #include <aws/workspaces-instances/WorkspacesInstancesServiceClientModel.h>
+#include <aws/workspaces-instances/WorkspacesInstancesWaiter.h>
 #include <aws/workspaces-instances/WorkspacesInstances_EXPORTS.h>
+#include <aws/workspaces-instances/internal/WorkspacesInstancesEndpointRules.h>
 #include <aws/workspaces-instances/model/AmdSevSnpEnum.h>
 #include <aws/workspaces-instances/model/AssociateVolumeRequest.h>
 #include <aws/workspaces-instances/model/AssociateVolumeResult.h>
@@ -70,12 +74,15 @@
 #include <aws/workspaces-instances/model/Ipv4PrefixSpecificationRequest.h>
 #include <aws/workspaces-instances/model/Ipv6PrefixSpecificationRequest.h>
 #include <aws/workspaces-instances/model/LicenseConfigurationRequest.h>
+#include <aws/workspaces-instances/model/ListInstanceTypesPaginationTraits.h>
 #include <aws/workspaces-instances/model/ListInstanceTypesRequest.h>
 #include <aws/workspaces-instances/model/ListInstanceTypesResult.h>
+#include <aws/workspaces-instances/model/ListRegionsPaginationTraits.h>
 #include <aws/workspaces-instances/model/ListRegionsRequest.h>
 #include <aws/workspaces-instances/model/ListRegionsResult.h>
 #include <aws/workspaces-instances/model/ListTagsForResourceRequest.h>
 #include <aws/workspaces-instances/model/ListTagsForResourceResult.h>
+#include <aws/workspaces-instances/model/ListWorkspaceInstancesPaginationTraits.h>
 #include <aws/workspaces-instances/model/ListWorkspaceInstancesRequest.h>
 #include <aws/workspaces-instances/model/ListWorkspaceInstancesResult.h>
 #include <aws/workspaces-instances/model/ManagedInstanceRequest.h>

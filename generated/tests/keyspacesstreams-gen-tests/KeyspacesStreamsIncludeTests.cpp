@@ -7,16 +7,21 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/keyspacesstreams/KeyspacesStreamsClient.h>
+#include <aws/keyspacesstreams/KeyspacesStreamsClientPagination.h>
 #include <aws/keyspacesstreams/KeyspacesStreamsEndpointProvider.h>
 #include <aws/keyspacesstreams/KeyspacesStreamsErrorMarshaller.h>
 #include <aws/keyspacesstreams/KeyspacesStreamsErrors.h>
+#include <aws/keyspacesstreams/KeyspacesStreamsPaginationBase.h>
 #include <aws/keyspacesstreams/KeyspacesStreamsRequest.h>
 #include <aws/keyspacesstreams/KeyspacesStreamsServiceClientModel.h>
+#include <aws/keyspacesstreams/KeyspacesStreamsWaiter.h>
 #include <aws/keyspacesstreams/KeyspacesStreams_EXPORTS.h>
+#include <aws/keyspacesstreams/internal/KeyspacesStreamsEndpointRules.h>
 #include <aws/keyspacesstreams/model/GetRecordsRequest.h>
 #include <aws/keyspacesstreams/model/GetRecordsResult.h>
 #include <aws/keyspacesstreams/model/GetShardIteratorRequest.h>
 #include <aws/keyspacesstreams/model/GetShardIteratorResult.h>
+#include <aws/keyspacesstreams/model/GetStreamPaginationTraits.h>
 #include <aws/keyspacesstreams/model/GetStreamRequest.h>
 #include <aws/keyspacesstreams/model/GetStreamResult.h>
 #include <aws/keyspacesstreams/model/IteratorDescription.h>
@@ -26,6 +31,7 @@
 #include <aws/keyspacesstreams/model/KeyspacesCellValue.h>
 #include <aws/keyspacesstreams/model/KeyspacesMetadata.h>
 #include <aws/keyspacesstreams/model/KeyspacesRow.h>
+#include <aws/keyspacesstreams/model/ListStreamsPaginationTraits.h>
 #include <aws/keyspacesstreams/model/ListStreamsRequest.h>
 #include <aws/keyspacesstreams/model/ListStreamsResult.h>
 #include <aws/keyspacesstreams/model/OriginType.h>

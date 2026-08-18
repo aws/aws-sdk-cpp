@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurementClient.h>
+#include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurementClientPagination.h>
 #include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurementEndpointProvider.h>
 #include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurementErrorMarshaller.h>
 #include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurementErrors.h>
+#include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurementPaginationBase.h>
 #include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurementRequest.h>
 #include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurementServiceClientModel.h>
+#include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurementWaiter.h>
 #include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurement_EXPORTS.h>
+#include <aws/partnercentral-revenue-measurement/internal/PartnerCentralRevenueMeasurementEndpointRules.h>
 #include <aws/partnercentral-revenue-measurement/model/AccessDeniedException.h>
 #include <aws/partnercentral-revenue-measurement/model/AccessDeniedExceptionReason.h>
 #include <aws/partnercentral-revenue-measurement/model/AllocationStatus.h>
@@ -39,12 +43,16 @@
 #include <aws/partnercentral-revenue-measurement/model/GetRevenueAttributionAllocationsTaskResult.h>
 #include <aws/partnercentral-revenue-measurement/model/GetRevenueAttributionRequest.h>
 #include <aws/partnercentral-revenue-measurement/model/GetRevenueAttributionResult.h>
+#include <aws/partnercentral-revenue-measurement/model/ListMarketplaceRevenueShareAllocationsPaginationTraits.h>
 #include <aws/partnercentral-revenue-measurement/model/ListMarketplaceRevenueShareAllocationsRequest.h>
 #include <aws/partnercentral-revenue-measurement/model/ListMarketplaceRevenueShareAllocationsResult.h>
+#include <aws/partnercentral-revenue-measurement/model/ListMarketplaceRevenueSharesPaginationTraits.h>
 #include <aws/partnercentral-revenue-measurement/model/ListMarketplaceRevenueSharesRequest.h>
 #include <aws/partnercentral-revenue-measurement/model/ListMarketplaceRevenueSharesResult.h>
+#include <aws/partnercentral-revenue-measurement/model/ListRevenueAttributionAllocationsPaginationTraits.h>
 #include <aws/partnercentral-revenue-measurement/model/ListRevenueAttributionAllocationsRequest.h>
 #include <aws/partnercentral-revenue-measurement/model/ListRevenueAttributionAllocationsResult.h>
+#include <aws/partnercentral-revenue-measurement/model/ListRevenueAttributionsPaginationTraits.h>
 #include <aws/partnercentral-revenue-measurement/model/ListRevenueAttributionsRequest.h>
 #include <aws/partnercentral-revenue-measurement/model/ListRevenueAttributionsResult.h>
 #include <aws/partnercentral-revenue-measurement/model/ListTagsForResourceRequest.h>

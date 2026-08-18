@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/acm/ACMClient.h>
+#include <aws/acm/ACMClientPagination.h>
 #include <aws/acm/ACMEndpointProvider.h>
 #include <aws/acm/ACMErrorMarshaller.h>
 #include <aws/acm/ACMErrors.h>
+#include <aws/acm/ACMPaginationBase.h>
 #include <aws/acm/ACMRequest.h>
 #include <aws/acm/ACMServiceClientModel.h>
+#include <aws/acm/ACMWaiter.h>
 #include <aws/acm/ACM_EXPORTS.h>
+#include <aws/acm/internal/ACMEndpointRules.h>
 #include <aws/acm/model/AcmCertificateMetadata.h>
 #include <aws/acm/model/AcmCertificateMetadataFilter.h>
 #include <aws/acm/model/AcmeAccount.h>
@@ -101,16 +105,22 @@
 #include <aws/acm/model/KeyAlgorithm.h>
 #include <aws/acm/model/KeyUsage.h>
 #include <aws/acm/model/KeyUsageName.h>
+#include <aws/acm/model/ListAcmeAccountsPaginationTraits.h>
 #include <aws/acm/model/ListAcmeAccountsRequest.h>
 #include <aws/acm/model/ListAcmeAccountsResult.h>
+#include <aws/acm/model/ListAcmeDomainValidationsPaginationTraits.h>
 #include <aws/acm/model/ListAcmeDomainValidationsRequest.h>
 #include <aws/acm/model/ListAcmeDomainValidationsResult.h>
+#include <aws/acm/model/ListAcmeEndpointsPaginationTraits.h>
 #include <aws/acm/model/ListAcmeEndpointsRequest.h>
 #include <aws/acm/model/ListAcmeEndpointsResult.h>
+#include <aws/acm/model/ListAcmeExternalAccountBindingsPaginationTraits.h>
 #include <aws/acm/model/ListAcmeExternalAccountBindingsRequest.h>
 #include <aws/acm/model/ListAcmeExternalAccountBindingsResult.h>
+#include <aws/acm/model/ListCertificateDomainValidationsPaginationTraits.h>
 #include <aws/acm/model/ListCertificateDomainValidationsRequest.h>
 #include <aws/acm/model/ListCertificateDomainValidationsResult.h>
+#include <aws/acm/model/ListCertificatesPaginationTraits.h>
 #include <aws/acm/model/ListCertificatesRequest.h>
 #include <aws/acm/model/ListCertificatesResult.h>
 #include <aws/acm/model/ListTagsForCertificateRequest.h>
@@ -139,6 +149,7 @@
 #include <aws/acm/model/RevokeAcmeExternalAccountBindingRequest.h>
 #include <aws/acm/model/RevokeCertificateRequest.h>
 #include <aws/acm/model/RevokeCertificateResult.h>
+#include <aws/acm/model/SearchCertificatesPaginationTraits.h>
 #include <aws/acm/model/SearchCertificatesRequest.h>
 #include <aws/acm/model/SearchCertificatesResult.h>
 #include <aws/acm/model/SearchCertificatesSortBy.h>

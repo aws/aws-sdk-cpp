@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/servicecatalog-appregistry/AppRegistryClient.h>
+#include <aws/servicecatalog-appregistry/AppRegistryClientPagination.h>
 #include <aws/servicecatalog-appregistry/AppRegistryEndpointProvider.h>
 #include <aws/servicecatalog-appregistry/AppRegistryErrorMarshaller.h>
 #include <aws/servicecatalog-appregistry/AppRegistryErrors.h>
+#include <aws/servicecatalog-appregistry/AppRegistryPaginationBase.h>
 #include <aws/servicecatalog-appregistry/AppRegistryRequest.h>
 #include <aws/servicecatalog-appregistry/AppRegistryServiceClientModel.h>
+#include <aws/servicecatalog-appregistry/AppRegistryWaiter.h>
 #include <aws/servicecatalog-appregistry/AppRegistry_EXPORTS.h>
+#include <aws/servicecatalog-appregistry/internal/AppRegistryEndpointRules.h>
 #include <aws/servicecatalog-appregistry/model/AppRegistryConfiguration.h>
 #include <aws/servicecatalog-appregistry/model/Application.h>
 #include <aws/servicecatalog-appregistry/model/ApplicationSummary.h>
@@ -47,14 +51,19 @@
 #include <aws/servicecatalog-appregistry/model/GetConfigurationRequest.h>
 #include <aws/servicecatalog-appregistry/model/GetConfigurationResult.h>
 #include <aws/servicecatalog-appregistry/model/Integrations.h>
+#include <aws/servicecatalog-appregistry/model/ListApplicationsPaginationTraits.h>
 #include <aws/servicecatalog-appregistry/model/ListApplicationsRequest.h>
 #include <aws/servicecatalog-appregistry/model/ListApplicationsResult.h>
+#include <aws/servicecatalog-appregistry/model/ListAssociatedAttributeGroupsPaginationTraits.h>
 #include <aws/servicecatalog-appregistry/model/ListAssociatedAttributeGroupsRequest.h>
 #include <aws/servicecatalog-appregistry/model/ListAssociatedAttributeGroupsResult.h>
+#include <aws/servicecatalog-appregistry/model/ListAssociatedResourcesPaginationTraits.h>
 #include <aws/servicecatalog-appregistry/model/ListAssociatedResourcesRequest.h>
 #include <aws/servicecatalog-appregistry/model/ListAssociatedResourcesResult.h>
+#include <aws/servicecatalog-appregistry/model/ListAttributeGroupsForApplicationPaginationTraits.h>
 #include <aws/servicecatalog-appregistry/model/ListAttributeGroupsForApplicationRequest.h>
 #include <aws/servicecatalog-appregistry/model/ListAttributeGroupsForApplicationResult.h>
+#include <aws/servicecatalog-appregistry/model/ListAttributeGroupsPaginationTraits.h>
 #include <aws/servicecatalog-appregistry/model/ListAttributeGroupsRequest.h>
 #include <aws/servicecatalog-appregistry/model/ListAttributeGroupsResult.h>
 #include <aws/servicecatalog-appregistry/model/ListTagsForResourceRequest.h>

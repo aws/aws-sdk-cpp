@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/support/SupportClient.h>
+#include <aws/support/SupportClientPagination.h>
 #include <aws/support/SupportEndpointProvider.h>
 #include <aws/support/SupportErrorMarshaller.h>
 #include <aws/support/SupportErrors.h>
+#include <aws/support/SupportPaginationBase.h>
 #include <aws/support/SupportRequest.h>
 #include <aws/support/SupportServiceClientModel.h>
+#include <aws/support/SupportWaiter.h>
 #include <aws/support/Support_EXPORTS.h>
+#include <aws/support/internal/SupportEndpointRules.h>
 #include <aws/support/model/AddAttachmentsToSetRequest.h>
 #include <aws/support/model/AddAttachmentsToSetResult.h>
 #include <aws/support/model/AddCommunicationToCaseRequest.h>
@@ -28,8 +32,10 @@
 #include <aws/support/model/DateInterval.h>
 #include <aws/support/model/DescribeAttachmentRequest.h>
 #include <aws/support/model/DescribeAttachmentResult.h>
+#include <aws/support/model/DescribeCasesPaginationTraits.h>
 #include <aws/support/model/DescribeCasesRequest.h>
 #include <aws/support/model/DescribeCasesResult.h>
+#include <aws/support/model/DescribeCommunicationsPaginationTraits.h>
 #include <aws/support/model/DescribeCommunicationsRequest.h>
 #include <aws/support/model/DescribeCommunicationsResult.h>
 #include <aws/support/model/DescribeCreateCaseOptionsRequest.h>

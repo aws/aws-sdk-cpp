@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/mediapackage/MediaPackageClient.h>
+#include <aws/mediapackage/MediaPackageClientPagination.h>
 #include <aws/mediapackage/MediaPackageEndpointProvider.h>
 #include <aws/mediapackage/MediaPackageErrorMarshaller.h>
 #include <aws/mediapackage/MediaPackageErrors.h>
+#include <aws/mediapackage/MediaPackagePaginationBase.h>
 #include <aws/mediapackage/MediaPackageRequest.h>
 #include <aws/mediapackage/MediaPackageServiceClientModel.h>
+#include <aws/mediapackage/MediaPackageWaiter.h>
 #include <aws/mediapackage/MediaPackage_EXPORTS.h>
+#include <aws/mediapackage/internal/MediaPackageEndpointRules.h>
 #include <aws/mediapackage/model/AdMarkers.h>
 #include <aws/mediapackage/model/AdsOnDeliveryRestrictions.h>
 #include <aws/mediapackage/model/Authorization.h>
@@ -52,10 +56,13 @@
 #include <aws/mediapackage/model/HlsPackage.h>
 #include <aws/mediapackage/model/IngestEndpoint.h>
 #include <aws/mediapackage/model/IngressAccessLogs.h>
+#include <aws/mediapackage/model/ListChannelsPaginationTraits.h>
 #include <aws/mediapackage/model/ListChannelsRequest.h>
 #include <aws/mediapackage/model/ListChannelsResult.h>
+#include <aws/mediapackage/model/ListHarvestJobsPaginationTraits.h>
 #include <aws/mediapackage/model/ListHarvestJobsRequest.h>
 #include <aws/mediapackage/model/ListHarvestJobsResult.h>
+#include <aws/mediapackage/model/ListOriginEndpointsPaginationTraits.h>
 #include <aws/mediapackage/model/ListOriginEndpointsRequest.h>
 #include <aws/mediapackage/model/ListOriginEndpointsResult.h>
 #include <aws/mediapackage/model/ListTagsForResourceRequest.h>

@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/states/SFNClient.h>
+#include <aws/states/SFNClientPagination.h>
 #include <aws/states/SFNEndpointProvider.h>
 #include <aws/states/SFNErrorMarshaller.h>
 #include <aws/states/SFNErrors.h>
+#include <aws/states/SFNPaginationBase.h>
 #include <aws/states/SFNRequest.h>
 #include <aws/states/SFNServiceClientModel.h>
+#include <aws/states/SFNWaiter.h>
 #include <aws/states/SFN_EXPORTS.h>
+#include <aws/states/internal/SFNEndpointRules.h>
 #include <aws/states/model/ActivityFailedEventDetails.h>
 #include <aws/states/model/ActivityListItem.h>
 #include <aws/states/model/ActivityScheduleFailedEventDetails.h>
@@ -65,6 +69,7 @@
 #include <aws/states/model/ExecutionTimedOutEventDetails.h>
 #include <aws/states/model/GetActivityTaskRequest.h>
 #include <aws/states/model/GetActivityTaskResult.h>
+#include <aws/states/model/GetExecutionHistoryPaginationTraits.h>
 #include <aws/states/model/GetExecutionHistoryRequest.h>
 #include <aws/states/model/GetExecutionHistoryResult.h>
 #include <aws/states/model/HistoryEvent.h>
@@ -84,16 +89,20 @@
 #include <aws/states/model/LambdaFunctionStartFailedEventDetails.h>
 #include <aws/states/model/LambdaFunctionSucceededEventDetails.h>
 #include <aws/states/model/LambdaFunctionTimedOutEventDetails.h>
+#include <aws/states/model/ListActivitiesPaginationTraits.h>
 #include <aws/states/model/ListActivitiesRequest.h>
 #include <aws/states/model/ListActivitiesResult.h>
+#include <aws/states/model/ListExecutionsPaginationTraits.h>
 #include <aws/states/model/ListExecutionsRequest.h>
 #include <aws/states/model/ListExecutionsResult.h>
+#include <aws/states/model/ListMapRunsPaginationTraits.h>
 #include <aws/states/model/ListMapRunsRequest.h>
 #include <aws/states/model/ListMapRunsResult.h>
 #include <aws/states/model/ListStateMachineAliasesRequest.h>
 #include <aws/states/model/ListStateMachineAliasesResult.h>
 #include <aws/states/model/ListStateMachineVersionsRequest.h>
 #include <aws/states/model/ListStateMachineVersionsResult.h>
+#include <aws/states/model/ListStateMachinesPaginationTraits.h>
 #include <aws/states/model/ListStateMachinesRequest.h>
 #include <aws/states/model/ListStateMachinesResult.h>
 #include <aws/states/model/ListTagsForResourceRequest.h>

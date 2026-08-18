@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/datapipeline/DataPipelineClient.h>
+#include <aws/datapipeline/DataPipelineClientPagination.h>
 #include <aws/datapipeline/DataPipelineEndpointProvider.h>
 #include <aws/datapipeline/DataPipelineErrorMarshaller.h>
 #include <aws/datapipeline/DataPipelineErrors.h>
+#include <aws/datapipeline/DataPipelinePaginationBase.h>
 #include <aws/datapipeline/DataPipelineRequest.h>
 #include <aws/datapipeline/DataPipelineServiceClientModel.h>
+#include <aws/datapipeline/DataPipelineWaiter.h>
 #include <aws/datapipeline/DataPipeline_EXPORTS.h>
+#include <aws/datapipeline/internal/DataPipelineEndpointRules.h>
 #include <aws/datapipeline/model/ActivatePipelineRequest.h>
 #include <aws/datapipeline/model/ActivatePipelineResult.h>
 #include <aws/datapipeline/model/AddTagsRequest.h>
@@ -22,6 +26,7 @@
 #include <aws/datapipeline/model/DeactivatePipelineRequest.h>
 #include <aws/datapipeline/model/DeactivatePipelineResult.h>
 #include <aws/datapipeline/model/DeletePipelineRequest.h>
+#include <aws/datapipeline/model/DescribeObjectsPaginationTraits.h>
 #include <aws/datapipeline/model/DescribeObjectsRequest.h>
 #include <aws/datapipeline/model/DescribeObjectsResult.h>
 #include <aws/datapipeline/model/DescribePipelinesRequest.h>
@@ -32,6 +37,7 @@
 #include <aws/datapipeline/model/GetPipelineDefinitionRequest.h>
 #include <aws/datapipeline/model/GetPipelineDefinitionResult.h>
 #include <aws/datapipeline/model/InstanceIdentity.h>
+#include <aws/datapipeline/model/ListPipelinesPaginationTraits.h>
 #include <aws/datapipeline/model/ListPipelinesRequest.h>
 #include <aws/datapipeline/model/ListPipelinesResult.h>
 #include <aws/datapipeline/model/Operator.h>
@@ -47,6 +53,7 @@
 #include <aws/datapipeline/model/PutPipelineDefinitionRequest.h>
 #include <aws/datapipeline/model/PutPipelineDefinitionResult.h>
 #include <aws/datapipeline/model/Query.h>
+#include <aws/datapipeline/model/QueryObjectsPaginationTraits.h>
 #include <aws/datapipeline/model/QueryObjectsRequest.h>
 #include <aws/datapipeline/model/QueryObjectsResult.h>
 #include <aws/datapipeline/model/RemoveTagsRequest.h>

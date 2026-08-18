@@ -10,6 +10,7 @@ from concurrent.futures import ProcessPoolExecutor, wait, FIRST_COMPLETED, ALL_C
 from pathlib import Path
 
 from codegen.legacy_c2j_cpp_gen import LegacyC2jCppGen, CLIENT_MODEL_FILE_LOCATION, ENDPOINT_RULES_LOCATION
+from codegen.include_tests_util import IncludeTestsUtil
 from codegen.model_utils import ModelUtils
 from codegen.protocol_tests_gen import ProtocolTestsGen
 from codegen.smoke_tests_gen import SmokeTestsGen
@@ -221,6 +222,19 @@ def main():
             print("ERROR: Failed to generate Smithy code!")
             return -1
     
+    # Generate include tests AFTER both the C2J and Smithy passes, so the client's include/ tree
+    # is complete. IncludeTestsUtil scans that tree on disk; C2J skips model generation for
+    # --use-smithy-models services (their model/*.h are written by the Smithy pass above), so
+    # generating include tests during the C2J pass would omit every model header.
+    if clients_to_build:
+        for client in clients_to_build:
+            service_client_dir = f"{args['output_location']}/src/aws-cpp-sdk-{client}"
+            test_output_dir = f"{args['output_location']}/tests/{client}-gen-tests"
+            # The gen-tests dir exists only for services that got endpoint tests generated, which
+            # is the same condition under which the include test was previously produced.
+            if os.path.isdir(service_client_dir) and os.path.isdir(test_output_dir):
+                IncludeTestsUtil.generate(client, service_client_dir, test_output_dir)
+
     if args["generate_smoke_tests"] and clients_to_build:
         smoke_tests_gen = SmokeTestsGen(args["debug"])
         if smoke_tests_gen.generate(clients_to_build) != 0:

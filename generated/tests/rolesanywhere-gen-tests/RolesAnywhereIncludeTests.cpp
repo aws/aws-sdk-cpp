@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/rolesanywhere/RolesAnywhereClient.h>
+#include <aws/rolesanywhere/RolesAnywhereClientPagination.h>
 #include <aws/rolesanywhere/RolesAnywhereEndpointProvider.h>
 #include <aws/rolesanywhere/RolesAnywhereErrorMarshaller.h>
 #include <aws/rolesanywhere/RolesAnywhereErrors.h>
+#include <aws/rolesanywhere/RolesAnywherePaginationBase.h>
 #include <aws/rolesanywhere/RolesAnywhereRequest.h>
 #include <aws/rolesanywhere/RolesAnywhereServiceClientModel.h>
+#include <aws/rolesanywhere/RolesAnywhereWaiter.h>
 #include <aws/rolesanywhere/RolesAnywhere_EXPORTS.h>
+#include <aws/rolesanywhere/internal/RolesAnywhereEndpointRules.h>
 #include <aws/rolesanywhere/model/AttributeMapping.h>
 #include <aws/rolesanywhere/model/CertificateField.h>
 #include <aws/rolesanywhere/model/CreateProfileRequest.h>
@@ -52,14 +56,18 @@
 #include <aws/rolesanywhere/model/ImportCrlRequest.h>
 #include <aws/rolesanywhere/model/ImportCrlResult.h>
 #include <aws/rolesanywhere/model/InstanceProperty.h>
+#include <aws/rolesanywhere/model/ListCrlsPaginationTraits.h>
 #include <aws/rolesanywhere/model/ListCrlsRequest.h>
 #include <aws/rolesanywhere/model/ListCrlsResult.h>
+#include <aws/rolesanywhere/model/ListProfilesPaginationTraits.h>
 #include <aws/rolesanywhere/model/ListProfilesRequest.h>
 #include <aws/rolesanywhere/model/ListProfilesResult.h>
+#include <aws/rolesanywhere/model/ListSubjectsPaginationTraits.h>
 #include <aws/rolesanywhere/model/ListSubjectsRequest.h>
 #include <aws/rolesanywhere/model/ListSubjectsResult.h>
 #include <aws/rolesanywhere/model/ListTagsForResourceRequest.h>
 #include <aws/rolesanywhere/model/ListTagsForResourceResult.h>
+#include <aws/rolesanywhere/model/ListTrustAnchorsPaginationTraits.h>
 #include <aws/rolesanywhere/model/ListTrustAnchorsRequest.h>
 #include <aws/rolesanywhere/model/ListTrustAnchorsResult.h>
 #include <aws/rolesanywhere/model/MappingRule.h>

@@ -7,16 +7,21 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/connect-contact-lens/ConnectContactLensClient.h>
+#include <aws/connect-contact-lens/ConnectContactLensClientPagination.h>
 #include <aws/connect-contact-lens/ConnectContactLensEndpointProvider.h>
 #include <aws/connect-contact-lens/ConnectContactLensErrorMarshaller.h>
 #include <aws/connect-contact-lens/ConnectContactLensErrors.h>
+#include <aws/connect-contact-lens/ConnectContactLensPaginationBase.h>
 #include <aws/connect-contact-lens/ConnectContactLensRequest.h>
 #include <aws/connect-contact-lens/ConnectContactLensServiceClientModel.h>
+#include <aws/connect-contact-lens/ConnectContactLensWaiter.h>
 #include <aws/connect-contact-lens/ConnectContactLens_EXPORTS.h>
+#include <aws/connect-contact-lens/internal/ConnectContactLensEndpointRules.h>
 #include <aws/connect-contact-lens/model/Categories.h>
 #include <aws/connect-contact-lens/model/CategoryDetails.h>
 #include <aws/connect-contact-lens/model/CharacterOffsets.h>
 #include <aws/connect-contact-lens/model/IssueDetected.h>
+#include <aws/connect-contact-lens/model/ListRealtimeContactAnalysisSegmentsPaginationTraits.h>
 #include <aws/connect-contact-lens/model/ListRealtimeContactAnalysisSegmentsRequest.h>
 #include <aws/connect-contact-lens/model/ListRealtimeContactAnalysisSegmentsResult.h>
 #include <aws/connect-contact-lens/model/PointOfInterest.h>

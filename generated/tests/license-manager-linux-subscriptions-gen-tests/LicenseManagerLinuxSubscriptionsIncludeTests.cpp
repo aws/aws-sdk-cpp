@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/license-manager-linux-subscriptions/LicenseManagerLinuxSubscriptionsClient.h>
+#include <aws/license-manager-linux-subscriptions/LicenseManagerLinuxSubscriptionsClientPagination.h>
 #include <aws/license-manager-linux-subscriptions/LicenseManagerLinuxSubscriptionsEndpointProvider.h>
 #include <aws/license-manager-linux-subscriptions/LicenseManagerLinuxSubscriptionsErrorMarshaller.h>
 #include <aws/license-manager-linux-subscriptions/LicenseManagerLinuxSubscriptionsErrors.h>
+#include <aws/license-manager-linux-subscriptions/LicenseManagerLinuxSubscriptionsPaginationBase.h>
 #include <aws/license-manager-linux-subscriptions/LicenseManagerLinuxSubscriptionsRequest.h>
 #include <aws/license-manager-linux-subscriptions/LicenseManagerLinuxSubscriptionsServiceClientModel.h>
+#include <aws/license-manager-linux-subscriptions/LicenseManagerLinuxSubscriptionsWaiter.h>
 #include <aws/license-manager-linux-subscriptions/LicenseManagerLinuxSubscriptions_EXPORTS.h>
+#include <aws/license-manager-linux-subscriptions/internal/LicenseManagerLinuxSubscriptionsEndpointRules.h>
 #include <aws/license-manager-linux-subscriptions/model/DeregisterSubscriptionProviderRequest.h>
 #include <aws/license-manager-linux-subscriptions/model/DeregisterSubscriptionProviderResult.h>
 #include <aws/license-manager-linux-subscriptions/model/Filter.h>
@@ -23,10 +27,13 @@
 #include <aws/license-manager-linux-subscriptions/model/Instance.h>
 #include <aws/license-manager-linux-subscriptions/model/LinuxSubscriptionsDiscovery.h>
 #include <aws/license-manager-linux-subscriptions/model/LinuxSubscriptionsDiscoverySettings.h>
+#include <aws/license-manager-linux-subscriptions/model/ListLinuxSubscriptionInstancesPaginationTraits.h>
 #include <aws/license-manager-linux-subscriptions/model/ListLinuxSubscriptionInstancesRequest.h>
 #include <aws/license-manager-linux-subscriptions/model/ListLinuxSubscriptionInstancesResult.h>
+#include <aws/license-manager-linux-subscriptions/model/ListLinuxSubscriptionsPaginationTraits.h>
 #include <aws/license-manager-linux-subscriptions/model/ListLinuxSubscriptionsRequest.h>
 #include <aws/license-manager-linux-subscriptions/model/ListLinuxSubscriptionsResult.h>
+#include <aws/license-manager-linux-subscriptions/model/ListRegisteredSubscriptionProvidersPaginationTraits.h>
 #include <aws/license-manager-linux-subscriptions/model/ListRegisteredSubscriptionProvidersRequest.h>
 #include <aws/license-manager-linux-subscriptions/model/ListRegisteredSubscriptionProvidersResult.h>
 #include <aws/license-manager-linux-subscriptions/model/ListTagsForResourceRequest.h>

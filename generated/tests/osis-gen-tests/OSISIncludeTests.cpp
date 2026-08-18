@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/osis/OSISClient.h>
+#include <aws/osis/OSISClientPagination.h>
 #include <aws/osis/OSISEndpointProvider.h>
 #include <aws/osis/OSISErrorMarshaller.h>
 #include <aws/osis/OSISErrors.h>
+#include <aws/osis/OSISPaginationBase.h>
 #include <aws/osis/OSISRequest.h>
 #include <aws/osis/OSISServiceClientModel.h>
+#include <aws/osis/OSISWaiter.h>
 #include <aws/osis/OSIS_EXPORTS.h>
+#include <aws/osis/internal/OSISEndpointRules.h>
 #include <aws/osis/model/BufferOptions.h>
 #include <aws/osis/model/ChangeProgressStage.h>
 #include <aws/osis/model/ChangeProgressStageStatuses.h>
@@ -40,10 +44,13 @@
 #include <aws/osis/model/GetResourcePolicyResult.h>
 #include <aws/osis/model/ListPipelineBlueprintsRequest.h>
 #include <aws/osis/model/ListPipelineBlueprintsResult.h>
+#include <aws/osis/model/ListPipelineEndpointConnectionsPaginationTraits.h>
 #include <aws/osis/model/ListPipelineEndpointConnectionsRequest.h>
 #include <aws/osis/model/ListPipelineEndpointConnectionsResult.h>
+#include <aws/osis/model/ListPipelineEndpointsPaginationTraits.h>
 #include <aws/osis/model/ListPipelineEndpointsRequest.h>
 #include <aws/osis/model/ListPipelineEndpointsResult.h>
+#include <aws/osis/model/ListPipelinesPaginationTraits.h>
 #include <aws/osis/model/ListPipelinesRequest.h>
 #include <aws/osis/model/ListPipelinesResult.h>
 #include <aws/osis/model/ListTagsForResourceRequest.h>

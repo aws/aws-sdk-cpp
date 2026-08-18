@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/gameliftstreams/GameLiftStreamsClient.h>
+#include <aws/gameliftstreams/GameLiftStreamsClientPagination.h>
 #include <aws/gameliftstreams/GameLiftStreamsEndpointProvider.h>
 #include <aws/gameliftstreams/GameLiftStreamsErrorMarshaller.h>
 #include <aws/gameliftstreams/GameLiftStreamsErrors.h>
+#include <aws/gameliftstreams/GameLiftStreamsPaginationBase.h>
 #include <aws/gameliftstreams/GameLiftStreamsRequest.h>
 #include <aws/gameliftstreams/GameLiftStreamsServiceClientModel.h>
+#include <aws/gameliftstreams/GameLiftStreamsWaiter.h>
 #include <aws/gameliftstreams/GameLiftStreams_EXPORTS.h>
+#include <aws/gameliftstreams/internal/GameLiftStreamsEndpointRules.h>
 #include <aws/gameliftstreams/model/AddStreamGroupLocationsRequest.h>
 #include <aws/gameliftstreams/model/AddStreamGroupLocationsResult.h>
 #include <aws/gameliftstreams/model/ApplicationStatus.h>
@@ -50,14 +54,19 @@
 #include <aws/gameliftstreams/model/GetStreamUrlResult.h>
 #include <aws/gameliftstreams/model/ListApplicationShaderCachesRequest.h>
 #include <aws/gameliftstreams/model/ListApplicationShaderCachesResult.h>
+#include <aws/gameliftstreams/model/ListApplicationsPaginationTraits.h>
 #include <aws/gameliftstreams/model/ListApplicationsRequest.h>
 #include <aws/gameliftstreams/model/ListApplicationsResult.h>
+#include <aws/gameliftstreams/model/ListStreamGroupsPaginationTraits.h>
 #include <aws/gameliftstreams/model/ListStreamGroupsRequest.h>
 #include <aws/gameliftstreams/model/ListStreamGroupsResult.h>
+#include <aws/gameliftstreams/model/ListStreamSessionsByAccountPaginationTraits.h>
 #include <aws/gameliftstreams/model/ListStreamSessionsByAccountRequest.h>
 #include <aws/gameliftstreams/model/ListStreamSessionsByAccountResult.h>
+#include <aws/gameliftstreams/model/ListStreamSessionsPaginationTraits.h>
 #include <aws/gameliftstreams/model/ListStreamSessionsRequest.h>
 #include <aws/gameliftstreams/model/ListStreamSessionsResult.h>
+#include <aws/gameliftstreams/model/ListStreamUrlsPaginationTraits.h>
 #include <aws/gameliftstreams/model/ListStreamUrlsRequest.h>
 #include <aws/gameliftstreams/model/ListStreamUrlsResult.h>
 #include <aws/gameliftstreams/model/ListTagsForResourceRequest.h>

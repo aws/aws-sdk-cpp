@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/connectcampaigns/ConnectCampaignsClient.h>
+#include <aws/connectcampaigns/ConnectCampaignsClientPagination.h>
 #include <aws/connectcampaigns/ConnectCampaignsEndpointProvider.h>
 #include <aws/connectcampaigns/ConnectCampaignsErrorMarshaller.h>
 #include <aws/connectcampaigns/ConnectCampaignsErrors.h>
+#include <aws/connectcampaigns/ConnectCampaignsPaginationBase.h>
 #include <aws/connectcampaigns/ConnectCampaignsRequest.h>
 #include <aws/connectcampaigns/ConnectCampaignsServiceClientModel.h>
+#include <aws/connectcampaigns/ConnectCampaignsWaiter.h>
 #include <aws/connectcampaigns/ConnectCampaigns_EXPORTS.h>
+#include <aws/connectcampaigns/internal/ConnectCampaignsEndpointRules.h>
 #include <aws/connectcampaigns/model/AccessDeniedException.h>
 #include <aws/connectcampaigns/model/AgentlessDialerConfig.h>
 #include <aws/connectcampaigns/model/AnswerMachineDetectionConfig.h>
@@ -53,6 +57,7 @@
 #include <aws/connectcampaigns/model/InternalServerException.h>
 #include <aws/connectcampaigns/model/InvalidCampaignStateException.h>
 #include <aws/connectcampaigns/model/InvalidStateException.h>
+#include <aws/connectcampaigns/model/ListCampaignsPaginationTraits.h>
 #include <aws/connectcampaigns/model/ListCampaignsRequest.h>
 #include <aws/connectcampaigns/model/ListCampaignsResult.h>
 #include <aws/connectcampaigns/model/ListTagsForResourceRequest.h>

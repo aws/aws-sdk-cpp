@@ -10,9 +10,12 @@
 #include <aws/amplifybackend/AmplifyBackendEndpointProvider.h>
 #include <aws/amplifybackend/AmplifyBackendErrorMarshaller.h>
 #include <aws/amplifybackend/AmplifyBackendErrors.h>
+#include <aws/amplifybackend/AmplifyBackendPaginationBase.h>
 #include <aws/amplifybackend/AmplifyBackendRequest.h>
 #include <aws/amplifybackend/AmplifyBackendServiceClientModel.h>
+#include <aws/amplifybackend/AmplifyBackendWaiter.h>
 #include <aws/amplifybackend/AmplifyBackend_EXPORTS.h>
+#include <aws/amplifybackend/internal/AmplifyBackendEndpointRules.h>
 #include <aws/amplifybackend/model/AdditionalConstraintsElement.h>
 #include <aws/amplifybackend/model/AuthResources.h>
 #include <aws/amplifybackend/model/AuthenticatedElement.h>

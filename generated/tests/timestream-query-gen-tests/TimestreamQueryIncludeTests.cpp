@@ -8,12 +8,16 @@
 
 #include <aws/timestream-query/TimestreamQueryClient.h>
 #include <aws/timestream-query/TimestreamQueryClientConfiguration.h>
+#include <aws/timestream-query/TimestreamQueryClientPagination.h>
 #include <aws/timestream-query/TimestreamQueryEndpointProvider.h>
 #include <aws/timestream-query/TimestreamQueryErrorMarshaller.h>
 #include <aws/timestream-query/TimestreamQueryErrors.h>
+#include <aws/timestream-query/TimestreamQueryPaginationBase.h>
 #include <aws/timestream-query/TimestreamQueryRequest.h>
 #include <aws/timestream-query/TimestreamQueryServiceClientModel.h>
+#include <aws/timestream-query/TimestreamQueryWaiter.h>
 #include <aws/timestream-query/TimestreamQuery_EXPORTS.h>
+#include <aws/timestream-query/internal/TimestreamQueryEndpointRules.h>
 #include <aws/timestream-query/model/AccountSettingsNotificationConfiguration.h>
 #include <aws/timestream-query/model/CancelQueryRequest.h>
 #include <aws/timestream-query/model/CancelQueryResult.h>
@@ -38,8 +42,10 @@
 #include <aws/timestream-query/model/ExecutionStats.h>
 #include <aws/timestream-query/model/LastUpdate.h>
 #include <aws/timestream-query/model/LastUpdateStatus.h>
+#include <aws/timestream-query/model/ListScheduledQueriesPaginationTraits.h>
 #include <aws/timestream-query/model/ListScheduledQueriesRequest.h>
 #include <aws/timestream-query/model/ListScheduledQueriesResult.h>
+#include <aws/timestream-query/model/ListTagsForResourcePaginationTraits.h>
 #include <aws/timestream-query/model/ListTagsForResourceRequest.h>
 #include <aws/timestream-query/model/ListTagsForResourceResult.h>
 #include <aws/timestream-query/model/MeasureValueType.h>
@@ -57,6 +63,7 @@
 #include <aws/timestream-query/model/QueryInsights.h>
 #include <aws/timestream-query/model/QueryInsightsMode.h>
 #include <aws/timestream-query/model/QueryInsightsResponse.h>
+#include <aws/timestream-query/model/QueryPaginationTraits.h>
 #include <aws/timestream-query/model/QueryPricingModel.h>
 #include <aws/timestream-query/model/QueryRequest.h>
 #include <aws/timestream-query/model/QueryResult.h>

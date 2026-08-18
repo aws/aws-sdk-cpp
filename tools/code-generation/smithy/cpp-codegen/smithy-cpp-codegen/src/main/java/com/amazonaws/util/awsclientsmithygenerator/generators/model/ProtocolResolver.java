@@ -13,6 +13,7 @@ import software.amazon.smithy.aws.traits.protocols.Ec2QueryTrait;
 import software.amazon.smithy.aws.traits.protocols.RestJson1Trait;
 import software.amazon.smithy.aws.traits.protocols.RestXmlTrait;
 import software.amazon.smithy.protocol.traits.Rpcv2CborTrait;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.CborProtocolTraits;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.JsonProtocolTraits;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.ProtocolTraits;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.QueryXmlProtocolTraits;
@@ -37,9 +38,10 @@ public final class ProtocolResolver {
      */
     public enum Protocol {
         JSON("Aws::Utils::Json", "Aws::Utils::Json::JsonView", "Aws::Utils::Json::JsonValue", "Jsonize"),
+        REST_JSON("Aws::Utils::Json", "Aws::Utils::Json::JsonView", "Aws::Utils::Json::JsonValue", "Jsonize"),
         REST_XML("Aws::Utils::Xml", "const Aws::Utils::Xml::XmlNode&", "void", "AddToNode"),
         QUERY_XML("Aws::Utils::Xml", "const Aws::Utils::Xml::XmlNode&", "void", "OutputToStream"),
-        CBOR("Aws::Utils::Json", "Aws::Utils::Json::JsonView", "Aws::Utils::Json::JsonValue", "Jsonize"),
+        CBOR("Aws::Utils::Cbor", "Aws::Utils::Cbor::CborValue", "Aws::Utils::Cbor::CborValue", "Jsonize"),
         EC2("Aws::Utils::Xml", "const Aws::Utils::Xml::XmlNode&", "void", "OutputToStream");
 
         private final String serdeNamespace;
@@ -74,9 +76,9 @@ public final class ProtocolResolver {
             return serializeMethodName;
         }
 
-        /** Returns true if the protocol uses JSON-style serde (JSON or CBOR). */
+        /** Returns true if the protocol uses JSON-style serde (JSON or REST_JSON). */
         public boolean isJsonLike() {
-            return this == JSON || this == CBOR;
+            return this == JSON || this == REST_JSON;
         }
 
         /** Returns true if the protocol uses XML-style serde (REST_XML, QUERY_XML, or EC2). */
@@ -97,7 +99,8 @@ public final class ProtocolResolver {
      *   <li>{@code aws.protocols#ec2Query} &rarr; EC2</li>
      *   <li>{@code aws.protocols#awsQuery} &rarr; QUERY_XML</li>
      *   <li>{@code aws.protocols#restXml} &rarr; REST_XML</li>
-     *   <li>Default (restJson1, awsJson1_0, awsJson1_1, or unrecognized) &rarr; JSON</li>
+     *   <li>{@code aws.protocols#restJson1} &rarr; REST_JSON</li>
+     *   <li>Default (awsJson1_0, awsJson1_1, or unrecognized) &rarr; JSON</li>
      * </ol>
      *
      * @param service the service shape to resolve
@@ -117,7 +120,10 @@ public final class ProtocolResolver {
         if (service.hasTrait(RestXmlTrait.class)) {
             return Protocol.REST_XML;
         }
-        // Default: JSON (covers RestJson1, AwsJson1_0, AwsJson1_1)
+        if (service.hasTrait(RestJson1Trait.class)) {
+            return Protocol.REST_JSON;
+        }
+        // Default: JSON (covers AwsJson1_0, AwsJson1_1)
         return Protocol.JSON;
     }
 
@@ -139,8 +145,10 @@ public final class ProtocolResolver {
         }
         switch (protocol) {
             case JSON:
-            case CBOR:
+            case REST_JSON:
                 return new JsonProtocolTraits(protocol);
+            case CBOR:
+                return new CborProtocolTraits();
             case REST_XML:
                 return new RestXmlProtocolTraits();
             case QUERY_XML:

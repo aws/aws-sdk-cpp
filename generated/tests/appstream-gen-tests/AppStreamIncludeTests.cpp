@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/appstream/AppStreamClient.h>
+#include <aws/appstream/AppStreamClientPagination.h>
 #include <aws/appstream/AppStreamEndpointProvider.h>
 #include <aws/appstream/AppStreamErrorMarshaller.h>
 #include <aws/appstream/AppStreamErrors.h>
+#include <aws/appstream/AppStreamPaginationBase.h>
 #include <aws/appstream/AppStreamRequest.h>
 #include <aws/appstream/AppStreamServiceClientModel.h>
+#include <aws/appstream/AppStreamWaiter.h>
 #include <aws/appstream/AppStream_EXPORTS.h>
+#include <aws/appstream/internal/AppStreamEndpointRules.h>
 #include <aws/appstream/model/AccessEndpoint.h>
 #include <aws/appstream/model/AccessEndpointType.h>
 #include <aws/appstream/model/Action.h>
@@ -120,8 +124,10 @@
 #include <aws/appstream/model/DeleteUsageReportSubscriptionResult.h>
 #include <aws/appstream/model/DeleteUserRequest.h>
 #include <aws/appstream/model/DeleteUserResult.h>
+#include <aws/appstream/model/DescribeAppBlockBuilderAppBlockAssociationsPaginationTraits.h>
 #include <aws/appstream/model/DescribeAppBlockBuilderAppBlockAssociationsRequest.h>
 #include <aws/appstream/model/DescribeAppBlockBuilderAppBlockAssociationsResult.h>
+#include <aws/appstream/model/DescribeAppBlockBuildersPaginationTraits.h>
 #include <aws/appstream/model/DescribeAppBlockBuildersRequest.h>
 #include <aws/appstream/model/DescribeAppBlockBuildersResult.h>
 #include <aws/appstream/model/DescribeAppBlocksRequest.h>
@@ -140,8 +146,10 @@
 #include <aws/appstream/model/DescribeFleetsResult.h>
 #include <aws/appstream/model/DescribeImageBuildersRequest.h>
 #include <aws/appstream/model/DescribeImageBuildersResult.h>
+#include <aws/appstream/model/DescribeImagePermissionsPaginationTraits.h>
 #include <aws/appstream/model/DescribeImagePermissionsRequest.h>
 #include <aws/appstream/model/DescribeImagePermissionsResult.h>
+#include <aws/appstream/model/DescribeImagesPaginationTraits.h>
 #include <aws/appstream/model/DescribeImagesRequest.h>
 #include <aws/appstream/model/DescribeImagesResult.h>
 #include <aws/appstream/model/DescribeSessionsRequest.h>

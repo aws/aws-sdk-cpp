@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/aiops/AIOpsClient.h>
+#include <aws/aiops/AIOpsClientPagination.h>
 #include <aws/aiops/AIOpsEndpointProvider.h>
 #include <aws/aiops/AIOpsErrorMarshaller.h>
 #include <aws/aiops/AIOpsErrors.h>
+#include <aws/aiops/AIOpsPaginationBase.h>
 #include <aws/aiops/AIOpsRequest.h>
 #include <aws/aiops/AIOpsServiceClientModel.h>
+#include <aws/aiops/AIOpsWaiter.h>
 #include <aws/aiops/AIOps_EXPORTS.h>
+#include <aws/aiops/internal/AIOpsEndpointRules.h>
 #include <aws/aiops/model/CreateInvestigationGroupRequest.h>
 #include <aws/aiops/model/CreateInvestigationGroupResult.h>
 #include <aws/aiops/model/CrossAccountConfiguration.h>
@@ -26,6 +30,7 @@
 #include <aws/aiops/model/GetInvestigationGroupRequest.h>
 #include <aws/aiops/model/GetInvestigationGroupResult.h>
 #include <aws/aiops/model/ListInvestigationGroupsModel.h>
+#include <aws/aiops/model/ListInvestigationGroupsPaginationTraits.h>
 #include <aws/aiops/model/ListInvestigationGroupsRequest.h>
 #include <aws/aiops/model/ListInvestigationGroupsResult.h>
 #include <aws/aiops/model/ListTagsForResourceRequest.h>

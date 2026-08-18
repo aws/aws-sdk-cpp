@@ -10,9 +10,12 @@
 #include <aws/cloudtrail-data/CloudTrailDataEndpointProvider.h>
 #include <aws/cloudtrail-data/CloudTrailDataErrorMarshaller.h>
 #include <aws/cloudtrail-data/CloudTrailDataErrors.h>
+#include <aws/cloudtrail-data/CloudTrailDataPaginationBase.h>
 #include <aws/cloudtrail-data/CloudTrailDataRequest.h>
 #include <aws/cloudtrail-data/CloudTrailDataServiceClientModel.h>
+#include <aws/cloudtrail-data/CloudTrailDataWaiter.h>
 #include <aws/cloudtrail-data/CloudTrailData_EXPORTS.h>
+#include <aws/cloudtrail-data/internal/CloudTrailDataEndpointRules.h>
 #include <aws/cloudtrail-data/model/AuditEvent.h>
 #include <aws/cloudtrail-data/model/AuditEventResultEntry.h>
 #include <aws/cloudtrail-data/model/PutAuditEventsRequest.h>

@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/appflow/AppflowClient.h>
+#include <aws/appflow/AppflowClientPagination.h>
 #include <aws/appflow/AppflowEndpointProvider.h>
 #include <aws/appflow/AppflowErrorMarshaller.h>
 #include <aws/appflow/AppflowErrors.h>
+#include <aws/appflow/AppflowPaginationBase.h>
 #include <aws/appflow/AppflowRequest.h>
 #include <aws/appflow/AppflowServiceClientModel.h>
+#include <aws/appflow/AppflowWaiter.h>
 #include <aws/appflow/Appflow_EXPORTS.h>
+#include <aws/appflow/internal/AppflowEndpointRules.h>
 #include <aws/appflow/model/AggregationConfig.h>
 #include <aws/appflow/model/AggregationType.h>
 #include <aws/appflow/model/AmplitudeConnectorOperator.h>
@@ -70,12 +74,15 @@
 #include <aws/appflow/model/DeleteFlowResult.h>
 #include <aws/appflow/model/DescribeConnectorEntityRequest.h>
 #include <aws/appflow/model/DescribeConnectorEntityResult.h>
+#include <aws/appflow/model/DescribeConnectorProfilesPaginationTraits.h>
 #include <aws/appflow/model/DescribeConnectorProfilesRequest.h>
 #include <aws/appflow/model/DescribeConnectorProfilesResult.h>
 #include <aws/appflow/model/DescribeConnectorRequest.h>
 #include <aws/appflow/model/DescribeConnectorResult.h>
+#include <aws/appflow/model/DescribeConnectorsPaginationTraits.h>
 #include <aws/appflow/model/DescribeConnectorsRequest.h>
 #include <aws/appflow/model/DescribeConnectorsResult.h>
+#include <aws/appflow/model/DescribeFlowExecutionRecordsPaginationTraits.h>
 #include <aws/appflow/model/DescribeFlowExecutionRecordsRequest.h>
 #include <aws/appflow/model/DescribeFlowExecutionRecordsResult.h>
 #include <aws/appflow/model/DescribeFlowRequest.h>
@@ -119,8 +126,10 @@
 #include <aws/appflow/model/LambdaConnectorProvisioningConfig.h>
 #include <aws/appflow/model/ListConnectorEntitiesRequest.h>
 #include <aws/appflow/model/ListConnectorEntitiesResult.h>
+#include <aws/appflow/model/ListConnectorsPaginationTraits.h>
 #include <aws/appflow/model/ListConnectorsRequest.h>
 #include <aws/appflow/model/ListConnectorsResult.h>
+#include <aws/appflow/model/ListFlowsPaginationTraits.h>
 #include <aws/appflow/model/ListFlowsRequest.h>
 #include <aws/appflow/model/ListFlowsResult.h>
 #include <aws/appflow/model/ListTagsForResourceRequest.h>

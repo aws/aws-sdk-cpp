@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/email/SESClient.h>
+#include <aws/email/SESClientPagination.h>
 #include <aws/email/SESEndpointProvider.h>
 #include <aws/email/SESErrorMarshaller.h>
 #include <aws/email/SESErrors.h>
+#include <aws/email/SESPaginationBase.h>
 #include <aws/email/SESRequest.h>
 #include <aws/email/SESServiceClientModel.h>
+#include <aws/email/SESWaiter.h>
 #include <aws/email/SES_EXPORTS.h>
+#include <aws/email/internal/SESEndpointRules.h>
 #include <aws/email/model/AddHeaderAction.h>
 #include <aws/email/model/AlreadyExistsException.h>
 #include <aws/email/model/BehaviorOnMXFailure.h>
@@ -130,8 +134,10 @@
 #include <aws/email/model/LambdaAction.h>
 #include <aws/email/model/ListConfigurationSetsRequest.h>
 #include <aws/email/model/ListConfigurationSetsResult.h>
+#include <aws/email/model/ListCustomVerificationEmailTemplatesPaginationTraits.h>
 #include <aws/email/model/ListCustomVerificationEmailTemplatesRequest.h>
 #include <aws/email/model/ListCustomVerificationEmailTemplatesResult.h>
+#include <aws/email/model/ListIdentitiesPaginationTraits.h>
 #include <aws/email/model/ListIdentitiesRequest.h>
 #include <aws/email/model/ListIdentitiesResult.h>
 #include <aws/email/model/ListIdentityPoliciesRequest.h>

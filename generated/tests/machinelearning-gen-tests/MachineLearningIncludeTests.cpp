@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/machinelearning/MachineLearningClient.h>
+#include <aws/machinelearning/MachineLearningClientPagination.h>
 #include <aws/machinelearning/MachineLearningEndpointProvider.h>
 #include <aws/machinelearning/MachineLearningErrorMarshaller.h>
 #include <aws/machinelearning/MachineLearningErrors.h>
+#include <aws/machinelearning/MachineLearningPaginationBase.h>
 #include <aws/machinelearning/MachineLearningRequest.h>
 #include <aws/machinelearning/MachineLearningServiceClientModel.h>
+#include <aws/machinelearning/MachineLearningWaiter.h>
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
+#include <aws/machinelearning/internal/MachineLearningEndpointRules.h>
 #include <aws/machinelearning/model/AddTagsRequest.h>
 #include <aws/machinelearning/model/AddTagsResult.h>
 #include <aws/machinelearning/model/Algorithm.h>
@@ -46,12 +50,16 @@
 #include <aws/machinelearning/model/DeleteRealtimeEndpointResult.h>
 #include <aws/machinelearning/model/DeleteTagsRequest.h>
 #include <aws/machinelearning/model/DeleteTagsResult.h>
+#include <aws/machinelearning/model/DescribeBatchPredictionsPaginationTraits.h>
 #include <aws/machinelearning/model/DescribeBatchPredictionsRequest.h>
 #include <aws/machinelearning/model/DescribeBatchPredictionsResult.h>
+#include <aws/machinelearning/model/DescribeDataSourcesPaginationTraits.h>
 #include <aws/machinelearning/model/DescribeDataSourcesRequest.h>
 #include <aws/machinelearning/model/DescribeDataSourcesResult.h>
+#include <aws/machinelearning/model/DescribeEvaluationsPaginationTraits.h>
 #include <aws/machinelearning/model/DescribeEvaluationsRequest.h>
 #include <aws/machinelearning/model/DescribeEvaluationsResult.h>
+#include <aws/machinelearning/model/DescribeMLModelsPaginationTraits.h>
 #include <aws/machinelearning/model/DescribeMLModelsRequest.h>
 #include <aws/machinelearning/model/DescribeMLModelsResult.h>
 #include <aws/machinelearning/model/DescribeTagsRequest.h>

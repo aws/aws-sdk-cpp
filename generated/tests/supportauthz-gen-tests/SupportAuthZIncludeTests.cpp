@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/supportauthz/SupportAuthZClient.h>
+#include <aws/supportauthz/SupportAuthZClientPagination.h>
 #include <aws/supportauthz/SupportAuthZEndpointProvider.h>
 #include <aws/supportauthz/SupportAuthZErrorMarshaller.h>
 #include <aws/supportauthz/SupportAuthZErrors.h>
+#include <aws/supportauthz/SupportAuthZPaginationBase.h>
 #include <aws/supportauthz/SupportAuthZRequest.h>
 #include <aws/supportauthz/SupportAuthZServiceClientModel.h>
+#include <aws/supportauthz/SupportAuthZWaiter.h>
 #include <aws/supportauthz/SupportAuthZ_EXPORTS.h>
+#include <aws/supportauthz/internal/SupportAuthZEndpointRules.h>
 #include <aws/supportauthz/model/ActionSet.h>
 #include <aws/supportauthz/model/ActionSummary.h>
 #include <aws/supportauthz/model/Condition.h>
@@ -26,10 +30,13 @@
 #include <aws/supportauthz/model/GetSupportPermitRequest.h>
 #include <aws/supportauthz/model/GetSupportPermitResult.h>
 #include <aws/supportauthz/model/InternalServerException.h>
+#include <aws/supportauthz/model/ListActionsPaginationTraits.h>
 #include <aws/supportauthz/model/ListActionsRequest.h>
 #include <aws/supportauthz/model/ListActionsResult.h>
+#include <aws/supportauthz/model/ListSupportPermitRequestsPaginationTraits.h>
 #include <aws/supportauthz/model/ListSupportPermitRequestsRequest.h>
 #include <aws/supportauthz/model/ListSupportPermitRequestsResult.h>
+#include <aws/supportauthz/model/ListSupportPermitsPaginationTraits.h>
 #include <aws/supportauthz/model/ListSupportPermitsRequest.h>
 #include <aws/supportauthz/model/ListSupportPermitsResult.h>
 #include <aws/supportauthz/model/ListTagsForResourceRequest.h>

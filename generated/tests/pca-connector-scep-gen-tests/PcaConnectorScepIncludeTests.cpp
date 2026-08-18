@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/pca-connector-scep/PcaConnectorScepClient.h>
+#include <aws/pca-connector-scep/PcaConnectorScepClientPagination.h>
 #include <aws/pca-connector-scep/PcaConnectorScepEndpointProvider.h>
 #include <aws/pca-connector-scep/PcaConnectorScepErrorMarshaller.h>
 #include <aws/pca-connector-scep/PcaConnectorScepErrors.h>
+#include <aws/pca-connector-scep/PcaConnectorScepPaginationBase.h>
 #include <aws/pca-connector-scep/PcaConnectorScepRequest.h>
 #include <aws/pca-connector-scep/PcaConnectorScepServiceClientModel.h>
+#include <aws/pca-connector-scep/PcaConnectorScepWaiter.h>
 #include <aws/pca-connector-scep/PcaConnectorScep_EXPORTS.h>
+#include <aws/pca-connector-scep/internal/PcaConnectorScepEndpointRules.h>
 #include <aws/pca-connector-scep/model/Challenge.h>
 #include <aws/pca-connector-scep/model/ChallengeMetadata.h>
 #include <aws/pca-connector-scep/model/ChallengeMetadataSummary.h>
@@ -35,8 +39,10 @@
 #include <aws/pca-connector-scep/model/GetConnectorRequest.h>
 #include <aws/pca-connector-scep/model/GetConnectorResult.h>
 #include <aws/pca-connector-scep/model/IntuneConfiguration.h>
+#include <aws/pca-connector-scep/model/ListChallengeMetadataPaginationTraits.h>
 #include <aws/pca-connector-scep/model/ListChallengeMetadataRequest.h>
 #include <aws/pca-connector-scep/model/ListChallengeMetadataResult.h>
+#include <aws/pca-connector-scep/model/ListConnectorsPaginationTraits.h>
 #include <aws/pca-connector-scep/model/ListConnectorsRequest.h>
 #include <aws/pca-connector-scep/model/ListConnectorsResult.h>
 #include <aws/pca-connector-scep/model/ListTagsForResourceRequest.h>

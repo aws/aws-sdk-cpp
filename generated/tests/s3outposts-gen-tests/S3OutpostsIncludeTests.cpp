@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/s3outposts/S3OutpostsClient.h>
+#include <aws/s3outposts/S3OutpostsClientPagination.h>
 #include <aws/s3outposts/S3OutpostsEndpointProvider.h>
 #include <aws/s3outposts/S3OutpostsErrorMarshaller.h>
 #include <aws/s3outposts/S3OutpostsErrors.h>
+#include <aws/s3outposts/S3OutpostsPaginationBase.h>
 #include <aws/s3outposts/S3OutpostsRequest.h>
 #include <aws/s3outposts/S3OutpostsServiceClientModel.h>
+#include <aws/s3outposts/S3OutpostsWaiter.h>
 #include <aws/s3outposts/S3Outposts_EXPORTS.h>
+#include <aws/s3outposts/internal/S3OutpostsEndpointRules.h>
 #include <aws/s3outposts/model/CreateEndpointRequest.h>
 #include <aws/s3outposts/model/CreateEndpointResult.h>
 #include <aws/s3outposts/model/DeleteEndpointRequest.h>
@@ -20,10 +24,13 @@
 #include <aws/s3outposts/model/EndpointAccessType.h>
 #include <aws/s3outposts/model/EndpointStatus.h>
 #include <aws/s3outposts/model/FailedReason.h>
+#include <aws/s3outposts/model/ListEndpointsPaginationTraits.h>
 #include <aws/s3outposts/model/ListEndpointsRequest.h>
 #include <aws/s3outposts/model/ListEndpointsResult.h>
+#include <aws/s3outposts/model/ListOutpostsWithS3PaginationTraits.h>
 #include <aws/s3outposts/model/ListOutpostsWithS3Request.h>
 #include <aws/s3outposts/model/ListOutpostsWithS3Result.h>
+#include <aws/s3outposts/model/ListSharedEndpointsPaginationTraits.h>
 #include <aws/s3outposts/model/ListSharedEndpointsRequest.h>
 #include <aws/s3outposts/model/ListSharedEndpointsResult.h>
 #include <aws/s3outposts/model/NetworkInterface.h>

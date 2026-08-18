@@ -7,16 +7,21 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/bcm-recommended-actions/BCMRecommendedActionsClient.h>
+#include <aws/bcm-recommended-actions/BCMRecommendedActionsClientPagination.h>
 #include <aws/bcm-recommended-actions/BCMRecommendedActionsEndpointProvider.h>
 #include <aws/bcm-recommended-actions/BCMRecommendedActionsErrorMarshaller.h>
 #include <aws/bcm-recommended-actions/BCMRecommendedActionsErrors.h>
+#include <aws/bcm-recommended-actions/BCMRecommendedActionsPaginationBase.h>
 #include <aws/bcm-recommended-actions/BCMRecommendedActionsRequest.h>
 #include <aws/bcm-recommended-actions/BCMRecommendedActionsServiceClientModel.h>
+#include <aws/bcm-recommended-actions/BCMRecommendedActionsWaiter.h>
 #include <aws/bcm-recommended-actions/BCMRecommendedActions_EXPORTS.h>
+#include <aws/bcm-recommended-actions/internal/BCMRecommendedActionsEndpointRules.h>
 #include <aws/bcm-recommended-actions/model/ActionFilter.h>
 #include <aws/bcm-recommended-actions/model/ActionType.h>
 #include <aws/bcm-recommended-actions/model/Feature.h>
 #include <aws/bcm-recommended-actions/model/FilterName.h>
+#include <aws/bcm-recommended-actions/model/ListRecommendedActionsPaginationTraits.h>
 #include <aws/bcm-recommended-actions/model/ListRecommendedActionsRequest.h>
 #include <aws/bcm-recommended-actions/model/ListRecommendedActionsResult.h>
 #include <aws/bcm-recommended-actions/model/MatchOption.h>

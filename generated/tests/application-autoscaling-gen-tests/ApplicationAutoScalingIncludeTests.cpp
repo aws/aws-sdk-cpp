@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/application-autoscaling/ApplicationAutoScalingClient.h>
+#include <aws/application-autoscaling/ApplicationAutoScalingClientPagination.h>
 #include <aws/application-autoscaling/ApplicationAutoScalingEndpointProvider.h>
 #include <aws/application-autoscaling/ApplicationAutoScalingErrorMarshaller.h>
 #include <aws/application-autoscaling/ApplicationAutoScalingErrors.h>
+#include <aws/application-autoscaling/ApplicationAutoScalingPaginationBase.h>
 #include <aws/application-autoscaling/ApplicationAutoScalingRequest.h>
 #include <aws/application-autoscaling/ApplicationAutoScalingServiceClientModel.h>
+#include <aws/application-autoscaling/ApplicationAutoScalingWaiter.h>
 #include <aws/application-autoscaling/ApplicationAutoScaling_EXPORTS.h>
+#include <aws/application-autoscaling/internal/ApplicationAutoScalingEndpointRules.h>
 #include <aws/application-autoscaling/model/AdjustmentType.h>
 #include <aws/application-autoscaling/model/Alarm.h>
 #include <aws/application-autoscaling/model/CapacityForecast.h>
@@ -23,12 +27,16 @@
 #include <aws/application-autoscaling/model/DeleteScheduledActionResult.h>
 #include <aws/application-autoscaling/model/DeregisterScalableTargetRequest.h>
 #include <aws/application-autoscaling/model/DeregisterScalableTargetResult.h>
+#include <aws/application-autoscaling/model/DescribeScalableTargetsPaginationTraits.h>
 #include <aws/application-autoscaling/model/DescribeScalableTargetsRequest.h>
 #include <aws/application-autoscaling/model/DescribeScalableTargetsResult.h>
+#include <aws/application-autoscaling/model/DescribeScalingActivitiesPaginationTraits.h>
 #include <aws/application-autoscaling/model/DescribeScalingActivitiesRequest.h>
 #include <aws/application-autoscaling/model/DescribeScalingActivitiesResult.h>
+#include <aws/application-autoscaling/model/DescribeScalingPoliciesPaginationTraits.h>
 #include <aws/application-autoscaling/model/DescribeScalingPoliciesRequest.h>
 #include <aws/application-autoscaling/model/DescribeScalingPoliciesResult.h>
+#include <aws/application-autoscaling/model/DescribeScheduledActionsPaginationTraits.h>
 #include <aws/application-autoscaling/model/DescribeScheduledActionsRequest.h>
 #include <aws/application-autoscaling/model/DescribeScheduledActionsResult.h>
 #include <aws/application-autoscaling/model/GetPredictiveScalingForecastRequest.h>

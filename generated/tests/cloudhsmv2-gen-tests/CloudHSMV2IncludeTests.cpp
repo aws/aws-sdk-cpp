@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/cloudhsmv2/CloudHSMV2Client.h>
+#include <aws/cloudhsmv2/CloudHSMV2ClientPagination.h>
 #include <aws/cloudhsmv2/CloudHSMV2EndpointProvider.h>
 #include <aws/cloudhsmv2/CloudHSMV2ErrorMarshaller.h>
 #include <aws/cloudhsmv2/CloudHSMV2Errors.h>
+#include <aws/cloudhsmv2/CloudHSMV2PaginationBase.h>
 #include <aws/cloudhsmv2/CloudHSMV2Request.h>
 #include <aws/cloudhsmv2/CloudHSMV2ServiceClientModel.h>
+#include <aws/cloudhsmv2/CloudHSMV2Waiter.h>
 #include <aws/cloudhsmv2/CloudHSMV2_EXPORTS.h>
+#include <aws/cloudhsmv2/internal/CloudHSMV2EndpointRules.h>
 #include <aws/cloudhsmv2/model/Backup.h>
 #include <aws/cloudhsmv2/model/BackupPolicy.h>
 #include <aws/cloudhsmv2/model/BackupRetentionPolicy.h>
@@ -36,8 +40,10 @@
 #include <aws/cloudhsmv2/model/DeleteHsmResult.h>
 #include <aws/cloudhsmv2/model/DeleteResourcePolicyRequest.h>
 #include <aws/cloudhsmv2/model/DeleteResourcePolicyResult.h>
+#include <aws/cloudhsmv2/model/DescribeBackupsPaginationTraits.h>
 #include <aws/cloudhsmv2/model/DescribeBackupsRequest.h>
 #include <aws/cloudhsmv2/model/DescribeBackupsResult.h>
+#include <aws/cloudhsmv2/model/DescribeClustersPaginationTraits.h>
 #include <aws/cloudhsmv2/model/DescribeClustersRequest.h>
 #include <aws/cloudhsmv2/model/DescribeClustersResult.h>
 #include <aws/cloudhsmv2/model/DestinationBackup.h>
@@ -47,6 +53,7 @@
 #include <aws/cloudhsmv2/model/HsmState.h>
 #include <aws/cloudhsmv2/model/InitializeClusterRequest.h>
 #include <aws/cloudhsmv2/model/InitializeClusterResult.h>
+#include <aws/cloudhsmv2/model/ListTagsPaginationTraits.h>
 #include <aws/cloudhsmv2/model/ListTagsRequest.h>
 #include <aws/cloudhsmv2/model/ListTagsResult.h>
 #include <aws/cloudhsmv2/model/ModifyBackupAttributesRequest.h>

@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/rum/CloudWatchRUMClient.h>
+#include <aws/rum/CloudWatchRUMClientPagination.h>
 #include <aws/rum/CloudWatchRUMEndpointProvider.h>
 #include <aws/rum/CloudWatchRUMErrorMarshaller.h>
 #include <aws/rum/CloudWatchRUMErrors.h>
+#include <aws/rum/CloudWatchRUMPaginationBase.h>
 #include <aws/rum/CloudWatchRUMRequest.h>
 #include <aws/rum/CloudWatchRUMServiceClientModel.h>
+#include <aws/rum/CloudWatchRUMWaiter.h>
 #include <aws/rum/CloudWatchRUM_EXPORTS.h>
+#include <aws/rum/internal/CloudWatchRUMEndpointRules.h>
 #include <aws/rum/model/AppMonitor.h>
 #include <aws/rum/model/AppMonitorConfiguration.h>
 #include <aws/rum/model/AppMonitorDetails.h>
@@ -24,6 +28,7 @@
 #include <aws/rum/model/BatchDeleteRumMetricDefinitionsError.h>
 #include <aws/rum/model/BatchDeleteRumMetricDefinitionsRequest.h>
 #include <aws/rum/model/BatchDeleteRumMetricDefinitionsResult.h>
+#include <aws/rum/model/BatchGetRumMetricDefinitionsPaginationTraits.h>
 #include <aws/rum/model/BatchGetRumMetricDefinitionsRequest.h>
 #include <aws/rum/model/BatchGetRumMetricDefinitionsResult.h>
 #include <aws/rum/model/ConflictException.h>
@@ -41,6 +46,7 @@
 #include <aws/rum/model/DeleteRumMetricsDestinationResult.h>
 #include <aws/rum/model/DeobfuscationConfiguration.h>
 #include <aws/rum/model/DeobfuscationStatus.h>
+#include <aws/rum/model/GetAppMonitorDataPaginationTraits.h>
 #include <aws/rum/model/GetAppMonitorDataRequest.h>
 #include <aws/rum/model/GetAppMonitorDataResult.h>
 #include <aws/rum/model/GetAppMonitorRequest.h>
@@ -49,8 +55,10 @@
 #include <aws/rum/model/GetResourcePolicyResult.h>
 #include <aws/rum/model/InternalServerException.h>
 #include <aws/rum/model/JavaScriptSourceMaps.h>
+#include <aws/rum/model/ListAppMonitorsPaginationTraits.h>
 #include <aws/rum/model/ListAppMonitorsRequest.h>
 #include <aws/rum/model/ListAppMonitorsResult.h>
+#include <aws/rum/model/ListRumMetricsDestinationsPaginationTraits.h>
 #include <aws/rum/model/ListRumMetricsDestinationsRequest.h>
 #include <aws/rum/model/ListRumMetricsDestinationsResult.h>
 #include <aws/rum/model/ListTagsForResourceRequest.h>

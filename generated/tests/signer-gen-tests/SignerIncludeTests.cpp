@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/signer/SignerClient.h>
+#include <aws/signer/SignerClientPagination.h>
 #include <aws/signer/SignerEndpointProvider.h>
 #include <aws/signer/SignerErrorMarshaller.h>
 #include <aws/signer/SignerErrors.h>
+#include <aws/signer/SignerPaginationBase.h>
 #include <aws/signer/SignerRequest.h>
 #include <aws/signer/SignerServiceClientModel.h>
+#include <aws/signer/SignerWaiter.h>
 #include <aws/signer/Signer_EXPORTS.h>
+#include <aws/signer/internal/SignerEndpointRules.h>
 #include <aws/signer/model/AccessDeniedException.h>
 #include <aws/signer/model/AddProfilePermissionRequest.h>
 #include <aws/signer/model/AddProfilePermissionResult.h>
@@ -37,10 +41,13 @@
 #include <aws/signer/model/InternalServiceErrorException.h>
 #include <aws/signer/model/ListProfilePermissionsRequest.h>
 #include <aws/signer/model/ListProfilePermissionsResult.h>
+#include <aws/signer/model/ListSigningJobsPaginationTraits.h>
 #include <aws/signer/model/ListSigningJobsRequest.h>
 #include <aws/signer/model/ListSigningJobsResult.h>
+#include <aws/signer/model/ListSigningPlatformsPaginationTraits.h>
 #include <aws/signer/model/ListSigningPlatformsRequest.h>
 #include <aws/signer/model/ListSigningPlatformsResult.h>
+#include <aws/signer/model/ListSigningProfilesPaginationTraits.h>
 #include <aws/signer/model/ListSigningProfilesRequest.h>
 #include <aws/signer/model/ListSigningProfilesResult.h>
 #include <aws/signer/model/ListTagsForResourceRequest.h>

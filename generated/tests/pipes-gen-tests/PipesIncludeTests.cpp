@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/pipes/PipesClient.h>
+#include <aws/pipes/PipesClientPagination.h>
 #include <aws/pipes/PipesEndpointProvider.h>
 #include <aws/pipes/PipesErrorMarshaller.h>
 #include <aws/pipes/PipesErrors.h>
+#include <aws/pipes/PipesPaginationBase.h>
 #include <aws/pipes/PipesRequest.h>
 #include <aws/pipes/PipesServiceClientModel.h>
+#include <aws/pipes/PipesWaiter.h>
 #include <aws/pipes/Pipes_EXPORTS.h>
+#include <aws/pipes/internal/PipesEndpointRules.h>
 #include <aws/pipes/model/AssignPublicIp.h>
 #include <aws/pipes/model/AwsVpcConfiguration.h>
 #include <aws/pipes/model/BatchArrayProperties.h>
@@ -55,6 +59,7 @@
 #include <aws/pipes/model/InternalException.h>
 #include <aws/pipes/model/KinesisStreamStartPosition.h>
 #include <aws/pipes/model/LaunchType.h>
+#include <aws/pipes/model/ListPipesPaginationTraits.h>
 #include <aws/pipes/model/ListPipesRequest.h>
 #include <aws/pipes/model/ListPipesResult.h>
 #include <aws/pipes/model/ListTagsForResourceRequest.h>

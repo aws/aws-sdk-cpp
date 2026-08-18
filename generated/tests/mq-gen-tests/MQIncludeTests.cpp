@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/mq/MQClient.h>
+#include <aws/mq/MQClientPagination.h>
 #include <aws/mq/MQEndpointProvider.h>
 #include <aws/mq/MQErrorMarshaller.h>
 #include <aws/mq/MQErrors.h>
+#include <aws/mq/MQPaginationBase.h>
 #include <aws/mq/MQRequest.h>
 #include <aws/mq/MQServiceClientModel.h>
+#include <aws/mq/MQWaiter.h>
 #include <aws/mq/MQ_EXPORTS.h>
+#include <aws/mq/internal/MQEndpointRules.h>
 #include <aws/mq/model/ActionRequired.h>
 #include <aws/mq/model/AuthenticationStrategy.h>
 #include <aws/mq/model/AvailabilityZone.h>
@@ -58,6 +62,7 @@
 #include <aws/mq/model/DescribeConfigurationResult.h>
 #include <aws/mq/model/DescribeConfigurationRevisionRequest.h>
 #include <aws/mq/model/DescribeConfigurationRevisionResult.h>
+#include <aws/mq/model/DescribeSharedResourcesPaginationTraits.h>
 #include <aws/mq/model/DescribeSharedResourcesRequest.h>
 #include <aws/mq/model/DescribeSharedResourcesResult.h>
 #include <aws/mq/model/DescribeUserRequest.h>
@@ -69,6 +74,7 @@
 #include <aws/mq/model/InternalServerErrorException.h>
 #include <aws/mq/model/LdapServerMetadataInput.h>
 #include <aws/mq/model/LdapServerMetadataOutput.h>
+#include <aws/mq/model/ListBrokersPaginationTraits.h>
 #include <aws/mq/model/ListBrokersRequest.h>
 #include <aws/mq/model/ListBrokersResult.h>
 #include <aws/mq/model/ListConfigurationRevisionsRequest.h>

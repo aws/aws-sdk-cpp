@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/cloudcontrol/CloudControlApiClient.h>
+#include <aws/cloudcontrol/CloudControlApiClientPagination.h>
 #include <aws/cloudcontrol/CloudControlApiEndpointProvider.h>
 #include <aws/cloudcontrol/CloudControlApiErrorMarshaller.h>
 #include <aws/cloudcontrol/CloudControlApiErrors.h>
+#include <aws/cloudcontrol/CloudControlApiPaginationBase.h>
 #include <aws/cloudcontrol/CloudControlApiRequest.h>
 #include <aws/cloudcontrol/CloudControlApiServiceClientModel.h>
+#include <aws/cloudcontrol/CloudControlApiWaiter.h>
 #include <aws/cloudcontrol/CloudControlApi_EXPORTS.h>
+#include <aws/cloudcontrol/internal/CloudControlApiEndpointRules.h>
 #include <aws/cloudcontrol/model/CancelResourceRequestRequest.h>
 #include <aws/cloudcontrol/model/CancelResourceRequestResult.h>
 #include <aws/cloudcontrol/model/CreateResourceRequest.h>
@@ -25,8 +29,10 @@
 #include <aws/cloudcontrol/model/GetResourceResult.h>
 #include <aws/cloudcontrol/model/HandlerErrorCode.h>
 #include <aws/cloudcontrol/model/HookProgressEvent.h>
+#include <aws/cloudcontrol/model/ListResourceRequestsPaginationTraits.h>
 #include <aws/cloudcontrol/model/ListResourceRequestsRequest.h>
 #include <aws/cloudcontrol/model/ListResourceRequestsResult.h>
+#include <aws/cloudcontrol/model/ListResourcesPaginationTraits.h>
 #include <aws/cloudcontrol/model/ListResourcesRequest.h>
 #include <aws/cloudcontrol/model/ListResourcesResult.h>
 #include <aws/cloudcontrol/model/Operation.h>

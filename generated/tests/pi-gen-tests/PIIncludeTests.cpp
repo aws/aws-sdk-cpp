@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/pi/PIClient.h>
+#include <aws/pi/PIClientPagination.h>
 #include <aws/pi/PIEndpointProvider.h>
 #include <aws/pi/PIErrorMarshaller.h>
 #include <aws/pi/PIErrors.h>
+#include <aws/pi/PIPaginationBase.h>
 #include <aws/pi/PIRequest.h>
 #include <aws/pi/PIServiceClientModel.h>
+#include <aws/pi/PIWaiter.h>
 #include <aws/pi/PI_EXPORTS.h>
+#include <aws/pi/internal/PIEndpointRules.h>
 #include <aws/pi/model/AcceptLanguage.h>
 #include <aws/pi/model/AnalysisReport.h>
 #include <aws/pi/model/AnalysisReportSummary.h>
@@ -24,6 +28,7 @@
 #include <aws/pi/model/DataPoint.h>
 #include <aws/pi/model/DeletePerformanceAnalysisReportRequest.h>
 #include <aws/pi/model/DeletePerformanceAnalysisReportResult.h>
+#include <aws/pi/model/DescribeDimensionKeysPaginationTraits.h>
 #include <aws/pi/model/DescribeDimensionKeysRequest.h>
 #include <aws/pi/model/DescribeDimensionKeysResult.h>
 #include <aws/pi/model/DetailStatus.h>
@@ -41,15 +46,20 @@
 #include <aws/pi/model/GetPerformanceAnalysisReportResult.h>
 #include <aws/pi/model/GetResourceMetadataRequest.h>
 #include <aws/pi/model/GetResourceMetadataResult.h>
+#include <aws/pi/model/GetResourceMetricsPaginationTraits.h>
 #include <aws/pi/model/GetResourceMetricsRequest.h>
 #include <aws/pi/model/GetResourceMetricsResult.h>
 #include <aws/pi/model/Insight.h>
+#include <aws/pi/model/ListAvailableResourceDimensionsPaginationTraits.h>
 #include <aws/pi/model/ListAvailableResourceDimensionsRequest.h>
 #include <aws/pi/model/ListAvailableResourceDimensionsResult.h>
+#include <aws/pi/model/ListAvailableResourceMetricsPaginationTraits.h>
 #include <aws/pi/model/ListAvailableResourceMetricsRequest.h>
 #include <aws/pi/model/ListAvailableResourceMetricsResult.h>
+#include <aws/pi/model/ListPerformanceAnalysisReportRecommendationsPaginationTraits.h>
 #include <aws/pi/model/ListPerformanceAnalysisReportRecommendationsRequest.h>
 #include <aws/pi/model/ListPerformanceAnalysisReportRecommendationsResult.h>
+#include <aws/pi/model/ListPerformanceAnalysisReportsPaginationTraits.h>
 #include <aws/pi/model/ListPerformanceAnalysisReportsRequest.h>
 #include <aws/pi/model/ListPerformanceAnalysisReportsResult.h>
 #include <aws/pi/model/ListTagsForResourceRequest.h>

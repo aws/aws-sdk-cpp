@@ -373,4 +373,160 @@ class GlobalTransformsTest {
 
         assertTrue(reachable.contains(ShapeId.from("com.example#MyError")));
     }
+
+    // --- dropDeprecatedMembers tests ---
+
+    @Test
+    void dropDeprecatedMembers_removesDeprecatedMember_keepsOthers() {
+        // Mirrors C2J: a member with @deprecated is dropped from the generated shape; siblings stay.
+        // The shape must be reachable from the service (used as an operation input here) so that the
+        // reachability-scoped transform considers it.
+        StructureShape config = StructureShape.builder()
+            .id("com.example#LocationConfiguration")
+            .addMember(MemberShape.builder()
+                .id("com.example#LocationConfiguration$location").target("smithy.api#String").build())
+            .addMember(MemberShape.builder()
+                .id("com.example#LocationConfiguration$onDemandCapacity").target("smithy.api#Integer")
+                .addTrait(software.amazon.smithy.model.traits.DeprecatedTrait.builder().build())
+                .build())
+            .build();
+        StructureShape output = StructureShape.builder().id("com.example#MyOutput").build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#MyOperation").input(config.getId()).output(output.getId()).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#MyService").version("2024-01-01").addOperation(op.getId()).build();
+        Model model = Model.assembler().addShapes(config, output, op, service).assemble().unwrap();
+
+        Model out = GlobalTransforms.dropDeprecatedMembers(model, service);
+        StructureShape transformed = out.expectShape(
+            ShapeId.from("com.example#LocationConfiguration"), StructureShape.class);
+        assertFalse(transformed.getMember("onDemandCapacity").isPresent(),
+            "deprecated member must be dropped");
+        assertTrue(transformed.getMember("location").isPresent(),
+            "non-deprecated sibling must remain");
+    }
+
+    @Test
+    void dropDeprecatedMembers_noDeprecated_returnsSameModel() {
+        StructureShape input = StructureShape.builder()
+            .id("com.example#MyInput")
+            .addMember(MemberShape.builder().id("com.example#MyInput$a").target("smithy.api#String").build())
+            .build();
+        StructureShape output = StructureShape.builder().id("com.example#MyOutput").build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#MyOperation").input(input.getId()).output(output.getId()).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#MyService").version("2024-01-01").addOperation(op.getId()).build();
+        Model model = Model.assembler().addShapes(input, output, op, service).assemble().unwrap();
+        // The prelude declares its own @deprecated member (protocolDefinition$noInlineDocumentSupport),
+        // but it is not reachable from the service, so the transform is a true no-op here.
+        assertSame(model, GlobalTransforms.dropDeprecatedMembers(model, service),
+            "models without service-reachable deprecated members should be returned unchanged");
+    }
+
+    @Test
+    void dropDeprecatedMembers_orphanedTargetBecomesUnreachable() {
+        // A struct referenced ONLY through a deprecated member drops out of the reachable set,
+        // matching C2J's omission of the orphaned shape file.
+        StructureShape orphan = StructureShape.builder()
+            .id("com.example#OrphanDetail")
+            .addMember(MemberShape.builder()
+                .id("com.example#OrphanDetail$x").target("smithy.api#String").build())
+            .build();
+        StructureShape input = StructureShape.builder()
+            .id("com.example#MyInput")
+            .addMember(MemberShape.builder()
+                .id("com.example#MyInput$detail").target(orphan.getId())
+                .addTrait(software.amazon.smithy.model.traits.DeprecatedTrait.builder().build())
+                .build())
+            .build();
+        StructureShape output = StructureShape.builder().id("com.example#MyOutput").build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#MyOperation").input(input.getId()).output(output.getId()).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#MyService").version("2024-01-01").addOperation(op.getId()).build();
+        Model model = Model.assembler()
+            .addShapes(orphan, input, output, op, service).assemble().unwrap();
+
+        Model out = GlobalTransforms.dropDeprecatedMembers(model, service);
+        Set<ShapeId> reachable = GlobalTransforms.computeReachableShapes(out, serviceOf(out, "MyService"));
+        assertFalse(reachable.contains(ShapeId.from("com.example#OrphanDetail")),
+            "shape referenced only via a deprecated member must become unreachable");
+    }
+
+    private static ServiceShape serviceOf(Model model, String name) {
+        return model.expectShape(ShapeId.from("com.example#" + name), ServiceShape.class);
+    }
+
+    // --- injectResponseMetadata tests ---
+
+    /** A single-operation service under the given protocol trait, output has one plain member. */
+    private static Model oneOutputModel(software.amazon.smithy.model.traits.Trait protocolTrait) {
+        StructureShape input = StructureShape.builder().id("com.example#DoThingInput").build();
+        StructureShape output = StructureShape.builder()
+            .id("com.example#DoThingOutput")
+            .addMember(MemberShape.builder()
+                .id("com.example#DoThingOutput$name").target("smithy.api#String").build())
+            .build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#DoThing").input(input.getId()).output(output.getId()).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#Example").version("2024-01-01")
+            .addTrait(protocolTrait).addOperation(op.getId()).build();
+        return Model.assembler().addShapes(input, output, op, service).assemble().unwrap();
+    }
+
+    private static ServiceShape serviceOf(Model model) {
+        return model.expectShape(ShapeId.from("com.example#Example"), ServiceShape.class);
+    }
+
+    @Test
+    void injectResponseMetadata_awsQuery_addsResponseMetadataMemberToResult() {
+        Model model = oneOutputModel(new software.amazon.smithy.aws.traits.protocols.AwsQueryTrait());
+        Model out = GlobalTransforms.asTransform().apply(model, serviceOf(model));
+
+        StructureShape result = out.expectShape(
+            ShapeId.from("com.example#DoThingOutput"), StructureShape.class);
+        assertTrue(result.getMember("ResponseMetadata").isPresent(),
+            "Query result should carry an injected ResponseMetadata member");
+        MemberShape rm = result.getMember("ResponseMetadata").get();
+        assertTrue(rm.hasTrait(software.amazon.smithy.model.traits.RequiredTrait.class),
+            "ResponseMetadata member should be @required, matching C2J");
+    }
+
+    @Test
+    void injectResponseMetadata_awsQuery_addsResponseMetadataStructureWithRequestId() {
+        Model model = oneOutputModel(new software.amazon.smithy.aws.traits.protocols.AwsQueryTrait());
+        Model out = GlobalTransforms.asTransform().apply(model, serviceOf(model));
+
+        ShapeId rmId = out.expectShape(ShapeId.from("com.example#DoThingOutput"), StructureShape.class)
+            .getMember("ResponseMetadata").get().getTarget();
+        StructureShape rm = out.expectShape(rmId, StructureShape.class);
+        assertEquals("ResponseMetadata", rmId.getName());
+        assertTrue(rm.getMember("RequestId").isPresent(),
+            "ResponseMetadata should have a RequestId member");
+    }
+
+    @Test
+    void injectResponseMetadata_ec2_addsResponseMetadataMemberToResult() {
+        Model model = oneOutputModel(new software.amazon.smithy.aws.traits.protocols.Ec2QueryTrait());
+        Model out = GlobalTransforms.asTransform().apply(model, serviceOf(model));
+
+        StructureShape result = out.expectShape(
+            ShapeId.from("com.example#DoThingOutput"), StructureShape.class);
+        assertTrue(result.getMember("ResponseMetadata").isPresent(),
+            "EC2 result should carry an injected ResponseMetadata member");
+    }
+
+    @Test
+    void injectResponseMetadata_restJson_leavesResultUnchanged() {
+        Model model = oneOutputModel(
+            software.amazon.smithy.aws.traits.protocols.RestJson1Trait.builder().build());
+        Model out = GlobalTransforms.asTransform().apply(model, serviceOf(model));
+
+        StructureShape result = out.expectShape(
+            ShapeId.from("com.example#DoThingOutput"), StructureShape.class);
+        assertFalse(result.getMember("ResponseMetadata").isPresent(),
+            "Non-query protocols must not get ResponseMetadata injected");
+    }
 }

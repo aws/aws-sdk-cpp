@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/repostspace/RepostspaceClient.h>
+#include <aws/repostspace/RepostspaceClientPagination.h>
 #include <aws/repostspace/RepostspaceEndpointProvider.h>
 #include <aws/repostspace/RepostspaceErrorMarshaller.h>
 #include <aws/repostspace/RepostspaceErrors.h>
+#include <aws/repostspace/RepostspacePaginationBase.h>
 #include <aws/repostspace/RepostspaceRequest.h>
 #include <aws/repostspace/RepostspaceServiceClientModel.h>
+#include <aws/repostspace/RepostspaceWaiter.h>
 #include <aws/repostspace/Repostspace_EXPORTS.h>
+#include <aws/repostspace/internal/RepostspaceEndpointRules.h>
 #include <aws/repostspace/model/BatchAddChannelRoleToAccessorsRequest.h>
 #include <aws/repostspace/model/BatchAddChannelRoleToAccessorsResult.h>
 #include <aws/repostspace/model/BatchAddRoleRequest.h>
@@ -40,8 +44,10 @@
 #include <aws/repostspace/model/GetSpaceRequest.h>
 #include <aws/repostspace/model/GetSpaceResult.h>
 #include <aws/repostspace/model/InternalServerException.h>
+#include <aws/repostspace/model/ListChannelsPaginationTraits.h>
 #include <aws/repostspace/model/ListChannelsRequest.h>
 #include <aws/repostspace/model/ListChannelsResult.h>
+#include <aws/repostspace/model/ListSpacesPaginationTraits.h>
 #include <aws/repostspace/model/ListSpacesRequest.h>
 #include <aws/repostspace/model/ListSpacesResult.h>
 #include <aws/repostspace/model/ListTagsForResourceRequest.h>

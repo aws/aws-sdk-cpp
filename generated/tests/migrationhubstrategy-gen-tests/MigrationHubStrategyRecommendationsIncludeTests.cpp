@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsClient.h>
+#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsClientPagination.h>
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsEndpointProvider.h>
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsErrorMarshaller.h>
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsErrors.h>
+#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsPaginationBase.h>
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsRequest.h>
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsServiceClientModel.h>
+#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsWaiter.h>
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
+#include <aws/migrationhubstrategy/internal/MigrationHubStrategyRecommendationsEndpointRules.h>
 #include <aws/migrationhubstrategy/model/AnalysisStatusUnion.h>
 #include <aws/migrationhubstrategy/model/AnalysisType.h>
 #include <aws/migrationhubstrategy/model/AnalyzableServerSummary.h>
@@ -66,6 +70,7 @@
 #include <aws/migrationhubstrategy/model/GetPortfolioSummaryResult.h>
 #include <aws/migrationhubstrategy/model/GetRecommendationReportDetailsRequest.h>
 #include <aws/migrationhubstrategy/model/GetRecommendationReportDetailsResult.h>
+#include <aws/migrationhubstrategy/model/GetServerDetailsPaginationTraits.h>
 #include <aws/migrationhubstrategy/model/GetServerDetailsRequest.h>
 #include <aws/migrationhubstrategy/model/GetServerDetailsResult.h>
 #include <aws/migrationhubstrategy/model/GetServerStrategiesRequest.h>
@@ -80,14 +85,19 @@
 #include <aws/migrationhubstrategy/model/ImportFileTaskInformation.h>
 #include <aws/migrationhubstrategy/model/ImportFileTaskStatus.h>
 #include <aws/migrationhubstrategy/model/InclusionStatus.h>
+#include <aws/migrationhubstrategy/model/ListAnalyzableServersPaginationTraits.h>
 #include <aws/migrationhubstrategy/model/ListAnalyzableServersRequest.h>
 #include <aws/migrationhubstrategy/model/ListAnalyzableServersResult.h>
+#include <aws/migrationhubstrategy/model/ListApplicationComponentsPaginationTraits.h>
 #include <aws/migrationhubstrategy/model/ListApplicationComponentsRequest.h>
 #include <aws/migrationhubstrategy/model/ListApplicationComponentsResult.h>
+#include <aws/migrationhubstrategy/model/ListCollectorsPaginationTraits.h>
 #include <aws/migrationhubstrategy/model/ListCollectorsRequest.h>
 #include <aws/migrationhubstrategy/model/ListCollectorsResult.h>
+#include <aws/migrationhubstrategy/model/ListImportFileTaskPaginationTraits.h>
 #include <aws/migrationhubstrategy/model/ListImportFileTaskRequest.h>
 #include <aws/migrationhubstrategy/model/ListImportFileTaskResult.h>
+#include <aws/migrationhubstrategy/model/ListServersPaginationTraits.h>
 #include <aws/migrationhubstrategy/model/ListServersRequest.h>
 #include <aws/migrationhubstrategy/model/ListServersResult.h>
 #include <aws/migrationhubstrategy/model/ManagementPreference.h>

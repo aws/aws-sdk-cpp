@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/amplify/AmplifyClient.h>
+#include <aws/amplify/AmplifyClientPagination.h>
 #include <aws/amplify/AmplifyEndpointProvider.h>
 #include <aws/amplify/AmplifyErrorMarshaller.h>
 #include <aws/amplify/AmplifyErrors.h>
+#include <aws/amplify/AmplifyPaginationBase.h>
 #include <aws/amplify/AmplifyRequest.h>
 #include <aws/amplify/AmplifyServiceClientModel.h>
+#include <aws/amplify/AmplifyWaiter.h>
 #include <aws/amplify/Amplify_EXPORTS.h>
+#include <aws/amplify/internal/AmplifyEndpointRules.h>
 #include <aws/amplify/model/App.h>
 #include <aws/amplify/model/Artifact.h>
 #include <aws/amplify/model/AutoBranchCreationConfig.h>
@@ -73,16 +77,20 @@
 #include <aws/amplify/model/JobStatus.h>
 #include <aws/amplify/model/JobSummary.h>
 #include <aws/amplify/model/JobType.h>
+#include <aws/amplify/model/ListAppsPaginationTraits.h>
 #include <aws/amplify/model/ListAppsRequest.h>
 #include <aws/amplify/model/ListAppsResult.h>
 #include <aws/amplify/model/ListArtifactsRequest.h>
 #include <aws/amplify/model/ListArtifactsResult.h>
 #include <aws/amplify/model/ListBackendEnvironmentsRequest.h>
 #include <aws/amplify/model/ListBackendEnvironmentsResult.h>
+#include <aws/amplify/model/ListBranchesPaginationTraits.h>
 #include <aws/amplify/model/ListBranchesRequest.h>
 #include <aws/amplify/model/ListBranchesResult.h>
+#include <aws/amplify/model/ListDomainAssociationsPaginationTraits.h>
 #include <aws/amplify/model/ListDomainAssociationsRequest.h>
 #include <aws/amplify/model/ListDomainAssociationsResult.h>
+#include <aws/amplify/model/ListJobsPaginationTraits.h>
 #include <aws/amplify/model/ListJobsRequest.h>
 #include <aws/amplify/model/ListJobsResult.h>
 #include <aws/amplify/model/ListTagsForResourceRequest.h>

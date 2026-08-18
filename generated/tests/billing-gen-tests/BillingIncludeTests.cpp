@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/billing/BillingClient.h>
+#include <aws/billing/BillingClientPagination.h>
 #include <aws/billing/BillingEndpointProvider.h>
 #include <aws/billing/BillingErrorMarshaller.h>
 #include <aws/billing/BillingErrors.h>
+#include <aws/billing/BillingPaginationBase.h>
 #include <aws/billing/BillingRequest.h>
 #include <aws/billing/BillingServiceClientModel.h>
+#include <aws/billing/BillingWaiter.h>
 #include <aws/billing/Billing_EXPORTS.h>
+#include <aws/billing/internal/BillingEndpointRules.h>
 #include <aws/billing/model/ActiveTimeRange.h>
 #include <aws/billing/model/AdditionalCharge.h>
 #include <aws/billing/model/Amount.h>
@@ -53,6 +57,7 @@
 #include <aws/billing/model/GetBillingPreferencesResult.h>
 #include <aws/billing/model/GetBillingViewRequest.h>
 #include <aws/billing/model/GetBillingViewResult.h>
+#include <aws/billing/model/GetCreditAllocationHistoryPaginationTraits.h>
 #include <aws/billing/model/GetCreditAllocationHistoryRequest.h>
 #include <aws/billing/model/GetCreditAllocationHistoryResult.h>
 #include <aws/billing/model/GetCreditsRequest.h>
@@ -64,10 +69,13 @@
 #include <aws/billing/model/GetResourcePolicyRequest.h>
 #include <aws/billing/model/GetResourcePolicyResult.h>
 #include <aws/billing/model/LinkedAccountCharge.h>
+#include <aws/billing/model/ListBillingViewsPaginationTraits.h>
 #include <aws/billing/model/ListBillingViewsRequest.h>
 #include <aws/billing/model/ListBillingViewsResult.h>
+#include <aws/billing/model/ListEnterpriseSupportLinkedAccountChargesPaginationTraits.h>
 #include <aws/billing/model/ListEnterpriseSupportLinkedAccountChargesRequest.h>
 #include <aws/billing/model/ListEnterpriseSupportLinkedAccountChargesResult.h>
+#include <aws/billing/model/ListSourceViewsForBillingViewPaginationTraits.h>
 #include <aws/billing/model/ListSourceViewsForBillingViewRequest.h>
 #include <aws/billing/model/ListSourceViewsForBillingViewResult.h>
 #include <aws/billing/model/ListTagsForResourceRequest.h>

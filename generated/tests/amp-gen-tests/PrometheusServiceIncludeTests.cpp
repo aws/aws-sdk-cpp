@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/amp/PrometheusServiceClient.h>
+#include <aws/amp/PrometheusServiceClientPagination.h>
 #include <aws/amp/PrometheusServiceEndpointProvider.h>
 #include <aws/amp/PrometheusServiceErrorMarshaller.h>
 #include <aws/amp/PrometheusServiceErrors.h>
+#include <aws/amp/PrometheusServicePaginationBase.h>
 #include <aws/amp/PrometheusServiceRequest.h>
 #include <aws/amp/PrometheusServiceServiceClientModel.h>
+#include <aws/amp/PrometheusServiceWaiter.h>
 #include <aws/amp/PrometheusService_EXPORTS.h>
+#include <aws/amp/internal/PrometheusServiceEndpointRules.h>
 #include <aws/amp/model/AlertManagerDefinitionDescription.h>
 #include <aws/amp/model/AlertManagerDefinitionStatus.h>
 #include <aws/amp/model/AlertManagerDefinitionStatusCode.h>
@@ -80,14 +84,18 @@
 #include <aws/amp/model/InternalServerException.h>
 #include <aws/amp/model/LimitsPerLabelSet.h>
 #include <aws/amp/model/LimitsPerLabelSetEntry.h>
+#include <aws/amp/model/ListAnomalyDetectorsPaginationTraits.h>
 #include <aws/amp/model/ListAnomalyDetectorsRequest.h>
 #include <aws/amp/model/ListAnomalyDetectorsResult.h>
+#include <aws/amp/model/ListRuleGroupsNamespacesPaginationTraits.h>
 #include <aws/amp/model/ListRuleGroupsNamespacesRequest.h>
 #include <aws/amp/model/ListRuleGroupsNamespacesResult.h>
+#include <aws/amp/model/ListScrapersPaginationTraits.h>
 #include <aws/amp/model/ListScrapersRequest.h>
 #include <aws/amp/model/ListScrapersResult.h>
 #include <aws/amp/model/ListTagsForResourceRequest.h>
 #include <aws/amp/model/ListTagsForResourceResult.h>
+#include <aws/amp/model/ListWorkspacesPaginationTraits.h>
 #include <aws/amp/model/ListWorkspacesRequest.h>
 #include <aws/amp/model/ListWorkspacesResult.h>
 #include <aws/amp/model/LoggingConfigurationMetadata.h>

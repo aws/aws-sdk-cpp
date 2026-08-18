@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/mediapackage-vod/MediaPackageVodClient.h>
+#include <aws/mediapackage-vod/MediaPackageVodClientPagination.h>
 #include <aws/mediapackage-vod/MediaPackageVodEndpointProvider.h>
 #include <aws/mediapackage-vod/MediaPackageVodErrorMarshaller.h>
 #include <aws/mediapackage-vod/MediaPackageVodErrors.h>
+#include <aws/mediapackage-vod/MediaPackageVodPaginationBase.h>
 #include <aws/mediapackage-vod/MediaPackageVodRequest.h>
 #include <aws/mediapackage-vod/MediaPackageVodServiceClientModel.h>
+#include <aws/mediapackage-vod/MediaPackageVodWaiter.h>
 #include <aws/mediapackage-vod/MediaPackageVod_EXPORTS.h>
+#include <aws/mediapackage-vod/internal/MediaPackageVodEndpointRules.h>
 #include <aws/mediapackage-vod/model/AdMarkers.h>
 #include <aws/mediapackage-vod/model/AssetShallow.h>
 #include <aws/mediapackage-vod/model/Authorization.h>
@@ -48,10 +52,13 @@
 #include <aws/mediapackage-vod/model/HlsEncryption.h>
 #include <aws/mediapackage-vod/model/HlsManifest.h>
 #include <aws/mediapackage-vod/model/HlsPackage.h>
+#include <aws/mediapackage-vod/model/ListAssetsPaginationTraits.h>
 #include <aws/mediapackage-vod/model/ListAssetsRequest.h>
 #include <aws/mediapackage-vod/model/ListAssetsResult.h>
+#include <aws/mediapackage-vod/model/ListPackagingConfigurationsPaginationTraits.h>
 #include <aws/mediapackage-vod/model/ListPackagingConfigurationsRequest.h>
 #include <aws/mediapackage-vod/model/ListPackagingConfigurationsResult.h>
+#include <aws/mediapackage-vod/model/ListPackagingGroupsPaginationTraits.h>
 #include <aws/mediapackage-vod/model/ListPackagingGroupsRequest.h>
 #include <aws/mediapackage-vod/model/ListPackagingGroupsResult.h>
 #include <aws/mediapackage-vod/model/ListTagsForResourceRequest.h>

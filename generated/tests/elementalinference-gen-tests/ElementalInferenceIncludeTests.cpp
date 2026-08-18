@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/elementalinference/ElementalInferenceClient.h>
+#include <aws/elementalinference/ElementalInferenceClientPagination.h>
 #include <aws/elementalinference/ElementalInferenceEndpointProvider.h>
 #include <aws/elementalinference/ElementalInferenceErrorMarshaller.h>
 #include <aws/elementalinference/ElementalInferenceErrors.h>
+#include <aws/elementalinference/ElementalInferencePaginationBase.h>
 #include <aws/elementalinference/ElementalInferenceRequest.h>
 #include <aws/elementalinference/ElementalInferenceServiceClientModel.h>
+#include <aws/elementalinference/ElementalInferenceWaiter.h>
 #include <aws/elementalinference/ElementalInference_EXPORTS.h>
+#include <aws/elementalinference/internal/ElementalInferenceEndpointRules.h>
 #include <aws/elementalinference/model/AspectRatio.h>
 #include <aws/elementalinference/model/AssociateFeedRequest.h>
 #include <aws/elementalinference/model/AssociateFeedResult.h>
@@ -47,8 +51,10 @@
 #include <aws/elementalinference/model/GetFeedRequest.h>
 #include <aws/elementalinference/model/GetFeedResult.h>
 #include <aws/elementalinference/model/GetOutput.h>
+#include <aws/elementalinference/model/ListDictionariesPaginationTraits.h>
 #include <aws/elementalinference/model/ListDictionariesRequest.h>
 #include <aws/elementalinference/model/ListDictionariesResult.h>
+#include <aws/elementalinference/model/ListFeedsPaginationTraits.h>
 #include <aws/elementalinference/model/ListFeedsRequest.h>
 #include <aws/elementalinference/model/ListFeedsResult.h>
 #include <aws/elementalinference/model/ListTagsForResourceRequest.h>
@@ -57,6 +63,7 @@
 #include <aws/elementalinference/model/OutputStatus.h>
 #include <aws/elementalinference/model/ProfanityFilterMode.h>
 #include <aws/elementalinference/model/SearchFilter.h>
+#include <aws/elementalinference/model/SearchFixturesPaginationTraits.h>
 #include <aws/elementalinference/model/SearchFixturesRequest.h>
 #include <aws/elementalinference/model/SearchFixturesResult.h>
 #include <aws/elementalinference/model/SubtitlingConfig.h>

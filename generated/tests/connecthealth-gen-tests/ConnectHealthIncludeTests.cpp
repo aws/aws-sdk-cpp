@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/connecthealth/ConnectHealthClient.h>
+#include <aws/connecthealth/ConnectHealthClientPagination.h>
 #include <aws/connecthealth/ConnectHealthEndpointProvider.h>
 #include <aws/connecthealth/ConnectHealthErrorMarshaller.h>
 #include <aws/connecthealth/ConnectHealthErrors.h>
+#include <aws/connecthealth/ConnectHealthPaginationBase.h>
 #include <aws/connecthealth/ConnectHealthRequest.h>
 #include <aws/connecthealth/ConnectHealthServiceClientModel.h>
+#include <aws/connecthealth/ConnectHealthWaiter.h>
 #include <aws/connecthealth/ConnectHealth_EXPORTS.h>
+#include <aws/connecthealth/internal/ConnectHealthEndpointRules.h>
 #include <aws/connecthealth/model/ActivateSubscriptionRequest.h>
 #include <aws/connecthealth/model/ActivateSubscriptionResult.h>
 #include <aws/connecthealth/model/ArtifactDetails.h>
@@ -50,8 +54,10 @@
 #include <aws/connecthealth/model/InsightsOutput.h>
 #include <aws/connecthealth/model/InsightsType.h>
 #include <aws/connecthealth/model/JobStatus.h>
+#include <aws/connecthealth/model/ListDomainsPaginationTraits.h>
 #include <aws/connecthealth/model/ListDomainsRequest.h>
 #include <aws/connecthealth/model/ListDomainsResult.h>
+#include <aws/connecthealth/model/ListSubscriptionsPaginationTraits.h>
 #include <aws/connecthealth/model/ListSubscriptionsRequest.h>
 #include <aws/connecthealth/model/ListSubscriptionsResult.h>
 #include <aws/connecthealth/model/ListTagsForResourceRequest.h>

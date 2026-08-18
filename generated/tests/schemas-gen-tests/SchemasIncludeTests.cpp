@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/schemas/SchemasClient.h>
+#include <aws/schemas/SchemasClientPagination.h>
 #include <aws/schemas/SchemasEndpointProvider.h>
 #include <aws/schemas/SchemasErrorMarshaller.h>
 #include <aws/schemas/SchemasErrors.h>
+#include <aws/schemas/SchemasPaginationBase.h>
 #include <aws/schemas/SchemasRequest.h>
 #include <aws/schemas/SchemasServiceClientModel.h>
+#include <aws/schemas/SchemasWaiter.h>
 #include <aws/schemas/Schemas_EXPORTS.h>
+#include <aws/schemas/internal/SchemasEndpointRules.h>
 #include <aws/schemas/model/BadRequestException.h>
 #include <aws/schemas/model/CodeGenerationStatus.h>
 #include <aws/schemas/model/ConflictException.h>
@@ -48,12 +52,16 @@
 #include <aws/schemas/model/GetResourcePolicyResult.h>
 #include <aws/schemas/model/GoneException.h>
 #include <aws/schemas/model/InternalServerErrorException.h>
+#include <aws/schemas/model/ListDiscoverersPaginationTraits.h>
 #include <aws/schemas/model/ListDiscoverersRequest.h>
 #include <aws/schemas/model/ListDiscoverersResult.h>
+#include <aws/schemas/model/ListRegistriesPaginationTraits.h>
 #include <aws/schemas/model/ListRegistriesRequest.h>
 #include <aws/schemas/model/ListRegistriesResult.h>
+#include <aws/schemas/model/ListSchemaVersionsPaginationTraits.h>
 #include <aws/schemas/model/ListSchemaVersionsRequest.h>
 #include <aws/schemas/model/ListSchemaVersionsResult.h>
+#include <aws/schemas/model/ListSchemasPaginationTraits.h>
 #include <aws/schemas/model/ListSchemasRequest.h>
 #include <aws/schemas/model/ListSchemasResult.h>
 #include <aws/schemas/model/ListTagsForResourceRequest.h>
@@ -69,6 +77,7 @@
 #include <aws/schemas/model/SchemaVersionSummary.h>
 #include <aws/schemas/model/SearchSchemaSummary.h>
 #include <aws/schemas/model/SearchSchemaVersionSummary.h>
+#include <aws/schemas/model/SearchSchemasPaginationTraits.h>
 #include <aws/schemas/model/SearchSchemasRequest.h>
 #include <aws/schemas/model/SearchSchemasResult.h>
 #include <aws/schemas/model/ServiceUnavailableException.h>

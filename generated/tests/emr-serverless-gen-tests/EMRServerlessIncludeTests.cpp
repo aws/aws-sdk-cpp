@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/emr-serverless/EMRServerlessClient.h>
+#include <aws/emr-serverless/EMRServerlessClientPagination.h>
 #include <aws/emr-serverless/EMRServerlessEndpointProvider.h>
 #include <aws/emr-serverless/EMRServerlessErrorMarshaller.h>
 #include <aws/emr-serverless/EMRServerlessErrors.h>
+#include <aws/emr-serverless/EMRServerlessPaginationBase.h>
 #include <aws/emr-serverless/EMRServerlessRequest.h>
 #include <aws/emr-serverless/EMRServerlessServiceClientModel.h>
+#include <aws/emr-serverless/EMRServerlessWaiter.h>
 #include <aws/emr-serverless/EMRServerless_EXPORTS.h>
+#include <aws/emr-serverless/internal/EMRServerlessEndpointRules.h>
 #include <aws/emr-serverless/model/Application.h>
 #include <aws/emr-serverless/model/ApplicationState.h>
 #include <aws/emr-serverless/model/ApplicationSummary.h>
@@ -56,12 +60,16 @@
 #include <aws/emr-serverless/model/JobRunMode.h>
 #include <aws/emr-serverless/model/JobRunState.h>
 #include <aws/emr-serverless/model/JobRunSummary.h>
+#include <aws/emr-serverless/model/ListApplicationsPaginationTraits.h>
 #include <aws/emr-serverless/model/ListApplicationsRequest.h>
 #include <aws/emr-serverless/model/ListApplicationsResult.h>
+#include <aws/emr-serverless/model/ListJobRunAttemptsPaginationTraits.h>
 #include <aws/emr-serverless/model/ListJobRunAttemptsRequest.h>
 #include <aws/emr-serverless/model/ListJobRunAttemptsResult.h>
+#include <aws/emr-serverless/model/ListJobRunsPaginationTraits.h>
 #include <aws/emr-serverless/model/ListJobRunsRequest.h>
 #include <aws/emr-serverless/model/ListJobRunsResult.h>
+#include <aws/emr-serverless/model/ListSessionsPaginationTraits.h>
 #include <aws/emr-serverless/model/ListSessionsRequest.h>
 #include <aws/emr-serverless/model/ListSessionsResult.h>
 #include <aws/emr-serverless/model/ListTagsForResourceRequest.h>

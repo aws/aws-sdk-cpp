@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/oam/OAMClient.h>
+#include <aws/oam/OAMClientPagination.h>
 #include <aws/oam/OAMEndpointProvider.h>
 #include <aws/oam/OAMErrorMarshaller.h>
 #include <aws/oam/OAMErrors.h>
+#include <aws/oam/OAMPaginationBase.h>
 #include <aws/oam/OAMRequest.h>
 #include <aws/oam/OAMServiceClientModel.h>
+#include <aws/oam/OAMWaiter.h>
 #include <aws/oam/OAM_EXPORTS.h>
+#include <aws/oam/internal/OAMEndpointRules.h>
 #include <aws/oam/model/ConflictException.h>
 #include <aws/oam/model/CreateLinkRequest.h>
 #include <aws/oam/model/CreateLinkResult.h>
@@ -32,12 +36,15 @@
 #include <aws/oam/model/InvalidParameterException.h>
 #include <aws/oam/model/LinkConfiguration.h>
 #include <aws/oam/model/ListAttachedLinksItem.h>
+#include <aws/oam/model/ListAttachedLinksPaginationTraits.h>
 #include <aws/oam/model/ListAttachedLinksRequest.h>
 #include <aws/oam/model/ListAttachedLinksResult.h>
 #include <aws/oam/model/ListLinksItem.h>
+#include <aws/oam/model/ListLinksPaginationTraits.h>
 #include <aws/oam/model/ListLinksRequest.h>
 #include <aws/oam/model/ListLinksResult.h>
 #include <aws/oam/model/ListSinksItem.h>
+#include <aws/oam/model/ListSinksPaginationTraits.h>
 #include <aws/oam/model/ListSinksRequest.h>
 #include <aws/oam/model/ListSinksResult.h>
 #include <aws/oam/model/ListTagsForResourceRequest.h>

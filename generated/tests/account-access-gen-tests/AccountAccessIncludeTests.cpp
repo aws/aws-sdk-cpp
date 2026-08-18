@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/account-access/AccountAccessClient.h>
+#include <aws/account-access/AccountAccessClientPagination.h>
 #include <aws/account-access/AccountAccessEndpointProvider.h>
 #include <aws/account-access/AccountAccessErrorMarshaller.h>
 #include <aws/account-access/AccountAccessErrors.h>
+#include <aws/account-access/AccountAccessPaginationBase.h>
 #include <aws/account-access/AccountAccessRequest.h>
 #include <aws/account-access/AccountAccessServiceClientModel.h>
+#include <aws/account-access/AccountAccessWaiter.h>
 #include <aws/account-access/AccountAccess_EXPORTS.h>
+#include <aws/account-access/internal/AccountAccessEndpointRules.h>
 #include <aws/account-access/model/ApplicationSummary.h>
 #include <aws/account-access/model/CreateApplicationRequest.h>
 #include <aws/account-access/model/CreateApplicationResult.h>
@@ -39,8 +43,10 @@
 #include <aws/account-access/model/IdentityCenterPrincipalFilter.h>
 #include <aws/account-access/model/IdentitySource.h>
 #include <aws/account-access/model/IdentitySourceDetails.h>
+#include <aws/account-access/model/ListApplicationsPaginationTraits.h>
 #include <aws/account-access/model/ListApplicationsRequest.h>
 #include <aws/account-access/model/ListApplicationsResult.h>
+#include <aws/account-access/model/ListEntitlementsPaginationTraits.h>
 #include <aws/account-access/model/ListEntitlementsRequest.h>
 #include <aws/account-access/model/ListEntitlementsResult.h>
 #include <aws/account-access/model/ListTagsForResourceRequest.h>

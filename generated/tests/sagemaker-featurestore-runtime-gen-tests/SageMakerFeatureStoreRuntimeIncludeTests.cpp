@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeClient.h>
+#include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeClientPagination.h>
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeEndpointProvider.h>
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeErrorMarshaller.h>
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeErrors.h>
+#include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimePaginationBase.h>
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeRequest.h>
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeServiceClientModel.h>
+#include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeWaiter.h>
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntime_EXPORTS.h>
+#include <aws/sagemaker-featurestore-runtime/internal/SageMakerFeatureStoreRuntimeEndpointRules.h>
 #include <aws/sagemaker-featurestore-runtime/model/BatchGetRecordError.h>
 #include <aws/sagemaker-featurestore-runtime/model/BatchGetRecordIdentifier.h>
 #include <aws/sagemaker-featurestore-runtime/model/BatchGetRecordRequest.h>
@@ -28,6 +32,7 @@
 #include <aws/sagemaker-featurestore-runtime/model/FeatureValue.h>
 #include <aws/sagemaker-featurestore-runtime/model/GetRecordRequest.h>
 #include <aws/sagemaker-featurestore-runtime/model/GetRecordResult.h>
+#include <aws/sagemaker-featurestore-runtime/model/ListRecordsPaginationTraits.h>
 #include <aws/sagemaker-featurestore-runtime/model/ListRecordsRequest.h>
 #include <aws/sagemaker-featurestore-runtime/model/ListRecordsResult.h>
 #include <aws/sagemaker-featurestore-runtime/model/PutRecordRequest.h>

@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/marketplace-catalog/MarketplaceCatalogClient.h>
+#include <aws/marketplace-catalog/MarketplaceCatalogClientPagination.h>
 #include <aws/marketplace-catalog/MarketplaceCatalogEndpointProvider.h>
 #include <aws/marketplace-catalog/MarketplaceCatalogErrorMarshaller.h>
 #include <aws/marketplace-catalog/MarketplaceCatalogErrors.h>
+#include <aws/marketplace-catalog/MarketplaceCatalogPaginationBase.h>
 #include <aws/marketplace-catalog/MarketplaceCatalogRequest.h>
 #include <aws/marketplace-catalog/MarketplaceCatalogServiceClientModel.h>
+#include <aws/marketplace-catalog/MarketplaceCatalogWaiter.h>
 #include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
+#include <aws/marketplace-catalog/internal/MarketplaceCatalogEndpointRules.h>
 #include <aws/marketplace-catalog/model/AmiProductEntityIdFilter.h>
 #include <aws/marketplace-catalog/model/AmiProductFilters.h>
 #include <aws/marketplace-catalog/model/AmiProductLastModifiedDateFilter.h>
@@ -70,8 +74,10 @@
 #include <aws/marketplace-catalog/model/GetResourcePolicyRequest.h>
 #include <aws/marketplace-catalog/model/GetResourcePolicyResult.h>
 #include <aws/marketplace-catalog/model/Intent.h>
+#include <aws/marketplace-catalog/model/ListChangeSetsPaginationTraits.h>
 #include <aws/marketplace-catalog/model/ListChangeSetsRequest.h>
 #include <aws/marketplace-catalog/model/ListChangeSetsResult.h>
+#include <aws/marketplace-catalog/model/ListEntitiesPaginationTraits.h>
 #include <aws/marketplace-catalog/model/ListEntitiesRequest.h>
 #include <aws/marketplace-catalog/model/ListEntitiesResult.h>
 #include <aws/marketplace-catalog/model/ListTagsForResourceRequest.h>

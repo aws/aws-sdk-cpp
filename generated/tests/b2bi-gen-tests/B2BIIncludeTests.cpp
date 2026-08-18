@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/b2bi/B2BIClient.h>
+#include <aws/b2bi/B2BIClientPagination.h>
 #include <aws/b2bi/B2BIEndpointProvider.h>
 #include <aws/b2bi/B2BIErrorMarshaller.h>
 #include <aws/b2bi/B2BIErrors.h>
+#include <aws/b2bi/B2BIPaginationBase.h>
 #include <aws/b2bi/B2BIRequest.h>
 #include <aws/b2bi/B2BIServiceClientModel.h>
+#include <aws/b2bi/B2BIWaiter.h>
 #include <aws/b2bi/B2BI_EXPORTS.h>
+#include <aws/b2bi/internal/B2BIEndpointRules.h>
 #include <aws/b2bi/model/AdvancedOptions.h>
 #include <aws/b2bi/model/CapabilityConfiguration.h>
 #include <aws/b2bi/model/CapabilityDirection.h>
@@ -61,14 +65,18 @@
 #include <aws/b2bi/model/InputFileSource.h>
 #include <aws/b2bi/model/InternalServerException.h>
 #include <aws/b2bi/model/LineTerminator.h>
+#include <aws/b2bi/model/ListCapabilitiesPaginationTraits.h>
 #include <aws/b2bi/model/ListCapabilitiesRequest.h>
 #include <aws/b2bi/model/ListCapabilitiesResult.h>
+#include <aws/b2bi/model/ListPartnershipsPaginationTraits.h>
 #include <aws/b2bi/model/ListPartnershipsRequest.h>
 #include <aws/b2bi/model/ListPartnershipsResult.h>
+#include <aws/b2bi/model/ListProfilesPaginationTraits.h>
 #include <aws/b2bi/model/ListProfilesRequest.h>
 #include <aws/b2bi/model/ListProfilesResult.h>
 #include <aws/b2bi/model/ListTagsForResourceRequest.h>
 #include <aws/b2bi/model/ListTagsForResourceResult.h>
+#include <aws/b2bi/model/ListTransformersPaginationTraits.h>
 #include <aws/b2bi/model/ListTransformersRequest.h>
 #include <aws/b2bi/model/ListTransformersResult.h>
 #include <aws/b2bi/model/Logging.h>

@@ -10,9 +10,12 @@
 #include <aws/marketplace-deployment/MarketplaceDeploymentEndpointProvider.h>
 #include <aws/marketplace-deployment/MarketplaceDeploymentErrorMarshaller.h>
 #include <aws/marketplace-deployment/MarketplaceDeploymentErrors.h>
+#include <aws/marketplace-deployment/MarketplaceDeploymentPaginationBase.h>
 #include <aws/marketplace-deployment/MarketplaceDeploymentRequest.h>
 #include <aws/marketplace-deployment/MarketplaceDeploymentServiceClientModel.h>
+#include <aws/marketplace-deployment/MarketplaceDeploymentWaiter.h>
 #include <aws/marketplace-deployment/MarketplaceDeployment_EXPORTS.h>
+#include <aws/marketplace-deployment/internal/MarketplaceDeploymentEndpointRules.h>
 #include <aws/marketplace-deployment/model/ConflictException.h>
 #include <aws/marketplace-deployment/model/DeploymentParameterInput.h>
 #include <aws/marketplace-deployment/model/ListTagsForResourceRequest.h>

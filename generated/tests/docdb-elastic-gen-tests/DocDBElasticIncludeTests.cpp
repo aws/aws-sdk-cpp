@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/docdb-elastic/DocDBElasticClient.h>
+#include <aws/docdb-elastic/DocDBElasticClientPagination.h>
 #include <aws/docdb-elastic/DocDBElasticEndpointProvider.h>
 #include <aws/docdb-elastic/DocDBElasticErrorMarshaller.h>
 #include <aws/docdb-elastic/DocDBElasticErrors.h>
+#include <aws/docdb-elastic/DocDBElasticPaginationBase.h>
 #include <aws/docdb-elastic/DocDBElasticRequest.h>
 #include <aws/docdb-elastic/DocDBElasticServiceClientModel.h>
+#include <aws/docdb-elastic/DocDBElasticWaiter.h>
 #include <aws/docdb-elastic/DocDBElastic_EXPORTS.h>
+#include <aws/docdb-elastic/internal/DocDBElasticEndpointRules.h>
 #include <aws/docdb-elastic/model/ApplyPendingMaintenanceActionRequest.h>
 #include <aws/docdb-elastic/model/ApplyPendingMaintenanceActionResult.h>
 #include <aws/docdb-elastic/model/Auth.h>
@@ -37,10 +41,13 @@
 #include <aws/docdb-elastic/model/GetClusterSnapshotResult.h>
 #include <aws/docdb-elastic/model/GetPendingMaintenanceActionRequest.h>
 #include <aws/docdb-elastic/model/GetPendingMaintenanceActionResult.h>
+#include <aws/docdb-elastic/model/ListClusterSnapshotsPaginationTraits.h>
 #include <aws/docdb-elastic/model/ListClusterSnapshotsRequest.h>
 #include <aws/docdb-elastic/model/ListClusterSnapshotsResult.h>
+#include <aws/docdb-elastic/model/ListClustersPaginationTraits.h>
 #include <aws/docdb-elastic/model/ListClustersRequest.h>
 #include <aws/docdb-elastic/model/ListClustersResult.h>
+#include <aws/docdb-elastic/model/ListPendingMaintenanceActionsPaginationTraits.h>
 #include <aws/docdb-elastic/model/ListPendingMaintenanceActionsRequest.h>
 #include <aws/docdb-elastic/model/ListPendingMaintenanceActionsResult.h>
 #include <aws/docdb-elastic/model/ListTagsForResourceRequest.h>

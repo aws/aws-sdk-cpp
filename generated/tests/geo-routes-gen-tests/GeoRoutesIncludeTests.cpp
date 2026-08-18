@@ -10,9 +10,12 @@
 #include <aws/geo-routes/GeoRoutesEndpointProvider.h>
 #include <aws/geo-routes/GeoRoutesErrorMarshaller.h>
 #include <aws/geo-routes/GeoRoutesErrors.h>
+#include <aws/geo-routes/GeoRoutesPaginationBase.h>
 #include <aws/geo-routes/GeoRoutesRequest.h>
 #include <aws/geo-routes/GeoRoutesServiceClientModel.h>
+#include <aws/geo-routes/GeoRoutesWaiter.h>
 #include <aws/geo-routes/GeoRoutes_EXPORTS.h>
+#include <aws/geo-routes/internal/GeoRoutesEndpointRules.h>
 #include <aws/geo-routes/model/CalculateIsolinesRequest.h>
 #include <aws/geo-routes/model/CalculateIsolinesResult.h>
 #include <aws/geo-routes/model/CalculateRouteMatrixRequest.h>

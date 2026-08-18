@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/networkflowmonitor/NetworkFlowMonitorClient.h>
+#include <aws/networkflowmonitor/NetworkFlowMonitorClientPagination.h>
 #include <aws/networkflowmonitor/NetworkFlowMonitorEndpointProvider.h>
 #include <aws/networkflowmonitor/NetworkFlowMonitorErrorMarshaller.h>
 #include <aws/networkflowmonitor/NetworkFlowMonitorErrors.h>
+#include <aws/networkflowmonitor/NetworkFlowMonitorPaginationBase.h>
 #include <aws/networkflowmonitor/NetworkFlowMonitorRequest.h>
 #include <aws/networkflowmonitor/NetworkFlowMonitorServiceClientModel.h>
+#include <aws/networkflowmonitor/NetworkFlowMonitorWaiter.h>
 #include <aws/networkflowmonitor/NetworkFlowMonitor_EXPORTS.h>
+#include <aws/networkflowmonitor/internal/NetworkFlowMonitorEndpointRules.h>
 #include <aws/networkflowmonitor/model/CreateMonitorRequest.h>
 #include <aws/networkflowmonitor/model/CreateMonitorResult.h>
 #include <aws/networkflowmonitor/model/CreateScopeRequest.h>
@@ -24,10 +28,13 @@
 #include <aws/networkflowmonitor/model/DestinationCategory.h>
 #include <aws/networkflowmonitor/model/GetMonitorRequest.h>
 #include <aws/networkflowmonitor/model/GetMonitorResult.h>
+#include <aws/networkflowmonitor/model/GetQueryResultsMonitorTopContributorsPaginationTraits.h>
 #include <aws/networkflowmonitor/model/GetQueryResultsMonitorTopContributorsRequest.h>
 #include <aws/networkflowmonitor/model/GetQueryResultsMonitorTopContributorsResult.h>
+#include <aws/networkflowmonitor/model/GetQueryResultsWorkloadInsightsTopContributorsDataPaginationTraits.h>
 #include <aws/networkflowmonitor/model/GetQueryResultsWorkloadInsightsTopContributorsDataRequest.h>
 #include <aws/networkflowmonitor/model/GetQueryResultsWorkloadInsightsTopContributorsDataResult.h>
+#include <aws/networkflowmonitor/model/GetQueryResultsWorkloadInsightsTopContributorsPaginationTraits.h>
 #include <aws/networkflowmonitor/model/GetQueryResultsWorkloadInsightsTopContributorsRequest.h>
 #include <aws/networkflowmonitor/model/GetQueryResultsWorkloadInsightsTopContributorsResult.h>
 #include <aws/networkflowmonitor/model/GetQueryStatusMonitorTopContributorsRequest.h>
@@ -39,8 +46,10 @@
 #include <aws/networkflowmonitor/model/GetScopeRequest.h>
 #include <aws/networkflowmonitor/model/GetScopeResult.h>
 #include <aws/networkflowmonitor/model/KubernetesMetadata.h>
+#include <aws/networkflowmonitor/model/ListMonitorsPaginationTraits.h>
 #include <aws/networkflowmonitor/model/ListMonitorsRequest.h>
 #include <aws/networkflowmonitor/model/ListMonitorsResult.h>
+#include <aws/networkflowmonitor/model/ListScopesPaginationTraits.h>
 #include <aws/networkflowmonitor/model/ListScopesRequest.h>
 #include <aws/networkflowmonitor/model/ListScopesResult.h>
 #include <aws/networkflowmonitor/model/ListTagsForResourceRequest.h>

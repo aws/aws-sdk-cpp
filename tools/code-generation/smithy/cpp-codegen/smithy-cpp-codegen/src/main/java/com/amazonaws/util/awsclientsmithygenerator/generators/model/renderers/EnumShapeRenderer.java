@@ -5,7 +5,9 @@
 package com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.CppTypeMapper;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.EnumRenderer;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.RenderContext;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeRenderer;
 import software.amazon.smithy.model.shapes.Shape;
 
@@ -17,29 +19,24 @@ import java.util.List;
 public final class EnumShapeRenderer implements ShapeRenderer {
 
     private final List<Shape> enumShapes;
-    private final String namespace;
-    private final String exportMacro;
-    private final String smithyServiceName;
+    private final RenderContext ctx;
 
-    public EnumShapeRenderer(List<Shape> enumShapes, String namespace,
-                             String exportMacro, String smithyServiceName) {
+    public EnumShapeRenderer(List<Shape> enumShapes, RenderContext ctx) {
         this.enumShapes = enumShapes;
-        this.namespace = namespace;
-        this.exportMacro = exportMacro;
-        this.smithyServiceName = smithyServiceName;
+        this.ctx = ctx;
     }
 
     @Override
     public void render(CppWriterDelegator writerDelegator) {
         for (Shape enumShape : enumShapes) {
-            String name = enumShape.getId().getName();
-            String headerFile = "include/aws/" + smithyServiceName + "/model/" + name + ".h";
+            String name = CppTypeMapper.cppShapeName(enumShape);
+            String headerFile = "include/aws/" + ctx.smithyServiceName() + "/model/" + name + ".h";
             writerDelegator.useFileWriter(headerFile, writer ->
-                EnumRenderer.renderHeader(writer, enumShape, namespace, exportMacro, smithyServiceName));
+                EnumRenderer.renderHeader(writer, enumShape, ctx.namespace(), ctx.exportMacro(), ctx.smithyServiceName()));
 
             String sourceFile = "source/model/" + name + ".cpp";
             writerDelegator.useFileWriter(sourceFile, writer ->
-                EnumRenderer.renderSource(writer, enumShape, namespace, exportMacro, smithyServiceName));
+                EnumRenderer.renderSource(writer, enumShape, ctx.namespace(), ctx.exportMacro(), ctx.smithyServiceName()));
         }
     }
 }

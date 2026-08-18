@@ -9,6 +9,7 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolReso
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassifier.ClassifiedShapes;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.EnumShapeRenderer;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.EventStreamRenderer;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.OutgoingEventStreamRenderer;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.RequestRenderer;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.ResultRenderer;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.SubObjectRenderer;
@@ -30,7 +31,6 @@ public class ModelGenerator {
     private final Model model;
     private final ServiceShape service;
     private final CppWriterDelegator writerDelegator;
-    private final String serviceName;
     private final String smithyServiceName;
     private final String exportMacro;
     private final String namespace;
@@ -38,12 +38,11 @@ public class ModelGenerator {
     private final ProtocolTraits protocolTraits;
 
     public ModelGenerator(Model model, ServiceShape service, CppWriterDelegator writerDelegator,
-                          String serviceName, String smithyServiceName,
+                          String smithyServiceName,
                           String exportMacro, String namespace) {
         this.model = model;
         this.service = service;
         this.writerDelegator = writerDelegator;
-        this.serviceName = serviceName;
         this.smithyServiceName = smithyServiceName;
         this.exportMacro = exportMacro;
         this.namespace = namespace;
@@ -53,35 +52,23 @@ public class ModelGenerator {
 
     public void generateAll() {
         ClassifiedShapes classified = ShapeClassifier.classify(model, service, protocol);
-        List<ShapeRenderer> renderers = buildRenderers(classified);
+        RenderContext ctx = new RenderContext(model, service, protocolTraits,
+            namespace, exportMacro, smithyServiceName);
+        List<ShapeRenderer> renderers = buildRenderers(classified, ctx);
 
         for (ShapeRenderer renderer : renderers) {
             renderer.render(writerDelegator);
         }
     }
 
-    private List<ShapeRenderer> buildRenderers(ClassifiedShapes classified) {
+    private List<ShapeRenderer> buildRenderers(ClassifiedShapes classified, RenderContext ctx) {
         List<ShapeRenderer> renderers = new ArrayList<>();
-
-        renderers.add(new EnumShapeRenderer(
-            classified.enums(), namespace, exportMacro, smithyServiceName));
-
-        renderers.add(new SubObjectRenderer(
-            classified.subObjects(), model, service, protocolTraits,
-            namespace, exportMacro, serviceName, smithyServiceName));
-
-        renderers.add(new RequestRenderer(
-            classified.requests(), model, service, protocolTraits,
-            namespace, exportMacro, smithyServiceName));
-
-        renderers.add(new ResultRenderer(
-            classified.results(), model, service, protocolTraits,
-            namespace, exportMacro, smithyServiceName));
-
-        renderers.add(new EventStreamRenderer(
-            classified.eventStreamHandlers(), model, service, protocolTraits,
-            namespace, exportMacro, smithyServiceName));
-
+        renderers.add(new EnumShapeRenderer(classified.enums(), ctx));
+        renderers.add(new SubObjectRenderer(classified.subObjects(), ctx));
+        renderers.add(new RequestRenderer(classified.requests(), ctx));
+        renderers.add(new ResultRenderer(classified.results(), ctx));
+        renderers.add(new EventStreamRenderer(classified.eventStreamHandlers(), ctx));
+        renderers.add(new OutgoingEventStreamRenderer(classified.outgoingEventStreams(), ctx));
         return renderers;
     }
 }

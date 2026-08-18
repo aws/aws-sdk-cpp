@@ -64,7 +64,7 @@ public class ModelCodegenPlugin implements SmithyBuildPlugin {
 
             ModelGenerator generator = new ModelGenerator(
                 transformedModel, processedService, writerDelegator,
-                serviceName, smithyServiceName, exportMacro, namespace);
+                smithyServiceName, exportMacro, namespace);
             generator.generateAll();
         }
 

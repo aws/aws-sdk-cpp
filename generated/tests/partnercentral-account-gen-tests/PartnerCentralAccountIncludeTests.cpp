@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/partnercentral-account/PartnerCentralAccountClient.h>
+#include <aws/partnercentral-account/PartnerCentralAccountClientPagination.h>
 #include <aws/partnercentral-account/PartnerCentralAccountEndpointProvider.h>
 #include <aws/partnercentral-account/PartnerCentralAccountErrorMarshaller.h>
 #include <aws/partnercentral-account/PartnerCentralAccountErrors.h>
+#include <aws/partnercentral-account/PartnerCentralAccountPaginationBase.h>
 #include <aws/partnercentral-account/PartnerCentralAccountRequest.h>
 #include <aws/partnercentral-account/PartnerCentralAccountServiceClientModel.h>
+#include <aws/partnercentral-account/PartnerCentralAccountWaiter.h>
 #include <aws/partnercentral-account/PartnerCentralAccount_EXPORTS.h>
+#include <aws/partnercentral-account/internal/PartnerCentralAccountEndpointRules.h>
 #include <aws/partnercentral-account/model/AcceptConnectionInvitationRequest.h>
 #include <aws/partnercentral-account/model/AcceptConnectionInvitationResult.h>
 #include <aws/partnercentral-account/model/AccessDeniedException.h>
@@ -75,10 +79,13 @@
 #include <aws/partnercentral-account/model/Headquarters.h>
 #include <aws/partnercentral-account/model/IndustrySegment.h>
 #include <aws/partnercentral-account/model/InvitationStatus.h>
+#include <aws/partnercentral-account/model/ListConnectionInvitationsPaginationTraits.h>
 #include <aws/partnercentral-account/model/ListConnectionInvitationsRequest.h>
 #include <aws/partnercentral-account/model/ListConnectionInvitationsResult.h>
+#include <aws/partnercentral-account/model/ListConnectionsPaginationTraits.h>
 #include <aws/partnercentral-account/model/ListConnectionsRequest.h>
 #include <aws/partnercentral-account/model/ListConnectionsResult.h>
+#include <aws/partnercentral-account/model/ListPartnersPaginationTraits.h>
 #include <aws/partnercentral-account/model/ListPartnersRequest.h>
 #include <aws/partnercentral-account/model/ListPartnersResult.h>
 #include <aws/partnercentral-account/model/ListTagsForResourceRequest.h>

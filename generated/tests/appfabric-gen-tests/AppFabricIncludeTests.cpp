@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/appfabric/AppFabricClient.h>
+#include <aws/appfabric/AppFabricClientPagination.h>
 #include <aws/appfabric/AppFabricEndpointProvider.h>
 #include <aws/appfabric/AppFabricErrorMarshaller.h>
 #include <aws/appfabric/AppFabricErrors.h>
+#include <aws/appfabric/AppFabricPaginationBase.h>
 #include <aws/appfabric/AppFabricRequest.h>
 #include <aws/appfabric/AppFabricServiceClientModel.h>
+#include <aws/appfabric/AppFabricWaiter.h>
 #include <aws/appfabric/AppFabric_EXPORTS.h>
+#include <aws/appfabric/internal/AppFabricEndpointRules.h>
 #include <aws/appfabric/model/ApiKeyCredential.h>
 #include <aws/appfabric/model/AppAuthorization.h>
 #include <aws/appfabric/model/AppAuthorizationStatus.h>
@@ -65,12 +69,16 @@
 #include <aws/appfabric/model/IngestionSummary.h>
 #include <aws/appfabric/model/IngestionType.h>
 #include <aws/appfabric/model/InternalServerException.h>
+#include <aws/appfabric/model/ListAppAuthorizationsPaginationTraits.h>
 #include <aws/appfabric/model/ListAppAuthorizationsRequest.h>
 #include <aws/appfabric/model/ListAppAuthorizationsResult.h>
+#include <aws/appfabric/model/ListAppBundlesPaginationTraits.h>
 #include <aws/appfabric/model/ListAppBundlesRequest.h>
 #include <aws/appfabric/model/ListAppBundlesResult.h>
+#include <aws/appfabric/model/ListIngestionDestinationsPaginationTraits.h>
 #include <aws/appfabric/model/ListIngestionDestinationsRequest.h>
 #include <aws/appfabric/model/ListIngestionDestinationsResult.h>
+#include <aws/appfabric/model/ListIngestionsPaginationTraits.h>
 #include <aws/appfabric/model/ListIngestionsRequest.h>
 #include <aws/appfabric/model/ListIngestionsResult.h>
 #include <aws/appfabric/model/ListTagsForResourceRequest.h>

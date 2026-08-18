@@ -10,9 +10,12 @@
 #include <aws/kinesisanalytics/KinesisAnalyticsEndpointProvider.h>
 #include <aws/kinesisanalytics/KinesisAnalyticsErrorMarshaller.h>
 #include <aws/kinesisanalytics/KinesisAnalyticsErrors.h>
+#include <aws/kinesisanalytics/KinesisAnalyticsPaginationBase.h>
 #include <aws/kinesisanalytics/KinesisAnalyticsRequest.h>
 #include <aws/kinesisanalytics/KinesisAnalyticsServiceClientModel.h>
+#include <aws/kinesisanalytics/KinesisAnalyticsWaiter.h>
 #include <aws/kinesisanalytics/KinesisAnalytics_EXPORTS.h>
+#include <aws/kinesisanalytics/internal/KinesisAnalyticsEndpointRules.h>
 #include <aws/kinesisanalytics/model/AddApplicationCloudWatchLoggingOptionRequest.h>
 #include <aws/kinesisanalytics/model/AddApplicationCloudWatchLoggingOptionResult.h>
 #include <aws/kinesisanalytics/model/AddApplicationInputProcessingConfigurationRequest.h>

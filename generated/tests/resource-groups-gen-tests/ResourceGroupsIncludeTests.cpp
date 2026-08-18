@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/resource-groups/ResourceGroupsClient.h>
+#include <aws/resource-groups/ResourceGroupsClientPagination.h>
 #include <aws/resource-groups/ResourceGroupsEndpointProvider.h>
 #include <aws/resource-groups/ResourceGroupsErrorMarshaller.h>
 #include <aws/resource-groups/ResourceGroupsErrors.h>
+#include <aws/resource-groups/ResourceGroupsPaginationBase.h>
 #include <aws/resource-groups/ResourceGroupsRequest.h>
 #include <aws/resource-groups/ResourceGroupsServiceClientModel.h>
+#include <aws/resource-groups/ResourceGroupsWaiter.h>
 #include <aws/resource-groups/ResourceGroups_EXPORTS.h>
+#include <aws/resource-groups/internal/ResourceGroupsEndpointRules.h>
 #include <aws/resource-groups/model/AccountSettings.h>
 #include <aws/resource-groups/model/CancelTagSyncTaskRequest.h>
 #include <aws/resource-groups/model/CreateGroupRequest.h>
@@ -49,15 +53,19 @@
 #include <aws/resource-groups/model/GroupingStatusesItem.h>
 #include <aws/resource-groups/model/GroupingType.h>
 #include <aws/resource-groups/model/ListGroupResourcesItem.h>
+#include <aws/resource-groups/model/ListGroupResourcesPaginationTraits.h>
 #include <aws/resource-groups/model/ListGroupResourcesRequest.h>
 #include <aws/resource-groups/model/ListGroupResourcesResult.h>
 #include <aws/resource-groups/model/ListGroupingStatusesFilter.h>
 #include <aws/resource-groups/model/ListGroupingStatusesFilterName.h>
+#include <aws/resource-groups/model/ListGroupingStatusesPaginationTraits.h>
 #include <aws/resource-groups/model/ListGroupingStatusesRequest.h>
 #include <aws/resource-groups/model/ListGroupingStatusesResult.h>
+#include <aws/resource-groups/model/ListGroupsPaginationTraits.h>
 #include <aws/resource-groups/model/ListGroupsRequest.h>
 #include <aws/resource-groups/model/ListGroupsResult.h>
 #include <aws/resource-groups/model/ListTagSyncTasksFilter.h>
+#include <aws/resource-groups/model/ListTagSyncTasksPaginationTraits.h>
 #include <aws/resource-groups/model/ListTagSyncTasksRequest.h>
 #include <aws/resource-groups/model/ListTagSyncTasksResult.h>
 #include <aws/resource-groups/model/PendingResource.h>
@@ -72,6 +80,7 @@
 #include <aws/resource-groups/model/ResourceQuery.h>
 #include <aws/resource-groups/model/ResourceStatus.h>
 #include <aws/resource-groups/model/ResourceStatusValue.h>
+#include <aws/resource-groups/model/SearchResourcesPaginationTraits.h>
 #include <aws/resource-groups/model/SearchResourcesRequest.h>
 #include <aws/resource-groups/model/SearchResourcesResult.h>
 #include <aws/resource-groups/model/StartTagSyncTaskRequest.h>

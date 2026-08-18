@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesClient.h>
+#include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesClientPagination.h>
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesEndpointProvider.h>
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesErrorMarshaller.h>
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesErrors.h>
+#include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesPaginationBase.h>
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesRequest.h>
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesServiceClientModel.h>
+#include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesWaiter.h>
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpaces_EXPORTS.h>
+#include <aws/migration-hub-refactor-spaces/internal/MigrationHubRefactorSpacesEndpointRules.h>
 #include <aws/migration-hub-refactor-spaces/model/ApiGatewayEndpointType.h>
 #include <aws/migration-hub-refactor-spaces/model/ApiGatewayProxyConfig.h>
 #include <aws/migration-hub-refactor-spaces/model/ApiGatewayProxyInput.h>
@@ -59,14 +63,19 @@
 #include <aws/migration-hub-refactor-spaces/model/LambdaEndpointConfig.h>
 #include <aws/migration-hub-refactor-spaces/model/LambdaEndpointInput.h>
 #include <aws/migration-hub-refactor-spaces/model/LambdaEndpointSummary.h>
+#include <aws/migration-hub-refactor-spaces/model/ListApplicationsPaginationTraits.h>
 #include <aws/migration-hub-refactor-spaces/model/ListApplicationsRequest.h>
 #include <aws/migration-hub-refactor-spaces/model/ListApplicationsResult.h>
+#include <aws/migration-hub-refactor-spaces/model/ListEnvironmentVpcsPaginationTraits.h>
 #include <aws/migration-hub-refactor-spaces/model/ListEnvironmentVpcsRequest.h>
 #include <aws/migration-hub-refactor-spaces/model/ListEnvironmentVpcsResult.h>
+#include <aws/migration-hub-refactor-spaces/model/ListEnvironmentsPaginationTraits.h>
 #include <aws/migration-hub-refactor-spaces/model/ListEnvironmentsRequest.h>
 #include <aws/migration-hub-refactor-spaces/model/ListEnvironmentsResult.h>
+#include <aws/migration-hub-refactor-spaces/model/ListRoutesPaginationTraits.h>
 #include <aws/migration-hub-refactor-spaces/model/ListRoutesRequest.h>
 #include <aws/migration-hub-refactor-spaces/model/ListRoutesResult.h>
+#include <aws/migration-hub-refactor-spaces/model/ListServicesPaginationTraits.h>
 #include <aws/migration-hub-refactor-spaces/model/ListServicesRequest.h>
 #include <aws/migration-hub-refactor-spaces/model/ListServicesResult.h>
 #include <aws/migration-hub-refactor-spaces/model/ListTagsForResourceRequest.h>

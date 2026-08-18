@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/mediapackagev2/Mediapackagev2Client.h>
+#include <aws/mediapackagev2/Mediapackagev2ClientPagination.h>
 #include <aws/mediapackagev2/Mediapackagev2EndpointProvider.h>
 #include <aws/mediapackagev2/Mediapackagev2ErrorMarshaller.h>
 #include <aws/mediapackagev2/Mediapackagev2Errors.h>
+#include <aws/mediapackagev2/Mediapackagev2PaginationBase.h>
 #include <aws/mediapackagev2/Mediapackagev2Request.h>
 #include <aws/mediapackagev2/Mediapackagev2ServiceClientModel.h>
+#include <aws/mediapackagev2/Mediapackagev2Waiter.h>
 #include <aws/mediapackagev2/Mediapackagev2_EXPORTS.h>
+#include <aws/mediapackagev2/internal/Mediapackagev2EndpointRules.h>
 #include <aws/mediapackagev2/model/AdMarkerDash.h>
 #include <aws/mediapackagev2/model/AdMarkerHls.h>
 #include <aws/mediapackagev2/model/CancelHarvestJobRequest.h>
@@ -99,16 +103,20 @@
 #include <aws/mediapackagev2/model/InputSwitchConfiguration.h>
 #include <aws/mediapackagev2/model/InputType.h>
 #include <aws/mediapackagev2/model/IsmEncryptionMethod.h>
+#include <aws/mediapackagev2/model/ListChannelGroupsPaginationTraits.h>
 #include <aws/mediapackagev2/model/ListChannelGroupsRequest.h>
 #include <aws/mediapackagev2/model/ListChannelGroupsResult.h>
+#include <aws/mediapackagev2/model/ListChannelsPaginationTraits.h>
 #include <aws/mediapackagev2/model/ListChannelsRequest.h>
 #include <aws/mediapackagev2/model/ListChannelsResult.h>
 #include <aws/mediapackagev2/model/ListDashManifestConfiguration.h>
+#include <aws/mediapackagev2/model/ListHarvestJobsPaginationTraits.h>
 #include <aws/mediapackagev2/model/ListHarvestJobsRequest.h>
 #include <aws/mediapackagev2/model/ListHarvestJobsResult.h>
 #include <aws/mediapackagev2/model/ListHlsManifestConfiguration.h>
 #include <aws/mediapackagev2/model/ListLowLatencyHlsManifestConfiguration.h>
 #include <aws/mediapackagev2/model/ListMssManifestConfiguration.h>
+#include <aws/mediapackagev2/model/ListOriginEndpointsPaginationTraits.h>
 #include <aws/mediapackagev2/model/ListOriginEndpointsRequest.h>
 #include <aws/mediapackagev2/model/ListOriginEndpointsResult.h>
 #include <aws/mediapackagev2/model/ListTagsForResourceRequest.h>

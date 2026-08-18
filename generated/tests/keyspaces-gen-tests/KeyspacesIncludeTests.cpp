@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/keyspaces/KeyspacesClient.h>
+#include <aws/keyspaces/KeyspacesClientPagination.h>
 #include <aws/keyspaces/KeyspacesEndpointProvider.h>
 #include <aws/keyspaces/KeyspacesErrorMarshaller.h>
 #include <aws/keyspaces/KeyspacesErrors.h>
+#include <aws/keyspaces/KeyspacesPaginationBase.h>
 #include <aws/keyspaces/KeyspacesRequest.h>
 #include <aws/keyspaces/KeyspacesServiceClientModel.h>
+#include <aws/keyspaces/KeyspacesWaiter.h>
 #include <aws/keyspaces/Keyspaces_EXPORTS.h>
+#include <aws/keyspaces/internal/KeyspacesEndpointRules.h>
 #include <aws/keyspaces/model/AutoScalingPolicy.h>
 #include <aws/keyspaces/model/AutoScalingSettings.h>
 #include <aws/keyspaces/model/AutoScalingSpecification.h>
@@ -52,12 +56,16 @@
 #include <aws/keyspaces/model/GetTypeResult.h>
 #include <aws/keyspaces/model/KeyspaceStatus.h>
 #include <aws/keyspaces/model/KeyspaceSummary.h>
+#include <aws/keyspaces/model/ListKeyspacesPaginationTraits.h>
 #include <aws/keyspaces/model/ListKeyspacesRequest.h>
 #include <aws/keyspaces/model/ListKeyspacesResult.h>
+#include <aws/keyspaces/model/ListTablesPaginationTraits.h>
 #include <aws/keyspaces/model/ListTablesRequest.h>
 #include <aws/keyspaces/model/ListTablesResult.h>
+#include <aws/keyspaces/model/ListTagsForResourcePaginationTraits.h>
 #include <aws/keyspaces/model/ListTagsForResourceRequest.h>
 #include <aws/keyspaces/model/ListTagsForResourceResult.h>
+#include <aws/keyspaces/model/ListTypesPaginationTraits.h>
 #include <aws/keyspaces/model/ListTypesRequest.h>
 #include <aws/keyspaces/model/ListTypesResult.h>
 #include <aws/keyspaces/model/PartitionKey.h>

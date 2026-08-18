@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/payment-cryptography/PaymentCryptographyClient.h>
+#include <aws/payment-cryptography/PaymentCryptographyClientPagination.h>
 #include <aws/payment-cryptography/PaymentCryptographyEndpointProvider.h>
 #include <aws/payment-cryptography/PaymentCryptographyErrorMarshaller.h>
 #include <aws/payment-cryptography/PaymentCryptographyErrors.h>
+#include <aws/payment-cryptography/PaymentCryptographyPaginationBase.h>
 #include <aws/payment-cryptography/PaymentCryptographyRequest.h>
 #include <aws/payment-cryptography/PaymentCryptographyServiceClientModel.h>
+#include <aws/payment-cryptography/PaymentCryptographyWaiter.h>
 #include <aws/payment-cryptography/PaymentCryptography_EXPORTS.h>
+#include <aws/payment-cryptography/internal/PaymentCryptographyEndpointRules.h>
 #include <aws/payment-cryptography/model/AddKeyReplicationRegionsRequest.h>
 #include <aws/payment-cryptography/model/AddKeyReplicationRegionsResult.h>
 #include <aws/payment-cryptography/model/Alias.h>
@@ -91,10 +95,13 @@
 #include <aws/payment-cryptography/model/KeyState.h>
 #include <aws/payment-cryptography/model/KeySummary.h>
 #include <aws/payment-cryptography/model/KeyUsage.h>
+#include <aws/payment-cryptography/model/ListAliasesPaginationTraits.h>
 #include <aws/payment-cryptography/model/ListAliasesRequest.h>
 #include <aws/payment-cryptography/model/ListAliasesResult.h>
+#include <aws/payment-cryptography/model/ListKeysPaginationTraits.h>
 #include <aws/payment-cryptography/model/ListKeysRequest.h>
 #include <aws/payment-cryptography/model/ListKeysResult.h>
+#include <aws/payment-cryptography/model/ListTagsForResourcePaginationTraits.h>
 #include <aws/payment-cryptography/model/ListTagsForResourceRequest.h>
 #include <aws/payment-cryptography/model/ListTagsForResourceResult.h>
 #include <aws/payment-cryptography/model/MpaOperation.h>

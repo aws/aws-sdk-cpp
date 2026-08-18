@@ -10,9 +10,12 @@
 #include <aws/neptunedata/NeptunedataEndpointProvider.h>
 #include <aws/neptunedata/NeptunedataErrorMarshaller.h>
 #include <aws/neptunedata/NeptunedataErrors.h>
+#include <aws/neptunedata/NeptunedataPaginationBase.h>
 #include <aws/neptunedata/NeptunedataRequest.h>
 #include <aws/neptunedata/NeptunedataServiceClientModel.h>
+#include <aws/neptunedata/NeptunedataWaiter.h>
 #include <aws/neptunedata/Neptunedata_EXPORTS.h>
+#include <aws/neptunedata/internal/NeptunedataEndpointRules.h>
 #include <aws/neptunedata/model/AccessDeniedException.h>
 #include <aws/neptunedata/model/Action.h>
 #include <aws/neptunedata/model/BadRequestException.h>

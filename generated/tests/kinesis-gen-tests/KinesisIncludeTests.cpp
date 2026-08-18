@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/kinesis/KinesisClient.h>
+#include <aws/kinesis/KinesisClientPagination.h>
 #include <aws/kinesis/KinesisEndpointProvider.h>
 #include <aws/kinesis/KinesisErrorMarshaller.h>
 #include <aws/kinesis/KinesisErrors.h>
+#include <aws/kinesis/KinesisPaginationBase.h>
 #include <aws/kinesis/KinesisRequest.h>
 #include <aws/kinesis/KinesisServiceClientModel.h>
+#include <aws/kinesis/KinesisWaiter.h>
 #include <aws/kinesis/Kinesis_EXPORTS.h>
+#include <aws/kinesis/internal/KinesisEndpointRules.h>
 #include <aws/kinesis/model/AddTagsToStreamRequest.h>
 #include <aws/kinesis/model/ChildShard.h>
 #include <aws/kinesis/model/Consumer.h>
@@ -49,8 +53,10 @@
 #include <aws/kinesis/model/IncreaseStreamRetentionPeriodRequest.h>
 #include <aws/kinesis/model/ListShardsRequest.h>
 #include <aws/kinesis/model/ListShardsResult.h>
+#include <aws/kinesis/model/ListStreamConsumersPaginationTraits.h>
 #include <aws/kinesis/model/ListStreamConsumersRequest.h>
 #include <aws/kinesis/model/ListStreamConsumersResult.h>
+#include <aws/kinesis/model/ListStreamsPaginationTraits.h>
 #include <aws/kinesis/model/ListStreamsRequest.h>
 #include <aws/kinesis/model/ListStreamsResult.h>
 #include <aws/kinesis/model/ListTagsForResourceRequest.h>

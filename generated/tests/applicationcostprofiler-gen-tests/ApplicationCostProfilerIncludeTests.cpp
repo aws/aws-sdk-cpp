@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/applicationcostprofiler/ApplicationCostProfilerClient.h>
+#include <aws/applicationcostprofiler/ApplicationCostProfilerClientPagination.h>
 #include <aws/applicationcostprofiler/ApplicationCostProfilerEndpointProvider.h>
 #include <aws/applicationcostprofiler/ApplicationCostProfilerErrorMarshaller.h>
 #include <aws/applicationcostprofiler/ApplicationCostProfilerErrors.h>
+#include <aws/applicationcostprofiler/ApplicationCostProfilerPaginationBase.h>
 #include <aws/applicationcostprofiler/ApplicationCostProfilerRequest.h>
 #include <aws/applicationcostprofiler/ApplicationCostProfilerServiceClientModel.h>
+#include <aws/applicationcostprofiler/ApplicationCostProfilerWaiter.h>
 #include <aws/applicationcostprofiler/ApplicationCostProfiler_EXPORTS.h>
+#include <aws/applicationcostprofiler/internal/ApplicationCostProfilerEndpointRules.h>
 #include <aws/applicationcostprofiler/model/DeleteReportDefinitionRequest.h>
 #include <aws/applicationcostprofiler/model/DeleteReportDefinitionResult.h>
 #include <aws/applicationcostprofiler/model/Format.h>
@@ -20,6 +24,7 @@
 #include <aws/applicationcostprofiler/model/GetReportDefinitionResult.h>
 #include <aws/applicationcostprofiler/model/ImportApplicationUsageRequest.h>
 #include <aws/applicationcostprofiler/model/ImportApplicationUsageResult.h>
+#include <aws/applicationcostprofiler/model/ListReportDefinitionsPaginationTraits.h>
 #include <aws/applicationcostprofiler/model/ListReportDefinitionsRequest.h>
 #include <aws/applicationcostprofiler/model/ListReportDefinitionsResult.h>
 #include <aws/applicationcostprofiler/model/PutReportDefinitionRequest.h>

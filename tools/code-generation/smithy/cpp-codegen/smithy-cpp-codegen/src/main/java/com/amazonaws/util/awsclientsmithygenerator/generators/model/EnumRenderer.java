@@ -42,7 +42,7 @@ public final class EnumRenderer {
      */
     public static void renderHeader(CppWriter writer, Shape enumShape, String serviceName,
                                     String exportMacro, String projectName) {
-        String enumName = enumShape.getId().getName();
+        String enumName = CppTypeMapper.cppShapeName(enumShape);
         List<String> values = getEnumValues(enumShape);
 
         writer.write("#pragma once");
@@ -98,7 +98,7 @@ public final class EnumRenderer {
      */
     public static void renderSource(CppWriter writer, Shape enumShape, String serviceName,
                                     String exportMacro, String projectName) {
-        String enumName = enumShape.getId().getName();
+        String enumName = CppTypeMapper.cppShapeName(enumShape);
         List<String> values = getEnumValues(enumShape);
         List<String> wireValues = getEnumWireValues(enumShape);
 

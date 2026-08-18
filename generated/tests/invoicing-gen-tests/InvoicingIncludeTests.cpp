@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/invoicing/InvoicingClient.h>
+#include <aws/invoicing/InvoicingClientPagination.h>
 #include <aws/invoicing/InvoicingEndpointProvider.h>
 #include <aws/invoicing/InvoicingErrorMarshaller.h>
 #include <aws/invoicing/InvoicingErrors.h>
+#include <aws/invoicing/InvoicingPaginationBase.h>
 #include <aws/invoicing/InvoicingRequest.h>
 #include <aws/invoicing/InvoicingServiceClientModel.h>
+#include <aws/invoicing/InvoicingWaiter.h>
 #include <aws/invoicing/Invoicing_EXPORTS.h>
+#include <aws/invoicing/internal/InvoicingEndpointRules.h>
 #include <aws/invoicing/model/AccessDeniedException.h>
 #include <aws/invoicing/model/AmountBreakdown.h>
 #include <aws/invoicing/model/BatchGetInvoiceProfileRequest.h>
@@ -61,11 +65,14 @@
 #include <aws/invoicing/model/InvoiceType.h>
 #include <aws/invoicing/model/InvoiceUnit.h>
 #include <aws/invoicing/model/InvoiceUnitRule.h>
+#include <aws/invoicing/model/ListInvoiceSummariesPaginationTraits.h>
 #include <aws/invoicing/model/ListInvoiceSummariesRequest.h>
 #include <aws/invoicing/model/ListInvoiceSummariesResourceType.h>
 #include <aws/invoicing/model/ListInvoiceSummariesResult.h>
+#include <aws/invoicing/model/ListInvoiceUnitsPaginationTraits.h>
 #include <aws/invoicing/model/ListInvoiceUnitsRequest.h>
 #include <aws/invoicing/model/ListInvoiceUnitsResult.h>
+#include <aws/invoicing/model/ListProcurementPortalPreferencesPaginationTraits.h>
 #include <aws/invoicing/model/ListProcurementPortalPreferencesRequest.h>
 #include <aws/invoicing/model/ListProcurementPortalPreferencesResult.h>
 #include <aws/invoicing/model/ListTagsForResourceRequest.h>

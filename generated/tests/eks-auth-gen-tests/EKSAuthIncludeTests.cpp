@@ -10,9 +10,12 @@
 #include <aws/eks-auth/EKSAuthEndpointProvider.h>
 #include <aws/eks-auth/EKSAuthErrorMarshaller.h>
 #include <aws/eks-auth/EKSAuthErrors.h>
+#include <aws/eks-auth/EKSAuthPaginationBase.h>
 #include <aws/eks-auth/EKSAuthRequest.h>
 #include <aws/eks-auth/EKSAuthServiceClientModel.h>
+#include <aws/eks-auth/EKSAuthWaiter.h>
 #include <aws/eks-auth/EKSAuth_EXPORTS.h>
+#include <aws/eks-auth/internal/EKSAuthEndpointRules.h>
 #include <aws/eks-auth/model/AssumeRoleForPodIdentityRequest.h>
 #include <aws/eks-auth/model/AssumeRoleForPodIdentityResult.h>
 #include <aws/eks-auth/model/AssumedRoleUser.h>

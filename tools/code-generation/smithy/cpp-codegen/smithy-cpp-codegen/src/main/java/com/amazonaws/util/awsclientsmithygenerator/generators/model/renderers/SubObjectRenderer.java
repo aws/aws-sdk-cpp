@@ -8,16 +8,13 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.CppTypeMapper;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.MemberRenderer;
-import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.ProtocolTraits;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.FileKind;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.RenderContext;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeRenderer;
-import software.amazon.smithy.model.Model;
-import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.model.shapes.Shape;
-import software.amazon.smithy.model.shapes.StructureShape;
+import software.amazon.smithy.model.traits.StreamingTrait;
 
 import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
 
 /**
  * Renders C++ headers and sources for sub-object (intermediate structure) shapes.
@@ -25,55 +22,46 @@ import java.util.TreeSet;
 public final class SubObjectRenderer implements ShapeRenderer {
 
     private final List<Shape> subObjects;
-    private final Model model;
-    private final ServiceShape service;
-    private final ProtocolTraits protocolTraits;
-    private final String namespace;
-    private final String exportMacro;
-    private final String serviceName;
-    private final String smithyServiceName;
+    private final RenderContext ctx;
 
-    public SubObjectRenderer(List<Shape> subObjects, Model model, ServiceShape service,
-                             ProtocolTraits protocolTraits, String namespace, String exportMacro,
-                             String serviceName, String smithyServiceName) {
+    public SubObjectRenderer(List<Shape> subObjects, RenderContext ctx) {
         this.subObjects = subObjects;
-        this.model = model;
-        this.service = service;
-        this.protocolTraits = protocolTraits;
-        this.namespace = namespace;
-        this.exportMacro = exportMacro;
-        this.serviceName = serviceName;
-        this.smithyServiceName = smithyServiceName;
+        this.ctx = ctx;
     }
 
     @Override
     public void render(CppWriterDelegator writerDelegator) {
         for (Shape shape : subObjects) {
-            if (shape.isStructureShape()) {
-                StructureShape struct = shape.asStructureShape().get();
-                renderHeader(writerDelegator, struct);
-                renderSource(writerDelegator, struct);
+            // C2J models a union as a structure with "union": true and emits it through the same
+            // ModelClass templates, so structures and (non-streaming) unions render identically.
+            // @streaming unions are the event-stream shapes rendered by EventStreamRenderer /
+            // the outgoing-event-stream path; skip them here to avoid a double-write.
+            boolean isStruct = shape.isStructureShape();
+            boolean isDataUnion = shape.isUnionShape() && !shape.hasTrait(StreamingTrait.class);
+            if (isStruct || isDataUnion) {
+                renderHeader(writerDelegator, shape);
+                renderSource(writerDelegator, shape);
             }
         }
     }
 
-    private void renderHeader(CppWriterDelegator writerDelegator, StructureShape shape) {
-        String className = shape.getId().getName();
-        String fileName = "include/aws/" + smithyServiceName + "/model/" + className + ".h";
+    private void renderHeader(CppWriterDelegator writerDelegator, Shape shape) {
+        String className = CppTypeMapper.cppShapeName(shape);
+        String fileName = "include/aws/" + ctx.smithyServiceName() + "/model/" + className + ".h";
         writerDelegator.useFileWriter(fileName, writer -> {
             writer.write("#pragma once");
 
             // Includes
-            Set<String> includes = new TreeSet<>();
-            includes.add("<aws/" + smithyServiceName + "/" + namespace + "_EXPORTS.h>");
-            List<String> memberIncludes = CppTypeMapper.getIncludesForShape(shape, model, smithyServiceName);
-            includes.addAll(memberIncludes);
-            for (String include : includes) {
-                writer.write("#include $L", include);
+            List<String> includes = new java.util.ArrayList<>();
+            includes.add("aws/" + ctx.smithyServiceName() + "/" + ctx.namespace() + "_EXPORTS.h");
+            for (String memberInc : CppTypeMapper.getIncludesForShape(shape, ctx.model(), ctx.smithyServiceName())) {
+                includes.add(memberInc);
             }
+            includes.addAll(ctx.protocolTraits().serdeIncludes(FileKind.SUBOBJECT_HEADER));
+            IncludeSets.emitAngleIncludes(writer, includes);
 
             boolean allPrimitive = shape.getAllMembers().values().stream()
-                .map(m -> model.expectShape(m.getTarget()))
+                .map(m -> ctx.model().expectShape(m.getTarget()))
                 .allMatch(CppTypeMapper::isPrimitive);
             if (!allPrimitive) {
                 writer.write("");
@@ -81,57 +69,62 @@ public final class SubObjectRenderer implements ShapeRenderer {
             }
             writer.write("");
 
-            writer.writeNamespaceOpen("Aws");
-            protocolTraits.writeShapeForwardDeclarations(writer);
-            writer.writeNamespaceOpen(namespace);
-            writer.writeNamespaceOpen("Model");
+            ModelFile.modelNamespace(writer, ctx.namespace(),
+                () -> ctx.protocolTraits().writeShapeForwardDeclarations(writer),
+                () -> {
+            // Recursive member targets are forward-declared here (at Model scope) instead of
+            // included, breaking the reference cycle. Matches C2J's computeForwardDeclarations.
+            for (String fwd : CppTypeMapper.getForwardDeclarations(shape, ctx.model())) {
+                writer.write("class $L;", fwd);
+            }
             writer.write("");
 
-            MemberRenderer.renderClassDocComment(writer, shape, smithyServiceName, service.getVersion());
+            MemberRenderer.renderClassDocComment(writer, shape, ctx.smithyServiceName(), ctx.service().getVersion());
 
             writer.openBlock("class $L {", "};", className, () -> {
                 writer.write("public:");
-                protocolTraits.writeSerdeMethodDecls(writer, exportMacro, className, null);
-                writer.write("");
-                MemberRenderer.renderPublicSection(writer, shape, model, exportMacro, className);
-                writer.dedent();
-                writer.write("private:");
-                writer.indent();
-                MemberRenderer.renderPrivateSection(writer, shape, model);
+                ctx.protocolTraits().writeSerdeMethodDecls(writer, ctx.exportMacro(), className, null);
+                // A memberless shape ends right after its serde decls: C2J emits no accessors
+                // and no private: section (ModelClassMembersAndInlines.vm gates both on
+                // $shape.members.size() > 0).
+                if (!shape.getAllMembers().isEmpty()) {
+                    MemberRenderer members = MemberRenderer.forStructure(ctx.model(), shape, className)
+                        .wideIntegers(ctx.protocolTraits().widensIntegers());
+                    writer.write("");
+                    members.renderPublicAccessors(writer);
+                    writer.dedent();
+                    writer.write("private:");
+                    writer.indent();
+                    members.renderPrivateSection(writer);
+                }
             });
             writer.write("");
-
-            writer.writeNamespaceClose("Model");
-            writer.writeNamespaceClose(namespace);
-            writer.writeNamespaceClose("Aws");
+                });
         });
     }
 
-    private void renderSource(CppWriterDelegator writerDelegator, StructureShape shape) {
-        String className = shape.getId().getName();
+    private void renderSource(CppWriterDelegator writerDelegator, Shape shape) {
+        String className = CppTypeMapper.cppShapeName(shape);
         String fileName = "source/model/" + className + ".cpp";
         writerDelegator.useFileWriter(fileName, writer -> {
 
-            protocolTraits.writeSerdeInclude(writer);
-            writer.write("#include <aws/$L/model/$L.h>", smithyServiceName, className);
-            writer.write("");
-            writer.write("#include <utility>");
-            writer.write("");
-
-            protocolTraits.writeSerdeUsingDeclarations(writer);
-            writer.write("");
-
-            writer.writeNamespaceOpen("Aws");
-            writer.writeNamespaceOpen(namespace);
-            writer.writeNamespaceOpen("Model");
+            List<String> sourceBase = IncludeSets.subObjectSourceBase(ctx.smithyServiceName(), className);
+            // Recursive member types are forward-declared in the header, so the source must include
+            // them for the out-of-line MakeShared / serde bodies. Matches C2J.
+            sourceBase.addAll(CppTypeMapper.getRecursiveMemberSourceIncludes(
+                shape, ctx.model(), ctx.smithyServiceName()));
+            IncludeSets.emitSourceIncludes(writer, sourceBase, ctx.protocolTraits(), FileKind.SUBOBJECT_SOURCE);
             writer.write("");
 
-            protocolTraits.writeSerdeMethodImpls(writer, className);
+            IncludeSets.emitUsings(writer, ctx.protocolTraits().serdeUsings(FileKind.SUBOBJECT_SOURCE));
             writer.write("");
 
-            writer.writeNamespaceClose("Model");
-            writer.writeNamespaceClose(namespace);
-            writer.writeNamespaceClose("Aws");
+            ModelFile.modelNamespace(writer, ctx.namespace(), () -> {
+            writer.write("");
+
+            ctx.protocolTraits().writeSerdeMethodImpls(writer, className);
+            writer.write("");
+            });
         });
     }
 

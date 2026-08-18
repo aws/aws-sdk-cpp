@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/cognito-identity/CognitoIdentityClient.h>
+#include <aws/cognito-identity/CognitoIdentityClientPagination.h>
 #include <aws/cognito-identity/CognitoIdentityEndpointProvider.h>
 #include <aws/cognito-identity/CognitoIdentityErrorMarshaller.h>
 #include <aws/cognito-identity/CognitoIdentityErrors.h>
+#include <aws/cognito-identity/CognitoIdentityPaginationBase.h>
 #include <aws/cognito-identity/CognitoIdentityRequest.h>
 #include <aws/cognito-identity/CognitoIdentityServiceClientModel.h>
+#include <aws/cognito-identity/CognitoIdentityWaiter.h>
 #include <aws/cognito-identity/CognitoIdentity_EXPORTS.h>
+#include <aws/cognito-identity/internal/CognitoIdentityEndpointRules.h>
 #include <aws/cognito-identity/model/AmbiguousRoleResolutionType.h>
 #include <aws/cognito-identity/model/CognitoIdentityProvider.h>
 #include <aws/cognito-identity/model/CreateIdentityPoolRequest.h>
@@ -42,6 +46,7 @@
 #include <aws/cognito-identity/model/IdentityPoolShortDescription.h>
 #include <aws/cognito-identity/model/ListIdentitiesRequest.h>
 #include <aws/cognito-identity/model/ListIdentitiesResult.h>
+#include <aws/cognito-identity/model/ListIdentityPoolsPaginationTraits.h>
 #include <aws/cognito-identity/model/ListIdentityPoolsRequest.h>
 #include <aws/cognito-identity/model/ListIdentityPoolsResult.h>
 #include <aws/cognito-identity/model/ListTagsForResourceRequest.h>

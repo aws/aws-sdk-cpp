@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/ecr/ECRClient.h>
+#include <aws/ecr/ECRClientPagination.h>
 #include <aws/ecr/ECREndpointProvider.h>
 #include <aws/ecr/ECRErrorMarshaller.h>
 #include <aws/ecr/ECRErrors.h>
+#include <aws/ecr/ECRPaginationBase.h>
 #include <aws/ecr/ECRRequest.h>
 #include <aws/ecr/ECRServiceClientModel.h>
+#include <aws/ecr/ECRWaiter.h>
 #include <aws/ecr/ECR_EXPORTS.h>
+#include <aws/ecr/internal/ECREndpointRules.h>
 #include <aws/ecr/model/ArtifactStatus.h>
 #include <aws/ecr/model/ArtifactStatusFilter.h>
 #include <aws/ecr/model/Attribute.h>
@@ -55,19 +59,24 @@
 #include <aws/ecr/model/DeregisterPullTimeUpdateExclusionResult.h>
 #include <aws/ecr/model/DescribeImageReplicationStatusRequest.h>
 #include <aws/ecr/model/DescribeImageReplicationStatusResult.h>
+#include <aws/ecr/model/DescribeImageScanFindingsPaginationTraits.h>
 #include <aws/ecr/model/DescribeImageScanFindingsRequest.h>
 #include <aws/ecr/model/DescribeImageScanFindingsResult.h>
 #include <aws/ecr/model/DescribeImageSigningStatusRequest.h>
 #include <aws/ecr/model/DescribeImageSigningStatusResult.h>
 #include <aws/ecr/model/DescribeImagesFilter.h>
+#include <aws/ecr/model/DescribeImagesPaginationTraits.h>
 #include <aws/ecr/model/DescribeImagesRequest.h>
 #include <aws/ecr/model/DescribeImagesResult.h>
+#include <aws/ecr/model/DescribePullThroughCacheRulesPaginationTraits.h>
 #include <aws/ecr/model/DescribePullThroughCacheRulesRequest.h>
 #include <aws/ecr/model/DescribePullThroughCacheRulesResult.h>
 #include <aws/ecr/model/DescribeRegistryRequest.h>
 #include <aws/ecr/model/DescribeRegistryResult.h>
+#include <aws/ecr/model/DescribeRepositoriesPaginationTraits.h>
 #include <aws/ecr/model/DescribeRepositoriesRequest.h>
 #include <aws/ecr/model/DescribeRepositoriesResult.h>
+#include <aws/ecr/model/DescribeRepositoryCreationTemplatesPaginationTraits.h>
 #include <aws/ecr/model/DescribeRepositoryCreationTemplatesRequest.h>
 #include <aws/ecr/model/DescribeRepositoryCreationTemplatesResult.h>
 #include <aws/ecr/model/EncryptionConfiguration.h>
@@ -81,6 +90,7 @@
 #include <aws/ecr/model/GetAuthorizationTokenResult.h>
 #include <aws/ecr/model/GetDownloadUrlForLayerRequest.h>
 #include <aws/ecr/model/GetDownloadUrlForLayerResult.h>
+#include <aws/ecr/model/GetLifecyclePolicyPreviewPaginationTraits.h>
 #include <aws/ecr/model/GetLifecyclePolicyPreviewRequest.h>
 #include <aws/ecr/model/GetLifecyclePolicyPreviewResult.h>
 #include <aws/ecr/model/GetLifecyclePolicyRequest.h>
@@ -131,6 +141,7 @@
 #include <aws/ecr/model/ListImageReferrersRequest.h>
 #include <aws/ecr/model/ListImageReferrersResult.h>
 #include <aws/ecr/model/ListImagesFilter.h>
+#include <aws/ecr/model/ListImagesPaginationTraits.h>
 #include <aws/ecr/model/ListImagesRequest.h>
 #include <aws/ecr/model/ListImagesResult.h>
 #include <aws/ecr/model/ListPullTimeUpdateExclusionsRequest.h>

@@ -10,9 +10,12 @@
 #include <aws/ec2-instance-connect/EC2InstanceConnectEndpointProvider.h>
 #include <aws/ec2-instance-connect/EC2InstanceConnectErrorMarshaller.h>
 #include <aws/ec2-instance-connect/EC2InstanceConnectErrors.h>
+#include <aws/ec2-instance-connect/EC2InstanceConnectPaginationBase.h>
 #include <aws/ec2-instance-connect/EC2InstanceConnectRequest.h>
 #include <aws/ec2-instance-connect/EC2InstanceConnectServiceClientModel.h>
+#include <aws/ec2-instance-connect/EC2InstanceConnectWaiter.h>
 #include <aws/ec2-instance-connect/EC2InstanceConnect_EXPORTS.h>
+#include <aws/ec2-instance-connect/internal/EC2InstanceConnectEndpointRules.h>
 #include <aws/ec2-instance-connect/model/SendSSHPublicKeyRequest.h>
 #include <aws/ec2-instance-connect/model/SendSSHPublicKeyResult.h>
 #include <aws/ec2-instance-connect/model/SendSerialConsoleSSHPublicKeyRequest.h>

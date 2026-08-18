@@ -10,9 +10,12 @@
 #include <aws/iotthingsgraph/IoTThingsGraphEndpointProvider.h>
 #include <aws/iotthingsgraph/IoTThingsGraphErrorMarshaller.h>
 #include <aws/iotthingsgraph/IoTThingsGraphErrors.h>
+#include <aws/iotthingsgraph/IoTThingsGraphPaginationBase.h>
 #include <aws/iotthingsgraph/IoTThingsGraphRequest.h>
 #include <aws/iotthingsgraph/IoTThingsGraphServiceClientModel.h>
+#include <aws/iotthingsgraph/IoTThingsGraphWaiter.h>
 #include <aws/iotthingsgraph/IoTThingsGraph_EXPORTS.h>
+#include <aws/iotthingsgraph/internal/IoTThingsGraphEndpointRules.h>
 #include <aws/iotthingsgraph/model/DefinitionDocument.h>
 #include <aws/iotthingsgraph/model/DefinitionLanguage.h>
 #include <aws/iotthingsgraph/model/DependencyRevision.h>

@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/medical-imaging/MedicalImagingClient.h>
+#include <aws/medical-imaging/MedicalImagingClientPagination.h>
 #include <aws/medical-imaging/MedicalImagingEndpointProvider.h>
 #include <aws/medical-imaging/MedicalImagingErrorMarshaller.h>
 #include <aws/medical-imaging/MedicalImagingErrors.h>
+#include <aws/medical-imaging/MedicalImagingPaginationBase.h>
 #include <aws/medical-imaging/MedicalImagingRequest.h>
 #include <aws/medical-imaging/MedicalImagingServiceClientModel.h>
+#include <aws/medical-imaging/MedicalImagingWaiter.h>
 #include <aws/medical-imaging/MedicalImaging_EXPORTS.h>
+#include <aws/medical-imaging/internal/MedicalImagingEndpointRules.h>
 #include <aws/medical-imaging/model/CopyDestinationImageSet.h>
 #include <aws/medical-imaging/model/CopyDestinationImageSetProperties.h>
 #include <aws/medical-imaging/model/CopyImageSetInformation.h>
@@ -53,10 +57,13 @@
 #include <aws/medical-imaging/model/ImageSetsMetadataSummary.h>
 #include <aws/medical-imaging/model/ImportConfiguration.h>
 #include <aws/medical-imaging/model/JobStatus.h>
+#include <aws/medical-imaging/model/ListDICOMImportJobsPaginationTraits.h>
 #include <aws/medical-imaging/model/ListDICOMImportJobsRequest.h>
 #include <aws/medical-imaging/model/ListDICOMImportJobsResult.h>
+#include <aws/medical-imaging/model/ListDatastoresPaginationTraits.h>
 #include <aws/medical-imaging/model/ListDatastoresRequest.h>
 #include <aws/medical-imaging/model/ListDatastoresResult.h>
+#include <aws/medical-imaging/model/ListImageSetVersionsPaginationTraits.h>
 #include <aws/medical-imaging/model/ListImageSetVersionsRequest.h>
 #include <aws/medical-imaging/model/ListImageSetVersionsResult.h>
 #include <aws/medical-imaging/model/ListTagsForResourceRequest.h>
@@ -69,6 +76,7 @@
 #include <aws/medical-imaging/model/SearchByAttributeValue.h>
 #include <aws/medical-imaging/model/SearchCriteria.h>
 #include <aws/medical-imaging/model/SearchFilter.h>
+#include <aws/medical-imaging/model/SearchImageSetsPaginationTraits.h>
 #include <aws/medical-imaging/model/SearchImageSetsRequest.h>
 #include <aws/medical-imaging/model/SearchImageSetsResult.h>
 #include <aws/medical-imaging/model/Sort.h>

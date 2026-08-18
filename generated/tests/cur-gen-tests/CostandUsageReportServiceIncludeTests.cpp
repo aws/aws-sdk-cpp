@@ -7,17 +7,22 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/cur/CostandUsageReportServiceClient.h>
+#include <aws/cur/CostandUsageReportServiceClientPagination.h>
 #include <aws/cur/CostandUsageReportServiceEndpointProvider.h>
 #include <aws/cur/CostandUsageReportServiceErrorMarshaller.h>
 #include <aws/cur/CostandUsageReportServiceErrors.h>
+#include <aws/cur/CostandUsageReportServicePaginationBase.h>
 #include <aws/cur/CostandUsageReportServiceRequest.h>
 #include <aws/cur/CostandUsageReportServiceServiceClientModel.h>
+#include <aws/cur/CostandUsageReportServiceWaiter.h>
 #include <aws/cur/CostandUsageReportService_EXPORTS.h>
+#include <aws/cur/internal/CostandUsageReportServiceEndpointRules.h>
 #include <aws/cur/model/AWSRegion.h>
 #include <aws/cur/model/AdditionalArtifact.h>
 #include <aws/cur/model/CompressionFormat.h>
 #include <aws/cur/model/DeleteReportDefinitionRequest.h>
 #include <aws/cur/model/DeleteReportDefinitionResult.h>
+#include <aws/cur/model/DescribeReportDefinitionsPaginationTraits.h>
 #include <aws/cur/model/DescribeReportDefinitionsRequest.h>
 #include <aws/cur/model/DescribeReportDefinitionsResult.h>
 #include <aws/cur/model/LastStatus.h>

@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/workspaces/WorkSpacesClient.h>
+#include <aws/workspaces/WorkSpacesClientPagination.h>
 #include <aws/workspaces/WorkSpacesEndpointProvider.h>
 #include <aws/workspaces/WorkSpacesErrorMarshaller.h>
 #include <aws/workspaces/WorkSpacesErrors.h>
+#include <aws/workspaces/WorkSpacesPaginationBase.h>
 #include <aws/workspaces/WorkSpacesRequest.h>
 #include <aws/workspaces/WorkSpacesServiceClientModel.h>
+#include <aws/workspaces/WorkSpacesWaiter.h>
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
+#include <aws/workspaces/internal/WorkSpacesEndpointRules.h>
 #include <aws/workspaces/model/AGAModeForDirectoryEnum.h>
 #include <aws/workspaces/model/AGAModeForWorkSpaceEnum.h>
 #include <aws/workspaces/model/AGAPreferredProtocolForDirectory.h>
@@ -126,8 +130,10 @@
 #include <aws/workspaces/model/DescribeAccountModificationsResult.h>
 #include <aws/workspaces/model/DescribeAccountRequest.h>
 #include <aws/workspaces/model/DescribeAccountResult.h>
+#include <aws/workspaces/model/DescribeApplicationAssociationsPaginationTraits.h>
 #include <aws/workspaces/model/DescribeApplicationAssociationsRequest.h>
 #include <aws/workspaces/model/DescribeApplicationAssociationsResult.h>
+#include <aws/workspaces/model/DescribeApplicationsPaginationTraits.h>
 #include <aws/workspaces/model/DescribeApplicationsRequest.h>
 #include <aws/workspaces/model/DescribeApplicationsResult.h>
 #include <aws/workspaces/model/DescribeBundleAssociationsRequest.h>
@@ -152,10 +158,12 @@
 #include <aws/workspaces/model/DescribeTagsResult.h>
 #include <aws/workspaces/model/DescribeWorkspaceAssociationsRequest.h>
 #include <aws/workspaces/model/DescribeWorkspaceAssociationsResult.h>
+#include <aws/workspaces/model/DescribeWorkspaceBundlesPaginationTraits.h>
 #include <aws/workspaces/model/DescribeWorkspaceBundlesRequest.h>
 #include <aws/workspaces/model/DescribeWorkspaceBundlesResult.h>
 #include <aws/workspaces/model/DescribeWorkspaceDirectoriesFilter.h>
 #include <aws/workspaces/model/DescribeWorkspaceDirectoriesFilterName.h>
+#include <aws/workspaces/model/DescribeWorkspaceDirectoriesPaginationTraits.h>
 #include <aws/workspaces/model/DescribeWorkspaceDirectoriesRequest.h>
 #include <aws/workspaces/model/DescribeWorkspaceDirectoriesResult.h>
 #include <aws/workspaces/model/DescribeWorkspaceImagePermissionsRequest.h>
@@ -166,6 +174,7 @@
 #include <aws/workspaces/model/DescribeWorkspaceSnapshotsResult.h>
 #include <aws/workspaces/model/DescribeWorkspacesConnectionStatusRequest.h>
 #include <aws/workspaces/model/DescribeWorkspacesConnectionStatusResult.h>
+#include <aws/workspaces/model/DescribeWorkspacesPaginationTraits.h>
 #include <aws/workspaces/model/DescribeWorkspacesPoolSessionsRequest.h>
 #include <aws/workspaces/model/DescribeWorkspacesPoolSessionsResult.h>
 #include <aws/workspaces/model/DescribeWorkspacesPoolsFilter.h>
@@ -207,6 +216,7 @@
 #include <aws/workspaces/model/IosClientBrandingAttributes.h>
 #include <aws/workspaces/model/IosImportClientBrandingAttributes.h>
 #include <aws/workspaces/model/IpRuleItem.h>
+#include <aws/workspaces/model/ListAccountLinksPaginationTraits.h>
 #include <aws/workspaces/model/ListAccountLinksRequest.h>
 #include <aws/workspaces/model/ListAccountLinksResult.h>
 #include <aws/workspaces/model/ListAvailableManagementCidrRangesRequest.h>

@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/controlcatalog/ControlCatalogClient.h>
+#include <aws/controlcatalog/ControlCatalogClientPagination.h>
 #include <aws/controlcatalog/ControlCatalogEndpointProvider.h>
 #include <aws/controlcatalog/ControlCatalogErrorMarshaller.h>
 #include <aws/controlcatalog/ControlCatalogErrors.h>
+#include <aws/controlcatalog/ControlCatalogPaginationBase.h>
 #include <aws/controlcatalog/ControlCatalogRequest.h>
 #include <aws/controlcatalog/ControlCatalogServiceClientModel.h>
+#include <aws/controlcatalog/ControlCatalogWaiter.h>
 #include <aws/controlcatalog/ControlCatalog_EXPORTS.h>
+#include <aws/controlcatalog/internal/ControlCatalogEndpointRules.h>
 #include <aws/controlcatalog/model/AssociatedDomainSummary.h>
 #include <aws/controlcatalog/model/AssociatedObjectiveSummary.h>
 #include <aws/controlcatalog/model/CommonControlFilter.h>
@@ -36,14 +40,19 @@
 #include <aws/controlcatalog/model/ImplementationDetails.h>
 #include <aws/controlcatalog/model/ImplementationFilter.h>
 #include <aws/controlcatalog/model/ImplementationSummary.h>
+#include <aws/controlcatalog/model/ListCommonControlsPaginationTraits.h>
 #include <aws/controlcatalog/model/ListCommonControlsRequest.h>
 #include <aws/controlcatalog/model/ListCommonControlsResult.h>
+#include <aws/controlcatalog/model/ListControlMappingsPaginationTraits.h>
 #include <aws/controlcatalog/model/ListControlMappingsRequest.h>
 #include <aws/controlcatalog/model/ListControlMappingsResult.h>
+#include <aws/controlcatalog/model/ListControlsPaginationTraits.h>
 #include <aws/controlcatalog/model/ListControlsRequest.h>
 #include <aws/controlcatalog/model/ListControlsResult.h>
+#include <aws/controlcatalog/model/ListDomainsPaginationTraits.h>
 #include <aws/controlcatalog/model/ListDomainsRequest.h>
 #include <aws/controlcatalog/model/ListDomainsResult.h>
+#include <aws/controlcatalog/model/ListObjectivesPaginationTraits.h>
 #include <aws/controlcatalog/model/ListObjectivesRequest.h>
 #include <aws/controlcatalog/model/ListObjectivesResult.h>
 #include <aws/controlcatalog/model/Mapping.h>

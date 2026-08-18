@@ -16,6 +16,7 @@ import software.amazon.smithy.model.shapes.ListShape;
 import software.amazon.smithy.model.shapes.LongShape;
 import software.amazon.smithy.model.shapes.MapShape;
 import software.amazon.smithy.model.shapes.MemberShape;
+import software.amazon.smithy.model.shapes.Shape;
 import software.amazon.smithy.model.shapes.StringShape;
 import software.amazon.smithy.model.shapes.StructureShape;
 import software.amazon.smithy.model.shapes.TimestampShape;
@@ -39,6 +40,23 @@ class CppTypeMapperTest {
         IntegerShape shape = IntegerShape.builder().id("com.example#Foo").build();
         Model model = Model.builder().addShape(shape).build();
         assertEquals("int", CppTypeMapper.getCppType(shape, model));
+    }
+
+    @Test
+    void integerShape_wideIntegers_mapsToInt64() {
+        // C2J's CBOR type mapping widens integer -> int64_t (CORAL_TYPE_TO_CBOR_CPP_TYPE_MAPPING),
+        // used in CBOR sub-object and result headers ($protocol == smithy-rpc-v2-cbor).
+        IntegerShape shape = IntegerShape.builder().id("com.example#Foo").build();
+        Model model = Model.builder().addShape(shape).build();
+        assertEquals("int64_t", CppTypeMapper.getCppType(shape, model, true));
+    }
+
+    @Test
+    void longShape_wideIntegers_staysLongLong() {
+        // Only integer widens under CBOR; long is long long in every mapping.
+        LongShape shape = LongShape.builder().id("com.example#Foo").build();
+        Model model = Model.builder().addShape(shape).build();
+        assertEquals("long long", CppTypeMapper.getCppType(shape, model, true));
     }
 
     @Test
@@ -77,6 +95,17 @@ class CppTypeMapperTest {
     }
 
     @Test
+    void sensitiveBlobShape_mapsToCryptoBuffer() {
+        // C2J maps a @sensitive blob to CryptoBuffer (the "sensitive_blob" type-mapping key in
+        // CppViewHelper), while a plain blob stays ByteBuffer.
+        BlobShape shape = BlobShape.builder().id("com.example#Foo")
+            .addTrait(new software.amazon.smithy.model.traits.SensitiveTrait())
+            .build();
+        Model model = Model.builder().addShape(shape).build();
+        assertEquals("Aws::Utils::CryptoBuffer", CppTypeMapper.getCppType(shape, model));
+    }
+
+    @Test
     void timestampShape_mapsToAwsDateTime() {
         TimestampShape shape = TimestampShape.builder().id("com.example#Foo").build();
         Model model = Model.builder().addShape(shape).build();
@@ -107,6 +136,93 @@ class CppTypeMapperTest {
     }
 
     @Test
+    void sparseListOfStrings_wrapsElementInOptional() {
+        // C2J wraps a @sparse list's element type in Aws::Crt::Optional (CppViewHelper), so the
+        // member type becomes Aws::Vector<Aws::Crt::Optional<Aws::String>>.
+        StringShape str = StringShape.builder().id("com.example#Str").build();
+        ListShape list = ListShape.builder()
+            .id("com.example#SparseStringList")
+            .member(MemberShape.builder().id("com.example#SparseStringList$member").target("com.example#Str").build())
+            .addTrait(new software.amazon.smithy.model.traits.SparseTrait())
+            .build();
+        Model model = Model.builder().addShapes(str, list).build();
+        assertEquals("Aws::Vector<Aws::Crt::Optional<Aws::String>>", CppTypeMapper.getCppType(list, model));
+    }
+
+    @Test
+    void sparseMapOfStringToString_wrapsValueInOptional() {
+        // C2J wraps a @sparse map's value type in Aws::Crt::Optional; the key is untouched.
+        StringShape str = StringShape.builder().id("com.example#Str").build();
+        MapShape map = MapShape.builder()
+            .id("com.example#SparseStringMap")
+            .key(MemberShape.builder().id("com.example#SparseStringMap$key").target("com.example#Str").build())
+            .value(MemberShape.builder().id("com.example#SparseStringMap$value").target("com.example#Str").build())
+            .addTrait(new software.amazon.smithy.model.traits.SparseTrait())
+            .build();
+        Model model = Model.builder().addShapes(str, map).build();
+        assertEquals("Aws::Map<Aws::String, Aws::Crt::Optional<Aws::String>>", CppTypeMapper.getCppType(map, model));
+    }
+
+    @Test
+    void getIncludesForShape_withSparseListMember_includesOptionalHeader() {
+        // A @sparse list/map member wraps its element/value in Aws::Crt::Optional, which lives in
+        // <aws/crt/Optional.h>. Matches C2J's generated SparseNullsOperationRequest.h.
+        StringShape str = StringShape.builder().id("com.example#Str").build();
+        ListShape list = ListShape.builder()
+            .id("com.example#SparseStringList")
+            .member(MemberShape.builder().id("com.example#SparseStringList$member").target("com.example#Str").build())
+            .addTrait(new software.amazon.smithy.model.traits.SparseTrait())
+            .build();
+        StructureShape struct = StructureShape.builder()
+            .id("com.example#MyRequest")
+            .addMember("items", list.getId())
+            .build();
+        Model model = Model.builder().addShapes(str, list, struct).build();
+
+        List<String> includes = CppTypeMapper.getIncludesForShape(struct, model, "myservice");
+        assertTrue(includes.contains("<aws/crt/Optional.h>"),
+            "Shape with sparse list member should include Optional.h: " + includes);
+    }
+
+    @Test
+    void getIncludesForShape_withSparseMapMember_includesOptionalHeader() {
+        StringShape str = StringShape.builder().id("com.example#Str").build();
+        MapShape map = MapShape.builder()
+            .id("com.example#SparseStringMap")
+            .key(MemberShape.builder().id("com.example#SparseStringMap$key").target("com.example#Str").build())
+            .value(MemberShape.builder().id("com.example#SparseStringMap$value").target("com.example#Str").build())
+            .addTrait(new software.amazon.smithy.model.traits.SparseTrait())
+            .build();
+        StructureShape struct = StructureShape.builder()
+            .id("com.example#MyRequest")
+            .addMember("data", map.getId())
+            .build();
+        Model model = Model.builder().addShapes(str, map, struct).build();
+
+        List<String> includes = CppTypeMapper.getIncludesForShape(struct, model, "myservice");
+        assertTrue(includes.contains("<aws/crt/Optional.h>"),
+            "Shape with sparse map member should include Optional.h: " + includes);
+    }
+
+    @Test
+    void getIncludesForShape_withoutSparse_noOptionalHeader() {
+        StringShape str = StringShape.builder().id("com.example#Str").build();
+        ListShape list = ListShape.builder()
+            .id("com.example#StringList")
+            .member(MemberShape.builder().id("com.example#StringList$member").target("com.example#Str").build())
+            .build();
+        StructureShape struct = StructureShape.builder()
+            .id("com.example#MyRequest")
+            .addMember("items", list.getId())
+            .build();
+        Model model = Model.builder().addShapes(str, list, struct).build();
+
+        List<String> includes = CppTypeMapper.getIncludesForShape(struct, model, "myservice");
+        assertFalse(includes.contains("<aws/crt/Optional.h>"),
+            "Non-sparse list member should not include Optional.h: " + includes);
+    }
+
+    @Test
     void structureShape_mapsToShapeName() {
         StructureShape struct = StructureShape.builder().id("com.example#MyStruct").build();
         Model model = Model.builder().addShape(struct).build();
@@ -122,6 +238,46 @@ class CppTypeMapperTest {
         StringShape str = StringShape.builder().id("com.example#Str").build();
         Model model = Model.builder().addShapes(str, union).build();
         assertEquals("MyUnion", CppTypeMapper.getCppType(union, model));
+    }
+
+    @Test
+    void enumShape_lowerCamelName_mapsToUpperCamelType() {
+        // IAM-style lowerCamel enum shape names must map to UpperCamel C++ types, matching C2J.
+        software.amazon.smithy.model.shapes.EnumShape en = software.amazon.smithy.model.shapes.EnumShape.builder()
+            .id("com.example#statusType").addMember("Active", "Active").build();
+        Model model = Model.builder().addShape(en).build();
+        assertEquals("StatusType", CppTypeMapper.getCppType(en, model));
+        assertEquals(java.util.Optional.of("StatusType::NOT_SET"), CppTypeMapper.getDefaultValue(en));
+        assertEquals(java.util.Optional.of("<aws/iam/model/StatusType.h>"),
+            CppTypeMapper.getIncludeForMemberType(en, model, "iam"));
+    }
+
+    @Test
+    void legacyEnumStringShape_mapsToEnumType() {
+        // Smithy 1.0 models a closed set as a `string` shape carrying the @enum trait (not a 2.0
+        // EnumShape). C2J treats these as enums, so a member targeting one must resolve to the
+        // enum C++ type, NOT Aws::String. Mirrors ShapeClassifier / EnumResolver detection.
+        software.amazon.smithy.model.traits.EnumTrait enumTrait =
+            software.amazon.smithy.model.traits.EnumTrait.builder()
+                .addEnum(software.amazon.smithy.model.traits.EnumDefinition.builder()
+                    .value("Case.Created").name("Case_Created").build())
+                .build();
+        StringShape shape = StringShape.builder().id("com.example#AuditEventType")
+            .addTrait(enumTrait).build();
+        Model model = Model.builder().addShape(shape).build();
+        assertEquals("AuditEventType", CppTypeMapper.getCppType(shape, model));
+        assertEquals(java.util.Optional.of("AuditEventType::NOT_SET"), CppTypeMapper.getDefaultValue(shape));
+        assertEquals(java.util.Optional.of("<aws/connectcases/model/AuditEventType.h>"),
+            CppTypeMapper.getIncludeForMemberType(shape, model, "connectcases"));
+    }
+
+    @Test
+    void structureShape_lowerCamelName_mapsToUpperCamelType() {
+        StructureShape struct = StructureShape.builder().id("com.example#nestedThing").build();
+        Model model = Model.builder().addShape(struct).build();
+        assertEquals("NestedThing", CppTypeMapper.getCppType(struct, model));
+        assertEquals(java.util.Optional.of("<aws/iam/model/NestedThing.h>"),
+            CppTypeMapper.getIncludeForMemberType(struct, model, "iam"));
     }
 
     @Test
@@ -157,6 +313,114 @@ class CppTypeMapperTest {
             .build();
         Model model = Model.builder().addShapes(str, struct, map).build();
         assertEquals("Aws::Map<Aws::String, MyData>", CppTypeMapper.getCppType(map, model));
+    }
+
+    // --- recursive (mutually-referenced) shape tests ---
+
+    /**
+     * Builds the connectcases-style mutual cycle: a union {@code BooleanCondition} with a direct
+     * member targeting struct {@code CompoundCondition}, which holds a list of
+     * {@code BooleanCondition}. The two aggregates are mutually referenced through the list.
+     */
+    private static Model mutualCycleModel() {
+        StructureShape operands = StructureShape.builder().id("com.example#BooleanOperands").build();
+        // Forward references are fine; Model.builder resolves them at build().
+        UnionShape booleanCondition = UnionShape.builder()
+            .id("com.example#BooleanCondition")
+            .addMember("equalTo", operands.getId())
+            .addMember("andAll", software.amazon.smithy.model.shapes.ShapeId.from("com.example#CompoundCondition"))
+            .build();
+        ListShape conditionList = ListShape.builder()
+            .id("com.example#BooleanConditionList")
+            .member(MemberShape.builder().id("com.example#BooleanConditionList$member")
+                .target(booleanCondition.getId()).build())
+            .build();
+        StructureShape compound = StructureShape.builder()
+            .id("com.example#CompoundCondition")
+            .addMember("conditions", conditionList.getId())
+            .build();
+        return Model.builder().addShapes(operands, booleanCondition, conditionList, compound).build();
+    }
+
+    @Test
+    void mutuallyReferencedDirectMember_isRecursiveStructMember() {
+        Model model = mutualCycleModel();
+        Shape booleanCondition = model.expectShape(
+            software.amazon.smithy.model.shapes.ShapeId.from("com.example#BooleanCondition"));
+        Shape compound = model.expectShape(
+            software.amazon.smithy.model.shapes.ShapeId.from("com.example#CompoundCondition"));
+        Shape operands = model.expectShape(
+            software.amazon.smithy.model.shapes.ShapeId.from("com.example#BooleanOperands"));
+        // andAll -> CompoundCondition is a direct member forming a cycle -> recursive
+        assertTrue(CppTypeMapper.isRecursiveStructMember(booleanCondition, compound, model));
+        // equalTo -> BooleanOperands does not cycle back -> not recursive
+        assertFalse(CppTypeMapper.isRecursiveStructMember(booleanCondition, operands, model));
+    }
+
+    @Test
+    void recursiveMember_headerSwapsStructIncludeForAllocator_andForwardDeclares() {
+        Model model = mutualCycleModel();
+        Shape booleanCondition = model.expectShape(
+            software.amazon.smithy.model.shapes.ShapeId.from("com.example#BooleanCondition"));
+
+        List<String> includes = CppTypeMapper.getIncludesForShape(booleanCondition, model, "connectcases");
+        // The recursive CompoundCondition is forward-declared, not included; allocator comes in instead.
+        assertTrue(includes.contains("<aws/core/utils/memory/stl/AWSAllocator.h>"), includes.toString());
+        assertFalse(includes.contains("<aws/connectcases/model/CompoundCondition.h>"), includes.toString());
+        // Non-recursive struct member keeps its normal include.
+        assertTrue(includes.contains("<aws/connectcases/model/BooleanOperands.h>"), includes.toString());
+
+        assertEquals(List.of("CompoundCondition"),
+            CppTypeMapper.getForwardDeclarations(booleanCondition, model));
+        assertEquals(List.of("aws/connectcases/model/CompoundCondition.h"),
+            CppTypeMapper.getRecursiveMemberSourceIncludes(booleanCondition, model, "connectcases"));
+    }
+
+    @Test
+    void directSelfReference_isRecursive_butNotForwardDeclaredOrSelfIncluded() {
+        // connectcases CaseFilter has a `not` member targeting CaseFilter itself. C2J renders it as
+        // std::shared_ptr<CaseFilter> but adds neither a self forward-declaration nor a self-include
+        // (the class declares itself) — and, unlike the mutual case, no AWSAllocator.h either.
+        StructureShape filter = StructureShape.builder()
+            .id("com.example#CaseFilter")
+            .addMember("not", software.amazon.smithy.model.shapes.ShapeId.from("com.example#CaseFilter"))
+            .build();
+        Model model = Model.builder().addShape(filter).build();
+        Shape caseFilter = model.expectShape(
+            software.amazon.smithy.model.shapes.ShapeId.from("com.example#CaseFilter"));
+
+        assertTrue(CppTypeMapper.isRecursiveStructMember(caseFilter, caseFilter, model));
+        assertEquals(List.of(), CppTypeMapper.getForwardDeclarations(caseFilter, model));
+        assertEquals(List.of(),
+            CppTypeMapper.getRecursiveMemberSourceIncludes(caseFilter, model, "connectcases"));
+        List<String> includes = CppTypeMapper.getIncludesForShape(caseFilter, model, "connectcases");
+        assertFalse(includes.contains("<aws/connectcases/model/CaseFilter.h>"),
+            "must not self-include: " + includes);
+        assertFalse(includes.contains("<aws/core/utils/memory/stl/AWSAllocator.h>"),
+            "self-reference needs no AWSAllocator.h: " + includes);
+    }
+
+    @Test
+    void selfReferenceThroughListElement_isNotSelfIncluded() {
+        // CaseFilter also has andAll -> list<CaseFilter>. The list stays by-value, but its element
+        // include must not become a self-include.
+        StructureShape filter = StructureShape.builder()
+            .id("com.example#CaseFilter")
+            .addMember("andAll", software.amazon.smithy.model.shapes.ShapeId.from("com.example#CaseFilterList"))
+            .build();
+        ListShape list = ListShape.builder()
+            .id("com.example#CaseFilterList")
+            .member(MemberShape.builder().id("com.example#CaseFilterList$member")
+                .target("com.example#CaseFilter").build())
+            .build();
+        Model model = Model.builder().addShapes(filter, list).build();
+        Shape caseFilter = model.expectShape(
+            software.amazon.smithy.model.shapes.ShapeId.from("com.example#CaseFilter"));
+
+        List<String> includes = CppTypeMapper.getIncludesForShape(caseFilter, model, "connectcases");
+        assertTrue(includes.contains("<aws/core/utils/memory/stl/AWSVector.h>"), includes.toString());
+        assertFalse(includes.contains("<aws/connectcases/model/CaseFilter.h>"),
+            "list-of-self must not self-include: " + includes);
     }
 
     // --- getDefaultValue tests ---
@@ -321,6 +585,40 @@ class CppTypeMapperTest {
         List<String> includes = CppTypeMapper.getIncludesForShape(struct, model, "myservice");
         assertTrue(includes.contains("<aws/core/utils/memory/stl/AWSVector.h>"));
         assertTrue(includes.contains("<aws/core/utils/memory/stl/AWSString.h>"));
+    }
+
+    @Test
+    void getIncludesForShape_withIdempotencyTokenMember_includesUuidHeader() {
+        // C2J adds <aws/core/utils/UUID.h> to any shape carrying an @idempotencyToken member,
+        // because such members are brace-initialized with Aws::Utils::UUID::PseudoRandomUUID()
+        // (CppViewHelper.java). The include must be present for the initializer to compile.
+        StringShape str = StringShape.builder().id("com.example#Str").build();
+        StructureShape struct = StructureShape.builder()
+            .id("com.example#MyRequest")
+            .addMember(MemberShape.builder()
+                .id("com.example#MyRequest$clientToken").target("com.example#Str")
+                .addTrait(new software.amazon.smithy.model.traits.IdempotencyTokenTrait())
+                .build())
+            .build();
+        Model model = Model.builder().addShapes(str, struct).build();
+
+        List<String> includes = CppTypeMapper.getIncludesForShape(struct, model, "myservice");
+        assertTrue(includes.contains("<aws/core/utils/UUID.h>"),
+            "Shape with idempotency-token member should include UUID.h: " + includes);
+    }
+
+    @Test
+    void getIncludesForShape_withoutIdempotencyToken_noUuidHeader() {
+        StringShape str = StringShape.builder().id("com.example#Str").build();
+        StructureShape struct = StructureShape.builder()
+            .id("com.example#MyRequest")
+            .addMember("name", str.getId())
+            .build();
+        Model model = Model.builder().addShapes(str, struct).build();
+
+        List<String> includes = CppTypeMapper.getIncludesForShape(struct, model, "myservice");
+        assertFalse(includes.contains("<aws/core/utils/UUID.h>"),
+            "Shape without idempotency-token member should not include UUID.h: " + includes);
     }
 
     @Test

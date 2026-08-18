@@ -10,9 +10,12 @@
 #include <aws/ssm-guiconnect/SSMGuiConnectEndpointProvider.h>
 #include <aws/ssm-guiconnect/SSMGuiConnectErrorMarshaller.h>
 #include <aws/ssm-guiconnect/SSMGuiConnectErrors.h>
+#include <aws/ssm-guiconnect/SSMGuiConnectPaginationBase.h>
 #include <aws/ssm-guiconnect/SSMGuiConnectRequest.h>
 #include <aws/ssm-guiconnect/SSMGuiConnectServiceClientModel.h>
+#include <aws/ssm-guiconnect/SSMGuiConnectWaiter.h>
 #include <aws/ssm-guiconnect/SSMGuiConnect_EXPORTS.h>
+#include <aws/ssm-guiconnect/internal/SSMGuiConnectEndpointRules.h>
 #include <aws/ssm-guiconnect/model/ConnectionRecordingPreferences.h>
 #include <aws/ssm-guiconnect/model/DeleteConnectionRecordingPreferencesRequest.h>
 #include <aws/ssm-guiconnect/model/DeleteConnectionRecordingPreferencesResult.h>

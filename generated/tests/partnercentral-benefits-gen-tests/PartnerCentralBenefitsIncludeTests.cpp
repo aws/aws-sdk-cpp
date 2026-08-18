@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/partnercentral-benefits/PartnerCentralBenefitsClient.h>
+#include <aws/partnercentral-benefits/PartnerCentralBenefitsClientPagination.h>
 #include <aws/partnercentral-benefits/PartnerCentralBenefitsEndpointProvider.h>
 #include <aws/partnercentral-benefits/PartnerCentralBenefitsErrorMarshaller.h>
 #include <aws/partnercentral-benefits/PartnerCentralBenefitsErrors.h>
+#include <aws/partnercentral-benefits/PartnerCentralBenefitsPaginationBase.h>
 #include <aws/partnercentral-benefits/PartnerCentralBenefitsRequest.h>
 #include <aws/partnercentral-benefits/PartnerCentralBenefitsServiceClientModel.h>
+#include <aws/partnercentral-benefits/PartnerCentralBenefitsWaiter.h>
 #include <aws/partnercentral-benefits/PartnerCentralBenefits_EXPORTS.h>
+#include <aws/partnercentral-benefits/internal/PartnerCentralBenefitsEndpointRules.h>
 #include <aws/partnercentral-benefits/model/AccessDetails.h>
 #include <aws/partnercentral-benefits/model/AmendBenefitApplicationRequest.h>
 #include <aws/partnercentral-benefits/model/AmendBenefitApplicationResult.h>
@@ -50,10 +54,13 @@
 #include <aws/partnercentral-benefits/model/GetBenefitRequest.h>
 #include <aws/partnercentral-benefits/model/GetBenefitResult.h>
 #include <aws/partnercentral-benefits/model/IssuanceDetail.h>
+#include <aws/partnercentral-benefits/model/ListBenefitAllocationsPaginationTraits.h>
 #include <aws/partnercentral-benefits/model/ListBenefitAllocationsRequest.h>
 #include <aws/partnercentral-benefits/model/ListBenefitAllocationsResult.h>
+#include <aws/partnercentral-benefits/model/ListBenefitApplicationsPaginationTraits.h>
 #include <aws/partnercentral-benefits/model/ListBenefitApplicationsRequest.h>
 #include <aws/partnercentral-benefits/model/ListBenefitApplicationsResult.h>
+#include <aws/partnercentral-benefits/model/ListBenefitsPaginationTraits.h>
 #include <aws/partnercentral-benefits/model/ListBenefitsRequest.h>
 #include <aws/partnercentral-benefits/model/ListBenefitsResult.h>
 #include <aws/partnercentral-benefits/model/ListTagsForResourceRequest.h>

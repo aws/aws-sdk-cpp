@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimeClient.h>
+#include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimeClientPagination.h>
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimeEndpointProvider.h>
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimeErrorMarshaller.h>
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimeErrors.h>
+#include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimePaginationBase.h>
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimeRequest.h>
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimeServiceClientModel.h>
+#include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimeWaiter.h>
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntime_EXPORTS.h>
+#include <aws/sagemaker-a2i-runtime/internal/AugmentedAIRuntimeEndpointRules.h>
 #include <aws/sagemaker-a2i-runtime/model/ContentClassifier.h>
 #include <aws/sagemaker-a2i-runtime/model/DeleteHumanLoopRequest.h>
 #include <aws/sagemaker-a2i-runtime/model/DeleteHumanLoopResult.h>
@@ -23,6 +27,7 @@
 #include <aws/sagemaker-a2i-runtime/model/HumanLoopOutput.h>
 #include <aws/sagemaker-a2i-runtime/model/HumanLoopStatus.h>
 #include <aws/sagemaker-a2i-runtime/model/HumanLoopSummary.h>
+#include <aws/sagemaker-a2i-runtime/model/ListHumanLoopsPaginationTraits.h>
 #include <aws/sagemaker-a2i-runtime/model/ListHumanLoopsRequest.h>
 #include <aws/sagemaker-a2i-runtime/model/ListHumanLoopsResult.h>
 #include <aws/sagemaker-a2i-runtime/model/SortOrder.h>

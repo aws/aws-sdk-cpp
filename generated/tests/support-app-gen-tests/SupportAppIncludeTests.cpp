@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/support-app/SupportAppClient.h>
+#include <aws/support-app/SupportAppClientPagination.h>
 #include <aws/support-app/SupportAppEndpointProvider.h>
 #include <aws/support-app/SupportAppErrorMarshaller.h>
 #include <aws/support-app/SupportAppErrors.h>
+#include <aws/support-app/SupportAppPaginationBase.h>
 #include <aws/support-app/SupportAppRequest.h>
 #include <aws/support-app/SupportAppServiceClientModel.h>
+#include <aws/support-app/SupportAppWaiter.h>
 #include <aws/support-app/SupportApp_EXPORTS.h>
+#include <aws/support-app/internal/SupportAppEndpointRules.h>
 #include <aws/support-app/model/AccountType.h>
 #include <aws/support-app/model/CreateSlackChannelConfigurationRequest.h>
 #include <aws/support-app/model/CreateSlackChannelConfigurationResult.h>
@@ -24,8 +28,10 @@
 #include <aws/support-app/model/DeleteSlackWorkspaceConfigurationResult.h>
 #include <aws/support-app/model/GetAccountAliasRequest.h>
 #include <aws/support-app/model/GetAccountAliasResult.h>
+#include <aws/support-app/model/ListSlackChannelConfigurationsPaginationTraits.h>
 #include <aws/support-app/model/ListSlackChannelConfigurationsRequest.h>
 #include <aws/support-app/model/ListSlackChannelConfigurationsResult.h>
+#include <aws/support-app/model/ListSlackWorkspaceConfigurationsPaginationTraits.h>
 #include <aws/support-app/model/ListSlackWorkspaceConfigurationsRequest.h>
 #include <aws/support-app/model/ListSlackWorkspaceConfigurationsResult.h>
 #include <aws/support-app/model/NotificationSeverityLevel.h>

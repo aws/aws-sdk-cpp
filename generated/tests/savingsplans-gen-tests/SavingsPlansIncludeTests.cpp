@@ -10,9 +10,12 @@
 #include <aws/savingsplans/SavingsPlansEndpointProvider.h>
 #include <aws/savingsplans/SavingsPlansErrorMarshaller.h>
 #include <aws/savingsplans/SavingsPlansErrors.h>
+#include <aws/savingsplans/SavingsPlansPaginationBase.h>
 #include <aws/savingsplans/SavingsPlansRequest.h>
 #include <aws/savingsplans/SavingsPlansServiceClientModel.h>
+#include <aws/savingsplans/SavingsPlansWaiter.h>
 #include <aws/savingsplans/SavingsPlans_EXPORTS.h>
+#include <aws/savingsplans/internal/SavingsPlansEndpointRules.h>
 #include <aws/savingsplans/model/CreateSavingsPlanRequest.h>
 #include <aws/savingsplans/model/CreateSavingsPlanResult.h>
 #include <aws/savingsplans/model/CurrencyCode.h>

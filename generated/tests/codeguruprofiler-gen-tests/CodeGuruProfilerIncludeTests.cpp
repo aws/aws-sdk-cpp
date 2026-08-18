@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/codeguruprofiler/CodeGuruProfilerClient.h>
+#include <aws/codeguruprofiler/CodeGuruProfilerClientPagination.h>
 #include <aws/codeguruprofiler/CodeGuruProfilerEndpointProvider.h>
 #include <aws/codeguruprofiler/CodeGuruProfilerErrorMarshaller.h>
 #include <aws/codeguruprofiler/CodeGuruProfilerErrors.h>
+#include <aws/codeguruprofiler/CodeGuruProfilerPaginationBase.h>
 #include <aws/codeguruprofiler/CodeGuruProfilerRequest.h>
 #include <aws/codeguruprofiler/CodeGuruProfilerServiceClientModel.h>
+#include <aws/codeguruprofiler/CodeGuruProfilerWaiter.h>
 #include <aws/codeguruprofiler/CodeGuruProfiler_EXPORTS.h>
+#include <aws/codeguruprofiler/internal/CodeGuruProfilerEndpointRules.h>
 #include <aws/codeguruprofiler/model/ActionGroup.h>
 #include <aws/codeguruprofiler/model/AddNotificationChannelsRequest.h>
 #include <aws/codeguruprofiler/model/AddNotificationChannelsResult.h>
@@ -40,6 +44,7 @@
 #include <aws/codeguruprofiler/model/FindingsReportSummary.h>
 #include <aws/codeguruprofiler/model/FrameMetric.h>
 #include <aws/codeguruprofiler/model/FrameMetricDatum.h>
+#include <aws/codeguruprofiler/model/GetFindingsReportAccountSummaryPaginationTraits.h>
 #include <aws/codeguruprofiler/model/GetFindingsReportAccountSummaryRequest.h>
 #include <aws/codeguruprofiler/model/GetFindingsReportAccountSummaryResult.h>
 #include <aws/codeguruprofiler/model/GetNotificationConfigurationRequest.h>
@@ -50,10 +55,13 @@
 #include <aws/codeguruprofiler/model/GetProfileResult.h>
 #include <aws/codeguruprofiler/model/GetRecommendationsRequest.h>
 #include <aws/codeguruprofiler/model/GetRecommendationsResult.h>
+#include <aws/codeguruprofiler/model/ListFindingsReportsPaginationTraits.h>
 #include <aws/codeguruprofiler/model/ListFindingsReportsRequest.h>
 #include <aws/codeguruprofiler/model/ListFindingsReportsResult.h>
+#include <aws/codeguruprofiler/model/ListProfileTimesPaginationTraits.h>
 #include <aws/codeguruprofiler/model/ListProfileTimesRequest.h>
 #include <aws/codeguruprofiler/model/ListProfileTimesResult.h>
+#include <aws/codeguruprofiler/model/ListProfilingGroupsPaginationTraits.h>
 #include <aws/codeguruprofiler/model/ListProfilingGroupsRequest.h>
 #include <aws/codeguruprofiler/model/ListProfilingGroupsResult.h>
 #include <aws/codeguruprofiler/model/ListTagsForResourceRequest.h>

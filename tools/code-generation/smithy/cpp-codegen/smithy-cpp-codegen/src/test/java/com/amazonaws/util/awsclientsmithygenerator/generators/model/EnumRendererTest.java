@@ -42,6 +42,41 @@ class EnumRendererTest {
     }
 
     @Test
+    void renderHeader_capitalizesLowerCamelEnumName() {
+        // Some Smithy models (e.g. IAM) name enum shapes in lowerCamel. C2J normalizes every
+        // shape name to UpperCamel, so the C++ enum type, mapper namespace, and mapper
+        // functions must be capitalized regardless of the model's casing.
+        EnumShape enumShape = EnumShape.builder()
+            .id("com.example#statusType")
+            .addMember("Active", "Active")
+            .addMember("Inactive", "Inactive")
+            .build();
+        CppWriter writer = new CppWriter();
+        EnumRenderer.renderHeader(writer, enumShape, "IAM", "AWS_IAM_API", "iam");
+        String output = writer.toString();
+        assertTrue(output.contains("enum class StatusType {"), "Enum type must be UpperCamel: " + output);
+        assertTrue(output.contains("namespace StatusTypeMapper {"), "Mapper namespace must be UpperCamel: " + output);
+        assertTrue(output.contains("GetStatusTypeForName"), "Mapper fn must be UpperCamel: " + output);
+        assertTrue(output.contains("GetNameForStatusType"), "Mapper fn must be UpperCamel: " + output);
+        assertFalse(output.contains("statusType"), "Must not emit lowerCamel enum name: " + output);
+    }
+
+    @Test
+    void renderSource_capitalizesLowerCamelEnumName() {
+        EnumShape enumShape = EnumShape.builder()
+            .id("com.example#statusType")
+            .addMember("Active", "Active")
+            .build();
+        CppWriter writer = new CppWriter();
+        EnumRenderer.renderSource(writer, enumShape, "IAM", "AWS_IAM_API", "iam");
+        String output = writer.toString();
+        assertTrue(output.contains("#include <aws/iam/model/StatusType.h>"), "Include must be UpperCamel: " + output);
+        assertTrue(output.contains("namespace StatusTypeMapper {"), "Mapper namespace must be UpperCamel: " + output);
+        assertTrue(output.contains("StatusType GetStatusTypeForName"), "Mapper fn must be UpperCamel: " + output);
+        assertFalse(output.contains("statusType"), "Must not emit lowerCamel enum name: " + output);
+    }
+
+    @Test
     void renderHeader_includesExportsHeader() {
         EnumShape enumShape = EnumShape.builder()
             .id("com.example#MyEnum")

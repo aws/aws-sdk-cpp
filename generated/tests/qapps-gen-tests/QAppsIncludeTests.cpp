@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/qapps/QAppsClient.h>
+#include <aws/qapps/QAppsClientPagination.h>
 #include <aws/qapps/QAppsEndpointProvider.h>
 #include <aws/qapps/QAppsErrorMarshaller.h>
 #include <aws/qapps/QAppsErrors.h>
+#include <aws/qapps/QAppsPaginationBase.h>
 #include <aws/qapps/QAppsRequest.h>
 #include <aws/qapps/QAppsServiceClientModel.h>
+#include <aws/qapps/QAppsWaiter.h>
 #include <aws/qapps/QApps_EXPORTS.h>
+#include <aws/qapps/internal/QAppsEndpointRules.h>
 #include <aws/qapps/model/AppDefinition.h>
 #include <aws/qapps/model/AppDefinitionInput.h>
 #include <aws/qapps/model/AppRequiredCapability.h>
@@ -74,10 +78,12 @@
 #include <aws/qapps/model/LibraryItemStatus.h>
 #include <aws/qapps/model/ListCategoriesRequest.h>
 #include <aws/qapps/model/ListCategoriesResult.h>
+#include <aws/qapps/model/ListLibraryItemsPaginationTraits.h>
 #include <aws/qapps/model/ListLibraryItemsRequest.h>
 #include <aws/qapps/model/ListLibraryItemsResult.h>
 #include <aws/qapps/model/ListQAppSessionDataRequest.h>
 #include <aws/qapps/model/ListQAppSessionDataResult.h>
+#include <aws/qapps/model/ListQAppsPaginationTraits.h>
 #include <aws/qapps/model/ListQAppsRequest.h>
 #include <aws/qapps/model/ListQAppsResult.h>
 #include <aws/qapps/model/ListTagsForResourceRequest.h>

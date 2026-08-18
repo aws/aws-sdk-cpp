@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/ecr-public/ECRPublicClient.h>
+#include <aws/ecr-public/ECRPublicClientPagination.h>
 #include <aws/ecr-public/ECRPublicEndpointProvider.h>
 #include <aws/ecr-public/ECRPublicErrorMarshaller.h>
 #include <aws/ecr-public/ECRPublicErrors.h>
+#include <aws/ecr-public/ECRPublicPaginationBase.h>
 #include <aws/ecr-public/ECRPublicRequest.h>
 #include <aws/ecr-public/ECRPublicServiceClientModel.h>
+#include <aws/ecr-public/ECRPublicWaiter.h>
 #include <aws/ecr-public/ECRPublic_EXPORTS.h>
+#include <aws/ecr-public/internal/ECRPublicEndpointRules.h>
 #include <aws/ecr-public/model/AuthorizationData.h>
 #include <aws/ecr-public/model/BatchCheckLayerAvailabilityRequest.h>
 #include <aws/ecr-public/model/BatchCheckLayerAvailabilityResult.h>
@@ -26,12 +30,16 @@
 #include <aws/ecr-public/model/DeleteRepositoryPolicyResult.h>
 #include <aws/ecr-public/model/DeleteRepositoryRequest.h>
 #include <aws/ecr-public/model/DeleteRepositoryResult.h>
+#include <aws/ecr-public/model/DescribeImageTagsPaginationTraits.h>
 #include <aws/ecr-public/model/DescribeImageTagsRequest.h>
 #include <aws/ecr-public/model/DescribeImageTagsResult.h>
+#include <aws/ecr-public/model/DescribeImagesPaginationTraits.h>
 #include <aws/ecr-public/model/DescribeImagesRequest.h>
 #include <aws/ecr-public/model/DescribeImagesResult.h>
+#include <aws/ecr-public/model/DescribeRegistriesPaginationTraits.h>
 #include <aws/ecr-public/model/DescribeRegistriesRequest.h>
 #include <aws/ecr-public/model/DescribeRegistriesResult.h>
+#include <aws/ecr-public/model/DescribeRepositoriesPaginationTraits.h>
 #include <aws/ecr-public/model/DescribeRepositoriesRequest.h>
 #include <aws/ecr-public/model/DescribeRepositoriesResult.h>
 #include <aws/ecr-public/model/GetAuthorizationTokenRequest.h>

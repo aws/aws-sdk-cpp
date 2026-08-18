@@ -7,17 +7,23 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/sso/SSOClient.h>
+#include <aws/sso/SSOClientPagination.h>
 #include <aws/sso/SSOEndpointProvider.h>
 #include <aws/sso/SSOErrorMarshaller.h>
 #include <aws/sso/SSOErrors.h>
+#include <aws/sso/SSOPaginationBase.h>
 #include <aws/sso/SSORequest.h>
 #include <aws/sso/SSOServiceClientModel.h>
+#include <aws/sso/SSOWaiter.h>
 #include <aws/sso/SSO_EXPORTS.h>
+#include <aws/sso/internal/SSOEndpointRules.h>
 #include <aws/sso/model/AccountInfo.h>
 #include <aws/sso/model/GetRoleCredentialsRequest.h>
 #include <aws/sso/model/GetRoleCredentialsResult.h>
+#include <aws/sso/model/ListAccountRolesPaginationTraits.h>
 #include <aws/sso/model/ListAccountRolesRequest.h>
 #include <aws/sso/model/ListAccountRolesResult.h>
+#include <aws/sso/model/ListAccountsPaginationTraits.h>
 #include <aws/sso/model/ListAccountsRequest.h>
 #include <aws/sso/model/ListAccountsResult.h>
 #include <aws/sso/model/LogoutRequest.h>

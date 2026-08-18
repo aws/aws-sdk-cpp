@@ -11,9 +11,12 @@
 #include <aws/dynamodbstreams/DynamoDBStreamsEndpointProvider.h>
 #include <aws/dynamodbstreams/DynamoDBStreamsErrorMarshaller.h>
 #include <aws/dynamodbstreams/DynamoDBStreamsErrors.h>
+#include <aws/dynamodbstreams/DynamoDBStreamsPaginationBase.h>
 #include <aws/dynamodbstreams/DynamoDBStreamsRequest.h>
 #include <aws/dynamodbstreams/DynamoDBStreamsServiceClientModel.h>
+#include <aws/dynamodbstreams/DynamoDBStreamsWaiter.h>
 #include <aws/dynamodbstreams/DynamoDBStreams_EXPORTS.h>
+#include <aws/dynamodbstreams/internal/DynamoDBStreamsEndpointRules.h>
 #include <aws/dynamodbstreams/model/AttributeValue.h>
 #include <aws/dynamodbstreams/model/DescribeStreamRequest.h>
 #include <aws/dynamodbstreams/model/DescribeStreamResult.h>

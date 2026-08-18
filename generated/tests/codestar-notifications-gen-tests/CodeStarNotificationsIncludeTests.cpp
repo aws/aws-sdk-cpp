@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/codestar-notifications/CodeStarNotificationsClient.h>
+#include <aws/codestar-notifications/CodeStarNotificationsClientPagination.h>
 #include <aws/codestar-notifications/CodeStarNotificationsEndpointProvider.h>
 #include <aws/codestar-notifications/CodeStarNotificationsErrorMarshaller.h>
 #include <aws/codestar-notifications/CodeStarNotificationsErrors.h>
+#include <aws/codestar-notifications/CodeStarNotificationsPaginationBase.h>
 #include <aws/codestar-notifications/CodeStarNotificationsRequest.h>
 #include <aws/codestar-notifications/CodeStarNotificationsServiceClientModel.h>
+#include <aws/codestar-notifications/CodeStarNotificationsWaiter.h>
 #include <aws/codestar-notifications/CodeStarNotifications_EXPORTS.h>
+#include <aws/codestar-notifications/internal/CodeStarNotificationsEndpointRules.h>
 #include <aws/codestar-notifications/model/CreateNotificationRuleRequest.h>
 #include <aws/codestar-notifications/model/CreateNotificationRuleResult.h>
 #include <aws/codestar-notifications/model/DeleteNotificationRuleRequest.h>
@@ -25,16 +29,19 @@
 #include <aws/codestar-notifications/model/EventTypeSummary.h>
 #include <aws/codestar-notifications/model/ListEventTypesFilter.h>
 #include <aws/codestar-notifications/model/ListEventTypesFilterName.h>
+#include <aws/codestar-notifications/model/ListEventTypesPaginationTraits.h>
 #include <aws/codestar-notifications/model/ListEventTypesRequest.h>
 #include <aws/codestar-notifications/model/ListEventTypesResult.h>
 #include <aws/codestar-notifications/model/ListNotificationRulesFilter.h>
 #include <aws/codestar-notifications/model/ListNotificationRulesFilterName.h>
+#include <aws/codestar-notifications/model/ListNotificationRulesPaginationTraits.h>
 #include <aws/codestar-notifications/model/ListNotificationRulesRequest.h>
 #include <aws/codestar-notifications/model/ListNotificationRulesResult.h>
 #include <aws/codestar-notifications/model/ListTagsForResourceRequest.h>
 #include <aws/codestar-notifications/model/ListTagsForResourceResult.h>
 #include <aws/codestar-notifications/model/ListTargetsFilter.h>
 #include <aws/codestar-notifications/model/ListTargetsFilterName.h>
+#include <aws/codestar-notifications/model/ListTargetsPaginationTraits.h>
 #include <aws/codestar-notifications/model/ListTargetsRequest.h>
 #include <aws/codestar-notifications/model/ListTargetsResult.h>
 #include <aws/codestar-notifications/model/NotificationRuleStatus.h>

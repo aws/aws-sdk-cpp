@@ -21,18 +21,47 @@ class JsonProtocolTraitsTest {
     }
 
     private final ProtocolTraits json = new JsonProtocolTraits(Protocol.JSON);
-    private final ProtocolTraits cbor = new JsonProtocolTraits(Protocol.CBOR);
+    private final ProtocolTraits restJson = new JsonProtocolTraits(Protocol.REST_JSON);
+
+    private static software.amazon.smithy.model.shapes.StructureShape reqWith(boolean header, boolean query) {
+        software.amazon.smithy.model.shapes.StructureShape.Builder b =
+            software.amazon.smithy.model.shapes.StructureShape.builder().id("com.example#DoThingRequest");
+        if (header) {
+            b.addMember(software.amazon.smithy.model.shapes.MemberShape.builder()
+                .id("com.example#DoThingRequest$h").target("com.example#Str")
+                .addTrait(new software.amazon.smithy.model.traits.HttpHeaderTrait("X-H")).build());
+        }
+        if (query) {
+            b.addMember(software.amazon.smithy.model.shapes.MemberShape.builder()
+                .id("com.example#DoThingRequest$q").target("com.example#Str")
+                .addTrait(new software.amazon.smithy.model.traits.HttpQueryTrait("q")).build());
+        }
+        return b.build();
+    }
+    private static software.amazon.smithy.model.shapes.OperationShape opDoThing() {
+        return software.amazon.smithy.model.shapes.OperationShape.builder().id("com.example#DoThing").build();
+    }
+    private static software.amazon.smithy.model.shapes.ServiceShape svcAthena() {
+        return software.amazon.smithy.model.shapes.ServiceShape.builder()
+            .id("com.example#AmazonAthena").version("2017-05-18").build();
+    }
+    private static software.amazon.smithy.model.Model modelWith(
+            software.amazon.smithy.model.shapes.StructureShape req) {
+        return software.amazon.smithy.model.Model.builder()
+            .addShapes(software.amazon.smithy.model.shapes.StringShape.builder().id("com.example#Str").build(), req)
+            .build();
+    }
 
     @Test
     void reportsItsOwnProtocolIdentity() {
         assertEquals(Protocol.JSON, json.protocol());
-        assertEquals(Protocol.CBOR, cbor.protocol());
+        assertEquals(Protocol.REST_JSON, restJson.protocol());
     }
 
     @Test
     void serdeNamespace_isJsonUtils() {
         assertEquals("Aws::Utils::Json", json.serdeNamespace());
-        assertEquals("Aws::Utils::Json", cbor.serdeNamespace());
+        assertEquals("Aws::Utils::Json", restJson.serdeNamespace());
     }
 
     @Test
@@ -94,7 +123,8 @@ class JsonProtocolTraitsTest {
 
     @Test
     void resultSerdeImpls_useJsonValuePayload() {
-        String out = render(w -> json.writeResultSerdeImpls(w, "DoThingResult"));
+        var req = reqWith(false, false); var model = modelWith(req);
+        String out = render(w -> json.writeResultSerdeImpls(w, "DoThingResult", req, model, "Example"));
         assertTrue(out.contains("DoThingResult::DoThingResult(const "
             + "Aws::AmazonWebServiceResult<JsonValue>& result) {"), out);
         assertTrue(out.contains("*this = result;"), out);
@@ -105,11 +135,50 @@ class JsonProtocolTraitsTest {
 
     @Test
     void serdeIncludeAndUsings_areJsonFlavored() {
-        assertTrue(render(json::writeSerdeInclude)
-            .contains("#include <aws/core/utils/json/JsonSerializer.h>"));
-        String usings = render(json::writeSerdeUsingDeclarations);
-        assertTrue(usings.contains("using namespace Aws::Utils::Json;"), usings);
-        assertTrue(usings.contains("using namespace Aws::Utils;"), usings);
+        assertTrue(json.serdeIncludes(FileKind.SUBOBJECT_SOURCE)
+            .contains("aws/core/utils/json/JsonSerializer.h"));
+        var usings = json.serdeUsings(FileKind.SUBOBJECT_SOURCE);
+        assertTrue(usings.contains("Aws::Utils::Json"), usings.toString());
+        assertTrue(usings.contains("Aws::Utils"), usings.toString());
+    }
+
+    @Test
+    void awsJson_alwaysDeclaresTargetHeaderAndSerializePayload() {
+        var req = reqWith(false, false); var model = modelWith(req);
+        String d = render(w -> json.writeRequestMethodDecls(w, "AWS_EX_API", req, opDoThing(), model));
+        assertTrue(d.contains("AWS_EX_API Aws::String SerializePayload() const override;"), d);
+        assertTrue(d.contains("Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;"), d);
+        assertFalse(d.contains("DumpBodyToUrl"), d);
+        String i = render(w -> json.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model));
+        assertTrue(i.contains("Aws::String DoThingRequest::SerializePayload() const { return \"{}\"; }"), i);
+        assertTrue(i.contains("headers.insert(Aws::Http::HeaderValuePair(\"X-Amz-Target\", \"AmazonAthena.DoThing\"));"), i);
+    }
+
+    @Test
+    void restJson_noBindings_hasNoHeadersMethodAndReturnsEmptyBraces() {
+        var req = reqWith(false, false); var model = modelWith(req);
+        String d = render(w -> restJson.writeRequestMethodDecls(w, "AWS_EX_API", req, opDoThing(), model));
+        assertTrue(d.contains("SerializePayload() const override;"), d);
+        assertFalse(d.contains("GetRequestSpecificHeaders"), d);
+        String i = render(w -> restJson.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model));
+        assertTrue(i.contains("Aws::String DoThingRequest::SerializePayload() const { return {}; }"), i);
+        assertFalse(i.contains("X-Amz-Target"), i);
+    }
+
+    @Test
+    void restJson_withHeaderMember_emitsHeadersMethodWithoutTarget() {
+        var req = reqWith(true, false); var model = modelWith(req);
+        String d = render(w -> restJson.writeRequestMethodDecls(w, "AWS_EX_API", req, opDoThing(), model));
+        assertTrue(d.contains("GetRequestSpecificHeaders() const override;"), d);
+        String i = render(w -> restJson.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model));
+        assertFalse(i.contains("X-Amz-Target"), i);
+    }
+
+    @Test
+    void json_withQueryMember_emitsAddQueryStringParameters() {
+        var req = reqWith(false, true); var model = modelWith(req);
+        String d = render(w -> json.writeRequestMethodDecls(w, "AWS_EX_API", req, opDoThing(), model));
+        assertTrue(d.contains("void AddQueryStringParameters(Aws::Http::URI& uri) const override;"), d);
     }
 
     @Test

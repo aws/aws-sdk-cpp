@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/bcm-dashboards/BCMDashboardsClient.h>
+#include <aws/bcm-dashboards/BCMDashboardsClientPagination.h>
 #include <aws/bcm-dashboards/BCMDashboardsEndpointProvider.h>
 #include <aws/bcm-dashboards/BCMDashboardsErrorMarshaller.h>
 #include <aws/bcm-dashboards/BCMDashboardsErrors.h>
+#include <aws/bcm-dashboards/BCMDashboardsPaginationBase.h>
 #include <aws/bcm-dashboards/BCMDashboardsRequest.h>
 #include <aws/bcm-dashboards/BCMDashboardsServiceClientModel.h>
+#include <aws/bcm-dashboards/BCMDashboardsWaiter.h>
 #include <aws/bcm-dashboards/BCMDashboards_EXPORTS.h>
+#include <aws/bcm-dashboards/internal/BCMDashboardsEndpointRules.h>
 #include <aws/bcm-dashboards/model/CostAndUsageQuery.h>
 #include <aws/bcm-dashboards/model/CostCategoryValues.h>
 #include <aws/bcm-dashboards/model/CreateDashboardRequest.h>
@@ -46,8 +50,10 @@
 #include <aws/bcm-dashboards/model/GroupDefinitionType.h>
 #include <aws/bcm-dashboards/model/HealthStatus.h>
 #include <aws/bcm-dashboards/model/HealthStatusCode.h>
+#include <aws/bcm-dashboards/model/ListDashboardsPaginationTraits.h>
 #include <aws/bcm-dashboards/model/ListDashboardsRequest.h>
 #include <aws/bcm-dashboards/model/ListDashboardsResult.h>
+#include <aws/bcm-dashboards/model/ListScheduledReportsPaginationTraits.h>
 #include <aws/bcm-dashboards/model/ListScheduledReportsRequest.h>
 #include <aws/bcm-dashboards/model/ListScheduledReportsResult.h>
 #include <aws/bcm-dashboards/model/ListTagsForResourceRequest.h>

@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/cost-optimization-hub/CostOptimizationHubClient.h>
+#include <aws/cost-optimization-hub/CostOptimizationHubClientPagination.h>
 #include <aws/cost-optimization-hub/CostOptimizationHubEndpointProvider.h>
 #include <aws/cost-optimization-hub/CostOptimizationHubErrorMarshaller.h>
 #include <aws/cost-optimization-hub/CostOptimizationHubErrors.h>
+#include <aws/cost-optimization-hub/CostOptimizationHubPaginationBase.h>
 #include <aws/cost-optimization-hub/CostOptimizationHubRequest.h>
 #include <aws/cost-optimization-hub/CostOptimizationHubServiceClientModel.h>
+#include <aws/cost-optimization-hub/CostOptimizationHubWaiter.h>
 #include <aws/cost-optimization-hub/CostOptimizationHub_EXPORTS.h>
+#include <aws/cost-optimization-hub/internal/CostOptimizationHubEndpointRules.h>
 #include <aws/cost-optimization-hub/model/AccountEnrollmentStatus.h>
 #include <aws/cost-optimization-hub/model/ActionType.h>
 #include <aws/cost-optimization-hub/model/AllocationStrategy.h>
@@ -56,12 +60,16 @@
 #include <aws/cost-optimization-hub/model/InstanceConfiguration.h>
 #include <aws/cost-optimization-hub/model/LambdaFunction.h>
 #include <aws/cost-optimization-hub/model/LambdaFunctionConfiguration.h>
+#include <aws/cost-optimization-hub/model/ListEfficiencyMetricsPaginationTraits.h>
 #include <aws/cost-optimization-hub/model/ListEfficiencyMetricsRequest.h>
 #include <aws/cost-optimization-hub/model/ListEfficiencyMetricsResult.h>
+#include <aws/cost-optimization-hub/model/ListEnrollmentStatusesPaginationTraits.h>
 #include <aws/cost-optimization-hub/model/ListEnrollmentStatusesRequest.h>
 #include <aws/cost-optimization-hub/model/ListEnrollmentStatusesResult.h>
+#include <aws/cost-optimization-hub/model/ListRecommendationSummariesPaginationTraits.h>
 #include <aws/cost-optimization-hub/model/ListRecommendationSummariesRequest.h>
 #include <aws/cost-optimization-hub/model/ListRecommendationSummariesResult.h>
+#include <aws/cost-optimization-hub/model/ListRecommendationsPaginationTraits.h>
 #include <aws/cost-optimization-hub/model/ListRecommendationsRequest.h>
 #include <aws/cost-optimization-hub/model/ListRecommendationsResult.h>
 #include <aws/cost-optimization-hub/model/MemberAccountDiscountVisibility.h>

@@ -34,7 +34,7 @@ class MemberRendererOutputTest {
         Model model = Model.builder().addShapes(str, list, nested, shape).build();
 
         CppWriter pubWriter = new CppWriter();
-        MemberRenderer.renderPublicSection(pubWriter, shape, model, "AWS_KINESIS_API", "ChildShard");
+        MemberRenderer.forStructure(model, shape, "ChildShard").renderPublicAccessors(pubWriter);
         String pubOutput = pubWriter.toString();
         System.out.println("=== PUBLIC ===");
         System.out.println(pubOutput);
@@ -60,7 +60,7 @@ class MemberRendererOutputTest {
 
         // Private section
         CppWriter privWriter = new CppWriter();
-        MemberRenderer.renderPrivateSection(privWriter, shape, model);
+        MemberRenderer.forStructure(model, shape, null).renderPrivateSection(privWriter);
         String privOutput = privWriter.toString();
         System.out.println("=== PRIVATE ===");
         System.out.println(privOutput);
@@ -71,5 +71,108 @@ class MemberRendererOutputTest {
         assertTrue(privOutput.contains("bool m_shardIdHasBeenSet = false;"));
         assertTrue(privOutput.contains("bool m_parentShardsHasBeenSet = false;"));
         assertTrue(privOutput.contains("bool m_hashKeyRangeHasBeenSet = false;"));
+    }
+
+    @Test
+    void sparseListAndMap_emitOptionalTypesAndAddOverloads() {
+        // Mirrors C2J's generated SparseNullsOperationRequest.h: a @sparse list/map wraps its
+        // element/value in Aws::Crt::Optional, and gets an extra Add overload accepting the
+        // Optional element/value directly.
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        ListShape sparseList = ListShape.builder()
+            .id("com.example#SparseStringList")
+            .member(MemberShape.builder().id("com.example#SparseStringList$member").target("com.example#String").build())
+            .addTrait(new software.amazon.smithy.model.traits.SparseTrait())
+            .build();
+        MapShape sparseMap = MapShape.builder()
+            .id("com.example#SparseStringMap")
+            .key(MemberShape.builder().id("com.example#SparseStringMap$key").target("com.example#String").build())
+            .value(MemberShape.builder().id("com.example#SparseStringMap$value").target("com.example#String").build())
+            .addTrait(new software.amazon.smithy.model.traits.SparseTrait())
+            .build();
+        StructureShape shape = StructureShape.builder()
+            .id("com.example#SparseNullsOperationRequest")
+            .addMember("SparseStringList", sparseList.getId())
+            .addMember("SparseStringMap", sparseMap.getId())
+            .build();
+        Model model = Model.builder().addShapes(str, sparseList, sparseMap, shape).build();
+
+        CppWriter writer = new CppWriter();
+        MemberRenderer.forStructure(model, shape, "SparseNullsOperationRequest").renderPublicAccessors(writer);
+        String out = writer.toString();
+        System.out.println(out);
+
+        // --- sparse list ---
+        assertTrue(out.contains(
+            "inline const Aws::Vector<Aws::Crt::Optional<Aws::String>>& GetSparseStringList() const { return m_sparseStringList; }"),
+            out);
+        // main forwarding Add keeps the UNWRAPPED element type as its template default (matches C2J)
+        assertTrue(out.contains("template <typename SparseStringListT = Aws::String>"), out);
+        assertTrue(out.contains("m_sparseStringList.emplace_back(std::forward<SparseStringListT>(value));"), out);
+        // extra overload takes the Optional element by value and push_backs it
+        assertTrue(out.contains(
+            "inline SparseNullsOperationRequest& AddSparseStringList(Aws::Crt::Optional<Aws::String> value) {"),
+            out);
+        assertTrue(out.contains("m_sparseStringList.push_back(value);"), out);
+
+        // --- sparse map ---
+        assertTrue(out.contains(
+            "inline const Aws::Map<Aws::String, Aws::Crt::Optional<Aws::String>>& GetSparseStringMap() const { return m_sparseStringMap; }"),
+            out);
+        // templated Add value default IS the wrapped Optional type for maps (matches C2J)
+        assertTrue(out.contains(
+            "template <typename SparseStringMapKeyT = Aws::String, typename SparseStringMapValueT = Aws::Crt::Optional<Aws::String>>"),
+            out);
+        // extra overload takes the raw key and the Optional value
+        assertTrue(out.contains(
+            "inline SparseNullsOperationRequest& AddSparseStringMap(Aws::String key, Aws::Crt::Optional<Aws::String> value) {"),
+            out);
+        assertTrue(out.contains("m_sparseStringMap.emplace(key, value);"), out);
+    }
+
+    @Test
+    void recursiveMember_rendersSharedPtrFieldGetterAndMakeSharedSetter() {
+        // Mirrors connectcases BooleanCondition.h: the andAll member targets CompoundCondition,
+        // which lists BooleanCondition back — a cycle C2J breaks with std::shared_ptr, a *m_x
+        // getter, and a MakeShared setter tagged with the enclosing class name.
+        StructureShape operands = StructureShape.builder().id("com.example#BooleanOperands").build();
+        UnionShape booleanCondition = UnionShape.builder()
+            .id("com.example#BooleanCondition")
+            .addMember("equalTo", operands.getId())
+            .addMember("andAll", software.amazon.smithy.model.shapes.ShapeId.from("com.example#CompoundCondition"))
+            .build();
+        ListShape conditionList = ListShape.builder()
+            .id("com.example#BooleanConditionList")
+            .member(MemberShape.builder().id("com.example#BooleanConditionList$member")
+                .target(booleanCondition.getId()).build())
+            .build();
+        StructureShape compound = StructureShape.builder()
+            .id("com.example#CompoundCondition")
+            .addMember("conditions", conditionList.getId())
+            .build();
+        Model model = Model.builder().addShapes(operands, booleanCondition, conditionList, compound).build();
+
+        CppWriter pub = new CppWriter();
+        MemberRenderer.forStructure(model, booleanCondition, "BooleanCondition").renderPublicAccessors(pub);
+        String pubOut = pub.toString();
+        System.out.println(pubOut);
+
+        // Recursive andAll: deref getter + MakeShared setter tagged with enclosing class name.
+        assertTrue(pubOut.contains("inline const CompoundCondition& GetAndAll() const { return *m_andAll; }"), pubOut);
+        assertTrue(pubOut.contains("template <typename AndAllT = CompoundCondition>"), pubOut);
+        assertTrue(pubOut.contains(
+            "m_andAll = Aws::MakeShared<CompoundCondition>(\"BooleanCondition\", std::forward<AndAllT>(value));"),
+            pubOut);
+        // Non-recursive equalTo stays a plain by-value struct member.
+        assertTrue(pubOut.contains("inline const BooleanOperands& GetEqualTo() const { return m_equalTo; }"), pubOut);
+
+        CppWriter priv = new CppWriter();
+        MemberRenderer.forStructure(model, booleanCondition, "BooleanCondition").renderPrivateSection(priv);
+        String privOut = priv.toString();
+        System.out.println(privOut);
+
+        assertTrue(privOut.contains("std::shared_ptr<CompoundCondition> m_andAll;"), privOut);
+        assertTrue(privOut.contains("BooleanOperands m_equalTo;"), privOut);
+        assertTrue(privOut.contains("bool m_andAllHasBeenSet = false;"), privOut);
     }
 }

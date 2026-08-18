@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/servicediscovery/ServiceDiscoveryClient.h>
+#include <aws/servicediscovery/ServiceDiscoveryClientPagination.h>
 #include <aws/servicediscovery/ServiceDiscoveryEndpointProvider.h>
 #include <aws/servicediscovery/ServiceDiscoveryErrorMarshaller.h>
 #include <aws/servicediscovery/ServiceDiscoveryErrors.h>
+#include <aws/servicediscovery/ServiceDiscoveryPaginationBase.h>
 #include <aws/servicediscovery/ServiceDiscoveryRequest.h>
 #include <aws/servicediscovery/ServiceDiscoveryServiceClientModel.h>
+#include <aws/servicediscovery/ServiceDiscoveryWaiter.h>
 #include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
+#include <aws/servicediscovery/internal/ServiceDiscoveryEndpointRules.h>
 #include <aws/servicediscovery/model/CreateHttpNamespaceRequest.h>
 #include <aws/servicediscovery/model/CreateHttpNamespaceResult.h>
 #include <aws/servicediscovery/model/CreatePrivateDnsNamespaceRequest.h>
@@ -42,6 +46,7 @@
 #include <aws/servicediscovery/model/FilterCondition.h>
 #include <aws/servicediscovery/model/GetInstanceRequest.h>
 #include <aws/servicediscovery/model/GetInstanceResult.h>
+#include <aws/servicediscovery/model/GetInstancesHealthStatusPaginationTraits.h>
 #include <aws/servicediscovery/model/GetInstancesHealthStatusRequest.h>
 #include <aws/servicediscovery/model/GetInstancesHealthStatusResult.h>
 #include <aws/servicediscovery/model/GetNamespaceRequest.h>
@@ -62,12 +67,16 @@
 #include <aws/servicediscovery/model/HttpProperties.h>
 #include <aws/servicediscovery/model/Instance.h>
 #include <aws/servicediscovery/model/InstanceSummary.h>
+#include <aws/servicediscovery/model/ListInstancesPaginationTraits.h>
 #include <aws/servicediscovery/model/ListInstancesRequest.h>
 #include <aws/servicediscovery/model/ListInstancesResult.h>
+#include <aws/servicediscovery/model/ListNamespacesPaginationTraits.h>
 #include <aws/servicediscovery/model/ListNamespacesRequest.h>
 #include <aws/servicediscovery/model/ListNamespacesResult.h>
+#include <aws/servicediscovery/model/ListOperationsPaginationTraits.h>
 #include <aws/servicediscovery/model/ListOperationsRequest.h>
 #include <aws/servicediscovery/model/ListOperationsResult.h>
+#include <aws/servicediscovery/model/ListServicesPaginationTraits.h>
 #include <aws/servicediscovery/model/ListServicesRequest.h>
 #include <aws/servicediscovery/model/ListServicesResult.h>
 #include <aws/servicediscovery/model/ListTagsForResourceRequest.h>

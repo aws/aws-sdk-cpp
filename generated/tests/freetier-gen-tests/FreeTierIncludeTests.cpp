@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/freetier/FreeTierClient.h>
+#include <aws/freetier/FreeTierClientPagination.h>
 #include <aws/freetier/FreeTierEndpointProvider.h>
 #include <aws/freetier/FreeTierErrorMarshaller.h>
 #include <aws/freetier/FreeTierErrors.h>
+#include <aws/freetier/FreeTierPaginationBase.h>
 #include <aws/freetier/FreeTierRequest.h>
 #include <aws/freetier/FreeTierServiceClientModel.h>
+#include <aws/freetier/FreeTierWaiter.h>
 #include <aws/freetier/FreeTier_EXPORTS.h>
+#include <aws/freetier/internal/FreeTierEndpointRules.h>
 #include <aws/freetier/model/AccountPlanStatus.h>
 #include <aws/freetier/model/AccountPlanType.h>
 #include <aws/freetier/model/ActivityReward.h>
@@ -27,9 +31,11 @@
 #include <aws/freetier/model/GetAccountActivityResult.h>
 #include <aws/freetier/model/GetAccountPlanStateRequest.h>
 #include <aws/freetier/model/GetAccountPlanStateResult.h>
+#include <aws/freetier/model/GetFreeTierUsagePaginationTraits.h>
 #include <aws/freetier/model/GetFreeTierUsageRequest.h>
 #include <aws/freetier/model/GetFreeTierUsageResult.h>
 #include <aws/freetier/model/LanguageCode.h>
+#include <aws/freetier/model/ListAccountActivitiesPaginationTraits.h>
 #include <aws/freetier/model/ListAccountActivitiesRequest.h>
 #include <aws/freetier/model/ListAccountActivitiesResult.h>
 #include <aws/freetier/model/MatchOption.h>

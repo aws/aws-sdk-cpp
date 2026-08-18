@@ -54,6 +54,46 @@ class ProtocolTraitsSerdeTest {
         assertFalse(out.contains("XmlNode"), "Should not emit XML tokens for " + p + ": " + out);
     }
 
+    @Test
+    void defaultPredicates_detectHeaderAndQueryMembers() {
+        software.amazon.smithy.model.shapes.StringShape str =
+            software.amazon.smithy.model.shapes.StringShape.builder().id("com.example#Str").build();
+        software.amazon.smithy.model.shapes.MemberShape headerMember =
+            software.amazon.smithy.model.shapes.MemberShape.builder()
+                .id("com.example#Req$h").target("com.example#Str")
+                .addTrait(new software.amazon.smithy.model.traits.HttpHeaderTrait("X-Thing")).build();
+        software.amazon.smithy.model.shapes.MemberShape queryMember =
+            software.amazon.smithy.model.shapes.MemberShape.builder()
+                .id("com.example#Req$q").target("com.example#Str")
+                .addTrait(new software.amazon.smithy.model.traits.HttpQueryTrait("thing")).build();
+        software.amazon.smithy.model.shapes.StructureShape req =
+            software.amazon.smithy.model.shapes.StructureShape.builder()
+                .id("com.example#Req").addMember(headerMember).addMember(queryMember).build();
+        software.amazon.smithy.model.Model model =
+            software.amazon.smithy.model.Model.builder().addShapes(str, req).build();
+
+        ProtocolTraits t = ProtocolResolver.traitsFor(ProtocolResolver.Protocol.JSON);
+        assertTrue(RequestBindings.hasHeaderMembers(req, model));
+        assertTrue(RequestBindings.hasQueryStringMembers(req, model));
+    }
+
+    @Test
+    void defaultPredicates_falseWhenNoBindings() {
+        software.amazon.smithy.model.shapes.StringShape str =
+            software.amazon.smithy.model.shapes.StringShape.builder().id("com.example#S").build();
+        software.amazon.smithy.model.shapes.StructureShape req =
+            software.amazon.smithy.model.shapes.StructureShape.builder()
+                .id("com.example#R")
+                .addMember(software.amazon.smithy.model.shapes.MemberShape.builder()
+                    .id("com.example#R$plain").target("com.example#S").build())
+                .build();
+        software.amazon.smithy.model.Model model =
+            software.amazon.smithy.model.Model.builder().addShapes(str, req).build();
+        ProtocolTraits t = ProtocolResolver.traitsFor(ProtocolResolver.Protocol.REST_XML);
+        assertFalse(RequestBindings.hasHeaderMembers(req, model));
+        assertFalse(RequestBindings.hasQueryStringMembers(req, model));
+    }
+
     /** The JSON serde method bodies are empty stubs pending schema-based serde. */
     @Test
     void jsonSerdeMethodImpls_emitEmptyBodies() {

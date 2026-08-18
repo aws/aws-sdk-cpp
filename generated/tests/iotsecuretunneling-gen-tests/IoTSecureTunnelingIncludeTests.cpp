@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/iotsecuretunneling/IoTSecureTunnelingClient.h>
+#include <aws/iotsecuretunneling/IoTSecureTunnelingClientPagination.h>
 #include <aws/iotsecuretunneling/IoTSecureTunnelingEndpointProvider.h>
 #include <aws/iotsecuretunneling/IoTSecureTunnelingErrorMarshaller.h>
 #include <aws/iotsecuretunneling/IoTSecureTunnelingErrors.h>
+#include <aws/iotsecuretunneling/IoTSecureTunnelingPaginationBase.h>
 #include <aws/iotsecuretunneling/IoTSecureTunnelingRequest.h>
 #include <aws/iotsecuretunneling/IoTSecureTunnelingServiceClientModel.h>
+#include <aws/iotsecuretunneling/IoTSecureTunnelingWaiter.h>
 #include <aws/iotsecuretunneling/IoTSecureTunneling_EXPORTS.h>
+#include <aws/iotsecuretunneling/internal/IoTSecureTunnelingEndpointRules.h>
 #include <aws/iotsecuretunneling/model/ClientMode.h>
 #include <aws/iotsecuretunneling/model/CloseTunnelRequest.h>
 #include <aws/iotsecuretunneling/model/CloseTunnelResult.h>
@@ -23,6 +27,7 @@
 #include <aws/iotsecuretunneling/model/DestinationConfig.h>
 #include <aws/iotsecuretunneling/model/ListTagsForResourceRequest.h>
 #include <aws/iotsecuretunneling/model/ListTagsForResourceResult.h>
+#include <aws/iotsecuretunneling/model/ListTunnelsPaginationTraits.h>
 #include <aws/iotsecuretunneling/model/ListTunnelsRequest.h>
 #include <aws/iotsecuretunneling/model/ListTunnelsResult.h>
 #include <aws/iotsecuretunneling/model/OpenTunnelRequest.h>

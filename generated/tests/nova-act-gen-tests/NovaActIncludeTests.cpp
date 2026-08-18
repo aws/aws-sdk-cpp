@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/nova-act/NovaActClient.h>
+#include <aws/nova-act/NovaActClientPagination.h>
 #include <aws/nova-act/NovaActEndpointProvider.h>
 #include <aws/nova-act/NovaActErrorMarshaller.h>
 #include <aws/nova-act/NovaActErrors.h>
+#include <aws/nova-act/NovaActPaginationBase.h>
 #include <aws/nova-act/NovaActRequest.h>
 #include <aws/nova-act/NovaActServiceClientModel.h>
+#include <aws/nova-act/NovaActWaiter.h>
 #include <aws/nova-act/NovaAct_EXPORTS.h>
+#include <aws/nova-act/internal/NovaActEndpointRules.h>
 #include <aws/nova-act/model/ActError.h>
 #include <aws/nova-act/model/ActStatus.h>
 #include <aws/nova-act/model/ActSummary.h>
@@ -42,14 +46,18 @@
 #include <aws/nova-act/model/InternalServerExceptionReason.h>
 #include <aws/nova-act/model/InvokeActStepRequest.h>
 #include <aws/nova-act/model/InvokeActStepResult.h>
+#include <aws/nova-act/model/ListActsPaginationTraits.h>
 #include <aws/nova-act/model/ListActsRequest.h>
 #include <aws/nova-act/model/ListActsResult.h>
 #include <aws/nova-act/model/ListModelsRequest.h>
 #include <aws/nova-act/model/ListModelsResult.h>
+#include <aws/nova-act/model/ListSessionsPaginationTraits.h>
 #include <aws/nova-act/model/ListSessionsRequest.h>
 #include <aws/nova-act/model/ListSessionsResult.h>
+#include <aws/nova-act/model/ListWorkflowDefinitionsPaginationTraits.h>
 #include <aws/nova-act/model/ListWorkflowDefinitionsRequest.h>
 #include <aws/nova-act/model/ListWorkflowDefinitionsResult.h>
+#include <aws/nova-act/model/ListWorkflowRunsPaginationTraits.h>
 #include <aws/nova-act/model/ListWorkflowRunsRequest.h>
 #include <aws/nova-act/model/ListWorkflowRunsResult.h>
 #include <aws/nova-act/model/ModelAlias.h>

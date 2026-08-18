@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/mediaconvert/MediaConvertClient.h>
+#include <aws/mediaconvert/MediaConvertClientPagination.h>
 #include <aws/mediaconvert/MediaConvertEndpointProvider.h>
 #include <aws/mediaconvert/MediaConvertErrorMarshaller.h>
 #include <aws/mediaconvert/MediaConvertErrors.h>
+#include <aws/mediaconvert/MediaConvertPaginationBase.h>
 #include <aws/mediaconvert/MediaConvertRequest.h>
 #include <aws/mediaconvert/MediaConvertServiceClientModel.h>
+#include <aws/mediaconvert/MediaConvertWaiter.h>
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/mediaconvert/internal/MediaConvertEndpointRules.h>
 #include <aws/mediaconvert/model/AacAudioDescriptionBroadcasterMix.h>
 #include <aws/mediaconvert/model/AacCodecProfile.h>
 #include <aws/mediaconvert/model/AacCodingMode.h>
@@ -456,16 +460,21 @@
 #include <aws/mediaconvert/model/JobsQueryStatus.h>
 #include <aws/mediaconvert/model/KantarWatermarkSettings.h>
 #include <aws/mediaconvert/model/LanguageCode.h>
+#include <aws/mediaconvert/model/ListJobTemplatesPaginationTraits.h>
 #include <aws/mediaconvert/model/ListJobTemplatesRequest.h>
 #include <aws/mediaconvert/model/ListJobTemplatesResult.h>
+#include <aws/mediaconvert/model/ListJobsPaginationTraits.h>
 #include <aws/mediaconvert/model/ListJobsRequest.h>
 #include <aws/mediaconvert/model/ListJobsResult.h>
+#include <aws/mediaconvert/model/ListPresetsPaginationTraits.h>
 #include <aws/mediaconvert/model/ListPresetsRequest.h>
 #include <aws/mediaconvert/model/ListPresetsResult.h>
+#include <aws/mediaconvert/model/ListQueuesPaginationTraits.h>
 #include <aws/mediaconvert/model/ListQueuesRequest.h>
 #include <aws/mediaconvert/model/ListQueuesResult.h>
 #include <aws/mediaconvert/model/ListTagsForResourceRequest.h>
 #include <aws/mediaconvert/model/ListTagsForResourceResult.h>
+#include <aws/mediaconvert/model/ListVersionsPaginationTraits.h>
 #include <aws/mediaconvert/model/ListVersionsRequest.h>
 #include <aws/mediaconvert/model/ListVersionsResult.h>
 #include <aws/mediaconvert/model/M2tsAudioBufferModel.h>
@@ -637,6 +646,7 @@
 #include <aws/mediaconvert/model/ScalingBehavior.h>
 #include <aws/mediaconvert/model/SccDestinationFramerate.h>
 #include <aws/mediaconvert/model/SccDestinationSettings.h>
+#include <aws/mediaconvert/model/SearchJobsPaginationTraits.h>
 #include <aws/mediaconvert/model/SearchJobsRequest.h>
 #include <aws/mediaconvert/model/SearchJobsResult.h>
 #include <aws/mediaconvert/model/ServiceOverride.h>

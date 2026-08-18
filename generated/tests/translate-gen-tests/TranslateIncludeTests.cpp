@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/translate/TranslateClient.h>
+#include <aws/translate/TranslateClientPagination.h>
 #include <aws/translate/TranslateEndpointProvider.h>
 #include <aws/translate/TranslateErrorMarshaller.h>
 #include <aws/translate/TranslateErrors.h>
+#include <aws/translate/TranslatePaginationBase.h>
 #include <aws/translate/TranslateRequest.h>
 #include <aws/translate/TranslateServiceClientModel.h>
+#include <aws/translate/TranslateWaiter.h>
 #include <aws/translate/Translate_EXPORTS.h>
+#include <aws/translate/internal/TranslateEndpointRules.h>
 #include <aws/translate/model/AppliedTerminology.h>
 #include <aws/translate/model/Brevity.h>
 #include <aws/translate/model/CreateParallelDataRequest.h>
@@ -39,14 +43,18 @@
 #include <aws/translate/model/JobDetails.h>
 #include <aws/translate/model/JobStatus.h>
 #include <aws/translate/model/Language.h>
+#include <aws/translate/model/ListLanguagesPaginationTraits.h>
 #include <aws/translate/model/ListLanguagesRequest.h>
 #include <aws/translate/model/ListLanguagesResult.h>
+#include <aws/translate/model/ListParallelDataPaginationTraits.h>
 #include <aws/translate/model/ListParallelDataRequest.h>
 #include <aws/translate/model/ListParallelDataResult.h>
 #include <aws/translate/model/ListTagsForResourceRequest.h>
 #include <aws/translate/model/ListTagsForResourceResult.h>
+#include <aws/translate/model/ListTerminologiesPaginationTraits.h>
 #include <aws/translate/model/ListTerminologiesRequest.h>
 #include <aws/translate/model/ListTerminologiesResult.h>
+#include <aws/translate/model/ListTextTranslationJobsPaginationTraits.h>
 #include <aws/translate/model/ListTextTranslationJobsRequest.h>
 #include <aws/translate/model/ListTextTranslationJobsResult.h>
 #include <aws/translate/model/MergeStrategy.h>

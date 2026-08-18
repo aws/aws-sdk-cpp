@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/pcs/PCSClient.h>
+#include <aws/pcs/PCSClientPagination.h>
 #include <aws/pcs/PCSEndpointProvider.h>
 #include <aws/pcs/PCSErrorMarshaller.h>
 #include <aws/pcs/PCSErrors.h>
+#include <aws/pcs/PCSPaginationBase.h>
 #include <aws/pcs/PCSRequest.h>
 #include <aws/pcs/PCSServiceClientModel.h>
+#include <aws/pcs/PCSWaiter.h>
 #include <aws/pcs/PCS_EXPORTS.h>
+#include <aws/pcs/internal/PCSEndpointRules.h>
 #include <aws/pcs/model/Accounting.h>
 #include <aws/pcs/model/AccountingMode.h>
 #include <aws/pcs/model/AccountingRequest.h>
@@ -55,10 +59,13 @@
 #include <aws/pcs/model/InstanceConfig.h>
 #include <aws/pcs/model/JwtAuth.h>
 #include <aws/pcs/model/JwtKey.h>
+#include <aws/pcs/model/ListClustersPaginationTraits.h>
 #include <aws/pcs/model/ListClustersRequest.h>
 #include <aws/pcs/model/ListClustersResult.h>
+#include <aws/pcs/model/ListComputeNodeGroupsPaginationTraits.h>
 #include <aws/pcs/model/ListComputeNodeGroupsRequest.h>
 #include <aws/pcs/model/ListComputeNodeGroupsResult.h>
+#include <aws/pcs/model/ListQueuesPaginationTraits.h>
 #include <aws/pcs/model/ListQueuesRequest.h>
 #include <aws/pcs/model/ListQueuesResult.h>
 #include <aws/pcs/model/ListTagsForResourceRequest.h>

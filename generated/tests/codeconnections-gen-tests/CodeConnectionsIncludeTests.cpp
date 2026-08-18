@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/codeconnections/CodeConnectionsClient.h>
+#include <aws/codeconnections/CodeConnectionsClientPagination.h>
 #include <aws/codeconnections/CodeConnectionsEndpointProvider.h>
 #include <aws/codeconnections/CodeConnectionsErrorMarshaller.h>
 #include <aws/codeconnections/CodeConnectionsErrors.h>
+#include <aws/codeconnections/CodeConnectionsPaginationBase.h>
 #include <aws/codeconnections/CodeConnectionsRequest.h>
 #include <aws/codeconnections/CodeConnectionsServiceClientModel.h>
+#include <aws/codeconnections/CodeConnectionsWaiter.h>
 #include <aws/codeconnections/CodeConnections_EXPORTS.h>
+#include <aws/codeconnections/internal/CodeConnectionsEndpointRules.h>
 #include <aws/codeconnections/model/BlockerStatus.h>
 #include <aws/codeconnections/model/BlockerType.h>
 #include <aws/codeconnections/model/Connection.h>
@@ -48,14 +52,18 @@
 #include <aws/codeconnections/model/GetSyncConfigurationRequest.h>
 #include <aws/codeconnections/model/GetSyncConfigurationResult.h>
 #include <aws/codeconnections/model/Host.h>
+#include <aws/codeconnections/model/ListConnectionsPaginationTraits.h>
 #include <aws/codeconnections/model/ListConnectionsRequest.h>
 #include <aws/codeconnections/model/ListConnectionsResult.h>
+#include <aws/codeconnections/model/ListHostsPaginationTraits.h>
 #include <aws/codeconnections/model/ListHostsRequest.h>
 #include <aws/codeconnections/model/ListHostsResult.h>
+#include <aws/codeconnections/model/ListRepositoryLinksPaginationTraits.h>
 #include <aws/codeconnections/model/ListRepositoryLinksRequest.h>
 #include <aws/codeconnections/model/ListRepositoryLinksResult.h>
 #include <aws/codeconnections/model/ListRepositorySyncDefinitionsRequest.h>
 #include <aws/codeconnections/model/ListRepositorySyncDefinitionsResult.h>
+#include <aws/codeconnections/model/ListSyncConfigurationsPaginationTraits.h>
 #include <aws/codeconnections/model/ListSyncConfigurationsRequest.h>
 #include <aws/codeconnections/model/ListSyncConfigurationsResult.h>
 #include <aws/codeconnections/model/ListTagsForResourceRequest.h>

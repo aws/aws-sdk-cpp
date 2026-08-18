@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/glacier/GlacierClient.h>
+#include <aws/glacier/GlacierClientPagination.h>
 #include <aws/glacier/GlacierEndpointProvider.h>
 #include <aws/glacier/GlacierErrorMarshaller.h>
 #include <aws/glacier/GlacierErrors.h>
+#include <aws/glacier/GlacierPaginationBase.h>
 #include <aws/glacier/GlacierRequest.h>
 #include <aws/glacier/GlacierServiceClientModel.h>
+#include <aws/glacier/GlacierWaiter.h>
 #include <aws/glacier/Glacier_EXPORTS.h>
+#include <aws/glacier/internal/GlacierEndpointRules.h>
 #include <aws/glacier/model/AbortMultipartUploadRequest.h>
 #include <aws/glacier/model/AbortVaultLockRequest.h>
 #include <aws/glacier/model/ActionCode.h>
@@ -66,16 +70,20 @@
 #include <aws/glacier/model/InventoryRetrievalJobInput.h>
 #include <aws/glacier/model/JobParameters.h>
 #include <aws/glacier/model/LimitExceededException.h>
+#include <aws/glacier/model/ListJobsPaginationTraits.h>
 #include <aws/glacier/model/ListJobsRequest.h>
 #include <aws/glacier/model/ListJobsResult.h>
+#include <aws/glacier/model/ListMultipartUploadsPaginationTraits.h>
 #include <aws/glacier/model/ListMultipartUploadsRequest.h>
 #include <aws/glacier/model/ListMultipartUploadsResult.h>
+#include <aws/glacier/model/ListPartsPaginationTraits.h>
 #include <aws/glacier/model/ListPartsRequest.h>
 #include <aws/glacier/model/ListPartsResult.h>
 #include <aws/glacier/model/ListProvisionedCapacityRequest.h>
 #include <aws/glacier/model/ListProvisionedCapacityResult.h>
 #include <aws/glacier/model/ListTagsForVaultRequest.h>
 #include <aws/glacier/model/ListTagsForVaultResult.h>
+#include <aws/glacier/model/ListVaultsPaginationTraits.h>
 #include <aws/glacier/model/ListVaultsRequest.h>
 #include <aws/glacier/model/ListVaultsResult.h>
 #include <aws/glacier/model/MissingParameterValueException.h>

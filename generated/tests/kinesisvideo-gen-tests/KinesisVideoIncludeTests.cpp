@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/kinesisvideo/KinesisVideoClient.h>
+#include <aws/kinesisvideo/KinesisVideoClientPagination.h>
 #include <aws/kinesisvideo/KinesisVideoEndpointProvider.h>
 #include <aws/kinesisvideo/KinesisVideoErrorMarshaller.h>
 #include <aws/kinesisvideo/KinesisVideoErrors.h>
+#include <aws/kinesisvideo/KinesisVideoPaginationBase.h>
 #include <aws/kinesisvideo/KinesisVideoRequest.h>
 #include <aws/kinesisvideo/KinesisVideoServiceClientModel.h>
+#include <aws/kinesisvideo/KinesisVideoWaiter.h>
 #include <aws/kinesisvideo/KinesisVideo_EXPORTS.h>
+#include <aws/kinesisvideo/internal/KinesisVideoEndpointRules.h>
 #include <aws/kinesisvideo/model/APIName.h>
 #include <aws/kinesisvideo/model/ChannelInfo.h>
 #include <aws/kinesisvideo/model/ChannelNameCondition.h>
@@ -37,6 +41,7 @@
 #include <aws/kinesisvideo/model/DescribeEdgeConfigurationResult.h>
 #include <aws/kinesisvideo/model/DescribeImageGenerationConfigurationRequest.h>
 #include <aws/kinesisvideo/model/DescribeImageGenerationConfigurationResult.h>
+#include <aws/kinesisvideo/model/DescribeMappedResourceConfigurationPaginationTraits.h>
 #include <aws/kinesisvideo/model/DescribeMappedResourceConfigurationRequest.h>
 #include <aws/kinesisvideo/model/DescribeMappedResourceConfigurationResult.h>
 #include <aws/kinesisvideo/model/DescribeMediaStorageConfigurationRequest.h>
@@ -63,10 +68,13 @@
 #include <aws/kinesisvideo/model/LastRecorderStatus.h>
 #include <aws/kinesisvideo/model/LastUploaderStatus.h>
 #include <aws/kinesisvideo/model/ListEdgeAgentConfigurationsEdgeConfig.h>
+#include <aws/kinesisvideo/model/ListEdgeAgentConfigurationsPaginationTraits.h>
 #include <aws/kinesisvideo/model/ListEdgeAgentConfigurationsRequest.h>
 #include <aws/kinesisvideo/model/ListEdgeAgentConfigurationsResult.h>
+#include <aws/kinesisvideo/model/ListSignalingChannelsPaginationTraits.h>
 #include <aws/kinesisvideo/model/ListSignalingChannelsRequest.h>
 #include <aws/kinesisvideo/model/ListSignalingChannelsResult.h>
+#include <aws/kinesisvideo/model/ListStreamsPaginationTraits.h>
 #include <aws/kinesisvideo/model/ListStreamsRequest.h>
 #include <aws/kinesisvideo/model/ListStreamsResult.h>
 #include <aws/kinesisvideo/model/ListTagsForResourceRequest.h>

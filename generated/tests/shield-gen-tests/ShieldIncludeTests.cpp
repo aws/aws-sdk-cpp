@@ -7,12 +7,16 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/shield/ShieldClient.h>
+#include <aws/shield/ShieldClientPagination.h>
 #include <aws/shield/ShieldEndpointProvider.h>
 #include <aws/shield/ShieldErrorMarshaller.h>
 #include <aws/shield/ShieldErrors.h>
+#include <aws/shield/ShieldPaginationBase.h>
 #include <aws/shield/ShieldRequest.h>
 #include <aws/shield/ShieldServiceClientModel.h>
+#include <aws/shield/ShieldWaiter.h>
 #include <aws/shield/Shield_EXPORTS.h>
+#include <aws/shield/internal/ShieldEndpointRules.h>
 #include <aws/shield/model/ApplicationLayerAutomaticResponseConfiguration.h>
 #include <aws/shield/model/ApplicationLayerAutomaticResponseStatus.h>
 #include <aws/shield/model/AssociateDRTLogBucketRequest.h>
@@ -82,12 +86,16 @@
 #include <aws/shield/model/InvalidParameterException.h>
 #include <aws/shield/model/Limit.h>
 #include <aws/shield/model/LimitsExceededException.h>
+#include <aws/shield/model/ListAttacksPaginationTraits.h>
 #include <aws/shield/model/ListAttacksRequest.h>
 #include <aws/shield/model/ListAttacksResult.h>
+#include <aws/shield/model/ListProtectionGroupsPaginationTraits.h>
 #include <aws/shield/model/ListProtectionGroupsRequest.h>
 #include <aws/shield/model/ListProtectionGroupsResult.h>
+#include <aws/shield/model/ListProtectionsPaginationTraits.h>
 #include <aws/shield/model/ListProtectionsRequest.h>
 #include <aws/shield/model/ListProtectionsResult.h>
+#include <aws/shield/model/ListResourcesInProtectionGroupPaginationTraits.h>
 #include <aws/shield/model/ListResourcesInProtectionGroupRequest.h>
 #include <aws/shield/model/ListResourcesInProtectionGroupResult.h>
 #include <aws/shield/model/ListTagsForResourceRequest.h>

@@ -7,16 +7,21 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/migrationhub-config/MigrationHubConfigClient.h>
+#include <aws/migrationhub-config/MigrationHubConfigClientPagination.h>
 #include <aws/migrationhub-config/MigrationHubConfigEndpointProvider.h>
 #include <aws/migrationhub-config/MigrationHubConfigErrorMarshaller.h>
 #include <aws/migrationhub-config/MigrationHubConfigErrors.h>
+#include <aws/migrationhub-config/MigrationHubConfigPaginationBase.h>
 #include <aws/migrationhub-config/MigrationHubConfigRequest.h>
 #include <aws/migrationhub-config/MigrationHubConfigServiceClientModel.h>
+#include <aws/migrationhub-config/MigrationHubConfigWaiter.h>
 #include <aws/migrationhub-config/MigrationHubConfig_EXPORTS.h>
+#include <aws/migrationhub-config/internal/MigrationHubConfigEndpointRules.h>
 #include <aws/migrationhub-config/model/CreateHomeRegionControlRequest.h>
 #include <aws/migrationhub-config/model/CreateHomeRegionControlResult.h>
 #include <aws/migrationhub-config/model/DeleteHomeRegionControlRequest.h>
 #include <aws/migrationhub-config/model/DeleteHomeRegionControlResult.h>
+#include <aws/migrationhub-config/model/DescribeHomeRegionControlsPaginationTraits.h>
 #include <aws/migrationhub-config/model/DescribeHomeRegionControlsRequest.h>
 #include <aws/migrationhub-config/model/DescribeHomeRegionControlsResult.h>
 #include <aws/migrationhub-config/model/GetHomeRegionRequest.h>

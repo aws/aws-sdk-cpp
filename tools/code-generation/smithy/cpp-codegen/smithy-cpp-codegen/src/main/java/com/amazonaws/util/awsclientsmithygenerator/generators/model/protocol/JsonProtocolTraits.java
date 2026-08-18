@@ -6,20 +6,27 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
+import software.amazon.smithy.model.Model;
+import software.amazon.smithy.model.shapes.OperationShape;
+import software.amazon.smithy.model.shapes.ServiceShape;
+import software.amazon.smithy.model.shapes.StructureShape;
+
+import java.util.List;
 
 /**
- * JSON-flavored serde rendering. Serves both {@link Protocol#JSON} and
- * {@link Protocol#CBOR}, which share an identical C++ surface today (CBOR reuses the
- * JSON model types and differs only on the wire).
+ * JSON-flavored serde rendering. Serves {@link Protocol#JSON} (awsJson-RPC) and
+ * {@link Protocol#REST_JSON} (rest-json), which share an identical C++ serde surface and
+ * differ only on whether they attach an {@code X-Amz-Target} header. CBOR has its own
+ * {@link CborProtocolTraits}.
  */
 public final class JsonProtocolTraits implements ProtocolTraits {
 
     private final Protocol protocol;
 
     public JsonProtocolTraits(Protocol protocol) {
-        if (protocol != Protocol.JSON && protocol != Protocol.CBOR) {
+        if (protocol != Protocol.JSON && protocol != Protocol.REST_JSON) {
             throw new IllegalArgumentException(
-                "JsonProtocolTraits only serves JSON and CBOR, got: " + protocol);
+                "JsonProtocolTraits only serves JSON and REST_JSON, got: " + protocol);
         }
         this.protocol = protocol;
     }
@@ -75,14 +82,46 @@ public final class JsonProtocolTraits implements ProtocolTraits {
     }
 
     @Override
-    public void writeSerdeInclude(CppWriter writer) {
-        writer.write("#include <aws/core/utils/json/JsonSerializer.h>");
+    public List<String> serdeIncludes(FileKind kind) {
+        switch (kind) {
+            // Headers forward-declare JsonValue/JsonView; no serializer include.
+            case SUBOBJECT_HEADER:
+            case RESULT_HEADER:
+                return List.of();
+            // All source kinds share one union (supersets allowed: a .cpp may carry an
+            // include it doesn't strictly use). Usings are unchanged; only #includes widen.
+            case SUBOBJECT_SOURCE:
+            case REQUEST_SOURCE:
+            case RESULT_SOURCE:
+            case STREAMING_RESULT_SOURCE:
+            case EVENT_HANDLER_SOURCE:
+            case INITIAL_RESPONSE_SOURCE:
+                return List.of(
+                    "aws/core/utils/json/JsonSerializer.h",
+                    "aws/core/utils/UnreferencedParam.h",
+                    "aws/core/utils/memory/stl/AWSStringStream.h",
+                    "aws/core/utils/HashingUtils.h",
+                    "utility");
+            default:
+                throw new UnsupportedOperationException(
+                    "No serde includes defined for FileKind " + kind + " in JsonProtocolTraits");
+        }
     }
 
     @Override
-    public void writeSerdeUsingDeclarations(CppWriter writer) {
-        writer.write("using namespace Aws::Utils::Json;");
-        writer.write("using namespace Aws::Utils;");
+    public List<String> serdeUsings(FileKind kind) {
+        switch (kind) {
+            case EVENT_HANDLER_SOURCE:
+                return List.of(serdeNamespace());
+            case RESULT_SOURCE:
+            case INITIAL_RESPONSE_SOURCE:
+            case REQUEST_SOURCE:
+            case SUBOBJECT_SOURCE:
+                return List.of("Aws::Utils::Json", "Aws::Utils");
+            default:
+                throw new UnsupportedOperationException(
+                    "No serde usings defined for FileKind " + kind + " in JsonProtocolTraits");
+        }
     }
 
     @Override
@@ -100,11 +139,57 @@ public final class JsonProtocolTraits implements ProtocolTraits {
     }
 
     @Override
-    public void writeResultSerdeImpls(CppWriter writer, String className) {
+    public void writeResultSerdeImpls(CppWriter writer, String className, StructureShape shape, Model model,
+                                      String namespace) {
         writer.openBlock("$L::$L(const Aws::AmazonWebServiceResult<JsonValue>& result) {", "}",
             className, className, () -> writer.write("*this = result;"));
         writer.write("");
         writer.openBlock("$L& $L::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {", "}",
-            className, className, () -> writer.write("return *this;"));
+            className, className, () -> {
+            writeResultStatusCodeMembers(writer, shape, model);
+            writer.write("return *this;");
+        });
+    }
+
+    @Override
+    public boolean hasTargetHeader() {
+        // awsJson1_0 / awsJson1_1 send X-Amz-Target; rest-json and CBOR do not.
+        return protocol == Protocol.JSON;
+    }
+
+    @Override
+    public void writeRequestMethodDecls(CppWriter writer, String exportMacro,
+                                        StructureShape shape, OperationShape operation, Model model) {
+        // A raw-streaming-payload request sends its body via the streaming base class, so no
+        // SerializePayload is emitted (matches C2J).
+        if (RequestBindings.emitsSerializePayload(operation, model)) {
+            writer.write("$L Aws::String SerializePayload() const override;", exportMacro);
+        }
+        if (hasTargetHeader() || RequestBindings.hasHeaderMembers(shape, model)) {
+            writer.write("");
+            writeGetRequestSpecificHeadersDecl(writer, exportMacro);
+        }
+        if (RequestBindings.hasQueryStringMembers(shape, model)) {
+            writer.write("");
+            writeAddQueryStringParametersDecl(writer, exportMacro);
+        }
+    }
+
+    @Override
+    public void writeRequestMethodImpls(CppWriter writer, String className,
+                                        StructureShape shape, OperationShape operation,
+                                        ServiceShape service, Model model) {
+        if (RequestBindings.emitsSerializePayload(operation, model)) {
+            String payloadBody = protocol == Protocol.JSON ? "\"{}\"" : "{}";
+            writer.write("Aws::String $L::SerializePayload() const { return $L; }", className, payloadBody);
+        }
+        if (hasTargetHeader() || RequestBindings.hasHeaderMembers(shape, model)) {
+            writer.write("");
+            writeGetRequestSpecificHeadersImpl(writer, className, shape, operation, service, model);
+        }
+        if (RequestBindings.hasQueryStringMembers(shape, model)) {
+            writer.write("");
+            writeAddQueryStringParametersImpl(writer, className);
+        }
     }
 }
