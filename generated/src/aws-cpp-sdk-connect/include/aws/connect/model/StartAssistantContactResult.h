@@ -64,9 +64,9 @@ class StartAssistantContactResult {
 
   ///@{
   /**
-   * <p>The token that the chat participant uses to call the <a
+   * <p>The token that the chat participant uses with the <a
    * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
-   * API. The token remains valid for the lifetime of the chat participant.</p>
+   * operation. The token remains valid for the lifetime of the chat participant.</p>
    */
   inline const Aws::String& GetParticipantToken() const { return m_participantToken; }
   template <typename ParticipantTokenT = Aws::String>
@@ -83,8 +83,8 @@ class StartAssistantContactResult {
 
   ///@{
   /**
-   * <p>For a persistent chat, the identifier of the contact from which the chat
-   * continues. Amazon Connect returns this field only for persistent chats.</p>
+   * <p>The identifier of the contact from which the chat continues, returned only
+   * for persistent chats.</p>
    */
   inline const Aws::String& GetContinuedFromContactId() const { return m_continuedFromContactId; }
   template <typename ContinuedFromContactIdT = Aws::String>

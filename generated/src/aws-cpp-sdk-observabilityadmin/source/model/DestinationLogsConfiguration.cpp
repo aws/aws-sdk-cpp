@@ -30,6 +30,10 @@ DestinationLogsConfiguration& DestinationLogsConfiguration::operator=(JsonView j
     m_logGroupNameConfiguration = jsonValue.GetObject("LogGroupNameConfiguration");
     m_logGroupNameConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("TagPropagationConfiguration")) {
+    m_tagPropagationConfiguration = jsonValue.GetObject("TagPropagationConfiguration");
+    m_tagPropagationConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue DestinationLogsConfiguration::Jsonize() const {
 
   if (m_logGroupNameConfigurationHasBeenSet) {
     payload.WithObject("LogGroupNameConfiguration", m_logGroupNameConfiguration.Jsonize());
+  }
+
+  if (m_tagPropagationConfigurationHasBeenSet) {
+    payload.WithObject("TagPropagationConfiguration", m_tagPropagationConfiguration.Jsonize());
   }
 
   return payload;

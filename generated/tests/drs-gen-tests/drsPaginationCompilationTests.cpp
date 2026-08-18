@@ -8,16 +8,20 @@
 
 #include <aws/drs/DrsClientPagination.h>
 #include <aws/drs/DrsPaginationBase.h>
-#include <aws/drs/model/ListStagingAccountsPaginationTraits.h>
 #include <aws/drs/model/ListExtensibleSourceServersPaginationTraits.h>
-#include <aws/drs/model/DescribeReplicationConfigurationTemplatesPaginationTraits.h>
-#include <aws/drs/model/DescribeRecoveryInstancesPaginationTraits.h>
 #include <aws/drs/model/DescribeRecoverySnapshotsPaginationTraits.h>
 #include <aws/drs/model/DescribeLaunchConfigurationTemplatesPaginationTraits.h>
 #include <aws/drs/model/DescribeSourceServersPaginationTraits.h>
+#include <aws/drs/model/ListRecoveryPlanExecutionStepsPaginationTraits.h>
 #include <aws/drs/model/DescribeJobLogItemsPaginationTraits.h>
 #include <aws/drs/model/DescribeJobsPaginationTraits.h>
 #include <aws/drs/model/ListLaunchActionsPaginationTraits.h>
+#include <aws/drs/model/ListStagingAccountsPaginationTraits.h>
+#include <aws/drs/model/ListRecoveryPlansPaginationTraits.h>
+#include <aws/drs/model/DescribeReplicationConfigurationTemplatesPaginationTraits.h>
+#include <aws/drs/model/ListRecoveryPlanExecutionsPaginationTraits.h>
+#include <aws/drs/model/DescribeRecoveryInstancesPaginationTraits.h>
+#include <aws/drs/model/ListRecoveryPlanStepsPaginationTraits.h>
 #include <aws/drs/model/DescribeSourceNetworksPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>

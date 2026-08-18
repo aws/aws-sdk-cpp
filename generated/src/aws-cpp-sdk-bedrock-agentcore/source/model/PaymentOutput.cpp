@@ -22,6 +22,10 @@ PaymentOutput& PaymentOutput::operator=(JsonView jsonValue) {
     m_cryptoX402 = jsonValue.GetObject("cryptoX402");
     m_cryptoX402HasBeenSet = true;
   }
+  if (jsonValue.ValueExists("mpp")) {
+    m_mpp = jsonValue.GetObject("mpp");
+    m_mppHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue PaymentOutput::Jsonize() const {
 
   if (m_cryptoX402HasBeenSet) {
     payload.WithObject("cryptoX402", m_cryptoX402.Jsonize());
+  }
+
+  if (m_mppHasBeenSet) {
+    payload.WithObject("mpp", m_mpp.Jsonize());
   }
 
   return payload;

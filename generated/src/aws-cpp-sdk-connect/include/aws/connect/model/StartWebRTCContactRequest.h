@@ -232,10 +232,9 @@ class StartWebRTCContactRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>Use this map to specify system-defined attributes for the WebRTC contact
-   * segment. Use the <code>connect:Subtype</code> attribute to specify the channel
-   * subtype, such as <code>connect:WebRTC</code>.</p> <p>Attribute keys can contain
-   * only alphanumeric characters, hyphens, and underscores.</p>
+   * <p>A map of system-defined attributes for the WebRTC contact segment. Use the
+   * <code>connect:Subtype</code> attribute to specify the channel subtype, such as
+   * <code>connect:WebRTC</code>.</p>
    */
   inline const Aws::Map<Aws::String, SegmentAttributeValue>& GetSegmentAttributes() const { return m_segmentAttributes; }
   inline bool SegmentAttributesHasBeenSet() const { return m_segmentAttributesHasBeenSet; }

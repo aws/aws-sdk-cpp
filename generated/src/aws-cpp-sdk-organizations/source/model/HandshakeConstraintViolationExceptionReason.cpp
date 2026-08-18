@@ -32,6 +32,8 @@ static const int RESPONSIBILITY_TRANSFER_ALREADY_EXISTS_HASH = HashingUtils::Has
 static const int SOURCE_AND_TARGET_CANNOT_MATCH_HASH = HashingUtils::HashString("SOURCE_AND_TARGET_CANNOT_MATCH");
 static const int UNUSED_PREPAYMENT_BALANCE_HASH = HashingUtils::HashString("UNUSED_PREPAYMENT_BALANCE");
 static const int LEGACY_PERMISSIONS_STILL_IN_USE_HASH = HashingUtils::HashString("LEGACY_PERMISSIONS_STILL_IN_USE");
+static const int PAST_DUE_INVOICE_HASH = HashingUtils::HashString("PAST_DUE_INVOICE");
+static const int TARGET_ACCOUNT_VALIDATION_FAILURE_HASH = HashingUtils::HashString("TARGET_ACCOUNT_VALIDATION_FAILURE");
 
 HandshakeConstraintViolationExceptionReason GetHandshakeConstraintViolationExceptionReasonForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -63,6 +65,10 @@ HandshakeConstraintViolationExceptionReason GetHandshakeConstraintViolationExcep
     return HandshakeConstraintViolationExceptionReason::UNUSED_PREPAYMENT_BALANCE;
   } else if (hashCode == LEGACY_PERMISSIONS_STILL_IN_USE_HASH) {
     return HandshakeConstraintViolationExceptionReason::LEGACY_PERMISSIONS_STILL_IN_USE;
+  } else if (hashCode == PAST_DUE_INVOICE_HASH) {
+    return HandshakeConstraintViolationExceptionReason::PAST_DUE_INVOICE;
+  } else if (hashCode == TARGET_ACCOUNT_VALIDATION_FAILURE_HASH) {
+    return HandshakeConstraintViolationExceptionReason::TARGET_ACCOUNT_VALIDATION_FAILURE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -105,6 +111,10 @@ Aws::String GetNameForHandshakeConstraintViolationExceptionReason(HandshakeConst
       return "UNUSED_PREPAYMENT_BALANCE";
     case HandshakeConstraintViolationExceptionReason::LEGACY_PERMISSIONS_STILL_IN_USE:
       return "LEGACY_PERMISSIONS_STILL_IN_USE";
+    case HandshakeConstraintViolationExceptionReason::PAST_DUE_INVOICE:
+      return "PAST_DUE_INVOICE";
+    case HandshakeConstraintViolationExceptionReason::TARGET_ACCOUNT_VALIDATION_FAILURE:
+      return "TARGET_ACCOUNT_VALIDATION_FAILURE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -12,6 +12,8 @@
 #include <aws/geo-maps/model/ColorScheme.h>
 #include <aws/geo-maps/model/ContourDensity.h>
 #include <aws/geo-maps/model/MapStyle.h>
+#include <aws/geo-maps/model/PoiCategory.h>
+#include <aws/geo-maps/model/PoiDensity.h>
 #include <aws/geo-maps/model/Terrain.h>
 #include <aws/geo-maps/model/Traffic.h>
 #include <aws/geo-maps/model/TravelMode.h>
@@ -236,6 +238,75 @@ class GetStyleDescriptorRequest : public GeoMapsRequest {
 
   ///@{
   /**
+   * <p>Controls how densely points of interest are rendered on the map. The density
+   * value controls the zoom level at which each category of points of interest
+   * appears, and how quickly less prominent points of interest are revealed as you
+   * zoom in. Denser values display more points of interest at lower zoom levels.</p>
+   * <p>Use <code>Off</code> to hide all points of interest. When you omit this
+   * parameter, the map renders at <code>Default</code> density.</p>  <p>The
+   * difference between density values is most noticeable at mid-range zoom levels.
+   * At high zoom levels, all density values converge on displaying every available
+   * point of interest.</p>  <p>This parameter is valid only for the
+   * <code>Standard</code> and <code>Hybrid</code> map styles. In
+   * <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers, this parameter is valid only for the <code>Standard</code> map
+   * style.</p>
+   */
+  inline PoiDensity GetPoiDensity() const { return m_poiDensity; }
+  inline bool PoiDensityHasBeenSet() const { return m_poiDensityHasBeenSet; }
+  inline void SetPoiDensity(PoiDensity value) {
+    m_poiDensityHasBeenSet = true;
+    m_poiDensity = value;
+  }
+  inline GetStyleDescriptorRequest& WithPoiDensity(PoiDensity value) {
+    SetPoiDensity(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Renders only the specified categories of points of interest. When you omit
+   * this parameter, the map renders all categories.</p> <p>The following categories
+   * are currently supported:</p> <ul> <li> <p> <code>FoodAndDrink</code> </p> </li>
+   * <li> <p> <code>Entertainment</code> </p> </li> <li> <p>
+   * <code>SightsAndMuseums</code> </p> </li> <li> <p> <code>Transportation</code>
+   * </p> </li> <li> <p> <code>Accommodations</code> </p> </li> <li> <p>
+   * <code>LeisureAndOutdoor</code> </p> </li> <li> <p> <code>Shopping</code> </p>
+   * </li> <li> <p> <code>BusinessAndServices</code> </p> </li> <li> <p>
+   * <code>FacilitiesAndBuildings</code> </p> </li> </ul> <p>Specify each category as
+   * a separate <code>poi-categories</code> query parameter. Duplicate values are
+   * rejected.</p>  <p>This parameter has no effect when
+   * <code>poi-density</code> is set to <code>Off</code>, which hides all points of
+   * interest regardless of category.</p>  <p>This parameter is valid only for
+   * the <code>Standard</code> and <code>Hybrid</code> map styles. In
+   * <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers, this parameter is valid only for the <code>Standard</code> map
+   * style.</p>
+   */
+  inline const Aws::Vector<PoiCategory>& GetPoiCategories() const { return m_poiCategories; }
+  inline bool PoiCategoriesHasBeenSet() const { return m_poiCategoriesHasBeenSet; }
+  template <typename PoiCategoriesT = Aws::Vector<PoiCategory>>
+  void SetPoiCategories(PoiCategoriesT&& value) {
+    m_poiCategoriesHasBeenSet = true;
+    m_poiCategories = std::forward<PoiCategoriesT>(value);
+  }
+  template <typename PoiCategoriesT = Aws::Vector<PoiCategory>>
+  GetStyleDescriptorRequest& WithPoiCategories(PoiCategoriesT&& value) {
+    SetPoiCategories(std::forward<PoiCategoriesT>(value));
+    return *this;
+  }
+  inline GetStyleDescriptorRequest& AddPoiCategories(PoiCategory value) {
+    m_poiCategoriesHasBeenSet = true;
+    m_poiCategories.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Optional: The API key to be used for authorization. Either an API key or
    * valid SigV4 signature must be provided when making a request. </p>
    */
@@ -269,6 +340,10 @@ class GetStyleDescriptorRequest : public GeoMapsRequest {
 
   Buildings m_buildings{Buildings::NOT_SET};
 
+  PoiDensity m_poiDensity{PoiDensity::NOT_SET};
+
+  Aws::Vector<PoiCategory> m_poiCategories;
+
   Aws::String m_key;
   bool m_styleHasBeenSet = false;
   bool m_colorSchemeHasBeenSet = false;
@@ -278,6 +353,8 @@ class GetStyleDescriptorRequest : public GeoMapsRequest {
   bool m_trafficHasBeenSet = false;
   bool m_travelModesHasBeenSet = false;
   bool m_buildingsHasBeenSet = false;
+  bool m_poiDensityHasBeenSet = false;
+  bool m_poiCategoriesHasBeenSet = false;
   bool m_keyHasBeenSet = false;
 };
 

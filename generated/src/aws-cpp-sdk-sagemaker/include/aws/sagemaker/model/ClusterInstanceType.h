@@ -212,7 +212,13 @@ enum class ClusterInstanceType {
   ml_m8g_12xlarge,
   ml_m8g_16xlarge,
   ml_m8g_24xlarge,
-  ml_m8g_48xlarge
+  ml_m8g_48xlarge,
+  ml_g7_2xlarge,
+  ml_g7_4xlarge,
+  ml_g7_8xlarge,
+  ml_g7_12xlarge,
+  ml_g7_24xlarge,
+  ml_g7_48xlarge
 };
 
 namespace ClusterInstanceTypeMapper {

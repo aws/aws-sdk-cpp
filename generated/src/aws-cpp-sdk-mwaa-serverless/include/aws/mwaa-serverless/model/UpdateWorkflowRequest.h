@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mwaa-serverless/MWAAServerlessRequest.h>
 #include <aws/mwaa-serverless/MWAAServerless_EXPORTS.h>
+#include <aws/mwaa-serverless/model/Code.h>
 #include <aws/mwaa-serverless/model/DefinitionS3Location.h>
 #include <aws/mwaa-serverless/model/LoggingConfiguration.h>
 #include <aws/mwaa-serverless/model/NetworkConfiguration.h>
@@ -66,6 +67,25 @@ class UpdateWorkflowRequest : public MWAAServerlessRequest {
   template <typename DefinitionS3LocationT = DefinitionS3Location>
   UpdateWorkflowRequest& WithDefinitionS3Location(DefinitionS3LocationT&& value) {
     SetDefinitionS3Location(std::forward<DefinitionS3LocationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The location of code artifacts in Amazon S3 for the updated workflow. The
+   * service copies the code from this location at the time of the request.</p>
+   */
+  inline const Code& GetCode() const { return m_code; }
+  inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+  template <typename CodeT = Code>
+  void SetCode(CodeT&& value) {
+    m_codeHasBeenSet = true;
+    m_code = std::forward<CodeT>(value);
+  }
+  template <typename CodeT = Code>
+  UpdateWorkflowRequest& WithCode(CodeT&& value) {
+    SetCode(std::forward<CodeT>(value));
     return *this;
   }
   ///@}
@@ -182,6 +202,8 @@ class UpdateWorkflowRequest : public MWAAServerlessRequest {
 
   DefinitionS3Location m_definitionS3Location;
 
+  Code m_code;
+
   Aws::String m_roleArn;
 
   Aws::String m_description;
@@ -195,6 +217,7 @@ class UpdateWorkflowRequest : public MWAAServerlessRequest {
   Aws::String m_triggerMode;
   bool m_workflowArnHasBeenSet = false;
   bool m_definitionS3LocationHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_loggingConfigurationHasBeenSet = false;

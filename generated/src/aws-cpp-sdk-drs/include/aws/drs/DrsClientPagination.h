@@ -16,6 +16,10 @@
 #include <aws/drs/model/DescribeSourceServersPaginationTraits.h>
 #include <aws/drs/model/ListExtensibleSourceServersPaginationTraits.h>
 #include <aws/drs/model/ListLaunchActionsPaginationTraits.h>
+#include <aws/drs/model/ListRecoveryPlanExecutionStepsPaginationTraits.h>
+#include <aws/drs/model/ListRecoveryPlanExecutionsPaginationTraits.h>
+#include <aws/drs/model/ListRecoveryPlanStepsPaginationTraits.h>
+#include <aws/drs/model/ListRecoveryPlansPaginationTraits.h>
 #include <aws/drs/model/ListStagingAccountsPaginationTraits.h>
 
 namespace Aws {
@@ -46,6 +50,16 @@ using ListExtensibleSourceServersPaginator =
                                       Pagination::ListExtensibleSourceServersPaginationTraits<DrsClient>>;
 using ListLaunchActionsPaginator =
     Aws::Utils::Pagination::Paginator<DrsClient, Model::ListLaunchActionsRequest, Pagination::ListLaunchActionsPaginationTraits<DrsClient>>;
+using ListRecoveryPlanExecutionsPaginator =
+    Aws::Utils::Pagination::Paginator<DrsClient, Model::ListRecoveryPlanExecutionsRequest,
+                                      Pagination::ListRecoveryPlanExecutionsPaginationTraits<DrsClient>>;
+using ListRecoveryPlanExecutionStepsPaginator =
+    Aws::Utils::Pagination::Paginator<DrsClient, Model::ListRecoveryPlanExecutionStepsRequest,
+                                      Pagination::ListRecoveryPlanExecutionStepsPaginationTraits<DrsClient>>;
+using ListRecoveryPlansPaginator =
+    Aws::Utils::Pagination::Paginator<DrsClient, Model::ListRecoveryPlansRequest, Pagination::ListRecoveryPlansPaginationTraits<DrsClient>>;
+using ListRecoveryPlanStepsPaginator = Aws::Utils::Pagination::Paginator<DrsClient, Model::ListRecoveryPlanStepsRequest,
+                                                                         Pagination::ListRecoveryPlanStepsPaginationTraits<DrsClient>>;
 using ListStagingAccountsPaginator = Aws::Utils::Pagination::Paginator<DrsClient, Model::ListStagingAccountsRequest,
                                                                        Pagination::ListStagingAccountsPaginationTraits<DrsClient>>;
 

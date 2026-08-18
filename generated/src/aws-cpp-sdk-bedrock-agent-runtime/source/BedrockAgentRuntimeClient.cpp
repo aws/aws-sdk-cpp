@@ -8,6 +8,7 @@
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeEndpointProvider.h>
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeErrorMarshaller.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveStreamRequest.h>
+#include <aws/bedrock-agent-runtime/model/CheckIngestedDocumentAclRequest.h>
 #include <aws/bedrock-agent-runtime/model/CreateInvocationRequest.h>
 #include <aws/bedrock-agent-runtime/model/CreateSessionRequest.h>
 #include <aws/bedrock-agent-runtime/model/DeleteAgentMemoryRequest.h>
@@ -18,6 +19,7 @@
 #include <aws/bedrock-agent-runtime/model/GetDocumentContentRequest.h>
 #include <aws/bedrock-agent-runtime/model/GetExecutionFlowSnapshotRequest.h>
 #include <aws/bedrock-agent-runtime/model/GetFlowExecutionRequest.h>
+#include <aws/bedrock-agent-runtime/model/GetIngestedDocumentAclRequest.h>
 #include <aws/bedrock-agent-runtime/model/GetInvocationStepRequest.h>
 #include <aws/bedrock-agent-runtime/model/GetSessionRequest.h>
 #include <aws/bedrock-agent-runtime/model/InvokeAgentRequest.h>
@@ -236,6 +238,31 @@ AgenticRetrieveStreamOutcome BedrockAgentRuntimeClient::AgenticRetrieveStream(Ag
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
+CheckIngestedDocumentAclOutcome BedrockAgentRuntimeClient::CheckIngestedDocumentAcl(const CheckIngestedDocumentAclRequest& request) const {
+  if (!request.DataSourceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CheckIngestedDocumentAcl", "Required field: DataSourceId, is not set");
+    return CheckIngestedDocumentAclOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(
+        BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
+  }
+  if (!request.KnowledgeBaseIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CheckIngestedDocumentAcl", "Required field: KnowledgeBaseId, is not set");
+    return CheckIngestedDocumentAclOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(
+        BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/knowledgebases/");
+        resolvedEndpoint.AddPathSegment(request.GetKnowledgeBaseId());
+        resolvedEndpoint.AddPathSegments("/datasources/");
+        resolvedEndpoint.AddPathSegment(request.GetDataSourceId());
+        resolvedEndpoint.AddPathSegments("/check-ingested-document-acl");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CheckIngestedDocumentAclOutcome(result.GetResultWithOwnership())
+                            : CheckIngestedDocumentAclOutcome(std::move(result.GetError()));
+}
 CreateInvocationOutcome BedrockAgentRuntimeClient::CreateInvocation(const CreateInvocationRequest& request) const {
   if (!request.SessionIdentifierHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("CreateInvocation", "Required field: SessionIdentifier, is not set");
@@ -451,6 +478,31 @@ GetFlowExecutionOutcome BedrockAgentRuntimeClient::GetFlowExecution(const GetFlo
       Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetFlowExecutionOutcome(result.GetResultWithOwnership())
                             : GetFlowExecutionOutcome(std::move(result.GetError()));
+}
+GetIngestedDocumentAclOutcome BedrockAgentRuntimeClient::GetIngestedDocumentAcl(const GetIngestedDocumentAclRequest& request) const {
+  if (!request.DataSourceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetIngestedDocumentAcl", "Required field: DataSourceId, is not set");
+    return GetIngestedDocumentAclOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(
+        BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
+  }
+  if (!request.KnowledgeBaseIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetIngestedDocumentAcl", "Required field: KnowledgeBaseId, is not set");
+    return GetIngestedDocumentAclOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(
+        BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/knowledgebases/");
+        resolvedEndpoint.AddPathSegment(request.GetKnowledgeBaseId());
+        resolvedEndpoint.AddPathSegments("/datasources/");
+        resolvedEndpoint.AddPathSegment(request.GetDataSourceId());
+        resolvedEndpoint.AddPathSegments("/get-ingested-document-acl");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIngestedDocumentAclOutcome(result.GetResultWithOwnership())
+                            : GetIngestedDocumentAclOutcome(std::move(result.GetError()));
 }
 GetInvocationStepOutcome BedrockAgentRuntimeClient::GetInvocationStep(const GetInvocationStepRequest& request) const {
   if (!request.InvocationStepIdHasBeenSet()) {

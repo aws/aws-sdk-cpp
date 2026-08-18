@@ -10,7 +10,12 @@
 namespace Aws {
 namespace BedrockAgentCoreControl {
 namespace Model {
-enum class DatasetSchemaType { NOT_SET, AGENTCORE_EVALUATION_PREDEFINED_V1, AGENTCORE_EVALUATION_SIMULATED_V1 };
+enum class DatasetSchemaType {
+  NOT_SET,
+  AGENTCORE_EVALUATION_PREDEFINED_V1,
+  AGENTCORE_EVALUATION_SIMULATED_V1,
+  GENERIC_EVALUATION_PREDEFINED_V1
+};
 
 namespace DatasetSchemaTypeMapper {
 AWS_BEDROCKAGENTCORECONTROL_API DatasetSchemaType GetDatasetSchemaTypeForName(const Aws::String& name);

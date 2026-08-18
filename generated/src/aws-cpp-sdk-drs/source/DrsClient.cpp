@@ -21,14 +21,20 @@
 #include <aws/drs/DrsEndpointProvider.h>
 #include <aws/drs/DrsErrorMarshaller.h>
 #include <aws/drs/model/AssociateSourceNetworkStackRequest.h>
+#include <aws/drs/model/CancelRecoveryPlanExecutionRequest.h>
 #include <aws/drs/model/CreateExtendedSourceServerRequest.h>
 #include <aws/drs/model/CreateLaunchConfigurationTemplateRequest.h>
+#include <aws/drs/model/CreateRecoveryPlanRequest.h>
+#include <aws/drs/model/CreateRecoveryPlanStepRequest.h>
 #include <aws/drs/model/CreateReplicationConfigurationTemplateRequest.h>
 #include <aws/drs/model/CreateSourceNetworkRequest.h>
 #include <aws/drs/model/DeleteJobRequest.h>
 #include <aws/drs/model/DeleteLaunchActionRequest.h>
 #include <aws/drs/model/DeleteLaunchConfigurationTemplateRequest.h>
 #include <aws/drs/model/DeleteRecoveryInstanceRequest.h>
+#include <aws/drs/model/DeleteRecoveryPlanExecutionRequest.h>
+#include <aws/drs/model/DeleteRecoveryPlanRequest.h>
+#include <aws/drs/model/DeleteRecoveryPlanStepRequest.h>
 #include <aws/drs/model/DeleteReplicationConfigurationTemplateRequest.h>
 #include <aws/drs/model/DeleteSourceNetworkRequest.h>
 #include <aws/drs/model/DeleteSourceServerRequest.h>
@@ -45,15 +51,26 @@
 #include <aws/drs/model/ExportSourceNetworkCfnTemplateRequest.h>
 #include <aws/drs/model/GetFailbackReplicationConfigurationRequest.h>
 #include <aws/drs/model/GetLaunchConfigurationRequest.h>
+#include <aws/drs/model/GetRecoveryPlanExecutionRequest.h>
+#include <aws/drs/model/GetRecoveryPlanExecutionStepRequest.h>
+#include <aws/drs/model/GetRecoveryPlanRequest.h>
+#include <aws/drs/model/GetRecoveryPlanStepRequest.h>
 #include <aws/drs/model/GetReplicationConfigurationRequest.h>
 #include <aws/drs/model/InitializeServiceRequest.h>
 #include <aws/drs/model/ListExtensibleSourceServersRequest.h>
 #include <aws/drs/model/ListLaunchActionsRequest.h>
+#include <aws/drs/model/ListRecoveryPlanExecutionStepsRequest.h>
+#include <aws/drs/model/ListRecoveryPlanExecutionsRequest.h>
+#include <aws/drs/model/ListRecoveryPlanStepsRequest.h>
+#include <aws/drs/model/ListRecoveryPlansRequest.h>
 #include <aws/drs/model/ListStagingAccountsRequest.h>
 #include <aws/drs/model/ListTagsForResourceRequest.h>
 #include <aws/drs/model/PutLaunchActionRequest.h>
+#include <aws/drs/model/ReorderRecoveryPlanStepsRequest.h>
+#include <aws/drs/model/RetryRecoveryPlanExecutionStepRequest.h>
 #include <aws/drs/model/ReverseReplicationRequest.h>
 #include <aws/drs/model/StartFailbackLaunchRequest.h>
+#include <aws/drs/model/StartRecoveryPlanExecutionRequest.h>
 #include <aws/drs/model/StartRecoveryRequest.h>
 #include <aws/drs/model/StartReplicationRequest.h>
 #include <aws/drs/model/StartSourceNetworkRecoveryRequest.h>
@@ -67,6 +84,9 @@
 #include <aws/drs/model/UpdateFailbackReplicationConfigurationRequest.h>
 #include <aws/drs/model/UpdateLaunchConfigurationRequest.h>
 #include <aws/drs/model/UpdateLaunchConfigurationTemplateRequest.h>
+#include <aws/drs/model/UpdateRecoveryPlanExecutionStepRequest.h>
+#include <aws/drs/model/UpdateRecoveryPlanRequest.h>
+#include <aws/drs/model/UpdateRecoveryPlanStepRequest.h>
 #include <aws/drs/model/UpdateReplicationConfigurationRequest.h>
 #include <aws/drs/model/UpdateReplicationConfigurationTemplateRequest.h>
 #include <smithy/tracing/TracingUtils.h>
@@ -232,6 +252,17 @@ AssociateSourceNetworkStackOutcome DrsClient::AssociateSourceNetworkStack(const 
                             : AssociateSourceNetworkStackOutcome(std::move(result.GetError()));
 }
 
+CancelRecoveryPlanExecutionOutcome DrsClient::CancelRecoveryPlanExecution(const CancelRecoveryPlanExecutionRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/CancelRecoveryPlanExecution");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelRecoveryPlanExecutionOutcome(result.GetResultWithOwnership())
+                            : CancelRecoveryPlanExecutionOutcome(std::move(result.GetError()));
+}
+
 CreateExtendedSourceServerOutcome DrsClient::CreateExtendedSourceServer(const CreateExtendedSourceServerRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -253,6 +284,28 @@ CreateLaunchConfigurationTemplateOutcome DrsClient::CreateLaunchConfigurationTem
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateLaunchConfigurationTemplateOutcome(result.GetResultWithOwnership())
                             : CreateLaunchConfigurationTemplateOutcome(std::move(result.GetError()));
+}
+
+CreateRecoveryPlanOutcome DrsClient::CreateRecoveryPlan(const CreateRecoveryPlanRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/CreateRecoveryPlan");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRecoveryPlanOutcome(result.GetResultWithOwnership())
+                            : CreateRecoveryPlanOutcome(std::move(result.GetError()));
+}
+
+CreateRecoveryPlanStepOutcome DrsClient::CreateRecoveryPlanStep(const CreateRecoveryPlanStepRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/CreateRecoveryPlanStep");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRecoveryPlanStepOutcome(result.GetResultWithOwnership())
+                            : CreateRecoveryPlanStepOutcome(std::move(result.GetError()));
 }
 
 CreateReplicationConfigurationTemplateOutcome DrsClient::CreateReplicationConfigurationTemplate(
@@ -320,6 +373,39 @@ DeleteRecoveryInstanceOutcome DrsClient::DeleteRecoveryInstance(const DeleteReco
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteRecoveryInstanceOutcome(result.GetResultWithOwnership())
                             : DeleteRecoveryInstanceOutcome(std::move(result.GetError()));
+}
+
+DeleteRecoveryPlanOutcome DrsClient::DeleteRecoveryPlan(const DeleteRecoveryPlanRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteRecoveryPlan");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRecoveryPlanOutcome(result.GetResultWithOwnership())
+                            : DeleteRecoveryPlanOutcome(std::move(result.GetError()));
+}
+
+DeleteRecoveryPlanExecutionOutcome DrsClient::DeleteRecoveryPlanExecution(const DeleteRecoveryPlanExecutionRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteRecoveryPlanExecution");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRecoveryPlanExecutionOutcome(result.GetResultWithOwnership())
+                            : DeleteRecoveryPlanExecutionOutcome(std::move(result.GetError()));
+}
+
+DeleteRecoveryPlanStepOutcome DrsClient::DeleteRecoveryPlanStep(const DeleteRecoveryPlanStepRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteRecoveryPlanStep");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRecoveryPlanStepOutcome(result.GetResultWithOwnership())
+                            : DeleteRecoveryPlanStepOutcome(std::move(result.GetError()));
 }
 
 DeleteReplicationConfigurationTemplateOutcome DrsClient::DeleteReplicationConfigurationTemplate(
@@ -502,6 +588,50 @@ GetLaunchConfigurationOutcome DrsClient::GetLaunchConfiguration(const GetLaunchC
                             : GetLaunchConfigurationOutcome(std::move(result.GetError()));
 }
 
+GetRecoveryPlanOutcome DrsClient::GetRecoveryPlan(const GetRecoveryPlanRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/GetRecoveryPlan");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRecoveryPlanOutcome(result.GetResultWithOwnership())
+                            : GetRecoveryPlanOutcome(std::move(result.GetError()));
+}
+
+GetRecoveryPlanExecutionOutcome DrsClient::GetRecoveryPlanExecution(const GetRecoveryPlanExecutionRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/GetRecoveryPlanExecution");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRecoveryPlanExecutionOutcome(result.GetResultWithOwnership())
+                            : GetRecoveryPlanExecutionOutcome(std::move(result.GetError()));
+}
+
+GetRecoveryPlanExecutionStepOutcome DrsClient::GetRecoveryPlanExecutionStep(const GetRecoveryPlanExecutionStepRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/GetRecoveryPlanExecutionStep");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRecoveryPlanExecutionStepOutcome(result.GetResultWithOwnership())
+                            : GetRecoveryPlanExecutionStepOutcome(std::move(result.GetError()));
+}
+
+GetRecoveryPlanStepOutcome DrsClient::GetRecoveryPlanStep(const GetRecoveryPlanStepRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/GetRecoveryPlanStep");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRecoveryPlanStepOutcome(result.GetResultWithOwnership())
+                            : GetRecoveryPlanStepOutcome(std::move(result.GetError()));
+}
+
 GetReplicationConfigurationOutcome DrsClient::GetReplicationConfiguration(const GetReplicationConfigurationRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -546,6 +676,51 @@ ListLaunchActionsOutcome DrsClient::ListLaunchActions(const ListLaunchActionsReq
                             : ListLaunchActionsOutcome(std::move(result.GetError()));
 }
 
+ListRecoveryPlanExecutionStepsOutcome DrsClient::ListRecoveryPlanExecutionSteps(
+    const ListRecoveryPlanExecutionStepsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/ListRecoveryPlanExecutionSteps");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRecoveryPlanExecutionStepsOutcome(result.GetResultWithOwnership())
+                            : ListRecoveryPlanExecutionStepsOutcome(std::move(result.GetError()));
+}
+
+ListRecoveryPlanExecutionsOutcome DrsClient::ListRecoveryPlanExecutions(const ListRecoveryPlanExecutionsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/ListRecoveryPlanExecutions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRecoveryPlanExecutionsOutcome(result.GetResultWithOwnership())
+                            : ListRecoveryPlanExecutionsOutcome(std::move(result.GetError()));
+}
+
+ListRecoveryPlanStepsOutcome DrsClient::ListRecoveryPlanSteps(const ListRecoveryPlanStepsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/ListRecoveryPlanSteps");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRecoveryPlanStepsOutcome(result.GetResultWithOwnership())
+                            : ListRecoveryPlanStepsOutcome(std::move(result.GetError()));
+}
+
+ListRecoveryPlansOutcome DrsClient::ListRecoveryPlans(const ListRecoveryPlansRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/ListRecoveryPlans");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRecoveryPlansOutcome(result.GetResultWithOwnership())
+                            : ListRecoveryPlansOutcome(std::move(result.GetError()));
+}
+
 ListStagingAccountsOutcome DrsClient::ListStagingAccounts(const ListStagingAccountsRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -586,6 +761,29 @@ PutLaunchActionOutcome DrsClient::PutLaunchAction(const PutLaunchActionRequest& 
                             : PutLaunchActionOutcome(std::move(result.GetError()));
 }
 
+ReorderRecoveryPlanStepsOutcome DrsClient::ReorderRecoveryPlanSteps(const ReorderRecoveryPlanStepsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/ReorderRecoveryPlanSteps");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ReorderRecoveryPlanStepsOutcome(result.GetResultWithOwnership())
+                            : ReorderRecoveryPlanStepsOutcome(std::move(result.GetError()));
+}
+
+RetryRecoveryPlanExecutionStepOutcome DrsClient::RetryRecoveryPlanExecutionStep(
+    const RetryRecoveryPlanExecutionStepRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/RetryRecoveryPlanExecutionStep");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RetryRecoveryPlanExecutionStepOutcome(result.GetResultWithOwnership())
+                            : RetryRecoveryPlanExecutionStepOutcome(std::move(result.GetError()));
+}
+
 ReverseReplicationOutcome DrsClient::ReverseReplication(const ReverseReplicationRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -616,6 +814,17 @@ StartRecoveryOutcome DrsClient::StartRecovery(const StartRecoveryRequest& reques
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? StartRecoveryOutcome(result.GetResultWithOwnership()) : StartRecoveryOutcome(std::move(result.GetError()));
+}
+
+StartRecoveryPlanExecutionOutcome DrsClient::StartRecoveryPlanExecution(const StartRecoveryPlanExecutionRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/StartRecoveryPlanExecution");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartRecoveryPlanExecutionOutcome(result.GetResultWithOwnership())
+                            : StartRecoveryPlanExecutionOutcome(std::move(result.GetError()));
 }
 
 StartReplicationOutcome DrsClient::StartReplication(const StartReplicationRequest& request) const {
@@ -766,6 +975,40 @@ UpdateLaunchConfigurationTemplateOutcome DrsClient::UpdateLaunchConfigurationTem
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateLaunchConfigurationTemplateOutcome(result.GetResultWithOwnership())
                             : UpdateLaunchConfigurationTemplateOutcome(std::move(result.GetError()));
+}
+
+UpdateRecoveryPlanOutcome DrsClient::UpdateRecoveryPlan(const UpdateRecoveryPlanRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateRecoveryPlan");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRecoveryPlanOutcome(result.GetResultWithOwnership())
+                            : UpdateRecoveryPlanOutcome(std::move(result.GetError()));
+}
+
+UpdateRecoveryPlanExecutionStepOutcome DrsClient::UpdateRecoveryPlanExecutionStep(
+    const UpdateRecoveryPlanExecutionStepRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateRecoveryPlanExecutionStep");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRecoveryPlanExecutionStepOutcome(result.GetResultWithOwnership())
+                            : UpdateRecoveryPlanExecutionStepOutcome(std::move(result.GetError()));
+}
+
+UpdateRecoveryPlanStepOutcome DrsClient::UpdateRecoveryPlanStep(const UpdateRecoveryPlanStepRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateRecoveryPlanStep");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRecoveryPlanStepOutcome(result.GetResultWithOwnership())
+                            : UpdateRecoveryPlanStepOutcome(std::move(result.GetError()));
 }
 
 UpdateReplicationConfigurationOutcome DrsClient::UpdateReplicationConfiguration(

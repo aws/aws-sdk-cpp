@@ -26,6 +26,10 @@ EvaluatorConfig& EvaluatorConfig::operator=(JsonView jsonValue) {
     m_codeBased = jsonValue.GetObject("codeBased");
     m_codeBasedHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("derived")) {
+    m_derived = jsonValue.GetObject("derived");
+    m_derivedHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue EvaluatorConfig::Jsonize() const {
 
   if (m_codeBasedHasBeenSet) {
     payload.WithObject("codeBased", m_codeBased.Jsonize());
+  }
+
+  if (m_derivedHasBeenSet) {
+    payload.WithObject("derived", m_derived.Jsonize());
   }
 
   return payload;

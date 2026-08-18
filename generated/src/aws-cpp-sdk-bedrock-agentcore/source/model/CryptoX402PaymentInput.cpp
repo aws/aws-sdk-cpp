@@ -26,6 +26,10 @@ CryptoX402PaymentInput& CryptoX402PaymentInput::operator=(JsonView jsonValue) {
     m_payload = jsonValue.GetObject("payload");
     m_payloadHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("permit2AllowanceLimit")) {
+    m_permit2AllowanceLimit = jsonValue.GetString("permit2AllowanceLimit");
+    m_permit2AllowanceLimitHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +44,10 @@ JsonValue CryptoX402PaymentInput::Jsonize() const {
     if (!m_payload.View().IsNull()) {
       payload.WithObject("payload", JsonValue(m_payload.View()));
     }
+  }
+
+  if (m_permit2AllowanceLimitHasBeenSet) {
+    payload.WithString("permit2AllowanceLimit", m_permit2AllowanceLimit);
   }
 
   return payload;

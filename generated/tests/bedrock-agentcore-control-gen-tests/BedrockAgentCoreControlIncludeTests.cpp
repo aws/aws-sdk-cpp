@@ -247,6 +247,7 @@
 #include <aws/bedrock-agentcore-control/model/DeleteResourcePolicyResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteWorkloadIdentityRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteWorkloadIdentityResult.h>
+#include <aws/bedrock-agentcore-control/model/DerivedEvaluatorConfig.h>
 #include <aws/bedrock-agentcore-control/model/DescriptorType.h>
 #include <aws/bedrock-agentcore-control/model/Descriptors.h>
 #include <aws/bedrock-agentcore-control/model/DraftStatus.h>
@@ -639,6 +640,7 @@
 #include <aws/bedrock-agentcore-control/model/OverrideType.h>
 #include <aws/bedrock-agentcore-control/model/PassthroughProtocolType.h>
 #include <aws/bedrock-agentcore-control/model/PassthroughTargetConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/PaymentConnectorProvisionMode.h>
 #include <aws/bedrock-agentcore-control/model/PaymentConnectorStatus.h>
 #include <aws/bedrock-agentcore-control/model/PaymentConnectorSummary.h>
 #include <aws/bedrock-agentcore-control/model/PaymentConnectorType.h>
@@ -672,6 +674,7 @@
 #include <aws/bedrock-agentcore-control/model/PrivateKeyJwtConfig.h>
 #include <aws/bedrock-agentcore-control/model/PrivateKeySource.h>
 #include <aws/bedrock-agentcore-control/model/ProtocolConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/Provider.h>
 #include <aws/bedrock-agentcore-control/model/ProviderPrefix.h>
 #include <aws/bedrock-agentcore-control/model/PutResourcePolicyRequest.h>
 #include <aws/bedrock-agentcore-control/model/PutResourcePolicyResult.h>
@@ -753,6 +756,7 @@
 #include <aws/bedrock-agentcore-control/model/StripePrivyConfigurationOutput.h>
 #include <aws/bedrock-agentcore-control/model/SubmitRegistryRecordForApprovalRequest.h>
 #include <aws/bedrock-agentcore-control/model/SubmitRegistryRecordForApprovalResult.h>
+#include <aws/bedrock-agentcore-control/model/SubscriptionRequiredException.h>
 #include <aws/bedrock-agentcore-control/model/SummaryConsolidationOverride.h>
 #include <aws/bedrock-agentcore-control/model/SummaryMemoryStrategyInput.h>
 #include <aws/bedrock-agentcore-control/model/SummaryOverrideConfigurationInput.h>

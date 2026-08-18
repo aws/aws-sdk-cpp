@@ -199,6 +199,25 @@ class PaymentManagerSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt sensitive
+   * payment manager data at rest, if configured.</p>
+   */
+  inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+  inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
+  template <typename KmsKeyArnT = Aws::String>
+  void SetKmsKeyArn(KmsKeyArnT&& value) {
+    m_kmsKeyArnHasBeenSet = true;
+    m_kmsKeyArn = std::forward<KmsKeyArnT>(value);
+  }
+  template <typename KmsKeyArnT = Aws::String>
+  PaymentManagerSummary& WithKmsKeyArn(KmsKeyArnT&& value) {
+    SetKmsKeyArn(std::forward<KmsKeyArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_paymentManagerArn;
 
@@ -217,6 +236,8 @@ class PaymentManagerSummary {
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
+
+  Aws::String m_kmsKeyArn;
   bool m_paymentManagerArnHasBeenSet = false;
   bool m_paymentManagerIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -226,6 +247,7 @@ class PaymentManagerSummary {
   bool m_statusHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
 };
 
 }  // namespace Model

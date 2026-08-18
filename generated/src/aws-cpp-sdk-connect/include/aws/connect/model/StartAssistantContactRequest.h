@@ -56,7 +56,7 @@ class StartAssistantContactRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The AI agent that participates in the contact.</p>
+   * <p>The AI agent configuration for this contact.</p>
    */
   inline const AiAgentInput& GetAiAgent() const { return m_aiAgent; }
   inline bool AiAgentHasBeenSet() const { return m_aiAgentHasBeenSet; }
@@ -110,11 +110,10 @@ class StartAssistantContactRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>A map of key-value pairs to associate with the contact. Amazon Connect makes
-   * these attributes available to flows as standard contact attributes.</p> <p>You
-   * can provide up to 32,768 UTF-8 bytes across all key-value pairs per contact.
-   * Attribute keys can contain only alphanumeric characters, dashes, and
-   * underscores.</p>
+   * <p>A map of key-value pairs to associate with the contact. We make these
+   * attributes available to flows as standard contact attributes.</p> <p>You can
+   * provide up to 32,768 UTF-8 bytes across all key-value pairs for each
+   * contact.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const { return m_attributes; }
   inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }

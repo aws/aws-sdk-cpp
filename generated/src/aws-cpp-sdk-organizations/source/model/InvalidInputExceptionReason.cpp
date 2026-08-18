@@ -55,6 +55,7 @@ static const int START_DATE_TOO_LATE_HASH = HashingUtils::HashString("START_DATE
 static const int INVALID_START_DATE_HASH = HashingUtils::HashString("INVALID_START_DATE");
 static const int END_DATE_NOT_END_OF_MONTH_HASH = HashingUtils::HashString("END_DATE_NOT_END_OF_MONTH");
 static const int END_DATE_TOO_EARLY_HASH = HashingUtils::HashString("END_DATE_TOO_EARLY");
+static const int END_DATE_TOO_LATE_HASH = HashingUtils::HashString("END_DATE_TOO_LATE");
 static const int INVALID_END_DATE_HASH = HashingUtils::HashString("INVALID_END_DATE");
 
 InvalidInputExceptionReason GetInvalidInputExceptionReasonForName(const Aws::String& name) {
@@ -137,6 +138,8 @@ InvalidInputExceptionReason GetInvalidInputExceptionReasonForName(const Aws::Str
     return InvalidInputExceptionReason::END_DATE_NOT_END_OF_MONTH;
   } else if (hashCode == END_DATE_TOO_EARLY_HASH) {
     return InvalidInputExceptionReason::END_DATE_TOO_EARLY;
+  } else if (hashCode == END_DATE_TOO_LATE_HASH) {
+    return InvalidInputExceptionReason::END_DATE_TOO_LATE;
   } else if (hashCode == INVALID_END_DATE_HASH) {
     return InvalidInputExceptionReason::INVALID_END_DATE;
   }
@@ -231,6 +234,8 @@ Aws::String GetNameForInvalidInputExceptionReason(InvalidInputExceptionReason en
       return "END_DATE_NOT_END_OF_MONTH";
     case InvalidInputExceptionReason::END_DATE_TOO_EARLY:
       return "END_DATE_TOO_EARLY";
+    case InvalidInputExceptionReason::END_DATE_TOO_LATE:
+      return "END_DATE_TOO_LATE";
     case InvalidInputExceptionReason::INVALID_END_DATE:
       return "INVALID_END_DATE";
     default:

@@ -53,6 +53,7 @@
 #include <aws/connect/model/CreateDataTableResult.h>
 #include <aws/connect/model/CreateEmailAddressResult.h>
 #include <aws/connect/model/CreateEvaluationFormResult.h>
+#include <aws/connect/model/CreateExtractionDefinitionResult.h>
 #include <aws/connect/model/CreateHoursOfOperationOverrideResult.h>
 #include <aws/connect/model/CreateHoursOfOperationResult.h>
 #include <aws/connect/model/CreateInstanceResult.h>
@@ -90,6 +91,7 @@
 #include <aws/connect/model/DeleteDataTableAttributeResult.h>
 #include <aws/connect/model/DeleteDataTableResult.h>
 #include <aws/connect/model/DeleteEmailAddressResult.h>
+#include <aws/connect/model/DeleteExtractionDefinitionResult.h>
 #include <aws/connect/model/DeleteMetricResult.h>
 #include <aws/connect/model/DeleteNotificationResult.h>
 #include <aws/connect/model/DeletePushNotificationRegistrationResult.h>
@@ -115,6 +117,7 @@
 #include <aws/connect/model/DescribeDataTableResult.h>
 #include <aws/connect/model/DescribeEmailAddressResult.h>
 #include <aws/connect/model/DescribeEvaluationFormResult.h>
+#include <aws/connect/model/DescribeExtractionDefinitionResult.h>
 #include <aws/connect/model/DescribeHoursOfOperationOverrideResult.h>
 #include <aws/connect/model/DescribeHoursOfOperationResult.h>
 #include <aws/connect/model/DescribeInstanceAttributeResult.h>
@@ -185,6 +188,7 @@
 #include <aws/connect/model/ListEntitySecurityProfilesResult.h>
 #include <aws/connect/model/ListEvaluationFormVersionsResult.h>
 #include <aws/connect/model/ListEvaluationFormsResult.h>
+#include <aws/connect/model/ListExtractionDefinitionsResult.h>
 #include <aws/connect/model/ListFlowAssociationsResult.h>
 #include <aws/connect/model/ListHoursOfOperationOverridesResult.h>
 #include <aws/connect/model/ListHoursOfOperationsResult.h>
@@ -318,6 +322,7 @@
 #include <aws/connect/model/UpdateDataTablePrimaryValuesResult.h>
 #include <aws/connect/model/UpdateEmailAddressMetadataResult.h>
 #include <aws/connect/model/UpdateEvaluationFormResult.h>
+#include <aws/connect/model/UpdateExtractionDefinitionResult.h>
 #include <aws/connect/model/UpdateMetricContentResult.h>
 #include <aws/connect/model/UpdateMetricMetadataResult.h>
 #include <aws/connect/model/UpdateNotificationContentResult.h>
@@ -414,6 +419,7 @@ class CreateDataTableRequest;
 class CreateDataTableAttributeRequest;
 class CreateEmailAddressRequest;
 class CreateEvaluationFormRequest;
+class CreateExtractionDefinitionRequest;
 class CreateHoursOfOperationRequest;
 class CreateHoursOfOperationOverrideRequest;
 class CreateInstanceRequest;
@@ -454,6 +460,7 @@ class DeleteDataTableRequest;
 class DeleteDataTableAttributeRequest;
 class DeleteEmailAddressRequest;
 class DeleteEvaluationFormRequest;
+class DeleteExtractionDefinitionRequest;
 class DeleteHoursOfOperationRequest;
 class DeleteHoursOfOperationOverrideRequest;
 class DeleteInstanceRequest;
@@ -493,6 +500,7 @@ class DescribeDataTableRequest;
 class DescribeDataTableAttributeRequest;
 class DescribeEmailAddressRequest;
 class DescribeEvaluationFormRequest;
+class DescribeExtractionDefinitionRequest;
 class DescribeHoursOfOperationRequest;
 class DescribeHoursOfOperationOverrideRequest;
 class DescribeInstanceRequest;
@@ -577,6 +585,7 @@ class ListDefaultVocabulariesRequest;
 class ListEntitySecurityProfilesRequest;
 class ListEvaluationFormVersionsRequest;
 class ListEvaluationFormsRequest;
+class ListExtractionDefinitionsRequest;
 class ListFlowAssociationsRequest;
 class ListHoursOfOperationOverridesRequest;
 class ListHoursOfOperationsRequest;
@@ -710,6 +719,7 @@ class UpdateDataTableMetadataRequest;
 class UpdateDataTablePrimaryValuesRequest;
 class UpdateEmailAddressMetadataRequest;
 class UpdateEvaluationFormRequest;
+class UpdateExtractionDefinitionRequest;
 class UpdateHoursOfOperationRequest;
 class UpdateHoursOfOperationOverrideRequest;
 class UpdateInstanceAttributeRequest;
@@ -805,6 +815,7 @@ typedef Aws::Utils::Outcome<CreateDataTableResult, ConnectError> CreateDataTable
 typedef Aws::Utils::Outcome<CreateDataTableAttributeResult, ConnectError> CreateDataTableAttributeOutcome;
 typedef Aws::Utils::Outcome<CreateEmailAddressResult, ConnectError> CreateEmailAddressOutcome;
 typedef Aws::Utils::Outcome<CreateEvaluationFormResult, ConnectError> CreateEvaluationFormOutcome;
+typedef Aws::Utils::Outcome<CreateExtractionDefinitionResult, ConnectError> CreateExtractionDefinitionOutcome;
 typedef Aws::Utils::Outcome<CreateHoursOfOperationResult, ConnectError> CreateHoursOfOperationOutcome;
 typedef Aws::Utils::Outcome<CreateHoursOfOperationOverrideResult, ConnectError> CreateHoursOfOperationOverrideOutcome;
 typedef Aws::Utils::Outcome<CreateInstanceResult, ConnectError> CreateInstanceOutcome;
@@ -845,6 +856,7 @@ typedef Aws::Utils::Outcome<DeleteDataTableResult, ConnectError> DeleteDataTable
 typedef Aws::Utils::Outcome<DeleteDataTableAttributeResult, ConnectError> DeleteDataTableAttributeOutcome;
 typedef Aws::Utils::Outcome<DeleteEmailAddressResult, ConnectError> DeleteEmailAddressOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteEvaluationFormOutcome;
+typedef Aws::Utils::Outcome<DeleteExtractionDefinitionResult, ConnectError> DeleteExtractionDefinitionOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteHoursOfOperationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteHoursOfOperationOverrideOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteInstanceOutcome;
@@ -884,6 +896,7 @@ typedef Aws::Utils::Outcome<DescribeDataTableResult, ConnectError> DescribeDataT
 typedef Aws::Utils::Outcome<DescribeDataTableAttributeResult, ConnectError> DescribeDataTableAttributeOutcome;
 typedef Aws::Utils::Outcome<DescribeEmailAddressResult, ConnectError> DescribeEmailAddressOutcome;
 typedef Aws::Utils::Outcome<DescribeEvaluationFormResult, ConnectError> DescribeEvaluationFormOutcome;
+typedef Aws::Utils::Outcome<DescribeExtractionDefinitionResult, ConnectError> DescribeExtractionDefinitionOutcome;
 typedef Aws::Utils::Outcome<DescribeHoursOfOperationResult, ConnectError> DescribeHoursOfOperationOutcome;
 typedef Aws::Utils::Outcome<DescribeHoursOfOperationOverrideResult, ConnectError> DescribeHoursOfOperationOverrideOutcome;
 typedef Aws::Utils::Outcome<DescribeInstanceResult, ConnectError> DescribeInstanceOutcome;
@@ -968,6 +981,7 @@ typedef Aws::Utils::Outcome<ListDefaultVocabulariesResult, ConnectError> ListDef
 typedef Aws::Utils::Outcome<ListEntitySecurityProfilesResult, ConnectError> ListEntitySecurityProfilesOutcome;
 typedef Aws::Utils::Outcome<ListEvaluationFormVersionsResult, ConnectError> ListEvaluationFormVersionsOutcome;
 typedef Aws::Utils::Outcome<ListEvaluationFormsResult, ConnectError> ListEvaluationFormsOutcome;
+typedef Aws::Utils::Outcome<ListExtractionDefinitionsResult, ConnectError> ListExtractionDefinitionsOutcome;
 typedef Aws::Utils::Outcome<ListFlowAssociationsResult, ConnectError> ListFlowAssociationsOutcome;
 typedef Aws::Utils::Outcome<ListHoursOfOperationOverridesResult, ConnectError> ListHoursOfOperationOverridesOutcome;
 typedef Aws::Utils::Outcome<ListHoursOfOperationsResult, ConnectError> ListHoursOfOperationsOutcome;
@@ -1101,6 +1115,7 @@ typedef Aws::Utils::Outcome<UpdateDataTableMetadataResult, ConnectError> UpdateD
 typedef Aws::Utils::Outcome<UpdateDataTablePrimaryValuesResult, ConnectError> UpdateDataTablePrimaryValuesOutcome;
 typedef Aws::Utils::Outcome<UpdateEmailAddressMetadataResult, ConnectError> UpdateEmailAddressMetadataOutcome;
 typedef Aws::Utils::Outcome<UpdateEvaluationFormResult, ConnectError> UpdateEvaluationFormOutcome;
+typedef Aws::Utils::Outcome<UpdateExtractionDefinitionResult, ConnectError> UpdateExtractionDefinitionOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateHoursOfOperationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateHoursOfOperationOverrideOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateInstanceAttributeOutcome;
@@ -1196,6 +1211,7 @@ typedef std::future<CreateDataTableOutcome> CreateDataTableOutcomeCallable;
 typedef std::future<CreateDataTableAttributeOutcome> CreateDataTableAttributeOutcomeCallable;
 typedef std::future<CreateEmailAddressOutcome> CreateEmailAddressOutcomeCallable;
 typedef std::future<CreateEvaluationFormOutcome> CreateEvaluationFormOutcomeCallable;
+typedef std::future<CreateExtractionDefinitionOutcome> CreateExtractionDefinitionOutcomeCallable;
 typedef std::future<CreateHoursOfOperationOutcome> CreateHoursOfOperationOutcomeCallable;
 typedef std::future<CreateHoursOfOperationOverrideOutcome> CreateHoursOfOperationOverrideOutcomeCallable;
 typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
@@ -1236,6 +1252,7 @@ typedef std::future<DeleteDataTableOutcome> DeleteDataTableOutcomeCallable;
 typedef std::future<DeleteDataTableAttributeOutcome> DeleteDataTableAttributeOutcomeCallable;
 typedef std::future<DeleteEmailAddressOutcome> DeleteEmailAddressOutcomeCallable;
 typedef std::future<DeleteEvaluationFormOutcome> DeleteEvaluationFormOutcomeCallable;
+typedef std::future<DeleteExtractionDefinitionOutcome> DeleteExtractionDefinitionOutcomeCallable;
 typedef std::future<DeleteHoursOfOperationOutcome> DeleteHoursOfOperationOutcomeCallable;
 typedef std::future<DeleteHoursOfOperationOverrideOutcome> DeleteHoursOfOperationOverrideOutcomeCallable;
 typedef std::future<DeleteInstanceOutcome> DeleteInstanceOutcomeCallable;
@@ -1275,6 +1292,7 @@ typedef std::future<DescribeDataTableOutcome> DescribeDataTableOutcomeCallable;
 typedef std::future<DescribeDataTableAttributeOutcome> DescribeDataTableAttributeOutcomeCallable;
 typedef std::future<DescribeEmailAddressOutcome> DescribeEmailAddressOutcomeCallable;
 typedef std::future<DescribeEvaluationFormOutcome> DescribeEvaluationFormOutcomeCallable;
+typedef std::future<DescribeExtractionDefinitionOutcome> DescribeExtractionDefinitionOutcomeCallable;
 typedef std::future<DescribeHoursOfOperationOutcome> DescribeHoursOfOperationOutcomeCallable;
 typedef std::future<DescribeHoursOfOperationOverrideOutcome> DescribeHoursOfOperationOverrideOutcomeCallable;
 typedef std::future<DescribeInstanceOutcome> DescribeInstanceOutcomeCallable;
@@ -1359,6 +1377,7 @@ typedef std::future<ListDefaultVocabulariesOutcome> ListDefaultVocabulariesOutco
 typedef std::future<ListEntitySecurityProfilesOutcome> ListEntitySecurityProfilesOutcomeCallable;
 typedef std::future<ListEvaluationFormVersionsOutcome> ListEvaluationFormVersionsOutcomeCallable;
 typedef std::future<ListEvaluationFormsOutcome> ListEvaluationFormsOutcomeCallable;
+typedef std::future<ListExtractionDefinitionsOutcome> ListExtractionDefinitionsOutcomeCallable;
 typedef std::future<ListFlowAssociationsOutcome> ListFlowAssociationsOutcomeCallable;
 typedef std::future<ListHoursOfOperationOverridesOutcome> ListHoursOfOperationOverridesOutcomeCallable;
 typedef std::future<ListHoursOfOperationsOutcome> ListHoursOfOperationsOutcomeCallable;
@@ -1492,6 +1511,7 @@ typedef std::future<UpdateDataTableMetadataOutcome> UpdateDataTableMetadataOutco
 typedef std::future<UpdateDataTablePrimaryValuesOutcome> UpdateDataTablePrimaryValuesOutcomeCallable;
 typedef std::future<UpdateEmailAddressMetadataOutcome> UpdateEmailAddressMetadataOutcomeCallable;
 typedef std::future<UpdateEvaluationFormOutcome> UpdateEvaluationFormOutcomeCallable;
+typedef std::future<UpdateExtractionDefinitionOutcome> UpdateExtractionDefinitionOutcomeCallable;
 typedef std::future<UpdateHoursOfOperationOutcome> UpdateHoursOfOperationOutcomeCallable;
 typedef std::future<UpdateHoursOfOperationOverrideOutcome> UpdateHoursOfOperationOverrideOutcomeCallable;
 typedef std::future<UpdateInstanceAttributeOutcome> UpdateInstanceAttributeOutcomeCallable;
@@ -1690,6 +1710,9 @@ typedef std::function<void(const ConnectClient*, const Model::CreateEmailAddress
 typedef std::function<void(const ConnectClient*, const Model::CreateEvaluationFormRequest&, const Model::CreateEvaluationFormOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateEvaluationFormResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::CreateExtractionDefinitionRequest&,
+                           const Model::CreateExtractionDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateExtractionDefinitionResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::CreateHoursOfOperationRequest&, const Model::CreateHoursOfOperationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateHoursOfOperationResponseReceivedHandler;
@@ -1817,6 +1840,9 @@ typedef std::function<void(const ConnectClient*, const Model::DeleteEmailAddress
 typedef std::function<void(const ConnectClient*, const Model::DeleteEvaluationFormRequest&, const Model::DeleteEvaluationFormOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteEvaluationFormResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::DeleteExtractionDefinitionRequest&,
+                           const Model::DeleteExtractionDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteExtractionDefinitionResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::DeleteHoursOfOperationRequest&, const Model::DeleteHoursOfOperationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteHoursOfOperationResponseReceivedHandler;
@@ -1941,6 +1967,10 @@ typedef std::function<void(const ConnectClient*, const Model::DescribeEmailAddre
 typedef std::function<void(const ConnectClient*, const Model::DescribeEvaluationFormRequest&, const Model::DescribeEvaluationFormOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeEvaluationFormResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::DescribeExtractionDefinitionRequest&,
+                           const Model::DescribeExtractionDefinitionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeExtractionDefinitionResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::DescribeHoursOfOperationRequest&,
                            const Model::DescribeHoursOfOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeHoursOfOperationResponseReceivedHandler;
@@ -2214,6 +2244,9 @@ typedef std::function<void(const ConnectClient*, const Model::ListEvaluationForm
 typedef std::function<void(const ConnectClient*, const Model::ListEvaluationFormsRequest&, const Model::ListEvaluationFormsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListEvaluationFormsResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::ListExtractionDefinitionsRequest&,
+                           const Model::ListExtractionDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListExtractionDefinitionsResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::ListFlowAssociationsRequest&, const Model::ListFlowAssociationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListFlowAssociationsResponseReceivedHandler;
@@ -2630,6 +2663,9 @@ typedef std::function<void(const ConnectClient*, const Model::UpdateEmailAddress
 typedef std::function<void(const ConnectClient*, const Model::UpdateEvaluationFormRequest&, const Model::UpdateEvaluationFormOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateEvaluationFormResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::UpdateExtractionDefinitionRequest&,
+                           const Model::UpdateExtractionDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateExtractionDefinitionResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::UpdateHoursOfOperationRequest&, const Model::UpdateHoursOfOperationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateHoursOfOperationResponseReceivedHandler;

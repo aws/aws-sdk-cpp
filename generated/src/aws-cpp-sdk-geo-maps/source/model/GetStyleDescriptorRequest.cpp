@@ -63,6 +63,20 @@ void GetStyleDescriptorRequest::AddQueryStringParameters(URI& uri) const {
     ss.str("");
   }
 
+  if (m_poiDensityHasBeenSet) {
+    ss << PoiDensityMapper::GetNameForPoiDensity(m_poiDensity);
+    uri.AddQueryStringParameter("poi-density", ss.str());
+    ss.str("");
+  }
+
+  if (m_poiCategoriesHasBeenSet) {
+    for (const auto& item : m_poiCategories) {
+      ss << PoiCategoryMapper::GetNameForPoiCategory(item);
+      uri.AddQueryStringParameter("poi-categories", ss.str());
+      ss.str("");
+    }
+  }
+
   if (m_keyHasBeenSet) {
     ss << m_key;
     uri.AddQueryStringParameter("key", ss.str());

@@ -160,6 +160,25 @@ class CreatePaymentConnectorResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The URL that the user must open to complete OAuth consent. This field is only
+   * present when the payment connector status is
+   * <code>PENDING_AUTHENTICATION</code>.</p>
+   */
+  inline const Aws::String& GetAuthorizationUrl() const { return m_authorizationUrl; }
+  template <typename AuthorizationUrlT = Aws::String>
+  void SetAuthorizationUrl(AuthorizationUrlT&& value) {
+    m_authorizationUrlHasBeenSet = true;
+    m_authorizationUrl = std::forward<AuthorizationUrlT>(value);
+  }
+  template <typename AuthorizationUrlT = Aws::String>
+  CreatePaymentConnectorResult& WithAuthorizationUrl(AuthorizationUrlT&& value) {
+    SetAuthorizationUrl(std::forward<AuthorizationUrlT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -190,6 +209,8 @@ class CreatePaymentConnectorResult {
 
   PaymentConnectorStatus m_status{PaymentConnectorStatus::NOT_SET};
 
+  Aws::String m_authorizationUrl;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_paymentConnectorIdHasBeenSet = false;
@@ -199,6 +220,7 @@ class CreatePaymentConnectorResult {
   bool m_credentialProviderConfigurationsHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_authorizationUrlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

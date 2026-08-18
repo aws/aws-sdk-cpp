@@ -35,5 +35,9 @@ Aws::String UpdatePaymentManagerRequest::SerializePayload() const {
     payload.WithString("clientToken", m_clientToken);
   }
 
+  if (m_kmsKeyArnHasBeenSet) {
+    payload.WithString("kmsKeyArn", m_kmsKeyArn);
+  }
+
   return payload.View().WriteReadable();
 }

@@ -52,6 +52,45 @@ class DisassociateGlossaryTermsRequest : public GlueRequest {
 
   ///@{
   /**
+   * <p>The name of the iterable form. When specified along with
+   * <code>itemIdentifier</code>, the glossary terms are disassociated from an item
+   * within the iterable form rather than the asset itself.</p>
+   */
+  inline const Aws::String& GetIterableFormName() const { return m_iterableFormName; }
+  inline bool IterableFormNameHasBeenSet() const { return m_iterableFormNameHasBeenSet; }
+  template <typename IterableFormNameT = Aws::String>
+  void SetIterableFormName(IterableFormNameT&& value) {
+    m_iterableFormNameHasBeenSet = true;
+    m_iterableFormName = std::forward<IterableFormNameT>(value);
+  }
+  template <typename IterableFormNameT = Aws::String>
+  DisassociateGlossaryTermsRequest& WithIterableFormName(IterableFormNameT&& value) {
+    SetIterableFormName(std::forward<IterableFormNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of the item within the iterable form. Required when
+   * <code>iterableFormName</code> is specified.</p>
+   */
+  inline const Aws::String& GetItemIdentifier() const { return m_itemIdentifier; }
+  inline bool ItemIdentifierHasBeenSet() const { return m_itemIdentifierHasBeenSet; }
+  template <typename ItemIdentifierT = Aws::String>
+  void SetItemIdentifier(ItemIdentifierT&& value) {
+    m_itemIdentifierHasBeenSet = true;
+    m_itemIdentifier = std::forward<ItemIdentifierT>(value);
+  }
+  template <typename ItemIdentifierT = Aws::String>
+  DisassociateGlossaryTermsRequest& WithItemIdentifier(ItemIdentifierT&& value) {
+    SetItemIdentifier(std::forward<ItemIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The list of glossary term identifiers to disassociate from the asset.</p>
    */
   inline const Aws::Vector<Aws::String>& GetGlossaryTermIdentifiers() const { return m_glossaryTermIdentifiers; }
@@ -95,10 +134,16 @@ class DisassociateGlossaryTermsRequest : public GlueRequest {
  private:
   Aws::String m_assetIdentifier;
 
+  Aws::String m_iterableFormName;
+
+  Aws::String m_itemIdentifier;
+
   Aws::Vector<Aws::String> m_glossaryTermIdentifiers;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_assetIdentifierHasBeenSet = false;
+  bool m_iterableFormNameHasBeenSet = false;
+  bool m_itemIdentifierHasBeenSet = false;
   bool m_glossaryTermIdentifiersHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };

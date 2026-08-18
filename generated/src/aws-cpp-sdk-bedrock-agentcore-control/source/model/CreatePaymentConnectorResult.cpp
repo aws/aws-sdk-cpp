@@ -56,6 +56,10 @@ CreatePaymentConnectorResult& CreatePaymentConnectorResult::operator=(const Aws:
     m_status = PaymentConnectorStatusMapper::GetPaymentConnectorStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("authorizationUrl")) {
+    m_authorizationUrl = jsonValue.GetString("authorizationUrl");
+    m_authorizationUrlHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

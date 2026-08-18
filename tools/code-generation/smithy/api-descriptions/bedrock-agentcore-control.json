@@ -968,6 +968,9 @@
                     "target": "com.amazonaws.bedrockagentcorecontrol#OnlineEvaluationConfig"
                 },
                 {
+                    "target": "com.amazonaws.bedrockagentcorecontrol#PaymentConnectionResource"
+                },
+                {
                     "target": "com.amazonaws.bedrockagentcorecontrol#PaymentCredentialProvider"
                 },
                 {
@@ -2887,7 +2890,9 @@
                 "capacityProviderArn": {
                     "target": "com.amazonaws.bedrockagentcorecontrol#CapacityProviderArn",
                     "traits": {
-                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the capacity provider to use for the AgentCore Runtime.</p>"
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the capacity provider to use for the AgentCore Runtime.</p>",
+                        "smithy.api#required": {}
                     }
                 }
             },
@@ -7497,6 +7502,9 @@
                     "target": "com.amazonaws.bedrockagentcorecontrol#ServiceQuotaExceededException"
                 },
                 {
+                    "target": "com.amazonaws.bedrockagentcorecontrol#SubscriptionRequiredException"
+                },
+                {
                     "target": "com.amazonaws.bedrockagentcorecontrol#ThrottlingException"
                 },
                 {
@@ -7549,6 +7557,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>The credential provider configurations for the payment connector. These configurations specify how the connector authenticates with the payment provider.</p>",
                         "smithy.api#required": {}
+                    }
+                },
+                "provisionMode": {
+                    "target": "com.amazonaws.bedrockagentcorecontrol#PaymentConnectorProvisionMode",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The provision mode for creating the payment connector. If you don't specify a value, the default is <code>MANUAL</code>.</p> <ul> <li> <p> <code>MANUAL</code> - You provide the credential provider configurations directly.</p> </li> <li> <p> <code>QUICK_CREATE</code> - The service orchestrates OAuth consent and provisions the credential provider for you.</p> </li> </ul>"
                     }
                 },
                 "clientToken": {
@@ -7613,6 +7627,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>The current status of the payment connector. Possible values include <code>CREATING</code>, <code>READY</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>CREATE_FAILED</code>, <code>UPDATE_FAILED</code>, and <code>DELETE_FAILED</code>.</p>",
                         "smithy.api#required": {}
+                    }
+                },
+                "authorizationUrl": {
+                    "target": "com.amazonaws.bedrockagentcorecontrol#PaymentConnectorAuthorizationUrl",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The URL that the user must open to complete OAuth consent. This field is only present when the payment connector status is <code>PENDING_AUTHENTICATION</code>.</p>"
                     }
                 }
             },
@@ -7833,6 +7853,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>A map of tag keys and values to assign to the payment manager.</p>"
                     }
+                },
+                "kmsKeyArn": {
+                    "target": "com.amazonaws.bedrockagentcorecontrol#KmsKeyArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for encrypting sensitive payment manager data at rest. If you don't specify a key, the data is encrypted with an Amazon Web Services owned key.</p>"
+                    }
                 }
             },
             "traits": {
@@ -7902,6 +7928,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>The tags associated with the created payment manager.</p>"
                     }
+                },
+                "kmsKeyArn": {
+                    "target": "com.amazonaws.bedrockagentcorecontrol#KmsKeyArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the KMS key used to encrypt sensitive payment manager data at rest, if configured.</p>"
+                    }
                 }
             },
             "traits": {
@@ -7940,7 +7972,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Creates a policy within the AgentCore Policy system. Policies provide real-time, deterministic control over agentic interactions with AgentCore Gateway. Using the Cedar policy language, you can define fine-grained policies that specify which interactions with Gateway tools are permitted based on input parameters and OAuth claims, ensuring agents operate within defined boundaries and business rules. The policy is validated during creation against the Cedar schema generated from the Gateway's tools' input schemas, which defines the available tools, their parameters, and expected data types. This is an asynchronous operation. Use the <a href=\"https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPolicy.html\">GetPolicy</a> operation to poll the <code>status</code> field to track completion.</p>",
+                "smithy.api#documentation": "<p>Creates a policy within the AgentCore Policy system. Policies provide real-time, deterministic control over agentic interactions with AgentCore Gateway. Using the Cedar policy language, you can define fine-grained policies that specify which interactions with Gateway tools are permitted based on input parameters and OAuth claims, ensuring agents operate within defined boundaries and business rules. The policy is validated during creation against the Cedar schema generated from the Gateway's tools' input schemas, which defines the available tools, their parameters, and expected data types. This is an asynchronous operation. Use the <a href=\"https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPolicy.html\">GetPolicy</a> operation to poll the <code>status</code> field to track completion.</p> <p>If the new policy is a temporal policy, creating it invalidates the policy engine's active temporal sessions. For more information about temporal policy sessions, see <a href=\"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/policy-session-based-temporal.html\">session-based temporal policies</a>. The policy engine returns an HTTP 409 <code>ConflictException</code> to in-flight sessions. To resume, you must start a new session with a new session ID.</p>",
                 "smithy.api#http": {
                     "method": "POST",
                     "uri": "/policy-engines/{policyEngineId}/policies",
@@ -8874,7 +8906,7 @@
             },
             "traits": {
                 "smithy.api#length": {
-                    "min": 1,
+                    "min": 0,
                     "max": 1
                 }
             }
@@ -9499,6 +9531,13 @@
                     "traits": {
                         "smithy.api#documentation": "<p> AgentCore simulated evaluation schema, version 1. Dataset for synthetic data generation where each example is a scenario used to generate full conversations. </p>",
                         "smithy.api#enumValue": "AGENTCORE_EVALUATION_SIMULATED_V1"
+                    }
+                },
+                "GENERIC_EVALUATION_PREDEFINED_V1": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#documentation": "<p> Unified generic evaluation schema, version 1. Supports single-turn (string input) and multi-turn (message list input) across all evaluation frameworks. </p>",
+                        "smithy.api#enumValue": "GENERIC_EVALUATION_PREDEFINED_V1"
                     }
                 }
             },
@@ -12320,6 +12359,28 @@
                 "smithy.api#output": {}
             }
         },
+        "com.amazonaws.bedrockagentcorecontrol#DerivedEvaluatorConfig": {
+            "type": "structure",
+            "members": {
+                "baseEvaluatorId": {
+                    "target": "com.amazonaws.bedrockagentcorecontrol#EvaluatorId",
+                    "traits": {
+                        "smithy.api#documentation": "<p> The identifier of the base evaluator whose logic to run (a <code>Builtin.*</code> or <code>ThirdParty.*</code> evaluator). </p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "modelConfig": {
+                    "target": "com.amazonaws.bedrockagentcorecontrol#EvaluatorModelConfig",
+                    "traits": {
+                        "smithy.api#documentation": "<p> The configuration of the evaluator model that you supply. </p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p> The configuration for a derived evaluator. It reuses an existing evaluator's logic on your own model. </p>"
+            }
+        },
         "com.amazonaws.bedrockagentcorecontrol#Description": {
             "type": "string",
             "traits": {
@@ -13319,7 +13380,7 @@
                 "aws.api#arnReference": {
                     "type": "AWS::BedrockAgentCore::Evaluator"
                 },
-                "smithy.api#pattern": "^arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:evaluator\\/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$|^arn:aws[a-zA-Z-]*:bedrock-agentcore:::evaluator/Builtin.[a-zA-Z0-9_-]+$"
+                "smithy.api#pattern": "^arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:evaluator\\/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$|^arn:aws[a-zA-Z-]*:bedrock-agentcore:::evaluator/(Builtin|ThirdParty)\\.[a-zA-Z0-9._-]+$"
             }
         },
         "com.amazonaws.bedrockagentcorecontrol#EvaluatorConfig": {
@@ -13335,6 +13396,12 @@
                     "target": "com.amazonaws.bedrockagentcorecontrol#CodeBasedEvaluatorConfig",
                     "traits": {
                         "smithy.api#documentation": "<p> Configuration for a code-based evaluator that uses a customer-managed Lambda function to programmatically assess agent performance. </p>"
+                    }
+                },
+                "derived": {
+                    "target": "com.amazonaws.bedrockagentcorecontrol#DerivedEvaluatorConfig",
+                    "traits": {
+                        "smithy.api#documentation": "<p> The configuration for an evaluator derived from an existing base evaluator (a built-in or third-party evaluator), run on your own model. The base evaluator supplies the prompt and scoring. </p>"
                     }
                 }
             },
@@ -13355,7 +13422,11 @@
         "com.amazonaws.bedrockagentcorecontrol#EvaluatorId": {
             "type": "string",
             "traits": {
-                "smithy.api#pattern": "^(Builtin.[a-zA-Z0-9_-]+|[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10})$"
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 111
+                },
+                "smithy.api#pattern": "^(Builtin\\.[a-zA-Z0-9._-]+|ThirdParty\\.[a-zA-Z0-9_-]+\\.[a-zA-Z0-9_-]+|[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10})$"
             }
         },
         "com.amazonaws.bedrockagentcorecontrol#EvaluatorInstructions": {
@@ -13422,7 +13493,11 @@
         "com.amazonaws.bedrockagentcorecontrol#EvaluatorName": {
             "type": "string",
             "traits": {
-                "smithy.api#pattern": "^(Builtin.[a-zA-Z0-9_-]+|[a-zA-Z][a-zA-Z0-9_]{0,47})$"
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 48
+                },
+                "smithy.api#pattern": "^(Builtin\\.[a-zA-Z0-9._-]+|ThirdParty\\.[a-zA-Z0-9_-]+\\.[a-zA-Z0-9_-]+|[a-zA-Z][a-zA-Z0-9_]{0,47})$"
             }
         },
         "com.amazonaws.bedrockagentcorecontrol#EvaluatorReference": {
@@ -13520,6 +13595,12 @@
                         "smithy.api#required": {}
                     }
                 },
+                "provider": {
+                    "target": "com.amazonaws.bedrockagentcorecontrol#Provider",
+                    "traits": {
+                        "smithy.api#documentation": "<p> The source of the evaluator's logic: Amazon Web Services, a third-party library, or you. </p>"
+                    }
+                },
                 "level": {
                     "target": "com.amazonaws.bedrockagentcorecontrol#EvaluatorLevel",
                     "traits": {
@@ -13579,6 +13660,12 @@
                         "smithy.api#enumValue": "Builtin"
                     }
                 },
+                "THIRD_PARTY": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ThirdParty"
+                    }
+                },
                 "CUSTOM": {
                     "target": "smithy.api#Unit",
                     "traits": {
@@ -13589,6 +13676,12 @@
                     "target": "smithy.api#Unit",
                     "traits": {
                         "smithy.api#enumValue": "CustomCode"
+                    }
+                },
+                "CUSTOM_DERIVED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "CustomDerived"
                     }
                 }
             }
@@ -15037,8 +15130,7 @@
                 "networkConfiguration": {
                     "target": "com.amazonaws.bedrockagentcorecontrol#NetworkConfiguration",
                     "traits": {
-                        "smithy.api#documentation": "<p>The network configuration for the AgentCore Runtime.</p>",
-                        "smithy.api#required": {}
+                        "smithy.api#documentation": "<p>The network configuration for the AgentCore Runtime.</p>"
                     }
                 },
                 "status": {
@@ -16314,6 +16406,18 @@
                     "traits": {
                         "smithy.api#documentation": "<p> The configuration of the evaluator, including LLM-as-a-Judge or code-based settings. </p>",
                         "smithy.api#required": {}
+                    }
+                },
+                "evaluatorType": {
+                    "target": "com.amazonaws.bedrockagentcorecontrol#EvaluatorType",
+                    "traits": {
+                        "smithy.api#documentation": "<p> The kind of evaluator resource. Valid values: </p> <ul> <li> <p> <code>Builtin</code> – An Amazon Web Services-managed global evaluator.</p> </li> <li> <p> <code>ThirdParty</code> – An Amazon Web Services-managed global evaluator from a third-party provider.</p> </li> <li> <p> <code>Custom</code> – A customer-created evaluator.</p> </li> <li> <p> <code>CustomCode</code> – A customer-created code-based evaluator.</p> </li> <li> <p> <code>CustomDerived</code> – A customer-created evaluator derived from an existing base evaluator.</p> </li> </ul>"
+                    }
+                },
+                "provider": {
+                    "target": "com.amazonaws.bedrockagentcorecontrol#Provider",
+                    "traits": {
+                        "smithy.api#documentation": "<p> The source of the evaluator's logic: Amazon Web Services, a third-party library, or you. </p>"
                     }
                 },
                 "level": {
@@ -17666,6 +17770,12 @@
                         "smithy.api#documentation": "<p>The current status of the payment connector. Possible values include <code>CREATING</code>, <code>READY</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>CREATE_FAILED</code>, <code>UPDATE_FAILED</code>, and <code>DELETE_FAILED</code>.</p>",
                         "smithy.api#required": {}
                     }
+                },
+                "authorizationUrl": {
+                    "target": "com.amazonaws.bedrockagentcorecontrol#PaymentConnectorAuthorizationUrl",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The URL that the user must open to complete OAuth consent. This field is only present when the payment connector status is <code>PENDING_AUTHENTICATION</code>.</p>"
+                    }
                 }
             },
             "traits": {
@@ -17911,6 +18021,12 @@
                     "target": "com.amazonaws.bedrockagentcorecontrol#TagsMap",
                     "traits": {
                         "smithy.api#documentation": "<p>The tags associated with the payment manager.</p>"
+                    }
+                },
+                "kmsKeyArn": {
+                    "target": "com.amazonaws.bedrockagentcorecontrol#KmsKeyArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the KMS key used to encrypt sensitive payment manager data at rest, if configured.</p>"
                     }
                 }
             },
@@ -28614,6 +28730,19 @@
                 "smithy.api#documentation": "<p>The configuration for an HTTP passthrough target. A passthrough target forwards requests directly to an external HTTP endpoint.</p>"
             }
         },
+        "com.amazonaws.bedrockagentcorecontrol#PaymentConnectionResource": {
+            "type": "resource"
+        },
+        "com.amazonaws.bedrockagentcorecontrol#PaymentConnectorAuthorizationUrl": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 4096
+                },
+                "smithy.api#pattern": "^https://[^\\p{C}]*$"
+            }
+        },
         "com.amazonaws.bedrockagentcorecontrol#PaymentConnectorId": {
             "type": "string",
             "traits": {
@@ -28621,7 +28750,7 @@
                     "min": 12,
                     "max": 211
                 },
-                "smithy.api#pattern": "^([0-9a-z][-]?){1,100}-[0-9a-z]{10}$"
+                "smithy.api#pattern": "^([0-9a-z_][-]?){1,100}-[0-9a-z]{10}$"
             }
         },
         "com.amazonaws.bedrockagentcorecontrol#PaymentConnectorName": {
@@ -28632,6 +28761,23 @@
                     "max": 48
                 },
                 "smithy.api#pattern": "^[a-zA-Z][a-zA-Z0-9_]{0,47}$"
+            }
+        },
+        "com.amazonaws.bedrockagentcorecontrol#PaymentConnectorProvisionMode": {
+            "type": "enum",
+            "members": {
+                "MANUAL": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "MANUAL"
+                    }
+                },
+                "QUICK_CREATE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "QUICK_CREATE"
+                    }
+                }
             }
         },
         "com.amazonaws.bedrockagentcorecontrol#PaymentConnectorResource": {
@@ -28703,6 +28849,36 @@
                     "target": "smithy.api#Unit",
                     "traits": {
                         "smithy.api#enumValue": "DELETE_FAILED"
+                    }
+                },
+                "AWS_MARKETPLACE_SUBSCRIPTION_REQUIRED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "AWS_MARKETPLACE_SUBSCRIPTION_REQUIRED"
+                    }
+                },
+                "PENDING_AUTHENTICATION": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "PENDING_AUTHENTICATION"
+                    }
+                },
+                "PROVISIONING": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "PROVISIONING"
+                    }
+                },
+                "AUTHENTICATION_EXPIRED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "AUTHENTICATION_EXPIRED"
+                    }
+                },
+                "AUTHENTICATION_FAILED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "AUTHENTICATION_FAILED"
                     }
                 }
             }
@@ -29100,6 +29276,12 @@
                         "smithy.api#documentation": "<p>The timestamp when the payment manager was last updated.</p>",
                         "smithy.api#required": {}
                     }
+                },
+                "kmsKeyArn": {
+                    "target": "com.amazonaws.bedrockagentcorecontrol#KmsKeyArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the KMS key used to encrypt sensitive payment manager data at rest, if configured.</p>"
+                    }
                 }
             },
             "traits": {
@@ -29170,7 +29352,7 @@
                     "min": 1,
                     "max": 4096
                 },
-                "smithy.api#pattern": "^[a-zA-Z0-9\\s]+$"
+                "smithy.api#pattern": "^[^\\p{C}]*$"
             }
         },
         "com.amazonaws.bedrockagentcorecontrol#Period": {
@@ -30292,6 +30474,35 @@
             },
             "traits": {
                 "smithy.api#documentation": "<p>The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients.</p>"
+            }
+        },
+        "com.amazonaws.bedrockagentcorecontrol#Provider": {
+            "type": "enum",
+            "members": {
+                "AWS": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "AWS"
+                    }
+                },
+                "DEEP_EVAL": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "DeepEval"
+                    }
+                },
+                "AUTO_EVAL": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "AutoEval"
+                    }
+                },
+                "CUSTOM": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Custom"
+                    }
+                }
             }
         },
         "com.amazonaws.bedrockagentcorecontrol#ProviderPrefix": {
@@ -33329,6 +33540,34 @@
                     "min": 1,
                     "max": 16
                 }
+            }
+        },
+        "com.amazonaws.bedrockagentcorecontrol#SubscriptionRequiredException": {
+            "type": "structure",
+            "members": {
+                "message": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#required": {}
+                    }
+                },
+                "subscriptionUrl": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "URL to the Marketplace listing for subscription"
+                    }
+                },
+                "productName": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "The product requiring subscription"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The request failed because it requires an active Amazon Web Services Marketplace subscription that is not present. Subscribe to the required product in Amazon Web Services Marketplace and try again.</p>",
+                "smithy.api#error": "client",
+                "smithy.api#httpError": 403
             }
         },
         "com.amazonaws.bedrockagentcorecontrol#SummaryConsolidationOverride": {
@@ -37219,6 +37458,9 @@
                     "target": "com.amazonaws.bedrockagentcorecontrol#ServiceQuotaExceededException"
                 },
                 {
+                    "target": "com.amazonaws.bedrockagentcorecontrol#SubscriptionRequiredException"
+                },
+                {
                     "target": "com.amazonaws.bedrockagentcorecontrol#ThrottlingException"
                 },
                 {
@@ -37334,6 +37576,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>The current status of the updated payment connector. Possible values include <code>CREATING</code>, <code>READY</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>CREATE_FAILED</code>, <code>UPDATE_FAILED</code>, and <code>DELETE_FAILED</code>.</p>",
                         "smithy.api#required": {}
+                    }
+                },
+                "authorizationUrl": {
+                    "target": "com.amazonaws.bedrockagentcorecontrol#PaymentConnectorAuthorizationUrl",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The URL that the user must open to complete OAuth consent. This field is only present when the payment connector status is <code>PENDING_AUTHENTICATION</code>.</p>"
                     }
                 }
             },
@@ -37552,6 +37800,12 @@
                         "smithy.api#documentation": "<p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html\">Ensuring idempotency</a>.</p>",
                         "smithy.api#idempotencyToken": {}
                     }
+                },
+                "kmsKeyArn": {
+                    "target": "com.amazonaws.bedrockagentcorecontrol#KmsKeyArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The updated Amazon Resource Name (ARN) of the customer managed KMS key used to encrypt sensitive payment manager data at rest.</p>"
+                    }
                 }
             },
             "traits": {
@@ -37612,6 +37866,12 @@
                         "smithy.api#documentation": "<p>The current status of the updated payment manager. Possible values include <code>CREATING</code>, <code>READY</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>CREATE_FAILED</code>, <code>UPDATE_FAILED</code>, and <code>DELETE_FAILED</code>.</p>",
                         "smithy.api#required": {}
                     }
+                },
+                "kmsKeyArn": {
+                    "target": "com.amazonaws.bedrockagentcorecontrol#KmsKeyArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the KMS key used to encrypt sensitive payment manager data at rest, if configured.</p>"
+                    }
                 }
             },
             "traits": {
@@ -37650,7 +37910,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Updates an existing policy within the AgentCore Policy system. This operation allows modification of the policy description and definition while maintaining the policy's identity. The updated policy is validated against the Cedar schema before being applied. This is an asynchronous operation. Use the <code>GetPolicy</code> operation to poll the <code>status</code> field to track completion.</p>",
+                "smithy.api#documentation": "<p>Updates an existing policy within the AgentCore Policy system. This operation allows modification of the policy description and definition while maintaining the policy's identity. The updated policy is validated against the Cedar schema before being applied. This is an asynchronous operation. Use the <code>GetPolicy</code> operation to poll the <code>status</code> field to track completion.</p> <p>If the updated policy is a temporal policy, the policy engine invalidates all active temporal sessions. If the update adds or removes temporal operators, the policy engine also invalidates active temporal sessions. For more information about temporal policy sessions, see <a href=\"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/policy-session-based-temporal.html\">session-based temporal policies</a>. The policy engine returns an HTTP 409 <code>ConflictException</code> to in-flight sessions. To resume, you must start a new session with a new session ID.</p>",
                 "smithy.api#http": {
                     "method": "PATCH",
                     "uri": "/policy-engines/{policyEngineId}/policies/{policyId}",

@@ -4,6 +4,7 @@
  */
 
 #include <aws/bedrock-agentcore/BedrockAgentCoreErrors.h>
+#include <aws/bedrock-agentcore/model/SubscriptionRequiredException.h>
 #include <aws/bedrock-agentcore/model/ValidationException.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -21,6 +22,12 @@ AWS_BEDROCKAGENTCORE_API ValidationException BedrockAgentCoreError::GetModeledEr
   return ValidationException(this->GetJsonPayload().View());
 }
 
+template <>
+AWS_BEDROCKAGENTCORE_API SubscriptionRequiredException BedrockAgentCoreError::GetModeledError() {
+  assert(this->GetErrorType() == BedrockAgentCoreErrors::SUBSCRIPTION_REQUIRED);
+  return SubscriptionRequiredException(this->GetJsonPayload().View());
+}
+
 namespace BedrockAgentCoreErrorMapper {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
@@ -31,6 +38,7 @@ static const int DUPLICATE_ID_HASH = HashingUtils::HashString("DuplicateIdExcept
 static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
 static const int SERVICE_HASH = HashingUtils::HashString("ServiceException");
 static const int RETRYABLE_CONFLICT_HASH = HashingUtils::HashString("RetryableConflictException");
+static const int SUBSCRIPTION_REQUIRED_HASH = HashingUtils::HashString("SubscriptionRequiredException");
 static const int RUNTIME_CLIENT_HASH = HashingUtils::HashString("RuntimeClientError");
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName) {
@@ -52,6 +60,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockAgentCoreErrors::SERVICE), RetryableType::RETRYABLE);
   } else if (hashCode == RETRYABLE_CONFLICT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockAgentCoreErrors::RETRYABLE_CONFLICT), RetryableType::RETRYABLE);
+  } else if (hashCode == SUBSCRIPTION_REQUIRED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockAgentCoreErrors::SUBSCRIPTION_REQUIRED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == RUNTIME_CLIENT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockAgentCoreErrors::RUNTIME_CLIENT), RetryableType::NOT_RETRYABLE);
   }

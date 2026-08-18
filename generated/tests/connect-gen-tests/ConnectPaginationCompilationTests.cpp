@@ -21,6 +21,7 @@
 #include <aws/connect/model/ListDataTableValuesPaginationTraits.h>
 #include <aws/connect/model/ListRoutingProfileQueuesPaginationTraits.h>
 #include <aws/connect/model/ListSecurityProfilePermissionsPaginationTraits.h>
+#include <aws/connect/model/ListExtractionDefinitionsPaginationTraits.h>
 #include <aws/connect/model/ListRoutingProfilesPaginationTraits.h>
 #include <aws/connect/model/SearchSecurityProfilesPaginationTraits.h>
 #include <aws/connect/model/GetMetricDataPaginationTraits.h>

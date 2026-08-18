@@ -26,6 +26,14 @@ DeleteAttachmentResult& DeleteAttachmentResult::operator=(const Aws::AmazonWebSe
     m_assetIdentifier = jsonValue.GetString("AssetIdentifier");
     m_assetIdentifierHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("IterableFormName")) {
+    m_iterableFormName = jsonValue.GetString("IterableFormName");
+    m_iterableFormNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ItemIdentifier")) {
+    m_itemIdentifier = jsonValue.GetString("ItemIdentifier");
+    m_itemIdentifierHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -22,12 +22,18 @@
 #include <aws/drs/model/AssociateSourceNetworkStackRequest.h>
 #include <aws/drs/model/AssociateSourceNetworkStackResult.h>
 #include <aws/drs/model/CPU.h>
+#include <aws/drs/model/CancelRecoveryPlanExecutionRequest.h>
+#include <aws/drs/model/CancelRecoveryPlanExecutionResult.h>
 #include <aws/drs/model/ConflictException.h>
 #include <aws/drs/model/ConversionProperties.h>
 #include <aws/drs/model/CreateExtendedSourceServerRequest.h>
 #include <aws/drs/model/CreateExtendedSourceServerResult.h>
 #include <aws/drs/model/CreateLaunchConfigurationTemplateRequest.h>
 #include <aws/drs/model/CreateLaunchConfigurationTemplateResult.h>
+#include <aws/drs/model/CreateRecoveryPlanRequest.h>
+#include <aws/drs/model/CreateRecoveryPlanResult.h>
+#include <aws/drs/model/CreateRecoveryPlanStepRequest.h>
+#include <aws/drs/model/CreateRecoveryPlanStepResult.h>
 #include <aws/drs/model/CreateReplicationConfigurationTemplateRequest.h>
 #include <aws/drs/model/CreateReplicationConfigurationTemplateResult.h>
 #include <aws/drs/model/CreateSourceNetworkRequest.h>
@@ -48,6 +54,12 @@
 #include <aws/drs/model/DeleteLaunchConfigurationTemplateRequest.h>
 #include <aws/drs/model/DeleteLaunchConfigurationTemplateResult.h>
 #include <aws/drs/model/DeleteRecoveryInstanceRequest.h>
+#include <aws/drs/model/DeleteRecoveryPlanExecutionRequest.h>
+#include <aws/drs/model/DeleteRecoveryPlanExecutionResult.h>
+#include <aws/drs/model/DeleteRecoveryPlanRequest.h>
+#include <aws/drs/model/DeleteRecoveryPlanResult.h>
+#include <aws/drs/model/DeleteRecoveryPlanStepRequest.h>
+#include <aws/drs/model/DeleteRecoveryPlanStepResult.h>
 #include <aws/drs/model/DeleteReplicationConfigurationTemplateRequest.h>
 #include <aws/drs/model/DeleteReplicationConfigurationTemplateResult.h>
 #include <aws/drs/model/DeleteSourceNetworkRequest.h>
@@ -88,7 +100,9 @@
 #include <aws/drs/model/DisconnectSourceServerResult.h>
 #include <aws/drs/model/Disk.h>
 #include <aws/drs/model/EC2InstanceState.h>
+#include <aws/drs/model/ErrorDetail.h>
 #include <aws/drs/model/EventResourceData.h>
+#include <aws/drs/model/ExecutionServerStepConfiguration.h>
 #include <aws/drs/model/ExportSourceNetworkCfnTemplateRequest.h>
 #include <aws/drs/model/ExportSourceNetworkCfnTemplateResult.h>
 #include <aws/drs/model/ExtensionStatus.h>
@@ -99,6 +113,14 @@
 #include <aws/drs/model/GetFailbackReplicationConfigurationResult.h>
 #include <aws/drs/model/GetLaunchConfigurationRequest.h>
 #include <aws/drs/model/GetLaunchConfigurationResult.h>
+#include <aws/drs/model/GetRecoveryPlanExecutionRequest.h>
+#include <aws/drs/model/GetRecoveryPlanExecutionResult.h>
+#include <aws/drs/model/GetRecoveryPlanExecutionStepRequest.h>
+#include <aws/drs/model/GetRecoveryPlanExecutionStepResult.h>
+#include <aws/drs/model/GetRecoveryPlanRequest.h>
+#include <aws/drs/model/GetRecoveryPlanResult.h>
+#include <aws/drs/model/GetRecoveryPlanStepRequest.h>
+#include <aws/drs/model/GetRecoveryPlanStepResult.h>
 #include <aws/drs/model/GetReplicationConfigurationRequest.h>
 #include <aws/drs/model/GetReplicationConfigurationResult.h>
 #include <aws/drs/model/IdentificationHints.h>
@@ -169,9 +191,28 @@
 #include <aws/drs/model/RecoveryInstanceProperties.h>
 #include <aws/drs/model/RecoveryLifeCycle.h>
 #include <aws/drs/model/RecoveryMode.h>
+#include <aws/drs/model/RecoveryPlan.h>
+#include <aws/drs/model/RecoveryPlanExecution.h>
+#include <aws/drs/model/RecoveryPlanExecutionMode.h>
+#include <aws/drs/model/RecoveryPlanExecutionServer.h>
+#include <aws/drs/model/RecoveryPlanExecutionSourceServer.h>
+#include <aws/drs/model/RecoveryPlanExecutionStatus.h>
+#include <aws/drs/model/RecoveryPlanExecutionStep.h>
+#include <aws/drs/model/RecoveryPlanExecutionStepConfiguration.h>
+#include <aws/drs/model/RecoveryPlanExecutionStepStatus.h>
+#include <aws/drs/model/RecoveryPlanExecutionStepSummary.h>
+#include <aws/drs/model/RecoveryPlanExecutionSummary.h>
+#include <aws/drs/model/RecoveryPlanServer.h>
+#include <aws/drs/model/RecoveryPlanServerImpactLevel.h>
+#include <aws/drs/model/RecoveryPlanStatus.h>
+#include <aws/drs/model/RecoveryPlanStep.h>
+#include <aws/drs/model/RecoveryPlanStepConfiguration.h>
+#include <aws/drs/model/RecoveryPlanSummary.h>
 #include <aws/drs/model/RecoveryResult.h>
 #include <aws/drs/model/RecoverySnapshot.h>
 #include <aws/drs/model/RecoverySnapshotsOrder.h>
+#include <aws/drs/model/ReorderRecoveryPlanStepsRequest.h>
+#include <aws/drs/model/ReorderRecoveryPlanStepsResult.h>
 #include <aws/drs/model/ReplicationConfigurationDataPlaneRouting.h>
 #include <aws/drs/model/ReplicationConfigurationDefaultLargeStagingDiskType.h>
 #include <aws/drs/model/ReplicationConfigurationEbsEncryption.h>
@@ -181,8 +222,11 @@
 #include <aws/drs/model/ReplicationDirection.h>
 #include <aws/drs/model/ReplicationStatus.h>
 #include <aws/drs/model/ResourceNotFoundException.h>
+#include <aws/drs/model/RetryRecoveryPlanExecutionStepRequest.h>
+#include <aws/drs/model/RetryRecoveryPlanExecutionStepResult.h>
 #include <aws/drs/model/ReverseReplicationRequest.h>
 #include <aws/drs/model/ReverseReplicationResult.h>
+#include <aws/drs/model/ServerStepConfiguration.h>
 #include <aws/drs/model/ServiceQuotaExceededException.h>
 #include <aws/drs/model/SourceCloudProperties.h>
 #include <aws/drs/model/SourceNetwork.h>
@@ -193,6 +237,8 @@
 #include <aws/drs/model/StagingSourceServer.h>
 #include <aws/drs/model/StartFailbackLaunchRequest.h>
 #include <aws/drs/model/StartFailbackLaunchResult.h>
+#include <aws/drs/model/StartRecoveryPlanExecutionRequest.h>
+#include <aws/drs/model/StartRecoveryPlanExecutionResult.h>
 #include <aws/drs/model/StartRecoveryRequest.h>
 #include <aws/drs/model/StartRecoveryRequestSourceServer.h>
 #include <aws/drs/model/StartRecoveryResult.h>
@@ -220,6 +266,12 @@
 #include <aws/drs/model/UpdateLaunchConfigurationResult.h>
 #include <aws/drs/model/UpdateLaunchConfigurationTemplateRequest.h>
 #include <aws/drs/model/UpdateLaunchConfigurationTemplateResult.h>
+#include <aws/drs/model/UpdateRecoveryPlanExecutionStepRequest.h>
+#include <aws/drs/model/UpdateRecoveryPlanExecutionStepResult.h>
+#include <aws/drs/model/UpdateRecoveryPlanRequest.h>
+#include <aws/drs/model/UpdateRecoveryPlanResult.h>
+#include <aws/drs/model/UpdateRecoveryPlanStepRequest.h>
+#include <aws/drs/model/UpdateRecoveryPlanStepResult.h>
 #include <aws/drs/model/UpdateReplicationConfigurationRequest.h>
 #include <aws/drs/model/UpdateReplicationConfigurationResult.h>
 #include <aws/drs/model/UpdateReplicationConfigurationTemplateRequest.h>
@@ -228,6 +280,7 @@
 #include <aws/drs/model/ValidationExceptionField.h>
 #include <aws/drs/model/ValidationExceptionReason.h>
 #include <aws/drs/model/VolumeStatus.h>
+#include <aws/drs/model/WaitStepConfiguration.h>
 
 using DrsIncludeTest = ::testing::Test;
 

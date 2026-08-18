@@ -39,6 +39,12 @@ static const int ml_g6e_12xlarge_HASH = HashingUtils::HashString("ml.g6e.12xlarg
 static const int ml_g6e_16xlarge_HASH = HashingUtils::HashString("ml.g6e.16xlarge");
 static const int ml_g6e_24xlarge_HASH = HashingUtils::HashString("ml.g6e.24xlarge");
 static const int ml_g6e_48xlarge_HASH = HashingUtils::HashString("ml.g6e.48xlarge");
+static const int ml_g7_2xlarge_HASH = HashingUtils::HashString("ml.g7.2xlarge");
+static const int ml_g7_4xlarge_HASH = HashingUtils::HashString("ml.g7.4xlarge");
+static const int ml_g7_8xlarge_HASH = HashingUtils::HashString("ml.g7.8xlarge");
+static const int ml_g7_12xlarge_HASH = HashingUtils::HashString("ml.g7.12xlarge");
+static const int ml_g7_24xlarge_HASH = HashingUtils::HashString("ml.g7.24xlarge");
+static const int ml_g7_48xlarge_HASH = HashingUtils::HashString("ml.g7.48xlarge");
 static const int ml_g7e_2xlarge_HASH = HashingUtils::HashString("ml.g7e.2xlarge");
 static const int ml_g7e_4xlarge_HASH = HashingUtils::HashString("ml.g7e.4xlarge");
 static const int ml_g7e_8xlarge_HASH = HashingUtils::HashString("ml.g7e.8xlarge");
@@ -106,6 +112,18 @@ AIRecommendationInstanceType GetAIRecommendationInstanceTypeForName(const Aws::S
     return AIRecommendationInstanceType::ml_g6e_24xlarge;
   } else if (hashCode == ml_g6e_48xlarge_HASH) {
     return AIRecommendationInstanceType::ml_g6e_48xlarge;
+  } else if (hashCode == ml_g7_2xlarge_HASH) {
+    return AIRecommendationInstanceType::ml_g7_2xlarge;
+  } else if (hashCode == ml_g7_4xlarge_HASH) {
+    return AIRecommendationInstanceType::ml_g7_4xlarge;
+  } else if (hashCode == ml_g7_8xlarge_HASH) {
+    return AIRecommendationInstanceType::ml_g7_8xlarge;
+  } else if (hashCode == ml_g7_12xlarge_HASH) {
+    return AIRecommendationInstanceType::ml_g7_12xlarge;
+  } else if (hashCode == ml_g7_24xlarge_HASH) {
+    return AIRecommendationInstanceType::ml_g7_24xlarge;
+  } else if (hashCode == ml_g7_48xlarge_HASH) {
+    return AIRecommendationInstanceType::ml_g7_48xlarge;
   } else if (hashCode == ml_g7e_2xlarge_HASH) {
     return AIRecommendationInstanceType::ml_g7e_2xlarge;
   } else if (hashCode == ml_g7e_4xlarge_HASH) {
@@ -200,6 +218,18 @@ Aws::String GetNameForAIRecommendationInstanceType(AIRecommendationInstanceType 
       return "ml.g6e.24xlarge";
     case AIRecommendationInstanceType::ml_g6e_48xlarge:
       return "ml.g6e.48xlarge";
+    case AIRecommendationInstanceType::ml_g7_2xlarge:
+      return "ml.g7.2xlarge";
+    case AIRecommendationInstanceType::ml_g7_4xlarge:
+      return "ml.g7.4xlarge";
+    case AIRecommendationInstanceType::ml_g7_8xlarge:
+      return "ml.g7.8xlarge";
+    case AIRecommendationInstanceType::ml_g7_12xlarge:
+      return "ml.g7.12xlarge";
+    case AIRecommendationInstanceType::ml_g7_24xlarge:
+      return "ml.g7.24xlarge";
+    case AIRecommendationInstanceType::ml_g7_48xlarge:
+      return "ml.g7.48xlarge";
     case AIRecommendationInstanceType::ml_g7e_2xlarge:
       return "ml.g7e.2xlarge";
     case AIRecommendationInstanceType::ml_g7e_4xlarge:

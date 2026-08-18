@@ -6,6 +6,8 @@
 #include <aws/connect/ConnectClient.h>
 #include <aws/connect/ConnectEndpointProvider.h>
 #include <aws/connect/ConnectErrorMarshaller.h>
+#include <aws/connect/model/DeleteSecurityProfileRequest.h>
+#include <aws/connect/model/DeleteSessionRequest.h>
 #include <aws/connect/model/DeleteTaskTemplateRequest.h>
 #include <aws/connect/model/DeleteTestCaseRequest.h>
 #include <aws/connect/model/DeleteTrafficDistributionGroupRequest.h>
@@ -30,6 +32,7 @@
 #include <aws/connect/model/DescribeDataTableRequest.h>
 #include <aws/connect/model/DescribeEmailAddressRequest.h>
 #include <aws/connect/model/DescribeEvaluationFormRequest.h>
+#include <aws/connect/model/DescribeExtractionDefinitionRequest.h>
 #include <aws/connect/model/DescribeHoursOfOperationOverrideRequest.h>
 #include <aws/connect/model/DescribeHoursOfOperationRequest.h>
 #include <aws/connect/model/DescribeInstanceAttributeRequest.h>
@@ -103,9 +106,6 @@
 #include <aws/connect/model/ListContactFlowModuleAliasesRequest.h>
 #include <aws/connect/model/ListContactFlowModuleVersionsRequest.h>
 #include <aws/connect/model/ListContactFlowModulesRequest.h>
-#include <aws/connect/model/ListContactFlowVersionsRequest.h>
-#include <aws/connect/model/ListContactFlowsRequest.h>
-#include <aws/connect/model/ListContactReferencesRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/CoreErrors.h>
@@ -131,6 +131,53 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DeleteSecurityProfileOutcome ConnectClient::DeleteSecurityProfile(const DeleteSecurityProfileRequest& request) const {
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteSecurityProfile", "Required field: InstanceId, is not set");
+    return DeleteSecurityProfileOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                             "Missing required field [InstanceId]", false));
+  }
+  if (!request.SecurityProfileIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteSecurityProfile", "Required field: SecurityProfileId, is not set");
+    return DeleteSecurityProfileOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                             "Missing required field [SecurityProfileId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/security-profiles/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSecurityProfileId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSecurityProfileOutcome(result.GetResultWithOwnership())
+                            : DeleteSecurityProfileOutcome(std::move(result.GetError()));
+}
+
+DeleteSessionOutcome ConnectClient::DeleteSession(const DeleteSessionRequest& request) const {
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteSession", "Required field: InstanceId, is not set");
+    return DeleteSessionOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                     "Missing required field [InstanceId]", false));
+  }
+  if (!request.SessionIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteSession", "Required field: SessionId, is not set");
+    return DeleteSessionOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                     "Missing required field [SessionId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/auth/sessions/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSessionOutcome(result.GetResultWithOwnership()) : DeleteSessionOutcome(std::move(result.GetError()));
+}
 
 DeleteTaskTemplateOutcome ConnectClient::DeleteTaskTemplate(const DeleteTaskTemplateRequest& request) const {
   if (!request.InstanceIdHasBeenSet()) {
@@ -743,6 +790,30 @@ DescribeEvaluationFormOutcome ConnectClient::DescribeEvaluationForm(const Descri
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? DescribeEvaluationFormOutcome(result.GetResultWithOwnership())
                             : DescribeEvaluationFormOutcome(std::move(result.GetError()));
+}
+
+DescribeExtractionDefinitionOutcome ConnectClient::DescribeExtractionDefinition(const DescribeExtractionDefinitionRequest& request) const {
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeExtractionDefinition", "Required field: InstanceId, is not set");
+    return DescribeExtractionDefinitionOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                    "Missing required field [InstanceId]", false));
+  }
+  if (!request.ExtractionDefinitionIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeExtractionDefinition", "Required field: ExtractionDefinitionId, is not set");
+    return DescribeExtractionDefinitionOutcome(Aws::Client::AWSError<ConnectErrors>(
+        ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExtractionDefinitionId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/extraction-definitions/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExtractionDefinitionId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeExtractionDefinitionOutcome(result.GetResultWithOwnership())
+                            : DescribeExtractionDefinitionOutcome(std::move(result.GetError()));
 }
 
 DescribeHoursOfOperationOutcome ConnectClient::DescribeHoursOfOperation(const DescribeHoursOfOperationRequest& request) const {
@@ -2438,76 +2509,4 @@ ListContactFlowModulesOutcome ConnectClient::ListContactFlowModules(const ListCo
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListContactFlowModulesOutcome(result.GetResultWithOwnership())
                             : ListContactFlowModulesOutcome(std::move(result.GetError()));
-}
-
-ListContactFlowVersionsOutcome ConnectClient::ListContactFlowVersions(const ListContactFlowVersionsRequest& request) const {
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListContactFlowVersions", "Required field: InstanceId, is not set");
-    return ListContactFlowVersionsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                               "Missing required field [InstanceId]", false));
-  }
-  if (!request.ContactFlowIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListContactFlowVersions", "Required field: ContactFlowId, is not set");
-    return ListContactFlowVersionsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                               "Missing required field [ContactFlowId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/contact-flows/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContactFlowId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
-  return result.IsSuccess() ? ListContactFlowVersionsOutcome(result.GetResultWithOwnership())
-                            : ListContactFlowVersionsOutcome(std::move(result.GetError()));
-}
-
-ListContactFlowsOutcome ConnectClient::ListContactFlows(const ListContactFlowsRequest& request) const {
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListContactFlows", "Required field: InstanceId, is not set");
-    return ListContactFlowsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                        "Missing required field [InstanceId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/contact-flows-summary/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
-  return result.IsSuccess() ? ListContactFlowsOutcome(result.GetResultWithOwnership())
-                            : ListContactFlowsOutcome(std::move(result.GetError()));
-}
-
-ListContactReferencesOutcome ConnectClient::ListContactReferences(const ListContactReferencesRequest& request) const {
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListContactReferences", "Required field: InstanceId, is not set");
-    return ListContactReferencesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                             "Missing required field [InstanceId]", false));
-  }
-  if (!request.ContactIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListContactReferences", "Required field: ContactId, is not set");
-    return ListContactReferencesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                             "Missing required field [ContactId]", false));
-  }
-  if (!request.ReferenceTypesHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListContactReferences", "Required field: ReferenceTypes, is not set");
-    return ListContactReferencesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                             "Missing required field [ReferenceTypes]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/contact/references/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContactId());
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
-  return result.IsSuccess() ? ListContactReferencesOutcome(result.GetResultWithOwnership())
-                            : ListContactReferencesOutcome(std::move(result.GetError()));
 }

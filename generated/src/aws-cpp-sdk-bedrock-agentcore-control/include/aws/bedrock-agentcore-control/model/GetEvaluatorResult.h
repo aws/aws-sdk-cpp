@@ -8,6 +8,8 @@
 #include <aws/bedrock-agentcore-control/model/EvaluatorConfig.h>
 #include <aws/bedrock-agentcore-control/model/EvaluatorLevel.h>
 #include <aws/bedrock-agentcore-control/model/EvaluatorStatus.h>
+#include <aws/bedrock-agentcore-control/model/EvaluatorType.h>
+#include <aws/bedrock-agentcore-control/model/Provider.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -113,6 +115,44 @@ class GetEvaluatorResult {
   template <typename EvaluatorConfigT = EvaluatorConfig>
   GetEvaluatorResult& WithEvaluatorConfig(EvaluatorConfigT&& value) {
     SetEvaluatorConfig(std::forward<EvaluatorConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The kind of evaluator resource. Valid values: </p> <ul> <li> <p>
+   * <code>Builtin</code> – An Amazon Web Services-managed global evaluator.</p>
+   * </li> <li> <p> <code>ThirdParty</code> – An Amazon Web Services-managed global
+   * evaluator from a third-party provider.</p> </li> <li> <p> <code>Custom</code> –
+   * A customer-created evaluator.</p> </li> <li> <p> <code>CustomCode</code> – A
+   * customer-created code-based evaluator.</p> </li> <li> <p>
+   * <code>CustomDerived</code> – A customer-created evaluator derived from an
+   * existing base evaluator.</p> </li> </ul>
+   */
+  inline EvaluatorType GetEvaluatorType() const { return m_evaluatorType; }
+  inline void SetEvaluatorType(EvaluatorType value) {
+    m_evaluatorTypeHasBeenSet = true;
+    m_evaluatorType = value;
+  }
+  inline GetEvaluatorResult& WithEvaluatorType(EvaluatorType value) {
+    SetEvaluatorType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The source of the evaluator's logic: Amazon Web Services, a third-party
+   * library, or you. </p>
+   */
+  inline Provider GetProvider() const { return m_provider; }
+  inline void SetProvider(Provider value) {
+    m_providerHasBeenSet = true;
+    m_provider = value;
+  }
+  inline GetEvaluatorResult& WithProvider(Provider value) {
+    SetProvider(value);
     return *this;
   }
   ///@}
@@ -244,6 +284,10 @@ class GetEvaluatorResult {
 
   EvaluatorConfig m_evaluatorConfig;
 
+  EvaluatorType m_evaluatorType{EvaluatorType::NOT_SET};
+
+  Provider m_provider{Provider::NOT_SET};
+
   EvaluatorLevel m_level{EvaluatorLevel::NOT_SET};
 
   EvaluatorStatus m_status{EvaluatorStatus::NOT_SET};
@@ -263,6 +307,8 @@ class GetEvaluatorResult {
   bool m_evaluatorNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_evaluatorConfigHasBeenSet = false;
+  bool m_evaluatorTypeHasBeenSet = false;
+  bool m_providerHasBeenSet = false;
   bool m_levelHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;

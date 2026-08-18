@@ -38,6 +38,10 @@ Aws::String CreatePaymentConnectorRequest::SerializePayload() const {
     payload.WithArray("credentialProviderConfigurations", std::move(credentialProviderConfigurationsJsonList));
   }
 
+  if (m_provisionModeHasBeenSet) {
+    payload.WithString("provisionMode", PaymentConnectorProvisionModeMapper::GetNameForPaymentConnectorProvisionMode(m_provisionMode));
+  }
+
   if (m_clientTokenHasBeenSet) {
     payload.WithString("clientToken", m_clientToken);
   }

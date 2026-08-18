@@ -1569,6 +1569,39 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates an extraction definition in the specified Connect Customer instance.
+   * An extraction definition specifies how structured data is extracted from
+   * customer interactions using generative AI, including the prompt hint that guides
+   * extraction and the behavior when a value cannot be found.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateExtractionDefinition">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateExtractionDefinitionOutcome CreateExtractionDefinition(
+      const Model::CreateExtractionDefinitionRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateExtractionDefinition that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CreateExtractionDefinitionRequestT = Model::CreateExtractionDefinitionRequest>
+  Model::CreateExtractionDefinitionOutcomeCallable CreateExtractionDefinitionCallable(
+      const CreateExtractionDefinitionRequestT& request) const {
+    return SubmitCallable(&ConnectClient::CreateExtractionDefinition, request);
+  }
+
+  /**
+   * An Async wrapper for CreateExtractionDefinition that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateExtractionDefinitionRequestT = Model::CreateExtractionDefinitionRequest>
+  void CreateExtractionDefinitionAsync(const CreateExtractionDefinitionRequestT& request,
+                                       const CreateExtractionDefinitionResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::CreateExtractionDefinition, request, handler, context);
+  }
+
+  /**
    * <p>Creates hours of operation. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateHoursOfOperation">AWS
    * API Reference</a></p>
@@ -2804,6 +2837,36 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Deletes an extraction definition from the specified Connect Customer
+   * instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteExtractionDefinition">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteExtractionDefinitionOutcome DeleteExtractionDefinition(
+      const Model::DeleteExtractionDefinitionRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteExtractionDefinition that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteExtractionDefinitionRequestT = Model::DeleteExtractionDefinitionRequest>
+  Model::DeleteExtractionDefinitionOutcomeCallable DeleteExtractionDefinitionCallable(
+      const DeleteExtractionDefinitionRequestT& request) const {
+    return SubmitCallable(&ConnectClient::DeleteExtractionDefinition, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteExtractionDefinition that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteExtractionDefinitionRequestT = Model::DeleteExtractionDefinitionRequest>
+  void DeleteExtractionDefinitionAsync(const DeleteExtractionDefinitionRequestT& request,
+                                       const DeleteExtractionDefinitionResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::DeleteExtractionDefinition, request, handler, context);
+  }
+
+  /**
    * <p>Deletes an hours of operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteHoursOfOperation">AWS
    * API Reference</a></p>
@@ -3950,6 +4013,36 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
                                    const DescribeEvaluationFormResponseReceivedHandler& handler,
                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::DescribeEvaluationForm, request, handler, context);
+  }
+
+  /**
+   * <p>Describes an extraction definition in the specified Connect Customer
+   * instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeExtractionDefinition">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeExtractionDefinitionOutcome DescribeExtractionDefinition(
+      const Model::DescribeExtractionDefinitionRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeExtractionDefinition that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeExtractionDefinitionRequestT = Model::DescribeExtractionDefinitionRequest>
+  Model::DescribeExtractionDefinitionOutcomeCallable DescribeExtractionDefinitionCallable(
+      const DescribeExtractionDefinitionRequestT& request) const {
+    return SubmitCallable(&ConnectClient::DescribeExtractionDefinition, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeExtractionDefinition that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeExtractionDefinitionRequestT = Model::DescribeExtractionDefinitionRequest>
+  void DescribeExtractionDefinitionAsync(const DescribeExtractionDefinitionRequestT& request,
+                                         const DescribeExtractionDefinitionResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::DescribeExtractionDefinition, request, handler, context);
   }
 
   /**
@@ -6566,6 +6659,35 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Lists extraction definitions in the specified Connect Customer
+   * instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListExtractionDefinitions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListExtractionDefinitionsOutcome ListExtractionDefinitions(const Model::ListExtractionDefinitionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListExtractionDefinitions that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListExtractionDefinitionsRequestT = Model::ListExtractionDefinitionsRequest>
+  Model::ListExtractionDefinitionsOutcomeCallable ListExtractionDefinitionsCallable(
+      const ListExtractionDefinitionsRequestT& request) const {
+    return SubmitCallable(&ConnectClient::ListExtractionDefinitions, request);
+  }
+
+  /**
+   * An Async wrapper for ListExtractionDefinitions that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListExtractionDefinitionsRequestT = Model::ListExtractionDefinitionsRequest>
+  void ListExtractionDefinitionsAsync(const ListExtractionDefinitionsRequestT& request,
+                                      const ListExtractionDefinitionsResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::ListExtractionDefinitions, request, handler, context);
+  }
+
+  /**
    * <p>List the flow association based on the filters.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListFlowAssociations">AWS
    * API Reference</a></p>
@@ -9097,10 +9219,10 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Starts a chat contact with an AI agent.</p> <p>Use the returned
-   * <code>ParticipantToken</code> to call the <a
+   * <code>ParticipantToken</code> with the <a
    * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
-   * API.</p> <p>For more information about chat, see the following topics in the
-   * <i>Connect Customer Administrator Guide</i>: </p> <ul> <li> <p> <a
+   * operation.</p> <p>For more information about chat, see the following topics in
+   * the <i>Connect Customer Administrator Guide</i>: </p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/web-and-mobile-chat.html">Concepts:
    * Web and mobile messaging capabilities in Connect Customer</a> </p> </li> <li>
    * <p> <a
@@ -10756,6 +10878,36 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   void UpdateEvaluationFormAsync(const UpdateEvaluationFormRequestT& request, const UpdateEvaluationFormResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::UpdateEvaluationForm, request, handler, context);
+  }
+
+  /**
+   * <p>Updates an extraction definition in the specified Connect Customer
+   * instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateExtractionDefinition">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateExtractionDefinitionOutcome UpdateExtractionDefinition(
+      const Model::UpdateExtractionDefinitionRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateExtractionDefinition that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateExtractionDefinitionRequestT = Model::UpdateExtractionDefinitionRequest>
+  Model::UpdateExtractionDefinitionOutcomeCallable UpdateExtractionDefinitionCallable(
+      const UpdateExtractionDefinitionRequestT& request) const {
+    return SubmitCallable(&ConnectClient::UpdateExtractionDefinition, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateExtractionDefinition that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateExtractionDefinitionRequestT = Model::UpdateExtractionDefinitionRequest>
+  void UpdateExtractionDefinitionAsync(const UpdateExtractionDefinitionRequestT& request,
+                                       const UpdateExtractionDefinitionResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::UpdateExtractionDefinition, request, handler, context);
   }
 
   /**

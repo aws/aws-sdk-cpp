@@ -197,7 +197,15 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * <code>departureMethod:LEFT</code> and <code>departureTime</code> and an
    * <code>AccountJoinedOrganization</code> event with
    * <code>joinedMethod:INVITED</code> and <code>joinedTime</code> are logged in
-   * their respective management accounts.</p><p><h3>See Also:</h3>   <a
+   * their respective management accounts.</p> <p>When a billing transfer
+   * (<code>TRANSFER_RESPONSIBILITY</code>) handshake is accepted, Organizations
+   * publishes a <code>ResponsibilityTransferAccepted</code> service event to
+   * CloudTrail. Each affected account receives this event, including upstream
+   * participants such as distributors in a chained transfer. For an example log
+   * entry, see <a
+   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_cloudtrail-integration.html#Log-entries-accept-responsibility-transfer">Example
+   * log entries: AcceptResponsibilityTransfer</a> in the <i>Organizations User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/AcceptHandshake">AWS
    * API Reference</a></p>
    */
@@ -514,10 +522,10 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * though account initialization might still be in progress. You might need to wait
    * a few minutes before you can successfully access the account. To check the
    * status of the request, do one of the following:</p> <ul> <li> <p>Use the
-   * <code>OperationId</code> response element from this operation to provide as a
-   * parameter to the <a>DescribeCreateAccountStatus</a> operation.</p> </li> <li>
-   * <p>Check the CloudTrail log for the <code>CreateAccountResult</code> event. For
-   * information on using CloudTrail with Organizations, see <a
+   * <code>Id</code> response element from this operation to provide as a parameter
+   * to the <a>DescribeCreateAccountStatus</a> operation.</p> </li> <li> <p>Check the
+   * CloudTrail log for the <code>CreateAccountResult</code> event. For information
+   * on using CloudTrail with Organizations, see <a
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_security_incident-response.html">Logging
    * and monitoring in Organizations</a> in the <i>Organizations User Guide</i>.</p>
    * </li> </ul> <p>Additionally, the <code>AccountJoinedOrganization</code> event is
@@ -2505,7 +2513,13 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
   /**
    * <p>Ends a transfer. A <i>transfer</i> is an arrangement between two management
    * accounts where one account designates the other with specified responsibilities
-   * for their organization.</p><p><h3>See Also:</h3>   <a
+   * for their organization.</p> <p>When a transfer ends, Organizations publishes a
+   * <code>ResponsibilityTransferTerminated</code> service event to CloudTrail. Each
+   * affected account receives this event, including upstream participants such as
+   * distributors in a chained transfer. For an example log entry, see <a
+   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_cloudtrail-integration.html#Log-entries-terminate-responsibility-transfer">Example
+   * log entries: TerminateResponsibilityTransfer</a> in the <i>Organizations User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/TerminateResponsibilityTransfer">AWS
    * API Reference</a></p>
    */

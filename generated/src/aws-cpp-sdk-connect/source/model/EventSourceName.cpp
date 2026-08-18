@@ -19,6 +19,8 @@ static const int OnPostCallAnalysisAvailable_HASH = HashingUtils::HashString("On
 static const int OnRealTimeCallAnalysisAvailable_HASH = HashingUtils::HashString("OnRealTimeCallAnalysisAvailable");
 static const int OnRealTimeChatAnalysisAvailable_HASH = HashingUtils::HashString("OnRealTimeChatAnalysisAvailable");
 static const int OnPostChatAnalysisAvailable_HASH = HashingUtils::HashString("OnPostChatAnalysisAvailable");
+static const int OnAfterCallWorkAvailable_HASH = HashingUtils::HashString("OnAfterCallWorkAvailable");
+static const int OnAfterChatWorkAvailable_HASH = HashingUtils::HashString("OnAfterChatWorkAvailable");
 static const int OnEmailAnalysisAvailable_HASH = HashingUtils::HashString("OnEmailAnalysisAvailable");
 static const int OnZendeskTicketCreate_HASH = HashingUtils::HashString("OnZendeskTicketCreate");
 static const int OnZendeskTicketStatusUpdate_HASH = HashingUtils::HashString("OnZendeskTicketStatusUpdate");
@@ -43,6 +45,10 @@ EventSourceName GetEventSourceNameForName(const Aws::String& name) {
     return EventSourceName::OnRealTimeChatAnalysisAvailable;
   } else if (hashCode == OnPostChatAnalysisAvailable_HASH) {
     return EventSourceName::OnPostChatAnalysisAvailable;
+  } else if (hashCode == OnAfterCallWorkAvailable_HASH) {
+    return EventSourceName::OnAfterCallWorkAvailable;
+  } else if (hashCode == OnAfterChatWorkAvailable_HASH) {
+    return EventSourceName::OnAfterChatWorkAvailable;
   } else if (hashCode == OnEmailAnalysisAvailable_HASH) {
     return EventSourceName::OnEmailAnalysisAvailable;
   } else if (hashCode == OnZendeskTicketCreate_HASH) {
@@ -91,6 +97,10 @@ Aws::String GetNameForEventSourceName(EventSourceName enumValue) {
       return "OnRealTimeChatAnalysisAvailable";
     case EventSourceName::OnPostChatAnalysisAvailable:
       return "OnPostChatAnalysisAvailable";
+    case EventSourceName::OnAfterCallWorkAvailable:
+      return "OnAfterCallWorkAvailable";
+    case EventSourceName::OnAfterChatWorkAvailable:
+      return "OnAfterChatWorkAvailable";
     case EventSourceName::OnEmailAnalysisAvailable:
       return "OnEmailAnalysisAvailable";
     case EventSourceName::OnZendeskTicketCreate:

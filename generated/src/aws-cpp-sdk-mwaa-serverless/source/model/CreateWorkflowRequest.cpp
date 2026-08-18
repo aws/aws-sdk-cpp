@@ -27,6 +27,10 @@ Aws::String CreateWorkflowRequest::SerializePayload() const {
     payload.WithObject("DefinitionS3Location", m_definitionS3Location.Jsonize());
   }
 
+  if (m_codeHasBeenSet) {
+    payload.WithObject("Code", m_code.Jsonize());
+  }
+
   if (m_roleArnHasBeenSet) {
     payload.WithString("RoleArn", m_roleArn);
   }

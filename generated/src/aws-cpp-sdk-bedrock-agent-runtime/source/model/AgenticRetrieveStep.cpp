@@ -19,6 +19,7 @@ static const int Planning_HASH = HashingUtils::HashString("Planning");
 static const int Retrieval_HASH = HashingUtils::HashString("Retrieval");
 static const int SpeculativeRetrieval_HASH = HashingUtils::HashString("SpeculativeRetrieval");
 static const int FullDocumentExpansion_HASH = HashingUtils::HashString("FullDocumentExpansion");
+static const int SessionHistoryLoad_HASH = HashingUtils::HashString("SessionHistoryLoad");
 
 AgenticRetrieveStep GetAgenticRetrieveStepForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ AgenticRetrieveStep GetAgenticRetrieveStepForName(const Aws::String& name) {
     return AgenticRetrieveStep::SpeculativeRetrieval;
   } else if (hashCode == FullDocumentExpansion_HASH) {
     return AgenticRetrieveStep::FullDocumentExpansion;
+  } else if (hashCode == SessionHistoryLoad_HASH) {
+    return AgenticRetrieveStep::SessionHistoryLoad;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForAgenticRetrieveStep(AgenticRetrieveStep enumValue) {
       return "SpeculativeRetrieval";
     case AgenticRetrieveStep::FullDocumentExpansion:
       return "FullDocumentExpansion";
+    case AgenticRetrieveStep::SessionHistoryLoad:
+      return "SessionHistoryLoad";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

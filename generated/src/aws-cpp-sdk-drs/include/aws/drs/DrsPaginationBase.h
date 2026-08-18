@@ -17,6 +17,10 @@
 #include <aws/drs/model/DescribeSourceServersPaginationTraits.h>
 #include <aws/drs/model/ListExtensibleSourceServersPaginationTraits.h>
 #include <aws/drs/model/ListLaunchActionsPaginationTraits.h>
+#include <aws/drs/model/ListRecoveryPlanExecutionStepsPaginationTraits.h>
+#include <aws/drs/model/ListRecoveryPlanExecutionsPaginationTraits.h>
+#include <aws/drs/model/ListRecoveryPlanStepsPaginationTraits.h>
+#include <aws/drs/model/ListRecoveryPlansPaginationTraits.h>
 #include <aws/drs/model/ListStagingAccountsPaginationTraits.h>
 
 #include <memory>
@@ -143,6 +147,54 @@ class DrsPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLaunchActionsRequest,
                                              Pagination::ListLaunchActionsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListRecoveryPlanExecutions operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecoveryPlanExecutionsRequest,
+                                    Pagination::ListRecoveryPlanExecutionsPaginationTraits<DerivedClient>>
+  ListRecoveryPlanExecutionsPaginator(const Model::ListRecoveryPlanExecutionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecoveryPlanExecutionsRequest,
+                                             Pagination::ListRecoveryPlanExecutionsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListRecoveryPlanExecutionSteps operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecoveryPlanExecutionStepsRequest,
+                                    Pagination::ListRecoveryPlanExecutionStepsPaginationTraits<DerivedClient>>
+  ListRecoveryPlanExecutionStepsPaginator(const Model::ListRecoveryPlanExecutionStepsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecoveryPlanExecutionStepsRequest,
+                                             Pagination::ListRecoveryPlanExecutionStepsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListRecoveryPlans operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecoveryPlansRequest,
+                                    Pagination::ListRecoveryPlansPaginationTraits<DerivedClient>>
+  ListRecoveryPlansPaginator(const Model::ListRecoveryPlansRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecoveryPlansRequest,
+                                             Pagination::ListRecoveryPlansPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListRecoveryPlanSteps operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecoveryPlanStepsRequest,
+                                    Pagination::ListRecoveryPlanStepsPaginationTraits<DerivedClient>>
+  ListRecoveryPlanStepsPaginator(const Model::ListRecoveryPlanStepsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecoveryPlanStepsRequest,
+                                             Pagination::ListRecoveryPlanStepsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

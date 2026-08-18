@@ -250,6 +250,8 @@
 #include <aws/connect/model/CreateEmailAddressResult.h>
 #include <aws/connect/model/CreateEvaluationFormRequest.h>
 #include <aws/connect/model/CreateEvaluationFormResult.h>
+#include <aws/connect/model/CreateExtractionDefinitionRequest.h>
+#include <aws/connect/model/CreateExtractionDefinitionResult.h>
 #include <aws/connect/model/CreateHoursOfOperationOverrideRequest.h>
 #include <aws/connect/model/CreateHoursOfOperationOverrideResult.h>
 #include <aws/connect/model/CreateHoursOfOperationRequest.h>
@@ -362,6 +364,8 @@
 #include <aws/connect/model/DeleteEmailAddressRequest.h>
 #include <aws/connect/model/DeleteEmailAddressResult.h>
 #include <aws/connect/model/DeleteEvaluationFormRequest.h>
+#include <aws/connect/model/DeleteExtractionDefinitionRequest.h>
+#include <aws/connect/model/DeleteExtractionDefinitionResult.h>
 #include <aws/connect/model/DeleteHoursOfOperationOverrideRequest.h>
 #include <aws/connect/model/DeleteHoursOfOperationRequest.h>
 #include <aws/connect/model/DeleteInstanceRequest.h>
@@ -426,6 +430,8 @@
 #include <aws/connect/model/DescribeEmailAddressResult.h>
 #include <aws/connect/model/DescribeEvaluationFormRequest.h>
 #include <aws/connect/model/DescribeEvaluationFormResult.h>
+#include <aws/connect/model/DescribeExtractionDefinitionRequest.h>
+#include <aws/connect/model/DescribeExtractionDefinitionResult.h>
 #include <aws/connect/model/DescribeHoursOfOperationOverrideRequest.h>
 #include <aws/connect/model/DescribeHoursOfOperationOverrideResult.h>
 #include <aws/connect/model/DescribeHoursOfOperationRequest.h>
@@ -627,6 +633,12 @@
 #include <aws/connect/model/Expression.h>
 #include <aws/connect/model/ExtensionConfiguration.h>
 #include <aws/connect/model/ExternalInvocationConfiguration.h>
+#include <aws/connect/model/ExtractInformationActionDefinition.h>
+#include <aws/connect/model/ExtractionConfiguration.h>
+#include <aws/connect/model/ExtractionDefinition.h>
+#include <aws/connect/model/ExtractionDefinitionDisplay.h>
+#include <aws/connect/model/ExtractionDefinitionNotFoundBehavior.h>
+#include <aws/connect/model/ExtractionDefinitionSummary.h>
 #include <aws/connect/model/FailedBatchAssociationSummary.h>
 #include <aws/connect/model/FailedRequest.h>
 #include <aws/connect/model/FailureReasonCode.h>
@@ -816,6 +828,8 @@
 #include <aws/connect/model/ListEvaluationFormsPaginationTraits.h>
 #include <aws/connect/model/ListEvaluationFormsRequest.h>
 #include <aws/connect/model/ListEvaluationFormsResult.h>
+#include <aws/connect/model/ListExtractionDefinitionsRequest.h>
+#include <aws/connect/model/ListExtractionDefinitionsResult.h>
 #include <aws/connect/model/ListFlowAssociationResourceType.h>
 #include <aws/connect/model/ListFlowAssociationsPaginationTraits.h>
 #include <aws/connect/model/ListFlowAssociationsRequest.h>
@@ -991,6 +1005,7 @@
 #include <aws/connect/model/NextContactEntry.h>
 #include <aws/connect/model/NextContactMetadata.h>
 #include <aws/connect/model/NextContactType.h>
+#include <aws/connect/model/NotFoundBehaviorType.h>
 #include <aws/connect/model/Notification.h>
 #include <aws/connect/model/NotificationContentType.h>
 #include <aws/connect/model/NotificationDeliveryType.h>
@@ -1175,6 +1190,7 @@
 #include <aws/connect/model/RuleSummary.h>
 #include <aws/connect/model/RuleTriggerEventSource.h>
 #include <aws/connect/model/RulesConfiguration.h>
+#include <aws/connect/model/RulesExtractionDefinitionIdentifier.h>
 #include <aws/connect/model/RulesSearchCriteria.h>
 #include <aws/connect/model/RulesSearchFilter.h>
 #include <aws/connect/model/S3Config.h>
@@ -1451,6 +1467,8 @@
 #include <aws/connect/model/UpdateEmailAddressMetadataResult.h>
 #include <aws/connect/model/UpdateEvaluationFormRequest.h>
 #include <aws/connect/model/UpdateEvaluationFormResult.h>
+#include <aws/connect/model/UpdateExtractionDefinitionRequest.h>
+#include <aws/connect/model/UpdateExtractionDefinitionResult.h>
 #include <aws/connect/model/UpdateHoursOfOperationOverrideRequest.h>
 #include <aws/connect/model/UpdateHoursOfOperationRequest.h>
 #include <aws/connect/model/UpdateInstanceAttributeRequest.h>

@@ -107,6 +107,36 @@ class AWS_DRS_API DrsClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Cancels an in-progress Recovery Plan execution. Remaining steps are
+   * skipped.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CancelRecoveryPlanExecution">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CancelRecoveryPlanExecutionOutcome CancelRecoveryPlanExecution(
+      const Model::CancelRecoveryPlanExecutionRequest& request) const;
+
+  /**
+   * A Callable wrapper for CancelRecoveryPlanExecution that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CancelRecoveryPlanExecutionRequestT = Model::CancelRecoveryPlanExecutionRequest>
+  Model::CancelRecoveryPlanExecutionOutcomeCallable CancelRecoveryPlanExecutionCallable(
+      const CancelRecoveryPlanExecutionRequestT& request) const {
+    return SubmitCallable(&DrsClient::CancelRecoveryPlanExecution, request);
+  }
+
+  /**
+   * An Async wrapper for CancelRecoveryPlanExecution that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CancelRecoveryPlanExecutionRequestT = Model::CancelRecoveryPlanExecutionRequest>
+  void CancelRecoveryPlanExecutionAsync(const CancelRecoveryPlanExecutionRequestT& request,
+                                        const CancelRecoveryPlanExecutionResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DrsClient::CancelRecoveryPlanExecution, request, handler, context);
+  }
+
+  /**
    * <p>Create an extended source server in the target Account based on the source
    * server in staging account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CreateExtendedSourceServer">AWS
@@ -163,6 +193,62 @@ class AWS_DRS_API DrsClient : public Aws::Client::AWSJsonClient,
                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                               const CreateLaunchConfigurationTemplateRequestT& request = {}) const {
     return SubmitAsync(&DrsClient::CreateLaunchConfigurationTemplate, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a Recovery Plan to orchestrate multi-server disaster
+   * recovery.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CreateRecoveryPlan">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateRecoveryPlanOutcome CreateRecoveryPlan(const Model::CreateRecoveryPlanRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateRecoveryPlan that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateRecoveryPlanRequestT = Model::CreateRecoveryPlanRequest>
+  Model::CreateRecoveryPlanOutcomeCallable CreateRecoveryPlanCallable(const CreateRecoveryPlanRequestT& request) const {
+    return SubmitCallable(&DrsClient::CreateRecoveryPlan, request);
+  }
+
+  /**
+   * An Async wrapper for CreateRecoveryPlan that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateRecoveryPlanRequestT = Model::CreateRecoveryPlanRequest>
+  void CreateRecoveryPlanAsync(const CreateRecoveryPlanRequestT& request, const CreateRecoveryPlanResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DrsClient::CreateRecoveryPlan, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a step in a Recovery Plan. A step is either <code>SERVER</code> type
+   * (servers to recover in parallel) or <code>WAIT</code> type (timed pause between
+   * steps).</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CreateRecoveryPlanStep">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateRecoveryPlanStepOutcome CreateRecoveryPlanStep(const Model::CreateRecoveryPlanStepRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateRecoveryPlanStep that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateRecoveryPlanStepRequestT = Model::CreateRecoveryPlanStepRequest>
+  Model::CreateRecoveryPlanStepOutcomeCallable CreateRecoveryPlanStepCallable(const CreateRecoveryPlanStepRequestT& request) const {
+    return SubmitCallable(&DrsClient::CreateRecoveryPlanStep, request);
+  }
+
+  /**
+   * An Async wrapper for CreateRecoveryPlanStep that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateRecoveryPlanStepRequestT = Model::CreateRecoveryPlanStepRequest>
+  void CreateRecoveryPlanStepAsync(const CreateRecoveryPlanStepRequestT& request,
+                                   const CreateRecoveryPlanStepResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DrsClient::CreateRecoveryPlanStep, request, handler, context);
   }
 
   /**
@@ -329,6 +415,91 @@ class AWS_DRS_API DrsClient : public Aws::Client::AWSJsonClient,
                                    const DeleteRecoveryInstanceResponseReceivedHandler& handler,
                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&DrsClient::DeleteRecoveryInstance, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a Recovery Plan. Cannot delete a plan that has an execution in a
+   * non-terminal status (<code>CREATED</code>,
+   * <code>IN_PROGRESS</code>).</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteRecoveryPlan">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteRecoveryPlanOutcome DeleteRecoveryPlan(const Model::DeleteRecoveryPlanRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteRecoveryPlan that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteRecoveryPlanRequestT = Model::DeleteRecoveryPlanRequest>
+  Model::DeleteRecoveryPlanOutcomeCallable DeleteRecoveryPlanCallable(const DeleteRecoveryPlanRequestT& request) const {
+    return SubmitCallable(&DrsClient::DeleteRecoveryPlan, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteRecoveryPlan that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteRecoveryPlanRequestT = Model::DeleteRecoveryPlanRequest>
+  void DeleteRecoveryPlanAsync(const DeleteRecoveryPlanRequestT& request, const DeleteRecoveryPlanResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DrsClient::DeleteRecoveryPlan, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a Recovery Plan execution record. Must be in a terminal
+   * status.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteRecoveryPlanExecution">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteRecoveryPlanExecutionOutcome DeleteRecoveryPlanExecution(
+      const Model::DeleteRecoveryPlanExecutionRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteRecoveryPlanExecution that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteRecoveryPlanExecutionRequestT = Model::DeleteRecoveryPlanExecutionRequest>
+  Model::DeleteRecoveryPlanExecutionOutcomeCallable DeleteRecoveryPlanExecutionCallable(
+      const DeleteRecoveryPlanExecutionRequestT& request) const {
+    return SubmitCallable(&DrsClient::DeleteRecoveryPlanExecution, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteRecoveryPlanExecution that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteRecoveryPlanExecutionRequestT = Model::DeleteRecoveryPlanExecutionRequest>
+  void DeleteRecoveryPlanExecutionAsync(const DeleteRecoveryPlanExecutionRequestT& request,
+                                        const DeleteRecoveryPlanExecutionResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DrsClient::DeleteRecoveryPlanExecution, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a step from a Recovery Plan.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteRecoveryPlanStep">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteRecoveryPlanStepOutcome DeleteRecoveryPlanStep(const Model::DeleteRecoveryPlanStepRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteRecoveryPlanStep that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteRecoveryPlanStepRequestT = Model::DeleteRecoveryPlanStepRequest>
+  Model::DeleteRecoveryPlanStepOutcomeCallable DeleteRecoveryPlanStepCallable(const DeleteRecoveryPlanStepRequestT& request) const {
+    return SubmitCallable(&DrsClient::DeleteRecoveryPlanStep, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteRecoveryPlanStep that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteRecoveryPlanStepRequestT = Model::DeleteRecoveryPlanStepRequest>
+  void DeleteRecoveryPlanStepAsync(const DeleteRecoveryPlanStepRequestT& request,
+                                   const DeleteRecoveryPlanStepResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DrsClient::DeleteRecoveryPlanStep, request, handler, context);
   }
 
   /**
@@ -814,6 +985,114 @@ class AWS_DRS_API DrsClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Gets a Recovery Plan by ARN.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/GetRecoveryPlan">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetRecoveryPlanOutcome GetRecoveryPlan(const Model::GetRecoveryPlanRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetRecoveryPlan that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetRecoveryPlanRequestT = Model::GetRecoveryPlanRequest>
+  Model::GetRecoveryPlanOutcomeCallable GetRecoveryPlanCallable(const GetRecoveryPlanRequestT& request) const {
+    return SubmitCallable(&DrsClient::GetRecoveryPlan, request);
+  }
+
+  /**
+   * An Async wrapper for GetRecoveryPlan that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetRecoveryPlanRequestT = Model::GetRecoveryPlanRequest>
+  void GetRecoveryPlanAsync(const GetRecoveryPlanRequestT& request, const GetRecoveryPlanResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DrsClient::GetRecoveryPlan, request, handler, context);
+  }
+
+  /**
+   * <p>Gets the details of a Recovery Plan execution.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/GetRecoveryPlanExecution">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetRecoveryPlanExecutionOutcome GetRecoveryPlanExecution(const Model::GetRecoveryPlanExecutionRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetRecoveryPlanExecution that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetRecoveryPlanExecutionRequestT = Model::GetRecoveryPlanExecutionRequest>
+  Model::GetRecoveryPlanExecutionOutcomeCallable GetRecoveryPlanExecutionCallable(const GetRecoveryPlanExecutionRequestT& request) const {
+    return SubmitCallable(&DrsClient::GetRecoveryPlanExecution, request);
+  }
+
+  /**
+   * An Async wrapper for GetRecoveryPlanExecution that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetRecoveryPlanExecutionRequestT = Model::GetRecoveryPlanExecutionRequest>
+  void GetRecoveryPlanExecutionAsync(const GetRecoveryPlanExecutionRequestT& request,
+                                     const GetRecoveryPlanExecutionResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DrsClient::GetRecoveryPlanExecution, request, handler, context);
+  }
+
+  /**
+   * <p>Gets the details of a step within a Recovery Plan execution.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/GetRecoveryPlanExecutionStep">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetRecoveryPlanExecutionStepOutcome GetRecoveryPlanExecutionStep(
+      const Model::GetRecoveryPlanExecutionStepRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetRecoveryPlanExecutionStep that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetRecoveryPlanExecutionStepRequestT = Model::GetRecoveryPlanExecutionStepRequest>
+  Model::GetRecoveryPlanExecutionStepOutcomeCallable GetRecoveryPlanExecutionStepCallable(
+      const GetRecoveryPlanExecutionStepRequestT& request) const {
+    return SubmitCallable(&DrsClient::GetRecoveryPlanExecutionStep, request);
+  }
+
+  /**
+   * An Async wrapper for GetRecoveryPlanExecutionStep that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetRecoveryPlanExecutionStepRequestT = Model::GetRecoveryPlanExecutionStepRequest>
+  void GetRecoveryPlanExecutionStepAsync(const GetRecoveryPlanExecutionStepRequestT& request,
+                                         const GetRecoveryPlanExecutionStepResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DrsClient::GetRecoveryPlanExecutionStep, request, handler, context);
+  }
+
+  /**
+   * <p>Gets a Recovery Plan step by ARN.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/GetRecoveryPlanStep">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetRecoveryPlanStepOutcome GetRecoveryPlanStep(const Model::GetRecoveryPlanStepRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetRecoveryPlanStep that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetRecoveryPlanStepRequestT = Model::GetRecoveryPlanStepRequest>
+  Model::GetRecoveryPlanStepOutcomeCallable GetRecoveryPlanStepCallable(const GetRecoveryPlanStepRequestT& request) const {
+    return SubmitCallable(&DrsClient::GetRecoveryPlanStep, request);
+  }
+
+  /**
+   * An Async wrapper for GetRecoveryPlanStep that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetRecoveryPlanStepRequestT = Model::GetRecoveryPlanStepRequest>
+  void GetRecoveryPlanStepAsync(const GetRecoveryPlanStepRequestT& request, const GetRecoveryPlanStepResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DrsClient::GetRecoveryPlanStep, request, handler, context);
+  }
+
+  /**
    * <p>Gets a ReplicationConfiguration, filtered by Source Server ID.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/GetReplicationConfiguration">AWS
@@ -929,6 +1208,119 @@ class AWS_DRS_API DrsClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Lists all steps within a Recovery Plan execution.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListRecoveryPlanExecutionSteps">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListRecoveryPlanExecutionStepsOutcome ListRecoveryPlanExecutionSteps(
+      const Model::ListRecoveryPlanExecutionStepsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListRecoveryPlanExecutionSteps that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListRecoveryPlanExecutionStepsRequestT = Model::ListRecoveryPlanExecutionStepsRequest>
+  Model::ListRecoveryPlanExecutionStepsOutcomeCallable ListRecoveryPlanExecutionStepsCallable(
+      const ListRecoveryPlanExecutionStepsRequestT& request) const {
+    return SubmitCallable(&DrsClient::ListRecoveryPlanExecutionSteps, request);
+  }
+
+  /**
+   * An Async wrapper for ListRecoveryPlanExecutionSteps that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListRecoveryPlanExecutionStepsRequestT = Model::ListRecoveryPlanExecutionStepsRequest>
+  void ListRecoveryPlanExecutionStepsAsync(const ListRecoveryPlanExecutionStepsRequestT& request,
+                                           const ListRecoveryPlanExecutionStepsResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DrsClient::ListRecoveryPlanExecutionSteps, request, handler, context);
+  }
+
+  /**
+   * <p>Lists executions of Recovery Plans, optionally filtered by plan or
+   * status.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListRecoveryPlanExecutions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListRecoveryPlanExecutionsOutcome ListRecoveryPlanExecutions(
+      const Model::ListRecoveryPlanExecutionsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListRecoveryPlanExecutions that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListRecoveryPlanExecutionsRequestT = Model::ListRecoveryPlanExecutionsRequest>
+  Model::ListRecoveryPlanExecutionsOutcomeCallable ListRecoveryPlanExecutionsCallable(
+      const ListRecoveryPlanExecutionsRequestT& request = {}) const {
+    return SubmitCallable(&DrsClient::ListRecoveryPlanExecutions, request);
+  }
+
+  /**
+   * An Async wrapper for ListRecoveryPlanExecutions that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListRecoveryPlanExecutionsRequestT = Model::ListRecoveryPlanExecutionsRequest>
+  void ListRecoveryPlanExecutionsAsync(const ListRecoveryPlanExecutionsResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                       const ListRecoveryPlanExecutionsRequestT& request = {}) const {
+    return SubmitAsync(&DrsClient::ListRecoveryPlanExecutions, request, handler, context);
+  }
+
+  /**
+   * <p>Lists all steps in a Recovery Plan.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListRecoveryPlanSteps">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListRecoveryPlanStepsOutcome ListRecoveryPlanSteps(const Model::ListRecoveryPlanStepsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListRecoveryPlanSteps that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListRecoveryPlanStepsRequestT = Model::ListRecoveryPlanStepsRequest>
+  Model::ListRecoveryPlanStepsOutcomeCallable ListRecoveryPlanStepsCallable(const ListRecoveryPlanStepsRequestT& request) const {
+    return SubmitCallable(&DrsClient::ListRecoveryPlanSteps, request);
+  }
+
+  /**
+   * An Async wrapper for ListRecoveryPlanSteps that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListRecoveryPlanStepsRequestT = Model::ListRecoveryPlanStepsRequest>
+  void ListRecoveryPlanStepsAsync(const ListRecoveryPlanStepsRequestT& request, const ListRecoveryPlanStepsResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DrsClient::ListRecoveryPlanSteps, request, handler, context);
+  }
+
+  /**
+   * <p>Lists all Recovery Plans in the account.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListRecoveryPlans">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListRecoveryPlansOutcome ListRecoveryPlans(const Model::ListRecoveryPlansRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListRecoveryPlans that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListRecoveryPlansRequestT = Model::ListRecoveryPlansRequest>
+  Model::ListRecoveryPlansOutcomeCallable ListRecoveryPlansCallable(const ListRecoveryPlansRequestT& request = {}) const {
+    return SubmitCallable(&DrsClient::ListRecoveryPlans, request);
+  }
+
+  /**
+   * An Async wrapper for ListRecoveryPlans that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListRecoveryPlansRequestT = Model::ListRecoveryPlansRequest>
+  void ListRecoveryPlansAsync(const ListRecoveryPlansResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                              const ListRecoveryPlansRequestT& request = {}) const {
+    return SubmitAsync(&DrsClient::ListRecoveryPlans, request, handler, context);
+  }
+
+  /**
    * <p>Returns an array of staging accounts for existing extended source
    * servers.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListStagingAccounts">AWS
@@ -1006,6 +1398,64 @@ class AWS_DRS_API DrsClient : public Aws::Client::AWSJsonClient,
   void PutLaunchActionAsync(const PutLaunchActionRequestT& request, const PutLaunchActionResponseReceivedHandler& handler,
                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&DrsClient::PutLaunchAction, request, handler, context);
+  }
+
+  /**
+   * <p>Reorders steps in a Recovery Plan. Accepts a complete ordered list of step
+   * ARNs.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ReorderRecoveryPlanSteps">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ReorderRecoveryPlanStepsOutcome ReorderRecoveryPlanSteps(const Model::ReorderRecoveryPlanStepsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ReorderRecoveryPlanSteps that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ReorderRecoveryPlanStepsRequestT = Model::ReorderRecoveryPlanStepsRequest>
+  Model::ReorderRecoveryPlanStepsOutcomeCallable ReorderRecoveryPlanStepsCallable(const ReorderRecoveryPlanStepsRequestT& request) const {
+    return SubmitCallable(&DrsClient::ReorderRecoveryPlanSteps, request);
+  }
+
+  /**
+   * An Async wrapper for ReorderRecoveryPlanSteps that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ReorderRecoveryPlanStepsRequestT = Model::ReorderRecoveryPlanStepsRequest>
+  void ReorderRecoveryPlanStepsAsync(const ReorderRecoveryPlanStepsRequestT& request,
+                                     const ReorderRecoveryPlanStepsResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DrsClient::ReorderRecoveryPlanSteps, request, handler, context);
+  }
+
+  /**
+   * <p>Retries a failed <code>SERVER</code> type execution step.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/RetryRecoveryPlanExecutionStep">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RetryRecoveryPlanExecutionStepOutcome RetryRecoveryPlanExecutionStep(
+      const Model::RetryRecoveryPlanExecutionStepRequest& request) const;
+
+  /**
+   * A Callable wrapper for RetryRecoveryPlanExecutionStep that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename RetryRecoveryPlanExecutionStepRequestT = Model::RetryRecoveryPlanExecutionStepRequest>
+  Model::RetryRecoveryPlanExecutionStepOutcomeCallable RetryRecoveryPlanExecutionStepCallable(
+      const RetryRecoveryPlanExecutionStepRequestT& request) const {
+    return SubmitCallable(&DrsClient::RetryRecoveryPlanExecutionStep, request);
+  }
+
+  /**
+   * An Async wrapper for RetryRecoveryPlanExecutionStep that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename RetryRecoveryPlanExecutionStepRequestT = Model::RetryRecoveryPlanExecutionStepRequest>
+  void RetryRecoveryPlanExecutionStepAsync(const RetryRecoveryPlanExecutionStepRequestT& request,
+                                           const RetryRecoveryPlanExecutionStepResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DrsClient::RetryRecoveryPlanExecutionStep, request, handler, context);
   }
 
   /**
@@ -1092,6 +1542,37 @@ class AWS_DRS_API DrsClient : public Aws::Client::AWSJsonClient,
   void StartRecoveryAsync(const StartRecoveryRequestT& request, const StartRecoveryResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&DrsClient::StartRecovery, request, handler, context);
+  }
+
+  /**
+   * <p>Starts executing a Recovery Plan in <code>DRILL</code> or
+   * <code>RECOVERY</code> mode. A plan cannot have more than one execution in a
+   * non-terminal status at a time.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartRecoveryPlanExecution">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartRecoveryPlanExecutionOutcome StartRecoveryPlanExecution(
+      const Model::StartRecoveryPlanExecutionRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartRecoveryPlanExecution that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename StartRecoveryPlanExecutionRequestT = Model::StartRecoveryPlanExecutionRequest>
+  Model::StartRecoveryPlanExecutionOutcomeCallable StartRecoveryPlanExecutionCallable(
+      const StartRecoveryPlanExecutionRequestT& request) const {
+    return SubmitCallable(&DrsClient::StartRecoveryPlanExecution, request);
+  }
+
+  /**
+   * An Async wrapper for StartRecoveryPlanExecution that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StartRecoveryPlanExecutionRequestT = Model::StartRecoveryPlanExecutionRequest>
+  void StartRecoveryPlanExecutionAsync(const StartRecoveryPlanExecutionRequestT& request,
+                                       const StartRecoveryPlanExecutionResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DrsClient::StartRecoveryPlanExecution, request, handler, context);
   }
 
   /**
@@ -1439,6 +1920,92 @@ class AWS_DRS_API DrsClient : public Aws::Client::AWSJsonClient,
                                               const UpdateLaunchConfigurationTemplateResponseReceivedHandler& handler,
                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&DrsClient::UpdateLaunchConfigurationTemplate, request, handler, context);
+  }
+
+  /**
+   * <p>Updates a Recovery Plan's name or description.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/UpdateRecoveryPlan">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateRecoveryPlanOutcome UpdateRecoveryPlan(const Model::UpdateRecoveryPlanRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateRecoveryPlan that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateRecoveryPlanRequestT = Model::UpdateRecoveryPlanRequest>
+  Model::UpdateRecoveryPlanOutcomeCallable UpdateRecoveryPlanCallable(const UpdateRecoveryPlanRequestT& request) const {
+    return SubmitCallable(&DrsClient::UpdateRecoveryPlan, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateRecoveryPlan that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateRecoveryPlanRequestT = Model::UpdateRecoveryPlanRequest>
+  void UpdateRecoveryPlanAsync(const UpdateRecoveryPlanRequestT& request, const UpdateRecoveryPlanResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DrsClient::UpdateRecoveryPlan, request, handler, context);
+  }
+
+  /**
+   * <p>Updates an execution step. Supports two actions: (1) skip a step that is in
+   * <code>NOT_STARTED</code> or <code>FAILED</code> status; (2) update the wait
+   * duration of a <code>WAIT</code> type step that is in <code>NOT_STARTED</code>
+   * status.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/UpdateRecoveryPlanExecutionStep">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateRecoveryPlanExecutionStepOutcome UpdateRecoveryPlanExecutionStep(
+      const Model::UpdateRecoveryPlanExecutionStepRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateRecoveryPlanExecutionStep that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateRecoveryPlanExecutionStepRequestT = Model::UpdateRecoveryPlanExecutionStepRequest>
+  Model::UpdateRecoveryPlanExecutionStepOutcomeCallable UpdateRecoveryPlanExecutionStepCallable(
+      const UpdateRecoveryPlanExecutionStepRequestT& request) const {
+    return SubmitCallable(&DrsClient::UpdateRecoveryPlanExecutionStep, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateRecoveryPlanExecutionStep that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename UpdateRecoveryPlanExecutionStepRequestT = Model::UpdateRecoveryPlanExecutionStepRequest>
+  void UpdateRecoveryPlanExecutionStepAsync(const UpdateRecoveryPlanExecutionStepRequestT& request,
+                                            const UpdateRecoveryPlanExecutionStepResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DrsClient::UpdateRecoveryPlanExecutionStep, request, handler, context);
+  }
+
+  /**
+   * <p>Updates a Recovery Plan step's name or configuration. Step type is
+   * immutable.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/UpdateRecoveryPlanStep">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateRecoveryPlanStepOutcome UpdateRecoveryPlanStep(const Model::UpdateRecoveryPlanStepRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateRecoveryPlanStep that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateRecoveryPlanStepRequestT = Model::UpdateRecoveryPlanStepRequest>
+  Model::UpdateRecoveryPlanStepOutcomeCallable UpdateRecoveryPlanStepCallable(const UpdateRecoveryPlanStepRequestT& request) const {
+    return SubmitCallable(&DrsClient::UpdateRecoveryPlanStep, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateRecoveryPlanStep that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateRecoveryPlanStepRequestT = Model::UpdateRecoveryPlanStepRequest>
+  void UpdateRecoveryPlanStepAsync(const UpdateRecoveryPlanStepRequestT& request,
+                                   const UpdateRecoveryPlanStepResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DrsClient::UpdateRecoveryPlanStep, request, handler, context);
   }
 
   /**

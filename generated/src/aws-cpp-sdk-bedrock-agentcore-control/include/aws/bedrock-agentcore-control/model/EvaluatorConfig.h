@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/CodeBasedEvaluatorConfig.h>
+#include <aws/bedrock-agentcore-control/model/DerivedEvaluatorConfig.h>
 #include <aws/bedrock-agentcore-control/model/LlmAsAJudgeEvaluatorConfig.h>
 
 #include <utility>
@@ -70,12 +71,35 @@ class EvaluatorConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The configuration for an evaluator derived from an existing base evaluator
+   * (a built-in or third-party evaluator), run on your own model. The base evaluator
+   * supplies the prompt and scoring. </p>
+   */
+  inline const DerivedEvaluatorConfig& GetDerived() const { return m_derived; }
+  inline bool DerivedHasBeenSet() const { return m_derivedHasBeenSet; }
+  template <typename DerivedT = DerivedEvaluatorConfig>
+  void SetDerived(DerivedT&& value) {
+    m_derivedHasBeenSet = true;
+    m_derived = std::forward<DerivedT>(value);
+  }
+  template <typename DerivedT = DerivedEvaluatorConfig>
+  EvaluatorConfig& WithDerived(DerivedT&& value) {
+    SetDerived(std::forward<DerivedT>(value));
+    return *this;
+  }
+  ///@}
  private:
   LlmAsAJudgeEvaluatorConfig m_llmAsAJudge;
 
   CodeBasedEvaluatorConfig m_codeBased;
+
+  DerivedEvaluatorConfig m_derived;
   bool m_llmAsAJudgeHasBeenSet = false;
   bool m_codeBasedHasBeenSet = false;
+  bool m_derivedHasBeenSet = false;
 };
 
 }  // namespace Model

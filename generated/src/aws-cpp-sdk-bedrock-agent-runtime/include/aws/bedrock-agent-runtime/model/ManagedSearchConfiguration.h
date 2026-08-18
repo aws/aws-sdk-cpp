@@ -36,7 +36,10 @@ class ManagedSearchConfiguration {
   AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p>Filters the metadata of the retrieved results so that Amazon Bedrock returns
+   * only results that match the filter.</p>
+   */
   inline const RetrievalFilter& GetFilter() const { return m_filter; }
   inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
   template <typename FilterT = RetrievalFilter>

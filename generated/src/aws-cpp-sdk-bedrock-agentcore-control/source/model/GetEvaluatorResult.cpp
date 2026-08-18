@@ -42,6 +42,14 @@ GetEvaluatorResult& GetEvaluatorResult::operator=(const Aws::AmazonWebServiceRes
     m_evaluatorConfig = jsonValue.GetObject("evaluatorConfig");
     m_evaluatorConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("evaluatorType")) {
+    m_evaluatorType = EvaluatorTypeMapper::GetEvaluatorTypeForName(jsonValue.GetString("evaluatorType"));
+    m_evaluatorTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("provider")) {
+    m_provider = ProviderMapper::GetProviderForName(jsonValue.GetString("provider"));
+    m_providerHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("level")) {
     m_level = EvaluatorLevelMapper::GetEvaluatorLevelForName(jsonValue.GetString("level"));
     m_levelHasBeenSet = true;

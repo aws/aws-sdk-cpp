@@ -23,6 +23,10 @@ Aws::String AgenticRetrieveStreamRequest::SerializePayload() const {
     payload.WithBool("generateResponse", m_generateResponse);
   }
 
+  if (m_memoryConfigurationHasBeenSet) {
+    payload.WithObject("memoryConfiguration", m_memoryConfiguration.Jsonize());
+  }
+
   if (m_messagesHasBeenSet) {
     Aws::Utils::Array<JsonValue> messagesJsonList(m_messages.size());
     for (unsigned messagesIndex = 0; messagesIndex < messagesJsonList.GetLength(); ++messagesIndex) {

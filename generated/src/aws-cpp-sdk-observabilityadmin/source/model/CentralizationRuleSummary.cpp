@@ -50,6 +50,15 @@ CentralizationRuleSummary& CentralizationRuleSummary::operator=(JsonView jsonVal
     m_failureReason = CentralizationFailureReasonMapper::GetCentralizationFailureReasonForName(jsonValue.GetString("FailureReason"));
     m_failureReasonHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("TagPropagationStatus")) {
+    m_tagPropagationStatus = TagPropagationStatusMapper::GetTagPropagationStatusForName(jsonValue.GetString("TagPropagationStatus"));
+    m_tagPropagationStatusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("TagPropagationFailureReason")) {
+    m_tagPropagationFailureReason =
+        TagPropagationFailureReasonMapper::GetTagPropagationFailureReasonForName(jsonValue.GetString("TagPropagationFailureReason"));
+    m_tagPropagationFailureReasonHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("DestinationAccountId")) {
     m_destinationAccountId = jsonValue.GetString("DestinationAccountId");
     m_destinationAccountIdHasBeenSet = true;
@@ -94,6 +103,15 @@ JsonValue CentralizationRuleSummary::Jsonize() const {
 
   if (m_failureReasonHasBeenSet) {
     payload.WithString("FailureReason", CentralizationFailureReasonMapper::GetNameForCentralizationFailureReason(m_failureReason));
+  }
+
+  if (m_tagPropagationStatusHasBeenSet) {
+    payload.WithString("TagPropagationStatus", TagPropagationStatusMapper::GetNameForTagPropagationStatus(m_tagPropagationStatus));
+  }
+
+  if (m_tagPropagationFailureReasonHasBeenSet) {
+    payload.WithString("TagPropagationFailureReason",
+                       TagPropagationFailureReasonMapper::GetNameForTagPropagationFailureReason(m_tagPropagationFailureReason));
   }
 
   if (m_destinationAccountIdHasBeenSet) {

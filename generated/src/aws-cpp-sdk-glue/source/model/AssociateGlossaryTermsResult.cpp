@@ -26,6 +26,14 @@ AssociateGlossaryTermsResult& AssociateGlossaryTermsResult::operator=(const Aws:
     m_assetIdentifier = jsonValue.GetString("AssetIdentifier");
     m_assetIdentifierHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("IterableFormName")) {
+    m_iterableFormName = jsonValue.GetString("IterableFormName");
+    m_iterableFormNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ItemIdentifier")) {
+    m_itemIdentifier = jsonValue.GetString("ItemIdentifier");
+    m_itemIdentifierHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("GlossaryTerms")) {
     Aws::Utils::Array<JsonView> glossaryTermsJsonList = jsonValue.GetArray("GlossaryTerms");
     for (unsigned glossaryTermsIndex = 0; glossaryTermsIndex < glossaryTermsJsonList.GetLength(); ++glossaryTermsIndex) {

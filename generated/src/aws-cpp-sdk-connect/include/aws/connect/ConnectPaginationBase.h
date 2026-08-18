@@ -31,6 +31,7 @@
 #include <aws/connect/model/ListEntitySecurityProfilesPaginationTraits.h>
 #include <aws/connect/model/ListEvaluationFormVersionsPaginationTraits.h>
 #include <aws/connect/model/ListEvaluationFormsPaginationTraits.h>
+#include <aws/connect/model/ListExtractionDefinitionsPaginationTraits.h>
 #include <aws/connect/model/ListFlowAssociationsPaginationTraits.h>
 #include <aws/connect/model/ListHoursOfOperationOverridesPaginationTraits.h>
 #include <aws/connect/model/ListHoursOfOperationsPaginationTraits.h>
@@ -410,6 +411,18 @@ class ConnectPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEvaluationFormVersionsRequest,
                                              Pagination::ListEvaluationFormVersionsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListExtractionDefinitions operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListExtractionDefinitionsRequest,
+                                    Pagination::ListExtractionDefinitionsPaginationTraits<DerivedClient>>
+  ListExtractionDefinitionsPaginator(const Model::ListExtractionDefinitionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListExtractionDefinitionsRequest,
+                                             Pagination::ListExtractionDefinitionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

@@ -47,5 +47,9 @@ Aws::String CreatePaymentManagerRequest::SerializePayload() const {
     payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
+  if (m_kmsKeyArnHasBeenSet) {
+    payload.WithString("kmsKeyArn", m_kmsKeyArn);
+  }
+
   return payload.View().WriteReadable();
 }

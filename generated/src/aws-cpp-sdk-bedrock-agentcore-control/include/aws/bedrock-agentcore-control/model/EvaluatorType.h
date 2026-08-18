@@ -10,7 +10,7 @@
 namespace Aws {
 namespace BedrockAgentCoreControl {
 namespace Model {
-enum class EvaluatorType { NOT_SET, Builtin, Custom, CustomCode };
+enum class EvaluatorType { NOT_SET, Builtin, ThirdParty, Custom, CustomCode, CustomDerived };
 
 namespace EvaluatorTypeMapper {
 AWS_BEDROCKAGENTCORECONTROL_API EvaluatorType GetEvaluatorTypeForName(const Aws::String& name);

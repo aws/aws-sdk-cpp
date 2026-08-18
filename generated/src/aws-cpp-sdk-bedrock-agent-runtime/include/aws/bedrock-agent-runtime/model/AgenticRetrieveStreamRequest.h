@@ -7,6 +7,7 @@
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeRequest.h>
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveConfiguration.h>
+#include <aws/bedrock-agent-runtime/model/AgenticRetrieveMemoryConfiguration.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveMessage.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrievePolicyConfiguration.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveStreamHandler.h>
@@ -97,6 +98,25 @@ class AgenticRetrieveStreamRequest : public BedrockAgentRuntimeRequest {
   }
   inline AgenticRetrieveStreamRequest& WithGenerateResponse(bool value) {
     SetGenerateResponse(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The configuration for using an Amazon Bedrock AgentCore Memory resource with
+   * this retrieval.</p>
+   */
+  inline const AgenticRetrieveMemoryConfiguration& GetMemoryConfiguration() const { return m_memoryConfiguration; }
+  inline bool MemoryConfigurationHasBeenSet() const { return m_memoryConfigurationHasBeenSet; }
+  template <typename MemoryConfigurationT = AgenticRetrieveMemoryConfiguration>
+  void SetMemoryConfiguration(MemoryConfigurationT&& value) {
+    m_memoryConfigurationHasBeenSet = true;
+    m_memoryConfiguration = std::forward<MemoryConfigurationT>(value);
+  }
+  template <typename MemoryConfigurationT = AgenticRetrieveMemoryConfiguration>
+  AgenticRetrieveStreamRequest& WithMemoryConfiguration(MemoryConfigurationT&& value) {
+    SetMemoryConfiguration(std::forward<MemoryConfigurationT>(value));
     return *this;
   }
   ///@}
@@ -209,6 +229,8 @@ class AgenticRetrieveStreamRequest : public BedrockAgentRuntimeRequest {
 
   bool m_generateResponse{false};
 
+  AgenticRetrieveMemoryConfiguration m_memoryConfiguration;
+
   Aws::Vector<AgenticRetrieveMessage> m_messages;
 
   Aws::String m_nextToken;
@@ -223,6 +245,7 @@ class AgenticRetrieveStreamRequest : public BedrockAgentRuntimeRequest {
 
   bool m_agenticRetrieveConfigurationHasBeenSet = false;
   bool m_generateResponseHasBeenSet = false;
+  bool m_memoryConfigurationHasBeenSet = false;
   bool m_messagesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_policyConfigurationHasBeenSet = false;

@@ -51,6 +51,7 @@
 #include <aws/connect/model/CreateDataTableRequest.h>
 #include <aws/connect/model/CreateEmailAddressRequest.h>
 #include <aws/connect/model/CreateEvaluationFormRequest.h>
+#include <aws/connect/model/CreateExtractionDefinitionRequest.h>
 #include <aws/connect/model/CreateHoursOfOperationOverrideRequest.h>
 #include <aws/connect/model/CreateHoursOfOperationRequest.h>
 #include <aws/connect/model/CreateInstanceRequest.h>
@@ -91,6 +92,7 @@
 #include <aws/connect/model/DeleteDataTableRequest.h>
 #include <aws/connect/model/DeleteEmailAddressRequest.h>
 #include <aws/connect/model/DeleteEvaluationFormRequest.h>
+#include <aws/connect/model/DeleteExtractionDefinitionRequest.h>
 #include <aws/connect/model/DeleteHoursOfOperationOverrideRequest.h>
 #include <aws/connect/model/DeleteHoursOfOperationRequest.h>
 #include <aws/connect/model/DeleteInstanceRequest.h>
@@ -104,8 +106,6 @@
 #include <aws/connect/model/DeleteQuickConnectRequest.h>
 #include <aws/connect/model/DeleteRoutingProfileRequest.h>
 #include <aws/connect/model/DeleteRuleRequest.h>
-#include <aws/connect/model/DeleteSecurityProfileRequest.h>
-#include <aws/connect/model/DeleteSessionRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/CoreErrors.h>
@@ -1232,6 +1232,24 @@ CreateEvaluationFormOutcome ConnectClient::CreateEvaluationForm(const CreateEval
                             : CreateEvaluationFormOutcome(std::move(result.GetError()));
 }
 
+CreateExtractionDefinitionOutcome ConnectClient::CreateExtractionDefinition(const CreateExtractionDefinitionRequest& request) const {
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateExtractionDefinition", "Required field: InstanceId, is not set");
+    return CreateExtractionDefinitionOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                  "Missing required field [InstanceId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/extraction-definitions/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateExtractionDefinitionOutcome(result.GetResultWithOwnership())
+                            : CreateExtractionDefinitionOutcome(std::move(result.GetError()));
+}
+
 CreateHoursOfOperationOutcome ConnectClient::CreateHoursOfOperation(const CreateHoursOfOperationRequest& request) const {
   if (!request.InstanceIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("CreateHoursOfOperation", "Required field: InstanceId, is not set");
@@ -2077,6 +2095,30 @@ DeleteEvaluationFormOutcome ConnectClient::DeleteEvaluationForm(const DeleteEval
                             : DeleteEvaluationFormOutcome(std::move(result.GetError()));
 }
 
+DeleteExtractionDefinitionOutcome ConnectClient::DeleteExtractionDefinition(const DeleteExtractionDefinitionRequest& request) const {
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteExtractionDefinition", "Required field: InstanceId, is not set");
+    return DeleteExtractionDefinitionOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                  "Missing required field [InstanceId]", false));
+  }
+  if (!request.ExtractionDefinitionIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteExtractionDefinition", "Required field: ExtractionDefinitionId, is not set");
+    return DeleteExtractionDefinitionOutcome(Aws::Client::AWSError<ConnectErrors>(
+        ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExtractionDefinitionId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/extraction-definitions/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExtractionDefinitionId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteExtractionDefinitionOutcome(result.GetResultWithOwnership())
+                            : DeleteExtractionDefinitionOutcome(std::move(result.GetError()));
+}
+
 DeleteHoursOfOperationOutcome ConnectClient::DeleteHoursOfOperation(const DeleteHoursOfOperationRequest& request) const {
   if (!request.InstanceIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteHoursOfOperation", "Required field: InstanceId, is not set");
@@ -2392,51 +2434,4 @@ DeleteRuleOutcome ConnectClient::DeleteRule(const DeleteRuleRequest& request) co
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteRuleOutcome(result.GetResultWithOwnership()) : DeleteRuleOutcome(std::move(result.GetError()));
-}
-
-DeleteSecurityProfileOutcome ConnectClient::DeleteSecurityProfile(const DeleteSecurityProfileRequest& request) const {
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("DeleteSecurityProfile", "Required field: InstanceId, is not set");
-    return DeleteSecurityProfileOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                             "Missing required field [InstanceId]", false));
-  }
-  if (!request.SecurityProfileIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("DeleteSecurityProfile", "Required field: SecurityProfileId, is not set");
-    return DeleteSecurityProfileOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                             "Missing required field [SecurityProfileId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/security-profiles/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSecurityProfileId());
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
-  return result.IsSuccess() ? DeleteSecurityProfileOutcome(result.GetResultWithOwnership())
-                            : DeleteSecurityProfileOutcome(std::move(result.GetError()));
-}
-
-DeleteSessionOutcome ConnectClient::DeleteSession(const DeleteSessionRequest& request) const {
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("DeleteSession", "Required field: InstanceId, is not set");
-    return DeleteSessionOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                     "Missing required field [InstanceId]", false));
-  }
-  if (!request.SessionIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("DeleteSession", "Required field: SessionId, is not set");
-    return DeleteSessionOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                     "Missing required field [SessionId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/auth/sessions/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
-  return result.IsSuccess() ? DeleteSessionOutcome(result.GetResultWithOwnership()) : DeleteSessionOutcome(std::move(result.GetError()));
 }

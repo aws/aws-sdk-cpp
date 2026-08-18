@@ -7,6 +7,7 @@
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveActionDetails.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveFullDocExpansionDetails.h>
+#include <aws/bedrock-agent-runtime/model/AgenticRetrieveMemoryRetrieveDetails.h>
 
 #include <utility>
 
@@ -52,6 +53,25 @@ class AgenticRetrieveAction {
 
   ///@{
   /**
+   * <p>The details of a long-term memory retrieval that the agent chose to
+   * perform.</p>
+   */
+  inline const AgenticRetrieveMemoryRetrieveDetails& GetMemoryRetrieve() const { return m_memoryRetrieve; }
+  inline bool MemoryRetrieveHasBeenSet() const { return m_memoryRetrieveHasBeenSet; }
+  template <typename MemoryRetrieveT = AgenticRetrieveMemoryRetrieveDetails>
+  void SetMemoryRetrieve(MemoryRetrieveT&& value) {
+    m_memoryRetrieveHasBeenSet = true;
+    m_memoryRetrieve = std::forward<MemoryRetrieveT>(value);
+  }
+  template <typename MemoryRetrieveT = AgenticRetrieveMemoryRetrieveDetails>
+  AgenticRetrieveAction& WithMemoryRetrieve(MemoryRetrieveT&& value) {
+    SetMemoryRetrieve(std::forward<MemoryRetrieveT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Details of the retrieve action.</p>
    */
   inline const AgenticRetrieveActionDetails& GetRetrieve() const { return m_retrieve; }
@@ -70,8 +90,11 @@ class AgenticRetrieveAction {
  private:
   AgenticRetrieveFullDocExpansionDetails m_fullDocumentExpansion;
 
+  AgenticRetrieveMemoryRetrieveDetails m_memoryRetrieve;
+
   AgenticRetrieveActionDetails m_retrieve;
   bool m_fullDocumentExpansionHasBeenSet = false;
+  bool m_memoryRetrieveHasBeenSet = false;
   bool m_retrieveHasBeenSet = false;
 };
 
