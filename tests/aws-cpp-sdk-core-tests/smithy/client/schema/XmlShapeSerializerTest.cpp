@@ -18,8 +18,6 @@ using namespace smithy::schema;
 
 class XmlShapeSerializerTest : public Aws::Testing::AwsCppSdkGTestSuite {};
 
-// --- Scalars ---
-
 TEST_F(XmlShapeSerializerTest, EmptyStructure) {
   XmlShapeSerializer s;
   auto root = Schema::StructureBuilder("Root", {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "Root")}}).Build();
@@ -141,8 +139,6 @@ TEST_F(XmlShapeSerializerTest, MultipleScalars) {
   EXPECT_NE(payload.find("<c>x</c>"), Aws::String::npos);
 }
 
-// --- Nested structures ---
-
 TEST_F(XmlShapeSerializerTest, NestedStructure) {
   XmlShapeSerializer s;
   auto root = Schema::StructureBuilder("Root", {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "Root")}}).Build();
@@ -171,8 +167,6 @@ TEST_F(XmlShapeSerializerTest, DeeplyNestedStructure) {
   s.WriteStruct(*root, rootStruct);
   EXPECT_NE(s.GetPayload().GetResult().find("<l1><l2><val>99</val></l2></l1>"), Aws::String::npos);
 }
-
-// --- Lists ---
 
 TEST_F(XmlShapeSerializerTest, ListOfStrings) {
   XmlShapeSerializer s;
@@ -212,7 +206,6 @@ TEST_F(XmlShapeSerializerTest, EmptyList) {
   auto listMember = Schema::CreateMember("items", ShapeType::List);
   LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteList(*listMember, 0, [](ShapeSerializer&) {}); });
   s.WriteStruct(*root, rootStruct);
-  // Empty list still produces the wrapper element
   EXPECT_NE(s.GetPayload().GetResult().find("<items></items>"), Aws::String::npos);
 }
 
@@ -231,8 +224,6 @@ TEST_F(XmlShapeSerializerTest, ListOfStructures) {
   s.WriteStruct(*root, rootStruct);
   EXPECT_NE(s.GetPayload().GetResult().find("<items><member><id>1</id></member><member><id>2</id></member></items>"), Aws::String::npos);
 }
-
-// --- Maps ---
 
 TEST_F(XmlShapeSerializerTest, MapOfStrings) {
   XmlShapeSerializer s;
@@ -279,8 +270,6 @@ TEST_F(XmlShapeSerializerTest, MapOfStructures) {
   EXPECT_NE(s.GetPayload().GetResult().find("<nodes><entry><key>a</key><value><val>1</val></value></entry></nodes>"), Aws::String::npos);
 }
 
-// --- Combinations ---
-
 TEST_F(XmlShapeSerializerTest, StructureWithListAndMap) {
   XmlShapeSerializer s;
   auto root = Schema::StructureBuilder("Root", {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "Root")}}).Build();
@@ -307,8 +296,6 @@ TEST_F(XmlShapeSerializerTest, StructureWithListAndMap) {
   EXPECT_NE(payload.find("<tags><member>t1</member><member>t2</member></tags>"), Aws::String::npos);
   EXPECT_NE(payload.find("<meta><entry><key>k</key><value>v</value></entry></meta>"), Aws::String::npos);
 }
-
-// --- XML Escaping ---
 
 TEST_F(XmlShapeSerializerTest, EscapesAmpersand) {
   XmlShapeSerializer s;
@@ -355,13 +342,10 @@ TEST_F(XmlShapeSerializerTest, EscapesMultipleSpecialChars) {
   EXPECT_NE(s.GetPayload().GetResult().find("<expr>x &lt; 5 &amp; y &gt; 3</expr>"), Aws::String::npos);
 }
 
-// --- Depth limit ---
-
 TEST_F(XmlShapeSerializerTest, MaxDepthEnforcement) {
   XmlShapeSerializer s;
   auto root = Schema::StructureBuilder("Root", {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "Root")}}).Build();
   auto nested = Schema::CreateMember("n", ShapeType::Structure);
-  // Nest well past the depth limit; the serializer stops and reports the error.
   std::function<void(ShapeSerializer&, int)> nest = [&](ShapeSerializer& ser, int remaining) {
     if (remaining <= 0) {
       return;
@@ -373,8 +357,6 @@ TEST_F(XmlShapeSerializerTest, MaxDepthEnforcement) {
   bool hitLimit = !s.GetPayload().IsSuccess();
   EXPECT_TRUE(hitLimit);
 }
-
-// --- xmlName trait ---
 
 TEST_F(XmlShapeSerializerTest, XmlNameOverridesMemberName) {
   XmlShapeSerializer s;
@@ -395,8 +377,6 @@ TEST_F(XmlShapeSerializerTest, XmlNameOnStructure) {
   s.WriteStruct(*root, rootStruct);
   EXPECT_NE(s.GetPayload().GetResult().find("<CustomRoot><val>42</val></CustomRoot>"), Aws::String::npos);
 }
-
-// --- Flattened lists ---
 
 TEST_F(XmlShapeSerializerTest, FlattenedListOfStrings) {
   XmlShapeSerializer s;
@@ -433,8 +413,6 @@ TEST_F(XmlShapeSerializerTest, FlattenedListWithXmlName) {
   EXPECT_NE(s.GetPayload().GetResult().find("<Tag>x</Tag><Tag>y</Tag>"), Aws::String::npos);
 }
 
-// --- Custom list item name ---
-
 TEST_F(XmlShapeSerializerTest, CustomListItemName) {
   XmlShapeSerializer s;
   auto root = Schema::StructureBuilder("Root", {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "Root")}}).Build();
@@ -449,8 +427,6 @@ TEST_F(XmlShapeSerializerTest, CustomListItemName) {
   s.WriteStruct(*root, rootStruct);
   EXPECT_NE(s.GetPayload().GetResult().find("<things><item>a</item><item>b</item></things>"), Aws::String::npos);
 }
-
-// --- Custom map entry/key/value names ---
 
 TEST_F(XmlShapeSerializerTest, CustomMapNames) {
   XmlShapeSerializer s;

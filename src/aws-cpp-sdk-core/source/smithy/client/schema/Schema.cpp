@@ -25,8 +25,6 @@ TraitMap ToTraitMap(TraitList traits) {
   return map;
 }
 
-// Compose a member id from its containing shape id and member name, e.g.
-// "com.example#Foo$bar". Purely informational; used for GetId().
 Aws::String MakeMemberId(const Aws::String& shapeId, const Aws::String& memberName) {
   Aws::String id = shapeId;
   id += "$";
@@ -34,7 +32,6 @@ Aws::String MakeMemberId(const Aws::String& shapeId, const Aws::String& memberNa
   return id;
 }
 
-// A leaf shape with no members.
 class ScalarSchema final : public Schema {
  public:
   ScalarSchema(ShapeType type, const char* id, TraitList traits)
@@ -48,11 +45,6 @@ class ScalarSchema final : public Schema {
   Aws::String m_id;
 };
 
-// A named member of an aggregate shape. Delegates its type to the shape it
-// targets. A member normally owns its target; the weak overload is used only for
-// recursive members, where the target is kept alive by the definition site so
-// the graph does not form a reference cycle. Either way GetMemberTarget() hands
-// back a shared_ptr that lifetime-extends the target while the caller holds it.
 class MemberSchema final : public Schema {
  public:
   MemberSchema(const Aws::String& name, const Aws::String& id, int index, std::shared_ptr<const Schema> target,
@@ -96,9 +88,6 @@ class MemberSchema final : public Schema {
   std::weak_ptr<const Schema> m_weakTarget;
 };
 
-// A shape that carries members (structure, union, list, map). Owns its member
-// nodes and any eagerly-built target shapes; recursively referenced targets are
-// kept alive by the definition site, not by this shape.
 class RootSchema final : public Schema {
  public:
   RootSchema(ShapeType type, const Aws::String& id, TraitMap traits) : m_type(type), m_id(id) {
@@ -125,10 +114,6 @@ class RootSchema final : public Schema {
 
   uint16_t GetMemberCount() const override { return static_cast<uint16_t>(m_members.size()); }
 
-  // Used only by SchemaBuilder while assembling the shape. Member names must be
-  // unique within a shape; a duplicate is a codegen/programming error, so reject
-  // it rather than shadowing the earlier member (which would leave the first
-  // unreachable by name yet still counted in GetMemberCount()).
   void AddMember(const std::shared_ptr<const Schema>& member) {
     const auto inserted = m_nameToIndex.emplace(member->GetMemberName(), static_cast<int>(m_members.size()));
     assert(inserted.second && "duplicate member name in schema");
@@ -149,7 +134,6 @@ std::shared_ptr<const Schema> MakeScalar(ShapeType type, const char* id, TraitLi
   return Aws::MakeShared<ScalarSchema>(SCHEMA_ALLOC_TAG, type, id, traits);
 }
 
-// An empty shape of the given type, used as the target of a standalone member.
 std::shared_ptr<const Schema> MakeEmptyShape(ShapeType type, const char* id) {
   switch (type) {
     case ShapeType::Structure:
@@ -217,8 +201,6 @@ std::shared_ptr<const Schema> Schema::CreateMember(const char* name, ShapeType t
                                        MakeEmptyShape(targetType, name), ToTraitMap(traits));
 }
 
-// A pending member captured before Build(). Exactly one of eagerTarget /
-// deferredTarget is set.
 class SchemaBuilder::SchemaBuilderImpl {
  public:
   SchemaBuilderImpl(ShapeType type, const char* id, TraitList traits)
@@ -252,9 +234,6 @@ class SchemaBuilder::SchemaBuilderImpl {
       return m_builtShape;
     }
 
-    // Publish the shell before resolving members so a member that targets this
-    // same shape (directly or transitively) sees the in-progress shape rather
-    // than recursing forever.
     auto shell = Aws::MakeShared<RootSchema>(SCHEMA_ALLOC_TAG, m_type, m_id, m_traits);
     m_builtShape = shell;
 
@@ -262,12 +241,9 @@ class SchemaBuilder::SchemaBuilderImpl {
     for (auto& pending : m_members) {
       std::shared_ptr<const Schema> member;
       if (pending.eagerTarget) {
-        // Non-recursive member owns its target directly.
         member = Aws::MakeShared<MemberSchema>(SCHEMA_ALLOC_TAG, pending.name, MakeMemberId(m_id, pending.name), index,
                                                pending.eagerTarget, pending.traits);
       } else if (pending.deferredTarget != nullptr) {
-        // Recursive member holds a weak reference to a target kept alive by the
-        // definition site, so the schema graph does not form a reference cycle.
         std::weak_ptr<const Schema> target = pending.deferredTarget->Build();
         member = Aws::MakeShared<MemberSchema>(SCHEMA_ALLOC_TAG, pending.name, MakeMemberId(m_id, pending.name), index,
                                                target, pending.traits);

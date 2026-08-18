@@ -22,8 +22,6 @@ namespace {
 Aws::String Bytes(const char* data, size_t len) { return Aws::String(data, len); }
 }  // namespace
 
-// --- Scalars ---
-
 TEST_F(CborShapeSerializerTest, EmptyStructure) {
   CborShapeSerializer s;
   auto root = Schema::StructureBuilder("Root").Build();
@@ -325,8 +323,6 @@ TEST_F(CborShapeSerializerTest, TimestampFractionalSeconds) {
   EXPECT_EQ(static_cast<unsigned char>(payload[10]), 0xFF);
 }
 
-// --- Multiple fields ---
-
 TEST_F(CborShapeSerializerTest, MultipleScalars) {
   CborShapeSerializer s;
   auto root = Schema::StructureBuilder("Root").Build();
@@ -357,8 +353,6 @@ TEST_F(CborShapeSerializerTest, MultipleScalars) {
   expected += '\xFF';
   EXPECT_EQ(payload, expected);
 }
-
-// --- Nested structures ---
 
 TEST_F(CborShapeSerializerTest, NestedStructure) {
   CborShapeSerializer s;
@@ -418,8 +412,6 @@ TEST_F(CborShapeSerializerTest, DeeplyNestedStructure) {
   expected += '\xFF';
   EXPECT_EQ(payload, expected);
 }
-
-// --- Lists ---
 
 TEST_F(CborShapeSerializerTest, ListOfIntegers) {
   CborShapeSerializer s;
@@ -530,8 +522,6 @@ TEST_F(CborShapeSerializerTest, ListOfStructures) {
   EXPECT_EQ(payload, expected);
 }
 
-// --- Maps ---
-
 TEST_F(CborShapeSerializerTest, MapOfStrings) {
   CborShapeSerializer s;
   auto root = Schema::StructureBuilder("Root").Build();
@@ -615,10 +605,6 @@ TEST_F(CborShapeSerializerTest, MapOfStructures) {
   EXPECT_EQ(payload, expected);
 }
 
-// --- Depth limit ---
-
-// --- GetPayload error cases ---
-
 TEST_F(CborShapeSerializerTest, GetPayloadCalledTwice) {
   CborShapeSerializer s;
   auto root = Schema::StructureBuilder("Root").Build();
@@ -630,8 +616,6 @@ TEST_F(CborShapeSerializerTest, GetPayloadCalledTwice) {
   ASSERT_FALSE(outcome2.IsSuccess());
   EXPECT_NE(outcome2.GetError().GetMessage().find("finalized"), Aws::String::npos);
 }
-
-// --- Enum ---
 
 TEST_F(CborShapeSerializerTest, EnumValue) {
   CborShapeSerializer s;
@@ -650,8 +634,6 @@ TEST_F(CborShapeSerializerTest, EnumValue) {
   expected += '\xFF';
   EXPECT_EQ(payload, expected);
 }
-
-// --- Combinations ---
 
 TEST_F(CborShapeSerializerTest, StructureWithListAndMap) {
   CborShapeSerializer s;
@@ -763,8 +745,6 @@ TEST_F(CborShapeSerializerTest, SparseList) {
   expected += '\xFF';
   EXPECT_EQ(payload, expected);
 }
-
-// --- Additional coverage ---
 
 TEST_F(CborShapeSerializerTest, IntegerFourByte) {
   CborShapeSerializer s;

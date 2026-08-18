@@ -20,17 +20,11 @@ using SerializerOutcome = Aws::Utils::Outcome<Aws::String, Aws::Client::AWSError
 
 static constexpr int MAX_DEPTH = 64;
 
-// The serializer that writes bare values and container delimiters, and hands
-// each container's body to a context object. The context objects prepend the
-// per-position prefix (a struct member's field name, or a list/map element's
-// comma) and delegate the value itself back to this outer serializer. This is
-// the SmithyJsonSerializer structure: contexts express "what precedes a value"
-// through polymorphism rather than a runtime branch.
 class JsonShapeSerializer::Impl final : public ShapeSerializer {
  public:
   Impl() { m_buf.reserve(8192); }
 
-  void WriteStruct(const Schema& /*schema*/, const SerializableStruct& value) override {
+  void WriteStruct(const Schema&, const SerializableStruct& value) override {
     if (!OpenContainer('{')) {
       return;
     }
@@ -39,7 +33,7 @@ class JsonShapeSerializer::Impl final : public ShapeSerializer {
     CloseContainer('}');
   }
 
-  void WriteList(const Schema& /*schema*/, size_t, const std::function<void(ShapeSerializer&)>& consumer) override {
+  void WriteList(const Schema&, size_t, const std::function<void(ShapeSerializer&)>& consumer) override {
     if (!OpenContainer('[')) {
       return;
     }
@@ -48,7 +42,7 @@ class JsonShapeSerializer::Impl final : public ShapeSerializer {
     CloseContainer(']');
   }
 
-  void WriteMap(const Schema& /*schema*/, size_t, const std::function<void(MapSerializer&)>& consumer) override {
+  void WriteMap(const Schema&, size_t, const std::function<void(MapSerializer&)>& consumer) override {
     if (!OpenContainer('{')) {
       return;
     }
@@ -57,7 +51,6 @@ class JsonShapeSerializer::Impl final : public ShapeSerializer {
     CloseContainer('}');
   }
 
-  // Bare scalar writers: value only, no prefix.
   void WriteBoolean(const Schema&, bool value) override { m_buf += value ? "true" : "false"; }
   void WriteInteger(const Schema&, int value) override { m_buf += StringUtils::to_string(value); }
   void WriteLong(const Schema&, int64_t value) override { m_buf += StringUtils::to_string(value); }
@@ -75,7 +68,6 @@ class JsonShapeSerializer::Impl final : public ShapeSerializer {
   void WriteEnum(const Schema& schema, int value) override { WriteInteger(schema, value); }
   void WriteNull(const Schema&) override { m_buf += "null"; }
 
-  // Prefix primitives, used by the context objects.
   void WriteCommaIfNeeded() {
     if (m_needsComma[m_depth]) {
       m_buf += ',';
@@ -106,7 +98,6 @@ class JsonShapeSerializer::Impl final : public ShapeSerializer {
   }
 
  private:
-  // Struct members: field name, then the value written bare by the outer.
   class StructContext final : public ShapeSerializer {
    public:
     explicit StructContext(Impl* outer) : m_outer(outer) {}
@@ -129,7 +120,6 @@ class JsonShapeSerializer::Impl final : public ShapeSerializer {
     Impl* m_outer;
   };
 
-  // List elements: comma, then the value written bare by the outer.
   class ListContext final : public ShapeSerializer {
    public:
     explicit ListContext(Impl* outer) : m_outer(outer) {}
@@ -152,7 +142,6 @@ class JsonShapeSerializer::Impl final : public ShapeSerializer {
     Impl* m_outer;
   };
 
-  // Map entries: comma, key, then the value written bare by the outer.
   class MapContext final : public MapSerializer {
    public:
     explicit MapContext(Impl* outer) : m_outer(outer) {}

@@ -13,27 +13,22 @@ using namespace smithy::schema;
 using namespace Aws::Utils;
 using SerializerOutcome = Aws::Utils::Outcome<Aws::String, Aws::Client::AWSError<Aws::Client::CoreErrors>>;
 
-// Outer serializer: writes bare CBOR values and container framing (indefinite
-// map for structs, definite array/map for lists/maps). Struct members are map
-// entries, so the struct context writes the member name as the map key before
-// the value; list/map contexts add no key. CBOR is length- or break-delimited,
-// so there is no separator bookkeeping.
 class CborShapeSerializer::Impl final : public ShapeSerializer {
  public:
-  void WriteStruct(const Schema& /*schema*/, const SerializableStruct& value) override {
+  void WriteStruct(const Schema&, const SerializableStruct& value) override {
     m_encoder.WriteIndefMapStart();
     StructContext ctx(this);
     value.SerializeMembers(ctx);
     m_encoder.WriteBreak();
   }
 
-  void WriteList(const Schema& /*schema*/, size_t size, const std::function<void(ShapeSerializer&)>& consumer) override {
+  void WriteList(const Schema&, size_t size, const std::function<void(ShapeSerializer&)>& consumer) override {
     m_encoder.WriteArrayStart(size);
     ListContext ctx(this);
     consumer(ctx);
   }
 
-  void WriteMap(const Schema& /*schema*/, size_t size, const std::function<void(MapSerializer&)>& consumer) override {
+  void WriteMap(const Schema&, size_t size, const std::function<void(MapSerializer&)>& consumer) override {
     m_encoder.WriteMapStart(size);
     MapContext ctx(this);
     consumer(ctx);
@@ -55,7 +50,6 @@ class CborShapeSerializer::Impl final : public ShapeSerializer {
   void WriteEnum(const Schema& schema, int value) override { WriteInteger(schema, value); }
   void WriteNull(const Schema&) override { m_encoder.WriteNull(); }
 
-  // Used by the context objects: a struct member's map key, and a map entry key.
   void WriteMemberKey(const Schema& schema) { WriteText(schema.GetMemberName()); }
   void WriteText(const Aws::String& str) {
     m_encoder.WriteText(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(str.data()), str.size()));
@@ -73,7 +67,6 @@ class CborShapeSerializer::Impl final : public ShapeSerializer {
   }
 
  private:
-  // Struct members: member name as the map key, then the value.
   class StructContext final : public ShapeSerializer {
    public:
     explicit StructContext(Impl* outer) : m_outer(outer) {}
@@ -96,7 +89,6 @@ class CborShapeSerializer::Impl final : public ShapeSerializer {
     Impl* m_outer;
   };
 
-  // List elements: value only (the array carries the count).
   class ListContext final : public ShapeSerializer {
    public:
     explicit ListContext(Impl* outer) : m_outer(outer) {}
@@ -119,7 +111,6 @@ class CborShapeSerializer::Impl final : public ShapeSerializer {
     Impl* m_outer;
   };
 
-  // Map entries: text key, then the value.
   class MapContext final : public MapSerializer {
    public:
     explicit MapContext(Impl* outer) : m_outer(outer) {}

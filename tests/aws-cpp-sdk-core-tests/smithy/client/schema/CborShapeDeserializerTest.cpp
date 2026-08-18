@@ -18,8 +18,6 @@ using namespace smithy::schema;
 
 class CborShapeDeserializerTest : public Aws::Testing::AwsCppSdkGTestSuite {};
 
-// --- Scalars ---
-
 TEST_F(CborShapeDeserializerTest, BooleanTrue) {
   CborShapeSerializer s;
   auto root = Schema::StructureBuilder("Root").Build();
@@ -271,8 +269,6 @@ TEST_F(CborShapeDeserializerTest, NullValue) {
   d.EndStruct();
 }
 
-// --- Collections ---
-
 TEST_F(CborShapeDeserializerTest, ListOfIntegers) {
   CborShapeSerializer s;
   auto root = Schema::StructureBuilder("Root").Build();
@@ -376,8 +372,6 @@ TEST_F(CborShapeDeserializerTest, NestedStructure) {
   d.EndStruct();
 }
 
-// --- Skip unknown fields ---
-
 TEST_F(CborShapeDeserializerTest, SkipUnknownField) {
   CborShapeSerializer s;
   auto root = Schema::StructureBuilder("Root").Build();
@@ -447,8 +441,6 @@ TEST_F(CborShapeDeserializerTest, SkipNestedUnknown) {
   d.EndStruct();
 }
 
-// --- Multiple fields ---
-
 TEST_F(CborShapeDeserializerTest, MultipleScalars) {
   CborShapeSerializer s;
   auto root = Schema::StructureBuilder("Root").Build();
@@ -486,8 +478,6 @@ TEST_F(CborShapeDeserializerTest, MultipleScalars) {
   EXPECT_TRUE(d.IsBreak());
   d.EndStruct();
 }
-
-// --- Error handling (Optional returns empty on failure) ---
 
 TEST_F(CborShapeDeserializerTest, EmptyOptionalOnEmptyPayload) {
   const unsigned char empty[1] = {0};
@@ -530,8 +520,6 @@ TEST_F(CborShapeDeserializerTest, ValidOptionalOnSuccess) {
   ASSERT_TRUE(val.has_value());
   EXPECT_EQ(val.value(), 42);
 }
-
-// --- BeginStruct returns size for definite-length maps ---
 
 TEST_F(CborShapeDeserializerTest, BeginStructDefiniteLengthMap) {
   // Definite-length map with 2 entries:
@@ -580,8 +568,6 @@ TEST_F(CborShapeDeserializerTest, BeginStructIndefiniteLengthMap) {
   EXPECT_TRUE(d.IsBreak());
   d.EndStruct();
 }
-
-// --- Timestamp handling ---
 
 TEST_F(CborShapeDeserializerTest, TimestampFromFloat) {
   // tag(1) followed by float64 1234567890.5

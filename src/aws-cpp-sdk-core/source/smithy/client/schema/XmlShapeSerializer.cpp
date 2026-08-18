@@ -48,16 +48,8 @@ void AppendXmlEscaped(Aws::String& buf, const Aws::String& value) {
 
 }  // namespace
 
-// XML serializer following smithy-java's SmithyXmlSerializer: an outer
-// InterceptingSerializer wraps each value in its element (Before writes the
-// start tag, After the end tag), delegating the element content to a value
-// serializer. Structs are two-pass — attributes are written into the still-open
-// start tag first, the tag is then closed, then child-element members are
-// written. Names, namespaces, flattening, and attribute-ness are resolved from
-// schema traits rather than precomputed tables.
 class XmlShapeSerializer::Impl final : public InterceptingSerializer {
  public:
-  // Writes an element's content (the wrapping element is written by the caller).
   class ValueSerializer final : public ShapeSerializer {
    public:
     explicit ValueSerializer(Impl* outer) : m_outer(outer) {}
@@ -79,9 +71,6 @@ class XmlShapeSerializer::Impl final : public InterceptingSerializer {
     Impl* m_outer;
   };
 
-  // Routes each struct member: skips attributes (handled in the attribute pass),
-  // writes an element wrapper for ordinary members, and skips the wrapper for
-  // flattened list/map members.
   class StructElementSerializer final : public InterceptingSerializer {
    public:
     explicit StructElementSerializer(Impl* outer) : m_outer(outer) {}
@@ -94,8 +83,6 @@ class XmlShapeSerializer::Impl final : public InterceptingSerializer {
     Impl* m_outer;
   };
 
-  // Attribute pass: routes attribute members to the inline attribute writer and
-  // discards everything else.
   class StructAttributeSerializer final : public InterceptingSerializer {
    public:
     explicit StructAttributeSerializer(Impl* outer) : m_outer(outer) {}
@@ -107,7 +94,6 @@ class XmlShapeSerializer::Impl final : public InterceptingSerializer {
     Impl* m_outer;
   };
 
-  // Writes a scalar member as an attribute on the currently-open start tag.
   class InlineAttributeSerializer final : public SpecificShapeSerializer {
    public:
     explicit InlineAttributeSerializer(Impl* outer) : m_outer(outer) {}
@@ -125,7 +111,6 @@ class XmlShapeSerializer::Impl final : public InterceptingSerializer {
     Impl* m_outer;
   };
 
-  // Wraps each list element in the resolved item element.
   class ListItemSerializer final : public InterceptingSerializer {
    public:
     ListItemSerializer(Impl* outer, Aws::String itemName, Aws::String itemNamespace)
@@ -141,7 +126,6 @@ class XmlShapeSerializer::Impl final : public InterceptingSerializer {
     Aws::String m_itemNamespace;
   };
 
-  // Writes each map entry as <entry><key>..</key><value>..</value></entry>.
   class XmlMapEntrySerializer final : public MapSerializer {
    public:
     XmlMapEntrySerializer(Impl* outer, Aws::String entryName, Aws::String keyName, Aws::String valueName)
@@ -176,8 +160,6 @@ class XmlShapeSerializer::Impl final : public InterceptingSerializer {
     return std::move(m_buf);
   }
 
-  // Guards against unbounded nesting. Returns false (and records an error) once
-  // the depth limit is reached, so the container body is skipped.
   bool EnterContainer() {
     if (!m_errorMessage.empty()) {
       return false;
@@ -191,7 +173,6 @@ class XmlShapeSerializer::Impl final : public InterceptingSerializer {
   }
   void ExitContainer() { --m_depth; }
 
-  // Tag primitives.
   void ClosePendingTag() {
     if (m_pendingClose) {
       m_buf += '>';
@@ -217,7 +198,6 @@ class XmlShapeSerializer::Impl final : public InterceptingSerializer {
   void AppendRaw(const Aws::String& text) { m_buf += text; }
   void AppendEscaped(const Aws::String& text) { AppendXmlEscaped(m_buf, text); }
 
-  // Trait-resolved shape metadata.
   static Aws::String GetXmlName(const Schema& schema) {
     const auto trait = schema.GetTrait(XmlNameTrait::KEY());
     if (trait) {
@@ -299,16 +279,10 @@ class XmlShapeSerializer::Impl final : public InterceptingSerializer {
   SpecificShapeSerializer m_nullSerializer;
 };
 
-// --- ValueSerializer ---
-
 void XmlShapeSerializer::Impl::ValueSerializer::WriteStruct(const Schema&, const SerializableStruct& value) {
   if (!m_outer->EnterContainer()) {
     return;
   }
-  // Attribute pass: attribute members write into the still-open start tag; every
-  // other member routes to the null serializer and produces nothing. Running it
-  // unconditionally is output-identical to gating on "has attributes" and does
-  // not depend on the members being declared on the struct's own schema.
   value.SerializeMembers(m_outer->StructAttribute());
   m_outer->ClosePendingTag();
   value.SerializeMembers(m_outer->StructElement());
@@ -374,8 +348,6 @@ void XmlShapeSerializer::Impl::ValueSerializer::WriteBlob(const Schema&, const A
 void XmlShapeSerializer::Impl::ValueSerializer::WriteEnum(const Schema& schema, int value) { WriteInteger(schema, value); }
 void XmlShapeSerializer::Impl::ValueSerializer::WriteNull(const Schema&) { m_outer->ClosePendingTag(); }
 
-// --- StructElementSerializer ---
-
 ShapeSerializer& XmlShapeSerializer::Impl::StructElementSerializer::Before(const Schema& schema) {
   if (Impl::IsAttribute(schema)) {
     return m_outer->Null();
@@ -394,16 +366,12 @@ void XmlShapeSerializer::Impl::StructElementSerializer::After(const Schema& sche
   m_outer->WriteCloseTag(Impl::GetXmlName(schema));
 }
 
-// --- StructAttributeSerializer ---
-
 ShapeSerializer& XmlShapeSerializer::Impl::StructAttributeSerializer::Before(const Schema& schema) {
   if (Impl::IsAttribute(schema)) {
     return m_outer->InlineAttribute();
   }
   return m_outer->Null();
 }
-
-// --- InlineAttributeSerializer ---
 
 void XmlShapeSerializer::Impl::InlineAttributeSerializer::WriteAttr(const Schema& schema, const Aws::String& value) {
   m_outer->AppendRaw(" ");
@@ -438,15 +406,11 @@ void XmlShapeSerializer::Impl::InlineAttributeSerializer::WriteEnum(const Schema
   WriteAttr(schema, StringUtils::to_string(value));
 }
 
-// --- ListItemSerializer ---
-
 ShapeSerializer& XmlShapeSerializer::Impl::ListItemSerializer::Before(const Schema&) {
   m_outer->WriteStartOpen(m_itemName, m_itemNamespace);
   return m_outer->Value();
 }
 void XmlShapeSerializer::Impl::ListItemSerializer::After(const Schema&) { m_outer->WriteCloseTag(m_itemName); }
-
-// --- XmlMapEntrySerializer ---
 
 void XmlShapeSerializer::Impl::XmlMapEntrySerializer::WriteEntry(const Aws::String& key,
                                                                  const std::function<void(ShapeSerializer&)>& value) {

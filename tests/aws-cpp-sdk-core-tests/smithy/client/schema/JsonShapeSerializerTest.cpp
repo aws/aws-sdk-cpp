@@ -18,8 +18,6 @@ using namespace smithy::schema;
 
 class JsonShapeSerializerTest : public Aws::Testing::AwsCppSdkGTestSuite {};
 
-// --- Scalars ---
-
 TEST_F(JsonShapeSerializerTest, EmptyStructure) {
   JsonShapeSerializer s;
   auto root = Schema::StructureBuilder("Root").Build();
@@ -141,8 +139,6 @@ TEST_F(JsonShapeSerializerTest, MultipleScalars) {
   EXPECT_NE(payload.find("\"c\":\"x\""), Aws::String::npos);
 }
 
-// --- Nested structures ---
-
 TEST_F(JsonShapeSerializerTest, NestedStructure) {
   JsonShapeSerializer s;
   auto root = Schema::StructureBuilder("Root").Build();
@@ -171,8 +167,6 @@ TEST_F(JsonShapeSerializerTest, DeeplyNestedStructure) {
   s.WriteStruct(*root, rootStruct);
   EXPECT_NE(s.GetPayload().GetResult().find("\"l1\":{\"l2\":{\"val\":99}}"), Aws::String::npos);
 }
-
-// --- Lists ---
 
 TEST_F(JsonShapeSerializerTest, ListOfStrings) {
   JsonShapeSerializer s;
@@ -247,8 +241,6 @@ TEST_F(JsonShapeSerializerTest, SparseList) {
   EXPECT_NE(s.GetPayload().GetResult().find("\"items\":[\"a\",null,\"b\"]"), Aws::String::npos);
 }
 
-// --- Maps ---
-
 TEST_F(JsonShapeSerializerTest, MapOfStrings) {
   JsonShapeSerializer s;
   auto root = Schema::StructureBuilder("Root").Build();
@@ -309,8 +301,6 @@ TEST_F(JsonShapeSerializerTest, SparseMap) {
   EXPECT_NE(payload.find("\"absent\":null"), Aws::String::npos);
 }
 
-// --- Combinations ---
-
 TEST_F(JsonShapeSerializerTest, StructureWithListAndMap) {
   JsonShapeSerializer s;
   auto root = Schema::StructureBuilder("Root").Build();
@@ -359,8 +349,6 @@ TEST_F(JsonShapeSerializerTest, MapContainingList) {
 
   EXPECT_NE(s.GetPayload().GetResult().find("\"data\":{\"nums\":[1,2]}"), Aws::String::npos);
 }
-
-// --- JSON Escaping ---
 
 TEST_F(JsonShapeSerializerTest, EscapesQuotesInString) {
   JsonShapeSerializer s;
@@ -415,13 +403,10 @@ TEST_F(JsonShapeSerializerTest, EscapesInMapKey) {
   EXPECT_NE(s.GetPayload().GetResult().find("\"key\\\"with\\\"quotes\":\"v\""), Aws::String::npos);
 }
 
-// --- Depth limit ---
-
 TEST_F(JsonShapeSerializerTest, MaxDepthEnforcement) {
   JsonShapeSerializer s;
   auto root = Schema::StructureBuilder("Root").Build();
   auto nested = Schema::CreateMember("n", ShapeType::Structure);
-  // Nest well past MAX_DEPTH; the serializer stops and reports the error.
   std::function<void(ShapeSerializer&, int)> nest = [&](ShapeSerializer& ser, int remaining) {
     if (remaining <= 0) {
       return;
@@ -434,8 +419,6 @@ TEST_F(JsonShapeSerializerTest, MaxDepthEnforcement) {
   ASSERT_FALSE(outcome.IsSuccess());
   EXPECT_NE(outcome.GetError().GetMessage().find("depth"), Aws::String::npos);
 }
-
-// --- JsonNameTrait ---
 
 TEST_F(JsonShapeSerializerTest, JsonNameOverridesMemberName) {
   JsonShapeSerializer s;
