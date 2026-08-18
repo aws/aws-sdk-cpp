@@ -199,6 +199,25 @@ class WorkspaceProperties {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether nested virtualization is enabled for the WorkSpace.</p>
+   * <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/nested-virtualization.html">Nested
+   * virtualization for Amazon WorkSpaces</a>.</p>
+   */
+  inline bool GetNestedVirtualizationEnabled() const { return m_nestedVirtualizationEnabled; }
+  inline bool NestedVirtualizationEnabledHasBeenSet() const { return m_nestedVirtualizationEnabledHasBeenSet; }
+  inline void SetNestedVirtualizationEnabled(bool value) {
+    m_nestedVirtualizationEnabledHasBeenSet = true;
+    m_nestedVirtualizationEnabled = value;
+  }
+  inline WorkspaceProperties& WithNestedVirtualizationEnabled(bool value) {
+    SetNestedVirtualizationEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   RunningMode m_runningMode{RunningMode::NOT_SET};
 
@@ -215,6 +234,8 @@ class WorkspaceProperties {
   OperatingSystemName m_operatingSystemName{OperatingSystemName::NOT_SET};
 
   GlobalAcceleratorForWorkSpace m_globalAccelerator;
+
+  bool m_nestedVirtualizationEnabled{false};
   bool m_runningModeHasBeenSet = false;
   bool m_runningModeAutoStopTimeoutInMinutesHasBeenSet = false;
   bool m_rootVolumeSizeGibHasBeenSet = false;
@@ -223,6 +244,7 @@ class WorkspaceProperties {
   bool m_protocolsHasBeenSet = false;
   bool m_operatingSystemNameHasBeenSet = false;
   bool m_globalAcceleratorHasBeenSet = false;
+  bool m_nestedVirtualizationEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

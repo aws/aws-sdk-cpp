@@ -722,6 +722,7 @@
 #include <aws/medialive/model/NielsenCBET.h>
 #include <aws/medialive/model/NielsenConfiguration.h>
 #include <aws/medialive/model/NielsenNaesIiNw.h>
+#include <aws/medialive/model/NielsenNwOnly.h>
 #include <aws/medialive/model/NielsenPcmToId3TaggingState.h>
 #include <aws/medialive/model/NielsenWatermarkTimezones.h>
 #include <aws/medialive/model/NielsenWatermarksCbetStepaside.h>

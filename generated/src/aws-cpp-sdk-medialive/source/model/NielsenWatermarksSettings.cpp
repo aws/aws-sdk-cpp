@@ -31,6 +31,10 @@ NielsenWatermarksSettings& NielsenWatermarksSettings::operator=(JsonView jsonVal
     m_nielsenNaesIiNwSettings = jsonValue.GetObject("nielsenNaesIiNwSettings");
     m_nielsenNaesIiNwSettingsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("nielsenNwOnlySettings")) {
+    m_nielsenNwOnlySettings = jsonValue.GetObject("nielsenNwOnlySettings");
+    m_nielsenNwOnlySettingsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -48,6 +52,10 @@ JsonValue NielsenWatermarksSettings::Jsonize() const {
 
   if (m_nielsenNaesIiNwSettingsHasBeenSet) {
     payload.WithObject("nielsenNaesIiNwSettings", m_nielsenNaesIiNwSettings.Jsonize());
+  }
+
+  if (m_nielsenNwOnlySettingsHasBeenSet) {
+    payload.WithObject("nielsenNwOnlySettings", m_nielsenNwOnlySettings.Jsonize());
   }
 
   return payload;

@@ -168,6 +168,36 @@ class AWS_MARKETPLACECATALOG_API MarketplaceCatalogClient : public Aws::Client::
   }
 
   /**
+   * <p>Returns the metadata and detailed results of a single assessment, including
+   * the framework that was evaluated, the overall assessment result, and a paginated
+   * list of individual control evaluation results.</p> <p>To list available
+   * assessments before describing one, use the <code>ListAssessments</code>
+   * action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/DescribeAssessment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeAssessmentOutcome DescribeAssessment(const Model::DescribeAssessmentRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeAssessment that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeAssessmentRequestT = Model::DescribeAssessmentRequest>
+  Model::DescribeAssessmentOutcomeCallable DescribeAssessmentCallable(const DescribeAssessmentRequestT& request) const {
+    return SubmitCallable(&MarketplaceCatalogClient::DescribeAssessment, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeAssessment that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DescribeAssessmentRequestT = Model::DescribeAssessmentRequest>
+  void DescribeAssessmentAsync(const DescribeAssessmentRequestT& request, const DescribeAssessmentResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MarketplaceCatalogClient::DescribeAssessment, request, handler, context);
+  }
+
+  /**
    * <p>Provides information about a given change set.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/DescribeChangeSet">AWS
    * API Reference</a></p>
@@ -243,6 +273,39 @@ class AWS_MARKETPLACECATALOG_API MarketplaceCatalogClient : public Aws::Client::
   void GetResourcePolicyAsync(const GetResourcePolicyRequestT& request, const GetResourcePolicyResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&MarketplaceCatalogClient::GetResourcePolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a paginated list of assessments associated with an entity or change
+   * set in AWS Marketplace. An <i>assessment</i> is the result of evaluating a
+   * product or change set against a framework, such as AMI Security or Container
+   * Security.</p> <p>Use the <code>AssessmentTargetFilter</code> to scope results to
+   * a specific entity or change set, and use <code>FrameworkFilters</code> to scope
+   * results to a single framework. To retrieve detailed control-level results for an
+   * individual assessment, use the <code>DescribeAssessment</code> action.</p>
+   * <p>Results are sorted by assessment creation time in descending
+   * order.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/ListAssessments">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAssessmentsOutcome ListAssessments(const Model::ListAssessmentsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListAssessments that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListAssessmentsRequestT = Model::ListAssessmentsRequest>
+  Model::ListAssessmentsOutcomeCallable ListAssessmentsCallable(const ListAssessmentsRequestT& request) const {
+    return SubmitCallable(&MarketplaceCatalogClient::ListAssessments, request);
+  }
+
+  /**
+   * An Async wrapper for ListAssessments that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListAssessmentsRequestT = Model::ListAssessmentsRequest>
+  void ListAssessmentsAsync(const ListAssessmentsRequestT& request, const ListAssessmentsResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MarketplaceCatalogClient::ListAssessments, request, handler, context);
   }
 
   /**

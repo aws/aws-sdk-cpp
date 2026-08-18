@@ -53,6 +53,10 @@ WorkspaceProperties& WorkspaceProperties::operator=(JsonView jsonValue) {
     m_globalAccelerator = jsonValue.GetObject("GlobalAccelerator");
     m_globalAcceleratorHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("NestedVirtualizationEnabled")) {
+    m_nestedVirtualizationEnabled = jsonValue.GetBool("NestedVirtualizationEnabled");
+    m_nestedVirtualizationEnabledHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -93,6 +97,10 @@ JsonValue WorkspaceProperties::Jsonize() const {
 
   if (m_globalAcceleratorHasBeenSet) {
     payload.WithObject("GlobalAccelerator", m_globalAccelerator.Jsonize());
+  }
+
+  if (m_nestedVirtualizationEnabledHasBeenSet) {
+    payload.WithBool("NestedVirtualizationEnabled", m_nestedVirtualizationEnabled);
   }
 
   return payload;

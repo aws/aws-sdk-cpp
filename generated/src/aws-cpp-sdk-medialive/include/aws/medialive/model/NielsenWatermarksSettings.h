@@ -7,6 +7,7 @@
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/NielsenCBET.h>
 #include <aws/medialive/model/NielsenNaesIiNw.h>
+#include <aws/medialive/model/NielsenNwOnly.h>
 #include <aws/medialive/model/NielsenWatermarksDistributionTypes.h>
 
 #include <utility>
@@ -88,15 +89,38 @@ class NielsenWatermarksSettings {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * Complete these fields only if you want to insert watermarks of type Nielsen NAES
+   * VI (NW) only,
+without inserting NAES II (N2) watermarks.
+   */
+  inline const NielsenNwOnly& GetNielsenNwOnlySettings() const { return m_nielsenNwOnlySettings; }
+  inline bool NielsenNwOnlySettingsHasBeenSet() const { return m_nielsenNwOnlySettingsHasBeenSet; }
+  template <typename NielsenNwOnlySettingsT = NielsenNwOnly>
+  void SetNielsenNwOnlySettings(NielsenNwOnlySettingsT&& value) {
+    m_nielsenNwOnlySettingsHasBeenSet = true;
+    m_nielsenNwOnlySettings = std::forward<NielsenNwOnlySettingsT>(value);
+  }
+  template <typename NielsenNwOnlySettingsT = NielsenNwOnly>
+  NielsenWatermarksSettings& WithNielsenNwOnlySettings(NielsenNwOnlySettingsT&& value) {
+    SetNielsenNwOnlySettings(std::forward<NielsenNwOnlySettingsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   NielsenCBET m_nielsenCbetSettings;
 
   NielsenWatermarksDistributionTypes m_nielsenDistributionType{NielsenWatermarksDistributionTypes::NOT_SET};
 
   NielsenNaesIiNw m_nielsenNaesIiNwSettings;
+
+  NielsenNwOnly m_nielsenNwOnlySettings;
   bool m_nielsenCbetSettingsHasBeenSet = false;
   bool m_nielsenDistributionTypeHasBeenSet = false;
   bool m_nielsenNaesIiNwSettingsHasBeenSet = false;
+  bool m_nielsenNwOnlySettingsHasBeenSet = false;
 };
 
 }  // namespace Model

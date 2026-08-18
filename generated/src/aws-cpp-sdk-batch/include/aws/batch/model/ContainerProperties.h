@@ -56,9 +56,9 @@ class ContainerProperties {
    * long. It can contain uppercase and lowercase letters, numbers, hyphens (-),
    * underscores (_), colons (:), periods (.), forward slashes (/), and number signs
    * (#). This parameter maps to <code>Image</code> in the <a
-   * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
-   * container</a> section of the <a
-   * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+   * href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
+   * a container</a> section of the <a
+   * href="https://docs.docker.com/engine/api/latest/">Docker Remote API</a> and the
    * <code>IMAGE</code> parameter of <a
    * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
    * <p>Docker image architecture must match the processor architecture of the
@@ -96,9 +96,9 @@ class ContainerProperties {
   /**
    * <p>The command that's passed to the container. This parameter maps to
    * <code>Cmd</code> in the <a
-   * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
-   * container</a> section of the <a
-   * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+   * href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
+   * a container</a> section of the <a
+   * href="https://docs.docker.com/engine/api/latest/">Docker Remote API</a> and the
    * <code>COMMAND</code> parameter to <a
    * href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more
    * information, see <a
@@ -196,9 +196,9 @@ class ContainerProperties {
   /**
    * <p>The environment variables to pass to a container. This parameter maps to
    * <code>Env</code> in the <a
-   * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
-   * container</a> section of the <a
-   * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+   * href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
+   * a container</a> section of the <a
+   * href="https://docs.docker.com/engine/api/latest/">Docker Remote API</a> and the
    * <code>--env</code> option to <a
    * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
    *  <p>We don't recommend using plaintext environment variables for
@@ -230,9 +230,9 @@ class ContainerProperties {
   /**
    * <p>The mount points for data volumes in your container. This parameter maps to
    * <code>Volumes</code> in the <a
-   * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
-   * container</a> section of the <a
-   * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+   * href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
+   * a container</a> section of the <a
+   * href="https://docs.docker.com/engine/api/latest/">Docker Remote API</a> and the
    * <code>--volume</code> option to <a
    * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
    */
@@ -260,9 +260,9 @@ class ContainerProperties {
   /**
    * <p>When this parameter is true, the container is given read-only access to its
    * root file system. This parameter maps to <code>ReadonlyRootfs</code> in the <a
-   * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
-   * container</a> section of the <a
-   * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+   * href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
+   * a container</a> section of the <a
+   * href="https://docs.docker.com/engine/api/latest/">Docker Remote API</a> and the
    * <code>--read-only</code> option to <code>docker run</code>.</p>
    */
   inline bool GetReadonlyRootFilesystem() const { return m_readonlyRootFilesystem; }
@@ -282,9 +282,9 @@ class ContainerProperties {
    * <p>When this parameter is true, the container is given elevated permissions on
    * the host container instance (similar to the <code>root</code> user). This
    * parameter maps to <code>Privileged</code> in the <a
-   * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
-   * container</a> section of the <a
-   * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+   * href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
+   * a container</a> section of the <a
+   * href="https://docs.docker.com/engine/api/latest/">Docker Remote API</a> and the
    * <code>--privileged</code> option to <a
    * href="https://docs.docker.com/engine/reference/run/">docker run</a>. The default
    * value is false.</p>  <p>This parameter isn't applicable to jobs that are
@@ -307,9 +307,9 @@ class ContainerProperties {
   /**
    * <p>A list of <code>ulimits</code> to set in the container. This parameter maps
    * to <code>Ulimits</code> in the <a
-   * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
-   * container</a> section of the <a
-   * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+   * href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
+   * a container</a> section of the <a
+   * href="https://docs.docker.com/engine/api/latest/">Docker Remote API</a> and the
    * <code>--ulimit</code> option to <a
    * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
    * <p>This parameter isn't applicable to jobs that are running on Fargate resources
@@ -339,9 +339,9 @@ class ContainerProperties {
   /**
    * <p>The user name to use inside the container. This parameter maps to
    * <code>User</code> in the <a
-   * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
-   * container</a> section of the <a
-   * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+   * href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
+   * a container</a> section of the <a
+   * href="https://docs.docker.com/engine/api/latest/">Docker Remote API</a> and the
    * <code>--user</code> option to <a
    * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
    */
@@ -429,9 +429,9 @@ class ContainerProperties {
   /**
    * <p>The log configuration specification for the container.</p> <p>This parameter
    * maps to <code>LogConfig</code> in the <a
-   * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
-   * container</a> section of the <a
-   * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+   * href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
+   * a container</a> section of the <a
+   * href="https://docs.docker.com/engine/api/latest/">Docker Remote API</a> and the
    * <code>--log-driver</code> option to <a
    * href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default,
    * containers use the same logging driver that the Docker daemon uses. However the

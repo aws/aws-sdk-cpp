@@ -80,7 +80,17 @@ class CmafIngestGroupSettings {
 
   ///@{
   /**
-   * Type of scte35 track to add. none or scte35WithoutSegmentation
+   * SCTE-35 insertion type. Option "none" indicates that a SCTE-35 marker will not
+   * be inserted, nor will an IDR be inserted at the SCTE-35 cue point, nor will the
+   * segment be segmented. Option "scte35WithoutIdr" indicates that a SCTE-35 marker
+   * will be inserted to indicate the cue point, but MediaLive will not insert an IDR
+   * on that frame nor will it introduce a new segment boundary there if it wasn't
+   * already going to be one (this option is required for use with downstream
+   * multiview bitstream stitching workflows). Option "scte35WithoutSegmentation"
+   * indicates that a SCTE-35 marker will be inserted to indicate the cue point, and
+   * an IDR will be inserted on that frame so that a downstream re-packager might
+   * split the segment there, but MediaLive itself will not introduce a new segment
+   * boundary there.
    */
   inline Scte35Type GetScte35Type() const { return m_scte35Type; }
   inline bool Scte35TypeHasBeenSet() const { return m_scte35TypeHasBeenSet; }

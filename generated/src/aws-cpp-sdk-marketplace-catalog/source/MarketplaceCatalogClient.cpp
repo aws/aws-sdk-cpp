@@ -23,9 +23,11 @@
 #include <aws/marketplace-catalog/model/BatchDescribeEntitiesRequest.h>
 #include <aws/marketplace-catalog/model/CancelChangeSetRequest.h>
 #include <aws/marketplace-catalog/model/DeleteResourcePolicyRequest.h>
+#include <aws/marketplace-catalog/model/DescribeAssessmentRequest.h>
 #include <aws/marketplace-catalog/model/DescribeChangeSetRequest.h>
 #include <aws/marketplace-catalog/model/DescribeEntityRequest.h>
 #include <aws/marketplace-catalog/model/GetResourcePolicyRequest.h>
+#include <aws/marketplace-catalog/model/ListAssessmentsRequest.h>
 #include <aws/marketplace-catalog/model/ListChangeSetsRequest.h>
 #include <aws/marketplace-catalog/model/ListEntitiesRequest.h>
 #include <aws/marketplace-catalog/model/ListTagsForResourceRequest.h>
@@ -242,6 +244,17 @@ DeleteResourcePolicyOutcome MarketplaceCatalogClient::DeleteResourcePolicy(const
                             : DeleteResourcePolicyOutcome(std::move(result.GetError()));
 }
 
+DescribeAssessmentOutcome MarketplaceCatalogClient::DescribeAssessment(const DescribeAssessmentRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/DescribeAssessment");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAssessmentOutcome(result.GetResultWithOwnership())
+                            : DescribeAssessmentOutcome(std::move(result.GetError()));
+}
+
 DescribeChangeSetOutcome MarketplaceCatalogClient::DescribeChangeSet(const DescribeChangeSetRequest& request) const {
   if (!request.CatalogHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DescribeChangeSet", "Required field: Catalog, is not set");
@@ -300,6 +313,17 @@ GetResourcePolicyOutcome MarketplaceCatalogClient::GetResourcePolicy(const GetRe
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetResourcePolicyOutcome(result.GetResultWithOwnership())
                             : GetResourcePolicyOutcome(std::move(result.GetError()));
+}
+
+ListAssessmentsOutcome MarketplaceCatalogClient::ListAssessments(const ListAssessmentsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/ListAssessments");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAssessmentsOutcome(result.GetResultWithOwnership())
+                            : ListAssessmentsOutcome(std::move(result.GetError()));
 }
 
 ListChangeSetsOutcome MarketplaceCatalogClient::ListChangeSets(const ListChangeSetsRequest& request) const {

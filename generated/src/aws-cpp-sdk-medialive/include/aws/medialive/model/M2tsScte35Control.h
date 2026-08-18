@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MediaLive {
 namespace Model {
-enum class M2tsScte35Control { NOT_SET, NONE, PASSTHROUGH };
+enum class M2tsScte35Control { NOT_SET, NONE, PASSTHROUGH, SCTE_35_WITHOUT_IDR };
 
 namespace M2tsScte35ControlMapper {
 AWS_MEDIALIVE_API M2tsScte35Control GetM2tsScte35ControlForName(const Aws::String& name);

@@ -72,9 +72,9 @@ class ContainerDetail {
    * <code>resourceRequirements</code>, but you can't specify the vCPU requirements
    * in both the <code>vcpus</code> and <code>resourceRequirements</code> object.
    * This parameter maps to <code>CpuShares</code> in the <a
-   * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
-   * container</a> section of the <a
-   * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+   * href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
+   * a container</a> section of the <a
+   * href="https://docs.docker.com/engine/api/latest/">Docker Remote API</a> and the
    * <code>--cpu-shares</code> option to <a
    * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
    * is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is
@@ -256,9 +256,9 @@ class ContainerDetail {
   /**
    * <p>When this parameter is true, the container is given read-only access to its
    * root file system. This parameter maps to <code>ReadonlyRootfs</code> in the <a
-   * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
-   * container</a> section of the <a
-   * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+   * href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
+   * a container</a> section of the <a
+   * href="https://docs.docker.com/engine/api/latest/">Docker Remote API</a> and the
    * <code>--read-only</code> option to <a
    * href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker
    * run</code> </a>.</p>
@@ -279,9 +279,9 @@ class ContainerDetail {
   /**
    * <p>A list of <code>ulimit</code> values to set in the container. This parameter
    * maps to <code>Ulimits</code> in the <a
-   * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
-   * container</a> section of the <a
-   * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+   * href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
+   * a container</a> section of the <a
+   * href="https://docs.docker.com/engine/api/latest/">Docker Remote API</a> and the
    * <code>--ulimit</code> option to <a
    * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
    * <p>This parameter isn't applicable to jobs that are running on Fargate
@@ -331,9 +331,9 @@ class ContainerDetail {
   /**
    * <p>The user name to use inside the container. This parameter maps to
    * <code>User</code> in the <a
-   * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
-   * container</a> section of the <a
-   * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+   * href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
+   * a container</a> section of the <a
+   * href="https://docs.docker.com/engine/api/latest/">Docker Remote API</a> and the
    * <code>--user</code> option to <a
    * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
    */
@@ -539,9 +539,9 @@ class ContainerDetail {
   /**
    * <p>The log configuration specification for the container.</p> <p>This parameter
    * maps to <code>LogConfig</code> in the <a
-   * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
-   * container</a> section of the <a
-   * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+   * href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
+   * a container</a> section of the <a
+   * href="https://docs.docker.com/engine/api/latest/">Docker Remote API</a> and the
    * <code>--log-driver</code> option to <a
    * href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default,
    * containers use the same logging driver that the Docker daemon uses. However, the

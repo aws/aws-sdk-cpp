@@ -1968,7 +1968,9 @@ class AWS_WORKSPACES_API WorkSpacesClient : public Aws::Client::AWSJsonClient,
    * <p>For available migration scenarios, details about what happens during
    * migration, and best practices, see <a
    * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/migrate-workspaces.html">Migrate
-   * a WorkSpace</a>.</p><p><h3>See Also:</h3>   <a
+   * a WorkSpace</a>.</p>  <p>If the source WorkSpace has nested virtualization
+   * enabled and the target bundle does not support nested virtualization, the
+   * migration fails.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/MigrateWorkspace">AWS
    * API Reference</a></p>
    */

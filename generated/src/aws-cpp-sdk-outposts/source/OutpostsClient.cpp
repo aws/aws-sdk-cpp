@@ -24,6 +24,7 @@
 #include <aws/outposts/model/CancelOrderRequest.h>
 #include <aws/outposts/model/CreateOrderRequest.h>
 #include <aws/outposts/model/CreateOutpostRequest.h>
+#include <aws/outposts/model/CreatePrivateConnectivityConfigRequest.h>
 #include <aws/outposts/model/CreateQuoteRequest.h>
 #include <aws/outposts/model/CreateRenewalRequest.h>
 #include <aws/outposts/model/CreateSiteRequest.h>
@@ -38,6 +39,7 @@
 #include <aws/outposts/model/GetOutpostInstanceTypesRequest.h>
 #include <aws/outposts/model/GetOutpostRequest.h>
 #include <aws/outposts/model/GetOutpostSupportedInstanceTypesRequest.h>
+#include <aws/outposts/model/GetPrivateConnectivityConfigRequest.h>
 #include <aws/outposts/model/GetQuoteRequest.h>
 #include <aws/outposts/model/GetRenewalPricingRequest.h>
 #include <aws/outposts/model/GetSiteAddressRequest.h>
@@ -280,6 +282,26 @@ CreateOutpostOutcome OutpostsClient::CreateOutpost(const CreateOutpostRequest& r
   return result.IsSuccess() ? CreateOutpostOutcome(result.GetResultWithOwnership()) : CreateOutpostOutcome(std::move(result.GetError()));
 }
 
+CreatePrivateConnectivityConfigOutcome OutpostsClient::CreatePrivateConnectivityConfig(
+    const CreatePrivateConnectivityConfigRequest& request) const {
+  if (!request.OutpostIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreatePrivateConnectivityConfig", "Required field: OutpostId, is not set");
+    return CreatePrivateConnectivityConfigOutcome(Aws::Client::AWSError<OutpostsErrors>(
+        OutpostsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OutpostId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/outposts/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOutpostId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/privateConnectivity");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePrivateConnectivityConfigOutcome(result.GetResultWithOwnership())
+                            : CreatePrivateConnectivityConfigOutcome(std::move(result.GetError()));
+}
+
 CreateQuoteOutcome OutpostsClient::CreateQuote(const CreateQuoteRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -510,6 +532,25 @@ GetOutpostSupportedInstanceTypesOutcome OutpostsClient::GetOutpostSupportedInsta
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetOutpostSupportedInstanceTypesOutcome(result.GetResultWithOwnership())
                             : GetOutpostSupportedInstanceTypesOutcome(std::move(result.GetError()));
+}
+
+GetPrivateConnectivityConfigOutcome OutpostsClient::GetPrivateConnectivityConfig(const GetPrivateConnectivityConfigRequest& request) const {
+  if (!request.OutpostIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetPrivateConnectivityConfig", "Required field: OutpostId, is not set");
+    return GetPrivateConnectivityConfigOutcome(Aws::Client::AWSError<OutpostsErrors>(OutpostsErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                     "Missing required field [OutpostId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/outposts/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOutpostId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/privateConnectivity");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPrivateConnectivityConfigOutcome(result.GetResultWithOwnership())
+                            : GetPrivateConnectivityConfigOutcome(std::move(result.GetError()));
 }
 
 GetQuoteOutcome OutpostsClient::GetQuote(const GetQuoteRequest& request) const {

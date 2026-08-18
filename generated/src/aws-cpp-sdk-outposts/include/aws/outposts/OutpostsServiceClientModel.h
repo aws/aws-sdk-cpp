@@ -23,6 +23,7 @@
 #include <aws/outposts/model/CancelOrderResult.h>
 #include <aws/outposts/model/CreateOrderResult.h>
 #include <aws/outposts/model/CreateOutpostResult.h>
+#include <aws/outposts/model/CreatePrivateConnectivityConfigResult.h>
 #include <aws/outposts/model/CreateQuoteResult.h>
 #include <aws/outposts/model/CreateRenewalResult.h>
 #include <aws/outposts/model/CreateSiteResult.h>
@@ -37,6 +38,7 @@
 #include <aws/outposts/model/GetOutpostInstanceTypesResult.h>
 #include <aws/outposts/model/GetOutpostResult.h>
 #include <aws/outposts/model/GetOutpostSupportedInstanceTypesResult.h>
+#include <aws/outposts/model/GetPrivateConnectivityConfigResult.h>
 #include <aws/outposts/model/GetQuoteResult.h>
 #include <aws/outposts/model/GetRenewalPricingResult.h>
 #include <aws/outposts/model/GetSiteAddressResult.h>
@@ -106,6 +108,7 @@ class CancelCapacityTaskRequest;
 class CancelOrderRequest;
 class CreateOrderRequest;
 class CreateOutpostRequest;
+class CreatePrivateConnectivityConfigRequest;
 class CreateQuoteRequest;
 class CreateRenewalRequest;
 class CreateSiteRequest;
@@ -120,6 +123,7 @@ class GetOutpostRequest;
 class GetOutpostBillingInformationRequest;
 class GetOutpostInstanceTypesRequest;
 class GetOutpostSupportedInstanceTypesRequest;
+class GetPrivateConnectivityConfigRequest;
 class GetQuoteRequest;
 class GetRenewalPricingRequest;
 class GetSiteRequest;
@@ -152,6 +156,7 @@ typedef Aws::Utils::Outcome<CancelCapacityTaskResult, OutpostsError> CancelCapac
 typedef Aws::Utils::Outcome<CancelOrderResult, OutpostsError> CancelOrderOutcome;
 typedef Aws::Utils::Outcome<CreateOrderResult, OutpostsError> CreateOrderOutcome;
 typedef Aws::Utils::Outcome<CreateOutpostResult, OutpostsError> CreateOutpostOutcome;
+typedef Aws::Utils::Outcome<CreatePrivateConnectivityConfigResult, OutpostsError> CreatePrivateConnectivityConfigOutcome;
 typedef Aws::Utils::Outcome<CreateQuoteResult, OutpostsError> CreateQuoteOutcome;
 typedef Aws::Utils::Outcome<CreateRenewalResult, OutpostsError> CreateRenewalOutcome;
 typedef Aws::Utils::Outcome<CreateSiteResult, OutpostsError> CreateSiteOutcome;
@@ -166,6 +171,7 @@ typedef Aws::Utils::Outcome<GetOutpostResult, OutpostsError> GetOutpostOutcome;
 typedef Aws::Utils::Outcome<GetOutpostBillingInformationResult, OutpostsError> GetOutpostBillingInformationOutcome;
 typedef Aws::Utils::Outcome<GetOutpostInstanceTypesResult, OutpostsError> GetOutpostInstanceTypesOutcome;
 typedef Aws::Utils::Outcome<GetOutpostSupportedInstanceTypesResult, OutpostsError> GetOutpostSupportedInstanceTypesOutcome;
+typedef Aws::Utils::Outcome<GetPrivateConnectivityConfigResult, OutpostsError> GetPrivateConnectivityConfigOutcome;
 typedef Aws::Utils::Outcome<GetQuoteResult, OutpostsError> GetQuoteOutcome;
 typedef Aws::Utils::Outcome<GetRenewalPricingResult, OutpostsError> GetRenewalPricingOutcome;
 typedef Aws::Utils::Outcome<GetSiteResult, OutpostsError> GetSiteOutcome;
@@ -198,6 +204,7 @@ typedef std::future<CancelCapacityTaskOutcome> CancelCapacityTaskOutcomeCallable
 typedef std::future<CancelOrderOutcome> CancelOrderOutcomeCallable;
 typedef std::future<CreateOrderOutcome> CreateOrderOutcomeCallable;
 typedef std::future<CreateOutpostOutcome> CreateOutpostOutcomeCallable;
+typedef std::future<CreatePrivateConnectivityConfigOutcome> CreatePrivateConnectivityConfigOutcomeCallable;
 typedef std::future<CreateQuoteOutcome> CreateQuoteOutcomeCallable;
 typedef std::future<CreateRenewalOutcome> CreateRenewalOutcomeCallable;
 typedef std::future<CreateSiteOutcome> CreateSiteOutcomeCallable;
@@ -212,6 +219,7 @@ typedef std::future<GetOutpostOutcome> GetOutpostOutcomeCallable;
 typedef std::future<GetOutpostBillingInformationOutcome> GetOutpostBillingInformationOutcomeCallable;
 typedef std::future<GetOutpostInstanceTypesOutcome> GetOutpostInstanceTypesOutcomeCallable;
 typedef std::future<GetOutpostSupportedInstanceTypesOutcome> GetOutpostSupportedInstanceTypesOutcomeCallable;
+typedef std::future<GetPrivateConnectivityConfigOutcome> GetPrivateConnectivityConfigOutcomeCallable;
 typedef std::future<GetQuoteOutcome> GetQuoteOutcomeCallable;
 typedef std::future<GetRenewalPricingOutcome> GetRenewalPricingOutcomeCallable;
 typedef std::future<GetSiteOutcome> GetSiteOutcomeCallable;
@@ -255,6 +263,10 @@ typedef std::function<void(const OutpostsClient*, const Model::CreateOrderReques
 typedef std::function<void(const OutpostsClient*, const Model::CreateOutpostRequest&, const Model::CreateOutpostOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateOutpostResponseReceivedHandler;
+typedef std::function<void(const OutpostsClient*, const Model::CreatePrivateConnectivityConfigRequest&,
+                           const Model::CreatePrivateConnectivityConfigOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreatePrivateConnectivityConfigResponseReceivedHandler;
 typedef std::function<void(const OutpostsClient*, const Model::CreateQuoteRequest&, const Model::CreateQuoteOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateQuoteResponseReceivedHandler;
@@ -299,6 +311,10 @@ typedef std::function<void(const OutpostsClient*, const Model::GetOutpostSupport
                            const Model::GetOutpostSupportedInstanceTypesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetOutpostSupportedInstanceTypesResponseReceivedHandler;
+typedef std::function<void(const OutpostsClient*, const Model::GetPrivateConnectivityConfigRequest&,
+                           const Model::GetPrivateConnectivityConfigOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetPrivateConnectivityConfigResponseReceivedHandler;
 typedef std::function<void(const OutpostsClient*, const Model::GetQuoteRequest&, const Model::GetQuoteOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetQuoteResponseReceivedHandler;

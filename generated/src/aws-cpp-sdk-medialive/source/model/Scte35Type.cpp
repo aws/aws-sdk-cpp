@@ -17,6 +17,7 @@ namespace Scte35TypeMapper {
 
 static const int NONE_HASH = HashingUtils::HashString("NONE");
 static const int SCTE_35_WITHOUT_SEGMENTATION_HASH = HashingUtils::HashString("SCTE_35_WITHOUT_SEGMENTATION");
+static const int SCTE_35_WITHOUT_IDR_HASH = HashingUtils::HashString("SCTE_35_WITHOUT_IDR");
 
 Scte35Type GetScte35TypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ Scte35Type GetScte35TypeForName(const Aws::String& name) {
     return Scte35Type::NONE;
   } else if (hashCode == SCTE_35_WITHOUT_SEGMENTATION_HASH) {
     return Scte35Type::SCTE_35_WITHOUT_SEGMENTATION;
+  } else if (hashCode == SCTE_35_WITHOUT_IDR_HASH) {
+    return Scte35Type::SCTE_35_WITHOUT_IDR;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForScte35Type(Scte35Type enumValue) {
       return "NONE";
     case Scte35Type::SCTE_35_WITHOUT_SEGMENTATION:
       return "SCTE_35_WITHOUT_SEGMENTATION";
+    case Scte35Type::SCTE_35_WITHOUT_IDR:
+      return "SCTE_35_WITHOUT_IDR";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

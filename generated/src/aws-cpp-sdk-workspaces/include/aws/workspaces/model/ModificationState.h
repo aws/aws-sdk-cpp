@@ -34,7 +34,7 @@ class ModificationState {
 
   ///@{
   /**
-   * <p>The resource.</p>
+   * <p>The WorkSpace property being modified.</p>
    */
   inline ModificationResourceEnum GetResource() const { return m_resource; }
   inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }

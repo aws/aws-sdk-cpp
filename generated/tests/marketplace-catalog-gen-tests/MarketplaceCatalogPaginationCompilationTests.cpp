@@ -9,6 +9,8 @@
 #include <aws/marketplace-catalog/MarketplaceCatalogClientPagination.h>
 #include <aws/marketplace-catalog/MarketplaceCatalogPaginationBase.h>
 #include <aws/marketplace-catalog/model/ListChangeSetsPaginationTraits.h>
+#include <aws/marketplace-catalog/model/DescribeAssessmentPaginationTraits.h>
+#include <aws/marketplace-catalog/model/ListAssessmentsPaginationTraits.h>
 #include <aws/marketplace-catalog/model/ListEntitiesPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MediaLive {
 namespace Model {
-enum class Scte35Type { NOT_SET, NONE, SCTE_35_WITHOUT_SEGMENTATION };
+enum class Scte35Type { NOT_SET, NONE, SCTE_35_WITHOUT_SEGMENTATION, SCTE_35_WITHOUT_IDR };
 
 namespace Scte35TypeMapper {
 AWS_MEDIALIVE_API Scte35Type GetScte35TypeForName(const Aws::String& name);

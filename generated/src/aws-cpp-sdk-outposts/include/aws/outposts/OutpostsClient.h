@@ -22,7 +22,10 @@ namespace Outposts {
  * Outposts enables customers to build and run applications on premises using the
  * same programming interfaces as in Amazon Web Services Regions, while using local
  * compute and storage resources for lower latency and local data processing
- * needs.</p>
+ * needs.</p> <p>You can use certain Amazon EC2 API actions for Amazon Web Services
+ * Outposts. For more information on these API actions, see <a
+ * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/operation-list-outposts.html">Amazon
+ * Web Services Outposts actions</a> in the <i>Amazon EC2 API Reference</i>.</p>
  */
 class AWS_OUTPOSTS_API OutpostsClient : public Aws::Client::AWSJsonClient,
                                         public Aws::Client::ClientWithAsyncTemplateMethods<OutpostsClient>,
@@ -181,6 +184,39 @@ class AWS_OUTPOSTS_API OutpostsClient : public Aws::Client::AWSJsonClient,
   void CreateOutpostAsync(const CreateOutpostRequestT& request, const CreateOutpostResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&OutpostsClient::CreateOutpost, request, handler, context);
+  }
+
+  /**
+   * <p>Creates the private connectivity configuration for the specified Outpost.
+   * Private connectivity establishes a service link VPN connection between the
+   * Outpost and its home Amazon Web Services Region using a VPC and subnet that you
+   * specify, which allows the service link traffic to flow through your VPC and
+   * minimizes public internet exposure.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CreatePrivateConnectivityConfig">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreatePrivateConnectivityConfigOutcome CreatePrivateConnectivityConfig(
+      const Model::CreatePrivateConnectivityConfigRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreatePrivateConnectivityConfig that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CreatePrivateConnectivityConfigRequestT = Model::CreatePrivateConnectivityConfigRequest>
+  Model::CreatePrivateConnectivityConfigOutcomeCallable CreatePrivateConnectivityConfigCallable(
+      const CreatePrivateConnectivityConfigRequestT& request) const {
+    return SubmitCallable(&OutpostsClient::CreatePrivateConnectivityConfig, request);
+  }
+
+  /**
+   * An Async wrapper for CreatePrivateConnectivityConfig that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename CreatePrivateConnectivityConfigRequestT = Model::CreatePrivateConnectivityConfigRequest>
+  void CreatePrivateConnectivityConfigAsync(const CreatePrivateConnectivityConfigRequestT& request,
+                                            const CreatePrivateConnectivityConfigResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OutpostsClient::CreatePrivateConnectivityConfig, request, handler, context);
   }
 
   /**
@@ -560,6 +596,36 @@ class AWS_OUTPOSTS_API OutpostsClient : public Aws::Client::AWSJsonClient,
                                              const GetOutpostSupportedInstanceTypesResponseReceivedHandler& handler,
                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&OutpostsClient::GetOutpostSupportedInstanceTypes, request, handler, context);
+  }
+
+  /**
+   * <p>Gets the private connectivity configuration for the specified
+   * Outpost.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetPrivateConnectivityConfig">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetPrivateConnectivityConfigOutcome GetPrivateConnectivityConfig(
+      const Model::GetPrivateConnectivityConfigRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetPrivateConnectivityConfig that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetPrivateConnectivityConfigRequestT = Model::GetPrivateConnectivityConfigRequest>
+  Model::GetPrivateConnectivityConfigOutcomeCallable GetPrivateConnectivityConfigCallable(
+      const GetPrivateConnectivityConfigRequestT& request) const {
+    return SubmitCallable(&OutpostsClient::GetPrivateConnectivityConfig, request);
+  }
+
+  /**
+   * An Async wrapper for GetPrivateConnectivityConfig that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetPrivateConnectivityConfigRequestT = Model::GetPrivateConnectivityConfigRequest>
+  void GetPrivateConnectivityConfigAsync(const GetPrivateConnectivityConfigRequestT& request,
+                                         const GetPrivateConnectivityConfigResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OutpostsClient::GetPrivateConnectivityConfig, request, handler, context);
   }
 
   /**

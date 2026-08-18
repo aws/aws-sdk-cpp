@@ -828,6 +828,7 @@
 #include <aws/connect/model/ListEvaluationFormsPaginationTraits.h>
 #include <aws/connect/model/ListEvaluationFormsRequest.h>
 #include <aws/connect/model/ListEvaluationFormsResult.h>
+#include <aws/connect/model/ListExtractionDefinitionsPaginationTraits.h>
 #include <aws/connect/model/ListExtractionDefinitionsRequest.h>
 #include <aws/connect/model/ListExtractionDefinitionsResult.h>
 #include <aws/connect/model/ListFlowAssociationResourceType.h>

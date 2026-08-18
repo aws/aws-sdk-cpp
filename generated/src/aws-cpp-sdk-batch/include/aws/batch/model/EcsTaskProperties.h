@@ -145,7 +145,8 @@ class EcsTaskProperties {
    * specified, then the IPC resource namespace sharing depends on the Docker daemon
    * setting on the container instance. For more information, see <a
    * href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC
-   * settings</a> in the Docker run reference.</p>
+   * settings</a> in the Docker run reference.</p>  <p>This parameter is not
+   * supported for jobs that run on Fargate resources.</p>
    */
   inline const Aws::String& GetIpcMode() const { return m_ipcMode; }
   inline bool IpcModeHasBeenSet() const { return m_ipcModeHasBeenSet; }

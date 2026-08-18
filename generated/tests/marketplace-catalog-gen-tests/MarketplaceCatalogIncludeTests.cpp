@@ -17,6 +17,8 @@
 #include <aws/marketplace-catalog/MarketplaceCatalogWaiter.h>
 #include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
 #include <aws/marketplace-catalog/internal/MarketplaceCatalogEndpointRules.h>
+#include <aws/marketplace-catalog/model/AMISecurityFilters.h>
+#include <aws/marketplace-catalog/model/AMISecuritySummary.h>
 #include <aws/marketplace-catalog/model/AmiProductEntityIdFilter.h>
 #include <aws/marketplace-catalog/model/AmiProductFilters.h>
 #include <aws/marketplace-catalog/model/AmiProductLastModifiedDateFilter.h>
@@ -27,6 +29,10 @@
 #include <aws/marketplace-catalog/model/AmiProductTitleFilter.h>
 #include <aws/marketplace-catalog/model/AmiProductVisibilityFilter.h>
 #include <aws/marketplace-catalog/model/AmiProductVisibilityString.h>
+#include <aws/marketplace-catalog/model/AssessmentResult.h>
+#include <aws/marketplace-catalog/model/AssessmentSummary.h>
+#include <aws/marketplace-catalog/model/AssessmentTargetFilter.h>
+#include <aws/marketplace-catalog/model/AssessmentTargetSummary.h>
 #include <aws/marketplace-catalog/model/BatchDescribeEntitiesRequest.h>
 #include <aws/marketplace-catalog/model/BatchDescribeEntitiesResult.h>
 #include <aws/marketplace-catalog/model/BatchDescribeErrorDetail.h>
@@ -46,6 +52,11 @@
 #include <aws/marketplace-catalog/model/ContainerProductTitleFilter.h>
 #include <aws/marketplace-catalog/model/ContainerProductVisibilityFilter.h>
 #include <aws/marketplace-catalog/model/ContainerProductVisibilityString.h>
+#include <aws/marketplace-catalog/model/ContainerSecurityFilters.h>
+#include <aws/marketplace-catalog/model/ContainerSecuritySummary.h>
+#include <aws/marketplace-catalog/model/ControlAssessment.h>
+#include <aws/marketplace-catalog/model/ControlAssessmentResult.h>
+#include <aws/marketplace-catalog/model/ControlError.h>
 #include <aws/marketplace-catalog/model/DataProductEntityIdFilter.h>
 #include <aws/marketplace-catalog/model/DataProductFilters.h>
 #include <aws/marketplace-catalog/model/DataProductLastModifiedDateFilter.h>
@@ -58,6 +69,9 @@
 #include <aws/marketplace-catalog/model/DataProductVisibilityString.h>
 #include <aws/marketplace-catalog/model/DeleteResourcePolicyRequest.h>
 #include <aws/marketplace-catalog/model/DeleteResourcePolicyResult.h>
+#include <aws/marketplace-catalog/model/DescribeAssessmentPaginationTraits.h>
+#include <aws/marketplace-catalog/model/DescribeAssessmentRequest.h>
+#include <aws/marketplace-catalog/model/DescribeAssessmentResult.h>
 #include <aws/marketplace-catalog/model/DescribeChangeSetRequest.h>
 #include <aws/marketplace-catalog/model/DescribeChangeSetResult.h>
 #include <aws/marketplace-catalog/model/DescribeEntityRequest.h>
@@ -69,11 +83,17 @@
 #include <aws/marketplace-catalog/model/EntityTypeFilters.h>
 #include <aws/marketplace-catalog/model/EntityTypeSort.h>
 #include <aws/marketplace-catalog/model/ErrorDetail.h>
+#include <aws/marketplace-catalog/model/ErrorScope.h>
 #include <aws/marketplace-catalog/model/FailureCode.h>
 #include <aws/marketplace-catalog/model/Filter.h>
+#include <aws/marketplace-catalog/model/FrameworkFilters.h>
+#include <aws/marketplace-catalog/model/FrameworkSummary.h>
 #include <aws/marketplace-catalog/model/GetResourcePolicyRequest.h>
 #include <aws/marketplace-catalog/model/GetResourcePolicyResult.h>
 #include <aws/marketplace-catalog/model/Intent.h>
+#include <aws/marketplace-catalog/model/ListAssessmentsPaginationTraits.h>
+#include <aws/marketplace-catalog/model/ListAssessmentsRequest.h>
+#include <aws/marketplace-catalog/model/ListAssessmentsResult.h>
 #include <aws/marketplace-catalog/model/ListChangeSetsPaginationTraits.h>
 #include <aws/marketplace-catalog/model/ListChangeSetsRequest.h>
 #include <aws/marketplace-catalog/model/ListChangeSetsResult.h>
@@ -176,6 +196,9 @@
 #include <aws/marketplace-catalog/model/TagResourceResult.h>
 #include <aws/marketplace-catalog/model/UntagResourceRequest.h>
 #include <aws/marketplace-catalog/model/UntagResourceResult.h>
+#include <aws/marketplace-catalog/model/ValidationException.h>
+#include <aws/marketplace-catalog/model/ValidationExceptionField.h>
+#include <aws/marketplace-catalog/model/ValidationExceptionReason.h>
 
 using MarketplaceCatalogIncludeTest = ::testing::Test;
 

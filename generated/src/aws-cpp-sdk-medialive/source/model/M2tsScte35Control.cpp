@@ -17,6 +17,7 @@ namespace M2tsScte35ControlMapper {
 
 static const int NONE_HASH = HashingUtils::HashString("NONE");
 static const int PASSTHROUGH_HASH = HashingUtils::HashString("PASSTHROUGH");
+static const int SCTE_35_WITHOUT_IDR_HASH = HashingUtils::HashString("SCTE_35_WITHOUT_IDR");
 
 M2tsScte35Control GetM2tsScte35ControlForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ M2tsScte35Control GetM2tsScte35ControlForName(const Aws::String& name) {
     return M2tsScte35Control::NONE;
   } else if (hashCode == PASSTHROUGH_HASH) {
     return M2tsScte35Control::PASSTHROUGH;
+  } else if (hashCode == SCTE_35_WITHOUT_IDR_HASH) {
+    return M2tsScte35Control::SCTE_35_WITHOUT_IDR;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForM2tsScte35Control(M2tsScte35Control enumValue) {
       return "NONE";
     case M2tsScte35Control::PASSTHROUGH:
       return "PASSTHROUGH";
+    case M2tsScte35Control::SCTE_35_WITHOUT_IDR:
+      return "SCTE_35_WITHOUT_IDR";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

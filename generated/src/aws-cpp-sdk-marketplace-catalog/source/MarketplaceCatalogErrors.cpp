@@ -6,13 +6,21 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/marketplace-catalog/MarketplaceCatalogErrors.h>
+#include <aws/marketplace-catalog/model/ValidationException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::MarketplaceCatalog;
+using namespace Aws::MarketplaceCatalog::Model;
 
 namespace Aws {
 namespace MarketplaceCatalog {
+template <>
+AWS_MARKETPLACECATALOG_API ValidationException MarketplaceCatalogError::GetModeledError() {
+  assert(this->GetErrorType() == MarketplaceCatalogErrors::VALIDATION);
+  return ValidationException(this->GetJsonPayload().View());
+}
+
 namespace MarketplaceCatalogErrorMapper {
 
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");

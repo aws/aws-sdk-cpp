@@ -48,6 +48,8 @@
 #include <aws/outposts/model/CreateOrderResult.h>
 #include <aws/outposts/model/CreateOutpostRequest.h>
 #include <aws/outposts/model/CreateOutpostResult.h>
+#include <aws/outposts/model/CreatePrivateConnectivityConfigRequest.h>
+#include <aws/outposts/model/CreatePrivateConnectivityConfigResult.h>
 #include <aws/outposts/model/CreateQuoteRequest.h>
 #include <aws/outposts/model/CreateQuoteResult.h>
 #include <aws/outposts/model/CreateRenewalRequest.h>
@@ -86,6 +88,8 @@
 #include <aws/outposts/model/GetOutpostSupportedInstanceTypesPaginationTraits.h>
 #include <aws/outposts/model/GetOutpostSupportedInstanceTypesRequest.h>
 #include <aws/outposts/model/GetOutpostSupportedInstanceTypesResult.h>
+#include <aws/outposts/model/GetPrivateConnectivityConfigRequest.h>
+#include <aws/outposts/model/GetPrivateConnectivityConfigResult.h>
 #include <aws/outposts/model/GetQuoteRequest.h>
 #include <aws/outposts/model/GetQuoteResult.h>
 #include <aws/outposts/model/GetRenewalPricingRequest.h>
@@ -152,6 +156,8 @@
 #include <aws/outposts/model/PowerPhase.h>
 #include <aws/outposts/model/PricingOption.h>
 #include <aws/outposts/model/PricingResult.h>
+#include <aws/outposts/model/PrivateConnectivityConfig.h>
+#include <aws/outposts/model/PrivateConnectivityStatus.h>
 #include <aws/outposts/model/Quote.h>
 #include <aws/outposts/model/QuoteCapacity.h>
 #include <aws/outposts/model/QuoteCapacityType.h>
@@ -201,6 +207,7 @@
 #include <aws/outposts/model/UpdateSiteResult.h>
 #include <aws/outposts/model/UplinkCount.h>
 #include <aws/outposts/model/UplinkGbps.h>
+#include <aws/outposts/model/VpcInformation.h>
 
 using OutpostsIncludeTest = ::testing::Test;
 

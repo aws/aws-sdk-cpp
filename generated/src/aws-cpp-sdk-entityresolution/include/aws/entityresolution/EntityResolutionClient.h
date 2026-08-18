@@ -269,8 +269,8 @@ class AWS_ENTITYRESOLUTION_API EntityResolutionClient : public Aws::Client::AWSJ
 
   /**
    * <p>Deletes the <code>IdMappingWorkflow</code> with a given name. This operation
-   * will succeed even if a workflow with the given name does not
-   * exist.</p><p><h3>See Also:</h3>   <a
+   * returns a <code>ResourceNotFoundException</code> if a workflow with the given
+   * name does not exist.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteIdMappingWorkflow">AWS
    * API Reference</a></p>
    */
@@ -297,8 +297,9 @@ class AWS_ENTITYRESOLUTION_API EntityResolutionClient : public Aws::Client::AWSJ
   }
 
   /**
-   * <p>Deletes the <code>IdNamespace</code> with a given name.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Deletes the <code>IdNamespace</code> with a given name. This operation
+   * returns a <code>ResourceNotFoundException</code> if an ID namespace with the
+   * given name does not exist.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteIdNamespace">AWS
    * API Reference</a></p>
    */
@@ -325,8 +326,8 @@ class AWS_ENTITYRESOLUTION_API EntityResolutionClient : public Aws::Client::AWSJ
 
   /**
    * <p>Deletes the <code>MatchingWorkflow</code> with a given name. This operation
-   * will succeed even if a workflow with the given name does not
-   * exist.</p><p><h3>See Also:</h3>   <a
+   * returns a <code>ResourceNotFoundException</code> if a workflow with the given
+   * name does not exist.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteMatchingWorkflow">AWS
    * API Reference</a></p>
    */
@@ -379,9 +380,10 @@ class AWS_ENTITYRESOLUTION_API EntityResolutionClient : public Aws::Client::AWSJ
   }
 
   /**
-   * <p>Deletes the <code>SchemaMapping</code> with a given name. This operation will
-   * succeed even if a schema with the given name does not exist. This operation will
-   * fail if there is a <code>MatchingWorkflow</code> object that references the
+   * <p>Deletes the <code>SchemaMapping</code> with a given name. This operation
+   * returns a <code>ResourceNotFoundException</code> if a schema with the given name
+   * does not exist. This operation will fail if there is a
+   * <code>MatchingWorkflow</code> object that references the
    * <code>SchemaMapping</code> in the workflow's
    * <code>InputSourceConfig</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteSchemaMapping">AWS

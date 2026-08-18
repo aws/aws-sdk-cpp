@@ -48,9 +48,9 @@ class TaskContainerProperties {
   /**
    * <p>The command that's passed to the container. This parameter maps to
    * <code>Cmd</code> in the <a
-   * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
-   * container</a> section of the <a
-   * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+   * href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
+   * a container</a> section of the <a
+   * href="https://docs.docker.com/engine/api/latest/">Docker Remote API</a> and the
    * <code>COMMAND</code> parameter to <a
    * href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more
    * information, see <a
@@ -105,9 +105,9 @@ class TaskContainerProperties {
   /**
    * <p>The environment variables to pass to a container. This parameter maps to Env
    * in the <a
-   * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
-   * container</a> section of the <a
-   * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+   * href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
+   * a container</a> section of the <a
+   * href="https://docs.docker.com/engine/api/latest/">Docker Remote API</a> and the
    * <code>--env</code> parameter to <a
    * href="https://docs.docker.com/engine/reference/run/">docker run</a>. </p>
    *  <p>We don't recommend using plaintext environment variables for
@@ -193,9 +193,9 @@ class TaskContainerProperties {
    * <code>repository-url/image@digest</code>. Up to 255 letters (uppercase and
    * lowercase), numbers, hyphens, underscores, colons, periods, forward slashes, and
    * number signs are allowed. This parameter maps to <code>Image</code> in the <a
-   * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
+   * href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
    * a container</a> section of the <a
-   * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+   * href="https://docs.docker.com/engine/api/latest/">Docker Remote API</a> and the
    * <code>IMAGE</code> parameter of the <a
    * href="https://docs.docker.com/engine/reference/run/#security-configuration">
    * <i>docker run</i> </a>.</p>
@@ -238,9 +238,9 @@ class TaskContainerProperties {
   /**
    * <p>The log configuration specification for the container.</p> <p>This parameter
    * maps to <code>LogConfig</code> in the <a
-   * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
+   * href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
    * a container</a> section of the <a
-   * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+   * href="https://docs.docker.com/engine/api/latest/">Docker Remote API</a> and the
    * <code>--log-driver</code> option to <a
    * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
    * run</a>.</p> <p>By default, containers use the same logging driver that the
@@ -286,9 +286,9 @@ class TaskContainerProperties {
   /**
    * <p>The mount points for data volumes in your container.</p> <p>This parameter
    * maps to <code>Volumes</code> in the <a
-   * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
+   * href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
    * a container</a> section of the <a
-   * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+   * href="https://docs.docker.com/engine/api/latest/">Docker Remote API</a> and the
    * <a href="">--volume</a> option to <a
    * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
    * run</a>.</p> <p>Windows containers can mount whole directories on the same drive
@@ -339,9 +339,9 @@ class TaskContainerProperties {
    * <p>When this parameter is <code>true</code>, the container is given elevated
    * privileges on the host container instance (similar to the <code>root</code>
    * user). This parameter maps to <code>Privileged</code> in the <a
-   * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
+   * href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
    * a container</a> section of the <a
-   * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+   * href="https://docs.docker.com/engine/api/latest/">Docker Remote API</a> and the
    * <code>--privileged</code> option to <a
    * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
    * run</a>.</p>  <p>This parameter is not supported for Windows containers or
@@ -363,9 +363,9 @@ class TaskContainerProperties {
   /**
    * <p>When this parameter is true, the container is given read-only access to its
    * root file system. This parameter maps to <code>ReadonlyRootfs</code> in the <a
-   * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
+   * href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
    * a container</a> section of the <a
-   * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+   * href="https://docs.docker.com/engine/api/latest/">Docker Remote API</a> and the
    * <code>--read-only</code> option to <a
    * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
    * run</a>.</p>  <p>This parameter is not supported for Windows
@@ -458,9 +458,9 @@ class TaskContainerProperties {
    * <code>ulimit</code> value is specified in a task definition, it overrides the
    * default values set by Docker. This parameter maps to <code>Ulimits</code> in the
    * <a
-   * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
+   * href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
    * a container</a> section of the <a
-   * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+   * href="https://docs.docker.com/engine/api/latest/">Docker Remote API</a> and the
    * <code>--ulimit</code> option to <a
    * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
    * run</a>.</p> <p>Amazon ECS tasks hosted on Fargate use the default resource
