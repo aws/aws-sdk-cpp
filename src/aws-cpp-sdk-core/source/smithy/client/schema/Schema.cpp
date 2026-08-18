@@ -7,6 +7,7 @@
 #include <smithy/client/schema/Schema.h>
 #include <smithy/client/schema/SchemaBuilder.h>
 
+#include <cassert>
 #include <utility>
 
 namespace smithy {
@@ -48,36 +49,51 @@ class ScalarSchema final : public Schema {
 };
 
 // A named member of an aggregate shape. Delegates its type to the shape it
-// targets. A member normally owns its target; the non-owning overload is used
-// only for recursive members, where the target is kept alive by the definition
-// site so the graph does not form a reference cycle.
+// targets. A member normally owns its target; the weak overload is used only for
+// recursive members, where the target is kept alive by the definition site so
+// the graph does not form a reference cycle. Either way GetMemberTarget() hands
+// back a shared_ptr that lifetime-extends the target while the caller holds it.
 class MemberSchema final : public Schema {
  public:
   MemberSchema(const Aws::String& name, const Aws::String& id, int index, std::shared_ptr<const Schema> target,
                TraitMap traits)
-      : m_memberName(name), m_id(id), m_memberIndex(index), m_ownedTarget(std::move(target)),
-        m_target(m_ownedTarget.get()) {
+      : m_memberName(name), m_id(id), m_memberIndex(index), m_ownedTarget(std::move(target)) {
     m_traits = std::move(traits);
   }
 
-  MemberSchema(const Aws::String& name, const Aws::String& id, int index, const Schema* target, TraitMap traits)
-      : m_memberName(name), m_id(id), m_memberIndex(index), m_target(target) {
+  MemberSchema(const Aws::String& name, const Aws::String& id, int index, std::weak_ptr<const Schema> target,
+               TraitMap traits)
+      : m_memberName(name), m_id(id), m_memberIndex(index), m_weakTarget(std::move(target)) {
     m_traits = std::move(traits);
   }
 
-  ShapeType GetType() const override { return m_target ? m_target->GetType() : ShapeType::Structure; }
+  ShapeType GetType() const override {
+    const auto target = ResolvedTarget();
+    return target ? target->GetType() : ShapeType::Structure;
+  }
   const char* GetId() const override { return m_id.c_str(); }
   bool IsMember() const override { return true; }
   Aws::String GetMemberName() const override { return m_memberName; }
   int GetMemberIndex() const override { return m_memberIndex; }
-  const Schema* GetMemberTarget() const override { return m_target; }
+
+  Aws::Crt::Optional<std::shared_ptr<const Schema>> GetMemberTarget() const override {
+    const auto target = ResolvedTarget();
+    if (target) {
+      return target;
+    }
+    return {};
+  }
 
  private:
+  std::shared_ptr<const Schema> ResolvedTarget() const {
+    return m_ownedTarget ? m_ownedTarget : m_weakTarget.lock();
+  }
+
   Aws::String m_memberName;
   Aws::String m_id;
   int m_memberIndex;
   std::shared_ptr<const Schema> m_ownedTarget;
-  const Schema* m_target;
+  std::weak_ptr<const Schema> m_weakTarget;
 };
 
 // A shape that carries members (structure, union, list, map). Owns its member
@@ -92,26 +108,33 @@ class RootSchema final : public Schema {
   ShapeType GetType() const override { return m_type; }
   const char* GetId() const override { return m_id.c_str(); }
 
-  const Schema* GetMember(const char* name) const override {
+  Aws::Crt::Optional<std::shared_ptr<const Schema>> GetMember(const char* name) const override {
     auto it = m_nameToIndex.find(name);
     if (it == m_nameToIndex.end()) {
-      return nullptr;
+      return {};
     }
-    return m_members[it->second].get();
+    return m_members[it->second];
   }
 
-  const Schema* GetMember(int index) const override {
+  Aws::Crt::Optional<std::shared_ptr<const Schema>> GetMember(int index) const override {
     if (index < 0 || static_cast<size_t>(index) >= m_members.size()) {
-      return nullptr;
+      return {};
     }
-    return m_members[index].get();
+    return m_members[index];
   }
 
   uint16_t GetMemberCount() const override { return static_cast<uint16_t>(m_members.size()); }
 
-  // Used only by SchemaBuilder while assembling the shape.
+  // Used only by SchemaBuilder while assembling the shape. Member names must be
+  // unique within a shape; a duplicate is a codegen/programming error, so reject
+  // it rather than shadowing the earlier member (which would leave the first
+  // unreachable by name yet still counted in GetMemberCount()).
   void AddMember(const std::shared_ptr<const Schema>& member) {
-    m_nameToIndex[member->GetMemberName()] = static_cast<int>(m_members.size());
+    const auto inserted = m_nameToIndex.emplace(member->GetMemberName(), static_cast<int>(m_members.size()));
+    assert(inserted.second && "duplicate member name in schema");
+    if (!inserted.second) {
+      return;
+    }
     m_members.push_back(member);
   }
 
@@ -243,10 +266,11 @@ class SchemaBuilder::SchemaBuilderImpl {
         member = Aws::MakeShared<MemberSchema>(SCHEMA_ALLOC_TAG, pending.name, MakeMemberId(m_id, pending.name), index,
                                                pending.eagerTarget, pending.traits);
       } else if (pending.deferredTarget != nullptr) {
-        // Recursive member references a target kept alive by the definition site.
-        auto target = pending.deferredTarget->Build();
+        // Recursive member holds a weak reference to a target kept alive by the
+        // definition site, so the schema graph does not form a reference cycle.
+        std::weak_ptr<const Schema> target = pending.deferredTarget->Build();
         member = Aws::MakeShared<MemberSchema>(SCHEMA_ALLOC_TAG, pending.name, MakeMemberId(m_id, pending.name), index,
-                                               target.get(), pending.traits);
+                                               target, pending.traits);
       }
       shell->AddMember(member);
       ++index;

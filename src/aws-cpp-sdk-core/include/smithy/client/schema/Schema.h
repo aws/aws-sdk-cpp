@@ -1,6 +1,7 @@
 #pragma once
 
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/Optional.h>
 #include <smithy/Smithy_EXPORTS.h>
 #include <smithy/client/schema/TraitMap.h>
 
@@ -61,10 +62,10 @@ class SMITHY_API Schema {
   virtual bool IsMember() const { return false; }
   virtual Aws::String GetMemberName() const { return {}; }
   virtual int GetMemberIndex() const { return 0; }
-  virtual const Schema* GetMemberTarget() const { return nullptr; }
+  virtual Aws::Crt::Optional<std::shared_ptr<const Schema>> GetMemberTarget() const { return {}; }
 
-  virtual const Schema* GetMember(const char* /*name*/) const { return nullptr; }
-  virtual const Schema* GetMember(int /*index*/) const { return nullptr; }
+  virtual Aws::Crt::Optional<std::shared_ptr<const Schema>> GetMember(const char* /*name*/) const { return {}; }
+  virtual Aws::Crt::Optional<std::shared_ptr<const Schema>> GetMember(int /*index*/) const { return {}; }
   virtual uint16_t GetMemberCount() const { return 0; }
 
   template <typename T>

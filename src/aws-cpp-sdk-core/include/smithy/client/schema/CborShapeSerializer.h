@@ -5,6 +5,8 @@
 #include <smithy/Smithy_EXPORTS.h>
 #include <smithy/client/schema/ShapeSerializer.h>
 
+#include <functional>
+
 namespace smithy {
 namespace schema {
 
@@ -14,8 +16,9 @@ class SMITHY_API CborShapeSerializer final : public ShapeSerializer {
   CborShapeSerializer();
   ~CborShapeSerializer();
 
-  bool BeginStructure(const Schema& schema) override;
-  void EndStructure() override;
+  void WriteStruct(const Schema& schema, const SerializableStruct& value) override;
+  void WriteList(const Schema& schema, size_t size, const std::function<void(ShapeSerializer&)>& consumer) override;
+  void WriteMap(const Schema& schema, size_t size, const std::function<void(MapSerializer&)>& consumer) override;
 
   void WriteBoolean(const Schema& schema, bool value) override;
   void WriteInteger(const Schema& schema, int value) override;
@@ -27,16 +30,6 @@ class SMITHY_API CborShapeSerializer final : public ShapeSerializer {
   void WriteBlob(const Schema& schema, const Aws::Utils::ByteBuffer& value) override;
   void WriteEnum(const Schema& schema, int value) override;
   void WriteNull(const Schema& schema) override;
-
-  bool BeginList(const Schema& schema, size_t count) override;
-  void EndList() override;
-
-  bool BeginMap(const Schema& schema, size_t count) override;
-  void WriteMapKey(const Aws::String& key) override;
-  void EndMap() override;
-
-  bool BeginNestedStructure(const Schema& schema) override;
-  void EndNestedStructure() override;
 
   SerializerOutcome GetPayload();
 
