@@ -417,9 +417,9 @@ TEST_F(CborShapeDeserializerTest, SkipNestedUnknown) {
   auto known = Schema::CreateMember("known", ShapeType::Integer);
   LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
     ser.WriteStruct(*unknownStruct, LambdaStruct(*unknownStruct, [&](ShapeSerializer& ser2) {
-                      ser2.WriteInteger(*a, 1);
-                      ser2.WriteString(*b, "nested");
-                    }));
+      ser2.WriteInteger(*a, 1);
+      ser2.WriteString(*b, "nested");
+    }));
     ser.WriteInteger(*known, 42);
   });
   s.WriteStruct(*root, rootStruct);

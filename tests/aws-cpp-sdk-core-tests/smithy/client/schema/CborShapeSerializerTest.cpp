@@ -388,8 +388,8 @@ TEST_F(CborShapeSerializerTest, DeeplyNestedStructure) {
   auto leaf = Schema::CreateMember("v", ShapeType::Integer);
   LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
     ser.WriteStruct(*l1, LambdaStruct(*l1, [&](ShapeSerializer& ser2) {
-                      ser2.WriteStruct(*l2, LambdaStruct(*l2, [&](ShapeSerializer& ser3) { ser3.WriteInteger(*leaf, 99); }));
-                    }));
+      ser2.WriteStruct(*l2, LambdaStruct(*l2, [&](ShapeSerializer& ser3) { ser3.WriteInteger(*leaf, 99); }));
+    }));
   });
   s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
@@ -647,9 +647,8 @@ TEST_F(CborShapeSerializerTest, StructureWithListAndMap) {
   LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
     ser.WriteString(*strMember, "hi");
     ser.WriteList(*listMember, 1, [&](ShapeSerializer& lser) { lser.WriteString(*listElem, "t1"); });
-    ser.WriteMap(*mapMember, 1, [&](MapSerializer& mapSer) {
-      mapSer.WriteEntry("k", [&](ShapeSerializer& vser) { vser.WriteInteger(*mapVal, 5); });
-    });
+    ser.WriteMap(*mapMember, 1,
+                 [&](MapSerializer& mapSer) { mapSer.WriteEntry("k", [&](ShapeSerializer& vser) { vser.WriteInteger(*mapVal, 5); }); });
   });
   s.WriteStruct(*root, rootStruct);
 

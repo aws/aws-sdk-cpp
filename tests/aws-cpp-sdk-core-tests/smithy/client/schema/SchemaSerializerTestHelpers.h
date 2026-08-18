@@ -20,8 +20,7 @@ namespace schema {
 //   serializer.WriteStruct(*schema, s);
 class LambdaStruct final : public SerializableStruct {
  public:
-  LambdaStruct(const Schema& schema, std::function<void(ShapeSerializer&)> members)
-      : m_schema(schema), m_members(std::move(members)) {}
+  LambdaStruct(const Schema& schema, std::function<void(ShapeSerializer&)> members) : m_schema(schema), m_members(std::move(members)) {}
 
   const Schema& GetSchema() const override { return m_schema; }
   void SerializeMembers(ShapeSerializer& serializer) const override {

@@ -34,8 +34,7 @@ Aws::String MakeMemberId(const Aws::String& shapeId, const Aws::String& memberNa
 
 class ScalarSchema final : public Schema {
  public:
-  ScalarSchema(ShapeType type, const char* id, TraitList traits)
-      : Schema(traits), m_type(type), m_id(id) {}
+  ScalarSchema(ShapeType type, const char* id, TraitList traits) : Schema(traits), m_type(type), m_id(id) {}
 
   ShapeType GetType() const override { return m_type; }
   const char* GetId() const override { return m_id.c_str(); }
@@ -47,14 +46,12 @@ class ScalarSchema final : public Schema {
 
 class MemberSchema final : public Schema {
  public:
-  MemberSchema(const Aws::String& name, const Aws::String& id, int index, std::shared_ptr<const Schema> target,
-               TraitMap traits)
+  MemberSchema(const Aws::String& name, const Aws::String& id, int index, std::shared_ptr<const Schema> target, TraitMap traits)
       : m_memberName(name), m_id(id), m_memberIndex(index), m_ownedTarget(std::move(target)) {
     m_traits = std::move(traits);
   }
 
-  MemberSchema(const Aws::String& name, const Aws::String& id, int index, std::weak_ptr<const Schema> target,
-               TraitMap traits)
+  MemberSchema(const Aws::String& name, const Aws::String& id, int index, std::weak_ptr<const Schema> target, TraitMap traits)
       : m_memberName(name), m_id(id), m_memberIndex(index), m_weakTarget(std::move(target)) {
     m_traits = std::move(traits);
   }
@@ -77,9 +74,7 @@ class MemberSchema final : public Schema {
   }
 
  private:
-  std::shared_ptr<const Schema> ResolvedTarget() const {
-    return m_ownedTarget ? m_ownedTarget : m_weakTarget.lock();
-  }
+  std::shared_ptr<const Schema> ResolvedTarget() const { return m_ownedTarget ? m_ownedTarget : m_weakTarget.lock(); }
 
   Aws::String m_memberName;
   Aws::String m_id;
@@ -90,9 +85,7 @@ class MemberSchema final : public Schema {
 
 class RootSchema final : public Schema {
  public:
-  RootSchema(ShapeType type, const Aws::String& id, TraitMap traits) : m_type(type), m_id(id) {
-    m_traits = std::move(traits);
-  }
+  RootSchema(ShapeType type, const Aws::String& id, TraitMap traits) : m_type(type), m_id(id) { m_traits = std::move(traits); }
 
   ShapeType GetType() const override { return m_type; }
   const char* GetId() const override { return m_id.c_str(); }
@@ -150,45 +143,23 @@ std::shared_ptr<const Schema> MakeEmptyShape(ShapeType type, const char* id) {
 
 Schema::Schema(TraitList traits) : m_traits(ToTraitMap(traits)) {}
 
-std::shared_ptr<const Schema> Schema::CreateBoolean(const char* id, TraitList traits) {
-  return MakeScalar(ShapeType::Boolean, id, traits);
-}
-std::shared_ptr<const Schema> Schema::CreateByte(const char* id, TraitList traits) {
-  return MakeScalar(ShapeType::Byte, id, traits);
-}
-std::shared_ptr<const Schema> Schema::CreateShort(const char* id, TraitList traits) {
-  return MakeScalar(ShapeType::Short, id, traits);
-}
-std::shared_ptr<const Schema> Schema::CreateInteger(const char* id, TraitList traits) {
-  return MakeScalar(ShapeType::Integer, id, traits);
-}
-std::shared_ptr<const Schema> Schema::CreateLong(const char* id, TraitList traits) {
-  return MakeScalar(ShapeType::Long, id, traits);
-}
-std::shared_ptr<const Schema> Schema::CreateFloat(const char* id, TraitList traits) {
-  return MakeScalar(ShapeType::Float, id, traits);
-}
-std::shared_ptr<const Schema> Schema::CreateDouble(const char* id, TraitList traits) {
-  return MakeScalar(ShapeType::Double, id, traits);
-}
+std::shared_ptr<const Schema> Schema::CreateBoolean(const char* id, TraitList traits) { return MakeScalar(ShapeType::Boolean, id, traits); }
+std::shared_ptr<const Schema> Schema::CreateByte(const char* id, TraitList traits) { return MakeScalar(ShapeType::Byte, id, traits); }
+std::shared_ptr<const Schema> Schema::CreateShort(const char* id, TraitList traits) { return MakeScalar(ShapeType::Short, id, traits); }
+std::shared_ptr<const Schema> Schema::CreateInteger(const char* id, TraitList traits) { return MakeScalar(ShapeType::Integer, id, traits); }
+std::shared_ptr<const Schema> Schema::CreateLong(const char* id, TraitList traits) { return MakeScalar(ShapeType::Long, id, traits); }
+std::shared_ptr<const Schema> Schema::CreateFloat(const char* id, TraitList traits) { return MakeScalar(ShapeType::Float, id, traits); }
+std::shared_ptr<const Schema> Schema::CreateDouble(const char* id, TraitList traits) { return MakeScalar(ShapeType::Double, id, traits); }
 std::shared_ptr<const Schema> Schema::CreateBigInteger(const char* id, TraitList traits) {
   return MakeScalar(ShapeType::BigInteger, id, traits);
 }
 std::shared_ptr<const Schema> Schema::CreateBigDecimal(const char* id, TraitList traits) {
   return MakeScalar(ShapeType::BigDecimal, id, traits);
 }
-std::shared_ptr<const Schema> Schema::CreateString(const char* id, TraitList traits) {
-  return MakeScalar(ShapeType::String, id, traits);
-}
-std::shared_ptr<const Schema> Schema::CreateEnum(const char* id, TraitList traits) {
-  return MakeScalar(ShapeType::Enum, id, traits);
-}
-std::shared_ptr<const Schema> Schema::CreateIntEnum(const char* id, TraitList traits) {
-  return MakeScalar(ShapeType::IntEnum, id, traits);
-}
-std::shared_ptr<const Schema> Schema::CreateBlob(const char* id, TraitList traits) {
-  return MakeScalar(ShapeType::Blob, id, traits);
-}
+std::shared_ptr<const Schema> Schema::CreateString(const char* id, TraitList traits) { return MakeScalar(ShapeType::String, id, traits); }
+std::shared_ptr<const Schema> Schema::CreateEnum(const char* id, TraitList traits) { return MakeScalar(ShapeType::Enum, id, traits); }
+std::shared_ptr<const Schema> Schema::CreateIntEnum(const char* id, TraitList traits) { return MakeScalar(ShapeType::IntEnum, id, traits); }
+std::shared_ptr<const Schema> Schema::CreateBlob(const char* id, TraitList traits) { return MakeScalar(ShapeType::Blob, id, traits); }
 std::shared_ptr<const Schema> Schema::CreateTimestamp(const char* id, TraitList traits) {
   return MakeScalar(ShapeType::Timestamp, id, traits);
 }
@@ -197,14 +168,13 @@ std::shared_ptr<const Schema> Schema::CreateDocument(const char* id, TraitList t
 }
 
 std::shared_ptr<const Schema> Schema::CreateMember(const char* name, ShapeType targetType, TraitList traits) {
-  return Aws::MakeShared<MemberSchema>(SCHEMA_ALLOC_TAG, Aws::String(name), Aws::String(name), 0,
-                                       MakeEmptyShape(targetType, name), ToTraitMap(traits));
+  return Aws::MakeShared<MemberSchema>(SCHEMA_ALLOC_TAG, Aws::String(name), Aws::String(name), 0, MakeEmptyShape(targetType, name),
+                                       ToTraitMap(traits));
 }
 
 class SchemaBuilder::SchemaBuilderImpl {
  public:
-  SchemaBuilderImpl(ShapeType type, const char* id, TraitList traits)
-      : m_type(type), m_id(id), m_traits(ToTraitMap(traits)) {}
+  SchemaBuilderImpl(ShapeType type, const char* id, TraitList traits) : m_type(type), m_id(id), m_traits(ToTraitMap(traits)) {}
 
   struct PendingMember {
     Aws::String name;
@@ -241,12 +211,12 @@ class SchemaBuilder::SchemaBuilderImpl {
     for (auto& pending : m_members) {
       std::shared_ptr<const Schema> member;
       if (pending.eagerTarget) {
-        member = Aws::MakeShared<MemberSchema>(SCHEMA_ALLOC_TAG, pending.name, MakeMemberId(m_id, pending.name), index,
-                                               pending.eagerTarget, pending.traits);
+        member = Aws::MakeShared<MemberSchema>(SCHEMA_ALLOC_TAG, pending.name, MakeMemberId(m_id, pending.name), index, pending.eagerTarget,
+                                               pending.traits);
       } else if (pending.deferredTarget != nullptr) {
         std::weak_ptr<const Schema> target = pending.deferredTarget->Build();
-        member = Aws::MakeShared<MemberSchema>(SCHEMA_ALLOC_TAG, pending.name, MakeMemberId(m_id, pending.name), index,
-                                               target, pending.traits);
+        member =
+            Aws::MakeShared<MemberSchema>(SCHEMA_ALLOC_TAG, pending.name, MakeMemberId(m_id, pending.name), index, target, pending.traits);
       }
       shell->AddMember(member);
       ++index;

@@ -35,11 +35,21 @@ void AppendXmlEscaped(Aws::String& buf, const Aws::String& value) {
     }
     if (i < len) {
       switch (data[i]) {
-        case '&': buf += "&amp;"; break;
-        case '<': buf += "&lt;"; break;
-        case '>': buf += "&gt;"; break;
-        case '"': buf += "&quot;"; break;
-        case '\'': buf += "&apos;"; break;
+        case '&':
+          buf += "&amp;";
+          break;
+        case '<':
+          buf += "&lt;";
+          break;
+        case '>':
+          buf += "&gt;";
+          break;
+        case '"':
+          buf += "&quot;";
+          break;
+        case '\'':
+          buf += "&apos;";
+          break;
       }
       i++;
     }
@@ -129,10 +139,7 @@ class XmlShapeSerializer::Impl final : public InterceptingSerializer {
   class XmlMapEntrySerializer final : public MapSerializer {
    public:
     XmlMapEntrySerializer(Impl* outer, Aws::String entryName, Aws::String keyName, Aws::String valueName)
-        : m_outer(outer),
-          m_entryName(std::move(entryName)),
-          m_keyName(std::move(keyName)),
-          m_valueName(std::move(valueName)) {}
+        : m_outer(outer), m_entryName(std::move(entryName)), m_keyName(std::move(keyName)), m_valueName(std::move(valueName)) {}
     void WriteEntry(const Aws::String& key, const std::function<void(ShapeSerializer&)>& value) override;
 
    private:
@@ -142,11 +149,7 @@ class XmlShapeSerializer::Impl final : public InterceptingSerializer {
     Aws::String m_valueName;
   };
 
-  Impl()
-      : m_valueSerializer(this),
-        m_structElementSerializer(this),
-        m_structAttributeSerializer(this),
-        m_inlineAttributeSerializer(this) {
+  Impl() : m_valueSerializer(this), m_structElementSerializer(this), m_structAttributeSerializer(this), m_inlineAttributeSerializer(this) {
     m_buf.reserve(8192);
   }
 
@@ -398,8 +401,7 @@ void XmlShapeSerializer::Impl::InlineAttributeSerializer::WriteDouble(const Sche
 void XmlShapeSerializer::Impl::InlineAttributeSerializer::WriteString(const Schema& schema, const Aws::String& value) {
   WriteAttr(schema, value);
 }
-void XmlShapeSerializer::Impl::InlineAttributeSerializer::WriteTimestamp(const Schema& schema,
-                                                                        const Aws::Utils::DateTime& value) {
+void XmlShapeSerializer::Impl::InlineAttributeSerializer::WriteTimestamp(const Schema& schema, const Aws::Utils::DateTime& value) {
   WriteAttr(schema, value.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
 }
 void XmlShapeSerializer::Impl::InlineAttributeSerializer::WriteEnum(const Schema& schema, int value) {

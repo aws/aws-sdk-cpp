@@ -159,10 +159,8 @@ TEST_F(XmlShapeSerializerTest, DeeplyNestedStructure) {
   auto leaf = Schema::CreateMember("val", ShapeType::Integer);
   LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
     ser.WriteStruct(*level1, LambdaStruct(*level1, [&](ShapeSerializer& ser2) {
-                      ser2.WriteStruct(*level2, LambdaStruct(*level2, [&](ShapeSerializer& ser3) {
-                                         ser3.WriteInteger(*leaf, 99);
-                                       }));
-                    }));
+      ser2.WriteStruct(*level2, LambdaStruct(*level2, [&](ShapeSerializer& ser3) { ser3.WriteInteger(*leaf, 99); }));
+    }));
   });
   s.WriteStruct(*root, rootStruct);
   EXPECT_NE(s.GetPayload().GetResult().find("<l1><l2><val>99</val></l2></l1>"), Aws::String::npos);
@@ -285,9 +283,8 @@ TEST_F(XmlShapeSerializerTest, StructureWithListAndMap) {
       lser.WriteString(*listElem, "t1");
       lser.WriteString(*listElem, "t2");
     });
-    ser.WriteMap(*mapMember, 1, [&](MapSerializer& mapSer) {
-      mapSer.WriteEntry("k", [&](ShapeSerializer& vser) { vser.WriteString(*mapVal, "v"); });
-    });
+    ser.WriteMap(*mapMember, 1,
+                 [&](MapSerializer& mapSer) { mapSer.WriteEntry("k", [&](ShapeSerializer& vser) { vser.WriteString(*mapVal, "v"); }); });
   });
   s.WriteStruct(*root, rootStruct);
 
@@ -361,7 +358,8 @@ TEST_F(XmlShapeSerializerTest, MaxDepthEnforcement) {
 TEST_F(XmlShapeSerializerTest, XmlNameOverridesMemberName) {
   XmlShapeSerializer s;
   auto root = Schema::StructureBuilder("Root", {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "Root")}}).Build();
-  auto member = Schema::CreateMember("internalName", ShapeType::String, {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "ExternalName")}});
+  auto member = Schema::CreateMember("internalName", ShapeType::String,
+                                     {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "ExternalName")}});
   LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteString(*member, "hello"); });
   s.WriteStruct(*root, rootStruct);
   auto payload = s.GetPayload().GetResult();
@@ -381,7 +379,8 @@ TEST_F(XmlShapeSerializerTest, XmlNameOnStructure) {
 TEST_F(XmlShapeSerializerTest, FlattenedListOfStrings) {
   XmlShapeSerializer s;
   auto root = Schema::StructureBuilder("Root", {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "Root")}}).Build();
-  auto listMember = Schema::CreateMember("item", ShapeType::List, {{XmlFlattenedTrait::KEY(), Aws::MakeShared<XmlFlattenedTrait>("Schema")}});
+  auto listMember =
+      Schema::CreateMember("item", ShapeType::List, {{XmlFlattenedTrait::KEY(), Aws::MakeShared<XmlFlattenedTrait>("Schema")}});
   auto elem = Schema::CreateMember("member", ShapeType::String);
   LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
     ser.WriteList(*listMember, 3, [&](ShapeSerializer& lser) {
@@ -401,7 +400,9 @@ TEST_F(XmlShapeSerializerTest, FlattenedListOfStrings) {
 TEST_F(XmlShapeSerializerTest, FlattenedListWithXmlName) {
   XmlShapeSerializer s;
   auto root = Schema::StructureBuilder("Root", {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "Root")}}).Build();
-  auto listMember = Schema::CreateMember("items", ShapeType::List, {{XmlFlattenedTrait::KEY(), Aws::MakeShared<XmlFlattenedTrait>("Schema")}, {XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "Tag")}});
+  auto listMember = Schema::CreateMember("items", ShapeType::List,
+                                         {{XmlFlattenedTrait::KEY(), Aws::MakeShared<XmlFlattenedTrait>("Schema")},
+                                          {XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "Tag")}});
   auto elem = Schema::CreateMember("member", ShapeType::String);
   LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
     ser.WriteList(*listMember, 2, [&](ShapeSerializer& lser) {
@@ -416,7 +417,8 @@ TEST_F(XmlShapeSerializerTest, FlattenedListWithXmlName) {
 TEST_F(XmlShapeSerializerTest, CustomListItemName) {
   XmlShapeSerializer s;
   auto root = Schema::StructureBuilder("Root", {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "Root")}}).Build();
-  auto listMember = Schema::CreateMember("things", ShapeType::List, {{XmlListItemNameTrait::KEY(), Aws::MakeShared<XmlListItemNameTrait>("Schema", "item")}});
+  auto listMember = Schema::CreateMember("things", ShapeType::List,
+                                         {{XmlListItemNameTrait::KEY(), Aws::MakeShared<XmlListItemNameTrait>("Schema", "item")}});
   auto elem = Schema::CreateMember("member", ShapeType::String);
   LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
     ser.WriteList(*listMember, 2, [&](ShapeSerializer& lser) {
@@ -431,7 +433,10 @@ TEST_F(XmlShapeSerializerTest, CustomListItemName) {
 TEST_F(XmlShapeSerializerTest, CustomMapNames) {
   XmlShapeSerializer s;
   auto root = Schema::StructureBuilder("Root", {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "Root")}}).Build();
-  auto mapMember = Schema::CreateMember("tags", ShapeType::Map, {{XmlMapEntryNameTrait::KEY(), Aws::MakeShared<XmlMapEntryNameTrait>("Schema", "item")}, {XmlMapKeyNameTrait::KEY(), Aws::MakeShared<XmlMapKeyNameTrait>("Schema", "tagKey")}, {XmlMapValueNameTrait::KEY(), Aws::MakeShared<XmlMapValueNameTrait>("Schema", "tagValue")}});
+  auto mapMember = Schema::CreateMember("tags", ShapeType::Map,
+                                        {{XmlMapEntryNameTrait::KEY(), Aws::MakeShared<XmlMapEntryNameTrait>("Schema", "item")},
+                                         {XmlMapKeyNameTrait::KEY(), Aws::MakeShared<XmlMapKeyNameTrait>("Schema", "tagKey")},
+                                         {XmlMapValueNameTrait::KEY(), Aws::MakeShared<XmlMapValueNameTrait>("Schema", "tagValue")}});
   auto valSchema = Schema::CreateMember("value", ShapeType::String);
   LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
     ser.WriteMap(*mapMember, 1, [&](MapSerializer& mapSer) {

@@ -9,10 +9,8 @@
 namespace smithy {
 namespace schema {
 
-// Assembles a shape that carries members (structure, union, list, map). Members
-// may target shapes that are already built, or other builders that are not yet
-// built to describe recursive shapes. Once Build() is called the builder is
-// spent. Move-only; obtained from Schema::StructureBuilder and friends.
+// Assembles a shape that carries members (structure, union, list, map). Move-only;
+// obtained from Schema::StructureBuilder and friends.
 class SMITHY_API SchemaBuilder final {
  public:
   ~SchemaBuilder();

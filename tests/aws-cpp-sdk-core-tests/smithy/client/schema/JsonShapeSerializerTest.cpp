@@ -159,10 +159,8 @@ TEST_F(JsonShapeSerializerTest, DeeplyNestedStructure) {
   auto leaf = Schema::CreateMember("val", ShapeType::Integer);
   LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
     ser.WriteStruct(*level1, LambdaStruct(*level1, [&](ShapeSerializer& ser2) {
-                      ser2.WriteStruct(*level2, LambdaStruct(*level2, [&](ShapeSerializer& ser3) {
-                                         ser3.WriteInteger(*leaf, 99);
-                                       }));
-                    }));
+      ser2.WriteStruct(*level2, LambdaStruct(*level2, [&](ShapeSerializer& ser3) { ser3.WriteInteger(*leaf, 99); }));
+    }));
   });
   s.WriteStruct(*root, rootStruct);
   EXPECT_NE(s.GetPayload().GetResult().find("\"l1\":{\"l2\":{\"val\":99}}"), Aws::String::npos);
@@ -316,9 +314,8 @@ TEST_F(JsonShapeSerializerTest, StructureWithListAndMap) {
       lser.WriteString(*listElem, "t1");
       lser.WriteString(*listElem, "t2");
     });
-    ser.WriteMap(*mapMember, 1, [&](MapSerializer& mapSer) {
-      mapSer.WriteEntry("k", [&](ShapeSerializer& vser) { vser.WriteString(*mapVal, "v"); });
-    });
+    ser.WriteMap(*mapMember, 1,
+                 [&](MapSerializer& mapSer) { mapSer.WriteEntry("k", [&](ShapeSerializer& vser) { vser.WriteString(*mapVal, "v"); }); });
   });
   s.WriteStruct(*root, rootStruct);
 

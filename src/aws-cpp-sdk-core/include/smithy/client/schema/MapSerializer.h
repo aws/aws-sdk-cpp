@@ -10,9 +10,7 @@ namespace schema {
 
 class ShapeSerializer;
 
-// Handed to the WriteMap consumer. Each entry writes its key, then the value
-// through a nested consumer that receives the same underlying serializer, so map
-// values can themselves be scalars, structs, lists, or maps.
+// Handed to the WriteMap consumer; writes each entry's key then its value.
 class SMITHY_API MapSerializer {
  public:
   virtual ~MapSerializer() = default;

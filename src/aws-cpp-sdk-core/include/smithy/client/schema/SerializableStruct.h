@@ -8,10 +8,8 @@ namespace schema {
 
 class ShapeSerializer;
 
-// Implemented by generated shapes. A shape knows its own Schema and how to write
-// its members to a serializer; the wire format is decided entirely by which
-// ShapeSerializer is passed in. This is the protocol-agnostic hook that lets one
-// SerializeMembers() implementation produce JSON, XML, or CBOR.
+// Implemented by generated shapes: knows its Schema and how to write its members
+// to whichever ShapeSerializer is passed in.
 class SMITHY_API SerializableStruct {
  public:
   virtual ~SerializableStruct() = default;

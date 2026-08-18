@@ -15,23 +15,15 @@ namespace schema {
 class SerializableStruct;
 class MapSerializer;
 
-// Push-based serializer: the model drives serialization by calling these
-// methods, and the serializer owns all wire-format structure (delimiters,
-// element boundaries). Aggregates hand control back through a consumer callback
-// so nesting is expressed by re-entrancy rather than begin/end bookkeeping.
-//
-// smithy-java parameterizes the list/map consumers on a caller-supplied state
-// type to avoid capturing lambdas; C++ virtual methods cannot be templated, so
-// the consumer is a std::function and any state is captured by the closure.
+// Push-based serializer: the model drives serialization and the serializer owns
+// all wire-format structure. Aggregates hand control back through a consumer.
 class SMITHY_API ShapeSerializer {
  public:
   virtual ~ShapeSerializer() = default;
 
   virtual void WriteStruct(const Schema& schema, const SerializableStruct& value) = 0;
-  virtual void WriteList(const Schema& schema, size_t size,
-                         const std::function<void(ShapeSerializer&)>& consumer) = 0;
-  virtual void WriteMap(const Schema& schema, size_t size,
-                        const std::function<void(MapSerializer&)>& consumer) = 0;
+  virtual void WriteList(const Schema& schema, size_t size, const std::function<void(ShapeSerializer&)>& consumer) = 0;
+  virtual void WriteMap(const Schema& schema, size_t size, const std::function<void(MapSerializer&)>& consumer) = 0;
 
   virtual void WriteBoolean(const Schema& schema, bool value) = 0;
   virtual void WriteInteger(const Schema& schema, int value) = 0;

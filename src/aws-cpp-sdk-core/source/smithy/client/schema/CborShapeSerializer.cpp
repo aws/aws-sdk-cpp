@@ -71,19 +71,58 @@ class CborShapeSerializer::Impl final : public ShapeSerializer {
    public:
     explicit StructContext(Impl* outer) : m_outer(outer) {}
 
-    void WriteStruct(const Schema& s, const SerializableStruct& v) override { m_outer->WriteMemberKey(s); m_outer->WriteStruct(s, v); }
-    void WriteList(const Schema& s, size_t n, const std::function<void(ShapeSerializer&)>& c) override { m_outer->WriteMemberKey(s); m_outer->WriteList(s, n, c); }
-    void WriteMap(const Schema& s, size_t n, const std::function<void(MapSerializer&)>& c) override { m_outer->WriteMemberKey(s); m_outer->WriteMap(s, n, c); }
-    void WriteBoolean(const Schema& s, bool v) override { m_outer->WriteMemberKey(s); m_outer->WriteBoolean(s, v); }
-    void WriteInteger(const Schema& s, int v) override { m_outer->WriteMemberKey(s); m_outer->WriteInteger(s, v); }
-    void WriteLong(const Schema& s, int64_t v) override { m_outer->WriteMemberKey(s); m_outer->WriteLong(s, v); }
-    void WriteFloat(const Schema& s, float v) override { m_outer->WriteMemberKey(s); m_outer->WriteFloat(s, v); }
-    void WriteDouble(const Schema& s, double v) override { m_outer->WriteMemberKey(s); m_outer->WriteDouble(s, v); }
-    void WriteString(const Schema& s, const Aws::String& v) override { m_outer->WriteMemberKey(s); m_outer->WriteString(s, v); }
-    void WriteTimestamp(const Schema& s, const DateTime& v) override { m_outer->WriteMemberKey(s); m_outer->WriteTimestamp(s, v); }
-    void WriteBlob(const Schema& s, const ByteBuffer& v) override { m_outer->WriteMemberKey(s); m_outer->WriteBlob(s, v); }
-    void WriteEnum(const Schema& s, int v) override { m_outer->WriteMemberKey(s); m_outer->WriteEnum(s, v); }
-    void WriteNull(const Schema& s) override { m_outer->WriteMemberKey(s); m_outer->WriteNull(s); }
+    void WriteStruct(const Schema& s, const SerializableStruct& v) override {
+      m_outer->WriteMemberKey(s);
+      m_outer->WriteStruct(s, v);
+    }
+    void WriteList(const Schema& s, size_t n, const std::function<void(ShapeSerializer&)>& c) override {
+      m_outer->WriteMemberKey(s);
+      m_outer->WriteList(s, n, c);
+    }
+    void WriteMap(const Schema& s, size_t n, const std::function<void(MapSerializer&)>& c) override {
+      m_outer->WriteMemberKey(s);
+      m_outer->WriteMap(s, n, c);
+    }
+    void WriteBoolean(const Schema& s, bool v) override {
+      m_outer->WriteMemberKey(s);
+      m_outer->WriteBoolean(s, v);
+    }
+    void WriteInteger(const Schema& s, int v) override {
+      m_outer->WriteMemberKey(s);
+      m_outer->WriteInteger(s, v);
+    }
+    void WriteLong(const Schema& s, int64_t v) override {
+      m_outer->WriteMemberKey(s);
+      m_outer->WriteLong(s, v);
+    }
+    void WriteFloat(const Schema& s, float v) override {
+      m_outer->WriteMemberKey(s);
+      m_outer->WriteFloat(s, v);
+    }
+    void WriteDouble(const Schema& s, double v) override {
+      m_outer->WriteMemberKey(s);
+      m_outer->WriteDouble(s, v);
+    }
+    void WriteString(const Schema& s, const Aws::String& v) override {
+      m_outer->WriteMemberKey(s);
+      m_outer->WriteString(s, v);
+    }
+    void WriteTimestamp(const Schema& s, const DateTime& v) override {
+      m_outer->WriteMemberKey(s);
+      m_outer->WriteTimestamp(s, v);
+    }
+    void WriteBlob(const Schema& s, const ByteBuffer& v) override {
+      m_outer->WriteMemberKey(s);
+      m_outer->WriteBlob(s, v);
+    }
+    void WriteEnum(const Schema& s, int v) override {
+      m_outer->WriteMemberKey(s);
+      m_outer->WriteEnum(s, v);
+    }
+    void WriteNull(const Schema& s) override {
+      m_outer->WriteMemberKey(s);
+      m_outer->WriteNull(s);
+    }
 
    private:
     Impl* m_outer;
@@ -139,9 +178,7 @@ class CborShapeSerializer::Impl final : public ShapeSerializer {
 CborShapeSerializer::CborShapeSerializer() : m_impl(Aws::MakeUnique<Impl>("CborShapeSerializer")) {}
 CborShapeSerializer::~CborShapeSerializer() = default;
 
-void CborShapeSerializer::WriteStruct(const Schema& schema, const SerializableStruct& value) {
-  m_impl->WriteStruct(schema, value);
-}
+void CborShapeSerializer::WriteStruct(const Schema& schema, const SerializableStruct& value) { m_impl->WriteStruct(schema, value); }
 void CborShapeSerializer::WriteList(const Schema& schema, size_t size, const std::function<void(ShapeSerializer&)>& consumer) {
   m_impl->WriteList(schema, size, consumer);
 }

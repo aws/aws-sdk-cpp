@@ -8,10 +8,8 @@
 namespace smithy {
 namespace schema {
 
-// A ShapeSerializer that routes each write through Before()/After(). Before()
-// returns the serializer that actually performs the write, so a subclass can
-// act as a per-shape router (e.g. wrap a value in an XML element, then delegate
-// the content to a value serializer). After() runs once the delegate returns.
+// Routes each write through Before()/After(). Before() returns the serializer
+// that performs the write; After() runs once it returns.
 class SMITHY_API InterceptingSerializer : public ShapeSerializer {
  public:
   void WriteStruct(const Schema& schema, const SerializableStruct& value) override {

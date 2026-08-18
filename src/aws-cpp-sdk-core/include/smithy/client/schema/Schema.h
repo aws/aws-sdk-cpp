@@ -39,19 +39,15 @@ enum class ShapeType : uint8_t {
   Service
 };
 
-// A single trait supplied at construction time. Schemas are immutable once
-// built, so traits are attached through the factories and SchemaBuilder rather
-// than mutated afterwards.
+// A single trait supplied at construction time.
 struct TraitEntry {
   const TraitKeyBase& key;
   std::shared_ptr<const Trait> value;
 };
 using TraitList = std::initializer_list<TraitEntry>;
 
-// Abstract, immutable description of a shape. Concrete variants (scalar, member,
-// structure/list/map/union root) live in the translation unit and are reached
-// only through the factories below and SchemaBuilder. Serializers and
-// deserializers hold a Schema only by const reference.
+// Abstract, immutable description of a shape. Concrete variants are created
+// through the factories below and SchemaBuilder.
 class SMITHY_API Schema {
  public:
   virtual ~Schema() = default;
@@ -75,7 +71,7 @@ class SMITHY_API Schema {
 
   bool HasTrait(const TraitKeyBase& key) const { return m_traits.Has(key); }
 
-  // Scalar factories. No members, so no builder is needed.
+  // Scalar factories.
   static std::shared_ptr<const Schema> CreateBoolean(const char* id, TraitList traits = {});
   static std::shared_ptr<const Schema> CreateByte(const char* id, TraitList traits = {});
   static std::shared_ptr<const Schema> CreateShort(const char* id, TraitList traits = {});
@@ -93,11 +89,9 @@ class SMITHY_API Schema {
   static std::shared_ptr<const Schema> CreateDocument(const char* id, TraitList traits = {});
 
   // Standalone member node targeting an (otherwise empty) shape of targetType.
-  // Convenience for the positional serializer/deserializer API, where a caller
-  // hands members one at a time rather than driving them off a parent shape.
   static std::shared_ptr<const Schema> CreateMember(const char* name, ShapeType targetType, TraitList traits = {});
 
-  // Aggregate builders. Shapes that carry members are assembled incrementally.
+  // Aggregate builders.
   static SchemaBuilder StructureBuilder(const char* id, TraitList traits = {});
   static SchemaBuilder UnionBuilder(const char* id, TraitList traits = {});
   static SchemaBuilder ListBuilder(const char* id, TraitList traits = {});

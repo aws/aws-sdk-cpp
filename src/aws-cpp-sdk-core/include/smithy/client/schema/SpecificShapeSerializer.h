@@ -8,10 +8,8 @@
 namespace smithy {
 namespace schema {
 
-// A ShapeSerializer whose writes all default to no-ops. Subclasses override only
-// the writes they support; unsupported writes are silently ignored (the SDK does
-// not use exceptions). Also usable directly as a "null" serializer to discard a
-// member that should not be written in the current pass.
+// A ShapeSerializer whose writes default to no-ops; subclasses override only the
+// writes they support. Also usable directly as a null/discard serializer.
 class SMITHY_API SpecificShapeSerializer : public ShapeSerializer {
  public:
   void WriteStruct(const Schema&, const SerializableStruct&) override {}
