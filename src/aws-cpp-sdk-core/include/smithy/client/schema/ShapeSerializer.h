@@ -7,16 +7,23 @@
 #include <smithy/client/schema/Schema.h>
 
 #include <cstdint>
+#include <functional>
 
 namespace smithy {
 namespace schema {
 
+class SerializableStruct;
+class MapSerializer;
+
+// Push-based serializer: the model drives serialization and the serializer owns
+// all wire-format structure. Aggregates hand control back through a consumer.
 class SMITHY_API ShapeSerializer {
  public:
   virtual ~ShapeSerializer() = default;
 
-  virtual bool BeginStructure(const Schema& schema) = 0;
-  virtual void EndStructure() = 0;
+  virtual void WriteStruct(const Schema& schema, const SerializableStruct& value) = 0;
+  virtual void WriteList(const Schema& schema, size_t size, const std::function<void(ShapeSerializer&)>& consumer) = 0;
+  virtual void WriteMap(const Schema& schema, size_t size, const std::function<void(MapSerializer&)>& consumer) = 0;
 
   virtual void WriteBoolean(const Schema& schema, bool value) = 0;
   virtual void WriteInteger(const Schema& schema, int value) = 0;
@@ -28,16 +35,6 @@ class SMITHY_API ShapeSerializer {
   virtual void WriteBlob(const Schema& schema, const Aws::Utils::ByteBuffer& value) = 0;
   virtual void WriteEnum(const Schema& schema, int value) = 0;
   virtual void WriteNull(const Schema& schema) = 0;
-
-  virtual bool BeginList(const Schema& schema, size_t count) = 0;
-  virtual void EndList() = 0;
-
-  virtual bool BeginMap(const Schema& schema, size_t count) = 0;
-  virtual void WriteMapKey(const Aws::String& key) = 0;
-  virtual void EndMap() = 0;
-
-  virtual bool BeginNestedStructure(const Schema& schema) = 0;
-  virtual void EndNestedStructure() = 0;
 };
 
 }  // namespace schema

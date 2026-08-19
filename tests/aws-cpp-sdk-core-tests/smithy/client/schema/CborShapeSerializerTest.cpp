@@ -5,9 +5,14 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <smithy/client/schema/CborShapeSerializer.h>
+#include <smithy/client/schema/MapSerializer.h>
 #include <smithy/client/schema/Schema.h>
+#include <smithy/client/schema/SchemaBuilder.h>
 
 #include <cstring>
+#include <functional>
+
+#include "SchemaSerializerTestHelpers.h"
 
 using namespace smithy::schema;
 
@@ -17,13 +22,11 @@ namespace {
 Aws::String Bytes(const char* data, size_t len) { return Aws::String(data, len); }
 }  // namespace
 
-// --- Scalars ---
-
 TEST_F(CborShapeSerializerTest, EmptyStructure) {
   CborShapeSerializer s;
-  Schema root;
-  s.BeginStructure(root);
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  LambdaStruct rootStruct(*root, [](ShapeSerializer&) {});
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   // indefinite map start + break
@@ -32,12 +35,10 @@ TEST_F(CborShapeSerializerTest, EmptyStructure) {
 
 TEST_F(CborShapeSerializerTest, BooleanTrue) {
   CborShapeSerializer s;
-  Schema root;
-  Schema member("enabled", ShapeType::Boolean);
-  s.BeginStructure(root);
-  s.WriteMapKey("enabled");
-  s.WriteBoolean(member, true);
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("enabled", ShapeType::Boolean);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteBoolean(*member, true); });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -54,12 +55,10 @@ TEST_F(CborShapeSerializerTest, BooleanTrue) {
 
 TEST_F(CborShapeSerializerTest, BooleanFalse) {
   CborShapeSerializer s;
-  Schema root;
-  Schema member("ok", ShapeType::Boolean);
-  s.BeginStructure(root);
-  s.WriteMapKey("ok");
-  s.WriteBoolean(member, false);
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("ok", ShapeType::Boolean);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteBoolean(*member, false); });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -74,12 +73,10 @@ TEST_F(CborShapeSerializerTest, BooleanFalse) {
 
 TEST_F(CborShapeSerializerTest, IntegerSmall) {
   CborShapeSerializer s;
-  Schema root;
-  Schema member("n", ShapeType::Integer);
-  s.BeginStructure(root);
-  s.WriteMapKey("n");
-  s.WriteInteger(member, 1);
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("n", ShapeType::Integer);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteInteger(*member, 1); });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -94,12 +91,10 @@ TEST_F(CborShapeSerializerTest, IntegerSmall) {
 
 TEST_F(CborShapeSerializerTest, IntegerOneByte) {
   CborShapeSerializer s;
-  Schema root;
-  Schema member("n", ShapeType::Integer);
-  s.BeginStructure(root);
-  s.WriteMapKey("n");
-  s.WriteInteger(member, 42);
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("n", ShapeType::Integer);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteInteger(*member, 42); });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -115,12 +110,10 @@ TEST_F(CborShapeSerializerTest, IntegerOneByte) {
 
 TEST_F(CborShapeSerializerTest, IntegerNegative) {
   CborShapeSerializer s;
-  Schema root;
-  Schema member("n", ShapeType::Integer);
-  s.BeginStructure(root);
-  s.WriteMapKey("n");
-  s.WriteInteger(member, -1);
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("n", ShapeType::Integer);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteInteger(*member, -1); });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -135,12 +128,10 @@ TEST_F(CborShapeSerializerTest, IntegerNegative) {
 
 TEST_F(CborShapeSerializerTest, IntegerNegativeLarge) {
   CborShapeSerializer s;
-  Schema root;
-  Schema member("n", ShapeType::Integer);
-  s.BeginStructure(root);
-  s.WriteMapKey("n");
-  s.WriteInteger(member, -100);
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("n", ShapeType::Integer);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteInteger(*member, -100); });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -156,12 +147,10 @@ TEST_F(CborShapeSerializerTest, IntegerNegativeLarge) {
 
 TEST_F(CborShapeSerializerTest, LongValue) {
   CborShapeSerializer s;
-  Schema root;
-  Schema member("big", ShapeType::Long);
-  s.BeginStructure(root);
-  s.WriteMapKey("big");
-  s.WriteLong(member, 1000000LL);
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("big", ShapeType::Long);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteLong(*member, 1000000LL); });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -181,12 +170,10 @@ TEST_F(CborShapeSerializerTest, LongValue) {
 
 TEST_F(CborShapeSerializerTest, DoubleValue) {
   CborShapeSerializer s;
-  Schema root;
-  Schema member("d", ShapeType::Double);
-  s.BeginStructure(root);
-  s.WriteMapKey("d");
-  s.WriteDouble(member, 3.14);
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("d", ShapeType::Double);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteDouble(*member, 3.14); });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -211,12 +198,10 @@ TEST_F(CborShapeSerializerTest, DoubleValue) {
 
 TEST_F(CborShapeSerializerTest, StringValue) {
   CborShapeSerializer s;
-  Schema root;
-  Schema member("name", ShapeType::String);
-  s.BeginStructure(root);
-  s.WriteMapKey("name");
-  s.WriteString(member, "hello");
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("name", ShapeType::String);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteString(*member, "hello"); });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -232,12 +217,10 @@ TEST_F(CborShapeSerializerTest, StringValue) {
 
 TEST_F(CborShapeSerializerTest, EmptyString) {
   CborShapeSerializer s;
-  Schema root;
-  Schema member("s", ShapeType::String);
-  s.BeginStructure(root);
-  s.WriteMapKey("s");
-  s.WriteString(member, "");
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("s", ShapeType::String);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteString(*member, ""); });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -252,14 +235,12 @@ TEST_F(CborShapeSerializerTest, EmptyString) {
 
 TEST_F(CborShapeSerializerTest, BlobValue) {
   CborShapeSerializer s;
-  Schema root;
-  Schema member("data", ShapeType::Blob);
-  s.BeginStructure(root);
-  s.WriteMapKey("data");
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("data", ShapeType::Blob);
   unsigned char raw[] = {0xDE, 0xAD, 0xBE, 0xEF};
   Aws::Utils::ByteBuffer buf(raw, 4);
-  s.WriteBlob(member, buf);
-  s.EndStructure();
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteBlob(*member, buf); });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -278,12 +259,10 @@ TEST_F(CborShapeSerializerTest, BlobValue) {
 
 TEST_F(CborShapeSerializerTest, NullValue) {
   CborShapeSerializer s;
-  Schema root;
-  Schema member("item", ShapeType::String);
-  s.BeginStructure(root);
-  s.WriteMapKey("item");
-  s.WriteNull(member);
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("item", ShapeType::String);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteNull(*member); });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -298,14 +277,12 @@ TEST_F(CborShapeSerializerTest, NullValue) {
 
 TEST_F(CborShapeSerializerTest, TimestampIntegerSeconds) {
   CborShapeSerializer s;
-  Schema root;
-  Schema member("ts", ShapeType::Timestamp);
-  s.BeginStructure(root);
-  s.WriteMapKey("ts");
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("ts", ShapeType::Timestamp);
   // DateTime(int64_t) takes milliseconds; 1234567000ms = 1234567 seconds (no fractional part)
   Aws::Utils::DateTime dt(static_cast<int64_t>(1234567000));
-  s.WriteTimestamp(member, dt);
-  s.EndStructure();
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteTimestamp(*member, dt); });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -327,13 +304,11 @@ TEST_F(CborShapeSerializerTest, TimestampIntegerSeconds) {
 TEST_F(CborShapeSerializerTest, TimestampFractionalSeconds) {
   // Fractional seconds are truncated to integer per rpcv2Cbor protocol
   CborShapeSerializer s;
-  Schema root;
-  Schema member("ts", ShapeType::Timestamp);
-  s.BeginStructure(root);
-  s.WriteMapKey("ts");
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("ts", ShapeType::Timestamp);
   Aws::Utils::DateTime dt(1234567890.5);
-  s.WriteTimestamp(member, dt);
-  s.EndStructure();
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteTimestamp(*member, dt); });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -348,22 +323,18 @@ TEST_F(CborShapeSerializerTest, TimestampFractionalSeconds) {
   EXPECT_EQ(static_cast<unsigned char>(payload[10]), 0xFF);
 }
 
-// --- Multiple fields ---
-
 TEST_F(CborShapeSerializerTest, MultipleScalars) {
   CborShapeSerializer s;
-  Schema root;
-  Schema m1("a", ShapeType::Boolean);
-  Schema m2("b", ShapeType::Integer);
-  Schema m3("c", ShapeType::String);
-  s.BeginStructure(root);
-  s.WriteMapKey("a");
-  s.WriteBoolean(m1, true);
-  s.WriteMapKey("b");
-  s.WriteInteger(m2, 7);
-  s.WriteMapKey("c");
-  s.WriteString(m3, "x");
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto m1 = Schema::CreateMember("a", ShapeType::Boolean);
+  auto m2 = Schema::CreateMember("b", ShapeType::Integer);
+  auto m3 = Schema::CreateMember("c", ShapeType::String);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
+    ser.WriteBoolean(*m1, true);
+    ser.WriteInteger(*m2, 7);
+    ser.WriteString(*m3, "x");
+  });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -383,20 +354,15 @@ TEST_F(CborShapeSerializerTest, MultipleScalars) {
   EXPECT_EQ(payload, expected);
 }
 
-// --- Nested structures ---
-
 TEST_F(CborShapeSerializerTest, NestedStructure) {
   CborShapeSerializer s;
-  Schema root;
-  Schema nested("meta", ShapeType::Structure);
-  Schema inner("key", ShapeType::String);
-  s.BeginStructure(root);
-  s.WriteMapKey("meta");
-  s.BeginNestedStructure(nested);
-  s.WriteMapKey("key");
-  s.WriteString(inner, "val");
-  s.EndNestedStructure();
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto nested = Schema::CreateMember("meta", ShapeType::Structure);
+  auto inner = Schema::CreateMember("key", ShapeType::String);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
+    ser.WriteStruct(*nested, LambdaStruct(*nested, [&](ShapeSerializer& ser2) { ser2.WriteString(*inner, "val"); }));
+  });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -416,20 +382,16 @@ TEST_F(CborShapeSerializerTest, NestedStructure) {
 
 TEST_F(CborShapeSerializerTest, DeeplyNestedStructure) {
   CborShapeSerializer s;
-  Schema root;
-  Schema l1("l1", ShapeType::Structure);
-  Schema l2("l2", ShapeType::Structure);
-  Schema leaf("v", ShapeType::Integer);
-  s.BeginStructure(root);
-  s.WriteMapKey("l1");
-  s.BeginNestedStructure(l1);
-  s.WriteMapKey("l2");
-  s.BeginNestedStructure(l2);
-  s.WriteMapKey("v");
-  s.WriteInteger(leaf, 99);
-  s.EndNestedStructure();
-  s.EndNestedStructure();
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto l1 = Schema::CreateMember("l1", ShapeType::Structure);
+  auto l2 = Schema::CreateMember("l2", ShapeType::Structure);
+  auto leaf = Schema::CreateMember("v", ShapeType::Integer);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
+    ser.WriteStruct(*l1, LambdaStruct(*l1, [&](ShapeSerializer& ser2) {
+      ser2.WriteStruct(*l2, LambdaStruct(*l2, [&](ShapeSerializer& ser3) { ser3.WriteInteger(*leaf, 99); }));
+    }));
+  });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -451,21 +413,19 @@ TEST_F(CborShapeSerializerTest, DeeplyNestedStructure) {
   EXPECT_EQ(payload, expected);
 }
 
-// --- Lists ---
-
 TEST_F(CborShapeSerializerTest, ListOfIntegers) {
   CborShapeSerializer s;
-  Schema root;
-  Schema listMember("nums", ShapeType::List);
-  Schema elem("member", ShapeType::Integer);
-  s.BeginStructure(root);
-  s.WriteMapKey("nums");
-  s.BeginList(listMember, 3);
-  s.WriteInteger(elem, 1);
-  s.WriteInteger(elem, 2);
-  s.WriteInteger(elem, 3);
-  s.EndList();
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto listMember = Schema::CreateMember("nums", ShapeType::List);
+  auto elem = Schema::CreateMember("member", ShapeType::Integer);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
+    ser.WriteList(*listMember, 3, [&](ShapeSerializer& lser) {
+      lser.WriteInteger(*elem, 1);
+      lser.WriteInteger(*elem, 2);
+      lser.WriteInteger(*elem, 3);
+    });
+  });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -483,13 +443,10 @@ TEST_F(CborShapeSerializerTest, ListOfIntegers) {
 
 TEST_F(CborShapeSerializerTest, EmptyList) {
   CborShapeSerializer s;
-  Schema root;
-  Schema listMember("items", ShapeType::List);
-  s.BeginStructure(root);
-  s.WriteMapKey("items");
-  s.BeginList(listMember, 0);
-  s.EndList();
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto listMember = Schema::CreateMember("items", ShapeType::List);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteList(*listMember, 0, [](ShapeSerializer&) {}); });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -504,16 +461,16 @@ TEST_F(CborShapeSerializerTest, EmptyList) {
 
 TEST_F(CborShapeSerializerTest, ListOfStrings) {
   CborShapeSerializer s;
-  Schema root;
-  Schema listMember("tags", ShapeType::List);
-  Schema elem("member", ShapeType::String);
-  s.BeginStructure(root);
-  s.WriteMapKey("tags");
-  s.BeginList(listMember, 2);
-  s.WriteString(elem, "ab");
-  s.WriteString(elem, "cd");
-  s.EndList();
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto listMember = Schema::CreateMember("tags", ShapeType::List);
+  auto elem = Schema::CreateMember("member", ShapeType::String);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
+    ser.WriteList(*listMember, 2, [&](ShapeSerializer& lser) {
+      lser.WriteString(*elem, "ab");
+      lser.WriteString(*elem, "cd");
+    });
+  });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -532,23 +489,17 @@ TEST_F(CborShapeSerializerTest, ListOfStrings) {
 
 TEST_F(CborShapeSerializerTest, ListOfStructures) {
   CborShapeSerializer s;
-  Schema root;
-  Schema listMember("items", ShapeType::List);
-  Schema structElem("member", ShapeType::Structure);
-  Schema field("id", ShapeType::Integer);
-  s.BeginStructure(root);
-  s.WriteMapKey("items");
-  s.BeginList(listMember, 2);
-  s.BeginNestedStructure(structElem);
-  s.WriteMapKey("id");
-  s.WriteInteger(field, 1);
-  s.EndNestedStructure();
-  s.BeginNestedStructure(structElem);
-  s.WriteMapKey("id");
-  s.WriteInteger(field, 2);
-  s.EndNestedStructure();
-  s.EndList();
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto listMember = Schema::CreateMember("items", ShapeType::List);
+  auto structElem = Schema::CreateMember("member", ShapeType::Structure);
+  auto field = Schema::CreateMember("id", ShapeType::Integer);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
+    ser.WriteList(*listMember, 2, [&](ShapeSerializer& lser) {
+      lser.WriteStruct(*structElem, LambdaStruct(*structElem, [&](ShapeSerializer& es) { es.WriteInteger(*field, 1); }));
+      lser.WriteStruct(*structElem, LambdaStruct(*structElem, [&](ShapeSerializer& es) { es.WriteInteger(*field, 2); }));
+    });
+  });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -571,22 +522,18 @@ TEST_F(CborShapeSerializerTest, ListOfStructures) {
   EXPECT_EQ(payload, expected);
 }
 
-// --- Maps ---
-
 TEST_F(CborShapeSerializerTest, MapOfStrings) {
   CborShapeSerializer s;
-  Schema root;
-  Schema mapMember("headers", ShapeType::Map);
-  Schema valSchema("value", ShapeType::String);
-  s.BeginStructure(root);
-  s.WriteMapKey("headers");
-  s.BeginMap(mapMember, 2);
-  s.WriteMapKey("foo");
-  s.WriteString(valSchema, "bar");
-  s.WriteMapKey("baz");
-  s.WriteString(valSchema, "qux");
-  s.EndMap();
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto mapMember = Schema::CreateMember("headers", ShapeType::Map);
+  auto valSchema = Schema::CreateMember("value", ShapeType::String);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
+    ser.WriteMap(*mapMember, 2, [&](MapSerializer& mapSer) {
+      mapSer.WriteEntry("foo", [&](ShapeSerializer& vser) { vser.WriteString(*valSchema, "bar"); });
+      mapSer.WriteEntry("baz", [&](ShapeSerializer& vser) { vser.WriteString(*valSchema, "qux"); });
+    });
+  });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -609,13 +556,10 @@ TEST_F(CborShapeSerializerTest, MapOfStrings) {
 
 TEST_F(CborShapeSerializerTest, EmptyMap) {
   CborShapeSerializer s;
-  Schema root;
-  Schema mapMember("tags", ShapeType::Map);
-  s.BeginStructure(root);
-  s.WriteMapKey("tags");
-  s.BeginMap(mapMember, 0);
-  s.EndMap();
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto mapMember = Schema::CreateMember("tags", ShapeType::Map);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteMap(*mapMember, 0, [](MapSerializer&) {}); });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -630,20 +574,18 @@ TEST_F(CborShapeSerializerTest, EmptyMap) {
 
 TEST_F(CborShapeSerializerTest, MapOfStructures) {
   CborShapeSerializer s;
-  Schema root;
-  Schema mapMember("nodes", ShapeType::Map);
-  Schema valSchema("value", ShapeType::Structure);
-  Schema field("val", ShapeType::Integer);
-  s.BeginStructure(root);
-  s.WriteMapKey("nodes");
-  s.BeginMap(mapMember, 1);
-  s.WriteMapKey("a");
-  s.BeginNestedStructure(valSchema);
-  s.WriteMapKey("val");
-  s.WriteInteger(field, 1);
-  s.EndNestedStructure();
-  s.EndMap();
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto mapMember = Schema::CreateMember("nodes", ShapeType::Map);
+  auto valSchema = Schema::CreateMember("value", ShapeType::Structure);
+  auto field = Schema::CreateMember("val", ShapeType::Integer);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
+    ser.WriteMap(*mapMember, 1, [&](MapSerializer& mapSer) {
+      mapSer.WriteEntry("a", [&](ShapeSerializer& vser) {
+        vser.WriteStruct(*valSchema, LambdaStruct(*valSchema, [&](ShapeSerializer& vs) { vs.WriteInteger(*field, 1); }));
+      });
+    });
+  });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -663,15 +605,11 @@ TEST_F(CborShapeSerializerTest, MapOfStructures) {
   EXPECT_EQ(payload, expected);
 }
 
-// --- Depth limit ---
-
-// --- GetPayload error cases ---
-
 TEST_F(CborShapeSerializerTest, GetPayloadCalledTwice) {
   CborShapeSerializer s;
-  Schema root;
-  s.BeginStructure(root);
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  LambdaStruct rootStruct(*root, [](ShapeSerializer&) {});
+  s.WriteStruct(*root, rootStruct);
   auto outcome1 = s.GetPayload();
   ASSERT_TRUE(outcome1.IsSuccess());
   auto outcome2 = s.GetPayload();
@@ -679,16 +617,12 @@ TEST_F(CborShapeSerializerTest, GetPayloadCalledTwice) {
   EXPECT_NE(outcome2.GetError().GetMessage().find("finalized"), Aws::String::npos);
 }
 
-// --- Enum ---
-
 TEST_F(CborShapeSerializerTest, EnumValue) {
   CborShapeSerializer s;
-  Schema root;
-  Schema member("status", ShapeType::Enum);
-  s.BeginStructure(root);
-  s.WriteMapKey("status");
-  s.WriteEnum(member, 3);
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("status", ShapeType::Enum);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteEnum(*member, 3); });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -701,30 +635,22 @@ TEST_F(CborShapeSerializerTest, EnumValue) {
   EXPECT_EQ(payload, expected);
 }
 
-// --- Combinations ---
-
 TEST_F(CborShapeSerializerTest, StructureWithListAndMap) {
   CborShapeSerializer s;
-  Schema root;
-  Schema strMember("name", ShapeType::String);
-  Schema listMember("tags", ShapeType::List);
-  Schema listElem("member", ShapeType::String);
-  Schema mapMember("meta", ShapeType::Map);
-  Schema mapVal("value", ShapeType::Integer);
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto strMember = Schema::CreateMember("name", ShapeType::String);
+  auto listMember = Schema::CreateMember("tags", ShapeType::List);
+  auto listElem = Schema::CreateMember("member", ShapeType::String);
+  auto mapMember = Schema::CreateMember("meta", ShapeType::Map);
+  auto mapVal = Schema::CreateMember("value", ShapeType::Integer);
 
-  s.BeginStructure(root);
-  s.WriteMapKey("name");
-  s.WriteString(strMember, "hi");
-  s.WriteMapKey("tags");
-  s.BeginList(listMember, 1);
-  s.WriteString(listElem, "t1");
-  s.EndList();
-  s.WriteMapKey("meta");
-  s.BeginMap(mapMember, 1);
-  s.WriteMapKey("k");
-  s.WriteInteger(mapVal, 5);
-  s.EndMap();
-  s.EndStructure();
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
+    ser.WriteString(*strMember, "hi");
+    ser.WriteList(*listMember, 1, [&](ShapeSerializer& lser) { lser.WriteString(*listElem, "t1"); });
+    ser.WriteMap(*mapMember, 1,
+                 [&](MapSerializer& mapSer) { mapSer.WriteEntry("k", [&](ShapeSerializer& vser) { vser.WriteInteger(*mapVal, 5); }); });
+  });
+  s.WriteStruct(*root, rootStruct);
 
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
@@ -752,12 +678,10 @@ TEST_F(CborShapeSerializerTest, StructureWithListAndMap) {
 
 TEST_F(CborShapeSerializerTest, IntegerZero) {
   CborShapeSerializer s;
-  Schema root;
-  Schema member("z", ShapeType::Integer);
-  s.BeginStructure(root);
-  s.WriteMapKey("z");
-  s.WriteInteger(member, 0);
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("z", ShapeType::Integer);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteInteger(*member, 0); });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -772,12 +696,10 @@ TEST_F(CborShapeSerializerTest, IntegerZero) {
 
 TEST_F(CborShapeSerializerTest, IntegerTwoByte) {
   CborShapeSerializer s;
-  Schema root;
-  Schema member("n", ShapeType::Integer);
-  s.BeginStructure(root);
-  s.WriteMapKey("n");
-  s.WriteInteger(member, 1000);
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("n", ShapeType::Integer);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteInteger(*member, 1000); });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -795,17 +717,17 @@ TEST_F(CborShapeSerializerTest, IntegerTwoByte) {
 
 TEST_F(CborShapeSerializerTest, SparseList) {
   CborShapeSerializer s;
-  Schema root;
-  Schema listMember("items", ShapeType::List);
-  Schema elem("member", ShapeType::String);
-  s.BeginStructure(root);
-  s.WriteMapKey("items");
-  s.BeginList(listMember, 3);
-  s.WriteString(elem, "a");
-  s.WriteNull(elem);
-  s.WriteString(elem, "b");
-  s.EndList();
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto listMember = Schema::CreateMember("items", ShapeType::List);
+  auto elem = Schema::CreateMember("member", ShapeType::String);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
+    ser.WriteList(*listMember, 3, [&](ShapeSerializer& lser) {
+      lser.WriteString(*elem, "a");
+      lser.WriteNull(*elem);
+      lser.WriteString(*elem, "b");
+    });
+  });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -823,16 +745,12 @@ TEST_F(CborShapeSerializerTest, SparseList) {
   EXPECT_EQ(payload, expected);
 }
 
-// --- Additional coverage ---
-
 TEST_F(CborShapeSerializerTest, IntegerFourByte) {
   CborShapeSerializer s;
-  Schema root;
-  Schema member("n", ShapeType::Integer);
-  s.BeginStructure(root);
-  s.WriteMapKey("n");
-  s.WriteInteger(member, 70000);
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("n", ShapeType::Integer);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteInteger(*member, 70000); });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -851,12 +769,10 @@ TEST_F(CborShapeSerializerTest, IntegerFourByte) {
 
 TEST_F(CborShapeSerializerTest, LongEightByte) {
   CborShapeSerializer s;
-  Schema root;
-  Schema member("n", ShapeType::Long);
-  s.BeginStructure(root);
-  s.WriteMapKey("n");
-  s.WriteLong(member, 5000000000LL);
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("n", ShapeType::Long);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteLong(*member, 5000000000LL); });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -879,12 +795,10 @@ TEST_F(CborShapeSerializerTest, LongEightByte) {
 
 TEST_F(CborShapeSerializerTest, LargeNegativeInteger) {
   CborShapeSerializer s;
-  Schema root;
-  Schema member("n", ShapeType::Long);
-  s.BeginStructure(root);
-  s.WriteMapKey("n");
-  s.WriteLong(member, -1000000LL);
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("n", ShapeType::Long);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteLong(*member, -1000000LL); });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -904,12 +818,10 @@ TEST_F(CborShapeSerializerTest, LargeNegativeInteger) {
 TEST_F(CborShapeSerializerTest, DoubleWholeNumberEncodedAsInt) {
   // CRT encoder uses "smallest possible" — a double like 5.0 encodes as integer 5
   CborShapeSerializer s;
-  Schema root;
-  Schema member("d", ShapeType::Double);
-  s.BeginStructure(root);
-  s.WriteMapKey("d");
-  s.WriteDouble(member, 5.0);
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("d", ShapeType::Double);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteDouble(*member, 5.0); });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -926,12 +838,10 @@ TEST_F(CborShapeSerializerTest, DoubleWholeNumberEncodedAsInt) {
 TEST_F(CborShapeSerializerTest, DoubleNegativeWholeNumberEncodedAsNegInt) {
   // CRT encoder: -3.0 encodes as negint 2 (meaning -(2+1) = -3)
   CborShapeSerializer s;
-  Schema root;
-  Schema member("d", ShapeType::Double);
-  s.BeginStructure(root);
-  s.WriteMapKey("d");
-  s.WriteDouble(member, -3.0);
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("d", ShapeType::Double);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteDouble(*member, -3.0); });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -946,12 +856,10 @@ TEST_F(CborShapeSerializerTest, DoubleNegativeWholeNumberEncodedAsNegInt) {
 
 TEST_F(CborShapeSerializerTest, UnicodeString) {
   CborShapeSerializer s;
-  Schema root;
-  Schema member("s", ShapeType::String);
-  s.BeginStructure(root);
-  s.WriteMapKey("s");
-  s.WriteString(member, "\xC3\xA9\xC3\xA8");  // "éè" in UTF-8 (4 bytes)
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("s", ShapeType::String);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteString(*member, "\xC3\xA9\xC3\xA8"); });  // "éè" in UTF-8 (4 bytes)
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -967,22 +875,20 @@ TEST_F(CborShapeSerializerTest, UnicodeString) {
 
 TEST_F(CborShapeSerializerTest, NestedListInList) {
   CborShapeSerializer s;
-  Schema root;
-  Schema outerList("data", ShapeType::List);
-  Schema innerList("member", ShapeType::List);
-  Schema elem("member", ShapeType::Integer);
-  s.BeginStructure(root);
-  s.WriteMapKey("data");
-  s.BeginList(outerList, 2);
-  s.BeginList(innerList, 2);
-  s.WriteInteger(elem, 1);
-  s.WriteInteger(elem, 2);
-  s.EndList();
-  s.BeginList(innerList, 1);
-  s.WriteInteger(elem, 3);
-  s.EndList();
-  s.EndList();
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto outerList = Schema::CreateMember("data", ShapeType::List);
+  auto innerList = Schema::CreateMember("member", ShapeType::List);
+  auto elem = Schema::CreateMember("member", ShapeType::Integer);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
+    ser.WriteList(*outerList, 2, [&](ShapeSerializer& lser) {
+      lser.WriteList(*innerList, 2, [&](ShapeSerializer& lser2) {
+        lser2.WriteInteger(*elem, 1);
+        lser2.WriteInteger(*elem, 2);
+      });
+      lser.WriteList(*innerList, 1, [&](ShapeSerializer& lser2) { lser2.WriteInteger(*elem, 3); });
+    });
+  });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -1002,20 +908,17 @@ TEST_F(CborShapeSerializerTest, NestedListInList) {
 
 TEST_F(CborShapeSerializerTest, MapWithMultipleEntries) {
   CborShapeSerializer s;
-  Schema root;
-  Schema mapMember("m", ShapeType::Map);
-  Schema valSchema("value", ShapeType::Integer);
-  s.BeginStructure(root);
-  s.WriteMapKey("m");
-  s.BeginMap(mapMember, 3);
-  s.WriteMapKey("x");
-  s.WriteInteger(valSchema, 1);
-  s.WriteMapKey("y");
-  s.WriteInteger(valSchema, 2);
-  s.WriteMapKey("z");
-  s.WriteInteger(valSchema, 3);
-  s.EndMap();
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto mapMember = Schema::CreateMember("m", ShapeType::Map);
+  auto valSchema = Schema::CreateMember("value", ShapeType::Integer);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
+    ser.WriteMap(*mapMember, 3, [&](MapSerializer& mapSer) {
+      mapSer.WriteEntry("x", [&](ShapeSerializer& vser) { vser.WriteInteger(*valSchema, 1); });
+      mapSer.WriteEntry("y", [&](ShapeSerializer& vser) { vser.WriteInteger(*valSchema, 2); });
+      mapSer.WriteEntry("z", [&](ShapeSerializer& vser) { vser.WriteInteger(*valSchema, 3); });
+    });
+  });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -1039,12 +942,10 @@ TEST_F(CborShapeSerializerTest, MapWithMultipleEntries) {
 
 TEST_F(CborShapeSerializerTest, FloatValue) {
   CborShapeSerializer s;
-  Schema root;
-  Schema member("f", ShapeType::Float);
-  s.BeginStructure(root);
-  s.WriteMapKey("f");
-  s.WriteFloat(member, 1.5f);
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("f", ShapeType::Float);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteFloat(*member, 1.5f); });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -1065,12 +966,10 @@ TEST_F(CborShapeSerializerTest, FloatValue) {
 TEST_F(CborShapeSerializerTest, FloatWholeNumberEncodedAsInt) {
   // CRT "smallest possible": 7.0f encodes as integer 7
   CborShapeSerializer s;
-  Schema root;
-  Schema member("f", ShapeType::Float);
-  s.BeginStructure(root);
-  s.WriteMapKey("f");
-  s.WriteFloat(member, 7.0f);
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("f", ShapeType::Float);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteFloat(*member, 7.0f); });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -1085,13 +984,11 @@ TEST_F(CborShapeSerializerTest, FloatWholeNumberEncodedAsInt) {
 
 TEST_F(CborShapeSerializerTest, TimestampEpochZero) {
   CborShapeSerializer s;
-  Schema root;
-  Schema member("ts", ShapeType::Timestamp);
-  s.BeginStructure(root);
-  s.WriteMapKey("ts");
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("ts", ShapeType::Timestamp);
   Aws::Utils::DateTime dt(0.0);
-  s.WriteTimestamp(member, dt);
-  s.EndStructure();
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteTimestamp(*member, dt); });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -1108,16 +1005,14 @@ TEST_F(CborShapeSerializerTest, TimestampEpochZero) {
 
 TEST_F(CborShapeSerializerTest, LargeBlob) {
   CborShapeSerializer s;
-  Schema root;
-  Schema member("b", ShapeType::Blob);
-  s.BeginStructure(root);
-  s.WriteMapKey("b");
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("b", ShapeType::Blob);
   Aws::Utils::ByteBuffer blob(300);
   for (size_t i = 0; i < 300; i++) {
     blob[i] = static_cast<unsigned char>(i % 256);
   }
-  s.WriteBlob(member, blob);
-  s.EndStructure();
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteBlob(*member, blob); });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
@@ -1136,16 +1031,13 @@ TEST_F(CborShapeSerializerTest, LargeBlob) {
 TEST_F(CborShapeSerializerTest, UnionAsStructure) {
   // Unions serialize like a structure with exactly one field
   CborShapeSerializer s;
-  Schema root;
-  Schema unionMember("result", ShapeType::Union);
-  Schema field("message", ShapeType::String);
-  s.BeginStructure(root);
-  s.WriteMapKey("result");
-  s.BeginNestedStructure(unionMember);
-  s.WriteMapKey("message");
-  s.WriteString(field, "ok");
-  s.EndNestedStructure();
-  s.EndStructure();
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto unionMember = Schema::CreateMember("result", ShapeType::Union);
+  auto field = Schema::CreateMember("message", ShapeType::String);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
+    ser.WriteStruct(*unionMember, LambdaStruct(*unionMember, [&](ShapeSerializer& ser2) { ser2.WriteString(*field, "ok"); }));
+  });
+  s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   const auto& payload = outcome.GetResult();
