@@ -21,6 +21,7 @@ import software.amazon.smithy.model.shapes.StructureShape;
 import software.amazon.smithy.model.traits.DeprecatedTrait;
 import software.amazon.smithy.model.traits.RequiredTrait;
 import software.amazon.smithy.model.transform.ModelTransformer;
+import software.amazon.smithy.aws.traits.protocols.AwsQueryCompatibleTrait;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -50,6 +51,14 @@ public final class GlobalTransforms {
     private static final Set<String> HEADERS_RENAME_SKIP_SERVICES = Set.of(
         "apigateway"
     );
+
+    /**
+     * The framework-injected response-envelope member and shape name. It is reserved: no AWS model
+     * defines its own {@code ResponseMetadata}. {@link #injectResponseMetadata} adds it (and fails
+     * fast on any pre-existing collision), and {@code MemberRenderer} keys the "always-present"
+     * rendering (no {@code HasBeenSet} getter, flag initialized true) on this exact name.
+     */
+    public static final String RESPONSE_METADATA = "ResponseMetadata";
 
     private GlobalTransforms() {}
 
@@ -151,25 +160,38 @@ public final class GlobalTransforms {
     }
 
     /**
-     * For awsQuery / ec2Query services, injects a {@code ResponseMetadata} structure (carrying
+     * For awsQuery / ec2Query services, and for any service carrying the
+     * {@code aws.protocols#awsQueryCompatible} trait (e.g. SQS = {@code awsJson1_0} +
+     * {@code @awsQueryCompatible}), injects a {@code ResponseMetadata} structure (carrying
      * a {@code RequestId} string member) and adds it as a {@code @required} member on every
      * result (operation output) shape. This mirrors the legacy C2J
-     * {@code QueryCppClientGenerator.addRequestIdToResults} injection, so that Query/EC2 result
-     * classes expose {@code GetResponseMetadata()} and back the {@code m_responseMetadata}
-     * deserialization emitted by {@code QueryXmlProtocolTraits}. Other protocols are unchanged.
+     * {@code CppClientGenerator.addRequestIdToResults} injection (which fires for query/ec2
+     * protocols and, via its {@code awsQueryCompatible} branch, for awsQueryCompatible JSON
+     * services), so that those result classes expose {@code GetResponseMetadata()}. Other
+     * protocols are unchanged.
      *
      * @param model   the current model
      * @param service the service being generated
-     * @return the model with ResponseMetadata injected, or the input model for non-query protocols
+     * @return the model with ResponseMetadata injected, or the input model for other protocols
      */
     public static Model injectResponseMetadata(Model model, ServiceShape service) {
         Protocol protocol = ProtocolResolver.resolve(service, model);
-        if (protocol != Protocol.QUERY_XML && protocol != Protocol.EC2) {
+        boolean awsQueryCompatible = service.hasTrait(AwsQueryCompatibleTrait.class);
+        if (protocol != Protocol.QUERY_XML && protocol != Protocol.EC2 && !awsQueryCompatible) {
             return model;
         }
 
         String namespace = service.getId().getNamespace();
-        ShapeId responseMetadataId = ShapeId.fromParts(namespace, "ResponseMetadata");
+        ShapeId responseMetadataId = ShapeId.fromParts(namespace, RESPONSE_METADATA);
+
+        // ResponseMetadata is reserved. If the model already defines a shape of that name, injecting
+        // ours would clobber it and MemberRenderer's name-based recognition could not tell them
+        // apart — fail fast rather than silently mis-generate.
+        if (model.getShape(responseMetadataId).isPresent()) {
+            throw new IllegalStateException("Service " + service.getId() + " already defines a shape '"
+                + responseMetadataId + "'; cannot inject the framework " + RESPONSE_METADATA
+                + " envelope");
+        }
 
         // ResponseMetadata { RequestId: String }
         StructureShape responseMetadata = StructureShape.builder()
@@ -192,12 +214,15 @@ public final class GlobalTransforms {
 
         for (ShapeId outputId : outputIds) {
             model.getShape(outputId).flatMap(Shape::asStructureShape).ifPresent(result -> {
-                if (result.getMember("ResponseMetadata").isPresent()) {
-                    return;
+                if (result.getMember(RESPONSE_METADATA).isPresent()) {
+                    throw new IllegalStateException("Result shape " + result.getId()
+                        + " already has a '" + RESPONSE_METADATA + "' member; cannot inject the "
+                        + "framework " + RESPONSE_METADATA + " envelope. Rename the modeled member "
+                        + "via a per-service transform first.");
                 }
                 StructureShape withMetadata = result.toBuilder()
                     .addMember(MemberShape.builder()
-                        .id(result.getId().withMember("ResponseMetadata"))
+                        .id(result.getId().withMember(RESPONSE_METADATA))
                         .target(responseMetadataId)
                         .addTrait(new RequiredTrait())
                         .build())
