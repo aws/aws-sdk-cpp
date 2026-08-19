@@ -275,24 +275,10 @@ public final class CppTypeMapper {
                 }
             } else {
                 addMemberInclude(includes, target, selfId, model, projectName);
-                // For list/map, also include the element/key/value types
-                if (target.isListShape()) {
-                    ListShape list = target.asListShape().get();
-                    addMemberInclude(includes, model.expectShape(list.getMember().getTarget()),
-                        selfId, model, projectName);
-                }
-                if (target.isMapShape()) {
-                    MapShape map = target.asMapShape().get();
-                    addMemberInclude(includes, model.expectShape(map.getKey().getTarget()),
-                        selfId, model, projectName);
-                    addMemberInclude(includes, model.expectShape(map.getValue().getTarget()),
-                        selfId, model, projectName);
-                }
-                // A @sparse list/map wraps its element/value in Aws::Crt::Optional, declared in
-                // <aws/crt/Optional.h>. Matches C2J's generated SparseNullsOperationRequest.h.
-                if ((target.isListShape() || target.isMapShape()) && target.hasTrait(SparseTrait.class)) {
-                    includes.add("<aws/crt/Optional.h>");
-                }
+                // For list/map, recursively include every nested element/key/value type so leaf
+                // struct/enum headers reach the surface even through nested containers (e.g.
+                // apigateway Deployment.apiSummary: Map<String, Map<String, MethodSnapshot>>).
+                addContainerIncludes(includes, target, selfId, model, projectName);
             }
             // @idempotencyToken members are brace-initialized with
             // Aws::Utils::UUID::PseudoRandomUUID(), which requires UUID.h. Matches C2J
@@ -313,6 +299,39 @@ public final class CppTypeMapper {
                                          Model model, String projectName) {
         if (!shape.getId().equals(selfId)) {
             getIncludeForMemberType(shape, model, projectName).ifPresent(includes::add);
+        }
+    }
+
+    /**
+     * Recursively adds member-type includes for every nested element/key/value of a list or map
+     * shape. Recursion only descends through further list/map shapes and stops at
+     * structures/enums/scalars, so it is bounded by the container-nesting depth (no infinite
+     * recursion). {@code addMemberInclude} remains a no-op for container/scalar shapes without
+     * their own header. This lets a member typed, e.g., {@code Map<String, Map<String, Leaf>>}
+     * reach {@code Leaf}'s header, matching C2J's recursive unwrap.
+     *
+     * <p>The {@code @sparse}-&gt;{@code <aws/crt/Optional.h>} handling fires at each nested
+     * container level that is sparse, matching C2J's generated headers.
+     */
+    private static void addContainerIncludes(Set<String> includes, Shape target, ShapeId selfId,
+                                             Model model, String projectName) {
+        if (target.isListShape()) {
+            Shape elem = model.expectShape(target.asListShape().get().getMember().getTarget());
+            addMemberInclude(includes, elem, selfId, model, projectName);
+            addContainerIncludes(includes, elem, selfId, model, projectName);
+        } else if (target.isMapShape()) {
+            MapShape map = target.asMapShape().get();
+            Shape key = model.expectShape(map.getKey().getTarget());
+            Shape value = model.expectShape(map.getValue().getTarget());
+            addMemberInclude(includes, key, selfId, model, projectName);
+            addMemberInclude(includes, value, selfId, model, projectName);
+            addContainerIncludes(includes, key, selfId, model, projectName);
+            addContainerIncludes(includes, value, selfId, model, projectName);
+        }
+        // A @sparse list/map wraps its element/value in Aws::Crt::Optional, declared in
+        // <aws/crt/Optional.h>. Matches C2J's generated SparseNullsOperationRequest.h.
+        if ((target.isListShape() || target.isMapShape()) && target.hasTrait(SparseTrait.class)) {
+            includes.add("<aws/crt/Optional.h>");
         }
     }
 
