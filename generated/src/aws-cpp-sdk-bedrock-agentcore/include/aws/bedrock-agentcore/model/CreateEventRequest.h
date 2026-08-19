@@ -7,6 +7,7 @@
 #include <aws/bedrock-agentcore/BedrockAgentCoreRequest.h>
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
 #include <aws/bedrock-agentcore/model/Branch.h>
+#include <aws/bedrock-agentcore/model/ExtractionConfig.h>
 #include <aws/bedrock-agentcore/model/ExtractionMode.h>
 #include <aws/bedrock-agentcore/model/MetadataValue.h>
 #include <aws/bedrock-agentcore/model/PayloadType.h>
@@ -114,8 +115,8 @@ class CreateEventRequest : public BedrockAgentCoreRequest {
 
   ///@{
   /**
-   * <p>The content payload of the event. This can include conversational data or
-   * binary content.</p>
+   * <p>The content payload of the event. This can include conversational data, JSON
+   * data, or binary content.</p>
    */
   inline const Aws::Vector<PayloadType>& GetPayload() const { return m_payload; }
   inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
@@ -218,6 +219,26 @@ class CreateEventRequest : public BedrockAgentCoreRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The extraction configuration for long-term memory records. Use this parameter
+   * to specify namespace variable keys and their values for namespace substitution
+   * during extraction.</p>
+   */
+  inline const ExtractionConfig& GetExtractionConfig() const { return m_extractionConfig; }
+  inline bool ExtractionConfigHasBeenSet() const { return m_extractionConfigHasBeenSet; }
+  template <typename ExtractionConfigT = ExtractionConfig>
+  void SetExtractionConfig(ExtractionConfigT&& value) {
+    m_extractionConfigHasBeenSet = true;
+    m_extractionConfig = std::forward<ExtractionConfigT>(value);
+  }
+  template <typename ExtractionConfigT = ExtractionConfig>
+  CreateEventRequest& WithExtractionConfig(ExtractionConfigT&& value) {
+    SetExtractionConfig(std::forward<ExtractionConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_memoryId;
 
@@ -236,6 +257,8 @@ class CreateEventRequest : public BedrockAgentCoreRequest {
   Aws::Map<Aws::String, MetadataValue> m_metadata;
 
   ExtractionMode m_extractionMode{ExtractionMode::NOT_SET};
+
+  ExtractionConfig m_extractionConfig;
   bool m_memoryIdHasBeenSet = false;
   bool m_actorIdHasBeenSet = false;
   bool m_sessionIdHasBeenSet = false;
@@ -245,6 +268,7 @@ class CreateEventRequest : public BedrockAgentCoreRequest {
   bool m_clientTokenHasBeenSet = true;
   bool m_metadataHasBeenSet = false;
   bool m_extractionModeHasBeenSet = false;
+  bool m_extractionConfigHasBeenSet = false;
 };
 
 }  // namespace Model

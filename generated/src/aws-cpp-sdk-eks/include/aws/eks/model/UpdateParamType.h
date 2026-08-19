@@ -65,7 +65,11 @@ enum class UpdateParamType {
   ControlPlaneEgressMode,
   KubeApiServerConfig,
   KubeSchedulerConfig,
-  KubeControllerManagerConfig
+  KubeControllerManagerConfig,
+  ActiveCertificateAuthority,
+  TrustedCertificateAuthorities,
+  CertificateAuthorityId,
+  SigningStatus
 };
 
 namespace UpdateParamTypeMapper {

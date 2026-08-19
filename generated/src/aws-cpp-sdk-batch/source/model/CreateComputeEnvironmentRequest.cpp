@@ -55,5 +55,9 @@ Aws::String CreateComputeEnvironmentRequest::SerializePayload() const {
     payload.WithString("context", m_context);
   }
 
+  if (m_ecsSettingsHasBeenSet) {
+    payload.WithObject("ecsSettings", m_ecsSettings.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

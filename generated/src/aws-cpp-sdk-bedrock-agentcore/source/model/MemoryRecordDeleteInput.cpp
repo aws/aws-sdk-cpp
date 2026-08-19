@@ -22,6 +22,10 @@ MemoryRecordDeleteInput& MemoryRecordDeleteInput::operator=(JsonView jsonValue) 
     m_memoryRecordId = jsonValue.GetString("memoryRecordId");
     m_memoryRecordIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("namespace")) {
+    m_namespace = jsonValue.GetString("namespace");
+    m_namespaceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue MemoryRecordDeleteInput::Jsonize() const {
 
   if (m_memoryRecordIdHasBeenSet) {
     payload.WithString("memoryRecordId", m_memoryRecordId);
+  }
+
+  if (m_namespaceHasBeenSet) {
+    payload.WithString("namespace", m_namespace);
   }
 
   return payload;

@@ -11,6 +11,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/model/LogDestinationType.h>
 #include <aws/redshift/model/ResponseMetadata.h>
+#include <aws/redshift/model/S3TablePublishStatus.h>
 
 #include <utility>
 
@@ -139,8 +140,8 @@ class EnableLoggingResult {
 
   ///@{
   /**
-   * <p>The log destination type. An enum with possible values of <code>s3</code> and
-   * <code>cloudwatch</code>.</p>
+   * <p>The log destination type. An enum with possible values of <code>s3</code>,
+   * <code>cloudwatch</code>, and <code>s3table</code>.</p>
    */
   inline LogDestinationType GetLogDestinationType() const { return m_logDestinationType; }
   inline void SetLogDestinationType(LogDestinationType value) {
@@ -155,9 +156,12 @@ class EnableLoggingResult {
 
   ///@{
   /**
-   * <p>The collection of exported log types. Possible values are
+   * <p>The collection of exported log types. When <code>LogDestinationType</code> is
+   * <code>s3</code> or <code>cloudwatch</code>, possible values are
    * <code>connectionlog</code>, <code>useractivitylog</code>, and
-   * <code>userlog</code>.</p>
+   * <code>userlog</code>. When <code>LogDestinationType</code> is
+   * <code>s3table</code>, the values are the names of the system tables being
+   * published.</p>
    */
   inline const Aws::Vector<Aws::String>& GetLogExports() const { return m_logExports; }
   template <typename LogExportsT = Aws::Vector<Aws::String>>
@@ -174,6 +178,24 @@ class EnableLoggingResult {
   EnableLoggingResult& AddLogExports(LogExportsT&& value) {
     m_logExportsHasBeenSet = true;
     m_logExports.emplace_back(std::forward<LogExportsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The status of system table publishing to S3 Tables. This field is populated
+   * only when system table publishing is active.</p>
+   */
+  inline const S3TablePublishStatus& GetS3Tables() const { return m_s3Tables; }
+  template <typename S3TablesT = S3TablePublishStatus>
+  void SetS3Tables(S3TablesT&& value) {
+    m_s3TablesHasBeenSet = true;
+    m_s3Tables = std::forward<S3TablesT>(value);
+  }
+  template <typename S3TablesT = S3TablePublishStatus>
+  EnableLoggingResult& WithS3Tables(S3TablesT&& value) {
+    SetS3Tables(std::forward<S3TablesT>(value));
     return *this;
   }
   ///@}
@@ -211,6 +233,8 @@ class EnableLoggingResult {
 
   Aws::Vector<Aws::String> m_logExports;
 
+  S3TablePublishStatus m_s3Tables;
+
   ResponseMetadata m_responseMetadata;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_loggingEnabledHasBeenSet = false;
@@ -221,6 +245,7 @@ class EnableLoggingResult {
   bool m_lastFailureMessageHasBeenSet = false;
   bool m_logDestinationTypeHasBeenSet = false;
   bool m_logExportsHasBeenSet = false;
+  bool m_s3TablesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

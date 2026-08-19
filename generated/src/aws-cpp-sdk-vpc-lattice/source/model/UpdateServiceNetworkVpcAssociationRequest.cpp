@@ -23,5 +23,13 @@ Aws::String UpdateServiceNetworkVpcAssociationRequest::SerializePayload() const 
     payload.WithArray("securityGroupIds", std::move(securityGroupIdsJsonList));
   }
 
+  if (m_privateDnsEnabledHasBeenSet) {
+    payload.WithBool("privateDnsEnabled", m_privateDnsEnabled);
+  }
+
+  if (m_dnsOptionsHasBeenSet) {
+    payload.WithObject("dnsOptions", m_dnsOptions.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

@@ -964,6 +964,7 @@
 #include <aws/medialive/model/VideoDescription.h>
 #include <aws/medialive/model/VideoDescriptionRespondToAfd.h>
 #include <aws/medialive/model/VideoDescriptionScalingBehavior.h>
+#include <aws/medialive/model/VideoPositionRectangle.h>
 #include <aws/medialive/model/VideoSelector.h>
 #include <aws/medialive/model/VideoSelectorColorSpace.h>
 #include <aws/medialive/model/VideoSelectorColorSpaceSettings.h>

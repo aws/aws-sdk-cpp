@@ -80,6 +80,11 @@ EnableLoggingResult& EnableLoggingResult::operator=(const Aws::AmazonWebServiceR
 
       m_logExportsHasBeenSet = true;
     }
+    XmlNode s3TablesNode = resultNode.FirstChild("S3Tables");
+    if (!s3TablesNode.IsNull()) {
+      m_s3Tables = s3TablesNode;
+      m_s3TablesHasBeenSet = true;
+    }
   }
 
   if (!rootNode.IsNull()) {

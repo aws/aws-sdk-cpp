@@ -8,6 +8,7 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/IndexedKey.h>
 #include <aws/bedrock-agentcore-control/model/MemoryStrategyInput.h>
+#include <aws/bedrock-agentcore-control/model/NamespaceKeyEntry.h>
 #include <aws/bedrock-agentcore-control/model/StreamDeliveryResources.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -197,6 +198,32 @@ class CreateMemoryRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
+   * <p>The namespace variable key definitions with optional validation rules. Use
+   * these <code>namespaceKeys</code> in <code>namespaceTemplates</code> to control
+   * namespace hierarchy.</p>
+   */
+  inline const Aws::Vector<NamespaceKeyEntry>& GetNamespaceKeys() const { return m_namespaceKeys; }
+  inline bool NamespaceKeysHasBeenSet() const { return m_namespaceKeysHasBeenSet; }
+  template <typename NamespaceKeysT = Aws::Vector<NamespaceKeyEntry>>
+  void SetNamespaceKeys(NamespaceKeysT&& value) {
+    m_namespaceKeysHasBeenSet = true;
+    m_namespaceKeys = std::forward<NamespaceKeysT>(value);
+  }
+  template <typename NamespaceKeysT = Aws::Vector<NamespaceKeyEntry>>
+  CreateMemoryRequest& WithNamespaceKeys(NamespaceKeysT&& value) {
+    SetNamespaceKeys(std::forward<NamespaceKeysT>(value));
+    return *this;
+  }
+  template <typename NamespaceKeysT = NamespaceKeyEntry>
+  CreateMemoryRequest& AddNamespaceKeys(NamespaceKeysT&& value) {
+    m_namespaceKeysHasBeenSet = true;
+    m_namespaceKeys.emplace_back(std::forward<NamespaceKeysT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Configuration for streaming memory record data to external resources.</p>
    */
   inline const StreamDeliveryResources& GetStreamDeliveryResources() const { return m_streamDeliveryResources; }
@@ -255,6 +282,8 @@ class CreateMemoryRequest : public BedrockAgentCoreControlRequest {
 
   Aws::Vector<IndexedKey> m_indexedKeys;
 
+  Aws::Vector<NamespaceKeyEntry> m_namespaceKeys;
+
   StreamDeliveryResources m_streamDeliveryResources;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
@@ -266,6 +295,7 @@ class CreateMemoryRequest : public BedrockAgentCoreControlRequest {
   bool m_eventExpiryDurationHasBeenSet = false;
   bool m_memoryStrategiesHasBeenSet = false;
   bool m_indexedKeysHasBeenSet = false;
+  bool m_namespaceKeysHasBeenSet = false;
   bool m_streamDeliveryResourcesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };

@@ -17,8 +17,11 @@
 #include <aws/eks/model/DescribeFargateProfileResult.h>
 #include <aws/eks/model/DescribeNodegroupRequest.h>
 #include <aws/eks/model/DescribeNodegroupResult.h>
+#include <aws/eks/model/DescribeUpdateRequest.h>
+#include <aws/eks/model/DescribeUpdateResult.h>
 #include <aws/eks/model/FargateProfileStatus.h>
 #include <aws/eks/model/NodegroupStatus.h>
+#include <aws/eks/model/UpdateStatus.h>
 
 #include <algorithm>
 
@@ -230,6 +233,38 @@ class EKSWaiter {
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeNodegroup(req); };
     Aws::Utils::Waiter<RequestT, OutcomeT> waiter(30, 4, std::move(acceptors), operation, "WaitUntilNodegroupDeleted");
+    return waiter.Wait(request);
+  }
+
+  Aws::Utils::WaiterOutcome<Model::DescribeUpdateOutcome> WaitUntilCertificateAuthorityUpdateComplete(
+      const Model::DescribeUpdateRequest& request) {
+    using OutcomeT = Model::DescribeUpdateOutcome;
+    using RequestT = Model::DescribeUpdateRequest;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "CertificateAuthorityUpdateCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
+        [](const Model::DescribeUpdateOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::UpdateStatusMapper::GetNameForUpdateStatus(result.GetUpdate().GetStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "CertificateAuthorityUpdateCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Cancelled"),
+        [](const Model::DescribeUpdateOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::UpdateStatusMapper::GetNameForUpdateStatus(result.GetUpdate().GetStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "CertificateAuthorityUpdateCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Successful"),
+        [](const Model::DescribeUpdateOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::UpdateStatusMapper::GetNameForUpdateStatus(result.GetUpdate().GetStatus()) == expected.get<Aws::String>();
+        }));
+
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeUpdate(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(30, 4, std::move(acceptors), operation, "WaitUntilCertificateAuthorityUpdateComplete");
     return waiter.Wait(request);
   }
 };

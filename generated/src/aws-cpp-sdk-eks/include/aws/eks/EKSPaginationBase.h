@@ -14,6 +14,7 @@
 #include <aws/eks/model/ListAddonsPaginationTraits.h>
 #include <aws/eks/model/ListAssociatedAccessPoliciesPaginationTraits.h>
 #include <aws/eks/model/ListCapabilitiesPaginationTraits.h>
+#include <aws/eks/model/ListCertificateAuthoritiesPaginationTraits.h>
 #include <aws/eks/model/ListClustersPaginationTraits.h>
 #include <aws/eks/model/ListEksAnywhereSubscriptionsPaginationTraits.h>
 #include <aws/eks/model/ListFargateProfilesPaginationTraits.h>
@@ -112,6 +113,18 @@ class EKSPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCapabilitiesRequest,
                                              Pagination::ListCapabilitiesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
+  }
+
+  /**
+   * Create a paginator for ListCertificateAuthorities operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCertificateAuthoritiesRequest,
+                                    Pagination::ListCertificateAuthoritiesPaginationTraits<DerivedClient>>
+  ListCertificateAuthoritiesPaginator(const Model::ListCertificateAuthoritiesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCertificateAuthoritiesRequest,
+                                             Pagination::ListCertificateAuthoritiesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 
   /**

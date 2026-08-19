@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
+#include <aws/vpc-lattice/model/DnsOptions.h>
 #include <aws/vpc-lattice/model/ServiceNetworkVpcAssociationStatus.h>
 
 #include <utility>
@@ -122,6 +123,38 @@ class UpdateServiceNetworkVpcAssociationResult {
   ///@}
 
   ///@{
+  /**
+   * <p> Indicates if private DNS is enabled for the VPC association. </p>
+   */
+  inline bool GetPrivateDnsEnabled() const { return m_privateDnsEnabled; }
+  inline void SetPrivateDnsEnabled(bool value) {
+    m_privateDnsEnabledHasBeenSet = true;
+    m_privateDnsEnabled = value;
+  }
+  inline UpdateServiceNetworkVpcAssociationResult& WithPrivateDnsEnabled(bool value) {
+    SetPrivateDnsEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> DNS options for the service network VPC association. </p>
+   */
+  inline const DnsOptions& GetDnsOptions() const { return m_dnsOptions; }
+  template <typename DnsOptionsT = DnsOptions>
+  void SetDnsOptions(DnsOptionsT&& value) {
+    m_dnsOptionsHasBeenSet = true;
+    m_dnsOptions = std::forward<DnsOptionsT>(value);
+  }
+  template <typename DnsOptionsT = DnsOptions>
+  UpdateServiceNetworkVpcAssociationResult& WithDnsOptions(DnsOptionsT&& value) {
+    SetDnsOptions(std::forward<DnsOptionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -148,6 +181,10 @@ class UpdateServiceNetworkVpcAssociationResult {
 
   Aws::Vector<Aws::String> m_securityGroupIds;
 
+  bool m_privateDnsEnabled{false};
+
+  DnsOptions m_dnsOptions;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_idHasBeenSet = false;
@@ -155,6 +192,8 @@ class UpdateServiceNetworkVpcAssociationResult {
   bool m_statusHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
   bool m_securityGroupIdsHasBeenSet = false;
+  bool m_privateDnsEnabledHasBeenSet = false;
+  bool m_dnsOptionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

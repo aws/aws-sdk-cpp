@@ -26,7 +26,8 @@ class JsonValue;
 namespace BedrockAgentCoreControl {
 namespace Model {
 /**
- * <p>Shared fields for GatewayRateLimit responses</p><p><h3>See Also:</h3>   <a
+ * <p>Shared fields for <code>GatewayRateLimit</code> responses.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateGatewayRateLimitResponse">AWS
  * API Reference</a></p>
  */
@@ -38,7 +39,9 @@ class UpdateGatewayRateLimitResult {
       const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   ///@{
-
+  /**
+   * <p>The unique identifier of the rate limit.</p>
+   */
   inline const Aws::String& GetRateLimitId() const { return m_rateLimitId; }
   template <typename RateLimitIdT = Aws::String>
   void SetRateLimitId(RateLimitIdT&& value) {
@@ -71,7 +74,7 @@ class UpdateGatewayRateLimitResult {
 
   ///@{
   /**
-   * <p>Optional human-readable description for this limit.</p>
+   * <p>The human-readable description of the rate limit.</p>
    */
   inline const Aws::String& GetDescription() const { return m_description; }
   template <typename DescriptionT = Aws::String>
@@ -87,7 +90,10 @@ class UpdateGatewayRateLimitResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The ordered list of dimension key names that define the scope of this rate
+   * limit.</p>
+   */
   inline const Aws::Vector<Aws::String>& GetDimensionKeys() const { return m_dimensionKeys; }
   template <typename DimensionKeysT = Aws::Vector<Aws::String>>
   void SetDimensionKeys(DimensionKeysT&& value) {
@@ -108,7 +114,10 @@ class UpdateGatewayRateLimitResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The list of rule entries that map dimension values to rate
+   * configurations.</p>
+   */
   inline const Aws::Vector<LimitEntry>& GetEntries() const { return m_entries; }
   template <typename EntriesT = Aws::Vector<LimitEntry>>
   void SetEntries(EntriesT&& value) {
@@ -129,7 +138,9 @@ class UpdateGatewayRateLimitResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The current status of the rate limit.</p>
+   */
   inline GatewayRateLimitStatus GetStatus() const { return m_status; }
   inline void SetStatus(GatewayRateLimitStatus value) {
     m_statusHasBeenSet = true;

@@ -9,6 +9,7 @@
 #include <aws/batch/model/CEState.h>
 #include <aws/batch/model/CEType.h>
 #include <aws/batch/model/ComputeResource.h>
+#include <aws/batch/model/EcsSettings.h>
 #include <aws/batch/model/EksConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -269,6 +270,25 @@ class CreateComputeEnvironmentRequest : public BatchRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon ECS settings for the compute environment. These settings control
+   * CloudWatch Container Insights collection for the compute environment.</p>
+   */
+  inline const EcsSettings& GetEcsSettings() const { return m_ecsSettings; }
+  inline bool EcsSettingsHasBeenSet() const { return m_ecsSettingsHasBeenSet; }
+  template <typename EcsSettingsT = EcsSettings>
+  void SetEcsSettings(EcsSettingsT&& value) {
+    m_ecsSettingsHasBeenSet = true;
+    m_ecsSettings = std::forward<EcsSettingsT>(value);
+  }
+  template <typename EcsSettingsT = EcsSettings>
+  CreateComputeEnvironmentRequest& WithEcsSettings(EcsSettingsT&& value) {
+    SetEcsSettings(std::forward<EcsSettingsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_computeEnvironmentName;
 
@@ -287,6 +307,8 @@ class CreateComputeEnvironmentRequest : public BatchRequest {
   EksConfiguration m_eksConfiguration;
 
   Aws::String m_context;
+
+  EcsSettings m_ecsSettings;
   bool m_computeEnvironmentNameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
   bool m_stateHasBeenSet = false;
@@ -296,6 +318,7 @@ class CreateComputeEnvironmentRequest : public BatchRequest {
   bool m_tagsHasBeenSet = false;
   bool m_eksConfigurationHasBeenSet = false;
   bool m_contextHasBeenSet = false;
+  bool m_ecsSettingsHasBeenSet = false;
 };
 
 }  // namespace Model

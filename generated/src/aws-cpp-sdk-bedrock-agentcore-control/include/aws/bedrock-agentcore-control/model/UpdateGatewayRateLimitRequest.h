@@ -68,7 +68,7 @@ class UpdateGatewayRateLimitRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
-   * <p>Optional human-readable description for this limit.</p>
+   * <p>The updated human-readable description for this rate limit.</p>
    */
   inline const Aws::String& GetDescription() const { return m_description; }
   inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -86,8 +86,8 @@ class UpdateGatewayRateLimitRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
-   * <p>Updated rule entries. key and dimensionKeys are immutable and cannot be
-   * changed.</p>
+   * <p>The updated rule entries. The dimension keys are immutable after creation and
+   * cannot be changed.</p>
    */
   inline const Aws::Vector<LimitEntry>& GetEntries() const { return m_entries; }
   inline bool EntriesHasBeenSet() const { return m_entriesHasBeenSet; }

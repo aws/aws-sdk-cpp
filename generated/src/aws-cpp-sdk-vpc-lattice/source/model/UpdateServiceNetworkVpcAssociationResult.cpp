@@ -48,6 +48,14 @@ UpdateServiceNetworkVpcAssociationResult& UpdateServiceNetworkVpcAssociationResu
     }
     m_securityGroupIdsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("privateDnsEnabled")) {
+    m_privateDnsEnabled = jsonValue.GetBool("privateDnsEnabled");
+    m_privateDnsEnabledHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("dnsOptions")) {
+    m_dnsOptions = jsonValue.GetObject("dnsOptions");
+    m_dnsOptionsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

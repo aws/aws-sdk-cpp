@@ -37,6 +37,13 @@ MemoryRecordUpdateInput& MemoryRecordUpdateInput::operator=(JsonView jsonValue) 
     }
     m_namespacesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("sourceNamespaces")) {
+    Aws::Utils::Array<JsonView> sourceNamespacesJsonList = jsonValue.GetArray("sourceNamespaces");
+    for (unsigned sourceNamespacesIndex = 0; sourceNamespacesIndex < sourceNamespacesJsonList.GetLength(); ++sourceNamespacesIndex) {
+      m_sourceNamespaces.push_back(sourceNamespacesJsonList[sourceNamespacesIndex].AsString());
+    }
+    m_sourceNamespacesHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("memoryStrategyId")) {
     m_memoryStrategyId = jsonValue.GetString("memoryStrategyId");
     m_memoryStrategyIdHasBeenSet = true;
@@ -72,6 +79,14 @@ JsonValue MemoryRecordUpdateInput::Jsonize() const {
       namespacesJsonList[namespacesIndex].AsString(m_namespaces[namespacesIndex]);
     }
     payload.WithArray("namespaces", std::move(namespacesJsonList));
+  }
+
+  if (m_sourceNamespacesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> sourceNamespacesJsonList(m_sourceNamespaces.size());
+    for (unsigned sourceNamespacesIndex = 0; sourceNamespacesIndex < sourceNamespacesJsonList.GetLength(); ++sourceNamespacesIndex) {
+      sourceNamespacesJsonList[sourceNamespacesIndex].AsString(m_sourceNamespaces[sourceNamespacesIndex]);
+    }
+    payload.WithArray("sourceNamespaces", std::move(sourceNamespacesJsonList));
   }
 
   if (m_memoryStrategyIdHasBeenSet) {

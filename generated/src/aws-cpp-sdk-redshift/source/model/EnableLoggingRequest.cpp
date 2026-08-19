@@ -42,6 +42,14 @@ Aws::String EnableLoggingRequest::SerializePayload() const {
     }
   }
 
+  if (m_s3TableKmsKeyIdHasBeenSet) {
+    ss << "S3TableKmsKeyId=" << StringUtils::URLEncode(m_s3TableKmsKeyId.c_str()) << "&";
+  }
+
+  if (m_s3TableGranularityHasBeenSet) {
+    ss << "S3TableGranularity=" << StringUtils::URLEncode(m_s3TableGranularity.c_str()) << "&";
+  }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

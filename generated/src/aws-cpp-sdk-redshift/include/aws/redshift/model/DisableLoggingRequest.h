@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/redshift/Redshift_EXPORTS.h>
+#include <aws/redshift/model/LogDestinationType.h>
 
 #include <utility>
 
@@ -53,9 +55,61 @@ class DisableLoggingRequest : public RedshiftRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The log destination type. An enum with possible values of <code>s3</code>,
+   * <code>cloudwatch</code>, and <code>s3table</code>. When set to
+   * <code>s3table</code>, stops system table publishing. When omitted, the operation
+   * disables audit logging.</p>
+   */
+  inline LogDestinationType GetLogDestinationType() const { return m_logDestinationType; }
+  inline bool LogDestinationTypeHasBeenSet() const { return m_logDestinationTypeHasBeenSet; }
+  inline void SetLogDestinationType(LogDestinationType value) {
+    m_logDestinationTypeHasBeenSet = true;
+    m_logDestinationType = value;
+  }
+  inline DisableLoggingRequest& WithLogDestinationType(LogDestinationType value) {
+    SetLogDestinationType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The collection of log types to stop exporting. When
+   * <code>LogDestinationType</code> is <code>s3table</code>, the values are the
+   * names of the system tables to stop publishing. Omitting this parameter or
+   * passing <code>all</code> stops publishing all system tables.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetLogExports() const { return m_logExports; }
+  inline bool LogExportsHasBeenSet() const { return m_logExportsHasBeenSet; }
+  template <typename LogExportsT = Aws::Vector<Aws::String>>
+  void SetLogExports(LogExportsT&& value) {
+    m_logExportsHasBeenSet = true;
+    m_logExports = std::forward<LogExportsT>(value);
+  }
+  template <typename LogExportsT = Aws::Vector<Aws::String>>
+  DisableLoggingRequest& WithLogExports(LogExportsT&& value) {
+    SetLogExports(std::forward<LogExportsT>(value));
+    return *this;
+  }
+  template <typename LogExportsT = Aws::String>
+  DisableLoggingRequest& AddLogExports(LogExportsT&& value) {
+    m_logExportsHasBeenSet = true;
+    m_logExports.emplace_back(std::forward<LogExportsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clusterIdentifier;
+
+  LogDestinationType m_logDestinationType{LogDestinationType::NOT_SET};
+
+  Aws::Vector<Aws::String> m_logExports;
   bool m_clusterIdentifierHasBeenSet = false;
+  bool m_logDestinationTypeHasBeenSet = false;
+  bool m_logExportsHasBeenSet = false;
 };
 
 }  // namespace Model

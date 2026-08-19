@@ -11,6 +11,9 @@
 #include <utility>
 
 namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
 namespace BedrockAgentCore {
 namespace Model {
 
@@ -27,6 +30,8 @@ class DeleteMemoryRecordRequest : public BedrockAgentCoreRequest {
   inline virtual const char* GetServiceRequestName() const override { return "DeleteMemoryRecord"; }
 
   AWS_BEDROCKAGENTCORE_API Aws::String SerializePayload() const override;
+
+  AWS_BEDROCKAGENTCORE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
   ///@{
   /**
@@ -64,12 +69,34 @@ class DeleteMemoryRecordRequest : public BedrockAgentCoreRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The namespace of the memory record to delete. This value is used for IAM
+   * condition key authorization.</p>
+   */
+  inline const Aws::String& GetNamespace() const { return m_namespace; }
+  inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
+  template <typename NamespaceT = Aws::String>
+  void SetNamespace(NamespaceT&& value) {
+    m_namespaceHasBeenSet = true;
+    m_namespace = std::forward<NamespaceT>(value);
+  }
+  template <typename NamespaceT = Aws::String>
+  DeleteMemoryRecordRequest& WithNamespace(NamespaceT&& value) {
+    SetNamespace(std::forward<NamespaceT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_memoryId;
 
   Aws::String m_memoryRecordId;
+
+  Aws::String m_namespace;
   bool m_memoryIdHasBeenSet = false;
   bool m_memoryRecordIdHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
 };
 
 }  // namespace Model

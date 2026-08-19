@@ -17,6 +17,7 @@
 #include <aws/eks/model/ListAccessEntriesPaginationTraits.h>
 #include <aws/eks/model/ListEksAnywhereSubscriptionsPaginationTraits.h>
 #include <aws/eks/model/ListFargateProfilesPaginationTraits.h>
+#include <aws/eks/model/ListCertificateAuthoritiesPaginationTraits.h>
 #include <aws/eks/model/ListPodIdentityAssociationsPaginationTraits.h>
 #include <aws/eks/model/ListCapabilitiesPaginationTraits.h>
 #include <aws/eks/model/DescribeClusterVersionsPaginationTraits.h>

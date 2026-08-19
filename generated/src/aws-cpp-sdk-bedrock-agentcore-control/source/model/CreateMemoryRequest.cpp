@@ -55,6 +55,14 @@ Aws::String CreateMemoryRequest::SerializePayload() const {
     payload.WithArray("indexedKeys", std::move(indexedKeysJsonList));
   }
 
+  if (m_namespaceKeysHasBeenSet) {
+    Aws::Utils::Array<JsonValue> namespaceKeysJsonList(m_namespaceKeys.size());
+    for (unsigned namespaceKeysIndex = 0; namespaceKeysIndex < namespaceKeysJsonList.GetLength(); ++namespaceKeysIndex) {
+      namespaceKeysJsonList[namespaceKeysIndex].AsObject(m_namespaceKeys[namespaceKeysIndex].Jsonize());
+    }
+    payload.WithArray("namespaceKeys", std::move(namespaceKeysJsonList));
+  }
+
   if (m_streamDeliveryResourcesHasBeenSet) {
     payload.WithObject("streamDeliveryResources", m_streamDeliveryResources.Jsonize());
   }

@@ -86,6 +86,55 @@ class AWS_EKS_API EKSClient : public Aws::Client::AWSJsonClient,
   virtual ~EKSClient();
 
   /**
+   * <p>Activates a successor certificate authority (CA) as the signing certificate
+   * authority for your cluster, completing a CA rotation.</p> <p>When you activate a
+   * successor CA, Amazon EKS promotes it to be the cluster's signer (its
+   * <code>signingStatus</code> becomes <code>IN_USE</code>) and the outgoing CA is
+   * retired (<code>NOT_USED</code>). The outgoing CA remains in the cluster's trust
+   * bundle but no longer signs certificates. The successor CA you activate must
+   * already be present on the cluster and fully distributed (its
+   * <code>distributionStatus</code> must be <code>COMPLETE</code>). This is an
+   * asynchronous operation that returns an <code>update</code> object you can track
+   * with <a
+   * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeUpdate.html">
+   * <code>DescribeUpdate</code> </a>.</p> <p>Before you activate the successor CA,
+   * make sure the worker nodes you manage and your external clients have been
+   * updated to trust it, so they maintain connectivity to the API server after
+   * activation. For a limited period after activation, CA rollback is available to
+   * revert to the outgoing CA if needed. If you don't activate the successor CA
+   * yourself, Amazon EKS activates it automatically as the expiration deadline
+   * approaches. For more information, see <a
+   * href="https://docs.aws.amazon.com/eks/latest/userguide/certificate-authority-rotation.html">Rotate
+   * the Amazon EKS cluster certificate authority</a> in the <i>Amazon EKS User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ActivateCertificateAuthority">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ActivateCertificateAuthorityOutcome ActivateCertificateAuthority(
+      const Model::ActivateCertificateAuthorityRequest& request) const;
+
+  /**
+   * A Callable wrapper for ActivateCertificateAuthority that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ActivateCertificateAuthorityRequestT = Model::ActivateCertificateAuthorityRequest>
+  Model::ActivateCertificateAuthorityOutcomeCallable ActivateCertificateAuthorityCallable(
+      const ActivateCertificateAuthorityRequestT& request) const {
+    return SubmitCallable(&EKSClient::ActivateCertificateAuthority, request);
+  }
+
+  /**
+   * An Async wrapper for ActivateCertificateAuthority that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ActivateCertificateAuthorityRequestT = Model::ActivateCertificateAuthorityRequest>
+  void ActivateCertificateAuthorityAsync(const ActivateCertificateAuthorityRequestT& request,
+                                         const ActivateCertificateAuthorityResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EKSClient::ActivateCertificateAuthority, request, handler, context);
+  }
+
+  /**
    * <p>Associates an access policy and its scope to an access entry. For more
    * information about associating access policies, see <a
    * href="https://docs.aws.amazon.com/eks/latest/userguide/access-policies.html">Associating
@@ -321,6 +370,59 @@ class AWS_EKS_API EKSClient : public Aws::Client::AWSJsonClient,
   void CreateCapabilityAsync(const CreateCapabilityRequestT& request, const CreateCapabilityResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EKSClient::CreateCapability, request, handler, context);
+  }
+
+  /**
+   * <p>Appends a successor certificate authority (CA) to your cluster, beginning the
+   * CA rotation process.</p> <p>A cluster certificate authority is the root of trust
+   * for your cluster's control plane. It signs the certificates that secure
+   * communication between the Kubernetes API server and its clients, and its public
+   * certificate is distributed to your cluster's trust bundle so that worker nodes
+   * and clients can verify the API server's identity. Each cluster can have at most
+   * two certificate authorities at a time: the outgoing CA that's currently signing
+   * (its <code>signingStatus</code> is <code>IN_USE</code>) and one successor CA
+   * (<code>signingStatus</code> of <code>NOT_USED</code>) that you can later
+   * activate to complete the rotation.</p> <p>Appending a successor CA adds its
+   * public certificate to the cluster's trust bundle so that the cluster trusts both
+   * CAs simultaneously (the dual trust period), but it doesn't begin signing
+   * certificates. Amazon EKS then distributes the successor CA to the Amazon Web
+   * Services managed components in your cluster; you can track this through the CA's
+   * <code>distributionStatus</code>. The successor CA can't be activated until its
+   * <code>distributionStatus</code> is <code>COMPLETE</code>. To activate it as the
+   * cluster's signer, use <a
+   * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ActivateCertificateAuthority.html">
+   * <code>ActivateCertificateAuthority</code> </a>. This is an asynchronous
+   * operation that returns an <code>update</code> object. If you don't append a
+   * successor CA yourself, Amazon EKS appends one automatically before the outgoing
+   * CA approaches expiration.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/eks/latest/userguide/certificate-authority-rotation.html">Rotate
+   * the Amazon EKS cluster certificate authority</a> in the <i>Amazon EKS User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateCertificateAuthority">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateCertificateAuthorityOutcome CreateCertificateAuthority(
+      const Model::CreateCertificateAuthorityRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateCertificateAuthority that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CreateCertificateAuthorityRequestT = Model::CreateCertificateAuthorityRequest>
+  Model::CreateCertificateAuthorityOutcomeCallable CreateCertificateAuthorityCallable(
+      const CreateCertificateAuthorityRequestT& request) const {
+    return SubmitCallable(&EKSClient::CreateCertificateAuthority, request);
+  }
+
+  /**
+   * An Async wrapper for CreateCertificateAuthority that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateCertificateAuthorityRequestT = Model::CreateCertificateAuthorityRequest>
+  void CreateCertificateAuthorityAsync(const CreateCertificateAuthorityRequestT& request,
+                                       const CreateCertificateAuthorityResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EKSClient::CreateCertificateAuthority, request, handler, context);
   }
 
   /**
@@ -661,6 +763,46 @@ class AWS_EKS_API EKSClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Deletes a certificate authority (CA) from your cluster.</p> <p>Deleting a
+   * certificate authority removes its public certificate from the cluster's trust
+   * bundle. You can't delete the certificate authority that's currently signing
+   * certificates for the cluster (its <code>signingStatus</code> is
+   * <code>IN_USE</code>) — to remove the outgoing CA, first activate the successor
+   * CA with <a
+   * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ActivateCertificateAuthority.html">
+   * <code>ActivateCertificateAuthority</code> </a>. Amazon EKS also protects a
+   * successor CA from deletion in certain cases to keep a valid rotation path — for
+   * example, a successor that Amazon EKS appended can't be deleted while it's the
+   * only successor on the cluster. This is an asynchronous operation that returns an
+   * <code>update</code> object.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteCertificateAuthority">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteCertificateAuthorityOutcome DeleteCertificateAuthority(
+      const Model::DeleteCertificateAuthorityRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteCertificateAuthority that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteCertificateAuthorityRequestT = Model::DeleteCertificateAuthorityRequest>
+  Model::DeleteCertificateAuthorityOutcomeCallable DeleteCertificateAuthorityCallable(
+      const DeleteCertificateAuthorityRequestT& request) const {
+    return SubmitCallable(&EKSClient::DeleteCertificateAuthority, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteCertificateAuthority that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteCertificateAuthorityRequestT = Model::DeleteCertificateAuthorityRequest>
+  void DeleteCertificateAuthorityAsync(const DeleteCertificateAuthorityRequestT& request,
+                                       const DeleteCertificateAuthorityResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EKSClient::DeleteCertificateAuthority, request, handler, context);
+  }
+
+  /**
    * <p>Deletes an Amazon EKS cluster control plane.</p> <p>If you have active
    * services and ingress resources in your cluster that are associated with a load
    * balancer, you must delete those services before deleting the cluster so that the
@@ -987,6 +1129,38 @@ class AWS_EKS_API EKSClient : public Aws::Client::AWSJsonClient,
   void DescribeCapabilityAsync(const DescribeCapabilityRequestT& request, const DescribeCapabilityResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EKSClient::DescribeCapability, request, handler, context);
+  }
+
+  /**
+   * <p>Returns detailed information about a certificate authority (CA) in your
+   * cluster, including its validity period, signing and distribution status,
+   * provenance, scheduled auto-activation events, and public certificate
+   * data.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeCertificateAuthority">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeCertificateAuthorityOutcome DescribeCertificateAuthority(
+      const Model::DescribeCertificateAuthorityRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeCertificateAuthority that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeCertificateAuthorityRequestT = Model::DescribeCertificateAuthorityRequest>
+  Model::DescribeCertificateAuthorityOutcomeCallable DescribeCertificateAuthorityCallable(
+      const DescribeCertificateAuthorityRequestT& request) const {
+    return SubmitCallable(&EKSClient::DescribeCertificateAuthority, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeCertificateAuthority that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeCertificateAuthorityRequestT = Model::DescribeCertificateAuthorityRequest>
+  void DescribeCertificateAuthorityAsync(const DescribeCertificateAuthorityRequestT& request,
+                                         const DescribeCertificateAuthorityResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EKSClient::DescribeCertificateAuthority, request, handler, context);
   }
 
   /**
@@ -1472,6 +1646,37 @@ class AWS_EKS_API EKSClient : public Aws::Client::AWSJsonClient,
   void ListCapabilitiesAsync(const ListCapabilitiesRequestT& request, const ListCapabilitiesResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EKSClient::ListCapabilities, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the certificate authorities (CAs) for your cluster. A cluster has at
+   * most two certificate authorities: the outgoing CA that's currently signing and,
+   * during a rotation, one successor CA.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListCertificateAuthorities">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListCertificateAuthoritiesOutcome ListCertificateAuthorities(
+      const Model::ListCertificateAuthoritiesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListCertificateAuthorities that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListCertificateAuthoritiesRequestT = Model::ListCertificateAuthoritiesRequest>
+  Model::ListCertificateAuthoritiesOutcomeCallable ListCertificateAuthoritiesCallable(
+      const ListCertificateAuthoritiesRequestT& request) const {
+    return SubmitCallable(&EKSClient::ListCertificateAuthorities, request);
+  }
+
+  /**
+   * An Async wrapper for ListCertificateAuthorities that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListCertificateAuthoritiesRequestT = Model::ListCertificateAuthoritiesRequest>
+  void ListCertificateAuthoritiesAsync(const ListCertificateAuthoritiesRequestT& request,
+                                       const ListCertificateAuthoritiesResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EKSClient::ListCertificateAuthorities, request, handler, context);
   }
 
   /**

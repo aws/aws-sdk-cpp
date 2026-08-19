@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Redshift {
 namespace Model {
-enum class LogDestinationType { NOT_SET, s3, cloudwatch };
+enum class LogDestinationType { NOT_SET, s3, cloudwatch, s3table };
 
 namespace LogDestinationTypeMapper {
 AWS_REDSHIFT_API LogDestinationType GetLogDestinationTypeForName(const Aws::String& name);

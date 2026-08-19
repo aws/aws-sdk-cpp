@@ -9,6 +9,7 @@
 #include <aws/medialive/model/VideoCodecSettings.h>
 #include <aws/medialive/model/VideoDescriptionRespondToAfd.h>
 #include <aws/medialive/model/VideoDescriptionScalingBehavior.h>
+#include <aws/medialive/model/VideoPositionRectangle.h>
 
 #include <utility>
 
@@ -179,6 +180,60 @@ Use
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * Region of the input video to crop before scaling. If not specified, the entire
+   * input
+frame is used.
+
+Note: Unlike {@link outputPositionRectangle}, the bounds
+   * of cropRectangle are validated
+at ingest time by the encoder/scaler rather than
+   * at the API level, because the input
+resolution is not known until the source is
+   * probed. Field-level constraints on (x, y,
+width, height) defined on {@link
+   * VideoPositionRectangle} still apply.
+   */
+  inline const VideoPositionRectangle& GetCropRectangle() const { return m_cropRectangle; }
+  inline bool CropRectangleHasBeenSet() const { return m_cropRectangleHasBeenSet; }
+  template <typename CropRectangleT = VideoPositionRectangle>
+  void SetCropRectangle(CropRectangleT&& value) {
+    m_cropRectangleHasBeenSet = true;
+    m_cropRectangle = std::forward<CropRectangleT>(value);
+  }
+  template <typename CropRectangleT = VideoPositionRectangle>
+  VideoDescription& WithCropRectangle(CropRectangleT&& value) {
+    SetCropRectangle(std::forward<CropRectangleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * Position of the encoded video within the output frame. The area outside the
+   * rectangle
+is filled with black. If not specified, the video fills the entire
+   * output frame.
+When used, both {@link width} and {@link height} of the
+   * VideoDescription must be
+explicitly specified so that the rectangle can be
+   * validated against the output frame.
+   */
+  inline const VideoPositionRectangle& GetOutputPositionRectangle() const { return m_outputPositionRectangle; }
+  inline bool OutputPositionRectangleHasBeenSet() const { return m_outputPositionRectangleHasBeenSet; }
+  template <typename OutputPositionRectangleT = VideoPositionRectangle>
+  void SetOutputPositionRectangle(OutputPositionRectangleT&& value) {
+    m_outputPositionRectangleHasBeenSet = true;
+    m_outputPositionRectangle = std::forward<OutputPositionRectangleT>(value);
+  }
+  template <typename OutputPositionRectangleT = VideoPositionRectangle>
+  VideoDescription& WithOutputPositionRectangle(OutputPositionRectangleT&& value) {
+    SetOutputPositionRectangle(std::forward<OutputPositionRectangleT>(value));
+    return *this;
+  }
+  ///@}
  private:
   VideoCodecSettings m_codecSettings;
 
@@ -193,6 +248,10 @@ Use
   int m_sharpness{0};
 
   int m_width{0};
+
+  VideoPositionRectangle m_cropRectangle;
+
+  VideoPositionRectangle m_outputPositionRectangle;
   bool m_codecSettingsHasBeenSet = false;
   bool m_heightHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -200,6 +259,8 @@ Use
   bool m_scalingBehaviorHasBeenSet = false;
   bool m_sharpnessHasBeenSet = false;
   bool m_widthHasBeenSet = false;
+  bool m_cropRectangleHasBeenSet = false;
+  bool m_outputPositionRectangleHasBeenSet = false;
 };
 
 }  // namespace Model

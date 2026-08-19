@@ -9,6 +9,7 @@
 #include <aws/batch/model/CEStatus.h>
 #include <aws/batch/model/CEType.h>
 #include <aws/batch/model/ComputeResource.h>
+#include <aws/batch/model/EcsSettings.h>
 #include <aws/batch/model/EksConfiguration.h>
 #include <aws/batch/model/OrchestrationType.h>
 #include <aws/batch/model/UpdatePolicy.h>
@@ -363,6 +364,25 @@ class ComputeEnvironmentDetail {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon ECS settings for the compute environment. These settings control
+   * CloudWatch Container Insights collection.</p>
+   */
+  inline const EcsSettings& GetEcsSettings() const { return m_ecsSettings; }
+  inline bool EcsSettingsHasBeenSet() const { return m_ecsSettingsHasBeenSet; }
+  template <typename EcsSettingsT = EcsSettings>
+  void SetEcsSettings(EcsSettingsT&& value) {
+    m_ecsSettingsHasBeenSet = true;
+    m_ecsSettings = std::forward<EcsSettingsT>(value);
+  }
+  template <typename EcsSettingsT = EcsSettings>
+  ComputeEnvironmentDetail& WithEcsSettings(EcsSettingsT&& value) {
+    SetEcsSettings(std::forward<EcsSettingsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_computeEnvironmentName;
 
@@ -395,6 +415,8 @@ class ComputeEnvironmentDetail {
   Aws::String m_uuid;
 
   Aws::String m_context;
+
+  EcsSettings m_ecsSettings;
   bool m_computeEnvironmentNameHasBeenSet = false;
   bool m_computeEnvironmentArnHasBeenSet = false;
   bool m_unmanagedvCpusHasBeenSet = false;
@@ -411,6 +433,7 @@ class ComputeEnvironmentDetail {
   bool m_containerOrchestrationTypeHasBeenSet = false;
   bool m_uuidHasBeenSet = false;
   bool m_contextHasBeenSet = false;
+  bool m_ecsSettingsHasBeenSet = false;
 };
 
 }  // namespace Model

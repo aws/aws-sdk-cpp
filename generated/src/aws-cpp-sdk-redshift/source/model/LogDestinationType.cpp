@@ -17,6 +17,7 @@ namespace LogDestinationTypeMapper {
 
 static const int s3_HASH = HashingUtils::HashString("s3");
 static const int cloudwatch_HASH = HashingUtils::HashString("cloudwatch");
+static const int s3table_HASH = HashingUtils::HashString("s3table");
 
 LogDestinationType GetLogDestinationTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ LogDestinationType GetLogDestinationTypeForName(const Aws::String& name) {
     return LogDestinationType::s3;
   } else if (hashCode == cloudwatch_HASH) {
     return LogDestinationType::cloudwatch;
+  } else if (hashCode == s3table_HASH) {
+    return LogDestinationType::s3table;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForLogDestinationType(LogDestinationType enumValue) {
       return "s3";
     case LogDestinationType::cloudwatch:
       return "cloudwatch";
+    case LogDestinationType::s3table:
+      return "s3table";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -155,7 +155,10 @@ class CustomOauth2ProviderConfigOutput {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The configuration for private_key_jwt client authentication used by this
+   * OAuth2 credential provider.</p>
+   */
   inline const PrivateKeyJwtConfig& GetPrivateKeyJwtConfig() const { return m_privateKeyJwtConfig; }
   inline bool PrivateKeyJwtConfigHasBeenSet() const { return m_privateKeyJwtConfigHasBeenSet; }
   template <typename PrivateKeyJwtConfigT = PrivateKeyJwtConfig>

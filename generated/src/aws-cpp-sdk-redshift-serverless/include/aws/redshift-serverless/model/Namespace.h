@@ -10,6 +10,7 @@
 #include <aws/redshift-serverless/RedshiftServerless_EXPORTS.h>
 #include <aws/redshift-serverless/model/LogExport.h>
 #include <aws/redshift-serverless/model/NamespaceStatus.h>
+#include <aws/redshift-serverless/model/S3TablePublishStatus.h>
 
 #include <utility>
 
@@ -313,6 +314,26 @@ class Namespace {
 
   ///@{
   /**
+   * <p>The current Amazon S3 Tables log-publishing status for the namespace. Not
+   * returned when S3 Tables publishing has never been configured for the
+   * namespace.</p>
+   */
+  inline const S3TablePublishStatus& GetS3TablePublishStatus() const { return m_s3TablePublishStatus; }
+  inline bool S3TablePublishStatusHasBeenSet() const { return m_s3TablePublishStatusHasBeenSet; }
+  template <typename S3TablePublishStatusT = S3TablePublishStatus>
+  void SetS3TablePublishStatus(S3TablePublishStatusT&& value) {
+    m_s3TablePublishStatusHasBeenSet = true;
+    m_s3TablePublishStatus = std::forward<S3TablePublishStatusT>(value);
+  }
+  template <typename S3TablePublishStatusT = S3TablePublishStatus>
+  Namespace& WithS3TablePublishStatus(S3TablePublishStatusT&& value) {
+    SetS3TablePublishStatus(std::forward<S3TablePublishStatusT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The status of the namespace.</p>
    */
   inline NamespaceStatus GetStatus() const { return m_status; }
@@ -355,6 +376,8 @@ class Namespace {
 
   Aws::String m_namespaceName;
 
+  S3TablePublishStatus m_s3TablePublishStatus;
+
   NamespaceStatus m_status{NamespaceStatus::NOT_SET};
   bool m_adminPasswordSecretArnHasBeenSet = false;
   bool m_adminPasswordSecretKmsKeyIdHasBeenSet = false;
@@ -370,6 +393,7 @@ class Namespace {
   bool m_namespaceArnHasBeenSet = false;
   bool m_namespaceIdHasBeenSet = false;
   bool m_namespaceNameHasBeenSet = false;
+  bool m_s3TablePublishStatusHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

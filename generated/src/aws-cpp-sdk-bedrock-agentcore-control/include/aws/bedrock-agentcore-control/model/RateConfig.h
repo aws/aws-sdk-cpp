@@ -20,8 +20,8 @@ namespace BedrockAgentCoreControl {
 namespace Model {
 
 /**
- * <p>Rate configuration for a metric (requests or tokens)</p><p><h3>See Also:</h3>
- * <a
+ * <p>Contains the rate configuration for a rate limit metric, specifying the
+ * allowed rate and time period.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/RateConfig">AWS
  * API Reference</a></p>
  */
@@ -52,7 +52,12 @@ class RateConfig {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The time period for the rate limit. Valid values:</p> <ul> <li> <p>
+   * <code>second</code>—Measures the rate limit over a one-second window.</p> </li>
+   * <li> <p> <code>minute</code>—Measures the rate limit over a one-minute
+   * window.</p> </li> </ul>
+   */
   inline Period GetPeriod() const { return m_period; }
   inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
   inline void SetPeriod(Period value) {

@@ -22,8 +22,9 @@ namespace BedrockAgentCoreControl {
 namespace Model {
 
 /**
- * <p>A limit definition within a BatchPut request (rateLimitId used for upsert
- * matching)</p><p><h3>See Also:</h3>   <a
+ * <p>A rate limit definition within a batch put request. If you provide a
+ * <code>rateLimitId</code>, the service uses it for upsert matching against
+ * existing rate limits.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/BatchPutLimitEntry">AWS
  * API Reference</a></p>
  */
@@ -36,7 +37,8 @@ class BatchPutLimitEntry {
 
   ///@{
   /**
-   * <p>Optional — if provided, used for upsert matching against existing limits.</p>
+   * <p>The unique identifier of the rate limit. If provided, the service uses it for
+   * upsert matching against existing rate limits.</p>
    */
   inline const Aws::String& GetRateLimitId() const { return m_rateLimitId; }
   inline bool RateLimitIdHasBeenSet() const { return m_rateLimitIdHasBeenSet; }
@@ -54,7 +56,8 @@ class BatchPutLimitEntry {
 
   ///@{
   /**
-   * <p>Optional human-readable description for this limit.</p>
+   * <p>An optional human-readable description for this rate limit. If not provided,
+   * the rate limit is created without a description.</p>
    */
   inline const Aws::String& GetDescription() const { return m_description; }
   inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -71,7 +74,10 @@ class BatchPutLimitEntry {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The ordered list of dimension key names that define the scope of this rate
+   * limit.</p>
+   */
   inline const Aws::Vector<Aws::String>& GetDimensionKeys() const { return m_dimensionKeys; }
   inline bool DimensionKeysHasBeenSet() const { return m_dimensionKeysHasBeenSet; }
   template <typename DimensionKeysT = Aws::Vector<Aws::String>>
@@ -93,7 +99,10 @@ class BatchPutLimitEntry {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The list of rule entries that map dimension values to rate
+   * configurations.</p>
+   */
   inline const Aws::Vector<LimitEntry>& GetEntries() const { return m_entries; }
   inline bool EntriesHasBeenSet() const { return m_entriesHasBeenSet; }
   template <typename EntriesT = Aws::Vector<LimitEntry>>

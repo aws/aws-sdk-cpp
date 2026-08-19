@@ -23,6 +23,9 @@
 #include <aws/eks/model/AccessPolicy.h>
 #include <aws/eks/model/AccessScope.h>
 #include <aws/eks/model/AccessScopeType.h>
+#include <aws/eks/model/ActivateCertificateAuthorityRequest.h>
+#include <aws/eks/model/ActivateCertificateAuthorityResult.h>
+#include <aws/eks/model/ActiveCertificateAuthority.h>
 #include <aws/eks/model/Addon.h>
 #include <aws/eks/model/AddonCompatibilityDetail.h>
 #include <aws/eks/model/AddonHealth.h>
@@ -71,6 +74,14 @@
 #include <aws/eks/model/CapacityTypes.h>
 #include <aws/eks/model/Category.h>
 #include <aws/eks/model/Certificate.h>
+#include <aws/eks/model/CertificateAuthority.h>
+#include <aws/eks/model/CertificateAuthorityActivatedBy.h>
+#include <aws/eks/model/CertificateAuthorityCreatedBy.h>
+#include <aws/eks/model/CertificateAuthorityDistributionStatus.h>
+#include <aws/eks/model/CertificateAuthorityScheduledEvents.h>
+#include <aws/eks/model/CertificateAuthoritySigningStatus.h>
+#include <aws/eks/model/CertificateAuthoritySummary.h>
+#include <aws/eks/model/CertificateAuthorityValidity.h>
 #include <aws/eks/model/ClientException.h>
 #include <aws/eks/model/ClientStat.h>
 #include <aws/eks/model/Cluster.h>
@@ -100,6 +111,8 @@
 #include <aws/eks/model/CreateAddonResult.h>
 #include <aws/eks/model/CreateCapabilityRequest.h>
 #include <aws/eks/model/CreateCapabilityResult.h>
+#include <aws/eks/model/CreateCertificateAuthorityRequest.h>
+#include <aws/eks/model/CreateCertificateAuthorityResult.h>
 #include <aws/eks/model/CreateClusterRequest.h>
 #include <aws/eks/model/CreateClusterResult.h>
 #include <aws/eks/model/CreateEksAnywhereSubscriptionRequest.h>
@@ -116,6 +129,8 @@
 #include <aws/eks/model/DeleteAddonResult.h>
 #include <aws/eks/model/DeleteCapabilityRequest.h>
 #include <aws/eks/model/DeleteCapabilityResult.h>
+#include <aws/eks/model/DeleteCertificateAuthorityRequest.h>
+#include <aws/eks/model/DeleteCertificateAuthorityResult.h>
 #include <aws/eks/model/DeleteClusterRequest.h>
 #include <aws/eks/model/DeleteClusterResult.h>
 #include <aws/eks/model/DeleteEksAnywhereSubscriptionRequest.h>
@@ -140,6 +155,8 @@
 #include <aws/eks/model/DescribeAddonVersionsResult.h>
 #include <aws/eks/model/DescribeCapabilityRequest.h>
 #include <aws/eks/model/DescribeCapabilityResult.h>
+#include <aws/eks/model/DescribeCertificateAuthorityRequest.h>
+#include <aws/eks/model/DescribeCertificateAuthorityResult.h>
 #include <aws/eks/model/DescribeClusterRequest.h>
 #include <aws/eks/model/DescribeClusterResult.h>
 #include <aws/eks/model/DescribeClusterVersionsPaginationTraits.h>
@@ -232,6 +249,9 @@
 #include <aws/eks/model/ListCapabilitiesPaginationTraits.h>
 #include <aws/eks/model/ListCapabilitiesRequest.h>
 #include <aws/eks/model/ListCapabilitiesResult.h>
+#include <aws/eks/model/ListCertificateAuthoritiesPaginationTraits.h>
+#include <aws/eks/model/ListCertificateAuthoritiesRequest.h>
+#include <aws/eks/model/ListCertificateAuthoritiesResult.h>
 #include <aws/eks/model/ListClustersPaginationTraits.h>
 #include <aws/eks/model/ListClustersRequest.h>
 #include <aws/eks/model/ListClustersResult.h>

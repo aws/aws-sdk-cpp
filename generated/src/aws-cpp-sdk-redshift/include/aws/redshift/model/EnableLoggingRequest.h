@@ -102,8 +102,8 @@ class EnableLoggingRequest : public RedshiftRequest {
 
   ///@{
   /**
-   * <p>The log destination type. An enum with possible values of <code>s3</code> and
-   * <code>cloudwatch</code>.</p>
+   * <p>The log destination type. An enum with possible values of <code>s3</code>,
+   * <code>cloudwatch</code>, and <code>s3table</code>.</p>
    */
   inline LogDestinationType GetLogDestinationType() const { return m_logDestinationType; }
   inline bool LogDestinationTypeHasBeenSet() const { return m_logDestinationTypeHasBeenSet; }
@@ -119,9 +119,13 @@ class EnableLoggingRequest : public RedshiftRequest {
 
   ///@{
   /**
-   * <p>The collection of exported log types. Possible values are
+   * <p>The collection of exported log types. When <code>LogDestinationType</code> is
+   * <code>s3</code> or <code>cloudwatch</code>, possible values are
    * <code>connectionlog</code>, <code>useractivitylog</code>, and
-   * <code>userlog</code>.</p>
+   * <code>userlog</code>. When <code>LogDestinationType</code> is
+   * <code>s3table</code>, the values are the names of the system tables to publish.
+   * Omitting this parameter, passing an empty list, or including the value
+   * <code>all</code> publishes all current and future system tables.</p>
    */
   inline const Aws::Vector<Aws::String>& GetLogExports() const { return m_logExports; }
   inline bool LogExportsHasBeenSet() const { return m_logExportsHasBeenSet; }
@@ -142,6 +146,48 @@ class EnableLoggingRequest : public RedshiftRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of a customer managed KMS key used to encrypt the S3 tables.
+   * This parameter is valid only when <code>LogDestinationType</code> is
+   * <code>s3table</code>.</p>
+   */
+  inline const Aws::String& GetS3TableKmsKeyId() const { return m_s3TableKmsKeyId; }
+  inline bool S3TableKmsKeyIdHasBeenSet() const { return m_s3TableKmsKeyIdHasBeenSet; }
+  template <typename S3TableKmsKeyIdT = Aws::String>
+  void SetS3TableKmsKeyId(S3TableKmsKeyIdT&& value) {
+    m_s3TableKmsKeyIdHasBeenSet = true;
+    m_s3TableKmsKeyId = std::forward<S3TableKmsKeyIdT>(value);
+  }
+  template <typename S3TableKmsKeyIdT = Aws::String>
+  EnableLoggingRequest& WithS3TableKmsKeyId(S3TableKmsKeyIdT&& value) {
+    SetS3TableKmsKeyId(std::forward<S3TableKmsKeyIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The scope of system table publishing. Valid values are <code>cluster</code>
+   * and <code>account</code>. A value of <code>cluster</code> scopes publishing to
+   * the individual cluster. A value of <code>account</code> scopes publishing to the
+   * Amazon Web Services account. This parameter is valid only when
+   * <code>LogDestinationType</code> is <code>s3table</code>.</p>
+   */
+  inline const Aws::String& GetS3TableGranularity() const { return m_s3TableGranularity; }
+  inline bool S3TableGranularityHasBeenSet() const { return m_s3TableGranularityHasBeenSet; }
+  template <typename S3TableGranularityT = Aws::String>
+  void SetS3TableGranularity(S3TableGranularityT&& value) {
+    m_s3TableGranularityHasBeenSet = true;
+    m_s3TableGranularity = std::forward<S3TableGranularityT>(value);
+  }
+  template <typename S3TableGranularityT = Aws::String>
+  EnableLoggingRequest& WithS3TableGranularity(S3TableGranularityT&& value) {
+    SetS3TableGranularity(std::forward<S3TableGranularityT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clusterIdentifier;
 
@@ -152,11 +198,17 @@ class EnableLoggingRequest : public RedshiftRequest {
   LogDestinationType m_logDestinationType{LogDestinationType::NOT_SET};
 
   Aws::Vector<Aws::String> m_logExports;
+
+  Aws::String m_s3TableKmsKeyId;
+
+  Aws::String m_s3TableGranularity;
   bool m_clusterIdentifierHasBeenSet = false;
   bool m_bucketNameHasBeenSet = false;
   bool m_s3KeyPrefixHasBeenSet = false;
   bool m_logDestinationTypeHasBeenSet = false;
   bool m_logExportsHasBeenSet = false;
+  bool m_s3TableKmsKeyIdHasBeenSet = false;
+  bool m_s3TableGranularityHasBeenSet = false;
 };
 
 }  // namespace Model

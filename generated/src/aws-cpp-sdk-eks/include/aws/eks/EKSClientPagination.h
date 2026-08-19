@@ -13,6 +13,7 @@
 #include <aws/eks/model/ListAddonsPaginationTraits.h>
 #include <aws/eks/model/ListAssociatedAccessPoliciesPaginationTraits.h>
 #include <aws/eks/model/ListCapabilitiesPaginationTraits.h>
+#include <aws/eks/model/ListCertificateAuthoritiesPaginationTraits.h>
 #include <aws/eks/model/ListClustersPaginationTraits.h>
 #include <aws/eks/model/ListEksAnywhereSubscriptionsPaginationTraits.h>
 #include <aws/eks/model/ListFargateProfilesPaginationTraits.h>
@@ -40,6 +41,9 @@ using ListAssociatedAccessPoliciesPaginator =
                                       Pagination::ListAssociatedAccessPoliciesPaginationTraits<EKSClient>>;
 using ListCapabilitiesPaginator =
     Aws::Utils::Pagination::Paginator<EKSClient, Model::ListCapabilitiesRequest, Pagination::ListCapabilitiesPaginationTraits<EKSClient>>;
+using ListCertificateAuthoritiesPaginator =
+    Aws::Utils::Pagination::Paginator<EKSClient, Model::ListCertificateAuthoritiesRequest,
+                                      Pagination::ListCertificateAuthoritiesPaginationTraits<EKSClient>>;
 using ListClustersPaginator =
     Aws::Utils::Pagination::Paginator<EKSClient, Model::ListClustersRequest, Pagination::ListClustersPaginationTraits<EKSClient>>;
 using ListEksAnywhereSubscriptionsPaginator =

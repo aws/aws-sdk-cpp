@@ -8,6 +8,7 @@
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/batch/model/CEState.h>
 #include <aws/batch/model/ComputeResourceUpdate.h>
+#include <aws/batch/model/EcsSettings.h>
 #include <aws/batch/model/UpdatePolicy.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -207,6 +208,25 @@ class UpdateComputeEnvironmentRequest : public BatchRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon ECS settings for the compute environment. These settings control
+   * CloudWatch Container Insights collection for the compute environment.</p>
+   */
+  inline const EcsSettings& GetEcsSettings() const { return m_ecsSettings; }
+  inline bool EcsSettingsHasBeenSet() const { return m_ecsSettingsHasBeenSet; }
+  template <typename EcsSettingsT = EcsSettings>
+  void SetEcsSettings(EcsSettingsT&& value) {
+    m_ecsSettingsHasBeenSet = true;
+    m_ecsSettings = std::forward<EcsSettingsT>(value);
+  }
+  template <typename EcsSettingsT = EcsSettings>
+  UpdateComputeEnvironmentRequest& WithEcsSettings(EcsSettingsT&& value) {
+    SetEcsSettings(std::forward<EcsSettingsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_computeEnvironment;
 
@@ -221,6 +241,8 @@ class UpdateComputeEnvironmentRequest : public BatchRequest {
   UpdatePolicy m_updatePolicy;
 
   Aws::String m_context;
+
+  EcsSettings m_ecsSettings;
   bool m_computeEnvironmentHasBeenSet = false;
   bool m_stateHasBeenSet = false;
   bool m_unmanagedvCpusHasBeenSet = false;
@@ -228,6 +250,7 @@ class UpdateComputeEnvironmentRequest : public BatchRequest {
   bool m_serviceRoleHasBeenSet = false;
   bool m_updatePolicyHasBeenSet = false;
   bool m_contextHasBeenSet = false;
+  bool m_ecsSettingsHasBeenSet = false;
 };
 
 }  // namespace Model

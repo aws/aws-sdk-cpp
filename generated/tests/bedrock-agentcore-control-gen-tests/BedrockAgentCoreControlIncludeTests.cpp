@@ -617,6 +617,8 @@
 #include <aws/bedrock-agentcore-control/model/ModifySelfManagedConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ModifyStrategyConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/Monitoring.h>
+#include <aws/bedrock-agentcore-control/model/NamespaceKeyEntry.h>
+#include <aws/bedrock-agentcore-control/model/NamespaceKeyValidation.h>
 #include <aws/bedrock-agentcore-control/model/NetworkConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/NetworkMode.h>
 #include <aws/bedrock-agentcore-control/model/NumberValidation.h>

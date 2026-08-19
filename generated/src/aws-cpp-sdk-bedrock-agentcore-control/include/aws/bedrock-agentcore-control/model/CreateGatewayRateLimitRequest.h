@@ -74,8 +74,8 @@ class CreateGatewayRateLimitRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
-   * <p>Optional customer-defined limit ID. If not provided, system generates
-   * one.</p>
+   * <p>An optional customer-defined identifier for the rate limit. If not provided,
+   * the system generates one.</p>
    */
   inline const Aws::String& GetRateLimitId() const { return m_rateLimitId; }
   inline bool RateLimitIdHasBeenSet() const { return m_rateLimitIdHasBeenSet; }
@@ -93,7 +93,8 @@ class CreateGatewayRateLimitRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
-   * <p>Optional human-readable description for this limit.</p>
+   * <p>An optional human-readable description for this rate limit. If not provided,
+   * the rate limit is created without a description.</p>
    */
   inline const Aws::String& GetDescription() const { return m_description; }
   inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -111,8 +112,9 @@ class CreateGatewayRateLimitRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
-   * <p>Ordered list of dimension names defining the scope of this limit. Unique per
-   * gateway — no two limits can share the same dimensionKeys.</p>
+   * <p>The ordered list of dimension key names that define the scope of this rate
+   * limit. Must be unique per gateway—no two rate limits can share the same
+   * dimension keys.</p>
    */
   inline const Aws::Vector<Aws::String>& GetDimensionKeys() const { return m_dimensionKeys; }
   inline bool DimensionKeysHasBeenSet() const { return m_dimensionKeysHasBeenSet; }
@@ -136,7 +138,7 @@ class CreateGatewayRateLimitRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
-   * <p>Rule entries mapping dimension values to rate configurations.</p>
+   * <p>The rule entries that map dimension values to rate configurations.</p>
    */
   inline const Aws::Vector<LimitEntry>& GetEntries() const { return m_entries; }
   inline bool EntriesHasBeenSet() const { return m_entriesHasBeenSet; }

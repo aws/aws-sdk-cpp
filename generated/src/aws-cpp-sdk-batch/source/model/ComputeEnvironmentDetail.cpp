@@ -85,6 +85,10 @@ ComputeEnvironmentDetail& ComputeEnvironmentDetail::operator=(JsonView jsonValue
     m_context = jsonValue.GetString("context");
     m_contextHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ecsSettings")) {
+    m_ecsSettings = jsonValue.GetObject("ecsSettings");
+    m_ecsSettingsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -157,6 +161,10 @@ JsonValue ComputeEnvironmentDetail::Jsonize() const {
 
   if (m_contextHasBeenSet) {
     payload.WithString("context", m_context);
+  }
+
+  if (m_ecsSettingsHasBeenSet) {
+    payload.WithObject("ecsSettings", m_ecsSettings.Jsonize());
   }
 
   return payload;

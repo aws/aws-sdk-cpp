@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
 #include <aws/bedrock-agentcore/model/Conversational.h>
+#include <aws/bedrock-agentcore/model/MemoryJsonData.h>
 #include <aws/core/utils/Document.h>
 
 #include <utility>
@@ -67,12 +68,35 @@ class PayloadType {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The JSON content of the payload. Use this type to store non-conversational,
+   * JSON-formatted data, such as behavioral events, activity logs, or system
+   * events.</p>
+   */
+  inline const MemoryJsonData& GetJson() const { return m_json; }
+  inline bool JsonHasBeenSet() const { return m_jsonHasBeenSet; }
+  template <typename JsonT = MemoryJsonData>
+  void SetJson(JsonT&& value) {
+    m_jsonHasBeenSet = true;
+    m_json = std::forward<JsonT>(value);
+  }
+  template <typename JsonT = MemoryJsonData>
+  PayloadType& WithJson(JsonT&& value) {
+    SetJson(std::forward<JsonT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Conversational m_conversational;
 
   Aws::Utils::Document m_blob;
+
+  MemoryJsonData m_json;
   bool m_conversationalHasBeenSet = false;
   bool m_blobHasBeenSet = false;
+  bool m_jsonHasBeenSet = false;
 };
 
 }  // namespace Model

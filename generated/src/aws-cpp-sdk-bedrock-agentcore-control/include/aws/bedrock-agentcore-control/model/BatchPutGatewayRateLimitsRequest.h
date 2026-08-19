@@ -74,8 +74,9 @@ class BatchPutGatewayRateLimitsRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
-   * <p>Complete set of rate limits for this gateway. Replaces all existing limits
-   * atomically.</p>
+   * <p>The complete set of rate limits for this gateway. This operation replaces all
+   * existing rate limits in a single request. If the operation fails, no rate limits
+   * are changed.</p>
    */
   inline const Aws::Vector<BatchPutLimitEntry>& GetRateLimits() const { return m_rateLimits; }
   inline bool RateLimitsHasBeenSet() const { return m_rateLimitsHasBeenSet; }

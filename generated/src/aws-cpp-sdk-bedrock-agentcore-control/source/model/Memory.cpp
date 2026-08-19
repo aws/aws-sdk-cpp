@@ -76,6 +76,13 @@ Memory& Memory::operator=(JsonView jsonValue) {
     }
     m_indexedKeysHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("namespaceKeys")) {
+    Aws::Utils::Array<JsonView> namespaceKeysJsonList = jsonValue.GetArray("namespaceKeys");
+    for (unsigned namespaceKeysIndex = 0; namespaceKeysIndex < namespaceKeysJsonList.GetLength(); ++namespaceKeysIndex) {
+      m_namespaceKeys.push_back(namespaceKeysJsonList[namespaceKeysIndex].AsObject());
+    }
+    m_namespaceKeysHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("streamDeliveryResources")) {
     m_streamDeliveryResources = jsonValue.GetObject("streamDeliveryResources");
     m_streamDeliveryResourcesHasBeenSet = true;
@@ -148,6 +155,14 @@ JsonValue Memory::Jsonize() const {
       indexedKeysJsonList[indexedKeysIndex].AsObject(m_indexedKeys[indexedKeysIndex].Jsonize());
     }
     payload.WithArray("indexedKeys", std::move(indexedKeysJsonList));
+  }
+
+  if (m_namespaceKeysHasBeenSet) {
+    Aws::Utils::Array<JsonValue> namespaceKeysJsonList(m_namespaceKeys.size());
+    for (unsigned namespaceKeysIndex = 0; namespaceKeysIndex < namespaceKeysJsonList.GetLength(); ++namespaceKeysIndex) {
+      namespaceKeysJsonList[namespaceKeysIndex].AsObject(m_namespaceKeys[namespaceKeysIndex].Jsonize());
+    }
+    payload.WithArray("namespaceKeys", std::move(namespaceKeysJsonList));
   }
 
   if (m_streamDeliveryResourcesHasBeenSet) {

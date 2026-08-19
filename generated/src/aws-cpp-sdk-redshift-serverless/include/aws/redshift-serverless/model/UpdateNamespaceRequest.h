@@ -8,7 +8,10 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift-serverless/RedshiftServerlessRequest.h>
 #include <aws/redshift-serverless/RedshiftServerless_EXPORTS.h>
+#include <aws/redshift-serverless/model/LogDestinationType.h>
 #include <aws/redshift-serverless/model/LogExport.h>
+#include <aws/redshift-serverless/model/S3TableAction.h>
+#include <aws/redshift-serverless/model/S3TableGranularity.h>
 
 #include <utility>
 
@@ -162,6 +165,24 @@ class UpdateNamespaceRequest : public RedshiftServerlessRequest {
 
   ///@{
   /**
+   * <p>The destination for the log data. Valid values are <code>s3table</code> and
+   * <code>cloudwatch</code>.</p> <p>Set this to <code>s3table</code> to manage
+   * Amazon S3 Tables system-table publishing for the namespace.</p>
+   */
+  inline LogDestinationType GetLogDestinationType() const { return m_logDestinationType; }
+  inline bool LogDestinationTypeHasBeenSet() const { return m_logDestinationTypeHasBeenSet; }
+  inline void SetLogDestinationType(LogDestinationType value) {
+    m_logDestinationTypeHasBeenSet = true;
+    m_logDestinationType = value;
+  }
+  inline UpdateNamespaceRequest& WithLogDestinationType(LogDestinationType value) {
+    SetLogDestinationType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The types of logs the namespace can export. The export types are
    * <code>userlog</code>, <code>connectionlog</code>, and
    * <code>useractivitylog</code>.</p>
@@ -223,6 +244,98 @@ class UpdateNamespaceRequest : public RedshiftServerlessRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Whether to enable or disable Amazon S3 Tables publishing. Valid values are
+   * <code>Enable</code> and <code>Disable</code>, matched case-insensitively.</p>
+   * <p>When omitted, defaults to <code>Enable</code>. Valid only when
+   * <code>logDestinationType</code> is <code>s3table</code>.</p>
+   */
+  inline S3TableAction GetS3TableAction() const { return m_s3TableAction; }
+  inline bool S3TableActionHasBeenSet() const { return m_s3TableActionHasBeenSet; }
+  inline void SetS3TableAction(S3TableAction value) {
+    m_s3TableActionHasBeenSet = true;
+    m_s3TableAction = value;
+  }
+  inline UpdateNamespaceRequest& WithS3TableAction(S3TableAction value) {
+    SetS3TableAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The scope of the Amazon S3 Tables destination. Valid values are
+   * <code>namespace</code> and <code>account</code>, matched case-insensitively.
+   * <code>namespace</code> scopes the published tables to this namespace;
+   * <code>account</code> scopes them to the Amazon Web Services account.</p>
+   * <p>Required when enabling. Omitting this parameter or passing a blank value
+   * fails with <code>ValidationException</code>. Valid only when
+   * <code>logDestinationType</code> is <code>s3table</code>.</p>
+   */
+  inline S3TableGranularity GetS3TableGranularity() const { return m_s3TableGranularity; }
+  inline bool S3TableGranularityHasBeenSet() const { return m_s3TableGranularityHasBeenSet; }
+  inline void SetS3TableGranularity(S3TableGranularity value) {
+    m_s3TableGranularityHasBeenSet = true;
+    m_s3TableGranularity = value;
+  }
+  inline UpdateNamespaceRequest& WithS3TableGranularity(S3TableGranularity value) {
+    SetS3TableGranularity(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of the Key Management Service key used to encrypt the
+   * published Amazon S3 Tables data. When omitted, the data is encrypted with SSE-S3
+   * (Amazon S3 managed keys).</p> <p>Valid only when <code>logDestinationType</code>
+   * is <code>s3table</code>.</p>
+   */
+  inline const Aws::String& GetS3TableKmsKeyId() const { return m_s3TableKmsKeyId; }
+  inline bool S3TableKmsKeyIdHasBeenSet() const { return m_s3TableKmsKeyIdHasBeenSet; }
+  template <typename S3TableKmsKeyIdT = Aws::String>
+  void SetS3TableKmsKeyId(S3TableKmsKeyIdT&& value) {
+    m_s3TableKmsKeyIdHasBeenSet = true;
+    m_s3TableKmsKeyId = std::forward<S3TableKmsKeyIdT>(value);
+  }
+  template <typename S3TableKmsKeyIdT = Aws::String>
+  UpdateNamespaceRequest& WithS3TableKmsKeyId(S3TableKmsKeyIdT&& value) {
+    SetS3TableKmsKeyId(std::forward<S3TableKmsKeyIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The system tables to publish (on enable) or to stop publishing (on disable).
+   * Each value is either a system table view name that begins with <code>sys_</code>
+   * or the keyword <code>all</code>.</p> <p>Omitting this parameter, passing an
+   * empty list, or including <code>all</code> each select every current and future
+   * system table. Each name must be 1-128 characters, and the list can contain up to
+   * 256 names.</p> <p>Valid only when <code>logDestinationType</code> is
+   * <code>s3table</code>.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetS3TableNames() const { return m_s3TableNames; }
+  inline bool S3TableNamesHasBeenSet() const { return m_s3TableNamesHasBeenSet; }
+  template <typename S3TableNamesT = Aws::Vector<Aws::String>>
+  void SetS3TableNames(S3TableNamesT&& value) {
+    m_s3TableNamesHasBeenSet = true;
+    m_s3TableNames = std::forward<S3TableNamesT>(value);
+  }
+  template <typename S3TableNamesT = Aws::Vector<Aws::String>>
+  UpdateNamespaceRequest& WithS3TableNames(S3TableNamesT&& value) {
+    SetS3TableNames(std::forward<S3TableNamesT>(value));
+    return *this;
+  }
+  template <typename S3TableNamesT = Aws::String>
+  UpdateNamespaceRequest& AddS3TableNames(S3TableNamesT&& value) {
+    m_s3TableNamesHasBeenSet = true;
+    m_s3TableNames.emplace_back(std::forward<S3TableNamesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_adminPasswordSecretKmsKeyId;
 
@@ -236,20 +349,35 @@ class UpdateNamespaceRequest : public RedshiftServerlessRequest {
 
   Aws::String m_kmsKeyId;
 
+  LogDestinationType m_logDestinationType{LogDestinationType::NOT_SET};
+
   Aws::Vector<LogExport> m_logExports;
 
   bool m_manageAdminPassword{false};
 
   Aws::String m_namespaceName;
+
+  S3TableAction m_s3TableAction{S3TableAction::NOT_SET};
+
+  S3TableGranularity m_s3TableGranularity{S3TableGranularity::NOT_SET};
+
+  Aws::String m_s3TableKmsKeyId;
+
+  Aws::Vector<Aws::String> m_s3TableNames;
   bool m_adminPasswordSecretKmsKeyIdHasBeenSet = false;
   bool m_adminUserPasswordHasBeenSet = false;
   bool m_adminUsernameHasBeenSet = false;
   bool m_defaultIamRoleArnHasBeenSet = false;
   bool m_iamRolesHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
+  bool m_logDestinationTypeHasBeenSet = false;
   bool m_logExportsHasBeenSet = false;
   bool m_manageAdminPasswordHasBeenSet = false;
   bool m_namespaceNameHasBeenSet = false;
+  bool m_s3TableActionHasBeenSet = false;
+  bool m_s3TableGranularityHasBeenSet = false;
+  bool m_s3TableKmsKeyIdHasBeenSet = false;
+  bool m_s3TableNamesHasBeenSet = false;
 };
 
 }  // namespace Model

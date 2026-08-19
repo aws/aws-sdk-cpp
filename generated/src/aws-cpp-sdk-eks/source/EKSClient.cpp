@@ -20,6 +20,7 @@
 #include <aws/eks/EKSClient.h>
 #include <aws/eks/EKSEndpointProvider.h>
 #include <aws/eks/EKSErrorMarshaller.h>
+#include <aws/eks/model/ActivateCertificateAuthorityRequest.h>
 #include <aws/eks/model/AssociateAccessPolicyRequest.h>
 #include <aws/eks/model/AssociateEncryptionConfigRequest.h>
 #include <aws/eks/model/AssociateIdentityProviderConfigRequest.h>
@@ -27,6 +28,7 @@
 #include <aws/eks/model/CreateAccessEntryRequest.h>
 #include <aws/eks/model/CreateAddonRequest.h>
 #include <aws/eks/model/CreateCapabilityRequest.h>
+#include <aws/eks/model/CreateCertificateAuthorityRequest.h>
 #include <aws/eks/model/CreateClusterRequest.h>
 #include <aws/eks/model/CreateEksAnywhereSubscriptionRequest.h>
 #include <aws/eks/model/CreateFargateProfileRequest.h>
@@ -35,6 +37,7 @@
 #include <aws/eks/model/DeleteAccessEntryRequest.h>
 #include <aws/eks/model/DeleteAddonRequest.h>
 #include <aws/eks/model/DeleteCapabilityRequest.h>
+#include <aws/eks/model/DeleteCertificateAuthorityRequest.h>
 #include <aws/eks/model/DeleteClusterRequest.h>
 #include <aws/eks/model/DeleteEksAnywhereSubscriptionRequest.h>
 #include <aws/eks/model/DeleteFargateProfileRequest.h>
@@ -46,6 +49,7 @@
 #include <aws/eks/model/DescribeAddonRequest.h>
 #include <aws/eks/model/DescribeAddonVersionsRequest.h>
 #include <aws/eks/model/DescribeCapabilityRequest.h>
+#include <aws/eks/model/DescribeCertificateAuthorityRequest.h>
 #include <aws/eks/model/DescribeClusterRequest.h>
 #include <aws/eks/model/DescribeClusterVersionsRequest.h>
 #include <aws/eks/model/DescribeEksAnywhereSubscriptionRequest.h>
@@ -63,6 +67,7 @@
 #include <aws/eks/model/ListAddonsRequest.h>
 #include <aws/eks/model/ListAssociatedAccessPoliciesRequest.h>
 #include <aws/eks/model/ListCapabilitiesRequest.h>
+#include <aws/eks/model/ListCertificateAuthoritiesRequest.h>
 #include <aws/eks/model/ListClustersRequest.h>
 #include <aws/eks/model/ListEksAnywhereSubscriptionsRequest.h>
 #include <aws/eks/model/ListFargateProfilesRequest.h>
@@ -237,6 +242,32 @@ EKSClient::InvokeOperationOutcome EKSClient::InvokeServiceOperation(
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 
+ActivateCertificateAuthorityOutcome EKSClient::ActivateCertificateAuthority(const ActivateCertificateAuthorityRequest& request) const {
+  if (!request.ClusterNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ActivateCertificateAuthority", "Required field: ClusterName, is not set");
+    return ActivateCertificateAuthorityOutcome(
+        Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
+  }
+  if (!request.CertificateAuthorityIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ActivateCertificateAuthority", "Required field: CertificateAuthorityId, is not set");
+    return ActivateCertificateAuthorityOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                "Missing required field [CertificateAuthorityId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/clusters/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/certificate-authorities/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCertificateAuthorityId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/activate");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ActivateCertificateAuthorityOutcome(result.GetResultWithOwnership())
+                            : ActivateCertificateAuthorityOutcome(std::move(result.GetError()));
+}
+
 AssociateAccessPolicyOutcome EKSClient::AssociateAccessPolicy(const AssociateAccessPolicyRequest& request) const {
   if (!request.ClusterNameHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("AssociateAccessPolicy", "Required field: ClusterName, is not set");
@@ -381,6 +412,25 @@ CreateCapabilityOutcome EKSClient::CreateCapability(const CreateCapabilityReques
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateCapabilityOutcome(result.GetResultWithOwnership())
                             : CreateCapabilityOutcome(std::move(result.GetError()));
+}
+
+CreateCertificateAuthorityOutcome EKSClient::CreateCertificateAuthority(const CreateCertificateAuthorityRequest& request) const {
+  if (!request.ClusterNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateCertificateAuthority", "Required field: ClusterName, is not set");
+    return CreateCertificateAuthorityOutcome(
+        Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/clusters/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/certificate-authorities");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCertificateAuthorityOutcome(result.GetResultWithOwnership())
+                            : CreateCertificateAuthorityOutcome(std::move(result.GetError()));
 }
 
 CreateClusterOutcome EKSClient::CreateCluster(const CreateClusterRequest& request) const {
@@ -533,6 +583,31 @@ DeleteCapabilityOutcome EKSClient::DeleteCapability(const DeleteCapabilityReques
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteCapabilityOutcome(result.GetResultWithOwnership())
                             : DeleteCapabilityOutcome(std::move(result.GetError()));
+}
+
+DeleteCertificateAuthorityOutcome EKSClient::DeleteCertificateAuthority(const DeleteCertificateAuthorityRequest& request) const {
+  if (!request.ClusterNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteCertificateAuthority", "Required field: ClusterName, is not set");
+    return DeleteCertificateAuthorityOutcome(
+        Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
+  }
+  if (!request.CertificateAuthorityIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteCertificateAuthority", "Required field: CertificateAuthorityId, is not set");
+    return DeleteCertificateAuthorityOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                              "Missing required field [CertificateAuthorityId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/clusters/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/certificate-authorities/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCertificateAuthorityId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCertificateAuthorityOutcome(result.GetResultWithOwnership())
+                            : DeleteCertificateAuthorityOutcome(std::move(result.GetError()));
 }
 
 DeleteClusterOutcome EKSClient::DeleteCluster(const DeleteClusterRequest& request) const {
@@ -768,6 +843,31 @@ DescribeCapabilityOutcome EKSClient::DescribeCapability(const DescribeCapability
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? DescribeCapabilityOutcome(result.GetResultWithOwnership())
                             : DescribeCapabilityOutcome(std::move(result.GetError()));
+}
+
+DescribeCertificateAuthorityOutcome EKSClient::DescribeCertificateAuthority(const DescribeCertificateAuthorityRequest& request) const {
+  if (!request.ClusterNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeCertificateAuthority", "Required field: ClusterName, is not set");
+    return DescribeCertificateAuthorityOutcome(
+        Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
+  }
+  if (!request.CertificateAuthorityIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeCertificateAuthority", "Required field: CertificateAuthorityId, is not set");
+    return DescribeCertificateAuthorityOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                "Missing required field [CertificateAuthorityId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/clusters/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/certificate-authorities/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCertificateAuthorityId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeCertificateAuthorityOutcome(result.GetResultWithOwnership())
+                            : DescribeCertificateAuthorityOutcome(std::move(result.GetError()));
 }
 
 DescribeClusterOutcome EKSClient::DescribeCluster(const DescribeClusterRequest& request) const {
@@ -1125,6 +1225,25 @@ ListCapabilitiesOutcome EKSClient::ListCapabilities(const ListCapabilitiesReques
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListCapabilitiesOutcome(result.GetResultWithOwnership())
                             : ListCapabilitiesOutcome(std::move(result.GetError()));
+}
+
+ListCertificateAuthoritiesOutcome EKSClient::ListCertificateAuthorities(const ListCertificateAuthoritiesRequest& request) const {
+  if (!request.ClusterNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListCertificateAuthorities", "Required field: ClusterName, is not set");
+    return ListCertificateAuthoritiesOutcome(
+        Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/clusters/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/certificate-authorities");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCertificateAuthoritiesOutcome(result.GetResultWithOwnership())
+                            : ListCertificateAuthoritiesOutcome(std::move(result.GetError()));
 }
 
 ListClustersOutcome EKSClient::ListClusters(const ListClustersRequest& request) const {

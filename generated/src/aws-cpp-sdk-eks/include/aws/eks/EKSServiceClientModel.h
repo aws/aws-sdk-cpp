@@ -19,6 +19,7 @@
 /* End of generic header includes */
 
 /* Service model headers required in EKSClient header */
+#include <aws/eks/model/ActivateCertificateAuthorityResult.h>
 #include <aws/eks/model/AssociateAccessPolicyResult.h>
 #include <aws/eks/model/AssociateEncryptionConfigResult.h>
 #include <aws/eks/model/AssociateIdentityProviderConfigResult.h>
@@ -26,6 +27,7 @@
 #include <aws/eks/model/CreateAccessEntryResult.h>
 #include <aws/eks/model/CreateAddonResult.h>
 #include <aws/eks/model/CreateCapabilityResult.h>
+#include <aws/eks/model/CreateCertificateAuthorityResult.h>
 #include <aws/eks/model/CreateClusterResult.h>
 #include <aws/eks/model/CreateEksAnywhereSubscriptionResult.h>
 #include <aws/eks/model/CreateFargateProfileResult.h>
@@ -34,6 +36,7 @@
 #include <aws/eks/model/DeleteAccessEntryResult.h>
 #include <aws/eks/model/DeleteAddonResult.h>
 #include <aws/eks/model/DeleteCapabilityResult.h>
+#include <aws/eks/model/DeleteCertificateAuthorityResult.h>
 #include <aws/eks/model/DeleteClusterResult.h>
 #include <aws/eks/model/DeleteEksAnywhereSubscriptionResult.h>
 #include <aws/eks/model/DeleteFargateProfileResult.h>
@@ -46,6 +49,7 @@
 #include <aws/eks/model/DescribeAddonVersionsRequest.h>
 #include <aws/eks/model/DescribeAddonVersionsResult.h>
 #include <aws/eks/model/DescribeCapabilityResult.h>
+#include <aws/eks/model/DescribeCertificateAuthorityResult.h>
 #include <aws/eks/model/DescribeClusterResult.h>
 #include <aws/eks/model/DescribeClusterVersionsRequest.h>
 #include <aws/eks/model/DescribeClusterVersionsResult.h>
@@ -65,6 +69,7 @@
 #include <aws/eks/model/ListAddonsResult.h>
 #include <aws/eks/model/ListAssociatedAccessPoliciesResult.h>
 #include <aws/eks/model/ListCapabilitiesResult.h>
+#include <aws/eks/model/ListCertificateAuthoritiesResult.h>
 #include <aws/eks/model/ListClustersRequest.h>
 #include <aws/eks/model/ListClustersResult.h>
 #include <aws/eks/model/ListEksAnywhereSubscriptionsRequest.h>
@@ -122,6 +127,7 @@ using EKSEndpointProvider = Aws::EKS::Endpoint::EKSEndpointProvider;
 
 namespace Model {
 /* Service model forward declarations required in EKSClient header */
+class ActivateCertificateAuthorityRequest;
 class AssociateAccessPolicyRequest;
 class AssociateEncryptionConfigRequest;
 class AssociateIdentityProviderConfigRequest;
@@ -129,6 +135,7 @@ class CancelUpdateRequest;
 class CreateAccessEntryRequest;
 class CreateAddonRequest;
 class CreateCapabilityRequest;
+class CreateCertificateAuthorityRequest;
 class CreateClusterRequest;
 class CreateEksAnywhereSubscriptionRequest;
 class CreateFargateProfileRequest;
@@ -137,6 +144,7 @@ class CreatePodIdentityAssociationRequest;
 class DeleteAccessEntryRequest;
 class DeleteAddonRequest;
 class DeleteCapabilityRequest;
+class DeleteCertificateAuthorityRequest;
 class DeleteClusterRequest;
 class DeleteEksAnywhereSubscriptionRequest;
 class DeleteFargateProfileRequest;
@@ -148,6 +156,7 @@ class DescribeAddonRequest;
 class DescribeAddonConfigurationRequest;
 class DescribeAddonVersionsRequest;
 class DescribeCapabilityRequest;
+class DescribeCertificateAuthorityRequest;
 class DescribeClusterRequest;
 class DescribeClusterVersionsRequest;
 class DescribeEksAnywhereSubscriptionRequest;
@@ -165,6 +174,7 @@ class ListAccessPoliciesRequest;
 class ListAddonsRequest;
 class ListAssociatedAccessPoliciesRequest;
 class ListCapabilitiesRequest;
+class ListCertificateAuthoritiesRequest;
 class ListClustersRequest;
 class ListEksAnywhereSubscriptionsRequest;
 class ListFargateProfilesRequest;
@@ -190,6 +200,7 @@ class UpdatePodIdentityAssociationRequest;
 /* End of service model forward declarations required in EKSClient header */
 
 /* Service model Outcome class definitions */
+typedef Aws::Utils::Outcome<ActivateCertificateAuthorityResult, EKSError> ActivateCertificateAuthorityOutcome;
 typedef Aws::Utils::Outcome<AssociateAccessPolicyResult, EKSError> AssociateAccessPolicyOutcome;
 typedef Aws::Utils::Outcome<AssociateEncryptionConfigResult, EKSError> AssociateEncryptionConfigOutcome;
 typedef Aws::Utils::Outcome<AssociateIdentityProviderConfigResult, EKSError> AssociateIdentityProviderConfigOutcome;
@@ -197,6 +208,7 @@ typedef Aws::Utils::Outcome<CancelUpdateResult, EKSError> CancelUpdateOutcome;
 typedef Aws::Utils::Outcome<CreateAccessEntryResult, EKSError> CreateAccessEntryOutcome;
 typedef Aws::Utils::Outcome<CreateAddonResult, EKSError> CreateAddonOutcome;
 typedef Aws::Utils::Outcome<CreateCapabilityResult, EKSError> CreateCapabilityOutcome;
+typedef Aws::Utils::Outcome<CreateCertificateAuthorityResult, EKSError> CreateCertificateAuthorityOutcome;
 typedef Aws::Utils::Outcome<CreateClusterResult, EKSError> CreateClusterOutcome;
 typedef Aws::Utils::Outcome<CreateEksAnywhereSubscriptionResult, EKSError> CreateEksAnywhereSubscriptionOutcome;
 typedef Aws::Utils::Outcome<CreateFargateProfileResult, EKSError> CreateFargateProfileOutcome;
@@ -205,6 +217,7 @@ typedef Aws::Utils::Outcome<CreatePodIdentityAssociationResult, EKSError> Create
 typedef Aws::Utils::Outcome<DeleteAccessEntryResult, EKSError> DeleteAccessEntryOutcome;
 typedef Aws::Utils::Outcome<DeleteAddonResult, EKSError> DeleteAddonOutcome;
 typedef Aws::Utils::Outcome<DeleteCapabilityResult, EKSError> DeleteCapabilityOutcome;
+typedef Aws::Utils::Outcome<DeleteCertificateAuthorityResult, EKSError> DeleteCertificateAuthorityOutcome;
 typedef Aws::Utils::Outcome<DeleteClusterResult, EKSError> DeleteClusterOutcome;
 typedef Aws::Utils::Outcome<DeleteEksAnywhereSubscriptionResult, EKSError> DeleteEksAnywhereSubscriptionOutcome;
 typedef Aws::Utils::Outcome<DeleteFargateProfileResult, EKSError> DeleteFargateProfileOutcome;
@@ -216,6 +229,7 @@ typedef Aws::Utils::Outcome<DescribeAddonResult, EKSError> DescribeAddonOutcome;
 typedef Aws::Utils::Outcome<DescribeAddonConfigurationResult, EKSError> DescribeAddonConfigurationOutcome;
 typedef Aws::Utils::Outcome<DescribeAddonVersionsResult, EKSError> DescribeAddonVersionsOutcome;
 typedef Aws::Utils::Outcome<DescribeCapabilityResult, EKSError> DescribeCapabilityOutcome;
+typedef Aws::Utils::Outcome<DescribeCertificateAuthorityResult, EKSError> DescribeCertificateAuthorityOutcome;
 typedef Aws::Utils::Outcome<DescribeClusterResult, EKSError> DescribeClusterOutcome;
 typedef Aws::Utils::Outcome<DescribeClusterVersionsResult, EKSError> DescribeClusterVersionsOutcome;
 typedef Aws::Utils::Outcome<DescribeEksAnywhereSubscriptionResult, EKSError> DescribeEksAnywhereSubscriptionOutcome;
@@ -233,6 +247,7 @@ typedef Aws::Utils::Outcome<ListAccessPoliciesResult, EKSError> ListAccessPolici
 typedef Aws::Utils::Outcome<ListAddonsResult, EKSError> ListAddonsOutcome;
 typedef Aws::Utils::Outcome<ListAssociatedAccessPoliciesResult, EKSError> ListAssociatedAccessPoliciesOutcome;
 typedef Aws::Utils::Outcome<ListCapabilitiesResult, EKSError> ListCapabilitiesOutcome;
+typedef Aws::Utils::Outcome<ListCertificateAuthoritiesResult, EKSError> ListCertificateAuthoritiesOutcome;
 typedef Aws::Utils::Outcome<ListClustersResult, EKSError> ListClustersOutcome;
 typedef Aws::Utils::Outcome<ListEksAnywhereSubscriptionsResult, EKSError> ListEksAnywhereSubscriptionsOutcome;
 typedef Aws::Utils::Outcome<ListFargateProfilesResult, EKSError> ListFargateProfilesOutcome;
@@ -258,6 +273,7 @@ typedef Aws::Utils::Outcome<UpdatePodIdentityAssociationResult, EKSError> Update
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
+typedef std::future<ActivateCertificateAuthorityOutcome> ActivateCertificateAuthorityOutcomeCallable;
 typedef std::future<AssociateAccessPolicyOutcome> AssociateAccessPolicyOutcomeCallable;
 typedef std::future<AssociateEncryptionConfigOutcome> AssociateEncryptionConfigOutcomeCallable;
 typedef std::future<AssociateIdentityProviderConfigOutcome> AssociateIdentityProviderConfigOutcomeCallable;
@@ -265,6 +281,7 @@ typedef std::future<CancelUpdateOutcome> CancelUpdateOutcomeCallable;
 typedef std::future<CreateAccessEntryOutcome> CreateAccessEntryOutcomeCallable;
 typedef std::future<CreateAddonOutcome> CreateAddonOutcomeCallable;
 typedef std::future<CreateCapabilityOutcome> CreateCapabilityOutcomeCallable;
+typedef std::future<CreateCertificateAuthorityOutcome> CreateCertificateAuthorityOutcomeCallable;
 typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
 typedef std::future<CreateEksAnywhereSubscriptionOutcome> CreateEksAnywhereSubscriptionOutcomeCallable;
 typedef std::future<CreateFargateProfileOutcome> CreateFargateProfileOutcomeCallable;
@@ -273,6 +290,7 @@ typedef std::future<CreatePodIdentityAssociationOutcome> CreatePodIdentityAssoci
 typedef std::future<DeleteAccessEntryOutcome> DeleteAccessEntryOutcomeCallable;
 typedef std::future<DeleteAddonOutcome> DeleteAddonOutcomeCallable;
 typedef std::future<DeleteCapabilityOutcome> DeleteCapabilityOutcomeCallable;
+typedef std::future<DeleteCertificateAuthorityOutcome> DeleteCertificateAuthorityOutcomeCallable;
 typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
 typedef std::future<DeleteEksAnywhereSubscriptionOutcome> DeleteEksAnywhereSubscriptionOutcomeCallable;
 typedef std::future<DeleteFargateProfileOutcome> DeleteFargateProfileOutcomeCallable;
@@ -284,6 +302,7 @@ typedef std::future<DescribeAddonOutcome> DescribeAddonOutcomeCallable;
 typedef std::future<DescribeAddonConfigurationOutcome> DescribeAddonConfigurationOutcomeCallable;
 typedef std::future<DescribeAddonVersionsOutcome> DescribeAddonVersionsOutcomeCallable;
 typedef std::future<DescribeCapabilityOutcome> DescribeCapabilityOutcomeCallable;
+typedef std::future<DescribeCertificateAuthorityOutcome> DescribeCertificateAuthorityOutcomeCallable;
 typedef std::future<DescribeClusterOutcome> DescribeClusterOutcomeCallable;
 typedef std::future<DescribeClusterVersionsOutcome> DescribeClusterVersionsOutcomeCallable;
 typedef std::future<DescribeEksAnywhereSubscriptionOutcome> DescribeEksAnywhereSubscriptionOutcomeCallable;
@@ -301,6 +320,7 @@ typedef std::future<ListAccessPoliciesOutcome> ListAccessPoliciesOutcomeCallable
 typedef std::future<ListAddonsOutcome> ListAddonsOutcomeCallable;
 typedef std::future<ListAssociatedAccessPoliciesOutcome> ListAssociatedAccessPoliciesOutcomeCallable;
 typedef std::future<ListCapabilitiesOutcome> ListCapabilitiesOutcomeCallable;
+typedef std::future<ListCertificateAuthoritiesOutcome> ListCertificateAuthoritiesOutcomeCallable;
 typedef std::future<ListClustersOutcome> ListClustersOutcomeCallable;
 typedef std::future<ListEksAnywhereSubscriptionsOutcome> ListEksAnywhereSubscriptionsOutcomeCallable;
 typedef std::future<ListFargateProfilesOutcome> ListFargateProfilesOutcomeCallable;
@@ -329,6 +349,10 @@ typedef std::future<UpdatePodIdentityAssociationOutcome> UpdatePodIdentityAssoci
 class EKSClient;
 
 /* Service model async handlers definitions */
+typedef std::function<void(const EKSClient*, const Model::ActivateCertificateAuthorityRequest&,
+                           const Model::ActivateCertificateAuthorityOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ActivateCertificateAuthorityResponseReceivedHandler;
 typedef std::function<void(const EKSClient*, const Model::AssociateAccessPolicyRequest&, const Model::AssociateAccessPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AssociateAccessPolicyResponseReceivedHandler;
@@ -351,6 +375,9 @@ typedef std::function<void(const EKSClient*, const Model::CreateAddonRequest&, c
 typedef std::function<void(const EKSClient*, const Model::CreateCapabilityRequest&, const Model::CreateCapabilityOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateCapabilityResponseReceivedHandler;
+typedef std::function<void(const EKSClient*, const Model::CreateCertificateAuthorityRequest&,
+                           const Model::CreateCertificateAuthorityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateCertificateAuthorityResponseReceivedHandler;
 typedef std::function<void(const EKSClient*, const Model::CreateClusterRequest&, const Model::CreateClusterOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateClusterResponseReceivedHandler;
@@ -377,6 +404,9 @@ typedef std::function<void(const EKSClient*, const Model::DeleteAddonRequest&, c
 typedef std::function<void(const EKSClient*, const Model::DeleteCapabilityRequest&, const Model::DeleteCapabilityOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteCapabilityResponseReceivedHandler;
+typedef std::function<void(const EKSClient*, const Model::DeleteCertificateAuthorityRequest&,
+                           const Model::DeleteCertificateAuthorityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteCertificateAuthorityResponseReceivedHandler;
 typedef std::function<void(const EKSClient*, const Model::DeleteClusterRequest&, const Model::DeleteClusterOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteClusterResponseReceivedHandler;
@@ -412,6 +442,10 @@ typedef std::function<void(const EKSClient*, const Model::DescribeAddonVersionsR
 typedef std::function<void(const EKSClient*, const Model::DescribeCapabilityRequest&, const Model::DescribeCapabilityOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeCapabilityResponseReceivedHandler;
+typedef std::function<void(const EKSClient*, const Model::DescribeCertificateAuthorityRequest&,
+                           const Model::DescribeCertificateAuthorityOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeCertificateAuthorityResponseReceivedHandler;
 typedef std::function<void(const EKSClient*, const Model::DescribeClusterRequest&, const Model::DescribeClusterOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeClusterResponseReceivedHandler;
@@ -468,6 +502,9 @@ typedef std::function<void(const EKSClient*, const Model::ListAssociatedAccessPo
 typedef std::function<void(const EKSClient*, const Model::ListCapabilitiesRequest&, const Model::ListCapabilitiesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListCapabilitiesResponseReceivedHandler;
+typedef std::function<void(const EKSClient*, const Model::ListCertificateAuthoritiesRequest&,
+                           const Model::ListCertificateAuthoritiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListCertificateAuthoritiesResponseReceivedHandler;
 typedef std::function<void(const EKSClient*, const Model::ListClustersRequest&, const Model::ListClustersOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListClustersResponseReceivedHandler;

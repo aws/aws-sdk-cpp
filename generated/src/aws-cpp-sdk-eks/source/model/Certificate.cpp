@@ -22,6 +22,10 @@ Certificate& Certificate::operator=(JsonView jsonValue) {
     m_data = jsonValue.GetString("data");
     m_dataHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("active")) {
+    m_active = jsonValue.GetObject("active");
+    m_activeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue Certificate::Jsonize() const {
 
   if (m_dataHasBeenSet) {
     payload.WithString("data", m_data);
+  }
+
+  if (m_activeHasBeenSet) {
+    payload.WithObject("active", m_active.Jsonize());
   }
 
   return payload;

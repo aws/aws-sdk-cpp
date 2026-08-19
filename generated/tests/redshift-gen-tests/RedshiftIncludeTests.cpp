@@ -317,6 +317,7 @@
 #include <aws/redshift/model/ListRecommendationsRequest.h>
 #include <aws/redshift/model/ListRecommendationsResult.h>
 #include <aws/redshift/model/LogDestinationType.h>
+#include <aws/redshift/model/LoggingPublishStatus.h>
 #include <aws/redshift/model/MaintenanceTrack.h>
 #include <aws/redshift/model/Mode.h>
 #include <aws/redshift/model/ModifyAquaConfigurationRequest.h>
@@ -429,6 +430,7 @@
 #include <aws/redshift/model/RotateEncryptionKeyRequest.h>
 #include <aws/redshift/model/RotateEncryptionKeyResult.h>
 #include <aws/redshift/model/S3AccessGrantsScopeUnion.h>
+#include <aws/redshift/model/S3TablePublishStatus.h>
 #include <aws/redshift/model/ScheduleState.h>
 #include <aws/redshift/model/ScheduledAction.h>
 #include <aws/redshift/model/ScheduledActionFilter.h>

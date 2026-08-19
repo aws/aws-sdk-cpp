@@ -8,6 +8,7 @@
 #include <aws/bedrock-agentcore-control/model/IndexedKey.h>
 #include <aws/bedrock-agentcore-control/model/MemoryStatus.h>
 #include <aws/bedrock-agentcore-control/model/MemoryStrategy.h>
+#include <aws/bedrock-agentcore-control/model/NamespaceKeyEntry.h>
 #include <aws/bedrock-agentcore-control/model/StreamDeliveryResources.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -282,6 +283,32 @@ class Memory {
 
   ///@{
   /**
+   * <p>The namespace variable key definitions for this memory. Namespace keys define
+   * custom variables used in <code>namespaceTemplates</code> with optional
+   * validation rules.</p>
+   */
+  inline const Aws::Vector<NamespaceKeyEntry>& GetNamespaceKeys() const { return m_namespaceKeys; }
+  inline bool NamespaceKeysHasBeenSet() const { return m_namespaceKeysHasBeenSet; }
+  template <typename NamespaceKeysT = Aws::Vector<NamespaceKeyEntry>>
+  void SetNamespaceKeys(NamespaceKeysT&& value) {
+    m_namespaceKeysHasBeenSet = true;
+    m_namespaceKeys = std::forward<NamespaceKeysT>(value);
+  }
+  template <typename NamespaceKeysT = Aws::Vector<NamespaceKeyEntry>>
+  Memory& WithNamespaceKeys(NamespaceKeysT&& value) {
+    SetNamespaceKeys(std::forward<NamespaceKeysT>(value));
+    return *this;
+  }
+  template <typename NamespaceKeysT = NamespaceKeyEntry>
+  Memory& AddNamespaceKeys(NamespaceKeysT&& value) {
+    m_namespaceKeysHasBeenSet = true;
+    m_namespaceKeys.emplace_back(std::forward<NamespaceKeysT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Configuration for streaming memory record data to external resources.</p>
    */
   inline const StreamDeliveryResources& GetStreamDeliveryResources() const { return m_streamDeliveryResources; }
@@ -343,6 +370,8 @@ class Memory {
 
   Aws::Vector<IndexedKey> m_indexedKeys;
 
+  Aws::Vector<NamespaceKeyEntry> m_namespaceKeys;
+
   StreamDeliveryResources m_streamDeliveryResources;
 
   Aws::String m_managedByResourceArn;
@@ -359,6 +388,7 @@ class Memory {
   bool m_updatedAtHasBeenSet = false;
   bool m_strategiesHasBeenSet = false;
   bool m_indexedKeysHasBeenSet = false;
+  bool m_namespaceKeysHasBeenSet = false;
   bool m_streamDeliveryResourcesHasBeenSet = false;
   bool m_managedByResourceArnHasBeenSet = false;
 };

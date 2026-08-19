@@ -30,7 +30,9 @@ class DeleteGatewayRateLimitResult {
       const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   ///@{
-
+  /**
+   * <p>The unique identifier of the deleted rate limit.</p>
+   */
   inline const Aws::String& GetRateLimitId() const { return m_rateLimitId; }
   template <typename RateLimitIdT = Aws::String>
   void SetRateLimitId(RateLimitIdT&& value) {
@@ -45,7 +47,9 @@ class DeleteGatewayRateLimitResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The current status of the rate limit deletion.</p>
+   */
   inline GatewayRateLimitStatus GetStatus() const { return m_status; }
   inline void SetStatus(GatewayRateLimitStatus value) {
     m_statusHasBeenSet = true;

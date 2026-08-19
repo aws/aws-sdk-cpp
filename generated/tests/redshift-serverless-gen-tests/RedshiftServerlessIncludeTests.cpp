@@ -137,6 +137,7 @@
 #include <aws/redshift-serverless/model/ListWorkgroupsPaginationTraits.h>
 #include <aws/redshift-serverless/model/ListWorkgroupsRequest.h>
 #include <aws/redshift-serverless/model/ListWorkgroupsResult.h>
+#include <aws/redshift-serverless/model/LogDestinationType.h>
 #include <aws/redshift-serverless/model/LogExport.h>
 #include <aws/redshift-serverless/model/ManagedWorkgroupListItem.h>
 #include <aws/redshift-serverless/model/ManagedWorkgroupStatus.h>
@@ -161,6 +162,9 @@
 #include <aws/redshift-serverless/model/RestoreTableFromRecoveryPointResult.h>
 #include <aws/redshift-serverless/model/RestoreTableFromSnapshotRequest.h>
 #include <aws/redshift-serverless/model/RestoreTableFromSnapshotResult.h>
+#include <aws/redshift-serverless/model/S3TableAction.h>
+#include <aws/redshift-serverless/model/S3TableGranularity.h>
+#include <aws/redshift-serverless/model/S3TablePublishStatus.h>
 #include <aws/redshift-serverless/model/Schedule.h>
 #include <aws/redshift-serverless/model/ScheduledActionAssociation.h>
 #include <aws/redshift-serverless/model/ScheduledActionResponse.h>

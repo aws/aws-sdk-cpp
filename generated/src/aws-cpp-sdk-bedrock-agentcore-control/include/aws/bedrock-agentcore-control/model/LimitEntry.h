@@ -23,8 +23,9 @@ namespace BedrockAgentCoreControl {
 namespace Model {
 
 /**
- * <p>A single rule entry within a limit, mapping dimension values to rate
- * configurations</p><p><h3>See Also:</h3>   <a
+ * <p>A single rule entry within a rate limit that maps dimension values to rate
+ * configurations. Each entry defines the rate limits for a specific combination of
+ * dimension values.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/LimitEntry">AWS
  * API Reference</a></p>
  */
@@ -37,10 +38,10 @@ class LimitEntry {
 
   ///@{
   /**
-   * <p>Map of dimension name to dimension value, matching the parent limit's
-   * dimensionKeys. Keys must exactly match the dimensionKeys. Values may be
-   * &quot;<em>&quot; as a wildcard. &quot;</em>&quot; may only appear at trailing
-   * positions (based on dimensionKeys ordering).</p>
+   * <p>A map of dimension names to dimension values for this rule entry. Keys must
+   * match the parent rate limit's dimension keys. Values may use <code>*</code> as a
+   * wildcard, but only in trailing positions based on the dimension keys
+   * ordering.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetDimensions() const { return m_dimensions; }
   inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
@@ -64,7 +65,8 @@ class LimitEntry {
 
   ///@{
   /**
-   * <p>Request rate limits (RPS or RPM). Limited to 1 entry for now.</p>
+   * <p>The request rate limit configuration. Specifies the maximum number of
+   * requests allowed per time period.</p>
    */
   inline const Aws::Vector<RateConfig>& GetRequests() const { return m_requests; }
   inline bool RequestsHasBeenSet() const { return m_requestsHasBeenSet; }
@@ -88,7 +90,8 @@ class LimitEntry {
 
   ///@{
   /**
-   * <p>Token rate limits (TPM). Limited to 1 entry for now. — P1</p>
+   * <p>The token rate limit configuration. Specifies the maximum number of tokens
+   * allowed per time period.</p>
    */
   inline const Aws::Vector<RateConfig>& GetTokens() const { return m_tokens; }
   inline bool TokensHasBeenSet() const { return m_tokensHasBeenSet; }
@@ -112,8 +115,8 @@ class LimitEntry {
 
   ///@{
   /**
-   * <p>Connection rate limits (per second only). Limited to 1 entry for now. —
-   * P2</p>
+   * <p>The connection rate limit configuration. Specifies the maximum number of
+   * concurrent connections allowed.</p>
    */
   inline const Aws::Vector<RateConfig>& GetConnections() const { return m_connections; }
   inline bool ConnectionsHasBeenSet() const { return m_connectionsHasBeenSet; }

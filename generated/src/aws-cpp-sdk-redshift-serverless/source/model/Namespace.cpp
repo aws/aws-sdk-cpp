@@ -80,6 +80,10 @@ Namespace& Namespace::operator=(JsonView jsonValue) {
     m_namespaceName = jsonValue.GetString("namespaceName");
     m_namespaceNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("s3TablePublishStatus")) {
+    m_s3TablePublishStatus = jsonValue.GetObject("s3TablePublishStatus");
+    m_s3TablePublishStatusHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("status")) {
     m_status = NamespaceStatusMapper::GetNamespaceStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
@@ -152,6 +156,10 @@ JsonValue Namespace::Jsonize() const {
 
   if (m_namespaceNameHasBeenSet) {
     payload.WithString("namespaceName", m_namespaceName);
+  }
+
+  if (m_s3TablePublishStatusHasBeenSet) {
+    payload.WithObject("s3TablePublishStatus", m_s3TablePublishStatus.Jsonize());
   }
 
   if (m_statusHasBeenSet) {

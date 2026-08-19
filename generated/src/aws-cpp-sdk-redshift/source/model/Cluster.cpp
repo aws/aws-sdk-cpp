@@ -404,6 +404,11 @@ Cluster& Cluster::operator=(const XmlNode& xmlNode) {
       m_extraComputeForAutomaticOptimization = Aws::Utils::Xml::DecodeEscapedXmlText(extraComputeForAutomaticOptimizationNode.GetText());
       m_extraComputeForAutomaticOptimizationHasBeenSet = true;
     }
+    XmlNode loggingPublishStatusNode = resultNode.FirstChild("LoggingPublishStatus");
+    if (!loggingPublishStatusNode.IsNull()) {
+      m_loggingPublishStatus = loggingPublishStatusNode;
+      m_loggingPublishStatusHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -748,6 +753,12 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
     oStream << location << index << locationValue
             << ".ExtraComputeForAutomaticOptimization=" << StringUtils::URLEncode(m_extraComputeForAutomaticOptimization.c_str()) << "&";
   }
+
+  if (m_loggingPublishStatusHasBeenSet) {
+    Aws::StringStream loggingPublishStatusLocationAndMemberSs;
+    loggingPublishStatusLocationAndMemberSs << location << index << locationValue << ".LoggingPublishStatus";
+    m_loggingPublishStatus.OutputToStream(oStream, loggingPublishStatusLocationAndMemberSs.str().c_str());
+  }
 }
 
 void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -1012,6 +1023,11 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const 
   if (m_extraComputeForAutomaticOptimizationHasBeenSet) {
     oStream << location
             << ".ExtraComputeForAutomaticOptimization=" << StringUtils::URLEncode(m_extraComputeForAutomaticOptimization.c_str()) << "&";
+  }
+  if (m_loggingPublishStatusHasBeenSet) {
+    Aws::String loggingPublishStatusLocationAndMember(location);
+    loggingPublishStatusLocationAndMember += ".LoggingPublishStatus";
+    m_loggingPublishStatus.OutputToStream(oStream, loggingPublishStatusLocationAndMember.c_str());
   }
 }
 

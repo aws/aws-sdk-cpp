@@ -55,5 +55,9 @@ Aws::String CreateEventRequest::SerializePayload() const {
     payload.WithString("extractionMode", ExtractionModeMapper::GetNameForExtractionMode(m_extractionMode));
   }
 
+  if (m_extractionConfigHasBeenSet) {
+    payload.WithObject("extractionConfig", m_extractionConfig.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

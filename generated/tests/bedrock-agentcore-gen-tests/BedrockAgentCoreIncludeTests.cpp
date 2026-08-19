@@ -142,6 +142,7 @@
 #include <aws/bedrock-agentcore/model/ExecutionSummaryCluster.h>
 #include <aws/bedrock-agentcore/model/ExecutionSummaryClusteringResultContent.h>
 #include <aws/bedrock-agentcore/model/ExternalProxy.h>
+#include <aws/bedrock-agentcore/model/ExtractionConfig.h>
 #include <aws/bedrock-agentcore/model/ExtractionJob.h>
 #include <aws/bedrock-agentcore/model/ExtractionJobFilterInput.h>
 #include <aws/bedrock-agentcore/model/ExtractionJobMessages.h>
@@ -313,6 +314,7 @@
 #include <aws/bedrock-agentcore/model/LiveViewStream.h>
 #include <aws/bedrock-agentcore/model/McpDescriptor.h>
 #include <aws/bedrock-agentcore/model/MemoryContent.h>
+#include <aws/bedrock-agentcore/model/MemoryJsonData.h>
 #include <aws/bedrock-agentcore/model/MemoryMetadataFilterExpression.h>
 #include <aws/bedrock-agentcore/model/MemoryRecord.h>
 #include <aws/bedrock-agentcore/model/MemoryRecordCreateInput.h>

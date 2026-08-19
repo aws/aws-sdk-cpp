@@ -23,10 +23,8 @@ namespace BedrockAgentCoreControl {
 namespace Model {
 
 /**
- * <p>Configuration for private_key_jwt client authentication (RFC 7523). On
- * Create: privateKeySource and signingAlgorithm are required (enforced
- * server-side). On Update: all fields are optional — only provided fields are
- * updated.</p><p><h3>See Also:</h3>   <a
+ * <p>The private key configuration for private_key_jwt client
+ * authentication.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/PrivateKeyJwtConfig">AWS
  * API Reference</a></p>
  */

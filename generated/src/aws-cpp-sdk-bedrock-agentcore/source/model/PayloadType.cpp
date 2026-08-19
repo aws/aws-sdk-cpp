@@ -26,6 +26,10 @@ PayloadType& PayloadType::operator=(JsonView jsonValue) {
     m_blob = jsonValue.GetObject("blob");
     m_blobHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("json")) {
+    m_json = jsonValue.GetObject("json");
+    m_jsonHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +44,10 @@ JsonValue PayloadType::Jsonize() const {
     if (!m_blob.View().IsNull()) {
       payload.WithObject("blob", JsonValue(m_blob.View()));
     }
+  }
+
+  if (m_jsonHasBeenSet) {
+    payload.WithObject("json", m_json.Jsonize());
   }
 
   return payload;

@@ -8,6 +8,7 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/IndexedKey.h>
 #include <aws/bedrock-agentcore-control/model/ModifyMemoryStrategies.h>
+#include <aws/bedrock-agentcore-control/model/NamespaceKeyEntry.h>
 #include <aws/bedrock-agentcore-control/model/StreamDeliveryResources.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -170,6 +171,32 @@ class UpdateMemoryRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
+   * <p>The namespace variable key definitions with validation rules for this memory.
+   * Use this parameter to update existing <code>namespaceKey</code> validation rules
+   * or add new keys when namespace templates change.</p>
+   */
+  inline const Aws::Vector<NamespaceKeyEntry>& GetNamespaceKeys() const { return m_namespaceKeys; }
+  inline bool NamespaceKeysHasBeenSet() const { return m_namespaceKeysHasBeenSet; }
+  template <typename NamespaceKeysT = Aws::Vector<NamespaceKeyEntry>>
+  void SetNamespaceKeys(NamespaceKeysT&& value) {
+    m_namespaceKeysHasBeenSet = true;
+    m_namespaceKeys = std::forward<NamespaceKeysT>(value);
+  }
+  template <typename NamespaceKeysT = Aws::Vector<NamespaceKeyEntry>>
+  UpdateMemoryRequest& WithNamespaceKeys(NamespaceKeysT&& value) {
+    SetNamespaceKeys(std::forward<NamespaceKeysT>(value));
+    return *this;
+  }
+  template <typename NamespaceKeysT = NamespaceKeyEntry>
+  UpdateMemoryRequest& AddNamespaceKeys(NamespaceKeysT&& value) {
+    m_namespaceKeysHasBeenSet = true;
+    m_namespaceKeys.emplace_back(std::forward<NamespaceKeysT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Configuration for streaming memory record data to external resources.</p>
    */
   inline const StreamDeliveryResources& GetStreamDeliveryResources() const { return m_streamDeliveryResources; }
@@ -200,6 +227,8 @@ class UpdateMemoryRequest : public BedrockAgentCoreControlRequest {
 
   Aws::Vector<IndexedKey> m_addIndexedKeys;
 
+  Aws::Vector<NamespaceKeyEntry> m_namespaceKeys;
+
   StreamDeliveryResources m_streamDeliveryResources;
   bool m_clientTokenHasBeenSet = true;
   bool m_memoryIdHasBeenSet = false;
@@ -208,6 +237,7 @@ class UpdateMemoryRequest : public BedrockAgentCoreControlRequest {
   bool m_memoryExecutionRoleArnHasBeenSet = false;
   bool m_memoryStrategiesHasBeenSet = false;
   bool m_addIndexedKeysHasBeenSet = false;
+  bool m_namespaceKeysHasBeenSet = false;
   bool m_streamDeliveryResourcesHasBeenSet = false;
 };
 

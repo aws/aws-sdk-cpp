@@ -44,6 +44,7 @@
 #include <aws/batch/model/ConsumableResourceRequirement.h>
 #include <aws/batch/model/ConsumableResourceSummary.h>
 #include <aws/batch/model/ContainerDetail.h>
+#include <aws/batch/model/ContainerInsights.h>
 #include <aws/batch/model/ContainerOverrides.h>
 #include <aws/batch/model/ContainerProperties.h>
 #include <aws/batch/model/ContainerSummary.h>
@@ -105,6 +106,7 @@
 #include <aws/batch/model/EcsProperties.h>
 #include <aws/batch/model/EcsPropertiesDetail.h>
 #include <aws/batch/model/EcsPropertiesOverride.h>
+#include <aws/batch/model/EcsSettings.h>
 #include <aws/batch/model/EcsTaskDetails.h>
 #include <aws/batch/model/EcsTaskProperties.h>
 #include <aws/batch/model/EksAttemptContainerDetail.h>

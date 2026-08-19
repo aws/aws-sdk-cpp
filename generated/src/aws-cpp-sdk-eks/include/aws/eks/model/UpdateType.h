@@ -32,7 +32,8 @@ enum class UpdateType {
   VendedLogsUpdate,
   ControlPlaneEgressUpdate,
   VersionRollback,
-  ControlPlaneComponentConfigUpdate
+  ControlPlaneComponentConfigUpdate,
+  CertificateAuthorityUpdate
 };
 
 namespace UpdateTypeMapper {

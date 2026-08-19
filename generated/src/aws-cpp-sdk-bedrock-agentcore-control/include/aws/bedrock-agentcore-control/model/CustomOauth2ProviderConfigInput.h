@@ -172,7 +172,11 @@ class CustomOauth2ProviderConfigInput {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The private_key_jwt client authentication configuration for this credential
+   * provider. When specified, the credential provider uses JWT client assertions to
+   * authenticate with the token endpoint.</p>
+   */
   inline const PrivateKeyJwtConfig& GetPrivateKeyJwtConfig() const { return m_privateKeyJwtConfig; }
   inline bool PrivateKeyJwtConfigHasBeenSet() const { return m_privateKeyJwtConfigHasBeenSet; }
   template <typename PrivateKeyJwtConfigT = PrivateKeyJwtConfig>

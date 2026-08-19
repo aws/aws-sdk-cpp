@@ -118,6 +118,31 @@ class MemoryRecordUpdateInput {
 
   ///@{
   /**
+   * <p>The namespaces of the source memory record being updated. This value is used
+   * for IAM condition key authorization.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetSourceNamespaces() const { return m_sourceNamespaces; }
+  inline bool SourceNamespacesHasBeenSet() const { return m_sourceNamespacesHasBeenSet; }
+  template <typename SourceNamespacesT = Aws::Vector<Aws::String>>
+  void SetSourceNamespaces(SourceNamespacesT&& value) {
+    m_sourceNamespacesHasBeenSet = true;
+    m_sourceNamespaces = std::forward<SourceNamespacesT>(value);
+  }
+  template <typename SourceNamespacesT = Aws::Vector<Aws::String>>
+  MemoryRecordUpdateInput& WithSourceNamespaces(SourceNamespacesT&& value) {
+    SetSourceNamespaces(std::forward<SourceNamespacesT>(value));
+    return *this;
+  }
+  template <typename SourceNamespacesT = Aws::String>
+  MemoryRecordUpdateInput& AddSourceNamespaces(SourceNamespacesT&& value) {
+    m_sourceNamespacesHasBeenSet = true;
+    m_sourceNamespaces.emplace_back(std::forward<SourceNamespacesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The updated ID of the memory strategy that defines how this memory record is
    * grouped.</p>
    */
@@ -167,6 +192,8 @@ class MemoryRecordUpdateInput {
 
   Aws::Vector<Aws::String> m_namespaces;
 
+  Aws::Vector<Aws::String> m_sourceNamespaces;
+
   Aws::String m_memoryStrategyId;
 
   Aws::Map<Aws::String, MemoryRecordMetadataValue> m_metadata;
@@ -174,6 +201,7 @@ class MemoryRecordUpdateInput {
   bool m_timestampHasBeenSet = false;
   bool m_contentHasBeenSet = false;
   bool m_namespacesHasBeenSet = false;
+  bool m_sourceNamespacesHasBeenSet = false;
   bool m_memoryStrategyIdHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
 };

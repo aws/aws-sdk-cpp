@@ -17,6 +17,23 @@ Aws::String DisableLoggingRequest::SerializePayload() const {
     ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
   }
 
+  if (m_logDestinationTypeHasBeenSet) {
+    ss << "LogDestinationType=" << StringUtils::URLEncode(LogDestinationTypeMapper::GetNameForLogDestinationType(m_logDestinationType))
+       << "&";
+  }
+
+  if (m_logExportsHasBeenSet) {
+    if (m_logExports.empty()) {
+      ss << "LogExports=&";
+    } else {
+      unsigned logExportsCount = 1;
+      for (auto& item : m_logExports) {
+        ss << "LogExports.member." << logExportsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        logExportsCount++;
+      }
+    }
+  }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

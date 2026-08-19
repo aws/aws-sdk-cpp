@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/eks/EKS_EXPORTS.h>
+#include <aws/eks/model/ActiveCertificateAuthority.h>
 
 #include <utility>
 
@@ -51,9 +52,31 @@ class Certificate {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An object identifying the certificate authority that is currently signing
+   * certificates for the cluster.</p>
+   */
+  inline const ActiveCertificateAuthority& GetActive() const { return m_active; }
+  inline bool ActiveHasBeenSet() const { return m_activeHasBeenSet; }
+  template <typename ActiveT = ActiveCertificateAuthority>
+  void SetActive(ActiveT&& value) {
+    m_activeHasBeenSet = true;
+    m_active = std::forward<ActiveT>(value);
+  }
+  template <typename ActiveT = ActiveCertificateAuthority>
+  Certificate& WithActive(ActiveT&& value) {
+    SetActive(std::forward<ActiveT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_data;
+
+  ActiveCertificateAuthority m_active;
   bool m_dataHasBeenSet = false;
+  bool m_activeHasBeenSet = false;
 };
 
 }  // namespace Model

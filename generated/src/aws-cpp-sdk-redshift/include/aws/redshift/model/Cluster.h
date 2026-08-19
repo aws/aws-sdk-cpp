@@ -20,6 +20,7 @@
 #include <aws/redshift/model/ElasticIpStatus.h>
 #include <aws/redshift/model/Endpoint.h>
 #include <aws/redshift/model/HsmStatus.h>
+#include <aws/redshift/model/LoggingPublishStatus.h>
 #include <aws/redshift/model/PendingModifiedValues.h>
 #include <aws/redshift/model/ReservedNodeExchangeStatus.h>
 #include <aws/redshift/model/ResizeInfo.h>
@@ -1295,6 +1296,25 @@ class Cluster {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The status of system table publishing for the cluster. This field is present
+   * only when system table publishing is configured.</p>
+   */
+  inline const LoggingPublishStatus& GetLoggingPublishStatus() const { return m_loggingPublishStatus; }
+  inline bool LoggingPublishStatusHasBeenSet() const { return m_loggingPublishStatusHasBeenSet; }
+  template <typename LoggingPublishStatusT = LoggingPublishStatus>
+  void SetLoggingPublishStatus(LoggingPublishStatusT&& value) {
+    m_loggingPublishStatusHasBeenSet = true;
+    m_loggingPublishStatus = std::forward<LoggingPublishStatusT>(value);
+  }
+  template <typename LoggingPublishStatusT = LoggingPublishStatus>
+  Cluster& WithLoggingPublishStatus(LoggingPublishStatusT&& value) {
+    SetLoggingPublishStatus(std::forward<LoggingPublishStatusT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clusterIdentifier;
 
@@ -1421,6 +1441,8 @@ class Cluster {
   Aws::String m_catalogArn;
 
   Aws::String m_extraComputeForAutomaticOptimization;
+
+  LoggingPublishStatus m_loggingPublishStatus;
   bool m_clusterIdentifierHasBeenSet = false;
   bool m_nodeTypeHasBeenSet = false;
   bool m_clusterStatusHasBeenSet = false;
@@ -1484,6 +1506,7 @@ class Cluster {
   bool m_lakehouseRegistrationStatusHasBeenSet = false;
   bool m_catalogArnHasBeenSet = false;
   bool m_extraComputeForAutomaticOptimizationHasBeenSet = false;
+  bool m_loggingPublishStatusHasBeenSet = false;
 };
 
 }  // namespace Model

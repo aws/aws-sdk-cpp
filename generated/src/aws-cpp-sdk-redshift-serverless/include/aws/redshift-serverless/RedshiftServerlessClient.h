@@ -1741,7 +1741,10 @@ class AWS_REDSHIFTSERVERLESS_API RedshiftServerlessClient : public Aws::Client::
    * update multiple parameters in one request. For example, you must specify both
    * <code>adminUsername</code> and <code>adminUserPassword</code> to update either
    * field, but you can't update both <code>kmsKeyId</code> and
-   * <code>logExports</code> in a single request.</p><p><h3>See Also:</h3>   <a
+   * <code>logExports</code> in a single request.</p> <p>Similarly, an S3 Tables
+   * log-publishing update (a request where <code>logDestinationType</code> is
+   * <code>s3table</code>) cannot be combined with any other namespace configuration
+   * change and must be submitted as its own request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateNamespace">AWS
    * API Reference</a></p>
    */
