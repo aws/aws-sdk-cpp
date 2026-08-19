@@ -6,7 +6,13 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator;
 import com.amazonaws.util.awsclientsmithygenerator.generators.ServiceNameUtil;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.ApiGatewayTransforms;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.ApiGatewayV2Transforms;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.Ec2Transforms;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.GlobalTransforms;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.LambdaTransforms;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.SourceRegionTransform;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.SqsTransforms;
 import software.amazon.smithy.build.PluginContext;
 import software.amazon.smithy.build.SmithyBuildPlugin;
 import software.amazon.smithy.model.Model;
@@ -42,8 +48,14 @@ public class ModelCodegenPlugin implements SmithyBuildPlugin {
 
         // Build transform pipeline (service-level transforms will be registered here)
         TransformPipeline pipeline = new TransformPipeline(List.of(
-            GlobalTransforms.asTransform()
-            // Future: S3Transforms.asTransform(), Ec2Transforms.asTransform(), etc.
+            GlobalTransforms.asTransform(),
+            SourceRegionTransform.asTransform(),
+            LambdaTransforms.asTransform(),
+            SqsTransforms.asTransform(),
+            ApiGatewayTransforms.asTransform(),
+            ApiGatewayV2Transforms.asTransform(),
+            Ec2Transforms.asTransform()
+            // Future: S3Transforms.asTransform(), etc.
         ));
 
         CppWriterDelegator writerDelegator = new CppWriterDelegator(context.getFileManifest());
