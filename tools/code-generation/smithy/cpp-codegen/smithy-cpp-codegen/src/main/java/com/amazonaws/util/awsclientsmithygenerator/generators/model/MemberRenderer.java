@@ -7,13 +7,16 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model;
 import static com.amazonaws.util.awsclientsmithygenerator.generators.model.CppTypeMapper.isPrimitive;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.GlobalTransforms;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.ListShape;
 import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.Shape;
 import software.amazon.smithy.model.traits.DocumentationTrait;
+import software.amazon.smithy.model.traits.HttpPayloadTrait;
 import software.amazon.smithy.model.traits.IdempotencyTokenTrait;
 import software.amazon.smithy.model.traits.SparseTrait;
+import software.amazon.smithy.model.traits.StreamingTrait;
 
 import java.util.Map;
 
@@ -102,7 +105,12 @@ public final class MemberRenderer {
                 writer.write("inline const $L& Get$L() const { return $L; }", cppType, methodName, fieldName);
             }
 
-            if (emitHasBeenSet) {
+            // The framework-injected ResponseMetadata envelope is always present, so — like C2J —
+            // it gets no HasBeenSet getter (and its flag is initialized true, below). Every other
+            // member, including modeled @required ones, tracks presence via HasBeenSet, matching
+            // C2J's mass-clear of required-ness. `emitHasBeenSet` is the useRequiredField context
+            // (true for sub-objects/requests, false for results).
+            if (emitHasBeenSet && !isInjectedResponseMetadata(member)) {
                 writer.write("inline bool $LHasBeenSet() const { return $LHasBeenSet; }", methodName, fieldName);
             }
 
@@ -255,10 +263,25 @@ public final class MemberRenderer {
      * {@code m_requestId} field and its {@code HasBeenSet} flag in the private section.
      */
     public static void renderRequestIdAccessors(CppWriter writer, String className) {
+        renderRequestIdAccessors(writer, className, false);
+    }
+
+    /**
+     * Renders the top-level {@code RequestId} accessor group. When {@code withHasBeenSetGetter} is
+     * {@code true}, the {@code inline bool RequestIdHasBeenSet() const} getter is emitted after the
+     * {@code GetRequestId} getter — the MODEL-class variant C2J stamps onto an operation-output
+     * shape that is also referenced as a member (dual-role sub-object). Result classes pass
+     * {@code false} (no {@code HasBeenSet} getter), matching {@link #forResult}.
+     */
+    public static void renderRequestIdAccessors(CppWriter writer, String className,
+                                                boolean withHasBeenSetGetter) {
         writer.write("");
         writer.write("///@{");
         writer.write("");
         writer.write("inline const Aws::String& GetRequestId() const { return m_requestId; }");
+        if (withHasBeenSetGetter) {
+            writer.write("inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }");
+        }
         writer.write("template <typename RequestIdT = Aws::String>");
         writer.openBlock("void SetRequestId(RequestIdT&& value) {", "}", () -> {
             writer.write("m_requestIdHasBeenSet = true;");
@@ -299,14 +322,57 @@ public final class MemberRenderer {
     }
 
     /**
-     * Writes a single HasBeenSet flag. {@code @idempotencyToken} members default to {@code true}
-     * because they are auto-populated at construction; all others default to {@code false}.
-     * Matches C2J's ModelClassMembersAndInlines.vm.
+     * Writes a single HasBeenSet flag. Matches C2J's ModelClassMembersAndInlines.vm: the flag is
+     * initialized to {@code true} for an {@code @idempotencyToken} member (auto-populated at
+     * construction) or a {@code @required} member in a useRequiredField context ({@code emitHasBeenSet}
+     * — sub-objects/requests, but not results), except when the member is an event stream or a raw
+     * streaming payload. All other members default to {@code false}.
      */
-    private static void writeHasBeenSetFlag(CppWriter writer, MemberShape member, String memberName) {
+    private void writeHasBeenSetFlag(CppWriter writer, MemberShape member, String memberName) {
         String fieldName = CppNames.fieldName(memberName);
-        boolean initialValue = member.hasTrait(IdempotencyTokenTrait.class);
-        writer.write("bool $LHasBeenSet = $L;", fieldName, initialValue);
+        writer.write("bool $LHasBeenSet = $L;", fieldName, initialHasBeenSet(member));
+    }
+
+    /** True if this member's HasBeenSet flag is initialized to {@code true}. Mirrors C2J. */
+    private boolean initialHasBeenSet(MemberShape member) {
+        if (isEventStreamMember(member) || isRawStreamingPayloadMember(member)) {
+            return false;
+        }
+        return member.hasTrait(IdempotencyTokenTrait.class)
+            || (emitHasBeenSet && isInjectedResponseMetadata(member));
+    }
+
+    /**
+     * True if this member is the framework-injected {@code ResponseMetadata} envelope
+     * ({@code GlobalTransforms.injectResponseMetadata}): a member named {@code ResponseMetadata}
+     * whose target is the injected {@code ResponseMetadata} structure. It is the only member
+     * rendered as always-present (no {@code HasBeenSet} getter; flag initialized true in a
+     * HasBeenSet context), matching C2J, which likewise identifies ResponseMetadata by name.
+     * {@code injectResponseMetadata} fails fast on any modeled ResponseMetadata collision, so this
+     * name-based check is unambiguous.
+     */
+    private boolean isInjectedResponseMetadata(MemberShape member) {
+        return GlobalTransforms.RESPONSE_METADATA.equals(member.getMemberName())
+            && GlobalTransforms.RESPONSE_METADATA.equals(
+                model.expectShape(member.getTarget()).getId().getName());
+    }
+
+    /** True if the member targets a {@code @streaming} union (an event stream member). */
+    private boolean isEventStreamMember(MemberShape member) {
+        Shape target = model.expectShape(member.getTarget());
+        return target.isUnionShape() && target.hasTrait(StreamingTrait.class);
+    }
+
+    /**
+     * True if the member is a raw streaming {@code @httpPayload} (blob/string, or explicitly
+     * {@code @streaming}) that is not an event stream. Mirrors {@code ShapeClassifier}'s predicate.
+     */
+    private boolean isRawStreamingPayloadMember(MemberShape member) {
+        if (!member.hasTrait(HttpPayloadTrait.class) || StreamingTrait.isEventStream(model, member)) {
+            return false;
+        }
+        Shape target = model.expectShape(member.getTarget());
+        return target.isBlobShape() || target.isStringShape() || target.hasTrait(StreamingTrait.class);
     }
 
     /**

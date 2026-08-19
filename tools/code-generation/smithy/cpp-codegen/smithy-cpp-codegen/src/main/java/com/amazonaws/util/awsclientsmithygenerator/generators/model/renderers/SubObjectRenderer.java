@@ -12,9 +12,11 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.Fil
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.RenderContext;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeRenderer;
 import software.amazon.smithy.model.shapes.Shape;
+import software.amazon.smithy.model.shapes.ShapeId;
 import software.amazon.smithy.model.traits.StreamingTrait;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * Renders C++ headers and sources for sub-object (intermediate structure) shapes.
@@ -22,11 +24,18 @@ import java.util.List;
 public final class SubObjectRenderer implements ShapeRenderer {
 
     private final List<Shape> subObjects;
+    private final Set<ShapeId> resultOutputIds;
     private final RenderContext ctx;
 
-    public SubObjectRenderer(List<Shape> subObjects, RenderContext ctx) {
+    public SubObjectRenderer(List<Shape> subObjects, Set<ShapeId> resultOutputIds, RenderContext ctx) {
         this.subObjects = subObjects;
+        this.resultOutputIds = resultOutputIds;
         this.ctx = ctx;
+    }
+
+    /** Convenience overload for callers with no dual-role output shapes (e.g. characterization tests). */
+    public SubObjectRenderer(List<Shape> subObjects, RenderContext ctx) {
+        this(subObjects, java.util.Collections.emptySet(), ctx);
     }
 
     @Override
@@ -48,12 +57,22 @@ public final class SubObjectRenderer implements ShapeRenderer {
     private void renderHeader(CppWriterDelegator writerDelegator, Shape shape) {
         String className = CppTypeMapper.cppShapeName(shape);
         String fileName = "include/aws/" + ctx.smithyServiceName() + "/model/" + className + ".h";
+        // A shape that is BOTH an operation output AND referenced as a member ("dual-role") is
+        // stamped with the top-level requestId by C2J — but only for JSON-family protocols. Query/EC2
+        // instead inject a ResponseMetadata member (GlobalTransforms.injectResponseMetadata), so they
+        // are gated out here via resultHasTopLevelRequestId().
+        boolean stampRequestId = resultOutputIds.contains(shape.getId())
+            && ctx.protocolTraits().resultHasTopLevelRequestId();
         writerDelegator.useFileWriter(fileName, writer -> {
             writer.write("#pragma once");
 
             // Includes
             List<String> includes = new java.util.ArrayList<>();
             includes.add("aws/" + ctx.smithyServiceName() + "/" + ctx.namespace() + "_EXPORTS.h");
+            if (stampRequestId) {
+                // The stamped m_requestId is an Aws::String; mirror the result-header include hygiene.
+                includes.add("aws/core/utils/memory/stl/AWSString.h");
+            }
             for (String memberInc : CppTypeMapper.getIncludesForShape(shape, ctx.model(), ctx.smithyServiceName())) {
                 includes.add(memberInc);
             }
@@ -86,16 +105,42 @@ public final class SubObjectRenderer implements ShapeRenderer {
                 ctx.protocolTraits().writeSerdeMethodDecls(writer, ctx.exportMacro(), className, null);
                 // A memberless shape ends right after its serde decls: C2J emits no accessors
                 // and no private: section (ModelClassMembersAndInlines.vm gates both on
-                // $shape.members.size() > 0).
-                if (!shape.getAllMembers().isEmpty()) {
+                // $shape.members.size() > 0) — unless it is a dual-role output, in which case the
+                // stamped requestId group still needs a private: section.
+                boolean hasMembers = !shape.getAllMembers().isEmpty();
+                if (hasMembers || stampRequestId) {
                     MemberRenderer members = MemberRenderer.forStructure(ctx.model(), shape, className)
                         .wideIntegers(ctx.protocolTraits().widensIntegers());
-                    writer.write("");
-                    members.renderPublicAccessors(writer);
+                    if (hasMembers) {
+                        writer.write("");
+                        members.renderPublicAccessors(writer);
+                    }
+                    if (stampRequestId) {
+                        // MODEL-class requestId group (includes the RequestIdHasBeenSet() getter),
+                        // emitted after the modeled-member accessors. The helper writes its own
+                        // leading blank-line separator.
+                        MemberRenderer.renderRequestIdAccessors(writer, className, true);
+                    }
                     writer.dedent();
                     writer.write("private:");
                     writer.indent();
-                    members.renderPrivateSection(writer);
+                    if (hasMembers) {
+                        members.renderDataMembers(writer);
+                    }
+                    if (stampRequestId) {
+                        // m_requestId trails the modeled data members (blank-line separated, matching
+                        // MemberRenderer's data-member spacing); its flag trails the modeled flags.
+                        if (hasMembers) {
+                            writer.write("");
+                        }
+                        writer.write("Aws::String m_requestId;");
+                    }
+                    if (hasMembers) {
+                        members.renderHasBeenSetFlags(writer);
+                    }
+                    if (stampRequestId) {
+                        writer.write("bool m_requestIdHasBeenSet = false;");
+                    }
                 }
             });
             writer.write("");

@@ -423,6 +423,153 @@ class ShapeClassifierTest {
             "Expected a RequestInfo for the no-input operation Ping");
     }
 
+    /**
+     * A structure that is BOTH an operation output AND referenced as a member (via a list
+     * element). Mirrors Lambda's FunctionConfiguration, which is the output of
+     * GetFunctionConfiguration and also the element of FunctionList / a member of another
+     * response. Such a dual-role shape must end up in BOTH results (per-op output) and
+     * subObjects (standalone model file), matching C2J.
+     */
+    private Model buildDualRoleModel() {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        // Thing is the output of GetThing AND the element of ThingList.
+        StructureShape thing = StructureShape.builder()
+            .id("com.example#Thing")
+            .addMember("name", str.getId())
+            .build();
+        ListShape thingList = ListShape.builder()
+            .id("com.example#ThingList")
+            .member(thing.getId())
+            .build();
+        StructureShape getThingRequest = StructureShape.builder()
+            .id("com.example#GetThingRequest")
+            .addMember("id", str.getId())
+            .build();
+        StructureShape listThingsRequest = StructureShape.builder()
+            .id("com.example#ListThingsRequest")
+            .build();
+        StructureShape listThingsResponse = StructureShape.builder()
+            .id("com.example#ListThingsResponse")
+            .addMember("things", thingList.getId())
+            .build();
+        OperationShape getThing = OperationShape.builder()
+            .id("com.example#GetThing")
+            .input(getThingRequest.getId())
+            .output(thing.getId())
+            .build();
+        OperationShape listThings = OperationShape.builder()
+            .id("com.example#ListThings")
+            .input(listThingsRequest.getId())
+            .output(listThingsResponse.getId())
+            .build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#TestService")
+            .version("2023-01-01")
+            .addOperation(getThing.getId())
+            .addOperation(listThings.getId())
+            .addTrait(ServiceTrait.builder().sdkId("test").arnNamespace("test").cloudFormationName("Test").cloudTrailEventSource("test").build())
+            .build();
+        return Model.builder()
+            .addShapes(str, thing, thingList, getThingRequest, listThingsRequest, listThingsResponse, getThing, listThings, service)
+            .build();
+    }
+
+    @Test
+    void dualRoleOutputAndMember_appearsInBothResultsAndSubObjects() {
+        Model model = buildDualRoleModel();
+        ServiceShape service = model.expectShape(ShapeId.from("com.example#TestService"), ServiceShape.class);
+        var classified = ShapeClassifier.classify(model, service, ProtocolResolver.resolve(service, model));
+        assertTrue(classified.results().stream()
+                .anyMatch(r -> r.shape().getId().getName().equals("Thing")),
+            "Dual-role Thing must be classified as a result (GetThing output): " + classified.results());
+        assertTrue(classified.subObjects().stream()
+                .anyMatch(s -> s.getId().getName().equals("Thing")),
+            "Dual-role Thing must also be classified as a sub-object (referenced via ThingList): "
+                + classified.subObjects());
+    }
+
+    @Test
+    void outputOnly_appearsInResultsButNotSubObjects() {
+        // GetItemResponse is ONLY an operation output; it is not referenced as a member anywhere.
+        Model model = buildSimpleModel();
+        ServiceShape service = model.expectShape(ShapeId.from("com.example#TestService"), ServiceShape.class);
+        var classified = ShapeClassifier.classify(model, service, ProtocolResolver.resolve(service, model));
+        assertTrue(classified.results().stream()
+                .anyMatch(r -> r.shape().getId().getName().equals("GetItemResponse")),
+            "Output-only GetItemResponse must be in results");
+        assertTrue(classified.subObjects().stream()
+                .noneMatch(s -> s.getId().getName().equals("GetItemResponse")),
+            "Output-only GetItemResponse must NOT be over-emitted as a sub-object: " + classified.subObjects());
+    }
+
+    /**
+     * A @streaming union with two event members: one whose sole payload is an @eventPayload blob
+     * (like Lambda's InvokeResponseStreamUpdate / the PayloadChunk member) and one with only a
+     * plain string member (like a CompleteEvent). Bound to an operation output so both event
+     * structs are reachable.
+     */
+    private Model eventStreamBlobPayloadModel() {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        BlobShape blob = BlobShape.builder().id("com.example#Blob").build();
+        // Blob-payload event: single @eventPayload blob member.
+        StructureShape updateEvent = StructureShape.builder()
+            .id("com.example#UpdateEvent")
+            .addMember(MemberShape.builder()
+                .id("com.example#UpdateEvent$Payload").target(blob.getId())
+                .addTrait(new EventPayloadTrait()).build())
+            .build();
+        // Non-blob event: plain string member -> must stay a sub-object.
+        StructureShape completeEvent = StructureShape.builder()
+            .id("com.example#CompleteEvent")
+            .addMember("Details", str.getId())
+            .build();
+        UnionShape eventStream = UnionShape.builder()
+            .id("com.example#ResponseStreamEvent")
+            .addTrait(new StreamingTrait())
+            .addMember("PayloadChunk", updateEvent.getId())
+            .addMember("Complete", completeEvent.getId())
+            .build();
+        StructureShape request = StructureShape.builder()
+            .id("com.example#InvokeRequest").addMember("name", str.getId()).build();
+        StructureShape response = StructureShape.builder()
+            .id("com.example#InvokeResponse").addMember("events", eventStream.getId()).build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#Invoke").input(request.getId()).output(response.getId()).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#TestService").version("2023-01-01").addOperation(op.getId())
+            .addTrait(ServiceTrait.builder().sdkId("test").arnNamespace("test").cloudFormationName("Test").cloudTrailEventSource("test").build())
+            .build();
+        return Model.builder()
+            .addShapes(str, blob, updateEvent, completeEvent, eventStream, request, response, op, service)
+            .build();
+    }
+
+    @Test
+    void blobEventPayload_isClassifiedAsBlobPayloadEventNotSubObject() {
+        Model model = eventStreamBlobPayloadModel();
+        ServiceShape service = model.expectShape(ShapeId.from("com.example#TestService"), ServiceShape.class);
+        var classified = ShapeClassifier.classify(model, service, ProtocolResolver.resolve(service, model));
+        assertTrue(classified.blobPayloadEvents().stream()
+                .anyMatch(s -> s.getId().getName().equals("UpdateEvent")),
+            "Blob @eventPayload event must be in blobPayloadEvents: " + classified.blobPayloadEvents());
+        assertTrue(classified.subObjects().stream()
+                .noneMatch(s -> s.getId().getName().equals("UpdateEvent")),
+            "Blob @eventPayload event must NOT be a sub-object: " + classified.subObjects());
+    }
+
+    @Test
+    void nonBlobEvent_staysSubObject() {
+        Model model = eventStreamBlobPayloadModel();
+        ServiceShape service = model.expectShape(ShapeId.from("com.example#TestService"), ServiceShape.class);
+        var classified = ShapeClassifier.classify(model, service, ProtocolResolver.resolve(service, model));
+        assertTrue(classified.subObjects().stream()
+                .anyMatch(s -> s.getId().getName().equals("CompleteEvent")),
+            "Non-blob event struct must stay a sub-object: " + classified.subObjects());
+        assertTrue(classified.blobPayloadEvents().stream()
+                .noneMatch(s -> s.getId().getName().equals("CompleteEvent")),
+            "Non-blob event struct must NOT be a blob-payload event: " + classified.blobPayloadEvents());
+    }
+
     @Test
     void classifiesEnumShape() {
         // StringShape with @enum trait -> classified as enum
