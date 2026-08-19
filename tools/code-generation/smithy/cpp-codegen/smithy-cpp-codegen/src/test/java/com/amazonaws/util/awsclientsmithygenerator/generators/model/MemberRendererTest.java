@@ -394,4 +394,76 @@ class MemberRendererTest {
         assertTrue(out.contains("///@{"));
         assertTrue(out.contains("///@}"));
     }
+
+    /**
+     * A structure carrying: the framework ResponseMetadata envelope member (targeting a
+     * ResponseMetadata structure), a modeled {@code @required} member, and a plain member.
+     */
+    private static Model responseMetadataModel() {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        StructureShape responseMetadata = StructureShape.builder()
+            .id("com.example#ResponseMetadata")
+            .addMember(MemberShape.builder()
+                .id("com.example#ResponseMetadata$RequestId").target(str.getId()).build())
+            .build();
+        StructureShape shape = StructureShape.builder()
+            .id("com.example#MyShape")
+            .addMember(MemberShape.builder()
+                .id("com.example#MyShape$ResponseMetadata").target(responseMetadata.getId()).build())
+            .addMember(MemberShape.builder()
+                .id("com.example#MyShape$RequiredName").target(str.getId())
+                .addTrait(new software.amazon.smithy.model.traits.RequiredTrait()).build())
+            .addMember(MemberShape.builder()
+                .id("com.example#MyShape$Name").target(str.getId()).build())
+            .build();
+        return Model.builder().addShapes(str, responseMetadata, shape).build();
+    }
+
+    private static StructureShape myShape(Model model) {
+        return model.expectShape(
+            software.amazon.smithy.model.shapes.ShapeId.from("com.example#MyShape"), StructureShape.class);
+    }
+
+    @Test
+    void injectedResponseMetadata_inStructure_omitsGetter_whileOthersKeepIt() {
+        // The injected ResponseMetadata envelope is always present -> no HasBeenSet getter. A
+        // modeled @required member is NOT special-cased (C2J clears required), so it keeps its
+        // getter just like a plain member.
+        Model model = responseMetadataModel();
+        CppWriter writer = new CppWriter();
+        MemberRenderer.forStructure(model, myShape(model), "MyShape").renderPublicAccessors(writer);
+        String out = writer.toString();
+        assertFalse(out.contains("ResponseMetadataHasBeenSet()"),
+            "injected ResponseMetadata must not get a HasBeenSet getter: " + out);
+        assertTrue(out.contains("inline bool RequiredNameHasBeenSet() const"),
+            "modeled @required member must still get a HasBeenSet getter: " + out);
+        assertTrue(out.contains("inline bool NameHasBeenSet() const"),
+            "plain member must get a HasBeenSet getter: " + out);
+    }
+
+    @Test
+    void injectedResponseMetadata_inStructure_initsFlagTrue_whileOthersFalse() {
+        Model model = responseMetadataModel();
+        CppWriter writer = new CppWriter();
+        MemberRenderer.forStructure(model, myShape(model), null).renderHasBeenSetFlags(writer);
+        String out = writer.toString();
+        assertTrue(out.contains("bool m_responseMetadataHasBeenSet = true;"),
+            "injected ResponseMetadata flag must init true: " + out);
+        assertTrue(out.contains("bool m_requiredNameHasBeenSet = false;"),
+            "modeled @required member flag must init false: " + out);
+        assertTrue(out.contains("bool m_nameHasBeenSet = false;"),
+            "plain member flag must init false: " + out);
+    }
+
+    @Test
+    void injectedResponseMetadata_inResult_initsFlagFalse() {
+        // Results use useRequiredField=false (emitHasBeenSet=false), so even the injected
+        // ResponseMetadata inits false there (and results emit no HasBeenSet getters).
+        Model model = responseMetadataModel();
+        CppWriter writer = new CppWriter();
+        MemberRenderer.forResult(model, myShape(model), null).renderHasBeenSetFlags(writer);
+        String out = writer.toString();
+        assertTrue(out.contains("bool m_responseMetadataHasBeenSet = false;"),
+            "injected ResponseMetadata flag stays false in a result context: " + out);
+    }
 }

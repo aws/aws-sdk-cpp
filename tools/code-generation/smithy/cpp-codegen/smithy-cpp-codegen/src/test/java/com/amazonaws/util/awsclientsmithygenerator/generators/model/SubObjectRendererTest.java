@@ -12,6 +12,7 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.Su
 import org.junit.jupiter.api.Test;
 import software.amazon.smithy.build.MockManifest;
 import software.amazon.smithy.model.Model;
+import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.model.shapes.ShapeId;
 import software.amazon.smithy.model.shapes.StringShape;
@@ -19,6 +20,7 @@ import software.amazon.smithy.model.shapes.StructureShape;
 import software.amazon.smithy.model.shapes.UnionShape;
 import software.amazon.smithy.model.traits.DocumentationTrait;
 import software.amazon.smithy.model.traits.StreamingTrait;
+import software.amazon.smithy.model.traits.Trait;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -167,5 +169,83 @@ class SubObjectRendererTest {
             "Streaming union must NOT be rendered by SubObjectRenderer: " + files.keySet());
         assertFalse(files.containsKey("BidirectionalInput.cpp"),
             "Streaming union must NOT be rendered by SubObjectRenderer: " + files.keySet());
+    }
+
+    // --- dual-role (operation output that is also a member) requestId stamp ---
+
+    /**
+     * A model where {@code Thing} is BOTH the output of {@code DoThing} AND a member of {@code Plain}
+     * (dual-role: an output referenced as a member). {@code Plain} is a plain member-only sub-object.
+     * The service carries the given protocol trait.
+     */
+    private static Model dualRoleModel(Trait protocolTrait) {
+        StringShape str = StringShape.builder().id("com.example#Str").build();
+        StructureShape thing = StructureShape.builder()
+            .id("com.example#Thing").addMember("name", str.getId()).build();
+        // Plain references Thing (making Thing a member target) and is itself a member of the input,
+        // so both Plain and Thing are reachable sub-objects; only Thing is an operation output.
+        StructureShape plain = StructureShape.builder()
+            .id("com.example#Plain")
+            .addMember("label", str.getId())
+            .addMember("thing", thing.getId())
+            .build();
+        StructureShape input = StructureShape.builder()
+            .id("com.example#DoThingInput").addMember("plain", plain.getId()).build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#DoThing").input(input.getId()).output(thing.getId()).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#Example").version("2024-01-01")
+            .addTrait(protocolTrait).addOperation(op.getId()).build();
+        return Model.builder().addShapes(str, thing, plain, input, op, service).build();
+    }
+
+    /** Classifies {@code dualRoleModel} and renders its sub-objects, returning filename -> content. */
+    private static java.util.Map<String, String> renderDualRole(Trait protocolTrait) {
+        Model model = dualRoleModel(protocolTrait);
+        ServiceShape service = model.expectShape(ShapeId.from("com.example#Example"), ServiceShape.class);
+        Protocol protocol = ProtocolResolver.resolve(service, model);
+        ShapeClassifier.ClassifiedShapes classified = ShapeClassifier.classify(model, service, protocol);
+        MockManifest manifest = new MockManifest();
+        CppWriterDelegator delegator = new CppWriterDelegator(manifest);
+        new SubObjectRenderer(classified.subObjects(), classified.resultOutputIds(),
+            new RenderContext(model, service, ProtocolResolver.traitsFor(protocol),
+                "Example", "AWS_EXAMPLE_API", "example")).render(delegator);
+        delegator.flushWriters();
+        java.util.Map<String, String> out = new java.util.TreeMap<>();
+        for (java.nio.file.Path path : manifest.getFiles()) {
+            out.put(path.getFileName().toString(), manifest.getFileString(path).orElseThrow());
+        }
+        return out;
+    }
+
+    @Test
+    void dualRoleOutput_jsonProtocol_stampsRequestId() {
+        String h = renderDualRole(
+            software.amazon.smithy.aws.traits.protocols.RestJson1Trait.builder().build()).get("Thing.h");
+        assertTrue(h.contains("inline const Aws::String& GetRequestId() const { return m_requestId; }"), h);
+        assertTrue(h.contains("inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }"), h);
+        assertTrue(h.contains("Aws::String m_requestId;"), h);
+        assertTrue(h.contains("bool m_requestIdHasBeenSet = false;"), h);
+        // The stamped Aws::String field pulls in AWSString.h.
+        assertTrue(h.contains("#include <aws/core/utils/memory/stl/AWSString.h>"), h);
+    }
+
+    @Test
+    void memberOnlySubObject_jsonProtocol_hasNoRequestId() {
+        String h = renderDualRole(
+            software.amazon.smithy.aws.traits.protocols.RestJson1Trait.builder().build()).get("Plain.h");
+        assertFalse(h.contains("GetRequestId"),
+            "A member-only (non-output) sub-object must not receive the requestId stamp: " + h);
+        assertFalse(h.contains("m_requestId"), h);
+    }
+
+    @Test
+    void dualRoleOutput_queryProtocol_hasNoRequestId() {
+        // Query/EC2 dual-role outputs get a ResponseMetadata member instead (injectResponseMetadata),
+        // so resultHasTopLevelRequestId() is false and no requestId block is stamped here.
+        String h = renderDualRole(
+            new software.amazon.smithy.aws.traits.protocols.AwsQueryTrait()).get("Thing.h");
+        assertFalse(h.contains("GetRequestId"),
+            "Query dual-role output must not receive the requestId stamp: " + h);
     }
 }
