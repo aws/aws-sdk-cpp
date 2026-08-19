@@ -11,6 +11,7 @@ import software.amazon.smithy.model.traits.EnumTrait;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -50,6 +51,20 @@ public final class EnumRenderer {
         writer.write("#include <aws/$1L/$2L_EXPORTS.h>",
             projectName, serviceName);
         writer.write("");
+
+        // Windows defines some enum values as preprocessor macros (e.g. EC2's `interface` via
+        // <combaseapi.h>). Undefine them so the generated enum constant compiles, matching C2J's
+        // ModelEnumHeader.vm predefined-symbol guard.
+        List<String> windowsMacros = predefinedWindowsSymbols(serviceName, values);
+        if (!windowsMacros.isEmpty()) {
+            for (String macro : windowsMacros) {
+                writer.write("#if defined(_WIN32) && defined($L)", macro);
+                writer.write("#undef $L", macro);
+                writer.write("#endif");
+            }
+            writer.write("");
+        }
+
         writer.write("namespace Aws {");
         writer.write("namespace $L {", serviceName);
         writer.write("namespace Model {");
@@ -224,6 +239,34 @@ public final class EnumRenderer {
         "GET", "LINUX", "max", "min", "NEW", "NULL", "PRIVATE", "PUBLIC",
         "STATIC", "T_CHAR", "DOMAIN", "OVERFLOW", "WINDOWS"
     );
+
+    /**
+     * Per-service enum constant names that collide with a Windows preprocessor macro and must be
+     * {@code #undef}'d in the enum header. Keyed by C++ service namespace, mirroring C2J
+     * PlatformAndKeywordSanitizer.PREDEFINED_SYMBOLS_MAPPING.
+     */
+    private static final Map<String, Set<String>> PREDEFINED_WINDOWS_SYMBOLS = Map.of(
+        "DynamoDB", Set.of("IN"),
+        "EC2", Set.of("interface"),
+        "S3Crt", Set.of("IGNORE")
+    );
+
+    /**
+     * Returns, in enum-declaration order, the sanitized enum constant names of {@code values} that
+     * collide with a Windows macro for {@code serviceNamespace} (see
+     * {@link #PREDEFINED_WINDOWS_SYMBOLS}). Empty when the service has no such symbols.
+     *
+     * @param serviceNamespace the C++ service namespace (e.g., "EC2")
+     * @param values           the sanitized enum constant names in declaration order
+     * @return the subset needing a {@code #undef} guard, preserving declaration order
+     */
+    static List<String> predefinedWindowsSymbols(String serviceNamespace, List<String> values) {
+        Set<String> symbols = PREDEFINED_WINDOWS_SYMBOLS.get(serviceNamespace);
+        if (symbols == null) {
+            return List.of();
+        }
+        return values.stream().filter(symbols::contains).collect(Collectors.toList());
+    }
 
     /**
      * Sanitizes an enum wire value into a valid C++ identifier, matching C2J
