@@ -5,6 +5,7 @@
 package com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator;
+import com.amazonaws.util.awsclientsmithygenerator.generators.ShapeUtil;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.CppNames;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.CppTypeMapper;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.MemberRenderer;
@@ -64,7 +65,7 @@ public final class ResultRenderer implements ShapeRenderer {
 
     private void renderHeader(CppWriterDelegator writerDelegator,
                               StructureShape shape, OperationShape operation) {
-        String className = operation.getId().getName() + "Result";
+        String className = operation.getId().getName() + ShapeUtil.getResultSuffix(ctx.model(), operation, ctx.smithyServiceName());
         String fileName = "include/aws/" + ctx.smithyServiceName() + "/model/" + className + ".h";
         writerDelegator.useFileWriter(fileName, writer -> {
             writer.write("#pragma once");
@@ -139,7 +140,7 @@ public final class ResultRenderer implements ShapeRenderer {
 
     private void renderSource(CppWriterDelegator writerDelegator,
                               StructureShape shape, OperationShape operation) {
-        String className = operation.getId().getName() + "Result";
+        String className = operation.getId().getName() + ShapeUtil.getResultSuffix(ctx.model(), operation, ctx.smithyServiceName());
         String fileName = "source/model/" + className + ".cpp";
         writerDelegator.useFileWriter(fileName, writer -> {
 
@@ -164,7 +165,7 @@ public final class ResultRenderer implements ShapeRenderer {
      */
     private void renderStreamingHeader(CppWriterDelegator writerDelegator,
                                        StructureShape shape, OperationShape operation) {
-        String className = operation.getId().getName() + "Result";
+        String className = operation.getId().getName() + ShapeUtil.getResultSuffix(ctx.model(), operation, ctx.smithyServiceName());
         String streamMember = streamingPayloadMemberName(shape);
         String fileName = "include/aws/" + ctx.smithyServiceName() + "/model/" + className + ".h";
         writerDelegator.useFileWriter(fileName, writer -> {
@@ -257,7 +258,7 @@ public final class ResultRenderer implements ShapeRenderer {
      */
     private void renderStreamingSource(CppWriterDelegator writerDelegator,
                                        StructureShape shape, OperationShape operation) {
-        String className = operation.getId().getName() + "Result";
+        String className = operation.getId().getName() + ShapeUtil.getResultSuffix(ctx.model(), operation, ctx.smithyServiceName());
         String streamField = CppNames.fieldName(streamingPayloadMemberName(shape));
         String fileName = "source/model/" + className + ".cpp";
         writerDelegator.useFileWriter(fileName, writer -> {

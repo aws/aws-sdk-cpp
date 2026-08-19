@@ -57,6 +57,38 @@ class ResultRendererTest {
             .filter(p -> p.toString().endsWith("DoThingResult.h")).findFirst().orElseThrow()).orElseThrow();
     }
 
+    /** Renders the result header for the one-member model under the given smithyServiceName. */
+    private static java.util.List<String> renderResultFileNames(Trait protocolTrait, String smithyServiceName) {
+        Model model = oneMemberOutputModel(protocolTrait);
+        ServiceShape service = model.expectShape(ShapeId.from("com.example#Example"), ServiceShape.class);
+        MockManifest manifest = new MockManifest();
+        CppWriterDelegator delegator = new CppWriterDelegator(manifest);
+        Protocol protocol = ProtocolResolver.resolve(service, model);
+        new ResultRenderer(
+            ShapeClassifier.classify(model, service, protocol).results(),
+            new RenderContext(model, service, ProtocolResolver.traitsFor(protocol),
+                "Example", "AWS_EXAMPLE_API", smithyServiceName)).render(delegator);
+        delegator.flushWriters();
+        return manifest.getFiles().stream().map(java.nio.file.Path::toString)
+            .collect(java.util.stream.Collectors.toList());
+    }
+
+    @Test
+    void ec2Result_usesResponseSuffix() {
+        // ShapeUtil.getResultSuffix returns "Response" for the ec2 service, so EC2 result
+        // classes/files must be named *Response, matching the legacy C2J generator.
+        java.util.List<String> ec2Files =
+            renderResultFileNames(software.amazon.smithy.aws.traits.protocols.RestJson1Trait.builder().build(), "ec2");
+        assertTrue(ec2Files.stream().anyMatch(f -> f.endsWith("DoThingResponse.h")), ec2Files.toString());
+        assertTrue(ec2Files.stream().anyMatch(f -> f.endsWith("DoThingResponse.cpp")), ec2Files.toString());
+        assertFalse(ec2Files.stream().anyMatch(f -> f.endsWith("DoThingResult.h")), ec2Files.toString());
+
+        // Non-ec2 services keep the "Result" suffix.
+        java.util.List<String> otherFiles =
+            renderResultFileNames(software.amazon.smithy.aws.traits.protocols.RestJson1Trait.builder().build(), "example");
+        assertTrue(otherFiles.stream().anyMatch(f -> f.endsWith("DoThingResult.h")), otherFiles.toString());
+    }
+
     @Test
     void cborResult_omitsHasBeenSetAccessors() {
         // C2J's CborResultHeader.vm sets useRequiredField=false, so result classes never emit
