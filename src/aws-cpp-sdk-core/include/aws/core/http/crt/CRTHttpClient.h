@@ -52,6 +52,12 @@ namespace Aws
                 Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
                 Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const override;
 
+            Aws::Crt::Optional<Aws::Client::AWSError<Aws::Client::CoreErrors>> MakeRequestAsync(
+                const std::shared_ptr<HttpRequest>& request,
+                std::function<void(std::shared_ptr<HttpResponse>)> onResponseComplete,
+                Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
+                Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const override;
+
             bool IsDefaultAwsHttpClient() const override { return true; }
 
             Aws::Crt::Optional<Aws::Client::AWSError<Aws::Client::CoreErrors>> AcquireConnection(

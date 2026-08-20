@@ -71,6 +71,19 @@ namespace Aws
                                    const char* signerRegionOverride = nullptr,
                                    const char* signerServiceNameOverride = nullptr) const;
 
+            /**
+             * PROTOTYPE. Async sibling of the above. Returns as soon as the request has been started, and
+             * marshals the xml on the executor, because a parse is not io.
+             */
+            void MakeRequestAsync(const Aws::AmazonWebServiceRequest& request,
+                                  const Aws::Endpoint::AWSEndpoint& endpoint,
+                                  Http::HttpMethod method,
+                                  const std::shared_ptr<Aws::Utils::Threading::Executor>& executor,
+                                  std::function<void(XmlOutcome)> onDone,
+                                  const char* signerName = Aws::Auth::SIGV4_SIGNER,
+                                  const char* signerRegionOverride = nullptr,
+                                  const char* signerServiceNameOverride = nullptr) const;
+
             XmlOutcome MakeRequest(const Aws::Endpoint::AWSEndpoint& endpoint,
                                    const char* requestName = "",
                                    Http::HttpMethod method = Http::HttpMethod::HTTP_POST,

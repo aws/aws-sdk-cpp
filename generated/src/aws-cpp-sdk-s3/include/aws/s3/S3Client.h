@@ -8749,6 +8749,29 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient,
 
   virtual bool MultipartUploadSupported() const;
 
+  /**
+   * PROTOTYPE: async GetObject driven by the event loop. Returns as soon as the request is in flight,
+   * and invokes the handler from the loop thread that carried it. No thread is parked per request.
+   */
+  void GetObjectAsyncProto(const Model::GetObjectRequest& request,
+                           std::function<void(Model::GetObjectOutcome)> handler) const;
+
+  /**
+   * PROTOTYPE: async PutObject driven by the event loop. Same shape as GetObjectAsyncProto.
+   */
+  void PutObjectAsyncProto(const Model::PutObjectRequest& request,
+                           std::function<void(Model::PutObjectOutcome)> handler) const;
+
+ private:
+  void GetObjectPipelineProto(const std::shared_ptr<Model::GetObjectRequest>& request,
+                              const std::function<void(Model::GetObjectOutcome)>& handler,
+                              const std::shared_ptr<Aws::Utils::Threading::Executor>& executor) const;
+  void PutObjectPipelineProto(const std::shared_ptr<Model::PutObjectRequest>& request,
+                              const std::function<void(Model::PutObjectOutcome)>& handler,
+                              const std::shared_ptr<Aws::Utils::Threading::Executor>& executor) const;
+
+ public:
+
   virtual void OverrideEndpoint(const Aws::String& endpoint);
   virtual std::shared_ptr<S3EndpointProviderBase>& accessEndpointProvider();
 

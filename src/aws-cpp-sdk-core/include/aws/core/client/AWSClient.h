@@ -33,6 +33,11 @@ namespace Aws
             class RateLimiterInterface;
         } // namespace RateLimits
 
+        namespace Threading
+        {
+            class Executor;
+        } // namespace Threading
+
         namespace Crypto
         {
             class MD5;
@@ -273,6 +278,35 @@ namespace Aws
                                                           const char* signerName = Aws::Auth::SIGV4_SIGNER,
                                                           const char* signerRegionOverride = nullptr,
                                                           const char* signerServiceNameOverride = nullptr) const;
+
+            /**
+             * PROTOTYPE. The additive async entry point. Expects to already be running on the executor,
+             * does what the blocking path does, and returns that thread as soon as the request is handed
+             * to the transport. The transport completes on a loop thread and the executor is handed the
+             * work immediately, so nothing after the wire runs on a loop. In the real design the executor
+             * rides on the request's state object rather than being a parameter. One attempt: no retry
+             * loop, no interceptors, no monitoring. Caller keeps the request alive.
+             */
+            void AttemptOnceAsync(const Aws::Http::URI& uri,
+                                  const Aws::AmazonWebServiceRequest& request,
+                                  Http::HttpMethod method,
+                                  const char* signerName,
+                                  const char* signerRegionOverride,
+                                  const char* signerServiceNameOverride,
+                                  const std::shared_ptr<Aws::Utils::Threading::Executor>& executor,
+                                  std::function<void(HttpResponseOutcome)> onDone) const;
+
+            /**
+             * PROTOTYPE. Async sibling of MakeRequestWithUnparsedResponse, for streamed payloads.
+             */
+            void MakeRequestWithUnparsedResponseAsync(const Aws::AmazonWebServiceRequest& request,
+                                                      const Aws::Endpoint::AWSEndpoint& endpoint,
+                                                      Http::HttpMethod method,
+                                                      const std::shared_ptr<Aws::Utils::Threading::Executor>& executor,
+                                                      std::function<void(StreamOutcome)> onDone,
+                                                      const char* signerName = Aws::Auth::SIGV4_SIGNER,
+                                                      const char* signerRegionOverride = nullptr,
+                                                      const char* signerServiceNameOverride = nullptr) const;
 
             /**
              * Abstract.  Subclassing clients should override this to tell the client how to marshall error payloads

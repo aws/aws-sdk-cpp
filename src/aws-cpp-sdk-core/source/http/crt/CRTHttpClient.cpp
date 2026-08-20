@@ -12,6 +12,7 @@
 #include <aws/crt/http/HttpConnectionManager.h>
 #include <aws/crt/http/HttpRequestResponse.h>
 
+#include <atomic>
 #include <utility>
 
 static const char *const CRT_HTTP_CLIENT_TAG = "CRTHttpClient";
@@ -131,31 +132,52 @@ void OnIncomingHeadersBlockDone(Aws::Crt::Http::HttpStream& stream, enum aws_htt
   response->SetResponseCode((Aws::Http::HttpResponseCode)stream.GetResponseStatusCode());
 }
 
-// Request is done. If there was an error set it, otherwise just wake up the cvar.
-void OnStreamComplete(Aws::Crt::Http::HttpStream&, int errorCode, AsyncWaiter& waiter,
-                      const std::shared_ptr<Aws::Http::HttpResponse>& response) {
+// Everything a request needs in order to outlive the call that started it. This is what used to be
+// five locals in MakeRequest's frame, kept alive by the thread parked on the waiter.
+struct AsyncRequestState {
+  std::shared_ptr<Aws::Http::HttpRequest> request;
+  std::shared_ptr<Aws::Http::HttpResponse> response;
+  std::shared_ptr<Aws::Crt::Http::HttpRequest> crtRequest;
+  // Deliberately no connection and no connection manager. The stream holds the connection it runs on,
+  // and the client holds the manager, so keeping either here makes a cycle through the stream's
+  // callbacks and the connection never goes back to the pool.
+  std::function<void(std::shared_ptr<Aws::Http::HttpResponse>)> onComplete;
+  std::atomic<bool> finished{false};
+
+  // The completion can arrive from a loop thread or inline from the acquisition call, and both the
+  // cancellation path and the stream path can reach it, so latch it.
+  void Finish() {
+    if (finished.exchange(true)) {
+      return;
+    }
+    if (onComplete) {
+      onComplete(response);
+    }
+  }
+};
+
+// Request is done. If there was an error set it, then hand the response to whoever asked for it.
+void OnStreamCompleteAsync(int errorCode, std::shared_ptr<AsyncRequestState> state) {
   if (errorCode) {
     // TODO: get the right error parsed out.
-    response->SetClientErrorType(Aws::Client::CoreErrors::NETWORK_CONNECTION);
-    response->SetClientErrorMessage(aws_error_debug_str(errorCode));
+    state->response->SetClientErrorType(Aws::Client::CoreErrors::NETWORK_CONNECTION);
+    state->response->SetClientErrorMessage(aws_error_debug_str(errorCode));
   }
 
-  waiter.Wakeup();
+  state->Finish();
 }
 
-// if the connection acquisition failed, go ahead and fail the request and wakeup the cvar.
-// If it succeeded go ahead and make the request.
-void OnClientConnectionAvailable(std::shared_ptr<Aws::Crt::Http::HttpClientConnection> connection, int errorCode,
-                                 std::shared_ptr<Aws::Crt::Http::HttpClientConnection>& connectionReference,
-                                 Aws::Crt::Http::HttpRequestOptions& requestOptions, AsyncWaiter& waiter,
-                                 const std::shared_ptr<Aws::Http::HttpRequest>& request,
-                                 const std::shared_ptr<Aws::Http::HttpResponse>& response, const Aws::Http::HttpClient& client) {
-  bool shouldContinueRequest = client.ContinueRequest(*request);
+// if the connection acquisition failed, go ahead and fail the request. If it succeeded, build the
+// stream callbacks and start the request. The callbacks hold the only remaining reference to the
+// state, so it lives exactly as long as the stream does.
+void OnClientConnectionAvailableAsync(const std::shared_ptr<Aws::Crt::Http::HttpClientConnection>& connection, int errorCode,
+                                      const std::shared_ptr<AsyncRequestState>& state, const Aws::Http::HttpClient& client) {
+  const Aws::Http::HttpClient* clientPtr = &client;
 
-  if (!shouldContinueRequest) {
-    response->SetClientErrorType(Aws::Client::CoreErrors::USER_CANCELLED);
-    response->SetClientErrorMessage("Request cancelled by user's continuation handler");
-    waiter.Wakeup();
+  if (!client.ContinueRequest(*state->request)) {
+    state->response->SetClientErrorType(Aws::Client::CoreErrors::USER_CANCELLED);
+    state->response->SetClientErrorMessage("Request cancelled by user's continuation handler");
+    state->Finish();
     return;
   }
 
@@ -163,8 +185,36 @@ void OnClientConnectionAvailable(std::shared_ptr<Aws::Crt::Http::HttpClientConne
   if (connection) {
     AWS_LOGSTREAM_DEBUG(CRT_HTTP_CLIENT_TAG, "Obtained connection handle " << (void*)connection.get());
 
+    Aws::Crt::Http::HttpRequestOptions requestOptions{};
+    requestOptions.request = state->crtRequest.get();
+
+    requestOptions.onIncomingBody = [clientPtr, state](Aws::Crt::Http::HttpStream& stream, const Aws::Crt::ByteCursor& body) {
+      if (!clientPtr->ContinueRequest(*state->request) || !clientPtr->IsRequestProcessingEnabled()) {
+        AWS_LOGSTREAM_INFO(CRT_HTTP_CLIENT_TAG, "Request canceled. Canceling request by closing the connection.");
+        stream.GetConnection().Close();
+        return;
+      }
+      OnResponseBodyReceived(stream, body, state->response, state->request);
+    };
+
+    requestOptions.onIncomingHeaders = [state](Aws::Crt::Http::HttpStream& stream, enum aws_http_header_block block,
+                                               const Aws::Crt::Http::HttpHeader* headersArray, std::size_t headersCount) {
+      OnIncomingHeaders(stream, block, headersArray, headersCount, state->response);
+    };
+
+    requestOptions.onIncomingHeadersBlockDone = [state](Aws::Crt::Http::HttpStream& stream, enum aws_http_header_block block) {
+      OnIncomingHeadersBlockDone(stream, block, state->response);
+      auto& headersHandler = state->request->GetHeadersReceivedEventHandler();
+      if (headersHandler) {
+        headersHandler(state->request.get(), state->response.get());
+      }
+    };
+
+    requestOptions.onStreamComplete = [state](Aws::Crt::Http::HttpStream&, int streamErrorCode) {
+      OnStreamCompleteAsync(streamErrorCode, state);
+    };
+
     auto clientStream = connection->NewClientStream(requestOptions);
-    connectionReference = connection;
 
     if (clientStream && clientStream->Activate()) {
       return;
@@ -176,11 +226,18 @@ void OnClientConnectionAvailable(std::shared_ptr<Aws::Crt::Http::HttpClientConne
 
   const char* errorMsg = aws_error_debug_str(finalErrorCode);
   AWS_LOGSTREAM_ERROR(CRT_HTTP_CLIENT_TAG, "Obtaining connection failed because " << errorMsg);
-  response->SetClientErrorType(Aws::Client::CoreErrors::NETWORK_CONNECTION);
-  response->SetClientErrorMessage(errorMsg);
+  state->response->SetClientErrorType(Aws::Client::CoreErrors::NETWORK_CONNECTION);
+  state->response->SetClientErrorMessage(errorMsg);
 
-  waiter.Wakeup();
+  state->Finish();
 }
+
+// What the blocking MakeRequest waits on. On the heap, so a caller that gives up on a timeout can
+// leave without the callbacks writing into a dead frame.
+struct SyncRequestState {
+  AsyncWaiter waiter;
+  std::shared_ptr<Aws::Http::HttpResponse> response;
+};
 
 class CRTClientStream : public Aws::Http::ClientStream {
  public:
@@ -425,124 +482,93 @@ namespace Aws
             m_connectionPools.clear();
         }
 
-        std::shared_ptr<HttpResponse> CRTHttpClient::MakeRequest(const std::shared_ptr<HttpRequest>& request,
-                                                                 Aws::Utils::RateLimits::RateLimiterInterface*,
-                                                                 Aws::Utils::RateLimits::RateLimiterInterface*) const
+        Aws::Crt::Optional<Aws::Client::AWSError<Aws::Client::CoreErrors>> CRTHttpClient::MakeRequestAsync(
+            const std::shared_ptr<HttpRequest>& request,
+            std::function<void(std::shared_ptr<HttpResponse>)> onResponseComplete,
+            Aws::Utils::RateLimits::RateLimiterInterface*,
+            Aws::Utils::RateLimits::RateLimiterInterface*) const
         {
-            auto crtRequest = Crt::MakeShared<Crt::Http::HttpRequest>(Crt::g_allocator);
-            auto response = Aws::MakeShared<Standard::StandardHttpResponse>(CRT_HTTP_CLIENT_TAG, request);
+            auto state = Aws::MakeShared<AsyncRequestState>(CRT_HTTP_CLIENT_TAG);
+            state->request = request;
+            state->crtRequest = Crt::MakeShared<Crt::Http::HttpRequest>(Crt::g_allocator);
+            state->response = Aws::MakeShared<Standard::StandardHttpResponse>(CRT_HTTP_CLIENT_TAG, request);
+            state->onComplete = std::move(onResponseComplete);
 
             auto requestConnOptions = CreateConnectionOptionsForRequest(request);
             auto connectionManager = GetWithCreateConnectionManagerForRequest(request, requestConnOptions);
 
             if (!connectionManager)
             {
-                response->SetClientErrorMessage(aws_error_debug_str(aws_last_error()));
-                response->SetClientErrorType(Client::CoreErrors::INVALID_PARAMETER_COMBINATION);
-                return response;
+                return Aws::Client::AWSError<Aws::Client::CoreErrors>{
+                    Aws::Client::CoreErrors::INVALID_PARAMETER_COMBINATION,
+                    "InvalidParameterCombination",
+                    aws_error_debug_str(aws_last_error()),
+                    false};
             }
-            AddRequestMetadataToCrtRequest(request, crtRequest);
+
+            AddRequestMetadataToCrtRequest(request, state->crtRequest);
 
             // Set the request body stream on the crt request. Setup the write rate limiter if present
             if (request->GetContentBody())
             {
                 bool isStreaming = request->IsEventStreamRequest();
-                crtRequest->SetBody(Aws::MakeShared<SDKAdaptingInputStream>(CRT_HTTP_CLIENT_TAG, m_configuration.writeRateLimiter, request->GetContentBody(), *this, *request, isStreaming));
+                state->crtRequest->SetBody(Aws::MakeShared<SDKAdaptingInputStream>(CRT_HTTP_CLIENT_TAG, m_configuration.writeRateLimiter, request->GetContentBody(), *this, *request, isStreaming));
             }
 
-            Crt::Http::HttpRequestOptions requestOptions;
-            requestOptions.request = crtRequest.get();
-
-            requestOptions.onIncomingBody =
-                [this, request, response](Crt::Http::HttpStream& stream, const Crt::ByteCursor& body)
-            {
-                if (!ContinueRequest(*request) || !IsRequestProcessingEnabled())
-                {
-                    AWS_LOGSTREAM_INFO(CRT_HTTP_CLIENT_TAG, "Request canceled. Canceling request by closing the connection.");
-                    stream.GetConnection().Close();
-                    return;
-                }
-                OnResponseBodyReceived(stream, body, response, request);
-            };
-
-            requestOptions.onIncomingHeaders =
-                [response](Crt::Http::HttpStream& stream, enum aws_http_header_block block, const Crt::Http::HttpHeader* headersArray, std::size_t headersCount)
-            {
-                OnIncomingHeaders(stream, block, headersArray, headersCount, response);
-            };
-
-            // This will arrive at or around the same time as the headers. Use it to set the response code on the response
-            requestOptions.onIncomingHeadersBlockDone =
-                [request, response](Crt::Http::HttpStream& stream, enum aws_http_header_block block)
-            {
-                OnIncomingHeadersBlockDone(stream, block, response);
-                auto& headersHandler = request->GetHeadersReceivedEventHandler();
-                if (headersHandler)
-                {
-                    headersHandler(request.get(), response.get());
-                }
-            };
-
-            // CRT client is async only so we'll need to do the synchronous part ourselves.
-            // We'll use a condition variable and wait on it until the request completes or errors out.
-            AsyncWaiter waiter;
-
-            requestOptions.onStreamComplete =
-                [&waiter, &response](Crt::Http::HttpStream& stream, int errorCode)
-            {
-                OnStreamComplete(stream, errorCode, waiter, response);
-            };
-
-            std::shared_ptr<Crt::Http::HttpClientConnection> connectionRef(nullptr);
-
-            // now we finally have the request, get a connection and make the request.
+            // Returns as soon as the acquisition is under way. Everything after this point happens on an
+            // event loop thread, and the state above is what keeps it alive.
             connectionManager->AcquireConnection(
-                    [&connectionRef, &requestOptions, response, &waiter, request, this]
-                    (std::shared_ptr<Crt::Http::HttpClientConnection> connection, int errorCode)
+                    [state, this](std::shared_ptr<Crt::Http::HttpClientConnection> connection, int errorCode)
                     {
-                        OnClientConnectionAvailable(connection, errorCode, connectionRef, requestOptions, waiter, request, response, *this);
+                        OnClientConnectionAvailableAsync(connection, errorCode, state, *this);
                     });
 
-            bool waiterTimedOut = false;
-            // Naive http request timeout implementation. This doesn't factor in how long it took to get the connection from the pool, and
-            // I'm undecided on the queueing theory implications of this decision so if this turns out to be the wrong granularity
-            // this is the section of code you should be changing. You can probably get "close" by having an additional
-            // atomic (not necessarily full on atomics implementation, but it needs to be the size of a WORD if it's not)
-            // counter that gets incremented in the acquireConnection callback as long as your connection timeout
-            // is shorter than your request timeout. Even if it's not, that would handle like.... 4-5 nines of getting this right.
-            // since in the worst case scenario, your connect timeout got preempted by the request timeout, and is it really worth
-            // all that effort if that's the worst thing that can happen?
-            if (m_configuration.requestTimeoutMs > 0 )
-            {
-                waiterTimedOut = !waiter.WaitOnCompletionFor(m_configuration.requestTimeoutMs);
+            return {};
+        }
 
-                // if this is true, the waiter timed out without a terminal condition being woken up.
-                if (waiterTimedOut)
+        std::shared_ptr<HttpResponse> CRTHttpClient::MakeRequest(const std::shared_ptr<HttpRequest>& request,
+                                                                 Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
+                                                                 Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
+        {
+            // The blocking call is the async one with the waiting on the outside, where a caller who
+            // asked to block is the one doing it. The waiter is on the heap with the response, so
+            // returning early on a timeout no longer risks a callback writing into a dead frame, and the
+            // unconditional second wait that used to guard that is gone.
+            auto sync = Aws::MakeShared<SyncRequestState>(CRT_HTTP_CLIENT_TAG);
+
+            auto error = MakeRequestAsync(request,
+                [sync](std::shared_ptr<HttpResponse> response)
                 {
-                    // close the connection if it's still there so we can expedite anything we're waiting on.
-                    if (connectionRef)
-                    {
-                        connectionRef->Close();
-                    }
-                }
+                    sync->response = std::move(response);
+                    sync->waiter.Wakeup();
+                },
+                readLimiter, writeLimiter);
+
+            if (error.has_value())
+            {
+                auto response = Aws::MakeShared<Standard::StandardHttpResponse>(CRT_HTTP_CLIENT_TAG, request);
+                response->SetClientErrorType(error->GetErrorType());
+                response->SetClientErrorMessage(error->GetMessage());
+                return response;
             }
 
-            // always wait, even if the above section timed out, because Wakeup() hasn't yet been called,
-            // and this means we're still waiting on some queued up callbacks to fire.
-            // going past this point before that occurs will cause a segfault when the callback DOES finally fire
-            // since the waiter is on the stack.
-            waiter.WaitOnCompletion();
-
-            // now handle if we timed out or not.
-            if (waiterTimedOut)
+            if (m_configuration.requestTimeoutMs > 0)
             {
-                response->SetClientErrorType(
-                        Aws::Client::CoreErrors::REQUEST_TIMEOUT);
-                response->SetClientErrorMessage("Request Timeout Has Expired");
+                if (!sync->waiter.WaitOnCompletionFor(m_configuration.requestTimeoutMs))
+                {
+                    auto response = Aws::MakeShared<Standard::StandardHttpResponse>(CRT_HTTP_CLIENT_TAG, request);
+                    response->SetClientErrorType(Aws::Client::CoreErrors::REQUEST_TIMEOUT);
+                    response->SetClientErrorMessage("Request Timeout Has Expired");
+                    return response;
+                }
+            }
+            else
+            {
+                sync->waiter.WaitOnCompletion();
             }
 
             // TODO: is VOX support still a thing? If so we need to add the metrics for it.
-            return response;
+            return sync->response;
         }
 
         Aws::String CRTHttpClient::ResolveConnectionPoolKey(const URI& uri)

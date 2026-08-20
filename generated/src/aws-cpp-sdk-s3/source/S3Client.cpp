@@ -157,6 +157,76 @@ const char ALLOCATION_TAG[] = "S3Client";
 const char* S3Client::GetServiceName() { return SERVICE_NAME; }
 const char* S3Client::GetAllocationTag() { return ALLOCATION_TAG; }
 
+void S3Client::GetObjectAsyncProto(const Model::GetObjectRequest& request,
+                                   std::function<void(Model::GetObjectOutcome)> handler) const {
+  // The operation is submitted to the executor exactly as it is today. What changed is that the thread
+  // it runs on is released when the request reaches the transport, instead of being held for the round
+  // trip, and the completion is handed back here rather than finishing on a loop thread.
+  auto executor = m_clientConfiguration.executor;
+  auto req = Aws::MakeShared<Model::GetObjectRequest>(ALLOCATION_TAG, request);
+  executor->Submit([this, req, handler, executor] { GetObjectPipelineProto(req, handler, executor); });
+}
+
+void S3Client::GetObjectPipelineProto(const std::shared_ptr<Model::GetObjectRequest>& req,
+                                      const std::function<void(Model::GetObjectOutcome)>& handler,
+                                      const std::shared_ptr<Aws::Utils::Threading::Executor>& executor) const {
+  auto endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(req->GetEndpointContextParams());
+  if (!endpointResolutionOutcome.IsSuccess()) {
+    handler(Model::GetObjectOutcome(Aws::Client::AWSError<Aws::Client::CoreErrors>(
+        Aws::Client::CoreErrors::ENDPOINT_RESOLUTION_FAILURE, "ENDPOINT_RESOLUTION_FAILURE",
+        endpointResolutionOutcome.GetError().GetMessage(), false)));
+    return;
+  }
+  endpointResolutionOutcome.GetResult().AddPathSegments(req->GetKey());
+  req->SetServiceSpecificParameters([&]() -> std::shared_ptr<Http::ServiceSpecificParameters> {
+    Aws::Map<Aws::String, Aws::String> params;
+    params.emplace("bucketName", req->GetBucket());
+    ServiceSpecificParameters serviceSpecificParameters{params};
+    return Aws::MakeShared<ServiceSpecificParameters>(ALLOCATION_TAG, serviceSpecificParameters);
+  }());
+
+  MakeRequestWithUnparsedResponseAsync(*req, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET,
+      executor, [req, handler](Aws::Client::StreamOutcome result) {
+        // Already on an executor thread: the transport completion handed us over before doing anything.
+        handler(result.IsSuccess() ? Model::GetObjectOutcome(result.GetResultWithOwnership())
+                                   : Model::GetObjectOutcome(std::move(result.GetError())));
+      });
+}
+
+void S3Client::PutObjectAsyncProto(const Model::PutObjectRequest& request,
+                                   std::function<void(Model::PutObjectOutcome)> handler) const {
+  auto executor = m_clientConfiguration.executor;
+  auto req = Aws::MakeShared<Model::PutObjectRequest>(ALLOCATION_TAG, request);
+  executor->Submit([this, req, handler, executor] { PutObjectPipelineProto(req, handler, executor); });
+}
+
+void S3Client::PutObjectPipelineProto(const std::shared_ptr<Model::PutObjectRequest>& req,
+                                      const std::function<void(Model::PutObjectOutcome)>& handler,
+                                      const std::shared_ptr<Aws::Utils::Threading::Executor>& executor) const {
+  auto endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(req->GetEndpointContextParams());
+  if (!endpointResolutionOutcome.IsSuccess()) {
+    handler(Model::PutObjectOutcome(Aws::Client::AWSError<Aws::Client::CoreErrors>(
+        Aws::Client::CoreErrors::ENDPOINT_RESOLUTION_FAILURE, "ENDPOINT_RESOLUTION_FAILURE",
+        endpointResolutionOutcome.GetError().GetMessage(), false)));
+    return;
+  }
+  endpointResolutionOutcome.GetResult().AddPathSegments(req->GetKey());
+  req->SetServiceSpecificParameters([&]() -> std::shared_ptr<Http::ServiceSpecificParameters> {
+    Aws::Map<Aws::String, Aws::String> params;
+    params.emplace("bucketName", req->GetBucket());
+    ServiceSpecificParameters serviceSpecificParameters{params};
+    return Aws::MakeShared<ServiceSpecificParameters>(ALLOCATION_TAG, serviceSpecificParameters);
+  }());
+
+  MakeRequestAsync(*req, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT,
+      executor, [req, handler](Aws::Client::XmlOutcome result) {
+        // Already on an executor thread: the transport completion handed us over before doing anything.
+        handler(result.IsSuccess() ? Model::PutObjectOutcome(result.GetResultWithOwnership())
+                                   : Model::PutObjectOutcome(std::move(result.GetError())));
+      });
+}
+
+
 S3Client::S3Client(const S3Client& rhs)
     : BASECLASS(rhs.m_clientConfiguration,
                 Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(

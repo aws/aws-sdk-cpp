@@ -47,6 +47,26 @@ namespace Aws
                 Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const = 0;
 
             /**
+             * Starts an http request and returns as soon as it has been started. onResponseComplete is
+             * invoked with the finished response, on whichever thread the implementation completes on.
+             * Only implemented by http clients that can drive a request without a thread of their own.
+             */
+            virtual Aws::Crt::Optional<Aws::Client::AWSError<Aws::Client::CoreErrors>> MakeRequestAsync(
+                const std::shared_ptr<HttpRequest>& request,
+                std::function<void(std::shared_ptr<HttpResponse>)> onResponseComplete,
+                Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
+                Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const {
+              AWS_UNREFERENCED_PARAM(request);
+              AWS_UNREFERENCED_PARAM(onResponseComplete);
+              AWS_UNREFERENCED_PARAM(readLimiter);
+              AWS_UNREFERENCED_PARAM(writeLimiter);
+              return Aws::Client::AWSError<Aws::Client::CoreErrors>{Aws::Client::CoreErrors::NOT_IMPLEMENTED,
+                "NotImplemented",
+                "async requests are not supported on this http client",
+                false};
+            }
+
+            /**
              * If yes, the http client supports transfer-encoding:chunked.
              */
             virtual bool SupportsChunkedTransferEncoding() const { return true; }

@@ -73,6 +73,60 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::AmazonWebServiceRequest& request
     return MakeRequest(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride);
 }
 
+void AWSXMLClient::MakeRequestAsync(const Aws::AmazonWebServiceRequest& request,
+    const Aws::Endpoint::AWSEndpoint& endpoint,
+    Http::HttpMethod method,
+    const std::shared_ptr<Aws::Utils::Threading::Executor>& executor,
+    std::function<void(XmlOutcome)> onDone,
+    const char* signerName,
+    const char* signerRegionOverride,
+    const char* signerServiceNameOverride) const
+{
+    const Aws::Http::URI& uri = endpoint.GetURI();
+    if (endpoint.GetAttributes() && endpoint.GetAttributes()->backend == "S3Express") {
+      request.AddUserAgentFeature(Aws::Client::UserAgentFeature::S3_EXPRESS_BUCKET);
+    }
+    if (endpoint.GetAttributes()) {
+        signerName = endpoint.GetAttributes()->authScheme.GetName().c_str();
+        if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
+            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
+        }
+        if (endpoint.GetAttributes()->authScheme.GetSigningRegionSet()) {
+            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegionSet()->c_str();
+        }
+        if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
+            signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
+        }
+    }
+
+    BASECLASS::AttemptOnceAsync(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride,
+        executor, [onDone](HttpResponseOutcome httpOutcome)
+        {
+            if (!httpOutcome.IsSuccess())
+            {
+                onDone(XmlOutcome(std::move(httpOutcome)));
+                return;
+            }
+
+            if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0)
+            {
+                XmlDocument xmlDoc = XmlDocument::CreateFromXmlStream(httpOutcome.GetResult()->GetResponseBody());
+                if (!xmlDoc.WasParseSuccessful())
+                {
+                    AWS_LOGSTREAM_ERROR(AWS_XML_CLIENT_LOG_TAG, "Xml parsing failed with message " << xmlDoc.GetErrorMessage().c_str());
+                    onDone(XmlOutcome(AWSError<CoreErrors>(CoreErrors::UNKNOWN, "Xml Parse Error", xmlDoc.GetErrorMessage(), false)));
+                    return;
+                }
+
+                onDone(XmlOutcome(AmazonWebServiceResult<XmlDocument>(std::move(xmlDoc),
+                    httpOutcome.GetResult()->GetHeaders(), httpOutcome.GetResult()->GetResponseCode())));
+                return;
+            }
+
+            onDone(XmlOutcome(AmazonWebServiceResult<XmlDocument>(XmlDocument(), httpOutcome.GetResult()->GetHeaders())));
+        });
+}
+
 XmlOutcome AWSXMLClient::MakeRequest(const Aws::Endpoint::AWSEndpoint& endpoint,
                                      const char* requestName /* = "" */,
                                      Http::HttpMethod method /* = Http::HttpMethod::HTTP_POST */,

@@ -37,6 +37,7 @@
 #include <aws/core/utils/crypto/Factories.h>
 #include <aws/core/utils/event/EventStream.h>
 #include <aws/core/utils/UUID.h>
+#include <aws/core/utils/threading/Executor.h>
 #include <aws/core/monitoring/MonitoringManager.h>
 #include <aws/core/Region.h>
 #include <aws/core/utils/DNS.h>
@@ -728,6 +729,111 @@ StreamOutcome AWSClient::MakeRequestWithUnparsedResponse(const Aws::Http::URI& u
     }
 
     return StreamOutcome(std::move(httpResponseOutcome));
+}
+
+void AWSClient::AttemptOnceAsync(const Aws::Http::URI& uri,
+    const Aws::AmazonWebServiceRequest& request,
+    Aws::Http::HttpMethod method,
+    const char* signerName,
+    const char* signerRegionOverride,
+    const char* signerServiceNameOverride,
+    const std::shared_ptr<Aws::Utils::Threading::Executor>& executor,
+    std::function<void(HttpResponseOutcome)> onDone) const
+{
+    if (!Aws::Utils::IsValidHost(uri.GetHost()))
+    {
+        onDone(HttpResponseOutcome(AWSError<CoreErrors>(CoreErrors::VALIDATION, "", "Invalid DNS Label found in URI host", false/*retryable*/)));
+        return;
+    }
+
+    std::shared_ptr<HttpRequest> httpRequest(CreateHttpRequest(uri, method, request.GetResponseStreamFactory()));
+
+    RequestInfo requestInfo;
+    requestInfo.attempt = 1;
+    requestInfo.maxAttempts = m_enableNewRetries ? m_retryStrategy->GetMaxAttempts() : 0;
+    httpRequest->SetHeaderValue(Http::SDK_INVOCATION_ID_HEADER, Aws::Utils::UUID::PseudoRandomUUID());
+    httpRequest->SetHeaderValue(Http::SDK_REQUEST_HEADER, requestInfo);
+    AppendRecursionDetectionHeader(httpRequest);
+    httpRequest->SetEventStreamRequest(request.IsEventStreamRequest());
+    httpRequest->SetHasEventStreamResponse(request.HasEventStreamResponse());
+
+    BuildHttpRequest(request, httpRequest);
+
+    auto signer = GetSignerByName(signerName);
+    if (!signer->SignRequest(*httpRequest, signerRegionOverride, signerServiceNameOverride, true))
+    {
+        AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, "Request signing failed. Returning error.");
+        onDone(HttpResponseOutcome(AWSError<CoreErrors>(CoreErrors::CLIENT_SIGNING_FAILURE, "", "SDK failed to sign the request", false/*retryable*/)));
+        return;
+    }
+
+    if (request.GetRequestSignedHandler())
+    {
+        request.GetRequestSignedHandler()(*httpRequest);
+    }
+
+    // The executor thread that got us here is released at this call. The completion below arrives on a
+    // loop thread and does one thing, hand the response to the executor. Error marshalling,
+    // deserialization and the customer's handler all run there, never on a loop.
+    auto error = m_httpClient->MakeRequestAsync(httpRequest,
+        [this, httpRequest, executor, onDone](std::shared_ptr<HttpResponse> httpResponse)
+        {
+            executor->Submit([this, httpResponse, onDone]
+            {
+                if (DoesResponseGenerateError(httpResponse))
+                {
+                    AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request returned error. Attempting to generate appropriate error codes from response");
+                    onDone(HttpResponseOutcome(BuildAWSError(httpResponse)));
+                    return;
+                }
+
+                onDone(HttpResponseOutcome(httpResponse));
+            });
+        },
+        m_readRateLimiter.get(), m_writeRateLimiter.get());
+
+    if (error.has_value())
+    {
+        onDone(HttpResponseOutcome(std::move(error.value())));
+    }
+}
+
+void AWSClient::MakeRequestWithUnparsedResponseAsync(const Aws::AmazonWebServiceRequest& request,
+    const Aws::Endpoint::AWSEndpoint& endpoint,
+    Http::HttpMethod method,
+    const std::shared_ptr<Aws::Utils::Threading::Executor>& executor,
+    std::function<void(StreamOutcome)> onDone,
+    const char* signerName,
+    const char* signerRegionOverride,
+    const char* signerServiceNameOverride) const
+{
+    const Aws::Http::URI& uri = endpoint.GetURI();
+    if (endpoint.GetAttributes()) {
+        signerName = endpoint.GetAttributes()->authScheme.GetName().c_str();
+        if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
+            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
+        }
+        if (endpoint.GetAttributes()->authScheme.GetSigningRegionSet()) {
+            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegionSet()->c_str();
+        }
+        if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
+            signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
+        }
+    }
+
+    AttemptOnceAsync(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride, executor,
+        [onDone](HttpResponseOutcome httpResponseOutcome)
+        {
+            if (httpResponseOutcome.IsSuccess())
+            {
+                onDone(StreamOutcome(AmazonWebServiceResult<Stream::ResponseStream>(
+                    httpResponseOutcome.GetResult()->SwapResponseStreamOwnership(),
+                    httpResponseOutcome.GetResult()->GetHeaders(), httpResponseOutcome.GetResult()->GetResponseCode())));
+                return;
+            }
+
+            onDone(StreamOutcome(std::move(httpResponseOutcome)));
+        });
 }
 
 StreamOutcome AWSClient::MakeRequestWithUnparsedResponse(const Aws::AmazonWebServiceRequest& request,
