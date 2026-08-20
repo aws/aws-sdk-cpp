@@ -16,11 +16,14 @@ namespace Model {
 namespace OriginAccessControlSigningProtocolsMapper {
 
 static const int sigv4_HASH = HashingUtils::HashString("sigv4");
+static const int sigv4a_HASH = HashingUtils::HashString("sigv4a");
 
 OriginAccessControlSigningProtocols GetOriginAccessControlSigningProtocolsForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == sigv4_HASH) {
     return OriginAccessControlSigningProtocols::sigv4;
+  } else if (hashCode == sigv4a_HASH) {
+    return OriginAccessControlSigningProtocols::sigv4a;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForOriginAccessControlSigningProtocols(OriginAccessControlSig
       return {};
     case OriginAccessControlSigningProtocols::sigv4:
       return "sigv4";
+    case OriginAccessControlSigningProtocols::sigv4a:
+      return "sigv4a";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

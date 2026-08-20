@@ -20,12 +20,8 @@ namespace Lambda {
 namespace Model {
 
 /**
- * <p>The resource-based policy you tried to add to the Lambda function would grant
- * public access to it, and your account's <code>BlockPublicAccess</code> setting
- * prevents public access. For more information about blocking public access to
- * Lambda functions, see <a
- * href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html#access-control-block-public-access">Block
- * public access to Lambda resources</a>.</p><p><h3>See Also:</h3>   <a
+ * <p>The resource-based policy you tried to add to the Lambda resource would grant
+ * public access to it, which isn't allowed.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublicPolicyException">AWS
  * API Reference</a></p>
  */

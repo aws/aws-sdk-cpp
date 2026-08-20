@@ -106,6 +106,17 @@ ComputeResourceUpdate& ComputeResourceUpdate::operator=(JsonView jsonValue) {
     m_scalingPolicy = jsonValue.GetObject("scalingPolicy");
     m_scalingPolicyHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("managedInstancesProvider")) {
+    m_managedInstancesProvider = jsonValue.GetObject("managedInstancesProvider");
+    m_managedInstancesProviderHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("capacityTags")) {
+    Aws::Map<Aws::String, JsonView> capacityTagsJsonMap = jsonValue.GetObject("capacityTags").GetAllObjects();
+    for (auto& capacityTagsItem : capacityTagsJsonMap) {
+      m_capacityTags[capacityTagsItem.first] = capacityTagsItem.second.AsString();
+    }
+    m_capacityTagsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -202,6 +213,18 @@ JsonValue ComputeResourceUpdate::Jsonize() const {
 
   if (m_scalingPolicyHasBeenSet) {
     payload.WithObject("scalingPolicy", m_scalingPolicy.Jsonize());
+  }
+
+  if (m_managedInstancesProviderHasBeenSet) {
+    payload.WithObject("managedInstancesProvider", m_managedInstancesProvider.Jsonize());
+  }
+
+  if (m_capacityTagsHasBeenSet) {
+    JsonValue capacityTagsJsonMap;
+    for (auto& capacityTagsItem : m_capacityTags) {
+      capacityTagsJsonMap.WithString(capacityTagsItem.first, capacityTagsItem.second);
+    }
+    payload.WithObject("capacityTags", std::move(capacityTagsJsonMap));
   }
 
   return payload;

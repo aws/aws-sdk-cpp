@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Batch {
 namespace Model {
-enum class CRType { NOT_SET, EC2, SPOT, FARGATE, FARGATE_SPOT };
+enum class CRType { NOT_SET, EC2, SPOT, FARGATE, FARGATE_SPOT, ECS_MANAGED_INSTANCES };
 
 namespace CRTypeMapper {
 AWS_BATCH_API CRType GetCRTypeForName(const Aws::String& name);

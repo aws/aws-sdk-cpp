@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sesv2/SESV2Request.h>
 #include <aws/sesv2/SESV2_EXPORTS.h>
+#include <aws/sesv2/model/ConfigurationOverrides.h>
 #include <aws/sesv2/model/Destination.h>
 #include <aws/sesv2/model/EmailContent.h>
 #include <aws/sesv2/model/ListManagementOptions.h>
@@ -307,6 +308,26 @@ class SendEmailRequest : public SESV2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An object that overrides, for this message only, settings that would
+   * otherwise apply to it. Each setting that you don't override keeps the value that
+   * already applies.</p>
+   */
+  inline const ConfigurationOverrides& GetConfigurationOverrides() const { return m_configurationOverrides; }
+  inline bool ConfigurationOverridesHasBeenSet() const { return m_configurationOverridesHasBeenSet; }
+  template <typename ConfigurationOverridesT = ConfigurationOverrides>
+  void SetConfigurationOverrides(ConfigurationOverridesT&& value) {
+    m_configurationOverridesHasBeenSet = true;
+    m_configurationOverrides = std::forward<ConfigurationOverridesT>(value);
+  }
+  template <typename ConfigurationOverridesT = ConfigurationOverrides>
+  SendEmailRequest& WithConfigurationOverrides(ConfigurationOverridesT&& value) {
+    SetConfigurationOverrides(std::forward<ConfigurationOverridesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_fromEmailAddress;
 
@@ -331,6 +352,8 @@ class SendEmailRequest : public SESV2Request {
   Aws::String m_tenantName;
 
   ListManagementOptions m_listManagementOptions;
+
+  ConfigurationOverrides m_configurationOverrides;
   bool m_fromEmailAddressHasBeenSet = false;
   bool m_fromEmailAddressIdentityArnHasBeenSet = false;
   bool m_destinationHasBeenSet = false;
@@ -343,6 +366,7 @@ class SendEmailRequest : public SESV2Request {
   bool m_endpointIdHasBeenSet = false;
   bool m_tenantNameHasBeenSet = false;
   bool m_listManagementOptionsHasBeenSet = false;
+  bool m_configurationOverridesHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -246,7 +246,8 @@ class EcsTaskDetails {
   ///@{
   /**
    * <p>An object that represents the compute environment architecture for Batch jobs
-   * on Fargate.</p>
+   * on Fargate or Amazon ECS Managed Instances. Contains the operating system family
+   * and CPU architecture of the task.</p>
    */
   inline const RuntimePlatform& GetRuntimePlatform() const { return m_runtimePlatform; }
   inline bool RuntimePlatformHasBeenSet() const { return m_runtimePlatformHasBeenSet; }
@@ -303,6 +304,26 @@ class EcsTaskDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The network mode configured for the task. This field is populated for jobs
+   * running on Amazon ECS Managed Instances (<code>MANAGED_INSTANCES</code> platform
+   * capability) and always returns <code>host</code>.</p>
+   */
+  inline const Aws::String& GetNetworkMode() const { return m_networkMode; }
+  inline bool NetworkModeHasBeenSet() const { return m_networkModeHasBeenSet; }
+  template <typename NetworkModeT = Aws::String>
+  void SetNetworkMode(NetworkModeT&& value) {
+    m_networkModeHasBeenSet = true;
+    m_networkMode = std::forward<NetworkModeT>(value);
+  }
+  template <typename NetworkModeT = Aws::String>
+  EcsTaskDetails& WithNetworkMode(NetworkModeT&& value) {
+    SetNetworkMode(std::forward<NetworkModeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<TaskContainerDetails> m_containers;
 
@@ -329,6 +350,8 @@ class EcsTaskDetails {
   Aws::Vector<Volume> m_volumes;
 
   bool m_enableExecuteCommand{false};
+
+  Aws::String m_networkMode;
   bool m_containersHasBeenSet = false;
   bool m_containerInstanceArnHasBeenSet = false;
   bool m_taskArnHasBeenSet = false;
@@ -342,6 +365,7 @@ class EcsTaskDetails {
   bool m_runtimePlatformHasBeenSet = false;
   bool m_volumesHasBeenSet = false;
   bool m_enableExecuteCommandHasBeenSet = false;
+  bool m_networkModeHasBeenSet = false;
 };
 
 }  // namespace Model

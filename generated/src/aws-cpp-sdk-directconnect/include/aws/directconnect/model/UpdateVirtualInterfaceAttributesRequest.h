@@ -101,6 +101,40 @@ class UpdateVirtualInterfaceAttributesRequest : public DirectConnectRequest {
 
   ///@{
   /**
+   * <p>The number of inbound IPv4 route prefixes to allocate to the virtual
+   * interface. Not applicable to public virtual interfaces.</p>
+   */
+  inline int GetPrefixPoolAllocatedCountIpv4() const { return m_prefixPoolAllocatedCountIpv4; }
+  inline bool PrefixPoolAllocatedCountIpv4HasBeenSet() const { return m_prefixPoolAllocatedCountIpv4HasBeenSet; }
+  inline void SetPrefixPoolAllocatedCountIpv4(int value) {
+    m_prefixPoolAllocatedCountIpv4HasBeenSet = true;
+    m_prefixPoolAllocatedCountIpv4 = value;
+  }
+  inline UpdateVirtualInterfaceAttributesRequest& WithPrefixPoolAllocatedCountIpv4(int value) {
+    SetPrefixPoolAllocatedCountIpv4(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The number of inbound IPv6 route prefixes to allocate to the virtual
+   * interface. Not applicable to public virtual interfaces.</p>
+   */
+  inline int GetPrefixPoolAllocatedCountIpv6() const { return m_prefixPoolAllocatedCountIpv6; }
+  inline bool PrefixPoolAllocatedCountIpv6HasBeenSet() const { return m_prefixPoolAllocatedCountIpv6HasBeenSet; }
+  inline void SetPrefixPoolAllocatedCountIpv6(int value) {
+    m_prefixPoolAllocatedCountIpv6HasBeenSet = true;
+    m_prefixPoolAllocatedCountIpv6 = value;
+  }
+  inline UpdateVirtualInterfaceAttributesRequest& WithPrefixPoolAllocatedCountIpv6(int value) {
+    SetPrefixPoolAllocatedCountIpv6(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The rate limit (bandwidth allocation) to apply to the virtual interface. Use
    * this to update the bandwidth allocation on an existing virtual interface.</p>
    */
@@ -126,11 +160,17 @@ class UpdateVirtualInterfaceAttributesRequest : public DirectConnectRequest {
 
   Aws::String m_virtualInterfaceName;
 
+  int m_prefixPoolAllocatedCountIpv4{0};
+
+  int m_prefixPoolAllocatedCountIpv6{0};
+
   Aws::String m_rateLimit;
   bool m_virtualInterfaceIdHasBeenSet = false;
   bool m_mtuHasBeenSet = false;
   bool m_enableSiteLinkHasBeenSet = false;
   bool m_virtualInterfaceNameHasBeenSet = false;
+  bool m_prefixPoolAllocatedCountIpv4HasBeenSet = false;
+  bool m_prefixPoolAllocatedCountIpv6HasBeenSet = false;
   bool m_rateLimitHasBeenSet = false;
 };
 

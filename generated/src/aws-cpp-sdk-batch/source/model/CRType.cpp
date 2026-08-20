@@ -19,6 +19,7 @@ static const int EC2_HASH = HashingUtils::HashString("EC2");
 static const int SPOT_HASH = HashingUtils::HashString("SPOT");
 static const int FARGATE_HASH = HashingUtils::HashString("FARGATE");
 static const int FARGATE_SPOT_HASH = HashingUtils::HashString("FARGATE_SPOT");
+static const int ECS_MANAGED_INSTANCES_HASH = HashingUtils::HashString("ECS_MANAGED_INSTANCES");
 
 CRType GetCRTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ CRType GetCRTypeForName(const Aws::String& name) {
     return CRType::FARGATE;
   } else if (hashCode == FARGATE_SPOT_HASH) {
     return CRType::FARGATE_SPOT;
+  } else if (hashCode == ECS_MANAGED_INSTANCES_HASH) {
+    return CRType::ECS_MANAGED_INSTANCES;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForCRType(CRType enumValue) {
       return "FARGATE";
     case CRType::FARGATE_SPOT:
       return "FARGATE_SPOT";
+    case CRType::ECS_MANAGED_INSTANCES:
+      return "ECS_MANAGED_INSTANCES";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

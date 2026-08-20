@@ -41,6 +41,7 @@
 #include <aws/lambda/model/DeleteFunctionUrlConfigRequest.h>
 #include <aws/lambda/model/DeleteLayerVersionRequest.h>
 #include <aws/lambda/model/DeleteProvisionedConcurrencyConfigRequest.h>
+#include <aws/lambda/model/DeleteResourcePolicyRequest.h>
 #include <aws/lambda/model/GetAccountSettingsRequest.h>
 #include <aws/lambda/model/GetAliasRequest.h>
 #include <aws/lambda/model/GetCapacityProviderRequest.h>
@@ -62,6 +63,7 @@
 #include <aws/lambda/model/GetLayerVersionRequest.h>
 #include <aws/lambda/model/GetPolicyRequest.h>
 #include <aws/lambda/model/GetProvisionedConcurrencyConfigRequest.h>
+#include <aws/lambda/model/GetResourcePolicyRequest.h>
 #include <aws/lambda/model/GetRuntimeManagementConfigRequest.h>
 #include <aws/lambda/model/InvokeRequest.h>
 #include <aws/lambda/model/InvokeWithResponseStreamRequest.h>
@@ -88,6 +90,7 @@
 #include <aws/lambda/model/PutFunctionRecursionConfigRequest.h>
 #include <aws/lambda/model/PutFunctionScalingConfigRequest.h>
 #include <aws/lambda/model/PutProvisionedConcurrencyConfigRequest.h>
+#include <aws/lambda/model/PutResourcePolicyRequest.h>
 #include <aws/lambda/model/PutRuntimeManagementConfigRequest.h>
 #include <aws/lambda/model/RemoveLayerVersionPermissionRequest.h>
 #include <aws/lambda/model/RemovePermissionRequest.h>
@@ -629,6 +632,24 @@ DeleteProvisionedConcurrencyConfigOutcome LambdaClient::DeleteProvisionedConcurr
                             : DeleteProvisionedConcurrencyConfigOutcome(std::move(result.GetError()));
 }
 
+DeleteResourcePolicyOutcome LambdaClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const {
+  if (!request.ResourceArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteResourcePolicy", "Required field: ResourceArn, is not set");
+    return DeleteResourcePolicyOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [ResourceArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2026-07-09/resource-policy/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteResourcePolicyOutcome(std::move(result.GetError()));
+}
+
 GetAccountSettingsOutcome LambdaClient::GetAccountSettings(const GetAccountSettingsRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -1046,6 +1067,24 @@ GetProvisionedConcurrencyConfigOutcome LambdaClient::GetProvisionedConcurrencyCo
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetProvisionedConcurrencyConfigOutcome(result.GetResultWithOwnership())
                             : GetProvisionedConcurrencyConfigOutcome(std::move(result.GetError()));
+}
+
+GetResourcePolicyOutcome LambdaClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const {
+  if (!request.ResourceArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetResourcePolicy", "Required field: ResourceArn, is not set");
+    return GetResourcePolicyOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                        "Missing required field [ResourceArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2026-07-09/resource-policy/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : GetResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 GetRuntimeManagementConfigOutcome LambdaClient::GetRuntimeManagementConfig(const GetRuntimeManagementConfigRequest& request) const {
@@ -1562,6 +1601,24 @@ PutProvisionedConcurrencyConfigOutcome LambdaClient::PutProvisionedConcurrencyCo
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? PutProvisionedConcurrencyConfigOutcome(result.GetResultWithOwnership())
                             : PutProvisionedConcurrencyConfigOutcome(std::move(result.GetError()));
+}
+
+PutResourcePolicyOutcome LambdaClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const {
+  if (!request.ResourceArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("PutResourcePolicy", "Required field: ResourceArn, is not set");
+    return PutResourcePolicyOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                        "Missing required field [ResourceArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2026-07-09/resource-policy/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : PutResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 PutRuntimeManagementConfigOutcome LambdaClient::PutRuntimeManagementConfig(const PutRuntimeManagementConfigRequest& request) const {

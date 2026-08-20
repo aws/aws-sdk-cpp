@@ -516,7 +516,8 @@ class JobDetail {
   /**
    * <p>The platform capabilities required by the job definition. If no value is
    * specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources
-   * specify <code>FARGATE</code>.</p>
+   * specify <code>FARGATE</code>. Jobs run on Amazon ECS Managed Instances specify
+   * <code>MANAGED_INSTANCES</code>.</p>
    */
   inline const Aws::Vector<PlatformCapability>& GetPlatformCapabilities() const { return m_platformCapabilities; }
   inline bool PlatformCapabilitiesHasBeenSet() const { return m_platformCapabilitiesHasBeenSet; }

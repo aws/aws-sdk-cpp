@@ -16,11 +16,14 @@ namespace Model {
 namespace PartnerAppAuthTypeMapper {
 
 static const int IAM_HASH = HashingUtils::HashString("IAM");
+static const int IDC_HASH = HashingUtils::HashString("IDC");
 
 PartnerAppAuthType GetPartnerAppAuthTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == IAM_HASH) {
     return PartnerAppAuthType::IAM;
+  } else if (hashCode == IDC_HASH) {
+    return PartnerAppAuthType::IDC;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForPartnerAppAuthType(PartnerAppAuthType enumValue) {
       return {};
     case PartnerAppAuthType::IAM:
       return "IAM";
+    case PartnerAppAuthType::IDC:
+      return "IDC";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

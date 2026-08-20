@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/SageMakerRequest.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/model/IdcConfigInput.h>
+#include <aws/sagemaker/model/PartnerAppAuthType.h>
 #include <aws/sagemaker/model/PartnerAppConfig.h>
 #include <aws/sagemaker/model/PartnerAppMaintenanceConfig.h>
 #include <aws/sagemaker/model/Tag.h>
@@ -104,6 +106,50 @@ class UpdatePartnerAppRequest : public SageMakerRequest {
   template <typename ApplicationConfigT = PartnerAppConfig>
   UpdatePartnerAppRequest& WithApplicationConfig(ApplicationConfigT&& value) {
     SetApplicationConfig(std::forward<ApplicationConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the Amazon Web Services IAM Identity Center configuration for the
+   * SageMaker Partner AI App. Specify this parameter when <code>AuthType</code> is
+   * <code>IDC</code>. Apps that use <code>IAM</code> authorization don't use this
+   * parameter.</p>
+   */
+  inline const IdcConfigInput& GetIdcConfig() const { return m_idcConfig; }
+  inline bool IdcConfigHasBeenSet() const { return m_idcConfigHasBeenSet; }
+  template <typename IdcConfigT = IdcConfigInput>
+  void SetIdcConfig(IdcConfigT&& value) {
+    m_idcConfigHasBeenSet = true;
+    m_idcConfig = std::forward<IdcConfigT>(value);
+  }
+  template <typename IdcConfigT = IdcConfigInput>
+  UpdatePartnerAppRequest& WithIdcConfig(IdcConfigT&& value) {
+    SetIdcConfig(std::forward<IdcConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The authorization type that users use to access the SageMaker Partner AI App.
+   * Use this parameter to migrate an existing SageMaker Partner AI App from
+   * <code>IAM</code> authorization to <code>IDC</code> authorization. Valid
+   * values:</p> <ul> <li> <p> <code>IAM</code>: Users access the SageMaker Partner
+   * AI App with their Amazon Web Services IAM identity.</p> </li> <li> <p>
+   * <code>IDC</code>: Users access the SageMaker Partner AI App with their Amazon
+   * Web Services IAM Identity Center identity. Specify the Identity Center instance
+   * to use in <code>IdcConfig</code>.</p> </li> </ul>
+   */
+  inline PartnerAppAuthType GetAuthType() const { return m_authType; }
+  inline bool AuthTypeHasBeenSet() const { return m_authTypeHasBeenSet; }
+  inline void SetAuthType(PartnerAppAuthType value) {
+    m_authTypeHasBeenSet = true;
+    m_authType = value;
+  }
+  inline UpdatePartnerAppRequest& WithAuthType(PartnerAppAuthType value) {
+    SetAuthType(value);
     return *this;
   }
   ///@}
@@ -216,6 +262,10 @@ class UpdatePartnerAppRequest : public SageMakerRequest {
 
   PartnerAppConfig m_applicationConfig;
 
+  IdcConfigInput m_idcConfig;
+
+  PartnerAppAuthType m_authType{PartnerAppAuthType::NOT_SET};
+
   bool m_enableIamSessionBasedIdentity{false};
 
   bool m_enableAutoMinorVersionUpgrade{false};
@@ -229,6 +279,8 @@ class UpdatePartnerAppRequest : public SageMakerRequest {
   bool m_maintenanceConfigHasBeenSet = false;
   bool m_tierHasBeenSet = false;
   bool m_applicationConfigHasBeenSet = false;
+  bool m_idcConfigHasBeenSet = false;
+  bool m_authTypeHasBeenSet = false;
   bool m_enableIamSessionBasedIdentityHasBeenSet = false;
   bool m_enableAutoMinorVersionUpgradeHasBeenSet = false;
   bool m_appVersionHasBeenSet = false;

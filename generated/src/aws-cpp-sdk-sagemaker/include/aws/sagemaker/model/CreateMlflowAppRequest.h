@@ -94,6 +94,26 @@ class CreateMlflowAppRequest : public SageMakerRequest {
 
   ///@{
   /**
+   * <p>The ID of the Amazon Web Services KMS key used to encrypt the data at rest
+   * associated with the MLflow App. If you don't specify a value, the MLflow App is
+   * not encrypted with a customer-managed key.</p>
+   */
+  inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
+  inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
+  template <typename KmsKeyIdT = Aws::String>
+  void SetKmsKeyId(KmsKeyIdT&& value) {
+    m_kmsKeyIdHasBeenSet = true;
+    m_kmsKeyId = std::forward<KmsKeyIdT>(value);
+  }
+  template <typename KmsKeyIdT = Aws::String>
+  CreateMlflowAppRequest& WithKmsKeyId(KmsKeyIdT&& value) {
+    SetKmsKeyId(std::forward<KmsKeyIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Whether to enable or disable automatic registration of new MLflow models to
    * the SageMaker Model Registry. To enable automatic model registration, set this
    * value to <code>AutoModelRegistrationEnabled</code>. To disable automatic model
@@ -205,6 +225,8 @@ class CreateMlflowAppRequest : public SageMakerRequest {
 
   Aws::String m_roleArn;
 
+  Aws::String m_kmsKeyId;
+
   ModelRegistrationMode m_modelRegistrationMode{ModelRegistrationMode::NOT_SET};
 
   Aws::String m_weeklyMaintenanceWindowStart;
@@ -217,6 +239,7 @@ class CreateMlflowAppRequest : public SageMakerRequest {
   bool m_nameHasBeenSet = false;
   bool m_artifactStoreUriHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
   bool m_modelRegistrationModeHasBeenSet = false;
   bool m_weeklyMaintenanceWindowStartHasBeenSet = false;
   bool m_accountDefaultStatusHasBeenSet = false;

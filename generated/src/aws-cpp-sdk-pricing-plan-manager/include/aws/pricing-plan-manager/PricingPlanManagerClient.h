@@ -16,11 +16,11 @@
 namespace Aws {
 namespace PricingPlanManager {
 /**
- * <p>Manages flat-rate pricing subscriptions for supported AWS services. Use this
- * API to create, approve, update, and cancel subscriptions; associate and
- * disassociate resources; and retrieve subscription details. With a flat-rate
- * pricing subscription, you pay a fixed recurring fee for eligible resources
- * instead of usage-based pricing.</p>
+ * <p>Manages flat-rate pricing subscriptions for supported services. Use this API
+ * to create, approve, update, and cancel subscriptions; associate and disassociate
+ * resources; and retrieve subscription details. With a flat-rate pricing
+ * subscription, you pay a fixed recurring fee for eligible resources instead of
+ * usage-based pricing.</p>
  */
 class AWS_PRICINGPLANMANAGER_API PricingPlanManagerClient : public Aws::Client::AWSJsonClient,
                                                             public Aws::Client::ClientWithAsyncTemplateMethods<PricingPlanManagerClient>,
@@ -118,9 +118,9 @@ class AWS_PRICINGPLANMANAGER_API PricingPlanManagerClient : public Aws::Client::
    * <p>Adds one or more resources to an existing subscription. The subscription must
    * be in an active state that is not pending other changes.</p>  <p>For
    * subscriptions in the CloudFront plan family, the associated resources must
-   * include exactly one Amazon CloudFront distribution and one AWS WAF web ACL. You
-   * can also include other supported resources, such as Amazon Route 53 hosted
-   * zones, and CloudFront KeyValueStores.</p> <p><h3>See Also:</h3>   <a
+   * include exactly one Amazon CloudFront distribution and one WAF web ACL. You can
+   * also include other supported resources, such as Amazon Route 53 hosted zones,
+   * and CloudFront KeyValueStores.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pricing-plan-manager-2025-08-05/AssociateResourcesToSubscription">AWS
    * API Reference</a></p>
    */
@@ -247,8 +247,8 @@ class AWS_PRICINGPLANMANAGER_API PricingPlanManagerClient : public Aws::Client::
    * <p>Removes one or more resources from an existing subscription.</p>
    * <p>For subscriptions in the CloudFront plan family, the associated resources
    * must always include exactly one Amazon CloudFront distribution and exactly one
-   * AWS WAF web ACL. You cannot remove these required resources.</p>
-   * <p><h3>See Also:</h3>   <a
+   * WAF web ACL. You cannot remove these required resources.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pricing-plan-manager-2025-08-05/DisassociateResourcesFromSubscription">AWS
    * API Reference</a></p>
    */

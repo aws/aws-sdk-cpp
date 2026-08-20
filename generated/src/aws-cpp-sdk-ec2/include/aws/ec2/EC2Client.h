@@ -738,15 +738,16 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
    * following rules apply:</p> <ul> <li> <p>You must specify either
    * <code>TargetTagAssociations</code> or <code>InstanceIds</code>, but not both.
    * Specifying both results in an <code>InvalidParameterCombination</code>
-   * error.</p> </li> <li> <p>The application status check must already exist and
-   * belong to your account.</p> </li> <li> <p>Tag keys must not be blank.</p> </li>
-   * <li> <p>Maximum 50 tag associations per application status check.</p> </li> <li>
-   * <p>Use <code>DisassociateApplicationStatusCheck</code> to remove
-   * associations.</p> </li> <li> <p>When you associate <a
-   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">tags</a>,
-   * the application status check automatically monitors all current and future
-   * instances that have the specified tags.</p> </li> </ul><p><h3>See Also:</h3>
-   * <a
+   * error.</p> </li> <li> <p>You must own the application status check. The check
+   * must already exist in your account.</p> </li> <li> <p>You must not leave tag
+   * keys blank.</p> </li> <li> <p>You can create a maximum of 50 tag associations
+   * for each application status check.</p> </li> <li> <p>You can use
+   * <code>DisassociateApplicationStatusCheck</code> to remove associations.</p>
+   * </li> <li> <p>You can associate <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">tags</a>
+   * so that the application status check automatically monitors all current and
+   * future instances that have the specified tags.</p> </li> </ul><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateApplicationStatusCheck">AWS
    * API Reference</a></p>
    */
@@ -2397,20 +2398,22 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
    * <p>Creates an application status check for monitoring the health of applications
    * running on your instances. You can configure the protocol, port, path, and
    * thresholds for the health check. The following rules apply:</p> <ul> <li> <p>You
-   * can create a maximum of 50 application status checks per account.</p> </li> <li>
-   * <p>Health checks do not start until you associate the check with instances or
-   * tags using <code>AssociateApplicationStatusCheck</code>.</p> </li> <li> <p>The
-   * <code>Timeout</code> value must be less than the <code>Interval</code>
-   * value.</p> </li> <li> <p>The <code>Path</code> must start with a forward slash
-   * (<code>/</code>). Default: <code>/</code>.</p> </li> <li> <p>If you do not
-   * specify <code>Aggregation</code>, it defaults to <code>included</code>, which
-   * means the check contributes to the instance-level application status.</p> </li>
-   * <li> <p>Default values: <code>Interval</code> is 60 seconds,
-   * <code>Timeout</code> is 6 seconds, <code>FailureThreshold</code> is 2,
-   * <code>SuccessThreshold</code> is 2, <code>StatusCodeMatcher</code> is
-   * <code>200</code>, <code>InitializationGracePeriodSeconds</code> is 300
-   * seconds.</p> </li> <li> <p>You can tag the application status check during
-   * creation. For more information, see <a
+   * can create a maximum of 50 application status checks for each account.</p> </li>
+   * <li> <p>You must associate the check with instances or tags using
+   * <code>AssociateApplicationStatusCheck</code> before health checks start.</p>
+   * </li> <li> <p>You must set the <code>Timeout</code> value to less than the
+   * <code>Interval</code> value.</p> </li> <li> <p>You must start the
+   * <code>Path</code> with a forward slash (<code>/</code>). Default:
+   * <code>/</code>.</p> </li> <li> <p>You can specify <code>Aggregation</code> as
+   * <code>included</code> or <code>excluded</code>. If you do not specify a value,
+   * it defaults to <code>included</code>, which means the check contributes to the
+   * instance-level application status.</p> </li> <li> <p>You can use the following
+   * default values: <code>Interval</code> is 60 seconds, <code>Timeout</code> is 6
+   * seconds, <code>FailureThreshold</code> is 2, <code>SuccessThreshold</code> is 2,
+   * <code>StatusCodeMatcher</code> is <code>200</code>,
+   * <code>InitializationGracePeriodSeconds</code> is 300 seconds.</p> </li> <li>
+   * <p>You can tag the application status check during creation. For more
+   * information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag
    * your Amazon EC2 resources</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateApplicationStatusCheck">AWS
@@ -9667,11 +9670,10 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
-   * <p>Describes the application status for the specified instances. Returns the
-   * aggregated application health status for each instance. The following rules
-   * apply:</p> <ul> <li> <p>The instance-level status is derived from all
-   * application status checks with the aggregation setting set to
-   * <code>included</code>.</p> </li> <li> <p>Use
+   * <p>Describes the aggregated application health status for the specified
+   * instances. The following rules apply:</p> <ul> <li> <p>The instance-level status
+   * is derived from all application status checks with the aggregation setting set
+   * to <code>included</code>.</p> </li> <li> <p>Use
    * <code>DescribeApplicationStatusChecks</code> to view the configuration of
    * individual checks.</p> </li> <li> <p>Use
    * <code>EnableApplicationStatusCheckSuppression</code> to temporarily suppress
@@ -9740,12 +9742,13 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
-   * <p>Describes one or more application status checks. Returns configuration
-   * details for your application status checks, including protocol, port, path,
-   * thresholds, and associations. The following rules apply:</p> <ul> <li> <p>If you
-   * do not specify any application status check IDs, all checks in your account are
-   * returned.</p> </li> <li> <p>Use <code>DescribeApplicationStatus</code> to see
-   * the actual health status of instances.</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * <p>Describes application status checks, including configuration details such as
+   * protocol, port, path, thresholds, and associations. Results are paginated. Use
+   * the <code>NextToken</code> parameter to retrieve additional results. The
+   * following rules apply:</p> <ul> <li> <p>If you do not specify any application
+   * status check IDs, all checks in your account are returned.</p> </li> <li> <p>Use
+   * <code>DescribeApplicationStatus</code> to see the actual health status of
+   * instances.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeApplicationStatusChecks">AWS
    * API Reference</a></p>
    */
@@ -16095,7 +16098,7 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
    * <p>Disables suppression of application status checks for the specified
    * instances. After suppression is disabled, health check results resume affecting
    * the instance-level application status. You can specify a maximum of 100 instance
-   * IDs per request.</p><p><h3>See Also:</h3>   <a
+   * IDs for each request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableApplicationStatusCheckSuppression">AWS
    * API Reference</a></p>
    */
@@ -17469,8 +17472,8 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   /**
    * <p>Suppresses application status checks for the specified instances. While
    * suppressed, health checks continue to run but do not affect the instance-level
-   * application status. The following rules apply:</p> <ul> <li> <p>Maximum 100
-   * instance IDs per request.</p> </li> <li> <p>Use
+   * application status. The following rules apply:</p> <ul> <li> <p>You can specify
+   * a maximum of 100 instance IDs for each request.</p> </li> <li> <p>Use
    * <code>DisableApplicationStatusCheckSuppression</code> to resume normal health
    * check reporting.</p> </li> <li> <p>If you do not specify
    * <code>DurationSeconds</code>, suppression continues indefinitely until you call

@@ -21,8 +21,8 @@ namespace Model {
 
 /**
  * <p>The pricing attributes that apply to your Amazon SES account, including the
- * currently active pricing plan and any scheduled change for the next billing
- * cycle.</p><p><h3>See Also:</h3>   <a
+ * currently active pricing plan and any scheduled change.</p><p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PricingAttributes">AWS
  * API Reference</a></p>
  */
@@ -51,7 +51,7 @@ class PricingAttributes {
 
   ///@{
   /**
-   * <p>The pricing plan that will become active at the start of the next billing
+   * <p>The pricing plan that will become active at the start of the next monthly
    * cycle, if a scheduled change has been requested. This field is empty when no
    * scheduled change is pending.</p>
    */

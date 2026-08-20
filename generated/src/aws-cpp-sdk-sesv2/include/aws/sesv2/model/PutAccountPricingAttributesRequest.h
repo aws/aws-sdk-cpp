@@ -34,14 +34,11 @@ class PutAccountPricingAttributesRequest : public SESV2Request {
 
   ///@{
   /**
-   * <p>The pricing plan to apply to your Amazon SES account. Can be one of the
-   * following:</p> <ul> <li> <p> <code>NONE</code> – No pricing plan is applied;
-   * billing follows per-feature pricing.</p> </li> <li> <p> <code>ESSENTIALS</code>
-   * – Baseline Amazon SES capabilities and select premium features.</p> </li> <li>
-   * <p> <code>PRO</code> – Includes everything in <code>ESSENTIALS</code>, plus
-   * additional premium features for growing senders.</p> </li> <li> <p>
-   * <code>ENTERPRISE</code> – Includes everything in <code>PRO</code>, plus features
-   * intended for large-scale senders.</p> </li> </ul>
+   * <p>The pricing plan to apply to your Amazon SES account. For details about each
+   * plan, see <a href="http://aws.amazon.com/ses/pricing/">Amazon SES Pricing</a>.
+   * Can be one of the following:</p> <ul> <li> <p> <code>NONE</code> </p> </li> <li>
+   * <p> <code>ESSENTIALS</code> </p> </li> <li> <p> <code>PRO</code> </p> </li> <li>
+   * <p> <code>ENTERPRISE</code> </p> </li> </ul>
    */
   inline PricingPlan GetPlan() const { return m_plan; }
   inline bool PlanHasBeenSet() const { return m_planHasBeenSet; }

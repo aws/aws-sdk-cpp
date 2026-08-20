@@ -10,6 +10,7 @@
 #include <aws/batch/model/ComputeScalingPolicy.h>
 #include <aws/batch/model/Ec2Configuration.h>
 #include <aws/batch/model/LaunchTemplateSpecification.h>
+#include <aws/batch/model/UpdateManagedInstancesProviderConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -587,7 +588,8 @@ class ComputeResourceUpdate {
   ///@{
   /**
    * <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>,
-   * <code>FARGATE</code>, or <code>FARGATE_SPOT</code>. For more information, see <a
+   * <code>FARGATE</code>, <code>FARGATE_SPOT</code>, or
+   * <code>ECS_MANAGED_INSTANCES</code>. For more information, see <a
    * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
    * environments</a> in the <i>Batch User Guide</i>.</p> <p> If you choose
    * <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the
@@ -597,7 +599,8 @@ class ComputeResourceUpdate {
    * compute environment, changing the type of a compute environment requires an
    * infrastructure update of the compute environment. For more information, see <a
    * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
-   * compute environments</a> in the <i>Batch User Guide</i>.</p>
+   * compute environments</a> in the <i>Batch User Guide</i>.</p> <p>You cannot
+   * change the type to or from <code>ECS_MANAGED_INSTANCES</code>.</p>
    */
   inline CRType GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -665,6 +668,54 @@ class ComputeResourceUpdate {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The updated configuration for the Amazon ECS Managed Instances capacity
+   * provider. This parameter is only valid when the compute environment type is
+   * <code>ECS_MANAGED_INSTANCES</code>. You cannot change
+   * <code>capacityOptionType</code> or <code>fipsEnabled</code> on update.</p>
+   */
+  inline const UpdateManagedInstancesProviderConfiguration& GetManagedInstancesProvider() const { return m_managedInstancesProvider; }
+  inline bool ManagedInstancesProviderHasBeenSet() const { return m_managedInstancesProviderHasBeenSet; }
+  template <typename ManagedInstancesProviderT = UpdateManagedInstancesProviderConfiguration>
+  void SetManagedInstancesProvider(ManagedInstancesProviderT&& value) {
+    m_managedInstancesProviderHasBeenSet = true;
+    m_managedInstancesProvider = std::forward<ManagedInstancesProviderT>(value);
+  }
+  template <typename ManagedInstancesProviderT = UpdateManagedInstancesProviderConfiguration>
+  ComputeResourceUpdate& WithManagedInstancesProvider(ManagedInstancesProviderT&& value) {
+    SetManagedInstancesProvider(std::forward<ManagedInstancesProviderT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The updated tags to apply to the Amazon ECS capacity provider and Amazon EC2
+   * instances. This parameter is only valid for <code>ECS_MANAGED_INSTANCES</code>
+   * compute environments. You must have the <code>batch:SetCapacityTags</code>
+   * permission on the compute environment resource to use this parameter.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetCapacityTags() const { return m_capacityTags; }
+  inline bool CapacityTagsHasBeenSet() const { return m_capacityTagsHasBeenSet; }
+  template <typename CapacityTagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetCapacityTags(CapacityTagsT&& value) {
+    m_capacityTagsHasBeenSet = true;
+    m_capacityTags = std::forward<CapacityTagsT>(value);
+  }
+  template <typename CapacityTagsT = Aws::Map<Aws::String, Aws::String>>
+  ComputeResourceUpdate& WithCapacityTags(CapacityTagsT&& value) {
+    SetCapacityTags(std::forward<CapacityTagsT>(value));
+    return *this;
+  }
+  template <typename CapacityTagsKeyT = Aws::String, typename CapacityTagsValueT = Aws::String>
+  ComputeResourceUpdate& AddCapacityTags(CapacityTagsKeyT&& key, CapacityTagsValueT&& value) {
+    m_capacityTagsHasBeenSet = true;
+    m_capacityTags.emplace(std::forward<CapacityTagsKeyT>(key), std::forward<CapacityTagsValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_minvCpus{0};
 
@@ -701,6 +752,10 @@ class ComputeResourceUpdate {
   Aws::String m_imageId;
 
   ComputeScalingPolicy m_scalingPolicy;
+
+  UpdateManagedInstancesProviderConfiguration m_managedInstancesProvider;
+
+  Aws::Map<Aws::String, Aws::String> m_capacityTags;
   bool m_minvCpusHasBeenSet = false;
   bool m_maxvCpusHasBeenSet = false;
   bool m_desiredvCpusHasBeenSet = false;
@@ -719,6 +774,8 @@ class ComputeResourceUpdate {
   bool m_typeHasBeenSet = false;
   bool m_imageIdHasBeenSet = false;
   bool m_scalingPolicyHasBeenSet = false;
+  bool m_managedInstancesProviderHasBeenSet = false;
+  bool m_capacityTagsHasBeenSet = false;
 };
 
 }  // namespace Model

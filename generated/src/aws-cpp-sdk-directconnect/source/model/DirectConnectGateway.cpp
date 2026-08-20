@@ -43,6 +43,10 @@ DirectConnectGateway& DirectConnectGateway::operator=(JsonView jsonValue) {
     m_stateChangeError = jsonValue.GetString("stateChangeError");
     m_stateChangeErrorHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("totalPrefixPoolAllocations")) {
+    m_totalPrefixPoolAllocations = jsonValue.GetInteger("totalPrefixPoolAllocations");
+    m_totalPrefixPoolAllocationsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("tags")) {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
@@ -79,6 +83,10 @@ JsonValue DirectConnectGateway::Jsonize() const {
 
   if (m_stateChangeErrorHasBeenSet) {
     payload.WithString("stateChangeError", m_stateChangeError);
+  }
+
+  if (m_totalPrefixPoolAllocationsHasBeenSet) {
+    payload.WithInteger("totalPrefixPoolAllocations", m_totalPrefixPoolAllocations);
   }
 
   if (m_tagsHasBeenSet) {

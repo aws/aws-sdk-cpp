@@ -76,6 +76,10 @@ EcsTaskDetails& EcsTaskDetails::operator=(JsonView jsonValue) {
     m_enableExecuteCommand = jsonValue.GetBool("enableExecuteCommand");
     m_enableExecuteCommandHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("networkMode")) {
+    m_networkMode = jsonValue.GetString("networkMode");
+    m_networkModeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -140,6 +144,10 @@ JsonValue EcsTaskDetails::Jsonize() const {
 
   if (m_enableExecuteCommandHasBeenSet) {
     payload.WithBool("enableExecuteCommand", m_enableExecuteCommand);
+  }
+
+  if (m_networkModeHasBeenSet) {
+    payload.WithString("networkMode", m_networkMode);
   }
 
   return payload;

@@ -497,6 +497,78 @@ class Connection {
   ///@}
 
   ///@{
+  /**
+   * <p>The total number of inbound IPv4 route prefixes you can allocate across the
+   * virtual interfaces on the connection. Not applicable to hosted connections or
+   * interconnects.</p>
+   */
+  inline int GetPrefixPoolSizeIpv4() const { return m_prefixPoolSizeIpv4; }
+  inline bool PrefixPoolSizeIpv4HasBeenSet() const { return m_prefixPoolSizeIpv4HasBeenSet; }
+  inline void SetPrefixPoolSizeIpv4(int value) {
+    m_prefixPoolSizeIpv4HasBeenSet = true;
+    m_prefixPoolSizeIpv4 = value;
+  }
+  inline Connection& WithPrefixPoolSizeIpv4(int value) {
+    SetPrefixPoolSizeIpv4(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The total number of inbound IPv6 route prefixes you can allocate across the
+   * virtual interfaces on the connection. Not applicable to hosted connections or
+   * interconnects.</p>
+   */
+  inline int GetPrefixPoolSizeIpv6() const { return m_prefixPoolSizeIpv6; }
+  inline bool PrefixPoolSizeIpv6HasBeenSet() const { return m_prefixPoolSizeIpv6HasBeenSet; }
+  inline void SetPrefixPoolSizeIpv6(int value) {
+    m_prefixPoolSizeIpv6HasBeenSet = true;
+    m_prefixPoolSizeIpv6 = value;
+  }
+  inline Connection& WithPrefixPoolSizeIpv6(int value) {
+    SetPrefixPoolSizeIpv6(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The number of inbound IPv4 route prefixes in the connection prefix pool not
+   * yet allocated to a virtual interface. Not applicable to hosted connections or
+   * interconnects.</p>
+   */
+  inline int GetPrefixPoolUnallocatedCountIpv4() const { return m_prefixPoolUnallocatedCountIpv4; }
+  inline bool PrefixPoolUnallocatedCountIpv4HasBeenSet() const { return m_prefixPoolUnallocatedCountIpv4HasBeenSet; }
+  inline void SetPrefixPoolUnallocatedCountIpv4(int value) {
+    m_prefixPoolUnallocatedCountIpv4HasBeenSet = true;
+    m_prefixPoolUnallocatedCountIpv4 = value;
+  }
+  inline Connection& WithPrefixPoolUnallocatedCountIpv4(int value) {
+    SetPrefixPoolUnallocatedCountIpv4(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The number of inbound IPv6 route prefixes in the connection prefix pool not
+   * yet allocated to a virtual interface. Not applicable to hosted connections or
+   * interconnects.</p>
+   */
+  inline int GetPrefixPoolUnallocatedCountIpv6() const { return m_prefixPoolUnallocatedCountIpv6; }
+  inline bool PrefixPoolUnallocatedCountIpv6HasBeenSet() const { return m_prefixPoolUnallocatedCountIpv6HasBeenSet; }
+  inline void SetPrefixPoolUnallocatedCountIpv6(int value) {
+    m_prefixPoolUnallocatedCountIpv6HasBeenSet = true;
+    m_prefixPoolUnallocatedCountIpv6 = value;
+  }
+  inline Connection& WithPrefixPoolUnallocatedCountIpv6(int value) {
+    SetPrefixPoolUnallocatedCountIpv6(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
@@ -560,6 +632,14 @@ class Connection {
 
   bool m_partnerInterconnectMacSecCapable{false};
 
+  int m_prefixPoolSizeIpv4{0};
+
+  int m_prefixPoolSizeIpv6{0};
+
+  int m_prefixPoolUnallocatedCountIpv4{0};
+
+  int m_prefixPoolUnallocatedCountIpv6{0};
+
   Aws::String m_requestId;
   bool m_ownerAccountHasBeenSet = false;
   bool m_connectionIdHasBeenSet = false;
@@ -585,6 +665,10 @@ class Connection {
   bool m_macSecKeysHasBeenSet = false;
   bool m_rateLimiterStatusHasBeenSet = false;
   bool m_partnerInterconnectMacSecCapableHasBeenSet = false;
+  bool m_prefixPoolSizeIpv4HasBeenSet = false;
+  bool m_prefixPoolSizeIpv6HasBeenSet = false;
+  bool m_prefixPoolUnallocatedCountIpv4HasBeenSet = false;
+  bool m_prefixPoolUnallocatedCountIpv6HasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

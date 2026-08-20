@@ -149,6 +149,24 @@ class DirectConnectGateway {
 
   ///@{
   /**
+   * <p>The total number of inbound route prefixes allocated to the attachments on
+   * the Direct Connect gateway. The count combines the IPv4 and IPv6 address
+   * families.</p>
+   */
+  inline int GetTotalPrefixPoolAllocations() const { return m_totalPrefixPoolAllocations; }
+  inline bool TotalPrefixPoolAllocationsHasBeenSet() const { return m_totalPrefixPoolAllocationsHasBeenSet; }
+  inline void SetTotalPrefixPoolAllocations(int value) {
+    m_totalPrefixPoolAllocationsHasBeenSet = true;
+    m_totalPrefixPoolAllocations = value;
+  }
+  inline DirectConnectGateway& WithTotalPrefixPoolAllocations(int value) {
+    SetTotalPrefixPoolAllocations(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Information about a tag.</p>
    */
   inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
@@ -183,6 +201,8 @@ class DirectConnectGateway {
 
   Aws::String m_stateChangeError;
 
+  int m_totalPrefixPoolAllocations{0};
+
   Aws::Vector<Tag> m_tags;
   bool m_directConnectGatewayIdHasBeenSet = false;
   bool m_directConnectGatewayNameHasBeenSet = false;
@@ -190,6 +210,7 @@ class DirectConnectGateway {
   bool m_ownerAccountHasBeenSet = false;
   bool m_directConnectGatewayStateHasBeenSet = false;
   bool m_stateChangeErrorHasBeenSet = false;
+  bool m_totalPrefixPoolAllocationsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

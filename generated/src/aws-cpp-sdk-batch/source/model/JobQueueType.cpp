@@ -19,6 +19,7 @@ static const int EKS_HASH = HashingUtils::HashString("EKS");
 static const int ECS_HASH = HashingUtils::HashString("ECS");
 static const int ECS_FARGATE_HASH = HashingUtils::HashString("ECS_FARGATE");
 static const int SAGEMAKER_TRAINING_HASH = HashingUtils::HashString("SAGEMAKER_TRAINING");
+static const int ECS_MANAGED_INSTANCES_HASH = HashingUtils::HashString("ECS_MANAGED_INSTANCES");
 
 JobQueueType GetJobQueueTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ JobQueueType GetJobQueueTypeForName(const Aws::String& name) {
     return JobQueueType::ECS_FARGATE;
   } else if (hashCode == SAGEMAKER_TRAINING_HASH) {
     return JobQueueType::SAGEMAKER_TRAINING;
+  } else if (hashCode == ECS_MANAGED_INSTANCES_HASH) {
+    return JobQueueType::ECS_MANAGED_INSTANCES;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForJobQueueType(JobQueueType enumValue) {
       return "ECS_FARGATE";
     case JobQueueType::SAGEMAKER_TRAINING:
       return "SAGEMAKER_TRAINING";
+    case JobQueueType::ECS_MANAGED_INSTANCES:
+      return "ECS_MANAGED_INSTANCES";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

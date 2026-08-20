@@ -10,6 +10,7 @@
 #include <aws/sesv2/SESV2_EXPORTS.h>
 #include <aws/sesv2/model/BulkEmailContent.h>
 #include <aws/sesv2/model/BulkEmailEntry.h>
+#include <aws/sesv2/model/ConfigurationOverrides.h>
 #include <aws/sesv2/model/MessageTag.h>
 
 #include <utility>
@@ -291,6 +292,27 @@ class SendBulkEmailRequest : public SESV2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An object that overrides, for the messages in this request only, settings
+   * that would otherwise apply to them. The overrides apply to every message in the
+   * request. Each setting that you don't override keeps the value that already
+   * applies.</p>
+   */
+  inline const ConfigurationOverrides& GetConfigurationOverrides() const { return m_configurationOverrides; }
+  inline bool ConfigurationOverridesHasBeenSet() const { return m_configurationOverridesHasBeenSet; }
+  template <typename ConfigurationOverridesT = ConfigurationOverrides>
+  void SetConfigurationOverrides(ConfigurationOverridesT&& value) {
+    m_configurationOverridesHasBeenSet = true;
+    m_configurationOverrides = std::forward<ConfigurationOverridesT>(value);
+  }
+  template <typename ConfigurationOverridesT = ConfigurationOverrides>
+  SendBulkEmailRequest& WithConfigurationOverrides(ConfigurationOverridesT&& value) {
+    SetConfigurationOverrides(std::forward<ConfigurationOverridesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_fromEmailAddress;
 
@@ -313,6 +335,8 @@ class SendBulkEmailRequest : public SESV2Request {
   Aws::String m_endpointId;
 
   Aws::String m_tenantName;
+
+  ConfigurationOverrides m_configurationOverrides;
   bool m_fromEmailAddressHasBeenSet = false;
   bool m_fromEmailAddressIdentityArnHasBeenSet = false;
   bool m_replyToAddressesHasBeenSet = false;
@@ -324,6 +348,7 @@ class SendBulkEmailRequest : public SESV2Request {
   bool m_configurationSetNameHasBeenSet = false;
   bool m_endpointIdHasBeenSet = false;
   bool m_tenantNameHasBeenSet = false;
+  bool m_configurationOverridesHasBeenSet = false;
 };
 
 }  // namespace Model

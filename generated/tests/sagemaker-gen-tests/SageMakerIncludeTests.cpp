@@ -938,6 +938,8 @@
 #include <aws/sagemaker/model/IPAddressType.h>
 #include <aws/sagemaker/model/IamIdentity.h>
 #include <aws/sagemaker/model/IamPolicyConstraints.h>
+#include <aws/sagemaker/model/IdcConfigInput.h>
+#include <aws/sagemaker/model/IdcConfigOutput.h>
 #include <aws/sagemaker/model/IdentityProviderOAuthSetting.h>
 #include <aws/sagemaker/model/IdleResourceSharing.h>
 #include <aws/sagemaker/model/IdleSettings.h>

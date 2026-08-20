@@ -39,6 +39,7 @@
 #include <aws/sesv2/model/CloudWatchDestination.h>
 #include <aws/sesv2/model/CloudWatchDimensionConfiguration.h>
 #include <aws/sesv2/model/Complaint.h>
+#include <aws/sesv2/model/ConfigurationOverrides.h>
 #include <aws/sesv2/model/Contact.h>
 #include <aws/sesv2/model/ContactLanguage.h>
 #include <aws/sesv2/model/ContactList.h>
@@ -401,6 +402,7 @@
 #include <aws/sesv2/model/Topic.h>
 #include <aws/sesv2/model/TopicFilter.h>
 #include <aws/sesv2/model/TopicPreference.h>
+#include <aws/sesv2/model/TrackingConfigurationOverrides.h>
 #include <aws/sesv2/model/TrackingOptions.h>
 #include <aws/sesv2/model/UntagResourceRequest.h>
 #include <aws/sesv2/model/UntagResourceResult.h>

@@ -89,10 +89,10 @@ class CreateSubscriptionRequest : public PricingPlanManagerRequest {
 
   ///@{
   /**
-   * <p>The ARNs of the AWS resources to include in the subscription. Specify one or
-   * more supported resources.</p>  <p>For subscriptions in the CloudFront plan
+   * <p>The ARNs of the resources to include in the subscription. Specify one or more
+   * supported resources.</p>  <p>For subscriptions in the CloudFront plan
    * family, the resources must include exactly one Amazon CloudFront distribution
-   * and exactly one AWS WAF web ACL. You can also include other supported resources,
+   * and exactly one WAF web ACL. You can also include other supported resources,
    * such as Amazon Route 53 hosted zones and CloudFront KeyValueStores.</p>
    */
   inline const Aws::Vector<Aws::String>& GetResourceArns() const { return m_resourceArns; }
@@ -120,8 +120,9 @@ class CreateSubscriptionRequest : public PricingPlanManagerRequest {
    * <p>Determines whether the subscription requires explicit approval before billing
    * starts. Set to <code>MANUAL</code> to require a separate
    * <code>ApprovePaidSubscription</code> call, or <code>IMMEDIATE</code> to activate
-   * the subscription right away. Defaults to <code>IMMEDIATE</code> if not
-   * specified.</p>
+   * the subscription right away. For paid tier plans, this defaults to
+   * <code>MANUAL</code> if not specified. For the <code>FREE</code> plan tier, only
+   * <code>IMMEDIATE</code> is supported, and it is the default.</p>
    */
   inline ApprovalMode GetApprovalMode() const { return m_approvalMode; }
   inline bool ApprovalModeHasBeenSet() const { return m_approvalModeHasBeenSet; }

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Batch {
 namespace Model {
-enum class JobQueueType { NOT_SET, EKS, ECS, ECS_FARGATE, SAGEMAKER_TRAINING };
+enum class JobQueueType { NOT_SET, EKS, ECS, ECS_FARGATE, SAGEMAKER_TRAINING, ECS_MANAGED_INSTANCES };
 
 namespace JobQueueTypeMapper {
 AWS_BATCH_API JobQueueType GetJobQueueTypeForName(const Aws::String& name);

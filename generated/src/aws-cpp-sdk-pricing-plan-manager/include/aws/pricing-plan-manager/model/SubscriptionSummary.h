@@ -166,7 +166,7 @@ class SubscriptionSummary {
 
   ///@{
   /**
-   * <p>The ARNs of the AWS resources covered by this subscription.</p>
+   * <p>The ARNs of the resources covered by this subscription.</p>
    */
   inline const Aws::Vector<Aws::String>& GetResourceArns() const { return m_resourceArns; }
   inline bool ResourceArnsHasBeenSet() const { return m_resourceArnsHasBeenSet; }

@@ -102,6 +102,7 @@
 #include <aws/lambda/model/DeleteFunctionUrlConfigRequest.h>
 #include <aws/lambda/model/DeleteLayerVersionRequest.h>
 #include <aws/lambda/model/DeleteProvisionedConcurrencyConfigRequest.h>
+#include <aws/lambda/model/DeleteResourcePolicyRequest.h>
 #include <aws/lambda/model/DestinationConfig.h>
 #include <aws/lambda/model/DocumentDBEventSourceConfig.h>
 #include <aws/lambda/model/DurableConfig.h>
@@ -202,6 +203,8 @@
 #include <aws/lambda/model/GetPolicyResult.h>
 #include <aws/lambda/model/GetProvisionedConcurrencyConfigRequest.h>
 #include <aws/lambda/model/GetProvisionedConcurrencyConfigResult.h>
+#include <aws/lambda/model/GetResourcePolicyRequest.h>
+#include <aws/lambda/model/GetResourcePolicyResult.h>
 #include <aws/lambda/model/GetRuntimeManagementConfigRequest.h>
 #include <aws/lambda/model/GetRuntimeManagementConfigResult.h>
 #include <aws/lambda/model/ImageConfig.h>
@@ -325,6 +328,8 @@
 #include <aws/lambda/model/PutFunctionScalingConfigResult.h>
 #include <aws/lambda/model/PutProvisionedConcurrencyConfigRequest.h>
 #include <aws/lambda/model/PutProvisionedConcurrencyConfigResult.h>
+#include <aws/lambda/model/PutResourcePolicyRequest.h>
+#include <aws/lambda/model/PutResourcePolicyResult.h>
 #include <aws/lambda/model/PutRuntimeManagementConfigRequest.h>
 #include <aws/lambda/model/PutRuntimeManagementConfigResult.h>
 #include <aws/lambda/model/RecursiveInvocationException.h>

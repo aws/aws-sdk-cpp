@@ -273,6 +273,40 @@ class NewTransitVirtualInterface {
 
   ///@{
   /**
+   * <p>The number of inbound IPv4 route prefixes to allocate to the virtual
+   * interface.</p>
+   */
+  inline int GetPrefixPoolAllocatedCountIpv4() const { return m_prefixPoolAllocatedCountIpv4; }
+  inline bool PrefixPoolAllocatedCountIpv4HasBeenSet() const { return m_prefixPoolAllocatedCountIpv4HasBeenSet; }
+  inline void SetPrefixPoolAllocatedCountIpv4(int value) {
+    m_prefixPoolAllocatedCountIpv4HasBeenSet = true;
+    m_prefixPoolAllocatedCountIpv4 = value;
+  }
+  inline NewTransitVirtualInterface& WithPrefixPoolAllocatedCountIpv4(int value) {
+    SetPrefixPoolAllocatedCountIpv4(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The number of inbound IPv6 route prefixes to allocate to the virtual
+   * interface.</p>
+   */
+  inline int GetPrefixPoolAllocatedCountIpv6() const { return m_prefixPoolAllocatedCountIpv6; }
+  inline bool PrefixPoolAllocatedCountIpv6HasBeenSet() const { return m_prefixPoolAllocatedCountIpv6HasBeenSet; }
+  inline void SetPrefixPoolAllocatedCountIpv6(int value) {
+    m_prefixPoolAllocatedCountIpv6HasBeenSet = true;
+    m_prefixPoolAllocatedCountIpv6 = value;
+  }
+  inline NewTransitVirtualInterface& WithPrefixPoolAllocatedCountIpv6(int value) {
+    SetPrefixPoolAllocatedCountIpv6(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The rate limit (bandwidth allocation) to apply to the virtual interface. The
    * rate limit restricts the maximum bandwidth that the virtual interface can use on
    * the parent connection.</p>
@@ -315,6 +349,10 @@ class NewTransitVirtualInterface {
 
   bool m_enableSiteLink{false};
 
+  int m_prefixPoolAllocatedCountIpv4{0};
+
+  int m_prefixPoolAllocatedCountIpv6{0};
+
   Aws::String m_rateLimit;
   bool m_virtualInterfaceNameHasBeenSet = false;
   bool m_vlanHasBeenSet = false;
@@ -328,6 +366,8 @@ class NewTransitVirtualInterface {
   bool m_directConnectGatewayIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_enableSiteLinkHasBeenSet = false;
+  bool m_prefixPoolAllocatedCountIpv4HasBeenSet = false;
+  bool m_prefixPoolAllocatedCountIpv6HasBeenSet = false;
   bool m_rateLimitHasBeenSet = false;
 };
 

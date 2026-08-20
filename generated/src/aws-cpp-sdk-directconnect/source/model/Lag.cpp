@@ -112,6 +112,22 @@ Lag& Lag::operator=(JsonView jsonValue) {
     }
     m_macSecKeysHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("prefixPoolSizeIpv4")) {
+    m_prefixPoolSizeIpv4 = jsonValue.GetInteger("prefixPoolSizeIpv4");
+    m_prefixPoolSizeIpv4HasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("prefixPoolSizeIpv6")) {
+    m_prefixPoolSizeIpv6 = jsonValue.GetInteger("prefixPoolSizeIpv6");
+    m_prefixPoolSizeIpv6HasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("prefixPoolUnallocatedCountIpv4")) {
+    m_prefixPoolUnallocatedCountIpv4 = jsonValue.GetInteger("prefixPoolUnallocatedCountIpv4");
+    m_prefixPoolUnallocatedCountIpv4HasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("prefixPoolUnallocatedCountIpv6")) {
+    m_prefixPoolUnallocatedCountIpv6 = jsonValue.GetInteger("prefixPoolUnallocatedCountIpv6");
+    m_prefixPoolUnallocatedCountIpv6HasBeenSet = true;
+  }
   if (jsonValue.ValueExists("rateLimiterStatus")) {
     m_rateLimiterStatus = jsonValue.GetObject("rateLimiterStatus");
     m_rateLimiterStatusHasBeenSet = true;
@@ -216,6 +232,22 @@ JsonValue Lag::Jsonize() const {
       macSecKeysJsonList[macSecKeysIndex].AsObject(m_macSecKeys[macSecKeysIndex].Jsonize());
     }
     payload.WithArray("macSecKeys", std::move(macSecKeysJsonList));
+  }
+
+  if (m_prefixPoolSizeIpv4HasBeenSet) {
+    payload.WithInteger("prefixPoolSizeIpv4", m_prefixPoolSizeIpv4);
+  }
+
+  if (m_prefixPoolSizeIpv6HasBeenSet) {
+    payload.WithInteger("prefixPoolSizeIpv6", m_prefixPoolSizeIpv6);
+  }
+
+  if (m_prefixPoolUnallocatedCountIpv4HasBeenSet) {
+    payload.WithInteger("prefixPoolUnallocatedCountIpv4", m_prefixPoolUnallocatedCountIpv4);
+  }
+
+  if (m_prefixPoolUnallocatedCountIpv6HasBeenSet) {
+    payload.WithInteger("prefixPoolUnallocatedCountIpv6", m_prefixPoolUnallocatedCountIpv6);
   }
 
   if (m_rateLimiterStatusHasBeenSet) {

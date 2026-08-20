@@ -55,6 +55,7 @@
 #include <aws/lambda/model/GetLayerVersionResult.h>
 #include <aws/lambda/model/GetPolicyResult.h>
 #include <aws/lambda/model/GetProvisionedConcurrencyConfigResult.h>
+#include <aws/lambda/model/GetResourcePolicyResult.h>
 #include <aws/lambda/model/GetRuntimeManagementConfigResult.h>
 #include <aws/lambda/model/InvokeResult.h>
 #include <aws/lambda/model/ListAliasesResult.h>
@@ -85,6 +86,7 @@
 #include <aws/lambda/model/PutFunctionRecursionConfigResult.h>
 #include <aws/lambda/model/PutFunctionScalingConfigResult.h>
 #include <aws/lambda/model/PutProvisionedConcurrencyConfigResult.h>
+#include <aws/lambda/model/PutResourcePolicyResult.h>
 #include <aws/lambda/model/PutRuntimeManagementConfigResult.h>
 #include <aws/lambda/model/SendDurableExecutionCallbackFailureResult.h>
 #include <aws/lambda/model/SendDurableExecutionCallbackHeartbeatResult.h>
@@ -151,6 +153,7 @@ class DeleteFunctionEventInvokeConfigRequest;
 class DeleteFunctionUrlConfigRequest;
 class DeleteLayerVersionRequest;
 class DeleteProvisionedConcurrencyConfigRequest;
+class DeleteResourcePolicyRequest;
 class GetAccountSettingsRequest;
 class GetAliasRequest;
 class GetCapacityProviderRequest;
@@ -172,6 +175,7 @@ class GetLayerVersionByArnRequest;
 class GetLayerVersionPolicyRequest;
 class GetPolicyRequest;
 class GetProvisionedConcurrencyConfigRequest;
+class GetResourcePolicyRequest;
 class GetRuntimeManagementConfigRequest;
 class InvokeRequest;
 class InvokeWithResponseStreamRequest;
@@ -198,6 +202,7 @@ class PutFunctionEventInvokeConfigRequest;
 class PutFunctionRecursionConfigRequest;
 class PutFunctionScalingConfigRequest;
 class PutProvisionedConcurrencyConfigRequest;
+class PutResourcePolicyRequest;
 class PutRuntimeManagementConfigRequest;
 class RemoveLayerVersionPermissionRequest;
 class RemovePermissionRequest;
@@ -238,6 +243,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> DeleteFunctionEventInvok
 typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> DeleteFunctionUrlConfigOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> DeleteLayerVersionOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> DeleteProvisionedConcurrencyConfigOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> DeleteResourcePolicyOutcome;
 typedef Aws::Utils::Outcome<GetAccountSettingsResult, LambdaError> GetAccountSettingsOutcome;
 typedef Aws::Utils::Outcome<GetAliasResult, LambdaError> GetAliasOutcome;
 typedef Aws::Utils::Outcome<GetCapacityProviderResult, LambdaError> GetCapacityProviderOutcome;
@@ -259,6 +265,7 @@ typedef Aws::Utils::Outcome<GetLayerVersionByArnResult, LambdaError> GetLayerVer
 typedef Aws::Utils::Outcome<GetLayerVersionPolicyResult, LambdaError> GetLayerVersionPolicyOutcome;
 typedef Aws::Utils::Outcome<GetPolicyResult, LambdaError> GetPolicyOutcome;
 typedef Aws::Utils::Outcome<GetProvisionedConcurrencyConfigResult, LambdaError> GetProvisionedConcurrencyConfigOutcome;
+typedef Aws::Utils::Outcome<GetResourcePolicyResult, LambdaError> GetResourcePolicyOutcome;
 typedef Aws::Utils::Outcome<GetRuntimeManagementConfigResult, LambdaError> GetRuntimeManagementConfigOutcome;
 typedef Aws::Utils::Outcome<InvokeResult, LambdaError> InvokeOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> InvokeWithResponseStreamOutcome;
@@ -285,6 +292,7 @@ typedef Aws::Utils::Outcome<PutFunctionEventInvokeConfigResult, LambdaError> Put
 typedef Aws::Utils::Outcome<PutFunctionRecursionConfigResult, LambdaError> PutFunctionRecursionConfigOutcome;
 typedef Aws::Utils::Outcome<PutFunctionScalingConfigResult, LambdaError> PutFunctionScalingConfigOutcome;
 typedef Aws::Utils::Outcome<PutProvisionedConcurrencyConfigResult, LambdaError> PutProvisionedConcurrencyConfigOutcome;
+typedef Aws::Utils::Outcome<PutResourcePolicyResult, LambdaError> PutResourcePolicyOutcome;
 typedef Aws::Utils::Outcome<PutRuntimeManagementConfigResult, LambdaError> PutRuntimeManagementConfigOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> RemoveLayerVersionPermissionOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> RemovePermissionOutcome;
@@ -325,6 +333,7 @@ typedef std::future<DeleteFunctionEventInvokeConfigOutcome> DeleteFunctionEventI
 typedef std::future<DeleteFunctionUrlConfigOutcome> DeleteFunctionUrlConfigOutcomeCallable;
 typedef std::future<DeleteLayerVersionOutcome> DeleteLayerVersionOutcomeCallable;
 typedef std::future<DeleteProvisionedConcurrencyConfigOutcome> DeleteProvisionedConcurrencyConfigOutcomeCallable;
+typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
 typedef std::future<GetAccountSettingsOutcome> GetAccountSettingsOutcomeCallable;
 typedef std::future<GetAliasOutcome> GetAliasOutcomeCallable;
 typedef std::future<GetCapacityProviderOutcome> GetCapacityProviderOutcomeCallable;
@@ -346,6 +355,7 @@ typedef std::future<GetLayerVersionByArnOutcome> GetLayerVersionByArnOutcomeCall
 typedef std::future<GetLayerVersionPolicyOutcome> GetLayerVersionPolicyOutcomeCallable;
 typedef std::future<GetPolicyOutcome> GetPolicyOutcomeCallable;
 typedef std::future<GetProvisionedConcurrencyConfigOutcome> GetProvisionedConcurrencyConfigOutcomeCallable;
+typedef std::future<GetResourcePolicyOutcome> GetResourcePolicyOutcomeCallable;
 typedef std::future<GetRuntimeManagementConfigOutcome> GetRuntimeManagementConfigOutcomeCallable;
 typedef std::future<InvokeOutcome> InvokeOutcomeCallable;
 typedef std::future<InvokeWithResponseStreamOutcome> InvokeWithResponseStreamOutcomeCallable;
@@ -372,6 +382,7 @@ typedef std::future<PutFunctionEventInvokeConfigOutcome> PutFunctionEventInvokeC
 typedef std::future<PutFunctionRecursionConfigOutcome> PutFunctionRecursionConfigOutcomeCallable;
 typedef std::future<PutFunctionScalingConfigOutcome> PutFunctionScalingConfigOutcomeCallable;
 typedef std::future<PutProvisionedConcurrencyConfigOutcome> PutProvisionedConcurrencyConfigOutcomeCallable;
+typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
 typedef std::future<PutRuntimeManagementConfigOutcome> PutRuntimeManagementConfigOutcomeCallable;
 typedef std::future<RemoveLayerVersionPermissionOutcome> RemoveLayerVersionPermissionOutcomeCallable;
 typedef std::future<RemovePermissionOutcome> RemovePermissionOutcomeCallable;
@@ -458,6 +469,9 @@ typedef std::function<void(const LambdaClient*, const Model::DeleteProvisionedCo
                            const Model::DeleteProvisionedConcurrencyConfigOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteProvisionedConcurrencyConfigResponseReceivedHandler;
+typedef std::function<void(const LambdaClient*, const Model::DeleteResourcePolicyRequest&, const Model::DeleteResourcePolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteResourcePolicyResponseReceivedHandler;
 typedef std::function<void(const LambdaClient*, const Model::GetAccountSettingsRequest&, const Model::GetAccountSettingsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetAccountSettingsResponseReceivedHandler;
@@ -524,6 +538,9 @@ typedef std::function<void(const LambdaClient*, const Model::GetProvisionedConcu
                            const Model::GetProvisionedConcurrencyConfigOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetProvisionedConcurrencyConfigResponseReceivedHandler;
+typedef std::function<void(const LambdaClient*, const Model::GetResourcePolicyRequest&, const Model::GetResourcePolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetResourcePolicyResponseReceivedHandler;
 typedef std::function<void(const LambdaClient*, const Model::GetRuntimeManagementConfigRequest&,
                            const Model::GetRuntimeManagementConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetRuntimeManagementConfigResponseReceivedHandler;
@@ -610,6 +627,9 @@ typedef std::function<void(const LambdaClient*, const Model::PutProvisionedConcu
                            const Model::PutProvisionedConcurrencyConfigOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutProvisionedConcurrencyConfigResponseReceivedHandler;
+typedef std::function<void(const LambdaClient*, const Model::PutResourcePolicyRequest&, const Model::PutResourcePolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutResourcePolicyResponseReceivedHandler;
 typedef std::function<void(const LambdaClient*, const Model::PutRuntimeManagementConfigRequest&,
                            const Model::PutRuntimeManagementConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutRuntimeManagementConfigResponseReceivedHandler;

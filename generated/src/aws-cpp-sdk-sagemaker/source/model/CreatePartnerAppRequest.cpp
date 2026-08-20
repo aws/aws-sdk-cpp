@@ -43,6 +43,10 @@ Aws::String CreatePartnerAppRequest::SerializePayload() const {
     payload.WithObject("ApplicationConfig", m_applicationConfig.Jsonize());
   }
 
+  if (m_idcConfigHasBeenSet) {
+    payload.WithObject("IdcConfig", m_idcConfig.Jsonize());
+  }
+
   if (m_authTypeHasBeenSet) {
     payload.WithString("AuthType", PartnerAppAuthTypeMapper::GetNameForPartnerAppAuthType(m_authType));
   }

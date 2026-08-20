@@ -71,6 +71,10 @@ Aws::String SendEmailRequest::SerializePayload() const {
     payload.WithObject("ListManagementOptions", m_listManagementOptions.Jsonize());
   }
 
+  if (m_configurationOverridesHasBeenSet) {
+    payload.WithObject("ConfigurationOverrides", m_configurationOverrides.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

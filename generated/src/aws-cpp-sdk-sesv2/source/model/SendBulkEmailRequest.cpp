@@ -71,6 +71,10 @@ Aws::String SendBulkEmailRequest::SerializePayload() const {
     payload.WithString("TenantName", m_tenantName);
   }
 
+  if (m_configurationOverridesHasBeenSet) {
+    payload.WithObject("ConfigurationOverrides", m_configurationOverrides.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

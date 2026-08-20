@@ -31,6 +31,14 @@ Aws::String UpdateVirtualInterfaceAttributesRequest::SerializePayload() const {
     payload.WithString("virtualInterfaceName", m_virtualInterfaceName);
   }
 
+  if (m_prefixPoolAllocatedCountIpv4HasBeenSet) {
+    payload.WithInteger("prefixPoolAllocatedCountIpv4", m_prefixPoolAllocatedCountIpv4);
+  }
+
+  if (m_prefixPoolAllocatedCountIpv6HasBeenSet) {
+    payload.WithInteger("prefixPoolAllocatedCountIpv6", m_prefixPoolAllocatedCountIpv6);
+  }
+
   if (m_rateLimitHasBeenSet) {
     payload.WithString("rateLimit", m_rateLimit);
   }

@@ -121,6 +121,22 @@ Connection& Connection::operator=(JsonView jsonValue) {
     m_partnerInterconnectMacSecCapable = jsonValue.GetBool("partnerInterconnectMacSecCapable");
     m_partnerInterconnectMacSecCapableHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("prefixPoolSizeIpv4")) {
+    m_prefixPoolSizeIpv4 = jsonValue.GetInteger("prefixPoolSizeIpv4");
+    m_prefixPoolSizeIpv4HasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("prefixPoolSizeIpv6")) {
+    m_prefixPoolSizeIpv6 = jsonValue.GetInteger("prefixPoolSizeIpv6");
+    m_prefixPoolSizeIpv6HasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("prefixPoolUnallocatedCountIpv4")) {
+    m_prefixPoolUnallocatedCountIpv4 = jsonValue.GetInteger("prefixPoolUnallocatedCountIpv4");
+    m_prefixPoolUnallocatedCountIpv4HasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("prefixPoolUnallocatedCountIpv6")) {
+    m_prefixPoolUnallocatedCountIpv6 = jsonValue.GetInteger("prefixPoolUnallocatedCountIpv6");
+    m_prefixPoolUnallocatedCountIpv6HasBeenSet = true;
+  }
   return *this;
 }
 
@@ -229,6 +245,22 @@ JsonValue Connection::Jsonize() const {
 
   if (m_partnerInterconnectMacSecCapableHasBeenSet) {
     payload.WithBool("partnerInterconnectMacSecCapable", m_partnerInterconnectMacSecCapable);
+  }
+
+  if (m_prefixPoolSizeIpv4HasBeenSet) {
+    payload.WithInteger("prefixPoolSizeIpv4", m_prefixPoolSizeIpv4);
+  }
+
+  if (m_prefixPoolSizeIpv6HasBeenSet) {
+    payload.WithInteger("prefixPoolSizeIpv6", m_prefixPoolSizeIpv6);
+  }
+
+  if (m_prefixPoolUnallocatedCountIpv4HasBeenSet) {
+    payload.WithInteger("prefixPoolUnallocatedCountIpv4", m_prefixPoolUnallocatedCountIpv4);
+  }
+
+  if (m_prefixPoolUnallocatedCountIpv6HasBeenSet) {
+    payload.WithInteger("prefixPoolUnallocatedCountIpv6", m_prefixPoolUnallocatedCountIpv6);
   }
 
   return payload;

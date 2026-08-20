@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Batch {
 namespace Model {
-enum class PlatformCapability { NOT_SET, EC2, FARGATE };
+enum class PlatformCapability { NOT_SET, EC2, FARGATE, MANAGED_INSTANCES };
 
 namespace PlatformCapabilityMapper {
 AWS_BATCH_API PlatformCapability GetPlatformCapabilityForName(const Aws::String& name);

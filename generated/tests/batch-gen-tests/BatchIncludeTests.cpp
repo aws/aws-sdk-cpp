@@ -35,6 +35,7 @@
 #include <aws/batch/model/CancelJobRequest.h>
 #include <aws/batch/model/CancelJobResult.h>
 #include <aws/batch/model/CapacityLimit.h>
+#include <aws/batch/model/CapacityReservationRequest.h>
 #include <aws/batch/model/ComputeEnvironmentDetail.h>
 #include <aws/batch/model/ComputeEnvironmentOrder.h>
 #include <aws/batch/model/ComputeResource.h>
@@ -148,6 +149,10 @@
 #include <aws/batch/model/GetJobQueueSnapshotResult.h>
 #include <aws/batch/model/Host.h>
 #include <aws/batch/model/ImagePullSecret.h>
+#include <aws/batch/model/InfrastructureOptimization.h>
+#include <aws/batch/model/InstanceLaunchTemplate.h>
+#include <aws/batch/model/InstanceLaunchTemplateUpdate.h>
+#include <aws/batch/model/InstanceRequirementsRequest.h>
 #include <aws/batch/model/JQState.h>
 #include <aws/batch/model/JQStatus.h>
 #include <aws/batch/model/JobCapacityUsageSummary.h>
@@ -192,6 +197,10 @@
 #include <aws/batch/model/ListTagsForResourceResult.h>
 #include <aws/batch/model/LogConfiguration.h>
 #include <aws/batch/model/LogDriver.h>
+#include <aws/batch/model/ManagedInstancesLocalStorageConfiguration.h>
+#include <aws/batch/model/ManagedInstancesNetworkConfiguration.h>
+#include <aws/batch/model/ManagedInstancesProvider.h>
+#include <aws/batch/model/ManagedInstancesStorageConfiguration.h>
 #include <aws/batch/model/MountPoint.h>
 #include <aws/batch/model/NetworkConfiguration.h>
 #include <aws/batch/model/NetworkInterface.h>
@@ -276,6 +285,7 @@
 #include <aws/batch/model/UpdateConsumableResourceResult.h>
 #include <aws/batch/model/UpdateJobQueueRequest.h>
 #include <aws/batch/model/UpdateJobQueueResult.h>
+#include <aws/batch/model/UpdateManagedInstancesProviderConfiguration.h>
 #include <aws/batch/model/UpdatePolicy.h>
 #include <aws/batch/model/UpdateQuotaShareRequest.h>
 #include <aws/batch/model/UpdateQuotaShareResult.h>

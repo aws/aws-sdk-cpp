@@ -10,7 +10,7 @@
 namespace Aws {
 namespace CloudFront {
 namespace Model {
-enum class OriginAccessControlSigningProtocols { NOT_SET, sigv4 };
+enum class OriginAccessControlSigningProtocols { NOT_SET, sigv4, sigv4a };
 
 namespace OriginAccessControlSigningProtocolsMapper {
 AWS_CLOUDFRONT_API OriginAccessControlSigningProtocols GetOriginAccessControlSigningProtocolsForName(const Aws::String& name);

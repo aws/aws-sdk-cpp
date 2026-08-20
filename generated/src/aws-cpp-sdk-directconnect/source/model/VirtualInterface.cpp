@@ -137,6 +137,14 @@ VirtualInterface& VirtualInterface::operator=(JsonView jsonValue) {
     m_siteLinkEnabled = jsonValue.GetBool("siteLinkEnabled");
     m_siteLinkEnabledHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("prefixPoolAllocatedCountIpv4")) {
+    m_prefixPoolAllocatedCountIpv4 = jsonValue.GetInteger("prefixPoolAllocatedCountIpv4");
+    m_prefixPoolAllocatedCountIpv4HasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("prefixPoolAllocatedCountIpv6")) {
+    m_prefixPoolAllocatedCountIpv6 = jsonValue.GetInteger("prefixPoolAllocatedCountIpv6");
+    m_prefixPoolAllocatedCountIpv6HasBeenSet = true;
+  }
   if (jsonValue.ValueExists("rateLimit")) {
     m_rateLimit = jsonValue.GetString("rateLimit");
     m_rateLimitHasBeenSet = true;
@@ -266,6 +274,14 @@ JsonValue VirtualInterface::Jsonize() const {
 
   if (m_siteLinkEnabledHasBeenSet) {
     payload.WithBool("siteLinkEnabled", m_siteLinkEnabled);
+  }
+
+  if (m_prefixPoolAllocatedCountIpv4HasBeenSet) {
+    payload.WithInteger("prefixPoolAllocatedCountIpv4", m_prefixPoolAllocatedCountIpv4);
+  }
+
+  if (m_prefixPoolAllocatedCountIpv6HasBeenSet) {
+    payload.WithInteger("prefixPoolAllocatedCountIpv6", m_prefixPoolAllocatedCountIpv6);
   }
 
   if (m_rateLimitHasBeenSet) {

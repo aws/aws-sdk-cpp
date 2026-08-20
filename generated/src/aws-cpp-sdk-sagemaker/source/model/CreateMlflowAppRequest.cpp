@@ -27,6 +27,10 @@ Aws::String CreateMlflowAppRequest::SerializePayload() const {
     payload.WithString("RoleArn", m_roleArn);
   }
 
+  if (m_kmsKeyIdHasBeenSet) {
+    payload.WithString("KmsKeyId", m_kmsKeyId);
+  }
+
   if (m_modelRegistrationModeHasBeenSet) {
     payload.WithString("ModelRegistrationMode", ModelRegistrationModeMapper::GetNameForModelRegistrationMode(m_modelRegistrationMode));
   }

@@ -30,7 +30,9 @@ class DeleteTransitGatewayPolicyTableEntryResponse {
       const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
   ///@{
-
+  /**
+   * <p>Describes a transit gateway policy table entry</p>
+   */
   inline const TransitGatewayPolicyTableEntry& GetTransitGatewayPolicyTableEntry() const { return m_transitGatewayPolicyTableEntry; }
   template <typename TransitGatewayPolicyTableEntryT = TransitGatewayPolicyTableEntry>
   void SetTransitGatewayPolicyTableEntry(TransitGatewayPolicyTableEntryT&& value) {

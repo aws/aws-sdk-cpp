@@ -124,6 +124,22 @@ UpdateConnectionResult& UpdateConnectionResult::operator=(const Aws::AmazonWebSe
     m_partnerInterconnectMacSecCapable = jsonValue.GetBool("partnerInterconnectMacSecCapable");
     m_partnerInterconnectMacSecCapableHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("prefixPoolSizeIpv4")) {
+    m_prefixPoolSizeIpv4 = jsonValue.GetInteger("prefixPoolSizeIpv4");
+    m_prefixPoolSizeIpv4HasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("prefixPoolSizeIpv6")) {
+    m_prefixPoolSizeIpv6 = jsonValue.GetInteger("prefixPoolSizeIpv6");
+    m_prefixPoolSizeIpv6HasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("prefixPoolUnallocatedCountIpv4")) {
+    m_prefixPoolUnallocatedCountIpv4 = jsonValue.GetInteger("prefixPoolUnallocatedCountIpv4");
+    m_prefixPoolUnallocatedCountIpv4HasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("prefixPoolUnallocatedCountIpv6")) {
+    m_prefixPoolUnallocatedCountIpv6 = jsonValue.GetInteger("prefixPoolUnallocatedCountIpv6");
+    m_prefixPoolUnallocatedCountIpv6HasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

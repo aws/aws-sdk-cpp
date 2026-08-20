@@ -2381,9 +2381,8 @@ class AWS_SESV2_API SESV2Client : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Set the pricing plan for your Amazon SES account. Use this operation to
-   * choose a billing plan that packages multiple Amazon SES features at a single
-   * rate.</p><p><h3>See Also:</h3>   <a
+   * <p>Set the pricing plan for your Amazon SES account.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountPricingAttributes">AWS
    * API Reference</a></p>
    */

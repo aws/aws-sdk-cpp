@@ -123,6 +123,25 @@ class DescribeMlflowAppResult {
 
   ///@{
   /**
+   * <p>The ID of the Amazon Web Services KMS key used to encrypt the data at rest
+   * associated with the MLflow App. This field is absent if the MLflow App is not
+   * encrypted with a customer-managed key.</p>
+   */
+  inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
+  template <typename KmsKeyIdT = Aws::String>
+  void SetKmsKeyId(KmsKeyIdT&& value) {
+    m_kmsKeyIdHasBeenSet = true;
+    m_kmsKeyId = std::forward<KmsKeyIdT>(value);
+  }
+  template <typename KmsKeyIdT = Aws::String>
+  DescribeMlflowAppResult& WithKmsKeyId(KmsKeyIdT&& value) {
+    SetKmsKeyId(std::forward<KmsKeyIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The current creation status of the described MLflow App.</p>
    */
   inline MlflowAppStatus GetStatus() const { return m_status; }
@@ -313,6 +332,8 @@ class DescribeMlflowAppResult {
 
   Aws::String m_roleArn;
 
+  Aws::String m_kmsKeyId;
+
   MlflowAppStatus m_status{MlflowAppStatus::NOT_SET};
 
   ModelRegistrationMode m_modelRegistrationMode{ModelRegistrationMode::NOT_SET};
@@ -340,6 +361,7 @@ class DescribeMlflowAppResult {
   bool m_artifactStoreUriHasBeenSet = false;
   bool m_mlflowVersionHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_modelRegistrationModeHasBeenSet = false;
   bool m_accountDefaultStatusHasBeenSet = false;

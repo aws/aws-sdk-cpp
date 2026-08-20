@@ -42,6 +42,10 @@ DescribeMlflowAppResult& DescribeMlflowAppResult::operator=(const Aws::AmazonWeb
     m_roleArn = jsonValue.GetString("RoleArn");
     m_roleArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("KmsKeyId")) {
+    m_kmsKeyId = jsonValue.GetString("KmsKeyId");
+    m_kmsKeyIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Status")) {
     m_status = MlflowAppStatusMapper::GetMlflowAppStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;

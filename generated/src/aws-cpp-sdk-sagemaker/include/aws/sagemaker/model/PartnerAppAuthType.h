@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SageMaker {
 namespace Model {
-enum class PartnerAppAuthType { NOT_SET, IAM };
+enum class PartnerAppAuthType { NOT_SET, IAM, IDC };
 
 namespace PartnerAppAuthTypeMapper {
 AWS_SAGEMAKER_API PartnerAppAuthType GetPartnerAppAuthTypeForName(const Aws::String& name);

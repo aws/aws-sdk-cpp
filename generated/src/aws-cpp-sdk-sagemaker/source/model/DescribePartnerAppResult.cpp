@@ -98,6 +98,10 @@ DescribePartnerAppResult& DescribePartnerAppResult::operator=(const Aws::AmazonW
     m_availableUpgrade = jsonValue.GetObject("AvailableUpgrade");
     m_availableUpgradeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("IdcConfig")) {
+    m_idcConfig = jsonValue.GetObject("IdcConfig");
+    m_idcConfigHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

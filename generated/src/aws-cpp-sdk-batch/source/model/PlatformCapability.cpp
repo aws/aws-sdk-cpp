@@ -17,6 +17,7 @@ namespace PlatformCapabilityMapper {
 
 static const int EC2_HASH = HashingUtils::HashString("EC2");
 static const int FARGATE_HASH = HashingUtils::HashString("FARGATE");
+static const int MANAGED_INSTANCES_HASH = HashingUtils::HashString("MANAGED_INSTANCES");
 
 PlatformCapability GetPlatformCapabilityForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ PlatformCapability GetPlatformCapabilityForName(const Aws::String& name) {
     return PlatformCapability::EC2;
   } else if (hashCode == FARGATE_HASH) {
     return PlatformCapability::FARGATE;
+  } else if (hashCode == MANAGED_INSTANCES_HASH) {
+    return PlatformCapability::MANAGED_INSTANCES;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForPlatformCapability(PlatformCapability enumValue) {
       return "EC2";
     case PlatformCapability::FARGATE:
       return "FARGATE";
+    case PlatformCapability::MANAGED_INSTANCES:
+      return "MANAGED_INSTANCES";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

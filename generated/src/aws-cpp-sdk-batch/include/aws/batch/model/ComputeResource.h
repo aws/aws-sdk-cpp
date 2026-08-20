@@ -10,6 +10,7 @@
 #include <aws/batch/model/ComputeScalingPolicy.h>
 #include <aws/batch/model/Ec2Configuration.h>
 #include <aws/batch/model/LaunchTemplateSpecification.h>
+#include <aws/batch/model/ManagedInstancesProvider.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -44,14 +45,23 @@ class ComputeResource {
   ///@{
   /**
    * <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>,
-   * <code>FARGATE</code>, or <code>FARGATE_SPOT</code>. For more information, see <a
+   * <code>FARGATE</code>, <code>FARGATE_SPOT</code>, or
+   * <code>ECS_MANAGED_INSTANCES</code>. For more information, see <a
    * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
    * environments</a> in the <i>Batch User Guide</i>.</p> <p> If you choose
    * <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the
    * <code>spotIamFleetRole</code> parameter. For more information, see <a
    * href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon
-   * EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</p>  <p>Multi-node
-   * parallel jobs aren't supported on Spot Instances.</p>
+   * EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</p> <p>If you choose
+   * <code>ECS_MANAGED_INSTANCES</code>, you must also specify a
+   * <code>managedInstancesProvider</code> configuration. To use Spot capacity, set
+   * <code>capacityOptionType</code> to <code>SPOT</code> in the
+   * <code>managedInstancesProvider.instanceLaunchTemplate</code> configuration. For
+   * more information, see <a
+   * href="https://docs.aws.amazon.com/batch/latest/userguide/ecs_managed_instances.html">Amazon
+   * ECS Managed Instances compute environments</a> in the <i>Batch User
+   * Guide</i>.</p>  <p>Multi-node parallel jobs aren't supported on Spot
+   * Instances or Amazon ECS Managed Instances.</p>
    */
   inline CRType GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -588,6 +598,61 @@ class ComputeResource {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration for the Amazon ECS Managed Instances capacity provider.
+   * This parameter is required when <code>computeResources.type</code> is
+   * <code>ECS_MANAGED_INSTANCES</code> and must not be specified for other compute
+   * environment types.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/batch/latest/userguide/ecs_managed_instances.html">Amazon
+   * ECS Managed Instances compute environments</a> in the <i>Batch User
+   * Guide</i>.</p>
+   */
+  inline const ManagedInstancesProvider& GetManagedInstancesProvider() const { return m_managedInstancesProvider; }
+  inline bool ManagedInstancesProviderHasBeenSet() const { return m_managedInstancesProviderHasBeenSet; }
+  template <typename ManagedInstancesProviderT = ManagedInstancesProvider>
+  void SetManagedInstancesProvider(ManagedInstancesProviderT&& value) {
+    m_managedInstancesProviderHasBeenSet = true;
+    m_managedInstancesProvider = std::forward<ManagedInstancesProviderT>(value);
+  }
+  template <typename ManagedInstancesProviderT = ManagedInstancesProvider>
+  ComputeResource& WithManagedInstancesProvider(ManagedInstancesProviderT&& value) {
+    SetManagedInstancesProvider(std::forward<ManagedInstancesProviderT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The tags to apply to the Amazon ECS capacity provider and Amazon EC2
+   * instances launched by the compute environment. These tags are separate from the
+   * compute environment resource tags (the top-level <code>tags</code> parameter).
+   * Use <code>capacityTags</code> for cost allocation and organization of the
+   * underlying infrastructure resources.</p> <p>This parameter is only valid for
+   * <code>ECS_MANAGED_INSTANCES</code> compute environments. You must have the
+   * <code>batch:SetCapacityTags</code> permission on the compute environment
+   * resource to use this parameter.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetCapacityTags() const { return m_capacityTags; }
+  inline bool CapacityTagsHasBeenSet() const { return m_capacityTagsHasBeenSet; }
+  template <typename CapacityTagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetCapacityTags(CapacityTagsT&& value) {
+    m_capacityTagsHasBeenSet = true;
+    m_capacityTags = std::forward<CapacityTagsT>(value);
+  }
+  template <typename CapacityTagsT = Aws::Map<Aws::String, Aws::String>>
+  ComputeResource& WithCapacityTags(CapacityTagsT&& value) {
+    SetCapacityTags(std::forward<CapacityTagsT>(value));
+    return *this;
+  }
+  template <typename CapacityTagsKeyT = Aws::String, typename CapacityTagsValueT = Aws::String>
+  ComputeResource& AddCapacityTags(CapacityTagsKeyT&& key, CapacityTagsValueT&& value) {
+    m_capacityTagsHasBeenSet = true;
+    m_capacityTags.emplace(std::forward<CapacityTagsKeyT>(key), std::forward<CapacityTagsValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   CRType m_type{CRType::NOT_SET};
 
@@ -622,6 +687,10 @@ class ComputeResource {
   Aws::Vector<Ec2Configuration> m_ec2Configuration;
 
   ComputeScalingPolicy m_scalingPolicy;
+
+  ManagedInstancesProvider m_managedInstancesProvider;
+
+  Aws::Map<Aws::String, Aws::String> m_capacityTags;
   bool m_typeHasBeenSet = false;
   bool m_allocationStrategyHasBeenSet = false;
   bool m_minvCpusHasBeenSet = false;
@@ -639,6 +708,8 @@ class ComputeResource {
   bool m_launchTemplateHasBeenSet = false;
   bool m_ec2ConfigurationHasBeenSet = false;
   bool m_scalingPolicyHasBeenSet = false;
+  bool m_managedInstancesProviderHasBeenSet = false;
+  bool m_capacityTagsHasBeenSet = false;
 };
 
 }  // namespace Model

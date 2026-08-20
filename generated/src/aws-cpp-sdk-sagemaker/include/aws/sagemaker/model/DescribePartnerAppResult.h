@@ -10,6 +10,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/AvailableUpgrade.h>
 #include <aws/sagemaker/model/ErrorInfo.h>
+#include <aws/sagemaker/model/IdcConfigOutput.h>
 #include <aws/sagemaker/model/PartnerAppAuthType.h>
 #include <aws/sagemaker/model/PartnerAppConfig.h>
 #include <aws/sagemaker/model/PartnerAppMaintenanceConfig.h>
@@ -270,8 +271,11 @@ class DescribePartnerAppResult {
 
   ///@{
   /**
-   * <p>The authorization type that users use to access the SageMaker Partner AI
-   * App.</p>
+   * <p>The authorization type that users use to access the SageMaker Partner AI App.
+   * Valid values:</p> <ul> <li> <p> <code>IAM</code>: Users access the SageMaker
+   * Partner AI App with their Amazon Web Services IAM identity.</p> </li> <li> <p>
+   * <code>IDC</code>: Users access the SageMaker Partner AI App with their Amazon
+   * Web Services IAM Identity Center identity.</p> </li> </ul>
    */
   inline PartnerAppAuthType GetAuthType() const { return m_authType; }
   inline void SetAuthType(PartnerAppAuthType value) {
@@ -373,6 +377,26 @@ class DescribePartnerAppResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Contains the Amazon Web Services IAM Identity Center configuration for the
+   * SageMaker Partner AI App, including the Identity Center instance and the
+   * Identity Center application that SageMaker creates for the app. The service
+   * returns this field for apps that use <code>IDC</code> authorization.</p>
+   */
+  inline const IdcConfigOutput& GetIdcConfig() const { return m_idcConfig; }
+  template <typename IdcConfigT = IdcConfigOutput>
+  void SetIdcConfig(IdcConfigT&& value) {
+    m_idcConfigHasBeenSet = true;
+    m_idcConfig = std::forward<IdcConfigT>(value);
+  }
+  template <typename IdcConfigT = IdcConfigOutput>
+  DescribePartnerAppResult& WithIdcConfig(IdcConfigT&& value) {
+    SetIdcConfig(std::forward<IdcConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -427,6 +451,8 @@ class DescribePartnerAppResult {
 
   AvailableUpgrade m_availableUpgrade;
 
+  IdcConfigOutput m_idcConfig;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
@@ -448,6 +474,7 @@ class DescribePartnerAppResult {
   bool m_enableAutoMinorVersionUpgradeHasBeenSet = false;
   bool m_currentVersionEolDateHasBeenSet = false;
   bool m_availableUpgradeHasBeenSet = false;
+  bool m_idcConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

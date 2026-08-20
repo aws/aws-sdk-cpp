@@ -556,6 +556,38 @@ class AllocatePublicVirtualInterfaceResult {
 
   ///@{
   /**
+   * <p>The number of inbound IPv4 route prefixes allocated to the virtual interface.
+   * Not applicable to public virtual interfaces.</p>
+   */
+  inline int GetPrefixPoolAllocatedCountIpv4() const { return m_prefixPoolAllocatedCountIpv4; }
+  inline void SetPrefixPoolAllocatedCountIpv4(int value) {
+    m_prefixPoolAllocatedCountIpv4HasBeenSet = true;
+    m_prefixPoolAllocatedCountIpv4 = value;
+  }
+  inline AllocatePublicVirtualInterfaceResult& WithPrefixPoolAllocatedCountIpv4(int value) {
+    SetPrefixPoolAllocatedCountIpv4(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The number of inbound IPv6 route prefixes allocated to the virtual interface.
+   * Not applicable to public virtual interfaces.</p>
+   */
+  inline int GetPrefixPoolAllocatedCountIpv6() const { return m_prefixPoolAllocatedCountIpv6; }
+  inline void SetPrefixPoolAllocatedCountIpv6(int value) {
+    m_prefixPoolAllocatedCountIpv6HasBeenSet = true;
+    m_prefixPoolAllocatedCountIpv6 = value;
+  }
+  inline AllocatePublicVirtualInterfaceResult& WithPrefixPoolAllocatedCountIpv6(int value) {
+    SetPrefixPoolAllocatedCountIpv6(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The rate limit (bandwidth allocation) applied to the virtual interface. The
    * value must be one of the supported bandwidth values and cannot exceed the
    * bandwidth of the parent connection or LAG. Supported values:
@@ -667,6 +699,10 @@ class AllocatePublicVirtualInterfaceResult {
 
   bool m_siteLinkEnabled{false};
 
+  int m_prefixPoolAllocatedCountIpv4{0};
+
+  int m_prefixPoolAllocatedCountIpv6{0};
+
   Aws::String m_rateLimit;
 
   Aws::String m_requestId;
@@ -698,6 +734,8 @@ class AllocatePublicVirtualInterfaceResult {
   bool m_awsLogicalDeviceIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_siteLinkEnabledHasBeenSet = false;
+  bool m_prefixPoolAllocatedCountIpv4HasBeenSet = false;
+  bool m_prefixPoolAllocatedCountIpv6HasBeenSet = false;
   bool m_rateLimitHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

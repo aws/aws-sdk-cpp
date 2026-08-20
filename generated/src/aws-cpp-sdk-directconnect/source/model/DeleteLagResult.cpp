@@ -115,6 +115,22 @@ DeleteLagResult& DeleteLagResult::operator=(const Aws::AmazonWebServiceResult<Js
     }
     m_macSecKeysHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("prefixPoolSizeIpv4")) {
+    m_prefixPoolSizeIpv4 = jsonValue.GetInteger("prefixPoolSizeIpv4");
+    m_prefixPoolSizeIpv4HasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("prefixPoolSizeIpv6")) {
+    m_prefixPoolSizeIpv6 = jsonValue.GetInteger("prefixPoolSizeIpv6");
+    m_prefixPoolSizeIpv6HasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("prefixPoolUnallocatedCountIpv4")) {
+    m_prefixPoolUnallocatedCountIpv4 = jsonValue.GetInteger("prefixPoolUnallocatedCountIpv4");
+    m_prefixPoolUnallocatedCountIpv4HasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("prefixPoolUnallocatedCountIpv6")) {
+    m_prefixPoolUnallocatedCountIpv6 = jsonValue.GetInteger("prefixPoolUnallocatedCountIpv6");
+    m_prefixPoolUnallocatedCountIpv6HasBeenSet = true;
+  }
   if (jsonValue.ValueExists("rateLimiterStatus")) {
     m_rateLimiterStatus = jsonValue.GetObject("rateLimiterStatus");
     m_rateLimiterStatusHasBeenSet = true;

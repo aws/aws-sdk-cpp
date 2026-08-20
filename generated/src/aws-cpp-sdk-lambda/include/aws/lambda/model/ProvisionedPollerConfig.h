@@ -57,9 +57,9 @@ class ProvisionedPollerConfig {
   ///@{
   /**
    * <p>The maximum number of event pollers this event source can scale up to. For
-   * Amazon SQS events source mappings, default is 200, and minimum value allowed is
-   * 2. For Amazon MSK and self-managed Apache Kafka event source mappings, default
-   * is 200, and minimum value allowed is 1.</p>
+   * Amazon SQS event source mappings, the accepted range is between 2 and 10,000,
+   * with a default of 200. For Amazon MSK and self-managed Apache Kafka event source
+   * mappings, the accepted range is between 1 and 2,000, with a default of 200.</p>
    */
   inline int GetMaximumPollers() const { return m_maximumPollers; }
   inline bool MaximumPollersHasBeenSet() const { return m_maximumPollersHasBeenSet; }

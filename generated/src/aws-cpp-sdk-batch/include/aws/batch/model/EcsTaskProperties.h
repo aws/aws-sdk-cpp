@@ -215,8 +215,8 @@ class EcsTaskProperties {
   ///@{
   /**
    * <p>The network configuration for jobs that are running on Fargate resources.
-   * Jobs that are running on Amazon EC2 resources must not specify this
-   * parameter.</p>
+   * Jobs that are running on Amazon EC2 resources or Amazon ECS Managed Instances
+   * must not specify this parameter.</p>
    */
   inline const NetworkConfiguration& GetNetworkConfiguration() const { return m_networkConfiguration; }
   inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
@@ -235,7 +235,12 @@ class EcsTaskProperties {
   ///@{
   /**
    * <p>An object that represents the compute environment architecture for Batch jobs
-   * on Fargate.</p>
+   * on Fargate or Amazon ECS Managed Instances. Use this to specify the operating
+   * system family (<code>operatingSystemFamily</code>) and CPU architecture
+   * (<code>cpuArchitecture</code>).</p> <p>For Amazon ECS Managed Instances, the
+   * valid value for <code>operatingSystemFamily</code> is <code>LINUX</code>
+   * (default). The valid values for <code>cpuArchitecture</code> are
+   * <code>X86_64</code> and <code>ARM64</code>.</p>
    */
   inline const RuntimePlatform& GetRuntimePlatform() const { return m_runtimePlatform; }
   inline bool RuntimePlatformHasBeenSet() const { return m_runtimePlatformHasBeenSet; }
@@ -292,6 +297,32 @@ class EcsTaskProperties {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The network mode to use for the task. Valid values: <code>host</code>. When
+   * not specified, the default is <code>host</code>.</p> <p>With <code>host</code>
+   * mode, the container shares the host instance's network stack directly. When
+   * running tasks that use the <code>host</code> network mode, do not run containers
+   * using the root user (UID 0). Running as root grants unrestricted access to host
+   * resources and increases the attack surface.</p> <p>This parameter only applies
+   * to jobs running on Amazon ECS Managed Instances (<code>MANAGED_INSTANCES</code>
+   * platform capability). It cannot be specified for Fargate or Amazon EC2 platform
+   * job definitions.</p>
+   */
+  inline const Aws::String& GetNetworkMode() const { return m_networkMode; }
+  inline bool NetworkModeHasBeenSet() const { return m_networkModeHasBeenSet; }
+  template <typename NetworkModeT = Aws::String>
+  void SetNetworkMode(NetworkModeT&& value) {
+    m_networkModeHasBeenSet = true;
+    m_networkMode = std::forward<NetworkModeT>(value);
+  }
+  template <typename NetworkModeT = Aws::String>
+  EcsTaskProperties& WithNetworkMode(NetworkModeT&& value) {
+    SetNetworkMode(std::forward<NetworkModeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<TaskContainerProperties> m_containers;
 
@@ -314,6 +345,8 @@ class EcsTaskProperties {
   Aws::Vector<Volume> m_volumes;
 
   bool m_enableExecuteCommand{false};
+
+  Aws::String m_networkMode;
   bool m_containersHasBeenSet = false;
   bool m_ephemeralStorageHasBeenSet = false;
   bool m_executionRoleArnHasBeenSet = false;
@@ -325,6 +358,7 @@ class EcsTaskProperties {
   bool m_runtimePlatformHasBeenSet = false;
   bool m_volumesHasBeenSet = false;
   bool m_enableExecuteCommandHasBeenSet = false;
+  bool m_networkModeHasBeenSet = false;
 };
 
 }  // namespace Model
