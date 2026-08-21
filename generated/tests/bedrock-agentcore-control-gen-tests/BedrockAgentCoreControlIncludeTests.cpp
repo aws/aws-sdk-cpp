@@ -745,6 +745,7 @@
 #include <aws/bedrock-agentcore-control/model/StartPolicyGenerationRequest.h>
 #include <aws/bedrock-agentcore-control/model/StartPolicyGenerationResult.h>
 #include <aws/bedrock-agentcore-control/model/StaticOverride.h>
+#include <aws/bedrock-agentcore-control/model/StaticQueryParameterConflictResolution.h>
 #include <aws/bedrock-agentcore-control/model/StaticRoute.h>
 #include <aws/bedrock-agentcore-control/model/Status.h>
 #include <aws/bedrock-agentcore-control/model/StickinessConfiguration.h>

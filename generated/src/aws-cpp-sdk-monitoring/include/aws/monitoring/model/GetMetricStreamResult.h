@@ -228,7 +228,7 @@ class GetMetricStreamResult {
    * <p>Each entry in this array displays information about one or more metrics that
    * include additional statistics in the metric stream. For more information about
    * the additional statistics, see <a
-   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">
    * CloudWatch statistics definitions</a>. </p>
    */
   inline const Aws::Vector<MetricStreamStatisticsConfiguration>& GetStatisticsConfigurations() const { return m_statisticsConfigurations; }

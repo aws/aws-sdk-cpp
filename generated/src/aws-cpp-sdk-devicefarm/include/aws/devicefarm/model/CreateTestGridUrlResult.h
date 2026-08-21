@@ -30,8 +30,9 @@ class CreateTestGridUrlResult {
 
   ///@{
   /**
-   * <p>A signed URL, expiring in <a>CreateTestGridUrlRequest$expiresInSeconds</a>
-   * seconds, to be passed to a <code>RemoteWebDriver</code>. </p>
+   * <p>A signed URL, expiring in the time specified by the
+   * <code>CreateTestGridUrlRequest</code>, to be passed to a
+   * <code>RemoteWebDriver</code>. </p>
    */
   inline const Aws::String& GetUrl() const { return m_url; }
   template <typename UrlT = Aws::String>
@@ -48,8 +49,7 @@ class CreateTestGridUrlResult {
 
   ///@{
   /**
-   * <p>The number of seconds the URL from <a>CreateTestGridUrlResult$url</a> stays
-   * active.</p>
+   * <p>The number of seconds the URL stays active from creation.</p>
    */
   inline const Aws::Utils::DateTime& GetExpires() const { return m_expires; }
   template <typename ExpiresT = Aws::Utils::DateTime>

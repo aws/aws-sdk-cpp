@@ -74,7 +74,7 @@ protected:
 };
 
 Aws::UniquePtrSafeDeleted<Aws::Vector<KinesisEndpointProviderEndpointTestCase>> KinesisEndpointProviderTests::TEST_CASES;
-const size_t KinesisEndpointProviderTests::TEST_CASES_SZ = 189;
+const size_t KinesisEndpointProviderTests::TEST_CASES_SZ = 230;
 
 Aws::Vector<KinesisEndpointProviderEndpointTestCase> KinesisEndpointProviderTests::getTestCase() {
 
@@ -1768,6 +1768,399 @@ Aws::Vector<KinesisEndpointProviderEndpointTestCase> KinesisEndpointProviderTest
      EpParam("OperationType", "control"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://123.control-kinesis.us-west-2.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 189*/
+  {"AccountId test: Account Id present", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "012345678901"), EpParam("Region", "us-west-2"), EpParam("OperationType", "data"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://012345678901.data-kinesis.us-west-2.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 190*/
+  {"AccountId test: Account Id present with fips", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "123"), EpParam("Region", "us-west-2"), EpParam("OperationType", "control"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://123.control-kinesis-fips.us-west-2.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 191*/
+  {"AccountId test: Account Id present with dual stack", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "123"), EpParam("Region", "us-west-2"), EpParam("OperationType", "control"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://123.control-kinesis.us-west-2.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 192*/
+  {"AccountId test: Account Id present with fips and dual stack", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "123"), EpParam("Region", "us-west-2"), EpParam("OperationType", "control"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://123.control-kinesis-fips.us-west-2.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 193*/
+  {"Account Id present with streamId", // documentation
+    {EpParam("UseFIPS", false), EpParam("StreamId", "af4lwng4k01746835071-xyz"), EpParam("AccountId", "123"), EpParam("Region", "us-west-2"), EpParam("OperationType", "control"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://af4lwng4k01746835071.xyz.control-kinesis.us-west-2.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 194*/
+  {"Account Id present with stream ARN", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "123"), EpParam("Region", "us-west-2"), EpParam("OperationType", "control"), EpParam("StreamARN", "arn:aws:kinesis:us-east-1:123:stream/test-stream"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://123.control-kinesis.us-west-2.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 195*/
+  {"Account Id present with consumer ARN", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "123"), EpParam("ConsumerARN", "arn:aws:kinesis:us-west-2:123:stream/testStream/consumer/test-consumer:1525898737"),
+     EpParam("Region", "us-west-2"), EpParam("OperationType", "control"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://123.control-kinesis.us-west-2.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 196*/
+  {"Account Id present with resource ARN", // documentation
+    {EpParam("ResourceARN", "arn:aws:kinesis:us-west-2:123:stream/testStream/consumer/test-consumer:1525898737"), EpParam("UseFIPS", false), EpParam("AccountId", "123"),
+     EpParam("Region", "us-west-2"), EpParam("OperationType", "control"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://123.control-kinesis.us-west-2.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 197*/
+  {"Account Id present and stream ARN with different accountId", // documentation
+    {EpParam("ResourceARN", "arn:aws:kinesis:us-west-2:456:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "123"), EpParam("Region", "us-west-2"),
+     EpParam("OperationType", "control"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://456.control-kinesis.us-west-2.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 198*/
+  {"Account Id present and consumer ARN with different accountId", // documentation
+    {EpParam("ResourceARN", "arn:aws:kinesis:us-west-2:456:stream/testStream/consumer/test-consumer:1525898737"), EpParam("UseFIPS", false), EpParam("AccountId", "123"),
+     EpParam("Region", "us-west-2"), EpParam("OperationType", "control"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://456.control-kinesis.us-west-2.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 199*/
+  {"Account Id, streamId and resource ARN with different accountId", // documentation
+    {EpParam("ResourceARN", "arn:aws:kinesis:us-west-2:456:stream/testStream/consumer/test-consumer:1525898737"), EpParam("UseFIPS", false), EpParam("StreamId", "af4lwng4k01746835071-xyz"),
+     EpParam("AccountId", "123"), EpParam("Region", "us-west-2"), EpParam("OperationType", "control"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://af4lwng4k01746835071.xyz.control-kinesis.us-west-2.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 200*/
+  {"Account Id with account id endpoint mode disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "123"), EpParam("Region", "us-west-2"), EpParam("OperationType", "control"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://kinesis.us-west-2.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 201*/
+  {"Account Id and StreamArn with account id endpoint mode disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "123"), EpParam("Region", "us-west-2"), EpParam("OperationType", "control"), EpParam("StreamARN", "arn:aws:kinesis:us-west-2:456:stream/testStream"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://456.control-kinesis.us-west-2.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 202*/
+  {"Account Id missing with account id endpoint mode required", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-west-2"), EpParam("OperationType", "control"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"AccountIdEndpointMode is required but no AccountID was provided or able to be loaded"} // expect
+  },
+  /*TEST CASE 203*/
+  {"Account Id missing with account id endpoint mode required, fips and dual stack enabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-west-2"), EpParam("OperationType", "control"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"AccountIdEndpointMode is required but no AccountID was provided or able to be loaded"} // expect
+  },
+  /*TEST CASE 204*/
+  {"Account Id missing with account id endpoint mode required in ADC region", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"), EpParam("OperationType", "control"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"} // expect
+  },
+  /*TEST CASE 205*/
+  {"Account Id present with account id endpoint mode required in ADC region", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "123456789012"), EpParam("Region", "us-iso-east-1"), EpParam("OperationType", "control"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"} // expect
+  },
+  /*TEST CASE 206*/
+  {"Account Id present with account id endpoint mode preferred in ADC region", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "123456789012"), EpParam("Region", "us-iso-east-1"), EpParam("OperationType", "control"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://kinesis.us-iso-east-1.c2s.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 207*/
+  {"Account Id missing with account id endpoint mode required and endpoint override", // documentation
+    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://kinesis-pod1.us-west-2.amazonaws.com"), EpParam("Region", "us-west-2"), EpParam("OperationType", "control"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://kinesis-pod1.us-west-2.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 208*/
+  {"Account Id missing with StreamArn and account id endpoint mode required", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-west-2"), EpParam("OperationType", "control"), EpParam("StreamARN", "arn:aws:kinesis:us-west-2:456:stream/testStream"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://456.control-kinesis.us-west-2.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 209*/
+  {"Account Id missing with StreamId and account id endpoint mode required", // documentation
+    {EpParam("UseFIPS", false), EpParam("StreamId", "af4lwng4k01746835071-xyz"), EpParam("Region", "us-west-2"), EpParam("OperationType", "control"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://af4lwng4k01746835071.xyz.control-kinesis.us-west-2.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 210*/
+  {"Account Id missing with account id endpoint mode preferred", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-west-2"), EpParam("OperationType", "control"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://kinesis.us-west-2.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 211*/
+  {"Account Id missing with account id endpoint mode disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-west-2"), EpParam("OperationType", "control"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://kinesis.us-west-2.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 212*/
+  {"CreateStream: control operation type with AccountId", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "123456789012"), EpParam("Region", "us-east-1"), EpParam("OperationType", "control"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://123456789012.control-kinesis.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 213*/
+  {"CreateStream: control operation type with FIPS and AccountId", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "123456789012"), EpParam("Region", "us-east-1"), EpParam("OperationType", "control"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://123456789012.control-kinesis-fips.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 214*/
+  {"ListStreams: control operation type with AccountId", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "123456789012"), EpParam("Region", "us-west-2"), EpParam("OperationType", "control"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://123456789012.control-kinesis.us-west-2.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 215*/
+  {"ListStreams: control operation type with FIPS and DualStack", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "123456789012"), EpParam("Region", "us-west-2"), EpParam("OperationType", "control"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://123456789012.control-kinesis-fips.us-west-2.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 216*/
+  {"DescribeLimits: control operation type with AccountId", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "123456789012"), EpParam("Region", "us-east-1"), EpParam("OperationType", "control"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://123456789012.control-kinesis.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 217*/
+  {"DescribeLimits: control operation type with FIPS", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "123456789012"), EpParam("Region", "us-east-1"), EpParam("OperationType", "control"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://123456789012.control-kinesis-fips.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 218*/
+  {"DescribeAccountSettings: control operation type with AccountId", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "123456789012"), EpParam("Region", "us-west-2"), EpParam("OperationType", "control"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://123456789012.control-kinesis.us-west-2.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 219*/
+  {"DescribeAccountSettings: control operation type with FIPS and DualStack", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "123456789012"), EpParam("Region", "us-west-2"), EpParam("OperationType", "control"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://123456789012.control-kinesis-fips.us-west-2.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 220*/
+  {"UpdateAccountSettings: control operation type with AccountId", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "123456789012"), EpParam("Region", "us-east-1"), EpParam("OperationType", "control"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://123456789012.control-kinesis.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 221*/
+  {"UpdateAccountSettings: control operation type with FIPS", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "123456789012"), EpParam("Region", "us-east-1"), EpParam("OperationType", "control"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://123456789012.control-kinesis-fips.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 222*/
+  {"CreateStream: account id endpoint mode disabled falls back to regional endpoint", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "123456789012"), EpParam("Region", "us-east-1"), EpParam("OperationType", "control"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://kinesis.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 223*/
+  {"ListStreams: account id endpoint mode disabled falls back to regional endpoint", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "123456789012"), EpParam("Region", "us-west-2"), EpParam("OperationType", "control"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://kinesis.us-west-2.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 224*/
+  {"DescribeLimits: account id endpoint mode disabled falls back to regional endpoint", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "123456789012"), EpParam("Region", "us-east-1"), EpParam("OperationType", "control"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://kinesis.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 225*/
+  {"DescribeAccountSettings: account id endpoint mode disabled falls back to regional endpoint", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "123456789012"), EpParam("Region", "us-west-2"), EpParam("OperationType", "control"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://kinesis.us-west-2.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 226*/
+  {"UpdateAccountSettings: account id endpoint mode disabled falls back to regional endpoint", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "123456789012"), EpParam("Region", "us-east-1"), EpParam("OperationType", "control"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://kinesis.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 227*/
+  {"CreateStream: account id endpoint mode disabled with FIPS falls back to regional FIPS endpoint", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "123456789012"), EpParam("Region", "us-east-1"), EpParam("OperationType", "control"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://kinesis-fips.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 228*/
+  {"CreateStream: account id endpoint mode disabled with DualStack falls back to regional DualStack endpoint", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "123456789012"), EpParam("Region", "us-east-1"), EpParam("OperationType", "control"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://kinesis.us-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 229*/
+  {"CreateStream: account id endpoint mode disabled with FIPS and DualStack falls back to regional FIPS DualStack endpoint", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "123456789012"), EpParam("Region", "us-east-1"), EpParam("OperationType", "control"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://kinesis-fips.us-east-1.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect

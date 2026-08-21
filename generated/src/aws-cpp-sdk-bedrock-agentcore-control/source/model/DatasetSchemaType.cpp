@@ -17,7 +17,7 @@ namespace DatasetSchemaTypeMapper {
 
 static const int AGENTCORE_EVALUATION_PREDEFINED_V1_HASH = HashingUtils::HashString("AGENTCORE_EVALUATION_PREDEFINED_V1");
 static const int AGENTCORE_EVALUATION_SIMULATED_V1_HASH = HashingUtils::HashString("AGENTCORE_EVALUATION_SIMULATED_V1");
-static const int GENERIC_EVALUATION_PREDEFINED_V1_HASH = HashingUtils::HashString("GENERIC_EVALUATION_PREDEFINED_V1");
+static const int THIRD_PARTY_EVALUATION_V1_HASH = HashingUtils::HashString("THIRD_PARTY_EVALUATION_V1");
 
 DatasetSchemaType GetDatasetSchemaTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -25,8 +25,8 @@ DatasetSchemaType GetDatasetSchemaTypeForName(const Aws::String& name) {
     return DatasetSchemaType::AGENTCORE_EVALUATION_PREDEFINED_V1;
   } else if (hashCode == AGENTCORE_EVALUATION_SIMULATED_V1_HASH) {
     return DatasetSchemaType::AGENTCORE_EVALUATION_SIMULATED_V1;
-  } else if (hashCode == GENERIC_EVALUATION_PREDEFINED_V1_HASH) {
-    return DatasetSchemaType::GENERIC_EVALUATION_PREDEFINED_V1;
+  } else if (hashCode == THIRD_PARTY_EVALUATION_V1_HASH) {
+    return DatasetSchemaType::THIRD_PARTY_EVALUATION_V1;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -45,8 +45,8 @@ Aws::String GetNameForDatasetSchemaType(DatasetSchemaType enumValue) {
       return "AGENTCORE_EVALUATION_PREDEFINED_V1";
     case DatasetSchemaType::AGENTCORE_EVALUATION_SIMULATED_V1:
       return "AGENTCORE_EVALUATION_SIMULATED_V1";
-    case DatasetSchemaType::GENERIC_EVALUATION_PREDEFINED_V1:
-      return "GENERIC_EVALUATION_PREDEFINED_V1";
+    case DatasetSchemaType::THIRD_PARTY_EVALUATION_V1:
+      return "THIRD_PARTY_EVALUATION_V1";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

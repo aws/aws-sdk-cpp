@@ -172,8 +172,9 @@ class UpdateMemoryRequest : public BedrockAgentCoreControlRequest {
   ///@{
   /**
    * <p>The namespace variable key definitions with validation rules for this memory.
-   * Use this parameter to update existing <code>namespaceKey</code> validation rules
-   * or add new keys when namespace templates change.</p>
+   * This value fully replaces the existing set — any key you omit is removed. Any
+   * referenced <code>namespaceKey</code> omission will throw
+   * ValidationException.</p>
    */
   inline const Aws::Vector<NamespaceKeyEntry>& GetNamespaceKeys() const { return m_namespaceKeys; }
   inline bool NamespaceKeysHasBeenSet() const { return m_namespaceKeysHasBeenSet; }

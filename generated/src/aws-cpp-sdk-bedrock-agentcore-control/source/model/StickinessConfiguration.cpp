@@ -26,6 +26,14 @@ StickinessConfiguration& StickinessConfiguration::operator=(JsonView jsonValue) 
     m_timeout = jsonValue.GetInteger("timeout");
     m_timeoutHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("compositeIdentifier")) {
+    Aws::Utils::Array<JsonView> compositeIdentifierJsonList = jsonValue.GetArray("compositeIdentifier");
+    for (unsigned compositeIdentifierIndex = 0; compositeIdentifierIndex < compositeIdentifierJsonList.GetLength();
+         ++compositeIdentifierIndex) {
+      m_compositeIdentifier.push_back(compositeIdentifierJsonList[compositeIdentifierIndex].AsString());
+    }
+    m_compositeIdentifierHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +46,15 @@ JsonValue StickinessConfiguration::Jsonize() const {
 
   if (m_timeoutHasBeenSet) {
     payload.WithInteger("timeout", m_timeout);
+  }
+
+  if (m_compositeIdentifierHasBeenSet) {
+    Aws::Utils::Array<JsonValue> compositeIdentifierJsonList(m_compositeIdentifier.size());
+    for (unsigned compositeIdentifierIndex = 0; compositeIdentifierIndex < compositeIdentifierJsonList.GetLength();
+         ++compositeIdentifierIndex) {
+      compositeIdentifierJsonList[compositeIdentifierIndex].AsString(m_compositeIdentifier[compositeIdentifierIndex]);
+    }
+    payload.WithArray("compositeIdentifier", std::move(compositeIdentifierJsonList));
   }
 
   return payload;

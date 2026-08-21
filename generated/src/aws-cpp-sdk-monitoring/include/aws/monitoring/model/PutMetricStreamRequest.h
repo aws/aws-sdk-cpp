@@ -218,7 +218,7 @@ class PutMetricStreamRequest : public CloudWatchRequest {
    * <code>OutputFormat</code>. If the <code>OutputFormat</code> is
    * <code>json</code>, you can stream any additional statistic that is supported by
    * CloudWatch, listed in <a
-   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">
    * CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is
    * <code>opentelemetry1.0</code> or <code>opentelemetry0.7</code>, you can stream
    * percentile statistics such as p95, p99.9, and so on.</p>

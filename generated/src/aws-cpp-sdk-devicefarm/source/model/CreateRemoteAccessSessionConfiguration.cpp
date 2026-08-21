@@ -41,6 +41,13 @@ CreateRemoteAccessSessionConfiguration& CreateRemoteAccessSessionConfiguration::
     m_deviceProxy = jsonValue.GetObject("deviceProxy");
     m_deviceProxyHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("parameters")) {
+    Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
+    for (auto& parametersItem : parametersJsonMap) {
+      m_parameters[parametersItem.first] = parametersItem.second.AsString();
+    }
+    m_parametersHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +77,14 @@ JsonValue CreateRemoteAccessSessionConfiguration::Jsonize() const {
 
   if (m_deviceProxyHasBeenSet) {
     payload.WithObject("deviceProxy", m_deviceProxy.Jsonize());
+  }
+
+  if (m_parametersHasBeenSet) {
+    JsonValue parametersJsonMap;
+    for (auto& parametersItem : m_parameters) {
+      parametersJsonMap.WithString(parametersItem.first, parametersItem.second);
+    }
+    payload.WithObject("parameters", std::move(parametersJsonMap));
   }
 
   return payload;

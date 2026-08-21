@@ -21,7 +21,9 @@ namespace DeviceFarm {
 namespace Model {
 
 /**
- * <p>Represents a sample of performance data.</p><p><h3>See Also:</h3>   <a
+ * <p>Represents a sample of performance data.</p>  <p>Device Farm does
+ * not support performance data samples during test executions.</p>
+ * <p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Sample">AWS
  * API Reference</a></p>
  */

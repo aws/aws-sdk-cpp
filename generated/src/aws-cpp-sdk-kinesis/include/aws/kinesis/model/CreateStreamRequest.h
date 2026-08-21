@@ -36,6 +36,11 @@ class CreateStreamRequest : public KinesisRequest {
 
   AWS_KINESIS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+  /**
+   * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
+   */
+  AWS_KINESIS_API EndpointParameters GetEndpointContextParams() const override;
+
   ///@{
   /**
    * <p>A name to identify the stream. The stream name is scoped to the Amazon Web

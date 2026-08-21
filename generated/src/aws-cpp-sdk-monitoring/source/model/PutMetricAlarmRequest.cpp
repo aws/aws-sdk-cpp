@@ -86,6 +86,9 @@ Aws::String PutMetricAlarmRequest::SerializePayload() const {
   if (m_evaluationWindowHasBeenSet) {
     mapSize++;
   }
+  if (m_warmUpConfigurationHasBeenSet) {
+    mapSize++;
+  }
   if (m_evaluationCriteriaHasBeenSet) {
     mapSize++;
   }
@@ -227,6 +230,11 @@ Aws::String PutMetricAlarmRequest::SerializePayload() const {
   if (m_evaluationWindowHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("EvaluationWindow"));
     m_evaluationWindow.CborEncode(encoder);
+  }
+
+  if (m_warmUpConfigurationHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("WarmUpConfiguration"));
+    m_warmUpConfiguration.CborEncode(encoder);
   }
 
   if (m_evaluationCriteriaHasBeenSet) {

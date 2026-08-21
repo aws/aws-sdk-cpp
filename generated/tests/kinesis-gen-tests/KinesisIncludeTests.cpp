@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/kinesis/KinesisClient.h>
+#include <aws/kinesis/KinesisClientConfiguration.h>
 #include <aws/kinesis/KinesisClientPagination.h>
 #include <aws/kinesis/KinesisEndpointProvider.h>
 #include <aws/kinesis/KinesisErrorMarshaller.h>

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -69,12 +70,41 @@ class StickinessConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Additional headers to include in session affinity routing. When set, requests
+   * are only considered part of the same session if both the <code>identifier</code>
+   * and all composite identifier values match.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetCompositeIdentifier() const { return m_compositeIdentifier; }
+  inline bool CompositeIdentifierHasBeenSet() const { return m_compositeIdentifierHasBeenSet; }
+  template <typename CompositeIdentifierT = Aws::Vector<Aws::String>>
+  void SetCompositeIdentifier(CompositeIdentifierT&& value) {
+    m_compositeIdentifierHasBeenSet = true;
+    m_compositeIdentifier = std::forward<CompositeIdentifierT>(value);
+  }
+  template <typename CompositeIdentifierT = Aws::Vector<Aws::String>>
+  StickinessConfiguration& WithCompositeIdentifier(CompositeIdentifierT&& value) {
+    SetCompositeIdentifier(std::forward<CompositeIdentifierT>(value));
+    return *this;
+  }
+  template <typename CompositeIdentifierT = Aws::String>
+  StickinessConfiguration& AddCompositeIdentifier(CompositeIdentifierT&& value) {
+    m_compositeIdentifierHasBeenSet = true;
+    m_compositeIdentifier.emplace_back(std::forward<CompositeIdentifierT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_identifier;
 
   int m_timeout{0};
+
+  Aws::Vector<Aws::String> m_compositeIdentifier;
   bool m_identifierHasBeenSet = false;
   bool m_timeoutHasBeenSet = false;
+  bool m_compositeIdentifierHasBeenSet = false;
 };
 
 }  // namespace Model

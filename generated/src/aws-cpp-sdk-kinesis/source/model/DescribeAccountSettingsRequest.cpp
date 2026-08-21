@@ -19,3 +19,10 @@ Aws::Http::HeaderValueCollection DescribeAccountSettingsRequest::GetRequestSpeci
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Kinesis_20131202.DescribeAccountSettings"));
   return headers;
 }
+
+DescribeAccountSettingsRequest::EndpointParameters DescribeAccountSettingsRequest::GetEndpointContextParams() const {
+  EndpointParameters parameters;
+  // Static context parameters
+  parameters.emplace_back(Aws::String("OperationType"), "control", Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+  return parameters;
+}

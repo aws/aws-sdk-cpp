@@ -27,7 +27,7 @@ namespace Model {
  * each metric that is streamed. This structure contains information for one metric
  * that includes additional statistics in the stream. For more information about
  * statistics, see CloudWatch, listed in <a
- * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
+ * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">
  * CloudWatch statistics definitions</a>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/MetricStreamStatisticsConfiguration">AWS
  * API Reference</a></p>
@@ -77,7 +77,7 @@ class MetricStreamStatisticsConfiguration {
    * <code>p90</code>, <code>p99</code> and so on.</p> <p>If the
    * <code>OutputFormat</code> for the stream is <code>json</code>, the valid values
    * include the abbreviations for all of the statistics listed in <a
-   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">
    * CloudWatch statistics definitions</a>. For example, this includes <code>tm98,
    * </code> <code>wm90</code>, <code>PR(:300)</code>, and so on.</p>
    */

@@ -53,8 +53,14 @@ class FieldToProtect {
 
   ///@{
   /**
-   * <p>Specifies the keys to protect for the specified field type. If you don't
-   * specify any key, then all keys for the field type are protected. </p>
+   * <p>Specifies the keys to protect for the specified field type.</p> <p>Required
+   * for <code>SINGLE_HEADER</code>, <code>SINGLE_COOKIE</code>, and
+   * <code>SINGLE_QUERY_ARGUMENT</code>: provide a non-empty array naming the
+   * specific headers, cookies, or query arguments to protect. There is no option to
+   * protect all keys of these field types, so enumerate each key you intend to
+   * protect.</p> <p>Must be omitted for <code>QUERY_STRING</code> and
+   * <code>BODY</code>: the entire component is protected and these field types take
+   * no keys. Supplying <code>FieldKeys</code> for them is rejected.</p>
    */
   inline const Aws::Vector<Aws::String>& GetFieldKeys() const { return m_fieldKeys; }
   inline bool FieldKeysHasBeenSet() const { return m_fieldKeysHasBeenSet; }

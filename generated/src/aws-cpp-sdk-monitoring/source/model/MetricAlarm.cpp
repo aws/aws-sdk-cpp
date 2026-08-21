@@ -852,6 +852,11 @@ MetricAlarm& MetricAlarm::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDe
                 m_evaluationWindowHasBeenSet = true;
               }
 
+              else if (initialKeyStr == "WarmUpConfiguration") {
+                m_warmUpConfiguration = WarmUpConfiguration(decoder);
+                m_warmUpConfigurationHasBeenSet = true;
+              }
+
               else if (initialKeyStr == "EvaluationCriteria") {
                 m_evaluationCriteria = EvaluationCriteria(decoder);
                 m_evaluationCriteriaHasBeenSet = true;
@@ -1721,6 +1726,11 @@ MetricAlarm& MetricAlarm::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDe
               m_evaluationWindowHasBeenSet = true;
             }
 
+            else if (initialKeyStr == "WarmUpConfiguration") {
+              m_warmUpConfiguration = WarmUpConfiguration(decoder);
+              m_warmUpConfigurationHasBeenSet = true;
+            }
+
             else if (initialKeyStr == "EvaluationCriteria") {
               m_evaluationCriteria = EvaluationCriteria(decoder);
               m_evaluationCriteriaHasBeenSet = true;
@@ -1846,6 +1856,9 @@ void MetricAlarm::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
     mapSize++;
   }
   if (m_evaluationWindowHasBeenSet) {
+    mapSize++;
+  }
+  if (m_warmUpConfigurationHasBeenSet) {
     mapSize++;
   }
   if (m_evaluationCriteriaHasBeenSet) {
@@ -2024,6 +2037,11 @@ void MetricAlarm::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
   if (m_evaluationWindowHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("EvaluationWindow"));
     m_evaluationWindow.CborEncode(encoder);
+  }
+
+  if (m_warmUpConfigurationHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("WarmUpConfiguration"));
+    m_warmUpConfiguration.CborEncode(encoder);
   }
 
   if (m_evaluationCriteriaHasBeenSet) {

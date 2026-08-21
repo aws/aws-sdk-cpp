@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
@@ -118,6 +119,34 @@ class CreateRemoteAccessSessionConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The name-value string pairs that specify additional settings for the remote
+   * access session.</p> <ul> <li> <p> <code>appium:version</code>: The major version
+   * of the Appium server to use for the session (for example, 2 or 3). The service
+   * may reject the selected version if it is not available for the selected
+   * device.</p> </li> </ul>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const { return m_parameters; }
+  inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
+  template <typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+  void SetParameters(ParametersT&& value) {
+    m_parametersHasBeenSet = true;
+    m_parameters = std::forward<ParametersT>(value);
+  }
+  template <typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+  CreateRemoteAccessSessionConfiguration& WithParameters(ParametersT&& value) {
+    SetParameters(std::forward<ParametersT>(value));
+    return *this;
+  }
+  template <typename ParametersKeyT = Aws::String, typename ParametersValueT = Aws::String>
+  CreateRemoteAccessSessionConfiguration& AddParameters(ParametersKeyT&& key, ParametersValueT&& value) {
+    m_parametersHasBeenSet = true;
+    m_parameters.emplace(std::forward<ParametersKeyT>(key), std::forward<ParametersValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_auxiliaryApps;
 
@@ -126,10 +155,13 @@ class CreateRemoteAccessSessionConfiguration {
   Aws::Vector<Aws::String> m_vpceConfigurationArns;
 
   DeviceProxy m_deviceProxy;
+
+  Aws::Map<Aws::String, Aws::String> m_parameters;
   bool m_auxiliaryAppsHasBeenSet = false;
   bool m_billingMethodHasBeenSet = false;
   bool m_vpceConfigurationArnsHasBeenSet = false;
   bool m_deviceProxyHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -600,21 +600,26 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient,
    * <code>NextShardIterator</code>. You can terminate the loop when the shard is
    * closed, or when the shard iterator reaches the record with the sequence number
    * or other attribute that marks it as the last record to process.</p> <p>Each data
-   * record can be up to 1 MiB in size, and each shard can read up to 2 MiB per
-   * second. You can ensure that your calls don't exceed the maximum supported size
-   * or throughput by using the <code>Limit</code> parameter to specify the maximum
-   * number of records that <a>GetRecords</a> can return. Consider your average
-   * record size when determining this limit. The maximum number of records that can
-   * be returned per call is 10,000.</p> <p>The size of the data returned by
-   * <a>GetRecords</a> varies depending on the utilization of the shard. It is
-   * recommended that consumer applications retrieve records via the
-   * <code>GetRecords</code> command using the 5 TPS limit to remain caught up.
-   * Retrieving records less frequently can lead to consumer applications falling
-   * behind. The maximum size of data that <a>GetRecords</a> can return is 10 MiB. If
-   * a call returns this amount of data, subsequent calls made within the next 5
-   * seconds throw <code>ProvisionedThroughputExceededException</code>. If there is
-   * insufficient provisioned throughput on the stream, subsequent calls made within
-   * the next 1 second throw <code>ProvisionedThroughputExceededException</code>.
+   * record can be up to 1 MiB in size by default. Amazon Kinesis Data Streams
+   * supports large records up to 10 MiB in size, but the average throughput for your
+   * stream cannot exceed 1 MiB per second. For more information about how large
+   * records are handled, see <a
+   * href="https://docs.aws.amazon.com/streams/latest/dev/large-records.html">Large
+   * records</a>. Each shard can read up to 2 MiB per second. You can ensure that
+   * your calls don't exceed the maximum supported size or throughput by using the
+   * <code>Limit</code> parameter to specify the maximum number of records that
+   * <a>GetRecords</a> can return. Consider your average record size when determining
+   * this limit. The maximum number of records that can be returned per call is
+   * 10,000.</p> <p>The size of the data returned by <a>GetRecords</a> varies
+   * depending on the utilization of the shard. It is recommended that consumer
+   * applications retrieve records via the <code>GetRecords</code> command using the
+   * 5 TPS limit to remain caught up. Retrieving records less frequently can lead to
+   * consumer applications falling behind. The maximum size of data that
+   * <a>GetRecords</a> can return is 10 MiB. If a call returns this amount of data,
+   * subsequent calls made within the next 5 seconds throw
+   * <code>ProvisionedThroughputExceededException</code>. If there is insufficient
+   * provisioned throughput on the stream, subsequent calls made within the next 1
+   * second throw <code>ProvisionedThroughputExceededException</code>.
    * <a>GetRecords</a> doesn't return any data when it throws an exception. For this
    * reason, we recommend that you wait 1 second between calls to <a>GetRecords</a>.
    * However, it's possible that the application will get exceptions for longer than
@@ -1720,9 +1725,10 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Updates the warm throughput configuration for the specified Amazon Kinesis
-   * Data Streams on-demand data stream. This operation allows you to proactively
-   * scale your on-demand data stream to a specified throughput level, enabling
-   * better performance for sudden traffic spikes. </p>  <p>When invoking this
+   * Data Streams on-demand data stream. Updates the warm throughput configuration
+   * for the specified on-demand data stream. Use this operation to scale your stream
+   * to a specified throughput level before anticipated traffic spikes, or to release
+   * excess capacity after traffic has decreased. </p>  <p>When invoking this
    * API, you must use either the <code>StreamARN</code> or the
    * <code>StreamName</code> parameter, or both. It is recommended that you use the
    * <code>StreamARN</code> input parameter when you invoke this API.</p>
@@ -1735,13 +1741,14 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient,
    * <code>UPDATING</code>.</p> <p>This operation is only supported for data streams
    * with the on-demand capacity mode in accounts that have
    * <code>MinimumThroughputBillingCommitment</code> enabled. Provisioned capacity
-   * mode streams do not support warm throughput configuration.</p> <p>This operation
-   * has the following default limits. By default, you cannot do the following:</p>
-   * <ul> <li> <p>Scale to more than 10 GiBps for an on-demand stream.</p> </li> <li>
-   * <p>This API has a call limit of 5 transactions per second (TPS) for each Amazon
-   * Web Services account. TPS over 5 will initiate the
-   * <code>LimitExceededException</code>.</p> </li> </ul> <p>For the default limits
-   * for an Amazon Web Services account, see <a
+   * mode streams do not support warm throughput configuration.</p> <p>To release
+   * excess capacity, call the API again and set the warm throughput to the same or a
+   * lower value.</p> <p>This operation has the following default limits. By default,
+   * you cannot do the following:</p> <ul> <li> <p>Scale to more than 10 GiBps for an
+   * on-demand stream.</p> </li> <li> <p>This API has a call limit of 5 transactions
+   * per second (TPS) for each Amazon Web Services account. TPS over 5 will initiate
+   * the <code>LimitExceededException</code>.</p> </li> </ul> <p>For the default
+   * limits for an Amazon Web Services account, see <a
    * href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
    * Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>. To request
    * an increase in the call rate limit, the shard limit for this API, or your

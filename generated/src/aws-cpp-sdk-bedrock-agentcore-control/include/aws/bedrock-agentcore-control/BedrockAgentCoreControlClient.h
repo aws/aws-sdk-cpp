@@ -1423,8 +1423,8 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
-   * <p>Deletes an Amazon Bedrock AgentCore Memory resource.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Deletes an Amazon Bedrock AgentCore Memory resource. When you delete a memory
+   * resource, it is permanently removed.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteMemory">AWS
    * API Reference</a></p>
    */

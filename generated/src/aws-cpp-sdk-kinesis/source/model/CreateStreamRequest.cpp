@@ -51,3 +51,10 @@ Aws::Http::HeaderValueCollection CreateStreamRequest::GetRequestSpecificHeaders(
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Kinesis_20131202.CreateStream"));
   return headers;
 }
+
+CreateStreamRequest::EndpointParameters CreateStreamRequest::GetEndpointContextParams() const {
+  EndpointParameters parameters;
+  // Static context parameters
+  parameters.emplace_back(Aws::String("OperationType"), "control", Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+  return parameters;
+}

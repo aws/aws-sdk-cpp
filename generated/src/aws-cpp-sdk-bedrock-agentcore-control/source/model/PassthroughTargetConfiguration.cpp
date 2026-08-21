@@ -34,6 +34,19 @@ PassthroughTargetConfiguration& PassthroughTargetConfiguration::operator=(JsonVi
     m_stickinessConfiguration = jsonValue.GetObject("stickinessConfiguration");
     m_stickinessConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("staticQueryParameters")) {
+    Aws::Map<Aws::String, JsonView> staticQueryParametersJsonMap = jsonValue.GetObject("staticQueryParameters").GetAllObjects();
+    for (auto& staticQueryParametersItem : staticQueryParametersJsonMap) {
+      m_staticQueryParameters[staticQueryParametersItem.first] = staticQueryParametersItem.second.AsString();
+    }
+    m_staticQueryParametersHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("staticQueryParameterConflictResolution")) {
+    m_staticQueryParameterConflictResolution =
+        StaticQueryParameterConflictResolutionMapper::GetStaticQueryParameterConflictResolutionForName(
+            jsonValue.GetString("staticQueryParameterConflictResolution"));
+    m_staticQueryParameterConflictResolutionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +67,20 @@ JsonValue PassthroughTargetConfiguration::Jsonize() const {
 
   if (m_stickinessConfigurationHasBeenSet) {
     payload.WithObject("stickinessConfiguration", m_stickinessConfiguration.Jsonize());
+  }
+
+  if (m_staticQueryParametersHasBeenSet) {
+    JsonValue staticQueryParametersJsonMap;
+    for (auto& staticQueryParametersItem : m_staticQueryParameters) {
+      staticQueryParametersJsonMap.WithString(staticQueryParametersItem.first, staticQueryParametersItem.second);
+    }
+    payload.WithObject("staticQueryParameters", std::move(staticQueryParametersJsonMap));
+  }
+
+  if (m_staticQueryParameterConflictResolutionHasBeenSet) {
+    payload.WithString("staticQueryParameterConflictResolution",
+                       StaticQueryParameterConflictResolutionMapper::GetNameForStaticQueryParameterConflictResolution(
+                           m_staticQueryParameterConflictResolution));
   }
 
   return payload;

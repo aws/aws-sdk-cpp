@@ -976,13 +976,10 @@ class AWS_DEVICEFARM_API DeviceFarmClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>A session is an instance of a browser created through a
-   * <code>RemoteWebDriver</code> with the URL from
-   * <a>CreateTestGridUrlResult$url</a>. You can use the following to look up
-   * sessions:</p> <ul> <li> <p>The session ARN
-   * (<a>GetTestGridSessionRequest$sessionArn</a>).</p> </li> <li> <p>The project ARN
-   * and a session ID (<a>GetTestGridSessionRequest$projectArn</a> and
-   * <a>GetTestGridSessionRequest$sessionId</a>).</p> </li> </ul> <p/><p><h3>See
-   * Also:</h3>   <a
+   * <code>RemoteWebDriver</code> with the URL from <code>
+   * CreateTestGridUrlResult</code>. You can use the following to look up
+   * sessions:</p> <ul> <li> <p>The session ARN.</p> </li> <li> <p>The project ARN
+   * and a session ID.</p> </li> </ul> <p/><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTestGridSession">AWS
    * API Reference</a></p>
    */
@@ -1454,8 +1451,9 @@ class AWS_DEVICEFARM_API DeviceFarmClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Gets information about samples, given an AWS Device Farm job
-   * ARN.</p><p><h3>See Also:</h3>   <a
+   * <p>Gets information about samples, given an AWS Device Farm job ARN.</p>
+   *  <p>Device Farm does not support performance data samples during test
+   * executions.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSamples">AWS
    * API Reference</a></p>
    */

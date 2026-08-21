@@ -16,6 +16,7 @@
 #include <aws/monitoring/model/StandardUnit.h>
 #include <aws/monitoring/model/Statistic.h>
 #include <aws/monitoring/model/Tag.h>
+#include <aws/monitoring/model/WarmUpConfiguration.h>
 
 #include <utility>
 
@@ -705,6 +706,29 @@ class PutMetricAlarmRequest : public CloudWatchRequest {
 
   ///@{
   /**
+   * <p>The warm-up configuration for the alarm. A warm-up period delays alarm
+   * evaluation after you create or update the alarm. The warm-up period reduces
+   * alarm noise from missing data while a new resource or service starts publishing
+   * metrics.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-warm-up.html">Alarm
+   * warm-up periods</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+   */
+  inline const WarmUpConfiguration& GetWarmUpConfiguration() const { return m_warmUpConfiguration; }
+  inline bool WarmUpConfigurationHasBeenSet() const { return m_warmUpConfigurationHasBeenSet; }
+  template <typename WarmUpConfigurationT = WarmUpConfiguration>
+  void SetWarmUpConfiguration(WarmUpConfigurationT&& value) {
+    m_warmUpConfigurationHasBeenSet = true;
+    m_warmUpConfiguration = std::forward<WarmUpConfigurationT>(value);
+  }
+  template <typename WarmUpConfigurationT = WarmUpConfiguration>
+  PutMetricAlarmRequest& WithWarmUpConfiguration(WarmUpConfigurationT&& value) {
+    SetWarmUpConfiguration(std::forward<WarmUpConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The evaluation criteria for the alarm. For each <code>PutMetricAlarm</code>
    * operation, you must specify either <code>MetricName</code>, a
    * <code>Metrics</code> array, or an <code>EvaluationCriteria</code>.</p> <p>If you
@@ -797,6 +821,8 @@ class PutMetricAlarmRequest : public CloudWatchRequest {
 
   EvaluationWindow m_evaluationWindow;
 
+  WarmUpConfiguration m_warmUpConfiguration;
+
   EvaluationCriteria m_evaluationCriteria;
 
   int m_evaluationInterval{0};
@@ -823,6 +849,7 @@ class PutMetricAlarmRequest : public CloudWatchRequest {
   bool m_tagsHasBeenSet = false;
   bool m_thresholdMetricIdHasBeenSet = false;
   bool m_evaluationWindowHasBeenSet = false;
+  bool m_warmUpConfigurationHasBeenSet = false;
   bool m_evaluationCriteriaHasBeenSet = false;
   bool m_evaluationIntervalHasBeenSet = false;
 };

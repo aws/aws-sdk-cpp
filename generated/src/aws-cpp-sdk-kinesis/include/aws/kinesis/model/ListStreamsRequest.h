@@ -34,6 +34,11 @@ class ListStreamsRequest : public KinesisRequest {
 
   AWS_KINESIS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+  /**
+   * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
+   */
+  AWS_KINESIS_API EndpointParameters GetEndpointContextParams() const override;
+
   ///@{
   /**
    * <p>The maximum number of streams to list. The default value is 100. If you

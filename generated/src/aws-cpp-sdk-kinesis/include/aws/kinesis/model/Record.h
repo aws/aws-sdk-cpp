@@ -77,7 +77,7 @@ class Record {
    * Data Streams, which does not inspect, interpret, or change the data in the blob
    * in any way. When the data blob (the payload before base64-encoding) is added to
    * the partition key size, the total size must not exceed the maximum record size
-   * (1 MiB).</p>
+   * (10 MiB).</p>
    */
   inline const Aws::Utils::ByteBuffer& GetData() const { return m_data; }
   inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }

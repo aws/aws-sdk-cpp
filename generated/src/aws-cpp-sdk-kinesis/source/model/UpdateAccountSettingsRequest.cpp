@@ -27,3 +27,10 @@ Aws::Http::HeaderValueCollection UpdateAccountSettingsRequest::GetRequestSpecifi
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Kinesis_20131202.UpdateAccountSettings"));
   return headers;
 }
+
+UpdateAccountSettingsRequest::EndpointParameters UpdateAccountSettingsRequest::GetEndpointContextParams() const {
+  EndpointParameters parameters;
+  // Static context parameters
+  parameters.emplace_back(Aws::String("OperationType"), "control", Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+  return parameters;
+}

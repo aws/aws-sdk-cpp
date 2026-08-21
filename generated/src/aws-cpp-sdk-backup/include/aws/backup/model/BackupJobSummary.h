@@ -22,7 +22,7 @@ namespace Backup {
 namespace Model {
 
 /**
- * <p>This is a summary of jobs created or running within the most recent 30
+ * <p>This is a summary of jobs created or running within the most recent 14
  * days.</p> <p>The returned summary may contain the following: Region, Account,
  * State, RestourceType, MessageCategory, StartTime, EndTime, and Count of included
  * jobs.</p><p><h3>See Also:</h3>   <a

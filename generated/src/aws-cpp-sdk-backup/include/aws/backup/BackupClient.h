@@ -1944,7 +1944,7 @@ class AWS_BACKUP_API BackupClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>This is a request for a summary of backup jobs created or running within the
-   * most recent 30 days. You can include parameters AccountID, State, ResourceType,
+   * most recent 14 days. You can include parameters AccountID, State, ResourceType,
    * MessageCategory, AggregationPeriod, MaxResults, or NextToken to filter
    * results.</p> <p>This request returns a summary that contains Region, Account,
    * State, ResourceType, MessageCategory, StartTime, EndTime, and Count of included
@@ -2142,7 +2142,7 @@ class AWS_BACKUP_API BackupClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>This request obtains a list of copy jobs created or running within the the
-   * most recent 30 days. You can include parameters AccountID, State, ResourceType,
+   * most recent 14 days. You can include parameters AccountID, State, ResourceType,
    * MessageCategory, AggregationPeriod, MaxResults, or NextToken to filter
    * results.</p> <p>This request returns a summary that contains Region, Account,
    * State, RestourceType, MessageCategory, StartTime, EndTime, and Count of included
@@ -2522,7 +2522,7 @@ class AWS_BACKUP_API BackupClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>This request obtains a summary of restore jobs created or running within the
-   * the most recent 30 days. You can include parameters AccountID, State,
+   * the most recent 14 days. You can include parameters AccountID, State,
    * ResourceType, AggregationPeriod, MaxResults, or NextToken to filter results.</p>
    * <p>This request returns a summary that contains Region, Account, State,
    * RestourceType, MessageCategory, StartTime, EndTime, and Count of included
@@ -2672,7 +2672,7 @@ class AWS_BACKUP_API BackupClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>This is a request for a summary of scan jobs created or running within the
-   * most recent 30 days.</p><p><h3>See Also:</h3>   <a
+   * most recent 14 days.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListScanJobSummaries">AWS
    * API Reference</a></p>
    */

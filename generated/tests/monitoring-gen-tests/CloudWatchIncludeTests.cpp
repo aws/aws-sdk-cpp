@@ -186,6 +186,7 @@
 #include <aws/monitoring/model/UntagResourceRequest.h>
 #include <aws/monitoring/model/UntagResourceResult.h>
 #include <aws/monitoring/model/WallClockWindow.h>
+#include <aws/monitoring/model/WarmUpConfiguration.h>
 
 using CloudWatchIncludeTest = ::testing::Test;
 

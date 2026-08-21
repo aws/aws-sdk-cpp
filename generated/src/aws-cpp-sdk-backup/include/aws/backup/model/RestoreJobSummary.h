@@ -23,7 +23,7 @@ namespace Model {
 
 /**
  * <p>This is a summary of restore jobs created or running within the most recent
- * 30 days.</p> <p>The returned summary may contain the following: Region, Account,
+ * 14 days.</p> <p>The returned summary may contain the following: Region, Account,
  * State, ResourceType, MessageCategory, StartTime, EndTime, and Count of included
  * jobs.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/RestoreJobSummary">AWS

@@ -115,17 +115,22 @@ class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSRpcV2CborClie
    * supported. The <code>default</code> dataset is implicit for every account in
    * every Region — you do not need to create it before calling this operation.</p>
    * <p>You can call <code>AssociateDatasetKmsKey</code> on a dataset that is already
-   * associated with a KMS key to replace the existing key with a different one. To
-   * replace a key, the caller must have <code>kms:Decrypt</code> permission on both
-   * the current key and the new key.</p> <p>The KMS key that you specify must meet
-   * all of the following requirements:</p> <ul> <li> <p>It must be a symmetric
-   * encryption KMS key (key spec <code>SYMMETRIC_DEFAULT</code>, key usage
-   * <code>ENCRYPT_DECRYPT</code>). Asymmetric keys, HMAC keys, and key material
-   * types other than <code>SYMMETRIC_DEFAULT</code> are not supported.</p> </li>
-   * <li> <p>It must be enabled and not pending deletion.</p> </li> <li> <p>Its key
-   * policy must grant the CloudWatch service principal
-   * (<code>cloudwatch.amazonaws.com</code>) these permissions:
-   * <code>kms:DescribeKey</code>, <code>kms:GenerateDataKey</code>,
+   * associated with a KMS key to replace the existing key with a different one. The
+   * caller must have <code>kms:Decrypt</code> permission on both the current key and
+   * the new key.</p>  <p>If the currently associated key has been deleted, is
+   * scheduled for deletion, is pending import, is unavailable, or has been disabled,
+   * Amazon CloudWatch does not require <code>kms:Decrypt</code> permission on the
+   * current key and the rotation proceeds. If the key was only disabled, consider
+   * re-enabling it instead of rotating, because re-enabling allows Amazon CloudWatch
+   * to resume decrypting your existing metric data encrypted with that key.</p>
+   *  <p>The KMS key that you specify must meet all of the following
+   * requirements:</p> <ul> <li> <p>It must be a symmetric encryption KMS key (key
+   * spec <code>SYMMETRIC_DEFAULT</code>, key usage <code>ENCRYPT_DECRYPT</code>).
+   * Asymmetric keys, HMAC keys, and key material types other than
+   * <code>SYMMETRIC_DEFAULT</code> are not supported.</p> </li> <li> <p>It must be
+   * enabled and not pending deletion.</p> </li> <li> <p>Its key policy must grant
+   * the CloudWatch service principal (<code>cloudwatch.amazonaws.com</code>) these
+   * permissions: <code>kms:DescribeKey</code>, <code>kms:GenerateDataKey</code>,
    * <code>kms:Encrypt</code>, <code>kms:Decrypt</code>, and
    * <code>kms:ReEncrypt*</code>. Amazon CloudWatch requires these permissions to
    * manage the data on your behalf.</p> </li> <li> <p>The calling principal must
@@ -140,14 +145,14 @@ class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSRpcV2CborClie
    * <code>kms:Encrypt</code>, <code>kms:Decrypt</code>, and
    * <code>kms:ReEncrypt*</code>. After those succeed, a <code>kms:Decrypt</code>
    * dry-run is run with the caller's credentials to verify that the calling
-   * principal can use the key. When you are replacing an existing key, the caller's
-   * <code>kms:Decrypt</code> dry-run is run on the current key first, and only then
-   * on the new key.</p> <p>If any of these checks fails, the operation fails and the
+   * principal can use the new key. When you are replacing an existing key, the
+   * caller's <code>kms:Decrypt</code> dry-run is also run on the current key.</p>
+   * <p>If any of these checks on the new key fails, the operation fails and the
    * existing key association (if any) remains unchanged. Common failure causes
-   * include the key being disabled, the key policy not granting the required
+   * include the new key being disabled, the key policy not granting the required
    * permissions to Amazon CloudWatch, or the caller lacking <code>kms:Decrypt</code>
-   * permission on the key.</p> <p>For more information about using customer managed
-   * keys with Amazon CloudWatch, see <a
+   * permission on the new key.</p> <p>For more information about using customer
+   * managed keys with Amazon CloudWatch, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cmk-encryption.html">Encryption
    * at rest with customer managed keys</a> in the <i>Amazon CloudWatch User
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -627,19 +632,24 @@ class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSRpcV2CborClie
    * dataset must currently have a customer managed KMS key associated with it. If
    * the dataset has no associated KMS key, the operation fails with
    * <code>ResourceNotFoundException</code>.</p> <p>Amazon CloudWatch performs a
-   * dry-run <code>kms:Decrypt</code> call on the key as part of this operation. This
-   * verifies that the caller is authorized to use the currently associated key. The
-   * caller must have <code>kms:Decrypt</code> permission on the currently associated
-   * key, and the key must be enabled and accessible. If the key has been disabled or
-   * scheduled for deletion, you must first re-enable or restore it before you can
-   * disassociate it from the dataset.</p>  <p>Disassociating a KMS key
-   * from a dataset does not immediately remove the <code>kms:Decrypt</code>
-   * requirement on data plane operations. For up to three hours after
-   * disassociation, callers must continue to have <code>kms:Decrypt</code>
-   * permission on the previously associated key. Some data may still be encrypted
-   * with that key during this window. After this enforcement window elapses, the
-   * <code>kms:Decrypt</code> requirement is lifted.</p>  <p>For more
-   * information about using customer managed keys with Amazon CloudWatch, see <a
+   * dry-run <code>kms:Decrypt</code> call on the currently associated key as part of
+   * this operation. The caller must have <code>kms:Decrypt</code> permission on the
+   * currently associated key. If the key is accessible but the caller lacks
+   * <code>kms:Decrypt</code> permission, the operation fails with
+   * <code>AccessDeniedException</code>.</p>  <p>If the currently associated
+   * key has been deleted, is scheduled for deletion, is pending import, is
+   * unavailable, or has been disabled, Amazon CloudWatch does not require
+   * <code>kms:Decrypt</code> permission on that key and the disassociation proceeds.
+   * If the key was only disabled, consider re-enabling it instead of disassociating,
+   * because re-enabling allows Amazon CloudWatch to resume decrypting your existing
+   * metric data.</p>   <p>Disassociating a KMS key from a dataset
+   * does not immediately remove the <code>kms:Decrypt</code> requirement on data
+   * plane operations. For up to three hours after disassociation, callers must
+   * continue to have <code>kms:Decrypt</code> permission on the previously
+   * associated key. Some data might still be encrypted with that key during this
+   * window. After this enforcement window elapses, the <code>kms:Decrypt</code>
+   * requirement is lifted.</p>  <p>For more information about using
+   * customer managed keys with Amazon CloudWatch, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cmk-encryption.html">Encryption
    * at rest with customer managed keys</a> in the <i>Amazon CloudWatch User
    * Guide</i>.</p><p><h3>See Also:</h3>   <a

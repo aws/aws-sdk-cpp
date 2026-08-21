@@ -153,7 +153,9 @@ class RestoreTestingRecoveryPointSelection {
 
   ///@{
   /**
-   * <p>Accepted values are integers from 1 to 365.</p>
+   * <p>Accepted values are integers from 1 to 365. If not included, the value
+   * defaults to 30. The selection window is calculated from the actual job execution
+   * time, not the plan's scheduled start time.</p>
    */
   inline int GetSelectionWindowDays() const { return m_selectionWindowDays; }
   inline bool SelectionWindowDaysHasBeenSet() const { return m_selectionWindowDaysHasBeenSet; }
