@@ -71,9 +71,11 @@ public class ShapeUtil {
      * Map: service-name -> Map of original-shape-name -> resolved-name
      */
     private static final Map<String, Map<String, String>> HARDCODED_COLLISION_RESOLUTIONS = Map.of(
-        "s3", Map.of("CopyObjectResult", "CopyObjectResultDetails"),
-        "accessanalyzer", Map.of("GeneratedPolicyResult", "GeneratedPolicyResults"),
-        "cloudsearchdomain", Map.of("SearchResult", "SearchResultDetails")
+        // accessanalyzer GeneratedPolicyResult->GeneratedPolicyResults is handled by
+        // AccessAnalyzerTransforms (a model transform), not this render-time map.
+        // cloudsearchdomain SearchResult->SearchResultDetails is dead: the current model has no
+        // colliding SearchResult shape. The s3 entry stays for the deferred S3 transform work.
+        "s3", Map.of("CopyObjectResult", "CopyObjectResultDetails")
     );
 
     /**

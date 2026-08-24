@@ -19,17 +19,6 @@ class ShapeUtilExtensionsTest {
             ShapeUtil.getHardcodedResolution("s3", "CopyObjectResult"));
     }
 
-    @Test
-    void hardcodedCollisionResolution_accessAnalyzer() {
-        assertEquals(Optional.of("GeneratedPolicyResults"),
-            ShapeUtil.getHardcodedResolution("accessanalyzer", "GeneratedPolicyResult"));
-    }
-
-    @Test
-    void hardcodedCollisionResolution_cloudSearchDomain() {
-        assertEquals(Optional.of("SearchResultDetails"),
-            ShapeUtil.getHardcodedResolution("cloudsearchdomain", "SearchResult"));
-    }
 
     @Test
     void hardcodedCollisionResolution_noMatch_returnsEmpty() {
