@@ -37,9 +37,11 @@ import java.util.Optional;
  * ({@code ec2/<date>/service-2.json}) marks {@code UserData} sensitive via
  * {@code SecureBlobAttributeValue -> SecureBlob (@sensitive)}, but the upstream Smithy model
  * ({@code ec2/smithy/model.json}) still targets the non-sensitive {@code BlobAttributeValue}. This
- * transform mirrors the C2J modeling in the Smithy model so generated code matches. It self-retires
- * (no-op) once the upstream Smithy model catches up, and is a temporary compensation for that
- * upstream data lag — see docs/superpowers/plans/parity-deltas.md.
+ * transform mirrors the C2J modeling in the Smithy model so generated code matches. It is a
+ * temporary compensation for that upstream data lag; once the upstream Smithy model catches up and
+ * already defines {@code SecureBlobAttributeValue}, this transform throws {@code IllegalStateException}
+ * so a human removes it rather than letting it silently self-retire — see
+ * docs/superpowers/plans/parity-deltas.md.
  */
 public final class Ec2Transforms {
 
@@ -64,9 +66,11 @@ public final class Ec2Transforms {
      * {@code BlobAttributeValue}; after repointing, {@code BlobAttributeValue} is no longer
      * referenced and drops out of the reachable (emitted) set, exactly as it does in C2J.
      *
-     * <p>No-op — leaving the model untouched — when {@code SecureBlobAttributeValue} already exists
-     * (upstream Smithy caught up) or {@code UserData} no longer targets {@code BlobAttributeValue},
-     * so the transform cannot introduce a duplicate shape or fight a corrected upstream model.
+     * <p>Throws {@code IllegalStateException} when {@code SecureBlobAttributeValue} already exists
+     * (upstream Smithy caught up), signalling this compensating transform is obsolete and must be
+     * removed. No-op — leaving the model untouched — when {@code ModifyInstanceAttributeRequest} or
+     * its {@code UserData} member is absent, or {@code UserData} no longer targets
+     * {@code BlobAttributeValue} (source-absent, not a collision).
      */
     private static Model addSecureBlobUserData(Model model) {
         Optional<StructureShape> requestOpt = model.shapes(StructureShape.class)
@@ -86,8 +90,13 @@ public final class Ec2Transforms {
         ShapeId secureStructId = ShapeId.fromParts(namespace, "SecureBlobAttributeValue");
         ShapeId blobAttrId = ShapeId.fromParts(namespace, "BlobAttributeValue");
 
-        if (model.getShape(secureStructId).isPresent() || !userData.getTarget().equals(blobAttrId)) {
-            return model;
+        if (model.getShape(secureStructId).isPresent()) {
+            throw new IllegalStateException("EC2 SecureBlobAttributeValue already exists in the model; "
+                + "the upstream Smithy model has caught up and this compensating transform is obsolete "
+                + "and must be removed.");
+        }
+        if (!userData.getTarget().equals(blobAttrId)) {
+            return model; // UserData no longer targets BlobAttributeValue: nothing to repoint (no-op).
         }
         MemberShape originalValue = model.expectShape(blobAttrId, StructureShape.class)
             .getAllMembers().get("Value");
@@ -122,9 +131,12 @@ public final class Ec2Transforms {
             if (name.endsWith("Result")) {
                 String target = name.substring(0, name.length() - "Result".length()) + "Response";
                 ShapeId targetId = ShapeId.fromParts(shape.getId().getNamespace(), target);
-                if (!model.getShape(targetId).isPresent()) {
-                    renames.put(shape.getId(), targetId);
+                if (model.getShape(targetId).isPresent()) {
+                    throw new IllegalStateException("EC2 *Result->*Response rename collision: '"
+                        + targetId + "' already exists (would clobber '" + shape.getId()
+                        + "'). Upstream model likely changed; review the EC2 transform.");
                 }
+                renames.put(shape.getId(), targetId);
             }
         }
         if (renames.isEmpty()) {

@@ -72,18 +72,23 @@ class Ec2TransformsTest {
     }
 
     @Test
-    void collisionGuardLeavesResultUnchangedWhenResponseExists() {
-        StructureShape resultShape = StructureShape.builder()
-            .id("com.example#FooResult").build();
-        StructureShape responseShape = StructureShape.builder()
-            .id("com.example#FooResponse").build();
-        ServiceShape service = ec2Service("EC2");
-        Model m = Model.assembler().addShapes(resultShape, responseShape, service).assemble().unwrap();
-
-        Model out = Ec2Transforms.asTransform().apply(m, service);
-
-        assertTrue(out.getShape(ShapeId.from("com.example#FooResult")).isPresent());
-        assertTrue(out.getShape(ShapeId.from("com.example#FooResponse")).isPresent());
+    void throwsWhenResponseShapeAlreadyExists() {
+        // A *Result domain struct colliding with an existing *Response is a genuine collision:
+        // fail loudly rather than silently skip (the obsolete-transform / drift signal).
+        StructureShape result = StructureShape.builder().id("com.example#FooResult").build();
+        StructureShape response = StructureShape.builder().id("com.example#FooResponse").build();
+        StructureShape in = StructureShape.builder().id("com.example#DescribeThingsRequest").build();
+        StructureShape out = StructureShape.builder().id("com.example#DescribeThingsResult").build();
+        OperationShape op = OperationShape.builder().id("com.example#DescribeThings")
+            .input(in.getId()).output(out.getId()).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#TestService").version("2024-01-01")
+            .addTrait(ServiceTrait.builder().sdkId("EC2").arnNamespace("ec2")
+                .cloudFormationName("EC2").cloudTrailEventSource("ec2").build())
+            .addOperation(op.getId()).build();
+        Model m = Model.assembler().addShapes(result, response, in, out, op, service).assemble().unwrap();
+        assertThrows(IllegalStateException.class,
+            () -> Ec2Transforms.asTransform().apply(m, service(m)));
     }
 
     /**
@@ -144,15 +149,11 @@ class Ec2TransformsTest {
     }
 
     @Test
-    void secureBlobUserDataTransformIsIdempotent() {
-        // Re-applying must not throw or duplicate shapes: once SecureBlobAttributeValue exists the
-        // transform self-retires, so it is safe if the upstream Smithy model later adds the shape.
+    void throwsWhenSecureBlobAttributeValueAlreadyExists() {
+        // Once upstream aws-models adds SecureBlobAttributeValue, this compensating transform is
+        // obsolete. Fail loudly so a human removes it, rather than silently self-retiring.
         Model once = Ec2Transforms.asTransform().apply(userDataModel(), service(userDataModel()));
-        Model twice = Ec2Transforms.asTransform().apply(once, service(once));
-
-        MemberShape userData = twice.expectShape(
-            ShapeId.from("com.example#ModifyInstanceAttributeRequest"), StructureShape.class)
-            .getAllMembers().get("UserData");
-        assertEquals(ShapeId.from("com.example#SecureBlobAttributeValue"), userData.getTarget());
+        assertThrows(IllegalStateException.class,
+            () -> Ec2Transforms.asTransform().apply(once, service(once)));
     }
 }

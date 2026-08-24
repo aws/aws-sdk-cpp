@@ -81,18 +81,43 @@ final class TransformSupport {
     /**
      * Returns a copy of {@code struct} with member {@code oldName} renamed to {@code newName},
      * preserving member declaration order and copying all traits onto the renamed member. Returns
-     * {@link Optional#empty()} if {@code oldName} is absent or {@code newName} already exists.
+     * {@link Optional#empty()} if {@code oldName} is absent (nothing to rename).
+     *
+     * @throws IllegalStateException if {@code newName} is already a distinct member — a genuine
+     *     collision that would silently drop a member. Callers must not mask this.
      */
     static Optional<StructureShape> renameMember(StructureShape struct, String oldName, String newName) {
-        if (struct.getMember(oldName).isEmpty() || struct.getMember(newName).isPresent()) {
+        return renameMember(struct, oldName, newName, new software.amazon.smithy.model.traits.Trait[0]);
+    }
+
+    /**
+     * As {@link #renameMember(StructureShape, String, String)}, additionally attaching
+     * {@code extraTraits} to the renamed member (e.g. a {@code @jsonName} to preserve the original
+     * wire name when the C++ member name changes). Existing member traits are copied first, then the
+     * extras are added.
+     */
+    static Optional<StructureShape> renameMember(StructureShape struct, String oldName, String newName,
+                                                 software.amazon.smithy.model.traits.Trait... extraTraits) {
+        if (struct.getMember(oldName).isEmpty()) {
             return Optional.empty();
+        }
+        if (struct.getMember(newName).isPresent()) {
+            throw new IllegalStateException("Cannot rename member '" + oldName + "' to '" + newName
+                + "' on " + struct.getId() + ": a distinct '" + newName + "' member already exists");
         }
         StructureShape.Builder builder = StructureShape.builder().id(struct.getId());
         struct.getAllTraits().values().forEach(builder::addTrait);
         for (MemberShape member : struct.getAllMembers().values()) {
-            String name = member.getMemberName().equals(oldName) ? newName : member.getMemberName();
-            builder.addMember(name, member.getTarget(),
-                b -> member.getAllTraits().values().forEach(b::addTrait));
+            boolean isTarget = member.getMemberName().equals(oldName);
+            String name = isTarget ? newName : member.getMemberName();
+            builder.addMember(name, member.getTarget(), b -> {
+                member.getAllTraits().values().forEach(b::addTrait);
+                if (isTarget) {
+                    for (software.amazon.smithy.model.traits.Trait t : extraTraits) {
+                        b.addTrait(t);
+                    }
+                }
+            });
         }
         return Optional.of(builder.build());
     }
