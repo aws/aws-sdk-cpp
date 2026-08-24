@@ -4,6 +4,7 @@
  */
 package com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms;
 
+import com.amazonaws.util.awsclientsmithygenerator.generators.ServiceNameUtil;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ModelTransform;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
@@ -26,6 +27,7 @@ import software.amazon.smithy.aws.traits.protocols.AwsQueryCompatibleTrait;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -37,19 +39,21 @@ import java.util.stream.Collectors;
 public final class GlobalTransforms {
 
     /**
-     * Services that skip the "body" -> "requestBody" member rename.
-     * These services use "body" as a meaningful domain member (e.g., HTTP payload).
+     * Services that skip the "body" -> "requestBody" member rename (raw smithy service names).
+     * These use "body" as a meaningful domain/payload member. API Gateway (api-gateway) and
+     * API Gateway V2 (apigatewayv2) are skipped here because their dedicated transforms own the
+     * rename; the rest use "body" as an HTTP payload.
      */
     private static final Set<String> BODY_RENAME_SKIP_SERVICES = Set.of(
-        "amplifyuibuilder", "apigateway", "apigateway2", "bedrock-runtime", "glacier", "repostspace"
+        "amplifyuibuilder", "api-gateway", "apigatewayv2", "bedrock-runtime", "glacier", "repostspace"
     );
 
     /**
-     * Services that skip the "headers" -> "headerValues" member rename.
-     * These services use "headers" as a meaningful domain member.
+     * Services that skip the "headers" -> "headerValues" member rename (raw smithy service name).
+     * api-gateway renames headers to "requestHeaders" in its dedicated transform instead.
      */
     private static final Set<String> HEADERS_RENAME_SKIP_SERVICES = Set.of(
-        "apigateway"
+        "api-gateway"
     );
 
     /**
@@ -62,37 +66,63 @@ public final class GlobalTransforms {
 
     private GlobalTransforms() {}
 
-    // NOTE: This reserved-member rename is intentionally NOT wired into the transform
-    // pipeline yet. It encodes a known C2J-parity requirement (body -> requestBody,
-    // headers -> headerValues) that is validated by GlobalTransformsTest but not applied
-    // during generation. Do not delete it and do not hook it up as part of a cleanup pass —
-    // wiring it in changes generated output and must be its own reviewed change.
     /**
-     * Returns the renamed C++ member name if this member is reserved.
-     * Only applies to request shape members (caller must filter).
+     * Renames reserved request members on every operation-input structure: {@code body ->
+     * requestBody}, {@code headers -> headerValues}, {@code Headers -> headerValues}, honoring the
+     * per-service skip-lists. Mirrors the legacy C2J {@code RESERVED_REQUEST_MEMBER_MAPPING}. Only
+     * operation-input shapes are touched (never arbitrary domain shapes that happen to end in
+     * "Request"). A collision (the target member name already present) throws via
+     * {@link TransformSupport#renameMember}.
      *
-     * Reserved members and their renames:
-     * - "body" -> "requestBody" (unless service is in BODY_RENAME_SKIP_SERVICES)
-     * - "headers" -> "headerValues" (unless service is in HEADERS_RENAME_SKIP_SERVICES)
-     * - "Headers" -> "headerValues" (always renamed, no skip list)
-     *
-     * @param memberName the original member name from the model
-     * @param smithyServiceName the service name (lowercase hyphenated, e.g., "bedrock-runtime")
-     * @return the renamed member name, or empty if no rename is needed
+     * @param model   the current model
+     * @param service the service being generated (its raw smithy name drives the skip-lists)
+     * @return the model with reserved input members renamed, or the input model if none applied
      */
-    public static Optional<String> getReservedMemberRename(String memberName, String smithyServiceName) {
-        if ("body".equals(memberName)) {
-            if (BODY_RENAME_SKIP_SERVICES.contains(smithyServiceName)) return Optional.empty();
-            return Optional.of("requestBody");
+    static Model renameReservedRequestMembers(Model model, ServiceShape service) {
+        String smithyServiceName = ServiceNameUtil.getSmithyServiceName(service, null);
+        Set<ShapeId> inputIds = new HashSet<>();
+        for (OperationShape op : TopDownIndex.of(model).getContainedOperations(service)) {
+            inputIds.add(op.getInputShape());
         }
-        if ("headers".equals(memberName)) {
-            if (HEADERS_RENAME_SKIP_SERVICES.contains(smithyServiceName)) return Optional.empty();
-            return Optional.of("headerValues");
+        List<Shape> updated = new ArrayList<>();
+        for (ShapeId inputId : inputIds) {
+            model.getShape(inputId).flatMap(Shape::asStructureShape).ifPresent(struct -> {
+                StructureShape current = struct;
+                boolean changed = false;
+                for (Map.Entry<String, String> rename : reservedRenames(current, smithyServiceName)) {
+                    Optional<StructureShape> next =
+                        TransformSupport.renameMember(current, rename.getKey(), rename.getValue());
+                    if (next.isPresent()) {
+                        current = next.get();
+                        changed = true;
+                    }
+                }
+                if (changed) {
+                    updated.add(current);
+                }
+            });
         }
-        if ("Headers".equals(memberName)) {
-            return Optional.of("headerValues");
+        if (updated.isEmpty()) {
+            return model;
         }
-        return Optional.empty();
+        return model.toBuilder().addShapes(updated).build();
+    }
+
+    /** Ordered (oldName -> newName) reserved-member renames applicable to this input struct. */
+    private static List<Map.Entry<String, String>> reservedRenames(StructureShape struct,
+                                                                    String smithyServiceName) {
+        List<Map.Entry<String, String>> out = new ArrayList<>();
+        if (struct.getMember("body").isPresent() && !BODY_RENAME_SKIP_SERVICES.contains(smithyServiceName)) {
+            out.add(Map.entry("body", "requestBody"));
+        }
+        if (struct.getMember("headers").isPresent()
+                && !HEADERS_RENAME_SKIP_SERVICES.contains(smithyServiceName)) {
+            out.add(Map.entry("headers", "headerValues"));
+        }
+        if (struct.getMember("Headers").isPresent()) {
+            out.add(Map.entry("Headers", "headerValues"));
+        }
+        return out;
     }
 
     /**
@@ -125,10 +155,12 @@ public final class GlobalTransforms {
      * Returns this class as a ModelTransform.
      *
      * <p>Runs {@link #dropDeprecatedMembers} first (so reachability filtering sees the pruned
-     * model and orphaned targets drop out), then {@link #injectResponseMetadata}.
+     * model and orphaned targets drop out), then {@link #renameReservedRequestMembers} to apply the
+     * C2J-parity request-member renames, then {@link #injectResponseMetadata}.
      */
     public static ModelTransform asTransform() {
-        return (model, service) -> injectResponseMetadata(dropDeprecatedMembers(model, service), service);
+        return (model, service) -> injectResponseMetadata(
+            renameReservedRequestMembers(dropDeprecatedMembers(model, service), service), service);
     }
 
     /**
