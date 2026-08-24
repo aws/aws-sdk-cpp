@@ -9,89 +9,99 @@ import org.junit.jupiter.api.Test;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.*;
 
-import java.util.Optional;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class GlobalTransformsTest {
 
-    @Test
-    void reservedMemberRename_body_becomesRequestBody() {
-        Optional<String> result = GlobalTransforms.getReservedMemberRename("body", "kinesis");
-        assertEquals(Optional.of("requestBody"), result);
+    /** One-operation service under sdkId with an input struct carrying the given members. */
+    private static Model inputModel(String sdkId, String... inputMembers) {
+        StructureShape.Builder in = StructureShape.builder().id("com.example#DoThingRequest");
+        for (String m : inputMembers) {
+            in.addMember(m, ShapeId.from("smithy.api#String"));
+        }
+        StructureShape input = in.build();
+        StructureShape output = StructureShape.builder().id("com.example#DoThingResponse").build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#DoThing").input(input.getId()).output(output.getId()).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#Example").version("2024-01-01")
+            .addTrait(software.amazon.smithy.aws.traits.ServiceTrait.builder()
+                .sdkId(sdkId).arnNamespace("x").cloudFormationName("X").cloudTrailEventSource("x").build())
+            .addOperation(op.getId()).build();
+        return Model.assembler().addShapes(input, output, op, service).assemble().unwrap();
+    }
+
+    private static StructureShape input(Model m) {
+        return m.expectShape(ShapeId.from("com.example#DoThingRequest"), StructureShape.class);
     }
 
     @Test
-    void reservedMemberRename_body_skippedForApiGateway() {
-        Optional<String> result = GlobalTransforms.getReservedMemberRename("body", "apigateway");
-        assertTrue(result.isEmpty());
+    void reservedRename_body_becomesRequestBody_forNonSkippedService() {
+        Model m = inputModel("Security IR", "body");
+        Model out = GlobalTransforms.asTransform().apply(m, serviceOf(m, "Example"));
+        assertFalse(input(out).getMember("body").isPresent());
+        assertTrue(input(out).getMember("requestBody").isPresent());
     }
 
     @Test
-    void reservedMemberRename_body_skippedForBedrockRuntime() {
-        Optional<String> result = GlobalTransforms.getReservedMemberRename("body", "bedrock-runtime");
-        assertTrue(result.isEmpty());
+    void reservedRename_body_skippedForBedrockRuntime() {
+        Model m = inputModel("Bedrock Runtime", "body");
+        Model out = GlobalTransforms.asTransform().apply(m, serviceOf(m, "Example"));
+        assertTrue(input(out).getMember("body").isPresent(), "skip-listed service keeps body");
     }
 
     @Test
-    void reservedMemberRename_body_skippedForAmplifyUiBuilder() {
-        Optional<String> result = GlobalTransforms.getReservedMemberRename("body", "amplifyuibuilder");
-        assertTrue(result.isEmpty());
+    void reservedRename_body_skippedForApiGateway_rawName() {
+        // C2J name is "apigateway" but the raw smithy name is "api-gateway"; the skip-list must use
+        // the raw name or API Gateway's dedicated transform gets pre-empted.
+        Model m = inputModel("API Gateway", "body");
+        Model out = GlobalTransforms.asTransform().apply(m, serviceOf(m, "Example"));
+        assertTrue(input(out).getMember("body").isPresent(), "api-gateway must be skipped");
     }
 
     @Test
-    void reservedMemberRename_body_skippedForApiGateway2() {
-        Optional<String> result = GlobalTransforms.getReservedMemberRename("body", "apigateway2");
-        assertTrue(result.isEmpty());
+    void reservedRename_headers_becomesHeaderValues_forNonSkippedService() {
+        Model m = inputModel("Kinesis", "headers");
+        Model out = GlobalTransforms.asTransform().apply(m, serviceOf(m, "Example"));
+        assertTrue(input(out).getMember("headerValues").isPresent());
+        assertFalse(input(out).getMember("headers").isPresent());
     }
 
     @Test
-    void reservedMemberRename_body_skippedForGlacier() {
-        Optional<String> result = GlobalTransforms.getReservedMemberRename("body", "glacier");
-        assertTrue(result.isEmpty());
+    void reservedRename_capitalHeaders_alwaysRenamed() {
+        Model m = inputModel("API Gateway", "Headers");
+        Model out = GlobalTransforms.asTransform().apply(m, serviceOf(m, "Example"));
+        assertTrue(input(out).getMember("headerValues").isPresent());
     }
 
     @Test
-    void reservedMemberRename_body_skippedForRepostSpace() {
-        Optional<String> result = GlobalTransforms.getReservedMemberRename("body", "repostspace");
-        assertTrue(result.isEmpty());
+    void reservedRename_onlyTouchesOperationInputs_notArbitraryShapes() {
+        // A non-input structure that happens to have a 'body' member must NOT be renamed.
+        StructureShape domain = StructureShape.builder().id("com.example#HttpThing")
+            .addMember("body", ShapeId.from("smithy.api#String")).build();
+        StructureShape input = StructureShape.builder().id("com.example#DoThingRequest")
+            .addMember("thing", domain.getId()).build();
+        StructureShape output = StructureShape.builder().id("com.example#DoThingResponse").build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#DoThing").input(input.getId()).output(output.getId()).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#Example").version("2024-01-01")
+            .addTrait(software.amazon.smithy.aws.traits.ServiceTrait.builder()
+                .sdkId("Kinesis").arnNamespace("x").cloudFormationName("X").cloudTrailEventSource("x").build())
+            .addOperation(op.getId()).build();
+        Model m = Model.assembler().addShapes(domain, input, output, op, service).assemble().unwrap();
+        Model out = GlobalTransforms.asTransform().apply(m, serviceOf(m, "Example"));
+        assertTrue(out.expectShape(ShapeId.from("com.example#HttpThing"), StructureShape.class)
+            .getMember("body").isPresent(), "domain shape body must not be renamed");
     }
 
     @Test
-    void reservedMemberRename_headers_becomesHeaderValues() {
-        Optional<String> result = GlobalTransforms.getReservedMemberRename("headers", "kinesis");
-        assertEquals(Optional.of("headerValues"), result);
-    }
-
-    @Test
-    void reservedMemberRename_headers_skippedForApiGateway() {
-        Optional<String> result = GlobalTransforms.getReservedMemberRename("headers", "apigateway");
-        assertTrue(result.isEmpty());
-    }
-
-    @Test
-    void reservedMemberRename_headers_notSkippedForBedrockRuntime() {
-        Optional<String> result = GlobalTransforms.getReservedMemberRename("headers", "bedrock-runtime");
-        assertEquals(Optional.of("headerValues"), result);
-    }
-
-    @Test
-    void reservedMemberRename_Headers_alwaysRenamed() {
-        Optional<String> result = GlobalTransforms.getReservedMemberRename("Headers", "apigateway");
-        assertEquals(Optional.of("headerValues"), result);
-    }
-
-    @Test
-    void reservedMemberRename_Headers_alwaysRenamed_anyService() {
-        Optional<String> result = GlobalTransforms.getReservedMemberRename("Headers", "kinesis");
-        assertEquals(Optional.of("headerValues"), result);
-    }
-
-    @Test
-    void reservedMemberRename_normalMember_returnsEmpty() {
-        Optional<String> result = GlobalTransforms.getReservedMemberRename("name", "kinesis");
-        assertTrue(result.isEmpty());
+    void reservedRename_collision_throws() {
+        Model m = inputModel("Kinesis", "body", "requestBody");
+        assertThrows(IllegalStateException.class,
+            () -> GlobalTransforms.asTransform().apply(m, serviceOf(m, "Example")));
     }
 
     // --- computeReachableShapes tests ---
