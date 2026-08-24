@@ -35,13 +35,9 @@ def format_directories(directory_list):
     for filepaths_file in filepaths_files:
         filepaths_file.close()
 
-    # Warm up pipx cache to avoid race conditions when spawning parallel processes
-    subprocess.run(['pipx', 'run', f'clang-format=={CLANG_FORMAT_VERSION}', '--version'],
-                   check=True, capture_output=True)
-
     processes = []
     for filepaths_file in filepaths_files:
-        cmd = ['pipx', 'run', f'clang-format=={CLANG_FORMAT_VERSION}',
+        cmd = ['clang-format',
                f'--files={filepaths_file.name}', '-i', '-style=file:.clang-format']
         p = subprocess.Popen(cmd)
         processes.append(p)
