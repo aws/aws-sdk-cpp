@@ -131,6 +131,26 @@ class GetFeedResult {
 
   ///@{
   /**
+   * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+   * role that Elemental Inference assumes. Elemental Inference uses this role to
+   * access resources in your account on your behalf. This property is absent if the
+   * feed doesn't have an IAM role. </p>
+   */
+  inline const Aws::String& GetAccessRoleArn() const { return m_accessRoleArn; }
+  template <typename AccessRoleArnT = Aws::String>
+  void SetAccessRoleArn(AccessRoleArnT&& value) {
+    m_accessRoleArnHasBeenSet = true;
+    m_accessRoleArn = std::forward<AccessRoleArnT>(value);
+  }
+  template <typename AccessRoleArnT = Aws::String>
+  GetFeedResult& WithAccessRoleArn(AccessRoleArnT&& value) {
+    SetAccessRoleArn(std::forward<AccessRoleArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The status of the feed.</p>
    */
   inline FeedStatus GetStatus() const { return m_status; }
@@ -212,6 +232,8 @@ class GetFeedResult {
 
   Aws::Vector<GetOutput> m_outputs;
 
+  Aws::String m_accessRoleArn;
+
   FeedStatus m_status{FeedStatus::NOT_SET};
 
   FeedAssociation m_association;
@@ -225,6 +247,7 @@ class GetFeedResult {
   bool m_idHasBeenSet = false;
   bool m_dataEndpointsHasBeenSet = false;
   bool m_outputsHasBeenSet = false;
+  bool m_accessRoleArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_associationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;

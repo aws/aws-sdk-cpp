@@ -284,6 +284,28 @@ class GetDbClusterResult {
 
   ///@{
   /**
+   * <p>The ID of the DB parameter group actually applied to your DB cluster. When
+   * the service applies optimized defaults, it creates a service-managed DB
+   * parameter group and this field reflects that group, while
+   * dbParameterGroupIdentifier reflects the customer-provided DB parameter group.
+   * When no service-managed DB parameter group is applied, this value matches
+   * dbParameterGroupIdentifier.</p>
+   */
+  inline const Aws::String& GetEffectiveDbParameterGroupIdentifier() const { return m_effectiveDbParameterGroupIdentifier; }
+  template <typename EffectiveDbParameterGroupIdentifierT = Aws::String>
+  void SetEffectiveDbParameterGroupIdentifier(EffectiveDbParameterGroupIdentifierT&& value) {
+    m_effectiveDbParameterGroupIdentifierHasBeenSet = true;
+    m_effectiveDbParameterGroupIdentifier = std::forward<EffectiveDbParameterGroupIdentifierT>(value);
+  }
+  template <typename EffectiveDbParameterGroupIdentifierT = Aws::String>
+  GetDbClusterResult& WithEffectiveDbParameterGroupIdentifier(EffectiveDbParameterGroupIdentifierT&& value) {
+    SetEffectiveDbParameterGroupIdentifier(std::forward<EffectiveDbParameterGroupIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Configuration for sending InfluxDB engine logs to send to specified S3
    * bucket.</p>
    */
@@ -539,6 +561,8 @@ class GetDbClusterResult {
 
   Aws::String m_dbParameterGroupIdentifier;
 
+  Aws::String m_effectiveDbParameterGroupIdentifier;
+
   LogDeliveryConfiguration m_logDeliveryConfiguration;
 
   MaintenanceSchedule m_maintenanceSchedule;
@@ -578,6 +602,7 @@ class GetDbClusterResult {
   bool m_engineTypeHasBeenSet = false;
   bool m_publiclyAccessibleHasBeenSet = false;
   bool m_dbParameterGroupIdentifierHasBeenSet = false;
+  bool m_effectiveDbParameterGroupIdentifierHasBeenSet = false;
   bool m_logDeliveryConfigurationHasBeenSet = false;
   bool m_maintenanceScheduleHasBeenSet = false;
   bool m_lastMaintenanceTimeHasBeenSet = false;

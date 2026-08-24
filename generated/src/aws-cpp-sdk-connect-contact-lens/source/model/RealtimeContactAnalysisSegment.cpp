@@ -30,6 +30,10 @@ RealtimeContactAnalysisSegment& RealtimeContactAnalysisSegment::operator=(JsonVi
     m_postContactSummary = jsonValue.GetObject("PostContactSummary");
     m_postContactSummaryHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ExtractedInformation")) {
+    m_extractedInformation = jsonValue.GetObject("ExtractedInformation");
+    m_extractedInformationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue RealtimeContactAnalysisSegment::Jsonize() const {
 
   if (m_postContactSummaryHasBeenSet) {
     payload.WithObject("PostContactSummary", m_postContactSummary.Jsonize());
+  }
+
+  if (m_extractedInformationHasBeenSet) {
+    payload.WithObject("ExtractedInformation", m_extractedInformation.Jsonize());
   }
 
   return payload;

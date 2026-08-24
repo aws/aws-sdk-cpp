@@ -26,6 +26,10 @@ KafkaClusterClientAuthentication& KafkaClusterClientAuthentication::operator=(Js
     m_mTLS = jsonValue.GetObject("mTLS");
     m_mTLSHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("saslOAuthBearer")) {
+    m_saslOAuthBearer = jsonValue.GetObject("saslOAuthBearer");
+    m_saslOAuthBearerHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue KafkaClusterClientAuthentication::Jsonize() const {
 
   if (m_mTLSHasBeenSet) {
     payload.WithObject("mTLS", m_mTLS.Jsonize());
+  }
+
+  if (m_saslOAuthBearerHasBeenSet) {
+    payload.WithObject("saslOAuthBearer", m_saslOAuthBearer.Jsonize());
   }
 
   return payload;

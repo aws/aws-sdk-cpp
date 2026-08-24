@@ -1,3 +1,20 @@
+# 1.11.877 (2026-08-24)
+
+## SDK Highlights
+* **Feature**: Add changelog fragment script and update CONTRIBUTING.md
+
+## Service Updates
+* **Batch**: Doc Update, Add note that UpdatePolicy applies only to EC2 managed compute environments
+* **Bedrock**: Adds support for specifying an inference profile ID or ARN, or an application inference profile ARN as the target model in CreateAdvancedPromptOptimizationJob.
+* **Connect Contact Lens**: This release adds the ExtractedInformation segment to the ListRealtimeContactAnalysisSegments API, enabling customers to retrieve information extracted from real-time contact analysis.
+* **Connect**: This release adds the ExtractedInformation segment to the ListRealtimeContactAnalysisSegmentsV2 API, enabling customers to retrieve information extracted from real-time contact analysis.
+* **DSQL**: Corrected the validation pattern on the ServiceName response field in the GetVpcEndpointServiceName API to match the values Amazon Aurora DSQL actually returns.
+* **ElementalInference**: Added support for the GetFixture API, enabling customers to retrieve the details of a fixture from its fixture ID, and added the access role ARN to the CreateFeed, GetFeed, and UpdateFeed responses.
+* **Kafka**: Amazon MSK Replicator now supports OAuth authentication when connecting to external Apache Kafka clusters, enabling customers to replicate data from clusters that require OAuth for client authentication. This new capability is supported in all AWS Regions where MSK Express brokers are available.
+* **Launch Wizard**: Added accountConstraints and patternType to GetWorkload, ListWorkloads, GetWorkloadDeploymentPattern and ListWorkloadDeploymentPatterns for Launch Wizard
+* **SecurityAgent**: Adding private and self-signed certificate configuration support for penetration tests
+* **Timestream InfluxDB**: Service-managed parameter groups now only apply optimized defaults to DB Clusters automatically. New field effectiveDbParameterGroupIdentifier surfaces the parameter group actually applied.
+
 # Breaking changes in AWS SDK for C++
 ## [1.11.0](https://github.com/aws/aws-sdk-cpp/tree/1.11.0) (2022-01-24)
 This release introduces a refactored Asynchronous API and restructures the File Hierarchy of the project source code. Additionally, the minimum required version of cmake was raised to 3.13.

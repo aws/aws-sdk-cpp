@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/kafka/Kafka_EXPORTS.h>
 #include <aws/kafka/model/KafkaClusterMTLSAuthentication.h>
+#include <aws/kafka/model/KafkaClusterSaslOAuthBearerAuthentication.h>
 #include <aws/kafka/model/KafkaClusterSaslScramAuthentication.h>
 
 #include <utility>
@@ -68,12 +69,33 @@ class KafkaClusterClientAuthentication {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Details for SASL/OAUTHBEARER client authentication.</p>
+   */
+  inline const KafkaClusterSaslOAuthBearerAuthentication& GetSaslOAuthBearer() const { return m_saslOAuthBearer; }
+  inline bool SaslOAuthBearerHasBeenSet() const { return m_saslOAuthBearerHasBeenSet; }
+  template <typename SaslOAuthBearerT = KafkaClusterSaslOAuthBearerAuthentication>
+  void SetSaslOAuthBearer(SaslOAuthBearerT&& value) {
+    m_saslOAuthBearerHasBeenSet = true;
+    m_saslOAuthBearer = std::forward<SaslOAuthBearerT>(value);
+  }
+  template <typename SaslOAuthBearerT = KafkaClusterSaslOAuthBearerAuthentication>
+  KafkaClusterClientAuthentication& WithSaslOAuthBearer(SaslOAuthBearerT&& value) {
+    SetSaslOAuthBearer(std::forward<SaslOAuthBearerT>(value));
+    return *this;
+  }
+  ///@}
  private:
   KafkaClusterSaslScramAuthentication m_saslScram;
 
   KafkaClusterMTLSAuthentication m_mTLS;
+
+  KafkaClusterSaslOAuthBearerAuthentication m_saslOAuthBearer;
   bool m_saslScramHasBeenSet = false;
   bool m_mTLSHasBeenSet = false;
+  bool m_saslOAuthBearerHasBeenSet = false;
 };
 
 }  // namespace Model

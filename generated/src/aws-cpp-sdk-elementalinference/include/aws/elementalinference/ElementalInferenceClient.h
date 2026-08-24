@@ -347,6 +347,33 @@ class AWS_ELEMENTALINFERENCE_API ElementalInferenceClient : public Aws::Client::
   }
 
   /**
+   * <p>Retrieves information about the specified fixture (a sports event, such as a
+   * specific basketball game). You obtain a fixtureId from SearchFixtures, or from
+   * the clipping output of a feed. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/GetFixture">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetFixtureOutcome GetFixture(const Model::GetFixtureRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetFixture that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetFixtureRequestT = Model::GetFixtureRequest>
+  Model::GetFixtureOutcomeCallable GetFixtureCallable(const GetFixtureRequestT& request) const {
+    return SubmitCallable(&ElementalInferenceClient::GetFixture, request);
+  }
+
+  /**
+   * An Async wrapper for GetFixture that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetFixtureRequestT = Model::GetFixtureRequest>
+  void GetFixtureAsync(const GetFixtureRequestT& request, const GetFixtureResponseReceivedHandler& handler,
+                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ElementalInferenceClient::GetFixture, request, handler, context);
+  }
+
+  /**
    * <p>Lists the dictionaries in your account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/ListDictionaries">AWS
    * API Reference</a></p>

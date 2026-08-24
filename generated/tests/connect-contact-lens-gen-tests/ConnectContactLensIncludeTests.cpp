@@ -20,6 +20,9 @@
 #include <aws/connect-contact-lens/model/Categories.h>
 #include <aws/connect-contact-lens/model/CategoryDetails.h>
 #include <aws/connect-contact-lens/model/CharacterOffsets.h>
+#include <aws/connect-contact-lens/model/ExtractedInformation.h>
+#include <aws/connect-contact-lens/model/ExtractedInformationFailureCode.h>
+#include <aws/connect-contact-lens/model/ExtractedInformationValue.h>
 #include <aws/connect-contact-lens/model/IssueDetected.h>
 #include <aws/connect-contact-lens/model/ListRealtimeContactAnalysisSegmentsPaginationTraits.h>
 #include <aws/connect-contact-lens/model/ListRealtimeContactAnalysisSegmentsRequest.h>

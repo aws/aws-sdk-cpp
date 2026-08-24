@@ -20,8 +20,11 @@ namespace Model {
  * <p>Specifies the infrastructure update policy for the Amazon EC2 compute
  * environment. For more information about infrastructure updates, see <a
  * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
- * compute environments</a> in the <i>Batch User Guide</i>.</p><p><h3>See
- * Also:</h3>   <a
+ * compute environments</a> in the <i>Batch User Guide</i>.</p>  <p>The
+ * <code>updatePolicy</code> property applies only to Amazon EC2 managed compute
+ * environments. Batch doesn't support <code>updatePolicy</code> for Fargate
+ * compute environments. If you specify it for a Fargate compute environment, Batch
+ * ignores it.</p> <p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdatePolicy">AWS
  * API Reference</a></p>
  */

@@ -81,6 +81,7 @@
 #include <aws/securityagent/model/BitbucketRepositoryMetadata.h>
 #include <aws/securityagent/model/BitbucketRepositoryResource.h>
 #include <aws/securityagent/model/BitbucketResourceCapabilities.h>
+#include <aws/securityagent/model/CaCertificateSource.h>
 #include <aws/securityagent/model/Category.h>
 #include <aws/securityagent/model/CleanUpStrategy.h>
 #include <aws/securityagent/model/CloudWatchLog.h>
@@ -342,6 +343,7 @@
 #include <aws/securityagent/model/ThreatStatus.h>
 #include <aws/securityagent/model/ThreatSummary.h>
 #include <aws/securityagent/model/ThrottlingException.h>
+#include <aws/securityagent/model/TrustedCaCertificate.h>
 #include <aws/securityagent/model/UntagResourceRequest.h>
 #include <aws/securityagent/model/UntagResourceResult.h>
 #include <aws/securityagent/model/UpdateAgentSpaceRequest.h>

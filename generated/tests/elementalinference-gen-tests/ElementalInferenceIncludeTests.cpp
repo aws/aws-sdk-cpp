@@ -50,6 +50,8 @@
 #include <aws/elementalinference/model/GetDictionaryResult.h>
 #include <aws/elementalinference/model/GetFeedRequest.h>
 #include <aws/elementalinference/model/GetFeedResult.h>
+#include <aws/elementalinference/model/GetFixtureRequest.h>
+#include <aws/elementalinference/model/GetFixtureResult.h>
 #include <aws/elementalinference/model/GetOutput.h>
 #include <aws/elementalinference/model/ListDictionariesPaginationTraits.h>
 #include <aws/elementalinference/model/ListDictionariesRequest.h>

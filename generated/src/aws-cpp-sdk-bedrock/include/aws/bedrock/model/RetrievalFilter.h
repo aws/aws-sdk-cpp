@@ -239,8 +239,8 @@ class RetrievalFilter {
    * whose name matches the key and whose value is a list that contains the value as
    * one of its members.</p> <p>The following example would return data sources with
    * an animals attribute that is a list containing a cat member (for example,
-   * <code>["dog", "cat"]</code>): <code>"listContains": { "key": "animals", "value":
-   * "cat" }</code> </p>
+   * <code>["dog", "cat"] </code>): <code>"listContains": { "key": "animals",
+   * "value": "cat" }</code> </p>
    */
   inline const FilterAttribute& GetListContains() const { return m_listContains; }
   inline bool ListContainsHasBeenSet() const { return m_listContainsHasBeenSet; }

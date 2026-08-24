@@ -132,6 +132,25 @@ class UpdateFeedResult {
 
   ///@{
   /**
+   * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+   * (IAM) role for the feed, after the update. This property is absent if the feed
+   * doesn't have an IAM role. </p>
+   */
+  inline const Aws::String& GetAccessRoleArn() const { return m_accessRoleArn; }
+  template <typename AccessRoleArnT = Aws::String>
+  void SetAccessRoleArn(AccessRoleArnT&& value) {
+    m_accessRoleArnHasBeenSet = true;
+    m_accessRoleArn = std::forward<AccessRoleArnT>(value);
+  }
+  template <typename AccessRoleArnT = Aws::String>
+  UpdateFeedResult& WithAccessRoleArn(AccessRoleArnT&& value) {
+    SetAccessRoleArn(std::forward<AccessRoleArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The status of the feed.</p>
    */
   inline FeedStatus GetStatus() const { return m_status; }
@@ -212,6 +231,8 @@ class UpdateFeedResult {
 
   Aws::Vector<GetOutput> m_outputs;
 
+  Aws::String m_accessRoleArn;
+
   FeedStatus m_status{FeedStatus::NOT_SET};
 
   FeedAssociation m_association;
@@ -225,6 +246,7 @@ class UpdateFeedResult {
   bool m_idHasBeenSet = false;
   bool m_dataEndpointsHasBeenSet = false;
   bool m_outputsHasBeenSet = false;
+  bool m_accessRoleArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_associationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;

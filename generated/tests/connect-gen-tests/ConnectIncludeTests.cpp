@@ -1119,6 +1119,8 @@
 #include <aws/connect/model/RealTimeContactAnalysisAttachment.h>
 #include <aws/connect/model/RealTimeContactAnalysisCategoryDetails.h>
 #include <aws/connect/model/RealTimeContactAnalysisCharacterInterval.h>
+#include <aws/connect/model/RealTimeContactAnalysisExtractedInformationFailureCode.h>
+#include <aws/connect/model/RealTimeContactAnalysisExtractedInformationValue.h>
 #include <aws/connect/model/RealTimeContactAnalysisIssueDetected.h>
 #include <aws/connect/model/RealTimeContactAnalysisOutputType.h>
 #include <aws/connect/model/RealTimeContactAnalysisPointOfInterest.h>
@@ -1127,6 +1129,7 @@
 #include <aws/connect/model/RealTimeContactAnalysisSegmentAttachments.h>
 #include <aws/connect/model/RealTimeContactAnalysisSegmentCategories.h>
 #include <aws/connect/model/RealTimeContactAnalysisSegmentEvent.h>
+#include <aws/connect/model/RealTimeContactAnalysisSegmentExtractedInformation.h>
 #include <aws/connect/model/RealTimeContactAnalysisSegmentIssues.h>
 #include <aws/connect/model/RealTimeContactAnalysisSegmentPostContactSummary.h>
 #include <aws/connect/model/RealTimeContactAnalysisSegmentTranscript.h>

@@ -17,8 +17,8 @@ namespace ConnectContactLens {
 namespace Model {
 
 /**
- * <p>The section of the contact audio where that category rule was
- * detected.</p><p><h3>See Also:</h3>   <a
+ * <p>The section of the contact audio where a match was detected.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/connect-contact-lens-2020-08-21/PointOfInterest">AWS
  * API Reference</a></p>
  */
@@ -31,8 +31,7 @@ class PointOfInterest {
 
   ///@{
   /**
-   * <p>The beginning offset in milliseconds where the category rule was
-   * detected.</p>
+   * <p>The beginning offset (in milliseconds) where the match was detected.</p>
    */
   inline int GetBeginOffsetMillis() const { return m_beginOffsetMillis; }
   inline bool BeginOffsetMillisHasBeenSet() const { return m_beginOffsetMillisHasBeenSet; }
@@ -48,7 +47,7 @@ class PointOfInterest {
 
   ///@{
   /**
-   * <p>The ending offset in milliseconds where the category rule was detected.</p>
+   * <p>The ending offset (in milliseconds) where the match was detected.</p>
    */
   inline int GetEndOffsetMillis() const { return m_endOffsetMillis; }
   inline bool EndOffsetMillisHasBeenSet() const { return m_endOffsetMillisHasBeenSet; }

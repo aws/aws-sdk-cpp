@@ -38,6 +38,13 @@ DeploymentEventDataSummary& DeploymentEventDataSummary::operator=(JsonView jsonV
     m_timestamp = jsonValue.GetDouble("timestamp");
     m_timestampHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("metadata")) {
+    Aws::Map<Aws::String, JsonView> metadataJsonMap = jsonValue.GetObject("metadata").GetAllObjects();
+    for (auto& metadataItem : metadataJsonMap) {
+      m_metadata[metadataItem.first] = metadataItem.second.AsString();
+    }
+    m_metadataHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +69,14 @@ JsonValue DeploymentEventDataSummary::Jsonize() const {
 
   if (m_timestampHasBeenSet) {
     payload.WithDouble("timestamp", m_timestamp.SecondsWithMSPrecision());
+  }
+
+  if (m_metadataHasBeenSet) {
+    JsonValue metadataJsonMap;
+    for (auto& metadataItem : m_metadata) {
+      metadataJsonMap.WithString(metadataItem.first, metadataItem.second);
+    }
+    payload.WithObject("metadata", std::move(metadataJsonMap));
   }
 
   return payload;
