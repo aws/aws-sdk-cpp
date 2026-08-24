@@ -6,6 +6,7 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator;
 import com.amazonaws.util.awsclientsmithygenerator.generators.ServiceNameUtil;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.AccessAnalyzerTransforms;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.ApiGatewayTransforms;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.ApiGatewayV2Transforms;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.Ec2Transforms;
@@ -54,7 +55,8 @@ public class ModelCodegenPlugin implements SmithyBuildPlugin {
             SqsTransforms.asTransform(),
             ApiGatewayTransforms.asTransform(),
             ApiGatewayV2Transforms.asTransform(),
-            Ec2Transforms.asTransform()
+            Ec2Transforms.asTransform(),
+            AccessAnalyzerTransforms.asTransform()
             // Future: S3Transforms.asTransform(), etc.
         ));
 
