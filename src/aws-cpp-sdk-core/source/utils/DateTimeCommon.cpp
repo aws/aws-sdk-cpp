@@ -10,6 +10,7 @@
 #include <aws/core/utils/logging/LogMacros.h>
 #include <time.h>
 #include <cassert>
+#include <cstdint>
 #include <iostream>
 #include <cstring>
 #include <iomanip>
@@ -477,7 +478,7 @@ public:
                     }
                     break;
                 case 2:
-                    if (isdigit(c))
+                    if (isdigit(c) && index - stateStartIndex < 2)
                     {
                         m_parsedTimestamp.tm_mday = m_parsedTimestamp.tm_mday * 10 + (c - '0');
                     }
@@ -525,7 +526,7 @@ public:
                         stateStartIndex = index + 1;
                         m_parsedTimestamp.tm_year += 2000 - 1900;
                     }
-                    else if (isdigit(c))
+                    else if (isdigit(c) && index - stateStartIndex < 4)
                     {
                         m_parsedTimestamp.tm_year = m_parsedTimestamp.tm_year * 10 + (c - '0');
                     }
@@ -540,7 +541,7 @@ public:
                         m_state = 6;
                         stateStartIndex = index + 1;
                     }
-                    else if (isdigit(c))
+                    else if (isdigit(c) && index - stateStartIndex < 2)
                     {
                         m_parsedTimestamp.tm_hour = m_parsedTimestamp.tm_hour * 10 + (c - '0');
                     }
@@ -555,7 +556,7 @@ public:
                         m_state = 7;
                         stateStartIndex = index + 1;
                     }
-                    else if (isdigit(c))
+                    else if (isdigit(c) && index - stateStartIndex < 2)
                     {
                         m_parsedTimestamp.tm_min = m_parsedTimestamp.tm_min * 10 + (c - '0');
                     }
@@ -570,7 +571,7 @@ public:
                         m_state = 8;
                         stateStartIndex = index + 1;
                     }
-                    else if (isdigit(c))
+                    else if (isdigit(c) && index - stateStartIndex < 2)
                     {
                         m_parsedTimestamp.tm_sec = m_parsedTimestamp.tm_sec * 10 + (c - '0');
                     }
@@ -746,7 +747,7 @@ public:
                         stateStartIndex = index + 1;
                         m_parsedTimestamp.tm_year -= 1900;
                     }
-                    else if (isdigit(c))
+                    else if (isdigit(c) && index - stateStartIndex < 4)
                     {
                         m_parsedTimestamp.tm_year = m_parsedTimestamp.tm_year * 10 + (c - '0');
                     }
@@ -762,7 +763,7 @@ public:
                         stateStartIndex = index + 1;
                         m_parsedTimestamp.tm_mon -= 1;
                     }
-                    else if (isdigit(c))
+                    else if (isdigit(c) && index - stateStartIndex < 2)
                     {
                         m_parsedTimestamp.tm_mon = m_parsedTimestamp.tm_mon * 10 + (c - '0');
                     }
@@ -778,7 +779,7 @@ public:
                         m_state = 3;
                         stateStartIndex = index + 1;
                     }
-                    else if (isdigit(c))
+                    else if (isdigit(c) && index - stateStartIndex < 2)
                     {
                         m_parsedTimestamp.tm_mday = m_parsedTimestamp.tm_mday * 10 + (c - '0');
                     }
@@ -794,7 +795,7 @@ public:
                         m_state = 4;
                         stateStartIndex = index + 1;
                     }
-                    else if (isdigit(c))
+                    else if (isdigit(c) && index - stateStartIndex < 2)
                     {
                         m_parsedTimestamp.tm_hour = m_parsedTimestamp.tm_hour * 10 + (c - '0');
                     }
@@ -810,7 +811,7 @@ public:
                         m_state = 5;
                         stateStartIndex = index + 1;
                     }
-                    else if (isdigit(c))
+                    else if (isdigit(c) && index - stateStartIndex < 2)
                     {
                         m_parsedTimestamp.tm_min = m_parsedTimestamp.tm_min * 10 + (c - '0');
                     }
@@ -832,7 +833,7 @@ public:
                         m_state = 6;
                         stateStartIndex = index + 1;
                     }
-                    else if (isdigit(c))
+                    else if (isdigit(c) && index - stateStartIndex < 2)
                     {
                         m_parsedTimestamp.tm_sec = m_parsedTimestamp.tm_sec * 10 + (c - '0');
                     }
@@ -983,7 +984,7 @@ public:
                         m_state = 3;
                         stateStartIndex = index + 1;
                     }
-                    else if (isdigit(c))
+                    else if (isdigit(c) && index - stateStartIndex < 2)
                     {
                         m_parsedTimestamp.tm_mday = m_parsedTimestamp.tm_mday * 10 + (c - '0');
                     }
@@ -1108,8 +1109,20 @@ private:
 
     int m_state;
 };
-    
-} // namespace 
+
+static bool IsSecondsSinceEpochRepresentable(std::time_t seconds)
+{
+    using SysClock = std::chrono::system_clock;
+    static const int64_t minSeconds = std::chrono::duration_cast<std::chrono::seconds>(
+        SysClock::time_point::min().time_since_epoch()).count();
+    static const int64_t maxSeconds = std::chrono::duration_cast<std::chrono::seconds>(
+        SysClock::time_point::max().time_since_epoch()).count();
+
+    const int64_t asInt64 = static_cast<int64_t>(seconds);
+    return asInt64 >= minSeconds && asInt64 <= maxSeconds;
+}
+
+} // namespace
 
 DateTime::DateTime(const std::chrono::system_clock::time_point& timepointToAssign) : m_time(timepointToAssign), m_valid(true)
 {
@@ -1503,7 +1516,16 @@ void DateTime::ConvertTimestampStringToTimePoint(const char* timestamp, DateForm
             AWS_LOGSTREAM_ERROR(CLASS_TAG, "Non-UTC timestamp detected. This is always a bug. Make the world a better place and fix whatever sent you this timestamp: " << timestamp)
             tt = std::mktime(&timeStruct);
         }
-        m_time = std::chrono::system_clock::from_time_t(tt);
+
+        if (IsSecondsSinceEpochRepresentable(tt))
+        {
+            m_time = std::chrono::system_clock::from_time_t(tt);
+        }
+        else
+        {
+            AWS_LOGSTREAM_WARN(CLASS_TAG, "Parsed timestamp is outside the range representable by the system clock and cannot be converted: " << timestamp)
+            m_valid = false;
+        }
     }
 }
 
