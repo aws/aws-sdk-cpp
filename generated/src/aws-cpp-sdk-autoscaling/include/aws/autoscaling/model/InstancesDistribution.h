@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
+#include <aws/autoscaling/model/DistributionSegment.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -20,9 +22,10 @@ namespace AutoScaling {
 namespace Model {
 
 /**
- * <p>Use this structure to specify the distribution of On-Demand Instances and
- * Spot Instances and the allocation strategies used to fulfill On-Demand and Spot
- * capacities for a mixed instances policy.</p><p><h3>See Also:</h3>   <a
+ * <p>Use this structure to specify how a mixed instances policy distributes
+ * capacity across On-Demand, Spot, and supported Capacity Reservation types, and
+ * to specify the allocation strategies that are used to fulfill the
+ * capacity.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/InstancesDistribution">AWS
  * API Reference</a></p>
  */
@@ -198,6 +201,34 @@ class InstancesDistribution {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Distribution Segments configuration. Each segment contains an ordered
+   * list of capacity types to prioritize.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/use-distribution-segments.html">Use
+   * Distribution Segments to target multiple capacity types</a> in the <i>Amazon EC2
+   * Auto Scaling User Guide</i>.</p>
+   */
+  inline const Aws::Vector<DistributionSegment>& GetDistributionSegments() const { return m_distributionSegments; }
+  inline bool DistributionSegmentsHasBeenSet() const { return m_distributionSegmentsHasBeenSet; }
+  template <typename DistributionSegmentsT = Aws::Vector<DistributionSegment>>
+  void SetDistributionSegments(DistributionSegmentsT&& value) {
+    m_distributionSegmentsHasBeenSet = true;
+    m_distributionSegments = std::forward<DistributionSegmentsT>(value);
+  }
+  template <typename DistributionSegmentsT = Aws::Vector<DistributionSegment>>
+  InstancesDistribution& WithDistributionSegments(DistributionSegmentsT&& value) {
+    SetDistributionSegments(std::forward<DistributionSegmentsT>(value));
+    return *this;
+  }
+  template <typename DistributionSegmentsT = DistributionSegment>
+  InstancesDistribution& AddDistributionSegments(DistributionSegmentsT&& value) {
+    m_distributionSegmentsHasBeenSet = true;
+    m_distributionSegments.emplace_back(std::forward<DistributionSegmentsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_onDemandAllocationStrategy;
 
@@ -210,12 +241,15 @@ class InstancesDistribution {
   int m_spotInstancePools{0};
 
   Aws::String m_spotMaxPrice;
+
+  Aws::Vector<DistributionSegment> m_distributionSegments;
   bool m_onDemandAllocationStrategyHasBeenSet = false;
   bool m_onDemandBaseCapacityHasBeenSet = false;
   bool m_onDemandPercentageAboveBaseCapacityHasBeenSet = false;
   bool m_spotAllocationStrategyHasBeenSet = false;
   bool m_spotInstancePoolsHasBeenSet = false;
   bool m_spotMaxPriceHasBeenSet = false;
+  bool m_distributionSegmentsHasBeenSet = false;
 };
 
 }  // namespace Model

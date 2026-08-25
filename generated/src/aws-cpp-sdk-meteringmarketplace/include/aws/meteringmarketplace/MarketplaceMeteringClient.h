@@ -33,8 +33,8 @@ namespace MarketplaceMetering {
  * <p>Vendor-metered tagging: Supported allocation tagging</p> </li> </ul> <p>
  * <i>BatchMeterUsage</i> </p> <ul> <li> <p>Submits the metering record for a set
  * of customers. <code>BatchMeterUsage</code> API calls are captured by CloudTrail.
- * You can use CloudTrail to verify that the software as a subscription (SaaS)
- * metering records that you sent are accurate by searching for records with the
+ * You can use CloudTrail to verify that the software as a service (SaaS) metering
+ * records that you sent are accurate by searching for records with the
  * <code>eventName</code> of <code>BatchMeterUsage</code>. You can also use
  * CloudTrail to audit records over time. For more information, see the <a
  * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html">CloudTrail
@@ -49,7 +49,7 @@ namespace MarketplaceMetering {
  * the registration process</p> </li> <li> <p>Supported product type: SaaS</p>
  * </li> <li> <p>Vendor-metered tagging: Not applicable</p> </li> </ul> <p>
  * <b>Entitlement and metering for paid container products</b> </p> <p>
- * <i>RegisteredUsage</i> </p> <ul> <li> <p>Provides software entitlement and
+ * <i>RegisterUsage</i> </p> <ul> <li> <p>Provides software entitlement and
  * metering. Paid container software products sold through Amazon Web Services
  * Marketplace must integrate with the Marketplace Metering Service and call the
  * <code>RegisterUsage</code> operation. Free and Bring Your Own License model
@@ -152,19 +152,25 @@ class AWS_MARKETPLACEMETERING_API MarketplaceMeteringClient : public Aws::Client
    * feature. <code>BatchMeterUsage</code> does not support
    * <code>CustomerIdentifier</code> for new integrations. Existing integrations
    * continue to work. Review the new integration for Concurrent Agreements <a
-   * href="https://catalog.workshops.aws/mpseller/en-US/saas/integration-for-concurrent-agreements">here</a>.</p>
-   *  <p>To post metering records for customers, SaaS applications call
-   * <code>BatchMeterUsage</code>, which is used for metering SaaS flexible
-   * consumption pricing (FCP). Identical requests are idempotent and can be retried
-   * with the same records or a subset of records. Each <code>BatchMeterUsage</code>
-   * request is for only one product. If you want to meter usage for multiple
-   * products, you must make multiple <code>BatchMeterUsage</code> calls.</p>
-   * <p>Usage records should be submitted in quick succession following a recorded
-   * event. Usage records aren't accepted 24 hours or more after an event. At the end
-   * of each billing cycle, a 6-hour grace period applies. We accept usage records
-   * for the previous billing month until 06:00 UTC on the first day of the next
-   * month. For example, you must submit March usage records before 06:00 UTC on
-   * April 1. After this grace period, we return a
+   * href="https://catalog.workshops.aws/mpseller/en-US/saas/integration-for-concurrent-agreements">here</a>.
+   * For additional implementation details, see <a
+   * href="https://docs.aws.amazon.com/marketplace/latest/userguide/saas-code-examples.html#saas-batchmeterusage-licensearn-example">BatchMeterUsage
+   * code example with LicenseArn</a> in the <i>Amazon Web Services Marketplace
+   * Seller Guide</i>.</p>  <p>To post metering records for customers,
+   * SaaS applications call <code>BatchMeterUsage</code>, which is used for metering
+   * SaaS flexible consumption pricing (FCP). Identical requests are idempotent and
+   * can be retried with the same records or a subset of records. Each
+   * <code>BatchMeterUsage</code> request is for only one product. If you want to
+   * meter usage for multiple products, you must make multiple
+   * <code>BatchMeterUsage</code> calls.</p> <p>Usage records should be submitted in
+   * quick succession following a recorded event. Usage records aren't accepted 24
+   * hours or more after an event. At the end of each billing cycle, a 6-hour grace
+   * period applies. We accept usage records for the previous billing month until
+   * 06:00 UTC on the first day of the next month. For example, you must submit March
+   * usage records before 06:00 UTC on April 1. On April 1 at 05:00 UTC, you can
+   * still submit records for March 31 (within the 6-hour grace period). After 06:00
+   * UTC on April 1, March records are rejected regardless of the normal 24-hour
+   * submission window. After this grace period, we return a
    * <code>TimestampOutOfBoundsException</code> error.</p> <p>
    * <code>BatchMeterUsage</code> can process up to 25 <code>UsageRecords</code> at a
    * time, and each request must be less than 1 MB in size. Optionally, you can have

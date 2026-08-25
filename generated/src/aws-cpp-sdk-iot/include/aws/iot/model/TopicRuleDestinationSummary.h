@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/model/HttpUrlDestinationSummary.h>
+#include <aws/iot/model/InfluxDBDestinationSummary.h>
 #include <aws/iot/model/TopicRuleDestinationStatus.h>
 #include <aws/iot/model/VpcDestinationSummary.h>
 
@@ -175,6 +176,25 @@ class TopicRuleDestinationSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A summary of an InfluxDB topic rule destination, as returned by
+   * <code>ListTopicRuleDestinations</code>.</p>
+   */
+  inline const InfluxDBDestinationSummary& GetInfluxDBSummary() const { return m_influxDBSummary; }
+  inline bool InfluxDBSummaryHasBeenSet() const { return m_influxDBSummaryHasBeenSet; }
+  template <typename InfluxDBSummaryT = InfluxDBDestinationSummary>
+  void SetInfluxDBSummary(InfluxDBSummaryT&& value) {
+    m_influxDBSummaryHasBeenSet = true;
+    m_influxDBSummary = std::forward<InfluxDBSummaryT>(value);
+  }
+  template <typename InfluxDBSummaryT = InfluxDBDestinationSummary>
+  TopicRuleDestinationSummary& WithInfluxDBSummary(InfluxDBSummaryT&& value) {
+    SetInfluxDBSummary(std::forward<InfluxDBSummaryT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -189,6 +209,8 @@ class TopicRuleDestinationSummary {
   HttpUrlDestinationSummary m_httpUrlSummary;
 
   VpcDestinationSummary m_vpcDestinationSummary;
+
+  InfluxDBDestinationSummary m_influxDBSummary;
   bool m_arnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
@@ -196,6 +218,7 @@ class TopicRuleDestinationSummary {
   bool m_statusReasonHasBeenSet = false;
   bool m_httpUrlSummaryHasBeenSet = false;
   bool m_vpcDestinationSummaryHasBeenSet = false;
+  bool m_influxDBSummaryHasBeenSet = false;
 };
 
 }  // namespace Model

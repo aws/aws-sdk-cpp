@@ -38,10 +38,6 @@ GitHubConfiguration& GitHubConfiguration::operator=(JsonView jsonValue) {
     m_instanceIdentifier = jsonValue.GetString("instanceIdentifier");
     m_instanceIdentifierHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("runtimeRoleArn")) {
-    m_runtimeRoleArn = jsonValue.GetString("runtimeRoleArn");
-    m_runtimeRoleArnHasBeenSet = true;
-  }
   return *this;
 }
 
@@ -66,10 +62,6 @@ JsonValue GitHubConfiguration::Jsonize() const {
 
   if (m_instanceIdentifierHasBeenSet) {
     payload.WithString("instanceIdentifier", m_instanceIdentifier);
-  }
-
-  if (m_runtimeRoleArnHasBeenSet) {
-    payload.WithString("runtimeRoleArn", m_runtimeRoleArn);
   }
 
   return payload;

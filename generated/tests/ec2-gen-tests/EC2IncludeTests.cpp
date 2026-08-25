@@ -1612,6 +1612,7 @@
 #include <aws/ec2/model/FleetActivityStatus.h>
 #include <aws/ec2/model/FleetBlockDeviceMappingRequest.h>
 #include <aws/ec2/model/FleetCapacityReservation.h>
+#include <aws/ec2/model/FleetCapacityReservationTargetRequest.h>
 #include <aws/ec2/model/FleetCapacityReservationTenancy.h>
 #include <aws/ec2/model/FleetCapacityReservationUsageStrategy.h>
 #include <aws/ec2/model/FleetData.h>
@@ -2663,6 +2664,10 @@
 #include <aws/ec2/model/ReservationState.h>
 #include <aws/ec2/model/ReservationType.h>
 #include <aws/ec2/model/ReservationValue.h>
+#include <aws/ec2/model/ReservedCapacityAllocationStrategy.h>
+#include <aws/ec2/model/ReservedCapacityFallbackMarketType.h>
+#include <aws/ec2/model/ReservedCapacityFallbackOptions.h>
+#include <aws/ec2/model/ReservedCapacityFallbackOptionsRequest.h>
 #include <aws/ec2/model/ReservedCapacityOptions.h>
 #include <aws/ec2/model/ReservedCapacityOptionsRequest.h>
 #include <aws/ec2/model/ReservedInstanceLimitPrice.h>

@@ -43,5 +43,14 @@ Aws::String CreateAgentSpaceRequest::SerializePayload() const {
     payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
+  if (m_preferencesHasBeenSet) {
+    JsonValue preferencesJsonMap;
+    for (auto& preferencesItem : m_preferences) {
+      preferencesJsonMap.WithBool(AgentSpacePreferenceKeyMapper::GetNameForAgentSpacePreferenceKey(preferencesItem.first),
+                                  preferencesItem.second);
+    }
+    payload.WithObject("preferences", std::move(preferencesJsonMap));
+  }
+
   return payload.View().WriteReadable();
 }

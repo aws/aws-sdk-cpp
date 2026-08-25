@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/devops-agent/DevOpsAgent_EXPORTS.h>
+#include <aws/devops-agent/model/MCPToolDetail.h>
 
 #include <utility>
 
@@ -92,15 +93,42 @@ class MCPServerGrafanaConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The subset of elevated-access tools enabled for this integration.</p>
+   */
+  inline const Aws::Vector<MCPToolDetail>& GetEnabledElevatedTools() const { return m_enabledElevatedTools; }
+  inline bool EnabledElevatedToolsHasBeenSet() const { return m_enabledElevatedToolsHasBeenSet; }
+  template <typename EnabledElevatedToolsT = Aws::Vector<MCPToolDetail>>
+  void SetEnabledElevatedTools(EnabledElevatedToolsT&& value) {
+    m_enabledElevatedToolsHasBeenSet = true;
+    m_enabledElevatedTools = std::forward<EnabledElevatedToolsT>(value);
+  }
+  template <typename EnabledElevatedToolsT = Aws::Vector<MCPToolDetail>>
+  MCPServerGrafanaConfiguration& WithEnabledElevatedTools(EnabledElevatedToolsT&& value) {
+    SetEnabledElevatedTools(std::forward<EnabledElevatedToolsT>(value));
+    return *this;
+  }
+  template <typename EnabledElevatedToolsT = MCPToolDetail>
+  MCPServerGrafanaConfiguration& AddEnabledElevatedTools(EnabledElevatedToolsT&& value) {
+    m_enabledElevatedToolsHasBeenSet = true;
+    m_enabledElevatedTools.emplace_back(std::forward<EnabledElevatedToolsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_endpoint;
 
   Aws::String m_organizationId;
 
   Aws::Vector<Aws::String> m_tools;
+
+  Aws::Vector<MCPToolDetail> m_enabledElevatedTools;
   bool m_endpointHasBeenSet = false;
   bool m_organizationIdHasBeenSet = false;
   bool m_toolsHasBeenSet = false;
+  bool m_enabledElevatedToolsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devops-agent/DevOpsAgentRequest.h>
 #include <aws/devops-agent/DevOpsAgent_EXPORTS.h>
+#include <aws/devops-agent/model/AgentSpacePreferenceKey.h>
 
 #include <utility>
 
@@ -150,6 +151,30 @@ class CreateAgentSpaceRequest : public DevOpsAgentRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The preferences to configure on the agent space. Preferences not provided
+   * take their default values.</p>
+   */
+  inline const Aws::Map<AgentSpacePreferenceKey, bool>& GetPreferences() const { return m_preferences; }
+  inline bool PreferencesHasBeenSet() const { return m_preferencesHasBeenSet; }
+  template <typename PreferencesT = Aws::Map<AgentSpacePreferenceKey, bool>>
+  void SetPreferences(PreferencesT&& value) {
+    m_preferencesHasBeenSet = true;
+    m_preferences = std::forward<PreferencesT>(value);
+  }
+  template <typename PreferencesT = Aws::Map<AgentSpacePreferenceKey, bool>>
+  CreateAgentSpaceRequest& WithPreferences(PreferencesT&& value) {
+    SetPreferences(std::forward<PreferencesT>(value));
+    return *this;
+  }
+  inline CreateAgentSpaceRequest& AddPreferences(AgentSpacePreferenceKey key, bool value) {
+    m_preferencesHasBeenSet = true;
+    m_preferences.emplace(key, value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -162,12 +187,15 @@ class CreateAgentSpaceRequest : public DevOpsAgentRequest {
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+
+  Aws::Map<AgentSpacePreferenceKey, bool> m_preferences;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_localeHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
+  bool m_preferencesHasBeenSet = false;
 };
 
 }  // namespace Model

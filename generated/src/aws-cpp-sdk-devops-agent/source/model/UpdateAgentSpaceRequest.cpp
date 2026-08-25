@@ -27,5 +27,14 @@ Aws::String UpdateAgentSpaceRequest::SerializePayload() const {
     payload.WithString("locale", m_locale);
   }
 
+  if (m_preferencesHasBeenSet) {
+    JsonValue preferencesJsonMap;
+    for (auto& preferencesItem : m_preferences) {
+      preferencesJsonMap.WithBool(AgentSpacePreferenceKeyMapper::GetNameForAgentSpacePreferenceKey(preferencesItem.first),
+                                  preferencesItem.second);
+    }
+    payload.WithObject("preferences", std::move(preferencesJsonMap));
+  }
+
   return payload.View().WriteReadable();
 }

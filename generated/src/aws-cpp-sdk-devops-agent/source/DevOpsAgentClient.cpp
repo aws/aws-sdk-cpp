@@ -73,6 +73,7 @@
 #include <aws/devops-agent/model/TagResourceRequest.h>
 #include <aws/devops-agent/model/UntagResourceRequest.h>
 #include <aws/devops-agent/model/UpdateAgentSpaceRequest.h>
+#include <aws/devops-agent/model/UpdateApprovalActionRequest.h>
 #include <aws/devops-agent/model/UpdateAssetFileRequest.h>
 #include <aws/devops-agent/model/UpdateAssetRequest.h>
 #include <aws/devops-agent/model/UpdateAssociationRequest.h>
@@ -1285,6 +1286,32 @@ UpdateAgentSpaceOutcome DevOpsAgentClient::UpdateAgentSpace(const UpdateAgentSpa
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
   return result.IsSuccess() ? UpdateAgentSpaceOutcome(result.GetResultWithOwnership())
                             : UpdateAgentSpaceOutcome(std::move(result.GetError()));
+}
+
+UpdateApprovalActionOutcome DevOpsAgentClient::UpdateApprovalAction(const UpdateApprovalActionRequest& request) const {
+  if (!request.AgentSpaceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateApprovalAction", "Required field: AgentSpaceId, is not set");
+    return UpdateApprovalActionOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                "Missing required field [AgentSpaceId]", false));
+  }
+  if (!request.ApprovalIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateApprovalAction", "Required field: ApprovalId, is not set");
+    return UpdateApprovalActionOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                "Missing required field [ApprovalId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/agents/agent-space/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentSpaceId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/approvals/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApprovalId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/update-action");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateApprovalActionOutcome(result.GetResultWithOwnership())
+                            : UpdateApprovalActionOutcome(std::move(result.GetError()));
 }
 
 UpdateAssetOutcome DevOpsAgentClient::UpdateAsset(const UpdateAssetRequest& request) const {

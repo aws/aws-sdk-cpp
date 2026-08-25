@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/eks/EKS_EXPORTS.h>
 #include <aws/eks/model/HorizontalPodAutoscalerControllerVersionConfig.h>
+#include <aws/eks/model/PodGcControllerVersionConfig.h>
 
 #include <utility>
 
@@ -34,6 +35,25 @@ class KubeControllerManagerVersionConfig {
 
   ///@{
   /**
+   * <p>The pod garbage collection controller configuration with default value and
+   * constraints.</p>
+   */
+  inline const PodGcControllerVersionConfig& GetPodGcControllerConfig() const { return m_podGcControllerConfig; }
+  inline bool PodGcControllerConfigHasBeenSet() const { return m_podGcControllerConfigHasBeenSet; }
+  template <typename PodGcControllerConfigT = PodGcControllerVersionConfig>
+  void SetPodGcControllerConfig(PodGcControllerConfigT&& value) {
+    m_podGcControllerConfigHasBeenSet = true;
+    m_podGcControllerConfig = std::forward<PodGcControllerConfigT>(value);
+  }
+  template <typename PodGcControllerConfigT = PodGcControllerVersionConfig>
+  KubeControllerManagerVersionConfig& WithPodGcControllerConfig(PodGcControllerConfigT&& value) {
+    SetPodGcControllerConfig(std::forward<PodGcControllerConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The horizontal pod autoscaler controller configuration with default value and
    * constraints.</p>
    */
@@ -53,7 +73,10 @@ class KubeControllerManagerVersionConfig {
   }
   ///@}
  private:
+  PodGcControllerVersionConfig m_podGcControllerConfig;
+
   HorizontalPodAutoscalerControllerVersionConfig m_horizontalPodAutoscalerControllerConfig;
+  bool m_podGcControllerConfigHasBeenSet = false;
   bool m_horizontalPodAutoscalerControllerConfigHasBeenSet = false;
 };
 

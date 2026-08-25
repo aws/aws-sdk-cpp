@@ -157,6 +157,25 @@ class SendMessageRequest : public DevOpsAgentRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Optional model tier selection. Valid values: smart, balanced, fast. Absent or
+   * unrecognized values default to balanced.</p>
+   */
+  inline const Aws::String& GetModelTier() const { return m_modelTier; }
+  inline bool ModelTierHasBeenSet() const { return m_modelTierHasBeenSet; }
+  template <typename ModelTierT = Aws::String>
+  void SetModelTier(ModelTierT&& value) {
+    m_modelTierHasBeenSet = true;
+    m_modelTier = std::forward<ModelTierT>(value);
+  }
+  template <typename ModelTierT = Aws::String>
+  SendMessageRequest& WithModelTier(ModelTierT&& value) {
+    SetModelTier(std::forward<ModelTierT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_agentSpaceId;
 
@@ -167,6 +186,8 @@ class SendMessageRequest : public DevOpsAgentRequest {
   SendMessageContext m_context;
 
   Aws::Vector<Aws::String> m_assetIds;
+
+  Aws::String m_modelTier;
   SendMessageHandler m_handler;
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
 
@@ -175,6 +196,7 @@ class SendMessageRequest : public DevOpsAgentRequest {
   bool m_contentHasBeenSet = false;
   bool m_contextHasBeenSet = false;
   bool m_assetIdsHasBeenSet = false;
+  bool m_modelTierHasBeenSet = false;
 };
 
 }  // namespace Model

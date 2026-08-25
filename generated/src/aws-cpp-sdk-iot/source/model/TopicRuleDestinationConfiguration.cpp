@@ -26,6 +26,10 @@ TopicRuleDestinationConfiguration& TopicRuleDestinationConfiguration::operator=(
     m_vpcConfiguration = jsonValue.GetObject("vpcConfiguration");
     m_vpcConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("influxDBConfiguration")) {
+    m_influxDBConfiguration = jsonValue.GetObject("influxDBConfiguration");
+    m_influxDBConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue TopicRuleDestinationConfiguration::Jsonize() const {
 
   if (m_vpcConfigurationHasBeenSet) {
     payload.WithObject("vpcConfiguration", m_vpcConfiguration.Jsonize());
+  }
+
+  if (m_influxDBConfigurationHasBeenSet) {
+    payload.WithObject("influxDBConfiguration", m_influxDBConfiguration.Jsonize());
   }
 
   return payload;

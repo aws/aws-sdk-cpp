@@ -66,7 +66,17 @@ class BatchMeterUsageRequest : public MarketplaceMeteringRequest {
   /**
    * <p>Product code is used to uniquely identify a product in Amazon Web Services
    * Marketplace. The product code should be the same as the one used during the
-   * publishing of a new product.</p>
+   * publishing of a new product.</p>  <p> <code>ProductCode</code> is
+   * required only for legacy integrations that use <code>CustomerIdentifier</code>.
+   * For new integrations using <code>LicenseArn</code> (Concurrent Agreements), do
+   * NOT include <code>ProductCode</code> at the request level. The
+   * <code>LicenseArn</code> in each <code>UsageRecord</code> identifies both the
+   * product and the specific agreement.</p> <p>Sending metering records with both
+   * <code>ProductCode</code> and <code>LicenseArn</code> for the same customer
+   * within the same hour will result in duplicate billing. If you are migrating from
+   * product-based metering to license-based metering, stop sending
+   * <code>ProductCode</code> before you start sending <code>LicenseArn</code>.</p>
+   *
    */
   inline const Aws::String& GetProductCode() const { return m_productCode; }
   inline bool ProductCodeHasBeenSet() const { return m_productCodeHasBeenSet; }

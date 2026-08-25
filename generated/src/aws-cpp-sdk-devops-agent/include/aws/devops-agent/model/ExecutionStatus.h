@@ -10,7 +10,7 @@
 namespace Aws {
 namespace DevOpsAgent {
 namespace Model {
-enum class ExecutionStatus { NOT_SET, FAILED, RUNNING, STOPPED, CANCELED, TIMED_OUT };
+enum class ExecutionStatus { NOT_SET, FAILED, RUNNING, STOPPED, CANCELED, TIMED_OUT, WAITING };
 
 namespace ExecutionStatusMapper {
 AWS_DEVOPSAGENT_API ExecutionStatus GetExecutionStatusForName(const Aws::String& name);

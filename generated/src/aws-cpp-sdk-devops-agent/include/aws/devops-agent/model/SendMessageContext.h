@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devops-agent/DevOpsAgent_EXPORTS.h>
+#include <aws/devops-agent/model/ApprovalAction.h>
 
 #include <utility>
 
@@ -69,14 +70,12 @@ class SendMessageContext {
 
   ///@{
   /**
-   * <p>Response to a UI prompt (not a text conversation message). Operator App SDK
-   * clients set this to the control-string sentinel `"APPROVAL_ACTION"` when the
-   * request is resuming a paused tool call after an operator approval decision; in
-   * that case the structured decision context lives on the sibling `approvalAction`
-   * member and the chat agent reads from there. Preserved as a String for
-   * back-compat: pre-typed-approval clients still encode arbitrary UI-prompt
-   * responses as JSON in this field, and the chat agent parses them out during the
-   * transition.</p>
+   * <p>Response to a UI prompt (not a text conversation message). Set this to the
+   * sentinel value `"APPROVAL_ACTION"` when the request is resuming a paused
+   * execution after an approval decision; in that case the structured decision is
+   * provided on the sibling `approvalAction` member. Preserved as a String for
+   * backward compatibility: clients that predate the typed approval field may still
+   * encode UI-prompt responses as JSON in this field.</p>
    */
   inline const Aws::String& GetUserActionResponse() const { return m_userActionResponse; }
   inline bool UserActionResponseHasBeenSet() const { return m_userActionResponseHasBeenSet; }
@@ -91,15 +90,42 @@ class SendMessageContext {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An approval decision supplied when resuming a paused agent execution. When an
+   * agent execution pauses to request approval for an elevated action, SendMessage
+   * streams an approval request carrying interrupt identifiers. To resume the paused
+   * execution, call SendMessage again with `userActionResponse` set to
+   * `"APPROVAL_ACTION"` and this member populated with those identifiers and the
+   * decision (APPROVED or REJECTED). Optional; omit it for messages that are not
+   * resuming an approval.</p>
+   */
+  inline const ApprovalAction& GetApprovalAction() const { return m_approvalAction; }
+  inline bool ApprovalActionHasBeenSet() const { return m_approvalActionHasBeenSet; }
+  template <typename ApprovalActionT = ApprovalAction>
+  void SetApprovalAction(ApprovalActionT&& value) {
+    m_approvalActionHasBeenSet = true;
+    m_approvalAction = std::forward<ApprovalActionT>(value);
+  }
+  template <typename ApprovalActionT = ApprovalAction>
+  SendMessageContext& WithApprovalAction(ApprovalActionT&& value) {
+    SetApprovalAction(std::forward<ApprovalActionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_currentPage;
 
   Aws::String m_lastMessage;
 
   Aws::String m_userActionResponse;
+
+  ApprovalAction m_approvalAction;
   bool m_currentPageHasBeenSet = false;
   bool m_lastMessageHasBeenSet = false;
   bool m_userActionResponseHasBeenSet = false;
+  bool m_approvalActionHasBeenSet = false;
 };
 
 }  // namespace Model

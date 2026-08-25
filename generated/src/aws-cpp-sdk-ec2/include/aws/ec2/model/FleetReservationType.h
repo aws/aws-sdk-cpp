@@ -10,7 +10,7 @@
 namespace Aws {
 namespace EC2 {
 namespace Model {
-enum class FleetReservationType { NOT_SET, interruptible_capacity_reservation };
+enum class FleetReservationType { NOT_SET, on_demand_capacity_reservation, capacity_block, interruptible_capacity_reservation };
 
 namespace FleetReservationTypeMapper {
 AWS_EC2_API FleetReservationType GetFleetReservationTypeForName(const Aws::String& name);

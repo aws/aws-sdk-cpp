@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/model/HttpUrlDestinationProperties.h>
+#include <aws/iot/model/InfluxDBDestinationProperties.h>
 #include <aws/iot/model/TopicRuleDestinationStatus.h>
 #include <aws/iot/model/VpcDestinationProperties.h>
 
@@ -176,6 +177,26 @@ class TopicRuleDestination {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The properties of an InfluxDB topic rule destination, as returned by
+   * <code>CreateTopicRuleDestination</code> and
+   * <code>GetTopicRuleDestination</code>.</p>
+   */
+  inline const InfluxDBDestinationProperties& GetInfluxDBProperties() const { return m_influxDBProperties; }
+  inline bool InfluxDBPropertiesHasBeenSet() const { return m_influxDBPropertiesHasBeenSet; }
+  template <typename InfluxDBPropertiesT = InfluxDBDestinationProperties>
+  void SetInfluxDBProperties(InfluxDBPropertiesT&& value) {
+    m_influxDBPropertiesHasBeenSet = true;
+    m_influxDBProperties = std::forward<InfluxDBPropertiesT>(value);
+  }
+  template <typename InfluxDBPropertiesT = InfluxDBDestinationProperties>
+  TopicRuleDestination& WithInfluxDBProperties(InfluxDBPropertiesT&& value) {
+    SetInfluxDBProperties(std::forward<InfluxDBPropertiesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -190,6 +211,8 @@ class TopicRuleDestination {
   HttpUrlDestinationProperties m_httpUrlProperties;
 
   VpcDestinationProperties m_vpcProperties;
+
+  InfluxDBDestinationProperties m_influxDBProperties;
   bool m_arnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
@@ -197,6 +220,7 @@ class TopicRuleDestination {
   bool m_statusReasonHasBeenSet = false;
   bool m_httpUrlPropertiesHasBeenSet = false;
   bool m_vpcPropertiesHasBeenSet = false;
+  bool m_influxDBPropertiesHasBeenSet = false;
 };
 
 }  // namespace Model

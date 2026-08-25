@@ -34,7 +34,7 @@ class AssetSourceUrlContent {
 
   ///@{
   /**
-   * <p>The source URL to import asset content from</p>
+   * <p>The source URL to import asset content from.</p>
    */
   inline const Aws::String& GetUrl() const { return m_url; }
   inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }

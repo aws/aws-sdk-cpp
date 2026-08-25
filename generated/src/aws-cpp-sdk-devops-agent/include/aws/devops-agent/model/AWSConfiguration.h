@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devops-agent/DevOpsAgent_EXPORTS.h>
 #include <aws/devops-agent/model/MonitorAccountType.h>
+#include <aws/devops-agent/model/ValidationStatus.h>
 
 #include <utility>
 
@@ -84,15 +85,61 @@ class AWSConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Optional IAM role ARN to be assumed by AIDevOps for elevated directed actions
+   * on behalf of the customer. Used for mutating operations gated by
+   * elevatedActionsEnabled on the AgentSpace. When not provided, only non-elevated
+   * directed actions are available for this AWS account.</p>
+   */
+  inline const Aws::String& GetAgentElevatedRoleArn() const { return m_agentElevatedRoleArn; }
+  inline bool AgentElevatedRoleArnHasBeenSet() const { return m_agentElevatedRoleArnHasBeenSet; }
+  template <typename AgentElevatedRoleArnT = Aws::String>
+  void SetAgentElevatedRoleArn(AgentElevatedRoleArnT&& value) {
+    m_agentElevatedRoleArnHasBeenSet = true;
+    m_agentElevatedRoleArn = std::forward<AgentElevatedRoleArnT>(value);
+  }
+  template <typename AgentElevatedRoleArnT = Aws::String>
+  AWSConfiguration& WithAgentElevatedRoleArn(AgentElevatedRoleArnT&& value) {
+    SetAgentElevatedRoleArn(std::forward<AgentElevatedRoleArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Validation status of the agentElevatedRoleArn. Updated asynchronously after
+   * the customer registers an elevated role. Possible values: PENDING_CONFIRMATION
+   * (validation in progress), VALID (role validated), INVALID (validation
+   * failed).</p>
+   */
+  inline ValidationStatus GetAgentElevatedRoleArnStatus() const { return m_agentElevatedRoleArnStatus; }
+  inline bool AgentElevatedRoleArnStatusHasBeenSet() const { return m_agentElevatedRoleArnStatusHasBeenSet; }
+  inline void SetAgentElevatedRoleArnStatus(ValidationStatus value) {
+    m_agentElevatedRoleArnStatusHasBeenSet = true;
+    m_agentElevatedRoleArnStatus = value;
+  }
+  inline AWSConfiguration& WithAgentElevatedRoleArnStatus(ValidationStatus value) {
+    SetAgentElevatedRoleArnStatus(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_assumableRoleArn;
 
   Aws::String m_accountId;
 
   MonitorAccountType m_accountType{MonitorAccountType::NOT_SET};
+
+  Aws::String m_agentElevatedRoleArn;
+
+  ValidationStatus m_agentElevatedRoleArnStatus{ValidationStatus::NOT_SET};
   bool m_assumableRoleArnHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
   bool m_accountTypeHasBeenSet = false;
+  bool m_agentElevatedRoleArnHasBeenSet = false;
+  bool m_agentElevatedRoleArnStatusHasBeenSet = false;
 };
 
 }  // namespace Model

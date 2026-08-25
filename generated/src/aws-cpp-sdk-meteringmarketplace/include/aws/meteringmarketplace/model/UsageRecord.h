@@ -148,11 +148,14 @@ class UsageRecord {
   ///@{
   /**
    * <p>The <code>CustomerAWSAccountId</code> parameter specifies the AWS account ID
-   * of the buyer.</p>  <p>For existing integrations, to access your
-   * <code>CustomerIdentifier</code> to <code>CustomerAWSAccountId</code> mapping,
-   * see <a
-   * href="https://docs.aws.amazon.com/marketplace/latest/userguide/data-feed-account.html">Account
-   * Feeds</a>.</p>
+   * of the buyer.</p>  <p>If you have an existing integration and need
+   * the <code>CustomerAWSAccountId</code> that corresponds to a
+   * <code>CustomerIdentifier</code>, contact <a
+   * href="https://aws.amazon.com/marketplace/management/contact-us/">AWS Marketplace
+   * Seller Operations</a> to obtain the mapping. Do not request the
+   * <code>CustomerAWSAccountId</code> directly from buyers. We cannot verify that a
+   * buyer-provided account ID is authentic, which can result in incorrect metering
+   * or billing.</p>
    */
   inline const Aws::String& GetCustomerAWSAccountId() const { return m_customerAWSAccountId; }
   inline bool CustomerAWSAccountIdHasBeenSet() const { return m_customerAWSAccountIdHasBeenSet; }

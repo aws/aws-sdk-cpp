@@ -186,6 +186,7 @@
 #include <aws/guardduty/GuardDutyClient.h>
 #include <aws/health/HealthClient.h>
 #include <aws/healthlake/HealthLakeClient.h>
+#include <aws/iam-toolbox/IAMToolboxClient.h>
 #include <aws/iam/IAMClient.h>
 #include <aws/identitystore/IdentityStoreClient.h>
 #include <aws/imagebuilder/ImagebuilderClient.h>

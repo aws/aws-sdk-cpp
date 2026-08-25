@@ -33,6 +33,14 @@ MCPServerGrafanaConfiguration& MCPServerGrafanaConfiguration::operator=(JsonView
     }
     m_toolsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("enabledElevatedTools")) {
+    Aws::Utils::Array<JsonView> enabledElevatedToolsJsonList = jsonValue.GetArray("enabledElevatedTools");
+    for (unsigned enabledElevatedToolsIndex = 0; enabledElevatedToolsIndex < enabledElevatedToolsJsonList.GetLength();
+         ++enabledElevatedToolsIndex) {
+      m_enabledElevatedTools.push_back(enabledElevatedToolsJsonList[enabledElevatedToolsIndex].AsObject());
+    }
+    m_enabledElevatedToolsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -53,6 +61,15 @@ JsonValue MCPServerGrafanaConfiguration::Jsonize() const {
       toolsJsonList[toolsIndex].AsString(m_tools[toolsIndex]);
     }
     payload.WithArray("tools", std::move(toolsJsonList));
+  }
+
+  if (m_enabledElevatedToolsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> enabledElevatedToolsJsonList(m_enabledElevatedTools.size());
+    for (unsigned enabledElevatedToolsIndex = 0; enabledElevatedToolsIndex < enabledElevatedToolsJsonList.GetLength();
+         ++enabledElevatedToolsIndex) {
+      enabledElevatedToolsJsonList[enabledElevatedToolsIndex].AsObject(m_enabledElevatedTools[enabledElevatedToolsIndex].Jsonize());
+    }
+    payload.WithArray("enabledElevatedTools", std::move(enabledElevatedToolsJsonList));
   }
 
   return payload;

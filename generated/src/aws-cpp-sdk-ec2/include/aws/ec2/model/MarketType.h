@@ -10,7 +10,7 @@
 namespace Aws {
 namespace EC2 {
 namespace Model {
-enum class MarketType { NOT_SET, spot, capacity_block, interruptible_capacity_reservation };
+enum class MarketType { NOT_SET, spot, capacity_block, interruptible_capacity_reservation, on_demand };
 
 namespace MarketTypeMapper {
 AWS_EC2_API MarketType GetMarketTypeForName(const Aws::String& name);
