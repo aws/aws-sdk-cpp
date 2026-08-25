@@ -27,6 +27,15 @@
 * **SecurityAgent**: Adding private and self-signed certificate configuration support for penetration tests
 * **Timestream InfluxDB**: Service-managed parameter groups now only apply optimized defaults to DB Clusters automatically. New field effectiveDbParameterGroupIdentifier surfaces the parameter group actually applied.
 
+# Announcement
+We are moving the changelog to a new format and tying it to a new release process.
+
+Changelog entries are grouped into sections. For example:
+* **SDK Highlights**: SDK core feature updates will show up as SDK Highlights when updated.
+* **Service Updates**: the daily service model updates are noted here.
+
+We are also making GitHub releases the source of truth for a "release". The changelog will only be updated when the SDK source is "released", meaning a GitHub release with a tag, and the change notes for that release will be included as part of the release notes.
+
 # Breaking changes in AWS SDK for C++
 ## [1.11.0](https://github.com/aws/aws-sdk-cpp/tree/1.11.0) (2022-01-24)
 This release introduces a refactored Asynchronous API and restructures the File Hierarchy of the project source code. Additionally, the minimum required version of cmake was raised to 3.13.
