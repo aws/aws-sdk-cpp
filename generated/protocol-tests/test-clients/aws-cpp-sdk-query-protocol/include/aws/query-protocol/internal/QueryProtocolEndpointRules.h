@@ -4,18 +4,18 @@
  */
 
 #pragma once
-#include <aws/json-protocol/JsonProtocol_EXPORTS.h>
+#include <aws/query-protocol/QueryProtocol_EXPORTS.h>
 
 #include <cstddef>
 
 namespace Aws {
-namespace JsonProtocol {
-class JsonProtocolEndpointRules {
+namespace QueryProtocol {
+class AWS_QUERYPROTOCOL_LOCAL QueryProtocolEndpointRules {
  public:
   static const size_t RulesBlobStrLen;
   static const size_t RulesBlobSize;
 
   static const char* GetRulesBlob();
 };
-}  // namespace JsonProtocol
+}  // namespace QueryProtocol
 }  // namespace Aws

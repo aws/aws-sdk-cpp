@@ -22,7 +22,7 @@ AWS_PROTOCOL_TEST(QueryIdempotencyTokenAutoFill, QueryIdempotencyTokenAutoFill) 
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.uri = "/QueryIdempotencyTokenAutoFill?token=00000000-0000-4000-8000-000000000000";
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -38,6 +38,6 @@ AWS_PROTOCOL_TEST(QueryIdempotencyTokenAutoFill, QueryIdempotencyTokenAutoFillIs
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.uri = "/QueryIdempotencyTokenAutoFill?token=00000000-0000-4000-8000-000000000000";
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

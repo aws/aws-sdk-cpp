@@ -201,36 +201,36 @@ class SimpleInputParamsRequest : public EC2ProtocolRequest {
   ///@}
  private:
   Aws::String m_foo;
-  bool m_fooHasBeenSet = false;
 
   Aws::String m_bar;
-  bool m_barHasBeenSet = false;
 
   bool m_baz{false};
-  bool m_bazHasBeenSet = false;
 
   int m_bam{0};
-  bool m_bamHasBeenSet = false;
 
   double m_floatValue{0.0};
-  bool m_floatValueHasBeenSet = false;
 
   double m_boo{0.0};
-  bool m_booHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_qux{};
-  bool m_quxHasBeenSet = false;
 
   FooEnum m_fooEnum{FooEnum::NOT_SET};
-  bool m_fooEnumHasBeenSet = false;
 
   Aws::String m_hasQueryName;
-  bool m_hasQueryNameHasBeenSet = false;
 
   Aws::String m_hasQueryAndXmlName;
-  bool m_hasQueryAndXmlNameHasBeenSet = false;
 
   Aws::String m_usesXmlName;
+  bool m_fooHasBeenSet = false;
+  bool m_barHasBeenSet = false;
+  bool m_bazHasBeenSet = false;
+  bool m_bamHasBeenSet = false;
+  bool m_floatValueHasBeenSet = false;
+  bool m_booHasBeenSet = false;
+  bool m_quxHasBeenSet = false;
+  bool m_fooEnumHasBeenSet = false;
+  bool m_hasQueryNameHasBeenSet = false;
+  bool m_hasQueryAndXmlNameHasBeenSet = false;
   bool m_usesXmlNameHasBeenSet = false;
 };
 

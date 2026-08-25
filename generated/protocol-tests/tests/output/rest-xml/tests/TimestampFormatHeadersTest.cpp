@@ -34,12 +34,12 @@ AWS_PROTOCOL_TEST(TimestampFormatHeaders, TimestampFormatHeaders) {
     /* expectedResult = R"(
      * {"memberEpochSeconds":1576540098,"memberHttpDate":1576540098,"memberDateTime":1576540098,"defaultFormat":1576540098,"targetEpochSeconds":1576540098,"targetHttpDate":1576540098,"targetDateTime":1576540098}
      * )" */
-    EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)), result.GetMemberEpochSeconds());
-    EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)), result.GetMemberHttpDate());
-    EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)), result.GetMemberDateTime());
-    EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)), result.GetDefaultFormat());
-    EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)), result.GetTargetEpochSeconds());
-    EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)), result.GetTargetHttpDate());
-    EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)), result.GetTargetDateTime());
+    EXPECT_EQ(Aws::Utils::DateTime(static_cast<double>(1576540098)), result.GetMemberEpochSeconds());
+    EXPECT_EQ(Aws::Utils::DateTime(static_cast<double>(1576540098)), result.GetMemberHttpDate());
+    EXPECT_EQ(Aws::Utils::DateTime(static_cast<double>(1576540098)), result.GetMemberDateTime());
+    EXPECT_EQ(Aws::Utils::DateTime(static_cast<double>(1576540098)), result.GetDefaultFormat());
+    EXPECT_EQ(Aws::Utils::DateTime(static_cast<double>(1576540098)), result.GetTargetEpochSeconds());
+    EXPECT_EQ(Aws::Utils::DateTime(static_cast<double>(1576540098)), result.GetTargetHttpDate());
+    EXPECT_EQ(Aws::Utils::DateTime(static_cast<double>(1576540098)), result.GetTargetDateTime());
   });
 }

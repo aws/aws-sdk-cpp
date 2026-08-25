@@ -548,6 +548,10 @@ class AWS_JSONPROTOCOL_API JsonProtocolClient : public Aws::Client::AWSJsonClien
   friend class Aws::Client::ClientWithAsyncTemplateMethods<JsonProtocolClient>;
   void init(const JsonProtocolClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, JsonProtocolError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   JsonProtocolClientConfiguration m_clientConfiguration;
   std::shared_ptr<JsonProtocolEndpointProviderBase> m_endpointProvider;
 };

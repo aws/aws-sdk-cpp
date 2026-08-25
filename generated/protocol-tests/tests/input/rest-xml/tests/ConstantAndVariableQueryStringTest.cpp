@@ -23,7 +23,7 @@ AWS_PROTOCOL_TEST(ConstantAndVariableQueryString, ConstantAndVariableQueryString
   ExpectedRequest expectedRq;
   expectedRq.method = "GET";
   expectedRq.uri = "/ConstantAndVariableQueryString?foo=bar&baz=bam";
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -40,6 +40,6 @@ AWS_PROTOCOL_TEST(ConstantAndVariableQueryString, ConstantAndVariableQueryString
   ExpectedRequest expectedRq;
   expectedRq.method = "GET";
   expectedRq.uri = "/ConstantAndVariableQueryString?foo=bar&baz=bam&maybeSet=yes";
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

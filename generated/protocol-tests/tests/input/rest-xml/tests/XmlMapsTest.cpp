@@ -38,6 +38,6 @@ AWS_PROTOCOL_TEST(XmlMaps, XmlMaps) {
       "CiAgICAgICAgPC9lbnRyeT4KICAgIDwvbXlNYXA+CjwvWG1sTWFwc1JlcXVlc3Q+Cg==";
   expectedRq.uri = "/XmlMaps";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

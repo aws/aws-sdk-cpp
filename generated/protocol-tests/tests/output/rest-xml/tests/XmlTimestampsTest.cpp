@@ -28,7 +28,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestamps) {
   const XmlTimestampsResult& result = outcome.GetResult();
   ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
     /* expectedResult = R"( {"normal":1398796238} )" */
-    EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)), result.GetNormal());
+    EXPECT_EQ(Aws::Utils::DateTime(static_cast<double>(1398796238)), result.GetNormal());
   });
 }
 
@@ -49,7 +49,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithDateTimeFormat) {
   const XmlTimestampsResult& result = outcome.GetResult();
   ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
     /* expectedResult = R"( {"dateTime":1398796238} )" */
-    EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)), result.GetDateTime());
+    EXPECT_EQ(Aws::Utils::DateTime(static_cast<double>(1398796238)), result.GetDateTime());
   });
 }
 
@@ -71,7 +71,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithDateTimeOnTargetFormat) {
   const XmlTimestampsResult& result = outcome.GetResult();
   ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
     /* expectedResult = R"( {"dateTimeOnTarget":1398796238} )" */
-    EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)), result.GetDateTimeOnTarget());
+    EXPECT_EQ(Aws::Utils::DateTime(static_cast<double>(1398796238)), result.GetDateTimeOnTarget());
   });
 }
 
@@ -92,7 +92,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithEpochSecondsFormat) {
   const XmlTimestampsResult& result = outcome.GetResult();
   ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
     /* expectedResult = R"( {"epochSeconds":1398796238} )" */
-    EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)), result.GetEpochSeconds());
+    EXPECT_EQ(Aws::Utils::DateTime(static_cast<double>(1398796238)), result.GetEpochSeconds());
   });
 }
 
@@ -114,7 +114,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithEpochSecondsOnTargetFormat) {
   const XmlTimestampsResult& result = outcome.GetResult();
   ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
     /* expectedResult = R"( {"epochSecondsOnTarget":1398796238} )" */
-    EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)), result.GetEpochSecondsOnTarget());
+    EXPECT_EQ(Aws::Utils::DateTime(static_cast<double>(1398796238)), result.GetEpochSecondsOnTarget());
   });
 }
 
@@ -136,7 +136,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithHttpDateFormat) {
   const XmlTimestampsResult& result = outcome.GetResult();
   ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
     /* expectedResult = R"( {"httpDate":1398796238} )" */
-    EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)), result.GetHttpDate());
+    EXPECT_EQ(Aws::Utils::DateTime(static_cast<double>(1398796238)), result.GetHttpDate());
   });
 }
 
@@ -158,6 +158,6 @@ AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithHttpDateOnTargetFormat) {
   const XmlTimestampsResult& result = outcome.GetResult();
   ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
     /* expectedResult = R"( {"httpDateOnTarget":1398796238} )" */
-    EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)), result.GetHttpDateOnTarget());
+    EXPECT_EQ(Aws::Utils::DateTime(static_cast<double>(1398796238)), result.GetHttpDateOnTarget());
   });
 }

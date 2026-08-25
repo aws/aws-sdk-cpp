@@ -31,6 +31,6 @@ AWS_PROTOCOL_TEST(XmlMapWithXmlNamespace, RestXmlXmlMapWithXmlNamespace) {
       "CiAgICA8L0tWUD4KPC9YbWxNYXBXaXRoWG1sTmFtZXNwYWNlUmVxdWVzdD4=";
   expectedRq.uri = "/XmlMapWithXmlNamespace";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

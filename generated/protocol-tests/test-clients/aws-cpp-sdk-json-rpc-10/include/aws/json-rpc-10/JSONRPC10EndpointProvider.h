@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/json-rpc-10/JSONRPC10EndpointRules.h>
 #include <aws/json-rpc-10/JSONRPC10_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_JSONRPC10_API JSONRPC10EndpointProvider : public JSONRPC10DefaultEpPro
  public:
   using JSONRPC10ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  JSONRPC10EndpointProvider()
-      : JSONRPC10DefaultEpProviderBase(Aws::JSONRPC10::JSONRPC10EndpointRules::GetRulesBlob(),
-                                       Aws::JSONRPC10::JSONRPC10EndpointRules::RulesBlobSize) {}
+  JSONRPC10EndpointProvider();
 
   ~JSONRPC10EndpointProvider() {}
 };

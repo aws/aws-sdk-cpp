@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/rpcv2protocol/RpcV2ProtocolEndpointRules.h>
+#include <aws/rpcv2protocol/internal/RpcV2ProtocolEndpointRules.h>
 
 namespace Aws {
 namespace RpcV2Protocol {

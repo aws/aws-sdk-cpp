@@ -26,7 +26,7 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, InputAndOutputWithStringHeaders) {
   expectedRq.method = "POST";
   expectedRq.uri = "/InputAndOutputWithHeaders";
   expectedRq.headers = {{"X-String", R"(Hello)"}, {"X-StringList", R"(a, b, c)"}, {"X-StringSet", R"(a, b, c)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -51,7 +51,7 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, InputAndOutputWithNumericHeaders) {
   expectedRq.headers = {{"X-Byte", R"(1)"},      {"X-Double", R"(1.1)"},          {"X-Float", R"(1.1)"},
                         {"X-Integer", R"(123)"}, {"X-IntegerList", R"(1, 2, 3)"}, {"X-Long", R"(123)"},
                         {"X-Short", R"(123)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -70,7 +70,7 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, InputAndOutputWithBooleanHeaders) {
   expectedRq.method = "POST";
   expectedRq.uri = "/InputAndOutputWithHeaders";
   expectedRq.headers = {{"X-Boolean1", R"(true)"}, {"X-Boolean2", R"(false)"}, {"X-BooleanList", R"(true, false, true)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -81,14 +81,14 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, InputAndOutputWithTimestampHeaders)
 
   InputAndOutputWithHeadersRequest request;
   request.SetHeaderTimestampList(
-      {Aws::Utils::DateTime(static_cast<int64_t>(1576540098)), Aws::Utils::DateTime(static_cast<int64_t>(1576540098))});
+      {Aws::Utils::DateTime(static_cast<double>(1576540098)), Aws::Utils::DateTime(static_cast<double>(1576540098))});
 
   auto outcome = client.InputAndOutputWithHeaders(request);
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.uri = "/InputAndOutputWithHeaders";
   expectedRq.headers = {{"X-TimestampList", R"(Mon, 16 Dec 2019 23:48:18 GMT, Mon, 16 Dec 2019 23:48:18 GMT)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -107,7 +107,7 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, InputAndOutputWithEnumHeaders) {
   expectedRq.method = "POST";
   expectedRq.uri = "/InputAndOutputWithHeaders";
   expectedRq.headers = {{"X-Enum", R"(Foo)"}, {"X-EnumList", R"(Foo, Bar, Baz)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -125,7 +125,7 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestXmlSupportsNaNFloatHeaderInputs
   expectedRq.method = "POST";
   expectedRq.uri = "/InputAndOutputWithHeaders";
   expectedRq.headers = {{"X-Double", R"(NaN)"}, {"X-Float", R"(NaN)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -143,7 +143,7 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestXmlSupportsInfinityFloatHeaderI
   expectedRq.method = "POST";
   expectedRq.uri = "/InputAndOutputWithHeaders";
   expectedRq.headers = {{"X-Double", R"(Infinity)"}, {"X-Float", R"(Infinity)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -161,6 +161,6 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestXmlSupportsNegativeInfinityFloa
   expectedRq.method = "POST";
   expectedRq.uri = "/InputAndOutputWithHeaders";
   expectedRq.headers = {{"X-Double", R"(-Infinity)"}, {"X-Float", R"(-Infinity)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

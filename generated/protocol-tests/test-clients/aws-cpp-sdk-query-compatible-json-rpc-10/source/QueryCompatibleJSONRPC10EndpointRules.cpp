@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/query-compatible-json-rpc-10/QueryCompatibleJSONRPC10EndpointRules.h>
+#include <aws/query-compatible-json-rpc-10/internal/QueryCompatibleJSONRPC10EndpointRules.h>
 
 namespace Aws {
 namespace QueryCompatibleJSONRPC10 {

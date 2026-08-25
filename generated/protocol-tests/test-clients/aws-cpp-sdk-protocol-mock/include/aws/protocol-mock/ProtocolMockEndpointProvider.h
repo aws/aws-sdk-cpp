@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/protocol-mock/ProtocolMockEndpointRules.h>
 #include <aws/protocol-mock/ProtocolMock_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_PROTOCOLMOCK_API ProtocolMockEndpointProvider : public ProtocolMockDef
  public:
   using ProtocolMockResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  ProtocolMockEndpointProvider()
-      : ProtocolMockDefaultEpProviderBase(Aws::ProtocolMock::ProtocolMockEndpointRules::GetRulesBlob(),
-                                          Aws::ProtocolMock::ProtocolMockEndpointRules::RulesBlobSize) {}
+  ProtocolMockEndpointProvider();
 
   ~ProtocolMockEndpointProvider() {}
 };

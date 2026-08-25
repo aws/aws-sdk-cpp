@@ -26,7 +26,7 @@ AWS_PROTOCOL_TEST(XmlAttributes, XmlAttributes) {
   expectedRq.body = "PFhtbEF0dHJpYnV0ZXNSZXF1ZXN0IHRlc3Q9InRlc3QiPgogICAgPGZvbz5oaTwvZm9vPgo8L1htbEF0dHJpYnV0ZXNSZXF1ZXN0Pgo=";
   expectedRq.uri = "/XmlAttributes";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -46,6 +46,6 @@ AWS_PROTOCOL_TEST(XmlAttributes, XmlAttributesWithEscaping) {
       "PFhtbEF0dHJpYnV0ZXNSZXF1ZXN0IHRlc3Q9IiZsdDt0ZXN0JmFtcDttb2NrJmd0OyI+CiAgICA8Zm9vPmhpPC9mb28+CjwvWG1sQXR0cmlidXRlc1JlcXVlc3Q+Cg==";
   expectedRq.uri = "/XmlAttributes";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

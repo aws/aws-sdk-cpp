@@ -32,6 +32,6 @@ AWS_PROTOCOL_TEST(HttpPayloadWithStructure, HttpPayloadWithStructure) {
   expectedRq.uri = "/HttpPayloadWithStructure";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
   expectedRq.requireHeaders = {"Content-Length"};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

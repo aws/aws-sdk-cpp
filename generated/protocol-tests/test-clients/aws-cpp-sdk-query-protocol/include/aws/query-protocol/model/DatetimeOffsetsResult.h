@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/query-protocol/QueryProtocol_EXPORTS.h>
 #include <aws/query-protocol/model/ResponseMetadata.h>
@@ -56,11 +57,14 @@ class DatetimeOffsetsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::DateTime m_datetime{};
-  bool m_datetimeHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_datetimeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

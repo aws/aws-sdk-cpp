@@ -19,6 +19,7 @@ using namespace Aws;
 HttpResponseCodeResult::HttpResponseCodeResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 HttpResponseCodeResult& HttpResponseCodeResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

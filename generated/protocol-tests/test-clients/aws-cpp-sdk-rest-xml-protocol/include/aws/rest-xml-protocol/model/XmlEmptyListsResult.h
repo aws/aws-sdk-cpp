@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -355,53 +356,56 @@ class XmlEmptyListsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<Aws::String> m_stringList;
-  bool m_stringListHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_stringSet;
-  bool m_stringSetHasBeenSet = false;
 
   Aws::Vector<int> m_integerList;
-  bool m_integerListHasBeenSet = false;
 
   Aws::Vector<bool> m_booleanList;
-  bool m_booleanListHasBeenSet = false;
 
   Aws::Vector<Aws::Utils::DateTime> m_timestampList;
-  bool m_timestampListHasBeenSet = false;
 
   Aws::Vector<FooEnum> m_enumList;
-  bool m_enumListHasBeenSet = false;
 
   Aws::Vector<int> m_intEnumList;
-  bool m_intEnumListHasBeenSet = false;
 
   Aws::Vector<Aws::Vector<Aws::String>> m_nestedStringList;
-  bool m_nestedStringListHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_renamedListMembers;
-  bool m_renamedListMembersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_flattenedList;
-  bool m_flattenedListHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_flattenedList2;
-  bool m_flattenedList2HasBeenSet = false;
 
   Aws::Vector<Aws::String> m_flattenedListWithMemberNamespace;
-  bool m_flattenedListWithMemberNamespaceHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_flattenedListWithNamespace;
-  bool m_flattenedListWithNamespaceHasBeenSet = false;
 
   Aws::Vector<StructureListMember> m_structureList;
-  bool m_structureListHasBeenSet = false;
 
   Aws::Vector<StructureListMember> m_flattenedStructureList;
-  bool m_flattenedStructureListHasBeenSet = false;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_stringListHasBeenSet = false;
+  bool m_stringSetHasBeenSet = false;
+  bool m_integerListHasBeenSet = false;
+  bool m_booleanListHasBeenSet = false;
+  bool m_timestampListHasBeenSet = false;
+  bool m_enumListHasBeenSet = false;
+  bool m_intEnumListHasBeenSet = false;
+  bool m_nestedStringListHasBeenSet = false;
+  bool m_renamedListMembersHasBeenSet = false;
+  bool m_flattenedListHasBeenSet = false;
+  bool m_flattenedList2HasBeenSet = false;
+  bool m_flattenedListWithMemberNamespaceHasBeenSet = false;
+  bool m_flattenedListWithNamespaceHasBeenSet = false;
+  bool m_structureListHasBeenSet = false;
+  bool m_flattenedStructureListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -50,6 +50,6 @@ AWS_PROTOCOL_TEST(RecursiveShapes, RecursiveShapes) {
       "CiAgICAgICAgICAgIDwvcmVjdXJzaXZlTWVtYmVyPgogICAgICAgIDwvbmVzdGVkPgogICAgPC9uZXN0ZWQ+CjwvUmVjdXJzaXZlU2hhcGVzUmVxdWVzdD4K";
   expectedRq.uri = "/RecursiveShapes";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

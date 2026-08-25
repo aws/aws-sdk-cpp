@@ -17,9 +17,9 @@ AWS_PROTOCOL_TEST(QueryTimestamps, QueryTimestampsInput) {
   SetMockResponse();
 
   QueryTimestampsRequest request;
-  request.SetNormalFormat(Aws::Utils::DateTime(static_cast<int64_t>(1422172800)));
-  request.SetEpochMember(Aws::Utils::DateTime(static_cast<int64_t>(1422172800)));
-  request.SetEpochTarget(Aws::Utils::DateTime(static_cast<int64_t>(1422172800)));
+  request.SetNormalFormat(Aws::Utils::DateTime(static_cast<double>(1422172800)));
+  request.SetEpochMember(Aws::Utils::DateTime(static_cast<double>(1422172800)));
+  request.SetEpochTarget(Aws::Utils::DateTime(static_cast<double>(1422172800)));
 
   auto outcome = client.QueryTimestamps(request);
   ExpectedRequest expectedRq;

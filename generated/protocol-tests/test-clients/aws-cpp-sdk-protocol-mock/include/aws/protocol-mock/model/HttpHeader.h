@@ -59,9 +59,9 @@ class HttpHeader {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_val;
+  bool m_keyHasBeenSet = false;
   bool m_valHasBeenSet = false;
 };
 

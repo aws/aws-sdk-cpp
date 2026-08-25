@@ -4,9 +4,15 @@
  */
 
 #include <aws/query-compatible-json-rpc-10/QueryCompatibleJSONRPC10EndpointProvider.h>
+#include <aws/query-compatible-json-rpc-10/internal/QueryCompatibleJSONRPC10EndpointRules.h>
 
 namespace Aws {
 namespace QueryCompatibleJSONRPC10 {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+QueryCompatibleJSONRPC10EndpointProvider::QueryCompatibleJSONRPC10EndpointProvider()
+    : QueryCompatibleJSONRPC10DefaultEpProviderBase(Aws::QueryCompatibleJSONRPC10::QueryCompatibleJSONRPC10EndpointRules::GetRulesBlob(),
+                                                    Aws::QueryCompatibleJSONRPC10::QueryCompatibleJSONRPC10EndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace QueryCompatibleJSONRPC10
 }  // namespace Aws

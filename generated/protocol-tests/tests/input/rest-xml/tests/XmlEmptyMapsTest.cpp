@@ -24,6 +24,6 @@ AWS_PROTOCOL_TEST(XmlEmptyMaps, XmlEmptyMaps) {
   expectedRq.body = "PFhtbEVtcHR5TWFwc1JlcXVlc3Q+CiAgICA8bXlNYXA+PC9teU1hcD4KPC9YbWxFbXB0eU1hcHNSZXF1ZXN0Pgo=";
   expectedRq.uri = "/XmlEmptyMaps";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

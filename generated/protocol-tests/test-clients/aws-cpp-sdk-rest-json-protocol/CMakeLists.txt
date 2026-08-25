@@ -8,6 +8,10 @@ file(GLOB AWS_REST-JSON-PROTOCOL_MODEL_HEADERS
     "include/aws/rest-json-protocol/model/*.h"
 )
 
+file(GLOB AWS_REST-JSON-PROTOCOL_INTERNAL_HEADERS
+    "include/aws/rest-json-protocol/internal/*.h"
+)
+
 file(GLOB AWS_REST-JSON-PROTOCOL_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_REST-JSON-PROTOCOL_MODEL_SOURCE
 
 file(GLOB REST-JSON-PROTOCOL_UNIFIED_HEADERS
     ${AWS_REST-JSON-PROTOCOL_HEADERS}
+    ${AWS_REST-JSON-PROTOCOL_INTERNAL_HEADERS}
     ${AWS_REST-JSON-PROTOCOL_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\rest-json-protocol" FILES ${AWS_REST-JSON-PROTOCOL_HEADERS})
+        source_group("Header Files\\aws\\rest-json-protocol\\internal" FILES ${AWS_REST-JSON-PROTOCOL_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\rest-json-protocol\\model" FILES ${AWS_REST-JSON-PROTOCOL_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_REST-JSON-PROTOCOL_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_REST-JSON-PROTOCOL_MODEL_SOURCE})

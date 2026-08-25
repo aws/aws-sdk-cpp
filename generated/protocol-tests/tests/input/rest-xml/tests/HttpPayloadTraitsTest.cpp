@@ -29,7 +29,7 @@ AWS_PROTOCOL_TEST(HttpPayloadTraits, HttpPayloadTraitsWithBlob) {
   expectedRq.uri = "/HttpPayloadTraits";
   expectedRq.headers = {{"X-Foo", R"(Foo)"}};
   expectedRq.requireHeaders = {"Content-Length"};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -46,6 +46,6 @@ AWS_PROTOCOL_TEST(HttpPayloadTraits, HttpPayloadTraitsWithNoBlobBody) {
   expectedRq.method = "POST";
   expectedRq.uri = "/HttpPayloadTraits";
   expectedRq.headers = {{"X-Foo", R"(Foo)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

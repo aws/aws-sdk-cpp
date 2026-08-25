@@ -83,12 +83,12 @@ class SetNextResponseRequest : public ProtocolMockRequest {
   ///@}
  private:
   int m_statusCode{0};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_requestBody;
-  bool m_requestBodyHasBeenSet = false;
 
   Aws::Vector<HttpHeader> m_headerValues;
+  bool m_statusCodeHasBeenSet = false;
+  bool m_requestBodyHasBeenSet = false;
   bool m_headerValuesHasBeenSet = false;
 };
 

@@ -24,6 +24,6 @@ AWS_PROTOCOL_TEST(QueryPrecedence, RestXmlQueryPrecedence) {
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.uri = "/Precedence?bar=named&qux=alsoFromMap";
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

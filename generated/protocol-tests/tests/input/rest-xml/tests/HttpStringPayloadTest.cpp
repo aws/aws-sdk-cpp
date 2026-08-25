@@ -25,6 +25,6 @@ AWS_PROTOCOL_TEST(HttpStringPayload, RestXmlStringPayloadRequest) {
   expectedRq.body = "cmF3c3RyaW5n";
   expectedRq.uri = "/StringPayload";
   expectedRq.headers = {{"Content-Type", R"(text/plain)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

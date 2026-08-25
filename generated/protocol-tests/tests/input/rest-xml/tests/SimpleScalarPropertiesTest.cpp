@@ -39,7 +39,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, SimpleScalarProperties) {
       "CiAgICA8RG91YmxlRHJpYmJsZT42LjU8L0RvdWJsZURyaWJibGU+CjwvU2ltcGxlU2NhbGFyUHJvcGVydGllc1JlcXVlc3Q+Cg==";
   expectedRq.uri = "/SimpleScalarProperties";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}, {"X-Foo", R"(Foo)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -60,7 +60,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, SimpleScalarPropertiesWithEscapedChara
       "aWVzUmVxdWVzdD4K";
   expectedRq.uri = "/SimpleScalarProperties";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}, {"X-Foo", R"(Foo)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -81,7 +81,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, SimpleScalarPropertiesWithWhiteSpace) 
       "CjwvU2ltcGxlU2NhbGFyUHJvcGVydGllc1JlcXVlc3Q+Cg==";
   expectedRq.uri = "/SimpleScalarProperties";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}, {"X-Foo", R"(Foo)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -102,7 +102,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, SimpleScalarPropertiesPureWhiteSpace) 
       "Cg==";
   expectedRq.uri = "/SimpleScalarProperties";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}, {"X-Foo", R"(Foo)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -123,7 +123,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RestXmlSupportsNaNFloatInputs) {
       "TmFOPC9Eb3VibGVEcmliYmxlPgo8L1NpbXBsZVNjYWxhclByb3BlcnRpZXNSZXF1ZXN0Pgo=";
   expectedRq.uri = "/SimpleScalarProperties";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -144,7 +144,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RestXmlSupportsInfinityFloatInputs) {
       "CiAgICA8RG91YmxlRHJpYmJsZT5JbmZpbml0eTwvRG91YmxlRHJpYmJsZT4KPC9TaW1wbGVTY2FsYXJQcm9wZXJ0aWVzUmVxdWVzdD4K";
   expectedRq.uri = "/SimpleScalarProperties";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -165,6 +165,6 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RestXmlSupportsNegativeInfinityFloatIn
       "LUluZmluaXR5PC9Eb3VibGVEcmliYmxlPgo8L1NpbXBsZVNjYWxhclByb3BlcnRpZXNSZXF1ZXN0Pgo=";
   expectedRq.uri = "/SimpleScalarProperties";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

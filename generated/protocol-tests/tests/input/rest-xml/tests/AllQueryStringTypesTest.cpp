@@ -31,9 +31,9 @@ AWS_PROTOCOL_TEST(AllQueryStringTypes, AllQueryStringTypes) {
   request.SetQueryDoubleList({1.1, 2.1, 3.1});
   request.SetQueryBoolean(true);
   request.SetQueryBooleanList({true, false, true});
-  request.SetQueryTimestamp(Aws::Utils::DateTime(static_cast<int64_t>(1)));
-  request.SetQueryTimestampList({Aws::Utils::DateTime(static_cast<int64_t>(1)), Aws::Utils::DateTime(static_cast<int64_t>(2)),
-                                 Aws::Utils::DateTime(static_cast<int64_t>(3))});
+  request.SetQueryTimestamp(Aws::Utils::DateTime(static_cast<double>(1)));
+  request.SetQueryTimestampList({Aws::Utils::DateTime(static_cast<double>(1)), Aws::Utils::DateTime(static_cast<double>(2)),
+                                 Aws::Utils::DateTime(static_cast<double>(3))});
   request.SetQueryEnum(FooEnumMapper::GetFooEnumForName(R"e(Foo)e"));
   request.SetQueryEnumList({FooEnumMapper::GetFooEnumForName(R"e(Foo)e"), FooEnumMapper::GetFooEnumForName(R"e(Baz)e"),
                             FooEnumMapper::GetFooEnumForName(R"e(Bar)e")});
@@ -49,7 +49,7 @@ AWS_PROTOCOL_TEST(AllQueryStringTypes, AllQueryStringTypes) {
       "DoubleList=1.1&DoubleList=2.1&DoubleList=3.1&Boolean=true&BooleanList=true&BooleanList=false&BooleanList=true&Timestamp=1970-01-"
       "01T00%3A00%3A01Z&TimestampList=1970-01-01T00%3A00%3A01Z&TimestampList=1970-01-01T00%3A00%3A02Z&TimestampList=1970-01-01T00%3A00%"
       "3A03Z&Enum=Foo&EnumList=Foo&EnumList=Baz&EnumList=Bar&IntegerEnum=1&IntegerEnumList=1&IntegerEnumList=2";
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -65,7 +65,7 @@ AWS_PROTOCOL_TEST(AllQueryStringTypes, RestXmlQueryStringMap) {
   ExpectedRequest expectedRq;
   expectedRq.method = "GET";
   expectedRq.uri = "/AllQueryStringTypesInput?QueryParamsStringKeyA=Foo&QueryParamsStringKeyB=Bar";
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -81,7 +81,7 @@ AWS_PROTOCOL_TEST(AllQueryStringTypes, RestXmlQueryStringEscaping) {
   ExpectedRequest expectedRq;
   expectedRq.method = "GET";
   expectedRq.uri = "/AllQueryStringTypesInput?String=%20%25%3A%2F%3F%23%5B%5D%40%21%24%26%27%28%29%2A%2B%2C%3B%3D%F0%9F%98%B9";
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -98,7 +98,7 @@ AWS_PROTOCOL_TEST(AllQueryStringTypes, RestXmlSupportsNaNFloatQueryValues) {
   ExpectedRequest expectedRq;
   expectedRq.method = "GET";
   expectedRq.uri = "/AllQueryStringTypesInput?Float=NaN&Double=NaN";
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -115,7 +115,7 @@ AWS_PROTOCOL_TEST(AllQueryStringTypes, RestXmlSupportsInfinityFloatQueryValues) 
   ExpectedRequest expectedRq;
   expectedRq.method = "GET";
   expectedRq.uri = "/AllQueryStringTypesInput?Float=Infinity&Double=Infinity";
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -132,7 +132,7 @@ AWS_PROTOCOL_TEST(AllQueryStringTypes, RestXmlSupportsNegativeInfinityFloatQuery
   ExpectedRequest expectedRq;
   expectedRq.method = "GET";
   expectedRq.uri = "/AllQueryStringTypesInput?Float=-Infinity&Double=-Infinity";
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -149,6 +149,6 @@ AWS_PROTOCOL_TEST(AllQueryStringTypes, RestXmlZeroAndFalseQueryValues) {
   ExpectedRequest expectedRq;
   expectedRq.method = "GET";
   expectedRq.uri = "/AllQueryStringTypesInput?Integer=0&Boolean=false";
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
