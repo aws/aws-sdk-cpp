@@ -97,13 +97,13 @@ To build for Android, add `-DTARGET_ARCH=ANDROID` to your CMake command line. Cu
 Building for Android on Windows requires some additional setup. In particular, you will need to run CMake from a Visual Studio developer command prompt (2015 or higher). Additionally, you will need 'git' and 'patch' in your path. If you have Git installed on a Windows system, then the patch is likely found in a sibling directory (.../Git/usr/bin/). Once you've verified these requirements, your CMake command line will change slightly to use nmake:
 
    ```sh
-   cmake -G "NMake Makefiles" `-DTARGET_ARCH=ANDROID` <other options> ..
+   cmake -G "NMake Makefiles" -DTARGET_ARCH=ANDROID <other options> ..
    ```
 
 Nmake builds targets in a serial fashion. To make things quicker, we recommend installing JOM as an alternative to nmake and then changing the CMake invocation to:
 
    ```sh
-   cmake -G "NMake Makefiles JOM" `-DTARGET_ARCH=ANDROID` <other options> ..
+   cmake -G "NMake Makefiles JOM" -DTARGET_ARCH=ANDROID <other options> ..
    ```
 
 ### Building aws-sdk-cpp - Using vcpkg
