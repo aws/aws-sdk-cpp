@@ -71,9 +71,15 @@ def catch_all(path):
     now = datetime.utcnow()
     now = str(now.strftime("%Y-%m-%d %H:%M:%S.%f"))[:-3] + 'Z'
 
+    # base_url excludes the query string; append the raw (percent-encoded) query so
+    # protocol tests can validate query-string serialization.
+    uri = f"/{request.base_url[len(request.host_url):]}"
+    if request.query_string:
+        uri += "?" + request.query_string.decode("utf-8")
+
     msg = {"timestamp": now,
            "method": str(request.method),
-           "uri": f"/{request.base_url[len(request.host_url):]}",
+           "uri": uri,
            "host": str(request.host),
            "body": base64.b64encode(data).decode("utf-8"),
            "headers": headers_flat}
