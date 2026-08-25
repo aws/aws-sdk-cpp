@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/protocol-mock/ProtocolMockEndpointRules.h>
+#include <aws/protocol-mock/internal/ProtocolMockEndpointRules.h>
 
 namespace Aws {
 namespace ProtocolMock {

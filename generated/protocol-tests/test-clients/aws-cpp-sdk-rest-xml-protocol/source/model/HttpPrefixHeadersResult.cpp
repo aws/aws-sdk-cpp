@@ -19,6 +19,7 @@ using namespace Aws;
 HttpPrefixHeadersResult::HttpPrefixHeadersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 HttpPrefixHeadersResult& HttpPrefixHeadersResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

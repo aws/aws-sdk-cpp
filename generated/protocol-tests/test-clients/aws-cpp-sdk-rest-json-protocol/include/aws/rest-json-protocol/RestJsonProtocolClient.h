@@ -1918,6 +1918,12 @@ class AWS_RESTJSONPROTOCOL_API RestJsonProtocolClient : public Aws::Client::AWSJ
   friend class Aws::Client::ClientWithAsyncTemplateMethods<RestJsonProtocolClient>;
   void init(const RestJsonProtocolClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, RestJsonProtocolError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   RestJsonProtocolClientConfiguration m_clientConfiguration;
   std::shared_ptr<RestJsonProtocolEndpointProviderBase> m_endpointProvider;
 };

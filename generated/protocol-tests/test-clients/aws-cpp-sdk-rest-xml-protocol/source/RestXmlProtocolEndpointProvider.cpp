@@ -4,9 +4,15 @@
  */
 
 #include <aws/rest-xml-protocol/RestXmlProtocolEndpointProvider.h>
+#include <aws/rest-xml-protocol/internal/RestXmlProtocolEndpointRules.h>
 
 namespace Aws {
 namespace RestXmlProtocol {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+RestXmlProtocolEndpointProvider::RestXmlProtocolEndpointProvider()
+    : RestXmlProtocolDefaultEpProviderBase(Aws::RestXmlProtocol::RestXmlProtocolEndpointRules::GetRulesBlob(),
+                                           Aws::RestXmlProtocol::RestXmlProtocolEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace RestXmlProtocol
 }  // namespace Aws

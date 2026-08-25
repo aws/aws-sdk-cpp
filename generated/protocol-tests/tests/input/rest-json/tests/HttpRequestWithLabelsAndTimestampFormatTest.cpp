@@ -17,13 +17,13 @@ AWS_PROTOCOL_TEST(HttpRequestWithLabelsAndTimestampFormat, RestJsonHttpRequestWi
   SetMockResponse();
 
   HttpRequestWithLabelsAndTimestampFormatRequest request;
-  request.SetMemberEpochSeconds(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)));
-  request.SetMemberHttpDate(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)));
-  request.SetMemberDateTime(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)));
-  request.SetDefaultFormat(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)));
-  request.SetTargetEpochSeconds(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)));
-  request.SetTargetHttpDate(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)));
-  request.SetTargetDateTime(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)));
+  request.SetMemberEpochSeconds(Aws::Utils::DateTime(static_cast<double>(1576540098)));
+  request.SetMemberHttpDate(Aws::Utils::DateTime(static_cast<double>(1576540098)));
+  request.SetMemberDateTime(Aws::Utils::DateTime(static_cast<double>(1576540098)));
+  request.SetDefaultFormat(Aws::Utils::DateTime(static_cast<double>(1576540098)));
+  request.SetTargetEpochSeconds(Aws::Utils::DateTime(static_cast<double>(1576540098)));
+  request.SetTargetHttpDate(Aws::Utils::DateTime(static_cast<double>(1576540098)));
+  request.SetTargetDateTime(Aws::Utils::DateTime(static_cast<double>(1576540098)));
 
   auto outcome = client.HttpRequestWithLabelsAndTimestampFormat(request);
   ExpectedRequest expectedRq;

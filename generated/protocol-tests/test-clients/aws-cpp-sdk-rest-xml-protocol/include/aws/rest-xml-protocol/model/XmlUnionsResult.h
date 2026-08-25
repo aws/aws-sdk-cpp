@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rest-xml-protocol/RestXmlProtocol_EXPORTS.h>
 #include <aws/rest-xml-protocol/model/XmlUnionShape.h>
@@ -56,11 +57,14 @@ class XmlUnionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   XmlUnionShape m_unionValue;
-  bool m_unionValueHasBeenSet = false;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_unionValueHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

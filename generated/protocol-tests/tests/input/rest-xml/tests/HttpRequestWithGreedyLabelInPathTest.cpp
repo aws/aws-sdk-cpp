@@ -24,6 +24,6 @@ AWS_PROTOCOL_TEST(HttpRequestWithGreedyLabelInPath, HttpRequestWithGreedyLabelIn
   ExpectedRequest expectedRq;
   expectedRq.method = "GET";
   expectedRq.uri = "/HttpRequestWithGreedyLabelInPath/foo/hello/baz/there/guy";
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

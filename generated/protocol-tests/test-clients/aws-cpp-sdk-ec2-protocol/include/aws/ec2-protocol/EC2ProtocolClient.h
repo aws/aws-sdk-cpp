@@ -748,12 +748,16 @@ class AWS_EC2PROTOCOL_API EC2ProtocolClient : public Aws::Client::AWSXMLClient,
     return SubmitAsync(&EC2ProtocolClient::XmlTimestamps, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<EC2ProtocolEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<EC2ProtocolEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<EC2ProtocolClient>;
   void init(const EC2ProtocolClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, EC2ProtocolError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   EC2ProtocolClientConfiguration m_clientConfiguration;
   std::shared_ptr<EC2ProtocolEndpointProviderBase> m_endpointProvider;

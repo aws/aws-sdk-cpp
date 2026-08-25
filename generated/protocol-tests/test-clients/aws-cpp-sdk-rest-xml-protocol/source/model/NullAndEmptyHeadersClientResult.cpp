@@ -19,6 +19,7 @@ using namespace Aws;
 NullAndEmptyHeadersClientResult::NullAndEmptyHeadersClientResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 NullAndEmptyHeadersClientResult& NullAndEmptyHeadersClientResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

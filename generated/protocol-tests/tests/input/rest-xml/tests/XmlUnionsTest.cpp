@@ -46,7 +46,7 @@ AWS_PROTOCOL_TEST(XmlUnions, XmlUnionsWithStructMember) {
       "CiAgICAgICA8L3N0cnVjdFZhbHVlPgogICAgPC91bmlvblZhbHVlPgo8L1htbFVuaW9uc1JlcXVlc3Q+Cg==";
   expectedRq.uri = "/XmlUnions";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -70,7 +70,7 @@ AWS_PROTOCOL_TEST(XmlUnions, XmlUnionsWithStringMember) {
       "CjwvWG1sVW5pb25zUmVxdWVzdD4K";
   expectedRq.uri = "/XmlUnions";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -94,7 +94,7 @@ AWS_PROTOCOL_TEST(XmlUnions, XmlUnionsWithBooleanMember) {
       "CiAgIDx1bmlvblZhbHVlPgogICAgICA8Ym9vbGVhblZhbHVlPnRydWU8L2Jvb2xlYW5WYWx1ZT4KICAgPC91bmlvblZhbHVlPgo8L1htbFVuaW9uc1JlcXVlc3Q+Cg==";
   expectedRq.uri = "/XmlUnions";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -122,6 +122,6 @@ AWS_PROTOCOL_TEST(XmlUnions, XmlUnionsWithUnionMember) {
       "CiAgICAgIDwvdW5pb25WYWx1ZT4KICAgPC91bmlvblZhbHVlPgo8L1htbFVuaW9uc1JlcXVlc3Q+Cg==";
   expectedRq.uri = "/XmlUnions";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

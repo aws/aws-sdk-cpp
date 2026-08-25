@@ -20,6 +20,7 @@ using namespace Aws;
 SetNextResponseResult::SetNextResponseResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SetNextResponseResult& SetNextResponseResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("status")) {
     m_status = jsonValue.GetInteger("status");

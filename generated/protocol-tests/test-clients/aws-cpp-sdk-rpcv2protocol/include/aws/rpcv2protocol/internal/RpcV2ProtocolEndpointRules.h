@@ -10,7 +10,7 @@
 
 namespace Aws {
 namespace RpcV2Protocol {
-class RpcV2ProtocolEndpointRules {
+class AWS_RPCV2PROTOCOL_LOCAL RpcV2ProtocolEndpointRules {
  public:
   static const size_t RulesBlobStrLen;
   static const size_t RulesBlobSize;

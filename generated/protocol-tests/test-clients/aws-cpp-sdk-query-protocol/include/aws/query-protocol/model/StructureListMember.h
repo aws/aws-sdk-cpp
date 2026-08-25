@@ -61,9 +61,9 @@ class StructureListMember {
   ///@}
  private:
   Aws::String m_a;
-  bool m_aHasBeenSet = false;
 
   Aws::String m_b;
+  bool m_aHasBeenSet = false;
   bool m_bHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class NestedXmlMapsRequest : public RestXmlProtocolRequest {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::Map<Aws::String, FooEnum>> m_nestedMap;
-  bool m_nestedMapHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Map<Aws::String, FooEnum>> m_flatNestedMap;
+  bool m_nestedMapHasBeenSet = false;
   bool m_flatNestedMapHasBeenSet = false;
 };
 

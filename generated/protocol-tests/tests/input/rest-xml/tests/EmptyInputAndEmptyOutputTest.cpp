@@ -22,6 +22,6 @@ AWS_PROTOCOL_TEST(EmptyInputAndEmptyOutput, EmptyInputAndEmptyOutput) {
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.uri = "/EmptyInputAndEmptyOutput";
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

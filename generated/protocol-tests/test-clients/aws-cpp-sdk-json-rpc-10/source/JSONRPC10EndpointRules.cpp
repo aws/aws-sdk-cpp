@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/json-rpc-10/JSONRPC10EndpointRules.h>
+#include <aws/json-rpc-10/internal/JSONRPC10EndpointRules.h>
 
 namespace Aws {
 namespace JSONRPC10 {

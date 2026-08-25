@@ -205,12 +205,18 @@ class AWS_PROTOCOLMOCK_API ProtocolMockClient : public Aws::Client::AWSJsonClien
     return SubmitAsync(&ProtocolMockClient::Terminate, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ProtocolMockEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ProtocolMockEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ProtocolMockClient>;
   void init(const ProtocolMockClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ProtocolMockError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   ProtocolMockClientConfiguration m_clientConfiguration;
   std::shared_ptr<ProtocolMockEndpointProviderBase> m_endpointProvider;

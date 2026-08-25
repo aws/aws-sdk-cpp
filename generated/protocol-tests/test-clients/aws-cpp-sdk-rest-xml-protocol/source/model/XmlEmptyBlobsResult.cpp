@@ -20,6 +20,7 @@ using namespace Aws;
 XmlEmptyBlobsResult::XmlEmptyBlobsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 XmlEmptyBlobsResult& XmlEmptyBlobsResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

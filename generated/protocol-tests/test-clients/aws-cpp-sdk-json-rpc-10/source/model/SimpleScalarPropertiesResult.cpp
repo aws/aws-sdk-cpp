@@ -20,6 +20,7 @@ using namespace Aws;
 SimpleScalarPropertiesResult::SimpleScalarPropertiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SimpleScalarPropertiesResult& SimpleScalarPropertiesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("floatValue")) {
     m_floatValue = jsonValue.GetDouble("floatValue");

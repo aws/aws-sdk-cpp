@@ -18,6 +18,7 @@ using namespace Aws;
 HttpStringPayloadResult::HttpStringPayloadResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) { *this = std::move(result); }
 
 HttpStringPayloadResult& HttpStringPayloadResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   m_payload = result.TakeOwnershipOfPayload();
   m_payloadHasBeenSet = true;
 

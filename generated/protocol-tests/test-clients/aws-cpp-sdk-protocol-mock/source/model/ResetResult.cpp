@@ -20,6 +20,7 @@ using namespace Aws;
 ResetResult::ResetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ResetResult& ResetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("status")) {
     m_status = jsonValue.GetInteger("status");

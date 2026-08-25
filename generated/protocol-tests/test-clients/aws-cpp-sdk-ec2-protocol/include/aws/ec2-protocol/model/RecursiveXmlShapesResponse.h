@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/ec2-protocol/EC2Protocol_EXPORTS.h>
 #include <aws/ec2-protocol/model/RecursiveXmlShapesOutputNested1.h>
 #include <aws/ec2-protocol/model/ResponseMetadata.h>
@@ -56,11 +57,14 @@ class RecursiveXmlShapesResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   RecursiveXmlShapesOutputNested1 m_nested;
-  bool m_nestedHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_nestedHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

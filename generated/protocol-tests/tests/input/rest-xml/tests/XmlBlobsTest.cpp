@@ -25,6 +25,6 @@ AWS_PROTOCOL_TEST(XmlBlobs, XmlBlobs) {
   expectedRq.body = "PFhtbEJsb2JzUmVxdWVzdD4KICAgIDxkYXRhPmRtRnNkV1U9PC9kYXRhPgo8L1htbEJsb2JzUmVxdWVzdD4K";
   expectedRq.uri = "/XmlBlobs";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

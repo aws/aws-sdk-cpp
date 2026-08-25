@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/query-compatible-json-rpc-10/QueryCompatibleJSONRPC10EndpointRules.h>
 #include <aws/query-compatible-json-rpc-10/QueryCompatibleJSONRPC10_EXPORTS.h>
 
 namespace Aws {
@@ -44,10 +43,7 @@ class AWS_QUERYCOMPATIBLEJSONRPC10_API QueryCompatibleJSONRPC10EndpointProvider 
  public:
   using QueryCompatibleJSONRPC10ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  QueryCompatibleJSONRPC10EndpointProvider()
-      : QueryCompatibleJSONRPC10DefaultEpProviderBase(Aws::QueryCompatibleJSONRPC10::QueryCompatibleJSONRPC10EndpointRules::GetRulesBlob(),
-                                                      Aws::QueryCompatibleJSONRPC10::QueryCompatibleJSONRPC10EndpointRules::RulesBlobSize) {
-  }
+  QueryCompatibleJSONRPC10EndpointProvider();
 
   ~QueryCompatibleJSONRPC10EndpointProvider() {}
 };

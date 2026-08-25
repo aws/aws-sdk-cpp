@@ -23,6 +23,6 @@ AWS_PROTOCOL_TEST(ConstantQueryString, ConstantQueryString) {
   ExpectedRequest expectedRq;
   expectedRq.method = "GET";
   expectedRq.uri = "/ConstantQueryString/hi?foo=bar&hello";
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

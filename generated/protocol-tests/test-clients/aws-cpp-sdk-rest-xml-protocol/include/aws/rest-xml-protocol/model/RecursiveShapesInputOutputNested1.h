@@ -61,9 +61,9 @@ class RecursiveShapesInputOutputNested1 {
   ///@}
  private:
   Aws::String m_foo;
-  bool m_fooHasBeenSet = false;
 
   std::shared_ptr<RecursiveShapesInputOutputNested2> m_nested;
+  bool m_fooHasBeenSet = false;
   bool m_nestedHasBeenSet = false;
 };
 

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/query-protocol/QueryProtocol_EXPORTS.h>
 #include <aws/query-protocol/model/ResponseMetadata.h>
 #include <aws/query-protocol/model/XmlNamespaceNested.h>
@@ -56,11 +57,14 @@ class XmlNamespacesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   XmlNamespaceNested m_nested;
-  bool m_nestedHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_nestedHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

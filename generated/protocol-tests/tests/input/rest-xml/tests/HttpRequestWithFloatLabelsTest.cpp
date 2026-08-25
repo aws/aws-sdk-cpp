@@ -24,7 +24,7 @@ AWS_PROTOCOL_TEST(HttpRequestWithFloatLabels, RestXmlSupportsNaNFloatLabels) {
   ExpectedRequest expectedRq;
   expectedRq.method = "GET";
   expectedRq.uri = "/FloatHttpLabels/NaN/NaN";
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -41,7 +41,7 @@ AWS_PROTOCOL_TEST(HttpRequestWithFloatLabels, RestXmlSupportsInfinityFloatLabels
   ExpectedRequest expectedRq;
   expectedRq.method = "GET";
   expectedRq.uri = "/FloatHttpLabels/Infinity/Infinity";
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -58,6 +58,6 @@ AWS_PROTOCOL_TEST(HttpRequestWithFloatLabels, RestXmlSupportsNegativeInfinityFlo
   ExpectedRequest expectedRq;
   expectedRq.method = "GET";
   expectedRq.uri = "/FloatHttpLabels/-Infinity/-Infinity";
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

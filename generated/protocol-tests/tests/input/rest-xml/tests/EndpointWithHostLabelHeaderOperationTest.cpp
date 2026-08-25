@@ -25,6 +25,6 @@ AWS_PROTOCOL_TEST(EndpointWithHostLabelHeaderOperation, RestXmlEndpointTraitWith
   expectedRq.uri = "/EndpointWithHostLabelHeaderOperation";
   expectedRq.host = "bar.example.com";
   expectedRq.headers = {{"X-Amz-Account-Id", R"(bar)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

@@ -66,9 +66,9 @@ class XmlNamespaceNested {
   ///@}
  private:
   Aws::String m_foo;
-  bool m_fooHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_fooHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

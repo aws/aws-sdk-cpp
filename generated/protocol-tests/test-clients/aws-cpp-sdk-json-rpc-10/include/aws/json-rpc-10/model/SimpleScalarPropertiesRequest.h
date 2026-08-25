@@ -56,9 +56,9 @@ class SimpleScalarPropertiesRequest : public JSONRPC10Request {
   ///@}
  private:
   double m_floatValue{0.0};
-  bool m_floatValueHasBeenSet = false;
 
   double m_doubleValue{0.0};
+  bool m_floatValueHasBeenSet = false;
   bool m_doubleValueHasBeenSet = false;
 };
 

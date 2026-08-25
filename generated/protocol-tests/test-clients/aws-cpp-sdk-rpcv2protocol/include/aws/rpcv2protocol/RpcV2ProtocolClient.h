@@ -387,6 +387,10 @@ class AWS_RPCV2PROTOCOL_API RpcV2ProtocolClient : public Aws::Client::AWSRpcV2Cb
   friend class Aws::Client::ClientWithAsyncTemplateMethods<RpcV2ProtocolClient>;
   void init(const RpcV2ProtocolClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, RpcV2ProtocolError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   RpcV2ProtocolClientConfiguration m_clientConfiguration;
   std::shared_ptr<RpcV2ProtocolEndpointProviderBase> m_endpointProvider;
 };

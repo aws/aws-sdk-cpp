@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/query-protocol/QueryProtocolEndpointRules.h>
+#include <aws/query-protocol/internal/QueryProtocolEndpointRules.h>
 
 namespace Aws {
 namespace QueryProtocol {

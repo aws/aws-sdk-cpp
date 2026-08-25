@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rest-xml-protocol/RestXmlProtocol_EXPORTS.h>
 
@@ -55,11 +56,14 @@ class XmlEmptyStringsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_emptyString;
-  bool m_emptyStringHasBeenSet = false;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_emptyStringHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

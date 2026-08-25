@@ -21,8 +21,7 @@ AWS_PROTOCOL_TEST(XmlLists, XmlLists) {
   request.SetStringSet({R"(foo)", R"(bar)"});
   request.SetIntegerList({1, 2});
   request.SetBooleanList({true, false});
-  request.SetTimestampList(
-      {Aws::Utils::DateTime(static_cast<int64_t>(1398796238)), Aws::Utils::DateTime(static_cast<int64_t>(1398796238))});
+  request.SetTimestampList({Aws::Utils::DateTime(static_cast<double>(1398796238)), Aws::Utils::DateTime(static_cast<double>(1398796238))});
   request.SetEnumList({FooEnumMapper::GetFooEnumForName(R"e(Foo)e"), FooEnumMapper::GetFooEnumForName(R"e(0)e")});
   request.SetIntEnumList({1, 2});
   {
@@ -93,6 +92,6 @@ AWS_PROTOCOL_TEST(XmlLists, XmlLists) {
       "CjwvWG1sTGlzdHNSZXF1ZXN0Pgo=";
   expectedRq.uri = "/XmlLists";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

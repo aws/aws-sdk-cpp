@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/rest-json-protocol/RestJsonProtocolEndpointRules.h>
+#include <aws/rest-json-protocol/internal/RestJsonProtocolEndpointRules.h>
 
 namespace Aws {
 namespace RestJsonProtocol {

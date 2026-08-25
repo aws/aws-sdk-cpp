@@ -30,6 +30,6 @@ AWS_PROTOCOL_TEST(HttpPayloadWithMemberXmlName, HttpPayloadWithMemberXmlName) {
   expectedRq.uri = "/HttpPayloadWithMemberXmlName";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
   expectedRq.requireHeaders = {"Content-Length"};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

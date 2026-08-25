@@ -372,12 +372,16 @@ class AWS_JSONRPC10_API JSONRPC10Client : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&JSONRPC10Client::SimpleScalarProperties, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<JSONRPC10EndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<JSONRPC10EndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<JSONRPC10Client>;
   void init(const JSONRPC10ClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, JSONRPC10Error> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   JSONRPC10ClientConfiguration m_clientConfiguration;
   std::shared_ptr<JSONRPC10EndpointProviderBase> m_endpointProvider;

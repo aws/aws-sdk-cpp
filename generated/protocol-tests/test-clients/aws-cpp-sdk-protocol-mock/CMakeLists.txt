@@ -8,6 +8,10 @@ file(GLOB AWS_PROTOCOL-MOCK_MODEL_HEADERS
     "include/aws/protocol-mock/model/*.h"
 )
 
+file(GLOB AWS_PROTOCOL-MOCK_INTERNAL_HEADERS
+    "include/aws/protocol-mock/internal/*.h"
+)
+
 file(GLOB AWS_PROTOCOL-MOCK_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_PROTOCOL-MOCK_MODEL_SOURCE
 
 file(GLOB PROTOCOL-MOCK_UNIFIED_HEADERS
     ${AWS_PROTOCOL-MOCK_HEADERS}
+    ${AWS_PROTOCOL-MOCK_INTERNAL_HEADERS}
     ${AWS_PROTOCOL-MOCK_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\protocol-mock" FILES ${AWS_PROTOCOL-MOCK_HEADERS})
+        source_group("Header Files\\aws\\protocol-mock\\internal" FILES ${AWS_PROTOCOL-MOCK_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\protocol-mock\\model" FILES ${AWS_PROTOCOL-MOCK_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_PROTOCOL-MOCK_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_PROTOCOL-MOCK_MODEL_SOURCE})

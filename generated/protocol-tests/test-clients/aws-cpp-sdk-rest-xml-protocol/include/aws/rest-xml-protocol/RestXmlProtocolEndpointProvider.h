@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/rest-xml-protocol/RestXmlProtocolEndpointRules.h>
 #include <aws/rest-xml-protocol/RestXmlProtocol_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_RESTXMLPROTOCOL_API RestXmlProtocolEndpointProvider : public RestXmlPr
  public:
   using RestXmlProtocolResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  RestXmlProtocolEndpointProvider()
-      : RestXmlProtocolDefaultEpProviderBase(Aws::RestXmlProtocol::RestXmlProtocolEndpointRules::GetRulesBlob(),
-                                             Aws::RestXmlProtocol::RestXmlProtocolEndpointRules::RulesBlobSize) {}
+  RestXmlProtocolEndpointProvider();
 
   ~RestXmlProtocolEndpointProvider() {}
 };

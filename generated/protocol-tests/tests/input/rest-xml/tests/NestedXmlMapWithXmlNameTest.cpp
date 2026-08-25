@@ -40,6 +40,6 @@ AWS_PROTOCOL_TEST(NestedXmlMapWithXmlName, NestedXmlMapWithXmlNameSerializes) {
       "ICA8L25lc3RlZFhtbE1hcFdpdGhYbWxOYW1lTWFwPgogICAgPC9OZXN0ZWRYbWxNYXBXaXRoWG1sTmFtZUlucHV0T3V0cHV0Pgo=";
   expectedRq.uri = "/NestedXmlMapWithXmlName";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

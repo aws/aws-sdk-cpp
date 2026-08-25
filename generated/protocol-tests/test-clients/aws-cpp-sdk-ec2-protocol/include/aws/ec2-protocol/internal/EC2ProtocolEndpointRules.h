@@ -4,18 +4,18 @@
  */
 
 #pragma once
-#include <aws/json-rpc-10/JSONRPC10_EXPORTS.h>
+#include <aws/ec2-protocol/EC2Protocol_EXPORTS.h>
 
 #include <cstddef>
 
 namespace Aws {
-namespace JSONRPC10 {
-class JSONRPC10EndpointRules {
+namespace EC2Protocol {
+class AWS_EC2PROTOCOL_LOCAL EC2ProtocolEndpointRules {
  public:
   static const size_t RulesBlobStrLen;
   static const size_t RulesBlobSize;
 
   static const char* GetRulesBlob();
 };
-}  // namespace JSONRPC10
+}  // namespace EC2Protocol
 }  // namespace Aws

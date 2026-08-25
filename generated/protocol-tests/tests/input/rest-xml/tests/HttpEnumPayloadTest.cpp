@@ -25,6 +25,6 @@ AWS_PROTOCOL_TEST(HttpEnumPayload, RestXmlEnumPayloadRequest) {
   expectedRq.body = "ZW51bXZhbHVl";
   expectedRq.uri = "/EnumPayload";
   expectedRq.headers = {{"Content-Type", R"(text/plain)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

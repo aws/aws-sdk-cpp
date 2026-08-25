@@ -81,12 +81,12 @@ class ComplexError {
   ///@}
  private:
   Aws::String m_header;
-  bool m_headerHasBeenSet = false;
 
   Aws::String m_topLevel;
-  bool m_topLevelHasBeenSet = false;
 
   ComplexNestedErrorData m_nested;
+  bool m_headerHasBeenSet = false;
+  bool m_topLevelHasBeenSet = false;
   bool m_nestedHasBeenSet = false;
 };
 

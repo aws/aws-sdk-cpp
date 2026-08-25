@@ -4,18 +4,18 @@
  */
 
 #pragma once
-#include <aws/rest-xml-protocol/RestXmlProtocol_EXPORTS.h>
+#include <aws/json-rpc-10/JSONRPC10_EXPORTS.h>
 
 #include <cstddef>
 
 namespace Aws {
-namespace RestXmlProtocol {
-class RestXmlProtocolEndpointRules {
+namespace JSONRPC10 {
+class AWS_JSONRPC10_LOCAL JSONRPC10EndpointRules {
  public:
   static const size_t RulesBlobStrLen;
   static const size_t RulesBlobSize;
 
   static const char* GetRulesBlob();
 };
-}  // namespace RestXmlProtocol
+}  // namespace JSONRPC10
 }  // namespace Aws

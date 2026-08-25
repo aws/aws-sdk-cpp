@@ -24,6 +24,6 @@ AWS_PROTOCOL_TEST(QueryParamsAsStringListMap, RestXmlQueryParamsStringListMap) {
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.uri = "/StringListMap?corge=named&baz=bar&baz=qux";
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

@@ -174,33 +174,33 @@ class XmlUnionShape {
   ///@}
  private:
   Aws::String m_stringValue;
-  bool m_stringValueHasBeenSet = false;
 
   bool m_booleanValue{false};
-  bool m_booleanValueHasBeenSet = false;
 
   int m_byteValue{0};
-  bool m_byteValueHasBeenSet = false;
 
   int m_shortValue{0};
-  bool m_shortValueHasBeenSet = false;
 
   int m_integerValue{0};
-  bool m_integerValueHasBeenSet = false;
 
   long long m_longValue{0};
-  bool m_longValueHasBeenSet = false;
 
   double m_floatValue{0.0};
-  bool m_floatValueHasBeenSet = false;
 
   double m_doubleValue{0.0};
-  bool m_doubleValueHasBeenSet = false;
 
   std::shared_ptr<XmlUnionShape> m_unionValue;
-  bool m_unionValueHasBeenSet = false;
 
   XmlNestedUnionStruct m_structValue;
+  bool m_stringValueHasBeenSet = false;
+  bool m_booleanValueHasBeenSet = false;
+  bool m_byteValueHasBeenSet = false;
+  bool m_shortValueHasBeenSet = false;
+  bool m_integerValueHasBeenSet = false;
+  bool m_longValueHasBeenSet = false;
+  bool m_floatValueHasBeenSet = false;
+  bool m_doubleValueHasBeenSet = false;
+  bool m_unionValueHasBeenSet = false;
   bool m_structValueHasBeenSet = false;
 };
 

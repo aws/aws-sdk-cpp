@@ -162,21 +162,21 @@ class QueryListsRequest : public QueryProtocolRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_listArg;
-  bool m_listArgHasBeenSet = false;
 
   Aws::Vector<GreetingStruct> m_complexListArg;
-  bool m_complexListArgHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_flattenedListArg;
-  bool m_flattenedListArgHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_listArgWithXmlNameMember;
-  bool m_listArgWithXmlNameMemberHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_flattenedListArgWithXmlName;
-  bool m_flattenedListArgWithXmlNameHasBeenSet = false;
 
   NestedStructWithList m_nestedWithList;
+  bool m_listArgHasBeenSet = false;
+  bool m_complexListArgHasBeenSet = false;
+  bool m_flattenedListArgHasBeenSet = false;
+  bool m_listArgWithXmlNameMemberHasBeenSet = false;
+  bool m_flattenedListArgWithXmlNameHasBeenSet = false;
   bool m_nestedWithListHasBeenSet = false;
 };
 
