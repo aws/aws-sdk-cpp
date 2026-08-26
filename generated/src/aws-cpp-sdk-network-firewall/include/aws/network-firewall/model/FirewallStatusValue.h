@@ -10,7 +10,7 @@
 namespace Aws {
 namespace NetworkFirewall {
 namespace Model {
-enum class FirewallStatusValue { NOT_SET, PROVISIONING, DELETING, READY };
+enum class FirewallStatusValue { NOT_SET, PROVISIONING, DELETING, READY, FAILED };
 
 namespace FirewallStatusValueMapper {
 AWS_NETWORKFIREWALL_API FirewallStatusValue GetFirewallStatusValueForName(const Aws::String& name);

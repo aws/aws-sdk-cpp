@@ -10,7 +10,7 @@
 namespace Aws {
 namespace EC2 {
 namespace Model {
-enum class VpcState { NOT_SET, pending, available };
+enum class VpcState { NOT_SET, pending, available, deleting };
 
 namespace VpcStateMapper {
 AWS_EC2_API VpcState GetVpcStateForName(const Aws::String& name);

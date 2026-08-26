@@ -208,6 +208,7 @@
 #include <aws/devops-agent/model/PagerDutyConfiguration.h>
 #include <aws/devops-agent/model/PagerDutyDetails.h>
 #include <aws/devops-agent/model/PagerDutyOAuthClientCredentialsConfig.h>
+#include <aws/devops-agent/model/PatternFilter.h>
 #include <aws/devops-agent/model/PendingMessage.h>
 #include <aws/devops-agent/model/PostRegisterServiceSupportedService.h>
 #include <aws/devops-agent/model/Priority.h>
@@ -293,6 +294,8 @@
 #include <aws/devops-agent/model/ToolClassification.h>
 #include <aws/devops-agent/model/Trigger.h>
 #include <aws/devops-agent/model/TriggerCondition.h>
+#include <aws/devops-agent/model/TriggerEvent.h>
+#include <aws/devops-agent/model/TriggerFilterGroup.h>
 #include <aws/devops-agent/model/UntagResourceRequest.h>
 #include <aws/devops-agent/model/UntagResourceResult.h>
 #include <aws/devops-agent/model/UpdateAgentSpaceRequest.h>

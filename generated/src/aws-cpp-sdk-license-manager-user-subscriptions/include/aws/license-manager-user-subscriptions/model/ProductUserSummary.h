@@ -195,6 +195,28 @@ class ProductUserSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The expiration date of the license associated with this subscription, in ISO
+   * 8601 UTC format (for example, <code>2025-03-15T00:00:00Z</code>).</p> <p>This
+   * field applies only to subscriptions that use license server endpoints, such as
+   * Remote Desktop Services (RDS) Subscriber Access License (SAL). It returns
+   * <code>null</code> for products that don't use license-based subscriptions.</p>
+   */
+  inline const Aws::String& GetLicenseExpirationDate() const { return m_licenseExpirationDate; }
+  inline bool LicenseExpirationDateHasBeenSet() const { return m_licenseExpirationDateHasBeenSet; }
+  template <typename LicenseExpirationDateT = Aws::String>
+  void SetLicenseExpirationDate(LicenseExpirationDateT&& value) {
+    m_licenseExpirationDateHasBeenSet = true;
+    m_licenseExpirationDate = std::forward<LicenseExpirationDateT>(value);
+  }
+  template <typename LicenseExpirationDateT = Aws::String>
+  ProductUserSummary& WithLicenseExpirationDate(LicenseExpirationDateT&& value) {
+    SetLicenseExpirationDate(std::forward<LicenseExpirationDateT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_username;
 
@@ -213,6 +235,8 @@ class ProductUserSummary {
   Aws::String m_subscriptionStartDate;
 
   Aws::String m_subscriptionEndDate;
+
+  Aws::String m_licenseExpirationDate;
   bool m_usernameHasBeenSet = false;
   bool m_productHasBeenSet = false;
   bool m_identityProviderHasBeenSet = false;
@@ -222,6 +246,7 @@ class ProductUserSummary {
   bool m_domainHasBeenSet = false;
   bool m_subscriptionStartDateHasBeenSet = false;
   bool m_subscriptionEndDateHasBeenSet = false;
+  bool m_licenseExpirationDateHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -60,7 +60,13 @@ enum class OptimizationJobDeploymentInstanceType {
   ml_g7e_8xlarge,
   ml_g7e_12xlarge,
   ml_g7e_24xlarge,
-  ml_g7e_48xlarge
+  ml_g7e_48xlarge,
+  ml_g7_2xlarge,
+  ml_g7_4xlarge,
+  ml_g7_8xlarge,
+  ml_g7_12xlarge,
+  ml_g7_24xlarge,
+  ml_g7_48xlarge
 };
 
 namespace OptimizationJobDeploymentInstanceTypeMapper {

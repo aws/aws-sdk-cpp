@@ -18,6 +18,7 @@ namespace FirewallStatusValueMapper {
 static const int PROVISIONING_HASH = HashingUtils::HashString("PROVISIONING");
 static const int DELETING_HASH = HashingUtils::HashString("DELETING");
 static const int READY_HASH = HashingUtils::HashString("READY");
+static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 
 FirewallStatusValue GetFirewallStatusValueForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ FirewallStatusValue GetFirewallStatusValueForName(const Aws::String& name) {
     return FirewallStatusValue::DELETING;
   } else if (hashCode == READY_HASH) {
     return FirewallStatusValue::READY;
+  } else if (hashCode == FAILED_HASH) {
+    return FirewallStatusValue::FAILED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForFirewallStatusValue(FirewallStatusValue enumValue) {
       return "DELETING";
     case FirewallStatusValue::READY:
       return "READY";
+    case FirewallStatusValue::FAILED:
+      return "FAILED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

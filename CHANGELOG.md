@@ -1,3 +1,15 @@
+# 1.11.879 (2026-08-26)
+
+## SDK Highlights
+* **Documentation**: Announce the new CHANGELOG format (SDK Highlights and Service Updates) and upcoming inclusion of change notes in release notes
+
+## Service Updates
+* **DevOps Agent**: AWS DevOps Agent now supports trigger filter groups for Release Readiness Review, letting you control when the capability auto-triggers based on webhook events and target branches.
+* **EC2**: Adds deleting state to possible VPC States.
+* **License Manager User Subscriptions**: Released support for License Expiry field in ListProductSubscriptions API
+* **Network Firewall**: Adding new status enum for Firewalls.
+* **SageMaker**: Amazon SageMaker AI now supports ml.g7 instances for model optimization. You can now run model optimization jobs on ml.g7 instances, in supported AWS Regions.
+
 # 1.11.878 (2026-08-25)
 
 ## Service Updates
