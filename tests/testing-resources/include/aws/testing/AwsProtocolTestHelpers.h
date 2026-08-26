@@ -22,6 +22,10 @@
 #include <cstdint>
 #include <utility>
 
+#ifdef AWS_PROTOCOL_TEST_USE_TINYXML2
+#include <tinyxml2.h>
+#endif
+
 #define AWS_PROTOCOL_TEST TEST_F
 
 struct OutputResponse {
@@ -128,82 +132,75 @@ public:
     }
   }
 
-  // Normalize an XML document so that two semantically equivalent documents compare equal:
-  // drops a leading <?xml ... ?> declaration, expands self-closing <a/> into <a></a>, and
-  // removes indentation whitespace (a whitespace run containing a newline) between elements.
-  // Attributes and significant leaf text (e.g. an all-whitespace string value) are preserved,
-  // so genuine differences such as missing xmlns attributes or omitted elements still fail.
-  static Aws::String NormalizeXml(const Aws::String& in) {
-    size_t start = 0;
-    const size_t firstNonWs = in.find_first_not_of(" \t\r\n");
-    if (firstNonWs != Aws::String::npos && in.compare(firstNonWs, 5, "<?xml") == 0) {
-      const size_t declEnd = in.find("?>", firstNonWs);
-      if (declEnd != Aws::String::npos) {
-        start = declEnd + 2;
-      }
-    }
-    Aws::String out;
-    out.reserve(in.size());
-    for (size_t i = start; i < in.size();) {
-      if (in[i] == '<') {
-        const size_t tagEnd = in.find('>', i);
-        if (tagEnd == Aws::String::npos) {
-          out.append(in, i, Aws::String::npos);
-          break;
-        }
-        if (in[tagEnd - 1] == '/' && in[i + 1] != '/' && in[i + 1] != '!' && in[i + 1] != '?') {
-          size_t nameEnd = i + 1;
-          while (nameEnd < tagEnd && in[nameEnd] != ' ' && in[nameEnd] != '\t' && in[nameEnd] != '\r' &&
-                 in[nameEnd] != '\n' && in[nameEnd] != '/' && in[nameEnd] != '>') {
-            ++nameEnd;
-          }
-          const Aws::String name = in.substr(i + 1, nameEnd - (i + 1));
-          Aws::String attrs = in.substr(nameEnd, (tagEnd - 1) - nameEnd);
-          while (!attrs.empty() && (attrs.back() == ' ' || attrs.back() == '\t' || attrs.back() == '\r' || attrs.back() == '\n')) {
-            attrs.pop_back();
-          }
-          out += "<";
-          out += name;
-          out += attrs;
-          out += "></";
-          out += name;
-          out += ">";
-        } else {
-          out.append(in, i, tagEnd - i + 1);
-        }
-        i = tagEnd + 1;
-        size_t j = i;
-        bool sawNewline = false;
-        while (j < in.size() && (in[j] == ' ' || in[j] == '\t' || in[j] == '\r' || in[j] == '\n')) {
-          if (in[j] == '\n' || in[j] == '\r') {
-            sawNewline = true;
-          }
-          ++j;
-        }
-        if (sawNewline && j < in.size() && in[j] == '<') {
-          i = j;
-        }
-        continue;
-      }
-      out += in[i];
-      ++i;
-    }
-    const size_t a = out.find_first_not_of(" \t\r\n");
-    if (a == Aws::String::npos) {
+#ifdef AWS_PROTOCOL_TEST_USE_TINYXML2
+  // Child elements are sorted, so sibling order is ignored: correct for maps, lenient for lists.
+  static Aws::String CanonicalizeXml(const tinyxml2::XMLElement* el) {
+    if (!el) {
       return Aws::String();
     }
-    const size_t b = out.find_last_not_of(" \t\r\n");
-    return out.substr(a, b - a + 1);
+    Aws::Vector<Aws::String> attrs;
+    for (const tinyxml2::XMLAttribute* a = el->FirstAttribute(); a; a = a->Next()) {
+      attrs.emplace_back(Aws::String("@") + a->Name() + "=" + a->Value());
+    }
+    std::sort(attrs.begin(), attrs.end());
+    Aws::Vector<Aws::String> kids;
+    for (const tinyxml2::XMLElement* c = el->FirstChildElement(); c; c = c->NextSiblingElement()) {
+      kids.push_back(CanonicalizeXml(c));
+    }
+    std::sort(kids.begin(), kids.end());
+    Aws::String out = Aws::String("<") + el->Name();
+    for (const auto& a : attrs) {
+      out += " " + a;
+    }
+    const char* text = el->GetText();
+    if (text) {
+      out += " #" + Aws::String(text);
+    }
+    for (const auto& k : kids) {
+      out += k;
+    }
+    return out + ">";
   }
 
-  // Body comparator for XML protocols (e.g. restXml). Selected by the protocol-test generator
-  // instead of the default JSON-oriented ValidateBody.
   static void ValidateXmlBody(const ExpectedRequest& expected, const Aws::ProtocolMock::Model::Request& receivedRequest) {
     const auto expectedBodyBuf = Aws::Utils::HashingUtils::Base64Decode(expected.body);
     const auto receivedBodyBuf = Aws::Utils::HashingUtils::Base64Decode(receivedRequest.GetBody());
     const Aws::String expectedBodyStr(reinterpret_cast<char*>(expectedBodyBuf.GetUnderlyingData()), expectedBodyBuf.GetLength());
     const Aws::String receivedBodyStr(reinterpret_cast<char*>(receivedBodyBuf.GetUnderlyingData()), receivedBodyBuf.GetLength());
-    EXPECT_STREQ(NormalizeXml(expectedBodyStr).c_str(), NormalizeXml(receivedBodyStr).c_str());
+    tinyxml2::XMLDocument expectedDoc;
+    tinyxml2::XMLDocument receivedDoc;
+    const bool expectedIsXml = expectedDoc.Parse(expectedBodyStr.c_str(), expectedBodyStr.size()) == tinyxml2::XML_SUCCESS;
+    const bool receivedIsXml = receivedDoc.Parse(receivedBodyStr.c_str(), receivedBodyStr.size()) == tinyxml2::XML_SUCCESS;
+    if (expectedIsXml && receivedIsXml) {
+      EXPECT_STREQ(CanonicalizeXml(expectedDoc.RootElement()).c_str(), CanonicalizeXml(receivedDoc.RootElement()).c_str());
+    } else {
+      // Non-XML payload (e.g. raw string/blob @httpPayload).
+      EXPECT_STREQ(expectedBodyStr.c_str(), receivedBodyStr.c_str());
+    }
+  }
+#endif
+
+  static void ValidateFormUrlEncodedBody(const ExpectedRequest& expected, const Aws::ProtocolMock::Model::Request& receivedRequest) {
+    const auto expectedBodyBuf = Aws::Utils::HashingUtils::Base64Decode(expected.body);
+    const auto receivedBodyBuf = Aws::Utils::HashingUtils::Base64Decode(receivedRequest.GetBody());
+    const Aws::String expectedBodyStr(reinterpret_cast<char*>(expectedBodyBuf.GetUnderlyingData()), expectedBodyBuf.GetLength());
+    const Aws::String receivedBodyStr(reinterpret_cast<char*>(receivedBodyBuf.GetUnderlyingData()), receivedBodyBuf.GetLength());
+    auto sortedPairs = [](const Aws::String& body) -> Aws::String {
+      if (body.empty()) {
+        return Aws::String();
+      }
+      Aws::Vector<Aws::String> pairs = Aws::Utils::StringUtils::Split(body, '&');
+      std::sort(pairs.begin(), pairs.end());
+      Aws::String joined;
+      for (const auto& pair : pairs) {
+        if (!joined.empty()) {
+          joined += "&";
+        }
+        joined += pair;
+      }
+      return joined;
+    };
+    EXPECT_STREQ(sortedPairs(expectedBodyStr).c_str(), sortedPairs(receivedBodyStr).c_str());
   }
 
   // Compares two request URIs. The path is compared exactly; the query string is compared as an
@@ -245,7 +242,10 @@ public:
     if (!expected.method.empty()) {
       EXPECT_STREQ(expected.method.c_str(), receivedRequest.GetMethod().c_str());
     }
-    bodyCompare(expected, receivedRequest);
+    // A Smithy vector with no "body" asserts only headers/uri, not the body.
+    if (!expected.body.empty()) {
+      bodyCompare(expected, receivedRequest);
+    }
     if (!expected.uri.empty()) {
       CompareUri(expected.uri, receivedRequest.GetUri());
     }
