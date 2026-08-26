@@ -46,6 +46,14 @@ AgentSpace& AgentSpace::operator=(JsonView jsonValue) {
     m_agentSpaceId = jsonValue.GetString("agentSpaceId");
     m_agentSpaceIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("preferences")) {
+    Aws::Map<Aws::String, JsonView> preferencesJsonMap = jsonValue.GetObject("preferences").GetAllObjects();
+    for (auto& preferencesItem : preferencesJsonMap) {
+      m_preferences[AgentSpacePreferenceKeyMapper::GetAgentSpacePreferenceKeyForName(preferencesItem.first)] =
+          preferencesItem.second.AsBool();
+    }
+    m_preferencesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -78,6 +86,15 @@ JsonValue AgentSpace::Jsonize() const {
 
   if (m_agentSpaceIdHasBeenSet) {
     payload.WithString("agentSpaceId", m_agentSpaceId);
+  }
+
+  if (m_preferencesHasBeenSet) {
+    JsonValue preferencesJsonMap;
+    for (auto& preferencesItem : m_preferences) {
+      preferencesJsonMap.WithBool(AgentSpacePreferenceKeyMapper::GetNameForAgentSpacePreferenceKey(preferencesItem.first),
+                                  preferencesItem.second);
+    }
+    payload.WithObject("preferences", std::move(preferencesJsonMap));
   }
 
   return payload;

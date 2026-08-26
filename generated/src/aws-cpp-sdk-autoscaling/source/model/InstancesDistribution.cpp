@@ -56,6 +56,17 @@ InstancesDistribution& InstancesDistribution::operator=(const XmlNode& xmlNode) 
       m_spotMaxPrice = Aws::Utils::Xml::DecodeEscapedXmlText(spotMaxPriceNode.GetText());
       m_spotMaxPriceHasBeenSet = true;
     }
+    XmlNode distributionSegmentsNode = resultNode.FirstChild("DistributionSegments");
+    if (!distributionSegmentsNode.IsNull()) {
+      XmlNode distributionSegmentsMember = distributionSegmentsNode.FirstChild("member");
+      m_distributionSegmentsHasBeenSet = !distributionSegmentsMember.IsNull();
+      while (!distributionSegmentsMember.IsNull()) {
+        m_distributionSegments.push_back(distributionSegmentsMember);
+        distributionSegmentsMember = distributionSegmentsMember.NextNode("member");
+      }
+
+      m_distributionSegmentsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -88,6 +99,15 @@ void InstancesDistribution::OutputToStream(Aws::OStream& oStream, const char* lo
   if (m_spotMaxPriceHasBeenSet) {
     oStream << location << index << locationValue << ".SpotMaxPrice=" << StringUtils::URLEncode(m_spotMaxPrice.c_str()) << "&";
   }
+
+  if (m_distributionSegmentsHasBeenSet) {
+    unsigned distributionSegmentsIdx = 1;
+    for (auto& item : m_distributionSegments) {
+      Aws::StringStream distributionSegmentsSs;
+      distributionSegmentsSs << location << index << locationValue << ".DistributionSegments.member." << distributionSegmentsIdx++;
+      item.OutputToStream(oStream, distributionSegmentsSs.str().c_str());
+    }
+  }
 }
 
 void InstancesDistribution::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -108,6 +128,14 @@ void InstancesDistribution::OutputToStream(Aws::OStream& oStream, const char* lo
   }
   if (m_spotMaxPriceHasBeenSet) {
     oStream << location << ".SpotMaxPrice=" << StringUtils::URLEncode(m_spotMaxPrice.c_str()) << "&";
+  }
+  if (m_distributionSegmentsHasBeenSet) {
+    unsigned distributionSegmentsIdx = 1;
+    for (auto& item : m_distributionSegments) {
+      Aws::StringStream distributionSegmentsSs;
+      distributionSegmentsSs << location << ".DistributionSegments.member." << distributionSegmentsIdx++;
+      item.OutputToStream(oStream, distributionSegmentsSs.str().c_str());
+    }
   }
 }
 

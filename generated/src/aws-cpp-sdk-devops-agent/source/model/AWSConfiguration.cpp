@@ -30,6 +30,14 @@ AWSConfiguration& AWSConfiguration::operator=(JsonView jsonValue) {
     m_accountType = MonitorAccountTypeMapper::GetMonitorAccountTypeForName(jsonValue.GetString("accountType"));
     m_accountTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("agentElevatedRoleArn")) {
+    m_agentElevatedRoleArn = jsonValue.GetString("agentElevatedRoleArn");
+    m_agentElevatedRoleArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("agentElevatedRoleArnStatus")) {
+    m_agentElevatedRoleArnStatus = ValidationStatusMapper::GetValidationStatusForName(jsonValue.GetString("agentElevatedRoleArnStatus"));
+    m_agentElevatedRoleArnStatusHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +54,14 @@ JsonValue AWSConfiguration::Jsonize() const {
 
   if (m_accountTypeHasBeenSet) {
     payload.WithString("accountType", MonitorAccountTypeMapper::GetNameForMonitorAccountType(m_accountType));
+  }
+
+  if (m_agentElevatedRoleArnHasBeenSet) {
+    payload.WithString("agentElevatedRoleArn", m_agentElevatedRoleArn);
+  }
+
+  if (m_agentElevatedRoleArnStatusHasBeenSet) {
+    payload.WithString("agentElevatedRoleArnStatus", ValidationStatusMapper::GetNameForValidationStatus(m_agentElevatedRoleArnStatus));
   }
 
   return payload;

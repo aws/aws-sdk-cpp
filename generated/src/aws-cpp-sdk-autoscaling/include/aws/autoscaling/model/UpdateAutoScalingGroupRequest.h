@@ -104,7 +104,12 @@ class UpdateAutoScalingGroupRequest : public AutoScalingRequest {
    * <p>The mixed instances policy. For more information, see <a
    * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
    * Scaling groups with multiple instance types and purchase options</a> in the
-   * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+   * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>You can remove the
+   * Distribution Segments configuration by specifying
+   * <code>OnDemandBaseCapacity</code> or
+   * <code>OnDemandPercentageAboveBaseCapacity</code>. You can also remove it
+   * explicitly by specifying an empty list for
+   * <code>DistributionSegments</code>.</p>
    */
   inline const MixedInstancesPolicy& GetMixedInstancesPolicy() const { return m_mixedInstancesPolicy; }
   inline bool MixedInstancesPolicyHasBeenSet() const { return m_mixedInstancesPolicyHasBeenSet; }

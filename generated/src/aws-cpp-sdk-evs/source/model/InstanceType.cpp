@@ -17,6 +17,7 @@ namespace InstanceTypeMapper {
 
 static const int i4i_metal_HASH = HashingUtils::HashString("i4i.metal");
 static const int i7i_metal_24xl_HASH = HashingUtils::HashString("i7i.metal-24xl");
+static const int i7i_metal_48xl_HASH = HashingUtils::HashString("i7i.metal-48xl");
 
 InstanceType GetInstanceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ InstanceType GetInstanceTypeForName(const Aws::String& name) {
     return InstanceType::i4i_metal;
   } else if (hashCode == i7i_metal_24xl_HASH) {
     return InstanceType::i7i_metal_24xl;
+  } else if (hashCode == i7i_metal_48xl_HASH) {
+    return InstanceType::i7i_metal_48xl;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForInstanceType(InstanceType enumValue) {
       return "i4i.metal";
     case InstanceType::i7i_metal_24xl:
       return "i7i.metal-24xl";
+    case InstanceType::i7i_metal_48xl:
+      return "i7i.metal-48xl";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

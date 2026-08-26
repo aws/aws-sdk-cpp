@@ -18,6 +18,10 @@ namespace Model {
 KubeControllerManagerConfigRequest::KubeControllerManagerConfigRequest(JsonView jsonValue) { *this = jsonValue; }
 
 KubeControllerManagerConfigRequest& KubeControllerManagerConfigRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("podGcControllerConfig")) {
+    m_podGcControllerConfig = jsonValue.GetObject("podGcControllerConfig");
+    m_podGcControllerConfigHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("horizontalPodAutoscalerControllerConfig")) {
     m_horizontalPodAutoscalerControllerConfig = jsonValue.GetObject("horizontalPodAutoscalerControllerConfig");
     m_horizontalPodAutoscalerControllerConfigHasBeenSet = true;
@@ -27,6 +31,10 @@ KubeControllerManagerConfigRequest& KubeControllerManagerConfigRequest::operator
 
 JsonValue KubeControllerManagerConfigRequest::Jsonize() const {
   JsonValue payload;
+
+  if (m_podGcControllerConfigHasBeenSet) {
+    payload.WithObject("podGcControllerConfig", m_podGcControllerConfig.Jsonize());
+  }
 
   if (m_horizontalPodAutoscalerControllerConfigHasBeenSet) {
     payload.WithObject("horizontalPodAutoscalerControllerConfig", m_horizontalPodAutoscalerControllerConfig.Jsonize());

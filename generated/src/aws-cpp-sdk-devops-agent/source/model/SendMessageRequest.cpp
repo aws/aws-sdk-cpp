@@ -35,5 +35,9 @@ Aws::String SendMessageRequest::SerializePayload() const {
     payload.WithArray("assetIds", std::move(assetIdsJsonList));
   }
 
+  if (m_modelTierHasBeenSet) {
+    payload.WithString("modelTier", m_modelTier);
+  }
+
   return payload.View().WriteReadable();
 }

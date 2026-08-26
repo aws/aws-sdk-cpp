@@ -451,6 +451,14 @@
 #include <aws/iot/model/ImplicitDeny.h>
 #include <aws/iot/model/IndexStatus.h>
 #include <aws/iot/model/IndexingFilter.h>
+#include <aws/iot/model/InfluxDBAction.h>
+#include <aws/iot/model/InfluxDBBatchConfig.h>
+#include <aws/iot/model/InfluxDBDestinationConfiguration.h>
+#include <aws/iot/model/InfluxDBDestinationProperties.h>
+#include <aws/iot/model/InfluxDBDestinationSummary.h>
+#include <aws/iot/model/InfluxDBSecretType.h>
+#include <aws/iot/model/InfluxDBTimestampUnit.h>
+#include <aws/iot/model/InfluxDBVersion.h>
 #include <aws/iot/model/IotAnalyticsAction.h>
 #include <aws/iot/model/IotEventsAction.h>
 #include <aws/iot/model/IotSiteWiseAction.h>

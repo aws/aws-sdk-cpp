@@ -82,6 +82,10 @@ GetDbClusterResult& GetDbClusterResult::operator=(const Aws::AmazonWebServiceRes
     m_dbParameterGroupIdentifier = jsonValue.GetString("dbParameterGroupIdentifier");
     m_dbParameterGroupIdentifierHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("effectiveDbParameterGroupIdentifier")) {
+    m_effectiveDbParameterGroupIdentifier = jsonValue.GetString("effectiveDbParameterGroupIdentifier");
+    m_effectiveDbParameterGroupIdentifierHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("logDeliveryConfiguration")) {
     m_logDeliveryConfiguration = jsonValue.GetObject("logDeliveryConfiguration");
     m_logDeliveryConfigurationHasBeenSet = true;

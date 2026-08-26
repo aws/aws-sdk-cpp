@@ -21,6 +21,11 @@
 #include <aws/devops-agent/model/AdditionalServiceDetails.h>
 #include <aws/devops-agent/model/AdditionalServiceRegistrationStep.h>
 #include <aws/devops-agent/model/AgentSpace.h>
+#include <aws/devops-agent/model/AgentSpacePreferenceKey.h>
+#include <aws/devops-agent/model/ApprovalAction.h>
+#include <aws/devops-agent/model/ApprovalActionType.h>
+#include <aws/devops-agent/model/ApprovalPattern.h>
+#include <aws/devops-agent/model/ApprovalStatus.h>
 #include <aws/devops-agent/model/Asset.h>
 #include <aws/devops-agent/model/AssetContent.h>
 #include <aws/devops-agent/model/AssetFile.h>
@@ -190,6 +195,7 @@
 #include <aws/devops-agent/model/MCPServerSigV4Configuration.h>
 #include <aws/devops-agent/model/MCPServerSigV4ServiceDetails.h>
 #include <aws/devops-agent/model/MCPServerSplunkConfiguration.h>
+#include <aws/devops-agent/model/MCPToolDetail.h>
 #include <aws/devops-agent/model/Message.h>
 #include <aws/devops-agent/model/MonitorAccountType.h>
 #include <aws/devops-agent/model/NewRelicApiKeyConfig.h>
@@ -202,6 +208,7 @@
 #include <aws/devops-agent/model/PagerDutyConfiguration.h>
 #include <aws/devops-agent/model/PagerDutyDetails.h>
 #include <aws/devops-agent/model/PagerDutyOAuthClientCredentialsConfig.h>
+#include <aws/devops-agent/model/PatternFilter.h>
 #include <aws/devops-agent/model/PendingMessage.h>
 #include <aws/devops-agent/model/PostRegisterServiceSupportedService.h>
 #include <aws/devops-agent/model/Priority.h>
@@ -284,12 +291,17 @@
 #include <aws/devops-agent/model/TaskSortOrder.h>
 #include <aws/devops-agent/model/TaskStatus.h>
 #include <aws/devops-agent/model/TaskType.h>
+#include <aws/devops-agent/model/ToolClassification.h>
 #include <aws/devops-agent/model/Trigger.h>
 #include <aws/devops-agent/model/TriggerCondition.h>
+#include <aws/devops-agent/model/TriggerEvent.h>
+#include <aws/devops-agent/model/TriggerFilterGroup.h>
 #include <aws/devops-agent/model/UntagResourceRequest.h>
 #include <aws/devops-agent/model/UntagResourceResult.h>
 #include <aws/devops-agent/model/UpdateAgentSpaceRequest.h>
 #include <aws/devops-agent/model/UpdateAgentSpaceResult.h>
+#include <aws/devops-agent/model/UpdateApprovalActionRequest.h>
+#include <aws/devops-agent/model/UpdateApprovalActionResult.h>
 #include <aws/devops-agent/model/UpdateAssetFileRequest.h>
 #include <aws/devops-agent/model/UpdateAssetFileResult.h>
 #include <aws/devops-agent/model/UpdateAssetRequest.h>

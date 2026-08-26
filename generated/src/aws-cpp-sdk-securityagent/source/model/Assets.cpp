@@ -54,6 +54,14 @@ Assets& Assets::operator=(JsonView jsonValue) {
     }
     m_integratedRepositoriesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("trustedCaCertificates")) {
+    Aws::Utils::Array<JsonView> trustedCaCertificatesJsonList = jsonValue.GetArray("trustedCaCertificates");
+    for (unsigned trustedCaCertificatesIndex = 0; trustedCaCertificatesIndex < trustedCaCertificatesJsonList.GetLength();
+         ++trustedCaCertificatesIndex) {
+      m_trustedCaCertificates.push_back(trustedCaCertificatesJsonList[trustedCaCertificatesIndex].AsObject());
+    }
+    m_trustedCaCertificatesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -99,6 +107,15 @@ JsonValue Assets::Jsonize() const {
       integratedRepositoriesJsonList[integratedRepositoriesIndex].AsObject(m_integratedRepositories[integratedRepositoriesIndex].Jsonize());
     }
     payload.WithArray("integratedRepositories", std::move(integratedRepositoriesJsonList));
+  }
+
+  if (m_trustedCaCertificatesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> trustedCaCertificatesJsonList(m_trustedCaCertificates.size());
+    for (unsigned trustedCaCertificatesIndex = 0; trustedCaCertificatesIndex < trustedCaCertificatesJsonList.GetLength();
+         ++trustedCaCertificatesIndex) {
+      trustedCaCertificatesJsonList[trustedCaCertificatesIndex].AsObject(m_trustedCaCertificates[trustedCaCertificatesIndex].Jsonize());
+    }
+    payload.WithArray("trustedCaCertificates", std::move(trustedCaCertificatesJsonList));
   }
 
   return payload;

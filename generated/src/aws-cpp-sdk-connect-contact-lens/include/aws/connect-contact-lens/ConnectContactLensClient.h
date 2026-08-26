@@ -93,8 +93,9 @@ class AWS_CONNECTCONTACTLENS_API ConnectContactLensClient : public Aws::Client::
   virtual ~ConnectContactLensClient();
 
   /**
-   * <p>Provides a list of analysis segments for a real-time analysis
-   * session.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides a list of analysis segments for a real-time analysis session for
+   * voice.</p>  <p>Voice data is retained for 24 hours. You must invoke this
+   * API during that time.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-contact-lens-2020-08-21/ListRealtimeContactAnalysisSegments">AWS
    * API Reference</a></p>
    */

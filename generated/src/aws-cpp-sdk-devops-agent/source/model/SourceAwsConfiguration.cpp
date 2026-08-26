@@ -34,6 +34,14 @@ SourceAwsConfiguration& SourceAwsConfiguration::operator=(JsonView jsonValue) {
     m_externalId = jsonValue.GetString("externalId");
     m_externalIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("agentElevatedRoleArn")) {
+    m_agentElevatedRoleArn = jsonValue.GetString("agentElevatedRoleArn");
+    m_agentElevatedRoleArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("agentElevatedRoleArnStatus")) {
+    m_agentElevatedRoleArnStatus = ValidationStatusMapper::GetValidationStatusForName(jsonValue.GetString("agentElevatedRoleArnStatus"));
+    m_agentElevatedRoleArnStatusHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +62,14 @@ JsonValue SourceAwsConfiguration::Jsonize() const {
 
   if (m_externalIdHasBeenSet) {
     payload.WithString("externalId", m_externalId);
+  }
+
+  if (m_agentElevatedRoleArnHasBeenSet) {
+    payload.WithString("agentElevatedRoleArn", m_agentElevatedRoleArn);
+  }
+
+  if (m_agentElevatedRoleArnStatusHasBeenSet) {
+    payload.WithString("agentElevatedRoleArnStatus", ValidationStatusMapper::GetNameForValidationStatus(m_agentElevatedRoleArnStatus));
   }
 
   return payload;

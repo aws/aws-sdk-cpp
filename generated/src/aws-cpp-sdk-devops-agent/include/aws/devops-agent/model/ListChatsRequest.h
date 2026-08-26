@@ -37,7 +37,9 @@ class ListChatsRequest : public DevOpsAgentRequest {
   AWS_DEVOPSAGENT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
   ///@{
-
+  /**
+   * <p>The unique identifier for the agent space to list chats from.</p>
+   */
   inline const Aws::String& GetAgentSpaceId() const { return m_agentSpaceId; }
   inline bool AgentSpaceIdHasBeenSet() const { return m_agentSpaceIdHasBeenSet; }
   template <typename AgentSpaceIdT = Aws::String>

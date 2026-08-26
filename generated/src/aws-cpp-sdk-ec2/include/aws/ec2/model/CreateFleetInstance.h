@@ -62,7 +62,7 @@ class CreateFleetInstance {
   ///@{
   /**
    * <p>Indicates if the instance that was launched is a Spot, On-Demand, Capacity
-   * Block, or Interruptible Capacity Reservation instance.</p>
+   * Block for ML, or interruptible Capacity Reservation instance.</p>
    */
   inline InstanceLifecycle GetLifecycle() const { return m_lifecycle; }
   inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }

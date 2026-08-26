@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/model/HttpUrlDestinationConfiguration.h>
+#include <aws/iot/model/InfluxDBDestinationConfiguration.h>
 #include <aws/iot/model/VpcDestinationConfiguration.h>
 
 #include <utility>
@@ -67,12 +68,34 @@ class TopicRuleDestinationConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration of an InfluxDB topic rule destination, which you specify
+   * when you call <code>CreateTopicRuleDestination</code>.</p>
+   */
+  inline const InfluxDBDestinationConfiguration& GetInfluxDBConfiguration() const { return m_influxDBConfiguration; }
+  inline bool InfluxDBConfigurationHasBeenSet() const { return m_influxDBConfigurationHasBeenSet; }
+  template <typename InfluxDBConfigurationT = InfluxDBDestinationConfiguration>
+  void SetInfluxDBConfiguration(InfluxDBConfigurationT&& value) {
+    m_influxDBConfigurationHasBeenSet = true;
+    m_influxDBConfiguration = std::forward<InfluxDBConfigurationT>(value);
+  }
+  template <typename InfluxDBConfigurationT = InfluxDBDestinationConfiguration>
+  TopicRuleDestinationConfiguration& WithInfluxDBConfiguration(InfluxDBConfigurationT&& value) {
+    SetInfluxDBConfiguration(std::forward<InfluxDBConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   HttpUrlDestinationConfiguration m_httpUrlConfiguration;
 
   VpcDestinationConfiguration m_vpcConfiguration;
+
+  InfluxDBDestinationConfiguration m_influxDBConfiguration;
   bool m_httpUrlConfigurationHasBeenSet = false;
   bool m_vpcConfigurationHasBeenSet = false;
+  bool m_influxDBConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

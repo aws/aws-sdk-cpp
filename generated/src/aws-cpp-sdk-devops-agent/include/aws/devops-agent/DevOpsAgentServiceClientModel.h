@@ -75,6 +75,7 @@
 #include <aws/devops-agent/model/TagResourceResult.h>
 #include <aws/devops-agent/model/UntagResourceResult.h>
 #include <aws/devops-agent/model/UpdateAgentSpaceResult.h>
+#include <aws/devops-agent/model/UpdateApprovalActionResult.h>
 #include <aws/devops-agent/model/UpdateAssetFileResult.h>
 #include <aws/devops-agent/model/UpdateAssetResult.h>
 #include <aws/devops-agent/model/UpdateAssociationResult.h>
@@ -170,6 +171,7 @@ class SendMessageRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
 class UpdateAgentSpaceRequest;
+class UpdateApprovalActionRequest;
 class UpdateAssetRequest;
 class UpdateAssetFileRequest;
 class UpdateAssociationRequest;
@@ -235,6 +237,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, DevOpsAgentError> SendMessageOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, DevOpsAgentError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, DevOpsAgentError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateAgentSpaceResult, DevOpsAgentError> UpdateAgentSpaceOutcome;
+typedef Aws::Utils::Outcome<UpdateApprovalActionResult, DevOpsAgentError> UpdateApprovalActionOutcome;
 typedef Aws::Utils::Outcome<UpdateAssetResult, DevOpsAgentError> UpdateAssetOutcome;
 typedef Aws::Utils::Outcome<UpdateAssetFileResult, DevOpsAgentError> UpdateAssetFileOutcome;
 typedef Aws::Utils::Outcome<UpdateAssociationResult, DevOpsAgentError> UpdateAssociationOutcome;
@@ -300,6 +303,7 @@ typedef std::future<SendMessageOutcome> SendMessageOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateAgentSpaceOutcome> UpdateAgentSpaceOutcomeCallable;
+typedef std::future<UpdateApprovalActionOutcome> UpdateApprovalActionOutcomeCallable;
 typedef std::future<UpdateAssetOutcome> UpdateAssetOutcomeCallable;
 typedef std::future<UpdateAssetFileOutcome> UpdateAssetFileOutcomeCallable;
 typedef std::future<UpdateAssociationOutcome> UpdateAssociationOutcomeCallable;
@@ -472,6 +476,9 @@ typedef std::function<void(const DevOpsAgentClient*, const Model::UntagResourceR
 typedef std::function<void(const DevOpsAgentClient*, const Model::UpdateAgentSpaceRequest&, const Model::UpdateAgentSpaceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateAgentSpaceResponseReceivedHandler;
+typedef std::function<void(const DevOpsAgentClient*, const Model::UpdateApprovalActionRequest&, const Model::UpdateApprovalActionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateApprovalActionResponseReceivedHandler;
 typedef std::function<void(const DevOpsAgentClient*, const Model::UpdateAssetRequest&, const Model::UpdateAssetOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateAssetResponseReceivedHandler;

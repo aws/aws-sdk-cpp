@@ -143,6 +143,7 @@
 #include <aws/kafka/model/InternalServerErrorException.h>
 #include <aws/kafka/model/JmxExporter.h>
 #include <aws/kafka/model/JmxExporterInfo.h>
+#include <aws/kafka/model/JwtSigningAlgorithm.h>
 #include <aws/kafka/model/KafkaCluster.h>
 #include <aws/kafka/model/KafkaClusterClientAuthentication.h>
 #include <aws/kafka/model/KafkaClusterClientVpcConfig.h>
@@ -150,6 +151,10 @@
 #include <aws/kafka/model/KafkaClusterEncryptionInTransit.h>
 #include <aws/kafka/model/KafkaClusterEncryptionInTransitType.h>
 #include <aws/kafka/model/KafkaClusterMTLSAuthentication.h>
+#include <aws/kafka/model/KafkaClusterOAuthClientCredentials.h>
+#include <aws/kafka/model/KafkaClusterOAuthClientCredentialsAssertion.h>
+#include <aws/kafka/model/KafkaClusterOAuthIamJwtBearer.h>
+#include <aws/kafka/model/KafkaClusterSaslOAuthBearerAuthentication.h>
 #include <aws/kafka/model/KafkaClusterSaslScramAuthentication.h>
 #include <aws/kafka/model/KafkaClusterSaslScramMechanism.h>
 #include <aws/kafka/model/KafkaClusterSummary.h>
@@ -268,6 +273,7 @@
 #include <aws/kafka/model/TagResourceRequest.h>
 #include <aws/kafka/model/TargetCompressionType.h>
 #include <aws/kafka/model/Tls.h>
+#include <aws/kafka/model/TokenEndpointAuthenticationMethod.h>
 #include <aws/kafka/model/TooManyRequestsException.h>
 #include <aws/kafka/model/TopicConfiguration.h>
 #include <aws/kafka/model/TopicExistsException.h>

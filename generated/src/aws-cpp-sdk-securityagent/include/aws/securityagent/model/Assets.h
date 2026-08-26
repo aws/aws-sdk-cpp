@@ -11,6 +11,7 @@
 #include <aws/securityagent/model/Endpoint.h>
 #include <aws/securityagent/model/IntegratedRepository.h>
 #include <aws/securityagent/model/SourceCodeRepository.h>
+#include <aws/securityagent/model/TrustedCaCertificate.h>
 
 #include <utility>
 
@@ -157,6 +158,32 @@ class Assets {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The trust anchors used to validate target endpoint TLS certificates. Provide
+   * these for endpoints served by a private or internal certificate authority (CA),
+   * an intermediate CA, or a self-signed certificate.</p>
+   */
+  inline const Aws::Vector<TrustedCaCertificate>& GetTrustedCaCertificates() const { return m_trustedCaCertificates; }
+  inline bool TrustedCaCertificatesHasBeenSet() const { return m_trustedCaCertificatesHasBeenSet; }
+  template <typename TrustedCaCertificatesT = Aws::Vector<TrustedCaCertificate>>
+  void SetTrustedCaCertificates(TrustedCaCertificatesT&& value) {
+    m_trustedCaCertificatesHasBeenSet = true;
+    m_trustedCaCertificates = std::forward<TrustedCaCertificatesT>(value);
+  }
+  template <typename TrustedCaCertificatesT = Aws::Vector<TrustedCaCertificate>>
+  Assets& WithTrustedCaCertificates(TrustedCaCertificatesT&& value) {
+    SetTrustedCaCertificates(std::forward<TrustedCaCertificatesT>(value));
+    return *this;
+  }
+  template <typename TrustedCaCertificatesT = TrustedCaCertificate>
+  Assets& AddTrustedCaCertificates(TrustedCaCertificatesT&& value) {
+    m_trustedCaCertificatesHasBeenSet = true;
+    m_trustedCaCertificates.emplace_back(std::forward<TrustedCaCertificatesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Endpoint> m_endpoints;
 
@@ -167,11 +194,14 @@ class Assets {
   Aws::Vector<SourceCodeRepository> m_sourceCode;
 
   Aws::Vector<IntegratedRepository> m_integratedRepositories;
+
+  Aws::Vector<TrustedCaCertificate> m_trustedCaCertificates;
   bool m_endpointsHasBeenSet = false;
   bool m_actorsHasBeenSet = false;
   bool m_documentsHasBeenSet = false;
   bool m_sourceCodeHasBeenSet = false;
   bool m_integratedRepositoriesHasBeenSet = false;
+  bool m_trustedCaCertificatesHasBeenSet = false;
 };
 
 }  // namespace Model

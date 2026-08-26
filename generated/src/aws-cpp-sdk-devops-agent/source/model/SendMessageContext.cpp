@@ -30,6 +30,10 @@ SendMessageContext& SendMessageContext::operator=(JsonView jsonValue) {
     m_userActionResponse = jsonValue.GetString("userActionResponse");
     m_userActionResponseHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("approvalAction")) {
+    m_approvalAction = jsonValue.GetObject("approvalAction");
+    m_approvalActionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue SendMessageContext::Jsonize() const {
 
   if (m_userActionResponseHasBeenSet) {
     payload.WithString("userActionResponse", m_userActionResponse);
+  }
+
+  if (m_approvalActionHasBeenSet) {
+    payload.WithObject("approvalAction", m_approvalAction.Jsonize());
   }
 
   return payload;

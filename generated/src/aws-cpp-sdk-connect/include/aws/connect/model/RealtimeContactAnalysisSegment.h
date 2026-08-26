@@ -8,6 +8,7 @@
 #include <aws/connect/model/RealTimeContactAnalysisSegmentAttachments.h>
 #include <aws/connect/model/RealTimeContactAnalysisSegmentCategories.h>
 #include <aws/connect/model/RealTimeContactAnalysisSegmentEvent.h>
+#include <aws/connect/model/RealTimeContactAnalysisSegmentExtractedInformation.h>
 #include <aws/connect/model/RealTimeContactAnalysisSegmentIssues.h>
 #include <aws/connect/model/RealTimeContactAnalysisSegmentPostContactSummary.h>
 #include <aws/connect/model/RealTimeContactAnalysisSegmentTranscript.h>
@@ -136,6 +137,24 @@ class RealtimeContactAnalysisSegment {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The extracted information from the conversation.</p>
+   */
+  inline const RealTimeContactAnalysisSegmentExtractedInformation& GetExtractedInformation() const { return m_extractedInformation; }
+  inline bool ExtractedInformationHasBeenSet() const { return m_extractedInformationHasBeenSet; }
+  template <typename ExtractedInformationT = RealTimeContactAnalysisSegmentExtractedInformation>
+  void SetExtractedInformation(ExtractedInformationT&& value) {
+    m_extractedInformationHasBeenSet = true;
+    m_extractedInformation = std::forward<ExtractedInformationT>(value);
+  }
+  template <typename ExtractedInformationT = RealTimeContactAnalysisSegmentExtractedInformation>
+  RealtimeContactAnalysisSegment& WithExtractedInformation(ExtractedInformationT&& value) {
+    SetExtractedInformation(std::forward<ExtractedInformationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   RealTimeContactAnalysisSegmentTranscript m_transcript;
 
@@ -148,12 +167,15 @@ class RealtimeContactAnalysisSegment {
   RealTimeContactAnalysisSegmentAttachments m_attachments;
 
   RealTimeContactAnalysisSegmentPostContactSummary m_postContactSummary;
+
+  RealTimeContactAnalysisSegmentExtractedInformation m_extractedInformation;
   bool m_transcriptHasBeenSet = false;
   bool m_categoriesHasBeenSet = false;
   bool m_issuesHasBeenSet = false;
   bool m_eventHasBeenSet = false;
   bool m_attachmentsHasBeenSet = false;
   bool m_postContactSummaryHasBeenSet = false;
+  bool m_extractedInformationHasBeenSet = false;
 };
 
 }  // namespace Model

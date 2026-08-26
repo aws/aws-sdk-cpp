@@ -110,6 +110,10 @@ Action& Action::operator=(JsonView jsonValue) {
     m_location = jsonValue.GetObject("location");
     m_locationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("influxDB")) {
+    m_influxDB = jsonValue.GetObject("influxDB");
+    m_influxDBHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -206,6 +210,10 @@ JsonValue Action::Jsonize() const {
 
   if (m_locationHasBeenSet) {
     payload.WithObject("location", m_location.Jsonize());
+  }
+
+  if (m_influxDBHasBeenSet) {
+    payload.WithObject("influxDB", m_influxDB.Jsonize());
   }
 
   return payload;

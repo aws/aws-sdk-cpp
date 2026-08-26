@@ -48,6 +48,10 @@ CreateFeedResult& CreateFeedResult::operator=(const Aws::AmazonWebServiceResult<
     }
     m_outputsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("accessRoleArn")) {
+    m_accessRoleArn = jsonValue.GetString("accessRoleArn");
+    m_accessRoleArnHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("status")) {
     m_status = FeedStatusMapper::GetFeedStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;

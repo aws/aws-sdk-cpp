@@ -29,6 +29,7 @@
 #include <aws/elementalinference/model/ExportDictionaryEntriesResult.h>
 #include <aws/elementalinference/model/GetDictionaryResult.h>
 #include <aws/elementalinference/model/GetFeedResult.h>
+#include <aws/elementalinference/model/GetFixtureResult.h>
 #include <aws/elementalinference/model/ListDictionariesRequest.h>
 #include <aws/elementalinference/model/ListDictionariesResult.h>
 #include <aws/elementalinference/model/ListFeedsRequest.h>
@@ -79,6 +80,7 @@ class DisassociateFeedRequest;
 class ExportDictionaryEntriesRequest;
 class GetDictionaryRequest;
 class GetFeedRequest;
+class GetFixtureRequest;
 class ListDictionariesRequest;
 class ListFeedsRequest;
 class ListTagsForResourceRequest;
@@ -99,6 +101,7 @@ typedef Aws::Utils::Outcome<DisassociateFeedResult, ElementalInferenceError> Dis
 typedef Aws::Utils::Outcome<ExportDictionaryEntriesResult, ElementalInferenceError> ExportDictionaryEntriesOutcome;
 typedef Aws::Utils::Outcome<GetDictionaryResult, ElementalInferenceError> GetDictionaryOutcome;
 typedef Aws::Utils::Outcome<GetFeedResult, ElementalInferenceError> GetFeedOutcome;
+typedef Aws::Utils::Outcome<GetFixtureResult, ElementalInferenceError> GetFixtureOutcome;
 typedef Aws::Utils::Outcome<ListDictionariesResult, ElementalInferenceError> ListDictionariesOutcome;
 typedef Aws::Utils::Outcome<ListFeedsResult, ElementalInferenceError> ListFeedsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, ElementalInferenceError> ListTagsForResourceOutcome;
@@ -119,6 +122,7 @@ typedef std::future<DisassociateFeedOutcome> DisassociateFeedOutcomeCallable;
 typedef std::future<ExportDictionaryEntriesOutcome> ExportDictionaryEntriesOutcomeCallable;
 typedef std::future<GetDictionaryOutcome> GetDictionaryOutcomeCallable;
 typedef std::future<GetFeedOutcome> GetFeedOutcomeCallable;
+typedef std::future<GetFixtureOutcome> GetFixtureOutcomeCallable;
 typedef std::future<ListDictionariesOutcome> ListDictionariesOutcomeCallable;
 typedef std::future<ListFeedsOutcome> ListFeedsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -160,6 +164,9 @@ typedef std::function<void(const ElementalInferenceClient*, const Model::GetDict
 typedef std::function<void(const ElementalInferenceClient*, const Model::GetFeedRequest&, const Model::GetFeedOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetFeedResponseReceivedHandler;
+typedef std::function<void(const ElementalInferenceClient*, const Model::GetFixtureRequest&, const Model::GetFixtureOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetFixtureResponseReceivedHandler;
 typedef std::function<void(const ElementalInferenceClient*, const Model::ListDictionariesRequest&, const Model::ListDictionariesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListDictionariesResponseReceivedHandler;

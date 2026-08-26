@@ -54,6 +54,10 @@ ProductUserSummary& ProductUserSummary::operator=(JsonView jsonValue) {
     m_subscriptionEndDate = jsonValue.GetString("SubscriptionEndDate");
     m_subscriptionEndDateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("LicenseExpirationDate")) {
+    m_licenseExpirationDate = jsonValue.GetString("LicenseExpirationDate");
+    m_licenseExpirationDateHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -94,6 +98,10 @@ JsonValue ProductUserSummary::Jsonize() const {
 
   if (m_subscriptionEndDateHasBeenSet) {
     payload.WithString("SubscriptionEndDate", m_subscriptionEndDate);
+  }
+
+  if (m_licenseExpirationDateHasBeenSet) {
+    payload.WithString("LicenseExpirationDate", m_licenseExpirationDate);
   }
 
   return payload;

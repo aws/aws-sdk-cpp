@@ -10,7 +10,7 @@
 namespace Aws {
 namespace DevOpsAgent {
 namespace Model {
-enum class NewRelicRegion { NOT_SET, US, EU };
+enum class NewRelicRegion { NOT_SET, US, EU, JP };
 
 namespace NewRelicRegionMapper {
 AWS_DEVOPSAGENT_API NewRelicRegion GetNewRelicRegionForName(const Aws::String& name);

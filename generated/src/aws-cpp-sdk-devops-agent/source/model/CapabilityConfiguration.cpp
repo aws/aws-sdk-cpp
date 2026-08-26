@@ -22,6 +22,14 @@ CapabilityConfiguration& CapabilityConfiguration::operator=(JsonView jsonValue) 
     m_enabled = jsonValue.GetBool("enabled");
     m_enabledHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("triggerFilterGroups")) {
+    Aws::Utils::Array<JsonView> triggerFilterGroupsJsonList = jsonValue.GetArray("triggerFilterGroups");
+    for (unsigned triggerFilterGroupsIndex = 0; triggerFilterGroupsIndex < triggerFilterGroupsJsonList.GetLength();
+         ++triggerFilterGroupsIndex) {
+      m_triggerFilterGroups.push_back(triggerFilterGroupsJsonList[triggerFilterGroupsIndex].AsObject());
+    }
+    m_triggerFilterGroupsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +38,15 @@ JsonValue CapabilityConfiguration::Jsonize() const {
 
   if (m_enabledHasBeenSet) {
     payload.WithBool("enabled", m_enabled);
+  }
+
+  if (m_triggerFilterGroupsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> triggerFilterGroupsJsonList(m_triggerFilterGroups.size());
+    for (unsigned triggerFilterGroupsIndex = 0; triggerFilterGroupsIndex < triggerFilterGroupsJsonList.GetLength();
+         ++triggerFilterGroupsIndex) {
+      triggerFilterGroupsJsonList[triggerFilterGroupsIndex].AsObject(m_triggerFilterGroups[triggerFilterGroupsIndex].Jsonize());
+    }
+    payload.WithArray("triggerFilterGroups", std::move(triggerFilterGroupsJsonList));
   }
 
   return payload;

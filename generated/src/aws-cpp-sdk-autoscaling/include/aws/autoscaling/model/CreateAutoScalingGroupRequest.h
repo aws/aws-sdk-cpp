@@ -120,7 +120,11 @@ class CreateAutoScalingGroupRequest : public AutoScalingRequest {
    * <p>The mixed instances policy. For more information, see <a
    * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
    * Scaling groups with multiple instance types and purchase options</a> in the
-   * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+   * <i>Amazon EC2 Auto Scaling User Guide</i>. To learn how to prioritize multiple
+   * capacity types, see <a
+   * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/use-distribution-segments.html">Use
+   * Distribution Segments to target multiple capacity types</a> in the <i>Amazon EC2
+   * Auto Scaling User Guide</i>.</p>
    */
   inline const MixedInstancesPolicy& GetMixedInstancesPolicy() const { return m_mixedInstancesPolicy; }
   inline bool MixedInstancesPolicyHasBeenSet() const { return m_mixedInstancesPolicyHasBeenSet; }

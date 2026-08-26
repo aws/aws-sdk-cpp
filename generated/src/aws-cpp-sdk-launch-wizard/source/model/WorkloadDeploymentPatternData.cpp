@@ -50,6 +50,14 @@ WorkloadDeploymentPatternData& WorkloadDeploymentPatternData::operator=(JsonView
     m_statusMessage = jsonValue.GetString("statusMessage");
     m_statusMessageHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("accountConstraints")) {
+    Aws::Utils::Array<JsonView> accountConstraintsJsonList = jsonValue.GetArray("accountConstraints");
+    for (unsigned accountConstraintsIndex = 0; accountConstraintsIndex < accountConstraintsJsonList.GetLength();
+         ++accountConstraintsIndex) {
+      m_accountConstraints.push_back(accountConstraintsJsonList[accountConstraintsIndex].AsObject());
+    }
+    m_accountConstraintsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("specifications")) {
     Aws::Utils::Array<JsonView> specificationsJsonList = jsonValue.GetArray("specifications");
     for (unsigned specificationsIndex = 0; specificationsIndex < specificationsJsonList.GetLength(); ++specificationsIndex) {
@@ -93,6 +101,15 @@ JsonValue WorkloadDeploymentPatternData::Jsonize() const {
 
   if (m_statusMessageHasBeenSet) {
     payload.WithString("statusMessage", m_statusMessage);
+  }
+
+  if (m_accountConstraintsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> accountConstraintsJsonList(m_accountConstraints.size());
+    for (unsigned accountConstraintsIndex = 0; accountConstraintsIndex < accountConstraintsJsonList.GetLength();
+         ++accountConstraintsIndex) {
+      accountConstraintsJsonList[accountConstraintsIndex].AsObject(m_accountConstraints[accountConstraintsIndex].Jsonize());
+    }
+    payload.WithArray("accountConstraints", std::move(accountConstraintsJsonList));
   }
 
   if (m_specificationsHasBeenSet) {

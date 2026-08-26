@@ -17,6 +17,7 @@ namespace NewRelicRegionMapper {
 
 static const int US_HASH = HashingUtils::HashString("US");
 static const int EU_HASH = HashingUtils::HashString("EU");
+static const int JP_HASH = HashingUtils::HashString("JP");
 
 NewRelicRegion GetNewRelicRegionForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ NewRelicRegion GetNewRelicRegionForName(const Aws::String& name) {
     return NewRelicRegion::US;
   } else if (hashCode == EU_HASH) {
     return NewRelicRegion::EU;
+  } else if (hashCode == JP_HASH) {
+    return NewRelicRegion::JP;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForNewRelicRegion(NewRelicRegion enumValue) {
       return "US";
     case NewRelicRegion::EU:
       return "EU";
+    case NewRelicRegion::JP:
+      return "JP";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect-contact-lens/ConnectContactLens_EXPORTS.h>
 #include <aws/connect-contact-lens/model/Categories.h>
+#include <aws/connect-contact-lens/model/ExtractedInformation.h>
 #include <aws/connect-contact-lens/model/PostContactSummary.h>
 #include <aws/connect-contact-lens/model/Transcript.h>
 
@@ -87,15 +88,36 @@ class RealtimeContactAnalysisSegment {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The extracted information from the conversation.</p>
+   */
+  inline const ExtractedInformation& GetExtractedInformation() const { return m_extractedInformation; }
+  inline bool ExtractedInformationHasBeenSet() const { return m_extractedInformationHasBeenSet; }
+  template <typename ExtractedInformationT = ExtractedInformation>
+  void SetExtractedInformation(ExtractedInformationT&& value) {
+    m_extractedInformationHasBeenSet = true;
+    m_extractedInformation = std::forward<ExtractedInformationT>(value);
+  }
+  template <typename ExtractedInformationT = ExtractedInformation>
+  RealtimeContactAnalysisSegment& WithExtractedInformation(ExtractedInformationT&& value) {
+    SetExtractedInformation(std::forward<ExtractedInformationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Transcript m_transcript;
 
   Categories m_categories;
 
   PostContactSummary m_postContactSummary;
+
+  ExtractedInformation m_extractedInformation;
   bool m_transcriptHasBeenSet = false;
   bool m_categoriesHasBeenSet = false;
   bool m_postContactSummaryHasBeenSet = false;
+  bool m_extractedInformationHasBeenSet = false;
 };
 
 }  // namespace Model

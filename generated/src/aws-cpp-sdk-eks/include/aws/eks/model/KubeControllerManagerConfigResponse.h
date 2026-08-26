@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/eks/EKS_EXPORTS.h>
 #include <aws/eks/model/HorizontalPodAutoscalerControllerConfigResponse.h>
+#include <aws/eks/model/PodGcControllerConfigResponse.h>
 
 #include <utility>
 
@@ -34,6 +35,24 @@ class KubeControllerManagerConfigResponse {
 
   ///@{
   /**
+   * <p>The pod garbage collection controller configuration.</p>
+   */
+  inline const PodGcControllerConfigResponse& GetPodGcControllerConfig() const { return m_podGcControllerConfig; }
+  inline bool PodGcControllerConfigHasBeenSet() const { return m_podGcControllerConfigHasBeenSet; }
+  template <typename PodGcControllerConfigT = PodGcControllerConfigResponse>
+  void SetPodGcControllerConfig(PodGcControllerConfigT&& value) {
+    m_podGcControllerConfigHasBeenSet = true;
+    m_podGcControllerConfig = std::forward<PodGcControllerConfigT>(value);
+  }
+  template <typename PodGcControllerConfigT = PodGcControllerConfigResponse>
+  KubeControllerManagerConfigResponse& WithPodGcControllerConfig(PodGcControllerConfigT&& value) {
+    SetPodGcControllerConfig(std::forward<PodGcControllerConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The horizontal pod autoscaler controller configuration.</p>
    */
   inline const HorizontalPodAutoscalerControllerConfigResponse& GetHorizontalPodAutoscalerControllerConfig() const {
@@ -52,7 +71,10 @@ class KubeControllerManagerConfigResponse {
   }
   ///@}
  private:
+  PodGcControllerConfigResponse m_podGcControllerConfig;
+
   HorizontalPodAutoscalerControllerConfigResponse m_horizontalPodAutoscalerControllerConfig;
+  bool m_podGcControllerConfigHasBeenSet = false;
   bool m_horizontalPodAutoscalerControllerConfigHasBeenSet = false;
 };
 

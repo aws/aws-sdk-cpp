@@ -10,7 +10,16 @@
 namespace Aws {
 namespace Connect {
 namespace Model {
-enum class RealTimeContactAnalysisSegmentType { NOT_SET, Transcript, Categories, Issues, Event, Attachments, PostContactSummary };
+enum class RealTimeContactAnalysisSegmentType {
+  NOT_SET,
+  Transcript,
+  Categories,
+  Issues,
+  Event,
+  Attachments,
+  PostContactSummary,
+  ExtractedInformation
+};
 
 namespace RealTimeContactAnalysisSegmentTypeMapper {
 AWS_CONNECT_API RealTimeContactAnalysisSegmentType GetRealTimeContactAnalysisSegmentTypeForName(const Aws::String& name);

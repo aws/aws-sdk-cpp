@@ -215,6 +215,8 @@
 #include <aws/eks/model/InsightSummary.h>
 #include <aws/eks/model/InsightsFilter.h>
 #include <aws/eks/model/InsightsRefreshStatus.h>
+#include <aws/eks/model/IntegerConstraints.h>
+#include <aws/eks/model/IntegerParameterConfig.h>
 #include <aws/eks/model/IntegerRangeConstraint.h>
 #include <aws/eks/model/InvalidParameterException.h>
 #include <aws/eks/model/InvalidRequestException.h>
@@ -299,6 +301,9 @@
 #include <aws/eks/model/OidcIdentityProviderConfigRequest.h>
 #include <aws/eks/model/OutpostConfigRequest.h>
 #include <aws/eks/model/OutpostConfigResponse.h>
+#include <aws/eks/model/PodGcControllerConfigRequest.h>
+#include <aws/eks/model/PodGcControllerConfigResponse.h>
+#include <aws/eks/model/PodGcControllerVersionConfig.h>
 #include <aws/eks/model/PodIdentityAssociation.h>
 #include <aws/eks/model/PodIdentityAssociationSummary.h>
 #include <aws/eks/model/PortRangeConstraints.h>

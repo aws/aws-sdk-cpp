@@ -56,7 +56,7 @@ class UserSearchFilter {
    * specifies conditions that need to be applied with <code>OR</code> operator.</p>
    * </li> <li> <p>The inner list specifies conditions that need to be applied with
    * <code>AND</code> operator.</p> </li> </ul>  <p>Only one field can be
-   * populated. This object can���t be used along with TagFilter. Request can either
+   * populated. This object can’t be used along with TagFilter. Request can either
    * contain TagFilter or UserAttributeFilter if SearchFilter is specified,
    * combination of both is not supported and such request will throw
    * AccessDeniedException.</p>

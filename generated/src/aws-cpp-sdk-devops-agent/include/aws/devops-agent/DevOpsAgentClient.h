@@ -1451,6 +1451,34 @@ class AWS_DEVOPSAGENT_API DevOpsAgentClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Updates an approval request with the terminal decision (APPROVED or
+   * REJECTED). A single operation handles both verbs via the action
+   * enum.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UpdateApprovalAction">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateApprovalActionOutcome UpdateApprovalAction(const Model::UpdateApprovalActionRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateApprovalAction that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateApprovalActionRequestT = Model::UpdateApprovalActionRequest>
+  Model::UpdateApprovalActionOutcomeCallable UpdateApprovalActionCallable(const UpdateApprovalActionRequestT& request) const {
+    return SubmitCallable(&DevOpsAgentClient::UpdateApprovalAction, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateApprovalAction that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateApprovalActionRequestT = Model::UpdateApprovalActionRequest>
+  void UpdateApprovalActionAsync(const UpdateApprovalActionRequestT& request, const UpdateApprovalActionResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DevOpsAgentClient::UpdateApprovalAction, request, handler, context);
+  }
+
+  /**
    * <p>Updates an asset in the specified agent space</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UpdateAsset">AWS
    * API Reference</a></p>

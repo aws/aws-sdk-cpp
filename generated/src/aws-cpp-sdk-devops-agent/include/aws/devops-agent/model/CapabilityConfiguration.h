@@ -4,7 +4,11 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/devops-agent/DevOpsAgent_EXPORTS.h>
+#include <aws/devops-agent/model/TriggerFilterGroup.h>
+
+#include <utility>
 
 namespace Aws {
 namespace Utils {
@@ -44,9 +48,38 @@ class CapabilityConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Optional trigger filter groups. Evaluated only when enabled=true; retained
+   * while the capability is disabled, so re-enabling restores the prior trigger
+   * behavior.</p>
+   */
+  inline const Aws::Vector<TriggerFilterGroup>& GetTriggerFilterGroups() const { return m_triggerFilterGroups; }
+  inline bool TriggerFilterGroupsHasBeenSet() const { return m_triggerFilterGroupsHasBeenSet; }
+  template <typename TriggerFilterGroupsT = Aws::Vector<TriggerFilterGroup>>
+  void SetTriggerFilterGroups(TriggerFilterGroupsT&& value) {
+    m_triggerFilterGroupsHasBeenSet = true;
+    m_triggerFilterGroups = std::forward<TriggerFilterGroupsT>(value);
+  }
+  template <typename TriggerFilterGroupsT = Aws::Vector<TriggerFilterGroup>>
+  CapabilityConfiguration& WithTriggerFilterGroups(TriggerFilterGroupsT&& value) {
+    SetTriggerFilterGroups(std::forward<TriggerFilterGroupsT>(value));
+    return *this;
+  }
+  template <typename TriggerFilterGroupsT = TriggerFilterGroup>
+  CapabilityConfiguration& AddTriggerFilterGroups(TriggerFilterGroupsT&& value) {
+    m_triggerFilterGroupsHasBeenSet = true;
+    m_triggerFilterGroups.emplace_back(std::forward<TriggerFilterGroupsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   bool m_enabled{false};
+
+  Aws::Vector<TriggerFilterGroup> m_triggerFilterGroups;
   bool m_enabledHasBeenSet = false;
+  bool m_triggerFilterGroupsHasBeenSet = false;
 };
 
 }  // namespace Model

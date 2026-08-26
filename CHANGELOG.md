@@ -1,3 +1,53 @@
+# 1.11.879 (2026-08-26)
+
+## SDK Highlights
+* **Documentation**: Announce the new CHANGELOG format (SDK Highlights and Service Updates) and upcoming inclusion of change notes in release notes
+
+## Service Updates
+* **DevOps Agent**: AWS DevOps Agent now supports trigger filter groups for Release Readiness Review, letting you control when the capability auto-triggers based on webhook events and target branches.
+* **EC2**: Adds deleting state to possible VPC States.
+* **License Manager User Subscriptions**: Released support for License Expiry field in ListProductSubscriptions API
+* **Network Firewall**: Adding new status enum for Firewalls.
+* **SageMaker**: Amazon SageMaker AI now supports ml.g7 instances for model optimization. You can now run model optimization jobs on ml.g7 instances, in supported AWS Regions.
+
+# 1.11.878 (2026-08-25)
+
+## Service Updates
+* **Auto Scaling**: Adds support for Distribution Segments in mixed instances policies, providing ordered prioritization across On-Demand Capacity Reservations, Capacity Blocks, interruptible Capacity Reservations, and On-Demand capacity.
+* **DevOps Agent**: Adds the UpdateApprovalAction API for resolving agent action approvals in AWS DevOps Agent agent spaces.
+* **EC2**: Fleet feature to support Capacity Reservation Resource Groups with Amazon EC2 Capacity Blocks and interruptible Capacity Reservations
+* **EKS**: This feature would give customers the ability to tune TerminatedPodGcThreshold configuration in an Amazon EKS cluster.
+* **IAM Toolbox**: AWS Identity and Access Management (IAM) announces access troubleshooter, helping you debug access denied errors faster. Supported error messages now include an identifier you can use to retrieve detailed evaluations of the policies considered and their results. Preview in US East (N. Virginia).
+* **IoT**: As part of this release, we are extending capability of AWS IoT Rules Engine to support IoT InfluxDB Action. The IoT InfluxDB action lets customers send messages from IoT sensors and applications to InfluxDB.
+* **Marketplace Metering**: Updated documentation to clarify duplicate-billing prevention and BatchMeterUsage retry guidance
+* **evs**: EVS now supports i7i.metal-48xl EC2 bare metal instance type, delivering high random IOPS performance with real-time latency, ideal for IO intensive and latency-sensitive workloads such as transactional databases, real-time analytics, and AI ML pre-processing.
+
+# 1.11.877 (2026-08-24)
+
+## SDK Highlights
+* **Feature**: Add changelog fragment script and update CONTRIBUTING.md
+
+## Service Updates
+* **Batch**: Doc Update, Add note that UpdatePolicy applies only to EC2 managed compute environments
+* **Bedrock**: Adds support for specifying an inference profile ID or ARN, or an application inference profile ARN as the target model in CreateAdvancedPromptOptimizationJob.
+* **Connect Contact Lens**: This release adds the ExtractedInformation segment to the ListRealtimeContactAnalysisSegments API, enabling customers to retrieve information extracted from real-time contact analysis.
+* **Connect**: This release adds the ExtractedInformation segment to the ListRealtimeContactAnalysisSegmentsV2 API, enabling customers to retrieve information extracted from real-time contact analysis.
+* **DSQL**: Corrected the validation pattern on the ServiceName response field in the GetVpcEndpointServiceName API to match the values Amazon Aurora DSQL actually returns.
+* **ElementalInference**: Added support for the GetFixture API, enabling customers to retrieve the details of a fixture from its fixture ID, and added the access role ARN to the CreateFeed, GetFeed, and UpdateFeed responses.
+* **Kafka**: Amazon MSK Replicator now supports OAuth authentication when connecting to external Apache Kafka clusters, enabling customers to replicate data from clusters that require OAuth for client authentication. This new capability is supported in all AWS Regions where MSK Express brokers are available.
+* **Launch Wizard**: Added accountConstraints and patternType to GetWorkload, ListWorkloads, GetWorkloadDeploymentPattern and ListWorkloadDeploymentPatterns for Launch Wizard
+* **SecurityAgent**: Adding private and self-signed certificate configuration support for penetration tests
+* **Timestream InfluxDB**: Service-managed parameter groups now only apply optimized defaults to DB Clusters automatically. New field effectiveDbParameterGroupIdentifier surfaces the parameter group actually applied.
+
+# Announcement
+We are moving the changelog to a new format and tying it to a new release process.
+
+Changelog entries are grouped into sections. For example:
+* **SDK Highlights**: SDK core feature updates will show up as SDK Highlights when updated.
+* **Service Updates**: the daily service model updates are noted here.
+
+We are also making GitHub releases the source of truth for a "release". The changelog will only be updated when the SDK source is "released", meaning a GitHub release with a tag, and the change notes for that release will be included as part of the release notes.
+
 # Breaking changes in AWS SDK for C++
 ## [1.11.0](https://github.com/aws/aws-sdk-cpp/tree/1.11.0) (2022-01-24)
 This release introduces a refactored Asynchronous API and restructures the File Hierarchy of the project source code. Additionally, the minimum required version of cmake was raised to 3.13.

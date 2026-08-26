@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/devops-agent/DevOpsAgent_EXPORTS.h>
+#include <aws/devops-agent/model/MCPToolDetail.h>
 
 #include <utility>
 
@@ -56,9 +57,37 @@ class MCPServerConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>List of MCP tools with their access categorization. When provided, the tool
+   * names must match those in the tools member.</p>
+   */
+  inline const Aws::Vector<MCPToolDetail>& GetToolDetails() const { return m_toolDetails; }
+  inline bool ToolDetailsHasBeenSet() const { return m_toolDetailsHasBeenSet; }
+  template <typename ToolDetailsT = Aws::Vector<MCPToolDetail>>
+  void SetToolDetails(ToolDetailsT&& value) {
+    m_toolDetailsHasBeenSet = true;
+    m_toolDetails = std::forward<ToolDetailsT>(value);
+  }
+  template <typename ToolDetailsT = Aws::Vector<MCPToolDetail>>
+  MCPServerConfiguration& WithToolDetails(ToolDetailsT&& value) {
+    SetToolDetails(std::forward<ToolDetailsT>(value));
+    return *this;
+  }
+  template <typename ToolDetailsT = MCPToolDetail>
+  MCPServerConfiguration& AddToolDetails(ToolDetailsT&& value) {
+    m_toolDetailsHasBeenSet = true;
+    m_toolDetails.emplace_back(std::forward<ToolDetailsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_tools;
+
+  Aws::Vector<MCPToolDetail> m_toolDetails;
   bool m_toolsHasBeenSet = false;
+  bool m_toolDetailsHasBeenSet = false;
 };
 
 }  // namespace Model

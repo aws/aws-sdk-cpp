@@ -50,6 +50,14 @@ RegisteredService& RegisteredService::operator=(JsonView jsonValue) {
     m_privateConnectionName = jsonValue.GetString("privateConnectionName");
     m_privateConnectionNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("createdAt")) {
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("updatedAt")) {
+    m_updatedAt = jsonValue.GetString("updatedAt");
+    m_updatedAtHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -87,6 +95,14 @@ JsonValue RegisteredService::Jsonize() const {
 
   if (m_privateConnectionNameHasBeenSet) {
     payload.WithString("privateConnectionName", m_privateConnectionName);
+  }
+
+  if (m_createdAtHasBeenSet) {
+    payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_updatedAtHasBeenSet) {
+    payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

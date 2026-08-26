@@ -13,6 +13,7 @@
 #include <aws/iot/model/ElasticsearchAction.h>
 #include <aws/iot/model/FirehoseAction.h>
 #include <aws/iot/model/HttpAction.h>
+#include <aws/iot/model/InfluxDBAction.h>
 #include <aws/iot/model/IotAnalyticsAction.h>
 #include <aws/iot/model/IotEventsAction.h>
 #include <aws/iot/model/IotSiteWiseAction.h>
@@ -479,6 +480,24 @@ class Action {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Write data to an InfluxDB database.</p>
+   */
+  inline const InfluxDBAction& GetInfluxDB() const { return m_influxDB; }
+  inline bool InfluxDBHasBeenSet() const { return m_influxDBHasBeenSet; }
+  template <typename InfluxDBT = InfluxDBAction>
+  void SetInfluxDB(InfluxDBT&& value) {
+    m_influxDBHasBeenSet = true;
+    m_influxDB = std::forward<InfluxDBT>(value);
+  }
+  template <typename InfluxDBT = InfluxDBAction>
+  Action& WithInfluxDB(InfluxDBT&& value) {
+    SetInfluxDB(std::forward<InfluxDBT>(value));
+    return *this;
+  }
+  ///@}
  private:
   DynamoDBAction m_dynamoDB;
 
@@ -525,6 +544,8 @@ class Action {
   OpenSearchAction m_openSearch;
 
   LocationAction m_location;
+
+  InfluxDBAction m_influxDB;
   bool m_dynamoDBHasBeenSet = false;
   bool m_dynamoDBv2HasBeenSet = false;
   bool m_lambdaHasBeenSet = false;
@@ -548,6 +569,7 @@ class Action {
   bool m_kafkaHasBeenSet = false;
   bool m_openSearchHasBeenSet = false;
   bool m_locationHasBeenSet = false;
+  bool m_influxDBHasBeenSet = false;
 };
 
 }  // namespace Model

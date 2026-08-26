@@ -29,6 +29,7 @@
 #include <aws/elementalinference/model/ExportDictionaryEntriesRequest.h>
 #include <aws/elementalinference/model/GetDictionaryRequest.h>
 #include <aws/elementalinference/model/GetFeedRequest.h>
+#include <aws/elementalinference/model/GetFixtureRequest.h>
 #include <aws/elementalinference/model/ListDictionariesRequest.h>
 #include <aws/elementalinference/model/ListFeedsRequest.h>
 #include <aws/elementalinference/model/ListTagsForResourceRequest.h>
@@ -340,6 +341,23 @@ GetFeedOutcome ElementalInferenceClient::GetFeed(const GetFeedRequest& request) 
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetFeedOutcome(result.GetResultWithOwnership()) : GetFeedOutcome(std::move(result.GetError()));
+}
+
+GetFixtureOutcome ElementalInferenceClient::GetFixture(const GetFixtureRequest& request) const {
+  if (!request.FixtureIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetFixture", "Required field: FixtureId, is not set");
+    return GetFixtureOutcome(Aws::Client::AWSError<ElementalInferenceErrors>(
+        ElementalInferenceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FixtureId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/fixtures/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFixtureId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFixtureOutcome(result.GetResultWithOwnership()) : GetFixtureOutcome(std::move(result.GetError()));
 }
 
 ListDictionariesOutcome ElementalInferenceClient::ListDictionaries(const ListDictionariesRequest& request) const {

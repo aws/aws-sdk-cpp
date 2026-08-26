@@ -15,11 +15,17 @@ namespace EC2 {
 namespace Model {
 namespace FleetReservationTypeMapper {
 
+static const int on_demand_capacity_reservation_HASH = HashingUtils::HashString("on-demand-capacity-reservation");
+static const int capacity_block_HASH = HashingUtils::HashString("capacity-block");
 static const int interruptible_capacity_reservation_HASH = HashingUtils::HashString("interruptible-capacity-reservation");
 
 FleetReservationType GetFleetReservationTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == interruptible_capacity_reservation_HASH) {
+  if (hashCode == on_demand_capacity_reservation_HASH) {
+    return FleetReservationType::on_demand_capacity_reservation;
+  } else if (hashCode == capacity_block_HASH) {
+    return FleetReservationType::capacity_block;
+  } else if (hashCode == interruptible_capacity_reservation_HASH) {
     return FleetReservationType::interruptible_capacity_reservation;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
@@ -35,6 +41,10 @@ Aws::String GetNameForFleetReservationType(FleetReservationType enumValue) {
   switch (enumValue) {
     case FleetReservationType::NOT_SET:
       return {};
+    case FleetReservationType::on_demand_capacity_reservation:
+      return "on-demand-capacity-reservation";
+    case FleetReservationType::capacity_block:
+      return "capacity-block";
     case FleetReservationType::interruptible_capacity_reservation:
       return "interruptible-capacity-reservation";
     default:

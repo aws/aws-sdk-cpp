@@ -59,7 +59,10 @@ class CreateFleetError {
   ///@{
   /**
    * <p>Indicates if the instance that could not be launched was a Spot, On-Demand,
-   * Capacity Block, or Interruptible Capacity Reservation instance.</p>
+   * Capacity Block for ML, or interruptible Capacity Reservation instance. If you
+   * are using <code>ReservedCapacityOptions</code> with
+   * <code>on-demand-capacity-reservation</code> in the <code>ReservationTypes</code>
+   * list, the value can also be <code>on-demand-capacity-reservation</code>.</p>
    */
   inline InstanceLifecycle GetLifecycle() const { return m_lifecycle; }
   inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }

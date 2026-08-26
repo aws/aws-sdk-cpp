@@ -137,6 +137,7 @@
 #include <aws/autoscaling/model/DetachTrafficSourcesRequest.h>
 #include <aws/autoscaling/model/DetachTrafficSourcesResult.h>
 #include <aws/autoscaling/model/DisableMetricsCollectionRequest.h>
+#include <aws/autoscaling/model/DistributionSegment.h>
 #include <aws/autoscaling/model/Ebs.h>
 #include <aws/autoscaling/model/EnableMetricsCollectionRequest.h>
 #include <aws/autoscaling/model/EnabledMetric.h>
@@ -250,6 +251,7 @@
 #include <aws/autoscaling/model/SuspendedProcess.h>
 #include <aws/autoscaling/model/Tag.h>
 #include <aws/autoscaling/model/TagDescription.h>
+#include <aws/autoscaling/model/TargetCapacityType.h>
 #include <aws/autoscaling/model/TargetTrackingConfiguration.h>
 #include <aws/autoscaling/model/TargetTrackingMetricDataQuery.h>
 #include <aws/autoscaling/model/TargetTrackingMetricStat.h>

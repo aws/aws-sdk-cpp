@@ -17,6 +17,7 @@ namespace VpcStateMapper {
 
 static const int pending_HASH = HashingUtils::HashString("pending");
 static const int available_HASH = HashingUtils::HashString("available");
+static const int deleting_HASH = HashingUtils::HashString("deleting");
 
 VpcState GetVpcStateForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ VpcState GetVpcStateForName(const Aws::String& name) {
     return VpcState::pending;
   } else if (hashCode == available_HASH) {
     return VpcState::available;
+  } else if (hashCode == deleting_HASH) {
+    return VpcState::deleting;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForVpcState(VpcState enumValue) {
       return "pending";
     case VpcState::available:
       return "available";
+    case VpcState::deleting:
+      return "deleting";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {
