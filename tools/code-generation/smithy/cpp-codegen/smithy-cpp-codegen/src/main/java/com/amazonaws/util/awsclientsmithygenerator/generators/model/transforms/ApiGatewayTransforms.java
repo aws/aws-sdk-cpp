@@ -6,6 +6,8 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.ServiceNameUtil;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ModelTransform;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.model.shapes.ShapeId;
@@ -31,14 +33,15 @@ public final class ApiGatewayTransforms {
             return model;
         }
         String ns = service.getId().getNamespace();
+        Protocol protocol = ProtocolResolver.resolve(service, model);
         List<StructureShape> updated = new ArrayList<>();
         for (String requestName : List.of("TestInvokeMethodRequest", "TestInvokeAuthorizerRequest")) {
             model.getShape(ShapeId.fromParts(ns, requestName))
                 .flatMap(s -> s.asStructureShape())
                 .ifPresent(struct -> {
                     StructureShape afterBody = TransformSupport
-                        .renameMember(struct, "body", "requestBody").orElse(struct);
-                    TransformSupport.renameMember(afterBody, "headers", "requestHeaders")
+                        .renameMember(struct, "body", "requestBody", protocol).orElse(struct);
+                    TransformSupport.renameMember(afterBody, "headers", "requestHeaders", protocol)
                         .ifPresentOrElse(updated::add, () -> {
                             if (afterBody != struct) {
                                 updated.add(afterBody);

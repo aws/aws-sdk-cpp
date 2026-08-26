@@ -5,13 +5,19 @@
 package com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.EnumRenderer;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
+import software.amazon.smithy.aws.traits.protocols.Ec2QueryNameTrait;
 import software.amazon.smithy.model.shapes.EnumShape;
 import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.Shape;
 import software.amazon.smithy.model.shapes.StructureShape;
 import software.amazon.smithy.model.traits.EnumDefinition;
 import software.amazon.smithy.model.traits.EnumTrait;
+import software.amazon.smithy.model.traits.JsonNameTrait;
+import software.amazon.smithy.model.traits.Trait;
+import software.amazon.smithy.model.traits.XmlNameTrait;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -83,28 +89,29 @@ final class TransformSupport {
      * preserving member declaration order and copying all traits onto the renamed member. Returns
      * {@link Optional#empty()} if {@code oldName} is absent (nothing to rename).
      *
+     * <p>The renamed member keeps its original wire name. A member with no explicit wire-name trait
+     * serializes under its member name, so renaming it would silently change the wire key; to
+     * prevent that this method pins the original name via the protocol-appropriate trait(s)
+     * ({@link #wireNamePreservingTraits}). This mirrors the legacy C2J rename primitive, which
+     * couples {@code setLocationName(originalMemberKey)} into the same step that changes the member
+     * key so a rename can never drop the wire name.
+     *
      * @throws IllegalStateException if {@code newName} is already a distinct member — a genuine
-     *     collision that would silently drop a member. Callers must not mask this.
-     */
-    static Optional<StructureShape> renameMember(StructureShape struct, String oldName, String newName) {
-        return renameMember(struct, oldName, newName, new software.amazon.smithy.model.traits.Trait[0]);
-    }
-
-    /**
-     * As {@link #renameMember(StructureShape, String, String)}, additionally attaching
-     * {@code extraTraits} to the renamed member (e.g. a {@code @jsonName} to preserve the original
-     * wire name when the C++ member name changes). Existing member traits are copied first, then the
-     * extras are added.
+     *     collision that would silently drop a member; or if the protocol has no wire-name trait
+     *     to preserve the original key (see {@link #wireNamePreservingTrait}). Callers must not
+     *     mask either.
      */
     static Optional<StructureShape> renameMember(StructureShape struct, String oldName, String newName,
-                                                 software.amazon.smithy.model.traits.Trait... extraTraits) {
-        if (struct.getMember(oldName).isEmpty()) {
+                                                 Protocol protocol) {
+        Optional<MemberShape> target = struct.getMember(oldName);
+        if (target.isEmpty()) {
             return Optional.empty();
         }
         if (struct.getMember(newName).isPresent()) {
             throw new IllegalStateException("Cannot rename member '" + oldName + "' to '" + newName
                 + "' on " + struct.getId() + ": a distinct '" + newName + "' member already exists");
         }
+        List<Trait> wireNameTraits = wireNamePreservingTraits(target.get(), oldName, protocol);
         StructureShape.Builder builder = StructureShape.builder().id(struct.getId());
         struct.getAllTraits().values().forEach(builder::addTrait);
         for (MemberShape member : struct.getAllMembers().values()) {
@@ -113,12 +120,69 @@ final class TransformSupport {
             builder.addMember(name, member.getTarget(), b -> {
                 member.getAllTraits().values().forEach(b::addTrait);
                 if (isTarget) {
-                    for (software.amazon.smithy.model.traits.Trait t : extraTraits) {
-                        b.addTrait(t);
-                    }
+                    wireNameTraits.forEach(b::addTrait);
                 }
             });
         }
         return Optional.of(builder.build());
+    }
+
+    /**
+     * The trait(s) to add to the renamed member so its wire name(s) stay equal to what {@code oldName}
+     * produced. Existing wire-name traits are always copied verbatim by the rename, so this only
+     * synthesizes what the member lacks; if a protocol's trait is already present, nothing is added
+     * for it.
+     *
+     * <ul>
+     *   <li>JSON-family ({@code awsJson}, {@code restJson1}): {@code @jsonName}.</li>
+     *   <li>{@code restXml} / {@code awsQuery}: {@code @xmlName}.</li>
+     *   <li>{@code ec2Query}: request and response use <em>different</em> names, so both are pinned.
+     *       The request query key is authoritative from {@code @ec2QueryName} (used verbatim); the
+     *       response XML element is {@code @xmlName}. EC2 models routinely carry an {@code @xmlName}
+     *       that is not merely the camelCase of the request key (e.g. member {@code Ipv6Addresses}
+     *       has {@code ec2QueryName=Ipv6Addresses} but {@code xmlName=ipv6AddressesSet}), so
+     *       reconstructing the request key from {@code capitalize(@xmlName)} — what legacy C2J does —
+     *       is unreliable. We instead pin {@code @ec2QueryName} to the member's current request key
+     *       ({@code capitalize(@xmlName ?? memberName)} when it has none of its own) so it survives
+     *       the member-name change without depending on any serde-time fallback.</li>
+     *   <li>Any other protocol (e.g. {@code rpcv2Cbor}, which has no wire-name trait and always
+     *       serializes under the member name): fail fast rather than emit an inert trait and
+     *       mis-generate later.</li>
+     * </ul>
+     */
+    private static List<Trait> wireNamePreservingTraits(MemberShape member, String oldName,
+                                                        Protocol protocol) {
+        if (protocol == Protocol.EC2) {
+            List<Trait> traits = new ArrayList<>();
+            if (!member.hasTrait(Ec2QueryNameTrait.class)) {
+                String responseName = member.getTrait(XmlNameTrait.class)
+                    .map(XmlNameTrait::getValue).orElse(oldName);
+                traits.add(new Ec2QueryNameTrait(capitalizeFirst(responseName)));
+            }
+            if (!member.hasTrait(XmlNameTrait.class)) {
+                traits.add(new XmlNameTrait(oldName));
+            }
+            return traits;
+        }
+        if (protocol.isXmlLike()) {
+            return member.hasTrait(XmlNameTrait.class)
+                ? List.of() : List.of(new XmlNameTrait(oldName));
+        }
+        if (protocol.isJsonLike()) {
+            return member.hasTrait(JsonNameTrait.class)
+                ? List.of() : List.of(new JsonNameTrait(oldName));
+        }
+        throw new IllegalStateException("Cannot preserve the wire name of renamed member '" + oldName
+            + "' under protocol " + protocol + ": it has no wire-name trait (rpcv2Cbor always "
+            + "serializes under the member name), so the rename would silently change the wire key. "
+            + "Add explicit wire-name handling for this protocol before renaming its members.");
+    }
+
+    /** Uppercases the first character; the EC2 query-key casing rule. */
+    private static String capitalizeFirst(String value) {
+        if (value.isEmpty()) {
+            return value;
+        }
+        return Character.toUpperCase(value.charAt(0)) + value.substring(1);
     }
 }

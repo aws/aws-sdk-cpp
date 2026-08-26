@@ -61,20 +61,18 @@ public final class SourceRegionTransform {
 
         List<StructureShape> updated = new ArrayList<>();
         for (OperationShape op : TopDownIndex.of(model).getContainedOperations(service)) {
-            if (!operations.contains(op.getId().getName())) {
-                continue;
+            if (operations.contains(op.getId().getName())) {
+                model.getShape(op.getInputShape()).flatMap(s -> s.asStructureShape()).ifPresent(req -> {
+                    if (req.getMember(SOURCE_REGION).isEmpty()) {
+                        updated.add(req.toBuilder()
+                            .addMember(MemberShape.builder()
+                                .id(req.getId().withMember(SOURCE_REGION))
+                                .target(ShapeId.from("smithy.api#String"))
+                                .build())
+                            .build());
+                    }
+                });
             }
-            model.getShape(op.getInputShape()).flatMap(s -> s.asStructureShape()).ifPresent(req -> {
-                if (req.getMember(SOURCE_REGION).isPresent()) {
-                    return;
-                }
-                updated.add(req.toBuilder()
-                    .addMember(MemberShape.builder()
-                        .id(req.getId().withMember(SOURCE_REGION))
-                        .target(ShapeId.from("smithy.api#String"))
-                        .build())
-                    .build());
-            });
         }
 
         if (updated.isEmpty()) {
