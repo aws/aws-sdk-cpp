@@ -26,6 +26,6 @@ AWS_PROTOCOL_TEST(EndpointWithHostLabelOperation, Ec2QueryEndpointTraitWithHostL
   expectedRq.uri = "/";
   expectedRq.host = "foo.bar.example.com";
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateFormUrlEncodedBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

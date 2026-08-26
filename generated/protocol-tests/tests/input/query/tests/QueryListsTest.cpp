@@ -37,7 +37,7 @@ AWS_PROTOCOL_TEST(QueryLists, QueryLists) {
       "JkNvbXBsZXhMaXN0QXJnLm1lbWJlci4xLmhpPWhlbGxvJkNvbXBsZXhMaXN0QXJnLm1lbWJlci4yLmhpPWhvbGE=";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateFormUrlEncodedBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -55,7 +55,7 @@ AWS_PROTOCOL_TEST(QueryLists, EmptyQueryLists) {
   expectedRq.body = "QWN0aW9uPVF1ZXJ5TGlzdHMmVmVyc2lvbj0yMDIwLTAxLTA4Jkxpc3RBcmc9";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateFormUrlEncodedBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -73,7 +73,7 @@ AWS_PROTOCOL_TEST(QueryLists, FlattenedQueryLists) {
   expectedRq.body = "QWN0aW9uPVF1ZXJ5TGlzdHMmVmVyc2lvbj0yMDIwLTAxLTA4JkZsYXR0ZW5lZExpc3RBcmcuMT1BJkZsYXR0ZW5lZExpc3RBcmcuMj1C";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateFormUrlEncodedBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -93,7 +93,7 @@ AWS_PROTOCOL_TEST(QueryLists, QueryListArgWithXmlNameMember) {
       "bS4yPUI=";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateFormUrlEncodedBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -111,7 +111,7 @@ AWS_PROTOCOL_TEST(QueryLists, QueryFlattenedListArgWithXmlName) {
   expectedRq.body = "QWN0aW9uPVF1ZXJ5TGlzdHMmVmVyc2lvbj0yMDIwLTAxLTA4JkhpLjE9QSZIaS4yPUI=";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateFormUrlEncodedBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -135,6 +135,6 @@ AWS_PROTOCOL_TEST(QueryLists, QueryNestedStructWithList) {
       "ci4yPUI=";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateFormUrlEncodedBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

@@ -24,6 +24,6 @@ AWS_PROTOCOL_TEST(NoInputAndNoOutput, QueryNoInputAndNoOutput) {
   expectedRq.body = "QWN0aW9uPU5vSW5wdXRBbmROb091dHB1dCZWZXJzaW9uPTIwMjAtMDEtMDg=";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateFormUrlEncodedBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
