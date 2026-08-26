@@ -71,8 +71,9 @@ public final class GlobalTransforms {
      * requestBody}, {@code headers -> headerValues}, {@code Headers -> headerValues}, honoring the
      * per-service skip-lists. Mirrors the legacy C2J {@code RESERVED_REQUEST_MEMBER_MAPPING}. Only
      * operation-input shapes are touched (never arbitrary domain shapes that happen to end in
-     * "Request"). A collision (the target member name already present) throws via
-     * {@link TransformSupport#renameMember}.
+     * "Request"). {@link TransformSupport#renameMember} preserves each renamed member's wire name
+     * via the service's protocol-appropriate trait (matching C2J's {@code setLocationName}), and
+     * throws on a collision (the target member name already present).
      *
      * @param model   the current model
      * @param service the service being generated (its raw smithy name drives the skip-lists)
@@ -80,6 +81,7 @@ public final class GlobalTransforms {
      */
     static Model renameReservedRequestMembers(Model model, ServiceShape service) {
         String smithyServiceName = ServiceNameUtil.getSmithyServiceName(service, null);
+        Protocol protocol = ProtocolResolver.resolve(service, model);
         Set<ShapeId> inputIds = new HashSet<>();
         for (OperationShape op : TopDownIndex.of(model).getContainedOperations(service)) {
             inputIds.add(op.getInputShape());
@@ -91,7 +93,7 @@ public final class GlobalTransforms {
                 boolean changed = false;
                 for (Map.Entry<String, String> rename : reservedRenames(current, smithyServiceName)) {
                     Optional<StructureShape> next =
-                        TransformSupport.renameMember(current, rename.getKey(), rename.getValue());
+                        TransformSupport.renameMember(current, rename.getKey(), rename.getValue(), protocol);
                     if (next.isPresent()) {
                         current = next.get();
                         changed = true;
@@ -248,9 +250,11 @@ public final class GlobalTransforms {
             model.getShape(outputId).flatMap(Shape::asStructureShape).ifPresent(result -> {
                 if (result.getMember(RESPONSE_METADATA).isPresent()) {
                     throw new IllegalStateException("Result shape " + result.getId()
-                        + " already has a '" + RESPONSE_METADATA + "' member; cannot inject the "
-                        + "framework " + RESPONSE_METADATA + " envelope. Rename the modeled member "
-                        + "via a per-service transform first.");
+                        + " already has a '" + RESPONSE_METADATA + "' member, which collides with the "
+                        + "framework " + RESPONSE_METADATA + " envelope. Resolve the collision in the "
+                        + "raw model, or rename the modeled member earlier within GlobalTransforms: "
+                        + "per-service transforms run after GlobalTransforms and cannot pre-empt this "
+                        + "injection.");
                 }
                 StructureShape withMetadata = result.toBuilder()
                     .addMember(MemberShape.builder()

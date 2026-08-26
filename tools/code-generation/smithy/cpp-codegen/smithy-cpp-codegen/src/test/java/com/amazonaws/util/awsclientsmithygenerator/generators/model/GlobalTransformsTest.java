@@ -8,6 +8,8 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.G
 import org.junit.jupiter.api.Test;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.*;
+import software.amazon.smithy.model.traits.JsonNameTrait;
+import software.amazon.smithy.model.traits.XmlNameTrait;
 
 import java.util.Set;
 
@@ -102,6 +104,67 @@ class GlobalTransformsTest {
         Model m = inputModel("Kinesis", "body", "requestBody");
         assertThrows(IllegalStateException.class,
             () -> GlobalTransforms.asTransform().apply(m, serviceOf(m, "Example")));
+    }
+
+    @Test
+    void reservedRename_jsonService_preservesWireNameWithJsonName() {
+        Model m = inputModel("Kinesis", "body");
+        Model out = GlobalTransforms.asTransform().apply(m, serviceOf(m, "Example"));
+        MemberShape renamed = input(out).getMember("requestBody").orElseThrow();
+        assertEquals("body", renamed.expectTrait(JsonNameTrait.class).getValue(),
+            "JSON service must keep the 'body' wire key via @jsonName");
+        assertFalse(renamed.hasTrait(XmlNameTrait.class));
+    }
+
+    @Test
+    void reservedRename_queryXmlService_preservesWireNameWithXmlName() {
+        Model m = inputModelWithProtocol("Kinesis",
+            new software.amazon.smithy.aws.traits.protocols.AwsQueryTrait(), "body");
+        Model out = GlobalTransforms.asTransform().apply(m, serviceOf(m, "Example"));
+        MemberShape renamed = input(out).getMember("requestBody").orElseThrow();
+        assertEquals("body", renamed.expectTrait(XmlNameTrait.class).getValue(),
+            "awsQuery service must keep the 'body' wire key via @xmlName");
+        assertFalse(renamed.hasTrait(JsonNameTrait.class));
+        assertFalse(renamed.hasTrait(
+            software.amazon.smithy.aws.traits.protocols.Ec2QueryNameTrait.class),
+            "awsQuery must not use the ec2Query request-key trait");
+    }
+
+    @Test
+    void reservedRename_ec2Service_pinsRequestKeyAndResponseName() {
+        // ec2Query request key (@ec2QueryName, capitalized, verbatim on the wire) and response XML
+        // name (@xmlName) differ, so both are pinned rather than relying on capitalize(@xmlName).
+        Model m = inputModelWithProtocol("Kinesis",
+            new software.amazon.smithy.aws.traits.protocols.Ec2QueryTrait(), "body");
+        Model out = GlobalTransforms.asTransform().apply(m, serviceOf(m, "Example"));
+        MemberShape renamed = input(out).getMember("requestBody").orElseThrow();
+        assertEquals("Body", renamed.expectTrait(
+            software.amazon.smithy.aws.traits.protocols.Ec2QueryNameTrait.class).getValue(),
+            "ec2Query request key must be preserved verbatim as the capitalized original member name");
+        assertEquals("body", renamed.expectTrait(XmlNameTrait.class).getValue(),
+            "ec2Query response XML name must be preserved as the original member name");
+        assertFalse(renamed.hasTrait(JsonNameTrait.class));
+    }
+
+    /** As {@link #inputModel} but with the given protocol trait(s) on the service. */
+    private static Model inputModelWithProtocol(String sdkId,
+                                                software.amazon.smithy.model.traits.Trait protocolTrait,
+                                                String... inputMembers) {
+        StructureShape.Builder in = StructureShape.builder().id("com.example#DoThingRequest");
+        for (String member : inputMembers) {
+            in.addMember(member, ShapeId.from("smithy.api#String"));
+        }
+        StructureShape input = in.build();
+        StructureShape output = StructureShape.builder().id("com.example#DoThingResponse").build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#DoThing").input(input.getId()).output(output.getId()).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#Example").version("2024-01-01")
+            .addTrait(software.amazon.smithy.aws.traits.ServiceTrait.builder()
+                .sdkId(sdkId).arnNamespace("x").cloudFormationName("X").cloudTrailEventSource("x").build())
+            .addTrait(protocolTrait)
+            .addOperation(op.getId()).build();
+        return Model.assembler().addShapes(input, output, op, service).assemble().unwrap();
     }
 
     // --- computeReachableShapes tests ---

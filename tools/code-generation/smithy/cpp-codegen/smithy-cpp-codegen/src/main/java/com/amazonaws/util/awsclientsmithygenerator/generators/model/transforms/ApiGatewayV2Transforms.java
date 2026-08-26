@@ -6,6 +6,8 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.ServiceNameUtil;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ModelTransform;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.model.shapes.ShapeId;
@@ -31,11 +33,12 @@ public final class ApiGatewayV2Transforms {
             return model;
         }
         String ns = service.getId().getNamespace();
+        Protocol protocol = ProtocolResolver.resolve(service, model);
         List<StructureShape> updated = new ArrayList<>();
         for (String requestName : List.of("ImportApiRequest", "ReimportApiRequest")) {
             model.getShape(ShapeId.fromParts(ns, requestName))
                 .flatMap(s -> s.asStructureShape())
-                .flatMap(struct -> TransformSupport.renameMember(struct, "Body", "requestBody"))
+                .flatMap(struct -> TransformSupport.renameMember(struct, "Body", "requestBody", protocol))
                 .ifPresent(updated::add);
         }
         if (updated.isEmpty()) {

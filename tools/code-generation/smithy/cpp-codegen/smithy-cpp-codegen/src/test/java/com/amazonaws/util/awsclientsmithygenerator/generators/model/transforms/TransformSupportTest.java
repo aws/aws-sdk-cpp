@@ -4,15 +4,17 @@
  */
 package com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms;
 
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
 import org.junit.jupiter.api.Test;
+import software.amazon.smithy.aws.traits.protocols.Ec2QueryNameTrait;
 import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.ShapeId;
 import software.amazon.smithy.model.shapes.StructureShape;
 import software.amazon.smithy.model.traits.JsonNameTrait;
+import software.amazon.smithy.model.traits.XmlNameTrait;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -28,20 +30,22 @@ class TransformSupportTest {
 
     @Test
     void renameMember_sourceAbsent_returnsEmpty() {
-        assertTrue(TransformSupport.renameMember(struct("name"), "body", "requestBody").isEmpty());
+        assertTrue(TransformSupport.renameMember(struct("name"), "body", "requestBody", Protocol.JSON)
+            .isEmpty());
     }
 
     @Test
     void renameMember_targetExists_throws() {
         StructureShape s = struct("body", "requestBody");
         assertThrows(IllegalStateException.class,
-            () -> TransformSupport.renameMember(s, "body", "requestBody"));
+            () -> TransformSupport.renameMember(s, "body", "requestBody", Protocol.JSON));
     }
 
     @Test
     void renameMember_success_renamesAndPreservesOrder() {
         StructureShape s = struct("a", "body", "z");
-        StructureShape out = TransformSupport.renameMember(s, "body", "requestBody").orElseThrow();
+        StructureShape out = TransformSupport.renameMember(s, "body", "requestBody", Protocol.JSON)
+            .orElseThrow();
         assertFalse(out.getMember("body").isPresent());
         assertTrue(out.getMember("requestBody").isPresent());
         List<String> order = new ArrayList<>(out.getAllMembers().keySet());
@@ -49,12 +53,86 @@ class TransformSupportTest {
     }
 
     @Test
-    void renameMember_withJsonName_attachesTraitToRenamedMember() {
-        StructureShape s = struct("generatedPolicyResult");
-        StructureShape out = TransformSupport.renameMember(
-            s, "generatedPolicyResult", "generatedPolicyResults",
-            new JsonNameTrait("generatedPolicyResult")).orElseThrow();
-        MemberShape renamed = out.getMember("generatedPolicyResults").orElseThrow();
-        assertEquals("generatedPolicyResult", renamed.expectTrait(JsonNameTrait.class).getValue());
+    void renameMember_jsonProtocol_pinsWireNameWithJsonName() {
+        StructureShape out = TransformSupport.renameMember(struct("body"), "body", "requestBody",
+            Protocol.REST_JSON).orElseThrow();
+        MemberShape renamed = out.getMember("requestBody").orElseThrow();
+        assertEquals("body", renamed.expectTrait(JsonNameTrait.class).getValue());
+        assertFalse(renamed.hasTrait(XmlNameTrait.class), "JSON protocol must not add @xmlName");
+    }
+
+    @Test
+    void renameMember_xmlProtocol_pinsWireNameWithXmlName() {
+        StructureShape out = TransformSupport.renameMember(struct("body"), "body", "requestBody",
+            Protocol.QUERY_XML).orElseThrow();
+        MemberShape renamed = out.getMember("requestBody").orElseThrow();
+        assertEquals("body", renamed.expectTrait(XmlNameTrait.class).getValue());
+        assertFalse(renamed.hasTrait(JsonNameTrait.class), "XML protocol must not add @jsonName");
+    }
+
+    @Test
+    void renameMember_ec2Protocol_bareMember_pinsRequestKeyAndResponseName() {
+        StructureShape out = TransformSupport.renameMember(struct("body"), "body", "requestBody",
+            Protocol.EC2).orElseThrow();
+        MemberShape renamed = out.getMember("requestBody").orElseThrow();
+        assertEquals("Body", renamed.expectTrait(Ec2QueryNameTrait.class).getValue(),
+            "request key = capitalized original member name, verbatim");
+        assertEquals("body", renamed.expectTrait(XmlNameTrait.class).getValue(),
+            "response name = original member name");
+    }
+
+    @Test
+    void renameMember_ec2Protocol_derivesRequestKeyFromExistingXmlName() {
+        // CapacityReservationFleetIds: @xmlName present, no @ec2QueryName. The request key is
+        // capitalize(@xmlName), pinned verbatim so it no longer depends on the member name.
+        StructureShape s = StructureShape.builder().id("com.example#Req")
+            .addMember(MemberShape.builder().id("com.example#Req$capacityReservationFleetIds")
+                .target("smithy.api#String")
+                .addTrait(new XmlNameTrait("CapacityReservationFleetId")).build())
+            .build();
+        MemberShape renamed = TransformSupport.renameMember(s, "capacityReservationFleetIds",
+            "renamed", Protocol.EC2).orElseThrow().getMember("renamed").orElseThrow();
+        assertEquals("CapacityReservationFleetId",
+            renamed.expectTrait(Ec2QueryNameTrait.class).getValue(), "request key from capitalize(@xmlName)");
+        assertEquals("CapacityReservationFleetId",
+            renamed.expectTrait(XmlNameTrait.class).getValue(), "existing @xmlName preserved verbatim");
+    }
+
+    @Test
+    void renameMember_ec2Protocol_existingEc2QueryName_isNotOverridden() {
+        // Ipv6Addresses: @ec2QueryName is NOT camelCase(@xmlName), so capitalize(@xmlName) would be
+        // wrong for the request. Both existing traits must ride along verbatim.
+        StructureShape s = StructureShape.builder().id("com.example#Req")
+            .addMember(MemberShape.builder().id("com.example#Req$ipv6Addresses")
+                .target("smithy.api#String")
+                .addTrait(new Ec2QueryNameTrait("Ipv6Addresses"))
+                .addTrait(new XmlNameTrait("ipv6AddressesSet")).build())
+            .build();
+        MemberShape renamed = TransformSupport.renameMember(s, "ipv6Addresses", "renamed",
+            Protocol.EC2).orElseThrow().getMember("renamed").orElseThrow();
+        assertEquals("Ipv6Addresses", renamed.expectTrait(Ec2QueryNameTrait.class).getValue());
+        assertEquals("ipv6AddressesSet", renamed.expectTrait(XmlNameTrait.class).getValue());
+    }
+
+    @Test
+    void renameMember_cborProtocol_throws_noWireNameTrait() {
+        // rpcv2Cbor has no wire-name trait and ignores @jsonName, so a rename cannot preserve the
+        // wire key — fail fast rather than silently mis-generate.
+        StructureShape s = struct("body");
+        assertThrows(IllegalStateException.class,
+            () -> TransformSupport.renameMember(s, "body", "requestBody", Protocol.CBOR));
+    }
+
+    @Test
+    void renameMember_existingJsonName_isNotOverridden() {
+        StructureShape s = StructureShape.builder().id("com.example#Req")
+            .addMember(MemberShape.builder().id("com.example#Req$body")
+                .target("smithy.api#String").addTrait(new JsonNameTrait("wireBody")).build())
+            .build();
+        StructureShape out = TransformSupport.renameMember(s, "body", "requestBody", Protocol.JSON)
+            .orElseThrow();
+        MemberShape renamed = out.getMember("requestBody").orElseThrow();
+        assertEquals("wireBody", renamed.expectTrait(JsonNameTrait.class).getValue(),
+            "existing wire name must be preserved verbatim, not reset to the old member name");
     }
 }

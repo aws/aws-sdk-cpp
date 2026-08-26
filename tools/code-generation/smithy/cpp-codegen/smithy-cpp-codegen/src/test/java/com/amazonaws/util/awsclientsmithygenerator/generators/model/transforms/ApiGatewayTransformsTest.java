@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import software.amazon.smithy.aws.traits.ServiceTrait;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.*;
+import software.amazon.smithy.model.traits.JsonNameTrait;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -59,6 +60,10 @@ class ApiGatewayTransformsTest {
         assertTrue(r.getMember("requestHeaders").isPresent());
         assertTrue(r.getMember("body").isEmpty());
         assertTrue(r.getMember("headers").isEmpty());
+        assertEquals("body", r.getMember("requestBody").orElseThrow()
+            .expectTrait(JsonNameTrait.class).getValue(), "body wire key preserved");
+        assertEquals("headers", r.getMember("requestHeaders").orElseThrow()
+            .expectTrait(JsonNameTrait.class).getValue(), "headers wire key preserved");
 
         StructureShape a = out.expectShape(
             ShapeId.from("com.example#TestInvokeAuthorizerRequest"), StructureShape.class);
