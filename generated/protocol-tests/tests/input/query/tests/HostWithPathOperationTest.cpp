@@ -24,6 +24,6 @@ AWS_PROTOCOL_TEST(HostWithPathOperation, QueryHostWithPath) {
   expectedRq.body = "QWN0aW9uPUhvc3RXaXRoUGF0aE9wZXJhdGlvbiZWZXJzaW9uPTIwMjAtMDEtMDg=";
   expectedRq.uri = "/custom/";
   expectedRq.host = "example.com/custom";
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateFormUrlEncodedBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
