@@ -85,6 +85,8 @@ AWS_PROTOCOL_TEST($testSuite.name, $case.id) {
 #end
 #if($serviceModel.metadata.protocol == "rest-xml")
   ValidateRequestSent(expectedRq, ValidateXmlBody);
+#elseif($serviceModel.metadata.protocol == "query" || $serviceModel.metadata.protocol == "ec2")
+  ValidateRequestSent(expectedRq, ValidateFormUrlEncodedBody);
 #elseif($serviceModel.metadata.protocol != "smithy-rpc-v2-cbor")
   ValidateRequestSent(expectedRq);
 #end
