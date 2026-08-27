@@ -27,7 +27,7 @@ AWS_PROTOCOL_TEST(QueryMaps, QuerySimpleQueryMaps) {
       "a2V5PWZvbyZNYXBBcmcuZW50cnkuMi52YWx1ZT1Gb28=";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateFormUrlEncodedBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -45,7 +45,7 @@ AWS_PROTOCOL_TEST(QueryMaps, QuerySimpleQueryMapsWithXmlName) {
   expectedRq.body = "QWN0aW9uPVF1ZXJ5TWFwcyZWZXJzaW9uPTIwMjAtMDEtMDgmRm9vLmVudHJ5LjEua2V5PWZvbyZGb28uZW50cnkuMS52YWx1ZT1Gb28=";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateFormUrlEncodedBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -74,7 +74,7 @@ AWS_PROTOCOL_TEST(QueryMaps, QueryComplexQueryMaps) {
       "ciZDb21wbGV4TWFwQXJnLmVudHJ5LjIua2V5PWZvbyZDb21wbGV4TWFwQXJnLmVudHJ5LjIudmFsdWUuaGk9Rm9v";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateFormUrlEncodedBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -92,7 +92,7 @@ AWS_PROTOCOL_TEST(QueryMaps, QueryEmptyQueryMaps) {
   expectedRq.body = "QWN0aW9uPVF1ZXJ5TWFwcyZWZXJzaW9uPTIwMjAtMDEtMDg=";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateFormUrlEncodedBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -112,7 +112,7 @@ AWS_PROTOCOL_TEST(QueryMaps, QueryQueryMapWithMemberXmlName) {
       "LlY9QmFyJk1hcFdpdGhYbWxNZW1iZXJOYW1lLmVudHJ5LjIuSz1mb28mTWFwV2l0aFhtbE1lbWJlck5hbWUuZW50cnkuMi5WPUZvbw==";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateFormUrlEncodedBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -132,7 +132,7 @@ AWS_PROTOCOL_TEST(QueryMaps, QueryFlattenedQueryMaps) {
       "a2V5PWZvbyZGbGF0dGVuZWRNYXAuMi52YWx1ZT1Gb28=";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateFormUrlEncodedBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -150,7 +150,7 @@ AWS_PROTOCOL_TEST(QueryMaps, QueryFlattenedQueryMapsWithXmlName) {
   expectedRq.body = "QWN0aW9uPVF1ZXJ5TWFwcyZWZXJzaW9uPTIwMjAtMDEtMDgmSGkuMS5LPWJhciZIaS4xLlY9QmFyJkhpLjIuSz1mb28mSGkuMi5WPUZvbw==";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateFormUrlEncodedBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -171,7 +171,7 @@ AWS_PROTOCOL_TEST(QueryMaps, QueryQueryMapOfLists) {
       "TWFwT2ZMaXN0cy5lbnRyeS4yLnZhbHVlLm1lbWJlci4yPUI=";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateFormUrlEncodedBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -196,6 +196,6 @@ AWS_PROTOCOL_TEST(QueryMaps, QueryNestedStructWithMap) {
       "eS4yLnZhbHVlPUZvbw==";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateFormUrlEncodedBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

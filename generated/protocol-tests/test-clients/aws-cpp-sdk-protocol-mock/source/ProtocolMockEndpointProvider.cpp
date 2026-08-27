@@ -4,9 +4,15 @@
  */
 
 #include <aws/protocol-mock/ProtocolMockEndpointProvider.h>
+#include <aws/protocol-mock/internal/ProtocolMockEndpointRules.h>
 
 namespace Aws {
 namespace ProtocolMock {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+ProtocolMockEndpointProvider::ProtocolMockEndpointProvider()
+    : ProtocolMockDefaultEpProviderBase(Aws::ProtocolMock::ProtocolMockEndpointRules::GetRulesBlob(),
+                                        Aws::ProtocolMock::ProtocolMockEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace ProtocolMock
 }  // namespace Aws

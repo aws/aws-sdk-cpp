@@ -24,13 +24,13 @@ AWS_PROTOCOL_TEST(HttpRequestWithLabels, InputWithHeadersAndAllParams) {
   request.SetFloat(4.1);
   request.SetDouble(5.1);
   request.SetBoolean(true);
-  request.SetTimestamp(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)));
+  request.SetTimestamp(Aws::Utils::DateTime(static_cast<double>(1576540098)));
 
   auto outcome = client.HttpRequestWithLabels(request);
   ExpectedRequest expectedRq;
   expectedRq.method = "GET";
   expectedRq.uri = "/HttpRequestWithLabels/string/1/2/3/4.1/5.1/true/2019-12-16T23%3A48%3A18Z";
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -47,7 +47,7 @@ AWS_PROTOCOL_TEST(HttpRequestWithLabels, HttpRequestLabelEscaping) {
   request.SetFloat(4.1);
   request.SetDouble(5.1);
   request.SetBoolean(true);
-  request.SetTimestamp(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)));
+  request.SetTimestamp(Aws::Utils::DateTime(static_cast<double>(1576540098)));
 
   auto outcome = client.HttpRequestWithLabels(request);
   ExpectedRequest expectedRq;
@@ -55,6 +55,6 @@ AWS_PROTOCOL_TEST(HttpRequestWithLabels, HttpRequestLabelEscaping) {
   expectedRq.uri =
       "/HttpRequestWithLabels/%20%25%3A%2F%3F%23%5B%5D%40%21%24%26%27%28%29%2A%2B%2C%3B%3D%F0%9F%98%B9/1/2/3/4.1/5.1/true/"
       "2019-12-16T23%3A48%3A18Z";
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

@@ -8,6 +8,10 @@ file(GLOB AWS_REST-XML-PROTOCOL_MODEL_HEADERS
     "include/aws/rest-xml-protocol/model/*.h"
 )
 
+file(GLOB AWS_REST-XML-PROTOCOL_INTERNAL_HEADERS
+    "include/aws/rest-xml-protocol/internal/*.h"
+)
+
 file(GLOB AWS_REST-XML-PROTOCOL_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_REST-XML-PROTOCOL_MODEL_SOURCE
 
 file(GLOB REST-XML-PROTOCOL_UNIFIED_HEADERS
     ${AWS_REST-XML-PROTOCOL_HEADERS}
+    ${AWS_REST-XML-PROTOCOL_INTERNAL_HEADERS}
     ${AWS_REST-XML-PROTOCOL_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\rest-xml-protocol" FILES ${AWS_REST-XML-PROTOCOL_HEADERS})
+        source_group("Header Files\\aws\\rest-xml-protocol\\internal" FILES ${AWS_REST-XML-PROTOCOL_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\rest-xml-protocol\\model" FILES ${AWS_REST-XML-PROTOCOL_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_REST-XML-PROTOCOL_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_REST-XML-PROTOCOL_MODEL_SOURCE})

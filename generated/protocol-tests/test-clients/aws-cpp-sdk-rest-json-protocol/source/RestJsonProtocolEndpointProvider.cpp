@@ -4,9 +4,15 @@
  */
 
 #include <aws/rest-json-protocol/RestJsonProtocolEndpointProvider.h>
+#include <aws/rest-json-protocol/internal/RestJsonProtocolEndpointRules.h>
 
 namespace Aws {
 namespace RestJsonProtocol {
-namespace Endpoint {}  // namespace Endpoint
+namespace Endpoint {
+RestJsonProtocolEndpointProvider::RestJsonProtocolEndpointProvider()
+    : RestJsonProtocolDefaultEpProviderBase(Aws::RestJsonProtocol::RestJsonProtocolEndpointRules::GetRulesBlob(),
+                                            Aws::RestJsonProtocol::RestJsonProtocolEndpointRules::RulesBlobSize) {}
+
+}  // namespace Endpoint
 }  // namespace RestJsonProtocol
 }  // namespace Aws

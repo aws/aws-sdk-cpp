@@ -36,6 +36,6 @@ AWS_PROTOCOL_TEST(XmlIntEnums, XmlIntEnums) {
       "CiAgICAgICAgICAgIDx2YWx1ZT4yPC92YWx1ZT4KICAgICAgICA8L2VudHJ5PgogICAgPC9pbnRFbnVtTWFwPgo8L1htbEludEVudW1zUmVxdWVzdD4K";
   expectedRq.uri = "/XmlIntEnums";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

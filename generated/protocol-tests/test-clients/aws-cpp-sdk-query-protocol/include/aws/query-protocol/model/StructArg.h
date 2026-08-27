@@ -75,12 +75,12 @@ class StructArg {
   ///@}
  private:
   Aws::String m_stringArg;
-  bool m_stringArgHasBeenSet = false;
 
   bool m_otherArg{false};
-  bool m_otherArgHasBeenSet = false;
 
   std::shared_ptr<StructArg> m_recursiveArg;
+  bool m_stringArgHasBeenSet = false;
+  bool m_otherArgHasBeenSet = false;
   bool m_recursiveArgHasBeenSet = false;
 };
 

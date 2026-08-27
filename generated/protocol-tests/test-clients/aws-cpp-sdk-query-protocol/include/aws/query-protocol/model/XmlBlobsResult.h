@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Array.h>
 #include <aws/query-protocol/QueryProtocol_EXPORTS.h>
 #include <aws/query-protocol/model/ResponseMetadata.h>
@@ -56,11 +57,14 @@ class XmlBlobsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::ByteBuffer m_data{};
-  bool m_dataHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_dataHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

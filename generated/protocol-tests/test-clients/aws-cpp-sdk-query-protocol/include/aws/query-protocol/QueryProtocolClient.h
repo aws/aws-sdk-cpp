@@ -968,12 +968,16 @@ class AWS_QUERYPROTOCOL_API QueryProtocolClient : public Aws::Client::AWSXMLClie
     return SubmitAsync(&QueryProtocolClient::XmlTimestamps, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<QueryProtocolEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<QueryProtocolEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<QueryProtocolClient>;
   void init(const QueryProtocolClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, QueryProtocolError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   QueryProtocolClientConfiguration m_clientConfiguration;
   std::shared_ptr<QueryProtocolEndpointProviderBase> m_endpointProvider;

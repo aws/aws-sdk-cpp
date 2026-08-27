@@ -22,7 +22,7 @@ AWS_PROTOCOL_TEST(OmitsNullSerializesEmptyString, RestXmlOmitsNullQuery) {
   ExpectedRequest expectedRq;
   expectedRq.method = "GET";
   expectedRq.uri = "/OmitsNullSerializesEmptyString";
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -38,6 +38,6 @@ AWS_PROTOCOL_TEST(OmitsNullSerializesEmptyString, RestXmlSerializesEmptyString) 
   ExpectedRequest expectedRq;
   expectedRq.method = "GET";
   expectedRq.uri = "/OmitsNullSerializesEmptyString?Empty=";
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

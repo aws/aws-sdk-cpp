@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/query-protocol/QueryProtocolEndpointRules.h>
 #include <aws/query-protocol/QueryProtocol_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_QUERYPROTOCOL_API QueryProtocolEndpointProvider : public QueryProtocol
  public:
   using QueryProtocolResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  QueryProtocolEndpointProvider()
-      : QueryProtocolDefaultEpProviderBase(Aws::QueryProtocol::QueryProtocolEndpointRules::GetRulesBlob(),
-                                           Aws::QueryProtocol::QueryProtocolEndpointRules::RulesBlobSize) {}
+  QueryProtocolEndpointProvider();
 
   ~QueryProtocolEndpointProvider() {}
 };

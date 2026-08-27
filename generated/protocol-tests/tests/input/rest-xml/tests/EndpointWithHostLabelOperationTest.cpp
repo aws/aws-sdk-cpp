@@ -27,6 +27,6 @@ AWS_PROTOCOL_TEST(EndpointWithHostLabelOperation, RestXmlEndpointTraitWithHostLa
       "YmFyPC9sYWJlbD4KPC9FbmRwb2ludFdpdGhIb3N0TGFiZWxPcGVyYXRpb25SZXF1ZXN0Pgo=";
   expectedRq.uri = "/EndpointWithHostLabelOperation";
   expectedRq.host = "foo.bar.example.com";
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

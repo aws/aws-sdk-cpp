@@ -86,12 +86,12 @@ class HttpPrefixHeadersRequest : public RestXmlProtocolRequest {
   ///@}
  private:
   Aws::String m_foo;
-  bool m_fooHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_fooMap;
-  bool m_fooMapHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fooHasBeenSet = false;
+  bool m_fooMapHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

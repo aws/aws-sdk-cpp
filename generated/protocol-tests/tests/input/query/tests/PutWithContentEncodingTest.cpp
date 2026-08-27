@@ -152,7 +152,7 @@ EcffzjixWU9FpAyGp2rVl4ETRgqljOGw4UgK31r0ZIEGnH0xGz1FtbW1OcQM008JVujRqulCucEMmntr
   expectedRq.method = "POST";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Encoding", R"(gzip)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateFormUrlEncodedBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -298,6 +298,6 @@ EcffzjixWU9FpAyGp2rVl4ETRgqljOGw4UgK31r0ZIEGnH0xGz1FtbW1OcQM008JVujRqulCucEMmntr
   expectedRq.method = "POST";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Encoding", R"(gzip)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateFormUrlEncodedBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

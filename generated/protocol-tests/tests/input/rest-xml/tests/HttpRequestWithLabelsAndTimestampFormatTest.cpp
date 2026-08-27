@@ -17,13 +17,13 @@ AWS_PROTOCOL_TEST(HttpRequestWithLabelsAndTimestampFormat, HttpRequestWithLabels
   SetMockResponse();
 
   HttpRequestWithLabelsAndTimestampFormatRequest request;
-  request.SetMemberEpochSeconds(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)));
-  request.SetMemberHttpDate(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)));
-  request.SetMemberDateTime(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)));
-  request.SetDefaultFormat(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)));
-  request.SetTargetEpochSeconds(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)));
-  request.SetTargetHttpDate(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)));
-  request.SetTargetDateTime(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)));
+  request.SetMemberEpochSeconds(Aws::Utils::DateTime(static_cast<double>(1576540098)));
+  request.SetMemberHttpDate(Aws::Utils::DateTime(static_cast<double>(1576540098)));
+  request.SetMemberDateTime(Aws::Utils::DateTime(static_cast<double>(1576540098)));
+  request.SetDefaultFormat(Aws::Utils::DateTime(static_cast<double>(1576540098)));
+  request.SetTargetEpochSeconds(Aws::Utils::DateTime(static_cast<double>(1576540098)));
+  request.SetTargetHttpDate(Aws::Utils::DateTime(static_cast<double>(1576540098)));
+  request.SetTargetDateTime(Aws::Utils::DateTime(static_cast<double>(1576540098)));
 
   auto outcome = client.HttpRequestWithLabelsAndTimestampFormat(request);
   ExpectedRequest expectedRq;
@@ -31,6 +31,6 @@ AWS_PROTOCOL_TEST(HttpRequestWithLabelsAndTimestampFormat, HttpRequestWithLabels
   expectedRq.uri =
       "/HttpRequestWithLabelsAndTimestampFormat/1576540098/Mon%2C%2016%20Dec%202019%2023%3A48%3A18%20GMT/2019-12-16T23%3A48%3A18Z/"
       "2019-12-16T23%3A48%3A18Z/1576540098/Mon%2C%2016%20Dec%202019%2023%3A48%3A18%20GMT/2019-12-16T23%3A48%3A18Z";
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

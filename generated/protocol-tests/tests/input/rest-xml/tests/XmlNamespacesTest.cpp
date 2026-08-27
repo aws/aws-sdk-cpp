@@ -34,6 +34,6 @@ AWS_PROTOCOL_TEST(XmlNamespaces, XmlNamespaces) {
       "PkJhejwvbWVtYmVyPgogICAgICAgIDwvdmFsdWVzPgogICAgPC9uZXN0ZWQ+CjwvWG1sTmFtZXNwYWNlc1JlcXVlc3Q+Cg==";
   expectedRq.uri = "/XmlNamespaces";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

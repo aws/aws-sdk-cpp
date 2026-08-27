@@ -20,6 +20,7 @@ using namespace Aws;
 GetRequestsReceivedResult::GetRequestsReceivedResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetRequestsReceivedResult& GetRequestsReceivedResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("StatusCode")) {
     m_statusCode = jsonValue.GetInteger("StatusCode");

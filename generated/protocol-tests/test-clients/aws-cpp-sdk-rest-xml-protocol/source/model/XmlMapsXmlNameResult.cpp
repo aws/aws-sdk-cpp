@@ -19,6 +19,7 @@ using namespace Aws;
 XmlMapsXmlNameResult::XmlMapsXmlNameResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 XmlMapsXmlNameResult& XmlMapsXmlNameResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

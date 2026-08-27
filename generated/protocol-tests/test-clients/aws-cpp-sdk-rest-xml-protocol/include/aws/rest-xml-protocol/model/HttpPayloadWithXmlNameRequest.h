@@ -64,9 +64,9 @@ class HttpPayloadWithXmlNameRequest : public RestXmlProtocolRequest {
   ///@}
  private:
   PayloadWithXmlName m_nested;
-  bool m_nestedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nestedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

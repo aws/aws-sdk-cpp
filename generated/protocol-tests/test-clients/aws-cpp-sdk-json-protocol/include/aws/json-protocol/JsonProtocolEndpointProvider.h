@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/json-protocol/JsonProtocolEndpointRules.h>
 #include <aws/json-protocol/JsonProtocol_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_JSONPROTOCOL_API JsonProtocolEndpointProvider : public JsonProtocolDef
  public:
   using JsonProtocolResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  JsonProtocolEndpointProvider()
-      : JsonProtocolDefaultEpProviderBase(Aws::JsonProtocol::JsonProtocolEndpointRules::GetRulesBlob(),
-                                          Aws::JsonProtocol::JsonProtocolEndpointRules::RulesBlobSize) {}
+  JsonProtocolEndpointProvider();
 
   ~JsonProtocolEndpointProvider() {}
 };

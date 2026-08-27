@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/memory/stl/AWSArray.h>
-#include <aws/rest-xml-protocol/RestXmlProtocolEndpointRules.h>
+#include <aws/rest-xml-protocol/internal/RestXmlProtocolEndpointRules.h>
 
 namespace Aws {
 namespace RestXmlProtocol {

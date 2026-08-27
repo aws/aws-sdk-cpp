@@ -4,18 +4,18 @@
  */
 
 #pragma once
-#include <aws/query-protocol/QueryProtocol_EXPORTS.h>
+#include <aws/query-compatible-json-rpc-10/QueryCompatibleJSONRPC10_EXPORTS.h>
 
 #include <cstddef>
 
 namespace Aws {
-namespace QueryProtocol {
-class QueryProtocolEndpointRules {
+namespace QueryCompatibleJSONRPC10 {
+class AWS_QUERYCOMPATIBLEJSONRPC10_LOCAL QueryCompatibleJSONRPC10EndpointRules {
  public:
   static const size_t RulesBlobStrLen;
   static const size_t RulesBlobSize;
 
   static const char* GetRulesBlob();
 };
-}  // namespace QueryProtocol
+}  // namespace QueryCompatibleJSONRPC10
 }  // namespace Aws

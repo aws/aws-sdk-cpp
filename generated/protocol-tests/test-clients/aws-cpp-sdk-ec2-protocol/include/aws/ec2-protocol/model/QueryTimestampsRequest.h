@@ -81,12 +81,12 @@ class QueryTimestampsRequest : public EC2ProtocolRequest {
   ///@}
  private:
   Aws::Utils::DateTime m_normalFormat{};
-  bool m_normalFormatHasBeenSet = false;
 
   Aws::Utils::DateTime m_epochMember{};
-  bool m_epochMemberHasBeenSet = false;
 
   Aws::Utils::DateTime m_epochTarget{};
+  bool m_normalFormatHasBeenSet = false;
+  bool m_epochMemberHasBeenSet = false;
   bool m_epochTargetHasBeenSet = false;
 };
 

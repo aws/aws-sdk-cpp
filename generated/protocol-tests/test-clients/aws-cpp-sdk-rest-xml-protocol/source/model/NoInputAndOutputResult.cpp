@@ -19,6 +19,7 @@ using namespace Aws;
 NoInputAndOutputResult::NoInputAndOutputResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 NoInputAndOutputResult& NoInputAndOutputResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

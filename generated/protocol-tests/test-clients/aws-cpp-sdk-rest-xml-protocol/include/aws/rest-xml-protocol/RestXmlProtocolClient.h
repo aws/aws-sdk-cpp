@@ -1773,12 +1773,18 @@ class AWS_RESTXMLPROTOCOL_API RestXmlProtocolClient : public Aws::Client::AWSXML
     return SubmitAsync(&RestXmlProtocolClient::XmlUnions, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<RestXmlProtocolEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<RestXmlProtocolEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<RestXmlProtocolClient>;
   void init(const RestXmlProtocolClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, RestXmlProtocolError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   RestXmlProtocolClientConfiguration m_clientConfiguration;
   std::shared_ptr<RestXmlProtocolEndpointProviderBase> m_endpointProvider;

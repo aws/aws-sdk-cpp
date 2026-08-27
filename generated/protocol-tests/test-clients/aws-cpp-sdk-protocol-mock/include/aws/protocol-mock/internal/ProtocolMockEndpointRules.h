@@ -4,18 +4,18 @@
  */
 
 #pragma once
-#include <aws/query-compatible-json-rpc-10/QueryCompatibleJSONRPC10_EXPORTS.h>
+#include <aws/protocol-mock/ProtocolMock_EXPORTS.h>
 
 #include <cstddef>
 
 namespace Aws {
-namespace QueryCompatibleJSONRPC10 {
-class QueryCompatibleJSONRPC10EndpointRules {
+namespace ProtocolMock {
+class AWS_PROTOCOLMOCK_LOCAL ProtocolMockEndpointRules {
  public:
   static const size_t RulesBlobStrLen;
   static const size_t RulesBlobSize;
 
   static const char* GetRulesBlob();
 };
-}  // namespace QueryCompatibleJSONRPC10
+}  // namespace ProtocolMock
 }  // namespace Aws

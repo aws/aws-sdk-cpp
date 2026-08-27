@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rest-xml-protocol/RestXmlProtocol_EXPORTS.h>
 #include <aws/rest-xml-protocol/model/XmlAttributesPayloadResponse.h>
@@ -56,11 +57,14 @@ class XmlAttributesOnPayloadResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   XmlAttributesPayloadResponse m_payload;
-  bool m_payloadHasBeenSet = false;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_payloadHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

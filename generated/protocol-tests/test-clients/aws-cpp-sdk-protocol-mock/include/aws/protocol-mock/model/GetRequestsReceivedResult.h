@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/protocol-mock/ProtocolMock_EXPORTS.h>
@@ -76,14 +77,17 @@ class GetRequestsReceivedResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   int m_statusCode{0};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::Vector<Request> m_requests;
-  bool m_requestsHasBeenSet = false;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_statusCodeHasBeenSet = false;
+  bool m_requestsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

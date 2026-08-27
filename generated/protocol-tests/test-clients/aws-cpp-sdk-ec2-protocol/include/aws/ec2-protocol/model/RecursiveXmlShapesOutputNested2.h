@@ -64,9 +64,9 @@ class RecursiveXmlShapesOutputNested2 {
   ///@}
  private:
   Aws::String m_bar;
-  bool m_barHasBeenSet = false;
 
   std::shared_ptr<RecursiveXmlShapesOutputNested1> m_recursiveMember;
+  bool m_barHasBeenSet = false;
   bool m_recursiveMemberHasBeenSet = false;
 };
 

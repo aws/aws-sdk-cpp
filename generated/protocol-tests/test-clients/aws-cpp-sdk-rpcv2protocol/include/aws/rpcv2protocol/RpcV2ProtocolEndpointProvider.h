@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/rpcv2protocol/RpcV2ProtocolEndpointRules.h>
 #include <aws/rpcv2protocol/RpcV2Protocol_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_RPCV2PROTOCOL_API RpcV2ProtocolEndpointProvider : public RpcV2Protocol
  public:
   using RpcV2ProtocolResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  RpcV2ProtocolEndpointProvider()
-      : RpcV2ProtocolDefaultEpProviderBase(Aws::RpcV2Protocol::RpcV2ProtocolEndpointRules::GetRulesBlob(),
-                                           Aws::RpcV2Protocol::RpcV2ProtocolEndpointRules::RulesBlobSize) {}
+  RpcV2ProtocolEndpointProvider();
 
   ~RpcV2ProtocolEndpointProvider() {}
 };

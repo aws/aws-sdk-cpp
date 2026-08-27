@@ -23,6 +23,6 @@ AWS_PROTOCOL_TEST(EndpointOperation, RestXmlEndpointTrait) {
   expectedRq.method = "POST";
   expectedRq.uri = "/EndpointOperation";
   expectedRq.host = "foo.example.com";
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

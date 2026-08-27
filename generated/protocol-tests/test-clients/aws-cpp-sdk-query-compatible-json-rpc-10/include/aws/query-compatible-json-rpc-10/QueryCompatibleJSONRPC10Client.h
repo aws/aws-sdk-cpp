@@ -99,12 +99,16 @@ class AWS_QUERYCOMPATIBLEJSONRPC10_API QueryCompatibleJSONRPC10Client
     return SubmitAsync(&QueryCompatibleJSONRPC10Client::QueryCompatibleOperation, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<QueryCompatibleJSONRPC10EndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<QueryCompatibleJSONRPC10EndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<QueryCompatibleJSONRPC10Client>;
   void init(const QueryCompatibleJSONRPC10ClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, QueryCompatibleJSONRPC10Error> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   QueryCompatibleJSONRPC10ClientConfiguration m_clientConfiguration;
   std::shared_ptr<QueryCompatibleJSONRPC10EndpointProviderBase> m_endpointProvider;

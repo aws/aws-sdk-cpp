@@ -140,18 +140,18 @@ class QueryListsRequest : public EC2ProtocolRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_listArg;
-  bool m_listArgHasBeenSet = false;
 
   Aws::Vector<GreetingStruct> m_complexListArg;
-  bool m_complexListArgHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_listArgWithXmlNameMember;
-  bool m_listArgWithXmlNameMemberHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_listArgWithXmlName;
-  bool m_listArgWithXmlNameHasBeenSet = false;
 
   NestedStructWithList m_nestedWithList;
+  bool m_listArgHasBeenSet = false;
+  bool m_complexListArgHasBeenSet = false;
+  bool m_listArgWithXmlNameMemberHasBeenSet = false;
+  bool m_listArgWithXmlNameHasBeenSet = false;
   bool m_nestedWithListHasBeenSet = false;
 };
 

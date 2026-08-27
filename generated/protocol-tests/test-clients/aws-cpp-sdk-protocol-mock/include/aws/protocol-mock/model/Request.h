@@ -132,21 +132,21 @@ class Request {
   ///@}
  private:
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   Aws::String m_method;
-  bool m_methodHasBeenSet = false;
 
   Aws::String m_body;
-  bool m_bodyHasBeenSet = false;
 
   Aws::String m_uri;
-  bool m_uriHasBeenSet = false;
 
   Aws::String m_host;
-  bool m_hostHasBeenSet = false;
 
   Aws::Vector<HttpHeader> m_headers;
+  bool m_timestampHasBeenSet = false;
+  bool m_methodHasBeenSet = false;
+  bool m_bodyHasBeenSet = false;
+  bool m_uriHasBeenSet = false;
+  bool m_hostHasBeenSet = false;
   bool m_headersHasBeenSet = false;
 };
 

@@ -28,6 +28,6 @@ AWS_PROTOCOL_TEST(XmlEmptyLists, XmlEmptyLists) {
       "TGlzdHNSZXF1ZXN0Pgo=";
   expectedRq.uri = "/XmlEmptyLists";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

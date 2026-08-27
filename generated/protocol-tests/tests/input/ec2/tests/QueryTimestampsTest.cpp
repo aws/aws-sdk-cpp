@@ -17,9 +17,9 @@ AWS_PROTOCOL_TEST(QueryTimestamps, Ec2TimestampsInput) {
   SetMockResponse();
 
   QueryTimestampsRequest request;
-  request.SetNormalFormat(Aws::Utils::DateTime(static_cast<int64_t>(1422172800)));
-  request.SetEpochMember(Aws::Utils::DateTime(static_cast<int64_t>(1422172800)));
-  request.SetEpochTarget(Aws::Utils::DateTime(static_cast<int64_t>(1422172800)));
+  request.SetNormalFormat(Aws::Utils::DateTime(static_cast<double>(1422172800)));
+  request.SetEpochMember(Aws::Utils::DateTime(static_cast<double>(1422172800)));
+  request.SetEpochTarget(Aws::Utils::DateTime(static_cast<double>(1422172800)));
 
   auto outcome = client.QueryTimestamps(request);
   ExpectedRequest expectedRq;
@@ -30,6 +30,6 @@ AWS_PROTOCOL_TEST(QueryTimestamps, Ec2TimestampsInput) {
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
   expectedRq.requireHeaders = {"Content-Length"};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateFormUrlEncodedBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

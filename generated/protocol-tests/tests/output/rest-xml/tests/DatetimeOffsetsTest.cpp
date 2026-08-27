@@ -29,7 +29,7 @@ AWS_PROTOCOL_TEST(DatetimeOffsets, RestXmlDateTimeWithNegativeOffset) {
   const DatetimeOffsetsResult& result = outcome.GetResult();
   ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
     /* expectedResult = R"( {"datetime":1576540098} )" */
-    EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)), result.GetDatetime());
+    EXPECT_EQ(Aws::Utils::DateTime(static_cast<double>(1576540098)), result.GetDatetime());
   });
 }
 
@@ -51,6 +51,6 @@ AWS_PROTOCOL_TEST(DatetimeOffsets, RestXmlDateTimeWithPositiveOffset) {
   const DatetimeOffsetsResult& result = outcome.GetResult();
   ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
     /* expectedResult = R"( {"datetime":1576540098} )" */
-    EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)), result.GetDatetime());
+    EXPECT_EQ(Aws::Utils::DateTime(static_cast<double>(1576540098)), result.GetDatetime());
   });
 }

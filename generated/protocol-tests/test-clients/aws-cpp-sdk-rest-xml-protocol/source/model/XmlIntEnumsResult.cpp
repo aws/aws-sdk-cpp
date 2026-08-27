@@ -19,6 +19,7 @@ using namespace Aws;
 XmlIntEnumsResult::XmlIntEnumsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 XmlIntEnumsResult& XmlIntEnumsResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

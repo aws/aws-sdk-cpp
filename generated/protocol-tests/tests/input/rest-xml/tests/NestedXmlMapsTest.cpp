@@ -29,7 +29,7 @@ AWS_PROTOCOL_TEST(NestedXmlMaps, NestedXmlMapRequest) {
       "CjwvTmVzdGVkWG1sTWFwc1JlcXVlc3Q+";
   expectedRq.uri = "/NestedXmlMaps";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -50,6 +50,6 @@ AWS_PROTOCOL_TEST(NestedXmlMaps, FlatNestedXmlMapRequest) {
       "QmFyPC92YWx1ZT4KICAgICAgICAgICAgPC9lbnRyeT4KICAgICAgICA8L3ZhbHVlPgogICAgPC9mbGF0TmVzdGVkTWFwPgo8L05lc3RlZFhtbE1hcHNSZXF1ZXN0Pg==";
   expectedRq.uri = "/NestedXmlMaps";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

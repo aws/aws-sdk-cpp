@@ -207,27 +207,27 @@ class QueryMapsRequest : public QueryProtocolRequest {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_mapArg;
-  bool m_mapArgHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_renamedMapArg;
-  bool m_renamedMapArgHasBeenSet = false;
 
   Aws::Map<Aws::String, GreetingStruct> m_complexMapArg;
-  bool m_complexMapArgHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_mapWithXmlMemberName;
-  bool m_mapWithXmlMemberNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_flattenedMap;
-  bool m_flattenedMapHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_flattenedMapWithXmlName;
-  bool m_flattenedMapWithXmlNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_mapOfLists;
-  bool m_mapOfListsHasBeenSet = false;
 
   NestedStructWithMap m_nestedStructWithMap;
+  bool m_mapArgHasBeenSet = false;
+  bool m_renamedMapArgHasBeenSet = false;
+  bool m_complexMapArgHasBeenSet = false;
+  bool m_mapWithXmlMemberNameHasBeenSet = false;
+  bool m_flattenedMapHasBeenSet = false;
+  bool m_flattenedMapWithXmlNameHasBeenSet = false;
+  bool m_mapOfListsHasBeenSet = false;
   bool m_nestedStructWithMapHasBeenSet = false;
 };
 

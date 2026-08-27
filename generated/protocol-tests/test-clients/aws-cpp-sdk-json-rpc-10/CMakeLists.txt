@@ -8,6 +8,10 @@ file(GLOB AWS_JSON-RPC-10_MODEL_HEADERS
     "include/aws/json-rpc-10/model/*.h"
 )
 
+file(GLOB AWS_JSON-RPC-10_INTERNAL_HEADERS
+    "include/aws/json-rpc-10/internal/*.h"
+)
+
 file(GLOB AWS_JSON-RPC-10_SOURCE
     "source/*.cpp"
 )
@@ -18,6 +22,7 @@ file(GLOB AWS_JSON-RPC-10_MODEL_SOURCE
 
 file(GLOB JSON-RPC-10_UNIFIED_HEADERS
     ${AWS_JSON-RPC-10_HEADERS}
+    ${AWS_JSON-RPC-10_INTERNAL_HEADERS}
     ${AWS_JSON-RPC-10_MODEL_HEADERS}
 )
 
@@ -39,6 +44,7 @@ if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
         source_group("Header Files\\aws\\json-rpc-10" FILES ${AWS_JSON-RPC-10_HEADERS})
+        source_group("Header Files\\aws\\json-rpc-10\\internal" FILES ${AWS_JSON-RPC-10_INTERNAL_HEADERS})
         source_group("Header Files\\aws\\json-rpc-10\\model" FILES ${AWS_JSON-RPC-10_MODEL_HEADERS})
         source_group("Source Files" FILES ${AWS_JSON-RPC-10_SOURCE})
         source_group("Source Files\\model" FILES ${AWS_JSON-RPC-10_MODEL_SOURCE})

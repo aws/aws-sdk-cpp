@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/ec2-protocol/EC2ProtocolEndpointRules.h>
 #include <aws/ec2-protocol/EC2Protocol_EXPORTS.h>
 
 namespace Aws {
@@ -42,9 +41,7 @@ class AWS_EC2PROTOCOL_API EC2ProtocolEndpointProvider : public EC2ProtocolDefaul
  public:
   using EC2ProtocolResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  EC2ProtocolEndpointProvider()
-      : EC2ProtocolDefaultEpProviderBase(Aws::EC2Protocol::EC2ProtocolEndpointRules::GetRulesBlob(),
-                                         Aws::EC2Protocol::EC2ProtocolEndpointRules::RulesBlobSize) {}
+  EC2ProtocolEndpointProvider();
 
   ~EC2ProtocolEndpointProvider() {}
 };

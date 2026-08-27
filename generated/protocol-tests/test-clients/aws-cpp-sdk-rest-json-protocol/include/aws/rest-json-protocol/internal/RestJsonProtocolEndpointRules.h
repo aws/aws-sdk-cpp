@@ -4,18 +4,18 @@
  */
 
 #pragma once
-#include <aws/protocol-mock/ProtocolMock_EXPORTS.h>
+#include <aws/rest-json-protocol/RestJsonProtocol_EXPORTS.h>
 
 #include <cstddef>
 
 namespace Aws {
-namespace ProtocolMock {
-class ProtocolMockEndpointRules {
+namespace RestJsonProtocol {
+class AWS_RESTJSONPROTOCOL_LOCAL RestJsonProtocolEndpointRules {
  public:
   static const size_t RulesBlobStrLen;
   static const size_t RulesBlobSize;
 
   static const char* GetRulesBlob();
 };
-}  // namespace ProtocolMock
+}  // namespace RestJsonProtocol
 }  // namespace Aws

@@ -1,0 +1,6 @@
+{
+  "type": "bugfix",
+  "category": "protocol-tests",
+  "contributor": "Snigdha",
+  "description": "Compare generated protocol-test requests semantically instead of byte-for-byte: XML bodies are compared canonically via tinyxml2, form-urlencoded bodies and URI query strings are compared as unordered parameter sets, body assertions are skipped for test vectors with no body, and generated timestamp values are fixed."
+}

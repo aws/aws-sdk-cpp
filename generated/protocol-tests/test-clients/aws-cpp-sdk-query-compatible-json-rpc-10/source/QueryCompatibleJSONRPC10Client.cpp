@@ -46,10 +46,10 @@ QueryCompatibleJSONRPC10Client::QueryCompatibleJSONRPC10Client(
     const QueryCompatibleJSONRPC10::QueryCompatibleJSONRPC10ClientConfiguration& clientConfiguration,
     std::shared_ptr<QueryCompatibleJSONRPC10EndpointProviderBase> endpointProvider)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
+                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
                 Aws::MakeShared<QueryCompatibleJSONRPC10ErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(endpointProvider ? std::move(endpointProvider)
@@ -85,12 +85,12 @@ QueryCompatibleJSONRPC10Client::QueryCompatibleJSONRPC10Client(
 }
 
 /* Legacy constructors due deprecation */
-QueryCompatibleJSONRPC10Client::QueryCompatibleJSONRPC10Client(const Client::ClientConfiguration& clientConfiguration)
+QueryCompatibleJSONRPC10Client::QueryCompatibleJSONRPC10Client(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
+                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
                 Aws::MakeShared<QueryCompatibleJSONRPC10ErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(Aws::MakeShared<QueryCompatibleJSONRPC10EndpointProvider>(ALLOCATION_TAG)) {
@@ -98,7 +98,7 @@ QueryCompatibleJSONRPC10Client::QueryCompatibleJSONRPC10Client(const Client::Cli
 }
 
 QueryCompatibleJSONRPC10Client::QueryCompatibleJSONRPC10Client(const AWSCredentials& credentials,
-                                                               const Client::ClientConfiguration& clientConfiguration)
+                                                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -109,7 +109,7 @@ QueryCompatibleJSONRPC10Client::QueryCompatibleJSONRPC10Client(const AWSCredenti
 }
 
 QueryCompatibleJSONRPC10Client::QueryCompatibleJSONRPC10Client(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                               const Client::ClientConfiguration& clientConfiguration)
+                                                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -137,7 +137,7 @@ void QueryCompatibleJSONRPC10Client::init(const QueryCompatibleJSONRPC10::QueryC
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "query-compatible-jsonrpc10");
 }
 
 void QueryCompatibleJSONRPC10Client::OverrideEndpoint(const Aws::String& endpoint) {
@@ -145,33 +145,45 @@ void QueryCompatibleJSONRPC10Client::OverrideEndpoint(const Aws::String& endpoin
   m_clientConfiguration.endpointOverride = endpoint;
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
+QueryCompatibleJSONRPC10Client::InvokeOperationOutcome QueryCompatibleJSONRPC10Client::InvokeServiceOperation(
+    const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const {
+  auto operationName = request.GetServiceRequestName();
+  auto serviceName = GetServiceClientName();
 
-QueryCompatibleOperationOutcome QueryCompatibleJSONRPC10Client::QueryCompatibleOperation(
-    const QueryCompatibleOperationRequest& request) const {
-  AWS_OPERATION_GUARD(QueryCompatibleOperation);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, QueryCompatibleOperation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, QueryCompatibleOperation, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, QueryCompatibleOperation, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".QueryCompatibleOperation",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+  AWS_OPERATION_GUARD_DYNAMIC(operationName);
+
+  AWS_OPERATION_CHECK_PTR_DYNAMIC(m_endpointProvider, operationName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR_DYNAMIC(m_telemetryProvider, operationName, CoreErrors, CoreErrors::NOT_INITIALIZED);
+
+  auto tracer = m_telemetryProvider->getTracer(serviceName, {});
+  auto meter = m_telemetryProvider->getMeter(serviceName, {});
+  AWS_OPERATION_CHECK_PTR_DYNAMIC(meter, operationName, CoreErrors, CoreErrors::NOT_INITIALIZED);
+
+  auto span = tracer->CreateSpan(Aws::String(serviceName) + "." + operationName,
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<QueryCompatibleOperationOutcome>(
-      [&]() -> QueryCompatibleOperationOutcome {
+
+  return TracingUtils::MakeCallWithTiming<InvokeOperationOutcome>(
+      [&]() -> InvokeOperationOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
             TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, QueryCompatibleOperation, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        return QueryCompatibleOperationOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
+
+        AWS_OPERATION_CHECK_SUCCESS_DYNAMIC(endpointResolutionOutcome, operationName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                            endpointResolutionOutcome.GetError().GetMessage());
+
+        return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, Aws::Auth::SIGV4_SIGNER)};
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
+}
+
+QueryCompatibleOperationOutcome QueryCompatibleJSONRPC10Client::QueryCompatibleOperation(
+    const QueryCompatibleOperationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? QueryCompatibleOperationOutcome(result.GetResultWithOwnership())
+                            : QueryCompatibleOperationOutcome(std::move(result.GetError()));
 }

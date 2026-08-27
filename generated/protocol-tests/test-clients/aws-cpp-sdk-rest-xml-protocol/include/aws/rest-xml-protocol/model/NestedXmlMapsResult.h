@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rest-xml-protocol/RestXmlProtocol_EXPORTS.h>
@@ -84,14 +85,17 @@ class NestedXmlMapsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Map<Aws::String, Aws::Map<Aws::String, FooEnum>> m_nestedMap;
-  bool m_nestedMapHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Map<Aws::String, FooEnum>> m_flatNestedMap;
-  bool m_flatNestedMapHasBeenSet = false;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_nestedMapHasBeenSet = false;
+  bool m_flatNestedMapHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

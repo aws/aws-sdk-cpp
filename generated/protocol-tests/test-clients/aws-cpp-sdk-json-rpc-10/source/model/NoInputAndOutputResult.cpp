@@ -20,6 +20,7 @@ using namespace Aws;
 NoInputAndOutputResult::NoInputAndOutputResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 NoInputAndOutputResult& NoInputAndOutputResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

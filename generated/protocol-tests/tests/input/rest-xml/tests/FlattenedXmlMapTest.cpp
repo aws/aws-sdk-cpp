@@ -28,6 +28,6 @@ AWS_PROTOCOL_TEST(FlattenedXmlMap, FlattenedXmlMap) {
       "CjwvRmxhdHRlbmVkWG1sTWFwUmVxdWVzdD4=";
   expectedRq.uri = "/FlattenedXmlMap";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

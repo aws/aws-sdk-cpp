@@ -30,7 +30,7 @@ AWS_PROTOCOL_TEST(HttpPayloadWithUnion, RestXmlHttpPayloadWithUnion) {
   expectedRq.uri = "/HttpPayloadWithUnion";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
   expectedRq.requireHeaders = {"Content-Length"};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
@@ -45,6 +45,6 @@ AWS_PROTOCOL_TEST(HttpPayloadWithUnion, RestXmlHttpPayloadWithUnsetUnion) {
   ExpectedRequest expectedRq;
   expectedRq.method = "PUT";
   expectedRq.uri = "/HttpPayloadWithUnion";
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

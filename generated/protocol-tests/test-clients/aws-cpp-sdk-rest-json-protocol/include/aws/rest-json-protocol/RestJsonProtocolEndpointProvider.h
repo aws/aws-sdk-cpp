@@ -9,7 +9,6 @@
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/rest-json-protocol/RestJsonProtocolEndpointRules.h>
 #include <aws/rest-json-protocol/RestJsonProtocol_EXPORTS.h>
 
 namespace Aws {
@@ -43,9 +42,7 @@ class AWS_RESTJSONPROTOCOL_API RestJsonProtocolEndpointProvider : public RestJso
  public:
   using RestJsonProtocolResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-  RestJsonProtocolEndpointProvider()
-      : RestJsonProtocolDefaultEpProviderBase(Aws::RestJsonProtocol::RestJsonProtocolEndpointRules::GetRulesBlob(),
-                                              Aws::RestJsonProtocol::RestJsonProtocolEndpointRules::RulesBlobSize) {}
+  RestJsonProtocolEndpointProvider();
 
   ~RestJsonProtocolEndpointProvider() {}
 };

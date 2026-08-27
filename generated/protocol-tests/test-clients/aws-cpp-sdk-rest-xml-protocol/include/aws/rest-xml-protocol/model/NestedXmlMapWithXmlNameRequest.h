@@ -75,9 +75,9 @@ class NestedXmlMapWithXmlNameRequest : public RestXmlProtocolRequest {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>> m_nestedXmlMapWithXmlNameMap;
-  bool m_nestedXmlMapWithXmlNameMapHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nestedXmlMapWithXmlNameMapHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

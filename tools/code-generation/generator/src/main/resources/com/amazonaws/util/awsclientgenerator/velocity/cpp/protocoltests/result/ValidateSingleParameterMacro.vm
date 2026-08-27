@@ -32,7 +32,8 @@ Aws::Utils::DateTime(${value})##
 #if($serviceModel.metadata.protocol == "smithy-rpc-v2-cbor") ##Cbor only supports seconds after epoch
 Aws::Utils::DateTime(static_cast<uint64_t>(${value}))##
 #else
-Aws::Utils::DateTime(static_cast<int64_t>(${value}))##
+##Smithy protocol-test timestamp params are Unix epoch seconds; DateTime(double) interprets seconds (DateTime(int64_t) would interpret milliseconds)
+Aws::Utils::DateTime(static_cast<double>(${value}))##
 #end
 #end
 #elseif($shape.enum)

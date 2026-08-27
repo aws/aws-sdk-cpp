@@ -26,6 +26,6 @@ AWS_PROTOCOL_TEST(NullAndEmptyHeadersClient, NullAndEmptyHeaders) {
   expectedRq.uri = "/NullAndEmptyHeadersClient";
   expectedRq.headers = {{"X-B", R"()"}, {"X-C", R"()"}};
   expectedRq.forbidHeaders = {"X-A"};
-  ValidateRequestSent(expectedRq);
+  ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
