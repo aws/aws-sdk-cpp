@@ -14,6 +14,9 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.model.RenderContex
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassifier;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassifier.RequestInfo;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeRenderer;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.endpointcontext.Emit;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.endpointcontext.SmithyEndpointsJmesPathVisitor;
+import software.amazon.smithy.jmespath.JmespathExpression;
 import software.amazon.smithy.model.node.BooleanNode;
 import software.amazon.smithy.model.node.Node;
 import software.amazon.smithy.model.node.NodeVisitor;
@@ -26,6 +29,8 @@ import software.amazon.smithy.model.traits.DocumentationTrait;
 import software.amazon.smithy.model.traits.HttpChecksumRequiredTrait;
 import software.amazon.smithy.model.traits.RequestCompressionTrait;
 import software.amazon.smithy.rulesengine.traits.ContextParamTrait;
+import software.amazon.smithy.rulesengine.traits.OperationContextParamDefinition;
+import software.amazon.smithy.rulesengine.traits.OperationContextParamsTrait;
 import software.amazon.smithy.rulesengine.traits.StaticContextParamsTrait;
 
 import java.util.ArrayList;
@@ -187,6 +192,9 @@ public final class RequestRenderer implements ShapeRenderer {
                     writer.write(" * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.");
                     writer.write(" */");
                     writer.write("$L EndpointParameters GetEndpointContextParams() const override;", ctx.exportMacro());
+                    if (operation.hasTrait(OperationContextParamsTrait.class)) {
+                        writer.write("$L Aws::Vector<Aws::String> GetOperationContextParams() const;", ctx.exportMacro());
+                    }
                 }
 
                 writer.write("");
@@ -272,6 +280,9 @@ public final class RequestRenderer implements ShapeRenderer {
                 if (hasEndpointContextParams(operation, shape)) {
                     writer.write("");
                     renderEndpointContextParams(writer, className, operation, shape);
+                    if (operation.hasTrait(OperationContextParamsTrait.class)) {
+                        renderOperationContextParamsAccessor(writer, className, operation, shape);
+                    }
                 }
                 writer.write("");
                 return;
@@ -293,6 +304,9 @@ public final class RequestRenderer implements ShapeRenderer {
             if (hasEndpointContextParams(operation, shape)) {
                 writer.write("");
                 renderEndpointContextParams(writer, className, operation, shape);
+                if (operation.hasTrait(OperationContextParamsTrait.class)) {
+                    renderOperationContextParamsAccessor(writer, className, operation, shape);
+                }
             }
             writer.write("");
         });
@@ -546,7 +560,8 @@ public final class RequestRenderer implements ShapeRenderer {
     }
 
     private boolean hasEndpointContextParams(OperationShape operation, StructureShape shape) {
-        if (operation.hasTrait(StaticContextParamsTrait.class)) {
+        if (operation.hasTrait(StaticContextParamsTrait.class)
+            || operation.hasTrait(OperationContextParamsTrait.class)) {
             return true;
         }
         for (MemberShape member : shape.getAllMembers().values()) {
@@ -589,7 +604,47 @@ public final class RequestRenderer implements ShapeRenderer {
                 }
             }
 
+            if (operation.hasTrait(OperationContextParamsTrait.class)) {
+                OperationContextParamsTrait opCtx = operation.expectTrait(OperationContextParamsTrait.class);
+                Map.Entry<String, OperationContextParamDefinition> firstEntry =
+                    opCtx.getParameters().entrySet().iterator().next();
+                writer.write("// operation context params go here");
+                writer.write(
+                    "parameters.emplace_back(Aws::String{\"$L\"}, this->GetOperationContextParams(), "
+                  + "Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);",
+                    firstEntry.getKey());
+            }
+
             writer.write("return parameters;");
+        });
+    }
+
+    private void renderOperationContextParamsAccessor(CppWriter writer, String className,
+                                                      OperationShape operation, StructureShape shape) {
+        OperationContextParamsTrait opCtx = operation.expectTrait(OperationContextParamsTrait.class);
+        Map.Entry<String, OperationContextParamDefinition> firstEntry =
+            opCtx.getParameters().entrySet().iterator().next();
+        String path = firstEntry.getValue().getPath();
+
+        Emit emit = JmespathExpression.parse(path).accept(
+            new SmithyEndpointsJmesPathVisitor(this.ctx.model(), shape, "(*this)"));
+
+        writer.write("// Accessor for dynamic context endpoint params");
+        writer.openBlock("Aws::Vector<Aws::String> $L::GetOperationContextParams() const {", "}",
+            className, () -> {
+            writer.write("Aws::Vector<Aws::String> result;");
+            // Visitor output is a single newline-separated string of flat (un-indented) statements;
+            // CppWriter applies the block indentation and clang-format normalizes the rest. Each line
+            // is passed as a $L argument so any $L or {n} tokens in the output are not reinterpreted.
+            String raw = emit.statements();
+            if (!raw.isEmpty()) {
+                // Trim the single trailing newline the visitor always emits so we don't double-blank.
+                String trimmed = raw.endsWith("\n") ? raw.substring(0, raw.length() - 1) : raw;
+                for (String line : trimmed.split("\n", -1)) {
+                    writer.write("$L", line);
+                }
+            }
+            writer.write("return result;");
         });
     }
 
