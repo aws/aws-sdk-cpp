@@ -149,7 +149,9 @@ macro(do_packaging)
             @ONLY)
     endif()
 
-        # Determine the development component for this library
+        # Determine the development component for this library. Falls back to the
+        # pre-existing "Devel" name when the packaging mapping is not loaded, so
+        # the install() below is unchanged with ENABLE_CPACK_PACKAGING=OFF.
         if(COMMAND get_service_group_component)
             get_service_group_component(${PROJECT_NAME} SERVICE_GROUP)
             set(DEVEL_COMPONENT "${SERVICE_GROUP}-devel")
@@ -158,11 +160,19 @@ macro(do_packaging)
             set(DEVEL_COMPONENT "Devel")
         endif()
 
+        # The exported targets file had no COMPONENT before packaging support was
+        # added; only tag it when packaging is actually enabled.
+        if(ENABLE_CPACK_PACKAGING)
+            set(AWSSDK_EXPORT_COMPONENT COMPONENT ${DEVEL_COMPONENT})
+        else()
+            set(AWSSDK_EXPORT_COMPONENT)
+        endif()
+
         set(ConfigPackageLocation "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}")
         install(EXPORT "${PROJECT_NAME}-targets"
             FILE "${PROJECT_NAME}-targets.cmake"
             DESTINATION ${ConfigPackageLocation}
-            COMPONENT ${DEVEL_COMPONENT}
+            ${AWSSDK_EXPORT_COMPONENT}
         )
 
         install(

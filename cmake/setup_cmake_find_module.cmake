@@ -47,25 +47,36 @@ if (NOT SIMPLE_INSTALL)
         "set(AWSSDK_PLATFORM_PREFIX ${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER})\n")
 endif()
 
-# These files are consumer-facing CMake config for find_package(AWSSDK).
-# They belong with the core devel package; without an explicit COMPONENT they
-# would land in CPack's "Unspecified" bucket and produce a stray rpm/deb.
+# When ENABLE_CPACK_PACKAGING is ON these consumer-facing CMake config files are
+# tagged so they land in the core devel package rather than CPack's catch-all
+# "Unspecified" bucket (which would produce a stray rpm/deb). When it is OFF the
+# variable expands to nothing and the install() calls behave exactly as they did
+# before packaging support was added.
+if(ENABLE_CPACK_PACKAGING)
+    set(AWSSDK_CORE_DEVEL_COMPONENT COMPONENT core-devel)
+else()
+    set(AWSSDK_CORE_DEVEL_COMPONENT)
+endif()
+
+# copy version file to destination
 install(
     FILES "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}/${PROJECT_NAME}ConfigVersion.cmake"
     DESTINATION "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}"
-    COMPONENT core-devel)
+    ${AWSSDK_CORE_DEVEL_COMPONENT})
 
 # platform external dependencies
 install(
     FILES "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}/platformDeps.cmake"
     DESTINATION "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}/"
-    COMPONENT core-devel)
+    ${AWSSDK_CORE_DEVEL_COMPONENT})
 
-# copy cmake files to destination -- these are consumer-facing macros, functions
-# and variables. Exclude build-only scaffolding (CPack glue, packaging scripts)
-# that has no value at consume time and would otherwise be shipped.
+# copy cmake files to destination, these files include useful macros, functions and variables for users.
+# The EXCLUDEs are unconditional: they only ever match files added by this
+# packaging support, so keeping them always-on leaves the installed tree
+# identical to what it was before, rather than shipping build-only scaffolding
+# to consumers when packaging is disabled.
 install(DIRECTORY "${AWS_NATIVE_SDK_ROOT}/cmake/" DESTINATION "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}"
-    COMPONENT core-devel
+    ${AWSSDK_CORE_DEVEL_COMPONENT}
     PATTERN "CPackConfig.cmake"          EXCLUDE
     PATTERN "CPackComponents.cmake"      EXCLUDE
     PATTERN "ServiceGroupMapping.cmake"  EXCLUDE
