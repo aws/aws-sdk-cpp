@@ -18,11 +18,9 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.Su
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.ProtocolTraits;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.ServiceShape;
-import software.amazon.smithy.model.shapes.Shape;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Orchestrates C++ model code generation by dispatching classified shapes
@@ -68,18 +66,7 @@ public class ModelGenerator {
     private List<ShapeRenderer> buildRenderers(ClassifiedShapes classified, RenderContext ctx) {
         List<ShapeRenderer> renderers = new ArrayList<>();
         renderers.add(new EnumShapeRenderer(classified.enums(), ctx));
-
-        // DynamoDB's AttributeValue is a bespoke document type emitted by DynamoDbRenderer, not the
-        // generic union-struct SubObjectRenderer would produce. Drop it from the default sub-object
-        // set so it is not double-emitted. The shape stays in the model so member references resolve.
-        List<Shape> subObjects = classified.subObjects();
-        if ("dynamodb".equals(ctx.smithyServiceName())) {
-            subObjects = subObjects.stream()
-                .filter(s -> !"AttributeValue".equals(s.getId().getName()))
-                .collect(Collectors.toList());
-        }
-        renderers.add(new SubObjectRenderer(subObjects, classified.resultOutputIds(), ctx));
-
+        renderers.add(new SubObjectRenderer(classified.subObjects(), classified.resultOutputIds(), ctx));
         renderers.add(new RequestRenderer(classified.requests(), ctx));
         renderers.add(new ResultRenderer(classified.results(), ctx));
         renderers.add(new EventStreamRenderer(classified.eventStreamHandlers(), ctx));

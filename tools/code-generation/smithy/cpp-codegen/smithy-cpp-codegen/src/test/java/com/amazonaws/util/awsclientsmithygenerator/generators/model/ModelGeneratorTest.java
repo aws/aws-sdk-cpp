@@ -5,10 +5,13 @@
 package com.amazonaws.util.awsclientsmithygenerator.generators.model;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.DynamoDbTransforms;
 import org.junit.jupiter.api.Test;
+import software.amazon.smithy.aws.traits.ServiceTrait;
 import software.amazon.smithy.build.MockManifest;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.OperationShape;
+import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.model.shapes.ShapeId;
 import software.amazon.smithy.model.shapes.StringShape;
 import software.amazon.smithy.model.shapes.StructureShape;
@@ -19,8 +22,12 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * End-to-end guard for {@link ModelGenerator#buildRenderers} dropping DynamoDB's {@code
- * AttributeValue} union from the default sub-object set.
+ * End-to-end guard for suppressing DynamoDB's {@code AttributeValue} union from the default
+ * sub-object set. Suppression is now driven by {@link DynamoDbTransforms} marking the shape
+ * {@code @customRendered} and {@link ShapeClassifier} skipping marked shapes — the generic
+ * {@code ModelGenerator} no longer knows about dynamodb. This test therefore applies the DynamoDB
+ * transform to its model before running {@code ModelGenerator}, exercising the whole chain:
+ * transform-marks -> classifier-skips -> single bespoke file.
  *
  * <p>The suppression is load-bearing, not cosmetic: {@code CppWriterDelegator.useFileWriter}
  * keys writers by filename via {@code computeIfAbsent}, so if {@code AttributeValue} were left in
@@ -30,8 +37,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * writer, and APPEND — silently concatenating the generic tagged-union struct onto the bespoke
  * document type with no error. This test runs {@code ModelGenerator} end-to-end and asserts the
  * emitted header is the bespoke class only, never the generic union. The per-renderer tests
- * ({@code DynamoDbRendererTest}, {@code SubObjectRendererTest}) do not exercise the wiring in
- * {@code buildRenderers} where the double-emit would occur.
+ * ({@code DynamoDbRendererTest}, {@code SubObjectRendererTest}) do not exercise this wiring where
+ * the double-emit would occur.
  */
 class ModelGeneratorTest {
 
@@ -47,8 +54,12 @@ class ModelGeneratorTest {
      * A minimal model with a service, one operation, and an {@code AttributeValue} <em>union</em>
      * referenced by the operation input. The union carries a synthetic member so that, were it
      * rendered generically, {@link #GENERIC_UNION_MARKER} would appear in the output.
+     *
+     * <p>The service carries a {@code ServiceTrait} whose {@code sdkId} is {@code smithyServiceName}
+     * so {@link DynamoDbTransforms}' own self-guard (which reads the service's sdk id) fires
+     * consistently with the {@code smithyServiceName} passed to {@code ModelGenerator}.
      */
-    private static Model model() {
+    private static Model model(String smithyServiceName) {
         StringShape str = StringShape.builder().id("com.amazonaws.dynamodb#Str").build();
         UnionShape attributeValue = UnionShape.builder()
             .id("com.amazonaws.dynamodb#AttributeValue")
@@ -56,7 +67,7 @@ class ModelGeneratorTest {
             .addMember("otherProbe", str.getId())
             .build();
         // Input carries an AttributeValue member, so the union is reachable and classified as a
-        // sub-object (which buildRenderers must then drop for dynamodb).
+        // sub-object (which the transform+classifier must then drop for dynamodb).
         StructureShape input = StructureShape.builder()
             .id("com.amazonaws.dynamodb#DoThingInput")
             .addMember("item", attributeValue.getId())
@@ -70,23 +81,27 @@ class ModelGeneratorTest {
             .input(input.getId())
             .output(output.getId())
             .build();
-        software.amazon.smithy.model.shapes.ServiceShape service =
-            software.amazon.smithy.model.shapes.ServiceShape.builder()
-                .id("com.amazonaws.dynamodb#DynamoDB_20120810")
-                .version("2012-08-10")
-                .addOperation(op.getId())
-                .build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.amazonaws.dynamodb#DynamoDB_20120810")
+            .version("2012-08-10")
+            .addTrait(ServiceTrait.builder().sdkId(smithyServiceName).arnNamespace("dynamodb")
+                .cloudFormationName("DynamoDB").cloudTrailEventSource("dynamodb").build())
+            .addOperation(op.getId())
+            .build();
         return Model.builder().addShapes(str, attributeValue, input, output, op, service).build();
     }
 
     private static MockManifest generate(String smithyServiceName, String namespace, String exportMacro) {
-        Model model = model();
-        software.amazon.smithy.model.shapes.ServiceShape service = model.expectShape(
-            ShapeId.from("com.amazonaws.dynamodb#DynamoDB_20120810"),
-            software.amazon.smithy.model.shapes.ServiceShape.class);
+        Model model = model(smithyServiceName);
+        ServiceShape service = model.expectShape(
+            ShapeId.from("com.amazonaws.dynamodb#DynamoDB_20120810"), ServiceShape.class);
+        // Apply the DynamoDB service-level transform first, mirroring the real ModelCodegenPlugin
+        // pipeline: for dynamodb it marks AttributeValue @customRendered; for any other service it
+        // is a no-op. Suppression then flows through ShapeClassifier, not ModelGenerator.
+        Model transformed = DynamoDbTransforms.asTransform().apply(model, service);
         MockManifest manifest = new MockManifest();
         CppWriterDelegator delegator = new CppWriterDelegator(manifest);
-        new ModelGenerator(model, service, delegator, smithyServiceName, exportMacro, namespace)
+        new ModelGenerator(transformed, service, delegator, smithyServiceName, exportMacro, namespace)
             .generateAll();
         delegator.flushWriters();
         return manifest;
