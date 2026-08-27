@@ -11,6 +11,8 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.Re
 import org.junit.jupiter.api.Test;
 import software.amazon.smithy.build.MockManifest;
 import software.amazon.smithy.model.Model;
+import software.amazon.smithy.model.shapes.ListShape;
+import software.amazon.smithy.model.shapes.MapShape;
 import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.ServiceShape;
@@ -19,6 +21,8 @@ import software.amazon.smithy.model.shapes.StringShape;
 import software.amazon.smithy.model.shapes.StructureShape;
 import software.amazon.smithy.model.shapes.UnionShape;
 import software.amazon.smithy.model.traits.StreamingTrait;
+import software.amazon.smithy.rulesengine.traits.OperationContextParamDefinition;
+import software.amazon.smithy.rulesengine.traits.OperationContextParamsTrait;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -660,5 +664,200 @@ class RequestRendererTest {
             "Header must not declare GetRequestSpecificHeaders (contentType is stripped): " + h);
         assertFalse(c.contains("GetRequestSpecificHeaders"),
             "Source must not define GetRequestSpecificHeaders (contentType is stripped): " + c);
+    }
+
+    // --- smithy.rules#operationContextParams ---
+
+    /** Operation carrying ONLY smithy.rules#operationContextParams (no static, no member-level). */
+    private static Model operationContextParamsOnlyModel() {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        // Map<String, String> for keys(RequestItems) — the JMESPath the trait resolves.
+        MapShape requestItemsMap = MapShape.builder()
+            .id("com.example#RequestItemsMap")
+            .key(MemberShape.builder().id("com.example#RequestItemsMap$key").target(str.getId()).build())
+            .value(MemberShape.builder().id("com.example#RequestItemsMap$value").target(str.getId()).build())
+            .build();
+        StructureShape input = StructureShape.builder()
+            .id("com.example#DoBatchInput")
+            .addMember("RequestItems", requestItemsMap.getId())
+            .build();
+        StructureShape output = StructureShape.builder()
+            .id("com.example#DoBatchOutput").addMember("r", str.getId()).build();
+        OperationContextParamsTrait ctxTrait = OperationContextParamsTrait.builder()
+            .putParameter("ResourceArnList",
+                OperationContextParamDefinition.builder().path("keys(RequestItems)").build())
+            .build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#DoBatch").input(input.getId()).output(output.getId())
+            .addTrait(ctxTrait).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#Example").version("2024-01-01").addOperation(op.getId()).build();
+        return Model.builder().addShapes(str, requestItemsMap, input, output, op, service).build();
+    }
+
+    private static String renderOperationContextRequest(Model model, String fileSuffix) {
+        ServiceShape service = model.expectShape(ShapeId.from("com.example#Example"), ServiceShape.class);
+        MockManifest manifest = new MockManifest();
+        CppWriterDelegator delegator = new CppWriterDelegator(manifest);
+        Protocol protocol = ProtocolResolver.resolve(service, model);
+        new RequestRenderer(
+            ShapeClassifier.classify(model, service, protocol).requests(),
+            new RenderContext(model, service, ProtocolResolver.traitsFor(protocol),
+                "Example", "AWS_EXAMPLE_API", "example")).render(delegator);
+        delegator.flushWriters();
+        return manifest.getFileString(manifest.getFiles().stream()
+            .filter(p -> p.toString().endsWith(fileSuffix)).findFirst().orElseThrow()).orElseThrow();
+    }
+
+    @Test
+    void operationContextParams_headerDeclaresGetters() {
+        // An operation carrying only smithy.rules#operationContextParams must produce both the
+        // GetEndpointContextParams() virtual override and the GetOperationContextParams() accessor
+        // in its request header. Fails on main because RequestRenderer ignores the trait.
+        String h = renderOperationContextRequest(operationContextParamsOnlyModel(), "DoBatchRequest.h");
+        assertTrue(h.contains("EndpointParameters GetEndpointContextParams() const override;"),
+            "Missing GetEndpointContextParams decl: " + h);
+        assertTrue(h.contains("Aws::Vector<Aws::String> GetOperationContextParams() const;"),
+            "Missing GetOperationContextParams decl: " + h);
+    }
+
+    /** Struct-dot-string: TableCreationParameters.TableName. */
+    private static Model operationContextParams_dotAccessModel() {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        StructureShape tcp = StructureShape.builder()
+            .id("com.example#TableCreationParameters").addMember("TableName", str.getId()).build();
+        StructureShape input = StructureShape.builder()
+            .id("com.example#DoBatchInput")
+            .addMember("TableCreationParameters", tcp.getId()).build();
+        StructureShape output = StructureShape.builder()
+            .id("com.example#DoBatchOutput").addMember("r", str.getId()).build();
+        OperationContextParamsTrait trait = OperationContextParamsTrait.builder()
+            .putParameter("ResourceArn",
+                OperationContextParamDefinition.builder().path("TableCreationParameters.TableName").build())
+            .build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#DoBatch").input(input.getId()).output(output.getId()).addTrait(trait).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#Example").version("2024-01-01").addOperation(op.getId()).build();
+        return Model.builder().addShapes(str, tcp, input, output, op, service).build();
+    }
+
+    /** List-projection-dot-string: TransactItems[*].Get.TableName. */
+    private static Model operationContextParams_projectionModel() {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        StructureShape get = StructureShape.builder()
+            .id("com.example#Get").addMember("TableName", str.getId()).build();
+        StructureShape item = StructureShape.builder()
+            .id("com.example#Item").addMember("Get", get.getId()).build();
+        ListShape list = ListShape.builder()
+            .id("com.example#Items")
+            .member(MemberShape.builder().id("com.example#Items$member").target(item.getId()).build())
+            .build();
+        StructureShape input = StructureShape.builder()
+            .id("com.example#DoBatchInput").addMember("TransactItems", list.getId()).build();
+        StructureShape output = StructureShape.builder()
+            .id("com.example#DoBatchOutput").addMember("r", str.getId()).build();
+        OperationContextParamsTrait trait = OperationContextParamsTrait.builder()
+            .putParameter("ResourceArnList",
+                OperationContextParamDefinition.builder().path("TransactItems[*].Get.TableName").build())
+            .build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#DoBatch").input(input.getId()).output(output.getId()).addTrait(trait).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#Example").version("2024-01-01").addOperation(op.getId()).build();
+        return Model.builder().addShapes(str, get, item, list, input, output, op, service).build();
+    }
+
+    /** Multi-select-list flatten: TransactItems[*].[ConditionCheck.TableName, Put.TableName, Delete.TableName, Update.TableName][]. */
+    private static Model operationContextParams_multiSelectFlattenModel() {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        StructureShape cc = StructureShape.builder()
+            .id("com.example#CC").addMember("TableName", str.getId()).build();
+        StructureShape put = StructureShape.builder()
+            .id("com.example#Put").addMember("TableName", str.getId()).build();
+        StructureShape del = StructureShape.builder()
+            .id("com.example#Delete").addMember("TableName", str.getId()).build();
+        StructureShape upd = StructureShape.builder()
+            .id("com.example#Update").addMember("TableName", str.getId()).build();
+        StructureShape item = StructureShape.builder()
+            .id("com.example#Item")
+            .addMember("ConditionCheck", cc.getId())
+            .addMember("Put", put.getId())
+            .addMember("Delete", del.getId())
+            .addMember("Update", upd.getId()).build();
+        ListShape list = ListShape.builder()
+            .id("com.example#Items")
+            .member(MemberShape.builder().id("com.example#Items$member").target(item.getId()).build())
+            .build();
+        StructureShape input = StructureShape.builder()
+            .id("com.example#DoBatchInput").addMember("TransactItems", list.getId()).build();
+        StructureShape output = StructureShape.builder()
+            .id("com.example#DoBatchOutput").addMember("r", str.getId()).build();
+        OperationContextParamsTrait trait = OperationContextParamsTrait.builder()
+            .putParameter("ResourceArnList",
+                OperationContextParamDefinition.builder()
+                    .path("TransactItems[*].[ConditionCheck.TableName, Put.TableName, Delete.TableName, Update.TableName][]").build())
+            .build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#DoBatch").input(input.getId()).output(output.getId()).addTrait(trait).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#Example").version("2024-01-01").addOperation(op.getId()).build();
+        return Model.builder().addShapes(str, cc, put, del, upd, item, list, input, output, op, service).build();
+    }
+
+    @Test
+    void operationContextParams_keysPattern_endToEnd() {
+        // Uses Task 1's operationContextParamsOnlyModel() (keys(RequestItems)).
+        String h = renderOperationContextRequest(operationContextParamsOnlyModel(), "DoBatchRequest.h");
+        String c = renderOperationContextRequest(operationContextParamsOnlyModel(), "DoBatchRequest.cpp");
+        assertTrue(h.contains("EndpointParameters GetEndpointContextParams() const override;"), h);
+        assertTrue(h.contains("Aws::Vector<Aws::String> GetOperationContextParams() const;"), h);
+        assertTrue(c.contains(
+            "parameters.emplace_back(Aws::String{\"ResourceArnList\"}, this->GetOperationContextParams()"), c);
+        assertTrue(c.contains("Aws::Vector<Aws::String> DoBatchRequest::GetOperationContextParams() const"), c);
+        assertTrue(c.contains("auto& RequestItemsElems = (*this).GetRequestItems();"), c);
+        assertTrue(c.contains("for (auto& keysElem : RequestItemsElems)"), c);
+        assertTrue(c.contains("result.emplace_back(keysElem.first);"), c);
+    }
+
+    @Test
+    void operationContextParams_dotAccessPattern_endToEnd() {
+        Model model = operationContextParams_dotAccessModel();
+        String h = renderOperationContextRequest(model, "DoBatchRequest.h");
+        String c = renderOperationContextRequest(model, "DoBatchRequest.cpp");
+        assertTrue(h.contains("Aws::Vector<Aws::String> GetOperationContextParams() const;"), h);
+        assertTrue(c.contains(
+            "parameters.emplace_back(Aws::String{\"ResourceArn\"}, this->GetOperationContextParams()"), c);
+        assertTrue(c.contains(
+            "auto& TableCreationParametersElems = (*this).GetTableCreationParameters().GetTableName();"), c);
+        assertTrue(c.contains("result.emplace_back(TableCreationParametersElems);"), c);
+        assertFalse(c.contains("for (auto&"),
+            "Dot-access pattern must not emit a for-loop: " + c);
+    }
+
+    @Test
+    void operationContextParams_projectionPattern_endToEnd() {
+        Model model = operationContextParams_projectionModel();
+        String c = renderOperationContextRequest(model, "DoBatchRequest.cpp");
+        assertTrue(c.contains("auto& TransactItemsElems = (*this).GetTransactItems();"), c);
+        assertTrue(c.contains("for (auto& TransactItemsElem : TransactItemsElems)"), c);
+        assertTrue(c.contains(
+            "auto& GetElems = TransactItemsElem.GetGet().GetTableName();"), c);
+        assertTrue(c.contains("result.emplace_back(GetElems);"), c);
+    }
+
+    @Test
+    void operationContextParams_multiSelectFlattenPattern_endToEnd() {
+        Model model = operationContextParams_multiSelectFlattenModel();
+        String c = renderOperationContextRequest(model, "DoBatchRequest.cpp");
+        assertTrue(c.contains("for (auto& TransactItemsElem : TransactItemsElems)"), c);
+        // Each of the four field-access branches must appear inside the loop body.
+        for (String branch : java.util.List.of("ConditionCheck", "Put", "Delete", "Update")) {
+            assertTrue(c.contains(
+                "auto& " + branch + "Elems = TransactItemsElem.Get" + branch + "().GetTableName();"),
+                "Missing branch " + branch + ": " + c);
+            assertTrue(c.contains("result.emplace_back(" + branch + "Elems);"),
+                "Missing result push for " + branch + ": " + c);
+        }
     }
 }
