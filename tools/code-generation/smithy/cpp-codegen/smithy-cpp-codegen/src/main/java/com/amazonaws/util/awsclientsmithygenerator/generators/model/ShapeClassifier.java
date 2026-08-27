@@ -5,6 +5,7 @@
 package com.amazonaws.util.awsclientsmithygenerator.generators.model;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.CustomRenderedTrait;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.GlobalTransforms;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.knowledge.TopDownIndex;
@@ -199,7 +200,12 @@ public final class ShapeClassifier {
                     subObjects.add(shape);
                 }
             } else if (shape.isStructureShape() || shape.isUnionShape()) {
-                subObjects.add(shape);
+                // A shape marked @customRendered is emitted by a dedicated renderer (e.g.
+                // DynamoDbRenderer for AttributeValue); skip the default sub-object emission so the
+                // two do not both write — and append into — the same model file.
+                if (!shape.hasTrait(CustomRenderedTrait.class)) {
+                    subObjects.add(shape);
+                }
             }
         }
 

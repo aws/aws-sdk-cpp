@@ -4,6 +4,7 @@
  */
 package com.amazonaws.util.awsclientsmithygenerator.generators.model;
 
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.CustomRenderedTrait;
 import org.junit.jupiter.api.Test;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.*;
@@ -568,6 +569,52 @@ class ShapeClassifierTest {
         assertTrue(classified.blobPayloadEvents().stream()
                 .noneMatch(s -> s.getId().getName().equals("CompleteEvent")),
             "Non-blob event struct must NOT be a blob-payload event: " + classified.blobPayloadEvents());
+    }
+
+    /**
+     * A service whose operation input references two structs: one marked {@link CustomRenderedTrait}
+     * (owned by a dedicated renderer) and one plain. The classifier's generic marker rule must drop
+     * the marked one from subObjects while keeping the plain one — for any service, not just
+     * dynamodb.
+     */
+    private Model modelWithCustomRenderedShape() {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        StructureShape marked = StructureShape.builder()
+            .id("com.example#MarkedThing")
+            .addMember("name", str.getId())
+            .addTrait(new CustomRenderedTrait())
+            .build();
+        StructureShape plain = StructureShape.builder()
+            .id("com.example#PlainThing")
+            .addMember("name", str.getId())
+            .build();
+        StructureShape request = StructureShape.builder()
+            .id("com.example#DoRequest")
+            .addMember("marked", marked.getId())
+            .addMember("plain", plain.getId())
+            .build();
+        StructureShape response = StructureShape.builder().id("com.example#DoResponse").build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#Do").input(request.getId()).output(response.getId()).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#TestService").version("2023-01-01").addOperation(op.getId())
+            .addTrait(ServiceTrait.builder().sdkId("test").arnNamespace("test")
+                .cloudFormationName("Test").cloudTrailEventSource("test").build())
+            .build();
+        return Model.builder().addShapes(str, marked, plain, request, response, op, service).build();
+    }
+
+    @Test
+    void customRenderedShape_isExcludedFromSubObjects() {
+        Model model = modelWithCustomRenderedShape();
+        ServiceShape service = model.expectShape(ShapeId.from("com.example#TestService"), ServiceShape.class);
+        var classified = ShapeClassifier.classify(model, service, ProtocolResolver.resolve(service, model));
+        assertTrue(classified.subObjects().stream()
+                .noneMatch(s -> s.getId().getName().equals("MarkedThing")),
+            "@customRendered shape must be dropped from subObjects: " + classified.subObjects());
+        assertTrue(classified.subObjects().stream()
+                .anyMatch(s -> s.getId().getName().equals("PlainThing")),
+            "unmarked shape must remain a sub-object: " + classified.subObjects());
     }
 
     @Test

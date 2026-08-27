@@ -9,6 +9,7 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.ServiceNameUtil;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.AccessAnalyzerTransforms;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.ApiGatewayTransforms;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.ApiGatewayV2Transforms;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.DynamoDbTransforms;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.Ec2Transforms;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.GlobalTransforms;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.LambdaTransforms;
@@ -56,7 +57,8 @@ public class ModelCodegenPlugin implements SmithyBuildPlugin {
             ApiGatewayTransforms.asTransform(),
             ApiGatewayV2Transforms.asTransform(),
             Ec2Transforms.asTransform(),
-            AccessAnalyzerTransforms.asTransform()
+            AccessAnalyzerTransforms.asTransform(),
+            DynamoDbTransforms.asTransform()
             // Future: S3Transforms.asTransform(), etc.
         ));
 
