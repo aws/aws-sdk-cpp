@@ -73,8 +73,12 @@ class DeleteDomainRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>Specifies the optional flag to delete all child entities within the
-   * domain.</p>
+   * <p>Specifies whether to skip the check that prevents deletion of a domain that
+   * still contains resources. When you use this parameter, Amazon DataZone deletes
+   * the domain but might not remove its associated resources, which can leave
+   * orphaned resources behind. To delete a domain and fully clean up its associated
+   * resources, use <code>cascadeDelete</code> instead. You can't use this parameter
+   * together with <code>cascadeDelete</code>.</p>
    */
   inline bool GetSkipDeletionCheck() const { return m_skipDeletionCheck; }
   inline bool SkipDeletionCheckHasBeenSet() const { return m_skipDeletionCheckHasBeenSet; }
@@ -87,15 +91,42 @@ class DeleteDomainRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to delete the domain along with all of its associated
+   * resources. When you use this parameter, Amazon DataZone deletes the domain and
+   * cleanly removes its associated resources without leaving orphaned resources
+   * behind. Amazon DataZone reports deletion progress in the
+   * <code>deleteProgress</code> field. Amazon DataZone reports any resources that it
+   * can't delete in the <code>failureReasons</code> field of the
+   * <code>GetDomain</code> response. You can't use this parameter together with
+   * <code>skipDeletionCheck</code>. If you don't specify a value, the default is
+   * <code>false</code>.</p>
+   */
+  inline bool GetCascadeDelete() const { return m_cascadeDelete; }
+  inline bool CascadeDeleteHasBeenSet() const { return m_cascadeDeleteHasBeenSet; }
+  inline void SetCascadeDelete(bool value) {
+    m_cascadeDeleteHasBeenSet = true;
+    m_cascadeDelete = value;
+  }
+  inline DeleteDomainRequest& WithCascadeDelete(bool value) {
+    SetCascadeDelete(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_identifier;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
   bool m_skipDeletionCheck{false};
+
+  bool m_cascadeDelete{false};
   bool m_identifierHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_skipDeletionCheckHasBeenSet = false;
+  bool m_cascadeDeleteHasBeenSet = false;
 };
 
 }  // namespace Model

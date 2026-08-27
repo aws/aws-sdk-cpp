@@ -11,6 +11,7 @@
 #include <aws/cognito-idp/model/AdminAddUserToGroupRequest.h>
 #include <aws/cognito-idp/model/AdminConfirmSignUpRequest.h>
 #include <aws/cognito-idp/model/AdminCreateUserRequest.h>
+#include <aws/cognito-idp/model/AdminDeleteSoftwareTokenRequest.h>
 #include <aws/cognito-idp/model/AdminDeleteUserAttributesRequest.h>
 #include <aws/cognito-idp/model/AdminDeleteUserRequest.h>
 #include <aws/cognito-idp/model/AdminDisableProviderForUserRequest.h>
@@ -337,6 +338,13 @@ AdminCreateUserOutcome CognitoIdentityProviderClient::AdminCreateUser(const Admi
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? AdminCreateUserOutcome(result.GetResultWithOwnership())
                             : AdminCreateUserOutcome(std::move(result.GetError()));
+}
+
+AdminDeleteSoftwareTokenOutcome CognitoIdentityProviderClient::AdminDeleteSoftwareToken(
+    const AdminDeleteSoftwareTokenRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AdminDeleteSoftwareTokenOutcome(result.GetResultWithOwnership())
+                            : AdminDeleteSoftwareTokenOutcome(std::move(result.GetError()));
 }
 
 AdminDeleteUserOutcome CognitoIdentityProviderClient::AdminDeleteUser(const AdminDeleteUserRequest& request) const {

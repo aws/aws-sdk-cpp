@@ -8,9 +8,12 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
+#include <aws/datazone/model/DeleteProgress.h>
 #include <aws/datazone/model/DomainStatus.h>
 #include <aws/datazone/model/DomainVersion.h>
+#include <aws/datazone/model/FailureReason.h>
 #include <aws/datazone/model/SingleSignOn.h>
 
 #include <utility>
@@ -293,6 +296,48 @@ class GetDomainResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The list of failure reasons for resources that Amazon DataZone could not
+   * delete during a cascade deletion of the domain.</p>
+   */
+  inline const Aws::Vector<FailureReason>& GetFailureReasons() const { return m_failureReasons; }
+  template <typename FailureReasonsT = Aws::Vector<FailureReason>>
+  void SetFailureReasons(FailureReasonsT&& value) {
+    m_failureReasonsHasBeenSet = true;
+    m_failureReasons = std::forward<FailureReasonsT>(value);
+  }
+  template <typename FailureReasonsT = Aws::Vector<FailureReason>>
+  GetDomainResult& WithFailureReasons(FailureReasonsT&& value) {
+    SetFailureReasons(std::forward<FailureReasonsT>(value));
+    return *this;
+  }
+  template <typename FailureReasonsT = FailureReason>
+  GetDomainResult& AddFailureReasons(FailureReasonsT&& value) {
+    m_failureReasonsHasBeenSet = true;
+    m_failureReasons.emplace_back(std::forward<FailureReasonsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The progress of the current domain deletion, including the number of projects
+   * that Amazon DataZone successfully deleted.</p>
+   */
+  inline const DeleteProgress& GetDeleteProgress() const { return m_deleteProgress; }
+  template <typename DeleteProgressT = DeleteProgress>
+  void SetDeleteProgress(DeleteProgressT&& value) {
+    m_deleteProgressHasBeenSet = true;
+    m_deleteProgress = std::forward<DeleteProgressT>(value);
+  }
+  template <typename DeleteProgressT = DeleteProgress>
+  GetDomainResult& WithDeleteProgress(DeleteProgressT&& value) {
+    SetDeleteProgress(std::forward<DeleteProgressT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -339,6 +384,10 @@ class GetDomainResult {
 
   Aws::String m_serviceRole;
 
+  Aws::Vector<FailureReason> m_failureReasons;
+
+  DeleteProgress m_deleteProgress;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_idHasBeenSet = false;
@@ -356,6 +405,8 @@ class GetDomainResult {
   bool m_tagsHasBeenSet = false;
   bool m_domainVersionHasBeenSet = false;
   bool m_serviceRoleHasBeenSet = false;
+  bool m_failureReasonsHasBeenSet = false;
+  bool m_deleteProgressHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

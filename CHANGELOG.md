@@ -1,3 +1,18 @@
+# 1.11.880 (2026-08-27)
+
+## SDK Highlights
+* **Bug Fix**: Compare generated protocol-test requests semantically instead of byte-for-byte: XML bodies are compared canonically via tinyxml2, form-urlencoded bodies and URI query strings are compared as unordered parameter sets, body assertions are skipped for test vectors with no body, and generated timestamp values are fixed.
+
+## Service Updates
+* **CloudWatch Logs**: Added resultCount to QueryStatistics in GetQueryResults. This field returns the total number of output rows in the final result set, helping customers programmatically determine whether a query produced results after all operations including post-aggregation filters.
+* **CodeDeploy**: Added a deploymentMode parameter to CreateDeployment. Set it to RESTART to restart an EC2 and on-premises fleet, using the last successful revision, honoring Deployment Configuration.
+* **Cognito Identity Provider**: Adds the AdminDeleteSoftwareToken API operation, enabling administrators to remove a user's registered TOTP (software token) MFA configuration from a user pool.
+* **DataZone**: Add cascadeDelete to DeleteDomain. When specified, DataZone recursively deletes all projects, environments, subscriptions, and their underlying AWS resources before removing the domain. Deletion progress is reported via deleteProgress and resource failures via failureReasons on GetDomain.
+* **EC2**: EC2 allows AMI owners to define compatible instance types on their AMIs, blocking RunInstances calls automatically for launches on non-permitted instance types.
+* **Lambda Microvms**: Added InsufficientCapacityException to RunMicrovm for capacity-related failures. Added lifecycle status field (AVAILABLE, DEPRECATED) to ListManagedMicrovmImageVersions. Added ConflictException to CreateMicrovmAuthToken and CreateMicrovmShellAuthToken for unregistered MicroVMs.
+* **OpenSearch**: Updating SDK and CLI documentation for AttachDataSource API.
+* **RDS**: Adding support for the full snapshot size, in bytes, of DB instance snapshots.
+
 # 1.11.879 (2026-08-26)
 
 ## SDK Highlights

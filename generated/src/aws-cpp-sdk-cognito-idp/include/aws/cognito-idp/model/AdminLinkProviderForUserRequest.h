@@ -62,10 +62,7 @@ class AdminLinkProviderForUserRequest : public CognitoIdentityProviderRequest {
    * provider-specific <code>user_id</code>.</p> <p>The
    * <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is
    * ignored.</p> <p>The <code>ProviderName</code> should be set to
-   * <code>Cognito</code> for users in Cognito user pools.</p>  <p>All
-   * attributes in the DestinationUser profile must be mutable. If you have assigned
-   * the user any immutable custom attributes, the operation won't succeed.</p>
-   *
+   * <code>Cognito</code> for users in Cognito user pools.</p>
    */
   inline const ProviderUserIdentifierType& GetDestinationUser() const { return m_destinationUser; }
   inline bool DestinationUserHasBeenSet() const { return m_destinationUserHasBeenSet; }

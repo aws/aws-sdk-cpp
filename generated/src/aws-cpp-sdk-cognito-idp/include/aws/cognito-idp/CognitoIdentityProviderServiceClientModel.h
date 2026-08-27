@@ -23,6 +23,7 @@
 #include <aws/cognito-idp/model/AddUserPoolClientSecretResult.h>
 #include <aws/cognito-idp/model/AdminConfirmSignUpResult.h>
 #include <aws/cognito-idp/model/AdminCreateUserResult.h>
+#include <aws/cognito-idp/model/AdminDeleteSoftwareTokenResult.h>
 #include <aws/cognito-idp/model/AdminDeleteUserAttributesResult.h>
 #include <aws/cognito-idp/model/AdminDisableProviderForUserResult.h>
 #include <aws/cognito-idp/model/AdminDisableUserResult.h>
@@ -176,6 +177,7 @@ class AddUserPoolClientSecretRequest;
 class AdminAddUserToGroupRequest;
 class AdminConfirmSignUpRequest;
 class AdminCreateUserRequest;
+class AdminDeleteSoftwareTokenRequest;
 class AdminDeleteUserRequest;
 class AdminDeleteUserAttributesRequest;
 class AdminDisableProviderForUserRequest;
@@ -308,6 +310,7 @@ typedef Aws::Utils::Outcome<AddUserPoolClientSecretResult, CognitoIdentityProvid
 typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityProviderError> AdminAddUserToGroupOutcome;
 typedef Aws::Utils::Outcome<AdminConfirmSignUpResult, CognitoIdentityProviderError> AdminConfirmSignUpOutcome;
 typedef Aws::Utils::Outcome<AdminCreateUserResult, CognitoIdentityProviderError> AdminCreateUserOutcome;
+typedef Aws::Utils::Outcome<AdminDeleteSoftwareTokenResult, CognitoIdentityProviderError> AdminDeleteSoftwareTokenOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityProviderError> AdminDeleteUserOutcome;
 typedef Aws::Utils::Outcome<AdminDeleteUserAttributesResult, CognitoIdentityProviderError> AdminDeleteUserAttributesOutcome;
 typedef Aws::Utils::Outcome<AdminDisableProviderForUserResult, CognitoIdentityProviderError> AdminDisableProviderForUserOutcome;
@@ -441,6 +444,7 @@ typedef std::future<AddUserPoolClientSecretOutcome> AddUserPoolClientSecretOutco
 typedef std::future<AdminAddUserToGroupOutcome> AdminAddUserToGroupOutcomeCallable;
 typedef std::future<AdminConfirmSignUpOutcome> AdminConfirmSignUpOutcomeCallable;
 typedef std::future<AdminCreateUserOutcome> AdminCreateUserOutcomeCallable;
+typedef std::future<AdminDeleteSoftwareTokenOutcome> AdminDeleteSoftwareTokenOutcomeCallable;
 typedef std::future<AdminDeleteUserOutcome> AdminDeleteUserOutcomeCallable;
 typedef std::future<AdminDeleteUserAttributesOutcome> AdminDeleteUserAttributesOutcomeCallable;
 typedef std::future<AdminDisableProviderForUserOutcome> AdminDisableProviderForUserOutcomeCallable;
@@ -586,6 +590,9 @@ typedef std::function<void(const CognitoIdentityProviderClient*, const Model::Ad
 typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AdminCreateUserRequest&, const Model::AdminCreateUserOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AdminCreateUserResponseReceivedHandler;
+typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AdminDeleteSoftwareTokenRequest&,
+                           const Model::AdminDeleteSoftwareTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    AdminDeleteSoftwareTokenResponseReceivedHandler;
 typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AdminDeleteUserRequest&, const Model::AdminDeleteUserOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AdminDeleteUserResponseReceivedHandler;

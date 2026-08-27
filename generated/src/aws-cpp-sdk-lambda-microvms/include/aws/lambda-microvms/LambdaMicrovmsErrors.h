@@ -45,6 +45,7 @@ enum class LambdaMicrovmsErrors {
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INSUFFICIENT_CAPACITY,
   INTERNAL_SERVER,
   RESOURCE_CONFLICT,
   SERVICE,

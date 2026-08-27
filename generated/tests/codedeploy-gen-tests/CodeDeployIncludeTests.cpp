@@ -64,6 +64,7 @@
 #include <aws/codedeploy/model/DeploymentCreator.h>
 #include <aws/codedeploy/model/DeploymentGroupInfo.h>
 #include <aws/codedeploy/model/DeploymentInfo.h>
+#include <aws/codedeploy/model/DeploymentMode.h>
 #include <aws/codedeploy/model/DeploymentOption.h>
 #include <aws/codedeploy/model/DeploymentOverview.h>
 #include <aws/codedeploy/model/DeploymentReadyAction.h>

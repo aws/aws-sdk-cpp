@@ -236,6 +236,7 @@
 #include <aws/datazone/model/DeleteListingResult.h>
 #include <aws/datazone/model/DeleteNotebookRequest.h>
 #include <aws/datazone/model/DeleteNotebookResult.h>
+#include <aws/datazone/model/DeleteProgress.h>
 #include <aws/datazone/model/DeleteProjectMembershipRequest.h>
 #include <aws/datazone/model/DeleteProjectMembershipResult.h>
 #include <aws/datazone/model/DeleteProjectProfileRequest.h>
@@ -295,6 +296,7 @@
 #include <aws/datazone/model/EqualToExpression.h>
 #include <aws/datazone/model/EventSummary.h>
 #include <aws/datazone/model/FailureCause.h>
+#include <aws/datazone/model/FailureReason.h>
 #include <aws/datazone/model/FileFormat.h>
 #include <aws/datazone/model/Filter.h>
 #include <aws/datazone/model/FilterClause.h>

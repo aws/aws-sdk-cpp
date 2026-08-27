@@ -85,6 +85,17 @@ GetDomainResult& GetDomainResult::operator=(const Aws::AmazonWebServiceResult<Js
     m_serviceRole = jsonValue.GetString("serviceRole");
     m_serviceRoleHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("failureReasons")) {
+    Aws::Utils::Array<JsonView> failureReasonsJsonList = jsonValue.GetArray("failureReasons");
+    for (unsigned failureReasonsIndex = 0; failureReasonsIndex < failureReasonsJsonList.GetLength(); ++failureReasonsIndex) {
+      m_failureReasons.push_back(failureReasonsJsonList[failureReasonsIndex].AsObject());
+    }
+    m_failureReasonsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("deleteProgress")) {
+    m_deleteProgress = jsonValue.GetObject("deleteProgress");
+    m_deleteProgressHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

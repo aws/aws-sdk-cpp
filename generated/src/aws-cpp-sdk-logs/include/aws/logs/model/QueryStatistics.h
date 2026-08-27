@@ -140,6 +140,27 @@ class QueryStatistics {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The number of rows in the final query result set. This value represents the
+   * total number of output rows across all pages. For queries that include
+   * post-aggregation filters (such as <code>stats count(*) by field | filter count
+   * &gt; threshold</code>), this value might be less than
+   * <code>recordsMatched</code>. It reflects only the rows that survived all
+   * operations in the query.</p>
+   */
+  inline double GetResultCount() const { return m_resultCount; }
+  inline bool ResultCountHasBeenSet() const { return m_resultCountHasBeenSet; }
+  inline void SetResultCount(double value) {
+    m_resultCountHasBeenSet = true;
+    m_resultCount = value;
+  }
+  inline QueryStatistics& WithResultCount(double value) {
+    SetResultCount(value);
+    return *this;
+  }
+  ///@}
  private:
   double m_recordsMatched{0.0};
 
@@ -152,12 +173,15 @@ class QueryStatistics {
   double m_estimatedBytesSkipped{0.0};
 
   double m_logGroupsScanned{0.0};
+
+  double m_resultCount{0.0};
   bool m_recordsMatchedHasBeenSet = false;
   bool m_recordsScannedHasBeenSet = false;
   bool m_estimatedRecordsSkippedHasBeenSet = false;
   bool m_bytesScannedHasBeenSet = false;
   bool m_estimatedBytesSkippedHasBeenSet = false;
   bool m_logGroupsScannedHasBeenSet = false;
+  bool m_resultCountHasBeenSet = false;
 };
 
 }  // namespace Model

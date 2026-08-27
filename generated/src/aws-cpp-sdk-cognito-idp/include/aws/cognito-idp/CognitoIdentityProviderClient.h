@@ -329,6 +329,47 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
   }
 
   /**
+   * <p>Deletes a user's registered time-based one-time password (TOTP) multi-factor
+   * authentication (MFA) factor, also known as a software token. After this
+   * operation, the user can no longer sign in with TOTP MFA, and can register a new
+   * TOTP factor with <code>AssociateSoftwareToken</code>. Use this operation when a
+   * user loses access to their TOTP-generating device, for example, a lost or reset
+   * phone, and needs to register a new one.</p>  <p>Amazon Cognito evaluates
+   * Identity and Access Management (IAM) policies in requests for this API
+   * operation. For this operation, you must use IAM credentials to authorize
+   * requests, and you must grant yourself the corresponding IAM permission in a
+   * policy.</p> <p class="title"> <b>Learn more</b> </p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+   * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+   * the Amazon Cognito user pools API and user pool endpoints</a> </p> </li> </ul>
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDeleteSoftwareToken">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AdminDeleteSoftwareTokenOutcome AdminDeleteSoftwareToken(const Model::AdminDeleteSoftwareTokenRequest& request) const;
+
+  /**
+   * A Callable wrapper for AdminDeleteSoftwareToken that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename AdminDeleteSoftwareTokenRequestT = Model::AdminDeleteSoftwareTokenRequest>
+  Model::AdminDeleteSoftwareTokenOutcomeCallable AdminDeleteSoftwareTokenCallable(const AdminDeleteSoftwareTokenRequestT& request) const {
+    return SubmitCallable(&CognitoIdentityProviderClient::AdminDeleteSoftwareToken, request);
+  }
+
+  /**
+   * An Async wrapper for AdminDeleteSoftwareToken that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename AdminDeleteSoftwareTokenRequestT = Model::AdminDeleteSoftwareTokenRequest>
+  void AdminDeleteSoftwareTokenAsync(const AdminDeleteSoftwareTokenRequestT& request,
+                                     const AdminDeleteSoftwareTokenResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CognitoIdentityProviderClient::AdminDeleteSoftwareToken, request, handler, context);
+  }
+
+  /**
    * <p>Deletes a user profile in your user pool.</p>  <p>Amazon Cognito
    * evaluates Identity and Access Management (IAM) policies in requests for this API
    * operation. For this operation, you must use IAM credentials to authorize
@@ -2846,7 +2887,11 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
 
   /**
    * <p>Given a user pool domain name, returns information about the domain
-   * configuration.</p>  <p>Amazon Cognito evaluates Identity and Access
+   * configuration.</p>  <p>This operation doesn't return results when you
+   * query a prefix domain in a secondary Region. Prefix domains are Region-specific
+   * and can only be described in the Region where they were created. To describe a
+   * prefix domain for a replica user pool, make the request to the primary Region's
+   * endpoint.</p>   <p>Amazon Cognito evaluates Identity and Access
    * Management (IAM) policies in requests for this API operation. For this
    * operation, you must use IAM credentials to authorize requests, and you must
    * grant yourself the corresponding IAM permission in a policy.</p> <p

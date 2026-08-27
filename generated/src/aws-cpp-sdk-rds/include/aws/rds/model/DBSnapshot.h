@@ -813,6 +813,25 @@ class DBSnapshot {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The full size of the DB snapshot, in bytes.</p>  <p>This is not
+   * the incremental size of the snapshot. This is the full snapshot size and
+   * represents the size of all the blocks that were written to the source volume at
+   * the time the snapshot was created.</p>
+   */
+  inline long long GetFullSnapshotSizeInBytes() const { return m_fullSnapshotSizeInBytes; }
+  inline bool FullSnapshotSizeInBytesHasBeenSet() const { return m_fullSnapshotSizeInBytesHasBeenSet; }
+  inline void SetFullSnapshotSizeInBytes(long long value) {
+    m_fullSnapshotSizeInBytesHasBeenSet = true;
+    m_fullSnapshotSizeInBytes = value;
+  }
+  inline DBSnapshot& WithFullSnapshotSizeInBytes(long long value) {
+    SetFullSnapshotSizeInBytes(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_dBSnapshotIdentifier;
 
@@ -895,6 +914,8 @@ class DBSnapshot {
   Aws::Vector<AdditionalStorageVolume> m_additionalStorageVolumes;
 
   Aws::String m_snapshotAvailabilityZone;
+
+  long long m_fullSnapshotSizeInBytes{0};
   bool m_dBSnapshotIdentifierHasBeenSet = false;
   bool m_dBInstanceIdentifierHasBeenSet = false;
   bool m_snapshotCreateTimeHasBeenSet = false;
@@ -936,6 +957,7 @@ class DBSnapshot {
   bool m_dedicatedLogVolumeHasBeenSet = false;
   bool m_additionalStorageVolumesHasBeenSet = false;
   bool m_snapshotAvailabilityZoneHasBeenSet = false;
+  bool m_fullSnapshotSizeInBytesHasBeenSet = false;
 };
 
 }  // namespace Model

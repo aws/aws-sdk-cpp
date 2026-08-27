@@ -26,6 +26,10 @@ ManagedMicrovmImageVersion& ManagedMicrovmImageVersion::operator=(JsonView jsonV
     m_imageVersion = jsonValue.GetString("imageVersion");
     m_imageVersionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("status")) {
+    m_status = ManagedMicrovmImageVersionStatusMapper::GetManagedMicrovmImageVersionStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetDouble("createdAt");
     m_createdAtHasBeenSet = true;
@@ -46,6 +50,10 @@ JsonValue ManagedMicrovmImageVersion::Jsonize() const {
 
   if (m_imageVersionHasBeenSet) {
     payload.WithString("imageVersion", m_imageVersion);
+  }
+
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", ManagedMicrovmImageVersionStatusMapper::GetNameForManagedMicrovmImageVersionStatus(m_status));
   }
 
   if (m_createdAtHasBeenSet) {

@@ -72,6 +72,7 @@
 #include <aws/lambda-microvms/model/LoggingDisabled.h>
 #include <aws/lambda-microvms/model/ManagedMicrovmImageSummary.h>
 #include <aws/lambda-microvms/model/ManagedMicrovmImageVersion.h>
+#include <aws/lambda-microvms/model/ManagedMicrovmImageVersionStatus.h>
 #include <aws/lambda-microvms/model/MicrovmHooks.h>
 #include <aws/lambda-microvms/model/MicrovmImageBuildSummary.h>
 #include <aws/lambda-microvms/model/MicrovmImageHooks.h>

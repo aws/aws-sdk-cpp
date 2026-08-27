@@ -30,4 +30,10 @@ void DeleteDomainRequest::AddQueryStringParameters(URI& uri) const {
     uri.AddQueryStringParameter("skipDeletionCheck", ss.str());
     ss.str("");
   }
+
+  if (m_cascadeDeleteHasBeenSet) {
+    ss << m_cascadeDelete;
+    uri.AddQueryStringParameter("cascadeDelete", ss.str());
+    ss.str("");
+  }
 }

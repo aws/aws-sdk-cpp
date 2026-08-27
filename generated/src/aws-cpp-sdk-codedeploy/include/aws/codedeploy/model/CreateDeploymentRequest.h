@@ -8,6 +8,7 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/model/AlarmConfiguration.h>
 #include <aws/codedeploy/model/AutoRollbackConfiguration.h>
+#include <aws/codedeploy/model/DeploymentMode.h>
 #include <aws/codedeploy/model/FileExistsBehavior.h>
 #include <aws/codedeploy/model/RevisionLocation.h>
 #include <aws/codedeploy/model/TargetInstances.h>
@@ -252,6 +253,25 @@ class CreateDeploymentRequest : public CodeDeployRequest {
 
   ///@{
   /**
+   * The deployment mode to use for the deployment. When set to STANDARD (the
+   * default), the deployment runs the standard set of deployment lifecycle events.
+   * When set to RESTART, an EC2/On-premises in-place deployment runs a shortened set
+   * of lifecycle events to quickly restart the application on the target instances.
+   */
+  inline DeploymentMode GetDeploymentMode() const { return m_deploymentMode; }
+  inline bool DeploymentModeHasBeenSet() const { return m_deploymentModeHasBeenSet; }
+  inline void SetDeploymentMode(DeploymentMode value) {
+    m_deploymentModeHasBeenSet = true;
+    m_deploymentMode = value;
+  }
+  inline CreateDeploymentRequest& WithDeploymentMode(DeploymentMode value) {
+    SetDeploymentMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Allows you to specify information about alarms associated with a deployment.
    * The alarm configuration that you specify here will override the alarm
    * configuration at the deployment group level. Consider overriding the alarm
@@ -300,6 +320,8 @@ class CreateDeploymentRequest : public CodeDeployRequest {
 
   FileExistsBehavior m_fileExistsBehavior{FileExistsBehavior::NOT_SET};
 
+  DeploymentMode m_deploymentMode{DeploymentMode::NOT_SET};
+
   AlarmConfiguration m_overrideAlarmConfiguration;
   bool m_applicationNameHasBeenSet = false;
   bool m_deploymentGroupNameHasBeenSet = false;
@@ -311,6 +333,7 @@ class CreateDeploymentRequest : public CodeDeployRequest {
   bool m_autoRollbackConfigurationHasBeenSet = false;
   bool m_updateOutdatedInstancesOnlyHasBeenSet = false;
   bool m_fileExistsBehaviorHasBeenSet = false;
+  bool m_deploymentModeHasBeenSet = false;
   bool m_overrideAlarmConfigurationHasBeenSet = false;
 };
 

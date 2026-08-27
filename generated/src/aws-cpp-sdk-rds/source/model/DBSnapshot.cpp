@@ -263,6 +263,12 @@ DBSnapshot& DBSnapshot::operator=(const XmlNode& xmlNode) {
       m_snapshotAvailabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotAvailabilityZoneNode.GetText());
       m_snapshotAvailabilityZoneHasBeenSet = true;
     }
+    XmlNode fullSnapshotSizeInBytesNode = resultNode.FirstChild("FullSnapshotSizeInBytes");
+    if (!fullSnapshotSizeInBytesNode.IsNull()) {
+      m_fullSnapshotSizeInBytes = StringUtils::ConvertToInt64(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fullSnapshotSizeInBytesNode.GetText()).c_str()).c_str());
+      m_fullSnapshotSizeInBytesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -461,6 +467,10 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location, uns
     oStream << location << index << locationValue
             << ".SnapshotAvailabilityZone=" << StringUtils::URLEncode(m_snapshotAvailabilityZone.c_str()) << "&";
   }
+
+  if (m_fullSnapshotSizeInBytesHasBeenSet) {
+    oStream << location << index << locationValue << ".FullSnapshotSizeInBytes=" << m_fullSnapshotSizeInBytes << "&";
+  }
 }
 
 void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -608,6 +618,9 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if (m_snapshotAvailabilityZoneHasBeenSet) {
     oStream << location << ".SnapshotAvailabilityZone=" << StringUtils::URLEncode(m_snapshotAvailabilityZone.c_str()) << "&";
+  }
+  if (m_fullSnapshotSizeInBytesHasBeenSet) {
+    oStream << location << ".FullSnapshotSizeInBytes=" << m_fullSnapshotSizeInBytes << "&";
   }
 }
 

@@ -25189,6 +25189,56 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Replaces or removes the instance type specification for an AMI. The instance
+   * type specification defines which instance types are compatible with the AMI.</p>
+   * <p>When you launch an instance using <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
+   * Amazon EC2 validates the requested instance type against the AMI's instance type
+   * specification. If the instance type is not compatible, the request fails with an
+   * <code>InvalidParameterCombination</code> error.</p> <p>You can specify supported
+   * instance types, unsupported instance types, or both. The evaluation logic is as
+   * follows:</p> <ul> <li> <p>No specification set – all instance types are
+   * allowed.</p> </li> <li> <p>Only <code>UnsupportedInstanceTypes</code> set – All
+   * instance types are allowed except those that match the unsupported list.</p>
+   * </li> <li> <p> <code>SupportedInstanceTypes</code> set – The instance type must
+   * match the supported list and must not match the unsupported list.</p> </li>
+   * </ul> <p>Instance type entries support wildcard patterns using <code>*</code>
+   * (for example, <code>t3.*</code> matches all t3 sizes).</p> <p>To remove an
+   * existing instance type specification, omit the
+   * <code>InstanceTypeSpecification</code> parameter or set it to
+   * <code>null</code>.</p> <p>To set the instance type specification, you must be
+   * the AMI owner. You cannot set an instance type specification on an AMI that is
+   * listed in Amazon Web Services Marketplace, and you cannot list an AMI in Amazon
+   * Web Services Marketplace if it has an instance type specification
+   * set.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceImageInstanceTypeSpecification">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ReplaceImageInstanceTypeSpecificationOutcome ReplaceImageInstanceTypeSpecification(
+      const Model::ReplaceImageInstanceTypeSpecificationRequest& request) const;
+
+  /**
+   * A Callable wrapper for ReplaceImageInstanceTypeSpecification that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename ReplaceImageInstanceTypeSpecificationRequestT = Model::ReplaceImageInstanceTypeSpecificationRequest>
+  Model::ReplaceImageInstanceTypeSpecificationOutcomeCallable ReplaceImageInstanceTypeSpecificationCallable(
+      const ReplaceImageInstanceTypeSpecificationRequestT& request) const {
+    return SubmitCallable(&EC2Client::ReplaceImageInstanceTypeSpecification, request);
+  }
+
+  /**
+   * An Async wrapper for ReplaceImageInstanceTypeSpecification that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename ReplaceImageInstanceTypeSpecificationRequestT = Model::ReplaceImageInstanceTypeSpecificationRequest>
+  void ReplaceImageInstanceTypeSpecificationAsync(const ReplaceImageInstanceTypeSpecificationRequestT& request,
+                                                  const ReplaceImageInstanceTypeSpecificationResponseReceivedHandler& handler,
+                                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::ReplaceImageInstanceTypeSpecification, request, handler, context);
+  }
+
+  /**
    * <p>Changes which network ACL a subnet is associated with. By default when you
    * create a subnet, it's automatically associated with the default network ACL. For
    * more information, see <a

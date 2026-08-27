@@ -962,6 +962,7 @@
 #include <aws/ec2/model/ReplaceIamInstanceProfileAssociationResponse.h>
 #include <aws/ec2/model/ReplaceImageCriteriaInAllowedImagesSettingsRequest.h>
 #include <aws/ec2/model/ReplaceImageCriteriaInAllowedImagesSettingsResponse.h>
+#include <aws/ec2/model/ReplaceImageInstanceTypeSpecificationResponse.h>
 #include <aws/ec2/model/ReplaceNetworkAclAssociationResponse.h>
 #include <aws/ec2/model/ReplaceRouteTableAssociationResponse.h>
 #include <aws/ec2/model/ReplaceTransitGatewayRouteResponse.h>
@@ -1792,6 +1793,7 @@ class ReleaseHostsRequest;
 class ReleaseIpamPoolAllocationRequest;
 class ReplaceIamInstanceProfileAssociationRequest;
 class ReplaceImageCriteriaInAllowedImagesSettingsRequest;
+class ReplaceImageInstanceTypeSpecificationRequest;
 class ReplaceNetworkAclAssociationRequest;
 class ReplaceNetworkAclEntryRequest;
 class ReplaceRouteRequest;
@@ -2632,6 +2634,7 @@ typedef Aws::Utils::Outcome<ReleaseIpamPoolAllocationResponse, EC2Error> Release
 typedef Aws::Utils::Outcome<ReplaceIamInstanceProfileAssociationResponse, EC2Error> ReplaceIamInstanceProfileAssociationOutcome;
 typedef Aws::Utils::Outcome<ReplaceImageCriteriaInAllowedImagesSettingsResponse, EC2Error>
     ReplaceImageCriteriaInAllowedImagesSettingsOutcome;
+typedef Aws::Utils::Outcome<ReplaceImageInstanceTypeSpecificationResponse, EC2Error> ReplaceImageInstanceTypeSpecificationOutcome;
 typedef Aws::Utils::Outcome<ReplaceNetworkAclAssociationResponse, EC2Error> ReplaceNetworkAclAssociationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> ReplaceNetworkAclEntryOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> ReplaceRouteOutcome;
@@ -3445,6 +3448,7 @@ typedef std::future<ReleaseHostsOutcome> ReleaseHostsOutcomeCallable;
 typedef std::future<ReleaseIpamPoolAllocationOutcome> ReleaseIpamPoolAllocationOutcomeCallable;
 typedef std::future<ReplaceIamInstanceProfileAssociationOutcome> ReplaceIamInstanceProfileAssociationOutcomeCallable;
 typedef std::future<ReplaceImageCriteriaInAllowedImagesSettingsOutcome> ReplaceImageCriteriaInAllowedImagesSettingsOutcomeCallable;
+typedef std::future<ReplaceImageInstanceTypeSpecificationOutcome> ReplaceImageInstanceTypeSpecificationOutcomeCallable;
 typedef std::future<ReplaceNetworkAclAssociationOutcome> ReplaceNetworkAclAssociationOutcomeCallable;
 typedef std::future<ReplaceNetworkAclEntryOutcome> ReplaceNetworkAclEntryOutcomeCallable;
 typedef std::future<ReplaceRouteOutcome> ReplaceRouteOutcomeCallable;
@@ -6098,6 +6102,10 @@ typedef std::function<void(const EC2Client*, const Model::ReplaceImageCriteriaIn
                            const Model::ReplaceImageCriteriaInAllowedImagesSettingsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ReplaceImageCriteriaInAllowedImagesSettingsResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::ReplaceImageInstanceTypeSpecificationRequest&,
+                           const Model::ReplaceImageInstanceTypeSpecificationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ReplaceImageInstanceTypeSpecificationResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::ReplaceNetworkAclAssociationRequest&,
                            const Model::ReplaceNetworkAclAssociationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

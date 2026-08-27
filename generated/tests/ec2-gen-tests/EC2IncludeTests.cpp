@@ -2005,7 +2005,10 @@
 #include <aws/ec2/model/InstanceTypeHypervisor.h>
 #include <aws/ec2/model/InstanceTypeInfo.h>
 #include <aws/ec2/model/InstanceTypeInfoFromInstanceRequirements.h>
+#include <aws/ec2/model/InstanceTypeItem.h>
 #include <aws/ec2/model/InstanceTypeOffering.h>
+#include <aws/ec2/model/InstanceTypeSpecification.h>
+#include <aws/ec2/model/InstanceTypeSpecificationRequest.h>
 #include <aws/ec2/model/InstanceUsage.h>
 #include <aws/ec2/model/IntegrateServices.h>
 #include <aws/ec2/model/InterfacePermissionType.h>
@@ -2633,6 +2636,8 @@
 #include <aws/ec2/model/ReplaceIamInstanceProfileAssociationResponse.h>
 #include <aws/ec2/model/ReplaceImageCriteriaInAllowedImagesSettingsRequest.h>
 #include <aws/ec2/model/ReplaceImageCriteriaInAllowedImagesSettingsResponse.h>
+#include <aws/ec2/model/ReplaceImageInstanceTypeSpecificationRequest.h>
+#include <aws/ec2/model/ReplaceImageInstanceTypeSpecificationResponse.h>
 #include <aws/ec2/model/ReplaceNetworkAclAssociationRequest.h>
 #include <aws/ec2/model/ReplaceNetworkAclAssociationResponse.h>
 #include <aws/ec2/model/ReplaceNetworkAclEntryRequest.h>

@@ -32,6 +32,8 @@
 #include <aws/cognito-idp/model/AdminCreateUserConfigType.h>
 #include <aws/cognito-idp/model/AdminCreateUserRequest.h>
 #include <aws/cognito-idp/model/AdminCreateUserResult.h>
+#include <aws/cognito-idp/model/AdminDeleteSoftwareTokenRequest.h>
+#include <aws/cognito-idp/model/AdminDeleteSoftwareTokenResult.h>
 #include <aws/cognito-idp/model/AdminDeleteUserAttributesRequest.h>
 #include <aws/cognito-idp/model/AdminDeleteUserAttributesResult.h>
 #include <aws/cognito-idp/model/AdminDeleteUserRequest.h>

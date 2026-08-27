@@ -55,6 +55,10 @@ Aws::String CreateDeploymentRequest::SerializePayload() const {
     payload.WithString("fileExistsBehavior", FileExistsBehaviorMapper::GetNameForFileExistsBehavior(m_fileExistsBehavior));
   }
 
+  if (m_deploymentModeHasBeenSet) {
+    payload.WithString("deploymentMode", DeploymentModeMapper::GetNameForDeploymentMode(m_deploymentMode));
+  }
+
   if (m_overrideAlarmConfigurationHasBeenSet) {
     payload.WithObject("overrideAlarmConfiguration", m_overrideAlarmConfiguration.Jsonize());
   }

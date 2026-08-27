@@ -42,6 +42,10 @@ QueryStatistics& QueryStatistics::operator=(JsonView jsonValue) {
     m_logGroupsScanned = jsonValue.GetDouble("logGroupsScanned");
     m_logGroupsScannedHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("resultCount")) {
+    m_resultCount = jsonValue.GetDouble("resultCount");
+    m_resultCountHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +74,10 @@ JsonValue QueryStatistics::Jsonize() const {
 
   if (m_logGroupsScannedHasBeenSet) {
     payload.WithDouble("logGroupsScanned", m_logGroupsScanned);
+  }
+
+  if (m_resultCountHasBeenSet) {
+    payload.WithDouble("resultCount", m_resultCount);
   }
 
   return payload;

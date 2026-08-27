@@ -34,8 +34,7 @@ class CodeArtifact {
 
   ///@{
   /**
-   * <p>The URI of the code artifact, such as an Amazon S3 path or Amazon ECR image
-   * URI.</p>
+   * <p>The URI of the code artifact in Amazon S3.</p>
    */
   inline const Aws::String& GetUri() const { return m_uri; }
   inline bool UriHasBeenSet() const { return m_uriHasBeenSet; }

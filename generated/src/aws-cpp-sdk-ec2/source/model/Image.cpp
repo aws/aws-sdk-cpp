@@ -185,6 +185,11 @@ Image& Image::operator=(const XmlNode& xmlNode) {
 
       m_imageWatermarksHasBeenSet = true;
     }
+    XmlNode instanceTypeSpecificationNode = resultNode.FirstChild("instanceTypeSpecification");
+    if (!instanceTypeSpecificationNode.IsNull()) {
+      m_instanceTypeSpecification = instanceTypeSpecificationNode;
+      m_instanceTypeSpecificationHasBeenSet = true;
+    }
     XmlNode imageIdNode = resultNode.FirstChild("imageId");
     if (!imageIdNode.IsNull()) {
       m_imageId = Aws::Utils::Xml::DecodeEscapedXmlText(imageIdNode.GetText());
@@ -394,6 +399,12 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
     }
   }
 
+  if (m_instanceTypeSpecificationHasBeenSet) {
+    Aws::StringStream instanceTypeSpecificationLocationAndMemberSs;
+    instanceTypeSpecificationLocationAndMemberSs << location << index << locationValue << ".InstanceTypeSpecification";
+    m_instanceTypeSpecification.OutputToStream(oStream, instanceTypeSpecificationLocationAndMemberSs.str().c_str());
+  }
+
   if (m_imageIdHasBeenSet) {
     oStream << location << index << locationValue << ".ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
   }
@@ -553,6 +564,11 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location) const {
       imageWatermarksSs << location << ".ImageWatermarkSet." << imageWatermarksIdx++;
       item.OutputToStream(oStream, imageWatermarksSs.str().c_str());
     }
+  }
+  if (m_instanceTypeSpecificationHasBeenSet) {
+    Aws::String instanceTypeSpecificationLocationAndMember(location);
+    instanceTypeSpecificationLocationAndMember += ".InstanceTypeSpecification";
+    m_instanceTypeSpecification.OutputToStream(oStream, instanceTypeSpecificationLocationAndMember.c_str());
   }
   if (m_imageIdHasBeenSet) {
     oStream << location << ".ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";

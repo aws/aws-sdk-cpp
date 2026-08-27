@@ -82,6 +82,7 @@ namespace LambdaMicrovmsErrorMapper {
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
+static const int INSUFFICIENT_CAPACITY_HASH = HashingUtils::HashString("InsufficientCapacityException");
 static const int RESOURCE_CONFLICT_HASH = HashingUtils::HashString("ResourceConflictException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
 static const int SERVICE_HASH = HashingUtils::HashString("ServiceException");
@@ -95,6 +96,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaMicrovmsErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INTERNAL_SERVER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaMicrovmsErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
+  } else if (hashCode == INSUFFICIENT_CAPACITY_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaMicrovmsErrors::INSUFFICIENT_CAPACITY), RetryableType::RETRYABLE);
   } else if (hashCode == RESOURCE_CONFLICT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaMicrovmsErrors::RESOURCE_CONFLICT), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == TOO_MANY_REQUESTS_HASH) {

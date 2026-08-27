@@ -70,6 +70,7 @@
 #include <aws/ec2/model/ReleaseIpamPoolAllocationRequest.h>
 #include <aws/ec2/model/ReplaceIamInstanceProfileAssociationRequest.h>
 #include <aws/ec2/model/ReplaceImageCriteriaInAllowedImagesSettingsRequest.h>
+#include <aws/ec2/model/ReplaceImageInstanceTypeSpecificationRequest.h>
 #include <aws/ec2/model/ReplaceNetworkAclAssociationRequest.h>
 #include <aws/ec2/model/ReplaceNetworkAclEntryRequest.h>
 #include <aws/ec2/model/ReplaceRouteRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/ec2/model/UpdateInterruptibleCapacityReservationAllocationRequest.h>
 #include <aws/ec2/model/UpdateSecurityGroupRuleDescriptionsEgressRequest.h>
 #include <aws/ec2/model/UpdateSecurityGroupRuleDescriptionsIngressRequest.h>
-#include <aws/ec2/model/WithdrawByoipCidrRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -451,6 +451,13 @@ ReplaceImageCriteriaInAllowedImagesSettingsOutcome EC2Client::ReplaceImageCriter
                             : ReplaceImageCriteriaInAllowedImagesSettingsOutcome(std::move(result.GetError()));
 }
 
+ReplaceImageInstanceTypeSpecificationOutcome EC2Client::ReplaceImageInstanceTypeSpecification(
+    const ReplaceImageInstanceTypeSpecificationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ReplaceImageInstanceTypeSpecificationOutcome(result.GetResultWithOwnership())
+                            : ReplaceImageInstanceTypeSpecificationOutcome(std::move(result.GetError()));
+}
+
 ReplaceNetworkAclAssociationOutcome EC2Client::ReplaceNetworkAclAssociation(const ReplaceNetworkAclAssociationRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ReplaceNetworkAclAssociationOutcome(result.GetResultWithOwnership())
@@ -750,10 +757,4 @@ UpdateSecurityGroupRuleDescriptionsIngressOutcome EC2Client::UpdateSecurityGroup
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateSecurityGroupRuleDescriptionsIngressOutcome(result.GetResultWithOwnership())
                             : UpdateSecurityGroupRuleDescriptionsIngressOutcome(std::move(result.GetError()));
-}
-
-WithdrawByoipCidrOutcome EC2Client::WithdrawByoipCidr(const WithdrawByoipCidrRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? WithdrawByoipCidrOutcome(result.GetResultWithOwnership())
-                            : WithdrawByoipCidrOutcome(std::move(result.GetError()));
 }

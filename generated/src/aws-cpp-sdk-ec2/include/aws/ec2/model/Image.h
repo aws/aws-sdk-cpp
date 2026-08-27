@@ -17,6 +17,7 @@
 #include <aws/ec2/model/ImageTypeValues.h>
 #include <aws/ec2/model/ImageWatermark.h>
 #include <aws/ec2/model/ImdsSupportValues.h>
+#include <aws/ec2/model/InstanceTypeSpecification.h>
 #include <aws/ec2/model/PlatformValues.h>
 #include <aws/ec2/model/ProductCode.h>
 #include <aws/ec2/model/StateReason.h>
@@ -590,6 +591,25 @@ class Image {
 
   ///@{
   /**
+   * <p>The instance type specification for the AMI, which defines which instance
+   * types are compatible with this image.</p>
+   */
+  inline const InstanceTypeSpecification& GetInstanceTypeSpecification() const { return m_instanceTypeSpecification; }
+  inline bool InstanceTypeSpecificationHasBeenSet() const { return m_instanceTypeSpecificationHasBeenSet; }
+  template <typename InstanceTypeSpecificationT = InstanceTypeSpecification>
+  void SetInstanceTypeSpecification(InstanceTypeSpecificationT&& value) {
+    m_instanceTypeSpecificationHasBeenSet = true;
+    m_instanceTypeSpecification = std::forward<InstanceTypeSpecificationT>(value);
+  }
+  template <typename InstanceTypeSpecificationT = InstanceTypeSpecification>
+  Image& WithInstanceTypeSpecification(InstanceTypeSpecificationT&& value) {
+    SetInstanceTypeSpecification(std::forward<InstanceTypeSpecificationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ID of the AMI.</p>
    */
   inline const Aws::String& GetImageId() const { return m_imageId; }
@@ -860,6 +880,8 @@ class Image {
 
   Aws::Vector<ImageWatermark> m_imageWatermarks;
 
+  InstanceTypeSpecification m_instanceTypeSpecification;
+
   Aws::String m_imageId;
 
   Aws::String m_imageLocation;
@@ -910,6 +932,7 @@ class Image {
   bool m_freeTierEligibleHasBeenSet = false;
   bool m_publicSsmParameterNameHasBeenSet = false;
   bool m_imageWatermarksHasBeenSet = false;
+  bool m_instanceTypeSpecificationHasBeenSet = false;
   bool m_imageIdHasBeenSet = false;
   bool m_imageLocationHasBeenSet = false;
   bool m_stateHasBeenSet = false;
