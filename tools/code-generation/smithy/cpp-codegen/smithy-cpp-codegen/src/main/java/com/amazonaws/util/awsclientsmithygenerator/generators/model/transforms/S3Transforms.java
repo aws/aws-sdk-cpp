@@ -17,10 +17,12 @@ import software.amazon.smithy.model.shapes.StringShape;
 import software.amazon.smithy.model.shapes.StructureShape;
 import software.amazon.smithy.model.shapes.TimestampShape;
 import software.amazon.smithy.model.traits.DocumentationTrait;
+import software.amazon.smithy.model.traits.HttpHeaderTrait;
 import software.amazon.smithy.model.transform.ModelTransformer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -47,7 +49,34 @@ public final class S3Transforms {
         }
         // Sub-transforms are chained here by later tasks, e.g.:
         // return normalizeReplicationStatus(expandBucketLocationConstraint(... (model) ...));
-        return addExpiresCustomization(renameCopyObjectResult(model), service);
+        return hackGetObjectResult(addExpiresCustomization(renameCopyObjectResult(model), service));
+    }
+
+    private static Model hackGetObjectResult(Model model) {
+        String ns = "com.amazonaws.s3";
+        ShapeId outputId = ShapeId.fromParts(ns, "GetObjectOutput");
+        Optional<StructureShape> outputOpt = model.getShape(outputId).flatMap(Shape::asStructureShape);
+        if (outputOpt.isEmpty()) {
+            return model; // no GetObjectOutput: nothing to do.
+        }
+        StructureShape output = outputOpt.get();
+        if (output.getMember("Id2").isPresent() && output.getMember("RequestId").isPresent()) {
+            return model; // already injected (idempotent) — or upstream added them.
+        }
+        ShapeId id2ShapeId = ShapeId.fromParts(ns, "ObjectId2");
+        ShapeId reqIdShapeId = ShapeId.fromParts(ns, "ObjectRequestId");
+        StringShape id2Shape = StringShape.builder().id(id2ShapeId).build();
+        StringShape reqIdShape = StringShape.builder().id(reqIdShapeId).build();
+
+        StructureShape.Builder b = StructureShape.builder().id(output.getId());
+        output.getAllTraits().values().forEach(b::addTrait);
+        output.getAllMembers().values().forEach(m ->
+            b.addMember(m.getMemberName(), m.getTarget(),
+                mb -> m.getAllTraits().values().forEach(mb::addTrait)));
+        b.addMember("Id2", id2ShapeId, mb -> mb.addTrait(new HttpHeaderTrait("x-amz-id-2")));
+        b.addMember("RequestId", reqIdShapeId, mb -> mb.addTrait(new HttpHeaderTrait("x-amz-request-id")));
+
+        return model.toBuilder().addShapes(id2Shape, reqIdShape, b.build()).build();
     }
 
     private static Model renameCopyObjectResult(Model model) {
