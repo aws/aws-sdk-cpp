@@ -8,6 +8,9 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.ServiceNameUtil;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ModelTransform;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.ServiceShape;
+import software.amazon.smithy.model.shapes.ShapeId;
+import software.amazon.smithy.model.transform.ModelTransformer;
+import java.util.Map;
 
 /**
  * S3 (and S3-CRT, which shares the S3 model) parity with the legacy C2J
@@ -32,6 +35,20 @@ public final class S3Transforms {
         }
         // Sub-transforms are chained here by later tasks, e.g.:
         // return normalizeReplicationStatus(expandBucketLocationConstraint(... (model) ...));
-        return model;
+        return renameCopyObjectResult(model);
+    }
+
+    private static Model renameCopyObjectResult(Model model) {
+        String ns = "com.amazonaws.s3";
+        ShapeId oldId = ShapeId.fromParts(ns, "CopyObjectResult");
+        ShapeId newId = ShapeId.fromParts(ns, "CopyObjectResultDetails");
+        if (model.getShape(oldId).isEmpty()) {
+            return model; // source absent: nothing to rename.
+        }
+        if (model.getShape(newId).isPresent()) {
+            throw new IllegalStateException("S3 collision: '" + newId + "' already exists; cannot "
+                + "rename '" + oldId + "' onto it.");
+        }
+        return ModelTransformer.create().renameShapes(model, Map.of(oldId, newId));
     }
 }

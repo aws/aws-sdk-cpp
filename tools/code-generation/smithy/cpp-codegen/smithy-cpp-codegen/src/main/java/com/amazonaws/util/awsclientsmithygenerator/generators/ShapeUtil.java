@@ -79,21 +79,6 @@ public class ShapeUtil {
     );
 
     /**
-     * S3 shapes that exist in C2J but not in Smithy.
-     * These must be synthetically injected into the model before generation.
-     */
-    public static final Map<String, Set<String>> C2J_ONLY_SHAPES = Map.of(
-        "s3", Set.of(
-            "CopyObjectResultDetails", "SelectObjectContentEventStreamUnmarshallerError",
-            "CloudFunctionConfiguration", "QueueConfigurationDeprecated",
-            "TopicConfigurationDeprecated", "NotificationConfigurationDeprecated",
-            "RequestPaymentConfiguration", "PutObjectLockConfigurationRequestAlias",
-            "GetObjectLockConfigurationResultAlias", "ObjectLockConfigurationAlias",
-            "ObjectLockRuleAlias", "DefaultRetentionAlias", "ObjectLockRetentionAlias"
-        )
-    );
-
-    /**
      * Returns the hardcoded collision resolution for a shape, if one exists.
      */
     public static Optional<String> getHardcodedResolution(String smithyServiceName, String shapeName) {
