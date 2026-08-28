@@ -44,6 +44,17 @@ _(none yet)_
 - OUT OF SCOPE (remain C2J, documented): ~180 legacy error-code injection, CopySnapshot presign, custom endpoint-enum template. These are client/error/endpoint artifacts, not model-shape.
 - Remaining diffs are the two global deltas (stubbed serde, doc reflow).
 
+## S3 accepted divergences
+- **Expires deprecation note on both GetObjectResult AND HeadObjectResult:** The Smithy path applies
+  the `Expires` "Deprecated: Please use ExpiresString instead." doc-comment note to every operation
+  output that carries `Expires`, so it appears on both `GetObjectResult` and `HeadObjectResult`. C2J
+  emits the note only on `GetObjectResult` — an artifact of C2J deduping the customization across a
+  `Set<ShapeMember>`, which collapses the shared `Expires` member so the note lands on just one
+  result. The Smithy behavior is intentional and more consistent (both results describe the same
+  deprecated field identically). This is doc-comment-only and non-structural — accessors, member
+  order, and wire behavior are unchanged — so it is accepted rather than replicating C2J's
+  dedup-driven omission. No transform change (`addExpiresCustomization` is unchanged).
+
 ## S3 serde-phased customizations (deferred until Smithy serde lands)
 - `markChecksumMembers` (S3 `CHECKSUM_MEMBERS_ENUMS`): checksum members drive request serialization
   only; no model-header delta today. Implement as an `S3Transforms` marker step when serde is

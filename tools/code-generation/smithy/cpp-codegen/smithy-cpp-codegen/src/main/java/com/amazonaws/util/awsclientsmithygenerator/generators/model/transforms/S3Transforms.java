@@ -7,6 +7,8 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms;
 import com.amazonaws.util.awsclientsmithygenerator.generators.ServiceNameUtil;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.EnumRenderer;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ModelTransform;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.knowledge.TopDownIndex;
 import software.amazon.smithy.model.shapes.EnumShape;
@@ -53,7 +55,7 @@ public final class S3Transforms {
             return model;
         }
         return injectAccessLogTagQuery(normalizeReplicationStatus(expandBucketLocationConstraint(
-            hackGetObjectResult(addExpiresCustomization(renameCopyObjectResult(model), service)))), service);
+            hackGetObjectResult(addExpiresCustomization(renameCopyObjectResult(model, service), service)))), service);
     }
 
     // C2J's S3RestXmlCppClientGenerator appends a `customizedAccessLogTag` map<string,string> member
@@ -124,7 +126,7 @@ public final class S3Transforms {
 
     // Confirmed delta at implementation time against the live s3.json BucketLocationConstraint enum;
     // the other 18 C2J regions are already present upstream.
-    private static final List<String> MISSING_REGIONS = List.of("us-east-1", "us-iso-west-1");
+    private static final List<String> MISSING_REGIONS = List.of("us-iso-west-1", "us-east-1");
 
     private static Model expandBucketLocationConstraint(Model model) {
         Optional<Shape> enumShape = model.shapes()
@@ -147,6 +149,10 @@ public final class S3Transforms {
         return map;
     }
 
+    // C2J's GetObjectResult carries an x-amz-id-2 header member (Id2) plus the standard RequestId.
+    // The RequestId is supplied by ResultRenderer's top-level RequestId group for rest-xml results
+    // (resultHasTopLevelRequestId() == true), which byte-matches C2J; injecting a modeled RequestId
+    // member here would duplicate it. So inject only Id2.
     private static Model hackGetObjectResult(Model model) {
         String ns = "com.amazonaws.s3";
         ShapeId outputId = ShapeId.fromParts(ns, "GetObjectOutput");
@@ -155,13 +161,11 @@ public final class S3Transforms {
             return model; // no GetObjectOutput: nothing to do.
         }
         StructureShape output = outputOpt.get();
-        if (output.getMember("Id2").isPresent() && output.getMember("RequestId").isPresent()) {
-            return model; // already injected (idempotent) — or upstream added them.
+        if (output.getMember("Id2").isPresent()) {
+            return model; // already injected (idempotent) — or upstream added it.
         }
         ShapeId id2ShapeId = ShapeId.fromParts(ns, "ObjectId2");
-        ShapeId reqIdShapeId = ShapeId.fromParts(ns, "ObjectRequestId");
         StringShape id2Shape = StringShape.builder().id(id2ShapeId).build();
-        StringShape reqIdShape = StringShape.builder().id(reqIdShapeId).build();
 
         StructureShape.Builder b = StructureShape.builder().id(output.getId());
         output.getAllTraits().values().forEach(b::addTrait);
@@ -169,12 +173,15 @@ public final class S3Transforms {
             b.addMember(m.getMemberName(), m.getTarget(),
                 mb -> m.getAllTraits().values().forEach(mb::addTrait)));
         b.addMember("Id2", id2ShapeId, mb -> mb.addTrait(new HttpHeaderTrait("x-amz-id-2")));
-        b.addMember("RequestId", reqIdShapeId, mb -> mb.addTrait(new HttpHeaderTrait("x-amz-request-id")));
 
-        return model.toBuilder().addShapes(id2Shape, reqIdShape, b.build()).build();
+        return model.toBuilder().addShapes(id2Shape, b.build()).build();
     }
 
-    private static Model renameCopyObjectResult(Model model) {
+    // C2J renames both the CopyObjectResult domain shape (to CopyObjectResultDetails) and the
+    // CopyObjectOutput member that references it, so the member renders as GetCopyObjectResultDetails
+    // while keeping its CopyObjectResult wire name. renameMember pins @xmlName("CopyObjectResult")
+    // for rest-xml so the wire key survives the member-name change.
+    private static Model renameCopyObjectResult(Model model, ServiceShape service) {
         String ns = "com.amazonaws.s3";
         ShapeId oldId = ShapeId.fromParts(ns, "CopyObjectResult");
         ShapeId newId = ShapeId.fromParts(ns, "CopyObjectResultDetails");
@@ -185,7 +192,17 @@ public final class S3Transforms {
             throw new IllegalStateException("S3 collision: '" + newId + "' already exists; cannot "
                 + "rename '" + oldId + "' onto it.");
         }
-        return ModelTransformer.create().renameShapes(model, Map.of(oldId, newId));
+        Model renamed = ModelTransformer.create().renameShapes(model, Map.of(oldId, newId));
+
+        ShapeId outputId = ShapeId.fromParts(ns, "CopyObjectOutput");
+        Optional<StructureShape> output = renamed.getShape(outputId).flatMap(Shape::asStructureShape);
+        if (output.isEmpty()) {
+            return renamed; // no CopyObjectOutput: shape rename suffices.
+        }
+        Protocol protocol = ProtocolResolver.resolve(service, renamed);
+        Optional<StructureShape> updated = TransformSupport.renameMember(
+            output.get(), "CopyObjectResult", "CopyObjectResultDetails", protocol);
+        return updated.map(s -> renamed.toBuilder().addShape(s).build()).orElse(renamed);
     }
 
     private static final String EXPIRES_DEPRECATION =
