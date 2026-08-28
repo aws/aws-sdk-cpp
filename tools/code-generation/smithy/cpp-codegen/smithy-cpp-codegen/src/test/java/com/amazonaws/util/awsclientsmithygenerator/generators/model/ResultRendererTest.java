@@ -304,4 +304,65 @@ class ResultRendererTest {
         String cpp = renderResultSource(statusCodeResultModel(), "StatResult.cpp");
         assertTrue(cpp.contains("m_status = static_cast<int>(result.GetResponseCode());"), cpp);
     }
+
+    /**
+     * A one-member rest-xml output operation whose output structure optionally carries the internal
+     * {@link com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.TopLevelHostIdTrait}
+     * marker (as {@code S3ControlTransforms} stamps it).
+     */
+    private static Model hostIdResultModel(boolean marked) {
+        StringShape str = StringShape.builder().id("com.example#Str").build();
+        StructureShape input = StructureShape.builder()
+            .id("com.example#DoThingInput").addMember("name", str.getId()).build();
+        StructureShape.Builder outputBuilder = StructureShape.builder()
+            .id("com.example#DoThingOutput").addMember("field", str.getId());
+        if (marked) {
+            outputBuilder.addTrait(new com.amazonaws.util.awsclientsmithygenerator.generators
+                .model.transforms.TopLevelHostIdTrait());
+        }
+        StructureShape output = outputBuilder.build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#DoThing").input(input.getId()).output(output.getId()).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#Example").version("2024-01-01")
+            .addTrait(software.amazon.smithy.aws.traits.protocols.RestXmlTrait.builder().build())
+            .addOperation(op.getId()).build();
+        return Model.builder().addShapes(str, input, output, op, service).build();
+    }
+
+    @Test
+    void hostIdTrait_rendersHostIdGroupAfterRequestId() {
+        String h = renderResultSource(hostIdResultModel(true), "DoThingResult.h");
+        assertTrue(h.contains("inline const Aws::String& GetHostId() const { return m_hostId; }"), h);
+        assertTrue(h.contains("x-amz-id-2 header value, also known as Host Id"), h);
+        assertTrue(h.contains("Aws::String m_hostId;"), h);
+        assertTrue(h.contains("bool m_hostIdHasBeenSet = false;"), h);
+
+        // The HostId accessor group renders immediately after the RequestId group.
+        int reqAccessor = h.indexOf("GetRequestId");
+        int hostAccessor = h.indexOf("GetHostId");
+        assertTrue(reqAccessor >= 0 && hostAccessor > reqAccessor,
+            "HostId accessor group must follow the RequestId group: " + h);
+
+        // m_hostId is declared immediately after m_requestId in the private section.
+        int reqMember = h.indexOf("Aws::String m_requestId;");
+        int hostMember = h.indexOf("Aws::String m_hostId;");
+        assertTrue(reqMember >= 0 && hostMember > reqMember,
+            "m_hostId must be declared after m_requestId: " + h);
+
+        int reqFlag = h.indexOf("bool m_requestIdHasBeenSet = false;");
+        int hostFlag = h.indexOf("bool m_hostIdHasBeenSet = false;");
+        assertTrue(reqFlag >= 0 && hostFlag > reqFlag,
+            "m_hostIdHasBeenSet must be declared after m_requestIdHasBeenSet: " + h);
+    }
+
+    @Test
+    void noHostIdTrait_omitsHostIdGroup() {
+        String h = renderResultSource(hostIdResultModel(false), "DoThingResult.h");
+        // A rest-xml result still gets the sibling top-level RequestId group ...
+        assertTrue(h.contains("GetRequestId"), h);
+        // ... but no HostId group without the marker trait.
+        assertFalse(h.contains("GetHostId"), h);
+        assertFalse(h.contains("m_hostId"), h);
+    }
 }
