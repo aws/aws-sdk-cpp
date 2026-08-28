@@ -57,17 +57,38 @@ class S3TransformsTest {
         assertTrue(out.getShape(ShapeId.from(NS + "#AmazonS3")).isPresent());
     }
 
+    static ServiceShape s3RestXmlService(String sdkId) {
+        return ServiceShape.builder().id(NS + "#AmazonS3").version("2006-03-01")
+            .addTrait(ServiceTrait.builder().sdkId(sdkId).arnNamespace("s3")
+                .cloudFormationName("S3").cloudTrailEventSource("s3.amazonaws.com").build())
+            .addTrait(software.amazon.smithy.aws.traits.protocols.RestXmlTrait.builder().build())
+            .build();
+    }
+
     @Test
-    void renamesCopyObjectResultToDetails() {
-        ServiceShape svc = s3Service("S3");
+    void renamesCopyObjectResultShapeAndMember() {
+        ServiceShape svc = s3RestXmlService("S3");
         StructureShape copyResult = StructureShape.builder().id(NS + "#CopyObjectResult")
             .addMember("ETag", ShapeId.from("smithy.api#String")).build();
-        Model m = modelWith(svc, copyResult);
+        StructureShape copyOutput = StructureShape.builder().id(NS + "#CopyObjectOutput")
+            .addMember("CopyObjectResult", copyResult.getId()).build();
+        Model m = modelWith(svc, copyResult, copyOutput);
         Model out = S3Transforms.asTransform().apply(m, svc);
+
         assertTrue(out.getShape(ShapeId.from(NS + "#CopyObjectResultDetails")).isPresent(),
-            "renamed to CopyObjectResultDetails");
+            "shape renamed to CopyObjectResultDetails");
         assertFalse(out.getShape(ShapeId.from(NS + "#CopyObjectResult")).isPresent(),
-            "old name gone");
+            "old shape name gone");
+
+        StructureShape output = out.expectShape(ShapeId.from(NS + "#CopyObjectOutput"), StructureShape.class);
+        assertFalse(output.getMember("CopyObjectResult").isPresent(),
+            "old member name gone");
+        MemberShape renamed = output.getMember("CopyObjectResultDetails").orElseThrow();
+        assertEquals(NS + "#CopyObjectResultDetails", renamed.getTarget().toString(),
+            "renamed member still targets the renamed shape");
+        assertEquals("CopyObjectResult",
+            renamed.expectTrait(software.amazon.smithy.model.traits.XmlNameTrait.class).getValue(),
+            "renamed member pins its original CopyObjectResult wire name via @xmlName");
     }
 
     @Test
@@ -181,6 +202,10 @@ class S3TransformsTest {
         // Member names are identifier-safe, matching the existing model form (hyphens -> underscores).
         assertTrue(result.getAllMembers().containsKey("us_east_1"), "identifier-safe member name");
         assertTrue(result.getAllMembers().containsKey("us_iso_west_1"), "identifier-safe member name");
+        // C2J appends the two regions in the order us_iso_west_1 then us_east_1.
+        assertEquals(java.util.List.of("us_west_2", "us_iso_west_1", "us_east_1"),
+            new java.util.ArrayList<>(result.getAllMembers().keySet()),
+            "appended regions follow C2J order: us_iso_west_1 before us_east_1");
     }
 
     @Test
@@ -223,7 +248,7 @@ class S3TransformsTest {
     }
 
     @Test
-    void injectsGetObjectId2AndRequestId() {
+    void injectsGetObjectId2Only() {
         ServiceShape svc = s3Service("S3");
         StructureShape getObjectOutput = StructureShape.builder().id(NS + "#GetObjectOutput")
             .addMember("ETag", ShapeId.from("smithy.api#String")).build();
@@ -231,15 +256,18 @@ class S3TransformsTest {
         Model out = S3Transforms.asTransform().apply(m, svc);
 
         assertTrue(out.getShape(ShapeId.from(NS + "#ObjectId2")).isPresent());
-        assertTrue(out.getShape(ShapeId.from(NS + "#ObjectRequestId")).isPresent());
         StructureShape outShape = out.expectShape(ShapeId.from(NS + "#GetObjectOutput"), StructureShape.class);
         MemberShape id2 = outShape.getMember("Id2").orElseThrow();
         assertEquals(NS + "#ObjectId2", id2.getTarget().toString());
         assertEquals("x-amz-id-2",
             id2.expectTrait(software.amazon.smithy.model.traits.HttpHeaderTrait.class).getValue());
-        MemberShape reqId = outShape.getMember("RequestId").orElseThrow();
-        assertEquals("x-amz-request-id",
-            reqId.expectTrait(software.amazon.smithy.model.traits.HttpHeaderTrait.class).getValue());
+
+        // ResultRenderer supplies the top-level RequestId for rest-xml results; a modeled RequestId
+        // member would duplicate it and fail to compile, so it must not be injected here.
+        assertFalse(outShape.getMember("RequestId").isPresent(),
+            "no modeled RequestId member; the renderer emits RequestId");
+        assertFalse(out.getShape(ShapeId.from(NS + "#ObjectRequestId")).isPresent(),
+            "ObjectRequestId shape must not be created");
     }
 
     /**
