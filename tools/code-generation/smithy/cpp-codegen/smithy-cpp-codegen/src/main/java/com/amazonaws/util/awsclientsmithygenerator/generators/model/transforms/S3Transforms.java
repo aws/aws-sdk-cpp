@@ -24,6 +24,7 @@ import software.amazon.smithy.model.shapes.TimestampShape;
 import software.amazon.smithy.model.traits.DocumentationTrait;
 import software.amazon.smithy.model.traits.EnumTrait;
 import software.amazon.smithy.model.traits.HttpHeaderTrait;
+import software.amazon.smithy.model.traits.UnitTypeTrait;
 import software.amazon.smithy.model.transform.ModelTransformer;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -68,6 +69,9 @@ public final class S3Transforms {
 
         Set<ShapeId> inputShapes = TopDownIndex.of(model).getContainedOperations(service).stream()
             .map(OperationShape::getInputShape)
+            // smithy.api#Unit is a shared prelude StructureShape; mutating it would corrupt every
+            // Unit-input operation across the model, so never treat it as a request shape.
+            .filter(id -> !id.equals(UnitTypeTrait.UNIT))
             .collect(Collectors.toSet());
         List<StructureShape> updated = model.shapes(StructureShape.class)
             .filter(s -> inputShapes.contains(s.getId()))
@@ -231,34 +235,34 @@ public final class S3Transforms {
             replacements.add(StringShape.builder().id(expiresStringId).build());
         }
         for (StructureShape struct : withExpires) {
-            if (struct.getMember("ExpiresString").isPresent()) {
-                continue; // already customized (idempotent).
-            }
-            MemberShape expires = struct.getAllMembers().get("Expires");
-            StructureShape.Builder b = StructureShape.builder().id(struct.getId());
-            struct.getAllTraits().values().forEach(b::addTrait);
-            for (MemberShape m : struct.getAllMembers().values()) {
-                if (m.getMemberName().equals("Expires")) {
-                    // Rewrite Expires' documentation to prepend the deprecation note.
-                    String existingDoc = m.getTrait(DocumentationTrait.class)
-                        .map(DocumentationTrait::getValue).orElse("");
-                    b.addMember("Expires", m.getTarget(), mb -> {
-                        m.getAllTraits().values().forEach(mb::addTrait);
-                        if (!existingDoc.toLowerCase().contains("deprecated")) {
-                            mb.addTrait(new DocumentationTrait(EXPIRES_DEPRECATION + existingDoc));
-                        }
-                    });
-                } else {
-                    b.addMember(m.getMemberName(), m.getTarget(),
-                        mb -> m.getAllTraits().values().forEach(mb::addTrait));
+            // Only customize structs that lack ExpiresString (idempotent).
+            if (struct.getMember("ExpiresString").isEmpty()) {
+                MemberShape expires = struct.getAllMembers().get("Expires");
+                StructureShape.Builder b = StructureShape.builder().id(struct.getId());
+                struct.getAllTraits().values().forEach(b::addTrait);
+                for (MemberShape m : struct.getAllMembers().values()) {
+                    if (m.getMemberName().equals("Expires")) {
+                        // Rewrite Expires' documentation to prepend the deprecation note.
+                        String existingDoc = m.getTrait(DocumentationTrait.class)
+                            .map(DocumentationTrait::getValue).orElse("");
+                        b.addMember("Expires", m.getTarget(), mb -> {
+                            m.getAllTraits().values().forEach(mb::addTrait);
+                            if (!existingDoc.toLowerCase().contains("deprecated")) {
+                                mb.addTrait(new DocumentationTrait(EXPIRES_DEPRECATION + existingDoc));
+                            }
+                        });
+                    } else {
+                        b.addMember(m.getMemberName(), m.getTarget(),
+                            mb -> m.getAllTraits().values().forEach(mb::addTrait));
+                    }
                 }
+                // Add ExpiresString cloning Expires' traits (so it reads the same header), retargeted.
+                b.addMember("ExpiresString", expiresStringId,
+                    mb -> expires.getAllTraits().values().stream()
+                        .filter(t -> !(t instanceof DocumentationTrait))
+                        .forEach(mb::addTrait));
+                replacements.add(b.build());
             }
-            // Add ExpiresString cloning Expires' traits (so it reads the same header), retargeted.
-            b.addMember("ExpiresString", expiresStringId,
-                mb -> expires.getAllTraits().values().stream()
-                    .filter(t -> !(t instanceof DocumentationTrait))
-                    .forEach(mb::addTrait));
-            replacements.add(b.build());
         }
         return model.toBuilder().addShapes(replacements.toArray(new Shape[0])).build();
     }
