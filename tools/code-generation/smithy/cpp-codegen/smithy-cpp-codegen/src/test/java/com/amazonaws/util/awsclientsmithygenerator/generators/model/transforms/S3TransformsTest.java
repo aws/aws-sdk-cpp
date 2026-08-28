@@ -49,4 +49,28 @@ class S3TransformsTest {
         assertNotNull(out);
         assertTrue(out.getShape(ShapeId.from(NS + "#AmazonS3")).isPresent());
     }
+
+    @Test
+    void renamesCopyObjectResultToDetails() {
+        ServiceShape svc = s3Service("S3");
+        StructureShape copyResult = StructureShape.builder().id(NS + "#CopyObjectResult")
+            .addMember("ETag", ShapeId.from("smithy.api#String")).build();
+        Model m = modelWith(svc, copyResult);
+        Model out = S3Transforms.asTransform().apply(m, svc);
+        assertTrue(out.getShape(ShapeId.from(NS + "#CopyObjectResultDetails")).isPresent(),
+            "renamed to CopyObjectResultDetails");
+        assertFalse(out.getShape(ShapeId.from(NS + "#CopyObjectResult")).isPresent(),
+            "old name gone");
+    }
+
+    @Test
+    void copyObjectResultRename_throwsOnCollision() {
+        ServiceShape svc = s3Service("S3");
+        StructureShape copyResult = StructureShape.builder().id(NS + "#CopyObjectResult")
+            .addMember("ETag", ShapeId.from("smithy.api#String")).build();
+        StructureShape details = StructureShape.builder().id(NS + "#CopyObjectResultDetails")
+            .addMember("Other", ShapeId.from("smithy.api#String")).build();
+        Model m = modelWith(svc, copyResult, details);
+        assertThrows(IllegalStateException.class, () -> S3Transforms.asTransform().apply(m, svc));
+    }
 }
