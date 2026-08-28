@@ -43,8 +43,8 @@ class IdentityProviderConfiguration {
    * <code>SMART_ON_FHIR</code> – Support for both SMART on FHIR V1 and V2, which
    * includes <code>create</code>, <code>read</code>, <code>update</code>,
    * <code>delete</code>, and <code>search</code> permissions.</p> </li> <li> <p>
-   * <code>AWS_AUTH</code> – The default HealthLake authorization strategy; not
-   * affiliated with SMART on FHIR.</p> </li> </ul>
+   * <code>Amazon Web Services_AUTH</code> – The default HealthLake authorization
+   * strategy; not affiliated with SMART on FHIR.</p> </li> </ul>
    */
   inline AuthorizationStrategy GetAuthorizationStrategy() const { return m_authorizationStrategy; }
   inline bool AuthorizationStrategyHasBeenSet() const { return m_authorizationStrategyHasBeenSet; }

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace PartnerCentralSelling {
 namespace Model {
-enum class AwsMemberBusinessTitle { NOT_SET, AWSSalesRep, AWSAccountOwner, WWPSPDM, PDM, PSM, ISVSM };
+enum class AwsMemberBusinessTitle { NOT_SET, AWSSalesRep, AWSAccountOwner, WWPSPDM, PDM, PSM, ISVSM, Signatory };
 
 namespace AwsMemberBusinessTitleMapper {
 AWS_PARTNERCENTRALSELLING_API AwsMemberBusinessTitle GetAwsMemberBusinessTitleForName(const Aws::String& name);

@@ -13,6 +13,7 @@
 #include <aws/partnercentral-selling/model/AwsOpportunityLifeCycle.h>
 #include <aws/partnercentral-selling/model/AwsOpportunityProject.h>
 #include <aws/partnercentral-selling/model/AwsOpportunityRelatedEntities.h>
+#include <aws/partnercentral-selling/model/AwsSoftwareRevenue.h>
 #include <aws/partnercentral-selling/model/AwsTeamMember.h>
 #include <aws/partnercentral-selling/model/InvolvementTypeChangeReason.h>
 #include <aws/partnercentral-selling/model/OpportunityOrigin.h>
@@ -268,6 +269,24 @@ class GetAwsOpportunitySummaryResult {
 
   ///@{
   /**
+   * <p>Seller-provided PARC deal terms: commitment value, discount, and contract
+   * dates.</p>
+   */
+  inline const AwsSoftwareRevenue& GetSoftwareRevenue() const { return m_softwareRevenue; }
+  template <typename SoftwareRevenueT = AwsSoftwareRevenue>
+  void SetSoftwareRevenue(SoftwareRevenueT&& value) {
+    m_softwareRevenueHasBeenSet = true;
+    m_softwareRevenue = std::forward<SoftwareRevenueT>(value);
+  }
+  template <typename SoftwareRevenueT = AwsSoftwareRevenue>
+  GetAwsOpportunitySummaryResult& WithSoftwareRevenue(SoftwareRevenueT&& value) {
+    SetSoftwareRevenue(std::forward<SoftwareRevenueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies the catalog in which the AWS Opportunity exists. This is the
    * environment (e.g., <code>AWS</code> or <code>Sandbox</code>) where the
    * opportunity is being managed.</p>
@@ -326,6 +345,8 @@ class GetAwsOpportunitySummaryResult {
 
   Aws::String m_cosellMotion;
 
+  AwsSoftwareRevenue m_softwareRevenue;
+
   Aws::String m_catalog;
 
   Aws::String m_requestId;
@@ -342,6 +363,7 @@ class GetAwsOpportunitySummaryResult {
   bool m_customerHasBeenSet = false;
   bool m_projectHasBeenSet = false;
   bool m_cosellMotionHasBeenSet = false;
+  bool m_softwareRevenueHasBeenSet = false;
   bool m_catalogHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

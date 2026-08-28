@@ -123,10 +123,11 @@ class PortMapping {
 
   ///@{
   /**
-   * <p>The protocol used for the port mapping. Valid values are <code>tcp</code> and
-   * <code>udp</code>. The default is <code>tcp</code>. <code>protocol</code> is
-   * immutable in a Service Connect service. Updating this field requires a service
-   * deletion and redeployment. </p>
+   * <p>The protocol that's used for the port mapping. Valid values are
+   * <code>tcp</code> and <code>udp</code> (case-sensitive). The default is
+   * <code>tcp</code>. Amazon ECS treats any other specified value as
+   * <code>tcp</code>. <code>protocol</code> is immutable in a Service Connect
+   * service. To update this field, you must delete and redeploy the service. </p>
    */
   inline TransportProtocol GetProtocol() const { return m_protocol; }
   inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }

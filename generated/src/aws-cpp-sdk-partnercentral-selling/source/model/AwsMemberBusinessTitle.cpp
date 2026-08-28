@@ -21,6 +21,7 @@ static const int WWPSPDM_HASH = HashingUtils::HashString("WWPSPDM");
 static const int PDM_HASH = HashingUtils::HashString("PDM");
 static const int PSM_HASH = HashingUtils::HashString("PSM");
 static const int ISVSM_HASH = HashingUtils::HashString("ISVSM");
+static const int Signatory_HASH = HashingUtils::HashString("Signatory");
 
 AwsMemberBusinessTitle GetAwsMemberBusinessTitleForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +37,8 @@ AwsMemberBusinessTitle GetAwsMemberBusinessTitleForName(const Aws::String& name)
     return AwsMemberBusinessTitle::PSM;
   } else if (hashCode == ISVSM_HASH) {
     return AwsMemberBusinessTitle::ISVSM;
+  } else if (hashCode == Signatory_HASH) {
+    return AwsMemberBusinessTitle::Signatory;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +65,8 @@ Aws::String GetNameForAwsMemberBusinessTitle(AwsMemberBusinessTitle enumValue) {
       return "PSM";
     case AwsMemberBusinessTitle::ISVSM:
       return "ISVSM";
+    case AwsMemberBusinessTitle::Signatory:
+      return "Signatory";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

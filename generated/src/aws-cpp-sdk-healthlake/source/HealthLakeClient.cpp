@@ -37,6 +37,7 @@
 #include <aws/healthlake/model/ListFHIRImportJobsRequest.h>
 #include <aws/healthlake/model/ListTagsForResourceRequest.h>
 #include <aws/healthlake/model/PublishDataTransformationProfileRequest.h>
+#include <aws/healthlake/model/RestoreFHIRDatastoreRequest.h>
 #include <aws/healthlake/model/StartDataTransformationJobRequest.h>
 #include <aws/healthlake/model/StartFHIRExportJobRequest.h>
 #include <aws/healthlake/model/StartFHIRImportJobRequest.h>
@@ -303,6 +304,12 @@ PublishDataTransformationProfileOutcome HealthLakeClient::PublishDataTransformat
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? PublishDataTransformationProfileOutcome(result.GetResultWithOwnership())
                             : PublishDataTransformationProfileOutcome(std::move(result.GetError()));
+}
+
+RestoreFHIRDatastoreOutcome HealthLakeClient::RestoreFHIRDatastore(const RestoreFHIRDatastoreRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RestoreFHIRDatastoreOutcome(result.GetResultWithOwnership())
+                            : RestoreFHIRDatastoreOutcome(std::move(result.GetError()));
 }
 
 StartDataTransformationJobOutcome HealthLakeClient::StartDataTransformationJob(const StartDataTransformationJobRequest& request) const {

@@ -9,6 +9,7 @@
 #include <aws/ecs/model/CanaryConfiguration.h>
 #include <aws/ecs/model/DeploymentAlarms.h>
 #include <aws/ecs/model/DeploymentCircuitBreaker.h>
+#include <aws/ecs/model/DeploymentEarlySuccessCriteria.h>
 #include <aws/ecs/model/DeploymentLifecycleHook.h>
 #include <aws/ecs/model/DeploymentStrategy.h>
 #include <aws/ecs/model/LinearConfiguration.h>
@@ -324,6 +325,27 @@ class DeploymentConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The early success criteria configuration for a rolling deployment. With early
+   * success criteria, you can configure an Amazon ECS deployment to complete faster.
+   * Amazon ECS declares a deployment successful once a target percentage of tasks
+   * are healthy, instead of waiting for the service to fully stabilize.</p>
+   */
+  inline const DeploymentEarlySuccessCriteria& GetEarlySuccessCriteria() const { return m_earlySuccessCriteria; }
+  inline bool EarlySuccessCriteriaHasBeenSet() const { return m_earlySuccessCriteriaHasBeenSet; }
+  template <typename EarlySuccessCriteriaT = DeploymentEarlySuccessCriteria>
+  void SetEarlySuccessCriteria(EarlySuccessCriteriaT&& value) {
+    m_earlySuccessCriteriaHasBeenSet = true;
+    m_earlySuccessCriteria = std::forward<EarlySuccessCriteriaT>(value);
+  }
+  template <typename EarlySuccessCriteriaT = DeploymentEarlySuccessCriteria>
+  DeploymentConfiguration& WithEarlySuccessCriteria(EarlySuccessCriteriaT&& value) {
+    SetEarlySuccessCriteria(std::forward<EarlySuccessCriteriaT>(value));
+    return *this;
+  }
+  ///@}
  private:
   DeploymentCircuitBreaker m_deploymentCircuitBreaker;
 
@@ -342,6 +364,8 @@ class DeploymentConfiguration {
   LinearConfiguration m_linearConfiguration;
 
   CanaryConfiguration m_canaryConfiguration;
+
+  DeploymentEarlySuccessCriteria m_earlySuccessCriteria;
   bool m_deploymentCircuitBreakerHasBeenSet = false;
   bool m_maximumPercentHasBeenSet = false;
   bool m_minimumHealthyPercentHasBeenSet = false;
@@ -351,6 +375,7 @@ class DeploymentConfiguration {
   bool m_lifecycleHooksHasBeenSet = false;
   bool m_linearConfigurationHasBeenSet = false;
   bool m_canaryConfigurationHasBeenSet = false;
+  bool m_earlySuccessCriteriaHasBeenSet = false;
 };
 
 }  // namespace Model

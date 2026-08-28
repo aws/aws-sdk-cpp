@@ -77,8 +77,8 @@ class CreateDataTransformationProfileRequest : public HealthLakeRequest {
 
   ///@{
   /**
-   * <p>The AWS Key Management Service (AWS KMS) key identifier used to encrypt the
-   * profile content at rest.</p>
+   * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+   * identifier used to encrypt the profile content at rest.</p>
    */
   inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
   inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }

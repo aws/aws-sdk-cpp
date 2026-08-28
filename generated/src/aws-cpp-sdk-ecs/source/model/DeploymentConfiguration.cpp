@@ -57,6 +57,10 @@ DeploymentConfiguration& DeploymentConfiguration::operator=(JsonView jsonValue) 
     m_canaryConfiguration = jsonValue.GetObject("canaryConfiguration");
     m_canaryConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("earlySuccessCriteria")) {
+    m_earlySuccessCriteria = jsonValue.GetObject("earlySuccessCriteria");
+    m_earlySuccessCriteriaHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -101,6 +105,10 @@ JsonValue DeploymentConfiguration::Jsonize() const {
 
   if (m_canaryConfigurationHasBeenSet) {
     payload.WithObject("canaryConfiguration", m_canaryConfiguration.Jsonize());
+  }
+
+  if (m_earlySuccessCriteriaHasBeenSet) {
+    payload.WithObject("earlySuccessCriteria", m_earlySuccessCriteria.Jsonize());
   }
 
   return payload;

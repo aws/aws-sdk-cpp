@@ -16,10 +16,10 @@
 namespace Aws {
 namespace HealthLake {
 /**
- * <p>This is the <i>AWS HealthLake API Reference</i>. For an introduction to the
+ * <p>This is the <i>HealthLake API Reference</i>. For an introduction to the
  * service, see <a
  * href="https://docs.aws.amazon.com/healthlake/latest/devguide/what-is.html">What
- * is AWS HealthLake?</a> in the <i>AWS HealthLake Developer Guide</i>.</p>
+ * is HealthLake?</a> in the <i>HealthLake Developer Guide</i>.</p>
  */
 class AWS_HEALTHLAKE_API HealthLakeClient : public Aws::Client::AWSJsonClient,
                                             public Aws::Client::ClientWithAsyncTemplateMethods<HealthLakeClient>,
@@ -336,10 +336,10 @@ class AWS_HEALTHLAKE_API HealthLakeClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Lists data transformation jobs for your AWS account. Results can be filtered
-   * by status, job name, and submit time window. Results are paginated. Use the
-   * <code>NextToken</code> parameter to retrieve additional results.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Lists data transformation jobs for your Amazon Web Services account. Results
+   * can be filtered by status, job name, and submit time window. Results are
+   * paginated. Use the <code>NextToken</code> parameter to retrieve additional
+   * results.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListDataTransformationJobs">AWS
    * API Reference</a></p>
    */
@@ -573,9 +573,36 @@ class AWS_HEALTHLAKE_API HealthLakeClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Restore a backup-enabled data store to a point in time. Creates a new data
+   * store from the backup.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/RestoreFHIRDatastore">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RestoreFHIRDatastoreOutcome RestoreFHIRDatastore(const Model::RestoreFHIRDatastoreRequest& request) const;
+
+  /**
+   * A Callable wrapper for RestoreFHIRDatastore that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename RestoreFHIRDatastoreRequestT = Model::RestoreFHIRDatastoreRequest>
+  Model::RestoreFHIRDatastoreOutcomeCallable RestoreFHIRDatastoreCallable(const RestoreFHIRDatastoreRequestT& request) const {
+    return SubmitCallable(&HealthLakeClient::RestoreFHIRDatastore, request);
+  }
+
+  /**
+   * An Async wrapper for RestoreFHIRDatastore that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename RestoreFHIRDatastoreRequestT = Model::RestoreFHIRDatastoreRequest>
+  void RestoreFHIRDatastoreAsync(const RestoreFHIRDatastoreRequestT& request, const RestoreFHIRDatastoreResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&HealthLakeClient::RestoreFHIRDatastore, request, handler, context);
+  }
+
+  /**
    * <p>Starts an asynchronous data transformation job that converts source files
    * from Amazon Simple Storage Service (Amazon S3) and writes the output to Amazon
-   * S3 or AWS HealthLake.</p><p><h3>See Also:</h3>   <a
+   * S3 or HealthLake.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/StartDataTransformationJob">AWS
    * API Reference</a></p>
    */

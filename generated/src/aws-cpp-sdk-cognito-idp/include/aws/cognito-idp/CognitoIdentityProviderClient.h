@@ -2779,6 +2779,50 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
   }
 
   /**
+   * <p>Returns details for the terms documents that are associated with an app
+   * client, identified by the app client ID, user pool ID, and terms name. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-terms-documents">Terms
+   * documents</a>.</p> <p>To call <code>DescribeTermsByClient</code>, you must have
+   * the <code>cognito-idp:DescribeTermsByClient</code> Identity and Access
+   * Management (IAM) permission. This operation additionally validates your
+   * permission for <code>cognito-idp:DescribeTerms</code>, the action for . As a
+   * result, an IAM policy that denies <code>cognito-idp:DescribeTerms</code> also
+   * denies requests to <code>DescribeTermsByClient</code>.</p>  <p>Amazon
+   * Cognito evaluates Identity and Access Management (IAM) policies in requests for
+   * this API operation. For this operation, you must use IAM credentials to
+   * authorize requests, and you must grant yourself the corresponding IAM permission
+   * in a policy.</p> <p class="title"> <b>Learn more</b> </p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+   * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+   * the Amazon Cognito user pools API and user pool endpoints</a> </p> </li> </ul>
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeTermsByClient">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeTermsByClientOutcome DescribeTermsByClient(const Model::DescribeTermsByClientRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeTermsByClient that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeTermsByClientRequestT = Model::DescribeTermsByClientRequest>
+  Model::DescribeTermsByClientOutcomeCallable DescribeTermsByClientCallable(const DescribeTermsByClientRequestT& request) const {
+    return SubmitCallable(&CognitoIdentityProviderClient::DescribeTermsByClient, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeTermsByClient that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeTermsByClientRequestT = Model::DescribeTermsByClientRequest>
+  void DescribeTermsByClientAsync(const DescribeTermsByClientRequestT& request, const DescribeTermsByClientResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CognitoIdentityProviderClient::DescribeTermsByClient, request, handler, context);
+  }
+
+  /**
    * <p>Describes a user import job. For more information about user CSV import, see
    * <a
    * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-using-import-tool.html">Importing
@@ -3059,6 +3103,49 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
   void GetCSVHeaderAsync(const GetCSVHeaderRequestT& request, const GetCSVHeaderResponseReceivedHandler& handler,
                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CognitoIdentityProviderClient::GetCSVHeader, request, handler, context);
+  }
+
+  /**
+   * <p>Issues an access token for machine-to-machine (M2M) authorization. Your app
+   * client provides its client ID and secret, and receives an access token that
+   * authorizes requests to your resource servers. <code>GetClientToken</code>
+   * provides the same functionality as the OAuth2 client-credentials grant; both
+   * authorize an application rather than a user.</p> <p>To use this operation, you
+   * must configure the app client with a client secret and enable the
+   * <code>ALLOW_CLIENT_TOKEN_AUTH</code> authentication flow. The
+   * <code>ALLOW_CLIENT_TOKEN_AUTH</code> flow is mutually exclusive with user
+   * authentication flows. It must be the only authentication flow that you configure
+   * for the app client. For more information, see <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-define-resource-servers.html">Scopes,
+   * M2M, and resource servers</a>.</p>  <p>Amazon Cognito doesn't evaluate
+   * Identity and Access Management (IAM) policies in requests for this API
+   * operation. For this operation, you can't use IAM credentials to authorize
+   * requests, and you can't grant IAM permissions in policies. For more information
+   * about authorization models in Amazon Cognito, see <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+   * the Amazon Cognito user pools API and user pool endpoints</a>.</p>
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetClientToken">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetClientTokenOutcome GetClientToken(const Model::GetClientTokenRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetClientToken that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetClientTokenRequestT = Model::GetClientTokenRequest>
+  Model::GetClientTokenOutcomeCallable GetClientTokenCallable(const GetClientTokenRequestT& request) const {
+    return SubmitCallable(&CognitoIdentityProviderClient::GetClientToken, request);
+  }
+
+  /**
+   * An Async wrapper for GetClientToken that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetClientTokenRequestT = Model::GetClientTokenRequest>
+  void GetClientTokenAsync(const GetClientTokenRequestT& request, const GetClientTokenResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CognitoIdentityProviderClient::GetClientToken, request, handler, context);
   }
 
   /**

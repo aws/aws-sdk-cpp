@@ -33,8 +33,8 @@ class InputDataConfig {
 
   ///@{
   /**
-   * <p>The <code>S3Uri</code> is the user-specified S3 location of the FHIR data to
-   * be imported into AWS HealthLake.</p>
+   * <p>The <code>S3Uri</code> is the user-specified Amazon S3 location of the FHIR
+   * data to be imported into HealthLake.</p>
    */
   inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
   inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }

@@ -39,6 +39,10 @@ Aws::String UpdateFHIRDatastoreRequest::SerializePayload() const {
     payload.WithObject("IdentityProviderConfiguration", m_identityProviderConfiguration.Jsonize());
   }
 
+  if (m_backupConfigurationHasBeenSet) {
+    payload.WithObject("BackupConfiguration", m_backupConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

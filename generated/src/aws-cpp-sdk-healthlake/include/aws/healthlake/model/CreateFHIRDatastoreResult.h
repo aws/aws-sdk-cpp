@@ -79,7 +79,7 @@ class CreateFHIRDatastoreResult {
 
   ///@{
   /**
-   * <p>The AWS endpoint created for the data store.</p>
+   * <p>The Amazon Web Services endpoint created for the data store.</p>
    */
   inline const Aws::String& GetDatastoreEndpoint() const { return m_datastoreEndpoint; }
   template <typename DatastoreEndpointT = Aws::String>

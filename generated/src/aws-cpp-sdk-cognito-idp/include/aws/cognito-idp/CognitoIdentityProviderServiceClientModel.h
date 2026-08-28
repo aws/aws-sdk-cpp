@@ -72,6 +72,7 @@
 #include <aws/cognito-idp/model/DescribeManagedLoginBrandingResult.h>
 #include <aws/cognito-idp/model/DescribeResourceServerResult.h>
 #include <aws/cognito-idp/model/DescribeRiskConfigurationResult.h>
+#include <aws/cognito-idp/model/DescribeTermsByClientResult.h>
 #include <aws/cognito-idp/model/DescribeTermsResult.h>
 #include <aws/cognito-idp/model/DescribeUserImportJobResult.h>
 #include <aws/cognito-idp/model/DescribeUserPoolClientResult.h>
@@ -79,6 +80,7 @@
 #include <aws/cognito-idp/model/DescribeUserPoolResult.h>
 #include <aws/cognito-idp/model/ForgotPasswordResult.h>
 #include <aws/cognito-idp/model/GetCSVHeaderResult.h>
+#include <aws/cognito-idp/model/GetClientTokenResult.h>
 #include <aws/cognito-idp/model/GetDeviceResult.h>
 #include <aws/cognito-idp/model/GetGroupResult.h>
 #include <aws/cognito-idp/model/GetIdentityProviderByIdentifierResult.h>
@@ -237,6 +239,7 @@ class DescribeManagedLoginBrandingByClientRequest;
 class DescribeResourceServerRequest;
 class DescribeRiskConfigurationRequest;
 class DescribeTermsRequest;
+class DescribeTermsByClientRequest;
 class DescribeUserImportJobRequest;
 class DescribeUserPoolRequest;
 class DescribeUserPoolClientRequest;
@@ -244,6 +247,7 @@ class DescribeUserPoolDomainRequest;
 class ForgetDeviceRequest;
 class ForgotPasswordRequest;
 class GetCSVHeaderRequest;
+class GetClientTokenRequest;
 class GetDeviceRequest;
 class GetGroupRequest;
 class GetIdentityProviderByIdentifierRequest;
@@ -371,6 +375,7 @@ typedef Aws::Utils::Outcome<DescribeManagedLoginBrandingByClientResult, CognitoI
 typedef Aws::Utils::Outcome<DescribeResourceServerResult, CognitoIdentityProviderError> DescribeResourceServerOutcome;
 typedef Aws::Utils::Outcome<DescribeRiskConfigurationResult, CognitoIdentityProviderError> DescribeRiskConfigurationOutcome;
 typedef Aws::Utils::Outcome<DescribeTermsResult, CognitoIdentityProviderError> DescribeTermsOutcome;
+typedef Aws::Utils::Outcome<DescribeTermsByClientResult, CognitoIdentityProviderError> DescribeTermsByClientOutcome;
 typedef Aws::Utils::Outcome<DescribeUserImportJobResult, CognitoIdentityProviderError> DescribeUserImportJobOutcome;
 typedef Aws::Utils::Outcome<DescribeUserPoolResult, CognitoIdentityProviderError> DescribeUserPoolOutcome;
 typedef Aws::Utils::Outcome<DescribeUserPoolClientResult, CognitoIdentityProviderError> DescribeUserPoolClientOutcome;
@@ -378,6 +383,7 @@ typedef Aws::Utils::Outcome<DescribeUserPoolDomainResult, CognitoIdentityProvide
 typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityProviderError> ForgetDeviceOutcome;
 typedef Aws::Utils::Outcome<ForgotPasswordResult, CognitoIdentityProviderError> ForgotPasswordOutcome;
 typedef Aws::Utils::Outcome<GetCSVHeaderResult, CognitoIdentityProviderError> GetCSVHeaderOutcome;
+typedef Aws::Utils::Outcome<GetClientTokenResult, CognitoIdentityProviderError> GetClientTokenOutcome;
 typedef Aws::Utils::Outcome<GetDeviceResult, CognitoIdentityProviderError> GetDeviceOutcome;
 typedef Aws::Utils::Outcome<GetGroupResult, CognitoIdentityProviderError> GetGroupOutcome;
 typedef Aws::Utils::Outcome<GetIdentityProviderByIdentifierResult, CognitoIdentityProviderError> GetIdentityProviderByIdentifierOutcome;
@@ -504,6 +510,7 @@ typedef std::future<DescribeManagedLoginBrandingByClientOutcome> DescribeManaged
 typedef std::future<DescribeResourceServerOutcome> DescribeResourceServerOutcomeCallable;
 typedef std::future<DescribeRiskConfigurationOutcome> DescribeRiskConfigurationOutcomeCallable;
 typedef std::future<DescribeTermsOutcome> DescribeTermsOutcomeCallable;
+typedef std::future<DescribeTermsByClientOutcome> DescribeTermsByClientOutcomeCallable;
 typedef std::future<DescribeUserImportJobOutcome> DescribeUserImportJobOutcomeCallable;
 typedef std::future<DescribeUserPoolOutcome> DescribeUserPoolOutcomeCallable;
 typedef std::future<DescribeUserPoolClientOutcome> DescribeUserPoolClientOutcomeCallable;
@@ -511,6 +518,7 @@ typedef std::future<DescribeUserPoolDomainOutcome> DescribeUserPoolDomainOutcome
 typedef std::future<ForgetDeviceOutcome> ForgetDeviceOutcomeCallable;
 typedef std::future<ForgotPasswordOutcome> ForgotPasswordOutcomeCallable;
 typedef std::future<GetCSVHeaderOutcome> GetCSVHeaderOutcomeCallable;
+typedef std::future<GetClientTokenOutcome> GetClientTokenOutcomeCallable;
 typedef std::future<GetDeviceOutcome> GetDeviceOutcomeCallable;
 typedef std::future<GetGroupOutcome> GetGroupOutcomeCallable;
 typedef std::future<GetIdentityProviderByIdentifierOutcome> GetIdentityProviderByIdentifierOutcomeCallable;
@@ -774,6 +782,9 @@ typedef std::function<void(const CognitoIdentityProviderClient*, const Model::De
 typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DescribeTermsRequest&, const Model::DescribeTermsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeTermsResponseReceivedHandler;
+typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DescribeTermsByClientRequest&,
+                           const Model::DescribeTermsByClientOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeTermsByClientResponseReceivedHandler;
 typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DescribeUserImportJobRequest&,
                            const Model::DescribeUserImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeUserImportJobResponseReceivedHandler;
@@ -795,6 +806,9 @@ typedef std::function<void(const CognitoIdentityProviderClient*, const Model::Fo
 typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetCSVHeaderRequest&, const Model::GetCSVHeaderOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetCSVHeaderResponseReceivedHandler;
+typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetClientTokenRequest&, const Model::GetClientTokenOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetClientTokenResponseReceivedHandler;
 typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetDeviceRequest&, const Model::GetDeviceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetDeviceResponseReceivedHandler;

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/healthlake/HealthLake_EXPORTS.h>
 #include <aws/healthlake/model/AnalyticsConfiguration.h>
+#include <aws/healthlake/model/DatastoreBackupStatus.h>
 #include <aws/healthlake/model/DatastoreStatus.h>
 #include <aws/healthlake/model/ErrorCause.h>
 #include <aws/healthlake/model/FHIRVersion.h>
@@ -148,7 +149,7 @@ class DatastoreProperties {
 
   ///@{
   /**
-   * <p>The AWS endpoint for the data store.</p>
+   * <p>The Amazon Web Services endpoint for the data store.</p>
    */
   inline const Aws::String& GetDatastoreEndpoint() const { return m_datastoreEndpoint; }
   inline bool DatastoreEndpointHasBeenSet() const { return m_datastoreEndpointHasBeenSet; }
@@ -290,6 +291,24 @@ class DatastoreProperties {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The backup status information for the data store.</p>
+   */
+  inline const DatastoreBackupStatus& GetBackupStatusInfo() const { return m_backupStatusInfo; }
+  inline bool BackupStatusInfoHasBeenSet() const { return m_backupStatusInfoHasBeenSet; }
+  template <typename BackupStatusInfoT = DatastoreBackupStatus>
+  void SetBackupStatusInfo(BackupStatusInfoT&& value) {
+    m_backupStatusInfoHasBeenSet = true;
+    m_backupStatusInfo = std::forward<BackupStatusInfoT>(value);
+  }
+  template <typename BackupStatusInfoT = DatastoreBackupStatus>
+  DatastoreProperties& WithBackupStatusInfo(BackupStatusInfoT&& value) {
+    SetBackupStatusInfo(std::forward<BackupStatusInfoT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_datastoreId;
 
@@ -318,6 +337,8 @@ class DatastoreProperties {
   AnalyticsConfiguration m_analyticsConfiguration;
 
   ProfileConfiguration m_profileConfiguration;
+
+  DatastoreBackupStatus m_backupStatusInfo;
   bool m_datastoreIdHasBeenSet = false;
   bool m_datastoreArnHasBeenSet = false;
   bool m_datastoreNameHasBeenSet = false;
@@ -332,6 +353,7 @@ class DatastoreProperties {
   bool m_nlpConfigurationHasBeenSet = false;
   bool m_analyticsConfigurationHasBeenSet = false;
   bool m_profileConfigurationHasBeenSet = false;
+  bool m_backupStatusInfoHasBeenSet = false;
 };
 
 }  // namespace Model

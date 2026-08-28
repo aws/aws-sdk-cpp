@@ -74,6 +74,10 @@ DatastoreProperties& DatastoreProperties::operator=(JsonView jsonValue) {
     m_profileConfiguration = jsonValue.GetObject("ProfileConfiguration");
     m_profileConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("BackupStatusInfo")) {
+    m_backupStatusInfo = jsonValue.GetObject("BackupStatusInfo");
+    m_backupStatusInfoHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -134,6 +138,10 @@ JsonValue DatastoreProperties::Jsonize() const {
 
   if (m_profileConfigurationHasBeenSet) {
     payload.WithObject("ProfileConfiguration", m_profileConfiguration.Jsonize());
+  }
+
+  if (m_backupStatusInfoHasBeenSet) {
+    payload.WithObject("BackupStatusInfo", m_backupStatusInfo.Jsonize());
   }
 
   return payload;

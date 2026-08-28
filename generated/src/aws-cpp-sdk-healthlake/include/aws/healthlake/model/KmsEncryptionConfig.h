@@ -22,8 +22,8 @@ namespace Model {
 
 /**
  * <p>The customer-managed-key (CMK) used when creating a data store. If a
- * customer-owned key is not specified, an AWS-owned key is used for encryption.
- * </p><p><h3>See Also:</h3>   <a
+ * customer-owned key is not specified, an Amazon Web Services-owned key is used
+ * for encryption. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/KmsEncryptionConfig">AWS
  * API Reference</a></p>
  */

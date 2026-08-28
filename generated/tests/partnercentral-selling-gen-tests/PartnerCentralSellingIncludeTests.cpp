@@ -43,6 +43,7 @@
 #include <aws/partnercentral-selling/model/AwsProductInsights.h>
 #include <aws/partnercentral-selling/model/AwsProductOptimization.h>
 #include <aws/partnercentral-selling/model/AwsProductsSpendInsightsBySource.h>
+#include <aws/partnercentral-selling/model/AwsSoftwareRevenue.h>
 #include <aws/partnercentral-selling/model/AwsSubmission.h>
 #include <aws/partnercentral-selling/model/AwsTeamMember.h>
 #include <aws/partnercentral-selling/model/Channel.h>

@@ -8,6 +8,7 @@
 #include <aws/healthlake/HealthLakeRequest.h>
 #include <aws/healthlake/HealthLake_EXPORTS.h>
 #include <aws/healthlake/model/AnalyticsConfiguration.h>
+#include <aws/healthlake/model/BackupConfiguration.h>
 #include <aws/healthlake/model/IdentityProviderConfiguration.h>
 #include <aws/healthlake/model/NlpConfiguration.h>
 #include <aws/healthlake/model/ProfileConfiguration.h>
@@ -141,6 +142,24 @@ class UpdateFHIRDatastoreRequest : public HealthLakeRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The backup configuration for the data store.</p>
+   */
+  inline const BackupConfiguration& GetBackupConfiguration() const { return m_backupConfiguration; }
+  inline bool BackupConfigurationHasBeenSet() const { return m_backupConfigurationHasBeenSet; }
+  template <typename BackupConfigurationT = BackupConfiguration>
+  void SetBackupConfiguration(BackupConfigurationT&& value) {
+    m_backupConfigurationHasBeenSet = true;
+    m_backupConfiguration = std::forward<BackupConfigurationT>(value);
+  }
+  template <typename BackupConfigurationT = BackupConfiguration>
+  UpdateFHIRDatastoreRequest& WithBackupConfiguration(BackupConfigurationT&& value) {
+    SetBackupConfiguration(std::forward<BackupConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_datastoreId;
 
@@ -153,12 +172,15 @@ class UpdateFHIRDatastoreRequest : public HealthLakeRequest {
   ProfileConfiguration m_profileConfiguration;
 
   IdentityProviderConfiguration m_identityProviderConfiguration;
+
+  BackupConfiguration m_backupConfiguration;
   bool m_datastoreIdHasBeenSet = false;
   bool m_datastoreNameHasBeenSet = false;
   bool m_analyticsConfigurationHasBeenSet = false;
   bool m_nlpConfigurationHasBeenSet = false;
   bool m_profileConfigurationHasBeenSet = false;
   bool m_identityProviderConfigurationHasBeenSet = false;
+  bool m_backupConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

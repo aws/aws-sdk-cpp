@@ -30,7 +30,7 @@ class DeleteFHIRDatastoreResult {
 
   ///@{
   /**
-   * <p>The AWS-generated ID for the deleted data store.</p>
+   * <p>The Amazon Web Services-generated ID for the deleted data store.</p>
    */
   inline const Aws::String& GetDatastoreId() const { return m_datastoreId; }
   template <typename DatastoreIdT = Aws::String>
@@ -47,7 +47,7 @@ class DeleteFHIRDatastoreResult {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) that grants access permission to AWS
+   * <p>The Amazon Resource Name (ARN) that grants access permission to
    * HealthLake.</p>
    */
   inline const Aws::String& GetDatastoreArn() const { return m_datastoreArn; }
@@ -80,7 +80,7 @@ class DeleteFHIRDatastoreResult {
 
   ///@{
   /**
-   * <p>The AWS endpoint of the data store to be deleted.</p>
+   * <p>The Amazon Web Services endpoint of the data store to be deleted.</p>
    */
   inline const Aws::String& GetDatastoreEndpoint() const { return m_datastoreEndpoint; }
   template <typename DatastoreEndpointT = Aws::String>

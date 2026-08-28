@@ -56,8 +56,8 @@ class StartDataTransformationJobRequest : public HealthLakeRequest {
 
   ///@{
   /**
-   * <p>The Amazon S3 output location and AWS Key Management Service (AWS KMS)
-   * encryption configuration.</p>
+   * <p>The Amazon S3 output location and Amazon Web Services Key Management Service
+   * (Amazon Web Services KMS) encryption configuration.</p>
    */
   inline const TransformationOutputDataConfig& GetOutputDataConfig() const { return m_outputDataConfig; }
   inline bool OutputDataConfigHasBeenSet() const { return m_outputDataConfigHasBeenSet; }
@@ -75,9 +75,9 @@ class StartDataTransformationJobRequest : public HealthLakeRequest {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-   * (IAM) role that AWS HealthLake assumes to read from and write to the specified
-   * Amazon S3 locations.</p>
+   * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access
+   * Management (IAM) role that HealthLake assumes to read from and write to the
+   * specified Amazon S3 locations.</p>
    */
   inline const Aws::String& GetDataAccessRoleArn() const { return m_dataAccessRoleArn; }
   inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
@@ -152,7 +152,7 @@ class StartDataTransformationJobRequest : public HealthLakeRequest {
 
   ///@{
   /**
-   * <p>Specifies whether drift detection is enabled for this job. When enabled, AWS
+   * <p>Specifies whether drift detection is enabled for this job. When enabled,
    * HealthLake writes a drift report to the output Amazon S3 location alongside the
    * converted files.</p>
    */

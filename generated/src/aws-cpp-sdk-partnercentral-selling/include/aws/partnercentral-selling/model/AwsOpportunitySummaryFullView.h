@@ -12,6 +12,7 @@
 #include <aws/partnercentral-selling/model/AwsOpportunityLifeCycle.h>
 #include <aws/partnercentral-selling/model/AwsOpportunityProject.h>
 #include <aws/partnercentral-selling/model/AwsOpportunityRelatedEntities.h>
+#include <aws/partnercentral-selling/model/AwsSoftwareRevenue.h>
 #include <aws/partnercentral-selling/model/AwsTeamMember.h>
 #include <aws/partnercentral-selling/model/InvolvementTypeChangeReason.h>
 #include <aws/partnercentral-selling/model/OpportunityOrigin.h>
@@ -248,6 +249,25 @@ class AwsOpportunitySummaryFullView {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Seller-provided PARC deal terms: commitment value, discount, and contract
+   * dates.</p>
+   */
+  inline const AwsSoftwareRevenue& GetSoftwareRevenue() const { return m_softwareRevenue; }
+  inline bool SoftwareRevenueHasBeenSet() const { return m_softwareRevenueHasBeenSet; }
+  template <typename SoftwareRevenueT = AwsSoftwareRevenue>
+  void SetSoftwareRevenue(SoftwareRevenueT&& value) {
+    m_softwareRevenueHasBeenSet = true;
+    m_softwareRevenue = std::forward<SoftwareRevenueT>(value);
+  }
+  template <typename SoftwareRevenueT = AwsSoftwareRevenue>
+  AwsOpportunitySummaryFullView& WithSoftwareRevenue(SoftwareRevenueT&& value) {
+    SetSoftwareRevenue(std::forward<SoftwareRevenueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_relatedOpportunityId;
 
@@ -272,6 +292,8 @@ class AwsOpportunitySummaryFullView {
   AwsOpportunityProject m_project;
 
   Aws::String m_cosellMotion;
+
+  AwsSoftwareRevenue m_softwareRevenue;
   bool m_relatedOpportunityIdHasBeenSet = false;
   bool m_originHasBeenSet = false;
   bool m_involvementTypeHasBeenSet = false;
@@ -284,6 +306,7 @@ class AwsOpportunitySummaryFullView {
   bool m_customerHasBeenSet = false;
   bool m_projectHasBeenSet = false;
   bool m_cosellMotionHasBeenSet = false;
+  bool m_softwareRevenueHasBeenSet = false;
 };
 
 }  // namespace Model

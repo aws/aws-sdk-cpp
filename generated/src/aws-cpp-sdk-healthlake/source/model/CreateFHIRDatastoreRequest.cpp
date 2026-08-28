@@ -59,6 +59,10 @@ Aws::String CreateFHIRDatastoreRequest::SerializePayload() const {
     payload.WithObject("ProfileConfiguration", m_profileConfiguration.Jsonize());
   }
 
+  if (m_backupConfigurationHasBeenSet) {
+    payload.WithObject("BackupConfiguration", m_backupConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

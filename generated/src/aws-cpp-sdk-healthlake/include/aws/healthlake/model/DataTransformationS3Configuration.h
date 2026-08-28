@@ -34,7 +34,7 @@ class DataTransformationS3Configuration {
 
   ///@{
   /**
-   * <p>The Amazon S3 URI where AWS HealthLake writes the converted output files.</p>
+   * <p>The Amazon S3 URI where HealthLake writes the converted output files.</p>
    */
   inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
   inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
@@ -52,8 +52,9 @@ class DataTransformationS3Configuration {
 
   ///@{
   /**
-   * <p>The AWS Key Management Service (AWS KMS) key identifier used to encrypt the
-   * transformation job output written to Amazon S3.</p>
+   * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+   * identifier used to encrypt the transformation job output written to Amazon
+   * S3.</p>
    */
   inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
   inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }

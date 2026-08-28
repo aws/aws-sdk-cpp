@@ -109,12 +109,15 @@
 #include <aws/bedrock-agent/model/CustomSourceType.h>
 #include <aws/bedrock-agent/model/CustomTransformationConfiguration.h>
 #include <aws/bedrock-agent/model/CyclicConnectionFlowValidationDetails.h>
+#include <aws/bedrock-agent/model/DailySchedule.h>
 #include <aws/bedrock-agent/model/DataDeletionPolicy.h>
 #include <aws/bedrock-agent/model/DataSource.h>
 #include <aws/bedrock-agent/model/DataSourceConfiguration.h>
 #include <aws/bedrock-agent/model/DataSourceStatus.h>
 #include <aws/bedrock-agent/model/DataSourceSummary.h>
 #include <aws/bedrock-agent/model/DataSourceType.h>
+#include <aws/bedrock-agent/model/DayOfMonth.h>
+#include <aws/bedrock-agent/model/DayOfWeek.h>
 #include <aws/bedrock-agent/model/DeleteAgentActionGroupRequest.h>
 #include <aws/bedrock-agent/model/DeleteAgentActionGroupResult.h>
 #include <aws/bedrock-agent/model/DeleteAgentAliasRequest.h>
@@ -256,6 +259,7 @@
 #include <aws/bedrock-agent/model/KnowledgeBaseSummary.h>
 #include <aws/bedrock-agent/model/KnowledgeBaseType.h>
 #include <aws/bedrock-agent/model/LambdaFunctionFlowNodeConfiguration.h>
+#include <aws/bedrock-agent/model/LastDayOfMonth.h>
 #include <aws/bedrock-agent/model/LexFlowNodeConfiguration.h>
 #include <aws/bedrock-agent/model/ListAgentActionGroupsPaginationTraits.h>
 #include <aws/bedrock-agent/model/ListAgentActionGroupsRequest.h>
@@ -331,6 +335,7 @@
 #include <aws/bedrock-agent/model/MissingStartingNodesFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/MongoDbAtlasConfiguration.h>
 #include <aws/bedrock-agent/model/MongoDbAtlasFieldMapping.h>
+#include <aws/bedrock-agent/model/MonthlySchedule.h>
 #include <aws/bedrock-agent/model/MultipleLoopControllerNodesFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/MultipleLoopInputNodesFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/MultipleNodeInputConnectionsFlowValidationDetails.h>
@@ -441,6 +446,7 @@
 #include <aws/bedrock-agent/model/SupplementalDataStorageLocation.h>
 #include <aws/bedrock-agent/model/SupplementalDataStorageLocationType.h>
 #include <aws/bedrock-agent/model/SupportedLanguages.h>
+#include <aws/bedrock-agent/model/SyncSchedule.h>
 #include <aws/bedrock-agent/model/SystemContentBlock.h>
 #include <aws/bedrock-agent/model/TagResourceRequest.h>
 #include <aws/bedrock-agent/model/TagResourceResult.h>
@@ -507,6 +513,7 @@
 #include <aws/bedrock-agent/model/WebDataSourceConfiguration.h>
 #include <aws/bedrock-agent/model/WebScopeType.h>
 #include <aws/bedrock-agent/model/WebSourceConfiguration.h>
+#include <aws/bedrock-agent/model/WeeklySchedule.h>
 
 using BedrockAgentIncludeTest = ::testing::Test;
 

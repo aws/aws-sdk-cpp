@@ -198,7 +198,7 @@ class ImportJobProperties {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) that grants AWS HealthLake access to the input
+   * <p>The Amazon Resource Name (ARN) that grants HealthLake access to the input
    * data.</p>
    */
   inline const Aws::String& GetDataAccessRoleArn() const { return m_dataAccessRoleArn; }

@@ -40,6 +40,7 @@
 #include <aws/bedrock-agentcore/model/GetWorkloadAccessTokenForJWTRequest.h>
 #include <aws/bedrock-agentcore/model/GetWorkloadAccessTokenForUserIdRequest.h>
 #include <aws/bedrock-agentcore/model/GetWorkloadAccessTokenRequest.h>
+#include <aws/bedrock-agentcore/model/IngestDataRequest.h>
 #include <aws/bedrock-agentcore/model/InvokeAgentRuntimeCommandRequest.h>
 #include <aws/bedrock-agentcore/model/InvokeAgentRuntimeRequest.h>
 #include <aws/bedrock-agentcore/model/InvokeBrowserRequest.h>
@@ -831,6 +832,24 @@ GetWorkloadAccessTokenForUserIdOutcome BedrockAgentCoreClient::GetWorkloadAccess
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetWorkloadAccessTokenForUserIdOutcome(result.GetResultWithOwnership())
                             : GetWorkloadAccessTokenForUserIdOutcome(std::move(result.GetError()));
+}
+
+IngestDataOutcome BedrockAgentCoreClient::IngestData(const IngestDataRequest& request) const {
+  if (!request.MemoryIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("IngestData", "Required field: MemoryId, is not set");
+    return IngestDataOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [MemoryId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/memories/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemoryId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/ingest");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? IngestDataOutcome(result.GetResultWithOwnership()) : IngestDataOutcome(std::move(result.GetError()));
 }
 
 InvokeAgentRuntimeOutcome BedrockAgentCoreClient::InvokeAgentRuntime(const InvokeAgentRuntimeRequest& request) const {

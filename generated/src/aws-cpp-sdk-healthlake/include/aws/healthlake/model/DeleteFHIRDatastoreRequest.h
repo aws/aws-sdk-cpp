@@ -32,7 +32,8 @@ class DeleteFHIRDatastoreRequest : public HealthLakeRequest {
 
   ///@{
   /**
-   * <p> The AWS-generated identifier for the data store to be deleted.</p>
+   * <p> The Amazon Web Services-generated identifier for the data store to be
+   * deleted.</p>
    */
   inline const Aws::String& GetDatastoreId() const { return m_datastoreId; }
   inline bool DatastoreIdHasBeenSet() const { return m_datastoreIdHasBeenSet; }

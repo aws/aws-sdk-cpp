@@ -111,9 +111,9 @@ class TransformationJobProperties {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-   * (IAM) role that grants AWS HealthLake access to the specified Amazon S3
-   * locations. AWS HealthLake assumes this role to read input files and write output
+   * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access
+   * Management (IAM) role that grants HealthLake access to the specified Amazon S3
+   * locations. HealthLake assumes this role to read input files and write output
    * files.</p>
    */
   inline const Aws::String& GetDataAccessRoleArn() const { return m_dataAccessRoleArn; }
@@ -239,7 +239,7 @@ class TransformationJobProperties {
 
   ///@{
   /**
-   * <p>Specifies whether drift detection is enabled for this job. When enabled, AWS
+   * <p>Specifies whether drift detection is enabled for this job. When enabled,
    * HealthLake writes a drift report to the output Amazon S3 location alongside the
    * converted files.</p>
    */

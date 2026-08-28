@@ -30,6 +30,10 @@ ManagedKnowledgeBaseConnectorConfiguration& ManagedKnowledgeBaseConnectorConfigu
     m_connectorParameters = jsonValue.GetObject("connectorParameters");
     m_connectorParametersHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("syncSchedule")) {
+    m_syncSchedule = jsonValue.GetObject("syncSchedule");
+    m_syncScheduleHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -48,6 +52,10 @@ JsonValue ManagedKnowledgeBaseConnectorConfiguration::Jsonize() const {
     if (!m_connectorParameters.View().IsNull()) {
       payload.WithObject("connectorParameters", JsonValue(m_connectorParameters.View()));
     }
+  }
+
+  if (m_syncScheduleHasBeenSet) {
+    payload.WithObject("syncSchedule", m_syncSchedule.Jsonize());
   }
 
   return payload;

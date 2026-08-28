@@ -82,6 +82,7 @@
 #include <aws/bedrock-agentcore/model/ContentBlock.h>
 #include <aws/bedrock-agentcore/model/ContentBlockType.h>
 #include <aws/bedrock-agentcore/model/ContentDeltaEvent.h>
+#include <aws/bedrock-agentcore/model/ContentSource.h>
 #include <aws/bedrock-agentcore/model/ContentStartEvent.h>
 #include <aws/bedrock-agentcore/model/ContentStopEvent.h>
 #include <aws/bedrock-agentcore/model/Context.h>
@@ -242,7 +243,11 @@
 #include <aws/bedrock-agentcore/model/HarnessToolUseBlockStart.h>
 #include <aws/bedrock-agentcore/model/HarnessToolUseStatus.h>
 #include <aws/bedrock-agentcore/model/HarnessToolUseType.h>
+#include <aws/bedrock-agentcore/model/IngestDataRequest.h>
+#include <aws/bedrock-agentcore/model/IngestDataResult.h>
+#include <aws/bedrock-agentcore/model/IngestPayloadType.h>
 #include <aws/bedrock-agentcore/model/InlineGroundTruth.h>
+#include <aws/bedrock-agentcore/model/InlineMemoryContent.h>
 #include <aws/bedrock-agentcore/model/InputContentBlock.h>
 #include <aws/bedrock-agentcore/model/Insight.h>
 #include <aws/bedrock-agentcore/model/InsightsFailureCategory.h>

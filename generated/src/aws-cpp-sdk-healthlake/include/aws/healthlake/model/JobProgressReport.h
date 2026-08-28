@@ -30,7 +30,7 @@ class JobProgressReport {
 
   ///@{
   /**
-   * <p>The number of files scanned from the S3 input bucket.</p>
+   * <p>The number of files scanned from the Amazon S3 input bucket.</p>
    */
   inline long long GetTotalNumberOfScannedFiles() const { return m_totalNumberOfScannedFiles; }
   inline bool TotalNumberOfScannedFilesHasBeenSet() const { return m_totalNumberOfScannedFilesHasBeenSet; }
@@ -46,7 +46,7 @@ class JobProgressReport {
 
   ///@{
   /**
-   * <p>The size (in MB) of files scanned from the S3 input bucket.</p>
+   * <p>The size (in MB) of files scanned from the Amazon S3 input bucket.</p>
    */
   inline double GetTotalSizeOfScannedFilesInMB() const { return m_totalSizeOfScannedFilesInMB; }
   inline bool TotalSizeOfScannedFilesInMBHasBeenSet() const { return m_totalSizeOfScannedFilesInMBHasBeenSet; }
@@ -78,7 +78,7 @@ class JobProgressReport {
 
   ///@{
   /**
-   * <p>The number of resources scanned from the S3 input bucket.</p>
+   * <p>The number of resources scanned from the Amazon S3 input bucket.</p>
    */
   inline long long GetTotalNumberOfResourcesScanned() const { return m_totalNumberOfResourcesScanned; }
   inline bool TotalNumberOfResourcesScannedHasBeenSet() const { return m_totalNumberOfResourcesScannedHasBeenSet; }
@@ -126,8 +126,8 @@ class JobProgressReport {
 
   ///@{
   /**
-   * <p>The number of files that failed to be read from the S3 input bucket due to
-   * customer error.</p>
+   * <p>The number of files that failed to be read from the Amazon S3 input bucket
+   * due to customer error.</p>
    */
   inline long long GetTotalNumberOfFilesReadWithCustomerError() const { return m_totalNumberOfFilesReadWithCustomerError; }
   inline bool TotalNumberOfFilesReadWithCustomerErrorHasBeenSet() const { return m_totalNumberOfFilesReadWithCustomerErrorHasBeenSet; }
@@ -143,7 +143,7 @@ class JobProgressReport {
 
   ///@{
   /**
-   * <p>The number of non-FHIR files scanned from the S3 input bucket.</p>
+   * <p>The number of non-FHIR files scanned from the Amazon S3 input bucket.</p>
    */
   inline long long GetTotalNumberOfScannedNonFhirFiles() const { return m_totalNumberOfScannedNonFhirFiles; }
   inline bool TotalNumberOfScannedNonFhirFilesHasBeenSet() const { return m_totalNumberOfScannedNonFhirFilesHasBeenSet; }
@@ -159,7 +159,8 @@ class JobProgressReport {
 
   ///@{
   /**
-   * <p>The size (in MB) of non-FHIR files scanned from the S3 input bucket.</p>
+   * <p>The size (in MB) of non-FHIR files scanned from the Amazon S3 input
+   * bucket.</p>
    */
   inline double GetTotalSizeOfScannedNonFhirFilesInMB() const { return m_totalSizeOfScannedNonFhirFilesInMB; }
   inline bool TotalSizeOfScannedNonFhirFilesInMBHasBeenSet() const { return m_totalSizeOfScannedNonFhirFilesInMBHasBeenSet; }
@@ -191,7 +192,7 @@ class JobProgressReport {
 
   ///@{
   /**
-   * <p>The number of non-FHIR resources scanned from the S3 input bucket.</p>
+   * <p>The number of non-FHIR resources scanned from the Amazon S3 input bucket.</p>
    */
   inline long long GetTotalNumberOfNonFhirResourcesScanned() const { return m_totalNumberOfNonFhirResourcesScanned; }
   inline bool TotalNumberOfNonFhirResourcesScannedHasBeenSet() const { return m_totalNumberOfNonFhirResourcesScannedHasBeenSet; }
@@ -241,8 +242,8 @@ class JobProgressReport {
 
   ///@{
   /**
-   * <p>The number of non-FHIR files that failed to be read from the S3 input bucket
-   * due to customer error.</p>
+   * <p>The number of non-FHIR files that failed to be read from the Amazon S3 input
+   * bucket due to customer error.</p>
    */
   inline long long GetTotalNumberOfNonFhirFilesReadWithCustomerError() const { return m_totalNumberOfNonFhirFilesReadWithCustomerError; }
   inline bool TotalNumberOfNonFhirFilesReadWithCustomerErrorHasBeenSet() const {

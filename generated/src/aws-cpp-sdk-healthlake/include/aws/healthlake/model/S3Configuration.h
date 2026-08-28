@@ -20,8 +20,8 @@ namespace HealthLake {
 namespace Model {
 
 /**
- * <p>The configuration of the S3 bucket for either an import or export job. This
- * includes assigning access permissions.</p><p><h3>See Also:</h3>   <a
+ * <p>The configuration of the Amazon S3 bucket for either an import or export job.
+ * This includes assigning access permissions.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/S3Configuration">AWS
  * API Reference</a></p>
  */
@@ -34,8 +34,8 @@ class S3Configuration {
 
   ///@{
   /**
-   * <p>The <code>S3Uri</code> is the user-specified S3 location of the FHIR data to
-   * be imported into AWS HealthLake.</p>
+   * <p>The <code>S3Uri</code> is the user-specified Amazon S3 location of the FHIR
+   * data to be imported into HealthLake.</p>
    */
   inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
   inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
@@ -53,7 +53,8 @@ class S3Configuration {
 
   ///@{
   /**
-   * <p>The Key Management Service (KMS) key ID used to access the S3 bucket. </p>
+   * <p>The Key Management Service (KMS) key ID used to access the Amazon S3 bucket.
+   * </p>
    */
   inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
   inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }

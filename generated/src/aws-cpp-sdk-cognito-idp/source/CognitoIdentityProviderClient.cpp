@@ -70,6 +70,7 @@
 #include <aws/cognito-idp/model/DescribeManagedLoginBrandingRequest.h>
 #include <aws/cognito-idp/model/DescribeResourceServerRequest.h>
 #include <aws/cognito-idp/model/DescribeRiskConfigurationRequest.h>
+#include <aws/cognito-idp/model/DescribeTermsByClientRequest.h>
 #include <aws/cognito-idp/model/DescribeTermsRequest.h>
 #include <aws/cognito-idp/model/DescribeUserImportJobRequest.h>
 #include <aws/cognito-idp/model/DescribeUserPoolClientRequest.h>
@@ -78,6 +79,7 @@
 #include <aws/cognito-idp/model/ForgetDeviceRequest.h>
 #include <aws/cognito-idp/model/ForgotPasswordRequest.h>
 #include <aws/cognito-idp/model/GetCSVHeaderRequest.h>
+#include <aws/cognito-idp/model/GetClientTokenRequest.h>
 #include <aws/cognito-idp/model/GetDeviceRequest.h>
 #include <aws/cognito-idp/model/GetGroupRequest.h>
 #include <aws/cognito-idp/model/GetIdentityProviderByIdentifierRequest.h>
@@ -705,6 +707,12 @@ DescribeTermsOutcome CognitoIdentityProviderClient::DescribeTerms(const Describe
   return result.IsSuccess() ? DescribeTermsOutcome(result.GetResultWithOwnership()) : DescribeTermsOutcome(std::move(result.GetError()));
 }
 
+DescribeTermsByClientOutcome CognitoIdentityProviderClient::DescribeTermsByClient(const DescribeTermsByClientRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTermsByClientOutcome(result.GetResultWithOwnership())
+                            : DescribeTermsByClientOutcome(std::move(result.GetError()));
+}
+
 DescribeUserImportJobOutcome CognitoIdentityProviderClient::DescribeUserImportJob(const DescribeUserImportJobRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeUserImportJobOutcome(result.GetResultWithOwnership())
@@ -742,6 +750,11 @@ ForgotPasswordOutcome CognitoIdentityProviderClient::ForgotPassword(const Forgot
 GetCSVHeaderOutcome CognitoIdentityProviderClient::GetCSVHeader(const GetCSVHeaderRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetCSVHeaderOutcome(result.GetResultWithOwnership()) : GetCSVHeaderOutcome(std::move(result.GetError()));
+}
+
+GetClientTokenOutcome CognitoIdentityProviderClient::GetClientToken(const GetClientTokenRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetClientTokenOutcome(result.GetResultWithOwnership()) : GetClientTokenOutcome(std::move(result.GetError()));
 }
 
 GetDeviceOutcome CognitoIdentityProviderClient::GetDevice(const GetDeviceRequest& request) const {

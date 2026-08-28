@@ -144,6 +144,7 @@
 #include <aws/ecs/model/DeploymentConfiguration.h>
 #include <aws/ecs/model/DeploymentController.h>
 #include <aws/ecs/model/DeploymentControllerType.h>
+#include <aws/ecs/model/DeploymentEarlySuccessCriteria.h>
 #include <aws/ecs/model/DeploymentEphemeralStorage.h>
 #include <aws/ecs/model/DeploymentLifecycleHook.h>
 #include <aws/ecs/model/DeploymentLifecycleHookAction.h>
@@ -396,6 +397,7 @@
 #include <aws/ecs/model/ServiceManagedEBSVolumeConfiguration.h>
 #include <aws/ecs/model/ServiceRegistry.h>
 #include <aws/ecs/model/ServiceRevision.h>
+#include <aws/ecs/model/ServiceRevisionCleanup.h>
 #include <aws/ecs/model/ServiceRevisionLoadBalancer.h>
 #include <aws/ecs/model/ServiceRevisionOverrides.h>
 #include <aws/ecs/model/ServiceRevisionSummary.h>

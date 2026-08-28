@@ -34,8 +34,8 @@ class TransformationOutputDataConfig {
 
   ///@{
   /**
-   * <p>The Amazon S3 output location and AWS Key Management Service (AWS KMS)
-   * encryption configuration.</p>
+   * <p>The Amazon S3 output location and Amazon Web Services Key Management Service
+   * (Amazon Web Services KMS) encryption configuration.</p>
    */
   inline const DataTransformationS3Configuration& GetS3Configuration() const { return m_s3Configuration; }
   inline bool S3ConfigurationHasBeenSet() const { return m_s3ConfigurationHasBeenSet; }

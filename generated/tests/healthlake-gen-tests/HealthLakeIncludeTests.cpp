@@ -24,7 +24,11 @@
 #include <aws/healthlake/model/AnalyticsConfiguration.h>
 #include <aws/healthlake/model/AnalyticsStatus.h>
 #include <aws/healthlake/model/AuthorizationStrategy.h>
+#include <aws/healthlake/model/BackupConfiguration.h>
+#include <aws/healthlake/model/BackupStatus.h>
+#include <aws/healthlake/model/BackupType.h>
 #include <aws/healthlake/model/CmkType.h>
+#include <aws/healthlake/model/ContinuousBackupRestoreConfiguration.h>
 #include <aws/healthlake/model/CreateDataTransformationProfileRequest.h>
 #include <aws/healthlake/model/CreateDataTransformationProfileResult.h>
 #include <aws/healthlake/model/CreateDataTransformationProfileSource.h>
@@ -33,6 +37,7 @@
 #include <aws/healthlake/model/DataTransformationProfileSummary.h>
 #include <aws/healthlake/model/DataTransformationProfileVersionSummary.h>
 #include <aws/healthlake/model/DataTransformationS3Configuration.h>
+#include <aws/healthlake/model/DatastoreBackupStatus.h>
 #include <aws/healthlake/model/DatastoreFilter.h>
 #include <aws/healthlake/model/DatastoreProperties.h>
 #include <aws/healthlake/model/DatastoreStatus.h>
@@ -90,6 +95,9 @@
 #include <aws/healthlake/model/ProfileMappingSource.h>
 #include <aws/healthlake/model/PublishDataTransformationProfileRequest.h>
 #include <aws/healthlake/model/PublishDataTransformationProfileResult.h>
+#include <aws/healthlake/model/RestoreConfiguration.h>
+#include <aws/healthlake/model/RestoreFHIRDatastoreRequest.h>
+#include <aws/healthlake/model/RestoreFHIRDatastoreResult.h>
 #include <aws/healthlake/model/S3Configuration.h>
 #include <aws/healthlake/model/SampleDataSource.h>
 #include <aws/healthlake/model/SourceFormat.h>

@@ -1052,6 +1052,34 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>Submits content directly for ingestion to generate long-term memory records
+   * in a AgentCore Memory resource.</p> <p>To use this operation, you must have the
+   * <code>bedrock-agentcore:IngestData</code> permission.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/IngestData">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::IngestDataOutcome IngestData(const Model::IngestDataRequest& request) const;
+
+  /**
+   * A Callable wrapper for IngestData that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename IngestDataRequestT = Model::IngestDataRequest>
+  Model::IngestDataOutcomeCallable IngestDataCallable(const IngestDataRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::IngestData, request);
+  }
+
+  /**
+   * An Async wrapper for IngestData that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename IngestDataRequestT = Model::IngestDataRequest>
+  void IngestDataAsync(const IngestDataRequestT& request, const IngestDataResponseReceivedHandler& handler,
+                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::IngestData, request, handler, context);
+  }
+
+  /**
    * <p>Sends a request to an agent or tool hosted in an Amazon Bedrock AgentCore
    * Runtime and receives responses in real-time. </p> <p>To invoke an agent, you can
    * specify either the AgentCore Runtime ARN or the agent ID with an account ID, and

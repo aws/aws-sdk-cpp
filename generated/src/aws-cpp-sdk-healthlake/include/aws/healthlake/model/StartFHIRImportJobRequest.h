@@ -106,7 +106,7 @@ class StartFHIRImportJobRequest : public HealthLakeRequest {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) that grants access permission to AWS
+   * <p>The Amazon Resource Name (ARN) that grants access permission to
    * HealthLake.</p>
    */
   inline const Aws::String& GetDataAccessRoleArn() const { return m_dataAccessRoleArn; }
@@ -158,7 +158,9 @@ class StartFHIRImportJobRequest : public HealthLakeRequest {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The data transformation profile identifier to use for the import job.</p>
+   */
   inline const Aws::String& GetProfileId() const { return m_profileId; }
   inline bool ProfileIdHasBeenSet() const { return m_profileIdHasBeenSet; }
   template <typename ProfileIdT = Aws::String>
@@ -174,7 +176,9 @@ class StartFHIRImportJobRequest : public HealthLakeRequest {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The input format of the data to be imported.</p>
+   */
   inline const Aws::String& GetInputFormat() const { return m_inputFormat; }
   inline bool InputFormatHasBeenSet() const { return m_inputFormatHasBeenSet; }
   template <typename InputFormatT = Aws::String>
@@ -190,7 +194,9 @@ class StartFHIRImportJobRequest : public HealthLakeRequest {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Specifies whether to enable drift detection for the import job.</p>
+   */
   inline bool GetDriftDetectionEnabled() const { return m_driftDetectionEnabled; }
   inline bool DriftDetectionEnabledHasBeenSet() const { return m_driftDetectionEnabledHasBeenSet; }
   inline void SetDriftDetectionEnabled(bool value) {

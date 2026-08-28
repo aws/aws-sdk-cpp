@@ -7,6 +7,7 @@
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/bedrock-agent/model/DeletionProtectionConfiguration.h>
 #include <aws/bedrock-agent/model/MediaExtractionConfiguration.h>
+#include <aws/bedrock-agent/model/SyncSchedule.h>
 #include <aws/core/utils/Document.h>
 
 #include <utility>
@@ -90,15 +91,38 @@ class ManagedKnowledgeBaseConnectorConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The recurring schedule on which the connector automatically syncs this data
+   * source. If not specified, the data source is not synced automatically and you
+   * start each sync yourself. Not supported for the Custom connector.</p>
+   */
+  inline const SyncSchedule& GetSyncSchedule() const { return m_syncSchedule; }
+  inline bool SyncScheduleHasBeenSet() const { return m_syncScheduleHasBeenSet; }
+  template <typename SyncScheduleT = SyncSchedule>
+  void SetSyncSchedule(SyncScheduleT&& value) {
+    m_syncScheduleHasBeenSet = true;
+    m_syncSchedule = std::forward<SyncScheduleT>(value);
+  }
+  template <typename SyncScheduleT = SyncSchedule>
+  ManagedKnowledgeBaseConnectorConfiguration& WithSyncSchedule(SyncScheduleT&& value) {
+    SetSyncSchedule(std::forward<SyncScheduleT>(value));
+    return *this;
+  }
+  ///@}
  private:
   DeletionProtectionConfiguration m_deletionProtectionConfiguration;
 
   MediaExtractionConfiguration m_mediaExtractionConfiguration;
 
   Aws::Utils::Document m_connectorParameters;
+
+  SyncSchedule m_syncSchedule;
   bool m_deletionProtectionConfigurationHasBeenSet = false;
   bool m_mediaExtractionConfigurationHasBeenSet = false;
   bool m_connectorParametersHasBeenSet = false;
+  bool m_syncScheduleHasBeenSet = false;
 };
 
 }  // namespace Model

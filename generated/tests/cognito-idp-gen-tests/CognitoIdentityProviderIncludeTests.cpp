@@ -104,6 +104,7 @@
 #include <aws/cognito-idp/model/ChallengeResponseType.h>
 #include <aws/cognito-idp/model/ChangePasswordRequest.h>
 #include <aws/cognito-idp/model/ChangePasswordResult.h>
+#include <aws/cognito-idp/model/ClientAuthenticationResultType.h>
 #include <aws/cognito-idp/model/ClientSecretDescriptorType.h>
 #include <aws/cognito-idp/model/CloudWatchLogsConfigurationType.h>
 #include <aws/cognito-idp/model/CodeDeliveryDetailsType.h>
@@ -176,6 +177,8 @@
 #include <aws/cognito-idp/model/DescribeResourceServerResult.h>
 #include <aws/cognito-idp/model/DescribeRiskConfigurationRequest.h>
 #include <aws/cognito-idp/model/DescribeRiskConfigurationResult.h>
+#include <aws/cognito-idp/model/DescribeTermsByClientRequest.h>
+#include <aws/cognito-idp/model/DescribeTermsByClientResult.h>
 #include <aws/cognito-idp/model/DescribeTermsRequest.h>
 #include <aws/cognito-idp/model/DescribeTermsResult.h>
 #include <aws/cognito-idp/model/DescribeUserImportJobRequest.h>
@@ -215,6 +218,8 @@
 #include <aws/cognito-idp/model/ForgotPasswordResult.h>
 #include <aws/cognito-idp/model/GetCSVHeaderRequest.h>
 #include <aws/cognito-idp/model/GetCSVHeaderResult.h>
+#include <aws/cognito-idp/model/GetClientTokenRequest.h>
+#include <aws/cognito-idp/model/GetClientTokenResult.h>
 #include <aws/cognito-idp/model/GetDeviceRequest.h>
 #include <aws/cognito-idp/model/GetDeviceResult.h>
 #include <aws/cognito-idp/model/GetGroupRequest.h>

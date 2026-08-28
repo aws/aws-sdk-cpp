@@ -38,6 +38,7 @@
 #include <aws/healthlake/model/ListFHIRImportJobsResult.h>
 #include <aws/healthlake/model/ListTagsForResourceResult.h>
 #include <aws/healthlake/model/PublishDataTransformationProfileResult.h>
+#include <aws/healthlake/model/RestoreFHIRDatastoreResult.h>
 #include <aws/healthlake/model/StartDataTransformationJobResult.h>
 #include <aws/healthlake/model/StartFHIRExportJobResult.h>
 #include <aws/healthlake/model/StartFHIRImportJobResult.h>
@@ -96,6 +97,7 @@ class ListFHIRExportJobsRequest;
 class ListFHIRImportJobsRequest;
 class ListTagsForResourceRequest;
 class PublishDataTransformationProfileRequest;
+class RestoreFHIRDatastoreRequest;
 class StartDataTransformationJobRequest;
 class StartFHIRExportJobRequest;
 class StartFHIRImportJobRequest;
@@ -124,6 +126,7 @@ typedef Aws::Utils::Outcome<ListFHIRExportJobsResult, HealthLakeError> ListFHIRE
 typedef Aws::Utils::Outcome<ListFHIRImportJobsResult, HealthLakeError> ListFHIRImportJobsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, HealthLakeError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<PublishDataTransformationProfileResult, HealthLakeError> PublishDataTransformationProfileOutcome;
+typedef Aws::Utils::Outcome<RestoreFHIRDatastoreResult, HealthLakeError> RestoreFHIRDatastoreOutcome;
 typedef Aws::Utils::Outcome<StartDataTransformationJobResult, HealthLakeError> StartDataTransformationJobOutcome;
 typedef Aws::Utils::Outcome<StartFHIRExportJobResult, HealthLakeError> StartFHIRExportJobOutcome;
 typedef Aws::Utils::Outcome<StartFHIRImportJobResult, HealthLakeError> StartFHIRImportJobOutcome;
@@ -152,6 +155,7 @@ typedef std::future<ListFHIRExportJobsOutcome> ListFHIRExportJobsOutcomeCallable
 typedef std::future<ListFHIRImportJobsOutcome> ListFHIRImportJobsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<PublishDataTransformationProfileOutcome> PublishDataTransformationProfileOutcomeCallable;
+typedef std::future<RestoreFHIRDatastoreOutcome> RestoreFHIRDatastoreOutcomeCallable;
 typedef std::future<StartDataTransformationJobOutcome> StartDataTransformationJobOutcomeCallable;
 typedef std::future<StartFHIRExportJobOutcome> StartFHIRExportJobOutcomeCallable;
 typedef std::future<StartFHIRImportJobOutcome> StartFHIRImportJobOutcomeCallable;
@@ -224,6 +228,9 @@ typedef std::function<void(const HealthLakeClient*, const Model::PublishDataTran
                            const Model::PublishDataTransformationProfileOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PublishDataTransformationProfileResponseReceivedHandler;
+typedef std::function<void(const HealthLakeClient*, const Model::RestoreFHIRDatastoreRequest&, const Model::RestoreFHIRDatastoreOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    RestoreFHIRDatastoreResponseReceivedHandler;
 typedef std::function<void(const HealthLakeClient*, const Model::StartDataTransformationJobRequest&,
                            const Model::StartDataTransformationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartDataTransformationJobResponseReceivedHandler;
