@@ -157,4 +157,24 @@ class S3TransformsTest {
                 .map(DocumentationTrait::getValue).orElse("").startsWith("Deprecated:"),
             "input Expires must not carry the deprecation note");
     }
+
+    @Test
+    void injectsGetObjectId2AndRequestId() {
+        ServiceShape svc = s3Service("S3");
+        StructureShape getObjectOutput = StructureShape.builder().id(NS + "#GetObjectOutput")
+            .addMember("ETag", ShapeId.from("smithy.api#String")).build();
+        Model m = modelWith(svc, getObjectOutput);
+        Model out = S3Transforms.asTransform().apply(m, svc);
+
+        assertTrue(out.getShape(ShapeId.from(NS + "#ObjectId2")).isPresent());
+        assertTrue(out.getShape(ShapeId.from(NS + "#ObjectRequestId")).isPresent());
+        StructureShape outShape = out.expectShape(ShapeId.from(NS + "#GetObjectOutput"), StructureShape.class);
+        MemberShape id2 = outShape.getMember("Id2").orElseThrow();
+        assertEquals(NS + "#ObjectId2", id2.getTarget().toString());
+        assertEquals("x-amz-id-2",
+            id2.expectTrait(software.amazon.smithy.model.traits.HttpHeaderTrait.class).getValue());
+        MemberShape reqId = outShape.getMember("RequestId").orElseThrow();
+        assertEquals("x-amz-request-id",
+            reqId.expectTrait(software.amazon.smithy.model.traits.HttpHeaderTrait.class).getValue());
+    }
 }
