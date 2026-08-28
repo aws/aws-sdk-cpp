@@ -1,0 +1,6 @@
+{
+  "type": "dependency",
+  "category": "tools/scripts/codegen",
+  "contributor": "sbaluja",
+  "description": "Remove pipx invocation, use clang-format on build system"
+}
