@@ -5,9 +5,11 @@
 package com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.ServiceNameUtil;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.EnumRenderer;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ModelTransform;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.knowledge.TopDownIndex;
+import software.amazon.smithy.model.shapes.EnumShape;
 import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.ServiceShape;
@@ -49,10 +51,40 @@ public final class S3Transforms {
         if (!"s3".equals(name) && !"s3-crt".equals(name)) {
             return model;
         }
-        // Sub-transforms are chained here by later tasks, e.g.:
-        // return normalizeReplicationStatus(expandBucketLocationConstraint(... (model) ...));
-        return expandBucketLocationConstraint(
-            hackGetObjectResult(addExpiresCustomization(renameCopyObjectResult(model), service)));
+        return normalizeReplicationStatus(expandBucketLocationConstraint(
+            hackGetObjectResult(addExpiresCustomization(renameCopyObjectResult(model), service))));
+    }
+
+    // C2J collapses the model's split COMPLETE/COMPLETED ReplicationStatus values into a single
+    // COMPLETED constant. Drop the extra COMPLETED and rewrite COMPLETE to COMPLETED, preserving
+    // the remaining member order. Both remove and rewrite means we rebuild the enum explicitly.
+    private static Model normalizeReplicationStatus(Model model) {
+        Optional<Shape> shapeOpt = model.shapes()
+            .filter(s -> s.getId().getMember().isEmpty())
+            .filter(s -> "ReplicationStatus".equals(s.getId().getName()))
+            .findFirst();
+        if (shapeOpt.isEmpty()) {
+            return model; // shape absent: nothing to normalize.
+        }
+        Shape found = shapeOpt.get();
+        if (!found.isEnumShape()) {
+            throw new IllegalStateException("S3: expected 'ReplicationStatus' to be an EnumShape but "
+                + "found " + found.getType() + "; legacy @enum handling is unimplemented.");
+        }
+        EnumShape shape = found.asEnumShape().get();
+        List<String> values = EnumRenderer.getEnumValues(shape);
+        if (!values.contains("COMPLETE")) {
+            return model; // upstream already normalized.
+        }
+        EnumShape.Builder b = EnumShape.builder().id(shape.getId());
+        shape.getAllTraits().values().forEach(b::addTrait);
+        for (String v : values) {
+            if (!"COMPLETED".equals(v)) {
+                String value = "COMPLETE".equals(v) ? "COMPLETED" : v;
+                b.addMember(value, value);
+            }
+        }
+        return model.toBuilder().addShape(b.build()).build();
     }
 
     // Confirmed delta at implementation time against the live s3.json BucketLocationConstraint enum;

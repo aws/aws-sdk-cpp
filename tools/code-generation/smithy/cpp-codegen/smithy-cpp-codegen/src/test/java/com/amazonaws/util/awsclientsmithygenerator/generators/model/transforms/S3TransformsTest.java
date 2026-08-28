@@ -202,6 +202,27 @@ class S3TransformsTest {
     }
 
     @Test
+    void normalizesReplicationStatusCompleteToCompleted() {
+        ServiceShape svc = s3Service("S3");
+        software.amazon.smithy.model.shapes.EnumShape enumShape =
+            software.amazon.smithy.model.shapes.EnumShape.builder()
+                .id(NS + "#ReplicationStatus")
+                .addMember("COMPLETE", "COMPLETE")
+                .addMember("PENDING", "PENDING")
+                .addMember("FAILED", "FAILED")
+                .addMember("REPLICA", "REPLICA")
+                .addMember("COMPLETED", "COMPLETED")
+                .build();
+        Model m = modelWith(svc, enumShape);
+        Model out = S3Transforms.asTransform().apply(m, svc);
+
+        java.util.List<String> values = com.amazonaws.util.awsclientsmithygenerator.generators.model
+            .EnumRenderer.getEnumValues(out.expectShape(ShapeId.from(NS + "#ReplicationStatus")));
+        assertEquals(java.util.List.of("COMPLETED", "PENDING", "FAILED", "REPLICA"), values,
+            "COMPLETE rewritten to COMPLETED, duplicate removed, order preserved");
+    }
+
+    @Test
     void injectsGetObjectId2AndRequestId() {
         ServiceShape svc = s3Service("S3");
         StructureShape getObjectOutput = StructureShape.builder().id(NS + "#GetObjectOutput")
