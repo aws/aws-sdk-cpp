@@ -17,9 +17,11 @@ import software.amazon.smithy.model.shapes.StringShape;
 import software.amazon.smithy.model.shapes.StructureShape;
 import software.amazon.smithy.model.shapes.TimestampShape;
 import software.amazon.smithy.model.traits.DocumentationTrait;
+import software.amazon.smithy.model.traits.EnumTrait;
 import software.amazon.smithy.model.traits.HttpHeaderTrait;
 import software.amazon.smithy.model.transform.ModelTransformer;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -49,7 +51,33 @@ public final class S3Transforms {
         }
         // Sub-transforms are chained here by later tasks, e.g.:
         // return normalizeReplicationStatus(expandBucketLocationConstraint(... (model) ...));
-        return hackGetObjectResult(addExpiresCustomization(renameCopyObjectResult(model), service));
+        return expandBucketLocationConstraint(
+            hackGetObjectResult(addExpiresCustomization(renameCopyObjectResult(model), service)));
+    }
+
+    // Confirmed delta at implementation time against the live s3.json BucketLocationConstraint enum;
+    // the other 18 C2J regions are already present upstream.
+    private static final List<String> MISSING_REGIONS = List.of("us-east-1", "us-iso-west-1");
+
+    private static Model expandBucketLocationConstraint(Model model) {
+        Optional<Shape> enumShape = model.shapes()
+            .filter(s -> "BucketLocationConstraint".equals(s.getId().getName()))
+            .filter(s -> s.isEnumShape() || s.hasTrait(EnumTrait.class))
+            .findFirst();
+        if (enumShape.isEmpty()) {
+            return model;
+        }
+        return TransformSupport.appendEnumValues(enumShape.get(), regionNameValueMap())
+            .map(updated -> model.toBuilder().addShape(updated).build())
+            .orElse(model);
+    }
+
+    private static Map<String, String> regionNameValueMap() {
+        LinkedHashMap<String, String> map = new LinkedHashMap<>();
+        for (String region : MISSING_REGIONS) {
+            map.put(region.replace('-', '_'), region);
+        }
+        return map;
     }
 
     private static Model hackGetObjectResult(Model model) {

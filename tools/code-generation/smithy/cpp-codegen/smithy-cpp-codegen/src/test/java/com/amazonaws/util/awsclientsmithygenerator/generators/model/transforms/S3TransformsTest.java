@@ -159,6 +159,49 @@ class S3TransformsTest {
     }
 
     @Test
+    void appendsMissingBucketLocationConstraintRegions() {
+        ServiceShape svc = s3Service("S3");
+        // Model BucketLocationConstraint as an EnumShape with an existing region.
+        software.amazon.smithy.model.shapes.EnumShape enumShape =
+            software.amazon.smithy.model.shapes.EnumShape.builder()
+                .id(NS + "#BucketLocationConstraint")
+                .addMember("us_west_2", "us-west-2")
+                .build();
+        Model m = modelWith(svc, enumShape);
+        Model out = S3Transforms.asTransform().apply(m, svc);
+
+        software.amazon.smithy.model.shapes.EnumShape result = out.expectShape(
+            ShapeId.from(NS + "#BucketLocationConstraint"),
+            software.amazon.smithy.model.shapes.EnumShape.class);
+        // EnumRenderer.getEnumValues() sanitizes '-' to '_', so assert on the raw wire values here.
+        java.util.Collection<String> wireValues = result.getEnumValues().values();
+        assertTrue(wireValues.contains("us-east-1"), "us-east-1 appended");
+        assertTrue(wireValues.contains("us-iso-west-1"), "us-iso-west-1 appended");
+        assertTrue(wireValues.contains("us-west-2"), "existing value preserved");
+        // Member names are identifier-safe, matching the existing model form (hyphens -> underscores).
+        assertTrue(result.getAllMembers().containsKey("us_east_1"), "identifier-safe member name");
+        assertTrue(result.getAllMembers().containsKey("us_iso_west_1"), "identifier-safe member name");
+    }
+
+    @Test
+    void bucketLocationConstraintExpansionIsIdempotent() {
+        ServiceShape svc = s3Service("S3");
+        software.amazon.smithy.model.shapes.EnumShape enumShape =
+            software.amazon.smithy.model.shapes.EnumShape.builder()
+                .id(NS + "#BucketLocationConstraint")
+                .addMember("us_west_2", "us-west-2")
+                .build();
+        Model m = modelWith(svc, enumShape);
+        Model once = S3Transforms.asTransform().apply(m, svc);
+        Model twice = S3Transforms.asTransform().apply(once, svc);
+        software.amazon.smithy.model.shapes.EnumShape result = twice.expectShape(
+            ShapeId.from(NS + "#BucketLocationConstraint"),
+            software.amazon.smithy.model.shapes.EnumShape.class);
+        long usEast1 = result.getEnumValues().values().stream().filter("us-east-1"::equals).count();
+        assertEquals(1, usEast1, "re-applying must not duplicate appended values");
+    }
+
+    @Test
     void injectsGetObjectId2AndRequestId() {
         ServiceShape svc = s3Service("S3");
         StructureShape getObjectOutput = StructureShape.builder().id(NS + "#GetObjectOutput")
