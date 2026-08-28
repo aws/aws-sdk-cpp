@@ -13,6 +13,7 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.Fil
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.RenderContext;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassifier.ResultInfo;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeRenderer;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.TopLevelHostIdTrait;
 import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.StructureShape;
@@ -114,6 +115,13 @@ public final class ResultRenderer implements ShapeRenderer {
                     MemberRenderer.renderRequestIdAccessors(writer, className);
                 }
 
+                // The top-level HostId (x-amz-id-2) group is per-service (S3 Control only), driven
+                // by the internal marker rather than a protocol flag, and always follows RequestId.
+                boolean topLevelHostId = shape.hasTrait(TopLevelHostIdTrait.class);
+                if (topLevelHostId) {
+                    MemberRenderer.renderHostIdAccessors(writer, className);
+                }
+
                 writer.write("inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }");
                 writer.write("");
 
@@ -127,10 +135,18 @@ public final class ResultRenderer implements ShapeRenderer {
                     writer.write("");
                     writer.write("Aws::String m_requestId;");
                 }
+                if (topLevelHostId) {
+                    // C2J declares m_hostId in its own group right after m_requestId.
+                    writer.write("");
+                    writer.write("Aws::String m_hostId;");
+                }
                 writer.write("Aws::Http::HttpResponseCode m_HttpResponseCode;");
                 members.renderHasBeenSetFlags(writer);
                 if (topLevelRequestId) {
                     writer.write("bool m_requestIdHasBeenSet = false;");
+                }
+                if (topLevelHostId) {
+                    writer.write("bool m_hostIdHasBeenSet = false;");
                 }
             });
             writer.write("");
@@ -232,6 +248,13 @@ public final class ResultRenderer implements ShapeRenderer {
 
                 MemberRenderer.renderRequestIdAccessors(writer, className);
 
+                // S3 Control has no streaming results today; the marker is only stamped on its
+                // outputs, so this block is a defensive no-op for every current streaming result.
+                boolean topLevelHostId = shape.hasTrait(TopLevelHostIdTrait.class);
+                if (topLevelHostId) {
+                    MemberRenderer.renderHostIdAccessors(writer, className);
+                }
+
                 writer.write("inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }");
                 writer.write("");
 
@@ -242,10 +265,17 @@ public final class ResultRenderer implements ShapeRenderer {
                 members.renderDataMembers(writer);
                 writer.write("");
                 writer.write("Aws::String m_requestId;");
+                if (topLevelHostId) {
+                    writer.write("");
+                    writer.write("Aws::String m_hostId;");
+                }
                 writer.write("Aws::Http::HttpResponseCode m_HttpResponseCode;");
                 writer.write("bool $LHasBeenSet = false;", streamField);
                 members.renderHasBeenSetFlags(writer);
                 writer.write("bool m_requestIdHasBeenSet = false;");
+                if (topLevelHostId) {
+                    writer.write("bool m_hostIdHasBeenSet = false;");
+                }
             });
             writer.write("");
                 });

@@ -296,6 +296,32 @@ public final class MemberRenderer {
     }
 
     /**
+     * Renders the top-level {@code HostId} (x-amz-id-2) accessor group emitted by S3 Control result
+     * headers immediately after the {@code RequestId} group: {@code GetHostId} / templated
+     * {@code SetHostId} / templated {@code WithHostId}. Callers gate emission on
+     * {@code TopLevelHostIdTrait} and separately emit the {@code m_hostId} field and its
+     * {@code HasBeenSet} flag in the private section. Matches C2J's {@code addToAllResultsShape}
+     * HostId member, including the doc string.
+     */
+    public static void renderHostIdAccessors(CppWriter writer, String className) {
+        writer.write("");
+        writer.write("///@{");
+        writeDocComment(writer, "x-amz-id-2 header value, also known as Host Id");
+        writer.write("inline const Aws::String& GetHostId() const { return m_hostId; }");
+        writer.write("template <typename HostIdT = Aws::String>");
+        writer.openBlock("void SetHostId(HostIdT&& value) {", "}", () -> {
+            writer.write("m_hostIdHasBeenSet = true;");
+            writer.write("m_hostId = std::forward<HostIdT>(value);");
+        });
+        writer.write("template <typename HostIdT = Aws::String>");
+        writer.openBlock("$L& WithHostId(HostIdT&& value) {", "}", className, () -> {
+            writer.write("SetHostId(std::forward<HostIdT>(value));");
+            writer.write("return *this;");
+        });
+        writer.write("///@}");
+    }
+
+    /**
      * Writes a single private data member declaration. {@code @idempotencyToken} members are
      * brace-initialized with {@code Aws::Utils::UUID::PseudoRandomUUID()} so a caller who omits
      * the token still gets idempotent behavior; other members fall back to their type's default

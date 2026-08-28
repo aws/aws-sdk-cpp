@@ -13,6 +13,7 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.D
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.Ec2Transforms;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.GlobalTransforms;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.LambdaTransforms;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.S3ControlTransforms;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.S3Transforms;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.SourceRegionTransform;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.SqsTransforms;
@@ -60,8 +61,8 @@ public class ModelCodegenPlugin implements SmithyBuildPlugin {
             Ec2Transforms.asTransform(),
             AccessAnalyzerTransforms.asTransform(),
             DynamoDbTransforms.asTransform(),
-            S3Transforms.asTransform()
-            // Future: S3ControlTransforms.asTransform(), etc.
+            S3Transforms.asTransform(),
+            S3ControlTransforms.asTransform()
         ));
 
         CppWriterDelegator writerDelegator = new CppWriterDelegator(context.getFileManifest());
