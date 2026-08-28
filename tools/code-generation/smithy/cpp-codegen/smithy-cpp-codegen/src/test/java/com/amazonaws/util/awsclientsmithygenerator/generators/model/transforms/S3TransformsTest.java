@@ -7,6 +7,7 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms;
 import org.junit.jupiter.api.Test;
 import software.amazon.smithy.aws.traits.ServiceTrait;
 import software.amazon.smithy.model.Model;
+import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.model.shapes.ShapeId;
 import software.amazon.smithy.model.shapes.StructureShape;
@@ -72,5 +73,33 @@ class S3TransformsTest {
             .addMember("Other", ShapeId.from("smithy.api#String")).build();
         Model m = modelWith(svc, copyResult, details);
         assertThrows(IllegalStateException.class, () -> S3Transforms.asTransform().apply(m, svc));
+    }
+
+    @Test
+    void addsExpiresStringMemberAndDeprecatesExpires() {
+        ServiceShape svc = s3Service("S3");
+        software.amazon.smithy.model.shapes.TimestampShape expires =
+            software.amazon.smithy.model.shapes.TimestampShape.builder()
+                .id(NS + "#Expires").build();
+        StructureShape getObjectOutput = StructureShape.builder().id(NS + "#GetObjectOutput")
+            .addMember("Expires", expires.getId(), b -> b
+                .addTrait(new software.amazon.smithy.model.traits.HttpHeaderTrait("Expires"))
+                .addTrait(new software.amazon.smithy.model.traits.DocumentationTrait("The date and time at which the object is no longer cacheable.")))
+            .build();
+        Model m = modelWith(svc, expires, getObjectOutput);
+        Model out = S3Transforms.asTransform().apply(m, svc);
+
+        assertTrue(out.getShape(ShapeId.from(NS + "#ExpiresString")).isPresent(),
+            "ExpiresString string shape injected");
+        StructureShape outShape = out.expectShape(ShapeId.from(NS + "#GetObjectOutput"), StructureShape.class);
+        MemberShape expiresString = outShape.getMember("ExpiresString").orElseThrow();
+        assertEquals(NS + "#ExpiresString", expiresString.getTarget().toString());
+        assertEquals("Expires",
+            expiresString.expectTrait(software.amazon.smithy.model.traits.HttpHeaderTrait.class).getValue(),
+            "ExpiresString reads the same Expires header");
+        MemberShape expiresMember = outShape.getMember("Expires").orElseThrow();
+        assertTrue(expiresMember.expectTrait(software.amazon.smithy.model.traits.DocumentationTrait.class)
+            .getValue().startsWith("Deprecated: Please use ExpiresString instead."),
+            "Expires member carries the deprecation note");
     }
 }
