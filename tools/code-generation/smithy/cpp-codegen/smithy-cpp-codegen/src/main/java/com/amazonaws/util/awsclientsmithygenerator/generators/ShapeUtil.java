@@ -65,41 +65,6 @@ public class ShapeUtil {
     );
     
     /**
-     * Hardcoded shape rename collision resolutions from C2J.
-     * These shapes had name collisions with operation result wrappers in C2J
-     * and were given specific alternative names.
-     * Map: service-name -> Map of original-shape-name -> resolved-name
-     */
-    private static final Map<String, Map<String, String>> HARDCODED_COLLISION_RESOLUTIONS = Map.of(
-        // accessanalyzer GeneratedPolicyResult->GeneratedPolicyResults is handled by
-        // AccessAnalyzerTransforms (a model transform), not this render-time map.
-        // cloudsearchdomain SearchResult->SearchResultDetails is dead: the current model has no
-        // colliding SearchResult shape. The s3 entry stays for the deferred S3 transform work.
-        "s3", Map.of("CopyObjectResult", "CopyObjectResultDetails")
-    );
-
-    /**
-     * Returns the hardcoded collision resolution for a shape, if one exists.
-     */
-    public static Optional<String> getHardcodedResolution(String smithyServiceName, String shapeName) {
-        Map<String, String> serviceResolutions = HARDCODED_COLLISION_RESOLUTIONS.get(smithyServiceName);
-        if (serviceResolutions == null) return Optional.empty();
-        return Optional.ofNullable(serviceResolutions.get(shapeName));
-    }
-
-    /**
-     * Returns the C++ class name for a shape, applying collision renames and numeric prefix rules.
-     */
-    public static String getShapeCppName(String shapeName, String smithyServiceName) {
-        Optional<String> resolved = getHardcodedResolution(smithyServiceName, shapeName);
-        if (resolved.isPresent()) return resolved.get();
-        if (!shapeName.isEmpty() && Character.isDigit(shapeName.charAt(0))) {
-            return "The" + shapeName;
-        }
-        return shapeName;
-    }
-
-    /**
      * C2J/Smithy model mismatches: tokens that are integers in C2J but strings in Smithy.
      *
      * Background:
