@@ -10,6 +10,7 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.model.ModelTransfo
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.knowledge.TopDownIndex;
 import software.amazon.smithy.model.shapes.EnumShape;
+import software.amazon.smithy.model.shapes.MapShape;
 import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.ServiceShape;
@@ -51,8 +52,42 @@ public final class S3Transforms {
         if (!"s3".equals(name) && !"s3-crt".equals(name)) {
             return model;
         }
-        return normalizeReplicationStatus(expandBucketLocationConstraint(
-            hackGetObjectResult(addExpiresCustomization(renameCopyObjectResult(model), service))));
+        return injectAccessLogTagQuery(normalizeReplicationStatus(expandBucketLocationConstraint(
+            hackGetObjectResult(addExpiresCustomization(renameCopyObjectResult(model), service)))), service);
+    }
+
+    // C2J's S3RestXmlCppClientGenerator appends a `customizedAccessLogTag` map<string,string> member
+    // to every operation request shape. It renders as an ordinary map member in the .h; the query-
+    // string binding (location=querystring, customizedQuery=true) is a serde concern deferred until
+    // Smithy serde lands, so no @httpQuery/@httpQueryParams trait is attached here.
+    private static Model injectAccessLogTagQuery(Model model, ServiceShape service) {
+        ShapeId mapId = ShapeId.fromParts("com.amazonaws.s3", "CustomizedAccessLogTag");
+        ShapeId stringId = ShapeId.from("smithy.api#String");
+
+        Set<ShapeId> inputShapes = TopDownIndex.of(model).getContainedOperations(service).stream()
+            .map(OperationShape::getInputShape)
+            .collect(Collectors.toSet());
+        List<StructureShape> updated = model.shapes(StructureShape.class)
+            .filter(s -> inputShapes.contains(s.getId()))
+            .filter(s -> s.getMember("customizedAccessLogTag").isEmpty())
+            .toList();
+        if (updated.isEmpty()) {
+            return model; // no request shape needs the member (idempotent / no operations).
+        }
+
+        List<Shape> replacements = new ArrayList<>();
+        if (model.getShape(mapId).isEmpty()) {
+            replacements.add(MapShape.builder().id(mapId).key(stringId).value(stringId).build());
+        }
+        for (StructureShape req : updated) {
+            replacements.add(req.toBuilder()
+                .addMember(MemberShape.builder()
+                    .id(req.getId().withMember("customizedAccessLogTag"))
+                    .target(mapId)
+                    .build())
+                .build());
+        }
+        return model.toBuilder().addShapes(replacements.toArray(new Shape[0])).build();
     }
 
     // C2J collapses the model's split COMPLETE/COMPLETED ReplicationStatus values into a single
