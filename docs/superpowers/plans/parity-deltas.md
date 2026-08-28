@@ -50,14 +50,23 @@ _(none yet)_
   un-stubbed. Map (member → algorithm value): ChecksumCRC32→CRC32, ChecksumCRC32C→CRC32C,
   ChecksumSHA1→SHA1, ChecksumSHA256→SHA256, ChecksumSHA512→SHA512, ChecksumXXHASH64→XXHASH64,
   ChecksumXXHASH3→XXHASH3, ChecksumXXHASH128→XXHASH128, ChecksumMD5→MD5. (ChecksumCRC64NVME NOT mapped.)
-- `injectAccessLogTagQuery` (S3 `customizedAccessLogTag` querystring map on every request): serde
-  (`AddQueryStringParameters`) only; no model-header delta today. Implement with serde.
+- `injectAccessLogTagQuery` (S3 `customizedAccessLogTag` querystring map on every request):
+  **IMPLEMENTED** (Task 7) — `S3Transforms.injectAccessLogTagQuery` injects a `customizedAccessLogTag`
+  `map<string,string>` member (targeting `com.amazonaws.s3#CustomizedAccessLogTag`, key+value
+  `smithy.api#String`) onto every operation request shape, appended last, idempotent. This closes the
+  `.h` member-accessor delta (`GetCustomizedAccessLogTag` / `SetCustomizedAccessLogTag` /
+  `WithCustomizedAccessLogTag` / `AddCustomizedAccessLogTag` / `m_customizedAccessLogTag`). The
+  querystring binding (`location=querystring`, `customizedQuery=true` → `AddQueryStringParameters`
+  serde) is still DEFERRED until Smithy serde lands; no `@httpQuery`/`@httpQueryParams` trait is
+  attached yet, to avoid perturbing stubbed request emission.
 
-### Task 7 investigation note (evidence correction — decision: DEFER both)
+### Task 7 investigation note (evidence correction — access-log IMPLEMENTED, checksum DEFERRED)
 The two "serde only" labels above are imprecise: **both customizations DO produce an observable
-model-HEADER delta today** in C2J vs the current `--use-smithy-models` output. They are still
-deferred because **neither is closeable by a standalone `S3Transforms` marker/injection transform
-without renderer or serde work** (the Task 3–6 pattern does not apply cleanly). Evidence:
+model-HEADER delta today** in C2J vs the current `--use-smithy-models` output. Per a later controller
+decision, the **access-log tag member injection is now IMPLEMENTED** (the `.h` accessors are a pure
+model-shape delta, closeable by a standalone `S3Transforms` injection; only its querystring serde
+binding is deferred). **Checksum stays DEFERRED** — it is not closeable by a marker transform without
+renderer work. Evidence:
 
 - **Checksum (header delta, needs MemberRenderer support):** `markChecksumMembers` sets
   `ShapeMember.checksumMember/checksumEnumMember`, which C2J's *header* template
@@ -72,17 +81,19 @@ without renderer or serde work** (the Task 3–6 pattern does not apply cleanly)
   *marker* transform alone is inert: closing this delta requires `MemberRenderer` to grow bespoke
   logic that reads the marker. Deferred to the render/serde phase.
 
-- **Access-log tag (header delta, but query-binding/serde-entangled):** `injectAccessLogTagQuery`
-  (S3RestXmlCppClientGenerator.java ~299–340) injects a real `customizedAccessLogTag`
-  `map<string,string>` member (`location=querystring`, `customizedQuery=true`) into EVERY request
-  input. C2J's header template renders full accessors — confirmed in C2J
-  `generated/.../PutObjectRequest.h` and others (`GetCustomizedAccessLogTag`,
+- **Access-log tag (header delta — IMPLEMENTED; query-binding serde deferred):**
+  `injectAccessLogTagQuery` (S3RestXmlCppClientGenerator.java ~299–340) injects a real
+  `customizedAccessLogTag` `map<string,string>` member (`location=querystring`,
+  `customizedQuery=true`) into EVERY request input. C2J's header template renders full accessors —
+  confirmed in C2J `generated/.../PutObjectRequest.h` and others (`GetCustomizedAccessLogTag`,
   `SetCustomizedAccessLogTag`, `WithCustomizedAccessLogTag`, `AddCustomizedAccessLogTag`,
   `m_customizedAccessLogTag`, `m_customizedAccessLogTagHasBeenSet`). The Smithy S3 model
-  (`smithy/api-descriptions/s3.json`) has ZERO occurrences and no Smithy transform injects it, so the
-  member is absent from the Smithy header. An injection transform *could* render the accessors, but a
-  bare injection is incorrect: the member is a querystring/`customizedQuery` member whose only purpose
-  is serialization via `AddQueryStringParametersToRequest.vm` (the `$shape.customizedQuery` loop).
-  For restXml, an unbound injected member would be misclassified as a payload member; a correct
-  injection must carry the query-param binding (`@httpQueryParams`), which is a serde concern that is
-  currently stubbed. Deferred: implement alongside the querystring serde.
+  (`smithy/api-descriptions/s3.json`) has ZERO occurrences. `S3Transforms.injectAccessLogTagQuery`
+  now mirrors the C2J injection at the model-shape level: it appends the `customizedAccessLogTag`
+  `map<string,string>` member to every request input (idempotent), closing the `.h` accessor delta.
+  The query-string binding is intentionally NOT modeled yet: no `@httpQuery`/`@httpQueryParams` trait
+  is attached, because that would engage the (stubbed) serde/render path and risk perturbing request
+  emission. For restXml an unbound member would be misclassified as a payload member during serde;
+  the correct query-param binding (`customizedQuery` loop in `AddQueryStringParametersToRequest.vm`)
+  lands with the querystring serde work. Byte-parity of the querystring serialization is a Task 9
+  follow-up once Smithy serde is un-stubbed.

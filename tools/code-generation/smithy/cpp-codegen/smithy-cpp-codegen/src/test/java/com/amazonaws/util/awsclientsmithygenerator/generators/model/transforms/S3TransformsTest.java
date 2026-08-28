@@ -241,4 +241,71 @@ class S3TransformsTest {
         assertEquals("x-amz-request-id",
             reqId.expectTrait(software.amazon.smithy.model.traits.HttpHeaderTrait.class).getValue());
     }
+
+    /**
+     * Builds an S3 model with a single operation whose input carries two ordinary members, so the
+     * appended-last ordering of the injected access-log tag member can be asserted.
+     */
+    private static Model accessLogModel() {
+        StructureShape input = StructureShape.builder().id(NS + "#PutObjectRequest")
+            .addMember("Bucket", ShapeId.from("smithy.api#String"))
+            .addMember("Key", ShapeId.from("smithy.api#String"))
+            .build();
+        StructureShape output = StructureShape.builder().id(NS + "#PutObjectOutput")
+            .addMember("ETag", ShapeId.from("smithy.api#String"))
+            .build();
+        OperationShape op = OperationShape.builder().id(NS + "#PutObject")
+            .input(input.getId()).output(output.getId()).build();
+        ServiceShape svc = ServiceShape.builder().id(NS + "#AmazonS3").version("2006-03-01")
+            .addTrait(ServiceTrait.builder().sdkId("S3").arnNamespace("s3")
+                .cloudFormationName("S3").cloudTrailEventSource("s3.amazonaws.com").build())
+            .addOperation(op.getId()).build();
+        return Model.assembler().addShapes(input, output, op, svc).assemble().unwrap();
+    }
+
+    private static ServiceShape s3ServiceOf(Model m) {
+        return m.expectShape(ShapeId.from(NS + "#AmazonS3"), ServiceShape.class);
+    }
+
+    @Test
+    void injectsCustomizedAccessLogTagIntoRequestAsStringMapAppendedLast() {
+        Model m = accessLogModel();
+        Model out = S3Transforms.asTransform().apply(m, s3ServiceOf(m));
+
+        StructureShape input = out.expectShape(ShapeId.from(NS + "#PutObjectRequest"), StructureShape.class);
+        MemberShape tag = input.getMember("customizedAccessLogTag").orElseThrow();
+
+        // Target must be a Map<String,String> (both key and value render as Aws::String).
+        software.amazon.smithy.model.shapes.MapShape mapShape = out.expectShape(
+            tag.getTarget(), software.amazon.smithy.model.shapes.MapShape.class);
+        assertEquals("smithy.api#String", mapShape.getKey().getTarget().toString());
+        assertEquals("smithy.api#String", mapShape.getValue().getTarget().toString());
+
+        // Appended after all existing members, preserving prior order.
+        java.util.List<String> order = new java.util.ArrayList<>(input.getAllMembers().keySet());
+        assertEquals(java.util.List.of("Bucket", "Key", "customizedAccessLogTag"), order,
+            "access-log tag member appended last");
+    }
+
+    @Test
+    void doesNotInjectCustomizedAccessLogTagIntoOutput() {
+        Model m = accessLogModel();
+        Model out = S3Transforms.asTransform().apply(m, s3ServiceOf(m));
+
+        StructureShape output = out.expectShape(ShapeId.from(NS + "#PutObjectOutput"), StructureShape.class);
+        assertFalse(output.getMember("customizedAccessLogTag").isPresent(),
+            "output shape must not gain the access-log tag member");
+    }
+
+    @Test
+    void accessLogTagInjectionIsIdempotent() {
+        Model m = accessLogModel();
+        Model once = S3Transforms.asTransform().apply(m, s3ServiceOf(m));
+        Model twice = S3Transforms.asTransform().apply(once, s3ServiceOf(once));
+
+        StructureShape input = twice.expectShape(ShapeId.from(NS + "#PutObjectRequest"), StructureShape.class);
+        long count = input.getAllMembers().keySet().stream()
+            .filter("customizedAccessLogTag"::equals).count();
+        assertEquals(1, count, "re-applying must not duplicate the injected member");
+    }
 }
