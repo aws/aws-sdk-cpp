@@ -18,8 +18,11 @@ import software.amazon.smithy.model.traits.Trait;
 import software.amazon.smithy.model.traits.XmlNameTrait;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * Shared helpers for per-service model transforms.
@@ -82,6 +85,71 @@ final class TransformSupport {
         return Optional.of(enumShape.asStringShape().get().toBuilder()
             .addTrait(traitBuilder.build())
             .build());
+    }
+
+    /**
+     * Appends {@code name -> value} enum entries, allowing wire values that are <em>not</em>
+     * identifier-safe (e.g. region strings containing {@code '-'} such as {@code us-east-1}). This is
+     * the name/value counterpart of {@link #appendValues(Shape, List)}, which requires the wire value
+     * to double as the member name.
+     *
+     * <p>Each map key is the Smithy member name and MUST be identifier-safe (matching
+     * {@code [A-Za-z_][A-Za-z0-9_]*}); each map value is the wire value and may be arbitrary. For a
+     * Smithy 2.0 {@code EnumShape} the name becomes the member name and the value the
+     * {@code @enumValue} via {@code builder.addMember(name, value)}; for a legacy {@code @enum}
+     * {@code StringShape} only the wire value is recorded (matching C2J, which keys the enum off the
+     * wire value and derives the constant name by sanitizing it).
+     *
+     * <p>Idempotent: entries whose wire value already exists are skipped; if every value is already
+     * present the shape is returned unchanged as {@link Optional#empty()}.
+     *
+     * @param enumShape   the enum shape to append to
+     * @param nameToValue ordered member-name to wire-value entries to append
+     * @return the updated shape, or {@link Optional#empty()} if all values are already present
+     * @throws IllegalArgumentException if any member name is not identifier-safe
+     */
+    static Optional<Shape> appendEnumValues(Shape enumShape, Map<String, String> nameToValue) {
+        for (String name : nameToValue.keySet()) {
+            if (name == null || !name.matches(IDENTIFIER_PATTERN)) {
+                throw new IllegalArgumentException(
+                    "Enum member name \"" + name + "\" for shape " + enumShape.getId()
+                        + " is not an identifier-safe enum member name (must match "
+                        + IDENTIFIER_PATTERN + ")");
+            }
+        }
+        List<String> existing = existingWireValues(enumShape);
+        LinkedHashMap<String, String> toAdd = new LinkedHashMap<>();
+        nameToValue.forEach((name, value) -> {
+            if (!existing.contains(value)) {
+                toAdd.put(name, value);
+            }
+        });
+        if (toAdd.isEmpty()) {
+            return Optional.empty();
+        }
+        if (enumShape.isEnumShape()) {
+            EnumShape.Builder builder = enumShape.asEnumShape().get().toBuilder();
+            toAdd.forEach(builder::addMember);
+            return Optional.of(builder.build());
+        }
+        EnumTrait existingTrait = enumShape.expectTrait(EnumTrait.class);
+        EnumTrait.Builder traitBuilder = EnumTrait.builder();
+        existingTrait.getValues().forEach(traitBuilder::addEnum);
+        toAdd.values().forEach(value ->
+            traitBuilder.addEnum(EnumDefinition.builder().value(value).build()));
+        return Optional.of(enumShape.asStringShape().get().toBuilder()
+            .addTrait(traitBuilder.build())
+            .build());
+    }
+
+    /** The current wire values of an enum shape (Smithy 2.0 {@code EnumShape} or legacy {@code @enum}). */
+    private static List<String> existingWireValues(Shape enumShape) {
+        if (enumShape.isEnumShape()) {
+            return new ArrayList<>(enumShape.asEnumShape().get().getEnumValues().values());
+        }
+        return enumShape.expectTrait(EnumTrait.class).getValues().stream()
+            .map(EnumDefinition::getValue)
+            .collect(Collectors.toList());
     }
 
     /**

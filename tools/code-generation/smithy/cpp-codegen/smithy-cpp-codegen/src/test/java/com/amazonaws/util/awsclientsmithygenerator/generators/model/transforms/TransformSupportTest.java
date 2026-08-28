@@ -7,14 +7,21 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
 import org.junit.jupiter.api.Test;
 import software.amazon.smithy.aws.traits.protocols.Ec2QueryNameTrait;
+import software.amazon.smithy.model.shapes.EnumShape;
 import software.amazon.smithy.model.shapes.MemberShape;
+import software.amazon.smithy.model.shapes.Shape;
 import software.amazon.smithy.model.shapes.ShapeId;
+import software.amazon.smithy.model.shapes.StringShape;
 import software.amazon.smithy.model.shapes.StructureShape;
+import software.amazon.smithy.model.traits.EnumDefinition;
+import software.amazon.smithy.model.traits.EnumTrait;
 import software.amazon.smithy.model.traits.JsonNameTrait;
 import software.amazon.smithy.model.traits.XmlNameTrait;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -121,6 +128,54 @@ class TransformSupportTest {
         StructureShape s = struct("body");
         assertThrows(IllegalStateException.class,
             () -> TransformSupport.renameMember(s, "body", "requestBody", Protocol.CBOR));
+    }
+
+    private static LinkedHashMap<String, String> map(String name, String value) {
+        LinkedHashMap<String, String> m = new LinkedHashMap<>();
+        m.put(name, value);
+        return m;
+    }
+
+    @Test
+    void appendEnumValues_enumShape_appendsHyphenatedWireValue() {
+        EnumShape shape = EnumShape.builder().id("com.example#Region")
+            .addMember("us_west_2", "us-west-2").build();
+        Shape out = TransformSupport.appendEnumValues(shape, map("us_east_1", "us-east-1"))
+            .orElseThrow();
+        EnumShape e = out.asEnumShape().orElseThrow();
+        assertTrue(e.getEnumValues().values().contains("us-east-1"), "hyphenated value appended");
+        assertTrue(e.getEnumValues().values().contains("us-west-2"), "existing value preserved");
+        assertTrue(e.getAllMembers().containsKey("us_east_1"), "identifier-safe member name");
+    }
+
+    @Test
+    void appendEnumValues_idempotentSkipsExistingValue() {
+        EnumShape shape = EnumShape.builder().id("com.example#Region")
+            .addMember("us_east_1", "us-east-1").build();
+        assertTrue(TransformSupport.appendEnumValues(shape, map("us_east_1", "us-east-1")).isEmpty(),
+            "already-present wire value must be skipped");
+    }
+
+    @Test
+    void appendEnumValues_legacyEnumTrait_appendsValue() {
+        StringShape shape = StringShape.builder().id("com.example#Region")
+            .addTrait(EnumTrait.builder()
+                .addEnum(EnumDefinition.builder().value("us-west-2").build()).build())
+            .build();
+        Shape out = TransformSupport.appendEnumValues(shape, map("us_east_1", "us-east-1"))
+            .orElseThrow();
+        List<String> values = out.expectTrait(EnumTrait.class).getValues().stream()
+            .map(EnumDefinition::getValue).collect(Collectors.toList());
+        assertTrue(values.contains("us-west-2"), "existing value preserved");
+        assertTrue(values.contains("us-east-1"), "hyphenated value appended");
+    }
+
+    @Test
+    void appendEnumValues_nonIdentifierMemberName_throws() {
+        EnumShape shape = EnumShape.builder().id("com.example#Region")
+            .addMember("us_west_2", "us-west-2").build();
+        assertThrows(IllegalArgumentException.class,
+            () -> TransformSupport.appendEnumValues(shape, map("us-east-1", "us-east-1")));
     }
 
     @Test
