@@ -8,9 +8,15 @@ import org.junit.jupiter.api.Test;
 import software.amazon.smithy.aws.traits.ServiceTrait;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.MemberShape;
+import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.ServiceShape;
+import software.amazon.smithy.model.shapes.Shape;
 import software.amazon.smithy.model.shapes.ShapeId;
+import software.amazon.smithy.model.shapes.StringShape;
 import software.amazon.smithy.model.shapes.StructureShape;
+import software.amazon.smithy.model.shapes.TimestampShape;
+import software.amazon.smithy.model.traits.DocumentationTrait;
+import software.amazon.smithy.model.traits.HttpHeaderTrait;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -75,31 +81,80 @@ class S3TransformsTest {
         assertThrows(IllegalStateException.class, () -> S3Transforms.asTransform().apply(m, svc));
     }
 
-    @Test
-    void addsExpiresStringMemberAndDeprecatesExpires() {
-        ServiceShape svc = s3Service("S3");
-        software.amazon.smithy.model.shapes.TimestampShape expires =
-            software.amazon.smithy.model.shapes.TimestampShape.builder()
-                .id(NS + "#Expires").build();
-        StructureShape getObjectOutput = StructureShape.builder().id(NS + "#GetObjectOutput")
+    /**
+     * Builds an S3 model with a single PutObject-style operation whose input and output both
+     * carry an {@code Expires} member (initially a {@code string}, matching the current model),
+     * mirroring the operation-wiring pattern in {@code AccessAnalyzerTransformsTest}.
+     */
+    private static Model expiresModel() {
+        Shape expires = StringShape.builder().id(NS + "#Expires").build();
+        StructureShape input = StructureShape.builder().id(NS + "#PutObjectRequest")
             .addMember("Expires", expires.getId(), b -> b
-                .addTrait(new software.amazon.smithy.model.traits.HttpHeaderTrait("Expires"))
-                .addTrait(new software.amazon.smithy.model.traits.DocumentationTrait("The date and time at which the object is no longer cacheable.")))
+                .addTrait(new HttpHeaderTrait("Expires"))
+                .addTrait(new DocumentationTrait("The date and time at which the object is no longer cacheable.")))
             .build();
-        Model m = modelWith(svc, expires, getObjectOutput);
-        Model out = S3Transforms.asTransform().apply(m, svc);
+        StructureShape output = StructureShape.builder().id(NS + "#GetObjectOutput")
+            .addMember("Expires", expires.getId(), b -> b
+                .addTrait(new HttpHeaderTrait("Expires"))
+                .addTrait(new DocumentationTrait("The date and time at which the object is no longer cacheable.")))
+            .build();
+        OperationShape op = OperationShape.builder().id(NS + "#GetObject")
+            .input(input.getId()).output(output.getId()).build();
+        ServiceShape svc = ServiceShape.builder().id(NS + "#AmazonS3").version("2006-03-01")
+            .addTrait(ServiceTrait.builder().sdkId("S3").arnNamespace("s3")
+                .cloudFormationName("S3").cloudTrailEventSource("s3.amazonaws.com").build())
+            .addOperation(op.getId()).build();
+        return Model.assembler().addShapes(expires, input, output, op, svc).assemble().unwrap();
+    }
+
+    private static ServiceShape expiresService(Model m) {
+        return m.expectShape(ShapeId.from(NS + "#AmazonS3"), ServiceShape.class);
+    }
+
+    @Test
+    void retypesExpiresShapeToTimestamp() {
+        Model m = expiresModel();
+        assertTrue(m.expectShape(ShapeId.from(NS + "#Expires")).isStringShape(),
+            "precondition: Expires starts as a string");
+        Model out = S3Transforms.asTransform().apply(m, expiresService(m));
+        assertTrue(out.expectShape(ShapeId.from(NS + "#Expires")) instanceof TimestampShape,
+            "Expires retyped to a timestamp shape");
+        // Both input and output Expires members now target the timestamp.
+        StructureShape input = out.expectShape(ShapeId.from(NS + "#PutObjectRequest"), StructureShape.class);
+        StructureShape output = out.expectShape(ShapeId.from(NS + "#GetObjectOutput"), StructureShape.class);
+        assertTrue(out.expectShape(input.getMember("Expires").orElseThrow().getTarget()) instanceof TimestampShape);
+        assertTrue(out.expectShape(output.getMember("Expires").orElseThrow().getTarget()) instanceof TimestampShape);
+    }
+
+    @Test
+    void addsExpiresStringToOutputAndDeprecatesExpires() {
+        Model m = expiresModel();
+        Model out = S3Transforms.asTransform().apply(m, expiresService(m));
 
         assertTrue(out.getShape(ShapeId.from(NS + "#ExpiresString")).isPresent(),
             "ExpiresString string shape injected");
         StructureShape outShape = out.expectShape(ShapeId.from(NS + "#GetObjectOutput"), StructureShape.class);
         MemberShape expiresString = outShape.getMember("ExpiresString").orElseThrow();
         assertEquals(NS + "#ExpiresString", expiresString.getTarget().toString());
-        assertEquals("Expires",
-            expiresString.expectTrait(software.amazon.smithy.model.traits.HttpHeaderTrait.class).getValue(),
+        assertEquals("Expires", expiresString.expectTrait(HttpHeaderTrait.class).getValue(),
             "ExpiresString reads the same Expires header");
         MemberShape expiresMember = outShape.getMember("Expires").orElseThrow();
-        assertTrue(expiresMember.expectTrait(software.amazon.smithy.model.traits.DocumentationTrait.class)
+        assertTrue(expiresMember.expectTrait(DocumentationTrait.class)
             .getValue().startsWith("Deprecated: Please use ExpiresString instead."),
             "Expires member carries the deprecation note");
+    }
+
+    @Test
+    void doesNotAddExpiresStringToInput() {
+        Model m = expiresModel();
+        Model out = S3Transforms.asTransform().apply(m, expiresService(m));
+
+        StructureShape input = out.expectShape(ShapeId.from(NS + "#PutObjectRequest"), StructureShape.class);
+        assertFalse(input.getMember("ExpiresString").isPresent(),
+            "input shape must not gain ExpiresString");
+        MemberShape inputExpires = input.getMember("Expires").orElseThrow();
+        assertFalse(inputExpires.getTrait(DocumentationTrait.class)
+                .map(DocumentationTrait::getValue).orElse("").startsWith("Deprecated:"),
+            "input Expires must not carry the deprecation note");
     }
 }

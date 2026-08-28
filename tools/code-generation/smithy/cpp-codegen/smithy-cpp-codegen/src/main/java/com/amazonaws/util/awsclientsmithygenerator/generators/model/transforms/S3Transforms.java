@@ -7,17 +7,22 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms;
 import com.amazonaws.util.awsclientsmithygenerator.generators.ServiceNameUtil;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ModelTransform;
 import software.amazon.smithy.model.Model;
+import software.amazon.smithy.model.knowledge.TopDownIndex;
 import software.amazon.smithy.model.shapes.MemberShape;
+import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.model.shapes.Shape;
 import software.amazon.smithy.model.shapes.ShapeId;
 import software.amazon.smithy.model.shapes.StringShape;
 import software.amazon.smithy.model.shapes.StructureShape;
+import software.amazon.smithy.model.shapes.TimestampShape;
 import software.amazon.smithy.model.traits.DocumentationTrait;
 import software.amazon.smithy.model.transform.ModelTransformer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * S3 (and S3-CRT, which shares the S3 model) parity with the legacy C2J
@@ -42,7 +47,7 @@ public final class S3Transforms {
         }
         // Sub-transforms are chained here by later tasks, e.g.:
         // return normalizeReplicationStatus(expandBucketLocationConstraint(... (model) ...));
-        return addExpiresCustomization(renameCopyObjectResult(model));
+        return addExpiresCustomization(renameCopyObjectResult(model), service);
     }
 
     private static Model renameCopyObjectResult(Model model) {
@@ -62,14 +67,22 @@ public final class S3Transforms {
     private static final String EXPIRES_DEPRECATION =
         "Deprecated: Please use ExpiresString instead. " + System.lineSeparator() + "     * ";
 
-    private static Model addExpiresCustomization(Model model) {
+    private static Model addExpiresCustomization(Model model, ServiceShape service) {
         String ns = "com.amazonaws.s3";
+        // C2J renders Expires as a timestamp on every shape that carries it, though the current
+        // Smithy model types it as a string. Retype the shape itself before scoping ExpiresString.
+        model = retypeExpiresToTimestamp(model, ns);
         ShapeId expiresStringId = ShapeId.fromParts(ns, "ExpiresString");
+        // ExpiresString (and the deprecation note) live only on operation-output structures.
+        Set<ShapeId> outputShapes = TopDownIndex.of(model).getContainedOperations(service).stream()
+            .map(OperationShape::getOutputShape)
+            .collect(Collectors.toSet());
         List<StructureShape> withExpires = model.shapes(StructureShape.class)
+            .filter(s -> outputShapes.contains(s.getId()))
             .filter(s -> s.getMember("Expires").isPresent())
             .toList();
         if (withExpires.isEmpty()) {
-            return model; // no Expires anywhere: nothing to do.
+            return model; // no output shape carries Expires: nothing more to do.
         }
         List<Shape> replacements = new ArrayList<>();
         // Inject the ExpiresString string shape once (idempotent: skip if present).
@@ -107,5 +120,16 @@ public final class S3Transforms {
             replacements.add(b.build());
         }
         return model.toBuilder().addShapes(replacements.toArray(new Shape[0])).build();
+    }
+
+    private static Model retypeExpiresToTimestamp(Model model, String ns) {
+        ShapeId expiresId = ShapeId.fromParts(ns, "Expires");
+        Shape existing = model.getShape(expiresId).orElse(null);
+        if (existing == null || existing instanceof TimestampShape) {
+            return model; // absent or already a timestamp: nothing to retype.
+        }
+        TimestampShape.Builder b = TimestampShape.builder().id(expiresId);
+        existing.getAllTraits().values().forEach(b::addTrait);
+        return model.toBuilder().addShape(b.build()).build();
     }
 }
