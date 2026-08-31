@@ -30,7 +30,10 @@ class TagResourceRequest : public AgentRegistryControlRequest {
   AWS_AGENTREGISTRYCONTROL_API Aws::String SerializePayload() const override;
 
   ///@{
-
+  /**
+   * <p>The Amazon Resource Name (ARN) of the resource to tag. Supported resources
+   * include registries and registry records.</p>
+   */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
   inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
   template <typename ResourceArnT = Aws::String>
@@ -46,7 +49,10 @@ class TagResourceRequest : public AgentRegistryControlRequest {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The tags to apply to the resource, as a map of tag keys to tag values. Tag
+   * keys must be unique within the request.</p>
+   */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
   inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
   template <typename TagsT = Aws::Map<Aws::String, Aws::String>>

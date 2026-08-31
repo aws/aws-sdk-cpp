@@ -27,6 +27,10 @@ Aws::String AddAttachmentsToSetRequest::SerializePayload() const {
     payload.WithArray("attachments", std::move(attachmentsJsonList));
   }
 
+  if (m_dryRunHasBeenSet) {
+    payload.WithBool("dryRun", m_dryRun);
+  }
+
   return payload.View().WriteReadable();
 }
 

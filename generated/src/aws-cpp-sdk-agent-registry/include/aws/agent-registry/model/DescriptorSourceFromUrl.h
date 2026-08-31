@@ -20,7 +20,8 @@ namespace AgentRegistry {
 namespace Model {
 
 /**
- * <p>Base mixin for descriptor source from URL</p><p><h3>See Also:</h3>   <a
+ * <p> A URL-based descriptor source that identifies where descriptor content is
+ * retrieved from.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-2025-12-01/DescriptorSourceFromUrl">AWS
  * API Reference</a></p>
  */
@@ -32,7 +33,9 @@ class DescriptorSourceFromUrl {
   AWS_AGENTREGISTRY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p> The URL from which the descriptor content is retrieved.</p>
+   */
   inline const Aws::String& GetUrl() const { return m_url; }
   inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
   template <typename UrlT = Aws::String>

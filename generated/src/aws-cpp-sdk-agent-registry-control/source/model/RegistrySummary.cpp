@@ -46,6 +46,10 @@ RegistrySummary& RegistrySummary::operator=(JsonView jsonValue) {
     m_statusReason = jsonValue.GetString("statusReason");
     m_statusReasonHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("autoDetection")) {
+    m_autoDetection = jsonValue.GetObject("autoDetection");
+    m_autoDetectionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
@@ -86,6 +90,10 @@ JsonValue RegistrySummary::Jsonize() const {
 
   if (m_statusReasonHasBeenSet) {
     payload.WithString("statusReason", m_statusReason);
+  }
+
+  if (m_autoDetectionHasBeenSet) {
+    payload.WithObject("autoDetection", m_autoDetection.Jsonize());
   }
 
   if (m_createdAtHasBeenSet) {

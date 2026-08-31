@@ -78,6 +78,10 @@ StreamDescriptionSummary& StreamDescriptionSummary::operator=(JsonView jsonValue
     m_maxRecordSizeInKiB = jsonValue.GetInteger("MaxRecordSizeInKiB");
     m_maxRecordSizeInKiBHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ChannelCount")) {
+    m_channelCount = jsonValue.GetInteger("ChannelCount");
+    m_channelCountHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -143,6 +147,10 @@ JsonValue StreamDescriptionSummary::Jsonize() const {
 
   if (m_maxRecordSizeInKiBHasBeenSet) {
     payload.WithInteger("MaxRecordSizeInKiB", m_maxRecordSizeInKiB);
+  }
+
+  if (m_channelCountHasBeenSet) {
+    payload.WithInteger("ChannelCount", m_channelCount);
   }
 
   return payload;

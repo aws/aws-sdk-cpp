@@ -19,6 +19,7 @@
 #include <aws/customer-profiles/model/ListRecommendersPaginationTraits.h>
 #include <aws/customer-profiles/model/ListRuleBasedMatchesPaginationTraits.h>
 #include <aws/customer-profiles/model/ListSegmentDefinitionsPaginationTraits.h>
+#include <aws/customer-profiles/model/ListSegmentSubscriptionEventsPaginationTraits.h>
 #include <aws/customer-profiles/model/ListUploadJobsPaginationTraits.h>
 
 #include <memory>
@@ -170,6 +171,18 @@ class CustomerProfilesPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSegmentDefinitionsRequest,
                                              Pagination::ListSegmentDefinitionsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListSegmentSubscriptionEvents operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSegmentSubscriptionEventsRequest,
+                                    Pagination::ListSegmentSubscriptionEventsPaginationTraits<DerivedClient>>
+  ListSegmentSubscriptionEventsPaginator(const Model::ListSegmentSubscriptionEventsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSegmentSubscriptionEventsRequest,
+                                             Pagination::ListSegmentSubscriptionEventsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

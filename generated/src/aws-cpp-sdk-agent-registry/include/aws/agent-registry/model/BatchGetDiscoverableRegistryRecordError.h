@@ -34,7 +34,10 @@ class BatchGetDiscoverableRegistryRecordError {
   AWS_AGENTREGISTRY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p> The identifier of the registry the record was requested from, echoed from
+   * the request.</p>
+   */
   inline const Aws::String& GetRegistryId() const { return m_registryId; }
   inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
   template <typename RegistryIdT = Aws::String>
@@ -50,7 +53,10 @@ class BatchGetDiscoverableRegistryRecordError {
   ///@}
 
   ///@{
-
+  /**
+   * <p> The identifier of the record that could not be retrieved, echoed from the
+   * request in the same format that you supplied (ARN or record ID).</p>
+   */
   inline const Aws::String& GetRecordId() const { return m_recordId; }
   inline bool RecordIdHasBeenSet() const { return m_recordIdHasBeenSet; }
   template <typename RecordIdT = Aws::String>

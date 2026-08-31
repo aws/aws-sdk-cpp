@@ -21,8 +21,8 @@ namespace AgentRegistry {
 namespace Model {
 
 /**
- * <p>Base mixin for agent skills definition descriptor content</p><p><h3>See
- * Also:</h3>   <a
+ * <p> Descriptor that defines an agent skills registry record and its associated
+ * content.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-2025-12-01/AgentSkillsDefinitionDescriptor">AWS
  * API Reference</a></p>
  */
@@ -34,7 +34,10 @@ class AgentSkillsDefinitionDescriptor {
   AWS_AGENTREGISTRY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p> The agent skills definition content, serialized as descriptor payload
+   * data.</p>
+   */
   inline const Aws::String& GetData() const { return m_data; }
   inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
   template <typename DataT = Aws::String>
@@ -50,7 +53,9 @@ class AgentSkillsDefinitionDescriptor {
   ///@}
 
   ///@{
-
+  /**
+   * <p> The schema version of the descriptor payload.</p>
+   */
   inline const Aws::String& GetDataSchemaVersion() const { return m_dataSchemaVersion; }
   inline bool DataSchemaVersionHasBeenSet() const { return m_dataSchemaVersionHasBeenSet; }
   template <typename DataSchemaVersionT = Aws::String>

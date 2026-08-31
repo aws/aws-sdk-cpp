@@ -6,8 +6,10 @@
 #pragma once
 #include <aws/agent-registry-control/AgentRegistryControl_EXPORTS.h>
 #include <aws/agent-registry-control/model/UpdatedA2aAgentCardDescriptor.h>
+#include <aws/agent-registry-control/model/UpdatedAgUiDescriptor.h>
 #include <aws/agent-registry-control/model/UpdatedAgentSkillsDefinitionDescriptor.h>
 #include <aws/agent-registry-control/model/UpdatedCustomDescriptor.h>
+#include <aws/agent-registry-control/model/UpdatedHttpDescriptor.h>
 #include <aws/agent-registry-control/model/UpdatedMcpServerDescriptor.h>
 
 #include <utility>
@@ -106,6 +108,42 @@ class UpdatedDescriptorsFields {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The patch for the HTTP descriptor.</p>
+   */
+  inline const UpdatedHttpDescriptor& GetHttp() const { return m_http; }
+  inline bool HttpHasBeenSet() const { return m_httpHasBeenSet; }
+  template <typename HttpT = UpdatedHttpDescriptor>
+  void SetHttp(HttpT&& value) {
+    m_httpHasBeenSet = true;
+    m_http = std::forward<HttpT>(value);
+  }
+  template <typename HttpT = UpdatedHttpDescriptor>
+  UpdatedDescriptorsFields& WithHttp(HttpT&& value) {
+    SetHttp(std::forward<HttpT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The patch for the AG-UI descriptor.</p>
+   */
+  inline const UpdatedAgUiDescriptor& GetAgui() const { return m_agui; }
+  inline bool AguiHasBeenSet() const { return m_aguiHasBeenSet; }
+  template <typename AguiT = UpdatedAgUiDescriptor>
+  void SetAgui(AguiT&& value) {
+    m_aguiHasBeenSet = true;
+    m_agui = std::forward<AguiT>(value);
+  }
+  template <typename AguiT = UpdatedAgUiDescriptor>
+  UpdatedDescriptorsFields& WithAgui(AguiT&& value) {
+    SetAgui(std::forward<AguiT>(value));
+    return *this;
+  }
+  ///@}
  private:
   UpdatedMcpServerDescriptor m_mcpServer;
 
@@ -114,10 +152,16 @@ class UpdatedDescriptorsFields {
   UpdatedAgentSkillsDefinitionDescriptor m_agentSkillsDefinition;
 
   UpdatedCustomDescriptor m_custom;
+
+  UpdatedHttpDescriptor m_http;
+
+  UpdatedAgUiDescriptor m_agui;
   bool m_mcpServerHasBeenSet = false;
   bool m_a2aAgentCardHasBeenSet = false;
   bool m_agentSkillsDefinitionHasBeenSet = false;
   bool m_customHasBeenSet = false;
+  bool m_httpHasBeenSet = false;
+  bool m_aguiHasBeenSet = false;
 };
 
 }  // namespace Model

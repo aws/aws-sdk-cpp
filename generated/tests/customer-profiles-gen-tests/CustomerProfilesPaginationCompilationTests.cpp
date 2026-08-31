@@ -18,6 +18,7 @@
 #include <aws/customer-profiles/model/ListObjectTypeAttributesPaginationTraits.h>
 #include <aws/customer-profiles/model/ListRecommenderRecipesPaginationTraits.h>
 #include <aws/customer-profiles/model/ListDomainLayoutsPaginationTraits.h>
+#include <aws/customer-profiles/model/ListSegmentSubscriptionEventsPaginationTraits.h>
 #include <aws/customer-profiles/model/ListEventStreamsPaginationTraits.h>
 #include <aws/customer-profiles/model/ListUploadJobsPaginationTraits.h>
 #include <aws/customer-profiles/model/GetSimilarProfilesPaginationTraits.h>

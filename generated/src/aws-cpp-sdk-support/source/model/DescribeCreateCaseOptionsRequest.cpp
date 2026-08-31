@@ -31,6 +31,10 @@ Aws::String DescribeCreateCaseOptionsRequest::SerializePayload() const {
     payload.WithString("categoryCode", m_categoryCode);
   }
 
+  if (m_dryRunHasBeenSet) {
+    payload.WithBool("dryRun", m_dryRun);
+  }
+
   return payload.View().WriteReadable();
 }
 

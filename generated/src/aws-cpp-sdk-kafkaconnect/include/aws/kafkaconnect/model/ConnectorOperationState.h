@@ -18,7 +18,10 @@ enum class ConnectorOperationState {
   UPDATE_FAILED,
   ROLLBACK_IN_PROGRESS,
   ROLLBACK_FAILED,
-  ROLLBACK_COMPLETE
+  ROLLBACK_COMPLETE,
+  RESTART_IN_PROGRESS,
+  RESTART_COMPLETE,
+  RESTART_FAILED
 };
 
 namespace ConnectorOperationStateMapper {

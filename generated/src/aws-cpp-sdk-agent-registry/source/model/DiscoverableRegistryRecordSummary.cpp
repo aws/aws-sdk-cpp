@@ -62,6 +62,13 @@ DiscoverableRegistryRecordSummary& DiscoverableRegistryRecordSummary::operator=(
     m_updatedAt = jsonValue.GetString("updatedAt");
     m_updatedAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("descriptorTypes")) {
+    Aws::Utils::Array<JsonView> descriptorTypesJsonList = jsonValue.GetArray("descriptorTypes");
+    for (unsigned descriptorTypesIndex = 0; descriptorTypesIndex < descriptorTypesJsonList.GetLength(); ++descriptorTypesIndex) {
+      m_descriptorTypes.push_back(descriptorTypesJsonList[descriptorTypesIndex].AsString());
+    }
+    m_descriptorTypesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -110,6 +117,14 @@ JsonValue DiscoverableRegistryRecordSummary::Jsonize() const {
 
   if (m_updatedAtHasBeenSet) {
     payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_descriptorTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> descriptorTypesJsonList(m_descriptorTypes.size());
+    for (unsigned descriptorTypesIndex = 0; descriptorTypesIndex < descriptorTypesJsonList.GetLength(); ++descriptorTypesIndex) {
+      descriptorTypesJsonList[descriptorTypesIndex].AsString(m_descriptorTypes[descriptorTypesIndex]);
+    }
+    payload.WithArray("descriptorTypes", std::move(descriptorTypesJsonList));
   }
 
   return payload;

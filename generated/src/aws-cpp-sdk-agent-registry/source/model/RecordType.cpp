@@ -19,6 +19,7 @@ static const int MCP_HASH = HashingUtils::HashString("MCP");
 static const int AGENT_HASH = HashingUtils::HashString("AGENT");
 static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
 static const int SKILL_HASH = HashingUtils::HashString("SKILL");
+static const int GATEWAY_HASH = HashingUtils::HashString("GATEWAY");
 
 RecordType GetRecordTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ RecordType GetRecordTypeForName(const Aws::String& name) {
     return RecordType::CUSTOM;
   } else if (hashCode == SKILL_HASH) {
     return RecordType::SKILL;
+  } else if (hashCode == GATEWAY_HASH) {
+    return RecordType::GATEWAY;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForRecordType(RecordType enumValue) {
       return "CUSTOM";
     case RecordType::SKILL:
       return "SKILL";
+    case RecordType::GATEWAY:
+      return "GATEWAY";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

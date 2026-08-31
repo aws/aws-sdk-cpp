@@ -19,6 +19,10 @@ Aws::String DescribeSeverityLevelsRequest::SerializePayload() const {
     payload.WithString("language", m_language);
   }
 
+  if (m_dryRunHasBeenSet) {
+    payload.WithBool("dryRun", m_dryRun);
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -7,10 +7,12 @@
 #include <aws/agent-registry-control/AgentRegistryControlRequest.h>
 #include <aws/agent-registry-control/AgentRegistryControl_EXPORTS.h>
 #include <aws/agent-registry-control/model/Descriptors.h>
+#include <aws/agent-registry-control/model/Provenance.h>
 #include <aws/agent-registry-control/model/RecordType.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -175,6 +177,28 @@ class CreateRegistryRecordRequest : public AgentRegistryControlRequest {
   ///@}
 
   ///@{
+
+  inline const Aws::Vector<Provenance>& GetProvenance() const { return m_provenance; }
+  inline bool ProvenanceHasBeenSet() const { return m_provenanceHasBeenSet; }
+  template <typename ProvenanceT = Aws::Vector<Provenance>>
+  void SetProvenance(ProvenanceT&& value) {
+    m_provenanceHasBeenSet = true;
+    m_provenance = std::forward<ProvenanceT>(value);
+  }
+  template <typename ProvenanceT = Aws::Vector<Provenance>>
+  CreateRegistryRecordRequest& WithProvenance(ProvenanceT&& value) {
+    SetProvenance(std::forward<ProvenanceT>(value));
+    return *this;
+  }
+  template <typename ProvenanceT = Provenance>
+  CreateRegistryRecordRequest& AddProvenance(ProvenanceT&& value) {
+    m_provenanceHasBeenSet = true;
+    m_provenance.emplace_back(std::forward<ProvenanceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
    * <p>Tags to associate with the registry record</p>
    */
@@ -214,6 +238,8 @@ class CreateRegistryRecordRequest : public AgentRegistryControlRequest {
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
+  Aws::Vector<Provenance> m_provenance;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_registryIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -223,6 +249,7 @@ class CreateRegistryRecordRequest : public AgentRegistryControlRequest {
   bool m_descriptorsHasBeenSet = false;
   bool m_recordVersionHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
+  bool m_provenanceHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

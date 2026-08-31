@@ -74,6 +74,8 @@
 #include <aws/quicksight/model/AnonymousUserGenerativeQnAEmbeddingConfiguration.h>
 #include <aws/quicksight/model/AnonymousUserQSearchBarEmbeddingConfiguration.h>
 #include <aws/quicksight/model/AnonymousUserSnapshotJobResult.h>
+#include <aws/quicksight/model/AppSummary.h>
+#include <aws/quicksight/model/AppVisibility.h>
 #include <aws/quicksight/model/AppendOperation.h>
 #include <aws/quicksight/model/AppendedColumn.h>
 #include <aws/quicksight/model/ApplicableTo.h>
@@ -586,6 +588,8 @@
 #include <aws/quicksight/model/DeleteAgentResult.h>
 #include <aws/quicksight/model/DeleteAnalysisRequest.h>
 #include <aws/quicksight/model/DeleteAnalysisResult.h>
+#include <aws/quicksight/model/DeleteAppRequest.h>
+#include <aws/quicksight/model/DeleteAppResult.h>
 #include <aws/quicksight/model/DeleteApprovalPolicyRequest.h>
 #include <aws/quicksight/model/DeleteApprovalPolicyResult.h>
 #include <aws/quicksight/model/DeleteBrandAssignmentRequest.h>
@@ -680,6 +684,10 @@
 #include <aws/quicksight/model/DescribeAnalysisPermissionsResult.h>
 #include <aws/quicksight/model/DescribeAnalysisRequest.h>
 #include <aws/quicksight/model/DescribeAnalysisResult.h>
+#include <aws/quicksight/model/DescribeAppPermissionsRequest.h>
+#include <aws/quicksight/model/DescribeAppPermissionsResult.h>
+#include <aws/quicksight/model/DescribeAppRequest.h>
+#include <aws/quicksight/model/DescribeAppResult.h>
 #include <aws/quicksight/model/DescribeApprovalPolicyRequest.h>
 #include <aws/quicksight/model/DescribeApprovalPolicyResult.h>
 #include <aws/quicksight/model/DescribeAssetBundleExportJobRequest.h>
@@ -1153,6 +1161,9 @@
 #include <aws/quicksight/model/ListApprovalPoliciesPaginationTraits.h>
 #include <aws/quicksight/model/ListApprovalPoliciesRequest.h>
 #include <aws/quicksight/model/ListApprovalPoliciesResult.h>
+#include <aws/quicksight/model/ListAppsPaginationTraits.h>
+#include <aws/quicksight/model/ListAppsRequest.h>
+#include <aws/quicksight/model/ListAppsResult.h>
 #include <aws/quicksight/model/ListAssetBundleExportJobsPaginationTraits.h>
 #include <aws/quicksight/model/ListAssetBundleExportJobsRequest.h>
 #include <aws/quicksight/model/ListAssetBundleExportJobsResult.h>
@@ -1572,6 +1583,11 @@
 #include <aws/quicksight/model/SearchAnalysesPaginationTraits.h>
 #include <aws/quicksight/model/SearchAnalysesRequest.h>
 #include <aws/quicksight/model/SearchAnalysesResult.h>
+#include <aws/quicksight/model/SearchAppsFilter.h>
+#include <aws/quicksight/model/SearchAppsFilterName.h>
+#include <aws/quicksight/model/SearchAppsPaginationTraits.h>
+#include <aws/quicksight/model/SearchAppsRequest.h>
+#include <aws/quicksight/model/SearchAppsResult.h>
 #include <aws/quicksight/model/SearchDashboardsPaginationTraits.h>
 #include <aws/quicksight/model/SearchDashboardsRequest.h>
 #include <aws/quicksight/model/SearchDashboardsResult.h>
@@ -1941,6 +1957,8 @@
 #include <aws/quicksight/model/UpdateAnalysisPermissionsResult.h>
 #include <aws/quicksight/model/UpdateAnalysisRequest.h>
 #include <aws/quicksight/model/UpdateAnalysisResult.h>
+#include <aws/quicksight/model/UpdateAppPermissionsRequest.h>
+#include <aws/quicksight/model/UpdateAppPermissionsResult.h>
 #include <aws/quicksight/model/UpdateApplicationWithTokenExchangeGrantRequest.h>
 #include <aws/quicksight/model/UpdateApplicationWithTokenExchangeGrantResult.h>
 #include <aws/quicksight/model/UpdateApprovalPolicyRequest.h>

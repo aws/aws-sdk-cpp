@@ -22,6 +22,9 @@ static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
 static const int ROLLBACK_IN_PROGRESS_HASH = HashingUtils::HashString("ROLLBACK_IN_PROGRESS");
 static const int ROLLBACK_FAILED_HASH = HashingUtils::HashString("ROLLBACK_FAILED");
 static const int ROLLBACK_COMPLETE_HASH = HashingUtils::HashString("ROLLBACK_COMPLETE");
+static const int RESTART_IN_PROGRESS_HASH = HashingUtils::HashString("RESTART_IN_PROGRESS");
+static const int RESTART_COMPLETE_HASH = HashingUtils::HashString("RESTART_COMPLETE");
+static const int RESTART_FAILED_HASH = HashingUtils::HashString("RESTART_FAILED");
 
 ConnectorOperationState GetConnectorOperationStateForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -39,6 +42,12 @@ ConnectorOperationState GetConnectorOperationStateForName(const Aws::String& nam
     return ConnectorOperationState::ROLLBACK_FAILED;
   } else if (hashCode == ROLLBACK_COMPLETE_HASH) {
     return ConnectorOperationState::ROLLBACK_COMPLETE;
+  } else if (hashCode == RESTART_IN_PROGRESS_HASH) {
+    return ConnectorOperationState::RESTART_IN_PROGRESS;
+  } else if (hashCode == RESTART_COMPLETE_HASH) {
+    return ConnectorOperationState::RESTART_COMPLETE;
+  } else if (hashCode == RESTART_FAILED_HASH) {
+    return ConnectorOperationState::RESTART_FAILED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -67,6 +76,12 @@ Aws::String GetNameForConnectorOperationState(ConnectorOperationState enumValue)
       return "ROLLBACK_FAILED";
     case ConnectorOperationState::ROLLBACK_COMPLETE:
       return "ROLLBACK_COMPLETE";
+    case ConnectorOperationState::RESTART_IN_PROGRESS:
+      return "RESTART_IN_PROGRESS";
+    case ConnectorOperationState::RESTART_COMPLETE:
+      return "RESTART_COMPLETE";
+    case ConnectorOperationState::RESTART_FAILED:
+      return "RESTART_FAILED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

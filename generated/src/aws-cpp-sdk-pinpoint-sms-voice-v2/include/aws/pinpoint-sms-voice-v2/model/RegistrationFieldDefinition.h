@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
+#include <aws/pinpoint-sms-voice-v2/model/ConditionalBehavior.h>
 #include <aws/pinpoint-sms-voice-v2/model/FieldRequirement.h>
 #include <aws/pinpoint-sms-voice-v2/model/FieldType.h>
 #include <aws/pinpoint-sms-voice-v2/model/RegistrationFieldDisplayHints.h>
@@ -159,6 +160,27 @@ class RegistrationFieldDefinition {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The conditional behavior rules for this field. Only present when
+   * <b>FieldRequirement</b> is <b>CONDITIONAL</b>. Rules are evaluated in order and
+   * the first matching rule determines the field's resolved requirement. If no rule
+   * matches, the <b>DefaultBehavior</b> applies.</p>
+   */
+  inline const ConditionalBehavior& GetConditionalBehavior() const { return m_conditionalBehavior; }
+  inline bool ConditionalBehaviorHasBeenSet() const { return m_conditionalBehaviorHasBeenSet; }
+  template <typename ConditionalBehaviorT = ConditionalBehavior>
+  void SetConditionalBehavior(ConditionalBehaviorT&& value) {
+    m_conditionalBehaviorHasBeenSet = true;
+    m_conditionalBehavior = std::forward<ConditionalBehaviorT>(value);
+  }
+  template <typename ConditionalBehaviorT = ConditionalBehavior>
+  RegistrationFieldDefinition& WithConditionalBehavior(ConditionalBehaviorT&& value) {
+    SetConditionalBehavior(std::forward<ConditionalBehaviorT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_sectionPath;
 
@@ -173,6 +195,8 @@ class RegistrationFieldDefinition {
   TextValidation m_textValidation;
 
   RegistrationFieldDisplayHints m_displayHints;
+
+  ConditionalBehavior m_conditionalBehavior;
   bool m_sectionPathHasBeenSet = false;
   bool m_fieldPathHasBeenSet = false;
   bool m_fieldTypeHasBeenSet = false;
@@ -180,6 +204,7 @@ class RegistrationFieldDefinition {
   bool m_selectValidationHasBeenSet = false;
   bool m_textValidationHasBeenSet = false;
   bool m_displayHintsHasBeenSet = false;
+  bool m_conditionalBehaviorHasBeenSet = false;
 };
 
 }  // namespace Model

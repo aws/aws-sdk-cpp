@@ -10,7 +10,7 @@
 namespace Aws {
 namespace AgentRegistry {
 namespace Model {
-enum class RecordType { NOT_SET, MCP, AGENT, CUSTOM, SKILL };
+enum class RecordType { NOT_SET, MCP, AGENT, CUSTOM, SKILL, GATEWAY };
 
 namespace RecordTypeMapper {
 AWS_AGENTREGISTRY_API RecordType GetRecordTypeForName(const Aws::String& name);

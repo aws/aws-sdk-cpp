@@ -34,7 +34,7 @@ class ResolveCaseRequest : public SupportRequest {
   /**
    * <p>The support case ID requested or returned in the call. The case ID is an
    * alphanumeric string formatted as shown in this example:
-   * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
+   * case-<i>12345678910-exen-2025-c4c1d2bf33c5cf47</i> </p>
    */
   inline const Aws::String& GetCaseId() const { return m_caseId; }
   inline bool CaseIdHasBeenSet() const { return m_caseIdHasBeenSet; }
@@ -49,9 +49,31 @@ class ResolveCaseRequest : public SupportRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to validate the request without actually resolving the
+   * case. When set to <code>true</code>, the request is validated but the case isn't
+   * resolved, and the operation returns a <code>DryRunOperationException</code>.
+   * When omitted or set to <code>false</code>, the request runs normally.</p>
+   */
+  inline bool GetDryRun() const { return m_dryRun; }
+  inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+  inline void SetDryRun(bool value) {
+    m_dryRunHasBeenSet = true;
+    m_dryRun = value;
+  }
+  inline ResolveCaseRequest& WithDryRun(bool value) {
+    SetDryRun(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_caseId;
+
+  bool m_dryRun{false};
   bool m_caseIdHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
 };
 
 }  // namespace Model

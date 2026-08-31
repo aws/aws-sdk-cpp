@@ -42,6 +42,10 @@ UpdateRegistryResult& UpdateRegistryResult::operator=(const Aws::AmazonWebServic
     m_discoveryConfiguration = jsonValue.GetObject("discoveryConfiguration");
     m_discoveryConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("encryptionConfiguration")) {
+    m_encryptionConfiguration = jsonValue.GetObject("encryptionConfiguration");
+    m_encryptionConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("approvalConfiguration")) {
     m_approvalConfiguration = jsonValue.GetObject("approvalConfiguration");
     m_approvalConfigurationHasBeenSet = true;
@@ -53,6 +57,10 @@ UpdateRegistryResult& UpdateRegistryResult::operator=(const Aws::AmazonWebServic
   if (jsonValue.ValueExists("statusReason")) {
     m_statusReason = jsonValue.GetString("statusReason");
     m_statusReasonHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("autoDetection")) {
+    m_autoDetection = jsonValue.GetObject("autoDetection");
+    m_autoDetectionHasBeenSet = true;
   }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");

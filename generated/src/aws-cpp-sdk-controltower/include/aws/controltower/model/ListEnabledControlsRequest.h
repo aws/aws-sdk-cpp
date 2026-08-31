@@ -31,8 +31,10 @@ class ListEnabledControlsRequest : public ControlTowerRequest {
 
   ///@{
   /**
-   * <p>The ARN of the organizational unit. For information on how to find the
-   * <code>targetIdentifier</code>, see <a
+   * <p>The ARN of the target. The value depends on the target type:</p> <ul> <li>
+   * <p>Organizational unit (OU) – Specify the ARN of the OU.</p> </li> <li>
+   * <p>Account – Specify the ARN of the account.</p> </li> </ul> <p>For information
+   * on how to find the <code>targetIdentifier</code>, see <a
    * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
    * overview page</a>.</p>
    */
@@ -106,8 +108,8 @@ class ListEnabledControlsRequest : public ControlTowerRequest {
 
   ///@{
   /**
-   * <p>A boolean value that determines whether to include enabled controls from
-   * child organizational units in the response.</p>
+   * <p>Specifies whether to include enabled controls from child organizational units
+   * and child accounts in the response.</p>
    */
   inline bool GetIncludeChildren() const { return m_includeChildren; }
   inline bool IncludeChildrenHasBeenSet() const { return m_includeChildrenHasBeenSet; }

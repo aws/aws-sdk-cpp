@@ -123,6 +123,14 @@ static const int ml_g6_12xlarge_HASH = HashingUtils::HashString("ml.g6.12xlarge"
 static const int ml_g6_16xlarge_HASH = HashingUtils::HashString("ml.g6.16xlarge");
 static const int ml_g6_24xlarge_HASH = HashingUtils::HashString("ml.g6.24xlarge");
 static const int ml_g6_48xlarge_HASH = HashingUtils::HashString("ml.g6.48xlarge");
+static const int ml_g6e_xlarge_HASH = HashingUtils::HashString("ml.g6e.xlarge");
+static const int ml_g6e_2xlarge_HASH = HashingUtils::HashString("ml.g6e.2xlarge");
+static const int ml_g6e_4xlarge_HASH = HashingUtils::HashString("ml.g6e.4xlarge");
+static const int ml_g6e_8xlarge_HASH = HashingUtils::HashString("ml.g6e.8xlarge");
+static const int ml_g6e_12xlarge_HASH = HashingUtils::HashString("ml.g6e.12xlarge");
+static const int ml_g6e_16xlarge_HASH = HashingUtils::HashString("ml.g6e.16xlarge");
+static const int ml_g6e_24xlarge_HASH = HashingUtils::HashString("ml.g6e.24xlarge");
+static const int ml_g6e_48xlarge_HASH = HashingUtils::HashString("ml.g6e.48xlarge");
 
 TransformInstanceType GetTransformInstanceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -342,6 +350,22 @@ TransformInstanceType GetTransformInstanceTypeForName(const Aws::String& name) {
     return TransformInstanceType::ml_g6_24xlarge;
   } else if (hashCode == ml_g6_48xlarge_HASH) {
     return TransformInstanceType::ml_g6_48xlarge;
+  } else if (hashCode == ml_g6e_xlarge_HASH) {
+    return TransformInstanceType::ml_g6e_xlarge;
+  } else if (hashCode == ml_g6e_2xlarge_HASH) {
+    return TransformInstanceType::ml_g6e_2xlarge;
+  } else if (hashCode == ml_g6e_4xlarge_HASH) {
+    return TransformInstanceType::ml_g6e_4xlarge;
+  } else if (hashCode == ml_g6e_8xlarge_HASH) {
+    return TransformInstanceType::ml_g6e_8xlarge;
+  } else if (hashCode == ml_g6e_12xlarge_HASH) {
+    return TransformInstanceType::ml_g6e_12xlarge;
+  } else if (hashCode == ml_g6e_16xlarge_HASH) {
+    return TransformInstanceType::ml_g6e_16xlarge;
+  } else if (hashCode == ml_g6e_24xlarge_HASH) {
+    return TransformInstanceType::ml_g6e_24xlarge;
+  } else if (hashCode == ml_g6e_48xlarge_HASH) {
+    return TransformInstanceType::ml_g6e_48xlarge;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -572,6 +596,22 @@ Aws::String GetNameForTransformInstanceType(TransformInstanceType enumValue) {
       return "ml.g6.24xlarge";
     case TransformInstanceType::ml_g6_48xlarge:
       return "ml.g6.48xlarge";
+    case TransformInstanceType::ml_g6e_xlarge:
+      return "ml.g6e.xlarge";
+    case TransformInstanceType::ml_g6e_2xlarge:
+      return "ml.g6e.2xlarge";
+    case TransformInstanceType::ml_g6e_4xlarge:
+      return "ml.g6e.4xlarge";
+    case TransformInstanceType::ml_g6e_8xlarge:
+      return "ml.g6e.8xlarge";
+    case TransformInstanceType::ml_g6e_12xlarge:
+      return "ml.g6e.12xlarge";
+    case TransformInstanceType::ml_g6e_16xlarge:
+      return "ml.g6e.16xlarge";
+    case TransformInstanceType::ml_g6e_24xlarge:
+      return "ml.g6e.24xlarge";
+    case TransformInstanceType::ml_g6e_48xlarge:
+      return "ml.g6e.48xlarge";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

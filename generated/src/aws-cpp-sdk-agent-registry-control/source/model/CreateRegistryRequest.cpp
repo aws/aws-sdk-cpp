@@ -23,6 +23,10 @@ Aws::String CreateRegistryRequest::SerializePayload() const {
     payload.WithString("description", m_description);
   }
 
+  if (m_encryptionConfigurationHasBeenSet) {
+    payload.WithObject("encryptionConfiguration", m_encryptionConfiguration.Jsonize());
+  }
+
   if (m_discoveryConfigurationHasBeenSet) {
     payload.WithObject("discoveryConfiguration", m_discoveryConfiguration.Jsonize());
   }
@@ -41,6 +45,10 @@ Aws::String CreateRegistryRequest::SerializePayload() const {
 
   if (m_approvalConfigurationHasBeenSet) {
     payload.WithObject("approvalConfiguration", m_approvalConfiguration.Jsonize());
+  }
+
+  if (m_autoDetectionConfigurationHasBeenSet) {
+    payload.WithObject("autoDetectionConfiguration", m_autoDetectionConfiguration.Jsonize());
   }
 
   return payload.View().WriteReadable();

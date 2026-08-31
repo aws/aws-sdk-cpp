@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/agent-registry-control/AgentRegistryControl_EXPORTS.h>
+#include <aws/agent-registry-control/model/AutoDetection.h>
 #include <aws/agent-registry-control/model/DiscoveryConfiguration.h>
 #include <aws/agent-registry-control/model/RegistryStatus.h>
 #include <aws/core/utils/DateTime.h>
@@ -161,6 +162,26 @@ class RegistrySummary {
 
   ///@{
   /**
+   * <p>The registry's auto-detection properties, including the requested
+   * configuration and the current detection status. Present only when auto-detection
+   * was configured for the registry.</p>
+   */
+  inline const AutoDetection& GetAutoDetection() const { return m_autoDetection; }
+  inline bool AutoDetectionHasBeenSet() const { return m_autoDetectionHasBeenSet; }
+  template <typename AutoDetectionT = AutoDetection>
+  void SetAutoDetection(AutoDetectionT&& value) {
+    m_autoDetectionHasBeenSet = true;
+    m_autoDetection = std::forward<AutoDetectionT>(value);
+  }
+  template <typename AutoDetectionT = AutoDetection>
+  RegistrySummary& WithAutoDetection(AutoDetectionT&& value) {
+    SetAutoDetection(std::forward<AutoDetectionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The timestamp when the registry was created</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -209,6 +230,8 @@ class RegistrySummary {
 
   Aws::String m_statusReason;
 
+  AutoDetection m_autoDetection;
+
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
@@ -219,6 +242,7 @@ class RegistrySummary {
   bool m_discoveryConfigurationHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
+  bool m_autoDetectionHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };

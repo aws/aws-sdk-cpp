@@ -96,6 +96,8 @@
 #include <aws/kafkaconnect/model/ProvisionedCapacity.h>
 #include <aws/kafkaconnect/model/ProvisionedCapacityDescription.h>
 #include <aws/kafkaconnect/model/ProvisionedCapacityUpdate.h>
+#include <aws/kafkaconnect/model/RestartConnectorRequest.h>
+#include <aws/kafkaconnect/model/RestartConnectorResult.h>
 #include <aws/kafkaconnect/model/S3Location.h>
 #include <aws/kafkaconnect/model/S3LocationDescription.h>
 #include <aws/kafkaconnect/model/S3LogDelivery.h>

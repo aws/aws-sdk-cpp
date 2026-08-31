@@ -18,6 +18,12 @@
 #include <aws/agent-registry-control/AgentRegistryControl_EXPORTS.h>
 #include <aws/agent-registry-control/internal/AgentRegistryControlEndpointRules.h>
 #include <aws/agent-registry-control/model/A2aAgentCardDescriptor.h>
+#include <aws/agent-registry-control/model/AgUiDescriptor.h>
+#include <aws/agent-registry-control/model/AgentCoreGatewayProtocolType.h>
+#include <aws/agent-registry-control/model/AgentCoreGatewaySourceDetails.h>
+#include <aws/agent-registry-control/model/AgentCoreRuntimeProtocolConfiguration.h>
+#include <aws/agent-registry-control/model/AgentCoreRuntimeServerProtocol.h>
+#include <aws/agent-registry-control/model/AgentCoreRuntimeSourceDetails.h>
 #include <aws/agent-registry-control/model/AgentSkillsAdditionalData.h>
 #include <aws/agent-registry-control/model/AgentSkillsDefinitionDescriptor.h>
 #include <aws/agent-registry-control/model/AgentSkillsMdDescriptor.h>
@@ -25,6 +31,10 @@
 #include <aws/agent-registry-control/model/AuthorizerConfiguration.h>
 #include <aws/agent-registry-control/model/AuthorizingClaimMatchValueType.h>
 #include <aws/agent-registry-control/model/AutoApprovalRule.h>
+#include <aws/agent-registry-control/model/AutoDetection.h>
+#include <aws/agent-registry-control/model/AutoDetectionConfiguration.h>
+#include <aws/agent-registry-control/model/AutoDetectionScope.h>
+#include <aws/agent-registry-control/model/AutoDetectionStatus.h>
 #include <aws/agent-registry-control/model/ClaimMatchOperatorType.h>
 #include <aws/agent-registry-control/model/ClaimMatchValueType.h>
 #include <aws/agent-registry-control/model/CreateRegistryRecordRequest.h>
@@ -42,11 +52,13 @@
 #include <aws/agent-registry-control/model/DescriptorSourceFromUrl.h>
 #include <aws/agent-registry-control/model/Descriptors.h>
 #include <aws/agent-registry-control/model/DiscoveryConfiguration.h>
+#include <aws/agent-registry-control/model/EncryptionConfiguration.h>
 #include <aws/agent-registry-control/model/EndpointIpAddressType.h>
 #include <aws/agent-registry-control/model/GetRegistryRecordRequest.h>
 #include <aws/agent-registry-control/model/GetRegistryRecordResult.h>
 #include <aws/agent-registry-control/model/GetRegistryRequest.h>
 #include <aws/agent-registry-control/model/GetRegistryResult.h>
+#include <aws/agent-registry-control/model/HttpDescriptor.h>
 #include <aws/agent-registry-control/model/InboundTokenClaimValueType.h>
 #include <aws/agent-registry-control/model/ListRegistriesPaginationTraits.h>
 #include <aws/agent-registry-control/model/ListRegistriesRequest.h>
@@ -62,6 +74,9 @@
 #include <aws/agent-registry-control/model/McpToolsDescriptor.h>
 #include <aws/agent-registry-control/model/PrivateEndpoint.h>
 #include <aws/agent-registry-control/model/PrivateEndpointOverride.h>
+#include <aws/agent-registry-control/model/Provenance.h>
+#include <aws/agent-registry-control/model/ProvenanceRelation.h>
+#include <aws/agent-registry-control/model/ProvenanceSummary.h>
 #include <aws/agent-registry-control/model/RecordType.h>
 #include <aws/agent-registry-control/model/RegistryAuthorizerType.h>
 #include <aws/agent-registry-control/model/RegistryFilter.h>
@@ -79,6 +94,8 @@
 #include <aws/agent-registry-control/model/RegistryStatus.h>
 #include <aws/agent-registry-control/model/RegistrySummary.h>
 #include <aws/agent-registry-control/model/SelfManagedLatticeResource.h>
+#include <aws/agent-registry-control/model/SourceDetails.h>
+#include <aws/agent-registry-control/model/SourceType.h>
 #include <aws/agent-registry-control/model/SubmitRegistryRecordForApprovalRequest.h>
 #include <aws/agent-registry-control/model/SubmitRegistryRecordForApprovalResult.h>
 #include <aws/agent-registry-control/model/TagResourceRequest.h>
@@ -93,6 +110,8 @@
 #include <aws/agent-registry-control/model/UpdateRegistryResult.h>
 #include <aws/agent-registry-control/model/UpdatedA2aAgentCardDescriptor.h>
 #include <aws/agent-registry-control/model/UpdatedA2aAgentCardDescriptorFields.h>
+#include <aws/agent-registry-control/model/UpdatedAgUiDescriptor.h>
+#include <aws/agent-registry-control/model/UpdatedAgUiDescriptorFields.h>
 #include <aws/agent-registry-control/model/UpdatedAgentSkillsAdditionalData.h>
 #include <aws/agent-registry-control/model/UpdatedAgentSkillsAdditionalDataFields.h>
 #include <aws/agent-registry-control/model/UpdatedAgentSkillsDefinitionDescriptor.h>
@@ -101,6 +120,7 @@
 #include <aws/agent-registry-control/model/UpdatedAgentSkillsMdDescriptorFields.h>
 #include <aws/agent-registry-control/model/UpdatedApprovalConfiguration.h>
 #include <aws/agent-registry-control/model/UpdatedAuthorizerConfiguration.h>
+#include <aws/agent-registry-control/model/UpdatedAutoDetectionConfiguration.h>
 #include <aws/agent-registry-control/model/UpdatedCustomDescriptor.h>
 #include <aws/agent-registry-control/model/UpdatedCustomDescriptorFields.h>
 #include <aws/agent-registry-control/model/UpdatedDataSchemaVersion.h>
@@ -111,6 +131,8 @@
 #include <aws/agent-registry-control/model/UpdatedDescriptorsFields.h>
 #include <aws/agent-registry-control/model/UpdatedDiscoveryConfiguration.h>
 #include <aws/agent-registry-control/model/UpdatedDisplayName.h>
+#include <aws/agent-registry-control/model/UpdatedHttpDescriptor.h>
+#include <aws/agent-registry-control/model/UpdatedHttpDescriptorFields.h>
 #include <aws/agent-registry-control/model/UpdatedMcpServerAdditionalData.h>
 #include <aws/agent-registry-control/model/UpdatedMcpServerAdditionalDataFields.h>
 #include <aws/agent-registry-control/model/UpdatedMcpServerDescriptor.h>
@@ -120,6 +142,7 @@
 #include <aws/agent-registry-control/model/ValidationException.h>
 #include <aws/agent-registry-control/model/ValidationExceptionField.h>
 #include <aws/agent-registry-control/model/ValidationExceptionReason.h>
+#include <aws/agent-registry-control/model/WorkloadIdentityDetails.h>
 
 using AgentRegistryControlIncludeTest = ::testing::Test;
 

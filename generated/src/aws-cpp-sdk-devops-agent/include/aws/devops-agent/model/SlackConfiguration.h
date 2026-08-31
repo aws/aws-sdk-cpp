@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devops-agent/DevOpsAgent_EXPORTS.h>
+#include <aws/devops-agent/model/SlackBidirectionalConfiguration.h>
 #include <aws/devops-agent/model/SlackTransmissionTarget.h>
 
 #include <utility>
@@ -85,15 +86,38 @@ class SlackConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Optional bidirectional communication configuration. Supply this configuration
+   * and set enabled to true so you can interact with the agent directly from
+   * Slack.</p>
+   */
+  inline const SlackBidirectionalConfiguration& GetBidirectional() const { return m_bidirectional; }
+  inline bool BidirectionalHasBeenSet() const { return m_bidirectionalHasBeenSet; }
+  template <typename BidirectionalT = SlackBidirectionalConfiguration>
+  void SetBidirectional(BidirectionalT&& value) {
+    m_bidirectionalHasBeenSet = true;
+    m_bidirectional = std::forward<BidirectionalT>(value);
+  }
+  template <typename BidirectionalT = SlackBidirectionalConfiguration>
+  SlackConfiguration& WithBidirectional(BidirectionalT&& value) {
+    SetBidirectional(std::forward<BidirectionalT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_workspaceId;
 
   Aws::String m_workspaceName;
 
   SlackTransmissionTarget m_transmissionTarget;
+
+  SlackBidirectionalConfiguration m_bidirectional;
   bool m_workspaceIdHasBeenSet = false;
   bool m_workspaceNameHasBeenSet = false;
   bool m_transmissionTargetHasBeenSet = false;
+  bool m_bidirectionalHasBeenSet = false;
 };
 
 }  // namespace Model

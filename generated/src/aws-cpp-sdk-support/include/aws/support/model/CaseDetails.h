@@ -27,15 +27,16 @@ namespace Model {
  * <b>CaseDetails</b> contains the following fields:</p> <ul> <li> <p>
  * <b>caseId</b> - The support case ID requested or returned in the call. The case
  * ID is an alphanumeric string formatted as shown in this example:
- * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>.</p> </li> <li> <p>
+ * case-<i>12345678910-exen-2025-c4c1d2bf33c5cf47</i>.</p> </li> <li> <p>
  * <b>categoryCode</b> - The category of problem for the support case. Corresponds
  * to the <code>CategoryCode</code> values returned by a call to
  * <a>DescribeServices</a>.</p> </li> <li> <p> <b>displayId</b> - The identifier
  * for the case on pages in the Amazon Web Services Support Center.</p> </li> <li>
  * <p> <b>language</b> - The language in which Amazon Web Services Support handles
  * the case. Amazon Web Services Support currently supports Chinese (“zh”), English
- * ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code
- * for the <code>language</code> parameter if you want support in that
+ * ("en"), Japanese ("ja") , Chinese ("zh"), Spanish ("es"), Portuguese ("pt"),
+ * French ("fr"), Korean (“ko”), and Turkish ("tr"). You must specify the ISO 639-1
+ * code for the <code>language</code> parameter if you want support in that
  * language.</p> </li> <li> <p> <b>nextToken</b> - A resumption point for
  * pagination.</p> </li> <li> <p> <b>recentCommunications</b> - One or more
  * <a>Communication</a> objects. Fields of these objects are
@@ -72,7 +73,7 @@ class CaseDetails {
   /**
    * <p>The support case ID requested or returned in the call. The case ID is an
    * alphanumeric string formatted as shown in this example:
-   * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
+   * case-<i>12345678910-exen-2025-c4c1d2bf33c5cf47</i> </p>
    */
   inline const Aws::String& GetCaseId() const { return m_caseId; }
   inline bool CaseIdHasBeenSet() const { return m_caseIdHasBeenSet; }
@@ -291,7 +292,8 @@ class CaseDetails {
   /**
    * <p>The language in which Amazon Web Services Support handles the case. Amazon
    * Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese
-   * ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the
+   * ("ja") , Chinese ("zh"), Spanish ("es"), Portuguese ("pt"), French ("fr"),
+   * Korean (“ko”), and Turkish ("tr"). You must specify the ISO 639-1 code for the
    * <code>language</code> parameter if you want support in that language.</p>
    */
   inline const Aws::String& GetLanguage() const { return m_language; }

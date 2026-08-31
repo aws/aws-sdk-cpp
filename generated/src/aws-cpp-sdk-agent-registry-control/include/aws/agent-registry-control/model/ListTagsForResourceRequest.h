@@ -29,7 +29,10 @@ class ListTagsForResourceRequest : public AgentRegistryControlRequest {
   AWS_AGENTREGISTRYCONTROL_API Aws::String SerializePayload() const override;
 
   ///@{
-
+  /**
+   * <p>The Amazon Resource Name (ARN) of the resource to list tags for. Supported
+   * resources include registries and registry records.</p>
+   */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
   inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
   template <typename ResourceArnT = Aws::String>

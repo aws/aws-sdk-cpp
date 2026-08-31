@@ -82,12 +82,35 @@ class AddAttachmentsToSetRequest : public SupportRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to validate the request without actually adding the
+   * attachments. When set to <code>true</code>, the request is validated but no
+   * attachments are stored, and the operation returns a
+   * <code>DryRunOperationException</code>. When omitted or set to
+   * <code>false</code>, the request runs normally.</p>
+   */
+  inline bool GetDryRun() const { return m_dryRun; }
+  inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+  inline void SetDryRun(bool value) {
+    m_dryRunHasBeenSet = true;
+    m_dryRun = value;
+  }
+  inline AddAttachmentsToSetRequest& WithDryRun(bool value) {
+    SetDryRun(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_attachmentSetId;
 
   Aws::Vector<Attachment> m_attachments;
+
+  bool m_dryRun{false};
   bool m_attachmentSetIdHasBeenSet = false;
   bool m_attachmentsHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
 };
 
 }  // namespace Model

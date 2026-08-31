@@ -37,8 +37,8 @@ class RegistryRecordOAuthCredentialProvider {
 
   ///@{
   /**
-   * <p>The &amp;ARN; of the OAuth 2.0 credential provider resource in Amazon Bedrock
-   * AgentCore Identity.</p>
+   * <p>The Amazon Resource Name (ARN) of the OAuth 2.0 credential provider resource
+   * in Amazon Bedrock AgentCore Identity.</p>
    */
   inline const Aws::String& GetProviderArn() const { return m_providerArn; }
   inline bool ProviderArnHasBeenSet() const { return m_providerArnHasBeenSet; }

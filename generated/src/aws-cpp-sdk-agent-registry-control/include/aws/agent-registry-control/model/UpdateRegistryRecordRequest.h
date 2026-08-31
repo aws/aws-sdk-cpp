@@ -6,11 +6,13 @@
 #pragma once
 #include <aws/agent-registry-control/AgentRegistryControlRequest.h>
 #include <aws/agent-registry-control/AgentRegistryControl_EXPORTS.h>
+#include <aws/agent-registry-control/model/Provenance.h>
 #include <aws/agent-registry-control/model/RecordType.h>
 #include <aws/agent-registry-control/model/UpdatedDescription.h>
 #include <aws/agent-registry-control/model/UpdatedDescriptors.h>
 #include <aws/agent-registry-control/model/UpdatedDisplayName.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -196,6 +198,28 @@ class UpdateRegistryRecordRequest : public AgentRegistryControlRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const Aws::Vector<Provenance>& GetProvenance() const { return m_provenance; }
+  inline bool ProvenanceHasBeenSet() const { return m_provenanceHasBeenSet; }
+  template <typename ProvenanceT = Aws::Vector<Provenance>>
+  void SetProvenance(ProvenanceT&& value) {
+    m_provenanceHasBeenSet = true;
+    m_provenance = std::forward<ProvenanceT>(value);
+  }
+  template <typename ProvenanceT = Aws::Vector<Provenance>>
+  UpdateRegistryRecordRequest& WithProvenance(ProvenanceT&& value) {
+    SetProvenance(std::forward<ProvenanceT>(value));
+    return *this;
+  }
+  template <typename ProvenanceT = Provenance>
+  UpdateRegistryRecordRequest& AddProvenance(ProvenanceT&& value) {
+    m_provenanceHasBeenSet = true;
+    m_provenance.emplace_back(std::forward<ProvenanceT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_registryId;
 
@@ -214,6 +238,8 @@ class UpdateRegistryRecordRequest : public AgentRegistryControlRequest {
   Aws::String m_recordVersion;
 
   bool m_triggerSynchronization{false};
+
+  Aws::Vector<Provenance> m_provenance;
   bool m_registryIdHasBeenSet = false;
   bool m_recordIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -223,6 +249,7 @@ class UpdateRegistryRecordRequest : public AgentRegistryControlRequest {
   bool m_descriptorsHasBeenSet = false;
   bool m_recordVersionHasBeenSet = false;
   bool m_triggerSynchronizationHasBeenSet = false;
+  bool m_provenanceHasBeenSet = false;
 };
 
 }  // namespace Model

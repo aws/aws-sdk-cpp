@@ -150,6 +150,7 @@
 #include <aws/connect/model/GetAttachedFileResult.h>
 #include <aws/connect/model/GetContactAttributesResult.h>
 #include <aws/connect/model/GetContactMetricsResult.h>
+#include <aws/connect/model/GetCrossRegionRoutingResult.h>
 #include <aws/connect/model/GetCurrentMetricDataResult.h>
 #include <aws/connect/model/GetCurrentUserDataResult.h>
 #include <aws/connect/model/GetEffectiveHoursOfOperationsResult.h>
@@ -317,6 +318,7 @@
 #include <aws/connect/model/UpdateContactRoutingDataResult.h>
 #include <aws/connect/model/UpdateContactScheduleResult.h>
 #include <aws/connect/model/UpdateContactTaskTemplateResult.h>
+#include <aws/connect/model/UpdateCrossRegionRoutingResult.h>
 #include <aws/connect/model/UpdateDataTableAttributeResult.h>
 #include <aws/connect/model/UpdateDataTableMetadataResult.h>
 #include <aws/connect/model/UpdateDataTablePrimaryValuesResult.h>
@@ -547,6 +549,7 @@ class EvaluateDataTableValuesRequest;
 class GetAttachedFileRequest;
 class GetContactAttributesRequest;
 class GetContactMetricsRequest;
+class GetCrossRegionRoutingRequest;
 class GetCurrentMetricDataRequest;
 class GetCurrentUserDataRequest;
 class GetEffectiveHoursOfOperationsRequest;
@@ -714,6 +717,7 @@ class UpdateContactFlowNameRequest;
 class UpdateContactRoutingDataRequest;
 class UpdateContactScheduleRequest;
 class UpdateContactTaskTemplateRequest;
+class UpdateCrossRegionRoutingRequest;
 class UpdateDataTableAttributeRequest;
 class UpdateDataTableMetadataRequest;
 class UpdateDataTablePrimaryValuesRequest;
@@ -943,6 +947,7 @@ typedef Aws::Utils::Outcome<EvaluateDataTableValuesResult, ConnectError> Evaluat
 typedef Aws::Utils::Outcome<GetAttachedFileResult, ConnectError> GetAttachedFileOutcome;
 typedef Aws::Utils::Outcome<GetContactAttributesResult, ConnectError> GetContactAttributesOutcome;
 typedef Aws::Utils::Outcome<GetContactMetricsResult, ConnectError> GetContactMetricsOutcome;
+typedef Aws::Utils::Outcome<GetCrossRegionRoutingResult, ConnectError> GetCrossRegionRoutingOutcome;
 typedef Aws::Utils::Outcome<GetCurrentMetricDataResult, ConnectError> GetCurrentMetricDataOutcome;
 typedef Aws::Utils::Outcome<GetCurrentUserDataResult, ConnectError> GetCurrentUserDataOutcome;
 typedef Aws::Utils::Outcome<GetEffectiveHoursOfOperationsResult, ConnectError> GetEffectiveHoursOfOperationsOutcome;
@@ -1110,6 +1115,7 @@ typedef Aws::Utils::Outcome<UpdateContactFlowNameResult, ConnectError> UpdateCon
 typedef Aws::Utils::Outcome<UpdateContactRoutingDataResult, ConnectError> UpdateContactRoutingDataOutcome;
 typedef Aws::Utils::Outcome<UpdateContactScheduleResult, ConnectError> UpdateContactScheduleOutcome;
 typedef Aws::Utils::Outcome<UpdateContactTaskTemplateResult, ConnectError> UpdateContactTaskTemplateOutcome;
+typedef Aws::Utils::Outcome<UpdateCrossRegionRoutingResult, ConnectError> UpdateCrossRegionRoutingOutcome;
 typedef Aws::Utils::Outcome<UpdateDataTableAttributeResult, ConnectError> UpdateDataTableAttributeOutcome;
 typedef Aws::Utils::Outcome<UpdateDataTableMetadataResult, ConnectError> UpdateDataTableMetadataOutcome;
 typedef Aws::Utils::Outcome<UpdateDataTablePrimaryValuesResult, ConnectError> UpdateDataTablePrimaryValuesOutcome;
@@ -1339,6 +1345,7 @@ typedef std::future<EvaluateDataTableValuesOutcome> EvaluateDataTableValuesOutco
 typedef std::future<GetAttachedFileOutcome> GetAttachedFileOutcomeCallable;
 typedef std::future<GetContactAttributesOutcome> GetContactAttributesOutcomeCallable;
 typedef std::future<GetContactMetricsOutcome> GetContactMetricsOutcomeCallable;
+typedef std::future<GetCrossRegionRoutingOutcome> GetCrossRegionRoutingOutcomeCallable;
 typedef std::future<GetCurrentMetricDataOutcome> GetCurrentMetricDataOutcomeCallable;
 typedef std::future<GetCurrentUserDataOutcome> GetCurrentUserDataOutcomeCallable;
 typedef std::future<GetEffectiveHoursOfOperationsOutcome> GetEffectiveHoursOfOperationsOutcomeCallable;
@@ -1506,6 +1513,7 @@ typedef std::future<UpdateContactFlowNameOutcome> UpdateContactFlowNameOutcomeCa
 typedef std::future<UpdateContactRoutingDataOutcome> UpdateContactRoutingDataOutcomeCallable;
 typedef std::future<UpdateContactScheduleOutcome> UpdateContactScheduleOutcomeCallable;
 typedef std::future<UpdateContactTaskTemplateOutcome> UpdateContactTaskTemplateOutcomeCallable;
+typedef std::future<UpdateCrossRegionRoutingOutcome> UpdateCrossRegionRoutingOutcomeCallable;
 typedef std::future<UpdateDataTableAttributeOutcome> UpdateDataTableAttributeOutcomeCallable;
 typedef std::future<UpdateDataTableMetadataOutcome> UpdateDataTableMetadataOutcomeCallable;
 typedef std::future<UpdateDataTablePrimaryValuesOutcome> UpdateDataTablePrimaryValuesOutcomeCallable;
@@ -2124,6 +2132,9 @@ typedef std::function<void(const ConnectClient*, const Model::GetContactAttribut
 typedef std::function<void(const ConnectClient*, const Model::GetContactMetricsRequest&, const Model::GetContactMetricsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetContactMetricsResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::GetCrossRegionRoutingRequest&, const Model::GetCrossRegionRoutingOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetCrossRegionRoutingResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::GetCurrentMetricDataRequest&, const Model::GetCurrentMetricDataOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetCurrentMetricDataResponseReceivedHandler;
@@ -2647,6 +2658,9 @@ typedef std::function<void(const ConnectClient*, const Model::UpdateContactSched
 typedef std::function<void(const ConnectClient*, const Model::UpdateContactTaskTemplateRequest&,
                            const Model::UpdateContactTaskTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateContactTaskTemplateResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::UpdateCrossRegionRoutingRequest&,
+                           const Model::UpdateCrossRegionRoutingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateCrossRegionRoutingResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::UpdateDataTableAttributeRequest&,
                            const Model::UpdateDataTableAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateDataTableAttributeResponseReceivedHandler;

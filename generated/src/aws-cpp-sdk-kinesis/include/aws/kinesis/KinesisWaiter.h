@@ -7,6 +7,9 @@
 #include <aws/core/utils/Waiter.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/kinesis/KinesisClient.h>
+#include <aws/kinesis/model/ChannelStatus.h>
+#include <aws/kinesis/model/DescribeChannelRequest.h>
+#include <aws/kinesis/model/DescribeChannelResult.h>
 #include <aws/kinesis/model/DescribeStreamRequest.h>
 #include <aws/kinesis/model/DescribeStreamResult.h>
 #include <aws/kinesis/model/StreamStatus.h>
@@ -19,6 +22,56 @@ namespace Kinesis {
 template <typename DerivedClient = KinesisClient>
 class KinesisWaiter {
  public:
+  Aws::Utils::WaiterOutcome<Model::DescribeChannelOutcome> WaitUntilChannelActive(const Model::DescribeChannelRequest& request) {
+    using OutcomeT = Model::DescribeChannelOutcome;
+    using RequestT = Model::DescribeChannelRequest;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ChannelActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
+        [](const Model::DescribeChannelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ChannelStatusMapper::GetNameForChannelStatus(result.GetChannelDescription().GetChannelStatus()) ==
+                 expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ChannelActiveWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("CREATING"),
+        [](const Model::DescribeChannelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ChannelStatusMapper::GetNameForChannelStatus(result.GetChannelDescription().GetChannelStatus()) ==
+                 expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ChannelActiveWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("UPDATING"),
+        [](const Model::DescribeChannelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ChannelStatusMapper::GetNameForChannelStatus(result.GetChannelDescription().GetChannelStatus()) ==
+                 expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ChannelActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETING"),
+        [](const Model::DescribeChannelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ChannelStatusMapper::GetNameForChannelStatus(result.GetChannelDescription().GetChannelStatus()) ==
+                 expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ChannelActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
+        [](const Model::DescribeChannelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ChannelStatusMapper::GetNameForChannelStatus(result.GetChannelDescription().GetChannelStatus()) ==
+                 expected.get<Aws::String>();
+        }));
+
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeChannel(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(10, 12, std::move(acceptors), operation, "WaitUntilChannelActive");
+    return waiter.Wait(request);
+  }
+
   Aws::Utils::WaiterOutcome<Model::DescribeStreamOutcome> WaitUntilStreamExists(const Model::DescribeStreamRequest& request) {
     using OutcomeT = Model::DescribeStreamOutcome;
     using RequestT = Model::DescribeStreamRequest;

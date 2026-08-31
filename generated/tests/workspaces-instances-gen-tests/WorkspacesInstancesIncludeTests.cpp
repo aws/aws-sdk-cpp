@@ -87,6 +87,7 @@
 #include <aws/workspaces-instances/model/ListWorkspaceInstancesResult.h>
 #include <aws/workspaces-instances/model/ManagedInstanceRequest.h>
 #include <aws/workspaces-instances/model/MarketTypeEnum.h>
+#include <aws/workspaces-instances/model/NestedVirtualizationEnum.h>
 #include <aws/workspaces-instances/model/Placement.h>
 #include <aws/workspaces-instances/model/PlatformTypeEnum.h>
 #include <aws/workspaces-instances/model/PrivateDnsNameOptionsRequest.h>

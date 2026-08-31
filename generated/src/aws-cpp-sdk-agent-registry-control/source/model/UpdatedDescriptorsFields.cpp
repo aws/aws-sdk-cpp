@@ -34,6 +34,14 @@ UpdatedDescriptorsFields& UpdatedDescriptorsFields::operator=(JsonView jsonValue
     m_custom = jsonValue.GetObject("custom");
     m_customHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("http")) {
+    m_http = jsonValue.GetObject("http");
+    m_httpHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("agui")) {
+    m_agui = jsonValue.GetObject("agui");
+    m_aguiHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +62,14 @@ JsonValue UpdatedDescriptorsFields::Jsonize() const {
 
   if (m_customHasBeenSet) {
     payload.WithObject("custom", m_custom.Jsonize());
+  }
+
+  if (m_httpHasBeenSet) {
+    payload.WithObject("http", m_http.Jsonize());
+  }
+
+  if (m_aguiHasBeenSet) {
+    payload.WithObject("agui", m_agui.Jsonize());
   }
 
   return payload;

@@ -35,6 +35,18 @@ Aws::String AddCommunicationToCaseRequest::SerializePayload() const {
     payload.WithString("attachmentSetId", m_attachmentSetId);
   }
 
+  if (m_uploadIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> uploadIdsJsonList(m_uploadIds.size());
+    for (unsigned uploadIdsIndex = 0; uploadIdsIndex < uploadIdsJsonList.GetLength(); ++uploadIdsIndex) {
+      uploadIdsJsonList[uploadIdsIndex].AsString(m_uploadIds[uploadIdsIndex]);
+    }
+    payload.WithArray("uploadIds", std::move(uploadIdsJsonList));
+  }
+
+  if (m_dryRunHasBeenSet) {
+    payload.WithBool("dryRun", m_dryRun);
+  }
+
   return payload.View().WriteReadable();
 }
 

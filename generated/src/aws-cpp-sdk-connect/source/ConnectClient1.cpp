@@ -79,6 +79,7 @@
 #include <aws/connect/model/GetAttachedFileRequest.h>
 #include <aws/connect/model/GetContactAttributesRequest.h>
 #include <aws/connect/model/GetContactMetricsRequest.h>
+#include <aws/connect/model/GetCrossRegionRoutingRequest.h>
 #include <aws/connect/model/GetCurrentMetricDataRequest.h>
 #include <aws/connect/model/GetCurrentUserDataRequest.h>
 #include <aws/connect/model/GetEffectiveHoursOfOperationsRequest.h>
@@ -105,7 +106,6 @@
 #include <aws/connect/model/ListContactEvaluationsRequest.h>
 #include <aws/connect/model/ListContactFlowModuleAliasesRequest.h>
 #include <aws/connect/model/ListContactFlowModuleVersionsRequest.h>
-#include <aws/connect/model/ListContactFlowModulesRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/CoreErrors.h>
@@ -1927,6 +1927,24 @@ GetContactMetricsOutcome ConnectClient::GetContactMetrics(const GetContactMetric
                             : GetContactMetricsOutcome(std::move(result.GetError()));
 }
 
+GetCrossRegionRoutingOutcome ConnectClient::GetCrossRegionRouting(const GetCrossRegionRoutingRequest& request) const {
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetCrossRegionRouting", "Required field: InstanceId, is not set");
+    return GetCrossRegionRoutingOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                             "Missing required field [InstanceId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/cross-region-routing/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCrossRegionRoutingOutcome(result.GetResultWithOwnership())
+                            : GetCrossRegionRoutingOutcome(std::move(result.GetError()));
+}
+
 GetCurrentMetricDataOutcome ConnectClient::GetCurrentMetricData(const GetCurrentMetricDataRequest& request) const {
   if (!request.InstanceIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetCurrentMetricData", "Required field: InstanceId, is not set");
@@ -2491,22 +2509,4 @@ ListContactFlowModuleVersionsOutcome ConnectClient::ListContactFlowModuleVersion
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListContactFlowModuleVersionsOutcome(result.GetResultWithOwnership())
                             : ListContactFlowModuleVersionsOutcome(std::move(result.GetError()));
-}
-
-ListContactFlowModulesOutcome ConnectClient::ListContactFlowModules(const ListContactFlowModulesRequest& request) const {
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListContactFlowModules", "Required field: InstanceId, is not set");
-    return ListContactFlowModulesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                              "Missing required field [InstanceId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/contact-flow-modules-summary/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
-  return result.IsSuccess() ? ListContactFlowModulesOutcome(result.GetResultWithOwnership())
-                            : ListContactFlowModulesOutcome(std::move(result.GetError()));
 }

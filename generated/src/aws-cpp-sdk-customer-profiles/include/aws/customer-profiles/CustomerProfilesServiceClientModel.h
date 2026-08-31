@@ -20,6 +20,7 @@
 
 /* Service model headers required in CustomerProfilesClient header */
 #include <aws/customer-profiles/model/AddProfileKeyResult.h>
+#include <aws/customer-profiles/model/AssociateStreamForSegmentsResult.h>
 #include <aws/customer-profiles/model/BatchGetCalculatedAttributeForProfileResult.h>
 #include <aws/customer-profiles/model/BatchGetProfileResult.h>
 #include <aws/customer-profiles/model/BatchPutProfileObjectResult.h>
@@ -52,8 +53,10 @@
 #include <aws/customer-profiles/model/DeleteRecommenderResult.h>
 #include <aws/customer-profiles/model/DeleteRecommenderSchemaResult.h>
 #include <aws/customer-profiles/model/DeleteSegmentDefinitionResult.h>
+#include <aws/customer-profiles/model/DeleteSegmentSubscriptionResult.h>
 #include <aws/customer-profiles/model/DeleteWorkflowResult.h>
 #include <aws/customer-profiles/model/DetectProfileObjectTypeResult.h>
+#include <aws/customer-profiles/model/DisassociateStreamForSegmentsResult.h>
 #include <aws/customer-profiles/model/GetAutoMergingPreviewResult.h>
 #include <aws/customer-profiles/model/GetCalculatedAttributeDefinitionResult.h>
 #include <aws/customer-profiles/model/GetCalculatedAttributeForProfileResult.h>
@@ -77,7 +80,9 @@
 #include <aws/customer-profiles/model/GetSegmentEstimateResult.h>
 #include <aws/customer-profiles/model/GetSegmentMembershipResult.h>
 #include <aws/customer-profiles/model/GetSegmentSnapshotResult.h>
+#include <aws/customer-profiles/model/GetSegmentSubscriptionResult.h>
 #include <aws/customer-profiles/model/GetSimilarProfilesResult.h>
+#include <aws/customer-profiles/model/GetStreamForSegmentsResult.h>
 #include <aws/customer-profiles/model/GetUploadJobPathResult.h>
 #include <aws/customer-profiles/model/GetUploadJobResult.h>
 #include <aws/customer-profiles/model/GetWorkflowResult.h>
@@ -108,6 +113,7 @@
 #include <aws/customer-profiles/model/ListRecommendersResult.h>
 #include <aws/customer-profiles/model/ListRuleBasedMatchesResult.h>
 #include <aws/customer-profiles/model/ListSegmentDefinitionsResult.h>
+#include <aws/customer-profiles/model/ListSegmentSubscriptionEventsResult.h>
 #include <aws/customer-profiles/model/ListTagsForResourceResult.h>
 #include <aws/customer-profiles/model/ListUploadJobsResult.h>
 #include <aws/customer-profiles/model/ListWorkflowsResult.h>
@@ -116,6 +122,7 @@
 #include <aws/customer-profiles/model/PutIntegrationResult.h>
 #include <aws/customer-profiles/model/PutProfileObjectResult.h>
 #include <aws/customer-profiles/model/PutProfileObjectTypeResult.h>
+#include <aws/customer-profiles/model/PutSegmentSubscriptionResult.h>
 #include <aws/customer-profiles/model/SearchProfilesResult.h>
 #include <aws/customer-profiles/model/StartRecommenderResult.h>
 #include <aws/customer-profiles/model/StartUploadJobResult.h>
@@ -163,6 +170,7 @@ using CustomerProfilesEndpointProvider = Aws::CustomerProfiles::Endpoint::Custom
 namespace Model {
 /* Service model forward declarations required in CustomerProfilesClient header */
 class AddProfileKeyRequest;
+class AssociateStreamForSegmentsRequest;
 class BatchGetCalculatedAttributeForProfileRequest;
 class BatchGetProfileRequest;
 class BatchPutProfileObjectRequest;
@@ -195,8 +203,10 @@ class DeleteRecommenderRequest;
 class DeleteRecommenderFilterRequest;
 class DeleteRecommenderSchemaRequest;
 class DeleteSegmentDefinitionRequest;
+class DeleteSegmentSubscriptionRequest;
 class DeleteWorkflowRequest;
 class DetectProfileObjectTypeRequest;
+class DisassociateStreamForSegmentsRequest;
 class GetAutoMergingPreviewRequest;
 class GetCalculatedAttributeDefinitionRequest;
 class GetCalculatedAttributeForProfileRequest;
@@ -220,7 +230,9 @@ class GetSegmentDefinitionRequest;
 class GetSegmentEstimateRequest;
 class GetSegmentMembershipRequest;
 class GetSegmentSnapshotRequest;
+class GetSegmentSubscriptionRequest;
 class GetSimilarProfilesRequest;
+class GetStreamForSegmentsRequest;
 class GetUploadJobRequest;
 class GetUploadJobPathRequest;
 class GetWorkflowRequest;
@@ -248,6 +260,7 @@ class ListRecommenderSchemasRequest;
 class ListRecommendersRequest;
 class ListRuleBasedMatchesRequest;
 class ListSegmentDefinitionsRequest;
+class ListSegmentSubscriptionEventsRequest;
 class ListTagsForResourceRequest;
 class ListUploadJobsRequest;
 class ListWorkflowsRequest;
@@ -256,6 +269,7 @@ class PutDomainObjectTypeRequest;
 class PutIntegrationRequest;
 class PutProfileObjectRequest;
 class PutProfileObjectTypeRequest;
+class PutSegmentSubscriptionRequest;
 class SearchProfilesRequest;
 class StartRecommenderRequest;
 class StartUploadJobRequest;
@@ -273,6 +287,7 @@ class UpdateRecommenderRequest;
 
 /* Service model Outcome class definitions */
 typedef Aws::Utils::Outcome<AddProfileKeyResult, CustomerProfilesError> AddProfileKeyOutcome;
+typedef Aws::Utils::Outcome<AssociateStreamForSegmentsResult, CustomerProfilesError> AssociateStreamForSegmentsOutcome;
 typedef Aws::Utils::Outcome<BatchGetCalculatedAttributeForProfileResult, CustomerProfilesError>
     BatchGetCalculatedAttributeForProfileOutcome;
 typedef Aws::Utils::Outcome<BatchGetProfileResult, CustomerProfilesError> BatchGetProfileOutcome;
@@ -306,8 +321,10 @@ typedef Aws::Utils::Outcome<DeleteRecommenderResult, CustomerProfilesError> Dele
 typedef Aws::Utils::Outcome<DeleteRecommenderFilterResult, CustomerProfilesError> DeleteRecommenderFilterOutcome;
 typedef Aws::Utils::Outcome<DeleteRecommenderSchemaResult, CustomerProfilesError> DeleteRecommenderSchemaOutcome;
 typedef Aws::Utils::Outcome<DeleteSegmentDefinitionResult, CustomerProfilesError> DeleteSegmentDefinitionOutcome;
+typedef Aws::Utils::Outcome<DeleteSegmentSubscriptionResult, CustomerProfilesError> DeleteSegmentSubscriptionOutcome;
 typedef Aws::Utils::Outcome<DeleteWorkflowResult, CustomerProfilesError> DeleteWorkflowOutcome;
 typedef Aws::Utils::Outcome<DetectProfileObjectTypeResult, CustomerProfilesError> DetectProfileObjectTypeOutcome;
+typedef Aws::Utils::Outcome<DisassociateStreamForSegmentsResult, CustomerProfilesError> DisassociateStreamForSegmentsOutcome;
 typedef Aws::Utils::Outcome<GetAutoMergingPreviewResult, CustomerProfilesError> GetAutoMergingPreviewOutcome;
 typedef Aws::Utils::Outcome<GetCalculatedAttributeDefinitionResult, CustomerProfilesError> GetCalculatedAttributeDefinitionOutcome;
 typedef Aws::Utils::Outcome<GetCalculatedAttributeForProfileResult, CustomerProfilesError> GetCalculatedAttributeForProfileOutcome;
@@ -331,7 +348,9 @@ typedef Aws::Utils::Outcome<GetSegmentDefinitionResult, CustomerProfilesError> G
 typedef Aws::Utils::Outcome<GetSegmentEstimateResult, CustomerProfilesError> GetSegmentEstimateOutcome;
 typedef Aws::Utils::Outcome<GetSegmentMembershipResult, CustomerProfilesError> GetSegmentMembershipOutcome;
 typedef Aws::Utils::Outcome<GetSegmentSnapshotResult, CustomerProfilesError> GetSegmentSnapshotOutcome;
+typedef Aws::Utils::Outcome<GetSegmentSubscriptionResult, CustomerProfilesError> GetSegmentSubscriptionOutcome;
 typedef Aws::Utils::Outcome<GetSimilarProfilesResult, CustomerProfilesError> GetSimilarProfilesOutcome;
+typedef Aws::Utils::Outcome<GetStreamForSegmentsResult, CustomerProfilesError> GetStreamForSegmentsOutcome;
 typedef Aws::Utils::Outcome<GetUploadJobResult, CustomerProfilesError> GetUploadJobOutcome;
 typedef Aws::Utils::Outcome<GetUploadJobPathResult, CustomerProfilesError> GetUploadJobPathOutcome;
 typedef Aws::Utils::Outcome<GetWorkflowResult, CustomerProfilesError> GetWorkflowOutcome;
@@ -359,6 +378,7 @@ typedef Aws::Utils::Outcome<ListRecommenderSchemasResult, CustomerProfilesError>
 typedef Aws::Utils::Outcome<ListRecommendersResult, CustomerProfilesError> ListRecommendersOutcome;
 typedef Aws::Utils::Outcome<ListRuleBasedMatchesResult, CustomerProfilesError> ListRuleBasedMatchesOutcome;
 typedef Aws::Utils::Outcome<ListSegmentDefinitionsResult, CustomerProfilesError> ListSegmentDefinitionsOutcome;
+typedef Aws::Utils::Outcome<ListSegmentSubscriptionEventsResult, CustomerProfilesError> ListSegmentSubscriptionEventsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, CustomerProfilesError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<ListUploadJobsResult, CustomerProfilesError> ListUploadJobsOutcome;
 typedef Aws::Utils::Outcome<ListWorkflowsResult, CustomerProfilesError> ListWorkflowsOutcome;
@@ -367,6 +387,7 @@ typedef Aws::Utils::Outcome<PutDomainObjectTypeResult, CustomerProfilesError> Pu
 typedef Aws::Utils::Outcome<PutIntegrationResult, CustomerProfilesError> PutIntegrationOutcome;
 typedef Aws::Utils::Outcome<PutProfileObjectResult, CustomerProfilesError> PutProfileObjectOutcome;
 typedef Aws::Utils::Outcome<PutProfileObjectTypeResult, CustomerProfilesError> PutProfileObjectTypeOutcome;
+typedef Aws::Utils::Outcome<PutSegmentSubscriptionResult, CustomerProfilesError> PutSegmentSubscriptionOutcome;
 typedef Aws::Utils::Outcome<SearchProfilesResult, CustomerProfilesError> SearchProfilesOutcome;
 typedef Aws::Utils::Outcome<StartRecommenderResult, CustomerProfilesError> StartRecommenderOutcome;
 typedef Aws::Utils::Outcome<StartUploadJobResult, CustomerProfilesError> StartUploadJobOutcome;
@@ -384,6 +405,7 @@ typedef Aws::Utils::Outcome<UpdateRecommenderResult, CustomerProfilesError> Upda
 
 /* Service model Outcome callable definitions */
 typedef std::future<AddProfileKeyOutcome> AddProfileKeyOutcomeCallable;
+typedef std::future<AssociateStreamForSegmentsOutcome> AssociateStreamForSegmentsOutcomeCallable;
 typedef std::future<BatchGetCalculatedAttributeForProfileOutcome> BatchGetCalculatedAttributeForProfileOutcomeCallable;
 typedef std::future<BatchGetProfileOutcome> BatchGetProfileOutcomeCallable;
 typedef std::future<BatchPutProfileObjectOutcome> BatchPutProfileObjectOutcomeCallable;
@@ -416,8 +438,10 @@ typedef std::future<DeleteRecommenderOutcome> DeleteRecommenderOutcomeCallable;
 typedef std::future<DeleteRecommenderFilterOutcome> DeleteRecommenderFilterOutcomeCallable;
 typedef std::future<DeleteRecommenderSchemaOutcome> DeleteRecommenderSchemaOutcomeCallable;
 typedef std::future<DeleteSegmentDefinitionOutcome> DeleteSegmentDefinitionOutcomeCallable;
+typedef std::future<DeleteSegmentSubscriptionOutcome> DeleteSegmentSubscriptionOutcomeCallable;
 typedef std::future<DeleteWorkflowOutcome> DeleteWorkflowOutcomeCallable;
 typedef std::future<DetectProfileObjectTypeOutcome> DetectProfileObjectTypeOutcomeCallable;
+typedef std::future<DisassociateStreamForSegmentsOutcome> DisassociateStreamForSegmentsOutcomeCallable;
 typedef std::future<GetAutoMergingPreviewOutcome> GetAutoMergingPreviewOutcomeCallable;
 typedef std::future<GetCalculatedAttributeDefinitionOutcome> GetCalculatedAttributeDefinitionOutcomeCallable;
 typedef std::future<GetCalculatedAttributeForProfileOutcome> GetCalculatedAttributeForProfileOutcomeCallable;
@@ -441,7 +465,9 @@ typedef std::future<GetSegmentDefinitionOutcome> GetSegmentDefinitionOutcomeCall
 typedef std::future<GetSegmentEstimateOutcome> GetSegmentEstimateOutcomeCallable;
 typedef std::future<GetSegmentMembershipOutcome> GetSegmentMembershipOutcomeCallable;
 typedef std::future<GetSegmentSnapshotOutcome> GetSegmentSnapshotOutcomeCallable;
+typedef std::future<GetSegmentSubscriptionOutcome> GetSegmentSubscriptionOutcomeCallable;
 typedef std::future<GetSimilarProfilesOutcome> GetSimilarProfilesOutcomeCallable;
+typedef std::future<GetStreamForSegmentsOutcome> GetStreamForSegmentsOutcomeCallable;
 typedef std::future<GetUploadJobOutcome> GetUploadJobOutcomeCallable;
 typedef std::future<GetUploadJobPathOutcome> GetUploadJobPathOutcomeCallable;
 typedef std::future<GetWorkflowOutcome> GetWorkflowOutcomeCallable;
@@ -469,6 +495,7 @@ typedef std::future<ListRecommenderSchemasOutcome> ListRecommenderSchemasOutcome
 typedef std::future<ListRecommendersOutcome> ListRecommendersOutcomeCallable;
 typedef std::future<ListRuleBasedMatchesOutcome> ListRuleBasedMatchesOutcomeCallable;
 typedef std::future<ListSegmentDefinitionsOutcome> ListSegmentDefinitionsOutcomeCallable;
+typedef std::future<ListSegmentSubscriptionEventsOutcome> ListSegmentSubscriptionEventsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<ListUploadJobsOutcome> ListUploadJobsOutcomeCallable;
 typedef std::future<ListWorkflowsOutcome> ListWorkflowsOutcomeCallable;
@@ -477,6 +504,7 @@ typedef std::future<PutDomainObjectTypeOutcome> PutDomainObjectTypeOutcomeCallab
 typedef std::future<PutIntegrationOutcome> PutIntegrationOutcomeCallable;
 typedef std::future<PutProfileObjectOutcome> PutProfileObjectOutcomeCallable;
 typedef std::future<PutProfileObjectTypeOutcome> PutProfileObjectTypeOutcomeCallable;
+typedef std::future<PutSegmentSubscriptionOutcome> PutSegmentSubscriptionOutcomeCallable;
 typedef std::future<SearchProfilesOutcome> SearchProfilesOutcomeCallable;
 typedef std::future<StartRecommenderOutcome> StartRecommenderOutcomeCallable;
 typedef std::future<StartUploadJobOutcome> StartUploadJobOutcomeCallable;
@@ -499,6 +527,9 @@ class CustomerProfilesClient;
 typedef std::function<void(const CustomerProfilesClient*, const Model::AddProfileKeyRequest&, const Model::AddProfileKeyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AddProfileKeyResponseReceivedHandler;
+typedef std::function<void(const CustomerProfilesClient*, const Model::AssociateStreamForSegmentsRequest&,
+                           const Model::AssociateStreamForSegmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    AssociateStreamForSegmentsResponseReceivedHandler;
 typedef std::function<void(const CustomerProfilesClient*, const Model::BatchGetCalculatedAttributeForProfileRequest&,
                            const Model::BatchGetCalculatedAttributeForProfileOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -598,12 +629,19 @@ typedef std::function<void(const CustomerProfilesClient*, const Model::DeleteRec
 typedef std::function<void(const CustomerProfilesClient*, const Model::DeleteSegmentDefinitionRequest&,
                            const Model::DeleteSegmentDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteSegmentDefinitionResponseReceivedHandler;
+typedef std::function<void(const CustomerProfilesClient*, const Model::DeleteSegmentSubscriptionRequest&,
+                           const Model::DeleteSegmentSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteSegmentSubscriptionResponseReceivedHandler;
 typedef std::function<void(const CustomerProfilesClient*, const Model::DeleteWorkflowRequest&, const Model::DeleteWorkflowOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteWorkflowResponseReceivedHandler;
 typedef std::function<void(const CustomerProfilesClient*, const Model::DetectProfileObjectTypeRequest&,
                            const Model::DetectProfileObjectTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DetectProfileObjectTypeResponseReceivedHandler;
+typedef std::function<void(const CustomerProfilesClient*, const Model::DisassociateStreamForSegmentsRequest&,
+                           const Model::DisassociateStreamForSegmentsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DisassociateStreamForSegmentsResponseReceivedHandler;
 typedef std::function<void(const CustomerProfilesClient*, const Model::GetAutoMergingPreviewRequest&,
                            const Model::GetAutoMergingPreviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetAutoMergingPreviewResponseReceivedHandler;
@@ -677,9 +715,15 @@ typedef std::function<void(const CustomerProfilesClient*, const Model::GetSegmen
 typedef std::function<void(const CustomerProfilesClient*, const Model::GetSegmentSnapshotRequest&, const Model::GetSegmentSnapshotOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetSegmentSnapshotResponseReceivedHandler;
+typedef std::function<void(const CustomerProfilesClient*, const Model::GetSegmentSubscriptionRequest&,
+                           const Model::GetSegmentSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetSegmentSubscriptionResponseReceivedHandler;
 typedef std::function<void(const CustomerProfilesClient*, const Model::GetSimilarProfilesRequest&, const Model::GetSimilarProfilesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetSimilarProfilesResponseReceivedHandler;
+typedef std::function<void(const CustomerProfilesClient*, const Model::GetStreamForSegmentsRequest&,
+                           const Model::GetStreamForSegmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetStreamForSegmentsResponseReceivedHandler;
 typedef std::function<void(const CustomerProfilesClient*, const Model::GetUploadJobRequest&, const Model::GetUploadJobOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetUploadJobResponseReceivedHandler;
@@ -765,6 +809,10 @@ typedef std::function<void(const CustomerProfilesClient*, const Model::ListRuleB
 typedef std::function<void(const CustomerProfilesClient*, const Model::ListSegmentDefinitionsRequest&,
                            const Model::ListSegmentDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListSegmentDefinitionsResponseReceivedHandler;
+typedef std::function<void(const CustomerProfilesClient*, const Model::ListSegmentSubscriptionEventsRequest&,
+                           const Model::ListSegmentSubscriptionEventsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListSegmentSubscriptionEventsResponseReceivedHandler;
 typedef std::function<void(const CustomerProfilesClient*, const Model::ListTagsForResourceRequest&,
                            const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;
@@ -789,6 +837,9 @@ typedef std::function<void(const CustomerProfilesClient*, const Model::PutProfil
 typedef std::function<void(const CustomerProfilesClient*, const Model::PutProfileObjectTypeRequest&,
                            const Model::PutProfileObjectTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutProfileObjectTypeResponseReceivedHandler;
+typedef std::function<void(const CustomerProfilesClient*, const Model::PutSegmentSubscriptionRequest&,
+                           const Model::PutSegmentSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutSegmentSubscriptionResponseReceivedHandler;
 typedef std::function<void(const CustomerProfilesClient*, const Model::SearchProfilesRequest&, const Model::SearchProfilesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SearchProfilesResponseReceivedHandler;

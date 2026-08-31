@@ -64,6 +64,7 @@
 #include <aws/quicksight/model/DeleteActionConnectorResult.h>
 #include <aws/quicksight/model/DeleteAgentResult.h>
 #include <aws/quicksight/model/DeleteAnalysisResult.h>
+#include <aws/quicksight/model/DeleteAppResult.h>
 #include <aws/quicksight/model/DeleteApprovalPolicyResult.h>
 #include <aws/quicksight/model/DeleteBrandAssignmentResult.h>
 #include <aws/quicksight/model/DeleteBrandResult.h>
@@ -111,6 +112,8 @@
 #include <aws/quicksight/model/DescribeAnalysisDefinitionResult.h>
 #include <aws/quicksight/model/DescribeAnalysisPermissionsResult.h>
 #include <aws/quicksight/model/DescribeAnalysisResult.h>
+#include <aws/quicksight/model/DescribeAppPermissionsResult.h>
+#include <aws/quicksight/model/DescribeAppResult.h>
 #include <aws/quicksight/model/DescribeApprovalPolicyResult.h>
 #include <aws/quicksight/model/DescribeAssetBundleExportJobResult.h>
 #include <aws/quicksight/model/DescribeAssetBundleImportJobResult.h>
@@ -182,6 +185,7 @@
 #include <aws/quicksight/model/ListAnalysesResult.h>
 #include <aws/quicksight/model/ListApprovalPoliciesRequest.h>
 #include <aws/quicksight/model/ListApprovalPoliciesResult.h>
+#include <aws/quicksight/model/ListAppsResult.h>
 #include <aws/quicksight/model/ListAssetBundleExportJobsResult.h>
 #include <aws/quicksight/model/ListAssetBundleImportJobsResult.h>
 #include <aws/quicksight/model/ListBrandsResult.h>
@@ -232,6 +236,7 @@
 #include <aws/quicksight/model/SearchActionConnectorsResult.h>
 #include <aws/quicksight/model/SearchAgentsResult.h>
 #include <aws/quicksight/model/SearchAnalysesResult.h>
+#include <aws/quicksight/model/SearchAppsResult.h>
 #include <aws/quicksight/model/SearchDashboardsResult.h>
 #include <aws/quicksight/model/SearchDataSetsResult.h>
 #include <aws/quicksight/model/SearchDataSourcesResult.h>
@@ -258,6 +263,7 @@
 #include <aws/quicksight/model/UpdateAgentResult.h>
 #include <aws/quicksight/model/UpdateAnalysisPermissionsResult.h>
 #include <aws/quicksight/model/UpdateAnalysisResult.h>
+#include <aws/quicksight/model/UpdateAppPermissionsResult.h>
 #include <aws/quicksight/model/UpdateApplicationWithTokenExchangeGrantResult.h>
 #include <aws/quicksight/model/UpdateApprovalPolicyResult.h>
 #include <aws/quicksight/model/UpdateBrandAssignmentResult.h>
@@ -391,6 +397,7 @@ class DeleteAccountSubscriptionRequest;
 class DeleteActionConnectorRequest;
 class DeleteAgentRequest;
 class DeleteAnalysisRequest;
+class DeleteAppRequest;
 class DeleteApprovalPolicyRequest;
 class DeleteBrandRequest;
 class DeleteBrandAssignmentRequest;
@@ -438,6 +445,8 @@ class DescribeAgentPermissionsRequest;
 class DescribeAnalysisRequest;
 class DescribeAnalysisDefinitionRequest;
 class DescribeAnalysisPermissionsRequest;
+class DescribeAppRequest;
+class DescribeAppPermissionsRequest;
 class DescribeApprovalPolicyRequest;
 class DescribeAssetBundleExportJobRequest;
 class DescribeAssetBundleImportJobRequest;
@@ -508,6 +517,7 @@ class ListActionConnectorsRequest;
 class ListAgentsRequest;
 class ListAnalysesRequest;
 class ListApprovalPoliciesRequest;
+class ListAppsRequest;
 class ListAssetBundleExportJobsRequest;
 class ListAssetBundleImportJobsRequest;
 class ListBrandsRequest;
@@ -558,6 +568,7 @@ class RestoreAnalysisRequest;
 class SearchActionConnectorsRequest;
 class SearchAgentsRequest;
 class SearchAnalysesRequest;
+class SearchAppsRequest;
 class SearchDashboardsRequest;
 class SearchDataSetsRequest;
 class SearchDataSourcesRequest;
@@ -584,6 +595,7 @@ class UpdateAgentRequest;
 class UpdateAgentPermissionsRequest;
 class UpdateAnalysisRequest;
 class UpdateAnalysisPermissionsRequest;
+class UpdateAppPermissionsRequest;
 class UpdateApplicationWithTokenExchangeGrantRequest;
 class UpdateApprovalPolicyRequest;
 class UpdateBrandRequest;
@@ -687,6 +699,7 @@ typedef Aws::Utils::Outcome<DeleteAccountSubscriptionResult, QuickSightError> De
 typedef Aws::Utils::Outcome<DeleteActionConnectorResult, QuickSightError> DeleteActionConnectorOutcome;
 typedef Aws::Utils::Outcome<DeleteAgentResult, QuickSightError> DeleteAgentOutcome;
 typedef Aws::Utils::Outcome<DeleteAnalysisResult, QuickSightError> DeleteAnalysisOutcome;
+typedef Aws::Utils::Outcome<DeleteAppResult, QuickSightError> DeleteAppOutcome;
 typedef Aws::Utils::Outcome<DeleteApprovalPolicyResult, QuickSightError> DeleteApprovalPolicyOutcome;
 typedef Aws::Utils::Outcome<DeleteBrandResult, QuickSightError> DeleteBrandOutcome;
 typedef Aws::Utils::Outcome<DeleteBrandAssignmentResult, QuickSightError> DeleteBrandAssignmentOutcome;
@@ -734,6 +747,8 @@ typedef Aws::Utils::Outcome<DescribeAgentPermissionsResult, QuickSightError> Des
 typedef Aws::Utils::Outcome<DescribeAnalysisResult, QuickSightError> DescribeAnalysisOutcome;
 typedef Aws::Utils::Outcome<DescribeAnalysisDefinitionResult, QuickSightError> DescribeAnalysisDefinitionOutcome;
 typedef Aws::Utils::Outcome<DescribeAnalysisPermissionsResult, QuickSightError> DescribeAnalysisPermissionsOutcome;
+typedef Aws::Utils::Outcome<DescribeAppResult, QuickSightError> DescribeAppOutcome;
+typedef Aws::Utils::Outcome<DescribeAppPermissionsResult, QuickSightError> DescribeAppPermissionsOutcome;
 typedef Aws::Utils::Outcome<DescribeApprovalPolicyResult, QuickSightError> DescribeApprovalPolicyOutcome;
 typedef Aws::Utils::Outcome<DescribeAssetBundleExportJobResult, QuickSightError> DescribeAssetBundleExportJobOutcome;
 typedef Aws::Utils::Outcome<DescribeAssetBundleImportJobResult, QuickSightError> DescribeAssetBundleImportJobOutcome;
@@ -805,6 +820,7 @@ typedef Aws::Utils::Outcome<ListActionConnectorsResult, QuickSightError> ListAct
 typedef Aws::Utils::Outcome<ListAgentsResult, QuickSightError> ListAgentsOutcome;
 typedef Aws::Utils::Outcome<ListAnalysesResult, QuickSightError> ListAnalysesOutcome;
 typedef Aws::Utils::Outcome<ListApprovalPoliciesResult, QuickSightError> ListApprovalPoliciesOutcome;
+typedef Aws::Utils::Outcome<ListAppsResult, QuickSightError> ListAppsOutcome;
 typedef Aws::Utils::Outcome<ListAssetBundleExportJobsResult, QuickSightError> ListAssetBundleExportJobsOutcome;
 typedef Aws::Utils::Outcome<ListAssetBundleImportJobsResult, QuickSightError> ListAssetBundleImportJobsOutcome;
 typedef Aws::Utils::Outcome<ListBrandsResult, QuickSightError> ListBrandsOutcome;
@@ -855,6 +871,7 @@ typedef Aws::Utils::Outcome<RestoreAnalysisResult, QuickSightError> RestoreAnaly
 typedef Aws::Utils::Outcome<SearchActionConnectorsResult, QuickSightError> SearchActionConnectorsOutcome;
 typedef Aws::Utils::Outcome<SearchAgentsResult, QuickSightError> SearchAgentsOutcome;
 typedef Aws::Utils::Outcome<SearchAnalysesResult, QuickSightError> SearchAnalysesOutcome;
+typedef Aws::Utils::Outcome<SearchAppsResult, QuickSightError> SearchAppsOutcome;
 typedef Aws::Utils::Outcome<SearchDashboardsResult, QuickSightError> SearchDashboardsOutcome;
 typedef Aws::Utils::Outcome<SearchDataSetsResult, QuickSightError> SearchDataSetsOutcome;
 typedef Aws::Utils::Outcome<SearchDataSourcesResult, QuickSightError> SearchDataSourcesOutcome;
@@ -881,6 +898,7 @@ typedef Aws::Utils::Outcome<UpdateAgentResult, QuickSightError> UpdateAgentOutco
 typedef Aws::Utils::Outcome<UpdateAgentPermissionsResult, QuickSightError> UpdateAgentPermissionsOutcome;
 typedef Aws::Utils::Outcome<UpdateAnalysisResult, QuickSightError> UpdateAnalysisOutcome;
 typedef Aws::Utils::Outcome<UpdateAnalysisPermissionsResult, QuickSightError> UpdateAnalysisPermissionsOutcome;
+typedef Aws::Utils::Outcome<UpdateAppPermissionsResult, QuickSightError> UpdateAppPermissionsOutcome;
 typedef Aws::Utils::Outcome<UpdateApplicationWithTokenExchangeGrantResult, QuickSightError> UpdateApplicationWithTokenExchangeGrantOutcome;
 typedef Aws::Utils::Outcome<UpdateApprovalPolicyResult, QuickSightError> UpdateApprovalPolicyOutcome;
 typedef Aws::Utils::Outcome<UpdateBrandResult, QuickSightError> UpdateBrandOutcome;
@@ -984,6 +1002,7 @@ typedef std::future<DeleteAccountSubscriptionOutcome> DeleteAccountSubscriptionO
 typedef std::future<DeleteActionConnectorOutcome> DeleteActionConnectorOutcomeCallable;
 typedef std::future<DeleteAgentOutcome> DeleteAgentOutcomeCallable;
 typedef std::future<DeleteAnalysisOutcome> DeleteAnalysisOutcomeCallable;
+typedef std::future<DeleteAppOutcome> DeleteAppOutcomeCallable;
 typedef std::future<DeleteApprovalPolicyOutcome> DeleteApprovalPolicyOutcomeCallable;
 typedef std::future<DeleteBrandOutcome> DeleteBrandOutcomeCallable;
 typedef std::future<DeleteBrandAssignmentOutcome> DeleteBrandAssignmentOutcomeCallable;
@@ -1031,6 +1050,8 @@ typedef std::future<DescribeAgentPermissionsOutcome> DescribeAgentPermissionsOut
 typedef std::future<DescribeAnalysisOutcome> DescribeAnalysisOutcomeCallable;
 typedef std::future<DescribeAnalysisDefinitionOutcome> DescribeAnalysisDefinitionOutcomeCallable;
 typedef std::future<DescribeAnalysisPermissionsOutcome> DescribeAnalysisPermissionsOutcomeCallable;
+typedef std::future<DescribeAppOutcome> DescribeAppOutcomeCallable;
+typedef std::future<DescribeAppPermissionsOutcome> DescribeAppPermissionsOutcomeCallable;
 typedef std::future<DescribeApprovalPolicyOutcome> DescribeApprovalPolicyOutcomeCallable;
 typedef std::future<DescribeAssetBundleExportJobOutcome> DescribeAssetBundleExportJobOutcomeCallable;
 typedef std::future<DescribeAssetBundleImportJobOutcome> DescribeAssetBundleImportJobOutcomeCallable;
@@ -1101,6 +1122,7 @@ typedef std::future<ListActionConnectorsOutcome> ListActionConnectorsOutcomeCall
 typedef std::future<ListAgentsOutcome> ListAgentsOutcomeCallable;
 typedef std::future<ListAnalysesOutcome> ListAnalysesOutcomeCallable;
 typedef std::future<ListApprovalPoliciesOutcome> ListApprovalPoliciesOutcomeCallable;
+typedef std::future<ListAppsOutcome> ListAppsOutcomeCallable;
 typedef std::future<ListAssetBundleExportJobsOutcome> ListAssetBundleExportJobsOutcomeCallable;
 typedef std::future<ListAssetBundleImportJobsOutcome> ListAssetBundleImportJobsOutcomeCallable;
 typedef std::future<ListBrandsOutcome> ListBrandsOutcomeCallable;
@@ -1151,6 +1173,7 @@ typedef std::future<RestoreAnalysisOutcome> RestoreAnalysisOutcomeCallable;
 typedef std::future<SearchActionConnectorsOutcome> SearchActionConnectorsOutcomeCallable;
 typedef std::future<SearchAgentsOutcome> SearchAgentsOutcomeCallable;
 typedef std::future<SearchAnalysesOutcome> SearchAnalysesOutcomeCallable;
+typedef std::future<SearchAppsOutcome> SearchAppsOutcomeCallable;
 typedef std::future<SearchDashboardsOutcome> SearchDashboardsOutcomeCallable;
 typedef std::future<SearchDataSetsOutcome> SearchDataSetsOutcomeCallable;
 typedef std::future<SearchDataSourcesOutcome> SearchDataSourcesOutcomeCallable;
@@ -1177,6 +1200,7 @@ typedef std::future<UpdateAgentOutcome> UpdateAgentOutcomeCallable;
 typedef std::future<UpdateAgentPermissionsOutcome> UpdateAgentPermissionsOutcomeCallable;
 typedef std::future<UpdateAnalysisOutcome> UpdateAnalysisOutcomeCallable;
 typedef std::future<UpdateAnalysisPermissionsOutcome> UpdateAnalysisPermissionsOutcomeCallable;
+typedef std::future<UpdateAppPermissionsOutcome> UpdateAppPermissionsOutcomeCallable;
 typedef std::future<UpdateApplicationWithTokenExchangeGrantOutcome> UpdateApplicationWithTokenExchangeGrantOutcomeCallable;
 typedef std::future<UpdateApprovalPolicyOutcome> UpdateApprovalPolicyOutcomeCallable;
 typedef std::future<UpdateBrandOutcome> UpdateBrandOutcomeCallable;
@@ -1377,6 +1401,9 @@ typedef std::function<void(const QuickSightClient*, const Model::DeleteAgentRequ
 typedef std::function<void(const QuickSightClient*, const Model::DeleteAnalysisRequest&, const Model::DeleteAnalysisOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteAnalysisResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::DeleteAppRequest&, const Model::DeleteAppOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteAppResponseReceivedHandler;
 typedef std::function<void(const QuickSightClient*, const Model::DeleteApprovalPolicyRequest&, const Model::DeleteApprovalPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteApprovalPolicyResponseReceivedHandler;
@@ -1525,6 +1552,12 @@ typedef std::function<void(const QuickSightClient*, const Model::DescribeAnalysi
 typedef std::function<void(const QuickSightClient*, const Model::DescribeAnalysisPermissionsRequest&,
                            const Model::DescribeAnalysisPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeAnalysisPermissionsResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::DescribeAppRequest&, const Model::DescribeAppOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeAppResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::DescribeAppPermissionsRequest&,
+                           const Model::DescribeAppPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeAppPermissionsResponseReceivedHandler;
 typedef std::function<void(const QuickSightClient*, const Model::DescribeApprovalPolicyRequest&,
                            const Model::DescribeApprovalPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeApprovalPolicyResponseReceivedHandler;
@@ -1756,6 +1789,9 @@ typedef std::function<void(const QuickSightClient*, const Model::ListAnalysesReq
 typedef std::function<void(const QuickSightClient*, const Model::ListApprovalPoliciesRequest&, const Model::ListApprovalPoliciesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListApprovalPoliciesResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::ListAppsRequest&, const Model::ListAppsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListAppsResponseReceivedHandler;
 typedef std::function<void(const QuickSightClient*, const Model::ListAssetBundleExportJobsRequest&,
                            const Model::ListAssetBundleExportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAssetBundleExportJobsResponseReceivedHandler;
@@ -1908,6 +1944,9 @@ typedef std::function<void(const QuickSightClient*, const Model::SearchAgentsReq
 typedef std::function<void(const QuickSightClient*, const Model::SearchAnalysesRequest&, const Model::SearchAnalysesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SearchAnalysesResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::SearchAppsRequest&, const Model::SearchAppsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    SearchAppsResponseReceivedHandler;
 typedef std::function<void(const QuickSightClient*, const Model::SearchDashboardsRequest&, const Model::SearchDashboardsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SearchDashboardsResponseReceivedHandler;
@@ -1989,6 +2028,9 @@ typedef std::function<void(const QuickSightClient*, const Model::UpdateAnalysisR
 typedef std::function<void(const QuickSightClient*, const Model::UpdateAnalysisPermissionsRequest&,
                            const Model::UpdateAnalysisPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateAnalysisPermissionsResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::UpdateAppPermissionsRequest&, const Model::UpdateAppPermissionsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateAppPermissionsResponseReceivedHandler;
 typedef std::function<void(const QuickSightClient*, const Model::UpdateApplicationWithTokenExchangeGrantRequest&,
                            const Model::UpdateApplicationWithTokenExchangeGrantOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

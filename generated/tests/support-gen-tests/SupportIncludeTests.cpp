@@ -27,11 +27,16 @@
 #include <aws/support/model/Category.h>
 #include <aws/support/model/Communication.h>
 #include <aws/support/model/CommunicationTypeOptions.h>
+#include <aws/support/model/CompleteAttachmentUploadRequest.h>
+#include <aws/support/model/CompleteAttachmentUploadResult.h>
+#include <aws/support/model/CompletedUpload.h>
 #include <aws/support/model/CreateCaseRequest.h>
 #include <aws/support/model/CreateCaseResult.h>
 #include <aws/support/model/DateInterval.h>
 #include <aws/support/model/DescribeAttachmentRequest.h>
 #include <aws/support/model/DescribeAttachmentResult.h>
+#include <aws/support/model/DescribeAttachmentUploadStatusRequest.h>
+#include <aws/support/model/DescribeAttachmentUploadStatusResult.h>
 #include <aws/support/model/DescribeCasesPaginationTraits.h>
 #include <aws/support/model/DescribeCasesRequest.h>
 #include <aws/support/model/DescribeCasesResult.h>
@@ -54,6 +59,11 @@
 #include <aws/support/model/DescribeTrustedAdvisorCheckSummariesResult.h>
 #include <aws/support/model/DescribeTrustedAdvisorChecksRequest.h>
 #include <aws/support/model/DescribeTrustedAdvisorChecksResult.h>
+#include <aws/support/model/DownloadUrl.h>
+#include <aws/support/model/GetAttachmentDownloadLinkRequest.h>
+#include <aws/support/model/GetAttachmentDownloadLinkResult.h>
+#include <aws/support/model/GetAttachmentUploadLinksRequest.h>
+#include <aws/support/model/GetAttachmentUploadLinksResult.h>
 #include <aws/support/model/RecentCaseCommunications.h>
 #include <aws/support/model/RefreshTrustedAdvisorCheckRequest.h>
 #include <aws/support/model/RefreshTrustedAdvisorCheckResult.h>
@@ -63,6 +73,8 @@
 #include <aws/support/model/SeverityLevel.h>
 #include <aws/support/model/SupportedHour.h>
 #include <aws/support/model/SupportedLanguage.h>
+#include <aws/support/model/ThrottlingException.h>
+#include <aws/support/model/ThrottlingReason.h>
 #include <aws/support/model/TrustedAdvisorCategorySpecificSummary.h>
 #include <aws/support/model/TrustedAdvisorCheckDescription.h>
 #include <aws/support/model/TrustedAdvisorCheckRefreshStatus.h>
@@ -71,6 +83,10 @@
 #include <aws/support/model/TrustedAdvisorCostOptimizingSummary.h>
 #include <aws/support/model/TrustedAdvisorResourceDetail.h>
 #include <aws/support/model/TrustedAdvisorResourcesSummary.h>
+#include <aws/support/model/UploadProgress.h>
+#include <aws/support/model/UploadRange.h>
+#include <aws/support/model/UploadStatus.h>
+#include <aws/support/model/UploadUrl.h>
 
 using SupportIncludeTest = ::testing::Test;
 

@@ -33,7 +33,14 @@ class AccessControlConfiguration {
 
   ///@{
   /**
-   * <p>Specifies whether ACLs are enabled for the knowledge base.</p>
+   * <p>Specifies whether ACLs are enabled for the knowledge base.</p> <p>This
+   * setting works together with the data source connector's ACL crawling. To enforce
+   * document-level access control end to end, set <code>isACLEnabled</code> to
+   * <code>true</code> and enable ACL crawling on the connector. For example, for an
+   * Amazon S3 data source, set <code>accessControlConfiguration.crawlAcl</code> to
+   * <code>true</code> in the connector template. For more information, see
+   * <code>KbTemplateConfiguration</code>. Enabling only one of the two settings does
+   * not produce a fully ACL-enforced knowledge base.</p>
    */
   inline bool GetIsACLEnabled() const { return m_isACLEnabled; }
   inline bool IsACLEnabledHasBeenSet() const { return m_isACLEnabledHasBeenSet; }

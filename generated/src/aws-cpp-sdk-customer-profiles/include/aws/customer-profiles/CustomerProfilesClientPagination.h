@@ -18,6 +18,7 @@
 #include <aws/customer-profiles/model/ListRecommendersPaginationTraits.h>
 #include <aws/customer-profiles/model/ListRuleBasedMatchesPaginationTraits.h>
 #include <aws/customer-profiles/model/ListSegmentDefinitionsPaginationTraits.h>
+#include <aws/customer-profiles/model/ListSegmentSubscriptionEventsPaginationTraits.h>
 #include <aws/customer-profiles/model/ListUploadJobsPaginationTraits.h>
 
 namespace Aws {
@@ -55,6 +56,9 @@ using ListRuleBasedMatchesPaginator =
 using ListSegmentDefinitionsPaginator =
     Aws::Utils::Pagination::Paginator<CustomerProfilesClient, Model::ListSegmentDefinitionsRequest,
                                       Pagination::ListSegmentDefinitionsPaginationTraits<CustomerProfilesClient>>;
+using ListSegmentSubscriptionEventsPaginator =
+    Aws::Utils::Pagination::Paginator<CustomerProfilesClient, Model::ListSegmentSubscriptionEventsRequest,
+                                      Pagination::ListSegmentSubscriptionEventsPaginationTraits<CustomerProfilesClient>>;
 using ListUploadJobsPaginator = Aws::Utils::Pagination::Paginator<CustomerProfilesClient, Model::ListUploadJobsRequest,
                                                                   Pagination::ListUploadJobsPaginationTraits<CustomerProfilesClient>>;
 

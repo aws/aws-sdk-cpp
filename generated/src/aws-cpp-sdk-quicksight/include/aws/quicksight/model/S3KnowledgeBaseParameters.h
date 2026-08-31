@@ -20,8 +20,26 @@ namespace QuickSight {
 namespace Model {
 
 /**
- * <p>The parameters that are required to connect to a S3 Knowledge Base data
- * source.</p><p><h3>See Also:</h3>   <a
+ * <p>The parameters that are required to connect to an S3 knowledge base data
+ * source.</p> <p> <b>Prerequisites: Amazon S3 bucket access</b> </p> <p>Before you
+ * call <code>CreateKnowledgeBase</code> for an Amazon S3 knowledge base, an
+ * administrator must grant Amazon QuickSight access to the source S3 bucket. If
+ * access has not been granted for the bucket, knowledge base creation fails.</p>
+ * <p>To grant access, an administrator adds the bucket in the Amazon QuickSight
+ * admin console, under Permissions, Amazon Web Services resources, Amazon S3,
+ * Select S3 buckets. This authorizes the Amazon QuickSight service role to read
+ * the bucket. The bucket can be in the same Amazon Web Services account or, when
+ * the bucket owner has authorized your account, in a different account.</p> <p>The
+ * service role requires at least the following permissions on the bucket:</p> <ul>
+ * <li> <p> <code>s3:GetObject</code> </p> </li> <li> <p>
+ * <code>s3:ListBucket</code> </p> </li> <li> <p> <code>s3:GetBucketLocation</code>
+ * </p> </li> <li> <p> <code>s3:GetObjectVersion</code> </p> </li> <li> <p>
+ * <code>s3:ListBucketVersions</code> </p> </li> </ul> <p>For the full procedure,
+ * including cross-account buckets and KMS-encrypted buckets, see the Amazon S3
+ * knowledge base administrator setup guide.</p>  <p>To grant access for a
+ * specific S3 knowledge base data source without granting account-wide S3 access,
+ * provide a custom IAM role on the data source by using <code>RoleArn</code>.</p>
+ * <p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/S3KnowledgeBaseParameters">AWS
  * API Reference</a></p>
  */
@@ -76,8 +94,11 @@ class S3KnowledgeBaseParameters {
 
   ///@{
   /**
-   * <p>The location of metadata files within the S3 bucket that describe the
-   * structure and content of the knowledge base.</p>
+   * <p>The Amazon S3 location (prefix) of per-document metadata files. Each metadata
+   * file describes a single source document and its indexable attributes, such as
+   * title, category, and version. This is not the global ACL configuration file. To
+   * apply a single global ACL file to the entire knowledge base, use the access
+   * control configuration instead.</p>
    */
   inline const Aws::String& GetMetadataFilesLocation() const { return m_metadataFilesLocation; }
   inline bool MetadataFilesLocationHasBeenSet() const { return m_metadataFilesLocationHasBeenSet; }

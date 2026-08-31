@@ -26,7 +26,9 @@ enum class AttributeDimensionType {
   LESS_THAN,
   GREATER_THAN_OR_EQUAL,
   LESS_THAN_OR_EQUAL,
-  EQUAL
+  EQUAL,
+  LIST_CONTAINS,
+  LIST_CONTAINS_ALL
 };
 
 namespace AttributeDimensionTypeMapper {

@@ -171,7 +171,8 @@ class CreateCaseRequest : public SupportRequest {
   /**
    * <p>The language in which Amazon Web Services Support handles the case. Amazon
    * Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese
-   * ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the
+   * ("ja") , Chinese ("zh"), Spanish ("es"), Portuguese ("pt"), French ("fr"),
+   * Korean (“ko”), and Turkish ("tr"). You must specify the ISO 639-1 code for the
    * <code>language</code> parameter if you want support in that language.</p>
    */
   inline const Aws::String& GetLanguage() const { return m_language; }
@@ -211,7 +212,9 @@ class CreateCaseRequest : public SupportRequest {
   ///@{
   /**
    * <p>The ID of a set of one or more attachments for the case. Create the set by
-   * using the <a>AddAttachmentsToSet</a> operation.</p>
+   * using the <a>AddAttachmentsToSet</a> operation. Each attachment in the set must
+   * be 5 MB or smaller. To attach files larger than 5 MB, use
+   * <code>uploadIds</code>.</p>
    */
   inline const Aws::String& GetAttachmentSetId() const { return m_attachmentSetId; }
   inline bool AttachmentSetIdHasBeenSet() const { return m_attachmentSetIdHasBeenSet; }
@@ -223,6 +226,54 @@ class CreateCaseRequest : public SupportRequest {
   template <typename AttachmentSetIdT = Aws::String>
   CreateCaseRequest& WithAttachmentSetId(AttachmentSetIdT&& value) {
     SetAttachmentSetId(std::forward<AttachmentSetIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A list of upload IDs that identify attachments to add to the case. Each
+   * <code>uploadId</code> is returned by the <a>GetAttachmentUploadLinks</a>
+   * operation. The upload must reach the <code>attachment-ready</code> state by
+   * calling <a>CompleteAttachmentUpload</a> before it can be passed here. Use
+   * <code>uploadIds</code> to attach files of any supported size, including files
+   * larger than 5 MB.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetUploadIds() const { return m_uploadIds; }
+  inline bool UploadIdsHasBeenSet() const { return m_uploadIdsHasBeenSet; }
+  template <typename UploadIdsT = Aws::Vector<Aws::String>>
+  void SetUploadIds(UploadIdsT&& value) {
+    m_uploadIdsHasBeenSet = true;
+    m_uploadIds = std::forward<UploadIdsT>(value);
+  }
+  template <typename UploadIdsT = Aws::Vector<Aws::String>>
+  CreateCaseRequest& WithUploadIds(UploadIdsT&& value) {
+    SetUploadIds(std::forward<UploadIdsT>(value));
+    return *this;
+  }
+  template <typename UploadIdsT = Aws::String>
+  CreateCaseRequest& AddUploadIds(UploadIdsT&& value) {
+    m_uploadIdsHasBeenSet = true;
+    m_uploadIds.emplace_back(std::forward<UploadIdsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to validate the request without actually creating the case.
+   * When set to <code>true</code>, the request is validated but no case is created,
+   * and the operation returns a <code>DryRunOperationException</code>. When omitted
+   * or set to <code>false</code>, the request runs normally.</p>
+   */
+  inline bool GetDryRun() const { return m_dryRun; }
+  inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+  inline void SetDryRun(bool value) {
+    m_dryRunHasBeenSet = true;
+    m_dryRun = value;
+  }
+  inline CreateCaseRequest& WithDryRun(bool value) {
+    SetDryRun(value);
     return *this;
   }
   ///@}
@@ -244,6 +295,10 @@ class CreateCaseRequest : public SupportRequest {
   Aws::String m_issueType;
 
   Aws::String m_attachmentSetId;
+
+  Aws::Vector<Aws::String> m_uploadIds;
+
+  bool m_dryRun{false};
   bool m_subjectHasBeenSet = false;
   bool m_serviceCodeHasBeenSet = false;
   bool m_severityCodeHasBeenSet = false;
@@ -253,6 +308,8 @@ class CreateCaseRequest : public SupportRequest {
   bool m_languageHasBeenSet = false;
   bool m_issueTypeHasBeenSet = false;
   bool m_attachmentSetIdHasBeenSet = false;
+  bool m_uploadIdsHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
 };
 
 }  // namespace Model

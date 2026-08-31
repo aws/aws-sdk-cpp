@@ -21,8 +21,10 @@
 /* Service model headers required in SupportClient header */
 #include <aws/support/model/AddAttachmentsToSetResult.h>
 #include <aws/support/model/AddCommunicationToCaseResult.h>
+#include <aws/support/model/CompleteAttachmentUploadResult.h>
 #include <aws/support/model/CreateCaseResult.h>
 #include <aws/support/model/DescribeAttachmentResult.h>
+#include <aws/support/model/DescribeAttachmentUploadStatusResult.h>
 #include <aws/support/model/DescribeCasesRequest.h>
 #include <aws/support/model/DescribeCasesResult.h>
 #include <aws/support/model/DescribeCommunicationsResult.h>
@@ -36,6 +38,8 @@
 #include <aws/support/model/DescribeTrustedAdvisorCheckResultResult.h>
 #include <aws/support/model/DescribeTrustedAdvisorCheckSummariesResult.h>
 #include <aws/support/model/DescribeTrustedAdvisorChecksResult.h>
+#include <aws/support/model/GetAttachmentDownloadLinkResult.h>
+#include <aws/support/model/GetAttachmentUploadLinksResult.h>
 #include <aws/support/model/RefreshTrustedAdvisorCheckResult.h>
 #include <aws/support/model/ResolveCaseRequest.h>
 #include <aws/support/model/ResolveCaseResult.h>
@@ -74,8 +78,10 @@ namespace Model {
 /* Service model forward declarations required in SupportClient header */
 class AddAttachmentsToSetRequest;
 class AddCommunicationToCaseRequest;
+class CompleteAttachmentUploadRequest;
 class CreateCaseRequest;
 class DescribeAttachmentRequest;
+class DescribeAttachmentUploadStatusRequest;
 class DescribeCasesRequest;
 class DescribeCommunicationsRequest;
 class DescribeCreateCaseOptionsRequest;
@@ -86,6 +92,8 @@ class DescribeTrustedAdvisorCheckRefreshStatusesRequest;
 class DescribeTrustedAdvisorCheckResultRequest;
 class DescribeTrustedAdvisorCheckSummariesRequest;
 class DescribeTrustedAdvisorChecksRequest;
+class GetAttachmentDownloadLinkRequest;
+class GetAttachmentUploadLinksRequest;
 class RefreshTrustedAdvisorCheckRequest;
 class ResolveCaseRequest;
 /* End of service model forward declarations required in SupportClient header */
@@ -93,8 +101,10 @@ class ResolveCaseRequest;
 /* Service model Outcome class definitions */
 typedef Aws::Utils::Outcome<AddAttachmentsToSetResult, SupportError> AddAttachmentsToSetOutcome;
 typedef Aws::Utils::Outcome<AddCommunicationToCaseResult, SupportError> AddCommunicationToCaseOutcome;
+typedef Aws::Utils::Outcome<CompleteAttachmentUploadResult, SupportError> CompleteAttachmentUploadOutcome;
 typedef Aws::Utils::Outcome<CreateCaseResult, SupportError> CreateCaseOutcome;
 typedef Aws::Utils::Outcome<DescribeAttachmentResult, SupportError> DescribeAttachmentOutcome;
+typedef Aws::Utils::Outcome<DescribeAttachmentUploadStatusResult, SupportError> DescribeAttachmentUploadStatusOutcome;
 typedef Aws::Utils::Outcome<DescribeCasesResult, SupportError> DescribeCasesOutcome;
 typedef Aws::Utils::Outcome<DescribeCommunicationsResult, SupportError> DescribeCommunicationsOutcome;
 typedef Aws::Utils::Outcome<DescribeCreateCaseOptionsResult, SupportError> DescribeCreateCaseOptionsOutcome;
@@ -106,6 +116,8 @@ typedef Aws::Utils::Outcome<DescribeTrustedAdvisorCheckRefreshStatusesResult, Su
 typedef Aws::Utils::Outcome<DescribeTrustedAdvisorCheckResultResult, SupportError> DescribeTrustedAdvisorCheckResultOutcome;
 typedef Aws::Utils::Outcome<DescribeTrustedAdvisorCheckSummariesResult, SupportError> DescribeTrustedAdvisorCheckSummariesOutcome;
 typedef Aws::Utils::Outcome<DescribeTrustedAdvisorChecksResult, SupportError> DescribeTrustedAdvisorChecksOutcome;
+typedef Aws::Utils::Outcome<GetAttachmentDownloadLinkResult, SupportError> GetAttachmentDownloadLinkOutcome;
+typedef Aws::Utils::Outcome<GetAttachmentUploadLinksResult, SupportError> GetAttachmentUploadLinksOutcome;
 typedef Aws::Utils::Outcome<RefreshTrustedAdvisorCheckResult, SupportError> RefreshTrustedAdvisorCheckOutcome;
 typedef Aws::Utils::Outcome<ResolveCaseResult, SupportError> ResolveCaseOutcome;
 /* End of service model Outcome class definitions */
@@ -113,8 +125,10 @@ typedef Aws::Utils::Outcome<ResolveCaseResult, SupportError> ResolveCaseOutcome;
 /* Service model Outcome callable definitions */
 typedef std::future<AddAttachmentsToSetOutcome> AddAttachmentsToSetOutcomeCallable;
 typedef std::future<AddCommunicationToCaseOutcome> AddCommunicationToCaseOutcomeCallable;
+typedef std::future<CompleteAttachmentUploadOutcome> CompleteAttachmentUploadOutcomeCallable;
 typedef std::future<CreateCaseOutcome> CreateCaseOutcomeCallable;
 typedef std::future<DescribeAttachmentOutcome> DescribeAttachmentOutcomeCallable;
+typedef std::future<DescribeAttachmentUploadStatusOutcome> DescribeAttachmentUploadStatusOutcomeCallable;
 typedef std::future<DescribeCasesOutcome> DescribeCasesOutcomeCallable;
 typedef std::future<DescribeCommunicationsOutcome> DescribeCommunicationsOutcomeCallable;
 typedef std::future<DescribeCreateCaseOptionsOutcome> DescribeCreateCaseOptionsOutcomeCallable;
@@ -125,6 +139,8 @@ typedef std::future<DescribeTrustedAdvisorCheckRefreshStatusesOutcome> DescribeT
 typedef std::future<DescribeTrustedAdvisorCheckResultOutcome> DescribeTrustedAdvisorCheckResultOutcomeCallable;
 typedef std::future<DescribeTrustedAdvisorCheckSummariesOutcome> DescribeTrustedAdvisorCheckSummariesOutcomeCallable;
 typedef std::future<DescribeTrustedAdvisorChecksOutcome> DescribeTrustedAdvisorChecksOutcomeCallable;
+typedef std::future<GetAttachmentDownloadLinkOutcome> GetAttachmentDownloadLinkOutcomeCallable;
+typedef std::future<GetAttachmentUploadLinksOutcome> GetAttachmentUploadLinksOutcomeCallable;
 typedef std::future<RefreshTrustedAdvisorCheckOutcome> RefreshTrustedAdvisorCheckOutcomeCallable;
 typedef std::future<ResolveCaseOutcome> ResolveCaseOutcomeCallable;
 /* End of service model Outcome callable definitions */
@@ -139,12 +155,19 @@ typedef std::function<void(const SupportClient*, const Model::AddAttachmentsToSe
 typedef std::function<void(const SupportClient*, const Model::AddCommunicationToCaseRequest&, const Model::AddCommunicationToCaseOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AddCommunicationToCaseResponseReceivedHandler;
+typedef std::function<void(const SupportClient*, const Model::CompleteAttachmentUploadRequest&,
+                           const Model::CompleteAttachmentUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CompleteAttachmentUploadResponseReceivedHandler;
 typedef std::function<void(const SupportClient*, const Model::CreateCaseRequest&, const Model::CreateCaseOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateCaseResponseReceivedHandler;
 typedef std::function<void(const SupportClient*, const Model::DescribeAttachmentRequest&, const Model::DescribeAttachmentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeAttachmentResponseReceivedHandler;
+typedef std::function<void(const SupportClient*, const Model::DescribeAttachmentUploadStatusRequest&,
+                           const Model::DescribeAttachmentUploadStatusOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeAttachmentUploadStatusResponseReceivedHandler;
 typedef std::function<void(const SupportClient*, const Model::DescribeCasesRequest&, const Model::DescribeCasesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeCasesResponseReceivedHandler;
@@ -179,6 +202,12 @@ typedef std::function<void(const SupportClient*, const Model::DescribeTrustedAdv
                            const Model::DescribeTrustedAdvisorChecksOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeTrustedAdvisorChecksResponseReceivedHandler;
+typedef std::function<void(const SupportClient*, const Model::GetAttachmentDownloadLinkRequest&,
+                           const Model::GetAttachmentDownloadLinkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetAttachmentDownloadLinkResponseReceivedHandler;
+typedef std::function<void(const SupportClient*, const Model::GetAttachmentUploadLinksRequest&,
+                           const Model::GetAttachmentUploadLinksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetAttachmentUploadLinksResponseReceivedHandler;
 typedef std::function<void(const SupportClient*, const Model::RefreshTrustedAdvisorCheckRequest&,
                            const Model::RefreshTrustedAdvisorCheckOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     RefreshTrustedAdvisorCheckResponseReceivedHandler;

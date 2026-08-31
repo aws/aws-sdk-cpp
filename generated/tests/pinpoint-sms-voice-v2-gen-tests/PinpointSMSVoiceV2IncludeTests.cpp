@@ -34,6 +34,9 @@
 #include <aws/pinpoint-sms-voice-v2/model/CarrierStatus.h>
 #include <aws/pinpoint-sms-voice-v2/model/CarrierStatusInformation.h>
 #include <aws/pinpoint-sms-voice-v2/model/CloudWatchLogsDestination.h>
+#include <aws/pinpoint-sms-voice-v2/model/ConditionalBehavior.h>
+#include <aws/pinpoint-sms-voice-v2/model/ConditionalRule.h>
+#include <aws/pinpoint-sms-voice-v2/model/ConditionalValidation.h>
 #include <aws/pinpoint-sms-voice-v2/model/ConfigurationSetFilter.h>
 #include <aws/pinpoint-sms-voice-v2/model/ConfigurationSetFilterName.h>
 #include <aws/pinpoint-sms-voice-v2/model/ConfigurationSetInformation.h>
@@ -191,6 +194,7 @@
 #include <aws/pinpoint-sms-voice-v2/model/DiscardRegistrationVersionResult.h>
 #include <aws/pinpoint-sms-voice-v2/model/EventDestination.h>
 #include <aws/pinpoint-sms-voice-v2/model/EventType.h>
+#include <aws/pinpoint-sms-voice-v2/model/FieldCondition.h>
 #include <aws/pinpoint-sms-voice-v2/model/FieldRequirement.h>
 #include <aws/pinpoint-sms-voice-v2/model/FieldType.h>
 #include <aws/pinpoint-sms-voice-v2/model/GetProtectConfigurationCountryRuleSetRequest.h>

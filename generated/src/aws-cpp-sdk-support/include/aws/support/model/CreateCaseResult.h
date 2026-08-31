@@ -37,7 +37,7 @@ class CreateCaseResult {
   /**
    * <p>The support case ID requested or returned in the call. The case ID is an
    * alphanumeric string in the following format:
-   * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
+   * case-<i>12345678910-exen-2025-c4c1d2bf33c5cf47</i> </p>
    */
   inline const Aws::String& GetCaseId() const { return m_caseId; }
   template <typename CaseIdT = Aws::String>

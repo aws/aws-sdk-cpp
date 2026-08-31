@@ -73,6 +73,15 @@ CpuOptionsRequest& CpuOptionsRequest::operator=(const std::shared_ptr<Aws::Crt::
                   }
                 }
                 m_threadsPerCoreHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "NestedVirtualization") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_nestedVirtualization = NestedVirtualizationEnumMapper::GetNestedVirtualizationEnumForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_nestedVirtualizationHasBeenSet = true;
               } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
@@ -143,6 +152,15 @@ CpuOptionsRequest& CpuOptionsRequest::operator=(const std::shared_ptr<Aws::Crt::
                 }
               }
               m_threadsPerCoreHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "NestedVirtualization") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_nestedVirtualization = NestedVirtualizationEnumMapper::GetNestedVirtualizationEnumForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_nestedVirtualizationHasBeenSet = true;
             } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
@@ -168,6 +186,9 @@ void CpuOptionsRequest::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
   if (m_threadsPerCoreHasBeenSet) {
     mapSize++;
   }
+  if (m_nestedVirtualizationHasBeenSet) {
+    mapSize++;
+  }
 
   encoder.WriteMapStart(mapSize);
 
@@ -184,6 +205,12 @@ void CpuOptionsRequest::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
   if (m_threadsPerCoreHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("ThreadsPerCore"));
     (m_threadsPerCore >= 0) ? encoder.WriteUInt(m_threadsPerCore) : encoder.WriteNegInt(m_threadsPerCore);
+  }
+
+  if (m_nestedVirtualizationHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NestedVirtualization"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(
+        NestedVirtualizationEnumMapper::GetNameForNestedVirtualizationEnum(m_nestedVirtualization).c_str()));
   }
 }
 

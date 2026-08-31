@@ -120,7 +120,9 @@ class ManagedVpcResource {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The tags applied to the service-managed VPC resource.</p>
+   */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
   inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
   template <typename TagsT = Aws::Map<Aws::String, Aws::String>>

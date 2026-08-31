@@ -7,6 +7,7 @@
 #include <aws/crt/cbor/Cbor.h>
 #include <aws/workspaces-instances/WorkspacesInstances_EXPORTS.h>
 #include <aws/workspaces-instances/model/AmdSevSnpEnum.h>
+#include <aws/workspaces-instances/model/NestedVirtualizationEnum.h>
 
 #include <utility>
 
@@ -79,15 +80,34 @@ class CpuOptionsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to enable or disable nested virtualization.</p>
+   */
+  inline NestedVirtualizationEnum GetNestedVirtualization() const { return m_nestedVirtualization; }
+  inline bool NestedVirtualizationHasBeenSet() const { return m_nestedVirtualizationHasBeenSet; }
+  inline void SetNestedVirtualization(NestedVirtualizationEnum value) {
+    m_nestedVirtualizationHasBeenSet = true;
+    m_nestedVirtualization = value;
+  }
+  inline CpuOptionsRequest& WithNestedVirtualization(NestedVirtualizationEnum value) {
+    SetNestedVirtualization(value);
+    return *this;
+  }
+  ///@}
  private:
   AmdSevSnpEnum m_amdSevSnp{AmdSevSnpEnum::NOT_SET};
 
   int64_t m_coreCount{0};
 
   int64_t m_threadsPerCore{0};
+
+  NestedVirtualizationEnum m_nestedVirtualization{NestedVirtualizationEnum::NOT_SET};
   bool m_amdSevSnpHasBeenSet = false;
   bool m_coreCountHasBeenSet = false;
   bool m_threadsPerCoreHasBeenSet = false;
+  bool m_nestedVirtualizationHasBeenSet = false;
 };
 
 }  // namespace Model

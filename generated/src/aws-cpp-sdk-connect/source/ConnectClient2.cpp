@@ -6,6 +6,7 @@
 #include <aws/connect/ConnectClient.h>
 #include <aws/connect/ConnectEndpointProvider.h>
 #include <aws/connect/ConnectErrorMarshaller.h>
+#include <aws/connect/model/ListContactFlowModulesRequest.h>
 #include <aws/connect/model/ListContactFlowVersionsRequest.h>
 #include <aws/connect/model/ListContactFlowsRequest.h>
 #include <aws/connect/model/ListContactReferencesRequest.h>
@@ -105,7 +106,6 @@
 #include <aws/connect/model/StartAssistantContactRequest.h>
 #include <aws/connect/model/StartAttachedFileUploadRequest.h>
 #include <aws/connect/model/StartChatContactRequest.h>
-#include <aws/connect/model/StartContactConversationalAnalyticsJobRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/CoreErrors.h>
@@ -131,6 +131,24 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+ListContactFlowModulesOutcome ConnectClient::ListContactFlowModules(const ListContactFlowModulesRequest& request) const {
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListContactFlowModules", "Required field: InstanceId, is not set");
+    return ListContactFlowModulesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                              "Missing required field [InstanceId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/contact-flow-modules-summary/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListContactFlowModulesOutcome(result.GetResultWithOwnership())
+                            : ListContactFlowModulesOutcome(std::move(result.GetError()));
+}
 
 ListContactFlowVersionsOutcome ConnectClient::ListContactFlowVersions(const ListContactFlowVersionsRequest& request) const {
   if (!request.InstanceIdHasBeenSet()) {
@@ -1828,29 +1846,4 @@ StartChatContactOutcome ConnectClient::StartChatContact(const StartChatContactRe
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? StartChatContactOutcome(result.GetResultWithOwnership())
                             : StartChatContactOutcome(std::move(result.GetError()));
-}
-
-StartContactConversationalAnalyticsJobOutcome ConnectClient::StartContactConversationalAnalyticsJob(
-    const StartContactConversationalAnalyticsJobRequest& request) const {
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("StartContactConversationalAnalyticsJob", "Required field: InstanceId, is not set");
-    return StartContactConversationalAnalyticsJobOutcome(Aws::Client::AWSError<ConnectErrors>(
-        ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
-  }
-  if (!request.ContactIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("StartContactConversationalAnalyticsJob", "Required field: ContactId, is not set");
-    return StartContactConversationalAnalyticsJobOutcome(Aws::Client::AWSError<ConnectErrors>(
-        ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContactId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/contact/start-conversational-analytics-job/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContactId());
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? StartContactConversationalAnalyticsJobOutcome(result.GetResultWithOwnership())
-                            : StartContactConversationalAnalyticsJobOutcome(std::move(result.GetError()));
 }

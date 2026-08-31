@@ -34,7 +34,10 @@ class RegistryRecordsEntry {
   AWS_AGENTREGISTRY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p> The identifier of the registry to retrieve the records from. You can provide
+   * either the full Amazon Resource Name (ARN) or the registry ID.</p>
+   */
   inline const Aws::String& GetRegistryId() const { return m_registryId; }
   inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
   template <typename RegistryIdT = Aws::String>

@@ -74,6 +74,21 @@ UpdateRegistryRecordResult& UpdateRegistryRecordResult::operator=(const Aws::Ama
     m_statusReason = jsonValue.GetString("statusReason");
     m_statusReasonHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("provenance")) {
+    Aws::Utils::Array<JsonView> provenanceJsonList = jsonValue.GetArray("provenance");
+    for (unsigned provenanceIndex = 0; provenanceIndex < provenanceJsonList.GetLength(); ++provenanceIndex) {
+      m_provenance.push_back(provenanceJsonList[provenanceIndex].AsObject());
+    }
+    m_provenanceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("createdByAutoDetection")) {
+    m_createdByAutoDetection = jsonValue.GetBool("createdByAutoDetection");
+    m_createdByAutoDetectionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("createdBy")) {
+    m_createdBy = jsonValue.GetString("createdBy");
+    m_createdByHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

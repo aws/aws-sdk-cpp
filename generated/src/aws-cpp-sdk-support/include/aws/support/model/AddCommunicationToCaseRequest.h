@@ -35,7 +35,7 @@ class AddCommunicationToCaseRequest : public SupportRequest {
   /**
    * <p>The support case ID requested or returned in the call. The case ID is an
    * alphanumeric string formatted as shown in this example:
-   * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
+   * case-<i>12345678910-exen-2025-c4c1d2bf33c5cf47</i> </p>
    */
   inline const Aws::String& GetCaseId() const { return m_caseId; }
   inline bool CaseIdHasBeenSet() const { return m_caseIdHasBeenSet; }
@@ -97,7 +97,9 @@ class AddCommunicationToCaseRequest : public SupportRequest {
   ///@{
   /**
    * <p>The ID of a set of one or more attachments for the communication to add to
-   * the case. Create the set by calling <a>AddAttachmentsToSet</a> </p>
+   * the case. Create the set by calling <a>AddAttachmentsToSet</a>. Each attachment
+   * in the set must be 5 MB or smaller. To attach files larger than 5 MB, use
+   * <code>uploadIds</code>.</p>
    */
   inline const Aws::String& GetAttachmentSetId() const { return m_attachmentSetId; }
   inline bool AttachmentSetIdHasBeenSet() const { return m_attachmentSetIdHasBeenSet; }
@@ -112,6 +114,55 @@ class AddCommunicationToCaseRequest : public SupportRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of upload IDs that identify attachments to add to the case. Each
+   * <code>uploadId</code> is returned by the <a>GetAttachmentUploadLinks</a>
+   * operation. The upload must reach the <code>attachment-ready</code> state by
+   * calling <a>CompleteAttachmentUpload</a> before it can be passed here. Use
+   * <code>uploadIds</code> to attach files of any supported size, including files
+   * larger than 5 MB.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetUploadIds() const { return m_uploadIds; }
+  inline bool UploadIdsHasBeenSet() const { return m_uploadIdsHasBeenSet; }
+  template <typename UploadIdsT = Aws::Vector<Aws::String>>
+  void SetUploadIds(UploadIdsT&& value) {
+    m_uploadIdsHasBeenSet = true;
+    m_uploadIds = std::forward<UploadIdsT>(value);
+  }
+  template <typename UploadIdsT = Aws::Vector<Aws::String>>
+  AddCommunicationToCaseRequest& WithUploadIds(UploadIdsT&& value) {
+    SetUploadIds(std::forward<UploadIdsT>(value));
+    return *this;
+  }
+  template <typename UploadIdsT = Aws::String>
+  AddCommunicationToCaseRequest& AddUploadIds(UploadIdsT&& value) {
+    m_uploadIdsHasBeenSet = true;
+    m_uploadIds.emplace_back(std::forward<UploadIdsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to validate the request without actually adding the
+   * communication to the case. When set to <code>true</code>, the request is
+   * validated but the communication isn't added, and the operation returns a
+   * <code>DryRunOperationException</code>. When omitted or set to
+   * <code>false</code>, the request runs normally.</p>
+   */
+  inline bool GetDryRun() const { return m_dryRun; }
+  inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+  inline void SetDryRun(bool value) {
+    m_dryRunHasBeenSet = true;
+    m_dryRun = value;
+  }
+  inline AddCommunicationToCaseRequest& WithDryRun(bool value) {
+    SetDryRun(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_caseId;
 
@@ -120,10 +171,16 @@ class AddCommunicationToCaseRequest : public SupportRequest {
   Aws::Vector<Aws::String> m_ccEmailAddresses;
 
   Aws::String m_attachmentSetId;
+
+  Aws::Vector<Aws::String> m_uploadIds;
+
+  bool m_dryRun{false};
   bool m_caseIdHasBeenSet = false;
   bool m_communicationBodyHasBeenSet = false;
   bool m_ccEmailAddressesHasBeenSet = false;
   bool m_attachmentSetIdHasBeenSet = false;
+  bool m_uploadIdsHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
 };
 
 }  // namespace Model

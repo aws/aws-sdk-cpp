@@ -7,6 +7,7 @@
 #include <aws/agent-registry-control/AgentRegistryControlRequest.h>
 #include <aws/agent-registry-control/AgentRegistryControl_EXPORTS.h>
 #include <aws/agent-registry-control/model/UpdatedApprovalConfiguration.h>
+#include <aws/agent-registry-control/model/UpdatedAutoDetectionConfiguration.h>
 #include <aws/agent-registry-control/model/UpdatedDescription.h>
 #include <aws/agent-registry-control/model/UpdatedDiscoveryConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -126,6 +127,27 @@ class UpdateRegistryRequest : public AgentRegistryControlRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The updated auto-detection configuration for the registry, with PATCH
+   * semantics. Omit this field to leave the current configuration unchanged. Supply
+   * an empty wrapper to unset it. Supply <code>optionalValue</code> to replace
+   * it.</p>
+   */
+  inline const UpdatedAutoDetectionConfiguration& GetAutoDetectionConfiguration() const { return m_autoDetectionConfiguration; }
+  inline bool AutoDetectionConfigurationHasBeenSet() const { return m_autoDetectionConfigurationHasBeenSet; }
+  template <typename AutoDetectionConfigurationT = UpdatedAutoDetectionConfiguration>
+  void SetAutoDetectionConfiguration(AutoDetectionConfigurationT&& value) {
+    m_autoDetectionConfigurationHasBeenSet = true;
+    m_autoDetectionConfiguration = std::forward<AutoDetectionConfigurationT>(value);
+  }
+  template <typename AutoDetectionConfigurationT = UpdatedAutoDetectionConfiguration>
+  UpdateRegistryRequest& WithAutoDetectionConfiguration(AutoDetectionConfigurationT&& value) {
+    SetAutoDetectionConfiguration(std::forward<AutoDetectionConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_registryId;
 
@@ -136,11 +158,14 @@ class UpdateRegistryRequest : public AgentRegistryControlRequest {
   UpdatedDiscoveryConfiguration m_discoveryConfiguration;
 
   UpdatedApprovalConfiguration m_approvalConfiguration;
+
+  UpdatedAutoDetectionConfiguration m_autoDetectionConfiguration;
   bool m_registryIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_discoveryConfigurationHasBeenSet = false;
   bool m_approvalConfigurationHasBeenSet = false;
+  bool m_autoDetectionConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

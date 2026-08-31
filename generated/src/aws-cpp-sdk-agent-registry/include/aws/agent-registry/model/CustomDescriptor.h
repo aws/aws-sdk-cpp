@@ -32,7 +32,9 @@ class CustomDescriptor {
   AWS_AGENTREGISTRY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p>The custom descriptor content, serialized as descriptor payload data.</p>
+   */
   inline const Aws::String& GetData() const { return m_data; }
   inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
   template <typename DataT = Aws::String>

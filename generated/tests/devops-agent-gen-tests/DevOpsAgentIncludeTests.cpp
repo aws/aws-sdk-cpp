@@ -278,6 +278,7 @@
 #include <aws/devops-agent/model/ServiceNowOAuthClientCredentialsConfig.h>
 #include <aws/devops-agent/model/ServiceNowServiceAuthorizationConfig.h>
 #include <aws/devops-agent/model/ServiceNowServiceDetails.h>
+#include <aws/devops-agent/model/SlackBidirectionalConfiguration.h>
 #include <aws/devops-agent/model/SlackChannel.h>
 #include <aws/devops-agent/model/SlackConfiguration.h>
 #include <aws/devops-agent/model/SlackTransmissionTarget.h>

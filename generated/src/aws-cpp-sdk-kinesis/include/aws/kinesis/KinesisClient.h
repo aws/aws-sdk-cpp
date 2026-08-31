@@ -110,6 +110,44 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates a channel that delivers records from a Kinesis data stream to a
+   * destination. A channel reads records from the specified stream and writes them
+   * to streaming tables on Apache Iceberg (Amazon S3 Tables) or to a general purpose
+   * Amazon S3 bucket.</p> <p>You must specify either
+   * <code>S3DestinationConfiguration</code> or
+   * <code>S3TablesDestinationConfiguration</code>, but not both.</p> <p>Creating a
+   * channel is an asynchronous operation. Upon receiving the request, Amazon Kinesis
+   * Data Streams returns immediately with the channel in the <code>CREATING</code>
+   * state. After provisioning is complete, Amazon Kinesis Data Streams sets the
+   * state to <code>ACTIVE</code>. You can use <a>DescribeChannel</a> to check the
+   * current state.</p> <p>This operation is only supported for data streams with the
+   * on-demand capacity mode.</p> <p>This API has a call limit of 5 transactions per
+   * second (TPS) for each Amazon Web Services account. Exceeding 5 TPS results in a
+   * <code>LimitExceededException</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/CreateChannel">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateChannelOutcome CreateChannel(const Model::CreateChannelRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateChannel that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateChannelRequestT = Model::CreateChannelRequest>
+  Model::CreateChannelOutcomeCallable CreateChannelCallable(const CreateChannelRequestT& request) const {
+    return SubmitCallable(&KinesisClient::CreateChannel, request);
+  }
+
+  /**
+   * An Async wrapper for CreateChannel that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateChannelRequestT = Model::CreateChannelRequest>
+  void CreateChannelAsync(const CreateChannelRequestT& request, const CreateChannelResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KinesisClient::CreateChannel, request, handler, context);
+  }
+
+  /**
    * <p>Creates a Kinesis data stream. A stream captures and transports data records
    * that are continuously emitted from different data sources or <i>producers</i>.
    * Scale-out within a stream is explicitly supported by means of shards, which are
@@ -220,6 +258,38 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient,
                                           const DecreaseStreamRetentionPeriodResponseReceivedHandler& handler,
                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&KinesisClient::DecreaseStreamRetentionPeriod, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes the specified channel. Deleting a channel stops delivery from the
+   * source stream to the destination. Data already delivered to the destination is
+   * not deleted.</p> <p>A stream cannot be deleted while it has active channels. To
+   * delete the stream, first delete all channels attached to it. To find them, use
+   * <a>ListChannels</a> with a stream filter.</p> <p>This API has a call limit of 5
+   * transactions per second (TPS) for each Amazon Web Services account. Exceeding 5
+   * TPS results in a <code>LimitExceededException</code>.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeleteChannel">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteChannelOutcome DeleteChannel(const Model::DeleteChannelRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteChannel that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteChannelRequestT = Model::DeleteChannelRequest>
+  Model::DeleteChannelOutcomeCallable DeleteChannelCallable(const DeleteChannelRequestT& request) const {
+    return SubmitCallable(&KinesisClient::DeleteChannel, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteChannel that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteChannelRequestT = Model::DeleteChannelRequest>
+  void DeleteChannelAsync(const DeleteChannelRequestT& request, const DeleteChannelResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KinesisClient::DeleteChannel, request, handler, context);
   }
 
   /**
@@ -363,6 +433,37 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient,
                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                     const DescribeAccountSettingsRequestT& request = {}) const {
     return SubmitAsync(&KinesisClient::DescribeAccountSettings, request, handler, context);
+  }
+
+  /**
+   * <p>Describes the specified channel, including its configuration and current
+   * status.</p> <p>Use this operation to verify that a channel reached the
+   * <code>ACTIVE</code> state after creation, or to diagnose a channel in the
+   * <code>FAILED</code> state by reading the <code>ChannelStatusReason</code>.</p>
+   * <p>This API has a call limit of 5 transactions per second (TPS) for each Amazon
+   * Web Services account. Exceeding 5 TPS results in a
+   * <code>LimitExceededException</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeChannel">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeChannelOutcome DescribeChannel(const Model::DescribeChannelRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeChannel that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DescribeChannelRequestT = Model::DescribeChannelRequest>
+  Model::DescribeChannelOutcomeCallable DescribeChannelCallable(const DescribeChannelRequestT& request) const {
+    return SubmitCallable(&KinesisClient::DescribeChannel, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeChannel that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DescribeChannelRequestT = Model::DescribeChannelRequest>
+  void DescribeChannelAsync(const DescribeChannelRequestT& request, const DescribeChannelResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KinesisClient::DescribeChannel, request, handler, context);
   }
 
   /**
@@ -795,6 +896,39 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient,
                                           const IncreaseStreamRetentionPeriodResponseReceivedHandler& handler,
                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&KinesisClient::IncreaseStreamRetentionPeriod, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the channels in your account. You can filter the results by source
+   * stream. The results are paginated. Use the <code>NextToken</code> value returned
+   * in the response to retrieve additional results.</p> <p>Use this operation to
+   * find channels before deleting a stream, or to audit the channels configured in
+   * an Amazon Web Services Region.</p> <p>This API has a call limit of 5
+   * transactions per second (TPS) for each Amazon Web Services account. Exceeding 5
+   * TPS results in a <code>LimitExceededException</code>.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListChannels">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListChannelsOutcome ListChannels(const Model::ListChannelsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListChannels that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListChannelsRequestT = Model::ListChannelsRequest>
+  Model::ListChannelsOutcomeCallable ListChannelsCallable(const ListChannelsRequestT& request = {}) const {
+    return SubmitCallable(&KinesisClient::ListChannels, request);
+  }
+
+  /**
+   * An Async wrapper for ListChannels that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListChannelsRequestT = Model::ListChannelsRequest>
+  void ListChannelsAsync(const ListChannelsResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                         const ListChannelsRequestT& request = {}) const {
+    return SubmitAsync(&KinesisClient::ListChannels, request, handler, context);
   }
 
   /**
@@ -1599,6 +1733,41 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient,
   void UpdateAccountSettingsAsync(const UpdateAccountSettingsRequestT& request, const UpdateAccountSettingsResponseReceivedHandler& handler,
                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&KinesisClient::UpdateAccountSettings, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the data freshness interval or the Amazon CloudWatch Logs
+   * configuration of an existing channel. You cannot change the destination, source
+   * stream, record format, schema, encryption configuration, or service execution
+   * role of an existing channel. To change any other setting, delete the channel and
+   * create a new one.</p> <p>Updating a channel is an asynchronous operation. Upon
+   * receiving the request, Amazon Kinesis Data Streams sets the channel to the
+   * <code>UPDATING</code> state and returns immediately. After the change is
+   * applied, Amazon Kinesis Data Streams sets the channel back to the
+   * <code>ACTIVE</code> state.</p> <p>This API has a call limit of 5 transactions
+   * per second (TPS) for each Amazon Web Services account. Exceeding 5 TPS results
+   * in a <code>LimitExceededException</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateChannel">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateChannelOutcome UpdateChannel(const Model::UpdateChannelRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateChannel that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UpdateChannelRequestT = Model::UpdateChannelRequest>
+  Model::UpdateChannelOutcomeCallable UpdateChannelCallable(const UpdateChannelRequestT& request) const {
+    return SubmitCallable(&KinesisClient::UpdateChannel, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateChannel that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UpdateChannelRequestT = Model::UpdateChannelRequest>
+  void UpdateChannelAsync(const UpdateChannelRequestT& request, const UpdateChannelResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KinesisClient::UpdateChannel, request, handler, context);
   }
 
   /**

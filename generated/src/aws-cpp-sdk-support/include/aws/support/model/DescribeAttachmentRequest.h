@@ -33,7 +33,10 @@ class DescribeAttachmentRequest : public SupportRequest {
   ///@{
   /**
    * <p>The ID of the attachment to return. Attachment IDs are returned by the
-   * <a>DescribeCommunications</a> operation.</p>
+   * <a>DescribeCommunications</a> operation.</p> <p>If the specified attachment is
+   * larger than 5 MB, this operation returns
+   * <code>InvalidParameterValueException</code>. To download attachments larger than
+   * 5 MB, use <a>GetAttachmentDownloadLink</a>.</p>
    */
   inline const Aws::String& GetAttachmentId() const { return m_attachmentId; }
   inline bool AttachmentIdHasBeenSet() const { return m_attachmentIdHasBeenSet; }
@@ -48,9 +51,32 @@ class DescribeAttachmentRequest : public SupportRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to validate the request without actually retrieving the
+   * attachment. When set to <code>true</code>, the request is validated but no
+   * attachment content is returned, and the operation returns a
+   * <code>DryRunOperationException</code>. When omitted or set to
+   * <code>false</code>, the request runs normally.</p>
+   */
+  inline bool GetDryRun() const { return m_dryRun; }
+  inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+  inline void SetDryRun(bool value) {
+    m_dryRunHasBeenSet = true;
+    m_dryRun = value;
+  }
+  inline DescribeAttachmentRequest& WithDryRun(bool value) {
+    SetDryRun(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_attachmentId;
+
+  bool m_dryRun{false};
   bool m_attachmentIdHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
 };
 
 }  // namespace Model

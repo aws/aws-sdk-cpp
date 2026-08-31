@@ -30,6 +30,10 @@ SlackConfiguration& SlackConfiguration::operator=(JsonView jsonValue) {
     m_transmissionTarget = jsonValue.GetObject("transmissionTarget");
     m_transmissionTargetHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("bidirectional")) {
+    m_bidirectional = jsonValue.GetObject("bidirectional");
+    m_bidirectionalHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue SlackConfiguration::Jsonize() const {
 
   if (m_transmissionTargetHasBeenSet) {
     payload.WithObject("transmissionTarget", m_transmissionTarget.Jsonize());
+  }
+
+  if (m_bidirectionalHasBeenSet) {
+    payload.WithObject("bidirectional", m_bidirectional.Jsonize());
   }
 
   return payload;

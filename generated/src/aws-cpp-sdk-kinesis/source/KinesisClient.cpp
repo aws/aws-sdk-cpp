@@ -22,12 +22,15 @@
 #include <aws/kinesis/KinesisEndpointProvider.h>
 #include <aws/kinesis/KinesisErrorMarshaller.h>
 #include <aws/kinesis/model/AddTagsToStreamRequest.h>
+#include <aws/kinesis/model/CreateChannelRequest.h>
 #include <aws/kinesis/model/CreateStreamRequest.h>
 #include <aws/kinesis/model/DecreaseStreamRetentionPeriodRequest.h>
+#include <aws/kinesis/model/DeleteChannelRequest.h>
 #include <aws/kinesis/model/DeleteResourcePolicyRequest.h>
 #include <aws/kinesis/model/DeleteStreamRequest.h>
 #include <aws/kinesis/model/DeregisterStreamConsumerRequest.h>
 #include <aws/kinesis/model/DescribeAccountSettingsRequest.h>
+#include <aws/kinesis/model/DescribeChannelRequest.h>
 #include <aws/kinesis/model/DescribeLimitsRequest.h>
 #include <aws/kinesis/model/DescribeStreamConsumerRequest.h>
 #include <aws/kinesis/model/DescribeStreamRequest.h>
@@ -38,6 +41,7 @@
 #include <aws/kinesis/model/GetResourcePolicyRequest.h>
 #include <aws/kinesis/model/GetShardIteratorRequest.h>
 #include <aws/kinesis/model/IncreaseStreamRetentionPeriodRequest.h>
+#include <aws/kinesis/model/ListChannelsRequest.h>
 #include <aws/kinesis/model/ListShardsRequest.h>
 #include <aws/kinesis/model/ListStreamConsumersRequest.h>
 #include <aws/kinesis/model/ListStreamsRequest.h>
@@ -56,6 +60,7 @@
 #include <aws/kinesis/model/TagResourceRequest.h>
 #include <aws/kinesis/model/UntagResourceRequest.h>
 #include <aws/kinesis/model/UpdateAccountSettingsRequest.h>
+#include <aws/kinesis/model/UpdateChannelRequest.h>
 #include <aws/kinesis/model/UpdateMaxRecordSizeRequest.h>
 #include <aws/kinesis/model/UpdateShardCountRequest.h>
 #include <aws/kinesis/model/UpdateStreamModeRequest.h>
@@ -217,6 +222,11 @@ AddTagsToStreamOutcome KinesisClient::AddTagsToStream(const AddTagsToStreamReque
                             : AddTagsToStreamOutcome(std::move(result.GetError()));
 }
 
+CreateChannelOutcome KinesisClient::CreateChannel(const CreateChannelRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateChannelOutcome(result.GetResultWithOwnership()) : CreateChannelOutcome(std::move(result.GetError()));
+}
+
 CreateStreamOutcome KinesisClient::CreateStream(const CreateStreamRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateStreamOutcome(result.GetResultWithOwnership()) : CreateStreamOutcome(std::move(result.GetError()));
@@ -227,6 +237,11 @@ DecreaseStreamRetentionPeriodOutcome KinesisClient::DecreaseStreamRetentionPerio
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DecreaseStreamRetentionPeriodOutcome(result.GetResultWithOwnership())
                             : DecreaseStreamRetentionPeriodOutcome(std::move(result.GetError()));
+}
+
+DeleteChannelOutcome KinesisClient::DeleteChannel(const DeleteChannelRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteChannelOutcome(result.GetResultWithOwnership()) : DeleteChannelOutcome(std::move(result.GetError()));
 }
 
 DeleteResourcePolicyOutcome KinesisClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const {
@@ -250,6 +265,12 @@ DescribeAccountSettingsOutcome KinesisClient::DescribeAccountSettings(const Desc
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeAccountSettingsOutcome(result.GetResultWithOwnership())
                             : DescribeAccountSettingsOutcome(std::move(result.GetError()));
+}
+
+DescribeChannelOutcome KinesisClient::DescribeChannel(const DescribeChannelRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeChannelOutcome(result.GetResultWithOwnership())
+                            : DescribeChannelOutcome(std::move(result.GetError()));
 }
 
 DescribeLimitsOutcome KinesisClient::DescribeLimits(const DescribeLimitsRequest& request) const {
@@ -308,6 +329,11 @@ IncreaseStreamRetentionPeriodOutcome KinesisClient::IncreaseStreamRetentionPerio
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? IncreaseStreamRetentionPeriodOutcome(result.GetResultWithOwnership())
                             : IncreaseStreamRetentionPeriodOutcome(std::move(result.GetError()));
+}
+
+ListChannelsOutcome KinesisClient::ListChannels(const ListChannelsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListChannelsOutcome(result.GetResultWithOwnership()) : ListChannelsOutcome(std::move(result.GetError()));
 }
 
 ListShardsOutcome KinesisClient::ListShards(const ListShardsRequest& request) const {
@@ -444,6 +470,11 @@ UpdateAccountSettingsOutcome KinesisClient::UpdateAccountSettings(const UpdateAc
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateAccountSettingsOutcome(result.GetResultWithOwnership())
                             : UpdateAccountSettingsOutcome(std::move(result.GetError()));
+}
+
+UpdateChannelOutcome KinesisClient::UpdateChannel(const UpdateChannelRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateChannelOutcome(result.GetResultWithOwnership()) : UpdateChannelOutcome(std::move(result.GetError()));
 }
 
 UpdateMaxRecordSizeOutcome KinesisClient::UpdateMaxRecordSize(const UpdateMaxRecordSizeRequest& request) const {

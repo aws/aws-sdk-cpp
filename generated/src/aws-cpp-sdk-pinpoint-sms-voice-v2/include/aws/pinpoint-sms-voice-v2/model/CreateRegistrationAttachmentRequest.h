@@ -36,8 +36,8 @@ class CreateRegistrationAttachmentRequest : public PinpointSMSVoiceV2Request {
 
   ///@{
   /**
-   * <p>The registration file to upload. The maximum file size is 500KB and valid
-   * file extensions are PDF, JPEG and PNG.</p>
+   * <p>The registration file to upload. The maximum file size is 5MB and valid file
+   * extensions are PDF, JPEG and PNG.</p>
    */
   inline const Aws::Utils::ByteBuffer& GetAttachmentBody() const { return m_attachmentBody; }
   inline bool AttachmentBodyHasBeenSet() const { return m_attachmentBodyHasBeenSet; }

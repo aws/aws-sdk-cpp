@@ -19,6 +19,7 @@ static const int UPDATE_WORKER_SETTING_HASH = HashingUtils::HashString("UPDATE_W
 static const int UPDATE_CONNECTOR_CONFIGURATION_HASH = HashingUtils::HashString("UPDATE_CONNECTOR_CONFIGURATION");
 static const int ISOLATE_CONNECTOR_HASH = HashingUtils::HashString("ISOLATE_CONNECTOR");
 static const int RESTORE_CONNECTOR_HASH = HashingUtils::HashString("RESTORE_CONNECTOR");
+static const int RESTART_CONNECTOR_HASH = HashingUtils::HashString("RESTART_CONNECTOR");
 
 ConnectorOperationType GetConnectorOperationTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ ConnectorOperationType GetConnectorOperationTypeForName(const Aws::String& name)
     return ConnectorOperationType::ISOLATE_CONNECTOR;
   } else if (hashCode == RESTORE_CONNECTOR_HASH) {
     return ConnectorOperationType::RESTORE_CONNECTOR;
+  } else if (hashCode == RESTART_CONNECTOR_HASH) {
+    return ConnectorOperationType::RESTART_CONNECTOR;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForConnectorOperationType(ConnectorOperationType enumValue) {
       return "ISOLATE_CONNECTOR";
     case ConnectorOperationType::RESTORE_CONNECTOR:
       return "RESTORE_CONNECTOR";
+    case ConnectorOperationType::RESTART_CONNECTOR:
+      return "RESTART_CONNECTOR";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

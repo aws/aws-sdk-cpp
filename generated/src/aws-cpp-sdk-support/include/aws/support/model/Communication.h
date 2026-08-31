@@ -40,7 +40,7 @@ class Communication {
   /**
    * <p>The support case ID requested or returned in the call. The case ID is an
    * alphanumeric string formatted as shown in this example:
-   * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
+   * case-<i>12345678910-exen-2025-c4c1d2bf33c5cf47</i> </p>
    */
   inline const Aws::String& GetCaseId() const { return m_caseId; }
   inline bool CaseIdHasBeenSet() const { return m_caseIdHasBeenSet; }
@@ -117,7 +117,40 @@ class Communication {
 
   ///@{
   /**
-   * <p>Information about the attachments to the case communication.</p>
+   * <p>Information about all attachments on the case communication. This includes
+   * attachments added through <code>AddAttachmentsToSet</code> and attachments
+   * uploaded through <code>GetAttachmentUploadLinks</code>.</p> <p>Use this field to
+   * enumerate every attachment on the communication. To download an attachment
+   * listed in this field, use <a>GetAttachmentDownloadLink</a>.
+   * <code>GetAttachmentDownloadLink</code> returns a presigned URL that works for
+   * attachments of any size. </p>
+   */
+  inline const Aws::Vector<AttachmentDetails>& GetAttachments() const { return m_attachments; }
+  inline bool AttachmentsHasBeenSet() const { return m_attachmentsHasBeenSet; }
+  template <typename AttachmentsT = Aws::Vector<AttachmentDetails>>
+  void SetAttachments(AttachmentsT&& value) {
+    m_attachmentsHasBeenSet = true;
+    m_attachments = std::forward<AttachmentsT>(value);
+  }
+  template <typename AttachmentsT = Aws::Vector<AttachmentDetails>>
+  Communication& WithAttachments(AttachmentsT&& value) {
+    SetAttachments(std::forward<AttachmentsT>(value));
+    return *this;
+  }
+  template <typename AttachmentsT = AttachmentDetails>
+  Communication& AddAttachments(AttachmentsT&& value) {
+    m_attachmentsHasBeenSet = true;
+    m_attachments.emplace_back(std::forward<AttachmentsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Information about the attachments to the case communication that are 5 MB or
+   * smaller. This field doesn't include attachments larger than 5 MB. To enumerate
+   * every attachment on the communication, including attachments larger than 5 MB,
+   * use the <code>attachments</code> field instead.</p>
    */
   inline const Aws::Vector<AttachmentDetails>& GetAttachmentSet() const { return m_attachmentSet; }
   inline bool AttachmentSetHasBeenSet() const { return m_attachmentSetHasBeenSet; }
@@ -147,11 +180,14 @@ class Communication {
 
   Aws::String m_timeCreated;
 
+  Aws::Vector<AttachmentDetails> m_attachments;
+
   Aws::Vector<AttachmentDetails> m_attachmentSet;
   bool m_caseIdHasBeenSet = false;
   bool m_bodyHasBeenSet = false;
   bool m_submittedByHasBeenSet = false;
   bool m_timeCreatedHasBeenSet = false;
+  bool m_attachmentsHasBeenSet = false;
   bool m_attachmentSetHasBeenSet = false;
 };
 

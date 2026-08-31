@@ -37,7 +37,10 @@ class RegistryRecordSummary {
   AWS_AGENTREGISTRY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p> The Amazon Resource Name (ARN) of the parent registry that owns the
+   * record.</p>
+   */
   inline const Aws::String& GetRegistryArn() const { return m_registryArn; }
   inline bool RegistryArnHasBeenSet() const { return m_registryArnHasBeenSet; }
   template <typename RegistryArnT = Aws::String>
@@ -53,7 +56,9 @@ class RegistryRecordSummary {
   ///@}
 
   ///@{
-
+  /**
+   * <p> The Amazon Resource Name (ARN) of the registry record.</p>
+   */
   inline const Aws::String& GetRecordArn() const { return m_recordArn; }
   inline bool RecordArnHasBeenSet() const { return m_recordArnHasBeenSet; }
   template <typename RecordArnT = Aws::String>
@@ -69,7 +74,9 @@ class RegistryRecordSummary {
   ///@}
 
   ///@{
-
+  /**
+   * <p> The unique identifier of the registry record.</p>
+   */
   inline const Aws::String& GetRecordId() const { return m_recordId; }
   inline bool RecordIdHasBeenSet() const { return m_recordIdHasBeenSet; }
   template <typename RecordIdT = Aws::String>
@@ -85,7 +92,9 @@ class RegistryRecordSummary {
   ///@}
 
   ///@{
-
+  /**
+   * <p> The name of the registry record. Names are unique within a registry.</p>
+   */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
   template <typename NameT = Aws::String>
@@ -101,7 +110,11 @@ class RegistryRecordSummary {
   ///@}
 
   ///@{
-
+  /**
+   * <p> A human-readable description of the registry record. Use this field to
+   * explain the record's purpose or content to consumers discovering it in the
+   * registry.</p>
+   */
   inline const Aws::String& GetDescription() const { return m_description; }
   inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
   template <typename DescriptionT = Aws::String>
@@ -117,7 +130,9 @@ class RegistryRecordSummary {
   ///@}
 
   ///@{
-
+  /**
+   * <p> The human-readable display name of the registry record.</p>
+   */
   inline const Aws::String& GetDisplayName() const { return m_displayName; }
   inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
   template <typename DisplayNameT = Aws::String>
@@ -133,7 +148,12 @@ class RegistryRecordSummary {
   ///@}
 
   ///@{
-
+  /**
+   * <p> The type of the registry record. <code>MCP</code> is a Model Context
+   * Protocol server record, <code>AGENT</code> is an Agent-to-Agent (A2A) agent card
+   * record, <code>SKILL</code> is an agent skills definition record, and
+   * <code>CUSTOM</code> is a record with a custom descriptor.</p>
+   */
   inline RecordType GetRecordType() const { return m_recordType; }
   inline bool RecordTypeHasBeenSet() const { return m_recordTypeHasBeenSet; }
   inline void SetRecordType(RecordType value) {
@@ -166,7 +186,9 @@ class RegistryRecordSummary {
   ///@}
 
   ///@{
-
+  /**
+   * <p> The version identifier of the registry record.</p>
+   */
   inline const Aws::String& GetRecordVersion() const { return m_recordVersion; }
   inline bool RecordVersionHasBeenSet() const { return m_recordVersionHasBeenSet; }
   template <typename RecordVersionT = Aws::String>
@@ -182,7 +204,15 @@ class RegistryRecordSummary {
   ///@}
 
   ///@{
-
+  /**
+   * <p> The lifecycle status of the registry record. A record is <code>DRAFT</code>
+   * before it is submitted, <code>PENDING_APPROVAL</code> while awaiting curator
+   * review, and <code>APPROVED</code> once it is approved and discoverable.
+   * <code>REJECTED</code> and <code>DEPRECATED</code> records are not discoverable.
+   * The <code>CREATING</code>, <code>UPDATING</code>, <code>CREATE_FAILED</code>,
+   * and <code>UPDATE_FAILED</code> values reflect the state of an in-progress or
+   * failed asynchronous change.</p>
+   */
   inline RegistryRecordStatus GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
   inline void SetStatus(RegistryRecordStatus value) {
@@ -196,7 +226,9 @@ class RegistryRecordSummary {
   ///@}
 
   ///@{
-
+  /**
+   * <p> The timestamp when the registry record was created.</p>
+   */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
   inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
   template <typename CreatedAtT = Aws::Utils::DateTime>
@@ -212,7 +244,9 @@ class RegistryRecordSummary {
   ///@}
 
   ///@{
-
+  /**
+   * <p> The timestamp when the registry record was last updated.</p>
+   */
   inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
   inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
   template <typename UpdatedAtT = Aws::Utils::DateTime>

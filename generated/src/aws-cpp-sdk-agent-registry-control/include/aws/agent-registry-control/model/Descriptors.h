@@ -6,8 +6,10 @@
 #pragma once
 #include <aws/agent-registry-control/AgentRegistryControl_EXPORTS.h>
 #include <aws/agent-registry-control/model/A2aAgentCardDescriptor.h>
+#include <aws/agent-registry-control/model/AgUiDescriptor.h>
 #include <aws/agent-registry-control/model/AgentSkillsDefinitionDescriptor.h>
 #include <aws/agent-registry-control/model/CustomDescriptor.h>
+#include <aws/agent-registry-control/model/HttpDescriptor.h>
 #include <aws/agent-registry-control/model/McpServerDescriptor.h>
 
 #include <utility>
@@ -107,6 +109,44 @@ class Descriptors {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The HTTP descriptor, populated for records detected from an HTTP protocol
+   * source.</p>
+   */
+  inline const HttpDescriptor& GetHttp() const { return m_http; }
+  inline bool HttpHasBeenSet() const { return m_httpHasBeenSet; }
+  template <typename HttpT = HttpDescriptor>
+  void SetHttp(HttpT&& value) {
+    m_httpHasBeenSet = true;
+    m_http = std::forward<HttpT>(value);
+  }
+  template <typename HttpT = HttpDescriptor>
+  Descriptors& WithHttp(HttpT&& value) {
+    SetHttp(std::forward<HttpT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The AG-UI descriptor, populated for records detected from an AG-UI protocol
+   * source.</p>
+   */
+  inline const AgUiDescriptor& GetAgui() const { return m_agui; }
+  inline bool AguiHasBeenSet() const { return m_aguiHasBeenSet; }
+  template <typename AguiT = AgUiDescriptor>
+  void SetAgui(AguiT&& value) {
+    m_aguiHasBeenSet = true;
+    m_agui = std::forward<AguiT>(value);
+  }
+  template <typename AguiT = AgUiDescriptor>
+  Descriptors& WithAgui(AguiT&& value) {
+    SetAgui(std::forward<AguiT>(value));
+    return *this;
+  }
+  ///@}
  private:
   McpServerDescriptor m_mcpServer;
 
@@ -115,10 +155,16 @@ class Descriptors {
   AgentSkillsDefinitionDescriptor m_agentSkillsDefinition;
 
   CustomDescriptor m_custom;
+
+  HttpDescriptor m_http;
+
+  AgUiDescriptor m_agui;
   bool m_mcpServerHasBeenSet = false;
   bool m_a2aAgentCardHasBeenSet = false;
   bool m_agentSkillsDefinitionHasBeenSet = false;
   bool m_customHasBeenSet = false;
+  bool m_httpHasBeenSet = false;
+  bool m_aguiHasBeenSet = false;
 };
 
 }  // namespace Model

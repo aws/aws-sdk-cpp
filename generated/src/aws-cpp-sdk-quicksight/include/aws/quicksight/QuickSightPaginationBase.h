@@ -12,6 +12,7 @@
 #include <aws/quicksight/model/ListActionConnectorsPaginationTraits.h>
 #include <aws/quicksight/model/ListAnalysesPaginationTraits.h>
 #include <aws/quicksight/model/ListApprovalPoliciesPaginationTraits.h>
+#include <aws/quicksight/model/ListAppsPaginationTraits.h>
 #include <aws/quicksight/model/ListAssetBundleExportJobsPaginationTraits.h>
 #include <aws/quicksight/model/ListAssetBundleImportJobsPaginationTraits.h>
 #include <aws/quicksight/model/ListBrandsPaginationTraits.h>
@@ -47,6 +48,7 @@
 #include <aws/quicksight/model/ListVPCConnectionsPaginationTraits.h>
 #include <aws/quicksight/model/SearchActionConnectorsPaginationTraits.h>
 #include <aws/quicksight/model/SearchAnalysesPaginationTraits.h>
+#include <aws/quicksight/model/SearchAppsPaginationTraits.h>
 #include <aws/quicksight/model/SearchDashboardsPaginationTraits.h>
 #include <aws/quicksight/model/SearchDataSetsPaginationTraits.h>
 #include <aws/quicksight/model/SearchDataSourcesPaginationTraits.h>
@@ -121,6 +123,16 @@ class QuickSightPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApprovalPoliciesRequest,
                                              Pagination::ListApprovalPoliciesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListApps operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAppsRequest, Pagination::ListAppsPaginationTraits<DerivedClient>>
+  ListAppsPaginator(const Model::ListAppsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAppsRequest, Pagination::ListAppsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 
@@ -525,6 +537,17 @@ class QuickSightPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchAnalysesRequest,
                                              Pagination::SearchAnalysesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
+  }
+
+  /**
+   * Create a paginator for SearchApps operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchAppsRequest, Pagination::SearchAppsPaginationTraits<DerivedClient>>
+  SearchAppsPaginator(const Model::SearchAppsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchAppsRequest,
+                                             Pagination::SearchAppsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                    request};
   }
 
   /**

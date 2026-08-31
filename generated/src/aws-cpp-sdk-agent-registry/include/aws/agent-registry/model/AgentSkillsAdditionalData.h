@@ -33,7 +33,10 @@ class AgentSkillsAdditionalData {
   AWS_AGENTREGISTRY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p> The agent skills markdown descriptor associated with the agent skills
+   * definition.</p>
+   */
   inline const AgentSkillsMdDescriptor& GetSkillMd() const { return m_skillMd; }
   inline bool SkillMdHasBeenSet() const { return m_skillMdHasBeenSet; }
   template <typename SkillMdT = AgentSkillsMdDescriptor>

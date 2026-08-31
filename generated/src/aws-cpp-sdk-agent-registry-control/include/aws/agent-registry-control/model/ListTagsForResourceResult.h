@@ -29,7 +29,10 @@ class ListTagsForResourceResult {
   AWS_AGENTREGISTRYCONTROL_API ListTagsForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   ///@{
-
+  /**
+   * <p>The tags currently associated with the resource, as a map of tag keys to tag
+   * values.</p>
+   */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
   template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
   void SetTags(TagsT&& value) {

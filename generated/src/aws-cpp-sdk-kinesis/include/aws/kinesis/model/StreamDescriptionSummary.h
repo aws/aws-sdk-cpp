@@ -312,6 +312,22 @@ class StreamDescriptionSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The number of channels associated with the stream.</p>
+   */
+  inline int GetChannelCount() const { return m_channelCount; }
+  inline bool ChannelCountHasBeenSet() const { return m_channelCountHasBeenSet; }
+  inline void SetChannelCount(int value) {
+    m_channelCountHasBeenSet = true;
+    m_channelCount = value;
+  }
+  inline StreamDescriptionSummary& WithChannelCount(int value) {
+    SetChannelCount(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_streamName;
 
@@ -340,6 +356,8 @@ class StreamDescriptionSummary {
   WarmThroughputObject m_warmThroughput;
 
   int m_maxRecordSizeInKiB{0};
+
+  int m_channelCount{0};
   bool m_streamNameHasBeenSet = false;
   bool m_streamARNHasBeenSet = false;
   bool m_streamIdHasBeenSet = false;
@@ -354,6 +372,7 @@ class StreamDescriptionSummary {
   bool m_consumerCountHasBeenSet = false;
   bool m_warmThroughputHasBeenSet = false;
   bool m_maxRecordSizeInKiBHasBeenSet = false;
+  bool m_channelCountHasBeenSet = false;
 };
 
 }  // namespace Model

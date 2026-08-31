@@ -6,7 +6,9 @@
 #pragma once
 #include <aws/agent-registry-control/AgentRegistryControl_EXPORTS.h>
 #include <aws/agent-registry-control/model/ApprovalConfiguration.h>
+#include <aws/agent-registry-control/model/AutoDetection.h>
 #include <aws/agent-registry-control/model/DiscoveryConfiguration.h>
+#include <aws/agent-registry-control/model/EncryptionConfiguration.h>
 #include <aws/agent-registry-control/model/RegistryStatus.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
@@ -123,6 +125,24 @@ class GetRegistryResult {
 
   ///@{
   /**
+   * <p>The server-side encryption configuration for the registry. Appears only when
+   * a customer-managed Amazon Web Services KMS key encrypts the registry.</p>
+   */
+  inline const EncryptionConfiguration& GetEncryptionConfiguration() const { return m_encryptionConfiguration; }
+  template <typename EncryptionConfigurationT = EncryptionConfiguration>
+  void SetEncryptionConfiguration(EncryptionConfigurationT&& value) {
+    m_encryptionConfigurationHasBeenSet = true;
+    m_encryptionConfiguration = std::forward<EncryptionConfigurationT>(value);
+  }
+  template <typename EncryptionConfigurationT = EncryptionConfiguration>
+  GetRegistryResult& WithEncryptionConfiguration(EncryptionConfigurationT&& value) {
+    SetEncryptionConfiguration(std::forward<EncryptionConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Approval configuration for registry records</p>
    */
   inline const ApprovalConfiguration& GetApprovalConfiguration() const { return m_approvalConfiguration; }
@@ -167,6 +187,25 @@ class GetRegistryResult {
   template <typename StatusReasonT = Aws::String>
   GetRegistryResult& WithStatusReason(StatusReasonT&& value) {
     SetStatusReason(std::forward<StatusReasonT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The registry's auto-detection properties, including the requested
+   * configuration and the current detection status. Present only when auto-detection
+   * was configured for the registry.</p>
+   */
+  inline const AutoDetection& GetAutoDetection() const { return m_autoDetection; }
+  template <typename AutoDetectionT = AutoDetection>
+  void SetAutoDetection(AutoDetectionT&& value) {
+    m_autoDetectionHasBeenSet = true;
+    m_autoDetection = std::forward<AutoDetectionT>(value);
+  }
+  template <typename AutoDetectionT = AutoDetection>
+  GetRegistryResult& WithAutoDetection(AutoDetectionT&& value) {
+    SetAutoDetection(std::forward<AutoDetectionT>(value));
     return *this;
   }
   ///@}
@@ -232,11 +271,15 @@ class GetRegistryResult {
 
   DiscoveryConfiguration m_discoveryConfiguration;
 
+  EncryptionConfiguration m_encryptionConfiguration;
+
   ApprovalConfiguration m_approvalConfiguration;
 
   RegistryStatus m_status{RegistryStatus::NOT_SET};
 
   Aws::String m_statusReason;
+
+  AutoDetection m_autoDetection;
 
   Aws::Utils::DateTime m_createdAt{};
 
@@ -249,9 +292,11 @@ class GetRegistryResult {
   bool m_registryIdHasBeenSet = false;
   bool m_registryArnHasBeenSet = false;
   bool m_discoveryConfigurationHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
   bool m_approvalConfigurationHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
+  bool m_autoDetectionHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

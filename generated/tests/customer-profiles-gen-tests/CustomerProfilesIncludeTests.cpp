@@ -27,6 +27,9 @@
 #include <aws/customer-profiles/model/AppflowIntegrationWorkflowAttributes.h>
 #include <aws/customer-profiles/model/AppflowIntegrationWorkflowMetrics.h>
 #include <aws/customer-profiles/model/AppflowIntegrationWorkflowStep.h>
+#include <aws/customer-profiles/model/AssociateStreamForSegmentsRequest.h>
+#include <aws/customer-profiles/model/AssociateStreamForSegmentsResult.h>
+#include <aws/customer-profiles/model/AssociatedSegment.h>
 #include <aws/customer-profiles/model/AttributeDetails.h>
 #include <aws/customer-profiles/model/AttributeDimension.h>
 #include <aws/customer-profiles/model/AttributeDimensionType.h>
@@ -124,6 +127,8 @@
 #include <aws/customer-profiles/model/DeleteRecommenderSchemaResult.h>
 #include <aws/customer-profiles/model/DeleteSegmentDefinitionRequest.h>
 #include <aws/customer-profiles/model/DeleteSegmentDefinitionResult.h>
+#include <aws/customer-profiles/model/DeleteSegmentSubscriptionRequest.h>
+#include <aws/customer-profiles/model/DeleteSegmentSubscriptionResult.h>
 #include <aws/customer-profiles/model/DeleteWorkflowRequest.h>
 #include <aws/customer-profiles/model/DeleteWorkflowResult.h>
 #include <aws/customer-profiles/model/DestinationSummary.h>
@@ -131,6 +136,8 @@
 #include <aws/customer-profiles/model/DetectProfileObjectTypeResult.h>
 #include <aws/customer-profiles/model/DetectedProfileObjectType.h>
 #include <aws/customer-profiles/model/Dimension.h>
+#include <aws/customer-profiles/model/DisassociateStreamForSegmentsRequest.h>
+#include <aws/customer-profiles/model/DisassociateStreamForSegmentsResult.h>
 #include <aws/customer-profiles/model/DiversityCapType.h>
 #include <aws/customer-profiles/model/DiversityColumn.h>
 #include <aws/customer-profiles/model/DiversityConfig.h>
@@ -144,6 +151,8 @@
 #include <aws/customer-profiles/model/EventStreamDestinationStatus.h>
 #include <aws/customer-profiles/model/EventStreamState.h>
 #include <aws/customer-profiles/model/EventStreamSummary.h>
+#include <aws/customer-profiles/model/EventSubscriptionSegmentStatus.h>
+#include <aws/customer-profiles/model/EventSubscriptionState.h>
 #include <aws/customer-profiles/model/EventTriggerCondition.h>
 #include <aws/customer-profiles/model/EventTriggerDimension.h>
 #include <aws/customer-profiles/model/EventTriggerLimits.h>
@@ -212,9 +221,13 @@
 #include <aws/customer-profiles/model/GetSegmentMembershipResult.h>
 #include <aws/customer-profiles/model/GetSegmentSnapshotRequest.h>
 #include <aws/customer-profiles/model/GetSegmentSnapshotResult.h>
+#include <aws/customer-profiles/model/GetSegmentSubscriptionRequest.h>
+#include <aws/customer-profiles/model/GetSegmentSubscriptionResult.h>
 #include <aws/customer-profiles/model/GetSimilarProfilesPaginationTraits.h>
 #include <aws/customer-profiles/model/GetSimilarProfilesRequest.h>
 #include <aws/customer-profiles/model/GetSimilarProfilesResult.h>
+#include <aws/customer-profiles/model/GetStreamForSegmentsRequest.h>
+#include <aws/customer-profiles/model/GetStreamForSegmentsResult.h>
 #include <aws/customer-profiles/model/GetUploadJobPathRequest.h>
 #include <aws/customer-profiles/model/GetUploadJobPathResult.h>
 #include <aws/customer-profiles/model/GetUploadJobRequest.h>
@@ -302,6 +315,9 @@
 #include <aws/customer-profiles/model/ListSegmentDefinitionsPaginationTraits.h>
 #include <aws/customer-profiles/model/ListSegmentDefinitionsRequest.h>
 #include <aws/customer-profiles/model/ListSegmentDefinitionsResult.h>
+#include <aws/customer-profiles/model/ListSegmentSubscriptionEventsPaginationTraits.h>
+#include <aws/customer-profiles/model/ListSegmentSubscriptionEventsRequest.h>
+#include <aws/customer-profiles/model/ListSegmentSubscriptionEventsResult.h>
 #include <aws/customer-profiles/model/ListTagsForResourceRequest.h>
 #include <aws/customer-profiles/model/ListTagsForResourceResult.h>
 #include <aws/customer-profiles/model/ListUploadJobsPaginationTraits.h>
@@ -347,6 +363,8 @@
 #include <aws/customer-profiles/model/PutProfileObjectResult.h>
 #include <aws/customer-profiles/model/PutProfileObjectTypeRequest.h>
 #include <aws/customer-profiles/model/PutProfileObjectTypeResult.h>
+#include <aws/customer-profiles/model/PutSegmentSubscriptionRequest.h>
+#include <aws/customer-profiles/model/PutSegmentSubscriptionResult.h>
 #include <aws/customer-profiles/model/QueryResult.h>
 #include <aws/customer-profiles/model/Range.h>
 #include <aws/customer-profiles/model/RangeOverride.h>
@@ -378,6 +396,9 @@
 #include <aws/customer-profiles/model/S3SourceProperties.h>
 #include <aws/customer-profiles/model/SalesforceConnectorOperator.h>
 #include <aws/customer-profiles/model/SalesforceSourceProperties.h>
+#include <aws/customer-profiles/model/ScheduleConfiguration.h>
+#include <aws/customer-profiles/model/ScheduleConfigurationUnit.h>
+#include <aws/customer-profiles/model/ScheduledExecutions.h>
 #include <aws/customer-profiles/model/ScheduledTriggerProperties.h>
 #include <aws/customer-profiles/model/Scope.h>
 #include <aws/customer-profiles/model/SearchProfilesRequest.h>
@@ -389,6 +410,7 @@
 #include <aws/customer-profiles/model/SegmentSort.h>
 #include <aws/customer-profiles/model/SegmentSortDataType.h>
 #include <aws/customer-profiles/model/SegmentSortOrder.h>
+#include <aws/customer-profiles/model/SegmentSubscriptionStatus.h>
 #include <aws/customer-profiles/model/SegmentType.h>
 #include <aws/customer-profiles/model/ServiceNowConnectorOperator.h>
 #include <aws/customer-profiles/model/ServiceNowSourceProperties.h>
@@ -411,6 +433,9 @@
 #include <aws/customer-profiles/model/StopUploadJobRequest.h>
 #include <aws/customer-profiles/model/StopUploadJobResult.h>
 #include <aws/customer-profiles/model/StringDimensionType.h>
+#include <aws/customer-profiles/model/SubscriptionEvent.h>
+#include <aws/customer-profiles/model/SubscriptionEventItem.h>
+#include <aws/customer-profiles/model/SubscriptionEventType.h>
 #include <aws/customer-profiles/model/TagResourceRequest.h>
 #include <aws/customer-profiles/model/TagResourceResult.h>
 #include <aws/customer-profiles/model/Task.h>

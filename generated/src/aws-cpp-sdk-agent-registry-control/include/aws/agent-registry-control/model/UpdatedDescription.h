@@ -33,7 +33,10 @@ class UpdatedDescription {
   AWS_AGENTREGISTRYCONTROL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p>The value to set for this field. Omit the wrapper to leave the field
+   * unchanged.</p>
+   */
   inline const Aws::String& GetOptionalValue() const { return m_optionalValue; }
   inline bool OptionalValueHasBeenSet() const { return m_optionalValueHasBeenSet; }
   template <typename OptionalValueT = Aws::String>

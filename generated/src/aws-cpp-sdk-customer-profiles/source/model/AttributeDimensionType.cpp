@@ -30,6 +30,8 @@ static const int LESS_THAN_HASH = HashingUtils::HashString("LESS_THAN");
 static const int GREATER_THAN_OR_EQUAL_HASH = HashingUtils::HashString("GREATER_THAN_OR_EQUAL");
 static const int LESS_THAN_OR_EQUAL_HASH = HashingUtils::HashString("LESS_THAN_OR_EQUAL");
 static const int EQUAL_HASH = HashingUtils::HashString("EQUAL");
+static const int LIST_CONTAINS_HASH = HashingUtils::HashString("LIST_CONTAINS");
+static const int LIST_CONTAINS_ALL_HASH = HashingUtils::HashString("LIST_CONTAINS_ALL");
 
 AttributeDimensionType GetAttributeDimensionTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -63,6 +65,10 @@ AttributeDimensionType GetAttributeDimensionTypeForName(const Aws::String& name)
     return AttributeDimensionType::LESS_THAN_OR_EQUAL;
   } else if (hashCode == EQUAL_HASH) {
     return AttributeDimensionType::EQUAL;
+  } else if (hashCode == LIST_CONTAINS_HASH) {
+    return AttributeDimensionType::LIST_CONTAINS;
+  } else if (hashCode == LIST_CONTAINS_ALL_HASH) {
+    return AttributeDimensionType::LIST_CONTAINS_ALL;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -107,6 +113,10 @@ Aws::String GetNameForAttributeDimensionType(AttributeDimensionType enumValue) {
       return "LESS_THAN_OR_EQUAL";
     case AttributeDimensionType::EQUAL:
       return "EQUAL";
+    case AttributeDimensionType::LIST_CONTAINS:
+      return "LIST_CONTAINS";
+    case AttributeDimensionType::LIST_CONTAINS_ALL:
+      return "LIST_CONTAINS_ALL";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

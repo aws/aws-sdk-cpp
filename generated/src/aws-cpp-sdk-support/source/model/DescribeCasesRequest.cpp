@@ -55,6 +55,10 @@ Aws::String DescribeCasesRequest::SerializePayload() const {
     payload.WithBool("includeCommunications", m_includeCommunications);
   }
 
+  if (m_dryRunHasBeenSet) {
+    payload.WithBool("dryRun", m_dryRun);
+  }
+
   return payload.View().WriteReadable();
 }
 

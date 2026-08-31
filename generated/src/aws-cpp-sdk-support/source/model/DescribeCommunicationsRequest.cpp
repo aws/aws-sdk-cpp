@@ -35,6 +35,10 @@ Aws::String DescribeCommunicationsRequest::SerializePayload() const {
     payload.WithInteger("maxResults", m_maxResults);
   }
 
+  if (m_dryRunHasBeenSet) {
+    payload.WithBool("dryRun", m_dryRun);
+  }
+
   return payload.View().WriteReadable();
 }
 

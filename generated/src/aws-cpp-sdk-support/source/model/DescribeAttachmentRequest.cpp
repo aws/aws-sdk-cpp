@@ -19,6 +19,10 @@ Aws::String DescribeAttachmentRequest::SerializePayload() const {
     payload.WithString("attachmentId", m_attachmentId);
   }
 
+  if (m_dryRunHasBeenSet) {
+    payload.WithBool("dryRun", m_dryRun);
+  }
+
   return payload.View().WriteReadable();
 }
 

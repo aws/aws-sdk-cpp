@@ -52,7 +52,10 @@ class ProfileDimension {
 
   ///@{
   /**
-   * <p>The values to apply the DimensionType on.</p>
+   * <p>The values to apply the DimensionType on. To reference a calculated attribute
+   * or profile attribute as a dynamic value, use handlebar notation:
+   * <code>{{_profile.ProfileAttributeName}}</code> or
+   * <code>{{_calculated_attribute.CalculatedAttributeName}}</code>.</p>
    */
   inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
   inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }

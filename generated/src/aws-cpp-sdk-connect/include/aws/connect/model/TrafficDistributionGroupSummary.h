@@ -91,7 +91,7 @@ class TrafficDistributionGroupSummary {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
+   * <p>The Amazon Resource Name (ARN) of the instance.</p>
    */
   inline const Aws::String& GetInstanceArn() const { return m_instanceArn; }
   inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }

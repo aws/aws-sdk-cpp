@@ -88,15 +88,38 @@ class DescribeSupportedLanguagesRequest : public SupportRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to validate the request without actually returning
+   * supported languages. When set to <code>true</code>, the request is validated but
+   * no languages are returned, and the operation returns a
+   * <code>DryRunOperationException</code>. When omitted or set to
+   * <code>false</code>, the request runs normally.</p>
+   */
+  inline bool GetDryRun() const { return m_dryRun; }
+  inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+  inline void SetDryRun(bool value) {
+    m_dryRunHasBeenSet = true;
+    m_dryRun = value;
+  }
+  inline DescribeSupportedLanguagesRequest& WithDryRun(bool value) {
+    SetDryRun(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_issueType;
 
   Aws::String m_serviceCode;
 
   Aws::String m_categoryCode;
+
+  bool m_dryRun{false};
   bool m_issueTypeHasBeenSet = false;
   bool m_serviceCodeHasBeenSet = false;
   bool m_categoryCodeHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
 };
 
 }  // namespace Model

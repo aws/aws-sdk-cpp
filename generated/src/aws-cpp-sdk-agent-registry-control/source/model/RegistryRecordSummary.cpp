@@ -62,6 +62,22 @@ RegistryRecordSummary& RegistryRecordSummary::operator=(JsonView jsonValue) {
     m_updatedAt = jsonValue.GetString("updatedAt");
     m_updatedAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("createdByAutoDetection")) {
+    m_createdByAutoDetection = jsonValue.GetBool("createdByAutoDetection");
+    m_createdByAutoDetectionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("createdBy")) {
+    m_createdBy = jsonValue.GetString("createdBy");
+    m_createdByHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("provenanceSummaryList")) {
+    Aws::Utils::Array<JsonView> provenanceSummaryListJsonList = jsonValue.GetArray("provenanceSummaryList");
+    for (unsigned provenanceSummaryListIndex = 0; provenanceSummaryListIndex < provenanceSummaryListJsonList.GetLength();
+         ++provenanceSummaryListIndex) {
+      m_provenanceSummaryList.push_back(provenanceSummaryListJsonList[provenanceSummaryListIndex].AsObject());
+    }
+    m_provenanceSummaryListHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -110,6 +126,23 @@ JsonValue RegistryRecordSummary::Jsonize() const {
 
   if (m_updatedAtHasBeenSet) {
     payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_createdByAutoDetectionHasBeenSet) {
+    payload.WithBool("createdByAutoDetection", m_createdByAutoDetection);
+  }
+
+  if (m_createdByHasBeenSet) {
+    payload.WithString("createdBy", m_createdBy);
+  }
+
+  if (m_provenanceSummaryListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> provenanceSummaryListJsonList(m_provenanceSummaryList.size());
+    for (unsigned provenanceSummaryListIndex = 0; provenanceSummaryListIndex < provenanceSummaryListJsonList.GetLength();
+         ++provenanceSummaryListIndex) {
+      provenanceSummaryListJsonList[provenanceSummaryListIndex].AsObject(m_provenanceSummaryList[provenanceSummaryListIndex].Jsonize());
+    }
+    payload.WithArray("provenanceSummaryList", std::move(provenanceSummaryListJsonList));
   }
 
   return payload;

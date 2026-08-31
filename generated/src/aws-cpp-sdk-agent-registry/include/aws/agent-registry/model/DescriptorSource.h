@@ -33,7 +33,10 @@ class DescriptorSource {
   AWS_AGENTREGISTRY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p> The URL-based descriptor source, populated when descriptor content is
+   * synchronized from a URL.</p>
+   */
   inline const DescriptorSourceFromUrl& GetFromUrl() const { return m_fromUrl; }
   inline bool FromUrlHasBeenSet() const { return m_fromUrlHasBeenSet; }
   template <typename FromUrlT = DescriptorSourceFromUrl>

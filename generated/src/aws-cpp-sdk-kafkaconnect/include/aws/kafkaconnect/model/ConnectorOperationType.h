@@ -10,7 +10,14 @@
 namespace Aws {
 namespace KafkaConnect {
 namespace Model {
-enum class ConnectorOperationType { NOT_SET, UPDATE_WORKER_SETTING, UPDATE_CONNECTOR_CONFIGURATION, ISOLATE_CONNECTOR, RESTORE_CONNECTOR };
+enum class ConnectorOperationType {
+  NOT_SET,
+  UPDATE_WORKER_SETTING,
+  UPDATE_CONNECTOR_CONFIGURATION,
+  ISOLATE_CONNECTOR,
+  RESTORE_CONNECTOR,
+  RESTART_CONNECTOR
+};
 
 namespace ConnectorOperationTypeMapper {
 AWS_KAFKACONNECT_API ConnectorOperationType GetConnectorOperationTypeForName(const Aws::String& name);

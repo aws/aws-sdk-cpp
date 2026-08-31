@@ -5489,6 +5489,37 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Retrieves the current cross-region routing configuration for an Amazon
+   * Connect Global Resiliency instance enabled for global routing. This operation
+   * returns whether cross-region routing is currently enabled or disabled (isolated)
+   * for the instance.</p>  <p>This operation is available only for Amazon
+   * Connect Global Resiliency instances enabled for global routing.</p>
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetCrossRegionRouting">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetCrossRegionRoutingOutcome GetCrossRegionRouting(const Model::GetCrossRegionRoutingRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetCrossRegionRouting that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetCrossRegionRoutingRequestT = Model::GetCrossRegionRoutingRequest>
+  Model::GetCrossRegionRoutingOutcomeCallable GetCrossRegionRoutingCallable(const GetCrossRegionRoutingRequestT& request) const {
+    return SubmitCallable(&ConnectClient::GetCrossRegionRouting, request);
+  }
+
+  /**
+   * An Async wrapper for GetCrossRegionRouting that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetCrossRegionRoutingRequestT = Model::GetCrossRegionRoutingRequest>
+  void GetCrossRegionRoutingAsync(const GetCrossRegionRoutingRequestT& request, const GetCrossRegionRoutingResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::GetCrossRegionRouting, request, handler, context);
+  }
+
+  /**
    * <p>Gets the real-time metric data from the specified Connect Customer
    * instance.</p> <p>For a description of each metric, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
@@ -10719,6 +10750,40 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
                                       const UpdateContactTaskTemplateResponseReceivedHandler& handler,
                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::UpdateContactTaskTemplate, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the cross-region routing configuration for an Amazon Connect Global
+   * Resiliency instance enabled for global routing. When invoked with
+   * <code>IsolatedAll</code> set to <code>true</code>, this operation disables
+   * cross-region routing, meaning contacts originating in one Region will no longer
+   * be routed to agents in another Region.</p>  <p>This operation is available
+   * only for Amazon Connect Global Resiliency instances enabled for global routing.
+   * Reporting and contact search continue to operate globally after you use this
+   * operation.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateCrossRegionRouting">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateCrossRegionRoutingOutcome UpdateCrossRegionRouting(const Model::UpdateCrossRegionRoutingRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateCrossRegionRouting that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateCrossRegionRoutingRequestT = Model::UpdateCrossRegionRoutingRequest>
+  Model::UpdateCrossRegionRoutingOutcomeCallable UpdateCrossRegionRoutingCallable(const UpdateCrossRegionRoutingRequestT& request) const {
+    return SubmitCallable(&ConnectClient::UpdateCrossRegionRouting, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateCrossRegionRouting that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateCrossRegionRoutingRequestT = Model::UpdateCrossRegionRoutingRequest>
+  void UpdateCrossRegionRoutingAsync(const UpdateCrossRegionRoutingRequestT& request,
+                                     const UpdateCrossRegionRoutingResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::UpdateCrossRegionRouting, request, handler, context);
   }
 
   /**

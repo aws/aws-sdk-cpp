@@ -43,5 +43,13 @@ Aws::String UpdateRegistryRecordRequest::SerializePayload() const {
     payload.WithBool("triggerSynchronization", m_triggerSynchronization);
   }
 
+  if (m_provenanceHasBeenSet) {
+    Aws::Utils::Array<JsonValue> provenanceJsonList(m_provenance.size());
+    for (unsigned provenanceIndex = 0; provenanceIndex < provenanceJsonList.GetLength(); ++provenanceIndex) {
+      provenanceJsonList[provenanceIndex].AsObject(m_provenance[provenanceIndex].Jsonize());
+    }
+    payload.WithArray("provenance", std::move(provenanceJsonList));
+  }
+
   return payload.View().WriteReadable();
 }

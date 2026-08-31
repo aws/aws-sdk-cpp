@@ -21,8 +21,8 @@ namespace Model {
 
 /**
  * <p>The configuration for an IAM role credential provider that signs requests to
- * a registry record's source with AWS Signature Version 4 (SigV4).</p><p><h3>See
- * Also:</h3>   <a
+ * a registry record's source with Amazon Web Services Signature Version 4
+ * (SigV4).</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/RegistryRecordIamCredentialProvider">AWS
  * API Reference</a></p>
  */
@@ -35,7 +35,8 @@ class RegistryRecordIamCredentialProvider {
 
   ///@{
   /**
-   * <p>The &amp;ARN; of the IAM role to assume for request signing.</p>
+   * <p>The Amazon Resource Name (ARN) of the IAM role to assume for request
+   * signing.</p>
    */
   inline const Aws::String& GetRoleArn() const { return m_roleArn; }
   inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
@@ -71,9 +72,9 @@ class RegistryRecordIamCredentialProvider {
 
   ///@{
   /**
-   * <p>The AWS Region to use for request signing. If not specified, the Region is
-   * derived from the source URL hostname, falling back to the Region of the
-   * registry.</p>
+   * <p>The Amazon Web Services Region to use for request signing. If not specified,
+   * the Region is derived from the source URL hostname, falling back to the Region
+   * of the registry.</p>
    */
   inline const Aws::String& GetRegion() const { return m_region; }
   inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }

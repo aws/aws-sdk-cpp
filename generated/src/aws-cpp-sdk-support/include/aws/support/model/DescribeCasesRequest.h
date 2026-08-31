@@ -78,7 +78,7 @@ class DescribeCasesRequest : public SupportRequest {
   ///@{
   /**
    * <p>The start date for a filtered date search on support case communications.
-   * Case communications are available for 12 months after creation.</p>
+   * Case communications are available for 24 months after creation.</p>
    */
   inline const Aws::String& GetAfterTime() const { return m_afterTime; }
   inline bool AfterTimeHasBeenSet() const { return m_afterTimeHasBeenSet; }
@@ -97,7 +97,7 @@ class DescribeCasesRequest : public SupportRequest {
   ///@{
   /**
    * <p>The end date for a filtered date search on support case communications. Case
-   * communications are available for 12 months after creation.</p>
+   * communications are available for 24 months after creation.</p>
    */
   inline const Aws::String& GetBeforeTime() const { return m_beforeTime; }
   inline bool BeforeTimeHasBeenSet() const { return m_beforeTimeHasBeenSet; }
@@ -169,7 +169,8 @@ class DescribeCasesRequest : public SupportRequest {
   /**
    * <p>The language in which Amazon Web Services Support handles the case. Amazon
    * Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese
-   * ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the
+   * ("ja") , Chinese ("zh"), Spanish ("es"), Portuguese ("pt"), French ("fr"),
+   * Korean (“ko”), and Turkish ("tr"). You must specify the ISO 639-1 code for the
    * <code>language</code> parameter if you want support in that language.</p>
    */
   inline const Aws::String& GetLanguage() const { return m_language; }
@@ -202,6 +203,25 @@ class DescribeCasesRequest : public SupportRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to validate the request without actually returning case
+   * data. When set to <code>true</code>, the request is validated but no cases are
+   * returned, and the operation returns a <code>DryRunOperationException</code>.
+   * When omitted or set to <code>false</code>, the request runs normally.</p>
+   */
+  inline bool GetDryRun() const { return m_dryRun; }
+  inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+  inline void SetDryRun(bool value) {
+    m_dryRunHasBeenSet = true;
+    m_dryRun = value;
+  }
+  inline DescribeCasesRequest& WithDryRun(bool value) {
+    SetDryRun(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_caseIdList;
 
@@ -220,6 +240,8 @@ class DescribeCasesRequest : public SupportRequest {
   Aws::String m_language;
 
   bool m_includeCommunications{false};
+
+  bool m_dryRun{false};
   bool m_caseIdListHasBeenSet = false;
   bool m_displayIdHasBeenSet = false;
   bool m_afterTimeHasBeenSet = false;
@@ -229,6 +251,7 @@ class DescribeCasesRequest : public SupportRequest {
   bool m_maxResultsHasBeenSet = false;
   bool m_languageHasBeenSet = false;
   bool m_includeCommunicationsHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
 };
 
 }  // namespace Model

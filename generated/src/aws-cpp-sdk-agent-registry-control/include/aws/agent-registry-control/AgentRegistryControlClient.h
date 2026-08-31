@@ -16,13 +16,13 @@
 namespace Aws {
 namespace AgentRegistryControl {
 /**
- * <p>AWS Agent Registry is a managed catalog for publishing and discovering
- * resources such as MCP servers, agents, and agent skills. Agent Registry Control
- * is its control-plane API: use it to create and manage registries and the records
- * they contain, configure discovery and authorization, govern record approval and
- * curation workflows, and manage automatic detection of resources. Data-plane
- * search and MCP invocation operations are provided by the companion Agent
- * Registry API.</p>
+ * <p>Amazon Web Services Agent Registry is a managed catalog for publishing and
+ * discovering resources such as MCP servers, agents, and agent skills. Agent
+ * Registry Control is its control-plane API: use it to create and manage
+ * registries and the records they contain, configure discovery and authorization,
+ * govern record approval and curation workflows, and manage automatic detection of
+ * resources. Data-plane search and MCP invocation operations are provided by the
+ * companion Agent Registry API.</p>
  */
 class AWS_AGENTREGISTRYCONTROL_API AgentRegistryControlClient
     : public Aws::Client::AWSJsonClient,
@@ -302,7 +302,9 @@ class AWS_AGENTREGISTRYCONTROL_API AgentRegistryControlClient
   }
 
   /**
-   * <p>List the tags on a resource</p><p><h3>See Also:</h3>   <a
+   * <p>Lists the tags associated with the specified Amazon Web Services Agent
+   * Registry resource. Returns the current tag key-value pairs on the
+   * resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/ListTagsForResource">AWS
    * API Reference</a></p>
    */
@@ -360,7 +362,11 @@ class AWS_AGENTREGISTRYCONTROL_API AgentRegistryControlClient
   }
 
   /**
-   * <p>Tag a resource with key-value pairs</p><p><h3>See Also:</h3>   <a
+   * <p>Adds or overwrites one or more tags for the specified Amazon Web Services
+   * Agent Registry resource. Tags are key-value pairs that you can use to categorize
+   * and manage Amazon Web Services resources. If a tag with the same key already
+   * exists on the resource, the service replaces its value with the value you
+   * specify.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/TagResource">AWS
    * API Reference</a></p>
    */
@@ -385,7 +391,9 @@ class AWS_AGENTREGISTRYCONTROL_API AgentRegistryControlClient
   }
 
   /**
-   * <p>Remove tags from a resource by key</p><p><h3>See Also:</h3>   <a
+   * <p>Removes one or more tags from the specified Amazon Web Services Agent
+   * Registry resource. The operation removes only the tags whose keys you supply;
+   * other tags on the resource remain unchanged.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/UntagResource">AWS
    * API Reference</a></p>
    */

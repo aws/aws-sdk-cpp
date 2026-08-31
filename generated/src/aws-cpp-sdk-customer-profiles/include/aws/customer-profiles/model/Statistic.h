@@ -10,7 +10,18 @@
 namespace Aws {
 namespace CustomerProfiles {
 namespace Model {
-enum class Statistic { NOT_SET, FIRST_OCCURRENCE, LAST_OCCURRENCE, COUNT, SUM, MINIMUM, MAXIMUM, AVERAGE, MAX_OCCURRENCE };
+enum class Statistic {
+  NOT_SET,
+  FIRST_OCCURRENCE,
+  LAST_OCCURRENCE,
+  COUNT,
+  SUM,
+  MINIMUM,
+  MAXIMUM,
+  AVERAGE,
+  MAX_OCCURRENCE,
+  RECENT_OCCURRENCES
+};
 
 namespace StatisticMapper {
 AWS_CUSTOMERPROFILES_API Statistic GetStatisticForName(const Aws::String& name);

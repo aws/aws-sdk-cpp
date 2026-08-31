@@ -49,12 +49,14 @@
 #include <aws/quicksight/model/SearchKnowledgeBasesPaginationTraits.h>
 #include <aws/quicksight/model/ListActionConnectorsPaginationTraits.h>
 #include <aws/quicksight/model/ListDlpSettingsPaginationTraits.h>
+#include <aws/quicksight/model/SearchAppsPaginationTraits.h>
 #include <aws/quicksight/model/ListDataSetsPaginationTraits.h>
 #include <aws/quicksight/model/SearchActionConnectorsPaginationTraits.h>
 #include <aws/quicksight/model/ListDashboardVersionsPaginationTraits.h>
 #include <aws/quicksight/model/SearchFoldersPaginationTraits.h>
 #include <aws/quicksight/model/ListFoldersForResourcePaginationTraits.h>
 #include <aws/quicksight/model/ListTemplateAliasesPaginationTraits.h>
+#include <aws/quicksight/model/ListAppsPaginationTraits.h>
 #include <aws/quicksight/model/ListFlowsPaginationTraits.h>
 #include <aws/quicksight/model/ListIngestionsPaginationTraits.h>
 

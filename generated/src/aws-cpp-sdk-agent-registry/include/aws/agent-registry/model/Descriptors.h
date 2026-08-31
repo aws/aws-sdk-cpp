@@ -36,7 +36,9 @@ class Descriptors {
   AWS_AGENTREGISTRY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p> The MCP server descriptor, populated when the record type is MCP.</p>
+   */
   inline const McpServerDescriptor& GetMcpServer() const { return m_mcpServer; }
   inline bool McpServerHasBeenSet() const { return m_mcpServerHasBeenSet; }
   template <typename McpServerT = McpServerDescriptor>
@@ -52,7 +54,9 @@ class Descriptors {
   ///@}
 
   ///@{
-
+  /**
+   * <p> The A2A agent card descriptor, populated when the record type is AGENT.</p>
+   */
   inline const A2aAgentCardDescriptor& GetA2aAgentCard() const { return m_a2aAgentCard; }
   inline bool A2aAgentCardHasBeenSet() const { return m_a2aAgentCardHasBeenSet; }
   template <typename A2aAgentCardT = A2aAgentCardDescriptor>
@@ -68,7 +72,10 @@ class Descriptors {
   ///@}
 
   ///@{
-
+  /**
+   * <p> The agent skills definition descriptor, populated when the record type is
+   * SKILL.</p>
+   */
   inline const AgentSkillsDefinitionDescriptor& GetAgentSkillsDefinition() const { return m_agentSkillsDefinition; }
   inline bool AgentSkillsDefinitionHasBeenSet() const { return m_agentSkillsDefinitionHasBeenSet; }
   template <typename AgentSkillsDefinitionT = AgentSkillsDefinitionDescriptor>
@@ -84,7 +91,9 @@ class Descriptors {
   ///@}
 
   ///@{
-
+  /**
+   * <p> The custom descriptor, populated when the record type is CUSTOM.</p>
+   */
   inline const CustomDescriptor& GetCustom() const { return m_custom; }
   inline bool CustomHasBeenSet() const { return m_customHasBeenSet; }
   template <typename CustomT = CustomDescriptor>

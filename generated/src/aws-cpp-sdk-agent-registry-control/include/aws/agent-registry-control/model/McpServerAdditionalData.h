@@ -32,7 +32,10 @@ class McpServerAdditionalData {
   AWS_AGENTREGISTRYCONTROL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p>The MCP tools descriptor that defines the tools exposed by the MCP
+   * server.</p>
+   */
   inline const McpToolsDescriptor& GetTools() const { return m_tools; }
   inline bool ToolsHasBeenSet() const { return m_toolsHasBeenSet; }
   template <typename ToolsT = McpToolsDescriptor>

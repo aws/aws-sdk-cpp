@@ -120,6 +120,38 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>Associates an Amazon Kinesis data stream to receive segment membership events
+   * for a given domain. This is a domain-level configuration that applies to all
+   * segment subscriptions within the domain. A domain can have only one associated
+   * stream at a time. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/AssociateStreamForSegments">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AssociateStreamForSegmentsOutcome AssociateStreamForSegments(
+      const Model::AssociateStreamForSegmentsRequest& request) const;
+
+  /**
+   * A Callable wrapper for AssociateStreamForSegments that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename AssociateStreamForSegmentsRequestT = Model::AssociateStreamForSegmentsRequest>
+  Model::AssociateStreamForSegmentsOutcomeCallable AssociateStreamForSegmentsCallable(
+      const AssociateStreamForSegmentsRequestT& request) const {
+    return SubmitCallable(&CustomerProfilesClient::AssociateStreamForSegments, request);
+  }
+
+  /**
+   * An Async wrapper for AssociateStreamForSegments that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename AssociateStreamForSegmentsRequestT = Model::AssociateStreamForSegmentsRequest>
+  void AssociateStreamForSegmentsAsync(const AssociateStreamForSegmentsRequestT& request,
+                                       const AssociateStreamForSegmentsResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CustomerProfilesClient::AssociateStreamForSegments, request, handler, context);
+  }
+
+  /**
    * <p>Fetch the possible attribute values given the attribute name.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/BatchGetCalculatedAttributeForProfile">AWS
@@ -1039,6 +1071,35 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>Deletes a segment subscription for membership events. All active event
+   * notifications for this segment are stopped. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteSegmentSubscription">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteSegmentSubscriptionOutcome DeleteSegmentSubscription(const Model::DeleteSegmentSubscriptionRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteSegmentSubscription that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteSegmentSubscriptionRequestT = Model::DeleteSegmentSubscriptionRequest>
+  Model::DeleteSegmentSubscriptionOutcomeCallable DeleteSegmentSubscriptionCallable(
+      const DeleteSegmentSubscriptionRequestT& request) const {
+    return SubmitCallable(&CustomerProfilesClient::DeleteSegmentSubscription, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteSegmentSubscription that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteSegmentSubscriptionRequestT = Model::DeleteSegmentSubscriptionRequest>
+  void DeleteSegmentSubscriptionAsync(const DeleteSegmentSubscriptionRequestT& request,
+                                      const DeleteSegmentSubscriptionResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CustomerProfilesClient::DeleteSegmentSubscription, request, handler, context);
+  }
+
+  /**
    * <p>Deletes the specified workflow and all its corresponding resources. This is
    * an async process.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteWorkflow">AWS
@@ -1090,6 +1151,37 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
                                     const DetectProfileObjectTypeResponseReceivedHandler& handler,
                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CustomerProfilesClient::DetectProfileObjectType, request, handler, context);
+  }
+
+  /**
+   * <p>Disassociates the Amazon Kinesis data stream configured for segment
+   * membership events. All active segment subscriptions delivering events to this
+   * stream are eventually stopped. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DisassociateStreamForSegments">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DisassociateStreamForSegmentsOutcome DisassociateStreamForSegments(
+      const Model::DisassociateStreamForSegmentsRequest& request) const;
+
+  /**
+   * A Callable wrapper for DisassociateStreamForSegments that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DisassociateStreamForSegmentsRequestT = Model::DisassociateStreamForSegmentsRequest>
+  Model::DisassociateStreamForSegmentsOutcomeCallable DisassociateStreamForSegmentsCallable(
+      const DisassociateStreamForSegmentsRequestT& request) const {
+    return SubmitCallable(&CustomerProfilesClient::DisassociateStreamForSegments, request);
+  }
+
+  /**
+   * An Async wrapper for DisassociateStreamForSegments that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DisassociateStreamForSegmentsRequestT = Model::DisassociateStreamForSegmentsRequest>
+  void DisassociateStreamForSegmentsAsync(const DisassociateStreamForSegmentsRequestT& request,
+                                          const DisassociateStreamForSegmentsResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CustomerProfilesClient::DisassociateStreamForSegments, request, handler, context);
   }
 
   /**
@@ -1769,6 +1861,34 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>Returns the current subscription configuration, execution schedule, and
+   * status for segment membership events. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSegmentSubscription">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetSegmentSubscriptionOutcome GetSegmentSubscription(const Model::GetSegmentSubscriptionRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetSegmentSubscription that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetSegmentSubscriptionRequestT = Model::GetSegmentSubscriptionRequest>
+  Model::GetSegmentSubscriptionOutcomeCallable GetSegmentSubscriptionCallable(const GetSegmentSubscriptionRequestT& request) const {
+    return SubmitCallable(&CustomerProfilesClient::GetSegmentSubscription, request);
+  }
+
+  /**
+   * An Async wrapper for GetSegmentSubscription that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetSegmentSubscriptionRequestT = Model::GetSegmentSubscriptionRequest>
+  void GetSegmentSubscriptionAsync(const GetSegmentSubscriptionRequestT& request,
+                                   const GetSegmentSubscriptionResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CustomerProfilesClient::GetSegmentSubscription, request, handler, context);
+  }
+
+  /**
    * <p>Returns a set of profiles that belong to the same matching group using the
    * <code>matchId</code> or <code>profileId</code>. You can also specify the type of
    * matching that you want for finding similar profiles using either
@@ -1796,6 +1916,34 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
   void GetSimilarProfilesAsync(const GetSimilarProfilesRequestT& request, const GetSimilarProfilesResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CustomerProfilesClient::GetSimilarProfiles, request, handler, context);
+  }
+
+  /**
+   * <p>Returns information about the segment membership event stream configured for
+   * a specific domain, including the stream state and associated segments.
+   * </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetStreamForSegments">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetStreamForSegmentsOutcome GetStreamForSegments(const Model::GetStreamForSegmentsRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetStreamForSegments that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetStreamForSegmentsRequestT = Model::GetStreamForSegmentsRequest>
+  Model::GetStreamForSegmentsOutcomeCallable GetStreamForSegmentsCallable(const GetStreamForSegmentsRequestT& request) const {
+    return SubmitCallable(&CustomerProfilesClient::GetStreamForSegments, request);
+  }
+
+  /**
+   * An Async wrapper for GetStreamForSegments that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetStreamForSegmentsRequestT = Model::GetStreamForSegmentsRequest>
+  void GetStreamForSegmentsAsync(const GetStreamForSegmentsRequestT& request, const GetStreamForSegmentsResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CustomerProfilesClient::GetStreamForSegments, request, handler, context);
   }
 
   /**
@@ -2554,6 +2702,37 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>Returns the most recent membership events for a segment. Each event
+   * represents a profile that entered or exited the segment. </p> <p>This operation
+   * is paginated. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListSegmentSubscriptionEvents">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListSegmentSubscriptionEventsOutcome ListSegmentSubscriptionEvents(
+      const Model::ListSegmentSubscriptionEventsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListSegmentSubscriptionEvents that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListSegmentSubscriptionEventsRequestT = Model::ListSegmentSubscriptionEventsRequest>
+  Model::ListSegmentSubscriptionEventsOutcomeCallable ListSegmentSubscriptionEventsCallable(
+      const ListSegmentSubscriptionEventsRequestT& request) const {
+    return SubmitCallable(&CustomerProfilesClient::ListSegmentSubscriptionEvents, request);
+  }
+
+  /**
+   * An Async wrapper for ListSegmentSubscriptionEvents that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListSegmentSubscriptionEventsRequestT = Model::ListSegmentSubscriptionEventsRequest>
+  void ListSegmentSubscriptionEventsAsync(const ListSegmentSubscriptionEventsRequestT& request,
+                                          const ListSegmentSubscriptionEventsResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CustomerProfilesClient::ListSegmentSubscriptionEvents, request, handler, context);
+  }
+
+  /**
    * <p>Displays the tags associated with an Amazon Connect Customer Profiles
    * resource. In Connect Customer Profiles, domains, profile object types, and
    * integrations can be tagged.</p><p><h3>See Also:</h3>   <a
@@ -2797,6 +2976,45 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
   void PutProfileObjectTypeAsync(const PutProfileObjectTypeRequestT& request, const PutProfileObjectTypeResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CustomerProfilesClient::PutProfileObjectType, request, handler, context);
+  }
+
+  /**
+   * <p>Creates or updates a segment subscription for membership events. When a
+   * subscription is created, an initial snapshot is taken and the system begins
+   * monitoring for membership changes. </p> <p>You can optionally set a schedule
+   * configuration interval to control how often membership snapshots are run. The
+   * interval can be from 1 to 24 hours. If not set, the interval defaults to 24
+   * hours. Scheduled snapshots run on a best-effort basis. If a scheduled snapshot
+   * takes longer than the configured interval, the next scheduled run does not start
+   * until the in-progress snapshot completes, so a run might be delayed or skipped
+   * and is not guaranteed to occur at exactly the requested time. </p> <p>For
+   * Classic segments, membership events are generated from these scheduled snapshots
+   * and also in near real-time as profile attribute changes occur. For SQL segments,
+   * membership events are generated only from the scheduled snapshots.
+   * </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/PutSegmentSubscription">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutSegmentSubscriptionOutcome PutSegmentSubscription(const Model::PutSegmentSubscriptionRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutSegmentSubscription that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename PutSegmentSubscriptionRequestT = Model::PutSegmentSubscriptionRequest>
+  Model::PutSegmentSubscriptionOutcomeCallable PutSegmentSubscriptionCallable(const PutSegmentSubscriptionRequestT& request) const {
+    return SubmitCallable(&CustomerProfilesClient::PutSegmentSubscription, request);
+  }
+
+  /**
+   * An Async wrapper for PutSegmentSubscription that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename PutSegmentSubscriptionRequestT = Model::PutSegmentSubscriptionRequest>
+  void PutSegmentSubscriptionAsync(const PutSegmentSubscriptionRequestT& request,
+                                   const PutSegmentSubscriptionResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CustomerProfilesClient::PutSegmentSubscription, request, handler, context);
   }
 
   /**

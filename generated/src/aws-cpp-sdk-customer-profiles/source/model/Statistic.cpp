@@ -23,6 +23,7 @@ static const int MINIMUM_HASH = HashingUtils::HashString("MINIMUM");
 static const int MAXIMUM_HASH = HashingUtils::HashString("MAXIMUM");
 static const int AVERAGE_HASH = HashingUtils::HashString("AVERAGE");
 static const int MAX_OCCURRENCE_HASH = HashingUtils::HashString("MAX_OCCURRENCE");
+static const int RECENT_OCCURRENCES_HASH = HashingUtils::HashString("RECENT_OCCURRENCES");
 
 Statistic GetStatisticForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -42,6 +43,8 @@ Statistic GetStatisticForName(const Aws::String& name) {
     return Statistic::AVERAGE;
   } else if (hashCode == MAX_OCCURRENCE_HASH) {
     return Statistic::MAX_OCCURRENCE;
+  } else if (hashCode == RECENT_OCCURRENCES_HASH) {
+    return Statistic::RECENT_OCCURRENCES;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -72,6 +75,8 @@ Aws::String GetNameForStatistic(Statistic enumValue) {
       return "AVERAGE";
     case Statistic::MAX_OCCURRENCE:
       return "MAX_OCCURRENCE";
+    case Statistic::RECENT_OCCURRENCES:
+      return "RECENT_OCCURRENCES";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

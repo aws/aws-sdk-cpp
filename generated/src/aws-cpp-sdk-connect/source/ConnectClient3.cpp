@@ -6,6 +6,7 @@
 #include <aws/connect/ConnectClient.h>
 #include <aws/connect/ConnectEndpointProvider.h>
 #include <aws/connect/ConnectErrorMarshaller.h>
+#include <aws/connect/model/StartContactConversationalAnalyticsJobRequest.h>
 #include <aws/connect/model/StartContactEvaluationRequest.h>
 #include <aws/connect/model/StartContactMediaProcessingRequest.h>
 #include <aws/connect/model/StartContactRecordingRequest.h>
@@ -46,6 +47,7 @@
 #include <aws/connect/model/UpdateContactRoutingDataRequest.h>
 #include <aws/connect/model/UpdateContactScheduleRequest.h>
 #include <aws/connect/model/UpdateContactTaskTemplateRequest.h>
+#include <aws/connect/model/UpdateCrossRegionRoutingRequest.h>
 #include <aws/connect/model/UpdateDataTableAttributeRequest.h>
 #include <aws/connect/model/UpdateDataTableMetadataRequest.h>
 #include <aws/connect/model/UpdateDataTablePrimaryValuesRequest.h>
@@ -124,6 +126,31 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+StartContactConversationalAnalyticsJobOutcome ConnectClient::StartContactConversationalAnalyticsJob(
+    const StartContactConversationalAnalyticsJobRequest& request) const {
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartContactConversationalAnalyticsJob", "Required field: InstanceId, is not set");
+    return StartContactConversationalAnalyticsJobOutcome(Aws::Client::AWSError<ConnectErrors>(
+        ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  if (!request.ContactIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartContactConversationalAnalyticsJob", "Required field: ContactId, is not set");
+    return StartContactConversationalAnalyticsJobOutcome(Aws::Client::AWSError<ConnectErrors>(
+        ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContactId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/contact/start-conversational-analytics-job/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContactId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartContactConversationalAnalyticsJobOutcome(result.GetResultWithOwnership())
+                            : StartContactConversationalAnalyticsJobOutcome(std::move(result.GetError()));
+}
 
 StartContactEvaluationOutcome ConnectClient::StartContactEvaluation(const StartContactEvaluationRequest& request) const {
   if (!request.InstanceIdHasBeenSet()) {
@@ -836,6 +863,24 @@ UpdateContactTaskTemplateOutcome ConnectClient::UpdateContactTaskTemplate(const 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateContactTaskTemplateOutcome(result.GetResultWithOwnership())
                             : UpdateContactTaskTemplateOutcome(std::move(result.GetError()));
+}
+
+UpdateCrossRegionRoutingOutcome ConnectClient::UpdateCrossRegionRouting(const UpdateCrossRegionRoutingRequest& request) const {
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateCrossRegionRouting", "Required field: InstanceId, is not set");
+    return UpdateCrossRegionRoutingOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                "Missing required field [InstanceId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/cross-region-routing/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateCrossRegionRoutingOutcome(result.GetResultWithOwnership())
+                            : UpdateCrossRegionRoutingOutcome(std::move(result.GetError()));
 }
 
 UpdateDataTableAttributeOutcome ConnectClient::UpdateDataTableAttribute(const UpdateDataTableAttributeRequest& request) const {

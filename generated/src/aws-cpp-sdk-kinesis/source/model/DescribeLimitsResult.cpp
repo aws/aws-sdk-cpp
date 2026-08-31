@@ -38,6 +38,14 @@ DescribeLimitsResult& DescribeLimitsResult::operator=(const Aws::AmazonWebServic
     m_onDemandStreamCountLimit = jsonValue.GetInteger("OnDemandStreamCountLimit");
     m_onDemandStreamCountLimitHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ChannelCount")) {
+    m_channelCount = jsonValue.GetInteger("ChannelCount");
+    m_channelCountHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ChannelCountLimit")) {
+    m_channelCountLimit = jsonValue.GetInteger("ChannelCountLimit");
+    m_channelCountLimitHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

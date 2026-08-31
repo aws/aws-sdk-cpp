@@ -21,6 +21,7 @@
 #include <aws/customer-profiles/CustomerProfilesEndpointProvider.h>
 #include <aws/customer-profiles/CustomerProfilesErrorMarshaller.h>
 #include <aws/customer-profiles/model/AddProfileKeyRequest.h>
+#include <aws/customer-profiles/model/AssociateStreamForSegmentsRequest.h>
 #include <aws/customer-profiles/model/BatchGetCalculatedAttributeForProfileRequest.h>
 #include <aws/customer-profiles/model/BatchGetProfileRequest.h>
 #include <aws/customer-profiles/model/BatchPutProfileObjectRequest.h>
@@ -53,8 +54,10 @@
 #include <aws/customer-profiles/model/DeleteRecommenderRequest.h>
 #include <aws/customer-profiles/model/DeleteRecommenderSchemaRequest.h>
 #include <aws/customer-profiles/model/DeleteSegmentDefinitionRequest.h>
+#include <aws/customer-profiles/model/DeleteSegmentSubscriptionRequest.h>
 #include <aws/customer-profiles/model/DeleteWorkflowRequest.h>
 #include <aws/customer-profiles/model/DetectProfileObjectTypeRequest.h>
+#include <aws/customer-profiles/model/DisassociateStreamForSegmentsRequest.h>
 #include <aws/customer-profiles/model/GetAutoMergingPreviewRequest.h>
 #include <aws/customer-profiles/model/GetCalculatedAttributeDefinitionRequest.h>
 #include <aws/customer-profiles/model/GetCalculatedAttributeForProfileRequest.h>
@@ -78,7 +81,9 @@
 #include <aws/customer-profiles/model/GetSegmentEstimateRequest.h>
 #include <aws/customer-profiles/model/GetSegmentMembershipRequest.h>
 #include <aws/customer-profiles/model/GetSegmentSnapshotRequest.h>
+#include <aws/customer-profiles/model/GetSegmentSubscriptionRequest.h>
 #include <aws/customer-profiles/model/GetSimilarProfilesRequest.h>
+#include <aws/customer-profiles/model/GetStreamForSegmentsRequest.h>
 #include <aws/customer-profiles/model/GetUploadJobPathRequest.h>
 #include <aws/customer-profiles/model/GetUploadJobRequest.h>
 #include <aws/customer-profiles/model/GetWorkflowRequest.h>
@@ -106,6 +111,7 @@
 #include <aws/customer-profiles/model/ListRecommendersRequest.h>
 #include <aws/customer-profiles/model/ListRuleBasedMatchesRequest.h>
 #include <aws/customer-profiles/model/ListSegmentDefinitionsRequest.h>
+#include <aws/customer-profiles/model/ListSegmentSubscriptionEventsRequest.h>
 #include <aws/customer-profiles/model/ListTagsForResourceRequest.h>
 #include <aws/customer-profiles/model/ListUploadJobsRequest.h>
 #include <aws/customer-profiles/model/ListWorkflowsRequest.h>
@@ -114,6 +120,7 @@
 #include <aws/customer-profiles/model/PutIntegrationRequest.h>
 #include <aws/customer-profiles/model/PutProfileObjectRequest.h>
 #include <aws/customer-profiles/model/PutProfileObjectTypeRequest.h>
+#include <aws/customer-profiles/model/PutSegmentSubscriptionRequest.h>
 #include <aws/customer-profiles/model/SearchProfilesRequest.h>
 #include <aws/customer-profiles/model/StartRecommenderRequest.h>
 #include <aws/customer-profiles/model/StartUploadJobRequest.h>
@@ -302,6 +309,26 @@ AddProfileKeyOutcome CustomerProfilesClient::AddProfileKey(const AddProfileKeyRe
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? AddProfileKeyOutcome(result.GetResultWithOwnership()) : AddProfileKeyOutcome(std::move(result.GetError()));
+}
+
+AssociateStreamForSegmentsOutcome CustomerProfilesClient::AssociateStreamForSegments(
+    const AssociateStreamForSegmentsRequest& request) const {
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("AssociateStreamForSegments", "Required field: DomainName, is not set");
+    return AssociateStreamForSegmentsOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/segment-streams");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateStreamForSegmentsOutcome(result.GetResultWithOwnership())
+                            : AssociateStreamForSegmentsOutcome(std::move(result.GetError()));
 }
 
 BatchGetCalculatedAttributeForProfileOutcome CustomerProfilesClient::BatchGetCalculatedAttributeForProfile(
@@ -1031,6 +1058,32 @@ DeleteSegmentDefinitionOutcome CustomerProfilesClient::DeleteSegmentDefinition(c
                             : DeleteSegmentDefinitionOutcome(std::move(result.GetError()));
 }
 
+DeleteSegmentSubscriptionOutcome CustomerProfilesClient::DeleteSegmentSubscription(const DeleteSegmentSubscriptionRequest& request) const {
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteSegmentSubscription", "Required field: DomainName, is not set");
+    return DeleteSegmentSubscriptionOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  if (!request.SegmentDefinitionNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteSegmentSubscription", "Required field: SegmentDefinitionName, is not set");
+    return DeleteSegmentSubscriptionOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SegmentDefinitionName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/segment-definitions/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSegmentDefinitionName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/subscriptions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSegmentSubscriptionOutcome(result.GetResultWithOwnership())
+                            : DeleteSegmentSubscriptionOutcome(std::move(result.GetError()));
+}
+
 DeleteWorkflowOutcome CustomerProfilesClient::DeleteWorkflow(const DeleteWorkflowRequest& request) const {
   if (!request.DomainNameHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteWorkflow", "Required field: DomainName, is not set");
@@ -1072,6 +1125,26 @@ DetectProfileObjectTypeOutcome CustomerProfilesClient::DetectProfileObjectType(c
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DetectProfileObjectTypeOutcome(result.GetResultWithOwnership())
                             : DetectProfileObjectTypeOutcome(std::move(result.GetError()));
+}
+
+DisassociateStreamForSegmentsOutcome CustomerProfilesClient::DisassociateStreamForSegments(
+    const DisassociateStreamForSegmentsRequest& request) const {
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DisassociateStreamForSegments", "Required field: DomainName, is not set");
+    return DisassociateStreamForSegmentsOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/segment-streams");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateStreamForSegmentsOutcome(result.GetResultWithOwnership())
+                            : DisassociateStreamForSegmentsOutcome(std::move(result.GetError()));
 }
 
 GetAutoMergingPreviewOutcome CustomerProfilesClient::GetAutoMergingPreview(const GetAutoMergingPreviewRequest& request) const {
@@ -1647,6 +1720,32 @@ GetSegmentSnapshotOutcome CustomerProfilesClient::GetSegmentSnapshot(const GetSe
                             : GetSegmentSnapshotOutcome(std::move(result.GetError()));
 }
 
+GetSegmentSubscriptionOutcome CustomerProfilesClient::GetSegmentSubscription(const GetSegmentSubscriptionRequest& request) const {
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetSegmentSubscription", "Required field: DomainName, is not set");
+    return GetSegmentSubscriptionOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  if (!request.SegmentDefinitionNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetSegmentSubscription", "Required field: SegmentDefinitionName, is not set");
+    return GetSegmentSubscriptionOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SegmentDefinitionName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/segment-definitions/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSegmentDefinitionName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/subscriptions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSegmentSubscriptionOutcome(result.GetResultWithOwnership())
+                            : GetSegmentSubscriptionOutcome(std::move(result.GetError()));
+}
+
 GetSimilarProfilesOutcome CustomerProfilesClient::GetSimilarProfiles(const GetSimilarProfilesRequest& request) const {
   if (!request.DomainNameHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetSimilarProfiles", "Required field: DomainName, is not set");
@@ -1664,6 +1763,25 @@ GetSimilarProfilesOutcome CustomerProfilesClient::GetSimilarProfiles(const GetSi
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetSimilarProfilesOutcome(result.GetResultWithOwnership())
                             : GetSimilarProfilesOutcome(std::move(result.GetError()));
+}
+
+GetStreamForSegmentsOutcome CustomerProfilesClient::GetStreamForSegments(const GetStreamForSegmentsRequest& request) const {
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetStreamForSegments", "Required field: DomainName, is not set");
+    return GetStreamForSegmentsOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/segment-streams");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetStreamForSegmentsOutcome(result.GetResultWithOwnership())
+                            : GetStreamForSegmentsOutcome(std::move(result.GetError()));
 }
 
 GetUploadJobOutcome CustomerProfilesClient::GetUploadJob(const GetUploadJobRequest& request) const {
@@ -2211,6 +2329,33 @@ ListSegmentDefinitionsOutcome CustomerProfilesClient::ListSegmentDefinitions(con
                             : ListSegmentDefinitionsOutcome(std::move(result.GetError()));
 }
 
+ListSegmentSubscriptionEventsOutcome CustomerProfilesClient::ListSegmentSubscriptionEvents(
+    const ListSegmentSubscriptionEventsRequest& request) const {
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListSegmentSubscriptionEvents", "Required field: DomainName, is not set");
+    return ListSegmentSubscriptionEventsOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  if (!request.SegmentDefinitionNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListSegmentSubscriptionEvents", "Required field: SegmentDefinitionName, is not set");
+    return ListSegmentSubscriptionEventsOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SegmentDefinitionName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/segment-definitions/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSegmentDefinitionName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/subscription-events");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSegmentSubscriptionEventsOutcome(result.GetResultWithOwnership())
+                            : ListSegmentSubscriptionEventsOutcome(std::move(result.GetError()));
+}
+
 ListTagsForResourceOutcome CustomerProfilesClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
   if (!request.ResourceArnHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
@@ -2368,6 +2513,32 @@ PutProfileObjectTypeOutcome CustomerProfilesClient::PutProfileObjectType(const P
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? PutProfileObjectTypeOutcome(result.GetResultWithOwnership())
                             : PutProfileObjectTypeOutcome(std::move(result.GetError()));
+}
+
+PutSegmentSubscriptionOutcome CustomerProfilesClient::PutSegmentSubscription(const PutSegmentSubscriptionRequest& request) const {
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("PutSegmentSubscription", "Required field: DomainName, is not set");
+    return PutSegmentSubscriptionOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  if (!request.SegmentDefinitionNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("PutSegmentSubscription", "Required field: SegmentDefinitionName, is not set");
+    return PutSegmentSubscriptionOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SegmentDefinitionName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/segment-definitions/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSegmentDefinitionName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/subscriptions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutSegmentSubscriptionOutcome(result.GetResultWithOwnership())
+                            : PutSegmentSubscriptionOutcome(std::move(result.GetError()));
 }
 
 SearchProfilesOutcome CustomerProfilesClient::SearchProfiles(const SearchProfilesRequest& request) const {

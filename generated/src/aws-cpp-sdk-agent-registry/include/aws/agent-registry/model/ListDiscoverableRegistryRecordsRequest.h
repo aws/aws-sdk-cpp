@@ -31,7 +31,10 @@ class ListDiscoverableRegistryRecordsRequest : public AgentRegistryRequest {
   AWS_AGENTREGISTRY_API Aws::String SerializePayload() const override;
 
   ///@{
-
+  /**
+   * <p> The identifier of the registry whose discoverable records are listed. You
+   * can provide either the full Amazon Resource Name (ARN) or the registry ID.</p>
+   */
   inline const Aws::String& GetRegistryId() const { return m_registryId; }
   inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
   template <typename RegistryIdT = Aws::String>

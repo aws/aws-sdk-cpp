@@ -74,7 +74,8 @@ class DescribeCreateCaseOptionsRequest : public SupportRequest {
   /**
    * <p>The language in which Amazon Web Services Support handles the case. Amazon
    * Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese
-   * ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the
+   * ("ja") , Chinese ("zh"), Spanish ("es"), Portuguese ("pt"), French ("fr"),
+   * Korean (“ko”), and Turkish ("tr"). You must specify the ISO 639-1 code for the
    * <code>language</code> parameter if you want support in that language.</p>
    */
   inline const Aws::String& GetLanguage() const { return m_language; }
@@ -110,6 +111,26 @@ class DescribeCreateCaseOptionsRequest : public SupportRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to validate the request without actually returning case
+   * option data. When set to <code>true</code>, the request is validated but no
+   * options are returned, and the operation returns a
+   * <code>DryRunOperationException</code>. When omitted or set to
+   * <code>false</code>, the request runs normally.</p>
+   */
+  inline bool GetDryRun() const { return m_dryRun; }
+  inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+  inline void SetDryRun(bool value) {
+    m_dryRunHasBeenSet = true;
+    m_dryRun = value;
+  }
+  inline DescribeCreateCaseOptionsRequest& WithDryRun(bool value) {
+    SetDryRun(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_issueType;
 
@@ -118,10 +139,13 @@ class DescribeCreateCaseOptionsRequest : public SupportRequest {
   Aws::String m_language;
 
   Aws::String m_categoryCode;
+
+  bool m_dryRun{false};
   bool m_issueTypeHasBeenSet = false;
   bool m_serviceCodeHasBeenSet = false;
   bool m_languageHasBeenSet = false;
   bool m_categoryCodeHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
 };
 
 }  // namespace Model

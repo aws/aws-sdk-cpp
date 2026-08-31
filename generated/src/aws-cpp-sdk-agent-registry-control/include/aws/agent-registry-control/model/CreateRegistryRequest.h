@@ -7,7 +7,9 @@
 #include <aws/agent-registry-control/AgentRegistryControlRequest.h>
 #include <aws/agent-registry-control/AgentRegistryControl_EXPORTS.h>
 #include <aws/agent-registry-control/model/ApprovalConfiguration.h>
+#include <aws/agent-registry-control/model/AutoDetectionConfiguration.h>
 #include <aws/agent-registry-control/model/DiscoveryConfiguration.h>
+#include <aws/agent-registry-control/model/EncryptionConfiguration.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -73,6 +75,28 @@ class CreateRegistryRequest : public AgentRegistryControlRequest {
 
   ///@{
   /**
+   * <p>The optional server-side encryption configuration for the registry. When you
+   * provide this field, the specified customer-managed Amazon Web Services KMS key
+   * encrypts the registry's content. Omit this field to use an Amazon Web
+   * Services-owned encryption key. You cannot change the encryption configuration
+   * after registry creation.</p>
+   */
+  inline const EncryptionConfiguration& GetEncryptionConfiguration() const { return m_encryptionConfiguration; }
+  inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
+  template <typename EncryptionConfigurationT = EncryptionConfiguration>
+  void SetEncryptionConfiguration(EncryptionConfigurationT&& value) {
+    m_encryptionConfigurationHasBeenSet = true;
+    m_encryptionConfiguration = std::forward<EncryptionConfigurationT>(value);
+  }
+  template <typename EncryptionConfigurationT = EncryptionConfiguration>
+  CreateRegistryRequest& WithEncryptionConfiguration(EncryptionConfigurationT&& value) {
+    SetEncryptionConfiguration(std::forward<EncryptionConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Discovery configuration for the registry</p>
    */
   inline const DiscoveryConfiguration& GetDiscoveryConfiguration() const { return m_discoveryConfiguration; }
@@ -91,7 +115,9 @@ class CreateRegistryRequest : public AgentRegistryControlRequest {
 
   ///@{
   /**
-   * <p>Client token for idempotency</p>
+   * <p>A unique, case-sensitive identifier to ensure that the operation completes no
+   * more than one time. If this token matches a previous request, the service
+   * ignores the request, but does not return an error.</p>
    */
   inline const Aws::String& GetClientToken() const { return m_clientToken; }
   inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
@@ -148,10 +174,33 @@ class CreateRegistryRequest : public AgentRegistryControlRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The optional auto-detection configuration for the registry. When provided,
+   * the registry is automatically populated with resources discovered according to
+   * the configuration. Omit this field for registries whose records are managed
+   * exclusively through the Agent Registry Control API.</p>
+   */
+  inline const AutoDetectionConfiguration& GetAutoDetectionConfiguration() const { return m_autoDetectionConfiguration; }
+  inline bool AutoDetectionConfigurationHasBeenSet() const { return m_autoDetectionConfigurationHasBeenSet; }
+  template <typename AutoDetectionConfigurationT = AutoDetectionConfiguration>
+  void SetAutoDetectionConfiguration(AutoDetectionConfigurationT&& value) {
+    m_autoDetectionConfigurationHasBeenSet = true;
+    m_autoDetectionConfiguration = std::forward<AutoDetectionConfigurationT>(value);
+  }
+  template <typename AutoDetectionConfigurationT = AutoDetectionConfiguration>
+  CreateRegistryRequest& WithAutoDetectionConfiguration(AutoDetectionConfigurationT&& value) {
+    SetAutoDetectionConfiguration(std::forward<AutoDetectionConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
   Aws::String m_description;
+
+  EncryptionConfiguration m_encryptionConfiguration;
 
   DiscoveryConfiguration m_discoveryConfiguration;
 
@@ -160,12 +209,16 @@ class CreateRegistryRequest : public AgentRegistryControlRequest {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   ApprovalConfiguration m_approvalConfiguration;
+
+  AutoDetectionConfiguration m_autoDetectionConfiguration;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
   bool m_discoveryConfigurationHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
   bool m_approvalConfigurationHasBeenSet = false;
+  bool m_autoDetectionConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

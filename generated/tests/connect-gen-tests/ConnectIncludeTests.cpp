@@ -662,6 +662,8 @@
 #include <aws/connect/model/GetContactAttributesResult.h>
 #include <aws/connect/model/GetContactMetricsRequest.h>
 #include <aws/connect/model/GetContactMetricsResult.h>
+#include <aws/connect/model/GetCrossRegionRoutingRequest.h>
+#include <aws/connect/model/GetCrossRegionRoutingResult.h>
 #include <aws/connect/model/GetCurrentMetricDataPaginationTraits.h>
 #include <aws/connect/model/GetCurrentMetricDataRequest.h>
 #include <aws/connect/model/GetCurrentMetricDataResult.h>
@@ -1461,6 +1463,8 @@
 #include <aws/connect/model/UpdateContactScheduleResult.h>
 #include <aws/connect/model/UpdateContactTaskTemplateRequest.h>
 #include <aws/connect/model/UpdateContactTaskTemplateResult.h>
+#include <aws/connect/model/UpdateCrossRegionRoutingRequest.h>
+#include <aws/connect/model/UpdateCrossRegionRoutingResult.h>
 #include <aws/connect/model/UpdateDataTableAttributeRequest.h>
 #include <aws/connect/model/UpdateDataTableAttributeResult.h>
 #include <aws/connect/model/UpdateDataTableMetadataRequest.h>

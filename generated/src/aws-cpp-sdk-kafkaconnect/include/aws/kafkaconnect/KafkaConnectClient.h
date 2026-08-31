@@ -494,6 +494,36 @@ class AWS_KAFKACONNECT_API KafkaConnectClient : public Aws::Client::AWSJsonClien
   }
 
   /**
+   * <p>Restarts the specified connector. By default, this operation restarts the
+   * connector and all of its tasks. This operation is asynchronous and returns a
+   * connector operation ARN that you can pass to
+   * <code>DescribeConnectorOperation</code> to track the state of the
+   * restart.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/RestartConnector">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RestartConnectorOutcome RestartConnector(const Model::RestartConnectorRequest& request) const;
+
+  /**
+   * A Callable wrapper for RestartConnector that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename RestartConnectorRequestT = Model::RestartConnectorRequest>
+  Model::RestartConnectorOutcomeCallable RestartConnectorCallable(const RestartConnectorRequestT& request) const {
+    return SubmitCallable(&KafkaConnectClient::RestartConnector, request);
+  }
+
+  /**
+   * An Async wrapper for RestartConnector that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename RestartConnectorRequestT = Model::RestartConnectorRequest>
+  void RestartConnectorAsync(const RestartConnectorRequestT& request, const RestartConnectorResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KafkaConnectClient::RestartConnector, request, handler, context);
+  }
+
+  /**
    * <p>Attaches tags to the specified resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/TagResource">AWS
    * API Reference</a></p>

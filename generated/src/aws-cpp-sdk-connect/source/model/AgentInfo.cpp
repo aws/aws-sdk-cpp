@@ -77,6 +77,10 @@ AgentInfo& AgentInfo::operator=(JsonView jsonValue) {
     m_voiceEnhancementMode = VoiceEnhancementModeMapper::GetVoiceEnhancementModeForName(jsonValue.GetString("VoiceEnhancementMode"));
     m_voiceEnhancementModeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ActiveRegion")) {
+    m_activeRegion = jsonValue.GetString("ActiveRegion");
+    m_activeRegionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -141,6 +145,10 @@ JsonValue AgentInfo::Jsonize() const {
 
   if (m_voiceEnhancementModeHasBeenSet) {
     payload.WithString("VoiceEnhancementMode", VoiceEnhancementModeMapper::GetNameForVoiceEnhancementMode(m_voiceEnhancementMode));
+  }
+
+  if (m_activeRegionHasBeenSet) {
+    payload.WithString("ActiveRegion", m_activeRegion);
   }
 
   return payload;

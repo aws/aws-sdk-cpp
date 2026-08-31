@@ -43,6 +43,14 @@ Aws::String CreateRegistryRecordRequest::SerializePayload() const {
     payload.WithString("clientToken", m_clientToken);
   }
 
+  if (m_provenanceHasBeenSet) {
+    Aws::Utils::Array<JsonValue> provenanceJsonList(m_provenance.size());
+    for (unsigned provenanceIndex = 0; provenanceIndex < provenanceJsonList.GetLength(); ++provenanceIndex) {
+      provenanceJsonList[provenanceIndex].AsObject(m_provenance[provenanceIndex].Jsonize());
+    }
+    payload.WithArray("provenance", std::move(provenanceJsonList));
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {

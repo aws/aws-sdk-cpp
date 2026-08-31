@@ -35,7 +35,10 @@ class UntagResourceRequest : public AgentRegistryControlRequest {
   AWS_AGENTREGISTRYCONTROL_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
   ///@{
-
+  /**
+   * <p>The Amazon Resource Name (ARN) of the resource to remove tags from. Supported
+   * resources include registries and registry records.</p>
+   */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
   inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
   template <typename ResourceArnT = Aws::String>
@@ -51,7 +54,10 @@ class UntagResourceRequest : public AgentRegistryControlRequest {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The keys of the tags to remove from the resource. Tags with keys not included
+   * in this list remain on the resource.</p>
+   */
   inline const Aws::Vector<Aws::String>& GetTagKeys() const { return m_tagKeys; }
   inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
   template <typename TagKeysT = Aws::Vector<Aws::String>>

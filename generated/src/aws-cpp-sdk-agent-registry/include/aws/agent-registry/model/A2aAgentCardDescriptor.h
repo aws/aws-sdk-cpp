@@ -21,8 +21,9 @@ namespace AgentRegistry {
 namespace Model {
 
 /**
- * <p>Base mixin for A2A agent card descriptor content</p><p><h3>See Also:</h3>
- * <a
+ * <p> Descriptor that defines the content of an A2A (Agent-to-Agent) agent card
+ * registry record. The content is validated against the A2A protocol
+ * schema.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-2025-12-01/A2aAgentCardDescriptor">AWS
  * API Reference</a></p>
  */
@@ -34,7 +35,9 @@ class A2aAgentCardDescriptor {
   AWS_AGENTREGISTRY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p> The A2A agent card content, serialized as descriptor payload data.</p>
+   */
   inline const Aws::String& GetData() const { return m_data; }
   inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
   template <typename DataT = Aws::String>
@@ -50,7 +53,9 @@ class A2aAgentCardDescriptor {
   ///@}
 
   ///@{
-
+  /**
+   * <p> The schema version of the descriptor payload.</p>
+   */
   inline const Aws::String& GetDataSchemaVersion() const { return m_dataSchemaVersion; }
   inline bool DataSchemaVersionHasBeenSet() const { return m_dataSchemaVersionHasBeenSet; }
   template <typename DataSchemaVersionT = Aws::String>

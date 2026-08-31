@@ -88,6 +88,36 @@ class DescribeLimitsResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The number of channels in the account.</p>
+   */
+  inline int GetChannelCount() const { return m_channelCount; }
+  inline void SetChannelCount(int value) {
+    m_channelCountHasBeenSet = true;
+    m_channelCount = value;
+  }
+  inline DescribeLimitsResult& WithChannelCount(int value) {
+    SetChannelCount(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The maximum number of channels allowed in the account.</p>
+   */
+  inline int GetChannelCountLimit() const { return m_channelCountLimit; }
+  inline void SetChannelCountLimit(int value) {
+    m_channelCountLimitHasBeenSet = true;
+    m_channelCountLimit = value;
+  }
+  inline DescribeLimitsResult& WithChannelCountLimit(int value) {
+    SetChannelCountLimit(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -112,12 +142,18 @@ class DescribeLimitsResult {
 
   int m_onDemandStreamCountLimit{0};
 
+  int m_channelCount{0};
+
+  int m_channelCountLimit{0};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_shardLimitHasBeenSet = false;
   bool m_openShardCountHasBeenSet = false;
   bool m_onDemandStreamCountHasBeenSet = false;
   bool m_onDemandStreamCountLimitHasBeenSet = false;
+  bool m_channelCountHasBeenSet = false;
+  bool m_channelCountLimitHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -6,11 +6,13 @@
 #pragma once
 #include <aws/agent-registry-control/AgentRegistryControl_EXPORTS.h>
 #include <aws/agent-registry-control/model/Descriptors.h>
+#include <aws/agent-registry-control/model/Provenance.h>
 #include <aws/agent-registry-control/model/RecordType.h>
 #include <aws/agent-registry-control/model/RegistryRecordStatus.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -39,7 +41,8 @@ class GetRegistryRecordResult {
 
   ///@{
   /**
-   * <p>The &amp;ARN; of the parent registry that owns the record.</p>
+   * <p>The Amazon Resource Name (ARN) of the parent registry that owns the
+   * record.</p>
    */
   inline const Aws::String& GetRegistryArn() const { return m_registryArn; }
   template <typename RegistryArnT = Aws::String>
@@ -56,7 +59,7 @@ class GetRegistryRecordResult {
 
   ///@{
   /**
-   * <p>The &amp;ARN; of the registry record.</p>
+   * <p>The Amazon Resource Name (ARN) of the registry record.</p>
    */
   inline const Aws::String& GetRecordArn() const { return m_recordArn; }
   template <typename RecordArnT = Aws::String>
@@ -257,6 +260,63 @@ class GetRegistryRecordResult {
 
   ///@{
 
+  inline const Aws::Vector<Provenance>& GetProvenance() const { return m_provenance; }
+  template <typename ProvenanceT = Aws::Vector<Provenance>>
+  void SetProvenance(ProvenanceT&& value) {
+    m_provenanceHasBeenSet = true;
+    m_provenance = std::forward<ProvenanceT>(value);
+  }
+  template <typename ProvenanceT = Aws::Vector<Provenance>>
+  GetRegistryRecordResult& WithProvenance(ProvenanceT&& value) {
+    SetProvenance(std::forward<ProvenanceT>(value));
+    return *this;
+  }
+  template <typename ProvenanceT = Provenance>
+  GetRegistryRecordResult& AddProvenance(ProvenanceT&& value) {
+    m_provenanceHasBeenSet = true;
+    m_provenance.emplace_back(std::forward<ProvenanceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether the registry record was created by auto-detection.
+   * <code>true</code> indicates the record was automatically created by the service
+   * based on the registry's auto-detection configuration; <code>false</code>
+   * indicates the record was created through a control-plane API call.</p>
+   */
+  inline bool GetCreatedByAutoDetection() const { return m_createdByAutoDetection; }
+  inline void SetCreatedByAutoDetection(bool value) {
+    m_createdByAutoDetectionHasBeenSet = true;
+    m_createdByAutoDetection = value;
+  }
+  inline GetRegistryRecordResult& WithCreatedByAutoDetection(bool value) {
+    SetCreatedByAutoDetection(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the Amazon Web Services account that created the registry
+   * record.</p>
+   */
+  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+  template <typename CreatedByT = Aws::String>
+  void SetCreatedBy(CreatedByT&& value) {
+    m_createdByHasBeenSet = true;
+    m_createdBy = std::forward<CreatedByT>(value);
+  }
+  template <typename CreatedByT = Aws::String>
+  GetRegistryRecordResult& WithCreatedBy(CreatedByT&& value) {
+    SetCreatedBy(std::forward<CreatedByT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
   void SetRequestId(RequestIdT&& value) {
@@ -298,6 +358,12 @@ class GetRegistryRecordResult {
 
   Aws::String m_statusReason;
 
+  Aws::Vector<Provenance> m_provenance;
+
+  bool m_createdByAutoDetection{false};
+
+  Aws::String m_createdBy;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_registryArnHasBeenSet = false;
@@ -313,6 +379,9 @@ class GetRegistryRecordResult {
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
+  bool m_provenanceHasBeenSet = false;
+  bool m_createdByAutoDetectionHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

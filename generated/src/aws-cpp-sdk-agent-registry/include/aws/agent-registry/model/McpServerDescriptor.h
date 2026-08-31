@@ -22,7 +22,10 @@ namespace AgentRegistry {
 namespace Model {
 
 /**
- * <p>Base mixin for MCP server descriptor content</p><p><h3>See Also:</h3>   <a
+ * <p> Descriptor that defines the content of an MCP (Model Context Protocol)
+ * server registry record, including the server definition and its tool
+ * definitions. The content is validated against the MCP protocol
+ * schema.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-2025-12-01/McpServerDescriptor">AWS
  * API Reference</a></p>
  */
@@ -34,7 +37,10 @@ class McpServerDescriptor {
   AWS_AGENTREGISTRY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p> The MCP server descriptor content, serialized as descriptor payload
+   * data.</p>
+   */
   inline const Aws::String& GetData() const { return m_data; }
   inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
   template <typename DataT = Aws::String>
@@ -50,7 +56,9 @@ class McpServerDescriptor {
   ///@}
 
   ///@{
-
+  /**
+   * <p> The schema version of the descriptor payload.</p>
+   */
   inline const Aws::String& GetDataSchemaVersion() const { return m_dataSchemaVersion; }
   inline bool DataSchemaVersionHasBeenSet() const { return m_dataSchemaVersionHasBeenSet; }
   template <typename DataSchemaVersionT = Aws::String>
@@ -66,7 +74,10 @@ class McpServerDescriptor {
   ///@}
 
   ///@{
-
+  /**
+   * <p> Additional data associated with the MCP server descriptor, such as tool
+   * definitions.</p>
+   */
   inline const McpServerAdditionalData& GetAdditionalData() const { return m_additionalData; }
   inline bool AdditionalDataHasBeenSet() const { return m_additionalDataHasBeenSet; }
   template <typename AdditionalDataT = McpServerAdditionalData>

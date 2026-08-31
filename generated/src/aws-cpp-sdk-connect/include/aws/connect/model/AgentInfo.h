@@ -295,6 +295,27 @@ class AgentInfo {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Region where the agent was active when they handled the contact. For
+   * Amazon Connect Global Resiliency instances enabled for global routing, this
+   * indicates the Region in which the agent's session was established at the time of
+   * the contact.</p>
+   */
+  inline const Aws::String& GetActiveRegion() const { return m_activeRegion; }
+  inline bool ActiveRegionHasBeenSet() const { return m_activeRegionHasBeenSet; }
+  template <typename ActiveRegionT = Aws::String>
+  void SetActiveRegion(ActiveRegionT&& value) {
+    m_activeRegionHasBeenSet = true;
+    m_activeRegion = std::forward<ActiveRegionT>(value);
+  }
+  template <typename ActiveRegionT = Aws::String>
+  AgentInfo& WithActiveRegion(ActiveRegionT&& value) {
+    SetActiveRegion(std::forward<ActiveRegionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -323,6 +344,8 @@ class AgentInfo {
   Aws::Vector<StateTransition> m_stateTransitions;
 
   VoiceEnhancementMode m_voiceEnhancementMode{VoiceEnhancementMode::NOT_SET};
+
+  Aws::String m_activeRegion;
   bool m_idHasBeenSet = false;
   bool m_acceptedByAgentTimestampHasBeenSet = false;
   bool m_previewEndTimestampHasBeenSet = false;
@@ -337,6 +360,7 @@ class AgentInfo {
   bool m_agentInitiatedHoldDurationHasBeenSet = false;
   bool m_stateTransitionsHasBeenSet = false;
   bool m_voiceEnhancementModeHasBeenSet = false;
+  bool m_activeRegionHasBeenSet = false;
 };
 
 }  // namespace Model

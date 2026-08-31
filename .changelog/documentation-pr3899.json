@@ -1,6 +1,0 @@
-{
-  "type": "documentation",
-  "category": "aws-cpp-sdk-core",
-  "contributor": "eyesofish",
-  "description": "removes errant backtick in android documentation"
-}

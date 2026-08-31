@@ -46,6 +46,10 @@ RegistrationFieldDefinition& RegistrationFieldDefinition::operator=(JsonView jso
     m_displayHints = jsonValue.GetObject("DisplayHints");
     m_displayHintsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ConditionalBehavior")) {
+    m_conditionalBehavior = jsonValue.GetObject("ConditionalBehavior");
+    m_conditionalBehaviorHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -78,6 +82,10 @@ JsonValue RegistrationFieldDefinition::Jsonize() const {
 
   if (m_displayHintsHasBeenSet) {
     payload.WithObject("DisplayHints", m_displayHints.Jsonize());
+  }
+
+  if (m_conditionalBehaviorHasBeenSet) {
+    payload.WithObject("ConditionalBehavior", m_conditionalBehavior.Jsonize());
   }
 
   return payload;

@@ -35,6 +35,7 @@
 #include <aws/kafkaconnect/model/ListCustomPluginsRequest.h>
 #include <aws/kafkaconnect/model/ListTagsForResourceRequest.h>
 #include <aws/kafkaconnect/model/ListWorkerConfigurationsRequest.h>
+#include <aws/kafkaconnect/model/RestartConnectorRequest.h>
 #include <aws/kafkaconnect/model/TagResourceRequest.h>
 #include <aws/kafkaconnect/model/UntagResourceRequest.h>
 #include <aws/kafkaconnect/model/UpdateConnectorRequest.h>
@@ -420,6 +421,25 @@ ListWorkerConfigurationsOutcome KafkaConnectClient::ListWorkerConfigurations(con
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListWorkerConfigurationsOutcome(result.GetResultWithOwnership())
                             : ListWorkerConfigurationsOutcome(std::move(result.GetError()));
+}
+
+RestartConnectorOutcome KafkaConnectClient::RestartConnector(const RestartConnectorRequest& request) const {
+  if (!request.ConnectorArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("RestartConnector", "Required field: ConnectorArn, is not set");
+    return RestartConnectorOutcome(Aws::Client::AWSError<KafkaConnectErrors>(KafkaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                             "Missing required field [ConnectorArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/connectors/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectorArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/restart");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RestartConnectorOutcome(result.GetResultWithOwnership())
+                            : RestartConnectorOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome KafkaConnectClient::TagResource(const TagResourceRequest& request) const {

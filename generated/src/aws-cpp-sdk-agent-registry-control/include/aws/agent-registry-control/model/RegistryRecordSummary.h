@@ -5,10 +5,12 @@
 
 #pragma once
 #include <aws/agent-registry-control/AgentRegistryControl_EXPORTS.h>
+#include <aws/agent-registry-control/model/ProvenanceSummary.h>
 #include <aws/agent-registry-control/model/RecordType.h>
 #include <aws/agent-registry-control/model/RegistryRecordStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -38,7 +40,8 @@ class RegistryRecordSummary {
 
   ///@{
   /**
-   * <p>The &amp;ARN; of the parent registry that owns the record.</p>
+   * <p>The Amazon Resource Name (ARN) of the parent registry that owns the
+   * record.</p>
    */
   inline const Aws::String& GetRegistryArn() const { return m_registryArn; }
   inline bool RegistryArnHasBeenSet() const { return m_registryArnHasBeenSet; }
@@ -56,7 +59,7 @@ class RegistryRecordSummary {
 
   ///@{
   /**
-   * <p>The &amp;ARN; of the registry record.</p>
+   * <p>The Amazon Resource Name (ARN) of the registry record.</p>
    */
   inline const Aws::String& GetRecordArn() const { return m_recordArn; }
   inline bool RecordArnHasBeenSet() const { return m_recordArnHasBeenSet; }
@@ -229,6 +232,66 @@ class RegistryRecordSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether the registry record was created by auto-detection.
+   * <code>true</code> indicates the record was automatically created by the service
+   * based on the registry's auto-detection configuration; <code>false</code>
+   * indicates the record was created through a control-plane API call.</p>
+   */
+  inline bool GetCreatedByAutoDetection() const { return m_createdByAutoDetection; }
+  inline bool CreatedByAutoDetectionHasBeenSet() const { return m_createdByAutoDetectionHasBeenSet; }
+  inline void SetCreatedByAutoDetection(bool value) {
+    m_createdByAutoDetectionHasBeenSet = true;
+    m_createdByAutoDetection = value;
+  }
+  inline RegistryRecordSummary& WithCreatedByAutoDetection(bool value) {
+    SetCreatedByAutoDetection(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the Amazon Web Services account that created the registry
+   * record.</p>
+   */
+  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+  inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
+  template <typename CreatedByT = Aws::String>
+  void SetCreatedBy(CreatedByT&& value) {
+    m_createdByHasBeenSet = true;
+    m_createdBy = std::forward<CreatedByT>(value);
+  }
+  template <typename CreatedByT = Aws::String>
+  RegistryRecordSummary& WithCreatedBy(CreatedByT&& value) {
+    SetCreatedBy(std::forward<CreatedByT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::Vector<ProvenanceSummary>& GetProvenanceSummaryList() const { return m_provenanceSummaryList; }
+  inline bool ProvenanceSummaryListHasBeenSet() const { return m_provenanceSummaryListHasBeenSet; }
+  template <typename ProvenanceSummaryListT = Aws::Vector<ProvenanceSummary>>
+  void SetProvenanceSummaryList(ProvenanceSummaryListT&& value) {
+    m_provenanceSummaryListHasBeenSet = true;
+    m_provenanceSummaryList = std::forward<ProvenanceSummaryListT>(value);
+  }
+  template <typename ProvenanceSummaryListT = Aws::Vector<ProvenanceSummary>>
+  RegistryRecordSummary& WithProvenanceSummaryList(ProvenanceSummaryListT&& value) {
+    SetProvenanceSummaryList(std::forward<ProvenanceSummaryListT>(value));
+    return *this;
+  }
+  template <typename ProvenanceSummaryListT = ProvenanceSummary>
+  RegistryRecordSummary& AddProvenanceSummaryList(ProvenanceSummaryListT&& value) {
+    m_provenanceSummaryListHasBeenSet = true;
+    m_provenanceSummaryList.emplace_back(std::forward<ProvenanceSummaryListT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_registryArn;
 
@@ -251,6 +314,12 @@ class RegistryRecordSummary {
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
+
+  bool m_createdByAutoDetection{false};
+
+  Aws::String m_createdBy;
+
+  Aws::Vector<ProvenanceSummary> m_provenanceSummaryList;
   bool m_registryArnHasBeenSet = false;
   bool m_recordArnHasBeenSet = false;
   bool m_recordIdHasBeenSet = false;
@@ -262,6 +331,9 @@ class RegistryRecordSummary {
   bool m_statusHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
+  bool m_createdByAutoDetectionHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_provenanceSummaryListHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -19,6 +19,10 @@ Aws::String ResolveCaseRequest::SerializePayload() const {
     payload.WithString("caseId", m_caseId);
   }
 
+  if (m_dryRunHasBeenSet) {
+    payload.WithBool("dryRun", m_dryRun);
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -33,7 +33,9 @@ class McpToolsDescriptor {
   AWS_AGENTREGISTRYCONTROL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p>The MCP tools descriptor content, serialized as descriptor payload data.</p>
+   */
   inline const Aws::String& GetData() const { return m_data; }
   inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
   template <typename DataT = Aws::String>
@@ -49,7 +51,9 @@ class McpToolsDescriptor {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The schema version of the descriptor payload.</p>
+   */
   inline const Aws::String& GetDataSchemaVersion() const { return m_dataSchemaVersion; }
   inline bool DataSchemaVersionHasBeenSet() const { return m_dataSchemaVersionHasBeenSet; }
   template <typename DataSchemaVersionT = Aws::String>
