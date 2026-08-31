@@ -24,6 +24,7 @@ import software.amazon.smithy.model.shapes.TimestampShape;
 import software.amazon.smithy.model.traits.DocumentationTrait;
 import software.amazon.smithy.model.traits.EnumTrait;
 import software.amazon.smithy.model.traits.HttpHeaderTrait;
+import software.amazon.smithy.model.traits.HttpQueryParamsTrait;
 import software.amazon.smithy.model.traits.UnitTypeTrait;
 import software.amazon.smithy.model.transform.ModelTransformer;
 import java.util.ArrayList;
@@ -55,8 +56,67 @@ public final class S3Transforms {
         if (!"s3".equals(name) && !"s3-crt".equals(name)) {
             return model;
         }
-        return injectAccessLogTagQuery(normalizeReplicationStatus(expandBucketLocationConstraint(
-            hackGetObjectResult(addExpiresCustomization(renameCopyObjectResult(model, service), service)))), service);
+        return markEmbeddedErrors(injectAccessLogTagQuery(normalizeReplicationStatus(
+            expandBucketLocationConstraint(hackGetObjectResult(
+                addExpiresCustomization(renameCopyObjectResult(model, service), service)))), service));
+    }
+
+    // C2J's S3RestXmlCppClientGenerator carries a hardcoded functionsWithEmbeddedErrors set; each
+    // listed request shape gets shape.setEmbeddedErrors(true), which RequestHeader.vm turns into the
+    // HasEmbeddedError(...) override. Mirror that by stamping EmbeddedErrorsTrait on every request
+    // structure whose simple name is in the set; REST-XML request rendering emits the method for
+    // marker-bearing shapes. The lone C2J typo entry (DeleteBucketAnaxlyticsConfigurationRequest)
+    // is kept verbatim so the set matches C2J exactly; it simply never matches a real shape.
+    private static final Set<String> EMBEDDED_ERROR_REQUESTS = Set.of(
+        "AbortMultipartUploadRequest", "CompleteMultipartUploadRequest", "CopyObjectRequest",
+        "CreateBucketRequest", "CreateMultipartUploadRequest", "CreateSessionRequest",
+        "DeleteBucketAnaxlyticsConfigurationRequest", "DeleteBucketCorsRequest",
+        "DeleteBucketEncryptionRequest", "DeleteBucketIntelligentTieringConfigurationRequest",
+        "DeleteBucketInventoryConfigurationRequest", "DeleteBucketLifecycleRequest",
+        "DeleteBucketMetricsConfigurationRequest", "DeleteBucketOwnershipControlsRequest",
+        "DeleteBucketPolicyRequest", "DeleteBucketReplicationRequest", "DeleteBucketRequest",
+        "DeleteBucketTaggingRequest", "DeleteBucketWebsiteRequest", "DeleteObjectRequest",
+        "DeleteObjectsRequest", "DeleteObjectTaggingRequest", "DeletePublicAccessBlockRequest",
+        "GetBucketAccelerateConfigurationRequest", "GetBucketAclRequest",
+        "GetBucketAnalyticsConfigurationRequest", "GetBucketCorsRequest", "GetBucketEncryptionRequest",
+        "GetBucketIntelligentTieringConfigurationRequest", "GetBucketInventoryConfigurationRequest",
+        "GetBucketLifecycleConfigurationRequest", "GetBucketLocationRequest", "GetBucketLoggingRequest",
+        "GetBucketMetricsConfigurationRequest", "GetBucketNotificationConfigurationRequest",
+        "GetBucketOwnershipControlsRequest", "GetBucketPolicyRequest", "GetBucketPolicyStatusRequest",
+        "GetBucketReplicationRequest", "GetBucketRequestPaymentRequest", "GetBucketTaggingRequest",
+        "GetBucketVersioningRequest", "GetBucketWebsiteRequest", "GetObjectAclRequest",
+        "GetObjectAttributesRequest", "GetObjectLegalHoldRequest", "GetObjectLockConfigurationRequest",
+        "GetObjectRetentionRequest", "GetObjectTaggingRequest", "GetPublicAccessBlockRequest",
+        "HeadBucketRequest", "HeadObjectRequest", "ListBucketAnalyticsConfigurationsRequest",
+        "ListBucketIntelligentTieringConfigurationsRequest", "ListBucketInventoryConfigurationsRequest",
+        "ListBucketMetricsConfigurationsRequest", "ListBucketsRequest", "ListDirectoryBucketsRequest",
+        "ListMultipartUploadsRequest", "ListObjectsRequest", "ListObjectsV2Request",
+        "ListObjectVersionsRequest", "ListPartsRequest",
+        "PutBucketAccelerateConfigurationRequest", "PutBucketAclRequest",
+        "PutBucketAnalyticsConfigurationRequest", "PutBucketCorsRequest", "PutBucketEncryptionRequest",
+        "PutBucketIntelligentTieringConfigurationRequest", "PutBucketInventoryConfigurationRequest",
+        "PutBucketLifecycleConfigurationRequest", "PutBucketLoggingRequest",
+        "PutBucketMetricsConfigurationRequest", "PutBucketNotificationConfigurationRequest",
+        "PutBucketOwnershipControlsRequest", "PutBucketPolicyRequest", "PutBucketReplicationRequest",
+        "PutBucketRequestPaymentRequest", "PutBucketTaggingRequest", "PutBucketVersioningRequest",
+        "PutBucketWebsiteRequest", "PutObjectAclRequest", "PutObjectLegalHoldRequest",
+        "PutObjectLockConfigurationRequest", "PutObjectRequest", "PutObjectRetentionRequest",
+        "PutObjectTaggingRequest", "PutPublicAccessBlockRequest", "RestoreObjectRequest",
+        "SelectObjectContentRequest", "UploadPartCopyRequest", "UploadPartRequest",
+        "WriteGetObjectResponseRequest");
+
+    private static Model markEmbeddedErrors(Model model) {
+        List<Shape> marked = new ArrayList<>();
+        for (StructureShape shape : model.shapes(StructureShape.class).toList()) {
+            if (EMBEDDED_ERROR_REQUESTS.contains(shape.getId().getName())
+                    && !shape.hasTrait(EmbeddedErrorsTrait.class)) {
+                marked.add(shape.toBuilder().addTrait(new EmbeddedErrorsTrait()).build());
+            }
+        }
+        if (marked.isEmpty()) {
+            return model; // no request shape from the set is present (idempotent / other model).
+        }
+        return model.toBuilder().addShapes(marked.toArray(new Shape[0])).build();
     }
 
     // C2J's S3RestXmlCppClientGenerator appends a `customizedAccessLogTag` map<string,string> member
@@ -90,6 +150,10 @@ public final class S3Transforms {
                 .addMember(MemberShape.builder()
                     .id(req.getId().withMember("customizedAccessLogTag"))
                     .target(mapId)
+                    // @httpQueryParams binds this map to the query string. C2J models it as a
+                    // querystring member on every request, which is what makes every request emit
+                    // AddQueryStringParameters; the trait drives RequestBindings.hasQueryStringMembers.
+                    .addTrait(new HttpQueryParamsTrait())
                     .build())
                 .build());
         }

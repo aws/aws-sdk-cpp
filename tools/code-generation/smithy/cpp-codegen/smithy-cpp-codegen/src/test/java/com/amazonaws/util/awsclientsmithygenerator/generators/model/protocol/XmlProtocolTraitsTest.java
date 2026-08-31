@@ -235,6 +235,35 @@ class XmlProtocolTraitsTest {
         assertTrue(d.contains("void AddQueryStringParameters(Aws::Http::URI& uri) const override;"), d);
     }
 
+    private static software.amazon.smithy.model.shapes.StructureShape reqWithEmbeddedErrors() {
+        return software.amazon.smithy.model.shapes.StructureShape.builder()
+            .id("com.example#DoThingRequest")
+            .addTrait(new com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms
+                .EmbeddedErrorsTrait())
+            .build();
+    }
+
+    @Test
+    void restXml_withEmbeddedErrorsTrait_emitsHasEmbeddedError() {
+        var req = reqWithEmbeddedErrors(); var model = modelWith(req);
+        ProtocolTraits xml = new RestXmlProtocolTraits();
+        String d = render(w -> xml.writeRequestMethodDecls(w, "AWS_EX_API", req, opDoThing(), model));
+        assertTrue(d.contains("AWS_EX_API bool HasEmbeddedError(IOStream &body, "
+            + "const Http::HeaderValueCollection &header) const override;"), d);
+        String i = render(w -> xml.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model));
+        assertTrue(i.contains("bool DoThingRequest::HasEmbeddedError("), i);
+    }
+
+    @Test
+    void restXml_withoutEmbeddedErrorsTrait_omitsHasEmbeddedError() {
+        var req = reqWith(false, false); var model = modelWith(req);
+        ProtocolTraits xml = new RestXmlProtocolTraits();
+        String d = render(w -> xml.writeRequestMethodDecls(w, "AWS_EX_API", req, opDoThing(), model));
+        assertFalse(d.contains("HasEmbeddedError"), d);
+        String i = render(w -> xml.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model));
+        assertFalse(i.contains("HasEmbeddedError"), i);
+    }
+
     // ---------- Query/EC2 request contract (Axis-1 gating + protected DumpBodyToUrl) ----------
 
     @Test

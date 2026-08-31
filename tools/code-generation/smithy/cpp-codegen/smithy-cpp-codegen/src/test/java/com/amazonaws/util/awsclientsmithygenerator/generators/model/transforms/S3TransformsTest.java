@@ -309,6 +309,12 @@ class S3TransformsTest {
         assertEquals("smithy.api#String", mapShape.getKey().getTarget().toString());
         assertEquals("smithy.api#String", mapShape.getValue().getTarget().toString());
 
+        // Must bind to the query string (@httpQueryParams) so RequestBindings.hasQueryStringMembers
+        // is true and the request emits AddQueryStringParameters — matching C2J, which renders that
+        // method on every request via the customizedAccessLogTag querystring member.
+        assertTrue(tag.hasTrait(software.amazon.smithy.model.traits.HttpQueryParamsTrait.class),
+            "customizedAccessLogTag must carry @httpQueryParams");
+
         // Appended after all existing members, preserving prior order.
         java.util.List<String> order = new java.util.ArrayList<>(input.getAllMembers().keySet());
         assertEquals(java.util.List.of("Bucket", "Key", "customizedAccessLogTag"), order,
@@ -323,6 +329,24 @@ class S3TransformsTest {
         StructureShape output = out.expectShape(ShapeId.from(NS + "#PutObjectOutput"), StructureShape.class);
         assertFalse(output.getMember("customizedAccessLogTag").isPresent(),
             "output shape must not gain the access-log tag member");
+    }
+
+    @Test
+    void stampsEmbeddedErrorsTraitOnRequestInC2jSet() {
+        ServiceShape svc = s3Service("S3");
+        StructureShape inSet = StructureShape.builder().id(NS + "#CreateSessionRequest")
+            .addMember("Bucket", ShapeId.from("smithy.api#String")).build();
+        StructureShape notInSet = StructureShape.builder().id(NS + "#SomeOtherRequest")
+            .addMember("Bucket", ShapeId.from("smithy.api#String")).build();
+        Model m = modelWith(svc, inSet, notInSet);
+        Model out = S3Transforms.asTransform().apply(m, svc);
+
+        StructureShape marked = out.expectShape(ShapeId.from(NS + "#CreateSessionRequest"), StructureShape.class);
+        assertTrue(marked.hasTrait(EmbeddedErrorsTrait.class),
+            "request in the C2J functionsWithEmbeddedErrors set must be marked");
+        StructureShape unmarked = out.expectShape(ShapeId.from(NS + "#SomeOtherRequest"), StructureShape.class);
+        assertFalse(unmarked.hasTrait(EmbeddedErrorsTrait.class),
+            "request not in the set must not be marked");
     }
 
     @Test
