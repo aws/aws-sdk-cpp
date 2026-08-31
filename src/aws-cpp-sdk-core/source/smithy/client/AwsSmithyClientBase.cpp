@@ -12,6 +12,7 @@
 
 #include <aws/core/client/AWSErrorMarshaller.h>
 #include <aws/core/client/CoreErrors.h>
+#include <aws/core/internal/ClockSkew.h>
 #include <aws/core/client/RetryStrategy.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/monitoring/CoreMetrics.h>
@@ -69,6 +70,7 @@ void createFromFactoriesIfPresent(T& entity, std::function<T()>& factory) {
 
 void AwsSmithyClientBase::baseInit() {
   AWS_CHECK_PTR(AWS_SMITHY_CLIENT_LOG, m_clientConfig);
+  m_clientSkew = Aws::MakeShared<Aws::Internal::ClientSkew>(AWS_SMITHY_CLIENT_LOG, std::chrono::milliseconds(0));
   createFromFactories(m_clientConfig->retryStrategy, m_clientConfig->configFactories.retryStrategyCreateFn);
   createFromFactories(m_clientConfig->executor, m_clientConfig->configFactories.executorCreateFn);
   createFromFactories(m_clientConfig->writeRateLimiter, m_clientConfig->configFactories.writeRateLimiterCreateFn);
@@ -85,6 +87,7 @@ void AwsSmithyClientBase::baseInit() {
 
 void AwsSmithyClientBase::baseCopyInit() {
   AWS_CHECK_PTR(AWS_SMITHY_CLIENT_LOG, m_clientConfig);
+  m_clientSkew = Aws::MakeShared<Aws::Internal::ClientSkew>(AWS_SMITHY_CLIENT_LOG, std::chrono::milliseconds(0));
   createFromFactoriesIfPresent(m_clientConfig->retryStrategy, m_clientConfig->configFactories.retryStrategyCreateFn);
   createFromFactoriesIfPresent(m_clientConfig->executor, m_clientConfig->configFactories.executorCreateFn);
   createFromFactoriesIfPresent(m_clientConfig->writeRateLimiter, m_clientConfig->configFactories.writeRateLimiterCreateFn);
@@ -118,6 +121,7 @@ void AwsSmithyClientBase::baseCopyAssign(const AwsSmithyClientBase& other,
 }
 
 void AwsSmithyClientBase::baseMoveAssign(AwsSmithyClientBase&& other) {
+  m_clientSkew = Aws::MakeShared<Aws::Internal::ClientSkew>(AWS_SMITHY_CLIENT_LOG, std::chrono::milliseconds(0));
   m_serviceName = std::move(other.m_serviceName);
   m_serviceUserAgentName = std::move(other.m_serviceUserAgentName);
   m_httpClient = std::move(other.m_httpClient);
@@ -305,6 +309,7 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
         return;
     }
     pRequestCtx->m_requestInfo.attempt = 1;
+    pRequestCtx->m_attemptSkew = m_clientSkew->Load();
     pRequestCtx->m_requestInfo.maxAttempts =
         Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026") == "true"
             ? m_clientConfig->retryStrategy->GetMaxAttempts()
@@ -410,6 +415,8 @@ void AwsSmithyClientBase::AttemptOneRequestAsync(std::shared_ptr<AwsSmithyClient
     if (authCallback) {
       authCallback(pRequestCtx);
     }
+    pRequestCtx->m_timeRequestSent = Aws::Utils::DateTime::Now();
+    pRequestCtx->m_httpRequest->SetSigningTimestampOverride(pRequestCtx->m_timeRequestSent + pRequestCtx->m_attemptSkew);
     SigningOutcome signingOutcome = TracingUtils::MakeCallWithTiming<SigningOutcome>([&]() -> SigningOutcome {
             return this->SignHttpRequest(pRequestCtx->m_httpRequest, *pRequestCtx);
         },
@@ -488,10 +495,40 @@ void AwsSmithyClientBase::AttemptOneRequestAsync(std::shared_ptr<AwsSmithyClient
     return;
 }
 
+void AwsSmithyClientBase::RecordClockSkew(const Aws::Http::HttpResponse& response, const AwsSmithyClientAsyncRequestContext& ctx) const
+{
+    if (m_clientConfig->enableClockSkewAdjustment)
+    {
+        m_clientSkew->RecordResponse(Aws::Internal::MakeClockSkewMeasurement(response.GetHeaders(), ctx.m_timeRequestSent, ctx.m_timeResponseReceived));
+    }
+}
+
+bool AwsSmithyClientBase::AdjustClockSkew(HttpResponseOutcome& outcome, const AwsSmithyClientAsyncRequestContext& ctx) const
+{
+    if (!m_clientConfig->enableClockSkewAdjustment)
+    {
+        return false;
+    }
+    const auto measurement = Aws::Internal::MakeClockSkewMeasurement(outcome.GetError().GetResponseHeaders(), ctx.m_timeRequestSent, ctx.m_timeResponseReceived);
+    const auto adjustment = m_clientSkew->EvaluateFailure(measurement, ctx.m_attemptSkew);
+    // Force a retry only when the error is a clock-skew error code and the skew exceeds the threshold.
+    if (Aws::Internal::IsClockSkewError(outcome.GetError()) && adjustment.skewExceedsThreshold)
+    {
+        AWS_LOGSTREAM_WARN(AWS_SMITHY_CLIENT_LOG, "Signature check likely failed due to clock skew; adjusting the signing timestamp and retrying.");
+        auto newError = outcome.GetError();
+        newError.SetRetryableType(Aws::Client::RetryableType::RETRYABLE);
+        outcome = std::move(newError);
+        return true;
+    }
+    return false;
+}
+
 void AwsSmithyClientBase::HandleAsyncReply(std::shared_ptr<AwsSmithyClientAsyncRequestContext> pRequestCtx,
                                            std::shared_ptr<Aws::Http::HttpResponse> httpResponse) const
 {
     assert(pRequestCtx && httpResponse);
+
+    pRequestCtx->m_timeResponseReceived = Aws::Utils::DateTime::Now();
 
     pRequestCtx->m_interceptorContext->SetTransmitResponse(httpResponse);
     for (const auto& interceptor : m_interceptors)
@@ -546,6 +583,10 @@ void AwsSmithyClientBase::HandleAsyncReply(std::shared_ptr<AwsSmithyClientAsyncR
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         if (outcome.IsSuccess())
         {
+            if (outcome.GetResult())
+            {
+                RecordClockSkew(*outcome.GetResult(), *pRequestCtx);
+            }
             Aws::Monitoring::OnRequestSucceeded(this->GetServiceClientName(),
                                                 pRequestCtx->m_requestName,
                                                 pRequestCtx->m_httpRequest,
@@ -612,13 +653,9 @@ void AwsSmithyClientBase::HandleAsyncReply(std::shared_ptr<AwsSmithyClientAsyncR
             *m_clientConfig->telemetryProvider->getMeter(this->GetServiceClientName(), {}),
             {{TracingUtils::SMITHY_METHOD_DIMENSION, pRequestCtx->m_requestName},
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        bool shouldSleep = !retryWithCorrectRegion;
-        if (m_clientConfig->enableClockSkewAdjustment)
-        {
-            // AdjustClockSkew returns true means clock skew was the problem and skew was adjusted, false otherwise.
-            // sleep if clock skew and region was NOT the problem. AdjustClockSkew may update error inside outcome.
-            shouldSleep |= !this->AdjustClockSkew(outcome, pRequestCtx->m_authSchemeOption);
-        }
+        // Sleep only if neither clock skew nor region caused the failure. AdjustClockSkew self-gates on the disable knob.
+        bool shouldSleep = !this->AdjustClockSkew(outcome, *pRequestCtx) && !retryWithCorrectRegion;
+        pRequestCtx->m_attemptSkew = m_clientSkew->Load();
 
         if (!retryWithCorrectRegion && !m_clientConfig->retryStrategy->ShouldRetry(outcome.GetError(), static_cast<long>(pRequestCtx->m_retryCount)))
         {

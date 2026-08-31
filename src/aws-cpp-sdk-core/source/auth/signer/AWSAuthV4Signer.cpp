@@ -96,7 +96,8 @@ bool AWSAuthV4Signer::SignRequestWithSigV4a(Aws::Http::HttpRequest& request, con
     awsSigningConfig.SetSignatureType(signatureType);
     awsSigningConfig.SetRegion(region);
     awsSigningConfig.SetService(serviceName);
-    awsSigningConfig.SetSigningTimepoint(GetSigningTimestamp().UnderlyingTimestamp());
+    const DateTime sigV4aSigningTime = request.GetSigningTimestampOverride() ? request.GetSigningTimestampOverride().value() : GetSigningTimestamp();
+    awsSigningConfig.SetSigningTimepoint(sigV4aSigningTime.UnderlyingTimestamp());
     awsSigningConfig.SetUseDoubleUriEncode(m_urlEscapePath);
     awsSigningConfig.SetShouldNormalizeUriPath(true);
     awsSigningConfig.SetOmitSessionToken(false);
@@ -254,7 +255,7 @@ bool AWSAuthV4Signer::SignRequestWithCreds(Aws::Http::HttpRequest& request, cons
     }
 
     //calculate date header to use in internal signature (this also goes into date header).
-    DateTime now = GetSigningTimestamp();
+    DateTime now = request.GetSigningTimestampOverride() ? request.GetSigningTimestampOverride().value() : GetSigningTimestamp();
     Aws::String dateHeaderValue = now.ToGmtString(DateFormat::ISO_8601_BASIC);
     request.SetHeaderValue(AWS_DATE_HEADER, dateHeaderValue);
 

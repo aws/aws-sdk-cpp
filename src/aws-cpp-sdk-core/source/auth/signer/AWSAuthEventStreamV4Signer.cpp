@@ -79,7 +79,7 @@ bool AWSAuthEventStreamV4Signer::SignRequestWithCreds(Http::HttpRequest& request
     request.SetHeaderValue(Aws::Auth::AWSAuthHelper::X_AMZ_CONTENT_SHA256, EVENT_STREAM_CONTENT_SHA256);
 
     //calculate date header to use in internal signature (this also goes into date header).
-    DateTime now = GetSigningTimestamp();
+    DateTime now = request.GetSigningTimestampOverride() ? request.GetSigningTimestampOverride().value() : GetSigningTimestamp();
     Aws::String dateHeaderValue = now.ToGmtString(DateFormat::ISO_8601_BASIC);
     request.SetHeaderValue(AWS_DATE_HEADER, dateHeaderValue);
 

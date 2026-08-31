@@ -1,0 +1,6 @@
+{
+  "type": "feature",
+  "category": "aws-cpp-sdk-core",
+  "contributor": "kaiion",
+  "description": "Add clock skew correction: the SDK adjusts request signing timestamps by the observed client-to-service skew and retries signature errors caused by skew, so requests keep working when the client clock is off. Disable with AWS_DISABLE_CLOCK_SKEW_CORRECTION."
+}

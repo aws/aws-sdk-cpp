@@ -66,6 +66,10 @@ namespace smithy
 
             Aws::Crt::Optional<AwsCoreError> m_lastError;
 
+            std::chrono::milliseconds m_attemptSkew{0};
+            Aws::Utils::DateTime m_timeRequestSent;
+            Aws::Utils::DateTime m_timeResponseReceived;
+
             size_t m_retryCount;
             Aws::Vector<void*> m_monitoringContexts;
 

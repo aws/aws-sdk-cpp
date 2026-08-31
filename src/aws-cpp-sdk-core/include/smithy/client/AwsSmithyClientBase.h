@@ -58,6 +58,11 @@ namespace Aws
     }
 
     class AmazonWebServiceRequest;
+
+    namespace Internal
+    {
+        class ClientSkew;
+    }
 }
 
 namespace Aws
@@ -222,7 +227,8 @@ namespace client
         virtual ResolveEndpointOutcome ResolveEndpoint(const Aws::Endpoint::EndpointParameters& endpointParameters, EndpointUpdateCallback&& epCallback) const = 0;
         virtual SelectAuthSchemeOptionOutcome SelectAuthSchemeOption(const AwsSmithyClientAsyncRequestContext& ctx) const = 0;
         virtual SigningOutcome SignHttpRequest(std::shared_ptr<HttpRequest> httpRequest, const AwsSmithyClientAsyncRequestContext& ctx) const = 0;
-        virtual bool AdjustClockSkew(HttpResponseOutcome& outcome, const AuthSchemeOption& authSchemeOption) const = 0;
+        bool AdjustClockSkew(HttpResponseOutcome& outcome, const AwsSmithyClientAsyncRequestContext& ctx) const;
+        void RecordClockSkew(const Aws::Http::HttpResponse& response, const AwsSmithyClientAsyncRequestContext& ctx) const;
         virtual IdentityOutcome ResolveIdentity(const AwsSmithyClientAsyncRequestContext& ctx) const = 0;
         virtual GetContextEndpointParametersOutcome GetContextEndpointParameters(const AwsSmithyClientAsyncRequestContext& ctx) const = 0;
         AwsSmithyClientBase::ResolveEndpointOutcome ResolveEndpointFromRequest(
@@ -241,6 +247,7 @@ namespace client
         std::shared_ptr<Aws::Client::AWSErrorMarshaller> m_errorMarshaller;
         Aws::Vector<std::shared_ptr<smithy::interceptor::Interceptor>> m_interceptors{};
         std::shared_ptr<smithy::client::UserAgentInterceptor> m_userAgentInterceptor;
+        mutable std::shared_ptr<Aws::Internal::ClientSkew> m_clientSkew;
     private:
         void UpdateAuthSchemeFromEndpoint(const Aws::Endpoint::AWSEndpoint& endpoint, AuthSchemeOption& authscheme) const;
 

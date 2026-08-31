@@ -110,23 +110,6 @@ namespace Aws
         public:
             explicit ClientSkew(std::chrono::milliseconds initial) : m_skew(initial) {}
 
-            ClientSkew(const ClientSkew& other) : m_skew(other.m_skew.load()) {}
-            ClientSkew(ClientSkew&& other) noexcept : m_skew(other.m_skew.load()) {}
-            ClientSkew& operator=(const ClientSkew& other)
-            {
-                if (this != &other)
-                {
-                    m_skew = other.m_skew.load();
-                }
-                return *this;
-            }
-            ClientSkew& operator=(ClientSkew&& other) noexcept
-            {
-                m_skew = other.m_skew.load();
-                return *this;
-            }
-            ~ClientSkew() = default;
-
             std::chrono::milliseconds Load() const { return m_skew.load(); }
 
             // Runs on every response; a surviving candidate is stored, so a stale value self-heals.

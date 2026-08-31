@@ -137,6 +137,22 @@ protected:
         mockHttpClient->AddResponseToReturn(httpResponse);
     }
 
+    void QueueMockResponse(HttpResponseCode code, CoreErrors errorType, const HeaderValueCollection& headers)
+    {
+        auto httpRequest = CreateHttpRequest(URI("http://www.uri.com/path/to/res"),
+                HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+        httpRequest->SetResolvedRemoteHost("127.0.0.1");
+        auto httpResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, httpRequest);
+        httpResponse->SetResponseCode(code);
+        httpResponse->SetClientErrorType(errorType);
+        httpResponse->GetResponseBody() << "";
+        for(auto&& header : headers)
+        {
+            httpResponse->AddHeader(header.first, header.second);
+        }
+        mockHttpClient->AddResponseToReturn(httpResponse);
+    }
+
     Aws::String ExtractFromRequestInfo(const Aws::String& requestInfo, const Aws::String& key)
     {
         auto iter = requestInfo.find(key + "=");
@@ -216,8 +232,8 @@ TEST_F(AWSClientTestSuite, TestClockSkewOutsideAcceptableRange)
     HeaderValueCollection responseHeaders;
     responseHeaders.emplace("Date", (DateTime::Now() + std::chrono::hours(1)).ToGmtString(DateFormat::RFC822)); // server is ahead of us by 1 hour
     AmazonWebServiceRequestMock request;
-    QueueMockResponse(HttpResponseCode::BAD_REQUEST, responseHeaders);
-    QueueMockResponse(HttpResponseCode::BAD_REQUEST, responseHeaders);
+    QueueMockResponse(HttpResponseCode::BAD_REQUEST, CoreErrors::SIGNATURE_DOES_NOT_MATCH, responseHeaders);
+    QueueMockResponse(HttpResponseCode::BAD_REQUEST, CoreErrors::SIGNATURE_DOES_NOT_MATCH, responseHeaders);
     auto outcome = client->MakeRequest(request);
     ASSERT_FALSE(outcome.IsSuccess());
     ASSERT_EQ(1, client->GetRequestAttemptedRetries());
@@ -228,7 +244,7 @@ TEST_F(AWSClientTestSuite, TestClockSkewWithinAcceptableRange)
     HeaderValueCollection responseHeaders;
     responseHeaders.emplace("Date", (DateTime::Now() + std::chrono::minutes(2)).ToGmtString(DateFormat::RFC822)); // server is ahead of us by 2 minutes
     AmazonWebServiceRequestMock request;
-    QueueMockResponse(HttpResponseCode::BAD_REQUEST, responseHeaders);
+    QueueMockResponse(HttpResponseCode::BAD_REQUEST, CoreErrors::SIGNATURE_DOES_NOT_MATCH, responseHeaders);
     auto outcome = client->MakeRequest(request);
     ASSERT_FALSE(outcome.IsSuccess());
     ASSERT_EQ(0, client->GetRequestAttemptedRetries());
@@ -240,22 +256,22 @@ TEST_F(AWSClientTestSuite, TestClockSkewConsecutiveRequests)
     HeaderValueCollection responseHeaders;
     responseHeaders.emplace("Date", (DateTime::Now() + std::chrono::hours(1)).ToGmtString(DateFormat::RFC822)); // server is ahead of us by 1 hour
     AmazonWebServiceRequestMock request;
-    QueueMockResponse(HttpResponseCode::BAD_REQUEST, responseHeaders);
-    QueueMockResponse(HttpResponseCode::BAD_REQUEST, responseHeaders);
+    QueueMockResponse(HttpResponseCode::BAD_REQUEST, CoreErrors::SIGNATURE_DOES_NOT_MATCH, responseHeaders);
+    QueueMockResponse(HttpResponseCode::BAD_REQUEST, CoreErrors::SIGNATURE_DOES_NOT_MATCH, responseHeaders);
     auto outcome = client->MakeRequest(request);
     ASSERT_FALSE(outcome.IsSuccess());
     ASSERT_EQ(1, client->GetRequestAttemptedRetries());
 
-    QueueMockResponse(HttpResponseCode::UNAUTHORIZED, responseHeaders);
+    QueueMockResponse(HttpResponseCode::UNAUTHORIZED, CoreErrors::SIGNATURE_DOES_NOT_MATCH, responseHeaders);
     outcome = client->MakeRequest(request);
-    ASSERT_FALSE(outcome.IsSuccess()); // should _not_ attempt to adjust clock skew and retry the request.
+    ASSERT_FALSE(outcome.IsSuccess()); // skew already applied; the offset now matches, so no retry.
     ASSERT_EQ(HttpResponseCode::UNAUTHORIZED, outcome.GetError().GetResponseCode());
     ASSERT_STREQ("127.0.0.1", outcome.GetError().GetRemoteHostIpAddress().c_str());
     ASSERT_EQ(0, client->GetRequestAttemptedRetries());
 
-    QueueMockResponse(HttpResponseCode::FORBIDDEN, responseHeaders);
+    QueueMockResponse(HttpResponseCode::FORBIDDEN, CoreErrors::SIGNATURE_DOES_NOT_MATCH, responseHeaders);
     outcome = client->MakeRequest(request);
-    ASSERT_FALSE(outcome.IsSuccess()); // should _not_ attempt to adjust clock skew and retry the request.
+    ASSERT_FALSE(outcome.IsSuccess()); // skew already applied; the offset now matches, so no retry.
     ASSERT_EQ(HttpResponseCode::FORBIDDEN, outcome.GetError().GetResponseCode());
     ASSERT_STREQ("127.0.0.1", outcome.GetError().GetRemoteHostIpAddress().c_str());
     ASSERT_EQ(0, client->GetRequestAttemptedRetries());
@@ -271,8 +287,8 @@ TEST_F(AWSClientTestSuite, TestClockChangesAfterSkewHasBeenSet)
     HeaderValueCollection responseHeaders;
     responseHeaders.emplace("Date", (DateTime::Now() + std::chrono::hours(1)).ToGmtString(DateFormat::RFC822)); // server is ahead of us by 1 hour
     AmazonWebServiceRequestMock request;
-    QueueMockResponse(HttpResponseCode::BAD_REQUEST, responseHeaders);
-    QueueMockResponse(HttpResponseCode::BAD_REQUEST, responseHeaders);
+    QueueMockResponse(HttpResponseCode::BAD_REQUEST, CoreErrors::SIGNATURE_DOES_NOT_MATCH, responseHeaders);
+    QueueMockResponse(HttpResponseCode::BAD_REQUEST, CoreErrors::SIGNATURE_DOES_NOT_MATCH, responseHeaders);
     auto outcome = client->MakeRequest(request);
     ASSERT_FALSE(outcome.IsSuccess());
     ASSERT_EQ(1, client->GetRequestAttemptedRetries());
@@ -280,8 +296,8 @@ TEST_F(AWSClientTestSuite, TestClockChangesAfterSkewHasBeenSet)
     // make another request with the clock skewed even further
     responseHeaders.clear();
     responseHeaders.emplace("Date", (DateTime::Now() + std::chrono::hours(2)).ToGmtString(DateFormat::RFC822)); // server is ahead of us by 2 hours
-    QueueMockResponse(HttpResponseCode::FORBIDDEN, responseHeaders);
-    QueueMockResponse(HttpResponseCode::FORBIDDEN, responseHeaders);
+    QueueMockResponse(HttpResponseCode::FORBIDDEN, CoreErrors::SIGNATURE_DOES_NOT_MATCH, responseHeaders);
+    QueueMockResponse(HttpResponseCode::FORBIDDEN, CoreErrors::SIGNATURE_DOES_NOT_MATCH, responseHeaders);
     outcome = client->MakeRequest(request);
     ASSERT_FALSE(outcome.IsSuccess());
     ASSERT_EQ(1, client->GetRequestAttemptedRetries());
@@ -289,8 +305,8 @@ TEST_F(AWSClientTestSuite, TestClockChangesAfterSkewHasBeenSet)
     // make another request with the clock in sync with the server
     responseHeaders.clear();
     responseHeaders.emplace("Date", DateTime::Now().ToGmtString(DateFormat::RFC822)); // server is in sync with client
-    QueueMockResponse(HttpResponseCode::FORBIDDEN, responseHeaders);
-    QueueMockResponse(HttpResponseCode::FORBIDDEN, responseHeaders);
+    QueueMockResponse(HttpResponseCode::FORBIDDEN, CoreErrors::SIGNATURE_DOES_NOT_MATCH, responseHeaders);
+    QueueMockResponse(HttpResponseCode::FORBIDDEN, CoreErrors::SIGNATURE_DOES_NOT_MATCH, responseHeaders);
     outcome = client->MakeRequest(request);
     ASSERT_FALSE(outcome.IsSuccess());
     ASSERT_EQ(1, client->GetRequestAttemptedRetries());
@@ -300,10 +316,10 @@ TEST_F(AWSClientTestSuite, TestRetryHeaders)
 {
     // The first server time is ahead of us by 1 hour.
     DateTime serverTime1 = DateTime::Now() + std::chrono::hours(1);
-    QueueMockResponse(HttpResponseCode::REQUEST_NOT_MADE, HeaderValueCollection{std::make_pair("Date", serverTime1.ToGmtString(DateFormat::RFC822))});
+    QueueMockResponse(HttpResponseCode::REQUEST_NOT_MADE, CoreErrors::SIGNATURE_DOES_NOT_MATCH, HeaderValueCollection{std::make_pair("Date", serverTime1.ToGmtString(DateFormat::RFC822))});
     // The second server time is ahead of us by 2 hour.
     DateTime serverTime2 = DateTime::Now() + std::chrono::hours(2);
-    QueueMockResponse(HttpResponseCode::REQUEST_NOT_MADE, HeaderValueCollection{std::make_pair("Date", serverTime2.ToGmtString(DateFormat::RFC822))});
+    QueueMockResponse(HttpResponseCode::REQUEST_NOT_MADE, CoreErrors::SIGNATURE_DOES_NOT_MATCH, HeaderValueCollection{std::make_pair("Date", serverTime2.ToGmtString(DateFormat::RFC822))});
     // The third server time is ahead of us by 3 hour.
     DateTime serverTime3 = DateTime::Now() + std::chrono::hours(3);
     QueueMockResponse(HttpResponseCode::OK, HeaderValueCollection{std::make_pair("Date", serverTime3.ToGmtString(DateFormat::RFC822))});
@@ -345,8 +361,8 @@ TEST_F(AWSClientTestSuite, TestRetryURIs)
 {
     HeaderValueCollection responseHeaders;
     responseHeaders.emplace("Date", (DateTime::Now() + std::chrono::hours(1)).ToGmtString(DateFormat::RFC822)); // server is ahead of us by 1 hour
-    QueueMockResponse(HttpResponseCode::INTERNAL_SERVER_ERROR, responseHeaders);
-    QueueMockResponse(HttpResponseCode::INTERNAL_SERVER_ERROR, responseHeaders);
+    QueueMockResponse(HttpResponseCode::INTERNAL_SERVER_ERROR, CoreErrors::SIGNATURE_DOES_NOT_MATCH, responseHeaders);
+    QueueMockResponse(HttpResponseCode::INTERNAL_SERVER_ERROR, CoreErrors::SIGNATURE_DOES_NOT_MATCH, responseHeaders);
     URI uri("http://www.uri.com/path with space/to/res");
     AmazonWebServiceRequestMock request;
     auto outcome = client->MakeRequest(uri, request);

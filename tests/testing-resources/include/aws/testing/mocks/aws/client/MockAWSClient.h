@@ -161,6 +161,9 @@ protected:
         {
             bool retryable = response->GetClientErrorType() == Aws::Client::CoreErrors::NETWORK_CONNECTION ? true : false;
             error = Aws::Client::AWSError<Aws::Client::CoreErrors>(response->GetClientErrorType(), "", response->GetClientErrorMessage(), retryable);
+            error.SetResponseHeaders(response->GetHeaders());
+            error.SetResponseCode(response->GetResponseCode());
+            error.SetRemoteHostIpAddress(response->GetOriginatingRequest().GetResolvedRemoteHost());
             return error;
         }
         error = Aws::Client::AWSError<Aws::Client::CoreErrors>(Aws::Client::CoreErrors::INVALID_ACTION, false);

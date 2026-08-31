@@ -28,6 +28,7 @@
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/internal/ClockSkew.h>
 #include <aws/core/utils/crypto/MD5.h>
 #include <aws/core/utils/crypto/CRC32.h>
 #include <aws/core/utils/crypto/Sha256.h>
@@ -67,11 +68,6 @@ static const int SUCCESS_RESPONSE_MAX = 299;
 static const char AWS_CLIENT_LOG_TAG[] = "AWSClient";
 static const char AWS_LAMBDA_FUNCTION_NAME[] = "AWS_LAMBDA_FUNCTION_NAME";
 static const char X_AMZN_TRACE_ID[] = "_X_AMZN_TRACE_ID";
-
-//4 Minutes
-static const std::chrono::milliseconds TIME_DIFF_MAX = std::chrono::minutes(4);
-//-4 Minutes
-static const std::chrono::milliseconds TIME_DIFF_MIN = std::chrono::minutes(-4);
 
 CoreErrors AWSClient::GuessBodylessErrorType(Aws::Http::HttpResponseCode responseCode)
 {
@@ -138,6 +134,7 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_hash(Aws::Utils::Crypto::CreateMD5Implementation()),
     m_requestTimeoutMs(configuration.requestTimeoutMs),
     m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment),
+    m_clientSkew(Aws::MakeShared<Aws::Internal::ClientSkew>(AWS_CLIENT_LOG_TAG, std::chrono::milliseconds(0))),
     m_requestCompressionConfig(configuration.requestCompressionConfig),
     m_userAgentInterceptor{Aws::MakeShared<smithy::client::UserAgentInterceptor>(AWS_CLIENT_LOG_TAG, configuration, m_retryStrategy->GetStrategyName(), m_serviceName)},
     m_interceptors{Aws::MakeShared<smithy::client::ChecksumInterceptor>(AWS_CLIENT_LOG_TAG), Aws::MakeShared<smithy::client::features::ChunkingInterceptor>(AWS_CLIENT_LOG_TAG,
@@ -169,6 +166,7 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_hash(Aws::Utils::Crypto::CreateMD5Implementation()),
     m_requestTimeoutMs(configuration.requestTimeoutMs),
     m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment),
+    m_clientSkew(Aws::MakeShared<Aws::Internal::ClientSkew>(AWS_CLIENT_LOG_TAG, std::chrono::milliseconds(0))),
     m_requestCompressionConfig(configuration.requestCompressionConfig),
     m_userAgentInterceptor{Aws::MakeShared<smithy::client::UserAgentInterceptor>(AWS_CLIENT_LOG_TAG, configuration, m_retryStrategy->GetStrategyName(), m_serviceName)},
     m_interceptors{Aws::MakeShared<smithy::client::ChecksumInterceptor>(AWS_CLIENT_LOG_TAG, configuration), Aws::MakeShared<smithy::client::features::ChunkingInterceptor>(AWS_CLIENT_LOG_TAG,
@@ -228,30 +226,16 @@ static DateTime GetServerTimeFromError(const AWSError<CoreErrors> error)
     }
 }
 
-bool AWSClient::AdjustClockSkew(HttpResponseOutcome& outcome, const char* signerName) const
+bool AWSClient::AdjustClockSkew(HttpResponseOutcome& outcome, const Aws::Utils::DateTime& timeRequestSent, const Aws::Utils::DateTime& timeResponseReceived, std::chrono::milliseconds attemptSkew) const
 {
     if (m_enableClockSkewAdjustment)
     {
-        auto signer = GetSignerByName(signerName);
-        //detect clock skew and try to correct.
-        AWS_LOGSTREAM_WARN(AWS_CLIENT_LOG_TAG, "If the signature check failed. This could be because of a time skew. Attempting to adjust the signer.");
-
-        DateTime serverTime = GetServerTimeFromError(outcome.GetError());
-        const auto signingTimestamp = signer->GetSigningTimestamp();
-        if (!serverTime.WasParseSuccessful() || serverTime == DateTime())
+        const auto measurement = Aws::Internal::MakeClockSkewMeasurement(outcome.GetError().GetResponseHeaders(), timeRequestSent, timeResponseReceived);
+        const auto adjustment = m_clientSkew->EvaluateFailure(measurement, attemptSkew);
+        // Force a retry only when the error is a clock-skew error code and the skew exceeds the threshold.
+        if (Aws::Internal::IsClockSkewError(outcome.GetError()) && adjustment.skewExceedsThreshold)
         {
-            AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Date header was not found in the response, can't attempt to detect clock skew");
-            return false;
-        }
-
-        AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Server time is " << serverTime.ToGmtString(DateFormat::RFC822) << ", while client time is " << DateTime::Now().ToGmtString(DateFormat::RFC822));
-        auto diff = DateTime::Diff(serverTime, signingTimestamp);
-        //only try again if clock skew was the cause of the error.
-        if (diff >= TIME_DIFF_MAX || diff <= TIME_DIFF_MIN)
-        {
-            diff = DateTime::Diff(serverTime, DateTime::Now());
-            AWS_LOGSTREAM_INFO(AWS_CLIENT_LOG_TAG, "Computed time difference as " << diff.count() << " milliseconds. Adjusting signer with the skew.");
-            signer->SetClockSkew(diff);
+            AWS_LOGSTREAM_WARN(AWS_CLIENT_LOG_TAG, "Signature check likely failed due to clock skew; adjusting the signing timestamp and retrying.");
             AWSError<CoreErrors> newError(
                 outcome.GetError().GetErrorType(), outcome.GetError().GetExceptionName(), outcome.GetError().GetMessage(), true);
             newError.SetResponseHeaders(outcome.GetError().GetResponseHeaders());
@@ -290,6 +274,8 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     httpRequest->SetHeaderValue(Http::SDK_REQUEST_HEADER, requestInfo);
     AppendRecursionDetectionHeader(httpRequest);
 
+    // AttemptSkew: seeded from the client-level skew, updated after each attempt.
+    std::chrono::milliseconds attemptSkew = m_clientSkew->Load();
     for (long retries = 0;; retries++)
     {
         if(!m_retryStrategy->HasSendToken())
@@ -303,7 +289,10 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
         httpRequest->SetEventStreamRequest(request.IsEventStreamRequest());
         httpRequest->SetHasEventStreamResponse(request.HasEventStreamResponse());
 
+        const DateTime attemptSentTime = DateTime::Now();
+        httpRequest->SetSigningTimestampOverride(attemptSentTime + attemptSkew);
         outcome = AttemptOneRequest(httpRequest, request, signerName, signerRegion, signerServiceNameOverride);
+        const DateTime timeResponseReceived = DateTime::Now();
         outcome.SetRetryCount(retries);
         if (retries == 0)
         {
@@ -320,6 +309,10 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         if (outcome.IsSuccess())
         {
+            if (m_enableClockSkewAdjustment && outcome.GetResult())
+            {
+                m_clientSkew->RecordResponse(Aws::Internal::MakeClockSkewMeasurement(outcome.GetResult()->GetHeaders(), attemptSentTime, timeResponseReceived));
+            }
             Aws::Monitoring::OnRequestSucceeded(this->GetServiceClientName(), request.GetServiceRequestName(), httpRequest, outcome, coreMetrics, contexts);
             AWS_LOGSTREAM_TRACE(AWS_CLIENT_LOG_TAG, "Request successful returning.");
             break;
@@ -362,7 +355,8 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
             {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},{TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         //AdjustClockSkew returns true means clock skew was the problem and skew was adjusted, false otherwise.
         //sleep if clock skew and region was NOT the problem. AdjustClockSkew may update error inside outcome.
-        bool shouldSleep = !AdjustClockSkew(outcome, signerName) && !retryWithCorrectRegion;
+        bool shouldSleep = !AdjustClockSkew(outcome, attemptSentTime, timeResponseReceived, attemptSkew) && !retryWithCorrectRegion;
+        attemptSkew = m_clientSkew->Load();
 
         if (!retryWithCorrectRegion && !m_retryStrategy->ShouldRetry(outcome.GetError(), retries))
         {
@@ -464,6 +458,8 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     httpRequest->SetHeaderValue(Http::SDK_REQUEST_HEADER, requestInfo);
     AppendRecursionDetectionHeader(httpRequest);
 
+    // AttemptSkew: seeded from the client-level skew, updated after each attempt.
+    std::chrono::milliseconds attemptSkew = m_clientSkew->Load();
     for (long retries = 0;; retries++)
     {
         if(!m_retryStrategy->HasSendToken())
@@ -474,7 +470,10 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
                                                             false/*retryable*/));
 
         };
+        const DateTime attemptSentTime = DateTime::Now();
+        httpRequest->SetSigningTimestampOverride(attemptSentTime + attemptSkew);
         outcome = AttemptOneRequest(httpRequest, signerName, requestName, signerRegion, signerServiceNameOverride);
+        const DateTime timeResponseReceived = DateTime::Now();
         outcome.SetRetryCount(retries);
         if (retries == 0)
         {
@@ -490,6 +489,10 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
             {{TracingUtils::SMITHY_METHOD_DIMENSION, requestName},{TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         if (outcome.IsSuccess())
         {
+            if (m_enableClockSkewAdjustment && outcome.GetResult())
+            {
+                m_clientSkew->RecordResponse(Aws::Internal::MakeClockSkewMeasurement(outcome.GetResult()->GetHeaders(), attemptSentTime, timeResponseReceived));
+            }
             Aws::Monitoring::OnRequestSucceeded(this->GetServiceClientName(), requestName, httpRequest, outcome, coreMetrics, contexts);
             AWS_LOGSTREAM_TRACE(AWS_CLIENT_LOG_TAG, "Request successful returning.");
             break;
@@ -532,7 +535,8 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
             {{TracingUtils::SMITHY_METHOD_DIMENSION, requestName},{TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         //AdjustClockSkew returns true means clock skew was the problem and skew was adjusted, false otherwise.
         //sleep if clock skew and region was NOT the problem. AdjustClockSkew may update error inside outcome.
-        bool shouldSleep = !AdjustClockSkew(outcome, signerName) && !retryWithCorrectRegion;
+        bool shouldSleep = !AdjustClockSkew(outcome, attemptSentTime, timeResponseReceived, attemptSkew) && !retryWithCorrectRegion;
+        attemptSkew = m_clientSkew->Load();
 
         if (!retryWithCorrectRegion && !m_retryStrategy->ShouldRetry(outcome.GetError(), retries))
         {
