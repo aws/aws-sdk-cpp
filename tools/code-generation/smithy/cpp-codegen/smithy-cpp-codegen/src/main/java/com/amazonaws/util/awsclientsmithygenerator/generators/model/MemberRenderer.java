@@ -7,6 +7,7 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model;
 import static com.amazonaws.util.awsclientsmithygenerator.generators.model.CppTypeMapper.isPrimitive;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.ChecksumMemberTrait;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.GlobalTransforms;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.ListShape;
@@ -124,6 +125,9 @@ public final class MemberRenderer {
                     writer.write("return *this;");
                 });
             } else {
+                // S3 checksum members (stamped by S3Transforms) also select the ChecksumAlgorithm enum
+                // in their setter, matching C2J's ModelClassMembersAndInlines.vm isChecksumMember path.
+                java.util.Optional<ChecksumMemberTrait> checksum = member.getTrait(ChecksumMemberTrait.class);
                 writer.write("template <typename $L = $L>", templateParam, cppType);
                 writer.openBlock("void Set$L($L&& value) {", "}", methodName, templateParam, () -> {
                     writer.write("$LHasBeenSet = true;", fieldName);
@@ -136,7 +140,15 @@ public final class MemberRenderer {
                     } else {
                         writer.write("$L = std::forward<$L>(value);", fieldName, templateParam);
                     }
+                    checksum.ifPresent(t ->
+                        writer.write("SetChecksumAlgorithm(ChecksumAlgorithm::$L);", t.getValue()));
                 });
+                checksum.ifPresent(t ->
+                    writer.openBlock("inline void Set$L(const char* value) {", "}", methodName, () -> {
+                        writer.write("$LHasBeenSet = true;", fieldName);
+                        writer.write("$L.assign(value);", fieldName);
+                        writer.write("SetChecksumAlgorithm(ChecksumAlgorithm::$L);", t.getValue());
+                    }));
                 writer.write("template <typename $L = $L>", templateParam, cppType);
                 writer.openBlock("$L& With$L($L&& value) {", "}", className, methodName, templateParam, () -> {
                     writer.write("Set$L(std::forward<$L>(value));", methodName, templateParam);

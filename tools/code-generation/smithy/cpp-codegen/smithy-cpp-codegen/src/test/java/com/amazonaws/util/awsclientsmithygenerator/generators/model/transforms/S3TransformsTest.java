@@ -191,6 +191,79 @@ class S3TransformsTest {
     }
 
     @Test
+    void marksOverrideStreamingRequests() {
+        StructureShape put = StructureShape.builder().id(NS + "#PutObjectAnnotationRequest").build();
+        StructureShape policy = StructureShape.builder().id(NS + "#PutBucketPolicyRequest").build();
+        StructureShape other = StructureShape.builder().id(NS + "#GetObjectRequest").build();
+        ServiceShape svc = s3Service("S3");
+        Model out = S3Transforms.asTransform().apply(modelWith(svc, put, policy, other), svc);
+        assertTrue(out.expectShape(put.getId()).hasTrait(OverrideStreamingTrait.class),
+            "PutObjectAnnotationRequest is in REQUESTS_TO_OVERRIDE_STREAMING");
+        assertTrue(out.expectShape(policy.getId()).hasTrait(OverrideStreamingTrait.class),
+            "PutBucketPolicyRequest is in REQUESTS_TO_OVERRIDE_STREAMING");
+        assertFalse(out.expectShape(other.getId()).hasTrait(OverrideStreamingTrait.class),
+            "other requests are untouched");
+    }
+
+    /**
+     * Builds an S3 model with a PutObject-style request carrying the checksum members plus a
+     * non-checksum member; {@code withAlgorithmMember} controls whether the request also has the
+     * {@code ChecksumAlgorithm} member that gates the C2J customization.
+     */
+    private static Model checksumModel(boolean withAlgorithmMember) {
+        Shape crc32 = StringShape.builder().id(NS + "#ChecksumCRC32").build();
+        Shape sha256 = StringShape.builder().id(NS + "#ChecksumSHA256").build();
+        Shape crc64 = StringShape.builder().id(NS + "#ChecksumCRC64NVME").build();
+        Shape algo = StringShape.builder().id(NS + "#ChecksumAlgorithm").build();
+        Shape key = StringShape.builder().id(NS + "#ObjectKey").build();
+        StructureShape.Builder reqB = StructureShape.builder().id(NS + "#PutObjectRequest")
+            .addMember("ChecksumCRC32", crc32.getId())
+            .addMember("ChecksumSHA256", sha256.getId())
+            .addMember("ChecksumCRC64NVME", crc64.getId())
+            .addMember("Key", key.getId());
+        if (withAlgorithmMember) {
+            reqB.addMember("ChecksumAlgorithm", algo.getId());
+        }
+        StructureShape req = reqB.build();
+        StructureShape output = StructureShape.builder().id(NS + "#PutObjectOutput").build();
+        OperationShape op = OperationShape.builder().id(NS + "#PutObject")
+            .input(req.getId()).output(output.getId()).build();
+        ServiceShape svc = ServiceShape.builder().id(NS + "#AmazonS3").version("2006-03-01")
+            .addTrait(ServiceTrait.builder().sdkId("S3").arnNamespace("s3")
+                .cloudFormationName("S3").cloudTrailEventSource("s3.amazonaws.com").build())
+            .addOperation(op.getId()).build();
+        return Model.assembler().addShapes(crc32, sha256, crc64, algo, key, req, output, op, svc)
+            .assemble().unwrap();
+    }
+
+    @Test
+    void marksChecksumMembersOnRequestWithChecksumAlgorithm() {
+        Model m = checksumModel(true);
+        ServiceShape svc = m.expectShape(ShapeId.from(NS + "#AmazonS3"), ServiceShape.class);
+        Model out = S3Transforms.asTransform().apply(m, svc);
+        StructureShape req = out.expectShape(ShapeId.from(NS + "#PutObjectRequest"), StructureShape.class);
+        assertEquals("CRC32",
+            req.getMember("ChecksumCRC32").orElseThrow().expectTrait(ChecksumMemberTrait.class).getValue());
+        assertEquals("SHA256",
+            req.getMember("ChecksumSHA256").orElseThrow().expectTrait(ChecksumMemberTrait.class).getValue());
+        // ChecksumCRC64NVME is intentionally absent from C2J's map — it keeps a plain setter.
+        assertFalse(req.getMember("ChecksumCRC64NVME").orElseThrow().hasTrait(ChecksumMemberTrait.class),
+            "CRC64NVME is not a C2J checksum member");
+        assertFalse(req.getMember("Key").orElseThrow().hasTrait(ChecksumMemberTrait.class),
+            "non-checksum members are untouched");
+    }
+
+    @Test
+    void doesNotMarkChecksumMembersWithoutChecksumAlgorithm() {
+        Model m = checksumModel(false);
+        ServiceShape svc = m.expectShape(ShapeId.from(NS + "#AmazonS3"), ServiceShape.class);
+        Model out = S3Transforms.asTransform().apply(m, svc);
+        StructureShape req = out.expectShape(ShapeId.from(NS + "#PutObjectRequest"), StructureShape.class);
+        assertFalse(req.getMember("ChecksumCRC32").orElseThrow().hasTrait(ChecksumMemberTrait.class),
+            "no ChecksumAlgorithm member => C2J does not flag the checksum members");
+    }
+
+    @Test
     void addsExpiresStringToOutputAndDeprecatesExpires() {
         Model m = expiresModel();
         Model out = S3Transforms.asTransform().apply(m, expiresService(m));

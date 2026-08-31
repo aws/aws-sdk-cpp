@@ -5,6 +5,7 @@
 package com.amazonaws.util.awsclientsmithygenerator.generators.model;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.ChecksumMemberTrait;
 import org.junit.jupiter.api.Test;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.*;
@@ -71,6 +72,45 @@ class MemberRendererOutputTest {
         assertTrue(privOutput.contains("bool m_shardIdHasBeenSet = false;"));
         assertTrue(privOutput.contains("bool m_parentShardsHasBeenSet = false;"));
         assertTrue(privOutput.contains("bool m_hashKeyRangeHasBeenSet = false;"));
+    }
+
+    @Test
+    void checksumMember_setterAlsoSelectsAlgorithm_andEmitsConstCharOverload() {
+        // C2J ModelClassMembersAndInlines.vm isChecksumMember path: each checksum setter also calls
+        // SetChecksumAlgorithm(ChecksumAlgorithm::<value>), and a const char* overload does the same.
+        StringShape str = StringShape.builder().id("com.example#ChecksumCRC32").build();
+        StructureShape shape = StructureShape.builder()
+            .id("com.example#PutObjectRequest")
+            .addMember("ChecksumCRC32", str.getId(), b -> b.addTrait(new ChecksumMemberTrait("CRC32")))
+            .build();
+        Model model = Model.builder().addShapes(str, shape).build();
+
+        CppWriter w = new CppWriter();
+        MemberRenderer.forStructure(model, shape, "PutObjectRequest").renderPublicAccessors(w);
+        String out = w.toString();
+
+        assertTrue(out.contains("void SetChecksumCRC32(ChecksumCRC32T&& value)"), out);
+        assertTrue(out.contains("m_checksumCRC32 = std::forward<ChecksumCRC32T>(value);"), out);
+        assertTrue(out.contains("SetChecksumAlgorithm(ChecksumAlgorithm::CRC32);"), out);
+        assertTrue(out.contains("inline void SetChecksumCRC32(const char* value) {"), out);
+        assertTrue(out.contains("m_checksumCRC32.assign(value);"), out);
+    }
+
+    @Test
+    void nonChecksumStringMember_hasNoAlgorithmSideEffectOrConstCharOverload() {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        StructureShape shape = StructureShape.builder()
+            .id("com.example#PutObjectRequest")
+            .addMember("Key", str.getId())
+            .build();
+        Model model = Model.builder().addShapes(str, shape).build();
+
+        CppWriter w = new CppWriter();
+        MemberRenderer.forStructure(model, shape, "PutObjectRequest").renderPublicAccessors(w);
+        String out = w.toString();
+
+        assertFalse(out.contains("SetChecksumAlgorithm"), out);
+        assertFalse(out.contains("const char* value"), out);
     }
 
     @Test
