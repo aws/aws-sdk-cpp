@@ -181,6 +181,16 @@ public final class ShapeClassifier {
             }
         }
 
+        // Incoming event-stream union shape ids: the @streaming union member of every operation
+        // output collected as an event-stream handler. These unions are realized via the handler
+        // (EventStreamRenderer.renderHandler{Header,Source}) and never referenced as a data type,
+        // so their standalone <Union>.h is dead public API that we omit.
+        Set<ShapeId> incomingEventStreamUnionIds = new HashSet<>();
+        for (EventStreamInfo info : eventStreamHandlers) {
+            streamingUnionMember(info.resultShape(), model)
+                .ifPresent(u -> incomingEventStreamUnionIds.add(u.getId()));
+        }
+
         // Walk all reachable shapes and classify remaining ones
         for (ShapeId id : reachable) {
             Shape shape = model.expectShape(id);
@@ -200,10 +210,19 @@ public final class ShapeClassifier {
                     subObjects.add(shape);
                 }
             } else if (shape.isStructureShape() || shape.isUnionShape()) {
-                // A shape marked @customRendered is emitted by a dedicated renderer (e.g.
-                // DynamoDbRenderer for AttributeValue); skip the default sub-object emission so the
-                // two do not both write — and append into — the same model file.
-                if (!shape.hasTrait(CustomRenderedTrait.class)) {
+                // Skip:
+                //  - @customRendered shapes (emitted by a dedicated renderer, e.g. DynamoDbRenderer
+                //    for AttributeValue) so the two do not both write — and append into — the same
+                //    model file.
+                //  - empty-member event structs — after EventStreamRenderer's void() callback fix,
+                //    these have no other references and shipping their .h/.cpp adds dead public API
+                //    to the SDK.
+                boolean customRendered = shape.hasTrait(CustomRenderedTrait.class);
+                boolean emptyEventStruct = eventStructIds.contains(id)
+                    && shape.isStructureShape()
+                    && shape.members().isEmpty();
+                boolean incomingUnion = incomingEventStreamUnionIds.contains(id);
+                if (!customRendered && !emptyEventStruct && !incomingUnion) {
                     subObjects.add(shape);
                 }
             }
