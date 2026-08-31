@@ -18,6 +18,7 @@
 #include <aws/agent-registry/AgentRegistry_EXPORTS.h>
 #include <aws/agent-registry/internal/AgentRegistryEndpointRules.h>
 #include <aws/agent-registry/model/A2aAgentCardDescriptor.h>
+#include <aws/agent-registry/model/AgUiDescriptor.h>
 #include <aws/agent-registry/model/AgentSkillsAdditionalData.h>
 #include <aws/agent-registry/model/AgentSkillsDefinitionDescriptor.h>
 #include <aws/agent-registry/model/AgentSkillsMdDescriptor.h>
@@ -30,6 +31,7 @@
 #include <aws/agent-registry/model/DescriptorSourceFromUrl.h>
 #include <aws/agent-registry/model/Descriptors.h>
 #include <aws/agent-registry/model/DiscoverableRegistryRecordSummary.h>
+#include <aws/agent-registry/model/HttpDescriptor.h>
 #include <aws/agent-registry/model/ListDiscoverableRegistryRecordsPaginationTraits.h>
 #include <aws/agent-registry/model/ListDiscoverableRegistryRecordsRequest.h>
 #include <aws/agent-registry/model/ListDiscoverableRegistryRecordsResult.h>

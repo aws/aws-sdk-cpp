@@ -1,3 +1,8 @@
+# 1.11.883 (2026-08-31)
+
+## Service Updates
+* **Agent Registry**: Release HTTP and AGUI descriptors to the dataplane model
+
 # 1.11.882 (2026-08-31)
 
 ## SDK Highlights
