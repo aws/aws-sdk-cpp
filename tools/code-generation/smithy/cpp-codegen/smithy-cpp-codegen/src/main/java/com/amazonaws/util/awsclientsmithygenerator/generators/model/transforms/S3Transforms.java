@@ -12,6 +12,7 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolReso
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.knowledge.TopDownIndex;
 import software.amazon.smithy.model.shapes.EnumShape;
+import software.amazon.smithy.model.shapes.IntegerShape;
 import software.amazon.smithy.model.shapes.MapShape;
 import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.OperationShape;
@@ -58,7 +59,8 @@ public final class S3Transforms {
         }
         return markEmbeddedErrors(injectAccessLogTagQuery(normalizeReplicationStatus(
             expandBucketLocationConstraint(hackGetObjectResult(
-                addExpiresCustomization(renameCopyObjectResult(model, service), service)))), service));
+                addExpiresCustomization(renameCopyObjectResult(
+                    retypePartNumberMarkersToInteger(model), service), service)))), service));
     }
 
     // C2J's S3RestXmlCppClientGenerator carries a hardcoded functionsWithEmbeddedErrors set; each
@@ -327,6 +329,33 @@ public final class S3Transforms {
                         .forEach(mb::addTrait));
                 replacements.add(b.build());
             }
+        }
+        return model.toBuilder().addShapes(replacements.toArray(new Shape[0])).build();
+    }
+
+    // Both request and result on ListParts / GetObjectAttributes reference these two shapes. C2J models
+    // them as integers, so the shipped SDK exposes int accessors. Coral2Smithy's S3ShapeMutatorTransformer
+    // instead treats them as opaque pagination tokens: it leaves PartNumberMarker as Coral's string and
+    // retypes NextPartNumberMarker to string. Retype both back to integer here to preserve the C2J public
+    // API (int, not Aws::String). The paginator generator is a separate plugin that never sees this
+    // mutation; it keeps its own NUMERIC_TOKEN_OVERRIDES entry so its `!= 0` check matches the int result.
+    private static final List<String> PART_NUMBER_MARKER_SHAPES =
+        List.of("PartNumberMarker", "NextPartNumberMarker");
+
+    private static Model retypePartNumberMarkersToInteger(Model model) {
+        String ns = "com.amazonaws.s3";
+        List<Shape> replacements = new ArrayList<>();
+        for (String name : PART_NUMBER_MARKER_SHAPES) {
+            Shape existing = model.getShape(ShapeId.fromParts(ns, name)).orElse(null);
+            // absent or already integer: nothing to retype (idempotent / other model).
+            if (existing != null && !(existing instanceof IntegerShape)) {
+                IntegerShape.Builder b = IntegerShape.builder().id(existing.getId());
+                existing.getAllTraits().values().forEach(b::addTrait);
+                replacements.add(b.build());
+            }
+        }
+        if (replacements.isEmpty()) {
+            return model;
         }
         return model.toBuilder().addShapes(replacements.toArray(new Shape[0])).build();
     }
