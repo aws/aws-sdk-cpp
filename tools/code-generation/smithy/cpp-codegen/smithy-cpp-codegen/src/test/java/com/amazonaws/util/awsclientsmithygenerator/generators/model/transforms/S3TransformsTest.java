@@ -7,6 +7,7 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms;
 import org.junit.jupiter.api.Test;
 import software.amazon.smithy.aws.traits.ServiceTrait;
 import software.amazon.smithy.model.Model;
+import software.amazon.smithy.model.shapes.IntegerShape;
 import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.ServiceShape;
@@ -145,6 +146,48 @@ class S3TransformsTest {
         StructureShape output = out.expectShape(ShapeId.from(NS + "#GetObjectOutput"), StructureShape.class);
         assertTrue(out.expectShape(input.getMember("Expires").orElseThrow().getTarget()) instanceof TimestampShape);
         assertTrue(out.expectShape(output.getMember("Expires").orElseThrow().getTarget()) instanceof TimestampShape);
+    }
+
+    /**
+     * Builds an S3 model with a ListParts-style operation whose request and result reference the
+     * {@code PartNumberMarker} / {@code NextPartNumberMarker} shapes as strings (matching the current
+     * Smithy model, where Coral2Smithy treats them as opaque pagination tokens).
+     */
+    private static Model partNumberMarkerModel() {
+        Shape marker = StringShape.builder().id(NS + "#PartNumberMarker").build();
+        Shape nextMarker = StringShape.builder().id(NS + "#NextPartNumberMarker").build();
+        StructureShape input = StructureShape.builder().id(NS + "#ListPartsRequest")
+            .addMember("PartNumberMarker", marker.getId()).build();
+        StructureShape output = StructureShape.builder().id(NS + "#ListPartsOutput")
+            .addMember("PartNumberMarker", marker.getId())
+            .addMember("NextPartNumberMarker", nextMarker.getId()).build();
+        OperationShape op = OperationShape.builder().id(NS + "#ListParts")
+            .input(input.getId()).output(output.getId()).build();
+        ServiceShape svc = ServiceShape.builder().id(NS + "#AmazonS3").version("2006-03-01")
+            .addTrait(ServiceTrait.builder().sdkId("S3").arnNamespace("s3")
+                .cloudFormationName("S3").cloudTrailEventSource("s3.amazonaws.com").build())
+            .addOperation(op.getId()).build();
+        return Model.assembler().addShapes(marker, nextMarker, input, output, op, svc).assemble().unwrap();
+    }
+
+    @Test
+    void retypesPartNumberMarkersToInteger() {
+        Model m = partNumberMarkerModel();
+        assertTrue(m.expectShape(ShapeId.from(NS + "#PartNumberMarker")).isStringShape(),
+            "precondition: PartNumberMarker starts as a string");
+        assertTrue(m.expectShape(ShapeId.from(NS + "#NextPartNumberMarker")).isStringShape(),
+            "precondition: NextPartNumberMarker starts as a string");
+        ServiceShape svc = m.expectShape(ShapeId.from(NS + "#AmazonS3"), ServiceShape.class);
+        Model out = S3Transforms.asTransform().apply(m, svc);
+        assertTrue(out.expectShape(ShapeId.from(NS + "#PartNumberMarker")) instanceof IntegerShape,
+            "PartNumberMarker retyped to integer to preserve the shipped C2J int API");
+        assertTrue(out.expectShape(ShapeId.from(NS + "#NextPartNumberMarker")) instanceof IntegerShape,
+            "NextPartNumberMarker retyped to integer to preserve the shipped C2J int API");
+        // Request and result members both now resolve to integer targets.
+        StructureShape input = out.expectShape(ShapeId.from(NS + "#ListPartsRequest"), StructureShape.class);
+        StructureShape output = out.expectShape(ShapeId.from(NS + "#ListPartsOutput"), StructureShape.class);
+        assertTrue(out.expectShape(input.getMember("PartNumberMarker").orElseThrow().getTarget()) instanceof IntegerShape);
+        assertTrue(out.expectShape(output.getMember("NextPartNumberMarker").orElseThrow().getTarget()) instanceof IntegerShape);
     }
 
     @Test
