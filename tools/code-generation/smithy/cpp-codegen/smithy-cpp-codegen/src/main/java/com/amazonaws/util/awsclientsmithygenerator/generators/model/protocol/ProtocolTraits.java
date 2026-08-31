@@ -190,28 +190,6 @@ public interface ProtocolTraits {
         });
     }
 
-    /**
-     * Declares the {@code HasEmbeddedError} override C2J emits under
-     * {@code #if($shape.hasEmbeddedErrors())} in {@code RequestHeader.vm}. Text matches C2J exactly
-     * (unqualified {@code IOStream} / {@code Http::HeaderValueCollection}, resolved via the request
-     * header's {@code Aws} usings). Only S3 requests carry {@code EmbeddedErrorsTrait}, so the
-     * caller gates emission on that marker.
-     */
-    default void writeHasEmbeddedErrorDecl(CppWriter writer, String exportMacro) {
-        writer.write("$L bool HasEmbeddedError(IOStream &body, "
-            + "const Http::HeaderValueCollection &header) const override;", exportMacro);
-    }
-
-    /**
-     * Emits a stubbed {@code HasEmbeddedError} body. The real XML error-sniff is a serde concern
-     * deferred plugin-wide; returning {@code false} with unnamed params keeps the override present
-     * (byte-parity for the request header) without tripping {@code -Werror} on unused parameters.
-     */
-    default void writeHasEmbeddedErrorImpl(CppWriter writer, String className) {
-        writer.write("bool $L::HasEmbeddedError(Aws::IOStream&, "
-            + "const Aws::Http::HeaderValueCollection&) const { return false; }", className);
-    }
-
     default void writeAddQueryStringParametersImpl(CppWriter writer, String className) {
         writer.openBlock("void $L::AddQueryStringParameters(Aws::Http::URI& uri) const {", "}",
             className, () -> {

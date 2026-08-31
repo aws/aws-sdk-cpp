@@ -175,4 +175,32 @@ public final class RestXmlProtocolTraits implements ProtocolTraits {
             writeHasEmbeddedErrorImpl(writer, className);
         }
     }
+
+    // C2J RequestHeader.vm decl: unqualified IOStream / Http::HeaderValueCollection, resolved via the
+    // request header's Aws usings. Only S3 requests carry EmbeddedErrorsTrait, so the caller gates.
+    private void writeHasEmbeddedErrorDecl(CppWriter writer, String exportMacro) {
+        writer.write("$L bool HasEmbeddedError(IOStream &body, "
+            + "const Http::HeaderValueCollection &header) const override;", exportMacro);
+    }
+
+    // Constant XML error-sniff body, identical across C2J's S3 request-source templates
+    // (XmlRequestSource / StreamRequestSource / PutBucketNotificationConfigurationRequest): parse the
+    // response body as XML and report an embedded error when the root element is <Error>. It is not
+    // shape-dependent, so there is nothing to defer. XmlSerializer.h + UnreferencedParam.h and the
+    // Aws::Utils::Xml / Aws::Utils usings are already in the REQUEST_SOURCE serde includes/usings.
+    private void writeHasEmbeddedErrorImpl(CppWriter writer, String className) {
+        writer.openBlock("bool $L::HasEmbeddedError(Aws::IOStream& body, "
+            + "const Aws::Http::HeaderValueCollection& header) const {", "}", className, () -> {
+            writer.write("AWS_UNREFERENCED_PARAM(header);");
+            writer.write("auto readPointer = body.tellg();");
+            writer.write("Utils::Xml::XmlDocument doc = XmlDocument::CreateFromXmlStream(body);");
+            writer.write("body.seekg(readPointer);");
+            writer.openBlock("if (!doc.WasParseSuccessful()) {", "}",
+                () -> writer.write("return false;"));
+            writer.openBlock("if (!doc.GetRootElement().IsNull() "
+                + "&& doc.GetRootElement().GetName() == Aws::String(\"Error\")) {", "}",
+                () -> writer.write("return true;"));
+            writer.write("return false;");
+        });
+    }
 }
