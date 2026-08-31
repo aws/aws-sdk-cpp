@@ -1,0 +1,6 @@
+{
+  "type": "feature",
+  "category": "aws-cpp-sdk-core",
+  "contributor": "kaiion",
+  "description": "Add clock skew header that adjusts request signing timestamps to match the service clock"
+}
