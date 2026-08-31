@@ -251,7 +251,12 @@ class XmlProtocolTraitsTest {
         assertTrue(d.contains("AWS_EX_API bool HasEmbeddedError(IOStream &body, "
             + "const Http::HeaderValueCollection &header) const override;"), d);
         String i = render(w -> xml.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model));
+        // The impl is the real constant XML error-sniff body (not a stub) — matches C2J's S3
+        // request-source templates: parse the body and report true iff the root element is <Error>.
         assertTrue(i.contains("bool DoThingRequest::HasEmbeddedError("), i);
+        assertTrue(i.contains("XmlDocument doc = XmlDocument::CreateFromXmlStream(body);"), i);
+        assertTrue(i.contains("doc.GetRootElement().GetName() == Aws::String(\"Error\")"), i);
+        assertFalse(i.contains("return false; }"), "impl must not be the one-line stub");
     }
 
     @Test
