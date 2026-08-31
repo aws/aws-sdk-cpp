@@ -6,6 +6,7 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.EmbeddedErrorsTrait;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.ServiceShape;
@@ -148,6 +149,10 @@ public final class RestXmlProtocolTraits implements ProtocolTraits {
             writer.write("");
             writeAddQueryStringParametersDecl(writer, exportMacro);
         }
+        if (shape.hasTrait(EmbeddedErrorsTrait.class)) {
+            writer.write("");
+            writeHasEmbeddedErrorDecl(writer, exportMacro);
+        }
     }
 
     @Override
@@ -164,6 +169,10 @@ public final class RestXmlProtocolTraits implements ProtocolTraits {
         if (RequestBindings.hasQueryStringMembers(shape, model)) {
             writer.write("");
             writeAddQueryStringParametersImpl(writer, className);
+        }
+        if (shape.hasTrait(EmbeddedErrorsTrait.class)) {
+            writer.write("");
+            writeHasEmbeddedErrorImpl(writer, className);
         }
     }
 }
