@@ -617,6 +617,68 @@ class ShapeClassifierTest {
             "unmarked shape must remain a sub-object: " + classified.subObjects());
     }
 
+    /**
+     * A @streaming union with two event members: one empty-member event (like S3's
+     * ContinuationEvent / EndEvent, referenced by nothing after EventStreamRenderer's void()
+     * callback fix) and one data event carrying a string member. Bound to an operation output so
+     * both event structs are reachable.
+     */
+    private Model eventStreamEmptyAndDataModel() {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        StructureShape emptyEvt = StructureShape.builder()
+            .id("com.example#EmptyEvt")
+            .build();
+        StructureShape dataEvt = StructureShape.builder()
+            .id("com.example#DataEvt")
+            .addMember("records", str.getId())
+            .build();
+        UnionShape eventStream = UnionShape.builder()
+            .id("com.example#SelectEventStream")
+            .addTrait(new StreamingTrait())
+            .addMember("Empty", emptyEvt.getId())
+            .addMember("Data", dataEvt.getId())
+            .build();
+        StructureShape request = StructureShape.builder()
+            .id("com.example#SelectRequest").addMember("name", str.getId()).build();
+        StructureShape response = StructureShape.builder()
+            .id("com.example#SelectResponse").addMember("events", eventStream.getId()).build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#Select").input(request.getId()).output(response.getId()).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#TestService").version("2023-01-01").addOperation(op.getId())
+            .addTrait(ServiceTrait.builder().sdkId("test").arnNamespace("test").cloudFormationName("Test").cloudTrailEventSource("test").build())
+            .build();
+        return Model.builder()
+            .addShapes(str, emptyEvt, dataEvt, eventStream, request, response, op, service)
+            .build();
+    }
+
+    @Test
+    void classifyDropsEmptyMemberEventStructFromSubObjects() {
+        Model model = eventStreamEmptyAndDataModel();
+        ServiceShape service = model.expectShape(ShapeId.from("com.example#TestService"), ServiceShape.class);
+        var classified = ShapeClassifier.classify(model, service, ProtocolResolver.resolve(service, model));
+        assertFalse(classified.subObjects().stream()
+                .anyMatch(s -> s.getId().getName().equals("EmptyEvt")),
+            "empty event struct dropped from subObjects: " + classified.subObjects());
+        assertTrue(classified.subObjects().stream()
+                .anyMatch(s -> s.getId().getName().equals("DataEvt")),
+            "data event struct still emitted as sub-object: " + classified.subObjects());
+    }
+
+    @Test
+    void classifyDropsIncomingEventStreamUnionFromSubObjects() {
+        // The @streaming union bound to an operation output (an incoming event stream) is realized
+        // via the generated handler; nothing references the union as a data type, so it must not be
+        // emitted as a standalone sub-object header.
+        Model model = eventStreamEmptyAndDataModel();
+        ServiceShape service = model.expectShape(ShapeId.from("com.example#TestService"), ServiceShape.class);
+        var classified = ShapeClassifier.classify(model, service, ProtocolResolver.resolve(service, model));
+        assertFalse(classified.subObjects().stream()
+                .anyMatch(s -> s.getId().getName().equals("SelectEventStream")),
+            "incoming event-stream union dropped from subObjects: " + classified.subObjects());
+    }
+
     @Test
     void classifiesEnumShape() {
         // StringShape with @enum trait -> classified as enum
