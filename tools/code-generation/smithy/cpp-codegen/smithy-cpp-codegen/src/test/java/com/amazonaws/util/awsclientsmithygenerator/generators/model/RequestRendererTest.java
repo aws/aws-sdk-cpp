@@ -8,6 +8,7 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.RenderContext;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.RequestRenderer;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.OverrideStreamingTrait;
 import org.junit.jupiter.api.Test;
 import software.amazon.smithy.build.MockManifest;
 import software.amazon.smithy.model.Model;
@@ -90,6 +91,55 @@ class RequestRendererTest {
                 .filter(p -> p.toString().endsWith(fileSuffix))
                 .findFirst().orElseThrow())
             .orElseThrow();
+    }
+
+    private static Model overrideStreamingModel(boolean marked) {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        StructureShape.Builder inB = StructureShape.builder()
+            .id("com.example#DoThingRequest").addMember("name", str.getId());
+        if (marked) {
+            inB.addTrait(new OverrideStreamingTrait());
+        }
+        StructureShape input = inB.build();
+        StructureShape output = StructureShape.builder()
+            .id("com.example#DoThingOutput").addMember("result", str.getId()).build();
+        OperationShape op = OperationShape.builder().id("com.example#DoThing")
+            .input(input.getId()).output(output.getId()).build();
+        ServiceShape service = ServiceShape.builder().id("com.example#Example")
+            .version("2024-01-01").addOperation(op.getId()).build();
+        return Model.builder().addShapes(str, input, output, op, service).build();
+    }
+
+    private static String renderDoThingRequestHeader(Model model) {
+        ServiceShape service = model.expectShape(ShapeId.from("com.example#Example"), ServiceShape.class);
+        MockManifest manifest = new MockManifest();
+        CppWriterDelegator delegator = new CppWriterDelegator(manifest);
+        Protocol protocol = ProtocolResolver.resolve(service, model);
+        RequestRenderer renderer = new RequestRenderer(
+            ShapeClassifier.classify(model, service, protocol).requests(),
+            new RenderContext(model, service, ProtocolResolver.traitsFor(protocol),
+                "Example", "AWS_EXAMPLE_API", "example"));
+        renderer.render(delegator);
+        delegator.flushWriters();
+        return manifest.getFileString(
+            manifest.getFiles().stream()
+                .filter(p -> p.toString().endsWith("DoThingRequest.h"))
+                .findFirst().orElseThrow())
+            .orElseThrow();
+    }
+
+    @Test
+    void overrideStreamingTrait_emitsIsStreamingFalse() {
+        String h = renderDoThingRequestHeader(overrideStreamingModel(true));
+        assertTrue(h.contains("bool IsStreaming() const override { return false; }"),
+            "OverrideStreamingTrait must emit the non-streaming override: " + h);
+    }
+
+    @Test
+    void withoutOverrideStreamingTrait_omitsIsStreaming() {
+        String h = renderDoThingRequestHeader(overrideStreamingModel(false));
+        assertFalse(h.contains("IsStreaming"),
+            "unmarked requests must not emit IsStreaming: " + h);
     }
 
     @Test

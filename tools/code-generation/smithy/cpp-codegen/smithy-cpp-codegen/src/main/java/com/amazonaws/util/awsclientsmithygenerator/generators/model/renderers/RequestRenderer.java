@@ -14,6 +14,7 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.model.RenderContex
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassifier;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassifier.RequestInfo;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeRenderer;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.OverrideStreamingTrait;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.endpointcontext.Emit;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.endpointcontext.SmithyEndpointsJmesPathVisitor;
 import software.amazon.smithy.jmespath.JmespathExpression;
@@ -154,6 +155,12 @@ public final class RequestRenderer implements ShapeRenderer {
                 renderChecksumDecls(writer, shape, operation);
                 renderContentMd5Decl(writer, operation);
                 renderRequestCompressionDecl(writer, operation);
+
+                // S3 flips a couple of streaming-base requests back to non-streaming (C2J
+                // isOverrideStreaming); the marker is stamped by S3Transforms.
+                if (shape.hasTrait(OverrideStreamingTrait.class)) {
+                    writer.write("$L bool IsStreaming() const override { return false; }", ctx.exportMacro());
+                }
 
                 if (streamingResponse) {
                     String handlerType = operation.getId().getName() + "Handler";

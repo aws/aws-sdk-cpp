@@ -57,10 +57,82 @@ public final class S3Transforms {
         if (!"s3".equals(name) && !"s3-crt".equals(name)) {
             return model;
         }
-        return markEmbeddedErrors(injectAccessLogTagQuery(normalizeReplicationStatus(
+        Model result = markEmbeddedErrors(injectAccessLogTagQuery(normalizeReplicationStatus(
             expandBucketLocationConstraint(hackGetObjectResult(
                 addExpiresCustomization(renameCopyObjectResult(
                     retypePartNumberMarkersToInteger(model), service), service)))), service));
+        result = markOverrideStreaming(result);
+        return markChecksumMembers(result, service);
+    }
+
+    // C2J's S3RestXmlCppClientGenerator flips these two requests' isOverrideStreaming on. Both derive
+    // from StreamingS3Request (== AmazonStreamingWebServiceRequest, whose IsStreaming() returns true),
+    // so they must override IsStreaming() back to false; RequestRenderer emits that for marked shapes.
+    private static final Set<String> REQUESTS_TO_OVERRIDE_STREAMING = Set.of(
+        "PutBucketPolicyRequest", "PutObjectAnnotationRequest");
+
+    private static Model markOverrideStreaming(Model model) {
+        List<Shape> marked = new ArrayList<>();
+        for (StructureShape shape : model.shapes(StructureShape.class).toList()) {
+            if (REQUESTS_TO_OVERRIDE_STREAMING.contains(shape.getId().getName())
+                    && !shape.hasTrait(OverrideStreamingTrait.class)) {
+                marked.add(shape.toBuilder().addTrait(new OverrideStreamingTrait()).build());
+            }
+        }
+        if (marked.isEmpty()) {
+            return model; // neither request is present (idempotent / other model).
+        }
+        return model.toBuilder().addShapes(marked.toArray(new Shape[0])).build();
+    }
+
+    // C2J's S3RestXmlCppClientGenerator maps each checksum member shape name to its ChecksumAlgorithm
+    // enum constant; every request that also carries a ChecksumAlgorithm member gets these members
+    // flagged so their setters also call SetChecksumAlgorithm(...). ChecksumCRC64NVME is intentionally
+    // absent (C2J never listed it), so it keeps a plain setter.
+    private static final Map<String, String> CHECKSUM_MEMBERS_ENUMS = Map.ofEntries(
+        Map.entry("ChecksumCRC32", "CRC32"),
+        Map.entry("ChecksumCRC32C", "CRC32C"),
+        Map.entry("ChecksumSHA1", "SHA1"),
+        Map.entry("ChecksumSHA256", "SHA256"),
+        Map.entry("ChecksumSHA512", "SHA512"),
+        Map.entry("ChecksumXXHASH64", "XXHASH64"),
+        Map.entry("ChecksumXXHASH3", "XXHASH3"),
+        Map.entry("ChecksumXXHASH128", "XXHASH128"),
+        Map.entry("ChecksumMD5", "MD5"));
+
+    private static Model markChecksumMembers(Model model, ServiceShape service) {
+        Set<ShapeId> inputShapes = TopDownIndex.of(model).getContainedOperations(service).stream()
+            .map(OperationShape::getInputShape)
+            .filter(id -> !id.equals(UnitTypeTrait.UNIT))
+            .collect(Collectors.toSet());
+        List<Shape> replacements = new ArrayList<>();
+        for (StructureShape req : model.shapes(StructureShape.class).toList()) {
+            // Only request shapes that already carry a ChecksumAlgorithm member (so SetChecksumAlgorithm
+            // exists), and only when they hold at least one not-yet-marked checksum member.
+            boolean isChecksumRequest = inputShapes.contains(req.getId())
+                && req.getMember("ChecksumAlgorithm").isPresent();
+            boolean needsStamp = isChecksumRequest && req.getAllMembers().values().stream().anyMatch(m ->
+                CHECKSUM_MEMBERS_ENUMS.containsKey(m.getTarget().getName())
+                    && !m.hasTrait(ChecksumMemberTrait.class));
+            if (needsStamp) {
+                StructureShape.Builder b = StructureShape.builder().id(req.getId());
+                req.getAllTraits().values().forEach(b::addTrait);
+                for (MemberShape m : req.getAllMembers().values()) {
+                    String enumValue = CHECKSUM_MEMBERS_ENUMS.get(m.getTarget().getName());
+                    b.addMember(m.getMemberName(), m.getTarget(), mb -> {
+                        m.getAllTraits().values().forEach(mb::addTrait);
+                        if (enumValue != null && !m.hasTrait(ChecksumMemberTrait.class)) {
+                            mb.addTrait(new ChecksumMemberTrait(enumValue));
+                        }
+                    });
+                }
+                replacements.add(b.build());
+            }
+        }
+        if (replacements.isEmpty()) {
+            return model; // no qualifying request (idempotent / other model).
+        }
+        return model.toBuilder().addShapes(replacements.toArray(new Shape[0])).build();
     }
 
     // C2J's S3RestXmlCppClientGenerator carries a hardcoded functionsWithEmbeddedErrors set; each
