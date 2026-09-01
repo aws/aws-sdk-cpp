@@ -9,6 +9,7 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolReso
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.RenderContext;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.RequestRenderer;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.OverrideStreamingTrait;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.SupportsPresigningTrait;
 import org.junit.jupiter.api.Test;
 import software.amazon.smithy.build.MockManifest;
 import software.amazon.smithy.model.Model;
@@ -140,6 +141,42 @@ class RequestRendererTest {
         String h = renderDoThingRequestHeader(overrideStreamingModel(false));
         assertFalse(h.contains("IsStreaming"),
             "unmarked requests must not emit IsStreaming: " + h);
+    }
+
+    private static Model supportsPresigningModel(boolean marked) {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        StructureShape.Builder inB = StructureShape.builder()
+            .id("com.example#DoThingRequest").addMember("name", str.getId());
+        if (marked) {
+            inB.addTrait(new SupportsPresigningTrait());
+        }
+        StructureShape input = inB.build();
+        StructureShape output = StructureShape.builder()
+            .id("com.example#DoThingOutput").addMember("result", str.getId()).build();
+        OperationShape op = OperationShape.builder().id("com.example#DoThing")
+            .input(input.getId()).output(output.getId()).build();
+        ServiceShape service = ServiceShape.builder().id("com.example#Example")
+            .version("2024-01-01").addOperation(op.getId()).build();
+        return Model.builder().addShapes(str, input, output, op, service).build();
+    }
+
+    @Test
+    void supportsPresigningTrait_emitsProtectedDumpBodyToUrlOverride() {
+        // C2J's RequestHeader.vm emits DumpBodyToUrl protocol-agnostically under
+        // #if($shape.supportsPresigning()); the marker drives the same protected override here.
+        String h = renderDoThingRequestHeader(supportsPresigningModel(true));
+        assertTrue(h.contains("protected:"), "presignable request must open a protected: section: " + h);
+        assertTrue(h.contains(
+            "AWS_EXAMPLE_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;"),
+            "presignable request must declare the DumpBodyToUrl override: " + h);
+        assertTrue(h.contains("public:"), "presignable request must restore public: afterwards: " + h);
+    }
+
+    @Test
+    void withoutSupportsPresigningTrait_omitsDumpBodyToUrl() {
+        String h = renderDoThingRequestHeader(supportsPresigningModel(false));
+        assertFalse(h.contains("DumpBodyToUrl"),
+            "unmarked requests must not declare DumpBodyToUrl: " + h);
     }
 
     @Test
