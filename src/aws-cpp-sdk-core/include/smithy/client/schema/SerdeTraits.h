@@ -4,6 +4,7 @@
  */
 #pragma once
 
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <smithy/client/schema/Trait.h>
 #include <smithy/client/schema/TraitKey.h>
 
@@ -22,7 +23,18 @@ class TimestampFormatTrait : public Trait {
   Format m_format;
 };
 
-extern template class TraitKey<TimestampFormatTrait>;
+class Ec2QueryNameTrait : public Trait {
+ public:
+  explicit Ec2QueryNameTrait(const Aws::String& value) : m_value(value) {}
+  const Aws::String& GetValue() const { return m_value; }
+  static const TraitKey<Ec2QueryNameTrait>& KEY() { return TraitKey<Ec2QueryNameTrait>::Instance(); }
 
-}  // namespace schema
-}  // namespace smithy
+ private:
+  Aws::String m_value;
+};
+
+extern template class TraitKey<TimestampFormatTrait>;
+extern template class TraitKey<Ec2QueryNameTrait>;
+
+}
+}
