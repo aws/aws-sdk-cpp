@@ -680,6 +680,55 @@ class ShapeClassifierTest {
     }
 
     @Test
+    void deprecatedOperation_inputAndOutputExcludedFromRequestsAndResults() {
+        // Legacy C2J drops @deprecated operations entirely, so their orphaned request/result structs
+        // are never emitted. The classifier must not put a @deprecated op's input in requests nor its
+        // output in results, while a live op's input/output are present.
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        StructureShape deprecatedRequest = StructureShape.builder()
+            .id("com.example#DeprecatedRequest").addMember("id", str.getId()).build();
+        StructureShape deprecatedResponse = StructureShape.builder()
+            .id("com.example#DeprecatedResponse").addMember("r", str.getId()).build();
+        StructureShape liveRequest = StructureShape.builder()
+            .id("com.example#LiveRequest").addMember("id", str.getId()).build();
+        StructureShape liveResponse = StructureShape.builder()
+            .id("com.example#LiveResponse").addMember("r", str.getId()).build();
+        OperationShape deprecatedOp = OperationShape.builder()
+            .id("com.example#DeprecatedOp")
+            .input(deprecatedRequest.getId()).output(deprecatedResponse.getId())
+            .addTrait(DeprecatedTrait.builder().build())
+            .build();
+        OperationShape liveOp = OperationShape.builder()
+            .id("com.example#LiveOp")
+            .input(liveRequest.getId()).output(liveResponse.getId())
+            .build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#TestService").version("2023-01-01")
+            .addOperation(deprecatedOp.getId()).addOperation(liveOp.getId())
+            .addTrait(ServiceTrait.builder().sdkId("test").arnNamespace("test")
+                .cloudFormationName("Test").cloudTrailEventSource("test").build())
+            .build();
+        Model model = Model.builder()
+            .addShapes(str, deprecatedRequest, deprecatedResponse, liveRequest, liveResponse,
+                deprecatedOp, liveOp, service)
+            .build();
+        var classified = ShapeClassifier.classify(model, service, ProtocolResolver.resolve(service, model));
+
+        assertTrue(classified.requests().stream()
+                .noneMatch(r -> r.shape().getId().getName().equals("DeprecatedRequest")),
+            "deprecated op input must not be a request: " + classified.requests());
+        assertTrue(classified.results().stream()
+                .noneMatch(r -> r.shape().getId().getName().equals("DeprecatedResponse")),
+            "deprecated op output must not be a result: " + classified.results());
+        assertTrue(classified.requests().stream()
+                .anyMatch(r -> r.shape().getId().getName().equals("LiveRequest")),
+            "live op input must be a request: " + classified.requests());
+        assertTrue(classified.results().stream()
+                .anyMatch(r -> r.shape().getId().getName().equals("LiveResponse")),
+            "live op output must be a result: " + classified.results());
+    }
+
+    @Test
     void classifiesEnumShape() {
         // StringShape with @enum trait -> classified as enum
         StringShape enumStr = StringShape.builder()
