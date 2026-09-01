@@ -54,6 +54,10 @@ DescribePipelineExecutionResult& DescribePipelineExecutionResult::operator=(cons
     m_requestEnvironmentVariables = jsonValue.GetObject("requestEnvironmentVariables");
     m_requestEnvironmentVariablesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("requestMountOverrides")) {
+    m_requestMountOverrides = jsonValue.GetObject("requestMountOverrides");
+    m_requestMountOverridesHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("executionPriority")) {
     m_executionPriority = jsonValue.GetInteger("executionPriority");
     m_executionPriorityHasBeenSet = true;

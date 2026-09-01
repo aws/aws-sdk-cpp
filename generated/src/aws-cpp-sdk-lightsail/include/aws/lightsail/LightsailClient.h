@@ -3564,6 +3564,35 @@ class AWS_LIGHTSAIL_API LightsailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns information about the profile of the Amazon Lightsail account that
+   * makes the request. The response includes the profile type and, for accounts
+   * enrolled in the Lightsail partner program, the partner membership
+   * details.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetProfile">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetProfileOutcome GetProfile(const Model::GetProfileRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for GetProfile that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetProfileRequestT = Model::GetProfileRequest>
+  Model::GetProfileOutcomeCallable GetProfileCallable(const GetProfileRequestT& request = {}) const {
+    return SubmitCallable(&LightsailClient::GetProfile, request);
+  }
+
+  /**
+   * An Async wrapper for GetProfile that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetProfileRequestT = Model::GetProfileRequest>
+  void GetProfileAsync(const GetProfileResponseReceivedHandler& handler,
+                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                       const GetProfileRequestT& request = {}) const {
+    return SubmitAsync(&LightsailClient::GetProfile, request, handler, context);
+  }
+
+  /**
    * <p>Returns a list of all valid regions for Amazon Lightsail. Use the
    * <code>include availability zones</code> parameter to also return the
    * Availability Zones in a region.</p><p><h3>See Also:</h3>   <a

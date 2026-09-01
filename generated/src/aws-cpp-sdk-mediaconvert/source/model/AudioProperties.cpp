@@ -26,6 +26,10 @@ AudioProperties& AudioProperties::operator=(JsonView jsonValue) {
     m_bitRate = jsonValue.GetInt64("bitRate");
     m_bitRateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("channelLayout")) {
+    m_channelLayout = jsonValue.GetString("channelLayout");
+    m_channelLayoutHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("channels")) {
     m_channels = jsonValue.GetInteger("channels");
     m_channelsHasBeenSet = true;
@@ -58,6 +62,10 @@ JsonValue AudioProperties::Jsonize() const {
 
   if (m_bitRateHasBeenSet) {
     payload.WithInt64("bitRate", m_bitRate);
+  }
+
+  if (m_channelLayoutHasBeenSet) {
+    payload.WithString("channelLayout", m_channelLayout);
   }
 
   if (m_channelsHasBeenSet) {

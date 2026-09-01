@@ -11,11 +11,13 @@
 #include <aws/guardduty/model/ListFindingsPaginationTraits.h>
 #include <aws/guardduty/model/ListThreatIntelSetsPaginationTraits.h>
 #include <aws/guardduty/model/GetUsageStatisticsPaginationTraits.h>
+#include <aws/guardduty/model/ListCustomDetectionRulesPaginationTraits.h>
 #include <aws/guardduty/model/ListOrganizationAdminAccountsPaginationTraits.h>
 #include <aws/guardduty/model/ListFiltersPaginationTraits.h>
 #include <aws/guardduty/model/ListInvitationsPaginationTraits.h>
 #include <aws/guardduty/model/ListInvestigationsPaginationTraits.h>
 #include <aws/guardduty/model/ListPublishingDestinationsPaginationTraits.h>
+#include <aws/guardduty/model/ListCustomDetectionRuleAssociationsPaginationTraits.h>
 #include <aws/guardduty/model/ListMembersPaginationTraits.h>
 #include <aws/guardduty/model/ListTrustedEntitySetsPaginationTraits.h>
 #include <aws/guardduty/model/ListThreatEntitySetsPaginationTraits.h>
@@ -25,6 +27,7 @@
 #include <aws/guardduty/model/ListCoveragePaginationTraits.h>
 #include <aws/guardduty/model/ListIPSetsPaginationTraits.h>
 #include <aws/guardduty/model/DescribeOrganizationConfigurationPaginationTraits.h>
+#include <aws/guardduty/model/ListCustomDetectionRuleOrgConfigurationsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

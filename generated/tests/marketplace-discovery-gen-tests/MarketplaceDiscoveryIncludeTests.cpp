@@ -40,6 +40,7 @@
 #include <aws/marketplace-discovery/model/Ec2ImageBuilderComponentFulfillmentOption.h>
 #include <aws/marketplace-discovery/model/EksAddOnFulfillmentOption.h>
 #include <aws/marketplace-discovery/model/EksAddOnOperatingSystem.h>
+#include <aws/marketplace-discovery/model/FixedPercentage.h>
 #include <aws/marketplace-discovery/model/FixedUpfrontPricingTerm.h>
 #include <aws/marketplace-discovery/model/FreeTrialPricingTerm.h>
 #include <aws/marketplace-discovery/model/FulfillmentOption.h>
@@ -79,7 +80,11 @@
 #include <aws/marketplace-discovery/model/OfferSetAssociatedEntity.h>
 #include <aws/marketplace-discovery/model/OfferSetInformation.h>
 #include <aws/marketplace-discovery/model/OfferTerm.h>
+#include <aws/marketplace-discovery/model/PaymentScheduleEntry.h>
 #include <aws/marketplace-discovery/model/PaymentScheduleTerm.h>
+#include <aws/marketplace-discovery/model/PaymentScheduleTermTemplate.h>
+#include <aws/marketplace-discovery/model/PercentageRange.h>
+#include <aws/marketplace-discovery/model/PriceIncrease.h>
 #include <aws/marketplace-discovery/model/PricingModel.h>
 #include <aws/marketplace-discovery/model/PricingModelType.h>
 #include <aws/marketplace-discovery/model/PricingUnit.h>
@@ -130,6 +135,7 @@
 #include <aws/marketplace-discovery/model/SellerEngagementType.h>
 #include <aws/marketplace-discovery/model/SellerInformation.h>
 #include <aws/marketplace-discovery/model/SupportTerm.h>
+#include <aws/marketplace-discovery/model/TermTemplate.h>
 #include <aws/marketplace-discovery/model/TermType.h>
 #include <aws/marketplace-discovery/model/UsageBasedPricingTerm.h>
 #include <aws/marketplace-discovery/model/UsageBasedRateCardItem.h>

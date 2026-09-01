@@ -18,7 +18,8 @@ enum class JobsQueryFilterKey {
   jobEngineVersionRequested,
   jobEngineVersionUsed,
   audioCodec,
-  videoCodec
+  videoCodec,
+  errorCode
 };
 
 namespace JobsQueryFilterKeyMapper {

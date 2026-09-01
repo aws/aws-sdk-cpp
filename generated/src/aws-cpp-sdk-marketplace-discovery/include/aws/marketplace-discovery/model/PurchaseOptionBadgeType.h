@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MarketplaceDiscovery {
 namespace Model {
-enum class PurchaseOptionBadgeType { NOT_SET, PRIVATE_PRICING, FUTURE_DATED, REPLACEMENT_OFFER };
+enum class PurchaseOptionBadgeType { NOT_SET, PRIVATE_PRICING, FUTURE_DATED, REPLACEMENT_OFFER, AUTO_RENEW };
 
 namespace PurchaseOptionBadgeTypeMapper {
 AWS_MARKETPLACEDISCOVERY_API PurchaseOptionBadgeType GetPurchaseOptionBadgeTypeForName(const Aws::String& name);

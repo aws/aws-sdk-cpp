@@ -34,6 +34,10 @@ AgreementViewSummary& AgreementViewSummary::operator=(JsonView jsonValue) {
     m_endTime = jsonValue.GetDouble("endTime");
     m_endTimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("lastUpdateTime")) {
+    m_lastUpdateTime = jsonValue.GetDouble("lastUpdateTime");
+    m_lastUpdateTimeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("agreementType")) {
     m_agreementType = jsonValue.GetString("agreementType");
     m_agreementTypeHasBeenSet = true;
@@ -61,6 +65,19 @@ AgreementViewSummary& AgreementViewSummary::operator=(JsonView jsonValue) {
     }
     m_entitlementsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("initialAgreementId")) {
+    m_initialAgreementId = jsonValue.GetString("initialAgreementId");
+    m_initialAgreementIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("endTimeBehaviorType")) {
+    m_endTimeBehaviorType = EndTimeBehaviorTypeMapper::GetEndTimeBehaviorTypeForName(jsonValue.GetString("endTimeBehaviorType"));
+    m_endTimeBehaviorTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("endTimeBehaviorReasonCode")) {
+    m_endTimeBehaviorReasonCode =
+        EndTimeBehaviorReasonCodeMapper::GetEndTimeBehaviorReasonCodeForName(jsonValue.GetString("endTimeBehaviorReasonCode"));
+    m_endTimeBehaviorReasonCodeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -81,6 +98,10 @@ JsonValue AgreementViewSummary::Jsonize() const {
 
   if (m_endTimeHasBeenSet) {
     payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
+  }
+
+  if (m_lastUpdateTimeHasBeenSet) {
+    payload.WithDouble("lastUpdateTime", m_lastUpdateTime.SecondsWithMSPrecision());
   }
 
   if (m_agreementTypeHasBeenSet) {
@@ -109,6 +130,19 @@ JsonValue AgreementViewSummary::Jsonize() const {
       entitlementsJsonList[entitlementsIndex].AsObject(m_entitlements[entitlementsIndex].Jsonize());
     }
     payload.WithArray("entitlements", std::move(entitlementsJsonList));
+  }
+
+  if (m_initialAgreementIdHasBeenSet) {
+    payload.WithString("initialAgreementId", m_initialAgreementId);
+  }
+
+  if (m_endTimeBehaviorTypeHasBeenSet) {
+    payload.WithString("endTimeBehaviorType", EndTimeBehaviorTypeMapper::GetNameForEndTimeBehaviorType(m_endTimeBehaviorType));
+  }
+
+  if (m_endTimeBehaviorReasonCodeHasBeenSet) {
+    payload.WithString("endTimeBehaviorReasonCode",
+                       EndTimeBehaviorReasonCodeMapper::GetNameForEndTimeBehaviorReasonCode(m_endTimeBehaviorReasonCode));
   }
 
   return payload;

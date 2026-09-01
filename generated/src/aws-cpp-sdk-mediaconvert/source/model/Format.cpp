@@ -25,6 +25,9 @@ static const int avi_HASH = HashingUtils::HashString("avi");
 static const int mpegts_HASH = HashingUtils::HashString("mpegts");
 static const int mpegps_HASH = HashingUtils::HashString("mpegps");
 static const int mp3_HASH = HashingUtils::HashString("mp3");
+static const int flac_HASH = HashingUtils::HashString("flac");
+static const int asf_HASH = HashingUtils::HashString("asf");
+static const int ogg_HASH = HashingUtils::HashString("ogg");
 
 Format GetFormatForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -48,6 +51,12 @@ Format GetFormatForName(const Aws::String& name) {
     return Format::mpegps;
   } else if (hashCode == mp3_HASH) {
     return Format::mp3;
+  } else if (hashCode == flac_HASH) {
+    return Format::flac;
+  } else if (hashCode == asf_HASH) {
+    return Format::asf;
+  } else if (hashCode == ogg_HASH) {
+    return Format::ogg;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -82,6 +91,12 @@ Aws::String GetNameForFormat(Format enumValue) {
       return "mpegps";
     case Format::mp3:
       return "mp3";
+    case Format::flac:
+      return "flac";
+    case Format::asf:
+      return "asf";
+    case Format::ogg:
+      return "ogg";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

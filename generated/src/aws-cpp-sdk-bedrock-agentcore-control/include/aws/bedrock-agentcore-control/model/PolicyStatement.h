@@ -20,8 +20,9 @@ namespace BedrockAgentCoreControl {
 namespace Model {
 
 /**
- * <p>An AgentCore policy statement, which supports plain Cedar policies as well as
- * guardrails definitions.</p><p><h3>See Also:</h3>   <a
+ * <p>An AgentCore Cedar or Dogwood policy statement, which supports plain Cedar
+ * policies, temporal policies, and guardrails definitions.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/PolicyStatement">AWS
  * API Reference</a></p>
  */
@@ -34,8 +35,9 @@ class PolicyStatement {
 
   ///@{
   /**
-   * <p>The body of the AgentCore policy statement. Contains the policy logic, which
-   * can be a Cedar policy or a guardrails definition.</p>
+   * <p>The body of the AgentCore Cedar or Dogwood policy statement. Contains the
+   * policy logic, which can be a Cedar policy, a temporal policy, or a guardrails
+   * definition.</p>
    */
   inline const Aws::String& GetStatement() const { return m_statement; }
   inline bool StatementHasBeenSet() const { return m_statementHasBeenSet; }

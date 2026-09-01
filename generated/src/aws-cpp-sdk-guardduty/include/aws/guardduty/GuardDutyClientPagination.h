@@ -10,6 +10,9 @@
 #include <aws/guardduty/model/DescribeOrganizationConfigurationPaginationTraits.h>
 #include <aws/guardduty/model/GetUsageStatisticsPaginationTraits.h>
 #include <aws/guardduty/model/ListCoveragePaginationTraits.h>
+#include <aws/guardduty/model/ListCustomDetectionRuleAssociationsPaginationTraits.h>
+#include <aws/guardduty/model/ListCustomDetectionRuleOrgConfigurationsPaginationTraits.h>
+#include <aws/guardduty/model/ListCustomDetectionRulesPaginationTraits.h>
 #include <aws/guardduty/model/ListDetectorsPaginationTraits.h>
 #include <aws/guardduty/model/ListFiltersPaginationTraits.h>
 #include <aws/guardduty/model/ListFindingsPaginationTraits.h>
@@ -36,6 +39,15 @@ using GetUsageStatisticsPaginator = Aws::Utils::Pagination::Paginator<GuardDutyC
                                                                       Pagination::GetUsageStatisticsPaginationTraits<GuardDutyClient>>;
 using ListCoveragePaginator = Aws::Utils::Pagination::Paginator<GuardDutyClient, Model::ListCoverageRequest,
                                                                 Pagination::ListCoveragePaginationTraits<GuardDutyClient>>;
+using ListCustomDetectionRuleAssociationsPaginator =
+    Aws::Utils::Pagination::Paginator<GuardDutyClient, Model::ListCustomDetectionRuleAssociationsRequest,
+                                      Pagination::ListCustomDetectionRuleAssociationsPaginationTraits<GuardDutyClient>>;
+using ListCustomDetectionRuleOrgConfigurationsPaginator =
+    Aws::Utils::Pagination::Paginator<GuardDutyClient, Model::ListCustomDetectionRuleOrgConfigurationsRequest,
+                                      Pagination::ListCustomDetectionRuleOrgConfigurationsPaginationTraits<GuardDutyClient>>;
+using ListCustomDetectionRulesPaginator =
+    Aws::Utils::Pagination::Paginator<GuardDutyClient, Model::ListCustomDetectionRulesRequest,
+                                      Pagination::ListCustomDetectionRulesPaginationTraits<GuardDutyClient>>;
 using ListDetectorsPaginator = Aws::Utils::Pagination::Paginator<GuardDutyClient, Model::ListDetectorsRequest,
                                                                  Pagination::ListDetectorsPaginationTraits<GuardDutyClient>>;
 using ListFiltersPaginator =

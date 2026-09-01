@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/iotsitewise/model/ComputeNodeExecutionStatus.h>
+#include <aws/iotsitewise/model/Mount.h>
 
 #include <utility>
 
@@ -212,6 +213,33 @@ class ComputeNodeExecutionDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The fully resolved mounts used for this compute node execution, after merging
+   * task-defined mounts with any execution-level mount overrides. Each mount
+   * attaches an external data source to the container filesystem at a relative path
+   * under the service-owned mount root.</p>
+   */
+  inline const Aws::Vector<Mount>& GetExecutionMounts() const { return m_executionMounts; }
+  inline bool ExecutionMountsHasBeenSet() const { return m_executionMountsHasBeenSet; }
+  template <typename ExecutionMountsT = Aws::Vector<Mount>>
+  void SetExecutionMounts(ExecutionMountsT&& value) {
+    m_executionMountsHasBeenSet = true;
+    m_executionMounts = std::forward<ExecutionMountsT>(value);
+  }
+  template <typename ExecutionMountsT = Aws::Vector<Mount>>
+  ComputeNodeExecutionDetails& WithExecutionMounts(ExecutionMountsT&& value) {
+    SetExecutionMounts(std::forward<ExecutionMountsT>(value));
+    return *this;
+  }
+  template <typename ExecutionMountsT = Mount>
+  ComputeNodeExecutionDetails& AddExecutionMounts(ExecutionMountsT&& value) {
+    m_executionMountsHasBeenSet = true;
+    m_executionMounts.emplace_back(std::forward<ExecutionMountsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_computeNodeName;
 
@@ -230,6 +258,8 @@ class ComputeNodeExecutionDetails {
   Aws::Utils::DateTime m_endTime{};
 
   Aws::Map<Aws::String, Aws::String> m_executionEnvironmentVariables;
+
+  Aws::Vector<Mount> m_executionMounts;
   bool m_computeNodeNameHasBeenSet = false;
   bool m_taskNameHasBeenSet = false;
   bool m_taskArnHasBeenSet = false;
@@ -239,6 +269,7 @@ class ComputeNodeExecutionDetails {
   bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
   bool m_executionEnvironmentVariablesHasBeenSet = false;
+  bool m_executionMountsHasBeenSet = false;
 };
 
 }  // namespace Model

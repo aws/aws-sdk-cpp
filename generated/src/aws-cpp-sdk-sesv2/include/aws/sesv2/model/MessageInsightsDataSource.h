@@ -109,7 +109,9 @@ class MessageInsightsDataSource {
 
   ///@{
   /**
-   * <p>The maximum number of results.</p>
+   * <p>The maximum number of results.</p>  <p>If you don't specify
+   * <code>MaxResults</code>, the export returns a maximum of 1,000 results.</p>
+   *
    */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

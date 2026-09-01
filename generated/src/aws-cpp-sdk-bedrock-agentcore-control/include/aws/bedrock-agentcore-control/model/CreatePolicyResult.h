@@ -176,8 +176,8 @@ class CreatePolicyResult {
 
   ///@{
   /**
-   * <p>The Cedar policy statement that was created. This is the validated policy
-   * definition that will be used for agent behavior control and access
+   * <p>The Cedar or Dogwood policy statement that was created. This is the validated
+   * policy definition that will be used for agent behavior control and access
    * decisions.</p>
    */
   inline const PolicyDefinition& GetDefinition() const { return m_definition; }

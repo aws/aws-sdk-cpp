@@ -88,10 +88,13 @@ class AcceptedTerm {
    * on its pre-defined end date), a new agreement will be created using the accepted
    * terms on the existing agreement. In other words, the agreement will be renewed.
    * Presence of <code>RenewalTerm</code> in the offer document means that
-   * auto-renewal is allowed. Buyers will have the option to accept or decline
-   * auto-renewal at the offer acceptance/agreement creation. Buyers can also change
-   * this flag from <code>True</code> to <code>False</code> or <code>False</code> to
-   * <code>True</code> at anytime during the agreement's lifecycle.</p>
+   * auto-renewal is allowed. The acceptor will have the option to accept or decline
+   * auto-renewal at the offer acceptance/agreement creation. The acceptor can also
+   * change this flag from <code>True</code> to <code>False</code> or
+   * <code>False</code> to <code>True</code>, within the limits set by
+   * <code>LockoutPeriod</code> and <code>MaxRenewals</code>. Setting the flag to
+   * <code>True</code> doesn't by itself guarantee that the agreement renews, because
+   * the proposer can also opt out.</p>
    */
   inline const RenewalTerm& GetRenewalTerm() const { return m_renewalTerm; }
   inline bool RenewalTermHasBeenSet() const { return m_renewalTermHasBeenSet; }

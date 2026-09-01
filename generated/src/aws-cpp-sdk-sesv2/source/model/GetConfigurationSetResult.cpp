@@ -61,6 +61,10 @@ GetConfigurationSetResult& GetConfigurationSetResult::operator=(const Aws::Amazo
     m_archivingOptions = jsonValue.GetObject("ArchivingOptions");
     m_archivingOptionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MessageSecurityOptions")) {
+    m_messageSecurityOptions = jsonValue.GetObject("MessageSecurityOptions");
+    m_messageSecurityOptionsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

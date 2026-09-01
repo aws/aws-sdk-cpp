@@ -9,6 +9,7 @@
 #include <aws/iotsitewise/IoTSiteWiseRequest.h>
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/iotsitewise/model/ExecutionEnvironmentVariables.h>
+#include <aws/iotsitewise/model/MountOverrides.h>
 
 #include <utility>
 
@@ -95,6 +96,28 @@ class StartPipelineExecutionRequest : public IoTSiteWiseRequest {
 
   ///@{
   /**
+   * <p>Runtime mount overrides for the execution. Overrides are merged by mount name
+   * into each listed compute node's task-defined mounts: a matching name replaces
+   * the task-defined mount, a new name adds a mount, and task-defined mounts not
+   * referenced remain unchanged. Compute nodes not listed use their task-defined
+   * mounts as-is.</p>
+   */
+  inline const MountOverrides& GetExecutionMountOverrides() const { return m_executionMountOverrides; }
+  inline bool ExecutionMountOverridesHasBeenSet() const { return m_executionMountOverridesHasBeenSet; }
+  template <typename ExecutionMountOverridesT = MountOverrides>
+  void SetExecutionMountOverrides(ExecutionMountOverridesT&& value) {
+    m_executionMountOverridesHasBeenSet = true;
+    m_executionMountOverrides = std::forward<ExecutionMountOverridesT>(value);
+  }
+  template <typename ExecutionMountOverridesT = MountOverrides>
+  StartPipelineExecutionRequest& WithExecutionMountOverrides(ExecutionMountOverridesT&& value) {
+    SetExecutionMountOverrides(std::forward<ExecutionMountOverridesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Scheduling priority for the execution. Lower values indicate higher priority.
    * Defaults to 2 when not specified.</p>
    */
@@ -137,12 +160,15 @@ class StartPipelineExecutionRequest : public IoTSiteWiseRequest {
 
   ExecutionEnvironmentVariables m_executionEnvironmentVariableOverrides;
 
+  MountOverrides m_executionMountOverrides;
+
   int m_executionPriority{0};
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_workspaceNameHasBeenSet = false;
   bool m_pipelineNameHasBeenSet = false;
   bool m_executionEnvironmentVariableOverridesHasBeenSet = false;
+  bool m_executionMountOverridesHasBeenSet = false;
   bool m_executionPriorityHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };

@@ -17,6 +17,7 @@ namespace DashIsoPlaybackDeviceCompatibilityMapper {
 
 static const int CENC_V1_HASH = HashingUtils::HashString("CENC_V1");
 static const int UNENCRYPTED_SEI_HASH = HashingUtils::HashString("UNENCRYPTED_SEI");
+static const int CENC_V1_UNENCRYPTED_HEADERS_HASH = HashingUtils::HashString("CENC_V1_UNENCRYPTED_HEADERS");
 
 DashIsoPlaybackDeviceCompatibility GetDashIsoPlaybackDeviceCompatibilityForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ DashIsoPlaybackDeviceCompatibility GetDashIsoPlaybackDeviceCompatibilityForName(
     return DashIsoPlaybackDeviceCompatibility::CENC_V1;
   } else if (hashCode == UNENCRYPTED_SEI_HASH) {
     return DashIsoPlaybackDeviceCompatibility::UNENCRYPTED_SEI;
+  } else if (hashCode == CENC_V1_UNENCRYPTED_HEADERS_HASH) {
+    return DashIsoPlaybackDeviceCompatibility::CENC_V1_UNENCRYPTED_HEADERS;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForDashIsoPlaybackDeviceCompatibility(DashIsoPlaybackDeviceCo
       return "CENC_V1";
     case DashIsoPlaybackDeviceCompatibility::UNENCRYPTED_SEI:
       return "UNENCRYPTED_SEI";
+    case DashIsoPlaybackDeviceCompatibility::CENC_V1_UNENCRYPTED_HEADERS:
+      return "CENC_V1_UNENCRYPTED_HEADERS";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

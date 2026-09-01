@@ -94,7 +94,8 @@ enum class OperationType {
   UpdateInstanceMetadataOptions,
   StartGUISession,
   StopGUISession,
-  SetupInstanceHttps
+  SetupInstanceHttps,
+  GetProfile
 };
 
 namespace OperationTypeMapper {

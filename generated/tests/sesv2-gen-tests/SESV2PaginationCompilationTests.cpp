@@ -22,6 +22,7 @@
 #include <aws/sesv2/model/ListImportJobsPaginationTraits.h>
 #include <aws/sesv2/model/ListTenantsPaginationTraits.h>
 #include <aws/sesv2/model/ListContactsPaginationTraits.h>
+#include <aws/sesv2/model/ListEmailIdentityCertificatesPaginationTraits.h>
 #include <aws/sesv2/model/ListReputationEntitiesPaginationTraits.h>
 #include <aws/sesv2/model/GetDedicatedIpsPaginationTraits.h>
 #include <aws/sesv2/model/ListEmailIdentitiesPaginationTraits.h>

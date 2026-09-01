@@ -156,6 +156,69 @@ class AWS_GUARDDUTY_API GuardDutyClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Enables a custom detection rule for your account by creating an association.
+   * You specify the rule and the mode in which it operates.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateCustomDetectionRuleAssociation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateCustomDetectionRuleAssociationOutcome CreateCustomDetectionRuleAssociation(
+      const Model::CreateCustomDetectionRuleAssociationRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateCustomDetectionRuleAssociation that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename CreateCustomDetectionRuleAssociationRequestT = Model::CreateCustomDetectionRuleAssociationRequest>
+  Model::CreateCustomDetectionRuleAssociationOutcomeCallable CreateCustomDetectionRuleAssociationCallable(
+      const CreateCustomDetectionRuleAssociationRequestT& request) const {
+    return SubmitCallable(&GuardDutyClient::CreateCustomDetectionRuleAssociation, request);
+  }
+
+  /**
+   * An Async wrapper for CreateCustomDetectionRuleAssociation that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename CreateCustomDetectionRuleAssociationRequestT = Model::CreateCustomDetectionRuleAssociationRequest>
+  void CreateCustomDetectionRuleAssociationAsync(const CreateCustomDetectionRuleAssociationRequestT& request,
+                                                 const CreateCustomDetectionRuleAssociationResponseReceivedHandler& handler,
+                                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GuardDutyClient::CreateCustomDetectionRuleAssociation, request, handler, context);
+  }
+
+  /**
+   * <p>Creates an organization-level configuration that enables a custom detection
+   * rule across your organization. This operation is available only to the delegated
+   * administrator account.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateCustomDetectionRuleOrgConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateCustomDetectionRuleOrgConfigurationOutcome CreateCustomDetectionRuleOrgConfiguration(
+      const Model::CreateCustomDetectionRuleOrgConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateCustomDetectionRuleOrgConfiguration that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename CreateCustomDetectionRuleOrgConfigurationRequestT = Model::CreateCustomDetectionRuleOrgConfigurationRequest>
+  Model::CreateCustomDetectionRuleOrgConfigurationOutcomeCallable CreateCustomDetectionRuleOrgConfigurationCallable(
+      const CreateCustomDetectionRuleOrgConfigurationRequestT& request) const {
+    return SubmitCallable(&GuardDutyClient::CreateCustomDetectionRuleOrgConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for CreateCustomDetectionRuleOrgConfiguration that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename CreateCustomDetectionRuleOrgConfigurationRequestT = Model::CreateCustomDetectionRuleOrgConfigurationRequest>
+  void CreateCustomDetectionRuleOrgConfigurationAsync(
+      const CreateCustomDetectionRuleOrgConfigurationRequestT& request,
+      const CreateCustomDetectionRuleOrgConfigurationResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GuardDutyClient::CreateCustomDetectionRuleOrgConfiguration, request, handler, context);
+  }
+
+  /**
    * <p>Creates a single GuardDuty detector. A detector is a resource that represents
    * the GuardDuty service. To start using GuardDuty, you must create a detector in
    * each Region where you enable the service. You can have only one detector per
@@ -565,6 +628,68 @@ class AWS_GUARDDUTY_API GuardDutyClient : public Aws::Client::AWSJsonClient,
   void DeclineInvitationsAsync(const DeclineInvitationsRequestT& request, const DeclineInvitationsResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&GuardDutyClient::DeclineInvitations, request, handler, context);
+  }
+
+  /**
+   * <p>Disables a custom detection rule by deleting its association. This operation
+   * is idempotent.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteCustomDetectionRuleAssociation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteCustomDetectionRuleAssociationOutcome DeleteCustomDetectionRuleAssociation(
+      const Model::DeleteCustomDetectionRuleAssociationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteCustomDetectionRuleAssociation that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DeleteCustomDetectionRuleAssociationRequestT = Model::DeleteCustomDetectionRuleAssociationRequest>
+  Model::DeleteCustomDetectionRuleAssociationOutcomeCallable DeleteCustomDetectionRuleAssociationCallable(
+      const DeleteCustomDetectionRuleAssociationRequestT& request) const {
+    return SubmitCallable(&GuardDutyClient::DeleteCustomDetectionRuleAssociation, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteCustomDetectionRuleAssociation that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DeleteCustomDetectionRuleAssociationRequestT = Model::DeleteCustomDetectionRuleAssociationRequest>
+  void DeleteCustomDetectionRuleAssociationAsync(const DeleteCustomDetectionRuleAssociationRequestT& request,
+                                                 const DeleteCustomDetectionRuleAssociationResponseReceivedHandler& handler,
+                                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GuardDutyClient::DeleteCustomDetectionRuleAssociation, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes the organization-level configuration for a custom detection rule.
+   * This operation is available only to the delegated administrator
+   * account.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteCustomDetectionRuleOrgConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteCustomDetectionRuleOrgConfigurationOutcome DeleteCustomDetectionRuleOrgConfiguration(
+      const Model::DeleteCustomDetectionRuleOrgConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteCustomDetectionRuleOrgConfiguration that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DeleteCustomDetectionRuleOrgConfigurationRequestT = Model::DeleteCustomDetectionRuleOrgConfigurationRequest>
+  Model::DeleteCustomDetectionRuleOrgConfigurationOutcomeCallable DeleteCustomDetectionRuleOrgConfigurationCallable(
+      const DeleteCustomDetectionRuleOrgConfigurationRequestT& request) const {
+    return SubmitCallable(&GuardDutyClient::DeleteCustomDetectionRuleOrgConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteCustomDetectionRuleOrgConfiguration that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DeleteCustomDetectionRuleOrgConfigurationRequestT = Model::DeleteCustomDetectionRuleOrgConfigurationRequest>
+  void DeleteCustomDetectionRuleOrgConfigurationAsync(
+      const DeleteCustomDetectionRuleOrgConfigurationRequestT& request,
+      const DeleteCustomDetectionRuleOrgConfigurationResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GuardDutyClient::DeleteCustomDetectionRuleOrgConfiguration, request, handler, context);
   }
 
   /**
@@ -1162,6 +1287,94 @@ class AWS_GUARDDUTY_API GuardDutyClient : public Aws::Client::AWSJsonClient,
   void GetCoverageStatisticsAsync(const GetCoverageStatisticsRequestT& request, const GetCoverageStatisticsResponseReceivedHandler& handler,
                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&GuardDutyClient::GetCoverageStatistics, request, handler, context);
+  }
+
+  /**
+   * <p>Returns details for a custom detection rule in GuardDuty, including its
+   * detection logic.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetCustomDetectionRule">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetCustomDetectionRuleOutcome GetCustomDetectionRule(const Model::GetCustomDetectionRuleRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetCustomDetectionRule that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetCustomDetectionRuleRequestT = Model::GetCustomDetectionRuleRequest>
+  Model::GetCustomDetectionRuleOutcomeCallable GetCustomDetectionRuleCallable(const GetCustomDetectionRuleRequestT& request) const {
+    return SubmitCallable(&GuardDutyClient::GetCustomDetectionRule, request);
+  }
+
+  /**
+   * An Async wrapper for GetCustomDetectionRule that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetCustomDetectionRuleRequestT = Model::GetCustomDetectionRuleRequest>
+  void GetCustomDetectionRuleAsync(const GetCustomDetectionRuleRequestT& request,
+                                   const GetCustomDetectionRuleResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GuardDutyClient::GetCustomDetectionRule, request, handler, context);
+  }
+
+  /**
+   * <p>Returns details for a custom detection rule association.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetCustomDetectionRuleAssociation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetCustomDetectionRuleAssociationOutcome GetCustomDetectionRuleAssociation(
+      const Model::GetCustomDetectionRuleAssociationRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetCustomDetectionRuleAssociation that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename GetCustomDetectionRuleAssociationRequestT = Model::GetCustomDetectionRuleAssociationRequest>
+  Model::GetCustomDetectionRuleAssociationOutcomeCallable GetCustomDetectionRuleAssociationCallable(
+      const GetCustomDetectionRuleAssociationRequestT& request) const {
+    return SubmitCallable(&GuardDutyClient::GetCustomDetectionRuleAssociation, request);
+  }
+
+  /**
+   * An Async wrapper for GetCustomDetectionRuleAssociation that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetCustomDetectionRuleAssociationRequestT = Model::GetCustomDetectionRuleAssociationRequest>
+  void GetCustomDetectionRuleAssociationAsync(const GetCustomDetectionRuleAssociationRequestT& request,
+                                              const GetCustomDetectionRuleAssociationResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GuardDutyClient::GetCustomDetectionRuleAssociation, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the organization-level configuration for a custom detection
+   * rule.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetCustomDetectionRuleOrgConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetCustomDetectionRuleOrgConfigurationOutcome GetCustomDetectionRuleOrgConfiguration(
+      const Model::GetCustomDetectionRuleOrgConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetCustomDetectionRuleOrgConfiguration that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename GetCustomDetectionRuleOrgConfigurationRequestT = Model::GetCustomDetectionRuleOrgConfigurationRequest>
+  Model::GetCustomDetectionRuleOrgConfigurationOutcomeCallable GetCustomDetectionRuleOrgConfigurationCallable(
+      const GetCustomDetectionRuleOrgConfigurationRequestT& request) const {
+    return SubmitCallable(&GuardDutyClient::GetCustomDetectionRuleOrgConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for GetCustomDetectionRuleOrgConfiguration that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename GetCustomDetectionRuleOrgConfigurationRequestT = Model::GetCustomDetectionRuleOrgConfigurationRequest>
+  void GetCustomDetectionRuleOrgConfigurationAsync(const GetCustomDetectionRuleOrgConfigurationRequestT& request,
+                                                   const GetCustomDetectionRuleOrgConfigurationResponseReceivedHandler& handler,
+                                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GuardDutyClient::GetCustomDetectionRuleOrgConfiguration, request, handler, context);
   }
 
   /**
@@ -1780,6 +1993,96 @@ class AWS_GUARDDUTY_API GuardDutyClient : public Aws::Client::AWSJsonClient,
   void ListCoverageAsync(const ListCoverageRequestT& request, const ListCoverageResponseReceivedHandler& handler,
                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&GuardDutyClient::ListCoverage, request, handler, context);
+  }
+
+  /**
+   * <p>Returns all custom detection rule associations for your account. You can
+   * filter by rule ID and mode.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListCustomDetectionRuleAssociations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListCustomDetectionRuleAssociationsOutcome ListCustomDetectionRuleAssociations(
+      const Model::ListCustomDetectionRuleAssociationsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListCustomDetectionRuleAssociations that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename ListCustomDetectionRuleAssociationsRequestT = Model::ListCustomDetectionRuleAssociationsRequest>
+  Model::ListCustomDetectionRuleAssociationsOutcomeCallable ListCustomDetectionRuleAssociationsCallable(
+      const ListCustomDetectionRuleAssociationsRequestT& request = {}) const {
+    return SubmitCallable(&GuardDutyClient::ListCustomDetectionRuleAssociations, request);
+  }
+
+  /**
+   * An Async wrapper for ListCustomDetectionRuleAssociations that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename ListCustomDetectionRuleAssociationsRequestT = Model::ListCustomDetectionRuleAssociationsRequest>
+  void ListCustomDetectionRuleAssociationsAsync(const ListCustomDetectionRuleAssociationsResponseReceivedHandler& handler,
+                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                                const ListCustomDetectionRuleAssociationsRequestT& request = {}) const {
+    return SubmitAsync(&GuardDutyClient::ListCustomDetectionRuleAssociations, request, handler, context);
+  }
+
+  /**
+   * <p>Returns all organization-level configurations for custom detection rules. You
+   * can filter the results by status.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListCustomDetectionRuleOrgConfigurations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListCustomDetectionRuleOrgConfigurationsOutcome ListCustomDetectionRuleOrgConfigurations(
+      const Model::ListCustomDetectionRuleOrgConfigurationsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListCustomDetectionRuleOrgConfigurations that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename ListCustomDetectionRuleOrgConfigurationsRequestT = Model::ListCustomDetectionRuleOrgConfigurationsRequest>
+  Model::ListCustomDetectionRuleOrgConfigurationsOutcomeCallable ListCustomDetectionRuleOrgConfigurationsCallable(
+      const ListCustomDetectionRuleOrgConfigurationsRequestT& request = {}) const {
+    return SubmitCallable(&GuardDutyClient::ListCustomDetectionRuleOrgConfigurations, request);
+  }
+
+  /**
+   * An Async wrapper for ListCustomDetectionRuleOrgConfigurations that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename ListCustomDetectionRuleOrgConfigurationsRequestT = Model::ListCustomDetectionRuleOrgConfigurationsRequest>
+  void ListCustomDetectionRuleOrgConfigurationsAsync(const ListCustomDetectionRuleOrgConfigurationsResponseReceivedHandler& handler,
+                                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                                     const ListCustomDetectionRuleOrgConfigurationsRequestT& request = {}) const {
+    return SubmitAsync(&GuardDutyClient::ListCustomDetectionRuleOrgConfigurations, request, handler, context);
+  }
+
+  /**
+   * <p>Returns all available custom detection rules in GuardDuty. You can filter the
+   * results by data source, severity, tactic, technique, and service.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListCustomDetectionRules">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListCustomDetectionRulesOutcome ListCustomDetectionRules(const Model::ListCustomDetectionRulesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListCustomDetectionRules that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListCustomDetectionRulesRequestT = Model::ListCustomDetectionRulesRequest>
+  Model::ListCustomDetectionRulesOutcomeCallable ListCustomDetectionRulesCallable(
+      const ListCustomDetectionRulesRequestT& request = {}) const {
+    return SubmitCallable(&GuardDutyClient::ListCustomDetectionRules, request);
+  }
+
+  /**
+   * An Async wrapper for ListCustomDetectionRules that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListCustomDetectionRulesRequestT = Model::ListCustomDetectionRulesRequest>
+  void ListCustomDetectionRulesAsync(const ListCustomDetectionRulesResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                     const ListCustomDetectionRulesRequestT& request = {}) const {
+    return SubmitAsync(&GuardDutyClient::ListCustomDetectionRules, request, handler, context);
   }
 
   /**
@@ -2423,6 +2726,68 @@ class AWS_GUARDDUTY_API GuardDutyClient : public Aws::Client::AWSJsonClient,
   void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&GuardDutyClient::UntagResource, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the mode of an existing custom detection rule
+   * association.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateCustomDetectionRuleAssociation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateCustomDetectionRuleAssociationOutcome UpdateCustomDetectionRuleAssociation(
+      const Model::UpdateCustomDetectionRuleAssociationRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateCustomDetectionRuleAssociation that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename UpdateCustomDetectionRuleAssociationRequestT = Model::UpdateCustomDetectionRuleAssociationRequest>
+  Model::UpdateCustomDetectionRuleAssociationOutcomeCallable UpdateCustomDetectionRuleAssociationCallable(
+      const UpdateCustomDetectionRuleAssociationRequestT& request) const {
+    return SubmitCallable(&GuardDutyClient::UpdateCustomDetectionRuleAssociation, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateCustomDetectionRuleAssociation that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename UpdateCustomDetectionRuleAssociationRequestT = Model::UpdateCustomDetectionRuleAssociationRequest>
+  void UpdateCustomDetectionRuleAssociationAsync(const UpdateCustomDetectionRuleAssociationRequestT& request,
+                                                 const UpdateCustomDetectionRuleAssociationResponseReceivedHandler& handler,
+                                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GuardDutyClient::UpdateCustomDetectionRuleAssociation, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the organization-level configuration for a custom detection rule,
+   * including the mode and include/exclude account lists.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateCustomDetectionRuleOrgConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateCustomDetectionRuleOrgConfigurationOutcome UpdateCustomDetectionRuleOrgConfiguration(
+      const Model::UpdateCustomDetectionRuleOrgConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateCustomDetectionRuleOrgConfiguration that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename UpdateCustomDetectionRuleOrgConfigurationRequestT = Model::UpdateCustomDetectionRuleOrgConfigurationRequest>
+  Model::UpdateCustomDetectionRuleOrgConfigurationOutcomeCallable UpdateCustomDetectionRuleOrgConfigurationCallable(
+      const UpdateCustomDetectionRuleOrgConfigurationRequestT& request) const {
+    return SubmitCallable(&GuardDutyClient::UpdateCustomDetectionRuleOrgConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateCustomDetectionRuleOrgConfiguration that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename UpdateCustomDetectionRuleOrgConfigurationRequestT = Model::UpdateCustomDetectionRuleOrgConfigurationRequest>
+  void UpdateCustomDetectionRuleOrgConfigurationAsync(
+      const UpdateCustomDetectionRuleOrgConfigurationRequestT& request,
+      const UpdateCustomDetectionRuleOrgConfigurationResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GuardDutyClient::UpdateCustomDetectionRuleOrgConfiguration, request, handler, context);
   }
 
   /**

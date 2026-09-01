@@ -40,6 +40,10 @@ AacSettings& AacSettings::operator=(JsonView jsonValue) {
         AacLoudnessMeasurementModeMapper::GetAacLoudnessMeasurementModeForName(jsonValue.GetString("loudnessMeasurementMode"));
     m_loudnessMeasurementModeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("passthroughControl")) {
+    m_passthroughControl = AacPassthroughControlMapper::GetAacPassthroughControlForName(jsonValue.GetString("passthroughControl"));
+    m_passthroughControlHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("rapInterval")) {
     m_rapInterval = jsonValue.GetInteger("rapInterval");
     m_rapIntervalHasBeenSet = true;
@@ -95,6 +99,10 @@ JsonValue AacSettings::Jsonize() const {
   if (m_loudnessMeasurementModeHasBeenSet) {
     payload.WithString("loudnessMeasurementMode",
                        AacLoudnessMeasurementModeMapper::GetNameForAacLoudnessMeasurementMode(m_loudnessMeasurementMode));
+  }
+
+  if (m_passthroughControlHasBeenSet) {
+    payload.WithString("passthroughControl", AacPassthroughControlMapper::GetNameForAacPassthroughControl(m_passthroughControl));
   }
 
   if (m_rapIntervalHasBeenSet) {

@@ -10,6 +10,7 @@
 #include <aws/sesv2/SESV2_EXPORTS.h>
 #include <aws/sesv2/model/ArchivingOptions.h>
 #include <aws/sesv2/model/DeliveryOptions.h>
+#include <aws/sesv2/model/MessageSecurityOptions.h>
 #include <aws/sesv2/model/ReputationOptions.h>
 #include <aws/sesv2/model/SendingOptions.h>
 #include <aws/sesv2/model/SuppressionOptions.h>
@@ -219,6 +220,25 @@ class CreateConfigurationSetRequest : public SESV2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The message security options to apply to the configuration set, such as the
+   * signing scheme used for messages that you send with the configuration set.</p>
+   */
+  inline const MessageSecurityOptions& GetMessageSecurityOptions() const { return m_messageSecurityOptions; }
+  inline bool MessageSecurityOptionsHasBeenSet() const { return m_messageSecurityOptionsHasBeenSet; }
+  template <typename MessageSecurityOptionsT = MessageSecurityOptions>
+  void SetMessageSecurityOptions(MessageSecurityOptionsT&& value) {
+    m_messageSecurityOptionsHasBeenSet = true;
+    m_messageSecurityOptions = std::forward<MessageSecurityOptionsT>(value);
+  }
+  template <typename MessageSecurityOptionsT = MessageSecurityOptions>
+  CreateConfigurationSetRequest& WithMessageSecurityOptions(MessageSecurityOptionsT&& value) {
+    SetMessageSecurityOptions(std::forward<MessageSecurityOptionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_configurationSetName;
 
@@ -237,6 +257,8 @@ class CreateConfigurationSetRequest : public SESV2Request {
   VdmOptions m_vdmOptions;
 
   ArchivingOptions m_archivingOptions;
+
+  MessageSecurityOptions m_messageSecurityOptions;
   bool m_configurationSetNameHasBeenSet = false;
   bool m_trackingOptionsHasBeenSet = false;
   bool m_deliveryOptionsHasBeenSet = false;
@@ -246,6 +268,7 @@ class CreateConfigurationSetRequest : public SESV2Request {
   bool m_suppressionOptionsHasBeenSet = false;
   bool m_vdmOptionsHasBeenSet = false;
   bool m_archivingOptionsHasBeenSet = false;
+  bool m_messageSecurityOptionsHasBeenSet = false;
 };
 
 }  // namespace Model

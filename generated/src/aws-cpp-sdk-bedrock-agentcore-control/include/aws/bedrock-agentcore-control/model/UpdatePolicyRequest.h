@@ -91,9 +91,9 @@ class UpdatePolicyRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
-   * <p>The new Cedar policy statement that defines the access control rules. This
-   * replaces the existing policy definition with new logic while maintaining the
-   * policy's identity.</p>
+   * <p>The new Cedar or Dogwood policy statement that defines the access control
+   * rules. This replaces the existing policy definition with new logic while
+   * maintaining the policy's identity.</p>
    */
   inline const PolicyDefinition& GetDefinition() const { return m_definition; }
   inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }

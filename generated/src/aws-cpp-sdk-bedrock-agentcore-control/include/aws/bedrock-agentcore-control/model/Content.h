@@ -36,7 +36,7 @@ class Content {
   ///@{
   /**
    * <p>The raw text content containing natural language descriptions of desired
-   * policy behavior. This text is processed by AI to generate corresponding Cedar
+   * policy behavior. This text is processed by AI to generate corresponding Dogwood
    * policy statements that match the described intent.</p>
    */
   inline const Aws::String& GetRawText() const { return m_rawText; }

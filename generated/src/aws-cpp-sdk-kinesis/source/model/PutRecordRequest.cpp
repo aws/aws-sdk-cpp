@@ -44,6 +44,10 @@ Aws::String PutRecordRequest::SerializePayload() const {
     payload.WithString("StreamId", m_streamId);
   }
 
+  if (m_dryRunHasBeenSet) {
+    payload.WithBool("DryRun", m_dryRun);
+  }
+
   return payload.View().WriteReadable();
 }
 

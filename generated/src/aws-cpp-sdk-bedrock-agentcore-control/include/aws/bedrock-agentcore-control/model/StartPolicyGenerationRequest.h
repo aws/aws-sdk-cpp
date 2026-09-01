@@ -74,8 +74,8 @@ class StartPolicyGenerationRequest : public BedrockAgentCoreControlRequest {
   ///@{
   /**
    * <p>The natural language description of the desired policy behavior. This content
-   * is processed by AI to generate corresponding Cedar policy statements that match
-   * the described intent.</p>
+   * is processed by AI to generate corresponding Dogwood policy statements that
+   * match the described intent.</p>
    */
   inline const Content& GetContent() const { return m_content; }
   inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }

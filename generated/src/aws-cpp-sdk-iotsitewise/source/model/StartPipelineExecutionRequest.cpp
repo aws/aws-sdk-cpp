@@ -19,6 +19,10 @@ Aws::String StartPipelineExecutionRequest::SerializePayload() const {
     payload.WithObject("executionEnvironmentVariableOverrides", m_executionEnvironmentVariableOverrides.Jsonize());
   }
 
+  if (m_executionMountOverridesHasBeenSet) {
+    payload.WithObject("executionMountOverrides", m_executionMountOverrides.Jsonize());
+  }
+
   if (m_executionPriorityHasBeenSet) {
     payload.WithInteger("executionPriority", m_executionPriority);
   }

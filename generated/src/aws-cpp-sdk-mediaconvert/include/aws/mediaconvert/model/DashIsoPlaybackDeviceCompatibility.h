@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MediaConvert {
 namespace Model {
-enum class DashIsoPlaybackDeviceCompatibility { NOT_SET, CENC_V1, UNENCRYPTED_SEI };
+enum class DashIsoPlaybackDeviceCompatibility { NOT_SET, CENC_V1, UNENCRYPTED_SEI, CENC_V1_UNENCRYPTED_HEADERS };
 
 namespace DashIsoPlaybackDeviceCompatibilityMapper {
 AWS_MEDIACONVERT_API DashIsoPlaybackDeviceCompatibility GetDashIsoPlaybackDeviceCompatibilityForName(const Aws::String& name);

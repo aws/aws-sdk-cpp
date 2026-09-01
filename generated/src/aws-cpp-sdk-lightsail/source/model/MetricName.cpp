@@ -38,6 +38,8 @@ static const int DiskQueueDepth_HASH = HashingUtils::HashString("DiskQueueDepth"
 static const int FreeStorageSpace_HASH = HashingUtils::HashString("FreeStorageSpace");
 static const int NetworkReceiveThroughput_HASH = HashingUtils::HashString("NetworkReceiveThroughput");
 static const int NetworkTransmitThroughput_HASH = HashingUtils::HashString("NetworkTransmitThroughput");
+static const int FreeableMemory_HASH = HashingUtils::HashString("FreeableMemory");
+static const int SwapUsage_HASH = HashingUtils::HashString("SwapUsage");
 static const int BurstCapacityTime_HASH = HashingUtils::HashString("BurstCapacityTime");
 static const int BurstCapacityPercentage_HASH = HashingUtils::HashString("BurstCapacityPercentage");
 
@@ -89,6 +91,10 @@ MetricName GetMetricNameForName(const Aws::String& name) {
     return MetricName::NetworkReceiveThroughput;
   } else if (hashCode == NetworkTransmitThroughput_HASH) {
     return MetricName::NetworkTransmitThroughput;
+  } else if (hashCode == FreeableMemory_HASH) {
+    return MetricName::FreeableMemory;
+  } else if (hashCode == SwapUsage_HASH) {
+    return MetricName::SwapUsage;
   } else if (hashCode == BurstCapacityTime_HASH) {
     return MetricName::BurstCapacityTime;
   } else if (hashCode == BurstCapacityPercentage_HASH) {
@@ -153,6 +159,10 @@ Aws::String GetNameForMetricName(MetricName enumValue) {
       return "NetworkReceiveThroughput";
     case MetricName::NetworkTransmitThroughput:
       return "NetworkTransmitThroughput";
+    case MetricName::FreeableMemory:
+      return "FreeableMemory";
+    case MetricName::SwapUsage:
+      return "SwapUsage";
     case MetricName::BurstCapacityTime:
       return "BurstCapacityTime";
     case MetricName::BurstCapacityPercentage:

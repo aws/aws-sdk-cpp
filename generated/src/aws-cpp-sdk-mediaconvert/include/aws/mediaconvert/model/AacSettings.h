@@ -9,6 +9,7 @@
 #include <aws/mediaconvert/model/AacCodecProfile.h>
 #include <aws/mediaconvert/model/AacCodingMode.h>
 #include <aws/mediaconvert/model/AacLoudnessMeasurementMode.h>
+#include <aws/mediaconvert/model/AacPassthroughControl.h>
 #include <aws/mediaconvert/model/AacRateControlMode.h>
 #include <aws/mediaconvert/model/AacRawFormat.h>
 #include <aws/mediaconvert/model/AacSpecification.h>
@@ -158,6 +159,25 @@ class AacSettings {
 
   ///@{
   /**
+   * When set to WHEN_POSSIBLE, input AAC audio will be passed through if it is
+   * present on the input. This detection is dynamic over the life of the transcode.
+   * Inputs that alternate between AAC and non-AAC content will have a consistent AAC
+   * output as the system alternates between passthrough and encoding.
+   */
+  inline AacPassthroughControl GetPassthroughControl() const { return m_passthroughControl; }
+  inline bool PassthroughControlHasBeenSet() const { return m_passthroughControlHasBeenSet; }
+  inline void SetPassthroughControl(AacPassthroughControl value) {
+    m_passthroughControlHasBeenSet = true;
+    m_passthroughControl = value;
+  }
+  inline AacSettings& WithPassthroughControl(AacPassthroughControl value) {
+    SetPassthroughControl(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * Specify the RAP (Random Access Point) interval for your xHE-AAC audio output. A
    * RAP allows a decoder to decode audio data mid-stream, without the need to
    * reference previous audio frames, and perform adaptive audio bitrate switching.
@@ -296,6 +316,8 @@ class AacSettings {
 
   AacLoudnessMeasurementMode m_loudnessMeasurementMode{AacLoudnessMeasurementMode::NOT_SET};
 
+  AacPassthroughControl m_passthroughControl{AacPassthroughControl::NOT_SET};
+
   int m_rapInterval{0};
 
   AacRateControlMode m_rateControlMode{AacRateControlMode::NOT_SET};
@@ -314,6 +336,7 @@ class AacSettings {
   bool m_codecProfileHasBeenSet = false;
   bool m_codingModeHasBeenSet = false;
   bool m_loudnessMeasurementModeHasBeenSet = false;
+  bool m_passthroughControlHasBeenSet = false;
   bool m_rapIntervalHasBeenSet = false;
   bool m_rateControlModeHasBeenSet = false;
   bool m_rawFormatHasBeenSet = false;

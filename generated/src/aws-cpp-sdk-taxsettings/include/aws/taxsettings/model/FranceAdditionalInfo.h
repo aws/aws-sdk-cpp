@@ -49,9 +49,31 @@ class FranceAdditionalInfo {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The routing code used for electronic invoicing (e-invoicing) for the company
+   * in France.</p>
+   */
+  inline const Aws::String& GetEInvoiceRoutingCode() const { return m_eInvoiceRoutingCode; }
+  inline bool EInvoiceRoutingCodeHasBeenSet() const { return m_eInvoiceRoutingCodeHasBeenSet; }
+  template <typename EInvoiceRoutingCodeT = Aws::String>
+  void SetEInvoiceRoutingCode(EInvoiceRoutingCodeT&& value) {
+    m_eInvoiceRoutingCodeHasBeenSet = true;
+    m_eInvoiceRoutingCode = std::forward<EInvoiceRoutingCodeT>(value);
+  }
+  template <typename EInvoiceRoutingCodeT = Aws::String>
+  FranceAdditionalInfo& WithEInvoiceRoutingCode(EInvoiceRoutingCodeT&& value) {
+    SetEInvoiceRoutingCode(std::forward<EInvoiceRoutingCodeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_sirenNumber;
+
+  Aws::String m_eInvoiceRoutingCode;
   bool m_sirenNumberHasBeenSet = false;
+  bool m_eInvoiceRoutingCodeHasBeenSet = false;
 };
 
 }  // namespace Model

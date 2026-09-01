@@ -61,6 +61,13 @@ ComputeNodeExecutionDetails& ComputeNodeExecutionDetails::operator=(JsonView jso
     }
     m_executionEnvironmentVariablesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("executionMounts")) {
+    Aws::Utils::Array<JsonView> executionMountsJsonList = jsonValue.GetArray("executionMounts");
+    for (unsigned executionMountsIndex = 0; executionMountsIndex < executionMountsJsonList.GetLength(); ++executionMountsIndex) {
+      m_executionMounts.push_back(executionMountsJsonList[executionMountsIndex].AsObject());
+    }
+    m_executionMountsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -109,6 +116,14 @@ JsonValue ComputeNodeExecutionDetails::Jsonize() const {
       executionEnvironmentVariablesJsonMap.WithString(executionEnvironmentVariablesItem.first, executionEnvironmentVariablesItem.second);
     }
     payload.WithObject("executionEnvironmentVariables", std::move(executionEnvironmentVariablesJsonMap));
+  }
+
+  if (m_executionMountsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> executionMountsJsonList(m_executionMounts.size());
+    for (unsigned executionMountsIndex = 0; executionMountsIndex < executionMountsJsonList.GetLength(); ++executionMountsIndex) {
+      executionMountsJsonList[executionMountsIndex].AsObject(m_executionMounts[executionMountsIndex].Jsonize());
+    }
+    payload.WithArray("executionMounts", std::move(executionMountsJsonList));
   }
 
   return payload;

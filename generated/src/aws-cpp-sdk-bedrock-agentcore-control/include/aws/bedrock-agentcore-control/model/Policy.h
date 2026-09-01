@@ -26,15 +26,15 @@ namespace Model {
 
 /**
  * <p>Represents a complete policy resource within the AgentCore Policy system.
- * Policies are ARN-able resources that contain Cedar policy statements and
- * associated metadata for controlling agent behavior and access decisions. Each
- * policy belongs to a policy engine and defines fine-grained authorization rules
- * that are evaluated in real-time as agents interact with tools through Gateway.
- * Policies use the Cedar policy language to specify who (principals based on OAuth
+ * Policies are ARN-able resources that contain Cedar or Dogwood policy statements
+ * and associated metadata for controlling agent behavior and access decisions.
+ * Each policy belongs to a policy engine and defines fine-grained authorization
+ * rules that are evaluated in real-time as agents interact with tools through
+ * Gateway. Policies use Cedar or Dogwood to specify who (principals based on OAuth
  * claims like username, role, or scope) can perform what actions (tool calls) on
  * which resources (Gateways), with optional conditions for attribute-based access
- * control. Multiple policies can apply to a single request, with Cedar's
- * forbid-wins semantics ensuring that security restrictions are never accidentally
+ * control. Multiple policies can apply to a single request, with forbid-wins
+ * semantics ensuring that security restrictions are never accidentally
  * overridden.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/Policy">AWS
  * API Reference</a></p>
@@ -196,8 +196,8 @@ class Policy {
 
   ///@{
   /**
-   * <p>The Cedar policy statement that defines the access control rules. This
-   * contains the actual policy logic used for agent behavior control and access
+   * <p>The Cedar or Dogwood policy statement that defines the access control rules.
+   * This contains the actual policy logic used for agent behavior control and access
    * decisions.</p>
    */
   inline const PolicyDefinition& GetDefinition() const { return m_definition; }

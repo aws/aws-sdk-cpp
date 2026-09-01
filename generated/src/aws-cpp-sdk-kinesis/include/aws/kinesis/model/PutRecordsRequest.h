@@ -117,6 +117,23 @@ class PutRecordsRequest : public KinesisRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Checks if your request will succeed. <code>DryRun</code> is an optional
+   * parameter.</p>
+   */
+  inline bool GetDryRun() const { return m_dryRun; }
+  inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+  inline void SetDryRun(bool value) {
+    m_dryRunHasBeenSet = true;
+    m_dryRun = value;
+  }
+  inline PutRecordsRequest& WithDryRun(bool value) {
+    SetDryRun(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<PutRecordsRequestEntry> m_records;
 
@@ -125,10 +142,13 @@ class PutRecordsRequest : public KinesisRequest {
   Aws::String m_streamARN;
 
   Aws::String m_streamId;
+
+  bool m_dryRun{false};
   bool m_recordsHasBeenSet = false;
   bool m_streamNameHasBeenSet = false;
   bool m_streamARNHasBeenSet = false;
   bool m_streamIdHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
 };
 
 }  // namespace Model

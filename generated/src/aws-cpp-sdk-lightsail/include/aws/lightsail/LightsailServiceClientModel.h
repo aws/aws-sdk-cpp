@@ -157,6 +157,8 @@
 #include <aws/lightsail/model/GetOperationsForResourceResult.h>
 #include <aws/lightsail/model/GetOperationsRequest.h>
 #include <aws/lightsail/model/GetOperationsResult.h>
+#include <aws/lightsail/model/GetProfileRequest.h>
+#include <aws/lightsail/model/GetProfileResult.h>
 #include <aws/lightsail/model/GetRegionsRequest.h>
 #include <aws/lightsail/model/GetRegionsResult.h>
 #include <aws/lightsail/model/GetRelationalDatabaseBlueprintsRequest.h>
@@ -362,6 +364,7 @@ class GetLoadBalancersRequest;
 class GetOperationRequest;
 class GetOperationsRequest;
 class GetOperationsForResourceRequest;
+class GetProfileRequest;
 class GetRegionsRequest;
 class GetRelationalDatabaseRequest;
 class GetRelationalDatabaseBlueprintsRequest;
@@ -526,6 +529,7 @@ typedef Aws::Utils::Outcome<GetLoadBalancersResult, LightsailError> GetLoadBalan
 typedef Aws::Utils::Outcome<GetOperationResult, LightsailError> GetOperationOutcome;
 typedef Aws::Utils::Outcome<GetOperationsResult, LightsailError> GetOperationsOutcome;
 typedef Aws::Utils::Outcome<GetOperationsForResourceResult, LightsailError> GetOperationsForResourceOutcome;
+typedef Aws::Utils::Outcome<GetProfileResult, LightsailError> GetProfileOutcome;
 typedef Aws::Utils::Outcome<GetRegionsResult, LightsailError> GetRegionsOutcome;
 typedef Aws::Utils::Outcome<GetRelationalDatabaseResult, LightsailError> GetRelationalDatabaseOutcome;
 typedef Aws::Utils::Outcome<GetRelationalDatabaseBlueprintsResult, LightsailError> GetRelationalDatabaseBlueprintsOutcome;
@@ -690,6 +694,7 @@ typedef std::future<GetLoadBalancersOutcome> GetLoadBalancersOutcomeCallable;
 typedef std::future<GetOperationOutcome> GetOperationOutcomeCallable;
 typedef std::future<GetOperationsOutcome> GetOperationsOutcomeCallable;
 typedef std::future<GetOperationsForResourceOutcome> GetOperationsForResourceOutcomeCallable;
+typedef std::future<GetProfileOutcome> GetProfileOutcomeCallable;
 typedef std::future<GetRegionsOutcome> GetRegionsOutcomeCallable;
 typedef std::future<GetRelationalDatabaseOutcome> GetRelationalDatabaseOutcomeCallable;
 typedef std::future<GetRelationalDatabaseBlueprintsOutcome> GetRelationalDatabaseBlueprintsOutcomeCallable;
@@ -1095,6 +1100,9 @@ typedef std::function<void(const LightsailClient*, const Model::GetOperationsReq
 typedef std::function<void(const LightsailClient*, const Model::GetOperationsForResourceRequest&,
                            const Model::GetOperationsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetOperationsForResourceResponseReceivedHandler;
+typedef std::function<void(const LightsailClient*, const Model::GetProfileRequest&, const Model::GetProfileOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetProfileResponseReceivedHandler;
 typedef std::function<void(const LightsailClient*, const Model::GetRegionsRequest&, const Model::GetRegionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetRegionsResponseReceivedHandler;

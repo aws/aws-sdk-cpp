@@ -202,7 +202,7 @@ class GetEmailIdentityResult {
    * <p>The verification status of the identity. The status can be one of the
    * following:</p> <ul> <li> <p> <code>PENDING</code> – The verification process was
    * initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li>
-   * <li> <p> <code>SUCCESS</code> – The verification process completed
+   * <li> <p> <code>SUCCESS</code> ��� The verification process completed
    * successfully.</p> </li> <li> <p> <code>FAILED</code> – The verification process
    * failed.</p> </li> <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is
    * preventing Amazon SES from determining the verification status of the

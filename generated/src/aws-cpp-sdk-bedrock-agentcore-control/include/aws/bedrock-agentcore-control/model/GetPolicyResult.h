@@ -171,8 +171,8 @@ class GetPolicyResult {
 
   ///@{
   /**
-   * <p>The Cedar policy statement that defines the access control rules. This
-   * contains the actual policy logic used for agent behavior control and access
+   * <p>The Cedar or Dogwood policy statement that defines the access control rules.
+   * This contains the actual policy logic used for agent behavior control and access
    * decisions.</p>
    */
   inline const PolicyDefinition& GetDefinition() const { return m_definition; }

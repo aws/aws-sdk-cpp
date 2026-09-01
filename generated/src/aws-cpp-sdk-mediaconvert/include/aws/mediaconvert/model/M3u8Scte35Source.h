@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MediaConvert {
 namespace Model {
-enum class M3u8Scte35Source { NOT_SET, PASSTHROUGH, NONE };
+enum class M3u8Scte35Source { NOT_SET, PASSTHROUGH, NONE, MANIFEST_CUES };
 
 namespace M3u8Scte35SourceMapper {
 AWS_MEDIACONVERT_API M3u8Scte35Source GetM3u8Scte35SourceForName(const Aws::String& name);

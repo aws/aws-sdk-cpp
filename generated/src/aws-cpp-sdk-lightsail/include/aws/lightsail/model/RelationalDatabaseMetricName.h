@@ -17,7 +17,9 @@ enum class RelationalDatabaseMetricName {
   DiskQueueDepth,
   FreeStorageSpace,
   NetworkReceiveThroughput,
-  NetworkTransmitThroughput
+  NetworkTransmitThroughput,
+  FreeableMemory,
+  SwapUsage
 };
 
 namespace RelationalDatabaseMetricNameMapper {

@@ -83,6 +83,51 @@ class AWS_SESV2_API SESV2Client : public Aws::Client::AWSJsonClient,
   virtual ~SESV2Client();
 
   /**
+   * <p>Associates an S/MIME certificate with an email identity. After the
+   * certificate is active, Amazon SES API v2 can add an S/MIME signature to messages
+   * that you send from the associated address when signing is enabled on the
+   * configuration set used to send the message.</p> <p>The certificate is an X.509
+   * certificate that you manage in Certificate Manager (ACM). You identify it by its
+   * Amazon Resource Name (ARN).</p> <ul> <li> <p>If the email identity is a domain,
+   * you must specify a <code>FromAddress</code> that belongs to that domain or one
+   * of its subdomains. The certificate applies to messages sent from that
+   * address.</p> </li> <li> <p>If the email identity is an email address,
+   * <code>FromAddress</code> is optional. If you specify it, it must exactly match
+   * the email identity.</p> </li> </ul> <p>When the association is created, the
+   * certificate begins provisioning and its status is <code>PROVISIONING</code>. The
+   * status changes to <code>ACTIVE</code> when the certificate is ready to use for
+   * signing. Each email address can have only one certificate association. If an
+   * association already exists for the address, this operation returns an error,
+   * unless the existing association is in the <code>DEPROVISIONING</code>
+   * state.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/AssociateEmailIdentityCertificate">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AssociateEmailIdentityCertificateOutcome AssociateEmailIdentityCertificate(
+      const Model::AssociateEmailIdentityCertificateRequest& request) const;
+
+  /**
+   * A Callable wrapper for AssociateEmailIdentityCertificate that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename AssociateEmailIdentityCertificateRequestT = Model::AssociateEmailIdentityCertificateRequest>
+  Model::AssociateEmailIdentityCertificateOutcomeCallable AssociateEmailIdentityCertificateCallable(
+      const AssociateEmailIdentityCertificateRequestT& request) const {
+    return SubmitCallable(&SESV2Client::AssociateEmailIdentityCertificate, request);
+  }
+
+  /**
+   * An Async wrapper for AssociateEmailIdentityCertificate that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename AssociateEmailIdentityCertificateRequestT = Model::AssociateEmailIdentityCertificateRequest>
+  void AssociateEmailIdentityCertificateAsync(const AssociateEmailIdentityCertificateRequestT& request,
+                                              const AssociateEmailIdentityCertificateResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SESV2Client::AssociateEmailIdentityCertificate, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves batches of metric data collected based on your sending
    * activity.</p> <p>You can execute this operation no more than 16 times per
    * second, and with at most 160 queries from the batches per second
@@ -1015,6 +1060,43 @@ class AWS_SESV2_API SESV2Client : public Aws::Client::AWSJsonClient,
                                             const DeleteTenantResourceAssociationResponseReceivedHandler& handler,
                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SESV2Client::DeleteTenantResourceAssociation, request, handler, context);
+  }
+
+  /**
+   * <p>Removes the association between an S/MIME certificate and an email identity.
+   * After the association is removed, Amazon SES API v2 stops adding an S/MIME
+   * signature to messages sent from that address.</p> <p>If the email identity is a
+   * domain, specify the <code>FromAddress</code> whose certificate association you
+   * want to remove.</p> <p>This operation is idempotent. If the specified email
+   * identity exists but there's no matching certificate association, the operation
+   * succeeds without making any changes. Amazon SES API v2 returns a
+   * <code>NotFoundException</code> only when the specified email identity doesn't
+   * exist.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DisassociateEmailIdentityCertificate">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DisassociateEmailIdentityCertificateOutcome DisassociateEmailIdentityCertificate(
+      const Model::DisassociateEmailIdentityCertificateRequest& request) const;
+
+  /**
+   * A Callable wrapper for DisassociateEmailIdentityCertificate that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DisassociateEmailIdentityCertificateRequestT = Model::DisassociateEmailIdentityCertificateRequest>
+  Model::DisassociateEmailIdentityCertificateOutcomeCallable DisassociateEmailIdentityCertificateCallable(
+      const DisassociateEmailIdentityCertificateRequestT& request) const {
+    return SubmitCallable(&SESV2Client::DisassociateEmailIdentityCertificate, request);
+  }
+
+  /**
+   * An Async wrapper for DisassociateEmailIdentityCertificate that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DisassociateEmailIdentityCertificateRequestT = Model::DisassociateEmailIdentityCertificateRequest>
+  void DisassociateEmailIdentityCertificateAsync(const DisassociateEmailIdentityCertificateRequestT& request,
+                                                 const DisassociateEmailIdentityCertificateResponseReceivedHandler& handler,
+                                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SESV2Client::DisassociateEmailIdentityCertificate, request, handler, context);
   }
 
   /**
@@ -1998,6 +2080,44 @@ class AWS_SESV2_API SESV2Client : public Aws::Client::AWSJsonClient,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                 const ListEmailIdentitiesRequestT& request = {}) const {
     return SubmitAsync(&SESV2Client::ListEmailIdentities, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the S/MIME certificates that are associated with the specified email
+   * identity. The results include certificates in all states, such as
+   * <code>PROVISIONING</code>, <code>ACTIVE</code>, <code>INACTIVE</code>,
+   * <code>DEPROVISIONING</code>, and <code>FAILED</code>.</p> <p>If a certificate
+   * has passed its expiration time, it's returned with a status of
+   * <code>FAILED</code>.</p> <p>We recommend using pagination to ensure that the
+   * operation returns quickly and successfully. When there are more results than fit
+   * in a single response, the response includes a <code>NextToken</code> value that
+   * you use in a subsequent call to retrieve the next set of results.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListEmailIdentityCertificates">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListEmailIdentityCertificatesOutcome ListEmailIdentityCertificates(
+      const Model::ListEmailIdentityCertificatesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListEmailIdentityCertificates that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListEmailIdentityCertificatesRequestT = Model::ListEmailIdentityCertificatesRequest>
+  Model::ListEmailIdentityCertificatesOutcomeCallable ListEmailIdentityCertificatesCallable(
+      const ListEmailIdentityCertificatesRequestT& request) const {
+    return SubmitCallable(&SESV2Client::ListEmailIdentityCertificates, request);
+  }
+
+  /**
+   * An Async wrapper for ListEmailIdentityCertificates that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListEmailIdentityCertificatesRequestT = Model::ListEmailIdentityCertificatesRequest>
+  void ListEmailIdentityCertificatesAsync(const ListEmailIdentityCertificatesRequestT& request,
+                                          const ListEmailIdentityCertificatesResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SESV2Client::ListEmailIdentityCertificates, request, handler, context);
   }
 
   /**
@@ -3260,6 +3380,35 @@ class AWS_SESV2_API SESV2Client : public Aws::Client::AWSJsonClient,
   void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SESV2Client::UntagResource, request, handler, context);
+  }
+
+  /**
+   * <p>Updates an existing configuration set.</p> <p>This operation performs a
+   * partial update. Only the attributes that you include in the request are updated;
+   * any omitted attribute is left unchanged.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateConfigurationSet">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateConfigurationSetOutcome UpdateConfigurationSet(const Model::UpdateConfigurationSetRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateConfigurationSet that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateConfigurationSetRequestT = Model::UpdateConfigurationSetRequest>
+  Model::UpdateConfigurationSetOutcomeCallable UpdateConfigurationSetCallable(const UpdateConfigurationSetRequestT& request) const {
+    return SubmitCallable(&SESV2Client::UpdateConfigurationSet, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateConfigurationSet that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateConfigurationSetRequestT = Model::UpdateConfigurationSetRequest>
+  void UpdateConfigurationSetAsync(const UpdateConfigurationSetRequestT& request,
+                                   const UpdateConfigurationSetResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SESV2Client::UpdateConfigurationSet, request, handler, context);
   }
 
   /**

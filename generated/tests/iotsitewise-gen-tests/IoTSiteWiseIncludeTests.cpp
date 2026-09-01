@@ -320,6 +320,7 @@
 #include <aws/iotsitewise/model/EnrichmentJobSummary.h>
 #include <aws/iotsitewise/model/EnrichmentStatus.h>
 #include <aws/iotsitewise/model/EnrichmentTrimSettings.h>
+#include <aws/iotsitewise/model/EphemeralStorageConfiguration.h>
 #include <aws/iotsitewise/model/ErrorCode.h>
 #include <aws/iotsitewise/model/ErrorDetails.h>
 #include <aws/iotsitewise/model/ErrorReportLocation.h>
@@ -513,6 +514,10 @@
 #include <aws/iotsitewise/model/MetricWindow.h>
 #include <aws/iotsitewise/model/MonitorErrorCode.h>
 #include <aws/iotsitewise/model/MonitorErrorDetails.h>
+#include <aws/iotsitewise/model/Mount.h>
+#include <aws/iotsitewise/model/MountOverrides.h>
+#include <aws/iotsitewise/model/MountSource.h>
+#include <aws/iotsitewise/model/MountStorageType.h>
 #include <aws/iotsitewise/model/Mp4.h>
 #include <aws/iotsitewise/model/MultiLayerStorage.h>
 #include <aws/iotsitewise/model/Parquet.h>
@@ -570,6 +575,7 @@
 #include <aws/iotsitewise/model/ResponseStream.h>
 #include <aws/iotsitewise/model/RetentionPeriod.h>
 #include <aws/iotsitewise/model/Row.h>
+#include <aws/iotsitewise/model/S3AccessPointSource.h>
 #include <aws/iotsitewise/model/ScalarType.h>
 #include <aws/iotsitewise/model/SearchFilters.h>
 #include <aws/iotsitewise/model/SearchResult.h>
@@ -586,6 +592,7 @@
 #include <aws/iotsitewise/model/StartQueryResult.h>
 #include <aws/iotsitewise/model/StartSearchRequest.h>
 #include <aws/iotsitewise/model/StartSearchResult.h>
+#include <aws/iotsitewise/model/StorageClass.h>
 #include <aws/iotsitewise/model/StorageType.h>
 #include <aws/iotsitewise/model/TagResourceRequest.h>
 #include <aws/iotsitewise/model/TagResourceResult.h>

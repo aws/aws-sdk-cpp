@@ -20,6 +20,7 @@
 #include <aws/taxsettings/model/ItalyAdditionalInfo.h>
 #include <aws/taxsettings/model/KenyaAdditionalInfo.h>
 #include <aws/taxsettings/model/MalaysiaAdditionalInfo.h>
+#include <aws/taxsettings/model/MonacoAdditionalInfo.h>
 #include <aws/taxsettings/model/PhilippinesAdditionalInfo.h>
 #include <aws/taxsettings/model/PolandAdditionalInfo.h>
 #include <aws/taxsettings/model/RomaniaAdditionalInfo.h>
@@ -509,6 +510,24 @@ class AdditionalInfoResponse {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Additional tax information associated with your TRN in Monaco.</p>
+   */
+  inline const MonacoAdditionalInfo& GetMonacoAdditionalInfo() const { return m_monacoAdditionalInfo; }
+  inline bool MonacoAdditionalInfoHasBeenSet() const { return m_monacoAdditionalInfoHasBeenSet; }
+  template <typename MonacoAdditionalInfoT = MonacoAdditionalInfo>
+  void SetMonacoAdditionalInfo(MonacoAdditionalInfoT&& value) {
+    m_monacoAdditionalInfoHasBeenSet = true;
+    m_monacoAdditionalInfo = std::forward<MonacoAdditionalInfoT>(value);
+  }
+  template <typename MonacoAdditionalInfoT = MonacoAdditionalInfo>
+  AdditionalInfoResponse& WithMonacoAdditionalInfo(MonacoAdditionalInfoT&& value) {
+    SetMonacoAdditionalInfo(std::forward<MonacoAdditionalInfoT>(value));
+    return *this;
+  }
+  ///@}
  private:
   MalaysiaAdditionalInfo m_malaysiaAdditionalInfo;
 
@@ -559,6 +578,8 @@ class AdditionalInfoResponse {
   ChileAdditionalInfo m_chileAdditionalInfo;
 
   FranceAdditionalInfo m_franceAdditionalInfo;
+
+  MonacoAdditionalInfo m_monacoAdditionalInfo;
   bool m_malaysiaAdditionalInfoHasBeenSet = false;
   bool m_israelAdditionalInfoHasBeenSet = false;
   bool m_estoniaAdditionalInfoHasBeenSet = false;
@@ -584,6 +605,7 @@ class AdditionalInfoResponse {
   bool m_belgiumAdditionalInfoHasBeenSet = false;
   bool m_chileAdditionalInfoHasBeenSet = false;
   bool m_franceAdditionalInfoHasBeenSet = false;
+  bool m_monacoAdditionalInfoHasBeenSet = false;
 };
 
 }  // namespace Model

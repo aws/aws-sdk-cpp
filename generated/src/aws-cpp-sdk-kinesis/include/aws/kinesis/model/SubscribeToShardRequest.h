@@ -138,6 +138,23 @@ class SubscribeToShardRequest : public KinesisRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Checks if your request will succeed. <code>DryRun</code> is an optional
+   * parameter.</p>
+   */
+  inline bool GetDryRun() const { return m_dryRun; }
+  inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+  inline void SetDryRun(bool value) {
+    m_dryRunHasBeenSet = true;
+    m_dryRun = value;
+  }
+  inline SubscribeToShardRequest& WithDryRun(bool value) {
+    SetDryRun(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_consumerARN;
 
@@ -146,6 +163,8 @@ class SubscribeToShardRequest : public KinesisRequest {
   Aws::String m_shardId;
 
   StartingPosition m_startingPosition;
+
+  bool m_dryRun{false};
   SubscribeToShardHandler m_handler;
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
 
@@ -153,6 +172,7 @@ class SubscribeToShardRequest : public KinesisRequest {
   bool m_streamIdHasBeenSet = false;
   bool m_shardIdHasBeenSet = false;
   bool m_startingPositionHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
 };
 
 }  // namespace Model

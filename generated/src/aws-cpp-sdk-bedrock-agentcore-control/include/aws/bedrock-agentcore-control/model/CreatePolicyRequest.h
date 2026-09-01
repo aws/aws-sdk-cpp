@@ -54,8 +54,8 @@ class CreatePolicyRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
-   * <p>The Cedar policy statement that defines the access control rules. This
-   * contains the actual policy logic written in Cedar policy language, specifying
+   * <p>The Cedar or Dogwood policy statement that defines the access control rules.
+   * This contains the actual policy logic written in Cedar or Dogwood, specifying
    * effect (permit or forbid), principals, actions, resources, and conditions for
    * agent behavior control.</p>
    */

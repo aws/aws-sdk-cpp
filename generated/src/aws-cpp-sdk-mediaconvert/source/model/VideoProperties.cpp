@@ -34,6 +34,10 @@ VideoProperties& VideoProperties::operator=(JsonView jsonValue) {
     m_colorPrimaries = ColorPrimariesMapper::GetColorPrimariesForName(jsonValue.GetString("colorPrimaries"));
     m_colorPrimariesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("displayAspectRatio")) {
+    m_displayAspectRatio = jsonValue.GetObject("displayAspectRatio");
+    m_displayAspectRatioHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("frameRate")) {
     m_frameRate = jsonValue.GetObject("frameRate");
     m_frameRateHasBeenSet = true;
@@ -53,6 +57,10 @@ VideoProperties& VideoProperties::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("rotation")) {
     m_rotation = jsonValue.GetInteger("rotation");
     m_rotationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("sampleAspectRatio")) {
+    m_sampleAspectRatio = jsonValue.GetObject("sampleAspectRatio");
+    m_sampleAspectRatioHasBeenSet = true;
   }
   if (jsonValue.ValueExists("transferCharacteristics")) {
     m_transferCharacteristics =
@@ -85,6 +93,10 @@ JsonValue VideoProperties::Jsonize() const {
     payload.WithString("colorPrimaries", ColorPrimariesMapper::GetNameForColorPrimaries(m_colorPrimaries));
   }
 
+  if (m_displayAspectRatioHasBeenSet) {
+    payload.WithObject("displayAspectRatio", m_displayAspectRatio.Jsonize());
+  }
+
   if (m_frameRateHasBeenSet) {
     payload.WithObject("frameRate", m_frameRate.Jsonize());
   }
@@ -103,6 +115,10 @@ JsonValue VideoProperties::Jsonize() const {
 
   if (m_rotationHasBeenSet) {
     payload.WithInteger("rotation", m_rotation);
+  }
+
+  if (m_sampleAspectRatioHasBeenSet) {
+    payload.WithObject("sampleAspectRatio", m_sampleAspectRatio.Jsonize());
   }
 
   if (m_transferCharacteristicsHasBeenSet) {

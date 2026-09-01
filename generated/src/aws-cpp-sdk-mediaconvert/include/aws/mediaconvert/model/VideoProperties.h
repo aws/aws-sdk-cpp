@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/mediaconvert/model/AspectRatio.h>
 #include <aws/mediaconvert/model/CodecMetadata.h>
 #include <aws/mediaconvert/model/ColorPrimaries.h>
 #include <aws/mediaconvert/model/FrameRate.h>
@@ -112,6 +113,27 @@ class VideoProperties {
 
   ///@{
   /**
+   * An aspect ratio expressed as a fraction with numerator and denominator values,
+   * reduced to lowest terms. Used for the sample (pixel) aspect ratio and the
+   * display aspect ratio of a video track. For example, a 720x576 anamorphic track
+   * has a sample aspect ratio of 64 / 45 and a display aspect ratio of 16 / 9.
+   */
+  inline const AspectRatio& GetDisplayAspectRatio() const { return m_displayAspectRatio; }
+  inline bool DisplayAspectRatioHasBeenSet() const { return m_displayAspectRatioHasBeenSet; }
+  template <typename DisplayAspectRatioT = AspectRatio>
+  void SetDisplayAspectRatio(DisplayAspectRatioT&& value) {
+    m_displayAspectRatioHasBeenSet = true;
+    m_displayAspectRatio = std::forward<DisplayAspectRatioT>(value);
+  }
+  template <typename DisplayAspectRatioT = AspectRatio>
+  VideoProperties& WithDisplayAspectRatio(DisplayAspectRatioT&& value) {
+    SetDisplayAspectRatio(std::forward<DisplayAspectRatioT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * The frame rate of the video or audio track, expressed as a fraction with
    * numerator and denominator values.
    */
@@ -205,6 +227,27 @@ class VideoProperties {
 
   ///@{
   /**
+   * An aspect ratio expressed as a fraction with numerator and denominator values,
+   * reduced to lowest terms. Used for the sample (pixel) aspect ratio and the
+   * display aspect ratio of a video track. For example, a 720x576 anamorphic track
+   * has a sample aspect ratio of 64 / 45 and a display aspect ratio of 16 / 9.
+   */
+  inline const AspectRatio& GetSampleAspectRatio() const { return m_sampleAspectRatio; }
+  inline bool SampleAspectRatioHasBeenSet() const { return m_sampleAspectRatioHasBeenSet; }
+  template <typename SampleAspectRatioT = AspectRatio>
+  void SetSampleAspectRatio(SampleAspectRatioT&& value) {
+    m_sampleAspectRatioHasBeenSet = true;
+    m_sampleAspectRatio = std::forward<SampleAspectRatioT>(value);
+  }
+  template <typename SampleAspectRatioT = AspectRatio>
+  VideoProperties& WithSampleAspectRatio(SampleAspectRatioT&& value) {
+    SetSampleAspectRatio(std::forward<SampleAspectRatioT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * The color space transfer characteristics of the video track, defining the
    * relationship between linear light values and the encoded signal values. This
    * affects brightness and contrast reproduction.
@@ -245,6 +288,8 @@ class VideoProperties {
 
   ColorPrimaries m_colorPrimaries{ColorPrimaries::NOT_SET};
 
+  AspectRatio m_displayAspectRatio;
+
   FrameRate m_frameRate;
 
   HdrMetadata m_hdrMetadata;
@@ -255,6 +300,8 @@ class VideoProperties {
 
   int m_rotation{0};
 
+  AspectRatio m_sampleAspectRatio;
+
   TransferCharacteristics m_transferCharacteristics{TransferCharacteristics::NOT_SET};
 
   int m_width{0};
@@ -262,11 +309,13 @@ class VideoProperties {
   bool m_bitRateHasBeenSet = false;
   bool m_codecMetadataHasBeenSet = false;
   bool m_colorPrimariesHasBeenSet = false;
+  bool m_displayAspectRatioHasBeenSet = false;
   bool m_frameRateHasBeenSet = false;
   bool m_hdrMetadataHasBeenSet = false;
   bool m_heightHasBeenSet = false;
   bool m_matrixCoefficientsHasBeenSet = false;
   bool m_rotationHasBeenSet = false;
+  bool m_sampleAspectRatioHasBeenSet = false;
   bool m_transferCharacteristicsHasBeenSet = false;
   bool m_widthHasBeenSet = false;
 };

@@ -21,6 +21,7 @@
 #include <aws/mediaconvert/model/AacCodecProfile.h>
 #include <aws/mediaconvert/model/AacCodingMode.h>
 #include <aws/mediaconvert/model/AacLoudnessMeasurementMode.h>
+#include <aws/mediaconvert/model/AacPassthroughControl.h>
 #include <aws/mediaconvert/model/AacRateControlMode.h>
 #include <aws/mediaconvert/model/AacRawFormat.h>
 #include <aws/mediaconvert/model/AacSettings.h>
@@ -54,6 +55,7 @@
 #include <aws/mediaconvert/model/AncillarySourceSettings.h>
 #include <aws/mediaconvert/model/AncillaryTerminateCaptions.h>
 #include <aws/mediaconvert/model/AntiAlias.h>
+#include <aws/mediaconvert/model/AspectRatio.h>
 #include <aws/mediaconvert/model/AssociateCertificateRequest.h>
 #include <aws/mediaconvert/model/AssociateCertificateResult.h>
 #include <aws/mediaconvert/model/AudioChannelTag.h>
@@ -388,6 +390,7 @@
 #include <aws/mediaconvert/model/HDRToSDRToneMapper.h>
 #include <aws/mediaconvert/model/Hdr10Metadata.h>
 #include <aws/mediaconvert/model/Hdr10Plus.h>
+#include <aws/mediaconvert/model/Hdr10PlusPresence.h>
 #include <aws/mediaconvert/model/HdrMetadata.h>
 #include <aws/mediaconvert/model/HlsAdMarkers.h>
 #include <aws/mediaconvert/model/HlsAdditionalManifest.h>
@@ -681,8 +684,13 @@
 #include <aws/mediaconvert/model/TrackType.h>
 #include <aws/mediaconvert/model/TransferCharacteristics.h>
 #include <aws/mediaconvert/model/TsPtsOffset.h>
+#include <aws/mediaconvert/model/TtmlBackgroundColor.h>
 #include <aws/mediaconvert/model/TtmlDestinationSettings.h>
+#include <aws/mediaconvert/model/TtmlFontColor.h>
+#include <aws/mediaconvert/model/TtmlFontStyle.h>
+#include <aws/mediaconvert/model/TtmlFontWeight.h>
 #include <aws/mediaconvert/model/TtmlStylePassthrough.h>
+#include <aws/mediaconvert/model/TtmlTextDecoration.h>
 #include <aws/mediaconvert/model/Type.h>
 #include <aws/mediaconvert/model/UncompressedFourcc.h>
 #include <aws/mediaconvert/model/UncompressedFramerateControl.h>

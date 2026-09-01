@@ -19,6 +19,8 @@
 #include <aws/sesv2/internal/SESV2EndpointRules.h>
 #include <aws/sesv2/model/AccountDetails.h>
 #include <aws/sesv2/model/ArchivingOptions.h>
+#include <aws/sesv2/model/AssociateEmailIdentityCertificateRequest.h>
+#include <aws/sesv2/model/AssociateEmailIdentityCertificateResult.h>
 #include <aws/sesv2/model/Attachment.h>
 #include <aws/sesv2/model/AttachmentContentDisposition.h>
 #include <aws/sesv2/model/AttachmentContentTransferEncoding.h>
@@ -83,6 +85,7 @@
 #include <aws/sesv2/model/DataFormat.h>
 #include <aws/sesv2/model/DedicatedIp.h>
 #include <aws/sesv2/model/DedicatedIpPool.h>
+#include <aws/sesv2/model/DefaultSigningScheme.h>
 #include <aws/sesv2/model/DeleteConfigurationSetEventDestinationRequest.h>
 #include <aws/sesv2/model/DeleteConfigurationSetEventDestinationResult.h>
 #include <aws/sesv2/model/DeleteConfigurationSetRequest.h>
@@ -117,6 +120,8 @@
 #include <aws/sesv2/model/Destination.h>
 #include <aws/sesv2/model/Details.h>
 #include <aws/sesv2/model/DimensionValueSource.h>
+#include <aws/sesv2/model/DisassociateEmailIdentityCertificateRequest.h>
+#include <aws/sesv2/model/DisassociateEmailIdentityCertificateResult.h>
 #include <aws/sesv2/model/DkimAttributes.h>
 #include <aws/sesv2/model/DkimSigningAttributes.h>
 #include <aws/sesv2/model/DkimSigningAttributesOrigin.h>
@@ -200,6 +205,8 @@
 #include <aws/sesv2/model/GuardianAttributes.h>
 #include <aws/sesv2/model/GuardianOptions.h>
 #include <aws/sesv2/model/HttpsPolicy.h>
+#include <aws/sesv2/model/IdentityCertificate.h>
+#include <aws/sesv2/model/IdentityCertificateStatus.h>
 #include <aws/sesv2/model/IdentityInfo.h>
 #include <aws/sesv2/model/IdentityType.h>
 #include <aws/sesv2/model/ImportDataSource.h>
@@ -236,6 +243,9 @@
 #include <aws/sesv2/model/ListEmailIdentitiesPaginationTraits.h>
 #include <aws/sesv2/model/ListEmailIdentitiesRequest.h>
 #include <aws/sesv2/model/ListEmailIdentitiesResult.h>
+#include <aws/sesv2/model/ListEmailIdentityCertificatesPaginationTraits.h>
+#include <aws/sesv2/model/ListEmailIdentityCertificatesRequest.h>
+#include <aws/sesv2/model/ListEmailIdentityCertificatesResult.h>
 #include <aws/sesv2/model/ListEmailTemplatesPaginationTraits.h>
 #include <aws/sesv2/model/ListEmailTemplatesRequest.h>
 #include <aws/sesv2/model/ListEmailTemplatesResult.h>
@@ -279,6 +289,7 @@
 #include <aws/sesv2/model/MessageHeader.h>
 #include <aws/sesv2/model/MessageInsightsDataSource.h>
 #include <aws/sesv2/model/MessageInsightsFilters.h>
+#include <aws/sesv2/model/MessageSecurityOptions.h>
 #include <aws/sesv2/model/MessageTag.h>
 #include <aws/sesv2/model/Metric.h>
 #include <aws/sesv2/model/MetricAggregation.h>
@@ -370,6 +381,9 @@
 #include <aws/sesv2/model/SendQuota.h>
 #include <aws/sesv2/model/SendingOptions.h>
 #include <aws/sesv2/model/SendingStatus.h>
+#include <aws/sesv2/model/SignatureFormat.h>
+#include <aws/sesv2/model/SigningScheme.h>
+#include <aws/sesv2/model/SmimeSigningScheme.h>
 #include <aws/sesv2/model/SnsDestination.h>
 #include <aws/sesv2/model/Status.h>
 #include <aws/sesv2/model/StatusRecord.h>
@@ -408,6 +422,8 @@
 #include <aws/sesv2/model/UntagResourceResult.h>
 #include <aws/sesv2/model/UpdateConfigurationSetEventDestinationRequest.h>
 #include <aws/sesv2/model/UpdateConfigurationSetEventDestinationResult.h>
+#include <aws/sesv2/model/UpdateConfigurationSetRequest.h>
+#include <aws/sesv2/model/UpdateConfigurationSetResult.h>
 #include <aws/sesv2/model/UpdateContactListRequest.h>
 #include <aws/sesv2/model/UpdateContactListResult.h>
 #include <aws/sesv2/model/UpdateContactRequest.h>

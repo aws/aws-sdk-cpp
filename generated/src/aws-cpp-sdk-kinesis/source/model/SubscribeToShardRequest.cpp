@@ -31,6 +31,10 @@ Aws::String SubscribeToShardRequest::SerializePayload() const {
     payload.WithObject("StartingPosition", m_startingPosition.Jsonize());
   }
 
+  if (m_dryRunHasBeenSet) {
+    payload.WithBool("DryRun", m_dryRun);
+  }
+
   return payload.View().WriteReadable();
 }
 

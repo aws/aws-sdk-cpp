@@ -21,6 +21,8 @@ static const int DiskQueueDepth_HASH = HashingUtils::HashString("DiskQueueDepth"
 static const int FreeStorageSpace_HASH = HashingUtils::HashString("FreeStorageSpace");
 static const int NetworkReceiveThroughput_HASH = HashingUtils::HashString("NetworkReceiveThroughput");
 static const int NetworkTransmitThroughput_HASH = HashingUtils::HashString("NetworkTransmitThroughput");
+static const int FreeableMemory_HASH = HashingUtils::HashString("FreeableMemory");
+static const int SwapUsage_HASH = HashingUtils::HashString("SwapUsage");
 
 RelationalDatabaseMetricName GetRelationalDatabaseMetricNameForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +38,10 @@ RelationalDatabaseMetricName GetRelationalDatabaseMetricNameForName(const Aws::S
     return RelationalDatabaseMetricName::NetworkReceiveThroughput;
   } else if (hashCode == NetworkTransmitThroughput_HASH) {
     return RelationalDatabaseMetricName::NetworkTransmitThroughput;
+  } else if (hashCode == FreeableMemory_HASH) {
+    return RelationalDatabaseMetricName::FreeableMemory;
+  } else if (hashCode == SwapUsage_HASH) {
+    return RelationalDatabaseMetricName::SwapUsage;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +68,10 @@ Aws::String GetNameForRelationalDatabaseMetricName(RelationalDatabaseMetricName 
       return "NetworkReceiveThroughput";
     case RelationalDatabaseMetricName::NetworkTransmitThroughput:
       return "NetworkTransmitThroughput";
+    case RelationalDatabaseMetricName::FreeableMemory:
+      return "FreeableMemory";
+    case RelationalDatabaseMetricName::SwapUsage:
+      return "SwapUsage";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

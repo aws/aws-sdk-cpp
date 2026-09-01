@@ -35,6 +35,8 @@ enum class MetricName {
   FreeStorageSpace,
   NetworkReceiveThroughput,
   NetworkTransmitThroughput,
+  FreeableMemory,
+  SwapUsage,
   BurstCapacityTime,
   BurstCapacityPercentage
 };

@@ -166,7 +166,7 @@ class UpdatePolicyResult {
 
   ///@{
   /**
-   * <p>The updated Cedar policy statement.</p>
+   * <p>The updated Cedar or Dogwood policy statement.</p>
    */
   inline const PolicyDefinition& GetDefinition() const { return m_definition; }
   template <typename DefinitionT = PolicyDefinition>

@@ -34,6 +34,10 @@ ContainerTaskConfiguration& ContainerTaskConfiguration::operator=(JsonView jsonV
     m_processingUnit = ProcessingUnitMapper::GetProcessingUnitForName(jsonValue.GetString("processingUnit"));
     m_processingUnitHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ephemeralStorageConfiguration")) {
+    m_ephemeralStorageConfiguration = jsonValue.GetObject("ephemeralStorageConfiguration");
+    m_ephemeralStorageConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("command")) {
     Aws::Utils::Array<JsonView> commandJsonList = jsonValue.GetArray("command");
     for (unsigned commandIndex = 0; commandIndex < commandJsonList.GetLength(); ++commandIndex) {
@@ -51,6 +55,13 @@ ContainerTaskConfiguration& ContainerTaskConfiguration::operator=(JsonView jsonV
       m_environmentVariables[environmentVariablesItem.first] = environmentVariablesItem.second.AsString();
     }
     m_environmentVariablesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("mounts")) {
+    Aws::Utils::Array<JsonView> mountsJsonList = jsonValue.GetArray("mounts");
+    for (unsigned mountsIndex = 0; mountsIndex < mountsJsonList.GetLength(); ++mountsIndex) {
+      m_mounts.push_back(mountsJsonList[mountsIndex].AsObject());
+    }
+    m_mountsHasBeenSet = true;
   }
   return *this;
 }
@@ -74,6 +85,10 @@ JsonValue ContainerTaskConfiguration::Jsonize() const {
     payload.WithString("processingUnit", ProcessingUnitMapper::GetNameForProcessingUnit(m_processingUnit));
   }
 
+  if (m_ephemeralStorageConfigurationHasBeenSet) {
+    payload.WithObject("ephemeralStorageConfiguration", m_ephemeralStorageConfiguration.Jsonize());
+  }
+
   if (m_commandHasBeenSet) {
     Aws::Utils::Array<JsonValue> commandJsonList(m_command.size());
     for (unsigned commandIndex = 0; commandIndex < commandJsonList.GetLength(); ++commandIndex) {
@@ -92,6 +107,14 @@ JsonValue ContainerTaskConfiguration::Jsonize() const {
       environmentVariablesJsonMap.WithString(environmentVariablesItem.first, environmentVariablesItem.second);
     }
     payload.WithObject("environmentVariables", std::move(environmentVariablesJsonMap));
+  }
+
+  if (m_mountsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> mountsJsonList(m_mounts.size());
+    for (unsigned mountsIndex = 0; mountsIndex < mountsJsonList.GetLength(); ++mountsIndex) {
+      mountsJsonList[mountsIndex].AsObject(m_mounts[mountsIndex].Jsonize());
+    }
+    payload.WithArray("mounts", std::move(mountsJsonList));
   }
 
   return payload;

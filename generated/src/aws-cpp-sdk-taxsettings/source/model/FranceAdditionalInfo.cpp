@@ -22,6 +22,10 @@ FranceAdditionalInfo& FranceAdditionalInfo::operator=(JsonView jsonValue) {
     m_sirenNumber = jsonValue.GetString("sirenNumber");
     m_sirenNumberHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("eInvoiceRoutingCode")) {
+    m_eInvoiceRoutingCode = jsonValue.GetString("eInvoiceRoutingCode");
+    m_eInvoiceRoutingCodeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue FranceAdditionalInfo::Jsonize() const {
 
   if (m_sirenNumberHasBeenSet) {
     payload.WithString("sirenNumber", m_sirenNumber);
+  }
+
+  if (m_eInvoiceRoutingCodeHasBeenSet) {
+    payload.WithString("eInvoiceRoutingCode", m_eInvoiceRoutingCode);
   }
 
   return payload;

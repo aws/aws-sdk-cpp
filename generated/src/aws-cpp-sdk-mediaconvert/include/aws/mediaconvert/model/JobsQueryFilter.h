@@ -49,7 +49,10 @@ class JobsQueryFilter {
    * format. * audioCodec - Your output's audio codec. (AAC | MP2 | MP3 | WAV | AIFF
    * | AC3| EAC3 | EAC3_ATMOS | VORBIS | OPUS | PASSTHROUGH | FLAC) * videoCodec -
    * Your output's video codec. (AV1 | AVC_INTRA | FRAME_CAPTURE | H_264 | H_265 |
-   * MPEG2 | PASSTHROUGH | PRORES | UNCOMPRESSED | VC3 | VP8 | VP9 | XAVC)
+   * MPEG2 | PASSTHROUGH | PRORES | UNCOMPRESSED | VC3 | VP8 | VP9 | XAVC) *
+   * errorCode - The error code that your job failed with. For example, 1010. For
+   * more information, see
+   * https://docs.aws.amazon.com/mediaconvert/latest/ug/mediaconvert_error_codes.html
    */
   inline JobsQueryFilterKey GetKey() const { return m_key; }
   inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }

@@ -10,6 +10,7 @@
 #include <aws/sesv2/SESV2_EXPORTS.h>
 #include <aws/sesv2/model/ArchivingOptions.h>
 #include <aws/sesv2/model/DeliveryOptions.h>
+#include <aws/sesv2/model/MessageSecurityOptions.h>
 #include <aws/sesv2/model/ReputationOptions.h>
 #include <aws/sesv2/model/SendingOptions.h>
 #include <aws/sesv2/model/SuppressionOptions.h>
@@ -209,6 +210,25 @@ class GetConfigurationSetResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The message security options that are applied to the configuration set, such
+   * as the signing scheme used for messages that you send with the configuration
+   * set.</p>
+   */
+  inline const MessageSecurityOptions& GetMessageSecurityOptions() const { return m_messageSecurityOptions; }
+  template <typename MessageSecurityOptionsT = MessageSecurityOptions>
+  void SetMessageSecurityOptions(MessageSecurityOptionsT&& value) {
+    m_messageSecurityOptionsHasBeenSet = true;
+    m_messageSecurityOptions = std::forward<MessageSecurityOptionsT>(value);
+  }
+  template <typename MessageSecurityOptionsT = MessageSecurityOptions>
+  GetConfigurationSetResult& WithMessageSecurityOptions(MessageSecurityOptionsT&& value) {
+    SetMessageSecurityOptions(std::forward<MessageSecurityOptionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -243,6 +263,8 @@ class GetConfigurationSetResult {
 
   ArchivingOptions m_archivingOptions;
 
+  MessageSecurityOptions m_messageSecurityOptions;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_configurationSetNameHasBeenSet = false;
@@ -254,6 +276,7 @@ class GetConfigurationSetResult {
   bool m_suppressionOptionsHasBeenSet = false;
   bool m_vdmOptionsHasBeenSet = false;
   bool m_archivingOptionsHasBeenSet = false;
+  bool m_messageSecurityOptionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

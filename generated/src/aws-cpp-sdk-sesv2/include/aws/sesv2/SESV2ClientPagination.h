@@ -15,6 +15,7 @@
 #include <aws/sesv2/model/ListDeliverabilityTestReportsPaginationTraits.h>
 #include <aws/sesv2/model/ListDomainDeliverabilityCampaignsPaginationTraits.h>
 #include <aws/sesv2/model/ListEmailIdentitiesPaginationTraits.h>
+#include <aws/sesv2/model/ListEmailIdentityCertificatesPaginationTraits.h>
 #include <aws/sesv2/model/ListEmailTemplatesPaginationTraits.h>
 #include <aws/sesv2/model/ListExportJobsPaginationTraits.h>
 #include <aws/sesv2/model/ListImportJobsPaginationTraits.h>
@@ -50,6 +51,9 @@ using ListDomainDeliverabilityCampaignsPaginator =
                                       Pagination::ListDomainDeliverabilityCampaignsPaginationTraits<SESV2Client>>;
 using ListEmailIdentitiesPaginator = Aws::Utils::Pagination::Paginator<SESV2Client, Model::ListEmailIdentitiesRequest,
                                                                        Pagination::ListEmailIdentitiesPaginationTraits<SESV2Client>>;
+using ListEmailIdentityCertificatesPaginator =
+    Aws::Utils::Pagination::Paginator<SESV2Client, Model::ListEmailIdentityCertificatesRequest,
+                                      Pagination::ListEmailIdentityCertificatesPaginationTraits<SESV2Client>>;
 using ListEmailTemplatesPaginator = Aws::Utils::Pagination::Paginator<SESV2Client, Model::ListEmailTemplatesRequest,
                                                                       Pagination::ListEmailTemplatesPaginationTraits<SESV2Client>>;
 using ListExportJobsPaginator =

@@ -328,6 +328,8 @@
 #include <aws/lightsail/model/GetOperationsForResourceResult.h>
 #include <aws/lightsail/model/GetOperationsRequest.h>
 #include <aws/lightsail/model/GetOperationsResult.h>
+#include <aws/lightsail/model/GetProfileRequest.h>
+#include <aws/lightsail/model/GetProfileResult.h>
 #include <aws/lightsail/model/GetRegionsRequest.h>
 #include <aws/lightsail/model/GetRegionsResult.h>
 #include <aws/lightsail/model/GetRelationalDatabaseBlueprintsRequest.h>
@@ -432,6 +434,8 @@
 #include <aws/lightsail/model/Origin.h>
 #include <aws/lightsail/model/OriginIpAddressTypeEnum.h>
 #include <aws/lightsail/model/OriginProtocolPolicyEnum.h>
+#include <aws/lightsail/model/PartnerInfo.h>
+#include <aws/lightsail/model/PartnerStatus.h>
 #include <aws/lightsail/model/PasswordData.h>
 #include <aws/lightsail/model/PeerVpcRequest.h>
 #include <aws/lightsail/model/PeerVpcResult.h>
@@ -444,6 +448,7 @@
 #include <aws/lightsail/model/PricingUnit.h>
 #include <aws/lightsail/model/PrivateRegistryAccess.h>
 #include <aws/lightsail/model/PrivateRegistryAccessRequest.h>
+#include <aws/lightsail/model/ProfileType.h>
 #include <aws/lightsail/model/PutAlarmRequest.h>
 #include <aws/lightsail/model/PutAlarmResult.h>
 #include <aws/lightsail/model/PutInstancePublicPortsRequest.h>
@@ -521,6 +526,7 @@
 #include <aws/lightsail/model/TagResourceResult.h>
 #include <aws/lightsail/model/TestAlarmRequest.h>
 #include <aws/lightsail/model/TestAlarmResult.h>
+#include <aws/lightsail/model/TierName.h>
 #include <aws/lightsail/model/TimePeriod.h>
 #include <aws/lightsail/model/TreatMissingData.h>
 #include <aws/lightsail/model/UnauthenticatedException.h>

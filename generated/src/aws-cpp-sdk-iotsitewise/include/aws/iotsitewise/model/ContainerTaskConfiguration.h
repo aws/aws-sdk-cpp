@@ -8,6 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
+#include <aws/iotsitewise/model/EphemeralStorageConfiguration.h>
+#include <aws/iotsitewise/model/Mount.h>
 #include <aws/iotsitewise/model/ProcessingType.h>
 #include <aws/iotsitewise/model/ProcessingUnit.h>
 
@@ -108,6 +110,24 @@ class ContainerTaskConfiguration {
 
   ///@{
   /**
+   * <p>Ephemeral storage configuration for the container task.</p>
+   */
+  inline const EphemeralStorageConfiguration& GetEphemeralStorageConfiguration() const { return m_ephemeralStorageConfiguration; }
+  inline bool EphemeralStorageConfigurationHasBeenSet() const { return m_ephemeralStorageConfigurationHasBeenSet; }
+  template <typename EphemeralStorageConfigurationT = EphemeralStorageConfiguration>
+  void SetEphemeralStorageConfiguration(EphemeralStorageConfigurationT&& value) {
+    m_ephemeralStorageConfigurationHasBeenSet = true;
+    m_ephemeralStorageConfiguration = std::forward<EphemeralStorageConfigurationT>(value);
+  }
+  template <typename EphemeralStorageConfigurationT = EphemeralStorageConfiguration>
+  ContainerTaskConfiguration& WithEphemeralStorageConfiguration(EphemeralStorageConfigurationT&& value) {
+    SetEphemeralStorageConfiguration(std::forward<EphemeralStorageConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The command to execute in the container.</p>
    */
   inline const Aws::Vector<Aws::String>& GetCommand() const { return m_command; }
@@ -169,6 +189,33 @@ class ContainerTaskConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Mounts attached to the container filesystem. Each mount exposes an external
+   * data source as a local directory inside the container. The service assigns each
+   * mount a container path based on the mount name. The container reads files
+   * through that path as if the data were on the local filesystem.</p>
+   */
+  inline const Aws::Vector<Mount>& GetMounts() const { return m_mounts; }
+  inline bool MountsHasBeenSet() const { return m_mountsHasBeenSet; }
+  template <typename MountsT = Aws::Vector<Mount>>
+  void SetMounts(MountsT&& value) {
+    m_mountsHasBeenSet = true;
+    m_mounts = std::forward<MountsT>(value);
+  }
+  template <typename MountsT = Aws::Vector<Mount>>
+  ContainerTaskConfiguration& WithMounts(MountsT&& value) {
+    SetMounts(std::forward<MountsT>(value));
+    return *this;
+  }
+  template <typename MountsT = Mount>
+  ContainerTaskConfiguration& AddMounts(MountsT&& value) {
+    m_mountsHasBeenSet = true;
+    m_mounts.emplace_back(std::forward<MountsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_ecrUri;
 
@@ -178,18 +225,24 @@ class ContainerTaskConfiguration {
 
   ProcessingUnit m_processingUnit{ProcessingUnit::NOT_SET};
 
+  EphemeralStorageConfiguration m_ephemeralStorageConfiguration;
+
   Aws::Vector<Aws::String> m_command;
 
   long long m_timeoutSeconds{0};
 
   Aws::Map<Aws::String, Aws::String> m_environmentVariables;
+
+  Aws::Vector<Mount> m_mounts;
   bool m_ecrUriHasBeenSet = false;
   bool m_taskExecutionRoleHasBeenSet = false;
   bool m_processingTypeHasBeenSet = false;
   bool m_processingUnitHasBeenSet = false;
+  bool m_ephemeralStorageConfigurationHasBeenSet = false;
   bool m_commandHasBeenSet = false;
   bool m_timeoutSecondsHasBeenSet = false;
   bool m_environmentVariablesHasBeenSet = false;
+  bool m_mountsHasBeenSet = false;
 };
 
 }  // namespace Model

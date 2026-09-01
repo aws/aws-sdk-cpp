@@ -17,6 +17,7 @@ namespace M2tsScte35SourceMapper {
 
 static const int PASSTHROUGH_HASH = HashingUtils::HashString("PASSTHROUGH");
 static const int NONE_HASH = HashingUtils::HashString("NONE");
+static const int MANIFEST_CUES_HASH = HashingUtils::HashString("MANIFEST_CUES");
 
 M2tsScte35Source GetM2tsScte35SourceForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ M2tsScte35Source GetM2tsScte35SourceForName(const Aws::String& name) {
     return M2tsScte35Source::PASSTHROUGH;
   } else if (hashCode == NONE_HASH) {
     return M2tsScte35Source::NONE;
+  } else if (hashCode == MANIFEST_CUES_HASH) {
+    return M2tsScte35Source::MANIFEST_CUES;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForM2tsScte35Source(M2tsScte35Source enumValue) {
       return "PASSTHROUGH";
     case M2tsScte35Source::NONE:
       return "NONE";
+    case M2tsScte35Source::MANIFEST_CUES:
+      return "MANIFEST_CUES";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

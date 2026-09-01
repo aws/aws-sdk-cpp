@@ -18,6 +18,10 @@ namespace Model {
 XavcHdIntraCbgProfileSettings::XavcHdIntraCbgProfileSettings(JsonView jsonValue) { *this = jsonValue; }
 
 XavcHdIntraCbgProfileSettings& XavcHdIntraCbgProfileSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("interlaceMode")) {
+    m_interlaceMode = XavcInterlaceModeMapper::GetXavcInterlaceModeForName(jsonValue.GetString("interlaceMode"));
+    m_interlaceModeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("xavcClass")) {
     m_xavcClass = XavcHdIntraCbgProfileClassMapper::GetXavcHdIntraCbgProfileClassForName(jsonValue.GetString("xavcClass"));
     m_xavcClassHasBeenSet = true;
@@ -27,6 +31,10 @@ XavcHdIntraCbgProfileSettings& XavcHdIntraCbgProfileSettings::operator=(JsonView
 
 JsonValue XavcHdIntraCbgProfileSettings::Jsonize() const {
   JsonValue payload;
+
+  if (m_interlaceModeHasBeenSet) {
+    payload.WithString("interlaceMode", XavcInterlaceModeMapper::GetNameForXavcInterlaceMode(m_interlaceMode));
+  }
 
   if (m_xavcClassHasBeenSet) {
     payload.WithString("xavcClass", XavcHdIntraCbgProfileClassMapper::GetNameForXavcHdIntraCbgProfileClass(m_xavcClass));

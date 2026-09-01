@@ -35,8 +35,10 @@ class Sort {
 
   ///@{
   /**
-   * <p>The attribute on which the data is grouped, which can be by
-   * <code>StartTime</code> and <code>EndTime</code>. The default value is
+   * <p>The attribute on which the data is grouped, which can be
+   * <code>EndTime</code>, <code>StartTime</code>, or <code>LastUpdateTime</code>.
+   * <code>StartTime</code> and <code>LastUpdateTime</code> are supported only when
+   * <code>PartyType</code> is <code>Proposer</code>. The default value is
    * <code>EndTime</code>.</p>
    */
   inline const Aws::String& GetSortBy() const { return m_sortBy; }
@@ -56,7 +58,7 @@ class Sort {
   ///@{
   /**
    * <p>The sorting order, which can be <code>ASCENDING</code> or
-   * <code>DESCENDING</code>. The default value is <code>DESCENDING</code>.</p>
+   * <code>DESCENDING</code>. The default value is <code>ASCENDING</code>.</p>
    */
   inline SortOrder GetSortOrder() const { return m_sortOrder; }
   inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }

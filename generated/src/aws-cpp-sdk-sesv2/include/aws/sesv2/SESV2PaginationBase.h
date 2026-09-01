@@ -16,6 +16,7 @@
 #include <aws/sesv2/model/ListDeliverabilityTestReportsPaginationTraits.h>
 #include <aws/sesv2/model/ListDomainDeliverabilityCampaignsPaginationTraits.h>
 #include <aws/sesv2/model/ListEmailIdentitiesPaginationTraits.h>
+#include <aws/sesv2/model/ListEmailIdentityCertificatesPaginationTraits.h>
 #include <aws/sesv2/model/ListEmailTemplatesPaginationTraits.h>
 #include <aws/sesv2/model/ListExportJobsPaginationTraits.h>
 #include <aws/sesv2/model/ListImportJobsPaginationTraits.h>
@@ -139,6 +140,18 @@ class SESV2PaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEmailIdentitiesRequest,
                                              Pagination::ListEmailIdentitiesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListEmailIdentityCertificates operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEmailIdentityCertificatesRequest,
+                                    Pagination::ListEmailIdentityCertificatesPaginationTraits<DerivedClient>>
+  ListEmailIdentityCertificatesPaginator(const Model::ListEmailIdentityCertificatesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEmailIdentityCertificatesRequest,
+                                             Pagination::ListEmailIdentityCertificatesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

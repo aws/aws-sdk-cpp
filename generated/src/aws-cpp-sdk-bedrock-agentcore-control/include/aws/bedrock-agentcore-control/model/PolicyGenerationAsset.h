@@ -24,7 +24,7 @@ namespace Model {
 
 /**
  * <p>Represents a generated policy asset from the AI-powered policy generation
- * process within the AgentCore Policy system. Each asset contains a Cedar policy
+ * process within the AgentCore Policy system. Each asset contains a Dogwood policy
  * statement generated from natural language input, along with associated metadata
  * and analysis findings to help users evaluate and select the most appropriate
  * policy option.</p><p><h3>See Also:</h3>   <a
@@ -78,12 +78,12 @@ class PolicyGenerationAsset {
   /**
    * <p>The portion of the original natural language input that this generated policy
    * asset addresses. This helps users understand which part of their policy
-   * description was translated into this specific Cedar policy statement, enabling
+   * description was translated into this specific Dogwood policy statement, enabling
    * better policy selection and refinement. When a single natural language input
    * describes multiple authorization requirements, the generation process creates
    * separate policy assets for each requirement, with each asset's rawTextFragment
    * showing which requirement it addresses. Use this mapping to verify that all
-   * parts of your natural language input were correctly translated into Cedar
+   * parts of your natural language input were correctly translated into Dogwood
    * policies.</p>
    */
   inline const Aws::String& GetRawTextFragment() const { return m_rawTextFragment; }

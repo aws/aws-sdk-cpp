@@ -130,6 +130,7 @@
 #include <aws/lightsail/model/GetOperationRequest.h>
 #include <aws/lightsail/model/GetOperationsForResourceRequest.h>
 #include <aws/lightsail/model/GetOperationsRequest.h>
+#include <aws/lightsail/model/GetProfileRequest.h>
 #include <aws/lightsail/model/GetRegionsRequest.h>
 #include <aws/lightsail/model/GetRelationalDatabaseBlueprintsRequest.h>
 #include <aws/lightsail/model/GetRelationalDatabaseBundlesRequest.h>
@@ -975,6 +976,11 @@ GetOperationsForResourceOutcome LightsailClient::GetOperationsForResource(const 
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetOperationsForResourceOutcome(result.GetResultWithOwnership())
                             : GetOperationsForResourceOutcome(std::move(result.GetError()));
+}
+
+GetProfileOutcome LightsailClient::GetProfile(const GetProfileRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetProfileOutcome(result.GetResultWithOwnership()) : GetProfileOutcome(std::move(result.GetError()));
 }
 
 GetRegionsOutcome LightsailClient::GetRegions(const GetRegionsRequest& request) const {

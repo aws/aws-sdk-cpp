@@ -181,6 +181,23 @@ class PutRecordRequest : public KinesisRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Checks if your request will succeed. <code>DryRun</code> is an optional
+   * parameter.</p>
+   */
+  inline bool GetDryRun() const { return m_dryRun; }
+  inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+  inline void SetDryRun(bool value) {
+    m_dryRunHasBeenSet = true;
+    m_dryRun = value;
+  }
+  inline PutRecordRequest& WithDryRun(bool value) {
+    SetDryRun(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_streamName;
 
@@ -195,6 +212,8 @@ class PutRecordRequest : public KinesisRequest {
   Aws::String m_streamARN;
 
   Aws::String m_streamId;
+
+  bool m_dryRun{false};
   bool m_streamNameHasBeenSet = false;
   bool m_dataHasBeenSet = false;
   bool m_partitionKeyHasBeenSet = false;
@@ -202,6 +221,7 @@ class PutRecordRequest : public KinesisRequest {
   bool m_sequenceNumberForOrderingHasBeenSet = false;
   bool m_streamARNHasBeenSet = false;
   bool m_streamIdHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
 };
 
 }  // namespace Model

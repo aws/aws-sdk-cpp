@@ -30,6 +30,29 @@ RenewalTerm& RenewalTerm::operator=(JsonView jsonValue) {
     m_configuration = jsonValue.GetObject("configuration");
     m_configurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("lockoutPeriod")) {
+    m_lockoutPeriod = jsonValue.GetString("lockoutPeriod");
+    m_lockoutPeriodHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("maxRenewals")) {
+    m_maxRenewals = jsonValue.GetInteger("maxRenewals");
+    m_maxRenewalsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("adjustmentDeadline")) {
+    m_adjustmentDeadline = jsonValue.GetString("adjustmentDeadline");
+    m_adjustmentDeadlineHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("priceIncrease")) {
+    m_priceIncrease = jsonValue.GetObject("priceIncrease");
+    m_priceIncreaseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("termTemplates")) {
+    Aws::Utils::Array<JsonView> termTemplatesJsonList = jsonValue.GetArray("termTemplates");
+    for (unsigned termTemplatesIndex = 0; termTemplatesIndex < termTemplatesJsonList.GetLength(); ++termTemplatesIndex) {
+      m_termTemplates.push_back(termTemplatesJsonList[termTemplatesIndex].AsObject());
+    }
+    m_termTemplatesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +69,30 @@ JsonValue RenewalTerm::Jsonize() const {
 
   if (m_configurationHasBeenSet) {
     payload.WithObject("configuration", m_configuration.Jsonize());
+  }
+
+  if (m_lockoutPeriodHasBeenSet) {
+    payload.WithString("lockoutPeriod", m_lockoutPeriod);
+  }
+
+  if (m_maxRenewalsHasBeenSet) {
+    payload.WithInteger("maxRenewals", m_maxRenewals);
+  }
+
+  if (m_adjustmentDeadlineHasBeenSet) {
+    payload.WithString("adjustmentDeadline", m_adjustmentDeadline);
+  }
+
+  if (m_priceIncreaseHasBeenSet) {
+    payload.WithObject("priceIncrease", m_priceIncrease.Jsonize());
+  }
+
+  if (m_termTemplatesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> termTemplatesJsonList(m_termTemplates.size());
+    for (unsigned termTemplatesIndex = 0; termTemplatesIndex < termTemplatesJsonList.GetLength(); ++termTemplatesIndex) {
+      termTemplatesJsonList[termTemplatesIndex].AsObject(m_termTemplates[termTemplatesIndex].Jsonize());
+    }
+    payload.WithArray("termTemplates", std::move(termTemplatesJsonList));
   }
 
   return payload;

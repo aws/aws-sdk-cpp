@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lambda/Lambda_EXPORTS.h>
+#include <aws/lambda/model/S3FilesConfig.h>
 
 #include <utility>
 
@@ -24,7 +25,7 @@ namespace Model {
  * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon
  * EFS file system</a> or an <a
  * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon
- * S3 Files file system</a>.</p><p><h3>See Also:</h3>   <a
+ * S3 file system</a>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/FileSystemConfig">AWS
  * API Reference</a></p>
  */
@@ -72,12 +73,37 @@ class FileSystemConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration for how your function accesses data on an Amazon S3 file
+   * system. Valid only when the file system access point ARN is an Amazon S3 Files
+   * access point. If you specify a different access point type (for example, Amazon
+   * Elastic File System), the operation returns an
+   * <code>InvalidParameterException</code>.</p>
+   */
+  inline const S3FilesConfig& GetS3FilesConfig() const { return m_s3FilesConfig; }
+  inline bool S3FilesConfigHasBeenSet() const { return m_s3FilesConfigHasBeenSet; }
+  template <typename S3FilesConfigT = S3FilesConfig>
+  void SetS3FilesConfig(S3FilesConfigT&& value) {
+    m_s3FilesConfigHasBeenSet = true;
+    m_s3FilesConfig = std::forward<S3FilesConfigT>(value);
+  }
+  template <typename S3FilesConfigT = S3FilesConfig>
+  FileSystemConfig& WithS3FilesConfig(S3FilesConfigT&& value) {
+    SetS3FilesConfig(std::forward<S3FilesConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
   Aws::String m_localMountPath;
+
+  S3FilesConfig m_s3FilesConfig;
   bool m_arnHasBeenSet = false;
   bool m_localMountPathHasBeenSet = false;
+  bool m_s3FilesConfigHasBeenSet = false;
 };
 
 }  // namespace Model

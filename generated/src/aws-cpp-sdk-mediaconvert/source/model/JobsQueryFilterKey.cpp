@@ -22,6 +22,7 @@ static const int jobEngineVersionRequested_HASH = HashingUtils::HashString("jobE
 static const int jobEngineVersionUsed_HASH = HashingUtils::HashString("jobEngineVersionUsed");
 static const int audioCodec_HASH = HashingUtils::HashString("audioCodec");
 static const int videoCodec_HASH = HashingUtils::HashString("videoCodec");
+static const int errorCode_HASH = HashingUtils::HashString("errorCode");
 
 JobsQueryFilterKey GetJobsQueryFilterKeyForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -39,6 +40,8 @@ JobsQueryFilterKey GetJobsQueryFilterKeyForName(const Aws::String& name) {
     return JobsQueryFilterKey::audioCodec;
   } else if (hashCode == videoCodec_HASH) {
     return JobsQueryFilterKey::videoCodec;
+  } else if (hashCode == errorCode_HASH) {
+    return JobsQueryFilterKey::errorCode;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -67,6 +70,8 @@ Aws::String GetNameForJobsQueryFilterKey(JobsQueryFilterKey enumValue) {
       return "audioCodec";
     case JobsQueryFilterKey::videoCodec:
       return "videoCodec";
+    case JobsQueryFilterKey::errorCode:
+      return "errorCode";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -44,7 +44,8 @@ enum class KinesisErrors {
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  EXPIRED_ITERATOR = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  DRY_RUN_OPERATION = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  EXPIRED_ITERATOR,
   EXPIRED_NEXT_TOKEN,
   INVALID_ARGUMENT,
   K_M_S_ACCESS_DENIED,

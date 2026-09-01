@@ -18,6 +18,7 @@ namespace PurchaseOptionBadgeTypeMapper {
 static const int PRIVATE_PRICING_HASH = HashingUtils::HashString("PRIVATE_PRICING");
 static const int FUTURE_DATED_HASH = HashingUtils::HashString("FUTURE_DATED");
 static const int REPLACEMENT_OFFER_HASH = HashingUtils::HashString("REPLACEMENT_OFFER");
+static const int AUTO_RENEW_HASH = HashingUtils::HashString("AUTO_RENEW");
 
 PurchaseOptionBadgeType GetPurchaseOptionBadgeTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ PurchaseOptionBadgeType GetPurchaseOptionBadgeTypeForName(const Aws::String& nam
     return PurchaseOptionBadgeType::FUTURE_DATED;
   } else if (hashCode == REPLACEMENT_OFFER_HASH) {
     return PurchaseOptionBadgeType::REPLACEMENT_OFFER;
+  } else if (hashCode == AUTO_RENEW_HASH) {
+    return PurchaseOptionBadgeType::AUTO_RENEW;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForPurchaseOptionBadgeType(PurchaseOptionBadgeType enumValue)
       return "FUTURE_DATED";
     case PurchaseOptionBadgeType::REPLACEMENT_OFFER:
       return "REPLACEMENT_OFFER";
+    case PurchaseOptionBadgeType::AUTO_RENEW:
+      return "AUTO_RENEW";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

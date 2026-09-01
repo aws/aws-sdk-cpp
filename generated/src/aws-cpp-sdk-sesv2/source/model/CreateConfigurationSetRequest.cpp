@@ -55,5 +55,9 @@ Aws::String CreateConfigurationSetRequest::SerializePayload() const {
     payload.WithObject("ArchivingOptions", m_archivingOptions.Jsonize());
   }
 
+  if (m_messageSecurityOptionsHasBeenSet) {
+    payload.WithObject("MessageSecurityOptions", m_messageSecurityOptions.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

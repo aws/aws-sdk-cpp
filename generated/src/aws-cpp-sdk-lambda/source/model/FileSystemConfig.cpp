@@ -26,6 +26,10 @@ FileSystemConfig& FileSystemConfig::operator=(JsonView jsonValue) {
     m_localMountPath = jsonValue.GetString("LocalMountPath");
     m_localMountPathHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("S3FilesConfig")) {
+    m_s3FilesConfig = jsonValue.GetObject("S3FilesConfig");
+    m_s3FilesConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue FileSystemConfig::Jsonize() const {
 
   if (m_localMountPathHasBeenSet) {
     payload.WithString("LocalMountPath", m_localMountPath);
+  }
+
+  if (m_s3FilesConfigHasBeenSet) {
+    payload.WithObject("S3FilesConfig", m_s3FilesConfig.Jsonize());
   }
 
   return payload;

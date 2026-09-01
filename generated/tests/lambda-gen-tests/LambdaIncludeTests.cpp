@@ -104,6 +104,7 @@
 #include <aws/lambda/model/DeleteProvisionedConcurrencyConfigRequest.h>
 #include <aws/lambda/model/DeleteResourcePolicyRequest.h>
 #include <aws/lambda/model/DestinationConfig.h>
+#include <aws/lambda/model/DirectS3Read.h>
 #include <aws/lambda/model/DocumentDBEventSourceConfig.h>
 #include <aws/lambda/model/DurableConfig.h>
 #include <aws/lambda/model/DurableExecutionAlreadyStartedException.h>
@@ -347,6 +348,7 @@
 #include <aws/lambda/model/Runtime.h>
 #include <aws/lambda/model/RuntimeVersionConfig.h>
 #include <aws/lambda/model/RuntimeVersionError.h>
+#include <aws/lambda/model/S3FilesConfig.h>
 #include <aws/lambda/model/S3FilesMountConnectivityException.h>
 #include <aws/lambda/model/S3FilesMountFailureException.h>
 #include <aws/lambda/model/S3FilesMountTimeoutException.h>

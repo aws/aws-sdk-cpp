@@ -22,6 +22,8 @@
 #include <aws/guardduty/GuardDutyErrorMarshaller.h>
 #include <aws/guardduty/model/AcceptAdministratorInvitationRequest.h>
 #include <aws/guardduty/model/ArchiveFindingsRequest.h>
+#include <aws/guardduty/model/CreateCustomDetectionRuleAssociationRequest.h>
+#include <aws/guardduty/model/CreateCustomDetectionRuleOrgConfigurationRequest.h>
 #include <aws/guardduty/model/CreateDetectorRequest.h>
 #include <aws/guardduty/model/CreateFilterRequest.h>
 #include <aws/guardduty/model/CreateIPSetRequest.h>
@@ -34,6 +36,8 @@
 #include <aws/guardduty/model/CreateThreatIntelSetRequest.h>
 #include <aws/guardduty/model/CreateTrustedEntitySetRequest.h>
 #include <aws/guardduty/model/DeclineInvitationsRequest.h>
+#include <aws/guardduty/model/DeleteCustomDetectionRuleAssociationRequest.h>
+#include <aws/guardduty/model/DeleteCustomDetectionRuleOrgConfigurationRequest.h>
 #include <aws/guardduty/model/DeleteDetectorRequest.h>
 #include <aws/guardduty/model/DeleteFilterRequest.h>
 #include <aws/guardduty/model/DeleteIPSetRequest.h>
@@ -53,6 +57,9 @@
 #include <aws/guardduty/model/EnableOrganizationAdminAccountRequest.h>
 #include <aws/guardduty/model/GetAdministratorAccountRequest.h>
 #include <aws/guardduty/model/GetCoverageStatisticsRequest.h>
+#include <aws/guardduty/model/GetCustomDetectionRuleAssociationRequest.h>
+#include <aws/guardduty/model/GetCustomDetectionRuleOrgConfigurationRequest.h>
+#include <aws/guardduty/model/GetCustomDetectionRuleRequest.h>
 #include <aws/guardduty/model/GetDetectorRequest.h>
 #include <aws/guardduty/model/GetFilterRequest.h>
 #include <aws/guardduty/model/GetFindingsRequest.h>
@@ -73,6 +80,9 @@
 #include <aws/guardduty/model/GetUsageStatisticsRequest.h>
 #include <aws/guardduty/model/InviteMembersRequest.h>
 #include <aws/guardduty/model/ListCoverageRequest.h>
+#include <aws/guardduty/model/ListCustomDetectionRuleAssociationsRequest.h>
+#include <aws/guardduty/model/ListCustomDetectionRuleOrgConfigurationsRequest.h>
+#include <aws/guardduty/model/ListCustomDetectionRulesRequest.h>
 #include <aws/guardduty/model/ListDetectorsRequest.h>
 #include <aws/guardduty/model/ListFiltersRequest.h>
 #include <aws/guardduty/model/ListFindingsRequest.h>
@@ -95,6 +105,8 @@
 #include <aws/guardduty/model/TagResourceRequest.h>
 #include <aws/guardduty/model/UnarchiveFindingsRequest.h>
 #include <aws/guardduty/model/UntagResourceRequest.h>
+#include <aws/guardduty/model/UpdateCustomDetectionRuleAssociationRequest.h>
+#include <aws/guardduty/model/UpdateCustomDetectionRuleOrgConfigurationRequest.h>
 #include <aws/guardduty/model/UpdateDetectorRequest.h>
 #include <aws/guardduty/model/UpdateFilterRequest.h>
 #include <aws/guardduty/model/UpdateFindingsFeedbackRequest.h>
@@ -300,6 +312,30 @@ ArchiveFindingsOutcome GuardDutyClient::ArchiveFindings(const ArchiveFindingsReq
                             : ArchiveFindingsOutcome(std::move(result.GetError()));
 }
 
+CreateCustomDetectionRuleAssociationOutcome GuardDutyClient::CreateCustomDetectionRuleAssociation(
+    const CreateCustomDetectionRuleAssociationRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/custom-detection-rule/association");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCustomDetectionRuleAssociationOutcome(result.GetResultWithOwnership())
+                            : CreateCustomDetectionRuleAssociationOutcome(std::move(result.GetError()));
+}
+
+CreateCustomDetectionRuleOrgConfigurationOutcome GuardDutyClient::CreateCustomDetectionRuleOrgConfiguration(
+    const CreateCustomDetectionRuleOrgConfigurationRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/custom-detection-rule/org-configuration");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCustomDetectionRuleOrgConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateCustomDetectionRuleOrgConfigurationOutcome(std::move(result.GetError()));
+}
+
 CreateDetectorOutcome GuardDutyClient::CreateDetector(const CreateDetectorRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -498,6 +534,56 @@ DeclineInvitationsOutcome GuardDutyClient::DeclineInvitations(const DeclineInvit
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeclineInvitationsOutcome(result.GetResultWithOwnership())
                             : DeclineInvitationsOutcome(std::move(result.GetError()));
+}
+
+DeleteCustomDetectionRuleAssociationOutcome GuardDutyClient::DeleteCustomDetectionRuleAssociation(
+    const DeleteCustomDetectionRuleAssociationRequest& request) const {
+  if (!request.RuleIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteCustomDetectionRuleAssociation", "Required field: RuleId, is not set");
+    return DeleteCustomDetectionRuleAssociationOutcome(Aws::Client::AWSError<GuardDutyErrors>(
+        GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RuleId]", false));
+  }
+  if (!request.AssociationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteCustomDetectionRuleAssociation", "Required field: AssociationId, is not set");
+    return DeleteCustomDetectionRuleAssociationOutcome(Aws::Client::AWSError<GuardDutyErrors>(
+        GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssociationId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/custom-detection-rule/rule/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRuleId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/association/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssociationId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCustomDetectionRuleAssociationOutcome(result.GetResultWithOwnership())
+                            : DeleteCustomDetectionRuleAssociationOutcome(std::move(result.GetError()));
+}
+
+DeleteCustomDetectionRuleOrgConfigurationOutcome GuardDutyClient::DeleteCustomDetectionRuleOrgConfiguration(
+    const DeleteCustomDetectionRuleOrgConfigurationRequest& request) const {
+  if (!request.RuleIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteCustomDetectionRuleOrgConfiguration", "Required field: RuleId, is not set");
+    return DeleteCustomDetectionRuleOrgConfigurationOutcome(Aws::Client::AWSError<GuardDutyErrors>(
+        GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RuleId]", false));
+  }
+  if (!request.ModeHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteCustomDetectionRuleOrgConfiguration", "Required field: Mode, is not set");
+    return DeleteCustomDetectionRuleOrgConfigurationOutcome(Aws::Client::AWSError<GuardDutyErrors>(
+        GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Mode]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/custom-detection-rule/org-configuration/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRuleId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCustomDetectionRuleOrgConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteCustomDetectionRuleOrgConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteDetectorOutcome GuardDutyClient::DeleteDetector(const DeleteDetectorRequest& request) const {
@@ -876,6 +962,74 @@ GetCoverageStatisticsOutcome GuardDutyClient::GetCoverageStatistics(const GetCov
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetCoverageStatisticsOutcome(result.GetResultWithOwnership())
                             : GetCoverageStatisticsOutcome(std::move(result.GetError()));
+}
+
+GetCustomDetectionRuleOutcome GuardDutyClient::GetCustomDetectionRule(const GetCustomDetectionRuleRequest& request) const {
+  if (!request.RuleIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetCustomDetectionRule", "Required field: RuleId, is not set");
+    return GetCustomDetectionRuleOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                "Missing required field [RuleId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/custom-detection-rule/rule/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRuleId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCustomDetectionRuleOutcome(result.GetResultWithOwnership())
+                            : GetCustomDetectionRuleOutcome(std::move(result.GetError()));
+}
+
+GetCustomDetectionRuleAssociationOutcome GuardDutyClient::GetCustomDetectionRuleAssociation(
+    const GetCustomDetectionRuleAssociationRequest& request) const {
+  if (!request.RuleIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetCustomDetectionRuleAssociation", "Required field: RuleId, is not set");
+    return GetCustomDetectionRuleAssociationOutcome(Aws::Client::AWSError<GuardDutyErrors>(
+        GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RuleId]", false));
+  }
+  if (!request.AssociationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetCustomDetectionRuleAssociation", "Required field: AssociationId, is not set");
+    return GetCustomDetectionRuleAssociationOutcome(Aws::Client::AWSError<GuardDutyErrors>(
+        GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssociationId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/custom-detection-rule/rule/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRuleId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/association/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssociationId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCustomDetectionRuleAssociationOutcome(result.GetResultWithOwnership())
+                            : GetCustomDetectionRuleAssociationOutcome(std::move(result.GetError()));
+}
+
+GetCustomDetectionRuleOrgConfigurationOutcome GuardDutyClient::GetCustomDetectionRuleOrgConfiguration(
+    const GetCustomDetectionRuleOrgConfigurationRequest& request) const {
+  if (!request.RuleIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetCustomDetectionRuleOrgConfiguration", "Required field: RuleId, is not set");
+    return GetCustomDetectionRuleOrgConfigurationOutcome(Aws::Client::AWSError<GuardDutyErrors>(
+        GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RuleId]", false));
+  }
+  if (!request.ModeHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetCustomDetectionRuleOrgConfiguration", "Required field: Mode, is not set");
+    return GetCustomDetectionRuleOrgConfigurationOutcome(Aws::Client::AWSError<GuardDutyErrors>(
+        GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Mode]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/custom-detection-rule/org-configuration/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRuleId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCustomDetectionRuleOrgConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetCustomDetectionRuleOrgConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetDetectorOutcome GuardDutyClient::GetDetector(const GetDetectorRequest& request) const {
@@ -1267,6 +1421,41 @@ ListCoverageOutcome GuardDutyClient::ListCoverage(const ListCoverageRequest& req
   return result.IsSuccess() ? ListCoverageOutcome(result.GetResultWithOwnership()) : ListCoverageOutcome(std::move(result.GetError()));
 }
 
+ListCustomDetectionRuleAssociationsOutcome GuardDutyClient::ListCustomDetectionRuleAssociations(
+    const ListCustomDetectionRuleAssociationsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/custom-detection-rule/association");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCustomDetectionRuleAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListCustomDetectionRuleAssociationsOutcome(std::move(result.GetError()));
+}
+
+ListCustomDetectionRuleOrgConfigurationsOutcome GuardDutyClient::ListCustomDetectionRuleOrgConfigurations(
+    const ListCustomDetectionRuleOrgConfigurationsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/custom-detection-rule/org-configuration");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCustomDetectionRuleOrgConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListCustomDetectionRuleOrgConfigurationsOutcome(std::move(result.GetError()));
+}
+
+ListCustomDetectionRulesOutcome GuardDutyClient::ListCustomDetectionRules(const ListCustomDetectionRulesRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/custom-detection-rule/rule");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCustomDetectionRulesOutcome(result.GetResultWithOwnership())
+                            : ListCustomDetectionRulesOutcome(std::move(result.GetError()));
+}
+
 ListDetectorsOutcome GuardDutyClient::ListDetectors(const ListDetectorsRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -1623,6 +1812,51 @@ UntagResourceOutcome GuardDutyClient::UntagResource(const UntagResourceRequest& 
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
+}
+
+UpdateCustomDetectionRuleAssociationOutcome GuardDutyClient::UpdateCustomDetectionRuleAssociation(
+    const UpdateCustomDetectionRuleAssociationRequest& request) const {
+  if (!request.RuleIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateCustomDetectionRuleAssociation", "Required field: RuleId, is not set");
+    return UpdateCustomDetectionRuleAssociationOutcome(Aws::Client::AWSError<GuardDutyErrors>(
+        GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RuleId]", false));
+  }
+  if (!request.AssociationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateCustomDetectionRuleAssociation", "Required field: AssociationId, is not set");
+    return UpdateCustomDetectionRuleAssociationOutcome(Aws::Client::AWSError<GuardDutyErrors>(
+        GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssociationId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/custom-detection-rule/rule/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRuleId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/association/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssociationId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateCustomDetectionRuleAssociationOutcome(result.GetResultWithOwnership())
+                            : UpdateCustomDetectionRuleAssociationOutcome(std::move(result.GetError()));
+}
+
+UpdateCustomDetectionRuleOrgConfigurationOutcome GuardDutyClient::UpdateCustomDetectionRuleOrgConfiguration(
+    const UpdateCustomDetectionRuleOrgConfigurationRequest& request) const {
+  if (!request.RuleIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateCustomDetectionRuleOrgConfiguration", "Required field: RuleId, is not set");
+    return UpdateCustomDetectionRuleOrgConfigurationOutcome(Aws::Client::AWSError<GuardDutyErrors>(
+        GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RuleId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/custom-detection-rule/org-configuration/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRuleId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateCustomDetectionRuleOrgConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateCustomDetectionRuleOrgConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateDetectorOutcome GuardDutyClient::UpdateDetector(const UpdateDetectorRequest& request) const {

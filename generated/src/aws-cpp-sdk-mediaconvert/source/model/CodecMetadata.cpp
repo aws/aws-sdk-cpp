@@ -42,6 +42,10 @@ CodecMetadata& CodecMetadata::operator=(JsonView jsonValue) {
     m_fieldOrder = jsonValue.GetString("fieldOrder");
     m_fieldOrderHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("hdr10PlusPresence")) {
+    m_hdr10PlusPresence = Hdr10PlusPresenceMapper::GetHdr10PlusPresenceForName(jsonValue.GetString("hdr10PlusPresence"));
+    m_hdr10PlusPresenceHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("height")) {
     m_height = jsonValue.GetInteger("height");
     m_heightHasBeenSet = true;
@@ -103,6 +107,10 @@ JsonValue CodecMetadata::Jsonize() const {
 
   if (m_fieldOrderHasBeenSet) {
     payload.WithString("fieldOrder", m_fieldOrder);
+  }
+
+  if (m_hdr10PlusPresenceHasBeenSet) {
+    payload.WithString("hdr10PlusPresence", Hdr10PlusPresenceMapper::GetNameForHdr10PlusPresence(m_hdr10PlusPresence));
   }
 
   if (m_heightHasBeenSet) {

@@ -111,6 +111,23 @@ class GetRecordsRequest : public KinesisRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Checks if your request will succeed. <code>DryRun</code> is an optional
+   * parameter.</p>
+   */
+  inline bool GetDryRun() const { return m_dryRun; }
+  inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+  inline void SetDryRun(bool value) {
+    m_dryRunHasBeenSet = true;
+    m_dryRun = value;
+  }
+  inline GetRecordsRequest& WithDryRun(bool value) {
+    SetDryRun(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_shardIterator;
 
@@ -119,10 +136,13 @@ class GetRecordsRequest : public KinesisRequest {
   Aws::String m_streamARN;
 
   Aws::String m_streamId;
+
+  bool m_dryRun{false};
   bool m_shardIteratorHasBeenSet = false;
   bool m_limitHasBeenSet = false;
   bool m_streamARNHasBeenSet = false;
   bool m_streamIdHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
 };
 
 }  // namespace Model

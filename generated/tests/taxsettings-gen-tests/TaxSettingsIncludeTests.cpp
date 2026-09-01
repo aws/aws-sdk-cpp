@@ -82,6 +82,7 @@
 #include <aws/taxsettings/model/ListTaxRegistrationsResult.h>
 #include <aws/taxsettings/model/MalaysiaAdditionalInfo.h>
 #include <aws/taxsettings/model/MalaysiaServiceTaxCode.h>
+#include <aws/taxsettings/model/MonacoAdditionalInfo.h>
 #include <aws/taxsettings/model/PersonType.h>
 #include <aws/taxsettings/model/PhilippinesAdditionalInfo.h>
 #include <aws/taxsettings/model/PolandAdditionalInfo.h>

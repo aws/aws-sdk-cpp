@@ -65,11 +65,15 @@
 #include <aws/marketplace-agreement/model/DescribeAgreementResult.h>
 #include <aws/marketplace-agreement/model/Dimension.h>
 #include <aws/marketplace-agreement/model/DocumentItem.h>
+#include <aws/marketplace-agreement/model/EndTimeBehavior.h>
+#include <aws/marketplace-agreement/model/EndTimeBehaviorReasonCode.h>
+#include <aws/marketplace-agreement/model/EndTimeBehaviorType.h>
 #include <aws/marketplace-agreement/model/Entitlement.h>
 #include <aws/marketplace-agreement/model/EstimatedCharges.h>
 #include <aws/marketplace-agreement/model/EstimatedTaxes.h>
 #include <aws/marketplace-agreement/model/ExpectedCharge.h>
 #include <aws/marketplace-agreement/model/Filter.h>
+#include <aws/marketplace-agreement/model/FixedPercentage.h>
 #include <aws/marketplace-agreement/model/FixedUpfrontPricingTerm.h>
 #include <aws/marketplace-agreement/model/FreeTrialPricingTerm.h>
 #include <aws/marketplace-agreement/model/GetAgreementCancellationRequestRequest.h>
@@ -112,7 +116,11 @@
 #include <aws/marketplace-agreement/model/PaymentRequestApprovalStrategy.h>
 #include <aws/marketplace-agreement/model/PaymentRequestStatus.h>
 #include <aws/marketplace-agreement/model/PaymentRequestSummary.h>
+#include <aws/marketplace-agreement/model/PaymentScheduleEntry.h>
 #include <aws/marketplace-agreement/model/PaymentScheduleTerm.h>
+#include <aws/marketplace-agreement/model/PaymentScheduleTermTemplate.h>
+#include <aws/marketplace-agreement/model/PercentageRange.h>
+#include <aws/marketplace-agreement/model/PriceIncrease.h>
 #include <aws/marketplace-agreement/model/PricingCurrencyAmount.h>
 #include <aws/marketplace-agreement/model/ProposalSummary.h>
 #include <aws/marketplace-agreement/model/Proposer.h>
@@ -123,6 +131,7 @@
 #include <aws/marketplace-agreement/model/RejectAgreementCancellationRequestResult.h>
 #include <aws/marketplace-agreement/model/RejectAgreementPaymentRequestRequest.h>
 #include <aws/marketplace-agreement/model/RejectAgreementPaymentRequestResult.h>
+#include <aws/marketplace-agreement/model/RenewalSummary.h>
 #include <aws/marketplace-agreement/model/RenewalTerm.h>
 #include <aws/marketplace-agreement/model/RenewalTermConfiguration.h>
 #include <aws/marketplace-agreement/model/RequestedTerm.h>
@@ -146,6 +155,7 @@
 #include <aws/marketplace-agreement/model/TaxBreakdownItem.h>
 #include <aws/marketplace-agreement/model/TaxConfiguration.h>
 #include <aws/marketplace-agreement/model/TaxEstimation.h>
+#include <aws/marketplace-agreement/model/TermTemplate.h>
 #include <aws/marketplace-agreement/model/ThrottlingException.h>
 #include <aws/marketplace-agreement/model/Timing.h>
 #include <aws/marketplace-agreement/model/UpdatePurchaseOrdersRequest.h>

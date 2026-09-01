@@ -62,6 +62,14 @@ DescribeAgreementResult& DescribeAgreementResult::operator=(const Aws::AmazonWeb
     m_status = AgreementStatusMapper::GetAgreementStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("initialAgreementId")) {
+    m_initialAgreementId = jsonValue.GetString("initialAgreementId");
+    m_initialAgreementIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("endTimeBehavior")) {
+    m_endTimeBehavior = jsonValue.GetObject("endTimeBehavior");
+    m_endTimeBehaviorHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

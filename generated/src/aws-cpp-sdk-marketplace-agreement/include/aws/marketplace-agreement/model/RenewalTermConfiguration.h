@@ -31,8 +31,10 @@ class RenewalTermConfiguration {
 
   ///@{
   /**
-   * <p>Defines whether the acceptor has chosen to auto-renew the agreement at the
-   * end of its lifecycle. Can be set to <code>True</code> or <code>False</code>.</p>
+   * <p>Defines whether the acceptor has chosen to auto-renew the agreement when it
+   * reaches its end date. Can be set to <code>True</code> or <code>False</code>. The
+   * acceptor can change this value within the limits set by
+   * <code>LockoutPeriod</code> and <code>MaxRenewals</code>.</p>
    */
   inline bool GetEnableAutoRenew() const { return m_enableAutoRenew; }
   inline bool EnableAutoRenewHasBeenSet() const { return m_enableAutoRenewHasBeenSet; }

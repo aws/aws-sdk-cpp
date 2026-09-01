@@ -9,6 +9,7 @@
 #include <aws/mediaconvert/model/ColorPrimaries.h>
 #include <aws/mediaconvert/model/ContentLightLevel.h>
 #include <aws/mediaconvert/model/FrameRate.h>
+#include <aws/mediaconvert/model/Hdr10PlusPresence.h>
 #include <aws/mediaconvert/model/MatrixCoefficients.h>
 #include <aws/mediaconvert/model/TransferCharacteristics.h>
 
@@ -154,6 +155,23 @@ class CodecMetadata {
   template <typename FieldOrderT = Aws::String>
   CodecMetadata& WithFieldOrder(FieldOrderT&& value) {
     SetFieldOrder(std::forward<FieldOrderT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * Indicates that HDR10+ (SMPTE ST 2094-40) dynamic metadata was detected in the
+   * HEVC bitstream. Present only when detected.
+   */
+  inline Hdr10PlusPresence GetHdr10PlusPresence() const { return m_hdr10PlusPresence; }
+  inline bool Hdr10PlusPresenceHasBeenSet() const { return m_hdr10PlusPresenceHasBeenSet; }
+  inline void SetHdr10PlusPresence(Hdr10PlusPresence value) {
+    m_hdr10PlusPresenceHasBeenSet = true;
+    m_hdr10PlusPresence = value;
+  }
+  inline CodecMetadata& WithHdr10PlusPresence(Hdr10PlusPresence value) {
+    SetHdr10PlusPresence(value);
     return *this;
   }
   ///@}
@@ -319,6 +337,8 @@ class CodecMetadata {
 
   Aws::String m_fieldOrder;
 
+  Hdr10PlusPresence m_hdr10PlusPresence{Hdr10PlusPresence::NOT_SET};
+
   int m_height{0};
 
   Aws::String m_level;
@@ -340,6 +360,7 @@ class CodecMetadata {
   bool m_colorPrimariesHasBeenSet = false;
   bool m_contentLightLevelHasBeenSet = false;
   bool m_fieldOrderHasBeenSet = false;
+  bool m_hdr10PlusPresenceHasBeenSet = false;
   bool m_heightHasBeenSet = false;
   bool m_levelHasBeenSet = false;
   bool m_matrixCoefficientsHasBeenSet = false;

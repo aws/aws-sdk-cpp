@@ -18,6 +18,7 @@ namespace CodecMapper {
 static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
 static const int AAC_HASH = HashingUtils::HashString("AAC");
 static const int AC3_HASH = HashingUtils::HashString("AC3");
+static const int AMR_HASH = HashingUtils::HashString("AMR");
 static const int EAC3_HASH = HashingUtils::HashString("EAC3");
 static const int FLAC_HASH = HashingUtils::HashString("FLAC");
 static const int MP2_HASH = HashingUtils::HashString("MP2");
@@ -25,8 +26,13 @@ static const int MP3_HASH = HashingUtils::HashString("MP3");
 static const int OPUS_HASH = HashingUtils::HashString("OPUS");
 static const int PCM_HASH = HashingUtils::HashString("PCM");
 static const int VORBIS_HASH = HashingUtils::HashString("VORBIS");
+static const int WMA_HASH = HashingUtils::HashString("WMA");
+static const int WMA2_HASH = HashingUtils::HashString("WMA2");
+static const int WMAPRO_HASH = HashingUtils::HashString("WMAPRO");
 static const int AV1_HASH = HashingUtils::HashString("AV1");
 static const int AVC_HASH = HashingUtils::HashString("AVC");
+static const int DV_HASH = HashingUtils::HashString("DV");
+static const int H263_HASH = HashingUtils::HashString("H263");
 static const int HEVC_HASH = HashingUtils::HashString("HEVC");
 static const int JPEG2000_HASH = HashingUtils::HashString("JPEG2000");
 static const int MJPEG_HASH = HashingUtils::HashString("MJPEG");
@@ -37,6 +43,8 @@ static const int PRORES_HASH = HashingUtils::HashString("PRORES");
 static const int QTRLE_HASH = HashingUtils::HashString("QTRLE");
 static const int THEORA_HASH = HashingUtils::HashString("THEORA");
 static const int UNCOMPRESSED_HASH = HashingUtils::HashString("UNCOMPRESSED");
+static const int VC1_HASH = HashingUtils::HashString("VC1");
+static const int VC3_HASH = HashingUtils::HashString("VC3");
 static const int VFW_HASH = HashingUtils::HashString("VFW");
 static const int VP8_HASH = HashingUtils::HashString("VP8");
 static const int VP9_HASH = HashingUtils::HashString("VP9");
@@ -52,6 +60,8 @@ Codec GetCodecForName(const Aws::String& name) {
     return Codec::AAC;
   } else if (hashCode == AC3_HASH) {
     return Codec::AC3;
+  } else if (hashCode == AMR_HASH) {
+    return Codec::AMR;
   } else if (hashCode == EAC3_HASH) {
     return Codec::EAC3;
   } else if (hashCode == FLAC_HASH) {
@@ -66,10 +76,20 @@ Codec GetCodecForName(const Aws::String& name) {
     return Codec::PCM;
   } else if (hashCode == VORBIS_HASH) {
     return Codec::VORBIS;
+  } else if (hashCode == WMA_HASH) {
+    return Codec::WMA;
+  } else if (hashCode == WMA2_HASH) {
+    return Codec::WMA2;
+  } else if (hashCode == WMAPRO_HASH) {
+    return Codec::WMAPRO;
   } else if (hashCode == AV1_HASH) {
     return Codec::AV1;
   } else if (hashCode == AVC_HASH) {
     return Codec::AVC;
+  } else if (hashCode == DV_HASH) {
+    return Codec::DV;
+  } else if (hashCode == H263_HASH) {
+    return Codec::H263;
   } else if (hashCode == HEVC_HASH) {
     return Codec::HEVC;
   } else if (hashCode == JPEG2000_HASH) {
@@ -90,6 +110,10 @@ Codec GetCodecForName(const Aws::String& name) {
     return Codec::THEORA;
   } else if (hashCode == UNCOMPRESSED_HASH) {
     return Codec::UNCOMPRESSED;
+  } else if (hashCode == VC1_HASH) {
+    return Codec::VC1;
+  } else if (hashCode == VC3_HASH) {
+    return Codec::VC3;
   } else if (hashCode == VFW_HASH) {
     return Codec::VFW;
   } else if (hashCode == VP8_HASH) {
@@ -122,6 +146,8 @@ Aws::String GetNameForCodec(Codec enumValue) {
       return "AAC";
     case Codec::AC3:
       return "AC3";
+    case Codec::AMR:
+      return "AMR";
     case Codec::EAC3:
       return "EAC3";
     case Codec::FLAC:
@@ -136,10 +162,20 @@ Aws::String GetNameForCodec(Codec enumValue) {
       return "PCM";
     case Codec::VORBIS:
       return "VORBIS";
+    case Codec::WMA:
+      return "WMA";
+    case Codec::WMA2:
+      return "WMA2";
+    case Codec::WMAPRO:
+      return "WMAPRO";
     case Codec::AV1:
       return "AV1";
     case Codec::AVC:
       return "AVC";
+    case Codec::DV:
+      return "DV";
+    case Codec::H263:
+      return "H263";
     case Codec::HEVC:
       return "HEVC";
     case Codec::JPEG2000:
@@ -160,6 +196,10 @@ Aws::String GetNameForCodec(Codec enumValue) {
       return "THEORA";
     case Codec::UNCOMPRESSED:
       return "UNCOMPRESSED";
+    case Codec::VC1:
+      return "VC1";
+    case Codec::VC3:
+      return "VC3";
     case Codec::VFW:
       return "VFW";
     case Codec::VP8:

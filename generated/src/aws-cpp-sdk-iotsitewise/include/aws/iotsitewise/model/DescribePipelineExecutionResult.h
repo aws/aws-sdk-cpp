@@ -11,6 +11,7 @@
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/iotsitewise/model/ComputeNodeExecutionDetails.h>
 #include <aws/iotsitewise/model/ExecutionEnvironmentVariables.h>
+#include <aws/iotsitewise/model/MountOverrides.h>
 #include <aws/iotsitewise/model/PipelineExecutionStatus.h>
 
 #include <utility>
@@ -176,6 +177,24 @@ class DescribePipelineExecutionResult {
 
   ///@{
   /**
+   * <p>The mount overrides provided as input for the pipeline execution. Present
+   * when mount overrides were supplied at execution time.</p>
+   */
+  inline const MountOverrides& GetRequestMountOverrides() const { return m_requestMountOverrides; }
+  template <typename RequestMountOverridesT = MountOverrides>
+  void SetRequestMountOverrides(RequestMountOverridesT&& value) {
+    m_requestMountOverridesHasBeenSet = true;
+    m_requestMountOverrides = std::forward<RequestMountOverridesT>(value);
+  }
+  template <typename RequestMountOverridesT = MountOverrides>
+  DescribePipelineExecutionResult& WithRequestMountOverrides(RequestMountOverridesT&& value) {
+    SetRequestMountOverrides(std::forward<RequestMountOverridesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Scheduling priority for the execution. When not specified, defaults to lowest
    * priority.</p>
    */
@@ -263,6 +282,8 @@ class DescribePipelineExecutionResult {
 
   ExecutionEnvironmentVariables m_requestEnvironmentVariables;
 
+  MountOverrides m_requestMountOverrides;
+
   int m_executionPriority{0};
 
   Aws::Vector<ComputeNodeExecutionDetails> m_computeNodeExecutionDetails;
@@ -279,6 +300,7 @@ class DescribePipelineExecutionResult {
   bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
   bool m_requestEnvironmentVariablesHasBeenSet = false;
+  bool m_requestMountOverridesHasBeenSet = false;
   bool m_executionPriorityHasBeenSet = false;
   bool m_computeNodeExecutionDetailsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

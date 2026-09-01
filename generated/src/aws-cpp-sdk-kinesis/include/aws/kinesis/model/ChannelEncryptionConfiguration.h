@@ -21,7 +21,8 @@ namespace Kinesis {
 namespace Model {
 
 /**
- * <p>The server-side encryption configuration for a channel.</p><p><h3>See
+ * <p>Specifies the Amazon Web Services KMS key that Amazon Kinesis Data Streams
+ * uses to encrypt data delivered to the channel's destination.</p><p><h3>See
  * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ChannelEncryptionConfiguration">AWS
  * API Reference</a></p>

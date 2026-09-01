@@ -38,9 +38,9 @@ class GatewayPolicyEngineConfiguration {
 
   ///@{
   /**
-   * <p>The ARN of the policy engine. The policy engine contains Cedar policies that
-   * define fine-grained authorization rules specifying who can perform what actions
-   * on which resources as agents interact through the gateway.</p>
+   * <p>The ARN of the policy engine. The policy engine contains Cedar or Dogwood
+   * policies that define fine-grained authorization rules specifying who can perform
+   * what actions on which resources as agents interact through the gateway.</p>
    */
   inline const Aws::String& GetArn() const { return m_arn; }
   inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }

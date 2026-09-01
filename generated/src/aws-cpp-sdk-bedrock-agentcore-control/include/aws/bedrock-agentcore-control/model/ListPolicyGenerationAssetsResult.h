@@ -32,7 +32,7 @@ class ListPolicyGenerationAssetsResult {
 
   ///@{
   /**
-   * <p>An array of generated policy assets including Cedar policies and related
+   * <p>An array of generated policy assets including Dogwood policies and related
    * artifacts from the AI-powered policy generation process. Each asset represents a
    * different policy option or variation generated from the original natural
    * language input.</p>

@@ -281,6 +281,12 @@ class AWS_TAXSETTINGS_API TaxSettingsClient : public Aws::Client::AWSJsonClient,
    * the <code>additionalTaxInformation</code> object.</p> </li> </ul> <p>
    * <b>France</b> </p> <ul> <li> <p>You must specify the <code>sirenNumber</code> in
    * the <code>franceAdditionalInfo</code> field of the
+   * <code>additionalTaxInformation</code> object.</p> </li> <li> <p>You can
+   * optionally specify the <code>eInvoiceRoutingCode</code> in the
+   * <code>franceAdditionalInfo</code> field of the
+   * <code>additionalTaxInformation</code> object.</p> </li> </ul> <p> <b>Monaco</b>
+   * </p> <ul> <li> <p>You must specify the <code>businessNumber</code> in the
+   * <code>monacoAdditionalInfo</code> field of the
    * <code>additionalTaxInformation</code> object.</p> </li> </ul> <p> <b>Poland</b>
    * </p> <ul> <li> <p>You can optionally specify the
    * <code>taxRegistrationNumberType</code> in the <code>polandAdditionalInfo</code>
@@ -678,7 +684,7 @@ class AWS_TAXSETTINGS_API TaxSettingsClient : public Aws::Client::AWSJsonClient,
    * <b>Indonesia</b> </p> <ul> <li> <p> <code>PutTaxRegistration</code>: The use of
    * this operation to submit tax information is subject to the <a
    * href="http://aws.amazon.com/service-terms/">Amazon Web Services service
-   * terms</a>. By submitting, you’re providing consent for Amazon Web Services to
+   * terms</a>. By submitting, you���re providing consent for Amazon Web Services to
    * validate NIK, NPWP, and NITKU data, provided by you with the Directorate General
    * of Taxes of Indonesia in accordance with the Minister of Finance Regulation
    * (PMK) Number 112/PMK.03/2022.</p> </li> <li> <p>
@@ -793,6 +799,12 @@ class AWS_TAXSETTINGS_API TaxSettingsClient : public Aws::Client::AWSJsonClient,
    * the <code>additionalTaxInformation</code> object.</p> </li> </ul> <p>
    * <b>France</b> </p> <ul> <li> <p>You must specify the <code>sirenNumber</code> in
    * the <code>franceAdditionalInfo</code> field of the
+   * <code>additionalTaxInformation</code> object.</p> </li> <li> <p>You can
+   * optionally specify the <code>eInvoiceRoutingCode</code> in the
+   * <code>franceAdditionalInfo</code> field of the
+   * <code>additionalTaxInformation</code> object.</p> </li> </ul> <p> <b>Monaco</b>
+   * </p> <ul> <li> <p>You must specify the <code>businessNumber</code> in the
+   * <code>monacoAdditionalInfo</code> field of the
    * <code>additionalTaxInformation</code> object.</p> </li> </ul> <p> <b>Poland</b>
    * </p> <ul> <li> <p>You can optionally specify the
    * <code>taxRegistrationNumberType</code> in the <code>polandAdditionalInfo</code>

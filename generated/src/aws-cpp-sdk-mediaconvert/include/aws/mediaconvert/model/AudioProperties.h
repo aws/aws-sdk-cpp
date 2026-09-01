@@ -66,6 +66,25 @@ class AudioProperties {
 
   ///@{
   /**
+   * The audio channel layout of the track, such as "mono", "stereo", "5.1", or
+   * "7.1". Object-based or immersive audio is reported as "5.1.4" or "7.1.4".
+   */
+  inline const Aws::String& GetChannelLayout() const { return m_channelLayout; }
+  inline bool ChannelLayoutHasBeenSet() const { return m_channelLayoutHasBeenSet; }
+  template <typename ChannelLayoutT = Aws::String>
+  void SetChannelLayout(ChannelLayoutT&& value) {
+    m_channelLayoutHasBeenSet = true;
+    m_channelLayout = std::forward<ChannelLayoutT>(value);
+  }
+  template <typename ChannelLayoutT = Aws::String>
+  AudioProperties& WithChannelLayout(ChannelLayoutT&& value) {
+    SetChannelLayout(std::forward<ChannelLayoutT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * The number of audio channels in the audio track.
    */
   inline int GetChannels() const { return m_channels; }
@@ -156,6 +175,8 @@ class AudioProperties {
 
   long long m_bitRate{0};
 
+  Aws::String m_channelLayout;
+
   int m_channels{0};
 
   FrameRate m_frameRate;
@@ -167,6 +188,7 @@ class AudioProperties {
   int m_sampleRate{0};
   bool m_bitDepthHasBeenSet = false;
   bool m_bitRateHasBeenSet = false;
+  bool m_channelLayoutHasBeenSet = false;
   bool m_channelsHasBeenSet = false;
   bool m_frameRateHasBeenSet = false;
   bool m_languageCodeHasBeenSet = false;

@@ -11,6 +11,9 @@
 #include <aws/guardduty/model/DescribeOrganizationConfigurationPaginationTraits.h>
 #include <aws/guardduty/model/GetUsageStatisticsPaginationTraits.h>
 #include <aws/guardduty/model/ListCoveragePaginationTraits.h>
+#include <aws/guardduty/model/ListCustomDetectionRuleAssociationsPaginationTraits.h>
+#include <aws/guardduty/model/ListCustomDetectionRuleOrgConfigurationsPaginationTraits.h>
+#include <aws/guardduty/model/ListCustomDetectionRulesPaginationTraits.h>
 #include <aws/guardduty/model/ListDetectorsPaginationTraits.h>
 #include <aws/guardduty/model/ListFiltersPaginationTraits.h>
 #include <aws/guardduty/model/ListFindingsPaginationTraits.h>
@@ -78,6 +81,42 @@ class GuardDutyPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCoverageRequest,
                                              Pagination::ListCoveragePaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
+  }
+
+  /**
+   * Create a paginator for ListCustomDetectionRuleAssociations operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomDetectionRuleAssociationsRequest,
+                                    Pagination::ListCustomDetectionRuleAssociationsPaginationTraits<DerivedClient>>
+  ListCustomDetectionRuleAssociationsPaginator(const Model::ListCustomDetectionRuleAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomDetectionRuleAssociationsRequest,
+                                             Pagination::ListCustomDetectionRuleAssociationsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListCustomDetectionRuleOrgConfigurations operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomDetectionRuleOrgConfigurationsRequest,
+                                    Pagination::ListCustomDetectionRuleOrgConfigurationsPaginationTraits<DerivedClient>>
+  ListCustomDetectionRuleOrgConfigurationsPaginator(const Model::ListCustomDetectionRuleOrgConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomDetectionRuleOrgConfigurationsRequest,
+                                             Pagination::ListCustomDetectionRuleOrgConfigurationsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListCustomDetectionRules operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomDetectionRulesRequest,
+                                    Pagination::ListCustomDetectionRulesPaginationTraits<DerivedClient>>
+  ListCustomDetectionRulesPaginator(const Model::ListCustomDetectionRulesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomDetectionRulesRequest,
+                                             Pagination::ListCustomDetectionRulesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 
   /**

@@ -94,9 +94,11 @@ class S3StorageConfiguration {
   ///@{
   /**
    * <p>The Amazon S3 storage class for delivered objects. Valid values:</p> <ul>
-   * <li> <p> <code>STANDARD</code> (default)</p> </li> <li> <p>
-   * <code>INTELLIGENT_TIERING</code> </p> </li> <li> <p> <code>GLACIER_IR</code>
-   * </p> </li> </ul>
+   * <li> <p> <code>STANDARD</code> - Default storage class for frequently accessed
+   * data. (default)</p> </li> <li> <p> <code>INTELLIGENT_TIERING</code> -
+   * Automatically moves objects to the most cost-effective access tier based on
+   * usage patterns.</p> </li> <li> <p> <code>GLACIER_IR</code> - Low-cost storage
+   * for rarely accessed data that requires millisecond retrieval.</p> </li> </ul>
    */
   inline S3StorageClass GetStorageClass() const { return m_storageClass; }
   inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
