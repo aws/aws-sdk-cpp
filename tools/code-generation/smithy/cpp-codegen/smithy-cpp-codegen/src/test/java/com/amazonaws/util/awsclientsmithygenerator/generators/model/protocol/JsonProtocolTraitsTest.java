@@ -205,6 +205,32 @@ class JsonProtocolTraitsTest {
     }
 
     @Test
+    void restJson_additionalHeadersTrait_emitsConstantHeaderBeforeMemberHeaders() {
+        // A streaming request marked with AdditionalRequestHeadersTrait (Glacier's
+        // x-amz-glacier-version) emits the constant header inside GetRequestSpecificHeaders,
+        // ordered after any X-Amz-Target and before the member-driven headers (StreamRequestSource.vm).
+        var req = reqWith(true, false).toBuilder()
+            .addTrait(new com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms
+                .AdditionalRequestHeadersTrait(java.util.Map.of("x-amz-glacier-version", "2012-06-01")))
+            .build();
+        var model = modelWith(req);
+        String i = render(w -> restJson.writeRequestMethodImpls(
+            w, "UploadArchiveRequest", req, opDoThing(), svcAthena(), model));
+        assertTrue(i.contains(
+            "headers.insert(Aws::Http::HeaderValuePair(\"x-amz-glacier-version\", \"2012-06-01\"));"), i);
+        assertTrue(i.indexOf("x-amz-glacier-version") < i.indexOf("Aws::StringStream ss;"),
+            "constant header precedes the member-driven headers: " + i);
+    }
+
+    @Test
+    void restJson_noAdditionalHeadersTrait_emitsNoConstantHeader() {
+        var req = reqWith(true, false); var model = modelWith(req);
+        String i = render(w -> restJson.writeRequestMethodImpls(
+            w, "DoThingRequest", req, opDoThing(), svcAthena(), model));
+        assertFalse(i.contains("x-amz-glacier-version"), i);
+    }
+
+    @Test
     void restJson_queryMember_isWireSerialized() {
         var req = reqWith(false, true); var model = modelWith(req);
         String d = render(w -> restJson.writeRequestMethodDecls(w, "AWS_EX_API", req, opDoThing(), model));

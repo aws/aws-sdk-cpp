@@ -20,6 +20,7 @@ import software.amazon.smithy.model.traits.SparseTrait;
 import software.amazon.smithy.model.traits.StreamingTrait;
 
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * Renders C++ accessor methods (Get/Set/With/Add) and private member fields
@@ -127,7 +128,7 @@ public final class MemberRenderer {
             } else {
                 // S3 checksum members (stamped by S3Transforms) also select the ChecksumAlgorithm enum
                 // in their setter, matching C2J's ModelClassMembersAndInlines.vm isChecksumMember path.
-                java.util.Optional<ChecksumMemberTrait> checksum = member.getTrait(ChecksumMemberTrait.class);
+                Optional<ChecksumMemberTrait> checksum = member.getTrait(ChecksumMemberTrait.class);
                 writer.write("template <typename $L = $L>", templateParam, cppType);
                 writer.openBlock("void Set$L($L&& value) {", "}", methodName, templateParam, () -> {
                     writer.write("$LHasBeenSet = true;", fieldName);

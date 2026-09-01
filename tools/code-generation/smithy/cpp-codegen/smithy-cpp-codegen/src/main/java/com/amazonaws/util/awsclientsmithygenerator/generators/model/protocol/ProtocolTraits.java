@@ -9,6 +9,7 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.model.CppNames;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.RequestHeaderSerializer;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.RequestQuerySerializer;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.AdditionalRequestHeadersTrait;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.OperationShape;
@@ -205,6 +206,14 @@ public interface ProtocolTraits {
                 writer.write("headers.insert(Aws::Http::HeaderValuePair(\"X-Amz-Target\", \"$L.$L\"));",
                     service.getId().getName(), operation.getId().getName());
             }
+            // Per-service constant request headers (C2J metadata.additionalHeaders, e.g. Glacier's
+            // x-amz-glacier-version). Streaming requests derive from AmazonStreamingWebServiceRequest
+            // and bypass <Prefix>Request::GetHeaders, so these are emitted here — matching
+            // StreamRequestSource.vm, which inserts them after X-Amz-Target and before the
+            // member-driven headers. The trait is stamped only on request shapes that need it.
+            shape.getTrait(AdditionalRequestHeadersTrait.class).ifPresent(trait ->
+                trait.getHeaders().forEach((name, value) ->
+                    writer.write("headers.insert(Aws::Http::HeaderValuePair(\"$L\", \"$L\"));", name, value)));
             // C2J declares the stringstream once, immediately after `headers`, whenever the request
             // has ≥1 header member (even all-enum/timestamp members, which never use it). RPC
             // protocols route HTTP-binding members to the body, so neither the stringstream nor the

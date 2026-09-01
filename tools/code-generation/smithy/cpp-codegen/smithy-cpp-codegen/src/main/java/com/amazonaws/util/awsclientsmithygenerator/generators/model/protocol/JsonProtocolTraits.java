@@ -88,9 +88,10 @@ public final class JsonProtocolTraits implements ProtocolTraits {
             case SUBOBJECT_HEADER:
             case RESULT_HEADER:
                 return List.of();
-            // Request sources additionally serialize @httpQuery members via the shared query
-            // serializer, which needs URI (AddQueryStringParameter) and StringUtils. These are
-            // added only here to avoid widening the other source kinds.
+            // Request sources additionally serialize @httpHeader/@httpQuery members via the shared
+            // serializers, which need URI (AddQueryStringParameter), StringUtils, and <numeric>
+            // (std::accumulate for comma-joined list @httpHeader members). These are added only
+            // here to avoid widening the other source kinds.
             case REQUEST_SOURCE:
                 return List.of(
                     "aws/core/utils/json/JsonSerializer.h",
@@ -99,6 +100,7 @@ public final class JsonProtocolTraits implements ProtocolTraits {
                     "aws/core/utils/HashingUtils.h",
                     "aws/core/utils/StringUtils.h",
                     "aws/core/http/URI.h",
+                    "numeric",
                     "utility");
             // All source kinds share one union (supersets allowed: a .cpp may carry an
             // include it doesn't strictly use). Usings are unchanged; only #includes widen.

@@ -7,6 +7,7 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.EnumRenderer;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
 import software.amazon.smithy.aws.traits.protocols.Ec2QueryNameTrait;
+import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.EnumShape;
 import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.Shape;
@@ -140,6 +141,45 @@ final class TransformSupport {
         return Optional.of(enumShape.asStringShape().get().toBuilder()
             .addTrait(traitBuilder.build())
             .build());
+    }
+
+    /**
+     * Locates an enum shape by its simple (relative) name and appends the given identifier-safe wire
+     * {@code values}, returning the model with the updated shape — or unchanged when the shape is
+     * absent or every value is already present. Wraps the per-service pattern of adding unmodeled
+     * enum values; see {@link #appendValues} for the identifier-safe precondition on {@code values}.
+     *
+     * <p>The lookup matches the first shape whose relative name equals {@code simpleName} and which
+     * is an enum (Smithy 2.0 {@code EnumShape} or a legacy {@code StringShape} with an {@code @enum}
+     * trait). Callers are expected to have already scoped generation to a single service.
+     */
+    static Model appendEnumValuesByName(Model model, String simpleName, List<String> values) {
+        return findEnumByName(model, simpleName)
+            .flatMap(shape -> appendValues(shape, values))
+            .map(updated -> model.toBuilder().addShape(updated).build())
+            .orElse(model);
+    }
+
+    /**
+     * Locates an enum shape by its simple (relative) name and appends the given {@code member-name ->
+     * wire-value} entries (allowing non-identifier-safe wire values, e.g. region strings), returning
+     * the model with the updated shape — or unchanged when the shape is absent or every value is
+     * already present. Wraps the per-service pattern; see {@link #appendEnumValues} for the
+     * member-name precondition and value semantics.
+     */
+    static Model appendEnumEntriesByName(Model model, String simpleName, Map<String, String> nameToValue) {
+        return findEnumByName(model, simpleName)
+            .flatMap(shape -> appendEnumValues(shape, nameToValue))
+            .map(updated -> model.toBuilder().addShape(updated).build())
+            .orElse(model);
+    }
+
+    /** The first enum shape (Smithy 2.0 {@code EnumShape} or legacy {@code @enum}) whose relative name matches. */
+    private static Optional<Shape> findEnumByName(Model model, String simpleName) {
+        return model.shapes()
+            .filter(s -> simpleName.equals(s.getId().getName()))
+            .filter(s -> s.isEnumShape() || s.hasTrait(EnumTrait.class))
+            .findFirst();
     }
 
     /** The current wire values of an enum shape (Smithy 2.0 {@code EnumShape} or legacy {@code @enum}). */
