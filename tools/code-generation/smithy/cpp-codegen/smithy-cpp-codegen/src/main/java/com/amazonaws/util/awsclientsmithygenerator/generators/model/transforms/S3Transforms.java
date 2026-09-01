@@ -194,9 +194,10 @@ public final class S3Transforms {
     }
 
     // C2J's S3RestXmlCppClientGenerator appends a `customizedAccessLogTag` map<string,string> member
-    // to every operation request shape. It renders as an ordinary map member in the .h; the query-
-    // string binding (location=querystring, customizedQuery=true) is a serde concern deferred until
-    // Smithy serde lands, so no @httpQuery/@httpQueryParams trait is attached here.
+    // to every operation request shape, modeled with a distinct `customizedQuery` flag. It binds to
+    // the query string via @httpQueryParams (so every request emits AddQueryStringParameters), and
+    // additionally carries the CustomizedAccessLogTagTrait marker so RequestQuerySerializer skips the
+    // normal map loop for it and instead emits C2J's x--prefix filter block.
     private static Model injectAccessLogTagQuery(Model model, ServiceShape service) {
         ShapeId mapId = ShapeId.fromParts("com.amazonaws.s3", "CustomizedAccessLogTag");
         ShapeId stringId = ShapeId.from("smithy.api#String");
@@ -228,6 +229,9 @@ public final class S3Transforms {
                     // querystring member on every request, which is what makes every request emit
                     // AddQueryStringParameters; the trait drives RequestBindings.hasQueryStringMembers.
                     .addTrait(new HttpQueryParamsTrait())
+                    // Marker for C2J's customizedQuery flag: RequestQuerySerializer skips the normal
+                    // map loop for this member and emits the x--prefix filter block instead.
+                    .addTrait(new CustomizedAccessLogTagTrait())
                     .build())
                 .build());
         }

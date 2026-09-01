@@ -391,12 +391,17 @@ class ProtocolTraitsCharacterizationTest {
 
     @ParameterizedTest
     @EnumSource(value = Protocol.class, names = {"JSON"})
-    void awsJson_request_hasTargetHeaderAndQueryAndSerialize(Protocol p) {
+    void awsJson_request_hasTargetHeaderAndSerialize_noWireBindings(Protocol p) {
         String h = file(p, "DoThingRequest.h");
         assertTrue(h.contains("SerializePayload() const override;"), h);
-        assertTrue(h.contains("GetRequestSpecificHeaders() const override;"), h);   // header member OR target
-        assertTrue(h.contains("AddQueryStringParameters(Aws::Http::URI& uri) const override;"), h);
+        assertTrue(h.contains("GetRequestSpecificHeaders() const override;"), h);   // X-Amz-Target
+        // RPC awsJson routes @httpHeader/@httpQuery members to the body: no AddQueryStringParameters,
+        // and no member header serialization inside GetRequestSpecificHeaders.
+        assertFalse(h.contains("AddQueryStringParameters(Aws::Http::URI& uri) const override;"), h);
         assertFalse(h.contains("DumpBodyToUrl"), h);
+        String c = file(p, "DoThingRequest.cpp");
+        assertTrue(c.contains("X-Amz-Target"), c);
+        assertFalse(c.contains("uri.AddQueryStringParameter"), c);
     }
 
     @ParameterizedTest

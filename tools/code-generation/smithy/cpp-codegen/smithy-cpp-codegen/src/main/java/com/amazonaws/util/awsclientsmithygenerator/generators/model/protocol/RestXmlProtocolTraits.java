@@ -75,9 +75,22 @@ public final class RestXmlProtocolTraits implements ProtocolTraits {
             case SUBOBJECT_HEADER:
             case RESULT_HEADER:
                 return List.of();
-            // All source kinds share one union (supersets allowed). Usings are unchanged.
-            case SUBOBJECT_SOURCE:
+            // Request sources additionally serialize @httpHeader/@httpQuery members, which need
+            // StringUtils (to_string), URI (URLEncodePath for x-amz-copy-source), and <numeric>
+            // (std::accumulate for comma-joined list headers). C2J pulls these per-shape; the
+            // data-driven set carries them for every request source (superset).
             case REQUEST_SOURCE:
+                return List.of(
+                    "aws/core/utils/xml/XmlSerializer.h",
+                    "aws/core/utils/memory/stl/AWSStringStream.h",
+                    "aws/core/utils/UnreferencedParam.h",
+                    "aws/core/utils/HashingUtils.h",
+                    "aws/core/utils/StringUtils.h",
+                    "aws/core/http/URI.h",
+                    "numeric",
+                    "utility");
+            // The remaining source kinds share one union (supersets allowed).
+            case SUBOBJECT_SOURCE:
             case RESULT_SOURCE:
             case STREAMING_RESULT_SOURCE:
             case EVENT_HANDLER_SOURCE:
@@ -99,9 +112,12 @@ public final class RestXmlProtocolTraits implements ProtocolTraits {
         switch (kind) {
             case EVENT_HANDLER_SOURCE:
                 return List.of(serdeNamespace());
+            // Request sources add Aws::Http so URI::URLEncodePath resolves unqualified (C2J emits
+            // `using namespace Aws::Http;` in every XML request source that serializes headers/query).
+            case REQUEST_SOURCE:
+                return List.of("Aws::Utils::Xml", "Aws::Utils", "Aws::Http");
             case RESULT_SOURCE:
             case INITIAL_RESPONSE_SOURCE:
-            case REQUEST_SOURCE:
             case SUBOBJECT_SOURCE:
                 return List.of("Aws::Utils::Xml", "Aws::Utils");
             default:
@@ -168,7 +184,7 @@ public final class RestXmlProtocolTraits implements ProtocolTraits {
         }
         if (RequestBindings.hasQueryStringMembers(shape, model)) {
             writer.write("");
-            writeAddQueryStringParametersImpl(writer, className);
+            writeAddQueryStringParametersImpl(writer, className, shape, model);
         }
         if (shape.hasTrait(EmbeddedErrorsTrait.class)) {
             writer.write("");

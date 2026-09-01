@@ -95,8 +95,19 @@ public final class QueryXmlProtocolTraits implements ProtocolTraits {
             case RESULT_HEADER:
                 // Query/EC2 result headers forward-declare XmlDocument; no serde include.
                 return List.of();
-            case SUBOBJECT_SOURCE:
+            // Request sources additionally serialize @httpQuery members via the shared query
+            // serializer, which needs URI (AddQueryStringParameter), StringUtils, and the
+            // stringstream. URI.h is added only here to avoid widening the other source kinds.
             case REQUEST_SOURCE:
+                return List.of(
+                    "aws/core/utils/xml/XmlSerializer.h",
+                    "aws/core/utils/logging/LogMacros.h",
+                    "aws/core/utils/UnreferencedParam.h",
+                    "aws/core/utils/StringUtils.h",
+                    "aws/core/utils/memory/stl/AWSStringStream.h",
+                    "aws/core/utils/HashingUtils.h",
+                    "aws/core/http/URI.h");
+            case SUBOBJECT_SOURCE:
             case RESULT_SOURCE:
             case STREAMING_RESULT_SOURCE:
             case EVENT_HANDLER_SOURCE:
@@ -230,7 +241,7 @@ public final class QueryXmlProtocolTraits implements ProtocolTraits {
         }
         if (RequestBindings.hasQueryStringMembers(shape, model)) {
             writer.write("");
-            writeAddQueryStringParametersImpl(writer, className);
+            writeAddQueryStringParametersImpl(writer, className, shape, model);
         }
         writer.write("");
         writer.write("void $L::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }",
