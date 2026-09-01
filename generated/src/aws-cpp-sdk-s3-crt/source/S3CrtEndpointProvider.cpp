@@ -53,16 +53,15 @@ S3CrtClientContextParameters::GetDisableS3ExpressSessionAuth() const {
 }
 void S3CrtBuiltInParameters::SetFromClientConfiguration(const S3CrtClientConfiguration& config) {
   SetFromClientConfiguration(static_cast<const S3CrtClientConfiguration::BaseClientConfigClass&>(config));
-
-  SetS3SpecificParameters(config);
+  SetServiceSpecificParameters(config);
 }
 
 void S3CrtBuiltInParameters::SetFromClientConfiguration(const S3CrtClientConfiguration& config, const Aws::String& serviceName) {
   SetFromClientConfiguration(static_cast<const S3CrtClientConfiguration::BaseClientConfigClass&>(config), serviceName);
-  SetS3SpecificParameters(config);
+  SetServiceSpecificParameters(config);
 }
 
-void S3CrtBuiltInParameters::SetS3SpecificParameters(const S3CrtClientConfiguration& config) {
+void S3CrtBuiltInParameters::SetServiceSpecificParameters(const S3CrtClientConfiguration& config) {
   static const char* AWS_S3_USE_GLOBAL_ENDPOINT = "UseGlobalEndpoint";
   if (config.useUSEast1RegionalEndPointOption == US_EAST_1_REGIONAL_ENDPOINT_OPTION::LEGACY) {
     SetBooleanParameter(AWS_S3_USE_GLOBAL_ENDPOINT, true);

@@ -32,6 +32,11 @@ void TimestreamWriteBuiltInParameters::SetFromClientConfiguration(const Timestre
   SetFromClientConfiguration(static_cast<const TimestreamWriteClientConfiguration::BaseClientConfigClass&>(config));
 }
 
+void TimestreamWriteBuiltInParameters::SetFromClientConfiguration(const TimestreamWriteClientConfiguration& config,
+                                                                  const Aws::String& serviceName) {
+  SetFromClientConfiguration(static_cast<const TimestreamWriteClientConfiguration::BaseClientConfigClass&>(config), serviceName);
+}
+
 }  // namespace Endpoint
 }  // namespace TimestreamWrite
 }  // namespace Aws

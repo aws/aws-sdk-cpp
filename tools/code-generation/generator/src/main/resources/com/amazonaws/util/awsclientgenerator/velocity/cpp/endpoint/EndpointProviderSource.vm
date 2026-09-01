@@ -11,6 +11,16 @@
 #else
 #set($epProviderType = "DefaultEndpointProvider")
 #end
+#set($hasServiceSpecificEpParams = false)
+#if($serviceModel.metadata.serviceId == "S3" || $serviceModel.metadata.serviceId == "S3 Control")
+#set($hasServiceSpecificEpParams = true)
+#end
+#if($serviceModel.endpointRuleSetModel.parameters.containsKey("AccountId"))
+#set($hasServiceSpecificEpParams = true)
+#end
+#if($serviceModel.endpointRuleSetModel.parameters.containsKey("AccountIdEndpointMode"))
+#set($hasServiceSpecificEpParams = true)
+#end
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}EndpointProvider.h>
 #if ($serviceModel.endpointRules)
 \#include <aws/${metadata.projectName}/internal/${metadata.classNamePrefix}EndpointRules.h>
@@ -74,10 +84,22 @@ ${metadata.classNamePrefix}EndpointProvider::${metadata.classNamePrefix}Endpoint
   void ${epBuiltInClassName}::SetFromClientConfiguration(const ${metadata.classNamePrefix}ClientConfiguration& config)
   {
     SetFromClientConfiguration(static_cast<const ${metadata.classNamePrefix}ClientConfiguration::BaseClientConfigClass&>(config));
-
-#if($serviceModel.metadata.serviceId == "S3")
-    SetS3SpecificParameters(config);
+#if($hasServiceSpecificEpParams)
+    SetServiceSpecificParameters(config);
 #end
+  }
+
+  void ${epBuiltInClassName}::SetFromClientConfiguration(const ${metadata.classNamePrefix}ClientConfiguration& config, const Aws::String& serviceName)
+  {
+    SetFromClientConfiguration(static_cast<const ${metadata.classNamePrefix}ClientConfiguration::BaseClientConfigClass&>(config), serviceName);
+#if($hasServiceSpecificEpParams)
+    SetServiceSpecificParameters(config);
+#end
+  }
+
+#if($hasServiceSpecificEpParams)
+  void ${epBuiltInClassName}::SetServiceSpecificParameters(const ${metadata.classNamePrefix}ClientConfiguration& config)
+  {
 #if($serviceModel.metadata.serviceId == "S3 Control")
     static const char* AWS_S3_USE_ARN_REGION = "UseArnRegion";
     SetBooleanParameter(AWS_S3_USE_ARN_REGION, config.useArnRegion);
@@ -92,17 +114,7 @@ ${metadata.classNamePrefix}EndpointProvider::${metadata.classNamePrefix}Endpoint
       SetStringParameter("AccountIdEndpointMode", config.accountIdEndpointMode);
     }
 #end
-  }
-
 #if($serviceModel.metadata.serviceId == "S3")
-  void ${epBuiltInClassName}::SetFromClientConfiguration(const ${metadata.classNamePrefix}ClientConfiguration& config, const Aws::String& serviceName)
-  {
-    SetFromClientConfiguration(static_cast<const ${metadata.classNamePrefix}ClientConfiguration::BaseClientConfigClass&>(config), serviceName);
-    SetS3SpecificParameters(config);
-  }
-
-  void ${epBuiltInClassName}::SetS3SpecificParameters(const ${metadata.classNamePrefix}ClientConfiguration& config)
-  {
     static const char* AWS_S3_USE_GLOBAL_ENDPOINT = "UseGlobalEndpoint";
     if (config.useUSEast1RegionalEndPointOption == US_EAST_1_REGIONAL_ENDPOINT_OPTION::LEGACY) {
       SetBooleanParameter(AWS_S3_USE_GLOBAL_ENDPOINT, true);
@@ -127,6 +139,7 @@ ${metadata.classNamePrefix}EndpointProvider::${metadata.classNamePrefix}Endpoint
     if(config.disableS3ExpressAuth) {
       SetBooleanParameter(AWS_S3_DISABLE_EXPRESS_AUTH, true);
     }
+#end
   }
 #end
 #end

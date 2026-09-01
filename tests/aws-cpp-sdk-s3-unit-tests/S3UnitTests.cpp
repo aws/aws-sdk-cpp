@@ -856,3 +856,110 @@ TEST_F(S3UnitTest, PutObjectWithDisableExpectHeaderDoesNotSendExpect) {
   const auto seenRequest = _mockHttpClient->GetMostRecentHttpRequest();
   EXPECT_FALSE(seenRequest.HasHeader("expect"));
 }
+
+namespace {
+const char* ACCESS_POINT_ARN_US_EAST_1 = "arn:aws:s3:us-east-1:123456789012:accesspoint:myendpoint";
+const char* MRAP_BUCKET_ARN = "arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap";
+
+std::shared_ptr<S3Client> MakeS3Client(const S3ClientConfiguration& s3Config) {
+  const AWSCredentials credentials{"mal", "reynolds"};
+  return Aws::MakeShared<S3Client>(ALLOCATION_TAG, credentials, Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG), s3Config);
+}
+
+void QueueEmptyOkResponse(const std::shared_ptr<MockHttpClient>& mockHttpClient) {
+  auto mockRequest = Aws::MakeShared<Standard::StandardHttpRequest>(ALLOCATION_TAG, "serenity.firefly/objects", HttpMethod::HTTP_GET);
+  mockRequest->SetResponseStreamFactory([]() -> IOStream* {
+    return Aws::New<StringStream>(ALLOCATION_TAG, "", std::ios_base::in | std::ios_base::binary);
+  });
+  auto mockResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, mockRequest);
+  mockResponse->SetResponseCode(HttpResponseCode::OK);
+  mockHttpClient->AddResponseToReturn(mockResponse);
+}
+}  // namespace
+
+TEST_F(S3UnitTest, ForcePathStyleResolvesPathStyleEndpoint) {
+  S3ClientConfiguration s3Config;
+  s3Config.region = "us-east-1";
+  s3Config.useVirtualAddressing = false;
+
+  const auto client = MakeS3Client(s3Config);
+  QueueEmptyOkResponse(_mockHttpClient);
+
+  const auto response = client->HeadBucket(HeadBucketRequest().WithBucket("serenity"));
+  AWS_EXPECT_SUCCESS(response);
+  const auto seenRequest = _mockHttpClient->GetMostRecentHttpRequest();
+  EXPECT_EQ("https://s3.us-east-1.amazonaws.com/serenity", seenRequest.GetUri().GetURIString());
+}
+
+TEST_F(S3UnitTest, LegacyUsEast1OptionResolvesGlobalEndpoint) {
+  S3ClientConfiguration s3Config;
+  s3Config.region = "us-east-1";
+  s3Config.useUSEast1RegionalEndPointOption = US_EAST_1_REGIONAL_ENDPOINT_OPTION::LEGACY;
+
+  const auto client = MakeS3Client(s3Config);
+  QueueEmptyOkResponse(_mockHttpClient);
+
+  const auto response = client->HeadBucket(HeadBucketRequest().WithBucket("serenity"));
+  AWS_EXPECT_SUCCESS(response);
+  const auto seenRequest = _mockHttpClient->GetMostRecentHttpRequest();
+  EXPECT_EQ("serenity.s3.amazonaws.com", seenRequest.GetUri().GetAuthority());
+}
+
+TEST_F(S3UnitTest, ShouldFailWhenArnRegionMismatchesAndUseArnRegionIsFalse) {
+  S3ClientConfiguration s3Config;
+  s3Config.region = "us-west-2";
+
+  const auto client = MakeS3Client(s3Config);
+
+  const auto response = client->HeadBucket(HeadBucketRequest().WithBucket(ACCESS_POINT_ARN_US_EAST_1));
+  EXPECT_FALSE(response.IsSuccess());
+  EXPECT_EQ(response.GetError().GetMessage(),
+            "Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`");
+}
+
+TEST_F(S3UnitTest, ShouldUseArnRegionWhenEnabled) {
+  S3ClientConfiguration s3Config;
+  s3Config.region = "us-west-2";
+  s3Config.useArnRegion = true;
+
+  const auto client = MakeS3Client(s3Config);
+  QueueEmptyOkResponse(_mockHttpClient);
+
+  const auto response = client->HeadBucket(HeadBucketRequest().WithBucket(ACCESS_POINT_ARN_US_EAST_1));
+  AWS_EXPECT_SUCCESS(response);
+  const auto seenRequest = _mockHttpClient->GetMostRecentHttpRequest();
+  EXPECT_EQ("myendpoint-123456789012.s3-accesspoint.us-east-1.amazonaws.com", seenRequest.GetUri().GetAuthority());
+}
+
+TEST_F(S3UnitTest, DisabledMultiRegionAccessPointsRejectsMrapArn) {
+  S3ClientConfiguration s3Config;
+  s3Config.region = "us-east-1";
+  s3Config.disableMultiRegionAccessPoints = true;
+
+  const auto client = MakeS3Client(s3Config);
+
+  const auto response = client->HeadBucket(HeadBucketRequest().WithBucket(MRAP_BUCKET_ARN));
+  EXPECT_FALSE(response.IsSuccess());
+  EXPECT_EQ(response.GetError().GetMessage(), "Invalid configuration: Multi-Region Access Point ARNs are disabled.");
+}
+
+TEST_F(S3UnitTest, ServiceSpecificBuiltInParametersReachTheEndpointProvider) {
+  S3ClientConfiguration s3Config;
+  s3Config.region = "us-east-1";
+  s3Config.useVirtualAddressing = false;
+  s3Config.useArnRegion = true;
+  s3Config.disableMultiRegionAccessPoints = true;
+  s3Config.disableS3ExpressAuth = true;
+  s3Config.useUSEast1RegionalEndPointOption = US_EAST_1_REGIONAL_ENDPOINT_OPTION::LEGACY;
+
+  const auto client = MakeS3Client(s3Config);
+  const auto provider = std::static_pointer_cast<S3EndpointProvider>(client->accessEndpointProvider());
+  ASSERT_TRUE(provider != nullptr);
+
+  const auto& builtIns = provider->GetBuiltInParameters();
+  EXPECT_TRUE(builtIns.GetParameter("ForcePathStyle").GetBoolValueNoCheck());
+  EXPECT_TRUE(builtIns.GetParameter("UseArnRegion").GetBoolValueNoCheck());
+  EXPECT_TRUE(builtIns.GetParameter("DisableMultiRegionAccessPoints").GetBoolValueNoCheck());
+  EXPECT_TRUE(builtIns.GetParameter("DisableS3ExpressSessionAuth").GetBoolValueNoCheck());
+  EXPECT_TRUE(builtIns.GetParameter("UseGlobalEndpoint").GetBoolValueNoCheck());
+}

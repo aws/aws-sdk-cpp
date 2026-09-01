@@ -26,6 +26,7 @@ class AWS_TIMESTREAMQUERY_API TimestreamQueryBuiltInParameters : public Aws::End
   virtual ~TimestreamQueryBuiltInParameters() {};
   using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
   virtual void SetFromClientConfiguration(const TimestreamQueryClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const TimestreamQueryClientConfiguration& config, const Aws::String& serviceName);
 };
 
 /**

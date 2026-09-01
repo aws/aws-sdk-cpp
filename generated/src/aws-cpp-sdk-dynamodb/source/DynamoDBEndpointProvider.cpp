@@ -30,7 +30,15 @@ DynamoDBEndpointProvider::DynamoDBEndpointProvider()
 
 void DynamoDBBuiltInParameters::SetFromClientConfiguration(const DynamoDBClientConfiguration& config) {
   SetFromClientConfiguration(static_cast<const DynamoDBClientConfiguration::BaseClientConfigClass&>(config));
+  SetServiceSpecificParameters(config);
+}
 
+void DynamoDBBuiltInParameters::SetFromClientConfiguration(const DynamoDBClientConfiguration& config, const Aws::String& serviceName) {
+  SetFromClientConfiguration(static_cast<const DynamoDBClientConfiguration::BaseClientConfigClass&>(config), serviceName);
+  SetServiceSpecificParameters(config);
+}
+
+void DynamoDBBuiltInParameters::SetServiceSpecificParameters(const DynamoDBClientConfiguration& config) {
   if (!config.accountId.empty()) {
     SetStringParameter("AccountId", config.accountId);
   }
@@ -38,7 +46,6 @@ void DynamoDBBuiltInParameters::SetFromClientConfiguration(const DynamoDBClientC
     SetStringParameter("AccountIdEndpointMode", config.accountIdEndpointMode);
   }
 }
-
 }  // namespace Endpoint
 }  // namespace DynamoDB
 }  // namespace Aws

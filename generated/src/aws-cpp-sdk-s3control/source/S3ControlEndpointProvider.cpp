@@ -35,14 +35,21 @@ const S3ControlClientContextParameters::ClientContextParameters::EndpointParamet
 }
 void S3ControlBuiltInParameters::SetFromClientConfiguration(const S3ControlClientConfiguration& config) {
   SetFromClientConfiguration(static_cast<const S3ControlClientConfiguration::BaseClientConfigClass&>(config));
+  SetServiceSpecificParameters(config);
+}
 
+void S3ControlBuiltInParameters::SetFromClientConfiguration(const S3ControlClientConfiguration& config, const Aws::String& serviceName) {
+  SetFromClientConfiguration(static_cast<const S3ControlClientConfiguration::BaseClientConfigClass&>(config), serviceName);
+  SetServiceSpecificParameters(config);
+}
+
+void S3ControlBuiltInParameters::SetServiceSpecificParameters(const S3ControlClientConfiguration& config) {
   static const char* AWS_S3_USE_ARN_REGION = "UseArnRegion";
   SetBooleanParameter(AWS_S3_USE_ARN_REGION, config.useArnRegion);
   if (!config.accountId.empty()) {
     SetStringParameter("AccountId", config.accountId);
   }
 }
-
 }  // namespace Endpoint
 }  // namespace S3Control
 }  // namespace Aws

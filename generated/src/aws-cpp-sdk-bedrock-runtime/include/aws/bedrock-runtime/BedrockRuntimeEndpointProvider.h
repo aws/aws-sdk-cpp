@@ -26,6 +26,7 @@ class AWS_BEDROCKRUNTIME_API BedrockRuntimeBuiltInParameters : public Aws::Endpo
   virtual ~BedrockRuntimeBuiltInParameters() {};
   using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
   virtual void SetFromClientConfiguration(const BedrockRuntimeClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const BedrockRuntimeClientConfiguration& config, const Aws::String& serviceName);
 };
 
 /**

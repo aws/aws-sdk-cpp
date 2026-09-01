@@ -26,6 +26,7 @@ class AWS_BEDROCK_API BedrockBuiltInParameters : public Aws::Endpoint::BuiltInPa
   virtual ~BedrockBuiltInParameters() {};
   using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
   virtual void SetFromClientConfiguration(const BedrockClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const BedrockClientConfiguration& config, const Aws::String& serviceName);
 };
 
 /**

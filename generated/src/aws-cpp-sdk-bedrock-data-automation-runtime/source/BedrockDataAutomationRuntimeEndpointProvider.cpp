@@ -36,6 +36,12 @@ void BedrockDataAutomationRuntimeBuiltInParameters::SetFromClientConfiguration(
   SetFromClientConfiguration(static_cast<const BedrockDataAutomationRuntimeClientConfiguration::BaseClientConfigClass&>(config));
 }
 
+void BedrockDataAutomationRuntimeBuiltInParameters::SetFromClientConfiguration(
+    const BedrockDataAutomationRuntimeClientConfiguration& config, const Aws::String& serviceName) {
+  SetFromClientConfiguration(static_cast<const BedrockDataAutomationRuntimeClientConfiguration::BaseClientConfigClass&>(config),
+                             serviceName);
+}
+
 }  // namespace Endpoint
 }  // namespace BedrockDataAutomationRuntime
 }  // namespace Aws

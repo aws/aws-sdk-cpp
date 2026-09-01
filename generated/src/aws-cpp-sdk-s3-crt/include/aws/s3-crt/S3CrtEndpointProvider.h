@@ -63,7 +63,7 @@ class AWS_S3CRT_API S3CrtBuiltInParameters : public Aws::Endpoint::BuiltInParame
   virtual void SetFromClientConfiguration(const S3CrtClientConfiguration& config, const Aws::String& serviceName);
 
  private:
-  void SetS3SpecificParameters(const S3CrtClientConfiguration& config);
+  void SetServiceSpecificParameters(const S3CrtClientConfiguration& config);
 };
 
 /**

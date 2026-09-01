@@ -26,6 +26,10 @@ class AWS_KINESIS_API KinesisBuiltInParameters : public Aws::Endpoint::BuiltInPa
   virtual ~KinesisBuiltInParameters() {};
   using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
   virtual void SetFromClientConfiguration(const KinesisClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const KinesisClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const KinesisClientConfiguration& config);
 };
 
 /**

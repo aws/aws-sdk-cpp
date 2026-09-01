@@ -26,6 +26,10 @@ class AWS_DYNAMODB_API DynamoDBBuiltInParameters : public Aws::Endpoint::BuiltIn
   virtual ~DynamoDBBuiltInParameters() {};
   using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
   virtual void SetFromClientConfiguration(const DynamoDBClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const DynamoDBClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const DynamoDBClientConfiguration& config);
 };
 
 /**
