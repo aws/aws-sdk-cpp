@@ -438,6 +438,23 @@ class S3TransformsTest {
     }
 
     @Test
+    void stampsCustomizedAccessLogTagMarkerAndKeepsQueryParams() {
+        Model m = accessLogModel();
+        Model out = S3Transforms.asTransform().apply(m, s3ServiceOf(m));
+
+        StructureShape input = out.expectShape(ShapeId.from(NS + "#PutObjectRequest"), StructureShape.class);
+        MemberShape tag = input.getMember("customizedAccessLogTag").orElseThrow();
+
+        // C2J models this member with a distinct customizedQuery flag; mirror that with the marker.
+        assertTrue(tag.hasTrait(CustomizedAccessLogTagTrait.class),
+            "injected member must carry the CustomizedAccessLogTag marker");
+        // The marker is additive: @httpQueryParams must remain so the request still emits
+        // AddQueryStringParameters (RequestBindings.hasQueryStringMembers).
+        assertTrue(tag.hasTrait(software.amazon.smithy.model.traits.HttpQueryParamsTrait.class),
+            "customizedAccessLogTag must still carry @httpQueryParams alongside the marker");
+    }
+
+    @Test
     void doesNotInjectCustomizedAccessLogTagIntoOutput() {
         Model m = accessLogModel();
         Model out = S3Transforms.asTransform().apply(m, s3ServiceOf(m));

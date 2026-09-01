@@ -7,6 +7,8 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol;
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.CppNames;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.RequestHeaderSerializer;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.RequestQuerySerializer;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.OperationShape;
@@ -148,6 +150,23 @@ public interface ProtocolTraits {
     }
 
     /**
+     * Whether this protocol honors HTTP binding traits ({@code @httpHeader} /
+     * {@code @httpPrefixHeaders} / {@code @httpQuery} / {@code @httpQueryParams}) by serializing
+     * those members onto the wire (request headers / query string).
+     *
+     * <p>REST protocols (rest-json, rest-xml, query/ec2) return {@code true}. RPC protocols
+     * (awsJson1_0/1_1, rpcv2Cbor) route these members into the request <em>body</em> instead, so
+     * they return {@code false}: their {@code GetRequestSpecificHeaders} still emits the fixed
+     * protocol headers ({@code X-Amz-Target} for awsJson; {@code Content-Type}/{@code smithy-protocol}/
+     * {@code Accept} for CBOR), but no member header/query serialization is emitted, and no
+     * {@code AddQueryStringParameters} method is generated. Matches the legacy C2J per-protocol
+     * behavior (byte-parity reference).
+     */
+    default boolean serializesHttpBindingMembers() {
+        return true;
+    }
+
+    /**
      * Whether {@code integer} members widen to {@code int64_t} (rather than {@code int}) in this
      * protocol's sub-object and result headers. C2J does this only for CBOR
      * ({@code CORAL_TYPE_TO_CBOR_CPP_TYPE_MAPPING}: {@code integer -> int64_t}, applied where the
@@ -186,15 +205,28 @@ public interface ProtocolTraits {
                 writer.write("headers.insert(Aws::Http::HeaderValuePair(\"X-Amz-Target\", \"$L.$L\"));",
                     service.getId().getName(), operation.getId().getName());
             }
+            // C2J declares the stringstream once, immediately after `headers`, whenever the request
+            // has ≥1 header member (even all-enum/timestamp members, which never use it). RPC
+            // protocols route HTTP-binding members to the body, so neither the stringstream nor the
+            // member serialization is emitted for them.
+            if (serializesHttpBindingMembers() && RequestBindings.hasHeaderMembers(shape, model)) {
+                writer.write("Aws::StringStream ss;");
+            }
+            if (serializesHttpBindingMembers()) {
+                RequestHeaderSerializer.render(writer, shape, model);
+            }
             writer.write("return headers;");
         });
     }
 
-    default void writeAddQueryStringParametersImpl(CppWriter writer, String className) {
+    default void writeAddQueryStringParametersImpl(CppWriter writer, String className,
+                                                   StructureShape shape, Model model) {
         writer.openBlock("void $L::AddQueryStringParameters(Aws::Http::URI& uri) const {", "}",
             className, () -> {
-            writer.write("AWS_UNREFERENCED_PARAM(uri);");
-            writer.write("// TODO: serialize httpQuery/httpQueryParams members");
+            // C2J declares the stringstream unconditionally in AddQueryStringParameters; every query
+            // case routes its value through it.
+            writer.write("Aws::StringStream ss;");
+            RequestQuerySerializer.render(writer, shape, model);
         });
     }
 
