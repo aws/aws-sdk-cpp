@@ -7,6 +7,7 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
 import org.junit.jupiter.api.Test;
 import software.amazon.smithy.aws.traits.protocols.Ec2QueryNameTrait;
+import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.EnumShape;
 import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.Shape;
@@ -176,6 +177,45 @@ class TransformSupportTest {
             .addMember("us_west_2", "us-west-2").build();
         assertThrows(IllegalArgumentException.class,
             () -> TransformSupport.appendEnumValues(shape, map("us-east-1", "us-east-1")));
+    }
+
+    @Test
+    void appendEnumValuesByName_appendsToNamedEnum() {
+        EnumShape state = EnumShape.builder().id("com.example#SpotInstanceState")
+            .addMember("open", "open").build();
+        Model out = TransformSupport.appendEnumValuesByName(
+            Model.builder().addShape(state).build(), "SpotInstanceState", List.of("disabled"));
+        EnumShape e = out.expectShape(state.getId()).asEnumShape().orElseThrow();
+        assertTrue(e.getEnumValues().values().contains("disabled"), "value appended");
+        assertTrue(e.getEnumValues().values().contains("open"), "existing value preserved");
+    }
+
+    @Test
+    void appendEnumValuesByName_shapeAbsent_returnsSameModel() {
+        EnumShape other = EnumShape.builder().id("com.example#Other").addMember("a", "a").build();
+        Model in = Model.builder().addShape(other).build();
+        assertSame(in, TransformSupport.appendEnumValuesByName(in, "Missing", List.of("x")),
+            "absent enum: the model is returned unchanged");
+    }
+
+    @Test
+    void appendEnumValuesByName_allValuesPresent_returnsSameModel() {
+        EnumShape state = EnumShape.builder().id("com.example#S").addMember("a", "a").build();
+        Model in = Model.builder().addShape(state).build();
+        assertSame(in, TransformSupport.appendEnumValuesByName(in, "S", List.of("a")),
+            "idempotent: no new values means the model is returned unchanged");
+    }
+
+    @Test
+    void appendEnumEntriesByName_appendsHyphenatedRegionValue() {
+        EnumShape region = EnumShape.builder().id("com.example#BucketLocationConstraint")
+            .addMember("us_west_2", "us-west-2").build();
+        Model out = TransformSupport.appendEnumEntriesByName(
+            Model.builder().addShape(region).build(), "BucketLocationConstraint",
+            map("us_east_1", "us-east-1"));
+        EnumShape e = out.expectShape(region.getId()).asEnumShape().orElseThrow();
+        assertTrue(e.getEnumValues().values().contains("us-east-1"), "hyphenated value appended");
+        assertTrue(e.getAllMembers().containsKey("us_east_1"), "identifier-safe member name");
     }
 
     @Test

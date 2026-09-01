@@ -95,9 +95,10 @@ public final class QueryXmlProtocolTraits implements ProtocolTraits {
             case RESULT_HEADER:
                 // Query/EC2 result headers forward-declare XmlDocument; no serde include.
                 return List.of();
-            // Request sources additionally serialize @httpQuery members via the shared query
-            // serializer, which needs URI (AddQueryStringParameter), StringUtils, and the
-            // stringstream. URI.h is added only here to avoid widening the other source kinds.
+            // Request sources additionally serialize @httpHeader/@httpQuery members via the shared
+            // serializers, which need URI (AddQueryStringParameter), StringUtils, the stringstream,
+            // and <numeric> (std::accumulate for comma-joined list @httpHeader members). URI.h is
+            // added only here to avoid widening the other source kinds.
             case REQUEST_SOURCE:
                 return List.of(
                     "aws/core/utils/xml/XmlSerializer.h",
@@ -106,7 +107,8 @@ public final class QueryXmlProtocolTraits implements ProtocolTraits {
                     "aws/core/utils/StringUtils.h",
                     "aws/core/utils/memory/stl/AWSStringStream.h",
                     "aws/core/utils/HashingUtils.h",
-                    "aws/core/http/URI.h");
+                    "aws/core/http/URI.h",
+                    "numeric");
             case SUBOBJECT_SOURCE:
             case RESULT_SOURCE:
             case STREAMING_RESULT_SOURCE:

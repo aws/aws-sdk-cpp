@@ -8,11 +8,8 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.ServiceNameUtil;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ModelTransform;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.ServiceShape;
-import software.amazon.smithy.model.shapes.Shape;
-import software.amazon.smithy.model.traits.EnumTrait;
 
 import java.util.List;
-import java.util.Optional;
 
 /**
  * Adds the unmodeled {@code QueueAttributeName} enum values that the legacy C2J
@@ -35,15 +32,6 @@ public final class SqsTransforms {
         if (!"sqs".equals(ServiceNameUtil.getSmithyServiceName(service, null))) {
             return model;
         }
-        Optional<Shape> target = model.shapes()
-            .filter(s -> ENUM_NAME.equals(s.getId().getName()))
-            .filter(s -> s.isEnumShape() || s.hasTrait(EnumTrait.class))
-            .findFirst();
-        if (target.isEmpty()) {
-            return model;
-        }
-        return TransformSupport.appendValues(target.get(), ADDED_VALUES)
-            .map(updated -> model.toBuilder().addShape(updated).build())
-            .orElse(model);
+        return TransformSupport.appendEnumValuesByName(model, ENUM_NAME, ADDED_VALUES);
     }
 }

@@ -10,10 +10,8 @@ import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.BlobShape;
 import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.ServiceShape;
-import software.amazon.smithy.model.shapes.Shape;
 import software.amazon.smithy.model.shapes.ShapeId;
 import software.amazon.smithy.model.shapes.StructureShape;
-import software.amazon.smithy.model.traits.EnumTrait;
 import software.amazon.smithy.model.traits.SensitiveTrait;
 import software.amazon.smithy.model.transform.ModelTransformer;
 
@@ -146,15 +144,6 @@ public final class Ec2Transforms {
     }
 
     private static Model addSpotInstanceStateDisabled(Model model) {
-        Optional<Shape> enumShape = model.shapes()
-            .filter(s -> "SpotInstanceState".equals(s.getId().getName()))
-            .filter(s -> s.isEnumShape() || s.hasTrait(EnumTrait.class))
-            .findFirst();
-        if (enumShape.isEmpty()) {
-            return model;
-        }
-        return TransformSupport.appendValues(enumShape.get(), List.of("disabled"))
-            .map(updated -> model.toBuilder().addShape(updated).build())
-            .orElse(model);
+        return TransformSupport.appendEnumValuesByName(model, "SpotInstanceState", List.of("disabled"));
     }
 }

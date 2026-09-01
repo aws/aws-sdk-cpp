@@ -23,7 +23,6 @@ import software.amazon.smithy.model.shapes.StringShape;
 import software.amazon.smithy.model.shapes.StructureShape;
 import software.amazon.smithy.model.shapes.TimestampShape;
 import software.amazon.smithy.model.traits.DocumentationTrait;
-import software.amazon.smithy.model.traits.EnumTrait;
 import software.amazon.smithy.model.traits.HttpHeaderTrait;
 import software.amazon.smithy.model.traits.HttpQueryParamsTrait;
 import software.amazon.smithy.model.traits.UnitTypeTrait;
@@ -115,16 +114,17 @@ public final class S3Transforms {
                 CHECKSUM_MEMBERS_ENUMS.containsKey(m.getTarget().getName())
                     && !m.hasTrait(ChecksumMemberTrait.class));
             if (needsStamp) {
-                StructureShape.Builder b = StructureShape.builder().id(req.getId());
-                req.getAllTraits().values().forEach(b::addTrait);
+                // Re-add only the checksum members with the marker; addMember replaces in place, so
+                // the other members (and the shape's traits/source) carry over untouched via toBuilder.
+                StructureShape.Builder b = req.toBuilder();
                 for (MemberShape m : req.getAllMembers().values()) {
                     String enumValue = CHECKSUM_MEMBERS_ENUMS.get(m.getTarget().getName());
-                    b.addMember(m.getMemberName(), m.getTarget(), mb -> {
-                        m.getAllTraits().values().forEach(mb::addTrait);
-                        if (enumValue != null && !m.hasTrait(ChecksumMemberTrait.class)) {
+                    if (enumValue != null && !m.hasTrait(ChecksumMemberTrait.class)) {
+                        b.addMember(m.getMemberName(), m.getTarget(), mb -> {
+                            m.getAllTraits().values().forEach(mb::addTrait);
                             mb.addTrait(new ChecksumMemberTrait(enumValue));
-                        }
-                    });
+                        });
+                    }
                 }
                 replacements.add(b.build());
             }
@@ -275,16 +275,8 @@ public final class S3Transforms {
     private static final List<String> MISSING_REGIONS = List.of("us-iso-west-1", "us-east-1");
 
     private static Model expandBucketLocationConstraint(Model model) {
-        Optional<Shape> enumShape = model.shapes()
-            .filter(s -> "BucketLocationConstraint".equals(s.getId().getName()))
-            .filter(s -> s.isEnumShape() || s.hasTrait(EnumTrait.class))
-            .findFirst();
-        if (enumShape.isEmpty()) {
-            return model;
-        }
-        return TransformSupport.appendEnumValues(enumShape.get(), regionNameValueMap())
-            .map(updated -> model.toBuilder().addShape(updated).build())
-            .orElse(model);
+        return TransformSupport.appendEnumEntriesByName(
+            model, "BucketLocationConstraint", regionNameValueMap());
     }
 
     private static Map<String, String> regionNameValueMap() {
@@ -313,14 +305,11 @@ public final class S3Transforms {
         ShapeId id2ShapeId = ShapeId.fromParts(ns, "ObjectId2");
         StringShape id2Shape = StringShape.builder().id(id2ShapeId).build();
 
-        StructureShape.Builder b = StructureShape.builder().id(output.getId());
-        output.getAllTraits().values().forEach(b::addTrait);
-        output.getAllMembers().values().forEach(m ->
-            b.addMember(m.getMemberName(), m.getTarget(),
-                mb -> m.getAllTraits().values().forEach(mb::addTrait)));
-        b.addMember("Id2", id2ShapeId, mb -> mb.addTrait(new HttpHeaderTrait("x-amz-id-2")));
+        StructureShape withId2 = output.toBuilder()
+            .addMember("Id2", id2ShapeId, mb -> mb.addTrait(new HttpHeaderTrait("x-amz-id-2")))
+            .build();
 
-        return model.toBuilder().addShapes(id2Shape, b.build()).build();
+        return model.toBuilder().addShapes(id2Shape, withId2).build();
     }
 
     // C2J renames both the CopyObjectResult domain shape (to CopyObjectResultDetails) and the
@@ -380,23 +369,16 @@ public final class S3Transforms {
             // Only customize structs that lack ExpiresString (idempotent).
             if (struct.getMember("ExpiresString").isEmpty()) {
                 MemberShape expires = struct.getAllMembers().get("Expires");
-                StructureShape.Builder b = StructureShape.builder().id(struct.getId());
-                struct.getAllTraits().values().forEach(b::addTrait);
-                for (MemberShape m : struct.getAllMembers().values()) {
-                    if (m.getMemberName().equals("Expires")) {
-                        // Rewrite Expires' documentation to prepend the deprecation note.
-                        String existingDoc = m.getTrait(DocumentationTrait.class)
-                            .map(DocumentationTrait::getValue).orElse("");
-                        b.addMember("Expires", m.getTarget(), mb -> {
-                            m.getAllTraits().values().forEach(mb::addTrait);
-                            if (!existingDoc.toLowerCase().contains("deprecated")) {
-                                mb.addTrait(new DocumentationTrait(EXPIRES_DEPRECATION + existingDoc));
-                            }
-                        });
-                    } else {
-                        b.addMember(m.getMemberName(), m.getTarget(),
-                            mb -> m.getAllTraits().values().forEach(mb::addTrait));
-                    }
+                StructureShape.Builder b = struct.toBuilder();
+                // Prepend the deprecation note to Expires' documentation (idempotent); addMember
+                // replaces the member in place, and adding a DocumentationTrait supersedes the old one.
+                String existingDoc = expires.getTrait(DocumentationTrait.class)
+                    .map(DocumentationTrait::getValue).orElse("");
+                if (!existingDoc.toLowerCase().contains("deprecated")) {
+                    b.addMember("Expires", expires.getTarget(), mb -> {
+                        expires.getAllTraits().values().forEach(mb::addTrait);
+                        mb.addTrait(new DocumentationTrait(EXPIRES_DEPRECATION + existingDoc));
+                    });
                 }
                 // Add ExpiresString cloning Expires' traits (so it reads the same header), retargeted.
                 b.addMember("ExpiresString", expiresStringId,

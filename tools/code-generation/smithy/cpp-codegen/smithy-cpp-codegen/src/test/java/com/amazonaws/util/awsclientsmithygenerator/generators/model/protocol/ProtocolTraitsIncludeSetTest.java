@@ -48,6 +48,22 @@ class ProtocolTraitsIncludeSetTest {
     }
 
     @Test
+    void requestSource_everyProtocolIncludesNumericForListHeaderAccumulate() {
+        // RequestHeaderSerializer emits std::accumulate for list-typed @httpHeader members and is
+        // protocol-agnostic, so every protocol's REQUEST_SOURCE must declare <numeric>. Guards the
+        // JSON/QueryXml regression where only RestXml carried it (relying on transitive includes).
+        for (ProtocolTraits t : List.of(
+                new JsonProtocolTraits(Protocol.JSON),
+                new JsonProtocolTraits(Protocol.REST_JSON),
+                new QueryXmlProtocolTraits(Protocol.QUERY_XML),
+                new QueryXmlProtocolTraits(Protocol.EC2),
+                new RestXmlProtocolTraits())) {
+            List<String> inc = t.serdeIncludes(FileKind.REQUEST_SOURCE);
+            assertTrue(inc.contains("numeric"), t.protocol() + " REQUEST_SOURCE: " + inc);
+        }
+    }
+
+    @Test
     void restXml_requestSource_hasUtilityAndXmlSerializer() {
         ProtocolTraits x = new RestXmlProtocolTraits();
         List<String> inc = x.serdeIncludes(FileKind.REQUEST_SOURCE);
