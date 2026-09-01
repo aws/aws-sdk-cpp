@@ -140,7 +140,7 @@ public final class GlobalTransforms {
     public static Set<ShapeId> computeReachableShapes(Model model, ServiceShape service) {
         Walker walker = new Walker(model);
         Set<ShapeId> reachable = new HashSet<>();
-        for (OperationShape op : TopDownIndex.of(model).getContainedOperations(service)) {
+        for (OperationShape op : nonDeprecatedOperations(model, service)) {
             addReachableFrom(op.getInputShape(), walker, model, reachable);
             op.getOutput().ifPresent(id -> addReachableFrom(id, walker, model, reachable));
             op.getErrors().forEach(id -> addReachableFrom(id, walker, model, reachable));
@@ -151,6 +151,25 @@ public final class GlobalTransforms {
     private static void addReachableFrom(ShapeId root, Walker walker, Model model, Set<ShapeId> out) {
         out.add(root);
         model.getShape(root).ifPresent(shape -> out.addAll(walker.walkShapeIds(shape)));
+    }
+
+    /**
+     * Returns the service's operations excluding any marked {@code @deprecated}. Legacy C2J drops
+     * deprecated operations entirely (they never appear in the generated client), so their input and
+     * output structures — orphaned once the operation is gone — are not emitted either. This is the
+     * single filter used by every emission-driving iteration over the service's operations
+     * ({@link #computeReachableShapes} and {@link com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassifier#classify})
+     * so reachability and classification stay in agreement. A structure still referenced by a live
+     * operation remains reachable through that operation, so shared structures are unaffected.
+     *
+     * @param model   the Smithy model
+     * @param service the service whose operations are being generated
+     * @return the service's non-deprecated operations
+     */
+    public static List<OperationShape> nonDeprecatedOperations(Model model, ServiceShape service) {
+        return TopDownIndex.of(model).getContainedOperations(service).stream()
+            .filter(op -> !op.hasTrait(DeprecatedTrait.class))
+            .collect(Collectors.toList());
     }
 
     /**

@@ -447,6 +447,67 @@ class GlobalTransformsTest {
         assertTrue(reachable.contains(ShapeId.from("com.example#MyError")));
     }
 
+    @Test
+    void computeReachableShapes_excludesStructReachableOnlyViaDeprecatedOperation() {
+        // A @deprecated operation is dropped entirely (matching legacy C2J, which omits deprecated
+        // operations). A struct reachable ONLY through the deprecated op's input must fall out of the
+        // reachable set, while a struct shared with a live op stays reachable via that live op.
+        StructureShape deprecatedOnly = StructureShape.builder()
+            .id("com.example#DeprecatedOnly")
+            .addMember(MemberShape.builder()
+                .id("com.example#DeprecatedOnly$x").target("smithy.api#String").build())
+            .build();
+        StructureShape shared = StructureShape.builder()
+            .id("com.example#SharedDetail")
+            .addMember(MemberShape.builder()
+                .id("com.example#SharedDetail$y").target("smithy.api#String").build())
+            .build();
+        StructureShape deprecatedInput = StructureShape.builder()
+            .id("com.example#DeprecatedInput")
+            .addMember(MemberShape.builder()
+                .id("com.example#DeprecatedInput$only").target(deprecatedOnly.getId()).build())
+            .addMember(MemberShape.builder()
+                .id("com.example#DeprecatedInput$shared").target(shared.getId()).build())
+            .build();
+        StructureShape deprecatedOutput = StructureShape.builder()
+            .id("com.example#DeprecatedOutput").build();
+        StructureShape liveInput = StructureShape.builder()
+            .id("com.example#LiveInput")
+            .addMember(MemberShape.builder()
+                .id("com.example#LiveInput$shared").target(shared.getId()).build())
+            .build();
+        StructureShape liveOutput = StructureShape.builder()
+            .id("com.example#LiveOutput").build();
+        OperationShape deprecatedOp = OperationShape.builder()
+            .id("com.example#DeprecatedOp")
+            .input(deprecatedInput.getId()).output(deprecatedOutput.getId())
+            .addTrait(software.amazon.smithy.model.traits.DeprecatedTrait.builder().build())
+            .build();
+        OperationShape liveOp = OperationShape.builder()
+            .id("com.example#LiveOp")
+            .input(liveInput.getId()).output(liveOutput.getId())
+            .build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#MyService").version("2024-01-01")
+            .addOperation(deprecatedOp.getId()).addOperation(liveOp.getId())
+            .build();
+        Model model = Model.assembler()
+            .addShapes(deprecatedOnly, shared, deprecatedInput, deprecatedOutput,
+                liveInput, liveOutput, deprecatedOp, liveOp, service)
+            .assemble().unwrap();
+
+        Set<ShapeId> reachable = GlobalTransforms.computeReachableShapes(model, service);
+
+        assertFalse(reachable.contains(ShapeId.from("com.example#DeprecatedOnly")),
+            "struct reachable only via a @deprecated operation must be excluded");
+        assertFalse(reachable.contains(ShapeId.from("com.example#DeprecatedInput")),
+            "the input of a @deprecated operation must be excluded");
+        assertTrue(reachable.contains(ShapeId.from("com.example#SharedDetail")),
+            "struct shared with a live operation must remain reachable");
+        assertTrue(reachable.contains(ShapeId.from("com.example#LiveInput")),
+            "the input of a live operation must remain reachable");
+    }
+
     // --- dropDeprecatedMembers tests ---
 
     @Test

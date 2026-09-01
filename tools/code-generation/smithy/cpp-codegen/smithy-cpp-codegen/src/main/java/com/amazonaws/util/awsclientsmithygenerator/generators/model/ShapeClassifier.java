@@ -8,7 +8,6 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolReso
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.CustomRenderedTrait;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.GlobalTransforms;
 import software.amazon.smithy.model.Model;
-import software.amazon.smithy.model.knowledge.TopDownIndex;
 import software.amazon.smithy.model.shapes.EnumShape;
 import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.OperationShape;
@@ -105,7 +104,6 @@ public final class ShapeClassifier {
      * @return classified shapes grouped by generation bucket
      */
     public static ClassifiedShapes classify(Model model, ServiceShape service, Protocol protocol) {
-        TopDownIndex index = TopDownIndex.of(model);
         Set<ShapeId> reachable = GlobalTransforms.computeReachableShapes(model, service);
 
         Set<ShapeId> inputShapeIds = new HashSet<>();
@@ -122,8 +120,9 @@ public final class ShapeClassifier {
         List<Shape> outgoingEventStreams = new ArrayList<>();
         List<Shape> blobPayloadEvents = new ArrayList<>();
 
-        // Collect operation inputs/outputs and identify event stream handlers
-        for (OperationShape op : index.getContainedOperations(service)) {
+        // Collect operation inputs/outputs and identify event stream handlers. Deprecated operations
+        // are excluded (matching legacy C2J), so their orphaned request/result structs never emit.
+        for (OperationShape op : GlobalTransforms.nonDeprecatedOperations(model, service)) {
             // Use getInputShape() (not getInput()) so no-input operations, whose input
             // target is smithy.api#Unit, still produce a RequestInfo. C2J emits a Request
             // class for every operation; the generated client method references it.
