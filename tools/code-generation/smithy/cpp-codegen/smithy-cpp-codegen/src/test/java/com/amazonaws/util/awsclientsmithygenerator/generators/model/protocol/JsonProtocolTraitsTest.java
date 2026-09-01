@@ -240,6 +240,31 @@ class JsonProtocolTraitsTest {
     }
 
     @Test
+    void supportsPresigning_emitsDumpBodyToUrlStubImpl() {
+        // A presignable request (Polly SynthesizeSpeech) carries SupportsPresigningTrait; the decl is
+        // emitted by RequestRenderer, and JsonProtocolTraits supplies a stub impl that defers serde.
+        var req = reqWith(false, false).toBuilder()
+            .addTrait(new com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms
+                .SupportsPresigningTrait())
+            .build();
+        var model = modelWith(req);
+        String i = render(w -> restJson.writeRequestMethodImpls(
+            w, "SynthesizeSpeechRequest", req, opDoThing(), svcAthena(), model));
+        assertTrue(i.contains(
+            "void SynthesizeSpeechRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { AWS_UNREFERENCED_PARAM(uri); }"),
+            i);
+    }
+
+    @Test
+    void withoutSupportsPresigning_omitsDumpBodyToUrlImpl() {
+        var req = reqWith(false, false); var model = modelWith(req);
+        String i = render(w -> restJson.writeRequestMethodImpls(
+            w, "DoThingRequest", req, opDoThing(), svcAthena(), model));
+        assertFalse(i.contains("DumpBodyToUrl"),
+            "non-presignable request must not emit a DumpBodyToUrl impl: " + i);
+    }
+
+    @Test
     void payloadStubs_areProtocolAgnostic() {
         String event = render(w -> json.writeEventPayloadDecode(w, "ShardEvent", "m_onShardEvent"));
         assertTrue(event.contains("// TODO: protocol-specific event payload deserialization"), event);

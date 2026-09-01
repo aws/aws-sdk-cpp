@@ -15,6 +15,7 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassif
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassifier.RequestInfo;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeRenderer;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.OverrideStreamingTrait;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.SupportsPresigningTrait;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.endpointcontext.Emit;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.endpointcontext.SmithyEndpointsJmesPathVisitor;
 import software.amazon.smithy.jmespath.JmespathExpression;
@@ -150,6 +151,20 @@ public final class RequestRenderer implements ShapeRenderer {
                     writer.write("$L std::shared_ptr<Aws::IOStream> GetBody() const override;", ctx.exportMacro());
                 }
                 ctx.protocolTraits().writeRequestMethodDecls(writer, ctx.exportMacro(), shape, operation, ctx.model());
+                // DumpBodyToUrl is emitted protocol-agnostically (C2J RequestHeader.vm gates it only on
+                // $shape.supportsPresigning). It is a protected virtual in AmazonWebServiceRequest, so the
+                // override is bracketed under protected: and the section restored to public: afterwards.
+                if (shape.hasTrait(SupportsPresigningTrait.class)) {
+                    writer.write("");
+                    writer.dedent();
+                    writer.write("protected:");
+                    writer.indent();
+                    writer.write("$L void DumpBodyToUrl(Aws::Http::URI& uri) const override;", ctx.exportMacro());
+                    writer.dedent();
+                    writer.write("");
+                    writer.write("public:");
+                    writer.indent();
+                }
                 // Request-feature methods driven by operation traits, in C2J RequestHeader.vm order:
                 // @httpChecksum, @httpChecksumRequired (legacy Content-MD5), then @requestCompression.
                 renderChecksumDecls(writer, shape, operation);

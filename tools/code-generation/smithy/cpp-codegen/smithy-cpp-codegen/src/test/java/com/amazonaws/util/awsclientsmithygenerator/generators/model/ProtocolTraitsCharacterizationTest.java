@@ -74,7 +74,7 @@ class ProtocolTraitsCharacterizationTest {
             .build();
         // Input carries a plain member, an httpHeader member, and an httpQuery member so
         // both request Axis-1 predicates (header + query) fire.
-        StructureShape input = StructureShape.builder()
+        StructureShape.Builder inputBuilder = StructureShape.builder()
             .id("com.example#DoThingInput")
             .addMember("name", str.getId())
             .addMember("nested", nested.getId())
@@ -83,8 +83,14 @@ class ProtocolTraitsCharacterizationTest {
                 .addTrait(new software.amazon.smithy.model.traits.HttpHeaderTrait("X-Thing")).build())
             .addMember(software.amazon.smithy.model.shapes.MemberShape.builder()
                 .id("com.example#DoThingInput$q").target(str.getId())
-                .addTrait(new software.amazon.smithy.model.traits.HttpQueryTrait("q")).build())
-            .build();
+                .addTrait(new software.amazon.smithy.model.traits.HttpQueryTrait("q")).build());
+        // SupportsPresigningTransform stamps every query/ec2 request; mirror it in the fixture so this
+        // end-to-end characterization pins the same post-transform output (protected DumpBodyToUrl decl).
+        if (p == Protocol.QUERY_XML || p == Protocol.EC2) {
+            inputBuilder.addTrait(new com.amazonaws.util.awsclientsmithygenerator.generators.model
+                .transforms.SupportsPresigningTrait());
+        }
+        StructureShape input = inputBuilder.build();
         // Output carries a plain member and an httpResponseCode member.
         StructureShape output = StructureShape.builder()
             .id("com.example#DoThingOutput")

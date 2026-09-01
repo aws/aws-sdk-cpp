@@ -272,14 +272,15 @@ class XmlProtocolTraitsTest {
     // ---------- Query/EC2 request contract (Axis-1 gating + protected DumpBodyToUrl) ----------
 
     @Test
-    void queryXml_serializePayloadAndProtectedDumpBodyToUrl() {
+    void queryXml_serializePayloadAndDumpBodyToUrlImpl() {
+        // The DumpBodyToUrl DECL is now emitted protocol-agnostically by RequestRenderer (gated on
+        // SupportsPresigningTrait), so the query traits' decls no longer carry it; only the IMPL is here.
         var req = reqWith(false, false); var model = modelWith(req);
         ProtocolTraits q = new QueryXmlProtocolTraits(Protocol.QUERY_XML);
         String d = renderInClassBody(w -> q.writeRequestMethodDecls(w, "AWS_EX_API", req, opDoThing(), model));
         assertTrue(d.contains("Aws::String SerializePayload() const override;"), d);
-        assertTrue(d.contains("void DumpBodyToUrl(Aws::Http::URI& uri) const override;"), d);
-        assertTrue(d.contains("protected:"), d);
-        assertTrue(d.contains("public:"), d);
+        assertFalse(d.contains("DumpBodyToUrl"),
+            "DumpBodyToUrl decl moved to RequestRenderer; query traits must not emit it: " + d);
         assertFalse(d.contains("GetRequestSpecificHeaders"), d);
         String i = render(w -> q.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model));
         assertTrue(i.contains("Aws::String DoThingRequest::SerializePayload() const { return {}; }"), i);
@@ -287,12 +288,13 @@ class XmlProtocolTraitsTest {
     }
 
     @Test
-    void queryXml_withHeaderMember_alsoEmitsHeaders_andStillDumpBodyToUrl() {
+    void queryXml_withHeaderMember_alsoEmitsHeaders() {
         var req = reqWith(true, false); var model = modelWith(req);
         ProtocolTraits q = new QueryXmlProtocolTraits(Protocol.QUERY_XML);
         String d = renderInClassBody(w -> q.writeRequestMethodDecls(w, "AWS_EX_API", req, opDoThing(), model));
         assertTrue(d.contains("GetRequestSpecificHeaders() const override;"), d);
-        assertTrue(d.contains("DumpBodyToUrl"), d);
+        assertFalse(d.contains("DumpBodyToUrl"),
+            "DumpBodyToUrl decl moved to RequestRenderer; query traits must not emit it: " + d);
     }
 
     // ---------- Query/EC2 result ResponseMetadata / requestId extraction ----------

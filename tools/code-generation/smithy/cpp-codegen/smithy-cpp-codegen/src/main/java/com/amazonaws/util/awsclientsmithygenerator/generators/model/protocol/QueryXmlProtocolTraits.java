@@ -216,18 +216,9 @@ public final class QueryXmlProtocolTraits implements ProtocolTraits {
             writer.write("");
             writeAddQueryStringParametersDecl(writer, exportMacro);
         }
-        writer.write("");
-        // DumpBodyToUrl is a protected virtual in AmazonWebServiceRequest, so the override
-        // is bracketed under protected: and the section restored to public: afterwards,
-        // matching the legacy C2J layout.
-        writer.dedent();
-        writer.write("protected:");
-        writer.indent();
-        writer.write("$L void DumpBodyToUrl(Aws::Http::URI& uri) const override;", exportMacro);
-        writer.dedent();
-        writer.write("");
-        writer.write("public:");
-        writer.indent();
+        // The protected DumpBodyToUrl override declaration is emitted protocol-agnostically by
+        // RequestRenderer (gated on SupportsPresigningTrait), which all query/ec2 requests carry;
+        // only the impl below is protocol-specific.
     }
 
     @Override

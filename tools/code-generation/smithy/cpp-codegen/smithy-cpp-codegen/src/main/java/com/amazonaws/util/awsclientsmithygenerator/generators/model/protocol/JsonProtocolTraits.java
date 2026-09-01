@@ -6,6 +6,7 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.SupportsPresigningTrait;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.ServiceShape;
@@ -211,6 +212,14 @@ public final class JsonProtocolTraits implements ProtocolTraits {
         if (serializesHttpBindingMembers() && RequestBindings.hasQueryStringMembers(shape, model)) {
             writer.write("");
             writeAddQueryStringParametersImpl(writer, className, shape, model);
+        }
+        // A presignable request (e.g. Polly's SynthesizeSpeech) declares the protocol-agnostic
+        // DumpBodyToUrl override (emitted by RequestRenderer); the real body defers with serde, as
+        // SerializePayload does, so this is a stub. UnreferencedParam.h is in serdeIncludes(REQUEST_SOURCE).
+        if (shape.hasTrait(SupportsPresigningTrait.class)) {
+            writer.write("");
+            writer.write("void $L::DumpBodyToUrl(Aws::Http::URI& uri) const { AWS_UNREFERENCED_PARAM(uri); }",
+                className);
         }
     }
 }
