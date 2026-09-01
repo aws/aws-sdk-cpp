@@ -5,8 +5,10 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/crt/Optional.h>
 #include <smithy/Smithy_EXPORTS.h>
+#include <smithy/client/schema/Schema.h>
 
 #include <cstdint>
+#include <functional>
 
 namespace smithy {
 namespace schema {
@@ -15,31 +17,28 @@ class SMITHY_API ShapeDeserializer {
  public:
   virtual ~ShapeDeserializer() = default;
 
-  virtual Aws::Crt::Optional<bool> ReadBoolean() = 0;
-  virtual Aws::Crt::Optional<int> ReadInteger() = 0;
-  virtual Aws::Crt::Optional<int64_t> ReadLong() = 0;
-  virtual Aws::Crt::Optional<float> ReadFloat() = 0;
-  virtual Aws::Crt::Optional<double> ReadDouble() = 0;
-  virtual Aws::Crt::Optional<Aws::String> ReadString() = 0;
-  virtual Aws::Crt::Optional<Aws::Utils::DateTime> ReadTimestamp() = 0;
-  virtual Aws::Crt::Optional<Aws::Utils::ByteBuffer> ReadBlob() = 0;
-  virtual Aws::Crt::Optional<int> ReadEnum() = 0;
+  using StructMemberConsumer = std::function<void(const Schema& memberSchema, ShapeDeserializer& deserializer)>;
 
-  virtual size_t BeginStruct() = 0;
-  virtual void EndStruct() = 0;
+  using ListElementConsumer = std::function<void(ShapeDeserializer& deserializer)>;
 
-  virtual size_t BeginList() = 0;
-  virtual void EndList() = 0;
+  using MapEntryConsumer = std::function<void(const Aws::String& key, ShapeDeserializer& deserializer)>;
 
-  virtual size_t BeginMap() = 0;
-  virtual void EndMap() = 0;
+  virtual void ReadStruct(const Schema& schema, const StructMemberConsumer& consumer) = 0;
+  virtual void ReadList(const Schema& schema, const ListElementConsumer& consumer) = 0;
+  virtual void ReadMap(const Schema& schema, const MapEntryConsumer& consumer) = 0;
 
-  virtual Aws::Crt::Optional<Aws::String> ReadKey() = 0;
-  virtual bool IsBreak() = 0;
+  virtual Aws::Crt::Optional<bool> ReadBoolean(const Schema& schema) = 0;
+  virtual Aws::Crt::Optional<int> ReadInteger(const Schema& schema) = 0;
+  virtual Aws::Crt::Optional<int64_t> ReadLong(const Schema& schema) = 0;
+  virtual Aws::Crt::Optional<float> ReadFloat(const Schema& schema) = 0;
+  virtual Aws::Crt::Optional<double> ReadDouble(const Schema& schema) = 0;
+  virtual Aws::Crt::Optional<Aws::String> ReadString(const Schema& schema) = 0;
+  virtual Aws::Crt::Optional<Aws::Utils::DateTime> ReadTimestamp(const Schema& schema) = 0;
+  virtual Aws::Crt::Optional<Aws::Utils::ByteBuffer> ReadBlob(const Schema& schema) = 0;
+  virtual Aws::Crt::Optional<int> ReadEnum(const Schema& schema) = 0;
+
   virtual bool IsNull() = 0;
-  virtual void ReadNull() = 0;
-  virtual void SkipValue() = 0;
 };
 
-}  // namespace schema
-}  // namespace smithy
+}
+}

@@ -2,6 +2,8 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
+#include <cmath>
+
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <smithy/client/schema/JsonShapeSerializer.h>
@@ -54,8 +56,8 @@ class JsonShapeSerializer::Impl final : public ShapeSerializer {
   void WriteBoolean(const Schema&, bool value) override { m_buf += value ? "true" : "false"; }
   void WriteInteger(const Schema&, int value) override { m_buf += StringUtils::to_string(value); }
   void WriteLong(const Schema&, int64_t value) override { m_buf += StringUtils::to_string(value); }
-  void WriteFloat(const Schema&, float value) override { m_buf += StringUtils::to_string(value); }
-  void WriteDouble(const Schema&, double value) override { m_buf += StringUtils::to_string(value); }
+  void WriteFloat(const Schema&, float value) override { WriteFloatingPoint(value); }
+  void WriteDouble(const Schema&, double value) override { WriteFloatingPoint(value); }
   void WriteString(const Schema&, const Aws::String& value) override { Aws::Schema::WriteQuotedJsonString(m_buf, value); }
   void WriteTimestamp(const Schema&, const DateTime& value) override { m_buf += StringUtils::to_string(value.SecondsWithMSPrecision()); }
   void WriteBlob(const Schema&, const ByteBuffer& value) override {
@@ -65,6 +67,17 @@ class JsonShapeSerializer::Impl final : public ShapeSerializer {
   }
   void WriteEnum(const Schema& schema, int value) override { WriteInteger(schema, value); }
   void WriteNull(const Schema&) override { m_buf += "null"; }
+
+  // Non-finite floats have no JSON number form; Smithy encodes them as quoted strings.
+  void WriteFloatingPoint(double value) {
+    if (std::isfinite(value)) {
+      m_buf += StringUtils::to_string(value);
+    } else if (std::isnan(value)) {
+      m_buf += "\"NaN\"";
+    } else {
+      m_buf += (value > 0 ? "\"Infinity\"" : "\"-Infinity\"");
+    }
+  }
 
   void WriteCommaIfNeeded() {
     if (m_needsComma[m_depth]) {

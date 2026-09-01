@@ -2,6 +2,8 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
+#include <cmath>
+
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/Outcome.h>
@@ -330,11 +332,23 @@ void XmlShapeSerializer::Impl::ValueSerializer::WriteLong(const Schema&, int64_t
 }
 void XmlShapeSerializer::Impl::ValueSerializer::WriteFloat(const Schema&, float value) {
   m_outer->ClosePendingTag();
-  m_outer->AppendRaw(StringUtils::to_string(value));
+  if (std::isfinite(value)) {
+    m_outer->AppendRaw(StringUtils::to_string(value));
+  } else if (std::isnan(value)) {
+    m_outer->AppendRaw("NaN");
+  } else {
+    m_outer->AppendRaw(value > 0 ? "Infinity" : "-Infinity");
+  }
 }
 void XmlShapeSerializer::Impl::ValueSerializer::WriteDouble(const Schema&, double value) {
   m_outer->ClosePendingTag();
-  m_outer->AppendRaw(StringUtils::to_string(value));
+  if (std::isfinite(value)) {
+    m_outer->AppendRaw(StringUtils::to_string(value));
+  } else if (std::isnan(value)) {
+    m_outer->AppendRaw("NaN");
+  } else {
+    m_outer->AppendRaw(value > 0 ? "Infinity" : "-Infinity");
+  }
 }
 void XmlShapeSerializer::Impl::ValueSerializer::WriteString(const Schema&, const Aws::String& value) {
   m_outer->ClosePendingTag();
