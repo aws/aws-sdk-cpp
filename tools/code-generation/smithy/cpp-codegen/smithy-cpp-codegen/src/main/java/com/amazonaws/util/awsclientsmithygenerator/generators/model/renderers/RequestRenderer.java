@@ -163,7 +163,9 @@ public final class RequestRenderer implements ShapeRenderer {
                 // DumpBodyToUrl is emitted protocol-agnostically (C2J RequestHeader.vm gates it only on
                 // $shape.supportsPresigning). It is a protected virtual in AmazonWebServiceRequest, so the
                 // override is bracketed under protected: and the section restored to public: afterwards.
-                if (shape.hasTrait(SupportsPresigningTrait.class)) {
+                // The trait is stamped on the OPERATION (SupportsPresigningTransform) so Unit-input ops
+                // are covered and the decl stays symmetric with the protocol-emitted impl.
+                if (operation.hasTrait(SupportsPresigningTrait.class)) {
                     writer.write("");
                     writer.dedent();
                     writer.write("protected:");

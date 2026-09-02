@@ -6,6 +6,7 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.SupportsPresigningTrait;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.ServiceShape;
@@ -217,8 +218,8 @@ public final class QueryXmlProtocolTraits implements ProtocolTraits {
             writeAddQueryStringParametersDecl(writer, exportMacro);
         }
         // The protected DumpBodyToUrl override declaration is emitted protocol-agnostically by
-        // RequestRenderer (gated on SupportsPresigningTrait), which all query/ec2 requests carry;
-        // only the impl below is protocol-specific.
+        // RequestRenderer (gated on the operation's SupportsPresigningTrait, stamped on every
+        // query/ec2 operation including Unit-input ops); only the impl below is protocol-specific.
     }
 
     @Override
@@ -236,8 +237,12 @@ public final class QueryXmlProtocolTraits implements ProtocolTraits {
             writer.write("");
             writeAddQueryStringParametersImpl(writer, className, shape, model);
         }
-        writer.write("");
-        writer.write("void $L::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }",
-            className);
+        // Gate the DumpBodyToUrl impl on the same operation trait as the RequestRenderer decl so the
+        // two stay symmetric: a Unit-input op with the trait gets both, an op without it gets neither.
+        if (operation.hasTrait(SupportsPresigningTrait.class)) {
+            writer.write("");
+            writer.write("void $L::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }",
+                className);
+        }
     }
 }

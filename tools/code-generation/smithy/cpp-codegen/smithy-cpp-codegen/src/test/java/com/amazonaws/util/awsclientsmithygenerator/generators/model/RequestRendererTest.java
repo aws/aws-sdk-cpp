@@ -145,31 +145,64 @@ class RequestRendererTest {
 
     private static Model supportsPresigningModel(boolean marked) {
         StringShape str = StringShape.builder().id("com.example#String").build();
-        StructureShape.Builder inB = StructureShape.builder()
-            .id("com.example#DoThingRequest").addMember("name", str.getId());
-        if (marked) {
-            inB.addTrait(new SupportsPresigningTrait());
-        }
-        StructureShape input = inB.build();
+        StructureShape input = StructureShape.builder()
+            .id("com.example#DoThingRequest").addMember("name", str.getId()).build();
         StructureShape output = StructureShape.builder()
             .id("com.example#DoThingOutput").addMember("result", str.getId()).build();
-        OperationShape op = OperationShape.builder().id("com.example#DoThing")
-            .input(input.getId()).output(output.getId()).build();
+        // The trait is stamped on the OPERATION (SupportsPresigningTransform), so the decl keys off
+        // operation.hasTrait(...) — not the input shape.
+        OperationShape.Builder opB = OperationShape.builder().id("com.example#DoThing")
+            .input(input.getId()).output(output.getId());
+        if (marked) {
+            opB.addTrait(new SupportsPresigningTrait());
+        }
+        OperationShape op = opB.build();
         ServiceShape service = ServiceShape.builder().id("com.example#Example")
             .version("2024-01-01").addOperation(op.getId()).build();
         return Model.builder().addShapes(str, input, output, op, service).build();
     }
 
+    /**
+     * A presignable operation whose input is the shared {@code smithy.api#Unit} (no {@code input(...)}
+     * set) — the case that broke: the input shape cannot carry the trait, but the operation can, so
+     * the decl must still be emitted. Mirrors an IAM-style query op like {@code GetAccountSummary}.
+     */
+    private static Model supportsPresigningUnitInputModel() {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        StructureShape output = StructureShape.builder()
+            .id("com.example#DoThingOutput").addMember("result", str.getId()).build();
+        OperationShape op = OperationShape.builder().id("com.example#DoThing")
+            .output(output.getId())
+            .addTrait(new SupportsPresigningTrait())
+            .build();
+        ServiceShape service = ServiceShape.builder().id("com.example#Example")
+            .version("2024-01-01").addOperation(op.getId()).build();
+        // Assemble (not Model.builder) so the smithy.api#Unit prelude shape exists: the operation has
+        // no input, so its input target defaults to Unit, which ShapeClassifier resolves to build the
+        // request. Unit must be present in the model for the request class to be emitted.
+        return Model.assembler().addShapes(str, output, op, service).assemble().unwrap();
+    }
+
     @Test
     void supportsPresigningTrait_emitsProtectedDumpBodyToUrlOverride() {
         // C2J's RequestHeader.vm emits DumpBodyToUrl protocol-agnostically under
-        // #if($shape.supportsPresigning()); the marker drives the same protected override here.
+        // #if($shape.supportsPresigning()); the operation trait drives the same protected override.
         String h = renderDoThingRequestHeader(supportsPresigningModel(true));
         assertTrue(h.contains("protected:"), "presignable request must open a protected: section: " + h);
         assertTrue(h.contains(
             "AWS_EXAMPLE_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;"),
             "presignable request must declare the DumpBodyToUrl override: " + h);
         assertTrue(h.contains("public:"), "presignable request must restore public: afterwards: " + h);
+    }
+
+    @Test
+    void supportsPresigningTrait_unitInputOperation_stillEmitsDumpBodyToUrl() {
+        // Regression: a Unit-input op stamps the operation (not the shared Unit input), and the decl
+        // must still be emitted so it stays symmetric with the protocol-emitted impl.
+        String h = renderDoThingRequestHeader(supportsPresigningUnitInputModel());
+        assertTrue(h.contains(
+            "AWS_EXAMPLE_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;"),
+            "Unit-input presignable operation must still declare DumpBodyToUrl: " + h);
     }
 
     @Test

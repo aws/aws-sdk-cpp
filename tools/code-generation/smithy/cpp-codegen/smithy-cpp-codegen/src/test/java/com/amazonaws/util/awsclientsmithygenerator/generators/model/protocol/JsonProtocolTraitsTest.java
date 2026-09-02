@@ -41,6 +41,12 @@ class JsonProtocolTraitsTest {
     private static software.amazon.smithy.model.shapes.OperationShape opDoThing() {
         return software.amazon.smithy.model.shapes.OperationShape.builder().id("com.example#DoThing").build();
     }
+    /** A presignable operation: carries the internal trait stamped by SupportsPresigningTransform. */
+    private static software.amazon.smithy.model.shapes.OperationShape opDoThingPresigning() {
+        return software.amazon.smithy.model.shapes.OperationShape.builder().id("com.example#DoThing")
+            .addTrait(new com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.SupportsPresigningTrait())
+            .build();
+    }
     private static software.amazon.smithy.model.shapes.ServiceShape svcAthena() {
         return software.amazon.smithy.model.shapes.ServiceShape.builder()
             .id("com.example#AmazonAthena").version("2017-05-18").build();
@@ -241,15 +247,12 @@ class JsonProtocolTraitsTest {
 
     @Test
     void supportsPresigning_emitsDumpBodyToUrlStubImpl() {
-        // A presignable request (Polly SynthesizeSpeech) carries SupportsPresigningTrait; the decl is
-        // emitted by RequestRenderer, and JsonProtocolTraits supplies a stub impl that defers serde.
-        var req = reqWith(false, false).toBuilder()
-            .addTrait(new com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms
-                .SupportsPresigningTrait())
-            .build();
-        var model = modelWith(req);
+        // A presignable operation (Polly SynthesizeSpeech) carries SupportsPresigningTrait on the
+        // OPERATION; the decl is emitted by RequestRenderer, and JsonProtocolTraits supplies a stub
+        // impl (gated on the same operation trait) that defers serde.
+        var req = reqWith(false, false); var model = modelWith(req);
         String i = render(w -> restJson.writeRequestMethodImpls(
-            w, "SynthesizeSpeechRequest", req, opDoThing(), svcAthena(), model));
+            w, "SynthesizeSpeechRequest", req, opDoThingPresigning(), svcAthena(), model));
         assertTrue(i.contains(
             "void SynthesizeSpeechRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { AWS_UNREFERENCED_PARAM(uri); }"),
             i);
