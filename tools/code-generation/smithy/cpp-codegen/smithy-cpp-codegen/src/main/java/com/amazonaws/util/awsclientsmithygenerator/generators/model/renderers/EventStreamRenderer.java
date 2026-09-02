@@ -24,15 +24,11 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * Renders C++ event stream artifacts for response-side (simplex) streaming operations:
- * the handler and initial response. Driven by the classifier's {@link EventStreamInfo}
- * list. Event structure shapes themselves are generated elsewhere (as reachable
- * sub-objects) and only referenced here. The {@code @streaming} union data type is not
- * emitted: it is realized entirely through the handler and referenced by nothing, so the
- * classifier drops it from sub-objects (dead public API).
- *
- * <p>No protocol-specific serialization is emitted; payload (de)serialization points
- * are protocol-agnostic TODO stubs via {@link ProtocolTraits}.
+ * Renders C++ event stream artifacts for response-side (simplex) streaming operations: the handler
+ * and initial response, driven by the classifier's {@link EventStreamInfo} list. Event structures
+ * are generated elsewhere (as reachable sub-objects) and only referenced here; the {@code @streaming}
+ * union data type is not emitted (realized through the handler, referenced by nothing). Payload
+ * (de)serialization points are protocol-agnostic TODO stubs via {@link ProtocolTraits}.
  */
 public final class EventStreamRenderer implements ShapeRenderer {
 
@@ -123,7 +119,6 @@ public final class EventStreamRenderer implements ShapeRenderer {
             writer.write("");
             ModelFile.modelNamespace(writer, ctx.namespace(), () -> {
 
-            // EventType enum
             StringBuilder enumBody = new StringBuilder("enum class ")
                 .append(opName).append("EventType { INITIAL_RESPONSE, ");
             for (MemberShape event : events) {
@@ -134,7 +129,6 @@ public final class EventStreamRenderer implements ShapeRenderer {
             writer.write("");
 
             writer.openBlock("class $1L : public Aws::Utils::Event::EventStreamHandler {", "};", className, () -> {
-                // Callback typedefs
                 writer.write("typedef std::function<void(const $1LInitialResponse&)> $1LInitialResponseCallback;", opName);
                 writer.write("typedef std::function<void(const $1LInitialResponse&, const Utils::Event::InitialResponseType)> $1LInitialResponseCallbackEx;", opName);
                 for (MemberShape event : events) {
@@ -236,7 +230,6 @@ public final class EventStreamRenderer implements ShapeRenderer {
             writer.write("static const char $1L[] = \"$2LHandler\";", tag, opName);
             writer.write("");
 
-            // Constructor
             writer.openBlock("$1L::$1L() : EventStreamHandler() {", "}", className, () -> {
                 writer.openBlock("m_onInitialResponse = [&](const $1LInitialResponse&, const Utils::Event::InitialResponseType eventType) {", "};", opName, () -> {
                     writer.write("AWS_LOGSTREAM_TRACE($1L, \"$2L initial response received from \" << (eventType == Utils::Event::InitialResponseType::ON_EVENT ? \"event\" : \"http headers\"));", tag, opName);
@@ -260,7 +253,6 @@ public final class EventStreamRenderer implements ShapeRenderer {
             });
             writer.write("");
 
-            // OnEvent
             writer.openBlock("void $1L::OnEvent() {", "}", className, () -> {
                 writer.openBlock("if (!*this) {", "}", () -> {
                     writer.write("AWSError<CoreErrors> error = EventStreamErrorsMapper::GetAwsErrorForEventStreamError(GetInternalError());");
@@ -290,7 +282,6 @@ public final class EventStreamRenderer implements ShapeRenderer {
             });
             writer.write("");
 
-            // HandleEventInMessage
             writer.openBlock("void $1L::HandleEventInMessage() {", "}", className, () -> {
                 writer.write("const auto& headers = GetEventHeaders();");
                 writer.write("auto eventTypeHeaderIter = headers.find(EVENT_TYPE_HEADER);");
@@ -323,7 +314,6 @@ public final class EventStreamRenderer implements ShapeRenderer {
             });
             writer.write("");
 
-            // HandleErrorInMessage
             writer.openBlock("void $1L::HandleErrorInMessage() {", "}", className, () -> {
                 writer.write("const auto& headers = GetEventHeaders();");
                 writer.write("Aws::String errorCode;");
@@ -372,7 +362,6 @@ public final class EventStreamRenderer implements ShapeRenderer {
             });
             writer.write("");
 
-            // EventMapper
             writer.writeNamespaceOpen(opName + "EventMapper");
             writer.write("static const int INITIAL_RESPONSE_HASH = Aws::Utils::HashingUtils::HashString(\"initial-response\");");
             for (MemberShape event : events) {
@@ -413,9 +402,8 @@ public final class EventStreamRenderer implements ShapeRenderer {
     // ---- Initial response ---------------------------------------------------
 
     /**
-     * Builds a synthetic {@code <op>InitialResponse} structure from the result's non-event-stream
-     * members, mirroring C2J's {@code addEventStreamInitialResponse} (CppClientGenerator). The
-     * {@code @streaming} union member (the event stream) is excluded.
+     * Builds a synthetic {@code <op>InitialResponse} from the result's non-event-stream members
+     * (the {@code @streaming} union member excluded), mirroring C2J {@code addEventStreamInitialResponse}.
      */
     private StructureShape initialResponseShape(String opName, StructureShape resultShape) {
         StructureShape.Builder builder = StructureShape.builder()

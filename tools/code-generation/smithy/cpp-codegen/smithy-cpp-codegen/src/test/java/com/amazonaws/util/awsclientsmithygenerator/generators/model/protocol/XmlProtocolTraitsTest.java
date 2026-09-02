@@ -24,10 +24,8 @@ class XmlProtocolTraitsTest {
     }
 
     /**
-     * Renders inside a simulated class body (indent level 1), matching how request-method
-     * declarations are emitted by {@code RequestRenderer}. Query/EC2 decls open with a
-     * {@code dedent()} for the {@code protected:} sandwich, which requires a non-zero
-     * starting indent.
+     * Renders at indent level 1, as {@code RequestRenderer} emits request-method decls. Query/EC2
+     * decls open with a {@code dedent()} for the {@code protected:} sandwich, needing a non-zero indent.
      */
     private static String renderInClassBody(java.util.function.Consumer<CppWriter> body) {
         CppWriter writer = new CppWriter();
@@ -279,9 +277,8 @@ class XmlProtocolTraitsTest {
 
     @Test
     void queryXml_serializePayloadAndDumpBodyToUrlImpl() {
-        // The DumpBodyToUrl DECL is emitted protocol-agnostically by RequestRenderer (gated on the
-        // operation's SupportsPresigningTrait), so the query traits' decls no longer carry it; the
-        // IMPL is here and now gated on the SAME operation trait so decl+impl stay symmetric.
+        // DumpBodyToUrl DECL is emitted by RequestRenderer (gated on SupportsPresigningTrait), not the
+        // query traits; the IMPL is here, gated on the SAME operation trait so decl+impl stay symmetric.
         var req = reqWith(false, false); var model = modelWith(req);
         ProtocolTraits q = new QueryXmlProtocolTraits(Protocol.QUERY_XML);
         String d = renderInClassBody(w -> q.writeRequestMethodDecls(w, "AWS_EX_API", req, opDoThingPresigning(), model));

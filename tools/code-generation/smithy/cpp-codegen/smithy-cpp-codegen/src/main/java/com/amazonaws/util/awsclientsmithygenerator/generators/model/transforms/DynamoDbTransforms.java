@@ -14,20 +14,12 @@ import software.amazon.smithy.model.shapes.ShapeId;
 import java.util.Optional;
 
 /**
- * DynamoDB model transform: marks the {@code AttributeValue} shape with {@link CustomRenderedTrait}
- * so {@code ShapeClassifier} drops it from the default sub-object set. DynamoDB's {@code
- * AttributeValue} is a bespoke document type emitted verbatim by {@code DynamoDbRenderer} (matching
- * the legacy C2J {@code DynamoDBJsonCppClientGenerator}); if the generic {@code SubObjectRenderer}
- * also emitted it, both writers would resolve the same {@code AttributeValue.h} path and append,
- * silently concatenating the generic tagged-union struct onto the hand-written document type.
- *
- * <p>Keeping the suppression here — rather than as a service-name {@code if} in the generic
- * {@code ModelGenerator} — keeps the orchestrator service-agnostic: the marker drives a generic
- * classifier rule that applies to any shape a dedicated renderer owns. The shape itself stays in
- * the model so member references (e.g. {@code PutItemInput.Item}) still resolve.
- *
- * <p>Self-guards on the raw smithy service name {@code dynamodb} (no-op for every other service).
- * No-op when the {@code AttributeValue} shape is absent (upstream model changed).
+ * DynamoDB C2J parity: marks the AttributeValue shape with {@link CustomRenderedTrait} so
+ * ShapeClassifier drops it from the default sub-object set. AttributeValue is a bespoke document type
+ * emitted verbatim by DynamoDbRenderer; without this the generic SubObjectRenderer would resolve the
+ * same AttributeValue.h path and append, concatenating a generic tagged-union struct onto it. The
+ * shape stays in the model so member references still resolve. Self-guards on service name dynamodb;
+ * no-op when AttributeValue is absent.
  */
 public final class DynamoDbTransforms {
 

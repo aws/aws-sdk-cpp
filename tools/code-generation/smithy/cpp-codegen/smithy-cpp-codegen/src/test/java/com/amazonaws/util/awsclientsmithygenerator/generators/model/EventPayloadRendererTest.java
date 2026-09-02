@@ -24,9 +24,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Verifies {@link EventPayloadRenderer} produces a header-only blob-carrier event (C2J
- * {@code EventHeader.vm} form): an {@code Aws::Vector<unsigned char>} payload with a bytes
- * constructor, non-template accessors, and a {@code Get<Payload>WithOwnership()} move-out — and
- * NO JSON serde and NO {@code .cpp}.
+ * {@code EventHeader.vm} form): {@code Aws::Vector<unsigned char>} payload, no JSON serde, no {@code .cpp}.
  */
 class EventPayloadRendererTest {
 

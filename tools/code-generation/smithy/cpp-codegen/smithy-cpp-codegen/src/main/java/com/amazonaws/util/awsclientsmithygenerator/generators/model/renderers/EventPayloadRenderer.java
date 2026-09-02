@@ -21,14 +21,13 @@ import java.util.List;
 
 /**
  * Renders header-only blob-carrier events: an event struct (member of a {@code @streaming} union)
- * whose sole payload is a single {@code @eventPayload} blob member (C2J {@code eventPayloadType ==
- * "blob"}). C2J renders these via {@code EventHeader.vm} as a plain value type carrying an
- * {@code Aws::Vector<unsigned char>} payload — a bytes constructor, non-template const-ref / rvalue
- * accessors, and a {@code Get<Payload>WithOwnership()} move-out — with NO {@code Jsonize} /
- * {@code JsonView} serde and NO {@code .cpp}.
+ * whose sole payload is one {@code @eventPayload} blob member (C2J {@code eventPayloadType == "blob"}).
+ * C2J renders these via {@code EventHeader.vm} as a plain value type over an
+ * {@code Aws::Vector<unsigned char>} (bytes ctor, const-ref/rvalue accessors, a
+ * {@code Get<Payload>WithOwnership()} move-out), with no serde and no {@code .cpp}.
  *
- * <p>These shapes are routed here by {@link ShapeClassifier} instead of {@code subObjects}, so the
- * generic {@code SubObjectRenderer} JSON path never sees them.
+ * <p>{@link ShapeClassifier} routes these here instead of {@code subObjects}, so the generic
+ * {@code SubObjectRenderer} JSON path never sees them.
  */
 public final class EventPayloadRenderer implements ShapeRenderer {
 
@@ -103,9 +102,8 @@ public final class EventPayloadRenderer implements ShapeRenderer {
     }
 
     /**
-     * Emits the payload member's doc comment. Matches C2J's {@code EventHeader.vm}, which always
-     * renders a {@code /** ... *}{@code /} block from the member's {@code @documentation}
-     * (whitespace-collapsed).
+     * Emits the payload member's doc comment (whitespace-collapsed {@code @documentation}), matching
+     * C2J {@code EventHeader.vm}.
      */
     private void writeMemberDoc(CppWriter writer, MemberShape payload) {
         String doc = payload.getTrait(DocumentationTrait.class)

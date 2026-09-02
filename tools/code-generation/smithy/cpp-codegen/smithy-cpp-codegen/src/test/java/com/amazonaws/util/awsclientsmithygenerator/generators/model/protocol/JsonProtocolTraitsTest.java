@@ -212,9 +212,8 @@ class JsonProtocolTraitsTest {
 
     @Test
     void restJson_additionalHeadersTrait_emitsConstantHeaderBeforeMemberHeaders() {
-        // A streaming request marked with AdditionalRequestHeadersTrait (Glacier's
-        // x-amz-glacier-version) emits the constant header inside GetRequestSpecificHeaders,
-        // ordered after any X-Amz-Target and before the member-driven headers (StreamRequestSource.vm).
+        // A request with AdditionalRequestHeadersTrait (Glacier's x-amz-glacier-version) emits the
+        // constant header in GetRequestSpecificHeaders, after X-Amz-Target and before member headers.
         var req = reqWith(true, false).toBuilder()
             .addTrait(new com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms
                 .AdditionalRequestHeadersTrait(java.util.Map.of("x-amz-glacier-version", "2012-06-01")))
@@ -247,9 +246,8 @@ class JsonProtocolTraitsTest {
 
     @Test
     void supportsPresigning_emitsDumpBodyToUrlStubImpl() {
-        // A presignable operation (Polly SynthesizeSpeech) carries SupportsPresigningTrait on the
-        // OPERATION; the decl is emitted by RequestRenderer, and JsonProtocolTraits supplies a stub
-        // impl (gated on the same operation trait) that defers serde.
+        // A presignable op (Polly SynthesizeSpeech) carries SupportsPresigningTrait; RequestRenderer
+        // emits the decl, JsonProtocolTraits supplies a stub impl (same trait) that defers serde.
         var req = reqWith(false, false); var model = modelWith(req);
         String i = render(w -> restJson.writeRequestMethodImpls(
             w, "SynthesizeSpeechRequest", req, opDoThingPresigning(), svcAthena(), model));

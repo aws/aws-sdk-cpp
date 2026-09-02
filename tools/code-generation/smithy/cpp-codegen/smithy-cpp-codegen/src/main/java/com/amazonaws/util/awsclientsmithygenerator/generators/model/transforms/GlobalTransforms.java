@@ -39,41 +39,36 @@ import java.util.stream.Collectors;
 public final class GlobalTransforms {
 
     /**
-     * Services that skip the "body" -> "requestBody" member rename (raw smithy service names).
-     * These use "body" as a meaningful domain/payload member. API Gateway (api-gateway) and
-     * API Gateway V2 (apigatewayv2) are skipped here because their dedicated transforms own the
-     * rename; the rest use "body" as an HTTP payload.
+     * Services (raw smithy names) that skip the "body" -> "requestBody" rename. api-gateway/apigatewayv2
+     * own the rename in their dedicated transforms; the rest use "body" as a meaningful HTTP payload.
      */
     private static final Set<String> BODY_RENAME_SKIP_SERVICES = Set.of(
         "amplifyuibuilder", "api-gateway", "apigatewayv2", "bedrock-runtime", "glacier", "repostspace"
     );
 
     /**
-     * Services that skip the "headers" -> "headerValues" member rename (raw smithy service name).
-     * api-gateway renames headers to "requestHeaders" in its dedicated transform instead.
+     * Services (raw smithy names) that skip the "headers" -> "headerValues" rename. api-gateway
+     * renames headers to "requestHeaders" in its dedicated transform instead.
      */
     private static final Set<String> HEADERS_RENAME_SKIP_SERVICES = Set.of(
         "api-gateway"
     );
 
     /**
-     * The framework-injected response-envelope member and shape name. It is reserved: no AWS model
-     * defines its own {@code ResponseMetadata}. {@link #injectResponseMetadata} adds it (and fails
-     * fast on any pre-existing collision), and {@code MemberRenderer} keys the "always-present"
-     * rendering (no {@code HasBeenSet} getter, flag initialized true) on this exact name.
+     * The reserved framework-injected response-envelope member/shape name. {@link #injectResponseMetadata}
+     * adds it (failing fast on collision), and MemberRenderer keys the "always-present" rendering
+     * (no HasBeenSet getter, flag initialized true) on this exact name.
      */
     public static final String RESPONSE_METADATA = "ResponseMetadata";
 
     private GlobalTransforms() {}
 
     /**
-     * Renames reserved request members on every operation-input structure: {@code body ->
-     * requestBody}, {@code headers -> headerValues}, {@code Headers -> headerValues}, honoring the
-     * per-service skip-lists. Mirrors the legacy C2J {@code RESERVED_REQUEST_MEMBER_MAPPING}. Only
-     * operation-input shapes are touched (never arbitrary domain shapes that happen to end in
-     * "Request"). {@link TransformSupport#renameMember} preserves each renamed member's wire name
-     * via the service's protocol-appropriate trait (matching C2J's {@code setLocationName}), and
-     * throws on a collision (the target member name already present).
+     * Renames reserved request members on every operation-input structure ({@code body -> requestBody},
+     * {@code headers/Headers -> headerValues}), honoring the per-service skip-lists. Mirrors C2J's
+     * {@code RESERVED_REQUEST_MEMBER_MAPPING}. Only operation-input shapes are touched.
+     * {@link TransformSupport#renameMember} preserves each renamed member's wire name via the
+     * protocol-appropriate trait and throws on a target-name collision.
      *
      * @param model   the current model
      * @param service the service being generated (its raw smithy name drives the skip-lists)
@@ -128,10 +123,9 @@ public final class GlobalTransforms {
     }
 
     /**
-     * Computes the set of shape IDs reachable from the service's operations; only these shapes
-     * generate model files. Roots are each operation's input (including {@code smithy.api#Unit}
-     * for input-less operations), output, and error shapes, from which {@link Walker} walks the
-     * shape graph transitively. Each root id is included even when its shape is absent from the model.
+     * Computes the shape IDs reachable from the service's operations; only these generate model files.
+     * Roots are each operation's input (including {@code smithy.api#Unit}), output, and error shapes,
+     * walked transitively via {@link Walker}. Each root id is included even if its shape is absent.
      *
      * @param model the Smithy model
      * @param service the service shape whose operations define the root set
@@ -154,13 +148,12 @@ public final class GlobalTransforms {
     }
 
     /**
-     * Returns the service's operations excluding any marked {@code @deprecated}. Legacy C2J drops
-     * deprecated operations entirely (they never appear in the generated client), so their input and
-     * output structures — orphaned once the operation is gone — are not emitted either. This is the
-     * single filter used by every emission-driving iteration over the service's operations
-     * ({@link #computeReachableShapes} and {@link com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassifier#classify})
-     * so reachability and classification stay in agreement. A structure still referenced by a live
-     * operation remains reachable through that operation, so shared structures are unaffected.
+     * Returns the service's non-{@code @deprecated} operations. C2J drops deprecated operations
+     * entirely, so their orphaned input/output structures aren't emitted either. Used by every
+     * emission-driving iteration ({@link #computeReachableShapes} and
+     * {@link com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassifier#classify})
+     * so reachability and classification agree; structures still referenced by a live operation
+     * stay reachable.
      *
      * @param model   the Smithy model
      * @param service the service whose operations are being generated
@@ -173,11 +166,9 @@ public final class GlobalTransforms {
     }
 
     /**
-     * Returns this class as a ModelTransform.
-     *
-     * <p>Runs {@link #dropDeprecatedMembers} first (so reachability filtering sees the pruned
-     * model and orphaned targets drop out), then {@link #renameReservedRequestMembers} to apply the
-     * C2J-parity request-member renames, then {@link #injectResponseMetadata}.
+     * Returns this class as a ModelTransform: {@link #dropDeprecatedMembers} first (so reachability
+     * sees the pruned model), then {@link #renameReservedRequestMembers}, then
+     * {@link #injectResponseMetadata}.
      */
     public static ModelTransform asTransform() {
         return (model, service) -> injectResponseMetadata(
@@ -185,16 +176,11 @@ public final class GlobalTransforms {
     }
 
     /**
-     * Removes {@code @deprecated} members from the shapes this service actually generates. This
-     * mirrors the legacy C2J transformer, which drops {@code "deprecated": true} member references
-     * ({@code C2jModelToGeneratorModelTransformer}), so deprecated members never appear in
-     * generated model classes. A target shape referenced only through dropped members becomes
-     * unreachable and is likewise omitted, matching C2J.
-     *
-     * <p>Removal is scoped to members whose container is reachable from the service's operations.
-     * This is the "only touch what we emit" rule: it leaves framework trait definitions untouched
-     * (the {@code smithy.api} prelude, {@code smithy.rules}, {@code aws.*}, etc.), some of which
-     * declare their own {@code @deprecated} members that we must not mutate.
+     * Removes {@code @deprecated} members from the shapes this service generates, mirroring C2J's
+     * {@code C2jModelToGeneratorModelTransformer} (which drops {@code "deprecated": true} member refs).
+     * A target reachable only through dropped members becomes unreachable and is likewise omitted.
+     * Scoped to members whose container is reachable from the service's operations, so framework
+     * trait definitions ({@code smithy.api} prelude, {@code smithy.rules}, {@code aws.*}) stay untouched.
      *
      * @param model   the current model
      * @param service the service being generated (defines the reachable, emitted shapes)
@@ -213,15 +199,11 @@ public final class GlobalTransforms {
     }
 
     /**
-     * For awsQuery / ec2Query services, and for any service carrying the
-     * {@code aws.protocols#awsQueryCompatible} trait (e.g. SQS = {@code awsJson1_0} +
-     * {@code @awsQueryCompatible}), injects a {@code ResponseMetadata} structure (carrying
-     * a {@code RequestId} string member) and adds it as a {@code @required} member on every
-     * result (operation output) shape. This mirrors the legacy C2J
-     * {@code CppClientGenerator.addRequestIdToResults} injection (which fires for query/ec2
-     * protocols and, via its {@code awsQueryCompatible} branch, for awsQueryCompatible JSON
-     * services), so that those result classes expose {@code GetResponseMetadata()}. Other
-     * protocols are unchanged.
+     * For awsQuery/ec2Query services and any {@code @awsQueryCompatible} service (e.g. SQS =
+     * {@code awsJson1_0} + {@code @awsQueryCompatible}), injects a {@code ResponseMetadata} structure
+     * (with a {@code RequestId} member) and adds it as a {@code @required} member on every result shape,
+     * so those results expose {@code GetResponseMetadata()}. Mirrors C2J's
+     * {@code CppClientGenerator.addRequestIdToResults}. Other protocols are unchanged.
      *
      * @param model   the current model
      * @param service the service being generated
@@ -237,16 +219,14 @@ public final class GlobalTransforms {
         String namespace = service.getId().getNamespace();
         ShapeId responseMetadataId = ShapeId.fromParts(namespace, RESPONSE_METADATA);
 
-        // ResponseMetadata is reserved. If the model already defines a shape of that name, injecting
-        // ours would clobber it and MemberRenderer's name-based recognition could not tell them
-        // apart — fail fast rather than silently mis-generate.
+        // ResponseMetadata is reserved: a pre-existing shape of that name would be clobbered and
+        // MemberRenderer's name-based recognition could not tell them apart, so fail fast.
         if (model.getShape(responseMetadataId).isPresent()) {
             throw new IllegalStateException("Service " + service.getId() + " already defines a shape '"
                 + responseMetadataId + "'; cannot inject the framework " + RESPONSE_METADATA
                 + " envelope");
         }
 
-        // ResponseMetadata { RequestId: String }
         StructureShape responseMetadata = StructureShape.builder()
             .id(responseMetadataId)
             .addMember(MemberShape.builder()
@@ -255,7 +235,6 @@ public final class GlobalTransforms {
                 .build())
             .build();
 
-        // The @required ResponseMetadata member added to each result shape.
         List<Shape> replacements = new ArrayList<>();
         replacements.add(responseMetadata);
 

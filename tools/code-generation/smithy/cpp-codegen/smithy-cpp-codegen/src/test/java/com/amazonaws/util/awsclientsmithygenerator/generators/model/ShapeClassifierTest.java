@@ -424,13 +424,7 @@ class ShapeClassifierTest {
             "Expected a RequestInfo for the no-input operation Ping");
     }
 
-    /**
-     * A structure that is BOTH an operation output AND referenced as a member (via a list
-     * element). Mirrors Lambda's FunctionConfiguration, which is the output of
-     * GetFunctionConfiguration and also the element of FunctionList / a member of another
-     * response. Such a dual-role shape must end up in BOTH results (per-op output) and
-     * subObjects (standalone model file), matching C2J.
-     */
+    /** Structure that is both an operation output and a list-element member (dual-role, like Lambda FunctionConfiguration); must end up in both results and subObjects. */
     private Model buildDualRoleModel() {
         StringShape str = StringShape.builder().id("com.example#String").build();
         // Thing is the output of GetThing AND the element of ThingList.
@@ -503,12 +497,7 @@ class ShapeClassifierTest {
             "Output-only GetItemResponse must NOT be over-emitted as a sub-object: " + classified.subObjects());
     }
 
-    /**
-     * A @streaming union with two event members: one whose sole payload is an @eventPayload blob
-     * (like Lambda's InvokeResponseStreamUpdate / the PayloadChunk member) and one with only a
-     * plain string member (like a CompleteEvent). Bound to an operation output so both event
-     * structs are reachable.
-     */
+    /** @streaming union with an @eventPayload-blob event and a plain-string event, bound to an operation output so both are reachable. */
     private Model eventStreamBlobPayloadModel() {
         StringShape str = StringShape.builder().id("com.example#String").build();
         BlobShape blob = BlobShape.builder().id("com.example#Blob").build();
@@ -571,12 +560,7 @@ class ShapeClassifierTest {
             "Non-blob event struct must NOT be a blob-payload event: " + classified.blobPayloadEvents());
     }
 
-    /**
-     * A service whose operation input references two structs: one marked {@link CustomRenderedTrait}
-     * (owned by a dedicated renderer) and one plain. The classifier's generic marker rule must drop
-     * the marked one from subObjects while keeping the plain one — for any service, not just
-     * dynamodb.
-     */
+    /** Operation input references two structs, one marked {@link CustomRenderedTrait} and one plain; the marker rule drops the marked one from subObjects for any service. */
     private Model modelWithCustomRenderedShape() {
         StringShape str = StringShape.builder().id("com.example#String").build();
         StructureShape marked = StructureShape.builder()
@@ -617,12 +601,7 @@ class ShapeClassifierTest {
             "unmarked shape must remain a sub-object: " + classified.subObjects());
     }
 
-    /**
-     * A @streaming union with two event members: one empty-member event (like S3's
-     * ContinuationEvent / EndEvent, referenced by nothing after EventStreamRenderer's void()
-     * callback fix) and one data event carrying a string member. Bound to an operation output so
-     * both event structs are reachable.
-     */
+    /** @streaming union with an empty-member event (like S3 ContinuationEvent) and a string data event, bound to an operation output so both are reachable. */
     private Model eventStreamEmptyAndDataModel() {
         StringShape str = StringShape.builder().id("com.example#String").build();
         StructureShape emptyEvt = StructureShape.builder()
@@ -668,9 +647,8 @@ class ShapeClassifierTest {
 
     @Test
     void classifyDropsIncomingEventStreamUnionFromSubObjects() {
-        // The @streaming union bound to an operation output (an incoming event stream) is realized
-        // via the generated handler; nothing references the union as a data type, so it must not be
-        // emitted as a standalone sub-object header.
+        // The @streaming union bound to an output (incoming event stream) is realized via the
+        // generated handler; nothing references it as a data type, so no standalone sub-object header.
         Model model = eventStreamEmptyAndDataModel();
         ServiceShape service = model.expectShape(ShapeId.from("com.example#TestService"), ServiceShape.class);
         var classified = ShapeClassifier.classify(model, service, ProtocolResolver.resolve(service, model));
@@ -681,9 +659,8 @@ class ShapeClassifierTest {
 
     @Test
     void deprecatedOperation_inputAndOutputExcludedFromRequestsAndResults() {
-        // Legacy C2J drops @deprecated operations entirely, so their orphaned request/result structs
-        // are never emitted. The classifier must not put a @deprecated op's input in requests nor its
-        // output in results, while a live op's input/output are present.
+        // Legacy C2J drops @deprecated operations entirely; the classifier must keep a @deprecated
+        // op's input/output out of requests/results while a live op's are present.
         StringShape str = StringShape.builder().id("com.example#String").build();
         StructureShape deprecatedRequest = StructureShape.builder()
             .id("com.example#DeprecatedRequest").addMember("id", str.getId()).build();

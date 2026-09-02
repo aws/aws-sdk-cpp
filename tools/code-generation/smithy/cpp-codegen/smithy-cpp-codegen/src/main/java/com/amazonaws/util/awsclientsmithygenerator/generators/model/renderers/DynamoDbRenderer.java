@@ -14,10 +14,9 @@ import java.nio.charset.StandardCharsets;
 
 /**
  * Emits DynamoDB's bespoke document-type {@code AttributeValue} / {@code AttributeValueValue}
- * classes, matching the legacy C2J {@code DynamoDBJsonCppClientGenerator}. The four files are
- * static hand-written C++ (no model-driven content); their bodies live as classpath resources and
- * are written verbatim. No-op for every non-DynamoDB service. The default union rendering of the
- * {@code AttributeValue} shape is suppressed in {@code ModelGenerator}.
+ * classes (C2J {@code DynamoDBJsonCppClientGenerator}). The four files are static hand-written C++
+ * written verbatim from classpath resources; no-op for non-DynamoDB services. Default union
+ * rendering of {@code AttributeValue} is suppressed in {@code ModelGenerator}.
  */
 public final class DynamoDbRenderer implements ShapeRenderer {
 

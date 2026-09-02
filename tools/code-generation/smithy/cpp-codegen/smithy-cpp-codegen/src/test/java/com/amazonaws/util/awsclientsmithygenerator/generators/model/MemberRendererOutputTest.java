@@ -40,7 +40,6 @@ class MemberRendererOutputTest {
         System.out.println("=== PUBLIC ===");
         System.out.println(pubOutput);
 
-        // Verify ShardId accessor pattern
         assertTrue(pubOutput.contains("inline const Aws::String& GetShardId() const { return m_shardId; }"));
         assertTrue(pubOutput.contains("inline bool ShardIdHasBeenSet() const { return m_shardIdHasBeenSet; }"));
         assertTrue(pubOutput.contains("template <typename ShardIdT = Aws::String>"));
@@ -50,16 +49,13 @@ class MemberRendererOutputTest {
         assertTrue(pubOutput.contains("ChildShard& WithShardId(ShardIdT&& value)"));
         assertTrue(pubOutput.contains("SetShardId(std::forward<ShardIdT>(value));"));
 
-        // Verify ParentShards list pattern - includes Add method
         assertTrue(pubOutput.contains("inline const Aws::Vector<Aws::String>& GetParentShards() const { return m_parentShards; }"));
         assertTrue(pubOutput.contains("ChildShard& AddParentShards(ParentShardsT&& value)"));
         assertTrue(pubOutput.contains("m_parentShards.emplace_back(std::forward<ParentShardsT>(value));"));
 
-        // Verify no Add method for non-list members
         assertFalse(pubOutput.contains("AddShardId"));
         assertFalse(pubOutput.contains("AddHashKeyRange"));
 
-        // Private section
         CppWriter privWriter = new CppWriter();
         MemberRenderer.forStructure(model, shape, null).renderPrivateSection(privWriter);
         String privOutput = privWriter.toString();
@@ -115,9 +111,8 @@ class MemberRendererOutputTest {
 
     @Test
     void sparseListAndMap_emitOptionalTypesAndAddOverloads() {
-        // Mirrors C2J's generated SparseNullsOperationRequest.h: a @sparse list/map wraps its
-        // element/value in Aws::Crt::Optional, and gets an extra Add overload accepting the
-        // Optional element/value directly.
+        // Mirrors C2J SparseNullsOperationRequest.h: @sparse list/map wraps element/value in
+        // Aws::Crt::Optional and gets an extra Add overload taking the Optional directly.
         StringShape str = StringShape.builder().id("com.example#String").build();
         ListShape sparseList = ListShape.builder()
             .id("com.example#SparseStringList")
@@ -142,7 +137,6 @@ class MemberRendererOutputTest {
         String out = writer.toString();
         System.out.println(out);
 
-        // --- sparse list ---
         assertTrue(out.contains(
             "inline const Aws::Vector<Aws::Crt::Optional<Aws::String>>& GetSparseStringList() const { return m_sparseStringList; }"),
             out);
@@ -155,7 +149,6 @@ class MemberRendererOutputTest {
             out);
         assertTrue(out.contains("m_sparseStringList.push_back(value);"), out);
 
-        // --- sparse map ---
         assertTrue(out.contains(
             "inline const Aws::Map<Aws::String, Aws::Crt::Optional<Aws::String>>& GetSparseStringMap() const { return m_sparseStringMap; }"),
             out);
@@ -172,9 +165,8 @@ class MemberRendererOutputTest {
 
     @Test
     void recursiveMember_rendersSharedPtrFieldGetterAndMakeSharedSetter() {
-        // Mirrors connectcases BooleanCondition.h: the andAll member targets CompoundCondition,
-        // which lists BooleanCondition back — a cycle C2J breaks with std::shared_ptr, a *m_x
-        // getter, and a MakeShared setter tagged with the enclosing class name.
+        // Mirrors connectcases BooleanCondition.h: the andAll->CompoundCondition->BooleanCondition
+        // cycle C2J breaks with std::shared_ptr, a *m_x getter, and an enclosing-class MakeShared setter.
         StructureShape operands = StructureShape.builder().id("com.example#BooleanOperands").build();
         UnionShape booleanCondition = UnionShape.builder()
             .id("com.example#BooleanCondition")

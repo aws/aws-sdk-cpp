@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class SourceRegionTransformTest {
 
-    // Builds a single-operation service model. sdkId drives ServiceNameUtil.getSmithyServiceName.
+    // sdkId drives ServiceNameUtil.getSmithyServiceName.
     private static Model modelWithOp(String sdkId, String opName, String reqName) {
         StructureShape req = StructureShape.builder()
             .id("com.example#" + reqName)
@@ -57,7 +57,6 @@ class SourceRegionTransformTest {
 
     @Test
     void noOpForUntargetedOperation() {
-        // Operation not in the RDS table -> unchanged
         Model m = modelWithOp("RDS", "DescribeDBClusters", "DescribeDBClustersRequest");
         Model out = SourceRegionTransform.asTransform().apply(m, service(m));
         assertTrue(out.expectShape(ShapeId.from("com.example#DescribeDBClustersRequest"),

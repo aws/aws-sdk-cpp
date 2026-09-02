@@ -96,10 +96,9 @@ public final class QueryXmlProtocolTraits implements ProtocolTraits {
             case RESULT_HEADER:
                 // Query/EC2 result headers forward-declare XmlDocument; no serde include.
                 return List.of();
-            // Request sources additionally serialize @httpHeader/@httpQuery members via the shared
-            // serializers, which need URI (AddQueryStringParameter), StringUtils, the stringstream,
-            // and <numeric> (std::accumulate for comma-joined list @httpHeader members). URI.h is
-            // added only here to avoid widening the other source kinds.
+            // Request sources also serialize @httpHeader/@httpQuery members, needing URI,
+            // StringUtils, the stringstream, and <numeric> (std::accumulate for comma-joined list
+            // headers). URI.h added only here to avoid widening other source kinds.
             case REQUEST_SOURCE:
                 return List.of(
                     "aws/core/utils/xml/XmlSerializer.h",
@@ -217,9 +216,8 @@ public final class QueryXmlProtocolTraits implements ProtocolTraits {
             writer.write("");
             writeAddQueryStringParametersDecl(writer, exportMacro);
         }
-        // The protected DumpBodyToUrl override declaration is emitted protocol-agnostically by
-        // RequestRenderer (gated on the operation's SupportsPresigningTrait, stamped on every
-        // query/ec2 operation including Unit-input ops); only the impl below is protocol-specific.
+        // The DumpBodyToUrl override decl is emitted protocol-agnostically by RequestRenderer
+        // (gated on SupportsPresigningTrait); only the impl below is protocol-specific.
     }
 
     @Override
@@ -237,8 +235,8 @@ public final class QueryXmlProtocolTraits implements ProtocolTraits {
             writer.write("");
             writeAddQueryStringParametersImpl(writer, className, shape, model);
         }
-        // Gate the DumpBodyToUrl impl on the same operation trait as the RequestRenderer decl so the
-        // two stay symmetric: a Unit-input op with the trait gets both, an op without it gets neither.
+        // Gate the DumpBodyToUrl impl on the same trait as the RequestRenderer decl so the two stay
+        // symmetric.
         if (operation.hasTrait(SupportsPresigningTrait.class)) {
             writer.write("");
             writer.write("void $L::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }",

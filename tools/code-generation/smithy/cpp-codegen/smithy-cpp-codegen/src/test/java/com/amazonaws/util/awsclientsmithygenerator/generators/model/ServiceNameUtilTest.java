@@ -32,14 +32,12 @@ class ServiceNameUtilTest {
 
     @Test
     void getExportMacro_standardService() {
-        // Test the export macro format follows AWS_{SERVICE_NAME}_API pattern
-        // We test it indirectly through the capitalize logic it uses
+        // Export macro is AWS_{SERVICE_NAME}_API; exercised indirectly via the capitalize logic it uses.
         assertEquals("Kinesis", ServiceNameUtil.capitalize("kinesis"));
     }
 
     @Test
     void getProjectName_standardService() {
-        // Test the project name format (lowercase hyphenated)
-        // This would require a full ServiceShape which is tested separately
+        // Project name format (lowercase hyphenated) needs a full ServiceShape; covered separately.
     }
 }

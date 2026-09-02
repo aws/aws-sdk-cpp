@@ -19,36 +19,29 @@ import software.amazon.smithy.model.traits.TimestampFormatTrait;
 import java.util.Locale;
 
 /**
- * Emits the {@code @httpHeader} member-serialization loop body for a request (operation-input)
- * structure's {@code GetRequestSpecificHeaders()}, byte-matching the legacy C2J
- * {@code ModelClassHeaderMembersSource.vm}.
+ * Emits the {@code @httpHeader} member-serialization loop body for a request's
+ * {@code GetRequestSpecificHeaders()}, byte-matching C2J {@code ModelClassHeaderMembersSource.vm}.
  *
- * <p>Protocol-agnostic: the member serialization is byte-identical across REST-XML, JSON,
- * REST-JSON, Query-XML, EC2, and CBOR, so this renderer never branches on protocol. The
- * caller ({@code ProtocolTraits.writeGetRequestSpecificHeadersImpl}) owns the surrounding
- * {@code Aws::Http::HeaderValueCollection headers;} / {@code Aws::StringStream ss;} declarations,
- * the protocol prologue (e.g. {@code X-Amz-Target}), and {@code return headers;}.
+ * <p>Protocol-agnostic (byte-identical across REST-XML, JSON, REST-JSON, Query-XML, EC2, CBOR).
+ * The caller owns the surrounding {@code headers}/{@code ss} declarations, protocol prologue, and
+ * {@code return headers;}. Every member is {@code HasBeenSet}-gated; enums also guard {@code ::NOT_SET}.
  *
- * <p>Every member is {@code HasBeenSet}-gated (C2J clears {@code required} on all members), and
- * enum members additionally guard against {@code ::NOT_SET}.
- *
- * <p>Scope: {@code @httpHeader} members (string / {@code x-amz-copy-source} / enum / boolean /
- * blob / timestamp scalars, plus lists joined via {@code std::accumulate}) and
- * {@code @httpPrefixHeaders} maps (looped, with sparse-value {@code has_value()} unwrapping).
+ * <p>Scope: {@code @httpHeader} scalars (string / {@code x-amz-copy-source} / enum / boolean / blob /
+ * timestamp) and lists (joined via {@code std::accumulate}), plus {@code @httpPrefixHeaders} maps
+ * (looped, sparse values unwrapped via {@code has_value()}).
  */
 public final class RequestHeaderSerializer {
 
     private RequestHeaderSerializer() {}
 
     /**
-     * Emits the header-member serialization for every header-bound member of {@code shape}, in
-     * model order: {@code @httpHeader} scalars/lists, and {@code @httpPrefixHeaders} maps. Members
-     * carrying neither trait are skipped.
+     * Emits header serialization for every header-bound member of {@code shape} in model order:
+     * {@code @httpHeader} scalars/lists and {@code @httpPrefixHeaders} maps; others skipped.
      */
     public static void render(CppWriter writer, StructureShape shape, Model model) {
         for (MemberShape member : shape.getAllMembers().values()) {
-            // C2J lowercases HTTP header location names (and @httpPrefixHeaders prefixes); query
-            // names stay case-sensitive. Locale.ROOT avoids locale-dependent casing surprises.
+            // C2J lowercases header location names (and @httpPrefixHeaders prefixes); Locale.ROOT
+            // avoids locale-dependent casing.
             member.getTrait(HttpHeaderTrait.class).ifPresent(trait ->
                 renderHeaderMember(writer, member, trait.getValue().toLowerCase(Locale.ROOT), model));
             member.getTrait(HttpPrefixHeadersTrait.class).ifPresent(trait ->
@@ -80,9 +73,8 @@ public final class RequestHeaderSerializer {
             renderScalarBody(writer, field, location, target, model));
     }
 
-    // @httpPrefixHeaders map: each entry becomes a header whose name is the trait prefix
-    // concatenated with the entry key. A @sparse map's value is Aws::Crt::Optional, so the emplace
-    // is guarded on has_value() and unwrapped via value().
+    // @httpPrefixHeaders map: each entry becomes a header named prefix+key. A @sparse value is
+    // Aws::Crt::Optional, so the emplace is guarded on has_value() and unwrapped via value().
     private static void renderPrefixHeadersMap(CppWriter writer, MemberShape member, String prefix,
                                                Model model) {
         Shape target = model.expectShape(member.getTarget());
@@ -113,11 +105,10 @@ public final class RequestHeaderSerializer {
         writer.write("  }));");
     }
 
-    // Shared per-type header value expression, keyed on the target shape: enum → Mapper lookup,
-    // timestamp → the header timestamp mapping (epoch-seconds→Seconds(), date-time→ISO_8601,
-    // else→RFC822), primitive → to_string, any other (string) value used directly. The value
-    // expression (the field for a scalar member, the loop var for a list element) is the parameter,
-    // so the scalar and list paths share one copy of the enum-Mapper and timestamp-format mappings.
+    // Shared per-type header value expression, keyed on target shape: enum → Mapper lookup,
+    // timestamp → header mapping (epoch-seconds→Seconds(), date-time→ISO_8601, else→RFC822),
+    // primitive → to_string, else (string) used directly. The value expr (scalar field or list
+    // loop var) is the parameter, so scalar and list paths share this mapping.
     private static String headerValueExpression(Shape shape, String valueExpr, Model model) {
         if (CppTypeMapper.isEnum(shape)) {
             String enumType = CppTypeMapper.getCppType(shape, model, false);

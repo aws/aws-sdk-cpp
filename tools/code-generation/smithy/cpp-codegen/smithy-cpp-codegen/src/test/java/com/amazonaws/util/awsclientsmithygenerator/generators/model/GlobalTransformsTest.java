@@ -171,7 +171,6 @@ class GlobalTransformsTest {
 
     @Test
     void computeReachableShapes_simpleOperation_includesInputAndOutput() {
-        // Build a minimal model with one operation that has input and output
         StructureShape input = StructureShape.builder()
             .id("com.example#MyInput")
             .addMember(MemberShape.builder()
@@ -212,7 +211,6 @@ class GlobalTransformsTest {
 
     @Test
     void computeReachableShapes_nestedStructure_isReachable() {
-        // Nested structure should be reachable through member reference
         StructureShape nested = StructureShape.builder()
             .id("com.example#NestedStruct")
             .addMember(MemberShape.builder()
@@ -257,7 +255,6 @@ class GlobalTransformsTest {
 
     @Test
     void computeReachableShapes_unreferencedShape_notIncluded() {
-        // A shape that is not referenced by any operation should not be reachable
         StructureShape unreferenced = StructureShape.builder()
             .id("com.example#Unreferenced")
             .addMember(MemberShape.builder()
@@ -297,7 +294,6 @@ class GlobalTransformsTest {
 
     @Test
     void computeReachableShapes_listMember_targetIsReachable() {
-        // List member targets should be traversed
         StructureShape element = StructureShape.builder()
             .id("com.example#Element")
             .addMember(MemberShape.builder()
@@ -350,7 +346,6 @@ class GlobalTransformsTest {
 
     @Test
     void computeReachableShapes_mapKeyAndValue_areReachable() {
-        // Map key and value targets should be traversed
         StructureShape valueShape = StructureShape.builder()
             .id("com.example#MapValue")
             .addMember(MemberShape.builder()
@@ -407,7 +402,6 @@ class GlobalTransformsTest {
 
     @Test
     void computeReachableShapes_errorShapes_areReachable() {
-        // Error shapes should be traversed
         StructureShape error = StructureShape.builder()
             .id("com.example#MyError")
             .addMember(MemberShape.builder()
@@ -449,9 +443,8 @@ class GlobalTransformsTest {
 
     @Test
     void computeReachableShapes_excludesStructReachableOnlyViaDeprecatedOperation() {
-        // A @deprecated operation is dropped entirely (matching legacy C2J, which omits deprecated
-        // operations). A struct reachable ONLY through the deprecated op's input must fall out of the
-        // reachable set, while a struct shared with a live op stays reachable via that live op.
+        // A @deprecated operation is dropped entirely (C2J parity). A struct reachable only via it
+        // falls out of the reachable set; one shared with a live op stays reachable.
         StructureShape deprecatedOnly = StructureShape.builder()
             .id("com.example#DeprecatedOnly")
             .addMember(MemberShape.builder()
@@ -512,9 +505,8 @@ class GlobalTransformsTest {
 
     @Test
     void dropDeprecatedMembers_removesDeprecatedMember_keepsOthers() {
-        // Mirrors C2J: a member with @deprecated is dropped from the generated shape; siblings stay.
-        // The shape must be reachable from the service (used as an operation input here) so that the
-        // reachability-scoped transform considers it.
+        // Mirrors C2J: a @deprecated member is dropped; siblings stay. The shape is an operation
+        // input so the reachability-scoped transform considers it.
         StructureShape config = StructureShape.builder()
             .id("com.example#LocationConfiguration")
             .addMember(MemberShape.builder()
@@ -590,9 +582,8 @@ class GlobalTransformsTest {
 
     @Test
     void dropDeprecatedMembers_sharedTargetSurvivesViaNonDeprecatedReference() {
-        // A shape reached through BOTH a @deprecated member and a live member must stay reachable:
-        // dropping the deprecated reference must never orphan a shape the surviving model still uses.
-        // This guards against a pruning bug that would drop a shared shape and dangle the live ref.
+        // A shape reached through both a @deprecated and a live member must stay reachable: dropping
+        // the deprecated reference must not orphan a shape the surviving model still uses.
         StructureShape shared = StructureShape.builder()
             .id("com.example#SharedDetail")
             .addMember(MemberShape.builder()
@@ -636,9 +627,8 @@ class GlobalTransformsTest {
 
     @Test
     void injectResponseMetadata_failsFastOnModeledResponseMetadataMember() {
-        // ResponseMetadata is framework-reserved. A modeled member of that name on a result would
-        // make MemberRenderer's name-based recognition ambiguous, so injection fails fast rather
-        // than clobber the modeled member or silently mis-render it.
+        // ResponseMetadata is framework-reserved; a modeled member of that name would make
+        // name-based recognition ambiguous, so injection fails fast rather than clobber it.
         StructureShape input = StructureShape.builder().id("com.example#DoThingInput").build();
         StructureShape output = StructureShape.builder()
             .id("com.example#DoThingOutput")
@@ -791,9 +781,8 @@ class GlobalTransformsTest {
 
     @Test
     void injectResponseMetadata_skipsDeprecatedOperationOutputSharedByLiveOp() {
-        // A @deprecated operation's output that is ALSO reused as a nested member by a live op's
-        // output is reachable/emitted as a sub-object, but C2J drops the deprecated op entirely and
-        // never injects ResponseMetadata into that shape. Only genuine live-op outputs get it.
+        // A @deprecated op's output reused as a nested member stays emitted, but C2J drops the
+        // deprecated op and never injects ResponseMetadata there; only genuine live-op outputs get it.
         StructureShape sharedOutput = StructureShape.builder()
             .id("com.example#SharedOutput")
             .addMember(MemberShape.builder()

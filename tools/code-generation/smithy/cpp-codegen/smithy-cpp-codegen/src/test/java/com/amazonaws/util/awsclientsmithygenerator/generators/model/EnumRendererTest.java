@@ -43,9 +43,8 @@ class EnumRendererTest {
 
     @Test
     void renderHeader_capitalizesLowerCamelEnumName() {
-        // Some Smithy models (e.g. IAM) name enum shapes in lowerCamel. C2J normalizes every
-        // shape name to UpperCamel, so the C++ enum type, mapper namespace, and mapper
-        // functions must be capitalized regardless of the model's casing.
+        // Some Smithy models (e.g. IAM) name enum shapes in lowerCamel; C2J normalizes to UpperCamel,
+        // so the C++ enum type, mapper namespace, and functions must all be capitalized.
         EnumShape enumShape = EnumShape.builder()
             .id("com.example#statusType")
             .addMember("Active", "Active")

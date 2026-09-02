@@ -18,15 +18,11 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Stamps the internal {@link LongPollingTrait} onto the request structures of the long-polling
- * operations that C2J flags with {@code operation.setLongPolling(true)}, so the
- * {@code IsLongPollingOperation() -> true} override is emitted by request rendering. C2J's
- * {@code C2jModelToGeneratorModelTransformer.LONG_POLLING_OPERATIONS} keys the set on the C2J
- * {@code serviceId} ({@code SQS}, {@code SFN}, {@code SWF}); the Smithy equivalent is the RAW smithy
- * service name (the lowercased/hyphenated sdkId from
- * {@link ServiceNameUtil#getSmithyServiceName(ServiceShape, Map)} with a {@code null} service map, so
- * no c2jMap remap such as {@code sfn->states} is applied). No-op for any other service, leaving the
- * model instance untouched.
+ * Stamps {@link LongPollingTrait} onto the request structures of the long-polling operations C2J flags
+ * with {@code operation.setLongPolling(true)}, so the {@code IsLongPollingOperation() -> true} override
+ * is emitted. C2J keys {@code LONG_POLLING_OPERATIONS} on serviceId; the Smithy equivalent is the raw
+ * smithy service name (from {@link ServiceNameUtil#getSmithyServiceName(ServiceShape, Map)} with a
+ * {@code null} map, so no c2jMap remap like {@code sfn->states}). No-op for other services.
  */
 public final class LongPollingTransform {
 

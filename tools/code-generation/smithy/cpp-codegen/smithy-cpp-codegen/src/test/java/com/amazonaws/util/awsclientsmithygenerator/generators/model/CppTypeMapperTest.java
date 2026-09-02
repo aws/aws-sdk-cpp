@@ -254,9 +254,8 @@ class CppTypeMapperTest {
 
     @Test
     void legacyEnumStringShape_mapsToEnumType() {
-        // Smithy 1.0 models a closed set as a `string` shape carrying the @enum trait (not a 2.0
-        // EnumShape). C2J treats these as enums, so a member targeting one must resolve to the
-        // enum C++ type, NOT Aws::String. Mirrors ShapeClassifier / EnumResolver detection.
+        // Smithy 1.0 models a closed set as a `string` shape with the @enum trait. C2J treats these
+        // as enums, so a member targeting one resolves to the enum C++ type, not Aws::String.
         software.amazon.smithy.model.traits.EnumTrait enumTrait =
             software.amazon.smithy.model.traits.EnumTrait.builder()
                 .addEnum(software.amazon.smithy.model.traits.EnumDefinition.builder()
@@ -317,11 +316,7 @@ class CppTypeMapperTest {
 
     // --- recursive (mutually-referenced) shape tests ---
 
-    /**
-     * Builds the connectcases-style mutual cycle: a union {@code BooleanCondition} with a direct
-     * member targeting struct {@code CompoundCondition}, which holds a list of
-     * {@code BooleanCondition}. The two aggregates are mutually referenced through the list.
-     */
+    /** connectcases-style mutual cycle: union {@code BooleanCondition} -> struct {@code CompoundCondition} -> list of {@code BooleanCondition}. */
     private static Model mutualCycleModel() {
         StructureShape operands = StructureShape.builder().id("com.example#BooleanOperands").build();
         // Forward references are fine; Model.builder resolves them at build().
@@ -378,9 +373,8 @@ class CppTypeMapperTest {
 
     @Test
     void directSelfReference_isRecursive_butNotForwardDeclaredOrSelfIncluded() {
-        // connectcases CaseFilter has a `not` member targeting CaseFilter itself. C2J renders it as
-        // std::shared_ptr<CaseFilter> but adds neither a self forward-declaration nor a self-include
-        // (the class declares itself) — and, unlike the mutual case, no AWSAllocator.h either.
+        // connectcases CaseFilter's `not` member targets CaseFilter itself: C2J renders shared_ptr
+        // but adds no self forward-decl, no self-include, and (unlike the mutual case) no AWSAllocator.h.
         StructureShape filter = StructureShape.builder()
             .id("com.example#CaseFilter")
             .addMember("not", software.amazon.smithy.model.shapes.ShapeId.from("com.example#CaseFilter"))
@@ -589,9 +583,8 @@ class CppTypeMapperTest {
 
     @Test
     void getIncludesForShape_withIdempotencyTokenMember_includesUuidHeader() {
-        // C2J adds <aws/core/utils/UUID.h> to any shape carrying an @idempotencyToken member,
-        // because such members are brace-initialized with Aws::Utils::UUID::PseudoRandomUUID()
-        // (CppViewHelper.java). The include must be present for the initializer to compile.
+        // C2J adds <aws/core/utils/UUID.h> for any @idempotencyToken member, which is brace-initialized
+        // with Aws::Utils::UUID::PseudoRandomUUID() and needs the include to compile.
         StringShape str = StringShape.builder().id("com.example#Str").build();
         StructureShape struct = StructureShape.builder()
             .id("com.example#MyRequest")
@@ -644,10 +637,8 @@ class CppTypeMapperTest {
 
     @Test
     void getIncludesForShape_withNestedMapOfMap_includesLeafStructHeader() {
-        // apigateway Deployment.apiSummary is Map<String, Map<String, MethodSnapshot>>. The outer
-        // map's value is itself a map (no header of its own), so a one-level unwrap stops before
-        // reaching the leaf struct MethodSnapshot and its header is dropped — an incomplete-type
-        // compile error. C2J recursively unwraps nested containers to include all leaf headers.
+        // apigateway Deployment.apiSummary is Map<String, Map<String, MethodSnapshot>>: a one-level
+        // unwrap misses the leaf MethodSnapshot header, so C2J recursively unwraps nested containers.
         StringShape str = StringShape.builder().id("com.example#Str").build();
         StructureShape leaf = StructureShape.builder().id("com.example#MethodSnapshot").build();
         MapShape innerMap = MapShape.builder()

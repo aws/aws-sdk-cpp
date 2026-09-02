@@ -52,9 +52,8 @@ class SupportsPresigningTransformTest {
     }
 
     /**
-     * One operation with a normal input and one operation with NO input (its input target defaults to
-     * {@code smithy.api#Unit}), under a service carrying {@code protocolTrait}. Mirrors an IAM-style
-     * {@code GetAccountSummary} where the request struct is the shared {@code Unit}.
+     * A normal-input op plus a no-input op (input defaults to {@code smithy.api#Unit}), under a
+     * service with {@code protocolTrait}. Mirrors IAM {@code GetAccountSummary} (shared Unit input).
      */
     private static Model opPlusUnitInputModel(Trait protocolTrait, String normalOp, String unitOp) {
         StructureShape in = StructureShape.builder().id("com.example#" + normalOp + "Request").build();

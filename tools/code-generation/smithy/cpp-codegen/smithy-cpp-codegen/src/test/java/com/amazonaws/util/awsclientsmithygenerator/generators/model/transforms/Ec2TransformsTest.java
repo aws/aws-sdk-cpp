@@ -135,7 +135,6 @@ class Ec2TransformsTest {
         assertTrue(valueTarget.hasTrait(SensitiveTrait.class),
             "the blob must be @sensitive so it renders as CryptoBuffer");
 
-        // UserData is repointed to SecureBlobAttributeValue.
         MemberShape userData = out.expectShape(
             ShapeId.from("com.example#ModifyInstanceAttributeRequest"), StructureShape.class)
             .getAllMembers().get("UserData");

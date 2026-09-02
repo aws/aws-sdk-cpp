@@ -15,9 +15,8 @@ import java.util.List;
  * Universal (non-serde, non-member) {@code #include} paths for each generated file kind.
  * Paths are returned without angle brackets; callers add {@code #include <...>}.
  *
- * <p>These are the boilerplate includes that were previously hand-written as string literals
- * in each renderer. Serde includes come from {@code ProtocolTraits.serdeIncludes}; member
- * includes come from {@code CppTypeMapper.getIncludesForShape}.
+ * <p>Serde includes come from {@code ProtocolTraits.serdeIncludes}; member includes come
+ * from {@code CppTypeMapper.getIncludesForShape}.
  */
 final class IncludeSets {
 
@@ -65,9 +64,7 @@ final class IncludeSets {
     static List<String> requestSourceBase(String smithyServiceName, String className) {
         List<String> inc = new ArrayList<>();
         inc.add("aws/" + smithyServiceName + "/model/" + className + ".h");
-        // NOTE: <utility> is NOT added here. Query/EC2 request sources must not include it,
-        // and the non-Query protocols' serdeIncludes(REQUEST_SOURCE) already carry <utility>.
-        // Adding it here would force it onto Query.
+        // <utility> NOT added: Query/EC2 must omit it, and non-Query serdeIncludes(REQUEST_SOURCE) already carry it.
         return inc;
     }
 
@@ -79,11 +76,9 @@ final class IncludeSets {
     }
 
     /**
-     * Assembles and emits a source file's {@code #include} block: the per-site {@code base}
-     * (self-header, {@code AmazonWebServiceResult.h}, etc.) plus the protocol's source-include
-     * union for {@code kind}. The two lists are concatenated then emitted via {@link #emit},
-     * which dedups, sorts (CaseSensitive) and brackets. Usings are emitted separately by the
-     * caller via {@link #emitUsings} — this method never touches usings.
+     * Emits a source file's {@code #include} block: {@code base} plus the protocol's source
+     * includes for {@code kind}, via {@link #emit} (dedup/sort/bracket). Usings are the caller's
+     * job ({@link #emitUsings}); this method never touches them.
      */
     static void emitSourceIncludes(CppWriter writer, List<String> base,
                                    ProtocolTraits traits, FileKind kind) {
@@ -102,9 +97,9 @@ final class IncludeSets {
     }
 
     /**
-     * Emits {@code #include <path>} for each path, normalizing brackets so a caller may
-     * pass either {@code <aws/x/X.h>} or {@code aws/x/X.h}. Deduped and sorted CaseSensitive,
-     * matching {@link #emit}. This is the single place bracket policy for header includes lives.
+     * Emits {@code #include <path>} per path, normalizing brackets so callers may pass
+     * {@code <aws/x/X.h>} or {@code aws/x/X.h}. Deduped/sorted like {@link #emit}; the single
+     * place header bracket policy lives.
      */
     static void emitAngleIncludes(com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter writer,
                                   java.util.Collection<String> includePaths) {

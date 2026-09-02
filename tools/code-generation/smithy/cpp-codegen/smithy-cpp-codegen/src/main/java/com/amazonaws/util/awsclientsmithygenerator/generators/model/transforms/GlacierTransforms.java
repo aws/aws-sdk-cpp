@@ -27,16 +27,11 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
- * Glacier parity with the legacy C2J {@code GlacierRestJsonCppClientGenerator} for the
- * {@code Model::} namespace. C2J sets {@code metadata.additionalHeaders} to
- * {@code {x-amz-glacier-version: <apiVersion>}}, which the {@code <Prefix>Request} base class emits
- * for ordinary requests. That base stays C2J-generated, so the only gap in the Smithy-generated
- * model is the streaming requests ({@code UploadArchive}, {@code UploadMultipartPart}): they derive
- * from {@code AmazonStreamingWebServiceRequest} and bypass the base {@code GetHeaders}, so C2J's
- * {@code StreamRequestSource.vm} emits the constant header inside their own
- * {@code GetRequestSpecificHeaders}. This stamps {@link AdditionalRequestHeadersTrait} on those
- * streaming request inputs; request rendering turns it into the matching {@code headers.insert(...)}.
- * Self-guards on the raw smithy service name and no-ops when the model has no streaming request.
+ * Glacier C2J parity. C2J sets metadata.additionalHeaders to {x-amz-glacier-version: <apiVersion>},
+ * emitted by the C2J-generated base request for ordinary requests. The gap is the streaming requests
+ * (UploadArchive, UploadMultipartPart), which bypass the base GetHeaders: this stamps
+ * {@link AdditionalRequestHeadersTrait} on their inputs so request rendering emits the matching
+ * headers.insert(...). Self-guards on service name; no-op when the model has no streaming request.
  */
 public final class GlacierTransforms {
 
@@ -75,15 +70,11 @@ public final class GlacierTransforms {
         return model.toBuilder().addShapes(marked.toArray(new Shape[0])).build();
     }
 
-    // Upstream Coral2Smithy's GlacierTransformer retypes every header/query `limit` (page-size) member
-    // from string to smithy.api#Integer, arguing the wire form (a query param) is unchanged. But the
-    // C++ SDK historically shipped these as Aws::String, so consuming the integer would break the
-    // public API (Aws::String GetLimit() -> int GetLimit()). This inverts the upstream retype for the
-    // header/query `limit` members, retargeting them back to the service string shape — matching C2J
-    // and the sibling string members (e.g. marker). Only these page-size members are query/header
-    // bound; body `limit` members (whose type change would alter serialization) are never retyped by
-    // Coral2Smithy and so are already string. Pagination is unaffected: the paginators continue via
-    // the `Marker` continuation token and never read or write `limit`.
+    // Upstream Coral2Smithy retypes header/query `limit` members from string to Integer, but the C++
+    // SDK historically shipped these as Aws::String, so consuming the integer would break the public
+    // API. This inverts that retype, retargeting them back to the service string shape to match C2J.
+    // Body `limit` members are never retyped upstream and stay string; pagination is unaffected (it
+    // uses the `Marker` continuation token, never `limit`).
     private static Model retypeLimitQueryMembersToString(Model model, ServiceShape service) {
         ShapeId stringTarget = ShapeId.fromParts(service.getId().getNamespace(), "string");
         if (!model.getShape(stringTarget).isPresent()) {

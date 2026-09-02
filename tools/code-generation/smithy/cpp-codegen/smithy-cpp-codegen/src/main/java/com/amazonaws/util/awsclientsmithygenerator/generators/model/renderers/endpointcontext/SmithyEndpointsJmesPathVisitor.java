@@ -22,12 +22,10 @@ import software.amazon.smithy.model.shapes.Shape;
 import software.amazon.smithy.model.shapes.StructureShape;
 
 /**
- * Translates the JMESPath expression carried by {@code smithy.rules#operationContextParams}
- * into C++ that walks the request struct and pushes leaf values into a {@code result}
- * {@code Aws::Vector<Aws::String>}. Immutable and value-returning: each visit returns an
- * {@link Emit}; parents compose children's results. Produces the same C++ structure as the
- * legacy C2J generator (identifiers and statements), modulo whitespace (normalized downstream
- * by clang-format).
+ * Translates the JMESPath expression from {@code smithy.rules#operationContextParams} into C++ that
+ * walks the request struct and pushes leaf values into a {@code result} {@code Aws::Vector<Aws::String>}.
+ * Immutable and value-returning: each visit returns an {@link Emit}, parents compose children's
+ * results. Produces the same C++ as legacy C2J (identifiers/statements), modulo whitespace.
  */
 public final class SmithyEndpointsJmesPathVisitor extends UnsupportedExpressionVisitor<Emit> {
 
@@ -87,9 +85,8 @@ public final class SmithyEndpointsJmesPathVisitor extends UnsupportedExpressionV
     public Emit visitProjection(ProjectionExpression expression) {
         Emit left = expression.getLeft().accept(this);
         if (!(left.shape() instanceof ListShape)) {
-            // No list to iterate at this node (e.g. the trailing flatten-projection of a
-            // multi-select pattern, whose left subtree already emitted every statement).
-            // Propagate the left subtree's statements rather than discarding them.
+            // No list to iterate here (e.g. the trailing flatten-projection of a multi-select, whose
+            // left subtree already emitted every statement); propagate them rather than discarding.
             return left;
         }
         String alias = left.rootName() + "Elems";

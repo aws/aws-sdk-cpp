@@ -36,12 +36,11 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
- * S3 (and S3-CRT, which shares the S3 model) parity with the legacy C2J
- * {@code S3RestXmlCppClientGenerator} for the {@code Model::} namespace. Composes the S3 model
- * mutations that C2J applies in {@code generateSourceFiles}. Self-guards on the raw smithy service
- * name; every sub-transform no-ops when its target shapes are absent and fast-fails on genuine
- * collisions. Client/endpoint/ARN/S3Express/CRT customizations are out of scope (separate
- * generators), as is serde-body emission (still stubbed plugin-wide).
+ * S3 (and S3-CRT, which shares the model) parity with C2J's {@code S3RestXmlCppClientGenerator} for
+ * the {@code Model::} namespace, composing the model mutations C2J applies in
+ * {@code generateSourceFiles}. Self-guards on the raw smithy service name; each sub-transform no-ops
+ * when its shapes are absent and fast-fails on genuine collisions. Client/endpoint/ARN/S3Express/CRT
+ * customizations and serde-body emission are out of scope.
  */
 public final class S3Transforms {
 
@@ -64,9 +63,8 @@ public final class S3Transforms {
         return markChecksumMembers(result, service);
     }
 
-    // C2J's S3RestXmlCppClientGenerator flips these two requests' isOverrideStreaming on. Both derive
-    // from StreamingS3Request (== AmazonStreamingWebServiceRequest, whose IsStreaming() returns true),
-    // so they must override IsStreaming() back to false; RequestRenderer emits that for marked shapes.
+    // C2J flips isOverrideStreaming on for these two requests. Both derive from StreamingS3Request
+    // (whose IsStreaming() returns true), so they must override it back to false for marked shapes.
     private static final Set<String> REQUESTS_TO_OVERRIDE_STREAMING = Set.of(
         "PutBucketPolicyRequest", "PutObjectAnnotationRequest");
 
@@ -84,10 +82,9 @@ public final class S3Transforms {
         return model.toBuilder().addShapes(marked.toArray(new Shape[0])).build();
     }
 
-    // C2J's S3RestXmlCppClientGenerator maps each checksum member shape name to its ChecksumAlgorithm
-    // enum constant; every request that also carries a ChecksumAlgorithm member gets these members
-    // flagged so their setters also call SetChecksumAlgorithm(...). ChecksumCRC64NVME is intentionally
-    // absent (C2J never listed it), so it keeps a plain setter.
+    // C2J maps each checksum member shape name to its ChecksumAlgorithm enum constant; every request
+    // that also carries a ChecksumAlgorithm member gets these flagged so their setters also call
+    // SetChecksumAlgorithm(...). ChecksumCRC64NVME is intentionally absent (C2J never listed it).
     private static final Map<String, String> CHECKSUM_MEMBERS_ENUMS = Map.ofEntries(
         Map.entry("ChecksumCRC32", "CRC32"),
         Map.entry("ChecksumCRC32C", "CRC32C"),
@@ -106,8 +103,8 @@ public final class S3Transforms {
             .collect(Collectors.toSet());
         List<Shape> replacements = new ArrayList<>();
         for (StructureShape req : model.shapes(StructureShape.class).toList()) {
-            // Only request shapes that already carry a ChecksumAlgorithm member (so SetChecksumAlgorithm
-            // exists), and only when they hold at least one not-yet-marked checksum member.
+            // Only requests already carrying a ChecksumAlgorithm member with at least one
+            // not-yet-marked checksum member.
             boolean isChecksumRequest = inputShapes.contains(req.getId())
                 && req.getMember("ChecksumAlgorithm").isPresent();
             boolean needsStamp = isChecksumRequest && req.getAllMembers().values().stream().anyMatch(m ->
@@ -115,7 +112,7 @@ public final class S3Transforms {
                     && !m.hasTrait(ChecksumMemberTrait.class));
             if (needsStamp) {
                 // Re-add only the checksum members with the marker; addMember replaces in place, so
-                // the other members (and the shape's traits/source) carry over untouched via toBuilder.
+                // other members and the shape's traits/source carry over via toBuilder.
                 StructureShape.Builder b = req.toBuilder();
                 for (MemberShape m : req.getAllMembers().values()) {
                     String enumValue = CHECKSUM_MEMBERS_ENUMS.get(m.getTarget().getName());
@@ -135,12 +132,10 @@ public final class S3Transforms {
         return model.toBuilder().addShapes(replacements.toArray(new Shape[0])).build();
     }
 
-    // C2J's S3RestXmlCppClientGenerator carries a hardcoded functionsWithEmbeddedErrors set; each
-    // listed request shape gets shape.setEmbeddedErrors(true), which RequestHeader.vm turns into the
-    // HasEmbeddedError(...) override. Mirror that by stamping EmbeddedErrorsTrait on every request
-    // structure whose simple name is in the set; REST-XML request rendering emits the method for
-    // marker-bearing shapes. The lone C2J typo entry (DeleteBucketAnaxlyticsConfigurationRequest)
-    // is kept verbatim so the set matches C2J exactly; it simply never matches a real shape.
+    // C2J's hardcoded functionsWithEmbeddedErrors set; each listed request gets setEmbeddedErrors(true),
+    // rendered as the HasEmbeddedError(...) override. Mirrored by stamping EmbeddedErrorsTrait on every
+    // request whose simple name is in the set. The C2J typo entry (DeleteBucketAnaxlytics...) is kept
+    // verbatim to match C2J exactly; it never matches a real shape.
     private static final Set<String> EMBEDDED_ERROR_REQUESTS = Set.of(
         "AbortMultipartUploadRequest", "CompleteMultipartUploadRequest", "CopyObjectRequest",
         "CreateBucketRequest", "CreateMultipartUploadRequest", "CreateSessionRequest",
@@ -193,19 +188,18 @@ public final class S3Transforms {
         return model.toBuilder().addShapes(marked.toArray(new Shape[0])).build();
     }
 
-    // C2J's S3RestXmlCppClientGenerator appends a `customizedAccessLogTag` map<string,string> member
-    // to every operation request shape, modeled with a distinct `customizedQuery` flag. It binds to
-    // the query string via @httpQueryParams (so every request emits AddQueryStringParameters), and
-    // additionally carries the CustomizedAccessLogTagTrait marker so RequestQuerySerializer skips the
-    // normal map loop for it and instead emits C2J's x--prefix filter block.
+    // C2J appends a `customizedAccessLogTag` map<string,string> member to every request. It binds to
+    // the query string via @httpQueryParams (so every request emits AddQueryStringParameters) and
+    // carries the CustomizedAccessLogTagTrait marker so RequestQuerySerializer skips the normal map
+    // loop and emits C2J's x--prefix filter block instead.
     private static Model injectAccessLogTagQuery(Model model, ServiceShape service) {
         ShapeId mapId = ShapeId.fromParts("com.amazonaws.s3", "CustomizedAccessLogTag");
         ShapeId stringId = ShapeId.from("smithy.api#String");
 
         Set<ShapeId> inputShapes = TopDownIndex.of(model).getContainedOperations(service).stream()
             .map(OperationShape::getInputShape)
-            // smithy.api#Unit is a shared prelude StructureShape; mutating it would corrupt every
-            // Unit-input operation across the model, so never treat it as a request shape.
+            // smithy.api#Unit is a shared prelude shape; mutating it would corrupt every Unit-input
+            // operation, so never treat it as a request shape.
             .filter(id -> !id.equals(UnitTypeTrait.UNIT))
             .collect(Collectors.toSet());
         List<StructureShape> updated = model.shapes(StructureShape.class)
@@ -225,9 +219,8 @@ public final class S3Transforms {
                 .addMember(MemberShape.builder()
                     .id(req.getId().withMember("customizedAccessLogTag"))
                     .target(mapId)
-                    // @httpQueryParams binds this map to the query string. C2J models it as a
-                    // querystring member on every request, which is what makes every request emit
-                    // AddQueryStringParameters; the trait drives RequestBindings.hasQueryStringMembers.
+                    // @httpQueryParams binds this map to the query string, driving
+                    // RequestBindings.hasQueryStringMembers so every request emits AddQueryStringParameters.
                     .addTrait(new HttpQueryParamsTrait())
                     // Marker for C2J's customizedQuery flag: RequestQuerySerializer skips the normal
                     // map loop for this member and emits the x--prefix filter block instead.
@@ -238,9 +231,9 @@ public final class S3Transforms {
         return model.toBuilder().addShapes(replacements.toArray(new Shape[0])).build();
     }
 
-    // C2J collapses the model's split COMPLETE/COMPLETED ReplicationStatus values into a single
-    // COMPLETED constant. Drop the extra COMPLETED and rewrite COMPLETE to COMPLETED, preserving
-    // the remaining member order. Both remove and rewrite means we rebuild the enum explicitly.
+    // C2J collapses the split COMPLETE/COMPLETED ReplicationStatus values into a single COMPLETED.
+    // Drop the extra COMPLETED and rewrite COMPLETE to COMPLETED, preserving member order; the
+    // remove-and-rewrite means the enum is rebuilt explicitly.
     private static Model normalizeReplicationStatus(Model model) {
         Optional<Shape> shapeOpt = model.shapes()
             .filter(s -> s.getId().getMember().isEmpty())
@@ -288,9 +281,8 @@ public final class S3Transforms {
     }
 
     // C2J's GetObjectResult carries an x-amz-id-2 header member (Id2) plus the standard RequestId.
-    // The RequestId is supplied by ResultRenderer's top-level RequestId group for rest-xml results
-    // (resultHasTopLevelRequestId() == true), which byte-matches C2J; injecting a modeled RequestId
-    // member here would duplicate it. So inject only Id2.
+    // RequestId is already supplied by ResultRenderer's top-level group for rest-xml results, so
+    // injecting a modeled RequestId here would duplicate it; inject only Id2.
     private static Model hackGetObjectResult(Model model) {
         String ns = "com.amazonaws.s3";
         ShapeId outputId = ShapeId.fromParts(ns, "GetObjectOutput");
@@ -312,10 +304,9 @@ public final class S3Transforms {
         return model.toBuilder().addShapes(id2Shape, withId2).build();
     }
 
-    // C2J renames both the CopyObjectResult domain shape (to CopyObjectResultDetails) and the
-    // CopyObjectOutput member that references it, so the member renders as GetCopyObjectResultDetails
-    // while keeping its CopyObjectResult wire name. renameMember pins @xmlName("CopyObjectResult")
-    // for rest-xml so the wire key survives the member-name change.
+    // C2J renames the CopyObjectResult domain shape (to CopyObjectResultDetails) and the referencing
+    // CopyObjectOutput member, so it renders as GetCopyObjectResultDetails while keeping its wire name.
+    // renameMember pins @xmlName("CopyObjectResult") for rest-xml so the wire key survives.
     private static Model renameCopyObjectResult(Model model, ServiceShape service) {
         String ns = "com.amazonaws.s3";
         ShapeId oldId = ShapeId.fromParts(ns, "CopyObjectResult");
@@ -391,12 +382,10 @@ public final class S3Transforms {
         return model.toBuilder().addShapes(replacements.toArray(new Shape[0])).build();
     }
 
-    // Both request and result on ListParts / GetObjectAttributes reference these two shapes. C2J models
-    // them as integers, so the shipped SDK exposes int accessors. Coral2Smithy's S3ShapeMutatorTransformer
-    // instead treats them as opaque pagination tokens: it leaves PartNumberMarker as Coral's string and
-    // retypes NextPartNumberMarker to string. Retype both back to integer here to preserve the C2J public
-    // API (int, not Aws::String). The paginator generator is a separate plugin that never sees this
-    // mutation; it keeps its own NUMERIC_TOKEN_OVERRIDES entry so its `!= 0` check matches the int result.
+    // C2J models these two shapes (used by ListParts / GetObjectAttributes) as integers, so the shipped
+    // SDK exposes int accessors; Coral2Smithy retypes them to string pagination tokens. Retype both back
+    // to integer to preserve the C2J public API. The paginator generator is a separate plugin that never
+    // sees this and keeps its own NUMERIC_TOKEN_OVERRIDES entry so its `!= 0` check matches the int result.
     private static final List<String> PART_NUMBER_MARKER_SHAPES =
         List.of("PartNumberMarker", "NextPartNumberMarker");
 

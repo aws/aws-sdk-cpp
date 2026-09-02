@@ -54,7 +54,6 @@ class TransformPipelineTest {
             .build();
         ServiceShape service = original.expectShape(ShapeId.from("com.example#TestService"), ServiceShape.class);
 
-        // First transform adds a new shape
         Model withExtra = original.toBuilder()
             .addShape(ServiceShape.builder().id("com.example#Extra").version("2024-01-01").build())
             .build();

@@ -7,14 +7,9 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model;
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator;
 
 /**
- * Strategy interface for rendering C++ code for a specific shape classification.
- *
- * <p>Each implementation handles one classification bucket (enum, sub-object, request,
- * result, event stream, etc.). The {@link ModelGenerator} dispatches classified shapes
- * to the appropriate renderer.
- *
- * <p>To add a new classification (e.g., event stream), implement this interface and
- * register the renderer in {@link ModelGenerator}.
+ * Strategy for rendering C++ code for one shape classification bucket (enum, sub-object, request,
+ * result, event stream, etc.). {@link ModelGenerator} dispatches classified shapes to the matching
+ * renderer; add a classification by implementing this and registering it there.
  */
 public interface ShapeRenderer {
 

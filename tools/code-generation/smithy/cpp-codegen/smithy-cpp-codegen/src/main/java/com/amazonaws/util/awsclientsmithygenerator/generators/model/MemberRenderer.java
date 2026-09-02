@@ -107,11 +107,10 @@ public final class MemberRenderer {
                 writer.write("inline const $L& Get$L() const { return $L; }", cppType, methodName, fieldName);
             }
 
-            // The framework-injected ResponseMetadata envelope is always present, so — like C2J —
-            // it gets no HasBeenSet getter (and its flag is initialized true, below). Every other
-            // member, including modeled @required ones, tracks presence via HasBeenSet, matching
-            // C2J's mass-clear of required-ness. `emitHasBeenSet` is the useRequiredField context
-            // (true for sub-objects/requests, false for results).
+            // The injected ResponseMetadata envelope is always present, so (like C2J) gets no
+            // HasBeenSet getter (flag initialized true below). Every other member — including
+            // @required ones — tracks presence via HasBeenSet. emitHasBeenSet is the
+            // useRequiredField context (true for sub-objects/requests, false for results).
             if (emitHasBeenSet && !isInjectedResponseMetadata(member)) {
                 writer.write("inline bool $LHasBeenSet() const { return $LHasBeenSet; }", methodName, fieldName);
             }
@@ -133,9 +132,9 @@ public final class MemberRenderer {
                 writer.openBlock("void Set$L($L&& value) {", "}", methodName, templateParam, () -> {
                     writer.write("$LHasBeenSet = true;", fieldName);
                     if (recursive) {
-                        // Wrap the value in a shared_ptr, tagged with the enclosing class name for
-                        // the allocator. The template setter is only instantiated at call sites,
-                        // where T is complete, so the header can forward-declare T. Matches C2J.
+                        // Wrap in a shared_ptr tagged with the enclosing class name for the
+                        // allocator. The template setter instantiates only at call sites (where T
+                        // is complete), so the header can forward-declare T. Matches C2J.
                         writer.write("$L = Aws::MakeShared<$L>(\"$L\", std::forward<$L>(value));",
                             fieldName, cppType, className, templateParam);
                     } else {
@@ -281,10 +280,8 @@ public final class MemberRenderer {
 
     /**
      * Renders the top-level {@code RequestId} accessor group. When {@code withHasBeenSetGetter} is
-     * {@code true}, the {@code inline bool RequestIdHasBeenSet() const} getter is emitted after the
-     * {@code GetRequestId} getter — the MODEL-class variant C2J stamps onto an operation-output
-     * shape that is also referenced as a member (dual-role sub-object). Result classes pass
-     * {@code false} (no {@code HasBeenSet} getter), matching {@link #forResult}.
+     * true, also emits {@code RequestIdHasBeenSet()} — the model-class variant C2J stamps onto a
+     * dual-role output shape (also referenced as a member). Result classes pass false.
      */
     public static void renderRequestIdAccessors(CppWriter writer, String className,
                                                 boolean withHasBeenSetGetter) {
@@ -309,12 +306,10 @@ public final class MemberRenderer {
     }
 
     /**
-     * Renders the top-level {@code HostId} (x-amz-id-2) accessor group emitted by S3 Control result
-     * headers immediately after the {@code RequestId} group: {@code GetHostId} / templated
-     * {@code SetHostId} / templated {@code WithHostId}. Callers gate emission on
-     * {@code TopLevelHostIdTrait} and separately emit the {@code m_hostId} field and its
-     * {@code HasBeenSet} flag in the private section. Matches C2J's {@code addToAllResultsShape}
-     * HostId member, including the doc string.
+     * Renders the top-level {@code HostId} (x-amz-id-2) accessor group emitted by S3 Control
+     * result headers after the {@code RequestId} group. Callers gate on {@code TopLevelHostIdTrait}
+     * and separately emit the {@code m_hostId} field and its {@code HasBeenSet} flag. Matches C2J's
+     * {@code addToAllResultsShape} HostId member.
      */
     public static void renderHostIdAccessors(CppWriter writer, String className) {
         writer.write("");
@@ -336,9 +331,8 @@ public final class MemberRenderer {
 
     /**
      * Writes a single private data member declaration. {@code @idempotencyToken} members are
-     * brace-initialized with {@code Aws::Utils::UUID::PseudoRandomUUID()} so a caller who omits
-     * the token still gets idempotent behavior; other members fall back to their type's default
-     * initializer (or none). Matches C2J's ServiceClientModelHeaderMemberDeclaration.vm.
+     * brace-initialized with {@code Aws::Utils::UUID::PseudoRandomUUID()} (idempotent even when the
+     * caller omits the token); others use their type's default initializer or none. C2J parity.
      */
     private static void writeDataMember(CppWriter writer, MemberShape member, String memberName, Model model,
                                         boolean wideIntegers, boolean recursive) {
@@ -361,11 +355,9 @@ public final class MemberRenderer {
     }
 
     /**
-     * Writes a single HasBeenSet flag. Matches C2J's ModelClassMembersAndInlines.vm: the flag is
-     * initialized to {@code true} for an {@code @idempotencyToken} member (auto-populated at
-     * construction) or a {@code @required} member in a useRequiredField context ({@code emitHasBeenSet}
-     * — sub-objects/requests, but not results), except when the member is an event stream or a raw
-     * streaming payload. All other members default to {@code false}.
+     * Writes a single HasBeenSet flag. Matches C2J: initialized true for an
+     * {@code @idempotencyToken} member or a {@code @required} member in a useRequiredField context
+     * ({@code emitHasBeenSet}), unless it is an event stream or raw streaming payload; else false.
      */
     private void writeHasBeenSetFlag(CppWriter writer, MemberShape member, String memberName) {
         String fieldName = CppNames.fieldName(memberName);
@@ -382,13 +374,11 @@ public final class MemberRenderer {
     }
 
     /**
-     * True if this member is the framework-injected {@code ResponseMetadata} envelope
-     * ({@code GlobalTransforms.injectResponseMetadata}): a member named {@code ResponseMetadata}
-     * whose target is the injected {@code ResponseMetadata} structure. It is the only member
-     * rendered as always-present (no {@code HasBeenSet} getter; flag initialized true in a
-     * HasBeenSet context), matching C2J, which likewise identifies ResponseMetadata by name.
-     * {@code injectResponseMetadata} fails fast on any modeled ResponseMetadata collision, so this
-     * name-based check is unambiguous.
+     * True if this member is the framework-injected {@code ResponseMetadata} envelope: a member
+     * named {@code ResponseMetadata} whose target is the injected {@code ResponseMetadata} struct.
+     * It is the only always-present member (no {@code HasBeenSet} getter; flag true in a HasBeenSet
+     * context). C2J also identifies it by name; {@code injectResponseMetadata} fails fast on any
+     * modeled collision, so this check is unambiguous.
      */
     private boolean isInjectedResponseMetadata(MemberShape member) {
         return GlobalTransforms.RESPONSE_METADATA.equals(member.getMemberName())
@@ -416,8 +406,7 @@ public final class MemberRenderer {
 
     /**
      * True if a container element / map key or value is passed to {@code Add*} by value rather
-     * than by perfect-forwarding reference. Matches C2J: primitive and enum types are by-value
-     * (they are cheap and trivially copyable), everything else is forwarded.
+     * than perfect-forwarded. Matches C2J: primitives and enums are by-value, everything else forwarded.
      */
     private static boolean isByValueType(Shape shape) {
         return CppTypeMapper.isPrimitive(shape) || CppTypeMapper.isEnum(shape);
@@ -441,10 +430,9 @@ public final class MemberRenderer {
     }
 
     /**
-     * Renders the class-level documentation comment for a shape: its {@code @documentation}
-     * text followed by a "See Also" link to the AWS API reference. Emits an empty doc comment
-     * ({@code /** *}{@code /}) when the shape carries no documentation. Shared by the
-     * request, result, sub-object, and event-stream union renderers.
+     * Renders a shape's class-level doc comment: its {@code @documentation} text plus a "See Also"
+     * link to the AWS API reference (empty doc comment when undocumented). Shared by the request,
+     * result, sub-object, and event-stream union renderers.
      *
      * @param writer            the CppWriter to write to
      * @param shape             the shape whose class doc to render (structure or union)

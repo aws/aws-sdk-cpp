@@ -20,12 +20,10 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Verifies {@link DynamoDbTransforms} stamps {@link CustomRenderedTrait} onto DynamoDB's
- * {@code AttributeValue} shape and is a no-op for other services / absent shapes.
- *
- * <p>Also serves as the empirical proof that Smithy accepts an in-memory trait <em>instance</em>
- * with a synthetic, undefined id ({@code aws.cpp.internal#customRendered}) added inside a transform
- * via {@code shapeToBuilder().addTrait(...)} + {@code model.toBuilder().build()} — no model-level
- * trait definition required, because that build path does not run trait-definition validation.
+ * {@code AttributeValue} and is a no-op for other services / absent shapes. Also proves Smithy
+ * accepts an in-memory trait instance with a synthetic, undefined id via
+ * {@code shapeToBuilder().addTrait(...)} + {@code model.toBuilder().build()} — that build path skips
+ * trait-definition validation.
  */
 class DynamoDbTransformsTest {
 

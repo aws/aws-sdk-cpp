@@ -89,10 +89,9 @@ public final class JsonProtocolTraits implements ProtocolTraits {
             case SUBOBJECT_HEADER:
             case RESULT_HEADER:
                 return List.of();
-            // Request sources additionally serialize @httpHeader/@httpQuery members via the shared
-            // serializers, which need URI (AddQueryStringParameter), StringUtils, and <numeric>
-            // (std::accumulate for comma-joined list @httpHeader members). These are added only
-            // here to avoid widening the other source kinds.
+            // Request sources also serialize @httpHeader/@httpQuery members, needing URI,
+            // StringUtils, and <numeric> (std::accumulate for comma-joined list headers). Added
+            // only here to avoid widening other source kinds.
             case REQUEST_SOURCE:
                 return List.of(
                     "aws/core/utils/json/JsonSerializer.h",
@@ -103,8 +102,7 @@ public final class JsonProtocolTraits implements ProtocolTraits {
                     "aws/core/http/URI.h",
                     "numeric",
                     "utility");
-            // All source kinds share one union (supersets allowed: a .cpp may carry an
-            // include it doesn't strictly use). Usings are unchanged; only #includes widen.
+            // All source kinds share one union (supersets allowed). Only #includes widen; usings unchanged.
             case SUBOBJECT_SOURCE:
             case RESULT_SOURCE:
             case STREAMING_RESULT_SOURCE:
@@ -213,10 +211,7 @@ public final class JsonProtocolTraits implements ProtocolTraits {
             writer.write("");
             writeAddQueryStringParametersImpl(writer, className, shape, model);
         }
-        // A presignable operation (e.g. Polly's SynthesizeSpeech) declares the protocol-agnostic
-        // DumpBodyToUrl override (emitted by RequestRenderer, gated on the same operation trait); the
-        // real body defers with serde, as SerializePayload does, so this is a stub.
-        // UnreferencedParam.h is in serdeIncludes(REQUEST_SOURCE).
+        // DumpBodyToUrl stub for presigning-capable operations; body serialization pending schema serde.
         if (operation.hasTrait(SupportsPresigningTrait.class)) {
             writer.write("");
             writer.write("void $L::DumpBodyToUrl(Aws::Http::URI& uri) const { AWS_UNREFERENCED_PARAM(uri); }",

@@ -44,17 +44,14 @@ public class ModelCodegenPlugin implements SmithyBuildPlugin {
     public void execute(PluginContext context) {
         Model model = context.getModel();
 
-        // Skip legacy mock projections (no model files to generate)
         if (context.getProjectionName().endsWith(".mock")) {
             return;
         }
 
-        // Parse settings
         ObjectNode settings = context.getSettings();
         Map<String, String> serviceMap = parseMapSetting(settings, "c2jMap");
         Map<String, String> namespaceMap = parseNamespaceMap(settings);
 
-        // Build transform pipeline (service-level transforms will be registered here)
         TransformPipeline pipeline = new TransformPipeline(List.of(
             GlobalTransforms.asTransform(),
             SourceRegionTransform.asTransform(),
@@ -79,14 +76,12 @@ public class ModelCodegenPlugin implements SmithyBuildPlugin {
             ServiceShape processedService = ServiceNameUtil.processS3CrtProjection(
                 service, context.getProjectionName());
 
-            // Apply transforms for this service
             Model transformedModel = pipeline.apply(model, processedService);
 
             String serviceName = ServiceNameUtil.getServiceName(processedService);
             String smithyServiceName = ServiceNameUtil.getSmithyServiceName(processedService, serviceMap);
             String exportMacro = ServiceNameUtil.getExportMacro(processedService, serviceMap);
 
-            // Resolve namespace override
             String namespace = namespaceMap.getOrDefault(smithyServiceName, serviceName);
 
             ModelGenerator generator = new ModelGenerator(
