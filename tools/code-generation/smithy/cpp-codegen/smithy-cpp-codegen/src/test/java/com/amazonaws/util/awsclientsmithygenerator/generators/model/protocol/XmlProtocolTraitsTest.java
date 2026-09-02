@@ -58,6 +58,12 @@ class XmlProtocolTraitsTest {
     private static software.amazon.smithy.model.shapes.OperationShape opDoThing() {
         return software.amazon.smithy.model.shapes.OperationShape.builder().id("com.example#DoThing").build();
     }
+    /** A presignable operation: carries the internal trait stamped by SupportsPresigningTransform. */
+    private static software.amazon.smithy.model.shapes.OperationShape opDoThingPresigning() {
+        return software.amazon.smithy.model.shapes.OperationShape.builder().id("com.example#DoThing")
+            .addTrait(new com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.SupportsPresigningTrait())
+            .build();
+    }
     private static software.amazon.smithy.model.shapes.ServiceShape svcAthena() {
         return software.amazon.smithy.model.shapes.ServiceShape.builder()
             .id("com.example#AmazonAthena").version("2017-05-18").build();
@@ -273,18 +279,31 @@ class XmlProtocolTraitsTest {
 
     @Test
     void queryXml_serializePayloadAndDumpBodyToUrlImpl() {
-        // The DumpBodyToUrl DECL is now emitted protocol-agnostically by RequestRenderer (gated on
-        // SupportsPresigningTrait), so the query traits' decls no longer carry it; only the IMPL is here.
+        // The DumpBodyToUrl DECL is emitted protocol-agnostically by RequestRenderer (gated on the
+        // operation's SupportsPresigningTrait), so the query traits' decls no longer carry it; the
+        // IMPL is here and now gated on the SAME operation trait so decl+impl stay symmetric.
         var req = reqWith(false, false); var model = modelWith(req);
         ProtocolTraits q = new QueryXmlProtocolTraits(Protocol.QUERY_XML);
-        String d = renderInClassBody(w -> q.writeRequestMethodDecls(w, "AWS_EX_API", req, opDoThing(), model));
+        String d = renderInClassBody(w -> q.writeRequestMethodDecls(w, "AWS_EX_API", req, opDoThingPresigning(), model));
         assertTrue(d.contains("Aws::String SerializePayload() const override;"), d);
         assertFalse(d.contains("DumpBodyToUrl"),
             "DumpBodyToUrl decl moved to RequestRenderer; query traits must not emit it: " + d);
         assertFalse(d.contains("GetRequestSpecificHeaders"), d);
-        String i = render(w -> q.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model));
+        String i = render(w -> q.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThingPresigning(), svcAthena(), model));
         assertTrue(i.contains("Aws::String DoThingRequest::SerializePayload() const { return {}; }"), i);
         assertTrue(i.contains("void DoThingRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }"), i);
+    }
+
+    @Test
+    void queryXml_withoutPresigningOperation_omitsDumpBodyToUrlImpl() {
+        // Compile-break regression: the impl must be ABSENT when the operation lacks the trait, so a
+        // Unit-input op that never got the operation trait doesn't emit an impl with no declaration.
+        var req = reqWith(false, false); var model = modelWith(req);
+        ProtocolTraits q = new QueryXmlProtocolTraits(Protocol.QUERY_XML);
+        String i = render(w -> q.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model));
+        assertTrue(i.contains("Aws::String DoThingRequest::SerializePayload() const { return {}; }"), i);
+        assertFalse(i.contains("DumpBodyToUrl"),
+            "operation without SupportsPresigningTrait must not emit the DumpBodyToUrl impl: " + i);
     }
 
     @Test

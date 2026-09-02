@@ -26,8 +26,9 @@ class SupportsPresigningTransformTest {
         return m.expectShape(ShapeId.from("com.example#TestService"), ServiceShape.class);
     }
 
-    private static boolean stamped(Model m, String requestShapeName) {
-        return m.expectShape(ShapeId.from("com.example#" + requestShapeName), StructureShape.class)
+    /** Whether the OPERATION (not its input) carries the internal trait after transformation. */
+    private static boolean stamped(Model m, String operationName) {
+        return m.expectShape(ShapeId.from("com.example#" + operationName), OperationShape.class)
             .hasTrait(SupportsPresigningTrait.class);
     }
 
@@ -50,34 +51,63 @@ class SupportsPresigningTransformTest {
         return Model.assembler().addShapes(inA, inB, opA, opB, svc.build()).assemble().unwrap();
     }
 
+    /**
+     * One operation with a normal input and one operation with NO input (its input target defaults to
+     * {@code smithy.api#Unit}), under a service carrying {@code protocolTrait}. Mirrors an IAM-style
+     * {@code GetAccountSummary} where the request struct is the shared {@code Unit}.
+     */
+    private static Model opPlusUnitInputModel(Trait protocolTrait, String normalOp, String unitOp) {
+        StructureShape in = StructureShape.builder().id("com.example#" + normalOp + "Request").build();
+        OperationShape normal = OperationShape.builder()
+            .id("com.example#" + normalOp).input(in.getId()).build();
+        OperationShape unit = OperationShape.builder()
+            .id("com.example#" + unitOp).build();
+        ServiceShape svc = ServiceShape.builder()
+            .id("com.example#TestService").version("2024-01-01")
+            .addTrait(protocolTrait)
+            .addOperation(normal.getId()).addOperation(unit.getId()).build();
+        return Model.assembler().addShapes(in, normal, unit, svc).assemble().unwrap();
+    }
+
     private static ServiceTrait pollyServiceTrait() {
         return ServiceTrait.builder().sdkId("polly").arnNamespace("polly")
             .cloudFormationName("Polly").cloudTrailEventSource("polly").build();
     }
 
     @Test
-    void queryXmlService_stampsEveryOperationInput() {
+    void queryXmlService_stampsEveryOperation() {
         Model m = twoOpModel(new AwsQueryTrait(), null, "GetUser", "CreateUser");
         Model out = SupportsPresigningTransform.asTransform().apply(m, service(m));
-        assertTrue(stamped(out, "GetUserRequest"), "query input must be stamped");
-        assertTrue(stamped(out, "CreateUserRequest"), "query input must be stamped");
+        assertTrue(stamped(out, "GetUser"), "query operation must be stamped");
+        assertTrue(stamped(out, "CreateUser"), "query operation must be stamped");
     }
 
     @Test
-    void ec2Service_stampsEveryOperationInput() {
+    void ec2Service_stampsEveryOperation() {
         Model m = twoOpModel(new Ec2QueryTrait(), null, "DescribeThings", "RunThings");
         Model out = SupportsPresigningTransform.asTransform().apply(m, service(m));
-        assertTrue(stamped(out, "DescribeThingsRequest"), "ec2 input must be stamped");
-        assertTrue(stamped(out, "RunThingsRequest"), "ec2 input must be stamped");
+        assertTrue(stamped(out, "DescribeThings"), "ec2 operation must be stamped");
+        assertTrue(stamped(out, "RunThings"), "ec2 operation must be stamped");
     }
 
     @Test
-    void pollyService_stampsOnlySynthesizeSpeechInput() {
+    void queryXmlService_stampsUnitInputOperation() {
+        // The regression: a Unit-input query op (e.g. iam GetAccountSummary) cannot stamp the shared
+        // Unit input shape, but the operation itself carries the trait so decl+impl stay symmetric.
+        Model m = opPlusUnitInputModel(new AwsQueryTrait(), "ListUsers", "GetAccountSummary");
+        Model out = SupportsPresigningTransform.asTransform().apply(m, service(m));
+        assertTrue(stamped(out, "ListUsers"), "normal-input query operation must be stamped");
+        assertTrue(stamped(out, "GetAccountSummary"),
+            "Unit-input query operation must be stamped on the operation itself");
+    }
+
+    @Test
+    void pollyService_stampsOnlySynthesizeSpeechOperation() {
         Model m = twoOpModel(RestJson1Trait.builder().build(), pollyServiceTrait(),
             "SynthesizeSpeech", "DescribeVoices");
         Model out = SupportsPresigningTransform.asTransform().apply(m, service(m));
-        assertTrue(stamped(out, "SynthesizeSpeechRequest"), "Polly SynthesizeSpeech must be stamped");
-        assertFalse(stamped(out, "DescribeVoicesRequest"),
+        assertTrue(stamped(out, "SynthesizeSpeech"), "Polly SynthesizeSpeech must be stamped");
+        assertFalse(stamped(out, "DescribeVoices"),
             "Polly must stamp only SynthesizeSpeech, not other operations");
     }
 
@@ -86,7 +116,7 @@ class SupportsPresigningTransformTest {
         Model m = twoOpModel(RestJson1Trait.builder().build(), null, "GetThing", "PutThing");
         Model out = SupportsPresigningTransform.asTransform().apply(m, service(m));
         assertSame(m, out, "a non-query, non-Polly rest-json service must be left untouched");
-        assertFalse(stamped(out, "GetThingRequest"));
-        assertFalse(stamped(out, "PutThingRequest"));
+        assertFalse(stamped(out, "GetThing"));
+        assertFalse(stamped(out, "PutThing"));
     }
 }

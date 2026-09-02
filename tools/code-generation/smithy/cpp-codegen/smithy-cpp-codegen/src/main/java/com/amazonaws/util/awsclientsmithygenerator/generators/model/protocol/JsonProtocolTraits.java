@@ -213,10 +213,11 @@ public final class JsonProtocolTraits implements ProtocolTraits {
             writer.write("");
             writeAddQueryStringParametersImpl(writer, className, shape, model);
         }
-        // A presignable request (e.g. Polly's SynthesizeSpeech) declares the protocol-agnostic
-        // DumpBodyToUrl override (emitted by RequestRenderer); the real body defers with serde, as
-        // SerializePayload does, so this is a stub. UnreferencedParam.h is in serdeIncludes(REQUEST_SOURCE).
-        if (shape.hasTrait(SupportsPresigningTrait.class)) {
+        // A presignable operation (e.g. Polly's SynthesizeSpeech) declares the protocol-agnostic
+        // DumpBodyToUrl override (emitted by RequestRenderer, gated on the same operation trait); the
+        // real body defers with serde, as SerializePayload does, so this is a stub.
+        // UnreferencedParam.h is in serdeIncludes(REQUEST_SOURCE).
+        if (operation.hasTrait(SupportsPresigningTrait.class)) {
             writer.write("");
             writer.write("void $L::DumpBodyToUrl(Aws::Http::URI& uri) const { AWS_UNREFERENCED_PARAM(uri); }",
                 className);

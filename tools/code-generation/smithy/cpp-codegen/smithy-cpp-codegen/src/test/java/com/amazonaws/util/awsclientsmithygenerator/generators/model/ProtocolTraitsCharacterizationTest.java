@@ -84,12 +84,6 @@ class ProtocolTraitsCharacterizationTest {
             .addMember(software.amazon.smithy.model.shapes.MemberShape.builder()
                 .id("com.example#DoThingInput$q").target(str.getId())
                 .addTrait(new software.amazon.smithy.model.traits.HttpQueryTrait("q")).build());
-        // SupportsPresigningTransform stamps every query/ec2 request; mirror it in the fixture so this
-        // end-to-end characterization pins the same post-transform output (protected DumpBodyToUrl decl).
-        if (p == Protocol.QUERY_XML || p == Protocol.EC2) {
-            inputBuilder.addTrait(new com.amazonaws.util.awsclientsmithygenerator.generators.model
-                .transforms.SupportsPresigningTrait());
-        }
         StructureShape input = inputBuilder.build();
         // Output carries a plain member and an httpResponseCode member.
         StructureShape output = StructureShape.builder()
@@ -99,11 +93,18 @@ class ProtocolTraitsCharacterizationTest {
                 .id("com.example#DoThingOutput$status").target(intShape.getId())
                 .addTrait(new software.amazon.smithy.model.traits.HttpResponseCodeTrait()).build())
             .build();
-        OperationShape op = OperationShape.builder()
+        // SupportsPresigningTransform stamps every query/ec2 OPERATION; mirror it in the fixture so
+        // this end-to-end characterization pins the same post-transform output (protected
+        // DumpBodyToUrl decl + protocol-specific impl).
+        OperationShape.Builder opBuilder = OperationShape.builder()
             .id("com.example#DoThing")
             .input(input.getId())
-            .output(output.getId())
-            .build();
+            .output(output.getId());
+        if (p == Protocol.QUERY_XML || p == Protocol.EC2) {
+            opBuilder.addTrait(new com.amazonaws.util.awsclientsmithygenerator.generators.model
+                .transforms.SupportsPresigningTrait());
+        }
+        OperationShape op = opBuilder.build();
         ServiceShape service = ServiceShape.builder()
             .id("com.example#Example")
             .version("2024-01-01")

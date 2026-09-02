@@ -13,16 +13,18 @@ import software.amazon.smithy.model.knowledge.TopDownIndex;
 import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.model.shapes.Shape;
-import software.amazon.smithy.model.traits.UnitTypeTrait;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Stamps the internal {@link SupportsPresigningTrait} onto the request structures that C2J flags
- * with {@code shape.setSupportsPresigning(true)}, so the protocol-agnostic {@code DumpBodyToUrl}
- * override is emitted by request rendering. C2J's {@code QueryCppClientGenerator} sets the flag on
- * every query/ec2 request; Polly additionally sets it on {@code SynthesizeSpeech}. No-op for any
+ * Stamps the internal {@link SupportsPresigningTrait} onto the OPERATIONS that C2J flags with
+ * {@code shape.setSupportsPresigning(true)}, so the protocol-agnostic {@code DumpBodyToUrl} override
+ * (declaration and impl) is emitted by request rendering. In C2J {@code supportsPresigning} is
+ * conceptually per-operation; the trait is stamped on the operation (never shared, unlike the
+ * {@code smithy.api#Unit} input) so it also covers {@code Unit}-input operations and keeps the decl
+ * and impl symmetric and protocol-agnostic. C2J's {@code QueryCppClientGenerator} sets the flag for
+ * every query/ec2 operation; Polly additionally sets it on {@code SynthesizeSpeech}. No-op for any
  * other service, leaving the model instance untouched.
  */
 public final class SupportsPresigningTransform {
@@ -42,14 +44,11 @@ public final class SupportsPresigningTransform {
         }
         List<Shape> updated = new ArrayList<>();
         for (OperationShape op : TopDownIndex.of(model).getContainedOperations(service)) {
-            boolean target = queryLike
-                ? !op.getInputShape().equals(UnitTypeTrait.UNIT)
-                : "SynthesizeSpeech".equals(op.getId().getName());
-            if (target) {
-                model.getShape(op.getInputShape()).flatMap(Shape::asStructureShape)
-                    .filter(s -> !s.hasTrait(SupportsPresigningTrait.class))
-                    .ifPresent(s -> updated.add(
-                        s.toBuilder().addTrait(new SupportsPresigningTrait()).build()));
+            // Operations are never Unit, so query/ec2 stamps every operation (covering Unit-input
+            // ops). Idempotent: skip operations that already carry the trait.
+            boolean target = queryLike || "SynthesizeSpeech".equals(op.getId().getName());
+            if (target && !op.hasTrait(SupportsPresigningTrait.class)) {
+                updated.add(op.toBuilder().addTrait(new SupportsPresigningTrait()).build());
             }
         }
         return updated.isEmpty() ? model
