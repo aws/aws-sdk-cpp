@@ -85,9 +85,7 @@ class GlacierTransformsTest {
         ServiceShape svc = ServiceShape.builder().id("com.amazonaws.other#Other").version("1")
             .addTrait(ServiceTrait.builder().sdkId("Other").arnNamespace("other")
                 .cloudFormationName("Other").cloudTrailEventSource("other").build()).build();
-        Model m = Model.builder().addShape(svc).build();
-        Model out = GlacierTransforms.asTransform().apply(m, svc);
-        assertSame(m, out, "non-glacier service must be untouched");
+        assertFalse(new GlacierTransforms().shouldRun(svc), "non-glacier service must not run");
     }
 
     @Test
@@ -95,7 +93,7 @@ class GlacierTransformsTest {
         StructureShape upload = streamingInput("UploadArchiveInput");
         OperationShape uploadOp = op("UploadArchive", upload);
         ServiceShape svc = glacierService("Glacier", uploadOp);
-        Model out = GlacierTransforms.asTransform().apply(modelWith(svc, upload, uploadOp), svc);
+        Model out = new GlacierTransforms().transform(modelWith(svc, upload, uploadOp), svc);
 
         AdditionalRequestHeadersTrait trait = out
             .expectShape(ShapeId.from(NS + "#UploadArchiveInput"), StructureShape.class)
@@ -111,7 +109,7 @@ class GlacierTransformsTest {
         StructureShape plain = plainInput("CompleteVaultLockInput");
         OperationShape plainOp = op("CompleteVaultLock", plain);
         ServiceShape svc = glacierService("Glacier", plainOp);
-        Model out = GlacierTransforms.asTransform().apply(modelWith(svc, plain, plainOp), svc);
+        Model out = new GlacierTransforms().transform(modelWith(svc, plain, plainOp), svc);
 
         assertFalse(out.expectShape(ShapeId.from(NS + "#CompleteVaultLockInput"), StructureShape.class)
                 .hasTrait(AdditionalRequestHeadersTrait.class),
@@ -123,7 +121,7 @@ class GlacierTransformsTest {
         StructureShape listJobs = queryLimitInput("ListJobsInput");
         OperationShape listJobsOp = op("ListJobs", listJobs);
         ServiceShape svc = glacierService("Glacier", listJobsOp);
-        Model out = GlacierTransforms.asTransform().apply(modelWith(svc, listJobs, listJobsOp), svc);
+        Model out = new GlacierTransforms().transform(modelWith(svc, listJobs, listJobsOp), svc);
 
         MemberShape limit = out.expectShape(ShapeId.from(NS + "#ListJobsInput"), StructureShape.class)
             .getMember("limit").orElseThrow();
@@ -140,7 +138,7 @@ class GlacierTransformsTest {
             .build();
         OperationShape listJobsOp = op("ListJobs", listJobs);
         ServiceShape svc = glacierService("Glacier", listJobsOp);
-        Model out = GlacierTransforms.asTransform().apply(modelWith(svc, listJobs, listJobsOp), svc);
+        Model out = new GlacierTransforms().transform(modelWith(svc, listJobs, listJobsOp), svc);
 
         MemberShape limit = out.expectShape(ShapeId.from(NS + "#ListJobsInput"), StructureShape.class)
             .getMember("limit").orElseThrow();
@@ -152,8 +150,8 @@ class GlacierTransformsTest {
         StructureShape upload = streamingInput("UploadArchiveInput");
         OperationShape uploadOp = op("UploadArchive", upload);
         ServiceShape svc = glacierService("Glacier", uploadOp);
-        Model once = GlacierTransforms.asTransform().apply(modelWith(svc, upload, uploadOp), svc);
-        Model twice = GlacierTransforms.asTransform().apply(once, svc);
+        Model once = new GlacierTransforms().transform(modelWith(svc, upload, uploadOp), svc);
+        Model twice = new GlacierTransforms().transform(once, svc);
 
         assertTrue(twice.expectShape(ShapeId.from(NS + "#UploadArchiveInput"), StructureShape.class)
                 .hasTrait(AdditionalRequestHeadersTrait.class),

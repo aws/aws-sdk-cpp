@@ -62,7 +62,7 @@ class LongPollingTransformTest {
     @Test
     void sqsReceiveMessage_stampsOnlyReceiveMessageInput() {
         Model m = model("SQS", "ReceiveMessage", "SendMessage");
-        Model out = LongPollingTransform.asTransform().apply(m, service(m));
+        Model out = new LongPollingTransform().transform(m, service(m));
         assertTrue(stamped(out, "ReceiveMessageRequest"),
             "SQS ReceiveMessage input must be stamped");
         assertFalse(stamped(out, "SendMessageRequest"),
@@ -72,7 +72,7 @@ class LongPollingTransformTest {
     @Test
     void swf_stampsBothPollOperations() {
         Model m = model("SWF", "PollForActivityTask", "PollForDecisionTask", "StartWorkflowExecution");
-        Model out = LongPollingTransform.asTransform().apply(m, service(m));
+        Model out = new LongPollingTransform().transform(m, service(m));
         assertTrue(stamped(out, "PollForActivityTaskRequest"),
             "SWF PollForActivityTask input must be stamped");
         assertTrue(stamped(out, "PollForDecisionTaskRequest"),
@@ -84,7 +84,7 @@ class LongPollingTransformTest {
     @Test
     void sfnGetActivityTask_stampsInput() {
         Model m = model("SFN", "GetActivityTask", "StartExecution");
-        Model out = LongPollingTransform.asTransform().apply(m, service(m));
+        Model out = new LongPollingTransform().transform(m, service(m));
         assertTrue(stamped(out, "GetActivityTaskRequest"),
             "SFN GetActivityTask input must be stamped");
         assertFalse(stamped(out, "StartExecutionRequest"),
@@ -94,9 +94,7 @@ class LongPollingTransformTest {
     @Test
     void unrelatedService_stampsNothing() {
         Model m = model("DynamoDB", "GetItem", "ReceiveMessage");
-        Model out = LongPollingTransform.asTransform().apply(m, service(m));
-        assertSame(m, out, "an unrelated service must leave the model untouched");
-        assertFalse(stamped(out, "ReceiveMessageRequest"),
-            "an operation on an unrelated service must not be stamped even if its name matches");
+        assertFalse(new LongPollingTransform().shouldRun(service(m)),
+            "an unrelated service must not run even if an operation name matches");
     }
 }

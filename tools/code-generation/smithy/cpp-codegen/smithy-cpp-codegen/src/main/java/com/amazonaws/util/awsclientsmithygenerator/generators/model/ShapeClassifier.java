@@ -161,21 +161,20 @@ public final class ShapeClassifier {
         }
 
         // Shape ids referenced as a member by any reachable shape (includes list/map element targets).
-        Set<ShapeId> memberTargetIds = new HashSet<>();
-        for (ShapeId id : reachable) {
-            model.expectShape(id).members().forEach(m -> memberTargetIds.add(m.getTarget()));
-        }
+        Set<ShapeId> memberTargetIds = reachable.stream()
+            .flatMap(id -> model.expectShape(id).members().stream())
+            .map(MemberShape::getTarget)
+            .collect(Collectors.toSet());
 
         // Structs that are members of a reachable @streaming union — i.e. events. A blob-payload
         // event is recognised only among these, so a plain data struct carrying an @eventPayload
         // blob is never mis-claimed.
-        Set<ShapeId> eventStructIds = new HashSet<>();
-        for (ShapeId id : reachable) {
-            Shape shape = model.expectShape(id);
-            if (shape.isUnionShape() && shape.hasTrait(StreamingTrait.class)) {
-                shape.members().forEach(m -> eventStructIds.add(m.getTarget()));
-            }
-        }
+        Set<ShapeId> eventStructIds = reachable.stream()
+            .map(model::expectShape)
+            .filter(shape -> shape.isUnionShape() && shape.hasTrait(StreamingTrait.class))
+            .flatMap(shape -> shape.members().stream())
+            .map(MemberShape::getTarget)
+            .collect(Collectors.toSet());
 
         // Incoming event-stream union shape ids: the @streaming union member of every event-stream
         // handler output. Realized via the handler and never referenced as a data type, so their
@@ -278,13 +277,11 @@ public final class ShapeClassifier {
      * blob-payload event renderer so they agree on which member becomes the blob payload.
      */
     public static Optional<String> blobPayloadMemberName(StructureShape shape, Model model) {
-        for (MemberShape member : shape.getAllMembers().values()) {
-            if (member.hasTrait(EventPayloadTrait.class)
-                && model.expectShape(member.getTarget()).isBlobShape()) {
-                return Optional.of(member.getMemberName());
-            }
-        }
-        return Optional.empty();
+        return shape.getAllMembers().values().stream()
+            .filter(member -> member.hasTrait(EventPayloadTrait.class)
+                && model.expectShape(member.getTarget()).isBlobShape())
+            .map(MemberShape::getMemberName)
+            .findFirst();
     }
 
     /**

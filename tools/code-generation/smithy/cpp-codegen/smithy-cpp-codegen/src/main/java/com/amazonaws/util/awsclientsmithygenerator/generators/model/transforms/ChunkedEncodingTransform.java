@@ -24,17 +24,17 @@ import java.util.List;
  * hasStreamMembers proxy, also guaranteeing members > 0), and either the service is MediaStore Data
  * or the operation is S3's WriteGetObjectResponse. No-op otherwise.
  */
-public final class ChunkedEncodingTransform {
+public final class ChunkedEncodingTransform implements ModelTransform {
 
     private static final String WRITE_GET_OBJECT_RESPONSE = "WriteGetObjectResponse";
 
-    private ChunkedEncodingTransform() {}
-
-    public static ModelTransform asTransform() {
-        return ChunkedEncodingTransform::apply;
+    @Override
+    public boolean shouldRun(ServiceShape service) {
+        return true;
     }
 
-    private static Model apply(Model model, ServiceShape service) {
+    @Override
+    public Model transform(Model model, ServiceShape service) {
         boolean mediaStoreData =
             "mediastore-data".equals(ServiceNameUtil.getSmithyServiceName(service, null));
         List<Shape> updated = new ArrayList<>();

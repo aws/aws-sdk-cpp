@@ -76,7 +76,7 @@ class SupportsPresigningTransformTest {
     @Test
     void queryXmlService_stampsEveryOperation() {
         Model m = twoOpModel(new AwsQueryTrait(), null, "GetUser", "CreateUser");
-        Model out = SupportsPresigningTransform.asTransform().apply(m, service(m));
+        Model out = new SupportsPresigningTransform().transform(m, service(m));
         assertTrue(stamped(out, "GetUser"), "query operation must be stamped");
         assertTrue(stamped(out, "CreateUser"), "query operation must be stamped");
     }
@@ -84,7 +84,7 @@ class SupportsPresigningTransformTest {
     @Test
     void ec2Service_stampsEveryOperation() {
         Model m = twoOpModel(new Ec2QueryTrait(), null, "DescribeThings", "RunThings");
-        Model out = SupportsPresigningTransform.asTransform().apply(m, service(m));
+        Model out = new SupportsPresigningTransform().transform(m, service(m));
         assertTrue(stamped(out, "DescribeThings"), "ec2 operation must be stamped");
         assertTrue(stamped(out, "RunThings"), "ec2 operation must be stamped");
     }
@@ -94,7 +94,7 @@ class SupportsPresigningTransformTest {
         // The regression: a Unit-input query op (e.g. iam GetAccountSummary) cannot stamp the shared
         // Unit input shape, but the operation itself carries the trait so decl+impl stay symmetric.
         Model m = opPlusUnitInputModel(new AwsQueryTrait(), "ListUsers", "GetAccountSummary");
-        Model out = SupportsPresigningTransform.asTransform().apply(m, service(m));
+        Model out = new SupportsPresigningTransform().transform(m, service(m));
         assertTrue(stamped(out, "ListUsers"), "normal-input query operation must be stamped");
         assertTrue(stamped(out, "GetAccountSummary"),
             "Unit-input query operation must be stamped on the operation itself");
@@ -104,7 +104,7 @@ class SupportsPresigningTransformTest {
     void pollyService_stampsOnlySynthesizeSpeechOperation() {
         Model m = twoOpModel(RestJson1Trait.builder().build(), pollyServiceTrait(),
             "SynthesizeSpeech", "DescribeVoices");
-        Model out = SupportsPresigningTransform.asTransform().apply(m, service(m));
+        Model out = new SupportsPresigningTransform().transform(m, service(m));
         assertTrue(stamped(out, "SynthesizeSpeech"), "Polly SynthesizeSpeech must be stamped");
         assertFalse(stamped(out, "DescribeVoices"),
             "Polly must stamp only SynthesizeSpeech, not other operations");
@@ -113,7 +113,7 @@ class SupportsPresigningTransformTest {
     @Test
     void plainRestJsonService_stampsNothing() {
         Model m = twoOpModel(RestJson1Trait.builder().build(), null, "GetThing", "PutThing");
-        Model out = SupportsPresigningTransform.asTransform().apply(m, service(m));
+        Model out = new SupportsPresigningTransform().transform(m, service(m));
         assertSame(m, out, "a non-query, non-Polly rest-json service must be left untouched");
         assertFalse(stamped(out, "GetThing"));
         assertFalse(stamped(out, "PutThing"));

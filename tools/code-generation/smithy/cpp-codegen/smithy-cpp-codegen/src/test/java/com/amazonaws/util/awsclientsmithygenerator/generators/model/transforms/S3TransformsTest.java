@@ -43,9 +43,7 @@ class S3TransformsTest {
         ServiceShape svc = ServiceShape.builder().id("com.amazonaws.other#Other").version("1")
             .addTrait(ServiceTrait.builder().sdkId("Other").arnNamespace("other")
                 .cloudFormationName("Other").cloudTrailEventSource("other").build()).build();
-        Model m = Model.builder().addShape(svc).build();
-        Model out = S3Transforms.asTransform().apply(m, svc);
-        assertSame(m, out, "non-s3 service must be untouched");
+        assertFalse(new S3Transforms().shouldRun(svc), "non-s3 service must not run");
     }
 
     @Test
@@ -53,7 +51,7 @@ class S3TransformsTest {
         ServiceShape svc = s3Service("S3");
         Model m = modelWith(svc);
         // Scaffold has no sub-transforms yet: s3 model returns unchanged (structurally equal).
-        Model out = S3Transforms.asTransform().apply(m, svc);
+        Model out = new S3Transforms().transform(m, svc);
         assertNotNull(out);
         assertTrue(out.getShape(ShapeId.from(NS + "#AmazonS3")).isPresent());
     }
@@ -74,7 +72,7 @@ class S3TransformsTest {
         StructureShape copyOutput = StructureShape.builder().id(NS + "#CopyObjectOutput")
             .addMember("CopyObjectResult", copyResult.getId()).build();
         Model m = modelWith(svc, copyResult, copyOutput);
-        Model out = S3Transforms.asTransform().apply(m, svc);
+        Model out = new S3Transforms().transform(m, svc);
 
         assertTrue(out.getShape(ShapeId.from(NS + "#CopyObjectResultDetails")).isPresent(),
             "shape renamed to CopyObjectResultDetails");
@@ -100,7 +98,7 @@ class S3TransformsTest {
         StructureShape details = StructureShape.builder().id(NS + "#CopyObjectResultDetails")
             .addMember("Other", ShapeId.from("smithy.api#String")).build();
         Model m = modelWith(svc, copyResult, details);
-        assertThrows(IllegalStateException.class, () -> S3Transforms.asTransform().apply(m, svc));
+        assertThrows(IllegalStateException.class, () -> new S3Transforms().transform(m, svc));
     }
 
     /** PutObject-style op whose input and output both carry a {@code string} {@code Expires} member. */
@@ -134,7 +132,7 @@ class S3TransformsTest {
         Model m = expiresModel();
         assertTrue(m.expectShape(ShapeId.from(NS + "#Expires")).isStringShape(),
             "precondition: Expires starts as a string");
-        Model out = S3Transforms.asTransform().apply(m, expiresService(m));
+        Model out = new S3Transforms().transform(m, expiresService(m));
         assertTrue(out.expectShape(ShapeId.from(NS + "#Expires")) instanceof TimestampShape,
             "Expires retyped to a timestamp shape");
         StructureShape input = out.expectShape(ShapeId.from(NS + "#PutObjectRequest"), StructureShape.class);
@@ -172,7 +170,7 @@ class S3TransformsTest {
         assertTrue(m.expectShape(ShapeId.from(NS + "#NextPartNumberMarker")).isStringShape(),
             "precondition: NextPartNumberMarker starts as a string");
         ServiceShape svc = m.expectShape(ShapeId.from(NS + "#AmazonS3"), ServiceShape.class);
-        Model out = S3Transforms.asTransform().apply(m, svc);
+        Model out = new S3Transforms().transform(m, svc);
         assertTrue(out.expectShape(ShapeId.from(NS + "#PartNumberMarker")) instanceof IntegerShape,
             "PartNumberMarker retyped to integer to preserve the shipped C2J int API");
         assertTrue(out.expectShape(ShapeId.from(NS + "#NextPartNumberMarker")) instanceof IntegerShape,
@@ -189,7 +187,7 @@ class S3TransformsTest {
         StructureShape policy = StructureShape.builder().id(NS + "#PutBucketPolicyRequest").build();
         StructureShape other = StructureShape.builder().id(NS + "#GetObjectRequest").build();
         ServiceShape svc = s3Service("S3");
-        Model out = S3Transforms.asTransform().apply(modelWith(svc, put, policy, other), svc);
+        Model out = new S3Transforms().transform(modelWith(svc, put, policy, other), svc);
         assertTrue(out.expectShape(put.getId()).hasTrait(OverrideStreamingTrait.class),
             "PutObjectAnnotationRequest is in REQUESTS_TO_OVERRIDE_STREAMING");
         assertTrue(out.expectShape(policy.getId()).hasTrait(OverrideStreamingTrait.class),
@@ -232,7 +230,7 @@ class S3TransformsTest {
     void marksChecksumMembersOnRequestWithChecksumAlgorithm() {
         Model m = checksumModel(true);
         ServiceShape svc = m.expectShape(ShapeId.from(NS + "#AmazonS3"), ServiceShape.class);
-        Model out = S3Transforms.asTransform().apply(m, svc);
+        Model out = new S3Transforms().transform(m, svc);
         StructureShape req = out.expectShape(ShapeId.from(NS + "#PutObjectRequest"), StructureShape.class);
         assertEquals("CRC32",
             req.getMember("ChecksumCRC32").orElseThrow().expectTrait(ChecksumMemberTrait.class).getValue());
@@ -249,7 +247,7 @@ class S3TransformsTest {
     void doesNotMarkChecksumMembersWithoutChecksumAlgorithm() {
         Model m = checksumModel(false);
         ServiceShape svc = m.expectShape(ShapeId.from(NS + "#AmazonS3"), ServiceShape.class);
-        Model out = S3Transforms.asTransform().apply(m, svc);
+        Model out = new S3Transforms().transform(m, svc);
         StructureShape req = out.expectShape(ShapeId.from(NS + "#PutObjectRequest"), StructureShape.class);
         assertFalse(req.getMember("ChecksumCRC32").orElseThrow().hasTrait(ChecksumMemberTrait.class),
             "no ChecksumAlgorithm member => C2J does not flag the checksum members");
@@ -258,7 +256,7 @@ class S3TransformsTest {
     @Test
     void addsExpiresStringToOutputAndDeprecatesExpires() {
         Model m = expiresModel();
-        Model out = S3Transforms.asTransform().apply(m, expiresService(m));
+        Model out = new S3Transforms().transform(m, expiresService(m));
 
         assertTrue(out.getShape(ShapeId.from(NS + "#ExpiresString")).isPresent(),
             "ExpiresString string shape injected");
@@ -276,7 +274,7 @@ class S3TransformsTest {
     @Test
     void doesNotAddExpiresStringToInput() {
         Model m = expiresModel();
-        Model out = S3Transforms.asTransform().apply(m, expiresService(m));
+        Model out = new S3Transforms().transform(m, expiresService(m));
 
         StructureShape input = out.expectShape(ShapeId.from(NS + "#PutObjectRequest"), StructureShape.class);
         assertFalse(input.getMember("ExpiresString").isPresent(),
@@ -296,7 +294,7 @@ class S3TransformsTest {
                 .addMember("us_west_2", "us-west-2")
                 .build();
         Model m = modelWith(svc, enumShape);
-        Model out = S3Transforms.asTransform().apply(m, svc);
+        Model out = new S3Transforms().transform(m, svc);
 
         software.amazon.smithy.model.shapes.EnumShape result = out.expectShape(
             ShapeId.from(NS + "#BucketLocationConstraint"),
@@ -324,8 +322,8 @@ class S3TransformsTest {
                 .addMember("us_west_2", "us-west-2")
                 .build();
         Model m = modelWith(svc, enumShape);
-        Model once = S3Transforms.asTransform().apply(m, svc);
-        Model twice = S3Transforms.asTransform().apply(once, svc);
+        Model once = new S3Transforms().transform(m, svc);
+        Model twice = new S3Transforms().transform(once, svc);
         software.amazon.smithy.model.shapes.EnumShape result = twice.expectShape(
             ShapeId.from(NS + "#BucketLocationConstraint"),
             software.amazon.smithy.model.shapes.EnumShape.class);
@@ -346,7 +344,7 @@ class S3TransformsTest {
                 .addMember("COMPLETED", "COMPLETED")
                 .build();
         Model m = modelWith(svc, enumShape);
-        Model out = S3Transforms.asTransform().apply(m, svc);
+        Model out = new S3Transforms().transform(m, svc);
 
         java.util.List<String> values = com.amazonaws.util.awsclientsmithygenerator.generators.model
             .EnumRenderer.getEnumValues(out.expectShape(ShapeId.from(NS + "#ReplicationStatus")));
@@ -360,7 +358,7 @@ class S3TransformsTest {
         StructureShape getObjectOutput = StructureShape.builder().id(NS + "#GetObjectOutput")
             .addMember("ETag", ShapeId.from("smithy.api#String")).build();
         Model m = modelWith(svc, getObjectOutput);
-        Model out = S3Transforms.asTransform().apply(m, svc);
+        Model out = new S3Transforms().transform(m, svc);
 
         assertTrue(out.getShape(ShapeId.from(NS + "#ObjectId2")).isPresent());
         StructureShape outShape = out.expectShape(ShapeId.from(NS + "#GetObjectOutput"), StructureShape.class);
@@ -402,7 +400,7 @@ class S3TransformsTest {
     @Test
     void injectsCustomizedAccessLogTagIntoRequestAsStringMapAppendedLast() {
         Model m = accessLogModel();
-        Model out = S3Transforms.asTransform().apply(m, s3ServiceOf(m));
+        Model out = new S3Transforms().transform(m, s3ServiceOf(m));
 
         StructureShape input = out.expectShape(ShapeId.from(NS + "#PutObjectRequest"), StructureShape.class);
         MemberShape tag = input.getMember("customizedAccessLogTag").orElseThrow();
@@ -426,7 +424,7 @@ class S3TransformsTest {
     @Test
     void stampsCustomizedAccessLogTagMarkerAndKeepsQueryParams() {
         Model m = accessLogModel();
-        Model out = S3Transforms.asTransform().apply(m, s3ServiceOf(m));
+        Model out = new S3Transforms().transform(m, s3ServiceOf(m));
 
         StructureShape input = out.expectShape(ShapeId.from(NS + "#PutObjectRequest"), StructureShape.class);
         MemberShape tag = input.getMember("customizedAccessLogTag").orElseThrow();
@@ -443,7 +441,7 @@ class S3TransformsTest {
     @Test
     void doesNotInjectCustomizedAccessLogTagIntoOutput() {
         Model m = accessLogModel();
-        Model out = S3Transforms.asTransform().apply(m, s3ServiceOf(m));
+        Model out = new S3Transforms().transform(m, s3ServiceOf(m));
 
         StructureShape output = out.expectShape(ShapeId.from(NS + "#PutObjectOutput"), StructureShape.class);
         assertFalse(output.getMember("customizedAccessLogTag").isPresent(),
@@ -458,7 +456,7 @@ class S3TransformsTest {
         StructureShape notInSet = StructureShape.builder().id(NS + "#SomeOtherRequest")
             .addMember("Bucket", ShapeId.from("smithy.api#String")).build();
         Model m = modelWith(svc, inSet, notInSet);
-        Model out = S3Transforms.asTransform().apply(m, svc);
+        Model out = new S3Transforms().transform(m, svc);
 
         StructureShape marked = out.expectShape(ShapeId.from(NS + "#CreateSessionRequest"), StructureShape.class);
         assertTrue(marked.hasTrait(EmbeddedErrorsTrait.class),
@@ -471,8 +469,8 @@ class S3TransformsTest {
     @Test
     void accessLogTagInjectionIsIdempotent() {
         Model m = accessLogModel();
-        Model once = S3Transforms.asTransform().apply(m, s3ServiceOf(m));
-        Model twice = S3Transforms.asTransform().apply(once, s3ServiceOf(once));
+        Model once = new S3Transforms().transform(m, s3ServiceOf(m));
+        Model twice = new S3Transforms().transform(once, s3ServiceOf(once));
 
         StructureShape input = twice.expectShape(ShapeId.from(NS + "#PutObjectRequest"), StructureShape.class);
         long count = input.getAllMembers().keySet().stream()

@@ -42,19 +42,16 @@ import java.util.stream.Collectors;
  * when its shapes are absent and fast-fails on genuine collisions. Client/endpoint/ARN/S3Express/CRT
  * customizations and serde-body emission are out of scope.
  */
-public final class S3Transforms {
+public final class S3Transforms implements ModelTransform {
 
-    private S3Transforms() {}
-
-    public static ModelTransform asTransform() {
-        return S3Transforms::apply;
+    @Override
+    public boolean shouldRun(ServiceShape service) {
+        String name = ServiceNameUtil.getSmithyServiceName(service, null);
+        return "s3".equals(name) || "s3-crt".equals(name);
     }
 
-    private static Model apply(Model model, ServiceShape service) {
-        String name = ServiceNameUtil.getSmithyServiceName(service, null);
-        if (!"s3".equals(name) && !"s3-crt".equals(name)) {
-            return model;
-        }
+    @Override
+    public Model transform(Model model, ServiceShape service) {
         Model result = markEmbeddedErrors(injectAccessLogTagQuery(normalizeReplicationStatus(
             expandBucketLocationConstraint(hackGetObjectResult(
                 addExpiresCustomization(renameCopyObjectResult(

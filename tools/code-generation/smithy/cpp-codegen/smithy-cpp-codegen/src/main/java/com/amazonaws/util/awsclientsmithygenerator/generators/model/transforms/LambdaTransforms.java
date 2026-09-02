@@ -23,20 +23,17 @@ import java.util.Set;
  * Lambda service. Mirrors the legacy C2J {@code LambdaRestJsonCppClientGenerator}, which removed
  * {@code InvokeAsync} because it collides with the generated async client.
  */
-public final class LambdaTransforms {
+public final class LambdaTransforms implements ModelTransform {
 
     private static final ShapeId UNIT = ShapeId.from("smithy.api#Unit");
 
-    private LambdaTransforms() {}
-
-    public static ModelTransform asTransform() {
-        return LambdaTransforms::apply;
+    @Override
+    public boolean shouldRun(ServiceShape service) {
+        return "lambda".equals(ServiceNameUtil.getSmithyServiceName(service, null));
     }
 
-    private static Model apply(Model model, ServiceShape service) {
-        if (!"lambda".equals(ServiceNameUtil.getSmithyServiceName(service, null))) {
-            return model;
-        }
+    @Override
+    public Model transform(Model model, ServiceShape service) {
         Optional<OperationShape> invokeAsync = TopDownIndex.of(model)
             .getContainedOperations(service).stream()
             .filter(op -> "InvokeAsync".equals(op.getId().getName()))

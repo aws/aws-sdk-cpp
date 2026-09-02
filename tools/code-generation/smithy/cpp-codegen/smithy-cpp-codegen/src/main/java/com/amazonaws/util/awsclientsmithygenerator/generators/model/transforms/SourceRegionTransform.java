@@ -24,7 +24,7 @@ import java.util.Set;
  * RDS-family services (RDS/DocDB/Neptune), mirroring the C2J injection that backs presigned-URL
  * generation. Model-shape scope only; the presigned-URL client logic remains in the C2J path.
  */
-public final class SourceRegionTransform {
+public final class SourceRegionTransform implements ModelTransform {
 
     private static final String SOURCE_REGION = "SourceRegion";
 
@@ -44,18 +44,15 @@ public final class SourceRegionTransform {
             "CreateDBCluster")
     );
 
-    private SourceRegionTransform() {}
-
-    public static ModelTransform asTransform() {
-        return SourceRegionTransform::apply;
+    @Override
+    public boolean shouldRun(ServiceShape service) {
+        return TARGETS.containsKey(ServiceNameUtil.getSmithyServiceName(service, null));
     }
 
-    private static Model apply(Model model, ServiceShape service) {
+    @Override
+    public Model transform(Model model, ServiceShape service) {
         String serviceName = ServiceNameUtil.getSmithyServiceName(service, null);
         Set<String> operations = TARGETS.get(serviceName);
-        if (operations == null) {
-            return model;
-        }
 
         List<StructureShape> updated = new ArrayList<>();
         for (OperationShape op : TopDownIndex.of(model).getContainedOperations(service)) {

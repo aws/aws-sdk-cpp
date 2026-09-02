@@ -33,11 +33,6 @@ public final class SubObjectRenderer implements ShapeRenderer {
         this.ctx = ctx;
     }
 
-    /** Convenience overload for callers with no dual-role output shapes (e.g. characterization tests). */
-    public SubObjectRenderer(List<Shape> subObjects, RenderContext ctx) {
-        this(subObjects, java.util.Collections.emptySet(), ctx);
-    }
-
     @Override
     public void render(CppWriterDelegator writerDelegator) {
         for (Shape shape : subObjects) {

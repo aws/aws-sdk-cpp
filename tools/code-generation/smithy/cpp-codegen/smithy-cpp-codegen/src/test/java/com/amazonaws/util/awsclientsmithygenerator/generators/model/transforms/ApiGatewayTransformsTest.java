@@ -52,7 +52,7 @@ class ApiGatewayTransformsTest {
     @Test
     void renamesBodyAndHeaders() {
         Model m = apiGatewayModel("API Gateway");
-        Model out = ApiGatewayTransforms.asTransform().apply(m, service(m));
+        Model out = new ApiGatewayTransforms().transform(m, service(m));
 
         StructureShape r = out.expectShape(
             ShapeId.from("com.example#TestInvokeMethodRequest"), StructureShape.class);
@@ -74,7 +74,6 @@ class ApiGatewayTransformsTest {
     @Test
     void noOpForOtherService() {
         Model m = apiGatewayModel("SomeOther");
-        Model out = ApiGatewayTransforms.asTransform().apply(m, service(m));
-        assertSame(m, out);
+        assertFalse(new ApiGatewayTransforms().shouldRun(service(m)));
     }
 }

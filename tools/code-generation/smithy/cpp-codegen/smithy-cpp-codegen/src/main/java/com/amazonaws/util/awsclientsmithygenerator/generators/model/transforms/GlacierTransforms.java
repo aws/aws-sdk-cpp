@@ -33,20 +33,17 @@ import java.util.stream.Collectors;
  * {@link AdditionalRequestHeadersTrait} on their inputs so request rendering emits the matching
  * headers.insert(...). Self-guards on service name; no-op when the model has no streaming request.
  */
-public final class GlacierTransforms {
+public final class GlacierTransforms implements ModelTransform {
 
     private static final String GLACIER_VERSION_HEADER = "x-amz-glacier-version";
 
-    private GlacierTransforms() {}
-
-    public static ModelTransform asTransform() {
-        return GlacierTransforms::apply;
+    @Override
+    public boolean shouldRun(ServiceShape service) {
+        return "glacier".equals(ServiceNameUtil.getSmithyServiceName(service, null));
     }
 
-    private static Model apply(Model model, ServiceShape service) {
-        if (!"glacier".equals(ServiceNameUtil.getSmithyServiceName(service, null))) {
-            return model;
-        }
+    @Override
+    public Model transform(Model model, ServiceShape service) {
         return retypeLimitQueryMembersToString(addAdditionalHeaders(model, service), service);
     }
 

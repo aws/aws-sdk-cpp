@@ -42,7 +42,7 @@ class GlobalTransformsTest {
     @Test
     void reservedRename_body_becomesRequestBody_forNonSkippedService() {
         Model m = inputModel("Security IR", "body");
-        Model out = GlobalTransforms.asTransform().apply(m, serviceOf(m, "Example"));
+        Model out = new GlobalTransforms().transform(m, serviceOf(m, "Example"));
         assertFalse(input(out).getMember("body").isPresent());
         assertTrue(input(out).getMember("requestBody").isPresent());
     }
@@ -50,7 +50,7 @@ class GlobalTransformsTest {
     @Test
     void reservedRename_body_skippedForBedrockRuntime() {
         Model m = inputModel("Bedrock Runtime", "body");
-        Model out = GlobalTransforms.asTransform().apply(m, serviceOf(m, "Example"));
+        Model out = new GlobalTransforms().transform(m, serviceOf(m, "Example"));
         assertTrue(input(out).getMember("body").isPresent(), "skip-listed service keeps body");
     }
 
@@ -59,14 +59,14 @@ class GlobalTransformsTest {
         // C2J name is "apigateway" but the raw smithy name is "api-gateway"; the skip-list must use
         // the raw name or API Gateway's dedicated transform gets pre-empted.
         Model m = inputModel("API Gateway", "body");
-        Model out = GlobalTransforms.asTransform().apply(m, serviceOf(m, "Example"));
+        Model out = new GlobalTransforms().transform(m, serviceOf(m, "Example"));
         assertTrue(input(out).getMember("body").isPresent(), "api-gateway must be skipped");
     }
 
     @Test
     void reservedRename_headers_becomesHeaderValues_forNonSkippedService() {
         Model m = inputModel("Kinesis", "headers");
-        Model out = GlobalTransforms.asTransform().apply(m, serviceOf(m, "Example"));
+        Model out = new GlobalTransforms().transform(m, serviceOf(m, "Example"));
         assertTrue(input(out).getMember("headerValues").isPresent());
         assertFalse(input(out).getMember("headers").isPresent());
     }
@@ -74,7 +74,7 @@ class GlobalTransformsTest {
     @Test
     void reservedRename_capitalHeaders_alwaysRenamed() {
         Model m = inputModel("API Gateway", "Headers");
-        Model out = GlobalTransforms.asTransform().apply(m, serviceOf(m, "Example"));
+        Model out = new GlobalTransforms().transform(m, serviceOf(m, "Example"));
         assertTrue(input(out).getMember("headerValues").isPresent());
     }
 
@@ -94,7 +94,7 @@ class GlobalTransformsTest {
                 .sdkId("Kinesis").arnNamespace("x").cloudFormationName("X").cloudTrailEventSource("x").build())
             .addOperation(op.getId()).build();
         Model m = Model.assembler().addShapes(domain, input, output, op, service).assemble().unwrap();
-        Model out = GlobalTransforms.asTransform().apply(m, serviceOf(m, "Example"));
+        Model out = new GlobalTransforms().transform(m, serviceOf(m, "Example"));
         assertTrue(out.expectShape(ShapeId.from("com.example#HttpThing"), StructureShape.class)
             .getMember("body").isPresent(), "domain shape body must not be renamed");
     }
@@ -103,13 +103,13 @@ class GlobalTransformsTest {
     void reservedRename_collision_throws() {
         Model m = inputModel("Kinesis", "body", "requestBody");
         assertThrows(IllegalStateException.class,
-            () -> GlobalTransforms.asTransform().apply(m, serviceOf(m, "Example")));
+            () -> new GlobalTransforms().transform(m, serviceOf(m, "Example")));
     }
 
     @Test
     void reservedRename_jsonService_preservesWireNameWithJsonName() {
         Model m = inputModel("Kinesis", "body");
-        Model out = GlobalTransforms.asTransform().apply(m, serviceOf(m, "Example"));
+        Model out = new GlobalTransforms().transform(m, serviceOf(m, "Example"));
         MemberShape renamed = input(out).getMember("requestBody").orElseThrow();
         assertEquals("body", renamed.expectTrait(JsonNameTrait.class).getValue(),
             "JSON service must keep the 'body' wire key via @jsonName");
@@ -120,7 +120,7 @@ class GlobalTransformsTest {
     void reservedRename_queryXmlService_preservesWireNameWithXmlName() {
         Model m = inputModelWithProtocol("Kinesis",
             new software.amazon.smithy.aws.traits.protocols.AwsQueryTrait(), "body");
-        Model out = GlobalTransforms.asTransform().apply(m, serviceOf(m, "Example"));
+        Model out = new GlobalTransforms().transform(m, serviceOf(m, "Example"));
         MemberShape renamed = input(out).getMember("requestBody").orElseThrow();
         assertEquals("body", renamed.expectTrait(XmlNameTrait.class).getValue(),
             "awsQuery service must keep the 'body' wire key via @xmlName");
@@ -136,7 +136,7 @@ class GlobalTransformsTest {
         // name (@xmlName) differ, so both are pinned rather than relying on capitalize(@xmlName).
         Model m = inputModelWithProtocol("Kinesis",
             new software.amazon.smithy.aws.traits.protocols.Ec2QueryTrait(), "body");
-        Model out = GlobalTransforms.asTransform().apply(m, serviceOf(m, "Example"));
+        Model out = new GlobalTransforms().transform(m, serviceOf(m, "Example"));
         MemberShape renamed = input(out).getMember("requestBody").orElseThrow();
         assertEquals("Body", renamed.expectTrait(
             software.amazon.smithy.aws.traits.protocols.Ec2QueryNameTrait.class).getValue(),
@@ -699,7 +699,7 @@ class GlobalTransformsTest {
     @Test
     void injectResponseMetadata_awsQuery_addsResponseMetadataMemberToResult() {
         Model model = oneOutputModel(new software.amazon.smithy.aws.traits.protocols.AwsQueryTrait());
-        Model out = GlobalTransforms.asTransform().apply(model, serviceOf(model));
+        Model out = new GlobalTransforms().transform(model, serviceOf(model));
 
         StructureShape result = out.expectShape(
             ShapeId.from("com.example#DoThingOutput"), StructureShape.class);
@@ -713,7 +713,7 @@ class GlobalTransformsTest {
     @Test
     void injectResponseMetadata_awsQuery_addsResponseMetadataStructureWithRequestId() {
         Model model = oneOutputModel(new software.amazon.smithy.aws.traits.protocols.AwsQueryTrait());
-        Model out = GlobalTransforms.asTransform().apply(model, serviceOf(model));
+        Model out = new GlobalTransforms().transform(model, serviceOf(model));
 
         ShapeId rmId = out.expectShape(ShapeId.from("com.example#DoThingOutput"), StructureShape.class)
             .getMember("ResponseMetadata").get().getTarget();
@@ -726,7 +726,7 @@ class GlobalTransformsTest {
     @Test
     void injectResponseMetadata_ec2_addsResponseMetadataMemberToResult() {
         Model model = oneOutputModel(new software.amazon.smithy.aws.traits.protocols.Ec2QueryTrait());
-        Model out = GlobalTransforms.asTransform().apply(model, serviceOf(model));
+        Model out = new GlobalTransforms().transform(model, serviceOf(model));
 
         StructureShape result = out.expectShape(
             ShapeId.from("com.example#DoThingOutput"), StructureShape.class);
@@ -738,7 +738,7 @@ class GlobalTransformsTest {
     void injectResponseMetadata_restJson_leavesResultUnchanged() {
         Model model = oneOutputModel(
             software.amazon.smithy.aws.traits.protocols.RestJson1Trait.builder().build());
-        Model out = GlobalTransforms.asTransform().apply(model, serviceOf(model));
+        Model out = new GlobalTransforms().transform(model, serviceOf(model));
 
         StructureShape result = out.expectShape(
             ShapeId.from("com.example#DoThingOutput"), StructureShape.class);
@@ -753,7 +753,7 @@ class GlobalTransformsTest {
         Model model = oneOutputModel(
             software.amazon.smithy.aws.traits.protocols.AwsJson1_0Trait.builder().build(),
             new software.amazon.smithy.aws.traits.protocols.AwsQueryCompatibleTrait());
-        Model out = GlobalTransforms.asTransform().apply(model, serviceOf(model));
+        Model out = new GlobalTransforms().transform(model, serviceOf(model));
 
         StructureShape result = out.expectShape(
             ShapeId.from("com.example#DoThingOutput"), StructureShape.class);
@@ -769,7 +769,7 @@ class GlobalTransformsTest {
         Model model = oneOutputModel(
             software.amazon.smithy.aws.traits.protocols.AwsJson1_0Trait.builder().build(),
             new software.amazon.smithy.aws.traits.protocols.AwsQueryCompatibleTrait());
-        Model out = GlobalTransforms.asTransform().apply(model, serviceOf(model));
+        Model out = new GlobalTransforms().transform(model, serviceOf(model));
 
         ShapeId rmId = out.expectShape(ShapeId.from("com.example#DoThingOutput"), StructureShape.class)
             .getMember("ResponseMetadata").get().getTarget();
@@ -831,7 +831,7 @@ class GlobalTransformsTest {
         // Plain awsJson1_0 (no @awsQueryCompatible) must NOT get ResponseMetadata injected.
         Model model = oneOutputModel(
             software.amazon.smithy.aws.traits.protocols.AwsJson1_0Trait.builder().build());
-        Model out = GlobalTransforms.asTransform().apply(model, serviceOf(model));
+        Model out = new GlobalTransforms().transform(model, serviceOf(model));
 
         StructureShape result = out.expectShape(
             ShapeId.from("com.example#DoThingOutput"), StructureShape.class);

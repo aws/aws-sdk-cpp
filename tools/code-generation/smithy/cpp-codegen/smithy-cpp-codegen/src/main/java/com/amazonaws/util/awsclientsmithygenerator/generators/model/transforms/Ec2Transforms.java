@@ -28,18 +28,15 @@ import java.util.Optional;
  * BlobAttributeValue). Out of scope (left to C2J): legacy error-code injection, CopySnapshot
  * pre-signing, and the endpoint template.
  */
-public final class Ec2Transforms {
+public final class Ec2Transforms implements ModelTransform {
 
-    private Ec2Transforms() {}
-
-    public static ModelTransform asTransform() {
-        return Ec2Transforms::apply;
+    @Override
+    public boolean shouldRun(ServiceShape service) {
+        return "ec2".equals(ServiceNameUtil.getSmithyServiceName(service, null));
     }
 
-    private static Model apply(Model model, ServiceShape service) {
-        if (!"ec2".equals(ServiceNameUtil.getSmithyServiceName(service, null))) {
-            return model;
-        }
+    @Override
+    public Model transform(Model model, ServiceShape service) {
         return renameResultShapesToResponse(
             addSecureBlobUserData(addSpotInstanceStateDisabled(model)));
     }
