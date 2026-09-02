@@ -18,6 +18,7 @@ class AWS_CORE_API Connection {
   virtual std::shared_ptr<Aws::Http::ClientStream> NewClientStream(
     const std::shared_ptr<HttpRequest>& request,
     std::function<void(int errorCode)> onStreamComplete) = 0;
+  virtual void Close() = 0;
 };
 }  // namespace Http
 }  // namespace Aws
