@@ -20,11 +20,9 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Injects a synthetic {@code SourceRegion} string member into the request shapes of the
- * cross-region copy operations for RDS-family services. Mirrors the legacy C2J
- * {@code RDSCppClientGenerator}/{@code DocDBCppClientGenerator}/{@code NeptuneCppClientGenerator}
- * injection that backs presigned-URL generation. Model-shape scope only: the presigned-URL
- * client logic remains in the C2J path, which references this member.
+ * Injects a synthetic {@code SourceRegion} string member into the cross-region copy request shapes of
+ * RDS-family services (RDS/DocDB/Neptune), mirroring the C2J injection that backs presigned-URL
+ * generation. Model-shape scope only; the presigned-URL client logic remains in the C2J path.
  */
 public final class SourceRegionTransform {
 

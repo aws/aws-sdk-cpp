@@ -29,11 +29,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class OutgoingEventStreamRendererTest {
 
-    /**
-     * A bidirectional operation whose input binds a @streaming union with one event member whose
-     * payload is a nested structure (the implicit-structure case, like bedrock's
-     * BidirectionalInputPayloadPart).
-     */
+    /** Input binds a @streaming union with one event member whose payload is a nested structure (implicit-structure case). */
     private static Model structurePayloadModel() {
         StringShape str = StringShape.builder().id("com.example#String").build();
         BlobShape blob = BlobShape.builder().id("com.example#PartBody").build();

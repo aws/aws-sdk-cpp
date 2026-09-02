@@ -21,25 +21,12 @@ import java.util.Map;
 import java.util.Optional;
 
 /**
- * EC2 model parity with the legacy C2J {@code Ec2CppClientGenerator}: adds the unmodeled
- * {@code disabled} value to {@code SpotInstanceState}, renames every {@code *Result}
- * structure shape to {@code *Response} so nested domain structs (e.g. {@code MetricDataResult})
- * match C2J, and models {@code ModifyInstanceAttributeRequest.UserData} as the sensitive
- * {@code SecureBlobAttributeValue} to match the C2J model. Operation-OUTPUT result files are
- * handled centrally by {@code ShapeUtil.getResultSuffix}, but nested domain structs are rendered
- * from the shape name by {@code SubObjectRenderer}, so those require a model-shape rename. Out of
- * scope (client/endpoint path, left to C2J): the legacy error-code injection, CopySnapshot
- * pre-signing, and endpoint template.
- *
- * <p><b>UserData / SecureBlobAttributeValue:</b> the upstream {@code aws/aws-models} C2J model
- * ({@code ec2/<date>/service-2.json}) marks {@code UserData} sensitive via
- * {@code SecureBlobAttributeValue -> SecureBlob (@sensitive)}, but the upstream Smithy model
- * ({@code ec2/smithy/model.json}) still targets the non-sensitive {@code BlobAttributeValue}. This
- * transform mirrors the C2J modeling in the Smithy model so generated code matches. It is a
- * temporary compensation for that upstream data lag; once the upstream Smithy model catches up and
- * already defines {@code SecureBlobAttributeValue}, this transform throws {@code IllegalStateException}
- * so a human removes it rather than letting it silently self-retire — see
- * docs/superpowers/plans/parity-deltas.md.
+ * EC2 C2J parity: adds the unmodeled {@code disabled} value to SpotInstanceState; renames every
+ * {@code *Result} structure to {@code *Response} so nested domain structs (rendered from shape name
+ * via SubObjectRenderer) match C2J; and retargets ModifyInstanceAttributeRequest.UserData to the
+ * sensitive SecureBlobAttributeValue (upstream Smithy still targets the non-sensitive
+ * BlobAttributeValue). Out of scope (left to C2J): legacy error-code injection, CopySnapshot
+ * pre-signing, and the endpoint template.
  */
 public final class Ec2Transforms {
 
@@ -58,17 +45,11 @@ public final class Ec2Transforms {
     }
 
     /**
-     * Models {@code ModifyInstanceAttributeRequest.UserData} as {@code SecureBlobAttributeValue}
-     * (whose {@code Value} member targets a {@code @sensitive} {@code SecureBlob} blob), matching
-     * the C2J model. The upstream Smithy model still targets the non-sensitive
-     * {@code BlobAttributeValue}; after repointing, {@code BlobAttributeValue} is no longer
-     * referenced and drops out of the reachable (emitted) set, exactly as it does in C2J.
-     *
-     * <p>Throws {@code IllegalStateException} when {@code SecureBlobAttributeValue} already exists
-     * (upstream Smithy caught up), signalling this compensating transform is obsolete and must be
-     * removed. No-op — leaving the model untouched — when {@code ModifyInstanceAttributeRequest} or
-     * its {@code UserData} member is absent, or {@code UserData} no longer targets
-     * {@code BlobAttributeValue} (source-absent, not a collision).
+     * Models ModifyInstanceAttributeRequest.UserData as SecureBlobAttributeValue (whose Value member
+     * targets a @sensitive SecureBlob blob), matching C2J; the now-unreferenced BlobAttributeValue
+     * drops out of the emitted set. Throws when SecureBlobAttributeValue already exists (upstream
+     * Smithy caught up, so this transform is obsolete). No-op when ModifyInstanceAttributeRequest or
+     * its UserData member is absent, or UserData no longer targets BlobAttributeValue.
      */
     private static Model addSecureBlobUserData(Model model) {
         Optional<StructureShape> requestOpt = model.shapes(StructureShape.class)

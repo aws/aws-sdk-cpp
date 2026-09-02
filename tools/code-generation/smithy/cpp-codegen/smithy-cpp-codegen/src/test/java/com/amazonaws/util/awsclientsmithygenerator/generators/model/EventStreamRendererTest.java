@@ -87,9 +87,8 @@ class EventStreamRendererTest {
         return Model.builder().addShapes(str, stream, eventA, eventB, exc, modeledExc, input, output, op, service).build();
     }
 
-    // A @streaming union with one empty event (target shape has no modeled members) and one data
-    // event (target shape has a modeled member). Callback/member names derive from the target
-    // shape name, matching twoEventModel's convention (alpha -> AlphaEvent -> m_onAlphaEvent).
+    // A @streaming union with one empty event (no modeled members) and one data event. Callback/member
+    // names derive from the target shape name (alpha -> AlphaEvent -> m_onAlphaEvent).
     private static Model unionWithEmptyAndDataEvent() {
         StringShape str = StringShape.builder().id("com.example#String").build();
         StructureShape emptyEvent = StructureShape.builder()
@@ -209,8 +208,7 @@ class EventStreamRendererTest {
     @Test
     void eventStreamUnionHeader_noLongerEmitted() {
         // The incoming event-stream union is realized via the handler; nothing references it as a
-        // data type. The renderer must not emit its standalone <Union>.h (dead public API) — the
-        // classifier already drops it from subObjects so no other renderer emits it either.
+        // data type, so the renderer must not emit its standalone <Union>.h (dead public API).
         java.util.List<String> paths = renderedFilePaths(twoEventModel());
         assertTrue(paths.stream().noneMatch(p -> p.endsWith("MyStreamEventStream.h")),
             "incoming event-stream union header must not be emitted: " + paths);
@@ -240,9 +238,8 @@ class EventStreamRendererTest {
 
     @Test
     void initialResponseHeader_rendersNonStreamingResultMembers() {
-        // C2J synthesizes <op>InitialResponse from the result's non-event-stream members, so the
-        // header must carry accessors for those members (here: contentType) plus a private section.
-        // The @httpPayload streaming union member (stream) must NOT appear.
+        // C2J synthesizes <op>InitialResponse from the result's non-event-stream members (here
+        // contentType); the @httpPayload streaming union member (stream) must not appear.
         String h = render("DoStreamInitialResponse.h");
         assertTrue(h.contains("GetContentType") && h.contains("SetContentType") && h.contains("WithContentType"),
             "InitialResponse must render accessors for non-streaming result members: " + h);

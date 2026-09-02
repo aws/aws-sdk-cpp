@@ -28,13 +28,10 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * Characterization tests pinning the exact generated C++ text for every supported
- * protocol, so that changes to the model renderers or their {@link ProtocolTraits}
- * strategies cannot silently alter generated output.
- *
- * <p>A failure here means generated output changed. Unless the change is intentional,
- * fix the production code rather than the assertion; if it is intentional, update the
- * assertion in the same commit that changes the renderer.
+ * Characterization tests pinning the exact generated C++ text for every supported protocol, so
+ * changes to the renderers or their {@link ProtocolTraits} strategies cannot silently alter output.
+ * A failure means generated output changed: fix the production code, or update the assertion in the
+ * same commit if the change is intentional.
  */
 class ProtocolTraitsCharacterizationTest {
 
@@ -72,8 +69,7 @@ class ProtocolTraitsCharacterizationTest {
             .id("com.example#Nested")
             .addMember("value", str.getId())
             .build();
-        // Input carries a plain member, an httpHeader member, and an httpQuery member so
-        // both request Axis-1 predicates (header + query) fire.
+        // Input carries plain + httpHeader + httpQuery members so both request predicates fire.
         StructureShape.Builder inputBuilder = StructureShape.builder()
             .id("com.example#DoThingInput")
             .addMember("name", str.getId())
@@ -93,9 +89,8 @@ class ProtocolTraitsCharacterizationTest {
                 .id("com.example#DoThingOutput$status").target(intShape.getId())
                 .addTrait(new software.amazon.smithy.model.traits.HttpResponseCodeTrait()).build())
             .build();
-        // SupportsPresigningTransform stamps every query/ec2 OPERATION; mirror it in the fixture so
-        // this end-to-end characterization pins the same post-transform output (protected
-        // DumpBodyToUrl decl + protocol-specific impl).
+        // SupportsPresigningTransform stamps every query/ec2 operation; mirror it so this pins the
+        // same post-transform output (protected DumpBodyToUrl decl + protocol-specific impl).
         OperationShape.Builder opBuilder = OperationShape.builder()
             .id("com.example#DoThing")
             .input(input.getId())
@@ -500,8 +495,7 @@ class ProtocolTraitsCharacterizationTest {
     @EnumSource(value = Protocol.class, names = {"QUERY_XML", "EC2"})
     void queryLikeResultHeader_noBlankBeforeHttpResponseCodeWhenNoRequestId(Protocol p) {
         // Without a top-level m_requestId, the last data member is followed directly by
-        // m_HttpResponseCode (no intervening blank line), matching C2J. The fixture's last
-        // result member is the @httpResponseCode int "status".
+        // m_HttpResponseCode (no blank line), matching C2J.
         String h = stripIndent(file(p, "DoThingResult.h"));
         assertTrue(h.contains("int m_status{0};\nAws::Http::HttpResponseCode m_HttpResponseCode;"), h);
     }
@@ -518,9 +512,8 @@ class ProtocolTraitsCharacterizationTest {
     @ParameterizedTest
     @EnumSource(value = Protocol.class, names = {"QUERY_XML", "EC2"})
     void queryLikeResultHeader_omitsAWSStringWhenNoStringMemberOrRequestId(Protocol p) {
-        // With no top-level m_requestId and no string-typed member, the Query/EC2 result header
-        // has no Aws::String use and must not include AWSString.h, matching C2J include hygiene.
-        // (The fixture DoThingOutput has only a nested struct + httpResponseCode int member.)
+        // With no top-level m_requestId and no string-typed member, the Query/EC2 result header has
+        // no Aws::String use and must not include AWSString.h, matching C2J.
         String h = file(p, "DoThingResult.h");
         assertFalse(h.contains("AWSString.h"), h);
     }

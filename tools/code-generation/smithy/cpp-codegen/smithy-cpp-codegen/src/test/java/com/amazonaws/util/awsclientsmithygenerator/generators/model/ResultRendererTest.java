@@ -92,8 +92,7 @@ class ResultRendererTest {
     @Test
     void cborResult_omitsHasBeenSetAccessors() {
         // C2J's CborResultHeader.vm sets useRequiredField=false, so result classes never emit
-        // HasBeenSet() accessors — same as every other protocol. (Only sub-object and request
-        // headers set useRequiredField=true.)
+        // HasBeenSet() accessors (only sub-object and request headers do).
         String h = renderResultHeader(software.amazon.smithy.protocol.traits.Rpcv2CborTrait.builder().build());
         assertFalse(h.contains("HasBeenSet() const"), h);
     }
@@ -306,9 +305,8 @@ class ResultRendererTest {
     }
 
     /**
-     * A one-member rest-xml output operation whose output structure optionally carries the internal
-     * {@link com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.TopLevelHostIdTrait}
-     * marker (as {@code S3ControlTransforms} stamps it).
+     * A one-member rest-xml output whose output structure optionally carries the internal
+     * {@link com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.TopLevelHostIdTrait} marker.
      */
     private static Model hostIdResultModel(boolean marked) {
         StringShape str = StringShape.builder().id("com.example#Str").build();

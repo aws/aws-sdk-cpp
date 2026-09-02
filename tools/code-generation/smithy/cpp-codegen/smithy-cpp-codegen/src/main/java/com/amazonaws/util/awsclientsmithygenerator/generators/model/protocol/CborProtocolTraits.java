@@ -92,9 +92,8 @@ public final class CborProtocolTraits implements ProtocolTraits {
             case SUBOBJECT_HEADER:
             case RESULT_HEADER:
                 return List.of("aws/crt/cbor/Cbor.h");
-            // All source kinds share one include set. RPC CBOR is an RPC protocol: request sources
-            // never run the shared @httpQuery / @httpHeader serializers, so they need no URI /
-            // StringUtils includes — REQUEST_SOURCE carries the same set as every other source kind.
+            // All source kinds share one include set. RPC CBOR request sources never run the shared
+            // @httpQuery/@httpHeader serializers, so REQUEST_SOURCE carries the same set as the rest.
             case REQUEST_SOURCE:
             case SUBOBJECT_SOURCE:
             case RESULT_SOURCE:

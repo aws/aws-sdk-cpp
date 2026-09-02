@@ -19,17 +19,11 @@ import java.util.Map;
 import java.util.Optional;
 
 /**
- * Access Analyzer model parity with the legacy C2J transformer, which resolves the collision
- * between the {@code GetGeneratedPolicy} result wrapper and the domain shape
- * {@code GeneratedPolicyResult} by renaming the domain shape (and its referencing member) to
- * {@code GeneratedPolicyResults}. C2J preserves the wire key ({@code generatedPolicyResult}) via
- * {@code locationName}; {@link TransformSupport#renameMember} mirrors that by pinning the original
- * wire name through the service's protocol-appropriate trait, so the model stays serde-correct even
- * though serde is currently stubbed.
- *
- * <p>Self-guards on the raw smithy service name {@code accessanalyzer} (transforms never remap).
- * No-op when the domain shape is absent (upstream already clean). Throws if the target name
- * {@code GeneratedPolicyResults} is already occupied by a distinct shape — a genuine collision.
+ * Access Analyzer C2J parity: resolves the collision between the GetGeneratedPolicy result wrapper
+ * and the domain shape GeneratedPolicyResult by renaming the domain shape (and its referencing
+ * member) to GeneratedPolicyResults, pinning the original wire key via the protocol-appropriate
+ * trait so serde stays correct. Self-guards on service name accessanalyzer; no-op when the domain
+ * shape is absent; throws if GeneratedPolicyResults is already occupied by a distinct shape.
  */
 public final class AccessAnalyzerTransforms {
 

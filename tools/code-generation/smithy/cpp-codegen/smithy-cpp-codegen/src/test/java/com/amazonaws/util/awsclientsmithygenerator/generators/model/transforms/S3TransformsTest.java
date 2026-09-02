@@ -103,11 +103,7 @@ class S3TransformsTest {
         assertThrows(IllegalStateException.class, () -> S3Transforms.asTransform().apply(m, svc));
     }
 
-    /**
-     * Builds an S3 model with a single PutObject-style operation whose input and output both
-     * carry an {@code Expires} member (initially a {@code string}, matching the current model),
-     * mirroring the operation-wiring pattern in {@code AccessAnalyzerTransformsTest}.
-     */
+    /** PutObject-style op whose input and output both carry a {@code string} {@code Expires} member. */
     private static Model expiresModel() {
         Shape expires = StringShape.builder().id(NS + "#Expires").build();
         StructureShape input = StructureShape.builder().id(NS + "#PutObjectRequest")
@@ -141,7 +137,6 @@ class S3TransformsTest {
         Model out = S3Transforms.asTransform().apply(m, expiresService(m));
         assertTrue(out.expectShape(ShapeId.from(NS + "#Expires")) instanceof TimestampShape,
             "Expires retyped to a timestamp shape");
-        // Both input and output Expires members now target the timestamp.
         StructureShape input = out.expectShape(ShapeId.from(NS + "#PutObjectRequest"), StructureShape.class);
         StructureShape output = out.expectShape(ShapeId.from(NS + "#GetObjectOutput"), StructureShape.class);
         assertTrue(out.expectShape(input.getMember("Expires").orElseThrow().getTarget()) instanceof TimestampShape);
@@ -149,9 +144,8 @@ class S3TransformsTest {
     }
 
     /**
-     * Builds an S3 model with a ListParts-style operation whose request and result reference the
-     * {@code PartNumberMarker} / {@code NextPartNumberMarker} shapes as strings (matching the current
-     * Smithy model, where Coral2Smithy treats them as opaque pagination tokens).
+     * ListParts-style op whose request/result reference {@code PartNumberMarker} /
+     * {@code NextPartNumberMarker} as strings (Coral2Smithy treats them as opaque pagination tokens).
      */
     private static Model partNumberMarkerModel() {
         Shape marker = StringShape.builder().id(NS + "#PartNumberMarker").build();
@@ -183,7 +177,6 @@ class S3TransformsTest {
             "PartNumberMarker retyped to integer to preserve the shipped C2J int API");
         assertTrue(out.expectShape(ShapeId.from(NS + "#NextPartNumberMarker")) instanceof IntegerShape,
             "NextPartNumberMarker retyped to integer to preserve the shipped C2J int API");
-        // Request and result members both now resolve to integer targets.
         StructureShape input = out.expectShape(ShapeId.from(NS + "#ListPartsRequest"), StructureShape.class);
         StructureShape output = out.expectShape(ShapeId.from(NS + "#ListPartsOutput"), StructureShape.class);
         assertTrue(out.expectShape(input.getMember("PartNumberMarker").orElseThrow().getTarget()) instanceof IntegerShape);
@@ -206,9 +199,8 @@ class S3TransformsTest {
     }
 
     /**
-     * Builds an S3 model with a PutObject-style request carrying the checksum members plus a
-     * non-checksum member; {@code withAlgorithmMember} controls whether the request also has the
-     * {@code ChecksumAlgorithm} member that gates the C2J customization.
+     * PutObject-style request with checksum members plus a non-checksum one; {@code withAlgorithmMember}
+     * toggles the {@code ChecksumAlgorithm} member that gates the C2J customization.
      */
     private static Model checksumModel(boolean withAlgorithmMember) {
         Shape crc32 = StringShape.builder().id(NS + "#ChecksumCRC32").build();
@@ -298,7 +290,6 @@ class S3TransformsTest {
     @Test
     void appendsMissingBucketLocationConstraintRegions() {
         ServiceShape svc = s3Service("S3");
-        // Model BucketLocationConstraint as an EnumShape with an existing region.
         software.amazon.smithy.model.shapes.EnumShape enumShape =
             software.amazon.smithy.model.shapes.EnumShape.builder()
                 .id(NS + "#BucketLocationConstraint")
@@ -386,10 +377,7 @@ class S3TransformsTest {
             "ObjectRequestId shape must not be created");
     }
 
-    /**
-     * Builds an S3 model with a single operation whose input carries two ordinary members, so the
-     * appended-last ordering of the injected access-log tag member can be asserted.
-     */
+    /** Op whose input has two ordinary members, so the access-log tag's appended-last order is assertable. */
     private static Model accessLogModel() {
         StructureShape input = StructureShape.builder().id(NS + "#PutObjectRequest")
             .addMember("Bucket", ShapeId.from("smithy.api#String"))
@@ -425,13 +413,11 @@ class S3TransformsTest {
         assertEquals("smithy.api#String", mapShape.getKey().getTarget().toString());
         assertEquals("smithy.api#String", mapShape.getValue().getTarget().toString());
 
-        // Must bind to the query string (@httpQueryParams) so RequestBindings.hasQueryStringMembers
-        // is true and the request emits AddQueryStringParameters — matching C2J, which renders that
-        // method on every request via the customizedAccessLogTag querystring member.
+        // Must bind @httpQueryParams so the request emits AddQueryStringParameters — matching C2J,
+        // which renders that method via the customizedAccessLogTag querystring member.
         assertTrue(tag.hasTrait(software.amazon.smithy.model.traits.HttpQueryParamsTrait.class),
             "customizedAccessLogTag must carry @httpQueryParams");
 
-        // Appended after all existing members, preserving prior order.
         java.util.List<String> order = new java.util.ArrayList<>(input.getAllMembers().keySet());
         assertEquals(java.util.List.of("Bucket", "Key", "customizedAccessLogTag"), order,
             "access-log tag member appended last");

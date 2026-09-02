@@ -143,9 +143,8 @@ class SmithyEndpointsJmesPathVisitorTest {
 
     @Test
     void unsupportedNode_throws() {
-        // A JMESPath expression exercising an unsupported node (filter projection) must throw
-        // UnsupportedOperationException, inherited from UnsupportedExpressionVisitor: fail fast
-        // on unrecognized constructs.
+        // An unsupported node (filter projection) must throw UnsupportedOperationException (from
+        // UnsupportedExpressionVisitor): fail fast on unrecognized constructs.
         StructureShape input = StructureShape.builder()
             .id("com.example#Req").addMember("x", ShapeId.from(STR)).build();
         Model model = Model.builder().addShapes(str(), input).build();

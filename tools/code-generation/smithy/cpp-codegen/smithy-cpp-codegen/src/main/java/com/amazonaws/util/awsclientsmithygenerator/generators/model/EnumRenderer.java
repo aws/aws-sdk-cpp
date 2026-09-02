@@ -69,7 +69,6 @@ public final class EnumRenderer {
         writer.write("namespace $L {", serviceName);
         writer.write("namespace Model {");
 
-        // Enum class declaration
         // Use single-line format if it fits within ~140 chars, multi-line otherwise
         String singleLine = "enum class " + enumName + " { NOT_SET, " +
             String.join(", ", values) + " };";
@@ -89,7 +88,6 @@ public final class EnumRenderer {
         }
         writer.write("");
 
-        // Mapper namespace
         writer.write("namespace $LMapper {", enumName);
         writer.write("$1L $2L Get$2LForName(const Aws::String& name);", exportMacro, enumName);
         writer.write("");
@@ -130,14 +128,12 @@ public final class EnumRenderer {
         writer.write("namespace $LMapper {", enumName);
         writer.write("");
 
-        // Hash constants
         for (int i = 0; i < values.size(); i++) {
             writer.write("  static const int $1L_HASH = HashingUtils::HashString(\"$2L\");",
                 values.get(i), wireValues.get(i));
         }
         writer.write("");
 
-        // GetForName
         writer.write("  $1L Get$1LForName(const Aws::String& name) {", enumName);
         writer.write("    int hashCode = HashingUtils::HashString(name.c_str());");
         for (int i = 0; i < values.size(); i++) {
@@ -155,7 +151,6 @@ public final class EnumRenderer {
         writer.write("  }");
         writer.write("");
 
-        // GetNameFor
         writer.write("  Aws::String GetNameFor$1L($1L enumValue) {", enumName);
         writer.write("    switch (enumValue) {");
         writer.write("    case $1L::NOT_SET:", enumName);

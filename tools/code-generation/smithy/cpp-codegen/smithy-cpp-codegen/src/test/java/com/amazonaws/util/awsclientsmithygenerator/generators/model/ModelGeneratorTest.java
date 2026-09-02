@@ -22,42 +22,28 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * End-to-end guard for suppressing DynamoDB's {@code AttributeValue} union from the default
- * sub-object set. Suppression is now driven by {@link DynamoDbTransforms} marking the shape
- * {@code @customRendered} and {@link ShapeClassifier} skipping marked shapes — the generic
- * {@code ModelGenerator} no longer knows about dynamodb. This test therefore applies the DynamoDB
- * transform to its model before running {@code ModelGenerator}, exercising the whole chain:
- * transform-marks -> classifier-skips -> single bespoke file.
- *
- * <p>The suppression is load-bearing, not cosmetic: {@code CppWriterDelegator.useFileWriter}
- * keys writers by filename via {@code computeIfAbsent}, so if {@code AttributeValue} were left in
- * {@code subObjects}, {@link com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.SubObjectRenderer}
+ * End-to-end guard that DynamoDB's {@code AttributeValue} union is suppressed from the default
+ * sub-object set: {@link DynamoDbTransforms} marks it {@code @customRendered} and
+ * {@link ShapeClassifier} skips it. Load-bearing, not cosmetic: {@code CppWriterDelegator} keys
+ * writers by filename, so a leftover {@code AttributeValue} would make
+ * {@link com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.SubObjectRenderer}
  * and {@link com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.DynamoDbRenderer}
- * would both resolve the same {@code include/aws/dynamodb/model/AttributeValue.h} key, share one
- * writer, and APPEND — silently concatenating the generic tagged-union struct onto the bespoke
- * document type with no error. This test runs {@code ModelGenerator} end-to-end and asserts the
- * emitted header is the bespoke class only, never the generic union. The per-renderer tests
- * ({@code DynamoDbRendererTest}, {@code SubObjectRendererTest}) do not exercise this wiring where
- * the double-emit would occur.
+ * share one writer and APPEND, silently concatenating the generic union onto the bespoke type. This
+ * runs {@code ModelGenerator} end-to-end and asserts the header is the bespoke class only.
  */
 class ModelGeneratorTest {
 
     private static final String ATTRIBUTE_VALUE_HEADER = "include/aws/dynamodb/model/AttributeValue.h";
-    // A synthetic union member whose generic per-member accessor (produced by SubObjectRenderer)
-    // does not exist anywhere in the bespoke AttributeValue resource, so its presence/absence
-    // cleanly distinguishes generic-union output from the hand-written document type.
+    // Synthetic union member whose generic accessor exists only in generic-union output, not the
+    // bespoke AttributeValue — so it distinguishes the two.
     private static final String GENERIC_UNION_MARKER = "WithSyntheticProbe";
     // A member unique to the bespoke hand-written AttributeValue (holds the AttributeValueValue).
     private static final String BESPOKE_MARKER = "std::shared_ptr<AttributeValueValue> m_value;";
 
     /**
-     * A minimal model with a service, one operation, and an {@code AttributeValue} <em>union</em>
-     * referenced by the operation input. The union carries a synthetic member so that, were it
-     * rendered generically, {@link #GENERIC_UNION_MARKER} would appear in the output.
-     *
-     * <p>The service carries a {@code ServiceTrait} whose {@code sdkId} is {@code smithyServiceName}
-     * so {@link DynamoDbTransforms}' own self-guard (which reads the service's sdk id) fires
-     * consistently with the {@code smithyServiceName} passed to {@code ModelGenerator}.
+     * Minimal model with a service, one operation, and an {@code AttributeValue} union (carrying a
+     * synthetic member) referenced by the operation input. The service's {@code ServiceTrait} sdkId
+     * is {@code smithyServiceName} so {@link DynamoDbTransforms}' self-guard fires consistently.
      */
     private static Model model(String smithyServiceName) {
         StringShape str = StringShape.builder().id("com.amazonaws.dynamodb#Str").build();
@@ -95,9 +81,8 @@ class ModelGeneratorTest {
         Model model = model(smithyServiceName);
         ServiceShape service = model.expectShape(
             ShapeId.from("com.amazonaws.dynamodb#DynamoDB_20120810"), ServiceShape.class);
-        // Apply the DynamoDB service-level transform first, mirroring the real ModelCodegenPlugin
-        // pipeline: for dynamodb it marks AttributeValue @customRendered; for any other service it
-        // is a no-op. Suppression then flows through ShapeClassifier, not ModelGenerator.
+        // Apply the DynamoDB service-level transform first (mirrors ModelCodegenPlugin): marks
+        // AttributeValue @customRendered for dynamodb, no-op otherwise. Suppression flows through ShapeClassifier.
         Model transformed = DynamoDbTransforms.asTransform().apply(model, service);
         MockManifest manifest = new MockManifest();
         CppWriterDelegator delegator = new CppWriterDelegator(manifest);
@@ -127,8 +112,7 @@ class ModelGeneratorTest {
         // It is the bespoke document type ...
         assertTrue(header.contains(BESPOKE_MARKER),
             "AttributeValue.h must be the bespoke document type: " + header);
-        // ... and NOT the generic tagged-union SubObjectRenderer would produce for the union
-        // members. Its presence would mean the generic body was (also) written to this file.
+        // ... and NOT the generic tagged-union (its presence would mean the generic body was appended here).
         assertFalse(header.contains(GENERIC_UNION_MARKER),
             "AttributeValue.h must not contain generic-union accessors (double-emit/corruption): "
                 + header);
@@ -147,9 +131,8 @@ class ModelGeneratorTest {
 
     @Test
     void otherService_rendersAttributeValueUnionGenerically() {
-        // Control: the suppression is dynamodb-specific. For any other service, DynamoDbRenderer is
-        // a no-op and the AttributeValue union flows through SubObjectRenderer as a generic union,
-        // proving the buildRenderers filter is what removes it for dynamodb.
+        // Control: suppression is dynamodb-specific. For any other service the AttributeValue union
+        // flows through SubObjectRenderer as a generic union.
         MockManifest manifest = generate("kinesis", "Kinesis", "AWS_KINESIS_API");
 
         String header = manifest.getFileString("include/aws/kinesis/model/AttributeValue.h")

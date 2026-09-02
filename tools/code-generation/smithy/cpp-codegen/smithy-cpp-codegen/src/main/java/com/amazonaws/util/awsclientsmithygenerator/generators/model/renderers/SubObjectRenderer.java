@@ -41,10 +41,9 @@ public final class SubObjectRenderer implements ShapeRenderer {
     @Override
     public void render(CppWriterDelegator writerDelegator) {
         for (Shape shape : subObjects) {
-            // C2J models a union as a structure with "union": true and emits it through the same
-            // ModelClass templates, so structures and (non-streaming) unions render identically.
-            // @streaming unions are the event-stream shapes rendered by EventStreamRenderer /
-            // the outgoing-event-stream path; skip them here to avoid a double-write.
+            // C2J renders a (non-streaming) union like a structure via the same ModelClass
+            // templates, so they render identically here. @streaming unions are event-stream shapes
+            // handled elsewhere; skip them to avoid a double-write.
             boolean isStruct = shape.isStructureShape();
             boolean isDataUnion = shape.isUnionShape() && !shape.hasTrait(StreamingTrait.class);
             if (isStruct || isDataUnion) {
@@ -57,20 +56,17 @@ public final class SubObjectRenderer implements ShapeRenderer {
     private void renderHeader(CppWriterDelegator writerDelegator, Shape shape) {
         String className = CppTypeMapper.cppShapeName(shape);
         String fileName = "include/aws/" + ctx.smithyServiceName() + "/model/" + className + ".h";
-        // A shape that is BOTH an operation output AND referenced as a member ("dual-role") is
-        // stamped with the top-level requestId by C2J — but only for JSON-family protocols. Query/EC2
-        // instead inject a ResponseMetadata member (GlobalTransforms.injectResponseMetadata), so they
-        // are gated out here via resultHasTopLevelRequestId().
+        // A "dual-role" shape (both an operation output and a referenced member) gets the top-level
+        // requestId from C2J, but only for JSON-family protocols. Query/EC2 inject ResponseMetadata
+        // instead, so they are gated out via resultHasTopLevelRequestId().
         boolean stampRequestId = resultOutputIds.contains(shape.getId())
             && ctx.protocolTraits().resultHasTopLevelRequestId();
         writerDelegator.useFileWriter(fileName, writer -> {
             writer.write("#pragma once");
 
-            // Includes
             List<String> includes = new java.util.ArrayList<>();
             includes.add("aws/" + ctx.smithyServiceName() + "/" + ctx.namespace() + "_EXPORTS.h");
             if (stampRequestId) {
-                // The stamped m_requestId is an Aws::String; mirror the result-header include hygiene.
                 includes.add("aws/core/utils/memory/stl/AWSString.h");
             }
             for (String memberInc : CppTypeMapper.getIncludesForShape(shape, ctx.model(), ctx.smithyServiceName())) {
@@ -91,8 +87,8 @@ public final class SubObjectRenderer implements ShapeRenderer {
             ModelFile.modelNamespace(writer, ctx.namespace(),
                 () -> ctx.protocolTraits().writeShapeForwardDeclarations(writer),
                 () -> {
-            // Recursive member targets are forward-declared here (at Model scope) instead of
-            // included, breaking the reference cycle. Matches C2J's computeForwardDeclarations.
+            // Recursive member targets are forward-declared at Model scope (not included) to break
+            // the cycle. Matches C2J computeForwardDeclarations.
             for (String fwd : CppTypeMapper.getForwardDeclarations(shape, ctx.model())) {
                 writer.write("class $L;", fwd);
             }
@@ -103,10 +99,9 @@ public final class SubObjectRenderer implements ShapeRenderer {
             writer.openBlock("class $L {", "};", className, () -> {
                 writer.write("public:");
                 ctx.protocolTraits().writeSerdeMethodDecls(writer, ctx.exportMacro(), className, null);
-                // A memberless shape ends right after its serde decls: C2J emits no accessors
-                // and no private: section (ModelClassMembersAndInlines.vm gates both on
-                // $shape.members.size() > 0) — unless it is a dual-role output, in which case the
-                // stamped requestId group still needs a private: section.
+                // A memberless shape ends right after its serde decls (no accessors, no private:),
+                // matching C2J — unless it is a dual-role output, whose stamped requestId group
+                // still needs a private: section.
                 boolean hasMembers = !shape.getAllMembers().isEmpty();
                 if (hasMembers || stampRequestId) {
                     MemberRenderer members = MemberRenderer.forStructure(ctx.model(), shape, className)
@@ -116,9 +111,8 @@ public final class SubObjectRenderer implements ShapeRenderer {
                         members.renderPublicAccessors(writer);
                     }
                     if (stampRequestId) {
-                        // MODEL-class requestId group (includes the RequestIdHasBeenSet() getter),
-                        // emitted after the modeled-member accessors. The helper writes its own
-                        // leading blank-line separator.
+                        // MODEL-class requestId group (with RequestIdHasBeenSet() getter), after the
+                        // modeled accessors. The helper writes its own leading blank-line separator.
                         MemberRenderer.renderRequestIdAccessors(writer, className, true);
                     }
                     writer.dedent();
@@ -128,8 +122,8 @@ public final class SubObjectRenderer implements ShapeRenderer {
                         members.renderDataMembers(writer);
                     }
                     if (stampRequestId) {
-                        // m_requestId trails the modeled data members (blank-line separated, matching
-                        // MemberRenderer's data-member spacing); its flag trails the modeled flags.
+                        // m_requestId trails the modeled data members (blank-line separated like
+                        // MemberRenderer's spacing); its flag trails the modeled flags.
                         if (hasMembers) {
                             writer.write("");
                         }

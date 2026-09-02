@@ -50,9 +50,7 @@ public final class ResultRenderer implements ShapeRenderer {
     }
 
     /**
-     * The name of the {@code @httpPayload} streaming member. Only called for results the
-     * classifier already flagged as streaming, so a missing payload member is a codegen bug
-     * rather than a modeled state — fail fast instead of returning null.
+     * Name of the {@code @httpPayload} streaming member; a missing member is a codegen bug, so fail fast.
      */
     private String streamingPayloadMemberName(StructureShape shape) {
         for (Map.Entry<String, MemberShape> entry : shape.getAllMembers().entrySet()) {
@@ -71,15 +69,13 @@ public final class ResultRenderer implements ShapeRenderer {
         writerDelegator.useFileWriter(fileName, writer -> {
             writer.write("#pragma once");
 
-            // AWSString.h is only needed for the top-level m_requestId; string-typed members
-            // bring their own include via getIncludesForShape. Matches C2J include hygiene.
+            // AWSString.h only for top-level m_requestId; string members self-include. Matches C2J.
             List<String> includes = new java.util.ArrayList<>(IncludeSets.resultHeaderBase(
                 ctx.smithyServiceName(), ctx.namespace(), ctx.protocolTraits().resultHasTopLevelRequestId()));
             for (String memberInc : CppTypeMapper.getIncludesForShape(shape, ctx.model(), ctx.smithyServiceName())) {
                 includes.add(memberInc);
             }
-            // Protocols whose result-header serde types are named in the class signature (CBOR:
-            // CborValue) add their own header here; JSON/XML forward-declare and add nothing.
+            // Protocols naming serde types in the class signature (CBOR: CborValue) add their header; JSON/XML forward-declare.
             includes.addAll(ctx.protocolTraits().serdeIncludes(FileKind.RESULT_HEADER));
             IncludeSets.emitAngleIncludes(writer, includes);
 
@@ -115,8 +111,7 @@ public final class ResultRenderer implements ShapeRenderer {
                     MemberRenderer.renderRequestIdAccessors(writer, className);
                 }
 
-                // The top-level HostId (x-amz-id-2) group is per-service (S3 Control only), driven
-                // by the internal marker rather than a protocol flag, and always follows RequestId.
+                // Top-level HostId (x-amz-id-2), S3 Control only, driven by the internal marker (not a protocol flag); always follows RequestId.
                 boolean topLevelHostId = shape.hasTrait(TopLevelHostIdTrait.class);
                 if (topLevelHostId) {
                     MemberRenderer.renderHostIdAccessors(writer, className);
@@ -130,8 +125,7 @@ public final class ResultRenderer implements ShapeRenderer {
                 writer.indent();
                 members.renderDataMembers(writer);
                 if (topLevelRequestId) {
-                    // The blank line separates the modeled members from the m_requestId group;
-                    // C2J omits it (and m_requestId) for Query/EC2 results.
+                    // Blank line separates modeled members from the m_requestId group; C2J omits both for Query/EC2.
                     writer.write("");
                     writer.write("Aws::String m_requestId;");
                 }
@@ -175,9 +169,8 @@ public final class ResultRenderer implements ShapeRenderer {
     }
 
     /**
-     * Renders a streaming result header: a move-only class whose payload is an
-     * {@code Aws::Utils::Stream::ResponseStream} exposed via {@code GetBody()} /
-     * {@code ReplaceBody}, matching the legacy C2J {@code StreamResultHeader.vm} output.
+     * Renders a streaming result header: a move-only class whose ResponseStream payload is exposed
+     * via {@code GetBody()} / {@code ReplaceBody}. Matches C2J {@code StreamResultHeader.vm}.
      */
     private void renderStreamingHeader(CppWriterDelegator writerDelegator,
                                        StructureShape shape, OperationShape operation) {
@@ -226,9 +219,8 @@ public final class ResultRenderer implements ShapeRenderer {
                     ctx.exportMacro(), className);
                 writer.write("");
 
-                // Streaming payload accessors (no Set/With/HasBeenSet for the stream member).
-                // The getter is named after the member (GetBody, GetAudioStream, GetResponse);
-                // ReplaceBody stays literal, matching C2J StreamResultHeader.vm.
+                // Streaming payload accessors (no Set/With/HasBeenSet). Getter named after the member;
+                // ReplaceBody stays literal. Matches C2J StreamResultHeader.vm.
                 String streamField = CppNames.fieldName(streamMember);
                 writer.write("///@{");
                 shape.getMember(streamMember)
@@ -248,8 +240,7 @@ public final class ResultRenderer implements ShapeRenderer {
 
                 MemberRenderer.renderRequestIdAccessors(writer, className);
 
-                // S3 Control has no streaming results today; the marker is only stamped on its
-                // outputs, so this block is a defensive no-op for every current streaming result.
+                // Defensive no-op: no streaming result is S3 Control today, so the marker is never stamped here.
                 boolean topLevelHostId = shape.hasTrait(TopLevelHostIdTrait.class);
                 if (topLevelHostId) {
                     MemberRenderer.renderHostIdAccessors(writer, className);
@@ -283,8 +274,8 @@ public final class ResultRenderer implements ShapeRenderer {
     }
 
     /**
-     * Renders a streaming result source: the move ctor/assign take ownership of the
-     * response payload stream ({@code TakeOwnershipOfPayload}) rather than parsing a body.
+     * Renders a streaming result source: move ctor/assign take ownership of the payload stream
+     * ({@code TakeOwnershipOfPayload}) instead of parsing a body.
      */
     private void renderStreamingSource(CppWriterDelegator writerDelegator,
                                        StructureShape shape, OperationShape operation) {

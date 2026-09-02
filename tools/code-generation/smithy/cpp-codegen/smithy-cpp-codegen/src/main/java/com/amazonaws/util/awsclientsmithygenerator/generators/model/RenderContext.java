@@ -9,9 +9,8 @@ import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.ServiceShape;
 
 /**
- * Immutable bundle of the per-service inputs every {@link ShapeRenderer} needs.
- * Replaces the repeated 6-7 positional constructor arguments so adding a shared
- * input is a single-field change rather than an edit to every renderer.
+ * Immutable bundle of the per-service inputs every {@link ShapeRenderer} needs, so adding a
+ * shared input is a single-field change rather than an edit to every renderer.
  *
  * @param model             the transformed Smithy model
  * @param service           the service shape being generated

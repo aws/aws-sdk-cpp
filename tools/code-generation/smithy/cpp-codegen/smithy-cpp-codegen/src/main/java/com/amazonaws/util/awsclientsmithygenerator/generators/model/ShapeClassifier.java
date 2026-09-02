@@ -73,13 +73,12 @@ public final class ShapeClassifier {
      * @param enums               EnumShape or StringShape with @enum trait
      * @param eventStreamHandlers operation + request/result shape tuples for event stream handlers
      * @param outgoingEventStreams outgoing event stream shapes (header only)
-     * @param blobPayloadEvents   event structs (members of a {@code @streaming} union) whose sole
-     *                            payload is a single {@code @eventPayload} blob member; rendered
-     *                            header-only as a blob-carrier event (C2J {@code eventPayloadType ==
-     *                            "blob"}), never as a JSON sub-object
-     * @param resultOutputIds     shape ids of every operation output; a sub-object whose id is in
-     *                            this set is "dual-role" (an output that is also a member) and, for
-     *                            JSON-family protocols, receives the C2J {@code requestId} stamp
+     * @param blobPayloadEvents   event structs whose sole payload is a single {@code @eventPayload}
+     *                            blob member; rendered header-only as a blob-carrier event (C2J
+     *                            {@code eventPayloadType == "blob"}), never a JSON sub-object
+     * @param resultOutputIds     shape ids of every operation output; a sub-object in this set is
+     *                            "dual-role" (output also used as a member) and, for JSON-family
+     *                            protocols, receives the C2J {@code requestId} stamp
      */
     public record ClassifiedShapes(
         List<RequestInfo> requests,
@@ -123,9 +122,8 @@ public final class ShapeClassifier {
         // Collect operation inputs/outputs and identify event stream handlers. Deprecated operations
         // are excluded (matching legacy C2J), so their orphaned request/result structs never emit.
         for (OperationShape op : GlobalTransforms.nonDeprecatedOperations(model, service)) {
-            // Use getInputShape() (not getInput()) so no-input operations, whose input
-            // target is smithy.api#Unit, still produce a RequestInfo. C2J emits a Request
-            // class for every operation; the generated client method references it.
+            // Use getInputShape() (not getInput()) so no-input operations (input == smithy.api#Unit)
+            // still produce a RequestInfo. C2J emits a Request class for every operation.
             ShapeId inputId = op.getInputShape();
             inputShapeIds.add(inputId);
             model.getShape(inputId).flatMap(Shape::asStructureShape).ifPresent(s -> {
@@ -169,9 +167,8 @@ public final class ShapeClassifier {
         }
 
         // Structs that are members of a reachable @streaming union — i.e. events. A blob-payload
-        // event is only recognised among these (analogous to memberTargetIds but restricted to
-        // event unions), so a plain data struct that merely happens to carry an @eventPayload blob
-        // is never mis-claimed.
+        // event is recognised only among these, so a plain data struct carrying an @eventPayload
+        // blob is never mis-claimed.
         Set<ShapeId> eventStructIds = new HashSet<>();
         for (ShapeId id : reachable) {
             Shape shape = model.expectShape(id);
@@ -180,10 +177,9 @@ public final class ShapeClassifier {
             }
         }
 
-        // Incoming event-stream union shape ids: the @streaming union member of every operation
-        // output collected as an event-stream handler. These unions are realized via the handler
-        // (EventStreamRenderer.renderHandler{Header,Source}) and never referenced as a data type,
-        // so their standalone <Union>.h is dead public API that we omit.
+        // Incoming event-stream union shape ids: the @streaming union member of every event-stream
+        // handler output. Realized via the handler and never referenced as a data type, so their
+        // standalone <Union>.h is dead public API we omit.
         Set<ShapeId> incomingEventStreamUnionIds = new HashSet<>();
         for (EventStreamInfo info : eventStreamHandlers) {
             streamingUnionMember(info.resultShape(), model)
@@ -201,8 +197,8 @@ public final class ShapeClassifier {
                 // Already collected as an outgoing event stream; do not also render as a data union.
             } else if (isBlobPayloadEvent(shape, model, eventStructIds)) {
                 // A @streaming-union event whose payload is a single @eventPayload blob member is a
-                // header-only blob-carrier event (C2J eventPayloadType == "blob"), not a JSON
-                // sub-object. Routed here before the generic structure branch below.
+                // header-only blob-carrier event (C2J eventPayloadType == "blob"), routed here
+                // before the generic structure branch.
                 blobPayloadEvents.add(shape);
             } else if (shape.hasTrait(ErrorTrait.class)) {
                 if (isModeledException(shape.asStructureShape().get(), protocol)) {
@@ -211,11 +207,9 @@ public final class ShapeClassifier {
             } else if (shape.isStructureShape() || shape.isUnionShape()) {
                 // Skip:
                 //  - @customRendered shapes (emitted by a dedicated renderer, e.g. DynamoDbRenderer
-                //    for AttributeValue) so the two do not both write — and append into — the same
-                //    model file.
-                //  - empty-member event structs — after EventStreamRenderer's void() callback fix,
-                //    these have no other references and shipping their .h/.cpp adds dead public API
-                //    to the SDK.
+                //    for AttributeValue) so both do not write into the same model file.
+                //  - empty-member event structs — no other references, so their .h/.cpp is dead
+                //    public API.
                 boolean customRendered = shape.hasTrait(CustomRenderedTrait.class);
                 boolean emptyEventStruct = eventStructIds.contains(id)
                     && shape.isStructureShape()
@@ -232,14 +226,10 @@ public final class ShapeClassifier {
     }
 
     /**
-     * Determines if an exception shape has members beyond the trivial ones.
-     *
-     * <p>For JSON/CBOR protocols, trivial members are: Message, message.
-     * For XML protocols, trivial members are: Message, message, Code, code.
-     * If the exception has any member not in the trivial set, it is "modeled"
-     * and should generate as a sub-object. Also used by {@code EventStreamRenderer} to decide
-     * whether an event-stream union's exception member is typed as its concrete shape (modeled)
-     * or the generic {@code <namespace>Error} wrapper (non-modeled).
+     * True if an exception shape has members beyond the trivial ones (Message/message for
+     * JSON/CBOR; plus Code/code for XML), making it "modeled" and generated as a sub-object.
+     * Also used by {@code EventStreamRenderer} to type a union's exception member as its concrete
+     * shape (modeled) or the generic {@code <namespace>Error} wrapper (non-modeled).
      */
     public static boolean isModeledException(StructureShape shape, Protocol protocol) {
         Set<String> members = shape.getAllMembers().keySet();
@@ -271,13 +261,9 @@ public final class ShapeClassifier {
     }
 
     /**
-     * True if {@code shape} is a blob-payload event: a structure that is a member of a reachable
-     * {@code @streaming} union (i.e. an event) and carries a member whose trait set includes
-     * {@code smithy.api#eventPayload} and whose target is a blob. This mirrors C2J's
-     * {@code eventPayloadType == "blob"} case (C2jModelToGeneratorModelTransformer): a blob member
-     * is a raw blob payload only when explicitly {@code @eventPayload}. Non-blob eventPayload
-     * events (e.g. a CompleteEvent with only string members) are NOT claimed — they remain
-     * sub-objects.
+     * True if {@code shape} is a blob-payload event: a member of a reachable {@code @streaming}
+     * union carrying an {@code @eventPayload} blob member. Mirrors C2J's {@code eventPayloadType ==
+     * "blob"} case; non-blob eventPayload events remain sub-objects.
      */
     private static boolean isBlobPayloadEvent(Shape shape, Model model, Set<ShapeId> eventStructIds) {
         if (!shape.isStructureShape() || !eventStructIds.contains(shape.getId())) {

@@ -39,19 +39,12 @@ final class TransformSupport {
     private TransformSupport() {}
 
     /**
-     * Appends the given wire {@code values} to an enum shape.
+     * Appends the given wire {@code values} to an enum shape. Each value must be identifier-safe
+     * ({@code [A-Za-z_][A-Za-z0-9_]*}) since it doubles as the Smithy member name and is compared
+     * against existing values for dedup; non-identifier values are rejected up front.
      *
-     * <p><strong>Precondition:</strong> each value MUST be an identifier-safe wire value, i.e. a
-     * valid Smithy enum member name matching {@code [A-Za-z_][A-Za-z0-9_]*}. Values containing
-     * characters such as {@code '-'}, {@code '.'}, or spaces are rejected. This precondition matters
-     * for two reasons: the idempotency dedup compares the incoming values against the shape's
-     * existing values (obtained via {@link EnumRenderer#getEnumValues(Shape)}), and the
-     * {@code EnumShape} branch uses each value directly as the Smithy member name via
-     * {@code builder.addMember(value, value)}. A non-identifier value would silently break dedup
-     * and fail deep inside Smithy, so it is rejected up front.
-     *
-     * @param enumShape the enum shape (Smithy 2.0 {@code EnumShape} or legacy {@code StringShape}
-     *                  with an {@code @enum} trait) to append to
+     * @param enumShape the enum shape (Smithy 2.0 {@code EnumShape} or legacy {@code @enum}
+     *                  {@code StringShape}) to append to
      * @param values    identifier-safe wire values to append
      * @return the updated shape, or {@link Optional#empty()} if all values are already present
      * @throws IllegalArgumentException if any value is not an identifier-safe enum member name
@@ -90,19 +83,11 @@ final class TransformSupport {
 
     /**
      * Appends {@code name -> value} enum entries, allowing wire values that are <em>not</em>
-     * identifier-safe (e.g. region strings containing {@code '-'} such as {@code us-east-1}). This is
-     * the name/value counterpart of {@link #appendValues(Shape, List)}, which requires the wire value
-     * to double as the member name.
-     *
-     * <p>Each map key is the Smithy member name and MUST be identifier-safe (matching
-     * {@code [A-Za-z_][A-Za-z0-9_]*}); each map value is the wire value and may be arbitrary. For a
-     * Smithy 2.0 {@code EnumShape} the name becomes the member name and the value the
-     * {@code @enumValue} via {@code builder.addMember(name, value)}; for a legacy {@code @enum}
-     * {@code StringShape} only the wire value is recorded (matching C2J, which keys the enum off the
-     * wire value and derives the constant name by sanitizing it).
-     *
-     * <p>Idempotent: entries whose wire value already exists are skipped; if every value is already
-     * present the shape is returned unchanged as {@link Optional#empty()}.
+     * identifier-safe (e.g. region strings like {@code us-east-1}); the name/value counterpart of
+     * {@link #appendValues(Shape, List)}. Each map key is the member name and must be identifier-safe;
+     * the value is the arbitrary wire value. For a Smithy 2.0 {@code EnumShape} both are recorded via
+     * {@code addMember(name, value)}; for a legacy {@code @enum} {@code StringShape} only the wire
+     * value is recorded (matching C2J). Idempotent: entries whose wire value already exists are skipped.
      *
      * @param enumShape   the enum shape to append to
      * @param nameToValue ordered member-name to wire-value entries to append
@@ -144,14 +129,10 @@ final class TransformSupport {
     }
 
     /**
-     * Locates an enum shape by its simple (relative) name and appends the given identifier-safe wire
-     * {@code values}, returning the model with the updated shape — or unchanged when the shape is
-     * absent or every value is already present. Wraps the per-service pattern of adding unmodeled
-     * enum values; see {@link #appendValues} for the identifier-safe precondition on {@code values}.
-     *
-     * <p>The lookup matches the first shape whose relative name equals {@code simpleName} and which
-     * is an enum (Smithy 2.0 {@code EnumShape} or a legacy {@code StringShape} with an {@code @enum}
-     * trait). Callers are expected to have already scoped generation to a single service.
+     * Locates an enum shape by simple (relative) name and appends the identifier-safe wire
+     * {@code values}, returning the model with the updated shape — or unchanged if the shape is absent
+     * or every value is already present. See {@link #appendValues} for the value precondition. Matches
+     * the first enum shape whose relative name equals {@code simpleName}; callers scope to one service.
      */
     static Model appendEnumValuesByName(Model model, String simpleName, List<String> values) {
         return findEnumByName(model, simpleName)
@@ -161,11 +142,9 @@ final class TransformSupport {
     }
 
     /**
-     * Locates an enum shape by its simple (relative) name and appends the given {@code member-name ->
-     * wire-value} entries (allowing non-identifier-safe wire values, e.g. region strings), returning
-     * the model with the updated shape — or unchanged when the shape is absent or every value is
-     * already present. Wraps the per-service pattern; see {@link #appendEnumValues} for the
-     * member-name precondition and value semantics.
+     * Locates an enum shape by simple (relative) name and appends the {@code member-name -> wire-value}
+     * entries (allowing non-identifier-safe wire values), returning the model with the updated shape —
+     * or unchanged if absent or all present. See {@link #appendEnumValues} for the semantics.
      */
     static Model appendEnumEntriesByName(Model model, String simpleName, Map<String, String> nameToValue) {
         return findEnumByName(model, simpleName)
@@ -194,20 +173,13 @@ final class TransformSupport {
 
     /**
      * Returns a copy of {@code struct} with member {@code oldName} renamed to {@code newName},
-     * preserving member declaration order and copying all traits onto the renamed member. Returns
-     * {@link Optional#empty()} if {@code oldName} is absent (nothing to rename).
+     * preserving declaration order and copying all traits; {@link Optional#empty()} if {@code oldName}
+     * is absent. The renamed member keeps its original wire name: since a member with no wire-name
+     * trait serializes under its member name, this pins the original name via the protocol-appropriate
+     * trait(s) ({@link #wireNamePreservingTraits}), mirroring C2J's rename+{@code setLocationName}.
      *
-     * <p>The renamed member keeps its original wire name. A member with no explicit wire-name trait
-     * serializes under its member name, so renaming it would silently change the wire key; to
-     * prevent that this method pins the original name via the protocol-appropriate trait(s)
-     * ({@link #wireNamePreservingTraits}). This mirrors the legacy C2J rename primitive, which
-     * couples {@code setLocationName(originalMemberKey)} into the same step that changes the member
-     * key so a rename can never drop the wire name.
-     *
-     * @throws IllegalStateException if {@code newName} is already a distinct member — a genuine
-     *     collision that would silently drop a member; or if the protocol has no wire-name trait
-     *     to preserve the original key (see {@link #wireNamePreservingTrait}). Callers must not
-     *     mask either.
+     * @throws IllegalStateException if {@code newName} is already a distinct member (a collision that
+     *     would drop a member), or if the protocol has no wire-name trait to preserve the key.
      */
     static Optional<StructureShape> renameMember(StructureShape struct, String oldName, String newName,
                                                  Protocol protocol) {
@@ -236,26 +208,20 @@ final class TransformSupport {
     }
 
     /**
-     * The trait(s) to add to the renamed member so its wire name(s) stay equal to what {@code oldName}
-     * produced. Existing wire-name traits are always copied verbatim by the rename, so this only
-     * synthesizes what the member lacks; if a protocol's trait is already present, nothing is added
-     * for it.
+     * The trait(s) to add so the renamed member's wire name(s) stay equal to what {@code oldName}
+     * produced. Existing wire-name traits are copied verbatim by the rename, so this only synthesizes
+     * what the member lacks.
      *
      * <ul>
      *   <li>JSON-family ({@code awsJson}, {@code restJson1}): {@code @jsonName}.</li>
      *   <li>{@code restXml} / {@code awsQuery}: {@code @xmlName}.</li>
-     *   <li>{@code ec2Query}: request and response use <em>different</em> names, so both are pinned.
-     *       The request query key is authoritative from {@code @ec2QueryName} (used verbatim); the
-     *       response XML element is {@code @xmlName}. EC2 models routinely carry an {@code @xmlName}
-     *       that is not merely the camelCase of the request key (e.g. member {@code Ipv6Addresses}
-     *       has {@code ec2QueryName=Ipv6Addresses} but {@code xmlName=ipv6AddressesSet}), so
-     *       reconstructing the request key from {@code capitalize(@xmlName)} — what legacy C2J does —
-     *       is unreliable. We instead pin {@code @ec2QueryName} to the member's current request key
-     *       ({@code capitalize(@xmlName ?? memberName)} when it has none of its own) so it survives
-     *       the member-name change without depending on any serde-time fallback.</li>
-     *   <li>Any other protocol (e.g. {@code rpcv2Cbor}, which has no wire-name trait and always
-     *       serializes under the member name): fail fast rather than emit an inert trait and
-     *       mis-generate later.</li>
+     *   <li>{@code ec2Query}: request and response use different names, so both are pinned —
+     *       {@code @ec2QueryName} for the request key, {@code @xmlName} for the response element.
+     *       EC2's {@code @xmlName} is often not the camelCase of the request key (e.g.
+     *       {@code Ipv6Addresses} vs {@code ipv6AddressesSet}), so rather than reconstruct it we pin
+     *       {@code @ec2QueryName} to the current request key ({@code capitalize(@xmlName ?? memberName)}).</li>
+     *   <li>Any other protocol (e.g. {@code rpcv2Cbor}, which has no wire-name trait): fail fast rather
+     *       than emit an inert trait and mis-generate.</li>
      * </ul>
      */
     private static List<Trait> wireNamePreservingTraits(MemberShape member, String oldName,

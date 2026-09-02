@@ -47,7 +47,6 @@ class LambdaTransformsTest {
         assertTrue(out.getShape(ShapeId.from("com.example#InvokeAsync")).isEmpty());
         assertTrue(out.getShape(ShapeId.from("com.example#InvokeAsyncRequest")).isEmpty());
         assertTrue(out.getShape(ShapeId.from("com.example#InvokeAsyncResult")).isEmpty());
-        // Invoke and its shapes are untouched
         assertTrue(out.getShape(ShapeId.from("com.example#Invoke")).isPresent());
         assertTrue(out.getShape(ShapeId.from("com.example#InvocationRequest")).isPresent());
     }

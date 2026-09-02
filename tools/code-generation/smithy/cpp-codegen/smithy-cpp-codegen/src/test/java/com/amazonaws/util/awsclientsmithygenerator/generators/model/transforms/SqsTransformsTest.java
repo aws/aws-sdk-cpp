@@ -43,7 +43,7 @@ class SqsTransformsTest {
         List<String> values = EnumRenderer.getEnumValues(
             out.expectShape(ShapeId.from("com.example#QueueAttributeName")));
         assertTrue(values.containsAll(ADDED));
-        assertTrue(values.contains("All")); // originals preserved
+        assertTrue(values.contains("All"));
     }
 
     @Test

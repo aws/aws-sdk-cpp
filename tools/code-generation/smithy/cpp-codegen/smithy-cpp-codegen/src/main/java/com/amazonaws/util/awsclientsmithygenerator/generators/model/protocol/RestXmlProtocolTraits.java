@@ -75,10 +75,9 @@ public final class RestXmlProtocolTraits implements ProtocolTraits {
             case SUBOBJECT_HEADER:
             case RESULT_HEADER:
                 return List.of();
-            // Request sources additionally serialize @httpHeader/@httpQuery members, which need
-            // StringUtils (to_string), URI (URLEncodePath for x-amz-copy-source), and <numeric>
-            // (std::accumulate for comma-joined list headers). C2J pulls these per-shape; the
-            // data-driven set carries them for every request source (superset).
+            // Request sources also serialize @httpHeader/@httpQuery members, needing StringUtils,
+            // URI (URLEncodePath), and <numeric> (std::accumulate for comma-joined list headers).
+            // Carried for every request source (superset).
             case REQUEST_SOURCE:
                 return List.of(
                     "aws/core/utils/xml/XmlSerializer.h",
@@ -199,11 +198,8 @@ public final class RestXmlProtocolTraits implements ProtocolTraits {
             + "const Http::HeaderValueCollection &header) const override;", exportMacro);
     }
 
-    // Constant XML error-sniff body, identical across C2J's S3 request-source templates
-    // (XmlRequestSource / StreamRequestSource / PutBucketNotificationConfigurationRequest): parse the
-    // response body as XML and report an embedded error when the root element is <Error>. It is not
-    // shape-dependent, so there is nothing to defer. XmlSerializer.h + UnreferencedParam.h and the
-    // Aws::Utils::Xml / Aws::Utils usings are already in the REQUEST_SOURCE serde includes/usings.
+    // Constant XML error-sniff body, identical across C2J's S3 request-source templates: parse the
+    // body as XML and report an embedded error when the root element is <Error>. Not shape-dependent.
     private void writeHasEmbeddedErrorImpl(CppWriter writer, String className) {
         writer.openBlock("bool $L::HasEmbeddedError(Aws::IOStream& body, "
             + "const Aws::Http::HeaderValueCollection& header) const {", "}", className, () -> {

@@ -17,39 +17,32 @@ import software.amazon.smithy.model.traits.HttpQueryTrait;
 import software.amazon.smithy.model.traits.TimestampFormatTrait;
 
 /**
- * Emits the {@code @httpQuery} member-serialization loop body for a request (operation-input)
- * structure's {@code AddQueryStringParameters(Aws::Http::URI&)}, byte-matching the legacy C2J
+ * Emits the {@code @httpQuery} member-serialization loop body for a request's
+ * {@code AddQueryStringParameters(Aws::Http::URI&)}, byte-matching C2J
  * {@code AddQueryStringParametersToRequest.vm}.
  *
- * <p>Protocol-agnostic: the query member serialization is byte-identical across REST-XML,
- * Query-XML, EC2, JSON, and CBOR, so this renderer never branches on protocol. The caller
- * ({@code ProtocolTraits.writeAddQueryStringParametersImpl}) owns the surrounding
- * {@code Aws::StringStream ss;} declaration and the method scaffold; {@code uri} is the
- * {@code Aws::Http::URI&} method parameter.
+ * <p>Protocol-agnostic (byte-identical across REST-XML, Query-XML, EC2, JSON, CBOR). The caller owns
+ * the surrounding {@code ss} declaration and method scaffold; {@code uri} is the method parameter.
+ * Every member is {@code HasBeenSet}-gated; unlike headers, query enums are NOT guarded against
+ * {@code ::NOT_SET} (C2J's query template gates on {@code HasBeenSet} only).
  *
- * <p>Every member is {@code HasBeenSet}-gated (C2J clears {@code required} on all members). Unlike
- * headers, query enum members are NOT additionally guarded against {@code ::NOT_SET} — C2J's query
- * template ({@code AddQueryStringParameter.vm}) gates on {@code HasBeenSet} only.
+ * <p>Scope: scalar / string / enum / timestamp {@code @httpQuery} members, {@code @httpQuery} lists
+ * (one query parameter per element under the fixed location), and {@code @httpQueryParams} maps
+ * (each entry keyed by its own key — scalar value, enum key via {@code Mapper}, or list value via an
+ * inner loop). Every query case routes through the shared {@code ss}. Query timestamps default to
+ * {@code date-time} (ISO_8601), unlike the header default (RFC822).
  *
- * <p>Scope: scalar / string / enum / timestamp {@code @httpQuery} members, {@code @httpQuery}
- * lists (looped, one query parameter per element under the fixed location), and
- * {@code @httpQueryParams} maps (looped, each entry keyed by the map's own key — scalar value,
- * enum key via {@code Mapper}, or list value via an inner loop). Unlike headers, every query
- * case routes its value through the shared {@code ss} stringstream. The query timestamp default
- * is {@code date-time} (ISO_8601), differing from the header default (RFC822).
- *
- * <p>The S3 {@code customizedAccessLogTag} member (stamped with {@link CustomizedAccessLogTagTrait}
- * by {@code S3Transforms}) is a special case: C2J models it with a {@code customizedQuery} flag, so
- * it is skipped in the normal {@code @httpQueryParams} loop and instead emits an {@code x-}-prefix
- * filter block once after the loop, byte-matching {@code AddQueryStringParametersToRequest.vm}.
+ * <p>The S3 {@code customizedAccessLogTag} member ({@link CustomizedAccessLogTagTrait}, C2J's
+ * {@code customizedQuery} flag) is special: skipped in the normal {@code @httpQueryParams} loop, it
+ * instead emits an {@code x-}-prefix filter block once after the loop.
  */
 public final class RequestQuerySerializer {
 
     private RequestQuerySerializer() {}
 
     /**
-     * Emits the query-member serialization for every {@code @httpQuery} scalar/string/enum/timestamp
-     * member of {@code shape}, in model order. Members carrying no {@code @httpQuery} trait are skipped.
+     * Emits query serialization for every {@code @httpQuery} member of {@code shape} in model order;
+     * members without the trait are skipped.
      */
     public static void render(CppWriter writer, StructureShape shape, Model model) {
         for (MemberShape member : shape.getAllMembers().values()) {
@@ -57,8 +50,8 @@ public final class RequestQuerySerializer {
                 renderQueryMember(writer, member, trait.getValue(), model));
             member.getTrait(HttpQueryParamsTrait.class).ifPresent(trait -> {
                 // The S3 customizedAccessLogTag member carries @httpQueryParams (to keep the request
-                // emitting AddQueryStringParameters) but is not serialized as a normal map — it emits
-                // the x- filter block after this loop instead.
+                // emitting AddQueryStringParameters) but emits the x- filter block after this loop
+                // instead of serializing as a normal map.
                 if (!member.hasTrait(CustomizedAccessLogTagTrait.class)) {
                     renderQueryParamsMap(writer, member, model);
                 }
@@ -125,9 +118,9 @@ public final class RequestQuerySerializer {
         writer.write("ss.str(\"\");");
     }
 
-    // @httpQueryParams map: each entry becomes a query parameter keyed by the map's own key
-    // (there is no fixed location). A scalar value streams directly; a list value fans out to one
-    // query parameter per element via an inner loop; an enum key is mapped through its Mapper.
+    // @httpQueryParams map: each entry becomes a query parameter keyed by its own key (no fixed
+    // location). Scalar value streams directly; list value fans out one parameter per element; enum
+    // key is mapped through its Mapper.
     private static void renderQueryParamsMap(CppWriter writer, MemberShape member, Model model) {
         Shape target = model.expectShape(member.getTarget());
         String field = CppNames.fieldName(member.getMemberName());
@@ -152,9 +145,8 @@ public final class RequestQuerySerializer {
             }));
     }
 
-    // Query parameter key for an @httpQueryParams entry: an enum key routes through its Mapper,
-    // any other (string) key uses the raw entry key. Both terminate in .c_str() since
-    // AddQueryStringParameter takes a const char* key.
+    // Query parameter key for an @httpQueryParams entry: enum key via its Mapper, else the raw entry
+    // key. Both end in .c_str() since AddQueryStringParameter takes a const char* key.
     private static String queryParamKeyExpression(Shape key, Model model) {
         if (CppTypeMapper.isEnum(key)) {
             String enumType = CppTypeMapper.getCppType(key, model, false);
@@ -163,10 +155,9 @@ public final class RequestQuerySerializer {
         return "item.first.c_str()";
     }
 
-    // Shared stream expression for a scalar member, list element, or map value: enum → Mapper
-    // lookup, timestamp → the query timestamp mapping (date-time→ISO_8601, http-date→RFC822,
-    // epoch-seconds→SecondsWithMSPrecision()), any other value streamed directly. The non-enum
-    // scalar path reuses this too (enum scalars are handled inline before reaching here).
+    // Shared stream expression for a scalar member, list element, or map value: enum → Mapper lookup,
+    // timestamp → query mapping (date-time→ISO_8601, http-date→RFC822, epoch-seconds→
+    // SecondsWithMSPrecision()), else streamed directly. (Enum scalars are handled inline earlier.)
     private static String elementStreamExpression(String var, Shape target, Model model) {
         if (CppTypeMapper.isEnum(target)) {
             String enumType = CppTypeMapper.getCppType(target, model, false);

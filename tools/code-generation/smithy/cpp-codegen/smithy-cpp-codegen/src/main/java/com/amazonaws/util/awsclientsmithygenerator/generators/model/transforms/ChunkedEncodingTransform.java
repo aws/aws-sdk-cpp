@@ -18,16 +18,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Stamps the internal {@link ChunkedEncodingTrait} onto the request structures for which C2J's
- * {@code RequestHeader.vm} emits {@code bool IsChunked() const override { return true; }}. C2J gates
- * that override on {@code ($metadata.serviceId=="MediaStore Data" || $operation.supportsChunkedEncoding)}
- * (S3 sets {@code supportsChunkedEncoding} on {@code WriteGetObjectResponse} only) combined with
- * {@code $shape.hasStreamMembers() && !$shape.signBody && $shape.members.size() > 0}. This transform
- * collapses that emit-time condition into a single stamping decision: an operation qualifies when it
- * carries {@code aws.auth#unsignedPayload} (the {@code !signBody} proxy), its input is a raw
- * streaming payload request (the {@code hasStreamMembers} proxy, which also guarantees members > 0),
- * and either the service is MediaStore Data or the operation is S3's {@code WriteGetObjectResponse}.
- * No-op for any other service/operation, leaving the model instance untouched.
+ * Stamps {@link ChunkedEncodingTrait} onto request structures for which C2J emits
+ * {@code bool IsChunked() const override { return true; }}. An operation qualifies when it carries
+ * aws.auth#unsignedPayload (the !signBody proxy), its input is a raw streaming payload request (the
+ * hasStreamMembers proxy, also guaranteeing members > 0), and either the service is MediaStore Data
+ * or the operation is S3's WriteGetObjectResponse. No-op otherwise.
  */
 public final class ChunkedEncodingTransform {
 

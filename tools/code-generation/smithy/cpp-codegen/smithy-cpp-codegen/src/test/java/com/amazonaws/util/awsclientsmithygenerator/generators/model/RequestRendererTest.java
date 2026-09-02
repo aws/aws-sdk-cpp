@@ -162,11 +162,7 @@ class RequestRendererTest {
         return Model.builder().addShapes(str, input, output, op, service).build();
     }
 
-    /**
-     * A presignable operation whose input is the shared {@code smithy.api#Unit} (no {@code input(...)}
-     * set) — the case that broke: the input shape cannot carry the trait, but the operation can, so
-     * the decl must still be emitted. Mirrors an IAM-style query op like {@code GetAccountSummary}.
-     */
+    /** Presignable op with a shared {@code smithy.api#Unit} input: the input can't carry the trait but the operation can, so the decl must still emit (IAM-style query op). */
     private static Model supportsPresigningUnitInputModel() {
         StringShape str = StringShape.builder().id("com.example#String").build();
         StructureShape output = StructureShape.builder()
@@ -177,9 +173,8 @@ class RequestRendererTest {
             .build();
         ServiceShape service = ServiceShape.builder().id("com.example#Example")
             .version("2024-01-01").addOperation(op.getId()).build();
-        // Assemble (not Model.builder) so the smithy.api#Unit prelude shape exists: the operation has
-        // no input, so its input target defaults to Unit, which ShapeClassifier resolves to build the
-        // request. Unit must be present in the model for the request class to be emitted.
+        // Assemble (not Model.builder) so the smithy.api#Unit prelude shape exists: the op defaults
+        // its input to Unit, which must be present for the request class to be emitted.
         return Model.assembler().addShapes(str, output, op, service).assemble().unwrap();
     }
 
@@ -229,9 +224,8 @@ class RequestRendererTest {
             "Missing decoder include: " + h);
         assertFalse(h.contains("IsEventStreamRequest"),
             "Response-only op must not declare IsEventStreamRequest: " + h);
-        // Mainline ordering: handler/decoder sit AFTER the data members and BEFORE the
-        // HasBeenSet flags (not at the top of the private block). Target the member
-        // DECLARATION ("DoStreamHandler m_handler;"), not the public getter body.
+        // Mainline ordering: handler/decoder sit after data members and before HasBeenSet flags.
+        // Target the member DECLARATION ("DoStreamHandler m_handler;"), not the public getter body.
         int dataMember = h.indexOf("Aws::String m_name;");
         int handlerDecl = h.indexOf("DoStreamHandler m_handler;");
         int firstFlag = h.indexOf("HasBeenSet = false;");
@@ -252,10 +246,8 @@ class RequestRendererTest {
 
     @Test
     void bidirectionalRequest_rendersEventStreamInputMemberAsSharedPtr() {
-        // C2J renders a request with an event-stream (input) member specially: an inline empty
-        // SerializePayload, a GetBody() override returning the encoded IOStream, and the member
-        // itself as a std::shared_ptr<Input> with a collision-renamed getter (GetMemberBody,
-        // because GetBody is reserved). The member has no templated setter and stores a shared_ptr.
+        // C2J renders an event-stream (input) member specially: inline empty SerializePayload, a
+        // GetBody() override, and the member as shared_ptr<Input> with a renamed getter (GetMemberBody).
         String h = renderRequestHeaderForStreamingOp(true, true);
         assertTrue(h.contains("#include <memory>"), "Missing <memory> include: " + h);
         assertTrue(h.contains("Aws::String SerializePayload() const override { return {}; }"),
@@ -281,15 +273,13 @@ class RequestRendererTest {
 
     @Test
     void bidirectionalRequestSource_definesGetBody() {
-        // The header declares `std::shared_ptr<Aws::IOStream> GetBody() const override;`, so the
-        // source MUST define it (returning the event-stream member) or linking fails. Matches C2J
-        // StreamRequestSource.vm.
+        // Header declares GetBody() const override, so the source MUST define it (returning the
+        // event-stream member) or linking fails. Matches C2J StreamRequestSource.vm.
         String c = renderStreamingOp(true, true, "DoStreamRequest.cpp");
         assertTrue(c.contains(
             "std::shared_ptr<Aws::IOStream> DoStreamRequest::GetBody() const { return m_body; }"),
             "Bidirectional request source must define GetBody() returning the event-stream member: " + c);
-        // C2J's event-stream request source pulls AmazonWebServiceResult.h and the Stream/Aws
-        // usings rather than the JSON serde header.
+        // C2J's event-stream request source pulls AmazonWebServiceResult.h + Stream/Aws usings, not JSON serde.
         assertTrue(c.contains("#include <aws/core/AmazonWebServiceResult.h>"), c);
         assertTrue(c.contains("using namespace Aws::Utils::Stream;"), c);
     }
@@ -324,10 +314,8 @@ class RequestRendererTest {
     }
 
     /**
-     * Request headers must NOT include {@code <aws/core/http/URI.h>} even when they declare
-     * URI-taking methods: the base {@code AmazonWebServiceRequest.h} forward-declares
-     * {@code Aws::Http::URI}, which suffices for a reference parameter, and C2J omits the
-     * include. Emitting it would break byte-parity with the C2J output.
+     * Request headers must NOT include {@code <aws/core/http/URI.h>}: the base
+     * {@code AmazonWebServiceRequest.h} forward-declares {@code Aws::Http::URI}, and C2J omits it.
      */
     @Test
     void requestWithQueryMember_doesNotIncludeUriHeader() {
@@ -387,10 +375,8 @@ class RequestRendererTest {
 
     @Test
     void rawStreamingPayloadRequest_usesStreamingBaseClassAndDropsPayloadMembers() {
-        // C2J: a request with a raw streaming @httpPayload member derives from
-        // Streaming<Prefix>Request, which supplies GetBody/SetBody and GetContentType/SetContentType.
-        // The payload member (body) and the contentType member are stripped, and SerializePayload
-        // is not emitted (the base handles the body). Other members (modelId) remain.
+        // C2J: a raw streaming @httpPayload request derives from Streaming<Prefix>Request (supplies
+        // GetBody/GetContentType); the body + contentType members and SerializePayload are dropped.
         String h = renderRawStreamingPayloadRequest("DoStreamRequest.h");
         assertTrue(h.contains("class DoStreamRequest : public StreamingExampleRequest {"),
             "Must derive from StreamingExampleRequest: " + h);
@@ -428,11 +414,7 @@ class RequestRendererTest {
             "Streaming-payload request source must not use the Json namespace: " + c);
     }
 
-    /**
-     * Same as {@link #rawStreamingPayloadRequestModel()} but under REST-JSON, where {@code contentType}
-     * (stripped, supplied by the streaming base) is the ONLY header-bound member and
-     * {@code hasTargetHeader()} is false. This is the combination that exposes header/source drift.
-     */
+    /** Like {@link #rawStreamingPayloadRequestModel()} but REST-JSON, where the stripped {@code contentType} is the only header-bound member ({@code hasTargetHeader()} false) — exposes header/source drift. */
     private static Model rawStreamingPayloadRestJsonRequestModel() {
         StringShape str = StringShape.builder().id("com.example#String").build();
         software.amazon.smithy.model.shapes.BlobShape blob =
@@ -477,11 +459,7 @@ class RequestRendererTest {
 
     // --- @httpChecksum ---
 
-    /**
-     * A JSON operation with @httpChecksum. The input carries a {@code checksumAlgorithm} enum member
-     * (for requestAlgorithmMember) and a {@code checksumMode} enum member (for
-     * requestValidationModeMember); the trait is configured from the given values.
-     */
+    /** JSON op with @httpChecksum; input carries {@code checksumAlgorithm} and {@code checksumMode} enum members. */
     private static Model httpChecksumModel(software.amazon.smithy.aws.traits.HttpChecksumTrait trait) {
         StringShape str = StringShape.builder().id("com.example#String").build();
         software.amazon.smithy.model.shapes.EnumShape algo =
@@ -575,10 +553,8 @@ class RequestRendererTest {
 
     @Test
     void httpChecksumRequired_rendersInlineShouldComputeContentMd5() {
-        // The legacy smithy.api#httpChecksumRequired trait (s3control uses it) requests a
-        // Content-MD5 header. C2J derives Shape.computeContentMd5 from it and emits an inline
-        // ShouldComputeContentMd5() override (RequestHeader.vm:105-108, no .cpp body). Distinct
-        // from the flexible @httpChecksum trait.
+        // The legacy smithy.api#httpChecksumRequired trait (s3control) emits an inline
+        // ShouldComputeContentMd5() override (no .cpp body); distinct from the flexible @httpChecksum.
         StringShape str = StringShape.builder().id("com.example#String").build();
         StructureShape input = StructureShape.builder().id("com.example#PutThingInput")
             .addMember("name", str.getId()).build();
@@ -628,11 +604,7 @@ class RequestRendererTest {
 
     // --- @requestCompression ---
 
-    /**
-     * Model for a JSON operation carrying {@code @requestCompression(encodings: ["gzip"])} on
-     * either a plain input (streaming = false) or a raw {@code @httpPayload} blob body input
-     * (streaming = true).
-     */
+    /** JSON op with {@code @requestCompression(encodings: ["gzip"])} on a plain input (streaming=false) or a raw {@code @httpPayload} blob body (streaming=true). */
     private static Model requestCompressionModel(boolean streaming, java.util.List<String> encodings) {
         StringShape str = StringShape.builder().id("com.example#String").build();
         StructureShape.Builder input = StructureShape.builder().id("com.example#PutThingInput");
@@ -683,10 +655,8 @@ class RequestRendererTest {
 
     @Test
     void requestCompressionGzip_headerDeclaresGuardedVirtualOverride() {
-        // C2J's RequestHeader.vm:148-156 emits GetSelectedCompressionAlgorithm as a virtual override
-        // gated by ENABLED_ZLIB_REQUEST_COMPRESSION. The types (CompressionAlgorithm,
-        // RequestCompressionConfig) come from the base AmazonWebServiceRequest.h transitively —
-        // NO extra include in the request header.
+        // C2J emits GetSelectedCompressionAlgorithm as a virtual override gated by
+        // ENABLED_ZLIB_REQUEST_COMPRESSION; its types come from the base transitively (no extra include).
         String h = renderCompressionRequest(false, "PutThingRequest.h");
         assertTrue(h.contains("#ifdef ENABLED_ZLIB_REQUEST_COMPRESSION"),
             "Missing ENABLED_ZLIB_REQUEST_COMPRESSION guard: " + h);
@@ -699,10 +669,8 @@ class RequestRendererTest {
 
     @Test
     void requestCompressionGzip_nonStreamingSourceUsesBodySizeCheck() {
-        // Non-streaming variant (ModelClassRequiredCompression.vm): DISABLE -> NONE, then read the
-        // already-serialized body via AmazonSerializableWebServiceRequest::GetBody(), compare its
-        // size to config.requestMinCompressionSizeBytes, and either NONE or GZIP. Matches cloudwatch
-        // PutMetricDataRequest.cpp exactly. Body only touches base state; NOT serde-blocked.
+        // Non-streaming variant: DISABLE -> NONE, else compare the serialized body size to
+        // config.requestMinCompressionSizeBytes to pick NONE or GZIP. Matches cloudwatch PutMetricDataRequest.cpp.
         String c = renderCompressionRequest(false, "PutThingRequest.cpp");
         assertTrue(c.contains("#ifdef ENABLED_ZLIB_REQUEST_COMPRESSION"), c);
         assertTrue(c.contains(
@@ -772,12 +740,9 @@ class RequestRendererTest {
 
     @Test
     void rawStreamingPayloadRequestRestJson_headerAndSourceAgreeOnRequestSpecificHeaders() {
-        // Under a REST protocol (hasTargetHeader() == false), a raw-streaming-payload request whose
-        // ONLY header-bound member is the stripped contentType must emit GetRequestSpecificHeaders in
-        // NEITHER the header nor the source. The header renders from the contentType-excluded shape;
-        // the source MUST render from the same shape. Otherwise the source defines
-        // GetRequestSpecificHeaders() out-of-line for a method the header never declares (a C++
-        // compile error).
+        // Under REST (hasTargetHeader()==false), a raw-streaming-payload request whose only
+        // header-bound member is the stripped contentType must emit GetRequestSpecificHeaders in neither
+        // header nor source, else the source defines a method the header never declares (compile error).
         String h = renderRawStreamingPayloadRestJsonRequest("DoStreamRequest.h");
         String c = renderRawStreamingPayloadRestJsonRequest("DoStreamRequest.cpp");
         assertFalse(h.contains("GetRequestSpecificHeaders"),
@@ -831,9 +796,8 @@ class RequestRendererTest {
 
     @Test
     void operationContextParams_headerDeclaresGetters() {
-        // An operation carrying only smithy.rules#operationContextParams must produce both the
-        // GetEndpointContextParams() virtual override and the GetOperationContextParams() accessor
-        // in its request header. Fails on main because RequestRenderer ignores the trait.
+        // An op carrying only smithy.rules#operationContextParams must emit both GetEndpointContextParams()
+        // and GetOperationContextParams() in its request header.
         String h = renderOperationContextRequest(operationContextParamsOnlyModel(), "DoBatchRequest.h");
         assertTrue(h.contains("EndpointParameters GetEndpointContextParams() const override;"),
             "Missing GetEndpointContextParams decl: " + h);
@@ -983,11 +947,7 @@ class RequestRendererTest {
 
     // --- aws.auth#unsignedPayload (SignBody) ---
 
-    /**
-     * Operation carrying {@code aws.auth#unsignedPayload}. When {@code emptyInput} is false the input
-     * has a member; when true the input has none (exercises the {@code !members.isEmpty()} guard).
-     * When {@code marked} is false the trait is omitted.
-     */
+    /** Op with {@code aws.auth#unsignedPayload} ({@code marked}); {@code emptyInput} toggles a member to exercise the {@code !members.isEmpty()} guard. */
     private static Model unsignedPayloadModel(boolean marked, boolean emptyInput) {
         StringShape str = StringShape.builder().id("com.example#String").build();
         StructureShape.Builder inB = StructureShape.builder().id("com.example#DoThingRequest");
@@ -1089,9 +1049,8 @@ class RequestRendererTest {
 
     @Test
     void longPollingTrait_emitsIsLongPollingOperationTrue() {
-        // C2J RequestHeader.vm emits IsLongPollingOperation() -> true for a long-polling request
-        // (gated on $operation.longPolling); the marker (stamped by LongPollingTransform) drives the
-        // same override here.
+        // C2J emits IsLongPollingOperation() -> true for a long-polling request; the marker (stamped
+        // by LongPollingTransform) drives the same override here.
         String h = renderDoThingRequestHeader(longPollingModel(true));
         assertTrue(h.contains("bool IsLongPollingOperation() const override { return true; }"),
             "LongPollingTrait must emit the IsLongPollingOperation override: " + h);
@@ -1100,8 +1059,7 @@ class RequestRendererTest {
     @Test
     void longPollingTrait_emittedWithTopIdentityMethods() {
         // Ordering: IsLongPollingOperation sits with the top identity methods (after
-        // GetServiceRequestName, before SerializePayload), NOT down with the SignBody/IsChunked
-        // block. Matches C2J RequestHeader.vm lines 57-64.
+        // GetServiceRequestName, before SerializePayload), not the SignBody/IsChunked block.
         String h = renderDoThingRequestHeader(longPollingModel(true));
         int requestName = h.indexOf("GetServiceRequestName");
         int longPolling = h.indexOf("IsLongPollingOperation");

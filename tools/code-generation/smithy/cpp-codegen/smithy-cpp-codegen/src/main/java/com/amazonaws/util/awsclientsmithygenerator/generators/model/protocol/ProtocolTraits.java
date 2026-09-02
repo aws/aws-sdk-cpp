@@ -21,10 +21,9 @@ import java.util.List;
 /**
  * Owns every protocol-specific rendering decision for generated model code.
  *
- * <p>Renderers receive a {@code ProtocolTraits} and call these methods; they never
- * branch on {@link Protocol} themselves. One implementation exists per serde
- * <em>family</em> (JSON-like, REST-XML, query-XML), not per protocol, so the
- * conditional arms that used to be repeated across renderers are now classes.
+ * <p>Renderers receive a {@code ProtocolTraits} and call these methods; they never branch on
+ * {@link Protocol}. One implementation exists per serde <em>family</em> (JSON-like, REST-XML,
+ * query-XML), not per protocol.
  *
  * <p>Obtain an instance from
  * {@code ProtocolResolver.traitsFor(ProtocolResolver.resolve(service, model))}.
@@ -153,36 +152,28 @@ public interface ProtocolTraits {
     /**
      * Whether this protocol honors HTTP binding traits ({@code @httpHeader} /
      * {@code @httpPrefixHeaders} / {@code @httpQuery} / {@code @httpQueryParams}) by serializing
-     * those members onto the wire (request headers / query string).
+     * those members onto the wire.
      *
-     * <p>REST protocols (rest-json, rest-xml, query/ec2) return {@code true}. RPC protocols
-     * (awsJson1_0/1_1, rpcv2Cbor) route these members into the request <em>body</em> instead, so
-     * they return {@code false}: their {@code GetRequestSpecificHeaders} still emits the fixed
-     * protocol headers ({@code X-Amz-Target} for awsJson; {@code Content-Type}/{@code smithy-protocol}/
-     * {@code Accept} for CBOR), but no member header/query serialization is emitted, and no
-     * {@code AddQueryStringParameters} method is generated. Matches the legacy C2J per-protocol
-     * behavior (byte-parity reference).
+     * <p>REST protocols return {@code true}. RPC protocols (awsJson, rpcv2Cbor) route these members
+     * into the body and return {@code false}: they still emit fixed protocol headers but no member
+     * header/query serialization and no {@code AddQueryStringParameters}. C2J parity.
      */
     default boolean serializesHttpBindingMembers() {
         return true;
     }
 
     /**
-     * Whether {@code integer} members widen to {@code int64_t} (rather than {@code int}) in this
-     * protocol's sub-object and result headers. C2J does this only for CBOR
-     * ({@code CORAL_TYPE_TO_CBOR_CPP_TYPE_MAPPING}: {@code integer -> int64_t}, applied where the
-     * template sets {@code $protocol == "smithy-rpc-v2-cbor"}). Request headers use the shared
-     * {@code RequestHeader.vm}, which does not widen, so this never affects request members.
+     * Whether {@code integer} members widen to {@code int64_t} in this protocol's sub-object and
+     * result headers. C2J does this only for CBOR; request headers never widen.
      */
     default boolean widensIntegers() {
         return false;
     }
 
     /**
-     * Whether result classes for this protocol expose a top-level {@code GetRequestId()} /
-     * {@code m_requestId} accessor. C2J emits it for every protocol <em>except</em> Query/EC2,
-     * whose results instead carry the request id inside the injected {@code ResponseMetadata}
-     * member. Query/EC2 override this to {@code false}.
+     * Whether result classes expose a top-level {@code GetRequestId()} / {@code m_requestId}
+     * accessor. C2J emits it for every protocol except Query/EC2 (which carry the request id inside
+     * the injected {@code ResponseMetadata}); Query/EC2 override to {@code false}.
      */
     default boolean resultHasTopLevelRequestId() {
         return true;
@@ -207,17 +198,14 @@ public interface ProtocolTraits {
                     service.getId().getName(), operation.getId().getName());
             }
             // Per-service constant request headers (C2J metadata.additionalHeaders, e.g. Glacier's
-            // x-amz-glacier-version). Streaming requests derive from AmazonStreamingWebServiceRequest
-            // and bypass <Prefix>Request::GetHeaders, so these are emitted here — matching
-            // StreamRequestSource.vm, which inserts them after X-Amz-Target and before the
-            // member-driven headers. The trait is stamped only on request shapes that need it.
+            // x-amz-glacier-version). Streaming requests bypass <Prefix>Request::GetHeaders, so
+            // these are emitted here (after X-Amz-Target, before member-driven headers). Trait-gated.
             shape.getTrait(AdditionalRequestHeadersTrait.class).ifPresent(trait ->
                 trait.getHeaders().forEach((name, value) ->
                     writer.write("headers.insert(Aws::Http::HeaderValuePair(\"$L\", \"$L\"));", name, value)));
-            // C2J declares the stringstream once, immediately after `headers`, whenever the request
-            // has ≥1 header member (even all-enum/timestamp members, which never use it). RPC
-            // protocols route HTTP-binding members to the body, so neither the stringstream nor the
-            // member serialization is emitted for them.
+            // C2J declares the stringstream once after `headers` whenever the request has >=1
+            // header member. RPC protocols route HTTP-binding members to the body, so they emit
+            // neither the stringstream nor member serialization.
             if (serializesHttpBindingMembers() && RequestBindings.hasHeaderMembers(shape, model)) {
                 writer.write("Aws::StringStream ss;");
             }

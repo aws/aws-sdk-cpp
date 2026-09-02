@@ -38,9 +38,8 @@ class MemberRendererTest {
 
     @Test
     void renderPublicSection_lowercaseMember_capitalizesMethodNames() {
-        // Smithy member names frequently start lowercase (e.g. "extendedKeyUsage").
-        // The legacy C2J convention capitalizes the accessor method names and template
-        // params while keeping the decapitalized field name (m_extendedKeyUsage).
+        // Smithy member names often start lowercase; C2J capitalizes accessor/template names while
+        // keeping the decapitalized field name (m_extendedKeyUsage).
         StringShape str = StringShape.builder().id("com.example#String").build();
         StructureShape shape = StructureShape.builder()
             .id("com.example#MyShape")
@@ -55,7 +54,6 @@ class MemberRendererTest {
         assertTrue(output.contains("SetExtendedKeyUsage(ExtendedKeyUsageT&& value)"), "Setter should be capitalized: " + output);
         assertTrue(output.contains("WithExtendedKeyUsage(ExtendedKeyUsageT&& value)"), "With should be capitalized: " + output);
         assertTrue(output.contains("m_extendedKeyUsage = std::forward"), "Field should stay decapitalized: " + output);
-        // Must not emit the raw lowercase-first method names.
         assertFalse(output.contains("GetextendedKeyUsage"), "Must not emit lowercase getter: " + output);
         assertFalse(output.contains("WithextendedKeyUsage"), "Must not emit lowercase With: " + output);
     }
@@ -177,9 +175,8 @@ class MemberRendererTest {
 
     @Test
     void renderPublicSection_documentMember_getterReturnsDocumentViewByValue() {
-        // C2J special-cases the document getter to return Aws::Utils::DocumentView by value
-        // (ModelClassMembersAndInlines.vm: $returnType = "Aws::Utils::DocumentView"), while the
-        // field and setter stay Aws::Utils::Document.
+        // C2J special-cases the document getter to return Aws::Utils::DocumentView by value, while
+        // the field and setter stay Aws::Utils::Document.
         software.amazon.smithy.model.shapes.DocumentShape doc =
             software.amazon.smithy.model.shapes.DocumentShape.builder().id("com.example#Doc").build();
         StructureShape shape = StructureShape.builder()
@@ -251,7 +248,6 @@ class MemberRendererTest {
         CppWriter writer = new CppWriter();
         MemberRenderer.forStructure(model, shape, "MyShape").renderPublicAccessors(writer);
         String output = writer.toString();
-        // Primitive getter should return by value, not const ref
         assertTrue(output.contains("inline int GetCount() const"), "Primitive should return by value: " + output);
         assertFalse(output.contains("inline const int&"), "Should NOT return const ref for primitives: " + output);
     }
@@ -308,10 +304,8 @@ class MemberRendererTest {
 
     @Test
     void renderPrivateSection_idempotencyTokenMember_initializesWithPseudoRandomUuidAndHasBeenSetTrue() {
-        // C2J auto-populates @idempotencyToken members with a random UUID at construction
-        // (ServiceClientModelHeaderMemberDeclaration.vm) and flags them as already-set
-        // (ModelClassMembersAndInlines.vm), so a caller who omits the token still gets
-        // idempotent behavior. The initializer and the =true flag must both be emitted.
+        // C2J auto-populates @idempotencyToken members with a random UUID and flags them already-set,
+        // so a caller who omits the token still gets idempotent behavior.
         StringShape str = StringShape.builder().id("com.example#String").build();
         StructureShape shape = StructureShape.builder()
             .id("com.example#MyShape")
@@ -369,7 +363,6 @@ class MemberRendererTest {
         CppWriter writer = new CppWriter();
         MemberRenderer.forStructure(model, shape, null).renderPrivateSection(writer);
         String output = writer.toString();
-        // HasBeenSet flags should come after data members
         int nameFieldPos = output.indexOf("Aws::String m_name;");
         int countFieldPos = output.indexOf("int m_count{0};");
         int nameHasBeenSetPos = output.indexOf("bool m_nameHasBeenSet = false;");
@@ -426,9 +419,8 @@ class MemberRendererTest {
 
     @Test
     void injectedResponseMetadata_inStructure_omitsGetter_whileOthersKeepIt() {
-        // The injected ResponseMetadata envelope is always present -> no HasBeenSet getter. A
-        // modeled @required member is NOT special-cased (C2J clears required), so it keeps its
-        // getter just like a plain member.
+        // The injected ResponseMetadata envelope is always present -> no HasBeenSet getter. A modeled
+        // @required member is not special-cased, so it keeps its getter like a plain member.
         Model model = responseMetadataModel();
         CppWriter writer = new CppWriter();
         MemberRenderer.forStructure(model, myShape(model), "MyShape").renderPublicAccessors(writer);
