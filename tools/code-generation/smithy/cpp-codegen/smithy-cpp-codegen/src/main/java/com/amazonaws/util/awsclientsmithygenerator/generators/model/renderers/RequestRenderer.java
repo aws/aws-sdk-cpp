@@ -24,6 +24,7 @@ import software.amazon.smithy.model.node.Node;
 import software.amazon.smithy.model.node.NodeVisitor;
 import software.amazon.smithy.model.node.StringNode;
 import software.amazon.smithy.aws.traits.HttpChecksumTrait;
+import software.amazon.smithy.aws.traits.auth.UnsignedPayloadTrait;
 import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.StructureShape;
@@ -169,6 +170,7 @@ public final class RequestRenderer implements ShapeRenderer {
                 // @httpChecksum, @httpChecksumRequired (legacy Content-MD5), then @requestCompression.
                 renderChecksumDecls(writer, shape, operation);
                 renderContentMd5Decl(writer, operation);
+                renderSignBodyDecl(writer, shape, operation);
                 renderRequestCompressionDecl(writer, operation);
 
                 // S3 flips a couple of streaming-base requests back to non-streaming (C2J
@@ -498,6 +500,20 @@ public final class RequestRenderer implements ShapeRenderer {
         if (operation.hasTrait(HttpChecksumRequiredTrait.class)) {
             writer.write("");
             writer.write("$L inline bool ShouldComputeContentMd5() const override { return true; }", ctx.exportMacro());
+        }
+    }
+
+    /**
+     * Declares the inline {@code SignBody} override for an operation carrying
+     * {@code aws.auth#unsignedPayload} whose request has at least one member. C2J's
+     * RequestHeader.vm emits this for a {@code v4-unsigned-body} request
+     * ({@code #if(!$shape.signBody && $shape.members.size() > 0)}); the Smithy equivalent is the
+     * {@code @unsignedPayload} operation trait. This closes {@code Model::}-namespace parity only:
+     * the Smithy runtime does not consume {@code SignBody()} (it hardcodes signing).
+     */
+    private void renderSignBodyDecl(CppWriter writer, StructureShape shape, OperationShape operation) {
+        if (operation.hasTrait(UnsignedPayloadTrait.class) && !shape.getAllMembers().isEmpty()) {
+            writer.write("$L bool SignBody() const override { return false; }", ctx.exportMacro());
         }
     }
 

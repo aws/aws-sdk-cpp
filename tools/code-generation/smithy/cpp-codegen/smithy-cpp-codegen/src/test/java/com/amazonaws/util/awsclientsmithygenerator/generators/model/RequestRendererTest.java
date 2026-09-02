@@ -947,4 +947,56 @@ class RequestRendererTest {
                 "Missing result push for " + branch + ": " + c);
         }
     }
+
+    // --- aws.auth#unsignedPayload (SignBody) ---
+
+    /**
+     * Operation carrying {@code aws.auth#unsignedPayload}. When {@code emptyInput} is false the input
+     * has a member; when true the input has none (exercises the {@code !members.isEmpty()} guard).
+     * When {@code marked} is false the trait is omitted.
+     */
+    private static Model unsignedPayloadModel(boolean marked, boolean emptyInput) {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        StructureShape.Builder inB = StructureShape.builder().id("com.example#DoThingRequest");
+        if (!emptyInput) {
+            inB.addMember("name", str.getId());
+        }
+        StructureShape input = inB.build();
+        StructureShape output = StructureShape.builder()
+            .id("com.example#DoThingOutput").addMember("result", str.getId()).build();
+        OperationShape.Builder opB = OperationShape.builder().id("com.example#DoThing")
+            .input(input.getId()).output(output.getId());
+        if (marked) {
+            opB.addTrait(new software.amazon.smithy.aws.traits.auth.UnsignedPayloadTrait());
+        }
+        OperationShape op = opB.build();
+        ServiceShape service = ServiceShape.builder().id("com.example#Example")
+            .version("2024-01-01").addOperation(op.getId()).build();
+        return Model.builder().addShapes(str, input, output, op, service).build();
+    }
+
+    @Test
+    void unsignedPayloadTrait_emitsSignBodyFalse() {
+        // C2J RequestHeader.vm: a v4-unsigned-body request with members emits SignBody() -> false.
+        // In Smithy that maps to the operation carrying aws.auth#unsignedPayload.
+        String h = renderDoThingRequestHeader(unsignedPayloadModel(true, false));
+        assertTrue(h.contains("bool SignBody() const override { return false; }"),
+            "@unsignedPayload op with members must emit SignBody() -> false: " + h);
+    }
+
+    @Test
+    void withoutUnsignedPayloadTrait_omitsSignBody() {
+        String h = renderDoThingRequestHeader(unsignedPayloadModel(false, false));
+        assertFalse(h.contains("SignBody"),
+            "op without @unsignedPayload must not emit SignBody: " + h);
+    }
+
+    @Test
+    void unsignedPayloadTraitWithEmptyRequest_omitsSignBody() {
+        // The !members.isEmpty() guard: an @unsignedPayload op whose request has no members
+        // must not emit SignBody (matches C2J's $shape.members.size() > 0 gate).
+        String h = renderDoThingRequestHeader(unsignedPayloadModel(true, true));
+        assertFalse(h.contains("SignBody"),
+            "@unsignedPayload op with an empty request must not emit SignBody: " + h);
+    }
 }
