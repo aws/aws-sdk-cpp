@@ -14,6 +14,7 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.model.RenderContex
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassifier;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassifier.RequestInfo;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeRenderer;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.ChunkedEncodingTrait;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.OverrideStreamingTrait;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.SupportsPresigningTrait;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.endpointcontext.Emit;
@@ -171,6 +172,14 @@ public final class RequestRenderer implements ShapeRenderer {
                 renderChecksumDecls(writer, shape, operation);
                 renderContentMd5Decl(writer, operation);
                 renderSignBodyDecl(writer, shape, operation);
+
+                // Chunked-encoding requests emit IsChunked() -> true right after SignBody and before
+                // IsStreaming (C2J RequestHeader.vm order); the marker is stamped by
+                // ChunkedEncodingTransform.
+                if (shape.hasTrait(ChunkedEncodingTrait.class)) {
+                    writer.write("$L bool IsChunked() const override { return true; }", ctx.exportMacro());
+                }
+
                 renderRequestCompressionDecl(writer, operation);
 
                 // S3 flips a couple of streaming-base requests back to non-streaming (C2J

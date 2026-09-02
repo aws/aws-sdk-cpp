@@ -999,4 +999,39 @@ class RequestRendererTest {
         assertFalse(h.contains("SignBody"),
             "@unsignedPayload op with an empty request must not emit SignBody: " + h);
     }
+
+    // --- aws.cpp.internal#chunkedEncoding (IsChunked) ---
+
+    private static Model chunkedEncodingModel(boolean marked) {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        StructureShape.Builder inB = StructureShape.builder()
+            .id("com.example#DoThingRequest").addMember("name", str.getId());
+        if (marked) {
+            inB.addTrait(new com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.ChunkedEncodingTrait());
+        }
+        StructureShape input = inB.build();
+        StructureShape output = StructureShape.builder()
+            .id("com.example#DoThingOutput").addMember("result", str.getId()).build();
+        OperationShape op = OperationShape.builder().id("com.example#DoThing")
+            .input(input.getId()).output(output.getId()).build();
+        ServiceShape service = ServiceShape.builder().id("com.example#Example")
+            .version("2024-01-01").addOperation(op.getId()).build();
+        return Model.builder().addShapes(str, input, output, op, service).build();
+    }
+
+    @Test
+    void chunkedEncodingTrait_emitsIsChunkedTrue() {
+        // C2J RequestHeader.vm emits IsChunked() -> true for a chunked-encoding request; the marker
+        // (stamped by ChunkedEncodingTransform) drives the same override here.
+        String h = renderDoThingRequestHeader(chunkedEncodingModel(true));
+        assertTrue(h.contains("bool IsChunked() const override { return true; }"),
+            "ChunkedEncodingTrait must emit the IsChunked override: " + h);
+    }
+
+    @Test
+    void withoutChunkedEncodingTrait_omitsIsChunked() {
+        String h = renderDoThingRequestHeader(chunkedEncodingModel(false));
+        assertFalse(h.contains("IsChunked"),
+            "unmarked requests must not emit IsChunked: " + h);
+    }
 }
