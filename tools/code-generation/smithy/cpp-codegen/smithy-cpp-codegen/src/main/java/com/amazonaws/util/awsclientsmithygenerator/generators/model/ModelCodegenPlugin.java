@@ -15,6 +15,7 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.E
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.GlacierTransforms;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.GlobalTransforms;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.LambdaTransforms;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.LongPollingTransform;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.S3ControlTransforms;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.S3Transforms;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.SourceRegionTransform;
@@ -68,7 +69,8 @@ public class ModelCodegenPlugin implements SmithyBuildPlugin {
             S3ControlTransforms.asTransform(),
             GlacierTransforms.asTransform(),
             SupportsPresigningTransform.asTransform(),
-            ChunkedEncodingTransform.asTransform()
+            ChunkedEncodingTransform.asTransform(),
+            LongPollingTransform.asTransform()
         ));
 
         CppWriterDelegator writerDelegator = new CppWriterDelegator(context.getFileManifest());
