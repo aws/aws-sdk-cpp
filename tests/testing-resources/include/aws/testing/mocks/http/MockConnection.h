@@ -55,6 +55,8 @@ class MockConnection : public Aws::Http::Connection {
     return Aws::MakeShared<MockClientStream>("MockConnection", m_testCase, std::move(onStreamComplete));
   }
 
+  void Close() override {}
+
  private:
   ConnectionTestCase m_testCase;
 };
