@@ -790,6 +790,54 @@ class GlobalTransformsTest {
     }
 
     @Test
+    void injectResponseMetadata_skipsDeprecatedOperationOutputSharedByLiveOp() {
+        // A @deprecated operation's output that is ALSO reused as a nested member by a live op's
+        // output is reachable/emitted as a sub-object, but C2J drops the deprecated op entirely and
+        // never injects ResponseMetadata into that shape. Only genuine live-op outputs get it.
+        StructureShape sharedOutput = StructureShape.builder()
+            .id("com.example#SharedOutput")
+            .addMember(MemberShape.builder()
+                .id("com.example#SharedOutput$value").target("smithy.api#String").build())
+            .build();
+        StructureShape liveOutput = StructureShape.builder()
+            .id("com.example#LiveOutput")
+            .addMember(MemberShape.builder()
+                .id("com.example#LiveOutput$nested").target(sharedOutput.getId()).build())
+            .build();
+        StructureShape deprecatedInput = StructureShape.builder()
+            .id("com.example#DeprecatedInput").build();
+        StructureShape liveInput = StructureShape.builder()
+            .id("com.example#LiveInput").build();
+        OperationShape deprecatedOp = OperationShape.builder()
+            .id("com.example#DeprecatedOp")
+            .input(deprecatedInput.getId()).output(sharedOutput.getId())
+            .addTrait(software.amazon.smithy.model.traits.DeprecatedTrait.builder().build())
+            .build();
+        OperationShape liveOp = OperationShape.builder()
+            .id("com.example#LiveOp")
+            .input(liveInput.getId()).output(liveOutput.getId())
+            .build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#Example").version("2024-01-01")
+            .addTrait(new software.amazon.smithy.aws.traits.protocols.AwsQueryTrait())
+            .addOperation(deprecatedOp.getId()).addOperation(liveOp.getId())
+            .build();
+        Model model = Model.assembler().addShapes(sharedOutput, liveOutput, deprecatedInput,
+            liveInput, deprecatedOp, liveOp, service).assemble().unwrap();
+
+        Model out = GlobalTransforms.injectResponseMetadata(model, serviceOf(model, "Example"));
+
+        StructureShape sharedAfter = out.expectShape(
+            ShapeId.from("com.example#SharedOutput"), StructureShape.class);
+        assertFalse(sharedAfter.getMember("ResponseMetadata").isPresent(),
+            "a @deprecated op's output (only reused as a nested member) must not gain ResponseMetadata");
+        StructureShape liveAfter = out.expectShape(
+            ShapeId.from("com.example#LiveOutput"), StructureShape.class);
+        assertTrue(liveAfter.getMember("ResponseMetadata").isPresent(),
+            "a genuine live-op output must still gain ResponseMetadata");
+    }
+
+    @Test
     void injectResponseMetadata_awsJsonWithoutQueryCompatible_leavesResultUnchanged() {
         // Plain awsJson1_0 (no @awsQueryCompatible) must NOT get ResponseMetadata injected.
         Model model = oneOutputModel(
