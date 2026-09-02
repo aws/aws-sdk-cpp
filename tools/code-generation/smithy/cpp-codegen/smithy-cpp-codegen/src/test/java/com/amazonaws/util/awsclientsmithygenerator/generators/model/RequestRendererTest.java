@@ -1034,4 +1034,55 @@ class RequestRendererTest {
         assertFalse(h.contains("IsChunked"),
             "unmarked requests must not emit IsChunked: " + h);
     }
+
+    // --- aws.cpp.internal#longPolling (IsLongPollingOperation) ---
+
+    private static Model longPollingModel(boolean marked) {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        StructureShape.Builder inB = StructureShape.builder()
+            .id("com.example#DoThingRequest").addMember("name", str.getId());
+        if (marked) {
+            inB.addTrait(new com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.LongPollingTrait());
+        }
+        StructureShape input = inB.build();
+        StructureShape output = StructureShape.builder()
+            .id("com.example#DoThingOutput").addMember("result", str.getId()).build();
+        OperationShape op = OperationShape.builder().id("com.example#DoThing")
+            .input(input.getId()).output(output.getId()).build();
+        ServiceShape service = ServiceShape.builder().id("com.example#Example")
+            .version("2024-01-01").addOperation(op.getId()).build();
+        return Model.builder().addShapes(str, input, output, op, service).build();
+    }
+
+    @Test
+    void longPollingTrait_emitsIsLongPollingOperationTrue() {
+        // C2J RequestHeader.vm emits IsLongPollingOperation() -> true for a long-polling request
+        // (gated on $operation.longPolling); the marker (stamped by LongPollingTransform) drives the
+        // same override here.
+        String h = renderDoThingRequestHeader(longPollingModel(true));
+        assertTrue(h.contains("bool IsLongPollingOperation() const override { return true; }"),
+            "LongPollingTrait must emit the IsLongPollingOperation override: " + h);
+    }
+
+    @Test
+    void longPollingTrait_emittedWithTopIdentityMethods() {
+        // Ordering: IsLongPollingOperation sits with the top identity methods (after
+        // GetServiceRequestName, before SerializePayload), NOT down with the SignBody/IsChunked
+        // block. Matches C2J RequestHeader.vm lines 57-64.
+        String h = renderDoThingRequestHeader(longPollingModel(true));
+        int requestName = h.indexOf("GetServiceRequestName");
+        int longPolling = h.indexOf("IsLongPollingOperation");
+        int serializePayload = h.indexOf("SerializePayload");
+        assertTrue(requestName >= 0 && longPolling > requestName,
+            "IsLongPollingOperation must come after GetServiceRequestName: " + h);
+        assertTrue(serializePayload >= 0 && longPolling < serializePayload,
+            "IsLongPollingOperation must come before SerializePayload (top identity block): " + h);
+    }
+
+    @Test
+    void withoutLongPollingTrait_omitsIsLongPollingOperation() {
+        String h = renderDoThingRequestHeader(longPollingModel(false));
+        assertFalse(h.contains("IsLongPollingOperation"),
+            "unmarked requests must not emit IsLongPollingOperation: " + h);
+    }
 }

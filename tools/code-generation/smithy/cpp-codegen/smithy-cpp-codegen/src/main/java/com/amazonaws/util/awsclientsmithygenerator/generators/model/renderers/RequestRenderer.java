@@ -15,6 +15,7 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassif
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassifier.RequestInfo;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeRenderer;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.ChunkedEncodingTrait;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.LongPollingTrait;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.OverrideStreamingTrait;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.SupportsPresigningTrait;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.endpointcontext.Emit;
@@ -140,6 +141,12 @@ public final class RequestRenderer implements ShapeRenderer {
                 writer.write("");
                 if (streamingRequest) {
                     writer.write("inline virtual bool IsEventStreamRequest() const override { return true; }");
+                }
+                // Long-polling requests emit IsLongPollingOperation() -> true with the top identity
+                // methods (C2J RequestHeader.vm order: after IsEventStreamRequest, before
+                // HasEventStreamResponse); the marker is stamped by LongPollingTransform.
+                if (shape.hasTrait(LongPollingTrait.class)) {
+                    writer.write("inline virtual bool IsLongPollingOperation() const override { return true; }");
                 }
                 if (streamingResponse) {
                     writer.write("inline virtual bool HasEventStreamResponse() const override { return true; }");
