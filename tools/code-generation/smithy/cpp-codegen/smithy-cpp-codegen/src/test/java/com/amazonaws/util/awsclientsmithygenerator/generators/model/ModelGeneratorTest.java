@@ -81,9 +81,11 @@ class ModelGeneratorTest {
         Model model = model(smithyServiceName);
         ServiceShape service = model.expectShape(
             ShapeId.from("com.amazonaws.dynamodb#DynamoDB_20120810"), ServiceShape.class);
-        // Apply the DynamoDB service-level transform first (mirrors ModelCodegenPlugin): marks
-        // AttributeValue @customRendered for dynamodb, no-op otherwise. Suppression flows through ShapeClassifier.
-        Model transformed = DynamoDbTransforms.asTransform().apply(model, service);
+        // Apply the DynamoDB service-level transform first (mirrors ModelCodegenPlugin): its
+        // shouldRun gate marks AttributeValue @customRendered for dynamodb only, so any other
+        // service is skipped and AttributeValue flows through ShapeClassifier generically.
+        var ddb = new DynamoDbTransforms();
+        Model transformed = ddb.shouldRun(service) ? ddb.transform(model, service) : model;
         MockManifest manifest = new MockManifest();
         CppWriterDelegator delegator = new CppWriterDelegator(manifest);
         new ModelGenerator(transformed, service, delegator, smithyServiceName, exportMacro, namespace)

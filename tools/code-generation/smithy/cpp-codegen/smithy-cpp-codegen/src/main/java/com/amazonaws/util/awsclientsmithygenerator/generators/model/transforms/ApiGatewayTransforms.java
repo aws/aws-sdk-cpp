@@ -20,18 +20,15 @@ import java.util.List;
  * Renames the reserved {@code body}/{@code headers} members of API Gateway's test-invoke requests to
  * {@code requestBody}/{@code requestHeaders}. Mirrors the legacy C2J {@code APIGatewayRestJsonCppClientGenerator}.
  */
-public final class ApiGatewayTransforms {
+public final class ApiGatewayTransforms implements ModelTransform {
 
-    private ApiGatewayTransforms() {}
-
-    public static ModelTransform asTransform() {
-        return ApiGatewayTransforms::apply;
+    @Override
+    public boolean shouldRun(ServiceShape service) {
+        return "api-gateway".equals(ServiceNameUtil.getSmithyServiceName(service, null));
     }
 
-    private static Model apply(Model model, ServiceShape service) {
-        if (!"api-gateway".equals(ServiceNameUtil.getSmithyServiceName(service, null))) {
-            return model;
-        }
+    @Override
+    public Model transform(Model model, ServiceShape service) {
         String ns = service.getId().getNamespace();
         Protocol protocol = ProtocolResolver.resolve(service, model);
         List<StructureShape> updated = new ArrayList<>();

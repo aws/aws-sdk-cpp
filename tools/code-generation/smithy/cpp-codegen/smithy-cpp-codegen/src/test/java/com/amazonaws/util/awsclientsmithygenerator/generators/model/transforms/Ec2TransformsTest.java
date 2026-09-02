@@ -46,7 +46,7 @@ class Ec2TransformsTest {
     @Test
     void addsDisabledToSpotInstanceState() {
         Model m = ec2Model("EC2");
-        Model out = Ec2Transforms.asTransform().apply(m, service(m));
+        Model out = new Ec2Transforms().transform(m, service(m));
         assertTrue(EnumRenderer.getEnumValues(
             out.expectShape(ShapeId.from("com.example#SpotInstanceState"))).contains("disabled"));
     }
@@ -54,8 +54,7 @@ class Ec2TransformsTest {
     @Test
     void noOpForOtherService() {
         Model m = ec2Model("SomeOther");
-        Model out = Ec2Transforms.asTransform().apply(m, service(m));
-        assertSame(m, out);
+        assertFalse(new Ec2Transforms().shouldRun(service(m)));
     }
 
     @Test
@@ -65,7 +64,7 @@ class Ec2TransformsTest {
         ServiceShape service = ec2Service("EC2");
         Model m = Model.assembler().addShapes(nested, service).assemble().unwrap();
 
-        Model out = Ec2Transforms.asTransform().apply(m, service);
+        Model out = new Ec2Transforms().transform(m, service);
 
         assertFalse(out.getShape(ShapeId.from("com.example#MetricDataResult")).isPresent());
         assertTrue(out.getShape(ShapeId.from("com.example#MetricDataResponse")).isPresent());
@@ -88,7 +87,7 @@ class Ec2TransformsTest {
             .addOperation(op.getId()).build();
         Model m = Model.assembler().addShapes(result, response, in, out, op, service).assemble().unwrap();
         assertThrows(IllegalStateException.class,
-            () -> Ec2Transforms.asTransform().apply(m, service(m)));
+            () -> new Ec2Transforms().transform(m, service(m)));
     }
 
     /**
@@ -122,7 +121,7 @@ class Ec2TransformsTest {
     @Test
     void modelsUserDataAsSensitiveSecureBlobAttributeValue() {
         Model m = userDataModel();
-        Model out = Ec2Transforms.asTransform().apply(m, service(m));
+        Model out = new Ec2Transforms().transform(m, service(m));
 
         // SecureBlobAttributeValue exists with a Value member targeting a @sensitive blob
         // (a @sensitive blob maps to Aws::Utils::CryptoBuffer, matching the C2J baseline).
@@ -151,8 +150,8 @@ class Ec2TransformsTest {
     void throwsWhenSecureBlobAttributeValueAlreadyExists() {
         // Once upstream aws-models adds SecureBlobAttributeValue, this compensating transform is
         // obsolete. Fail loudly so a human removes it, rather than silently self-retiring.
-        Model once = Ec2Transforms.asTransform().apply(userDataModel(), service(userDataModel()));
+        Model once = new Ec2Transforms().transform(userDataModel(), service(userDataModel()));
         assertThrows(IllegalStateException.class,
-            () -> Ec2Transforms.asTransform().apply(once, service(once)));
+            () -> new Ec2Transforms().transform(once, service(once)));
     }
 }

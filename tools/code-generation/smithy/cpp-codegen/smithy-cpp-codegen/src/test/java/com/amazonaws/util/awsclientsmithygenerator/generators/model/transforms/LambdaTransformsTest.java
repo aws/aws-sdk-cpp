@@ -42,7 +42,7 @@ class LambdaTransformsTest {
     @Test
     void removesInvokeAsyncOperationAndShapes() {
         Model m = lambdaModel("Lambda");
-        Model out = LambdaTransforms.asTransform().apply(m, service(m));
+        Model out = new LambdaTransforms().transform(m, service(m));
 
         assertTrue(out.getShape(ShapeId.from("com.example#InvokeAsync")).isEmpty());
         assertTrue(out.getShape(ShapeId.from("com.example#InvokeAsyncRequest")).isEmpty());
@@ -54,7 +54,6 @@ class LambdaTransformsTest {
     @Test
     void noOpForOtherService() {
         Model m = lambdaModel("SomeOther");
-        Model out = LambdaTransforms.asTransform().apply(m, service(m));
-        assertSame(m, out);
+        assertFalse(new LambdaTransforms().shouldRun(service(m)));
     }
 }

@@ -22,18 +22,15 @@ import java.util.List;
  * each operation-output with {@link TopLevelHostIdTrait}, which {@code ResultRenderer} turns into the
  * top-level HostId accessor group. Self-guards on the raw smithy service name {@code s3-control}.
  */
-public final class S3ControlTransforms {
+public final class S3ControlTransforms implements ModelTransform {
 
-    private S3ControlTransforms() {}
-
-    public static ModelTransform asTransform() {
-        return S3ControlTransforms::apply;
+    @Override
+    public boolean shouldRun(ServiceShape service) {
+        return "s3-control".equals(ServiceNameUtil.getSmithyServiceName(service, null));
     }
 
-    private static Model apply(Model model, ServiceShape service) {
-        if (!"s3-control".equals(ServiceNameUtil.getSmithyServiceName(service, null))) {
-            return model;
-        }
+    @Override
+    public Model transform(Model model, ServiceShape service) {
         TopDownIndex index = TopDownIndex.of(model);
         List<Shape> marked = new ArrayList<>();
         for (OperationShape op : index.getContainedOperations(service)) {

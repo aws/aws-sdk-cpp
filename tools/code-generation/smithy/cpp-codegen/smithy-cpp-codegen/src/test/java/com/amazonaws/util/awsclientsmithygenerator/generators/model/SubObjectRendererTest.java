@@ -85,7 +85,7 @@ class SubObjectRendererTest {
             model.expectShape(ShapeId.from("com.example#BidirectionalInput")),
             model.expectShape(ShapeId.from("com.example#AnyToolChoice")),
             model.expectShape(ShapeId.from("com.example#AudioSource")));
-        new SubObjectRenderer(subObjects,
+        new SubObjectRenderer(subObjects, java.util.Collections.emptySet(),
             new RenderContext(model, service, traits,
                 "Example", "AWS_EXAMPLE_API", "example")).render(delegator);
         delegator.flushWriters();

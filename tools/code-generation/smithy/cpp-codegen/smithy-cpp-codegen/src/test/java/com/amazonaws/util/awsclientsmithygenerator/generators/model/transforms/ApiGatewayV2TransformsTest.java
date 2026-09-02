@@ -47,7 +47,7 @@ class ApiGatewayV2TransformsTest {
     @Test
     void renamesBody() {
         Model m = model("ApiGatewayV2");
-        Model out = ApiGatewayV2Transforms.asTransform().apply(m, service(m));
+        Model out = new ApiGatewayV2Transforms().transform(m, service(m));
         for (String name : new String[]{"ImportApiRequest", "ReimportApiRequest"}) {
             StructureShape r = out.expectShape(ShapeId.from("com.example#" + name), StructureShape.class);
             assertTrue(r.getMember("requestBody").isPresent(), name);
@@ -60,7 +60,6 @@ class ApiGatewayV2TransformsTest {
     @Test
     void noOpForOtherService() {
         Model m = model("SomeOther");
-        Model out = ApiGatewayV2Transforms.asTransform().apply(m, service(m));
-        assertSame(m, out);
+        assertFalse(new ApiGatewayV2Transforms().shouldRun(service(m)));
     }
 }

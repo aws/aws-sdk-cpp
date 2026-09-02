@@ -68,7 +68,7 @@ class ChunkedEncodingTransformTest {
     @Test
     void mediaStoreDataUnsignedStreamingOp_stampsInput() {
         Model m = oneOpModel("MediaStore Data", "PutObject", true, true);
-        Model out = ChunkedEncodingTransform.asTransform().apply(m, service(m));
+        Model out = new ChunkedEncodingTransform().transform(m, service(m));
         assertTrue(stamped(out, "PutObjectRequest"),
             "MediaStore Data unsigned-payload streaming request must be stamped");
     }
@@ -76,7 +76,7 @@ class ChunkedEncodingTransformTest {
     @Test
     void mediaStoreDataNonStreamingOp_notStamped() {
         Model m = oneOpModel("MediaStore Data", "DescribeObject", false, true);
-        Model out = ChunkedEncodingTransform.asTransform().apply(m, service(m));
+        Model out = new ChunkedEncodingTransform().transform(m, service(m));
         assertSame(m, out, "no qualifying operation must leave the model untouched");
         assertFalse(stamped(out, "DescribeObjectRequest"),
             "a non-streaming request must not be stamped");
@@ -85,7 +85,7 @@ class ChunkedEncodingTransformTest {
     @Test
     void mediaStoreDataSignedStreamingOp_notStamped() {
         Model m = oneOpModel("MediaStore Data", "PutObject", true, false);
-        Model out = ChunkedEncodingTransform.asTransform().apply(m, service(m));
+        Model out = new ChunkedEncodingTransform().transform(m, service(m));
         assertSame(m, out, "no qualifying operation must leave the model untouched");
         assertFalse(stamped(out, "PutObjectRequest"),
             "a signed (no @unsignedPayload) request must not be stamped");
@@ -94,7 +94,7 @@ class ChunkedEncodingTransformTest {
     @Test
     void s3WriteGetObjectResponseUnsignedStreamingOp_stampsInput() {
         Model m = oneOpModel("S3", "WriteGetObjectResponse", true, true);
-        Model out = ChunkedEncodingTransform.asTransform().apply(m, service(m));
+        Model out = new ChunkedEncodingTransform().transform(m, service(m));
         assertTrue(stamped(out, "WriteGetObjectResponseRequest"),
             "S3 WriteGetObjectResponse unsigned-payload streaming request must be stamped");
     }
@@ -102,7 +102,7 @@ class ChunkedEncodingTransformTest {
     @Test
     void unrelatedServiceStreamingOp_notStamped() {
         Model m = oneOpModel("S3", "PutObject", true, true);
-        Model out = ChunkedEncodingTransform.asTransform().apply(m, service(m));
+        Model out = new ChunkedEncodingTransform().transform(m, service(m));
         assertSame(m, out, "an unrelated operation must leave the model untouched");
         assertFalse(stamped(out, "PutObjectRequest"),
             "only WriteGetObjectResponse (or MediaStore Data) may be stamped");

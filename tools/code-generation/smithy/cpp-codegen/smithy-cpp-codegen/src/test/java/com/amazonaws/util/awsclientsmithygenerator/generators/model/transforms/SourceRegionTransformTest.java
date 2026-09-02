@@ -46,7 +46,7 @@ class SourceRegionTransformTest {
     @Test
     void injectsSourceRegionIntoRdsRequest() {
         Model m = modelWithOp("RDS", "CopyDBClusterSnapshot", "CopyDBClusterSnapshotRequest");
-        Model out = SourceRegionTransform.asTransform().apply(m, service(m));
+        Model out = new SourceRegionTransform().transform(m, service(m));
 
         StructureShape req = out.expectShape(
             ShapeId.from("com.example#CopyDBClusterSnapshotRequest"), StructureShape.class);
@@ -58,7 +58,7 @@ class SourceRegionTransformTest {
     @Test
     void noOpForUntargetedOperation() {
         Model m = modelWithOp("RDS", "DescribeDBClusters", "DescribeDBClustersRequest");
-        Model out = SourceRegionTransform.asTransform().apply(m, service(m));
+        Model out = new SourceRegionTransform().transform(m, service(m));
         assertTrue(out.expectShape(ShapeId.from("com.example#DescribeDBClustersRequest"),
             StructureShape.class).getMember("SourceRegion").isEmpty());
     }
@@ -66,15 +66,14 @@ class SourceRegionTransformTest {
     @Test
     void noOpForUntargetedService() {
         Model m = modelWithOp("SomeOther", "CopyDBClusterSnapshot", "CopyDBClusterSnapshotRequest");
-        Model out = SourceRegionTransform.asTransform().apply(m, service(m));
-        assertSame(m, out);
+        assertFalse(new SourceRegionTransform().shouldRun(service(m)));
     }
 
     @Test
     void idempotent_doesNotDuplicateExistingMember() {
         Model m = modelWithOp("RDS", "CopyDBClusterSnapshot", "CopyDBClusterSnapshotRequest");
-        Model once = SourceRegionTransform.asTransform().apply(m, service(m));
-        Model twice = SourceRegionTransform.asTransform().apply(once, service(once));
+        Model once = new SourceRegionTransform().transform(m, service(m));
+        Model twice = new SourceRegionTransform().transform(once, service(once));
         long count = twice.expectShape(ShapeId.from("com.example#CopyDBClusterSnapshotRequest"),
             StructureShape.class).members().stream()
             .filter(mem -> mem.getMemberName().equals("SourceRegion")).count();
@@ -84,7 +83,7 @@ class SourceRegionTransformTest {
     @Test
     void injectsSourceRegionIntoDocDbRequest() {
         Model m = modelWithOp("DocDB", "CreateDBCluster", "CreateDBClusterMessage");
-        Model out = SourceRegionTransform.asTransform().apply(m, service(m));
+        Model out = new SourceRegionTransform().transform(m, service(m));
         assertTrue(out.expectShape(ShapeId.from("com.example#CreateDBClusterMessage"),
             StructureShape.class).getMember("SourceRegion").isPresent());
     }
@@ -92,7 +91,7 @@ class SourceRegionTransformTest {
     @Test
     void injectsSourceRegionIntoNeptuneRequest() {
         Model m = modelWithOp("Neptune", "CopyDBClusterSnapshot", "CopyDBClusterSnapshotMessage");
-        Model out = SourceRegionTransform.asTransform().apply(m, service(m));
+        Model out = new SourceRegionTransform().transform(m, service(m));
         assertTrue(out.expectShape(ShapeId.from("com.example#CopyDBClusterSnapshotMessage"),
             StructureShape.class).getMember("SourceRegion").isPresent());
     }

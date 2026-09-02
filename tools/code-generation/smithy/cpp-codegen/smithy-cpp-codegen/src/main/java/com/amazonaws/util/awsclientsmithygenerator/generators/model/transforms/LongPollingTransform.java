@@ -24,7 +24,7 @@ import java.util.Set;
  * smithy service name (from {@link ServiceNameUtil#getSmithyServiceName(ServiceShape, Map)} with a
  * {@code null} map, so no c2jMap remap like {@code sfn->states}). No-op for other services.
  */
-public final class LongPollingTransform {
+public final class LongPollingTransform implements ModelTransform {
 
     private static final Map<String, Set<String>> LONG_POLLING_OPERATIONS = Map.of(
         "sqs", Set.of("ReceiveMessage"),
@@ -32,18 +32,16 @@ public final class LongPollingTransform {
         "swf", Set.of("PollForActivityTask", "PollForDecisionTask")
     );
 
-    private LongPollingTransform() {}
-
-    public static ModelTransform asTransform() {
-        return LongPollingTransform::apply;
+    @Override
+    public boolean shouldRun(ServiceShape service) {
+        return LONG_POLLING_OPERATIONS.containsKey(
+            ServiceNameUtil.getSmithyServiceName(service, null));
     }
 
-    private static Model apply(Model model, ServiceShape service) {
+    @Override
+    public Model transform(Model model, ServiceShape service) {
         Set<String> longPollOps =
             LONG_POLLING_OPERATIONS.get(ServiceNameUtil.getSmithyServiceName(service, null));
-        if (longPollOps == null) {
-            return model;
-        }
         List<Shape> updated = new ArrayList<>();
         for (OperationShape op : TopDownIndex.of(model).getContainedOperations(service)) {
             if (longPollOps.contains(op.getId().getName())) {

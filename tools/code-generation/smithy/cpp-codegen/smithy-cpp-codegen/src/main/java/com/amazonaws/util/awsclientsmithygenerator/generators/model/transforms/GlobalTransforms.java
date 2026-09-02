@@ -36,7 +36,7 @@ import java.util.stream.Collectors;
  * Global model transforms applied before code generation.
  * Handles reserved member renaming and reachability filtering.
  */
-public final class GlobalTransforms {
+public final class GlobalTransforms implements ModelTransform {
 
     /**
      * Services (raw smithy names) that skip the "body" -> "requestBody" rename. api-gateway/apigatewayv2
@@ -60,8 +60,6 @@ public final class GlobalTransforms {
      * (no HasBeenSet getter, flag initialized true) on this exact name.
      */
     public static final String RESPONSE_METADATA = "ResponseMetadata";
-
-    private GlobalTransforms() {}
 
     /**
      * Renames reserved request members on every operation-input structure ({@code body -> requestBody},
@@ -170,8 +168,14 @@ public final class GlobalTransforms {
      * sees the pruned model), then {@link #renameReservedRequestMembers}, then
      * {@link #injectResponseMetadata}.
      */
-    public static ModelTransform asTransform() {
-        return (model, service) -> injectResponseMetadata(
+    @Override
+    public boolean shouldRun(ServiceShape service) {
+        return true;
+    }
+
+    @Override
+    public Model transform(Model model, ServiceShape service) {
+        return injectResponseMetadata(
             renameReservedRequestMembers(dropDeprecatedMembers(model, service), service), service);
     }
 

@@ -21,18 +21,15 @@ import java.util.Optional;
  * shape stays in the model so member references still resolve. Self-guards on service name dynamodb;
  * no-op when AttributeValue is absent.
  */
-public final class DynamoDbTransforms {
+public final class DynamoDbTransforms implements ModelTransform {
 
-    private DynamoDbTransforms() {}
-
-    public static ModelTransform asTransform() {
-        return DynamoDbTransforms::apply;
+    @Override
+    public boolean shouldRun(ServiceShape service) {
+        return "dynamodb".equals(ServiceNameUtil.getSmithyServiceName(service, null));
     }
 
-    private static Model apply(Model model, ServiceShape service) {
-        if (!"dynamodb".equals(ServiceNameUtil.getSmithyServiceName(service, null))) {
-            return model;
-        }
+    @Override
+    public Model transform(Model model, ServiceShape service) {
         ShapeId attributeValueId = ShapeId.fromParts(service.getId().getNamespace(), "AttributeValue");
         Optional<Shape> attributeValue = model.getShape(attributeValueId);
         if (attributeValue.isEmpty()) {

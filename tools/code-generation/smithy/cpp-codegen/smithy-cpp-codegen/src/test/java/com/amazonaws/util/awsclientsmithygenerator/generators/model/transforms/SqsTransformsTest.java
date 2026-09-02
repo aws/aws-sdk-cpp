@@ -39,7 +39,7 @@ class SqsTransformsTest {
         Model m = Model.assembler().addShapes(enumShape, sqsService()).assemble().unwrap();
         ServiceShape svc = m.expectShape(ShapeId.from("com.example#TestService"), ServiceShape.class);
 
-        Model out = SqsTransforms.asTransform().apply(m, svc);
+        Model out = new SqsTransforms().transform(m, svc);
         List<String> values = EnumRenderer.getEnumValues(
             out.expectShape(ShapeId.from("com.example#QueueAttributeName")));
         assertTrue(values.containsAll(ADDED));
@@ -58,7 +58,7 @@ class SqsTransformsTest {
         Model m = Model.assembler().addShapes(s, sqsService()).assemble().unwrap();
         ServiceShape svc = m.expectShape(ShapeId.from("com.example#TestService"), ServiceShape.class);
 
-        Model out = SqsTransforms.asTransform().apply(m, svc);
+        Model out = new SqsTransforms().transform(m, svc);
         List<String> values = EnumRenderer.getEnumValues(
             out.expectShape(ShapeId.from("com.example#QueueAttributeName")));
         assertTrue(values.containsAll(ADDED));
@@ -81,8 +81,8 @@ class SqsTransformsTest {
         Model m = Model.assembler().addShapes(enumShape, sqsService()).assemble().unwrap();
         ServiceShape svc = m.expectShape(ShapeId.from("com.example#TestService"), ServiceShape.class);
 
-        Model once = SqsTransforms.asTransform().apply(m, svc);
-        Model twice = SqsTransforms.asTransform().apply(once, svc);
+        Model once = new SqsTransforms().transform(m, svc);
+        Model twice = new SqsTransforms().transform(once, svc);
         long senderId = EnumRenderer.getEnumValues(
                 twice.expectShape(ShapeId.from("com.example#QueueAttributeName")))
             .stream().filter("SenderId"::equals).count();

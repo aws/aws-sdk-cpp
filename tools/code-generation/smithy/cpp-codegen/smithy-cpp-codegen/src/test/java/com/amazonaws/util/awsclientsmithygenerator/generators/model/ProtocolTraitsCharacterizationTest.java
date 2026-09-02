@@ -127,7 +127,7 @@ class ProtocolTraitsCharacterizationTest {
         ProtocolTraits traits = ProtocolResolver.traitsFor(resolved);
         RenderContext ctx = new RenderContext(model, service, traits,
             "Example", "AWS_EXAMPLE_API", "example");
-        new SubObjectRenderer(classified.subObjects(), ctx).render(delegator);
+        new SubObjectRenderer(classified.subObjects(), classified.resultOutputIds(), ctx).render(delegator);
         new RequestRenderer(classified.requests(), ctx).render(delegator);
         new ResultRenderer(classified.results(), ctx).render(delegator);
 

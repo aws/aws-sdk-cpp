@@ -25,18 +25,15 @@ import java.util.Optional;
  * trait so serde stays correct. Self-guards on service name accessanalyzer; no-op when the domain
  * shape is absent; throws if GeneratedPolicyResults is already occupied by a distinct shape.
  */
-public final class AccessAnalyzerTransforms {
+public final class AccessAnalyzerTransforms implements ModelTransform {
 
-    private AccessAnalyzerTransforms() {}
-
-    public static ModelTransform asTransform() {
-        return AccessAnalyzerTransforms::apply;
+    @Override
+    public boolean shouldRun(ServiceShape service) {
+        return "accessanalyzer".equals(ServiceNameUtil.getSmithyServiceName(service, null));
     }
 
-    private static Model apply(Model model, ServiceShape service) {
-        if (!"accessanalyzer".equals(ServiceNameUtil.getSmithyServiceName(service, null))) {
-            return model;
-        }
+    @Override
+    public Model transform(Model model, ServiceShape service) {
         String ns = service.getId().getNamespace();
         ShapeId oldShape = ShapeId.fromParts(ns, "GeneratedPolicyResult");
         ShapeId newShape = ShapeId.fromParts(ns, "GeneratedPolicyResults");

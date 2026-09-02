@@ -20,18 +20,15 @@ import java.util.List;
  * Renames the reserved {@code Body} member of API Gateway V2's import requests to {@code requestBody}.
  * Mirrors the legacy C2J {@code APIGatewayV2RestJsonCppClientGenerator}.
  */
-public final class ApiGatewayV2Transforms {
+public final class ApiGatewayV2Transforms implements ModelTransform {
 
-    private ApiGatewayV2Transforms() {}
-
-    public static ModelTransform asTransform() {
-        return ApiGatewayV2Transforms::apply;
+    @Override
+    public boolean shouldRun(ServiceShape service) {
+        return "apigatewayv2".equals(ServiceNameUtil.getSmithyServiceName(service, null));
     }
 
-    private static Model apply(Model model, ServiceShape service) {
-        if (!"apigatewayv2".equals(ServiceNameUtil.getSmithyServiceName(service, null))) {
-            return model;
-        }
+    @Override
+    public Model transform(Model model, ServiceShape service) {
         String ns = service.getId().getNamespace();
         Protocol protocol = ProtocolResolver.resolve(service, model);
         List<StructureShape> updated = new ArrayList<>();

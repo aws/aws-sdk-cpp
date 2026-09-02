@@ -53,21 +53,21 @@ public class ModelCodegenPlugin implements SmithyBuildPlugin {
         Map<String, String> namespaceMap = parseNamespaceMap(settings);
 
         TransformPipeline pipeline = new TransformPipeline(List.of(
-            GlobalTransforms.asTransform(),
-            SourceRegionTransform.asTransform(),
-            LambdaTransforms.asTransform(),
-            SqsTransforms.asTransform(),
-            ApiGatewayTransforms.asTransform(),
-            ApiGatewayV2Transforms.asTransform(),
-            Ec2Transforms.asTransform(),
-            AccessAnalyzerTransforms.asTransform(),
-            DynamoDbTransforms.asTransform(),
-            S3Transforms.asTransform(),
-            S3ControlTransforms.asTransform(),
-            GlacierTransforms.asTransform(),
-            SupportsPresigningTransform.asTransform(),
-            ChunkedEncodingTransform.asTransform(),
-            LongPollingTransform.asTransform()
+            new GlobalTransforms(),
+            new SourceRegionTransform(),
+            new LambdaTransforms(),
+            new SqsTransforms(),
+            new ApiGatewayTransforms(),
+            new ApiGatewayV2Transforms(),
+            new Ec2Transforms(),
+            new AccessAnalyzerTransforms(),
+            new DynamoDbTransforms(),
+            new S3Transforms(),
+            new S3ControlTransforms(),
+            new GlacierTransforms(),
+            new SupportsPresigningTransform(),
+            new ChunkedEncodingTransform(),
+            new LongPollingTransform()
         ));
 
         CppWriterDelegator writerDelegator = new CppWriterDelegator(context.getFileManifest());

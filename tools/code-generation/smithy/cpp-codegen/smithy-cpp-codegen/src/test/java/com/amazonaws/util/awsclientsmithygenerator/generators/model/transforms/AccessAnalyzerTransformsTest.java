@@ -40,7 +40,7 @@ class AccessAnalyzerTransformsTest {
     @Test
     void renamesShapeAndMember_withJsonNamePreserved() {
         Model m = model("AccessAnalyzer", true);
-        Model out = AccessAnalyzerTransforms.asTransform().apply(m, service(m));
+        Model out = new AccessAnalyzerTransforms().transform(m, service(m));
 
         assertTrue(out.getShape(
             ShapeId.from("com.amazonaws.accessanalyzer#GeneratedPolicyResults")).isPresent(),
@@ -62,8 +62,7 @@ class AccessAnalyzerTransformsTest {
     @Test
     void noOpForOtherService() {
         Model m = model("SomethingElse", true);
-        Model out = AccessAnalyzerTransforms.asTransform().apply(m, service(m));
-        assertSame(m, out);
+        assertFalse(new AccessAnalyzerTransforms().shouldRun(service(m)));
     }
 
     @Test
@@ -84,6 +83,6 @@ class AccessAnalyzerTransformsTest {
             .addOperation(op.getId()).build();
         Model m = Model.assembler().addShapes(gpr, gprs, resp, req, op, svc).assemble().unwrap();
         assertThrows(IllegalStateException.class,
-            () -> AccessAnalyzerTransforms.asTransform().apply(m, service(m)));
+            () -> new AccessAnalyzerTransforms().transform(m, service(m)));
     }
 }

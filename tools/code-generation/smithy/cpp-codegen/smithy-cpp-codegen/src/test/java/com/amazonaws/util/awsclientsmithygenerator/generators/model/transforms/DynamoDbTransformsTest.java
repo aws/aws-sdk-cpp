@@ -60,7 +60,7 @@ class DynamoDbTransformsTest {
     @Test
     void marksAttributeValueForDynamoDb() {
         Model m = model("DynamoDB", true);
-        Model out = DynamoDbTransforms.asTransform().apply(m, service(m));
+        Model out = new DynamoDbTransforms().transform(m, service(m));
 
         assertTrue(out.expectShape(ShapeId.from(NS + "#AttributeValue"))
                 .hasTrait(CustomRenderedTrait.class),
@@ -69,19 +69,16 @@ class DynamoDbTransformsTest {
 
     @Test
     void noOpForOtherService() {
-        // A non-dynamodb service (sdkId resolves via getSmithyServiceName) is untouched.
+        // A non-dynamodb service (sdkId resolves via getSmithyServiceName) does not run.
         Model m = model("Kinesis", true);
-        Model out = DynamoDbTransforms.asTransform().apply(m, service(m));
-        assertSame(m, out, "transform must be a no-op for non-dynamodb services");
-        assertFalse(out.expectShape(ShapeId.from(NS + "#AttributeValue"))
-                .hasTrait(CustomRenderedTrait.class),
-            "non-dynamodb AttributeValue must not be marked");
+        assertFalse(new DynamoDbTransforms().shouldRun(service(m)),
+            "transform must not run for non-dynamodb services");
     }
 
     @Test
     void noOpWhenAttributeValueAbsent() {
         Model m = model("DynamoDB", false);
-        Model out = DynamoDbTransforms.asTransform().apply(m, service(m));
+        Model out = new DynamoDbTransforms().transform(m, service(m));
         assertSame(m, out, "transform must be a no-op when AttributeValue is absent");
     }
 }

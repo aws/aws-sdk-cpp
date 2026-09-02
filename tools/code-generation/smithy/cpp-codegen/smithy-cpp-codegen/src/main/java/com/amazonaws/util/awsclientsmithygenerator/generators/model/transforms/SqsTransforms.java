@@ -16,22 +16,19 @@ import java.util.List;
  * {@code SQSQueryXmlCppClientGenerator}/{@code SQSJsonCppClientGenerator} injected. These values are
  * returned by the service but absent from the model.
  */
-public final class SqsTransforms {
+public final class SqsTransforms implements ModelTransform {
 
     private static final String ENUM_NAME = "QueueAttributeName";
     private static final List<String> ADDED_VALUES = List.of(
         "SentTimestamp", "ApproximateFirstReceiveTimestamp", "ApproximateReceiveCount", "SenderId");
 
-    private SqsTransforms() {}
-
-    public static ModelTransform asTransform() {
-        return SqsTransforms::apply;
+    @Override
+    public boolean shouldRun(ServiceShape service) {
+        return "sqs".equals(ServiceNameUtil.getSmithyServiceName(service, null));
     }
 
-    private static Model apply(Model model, ServiceShape service) {
-        if (!"sqs".equals(ServiceNameUtil.getSmithyServiceName(service, null))) {
-            return model;
-        }
+    @Override
+    public Model transform(Model model, ServiceShape service) {
         return TransformSupport.appendEnumValuesByName(model, ENUM_NAME, ADDED_VALUES);
     }
 }

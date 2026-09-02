@@ -34,7 +34,7 @@ class S3ControlTransformsTest {
     @Test
     void marksResultShapesWithHostIdTrait() {
         Model m = model("S3 Control");
-        Model out = S3ControlTransforms.asTransform().apply(m, service(m));
+        Model out = new S3ControlTransforms().transform(m, service(m));
         assertTrue(out.expectShape(ShapeId.from(NS + "#CreateAccessPointResult"))
             .hasTrait(TopLevelHostIdTrait.class), "result shape marked");
     }
@@ -42,7 +42,6 @@ class S3ControlTransformsTest {
     @Test
     void noOpForOtherService() {
         Model m = model("SomethingElse");
-        Model out = S3ControlTransforms.asTransform().apply(m, service(m));
-        assertSame(m, out);
+        assertFalse(new S3ControlTransforms().shouldRun(service(m)));
     }
 }

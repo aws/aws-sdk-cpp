@@ -24,15 +24,15 @@ import java.util.List;
  * also covers Unit-input operations. C2J sets the flag for every query/ec2 operation, plus Polly's
  * {@code SynthesizeSpeech}. No-op for other services.
  */
-public final class SupportsPresigningTransform {
+public final class SupportsPresigningTransform implements ModelTransform {
 
-    private SupportsPresigningTransform() {}
-
-    public static ModelTransform asTransform() {
-        return SupportsPresigningTransform::apply;
+    @Override
+    public boolean shouldRun(ServiceShape service) {
+        return true;
     }
 
-    private static Model apply(Model model, ServiceShape service) {
+    @Override
+    public Model transform(Model model, ServiceShape service) {
         Protocol protocol = ProtocolResolver.resolve(service, model);
         boolean queryLike = protocol == Protocol.QUERY_XML || protocol == Protocol.EC2;
         boolean polly = "polly".equals(ServiceNameUtil.getSmithyServiceName(service, null));
