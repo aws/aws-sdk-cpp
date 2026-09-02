@@ -62,7 +62,7 @@ class CloudWatchLogsSource {
   ///@{
   /**
    * <p>The list of CloudWatch log group names to read agent traces from. Maximum of
-   * 5 log groups.</p>
+   * 10 log groups.</p>
    */
   inline const Aws::Vector<Aws::String>& GetLogGroupNames() const { return m_logGroupNames; }
   inline bool LogGroupNamesHasBeenSet() const { return m_logGroupNamesHasBeenSet; }

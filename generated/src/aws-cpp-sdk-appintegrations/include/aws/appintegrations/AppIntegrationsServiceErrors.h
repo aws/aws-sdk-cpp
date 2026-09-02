@@ -44,7 +44,8 @@ enum class AppIntegrationsServiceErrors {
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  DUPLICATE_RESOURCE = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  DUPLICATE_RESOURCE,
   INTERNAL_SERVICE,
   INVALID_REQUEST,
   RESOURCE_QUOTA_EXCEEDED,

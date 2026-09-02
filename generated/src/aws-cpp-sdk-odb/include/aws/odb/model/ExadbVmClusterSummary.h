@@ -597,7 +597,7 @@ class ExadbVmClusterSummary {
 
   ///@{
   /**
-   * <p>The port number for TCP connections to the single client access name (SCAN)
+   * <p>The port number for TCP connections to the Single Client Access Name (SCAN)
    * listener for the Exascale VM cluster.</p>
    */
   inline int GetScanListenerPortTcp() const { return m_scanListenerPortTcp; }
@@ -614,7 +614,7 @@ class ExadbVmClusterSummary {
 
   ///@{
   /**
-   * <p>The port number for TCP connections with SSL to the single client access name
+   * <p>The port number for TCP connections with SSL to the Single Client Access Name
    * (SCAN) listener for the Exascale VM cluster.</p>
    */
   inline int GetScanListenerPortTcpSsl() const { return m_scanListenerPortTcpSsl; }

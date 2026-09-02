@@ -11,6 +11,7 @@
 #include <aws/medialive/model/CmafId3Behavior.h>
 #include <aws/medialive/model/CmafIngestCaptionLanguageMapping.h>
 #include <aws/medialive/model/CmafIngestSegmentLengthUnits.h>
+#include <aws/medialive/model/CmafIngestWatermarkingSettings.h>
 #include <aws/medialive/model/CmafKLVBehavior.h>
 #include <aws/medialive/model/CmafNielsenId3Behavior.h>
 #include <aws/medialive/model/CmafTimedMetadataId3Frame.h>
@@ -375,6 +376,24 @@ class CmafIngestGroupSettings {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * Specifies the type of watermarking technology to use.
+   */
+  inline const CmafIngestWatermarkingSettings& GetWatermarkingSettings() const { return m_watermarkingSettings; }
+  inline bool WatermarkingSettingsHasBeenSet() const { return m_watermarkingSettingsHasBeenSet; }
+  template <typename WatermarkingSettingsT = CmafIngestWatermarkingSettings>
+  void SetWatermarkingSettings(WatermarkingSettingsT&& value) {
+    m_watermarkingSettingsHasBeenSet = true;
+    m_watermarkingSettings = std::forward<WatermarkingSettingsT>(value);
+  }
+  template <typename WatermarkingSettingsT = CmafIngestWatermarkingSettings>
+  CmafIngestGroupSettings& WithWatermarkingSettings(WatermarkingSettingsT&& value) {
+    SetWatermarkingSettings(std::forward<WatermarkingSettingsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   OutputLocationRef m_destination;
 
@@ -409,6 +428,8 @@ class CmafIngestGroupSettings {
   CmafTimedMetadataPassthrough m_timedMetadataPassthrough{CmafTimedMetadataPassthrough::NOT_SET};
 
   Aws::Vector<AdditionalDestinations> m_additionalDestinations;
+
+  CmafIngestWatermarkingSettings m_watermarkingSettings;
   bool m_destinationHasBeenSet = false;
   bool m_nielsenId3BehaviorHasBeenSet = false;
   bool m_scte35TypeHasBeenSet = false;
@@ -426,6 +447,7 @@ class CmafIngestGroupSettings {
   bool m_timedMetadataId3PeriodHasBeenSet = false;
   bool m_timedMetadataPassthroughHasBeenSet = false;
   bool m_additionalDestinationsHasBeenSet = false;
+  bool m_watermarkingSettingsHasBeenSet = false;
 };
 
 }  // namespace Model

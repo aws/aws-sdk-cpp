@@ -25,6 +25,11 @@ Aws::String UpdateInterruptibleCapacityReservationAllocationRequest::SerializePa
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
+  if (m_zeroSizePreferenceHasBeenSet) {
+    ss << "ZeroSizePreference=" << StringUtils::URLEncode(ZeroSizePreferenceMapper::GetNameForZeroSizePreference(m_zeroSizePreference))
+       << "&";
+  }
+
   ss << "Version=2016-11-15";
   return ss.str();
 }

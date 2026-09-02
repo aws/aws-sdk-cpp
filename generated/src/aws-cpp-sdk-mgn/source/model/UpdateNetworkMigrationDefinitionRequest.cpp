@@ -48,6 +48,19 @@ Aws::String UpdateNetworkMigrationDefinitionRequest::SerializePayload() const {
     payload.WithString("targetDeployment", TargetDeploymentMapper::GetNameForTargetDeployment(m_targetDeployment));
   }
 
+  if (m_vpcProvisioningStrategyHasBeenSet) {
+    payload.WithString("vpcProvisioningStrategy",
+                       VpcProvisioningStrategyMapper::GetNameForVpcProvisioningStrategy(m_vpcProvisioningStrategy));
+  }
+
+  if (m_cidrMappingsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> cidrMappingsJsonList(m_cidrMappings.size());
+    for (unsigned cidrMappingsIndex = 0; cidrMappingsIndex < cidrMappingsJsonList.GetLength(); ++cidrMappingsIndex) {
+      cidrMappingsJsonList[cidrMappingsIndex].AsObject(m_cidrMappings[cidrMappingsIndex].Jsonize());
+    }
+    payload.WithArray("cidrMappings", std::move(cidrMappingsJsonList));
+  }
+
   if (m_scopeTagsHasBeenSet) {
     JsonValue scopeTagsJsonMap;
     for (auto& scopeTagsItem : m_scopeTags) {

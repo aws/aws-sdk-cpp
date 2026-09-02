@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SageMaker {
 namespace Model {
-enum class StorageType { NOT_SET, Standard, InMemory };
+enum class StorageType { NOT_SET, Standard, Standard_V2, InMemory };
 
 namespace StorageTypeMapper {
 AWS_SAGEMAKER_API StorageType GetStorageTypeForName(const Aws::String& name);

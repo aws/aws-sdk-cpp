@@ -213,11 +213,12 @@ class CreateExascaleDbStorageVaultRequest : public OdbRequest {
 
   ///@{
   /**
-   * <p>A unique, case-sensitive identifier that you provide to ensure the
-   * idempotency of the request. If you don't specify a client token, the Amazon Web
-   * Services SDK automatically generates one and uses it for the request to ensure
-   * idempotency. The client token is valid for up to 24 hours after it's first
-   * used.</p>
+   * <p>A unique, case-sensitive identifier that you provide to ensure that the
+   * operation completes no more than one time. If you submit the same request twice
+   * with the same client token, the service ignores the second request and returns
+   * the result of the first. If you don't specify a client token, the AWS SDK
+   * automatically generates one. The client token is valid for up to 24 hours after
+   * it's first used.</p>
    */
   inline const Aws::String& GetClientToken() const { return m_clientToken; }
   inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }

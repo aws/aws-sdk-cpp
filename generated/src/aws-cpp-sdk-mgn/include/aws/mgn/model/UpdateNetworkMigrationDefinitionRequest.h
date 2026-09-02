@@ -9,10 +9,12 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mgn/MgnRequest.h>
 #include <aws/mgn/Mgn_EXPORTS.h>
+#include <aws/mgn/model/CidrMapping.h>
 #include <aws/mgn/model/SourceConfiguration.h>
 #include <aws/mgn/model/TargetDeployment.h>
 #include <aws/mgn/model/TargetNetworkUpdate.h>
 #include <aws/mgn/model/TargetS3ConfigurationUpdate.h>
+#include <aws/mgn/model/VpcProvisioningStrategy.h>
 
 #include <utility>
 
@@ -166,6 +168,50 @@ class UpdateNetworkMigrationDefinitionRequest : public MgnRequest {
 
   ///@{
   /**
+   * <p>Updates whether the migration creates new target VPCs or uses existing ones.
+   * Set to <code>USE_EXISTING</code> to migrate into existing VPCs in the target
+   * account, or to <code>CREATE_NEW</code> to provision new target VPCs.</p>
+   */
+  inline VpcProvisioningStrategy GetVpcProvisioningStrategy() const { return m_vpcProvisioningStrategy; }
+  inline bool VpcProvisioningStrategyHasBeenSet() const { return m_vpcProvisioningStrategyHasBeenSet; }
+  inline void SetVpcProvisioningStrategy(VpcProvisioningStrategy value) {
+    m_vpcProvisioningStrategyHasBeenSet = true;
+    m_vpcProvisioningStrategy = value;
+  }
+  inline UpdateNetworkMigrationDefinitionRequest& WithVpcProvisioningStrategy(VpcProvisioningStrategy value) {
+    SetVpcProvisioningStrategy(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The updated list of CIDR mappings that map original source CIDR ranges to
+   * updated target CIDR ranges. CIDR mappings can be provided only when
+   * <code>vpcProvisioningStrategy</code> is set to <code>USE_EXISTING</code>.</p>
+   */
+  inline const Aws::Vector<CidrMapping>& GetCidrMappings() const { return m_cidrMappings; }
+  inline bool CidrMappingsHasBeenSet() const { return m_cidrMappingsHasBeenSet; }
+  template <typename CidrMappingsT = Aws::Vector<CidrMapping>>
+  void SetCidrMappings(CidrMappingsT&& value) {
+    m_cidrMappingsHasBeenSet = true;
+    m_cidrMappings = std::forward<CidrMappingsT>(value);
+  }
+  template <typename CidrMappingsT = Aws::Vector<CidrMapping>>
+  UpdateNetworkMigrationDefinitionRequest& WithCidrMappings(CidrMappingsT&& value) {
+    SetCidrMappings(std::forward<CidrMappingsT>(value));
+    return *this;
+  }
+  template <typename CidrMappingsT = CidrMapping>
+  UpdateNetworkMigrationDefinitionRequest& AddCidrMappings(CidrMappingsT&& value) {
+    m_cidrMappingsHasBeenSet = true;
+    m_cidrMappings.emplace_back(std::forward<CidrMappingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The updated scope tags for the network migration definition.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetScopeTags() const { return m_scopeTags; }
@@ -202,6 +248,10 @@ class UpdateNetworkMigrationDefinitionRequest : public MgnRequest {
 
   TargetDeployment m_targetDeployment{TargetDeployment::NOT_SET};
 
+  VpcProvisioningStrategy m_vpcProvisioningStrategy{VpcProvisioningStrategy::NOT_SET};
+
+  Aws::Vector<CidrMapping> m_cidrMappings;
+
   Aws::Map<Aws::String, Aws::String> m_scopeTags;
   bool m_networkMigrationDefinitionIDHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -210,6 +260,8 @@ class UpdateNetworkMigrationDefinitionRequest : public MgnRequest {
   bool m_targetS3ConfigurationHasBeenSet = false;
   bool m_targetNetworkHasBeenSet = false;
   bool m_targetDeploymentHasBeenSet = false;
+  bool m_vpcProvisioningStrategyHasBeenSet = false;
+  bool m_cidrMappingsHasBeenSet = false;
   bool m_scopeTagsHasBeenSet = false;
 };
 

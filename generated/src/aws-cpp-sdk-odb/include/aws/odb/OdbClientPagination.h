@@ -21,6 +21,7 @@
 #include <aws/odb/model/ListDbSystemShapesPaginationTraits.h>
 #include <aws/odb/model/ListExadbVmClustersPaginationTraits.h>
 #include <aws/odb/model/ListExascaleDbStorageVaultsPaginationTraits.h>
+#include <aws/odb/model/ListFlexComponentsPaginationTraits.h>
 #include <aws/odb/model/ListGiMinorVersionsPaginationTraits.h>
 #include <aws/odb/model/ListGiVersionsPaginationTraits.h>
 #include <aws/odb/model/ListOdbNetworksPaginationTraits.h>
@@ -69,6 +70,8 @@ using ListExadbVmClustersPaginator = Aws::Utils::Pagination::Paginator<OdbClient
 using ListExascaleDbStorageVaultsPaginator =
     Aws::Utils::Pagination::Paginator<OdbClient, Model::ListExascaleDbStorageVaultsRequest,
                                       Pagination::ListExascaleDbStorageVaultsPaginationTraits<OdbClient>>;
+using ListFlexComponentsPaginator = Aws::Utils::Pagination::Paginator<OdbClient, Model::ListFlexComponentsRequest,
+                                                                      Pagination::ListFlexComponentsPaginationTraits<OdbClient>>;
 using ListGiMinorVersionsPaginator = Aws::Utils::Pagination::Paginator<OdbClient, Model::ListGiMinorVersionsRequest,
                                                                        Pagination::ListGiMinorVersionsPaginationTraits<OdbClient>>;
 using ListGiVersionsPaginator =

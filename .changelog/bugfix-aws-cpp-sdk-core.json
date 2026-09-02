@@ -1,6 +1,0 @@
-{
-  "type": "bugfix",
-  "category": "aws-cpp-sdk-core",
-  "contributor": "sbiscigl",
-  "description": "Fix dropped endpoint built-in parameters and signer name"
-}

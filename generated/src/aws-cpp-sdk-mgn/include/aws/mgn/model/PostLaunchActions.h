@@ -23,7 +23,7 @@ namespace mgn {
 namespace Model {
 
 /**
- * <p>Post Launch Actions to executed on the Test or Cutover
+ * <p>Post Launch Actions to be executed on the Test or Cutover
  * instance.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/PostLaunchActions">AWS
  * API Reference</a></p>

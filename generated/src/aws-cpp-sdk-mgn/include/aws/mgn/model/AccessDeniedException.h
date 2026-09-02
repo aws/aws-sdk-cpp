@@ -20,7 +20,7 @@ namespace mgn {
 namespace Model {
 
 /**
- * <p>Operating denied due to a file permission or access check
+ * <p>Operation denied due to a file permission or access check
  * error.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/AccessDeniedException">AWS
  * API Reference</a></p>

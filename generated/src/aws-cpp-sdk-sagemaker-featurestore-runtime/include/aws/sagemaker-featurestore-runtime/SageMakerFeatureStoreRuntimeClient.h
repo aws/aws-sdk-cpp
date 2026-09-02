@@ -304,6 +304,46 @@ class AWS_SAGEMAKERFEATURESTORERUNTIME_API SageMakerFeatureStoreRuntimeClient
     return SubmitAsync(&SageMakerFeatureStoreRuntimeClient::PutRecord, request, handler, context);
   }
 
+  /**
+   * <p>Updates one or more feature values for an existing record in the specified
+   * feature group. Features that you do not include in the request remain unchanged.
+   * You can update up to 100 features per call.</p>  <p>This operation is
+   * available only for feature groups that use the <code>Standard_V2</code> or
+   * <code>InMemory</code> online store type.</p>  <p>The record must
+   * already exist. If the record does not exist or has been soft-deleted, the
+   * operation returns a <code>ResourceNotFound</code> error. To create a record, use
+   * <code>PutRecord</code>.</p> <p>If you provide an <code>EventTime</code> that is
+   * older than the record's current <code>EventTime</code>, the service rejects the
+   * update with a <code>ConflictException</code>. If the <code>EventTime</code> is
+   * equal to or newer than the current value, the service applies the update. If you
+   * omit <code>EventTime</code>, the service keeps the record's existing
+   * <code>EventTime</code> and applies the update.</p> <p>If you specify a
+   * <code>TtlDuration</code>, you must also provide an <code>EventTime</code> in the
+   * request. Otherwise, the operation returns a
+   * <code>ValidationError</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-featurestore-runtime-2020-07-01/UpdateRecord">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateRecordOutcome UpdateRecord(const Model::UpdateRecordRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateRecord that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UpdateRecordRequestT = Model::UpdateRecordRequest>
+  Model::UpdateRecordOutcomeCallable UpdateRecordCallable(const UpdateRecordRequestT& request) const {
+    return SubmitCallable(&SageMakerFeatureStoreRuntimeClient::UpdateRecord, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateRecord that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UpdateRecordRequestT = Model::UpdateRecordRequest>
+  void UpdateRecordAsync(const UpdateRecordRequestT& request, const UpdateRecordResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerFeatureStoreRuntimeClient::UpdateRecord, request, handler, context);
+  }
+
   virtual void OverrideEndpoint(const Aws::String& endpoint);
   virtual std::shared_ptr<SageMakerFeatureStoreRuntimeEndpointProviderBase>& accessEndpointProvider();
 

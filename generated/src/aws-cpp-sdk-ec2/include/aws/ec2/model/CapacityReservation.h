@@ -21,6 +21,7 @@
 #include <aws/ec2/model/InterruptibleCapacityAllocation.h>
 #include <aws/ec2/model/InterruptionInfo.h>
 #include <aws/ec2/model/Tag.h>
+#include <aws/ec2/model/ZeroSizePreference.h>
 
 #include <utility>
 
@@ -671,6 +672,26 @@ class CapacityReservation {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The zero-size preference configured for the interruptible Capacity
+   * Reservation. A value of <code>retain</code> keeps the interruptible Capacity
+   * Reservation active at zero capacity when you reduce its allocation to zero. A
+   * value of <code>default</code> cancels the interruptible Capacity Reservation
+   * when you reduce its allocation to zero. </p>
+   */
+  inline ZeroSizePreference GetZeroSizePreference() const { return m_zeroSizePreference; }
+  inline bool ZeroSizePreferenceHasBeenSet() const { return m_zeroSizePreferenceHasBeenSet; }
+  inline void SetZeroSizePreference(ZeroSizePreference value) {
+    m_zeroSizePreferenceHasBeenSet = true;
+    m_zeroSizePreference = value;
+  }
+  inline CapacityReservation& WithZeroSizePreference(ZeroSizePreference value) {
+    SetZeroSizePreference(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_capacityReservationId;
 
@@ -733,6 +754,8 @@ class CapacityReservation {
   InterruptibleCapacityAllocation m_interruptibleCapacityAllocation;
 
   InterruptionInfo m_interruptionInfo;
+
+  ZeroSizePreference m_zeroSizePreference{ZeroSizePreference::NOT_SET};
   bool m_capacityReservationIdHasBeenSet = false;
   bool m_ownerIdHasBeenSet = false;
   bool m_capacityReservationArnHasBeenSet = false;
@@ -764,6 +787,7 @@ class CapacityReservation {
   bool m_interruptibleHasBeenSet = false;
   bool m_interruptibleCapacityAllocationHasBeenSet = false;
   bool m_interruptionInfoHasBeenSet = false;
+  bool m_zeroSizePreferenceHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/ZeroSizePreference.h>
 
 #include <utility>
 
@@ -85,15 +86,39 @@ class UpdateInterruptibleCapacityReservationAllocationRequest : public EC2Reques
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> Specifies the updated behavior for the interruptible Capacity Reservation
+   * when you reduce its allocation to zero instances. Specify <code>retain</code> to
+   * keep the interruptible Capacity Reservation active at zero capacity so that you
+   * can allocate instances to it again later. Specify <code>default</code> to cancel
+   * the interruptible Capacity Reservation and return the capacity to your source
+   * Capacity Reservation. </p>
+   */
+  inline ZeroSizePreference GetZeroSizePreference() const { return m_zeroSizePreference; }
+  inline bool ZeroSizePreferenceHasBeenSet() const { return m_zeroSizePreferenceHasBeenSet; }
+  inline void SetZeroSizePreference(ZeroSizePreference value) {
+    m_zeroSizePreferenceHasBeenSet = true;
+    m_zeroSizePreference = value;
+  }
+  inline UpdateInterruptibleCapacityReservationAllocationRequest& WithZeroSizePreference(ZeroSizePreference value) {
+    SetZeroSizePreference(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_capacityReservationId;
 
   int m_targetInstanceCount{0};
 
   bool m_dryRun{false};
+
+  ZeroSizePreference m_zeroSizePreference{ZeroSizePreference::NOT_SET};
   bool m_capacityReservationIdHasBeenSet = false;
   bool m_targetInstanceCountHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
+  bool m_zeroSizePreferenceHasBeenSet = false;
 };
 
 }  // namespace Model

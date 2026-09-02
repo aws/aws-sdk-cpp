@@ -1,6 +1,0 @@
-{
-  "type": "bugfix",
-  "category": "aws-cpp-sdk-core",
-  "contributor": "Renz456",
-  "description": "Pass service name to Smithy endpoint providers"
-}

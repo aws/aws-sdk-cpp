@@ -31,7 +31,7 @@ class DescribeSourceServersResult {
 
   ///@{
   /**
-   * <p>Request to filter Source Servers list by item.</p>
+   * <p>The list of returned Source Servers.</p>
    */
   inline const Aws::Vector<SourceServer>& GetItems() const { return m_items; }
   template <typename ItemsT = Aws::Vector<SourceServer>>
@@ -54,7 +54,7 @@ class DescribeSourceServersResult {
 
   ///@{
   /**
-   * <p>Request to filter Source Servers next token.</p>
+   * <p>The token of the next Source Server to retrieve.</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   template <typename NextTokenT = Aws::String>

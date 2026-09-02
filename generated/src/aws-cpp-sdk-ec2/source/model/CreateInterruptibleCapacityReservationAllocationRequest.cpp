@@ -37,6 +37,11 @@ Aws::String CreateInterruptibleCapacityReservationAllocationRequest::SerializePa
     }
   }
 
+  if (m_zeroSizePreferenceHasBeenSet) {
+    ss << "ZeroSizePreference=" << StringUtils::URLEncode(ZeroSizePreferenceMapper::GetNameForZeroSizePreference(m_zeroSizePreference))
+       << "&";
+  }
+
   ss << "Version=2016-11-15";
   return ss.str();
 }

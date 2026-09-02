@@ -20,7 +20,7 @@ namespace mgn {
 namespace Model {
 
 /**
- * <p>The request could not be completed because its exceeded the service
+ * <p>The request could not be completed because it exceeded the service
  * quota.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ServiceQuotaExceededException">AWS
  * API Reference</a></p>

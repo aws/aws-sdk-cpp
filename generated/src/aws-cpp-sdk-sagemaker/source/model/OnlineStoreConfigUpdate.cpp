@@ -22,6 +22,10 @@ OnlineStoreConfigUpdate& OnlineStoreConfigUpdate::operator=(JsonView jsonValue) 
     m_ttlDuration = jsonValue.GetObject("TtlDuration");
     m_ttlDurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("StorageType")) {
+    m_storageType = StorageTypeMapper::GetStorageTypeForName(jsonValue.GetString("StorageType"));
+    m_storageTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue OnlineStoreConfigUpdate::Jsonize() const {
 
   if (m_ttlDurationHasBeenSet) {
     payload.WithObject("TtlDuration", m_ttlDuration.Jsonize());
+  }
+
+  if (m_storageTypeHasBeenSet) {
+    payload.WithString("StorageType", StorageTypeMapper::GetNameForStorageType(m_storageType));
   }
 
   return payload;

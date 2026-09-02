@@ -291,7 +291,7 @@ class CreateExadbVmClusterRequest : public OdbRequest {
 
   ///@{
   /**
-   * <p>The port number for TCP connections to the single client access name (SCAN)
+   * <p>The port number for TCP connections to the Single Client Access Name (SCAN)
    * listener.</p>
    */
   inline int GetScanListenerPortTcp() const { return m_scanListenerPortTcp; }
@@ -308,7 +308,7 @@ class CreateExadbVmClusterRequest : public OdbRequest {
 
   ///@{
   /**
-   * <p>The port number for TCP connections with SSL to the single client access name
+   * <p>The port number for TCP connections with SSL to the Single Client Access Name
    * (SCAN) listener.</p>
    */
   inline int GetScanListenerPortTcpSsl() const { return m_scanListenerPortTcpSsl; }
@@ -402,11 +402,12 @@ class CreateExadbVmClusterRequest : public OdbRequest {
 
   ///@{
   /**
-   * <p>A unique, case-sensitive identifier that you provide to ensure the
-   * idempotency of the request. If you don't specify a client token, the Amazon Web
-   * Services SDK automatically generates one and uses it for the request to ensure
-   * idempotency. The client token is valid for up to 24 hours after it's first
-   * used.</p>
+   * <p>A unique, case-sensitive identifier that you provide to ensure that the
+   * operation completes no more than one time. If you submit the same request twice
+   * with the same client token, the service ignores the second request and returns
+   * the result of the first. If you don't specify a client token, the AWS SDK
+   * automatically generates one. The client token is valid for up to 24 hours after
+   * it's first used.</p>
    */
   inline const Aws::String& GetClientToken() const { return m_clientToken; }
   inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }

@@ -19,6 +19,12 @@ class XmlNode;
 namespace EC2 {
 namespace Model {
 
+/**
+ * <p>Describes a value for a resource attribute that is a Base64-encoded binary
+ * data object.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SecureBlobAttributeValue">AWS
+ * API Reference</a></p>
+ */
 class SecureBlobAttributeValue {
  public:
   AWS_EC2_API SecureBlobAttributeValue() = default;
@@ -29,7 +35,9 @@ class SecureBlobAttributeValue {
   AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
   ///@{
-
+  /**
+   * <p>The attribute value.</p>
+   */
   inline const Aws::Utils::CryptoBuffer& GetValue() const { return m_value; }
   inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
   template <typename ValueT = Aws::Utils::CryptoBuffer>

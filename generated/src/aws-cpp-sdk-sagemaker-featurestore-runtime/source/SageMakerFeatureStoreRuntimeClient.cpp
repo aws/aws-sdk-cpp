@@ -26,6 +26,7 @@
 #include <aws/sagemaker-featurestore-runtime/model/GetRecordRequest.h>
 #include <aws/sagemaker-featurestore-runtime/model/ListRecordsRequest.h>
 #include <aws/sagemaker-featurestore-runtime/model/PutRecordRequest.h>
+#include <aws/sagemaker-featurestore-runtime/model/UpdateRecordRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -294,4 +295,22 @@ PutRecordOutcome SageMakerFeatureStoreRuntimeClient::PutRecord(const PutRecordRe
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? PutRecordOutcome(result.GetResultWithOwnership()) : PutRecordOutcome(std::move(result.GetError()));
+}
+
+UpdateRecordOutcome SageMakerFeatureStoreRuntimeClient::UpdateRecord(const UpdateRecordRequest& request) const {
+  if (!request.FeatureGroupNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateRecord", "Required field: FeatureGroupName, is not set");
+    return UpdateRecordOutcome(Aws::Client::AWSError<SageMakerFeatureStoreRuntimeErrors>(
+        SageMakerFeatureStoreRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FeatureGroupName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/FeatureGroup/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFeatureGroupName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/Record");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRecordOutcome(result.GetResultWithOwnership()) : UpdateRecordOutcome(std::move(result.GetError()));
 }

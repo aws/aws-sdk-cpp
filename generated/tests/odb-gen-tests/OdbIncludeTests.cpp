@@ -149,6 +149,7 @@
 #include <aws/odb/model/ExternalIdType.h>
 #include <aws/odb/model/FailoverAutonomousDatabaseRequest.h>
 #include <aws/odb/model/FailoverAutonomousDatabaseResult.h>
+#include <aws/odb/model/FlexComponentSummary.h>
 #include <aws/odb/model/GetAutonomousDatabaseBackupRequest.h>
 #include <aws/odb/model/GetAutonomousDatabaseBackupResult.h>
 #include <aws/odb/model/GetAutonomousDatabaseRequest.h>
@@ -180,6 +181,7 @@
 #include <aws/odb/model/GiMinorVersionSummary.h>
 #include <aws/odb/model/GiVersionSummary.h>
 #include <aws/odb/model/GridImageType.h>
+#include <aws/odb/model/HardwareType.h>
 #include <aws/odb/model/IamRole.h>
 #include <aws/odb/model/IamRoleStatus.h>
 #include <aws/odb/model/InitializeServiceRequest.h>
@@ -233,6 +235,9 @@
 #include <aws/odb/model/ListExascaleDbStorageVaultsPaginationTraits.h>
 #include <aws/odb/model/ListExascaleDbStorageVaultsRequest.h>
 #include <aws/odb/model/ListExascaleDbStorageVaultsResult.h>
+#include <aws/odb/model/ListFlexComponentsPaginationTraits.h>
+#include <aws/odb/model/ListFlexComponentsRequest.h>
+#include <aws/odb/model/ListFlexComponentsResult.h>
 #include <aws/odb/model/ListGiMinorVersionsPaginationTraits.h>
 #include <aws/odb/model/ListGiMinorVersionsRequest.h>
 #include <aws/odb/model/ListGiMinorVersionsResult.h>

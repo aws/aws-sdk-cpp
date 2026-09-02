@@ -22,6 +22,7 @@
 #include <aws/odb/model/ListDbSystemShapesPaginationTraits.h>
 #include <aws/odb/model/ListExadbVmClustersPaginationTraits.h>
 #include <aws/odb/model/ListExascaleDbStorageVaultsPaginationTraits.h>
+#include <aws/odb/model/ListFlexComponentsPaginationTraits.h>
 #include <aws/odb/model/ListGiMinorVersionsPaginationTraits.h>
 #include <aws/odb/model/ListGiVersionsPaginationTraits.h>
 #include <aws/odb/model/ListOdbNetworksPaginationTraits.h>
@@ -211,6 +212,18 @@ class OdbPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListExascaleDbStorageVaultsRequest,
                                              Pagination::ListExascaleDbStorageVaultsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListFlexComponents operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFlexComponentsRequest,
+                                    Pagination::ListFlexComponentsPaginationTraits<DerivedClient>>
+  ListFlexComponentsPaginator(const Model::ListFlexComponentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFlexComponentsRequest,
+                                             Pagination::ListFlexComponentsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

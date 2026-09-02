@@ -17,6 +17,7 @@
 #include <aws/odb/model/ListAutonomousDatabaseClonesPaginationTraits.h>
 #include <aws/odb/model/ListAutonomousVirtualMachinesPaginationTraits.h>
 #include <aws/odb/model/ListGiVersionsPaginationTraits.h>
+#include <aws/odb/model/ListFlexComponentsPaginationTraits.h>
 #include <aws/odb/model/ListAutonomousDatabaseBackupsPaginationTraits.h>
 #include <aws/odb/model/ListAutonomousDatabaseVersionsPaginationTraits.h>
 #include <aws/odb/model/ListCloudVmClustersPaginationTraits.h>

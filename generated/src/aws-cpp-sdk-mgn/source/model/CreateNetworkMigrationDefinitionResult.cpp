@@ -61,6 +61,18 @@ CreateNetworkMigrationDefinitionResult& CreateNetworkMigrationDefinitionResult::
     m_targetDeployment = TargetDeploymentMapper::GetTargetDeploymentForName(jsonValue.GetString("targetDeployment"));
     m_targetDeploymentHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("vpcProvisioningStrategy")) {
+    m_vpcProvisioningStrategy =
+        VpcProvisioningStrategyMapper::GetVpcProvisioningStrategyForName(jsonValue.GetString("vpcProvisioningStrategy"));
+    m_vpcProvisioningStrategyHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cidrMappings")) {
+    Aws::Utils::Array<JsonView> cidrMappingsJsonList = jsonValue.GetArray("cidrMappings");
+    for (unsigned cidrMappingsIndex = 0; cidrMappingsIndex < cidrMappingsJsonList.GetLength(); ++cidrMappingsIndex) {
+      m_cidrMappings.push_back(cidrMappingsJsonList[cidrMappingsIndex].AsObject());
+    }
+    m_cidrMappingsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetDouble("createdAt");
     m_createdAtHasBeenSet = true;

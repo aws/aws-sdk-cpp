@@ -143,6 +143,22 @@ class MediaLiveWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("ChannelStoppedWaiter", Aws::Utils::WaiterState::RETRY,
                                                                                 Aws::String("InternalServerErrorException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ChannelStoppedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DELETING"),
+        [](const Model::DescribeChannelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ChannelStateMapper::GetNameForChannelState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ChannelStoppedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DELETED"),
+        [](const Model::DescribeChannelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ChannelStateMapper::GetNameForChannelState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("ChannelStoppedWaiter", Aws::Utils::WaiterState::FAILURE,
+                                                                                Aws::String("NotFoundException")));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeChannel(req); };
     Aws::Utils::Waiter<RequestT, OutcomeT> waiter(5, 24, std::move(acceptors), operation, "WaitUntilChannelStopped");

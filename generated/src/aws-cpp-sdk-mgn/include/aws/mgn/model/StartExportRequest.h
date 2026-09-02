@@ -88,7 +88,7 @@ class StartExportRequest : public MgnRequest {
 
   ///@{
   /**
-   * <p>Start import request tags.</p>
+   * <p>Start export request tags.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
   inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

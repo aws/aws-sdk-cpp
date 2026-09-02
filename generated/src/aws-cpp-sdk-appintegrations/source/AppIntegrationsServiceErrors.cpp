@@ -15,6 +15,7 @@ namespace Aws {
 namespace AppIntegrationsService {
 namespace AppIntegrationsServiceErrorMapper {
 
+static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceError");
 static const int DUPLICATE_RESOURCE_HASH = HashingUtils::HashString("DuplicateResourceException");
 static const int RESOURCE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ResourceQuotaExceededException");
@@ -24,7 +25,9 @@ static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequest
 AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INTERNAL_SERVICE_HASH) {
+  if (hashCode == CONFLICT_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppIntegrationsServiceErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INTERNAL_SERVICE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AppIntegrationsServiceErrors::INTERNAL_SERVICE), RetryableType::RETRYABLE);
   } else if (hashCode == DUPLICATE_RESOURCE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AppIntegrationsServiceErrors::DUPLICATE_RESOURCE), RetryableType::NOT_RETRYABLE);

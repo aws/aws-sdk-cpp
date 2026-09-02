@@ -83,7 +83,7 @@ class DescribeSourceServersRequest : public MgnRequest {
 
   ///@{
   /**
-   * <p>Request to filter Source Servers list by Accoun ID.</p>
+   * <p>Request to filter Source Servers list by Account ID.</p>
    */
   inline const Aws::String& GetAccountID() const { return m_accountID; }
   inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }

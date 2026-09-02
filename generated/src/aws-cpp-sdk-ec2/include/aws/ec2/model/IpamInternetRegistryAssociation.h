@@ -209,6 +209,25 @@ class IpamInternetRegistryAssociation {
 
   ///@{
   /**
+   * <p>A message describing the current state of the internet registry association,
+   * including additional details such as the reason for a failure.</p>
+   */
+  inline const Aws::String& GetStateMessage() const { return m_stateMessage; }
+  inline bool StateMessageHasBeenSet() const { return m_stateMessageHasBeenSet; }
+  template <typename StateMessageT = Aws::String>
+  void SetStateMessage(StateMessageT&& value) {
+    m_stateMessageHasBeenSet = true;
+    m_stateMessage = std::forward<StateMessageT>(value);
+  }
+  template <typename StateMessageT = Aws::String>
+  IpamInternetRegistryAssociation& WithStateMessage(StateMessageT&& value) {
+    SetStateMessage(std::forward<StateMessageT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The XML content for the child request to be submitted to the internet
    * registry to complete the BPKI setup.</p>
    */
@@ -268,6 +287,8 @@ class IpamInternetRegistryAssociation {
 
   IpamInternetRegistryAssociationState m_state{IpamInternetRegistryAssociationState::NOT_SET};
 
+  Aws::String m_stateMessage;
+
   Aws::String m_childRequestXml;
 
   Aws::Vector<Tag> m_tags;
@@ -280,6 +301,7 @@ class IpamInternetRegistryAssociation {
   bool m_organizationHandleHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_stateHasBeenSet = false;
+  bool m_stateMessageHasBeenSet = false;
   bool m_childRequestXmlHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };

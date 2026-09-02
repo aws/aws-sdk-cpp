@@ -17,7 +17,7 @@ namespace mgn {
 namespace Model {
 
 /**
- * <p>Import task summery waves.</p><p><h3>See Also:</h3>   <a
+ * <p>Import task summary waves.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ImportTaskSummaryWaves">AWS
  * API Reference</a></p>
  */
@@ -30,7 +30,7 @@ class ImportTaskSummaryWaves {
 
   ///@{
   /**
-   * <p>Import task summery waves created count.</p>
+   * <p>Import task summary waves created count.</p>
    */
   inline long long GetCreatedCount() const { return m_createdCount; }
   inline bool CreatedCountHasBeenSet() const { return m_createdCountHasBeenSet; }
@@ -46,7 +46,7 @@ class ImportTaskSummaryWaves {
 
   ///@{
   /**
-   * <p>Import task summery waves modified count.</p>
+   * <p>Import task summary waves modified count.</p>
    */
   inline long long GetModifiedCount() const { return m_modifiedCount; }
   inline bool ModifiedCountHasBeenSet() const { return m_modifiedCountHasBeenSet; }

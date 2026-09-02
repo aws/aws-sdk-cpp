@@ -52,6 +52,12 @@ InterruptibleCapacityAllocation& InterruptibleCapacityAllocation::operator=(cons
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(interruptionTypeNode.GetText()).c_str()));
       m_interruptionTypeHasBeenSet = true;
     }
+    XmlNode zeroSizePreferenceNode = resultNode.FirstChild("zeroSizePreference");
+    if (!zeroSizePreferenceNode.IsNull()) {
+      m_zeroSizePreference = ZeroSizePreferenceMapper::GetZeroSizePreferenceForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(zeroSizePreferenceNode.GetText()).c_str()));
+      m_zeroSizePreferenceHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -85,6 +91,11 @@ void InterruptibleCapacityAllocation::OutputToStream(Aws::OStream& oStream, cons
             << ".InterruptionType=" << StringUtils::URLEncode(InterruptionTypeMapper::GetNameForInterruptionType(m_interruptionType))
             << "&";
   }
+
+  if (m_zeroSizePreferenceHasBeenSet) {
+    oStream << location << index << locationValue << ".ZeroSizePreference="
+            << StringUtils::URLEncode(ZeroSizePreferenceMapper::GetNameForZeroSizePreference(m_zeroSizePreference)) << "&";
+  }
 }
 
 void InterruptibleCapacityAllocation::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -109,6 +120,10 @@ void InterruptibleCapacityAllocation::OutputToStream(Aws::OStream& oStream, cons
     oStream << location
             << ".InterruptionType=" << StringUtils::URLEncode(InterruptionTypeMapper::GetNameForInterruptionType(m_interruptionType))
             << "&";
+  }
+  if (m_zeroSizePreferenceHasBeenSet) {
+    oStream << location << ".ZeroSizePreference="
+            << StringUtils::URLEncode(ZeroSizePreferenceMapper::GetNameForZeroSizePreference(m_zeroSizePreference)) << "&";
   }
 }
 

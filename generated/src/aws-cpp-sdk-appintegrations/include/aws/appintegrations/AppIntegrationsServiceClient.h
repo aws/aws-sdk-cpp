@@ -211,8 +211,9 @@ class AWS_APPINTEGRATIONSSERVICE_API AppIntegrationsServiceClient
   }
 
   /**
-   * <p>Deletes the Application. Only Applications that don't have any Application
-   * Associations can be deleted.</p><p><h3>See Also:</h3>   <a
+   * <p>Deletes an application. If the application has associations, you must delete
+   * them first. Alternatively, use the <code>force</code> option to delete the
+   * application and remove its associations.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/DeleteApplication">AWS
    * API Reference</a></p>
    */

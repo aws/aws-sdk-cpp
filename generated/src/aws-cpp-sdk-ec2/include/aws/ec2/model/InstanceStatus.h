@@ -235,8 +235,7 @@ class InstanceStatus {
 
   ///@{
   /**
-   * <p>Reports impaired functionality that stems from issues with applications
-   * running on the instance.</p>
+   * <p>Reports the application-level health status for the instance.</p>
    */
   inline const ApplicationStatusSummary& GetApplicationStatus() const { return m_applicationStatus; }
   inline bool ApplicationStatusHasBeenSet() const { return m_applicationStatusHasBeenSet; }

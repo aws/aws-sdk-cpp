@@ -39,6 +39,7 @@
 #include <aws/sagemaker-featurestore-runtime/model/TargetStore.h>
 #include <aws/sagemaker-featurestore-runtime/model/TtlDuration.h>
 #include <aws/sagemaker-featurestore-runtime/model/TtlDurationUnit.h>
+#include <aws/sagemaker-featurestore-runtime/model/UpdateRecordRequest.h>
 
 using SageMakerFeatureStoreRuntimeIncludeTest = ::testing::Test;
 

@@ -69,6 +69,11 @@ IpamInternetRegistryAssociation& IpamInternetRegistryAssociation::operator=(cons
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
+    XmlNode stateMessageNode = resultNode.FirstChild("stateMessage");
+    if (!stateMessageNode.IsNull()) {
+      m_stateMessage = Aws::Utils::Xml::DecodeEscapedXmlText(stateMessageNode.GetText());
+      m_stateMessageHasBeenSet = true;
+    }
     XmlNode childRequestXmlNode = resultNode.FirstChild("childRequestXml");
     if (!childRequestXmlNode.IsNull()) {
       m_childRequestXml = Aws::Utils::Xml::DecodeEscapedXmlText(childRequestXmlNode.GetText());
@@ -132,6 +137,10 @@ void IpamInternetRegistryAssociation::OutputToStream(Aws::OStream& oStream, cons
             << "&";
   }
 
+  if (m_stateMessageHasBeenSet) {
+    oStream << location << index << locationValue << ".StateMessage=" << StringUtils::URLEncode(m_stateMessage.c_str()) << "&";
+  }
+
   if (m_childRequestXmlHasBeenSet) {
     oStream << location << index << locationValue << ".ChildRequestXml=" << StringUtils::URLEncode(m_childRequestXml.c_str()) << "&";
   }
@@ -177,6 +186,9 @@ void IpamInternetRegistryAssociation::OutputToStream(Aws::OStream& oStream, cons
     oStream << location << ".State="
             << StringUtils::URLEncode(IpamInternetRegistryAssociationStateMapper::GetNameForIpamInternetRegistryAssociationState(m_state))
             << "&";
+  }
+  if (m_stateMessageHasBeenSet) {
+    oStream << location << ".StateMessage=" << StringUtils::URLEncode(m_stateMessage.c_str()) << "&";
   }
   if (m_childRequestXmlHasBeenSet) {
     oStream << location << ".ChildRequestXml=" << StringUtils::URLEncode(m_childRequestXml.c_str()) << "&";

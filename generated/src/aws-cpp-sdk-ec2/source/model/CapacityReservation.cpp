@@ -205,6 +205,12 @@ CapacityReservation& CapacityReservation::operator=(const XmlNode& xmlNode) {
       m_interruptionInfo = interruptionInfoNode;
       m_interruptionInfoHasBeenSet = true;
     }
+    XmlNode zeroSizePreferenceNode = resultNode.FirstChild("zeroSizePreference");
+    if (!zeroSizePreferenceNode.IsNull()) {
+      m_zeroSizePreference = ZeroSizePreferenceMapper::GetZeroSizePreferenceForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(zeroSizePreferenceNode.GetText()).c_str()));
+      m_zeroSizePreferenceHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -369,6 +375,11 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
     interruptionInfoLocationAndMemberSs << location << index << locationValue << ".InterruptionInfo";
     m_interruptionInfo.OutputToStream(oStream, interruptionInfoLocationAndMemberSs.str().c_str());
   }
+
+  if (m_zeroSizePreferenceHasBeenSet) {
+    oStream << location << index << locationValue << ".ZeroSizePreference="
+            << StringUtils::URLEncode(ZeroSizePreferenceMapper::GetNameForZeroSizePreference(m_zeroSizePreference)) << "&";
+  }
 }
 
 void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -493,6 +504,10 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
     Aws::String interruptionInfoLocationAndMember(location);
     interruptionInfoLocationAndMember += ".InterruptionInfo";
     m_interruptionInfo.OutputToStream(oStream, interruptionInfoLocationAndMember.c_str());
+  }
+  if (m_zeroSizePreferenceHasBeenSet) {
+    oStream << location << ".ZeroSizePreference="
+            << StringUtils::URLEncode(ZeroSizePreferenceMapper::GetNameForZeroSizePreference(m_zeroSizePreference)) << "&";
   }
 }
 

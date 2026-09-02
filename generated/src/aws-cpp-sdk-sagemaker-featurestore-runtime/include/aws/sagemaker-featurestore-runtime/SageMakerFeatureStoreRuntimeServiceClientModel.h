@@ -65,6 +65,7 @@ class DeleteRecordRequest;
 class GetRecordRequest;
 class ListRecordsRequest;
 class PutRecordRequest;
+class UpdateRecordRequest;
 /* End of service model forward declarations required in SageMakerFeatureStoreRuntimeClient header */
 
 /* Service model Outcome class definitions */
@@ -74,6 +75,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerFeatureStoreRuntimeError> De
 typedef Aws::Utils::Outcome<GetRecordResult, SageMakerFeatureStoreRuntimeError> GetRecordOutcome;
 typedef Aws::Utils::Outcome<ListRecordsResult, SageMakerFeatureStoreRuntimeError> ListRecordsOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerFeatureStoreRuntimeError> PutRecordOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerFeatureStoreRuntimeError> UpdateRecordOutcome;
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
@@ -83,6 +85,7 @@ typedef std::future<DeleteRecordOutcome> DeleteRecordOutcomeCallable;
 typedef std::future<GetRecordOutcome> GetRecordOutcomeCallable;
 typedef std::future<ListRecordsOutcome> ListRecordsOutcomeCallable;
 typedef std::future<PutRecordOutcome> PutRecordOutcomeCallable;
+typedef std::future<UpdateRecordOutcome> UpdateRecordOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
 
@@ -107,6 +110,9 @@ typedef std::function<void(const SageMakerFeatureStoreRuntimeClient*, const Mode
 typedef std::function<void(const SageMakerFeatureStoreRuntimeClient*, const Model::PutRecordRequest&, const Model::PutRecordOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutRecordResponseReceivedHandler;
+typedef std::function<void(const SageMakerFeatureStoreRuntimeClient*, const Model::UpdateRecordRequest&, const Model::UpdateRecordOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateRecordResponseReceivedHandler;
 /* End of service model async handlers definitions */
 }  // namespace SageMakerFeatureStoreRuntime
 }  // namespace Aws

@@ -39,6 +39,7 @@
 #include <aws/mgn/model/ChangeServerLifeCycleStateSourceServerLifecycle.h>
 #include <aws/mgn/model/ChangeServerLifeCycleStateSourceServerLifecycleState.h>
 #include <aws/mgn/model/Checksum.h>
+#include <aws/mgn/model/CidrMapping.h>
 #include <aws/mgn/model/CodeGenerationOutputFormatStatus.h>
 #include <aws/mgn/model/CodeGenerationOutputFormatStatusDetails.h>
 #include <aws/mgn/model/CodeGenerationOutputFormatType.h>
@@ -419,6 +420,7 @@
 #include <aws/mgn/model/ValidationExceptionReason.h>
 #include <aws/mgn/model/VcenterClient.h>
 #include <aws/mgn/model/VolumeType.h>
+#include <aws/mgn/model/VpcProvisioningStrategy.h>
 #include <aws/mgn/model/Wave.h>
 #include <aws/mgn/model/WaveAggregatedStatus.h>
 #include <aws/mgn/model/WaveHealthStatus.h>

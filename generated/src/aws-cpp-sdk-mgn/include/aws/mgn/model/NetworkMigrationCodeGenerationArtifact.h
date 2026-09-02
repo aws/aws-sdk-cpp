@@ -57,8 +57,7 @@ class NetworkMigrationCodeGenerationArtifact {
 
   ///@{
   /**
-   * <p>The type of the artifact, such as CLOUDFORMATION_TEMPLATE or
-   * TERRAFORM_MODULE.</p>
+   * <p>The type of the generated artifact.</p>
    */
   inline NetworkMigrationCodeGenerationArtifactType GetArtifactType() const { return m_artifactType; }
   inline bool ArtifactTypeHasBeenSet() const { return m_artifactTypeHasBeenSet; }

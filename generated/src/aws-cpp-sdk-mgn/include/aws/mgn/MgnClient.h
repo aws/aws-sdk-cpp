@@ -16,7 +16,7 @@
 namespace Aws {
 namespace mgn {
 /**
- * <p>The Application Migration Service service.</p>
+ * <p>Application Migration Service.</p>
  */
 class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<MgnClient>,
@@ -645,8 +645,8 @@ class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Returns a list of Jobs. Use the JobsID and fromDate and toData filters to
-   * limit which jobs are returned. The response is sorted by creationDataTime -
+   * <p>Returns a list of Jobs. Use the jobIDs and fromDate and toDate filters to
+   * limit which jobs are returned. The response is sorted by creationDateTime -
    * latest date first. Jobs are normally created by the StartTest, StartCutover, and
    * TerminateTargetInstances APIs. Jobs are also created by DiagnosticLaunch and
    * TerminateDiagnosticInstances, which are APIs available only to *Support* and
@@ -706,8 +706,8 @@ class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Lists all ReplicationConfigurationTemplates, filtered by Source Server
-   * IDs.</p><p><h3>See Also:</h3>   <a
+   * <p>Lists all ReplicationConfigurationTemplates, filtered by replication
+   * configuration template IDs.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DescribeReplicationConfigurationTemplates">AWS
    * API Reference</a></p>
    */
@@ -852,9 +852,9 @@ class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient,
    * Migration Service for enabling the replication of these source servers will be
    * terminated / deleted within 90 minutes. Launched Test or Cutover instances will
    * NOT be terminated. If the agent on the source server has not been prevented from
-   * communicating with the Application Migration Service service, then it will
-   * receive a command to uninstall itself (within approximately 10 minutes). The
-   * following properties of the SourceServer will be changed immediately:
+   * communicating with Application Migration Service, then it will receive a command
+   * to uninstall itself (within approximately 10 minutes). The following properties
+   * of the SourceServer will be changed immediately:
    * dataReplicationInfo.dataReplicationState will be set to DISCONNECTED; The
    * totalStorageBytes property for each of dataReplicationInfo.replicatedDisks will
    * be set to zero; dataReplicationInfo.lagDuration and
@@ -892,7 +892,7 @@ class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient,
    * properties of the SourceServer will be changed immediately:
    * dataReplicationInfo.dataReplicationState will be changed to DISCONNECTED; The
    * SourceServer.lifeCycle.state will be changed to CUTOVER; The totalStorageBytes
-   * property fo each of dataReplicationInfo.replicatedDisks will be set to zero;
+   * property for each of dataReplicationInfo.replicatedDisks will be set to zero;
    * dataReplicationInfo.lagDuration and dataReplicationInfo.lagDuration will be
    * nullified.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/FinalizeCutover">AWS
@@ -1753,7 +1753,7 @@ class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient,
   /**
    * <p>Archives specific Source Servers by setting the SourceServer.isArchived
    * property to true for specified SourceServers by ID. This command only works for
-   * SourceServers with a lifecycle. state which equals DISCONNECTED or
+   * SourceServers with a lifecycle state that equals DISCONNECTED or
    * CUTOVER.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/MarkAsArchived">AWS
    * API Reference</a></p>
@@ -2489,7 +2489,7 @@ class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Updates multiple LaunchConfigurations by Source Server ID.</p>
-   * <p>bootMode valid values are <code>LEGACY_BIOS | UEFI</code> </p>
+   * <p>bootMode valid values are <code>LEGACY_BIOS | UEFI | USE_SOURCE</code> </p>
    * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateLaunchConfiguration">AWS
    * API Reference</a></p>
@@ -2638,8 +2638,8 @@ class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates multiple ReplicationConfigurationTemplates by ID.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Updates a ReplicationConfigurationTemplate by ID.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateReplicationConfigurationTemplate">AWS
    * API Reference</a></p>
    */

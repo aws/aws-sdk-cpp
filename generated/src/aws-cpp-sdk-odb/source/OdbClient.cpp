@@ -75,6 +75,7 @@
 #include <aws/odb/model/ListDbSystemShapesRequest.h>
 #include <aws/odb/model/ListExadbVmClustersRequest.h>
 #include <aws/odb/model/ListExascaleDbStorageVaultsRequest.h>
+#include <aws/odb/model/ListFlexComponentsRequest.h>
 #include <aws/odb/model/ListGiMinorVersionsRequest.h>
 #include <aws/odb/model/ListGiVersionsRequest.h>
 #include <aws/odb/model/ListOdbNetworksRequest.h>
@@ -586,6 +587,12 @@ ListExascaleDbStorageVaultsOutcome OdbClient::ListExascaleDbStorageVaults(const 
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListExascaleDbStorageVaultsOutcome(result.GetResultWithOwnership())
                             : ListExascaleDbStorageVaultsOutcome(std::move(result.GetError()));
+}
+
+ListFlexComponentsOutcome OdbClient::ListFlexComponents(const ListFlexComponentsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFlexComponentsOutcome(result.GetResultWithOwnership())
+                            : ListFlexComponentsOutcome(std::move(result.GetError()));
 }
 
 ListGiMinorVersionsOutcome OdbClient::ListGiMinorVersions(const ListGiMinorVersionsRequest& request) const {

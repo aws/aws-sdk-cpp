@@ -16,12 +16,15 @@ namespace Model {
 namespace StorageTypeMapper {
 
 static const int Standard_HASH = HashingUtils::HashString("Standard");
+static const int Standard_V2_HASH = HashingUtils::HashString("Standard_V2");
 static const int InMemory_HASH = HashingUtils::HashString("InMemory");
 
 StorageType GetStorageTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == Standard_HASH) {
     return StorageType::Standard;
+  } else if (hashCode == Standard_V2_HASH) {
+    return StorageType::Standard_V2;
   } else if (hashCode == InMemory_HASH) {
     return StorageType::InMemory;
   }
@@ -40,6 +43,8 @@ Aws::String GetNameForStorageType(StorageType enumValue) {
       return {};
     case StorageType::Standard:
       return "Standard";
+    case StorageType::Standard_V2:
+      return "Standard_V2";
     case StorageType::InMemory:
       return "InMemory";
     default:

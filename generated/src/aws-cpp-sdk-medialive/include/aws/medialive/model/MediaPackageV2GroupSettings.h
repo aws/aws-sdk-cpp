@@ -14,6 +14,7 @@
 #include <aws/medialive/model/CmafTimedMetadataId3Frame.h>
 #include <aws/medialive/model/CmafTimedMetadataPassthrough.h>
 #include <aws/medialive/model/MediaPackageAdditionalDestinations.h>
+#include <aws/medialive/model/MediaPackageV2WatermarkingSettings.h>
 #include <aws/medialive/model/Scte35Type.h>
 
 #include <utility>
@@ -250,6 +251,24 @@ class MediaPackageV2GroupSettings {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * Specifies the type of watermarking technology to use.
+   */
+  inline const MediaPackageV2WatermarkingSettings& GetWatermarkingSettings() const { return m_watermarkingSettings; }
+  inline bool WatermarkingSettingsHasBeenSet() const { return m_watermarkingSettingsHasBeenSet; }
+  template <typename WatermarkingSettingsT = MediaPackageV2WatermarkingSettings>
+  void SetWatermarkingSettings(WatermarkingSettingsT&& value) {
+    m_watermarkingSettingsHasBeenSet = true;
+    m_watermarkingSettings = std::forward<WatermarkingSettingsT>(value);
+  }
+  template <typename WatermarkingSettingsT = MediaPackageV2WatermarkingSettings>
+  MediaPackageV2GroupSettings& WithWatermarkingSettings(WatermarkingSettingsT&& value) {
+    SetWatermarkingSettings(std::forward<WatermarkingSettingsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<CaptionLanguageMapping> m_captionLanguageMappings;
 
@@ -272,6 +291,8 @@ class MediaPackageV2GroupSettings {
   CmafTimedMetadataPassthrough m_timedMetadataPassthrough{CmafTimedMetadataPassthrough::NOT_SET};
 
   Aws::Vector<MediaPackageAdditionalDestinations> m_additionalDestinations;
+
+  MediaPackageV2WatermarkingSettings m_watermarkingSettings;
   bool m_captionLanguageMappingsHasBeenSet = false;
   bool m_id3BehaviorHasBeenSet = false;
   bool m_klvBehaviorHasBeenSet = false;
@@ -283,6 +304,7 @@ class MediaPackageV2GroupSettings {
   bool m_timedMetadataId3PeriodHasBeenSet = false;
   bool m_timedMetadataPassthroughHasBeenSet = false;
   bool m_additionalDestinationsHasBeenSet = false;
+  bool m_watermarkingSettingsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/model/StorageType.h>
 #include <aws/sagemaker/model/TtlDuration.h>
 
 #include <utility>
@@ -53,9 +54,32 @@ class OnlineStoreConfigUpdate {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The online store storage type to migrate the feature group to. Use this
+   * parameter to migrate an existing feature group from <code>Standard</code> to
+   * <code>Standard_V2</code> storage format, enabling support for the <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_UpdateRecord.html">UpdateRecord</a>
+   * operation. Migration is a one-way operation and cannot be reversed.</p>
+   */
+  inline StorageType GetStorageType() const { return m_storageType; }
+  inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+  inline void SetStorageType(StorageType value) {
+    m_storageTypeHasBeenSet = true;
+    m_storageType = value;
+  }
+  inline OnlineStoreConfigUpdate& WithStorageType(StorageType value) {
+    SetStorageType(value);
+    return *this;
+  }
+  ///@}
  private:
   TtlDuration m_ttlDuration;
+
+  StorageType m_storageType{StorageType::NOT_SET};
   bool m_ttlDurationHasBeenSet = false;
+  bool m_storageTypeHasBeenSet = false;
 };
 
 }  // namespace Model

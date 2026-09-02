@@ -36,7 +36,7 @@ class JobPostLaunchActionsLaunchStatus {
 
   ///@{
   /**
-   * <p>AWS Systems Manager's Document of the of the Job Post Launch Actions.</p>
+   * <p>AWS Systems Manager's Document of the Job Post Launch Actions.</p>
    */
   inline const SsmDocument& GetSsmDocument() const { return m_ssmDocument; }
   inline bool SsmDocumentHasBeenSet() const { return m_ssmDocumentHasBeenSet; }
@@ -70,7 +70,7 @@ class JobPostLaunchActionsLaunchStatus {
 
   ///@{
   /**
-   * <p>AWS Systems Manager Document's execution ID of the of the Job Post Launch
+   * <p>AWS Systems Manager Document's execution ID of the Job Post Launch
    * Actions.</p>
    */
   inline const Aws::String& GetExecutionID() const { return m_executionID; }

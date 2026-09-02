@@ -97,6 +97,10 @@ CmafIngestGroupSettings& CmafIngestGroupSettings::operator=(JsonView jsonValue) 
     }
     m_additionalDestinationsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("watermarkingSettings")) {
+    m_watermarkingSettings = jsonValue.GetObject("watermarkingSettings");
+    m_watermarkingSettingsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -183,6 +187,10 @@ JsonValue CmafIngestGroupSettings::Jsonize() const {
       additionalDestinationsJsonList[additionalDestinationsIndex].AsObject(m_additionalDestinations[additionalDestinationsIndex].Jsonize());
     }
     payload.WithArray("additionalDestinations", std::move(additionalDestinationsJsonList));
+  }
+
+  if (m_watermarkingSettingsHasBeenSet) {
+    payload.WithObject("watermarkingSettings", m_watermarkingSettings.Jsonize());
   }
 
   return payload;

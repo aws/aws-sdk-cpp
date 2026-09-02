@@ -3176,6 +3176,7 @@
 #include <aws/ec2/model/WeekDay.h>
 #include <aws/ec2/model/WithdrawByoipCidrRequest.h>
 #include <aws/ec2/model/WithdrawByoipCidrResponse.h>
+#include <aws/ec2/model/ZeroSizePreference.h>
 
 using EC2IncludeTest = ::testing::Test;
 

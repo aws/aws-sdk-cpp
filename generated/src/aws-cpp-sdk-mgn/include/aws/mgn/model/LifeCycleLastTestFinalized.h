@@ -33,7 +33,7 @@ class LifeCycleLastTestFinalized {
 
   ///@{
   /**
-   * <p>Lifecycle Test failed API call date and time.</p>
+   * <p>Lifecycle Test finalized API call date and time.</p>
    */
   inline const Aws::String& GetApiCallDateTime() const { return m_apiCallDateTime; }
   inline bool ApiCallDateTimeHasBeenSet() const { return m_apiCallDateTimeHasBeenSet; }

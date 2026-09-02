@@ -1687,6 +1687,34 @@ class AWS_ODB_API OdbClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns information about the flex components that are available for an
+   * Exadata infrastructure.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListFlexComponents">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListFlexComponentsOutcome ListFlexComponents(const Model::ListFlexComponentsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListFlexComponents that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListFlexComponentsRequestT = Model::ListFlexComponentsRequest>
+  Model::ListFlexComponentsOutcomeCallable ListFlexComponentsCallable(const ListFlexComponentsRequestT& request = {}) const {
+    return SubmitCallable(&OdbClient::ListFlexComponents, request);
+  }
+
+  /**
+   * An Async wrapper for ListFlexComponents that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListFlexComponentsRequestT = Model::ListFlexComponentsRequest>
+  void ListFlexComponentsAsync(const ListFlexComponentsResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                               const ListFlexComponentsRequestT& request = {}) const {
+    return SubmitAsync(&OdbClient::ListFlexComponents, request, handler, context);
+  }
+
+  /**
    * <p>Returns a list of the Oracle Grid Infrastructure (GI) minor versions for the
    * specified major version.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListGiMinorVersions">AWS

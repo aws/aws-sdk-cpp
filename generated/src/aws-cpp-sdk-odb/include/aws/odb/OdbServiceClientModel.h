@@ -87,6 +87,8 @@
 #include <aws/odb/model/ListExadbVmClustersResult.h>
 #include <aws/odb/model/ListExascaleDbStorageVaultsRequest.h>
 #include <aws/odb/model/ListExascaleDbStorageVaultsResult.h>
+#include <aws/odb/model/ListFlexComponentsRequest.h>
+#include <aws/odb/model/ListFlexComponentsResult.h>
 #include <aws/odb/model/ListGiMinorVersionsResult.h>
 #include <aws/odb/model/ListGiVersionsRequest.h>
 #include <aws/odb/model/ListGiVersionsResult.h>
@@ -202,6 +204,7 @@ class ListDbServersRequest;
 class ListDbSystemShapesRequest;
 class ListExadbVmClustersRequest;
 class ListExascaleDbStorageVaultsRequest;
+class ListFlexComponentsRequest;
 class ListGiMinorVersionsRequest;
 class ListGiVersionsRequest;
 class ListOdbNetworksRequest;
@@ -286,6 +289,7 @@ typedef Aws::Utils::Outcome<ListDbServersResult, OdbError> ListDbServersOutcome;
 typedef Aws::Utils::Outcome<ListDbSystemShapesResult, OdbError> ListDbSystemShapesOutcome;
 typedef Aws::Utils::Outcome<ListExadbVmClustersResult, OdbError> ListExadbVmClustersOutcome;
 typedef Aws::Utils::Outcome<ListExascaleDbStorageVaultsResult, OdbError> ListExascaleDbStorageVaultsOutcome;
+typedef Aws::Utils::Outcome<ListFlexComponentsResult, OdbError> ListFlexComponentsOutcome;
 typedef Aws::Utils::Outcome<ListGiMinorVersionsResult, OdbError> ListGiMinorVersionsOutcome;
 typedef Aws::Utils::Outcome<ListGiVersionsResult, OdbError> ListGiVersionsOutcome;
 typedef Aws::Utils::Outcome<ListOdbNetworksResult, OdbError> ListOdbNetworksOutcome;
@@ -369,6 +373,7 @@ typedef std::future<ListDbServersOutcome> ListDbServersOutcomeCallable;
 typedef std::future<ListDbSystemShapesOutcome> ListDbSystemShapesOutcomeCallable;
 typedef std::future<ListExadbVmClustersOutcome> ListExadbVmClustersOutcomeCallable;
 typedef std::future<ListExascaleDbStorageVaultsOutcome> ListExascaleDbStorageVaultsOutcomeCallable;
+typedef std::future<ListFlexComponentsOutcome> ListFlexComponentsOutcomeCallable;
 typedef std::future<ListGiMinorVersionsOutcome> ListGiMinorVersionsOutcomeCallable;
 typedef std::future<ListGiVersionsOutcome> ListGiVersionsOutcomeCallable;
 typedef std::future<ListOdbNetworksOutcome> ListOdbNetworksOutcomeCallable;
@@ -587,6 +592,9 @@ typedef std::function<void(const OdbClient*, const Model::ListExadbVmClustersReq
 typedef std::function<void(const OdbClient*, const Model::ListExascaleDbStorageVaultsRequest&,
                            const Model::ListExascaleDbStorageVaultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListExascaleDbStorageVaultsResponseReceivedHandler;
+typedef std::function<void(const OdbClient*, const Model::ListFlexComponentsRequest&, const Model::ListFlexComponentsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListFlexComponentsResponseReceivedHandler;
 typedef std::function<void(const OdbClient*, const Model::ListGiMinorVersionsRequest&, const Model::ListGiMinorVersionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListGiMinorVersionsResponseReceivedHandler;

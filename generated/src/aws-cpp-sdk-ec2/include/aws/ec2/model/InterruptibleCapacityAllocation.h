@@ -9,6 +9,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/InterruptibleCapacityReservationAllocationStatus.h>
 #include <aws/ec2/model/InterruptionType.h>
+#include <aws/ec2/model/ZeroSizePreference.h>
 
 #include <utility>
 
@@ -123,6 +124,27 @@ class InterruptibleCapacityAllocation {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> Specifies how Amazon EC2 handles the interruptible Capacity Reservation when
+   * you reduce its allocation to zero instances. A value of <code>retain</code>
+   * keeps the interruptible Capacity Reservation active at zero capacity so that you
+   * can allocate instances to it again later. A value of <code>default</code>
+   * cancels the interruptible Capacity Reservation and returns the capacity to your
+   * source Capacity Reservation. </p>
+   */
+  inline ZeroSizePreference GetZeroSizePreference() const { return m_zeroSizePreference; }
+  inline bool ZeroSizePreferenceHasBeenSet() const { return m_zeroSizePreferenceHasBeenSet; }
+  inline void SetZeroSizePreference(ZeroSizePreference value) {
+    m_zeroSizePreferenceHasBeenSet = true;
+    m_zeroSizePreference = value;
+  }
+  inline InterruptibleCapacityAllocation& WithZeroSizePreference(ZeroSizePreference value) {
+    SetZeroSizePreference(value);
+    return *this;
+  }
+  ///@}
  private:
   int m_instanceCount{0};
 
@@ -133,11 +155,14 @@ class InterruptibleCapacityAllocation {
   Aws::String m_interruptibleCapacityReservationId;
 
   InterruptionType m_interruptionType{InterruptionType::NOT_SET};
+
+  ZeroSizePreference m_zeroSizePreference{ZeroSizePreference::NOT_SET};
   bool m_instanceCountHasBeenSet = false;
   bool m_targetInstanceCountHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_interruptibleCapacityReservationIdHasBeenSet = false;
   bool m_interruptionTypeHasBeenSet = false;
+  bool m_zeroSizePreferenceHasBeenSet = false;
 };
 
 }  // namespace Model

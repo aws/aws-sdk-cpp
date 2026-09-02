@@ -80,7 +80,7 @@ class DescribeFleetError {
   /**
    * <p>The error code that indicates why the instance could not be launched. For
    * more information about error codes, see <a
-   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
    * codes</a>.</p>
    */
   inline const Aws::String& GetErrorCode() const { return m_errorCode; }
@@ -101,7 +101,7 @@ class DescribeFleetError {
   /**
    * <p>The error message that describes why the instance could not be launched. For
    * more information about error messages, see <a
-   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
    * codes</a>.</p>
    */
   inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }

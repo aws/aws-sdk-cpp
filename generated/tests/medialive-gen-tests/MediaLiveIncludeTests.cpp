@@ -25,6 +25,9 @@
 #include <aws/medialive/model/AacSettings.h>
 #include <aws/medialive/model/AacSpec.h>
 #include <aws/medialive/model/AacVbrQuality.h>
+#include <aws/medialive/model/AbWatermarkerIdLength.h>
+#include <aws/medialive/model/AbWatermarkingCustomProfile.h>
+#include <aws/medialive/model/AbWatermarkingProfile.h>
 #include <aws/medialive/model/Ac3AttenuationControl.h>
 #include <aws/medialive/model/Ac3BitstreamMode.h>
 #include <aws/medialive/model/Ac3CodingMode.h>
@@ -159,10 +162,12 @@
 #include <aws/medialive/model/ClusterState.h>
 #include <aws/medialive/model/ClusterType.h>
 #include <aws/medialive/model/CmafId3Behavior.h>
+#include <aws/medialive/model/CmafIngestAbWatermarkerIrdetoSettings.h>
 #include <aws/medialive/model/CmafIngestCaptionLanguageMapping.h>
 #include <aws/medialive/model/CmafIngestGroupSettings.h>
 #include <aws/medialive/model/CmafIngestOutputSettings.h>
 #include <aws/medialive/model/CmafIngestSegmentLengthUnits.h>
+#include <aws/medialive/model/CmafIngestWatermarkingSettings.h>
 #include <aws/medialive/model/CmafKLVBehavior.h>
 #include <aws/medialive/model/CmafNielsenId3Behavior.h>
 #include <aws/medialive/model/CmafTimedMetadataId3Frame.h>
@@ -661,8 +666,10 @@
 #include <aws/medialive/model/MediaPackageGroupSettings.h>
 #include <aws/medialive/model/MediaPackageOutputDestinationSettings.h>
 #include <aws/medialive/model/MediaPackageOutputSettings.h>
+#include <aws/medialive/model/MediaPackageV2AbWatermarkerIrdetoSettings.h>
 #include <aws/medialive/model/MediaPackageV2DestinationSettings.h>
 #include <aws/medialive/model/MediaPackageV2GroupSettings.h>
+#include <aws/medialive/model/MediaPackageV2WatermarkingSettings.h>
 #include <aws/medialive/model/MediaResource.h>
 #include <aws/medialive/model/MediaResourceNeighbor.h>
 #include <aws/medialive/model/MonitorDeployment.h>

@@ -36,7 +36,7 @@ class LifeCycle {
 
   ///@{
   /**
-   * <p>Lifecycle added to service data and time.</p>
+   * <p>Lifecycle added to service date and time.</p>
    */
   inline const Aws::String& GetAddedToServiceDateTime() const { return m_addedToServiceDateTime; }
   inline bool AddedToServiceDateTimeHasBeenSet() const { return m_addedToServiceDateTimeHasBeenSet; }
