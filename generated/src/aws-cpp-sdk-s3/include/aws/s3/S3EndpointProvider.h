@@ -63,7 +63,7 @@ class AWS_S3_API S3BuiltInParameters : public Aws::Endpoint::BuiltInParameters {
   virtual void SetFromClientConfiguration(const S3ClientConfiguration& config, const Aws::String& serviceName);
 
  private:
-  void SetS3SpecificParameters(const S3ClientConfiguration& config);
+  void SetServiceSpecificParameters(const S3ClientConfiguration& config);
 };
 
 /**

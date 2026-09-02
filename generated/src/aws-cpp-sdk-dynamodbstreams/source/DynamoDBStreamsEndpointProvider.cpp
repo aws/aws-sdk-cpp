@@ -32,6 +32,11 @@ void DynamoDBStreamsBuiltInParameters::SetFromClientConfiguration(const DynamoDB
   SetFromClientConfiguration(static_cast<const DynamoDBStreamsClientConfiguration::BaseClientConfigClass&>(config));
 }
 
+void DynamoDBStreamsBuiltInParameters::SetFromClientConfiguration(const DynamoDBStreamsClientConfiguration& config,
+                                                                  const Aws::String& serviceName) {
+  SetFromClientConfiguration(static_cast<const DynamoDBStreamsClientConfiguration::BaseClientConfigClass&>(config), serviceName);
+}
+
 }  // namespace Endpoint
 }  // namespace DynamoDBStreams
 }  // namespace Aws

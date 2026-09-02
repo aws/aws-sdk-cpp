@@ -175,7 +175,9 @@ namespace Aws
                                  const char*& signerServiceNameOverride) const
             {
                 if (endpoint.GetAttributes()) {
-                    signerName = endpoint.GetAttributes()->authScheme.GetName().c_str();
+                    if (!endpoint.GetAttributes()->authScheme.GetName().empty()) {
+                        signerName = endpoint.GetAttributes()->authScheme.GetName().c_str();
+                    }
                     if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
                         signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
                     }

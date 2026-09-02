@@ -147,7 +147,7 @@ namespace client
 
         void initClient() {
           if (m_endpointProvider && m_authSchemeResolver) {
-            m_endpointProvider->InitBuiltInParameters(m_clientConfiguration);
+            m_endpointProvider->InitBuiltInParameters(m_clientConfiguration, m_serviceName);
             m_authSchemeResolver->Init(m_clientConfiguration);
           } else {
             AWS_LOGSTREAM_FATAL(ServiceNameT, "Unable to init client: endpoint provider=" << m_endpointProvider

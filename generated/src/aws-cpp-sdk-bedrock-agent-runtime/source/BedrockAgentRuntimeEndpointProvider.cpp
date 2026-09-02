@@ -32,6 +32,11 @@ void BedrockAgentRuntimeBuiltInParameters::SetFromClientConfiguration(const Bedr
   SetFromClientConfiguration(static_cast<const BedrockAgentRuntimeClientConfiguration::BaseClientConfigClass&>(config));
 }
 
+void BedrockAgentRuntimeBuiltInParameters::SetFromClientConfiguration(const BedrockAgentRuntimeClientConfiguration& config,
+                                                                      const Aws::String& serviceName) {
+  SetFromClientConfiguration(static_cast<const BedrockAgentRuntimeClientConfiguration::BaseClientConfigClass&>(config), serviceName);
+}
+
 }  // namespace Endpoint
 }  // namespace BedrockAgentRuntime
 }  // namespace Aws

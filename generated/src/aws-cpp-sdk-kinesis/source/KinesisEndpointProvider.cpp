@@ -29,7 +29,15 @@ KinesisEndpointProvider::KinesisEndpointProvider()
 
 void KinesisBuiltInParameters::SetFromClientConfiguration(const KinesisClientConfiguration& config) {
   SetFromClientConfiguration(static_cast<const KinesisClientConfiguration::BaseClientConfigClass&>(config));
+  SetServiceSpecificParameters(config);
+}
 
+void KinesisBuiltInParameters::SetFromClientConfiguration(const KinesisClientConfiguration& config, const Aws::String& serviceName) {
+  SetFromClientConfiguration(static_cast<const KinesisClientConfiguration::BaseClientConfigClass&>(config), serviceName);
+  SetServiceSpecificParameters(config);
+}
+
+void KinesisBuiltInParameters::SetServiceSpecificParameters(const KinesisClientConfiguration& config) {
   if (!config.accountId.empty()) {
     SetStringParameter("AccountId", config.accountId);
   }
@@ -37,7 +45,6 @@ void KinesisBuiltInParameters::SetFromClientConfiguration(const KinesisClientCon
     SetStringParameter("AccountIdEndpointMode", config.accountIdEndpointMode);
   }
 }
-
 }  // namespace Endpoint
 }  // namespace Kinesis
 }  // namespace Aws

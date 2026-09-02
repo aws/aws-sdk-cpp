@@ -299,7 +299,7 @@ void S3CrtClient::init(const S3Crt::ClientConfiguration& config,
   }
   m_endpointProvider = Aws::MakeShared<S3CrtEndpointProvider>(ALLOCATION_TAG);
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "s3");
 
   // initialize aws_s3_client;
   aws_s3_client_config s3CrtConfig;

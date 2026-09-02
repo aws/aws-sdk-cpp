@@ -32,6 +32,11 @@ void TimestreamQueryBuiltInParameters::SetFromClientConfiguration(const Timestre
   SetFromClientConfiguration(static_cast<const TimestreamQueryClientConfiguration::BaseClientConfigClass&>(config));
 }
 
+void TimestreamQueryBuiltInParameters::SetFromClientConfiguration(const TimestreamQueryClientConfiguration& config,
+                                                                  const Aws::String& serviceName) {
+  SetFromClientConfiguration(static_cast<const TimestreamQueryClientConfiguration::BaseClientConfigClass&>(config), serviceName);
+}
+
 }  // namespace Endpoint
 }  // namespace TimestreamQuery
 }  // namespace Aws

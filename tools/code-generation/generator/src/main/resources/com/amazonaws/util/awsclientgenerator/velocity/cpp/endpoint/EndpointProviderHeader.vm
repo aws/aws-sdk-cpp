@@ -13,6 +13,16 @@
 #else
 #set($epProviderType = "DefaultEndpointProvider")
 #end
+#set($hasServiceSpecificEpParams = false)
+#if($serviceModel.metadata.serviceId == "S3" || $serviceModel.metadata.serviceId == "S3 Control")
+#set($hasServiceSpecificEpParams = true)
+#end
+#if($serviceModel.endpointRuleSetModel.parameters.containsKey("AccountId"))
+#set($hasServiceSpecificEpParams = true)
+#end
+#if($serviceModel.endpointRuleSetModel.parameters.containsKey("AccountIdEndpointMode"))
+#set($hasServiceSpecificEpParams = true)
+#end
 #pragma once
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}_EXPORTS.h>
 #if($serviceModel.hasServiceSpecificClientConfig())
@@ -77,11 +87,11 @@ public:
     virtual ~${epBuiltInClassName}(){};
     using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
     virtual void SetFromClientConfiguration(const ${metadata.classNamePrefix}ClientConfiguration& config);
-#if($serviceModel.metadata.serviceId == "S3")
     virtual void SetFromClientConfiguration(const ${metadata.classNamePrefix}ClientConfiguration& config, const Aws::String& serviceName);
+#if($hasServiceSpecificEpParams)
 
 private:
-    void SetS3SpecificParameters(const ${metadata.classNamePrefix}ClientConfiguration& config);
+    void SetServiceSpecificParameters(const ${metadata.classNamePrefix}ClientConfiguration& config);
 #end
 };
 #else
