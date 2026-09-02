@@ -259,9 +259,8 @@ public final class GlobalTransforms {
         List<Shape> replacements = new ArrayList<>();
         replacements.add(responseMetadata);
 
-        TopDownIndex index = TopDownIndex.of(model);
         Set<ShapeId> outputIds = new HashSet<>();
-        for (OperationShape op : index.getContainedOperations(service)) {
+        for (OperationShape op : nonDeprecatedOperations(model, service)) {
             op.getOutput().ifPresent(outputIds::add);
         }
 
