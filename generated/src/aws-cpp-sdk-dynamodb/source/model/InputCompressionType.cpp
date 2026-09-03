@@ -33,7 +33,6 @@ InputCompressionType GetInputCompressionTypeForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<InputCompressionType>(hashCode);
   }
-
   return InputCompressionType::NOT_SET;
 }
 
@@ -52,7 +51,6 @@ Aws::String GetNameForInputCompressionType(InputCompressionType enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

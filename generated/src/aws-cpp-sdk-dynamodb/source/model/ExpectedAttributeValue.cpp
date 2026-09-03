@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/ExpectedAttributeValue.h>
 
 #include <utility>
@@ -17,54 +20,10 @@ namespace Model {
 
 ExpectedAttributeValue::ExpectedAttributeValue(JsonView jsonValue) { *this = jsonValue; }
 
-ExpectedAttributeValue& ExpectedAttributeValue::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("Value")) {
-    m_value = jsonValue.GetObject("Value");
-    m_valueHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Exists")) {
-    m_exists = jsonValue.GetBool("Exists");
-    m_existsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ComparisonOperator")) {
-    m_comparisonOperator = ComparisonOperatorMapper::GetComparisonOperatorForName(jsonValue.GetString("ComparisonOperator"));
-    m_comparisonOperatorHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("AttributeValueList")) {
-    Aws::Utils::Array<JsonView> attributeValueListJsonList = jsonValue.GetArray("AttributeValueList");
-    for (unsigned attributeValueListIndex = 0; attributeValueListIndex < attributeValueListJsonList.GetLength();
-         ++attributeValueListIndex) {
-      m_attributeValueList.push_back(attributeValueListJsonList[attributeValueListIndex].AsObject());
-    }
-    m_attributeValueListHasBeenSet = true;
-  }
-  return *this;
-}
+ExpectedAttributeValue& ExpectedAttributeValue::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue ExpectedAttributeValue::Jsonize() const {
   JsonValue payload;
-
-  if (m_valueHasBeenSet) {
-    payload.WithObject("Value", m_value.Jsonize());
-  }
-
-  if (m_existsHasBeenSet) {
-    payload.WithBool("Exists", m_exists);
-  }
-
-  if (m_comparisonOperatorHasBeenSet) {
-    payload.WithString("ComparisonOperator", ComparisonOperatorMapper::GetNameForComparisonOperator(m_comparisonOperator));
-  }
-
-  if (m_attributeValueListHasBeenSet) {
-    Aws::Utils::Array<JsonValue> attributeValueListJsonList(m_attributeValueList.size());
-    for (unsigned attributeValueListIndex = 0; attributeValueListIndex < attributeValueListJsonList.GetLength();
-         ++attributeValueListIndex) {
-      attributeValueListJsonList[attributeValueListIndex].AsObject(m_attributeValueList[attributeValueListIndex].Jsonize());
-    }
-    payload.WithArray("AttributeValueList", std::move(attributeValueListJsonList));
-  }
-
   return payload;
 }
 

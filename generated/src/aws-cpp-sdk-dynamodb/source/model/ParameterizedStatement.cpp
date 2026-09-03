@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/ParameterizedStatement.h>
 
 #include <utility>
@@ -17,47 +20,10 @@ namespace Model {
 
 ParameterizedStatement::ParameterizedStatement(JsonView jsonValue) { *this = jsonValue; }
 
-ParameterizedStatement& ParameterizedStatement::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("Statement")) {
-    m_statement = jsonValue.GetString("Statement");
-    m_statementHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Parameters")) {
-    Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("Parameters");
-    for (unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex) {
-      m_parameters.push_back(parametersJsonList[parametersIndex].AsObject());
-    }
-    m_parametersHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ReturnValuesOnConditionCheckFailure")) {
-    m_returnValuesOnConditionCheckFailure = ReturnValuesOnConditionCheckFailureMapper::GetReturnValuesOnConditionCheckFailureForName(
-        jsonValue.GetString("ReturnValuesOnConditionCheckFailure"));
-    m_returnValuesOnConditionCheckFailureHasBeenSet = true;
-  }
-  return *this;
-}
+ParameterizedStatement& ParameterizedStatement::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue ParameterizedStatement::Jsonize() const {
   JsonValue payload;
-
-  if (m_statementHasBeenSet) {
-    payload.WithString("Statement", m_statement);
-  }
-
-  if (m_parametersHasBeenSet) {
-    Aws::Utils::Array<JsonValue> parametersJsonList(m_parameters.size());
-    for (unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex) {
-      parametersJsonList[parametersIndex].AsObject(m_parameters[parametersIndex].Jsonize());
-    }
-    payload.WithArray("Parameters", std::move(parametersJsonList));
-  }
-
-  if (m_returnValuesOnConditionCheckFailureHasBeenSet) {
-    payload.WithString(
-        "ReturnValuesOnConditionCheckFailure",
-        ReturnValuesOnConditionCheckFailureMapper::GetNameForReturnValuesOnConditionCheckFailure(m_returnValuesOnConditionCheckFailure));
-  }
-
   return payload;
 }
 

@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/VectorAttributeDefinition.h>
 
 #include <utility>
@@ -17,21 +20,10 @@ namespace Model {
 
 VectorAttributeDefinition::VectorAttributeDefinition(JsonView jsonValue) { *this = jsonValue; }
 
-VectorAttributeDefinition& VectorAttributeDefinition::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("AttributeName")) {
-    m_attributeName = jsonValue.GetString("AttributeName");
-    m_attributeNameHasBeenSet = true;
-  }
-  return *this;
-}
+VectorAttributeDefinition& VectorAttributeDefinition::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue VectorAttributeDefinition::Jsonize() const {
   JsonValue payload;
-
-  if (m_attributeNameHasBeenSet) {
-    payload.WithString("AttributeName", m_attributeName);
-  }
-
   return payload;
 }
 

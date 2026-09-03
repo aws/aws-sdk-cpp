@@ -89,7 +89,7 @@ class Condition {
    * than the one provided in the request, the value does not match. For example,
    * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
    * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.</p>
-   * <p/> </li> <li> <p> <code>NE</code> : Not equal. <code>NE</code> is supported
+   * <p></p> </li> <li> <p> <code>NE</code> : Not equal. <code>NE</code> is supported
    * for all data types, including lists and maps.</p> <p>
    * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
    * of type String, Number, Binary, String Set, Number Set, or Binary Set. If an
@@ -97,76 +97,76 @@ class Condition {
    * provided in the request, the value does not match. For example,
    * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
    * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.</p>
-   * <p/> </li> <li> <p> <code>LE</code> : Less than or equal. </p> <p>
+   * <p></p> </li> <li> <p> <code>LE</code> : Less than or equal. </p> <p>
    * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
    * element of type String, Number, or Binary (not a set type). If an item contains
    * an <code>AttributeValue</code> element of a different type than the one provided
    * in the request, the value does not match. For example, <code>{"S":"6"}</code>
    * does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
-   * compare to <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p>
+   * compare to <code>{"NS":["6", "2", "1"]}</code>.</p> <p></p> </li> <li> <p>
    * <code>LT</code> : Less than. </p> <p> <code>AttributeValueList</code> can
    * contain only one <code>AttributeValue</code> of type String, Number, or Binary
    * (not a set type). If an item contains an <code>AttributeValue</code> element of
    * a different type than the one provided in the request, the value does not match.
    * For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
    * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
-   * "1"]}</code>.</p> <p/> </li> <li> <p> <code>GE</code> : Greater than or equal.
-   * </p> <p> <code>AttributeValueList</code> can contain only one
+   * "1"]}</code>.</p> <p></p> </li> <li> <p> <code>GE</code> : Greater than or
+   * equal. </p> <p> <code>AttributeValueList</code> can contain only one
    * <code>AttributeValue</code> element of type String, Number, or Binary (not a set
    * type). If an item contains an <code>AttributeValue</code> element of a different
    * type than the one provided in the request, the value does not match. For
    * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
    * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
-   * "1"]}</code>.</p> <p/> </li> <li> <p> <code>GT</code> : Greater than. </p> <p>
-   * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
-   * element of type String, Number, or Binary (not a set type). If an item contains
-   * an <code>AttributeValue</code> element of a different type than the one provided
-   * in the request, the value does not match. For example, <code>{"S":"6"}</code>
-   * does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
-   * compare to <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p>
-   * <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported
-   * for all data types, including lists and maps.</p>  <p>This operator tests
-   * for the existence of an attribute, not its data type. If the data type of
-   * attribute "<code>a</code>" is null, and you evaluate it using
-   * <code>NOT_NULL</code>, the result is a Boolean <code>true</code>. This result is
+   * "1"]}</code>.</p> <p></p> </li> <li> <p> <code>GT</code> : Greater than. </p>
+   * <p> <code>AttributeValueList</code> can contain only one
+   * <code>AttributeValue</code> element of type String, Number, or Binary (not a set
+   * type). If an item contains an <code>AttributeValue</code> element of a different
+   * type than the one provided in the request, the value does not match. For
+   * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
+   * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
+   * "1"]}</code>.</p> <p></p> </li> <li> <p> <code>NOT_NULL</code> : The attribute
+   * exists. <code>NOT_NULL</code> is supported for all data types, including lists
+   * and maps.</p>  <p>This operator tests for the existence of an attribute, not its
+   * data type. If the data type of attribute "<code>a</code>" is null, and you
+   * evaluate it using <code>NOT_NULL</code>, the result is a Boolean
+   * <code>true</code>. This result is because the attribute "<code>a</code>" exists;
+   * its data type is not relevant to the <code>NOT_NULL</code> comparison
+   * operator.</p>  </li> <li> <p> <code>NULL</code> : The attribute does not exist.
+   * <code>NULL</code> is supported for all data types, including lists and maps.</p>
+   *  <p>This operator tests for the nonexistence of an attribute, not its data type.
+   * If the data type of attribute "<code>a</code>" is null, and you evaluate it
+   * using <code>NULL</code>, the result is a Boolean <code>false</code>. This is
    * because the attribute "<code>a</code>" exists; its data type is not relevant to
-   * the <code>NOT_NULL</code> comparison operator.</p>  </li> <li> <p>
-   * <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported
-   * for all data types, including lists and maps.</p>  <p>This operator tests
-   * for the nonexistence of an attribute, not its data type. If the data type of
-   * attribute "<code>a</code>" is null, and you evaluate it using <code>NULL</code>,
-   * the result is a Boolean <code>false</code>. This is because the attribute
-   * "<code>a</code>" exists; its data type is not relevant to the <code>NULL</code>
-   * comparison operator.</p>  </li> <li> <p> <code>CONTAINS</code> : Checks
-   * for a subsequence, or value in a set.</p> <p> <code>AttributeValueList</code>
-   * can contain only one <code>AttributeValue</code> element of type String, Number,
-   * or Binary (not a set type). If the target attribute of the comparison is of type
-   * String, then the operator checks for a substring match. If the target attribute
-   * of the comparison is of type Binary, then the operator looks for a subsequence
-   * of the target that matches the input. If the target attribute of the comparison
-   * is a set ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the
-   * operator evaluates to true if it finds an exact match with any member of the
-   * set.</p> <p>CONTAINS is supported for lists: When evaluating "<code>a CONTAINS
-   * b</code>", "<code>a</code>" can be a list; however, "<code>b</code>" cannot be a
-   * set, a map, or a list.</p> </li> <li> <p> <code>NOT_CONTAINS</code> : Checks for
-   * absence of a subsequence, or absence of a value in a set.</p> <p>
+   * the <code>NULL</code> comparison operator.</p>  </li> <li> <p>
+   * <code>CONTAINS</code> : Checks for a subsequence, or value in a set.</p> <p>
    * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
    * element of type String, Number, or Binary (not a set type). If the target
-   * attribute of the comparison is a String, then the operator checks for the
-   * absence of a substring match. If the target attribute of the comparison is
-   * Binary, then the operator checks for the absence of a subsequence of the target
-   * that matches the input. If the target attribute of the comparison is a set
-   * ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the operator
-   * evaluates to true if it <i>does not</i> find an exact match with any member of
-   * the set.</p> <p>NOT_CONTAINS is supported for lists: When evaluating "<code>a
-   * NOT CONTAINS b</code>", "<code>a</code>" can be a list; however,
-   * "<code>b</code>" cannot be a set, a map, or a list.</p> </li> <li> <p>
-   * <code>BEGINS_WITH</code> : Checks for a prefix. </p> <p>
+   * attribute of the comparison is of type String, then the operator checks for a
+   * substring match. If the target attribute of the comparison is of type Binary,
+   * then the operator looks for a subsequence of the target that matches the input.
+   * If the target attribute of the comparison is a set ("<code>SS</code>",
+   * "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to true if
+   * it finds an exact match with any member of the set.</p> <p>CONTAINS is supported
+   * for lists: When evaluating "<code>a CONTAINS b</code>", "<code>a</code>" can be
+   * a list; however, "<code>b</code>" cannot be a set, a map, or a list.</p> </li>
+   * <li> <p> <code>NOT_CONTAINS</code> : Checks for absence of a subsequence, or
+   * absence of a value in a set.</p> <p> <code>AttributeValueList</code> can contain
+   * only one <code>AttributeValue</code> element of type String, Number, or Binary
+   * (not a set type). If the target attribute of the comparison is a String, then
+   * the operator checks for the absence of a substring match. If the target
+   * attribute of the comparison is Binary, then the operator checks for the absence
+   * of a subsequence of the target that matches the input. If the target attribute
+   * of the comparison is a set ("<code>SS</code>", "<code>NS</code>", or
+   * "<code>BS</code>"), then the operator evaluates to true if it <i>does not</i>
+   * find an exact match with any member of the set.</p> <p>NOT_CONTAINS is supported
+   * for lists: When evaluating "<code>a NOT CONTAINS b</code>", "<code>a</code>" can
+   * be a list; however, "<code>b</code>" cannot be a set, a map, or a list.</p>
+   * </li> <li> <p> <code>BEGINS_WITH</code> : Checks for a prefix. </p> <p>
    * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
    * of type String or Binary (not a Number or a set type). The target attribute of
    * the comparison must be of type String or Binary (not a Number or a set
-   * type).</p> <p/> </li> <li> <p> <code>IN</code> : Checks for matching elements in
-   * a list.</p> <p> <code>AttributeValueList</code> can contain one or more
+   * type).</p> <p></p> </li> <li> <p> <code>IN</code> : Checks for matching elements
+   * in a list.</p> <p> <code>AttributeValueList</code> can contain one or more
    * <code>AttributeValue</code> elements of type String, Number, or Binary. These
    * attributes are compared against an existing attribute of an item. If any
    * elements of the input are equal to the item attribute, the expression evaluates

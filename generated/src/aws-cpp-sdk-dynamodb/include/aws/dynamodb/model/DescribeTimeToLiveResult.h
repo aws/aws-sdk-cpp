@@ -30,7 +30,7 @@ class DescribeTimeToLiveResult {
 
   ///@{
   /**
-   * <p/>
+   * <p></p>
    */
   inline const TimeToLiveDescription& GetTimeToLiveDescription() const { return m_timeToLiveDescription; }
   template <typename TimeToLiveDescriptionT = TimeToLiveDescription>

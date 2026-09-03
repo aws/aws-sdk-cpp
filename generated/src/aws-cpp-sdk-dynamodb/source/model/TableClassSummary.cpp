@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/TableClassSummary.h>
 
 #include <utility>
@@ -17,29 +20,10 @@ namespace Model {
 
 TableClassSummary::TableClassSummary(JsonView jsonValue) { *this = jsonValue; }
 
-TableClassSummary& TableClassSummary::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("TableClass")) {
-    m_tableClass = TableClassMapper::GetTableClassForName(jsonValue.GetString("TableClass"));
-    m_tableClassHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("LastUpdateDateTime")) {
-    m_lastUpdateDateTime = jsonValue.GetDouble("LastUpdateDateTime");
-    m_lastUpdateDateTimeHasBeenSet = true;
-  }
-  return *this;
-}
+TableClassSummary& TableClassSummary::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue TableClassSummary::Jsonize() const {
   JsonValue payload;
-
-  if (m_tableClassHasBeenSet) {
-    payload.WithString("TableClass", TableClassMapper::GetNameForTableClass(m_tableClass));
-  }
-
-  if (m_lastUpdateDateTimeHasBeenSet) {
-    payload.WithDouble("LastUpdateDateTime", m_lastUpdateDateTime.SecondsWithMSPrecision());
-  }
-
   return payload;
 }
 

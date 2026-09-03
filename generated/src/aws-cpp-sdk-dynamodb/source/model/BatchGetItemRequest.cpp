@@ -3,32 +3,22 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/BatchGetItemRequest.h>
 
+#include <numeric>
 #include <utility>
 
 using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String BatchGetItemRequest::SerializePayload() const {
-  JsonValue payload;
-
-  if (m_requestItemsHasBeenSet) {
-    JsonValue requestItemsJsonMap;
-    for (auto& requestItemsItem : m_requestItems) {
-      requestItemsJsonMap.WithObject(requestItemsItem.first, requestItemsItem.second.Jsonize());
-    }
-    payload.WithObject("RequestItems", std::move(requestItemsJsonMap));
-  }
-
-  if (m_returnConsumedCapacityHasBeenSet) {
-    payload.WithString("ReturnConsumedCapacity", ReturnConsumedCapacityMapper::GetNameForReturnConsumedCapacity(m_returnConsumedCapacity));
-  }
-
-  return payload.View().WriteReadable();
-}
+Aws::String BatchGetItemRequest::SerializePayload() const { return "{}"; }
 
 Aws::Http::HeaderValueCollection BatchGetItemRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;

@@ -30,7 +30,6 @@ SearchSchemaElementType GetSearchSchemaElementTypeForName(const Aws::String& nam
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<SearchSchemaElementType>(hashCode);
   }
-
   return SearchSchemaElementType::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForSearchSchemaElementType(SearchSchemaElementType enumValue)
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

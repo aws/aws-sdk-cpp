@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/InputFormatOptions.h>
 
 #include <utility>
@@ -17,21 +20,10 @@ namespace Model {
 
 InputFormatOptions::InputFormatOptions(JsonView jsonValue) { *this = jsonValue; }
 
-InputFormatOptions& InputFormatOptions::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("Csv")) {
-    m_csv = jsonValue.GetObject("Csv");
-    m_csvHasBeenSet = true;
-  }
-  return *this;
-}
+InputFormatOptions& InputFormatOptions::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue InputFormatOptions::Jsonize() const {
   JsonValue payload;
-
-  if (m_csvHasBeenSet) {
-    payload.WithObject("Csv", m_csv.Jsonize());
-  }
-
   return payload;
 }
 

@@ -67,38 +67,38 @@ namespace Model {
  * <code>ProvisionedThroughputExceeded</code> </p> </li> <li> <p>Messages:</p> <ul>
  * <li> <p>The level of configured provisioned throughput for the table was
  * exceeded. Consider increasing your provisioning level with the UpdateTable
- * API.</p>  <p>This Message is received when provisioned throughput is
- * exceeded is on a provisioned DynamoDB table.</p>  </li> <li> <p>The level
- * of configured provisioned throughput for one or more global secondary indexes of
- * the table was exceeded. Consider increasing your provisioning level for the
- * under-provisioned global secondary indexes with the UpdateTable API.</p>
- * <p>This message is returned when provisioned throughput is exceeded is on a
- * provisioned GSI.</p>  </li> </ul> </li> </ul> </li> <li> <p>Throttling
- * Error:</p> <ul> <li> <p>Code: <code>ThrottlingError</code> </p> </li> <li>
- * <p>Messages: </p> <ul> <li> <p>Throughput exceeds the current capacity of your
- * table or index. DynamoDB is automatically scaling your table or index so please
- * try again shortly. If exceptions persist, check if you have a hot key:
+ * API.</p>  <p>This Message is received when provisioned throughput is exceeded is
+ * on a provisioned DynamoDB table.</p>  </li> <li> <p>The level of configured
+ * provisioned throughput for one or more global secondary indexes of the table was
+ * exceeded. Consider increasing your provisioning level for the under-provisioned
+ * global secondary indexes with the UpdateTable API.</p>  <p>This message is
+ * returned when provisioned throughput is exceeded is on a provisioned GSI.</p>
+ * </li> </ul> </li> </ul> </li> <li> <p>Throttling Error:</p> <ul> <li> <p>Code:
+ * <code>ThrottlingError</code> </p> </li> <li> <p>Messages: </p> <ul> <li>
+ * <p>Throughput exceeds the current capacity of your table or index. DynamoDB is
+ * automatically scaling your table or index so please try again shortly. If
+ * exceptions persist, check if you have a hot key:
  * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html.</p>
- *  <p>This message is returned when writes get throttled on an On-Demand
- * table as DynamoDB is automatically scaling the table.</p>  </li> <li>
- * <p>Throughput exceeds the current capacity for one or more global secondary
- * indexes. DynamoDB is automatically scaling your index so please try again
- * shortly.</p>  <p>This message is returned when writes get throttled on an
- * On-Demand GSI as DynamoDB is automatically scaling the GSI.</p>  </li>
- * </ul> </li> </ul> </li> <li> <p>Validation Error:</p> <ul> <li> <p>Code:
- * <code>ValidationError</code> </p> </li> <li> <p>Messages: </p> <ul> <li> <p>One
- * or more parameter values were invalid.</p> </li> <li> <p>The update expression
- * attempted to update the secondary index key beyond allowed size limits.</p>
- * </li> <li> <p>The update expression attempted to update the secondary index key
- * to unsupported type.</p> </li> <li> <p>An operand in the update expression has
- * an incorrect data type.</p> </li> <li> <p>Item size to update has exceeded the
- * maximum allowed size.</p> </li> <li> <p>Number overflow. Attempting to store a
- * number with magnitude larger than supported range.</p> </li> <li> <p>Type
- * mismatch for attribute to update.</p> </li> <li> <p>Nesting Levels have exceeded
- * supported limits.</p> </li> <li> <p>The document path provided in the update
- * expression is invalid for update.</p> </li> <li> <p>The provided expression
- * refers to an attribute that does not exist in the item.</p> </li> </ul> </li>
- * </ul> </li> </ul><p><h3>See Also:</h3>   <a
+ *  <p>This message is returned when writes get throttled on an On-Demand table as
+ * DynamoDB is automatically scaling the table.</p>  </li> <li> <p>Throughput
+ * exceeds the current capacity for one or more global secondary indexes. DynamoDB
+ * is automatically scaling your index so please try again shortly.</p>  <p>This
+ * message is returned when writes get throttled on an On-Demand GSI as DynamoDB is
+ * automatically scaling the GSI.</p>  </li> </ul> </li> </ul> </li> <li>
+ * <p>Validation Error:</p> <ul> <li> <p>Code: <code>ValidationError</code> </p>
+ * </li> <li> <p>Messages: </p> <ul> <li> <p>One or more parameter values were
+ * invalid.</p> </li> <li> <p>The update expression attempted to update the
+ * secondary index key beyond allowed size limits.</p> </li> <li> <p>The update
+ * expression attempted to update the secondary index key to unsupported type.</p>
+ * </li> <li> <p>An operand in the update expression has an incorrect data
+ * type.</p> </li> <li> <p>Item size to update has exceeded the maximum allowed
+ * size.</p> </li> <li> <p>Number overflow. Attempting to store a number with
+ * magnitude larger than supported range.</p> </li> <li> <p>Type mismatch for
+ * attribute to update.</p> </li> <li> <p>Nesting Levels have exceeded supported
+ * limits.</p> </li> <li> <p>The document path provided in the update expression is
+ * invalid for update.</p> </li> <li> <p>The provided expression refers to an
+ * attribute that does not exist in the item.</p> </li> </ul> </li> </ul> </li>
+ * </ul><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TransactionCanceledException">AWS
  * API Reference</a></p>
  */

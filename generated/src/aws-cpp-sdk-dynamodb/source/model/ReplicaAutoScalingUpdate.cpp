@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/ReplicaAutoScalingUpdate.h>
 
 #include <utility>
@@ -17,50 +20,10 @@ namespace Model {
 
 ReplicaAutoScalingUpdate::ReplicaAutoScalingUpdate(JsonView jsonValue) { *this = jsonValue; }
 
-ReplicaAutoScalingUpdate& ReplicaAutoScalingUpdate::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("RegionName")) {
-    m_regionName = jsonValue.GetString("RegionName");
-    m_regionNameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ReplicaGlobalSecondaryIndexUpdates")) {
-    Aws::Utils::Array<JsonView> replicaGlobalSecondaryIndexUpdatesJsonList = jsonValue.GetArray("ReplicaGlobalSecondaryIndexUpdates");
-    for (unsigned replicaGlobalSecondaryIndexUpdatesIndex = 0;
-         replicaGlobalSecondaryIndexUpdatesIndex < replicaGlobalSecondaryIndexUpdatesJsonList.GetLength();
-         ++replicaGlobalSecondaryIndexUpdatesIndex) {
-      m_replicaGlobalSecondaryIndexUpdates.push_back(
-          replicaGlobalSecondaryIndexUpdatesJsonList[replicaGlobalSecondaryIndexUpdatesIndex].AsObject());
-    }
-    m_replicaGlobalSecondaryIndexUpdatesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ReplicaProvisionedReadCapacityAutoScalingUpdate")) {
-    m_replicaProvisionedReadCapacityAutoScalingUpdate = jsonValue.GetObject("ReplicaProvisionedReadCapacityAutoScalingUpdate");
-    m_replicaProvisionedReadCapacityAutoScalingUpdateHasBeenSet = true;
-  }
-  return *this;
-}
+ReplicaAutoScalingUpdate& ReplicaAutoScalingUpdate::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue ReplicaAutoScalingUpdate::Jsonize() const {
   JsonValue payload;
-
-  if (m_regionNameHasBeenSet) {
-    payload.WithString("RegionName", m_regionName);
-  }
-
-  if (m_replicaGlobalSecondaryIndexUpdatesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> replicaGlobalSecondaryIndexUpdatesJsonList(m_replicaGlobalSecondaryIndexUpdates.size());
-    for (unsigned replicaGlobalSecondaryIndexUpdatesIndex = 0;
-         replicaGlobalSecondaryIndexUpdatesIndex < replicaGlobalSecondaryIndexUpdatesJsonList.GetLength();
-         ++replicaGlobalSecondaryIndexUpdatesIndex) {
-      replicaGlobalSecondaryIndexUpdatesJsonList[replicaGlobalSecondaryIndexUpdatesIndex].AsObject(
-          m_replicaGlobalSecondaryIndexUpdates[replicaGlobalSecondaryIndexUpdatesIndex].Jsonize());
-    }
-    payload.WithArray("ReplicaGlobalSecondaryIndexUpdates", std::move(replicaGlobalSecondaryIndexUpdatesJsonList));
-  }
-
-  if (m_replicaProvisionedReadCapacityAutoScalingUpdateHasBeenSet) {
-    payload.WithObject("ReplicaProvisionedReadCapacityAutoScalingUpdate", m_replicaProvisionedReadCapacityAutoScalingUpdate.Jsonize());
-  }
-
   return payload;
 }
 

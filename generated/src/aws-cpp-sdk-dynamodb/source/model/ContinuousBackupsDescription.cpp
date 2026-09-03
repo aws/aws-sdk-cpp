@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/ContinuousBackupsDescription.h>
 
 #include <utility>
@@ -17,31 +20,10 @@ namespace Model {
 
 ContinuousBackupsDescription::ContinuousBackupsDescription(JsonView jsonValue) { *this = jsonValue; }
 
-ContinuousBackupsDescription& ContinuousBackupsDescription::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("ContinuousBackupsStatus")) {
-    m_continuousBackupsStatus =
-        ContinuousBackupsStatusMapper::GetContinuousBackupsStatusForName(jsonValue.GetString("ContinuousBackupsStatus"));
-    m_continuousBackupsStatusHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("PointInTimeRecoveryDescription")) {
-    m_pointInTimeRecoveryDescription = jsonValue.GetObject("PointInTimeRecoveryDescription");
-    m_pointInTimeRecoveryDescriptionHasBeenSet = true;
-  }
-  return *this;
-}
+ContinuousBackupsDescription& ContinuousBackupsDescription::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue ContinuousBackupsDescription::Jsonize() const {
   JsonValue payload;
-
-  if (m_continuousBackupsStatusHasBeenSet) {
-    payload.WithString("ContinuousBackupsStatus",
-                       ContinuousBackupsStatusMapper::GetNameForContinuousBackupsStatus(m_continuousBackupsStatus));
-  }
-
-  if (m_pointInTimeRecoveryDescriptionHasBeenSet) {
-    payload.WithObject("PointInTimeRecoveryDescription", m_pointInTimeRecoveryDescription.Jsonize());
-  }
-
   return payload;
 }
 
