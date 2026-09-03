@@ -33,7 +33,6 @@ ObjectOwnership GetObjectOwnershipForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<ObjectOwnership>(hashCode);
   }
-
   return ObjectOwnership::NOT_SET;
 }
 
@@ -52,7 +51,6 @@ Aws::String GetNameForObjectOwnership(ObjectOwnership enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

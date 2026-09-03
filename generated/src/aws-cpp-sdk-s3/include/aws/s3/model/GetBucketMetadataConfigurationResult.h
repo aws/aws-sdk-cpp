@@ -29,7 +29,6 @@ class GetBucketMetadataConfigurationResult {
   AWS_S3_API GetBucketMetadataConfigurationResult() = default;
   AWS_S3_API GetBucketMetadataConfigurationResult(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API GetBucketMetadataConfigurationResult& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

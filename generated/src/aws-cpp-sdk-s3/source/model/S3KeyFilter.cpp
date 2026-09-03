@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/S3KeyFilter.h>
@@ -19,35 +20,9 @@ namespace Model {
 
 S3KeyFilter::S3KeyFilter(const XmlNode& xmlNode) { *this = xmlNode; }
 
-S3KeyFilter& S3KeyFilter::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+S3KeyFilter& S3KeyFilter::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode filterRulesNode = resultNode.FirstChild("FilterRule");
-    if (!filterRulesNode.IsNull()) {
-      XmlNode filterRuleMember = filterRulesNode;
-      m_filterRulesHasBeenSet = !filterRuleMember.IsNull();
-      while (!filterRuleMember.IsNull()) {
-        m_filterRules.push_back(filterRuleMember);
-        filterRuleMember = filterRuleMember.NextNode("FilterRule");
-      }
-
-      m_filterRulesHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void S3KeyFilter::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_filterRulesHasBeenSet) {
-    for (const auto& item : m_filterRules) {
-      XmlNode filterRulesNode = parentNode.CreateChildElement("FilterRule");
-      item.AddToNode(filterRulesNode);
-    }
-  }
-}
+void S3KeyFilter::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

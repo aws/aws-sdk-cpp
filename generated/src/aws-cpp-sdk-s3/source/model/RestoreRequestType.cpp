@@ -27,7 +27,6 @@ RestoreRequestType GetRestoreRequestTypeForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<RestoreRequestType>(hashCode);
   }
-
   return RestoreRequestType::NOT_SET;
 }
 
@@ -42,7 +41,6 @@ Aws::String GetNameForRestoreRequestType(RestoreRequestType enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

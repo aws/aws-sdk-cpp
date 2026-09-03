@@ -31,16 +31,15 @@ class SSEKMSEncryption {
   AWS_S3_API SSEKMSEncryption() = default;
   AWS_S3_API SSEKMSEncryption(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API SSEKMSEncryption& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{
   /**
    * <p> Specifies the Amazon Web Services KMS key Amazon Resource Name (ARN) to use
    * for the updated server-side encryption type. Required if
-   * <code>ObjectEncryption</code> specifies <code>SSEKMS</code>. </p>  <p>You
-   * must specify the full Amazon Web Services KMS key ARN. The KMS key ID and KMS
-   * key alias aren't supported.</p>  <p>Pattern:
+   * <code>ObjectEncryption</code> specifies <code>SSEKMS</code>. </p>  <p>You must
+   * specify the full Amazon Web Services KMS key ARN. The KMS key ID and KMS key
+   * alias aren't supported.</p>  <p>Pattern:
    * (<code>arn:aws[-a-z0-9]*:kms:[-a-z0-9]*:[0-9]{12}:key/.+</code>)</p>
    */
   inline const Aws::String& GetKMSKeyArn() const { return m_kMSKeyArn; }

@@ -72,8 +72,8 @@ class GetObjectAttributesResult {
 
   ///@{
   /**
-   * <p>The version ID of the object.</p>  <p>This functionality is not
-   * supported for directory buckets.</p>
+   * <p>The version ID of the object.</p>  <p>This functionality is not supported for
+   * directory buckets.</p>
    */
   inline const Aws::String& GetVersionId() const { return m_versionId; }
   template <typename VersionIdT = Aws::String>
@@ -159,8 +159,8 @@ class GetObjectAttributesResult {
    * header for all objects except for S3 Standard storage class objects.</p> <p>For
    * more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-   * Classes</a>.</p>  <p> <b>Directory buckets</b> - Directory buckets only
-   * support <code>EXPRESS_ONEZONE</code> (the S3 Express One Zone storage class) in
+   * Classes</a>.</p>  <p> <b>Directory buckets</b> - Directory buckets only support
+   * <code>EXPRESS_ONEZONE</code> (the S3 Express One Zone storage class) in
    * Availability Zones and <code>ONEZONE_IA</code> (the S3 One Zone-Infrequent
    * Access storage class) in Dedicated Local Zones.</p>
    */

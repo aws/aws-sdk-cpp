@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/AbortIncompleteMultipartUpload.h>
@@ -19,30 +20,9 @@ namespace Model {
 
 AbortIncompleteMultipartUpload::AbortIncompleteMultipartUpload(const XmlNode& xmlNode) { *this = xmlNode; }
 
-AbortIncompleteMultipartUpload& AbortIncompleteMultipartUpload::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+AbortIncompleteMultipartUpload& AbortIncompleteMultipartUpload::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode daysAfterInitiationNode = resultNode.FirstChild("DaysAfterInitiation");
-    if (!daysAfterInitiationNode.IsNull()) {
-      m_daysAfterInitiation = StringUtils::ConvertToInt32(
-          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(daysAfterInitiationNode.GetText()).c_str()).c_str());
-      m_daysAfterInitiationHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void AbortIncompleteMultipartUpload::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_daysAfterInitiationHasBeenSet) {
-    XmlNode daysAfterInitiationNode = parentNode.CreateChildElement("DaysAfterInitiation");
-    ss << m_daysAfterInitiation;
-    daysAfterInitiationNode.SetText(ss.str());
-    ss.str("");
-  }
-}
+void AbortIncompleteMultipartUpload::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

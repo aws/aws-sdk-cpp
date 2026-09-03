@@ -30,7 +30,6 @@ class JournalTableConfiguration {
   AWS_S3_API JournalTableConfiguration() = default;
   AWS_S3_API JournalTableConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API JournalTableConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

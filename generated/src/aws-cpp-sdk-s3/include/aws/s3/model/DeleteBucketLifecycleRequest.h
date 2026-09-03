@@ -12,9 +12,6 @@
 #include <utility>
 
 namespace Aws {
-namespace Http {
-class URI;
-}  // namespace Http
 namespace S3 {
 namespace Model {
 
@@ -32,11 +29,12 @@ class DeleteBucketLifecycleRequest : public S3Request {
 
   AWS_S3_API Aws::String SerializePayload() const override;
 
-  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
   AWS_S3_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
   AWS_S3_API bool HasEmbeddedError(IOStream& body, const Http::HeaderValueCollection& header) const override;
+
   /**
    * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
    */
@@ -64,9 +62,9 @@ class DeleteBucketLifecycleRequest : public S3Request {
   /**
    * <p>The account ID of the expected bucket owner. If the account ID that you
    * provide does not match the actual owner of the bucket, the request fails with
-   * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-   * <p>This parameter applies to general purpose buckets only. It is not supported
-   * for directory bucket lifecycle configurations.</p>
+   * the HTTP status code <code>403 Forbidden</code> (access denied).</p>  <p>This
+   * parameter applies to general purpose buckets only. It is not supported for
+   * directory bucket lifecycle configurations.</p>
    */
   inline const Aws::String& GetExpectedBucketOwner() const { return m_expectedBucketOwner; }
   inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }

@@ -36,7 +36,6 @@ class Object {
   AWS_S3_API Object() = default;
   AWS_S3_API Object(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API Object& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{
@@ -92,8 +91,8 @@ class Object {
    * ETag is not an MD5 digest, regardless of the method of encryption. If an object
    * is larger than 16 MB, the Amazon Web Services Management Console will upload or
    * copy that object as a Multipart Upload, and therefore the ETag will not be an
-   * MD5 digest.</p> </li> </ul>  <p> <b>Directory buckets</b> - MD5 is not
-   * supported by directory buckets.</p>
+   * MD5 digest.</p> </li> </ul>  <p> <b>Directory buckets</b> - MD5 is not supported
+   * by directory buckets.</p>
    */
   inline const Aws::String& GetETag() const { return m_eTag; }
   inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
@@ -189,8 +188,8 @@ class Object {
 
   ///@{
   /**
-   * <p>The owner of the object</p>  <p> <b>Directory buckets</b> - The bucket
-   * owner is returned as the object owner.</p>
+   * <p>The owner of the object</p>  <p> <b>Directory buckets</b> - The bucket owner
+   * is returned as the object owner.</p>
    */
   inline const Owner& GetOwner() const { return m_owner; }
   inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }

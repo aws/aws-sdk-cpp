@@ -33,7 +33,6 @@ class AnalyticsFilter {
   AWS_S3_API AnalyticsFilter() = default;
   AWS_S3_API AnalyticsFilter(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API AnalyticsFilter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

@@ -31,7 +31,6 @@ class ReplicationConfiguration {
   AWS_S3_API ReplicationConfiguration() = default;
   AWS_S3_API ReplicationConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API ReplicationConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

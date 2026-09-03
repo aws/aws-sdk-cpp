@@ -35,15 +35,13 @@ class LifecycleRuleFilter {
   AWS_S3_API LifecycleRuleFilter() = default;
   AWS_S3_API LifecycleRuleFilter(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API LifecycleRuleFilter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{
   /**
    * <p>Prefix identifying one or more objects to which the rule applies.</p>
-   *  <p>Replacement must be made for object keys containing special
-   * characters (such as carriage returns) when using XML requests. For more
-   * information, see <a
+   * <p>Replacement must be made for object keys containing special characters (such
+   * as carriage returns) when using XML requests. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
    * XML related object key constraints</a>.</p>
    */
@@ -64,8 +62,8 @@ class LifecycleRuleFilter {
   ///@{
   /**
    * <p>This tag must exist in the object's tag set in order for the rule to
-   * apply.</p>  <p>This parameter applies to general purpose buckets only. It
-   * is not supported for directory bucket lifecycle configurations.</p>
+   * apply.</p>  <p>This parameter applies to general purpose buckets only. It is not
+   * supported for directory bucket lifecycle configurations.</p>
    */
   inline const Tag& GetTag() const { return m_tag; }
   inline bool TagHasBeenSet() const { return m_tagHasBeenSet; }

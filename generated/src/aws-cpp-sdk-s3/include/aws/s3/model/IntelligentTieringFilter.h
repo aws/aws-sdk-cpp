@@ -31,15 +31,14 @@ class IntelligentTieringFilter {
   AWS_S3_API IntelligentTieringFilter() = default;
   AWS_S3_API IntelligentTieringFilter(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API IntelligentTieringFilter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{
   /**
    * <p>An object key name prefix that identifies the subset of objects to which the
-   * rule applies.</p>  <p>Replacement must be made for object keys
-   * containing special characters (such as carriage returns) when using XML
-   * requests. For more information, see <a
+   * rule applies.</p>  <p>Replacement must be made for object keys containing
+   * special characters (such as carriage returns) when using XML requests. For more
+   * information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
    * XML related object key constraints</a>.</p>
    */

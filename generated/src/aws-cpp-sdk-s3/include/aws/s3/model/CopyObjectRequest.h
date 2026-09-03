@@ -23,9 +23,6 @@
 #include <utility>
 
 namespace Aws {
-namespace Http {
-class URI;
-}  // namespace Http
 namespace S3 {
 namespace Model {
 
@@ -43,11 +40,12 @@ class CopyObjectRequest : public S3Request {
 
   AWS_S3_API Aws::String SerializePayload() const override;
 
-  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
   AWS_S3_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
   AWS_S3_API bool HasEmbeddedError(IOStream& body, const Http::HeaderValueCollection& header) const override;
+
   /**
    * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
    */
@@ -70,12 +68,11 @@ class CopyObjectRequest : public S3Request {
    * ACL expressed in the XML format. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling
    * ownership of objects and disabling ACLs</a> in the <i>Amazon S3 User
-   * Guide</i>.</p>  <ul> <li> <p>If your destination bucket uses the bucket
-   * owner enforced setting for Object Ownership, all objects written to the bucket
-   * by any account will be owned by the bucket owner.</p> </li> <li> <p>This
-   * functionality is not supported for directory buckets.</p> </li> <li> <p>This
-   * functionality is not supported for Amazon S3 on Outposts.</p> </li> </ul>
-   *
+   * Guide</i>.</p>  <ul> <li> <p>If your destination bucket uses the bucket owner
+   * enforced setting for Object Ownership, all objects written to the bucket by any
+   * account will be owned by the bucket owner.</p> </li> <li> <p>This functionality
+   * is not supported for directory buckets.</p> </li> <li> <p>This functionality is
+   * not supported for Amazon S3 on Outposts.</p> </li> </ul>
    */
   inline ObjectCannedACL GetACL() const { return m_aCL; }
   inline bool ACLHasBeenSet() const { return m_aCLHasBeenSet; }
@@ -101,31 +98,31 @@ class CopyObjectRequest : public S3Request {
    * <code> <i>amzn-s3-demo-bucket</i>--<i>usw2-az1</i>--x-s3</code>). For
    * information about bucket naming restrictions, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
-   * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>
-   * <p>Copying objects across different Amazon Web Services Regions isn't supported
-   * when the source or destination bucket is in Amazon Web Services Local Zones. The
-   * source and destination buckets must have the same parent Amazon Web Services
-   * Region. Otherwise, you get an HTTP <code>400 Bad Request</code> error with the
-   * error code <code>InvalidRequest</code>.</p>  <p> <b>Access points</b> -
-   * When you use this action with an access point for general purpose buckets, you
-   * must provide the alias of the access point in place of the bucket name or
-   * specify the access point ARN. When you use this action with an access point for
-   * directory buckets, you must provide the access point name in place of the bucket
-   * name. When using the access point ARN, you must direct requests to the access
-   * point hostname. The access point hostname takes the form
+   * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>Copying
+   * objects across different Amazon Web Services Regions isn't supported when the
+   * source or destination bucket is in Amazon Web Services Local Zones. The source
+   * and destination buckets must have the same parent Amazon Web Services Region.
+   * Otherwise, you get an HTTP <code>400 Bad Request</code> error with the error
+   * code <code>InvalidRequest</code>.</p>  <p> <b>Access points</b> - When you use
+   * this action with an access point for general purpose buckets, you must provide
+   * the alias of the access point in place of the bucket name or specify the access
+   * point ARN. When you use this action with an access point for directory buckets,
+   * you must provide the access point name in place of the bucket name. When using
+   * the access point ARN, you must direct requests to the access point hostname. The
+   * access point hostname takes the form
    * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
    * When using this action with an access point through the Amazon Web Services
    * SDKs, you provide the access point ARN in place of the bucket name. For more
    * information about access point ARNs, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-   * access points</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>Object
-   * Lambda access points are not supported by directory buckets.</p>  <p>
-   * <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must
-   * use the Outpost bucket access point ARN or the access point alias for the
-   * destination bucket. You can only copy objects within the same Outpost bucket.
-   * It's not supported to copy objects across different Amazon Web Services
-   * Outposts, between buckets on the same Outposts, or between Outposts buckets and
-   * any other bucket types. For more information about S3 on Outposts, see <a
+   * access points</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>Object Lambda
+   * access points are not supported by directory buckets.</p>  <p> <b>S3 on
+   * Outposts</b> - When you use this action with S3 on Outposts, you must use the
+   * Outpost bucket access point ARN or the access point alias for the destination
+   * bucket. You can only copy objects within the same Outpost bucket. It's not
+   * supported to copy objects across different Amazon Web Services Outposts, between
+   * buckets on the same Outposts, or between Outposts buckets and any other bucket
+   * types. For more information about S3 on Outposts, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
    * is S3 on Outposts?</a> in the <i>S3 on Outposts guide</i>. When you use this
    * action with S3 on Outposts through the REST API, you must direct requests to the
@@ -179,9 +176,9 @@ class CopyObjectRequest : public S3Request {
    * it's present on the source object). You can optionally specify a different
    * checksum algorithm to use with the <code>x-amz-checksum-algorithm</code> header.
    * Unrecognized or unsupported values will respond with the HTTP status code
-   * <code>400 Bad Request</code>.</p>  <p>For directory buckets, when you use
-   * Amazon Web Services SDKs, <code>CRC32</code> is the default checksum algorithm
-   * that's used for performance.</p>
+   * <code>400 Bad Request</code>.</p>  <p>For directory buckets, when you use Amazon
+   * Web Services SDKs, <code>CRC32</code> is the default checksum algorithm that's
+   * used for performance.</p>
    */
   inline ChecksumAlgorithm GetChecksumAlgorithm() const { return m_checksumAlgorithm; }
   inline bool ChecksumAlgorithmHasBeenSet() const { return m_checksumAlgorithmHasBeenSet; }
@@ -293,7 +290,7 @@ class CopyObjectRequest : public S3Request {
    * must be URL-encoded.</p> </li> <li> <p>For objects accessed through access
    * points, specify the Amazon Resource Name (ARN) of the object as accessed through
    * the access point, in the format
-   * <code>arn:aws:s3:&lt;Region&gt;:&lt;account-id&gt;:accesspoint/&lt;access-point-name&gt;/object/&lt;key&gt;</code>.
+   * <code>arn:aws:s3:<Region>:<account-id>:accesspoint/<access-point-name>/object/<key></code>.
    * For example, to copy the object <code>reports/january.pdf</code> through access
    * point <code>my-access-point</code> owned by account <code>123456789012</code> in
    * Region <code>us-west-2</code>, use the URL encoding of
@@ -301,10 +298,10 @@ class CopyObjectRequest : public S3Request {
    * The value must be URL encoded.</p>  <ul> <li> <p>Amazon S3 supports copy
    * operations using Access points only when the source and destination buckets are
    * in the same Amazon Web Services Region.</p> </li> <li> <p>Access points are not
-   * supported by directory buckets.</p> </li> </ul>  <p>Alternatively, for
-   * objects accessed through Amazon S3 on Outposts, specify the ARN of the object as
+   * supported by directory buckets.</p> </li> </ul>  <p>Alternatively, for objects
+   * accessed through Amazon S3 on Outposts, specify the ARN of the object as
    * accessed in the format
-   * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/object/&lt;key&gt;</code>.
+   * <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/object/<key></code>.
    * For example, to copy the object <code>reports/january.pdf</code> through outpost
    * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
    * <code>us-west-2</code>, use the URL encoding of
@@ -314,7 +311,7 @@ class CopyObjectRequest : public S3Request {
    * identifies the current version of an object to copy. If the current version is a
    * delete marker, Amazon S3 behaves as if the object was deleted. To copy a
    * different version, use the <code>versionId</code> query parameter. Specifically,
-   * append <code>?versionId=&lt;version-id&gt;</code> to the value (for example,
+   * append <code>?versionId=<version-id></code> to the value (for example,
    * <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>).
    * If you don't specify a version ID, Amazon S3 copies the latest version of the
    * source object.</p> <p>If you enable versioning on the destination bucket, Amazon
@@ -462,9 +459,9 @@ class CopyObjectRequest : public S3Request {
   ///@{
   /**
    * <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-   * object.</p>  <ul> <li> <p>This functionality is not supported for
-   * directory buckets.</p> </li> <li> <p>This functionality is not supported for
-   * Amazon S3 on Outposts.</p> </li> </ul>
+   * object.</p>  <ul> <li> <p>This functionality is not supported for directory
+   * buckets.</p> </li> <li> <p>This functionality is not supported for Amazon S3 on
+   * Outposts.</p> </li> </ul>
    */
   inline const Aws::String& GetGrantFullControl() const { return m_grantFullControl; }
   inline bool GrantFullControlHasBeenSet() const { return m_grantFullControlHasBeenSet; }
@@ -503,10 +500,9 @@ class CopyObjectRequest : public S3Request {
 
   ///@{
   /**
-   * <p>Allows grantee to read the object ACL.</p>  <ul> <li> <p>This
-   * functionality is not supported for directory buckets.</p> </li> <li> <p>This
-   * functionality is not supported for Amazon S3 on Outposts.</p> </li> </ul>
-   *
+   * <p>Allows grantee to read the object ACL.</p>  <ul> <li> <p>This functionality
+   * is not supported for directory buckets.</p> </li> <li> <p>This functionality is
+   * not supported for Amazon S3 on Outposts.</p> </li> </ul>
    */
   inline const Aws::String& GetGrantReadACP() const { return m_grantReadACP; }
   inline bool GrantReadACPHasBeenSet() const { return m_grantReadACPHasBeenSet; }
@@ -524,9 +520,9 @@ class CopyObjectRequest : public S3Request {
 
   ///@{
   /**
-   * <p>Allows grantee to write the ACL for the applicable object.</p>  <ul>
-   * <li> <p>This functionality is not supported for directory buckets.</p> </li>
-   * <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+   * <p>Allows grantee to write the ACL for the applicable object.</p>  <ul> <li>
+   * <p>This functionality is not supported for directory buckets.</p> </li> <li>
+   * <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
    * </ul>
    */
   inline const Aws::String& GetGrantWriteACP() const { return m_grantWriteACP; }
@@ -667,9 +663,9 @@ class CopyObjectRequest : public S3Request {
   /**
    * <p>Specifies whether the object tag-set is copied from the source object or
    * replaced with the tag-set that's provided in the request.</p> <p>The default
-   * value is <code>COPY</code>.</p>  <p> <b>Directory buckets</b> - For
-   * directory buckets in a <code>CopyObject</code> operation, only the empty tag-set
-   * is supported. Any requests that attempt to write non-empty tags into directory
+   * value is <code>COPY</code>.</p>  <p> <b>Directory buckets</b> - For directory
+   * buckets in a <code>CopyObject</code> operation, only the empty tag-set is
+   * supported. Any requests that attempt to write non-empty tags into directory
    * buckets will receive a <code>501 Not Implemented</code> status code. When the
    * destination bucket is a directory bucket, you will receive a <code>501 Not
    * Implemented</code> response in any of the following situations:</p> <ul> <li>
@@ -720,18 +716,18 @@ class CopyObjectRequest : public S3Request {
    * <code>s3:PutObjectAnnotation</code> permission on the destination. Each
    * annotation copied is billed as a separate PUT request. If annotations on the
    * source are modified during the copy, Amazon S3 returns a retryable error.</p>
-   *  <p>For directory buckets, annotations are not supported. Use
+   * <p>For directory buckets, annotations are not supported. Use
    * <code>EXCLUDE</code> to copy objects to directory buckets without errors. If you
    * specify <code>COPY</code> for a directory bucket, the request returns HTTP 501
-   * (Not Implemented).</p>   <p>When you copy objects using multipart
-   * upload (for example, when the Amazon Web Services CLI or Amazon Web Services
-   * SDKs use Transfer Manager for objects larger than approximately 8 MB),
-   * annotations are not copied by default. To include annotations, specify
-   * <code>--copy-props default</code> in the Amazon Web Services CLI or the
-   * equivalent SDK configuration. With this opt-in, the SDK reads source
-   * annotations, completes the multipart upload, and then writes each annotation to
-   * the destination. Between the upload completion and the last annotation write,
-   * the destination object exists without all its annotations.</p>
+   * (Not Implemented).</p>   <p>When you copy objects using multipart upload (for
+   * example, when the Amazon Web Services CLI or Amazon Web Services SDKs use
+   * Transfer Manager for objects larger than approximately 8 MB), annotations are
+   * not copied by default. To include annotations, specify <code>--copy-props
+   * default</code> in the Amazon Web Services CLI or the equivalent SDK
+   * configuration. With this opt-in, the SDK reads source annotations, completes the
+   * multipart upload, and then writes each annotation to the destination. Between
+   * the upload completion and the last annotation write, the destination object
+   * exists without all its annotations.</p>
    */
   inline AnnotationDirective GetAnnotationDirective() const { return m_annotationDirective; }
   inline bool AnnotationDirectiveHasBeenSet() const { return m_annotationDirectiveHasBeenSet; }
@@ -833,15 +829,15 @@ class CopyObjectRequest : public S3Request {
    * will be stored in the <code>STANDARD</code> Storage Class by default. The
    * <code>STANDARD</code> storage class provides high durability and high
    * availability. Depending on performance needs, you can specify a different
-   * Storage Class. </p>  <ul> <li> <p> <b>Directory buckets </b> - Directory
-   * buckets only support <code>EXPRESS_ONEZONE</code> (the S3 Express One Zone
-   * storage class) in Availability Zones and <code>ONEZONE_IA</code> (the S3 One
+   * Storage Class. </p>  <ul> <li> <p> <b>Directory buckets </b> - Directory buckets
+   * only support <code>EXPRESS_ONEZONE</code> (the S3 Express One Zone storage
+   * class) in Availability Zones and <code>ONEZONE_IA</code> (the S3 One
    * Zone-Infrequent Access storage class) in Dedicated Local Zones. Unsupported
    * storage class values won't write a destination object and will respond with the
    * HTTP status code <code>400 Bad Request</code>.</p> </li> <li> <p> <b>Amazon S3
    * on Outposts </b> - S3 on Outposts only uses the <code>OUTPOSTS</code> Storage
-   * Class.</p> </li> </ul>  <p>You can use the <code>CopyObject</code> action
-   * to change the storage class of an object that is already stored in Amazon S3 by
+   * Class.</p> </li> </ul>  <p>You can use the <code>CopyObject</code> action to
+   * change the storage class of an object that is already stored in Amazon S3 by
    * using the <code>x-amz-storage-class</code> header. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
    * Classes</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Before using an object as
@@ -878,8 +874,7 @@ class CopyObjectRequest : public S3Request {
    * unique to each object and is not copied when using the
    * <code>x-amz-metadata-directive</code> header. Instead, you may opt to provide
    * this header in combination with the <code>x-amz-metadata-directive</code>
-   * header.</p>  <p>This functionality is not supported for directory
-   * buckets.</p>
+   * header.</p>  <p>This functionality is not supported for directory buckets.</p>
    */
   inline const Aws::String& GetWebsiteRedirectLocation() const { return m_websiteRedirectLocation; }
   inline bool WebsiteRedirectLocationHasBeenSet() const { return m_websiteRedirectLocationHasBeenSet; }
@@ -904,9 +899,8 @@ class CopyObjectRequest : public S3Request {
    * the target object with an Amazon S3 managed key, a KMS key, or a
    * customer-provided key. If the encryption setting in your request is different
    * from the default encryption configuration of the destination bucket, the
-   * encryption setting in your request takes precedence. </p>  <p>This
-   * functionality is not supported when the destination bucket is a directory
-   * bucket.</p>
+   * encryption setting in your request takes precedence. </p>  <p>This functionality
+   * is not supported when the destination bucket is a directory bucket.</p>
    */
   inline const Aws::String& GetSSECustomerAlgorithm() const { return m_sSECustomerAlgorithm; }
   inline bool SSECustomerAlgorithmHasBeenSet() const { return m_sSECustomerAlgorithmHasBeenSet; }
@@ -950,8 +944,8 @@ class CopyObjectRequest : public S3Request {
   /**
    * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
    * Amazon S3 uses this header for a message integrity check to ensure that the
-   * encryption key was transmitted without error.</p>  <p>This functionality
-   * is not supported when the destination bucket is a directory bucket.</p>
+   * encryption key was transmitted without error.</p>  <p>This functionality is not
+   * supported when the destination bucket is a directory bucket.</p>
    */
   inline const Aws::String& GetSSECustomerKeyMD5() const { return m_sSECustomerKeyMD5; }
   inline bool SSECustomerKeyMD5HasBeenSet() const { return m_sSECustomerKeyMD5HasBeenSet; }
@@ -1070,8 +1064,8 @@ class CopyObjectRequest : public S3Request {
    * example, <code>AES256</code>).</p> <p>If the source object for the copy is
    * stored in Amazon S3 using SSE-C, you must provide the necessary encryption
    * information in your request so that Amazon S3 can decrypt the object for
-   * copying.</p>  <p>This functionality is not supported when the source
-   * object is in a directory bucket.</p>
+   * copying.</p>  <p>This functionality is not supported when the source object is
+   * in a directory bucket.</p>
    */
   inline const Aws::String& GetCopySourceSSECustomerAlgorithm() const { return m_copySourceSSECustomerAlgorithm; }
   inline bool CopySourceSSECustomerAlgorithmHasBeenSet() const { return m_copySourceSSECustomerAlgorithmHasBeenSet; }
@@ -1094,8 +1088,8 @@ class CopyObjectRequest : public S3Request {
    * the same one that was used when the source object was created.</p> <p>If the
    * source object for the copy is stored in Amazon S3 using SSE-C, you must provide
    * the necessary encryption information in your request so that Amazon S3 can
-   * decrypt the object for copying.</p>  <p>This functionality is not
-   * supported when the source object is in a directory bucket.</p>
+   * decrypt the object for copying.</p>  <p>This functionality is not supported when
+   * the source object is in a directory bucket.</p>
    */
   inline const Aws::String& GetCopySourceSSECustomerKey() const { return m_copySourceSSECustomerKey; }
   inline bool CopySourceSSECustomerKeyHasBeenSet() const { return m_copySourceSSECustomerKeyHasBeenSet; }
@@ -1118,8 +1112,8 @@ class CopyObjectRequest : public S3Request {
    * encryption key was transmitted without error.</p> <p>If the source object for
    * the copy is stored in Amazon S3 using SSE-C, you must provide the necessary
    * encryption information in your request so that Amazon S3 can decrypt the object
-   * for copying.</p>  <p>This functionality is not supported when the source
-   * object is in a directory bucket.</p>
+   * for copying.</p>  <p>This functionality is not supported when the source object
+   * is in a directory bucket.</p>
    */
   inline const Aws::String& GetCopySourceSSECustomerKeyMD5() const { return m_copySourceSSECustomerKeyMD5; }
   inline bool CopySourceSSECustomerKeyMD5HasBeenSet() const { return m_copySourceSSECustomerKeyMD5HasBeenSet; }
@@ -1157,18 +1151,18 @@ class CopyObjectRequest : public S3Request {
    * <code>COPY</code> for the <code>x-amz-tagging-directive</code>, you don't need
    * to set the <code>x-amz-tagging</code> header, because the tag-set will be copied
    * from the source object directly. The tag-set must be encoded as URL Query
-   * parameters.</p> <p>The default value is the empty value.</p>  <p>
-   * <b>Directory buckets</b> - For directory buckets in a <code>CopyObject</code>
-   * operation, only the empty tag-set is supported. Any requests that attempt to
-   * write non-empty tags into directory buckets will receive a <code>501 Not
-   * Implemented</code> status code. When the destination bucket is a directory
-   * bucket, you will receive a <code>501 Not Implemented</code> response in any of
-   * the following situations:</p> <ul> <li> <p>When you attempt to <code>COPY</code>
-   * the tag-set from an S3 source object that has non-empty tags.</p> </li> <li>
-   * <p>When you attempt to <code>REPLACE</code> the tag-set of a source object and
-   * set a non-empty value to <code>x-amz-tagging</code>.</p> </li> <li> <p>When you
-   * don't set the <code>x-amz-tagging-directive</code> header and the source object
-   * has non-empty tags. This is because the default value of
+   * parameters.</p> <p>The default value is the empty value.</p>  <p> <b>Directory
+   * buckets</b> - For directory buckets in a <code>CopyObject</code> operation, only
+   * the empty tag-set is supported. Any requests that attempt to write non-empty
+   * tags into directory buckets will receive a <code>501 Not Implemented</code>
+   * status code. When the destination bucket is a directory bucket, you will receive
+   * a <code>501 Not Implemented</code> response in any of the following
+   * situations:</p> <ul> <li> <p>When you attempt to <code>COPY</code> the tag-set
+   * from an S3 source object that has non-empty tags.</p> </li> <li> <p>When you
+   * attempt to <code>REPLACE</code> the tag-set of a source object and set a
+   * non-empty value to <code>x-amz-tagging</code>.</p> </li> <li> <p>When you don't
+   * set the <code>x-amz-tagging-directive</code> header and the source object has
+   * non-empty tags. This is because the default value of
    * <code>x-amz-tagging-directive</code> is <code>COPY</code>.</p> </li> </ul>
    * <p>Because only the empty tag-set is supported for directory buckets in a
    * <code>CopyObject</code> operation, the following situations are allowed:</p>
@@ -1201,8 +1195,8 @@ class CopyObjectRequest : public S3Request {
 
   ///@{
   /**
-   * <p>The Object Lock mode that you want to apply to the object copy.</p>
-   * <p>This functionality is not supported for directory buckets.</p>
+   * <p>The Object Lock mode that you want to apply to the object copy.</p>  <p>This
+   * functionality is not supported for directory buckets.</p>
    */
   inline ObjectLockMode GetObjectLockMode() const { return m_objectLockMode; }
   inline bool ObjectLockModeHasBeenSet() const { return m_objectLockModeHasBeenSet; }
@@ -1219,8 +1213,7 @@ class CopyObjectRequest : public S3Request {
   ///@{
   /**
    * <p>The date and time when you want the Object Lock of the object copy to
-   * expire.</p>  <p>This functionality is not supported for directory
-   * buckets.</p>
+   * expire.</p>  <p>This functionality is not supported for directory buckets.</p>
    */
   inline const Aws::Utils::DateTime& GetObjectLockRetainUntilDate() const { return m_objectLockRetainUntilDate; }
   inline bool ObjectLockRetainUntilDateHasBeenSet() const { return m_objectLockRetainUntilDateHasBeenSet; }
@@ -1239,7 +1232,7 @@ class CopyObjectRequest : public S3Request {
   ///@{
   /**
    * <p>Specifies whether you want to apply a legal hold to the object copy.</p>
-   *  <p>This functionality is not supported for directory buckets.</p>
+   * <p>This functionality is not supported for directory buckets.</p>
    */
   inline ObjectLockLegalHoldStatus GetObjectLockLegalHoldStatus() const { return m_objectLockLegalHoldStatus; }
   inline bool ObjectLockLegalHoldStatusHasBeenSet() const { return m_objectLockLegalHoldStatusHasBeenSet; }

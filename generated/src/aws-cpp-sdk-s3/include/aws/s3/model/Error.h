@@ -19,11 +19,11 @@ namespace S3 {
 namespace Model {
 
 /**
- *  <p>For information about using the Amazon S3 API—including error
- * handling—see the <a
+ *  <p>For information about using the Amazon S3 API—including error handling—see
+ * the <a
  * href="https://docs.aws.amazon.com/AmazonS3/latest/developerguide/Welcome.html">Amazon
- * S3 Developer Guide</a>.</p>  <p>Container for all error
- * elements.</p><p><h3>See Also:</h3>   <a
+ * S3 Developer Guide</a>.</p>  <p>Container for all error elements.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Error">AWS API
  * Reference</a></p>
  */
@@ -32,7 +32,6 @@ class Error {
   AWS_S3_API Error() = default;
   AWS_S3_API Error(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API Error& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{
@@ -55,8 +54,8 @@ class Error {
 
   ///@{
   /**
-   * <p>The version ID of the error.</p>  <p>This functionality is not
-   * supported for directory buckets.</p>
+   * <p>The version ID of the error.</p>  <p>This functionality is not supported for
+   * directory buckets.</p>
    */
   inline const Aws::String& GetVersionId() const { return m_versionId; }
   inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
@@ -436,7 +435,7 @@ class Error {
    * must contain the specified field name. If it is specified, check the order of
    * the fields.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p>
    * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> </ul>
-   * <p/>
+   * <p></p>
    */
   inline const Aws::String& GetCode() const { return m_code; }
   inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }

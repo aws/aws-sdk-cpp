@@ -31,7 +31,6 @@ class AnalyticsConfiguration {
   AWS_S3_API AnalyticsConfiguration() = default;
   AWS_S3_API AnalyticsConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API AnalyticsConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

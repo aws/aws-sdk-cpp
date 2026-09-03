@@ -4,6 +4,8 @@
  */
 
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -17,83 +19,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-bool ListObjectsV2Request::HasEmbeddedError(Aws::IOStream &body, const Aws::Http::HeaderValueCollection &header) const {
-  // Header is unused
-  AWS_UNREFERENCED_PARAM(header);
-
-  auto readPointer = body.tellg();
-  Utils::Xml::XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
-  body.seekg(readPointer);
-  if (!doc.WasParseSuccessful()) {
-    return false;
-  }
-
-  if (!doc.GetRootElement().IsNull() && doc.GetRootElement().GetName() == Aws::String("Error")) {
-    return true;
-  }
-  return false;
-}
-
 Aws::String ListObjectsV2Request::SerializePayload() const { return {}; }
-
-void ListObjectsV2Request::AddQueryStringParameters(URI &uri) const {
-  Aws::StringStream ss;
-  if (m_delimiterHasBeenSet) {
-    ss << m_delimiter;
-    uri.AddQueryStringParameter("delimiter", ss.str());
-    ss.str("");
-  }
-
-  if (m_encodingTypeHasBeenSet) {
-    ss << EncodingTypeMapper::GetNameForEncodingType(m_encodingType);
-    uri.AddQueryStringParameter("encoding-type", ss.str());
-    ss.str("");
-  }
-
-  if (m_maxKeysHasBeenSet) {
-    ss << m_maxKeys;
-    uri.AddQueryStringParameter("max-keys", ss.str());
-    ss.str("");
-  }
-
-  if (m_prefixHasBeenSet) {
-    ss << m_prefix;
-    uri.AddQueryStringParameter("prefix", ss.str());
-    ss.str("");
-  }
-
-  if (m_continuationTokenHasBeenSet) {
-    ss << m_continuationToken;
-    uri.AddQueryStringParameter("continuation-token", ss.str());
-    ss.str("");
-  }
-
-  if (m_fetchOwnerHasBeenSet) {
-    ss << m_fetchOwner;
-    uri.AddQueryStringParameter("fetch-owner", ss.str());
-    ss.str("");
-  }
-
-  if (m_startAfterHasBeenSet) {
-    ss << m_startAfter;
-    uri.AddQueryStringParameter("start-after", ss.str());
-    ss.str("");
-  }
-
-  if (!m_customizedAccessLogTag.empty()) {
-    // only accept customized LogTag which starts with "x-"
-    Aws::Map<Aws::String, Aws::String> collectedLogTags;
-    for (const auto &entry : m_customizedAccessLogTag) {
-      if (!entry.first.empty() && !entry.second.empty() && entry.first.substr(0, 2) == "x-") {
-        collectedLogTags.emplace(entry.first, entry.second);
-      }
-    }
-
-    if (!collectedLogTags.empty()) {
-      uri.AddQueryStringParameter(collectedLogTags);
-    }
-  }
-}
 
 Aws::Http::HeaderValueCollection ListObjectsV2Request::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
@@ -101,23 +27,85 @@ Aws::Http::HeaderValueCollection ListObjectsV2Request::GetRequestSpecificHeaders
   if (m_requestPayerHasBeenSet && m_requestPayer != RequestPayer::NOT_SET) {
     headers.emplace("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer));
   }
-
   if (m_expectedBucketOwnerHasBeenSet) {
     ss << m_expectedBucketOwner;
     headers.emplace("x-amz-expected-bucket-owner", ss.str());
     ss.str("");
   }
-
   if (m_optionalObjectAttributesHasBeenSet) {
     headers.emplace("x-amz-optional-object-attributes",
                     std::accumulate(std::begin(m_optionalObjectAttributes), std::end(m_optionalObjectAttributes), Aws::String{},
-                                    [](const Aws::String &acc, const OptionalObjectAttributes &item) -> Aws::String {
+                                    [](const Aws::String& acc, const OptionalObjectAttributes& item) -> Aws::String {
                                       const auto headerValue = OptionalObjectAttributesMapper::GetNameForOptionalObjectAttributes(item);
                                       return acc.empty() ? headerValue : acc + "," + headerValue;
                                     }));
   }
-
   return headers;
+}
+
+void ListObjectsV2Request::AddQueryStringParameters(Aws::Http::URI& uri) const {
+  Aws::StringStream ss;
+  if (m_delimiterHasBeenSet) {
+    ss << m_delimiter;
+    uri.AddQueryStringParameter("delimiter", ss.str());
+    ss.str("");
+  }
+  if (m_encodingTypeHasBeenSet) {
+    ss << EncodingTypeMapper::GetNameForEncodingType(m_encodingType);
+    uri.AddQueryStringParameter("encoding-type", ss.str());
+    ss.str("");
+  }
+  if (m_maxKeysHasBeenSet) {
+    ss << m_maxKeys;
+    uri.AddQueryStringParameter("max-keys", ss.str());
+    ss.str("");
+  }
+  if (m_prefixHasBeenSet) {
+    ss << m_prefix;
+    uri.AddQueryStringParameter("prefix", ss.str());
+    ss.str("");
+  }
+  if (m_continuationTokenHasBeenSet) {
+    ss << m_continuationToken;
+    uri.AddQueryStringParameter("continuation-token", ss.str());
+    ss.str("");
+  }
+  if (m_fetchOwnerHasBeenSet) {
+    ss << m_fetchOwner;
+    uri.AddQueryStringParameter("fetch-owner", ss.str());
+    ss.str("");
+  }
+  if (m_startAfterHasBeenSet) {
+    ss << m_startAfter;
+    uri.AddQueryStringParameter("start-after", ss.str());
+    ss.str("");
+  }
+  if (!m_customizedAccessLogTag.empty()) {
+    // only accept customized LogTag which starts with "x-"
+    Aws::Map<Aws::String, Aws::String> collectedLogTags;
+    for (const auto& entry : m_customizedAccessLogTag) {
+      if (!entry.first.empty() && !entry.second.empty() && entry.first.substr(0, 2) == "x-") {
+        collectedLogTags.emplace(entry.first, entry.second);
+      }
+    }
+    if (!collectedLogTags.empty()) {
+      uri.AddQueryStringParameter(collectedLogTags);
+    }
+  }
+}
+
+bool ListObjectsV2Request::HasEmbeddedError(Aws::IOStream& body, const Aws::Http::HeaderValueCollection& header) const {
+  AWS_UNREFERENCED_PARAM(header);
+  auto readPointer = body.tellg();
+  Utils::Xml::XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
+  body.seekg(readPointer);
+  if (!doc.WasParseSuccessful()) {
+    return false;
+  }
+  if (!doc.GetRootElement().IsNull() && doc.GetRootElement().GetName() == Aws::String("Error")) {
+    return true;
+  }
+  return false;
 }
 
 ListObjectsV2Request::EndpointParameters ListObjectsV2Request::GetEndpointContextParams() const {

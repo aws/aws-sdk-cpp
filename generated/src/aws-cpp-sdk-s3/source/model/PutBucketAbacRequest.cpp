@@ -4,11 +4,14 @@
  */
 
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/PutBucketAbacRequest.h>
 
+#include <numeric>
 #include <utility>
 
 using namespace Aws::S3::Model;
@@ -16,36 +19,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String PutBucketAbacRequest::SerializePayload() const {
-  XmlDocument payloadDoc = XmlDocument::CreateWithRootNode("AbacStatus");
-
-  XmlNode parentNode = payloadDoc.GetRootElement();
-  parentNode.SetAttributeValue("xmlns", "http://s3.amazonaws.com/doc/2006-03-01/");
-
-  m_abacStatus.AddToNode(parentNode);
-  if (parentNode.HasChildren()) {
-    return payloadDoc.ConvertToString();
-  }
-
-  return {};
-}
-
-void PutBucketAbacRequest::AddQueryStringParameters(URI& uri) const {
-  Aws::StringStream ss;
-  if (!m_customizedAccessLogTag.empty()) {
-    // only accept customized LogTag which starts with "x-"
-    Aws::Map<Aws::String, Aws::String> collectedLogTags;
-    for (const auto& entry : m_customizedAccessLogTag) {
-      if (!entry.first.empty() && !entry.second.empty() && entry.first.substr(0, 2) == "x-") {
-        collectedLogTags.emplace(entry.first, entry.second);
-      }
-    }
-
-    if (!collectedLogTags.empty()) {
-      uri.AddQueryStringParameter(collectedLogTags);
-    }
-  }
-}
+Aws::String PutBucketAbacRequest::SerializePayload() const { return {}; }
 
 Aws::Http::HeaderValueCollection PutBucketAbacRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
@@ -55,29 +29,32 @@ Aws::Http::HeaderValueCollection PutBucketAbacRequest::GetRequestSpecificHeaders
     headers.emplace("content-md5", ss.str());
     ss.str("");
   }
-
   if (m_checksumAlgorithmHasBeenSet && m_checksumAlgorithm != ChecksumAlgorithm::NOT_SET) {
     headers.emplace("x-amz-sdk-checksum-algorithm", ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm));
   }
-
   if (m_expectedBucketOwnerHasBeenSet) {
     ss << m_expectedBucketOwner;
     headers.emplace("x-amz-expected-bucket-owner", ss.str());
     ss.str("");
   }
-
   return headers;
 }
 
-PutBucketAbacRequest::EndpointParameters PutBucketAbacRequest::GetEndpointContextParams() const {
-  EndpointParameters parameters;
-  // Operation context parameters
-  if (BucketHasBeenSet()) {
-    parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+void PutBucketAbacRequest::AddQueryStringParameters(Aws::Http::URI& uri) const {
+  Aws::StringStream ss;
+  if (!m_customizedAccessLogTag.empty()) {
+    // only accept customized LogTag which starts with "x-"
+    Aws::Map<Aws::String, Aws::String> collectedLogTags;
+    for (const auto& entry : m_customizedAccessLogTag) {
+      if (!entry.first.empty() && !entry.second.empty() && entry.first.substr(0, 2) == "x-") {
+        collectedLogTags.emplace(entry.first, entry.second);
+      }
+    }
+    if (!collectedLogTags.empty()) {
+      uri.AddQueryStringParameter(collectedLogTags);
+    }
   }
-  return parameters;
 }
-
 Aws::String PutBucketAbacRequest::GetChecksumAlgorithmName() const {
   if (m_checksumAlgorithm == ChecksumAlgorithm::NOT_SET) {
     return "crc64nvme";
@@ -87,3 +64,12 @@ Aws::String PutBucketAbacRequest::GetChecksumAlgorithmName() const {
 }
 
 bool PutBucketAbacRequest::ChecksumAlgorithmIsSet() const { return m_checksumAlgorithm != ChecksumAlgorithm::NOT_SET; }
+
+PutBucketAbacRequest::EndpointParameters PutBucketAbacRequest::GetEndpointContextParams() const {
+  EndpointParameters parameters;
+  // Operation context parameters
+  if (BucketHasBeenSet()) {
+    parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+  }
+  return parameters;
+}

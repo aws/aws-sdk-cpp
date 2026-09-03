@@ -30,7 +30,6 @@ S3TablesBucketType GetS3TablesBucketTypeForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<S3TablesBucketType>(hashCode);
   }
-
   return S3TablesBucketType::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForS3TablesBucketType(S3TablesBucketType enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

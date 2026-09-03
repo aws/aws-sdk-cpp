@@ -4,11 +4,14 @@
  */
 
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/GetObjectAclRequest.h>
 
+#include <numeric>
 #include <utility>
 
 using namespace Aws::S3::Model;
@@ -16,33 +19,29 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-bool GetObjectAclRequest::HasEmbeddedError(Aws::IOStream& body, const Aws::Http::HeaderValueCollection& header) const {
-  // Header is unused
-  AWS_UNREFERENCED_PARAM(header);
-
-  auto readPointer = body.tellg();
-  Utils::Xml::XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
-  body.seekg(readPointer);
-  if (!doc.WasParseSuccessful()) {
-    return false;
-  }
-
-  if (!doc.GetRootElement().IsNull() && doc.GetRootElement().GetName() == Aws::String("Error")) {
-    return true;
-  }
-  return false;
-}
-
 Aws::String GetObjectAclRequest::SerializePayload() const { return {}; }
 
-void GetObjectAclRequest::AddQueryStringParameters(URI& uri) const {
+Aws::Http::HeaderValueCollection GetObjectAclRequest::GetRequestSpecificHeaders() const {
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if (m_requestPayerHasBeenSet && m_requestPayer != RequestPayer::NOT_SET) {
+    headers.emplace("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer));
+  }
+  if (m_expectedBucketOwnerHasBeenSet) {
+    ss << m_expectedBucketOwner;
+    headers.emplace("x-amz-expected-bucket-owner", ss.str());
+    ss.str("");
+  }
+  return headers;
+}
+
+void GetObjectAclRequest::AddQueryStringParameters(Aws::Http::URI& uri) const {
   Aws::StringStream ss;
   if (m_versionIdHasBeenSet) {
     ss << m_versionId;
     uri.AddQueryStringParameter("versionId", ss.str());
     ss.str("");
   }
-
   if (!m_customizedAccessLogTag.empty()) {
     // only accept customized LogTag which starts with "x-"
     Aws::Map<Aws::String, Aws::String> collectedLogTags;
@@ -51,27 +50,24 @@ void GetObjectAclRequest::AddQueryStringParameters(URI& uri) const {
         collectedLogTags.emplace(entry.first, entry.second);
       }
     }
-
     if (!collectedLogTags.empty()) {
       uri.AddQueryStringParameter(collectedLogTags);
     }
   }
 }
 
-Aws::Http::HeaderValueCollection GetObjectAclRequest::GetRequestSpecificHeaders() const {
-  Aws::Http::HeaderValueCollection headers;
-  Aws::StringStream ss;
-  if (m_requestPayerHasBeenSet && m_requestPayer != RequestPayer::NOT_SET) {
-    headers.emplace("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer));
+bool GetObjectAclRequest::HasEmbeddedError(Aws::IOStream& body, const Aws::Http::HeaderValueCollection& header) const {
+  AWS_UNREFERENCED_PARAM(header);
+  auto readPointer = body.tellg();
+  Utils::Xml::XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
+  body.seekg(readPointer);
+  if (!doc.WasParseSuccessful()) {
+    return false;
   }
-
-  if (m_expectedBucketOwnerHasBeenSet) {
-    ss << m_expectedBucketOwner;
-    headers.emplace("x-amz-expected-bucket-owner", ss.str());
-    ss.str("");
+  if (!doc.GetRootElement().IsNull() && doc.GetRootElement().GetName() == Aws::String("Error")) {
+    return true;
   }
-
-  return headers;
+  return false;
 }
 
 GetObjectAclRequest::EndpointParameters GetObjectAclRequest::GetEndpointContextParams() const {

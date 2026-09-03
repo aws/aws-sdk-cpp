@@ -29,7 +29,6 @@ class Tagging {
   AWS_S3_API Tagging() = default;
   AWS_S3_API Tagging(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API Tagging& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

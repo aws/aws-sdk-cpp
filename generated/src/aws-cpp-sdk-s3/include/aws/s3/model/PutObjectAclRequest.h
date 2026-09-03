@@ -16,9 +16,6 @@
 #include <utility>
 
 namespace Aws {
-namespace Http {
-class URI;
-}  // namespace Http
 namespace S3 {
 namespace Model {
 
@@ -36,9 +33,9 @@ class PutObjectAclRequest : public S3Request {
 
   AWS_S3_API Aws::String SerializePayload() const override;
 
-  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
   AWS_S3_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
   AWS_S3_API bool HasEmbeddedError(IOStream& body, const Http::HeaderValueCollection& header) const override;
   AWS_S3_API Aws::String GetChecksumAlgorithmName() const override;
@@ -132,9 +129,9 @@ class PutObjectAclRequest : public S3Request {
    * <p>The Base64 encoded 128-bit <code>MD5</code> digest of the data. This header
    * must be used as a message integrity check to verify that the request body was
    * not corrupted in transit. For more information, go to <a
-   * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.&gt;</a> </p> <p>For
-   * requests made using the Amazon Web Services Command Line Interface (CLI) or
-   * Amazon Web Services SDKs, this field is calculated automatically.</p>
+   * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.></a> </p> <p>For requests
+   * made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web
+   * Services SDKs, this field is calculated automatically.</p>
    */
   inline const Aws::String& GetContentMD5() const { return m_contentMD5; }
   inline bool ContentMD5HasBeenSet() const { return m_contentMD5HasBeenSet; }
@@ -306,8 +303,8 @@ class PutObjectAclRequest : public S3Request {
 
   ///@{
   /**
-   * <p>Version ID used to reference a specific version of the object.</p>
-   * <p>This functionality is not supported for directory buckets.</p>
+   * <p>Version ID used to reference a specific version of the object.</p>  <p>This
+   * functionality is not supported for directory buckets.</p>
    */
   inline const Aws::String& GetVersionId() const { return m_versionId; }
   inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }

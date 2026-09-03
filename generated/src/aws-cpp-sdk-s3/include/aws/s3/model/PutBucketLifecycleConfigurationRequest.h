@@ -15,9 +15,6 @@
 #include <utility>
 
 namespace Aws {
-namespace Http {
-class URI;
-}  // namespace Http
 namespace S3 {
 namespace Model {
 
@@ -35,9 +32,9 @@ class PutBucketLifecycleConfigurationRequest : public S3Request {
 
   AWS_S3_API Aws::String SerializePayload() const override;
 
-  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
   AWS_S3_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
   AWS_S3_API bool HasEmbeddedError(IOStream& body, const Http::HeaderValueCollection& header) const override;
   AWS_S3_API Aws::String GetChecksumAlgorithmName() const override;
@@ -114,9 +111,9 @@ class PutBucketLifecycleConfigurationRequest : public S3Request {
   /**
    * <p>The account ID of the expected bucket owner. If the account ID that you
    * provide does not match the actual owner of the bucket, the request fails with
-   * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-   * <p>This parameter applies to general purpose buckets only. It is not supported
-   * for directory bucket lifecycle configurations.</p>
+   * the HTTP status code <code>403 Forbidden</code> (access denied).</p>  <p>This
+   * parameter applies to general purpose buckets only. It is not supported for
+   * directory bucket lifecycle configurations.</p>
    */
   inline const Aws::String& GetExpectedBucketOwner() const { return m_expectedBucketOwner; }
   inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
@@ -137,13 +134,13 @@ class PutBucketLifecycleConfigurationRequest : public S3Request {
    * <p>Indicates which default minimum object size behavior is applied to the
    * lifecycle configuration.</p>  <p>This parameter applies to general purpose
    * buckets only. It is not supported for directory bucket lifecycle
-   * configurations.</p>  <ul> <li> <p> <code>all_storage_classes_128K</code>
-   * - Objects smaller than 128 KB will not transition to any storage class by
-   * default. </p> </li> <li> <p> <code>varies_by_storage_class</code> - Objects
-   * smaller than 128 KB will transition to Glacier Flexible Retrieval or Glacier
-   * Deep Archive storage classes. By default, all other storage classes will prevent
-   * transitions smaller than 128 KB. </p> </li> </ul> <p>To customize the minimum
-   * object size for any transition you can add a filter that specifies a custom
+   * configurations.</p>  <ul> <li> <p> <code>all_storage_classes_128K</code> -
+   * Objects smaller than 128 KB will not transition to any storage class by default.
+   * </p> </li> <li> <p> <code>varies_by_storage_class</code> - Objects smaller than
+   * 128 KB will transition to Glacier Flexible Retrieval or Glacier Deep Archive
+   * storage classes. By default, all other storage classes will prevent transitions
+   * smaller than 128 KB. </p> </li> </ul> <p>To customize the minimum object size
+   * for any transition you can add a filter that specifies a custom
    * <code>ObjectSizeGreaterThan</code> or <code>ObjectSizeLessThan</code> in the
    * body of your transition rule. Custom filters always take precedence over the
    * default transition behavior.</p>

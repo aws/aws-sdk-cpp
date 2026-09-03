@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/NotificationConfigurationFilter.h>
@@ -19,27 +20,9 @@ namespace Model {
 
 NotificationConfigurationFilter::NotificationConfigurationFilter(const XmlNode& xmlNode) { *this = xmlNode; }
 
-NotificationConfigurationFilter& NotificationConfigurationFilter::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+NotificationConfigurationFilter& NotificationConfigurationFilter::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode keyNode = resultNode.FirstChild("S3Key");
-    if (!keyNode.IsNull()) {
-      m_key = keyNode;
-      m_keyHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void NotificationConfigurationFilter::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_keyHasBeenSet) {
-    XmlNode keyNode = parentNode.CreateChildElement("S3Key");
-    m_key.AddToNode(keyNode);
-  }
-}
+void NotificationConfigurationFilter::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

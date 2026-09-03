@@ -30,7 +30,6 @@ ExistingObjectReplicationStatus GetExistingObjectReplicationStatusForName(const 
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<ExistingObjectReplicationStatus>(hashCode);
   }
-
   return ExistingObjectReplicationStatus::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForExistingObjectReplicationStatus(ExistingObjectReplicationS
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

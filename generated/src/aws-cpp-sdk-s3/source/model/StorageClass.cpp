@@ -69,7 +69,6 @@ StorageClass GetStorageClassForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<StorageClass>(hashCode);
   }
-
   return StorageClass::NOT_SET;
 }
 
@@ -112,7 +111,6 @@ Aws::String GetNameForStorageClass(StorageClass enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

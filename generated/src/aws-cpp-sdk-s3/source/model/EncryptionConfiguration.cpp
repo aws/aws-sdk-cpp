@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/EncryptionConfiguration.h>
@@ -19,27 +20,9 @@ namespace Model {
 
 EncryptionConfiguration::EncryptionConfiguration(const XmlNode& xmlNode) { *this = xmlNode; }
 
-EncryptionConfiguration& EncryptionConfiguration::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+EncryptionConfiguration& EncryptionConfiguration::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode replicaKmsKeyIDNode = resultNode.FirstChild("ReplicaKmsKeyID");
-    if (!replicaKmsKeyIDNode.IsNull()) {
-      m_replicaKmsKeyID = Aws::Utils::Xml::DecodeEscapedXmlText(replicaKmsKeyIDNode.GetText());
-      m_replicaKmsKeyIDHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void EncryptionConfiguration::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_replicaKmsKeyIDHasBeenSet) {
-    XmlNode replicaKmsKeyIDNode = parentNode.CreateChildElement("ReplicaKmsKeyID");
-    replicaKmsKeyIDNode.SetText(m_replicaKmsKeyID);
-  }
-}
+void EncryptionConfiguration::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

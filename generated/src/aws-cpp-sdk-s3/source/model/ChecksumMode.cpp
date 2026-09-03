@@ -27,7 +27,6 @@ ChecksumMode GetChecksumModeForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<ChecksumMode>(hashCode);
   }
-
   return ChecksumMode::NOT_SET;
 }
 
@@ -42,7 +41,6 @@ Aws::String GetNameForChecksumMode(ChecksumMode enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

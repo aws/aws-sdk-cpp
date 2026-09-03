@@ -21,9 +21,6 @@
 #include <utility>
 
 namespace Aws {
-namespace Http {
-class URI;
-}  // namespace Http
 namespace S3 {
 namespace Model {
 
@@ -39,13 +36,14 @@ class PutObjectRequest : public StreamingS3Request {
   // so we can not get operation's name from response.
   inline virtual const char* GetServiceRequestName() const override { return "PutObject"; }
 
-  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
   AWS_S3_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
   AWS_S3_API bool HasEmbeddedError(IOStream& body, const Http::HeaderValueCollection& header) const override;
   AWS_S3_API Aws::String GetChecksumAlgorithmName() const override;
   AWS_S3_API bool ChecksumAlgorithmIsSet() const override;
+
   /**
    * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
    */
@@ -75,9 +73,9 @@ class PutObjectRequest : public StreamingS3Request {
    * <code>AccessControlListNotSupported</code>. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">
    * Controlling ownership of objects and disabling ACLs</a> in the <i>Amazon S3 User
-   * Guide</i>.</p>  <ul> <li> <p>This functionality is not supported for
-   * directory buckets.</p> </li> <li> <p>This functionality is not supported for
-   * Amazon S3 on Outposts.</p> </li> </ul>
+   * Guide</i>.</p>  <ul> <li> <p>This functionality is not supported for directory
+   * buckets.</p> </li> <li> <p>This functionality is not supported for Amazon S3 on
+   * Outposts.</p> </li> </ul>
    */
   inline ObjectCannedACL GetACL() const { return m_aCL; }
   inline bool ACLHasBeenSet() const { return m_aCLHasBeenSet; }
@@ -115,11 +113,11 @@ class PutObjectRequest : public StreamingS3Request {
    * SDKs, you provide the access point ARN in place of the bucket name. For more
    * information about access point ARNs, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-   * access points</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>Object
-   * Lambda access points are not supported by directory buckets.</p>  <p>
-   * <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must
-   * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
-   * takes the form <code>
+   * access points</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>Object Lambda
+   * access points are not supported by directory buckets.</p>  <p> <b>S3 on
+   * Outposts</b> - When you use this action with S3 on Outposts, you must direct
+   * requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the
+   * form <code>
    * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
    * When you use this action with S3 on Outposts, the destination bucket must be the
    * Outposts access point ARN or the access point alias. For more information about
@@ -253,8 +251,8 @@ class PutObjectRequest : public StreamingS3Request {
    * For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-managing.html#object-lock-put-object">Uploading
    * objects to an Object Lock enabled bucket </a> in the <i>Amazon S3 User
-   * Guide</i>.</p>   <p>This functionality is not supported for
-   * directory buckets.</p>
+   * Guide</i>.</p>   <p>This functionality is not supported for directory
+   * buckets.</p>
    */
   inline const Aws::String& GetContentMD5() const { return m_contentMD5; }
   inline bool ContentMD5HasBeenSet() const { return m_contentMD5HasBeenSet; }
@@ -297,9 +295,9 @@ class PutObjectRequest : public StreamingS3Request {
    * using Amazon S3 Object Lock. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-managing.html#object-lock-put-object">Uploading
    * objects to an Object Lock enabled bucket </a> in the <i>Amazon S3 User
-   * Guide</i>.</p>  <p>For directory buckets, when you use Amazon Web
-   * Services SDKs, <code>CRC32</code> is the default checksum algorithm that's used
-   * for performance.</p>
+   * Guide</i>.</p>  <p>For directory buckets, when you use Amazon Web Services SDKs,
+   * <code>CRC32</code> is the default checksum algorithm that's used for
+   * performance.</p>
    */
   inline ChecksumAlgorithm GetChecksumAlgorithm() const { return m_checksumAlgorithm; }
   inline bool ChecksumAlgorithmHasBeenSet() const { return m_checksumAlgorithmHasBeenSet; }
@@ -674,9 +672,9 @@ class PutObjectRequest : public StreamingS3Request {
   ///@{
   /**
    * <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-   * object.</p>  <ul> <li> <p>This functionality is not supported for
-   * directory buckets.</p> </li> <li> <p>This functionality is not supported for
-   * Amazon S3 on Outposts.</p> </li> </ul>
+   * object.</p>  <ul> <li> <p>This functionality is not supported for directory
+   * buckets.</p> </li> <li> <p>This functionality is not supported for Amazon S3 on
+   * Outposts.</p> </li> </ul>
    */
   inline const Aws::String& GetGrantFullControl() const { return m_grantFullControl; }
   inline bool GrantFullControlHasBeenSet() const { return m_grantFullControlHasBeenSet; }
@@ -715,10 +713,9 @@ class PutObjectRequest : public StreamingS3Request {
 
   ///@{
   /**
-   * <p>Allows grantee to read the object ACL.</p>  <ul> <li> <p>This
-   * functionality is not supported for directory buckets.</p> </li> <li> <p>This
-   * functionality is not supported for Amazon S3 on Outposts.</p> </li> </ul>
-   *
+   * <p>Allows grantee to read the object ACL.</p>  <ul> <li> <p>This functionality
+   * is not supported for directory buckets.</p> </li> <li> <p>This functionality is
+   * not supported for Amazon S3 on Outposts.</p> </li> </ul>
    */
   inline const Aws::String& GetGrantReadACP() const { return m_grantReadACP; }
   inline bool GrantReadACPHasBeenSet() const { return m_grantReadACPHasBeenSet; }
@@ -736,9 +733,9 @@ class PutObjectRequest : public StreamingS3Request {
 
   ///@{
   /**
-   * <p>Allows grantee to write the ACL for the applicable object.</p>  <ul>
-   * <li> <p>This functionality is not supported for directory buckets.</p> </li>
-   * <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+   * <p>Allows grantee to write the ACL for the applicable object.</p>  <ul> <li>
+   * <p>This functionality is not supported for directory buckets.</p> </li> <li>
+   * <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
    * </ul>
    */
   inline const Aws::String& GetGrantWriteACP() const { return m_grantWriteACP; }
@@ -777,9 +774,9 @@ class PutObjectRequest : public StreamingS3Request {
   /**
    * <p> Specifies the offset for appending data to existing objects in bytes. The
    * offset must be equal to the size of the existing object being appended to. If no
-   * object exists, setting this header to 0 will create a new object. </p>
-   * <p>This functionality is only supported for objects in the Amazon S3 Express One
-   * Zone storage class in directory buckets.</p>
+   * object exists, setting this header to 0 will create a new object. </p>  <p>This
+   * functionality is only supported for objects in the Amazon S3 Express One Zone
+   * storage class in directory buckets.</p>
    */
   inline long long GetWriteOffsetBytes() const { return m_writeOffsetBytes; }
   inline bool WriteOffsetBytesHasBeenSet() const { return m_writeOffsetBytesHasBeenSet; }
@@ -860,25 +857,24 @@ class PutObjectRequest : public StreamingS3Request {
    * in the <code>CreateSession</code> request. You don't need to explicitly specify
    * these encryption settings values in Zonal endpoint API calls, and Amazon S3 will
    * use the encryption settings values from the <code>CreateSession</code> request
-   * to protect new objects in the directory bucket. </p>  <p>When you use the
-   * CLI or the Amazon Web Services SDKs, for <code>CreateSession</code>, the session
-   * token refreshes automatically to avoid service interruptions when a session
-   * expires. The CLI or the Amazon Web Services SDKs use the bucket's default
-   * encryption configuration for the <code>CreateSession</code> request. It's not
-   * supported to override the encryption settings values in the
-   * <code>CreateSession</code> request. So in the Zonal endpoint API calls (except
-   * <a
+   * to protect new objects in the directory bucket. </p>  <p>When you use the CLI or
+   * the Amazon Web Services SDKs, for <code>CreateSession</code>, the session token
+   * refreshes automatically to avoid service interruptions when a session expires.
+   * The CLI or the Amazon Web Services SDKs use the bucket's default encryption
+   * configuration for the <code>CreateSession</code> request. It's not supported to
+   * override the encryption settings values in the <code>CreateSession</code>
+   * request. So in the Zonal endpoint API calls (except <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>
    * and <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>),
    * the encryption request headers must match the default encryption configuration
-   * of the directory bucket. </p>  </li> <li> <p> <b>S3 access points for
-   * Amazon FSx </b> - When accessing data stored in Amazon FSx file systems using S3
-   * access points, the only valid server side encryption option is
-   * <code>aws:fsx</code>. All Amazon FSx file systems have encryption configured by
-   * default and are encrypted at rest. Data is automatically encrypted before being
-   * written to the file system, and automatically decrypted as it is read. These
-   * processes are handled transparently by Amazon FSx.</p> </li> </ul>
+   * of the directory bucket. </p>  </li> <li> <p> <b>S3 access points for Amazon FSx
+   * </b> - When accessing data stored in Amazon FSx file systems using S3 access
+   * points, the only valid server side encryption option is <code>aws:fsx</code>.
+   * All Amazon FSx file systems have encryption configured by default and are
+   * encrypted at rest. Data is automatically encrypted before being written to the
+   * file system, and automatically decrypted as it is read. These processes are
+   * handled transparently by Amazon FSx.</p> </li> </ul>
    */
   inline ServerSideEncryption GetServerSideEncryption() const { return m_serverSideEncryption; }
   inline bool ServerSideEncryptionHasBeenSet() const { return m_serverSideEncryptionHasBeenSet; }
@@ -899,12 +895,11 @@ class PutObjectRequest : public StreamingS3Request {
    * availability. Depending on performance needs, you can specify a different
    * Storage Class. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-   * Classes</a> in the <i>Amazon S3 User Guide</i>.</p>  <ul> <li>
-   * <p>Directory buckets only support <code>EXPRESS_ONEZONE</code> (the S3 Express
-   * One Zone storage class) in Availability Zones and <code>ONEZONE_IA</code> (the
-   * S3 One Zone-Infrequent Access storage class) in Dedicated Local Zones.</p> </li>
-   * <li> <p>Amazon S3 on Outposts only uses the OUTPOSTS Storage Class.</p> </li>
-   * </ul>
+   * Classes</a> in the <i>Amazon S3 User Guide</i>.</p>  <ul> <li> <p>Directory
+   * buckets only support <code>EXPRESS_ONEZONE</code> (the S3 Express One Zone
+   * storage class) in Availability Zones and <code>ONEZONE_IA</code> (the S3 One
+   * Zone-Infrequent Access storage class) in Dedicated Local Zones.</p> </li> <li>
+   * <p>Amazon S3 on Outposts only uses the OUTPOSTS Storage Class.</p> </li> </ul>
    */
   inline StorageClass GetStorageClass() const { return m_storageClass; }
   inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
@@ -955,8 +950,8 @@ class PutObjectRequest : public StreamingS3Request {
   ///@{
   /**
    * <p>Specifies the algorithm to use when encrypting the object (for example,
-   * <code>AES256</code>).</p>  <p>This functionality is not supported for
-   * directory buckets.</p>
+   * <code>AES256</code>).</p>  <p>This functionality is not supported for directory
+   * buckets.</p>
    */
   inline const Aws::String& GetSSECustomerAlgorithm() const { return m_sSECustomerAlgorithm; }
   inline bool SSECustomerAlgorithmHasBeenSet() const { return m_sSECustomerAlgorithmHasBeenSet; }
@@ -999,8 +994,8 @@ class PutObjectRequest : public StreamingS3Request {
   /**
    * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
    * Amazon S3 uses this header for a message integrity check to ensure that the
-   * encryption key was transmitted without error.</p>  <p>This functionality
-   * is not supported for directory buckets.</p>
+   * encryption key was transmitted without error.</p>  <p>This functionality is not
+   * supported for directory buckets.</p>
    */
   inline const Aws::String& GetSSECustomerKeyMD5() const { return m_sSECustomerKeyMD5; }
   inline bool SSECustomerKeyMD5HasBeenSet() const { return m_sSECustomerKeyMD5HasBeenSet; }
@@ -1158,8 +1153,8 @@ class PutObjectRequest : public StreamingS3Request {
 
   ///@{
   /**
-   * <p>The Object Lock mode that you want to apply to this object.</p>
-   * <p>This functionality is not supported for directory buckets.</p>
+   * <p>The Object Lock mode that you want to apply to this object.</p>  <p>This
+   * functionality is not supported for directory buckets.</p>
    */
   inline ObjectLockMode GetObjectLockMode() const { return m_objectLockMode; }
   inline bool ObjectLockModeHasBeenSet() const { return m_objectLockModeHasBeenSet; }
@@ -1176,8 +1171,8 @@ class PutObjectRequest : public StreamingS3Request {
   ///@{
   /**
    * <p>The date and time when you want this object's Object Lock to expire. Must be
-   * formatted as a timestamp parameter.</p>  <p>This functionality is not
-   * supported for directory buckets.</p>
+   * formatted as a timestamp parameter.</p>  <p>This functionality is not supported
+   * for directory buckets.</p>
    */
   inline const Aws::Utils::DateTime& GetObjectLockRetainUntilDate() const { return m_objectLockRetainUntilDate; }
   inline bool ObjectLockRetainUntilDateHasBeenSet() const { return m_objectLockRetainUntilDateHasBeenSet; }
@@ -1198,8 +1193,8 @@ class PutObjectRequest : public StreamingS3Request {
    * <p>Specifies whether a legal hold will be applied to this object. For more
    * information about S3 Object Lock, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object
-   * Lock</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>This functionality is
-   * not supported for directory buckets.</p>
+   * Lock</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>This functionality is not
+   * supported for directory buckets.</p>
    */
   inline ObjectLockLegalHoldStatus GetObjectLockLegalHoldStatus() const { return m_objectLockLegalHoldStatus; }
   inline bool ObjectLockLegalHoldStatusHasBeenSet() const { return m_objectLockLegalHoldStatusHasBeenSet; }

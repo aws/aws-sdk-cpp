@@ -14,9 +14,6 @@
 #include <utility>
 
 namespace Aws {
-namespace Http {
-class URI;
-}  // namespace Http
 namespace S3 {
 namespace Model {
 
@@ -34,11 +31,12 @@ class UploadPartCopyRequest : public S3Request {
 
   AWS_S3_API Aws::String SerializePayload() const override;
 
-  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
   AWS_S3_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
   AWS_S3_API bool HasEmbeddedError(IOStream& body, const Http::HeaderValueCollection& header) const override;
+
   /**
    * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
    */
@@ -56,28 +54,28 @@ class UploadPartCopyRequest : public S3Request {
    * <code> <i>amzn-s3-demo-bucket</i>--<i>usw2-az1</i>--x-s3</code>). For
    * information about bucket naming restrictions, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
-   * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>
-   * <p>Copying objects across different Amazon Web Services Regions isn't supported
-   * when the source or destination bucket is in Amazon Web Services Local Zones. The
-   * source and destination buckets must have the same parent Amazon Web Services
-   * Region. Otherwise, you get an HTTP <code>400 Bad Request</code> error with the
-   * error code <code>InvalidRequest</code>.</p>  <p> <b>Access points</b> -
-   * When you use this action with an access point for general purpose buckets, you
-   * must provide the alias of the access point in place of the bucket name or
-   * specify the access point ARN. When you use this action with an access point for
-   * directory buckets, you must provide the access point name in place of the bucket
-   * name. When using the access point ARN, you must direct requests to the access
-   * point hostname. The access point hostname takes the form
+   * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>Copying
+   * objects across different Amazon Web Services Regions isn't supported when the
+   * source or destination bucket is in Amazon Web Services Local Zones. The source
+   * and destination buckets must have the same parent Amazon Web Services Region.
+   * Otherwise, you get an HTTP <code>400 Bad Request</code> error with the error
+   * code <code>InvalidRequest</code>.</p>  <p> <b>Access points</b> - When you use
+   * this action with an access point for general purpose buckets, you must provide
+   * the alias of the access point in place of the bucket name or specify the access
+   * point ARN. When you use this action with an access point for directory buckets,
+   * you must provide the access point name in place of the bucket name. When using
+   * the access point ARN, you must direct requests to the access point hostname. The
+   * access point hostname takes the form
    * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
    * When using this action with an access point through the Amazon Web Services
    * SDKs, you provide the access point ARN in place of the bucket name. For more
    * information about access point ARNs, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-   * access points</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>Object
-   * Lambda access points are not supported by directory buckets.</p>  <p>
-   * <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must
-   * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
-   * takes the form <code>
+   * access points</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>Object Lambda
+   * access points are not supported by directory buckets.</p>  <p> <b>S3 on
+   * Outposts</b> - When you use this action with S3 on Outposts, you must direct
+   * requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the
+   * form <code>
    * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
    * When you use this action with S3 on Outposts, the destination bucket must be the
    * Outposts access point ARN or the access point alias. For more information about
@@ -113,7 +111,7 @@ class UploadPartCopyRequest : public S3Request {
    * URL-encoded.</p> </li> <li> <p>For objects accessed through access points,
    * specify the Amazon Resource Name (ARN) of the object as accessed through the
    * access point, in the format
-   * <code>arn:aws:s3:&lt;Region&gt;:&lt;account-id&gt;:accesspoint/&lt;access-point-name&gt;/object/&lt;key&gt;</code>.
+   * <code>arn:aws:s3:<Region>:<account-id>:accesspoint/<access-point-name>/object/<key></code>.
    * For example, to copy the object <code>reports/january.pdf</code> through access
    * point <code>my-access-point</code> owned by account <code>123456789012</code> in
    * Region <code>us-west-2</code>, use the URL encoding of
@@ -121,10 +119,10 @@ class UploadPartCopyRequest : public S3Request {
    * The value must be URL encoded.</p>  <ul> <li> <p>Amazon S3 supports copy
    * operations using Access points only when the source and destination buckets are
    * in the same Amazon Web Services Region.</p> </li> <li> <p>Access points are not
-   * supported by directory buckets.</p> </li> </ul>  <p>Alternatively, for
-   * objects accessed through Amazon S3 on Outposts, specify the ARN of the object as
+   * supported by directory buckets.</p> </li> </ul>  <p>Alternatively, for objects
+   * accessed through Amazon S3 on Outposts, specify the ARN of the object as
    * accessed in the format
-   * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/object/&lt;key&gt;</code>.
+   * <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/object/<key></code>.
    * For example, to copy the object <code>reports/january.pdf</code> through outpost
    * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
    * <code>us-west-2</code>, use the URL encoding of
@@ -133,7 +131,7 @@ class UploadPartCopyRequest : public S3Request {
    * enabled, you could have multiple versions of the same object. By default,
    * <code>x-amz-copy-source</code> identifies the current version of the source
    * object to copy. To copy a specific version of the source object to copy, append
-   * <code>?versionId=&lt;version-id&gt;</code> to the <code>x-amz-copy-source</code>
+   * <code>?versionId=<version-id></code> to the <code>x-amz-copy-source</code>
    * request header (for example, <code>x-amz-copy-source:
    * /awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>).
    * </p> <p>If the current version is a delete marker and you don't specify a
@@ -142,8 +140,8 @@ class UploadPartCopyRequest : public S3Request {
    * If you specify versionId in the <code>x-amz-copy-source</code> and the versionId
    * is a delete marker, Amazon S3 returns an HTTP <code>400 Bad Request</code>
    * error, because you are not allowed to specify a delete marker as a version for
-   * the <code>x-amz-copy-source</code>. </p>  <p> <b>Directory buckets</b> -
-   * S3 Versioning isn't enabled and supported for directory buckets.</p>
+   * the <code>x-amz-copy-source</code>. </p>  <p> <b>Directory buckets</b> - S3
+   * Versioning isn't enabled and supported for directory buckets.</p>
    */
   inline const Aws::String& GetCopySource() const { return m_copySource; }
   inline bool CopySourceHasBeenSet() const { return m_copySourceHasBeenSet; }
@@ -337,8 +335,8 @@ class UploadPartCopyRequest : public S3Request {
   ///@{
   /**
    * <p>Specifies the algorithm to use when encrypting the object (for example,
-   * AES256).</p>  <p>This functionality is not supported when the destination
-   * bucket is a directory bucket.</p>
+   * AES256).</p>  <p>This functionality is not supported when the destination bucket
+   * is a directory bucket.</p>
    */
   inline const Aws::String& GetSSECustomerAlgorithm() const { return m_sSECustomerAlgorithm; }
   inline bool SSECustomerAlgorithmHasBeenSet() const { return m_sSECustomerAlgorithmHasBeenSet; }
@@ -362,8 +360,8 @@ class UploadPartCopyRequest : public S3Request {
    * appropriate for use with the algorithm specified in the
    * <code>x-amz-server-side-encryption-customer-algorithm</code> header. This must
    * be the same encryption key specified in the initiate multipart upload
-   * request.</p>  <p>This functionality is not supported when the destination
-   * bucket is a directory bucket.</p>
+   * request.</p>  <p>This functionality is not supported when the destination bucket
+   * is a directory bucket.</p>
    */
   inline const Aws::String& GetSSECustomerKey() const { return m_sSECustomerKey; }
   inline bool SSECustomerKeyHasBeenSet() const { return m_sSECustomerKeyHasBeenSet; }
@@ -383,8 +381,8 @@ class UploadPartCopyRequest : public S3Request {
   /**
    * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
    * Amazon S3 uses this header for a message integrity check to ensure that the
-   * encryption key was transmitted without error.</p>  <p>This functionality
-   * is not supported when the destination bucket is a directory bucket.</p>
+   * encryption key was transmitted without error.</p>  <p>This functionality is not
+   * supported when the destination bucket is a directory bucket.</p>
    */
   inline const Aws::String& GetSSECustomerKeyMD5() const { return m_sSECustomerKeyMD5; }
   inline bool SSECustomerKeyMD5HasBeenSet() const { return m_sSECustomerKeyMD5HasBeenSet; }
@@ -403,8 +401,8 @@ class UploadPartCopyRequest : public S3Request {
   ///@{
   /**
    * <p>Specifies the algorithm to use when decrypting the source object (for
-   * example, <code>AES256</code>).</p>  <p>This functionality is not supported
-   * when the source object is in a directory bucket.</p>
+   * example, <code>AES256</code>).</p>  <p>This functionality is not supported when
+   * the source object is in a directory bucket.</p>
    */
   inline const Aws::String& GetCopySourceSSECustomerAlgorithm() const { return m_copySourceSSECustomerAlgorithm; }
   inline bool CopySourceSSECustomerAlgorithmHasBeenSet() const { return m_copySourceSSECustomerAlgorithmHasBeenSet; }
@@ -424,9 +422,8 @@ class UploadPartCopyRequest : public S3Request {
   /**
    * <p>Specifies the customer-provided encryption key for Amazon S3 to use to
    * decrypt the source object. The encryption key provided in this header must be
-   * one that was used when the source object was created.</p>  <p>This
-   * functionality is not supported when the source object is in a directory
-   * bucket.</p>
+   * one that was used when the source object was created.</p>  <p>This functionality
+   * is not supported when the source object is in a directory bucket.</p>
    */
   inline const Aws::String& GetCopySourceSSECustomerKey() const { return m_copySourceSSECustomerKey; }
   inline bool CopySourceSSECustomerKeyHasBeenSet() const { return m_copySourceSSECustomerKeyHasBeenSet; }
@@ -446,8 +443,8 @@ class UploadPartCopyRequest : public S3Request {
   /**
    * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
    * Amazon S3 uses this header for a message integrity check to ensure that the
-   * encryption key was transmitted without error.</p>  <p>This functionality
-   * is not supported when the source object is in a directory bucket.</p>
+   * encryption key was transmitted without error.</p>  <p>This functionality is not
+   * supported when the source object is in a directory bucket.</p>
    */
   inline const Aws::String& GetCopySourceSSECustomerKeyMD5() const { return m_copySourceSSECustomerKeyMD5; }
   inline bool CopySourceSSECustomerKeyMD5HasBeenSet() const { return m_copySourceSSECustomerKeyMD5HasBeenSet; }

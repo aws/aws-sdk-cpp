@@ -30,7 +30,6 @@ IntelligentTieringAccessTier GetIntelligentTieringAccessTierForName(const Aws::S
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<IntelligentTieringAccessTier>(hashCode);
   }
-
   return IntelligentTieringAccessTier::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForIntelligentTieringAccessTier(IntelligentTieringAccessTier 
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

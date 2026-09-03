@@ -30,7 +30,6 @@ BucketAccelerateStatus GetBucketAccelerateStatusForName(const Aws::String& name)
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<BucketAccelerateStatus>(hashCode);
   }
-
   return BucketAccelerateStatus::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForBucketAccelerateStatus(BucketAccelerateStatus enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

@@ -30,7 +30,6 @@ class TargetObjectKeyFormat {
   AWS_S3_API TargetObjectKeyFormat() = default;
   AWS_S3_API TargetObjectKeyFormat(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API TargetObjectKeyFormat& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

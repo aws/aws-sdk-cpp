@@ -33,7 +33,6 @@ class Transition {
   AWS_S3_API Transition() = default;
   AWS_S3_API Transition(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API Transition& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

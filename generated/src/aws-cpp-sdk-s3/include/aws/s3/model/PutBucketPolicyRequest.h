@@ -13,9 +13,6 @@
 #include <utility>
 
 namespace Aws {
-namespace Http {
-class URI;
-}  // namespace Http
 namespace S3 {
 namespace Model {
 
@@ -31,15 +28,14 @@ class PutBucketPolicyRequest : public StreamingS3Request {
   // so we can not get operation's name from response.
   inline virtual const char* GetServiceRequestName() const override { return "PutBucketPolicy"; }
 
-  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
   AWS_S3_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
   AWS_S3_API bool HasEmbeddedError(IOStream& body, const Http::HeaderValueCollection& header) const override;
   AWS_S3_API Aws::String GetChecksumAlgorithmName() const override;
   AWS_S3_API bool ChecksumAlgorithmIsSet() const override;
   inline bool RequestChecksumRequired() const override { return true; };
-
   AWS_S3_API bool IsStreaming() const override { return false; }
 
   /**
@@ -80,8 +76,8 @@ class PutBucketPolicyRequest : public StreamingS3Request {
   /**
    * <p>The MD5 hash of the request body.</p> <p>For requests made using the Amazon
    * Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this
-   * field is calculated automatically.</p>  <p>This functionality is not
-   * supported for directory buckets.</p>
+   * field is calculated automatically.</p>  <p>This functionality is not supported
+   * for directory buckets.</p>
    */
   inline const Aws::String& GetContentMD5() const { return m_contentMD5; }
   inline bool ContentMD5HasBeenSet() const { return m_contentMD5HasBeenSet; }
@@ -118,9 +114,9 @@ class PutBucketPolicyRequest : public StreamingS3Request {
    * individual checksum value you provide through
    * <code>x-amz-checksum-<i>algorithm</i> </code> doesn't match the checksum
    * algorithm you set through <code>x-amz-sdk-checksum-algorithm</code>, Amazon S3
-   * fails the request with a <code>BadDigest</code> error.</p>  <p>For
-   * directory buckets, when you use Amazon Web Services SDKs, <code>CRC32</code> is
-   * the default checksum algorithm that's used for performance.</p>
+   * fails the request with a <code>BadDigest</code> error.</p>  <p>For directory
+   * buckets, when you use Amazon Web Services SDKs, <code>CRC32</code> is the
+   * default checksum algorithm that's used for performance.</p>
    */
   inline ChecksumAlgorithm GetChecksumAlgorithm() const { return m_checksumAlgorithm; }
   inline bool ChecksumAlgorithmHasBeenSet() const { return m_checksumAlgorithmHasBeenSet; }
@@ -156,10 +152,10 @@ class PutBucketPolicyRequest : public StreamingS3Request {
   /**
    * <p>The account ID of the expected bucket owner. If the account ID that you
    * provide does not match the actual owner of the bucket, the request fails with
-   * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-   * <p>For directory buckets, this header is not supported in this API operation. If
-   * you specify this header, the request fails with the HTTP status code <code>501
-   * Not Implemented</code>.</p>
+   * the HTTP status code <code>403 Forbidden</code> (access denied).</p>  <p>For
+   * directory buckets, this header is not supported in this API operation. If you
+   * specify this header, the request fails with the HTTP status code <code>501 Not
+   * Implemented</code>.</p>
    */
   inline const Aws::String& GetExpectedBucketOwner() const { return m_expectedBucketOwner; }
   inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }

@@ -4,7 +4,9 @@
  */
 
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/GetObjectTaggingResult.h>
@@ -18,37 +20,4 @@ using namespace Aws;
 
 GetObjectTaggingResult::GetObjectTaggingResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-GetObjectTaggingResult& GetObjectTaggingResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
-  m_HttpResponseCode = result.GetResponseCode();
-  const XmlDocument& xmlDocument = result.GetPayload();
-  XmlNode resultNode = xmlDocument.GetRootElement();
-
-  if (!resultNode.IsNull()) {
-    XmlNode tagSetNode = resultNode.FirstChild("TagSet");
-    if (!tagSetNode.IsNull()) {
-      XmlNode tagSetMember = tagSetNode.FirstChild("Tag");
-      m_tagSetHasBeenSet = !tagSetMember.IsNull();
-      while (!tagSetMember.IsNull()) {
-        m_tagSet.push_back(tagSetMember);
-        tagSetMember = tagSetMember.NextNode("Tag");
-      }
-
-      m_tagSetHasBeenSet = true;
-    }
-  }
-
-  const auto& headers = result.GetHeaderValueCollection();
-  const auto& versionIdIter = headers.find("x-amz-version-id");
-  if (versionIdIter != headers.end()) {
-    m_versionId = versionIdIter->second;
-    m_versionIdHasBeenSet = true;
-  }
-
-  const auto& requestIdIter = headers.find("x-amz-request-id");
-  if (requestIdIter != headers.end()) {
-    m_requestId = requestIdIter->second;
-    m_requestIdHasBeenSet = true;
-  }
-
-  return *this;
-}
+GetObjectTaggingResult& GetObjectTaggingResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) { return *this; }

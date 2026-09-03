@@ -20,9 +20,6 @@
 #include <utility>
 
 namespace Aws {
-namespace Http {
-class URI;
-}  // namespace Http
 namespace S3 {
 namespace Model {
 
@@ -38,13 +35,12 @@ class WriteGetObjectResponseRequest : public StreamingS3Request {
   // so we can not get operation's name from response.
   inline virtual const char* GetServiceRequestName() const override { return "WriteGetObjectResponse"; }
 
-  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
   AWS_S3_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
   AWS_S3_API bool HasEmbeddedError(IOStream& body, const Http::HeaderValueCollection& header) const override;
   AWS_S3_API bool SignBody() const override { return false; }
-
   AWS_S3_API bool IsChunked() const override { return true; }
 
   /**
@@ -118,12 +114,12 @@ class WriteGetObjectResponseRequest : public StreamingS3Request {
 
   ///@{
   /**
-   * <p>A string that uniquely identifies an error condition. Returned in the
-   * &lt;Code&gt; tag of the error XML response for a corresponding
-   * <code>GetObject</code> call. Cannot be used with a successful
-   * <code>StatusCode</code> header or when the transformed object is provided in the
-   * body. All error codes from S3 are sentence-cased. The regular expression (regex)
-   * value is <code>"^[A-Z][a-zA-Z]+$"</code>.</p>
+   * <p>A string that uniquely identifies an error condition. Returned in the <Code>
+   * tag of the error XML response for a corresponding <code>GetObject</code> call.
+   * Cannot be used with a successful <code>StatusCode</code> header or when the
+   * transformed object is provided in the body. All error codes from S3 are
+   * sentence-cased. The regular expression (regex) value is
+   * <code>"^[A-Z][a-zA-Z]+$"</code>.</p>
    */
   inline const Aws::String& GetErrorCode() const { return m_errorCode; }
   inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
@@ -142,7 +138,7 @@ class WriteGetObjectResponseRequest : public StreamingS3Request {
   ///@{
   /**
    * <p>Contains a generic description of the error condition. Returned in the
-   * &lt;Message&gt; tag of the error XML response for a corresponding
+   * <Message> tag of the error XML response for a corresponding
    * <code>GetObject</code> call. Cannot be used with a successful
    * <code>StatusCode</code> header or when the transformed object is provided in
    * body.</p>
@@ -299,7 +295,7 @@ class WriteGetObjectResponseRequest : public StreamingS3Request {
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
    * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
    * checksum header can be specified at a time. If you supply multiple checksum
-   * headers, this request will fail.</p> <p/>
+   * headers, this request will fail.</p> <p></p>
    */
   inline const Aws::String& GetChecksumCRC32() const { return m_checksumCRC32; }
   inline bool ChecksumCRC32HasBeenSet() const { return m_checksumCRC32HasBeenSet; }
@@ -799,9 +795,9 @@ class WriteGetObjectResponseRequest : public StreamingS3Request {
   ///@{
   /**
    * <p> The server-side encryption algorithm used when storing requested object in
-   * Amazon S3 or Amazon FSx.</p>  <p>When accessing data stored in Amazon FSx
-   * file systems using S3 access points, the only valid server side encryption
-   * option is <code>aws:fsx</code>.</p>
+   * Amazon S3 or Amazon FSx.</p>  <p>When accessing data stored in Amazon FSx file
+   * systems using S3 access points, the only valid server side encryption option is
+   * <code>aws:fsx</code>.</p>
    */
   inline ServerSideEncryption GetServerSideEncryption() const { return m_serverSideEncryption; }
   inline bool ServerSideEncryptionHasBeenSet() const { return m_serverSideEncryptionHasBeenSet; }

@@ -29,7 +29,6 @@ class AccessControlTranslation {
   AWS_S3_API AccessControlTranslation() = default;
   AWS_S3_API AccessControlTranslation(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API AccessControlTranslation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/ReplicationConfiguration.h>
@@ -19,45 +20,9 @@ namespace Model {
 
 ReplicationConfiguration::ReplicationConfiguration(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ReplicationConfiguration& ReplicationConfiguration::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+ReplicationConfiguration& ReplicationConfiguration::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode roleNode = resultNode.FirstChild("Role");
-    if (!roleNode.IsNull()) {
-      m_role = Aws::Utils::Xml::DecodeEscapedXmlText(roleNode.GetText());
-      m_roleHasBeenSet = true;
-    }
-    XmlNode rulesNode = resultNode.FirstChild("Rule");
-    if (!rulesNode.IsNull()) {
-      XmlNode ruleMember = rulesNode;
-      m_rulesHasBeenSet = !ruleMember.IsNull();
-      while (!ruleMember.IsNull()) {
-        m_rules.push_back(ruleMember);
-        ruleMember = ruleMember.NextNode("Rule");
-      }
-
-      m_rulesHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void ReplicationConfiguration::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_roleHasBeenSet) {
-    XmlNode roleNode = parentNode.CreateChildElement("Role");
-    roleNode.SetText(m_role);
-  }
-
-  if (m_rulesHasBeenSet) {
-    for (const auto& item : m_rules) {
-      XmlNode rulesNode = parentNode.CreateChildElement("Rule");
-      item.AddToNode(rulesNode);
-    }
-  }
-}
+void ReplicationConfiguration::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

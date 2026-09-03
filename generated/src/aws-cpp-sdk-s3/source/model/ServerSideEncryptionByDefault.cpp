@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/ServerSideEncryptionByDefault.h>
@@ -19,38 +20,9 @@ namespace Model {
 
 ServerSideEncryptionByDefault::ServerSideEncryptionByDefault(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ServerSideEncryptionByDefault& ServerSideEncryptionByDefault::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+ServerSideEncryptionByDefault& ServerSideEncryptionByDefault::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode sSEAlgorithmNode = resultNode.FirstChild("SSEAlgorithm");
-    if (!sSEAlgorithmNode.IsNull()) {
-      m_sSEAlgorithm = ServerSideEncryptionMapper::GetServerSideEncryptionForName(
-          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sSEAlgorithmNode.GetText()).c_str()));
-      m_sSEAlgorithmHasBeenSet = true;
-    }
-    XmlNode kMSMasterKeyIDNode = resultNode.FirstChild("KMSMasterKeyID");
-    if (!kMSMasterKeyIDNode.IsNull()) {
-      m_kMSMasterKeyID = Aws::Utils::Xml::DecodeEscapedXmlText(kMSMasterKeyIDNode.GetText());
-      m_kMSMasterKeyIDHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void ServerSideEncryptionByDefault::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_sSEAlgorithmHasBeenSet) {
-    XmlNode sSEAlgorithmNode = parentNode.CreateChildElement("SSEAlgorithm");
-    sSEAlgorithmNode.SetText(ServerSideEncryptionMapper::GetNameForServerSideEncryption(m_sSEAlgorithm));
-  }
-
-  if (m_kMSMasterKeyIDHasBeenSet) {
-    XmlNode kMSMasterKeyIDNode = parentNode.CreateChildElement("KMSMasterKeyID");
-    kMSMasterKeyIDNode.SetText(m_kMSMasterKeyID);
-  }
-}
+void ServerSideEncryptionByDefault::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

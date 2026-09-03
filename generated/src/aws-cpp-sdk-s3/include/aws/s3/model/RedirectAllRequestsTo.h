@@ -30,7 +30,6 @@ class RedirectAllRequestsTo {
   AWS_S3_API RedirectAllRequestsTo() = default;
   AWS_S3_API RedirectAllRequestsTo(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API RedirectAllRequestsTo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

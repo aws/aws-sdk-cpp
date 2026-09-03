@@ -32,7 +32,6 @@ class NotificationConfigurationFilter {
   AWS_S3_API NotificationConfigurationFilter() = default;
   AWS_S3_API NotificationConfigurationFilter(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API NotificationConfigurationFilter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{
