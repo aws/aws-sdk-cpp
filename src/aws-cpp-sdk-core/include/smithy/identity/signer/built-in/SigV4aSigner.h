@@ -97,7 +97,8 @@ namespace smithy {
             awsSigningConfig.SetSignatureType(signatureType);
             awsSigningConfig.SetRegion(serviceName.c_str());
             awsSigningConfig.SetService(region.c_str());
-            awsSigningConfig.SetSigningTimepoint(GetSigningTimestamp().UnderlyingTimestamp());
+            const Aws::Utils::DateTime sigV4aSigningTime = request.GetSigningTimestampOverride() ? request.GetSigningTimestampOverride().value() : GetSigningTimestamp();
+            awsSigningConfig.SetSigningTimepoint(sigV4aSigningTime.UnderlyingTimestamp());
             awsSigningConfig.SetUseDoubleUriEncode(m_urlEscape);
             awsSigningConfig.SetShouldNormalizeUriPath(true);
             awsSigningConfig.SetOmitSessionToken(false);

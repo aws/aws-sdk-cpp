@@ -1,6 +1,9 @@
 #include <aws/core/Aws.h>
 #include <aws/core/auth/AWSCredentials.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/DefaultRetryStrategy.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/s3/S3EndpointProvider.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/base64/Base64.h>
 #include <aws/core/utils/crypto/CRC64.h>
@@ -310,6 +313,36 @@ TEST_F(S3UnitTest, S3EmbeddedErrorTest) {
   EXPECT_TRUE(response.GetError().ShouldRetry());
   EXPECT_EQ("We encountered an internal error. Please try again.", response.GetError().GetMessage());
   EXPECT_EQ("656c76696e6727732072657175657374", response.GetError().GetRequestId());
+}
+
+// Clock skew end to end through a real client: a SignatureDoesNotMatch error with the server clock an hour ahead drives a signing-time adjustment and one retry.
+TEST_F(S3UnitTest, ClockSkewAdjustmentRetries) {
+  AWSCredentials credentials{"mock", "credentials"};
+  const auto epProvider = Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG);
+  S3ClientConfiguration s3Config;
+  s3Config.region = "us-east-1";
+  s3Config.retryStrategy = Aws::MakeShared<DefaultRetryStrategy>(ALLOCATION_TAG); // fixture default is NoRetry
+  S3TestClient retryingClient{credentials, epProvider, s3Config};
+
+  auto makeSkewResponse = []() -> std::shared_ptr<Standard::StandardHttpResponse> {
+    auto mockRequest = Aws::MakeShared<Standard::StandardHttpRequest>(ALLOCATION_TAG, "mockuri", HttpMethod::HTTP_GET);
+    mockRequest->SetResponseStreamFactory(Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    auto mockResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, mockRequest);
+    mockResponse->SetResponseCode(HttpResponseCode::FORBIDDEN);
+    // Write the body (so tellp() > 0 and the XML error marshaller parses it rather than treating it as bodyless).
+    mockResponse->GetResponseBody() << "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Error><Code>SignatureDoesNotMatch</Code><Message>clock skew</Message></Error>";
+    mockResponse->AddHeader("Date", (Aws::Utils::DateTime::Now() + std::chrono::hours(1)).ToGmtString(Aws::Utils::DateFormat::RFC822)); // server is 1 hour ahead
+    return mockResponse;
+  };
+
+  _mockHttpClient->Reset();
+  _mockHttpClient->AddResponseToReturn(makeSkewResponse());
+  _mockHttpClient->AddResponseToReturn(makeSkewResponse());
+
+  const auto response = retryingClient.CopyObject(CopyObjectRequest().WithBucket("b").WithKey("k").WithCopySource("s"));
+  EXPECT_FALSE(response.IsSuccess());
+  EXPECT_STREQ("SignatureDoesNotMatch", response.GetError().GetExceptionName().c_str()); // real XML marshaller mapped the code
+  EXPECT_EQ(2u, _mockHttpClient->GetAllRequestsMade().size());                           // clock skew drove exactly one retry
 }
 
 class MockRequest : public Aws::AmazonWebServiceRequest

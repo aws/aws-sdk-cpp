@@ -229,11 +229,6 @@ namespace client
           return AwsClientRequestSigning<AuthSchemesVariantT>::SignEventMessage(message, seed, ctx, m_authSchemes);
         }
 
-        bool AdjustClockSkew(HttpResponseOutcome& outcome, const AuthSchemeOption& authSchemeOption) const override
-        {
-            return AwsClientRequestSigning<AuthSchemesVariantT>::AdjustClockSkew(outcome, authSchemeOption, m_authSchemes);
-        }
-
         IdentityOutcome ResolveIdentity(const AwsSmithyClientAsyncRequestContext& ctx) const override {
           return AwsClientRequestSigning<AuthSchemesVariantT>::ResolveIdentity(ctx, m_authSchemes);
         }

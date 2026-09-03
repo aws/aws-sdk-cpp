@@ -60,6 +60,11 @@ namespace Aws
 
     class AmazonWebServiceRequest;
 
+    namespace Internal
+    {
+        class ClientSkew;
+    }
+
     namespace Client
     {
         template<typename ERROR_TYPE>
@@ -345,7 +350,7 @@ namespace Aws
              * Try to adjust signer's clock
              * return true if signer's clock is adjusted, false otherwise.
              */
-            bool AdjustClockSkew(HttpResponseOutcome& outcome, const char* signerName) const;
+            bool AdjustClockSkew(HttpResponseOutcome& outcome, const Aws::Utils::DateTime& timeRequestSent, const Aws::Utils::DateTime& timeResponseReceived, std::chrono::milliseconds attemptSkew) const;
             void AddHeadersToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest, const Http::HeaderValueCollection& headerValues) const;
             void AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest, const std::shared_ptr<Aws::IOStream>& body,
                                          bool needsContentMd5 = false, bool isChunked = false) const;
@@ -359,6 +364,7 @@ namespace Aws
             std::shared_ptr<Aws::Utils::Crypto::Hash> m_hash;
             long m_requestTimeoutMs;
             bool m_enableClockSkewAdjustment;
+            mutable std::shared_ptr<Aws::Internal::ClientSkew> m_clientSkew;
             Aws::String m_serviceName = "AWSBaseClient";
             Aws::Client::RequestCompressionConfig m_requestCompressionConfig;
             std::shared_ptr<smithy::client::UserAgentInterceptor> m_userAgentInterceptor;

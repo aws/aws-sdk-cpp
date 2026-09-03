@@ -39,6 +39,8 @@ static const char* REQUEST_MIN_COMPRESSION_SIZE_BYTES_CONFIG_VAR = "request_min_
 static const char* AWS_EXECUTION_ENV = "AWS_EXECUTION_ENV";
 static const char* DISABLE_IMDSV1_CONFIG_VAR = "AWS_EC2_METADATA_V1_DISABLED";
 static const char* DISABLE_IMDSV1_ENV_VAR = "ec2_metadata_v1_disabled";
+static const char* DISABLE_CLOCK_SKEW_CORRECTION_ENV_VAR = "AWS_DISABLE_CLOCK_SKEW_CORRECTION";
+static const char* DISABLE_CLOCK_SKEW_CORRECTION_CONFIG_VAR = "disable_clock_skew_correction";
 static const char* AWS_ACCOUNT_ID_ENDPOINT_MODE_ENVIRONMENT_VARIABLE = "AWS_ACCOUNT_ID_ENDPOINT_MODE";
 static const char* AWS_ACCOUNT_ID_ENDPOINT_MODE_CONFIG_FILE_OPTION = "account_id_endpoint_mode";
 static const char* AWS_METADATA_SERVICE_TIMEOUT_ENV_VAR = "AWS_METADATA_SERVICE_TIMEOUT";
@@ -334,6 +336,16 @@ void setConfigFromEnvOrProfile(ClientConfiguration &config)
     if (disableIMDSv1 == "true") {
         config.disableImdsV1 = true;
         config.credentialProviderConfig.imdsConfig.disableImdsV1 = true;
+    }
+
+    // Knob is a "disable" flag (AWS ..._DISABLED convention); the config field is "enable" and defaults on.
+    const bool disableClockSkewCorrection = ClientConfiguration::LoadConfigFromEnvOrProfile(DISABLE_CLOCK_SKEW_CORRECTION_ENV_VAR,
+        config.profileName,
+        DISABLE_CLOCK_SKEW_CORRECTION_CONFIG_VAR,
+        {"true", "false"},
+        "false") == "true";
+    if (disableClockSkewCorrection) {
+        config.enableClockSkewAdjustment = false;
     }
 
     // accountId is intentionally not set here: AWS_ACCOUNT_ID env variable may not match the provided credentials.

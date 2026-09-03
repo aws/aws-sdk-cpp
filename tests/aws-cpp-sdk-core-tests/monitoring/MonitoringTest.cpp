@@ -242,6 +242,22 @@ protected:
         }
         mockHttpClient->AddResponseToReturn(httpResponse);
     }
+
+    void QueueMockResponse(HttpResponseCode code, Aws::Client::CoreErrors errorType, const HeaderValueCollection& headers)
+    {
+        auto httpRequest = CreateHttpRequest(URI(URI_STRING),
+                HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+        httpRequest->SetResolvedRemoteHost("127.0.0.1");
+        auto httpResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, httpRequest);
+        httpResponse->SetResponseCode(code);
+        httpResponse->SetClientErrorType(errorType);
+        httpResponse->GetResponseBody() << "";
+        for(auto&& header : headers)
+        {
+            httpResponse->AddHeader(header.first, header.second);
+        }
+        mockHttpClient->AddResponseToReturn(httpResponse);
+    }
 };
 
 TEST_F(MonitoringTestSuite, TestMonitoringListenersAreCalledCorrectlyWithRetryAndSucceededRequest)
@@ -252,7 +268,7 @@ TEST_F(MonitoringTestSuite, TestMonitoringListenersAreCalledCorrectlyWithRetryAn
     requestHeaders.emplace("X-Amz-Date", Aws::Utils::DateTime::Now().ToGmtString(Aws::Utils::DateFormat::ISO_8601));
     request.SetHeaders(requestHeaders);
     // BAD_REQUEST is not retryable, but since this is triggered by clock skew, it's set to mandatory retryable.
-    QueueMockResponse(HttpResponseCode::BAD_REQUEST, responseHeaders);
+    QueueMockResponse(HttpResponseCode::BAD_REQUEST, Aws::Client::CoreErrors::SIGNATURE_DOES_NOT_MATCH, responseHeaders);
     QueueMockResponse(HttpResponseCode::OK, responseHeaders);
     auto outcome = client->MakeRequest(request);
     AWS_ASSERT_SUCCESS(outcome);
@@ -273,8 +289,8 @@ TEST_F(MonitoringTestSuite, TestMonitoringListenersAreCalledCorrectlyWithRetryAn
     AmazonWebServiceRequestMock request;
     requestHeaders.emplace("X-Amz-Date", Aws::Utils::DateTime::Now().ToGmtString(Aws::Utils::DateFormat::ISO_8601));
     request.SetHeaders(requestHeaders);
-    QueueMockResponse(HttpResponseCode::BAD_REQUEST, responseHeaders);
-    QueueMockResponse(HttpResponseCode::BAD_REQUEST, responseHeaders);
+    QueueMockResponse(HttpResponseCode::BAD_REQUEST, Aws::Client::CoreErrors::SIGNATURE_DOES_NOT_MATCH, responseHeaders);
+    QueueMockResponse(HttpResponseCode::BAD_REQUEST, Aws::Client::CoreErrors::SIGNATURE_DOES_NOT_MATCH, responseHeaders);
     auto outcome = client->MakeRequest(request);
     ASSERT_FALSE(outcome.IsSuccess());
     ASSERT_EQ(1, client->GetRequestAttemptedRetries());
