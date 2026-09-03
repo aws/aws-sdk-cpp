@@ -138,7 +138,16 @@ class XmlProtocolTraitsTest {
         assertFalse(impl.contains("HeaderValueCollection"),
             "REST-XML must not emit a header-collection initial-response ctor impl: " + impl);
 
-        String handler = render(w -> restXml.writeInitialResponseHandlerConstruction(w, "DoStreamInitialResponse"));
+        // The handler-construction block must declare xmlDoc, guard the parse (WARN + break), and
+        // then build the event from the XML root — mirroring C2J's XmlRequestEventStreamHandlerSource.
+        String handler = render(w -> restXml.writeInitialResponseHandlerConstruction(
+            w, "DoStreamInitialResponse", "DOSTREAM_HANDLER_CLASS_TAG"));
+        assertTrue(handler.contains(
+            "auto xmlDoc = XmlDocument::CreateFromXmlString(GetEventPayloadAsString());"), handler);
+        assertTrue(handler.contains("if (!xmlDoc.WasParseSuccessful()) {"), handler);
+        assertTrue(handler.contains("AWS_LOGSTREAM_WARN(DOSTREAM_HANDLER_CLASS_TAG, \"Unable to generate "
+            + "a proper InitialResponse object from the response in XML format.\");"), handler);
+        assertTrue(handler.contains("break;"), handler);
         assertTrue(handler.contains("DoStreamInitialResponse event(xmlDoc.GetRootElement());"), handler);
         assertFalse(handler.contains("GetEventHeadersAsHttpHeaders"), handler);
     }
