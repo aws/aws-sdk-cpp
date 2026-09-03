@@ -33,6 +33,14 @@ SftpConnectorConfig& SftpConnectorConfig::operator=(JsonView jsonValue) {
     m_maxConcurrentConnections = jsonValue.GetInteger("MaxConcurrentConnections");
     m_maxConcurrentConnectionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("OrderedUserSecretVersionStages")) {
+    Aws::Utils::Array<JsonView> orderedUserSecretVersionStagesJsonList = jsonValue.GetArray("OrderedUserSecretVersionStages");
+    for (unsigned orderedUserSecretVersionStagesIndex = 0;
+         orderedUserSecretVersionStagesIndex < orderedUserSecretVersionStagesJsonList.GetLength(); ++orderedUserSecretVersionStagesIndex) {
+      m_orderedUserSecretVersionStages.push_back(orderedUserSecretVersionStagesJsonList[orderedUserSecretVersionStagesIndex].AsString());
+    }
+    m_orderedUserSecretVersionStagesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -53,6 +61,16 @@ JsonValue SftpConnectorConfig::Jsonize() const {
 
   if (m_maxConcurrentConnectionsHasBeenSet) {
     payload.WithInteger("MaxConcurrentConnections", m_maxConcurrentConnections);
+  }
+
+  if (m_orderedUserSecretVersionStagesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> orderedUserSecretVersionStagesJsonList(m_orderedUserSecretVersionStages.size());
+    for (unsigned orderedUserSecretVersionStagesIndex = 0;
+         orderedUserSecretVersionStagesIndex < orderedUserSecretVersionStagesJsonList.GetLength(); ++orderedUserSecretVersionStagesIndex) {
+      orderedUserSecretVersionStagesJsonList[orderedUserSecretVersionStagesIndex].AsString(
+          m_orderedUserSecretVersionStages[orderedUserSecretVersionStagesIndex]);
+    }
+    payload.WithArray("OrderedUserSecretVersionStages", std::move(orderedUserSecretVersionStagesJsonList));
   }
 
   return payload;

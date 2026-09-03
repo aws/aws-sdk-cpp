@@ -86,6 +86,13 @@ Signal& Signal::operator=(JsonView jsonValue) {
     }
     m_signalIndicatorsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("activities")) {
+    Aws::Utils::Array<JsonView> activitiesJsonList = jsonValue.GetArray("activities");
+    for (unsigned activitiesIndex = 0; activitiesIndex < activitiesJsonList.GetLength(); ++activitiesIndex) {
+      m_activities.push_back(activitiesJsonList[activitiesIndex].AsObject());
+    }
+    m_activitiesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -162,6 +169,14 @@ JsonValue Signal::Jsonize() const {
       signalIndicatorsJsonList[signalIndicatorsIndex].AsObject(m_signalIndicators[signalIndicatorsIndex].Jsonize());
     }
     payload.WithArray("signalIndicators", std::move(signalIndicatorsJsonList));
+  }
+
+  if (m_activitiesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> activitiesJsonList(m_activities.size());
+    for (unsigned activitiesIndex = 0; activitiesIndex < activitiesJsonList.GetLength(); ++activitiesIndex) {
+      activitiesJsonList[activitiesIndex].AsObject(m_activities[activitiesIndex].Jsonize());
+    }
+    payload.WithArray("activities", std::move(activitiesJsonList));
   }
 
   return payload;

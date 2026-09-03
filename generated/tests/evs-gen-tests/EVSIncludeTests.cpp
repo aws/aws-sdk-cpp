@@ -17,6 +17,7 @@
 #include <aws/evs/EVSWaiter.h>
 #include <aws/evs/EVS_EXPORTS.h>
 #include <aws/evs/internal/EVSEndpointRules.h>
+#include <aws/evs/model/AccountSetting.h>
 #include <aws/evs/model/AssociateEipToVlanRequest.h>
 #include <aws/evs/model/AssociateEipToVlanResult.h>
 #include <aws/evs/model/Check.h>
@@ -52,6 +53,8 @@
 #include <aws/evs/model/EnvironmentState.h>
 #include <aws/evs/model/EnvironmentSummary.h>
 #include <aws/evs/model/ErrorDetail.h>
+#include <aws/evs/model/GetAccountSettingsRequest.h>
+#include <aws/evs/model/GetAccountSettingsResult.h>
 #include <aws/evs/model/GetDepotUrlRequest.h>
 #include <aws/evs/model/GetDepotUrlResult.h>
 #include <aws/evs/model/GetEnvironmentRequest.h>
@@ -84,6 +87,8 @@
 #include <aws/evs/model/ListVmEntitlementsRequest.h>
 #include <aws/evs/model/ListVmEntitlementsResult.h>
 #include <aws/evs/model/NetworkInterface.h>
+#include <aws/evs/model/PutAccountSettingsRequest.h>
+#include <aws/evs/model/PutAccountSettingsResult.h>
 #include <aws/evs/model/ResourceNotFoundException.h>
 #include <aws/evs/model/Secret.h>
 #include <aws/evs/model/ServiceAccessSecurityGroups.h>

@@ -16,6 +16,7 @@
 #include <aws/bedrock-agentcore-control/model/CreateCapacityProviderRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateCodeInterpreterRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateConfigurationBundleRequest.h>
+#include <aws/bedrock-agentcore-control/model/CreateConsentPortalRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateDatasetRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateDatasetVersionRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateEvaluatorRequest.h>
@@ -44,6 +45,7 @@
 #include <aws/bedrock-agentcore-control/model/DeleteCapacityProviderRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteCodeInterpreterRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteConfigurationBundleRequest.h>
+#include <aws/bedrock-agentcore-control/model/DeleteConsentPortalRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteDatasetExamplesRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteDatasetRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteEvaluatorRequest.h>
@@ -74,6 +76,7 @@
 #include <aws/bedrock-agentcore-control/model/GetCodeInterpreterRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetConfigurationBundleRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetConfigurationBundleVersionRequest.h>
+#include <aws/bedrock-agentcore-control/model/GetConsentPortalRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetDatasetRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetEvaluatorRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetGatewayRateLimitRequest.h>
@@ -110,6 +113,7 @@
 #include <aws/bedrock-agentcore-control/model/ListCodeInterpretersRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListConfigurationBundleVersionsRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListConfigurationBundlesRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListConsentPortalsRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListDatasetExamplesRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListDatasetVersionsRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListDatasetsRequest.h>
@@ -150,6 +154,7 @@
 #include <aws/bedrock-agentcore-control/model/UpdateApiKeyCredentialProviderRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateCapacityProviderRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateConfigurationBundleRequest.h>
+#include <aws/bedrock-agentcore-control/model/UpdateConsentPortalRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateDatasetExamplesRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateDatasetRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateEvaluatorRequest.h>
@@ -483,6 +488,17 @@ CreateConfigurationBundleOutcome BedrockAgentCoreControlClient::CreateConfigurat
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateConfigurationBundleOutcome(result.GetResultWithOwnership())
                             : CreateConfigurationBundleOutcome(std::move(result.GetError()));
+}
+
+CreateConsentPortalOutcome BedrockAgentCoreControlClient::CreateConsentPortal(const CreateConsentPortalRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/identities/CreateConsentPortal");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConsentPortalOutcome(result.GetResultWithOwnership())
+                            : CreateConsentPortalOutcome(std::move(result.GetError()));
 }
 
 CreateDatasetOutcome BedrockAgentCoreControlClient::CreateDataset(const CreateDatasetRequest& request) const {
@@ -910,6 +926,17 @@ DeleteConfigurationBundleOutcome BedrockAgentCoreControlClient::DeleteConfigurat
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteConfigurationBundleOutcome(result.GetResultWithOwnership())
                             : DeleteConfigurationBundleOutcome(std::move(result.GetError()));
+}
+
+DeleteConsentPortalOutcome BedrockAgentCoreControlClient::DeleteConsentPortal(const DeleteConsentPortalRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/identities/DeleteConsentPortal");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteConsentPortalOutcome(result.GetResultWithOwnership())
+                            : DeleteConsentPortalOutcome(std::move(result.GetError()));
 }
 
 DeleteDatasetOutcome BedrockAgentCoreControlClient::DeleteDataset(const DeleteDatasetRequest& request) const {
@@ -1485,6 +1512,17 @@ GetConfigurationBundleVersionOutcome BedrockAgentCoreControlClient::GetConfigura
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetConfigurationBundleVersionOutcome(result.GetResultWithOwnership())
                             : GetConfigurationBundleVersionOutcome(std::move(result.GetError()));
+}
+
+GetConsentPortalOutcome BedrockAgentCoreControlClient::GetConsentPortal(const GetConsentPortalRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/identities/GetConsentPortal");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetConsentPortalOutcome(result.GetResultWithOwnership())
+                            : GetConsentPortalOutcome(std::move(result.GetError()));
 }
 
 GetDatasetOutcome BedrockAgentCoreControlClient::GetDataset(const GetDatasetRequest& request) const {
@@ -2131,6 +2169,17 @@ ListConfigurationBundlesOutcome BedrockAgentCoreControlClient::ListConfiguration
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListConfigurationBundlesOutcome(result.GetResultWithOwnership())
                             : ListConfigurationBundlesOutcome(std::move(result.GetError()));
+}
+
+ListConsentPortalsOutcome BedrockAgentCoreControlClient::ListConsentPortals(const ListConsentPortalsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/identities/ListConsentPortals");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListConsentPortalsOutcome(result.GetResultWithOwnership())
+                            : ListConsentPortalsOutcome(std::move(result.GetError()));
 }
 
 ListDatasetExamplesOutcome BedrockAgentCoreControlClient::ListDatasetExamples(const ListDatasetExamplesRequest& request) const {
@@ -2791,6 +2840,17 @@ UpdateConfigurationBundleOutcome BedrockAgentCoreControlClient::UpdateConfigurat
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? UpdateConfigurationBundleOutcome(result.GetResultWithOwnership())
                             : UpdateConfigurationBundleOutcome(std::move(result.GetError()));
+}
+
+UpdateConsentPortalOutcome BedrockAgentCoreControlClient::UpdateConsentPortal(const UpdateConsentPortalRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/identities/UpdateConsentPortal");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateConsentPortalOutcome(result.GetResultWithOwnership())
+                            : UpdateConsentPortalOutcome(std::move(result.GetError()));
 }
 
 UpdateDatasetOutcome BedrockAgentCoreControlClient::UpdateDataset(const UpdateDatasetRequest& request) const {

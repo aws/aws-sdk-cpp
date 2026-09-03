@@ -63,6 +63,10 @@ SourceProperties& SourceProperties::operator=(JsonView jsonValue) {
     m_supportsNitroInstances = jsonValue.GetBool("supportsNitroInstances");
     m_supportsNitroInstancesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("architecture")) {
+    m_architecture = SourceServerArchitectureMapper::GetSourceServerArchitectureForName(jsonValue.GetString("architecture"));
+    m_architectureHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -115,6 +119,10 @@ JsonValue SourceProperties::Jsonize() const {
 
   if (m_supportsNitroInstancesHasBeenSet) {
     payload.WithBool("supportsNitroInstances", m_supportsNitroInstances);
+  }
+
+  if (m_architectureHasBeenSet) {
+    payload.WithString("architecture", SourceServerArchitectureMapper::GetNameForSourceServerArchitecture(m_architecture));
   }
 
   return payload;

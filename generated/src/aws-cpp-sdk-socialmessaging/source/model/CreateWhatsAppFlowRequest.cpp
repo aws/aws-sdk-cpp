@@ -44,5 +44,9 @@ Aws::String CreateWhatsAppFlowRequest::SerializePayload() const {
     payload.WithString("cloneFlowId", m_cloneFlowId);
   }
 
+  if (m_endpointUriHasBeenSet) {
+    payload.WithString("endpointUri", m_endpointUri);
+  }
+
   return payload.View().WriteReadable();
 }

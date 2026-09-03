@@ -86,6 +86,33 @@ class CloudWatchLogsSource {
 
   ///@{
   /**
+   * <p>The list of CloudWatch log group name prefixes to read agent traces from.
+   * Specify this instead of <code>logGroupNames</code> to match log groups by
+   * prefix. Maximum of 5 prefixes. Specify either <code>logGroupNames</code> or
+   * <code>logGroupNamePrefixes</code>, not both. One of the two is required.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetLogGroupNamePrefixes() const { return m_logGroupNamePrefixes; }
+  inline bool LogGroupNamePrefixesHasBeenSet() const { return m_logGroupNamePrefixesHasBeenSet; }
+  template <typename LogGroupNamePrefixesT = Aws::Vector<Aws::String>>
+  void SetLogGroupNamePrefixes(LogGroupNamePrefixesT&& value) {
+    m_logGroupNamePrefixesHasBeenSet = true;
+    m_logGroupNamePrefixes = std::forward<LogGroupNamePrefixesT>(value);
+  }
+  template <typename LogGroupNamePrefixesT = Aws::Vector<Aws::String>>
+  CloudWatchLogsSource& WithLogGroupNamePrefixes(LogGroupNamePrefixesT&& value) {
+    SetLogGroupNamePrefixes(std::forward<LogGroupNamePrefixesT>(value));
+    return *this;
+  }
+  template <typename LogGroupNamePrefixesT = Aws::String>
+  CloudWatchLogsSource& AddLogGroupNamePrefixes(LogGroupNamePrefixesT&& value) {
+    m_logGroupNamePrefixesHasBeenSet = true;
+    m_logGroupNamePrefixes.emplace_back(std::forward<LogGroupNamePrefixesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Optional filter configuration to narrow down which sessions to evaluate.</p>
    */
   inline const CloudWatchFilterConfig& GetFilterConfig() const { return m_filterConfig; }
@@ -106,9 +133,12 @@ class CloudWatchLogsSource {
 
   Aws::Vector<Aws::String> m_logGroupNames;
 
+  Aws::Vector<Aws::String> m_logGroupNamePrefixes;
+
   CloudWatchFilterConfig m_filterConfig;
   bool m_serviceNamesHasBeenSet = false;
   bool m_logGroupNamesHasBeenSet = false;
+  bool m_logGroupNamePrefixesHasBeenSet = false;
   bool m_filterConfigHasBeenSet = false;
 };
 

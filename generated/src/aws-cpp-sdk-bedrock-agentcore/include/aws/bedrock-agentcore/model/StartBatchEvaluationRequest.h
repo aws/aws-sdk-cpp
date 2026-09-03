@@ -10,6 +10,7 @@
 #include <aws/bedrock-agentcore/model/EvaluationMetadata.h>
 #include <aws/bedrock-agentcore/model/Evaluator.h>
 #include <aws/bedrock-agentcore/model/Insight.h>
+#include <aws/bedrock-agentcore/model/OutputConfig.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -221,6 +222,22 @@ class StartBatchEvaluationRequest : public BedrockAgentCoreRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const OutputConfig& GetOutputConfig() const { return m_outputConfig; }
+  inline bool OutputConfigHasBeenSet() const { return m_outputConfigHasBeenSet; }
+  template <typename OutputConfigT = OutputConfig>
+  void SetOutputConfig(OutputConfigT&& value) {
+    m_outputConfigHasBeenSet = true;
+    m_outputConfig = std::forward<OutputConfigT>(value);
+  }
+  template <typename OutputConfigT = OutputConfig>
+  StartBatchEvaluationRequest& WithOutputConfig(OutputConfigT&& value) {
+    SetOutputConfig(std::forward<OutputConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_batchEvaluationName;
 
@@ -239,6 +256,8 @@ class StartBatchEvaluationRequest : public BedrockAgentCoreRequest {
   Aws::String m_kmsKeyArn;
 
   Aws::String m_description;
+
+  OutputConfig m_outputConfig;
   bool m_batchEvaluationNameHasBeenSet = false;
   bool m_evaluatorsHasBeenSet = false;
   bool m_insightsHasBeenSet = false;
@@ -248,6 +267,7 @@ class StartBatchEvaluationRequest : public BedrockAgentCoreRequest {
   bool m_tagsHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
+  bool m_outputConfigHasBeenSet = false;
 };
 
 }  // namespace Model

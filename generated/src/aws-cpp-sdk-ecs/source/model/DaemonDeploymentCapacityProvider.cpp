@@ -26,6 +26,10 @@ DaemonDeploymentCapacityProvider& DaemonDeploymentCapacityProvider::operator=(Js
     m_runningInstanceCount = jsonValue.GetInteger("runningInstanceCount");
     m_runningInstanceCountHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("withoutDaemonInstanceCount")) {
+    m_withoutDaemonInstanceCount = jsonValue.GetInteger("withoutDaemonInstanceCount");
+    m_withoutDaemonInstanceCountHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("drainingInstanceCount")) {
     m_drainingInstanceCount = jsonValue.GetInteger("drainingInstanceCount");
     m_drainingInstanceCountHasBeenSet = true;
@@ -42,6 +46,10 @@ JsonValue DaemonDeploymentCapacityProvider::Jsonize() const {
 
   if (m_runningInstanceCountHasBeenSet) {
     payload.WithInteger("runningInstanceCount", m_runningInstanceCount);
+  }
+
+  if (m_withoutDaemonInstanceCountHasBeenSet) {
+    payload.WithInteger("withoutDaemonInstanceCount", m_withoutDaemonInstanceCount);
   }
 
   if (m_drainingInstanceCountHasBeenSet) {

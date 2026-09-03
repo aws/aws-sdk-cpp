@@ -12,6 +12,7 @@
 #include <aws/drs/model/IdentificationHints.h>
 #include <aws/drs/model/NetworkInterface.h>
 #include <aws/drs/model/OS.h>
+#include <aws/drs/model/SourceServerArchitecture.h>
 
 #include <utility>
 
@@ -213,6 +214,22 @@ class SourceProperties {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The architecture of the Source Server.</p>
+   */
+  inline SourceServerArchitecture GetArchitecture() const { return m_architecture; }
+  inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
+  inline void SetArchitecture(SourceServerArchitecture value) {
+    m_architectureHasBeenSet = true;
+    m_architecture = value;
+  }
+  inline SourceProperties& WithArchitecture(SourceServerArchitecture value) {
+    SetArchitecture(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_lastUpdatedDateTime;
 
@@ -231,6 +248,8 @@ class SourceProperties {
   OS m_os;
 
   bool m_supportsNitroInstances{false};
+
+  SourceServerArchitecture m_architecture{SourceServerArchitecture::NOT_SET};
   bool m_lastUpdatedDateTimeHasBeenSet = false;
   bool m_recommendedInstanceTypeHasBeenSet = false;
   bool m_identificationHintsHasBeenSet = false;
@@ -240,6 +259,7 @@ class SourceProperties {
   bool m_ramBytesHasBeenSet = false;
   bool m_osHasBeenSet = false;
   bool m_supportsNitroInstancesHasBeenSet = false;
+  bool m_architectureHasBeenSet = false;
 };
 
 }  // namespace Model

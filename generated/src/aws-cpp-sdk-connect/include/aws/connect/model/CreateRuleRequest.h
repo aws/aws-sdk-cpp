@@ -6,10 +6,12 @@
 #pragma once
 #include <aws/connect/ConnectRequest.h>
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/PreEvaluationFilters.h>
 #include <aws/connect/model/RuleAction.h>
 #include <aws/connect/model/RulePublishStatus.h>
 #include <aws/connect/model/RuleTriggerEventSource.h>
 #include <aws/core/utils/UUID.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -149,6 +151,28 @@ class CreateRuleRequest : public ConnectRequest {
 
   ///@{
   /**
+   * <p>The pre-evaluation filters for the rule, that restrict the rule to be applied
+   * to only certain resources based on the resource's attributes, such as tags
+   * assigned to a contact. The pre-evaluation filters are applied even before rule
+   * conditions are evaluated and are used to enforce tag-based-access-control while
+   * applying rules.</p>
+   */
+  inline const PreEvaluationFilters& GetPreEvaluationFilters() const { return m_preEvaluationFilters; }
+  inline bool PreEvaluationFiltersHasBeenSet() const { return m_preEvaluationFiltersHasBeenSet; }
+  template <typename PreEvaluationFiltersT = PreEvaluationFilters>
+  void SetPreEvaluationFilters(PreEvaluationFiltersT&& value) {
+    m_preEvaluationFiltersHasBeenSet = true;
+    m_preEvaluationFilters = std::forward<PreEvaluationFiltersT>(value);
+  }
+  template <typename PreEvaluationFiltersT = PreEvaluationFilters>
+  CreateRuleRequest& WithPreEvaluationFilters(PreEvaluationFiltersT&& value) {
+    SetPreEvaluationFilters(std::forward<PreEvaluationFiltersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A unique, case-sensitive identifier that you provide to ensure the
    * idempotency of the request. If not provided, the Amazon Web Services SDK
    * populates this field. For more information about idempotency, see <a
@@ -168,6 +192,31 @@ class CreateRuleRequest : public ConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The tags used to organize, track, or control access for this resource. For
+   * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  CreateRuleRequest& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+  CreateRuleRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_instanceId;
 
@@ -181,14 +230,20 @@ class CreateRuleRequest : public ConnectRequest {
 
   RulePublishStatus m_publishStatus{RulePublishStatus::NOT_SET};
 
+  PreEvaluationFilters m_preEvaluationFilters;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+
+  Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_instanceIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_triggerEventSourceHasBeenSet = false;
   bool m_functionHasBeenSet = false;
   bool m_actionsHasBeenSet = false;
   bool m_publishStatusHasBeenSet = false;
+  bool m_preEvaluationFiltersHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
+  bool m_tagsHasBeenSet = false;
 };
 
 }  // namespace Model

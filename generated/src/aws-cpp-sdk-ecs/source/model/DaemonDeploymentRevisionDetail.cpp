@@ -33,6 +33,10 @@ DaemonDeploymentRevisionDetail& DaemonDeploymentRevisionDetail::operator=(JsonVi
     m_totalRunningInstanceCount = jsonValue.GetInteger("totalRunningInstanceCount");
     m_totalRunningInstanceCountHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("totalWithoutDaemonInstanceCount")) {
+    m_totalWithoutDaemonInstanceCount = jsonValue.GetInteger("totalWithoutDaemonInstanceCount");
+    m_totalWithoutDaemonInstanceCountHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("totalDrainingInstanceCount")) {
     m_totalDrainingInstanceCount = jsonValue.GetInteger("totalDrainingInstanceCount");
     m_totalDrainingInstanceCountHasBeenSet = true;
@@ -57,6 +61,10 @@ JsonValue DaemonDeploymentRevisionDetail::Jsonize() const {
 
   if (m_totalRunningInstanceCountHasBeenSet) {
     payload.WithInteger("totalRunningInstanceCount", m_totalRunningInstanceCount);
+  }
+
+  if (m_totalWithoutDaemonInstanceCountHasBeenSet) {
+    payload.WithInteger("totalWithoutDaemonInstanceCount", m_totalWithoutDaemonInstanceCount);
   }
 
   if (m_totalDrainingInstanceCountHasBeenSet) {

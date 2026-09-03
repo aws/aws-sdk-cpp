@@ -65,12 +65,35 @@ class DaemonCapacityProvider {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The number of instances on this capacity provider that are running without
+   * the daemon task. This applies to daemons that aren't critical, where the
+   * instance remains available for your other tasks even if the daemon task can't
+   * start or stops. These instances aren't included in
+   * <code>runningCount</code>.</p>
+   */
+  inline int GetWithoutDaemonCount() const { return m_withoutDaemonCount; }
+  inline bool WithoutDaemonCountHasBeenSet() const { return m_withoutDaemonCountHasBeenSet; }
+  inline void SetWithoutDaemonCount(int value) {
+    m_withoutDaemonCountHasBeenSet = true;
+    m_withoutDaemonCount = value;
+  }
+  inline DaemonCapacityProvider& WithWithoutDaemonCount(int value) {
+    SetWithoutDaemonCount(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
   int m_runningCount{0};
+
+  int m_withoutDaemonCount{0};
   bool m_arnHasBeenSet = false;
   bool m_runningCountHasBeenSet = false;
+  bool m_withoutDaemonCountHasBeenSet = false;
 };
 
 }  // namespace Model

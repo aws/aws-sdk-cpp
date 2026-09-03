@@ -1074,6 +1074,11 @@
 #include <aws/connect/model/PhoneType.h>
 #include <aws/connect/model/Policy.h>
 #include <aws/connect/model/PostAcceptTimeoutConfig.h>
+#include <aws/connect/model/PreEvaluationFilter.h>
+#include <aws/connect/model/PreEvaluationFilterOperator.h>
+#include <aws/connect/model/PreEvaluationFilterResourceType.h>
+#include <aws/connect/model/PreEvaluationFilterType.h>
+#include <aws/connect/model/PreEvaluationFilters.h>
 #include <aws/connect/model/PredefinedAttribute.h>
 #include <aws/connect/model/PredefinedAttributeConfiguration.h>
 #include <aws/connect/model/PredefinedAttributeSearchCriteria.h>

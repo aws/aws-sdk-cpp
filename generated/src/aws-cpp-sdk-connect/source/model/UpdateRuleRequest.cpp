@@ -35,5 +35,9 @@ Aws::String UpdateRuleRequest::SerializePayload() const {
     payload.WithString("PublishStatus", RulePublishStatusMapper::GetNameForRulePublishStatus(m_publishStatus));
   }
 
+  if (m_preEvaluationFiltersHasBeenSet) {
+    payload.WithObject("PreEvaluationFilters", m_preEvaluationFilters.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

@@ -95,6 +95,24 @@ class DaemonDeploymentRevisionDetail {
 
   ///@{
   /**
+   * <p>The total number of instances running without the daemon task for this
+   * revision, across all capacity providers. These instances aren't included in
+   * <code>totalRunningInstanceCount</code>.</p>
+   */
+  inline int GetTotalWithoutDaemonInstanceCount() const { return m_totalWithoutDaemonInstanceCount; }
+  inline bool TotalWithoutDaemonInstanceCountHasBeenSet() const { return m_totalWithoutDaemonInstanceCountHasBeenSet; }
+  inline void SetTotalWithoutDaemonInstanceCount(int value) {
+    m_totalWithoutDaemonInstanceCountHasBeenSet = true;
+    m_totalWithoutDaemonInstanceCount = value;
+  }
+  inline DaemonDeploymentRevisionDetail& WithTotalWithoutDaemonInstanceCount(int value) {
+    SetTotalWithoutDaemonInstanceCount(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The total number of instances being drained for this revision during the
    * deployment.</p>
    */
@@ -116,10 +134,13 @@ class DaemonDeploymentRevisionDetail {
 
   int m_totalRunningInstanceCount{0};
 
+  int m_totalWithoutDaemonInstanceCount{0};
+
   int m_totalDrainingInstanceCount{0};
   bool m_arnHasBeenSet = false;
   bool m_capacityProvidersHasBeenSet = false;
   bool m_totalRunningInstanceCountHasBeenSet = false;
+  bool m_totalWithoutDaemonInstanceCountHasBeenSet = false;
   bool m_totalDrainingInstanceCountHasBeenSet = false;
 };
 

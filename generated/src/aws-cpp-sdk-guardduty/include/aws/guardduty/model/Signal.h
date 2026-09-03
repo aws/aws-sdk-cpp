@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
+#include <aws/guardduty/model/Activity.h>
 #include <aws/guardduty/model/Indicator.h>
 #include <aws/guardduty/model/SignalType.h>
 
@@ -327,6 +328,31 @@ class Signal {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Contains information about the activities, such as API calls, that were
+   * observed for this signal.</p>
+   */
+  inline const Aws::Vector<Activity>& GetActivities() const { return m_activities; }
+  inline bool ActivitiesHasBeenSet() const { return m_activitiesHasBeenSet; }
+  template <typename ActivitiesT = Aws::Vector<Activity>>
+  void SetActivities(ActivitiesT&& value) {
+    m_activitiesHasBeenSet = true;
+    m_activities = std::forward<ActivitiesT>(value);
+  }
+  template <typename ActivitiesT = Aws::Vector<Activity>>
+  Signal& WithActivities(ActivitiesT&& value) {
+    SetActivities(std::forward<ActivitiesT>(value));
+    return *this;
+  }
+  template <typename ActivitiesT = Activity>
+  Signal& AddActivities(ActivitiesT&& value) {
+    m_activitiesHasBeenSet = true;
+    m_activities.emplace_back(std::forward<ActivitiesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_uid;
 
@@ -355,6 +381,8 @@ class Signal {
   Aws::Vector<Aws::String> m_endpointIds;
 
   Aws::Vector<Indicator> m_signalIndicators;
+
+  Aws::Vector<Activity> m_activities;
   bool m_uidHasBeenSet = false;
   bool m_typeHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
@@ -369,6 +397,7 @@ class Signal {
   bool m_actorIdsHasBeenSet = false;
   bool m_endpointIdsHasBeenSet = false;
   bool m_signalIndicatorsHasBeenSet = false;
+  bool m_activitiesHasBeenSet = false;
 };
 
 }  // namespace Model

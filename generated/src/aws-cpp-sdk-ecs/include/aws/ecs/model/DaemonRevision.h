@@ -202,6 +202,27 @@ class DaemonRevision {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>If the <code>critical</code> parameter of this daemon revision is
+   * <code>true</code>, and the daemon task fails, stops, or becomes unhealthy,
+   * Amazon ECS drains the container instance and stops the other tasks running on
+   * it. If the parameter is <code>false</code>, the daemon task failure doesn't
+   * affect the other tasks on the instance, and doesn't block instance registration.
+   * The default value is <code>true</code>.</p>
+   */
+  inline bool GetCritical() const { return m_critical; }
+  inline bool CriticalHasBeenSet() const { return m_criticalHasBeenSet; }
+  inline void SetCritical(bool value) {
+    m_criticalHasBeenSet = true;
+    m_critical = value;
+  }
+  inline DaemonRevision& WithCritical(bool value) {
+    SetCritical(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_daemonRevisionArn;
 
@@ -220,6 +241,8 @@ class DaemonRevision {
   bool m_enableECSManagedTags{false};
 
   bool m_enableExecuteCommand{false};
+
+  bool m_critical{false};
   bool m_daemonRevisionArnHasBeenSet = false;
   bool m_clusterArnHasBeenSet = false;
   bool m_daemonArnHasBeenSet = false;
@@ -229,6 +252,7 @@ class DaemonRevision {
   bool m_propagateTagsHasBeenSet = false;
   bool m_enableECSManagedTagsHasBeenSet = false;
   bool m_enableExecuteCommandHasBeenSet = false;
+  bool m_criticalHasBeenSet = false;
 };
 
 }  // namespace Model

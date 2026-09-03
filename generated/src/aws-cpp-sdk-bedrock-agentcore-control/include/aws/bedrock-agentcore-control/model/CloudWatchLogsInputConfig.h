@@ -59,6 +59,33 @@ class CloudWatchLogsInputConfig {
 
   ///@{
   /**
+   * <p> The list of CloudWatch log group name prefixes to monitor for agent traces.
+   * Specify this instead of <code>logGroupNames</code> to match log groups by
+   * prefix. Specify either <code>logGroupNames</code> or
+   * <code>logGroupNamePrefixes</code>, not both. One of the two is required. </p>
+   */
+  inline const Aws::Vector<Aws::String>& GetLogGroupNamePrefixes() const { return m_logGroupNamePrefixes; }
+  inline bool LogGroupNamePrefixesHasBeenSet() const { return m_logGroupNamePrefixesHasBeenSet; }
+  template <typename LogGroupNamePrefixesT = Aws::Vector<Aws::String>>
+  void SetLogGroupNamePrefixes(LogGroupNamePrefixesT&& value) {
+    m_logGroupNamePrefixesHasBeenSet = true;
+    m_logGroupNamePrefixes = std::forward<LogGroupNamePrefixesT>(value);
+  }
+  template <typename LogGroupNamePrefixesT = Aws::Vector<Aws::String>>
+  CloudWatchLogsInputConfig& WithLogGroupNamePrefixes(LogGroupNamePrefixesT&& value) {
+    SetLogGroupNamePrefixes(std::forward<LogGroupNamePrefixesT>(value));
+    return *this;
+  }
+  template <typename LogGroupNamePrefixesT = Aws::String>
+  CloudWatchLogsInputConfig& AddLogGroupNamePrefixes(LogGroupNamePrefixesT&& value) {
+    m_logGroupNamePrefixesHasBeenSet = true;
+    m_logGroupNamePrefixes.emplace_back(std::forward<LogGroupNamePrefixesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p> The list of service names to filter traces within the specified log groups.
    * Used to identify relevant agent sessions. </p>
    */
@@ -84,8 +111,11 @@ class CloudWatchLogsInputConfig {
  private:
   Aws::Vector<Aws::String> m_logGroupNames;
 
+  Aws::Vector<Aws::String> m_logGroupNamePrefixes;
+
   Aws::Vector<Aws::String> m_serviceNames;
   bool m_logGroupNamesHasBeenSet = false;
+  bool m_logGroupNamePrefixesHasBeenSet = false;
   bool m_serviceNamesHasBeenSet = false;
 };
 

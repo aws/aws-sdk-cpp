@@ -18,13 +18,6 @@ namespace Model {
 EncryptionConfig::EncryptionConfig(JsonView jsonValue) { *this = jsonValue; }
 
 EncryptionConfig& EncryptionConfig::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("resources")) {
-    Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("resources");
-    for (unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex) {
-      m_resources.push_back(resourcesJsonList[resourcesIndex].AsString());
-    }
-    m_resourcesHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("provider")) {
     m_provider = jsonValue.GetObject("provider");
     m_providerHasBeenSet = true;
@@ -34,14 +27,6 @@ EncryptionConfig& EncryptionConfig::operator=(JsonView jsonValue) {
 
 JsonValue EncryptionConfig::Jsonize() const {
   JsonValue payload;
-
-  if (m_resourcesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> resourcesJsonList(m_resources.size());
-    for (unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex) {
-      resourcesJsonList[resourcesIndex].AsString(m_resources[resourcesIndex]);
-    }
-    payload.WithArray("resources", std::move(resourcesJsonList));
-  }
 
   if (m_providerHasBeenSet) {
     payload.WithObject("provider", m_provider.Jsonize());

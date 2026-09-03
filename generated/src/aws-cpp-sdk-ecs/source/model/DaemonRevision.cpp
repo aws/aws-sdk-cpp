@@ -57,6 +57,10 @@ DaemonRevision& DaemonRevision::operator=(JsonView jsonValue) {
     m_enableExecuteCommand = jsonValue.GetBool("enableExecuteCommand");
     m_enableExecuteCommandHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("critical")) {
+    m_critical = jsonValue.GetBool("critical");
+    m_criticalHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -101,6 +105,10 @@ JsonValue DaemonRevision::Jsonize() const {
 
   if (m_enableExecuteCommandHasBeenSet) {
     payload.WithBool("enableExecuteCommand", m_enableExecuteCommand);
+  }
+
+  if (m_criticalHasBeenSet) {
+    payload.WithBool("critical", m_critical);
   }
 
   return payload;

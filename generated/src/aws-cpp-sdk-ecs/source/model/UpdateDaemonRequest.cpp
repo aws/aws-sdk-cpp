@@ -48,6 +48,10 @@ Aws::String UpdateDaemonRequest::SerializePayload() const {
     payload.WithBool("enableExecuteCommand", m_enableExecuteCommand);
   }
 
+  if (m_criticalHasBeenSet) {
+    payload.WithBool("critical", m_critical);
+  }
+
   return payload.View().WriteReadable();
 }
 

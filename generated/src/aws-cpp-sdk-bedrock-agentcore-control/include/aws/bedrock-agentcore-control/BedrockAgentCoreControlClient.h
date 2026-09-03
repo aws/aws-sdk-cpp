@@ -370,6 +370,32 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
+   * <p>Creates a new consent portal.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateConsentPortal">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateConsentPortalOutcome CreateConsentPortal(const Model::CreateConsentPortalRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateConsentPortal that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateConsentPortalRequestT = Model::CreateConsentPortalRequest>
+  Model::CreateConsentPortalOutcomeCallable CreateConsentPortalCallable(const CreateConsentPortalRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::CreateConsentPortal, request);
+  }
+
+  /**
+   * An Async wrapper for CreateConsentPortal that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateConsentPortalRequestT = Model::CreateConsentPortalRequest>
+  void CreateConsentPortalAsync(const CreateConsentPortalRequestT& request, const CreateConsentPortalResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::CreateConsentPortal, request, handler, context);
+  }
+
+  /**
    * <p> Creates a new dataset resource asynchronously. Returns immediately with
    * status CREATING. Poll <code>GetDataset</code> until status transitions to ACTIVE
    * or CREATE_FAILED. </p><p><h3>See Also:</h3>   <a
@@ -1178,6 +1204,32 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
                                       const DeleteConfigurationBundleResponseReceivedHandler& handler,
                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::DeleteConfigurationBundle, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a consent portal.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteConsentPortal">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteConsentPortalOutcome DeleteConsentPortal(const Model::DeleteConsentPortalRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteConsentPortal that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteConsentPortalRequestT = Model::DeleteConsentPortalRequest>
+  Model::DeleteConsentPortalOutcomeCallable DeleteConsentPortalCallable(const DeleteConsentPortalRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::DeleteConsentPortal, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteConsentPortal that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteConsentPortalRequestT = Model::DeleteConsentPortalRequest>
+  void DeleteConsentPortalAsync(const DeleteConsentPortalRequestT& request, const DeleteConsentPortalResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::DeleteConsentPortal, request, handler, context);
   }
 
   /**
@@ -2010,6 +2062,32 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
                                           const GetConfigurationBundleVersionResponseReceivedHandler& handler,
                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::GetConfigurationBundleVersion, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about a consent portal.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetConsentPortal">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetConsentPortalOutcome GetConsentPortal(const Model::GetConsentPortalRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetConsentPortal that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetConsentPortalRequestT = Model::GetConsentPortalRequest>
+  Model::GetConsentPortalOutcomeCallable GetConsentPortalCallable(const GetConsentPortalRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::GetConsentPortal, request);
+  }
+
+  /**
+   * An Async wrapper for GetConsentPortal that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetConsentPortalRequestT = Model::GetConsentPortalRequest>
+  void GetConsentPortalAsync(const GetConsentPortalRequestT& request, const GetConsentPortalResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::GetConsentPortal, request, handler, context);
   }
 
   /**
@@ -3027,6 +3105,34 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                      const ListConfigurationBundlesRequestT& request = {}) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::ListConfigurationBundles, request, handler, context);
+  }
+
+  /**
+   * <p>Lists all of the consent portals in your account.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListConsentPortals">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListConsentPortalsOutcome ListConsentPortals(const Model::ListConsentPortalsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListConsentPortals that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListConsentPortalsRequestT = Model::ListConsentPortalsRequest>
+  Model::ListConsentPortalsOutcomeCallable ListConsentPortalsCallable(const ListConsentPortalsRequestT& request = {}) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::ListConsentPortals, request);
+  }
+
+  /**
+   * An Async wrapper for ListConsentPortals that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListConsentPortalsRequestT = Model::ListConsentPortalsRequest>
+  void ListConsentPortalsAsync(const ListConsentPortalsResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                               const ListConsentPortalsRequestT& request = {}) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::ListConsentPortals, request, handler, context);
   }
 
   /**
@@ -4194,6 +4300,32 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
                                       const UpdateConfigurationBundleResponseReceivedHandler& handler,
                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::UpdateConfigurationBundle, request, handler, context);
+  }
+
+  /**
+   * <p>Updates an existing consent portal.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateConsentPortal">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateConsentPortalOutcome UpdateConsentPortal(const Model::UpdateConsentPortalRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateConsentPortal that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateConsentPortalRequestT = Model::UpdateConsentPortalRequest>
+  Model::UpdateConsentPortalOutcomeCallable UpdateConsentPortalCallable(const UpdateConsentPortalRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::UpdateConsentPortal, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateConsentPortal that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateConsentPortalRequestT = Model::UpdateConsentPortalRequest>
+  void UpdateConsentPortalAsync(const UpdateConsentPortalRequestT& request, const UpdateConsentPortalResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::UpdateConsentPortal, request, handler, context);
   }
 
   /**

@@ -55,6 +55,10 @@ Aws::String CreateOnlineEvaluationConfigRequest::SerializePayload() const {
     payload.WithObject("clusteringConfig", m_clusteringConfig.Jsonize());
   }
 
+  if (m_outputConfigHasBeenSet) {
+    payload.WithObject("outputConfig", m_outputConfig.Jsonize());
+  }
+
   if (m_evaluationExecutionRoleArnHasBeenSet) {
     payload.WithString("evaluationExecutionRoleArn", m_evaluationExecutionRoleArn);
   }

@@ -35,5 +35,13 @@ Aws::String UpdateWhatsAppFlowRequest::SerializePayload() const {
     payload.WithArray("categories", std::move(categoriesJsonList));
   }
 
+  if (m_endpointUriHasBeenSet) {
+    payload.WithString("endpointUri", m_endpointUri);
+  }
+
+  if (m_metaAppIdHasBeenSet) {
+    payload.WithString("metaAppId", m_metaAppId);
+  }
+
   return payload.View().WriteReadable();
 }

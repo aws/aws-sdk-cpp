@@ -91,15 +91,36 @@ class DaemonRevisionDetail {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The total number of instances running without the daemon task for this
+   * revision, across all capacity providers. These instances aren't included in
+   * <code>totalRunningCount</code>.</p>
+   */
+  inline int GetTotalWithoutDaemonCount() const { return m_totalWithoutDaemonCount; }
+  inline bool TotalWithoutDaemonCountHasBeenSet() const { return m_totalWithoutDaemonCountHasBeenSet; }
+  inline void SetTotalWithoutDaemonCount(int value) {
+    m_totalWithoutDaemonCountHasBeenSet = true;
+    m_totalWithoutDaemonCount = value;
+  }
+  inline DaemonRevisionDetail& WithTotalWithoutDaemonCount(int value) {
+    SetTotalWithoutDaemonCount(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
   Aws::Vector<DaemonCapacityProvider> m_capacityProviders;
 
   int m_totalRunningCount{0};
+
+  int m_totalWithoutDaemonCount{0};
   bool m_arnHasBeenSet = false;
   bool m_capacityProvidersHasBeenSet = false;
   bool m_totalRunningCountHasBeenSet = false;
+  bool m_totalWithoutDaemonCountHasBeenSet = false;
 };
 
 }  // namespace Model

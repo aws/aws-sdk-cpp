@@ -26,6 +26,10 @@ DaemonCapacityProvider& DaemonCapacityProvider::operator=(JsonView jsonValue) {
     m_runningCount = jsonValue.GetInteger("runningCount");
     m_runningCountHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("withoutDaemonCount")) {
+    m_withoutDaemonCount = jsonValue.GetInteger("withoutDaemonCount");
+    m_withoutDaemonCountHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue DaemonCapacityProvider::Jsonize() const {
 
   if (m_runningCountHasBeenSet) {
     payload.WithInteger("runningCount", m_runningCount);
+  }
+
+  if (m_withoutDaemonCountHasBeenSet) {
+    payload.WithInteger("withoutDaemonCount", m_withoutDaemonCount);
   }
 
   return payload;

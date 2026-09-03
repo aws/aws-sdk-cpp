@@ -39,8 +39,20 @@ Aws::String CreateRuleRequest::SerializePayload() const {
     payload.WithString("PublishStatus", RulePublishStatusMapper::GetNameForRulePublishStatus(m_publishStatus));
   }
 
+  if (m_preEvaluationFiltersHasBeenSet) {
+    payload.WithObject("PreEvaluationFilters", m_preEvaluationFilters.Jsonize());
+  }
+
   if (m_clientTokenHasBeenSet) {
     payload.WithString("ClientToken", m_clientToken);
+  }
+
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
   return payload.View().WriteReadable();

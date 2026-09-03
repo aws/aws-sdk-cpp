@@ -68,6 +68,26 @@ class DaemonDeploymentCapacityProvider {
 
   ///@{
   /**
+   * <p>The number of instances on this capacity provider that are running without
+   * the daemon task. This applies to daemons that aren't critical, where the
+   * instance remains available for your other tasks even if the daemon task can't
+   * start or stops. These instances aren't included in
+   * <code>runningInstanceCount</code>.</p>
+   */
+  inline int GetWithoutDaemonInstanceCount() const { return m_withoutDaemonInstanceCount; }
+  inline bool WithoutDaemonInstanceCountHasBeenSet() const { return m_withoutDaemonInstanceCountHasBeenSet; }
+  inline void SetWithoutDaemonInstanceCount(int value) {
+    m_withoutDaemonInstanceCountHasBeenSet = true;
+    m_withoutDaemonInstanceCount = value;
+  }
+  inline DaemonDeploymentCapacityProvider& WithWithoutDaemonInstanceCount(int value) {
+    SetWithoutDaemonInstanceCount(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The number of instances being drained on this capacity provider during the
    * deployment.</p>
    */
@@ -87,9 +107,12 @@ class DaemonDeploymentCapacityProvider {
 
   int m_runningInstanceCount{0};
 
+  int m_withoutDaemonInstanceCount{0};
+
   int m_drainingInstanceCount{0};
   bool m_arnHasBeenSet = false;
   bool m_runningInstanceCountHasBeenSet = false;
+  bool m_withoutDaemonInstanceCountHasBeenSet = false;
   bool m_drainingInstanceCountHasBeenSet = false;
 };
 

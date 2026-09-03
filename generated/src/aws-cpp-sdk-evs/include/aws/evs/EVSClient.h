@@ -403,6 +403,35 @@ class AWS_EVS_API EVSClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns the configured EVS settings for your Amazon Web Services account in
+   * the specified Amazon Web Services Region. If no settings have been set, an empty
+   * list is returned.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/GetAccountSettings">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetAccountSettingsOutcome GetAccountSettings(const Model::GetAccountSettingsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for GetAccountSettings that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetAccountSettingsRequestT = Model::GetAccountSettingsRequest>
+  Model::GetAccountSettingsOutcomeCallable GetAccountSettingsCallable(const GetAccountSettingsRequestT& request = {}) const {
+    return SubmitCallable(&EVSClient::GetAccountSettings, request);
+  }
+
+  /**
+   * An Async wrapper for GetAccountSettings that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetAccountSettingsRequestT = Model::GetAccountSettingsRequest>
+  void GetAccountSettingsAsync(const GetAccountSettingsResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                               const GetAccountSettingsRequestT& request = {}) const {
+    return SubmitAsync(&EVSClient::GetAccountSettings, request, handler, context);
+  }
+
+  /**
    * <p>Returns a URL and authentication token for accessing the Amazon EVS Custom
    * Addon depot. Configure the depot URL as a download source in vSphere Lifecycle
    * Manager (vLCM) to sync and install the Amazon EVS Custom Addon.</p> <p>The depot
@@ -650,6 +679,35 @@ class AWS_EVS_API EVSClient : public Aws::Client::AWSJsonClient,
   void ListVmEntitlementsAsync(const ListVmEntitlementsRequestT& request, const ListVmEntitlementsResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EVSClient::ListVmEntitlements, request, handler, context);
+  }
+
+  /**
+   * <p>Creates or updates account-level EVS settings for your Amazon Web Services
+   * account in the specified Amazon Web Services Region.</p> <p>EVS settings
+   * included in the request are created or overwritten. Settings omitted from the
+   * request retain their current values.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/PutAccountSettings">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutAccountSettingsOutcome PutAccountSettings(const Model::PutAccountSettingsRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutAccountSettings that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename PutAccountSettingsRequestT = Model::PutAccountSettingsRequest>
+  Model::PutAccountSettingsOutcomeCallable PutAccountSettingsCallable(const PutAccountSettingsRequestT& request) const {
+    return SubmitCallable(&EVSClient::PutAccountSettings, request);
+  }
+
+  /**
+   * An Async wrapper for PutAccountSettings that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename PutAccountSettingsRequestT = Model::PutAccountSettingsRequest>
+  void PutAccountSettingsAsync(const PutAccountSettingsRequestT& request, const PutAccountSettingsResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EVSClient::PutAccountSettings, request, handler, context);
   }
 
   /**

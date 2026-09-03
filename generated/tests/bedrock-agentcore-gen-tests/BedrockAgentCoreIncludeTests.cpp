@@ -391,6 +391,7 @@
 #include <aws/bedrock-agentcore/model/ResourceContentType.h>
 #include <aws/bedrock-agentcore/model/ResourceLocation.h>
 #include <aws/bedrock-agentcore/model/ResponseChunk.h>
+#include <aws/bedrock-agentcore/model/ResultDestination.h>
 #include <aws/bedrock-agentcore/model/RetrieveMemoryRecordsPaginationTraits.h>
 #include <aws/bedrock-agentcore/model/RetrieveMemoryRecordsRequest.h>
 #include <aws/bedrock-agentcore/model/RetrieveMemoryRecordsResult.h>

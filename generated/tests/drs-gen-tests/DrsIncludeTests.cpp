@@ -246,6 +246,7 @@
 #include <aws/drs/model/SourceNetworkData.h>
 #include <aws/drs/model/SourceProperties.h>
 #include <aws/drs/model/SourceServer.h>
+#include <aws/drs/model/SourceServerArchitecture.h>
 #include <aws/drs/model/StagingArea.h>
 #include <aws/drs/model/StagingSourceServer.h>
 #include <aws/drs/model/StartFailbackLaunchRequest.h>

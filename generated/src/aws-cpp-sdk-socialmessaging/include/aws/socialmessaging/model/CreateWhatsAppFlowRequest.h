@@ -146,6 +146,28 @@ class CreateWhatsAppFlowRequest : public SocialMessagingRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Optional HTTPS endpoint for a dynamic Flow, registered with Meta as the
+   * Flow's endpoint_uri and called by Meta directly. When omitted, the Flow has no
+   * endpoint (static Flow). Meta only calls the endpoint when the Flow JSON also
+   * declares data_api_version. To verify that requests originate from Meta, attach
+   * your own Meta app via UpdateWhatsAppFlow.</p>
+   */
+  inline const Aws::String& GetEndpointUri() const { return m_endpointUri; }
+  inline bool EndpointUriHasBeenSet() const { return m_endpointUriHasBeenSet; }
+  template <typename EndpointUriT = Aws::String>
+  void SetEndpointUri(EndpointUriT&& value) {
+    m_endpointUriHasBeenSet = true;
+    m_endpointUri = std::forward<EndpointUriT>(value);
+  }
+  template <typename EndpointUriT = Aws::String>
+  CreateWhatsAppFlowRequest& WithEndpointUri(EndpointUriT&& value) {
+    SetEndpointUri(std::forward<EndpointUriT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -158,12 +180,15 @@ class CreateWhatsAppFlowRequest : public SocialMessagingRequest {
   bool m_publish{false};
 
   Aws::String m_cloneFlowId;
+
+  Aws::String m_endpointUri;
   bool m_idHasBeenSet = false;
   bool m_flowNameHasBeenSet = false;
   bool m_categoriesHasBeenSet = false;
   bool m_flowJsonHasBeenSet = false;
   bool m_publishHasBeenSet = false;
   bool m_cloneFlowIdHasBeenSet = false;
+  bool m_endpointUriHasBeenSet = false;
 };
 
 }  // namespace Model

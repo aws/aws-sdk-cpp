@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/ConnectRequest.h>
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/PreEvaluationFilters.h>
 #include <aws/connect/model/RuleAction.h>
 #include <aws/connect/model/RulePublishStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -147,6 +148,28 @@ class UpdateRuleRequest : public ConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The pre-evaluation filters for the rule, that restrict the rule to be applied
+   * to only certain resources based on the resource's attributes, such as tags
+   * assigned to a contact. The pre-evaluation filters are applied even before rule
+   * conditions are evaluated and are used to enforce tag-based-access-control while
+   * applying rules.</p>
+   */
+  inline const PreEvaluationFilters& GetPreEvaluationFilters() const { return m_preEvaluationFilters; }
+  inline bool PreEvaluationFiltersHasBeenSet() const { return m_preEvaluationFiltersHasBeenSet; }
+  template <typename PreEvaluationFiltersT = PreEvaluationFilters>
+  void SetPreEvaluationFilters(PreEvaluationFiltersT&& value) {
+    m_preEvaluationFiltersHasBeenSet = true;
+    m_preEvaluationFilters = std::forward<PreEvaluationFiltersT>(value);
+  }
+  template <typename PreEvaluationFiltersT = PreEvaluationFilters>
+  UpdateRuleRequest& WithPreEvaluationFilters(PreEvaluationFiltersT&& value) {
+    SetPreEvaluationFilters(std::forward<PreEvaluationFiltersT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_ruleId;
 
@@ -159,12 +182,15 @@ class UpdateRuleRequest : public ConnectRequest {
   Aws::Vector<RuleAction> m_actions;
 
   RulePublishStatus m_publishStatus{RulePublishStatus::NOT_SET};
+
+  PreEvaluationFilters m_preEvaluationFilters;
   bool m_ruleIdHasBeenSet = false;
   bool m_instanceIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_functionHasBeenSet = false;
   bool m_actionsHasBeenSet = false;
   bool m_publishStatusHasBeenSet = false;
+  bool m_preEvaluationFiltersHasBeenSet = false;
 };
 
 }  // namespace Model

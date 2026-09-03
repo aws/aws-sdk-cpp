@@ -63,5 +63,9 @@ Aws::String StartBatchEvaluationRequest::SerializePayload() const {
     payload.WithString("description", m_description);
   }
 
+  if (m_outputConfigHasBeenSet) {
+    payload.WithObject("outputConfig", m_outputConfig.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

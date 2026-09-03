@@ -16,6 +16,7 @@
 #include <aws/bedrock-agentcore-control/model/ListCodeInterpretersPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListConfigurationBundleVersionsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListConfigurationBundlesPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListConsentPortalsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListDatasetExamplesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListDatasetVersionsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListDatasetsPaginationTraits.h>
@@ -182,6 +183,18 @@ class BedrockAgentCoreControlPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConfigurationBundleVersionsRequest,
                                              Pagination::ListConfigurationBundleVersionsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListConsentPortals operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConsentPortalsRequest,
+                                    Pagination::ListConsentPortalsPaginationTraits<DerivedClient>>
+  ListConsentPortalsPaginator(const Model::ListConsentPortalsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConsentPortalsRequest,
+                                             Pagination::ListConsentPortalsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

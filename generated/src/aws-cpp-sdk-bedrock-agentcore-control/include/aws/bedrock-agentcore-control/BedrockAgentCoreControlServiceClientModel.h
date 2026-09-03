@@ -29,6 +29,7 @@
 #include <aws/bedrock-agentcore-control/model/CreateCapacityProviderResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateCodeInterpreterResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateConfigurationBundleResult.h>
+#include <aws/bedrock-agentcore-control/model/CreateConsentPortalResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateDatasetResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateDatasetVersionResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateEvaluatorResult.h>
@@ -57,6 +58,7 @@
 #include <aws/bedrock-agentcore-control/model/DeleteCapacityProviderResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteCodeInterpreterResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteConfigurationBundleResult.h>
+#include <aws/bedrock-agentcore-control/model/DeleteConsentPortalResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteDatasetExamplesResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteDatasetResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteEvaluatorResult.h>
@@ -87,6 +89,7 @@
 #include <aws/bedrock-agentcore-control/model/GetCodeInterpreterResult.h>
 #include <aws/bedrock-agentcore-control/model/GetConfigurationBundleResult.h>
 #include <aws/bedrock-agentcore-control/model/GetConfigurationBundleVersionResult.h>
+#include <aws/bedrock-agentcore-control/model/GetConsentPortalResult.h>
 #include <aws/bedrock-agentcore-control/model/GetDatasetResult.h>
 #include <aws/bedrock-agentcore-control/model/GetEvaluatorResult.h>
 #include <aws/bedrock-agentcore-control/model/GetGatewayRateLimitResult.h>
@@ -131,6 +134,8 @@
 #include <aws/bedrock-agentcore-control/model/ListConfigurationBundleVersionsResult.h>
 #include <aws/bedrock-agentcore-control/model/ListConfigurationBundlesRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListConfigurationBundlesResult.h>
+#include <aws/bedrock-agentcore-control/model/ListConsentPortalsRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListConsentPortalsResult.h>
 #include <aws/bedrock-agentcore-control/model/ListDatasetExamplesResult.h>
 #include <aws/bedrock-agentcore-control/model/ListDatasetVersionsResult.h>
 #include <aws/bedrock-agentcore-control/model/ListDatasetsRequest.h>
@@ -184,6 +189,7 @@
 #include <aws/bedrock-agentcore-control/model/UpdateApiKeyCredentialProviderResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateCapacityProviderResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateConfigurationBundleResult.h>
+#include <aws/bedrock-agentcore-control/model/UpdateConsentPortalResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateDatasetExamplesResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateDatasetResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateEvaluatorResult.h>
@@ -248,6 +254,7 @@ class CreateBrowserProfileRequest;
 class CreateCapacityProviderRequest;
 class CreateCodeInterpreterRequest;
 class CreateConfigurationBundleRequest;
+class CreateConsentPortalRequest;
 class CreateDatasetRequest;
 class CreateDatasetVersionRequest;
 class CreateEvaluatorRequest;
@@ -276,6 +283,7 @@ class DeleteBrowserProfileRequest;
 class DeleteCapacityProviderRequest;
 class DeleteCodeInterpreterRequest;
 class DeleteConfigurationBundleRequest;
+class DeleteConsentPortalRequest;
 class DeleteDatasetRequest;
 class DeleteDatasetExamplesRequest;
 class DeleteEvaluatorRequest;
@@ -306,6 +314,7 @@ class GetCapacityProviderRequest;
 class GetCodeInterpreterRequest;
 class GetConfigurationBundleRequest;
 class GetConfigurationBundleVersionRequest;
+class GetConsentPortalRequest;
 class GetDatasetRequest;
 class GetEvaluatorRequest;
 class GetGatewayRequest;
@@ -342,6 +351,7 @@ class ListCapacityProvidersRequest;
 class ListCodeInterpretersRequest;
 class ListConfigurationBundleVersionsRequest;
 class ListConfigurationBundlesRequest;
+class ListConsentPortalsRequest;
 class ListDatasetExamplesRequest;
 class ListDatasetVersionsRequest;
 class ListDatasetsRequest;
@@ -382,6 +392,7 @@ class UpdateAgentRuntimeEndpointRequest;
 class UpdateApiKeyCredentialProviderRequest;
 class UpdateCapacityProviderRequest;
 class UpdateConfigurationBundleRequest;
+class UpdateConsentPortalRequest;
 class UpdateDatasetRequest;
 class UpdateDatasetExamplesRequest;
 class UpdateEvaluatorRequest;
@@ -416,6 +427,7 @@ typedef Aws::Utils::Outcome<CreateBrowserProfileResult, BedrockAgentCoreControlE
 typedef Aws::Utils::Outcome<CreateCapacityProviderResult, BedrockAgentCoreControlError> CreateCapacityProviderOutcome;
 typedef Aws::Utils::Outcome<CreateCodeInterpreterResult, BedrockAgentCoreControlError> CreateCodeInterpreterOutcome;
 typedef Aws::Utils::Outcome<CreateConfigurationBundleResult, BedrockAgentCoreControlError> CreateConfigurationBundleOutcome;
+typedef Aws::Utils::Outcome<CreateConsentPortalResult, BedrockAgentCoreControlError> CreateConsentPortalOutcome;
 typedef Aws::Utils::Outcome<CreateDatasetResult, BedrockAgentCoreControlError> CreateDatasetOutcome;
 typedef Aws::Utils::Outcome<CreateDatasetVersionResult, BedrockAgentCoreControlError> CreateDatasetVersionOutcome;
 typedef Aws::Utils::Outcome<CreateEvaluatorResult, BedrockAgentCoreControlError> CreateEvaluatorOutcome;
@@ -444,6 +456,7 @@ typedef Aws::Utils::Outcome<DeleteBrowserProfileResult, BedrockAgentCoreControlE
 typedef Aws::Utils::Outcome<DeleteCapacityProviderResult, BedrockAgentCoreControlError> DeleteCapacityProviderOutcome;
 typedef Aws::Utils::Outcome<DeleteCodeInterpreterResult, BedrockAgentCoreControlError> DeleteCodeInterpreterOutcome;
 typedef Aws::Utils::Outcome<DeleteConfigurationBundleResult, BedrockAgentCoreControlError> DeleteConfigurationBundleOutcome;
+typedef Aws::Utils::Outcome<DeleteConsentPortalResult, BedrockAgentCoreControlError> DeleteConsentPortalOutcome;
 typedef Aws::Utils::Outcome<DeleteDatasetResult, BedrockAgentCoreControlError> DeleteDatasetOutcome;
 typedef Aws::Utils::Outcome<DeleteDatasetExamplesResult, BedrockAgentCoreControlError> DeleteDatasetExamplesOutcome;
 typedef Aws::Utils::Outcome<DeleteEvaluatorResult, BedrockAgentCoreControlError> DeleteEvaluatorOutcome;
@@ -474,6 +487,7 @@ typedef Aws::Utils::Outcome<GetCapacityProviderResult, BedrockAgentCoreControlEr
 typedef Aws::Utils::Outcome<GetCodeInterpreterResult, BedrockAgentCoreControlError> GetCodeInterpreterOutcome;
 typedef Aws::Utils::Outcome<GetConfigurationBundleResult, BedrockAgentCoreControlError> GetConfigurationBundleOutcome;
 typedef Aws::Utils::Outcome<GetConfigurationBundleVersionResult, BedrockAgentCoreControlError> GetConfigurationBundleVersionOutcome;
+typedef Aws::Utils::Outcome<GetConsentPortalResult, BedrockAgentCoreControlError> GetConsentPortalOutcome;
 typedef Aws::Utils::Outcome<GetDatasetResult, BedrockAgentCoreControlError> GetDatasetOutcome;
 typedef Aws::Utils::Outcome<GetEvaluatorResult, BedrockAgentCoreControlError> GetEvaluatorOutcome;
 typedef Aws::Utils::Outcome<GetGatewayResult, BedrockAgentCoreControlError> GetGatewayOutcome;
@@ -511,6 +525,7 @@ typedef Aws::Utils::Outcome<ListCapacityProvidersResult, BedrockAgentCoreControl
 typedef Aws::Utils::Outcome<ListCodeInterpretersResult, BedrockAgentCoreControlError> ListCodeInterpretersOutcome;
 typedef Aws::Utils::Outcome<ListConfigurationBundleVersionsResult, BedrockAgentCoreControlError> ListConfigurationBundleVersionsOutcome;
 typedef Aws::Utils::Outcome<ListConfigurationBundlesResult, BedrockAgentCoreControlError> ListConfigurationBundlesOutcome;
+typedef Aws::Utils::Outcome<ListConsentPortalsResult, BedrockAgentCoreControlError> ListConsentPortalsOutcome;
 typedef Aws::Utils::Outcome<ListDatasetExamplesResult, BedrockAgentCoreControlError> ListDatasetExamplesOutcome;
 typedef Aws::Utils::Outcome<ListDatasetVersionsResult, BedrockAgentCoreControlError> ListDatasetVersionsOutcome;
 typedef Aws::Utils::Outcome<ListDatasetsResult, BedrockAgentCoreControlError> ListDatasetsOutcome;
@@ -551,6 +566,7 @@ typedef Aws::Utils::Outcome<UpdateAgentRuntimeEndpointResult, BedrockAgentCoreCo
 typedef Aws::Utils::Outcome<UpdateApiKeyCredentialProviderResult, BedrockAgentCoreControlError> UpdateApiKeyCredentialProviderOutcome;
 typedef Aws::Utils::Outcome<UpdateCapacityProviderResult, BedrockAgentCoreControlError> UpdateCapacityProviderOutcome;
 typedef Aws::Utils::Outcome<UpdateConfigurationBundleResult, BedrockAgentCoreControlError> UpdateConfigurationBundleOutcome;
+typedef Aws::Utils::Outcome<UpdateConsentPortalResult, BedrockAgentCoreControlError> UpdateConsentPortalOutcome;
 typedef Aws::Utils::Outcome<UpdateDatasetResult, BedrockAgentCoreControlError> UpdateDatasetOutcome;
 typedef Aws::Utils::Outcome<UpdateDatasetExamplesResult, BedrockAgentCoreControlError> UpdateDatasetExamplesOutcome;
 typedef Aws::Utils::Outcome<UpdateEvaluatorResult, BedrockAgentCoreControlError> UpdateEvaluatorOutcome;
@@ -585,6 +601,7 @@ typedef std::future<CreateBrowserProfileOutcome> CreateBrowserProfileOutcomeCall
 typedef std::future<CreateCapacityProviderOutcome> CreateCapacityProviderOutcomeCallable;
 typedef std::future<CreateCodeInterpreterOutcome> CreateCodeInterpreterOutcomeCallable;
 typedef std::future<CreateConfigurationBundleOutcome> CreateConfigurationBundleOutcomeCallable;
+typedef std::future<CreateConsentPortalOutcome> CreateConsentPortalOutcomeCallable;
 typedef std::future<CreateDatasetOutcome> CreateDatasetOutcomeCallable;
 typedef std::future<CreateDatasetVersionOutcome> CreateDatasetVersionOutcomeCallable;
 typedef std::future<CreateEvaluatorOutcome> CreateEvaluatorOutcomeCallable;
@@ -613,6 +630,7 @@ typedef std::future<DeleteBrowserProfileOutcome> DeleteBrowserProfileOutcomeCall
 typedef std::future<DeleteCapacityProviderOutcome> DeleteCapacityProviderOutcomeCallable;
 typedef std::future<DeleteCodeInterpreterOutcome> DeleteCodeInterpreterOutcomeCallable;
 typedef std::future<DeleteConfigurationBundleOutcome> DeleteConfigurationBundleOutcomeCallable;
+typedef std::future<DeleteConsentPortalOutcome> DeleteConsentPortalOutcomeCallable;
 typedef std::future<DeleteDatasetOutcome> DeleteDatasetOutcomeCallable;
 typedef std::future<DeleteDatasetExamplesOutcome> DeleteDatasetExamplesOutcomeCallable;
 typedef std::future<DeleteEvaluatorOutcome> DeleteEvaluatorOutcomeCallable;
@@ -643,6 +661,7 @@ typedef std::future<GetCapacityProviderOutcome> GetCapacityProviderOutcomeCallab
 typedef std::future<GetCodeInterpreterOutcome> GetCodeInterpreterOutcomeCallable;
 typedef std::future<GetConfigurationBundleOutcome> GetConfigurationBundleOutcomeCallable;
 typedef std::future<GetConfigurationBundleVersionOutcome> GetConfigurationBundleVersionOutcomeCallable;
+typedef std::future<GetConsentPortalOutcome> GetConsentPortalOutcomeCallable;
 typedef std::future<GetDatasetOutcome> GetDatasetOutcomeCallable;
 typedef std::future<GetEvaluatorOutcome> GetEvaluatorOutcomeCallable;
 typedef std::future<GetGatewayOutcome> GetGatewayOutcomeCallable;
@@ -679,6 +698,7 @@ typedef std::future<ListCapacityProvidersOutcome> ListCapacityProvidersOutcomeCa
 typedef std::future<ListCodeInterpretersOutcome> ListCodeInterpretersOutcomeCallable;
 typedef std::future<ListConfigurationBundleVersionsOutcome> ListConfigurationBundleVersionsOutcomeCallable;
 typedef std::future<ListConfigurationBundlesOutcome> ListConfigurationBundlesOutcomeCallable;
+typedef std::future<ListConsentPortalsOutcome> ListConsentPortalsOutcomeCallable;
 typedef std::future<ListDatasetExamplesOutcome> ListDatasetExamplesOutcomeCallable;
 typedef std::future<ListDatasetVersionsOutcome> ListDatasetVersionsOutcomeCallable;
 typedef std::future<ListDatasetsOutcome> ListDatasetsOutcomeCallable;
@@ -719,6 +739,7 @@ typedef std::future<UpdateAgentRuntimeEndpointOutcome> UpdateAgentRuntimeEndpoin
 typedef std::future<UpdateApiKeyCredentialProviderOutcome> UpdateApiKeyCredentialProviderOutcomeCallable;
 typedef std::future<UpdateCapacityProviderOutcome> UpdateCapacityProviderOutcomeCallable;
 typedef std::future<UpdateConfigurationBundleOutcome> UpdateConfigurationBundleOutcomeCallable;
+typedef std::future<UpdateConsentPortalOutcome> UpdateConsentPortalOutcomeCallable;
 typedef std::future<UpdateDatasetOutcome> UpdateDatasetOutcomeCallable;
 typedef std::future<UpdateDatasetExamplesOutcome> UpdateDatasetExamplesOutcomeCallable;
 typedef std::future<UpdateEvaluatorOutcome> UpdateEvaluatorOutcomeCallable;
@@ -777,6 +798,9 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::Cr
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::CreateConfigurationBundleRequest&,
                            const Model::CreateConfigurationBundleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateConfigurationBundleResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::CreateConsentPortalRequest&,
+                           const Model::CreateConsentPortalOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateConsentPortalResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::CreateDatasetRequest&, const Model::CreateDatasetOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateDatasetResponseReceivedHandler;
@@ -865,6 +889,9 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::De
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::DeleteConfigurationBundleRequest&,
                            const Model::DeleteConfigurationBundleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteConfigurationBundleResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::DeleteConsentPortalRequest&,
+                           const Model::DeleteConsentPortalOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteConsentPortalResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::DeleteDatasetRequest&, const Model::DeleteDatasetOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteDatasetResponseReceivedHandler;
@@ -959,6 +986,9 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::Ge
                            const Model::GetConfigurationBundleVersionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetConfigurationBundleVersionResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::GetConsentPortalRequest&,
+                           const Model::GetConsentPortalOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetConsentPortalResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::GetDatasetRequest&, const Model::GetDatasetOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetDatasetResponseReceivedHandler;
@@ -1071,6 +1101,9 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::Li
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::ListConfigurationBundlesRequest&,
                            const Model::ListConfigurationBundlesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListConfigurationBundlesResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::ListConsentPortalsRequest&,
+                           const Model::ListConsentPortalsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListConsentPortalsResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::ListDatasetExamplesRequest&,
                            const Model::ListDatasetExamplesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListDatasetExamplesResponseReceivedHandler;
@@ -1196,6 +1229,9 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::Up
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::UpdateConfigurationBundleRequest&,
                            const Model::UpdateConfigurationBundleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateConfigurationBundleResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::UpdateConsentPortalRequest&,
+                           const Model::UpdateConsentPortalOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateConsentPortalResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::UpdateDatasetRequest&, const Model::UpdateDatasetOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateDatasetResponseReceivedHandler;

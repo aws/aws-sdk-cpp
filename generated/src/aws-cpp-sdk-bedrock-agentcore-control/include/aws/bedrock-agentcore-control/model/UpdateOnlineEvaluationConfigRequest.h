@@ -11,6 +11,7 @@
 #include <aws/bedrock-agentcore-control/model/EvaluatorReference.h>
 #include <aws/bedrock-agentcore-control/model/Insight.h>
 #include <aws/bedrock-agentcore-control/model/OnlineEvaluationExecutionStatus.h>
+#include <aws/bedrock-agentcore-control/model/OutputConfig.h>
 #include <aws/bedrock-agentcore-control/model/Rule.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -200,6 +201,22 @@ class UpdateOnlineEvaluationConfigRequest : public BedrockAgentCoreControlReques
   ///@}
 
   ///@{
+
+  inline const OutputConfig& GetOutputConfig() const { return m_outputConfig; }
+  inline bool OutputConfigHasBeenSet() const { return m_outputConfigHasBeenSet; }
+  template <typename OutputConfigT = OutputConfig>
+  void SetOutputConfig(OutputConfigT&& value) {
+    m_outputConfigHasBeenSet = true;
+    m_outputConfig = std::forward<OutputConfigT>(value);
+  }
+  template <typename OutputConfigT = OutputConfig>
+  UpdateOnlineEvaluationConfigRequest& WithOutputConfig(OutputConfigT&& value) {
+    SetOutputConfig(std::forward<OutputConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
    * <p> The updated Amazon Resource Name (ARN) of the IAM role used for evaluation
    * execution. </p>
@@ -251,6 +268,8 @@ class UpdateOnlineEvaluationConfigRequest : public BedrockAgentCoreControlReques
 
   ClusteringConfig m_clusteringConfig;
 
+  OutputConfig m_outputConfig;
+
   Aws::String m_evaluationExecutionRoleArn;
 
   OnlineEvaluationExecutionStatus m_executionStatus{OnlineEvaluationExecutionStatus::NOT_SET};
@@ -262,6 +281,7 @@ class UpdateOnlineEvaluationConfigRequest : public BedrockAgentCoreControlReques
   bool m_evaluatorsHasBeenSet = false;
   bool m_insightsHasBeenSet = false;
   bool m_clusteringConfigHasBeenSet = false;
+  bool m_outputConfigHasBeenSet = false;
   bool m_evaluationExecutionRoleArnHasBeenSet = false;
   bool m_executionStatusHasBeenSet = false;
 };

@@ -29,6 +29,8 @@
 #include <aws/evs/model/DeleteEnvironmentHostResult.h>
 #include <aws/evs/model/DeleteEnvironmentResult.h>
 #include <aws/evs/model/DisassociateEipFromVlanResult.h>
+#include <aws/evs/model/GetAccountSettingsRequest.h>
+#include <aws/evs/model/GetAccountSettingsResult.h>
 #include <aws/evs/model/GetDepotUrlResult.h>
 #include <aws/evs/model/GetEnvironmentResult.h>
 #include <aws/evs/model/GetVersionsRequest.h>
@@ -40,6 +42,7 @@
 #include <aws/evs/model/ListEnvironmentsResult.h>
 #include <aws/evs/model/ListTagsForResourceResult.h>
 #include <aws/evs/model/ListVmEntitlementsResult.h>
+#include <aws/evs/model/PutAccountSettingsResult.h>
 #include <aws/evs/model/TagResourceResult.h>
 #include <aws/evs/model/UntagResourceResult.h>
 #include <aws/evs/model/UpdateEnvironmentConnectorResult.h>
@@ -86,6 +89,7 @@ class DeleteEnvironmentRequest;
 class DeleteEnvironmentConnectorRequest;
 class DeleteEnvironmentHostRequest;
 class DisassociateEipFromVlanRequest;
+class GetAccountSettingsRequest;
 class GetDepotUrlRequest;
 class GetEnvironmentRequest;
 class GetVersionsRequest;
@@ -95,6 +99,7 @@ class ListEnvironmentVlansRequest;
 class ListEnvironmentsRequest;
 class ListTagsForResourceRequest;
 class ListVmEntitlementsRequest;
+class PutAccountSettingsRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
 class UpdateEnvironmentConnectorRequest;
@@ -111,6 +116,7 @@ typedef Aws::Utils::Outcome<DeleteEnvironmentResult, EVSError> DeleteEnvironment
 typedef Aws::Utils::Outcome<DeleteEnvironmentConnectorResult, EVSError> DeleteEnvironmentConnectorOutcome;
 typedef Aws::Utils::Outcome<DeleteEnvironmentHostResult, EVSError> DeleteEnvironmentHostOutcome;
 typedef Aws::Utils::Outcome<DisassociateEipFromVlanResult, EVSError> DisassociateEipFromVlanOutcome;
+typedef Aws::Utils::Outcome<GetAccountSettingsResult, EVSError> GetAccountSettingsOutcome;
 typedef Aws::Utils::Outcome<GetDepotUrlResult, EVSError> GetDepotUrlOutcome;
 typedef Aws::Utils::Outcome<GetEnvironmentResult, EVSError> GetEnvironmentOutcome;
 typedef Aws::Utils::Outcome<GetVersionsResult, EVSError> GetVersionsOutcome;
@@ -120,6 +126,7 @@ typedef Aws::Utils::Outcome<ListEnvironmentVlansResult, EVSError> ListEnvironmen
 typedef Aws::Utils::Outcome<ListEnvironmentsResult, EVSError> ListEnvironmentsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, EVSError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<ListVmEntitlementsResult, EVSError> ListVmEntitlementsOutcome;
+typedef Aws::Utils::Outcome<PutAccountSettingsResult, EVSError> PutAccountSettingsOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, EVSError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, EVSError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateEnvironmentConnectorResult, EVSError> UpdateEnvironmentConnectorOutcome;
@@ -136,6 +143,7 @@ typedef std::future<DeleteEnvironmentOutcome> DeleteEnvironmentOutcomeCallable;
 typedef std::future<DeleteEnvironmentConnectorOutcome> DeleteEnvironmentConnectorOutcomeCallable;
 typedef std::future<DeleteEnvironmentHostOutcome> DeleteEnvironmentHostOutcomeCallable;
 typedef std::future<DisassociateEipFromVlanOutcome> DisassociateEipFromVlanOutcomeCallable;
+typedef std::future<GetAccountSettingsOutcome> GetAccountSettingsOutcomeCallable;
 typedef std::future<GetDepotUrlOutcome> GetDepotUrlOutcomeCallable;
 typedef std::future<GetEnvironmentOutcome> GetEnvironmentOutcomeCallable;
 typedef std::future<GetVersionsOutcome> GetVersionsOutcomeCallable;
@@ -145,6 +153,7 @@ typedef std::future<ListEnvironmentVlansOutcome> ListEnvironmentVlansOutcomeCall
 typedef std::future<ListEnvironmentsOutcome> ListEnvironmentsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<ListVmEntitlementsOutcome> ListVmEntitlementsOutcomeCallable;
+typedef std::future<PutAccountSettingsOutcome> PutAccountSettingsOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateEnvironmentConnectorOutcome> UpdateEnvironmentConnectorOutcomeCallable;
@@ -184,6 +193,9 @@ typedef std::function<void(const EVSClient*, const Model::DeleteEnvironmentHostR
 typedef std::function<void(const EVSClient*, const Model::DisassociateEipFromVlanRequest&, const Model::DisassociateEipFromVlanOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DisassociateEipFromVlanResponseReceivedHandler;
+typedef std::function<void(const EVSClient*, const Model::GetAccountSettingsRequest&, const Model::GetAccountSettingsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetAccountSettingsResponseReceivedHandler;
 typedef std::function<void(const EVSClient*, const Model::GetDepotUrlRequest&, const Model::GetDepotUrlOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetDepotUrlResponseReceivedHandler;
@@ -211,6 +223,9 @@ typedef std::function<void(const EVSClient*, const Model::ListTagsForResourceReq
 typedef std::function<void(const EVSClient*, const Model::ListVmEntitlementsRequest&, const Model::ListVmEntitlementsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListVmEntitlementsResponseReceivedHandler;
+typedef std::function<void(const EVSClient*, const Model::PutAccountSettingsRequest&, const Model::PutAccountSettingsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutAccountSettingsResponseReceivedHandler;
 typedef std::function<void(const EVSClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     TagResourceResponseReceivedHandler;

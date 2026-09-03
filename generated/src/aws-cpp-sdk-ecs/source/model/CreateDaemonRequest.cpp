@@ -64,6 +64,10 @@ Aws::String CreateDaemonRequest::SerializePayload() const {
     payload.WithString("clientToken", m_clientToken);
   }
 
+  if (m_criticalHasBeenSet) {
+    payload.WithBool("critical", m_critical);
+  }
+
   return payload.View().WriteReadable();
 }
 

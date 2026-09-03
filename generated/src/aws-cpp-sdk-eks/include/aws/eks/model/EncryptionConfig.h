@@ -4,8 +4,6 @@
  */
 
 #pragma once
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/eks/EKS_EXPORTS.h>
 #include <aws/eks/model/Provider.h>
 
@@ -35,31 +33,6 @@ class EncryptionConfig {
 
   ///@{
   /**
-   * <p>Specifies the resources to be encrypted. The only supported value is
-   * <code>secrets</code>.</p>
-   */
-  inline const Aws::Vector<Aws::String>& GetResources() const { return m_resources; }
-  inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
-  template <typename ResourcesT = Aws::Vector<Aws::String>>
-  void SetResources(ResourcesT&& value) {
-    m_resourcesHasBeenSet = true;
-    m_resources = std::forward<ResourcesT>(value);
-  }
-  template <typename ResourcesT = Aws::Vector<Aws::String>>
-  EncryptionConfig& WithResources(ResourcesT&& value) {
-    SetResources(std::forward<ResourcesT>(value));
-    return *this;
-  }
-  template <typename ResourcesT = Aws::String>
-  EncryptionConfig& AddResources(ResourcesT&& value) {
-    m_resourcesHasBeenSet = true;
-    m_resources.emplace_back(std::forward<ResourcesT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Key Management Service (KMS) key. Either the ARN or the alias can be
    * used.</p>
    */
@@ -77,10 +50,7 @@ class EncryptionConfig {
   }
   ///@}
  private:
-  Aws::Vector<Aws::String> m_resources;
-
   Provider m_provider;
-  bool m_resourcesHasBeenSet = false;
   bool m_providerHasBeenSet = false;
 };
 

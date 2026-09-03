@@ -27,6 +27,7 @@
 #include <aws/bedrock-agentcore-control/model/ListCodeInterpretersPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListOnlineEvaluationConfigsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimeEndpointsPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListConsentPortalsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListMemoriesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListWorkloadIdentitiesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListDatasetsPaginationTraits.h>

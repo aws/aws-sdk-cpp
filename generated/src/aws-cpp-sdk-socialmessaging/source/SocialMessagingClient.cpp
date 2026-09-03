@@ -33,6 +33,7 @@
 #include <aws/socialmessaging/model/DisassociateWhatsAppBusinessAccountRequest.h>
 #include <aws/socialmessaging/model/GetLinkedWhatsAppBusinessAccountPhoneNumberRequest.h>
 #include <aws/socialmessaging/model/GetLinkedWhatsAppBusinessAccountRequest.h>
+#include <aws/socialmessaging/model/GetWhatsAppBusinessPublicKeyRequest.h>
 #include <aws/socialmessaging/model/GetWhatsAppFlowPreviewRequest.h>
 #include <aws/socialmessaging/model/GetWhatsAppFlowRequest.h>
 #include <aws/socialmessaging/model/GetWhatsAppMessageMediaRequest.h>
@@ -46,6 +47,7 @@
 #include <aws/socialmessaging/model/PostWhatsAppMessageMediaRequest.h>
 #include <aws/socialmessaging/model/PublishWhatsAppFlowRequest.h>
 #include <aws/socialmessaging/model/PutWhatsAppBusinessAccountEventDestinationsRequest.h>
+#include <aws/socialmessaging/model/PutWhatsAppBusinessPublicKeyRequest.h>
 #include <aws/socialmessaging/model/SendWhatsAppConversionEventRequest.h>
 #include <aws/socialmessaging/model/SendWhatsAppMessageRequest.h>
 #include <aws/socialmessaging/model/TagResourceRequest.h>
@@ -414,6 +416,24 @@ GetLinkedWhatsAppBusinessAccountPhoneNumberOutcome SocialMessagingClient::GetLin
                             : GetLinkedWhatsAppBusinessAccountPhoneNumberOutcome(std::move(result.GetError()));
 }
 
+GetWhatsAppBusinessPublicKeyOutcome SocialMessagingClient::GetWhatsAppBusinessPublicKey(
+    const GetWhatsAppBusinessPublicKeyRequest& request) const {
+  if (!request.OriginationPhoneNumberIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetWhatsAppBusinessPublicKey", "Required field: OriginationPhoneNumberId, is not set");
+    return GetWhatsAppBusinessPublicKeyOutcome(Aws::Client::AWSError<SocialMessagingErrors>(
+        SocialMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OriginationPhoneNumberId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/whatsapp/business-public-key");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetWhatsAppBusinessPublicKeyOutcome(result.GetResultWithOwnership())
+                            : GetWhatsAppBusinessPublicKeyOutcome(std::move(result.GetError()));
+}
+
 GetWhatsAppFlowOutcome SocialMessagingClient::GetWhatsAppFlow(const GetWhatsAppFlowRequest& request) const {
   if (!request.IdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetWhatsAppFlow", "Required field: Id, is not set");
@@ -623,6 +643,18 @@ PutWhatsAppBusinessAccountEventDestinationsOutcome SocialMessagingClient::PutWha
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? PutWhatsAppBusinessAccountEventDestinationsOutcome(result.GetResultWithOwnership())
                             : PutWhatsAppBusinessAccountEventDestinationsOutcome(std::move(result.GetError()));
+}
+
+PutWhatsAppBusinessPublicKeyOutcome SocialMessagingClient::PutWhatsAppBusinessPublicKey(
+    const PutWhatsAppBusinessPublicKeyRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/whatsapp/business-public-key");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutWhatsAppBusinessPublicKeyOutcome(result.GetResultWithOwnership())
+                            : PutWhatsAppBusinessPublicKeyOutcome(std::move(result.GetError()));
 }
 
 SendWhatsAppConversionEventOutcome SocialMessagingClient::SendWhatsAppConversionEvent(

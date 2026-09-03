@@ -252,6 +252,33 @@ class CreateDaemonRequest : public ECSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>If the <code>critical</code> parameter of a daemon is <code>true</code>, and
+   * the daemon task fails, stops, or becomes unhealthy, Amazon ECS drains the
+   * container instance and stops the other tasks running on it. If the
+   * <code>critical</code> parameter is <code>false</code>, the daemon task failure
+   * doesn't affect the other tasks on the instance. The default value is
+   * <code>true</code>.</p> <p>A non-critical daemon doesn't block instance
+   * registration. The container instance becomes active and continues to run your
+   * other tasks, whether the daemon task fails during scale-out or during a
+   * deployment.</p> <p>Amazon ECS emits an EventBridge event when a daemon task
+   * fails to start, for both critical and non-critical daemons.</p> <p>Daemon task
+   * launch failures during a deployment are still counted by the deployment circuit
+   * breaker. The circuit breaker can roll back an unstable target revision.</p>
+   */
+  inline bool GetCritical() const { return m_critical; }
+  inline bool CriticalHasBeenSet() const { return m_criticalHasBeenSet; }
+  inline void SetCritical(bool value) {
+    m_criticalHasBeenSet = true;
+    m_critical = value;
+  }
+  inline CreateDaemonRequest& WithCritical(bool value) {
+    SetCritical(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_daemonName;
 
@@ -272,6 +299,8 @@ class CreateDaemonRequest : public ECSRequest {
   bool m_enableExecuteCommand{false};
 
   Aws::String m_clientToken;
+
+  bool m_critical{false};
   bool m_daemonNameHasBeenSet = false;
   bool m_clusterArnHasBeenSet = false;
   bool m_daemonTaskDefinitionArnHasBeenSet = false;
@@ -282,6 +311,7 @@ class CreateDaemonRequest : public ECSRequest {
   bool m_enableECSManagedTagsHasBeenSet = false;
   bool m_enableExecuteCommandHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
+  bool m_criticalHasBeenSet = false;
 };
 
 }  // namespace Model

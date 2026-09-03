@@ -16,6 +16,7 @@
 #include <aws/bedrock-agentcore-control/model/ListCodeInterpretersPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListConfigurationBundleVersionsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListConfigurationBundlesPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListConsentPortalsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListDatasetExamplesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListDatasetVersionsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListDatasetsPaginationTraits.h>
@@ -80,6 +81,9 @@ using ListConfigurationBundlesPaginator =
 using ListConfigurationBundleVersionsPaginator =
     Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListConfigurationBundleVersionsRequest,
                                       Pagination::ListConfigurationBundleVersionsPaginationTraits<BedrockAgentCoreControlClient>>;
+using ListConsentPortalsPaginator =
+    Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListConsentPortalsRequest,
+                                      Pagination::ListConsentPortalsPaginationTraits<BedrockAgentCoreControlClient>>;
 using ListDatasetExamplesPaginator =
     Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListDatasetExamplesRequest,
                                       Pagination::ListDatasetExamplesPaginationTraits<BedrockAgentCoreControlClient>>;

@@ -54,6 +54,10 @@ RuleSearchSummary& RuleSearchSummary::operator=(JsonView jsonValue) {
     m_publishStatus = RulePublishStatusMapper::GetRulePublishStatusForName(jsonValue.GetString("PublishStatus"));
     m_publishStatusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("PreEvaluationFilters")) {
+    m_preEvaluationFilters = jsonValue.GetObject("PreEvaluationFilters");
+    m_preEvaluationFiltersHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("CreatedTime")) {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
     m_createdTimeHasBeenSet = true;
@@ -115,6 +119,10 @@ JsonValue RuleSearchSummary::Jsonize() const {
 
   if (m_publishStatusHasBeenSet) {
     payload.WithString("PublishStatus", RulePublishStatusMapper::GetNameForRulePublishStatus(m_publishStatus));
+  }
+
+  if (m_preEvaluationFiltersHasBeenSet) {
+    payload.WithObject("PreEvaluationFilters", m_preEvaluationFilters.Jsonize());
   }
 
   if (m_createdTimeHasBeenSet) {

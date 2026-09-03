@@ -101,6 +101,11 @@
 #include <aws/bedrock-agentcore-control/model/ConnectorParameterOverride.h>
 #include <aws/bedrock-agentcore-control/model/ConnectorSource.h>
 #include <aws/bedrock-agentcore-control/model/ConnectorTargetConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/ConsentPortalIdpConfig.h>
+#include <aws/bedrock-agentcore-control/model/ConsentPortalSource.h>
+#include <aws/bedrock-agentcore-control/model/ConsentPortalSourceType.h>
+#include <aws/bedrock-agentcore-control/model/ConsentPortalStatus.h>
+#include <aws/bedrock-agentcore-control/model/ConsentPortalSummary.h>
 #include <aws/bedrock-agentcore-control/model/ConsolidationConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ContainerConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/Content.h>
@@ -123,6 +128,8 @@
 #include <aws/bedrock-agentcore-control/model/CreateCodeInterpreterResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateConfigurationBundleRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateConfigurationBundleResult.h>
+#include <aws/bedrock-agentcore-control/model/CreateConsentPortalRequest.h>
+#include <aws/bedrock-agentcore-control/model/CreateConsentPortalResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateDatasetRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateDatasetResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateDatasetVersionRequest.h>
@@ -204,6 +211,8 @@
 #include <aws/bedrock-agentcore-control/model/DeleteCodeInterpreterResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteConfigurationBundleRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteConfigurationBundleResult.h>
+#include <aws/bedrock-agentcore-control/model/DeleteConsentPortalRequest.h>
+#include <aws/bedrock-agentcore-control/model/DeleteConsentPortalResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteDatasetExamplesRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteDatasetExamplesResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteDatasetRequest.h>
@@ -319,6 +328,8 @@
 #include <aws/bedrock-agentcore-control/model/GetConfigurationBundleResult.h>
 #include <aws/bedrock-agentcore-control/model/GetConfigurationBundleVersionRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetConfigurationBundleVersionResult.h>
+#include <aws/bedrock-agentcore-control/model/GetConsentPortalRequest.h>
+#include <aws/bedrock-agentcore-control/model/GetConsentPortalResult.h>
 #include <aws/bedrock-agentcore-control/model/GetDatasetRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetDatasetResult.h>
 #include <aws/bedrock-agentcore-control/model/GetEvaluatorRequest.h>
@@ -493,6 +504,9 @@
 #include <aws/bedrock-agentcore-control/model/ListConfigurationBundlesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListConfigurationBundlesRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListConfigurationBundlesResult.h>
+#include <aws/bedrock-agentcore-control/model/ListConsentPortalsPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListConsentPortalsRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListConsentPortalsResult.h>
 #include <aws/bedrock-agentcore-control/model/ListDatasetExamplesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListDatasetExamplesRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListDatasetExamplesResult.h>
@@ -701,6 +715,7 @@
 #include <aws/bedrock-agentcore-control/model/ResourceLocation.h>
 #include <aws/bedrock-agentcore-control/model/ResourceType.h>
 #include <aws/bedrock-agentcore-control/model/RestApiMethod.h>
+#include <aws/bedrock-agentcore-control/model/ResultDestination.h>
 #include <aws/bedrock-agentcore-control/model/RootVolumeConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/RouteToTargetAction.h>
 #include <aws/bedrock-agentcore-control/model/Rule.h>
@@ -802,6 +817,8 @@
 #include <aws/bedrock-agentcore-control/model/UpdateCapacityProviderResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateConfigurationBundleRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateConfigurationBundleResult.h>
+#include <aws/bedrock-agentcore-control/model/UpdateConsentPortalRequest.h>
+#include <aws/bedrock-agentcore-control/model/UpdateConsentPortalResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateDatasetExamplesRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateDatasetExamplesResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateDatasetRequest.h>

@@ -29,6 +29,8 @@
 #include <aws/guardduty/model/AccountLevelPermissions.h>
 #include <aws/guardduty/model/AccountStatistics.h>
 #include <aws/guardduty/model/Action.h>
+#include <aws/guardduty/model/Activity.h>
+#include <aws/guardduty/model/ActivityType.h>
 #include <aws/guardduty/model/Actor.h>
 #include <aws/guardduty/model/ActorProcess.h>
 #include <aws/guardduty/model/AdditionalInfo.h>
@@ -40,6 +42,7 @@
 #include <aws/guardduty/model/Anomaly.h>
 #include <aws/guardduty/model/AnomalyObject.h>
 #include <aws/guardduty/model/AnomalyUnusual.h>
+#include <aws/guardduty/model/ApiCall.h>
 #include <aws/guardduty/model/ArchiveFindingsRequest.h>
 #include <aws/guardduty/model/ArchiveFindingsResult.h>
 #include <aws/guardduty/model/AssociationDetail.h>

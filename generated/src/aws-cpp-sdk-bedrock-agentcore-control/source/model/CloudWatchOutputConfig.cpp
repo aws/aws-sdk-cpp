@@ -22,6 +22,14 @@ CloudWatchOutputConfig& CloudWatchOutputConfig::operator=(JsonView jsonValue) {
     m_logGroupName = jsonValue.GetString("logGroupName");
     m_logGroupNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("metricsNamespace")) {
+    m_metricsNamespace = jsonValue.GetString("metricsNamespace");
+    m_metricsNamespaceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("resultDestination")) {
+    m_resultDestination = ResultDestinationMapper::GetResultDestinationForName(jsonValue.GetString("resultDestination"));
+    m_resultDestinationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +38,14 @@ JsonValue CloudWatchOutputConfig::Jsonize() const {
 
   if (m_logGroupNameHasBeenSet) {
     payload.WithString("logGroupName", m_logGroupName);
+  }
+
+  if (m_metricsNamespaceHasBeenSet) {
+    payload.WithString("metricsNamespace", m_metricsNamespace);
+  }
+
+  if (m_resultDestinationHasBeenSet) {
+    payload.WithString("resultDestination", ResultDestinationMapper::GetNameForResultDestination(m_resultDestination));
   }
 
   return payload;

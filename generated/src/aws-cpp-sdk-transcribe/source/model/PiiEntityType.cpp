@@ -26,6 +26,24 @@ static const int ADDRESS_HASH = HashingUtils::HashString("ADDRESS");
 static const int NAME_HASH = HashingUtils::HashString("NAME");
 static const int PHONE_HASH = HashingUtils::HashString("PHONE");
 static const int SSN_HASH = HashingUtils::HashString("SSN");
+static const int DATE_TIME_HASH = HashingUtils::HashString("DATE_TIME");
+static const int PASSPORT_NUMBER_HASH = HashingUtils::HashString("PASSPORT_NUMBER");
+static const int DRIVER_ID_HASH = HashingUtils::HashString("DRIVER_ID");
+static const int URL_HASH = HashingUtils::HashString("URL");
+static const int AGE_HASH = HashingUtils::HashString("AGE");
+static const int USERNAME_HASH = HashingUtils::HashString("USERNAME");
+static const int PASSWORD_HASH = HashingUtils::HashString("PASSWORD");
+static const int AWS_ACCESS_KEY_HASH = HashingUtils::HashString("AWS_ACCESS_KEY");
+static const int AWS_SECRET_KEY_HASH = HashingUtils::HashString("AWS_SECRET_KEY");
+static const int IP_ADDRESS_HASH = HashingUtils::HashString("IP_ADDRESS");
+static const int MAC_ADDRESS_HASH = HashingUtils::HashString("MAC_ADDRESS");
+static const int LICENSE_PLATE_HASH = HashingUtils::HashString("LICENSE_PLATE");
+static const int VEHICLE_IDENTIFICATION_NUMBER_HASH = HashingUtils::HashString("VEHICLE_IDENTIFICATION_NUMBER");
+static const int US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER_HASH = HashingUtils::HashString("US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER");
+static const int CA_HEALTH_NUMBER_HASH = HashingUtils::HashString("CA_HEALTH_NUMBER");
+static const int CA_SOCIAL_INSURANCE_NUMBER_HASH = HashingUtils::HashString("CA_SOCIAL_INSURANCE_NUMBER");
+static const int INTERNATIONAL_BANK_ACCOUNT_NUMBER_HASH = HashingUtils::HashString("INTERNATIONAL_BANK_ACCOUNT_NUMBER");
+static const int SWIFT_CODE_HASH = HashingUtils::HashString("SWIFT_CODE");
 static const int ALL_HASH = HashingUtils::HashString("ALL");
 
 PiiEntityType GetPiiEntityTypeForName(const Aws::String& name) {
@@ -52,6 +70,42 @@ PiiEntityType GetPiiEntityTypeForName(const Aws::String& name) {
     return PiiEntityType::PHONE;
   } else if (hashCode == SSN_HASH) {
     return PiiEntityType::SSN;
+  } else if (hashCode == DATE_TIME_HASH) {
+    return PiiEntityType::DATE_TIME;
+  } else if (hashCode == PASSPORT_NUMBER_HASH) {
+    return PiiEntityType::PASSPORT_NUMBER;
+  } else if (hashCode == DRIVER_ID_HASH) {
+    return PiiEntityType::DRIVER_ID;
+  } else if (hashCode == URL_HASH) {
+    return PiiEntityType::URL;
+  } else if (hashCode == AGE_HASH) {
+    return PiiEntityType::AGE;
+  } else if (hashCode == USERNAME_HASH) {
+    return PiiEntityType::USERNAME;
+  } else if (hashCode == PASSWORD_HASH) {
+    return PiiEntityType::PASSWORD;
+  } else if (hashCode == AWS_ACCESS_KEY_HASH) {
+    return PiiEntityType::AWS_ACCESS_KEY;
+  } else if (hashCode == AWS_SECRET_KEY_HASH) {
+    return PiiEntityType::AWS_SECRET_KEY;
+  } else if (hashCode == IP_ADDRESS_HASH) {
+    return PiiEntityType::IP_ADDRESS;
+  } else if (hashCode == MAC_ADDRESS_HASH) {
+    return PiiEntityType::MAC_ADDRESS;
+  } else if (hashCode == LICENSE_PLATE_HASH) {
+    return PiiEntityType::LICENSE_PLATE;
+  } else if (hashCode == VEHICLE_IDENTIFICATION_NUMBER_HASH) {
+    return PiiEntityType::VEHICLE_IDENTIFICATION_NUMBER;
+  } else if (hashCode == US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER_HASH) {
+    return PiiEntityType::US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER;
+  } else if (hashCode == CA_HEALTH_NUMBER_HASH) {
+    return PiiEntityType::CA_HEALTH_NUMBER;
+  } else if (hashCode == CA_SOCIAL_INSURANCE_NUMBER_HASH) {
+    return PiiEntityType::CA_SOCIAL_INSURANCE_NUMBER;
+  } else if (hashCode == INTERNATIONAL_BANK_ACCOUNT_NUMBER_HASH) {
+    return PiiEntityType::INTERNATIONAL_BANK_ACCOUNT_NUMBER;
+  } else if (hashCode == SWIFT_CODE_HASH) {
+    return PiiEntityType::SWIFT_CODE;
   } else if (hashCode == ALL_HASH) {
     return PiiEntityType::ALL;
   }
@@ -90,6 +144,42 @@ Aws::String GetNameForPiiEntityType(PiiEntityType enumValue) {
       return "PHONE";
     case PiiEntityType::SSN:
       return "SSN";
+    case PiiEntityType::DATE_TIME:
+      return "DATE_TIME";
+    case PiiEntityType::PASSPORT_NUMBER:
+      return "PASSPORT_NUMBER";
+    case PiiEntityType::DRIVER_ID:
+      return "DRIVER_ID";
+    case PiiEntityType::URL:
+      return "URL";
+    case PiiEntityType::AGE:
+      return "AGE";
+    case PiiEntityType::USERNAME:
+      return "USERNAME";
+    case PiiEntityType::PASSWORD:
+      return "PASSWORD";
+    case PiiEntityType::AWS_ACCESS_KEY:
+      return "AWS_ACCESS_KEY";
+    case PiiEntityType::AWS_SECRET_KEY:
+      return "AWS_SECRET_KEY";
+    case PiiEntityType::IP_ADDRESS:
+      return "IP_ADDRESS";
+    case PiiEntityType::MAC_ADDRESS:
+      return "MAC_ADDRESS";
+    case PiiEntityType::LICENSE_PLATE:
+      return "LICENSE_PLATE";
+    case PiiEntityType::VEHICLE_IDENTIFICATION_NUMBER:
+      return "VEHICLE_IDENTIFICATION_NUMBER";
+    case PiiEntityType::US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER:
+      return "US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER";
+    case PiiEntityType::CA_HEALTH_NUMBER:
+      return "CA_HEALTH_NUMBER";
+    case PiiEntityType::CA_SOCIAL_INSURANCE_NUMBER:
+      return "CA_SOCIAL_INSURANCE_NUMBER";
+    case PiiEntityType::INTERNATIONAL_BANK_ACCOUNT_NUMBER:
+      return "INTERNATIONAL_BANK_ACCOUNT_NUMBER";
+    case PiiEntityType::SWIFT_CODE:
+      return "SWIFT_CODE";
     case PiiEntityType::ALL:
       return "ALL";
     default:

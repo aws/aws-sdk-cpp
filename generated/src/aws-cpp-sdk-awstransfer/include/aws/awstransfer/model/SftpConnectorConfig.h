@@ -133,15 +133,48 @@ class SftpConnectorConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An ordered list of Amazon Web Services Secrets Manager version stages
+   * (staging labels, such as <code>AWSCURRENT</code> and <code>AWSPREVIOUS</code>)
+   * for the secret identified by <code>UserSecretId</code>. When establishing a
+   * connection, the connector attempts to retrieve the SFTP user's credentials from
+   * each version stage in the order listed, and uses the first version it can
+   * successfully retrieve. This lets you rotate the user secret without interrupting
+   * connector operations.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetOrderedUserSecretVersionStages() const { return m_orderedUserSecretVersionStages; }
+  inline bool OrderedUserSecretVersionStagesHasBeenSet() const { return m_orderedUserSecretVersionStagesHasBeenSet; }
+  template <typename OrderedUserSecretVersionStagesT = Aws::Vector<Aws::String>>
+  void SetOrderedUserSecretVersionStages(OrderedUserSecretVersionStagesT&& value) {
+    m_orderedUserSecretVersionStagesHasBeenSet = true;
+    m_orderedUserSecretVersionStages = std::forward<OrderedUserSecretVersionStagesT>(value);
+  }
+  template <typename OrderedUserSecretVersionStagesT = Aws::Vector<Aws::String>>
+  SftpConnectorConfig& WithOrderedUserSecretVersionStages(OrderedUserSecretVersionStagesT&& value) {
+    SetOrderedUserSecretVersionStages(std::forward<OrderedUserSecretVersionStagesT>(value));
+    return *this;
+  }
+  template <typename OrderedUserSecretVersionStagesT = Aws::String>
+  SftpConnectorConfig& AddOrderedUserSecretVersionStages(OrderedUserSecretVersionStagesT&& value) {
+    m_orderedUserSecretVersionStagesHasBeenSet = true;
+    m_orderedUserSecretVersionStages.emplace_back(std::forward<OrderedUserSecretVersionStagesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_userSecretId;
 
   Aws::Vector<Aws::String> m_trustedHostKeys;
 
   int m_maxConcurrentConnections{0};
+
+  Aws::Vector<Aws::String> m_orderedUserSecretVersionStages;
   bool m_userSecretIdHasBeenSet = false;
   bool m_trustedHostKeysHasBeenSet = false;
   bool m_maxConcurrentConnectionsHasBeenSet = false;
+  bool m_orderedUserSecretVersionStagesHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -43,6 +43,8 @@
 #include <aws/socialmessaging/model/GetLinkedWhatsAppBusinessAccountPhoneNumberResult.h>
 #include <aws/socialmessaging/model/GetLinkedWhatsAppBusinessAccountRequest.h>
 #include <aws/socialmessaging/model/GetLinkedWhatsAppBusinessAccountResult.h>
+#include <aws/socialmessaging/model/GetWhatsAppBusinessPublicKeyRequest.h>
+#include <aws/socialmessaging/model/GetWhatsAppBusinessPublicKeyResult.h>
 #include <aws/socialmessaging/model/GetWhatsAppFlowPreviewRequest.h>
 #include <aws/socialmessaging/model/GetWhatsAppFlowPreviewResult.h>
 #include <aws/socialmessaging/model/GetWhatsAppFlowRequest.h>
@@ -90,6 +92,8 @@
 #include <aws/socialmessaging/model/PublishWhatsAppFlowResult.h>
 #include <aws/socialmessaging/model/PutWhatsAppBusinessAccountEventDestinationsRequest.h>
 #include <aws/socialmessaging/model/PutWhatsAppBusinessAccountEventDestinationsResult.h>
+#include <aws/socialmessaging/model/PutWhatsAppBusinessPublicKeyRequest.h>
+#include <aws/socialmessaging/model/PutWhatsAppBusinessPublicKeyResult.h>
 #include <aws/socialmessaging/model/RegistrationStatus.h>
 #include <aws/socialmessaging/model/S3File.h>
 #include <aws/socialmessaging/model/S3PresignedUrl.h>

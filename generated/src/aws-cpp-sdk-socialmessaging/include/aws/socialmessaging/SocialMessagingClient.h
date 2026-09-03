@@ -505,6 +505,36 @@ class AWS_SOCIALMESSAGING_API SocialMessagingClient : public Aws::Client::AWSJso
   }
 
   /**
+   * <p>Retrieves the business public key for a phone number and its signature
+   * status.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/GetWhatsAppBusinessPublicKey">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetWhatsAppBusinessPublicKeyOutcome GetWhatsAppBusinessPublicKey(
+      const Model::GetWhatsAppBusinessPublicKeyRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetWhatsAppBusinessPublicKey that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetWhatsAppBusinessPublicKeyRequestT = Model::GetWhatsAppBusinessPublicKeyRequest>
+  Model::GetWhatsAppBusinessPublicKeyOutcomeCallable GetWhatsAppBusinessPublicKeyCallable(
+      const GetWhatsAppBusinessPublicKeyRequestT& request) const {
+    return SubmitCallable(&SocialMessagingClient::GetWhatsAppBusinessPublicKey, request);
+  }
+
+  /**
+   * An Async wrapper for GetWhatsAppBusinessPublicKey that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetWhatsAppBusinessPublicKeyRequestT = Model::GetWhatsAppBusinessPublicKeyRequest>
+  void GetWhatsAppBusinessPublicKeyAsync(const GetWhatsAppBusinessPublicKeyRequestT& request,
+                                         const GetWhatsAppBusinessPublicKeyResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SocialMessagingClient::GetWhatsAppBusinessPublicKey, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves the metadata and status of a WhatsApp Flow, including validation
    * errors, preview information, and health status.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/GetWhatsAppFlow">AWS
@@ -887,6 +917,36 @@ class AWS_SOCIALMESSAGING_API SocialMessagingClient : public Aws::Client::AWSJso
       const PutWhatsAppBusinessAccountEventDestinationsResponseReceivedHandler& handler,
       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SocialMessagingClient::PutWhatsAppBusinessAccountEventDestinations, request, handler, context);
+  }
+
+  /**
+   * <p>Sets the business public key used to encrypt the data exchanged with the
+   * endpoint of a data exchange Flow.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/PutWhatsAppBusinessPublicKey">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutWhatsAppBusinessPublicKeyOutcome PutWhatsAppBusinessPublicKey(
+      const Model::PutWhatsAppBusinessPublicKeyRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutWhatsAppBusinessPublicKey that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename PutWhatsAppBusinessPublicKeyRequestT = Model::PutWhatsAppBusinessPublicKeyRequest>
+  Model::PutWhatsAppBusinessPublicKeyOutcomeCallable PutWhatsAppBusinessPublicKeyCallable(
+      const PutWhatsAppBusinessPublicKeyRequestT& request) const {
+    return SubmitCallable(&SocialMessagingClient::PutWhatsAppBusinessPublicKey, request);
+  }
+
+  /**
+   * An Async wrapper for PutWhatsAppBusinessPublicKey that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename PutWhatsAppBusinessPublicKeyRequestT = Model::PutWhatsAppBusinessPublicKeyRequest>
+  void PutWhatsAppBusinessPublicKeyAsync(const PutWhatsAppBusinessPublicKeyRequestT& request,
+                                         const PutWhatsAppBusinessPublicKeyResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SocialMessagingClient::PutWhatsAppBusinessPublicKey, request, handler, context);
   }
 
   /**

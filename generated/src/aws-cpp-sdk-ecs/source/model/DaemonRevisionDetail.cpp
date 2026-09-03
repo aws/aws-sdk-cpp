@@ -33,6 +33,10 @@ DaemonRevisionDetail& DaemonRevisionDetail::operator=(JsonView jsonValue) {
     m_totalRunningCount = jsonValue.GetInteger("totalRunningCount");
     m_totalRunningCountHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("totalWithoutDaemonCount")) {
+    m_totalWithoutDaemonCount = jsonValue.GetInteger("totalWithoutDaemonCount");
+    m_totalWithoutDaemonCountHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -53,6 +57,10 @@ JsonValue DaemonRevisionDetail::Jsonize() const {
 
   if (m_totalRunningCountHasBeenSet) {
     payload.WithInteger("totalRunningCount", m_totalRunningCount);
+  }
+
+  if (m_totalWithoutDaemonCountHasBeenSet) {
+    payload.WithInteger("totalWithoutDaemonCount", m_totalWithoutDaemonCount);
   }
 
   return payload;
