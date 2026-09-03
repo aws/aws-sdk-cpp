@@ -10,6 +10,7 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.A
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.ApiGatewayTransforms;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.ApiGatewayV2Transforms;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.ChunkedEncodingTransform;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.CloudFrontTransforms;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.DynamoDbTransforms;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.Ec2Transforms;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.GlacierTransforms;
@@ -65,6 +66,7 @@ public class ModelCodegenPlugin implements SmithyBuildPlugin {
             new S3Transforms(),
             new S3ControlTransforms(),
             new GlacierTransforms(),
+            new CloudFrontTransforms(),
             new SupportsPresigningTransform(),
             new ChunkedEncodingTransform(),
             new LongPollingTransform()
