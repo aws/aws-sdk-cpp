@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/DeleteMarkerReplication.h>
@@ -19,28 +20,9 @@ namespace Model {
 
 DeleteMarkerReplication::DeleteMarkerReplication(const XmlNode& xmlNode) { *this = xmlNode; }
 
-DeleteMarkerReplication& DeleteMarkerReplication::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+DeleteMarkerReplication& DeleteMarkerReplication::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode statusNode = resultNode.FirstChild("Status");
-    if (!statusNode.IsNull()) {
-      m_status = DeleteMarkerReplicationStatusMapper::GetDeleteMarkerReplicationStatusForName(
-          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
-      m_statusHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void DeleteMarkerReplication::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_statusHasBeenSet) {
-    XmlNode statusNode = parentNode.CreateChildElement("Status");
-    statusNode.SetText(DeleteMarkerReplicationStatusMapper::GetNameForDeleteMarkerReplicationStatus(m_status));
-  }
-}
+void DeleteMarkerReplication::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

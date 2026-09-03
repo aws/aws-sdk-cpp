@@ -28,7 +28,6 @@ class StatsEvent {
   AWS_S3_API StatsEvent() = default;
   AWS_S3_API StatsEvent(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API StatsEvent& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

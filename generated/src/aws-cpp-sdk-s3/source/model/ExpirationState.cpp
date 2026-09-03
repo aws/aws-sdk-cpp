@@ -30,7 +30,6 @@ ExpirationState GetExpirationStateForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<ExpirationState>(hashCode);
   }
-
   return ExpirationState::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForExpirationState(ExpirationState enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

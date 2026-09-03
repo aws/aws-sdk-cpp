@@ -27,7 +27,6 @@ AnalyticsS3ExportFileFormat GetAnalyticsS3ExportFileFormatForName(const Aws::Str
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<AnalyticsS3ExportFileFormat>(hashCode);
   }
-
   return AnalyticsS3ExportFileFormat::NOT_SET;
 }
 
@@ -42,7 +41,6 @@ Aws::String GetNameForAnalyticsS3ExportFileFormat(AnalyticsS3ExportFileFormat en
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

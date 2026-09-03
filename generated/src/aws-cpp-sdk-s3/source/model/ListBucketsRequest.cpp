@@ -4,11 +4,14 @@
  */
 
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/ListBucketsRequest.h>
 
+#include <numeric>
 #include <utility>
 
 using namespace Aws::S3::Model;
@@ -16,51 +19,30 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-bool ListBucketsRequest::HasEmbeddedError(Aws::IOStream& body, const Aws::Http::HeaderValueCollection& header) const {
-  // Header is unused
-  AWS_UNREFERENCED_PARAM(header);
-
-  auto readPointer = body.tellg();
-  Utils::Xml::XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
-  body.seekg(readPointer);
-  if (!doc.WasParseSuccessful()) {
-    return false;
-  }
-
-  if (!doc.GetRootElement().IsNull() && doc.GetRootElement().GetName() == Aws::String("Error")) {
-    return true;
-  }
-  return false;
-}
-
 Aws::String ListBucketsRequest::SerializePayload() const { return {}; }
 
-void ListBucketsRequest::AddQueryStringParameters(URI& uri) const {
+void ListBucketsRequest::AddQueryStringParameters(Aws::Http::URI& uri) const {
   Aws::StringStream ss;
   if (m_maxBucketsHasBeenSet) {
     ss << m_maxBuckets;
     uri.AddQueryStringParameter("max-buckets", ss.str());
     ss.str("");
   }
-
   if (m_continuationTokenHasBeenSet) {
     ss << m_continuationToken;
     uri.AddQueryStringParameter("continuation-token", ss.str());
     ss.str("");
   }
-
   if (m_prefixHasBeenSet) {
     ss << m_prefix;
     uri.AddQueryStringParameter("prefix", ss.str());
     ss.str("");
   }
-
   if (m_bucketRegionHasBeenSet) {
     ss << m_bucketRegion;
     uri.AddQueryStringParameter("bucket-region", ss.str());
     ss.str("");
   }
-
   if (!m_customizedAccessLogTag.empty()) {
     // only accept customized LogTag which starts with "x-"
     Aws::Map<Aws::String, Aws::String> collectedLogTags;
@@ -69,9 +51,22 @@ void ListBucketsRequest::AddQueryStringParameters(URI& uri) const {
         collectedLogTags.emplace(entry.first, entry.second);
       }
     }
-
     if (!collectedLogTags.empty()) {
       uri.AddQueryStringParameter(collectedLogTags);
     }
   }
+}
+
+bool ListBucketsRequest::HasEmbeddedError(Aws::IOStream& body, const Aws::Http::HeaderValueCollection& header) const {
+  AWS_UNREFERENCED_PARAM(header);
+  auto readPointer = body.tellg();
+  Utils::Xml::XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
+  body.seekg(readPointer);
+  if (!doc.WasParseSuccessful()) {
+    return false;
+  }
+  if (!doc.GetRootElement().IsNull() && doc.GetRootElement().GetName() == Aws::String("Error")) {
+    return true;
+  }
+  return false;
 }

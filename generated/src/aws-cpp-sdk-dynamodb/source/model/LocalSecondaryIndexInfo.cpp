@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/LocalSecondaryIndexInfo.h>
 
 #include <utility>
@@ -17,44 +20,10 @@ namespace Model {
 
 LocalSecondaryIndexInfo::LocalSecondaryIndexInfo(JsonView jsonValue) { *this = jsonValue; }
 
-LocalSecondaryIndexInfo& LocalSecondaryIndexInfo::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("IndexName")) {
-    m_indexName = jsonValue.GetString("IndexName");
-    m_indexNameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("KeySchema")) {
-    Aws::Utils::Array<JsonView> keySchemaJsonList = jsonValue.GetArray("KeySchema");
-    for (unsigned keySchemaIndex = 0; keySchemaIndex < keySchemaJsonList.GetLength(); ++keySchemaIndex) {
-      m_keySchema.push_back(keySchemaJsonList[keySchemaIndex].AsObject());
-    }
-    m_keySchemaHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Projection")) {
-    m_projection = jsonValue.GetObject("Projection");
-    m_projectionHasBeenSet = true;
-  }
-  return *this;
-}
+LocalSecondaryIndexInfo& LocalSecondaryIndexInfo::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue LocalSecondaryIndexInfo::Jsonize() const {
   JsonValue payload;
-
-  if (m_indexNameHasBeenSet) {
-    payload.WithString("IndexName", m_indexName);
-  }
-
-  if (m_keySchemaHasBeenSet) {
-    Aws::Utils::Array<JsonValue> keySchemaJsonList(m_keySchema.size());
-    for (unsigned keySchemaIndex = 0; keySchemaIndex < keySchemaJsonList.GetLength(); ++keySchemaIndex) {
-      keySchemaJsonList[keySchemaIndex].AsObject(m_keySchema[keySchemaIndex].Jsonize());
-    }
-    payload.WithArray("KeySchema", std::move(keySchemaJsonList));
-  }
-
-  if (m_projectionHasBeenSet) {
-    payload.WithObject("Projection", m_projection.Jsonize());
-  }
-
   return payload;
 }
 

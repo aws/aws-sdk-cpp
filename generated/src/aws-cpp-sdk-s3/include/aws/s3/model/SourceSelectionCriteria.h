@@ -34,7 +34,6 @@ class SourceSelectionCriteria {
   AWS_S3_API SourceSelectionCriteria() = default;
   AWS_S3_API SourceSelectionCriteria(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API SourceSelectionCriteria& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

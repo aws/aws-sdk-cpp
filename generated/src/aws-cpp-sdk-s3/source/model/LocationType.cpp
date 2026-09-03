@@ -30,7 +30,6 @@ LocationType GetLocationTypeForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<LocationType>(hashCode);
   }
-
   return LocationType::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForLocationType(LocationType enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

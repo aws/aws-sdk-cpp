@@ -4,7 +4,6 @@
  */
 
 #include <aws/core/AmazonWebServiceResult.h>
-#include <aws/core/http/URI.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/s3/model/UploadPartRequest.h>
@@ -14,37 +13,7 @@
 using namespace Aws::S3::Model;
 using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
-using namespace Aws::Http;
 using namespace Aws;
-
-void UploadPartRequest::AddQueryStringParameters(URI& uri) const {
-  Aws::StringStream ss;
-  if (m_partNumberHasBeenSet) {
-    ss << m_partNumber;
-    uri.AddQueryStringParameter("partNumber", ss.str());
-    ss.str("");
-  }
-
-  if (m_uploadIdHasBeenSet) {
-    ss << m_uploadId;
-    uri.AddQueryStringParameter("uploadId", ss.str());
-    ss.str("");
-  }
-
-  if (!m_customizedAccessLogTag.empty()) {
-    // only accept customized LogTag which starts with "x-"
-    Aws::Map<Aws::String, Aws::String> collectedLogTags;
-    for (const auto& entry : m_customizedAccessLogTag) {
-      if (!entry.first.empty() && !entry.second.empty() && entry.first.substr(0, 2) == "x-") {
-        collectedLogTags.emplace(entry.first, entry.second);
-      }
-    }
-
-    if (!collectedLogTags.empty()) {
-      uri.AddQueryStringParameter(collectedLogTags);
-    }
-  }
-}
 
 Aws::Http::HeaderValueCollection UploadPartRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
@@ -54,126 +23,138 @@ Aws::Http::HeaderValueCollection UploadPartRequest::GetRequestSpecificHeaders() 
     headers.emplace("content-length", ss.str());
     ss.str("");
   }
-
   if (m_contentMD5HasBeenSet) {
     ss << m_contentMD5;
     headers.emplace("content-md5", ss.str());
     ss.str("");
   }
-
   if (m_checksumAlgorithmHasBeenSet && m_checksumAlgorithm != ChecksumAlgorithm::NOT_SET) {
     headers.emplace("x-amz-sdk-checksum-algorithm", ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm));
   }
-
   if (m_checksumCRC32HasBeenSet) {
     ss << m_checksumCRC32;
     headers.emplace("x-amz-checksum-crc32", ss.str());
     ss.str("");
   }
-
   if (m_checksumCRC32CHasBeenSet) {
     ss << m_checksumCRC32C;
     headers.emplace("x-amz-checksum-crc32c", ss.str());
     ss.str("");
   }
-
   if (m_checksumCRC64NVMEHasBeenSet) {
     ss << m_checksumCRC64NVME;
     headers.emplace("x-amz-checksum-crc64nvme", ss.str());
     ss.str("");
   }
-
   if (m_checksumSHA1HasBeenSet) {
     ss << m_checksumSHA1;
     headers.emplace("x-amz-checksum-sha1", ss.str());
     ss.str("");
   }
-
   if (m_checksumSHA256HasBeenSet) {
     ss << m_checksumSHA256;
     headers.emplace("x-amz-checksum-sha256", ss.str());
     ss.str("");
   }
-
   if (m_checksumSHA512HasBeenSet) {
     ss << m_checksumSHA512;
     headers.emplace("x-amz-checksum-sha512", ss.str());
     ss.str("");
   }
-
   if (m_checksumMD5HasBeenSet) {
     ss << m_checksumMD5;
     headers.emplace("x-amz-checksum-md5", ss.str());
     ss.str("");
   }
-
   if (m_checksumXXHASH64HasBeenSet) {
     ss << m_checksumXXHASH64;
     headers.emplace("x-amz-checksum-xxhash64", ss.str());
     ss.str("");
   }
-
   if (m_checksumXXHASH3HasBeenSet) {
     ss << m_checksumXXHASH3;
     headers.emplace("x-amz-checksum-xxhash3", ss.str());
     ss.str("");
   }
-
   if (m_checksumXXHASH128HasBeenSet) {
     ss << m_checksumXXHASH128;
     headers.emplace("x-amz-checksum-xxhash128", ss.str());
     ss.str("");
   }
-
   if (m_sSECustomerAlgorithmHasBeenSet) {
     ss << m_sSECustomerAlgorithm;
     headers.emplace("x-amz-server-side-encryption-customer-algorithm", ss.str());
     ss.str("");
   }
-
   if (m_sSECustomerKeyHasBeenSet) {
     ss << m_sSECustomerKey;
     headers.emplace("x-amz-server-side-encryption-customer-key", ss.str());
     ss.str("");
   }
-
   if (m_sSECustomerKeyMD5HasBeenSet) {
     ss << m_sSECustomerKeyMD5;
     headers.emplace("x-amz-server-side-encryption-customer-key-md5", ss.str());
     ss.str("");
   }
-
   if (m_requestPayerHasBeenSet && m_requestPayer != RequestPayer::NOT_SET) {
     headers.emplace("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer));
   }
-
   if (m_expectedBucketOwnerHasBeenSet) {
     ss << m_expectedBucketOwner;
     headers.emplace("x-amz-expected-bucket-owner", ss.str());
     ss.str("");
   }
-
   return headers;
 }
 
+void UploadPartRequest::AddQueryStringParameters(Aws::Http::URI& uri) const {
+  Aws::StringStream ss;
+  if (m_partNumberHasBeenSet) {
+    ss << m_partNumber;
+    uri.AddQueryStringParameter("partNumber", ss.str());
+    ss.str("");
+  }
+  if (m_uploadIdHasBeenSet) {
+    ss << m_uploadId;
+    uri.AddQueryStringParameter("uploadId", ss.str());
+    ss.str("");
+  }
+  if (!m_customizedAccessLogTag.empty()) {
+    // only accept customized LogTag which starts with "x-"
+    Aws::Map<Aws::String, Aws::String> collectedLogTags;
+    for (const auto& entry : m_customizedAccessLogTag) {
+      if (!entry.first.empty() && !entry.second.empty() && entry.first.substr(0, 2) == "x-") {
+        collectedLogTags.emplace(entry.first, entry.second);
+      }
+    }
+    if (!collectedLogTags.empty()) {
+      uri.AddQueryStringParameter(collectedLogTags);
+    }
+  }
+}
+
 bool UploadPartRequest::HasEmbeddedError(Aws::IOStream& body, const Aws::Http::HeaderValueCollection& header) const {
-  // Header is unused
   AWS_UNREFERENCED_PARAM(header);
-
   auto readPointer = body.tellg();
-  Utils::Xml::XmlDocument doc = Utils::Xml::XmlDocument::CreateFromXmlStream(body);
+  Utils::Xml::XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
   body.seekg(readPointer);
-
   if (!doc.WasParseSuccessful()) {
     return false;
   }
-
   if (!doc.GetRootElement().IsNull() && doc.GetRootElement().GetName() == Aws::String("Error")) {
     return true;
   }
-
   return false;
 }
+Aws::String UploadPartRequest::GetChecksumAlgorithmName() const {
+  if (m_checksumAlgorithm == ChecksumAlgorithm::NOT_SET) {
+    return "crc64nvme";
+  } else {
+    return ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm);
+  }
+}
+
+bool UploadPartRequest::ChecksumAlgorithmIsSet() const { return m_checksumAlgorithm != ChecksumAlgorithm::NOT_SET; }
 
 UploadPartRequest::EndpointParameters UploadPartRequest::GetEndpointContextParams() const {
   EndpointParameters parameters;
@@ -186,13 +167,3 @@ UploadPartRequest::EndpointParameters UploadPartRequest::GetEndpointContextParam
   }
   return parameters;
 }
-
-Aws::String UploadPartRequest::GetChecksumAlgorithmName() const {
-  if (m_checksumAlgorithm == ChecksumAlgorithm::NOT_SET) {
-    return "crc64nvme";
-  } else {
-    return ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm);
-  }
-}
-
-bool UploadPartRequest::ChecksumAlgorithmIsSet() const { return m_checksumAlgorithm != ChecksumAlgorithm::NOT_SET; }

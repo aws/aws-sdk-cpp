@@ -27,7 +27,6 @@ RecentlyActive GetRecentlyActiveForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<RecentlyActive>(hashCode);
   }
-
   return RecentlyActive::NOT_SET;
 }
 
@@ -42,7 +41,6 @@ Aws::String GetNameForRecentlyActive(RecentlyActive enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

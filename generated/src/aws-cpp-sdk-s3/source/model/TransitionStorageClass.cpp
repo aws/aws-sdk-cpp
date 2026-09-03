@@ -42,7 +42,6 @@ TransitionStorageClass GetTransitionStorageClassForName(const Aws::String& name)
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<TransitionStorageClass>(hashCode);
   }
-
   return TransitionStorageClass::NOT_SET;
 }
 
@@ -67,7 +66,6 @@ Aws::String GetNameForTransitionStorageClass(TransitionStorageClass enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

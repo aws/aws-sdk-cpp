@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/ThrottlingReason.h>
 
 #include <utility>
@@ -17,29 +20,10 @@ namespace Model {
 
 ThrottlingReason::ThrottlingReason(JsonView jsonValue) { *this = jsonValue; }
 
-ThrottlingReason& ThrottlingReason::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("reason")) {
-    m_reason = jsonValue.GetString("reason");
-    m_reasonHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("resource")) {
-    m_resource = jsonValue.GetString("resource");
-    m_resourceHasBeenSet = true;
-  }
-  return *this;
-}
+ThrottlingReason& ThrottlingReason::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue ThrottlingReason::Jsonize() const {
   JsonValue payload;
-
-  if (m_reasonHasBeenSet) {
-    payload.WithString("reason", m_reason);
-  }
-
-  if (m_resourceHasBeenSet) {
-    payload.WithString("resource", m_resource);
-  }
-
   return payload;
 }
 

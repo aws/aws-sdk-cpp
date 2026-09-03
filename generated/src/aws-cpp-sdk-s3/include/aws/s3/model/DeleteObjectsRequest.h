@@ -15,9 +15,6 @@
 #include <utility>
 
 namespace Aws {
-namespace Http {
-class URI;
-}  // namespace Http
 namespace S3 {
 namespace Model {
 
@@ -35,9 +32,9 @@ class DeleteObjectsRequest : public S3Request {
 
   AWS_S3_API Aws::String SerializePayload() const override;
 
-  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
   AWS_S3_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
   AWS_S3_API bool HasEmbeddedError(IOStream& body, const Http::HeaderValueCollection& header) const override;
   AWS_S3_API Aws::String GetChecksumAlgorithmName() const override;
@@ -73,11 +70,11 @@ class DeleteObjectsRequest : public S3Request {
    * SDKs, you provide the access point ARN in place of the bucket name. For more
    * information about access point ARNs, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-   * access points</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>Object
-   * Lambda access points are not supported by directory buckets.</p>  <p>
-   * <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must
-   * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
-   * takes the form <code>
+   * access points</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>Object Lambda
+   * access points are not supported by directory buckets.</p>  <p> <b>S3 on
+   * Outposts</b> - When you use this action with S3 on Outposts, you must direct
+   * requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the
+   * form <code>
    * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
    * When you use this action with S3 on Outposts, the destination bucket must be the
    * Outposts access point ARN or the access point alias. For more information about
@@ -130,8 +127,8 @@ class DeleteObjectsRequest : public S3Request {
    * are versioned object keys in the request or not, the entire Multi-Object Delete
    * request will fail. For information about MFA Delete, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html#MultiFactorAuthenticationDelete">
-   * MFA Delete</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>This
-   * functionality is not supported for directory buckets.</p>
+   * MFA Delete</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>This functionality is
+   * not supported for directory buckets.</p>
    */
   inline const Aws::String& GetMFA() const { return m_mFA; }
   inline bool MFAHasBeenSet() const { return m_mFAHasBeenSet; }
@@ -165,8 +162,8 @@ class DeleteObjectsRequest : public S3Request {
   /**
    * <p>Specifies whether you want to delete this object even if it has a
    * Governance-type Object Lock in place. To use this header, you must have the
-   * <code>s3:BypassGovernanceRetention</code> permission.</p>  <p>This
-   * functionality is not supported for directory buckets.</p>
+   * <code>s3:BypassGovernanceRetention</code> permission.</p>  <p>This functionality
+   * is not supported for directory buckets.</p>
    */
   inline bool GetBypassGovernanceRetention() const { return m_bypassGovernanceRetention; }
   inline bool BypassGovernanceRetentionHasBeenSet() const { return m_bypassGovernanceRetentionHasBeenSet; }

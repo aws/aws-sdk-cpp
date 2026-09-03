@@ -30,7 +30,6 @@ MFADeleteStatus GetMFADeleteStatusForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<MFADeleteStatus>(hashCode);
   }
-
   return MFADeleteStatus::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForMFADeleteStatus(MFADeleteStatus enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

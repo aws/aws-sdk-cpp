@@ -33,7 +33,6 @@ Tier GetTierForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<Tier>(hashCode);
   }
-
   return Tier::NOT_SET;
 }
 
@@ -52,7 +51,6 @@ Aws::String GetNameForTier(Tier enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

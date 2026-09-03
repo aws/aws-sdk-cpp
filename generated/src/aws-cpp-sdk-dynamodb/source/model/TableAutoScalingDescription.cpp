@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/TableAutoScalingDescription.h>
 
 #include <utility>
@@ -17,44 +20,10 @@ namespace Model {
 
 TableAutoScalingDescription::TableAutoScalingDescription(JsonView jsonValue) { *this = jsonValue; }
 
-TableAutoScalingDescription& TableAutoScalingDescription::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("TableName")) {
-    m_tableName = jsonValue.GetString("TableName");
-    m_tableNameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("TableStatus")) {
-    m_tableStatus = TableStatusMapper::GetTableStatusForName(jsonValue.GetString("TableStatus"));
-    m_tableStatusHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Replicas")) {
-    Aws::Utils::Array<JsonView> replicasJsonList = jsonValue.GetArray("Replicas");
-    for (unsigned replicasIndex = 0; replicasIndex < replicasJsonList.GetLength(); ++replicasIndex) {
-      m_replicas.push_back(replicasJsonList[replicasIndex].AsObject());
-    }
-    m_replicasHasBeenSet = true;
-  }
-  return *this;
-}
+TableAutoScalingDescription& TableAutoScalingDescription::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue TableAutoScalingDescription::Jsonize() const {
   JsonValue payload;
-
-  if (m_tableNameHasBeenSet) {
-    payload.WithString("TableName", m_tableName);
-  }
-
-  if (m_tableStatusHasBeenSet) {
-    payload.WithString("TableStatus", TableStatusMapper::GetNameForTableStatus(m_tableStatus));
-  }
-
-  if (m_replicasHasBeenSet) {
-    Aws::Utils::Array<JsonValue> replicasJsonList(m_replicas.size());
-    for (unsigned replicasIndex = 0; replicasIndex < replicasJsonList.GetLength(); ++replicasIndex) {
-      replicasJsonList[replicasIndex].AsObject(m_replicas[replicasIndex].Jsonize());
-    }
-    payload.WithArray("Replicas", std::move(replicasJsonList));
-  }
-
   return payload;
 }
 

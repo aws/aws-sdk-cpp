@@ -31,7 +31,6 @@ class ObjectEncryption {
   AWS_S3_API ObjectEncryption() = default;
   AWS_S3_API ObjectEncryption(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API ObjectEncryption& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

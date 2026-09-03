@@ -30,7 +30,6 @@ DeleteMarkerReplicationStatus GetDeleteMarkerReplicationStatusForName(const Aws:
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<DeleteMarkerReplicationStatus>(hashCode);
   }
-
   return DeleteMarkerReplicationStatus::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForDeleteMarkerReplicationStatus(DeleteMarkerReplicationStatu
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

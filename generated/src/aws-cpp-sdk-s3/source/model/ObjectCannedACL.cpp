@@ -45,7 +45,6 @@ ObjectCannedACL GetObjectCannedACLForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<ObjectCannedACL>(hashCode);
   }
-
   return ObjectCannedACL::NOT_SET;
 }
 
@@ -72,7 +71,6 @@ Aws::String GetNameForObjectCannedACL(ObjectCannedACL enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

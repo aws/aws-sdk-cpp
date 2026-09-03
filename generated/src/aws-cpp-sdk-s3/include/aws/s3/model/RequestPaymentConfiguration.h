@@ -28,7 +28,6 @@ class RequestPaymentConfiguration {
   AWS_S3_API RequestPaymentConfiguration() = default;
   AWS_S3_API RequestPaymentConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API RequestPaymentConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

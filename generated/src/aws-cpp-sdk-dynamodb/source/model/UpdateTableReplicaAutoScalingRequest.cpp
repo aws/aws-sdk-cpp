@@ -3,46 +3,22 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/UpdateTableReplicaAutoScalingRequest.h>
 
+#include <numeric>
 #include <utility>
 
 using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateTableReplicaAutoScalingRequest::SerializePayload() const {
-  JsonValue payload;
-
-  if (m_globalSecondaryIndexUpdatesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> globalSecondaryIndexUpdatesJsonList(m_globalSecondaryIndexUpdates.size());
-    for (unsigned globalSecondaryIndexUpdatesIndex = 0; globalSecondaryIndexUpdatesIndex < globalSecondaryIndexUpdatesJsonList.GetLength();
-         ++globalSecondaryIndexUpdatesIndex) {
-      globalSecondaryIndexUpdatesJsonList[globalSecondaryIndexUpdatesIndex].AsObject(
-          m_globalSecondaryIndexUpdates[globalSecondaryIndexUpdatesIndex].Jsonize());
-    }
-    payload.WithArray("GlobalSecondaryIndexUpdates", std::move(globalSecondaryIndexUpdatesJsonList));
-  }
-
-  if (m_tableNameHasBeenSet) {
-    payload.WithString("TableName", m_tableName);
-  }
-
-  if (m_provisionedWriteCapacityAutoScalingUpdateHasBeenSet) {
-    payload.WithObject("ProvisionedWriteCapacityAutoScalingUpdate", m_provisionedWriteCapacityAutoScalingUpdate.Jsonize());
-  }
-
-  if (m_replicaUpdatesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> replicaUpdatesJsonList(m_replicaUpdates.size());
-    for (unsigned replicaUpdatesIndex = 0; replicaUpdatesIndex < replicaUpdatesJsonList.GetLength(); ++replicaUpdatesIndex) {
-      replicaUpdatesJsonList[replicaUpdatesIndex].AsObject(m_replicaUpdates[replicaUpdatesIndex].Jsonize());
-    }
-    payload.WithArray("ReplicaUpdates", std::move(replicaUpdatesJsonList));
-  }
-
-  return payload.View().WriteReadable();
-}
+Aws::String UpdateTableReplicaAutoScalingRequest::SerializePayload() const { return "{}"; }
 
 Aws::Http::HeaderValueCollection UpdateTableReplicaAutoScalingRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;

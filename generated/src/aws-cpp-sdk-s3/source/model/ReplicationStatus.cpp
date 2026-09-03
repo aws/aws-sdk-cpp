@@ -36,7 +36,6 @@ ReplicationStatus GetReplicationStatusForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<ReplicationStatus>(hashCode);
   }
-
   return ReplicationStatus::NOT_SET;
 }
 
@@ -57,7 +56,6 @@ Aws::String GetNameForReplicationStatus(ReplicationStatus enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

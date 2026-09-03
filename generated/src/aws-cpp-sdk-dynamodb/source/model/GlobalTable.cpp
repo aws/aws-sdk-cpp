@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/GlobalTable.h>
 
 #include <utility>
@@ -17,36 +20,10 @@ namespace Model {
 
 GlobalTable::GlobalTable(JsonView jsonValue) { *this = jsonValue; }
 
-GlobalTable& GlobalTable::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("GlobalTableName")) {
-    m_globalTableName = jsonValue.GetString("GlobalTableName");
-    m_globalTableNameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ReplicationGroup")) {
-    Aws::Utils::Array<JsonView> replicationGroupJsonList = jsonValue.GetArray("ReplicationGroup");
-    for (unsigned replicationGroupIndex = 0; replicationGroupIndex < replicationGroupJsonList.GetLength(); ++replicationGroupIndex) {
-      m_replicationGroup.push_back(replicationGroupJsonList[replicationGroupIndex].AsObject());
-    }
-    m_replicationGroupHasBeenSet = true;
-  }
-  return *this;
-}
+GlobalTable& GlobalTable::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue GlobalTable::Jsonize() const {
   JsonValue payload;
-
-  if (m_globalTableNameHasBeenSet) {
-    payload.WithString("GlobalTableName", m_globalTableName);
-  }
-
-  if (m_replicationGroupHasBeenSet) {
-    Aws::Utils::Array<JsonValue> replicationGroupJsonList(m_replicationGroup.size());
-    for (unsigned replicationGroupIndex = 0; replicationGroupIndex < replicationGroupJsonList.GetLength(); ++replicationGroupIndex) {
-      replicationGroupJsonList[replicationGroupIndex].AsObject(m_replicationGroup[replicationGroupIndex].Jsonize());
-    }
-    payload.WithArray("ReplicationGroup", std::move(replicationGroupJsonList));
-  }
-
   return payload;
 }
 

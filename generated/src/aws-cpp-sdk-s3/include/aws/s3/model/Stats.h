@@ -25,7 +25,6 @@ class Stats {
   AWS_S3_API Stats() = default;
   AWS_S3_API Stats(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API Stats& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

@@ -33,7 +33,6 @@ class AnalyticsAndOperator {
   AWS_S3_API AnalyticsAndOperator() = default;
   AWS_S3_API AnalyticsAndOperator(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API AnalyticsAndOperator& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

@@ -33,7 +33,6 @@ AnomalyDetectorStateValue GetAnomalyDetectorStateValueForName(const Aws::String&
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<AnomalyDetectorStateValue>(hashCode);
   }
-
   return AnomalyDetectorStateValue::NOT_SET;
 }
 
@@ -52,7 +51,6 @@ Aws::String GetNameForAnomalyDetectorStateValue(AnomalyDetectorStateValue enumVa
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

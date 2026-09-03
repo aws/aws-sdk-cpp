@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/WarmThroughput.h>
 
 #include <utility>
@@ -17,29 +20,10 @@ namespace Model {
 
 WarmThroughput::WarmThroughput(JsonView jsonValue) { *this = jsonValue; }
 
-WarmThroughput& WarmThroughput::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("ReadUnitsPerSecond")) {
-    m_readUnitsPerSecond = jsonValue.GetInt64("ReadUnitsPerSecond");
-    m_readUnitsPerSecondHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("WriteUnitsPerSecond")) {
-    m_writeUnitsPerSecond = jsonValue.GetInt64("WriteUnitsPerSecond");
-    m_writeUnitsPerSecondHasBeenSet = true;
-  }
-  return *this;
-}
+WarmThroughput& WarmThroughput::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue WarmThroughput::Jsonize() const {
   JsonValue payload;
-
-  if (m_readUnitsPerSecondHasBeenSet) {
-    payload.WithInt64("ReadUnitsPerSecond", m_readUnitsPerSecond);
-  }
-
-  if (m_writeUnitsPerSecondHasBeenSet) {
-    payload.WithInt64("WriteUnitsPerSecond", m_writeUnitsPerSecond);
-  }
-
   return payload;
 }
 

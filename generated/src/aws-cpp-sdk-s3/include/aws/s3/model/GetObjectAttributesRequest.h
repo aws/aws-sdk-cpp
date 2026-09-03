@@ -15,9 +15,6 @@
 #include <utility>
 
 namespace Aws {
-namespace Http {
-class URI;
-}  // namespace Http
 namespace S3 {
 namespace Model {
 
@@ -35,11 +32,12 @@ class GetObjectAttributesRequest : public S3Request {
 
   AWS_S3_API Aws::String SerializePayload() const override;
 
-  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
   AWS_S3_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
   AWS_S3_API bool HasEmbeddedError(IOStream& body, const Http::HeaderValueCollection& header) const override;
+
   /**
    * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
    */
@@ -69,11 +67,11 @@ class GetObjectAttributesRequest : public S3Request {
    * SDKs, you provide the access point ARN in place of the bucket name. For more
    * information about access point ARNs, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-   * access points</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>Object
-   * Lambda access points are not supported by directory buckets.</p>  <p>
-   * <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must
-   * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
-   * takes the form <code>
+   * access points</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>Object Lambda
+   * access points are not supported by directory buckets.</p>  <p> <b>S3 on
+   * Outposts</b> - When you use this action with S3 on Outposts, you must direct
+   * requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the
+   * form <code>
    * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
    * When you use this action with S3 on Outposts, the destination bucket must be the
    * Outposts access point ARN or the access point alias. For more information about
@@ -115,8 +113,8 @@ class GetObjectAttributesRequest : public S3Request {
 
   ///@{
   /**
-   * <p>The version ID used to reference a specific version of the object.</p>
-   * <p>S3 Versioning isn't enabled and supported for directory buckets. For this API
+   * <p>The version ID used to reference a specific version of the object.</p>  <p>S3
+   * Versioning isn't enabled and supported for directory buckets. For this API
    * operation, only the <code>null</code> value of the version ID is supported by
    * directory buckets. You can only specify <code>null</code> to the
    * <code>versionId</code> query parameter in the request.</p>
@@ -177,8 +175,7 @@ class GetObjectAttributesRequest : public S3Request {
   ///@{
   /**
    * <p>Specifies the algorithm to use when encrypting the object (for example,
-   * AES256).</p>  <p>This functionality is not supported for directory
-   * buckets.</p>
+   * AES256).</p>  <p>This functionality is not supported for directory buckets.</p>
    */
   inline const Aws::String& GetSSECustomerAlgorithm() const { return m_sSECustomerAlgorithm; }
   inline bool SSECustomerAlgorithmHasBeenSet() const { return m_sSECustomerAlgorithmHasBeenSet; }
@@ -221,8 +218,8 @@ class GetObjectAttributesRequest : public S3Request {
   /**
    * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
    * Amazon S3 uses this header for a message integrity check to ensure that the
-   * encryption key was transmitted without error.</p>  <p>This functionality
-   * is not supported for directory buckets.</p>
+   * encryption key was transmitted without error.</p>  <p>This functionality is not
+   * supported for directory buckets.</p>
    */
   inline const Aws::String& GetSSECustomerKeyMD5() const { return m_sSECustomerKeyMD5; }
   inline bool SSECustomerKeyMD5HasBeenSet() const { return m_sSECustomerKeyMD5HasBeenSet; }

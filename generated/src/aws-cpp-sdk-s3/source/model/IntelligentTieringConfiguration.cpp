@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/IntelligentTieringConfiguration.h>
@@ -19,66 +20,9 @@ namespace Model {
 
 IntelligentTieringConfiguration::IntelligentTieringConfiguration(const XmlNode& xmlNode) { *this = xmlNode; }
 
-IntelligentTieringConfiguration& IntelligentTieringConfiguration::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+IntelligentTieringConfiguration& IntelligentTieringConfiguration::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode idNode = resultNode.FirstChild("Id");
-    if (!idNode.IsNull()) {
-      m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
-      m_idHasBeenSet = true;
-    }
-    XmlNode filterNode = resultNode.FirstChild("Filter");
-    if (!filterNode.IsNull()) {
-      m_filter = filterNode;
-      m_filterHasBeenSet = true;
-    }
-    XmlNode statusNode = resultNode.FirstChild("Status");
-    if (!statusNode.IsNull()) {
-      m_status = IntelligentTieringStatusMapper::GetIntelligentTieringStatusForName(
-          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
-      m_statusHasBeenSet = true;
-    }
-    XmlNode tieringsNode = resultNode.FirstChild("Tiering");
-    if (!tieringsNode.IsNull()) {
-      XmlNode tieringMember = tieringsNode;
-      m_tieringsHasBeenSet = !tieringMember.IsNull();
-      while (!tieringMember.IsNull()) {
-        m_tierings.push_back(tieringMember);
-        tieringMember = tieringMember.NextNode("Tiering");
-      }
-
-      m_tieringsHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void IntelligentTieringConfiguration::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_idHasBeenSet) {
-    XmlNode idNode = parentNode.CreateChildElement("Id");
-    idNode.SetText(m_id);
-  }
-
-  if (m_filterHasBeenSet) {
-    XmlNode filterNode = parentNode.CreateChildElement("Filter");
-    m_filter.AddToNode(filterNode);
-  }
-
-  if (m_statusHasBeenSet) {
-    XmlNode statusNode = parentNode.CreateChildElement("Status");
-    statusNode.SetText(IntelligentTieringStatusMapper::GetNameForIntelligentTieringStatus(m_status));
-  }
-
-  if (m_tieringsHasBeenSet) {
-    for (const auto& item : m_tierings) {
-      XmlNode tieringsNode = parentNode.CreateChildElement("Tiering");
-      item.AddToNode(tieringsNode);
-    }
-  }
-}
+void IntelligentTieringConfiguration::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

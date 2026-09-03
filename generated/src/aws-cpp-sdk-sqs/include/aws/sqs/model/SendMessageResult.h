@@ -136,21 +136,6 @@ class SendMessageResult {
 
   ///@{
 
-  inline const Aws::String& GetRequestId() const { return m_requestId; }
-  template <typename RequestIdT = Aws::String>
-  void SetRequestId(RequestIdT&& value) {
-    m_requestIdHasBeenSet = true;
-    m_requestId = std::forward<RequestIdT>(value);
-  }
-  template <typename RequestIdT = Aws::String>
-  SendMessageResult& WithRequestId(RequestIdT&& value) {
-    SetRequestId(std::forward<RequestIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-
   inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
   template <typename ResponseMetadataT = ResponseMetadata>
   void SetResponseMetadata(ResponseMetadataT&& value) {
@@ -160,6 +145,21 @@ class SendMessageResult {
   template <typename ResponseMetadataT = ResponseMetadata>
   SendMessageResult& WithResponseMetadata(ResponseMetadataT&& value) {
     SetResponseMetadata(std::forward<ResponseMetadataT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  SendMessageResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
     return *this;
   }
   ///@}
@@ -176,17 +176,17 @@ class SendMessageResult {
 
   Aws::String m_sequenceNumber;
 
-  Aws::String m_requestId;
-
   ResponseMetadata m_responseMetadata;
+
+  Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_mD5OfMessageBodyHasBeenSet = false;
   bool m_mD5OfMessageAttributesHasBeenSet = false;
   bool m_mD5OfMessageSystemAttributesHasBeenSet = false;
   bool m_messageIdHasBeenSet = false;
   bool m_sequenceNumberHasBeenSet = false;
-  bool m_requestIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
 };
 
 }  // namespace Model

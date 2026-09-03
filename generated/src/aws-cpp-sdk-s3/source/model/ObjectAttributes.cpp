@@ -39,7 +39,6 @@ ObjectAttributes GetObjectAttributesForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<ObjectAttributes>(hashCode);
   }
-
   return ObjectAttributes::NOT_SET;
 }
 
@@ -62,7 +61,6 @@ Aws::String GetNameForObjectAttributes(ObjectAttributes enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

@@ -32,7 +32,6 @@ class AnnotationTableConfigurationResult {
   AWS_S3_API AnnotationTableConfigurationResult() = default;
   AWS_S3_API AnnotationTableConfigurationResult(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API AnnotationTableConfigurationResult& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

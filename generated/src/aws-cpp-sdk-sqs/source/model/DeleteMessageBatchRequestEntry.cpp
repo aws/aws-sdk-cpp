@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/sqs/model/DeleteMessageBatchRequestEntry.h>
 
 #include <utility>
@@ -17,29 +20,10 @@ namespace Model {
 
 DeleteMessageBatchRequestEntry::DeleteMessageBatchRequestEntry(JsonView jsonValue) { *this = jsonValue; }
 
-DeleteMessageBatchRequestEntry& DeleteMessageBatchRequestEntry::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("Id")) {
-    m_id = jsonValue.GetString("Id");
-    m_idHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ReceiptHandle")) {
-    m_receiptHandle = jsonValue.GetString("ReceiptHandle");
-    m_receiptHandleHasBeenSet = true;
-  }
-  return *this;
-}
+DeleteMessageBatchRequestEntry& DeleteMessageBatchRequestEntry::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue DeleteMessageBatchRequestEntry::Jsonize() const {
   JsonValue payload;
-
-  if (m_idHasBeenSet) {
-    payload.WithString("Id", m_id);
-  }
-
-  if (m_receiptHandleHasBeenSet) {
-    payload.WithString("ReceiptHandle", m_receiptHandle);
-  }
-
   return payload;
 }
 

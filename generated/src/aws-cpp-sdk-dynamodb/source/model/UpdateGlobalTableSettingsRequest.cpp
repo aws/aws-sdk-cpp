@@ -3,58 +3,22 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/UpdateGlobalTableSettingsRequest.h>
 
+#include <numeric>
 #include <utility>
 
 using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateGlobalTableSettingsRequest::SerializePayload() const {
-  JsonValue payload;
-
-  if (m_globalTableNameHasBeenSet) {
-    payload.WithString("GlobalTableName", m_globalTableName);
-  }
-
-  if (m_globalTableBillingModeHasBeenSet) {
-    payload.WithString("GlobalTableBillingMode", BillingModeMapper::GetNameForBillingMode(m_globalTableBillingMode));
-  }
-
-  if (m_globalTableProvisionedWriteCapacityUnitsHasBeenSet) {
-    payload.WithInt64("GlobalTableProvisionedWriteCapacityUnits", m_globalTableProvisionedWriteCapacityUnits);
-  }
-
-  if (m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet) {
-    payload.WithObject("GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate",
-                       m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdate.Jsonize());
-  }
-
-  if (m_globalTableGlobalSecondaryIndexSettingsUpdateHasBeenSet) {
-    Aws::Utils::Array<JsonValue> globalTableGlobalSecondaryIndexSettingsUpdateJsonList(
-        m_globalTableGlobalSecondaryIndexSettingsUpdate.size());
-    for (unsigned globalTableGlobalSecondaryIndexSettingsUpdateIndex = 0;
-         globalTableGlobalSecondaryIndexSettingsUpdateIndex < globalTableGlobalSecondaryIndexSettingsUpdateJsonList.GetLength();
-         ++globalTableGlobalSecondaryIndexSettingsUpdateIndex) {
-      globalTableGlobalSecondaryIndexSettingsUpdateJsonList[globalTableGlobalSecondaryIndexSettingsUpdateIndex].AsObject(
-          m_globalTableGlobalSecondaryIndexSettingsUpdate[globalTableGlobalSecondaryIndexSettingsUpdateIndex].Jsonize());
-    }
-    payload.WithArray("GlobalTableGlobalSecondaryIndexSettingsUpdate", std::move(globalTableGlobalSecondaryIndexSettingsUpdateJsonList));
-  }
-
-  if (m_replicaSettingsUpdateHasBeenSet) {
-    Aws::Utils::Array<JsonValue> replicaSettingsUpdateJsonList(m_replicaSettingsUpdate.size());
-    for (unsigned replicaSettingsUpdateIndex = 0; replicaSettingsUpdateIndex < replicaSettingsUpdateJsonList.GetLength();
-         ++replicaSettingsUpdateIndex) {
-      replicaSettingsUpdateJsonList[replicaSettingsUpdateIndex].AsObject(m_replicaSettingsUpdate[replicaSettingsUpdateIndex].Jsonize());
-    }
-    payload.WithArray("ReplicaSettingsUpdate", std::move(replicaSettingsUpdateJsonList));
-  }
-
-  return payload.View().WriteReadable();
-}
+Aws::String UpdateGlobalTableSettingsRequest::SerializePayload() const { return "{}"; }
 
 Aws::Http::HeaderValueCollection UpdateGlobalTableSettingsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;

@@ -32,7 +32,6 @@ class CreateBucketConfiguration {
   AWS_S3_API CreateBucketConfiguration() = default;
   AWS_S3_API CreateBucketConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API CreateBucketConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{
@@ -46,8 +45,8 @@ class CreateBucketConfiguration {
    * <code>eu-west-1</code>.</p> <p>For a list of the valid values for all of the
    * Amazon Web Services Regions, see <a
    * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
-   * and Endpoints</a>.</p>  <p>This functionality is not supported for
-   * directory buckets.</p>
+   * and Endpoints</a>.</p>  <p>This functionality is not supported for directory
+   * buckets.</p>
    */
   inline BucketLocationConstraint GetLocationConstraint() const { return m_locationConstraint; }
   inline bool LocationConstraintHasBeenSet() const { return m_locationConstraintHasBeenSet; }
@@ -69,8 +68,8 @@ class CreateBucketConfiguration {
    * Otherwise, you get an HTTP <code>403 Forbidden</code> error with the error code
    * <code>AccessDenied</code>. To learn more, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/opt-in-directory-bucket-lz.html">Enable
-   * accounts for Local Zones</a> in the <i>Amazon S3 User Guide</i>. </p>
-   * <p>This functionality is only supported by directory buckets.</p>
+   * accounts for Local Zones</a> in the <i>Amazon S3 User Guide</i>. </p>  <p>This
+   * functionality is only supported by directory buckets.</p>
    */
   inline const LocationInfo& GetLocation() const { return m_location; }
   inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
@@ -88,8 +87,8 @@ class CreateBucketConfiguration {
 
   ///@{
   /**
-   * <p>Specifies the information about the bucket that will be created.</p>
-   * <p>This functionality is only supported by directory buckets.</p>
+   * <p>Specifies the information about the bucket that will be created.</p>  <p>This
+   * functionality is only supported by directory buckets.</p>
    */
   inline const BucketInfo& GetBucket() const { return m_bucket; }
   inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }

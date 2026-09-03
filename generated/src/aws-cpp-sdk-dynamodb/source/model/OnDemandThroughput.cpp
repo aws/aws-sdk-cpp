@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/OnDemandThroughput.h>
 
 #include <utility>
@@ -17,29 +20,10 @@ namespace Model {
 
 OnDemandThroughput::OnDemandThroughput(JsonView jsonValue) { *this = jsonValue; }
 
-OnDemandThroughput& OnDemandThroughput::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("MaxReadRequestUnits")) {
-    m_maxReadRequestUnits = jsonValue.GetInt64("MaxReadRequestUnits");
-    m_maxReadRequestUnitsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("MaxWriteRequestUnits")) {
-    m_maxWriteRequestUnits = jsonValue.GetInt64("MaxWriteRequestUnits");
-    m_maxWriteRequestUnitsHasBeenSet = true;
-  }
-  return *this;
-}
+OnDemandThroughput& OnDemandThroughput::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue OnDemandThroughput::Jsonize() const {
   JsonValue payload;
-
-  if (m_maxReadRequestUnitsHasBeenSet) {
-    payload.WithInt64("MaxReadRequestUnits", m_maxReadRequestUnits);
-  }
-
-  if (m_maxWriteRequestUnitsHasBeenSet) {
-    payload.WithInt64("MaxWriteRequestUnits", m_maxWriteRequestUnits);
-  }
-
   return payload;
 }
 

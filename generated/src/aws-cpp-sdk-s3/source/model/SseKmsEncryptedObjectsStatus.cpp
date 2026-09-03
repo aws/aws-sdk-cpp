@@ -30,7 +30,6 @@ SseKmsEncryptedObjectsStatus GetSseKmsEncryptedObjectsStatusForName(const Aws::S
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<SseKmsEncryptedObjectsStatus>(hashCode);
   }
-
   return SseKmsEncryptedObjectsStatus::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForSseKmsEncryptedObjectsStatus(SseKmsEncryptedObjectsStatus 
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

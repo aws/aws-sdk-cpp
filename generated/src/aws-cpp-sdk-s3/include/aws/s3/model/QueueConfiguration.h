@@ -33,7 +33,6 @@ class QueueConfiguration {
   AWS_S3_API QueueConfiguration() = default;
   AWS_S3_API QueueConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API QueueConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

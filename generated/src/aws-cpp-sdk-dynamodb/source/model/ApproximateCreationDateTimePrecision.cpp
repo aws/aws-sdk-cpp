@@ -30,7 +30,6 @@ ApproximateCreationDateTimePrecision GetApproximateCreationDateTimePrecisionForN
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<ApproximateCreationDateTimePrecision>(hashCode);
   }
-
   return ApproximateCreationDateTimePrecision::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForApproximateCreationDateTimePrecision(ApproximateCreationDa
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

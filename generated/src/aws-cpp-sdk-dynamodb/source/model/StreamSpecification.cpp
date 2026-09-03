@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/StreamSpecification.h>
 
 #include <utility>
@@ -17,29 +20,10 @@ namespace Model {
 
 StreamSpecification::StreamSpecification(JsonView jsonValue) { *this = jsonValue; }
 
-StreamSpecification& StreamSpecification::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("StreamEnabled")) {
-    m_streamEnabled = jsonValue.GetBool("StreamEnabled");
-    m_streamEnabledHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("StreamViewType")) {
-    m_streamViewType = StreamViewTypeMapper::GetStreamViewTypeForName(jsonValue.GetString("StreamViewType"));
-    m_streamViewTypeHasBeenSet = true;
-  }
-  return *this;
-}
+StreamSpecification& StreamSpecification::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue StreamSpecification::Jsonize() const {
   JsonValue payload;
-
-  if (m_streamEnabledHasBeenSet) {
-    payload.WithBool("StreamEnabled", m_streamEnabled);
-  }
-
-  if (m_streamViewTypeHasBeenSet) {
-    payload.WithString("StreamViewType", StreamViewTypeMapper::GetNameForStreamViewType(m_streamViewType));
-  }
-
   return payload;
 }
 

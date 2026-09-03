@@ -30,7 +30,6 @@ class ObjectLockConfiguration {
   AWS_S3_API ObjectLockConfiguration() = default;
   AWS_S3_API ObjectLockConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API ObjectLockConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

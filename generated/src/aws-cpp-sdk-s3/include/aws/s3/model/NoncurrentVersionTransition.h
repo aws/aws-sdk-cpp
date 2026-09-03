@@ -37,7 +37,6 @@ class NoncurrentVersionTransition {
   AWS_S3_API NoncurrentVersionTransition() = default;
   AWS_S3_API NoncurrentVersionTransition(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API NoncurrentVersionTransition& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

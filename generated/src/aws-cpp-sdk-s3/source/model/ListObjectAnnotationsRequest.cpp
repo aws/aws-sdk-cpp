@@ -4,11 +4,14 @@
  */
 
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/ListObjectAnnotationsRequest.h>
 
+#include <numeric>
 #include <utility>
 
 using namespace Aws::S3::Model;
@@ -18,32 +21,42 @@ using namespace Aws::Http;
 
 Aws::String ListObjectAnnotationsRequest::SerializePayload() const { return {}; }
 
-void ListObjectAnnotationsRequest::AddQueryStringParameters(URI& uri) const {
+Aws::Http::HeaderValueCollection ListObjectAnnotationsRequest::GetRequestSpecificHeaders() const {
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if (m_requestPayerHasBeenSet && m_requestPayer != RequestPayer::NOT_SET) {
+    headers.emplace("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer));
+  }
+  if (m_expectedBucketOwnerHasBeenSet) {
+    ss << m_expectedBucketOwner;
+    headers.emplace("x-amz-expected-bucket-owner", ss.str());
+    ss.str("");
+  }
+  return headers;
+}
+
+void ListObjectAnnotationsRequest::AddQueryStringParameters(Aws::Http::URI& uri) const {
   Aws::StringStream ss;
   if (m_versionIdHasBeenSet) {
     ss << m_versionId;
     uri.AddQueryStringParameter("versionId", ss.str());
     ss.str("");
   }
-
   if (m_maxAnnotationResultsHasBeenSet) {
     ss << m_maxAnnotationResults;
     uri.AddQueryStringParameter("max-annotation-results", ss.str());
     ss.str("");
   }
-
   if (m_annotationPrefixHasBeenSet) {
     ss << m_annotationPrefix;
     uri.AddQueryStringParameter("annotation-prefix", ss.str());
     ss.str("");
   }
-
   if (m_continuationTokenHasBeenSet) {
     ss << m_continuationToken;
     uri.AddQueryStringParameter("continuation-token", ss.str());
     ss.str("");
   }
-
   if (!m_customizedAccessLogTag.empty()) {
     // only accept customized LogTag which starts with "x-"
     Aws::Map<Aws::String, Aws::String> collectedLogTags;
@@ -52,27 +65,10 @@ void ListObjectAnnotationsRequest::AddQueryStringParameters(URI& uri) const {
         collectedLogTags.emplace(entry.first, entry.second);
       }
     }
-
     if (!collectedLogTags.empty()) {
       uri.AddQueryStringParameter(collectedLogTags);
     }
   }
-}
-
-Aws::Http::HeaderValueCollection ListObjectAnnotationsRequest::GetRequestSpecificHeaders() const {
-  Aws::Http::HeaderValueCollection headers;
-  Aws::StringStream ss;
-  if (m_requestPayerHasBeenSet && m_requestPayer != RequestPayer::NOT_SET) {
-    headers.emplace("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer));
-  }
-
-  if (m_expectedBucketOwnerHasBeenSet) {
-    ss << m_expectedBucketOwner;
-    headers.emplace("x-amz-expected-bucket-owner", ss.str());
-    ss.str("");
-  }
-
-  return headers;
 }
 
 ListObjectAnnotationsRequest::EndpointParameters ListObjectAnnotationsRequest::GetEndpointContextParams() const {

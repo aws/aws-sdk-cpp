@@ -29,7 +29,6 @@ class InventorySchedule {
   AWS_S3_API InventorySchedule() = default;
   AWS_S3_API InventorySchedule(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API InventorySchedule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

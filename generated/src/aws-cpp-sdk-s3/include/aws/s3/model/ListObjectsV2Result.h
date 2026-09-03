@@ -92,9 +92,9 @@ class ListObjectsV2Result {
 
   ///@{
   /**
-   * <p>Keys that begin with the indicated prefix.</p>  <p> <b>Directory
-   * buckets</b> - For directory buckets, only prefixes that end in a delimiter
-   * (<code>/</code>) are supported.</p>
+   * <p>Keys that begin with the indicated prefix.</p>  <p> <b>Directory buckets</b>
+   * - For directory buckets, only prefixes that end in a delimiter (<code>/</code>)
+   * are supported.</p>
    */
   inline const Aws::String& GetPrefix() const { return m_prefix; }
   template <typename PrefixT = Aws::String>
@@ -115,9 +115,8 @@ class ListObjectsV2Result {
    * the first occurrence of the delimiter to be rolled up into a single result
    * element in the <code>CommonPrefixes</code> collection. These rolled-up keys are
    * not returned elsewhere in the response. Each rolled-up result counts as only one
-   * return against the <code>MaxKeys</code> value.</p>  <p> <b>Directory
-   * buckets</b> - For directory buckets, <code>/</code> is the only supported
-   * delimiter.</p>
+   * return against the <code>MaxKeys</code> value.</p>  <p> <b>Directory buckets</b>
+   * - For directory buckets, <code>/</code> is the only supported delimiter.</p>
    */
   inline const Aws::String& GetDelimiter() const { return m_delimiter; }
   template <typename DelimiterT = Aws::String>
@@ -162,14 +161,13 @@ class ListObjectsV2Result {
    * example, if the prefix is <code>notes/</code> and the delimiter is a slash
    * (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is
    * <code>notes/summer/</code>. All of the keys that roll up into a common prefix
-   * count as a single return when calculating the number of returns. </p>
-   * <ul> <li> <p> <b>Directory buckets</b> - For directory buckets, only prefixes
-   * that end in a delimiter (<code>/</code>) are supported.</p> </li> <li> <p>
-   * <b>Directory buckets </b> - When you query <code>ListObjectsV2</code> with a
-   * delimiter during in-progress multipart uploads, the <code>CommonPrefixes</code>
-   * response parameter contains the prefixes that are associated with the
-   * in-progress multipart uploads. For more information about multipart uploads, see
-   * <a
+   * count as a single return when calculating the number of returns. </p>  <ul> <li>
+   * <p> <b>Directory buckets</b> - For directory buckets, only prefixes that end in
+   * a delimiter (<code>/</code>) are supported.</p> </li> <li> <p> <b>Directory
+   * buckets </b> - When you query <code>ListObjectsV2</code> with a delimiter during
+   * in-progress multipart uploads, the <code>CommonPrefixes</code> response
+   * parameter contains the prefixes that are associated with the in-progress
+   * multipart uploads. For more information about multipart uploads, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart
    * Upload Overview</a> in the <i>Amazon S3 User Guide</i>.</p> </li> </ul>
    */
@@ -272,7 +270,7 @@ class ListObjectsV2Result {
   ///@{
   /**
    * <p>If StartAfter was sent with the request, it is included in the response.</p>
-   *  <p>This functionality is not supported for directory buckets.</p>
+   * <p>This functionality is not supported for directory buckets.</p>
    */
   inline const Aws::String& GetStartAfter() const { return m_startAfter; }
   template <typename StartAfterT = Aws::String>

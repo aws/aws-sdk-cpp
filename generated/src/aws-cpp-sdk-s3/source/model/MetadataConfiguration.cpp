@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/MetadataConfiguration.h>
@@ -19,47 +20,9 @@ namespace Model {
 
 MetadataConfiguration::MetadataConfiguration(const XmlNode& xmlNode) { *this = xmlNode; }
 
-MetadataConfiguration& MetadataConfiguration::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+MetadataConfiguration& MetadataConfiguration::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode journalTableConfigurationNode = resultNode.FirstChild("JournalTableConfiguration");
-    if (!journalTableConfigurationNode.IsNull()) {
-      m_journalTableConfiguration = journalTableConfigurationNode;
-      m_journalTableConfigurationHasBeenSet = true;
-    }
-    XmlNode inventoryTableConfigurationNode = resultNode.FirstChild("InventoryTableConfiguration");
-    if (!inventoryTableConfigurationNode.IsNull()) {
-      m_inventoryTableConfiguration = inventoryTableConfigurationNode;
-      m_inventoryTableConfigurationHasBeenSet = true;
-    }
-    XmlNode annotationTableConfigurationNode = resultNode.FirstChild("AnnotationTableConfiguration");
-    if (!annotationTableConfigurationNode.IsNull()) {
-      m_annotationTableConfiguration = annotationTableConfigurationNode;
-      m_annotationTableConfigurationHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void MetadataConfiguration::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_journalTableConfigurationHasBeenSet) {
-    XmlNode journalTableConfigurationNode = parentNode.CreateChildElement("JournalTableConfiguration");
-    m_journalTableConfiguration.AddToNode(journalTableConfigurationNode);
-  }
-
-  if (m_inventoryTableConfigurationHasBeenSet) {
-    XmlNode inventoryTableConfigurationNode = parentNode.CreateChildElement("InventoryTableConfiguration");
-    m_inventoryTableConfiguration.AddToNode(inventoryTableConfigurationNode);
-  }
-
-  if (m_annotationTableConfigurationHasBeenSet) {
-    XmlNode annotationTableConfigurationNode = parentNode.CreateChildElement("AnnotationTableConfiguration");
-    m_annotationTableConfiguration.AddToNode(annotationTableConfigurationNode);
-  }
-}
+void MetadataConfiguration::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

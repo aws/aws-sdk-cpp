@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/SourceSelectionCriteria.h>
@@ -19,37 +20,9 @@ namespace Model {
 
 SourceSelectionCriteria::SourceSelectionCriteria(const XmlNode& xmlNode) { *this = xmlNode; }
 
-SourceSelectionCriteria& SourceSelectionCriteria::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+SourceSelectionCriteria& SourceSelectionCriteria::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode sseKmsEncryptedObjectsNode = resultNode.FirstChild("SseKmsEncryptedObjects");
-    if (!sseKmsEncryptedObjectsNode.IsNull()) {
-      m_sseKmsEncryptedObjects = sseKmsEncryptedObjectsNode;
-      m_sseKmsEncryptedObjectsHasBeenSet = true;
-    }
-    XmlNode replicaModificationsNode = resultNode.FirstChild("ReplicaModifications");
-    if (!replicaModificationsNode.IsNull()) {
-      m_replicaModifications = replicaModificationsNode;
-      m_replicaModificationsHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void SourceSelectionCriteria::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_sseKmsEncryptedObjectsHasBeenSet) {
-    XmlNode sseKmsEncryptedObjectsNode = parentNode.CreateChildElement("SseKmsEncryptedObjects");
-    m_sseKmsEncryptedObjects.AddToNode(sseKmsEncryptedObjectsNode);
-  }
-
-  if (m_replicaModificationsHasBeenSet) {
-    XmlNode replicaModificationsNode = parentNode.CreateChildElement("ReplicaModifications");
-    m_replicaModifications.AddToNode(replicaModificationsNode);
-  }
-}
+void SourceSelectionCriteria::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

@@ -3,121 +3,22 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/CreateTableRequest.h>
 
+#include <numeric>
 #include <utility>
 
 using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateTableRequest::SerializePayload() const {
-  JsonValue payload;
-
-  if (m_attributeDefinitionsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> attributeDefinitionsJsonList(m_attributeDefinitions.size());
-    for (unsigned attributeDefinitionsIndex = 0; attributeDefinitionsIndex < attributeDefinitionsJsonList.GetLength();
-         ++attributeDefinitionsIndex) {
-      attributeDefinitionsJsonList[attributeDefinitionsIndex].AsObject(m_attributeDefinitions[attributeDefinitionsIndex].Jsonize());
-    }
-    payload.WithArray("AttributeDefinitions", std::move(attributeDefinitionsJsonList));
-  }
-
-  if (m_tableNameHasBeenSet) {
-    payload.WithString("TableName", m_tableName);
-  }
-
-  if (m_keySchemaHasBeenSet) {
-    Aws::Utils::Array<JsonValue> keySchemaJsonList(m_keySchema.size());
-    for (unsigned keySchemaIndex = 0; keySchemaIndex < keySchemaJsonList.GetLength(); ++keySchemaIndex) {
-      keySchemaJsonList[keySchemaIndex].AsObject(m_keySchema[keySchemaIndex].Jsonize());
-    }
-    payload.WithArray("KeySchema", std::move(keySchemaJsonList));
-  }
-
-  if (m_localSecondaryIndexesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> localSecondaryIndexesJsonList(m_localSecondaryIndexes.size());
-    for (unsigned localSecondaryIndexesIndex = 0; localSecondaryIndexesIndex < localSecondaryIndexesJsonList.GetLength();
-         ++localSecondaryIndexesIndex) {
-      localSecondaryIndexesJsonList[localSecondaryIndexesIndex].AsObject(m_localSecondaryIndexes[localSecondaryIndexesIndex].Jsonize());
-    }
-    payload.WithArray("LocalSecondaryIndexes", std::move(localSecondaryIndexesJsonList));
-  }
-
-  if (m_globalSecondaryIndexesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> globalSecondaryIndexesJsonList(m_globalSecondaryIndexes.size());
-    for (unsigned globalSecondaryIndexesIndex = 0; globalSecondaryIndexesIndex < globalSecondaryIndexesJsonList.GetLength();
-         ++globalSecondaryIndexesIndex) {
-      globalSecondaryIndexesJsonList[globalSecondaryIndexesIndex].AsObject(m_globalSecondaryIndexes[globalSecondaryIndexesIndex].Jsonize());
-    }
-    payload.WithArray("GlobalSecondaryIndexes", std::move(globalSecondaryIndexesJsonList));
-  }
-
-  if (m_billingModeHasBeenSet) {
-    payload.WithString("BillingMode", BillingModeMapper::GetNameForBillingMode(m_billingMode));
-  }
-
-  if (m_provisionedThroughputHasBeenSet) {
-    payload.WithObject("ProvisionedThroughput", m_provisionedThroughput.Jsonize());
-  }
-
-  if (m_streamSpecificationHasBeenSet) {
-    payload.WithObject("StreamSpecification", m_streamSpecification.Jsonize());
-  }
-
-  if (m_sSESpecificationHasBeenSet) {
-    payload.WithObject("SSESpecification", m_sSESpecification.Jsonize());
-  }
-
-  if (m_tagsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
-      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-    }
-    payload.WithArray("Tags", std::move(tagsJsonList));
-  }
-
-  if (m_tableClassHasBeenSet) {
-    payload.WithString("TableClass", TableClassMapper::GetNameForTableClass(m_tableClass));
-  }
-
-  if (m_deletionProtectionEnabledHasBeenSet) {
-    payload.WithBool("DeletionProtectionEnabled", m_deletionProtectionEnabled);
-  }
-
-  if (m_warmThroughputHasBeenSet) {
-    payload.WithObject("WarmThroughput", m_warmThroughput.Jsonize());
-  }
-
-  if (m_resourcePolicyHasBeenSet) {
-    payload.WithString("ResourcePolicy", m_resourcePolicy);
-  }
-
-  if (m_onDemandThroughputHasBeenSet) {
-    payload.WithObject("OnDemandThroughput", m_onDemandThroughput.Jsonize());
-  }
-
-  if (m_globalTableSourceArnHasBeenSet) {
-    payload.WithString("GlobalTableSourceArn", m_globalTableSourceArn);
-  }
-
-  if (m_globalTableSettingsReplicationModeHasBeenSet) {
-    payload.WithString(
-        "GlobalTableSettingsReplicationMode",
-        GlobalTableSettingsReplicationModeMapper::GetNameForGlobalTableSettingsReplicationMode(m_globalTableSettingsReplicationMode));
-  }
-
-  if (m_vectorIndexesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> vectorIndexesJsonList(m_vectorIndexes.size());
-    for (unsigned vectorIndexesIndex = 0; vectorIndexesIndex < vectorIndexesJsonList.GetLength(); ++vectorIndexesIndex) {
-      vectorIndexesJsonList[vectorIndexesIndex].AsObject(m_vectorIndexes[vectorIndexesIndex].Jsonize());
-    }
-    payload.WithArray("VectorIndexes", std::move(vectorIndexesJsonList));
-  }
-
-  return payload.View().WriteReadable();
-}
+Aws::String CreateTableRequest::SerializePayload() const { return "{}"; }
 
 Aws::Http::HeaderValueCollection CreateTableRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;

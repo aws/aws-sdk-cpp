@@ -30,7 +30,6 @@ ContinuousBackupsStatus GetContinuousBackupsStatusForName(const Aws::String& nam
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<ContinuousBackupsStatus>(hashCode);
   }
-
   return ContinuousBackupsStatus::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForContinuousBackupsStatus(ContinuousBackupsStatus enumValue)
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

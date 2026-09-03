@@ -25,8 +25,8 @@ namespace Model {
  * <code>PROVISIONED</code> and <code>PAY_PER_REQUEST</code> billing modes. For
  * more information about these modes, see <a
  * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html">Read/write
- * capacity mode</a>.</p>  <p>You may need to switch to on-demand mode at
- * least once in order to return a <code>BillingModeSummary</code> response.</p>
+ * capacity mode</a>.</p>  <p>You may need to switch to on-demand mode at least
+ * once in order to return a <code>BillingModeSummary</code> response.</p>
  * <p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BillingModeSummary">AWS
  * API Reference</a></p>

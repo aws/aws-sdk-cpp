@@ -30,7 +30,6 @@ ReturnItemCollectionMetrics GetReturnItemCollectionMetricsForName(const Aws::Str
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<ReturnItemCollectionMetrics>(hashCode);
   }
-
   return ReturnItemCollectionMetrics::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForReturnItemCollectionMetrics(ReturnItemCollectionMetrics en
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

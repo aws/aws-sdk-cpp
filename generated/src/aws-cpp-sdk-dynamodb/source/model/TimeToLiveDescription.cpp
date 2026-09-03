@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/TimeToLiveDescription.h>
 
 #include <utility>
@@ -17,29 +20,10 @@ namespace Model {
 
 TimeToLiveDescription::TimeToLiveDescription(JsonView jsonValue) { *this = jsonValue; }
 
-TimeToLiveDescription& TimeToLiveDescription::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("TimeToLiveStatus")) {
-    m_timeToLiveStatus = TimeToLiveStatusMapper::GetTimeToLiveStatusForName(jsonValue.GetString("TimeToLiveStatus"));
-    m_timeToLiveStatusHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("AttributeName")) {
-    m_attributeName = jsonValue.GetString("AttributeName");
-    m_attributeNameHasBeenSet = true;
-  }
-  return *this;
-}
+TimeToLiveDescription& TimeToLiveDescription::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue TimeToLiveDescription::Jsonize() const {
   JsonValue payload;
-
-  if (m_timeToLiveStatusHasBeenSet) {
-    payload.WithString("TimeToLiveStatus", TimeToLiveStatusMapper::GetNameForTimeToLiveStatus(m_timeToLiveStatus));
-  }
-
-  if (m_attributeNameHasBeenSet) {
-    payload.WithString("AttributeName", m_attributeName);
-  }
-
   return payload;
 }
 

@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/InventoryDestination.h>
@@ -19,27 +20,9 @@ namespace Model {
 
 InventoryDestination::InventoryDestination(const XmlNode& xmlNode) { *this = xmlNode; }
 
-InventoryDestination& InventoryDestination::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+InventoryDestination& InventoryDestination::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode s3BucketDestinationNode = resultNode.FirstChild("S3BucketDestination");
-    if (!s3BucketDestinationNode.IsNull()) {
-      m_s3BucketDestination = s3BucketDestinationNode;
-      m_s3BucketDestinationHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void InventoryDestination::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_s3BucketDestinationHasBeenSet) {
-    XmlNode s3BucketDestinationNode = parentNode.CreateChildElement("S3BucketDestination");
-    m_s3BucketDestination.AddToNode(s3BucketDestinationNode);
-  }
-}
+void InventoryDestination::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

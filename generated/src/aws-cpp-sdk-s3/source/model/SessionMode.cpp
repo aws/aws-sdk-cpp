@@ -30,7 +30,6 @@ SessionMode GetSessionModeForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<SessionMode>(hashCode);
   }
-
   return SessionMode::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForSessionMode(SessionMode enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

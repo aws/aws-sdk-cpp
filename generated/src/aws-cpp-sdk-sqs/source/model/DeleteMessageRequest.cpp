@@ -3,28 +3,22 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/sqs/model/DeleteMessageRequest.h>
 
+#include <numeric>
 #include <utility>
 
 using namespace Aws::SQS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteMessageRequest::SerializePayload() const {
-  JsonValue payload;
-
-  if (m_queueUrlHasBeenSet) {
-    payload.WithString("QueueUrl", m_queueUrl);
-  }
-
-  if (m_receiptHandleHasBeenSet) {
-    payload.WithString("ReceiptHandle", m_receiptHandle);
-  }
-
-  return payload.View().WriteReadable();
-}
+Aws::String DeleteMessageRequest::SerializePayload() const { return "{}"; }
 
 Aws::Http::HeaderValueCollection DeleteMessageRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;

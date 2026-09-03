@@ -4,6 +4,7 @@
  */
 
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -20,19 +21,5 @@ using namespace Aws;
 DescribeContinuousBackupsResult::DescribeContinuousBackupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeContinuousBackupsResult& DescribeContinuousBackupsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_HttpResponseCode = result.GetResponseCode();
-  JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("ContinuousBackupsDescription")) {
-    m_continuousBackupsDescription = jsonValue.GetObject("ContinuousBackupsDescription");
-    m_continuousBackupsDescriptionHasBeenSet = true;
-  }
-
-  const auto& headers = result.GetHeaderValueCollection();
-  const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if (requestIdIter != headers.end()) {
-    m_requestId = requestIdIter->second;
-    m_requestIdHasBeenSet = true;
-  }
-
   return *this;
 }

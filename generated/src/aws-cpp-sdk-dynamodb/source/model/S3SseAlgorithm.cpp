@@ -30,7 +30,6 @@ S3SseAlgorithm GetS3SseAlgorithmForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<S3SseAlgorithm>(hashCode);
   }
-
   return S3SseAlgorithm::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForS3SseAlgorithm(S3SseAlgorithm enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

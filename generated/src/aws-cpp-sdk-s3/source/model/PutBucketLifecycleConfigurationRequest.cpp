@@ -4,11 +4,14 @@
  */
 
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/PutBucketLifecycleConfigurationRequest.h>
 
+#include <numeric>
 #include <utility>
 
 using namespace Aws::S3::Model;
@@ -16,38 +19,29 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-bool PutBucketLifecycleConfigurationRequest::HasEmbeddedError(Aws::IOStream& body, const Aws::Http::HeaderValueCollection& header) const {
-  // Header is unused
-  AWS_UNREFERENCED_PARAM(header);
+Aws::String PutBucketLifecycleConfigurationRequest::SerializePayload() const { return {}; }
 
-  auto readPointer = body.tellg();
-  Utils::Xml::XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
-  body.seekg(readPointer);
-  if (!doc.WasParseSuccessful()) {
-    return false;
+Aws::Http::HeaderValueCollection PutBucketLifecycleConfigurationRequest::GetRequestSpecificHeaders() const {
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if (m_checksumAlgorithmHasBeenSet && m_checksumAlgorithm != ChecksumAlgorithm::NOT_SET) {
+    headers.emplace("x-amz-sdk-checksum-algorithm", ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm));
   }
-
-  if (!doc.GetRootElement().IsNull() && doc.GetRootElement().GetName() == Aws::String("Error")) {
-    return true;
+  if (m_expectedBucketOwnerHasBeenSet) {
+    ss << m_expectedBucketOwner;
+    headers.emplace("x-amz-expected-bucket-owner", ss.str());
+    ss.str("");
   }
-  return false;
+  if (m_transitionDefaultMinimumObjectSizeHasBeenSet &&
+      m_transitionDefaultMinimumObjectSize != TransitionDefaultMinimumObjectSize::NOT_SET) {
+    headers.emplace(
+        "x-amz-transition-default-minimum-object-size",
+        TransitionDefaultMinimumObjectSizeMapper::GetNameForTransitionDefaultMinimumObjectSize(m_transitionDefaultMinimumObjectSize));
+  }
+  return headers;
 }
 
-Aws::String PutBucketLifecycleConfigurationRequest::SerializePayload() const {
-  XmlDocument payloadDoc = XmlDocument::CreateWithRootNode("LifecycleConfiguration");
-
-  XmlNode parentNode = payloadDoc.GetRootElement();
-  parentNode.SetAttributeValue("xmlns", "http://s3.amazonaws.com/doc/2006-03-01/");
-
-  m_lifecycleConfiguration.AddToNode(parentNode);
-  if (parentNode.HasChildren()) {
-    return payloadDoc.ConvertToString();
-  }
-
-  return {};
-}
-
-void PutBucketLifecycleConfigurationRequest::AddQueryStringParameters(URI& uri) const {
+void PutBucketLifecycleConfigurationRequest::AddQueryStringParameters(Aws::Http::URI& uri) const {
   Aws::StringStream ss;
   if (!m_customizedAccessLogTag.empty()) {
     // only accept customized LogTag which starts with "x-"
@@ -57,35 +51,34 @@ void PutBucketLifecycleConfigurationRequest::AddQueryStringParameters(URI& uri) 
         collectedLogTags.emplace(entry.first, entry.second);
       }
     }
-
     if (!collectedLogTags.empty()) {
       uri.AddQueryStringParameter(collectedLogTags);
     }
   }
 }
 
-Aws::Http::HeaderValueCollection PutBucketLifecycleConfigurationRequest::GetRequestSpecificHeaders() const {
-  Aws::Http::HeaderValueCollection headers;
-  Aws::StringStream ss;
-  if (m_checksumAlgorithmHasBeenSet && m_checksumAlgorithm != ChecksumAlgorithm::NOT_SET) {
-    headers.emplace("x-amz-sdk-checksum-algorithm", ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm));
+bool PutBucketLifecycleConfigurationRequest::HasEmbeddedError(Aws::IOStream& body, const Aws::Http::HeaderValueCollection& header) const {
+  AWS_UNREFERENCED_PARAM(header);
+  auto readPointer = body.tellg();
+  Utils::Xml::XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
+  body.seekg(readPointer);
+  if (!doc.WasParseSuccessful()) {
+    return false;
   }
-
-  if (m_expectedBucketOwnerHasBeenSet) {
-    ss << m_expectedBucketOwner;
-    headers.emplace("x-amz-expected-bucket-owner", ss.str());
-    ss.str("");
+  if (!doc.GetRootElement().IsNull() && doc.GetRootElement().GetName() == Aws::String("Error")) {
+    return true;
   }
-
-  if (m_transitionDefaultMinimumObjectSizeHasBeenSet &&
-      m_transitionDefaultMinimumObjectSize != TransitionDefaultMinimumObjectSize::NOT_SET) {
-    headers.emplace(
-        "x-amz-transition-default-minimum-object-size",
-        TransitionDefaultMinimumObjectSizeMapper::GetNameForTransitionDefaultMinimumObjectSize(m_transitionDefaultMinimumObjectSize));
-  }
-
-  return headers;
+  return false;
 }
+Aws::String PutBucketLifecycleConfigurationRequest::GetChecksumAlgorithmName() const {
+  if (m_checksumAlgorithm == ChecksumAlgorithm::NOT_SET) {
+    return "crc64nvme";
+  } else {
+    return ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm);
+  }
+}
+
+bool PutBucketLifecycleConfigurationRequest::ChecksumAlgorithmIsSet() const { return m_checksumAlgorithm != ChecksumAlgorithm::NOT_SET; }
 
 PutBucketLifecycleConfigurationRequest::EndpointParameters PutBucketLifecycleConfigurationRequest::GetEndpointContextParams() const {
   EndpointParameters parameters;
@@ -98,13 +91,3 @@ PutBucketLifecycleConfigurationRequest::EndpointParameters PutBucketLifecycleCon
   }
   return parameters;
 }
-
-Aws::String PutBucketLifecycleConfigurationRequest::GetChecksumAlgorithmName() const {
-  if (m_checksumAlgorithm == ChecksumAlgorithm::NOT_SET) {
-    return "crc64nvme";
-  } else {
-    return ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm);
-  }
-}
-
-bool PutBucketLifecycleConfigurationRequest::ChecksumAlgorithmIsSet() const { return m_checksumAlgorithm != ChecksumAlgorithm::NOT_SET; }
