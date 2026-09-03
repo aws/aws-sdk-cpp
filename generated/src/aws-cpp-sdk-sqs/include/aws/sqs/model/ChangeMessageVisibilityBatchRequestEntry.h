@@ -35,10 +35,10 @@ class ChangeMessageVisibilityBatchRequestEntry {
   ///@{
   /**
    * <p>An identifier for this particular receipt handle used to communicate the
-   * result.</p>  <p>The <code>Id</code>s of a batch request need to be unique
-   * within a request.</p> <p>This identifier can have up to 80 characters. The
-   * following characters are accepted: alphanumeric characters, hyphens(-), and
-   * underscores (_).</p>
+   * result.</p>  <p>The <code>Id</code>s of a batch request need to be unique within
+   * a request.</p> <p>This identifier can have up to 80 characters. The following
+   * characters are accepted: alphanumeric characters, hyphens(-), and underscores
+   * (_).</p>
    */
   inline const Aws::String& GetId() const { return m_id; }
   inline bool IdHasBeenSet() const { return m_idHasBeenSet; }

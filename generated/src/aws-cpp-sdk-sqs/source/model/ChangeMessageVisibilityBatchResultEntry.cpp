@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/sqs/model/ChangeMessageVisibilityBatchResultEntry.h>
 
 #include <utility>
@@ -17,21 +20,10 @@ namespace Model {
 
 ChangeMessageVisibilityBatchResultEntry::ChangeMessageVisibilityBatchResultEntry(JsonView jsonValue) { *this = jsonValue; }
 
-ChangeMessageVisibilityBatchResultEntry& ChangeMessageVisibilityBatchResultEntry::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("Id")) {
-    m_id = jsonValue.GetString("Id");
-    m_idHasBeenSet = true;
-  }
-  return *this;
-}
+ChangeMessageVisibilityBatchResultEntry& ChangeMessageVisibilityBatchResultEntry::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue ChangeMessageVisibilityBatchResultEntry::Jsonize() const {
   JsonValue payload;
-
-  if (m_idHasBeenSet) {
-    payload.WithString("Id", m_id);
-  }
-
   return payload;
 }
 

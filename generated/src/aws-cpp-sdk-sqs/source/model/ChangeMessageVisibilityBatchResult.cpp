@@ -4,6 +4,7 @@
  */
 
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -22,36 +23,5 @@ ChangeMessageVisibilityBatchResult::ChangeMessageVisibilityBatchResult(const Aws
 }
 
 ChangeMessageVisibilityBatchResult& ChangeMessageVisibilityBatchResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_HttpResponseCode = result.GetResponseCode();
-  JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("Successful")) {
-    Aws::Utils::Array<JsonView> successfulJsonList = jsonValue.GetArray("Successful");
-    for (unsigned successfulIndex = 0; successfulIndex < successfulJsonList.GetLength(); ++successfulIndex) {
-      m_successful.push_back(successfulJsonList[successfulIndex].AsObject());
-    }
-    m_successfulHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Failed")) {
-    Aws::Utils::Array<JsonView> failedJsonList = jsonValue.GetArray("Failed");
-    for (unsigned failedIndex = 0; failedIndex < failedJsonList.GetLength(); ++failedIndex) {
-      m_failed.push_back(failedJsonList[failedIndex].AsObject());
-    }
-    m_failedHasBeenSet = true;
-  }
-
-  const auto& headers = result.GetHeaderValueCollection();
-  const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if (requestIdIter != headers.end()) {
-    m_requestId = requestIdIter->second;
-    m_requestIdHasBeenSet = true;
-  }
-
-  const auto& responseMetadataIter = headers.find("x-amzn-requestid");
-  if (responseMetadataIter != headers.end()) {
-    m_responseMetadataHasBeenSet = true;
-    // for backward compatibility for customers used to an old XML Client interface
-    m_responseMetadata.SetRequestId(responseMetadataIter->second);
-  }
-
   return *this;
 }
