@@ -1,0 +1,6 @@
+{
+  "type": "bugfix",
+  "category": "aws-cpp-sdk-core",
+  "contributor": "pulimsr, sbiscigl",
+  "description": "Release the CRT connection when a bidirectional stream completes to fix a hang on client shutdown"
+}
