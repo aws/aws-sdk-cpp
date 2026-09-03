@@ -36,7 +36,7 @@ void ${className}::${operation.name}Async(Model::${operation.request.shape.name}
   auto requestCopy = Aws::MakeShared<${operation.request.shape.name}>(ALLOCATION_TAG, request);
 
   auto authCallback = [&](std::shared_ptr<smithy::client::AwsSmithyClientAsyncRequestContext> ctx) -> void {
-    eventEncoderStream->SetSigningCallback([this, ctx, eventEncoderStream](Aws::Utils::Event::Message& message, Aws::String& seed) -> bool {
+    eventEncoderStream->SetSigningCallback([this, ctx](Aws::Utils::Event::Message& message, Aws::String& seed) -> bool {
       auto outcome = SignEventMessage(message, seed, ctx);
       return outcome.IsSuccess();
     });
@@ -53,7 +53,7 @@ void ${className}::${operation.name}Async(Model::${operation.request.shape.name}
   // Pull-based path
   auto eventEncoderStream = Aws::MakeShared<Model::${streamModelType}>(ALLOCATION_TAG);
   auto authCallback = [&](std::shared_ptr<smithy::client::AwsSmithyClientAsyncRequestContext> ctx) -> void {
-    eventEncoderStream->SetSigningCallback([this, ctx, eventEncoderStream](Aws::Utils::Event::Message& message, Aws::String& seed) -> bool {
+    eventEncoderStream->SetSigningCallback([this, ctx](Aws::Utils::Event::Message& message, Aws::String& seed) -> bool {
       auto outcome = SignEventMessage(message, seed, ctx);
         return outcome.IsSuccess();
         });
