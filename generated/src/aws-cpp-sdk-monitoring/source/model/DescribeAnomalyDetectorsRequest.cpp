@@ -3,6 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/model/DescribeAnomalyDetectorsRequest.h>
 
@@ -17,73 +21,9 @@ Aws::String DescribeAnomalyDetectorsRequest::SerializePayload() const {
 
   // Calculate map size
   size_t mapSize = 0;
-  if (m_anomalyDetectorIdsHasBeenSet) {
-    mapSize++;
-  }
-  if (m_nextTokenHasBeenSet) {
-    mapSize++;
-  }
-  if (m_maxResultsHasBeenSet) {
-    mapSize++;
-  }
-  if (m_namespaceHasBeenSet) {
-    mapSize++;
-  }
-  if (m_metricNameHasBeenSet) {
-    mapSize++;
-  }
-  if (m_dimensionsHasBeenSet) {
-    mapSize++;
-  }
-  if (m_anomalyDetectorTypesHasBeenSet) {
-    mapSize++;
-  }
 
   encoder.WriteMapStart(mapSize);
 
-  if (m_anomalyDetectorIdsHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AnomalyDetectorIds"));
-    encoder.WriteArrayStart(m_anomalyDetectorIds.size());
-    for (const auto& item_0 : m_anomalyDetectorIds) {
-      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
-    }
-  }
-
-  if (m_nextTokenHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NextToken"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_nextToken.c_str()));
-  }
-
-  if (m_maxResultsHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MaxResults"));
-    (m_maxResults >= 0) ? encoder.WriteUInt(m_maxResults) : encoder.WriteNegInt(m_maxResults);
-  }
-
-  if (m_namespaceHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Namespace"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_namespace.c_str()));
-  }
-
-  if (m_metricNameHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MetricName"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_metricName.c_str()));
-  }
-
-  if (m_dimensionsHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Dimensions"));
-    encoder.WriteArrayStart(m_dimensions.size());
-    for (const auto& item_0 : m_dimensions) {
-      item_0.CborEncode(encoder);
-    }
-  }
-
-  if (m_anomalyDetectorTypesHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AnomalyDetectorTypes"));
-    encoder.WriteArrayStart(m_anomalyDetectorTypes.size());
-    for (const auto& item_0 : m_anomalyDetectorTypes) {
-      encoder.WriteText(Aws::Crt::ByteCursorFromCString(AnomalyDetectorTypeMapper::GetNameForAnomalyDetectorType(item_0).c_str()));
-    }
-  }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
   return str;
 }

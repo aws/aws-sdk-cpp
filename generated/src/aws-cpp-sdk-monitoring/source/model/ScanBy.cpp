@@ -30,7 +30,6 @@ ScanBy GetScanByForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<ScanBy>(hashCode);
   }
-
   return ScanBy::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForScanBy(ScanBy enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

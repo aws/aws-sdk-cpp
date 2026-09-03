@@ -308,9 +308,8 @@ class PutCompositeAlarmRequest : public CloudWatchRequest {
   /**
    * <p> The maximum time in seconds that the composite alarm waits for the
    * suppressor alarm to go into the <code>ALARM</code> state. After this time, the
-   * composite alarm performs its actions. </p>  <p>
-   * <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is
-   * specified. </p>
+   * composite alarm performs its actions. </p>  <p> <code>WaitPeriod</code> is
+   * required only when <code>ActionsSuppressor</code> is specified. </p>
    */
   inline int GetActionsSuppressorWaitPeriod() const { return m_actionsSuppressorWaitPeriod; }
   inline bool ActionsSuppressorWaitPeriodHasBeenSet() const { return m_actionsSuppressorWaitPeriodHasBeenSet; }
@@ -328,9 +327,8 @@ class PutCompositeAlarmRequest : public CloudWatchRequest {
   /**
    * <p> The maximum time in seconds that the composite alarm waits after suppressor
    * alarm goes out of the <code>ALARM</code> state. After this time, the composite
-   * alarm performs its actions. </p>  <p> <code>ExtensionPeriod</code> is
-   * required only when <code>ActionsSuppressor</code> is specified. </p>
-   *
+   * alarm performs its actions. </p>  <p> <code>ExtensionPeriod</code> is required
+   * only when <code>ActionsSuppressor</code> is specified. </p>
    */
   inline int GetActionsSuppressorExtensionPeriod() const { return m_actionsSuppressorExtensionPeriod; }
   inline bool ActionsSuppressorExtensionPeriodHasBeenSet() const { return m_actionsSuppressorExtensionPeriodHasBeenSet; }

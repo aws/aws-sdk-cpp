@@ -530,13 +530,12 @@ class PutMetricAlarmRequest : public CloudWatchRequest {
    * <code>missing</code> is used. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
    * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
-   * <code>breaching | notBreaching | ignore | missing</code> </p>  <p>Alarms
-   * that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always
+   * <code>breaching | notBreaching | ignore | missing</code> </p>  <p>Alarms that
+   * evaluate metrics in the <code>AWS/DynamoDB</code> namespace always
    * <code>ignore</code> missing data even if you choose a different option for
    * <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has
    * missing data, alarms that evaluate that metric remain in their current
-   * state.</p>   <p>This parameter is not applicable to PromQL
-   * alarms.</p>
+   * state.</p>   <p>This parameter is not applicable to PromQL alarms.</p>
    */
   inline const Aws::String& GetTreatMissingData() const { return m_treatMissingData; }
   inline bool TreatMissingDataHasBeenSet() const { return m_treatMissingDataHasBeenSet; }

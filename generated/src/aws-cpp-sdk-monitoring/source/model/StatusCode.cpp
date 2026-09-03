@@ -36,7 +36,6 @@ StatusCode GetStatusCodeForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<StatusCode>(hashCode);
   }
-
   return StatusCode::NOT_SET;
 }
 
@@ -57,7 +56,6 @@ Aws::String GetNameForStatusCode(StatusCode enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

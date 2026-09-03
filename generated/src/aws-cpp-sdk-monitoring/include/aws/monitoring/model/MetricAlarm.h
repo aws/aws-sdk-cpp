@@ -482,8 +482,8 @@ class MetricAlarm {
    * <code>missing</code>. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
    * how CloudWatch alarms treat missing data</a>.</p> <p>If this parameter is
-   * omitted, the default behavior of <code>missing</code> is used.</p>
-   * <p>This parameter is not applicable to PromQL alarms.</p>
+   * omitted, the default behavior of <code>missing</code> is used.</p>  <p>This
+   * parameter is not applicable to PromQL alarms.</p>
    */
   inline const Aws::String& GetTreatMissingData() const { return m_treatMissingData; }
   inline bool TreatMissingDataHasBeenSet() const { return m_treatMissingDataHasBeenSet; }
