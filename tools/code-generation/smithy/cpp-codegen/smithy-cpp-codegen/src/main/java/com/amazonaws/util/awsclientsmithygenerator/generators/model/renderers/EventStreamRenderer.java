@@ -291,7 +291,7 @@ public final class EventStreamRenderer implements ShapeRenderer {
                 });
                 writer.openBlock("switch ($1LEventMapper::Get$1LEventTypeForName(eventTypeHeaderIter->second.GetEventHeaderValueAsString())) {", "}", opName, () -> {
                     writer.openBlock("case $1LEventType::INITIAL_RESPONSE: {", "}", opName, () -> {
-                        ctx.protocolTraits().writeInitialResponseHandlerConstruction(writer, opName + "InitialResponse");
+                        ctx.protocolTraits().writeInitialResponseHandlerConstruction(writer, opName + "InitialResponse", tag);
                         writer.write("m_onInitialResponse(event, Utils::Event::InitialResponseType::ON_EVENT);");
                         writer.write("break;");
                     });

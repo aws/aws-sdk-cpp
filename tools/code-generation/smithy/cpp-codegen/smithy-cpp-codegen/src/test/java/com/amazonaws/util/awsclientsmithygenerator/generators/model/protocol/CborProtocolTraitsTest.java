@@ -222,7 +222,7 @@ class CborProtocolTraitsTest {
             + "responseHeaders) : DoStreamInitialResponse() {"), impl);
         assertTrue(impl.contains("AWS_UNREFERENCED_PARAM(responseHeaders);"), impl);
 
-        String handler = render(w -> cbor.writeInitialResponseHandlerConstruction(w, "DoStreamInitialResponse"));
+        String handler = render(w -> cbor.writeInitialResponseHandlerConstruction(w, "DoStreamInitialResponse", "DOSTREAM_HANDLER_CLASS_TAG"));
         assertTrue(handler.contains("DoStreamInitialResponse event(GetEventHeadersAsHttpHeaders());"), handler);
         assertFalse(handler.contains("xmlDoc"), handler);
     }

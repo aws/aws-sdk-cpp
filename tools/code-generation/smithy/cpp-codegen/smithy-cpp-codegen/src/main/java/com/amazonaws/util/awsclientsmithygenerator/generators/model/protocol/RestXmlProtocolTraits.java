@@ -151,10 +151,19 @@ public final class RestXmlProtocolTraits implements ProtocolTraits {
     }
 
     @Override
-    public void writeInitialResponseHandlerConstruction(CppWriter writer, String className) {
+    public void writeInitialResponseHandlerConstruction(CppWriter writer, String className,
+                                                        String handlerClassTag) {
         // REST-XML reuses its XmlNode serde ctor: the initial response is built from the XML body
-        // root element (C2J addEventStreamInitialResponse), not from event headers. No extra
+        // root element (C2J addEventStreamInitialResponse), not from event headers. The payload is
+        // first parsed into an XmlDocument (resolved via serdeUsings(EVENT_HANDLER_SOURCE) ->
+        // Aws::Utils::Xml) and a failed parse warns and breaks out of the case. No extra
         // header-collection ctor is emitted (writeInitialResponseCtorDecl inherits the no-op default).
+        writer.write("auto xmlDoc = XmlDocument::CreateFromXmlString(GetEventPayloadAsString());");
+        writer.openBlock("if (!xmlDoc.WasParseSuccessful()) {", "}", () -> {
+            writer.write("AWS_LOGSTREAM_WARN($L, \"Unable to generate a proper InitialResponse "
+                + "object from the response in XML format.\");", handlerClassTag);
+            writer.write("break;");
+        });
         writer.write("$L event(xmlDoc.GetRootElement());", className);
     }
 

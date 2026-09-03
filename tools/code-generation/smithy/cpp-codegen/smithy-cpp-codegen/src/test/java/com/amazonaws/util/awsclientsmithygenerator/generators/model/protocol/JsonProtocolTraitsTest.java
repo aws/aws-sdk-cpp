@@ -278,7 +278,7 @@ class JsonProtocolTraitsTest {
             + "responseHeaders) : DoStreamInitialResponse() {"), impl);
         assertTrue(impl.contains("AWS_UNREFERENCED_PARAM(responseHeaders);"), impl);
 
-        String handler = render(w -> json.writeInitialResponseHandlerConstruction(w, "DoStreamInitialResponse"));
+        String handler = render(w -> json.writeInitialResponseHandlerConstruction(w, "DoStreamInitialResponse", "DOSTREAM_HANDLER_CLASS_TAG"));
         assertTrue(handler.contains("DoStreamInitialResponse event(GetEventHeadersAsHttpHeaders());"), handler);
         assertFalse(handler.contains("xmlDoc"), handler);
     }

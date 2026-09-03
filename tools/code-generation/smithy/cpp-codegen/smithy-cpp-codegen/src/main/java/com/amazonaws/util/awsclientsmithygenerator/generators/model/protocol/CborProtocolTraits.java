@@ -178,7 +178,8 @@ public final class CborProtocolTraits implements ProtocolTraits {
     }
 
     @Override
-    public void writeInitialResponseHandlerConstruction(CppWriter writer, String className) {
+    public void writeInitialResponseHandlerConstruction(CppWriter writer, String className,
+                                                        String handlerClassTag) {
         writer.write("$L event(GetEventHeadersAsHttpHeaders());", className);
     }
 

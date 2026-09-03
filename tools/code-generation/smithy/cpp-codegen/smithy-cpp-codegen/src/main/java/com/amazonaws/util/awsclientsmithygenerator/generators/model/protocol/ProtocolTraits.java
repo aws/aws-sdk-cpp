@@ -252,14 +252,21 @@ public interface ProtocolTraits {
     }
 
     /**
-     * Emits the statement that builds the {@code event} local in the event-stream handler's
-     * {@code INITIAL_RESPONSE} case. JSON/CBOR build it from the event message headers; REST-XML
-     * builds it from the XML body root element.
+     * Emits the statement(s) that build the {@code event} local in the event-stream handler's
+     * {@code INITIAL_RESPONSE} case. JSON/CBOR build it from the event message headers in a single
+     * statement; REST-XML parses the event payload as an XML document first (declaring the
+     * {@code xmlDoc} local and guarding {@code WasParseSuccessful} with a WARN + {@code break}),
+     * then builds the event from the XML root element.
+     *
+     * @param handlerClassTag the handler's log-tag identifier (e.g.
+     *        {@code SELECTOBJECTCONTENT_HANDLER_CLASS_TAG}), used by protocols that log during
+     *        construction. Protocols that build purely from headers ignore it.
      *
      * <p>Default: throws — a protocol with event streams must define how its initial response is
      * constructed. (Query-XML has no event streams, so this is never reached.)
      */
-    default void writeInitialResponseHandlerConstruction(CppWriter writer, String className) {
+    default void writeInitialResponseHandlerConstruction(CppWriter writer, String className,
+                                                         String handlerClassTag) {
         throw new UnsupportedOperationException(
             "Protocol " + protocol() + " does not define event-stream initial-response construction");
     }
