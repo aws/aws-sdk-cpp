@@ -8,9 +8,13 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.RenderContext;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.RequestRenderer;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.OverrideStreamingTrait;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.SupportsPresigningTrait;
 import org.junit.jupiter.api.Test;
 import software.amazon.smithy.build.MockManifest;
 import software.amazon.smithy.model.Model;
+import software.amazon.smithy.model.shapes.ListShape;
+import software.amazon.smithy.model.shapes.MapShape;
 import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.ServiceShape;
@@ -19,6 +23,8 @@ import software.amazon.smithy.model.shapes.StringShape;
 import software.amazon.smithy.model.shapes.StructureShape;
 import software.amazon.smithy.model.shapes.UnionShape;
 import software.amazon.smithy.model.traits.StreamingTrait;
+import software.amazon.smithy.rulesengine.traits.OperationContextParamDefinition;
+import software.amazon.smithy.rulesengine.traits.OperationContextParamsTrait;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -88,6 +94,119 @@ class RequestRendererTest {
             .orElseThrow();
     }
 
+    private static Model overrideStreamingModel(boolean marked) {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        StructureShape.Builder inB = StructureShape.builder()
+            .id("com.example#DoThingRequest").addMember("name", str.getId());
+        if (marked) {
+            inB.addTrait(new OverrideStreamingTrait());
+        }
+        StructureShape input = inB.build();
+        StructureShape output = StructureShape.builder()
+            .id("com.example#DoThingOutput").addMember("result", str.getId()).build();
+        OperationShape op = OperationShape.builder().id("com.example#DoThing")
+            .input(input.getId()).output(output.getId()).build();
+        ServiceShape service = ServiceShape.builder().id("com.example#Example")
+            .version("2024-01-01").addOperation(op.getId()).build();
+        return Model.builder().addShapes(str, input, output, op, service).build();
+    }
+
+    private static String renderDoThingRequestHeader(Model model) {
+        ServiceShape service = model.expectShape(ShapeId.from("com.example#Example"), ServiceShape.class);
+        MockManifest manifest = new MockManifest();
+        CppWriterDelegator delegator = new CppWriterDelegator(manifest);
+        Protocol protocol = ProtocolResolver.resolve(service, model);
+        RequestRenderer renderer = new RequestRenderer(
+            ShapeClassifier.classify(model, service, protocol).requests(),
+            new RenderContext(model, service, ProtocolResolver.traitsFor(protocol),
+                "Example", "AWS_EXAMPLE_API", "example"));
+        renderer.render(delegator);
+        delegator.flushWriters();
+        return manifest.getFileString(
+            manifest.getFiles().stream()
+                .filter(p -> p.toString().endsWith("DoThingRequest.h"))
+                .findFirst().orElseThrow())
+            .orElseThrow();
+    }
+
+    @Test
+    void overrideStreamingTrait_emitsIsStreamingFalse() {
+        String h = renderDoThingRequestHeader(overrideStreamingModel(true));
+        assertTrue(h.contains("bool IsStreaming() const override { return false; }"),
+            "OverrideStreamingTrait must emit the non-streaming override: " + h);
+    }
+
+    @Test
+    void withoutOverrideStreamingTrait_omitsIsStreaming() {
+        String h = renderDoThingRequestHeader(overrideStreamingModel(false));
+        assertFalse(h.contains("IsStreaming"),
+            "unmarked requests must not emit IsStreaming: " + h);
+    }
+
+    private static Model supportsPresigningModel(boolean marked) {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        StructureShape input = StructureShape.builder()
+            .id("com.example#DoThingRequest").addMember("name", str.getId()).build();
+        StructureShape output = StructureShape.builder()
+            .id("com.example#DoThingOutput").addMember("result", str.getId()).build();
+        // The trait is stamped on the OPERATION (SupportsPresigningTransform), so the decl keys off
+        // operation.hasTrait(...) — not the input shape.
+        OperationShape.Builder opB = OperationShape.builder().id("com.example#DoThing")
+            .input(input.getId()).output(output.getId());
+        if (marked) {
+            opB.addTrait(new SupportsPresigningTrait());
+        }
+        OperationShape op = opB.build();
+        ServiceShape service = ServiceShape.builder().id("com.example#Example")
+            .version("2024-01-01").addOperation(op.getId()).build();
+        return Model.builder().addShapes(str, input, output, op, service).build();
+    }
+
+    /** Presignable op with a shared {@code smithy.api#Unit} input: the input can't carry the trait but the operation can, so the decl must still emit (IAM-style query op). */
+    private static Model supportsPresigningUnitInputModel() {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        StructureShape output = StructureShape.builder()
+            .id("com.example#DoThingOutput").addMember("result", str.getId()).build();
+        OperationShape op = OperationShape.builder().id("com.example#DoThing")
+            .output(output.getId())
+            .addTrait(new SupportsPresigningTrait())
+            .build();
+        ServiceShape service = ServiceShape.builder().id("com.example#Example")
+            .version("2024-01-01").addOperation(op.getId()).build();
+        // Assemble (not Model.builder) so the smithy.api#Unit prelude shape exists: the op defaults
+        // its input to Unit, which must be present for the request class to be emitted.
+        return Model.assembler().addShapes(str, output, op, service).assemble().unwrap();
+    }
+
+    @Test
+    void supportsPresigningTrait_emitsProtectedDumpBodyToUrlOverride() {
+        // C2J's RequestHeader.vm emits DumpBodyToUrl protocol-agnostically under
+        // #if($shape.supportsPresigning()); the operation trait drives the same protected override.
+        String h = renderDoThingRequestHeader(supportsPresigningModel(true));
+        assertTrue(h.contains("protected:"), "presignable request must open a protected: section: " + h);
+        assertTrue(h.contains(
+            "AWS_EXAMPLE_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;"),
+            "presignable request must declare the DumpBodyToUrl override: " + h);
+        assertTrue(h.contains("public:"), "presignable request must restore public: afterwards: " + h);
+    }
+
+    @Test
+    void supportsPresigningTrait_unitInputOperation_stillEmitsDumpBodyToUrl() {
+        // Regression: a Unit-input op stamps the operation (not the shared Unit input), and the decl
+        // must still be emitted so it stays symmetric with the protocol-emitted impl.
+        String h = renderDoThingRequestHeader(supportsPresigningUnitInputModel());
+        assertTrue(h.contains(
+            "AWS_EXAMPLE_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;"),
+            "Unit-input presignable operation must still declare DumpBodyToUrl: " + h);
+    }
+
+    @Test
+    void withoutSupportsPresigningTrait_omitsDumpBodyToUrl() {
+        String h = renderDoThingRequestHeader(supportsPresigningModel(false));
+        assertFalse(h.contains("DumpBodyToUrl"),
+            "unmarked requests must not declare DumpBodyToUrl: " + h);
+    }
+
     @Test
     void streamingResponseRequest_hasEventStreamAugmentation() {
         // Model: operation with streaming OUTPUT only (like SubscribeToShard / ConverseStream)
@@ -105,9 +224,8 @@ class RequestRendererTest {
             "Missing decoder include: " + h);
         assertFalse(h.contains("IsEventStreamRequest"),
             "Response-only op must not declare IsEventStreamRequest: " + h);
-        // Mainline ordering: handler/decoder sit AFTER the data members and BEFORE the
-        // HasBeenSet flags (not at the top of the private block). Target the member
-        // DECLARATION ("DoStreamHandler m_handler;"), not the public getter body.
+        // Mainline ordering: handler/decoder sit after data members and before HasBeenSet flags.
+        // Target the member DECLARATION ("DoStreamHandler m_handler;"), not the public getter body.
         int dataMember = h.indexOf("Aws::String m_name;");
         int handlerDecl = h.indexOf("DoStreamHandler m_handler;");
         int firstFlag = h.indexOf("HasBeenSet = false;");
@@ -128,10 +246,8 @@ class RequestRendererTest {
 
     @Test
     void bidirectionalRequest_rendersEventStreamInputMemberAsSharedPtr() {
-        // C2J renders a request with an event-stream (input) member specially: an inline empty
-        // SerializePayload, a GetBody() override returning the encoded IOStream, and the member
-        // itself as a std::shared_ptr<Input> with a collision-renamed getter (GetMemberBody,
-        // because GetBody is reserved). The member has no templated setter and stores a shared_ptr.
+        // C2J renders an event-stream (input) member specially: inline empty SerializePayload, a
+        // GetBody() override, and the member as shared_ptr<Input> with a renamed getter (GetMemberBody).
         String h = renderRequestHeaderForStreamingOp(true, true);
         assertTrue(h.contains("#include <memory>"), "Missing <memory> include: " + h);
         assertTrue(h.contains("Aws::String SerializePayload() const override { return {}; }"),
@@ -157,15 +273,13 @@ class RequestRendererTest {
 
     @Test
     void bidirectionalRequestSource_definesGetBody() {
-        // The header declares `std::shared_ptr<Aws::IOStream> GetBody() const override;`, so the
-        // source MUST define it (returning the event-stream member) or linking fails. Matches C2J
-        // StreamRequestSource.vm.
+        // Header declares GetBody() const override, so the source MUST define it (returning the
+        // event-stream member) or linking fails. Matches C2J StreamRequestSource.vm.
         String c = renderStreamingOp(true, true, "DoStreamRequest.cpp");
         assertTrue(c.contains(
             "std::shared_ptr<Aws::IOStream> DoStreamRequest::GetBody() const { return m_body; }"),
             "Bidirectional request source must define GetBody() returning the event-stream member: " + c);
-        // C2J's event-stream request source pulls AmazonWebServiceResult.h and the Stream/Aws
-        // usings rather than the JSON serde header.
+        // C2J's event-stream request source pulls AmazonWebServiceResult.h + Stream/Aws usings, not JSON serde.
         assertTrue(c.contains("#include <aws/core/AmazonWebServiceResult.h>"), c);
         assertTrue(c.contains("using namespace Aws::Utils::Stream;"), c);
     }
@@ -200,10 +314,8 @@ class RequestRendererTest {
     }
 
     /**
-     * Request headers must NOT include {@code <aws/core/http/URI.h>} even when they declare
-     * URI-taking methods: the base {@code AmazonWebServiceRequest.h} forward-declares
-     * {@code Aws::Http::URI}, which suffices for a reference parameter, and C2J omits the
-     * include. Emitting it would break byte-parity with the C2J output.
+     * Request headers must NOT include {@code <aws/core/http/URI.h>}: the base
+     * {@code AmazonWebServiceRequest.h} forward-declares {@code Aws::Http::URI}, and C2J omits it.
      */
     @Test
     void requestWithQueryMember_doesNotIncludeUriHeader() {
@@ -263,10 +375,8 @@ class RequestRendererTest {
 
     @Test
     void rawStreamingPayloadRequest_usesStreamingBaseClassAndDropsPayloadMembers() {
-        // C2J: a request with a raw streaming @httpPayload member derives from
-        // Streaming<Prefix>Request, which supplies GetBody/SetBody and GetContentType/SetContentType.
-        // The payload member (body) and the contentType member are stripped, and SerializePayload
-        // is not emitted (the base handles the body). Other members (modelId) remain.
+        // C2J: a raw streaming @httpPayload request derives from Streaming<Prefix>Request (supplies
+        // GetBody/GetContentType); the body + contentType members and SerializePayload are dropped.
         String h = renderRawStreamingPayloadRequest("DoStreamRequest.h");
         assertTrue(h.contains("class DoStreamRequest : public StreamingExampleRequest {"),
             "Must derive from StreamingExampleRequest: " + h);
@@ -304,11 +414,7 @@ class RequestRendererTest {
             "Streaming-payload request source must not use the Json namespace: " + c);
     }
 
-    /**
-     * Same as {@link #rawStreamingPayloadRequestModel()} but under REST-JSON, where {@code contentType}
-     * (stripped, supplied by the streaming base) is the ONLY header-bound member and
-     * {@code hasTargetHeader()} is false. This is the combination that exposes header/source drift.
-     */
+    /** Like {@link #rawStreamingPayloadRequestModel()} but REST-JSON, where the stripped {@code contentType} is the only header-bound member ({@code hasTargetHeader()} false) — exposes header/source drift. */
     private static Model rawStreamingPayloadRestJsonRequestModel() {
         StringShape str = StringShape.builder().id("com.example#String").build();
         software.amazon.smithy.model.shapes.BlobShape blob =
@@ -353,11 +459,7 @@ class RequestRendererTest {
 
     // --- @httpChecksum ---
 
-    /**
-     * A JSON operation with @httpChecksum. The input carries a {@code checksumAlgorithm} enum member
-     * (for requestAlgorithmMember) and a {@code checksumMode} enum member (for
-     * requestValidationModeMember); the trait is configured from the given values.
-     */
+    /** JSON op with @httpChecksum; input carries {@code checksumAlgorithm} and {@code checksumMode} enum members. */
     private static Model httpChecksumModel(software.amazon.smithy.aws.traits.HttpChecksumTrait trait) {
         StringShape str = StringShape.builder().id("com.example#String").build();
         software.amazon.smithy.model.shapes.EnumShape algo =
@@ -451,10 +553,8 @@ class RequestRendererTest {
 
     @Test
     void httpChecksumRequired_rendersInlineShouldComputeContentMd5() {
-        // The legacy smithy.api#httpChecksumRequired trait (s3control uses it) requests a
-        // Content-MD5 header. C2J derives Shape.computeContentMd5 from it and emits an inline
-        // ShouldComputeContentMd5() override (RequestHeader.vm:105-108, no .cpp body). Distinct
-        // from the flexible @httpChecksum trait.
+        // The legacy smithy.api#httpChecksumRequired trait (s3control) emits an inline
+        // ShouldComputeContentMd5() override (no .cpp body); distinct from the flexible @httpChecksum.
         StringShape str = StringShape.builder().id("com.example#String").build();
         StructureShape input = StructureShape.builder().id("com.example#PutThingInput")
             .addMember("name", str.getId()).build();
@@ -504,11 +604,7 @@ class RequestRendererTest {
 
     // --- @requestCompression ---
 
-    /**
-     * Model for a JSON operation carrying {@code @requestCompression(encodings: ["gzip"])} on
-     * either a plain input (streaming = false) or a raw {@code @httpPayload} blob body input
-     * (streaming = true).
-     */
+    /** JSON op with {@code @requestCompression(encodings: ["gzip"])} on a plain input (streaming=false) or a raw {@code @httpPayload} blob body (streaming=true). */
     private static Model requestCompressionModel(boolean streaming, java.util.List<String> encodings) {
         StringShape str = StringShape.builder().id("com.example#String").build();
         StructureShape.Builder input = StructureShape.builder().id("com.example#PutThingInput");
@@ -559,10 +655,8 @@ class RequestRendererTest {
 
     @Test
     void requestCompressionGzip_headerDeclaresGuardedVirtualOverride() {
-        // C2J's RequestHeader.vm:148-156 emits GetSelectedCompressionAlgorithm as a virtual override
-        // gated by ENABLED_ZLIB_REQUEST_COMPRESSION. The types (CompressionAlgorithm,
-        // RequestCompressionConfig) come from the base AmazonWebServiceRequest.h transitively —
-        // NO extra include in the request header.
+        // C2J emits GetSelectedCompressionAlgorithm as a virtual override gated by
+        // ENABLED_ZLIB_REQUEST_COMPRESSION; its types come from the base transitively (no extra include).
         String h = renderCompressionRequest(false, "PutThingRequest.h");
         assertTrue(h.contains("#ifdef ENABLED_ZLIB_REQUEST_COMPRESSION"),
             "Missing ENABLED_ZLIB_REQUEST_COMPRESSION guard: " + h);
@@ -575,10 +669,8 @@ class RequestRendererTest {
 
     @Test
     void requestCompressionGzip_nonStreamingSourceUsesBodySizeCheck() {
-        // Non-streaming variant (ModelClassRequiredCompression.vm): DISABLE -> NONE, then read the
-        // already-serialized body via AmazonSerializableWebServiceRequest::GetBody(), compare its
-        // size to config.requestMinCompressionSizeBytes, and either NONE or GZIP. Matches cloudwatch
-        // PutMetricDataRequest.cpp exactly. Body only touches base state; NOT serde-blocked.
+        // Non-streaming variant: DISABLE -> NONE, else compare the serialized body size to
+        // config.requestMinCompressionSizeBytes to pick NONE or GZIP. Matches cloudwatch PutMetricDataRequest.cpp.
         String c = renderCompressionRequest(false, "PutThingRequest.cpp");
         assertTrue(c.contains("#ifdef ENABLED_ZLIB_REQUEST_COMPRESSION"), c);
         assertTrue(c.contains(
@@ -648,17 +740,378 @@ class RequestRendererTest {
 
     @Test
     void rawStreamingPayloadRequestRestJson_headerAndSourceAgreeOnRequestSpecificHeaders() {
-        // Under a REST protocol (hasTargetHeader() == false), a raw-streaming-payload request whose
-        // ONLY header-bound member is the stripped contentType must emit GetRequestSpecificHeaders in
-        // NEITHER the header nor the source. The header renders from the contentType-excluded shape;
-        // the source MUST render from the same shape. Otherwise the source defines
-        // GetRequestSpecificHeaders() out-of-line for a method the header never declares (a C++
-        // compile error).
+        // Under REST (hasTargetHeader()==false), a raw-streaming-payload request whose only
+        // header-bound member is the stripped contentType must emit GetRequestSpecificHeaders in neither
+        // header nor source, else the source defines a method the header never declares (compile error).
         String h = renderRawStreamingPayloadRestJsonRequest("DoStreamRequest.h");
         String c = renderRawStreamingPayloadRestJsonRequest("DoStreamRequest.cpp");
         assertFalse(h.contains("GetRequestSpecificHeaders"),
             "Header must not declare GetRequestSpecificHeaders (contentType is stripped): " + h);
         assertFalse(c.contains("GetRequestSpecificHeaders"),
             "Source must not define GetRequestSpecificHeaders (contentType is stripped): " + c);
+    }
+
+    // --- smithy.rules#operationContextParams ---
+
+    /** Operation carrying ONLY smithy.rules#operationContextParams (no static, no member-level). */
+    private static Model operationContextParamsOnlyModel() {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        // Map<String, String> for keys(RequestItems) — the JMESPath the trait resolves.
+        MapShape requestItemsMap = MapShape.builder()
+            .id("com.example#RequestItemsMap")
+            .key(MemberShape.builder().id("com.example#RequestItemsMap$key").target(str.getId()).build())
+            .value(MemberShape.builder().id("com.example#RequestItemsMap$value").target(str.getId()).build())
+            .build();
+        StructureShape input = StructureShape.builder()
+            .id("com.example#DoBatchInput")
+            .addMember("RequestItems", requestItemsMap.getId())
+            .build();
+        StructureShape output = StructureShape.builder()
+            .id("com.example#DoBatchOutput").addMember("r", str.getId()).build();
+        OperationContextParamsTrait ctxTrait = OperationContextParamsTrait.builder()
+            .putParameter("ResourceArnList",
+                OperationContextParamDefinition.builder().path("keys(RequestItems)").build())
+            .build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#DoBatch").input(input.getId()).output(output.getId())
+            .addTrait(ctxTrait).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#Example").version("2024-01-01").addOperation(op.getId()).build();
+        return Model.builder().addShapes(str, requestItemsMap, input, output, op, service).build();
+    }
+
+    private static String renderOperationContextRequest(Model model, String fileSuffix) {
+        ServiceShape service = model.expectShape(ShapeId.from("com.example#Example"), ServiceShape.class);
+        MockManifest manifest = new MockManifest();
+        CppWriterDelegator delegator = new CppWriterDelegator(manifest);
+        Protocol protocol = ProtocolResolver.resolve(service, model);
+        new RequestRenderer(
+            ShapeClassifier.classify(model, service, protocol).requests(),
+            new RenderContext(model, service, ProtocolResolver.traitsFor(protocol),
+                "Example", "AWS_EXAMPLE_API", "example")).render(delegator);
+        delegator.flushWriters();
+        return manifest.getFileString(manifest.getFiles().stream()
+            .filter(p -> p.toString().endsWith(fileSuffix)).findFirst().orElseThrow()).orElseThrow();
+    }
+
+    @Test
+    void operationContextParams_headerDeclaresGetters() {
+        // An op carrying only smithy.rules#operationContextParams must emit both GetEndpointContextParams()
+        // and GetOperationContextParams() in its request header.
+        String h = renderOperationContextRequest(operationContextParamsOnlyModel(), "DoBatchRequest.h");
+        assertTrue(h.contains("EndpointParameters GetEndpointContextParams() const override;"),
+            "Missing GetEndpointContextParams decl: " + h);
+        assertTrue(h.contains("Aws::Vector<Aws::String> GetOperationContextParams() const;"),
+            "Missing GetOperationContextParams decl: " + h);
+    }
+
+    /** Struct-dot-string: TableCreationParameters.TableName. */
+    private static Model operationContextParams_dotAccessModel() {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        StructureShape tcp = StructureShape.builder()
+            .id("com.example#TableCreationParameters").addMember("TableName", str.getId()).build();
+        StructureShape input = StructureShape.builder()
+            .id("com.example#DoBatchInput")
+            .addMember("TableCreationParameters", tcp.getId()).build();
+        StructureShape output = StructureShape.builder()
+            .id("com.example#DoBatchOutput").addMember("r", str.getId()).build();
+        OperationContextParamsTrait trait = OperationContextParamsTrait.builder()
+            .putParameter("ResourceArn",
+                OperationContextParamDefinition.builder().path("TableCreationParameters.TableName").build())
+            .build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#DoBatch").input(input.getId()).output(output.getId()).addTrait(trait).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#Example").version("2024-01-01").addOperation(op.getId()).build();
+        return Model.builder().addShapes(str, tcp, input, output, op, service).build();
+    }
+
+    /** List-projection-dot-string: TransactItems[*].Get.TableName. */
+    private static Model operationContextParams_projectionModel() {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        StructureShape get = StructureShape.builder()
+            .id("com.example#Get").addMember("TableName", str.getId()).build();
+        StructureShape item = StructureShape.builder()
+            .id("com.example#Item").addMember("Get", get.getId()).build();
+        ListShape list = ListShape.builder()
+            .id("com.example#Items")
+            .member(MemberShape.builder().id("com.example#Items$member").target(item.getId()).build())
+            .build();
+        StructureShape input = StructureShape.builder()
+            .id("com.example#DoBatchInput").addMember("TransactItems", list.getId()).build();
+        StructureShape output = StructureShape.builder()
+            .id("com.example#DoBatchOutput").addMember("r", str.getId()).build();
+        OperationContextParamsTrait trait = OperationContextParamsTrait.builder()
+            .putParameter("ResourceArnList",
+                OperationContextParamDefinition.builder().path("TransactItems[*].Get.TableName").build())
+            .build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#DoBatch").input(input.getId()).output(output.getId()).addTrait(trait).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#Example").version("2024-01-01").addOperation(op.getId()).build();
+        return Model.builder().addShapes(str, get, item, list, input, output, op, service).build();
+    }
+
+    /** Multi-select-list flatten: TransactItems[*].[ConditionCheck.TableName, Put.TableName, Delete.TableName, Update.TableName][]. */
+    private static Model operationContextParams_multiSelectFlattenModel() {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        StructureShape cc = StructureShape.builder()
+            .id("com.example#CC").addMember("TableName", str.getId()).build();
+        StructureShape put = StructureShape.builder()
+            .id("com.example#Put").addMember("TableName", str.getId()).build();
+        StructureShape del = StructureShape.builder()
+            .id("com.example#Delete").addMember("TableName", str.getId()).build();
+        StructureShape upd = StructureShape.builder()
+            .id("com.example#Update").addMember("TableName", str.getId()).build();
+        StructureShape item = StructureShape.builder()
+            .id("com.example#Item")
+            .addMember("ConditionCheck", cc.getId())
+            .addMember("Put", put.getId())
+            .addMember("Delete", del.getId())
+            .addMember("Update", upd.getId()).build();
+        ListShape list = ListShape.builder()
+            .id("com.example#Items")
+            .member(MemberShape.builder().id("com.example#Items$member").target(item.getId()).build())
+            .build();
+        StructureShape input = StructureShape.builder()
+            .id("com.example#DoBatchInput").addMember("TransactItems", list.getId()).build();
+        StructureShape output = StructureShape.builder()
+            .id("com.example#DoBatchOutput").addMember("r", str.getId()).build();
+        OperationContextParamsTrait trait = OperationContextParamsTrait.builder()
+            .putParameter("ResourceArnList",
+                OperationContextParamDefinition.builder()
+                    .path("TransactItems[*].[ConditionCheck.TableName, Put.TableName, Delete.TableName, Update.TableName][]").build())
+            .build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#DoBatch").input(input.getId()).output(output.getId()).addTrait(trait).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#Example").version("2024-01-01").addOperation(op.getId()).build();
+        return Model.builder().addShapes(str, cc, put, del, upd, item, list, input, output, op, service).build();
+    }
+
+    @Test
+    void operationContextParams_keysPattern_endToEnd() {
+        // Uses Task 1's operationContextParamsOnlyModel() (keys(RequestItems)).
+        String h = renderOperationContextRequest(operationContextParamsOnlyModel(), "DoBatchRequest.h");
+        String c = renderOperationContextRequest(operationContextParamsOnlyModel(), "DoBatchRequest.cpp");
+        assertTrue(h.contains("EndpointParameters GetEndpointContextParams() const override;"), h);
+        assertTrue(h.contains("Aws::Vector<Aws::String> GetOperationContextParams() const;"), h);
+        assertTrue(c.contains(
+            "parameters.emplace_back(Aws::String{\"ResourceArnList\"}, this->GetOperationContextParams()"), c);
+        assertTrue(c.contains("Aws::Vector<Aws::String> DoBatchRequest::GetOperationContextParams() const"), c);
+        assertTrue(c.contains("auto& RequestItemsElems = (*this).GetRequestItems();"), c);
+        assertTrue(c.contains("for (auto& keysElem : RequestItemsElems)"), c);
+        assertTrue(c.contains("result.emplace_back(keysElem.first);"), c);
+    }
+
+    @Test
+    void operationContextParams_dotAccessPattern_endToEnd() {
+        Model model = operationContextParams_dotAccessModel();
+        String h = renderOperationContextRequest(model, "DoBatchRequest.h");
+        String c = renderOperationContextRequest(model, "DoBatchRequest.cpp");
+        assertTrue(h.contains("Aws::Vector<Aws::String> GetOperationContextParams() const;"), h);
+        assertTrue(c.contains(
+            "parameters.emplace_back(Aws::String{\"ResourceArn\"}, this->GetOperationContextParams()"), c);
+        assertTrue(c.contains(
+            "auto& TableCreationParametersElems = (*this).GetTableCreationParameters().GetTableName();"), c);
+        assertTrue(c.contains("result.emplace_back(TableCreationParametersElems);"), c);
+        assertFalse(c.contains("for (auto&"),
+            "Dot-access pattern must not emit a for-loop: " + c);
+    }
+
+    @Test
+    void operationContextParams_projectionPattern_endToEnd() {
+        Model model = operationContextParams_projectionModel();
+        String c = renderOperationContextRequest(model, "DoBatchRequest.cpp");
+        assertTrue(c.contains("auto& TransactItemsElems = (*this).GetTransactItems();"), c);
+        assertTrue(c.contains("for (auto& TransactItemsElem : TransactItemsElems)"), c);
+        assertTrue(c.contains(
+            "auto& GetElems = TransactItemsElem.GetGet().GetTableName();"), c);
+        assertTrue(c.contains("result.emplace_back(GetElems);"), c);
+    }
+
+    @Test
+    void operationContextParams_multiSelectFlattenPattern_endToEnd() {
+        Model model = operationContextParams_multiSelectFlattenModel();
+        String c = renderOperationContextRequest(model, "DoBatchRequest.cpp");
+        assertTrue(c.contains("for (auto& TransactItemsElem : TransactItemsElems)"), c);
+        // Each of the four field-access branches must appear inside the loop body.
+        for (String branch : java.util.List.of("ConditionCheck", "Put", "Delete", "Update")) {
+            assertTrue(c.contains(
+                "auto& " + branch + "Elems = TransactItemsElem.Get" + branch + "().GetTableName();"),
+                "Missing branch " + branch + ": " + c);
+            assertTrue(c.contains("result.emplace_back(" + branch + "Elems);"),
+                "Missing result push for " + branch + ": " + c);
+        }
+    }
+
+    // --- aws.auth#unsignedPayload (SignBody) ---
+
+    /** Op with {@code aws.auth#unsignedPayload} ({@code marked}); {@code emptyInput} toggles a member to exercise the {@code !members.isEmpty()} guard. */
+    private static Model unsignedPayloadModel(boolean marked, boolean emptyInput) {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        StructureShape.Builder inB = StructureShape.builder().id("com.example#DoThingRequest");
+        if (!emptyInput) {
+            inB.addMember("name", str.getId());
+        }
+        StructureShape input = inB.build();
+        StructureShape output = StructureShape.builder()
+            .id("com.example#DoThingOutput").addMember("result", str.getId()).build();
+        OperationShape.Builder opB = OperationShape.builder().id("com.example#DoThing")
+            .input(input.getId()).output(output.getId());
+        if (marked) {
+            opB.addTrait(new software.amazon.smithy.aws.traits.auth.UnsignedPayloadTrait());
+        }
+        OperationShape op = opB.build();
+        ServiceShape service = ServiceShape.builder().id("com.example#Example")
+            .version("2024-01-01").addOperation(op.getId()).build();
+        return Model.builder().addShapes(str, input, output, op, service).build();
+    }
+
+    @Test
+    void unsignedPayloadTrait_emitsSignBodyFalse() {
+        // C2J RequestHeader.vm: a v4-unsigned-body request with members emits SignBody() -> false.
+        // In Smithy that maps to the operation carrying aws.auth#unsignedPayload.
+        String h = renderDoThingRequestHeader(unsignedPayloadModel(true, false));
+        assertTrue(h.contains("bool SignBody() const override { return false; }"),
+            "@unsignedPayload op with members must emit SignBody() -> false: " + h);
+    }
+
+    @Test
+    void withoutUnsignedPayloadTrait_omitsSignBody() {
+        String h = renderDoThingRequestHeader(unsignedPayloadModel(false, false));
+        assertFalse(h.contains("SignBody"),
+            "op without @unsignedPayload must not emit SignBody: " + h);
+    }
+
+    @Test
+    void unsignedPayloadTraitWithEmptyRequest_omitsSignBody() {
+        // The !members.isEmpty() guard: an @unsignedPayload op whose request has no members
+        // must not emit SignBody (matches C2J's $shape.members.size() > 0 gate).
+        String h = renderDoThingRequestHeader(unsignedPayloadModel(true, true));
+        assertFalse(h.contains("SignBody"),
+            "@unsignedPayload op with an empty request must not emit SignBody: " + h);
+    }
+
+    // --- aws.cpp.internal#chunkedEncoding (IsChunked) ---
+
+    private static Model chunkedEncodingModel(boolean marked) {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        StructureShape.Builder inB = StructureShape.builder()
+            .id("com.example#DoThingRequest").addMember("name", str.getId());
+        if (marked) {
+            inB.addTrait(new com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.ChunkedEncodingTrait());
+        }
+        StructureShape input = inB.build();
+        StructureShape output = StructureShape.builder()
+            .id("com.example#DoThingOutput").addMember("result", str.getId()).build();
+        OperationShape op = OperationShape.builder().id("com.example#DoThing")
+            .input(input.getId()).output(output.getId()).build();
+        ServiceShape service = ServiceShape.builder().id("com.example#Example")
+            .version("2024-01-01").addOperation(op.getId()).build();
+        return Model.builder().addShapes(str, input, output, op, service).build();
+    }
+
+    @Test
+    void chunkedEncodingTrait_emitsIsChunkedTrue() {
+        // C2J RequestHeader.vm emits IsChunked() -> true for a chunked-encoding request; the marker
+        // (stamped by ChunkedEncodingTransform) drives the same override here.
+        String h = renderDoThingRequestHeader(chunkedEncodingModel(true));
+        assertTrue(h.contains("bool IsChunked() const override { return true; }"),
+            "ChunkedEncodingTrait must emit the IsChunked override: " + h);
+    }
+
+    @Test
+    void withoutChunkedEncodingTrait_omitsIsChunked() {
+        String h = renderDoThingRequestHeader(chunkedEncodingModel(false));
+        assertFalse(h.contains("IsChunked"),
+            "unmarked requests must not emit IsChunked: " + h);
+    }
+
+    // --- aws.cpp.internal#longPolling (IsLongPollingOperation) ---
+
+    private static Model longPollingModel(boolean marked) {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        StructureShape.Builder inB = StructureShape.builder()
+            .id("com.example#DoThingRequest").addMember("name", str.getId());
+        if (marked) {
+            inB.addTrait(new com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.LongPollingTrait());
+        }
+        StructureShape input = inB.build();
+        StructureShape output = StructureShape.builder()
+            .id("com.example#DoThingOutput").addMember("result", str.getId()).build();
+        OperationShape op = OperationShape.builder().id("com.example#DoThing")
+            .input(input.getId()).output(output.getId()).build();
+        ServiceShape service = ServiceShape.builder().id("com.example#Example")
+            .version("2024-01-01").addOperation(op.getId()).build();
+        return Model.builder().addShapes(str, input, output, op, service).build();
+    }
+
+    // An operation whose shape id is version-suffixed (CloudFront-style) but stamped with the clean
+    // logical name via ServiceRequestNameTrait.
+    private static Model serviceRequestNameModel() {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        StructureShape input = StructureShape.builder()
+            .id("com.example#DoThing2020_05_31Request").addMember("name", str.getId()).build();
+        StructureShape output = StructureShape.builder()
+            .id("com.example#DoThing2020_05_31Output").addMember("result", str.getId()).build();
+        OperationShape op = OperationShape.builder().id("com.example#DoThing2020_05_31")
+            .input(input.getId()).output(output.getId())
+            .addTrait(new com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms
+                .ServiceRequestNameTrait("DoThing"))
+            .build();
+        ServiceShape service = ServiceShape.builder().id("com.example#Example")
+            .version("2020-05-31").addOperation(op.getId()).build();
+        return Model.builder().addShapes(str, input, output, op, service).build();
+    }
+
+    @Test
+    void serviceRequestNameTrait_keepsGetServiceRequestNameClean_whileClassStaysSuffixed() {
+        Model model = serviceRequestNameModel();
+        ServiceShape service = model.expectShape(ShapeId.from("com.example#Example"), ServiceShape.class);
+        MockManifest manifest = new MockManifest();
+        CppWriterDelegator delegator = new CppWriterDelegator(manifest);
+        Protocol protocol = ProtocolResolver.resolve(service, model);
+        new RequestRenderer(ShapeClassifier.classify(model, service, protocol).requests(),
+            new RenderContext(model, service, ProtocolResolver.traitsFor(protocol),
+                "Example", "AWS_EXAMPLE_API", "example")).render(delegator);
+        delegator.flushWriters();
+        String h = manifest.getFileString(manifest.getFiles().stream()
+            .filter(p -> p.toString().endsWith("DoThing2020_05_31Request.h")).findFirst().orElseThrow())
+            .orElseThrow();
+        assertTrue(h.contains("GetServiceRequestName() const override { return \"DoThing\"; }"),
+            "GetServiceRequestName must return the clean name from the trait: " + h);
+        assertTrue(h.contains("class DoThing2020_05_31Request"),
+            "class name must keep the version suffix: " + h);
+    }
+
+    @Test
+    void longPollingTrait_emitsIsLongPollingOperationTrue() {
+        // C2J emits IsLongPollingOperation() -> true for a long-polling request; the marker (stamped
+        // by LongPollingTransform) drives the same override here.
+        String h = renderDoThingRequestHeader(longPollingModel(true));
+        assertTrue(h.contains("bool IsLongPollingOperation() const override { return true; }"),
+            "LongPollingTrait must emit the IsLongPollingOperation override: " + h);
+    }
+
+    @Test
+    void longPollingTrait_emittedWithTopIdentityMethods() {
+        // Ordering: IsLongPollingOperation sits with the top identity methods (after
+        // GetServiceRequestName, before SerializePayload), not the SignBody/IsChunked block.
+        String h = renderDoThingRequestHeader(longPollingModel(true));
+        int requestName = h.indexOf("GetServiceRequestName");
+        int longPolling = h.indexOf("IsLongPollingOperation");
+        int serializePayload = h.indexOf("SerializePayload");
+        assertTrue(requestName >= 0 && longPolling > requestName,
+            "IsLongPollingOperation must come after GetServiceRequestName: " + h);
+        assertTrue(serializePayload >= 0 && longPolling < serializePayload,
+            "IsLongPollingOperation must come before SerializePayload (top identity block): " + h);
+    }
+
+    @Test
+    void withoutLongPollingTrait_omitsIsLongPollingOperation() {
+        String h = renderDoThingRequestHeader(longPollingModel(false));
+        assertFalse(h.contains("IsLongPollingOperation"),
+            "unmarked requests must not emit IsLongPollingOperation: " + h);
     }
 }

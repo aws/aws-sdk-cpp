@@ -26,6 +26,15 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class EventStreamRendererTest {
 
     private static Model twoEventModel() {
+        return twoEventModel(false);
+    }
+
+    /**
+     * @param restXml when true, stamps the service with {@code aws.protocols#restXml} so the
+     *        renderer resolves to REST-XML (S3 {@code SelectObjectContent} shape); otherwise the
+     *        service has no protocol trait and resolves to JSON.
+     */
+    private static Model twoEventModel(boolean restXml) {
         StringShape str = StringShape.builder().id("com.example#String").build();
         StructureShape eventA = StructureShape.builder()
             .id("com.example#AlphaEvent")
@@ -79,16 +88,71 @@ class EventStreamRendererTest {
                 .input(input.getId())
                 .output(output.getId())
                 .build();
+        ServiceShape.Builder serviceBuilder = ServiceShape.builder()
+            .id("com.example#Example")
+            .version("2024-01-01")
+            .addOperation(op.getId());
+        if (restXml) {
+            serviceBuilder.addTrait(software.amazon.smithy.aws.traits.protocols.RestXmlTrait.builder().build());
+        }
+        ServiceShape service = serviceBuilder.build();
+        return Model.builder().addShapes(str, stream, eventA, eventB, exc, modeledExc, input, output, op, service).build();
+    }
+
+    // A @streaming union with one empty event (no modeled members) and one data event. Callback/member
+    // names derive from the target shape name (alpha -> AlphaEvent -> m_onAlphaEvent).
+    private static Model unionWithEmptyAndDataEvent() {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        StructureShape emptyEvent = StructureShape.builder()
+            .id("com.example#EmptyEvent")
+            .build();
+        StructureShape dataEvent = StructureShape.builder()
+            .id("com.example#DataEvent")
+            .addMember("data", str.getId())
+            .build();
+        UnionShape stream = UnionShape.builder()
+            .id("com.example#MyStreamEventStream")
+            .addTrait(new StreamingTrait())
+            .addMember("emptyEvent", emptyEvent.getId())
+            .addMember("dataEvent", dataEvent.getId())
+            .build();
+        StructureShape input = StructureShape.builder()
+            .id("com.example#DoStreamInput")
+            .addMember("name", str.getId())
+            .build();
+        StructureShape output = StructureShape.builder()
+            .id("com.example#DoStreamOutput")
+            .addMember(software.amazon.smithy.model.shapes.MemberShape.builder()
+                .id("com.example#DoStreamOutput$stream").target(stream.getId())
+                .addTrait(new software.amazon.smithy.model.traits.HttpPayloadTrait()).build())
+            .build();
+        software.amazon.smithy.model.shapes.OperationShape op =
+            software.amazon.smithy.model.shapes.OperationShape.builder()
+                .id("com.example#DoStream")
+                .input(input.getId())
+                .output(output.getId())
+                .build();
         ServiceShape service = ServiceShape.builder()
             .id("com.example#Example")
             .version("2024-01-01")
             .addOperation(op.getId())
             .build();
-        return Model.builder().addShapes(str, stream, eventA, eventB, exc, modeledExc, input, output, op, service).build();
+        return Model.builder().addShapes(str, stream, emptyEvent, dataEvent, input, output, op, service).build();
     }
 
     private static String render(String fileSuffix) {
-        Model model = twoEventModel();
+        return render(twoEventModel(), fileSuffix);
+    }
+
+    private static String renderHandlerHeaderFor(Model model) {
+        return render(model, "DoStreamHandler.h");
+    }
+
+    private static String renderHandlerSourceFor(Model model) {
+        return render(model, "DoStreamHandler.cpp");
+    }
+
+    private static String render(Model model, String fileSuffix) {
         ServiceShape service = model.expectShape(ShapeId.from("com.example#Example"), ServiceShape.class);
         MockManifest manifest = new MockManifest();
         CppWriterDelegator delegator = new CppWriterDelegator(manifest);
@@ -104,6 +168,22 @@ class EventStreamRendererTest {
                 .filter(p -> p.toString().endsWith(fileSuffix))
                 .findFirst().orElseThrow())
             .orElseThrow();
+    }
+
+    private static java.util.List<String> renderedFilePaths(Model model) {
+        ServiceShape service = model.expectShape(ShapeId.from("com.example#Example"), ServiceShape.class);
+        MockManifest manifest = new MockManifest();
+        CppWriterDelegator delegator = new CppWriterDelegator(manifest);
+        Protocol protocol = ProtocolResolver.resolve(service, model);
+        EventStreamRenderer renderer = new EventStreamRenderer(
+            ShapeClassifier.classify(model, service, protocol).eventStreamHandlers(),
+            new RenderContext(model, service, ProtocolResolver.traitsFor(protocol),
+                "Example", "AWS_EXAMPLE_API", "example"));
+        renderer.render(delegator);
+        delegator.flushWriters();
+        return manifest.getFiles().stream()
+            .map(java.nio.file.Path::toString)
+            .collect(java.util.stream.Collectors.toList());
     }
 
     @Test
@@ -138,53 +218,18 @@ class EventStreamRendererTest {
     }
 
     @Test
-    void eventStreamUnionHeader_typesEventAndExceptionMembers() {
-        String h = render("MyStreamEventStream.h");
-        // NOTE: file name derives from the UNION shape name (MyStream), not the operation.
-        assertTrue(h.contains("class MyStreamEventStream"), "Missing union class: " + h);
-        // Event member typed as its concrete shape
-        assertTrue(h.contains("const AlphaEvent& GetAlpha()") || h.contains("GetAlpha"),
-            "Missing event accessor: " + h);
-        // Exception member typed as <namespace>Error
-        assertTrue(h.contains("ExampleError"), "Exception members must be typed as ExampleError: " + h);
-    }
-
-    @Test
-    void eventStreamUnionHeader_modeledExceptionUsesConcreteTypeAndInclude() {
-        // C2J types a modeled exception member (extra members beyond message/code) as its concrete
-        // shape and includes its model header, while a non-modeled exception stays the generic
-        // <namespace>Error (no include). Matches CppViewHelper's isException/isModeledException gate.
-        String h = render("MyStreamEventStream.h");
-        // Modeled exception -> concrete type + include.
-        assertTrue(h.contains("const DetailedException& GetDetailedException()"),
-            "Modeled exception must use its concrete type: " + h);
-        assertTrue(h.contains("#include <aws/example/model/DetailedException.h>"),
-            "Modeled exception must bring its model include: " + h);
-        // Non-modeled exception -> generic ExampleError.
-        assertTrue(h.contains("const ExampleError& GetBadException()"),
-            "Non-modeled exception must use the generic error type: " + h);
-    }
-
-    @Test
-    void eventStreamUnionHeader_omitsServiceErrorsInclude() {
-        // C2J's computeHeaderIncludes skips the model include for non-modeled exception members
-        // (CppViewHelper: `if (next.isException() && !next.isModeledException()) continue;`).
-        // The union's exception members are the generic ExampleError wrapper, so the union header
-        // must NOT include the service Errors header — it resolves transitively. The handler
-        // header (a separate file) still includes it.
-        String h = render("MyStreamEventStream.h");
-        assertFalse(h.contains("#include <aws/example/ExampleErrors.h>"),
-            "Union header must not include the service Errors header: " + h);
-    }
-
-    @Test
-    void eventStreamUnionHeader_rendersClassAndMemberDocs() {
-        String h = render("MyStreamEventStream.h");
-        // Union class-level documentation + See Also link.
-        assertTrue(h.contains("Tagged union of stream events."), "Missing union class doc: " + h);
-        assertTrue(h.contains("See Also:"), "Missing See Also block on union class: " + h);
-        // Member-level doc flows to the accessor for the member that has one.
-        assertTrue(h.contains("Alpha event doc."), "Missing alpha member doc: " + h);
+    void eventStreamUnionHeader_noLongerEmitted() {
+        // The incoming event-stream union is realized via the handler; nothing references it as a
+        // data type, so the renderer must not emit its standalone <Union>.h (dead public API).
+        java.util.List<String> paths = renderedFilePaths(twoEventModel());
+        assertTrue(paths.stream().noneMatch(p -> p.endsWith("MyStreamEventStream.h")),
+            "incoming event-stream union header must not be emitted: " + paths);
+        // And no rendered file declares the union class.
+        for (String path : paths) {
+            String contents = render(twoEventModel(), path.substring(path.lastIndexOf('/') + 1));
+            assertFalse(contents.contains("class MyStreamEventStream"),
+                "no rendered file may declare the union class: " + path);
+        }
     }
 
     @Test
@@ -205,9 +250,8 @@ class EventStreamRendererTest {
 
     @Test
     void initialResponseHeader_rendersNonStreamingResultMembers() {
-        // C2J synthesizes <op>InitialResponse from the result's non-event-stream members, so the
-        // header must carry accessors for those members (here: contentType) plus a private section.
-        // The @httpPayload streaming union member (stream) must NOT appear.
+        // C2J synthesizes <op>InitialResponse from the result's non-event-stream members (here
+        // contentType); the @httpPayload streaming union member (stream) must not appear.
         String h = render("DoStreamInitialResponse.h");
         assertTrue(h.contains("GetContentType") && h.contains("SetContentType") && h.contains("WithContentType"),
             "InitialResponse must render accessors for non-streaming result members: " + h);
@@ -283,5 +327,86 @@ class EventStreamRendererTest {
             "EventMapper must key on wire member name: " + c);
         assertFalse(c.contains("JsonValue"), "No protocol tokens in handler: " + c);
         assertFalse(c.contains("Cbor"), "No protocol tokens in handler: " + c);
+    }
+
+    @Test
+    void emptyEventEmitsVoidCallbackTypedef() {
+        String out = renderHandlerHeaderFor(unionWithEmptyAndDataEvent());
+        assertTrue(out.contains("typedef std::function<void()> EmptyEventCallback;"),
+            "empty event => arg-less typedef: " + out);
+        assertTrue(out.contains("typedef std::function<void(const DataEvent&)> DataEventCallback;"),
+            "data event => struct-arg typedef preserved: " + out);
+    }
+
+    @Test
+    void emptyEventEmitsArglessDefaultLambda() {
+        String out = renderHandlerSourceFor(unionWithEmptyAndDataEvent());
+        assertTrue(out.contains("m_onEmptyEvent = [&]() {"),
+            "empty event default lambda takes no args: " + out);
+        assertTrue(out.contains("m_onDataEvent = [&](const DataEvent&) {"),
+            "data event default lambda unchanged: " + out);
+    }
+
+    @Test
+    void emptyEventDispatchesWithoutConstructingStruct() {
+        String out = renderHandlerSourceFor(unionWithEmptyAndDataEvent());
+        assertTrue(out.contains("m_onEmptyEvent();"),
+            "empty event dispatched arg-less: " + out);
+        assertFalse(out.contains("m_onEmptyEvent(EmptyEvent{"),
+            "empty event dispatch must not construct the empty struct: " + out);
+    }
+
+    @Test
+    void nonEmptyEventBehaviorUnchanged() {
+        String out = renderHandlerHeaderFor(unionWithEmptyAndDataEvent());
+        assertTrue(out.contains("typedef std::function<void(const DataEvent&)> DataEventCallback;"),
+            "non-empty event typedef unchanged: " + out);
+    }
+
+    @Test
+    void restXmlInitialResponse_omitsHeaderCollectionCtor() {
+        // For a REST-XML event-stream op (S3 SelectObjectContent shape), the InitialResponse is built
+        // from the XML body root via its XmlNode serde ctor; no HeaderValueCollection ctor is emitted.
+        Model model = twoEventModel(true);
+        String h = render(model, "DoStreamInitialResponse.h");
+        assertTrue(h.contains("class DoStreamInitialResponse"), "Missing class: " + h);
+        assertFalse(h.contains("HeaderValueCollection"),
+            "REST-XML InitialResponse must not emit a header-collection ctor: " + h);
+        assertTrue(h.contains("XmlNode"), "REST-XML InitialResponse keeps its XmlNode serde ctor: " + h);
+
+        String c = render(model, "DoStreamInitialResponse.cpp");
+        assertFalse(c.contains("HeaderValueCollection"),
+            "REST-XML InitialResponse source must not emit a header-collection ctor: " + c);
+
+        String handler = render(model, "DoStreamHandler.cpp");
+        assertTrue(handler.contains("DoStreamInitialResponse event(xmlDoc.GetRootElement());"),
+            "REST-XML handler builds the initial response from the XML root: " + handler);
+        assertFalse(handler.contains("GetEventHeadersAsHttpHeaders"), handler);
+    }
+
+    @Test
+    void jsonInitialResponse_hasHeaderCollectionCtor() {
+        // For a JSON event-stream op, the InitialResponse arrives as an event message with headers,
+        // so it carries a HeaderValueCollection ctor and header-based handler construction.
+        Model model = twoEventModel(false);
+        String h = render(model, "DoStreamInitialResponse.h");
+        assertTrue(h.contains("DoStreamInitialResponse(const Http::HeaderValueCollection& responseHeaders)"),
+            "JSON InitialResponse must emit the header-collection ctor: " + h);
+
+        String handler = render(model, "DoStreamHandler.cpp");
+        assertTrue(handler.contains("DoStreamInitialResponse event(GetEventHeadersAsHttpHeaders());"),
+            "JSON handler builds the initial response from event headers: " + handler);
+        assertFalse(handler.contains("xmlDoc"), handler);
+    }
+
+    @Test
+    void emptyEventStructHeaderNotIncluded() {
+        // An empty event's struct is dropped by the classifier, so including its header would dangle
+        // and is unnecessary (the callback is arg-less). A data event keeps its struct include.
+        String out = renderHandlerHeaderFor(unionWithEmptyAndDataEvent());
+        assertFalse(out.contains("#include <aws/example/model/EmptyEvent.h>"),
+            "empty event struct header must not be included: " + out);
+        assertTrue(out.contains("#include <aws/example/model/DataEvent.h>"),
+            "data event struct header must still be included: " + out);
     }
 }

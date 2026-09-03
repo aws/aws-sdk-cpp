@@ -5,6 +5,7 @@
 package com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator;
+import com.amazonaws.util.awsclientsmithygenerator.generators.ShapeUtil;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.CppNames;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.CppTypeMapper;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.MemberRenderer;
@@ -12,6 +13,7 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.Fil
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.RenderContext;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassifier.ResultInfo;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeRenderer;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.TopLevelHostIdTrait;
 import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.StructureShape;
@@ -48,9 +50,7 @@ public final class ResultRenderer implements ShapeRenderer {
     }
 
     /**
-     * The name of the {@code @httpPayload} streaming member. Only called for results the
-     * classifier already flagged as streaming, so a missing payload member is a codegen bug
-     * rather than a modeled state — fail fast instead of returning null.
+     * Name of the {@code @httpPayload} streaming member; a missing member is a codegen bug, so fail fast.
      */
     private String streamingPayloadMemberName(StructureShape shape) {
         for (Map.Entry<String, MemberShape> entry : shape.getAllMembers().entrySet()) {
@@ -64,20 +64,18 @@ public final class ResultRenderer implements ShapeRenderer {
 
     private void renderHeader(CppWriterDelegator writerDelegator,
                               StructureShape shape, OperationShape operation) {
-        String className = operation.getId().getName() + "Result";
+        String className = operation.getId().getName() + ShapeUtil.getResultSuffix(ctx.model(), operation, ctx.smithyServiceName());
         String fileName = "include/aws/" + ctx.smithyServiceName() + "/model/" + className + ".h";
         writerDelegator.useFileWriter(fileName, writer -> {
             writer.write("#pragma once");
 
-            // AWSString.h is only needed for the top-level m_requestId; string-typed members
-            // bring their own include via getIncludesForShape. Matches C2J include hygiene.
+            // AWSString.h only for top-level m_requestId; string members self-include. Matches C2J.
             List<String> includes = new java.util.ArrayList<>(IncludeSets.resultHeaderBase(
                 ctx.smithyServiceName(), ctx.namespace(), ctx.protocolTraits().resultHasTopLevelRequestId()));
             for (String memberInc : CppTypeMapper.getIncludesForShape(shape, ctx.model(), ctx.smithyServiceName())) {
                 includes.add(memberInc);
             }
-            // Protocols whose result-header serde types are named in the class signature (CBOR:
-            // CborValue) add their own header here; JSON/XML forward-declare and add nothing.
+            // Protocols naming serde types in the class signature (CBOR: CborValue) add their header; JSON/XML forward-declare.
             includes.addAll(ctx.protocolTraits().serdeIncludes(FileKind.RESULT_HEADER));
             IncludeSets.emitAngleIncludes(writer, includes);
 
@@ -113,6 +111,12 @@ public final class ResultRenderer implements ShapeRenderer {
                     MemberRenderer.renderRequestIdAccessors(writer, className);
                 }
 
+                // Top-level HostId (x-amz-id-2), S3 Control only, driven by the internal marker (not a protocol flag); always follows RequestId.
+                boolean topLevelHostId = shape.hasTrait(TopLevelHostIdTrait.class);
+                if (topLevelHostId) {
+                    MemberRenderer.renderHostIdAccessors(writer, className);
+                }
+
                 writer.write("inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }");
                 writer.write("");
 
@@ -121,15 +125,22 @@ public final class ResultRenderer implements ShapeRenderer {
                 writer.indent();
                 members.renderDataMembers(writer);
                 if (topLevelRequestId) {
-                    // The blank line separates the modeled members from the m_requestId group;
-                    // C2J omits it (and m_requestId) for Query/EC2 results.
+                    // Blank line separates modeled members from the m_requestId group; C2J omits both for Query/EC2.
                     writer.write("");
                     writer.write("Aws::String m_requestId;");
+                }
+                if (topLevelHostId) {
+                    // C2J declares m_hostId in its own group right after m_requestId.
+                    writer.write("");
+                    writer.write("Aws::String m_hostId;");
                 }
                 writer.write("Aws::Http::HttpResponseCode m_HttpResponseCode;");
                 members.renderHasBeenSetFlags(writer);
                 if (topLevelRequestId) {
                     writer.write("bool m_requestIdHasBeenSet = false;");
+                }
+                if (topLevelHostId) {
+                    writer.write("bool m_hostIdHasBeenSet = false;");
                 }
             });
             writer.write("");
@@ -139,7 +150,7 @@ public final class ResultRenderer implements ShapeRenderer {
 
     private void renderSource(CppWriterDelegator writerDelegator,
                               StructureShape shape, OperationShape operation) {
-        String className = operation.getId().getName() + "Result";
+        String className = operation.getId().getName() + ShapeUtil.getResultSuffix(ctx.model(), operation, ctx.smithyServiceName());
         String fileName = "source/model/" + className + ".cpp";
         writerDelegator.useFileWriter(fileName, writer -> {
 
@@ -158,13 +169,12 @@ public final class ResultRenderer implements ShapeRenderer {
     }
 
     /**
-     * Renders a streaming result header: a move-only class whose payload is an
-     * {@code Aws::Utils::Stream::ResponseStream} exposed via {@code GetBody()} /
-     * {@code ReplaceBody}, matching the legacy C2J {@code StreamResultHeader.vm} output.
+     * Renders a streaming result header: a move-only class whose ResponseStream payload is exposed
+     * via {@code GetBody()} / {@code ReplaceBody}. Matches C2J {@code StreamResultHeader.vm}.
      */
     private void renderStreamingHeader(CppWriterDelegator writerDelegator,
                                        StructureShape shape, OperationShape operation) {
-        String className = operation.getId().getName() + "Result";
+        String className = operation.getId().getName() + ShapeUtil.getResultSuffix(ctx.model(), operation, ctx.smithyServiceName());
         String streamMember = streamingPayloadMemberName(shape);
         String fileName = "include/aws/" + ctx.smithyServiceName() + "/model/" + className + ".h";
         writerDelegator.useFileWriter(fileName, writer -> {
@@ -209,9 +219,8 @@ public final class ResultRenderer implements ShapeRenderer {
                     ctx.exportMacro(), className);
                 writer.write("");
 
-                // Streaming payload accessors (no Set/With/HasBeenSet for the stream member).
-                // The getter is named after the member (GetBody, GetAudioStream, GetResponse);
-                // ReplaceBody stays literal, matching C2J StreamResultHeader.vm.
+                // Streaming payload accessors (no Set/With/HasBeenSet). Getter named after the member;
+                // ReplaceBody stays literal. Matches C2J StreamResultHeader.vm.
                 String streamField = CppNames.fieldName(streamMember);
                 writer.write("///@{");
                 shape.getMember(streamMember)
@@ -231,6 +240,12 @@ public final class ResultRenderer implements ShapeRenderer {
 
                 MemberRenderer.renderRequestIdAccessors(writer, className);
 
+                // Defensive no-op: no streaming result is S3 Control today, so the marker is never stamped here.
+                boolean topLevelHostId = shape.hasTrait(TopLevelHostIdTrait.class);
+                if (topLevelHostId) {
+                    MemberRenderer.renderHostIdAccessors(writer, className);
+                }
+
                 writer.write("inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }");
                 writer.write("");
 
@@ -241,10 +256,17 @@ public final class ResultRenderer implements ShapeRenderer {
                 members.renderDataMembers(writer);
                 writer.write("");
                 writer.write("Aws::String m_requestId;");
+                if (topLevelHostId) {
+                    writer.write("");
+                    writer.write("Aws::String m_hostId;");
+                }
                 writer.write("Aws::Http::HttpResponseCode m_HttpResponseCode;");
                 writer.write("bool $LHasBeenSet = false;", streamField);
                 members.renderHasBeenSetFlags(writer);
                 writer.write("bool m_requestIdHasBeenSet = false;");
+                if (topLevelHostId) {
+                    writer.write("bool m_hostIdHasBeenSet = false;");
+                }
             });
             writer.write("");
                 });
@@ -252,12 +274,12 @@ public final class ResultRenderer implements ShapeRenderer {
     }
 
     /**
-     * Renders a streaming result source: the move ctor/assign take ownership of the
-     * response payload stream ({@code TakeOwnershipOfPayload}) rather than parsing a body.
+     * Renders a streaming result source: move ctor/assign take ownership of the payload stream
+     * ({@code TakeOwnershipOfPayload}) instead of parsing a body.
      */
     private void renderStreamingSource(CppWriterDelegator writerDelegator,
                                        StructureShape shape, OperationShape operation) {
-        String className = operation.getId().getName() + "Result";
+        String className = operation.getId().getName() + ShapeUtil.getResultSuffix(ctx.model(), operation, ctx.smithyServiceName());
         String streamField = CppNames.fieldName(streamingPayloadMemberName(shape));
         String fileName = "source/model/" + className + ".cpp";
         writerDelegator.useFileWriter(fileName, writer -> {

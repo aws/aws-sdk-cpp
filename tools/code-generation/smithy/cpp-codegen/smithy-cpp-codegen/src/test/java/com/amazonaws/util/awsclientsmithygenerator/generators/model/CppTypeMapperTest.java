@@ -254,9 +254,8 @@ class CppTypeMapperTest {
 
     @Test
     void legacyEnumStringShape_mapsToEnumType() {
-        // Smithy 1.0 models a closed set as a `string` shape carrying the @enum trait (not a 2.0
-        // EnumShape). C2J treats these as enums, so a member targeting one must resolve to the
-        // enum C++ type, NOT Aws::String. Mirrors ShapeClassifier / EnumResolver detection.
+        // Smithy 1.0 models a closed set as a `string` shape with the @enum trait. C2J treats these
+        // as enums, so a member targeting one resolves to the enum C++ type, not Aws::String.
         software.amazon.smithy.model.traits.EnumTrait enumTrait =
             software.amazon.smithy.model.traits.EnumTrait.builder()
                 .addEnum(software.amazon.smithy.model.traits.EnumDefinition.builder()
@@ -317,11 +316,7 @@ class CppTypeMapperTest {
 
     // --- recursive (mutually-referenced) shape tests ---
 
-    /**
-     * Builds the connectcases-style mutual cycle: a union {@code BooleanCondition} with a direct
-     * member targeting struct {@code CompoundCondition}, which holds a list of
-     * {@code BooleanCondition}. The two aggregates are mutually referenced through the list.
-     */
+    /** connectcases-style mutual cycle: union {@code BooleanCondition} -> struct {@code CompoundCondition} -> list of {@code BooleanCondition}. */
     private static Model mutualCycleModel() {
         StructureShape operands = StructureShape.builder().id("com.example#BooleanOperands").build();
         // Forward references are fine; Model.builder resolves them at build().
@@ -378,9 +373,8 @@ class CppTypeMapperTest {
 
     @Test
     void directSelfReference_isRecursive_butNotForwardDeclaredOrSelfIncluded() {
-        // connectcases CaseFilter has a `not` member targeting CaseFilter itself. C2J renders it as
-        // std::shared_ptr<CaseFilter> but adds neither a self forward-declaration nor a self-include
-        // (the class declares itself) — and, unlike the mutual case, no AWSAllocator.h either.
+        // connectcases CaseFilter's `not` member targets CaseFilter itself: C2J renders shared_ptr
+        // but adds no self forward-decl, no self-include, and (unlike the mutual case) no AWSAllocator.h.
         StructureShape filter = StructureShape.builder()
             .id("com.example#CaseFilter")
             .addMember("not", software.amazon.smithy.model.shapes.ShapeId.from("com.example#CaseFilter"))
@@ -589,9 +583,8 @@ class CppTypeMapperTest {
 
     @Test
     void getIncludesForShape_withIdempotencyTokenMember_includesUuidHeader() {
-        // C2J adds <aws/core/utils/UUID.h> to any shape carrying an @idempotencyToken member,
-        // because such members are brace-initialized with Aws::Utils::UUID::PseudoRandomUUID()
-        // (CppViewHelper.java). The include must be present for the initializer to compile.
+        // C2J adds <aws/core/utils/UUID.h> for any @idempotencyToken member, which is brace-initialized
+        // with Aws::Utils::UUID::PseudoRandomUUID() and needs the include to compile.
         StringShape str = StringShape.builder().id("com.example#Str").build();
         StructureShape struct = StructureShape.builder()
             .id("com.example#MyRequest")
@@ -640,5 +633,163 @@ class CppTypeMapperTest {
         assertTrue(includes.contains("<aws/core/utils/memory/stl/AWSMap.h>"));
         assertTrue(includes.contains("<aws/core/utils/memory/stl/AWSString.h>"));
         assertTrue(includes.contains("<aws/myservice/model/Item.h>"));
+    }
+
+    @Test
+    void getIncludesForShape_withNestedMapOfMap_includesLeafStructHeader() {
+        // apigateway Deployment.apiSummary is Map<String, Map<String, MethodSnapshot>>: a one-level
+        // unwrap misses the leaf MethodSnapshot header, so C2J recursively unwraps nested containers.
+        StringShape str = StringShape.builder().id("com.example#Str").build();
+        StructureShape leaf = StructureShape.builder().id("com.example#MethodSnapshot").build();
+        MapShape innerMap = MapShape.builder()
+            .id("com.example#MapOfMethodSnapshot")
+            .key(MemberShape.builder().id("com.example#MapOfMethodSnapshot$key").target("com.example#Str").build())
+            .value(MemberShape.builder().id("com.example#MapOfMethodSnapshot$value")
+                .target("com.example#MethodSnapshot").build())
+            .build();
+        MapShape outerMap = MapShape.builder()
+            .id("com.example#PathToMapOfMethodSnapshot")
+            .key(MemberShape.builder().id("com.example#PathToMapOfMethodSnapshot$key").target("com.example#Str").build())
+            .value(MemberShape.builder().id("com.example#PathToMapOfMethodSnapshot$value")
+                .target("com.example#MapOfMethodSnapshot").build())
+            .build();
+        StructureShape struct = StructureShape.builder()
+            .id("com.example#Deployment")
+            .addMember("apiSummary", outerMap.getId())
+            .build();
+        Model model = Model.builder().addShapes(str, leaf, innerMap, outerMap, struct).build();
+
+        List<String> includes = CppTypeMapper.getIncludesForShape(struct, model, "apigateway");
+        assertTrue(includes.contains("<aws/core/utils/memory/stl/AWSMap.h>"), includes.toString());
+        assertTrue(includes.contains("<aws/core/utils/memory/stl/AWSString.h>"), includes.toString());
+        assertTrue(includes.contains("<aws/apigateway/model/MethodSnapshot.h>"),
+            "nested map-of-map must include leaf struct header: " + includes);
+    }
+
+    @Test
+    void getIncludesForShape_withListOfMap_includesLeafStructHeader() {
+        // List<Map<String, SomeStruct>>: the list element is a map (no header), so the leaf struct
+        // header lives two container levels deep and requires recursive unwrapping.
+        StringShape str = StringShape.builder().id("com.example#Str").build();
+        StructureShape leaf = StructureShape.builder().id("com.example#Item").build();
+        MapShape map = MapShape.builder()
+            .id("com.example#ItemMap")
+            .key(MemberShape.builder().id("com.example#ItemMap$key").target("com.example#Str").build())
+            .value(MemberShape.builder().id("com.example#ItemMap$value").target("com.example#Item").build())
+            .build();
+        ListShape list = ListShape.builder()
+            .id("com.example#ListOfItemMap")
+            .member(MemberShape.builder().id("com.example#ListOfItemMap$member").target("com.example#ItemMap").build())
+            .build();
+        StructureShape struct = StructureShape.builder()
+            .id("com.example#MyRequest")
+            .addMember("rows", list.getId())
+            .build();
+        Model model = Model.builder().addShapes(str, leaf, map, list, struct).build();
+
+        List<String> includes = CppTypeMapper.getIncludesForShape(struct, model, "myservice");
+        assertTrue(includes.contains("<aws/core/utils/memory/stl/AWSVector.h>"), includes.toString());
+        assertTrue(includes.contains("<aws/core/utils/memory/stl/AWSMap.h>"), includes.toString());
+        assertTrue(includes.contains("<aws/myservice/model/Item.h>"),
+            "list-of-map must include leaf struct header: " + includes);
+    }
+
+    @Test
+    void getIncludesForShape_withMapOfList_includesLeafStructHeader() {
+        // Map<String, List<SomeStruct>>: the map value is a list (no header), so recursive unwrap
+        // is needed to reach the leaf struct header.
+        StringShape str = StringShape.builder().id("com.example#Str").build();
+        StructureShape leaf = StructureShape.builder().id("com.example#Item").build();
+        ListShape list = ListShape.builder()
+            .id("com.example#ItemList")
+            .member(MemberShape.builder().id("com.example#ItemList$member").target("com.example#Item").build())
+            .build();
+        MapShape map = MapShape.builder()
+            .id("com.example#MapOfItemList")
+            .key(MemberShape.builder().id("com.example#MapOfItemList$key").target("com.example#Str").build())
+            .value(MemberShape.builder().id("com.example#MapOfItemList$value").target("com.example#ItemList").build())
+            .build();
+        StructureShape struct = StructureShape.builder()
+            .id("com.example#MyRequest")
+            .addMember("grouped", map.getId())
+            .build();
+        Model model = Model.builder().addShapes(str, leaf, list, map, struct).build();
+
+        List<String> includes = CppTypeMapper.getIncludesForShape(struct, model, "myservice");
+        assertTrue(includes.contains("<aws/core/utils/memory/stl/AWSMap.h>"), includes.toString());
+        assertTrue(includes.contains("<aws/core/utils/memory/stl/AWSVector.h>"), includes.toString());
+        assertTrue(includes.contains("<aws/myservice/model/Item.h>"),
+            "map-of-list must include leaf struct header: " + includes);
+    }
+
+    @Test
+    void getIncludesForShape_withNestedSparseMap_includesOptionalHeader() {
+        // An inner @sparse map nested inside an outer map must still contribute <aws/crt/Optional.h>;
+        // the sparse handling fires at each nested container level.
+        StringShape str = StringShape.builder().id("com.example#Str").build();
+        MapShape innerMap = MapShape.builder()
+            .id("com.example#SparseInnerMap")
+            .key(MemberShape.builder().id("com.example#SparseInnerMap$key").target("com.example#Str").build())
+            .value(MemberShape.builder().id("com.example#SparseInnerMap$value").target("com.example#Str").build())
+            .addTrait(new software.amazon.smithy.model.traits.SparseTrait())
+            .build();
+        MapShape outerMap = MapShape.builder()
+            .id("com.example#OuterMap")
+            .key(MemberShape.builder().id("com.example#OuterMap$key").target("com.example#Str").build())
+            .value(MemberShape.builder().id("com.example#OuterMap$value").target("com.example#SparseInnerMap").build())
+            .build();
+        StructureShape struct = StructureShape.builder()
+            .id("com.example#MyRequest")
+            .addMember("data", outerMap.getId())
+            .build();
+        Model model = Model.builder().addShapes(str, innerMap, outerMap, struct).build();
+
+        List<String> includes = CppTypeMapper.getIncludesForShape(struct, model, "myservice");
+        assertTrue(includes.contains("<aws/crt/Optional.h>"),
+            "nested sparse map must include Optional.h: " + includes);
+    }
+
+    @Test
+    void getIncludesForShape_singleLevelMapOfStruct_unchanged() {
+        // Regression guard: a single-level Map<String, SomeStruct> must include exactly the same
+        // headers after the recursive-unwrap change as before it.
+        StringShape str = StringShape.builder().id("com.example#Str").build();
+        StructureShape leaf = StructureShape.builder().id("com.example#Item").build();
+        MapShape map = MapShape.builder()
+            .id("com.example#ItemMap")
+            .key(MemberShape.builder().id("com.example#ItemMap$key").target("com.example#Str").build())
+            .value(MemberShape.builder().id("com.example#ItemMap$value").target("com.example#Item").build())
+            .build();
+        StructureShape struct = StructureShape.builder()
+            .id("com.example#MyRequest")
+            .addMember("data", map.getId())
+            .build();
+        Model model = Model.builder().addShapes(str, leaf, map, struct).build();
+
+        List<String> includes = CppTypeMapper.getIncludesForShape(struct, model, "myservice");
+        assertEquals(List.of(
+            "<aws/core/utils/memory/stl/AWSMap.h>",
+            "<aws/core/utils/memory/stl/AWSString.h>",
+            "<aws/myservice/model/Item.h>"), includes);
+    }
+
+    @Test
+    void getIncludesForShape_singleLevelListOfStruct_unchanged() {
+        // Regression guard: a single-level List<SomeStruct> is unchanged by the recursive-unwrap.
+        StructureShape leaf = StructureShape.builder().id("com.example#Item").build();
+        ListShape list = ListShape.builder()
+            .id("com.example#ItemList")
+            .member(MemberShape.builder().id("com.example#ItemList$member").target("com.example#Item").build())
+            .build();
+        StructureShape struct = StructureShape.builder()
+            .id("com.example#MyRequest")
+            .addMember("items", list.getId())
+            .build();
+        Model model = Model.builder().addShapes(leaf, list, struct).build();
+
+        List<String> includes = CppTypeMapper.getIncludesForShape(struct, model, "myservice");
+        assertEquals(List.of(
+            "<aws/core/utils/memory/stl/AWSVector.h>",
+            "<aws/myservice/model/Item.h>"), includes);
     }
 }

@@ -14,11 +14,20 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.model.RenderContex
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassifier;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassifier.RequestInfo;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeRenderer;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.ChunkedEncodingTrait;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.LongPollingTrait;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.OverrideStreamingTrait;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.ServiceRequestNameTrait;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.SupportsPresigningTrait;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.endpointcontext.Emit;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.endpointcontext.SmithyEndpointsJmesPathVisitor;
+import software.amazon.smithy.jmespath.JmespathExpression;
 import software.amazon.smithy.model.node.BooleanNode;
 import software.amazon.smithy.model.node.Node;
 import software.amazon.smithy.model.node.NodeVisitor;
 import software.amazon.smithy.model.node.StringNode;
 import software.amazon.smithy.aws.traits.HttpChecksumTrait;
+import software.amazon.smithy.aws.traits.auth.UnsignedPayloadTrait;
 import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.StructureShape;
@@ -26,6 +35,8 @@ import software.amazon.smithy.model.traits.DocumentationTrait;
 import software.amazon.smithy.model.traits.HttpChecksumRequiredTrait;
 import software.amazon.smithy.model.traits.RequestCompressionTrait;
 import software.amazon.smithy.rulesengine.traits.ContextParamTrait;
+import software.amazon.smithy.rulesengine.traits.OperationContextParamDefinition;
+import software.amazon.smithy.rulesengine.traits.OperationContextParamsTrait;
 import software.amazon.smithy.rulesengine.traits.StaticContextParamsTrait;
 
 import java.util.ArrayList;
@@ -60,15 +71,14 @@ public final class RequestRenderer implements ShapeRenderer {
     private void renderHeader(CppWriterDelegator writerDelegator,
                               StructureShape rawShape, OperationShape operation) {
         String className = operation.getId().getName() + "Request";
-        // A request with a raw streaming @httpPayload member derives from Streaming<Prefix>Request,
-        // whose base (AmazonStreamingWebServiceRequest) supplies GetBody/SetBody and
-        // GetContentType/SetContentType, and emits no SerializePayload. Matching C2J: contentType
-        // is stripped from the model entirely (affects includes AND rendering), while the payload
-        // member stays for include computation but is skipped in accessor/private rendering.
+        // A raw streaming @httpPayload request derives from Streaming<Prefix>Request, whose base
+        // (AmazonStreamingWebServiceRequest) supplies GetBody/SetBody, GetContentType/SetContentType,
+        // and no SerializePayload. Matching C2J: contentType is stripped entirely (includes and
+        // rendering); the payload member stays for includes but is skipped in accessor/private rendering.
         boolean rawStreamingPayload = ShapeClassifier.isRawStreamingPayloadRequest(operation, ctx.model());
-        // An event-stream (input) member targets a @streaming union: C2J renders it as a
-        // std::shared_ptr<Union> with a collision-renamed getter and an inline empty
-        // SerializePayload + GetBody() override, so it is excluded from the generic member path.
+        // An event-stream (input) member targets a @streaming union: rendered as a
+        // std::shared_ptr<Union> (collision-renamed getter, inline empty SerializePayload +
+        // GetBody() override), so excluded from the generic member path. Matches C2J.
         Optional<String> eventStreamMember = ShapeClassifier.eventStreamMemberName(rawShape, ctx.model());
         StructureShape includeShape = rawStreamingPayload
             ? shapeExcluding(rawShape, Set.of("contentType", "ContentType")) : rawShape;
@@ -80,10 +90,9 @@ public final class RequestRenderer implements ShapeRenderer {
             Set<String> includes = new TreeSet<>();
             includes.add("<aws/" + ctx.smithyServiceName() + "/" + ctx.namespace() + "_EXPORTS.h>");
             includes.add("<aws/" + ctx.smithyServiceName() + "/" + ctx.namespace() + "Request.h>");
-            // NOTE: request headers do NOT include <aws/core/http/URI.h> even when they
-            // declare URI-taking methods (DumpBodyToUrl / AddQueryStringParameters). The
-            // base AmazonWebServiceRequest.h forward-declares Aws::Http::URI, which is
-            // sufficient for a reference parameter, and C2J relies on that forward decl.
+            // Request headers do NOT include <aws/core/http/URI.h> even with URI-taking methods
+            // (DumpBodyToUrl / AddQueryStringParameters): AmazonWebServiceRequest.h forward-declares
+            // Aws::Http::URI, sufficient for a reference param. Matches C2J.
             List<String> memberIncludes = CppTypeMapper.getIncludesForShape(includeShape, ctx.model(), ctx.smithyServiceName());
             includes.addAll(memberIncludes);
             IncludeSets.emitAngleIncludes(writer, includes);
@@ -126,29 +135,68 @@ public final class RequestRenderer implements ShapeRenderer {
                 writer.write("// each operation should has unique request name, so that we can get operation's name from this request.");
                 writer.write("// Note: this is not true for response, multiple operations may have the same response name,");
                 writer.write("// so we can not get operation's name from response.");
+                // Logical operation name (metrics/telemetry) — stays unsuffixed even when the class
+                // name is version-suffixed (e.g. CloudFront), matching C2J. ServiceRequestNameTrait
+                // carries the clean name for operations a transform renamed for C++ identity.
                 writer.write("inline virtual const char* GetServiceRequestName() const override { return \"$L\"; }",
-                    operation.getId().getName());
+                    operation.getTrait(ServiceRequestNameTrait.class)
+                        .map(ServiceRequestNameTrait::getValue)
+                        .orElse(operation.getId().getName()));
                 writer.write("");
                 if (streamingRequest) {
                     writer.write("inline virtual bool IsEventStreamRequest() const override { return true; }");
+                }
+                // Long-polling requests emit IsLongPollingOperation() -> true (C2J order: after
+                // IsEventStreamRequest, before HasEventStreamResponse); marker stamped by LongPollingTransform.
+                if (shape.hasTrait(LongPollingTrait.class)) {
+                    writer.write("inline virtual bool IsLongPollingOperation() const override { return true; }");
                 }
                 if (streamingResponse) {
                     writer.write("inline virtual bool HasEventStreamResponse() const override { return true; }");
                 }
                 if (eventStreamMember.isPresent()) {
-                    // The request body is sent as an encoded event stream via GetBody(), so
-                    // SerializePayload is an inline no-op (matches C2J RequestHeader.vm).
+                    // Body is sent as an encoded event stream via GetBody(), so SerializePayload is an
+                    // inline no-op. Matches C2J RequestHeader.vm.
                     writer.write("// SerializePayload will not be invoked.");
                     writer.write("// This request is sent by encoding its data in event-streams which is sent as IOStream via GetBody()");
                     writer.write("$L Aws::String SerializePayload() const override { return {}; }", ctx.exportMacro());
                     writer.write("$L std::shared_ptr<Aws::IOStream> GetBody() const override;", ctx.exportMacro());
                 }
                 ctx.protocolTraits().writeRequestMethodDecls(writer, ctx.exportMacro(), shape, operation, ctx.model());
+                // DumpBodyToUrl is emitted protocol-agnostically (C2J gates only on
+                // $shape.supportsPresigning). A protected virtual, so bracketed under protected: then
+                // restored to public:. The trait is on the OPERATION (SupportsPresigningTransform) to
+                // cover Unit-input ops and stay symmetric with the protocol-emitted impl.
+                if (operation.hasTrait(SupportsPresigningTrait.class)) {
+                    writer.write("");
+                    writer.dedent();
+                    writer.write("protected:");
+                    writer.indent();
+                    writer.write("$L void DumpBodyToUrl(Aws::Http::URI& uri) const override;", ctx.exportMacro());
+                    writer.dedent();
+                    writer.write("");
+                    writer.write("public:");
+                    writer.indent();
+                }
                 // Request-feature methods driven by operation traits, in C2J RequestHeader.vm order:
                 // @httpChecksum, @httpChecksumRequired (legacy Content-MD5), then @requestCompression.
                 renderChecksumDecls(writer, shape, operation);
                 renderContentMd5Decl(writer, operation);
+                renderSignBodyDecl(writer, shape, operation);
+
+                // Chunked-encoding requests emit IsChunked() -> true after SignBody, before IsStreaming
+                // (C2J order); marker stamped by ChunkedEncodingTransform.
+                if (shape.hasTrait(ChunkedEncodingTrait.class)) {
+                    writer.write("$L bool IsChunked() const override { return true; }", ctx.exportMacro());
+                }
+
                 renderRequestCompressionDecl(writer, operation);
+
+                // S3 flips a couple of streaming-base requests back to non-streaming (C2J
+                // isOverrideStreaming); the marker is stamped by S3Transforms.
+                if (shape.hasTrait(OverrideStreamingTrait.class)) {
+                    writer.write("$L bool IsStreaming() const override { return false; }", ctx.exportMacro());
+                }
 
                 if (streamingResponse) {
                     String handlerType = operation.getId().getName() + "Handler";
@@ -187,6 +235,9 @@ public final class RequestRenderer implements ShapeRenderer {
                     writer.write(" * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.");
                     writer.write(" */");
                     writer.write("$L EndpointParameters GetEndpointContextParams() const override;", ctx.exportMacro());
+                    if (operation.hasTrait(OperationContextParamsTrait.class)) {
+                        writer.write("$L Aws::Vector<Aws::String> GetOperationContextParams() const;", ctx.exportMacro());
+                    }
                 }
 
                 writer.write("");
@@ -228,18 +279,16 @@ public final class RequestRenderer implements ShapeRenderer {
         String className = operation.getId().getName() + "Request";
         Optional<String> eventStreamMember = ShapeClassifier.eventStreamMemberName(rawShape, ctx.model());
         // Render request-method impls from the same member-stripped shape as the header (see
-        // renderedShape): the declaration and definition gate GetRequestSpecificHeaders /
-        // AddQueryStringParameters on this shape, so they must agree or the source emits an
-        // out-of-line definition of a method the class never declares.
+        // renderedShape): decl and def gate GetRequestSpecificHeaders / AddQueryStringParameters on
+        // this shape, so they must agree or the source defines a method the class never declares.
         StructureShape shape = renderedShape(rawShape, operation);
         String fileName = "source/model/" + className + ".cpp";
         writerDelegator.useFileWriter(fileName, writer -> {
 
-            // A request with stream members (a raw @httpPayload blob/string body, or an event-stream
-            // input) is sent via the request body stream, not a serialized JSON payload. C2J routes
-            // it through StreamRequestSource.vm: AmazonWebServiceResult.h + the Stream/Utils/Aws
-            // usings (not the JSON serde header/usings). The event-stream sub-case also defines
-            // GetBody() returning its encoder member.
+            // A request with stream members (raw @httpPayload body or event-stream input) is sent via
+            // the body stream, not a serialized payload. C2J routes it through StreamRequestSource.vm:
+            // AmazonWebServiceResult.h + Stream/Utils/Aws usings (not the JSON serde header/usings).
+            // The event-stream sub-case also defines GetBody() returning its encoder member.
             boolean streaming = ShapeClassifier.isRawStreamingPayloadRequest(operation, ctx.model())
                 || eventStreamMember.isPresent();
             if (streaming) {
@@ -247,10 +296,10 @@ public final class RequestRenderer implements ShapeRenderer {
                     IncludeSets.requestSourceBase(ctx.smithyServiceName(), className));
                 includes.add("aws/core/AmazonWebServiceResult.h");
                 includes.add("utility");
-                // A raw-streaming-payload request sends its body via the streaming base class (no
-                // protocol serde), but its header/query members still serialize, so the source
-                // needs HashingUtils.h (blob Base64) and AWSStringStream.h unconditionally. It must
-                // NOT pull the protocol serde header (e.g. JsonSerializer.h), matching C2J.
+                // A raw-streaming-payload request sends its body via the streaming base (no protocol
+                // serde), but header/query members still serialize, so the source needs HashingUtils.h
+                // (blob Base64) and AWSStringStream.h unconditionally, and must NOT pull the protocol
+                // serde header (e.g. JsonSerializer.h). Matches C2J.
                 includes.add("aws/core/utils/HashingUtils.h");
                 includes.add("aws/core/utils/memory/stl/AWSStringStream.h");
                 IncludeSets.emit(writer, includes);
@@ -272,6 +321,9 @@ public final class RequestRenderer implements ShapeRenderer {
                 if (hasEndpointContextParams(operation, shape)) {
                     writer.write("");
                     renderEndpointContextParams(writer, className, operation, shape);
+                    if (operation.hasTrait(OperationContextParamsTrait.class)) {
+                        renderOperationContextParamsAccessor(writer, className, operation, shape);
+                    }
                 }
                 writer.write("");
                 return;
@@ -293,6 +345,9 @@ public final class RequestRenderer implements ShapeRenderer {
             if (hasEndpointContextParams(operation, shape)) {
                 writer.write("");
                 renderEndpointContextParams(writer, className, operation, shape);
+                if (operation.hasTrait(OperationContextParamsTrait.class)) {
+                    renderOperationContextParamsAccessor(writer, className, operation, shape);
+                }
             }
             writer.write("");
         });
@@ -300,11 +355,9 @@ public final class RequestRenderer implements ShapeRenderer {
 
     /**
      * The shape whose members drive request-method rendering. Raw-streaming-payload requests strip
-     * {@code contentType} (supplied by the streaming base's GetContentType/SetContentType) and the
-     * {@code @httpPayload} member (sent via the body stream); an event-stream input member is
-     * rendered separately, not through the generic member path. Both the header (declarations) and
-     * the source (definitions) MUST render from this same shape so their emitted method sets stay
-     * in sync.
+     * {@code contentType} (from the streaming base) and the {@code @httpPayload} member (sent via
+     * the body stream); an event-stream input member is rendered separately. Header and source MUST
+     * render from this same shape so their emitted method sets stay in sync.
      */
     private StructureShape renderedShape(StructureShape rawShape, OperationShape operation) {
         Set<String> excluded = new HashSet<>();
@@ -343,8 +396,8 @@ public final class RequestRenderer implements ShapeRenderer {
 
     /**
      * Renders the accessor block for an event-stream (input) member: a {@code std::shared_ptr<Union>}
-     * getter/setter/wither. The getter is renamed to {@code GetMember<Name>} because {@code GetBody}
-     * is reserved by the streaming request base (matches C2J's collision handling).
+     * getter/setter/wither. The getter is renamed to {@code GetMember<Name>} since {@code GetBody} is
+     * reserved by the streaming request base (C2J collision handling).
      */
     private void renderEventStreamMemberAccessor(CppWriter writer, String className,
                                                  StructureShape shape, String memberName) {
@@ -373,15 +426,14 @@ public final class RequestRenderer implements ShapeRenderer {
     }
 
     /**
-     * Declares the request methods for an operation carrying {@code @httpChecksum}, gated per
-     * sub-field, matching C2J's RequestHeader.vm:89-104:
+     * Declares the {@code @httpChecksum} request methods, gated per sub-field (C2J RequestHeader.vm):
      * <ul>
      *   <li>{@code requestAlgorithmMember} → {@code GetChecksumAlgorithmName} / {@code ChecksumAlgorithmIsSet}</li>
      *   <li>{@code requestValidationModeMember} → {@code ShouldValidateResponseChecksum}</li>
      *   <li>{@code requestChecksumRequired} → inline {@code RequestChecksumRequired}</li>
      *   <li>{@code responseAlgorithms} → {@code GetResponseChecksumAlgorithmNames}</li>
      * </ul>
-     * All override base {@code AmazonWebServiceRequest} virtuals; no extra includes are needed.
+     * All override base {@code AmazonWebServiceRequest} virtuals; no extra includes.
      */
     private void renderChecksumDecls(CppWriter writer, StructureShape shape, OperationShape operation) {
         Optional<HttpChecksumTrait> maybeTrait = operation.getTrait(HttpChecksumTrait.class);
@@ -405,10 +457,10 @@ public final class RequestRenderer implements ShapeRenderer {
     }
 
     /**
-     * Defines the {@code @httpChecksum} request methods, matching C2J's ModelClassChecksumMembers.vm.
+     * Defines the {@code @httpChecksum} request methods (C2J ModelClassChecksumMembers.vm).
      * {@code GetChecksumAlgorithmName} defaults to {@code "crc64nvme"} when the algorithm member is
-     * unset, else maps the enum via its generated Mapper. The bodies read only the request's own
-     * enum members, so they are independent of the (stubbed) payload serde.
+     * unset, else maps the enum via its Mapper. Bodies read only the request's enum members, so they
+     * are independent of the (stubbed) payload serde.
      */
     private void renderChecksumImpls(CppWriter writer, String className, StructureShape shape,
                                      OperationShape operation) {
@@ -452,16 +504,27 @@ public final class RequestRenderer implements ShapeRenderer {
     }
 
     /**
-     * Declares the inline {@code ShouldComputeContentMd5} override for an operation carrying the
-     * legacy {@code @httpChecksumRequired} trait ({@code smithy.api#httpChecksumRequired}), which
-     * requests a {@code Content-MD5} header. Distinct from the flexible {@code @httpChecksum} trait.
-     * C2J derives an internal {@code Shape.computeContentMd5} flag from it; here it reads the trait
-     * directly. Matches RequestHeader.vm:105-108 (no {@code .cpp} body).
+     * Declares the inline {@code ShouldComputeContentMd5} override for the legacy
+     * {@code @httpChecksumRequired} trait (requests a {@code Content-MD5} header; distinct from the
+     * flexible {@code @httpChecksum}). Read directly here rather than via C2J's derived
+     * {@code computeContentMd5} flag. Matches RequestHeader.vm (no {@code .cpp} body).
      */
     private void renderContentMd5Decl(CppWriter writer, OperationShape operation) {
         if (operation.hasTrait(HttpChecksumRequiredTrait.class)) {
             writer.write("");
             writer.write("$L inline bool ShouldComputeContentMd5() const override { return true; }", ctx.exportMacro());
+        }
+    }
+
+    /**
+     * Declares the inline {@code SignBody} override for an {@code @unsignedPayload} operation whose
+     * request has at least one member (C2J's {@code v4-unsigned-body} case). Closes
+     * {@code Model::}-namespace parity only: the Smithy runtime hardcodes signing and never consumes
+     * {@code SignBody()}.
+     */
+    private void renderSignBodyDecl(CppWriter writer, StructureShape shape, OperationShape operation) {
+        if (operation.hasTrait(UnsignedPayloadTrait.class) && !shape.getAllMembers().isEmpty()) {
+            writer.write("$L bool SignBody() const override { return false; }", ctx.exportMacro());
         }
     }
 
@@ -476,11 +539,9 @@ public final class RequestRenderer implements ShapeRenderer {
     }
 
     /**
-     * Declares {@code GetSelectedCompressionAlgorithm} for an operation carrying
-     * {@code @requestCompression}. The method overrides a base {@code AmazonWebServiceRequest}
-     * virtual, so no extra include is needed. Only gzip is supported (validated), so the
-     * declaration is always guarded by {@code ENABLED_ZLIB_REQUEST_COMPRESSION}. Matches C2J's
-     * {@code RequestHeader.vm}.
+     * Declares {@code GetSelectedCompressionAlgorithm} for a {@code @requestCompression} operation.
+     * Overrides a base virtual (no extra include). Only gzip is supported (validated), so the decl
+     * is guarded by {@code ENABLED_ZLIB_REQUEST_COMPRESSION}. Matches C2J {@code RequestHeader.vm}.
      */
     private void renderRequestCompressionDecl(CppWriter writer, OperationShape operation) {
         if (!operation.hasTrait(RequestCompressionTrait.class)) {
@@ -494,11 +555,10 @@ public final class RequestRenderer implements ShapeRenderer {
     }
 
     /**
-     * Defines {@code GetSelectedCompressionAlgorithm}. Streaming requests can't size their body up
-     * front, so they compress whenever enabled; non-streaming requests skip compression below the
-     * configured minimum body size. Matches C2J's ModelClassRequiredCompression[Stream].vm. This
-     * body only reads the already-serialized body via the base {@code GetBody()}, so it is
-     * independent of the (currently stubbed) payload serde.
+     * Defines {@code GetSelectedCompressionAlgorithm}: streaming requests can't size their body up
+     * front so they compress whenever enabled; non-streaming requests skip below the configured
+     * minimum body size. Matches C2J ModelClassRequiredCompression[Stream].vm. Reads only the
+     * already-serialized body via the base {@code GetBody()}, so it is independent of payload serde.
      */
     private void renderRequestCompressionImpl(CppWriter writer, String className,
                                               OperationShape operation, boolean streaming) {
@@ -529,9 +589,8 @@ public final class RequestRenderer implements ShapeRenderer {
     }
 
     /**
-     * Enforces the C2J contract that {@code @requestCompression} declares exactly the gzip encoding
-     * (the only algorithm the SDK supports). Fails fast on an empty or unsupported encoding list,
-     * mirroring the legacy C2J transformer.
+     * Enforces the C2J contract that {@code @requestCompression} declares exactly gzip (the only
+     * algorithm the SDK supports). Fails fast on an empty or unsupported encoding list.
      */
     private static void validateGzipEncoding(OperationShape operation) {
         List<String> encodings = operation.expectTrait(RequestCompressionTrait.class).getEncodings();
@@ -546,7 +605,8 @@ public final class RequestRenderer implements ShapeRenderer {
     }
 
     private boolean hasEndpointContextParams(OperationShape operation, StructureShape shape) {
-        if (operation.hasTrait(StaticContextParamsTrait.class)) {
+        if (operation.hasTrait(StaticContextParamsTrait.class)
+            || operation.hasTrait(OperationContextParamsTrait.class)) {
             return true;
         }
         for (MemberShape member : shape.getAllMembers().values()) {
@@ -589,7 +649,46 @@ public final class RequestRenderer implements ShapeRenderer {
                 }
             }
 
+            if (operation.hasTrait(OperationContextParamsTrait.class)) {
+                OperationContextParamsTrait opCtx = operation.expectTrait(OperationContextParamsTrait.class);
+                Map.Entry<String, OperationContextParamDefinition> firstEntry =
+                    opCtx.getParameters().entrySet().iterator().next();
+                writer.write("// operation context params go here");
+                writer.write(
+                    "parameters.emplace_back(Aws::String{\"$L\"}, this->GetOperationContextParams(), "
+                  + "Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);",
+                    firstEntry.getKey());
+            }
+
             writer.write("return parameters;");
+        });
+    }
+
+    private void renderOperationContextParamsAccessor(CppWriter writer, String className,
+                                                      OperationShape operation, StructureShape shape) {
+        OperationContextParamsTrait opCtx = operation.expectTrait(OperationContextParamsTrait.class);
+        Map.Entry<String, OperationContextParamDefinition> firstEntry =
+            opCtx.getParameters().entrySet().iterator().next();
+        String path = firstEntry.getValue().getPath();
+
+        Emit emit = JmespathExpression.parse(path).accept(
+            new SmithyEndpointsJmesPathVisitor(this.ctx.model(), shape, "(*this)"));
+
+        writer.write("// Accessor for dynamic context endpoint params");
+        writer.openBlock("Aws::Vector<Aws::String> $L::GetOperationContextParams() const {", "}",
+            className, () -> {
+            writer.write("Aws::Vector<Aws::String> result;");
+            // Visitor output is a newline-separated string of flat statements; CppWriter indents and
+            // clang-format normalizes. Each line is passed as a $L arg so $L/{n} tokens aren't reinterpreted.
+            String raw = emit.statements();
+            if (!raw.isEmpty()) {
+                // Trim the single trailing newline the visitor always emits so we don't double-blank.
+                String trimmed = raw.endsWith("\n") ? raw.substring(0, raw.length() - 1) : raw;
+                for (String line : trimmed.split("\n", -1)) {
+                    writer.write("$L", line);
+                }
+            }
+            writer.write("return result;");
         });
     }
 

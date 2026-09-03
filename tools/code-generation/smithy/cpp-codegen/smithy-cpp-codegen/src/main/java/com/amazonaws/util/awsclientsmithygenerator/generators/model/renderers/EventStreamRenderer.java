@@ -4,22 +4,18 @@
  */
 package com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers;
 
-import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator;
-import com.amazonaws.util.awsclientsmithygenerator.generators.model.CppNames;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.CppTypeMapper;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.MemberRenderer;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.FileKind;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.ProtocolTraits;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.RenderContext;
-import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassifier;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassifier.EventStreamInfo;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeRenderer;
 import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.Shape;
 import software.amazon.smithy.model.shapes.StructureShape;
 import software.amazon.smithy.model.shapes.UnionShape;
-import software.amazon.smithy.model.traits.DocumentationTrait;
 import software.amazon.smithy.model.traits.ErrorTrait;
 import software.amazon.smithy.model.traits.StreamingTrait;
 
@@ -28,13 +24,11 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * Renders C++ event stream artifacts for response-side (simplex) streaming operations:
- * the handler, initial response, and event stream union. Driven by the classifier's
- * {@link EventStreamInfo} list. Event structure shapes themselves are generated
- * elsewhere (as reachable sub-objects) and only referenced here.
- *
- * <p>No protocol-specific serialization is emitted; payload (de)serialization points
- * are protocol-agnostic TODO stubs via {@link ProtocolTraits}.
+ * Renders C++ event stream artifacts for response-side (simplex) streaming operations: the handler
+ * and initial response, driven by the classifier's {@link EventStreamInfo} list. Event structures
+ * are generated elsewhere (as reachable sub-objects) and only referenced here; the {@code @streaming}
+ * union data type is not emitted (realized through the handler, referenced by nothing). Payload
+ * (de)serialization points are protocol-agnostic TODO stubs via {@link ProtocolTraits}.
  */
 public final class EventStreamRenderer implements ShapeRenderer {
 
@@ -61,7 +55,6 @@ public final class EventStreamRenderer implements ShapeRenderer {
             renderHandlerHeader(writerDelegator, info.operationName(), events);
             renderHandlerSource(writerDelegator, info.operationName(), events);
             renderInitialResponse(writerDelegator, info.operationName(), info.resultShape());
-            renderEventStreamUnion(writerDelegator, info.operationName(), union, events, exceptions);
         }
     }
 
@@ -93,21 +86,6 @@ public final class EventStreamRenderer implements ShapeRenderer {
         return member.getTarget().getName();
     }
 
-    /**
-     * True if an exception member targets a modeled exception (members beyond the trivial
-     * message/code). C2J types modeled exceptions as their concrete shape (with a model include)
-     * and non-modeled ones as the generic {@code <namespace>Error} wrapper.
-     */
-    private boolean isModeledException(MemberShape exc) {
-        StructureShape target = ctx.model().expectShape(exc.getTarget(), StructureShape.class);
-        return ShapeClassifier.isModeledException(target, ctx.protocolTraits().protocol());
-    }
-
-    /** The C++ type for an exception member: concrete shape name if modeled, else {@code errorType}. */
-    private String exceptionType(MemberShape exc, String errorType) {
-        return isModeledException(exc) ? exc.getTarget().getName() : errorType;
-    }
-
     /** The wire member key, e.g. "alpha". */
     private String wireKey(MemberShape member) {
         return member.getMemberName();
@@ -133,12 +111,14 @@ public final class EventStreamRenderer implements ShapeRenderer {
             writer.write("#include <aws/$1L/$2L_EXPORTS.h>", ctx.smithyServiceName(), ctx.namespace());
             writer.write("#include <aws/$1L/model/$2LInitialResponse.h>", ctx.smithyServiceName(), opName);
             for (MemberShape event : events) {
-                writer.write("#include <aws/$1L/model/$2L.h>", ctx.smithyServiceName(), eventShapeName(event));
+                boolean emptyEvent = ctx.model().expectShape(event.getTarget()).members().isEmpty();
+                if (!emptyEvent) {
+                    writer.write("#include <aws/$1L/model/$2L.h>", ctx.smithyServiceName(), eventShapeName(event));
+                }
             }
             writer.write("");
             ModelFile.modelNamespace(writer, ctx.namespace(), () -> {
 
-            // EventType enum
             StringBuilder enumBody = new StringBuilder("enum class ")
                 .append(opName).append("EventType { INITIAL_RESPONSE, ");
             for (MemberShape event : events) {
@@ -149,12 +129,16 @@ public final class EventStreamRenderer implements ShapeRenderer {
             writer.write("");
 
             writer.openBlock("class $1L : public Aws::Utils::Event::EventStreamHandler {", "};", className, () -> {
-                // Callback typedefs
                 writer.write("typedef std::function<void(const $1LInitialResponse&)> $1LInitialResponseCallback;", opName);
                 writer.write("typedef std::function<void(const $1LInitialResponse&, const Utils::Event::InitialResponseType)> $1LInitialResponseCallbackEx;", opName);
                 for (MemberShape event : events) {
                     String ev = eventShapeName(event);
-                    writer.write("typedef std::function<void(const $1L&)> $1LCallback;", ev);
+                    boolean emptyEvent = ctx.model().expectShape(event.getTarget()).members().isEmpty();
+                    if (emptyEvent) {
+                        writer.write("typedef std::function<void()> $1LCallback;", ev);
+                    } else {
+                        writer.write("typedef std::function<void(const $1L&)> $1LCallback;", ev);
+                    }
                 }
                 writer.write("typedef std::function<void(const Aws::Client::AWSError<$1LErrors>& error)> ErrorCallback;", ctx.namespace());
                 writer.write("");
@@ -246,16 +230,22 @@ public final class EventStreamRenderer implements ShapeRenderer {
             writer.write("static const char $1L[] = \"$2LHandler\";", tag, opName);
             writer.write("");
 
-            // Constructor
             writer.openBlock("$1L::$1L() : EventStreamHandler() {", "}", className, () -> {
                 writer.openBlock("m_onInitialResponse = [&](const $1LInitialResponse&, const Utils::Event::InitialResponseType eventType) {", "};", opName, () -> {
                     writer.write("AWS_LOGSTREAM_TRACE($1L, \"$2L initial response received from \" << (eventType == Utils::Event::InitialResponseType::ON_EVENT ? \"event\" : \"http headers\"));", tag, opName);
                 });
                 for (MemberShape event : events) {
                     String ev = eventShapeName(event);
-                    writer.openBlock("m_on$1L = [&](const $1L&) {", "};", ev, () -> {
-                        writer.write("AWS_LOGSTREAM_TRACE($1L, \"$2L received.\");", tag, ev);
-                    });
+                    boolean emptyEvent = ctx.model().expectShape(event.getTarget()).members().isEmpty();
+                    if (emptyEvent) {
+                        writer.openBlock("m_on$1L = [&]() {", "};", ev, () -> {
+                            writer.write("AWS_LOGSTREAM_TRACE($1L, \"$2L received.\");", tag, ev);
+                        });
+                    } else {
+                        writer.openBlock("m_on$1L = [&](const $1L&) {", "};", ev, () -> {
+                            writer.write("AWS_LOGSTREAM_TRACE($1L, \"$2L received.\");", tag, ev);
+                        });
+                    }
                 }
                 writer.openBlock("m_onError = [&](const AWSError<$1LErrors>& error) {", "};", ctx.namespace(), () -> {
                     writer.write("AWS_LOGSTREAM_TRACE($1L, \"$2L Errors received, \" << error);", tag, ctx.namespace());
@@ -263,7 +253,6 @@ public final class EventStreamRenderer implements ShapeRenderer {
             });
             writer.write("");
 
-            // OnEvent
             writer.openBlock("void $1L::OnEvent() {", "}", className, () -> {
                 writer.openBlock("if (!*this) {", "}", () -> {
                     writer.write("AWSError<CoreErrors> error = EventStreamErrorsMapper::GetAwsErrorForEventStreamError(GetInternalError());");
@@ -293,7 +282,6 @@ public final class EventStreamRenderer implements ShapeRenderer {
             });
             writer.write("");
 
-            // HandleEventInMessage
             writer.openBlock("void $1L::HandleEventInMessage() {", "}", className, () -> {
                 writer.write("const auto& headers = GetEventHeaders();");
                 writer.write("auto eventTypeHeaderIter = headers.find(EVENT_TYPE_HEADER);");
@@ -303,14 +291,19 @@ public final class EventStreamRenderer implements ShapeRenderer {
                 });
                 writer.openBlock("switch ($1LEventMapper::Get$1LEventTypeForName(eventTypeHeaderIter->second.GetEventHeaderValueAsString())) {", "}", opName, () -> {
                     writer.openBlock("case $1LEventType::INITIAL_RESPONSE: {", "}", opName, () -> {
-                        writer.write("$1LInitialResponse event(GetEventHeadersAsHttpHeaders());", opName);
+                        ctx.protocolTraits().writeInitialResponseHandlerConstruction(writer, opName + "InitialResponse", tag);
                         writer.write("m_onInitialResponse(event, Utils::Event::InitialResponseType::ON_EVENT);");
                         writer.write("break;");
                     });
                     for (MemberShape event : events) {
                         writer.openBlock("case $1LEventType::$2L: {", "}", opName, enumConstant(event), () -> {
-                            ctx.protocolTraits().writeEventPayloadDecode(writer, eventShapeName(event),
-                                "m_on" + eventShapeName(event));
+                            boolean emptyEvent = ctx.model().expectShape(event.getTarget()).members().isEmpty();
+                            String callbackMember = "m_on" + eventShapeName(event);
+                            if (emptyEvent) {
+                                writer.write("$L();", callbackMember);
+                            } else {
+                                ctx.protocolTraits().writeEventPayloadDecode(writer, eventShapeName(event), callbackMember);
+                            }
                             writer.write("break;");
                         });
                     }
@@ -321,7 +314,6 @@ public final class EventStreamRenderer implements ShapeRenderer {
             });
             writer.write("");
 
-            // HandleErrorInMessage
             writer.openBlock("void $1L::HandleErrorInMessage() {", "}", className, () -> {
                 writer.write("const auto& headers = GetEventHeaders();");
                 writer.write("Aws::String errorCode;");
@@ -370,7 +362,6 @@ public final class EventStreamRenderer implements ShapeRenderer {
             });
             writer.write("");
 
-            // EventMapper
             writer.writeNamespaceOpen(opName + "EventMapper");
             writer.write("static const int INITIAL_RESPONSE_HASH = Aws::Utils::HashingUtils::HashString(\"initial-response\");");
             for (MemberShape event : events) {
@@ -408,12 +399,11 @@ public final class EventStreamRenderer implements ShapeRenderer {
         });
     }
 
-    // ---- Initial response / event stream union ------------------------------
+    // ---- Initial response ---------------------------------------------------
 
     /**
-     * Builds a synthetic {@code <op>InitialResponse} structure from the result's non-event-stream
-     * members, mirroring C2J's {@code addEventStreamInitialResponse} (CppClientGenerator). The
-     * {@code @streaming} union member (the event stream) is excluded.
+     * Builds a synthetic {@code <op>InitialResponse} from the result's non-event-stream members
+     * (the {@code @streaming} union member excluded), mirroring C2J {@code addEventStreamInitialResponse}.
      */
     private StructureShape initialResponseShape(String opName, StructureShape resultShape) {
         StructureShape.Builder builder = StructureShape.builder()
@@ -454,9 +444,10 @@ public final class EventStreamRenderer implements ShapeRenderer {
             writer.write("");
             writer.openBlock("class $L {", "};", className, () -> {
                 writer.write("public:");
-                // The header-collection ctor sits before the serialize method (mainline ordering).
+                // Any protocol-specific extra ctor (e.g. the JSON/CBOR header-collection ctor) sits
+                // before the serialize method (mainline ordering); REST-XML adds none.
                 ctx.protocolTraits().writeSerdeMethodDecls(writer, ctx.exportMacro(), className,
-                    () -> writer.write("$1L $2L(const Http::HeaderValueCollection& responseHeaders);", ctx.exportMacro(), className));
+                    () -> ctx.protocolTraits().writeInitialResponseCtorDecl(writer, ctx.exportMacro(), className));
                 // Accessors + private section for the result's non-streaming members. A memberless
                 // InitialResponse ends right after its serde decls (no private:), matching C2J.
                 if (hasMembers) {
@@ -491,116 +482,11 @@ public final class EventStreamRenderer implements ShapeRenderer {
             writer.write("");
             ctx.protocolTraits().writeSerdeMethodImpls(writer, className);
             writer.write("");
-            // Delegate to the default ctor so all members are value-initialized before the
-            // header-derived ones are set (matches C2J).
-            writer.openBlock("$1L::$1L(const Http::HeaderValueCollection& responseHeaders) : $1L() {", "}",
-                className, () -> writer.write("AWS_UNREFERENCED_PARAM(responseHeaders);"));
+            // Any protocol-specific extra ctor impl (JSON/CBOR header-collection ctor); REST-XML adds none.
+            ctx.protocolTraits().writeInitialResponseCtorImpl(writer, className);
             writer.write("");
             });
         });
     }
 
-    private void renderEventStreamUnion(CppWriterDelegator writerDelegator, String opName,
-                                        UnionShape union, List<MemberShape> events,
-                                        List<MemberShape> exceptions) {
-        String className = union.getId().getName();
-        String errorType = ctx.namespace() + "Error";
-
-        String headerFile = "include/aws/" + ctx.smithyServiceName() + "/model/" + className + ".h";
-        writerDelegator.useFileWriter(headerFile, writer -> {
-            writer.write("#pragma once");
-            writer.write("#include <aws/$1L/$2L_EXPORTS.h>", ctx.smithyServiceName(), ctx.namespace());
-            // C2J omits the service Errors include: its header-include computation skips non-modeled
-            // exception members (CppViewHelper: `if (next.isException() && !next.isModeledException())
-            // continue;`), which are the generic <namespace>Error wrapper and resolve transitively.
-            // Concrete event shapes AND modeled exceptions get their own model include.
-            for (MemberShape event : events) {
-                writer.write("#include <aws/$1L/model/$2L.h>", ctx.smithyServiceName(), eventShapeName(event));
-            }
-            for (MemberShape exc : exceptions) {
-                if (isModeledException(exc)) {
-                    writer.write("#include <aws/$1L/model/$2L.h>", ctx.smithyServiceName(), exc.getTarget().getName());
-                }
-            }
-            writer.write("");
-            writer.write("#include <utility>");
-            writer.write("");
-            ModelFile.modelNamespace(writer, ctx.namespace(),
-                () -> ctx.protocolTraits().writeShapeForwardDeclarations(writer),
-                () -> {
-            writer.write("");
-            MemberRenderer.renderClassDocComment(writer, union, ctx.smithyServiceName(), ctx.service().getVersion());
-            writer.openBlock("class $L {", "};", className, () -> {
-                writer.write("public:");
-                ctx.protocolTraits().writeSerdeMethodDecls(writer, ctx.exportMacro(), className, null);
-                writer.write("");
-                // Event member accessors, typed as their concrete shape.
-                for (MemberShape event : events) {
-                    String cppType = CppTypeMapper.getCppType(ctx.model().expectShape(event.getTarget()), ctx.model());
-                    renderShapeAccessor(writer, className, cppType, event.getMemberName(), event);
-                }
-                // Exception member accessors: modeled -> concrete type; non-modeled -> <namespace>Error.
-                for (MemberShape exc : exceptions) {
-                    renderShapeAccessor(writer, className, exceptionType(exc, errorType), exc.getMemberName(), exc);
-                }
-                writer.dedent();
-                writer.write("private:");
-                writer.indent();
-                // Data members
-                for (MemberShape event : events) {
-                    String cppType = CppTypeMapper.getCppType(ctx.model().expectShape(event.getTarget()), ctx.model());
-                    writer.write("$1L $2L;", cppType, CppNames.fieldName(event.getMemberName()));
-                }
-                for (MemberShape exc : exceptions) {
-                    writer.write("$1L $2L;", exceptionType(exc, errorType), CppNames.fieldName(exc.getMemberName()));
-                }
-                // HasBeenSet flags
-                for (MemberShape event : events) {
-                    writer.write("bool $1LHasBeenSet = false;", CppNames.fieldName(event.getMemberName()));
-                }
-                for (MemberShape exc : exceptions) {
-                    writer.write("bool $1LHasBeenSet = false;", CppNames.fieldName(exc.getMemberName()));
-                }
-            });
-            writer.write("");
-                });
-        });
-
-        // C2J generates the event stream union as a header-only type: the serde methods are
-        // declared but never defined or referenced (the handler dispatches on the concrete
-        // event shape, not the union). No .cpp is emitted, to match mainline parity.
-    }
-
-    /**
-     * Renders a Get/HasBeenSet/Set/With accessor block for a union member, typed by the
-     * given C++ type string. Used for both event members (concrete shape type) and
-     * exception members (the service error wrapper). Mirrors the templated setter style
-     * used by MemberRenderer.
-     */
-    private void renderShapeAccessor(CppWriter writer, String className, String cppType, String memberName,
-                                     MemberShape member) {
-        String getter = CppNames.capitalize(memberName);
-        String field = CppNames.fieldName(memberName);
-        String templateParam = getter + "T";
-        writer.write("///@{");
-        if (member.getTrait(DocumentationTrait.class).isPresent()) {
-            MemberRenderer.writeDocComment(writer,
-                MemberRenderer.collapseWhitespace(member.getTrait(DocumentationTrait.class).get().getValue()));
-        } else {
-            writer.write("");
-        }
-        writer.write("inline const $1L& Get$2L() const { return $3L; }", cppType, getter, field);
-        writer.write("inline bool $1LHasBeenSet() const { return $2LHasBeenSet; }", getter, field);
-        writer.write("template <typename $1L = $2L>", templateParam, cppType);
-        writer.openBlock("void Set$1L($2L&& value) {", "}", getter, templateParam, () -> {
-            writer.write("$1LHasBeenSet = true;", field);
-            writer.write("$1L = std::forward<$2L>(value);", field, templateParam);
-        });
-        writer.write("template <typename $1L = $2L>", templateParam, cppType);
-        writer.openBlock("$1L& With$2L($3L&& value) {", "}", className, getter, templateParam, () -> {
-            writer.write("Set$1L(std::forward<$2L>(value));", getter, templateParam);
-            writer.write("return *this;");
-        });
-        writer.write("///@}");
-    }
 }

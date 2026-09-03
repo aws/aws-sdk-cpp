@@ -4,6 +4,7 @@
  */
 package com.amazonaws.util.awsclientsmithygenerator.generators.model;
 
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.CustomRenderedTrait;
 import org.junit.jupiter.api.Test;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.*;
@@ -421,6 +422,287 @@ class ShapeClassifierTest {
             ProtocolResolver.resolve(service, model)).requests();
         assertTrue(requests.stream().anyMatch(r -> r.operation().getId().getName().equals("Ping")),
             "Expected a RequestInfo for the no-input operation Ping");
+    }
+
+    /** Structure that is both an operation output and a list-element member (dual-role, like Lambda FunctionConfiguration); must end up in both results and subObjects. */
+    private Model buildDualRoleModel() {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        // Thing is the output of GetThing AND the element of ThingList.
+        StructureShape thing = StructureShape.builder()
+            .id("com.example#Thing")
+            .addMember("name", str.getId())
+            .build();
+        ListShape thingList = ListShape.builder()
+            .id("com.example#ThingList")
+            .member(thing.getId())
+            .build();
+        StructureShape getThingRequest = StructureShape.builder()
+            .id("com.example#GetThingRequest")
+            .addMember("id", str.getId())
+            .build();
+        StructureShape listThingsRequest = StructureShape.builder()
+            .id("com.example#ListThingsRequest")
+            .build();
+        StructureShape listThingsResponse = StructureShape.builder()
+            .id("com.example#ListThingsResponse")
+            .addMember("things", thingList.getId())
+            .build();
+        OperationShape getThing = OperationShape.builder()
+            .id("com.example#GetThing")
+            .input(getThingRequest.getId())
+            .output(thing.getId())
+            .build();
+        OperationShape listThings = OperationShape.builder()
+            .id("com.example#ListThings")
+            .input(listThingsRequest.getId())
+            .output(listThingsResponse.getId())
+            .build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#TestService")
+            .version("2023-01-01")
+            .addOperation(getThing.getId())
+            .addOperation(listThings.getId())
+            .addTrait(ServiceTrait.builder().sdkId("test").arnNamespace("test").cloudFormationName("Test").cloudTrailEventSource("test").build())
+            .build();
+        return Model.builder()
+            .addShapes(str, thing, thingList, getThingRequest, listThingsRequest, listThingsResponse, getThing, listThings, service)
+            .build();
+    }
+
+    @Test
+    void dualRoleOutputAndMember_appearsInBothResultsAndSubObjects() {
+        Model model = buildDualRoleModel();
+        ServiceShape service = model.expectShape(ShapeId.from("com.example#TestService"), ServiceShape.class);
+        var classified = ShapeClassifier.classify(model, service, ProtocolResolver.resolve(service, model));
+        assertTrue(classified.results().stream()
+                .anyMatch(r -> r.shape().getId().getName().equals("Thing")),
+            "Dual-role Thing must be classified as a result (GetThing output): " + classified.results());
+        assertTrue(classified.subObjects().stream()
+                .anyMatch(s -> s.getId().getName().equals("Thing")),
+            "Dual-role Thing must also be classified as a sub-object (referenced via ThingList): "
+                + classified.subObjects());
+    }
+
+    @Test
+    void outputOnly_appearsInResultsButNotSubObjects() {
+        // GetItemResponse is ONLY an operation output; it is not referenced as a member anywhere.
+        Model model = buildSimpleModel();
+        ServiceShape service = model.expectShape(ShapeId.from("com.example#TestService"), ServiceShape.class);
+        var classified = ShapeClassifier.classify(model, service, ProtocolResolver.resolve(service, model));
+        assertTrue(classified.results().stream()
+                .anyMatch(r -> r.shape().getId().getName().equals("GetItemResponse")),
+            "Output-only GetItemResponse must be in results");
+        assertTrue(classified.subObjects().stream()
+                .noneMatch(s -> s.getId().getName().equals("GetItemResponse")),
+            "Output-only GetItemResponse must NOT be over-emitted as a sub-object: " + classified.subObjects());
+    }
+
+    /** @streaming union with an @eventPayload-blob event and a plain-string event, bound to an operation output so both are reachable. */
+    private Model eventStreamBlobPayloadModel() {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        BlobShape blob = BlobShape.builder().id("com.example#Blob").build();
+        // Blob-payload event: single @eventPayload blob member.
+        StructureShape updateEvent = StructureShape.builder()
+            .id("com.example#UpdateEvent")
+            .addMember(MemberShape.builder()
+                .id("com.example#UpdateEvent$Payload").target(blob.getId())
+                .addTrait(new EventPayloadTrait()).build())
+            .build();
+        // Non-blob event: plain string member -> must stay a sub-object.
+        StructureShape completeEvent = StructureShape.builder()
+            .id("com.example#CompleteEvent")
+            .addMember("Details", str.getId())
+            .build();
+        UnionShape eventStream = UnionShape.builder()
+            .id("com.example#ResponseStreamEvent")
+            .addTrait(new StreamingTrait())
+            .addMember("PayloadChunk", updateEvent.getId())
+            .addMember("Complete", completeEvent.getId())
+            .build();
+        StructureShape request = StructureShape.builder()
+            .id("com.example#InvokeRequest").addMember("name", str.getId()).build();
+        StructureShape response = StructureShape.builder()
+            .id("com.example#InvokeResponse").addMember("events", eventStream.getId()).build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#Invoke").input(request.getId()).output(response.getId()).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#TestService").version("2023-01-01").addOperation(op.getId())
+            .addTrait(ServiceTrait.builder().sdkId("test").arnNamespace("test").cloudFormationName("Test").cloudTrailEventSource("test").build())
+            .build();
+        return Model.builder()
+            .addShapes(str, blob, updateEvent, completeEvent, eventStream, request, response, op, service)
+            .build();
+    }
+
+    @Test
+    void blobEventPayload_isClassifiedAsBlobPayloadEventNotSubObject() {
+        Model model = eventStreamBlobPayloadModel();
+        ServiceShape service = model.expectShape(ShapeId.from("com.example#TestService"), ServiceShape.class);
+        var classified = ShapeClassifier.classify(model, service, ProtocolResolver.resolve(service, model));
+        assertTrue(classified.blobPayloadEvents().stream()
+                .anyMatch(s -> s.getId().getName().equals("UpdateEvent")),
+            "Blob @eventPayload event must be in blobPayloadEvents: " + classified.blobPayloadEvents());
+        assertTrue(classified.subObjects().stream()
+                .noneMatch(s -> s.getId().getName().equals("UpdateEvent")),
+            "Blob @eventPayload event must NOT be a sub-object: " + classified.subObjects());
+    }
+
+    @Test
+    void nonBlobEvent_staysSubObject() {
+        Model model = eventStreamBlobPayloadModel();
+        ServiceShape service = model.expectShape(ShapeId.from("com.example#TestService"), ServiceShape.class);
+        var classified = ShapeClassifier.classify(model, service, ProtocolResolver.resolve(service, model));
+        assertTrue(classified.subObjects().stream()
+                .anyMatch(s -> s.getId().getName().equals("CompleteEvent")),
+            "Non-blob event struct must stay a sub-object: " + classified.subObjects());
+        assertTrue(classified.blobPayloadEvents().stream()
+                .noneMatch(s -> s.getId().getName().equals("CompleteEvent")),
+            "Non-blob event struct must NOT be a blob-payload event: " + classified.blobPayloadEvents());
+    }
+
+    /** Operation input references two structs, one marked {@link CustomRenderedTrait} and one plain; the marker rule drops the marked one from subObjects for any service. */
+    private Model modelWithCustomRenderedShape() {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        StructureShape marked = StructureShape.builder()
+            .id("com.example#MarkedThing")
+            .addMember("name", str.getId())
+            .addTrait(new CustomRenderedTrait())
+            .build();
+        StructureShape plain = StructureShape.builder()
+            .id("com.example#PlainThing")
+            .addMember("name", str.getId())
+            .build();
+        StructureShape request = StructureShape.builder()
+            .id("com.example#DoRequest")
+            .addMember("marked", marked.getId())
+            .addMember("plain", plain.getId())
+            .build();
+        StructureShape response = StructureShape.builder().id("com.example#DoResponse").build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#Do").input(request.getId()).output(response.getId()).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#TestService").version("2023-01-01").addOperation(op.getId())
+            .addTrait(ServiceTrait.builder().sdkId("test").arnNamespace("test")
+                .cloudFormationName("Test").cloudTrailEventSource("test").build())
+            .build();
+        return Model.builder().addShapes(str, marked, plain, request, response, op, service).build();
+    }
+
+    @Test
+    void customRenderedShape_isExcludedFromSubObjects() {
+        Model model = modelWithCustomRenderedShape();
+        ServiceShape service = model.expectShape(ShapeId.from("com.example#TestService"), ServiceShape.class);
+        var classified = ShapeClassifier.classify(model, service, ProtocolResolver.resolve(service, model));
+        assertTrue(classified.subObjects().stream()
+                .noneMatch(s -> s.getId().getName().equals("MarkedThing")),
+            "@customRendered shape must be dropped from subObjects: " + classified.subObjects());
+        assertTrue(classified.subObjects().stream()
+                .anyMatch(s -> s.getId().getName().equals("PlainThing")),
+            "unmarked shape must remain a sub-object: " + classified.subObjects());
+    }
+
+    /** @streaming union with an empty-member event (like S3 ContinuationEvent) and a string data event, bound to an operation output so both are reachable. */
+    private Model eventStreamEmptyAndDataModel() {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        StructureShape emptyEvt = StructureShape.builder()
+            .id("com.example#EmptyEvt")
+            .build();
+        StructureShape dataEvt = StructureShape.builder()
+            .id("com.example#DataEvt")
+            .addMember("records", str.getId())
+            .build();
+        UnionShape eventStream = UnionShape.builder()
+            .id("com.example#SelectEventStream")
+            .addTrait(new StreamingTrait())
+            .addMember("Empty", emptyEvt.getId())
+            .addMember("Data", dataEvt.getId())
+            .build();
+        StructureShape request = StructureShape.builder()
+            .id("com.example#SelectRequest").addMember("name", str.getId()).build();
+        StructureShape response = StructureShape.builder()
+            .id("com.example#SelectResponse").addMember("events", eventStream.getId()).build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#Select").input(request.getId()).output(response.getId()).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#TestService").version("2023-01-01").addOperation(op.getId())
+            .addTrait(ServiceTrait.builder().sdkId("test").arnNamespace("test").cloudFormationName("Test").cloudTrailEventSource("test").build())
+            .build();
+        return Model.builder()
+            .addShapes(str, emptyEvt, dataEvt, eventStream, request, response, op, service)
+            .build();
+    }
+
+    @Test
+    void classifyDropsEmptyMemberEventStructFromSubObjects() {
+        Model model = eventStreamEmptyAndDataModel();
+        ServiceShape service = model.expectShape(ShapeId.from("com.example#TestService"), ServiceShape.class);
+        var classified = ShapeClassifier.classify(model, service, ProtocolResolver.resolve(service, model));
+        assertFalse(classified.subObjects().stream()
+                .anyMatch(s -> s.getId().getName().equals("EmptyEvt")),
+            "empty event struct dropped from subObjects: " + classified.subObjects());
+        assertTrue(classified.subObjects().stream()
+                .anyMatch(s -> s.getId().getName().equals("DataEvt")),
+            "data event struct still emitted as sub-object: " + classified.subObjects());
+    }
+
+    @Test
+    void classifyDropsIncomingEventStreamUnionFromSubObjects() {
+        // The @streaming union bound to an output (incoming event stream) is realized via the
+        // generated handler; nothing references it as a data type, so no standalone sub-object header.
+        Model model = eventStreamEmptyAndDataModel();
+        ServiceShape service = model.expectShape(ShapeId.from("com.example#TestService"), ServiceShape.class);
+        var classified = ShapeClassifier.classify(model, service, ProtocolResolver.resolve(service, model));
+        assertFalse(classified.subObjects().stream()
+                .anyMatch(s -> s.getId().getName().equals("SelectEventStream")),
+            "incoming event-stream union dropped from subObjects: " + classified.subObjects());
+    }
+
+    @Test
+    void deprecatedOperation_inputAndOutputExcludedFromRequestsAndResults() {
+        // Legacy C2J drops @deprecated operations entirely; the classifier must keep a @deprecated
+        // op's input/output out of requests/results while a live op's are present.
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        StructureShape deprecatedRequest = StructureShape.builder()
+            .id("com.example#DeprecatedRequest").addMember("id", str.getId()).build();
+        StructureShape deprecatedResponse = StructureShape.builder()
+            .id("com.example#DeprecatedResponse").addMember("r", str.getId()).build();
+        StructureShape liveRequest = StructureShape.builder()
+            .id("com.example#LiveRequest").addMember("id", str.getId()).build();
+        StructureShape liveResponse = StructureShape.builder()
+            .id("com.example#LiveResponse").addMember("r", str.getId()).build();
+        OperationShape deprecatedOp = OperationShape.builder()
+            .id("com.example#DeprecatedOp")
+            .input(deprecatedRequest.getId()).output(deprecatedResponse.getId())
+            .addTrait(DeprecatedTrait.builder().build())
+            .build();
+        OperationShape liveOp = OperationShape.builder()
+            .id("com.example#LiveOp")
+            .input(liveRequest.getId()).output(liveResponse.getId())
+            .build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#TestService").version("2023-01-01")
+            .addOperation(deprecatedOp.getId()).addOperation(liveOp.getId())
+            .addTrait(ServiceTrait.builder().sdkId("test").arnNamespace("test")
+                .cloudFormationName("Test").cloudTrailEventSource("test").build())
+            .build();
+        Model model = Model.builder()
+            .addShapes(str, deprecatedRequest, deprecatedResponse, liveRequest, liveResponse,
+                deprecatedOp, liveOp, service)
+            .build();
+        var classified = ShapeClassifier.classify(model, service, ProtocolResolver.resolve(service, model));
+
+        assertTrue(classified.requests().stream()
+                .noneMatch(r -> r.shape().getId().getName().equals("DeprecatedRequest")),
+            "deprecated op input must not be a request: " + classified.requests());
+        assertTrue(classified.results().stream()
+                .noneMatch(r -> r.shape().getId().getName().equals("DeprecatedResponse")),
+            "deprecated op output must not be a result: " + classified.results());
+        assertTrue(classified.requests().stream()
+                .anyMatch(r -> r.shape().getId().getName().equals("LiveRequest")),
+            "live op input must be a request: " + classified.requests());
+        assertTrue(classified.results().stream()
+                .anyMatch(r -> r.shape().getId().getName().equals("LiveResponse")),
+            "live op output must be a result: " + classified.results());
     }
 
     @Test

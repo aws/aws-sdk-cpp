@@ -7,7 +7,9 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model;
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeClassifier.ClassifiedShapes;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.DynamoDbRenderer;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.EnumShapeRenderer;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.EventPayloadRenderer;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.EventStreamRenderer;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.OutgoingEventStreamRenderer;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.RequestRenderer;
@@ -64,11 +66,13 @@ public class ModelGenerator {
     private List<ShapeRenderer> buildRenderers(ClassifiedShapes classified, RenderContext ctx) {
         List<ShapeRenderer> renderers = new ArrayList<>();
         renderers.add(new EnumShapeRenderer(classified.enums(), ctx));
-        renderers.add(new SubObjectRenderer(classified.subObjects(), ctx));
+        renderers.add(new SubObjectRenderer(classified.subObjects(), classified.resultOutputIds(), ctx));
         renderers.add(new RequestRenderer(classified.requests(), ctx));
         renderers.add(new ResultRenderer(classified.results(), ctx));
         renderers.add(new EventStreamRenderer(classified.eventStreamHandlers(), ctx));
         renderers.add(new OutgoingEventStreamRenderer(classified.outgoingEventStreams(), ctx));
+        renderers.add(new EventPayloadRenderer(classified.blobPayloadEvents(), ctx));
+        renderers.add(new DynamoDbRenderer(ctx));
         return renderers;
     }
 }

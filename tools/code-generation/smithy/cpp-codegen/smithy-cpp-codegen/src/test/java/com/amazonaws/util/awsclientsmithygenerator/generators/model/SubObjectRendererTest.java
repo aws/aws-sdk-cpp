@@ -12,6 +12,7 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.Su
 import org.junit.jupiter.api.Test;
 import software.amazon.smithy.build.MockManifest;
 import software.amazon.smithy.model.Model;
+import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.model.shapes.ShapeId;
 import software.amazon.smithy.model.shapes.StringShape;
@@ -19,24 +20,19 @@ import software.amazon.smithy.model.shapes.StructureShape;
 import software.amazon.smithy.model.shapes.UnionShape;
 import software.amazon.smithy.model.traits.DocumentationTrait;
 import software.amazon.smithy.model.traits.StreamingTrait;
+import software.amazon.smithy.model.traits.Trait;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * Verifies that {@link SubObjectRenderer} renders C2J-style union shapes. In C2J a union is a
- * {@code structure} with {@code "union": true} and is emitted by the same ModelClass templates
- * as a plain structure (serde decls + per-member Get/Set/With/HasBeenSet accessors + private
- * data members and flags). Non-streaming unions must produce header + source files; {@code
- * @streaming} unions belong to the event-stream renderers and must be skipped here.
+ * Verifies {@link SubObjectRenderer} renders C2J-style union shapes like plain structures (serde
+ * decls + per-member accessors + private members). Non-streaming unions produce header + source;
+ * {@code @streaming} unions belong to the event-stream renderers and are skipped here.
  */
 class SubObjectRendererTest {
 
-    /**
-     * A model with a plain structure sub-object, a non-streaming union, and a {@code @streaming}
-     * union — mirroring bedrock-runtime (ContentBlock / ToolChoice are data unions;
-     * InvokeModelWithBidirectionalStreamInput is a streaming union).
-     */
+    /** Plain structure sub-object, a non-streaming data union, and a {@code @streaming} union (mirrors bedrock-runtime). */
     private static Model model() {
         StringShape str = StringShape.builder().id("com.example#Str").build();
         StructureShape leaf = StructureShape.builder()
@@ -57,13 +53,11 @@ class SubObjectRendererTest {
             .addTrait(new StreamingTrait())
             .addMember("chunk", leaf.getId())
             .build();
-        // Memberless structure (e.g. bedrock-runtime AnyToolChoice / AutoToolChoice): C2J emits
-        // no private: section when the shape has no members.
+        // Memberless structure (e.g. bedrock-runtime AnyToolChoice): C2J emits no private: section.
         StructureShape empty = StructureShape.builder()
             .id("com.example#AnyToolChoice")
             .build();
-        // Union with a blob member (e.g. bedrock-runtime AudioSource): its source needs
-        // HashingUtils.h for Base64 blob serde.
+        // Union with a blob member (e.g. bedrock-runtime AudioSource): source needs HashingUtils.h for Base64 serde.
         software.amazon.smithy.model.shapes.BlobShape blob =
             software.amazon.smithy.model.shapes.BlobShape.builder().id("com.example#PartBody").build();
         UnionShape blobUnion = UnionShape.builder()
@@ -91,7 +85,7 @@ class SubObjectRendererTest {
             model.expectShape(ShapeId.from("com.example#BidirectionalInput")),
             model.expectShape(ShapeId.from("com.example#AnyToolChoice")),
             model.expectShape(ShapeId.from("com.example#AudioSource")));
-        new SubObjectRenderer(subObjects,
+        new SubObjectRenderer(subObjects, java.util.Collections.emptySet(),
             new RenderContext(model, service, traits,
                 "Example", "AWS_EXAMPLE_API", "example")).render(delegator);
         delegator.flushWriters();
@@ -118,7 +112,6 @@ class SubObjectRendererTest {
         assertTrue(h.contains("AWS_EXAMPLE_API ContentBlock() = default;"), h);
         assertTrue(h.contains("AWS_EXAMPLE_API ContentBlock(Aws::Utils::Json::JsonView jsonValue);"), h);
         assertTrue(h.contains("AWS_EXAMPLE_API Aws::Utils::Json::JsonValue Jsonize() const;"), h);
-        // Per-member accessors for each variant.
         assertTrue(h.contains("GetText") && h.contains("SetText") && h.contains("WithText"), h);
         assertTrue(h.contains("GetLeaf") && h.contains("SetLeaf") && h.contains("WithLeaf"), h);
         assertTrue(h.contains("bool m_textHasBeenSet = false;"), h);
@@ -138,8 +131,7 @@ class SubObjectRendererTest {
 
     @Test
     void blobMemberSource_includesHashingUtils() {
-        // A sub-object with a blob member needs HashingUtils.h in its source (Base64 blob serde),
-        // matching C2J's computeSourceIncludes. The header must NOT carry it (source-only include).
+        // Blob member needs HashingUtils.h in source (Base64 serde, C2J computeSourceIncludes); header must not carry it.
         java.util.Map<String, String> files = renderAll();
         String c = files.get("AudioSource.cpp");
         assertTrue(c.contains("#include <aws/core/utils/HashingUtils.h>"),
@@ -151,9 +143,8 @@ class SubObjectRendererTest {
 
     @Test
     void memberlessShape_omitsPrivateSection() {
-        // C2J emits the private: section only when the shape has members
-        // (ModelClassMembersAndInlines.vm: `#if($shape.members.size() > 0 ...`). A memberless
-        // sub-object ends right after its serde decls — no trailing blank line and no private:.
+        // C2J emits private: only when the shape has members; a memberless sub-object ends right
+        // after its serde decls with no private: section.
         String h = renderAll().get("AnyToolChoice.h");
         assertTrue(h.contains("AWS_EXAMPLE_API Aws::Utils::Json::JsonValue Jsonize() const;"), h);
         assertFalse(h.contains("private:"),
@@ -167,5 +158,77 @@ class SubObjectRendererTest {
             "Streaming union must NOT be rendered by SubObjectRenderer: " + files.keySet());
         assertFalse(files.containsKey("BidirectionalInput.cpp"),
             "Streaming union must NOT be rendered by SubObjectRenderer: " + files.keySet());
+    }
+
+    // --- dual-role (operation output that is also a member) requestId stamp ---
+
+    /** {@code Thing} is both the output of {@code DoThing} and a member of {@code Plain} (dual-role); {@code Plain} is member-only. */
+    private static Model dualRoleModel(Trait protocolTrait) {
+        StringShape str = StringShape.builder().id("com.example#Str").build();
+        StructureShape thing = StructureShape.builder()
+            .id("com.example#Thing").addMember("name", str.getId()).build();
+        // Both Plain and Thing are reachable sub-objects; only Thing is an operation output.
+        StructureShape plain = StructureShape.builder()
+            .id("com.example#Plain")
+            .addMember("label", str.getId())
+            .addMember("thing", thing.getId())
+            .build();
+        StructureShape input = StructureShape.builder()
+            .id("com.example#DoThingInput").addMember("plain", plain.getId()).build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#DoThing").input(input.getId()).output(thing.getId()).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#Example").version("2024-01-01")
+            .addTrait(protocolTrait).addOperation(op.getId()).build();
+        return Model.builder().addShapes(str, thing, plain, input, op, service).build();
+    }
+
+    /** Classifies {@code dualRoleModel} and renders its sub-objects, returning filename -> content. */
+    private static java.util.Map<String, String> renderDualRole(Trait protocolTrait) {
+        Model model = dualRoleModel(protocolTrait);
+        ServiceShape service = model.expectShape(ShapeId.from("com.example#Example"), ServiceShape.class);
+        Protocol protocol = ProtocolResolver.resolve(service, model);
+        ShapeClassifier.ClassifiedShapes classified = ShapeClassifier.classify(model, service, protocol);
+        MockManifest manifest = new MockManifest();
+        CppWriterDelegator delegator = new CppWriterDelegator(manifest);
+        new SubObjectRenderer(classified.subObjects(), classified.resultOutputIds(),
+            new RenderContext(model, service, ProtocolResolver.traitsFor(protocol),
+                "Example", "AWS_EXAMPLE_API", "example")).render(delegator);
+        delegator.flushWriters();
+        java.util.Map<String, String> out = new java.util.TreeMap<>();
+        for (java.nio.file.Path path : manifest.getFiles()) {
+            out.put(path.getFileName().toString(), manifest.getFileString(path).orElseThrow());
+        }
+        return out;
+    }
+
+    @Test
+    void dualRoleOutput_jsonProtocol_stampsRequestId() {
+        String h = renderDualRole(
+            software.amazon.smithy.aws.traits.protocols.RestJson1Trait.builder().build()).get("Thing.h");
+        assertTrue(h.contains("inline const Aws::String& GetRequestId() const { return m_requestId; }"), h);
+        assertTrue(h.contains("inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }"), h);
+        assertTrue(h.contains("Aws::String m_requestId;"), h);
+        assertTrue(h.contains("bool m_requestIdHasBeenSet = false;"), h);
+        // The stamped Aws::String field pulls in AWSString.h.
+        assertTrue(h.contains("#include <aws/core/utils/memory/stl/AWSString.h>"), h);
+    }
+
+    @Test
+    void memberOnlySubObject_jsonProtocol_hasNoRequestId() {
+        String h = renderDualRole(
+            software.amazon.smithy.aws.traits.protocols.RestJson1Trait.builder().build()).get("Plain.h");
+        assertFalse(h.contains("GetRequestId"),
+            "A member-only (non-output) sub-object must not receive the requestId stamp: " + h);
+        assertFalse(h.contains("m_requestId"), h);
+    }
+
+    @Test
+    void dualRoleOutput_queryProtocol_hasNoRequestId() {
+        // Query/EC2 dual-role outputs get ResponseMetadata instead, so no requestId block is stamped.
+        String h = renderDualRole(
+            new software.amazon.smithy.aws.traits.protocols.AwsQueryTrait()).get("Thing.h");
+        assertFalse(h.contains("GetRequestId"),
+            "Query dual-role output must not receive the requestId stamp: " + h);
     }
 }

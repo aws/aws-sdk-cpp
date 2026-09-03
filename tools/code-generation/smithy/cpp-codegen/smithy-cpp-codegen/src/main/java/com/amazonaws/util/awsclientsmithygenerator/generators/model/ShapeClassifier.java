@@ -5,9 +5,9 @@
 package com.amazonaws.util.awsclientsmithygenerator.generators.model;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.CustomRenderedTrait;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.GlobalTransforms;
 import software.amazon.smithy.model.Model;
-import software.amazon.smithy.model.knowledge.TopDownIndex;
 import software.amazon.smithy.model.shapes.EnumShape;
 import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.OperationShape;
@@ -18,6 +18,7 @@ import software.amazon.smithy.model.shapes.StructureShape;
 import software.amazon.smithy.model.shapes.UnionShape;
 import software.amazon.smithy.model.traits.EnumTrait;
 import software.amazon.smithy.model.traits.ErrorTrait;
+import software.amazon.smithy.model.traits.EventPayloadTrait;
 import software.amazon.smithy.model.traits.HttpPayloadTrait;
 import software.amazon.smithy.model.traits.StreamingTrait;
 
@@ -72,6 +73,12 @@ public final class ShapeClassifier {
      * @param enums               EnumShape or StringShape with @enum trait
      * @param eventStreamHandlers operation + request/result shape tuples for event stream handlers
      * @param outgoingEventStreams outgoing event stream shapes (header only)
+     * @param blobPayloadEvents   event structs whose sole payload is a single {@code @eventPayload}
+     *                            blob member; rendered header-only as a blob-carrier event (C2J
+     *                            {@code eventPayloadType == "blob"}), never a JSON sub-object
+     * @param resultOutputIds     shape ids of every operation output; a sub-object in this set is
+     *                            "dual-role" (output also used as a member) and, for JSON-family
+     *                            protocols, receives the C2J {@code requestId} stamp
      */
     public record ClassifiedShapes(
         List<RequestInfo> requests,
@@ -79,7 +86,9 @@ public final class ShapeClassifier {
         List<Shape> subObjects,
         List<Shape> enums,
         List<EventStreamInfo> eventStreamHandlers,
-        List<Shape> outgoingEventStreams
+        List<Shape> outgoingEventStreams,
+        List<Shape> blobPayloadEvents,
+        Set<ShapeId> resultOutputIds
     ) {}
 
     private ShapeClassifier() {}
@@ -94,7 +103,6 @@ public final class ShapeClassifier {
      * @return classified shapes grouped by generation bucket
      */
     public static ClassifiedShapes classify(Model model, ServiceShape service, Protocol protocol) {
-        TopDownIndex index = TopDownIndex.of(model);
         Set<ShapeId> reachable = GlobalTransforms.computeReachableShapes(model, service);
 
         Set<ShapeId> inputShapeIds = new HashSet<>();
@@ -109,12 +117,13 @@ public final class ShapeClassifier {
         List<Shape> enums = new ArrayList<>();
         List<EventStreamInfo> eventStreamHandlers = new ArrayList<>();
         List<Shape> outgoingEventStreams = new ArrayList<>();
+        List<Shape> blobPayloadEvents = new ArrayList<>();
 
-        // Collect operation inputs/outputs and identify event stream handlers
-        for (OperationShape op : index.getContainedOperations(service)) {
-            // Use getInputShape() (not getInput()) so no-input operations, whose input
-            // target is smithy.api#Unit, still produce a RequestInfo. C2J emits a Request
-            // class for every operation; the generated client method references it.
+        // Collect operation inputs/outputs and identify event stream handlers. Deprecated operations
+        // are excluded (matching legacy C2J), so their orphaned request/result structs never emit.
+        for (OperationShape op : GlobalTransforms.nonDeprecatedOperations(model, service)) {
+            // Use getInputShape() (not getInput()) so no-input operations (input == smithy.api#Unit)
+            // still produce a RequestInfo. C2J emits a Request class for every operation.
             ShapeId inputId = op.getInputShape();
             inputShapeIds.add(inputId);
             model.getShape(inputId).flatMap(Shape::asStructureShape).ifPresent(s -> {
@@ -151,37 +160,75 @@ public final class ShapeClassifier {
             });
         }
 
+        // Shape ids referenced as a member by any reachable shape (includes list/map element targets).
+        Set<ShapeId> memberTargetIds = reachable.stream()
+            .flatMap(id -> model.expectShape(id).members().stream())
+            .map(MemberShape::getTarget)
+            .collect(Collectors.toSet());
+
+        // Structs that are members of a reachable @streaming union — i.e. events. A blob-payload
+        // event is recognised only among these, so a plain data struct carrying an @eventPayload
+        // blob is never mis-claimed.
+        Set<ShapeId> eventStructIds = reachable.stream()
+            .map(model::expectShape)
+            .filter(shape -> shape.isUnionShape() && shape.hasTrait(StreamingTrait.class))
+            .flatMap(shape -> shape.members().stream())
+            .map(MemberShape::getTarget)
+            .collect(Collectors.toSet());
+
+        // Incoming event-stream union shape ids: the @streaming union member of every event-stream
+        // handler output. Realized via the handler and never referenced as a data type, so their
+        // standalone <Union>.h is dead public API we omit.
+        Set<ShapeId> incomingEventStreamUnionIds = new HashSet<>();
+        for (EventStreamInfo info : eventStreamHandlers) {
+            streamingUnionMember(info.resultShape(), model)
+                .ifPresent(u -> incomingEventStreamUnionIds.add(u.getId()));
+        }
+
         // Walk all reachable shapes and classify remaining ones
         for (ShapeId id : reachable) {
             Shape shape = model.expectShape(id);
-            if (inputShapeIds.contains(id) || outputShapeIds.contains(id)) {
-                // Already classified as request/result above
+            if ((inputShapeIds.contains(id) || outputShapeIds.contains(id)) && !memberTargetIds.contains(id)) {
+                // classified as request/result and not referenced as a member — nothing more to emit
             } else if (shape.isEnumShape() || (shape.isStringShape() && shape.hasTrait(EnumTrait.class))) {
                 enums.add(shape);
             } else if (outgoingEventStreamIds.contains(id)) {
                 // Already collected as an outgoing event stream; do not also render as a data union.
+            } else if (isBlobPayloadEvent(shape, model, eventStructIds)) {
+                // A @streaming-union event whose payload is a single @eventPayload blob member is a
+                // header-only blob-carrier event (C2J eventPayloadType == "blob"), routed here
+                // before the generic structure branch.
+                blobPayloadEvents.add(shape);
             } else if (shape.hasTrait(ErrorTrait.class)) {
                 if (isModeledException(shape.asStructureShape().get(), protocol)) {
                     subObjects.add(shape);
                 }
             } else if (shape.isStructureShape() || shape.isUnionShape()) {
-                subObjects.add(shape);
+                // Skip:
+                //  - @customRendered shapes (emitted by a dedicated renderer, e.g. DynamoDbRenderer
+                //    for AttributeValue) so both do not write into the same model file.
+                //  - empty-member event structs — no other references, so their .h/.cpp is dead
+                //    public API.
+                boolean customRendered = shape.hasTrait(CustomRenderedTrait.class);
+                boolean emptyEventStruct = eventStructIds.contains(id)
+                    && shape.isStructureShape()
+                    && shape.members().isEmpty();
+                boolean incomingUnion = incomingEventStreamUnionIds.contains(id);
+                if (!customRendered && !emptyEventStruct && !incomingUnion) {
+                    subObjects.add(shape);
+                }
             }
         }
 
         return new ClassifiedShapes(requests, results, subObjects, enums,
-            eventStreamHandlers, outgoingEventStreams);
+            eventStreamHandlers, outgoingEventStreams, blobPayloadEvents, outputShapeIds);
     }
 
     /**
-     * Determines if an exception shape has members beyond the trivial ones.
-     *
-     * <p>For JSON/CBOR protocols, trivial members are: Message, message.
-     * For XML protocols, trivial members are: Message, message, Code, code.
-     * If the exception has any member not in the trivial set, it is "modeled"
-     * and should generate as a sub-object. Also used by {@code EventStreamRenderer} to decide
-     * whether an event-stream union's exception member is typed as its concrete shape (modeled)
-     * or the generic {@code <namespace>Error} wrapper (non-modeled).
+     * True if an exception shape has members beyond the trivial ones (Message/message for
+     * JSON/CBOR; plus Code/code for XML), making it "modeled" and generated as a sub-object.
+     * Also used by {@code EventStreamRenderer} to type a union's exception member as its concrete
+     * shape (modeled) or the generic {@code <namespace>Error} wrapper (non-modeled).
      */
     public static boolean isModeledException(StructureShape shape, Protocol protocol) {
         Set<String> members = shape.getAllMembers().keySet();
@@ -210,6 +257,31 @@ public final class ShapeClassifier {
             }
         }
         return false;
+    }
+
+    /**
+     * True if {@code shape} is a blob-payload event: a member of a reachable {@code @streaming}
+     * union carrying an {@code @eventPayload} blob member. Mirrors C2J's {@code eventPayloadType ==
+     * "blob"} case; non-blob eventPayload events remain sub-objects.
+     */
+    private static boolean isBlobPayloadEvent(Shape shape, Model model, Set<ShapeId> eventStructIds) {
+        if (!shape.isStructureShape() || !eventStructIds.contains(shape.getId())) {
+            return false;
+        }
+        return blobPayloadMemberName(shape.asStructureShape().get(), model).isPresent();
+    }
+
+    /**
+     * Returns the member name of the single {@code @eventPayload} blob member of {@code shape}, or
+     * empty if the shape has no such member. Used by both the classifier predicate and the
+     * blob-payload event renderer so they agree on which member becomes the blob payload.
+     */
+    public static Optional<String> blobPayloadMemberName(StructureShape shape, Model model) {
+        return shape.getAllMembers().values().stream()
+            .filter(member -> member.hasTrait(EventPayloadTrait.class)
+                && model.expectShape(member.getTarget()).isBlobShape())
+            .map(MemberShape::getMemberName)
+            .findFirst();
     }
 
     /**

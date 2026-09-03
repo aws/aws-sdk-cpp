@@ -23,14 +23,11 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Renders outgoing (request-side / bidirectional) event streams: a {@code @streaming} union
- * bound to an operation input. C2J emits these header-only as an
- * {@code Aws::Utils::Event::EventEncoderStream} subclass with one {@code Write<Event>(...)}
- * method per union member (EventStreamHeader.vm), rather than as a tagged-union data type.
- *
- * <p>Only the structure/list payload serialization is protocol-specific; that arm is delegated
- * to {@link ProtocolTraits#writeStructureEventPayload}. Blob and string payloads write the same
- * way for every protocol.
+ * Renders outgoing (request-side / bidirectional) event streams: a {@code @streaming} union bound
+ * to an operation input. C2J emits these header-only (EventStreamHeader.vm) as an
+ * {@code EventEncoderStream} subclass with one {@code Write<Event>(...)} per union member, not a
+ * tagged-union data type. Only structure/list payloads are protocol-specific (delegated to
+ * {@link ProtocolTraits#writeStructureEventPayload}); blob/string payloads write uniformly.
  */
 public final class OutgoingEventStreamRenderer implements ShapeRenderer {
 
@@ -132,10 +129,9 @@ public final class OutgoingEventStreamRenderer implements ShapeRenderer {
     }
 
     /**
-     * Determines how an event shape's payload is encoded, mirroring C2J's eventPayloadType logic
-     * (C2jModelToGeneratorModelTransformer). A single blob/string non-header member serializes as
-     * that member; a member explicitly marked {@code @eventPayload} likewise; otherwise the event
-     * structure itself is the payload (structure encoding).
+     * How an event's payload is encoded, mirroring C2J eventPayloadType: a single blob/string
+     * non-header member (or an explicit {@code @eventPayload} member) serializes as that member;
+     * otherwise the event structure itself is the payload.
      */
     private PayloadKind payloadKind(StructureShape event) {
         List<Map.Entry<String, MemberShape>> nonHeader = event.getAllMembers().entrySet().stream()
@@ -150,8 +146,7 @@ public final class OutgoingEventStreamRenderer implements ShapeRenderer {
             if (target.isStringShape()) {
                 return PayloadKind.STRING;
             }
-            // A blob member is written as a raw blob only when explicitly @eventPayload; an
-            // implicit single blob member makes the parent structure the payload (matches C2J).
+            // Implicit single blob member => parent is the payload (C2J); raw blob only when explicitly @eventPayload
             if (target.isBlobShape() && member.hasTrait(EventPayloadTrait.class)) {
                 return PayloadKind.BLOB;
             }
@@ -160,9 +155,8 @@ public final class OutgoingEventStreamRenderer implements ShapeRenderer {
     }
 
     /**
-     * The single non-header payload member name for the blob/string arms. These arms are only
-     * reached when {@link #payloadKind} found exactly one such member, so absence is a codegen
-     * bug rather than a modeled state — fail fast.
+     * The single non-header payload member name for the blob/string arms; reached only when
+     * {@link #payloadKind} found exactly one, so absence is a codegen bug — fail fast.
      */
     private String requirePayloadMember(StructureShape event, PayloadKind kind) {
         return event.getAllMembers().entrySet().stream()

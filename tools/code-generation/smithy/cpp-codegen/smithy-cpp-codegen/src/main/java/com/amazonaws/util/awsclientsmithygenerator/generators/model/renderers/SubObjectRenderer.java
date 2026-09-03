@@ -12,9 +12,11 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.Fil
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.RenderContext;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeRenderer;
 import software.amazon.smithy.model.shapes.Shape;
+import software.amazon.smithy.model.shapes.ShapeId;
 import software.amazon.smithy.model.traits.StreamingTrait;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * Renders C++ headers and sources for sub-object (intermediate structure) shapes.
@@ -22,20 +24,21 @@ import java.util.List;
 public final class SubObjectRenderer implements ShapeRenderer {
 
     private final List<Shape> subObjects;
+    private final Set<ShapeId> resultOutputIds;
     private final RenderContext ctx;
 
-    public SubObjectRenderer(List<Shape> subObjects, RenderContext ctx) {
+    public SubObjectRenderer(List<Shape> subObjects, Set<ShapeId> resultOutputIds, RenderContext ctx) {
         this.subObjects = subObjects;
+        this.resultOutputIds = resultOutputIds;
         this.ctx = ctx;
     }
 
     @Override
     public void render(CppWriterDelegator writerDelegator) {
         for (Shape shape : subObjects) {
-            // C2J models a union as a structure with "union": true and emits it through the same
-            // ModelClass templates, so structures and (non-streaming) unions render identically.
-            // @streaming unions are the event-stream shapes rendered by EventStreamRenderer /
-            // the outgoing-event-stream path; skip them here to avoid a double-write.
+            // C2J renders a (non-streaming) union like a structure via the same ModelClass
+            // templates, so they render identically here. @streaming unions are event-stream shapes
+            // handled elsewhere; skip them to avoid a double-write.
             boolean isStruct = shape.isStructureShape();
             boolean isDataUnion = shape.isUnionShape() && !shape.hasTrait(StreamingTrait.class);
             if (isStruct || isDataUnion) {
@@ -48,12 +51,19 @@ public final class SubObjectRenderer implements ShapeRenderer {
     private void renderHeader(CppWriterDelegator writerDelegator, Shape shape) {
         String className = CppTypeMapper.cppShapeName(shape);
         String fileName = "include/aws/" + ctx.smithyServiceName() + "/model/" + className + ".h";
+        // A "dual-role" shape (both an operation output and a referenced member) gets the top-level
+        // requestId from C2J, but only for JSON-family protocols. Query/EC2 inject ResponseMetadata
+        // instead, so they are gated out via resultHasTopLevelRequestId().
+        boolean stampRequestId = resultOutputIds.contains(shape.getId())
+            && ctx.protocolTraits().resultHasTopLevelRequestId();
         writerDelegator.useFileWriter(fileName, writer -> {
             writer.write("#pragma once");
 
-            // Includes
             List<String> includes = new java.util.ArrayList<>();
             includes.add("aws/" + ctx.smithyServiceName() + "/" + ctx.namespace() + "_EXPORTS.h");
+            if (stampRequestId) {
+                includes.add("aws/core/utils/memory/stl/AWSString.h");
+            }
             for (String memberInc : CppTypeMapper.getIncludesForShape(shape, ctx.model(), ctx.smithyServiceName())) {
                 includes.add(memberInc);
             }
@@ -72,8 +82,8 @@ public final class SubObjectRenderer implements ShapeRenderer {
             ModelFile.modelNamespace(writer, ctx.namespace(),
                 () -> ctx.protocolTraits().writeShapeForwardDeclarations(writer),
                 () -> {
-            // Recursive member targets are forward-declared here (at Model scope) instead of
-            // included, breaking the reference cycle. Matches C2J's computeForwardDeclarations.
+            // Recursive member targets are forward-declared at Model scope (not included) to break
+            // the cycle. Matches C2J computeForwardDeclarations.
             for (String fwd : CppTypeMapper.getForwardDeclarations(shape, ctx.model())) {
                 writer.write("class $L;", fwd);
             }
@@ -84,18 +94,42 @@ public final class SubObjectRenderer implements ShapeRenderer {
             writer.openBlock("class $L {", "};", className, () -> {
                 writer.write("public:");
                 ctx.protocolTraits().writeSerdeMethodDecls(writer, ctx.exportMacro(), className, null);
-                // A memberless shape ends right after its serde decls: C2J emits no accessors
-                // and no private: section (ModelClassMembersAndInlines.vm gates both on
-                // $shape.members.size() > 0).
-                if (!shape.getAllMembers().isEmpty()) {
+                // A memberless shape ends right after its serde decls (no accessors, no private:),
+                // matching C2J — unless it is a dual-role output, whose stamped requestId group
+                // still needs a private: section.
+                boolean hasMembers = !shape.getAllMembers().isEmpty();
+                if (hasMembers || stampRequestId) {
                     MemberRenderer members = MemberRenderer.forStructure(ctx.model(), shape, className)
                         .wideIntegers(ctx.protocolTraits().widensIntegers());
-                    writer.write("");
-                    members.renderPublicAccessors(writer);
+                    if (hasMembers) {
+                        writer.write("");
+                        members.renderPublicAccessors(writer);
+                    }
+                    if (stampRequestId) {
+                        // MODEL-class requestId group (with RequestIdHasBeenSet() getter), after the
+                        // modeled accessors. The helper writes its own leading blank-line separator.
+                        MemberRenderer.renderRequestIdAccessors(writer, className, true);
+                    }
                     writer.dedent();
                     writer.write("private:");
                     writer.indent();
-                    members.renderPrivateSection(writer);
+                    if (hasMembers) {
+                        members.renderDataMembers(writer);
+                    }
+                    if (stampRequestId) {
+                        // m_requestId trails the modeled data members (blank-line separated like
+                        // MemberRenderer's spacing); its flag trails the modeled flags.
+                        if (hasMembers) {
+                            writer.write("");
+                        }
+                        writer.write("Aws::String m_requestId;");
+                    }
+                    if (hasMembers) {
+                        members.renderHasBeenSetFlags(writer);
+                    }
+                    if (stampRequestId) {
+                        writer.write("bool m_requestIdHasBeenSet = false;");
+                    }
                 }
             });
             writer.write("");
