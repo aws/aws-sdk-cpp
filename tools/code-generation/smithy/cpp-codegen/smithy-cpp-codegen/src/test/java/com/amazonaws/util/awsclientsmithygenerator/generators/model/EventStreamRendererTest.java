@@ -26,6 +26,15 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class EventStreamRendererTest {
 
     private static Model twoEventModel() {
+        return twoEventModel(false);
+    }
+
+    /**
+     * @param restXml when true, stamps the service with {@code aws.protocols#restXml} so the
+     *        renderer resolves to REST-XML (S3 {@code SelectObjectContent} shape); otherwise the
+     *        service has no protocol trait and resolves to JSON.
+     */
+    private static Model twoEventModel(boolean restXml) {
         StringShape str = StringShape.builder().id("com.example#String").build();
         StructureShape eventA = StructureShape.builder()
             .id("com.example#AlphaEvent")
@@ -79,11 +88,14 @@ class EventStreamRendererTest {
                 .input(input.getId())
                 .output(output.getId())
                 .build();
-        ServiceShape service = ServiceShape.builder()
+        ServiceShape.Builder serviceBuilder = ServiceShape.builder()
             .id("com.example#Example")
             .version("2024-01-01")
-            .addOperation(op.getId())
-            .build();
+            .addOperation(op.getId());
+        if (restXml) {
+            serviceBuilder.addTrait(software.amazon.smithy.aws.traits.protocols.RestXmlTrait.builder().build());
+        }
+        ServiceShape service = serviceBuilder.build();
         return Model.builder().addShapes(str, stream, eventA, eventB, exc, modeledExc, input, output, op, service).build();
     }
 
@@ -349,6 +361,42 @@ class EventStreamRendererTest {
         String out = renderHandlerHeaderFor(unionWithEmptyAndDataEvent());
         assertTrue(out.contains("typedef std::function<void(const DataEvent&)> DataEventCallback;"),
             "non-empty event typedef unchanged: " + out);
+    }
+
+    @Test
+    void restXmlInitialResponse_omitsHeaderCollectionCtor() {
+        // For a REST-XML event-stream op (S3 SelectObjectContent shape), the InitialResponse is built
+        // from the XML body root via its XmlNode serde ctor; no HeaderValueCollection ctor is emitted.
+        Model model = twoEventModel(true);
+        String h = render(model, "DoStreamInitialResponse.h");
+        assertTrue(h.contains("class DoStreamInitialResponse"), "Missing class: " + h);
+        assertFalse(h.contains("HeaderValueCollection"),
+            "REST-XML InitialResponse must not emit a header-collection ctor: " + h);
+        assertTrue(h.contains("XmlNode"), "REST-XML InitialResponse keeps its XmlNode serde ctor: " + h);
+
+        String c = render(model, "DoStreamInitialResponse.cpp");
+        assertFalse(c.contains("HeaderValueCollection"),
+            "REST-XML InitialResponse source must not emit a header-collection ctor: " + c);
+
+        String handler = render(model, "DoStreamHandler.cpp");
+        assertTrue(handler.contains("DoStreamInitialResponse event(xmlDoc.GetRootElement());"),
+            "REST-XML handler builds the initial response from the XML root: " + handler);
+        assertFalse(handler.contains("GetEventHeadersAsHttpHeaders"), handler);
+    }
+
+    @Test
+    void jsonInitialResponse_hasHeaderCollectionCtor() {
+        // For a JSON event-stream op, the InitialResponse arrives as an event message with headers,
+        // so it carries a HeaderValueCollection ctor and header-based handler construction.
+        Model model = twoEventModel(false);
+        String h = render(model, "DoStreamInitialResponse.h");
+        assertTrue(h.contains("DoStreamInitialResponse(const Http::HeaderValueCollection& responseHeaders)"),
+            "JSON InitialResponse must emit the header-collection ctor: " + h);
+
+        String handler = render(model, "DoStreamHandler.cpp");
+        assertTrue(handler.contains("DoStreamInitialResponse event(GetEventHeadersAsHttpHeaders());"),
+            "JSON handler builds the initial response from event headers: " + handler);
+        assertFalse(handler.contains("xmlDoc"), handler);
     }
 
     @Test

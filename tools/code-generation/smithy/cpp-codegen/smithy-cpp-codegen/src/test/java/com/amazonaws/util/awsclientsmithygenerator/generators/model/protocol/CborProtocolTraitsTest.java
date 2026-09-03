@@ -208,4 +208,22 @@ class CborProtocolTraitsTest {
         assertTrue(i.contains("headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);"), i);
         assertTrue(i.contains("headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);"), i);
     }
+
+    @Test
+    void initialResponse_emitsHeaderCollectionCtorAndHeaderConstruction() {
+        // CBOR initial responses arrive as an event message with headers, like JSON.
+        String decl = render(w -> cbor.writeInitialResponseCtorDecl(w, "AWS_EX_API", "DoStreamInitialResponse"));
+        assertTrue(decl.contains(
+            "AWS_EX_API DoStreamInitialResponse(const Http::HeaderValueCollection& responseHeaders);"), decl);
+
+        String impl = render(w -> cbor.writeInitialResponseCtorImpl(w, "DoStreamInitialResponse"));
+        assertTrue(impl.contains(
+            "DoStreamInitialResponse::DoStreamInitialResponse(const Http::HeaderValueCollection& "
+            + "responseHeaders) : DoStreamInitialResponse() {"), impl);
+        assertTrue(impl.contains("AWS_UNREFERENCED_PARAM(responseHeaders);"), impl);
+
+        String handler = render(w -> cbor.writeInitialResponseHandlerConstruction(w, "DoStreamInitialResponse"));
+        assertTrue(handler.contains("DoStreamInitialResponse event(GetEventHeadersAsHttpHeaders());"), handler);
+        assertFalse(handler.contains("xmlDoc"), handler);
+    }
 }

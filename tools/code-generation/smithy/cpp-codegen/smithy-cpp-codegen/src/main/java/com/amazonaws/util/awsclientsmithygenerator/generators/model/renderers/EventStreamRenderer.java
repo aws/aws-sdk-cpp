@@ -291,7 +291,7 @@ public final class EventStreamRenderer implements ShapeRenderer {
                 });
                 writer.openBlock("switch ($1LEventMapper::Get$1LEventTypeForName(eventTypeHeaderIter->second.GetEventHeaderValueAsString())) {", "}", opName, () -> {
                     writer.openBlock("case $1LEventType::INITIAL_RESPONSE: {", "}", opName, () -> {
-                        writer.write("$1LInitialResponse event(GetEventHeadersAsHttpHeaders());", opName);
+                        ctx.protocolTraits().writeInitialResponseHandlerConstruction(writer, opName + "InitialResponse");
                         writer.write("m_onInitialResponse(event, Utils::Event::InitialResponseType::ON_EVENT);");
                         writer.write("break;");
                     });
@@ -444,9 +444,10 @@ public final class EventStreamRenderer implements ShapeRenderer {
             writer.write("");
             writer.openBlock("class $L {", "};", className, () -> {
                 writer.write("public:");
-                // The header-collection ctor sits before the serialize method (mainline ordering).
+                // Any protocol-specific extra ctor (e.g. the JSON/CBOR header-collection ctor) sits
+                // before the serialize method (mainline ordering); REST-XML adds none.
                 ctx.protocolTraits().writeSerdeMethodDecls(writer, ctx.exportMacro(), className,
-                    () -> writer.write("$1L $2L(const Http::HeaderValueCollection& responseHeaders);", ctx.exportMacro(), className));
+                    () -> ctx.protocolTraits().writeInitialResponseCtorDecl(writer, ctx.exportMacro(), className));
                 // Accessors + private section for the result's non-streaming members. A memberless
                 // InitialResponse ends right after its serde decls (no private:), matching C2J.
                 if (hasMembers) {
@@ -481,10 +482,8 @@ public final class EventStreamRenderer implements ShapeRenderer {
             writer.write("");
             ctx.protocolTraits().writeSerdeMethodImpls(writer, className);
             writer.write("");
-            // Delegate to the default ctor so all members are value-initialized before the
-            // header-derived ones are set (matches C2J).
-            writer.openBlock("$1L::$1L(const Http::HeaderValueCollection& responseHeaders) : $1L() {", "}",
-                className, () -> writer.write("AWS_UNREFERENCED_PARAM(responseHeaders);"));
+            // Any protocol-specific extra ctor impl (JSON/CBOR header-collection ctor); REST-XML adds none.
+            ctx.protocolTraits().writeInitialResponseCtorImpl(writer, className);
             writer.write("");
             });
         });

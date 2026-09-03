@@ -124,6 +124,25 @@ class XmlProtocolTraitsTest {
             "Hook must run before the serialize method: " + out);
     }
 
+    // ---------- REST_XML: event-stream initial response ----------
+
+    @Test
+    void restXml_initialResponse_omitsHeaderCollectionCtor_buildsFromXmlRoot() {
+        // REST-XML reuses its XmlNode serde ctor; the initial response is built from the XML body
+        // root element, so no (const Http::HeaderValueCollection&) ctor is emitted.
+        String decl = render(w -> restXml.writeInitialResponseCtorDecl(w, "AWS_EX_API", "DoStreamInitialResponse"));
+        assertFalse(decl.contains("HeaderValueCollection"),
+            "REST-XML must not emit a header-collection initial-response ctor: " + decl);
+
+        String impl = render(w -> restXml.writeInitialResponseCtorImpl(w, "DoStreamInitialResponse"));
+        assertFalse(impl.contains("HeaderValueCollection"),
+            "REST-XML must not emit a header-collection initial-response ctor impl: " + impl);
+
+        String handler = render(w -> restXml.writeInitialResponseHandlerConstruction(w, "DoStreamInitialResponse"));
+        assertTrue(handler.contains("DoStreamInitialResponse event(xmlDoc.GetRootElement());"), handler);
+        assertFalse(handler.contains("GetEventHeadersAsHttpHeaders"), handler);
+    }
+
     // ---------- QUERY_XML / EC2: two OutputToStream overloads ----------
 
     @ParameterizedTest

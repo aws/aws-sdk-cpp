@@ -151,6 +151,14 @@ public final class RestXmlProtocolTraits implements ProtocolTraits {
     }
 
     @Override
+    public void writeInitialResponseHandlerConstruction(CppWriter writer, String className) {
+        // REST-XML reuses its XmlNode serde ctor: the initial response is built from the XML body
+        // root element (C2J addEventStreamInitialResponse), not from event headers. No extra
+        // header-collection ctor is emitted (writeInitialResponseCtorDecl inherits the no-op default).
+        writer.write("$L event(xmlDoc.GetRootElement());", className);
+    }
+
+    @Override
     public void writeRequestMethodDecls(CppWriter writer, String exportMacro,
                                         StructureShape shape, OperationShape operation, Model model) {
         if (RequestBindings.emitsSerializePayload(operation, model)) {
