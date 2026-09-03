@@ -232,6 +232,39 @@ public interface ProtocolTraits {
     // ------------------------------------------------------------------
 
     /**
+     * Emits the extra {@code <op>InitialResponse} constructor declaration that sits before the
+     * body serde method, beyond the body serde ctor already emitted by
+     * {@link #writeSerdeMethodDecls}. JSON/CBOR initial responses arrive as an event message with
+     * headers, so they add a {@code (const Http::HeaderValueCollection&)} ctor; REST-XML builds its
+     * initial response from the XML body root via its {@code XmlNode} serde ctor and adds nothing.
+     *
+     * <p>Default: no extra ctor (REST-XML / query-XML).
+     */
+    default void writeInitialResponseCtorDecl(CppWriter writer, String exportMacro, String className) {
+    }
+
+    /**
+     * Emits the body for the extra ctor declared by {@link #writeInitialResponseCtorDecl}.
+     *
+     * <p>Default: nothing (protocols with no extra ctor).
+     */
+    default void writeInitialResponseCtorImpl(CppWriter writer, String className) {
+    }
+
+    /**
+     * Emits the statement that builds the {@code event} local in the event-stream handler's
+     * {@code INITIAL_RESPONSE} case. JSON/CBOR build it from the event message headers; REST-XML
+     * builds it from the XML body root element.
+     *
+     * <p>Default: throws — a protocol with event streams must define how its initial response is
+     * constructed. (Query-XML has no event streams, so this is never reached.)
+     */
+    default void writeInitialResponseHandlerConstruction(CppWriter writer, String className) {
+        throw new UnsupportedOperationException(
+            "Protocol " + protocol() + " does not define event-stream initial-response construction");
+    }
+
+    /**
      * Emits a placeholder for an event-stream event case body: a TODO marker plus a
      * compilable callback invocation with a default-constructed event.
      */

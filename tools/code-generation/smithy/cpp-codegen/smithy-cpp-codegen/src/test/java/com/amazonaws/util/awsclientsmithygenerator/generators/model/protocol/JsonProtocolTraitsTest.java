@@ -266,6 +266,24 @@ class JsonProtocolTraitsTest {
     }
 
     @Test
+    void initialResponse_emitsHeaderCollectionCtorAndHeaderConstruction() {
+        // JSON initial responses arrive as an event message with headers.
+        String decl = render(w -> json.writeInitialResponseCtorDecl(w, "AWS_EX_API", "DoStreamInitialResponse"));
+        assertTrue(decl.contains(
+            "AWS_EX_API DoStreamInitialResponse(const Http::HeaderValueCollection& responseHeaders);"), decl);
+
+        String impl = render(w -> json.writeInitialResponseCtorImpl(w, "DoStreamInitialResponse"));
+        assertTrue(impl.contains(
+            "DoStreamInitialResponse::DoStreamInitialResponse(const Http::HeaderValueCollection& "
+            + "responseHeaders) : DoStreamInitialResponse() {"), impl);
+        assertTrue(impl.contains("AWS_UNREFERENCED_PARAM(responseHeaders);"), impl);
+
+        String handler = render(w -> json.writeInitialResponseHandlerConstruction(w, "DoStreamInitialResponse"));
+        assertTrue(handler.contains("DoStreamInitialResponse event(GetEventHeadersAsHttpHeaders());"), handler);
+        assertFalse(handler.contains("xmlDoc"), handler);
+    }
+
+    @Test
     void payloadStubs_areProtocolAgnostic() {
         String event = render(w -> json.writeEventPayloadDecode(w, "ShardEvent", "m_onShardEvent"));
         assertTrue(event.contains("// TODO: protocol-specific event payload deserialization"), event);

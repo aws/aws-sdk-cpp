@@ -176,6 +176,25 @@ public final class JsonProtocolTraits implements ProtocolTraits {
     }
 
     @Override
+    public void writeInitialResponseCtorDecl(CppWriter writer, String exportMacro, String className) {
+        // JSON initial responses arrive as an event message with headers.
+        writer.write("$L $L(const Http::HeaderValueCollection& responseHeaders);", exportMacro, className);
+    }
+
+    @Override
+    public void writeInitialResponseCtorImpl(CppWriter writer, String className) {
+        // Delegate to the default ctor so all members are value-initialized before the
+        // header-derived ones are set (matches C2J).
+        writer.openBlock("$1L::$1L(const Http::HeaderValueCollection& responseHeaders) : $1L() {", "}",
+            className, () -> writer.write("AWS_UNREFERENCED_PARAM(responseHeaders);"));
+    }
+
+    @Override
+    public void writeInitialResponseHandlerConstruction(CppWriter writer, String className) {
+        writer.write("$L event(GetEventHeadersAsHttpHeaders());", className);
+    }
+
+    @Override
     public void writeRequestMethodDecls(CppWriter writer, String exportMacro,
                                         StructureShape shape, OperationShape operation, Model model) {
         // A raw-streaming-payload request sends its body via the streaming base class, so no
