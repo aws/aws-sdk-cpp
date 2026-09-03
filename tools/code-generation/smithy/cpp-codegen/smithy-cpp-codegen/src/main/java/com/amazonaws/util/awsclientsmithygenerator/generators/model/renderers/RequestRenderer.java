@@ -17,6 +17,7 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeRendere
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.ChunkedEncodingTrait;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.LongPollingTrait;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.OverrideStreamingTrait;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.ServiceRequestNameTrait;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.SupportsPresigningTrait;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.endpointcontext.Emit;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.endpointcontext.SmithyEndpointsJmesPathVisitor;
@@ -134,8 +135,13 @@ public final class RequestRenderer implements ShapeRenderer {
                 writer.write("// each operation should has unique request name, so that we can get operation's name from this request.");
                 writer.write("// Note: this is not true for response, multiple operations may have the same response name,");
                 writer.write("// so we can not get operation's name from response.");
+                // Logical operation name (metrics/telemetry) — stays unsuffixed even when the class
+                // name is version-suffixed (e.g. CloudFront), matching C2J. ServiceRequestNameTrait
+                // carries the clean name for operations a transform renamed for C++ identity.
                 writer.write("inline virtual const char* GetServiceRequestName() const override { return \"$L\"; }",
-                    operation.getId().getName());
+                    operation.getTrait(ServiceRequestNameTrait.class)
+                        .map(ServiceRequestNameTrait::getValue)
+                        .orElse(operation.getId().getName()));
                 writer.write("");
                 if (streamingRequest) {
                     writer.write("inline virtual bool IsEventStreamRequest() const override { return true; }");

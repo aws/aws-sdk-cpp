@@ -52,6 +52,18 @@ class CloudFrontTransformsTest {
     }
 
     @Test
+    void stampsCleanServiceRequestNameOnSuffixedOperation() {
+        Model m = cloudFrontModel("CloudFront", "2020-05-31");
+        Model out = new CloudFrontTransforms().transform(m, service(m));
+
+        OperationShape suffixed = out.expectShape(
+            ShapeId.from(NS + "#AssociateAlias2020_05_31"), OperationShape.class);
+        assertEquals("AssociateAlias",
+            suffixed.expectTrait(ServiceRequestNameTrait.class).getValue(),
+            "renamed operation must carry the clean logical name for GetServiceRequestName");
+    }
+
+    @Test
     void doesNotRenameInputOrOutputStructures() {
         Model m = cloudFrontModel("CloudFront", "2020-05-31");
         Model out = new CloudFrontTransforms().transform(m, service(m));

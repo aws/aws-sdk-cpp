@@ -1047,6 +1047,44 @@ class RequestRendererTest {
         return Model.builder().addShapes(str, input, output, op, service).build();
     }
 
+    // An operation whose shape id is version-suffixed (CloudFront-style) but stamped with the clean
+    // logical name via ServiceRequestNameTrait.
+    private static Model serviceRequestNameModel() {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        StructureShape input = StructureShape.builder()
+            .id("com.example#DoThing2020_05_31Request").addMember("name", str.getId()).build();
+        StructureShape output = StructureShape.builder()
+            .id("com.example#DoThing2020_05_31Output").addMember("result", str.getId()).build();
+        OperationShape op = OperationShape.builder().id("com.example#DoThing2020_05_31")
+            .input(input.getId()).output(output.getId())
+            .addTrait(new com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms
+                .ServiceRequestNameTrait("DoThing"))
+            .build();
+        ServiceShape service = ServiceShape.builder().id("com.example#Example")
+            .version("2020-05-31").addOperation(op.getId()).build();
+        return Model.builder().addShapes(str, input, output, op, service).build();
+    }
+
+    @Test
+    void serviceRequestNameTrait_keepsGetServiceRequestNameClean_whileClassStaysSuffixed() {
+        Model model = serviceRequestNameModel();
+        ServiceShape service = model.expectShape(ShapeId.from("com.example#Example"), ServiceShape.class);
+        MockManifest manifest = new MockManifest();
+        CppWriterDelegator delegator = new CppWriterDelegator(manifest);
+        Protocol protocol = ProtocolResolver.resolve(service, model);
+        new RequestRenderer(ShapeClassifier.classify(model, service, protocol).requests(),
+            new RenderContext(model, service, ProtocolResolver.traitsFor(protocol),
+                "Example", "AWS_EXAMPLE_API", "example")).render(delegator);
+        delegator.flushWriters();
+        String h = manifest.getFileString(manifest.getFiles().stream()
+            .filter(p -> p.toString().endsWith("DoThing2020_05_31Request.h")).findFirst().orElseThrow())
+            .orElseThrow();
+        assertTrue(h.contains("GetServiceRequestName() const override { return \"DoThing\"; }"),
+            "GetServiceRequestName must return the clean name from the trait: " + h);
+        assertTrue(h.contains("class DoThing2020_05_31Request"),
+            "class name must keep the version suffix: " + h);
+    }
+
     @Test
     void longPollingTrait_emitsIsLongPollingOperationTrue() {
         // C2J emits IsLongPollingOperation() -> true for a long-polling request; the marker (stamped
