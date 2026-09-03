@@ -10,10 +10,13 @@ import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.knowledge.TopDownIndex;
 import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.ServiceShape;
+import software.amazon.smithy.model.shapes.Shape;
 import software.amazon.smithy.model.shapes.ShapeId;
 import software.amazon.smithy.model.transform.ModelTransformer;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -42,6 +45,8 @@ public final class CloudFrontTransforms implements ModelTransform {
         String suffix = service.getVersion().replace("-", "_");
 
         Map<ShapeId, ShapeId> renames = new HashMap<>();
+        // suffixed operation id -> its clean (pre-rename) name, for GetServiceRequestName.
+        Map<ShapeId, String> cleanNames = new HashMap<>();
         for (OperationShape operation : TopDownIndex.of(model).getContainedOperations(service)) {
             ShapeId opId = operation.getId();
             // Skip operations already carrying the suffix (idempotent).
@@ -53,11 +58,20 @@ public final class CloudFrontTransforms implements ModelTransform {
                         + "'). Upstream model likely changed; review the CloudFront transform.");
                 }
                 renames.put(opId, targetId);
+                cleanNames.put(targetId, opId.getName());
             }
         }
         if (renames.isEmpty()) {
             return model;
         }
-        return ModelTransformer.create().renameShapes(model, renames);
+        Model renamed = ModelTransformer.create().renameShapes(model, renames);
+        // Stamp AFTER the rename: renameShapes does not preserve a definition-less internal trait.
+        // ServiceRequestNameTrait keeps GetServiceRequestName unsuffixed (matches C2J).
+        List<Shape> stamped = new ArrayList<>();
+        cleanNames.forEach((suffixedId, cleanName) ->
+            stamped.add(renamed.expectShape(suffixedId, OperationShape.class).toBuilder()
+                .addTrait(new ServiceRequestNameTrait(cleanName))
+                .build()));
+        return renamed.toBuilder().addShapes(stamped.toArray(new Shape[0])).build();
     }
 }
