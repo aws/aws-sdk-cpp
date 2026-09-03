@@ -17,6 +17,7 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.G
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.GlobalTransforms;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.LambdaTransforms;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.LongPollingTransform;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.Route53Transforms;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.S3ControlTransforms;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.S3Transforms;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.SourceRegionTransform;
@@ -67,6 +68,7 @@ public class ModelCodegenPlugin implements SmithyBuildPlugin {
             new S3ControlTransforms(),
             new GlacierTransforms(),
             new CloudFrontTransforms(),
+            new Route53Transforms(),
             new SupportsPresigningTransform(),
             new ChunkedEncodingTransform(),
             new LongPollingTransform()

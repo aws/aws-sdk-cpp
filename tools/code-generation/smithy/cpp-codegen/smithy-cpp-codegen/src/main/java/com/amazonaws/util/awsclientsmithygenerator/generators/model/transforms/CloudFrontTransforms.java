@@ -8,6 +8,7 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.ServiceNameUtil;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ModelTransform;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.knowledge.TopDownIndex;
+import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.model.shapes.Shape;
@@ -18,6 +19,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * CloudFront C2J parity. C2J names each operation with the API version baked into the wire Action
@@ -32,8 +35,47 @@ import java.util.Map;
  * classes (not emitted standalone) and domain structs (e.g. {@code Distribution}) must keep clean
  * names, matching C2J. Self-guards on service name (excludes cloudfront-keyvaluestore) and is
  * idempotent (skips operations already carrying the suffix).
+ *
+ * <p>Also retypes the {@code MaxItems} pagination member back to string on an allowlist of request
+ * shapes: C2J ships those as {@code Aws::String}, but the Coral/Smithy model types them
+ * {@code smithy.api#Integer}, which would flip the accessors to {@code int} and break the public C++
+ * API. The retype is scoped to the allowlist because other shapes ({@code int} in C2J) must stay int.
  */
 public final class CloudFrontTransforms implements ModelTransform {
+
+    /**
+     * C2J ships these 27 request shapes' {@code MaxItems} as {@code Aws::String} while 32 other shapes
+     * (newer requests + list structs like {@code DistributionList}) ship {@code int}; retype only this
+     * allowlist so the whole-service retype does not flip the int ones and introduce a breaking change.
+     */
+    private static final Set<String> MAX_ITEMS_STRING_SHAPES = Set.of(
+        "ListCachePoliciesRequest",
+        "ListCloudFrontOriginAccessIdentitiesRequest",
+        "ListContinuousDeploymentPoliciesRequest",
+        "ListDistributionsByAnycastIpListIdRequest",
+        "ListDistributionsByCachePolicyIdRequest",
+        "ListDistributionsByKeyGroupRequest",
+        "ListDistributionsByOriginRequestPolicyIdRequest",
+        "ListDistributionsByOwnedResourceRequest",
+        "ListDistributionsByRealtimeLogConfigRequest",
+        "ListDistributionsByResponseHeadersPolicyIdRequest",
+        "ListDistributionsByTrustStoreRequest",
+        "ListDistributionsByVpcOriginIdRequest",
+        "ListDistributionsByWebACLIdRequest",
+        "ListDistributionsRequest",
+        "ListFieldLevelEncryptionConfigsRequest",
+        "ListFieldLevelEncryptionProfilesRequest",
+        "ListFunctionsRequest",
+        "ListInvalidationsRequest",
+        "ListKeyGroupsRequest",
+        "ListKeyValueStoresRequest",
+        "ListOriginAccessControlsRequest",
+        "ListOriginRequestPoliciesRequest",
+        "ListPublicKeysRequest",
+        "ListRealtimeLogConfigsRequest",
+        "ListResponseHeadersPoliciesRequest",
+        "ListStreamingDistributionsRequest",
+        "ListVpcOriginsRequest");
 
     @Override
     public boolean shouldRun(ServiceShape service) {
@@ -42,6 +84,32 @@ public final class CloudFrontTransforms implements ModelTransform {
 
     @Override
     public Model transform(Model model, ServiceShape service) {
+        return retypeMaxItemsToString(suffixOperationNames(model, service));
+    }
+
+    /**
+     * Retargets the {@code MaxItems} member to the prelude {@code smithy.api#String} on the
+     * {@link #MAX_ITEMS_STRING_SHAPES} allowlist only, skipping members already targeting a string
+     * shape. C2J ships those as {@code Aws::String}, but the Coral/Smithy model types them
+     * {@code smithy.api#Integer}, which would flip the accessors to {@code int} and break the public
+     * C++ API. The retype is scoped to the allowlist because other shapes ({@code int} in C2J) must
+     * stay int. Idempotent: returns the model unchanged when nothing needs retyping.
+     */
+    private static Model retypeMaxItemsToString(Model model) {
+        ShapeId stringTarget = ShapeId.from("smithy.api#String");
+        Set<Shape> replacements = model.shapes(MemberShape.class)
+            .filter(member -> "MaxItems".equals(member.getMemberName()))
+            .filter(member -> MAX_ITEMS_STRING_SHAPES.contains(member.getContainer().getName()))
+            .filter(member -> !model.expectShape(member.getTarget()).isStringShape())
+            .map(member -> member.toBuilder().target(stringTarget).build())
+            .collect(Collectors.toSet());
+        if (replacements.isEmpty()) {
+            return model;
+        }
+        return ModelTransformer.create().replaceShapes(model, new ArrayList<>(replacements));
+    }
+
+    private static Model suffixOperationNames(Model model, ServiceShape service) {
         String suffix = service.getVersion().replace("-", "_");
 
         Map<ShapeId, ShapeId> renames = new HashMap<>();
