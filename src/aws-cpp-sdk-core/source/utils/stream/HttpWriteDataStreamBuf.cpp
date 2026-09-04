@@ -109,6 +109,9 @@ void Aws::Utils::Stream::HttpWriteDataStreamBuf::WaitForStreamComplete() {
     return;
   }
   m_shutdownCondition.wait(lock, [this]() -> bool { return m_streamComplete; });
+
+  m_stream.reset();
+  m_connection.reset();
 }
 
 std::streambuf::int_type Aws::Utils::Stream::HttpWriteDataStreamBuf::overflow(std::streambuf::int_type c) {

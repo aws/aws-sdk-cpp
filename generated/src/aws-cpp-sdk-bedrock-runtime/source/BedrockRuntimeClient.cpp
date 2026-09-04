@@ -408,7 +408,12 @@ void BedrockRuntimeClient::InvokeModelWithBidirectionalStreamAsync(
   auto requestCopy = Aws::MakeShared<InvokeModelWithBidirectionalStreamRequest>(ALLOCATION_TAG, request);
 
   auto authCallback = [&](std::shared_ptr<smithy::client::AwsSmithyClientAsyncRequestContext> ctx) -> void {
-    eventEncoderStream->SetSigningCallback([this, ctx, eventEncoderStream](Aws::Utils::Event::Message& message, Aws::String& seed) -> bool {
+    std::weak_ptr<smithy::client::AwsSmithyClientAsyncRequestContext> weakCtx = ctx;
+    eventEncoderStream->SetSigningCallback([this, weakCtx](Aws::Utils::Event::Message& message, Aws::String& seed) -> bool {
+      auto ctx = weakCtx.lock();
+      if (!ctx) {
+        return false;
+      }
       auto outcome = SignEventMessage(message, seed, ctx);
       return outcome.IsSuccess();
     });
@@ -425,7 +430,12 @@ void BedrockRuntimeClient::InvokeModelWithBidirectionalStreamAsync(
   // Pull-based path
   auto eventEncoderStream = Aws::MakeShared<Model::InvokeModelWithBidirectionalStreamInput>(ALLOCATION_TAG);
   auto authCallback = [&](std::shared_ptr<smithy::client::AwsSmithyClientAsyncRequestContext> ctx) -> void {
-    eventEncoderStream->SetSigningCallback([this, ctx, eventEncoderStream](Aws::Utils::Event::Message& message, Aws::String& seed) -> bool {
+    std::weak_ptr<smithy::client::AwsSmithyClientAsyncRequestContext> weakCtx = ctx;
+    eventEncoderStream->SetSigningCallback([this, weakCtx](Aws::Utils::Event::Message& message, Aws::String& seed) -> bool {
+      auto ctx = weakCtx.lock();
+      if (!ctx) {
+        return false;
+      }
       auto outcome = SignEventMessage(message, seed, ctx);
       return outcome.IsSuccess();
     });
