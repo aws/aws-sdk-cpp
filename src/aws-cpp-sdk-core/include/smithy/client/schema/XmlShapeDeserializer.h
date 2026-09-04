@@ -7,10 +7,10 @@
 namespace smithy {
 namespace schema {
 
-class SMITHY_API CborShapeDeserializer final : public ShapeDeserializer {
+class SMITHY_API XmlShapeDeserializer final : public ShapeDeserializer {
  public:
-  CborShapeDeserializer(const unsigned char* data, size_t length);
-  ~CborShapeDeserializer();
+  XmlShapeDeserializer(const unsigned char* data, size_t length);
+  ~XmlShapeDeserializer();
 
   void ReadStruct(const Schema& schema, const StructMemberConsumer& consumer) override;
   void ReadList(const Schema& schema, const ListElementConsumer& consumer) override;
