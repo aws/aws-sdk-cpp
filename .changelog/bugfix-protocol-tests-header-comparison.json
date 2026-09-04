@@ -1,0 +1,6 @@
+{
+  "type": "bugfix",
+  "category": "protocol-tests",
+  "contributor": "pulimsr",
+  "description": "Compare list-valued HTTP headers semantically in the generated protocol tests: whitespace after the comma (RFC 7230 OWS) is normalized so \"a, b, c\" and \"a,b,c\" match, while element order, content, and quoting stay significant. Also add a known-failures skip list to the protocol test runner so meaningful failures are not masked by known-open issues."
+}
