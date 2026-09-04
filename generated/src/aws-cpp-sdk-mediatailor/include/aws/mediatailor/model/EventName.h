@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MediaTailor {
 namespace Model {
-enum class EventName { NOT_SET, PRE_SESSION_INITIALIZATION, PRE_ADS_REQUEST };
+enum class EventName { NOT_SET, PRE_SESSION_INITIALIZATION, PRE_ADS_REQUEST, POST_ADS_RESPONSE, PRE_MANIFEST_INSERTION };
 
 namespace EventNameMapper {
 AWS_MEDIATAILOR_API EventName GetEventNameForName(const Aws::String& name);

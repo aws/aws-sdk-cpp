@@ -19,6 +19,7 @@ static const int HTTP_REQUEST_HASH = HashingUtils::HashString("HTTP_REQUEST");
 static const int CUSTOM_OUTPUT_HASH = HashingUtils::HashString("CUSTOM_OUTPUT");
 static const int CONCURRENT_EXECUTOR_HASH = HashingUtils::HashString("CONCURRENT_EXECUTOR");
 static const int SEQUENTIAL_EXECUTOR_HASH = HashingUtils::HashString("SEQUENTIAL_EXECUTOR");
+static const int VAST_REQUEST_HASH = HashingUtils::HashString("VAST_REQUEST");
 
 FunctionType GetFunctionTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ FunctionType GetFunctionTypeForName(const Aws::String& name) {
     return FunctionType::CONCURRENT_EXECUTOR;
   } else if (hashCode == SEQUENTIAL_EXECUTOR_HASH) {
     return FunctionType::SEQUENTIAL_EXECUTOR;
+  } else if (hashCode == VAST_REQUEST_HASH) {
+    return FunctionType::VAST_REQUEST;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForFunctionType(FunctionType enumValue) {
       return "CONCURRENT_EXECUTOR";
     case FunctionType::SEQUENTIAL_EXECUTOR:
       return "SEQUENTIAL_EXECUTOR";
+    case FunctionType::VAST_REQUEST:
+      return "VAST_REQUEST";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

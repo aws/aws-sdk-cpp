@@ -26982,6 +26982,42 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Validates whether the specified security groups can be associated with a
+   * single network interface. The operation checks Amazon Virtual Private Cloud
+   * (Amazon VPC) quotas for inbound or outbound rules per security group and
+   * security groups per network interface. Only authorized AWS services can call
+   * this operation.</p> <p>For more information about security group quotas, see <a
+   * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-security-groups">Amazon
+   * VPC quotas</a> in the <i>Amazon VPC User Guide</i>.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ValidateSecurityGroupQuotasForInterface">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ValidateSecurityGroupQuotasForInterfaceOutcome ValidateSecurityGroupQuotasForInterface(
+      const Model::ValidateSecurityGroupQuotasForInterfaceRequest& request) const;
+
+  /**
+   * A Callable wrapper for ValidateSecurityGroupQuotasForInterface that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename ValidateSecurityGroupQuotasForInterfaceRequestT = Model::ValidateSecurityGroupQuotasForInterfaceRequest>
+  Model::ValidateSecurityGroupQuotasForInterfaceOutcomeCallable ValidateSecurityGroupQuotasForInterfaceCallable(
+      const ValidateSecurityGroupQuotasForInterfaceRequestT& request) const {
+    return SubmitCallable(&EC2Client::ValidateSecurityGroupQuotasForInterface, request);
+  }
+
+  /**
+   * An Async wrapper for ValidateSecurityGroupQuotasForInterface that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename ValidateSecurityGroupQuotasForInterfaceRequestT = Model::ValidateSecurityGroupQuotasForInterfaceRequest>
+  void ValidateSecurityGroupQuotasForInterfaceAsync(const ValidateSecurityGroupQuotasForInterfaceRequestT& request,
+                                                    const ValidateSecurityGroupQuotasForInterfaceResponseReceivedHandler& handler,
+                                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::ValidateSecurityGroupQuotasForInterface, request, handler, context);
+  }
+
+  /**
    * <p>Stops advertising an address range that is provisioned as an address
    * pool.</p> <p>You can perform this operation at most once every 10 seconds, even
    * if you specify different address ranges each time.</p> <p>It can take a few

@@ -125,6 +125,10 @@ PlaybackConfiguration& PlaybackConfiguration::operator=(JsonView jsonValue) {
     m_adDecisionServerConfiguration = jsonValue.GetObject("AdDecisionServerConfiguration");
     m_adDecisionServerConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("YieldOptimizationConfiguration")) {
+    m_yieldOptimizationConfiguration = jsonValue.GetObject("YieldOptimizationConfiguration");
+    m_yieldOptimizationConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("FunctionMapping")) {
     Aws::Map<Aws::String, JsonView> functionMappingJsonMap = jsonValue.GetObject("FunctionMapping").GetAllObjects();
     for (auto& functionMappingItem : functionMappingJsonMap) {
@@ -252,6 +256,10 @@ JsonValue PlaybackConfiguration::Jsonize() const {
 
   if (m_adDecisionServerConfigurationHasBeenSet) {
     payload.WithObject("AdDecisionServerConfiguration", m_adDecisionServerConfiguration.Jsonize());
+  }
+
+  if (m_yieldOptimizationConfigurationHasBeenSet) {
+    payload.WithObject("YieldOptimizationConfiguration", m_yieldOptimizationConfiguration.Jsonize());
   }
 
   if (m_functionMappingHasBeenSet) {

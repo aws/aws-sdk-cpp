@@ -129,6 +129,10 @@ PutPlaybackConfigurationResult& PutPlaybackConfigurationResult::operator=(const 
     m_adDecisionServerConfiguration = jsonValue.GetObject("AdDecisionServerConfiguration");
     m_adDecisionServerConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("YieldOptimizationConfiguration")) {
+    m_yieldOptimizationConfiguration = jsonValue.GetObject("YieldOptimizationConfiguration");
+    m_yieldOptimizationConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("FunctionMapping")) {
     Aws::Map<Aws::String, JsonView> functionMappingJsonMap = jsonValue.GetObject("FunctionMapping").GetAllObjects();
     for (auto& functionMappingItem : functionMappingJsonMap) {

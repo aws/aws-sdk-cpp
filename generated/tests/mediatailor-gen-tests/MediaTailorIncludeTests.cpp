@@ -34,6 +34,7 @@
 #include <aws/mediatailor/model/Alert.h>
 #include <aws/mediatailor/model/AlertCategory.h>
 #include <aws/mediatailor/model/AlternateMedia.h>
+#include <aws/mediatailor/model/ApsRegion.h>
 #include <aws/mediatailor/model/AudienceMedia.h>
 #include <aws/mediatailor/model/AvailMatchingCriteria.h>
 #include <aws/mediatailor/model/AvailSuppression.h>
@@ -220,8 +221,10 @@
 #include <aws/mediatailor/model/UpdateSourceLocationResult.h>
 #include <aws/mediatailor/model/UpdateVodSourceRequest.h>
 #include <aws/mediatailor/model/UpdateVodSourceResult.h>
+#include <aws/mediatailor/model/VastRequestConfiguration.h>
 #include <aws/mediatailor/model/VastResponse.h>
 #include <aws/mediatailor/model/VodSource.h>
+#include <aws/mediatailor/model/YieldOptimizationConfiguration.h>
 
 using MediaTailorIncludeTest = ::testing::Test;
 

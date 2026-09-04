@@ -39,6 +39,10 @@ Aws::String PutFunctionRequest::SerializePayload() const {
     payload.WithObject("SequentialExecutorConfiguration", m_sequentialExecutorConfiguration.Jsonize());
   }
 
+  if (m_vastRequestConfigurationHasBeenSet) {
+    payload.WithObject("VastRequestConfiguration", m_vastRequestConfiguration.Jsonize());
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {

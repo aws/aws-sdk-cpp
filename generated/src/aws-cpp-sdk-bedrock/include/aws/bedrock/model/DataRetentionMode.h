@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Bedrock {
 namespace Model {
-enum class DataRetentionMode { NOT_SET, default_, none, provider_data_share, inherit };
+enum class DataRetentionMode { NOT_SET, default_, none, aws_review, provider_data_share, inherit };
 
 namespace DataRetentionModeMapper {
 AWS_BEDROCK_API DataRetentionMode GetDataRetentionModeForName(const Aws::String& name);

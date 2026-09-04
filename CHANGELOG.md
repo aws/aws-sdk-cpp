@@ -1,3 +1,14 @@
+# 1.11.887 (2026-09-04)
+
+## SDK Highlights
+* **Feature**: Add clock skew correction: the SDK adjusts request signing timestamps by the observed client-to-service skew and retries signature errors caused by skew, so requests keep working when the client clock is off. Disable with AWS_DISABLE_CLOCK_SKEW_CORRECTION.
+
+## Service Updates
+* **Bedrock**: New AWS REVIEW mode as supported data retention mode for Bedrock models
+* **EC2**: Adds support for ValidateSecurityGroupQuotasForInterface, an API that specifically authorized AWS services use to validate security group rule quotas before creating an elastic network interface.
+* **MediaTailor**: Elemental MediaTailor now supports two new Monetization Functions lifecycle hooks, Post Ads Response and Pre Manifest Insertion, and a VAST Request function type that calls a VAST or VMAP ad server. This release also adds Yield Optimization with demand from Amazon Publisher Services.
+* **Service Quotas**: Service Quotas adds the AdjustableAtLevel property to QuotaContext, indicating whether a quota is adjustable at the account or resource level.
+
 # 1.11.886 (2026-09-03)
 
 ## Service Updates

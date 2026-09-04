@@ -22,6 +22,7 @@
 #include <aws/mediatailor/model/LivePreRollConfiguration.h>
 #include <aws/mediatailor/model/LogConfiguration.h>
 #include <aws/mediatailor/model/ManifestProcessingRules.h>
+#include <aws/mediatailor/model/YieldOptimizationConfiguration.h>
 
 #include <utility>
 
@@ -512,10 +513,29 @@ class PutPlaybackConfigurationResult {
 
   ///@{
   /**
+   * <p>Configuration for Yield Optimization, which fills unsold ad inventory in ad
+   * breaks with programmatic ads from Amazon Publisher Services (APS).</p>
+   */
+  inline const YieldOptimizationConfiguration& GetYieldOptimizationConfiguration() const { return m_yieldOptimizationConfiguration; }
+  template <typename YieldOptimizationConfigurationT = YieldOptimizationConfiguration>
+  void SetYieldOptimizationConfiguration(YieldOptimizationConfigurationT&& value) {
+    m_yieldOptimizationConfigurationHasBeenSet = true;
+    m_yieldOptimizationConfiguration = std::forward<YieldOptimizationConfigurationT>(value);
+  }
+  template <typename YieldOptimizationConfigurationT = YieldOptimizationConfiguration>
+  PutPlaybackConfigurationResult& WithYieldOptimizationConfiguration(YieldOptimizationConfigurationT&& value) {
+    SetYieldOptimizationConfiguration(std::forward<YieldOptimizationConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A map of lifecycle hook event names to function identifiers. The function
    * mapping specifies which function MediaTailor executes at each lifecycle hook
-   * during ad insertion. Valid keys are <code>PRE_SESSION_INITIALIZATION</code> and
-   * <code>PRE_ADS_REQUEST</code>. For more information, see <a
+   * during ad insertion. Valid keys are <code>PRE_SESSION_INITIALIZATION</code>,
+   * <code>PRE_ADS_REQUEST</code>, <code>POST_ADS_RESPONSE</code>, and
+   * <code>PRE_MANIFEST_INSERTION</code>. For more information, see <a
    * href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-hooks.html">Functions
    * lifecycle hooks</a> in the <i>MediaTailor User Guide</i>.</p>
    */
@@ -640,6 +660,8 @@ class PutPlaybackConfigurationResult {
 
   AdDecisionServerConfiguration m_adDecisionServerConfiguration;
 
+  YieldOptimizationConfiguration m_yieldOptimizationConfiguration;
+
   Aws::Map<EventName, Aws::String> m_functionMapping;
 
   AdsPersonalizationTimeouts m_adsPersonalizationTimeouts;
@@ -672,6 +694,7 @@ class PutPlaybackConfigurationResult {
   bool m_videoContentSourceUrlHasBeenSet = false;
   bool m_adConditioningConfigurationHasBeenSet = false;
   bool m_adDecisionServerConfigurationHasBeenSet = false;
+  bool m_yieldOptimizationConfigurationHasBeenSet = false;
   bool m_functionMappingHasBeenSet = false;
   bool m_adsPersonalizationTimeoutsHasBeenSet = false;
   bool m_adsPersonalizationConcurrencyHasBeenSet = false;

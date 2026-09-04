@@ -20,6 +20,7 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/ValidateSecurityGroupQuotasForInterfaceRequest.h>
 #include <aws/ec2/model/WithdrawByoipCidrRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
@@ -32,6 +33,13 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+ValidateSecurityGroupQuotasForInterfaceOutcome EC2Client::ValidateSecurityGroupQuotasForInterface(
+    const ValidateSecurityGroupQuotasForInterfaceRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ValidateSecurityGroupQuotasForInterfaceOutcome(result.GetResultWithOwnership())
+                            : ValidateSecurityGroupQuotasForInterfaceOutcome(std::move(result.GetError()));
+}
 
 WithdrawByoipCidrOutcome EC2Client::WithdrawByoipCidr(const WithdrawByoipCidrRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);

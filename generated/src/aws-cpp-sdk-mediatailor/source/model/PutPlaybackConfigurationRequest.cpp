@@ -95,6 +95,10 @@ Aws::String PutPlaybackConfigurationRequest::SerializePayload() const {
     payload.WithObject("AdDecisionServerConfiguration", m_adDecisionServerConfiguration.Jsonize());
   }
 
+  if (m_yieldOptimizationConfigurationHasBeenSet) {
+    payload.WithObject("YieldOptimizationConfiguration", m_yieldOptimizationConfiguration.Jsonize());
+  }
+
   if (m_functionMappingHasBeenSet) {
     JsonValue functionMappingJsonMap;
     for (auto& functionMappingItem : m_functionMapping) {

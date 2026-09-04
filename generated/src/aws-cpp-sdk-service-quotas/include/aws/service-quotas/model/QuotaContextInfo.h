@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/service-quotas/ServiceQuotas_EXPORTS.h>
+#include <aws/service-quotas/model/AdjustableAtLevelEnum.h>
 #include <aws/service-quotas/model/QuotaContextScope.h>
 
 #include <utility>
@@ -101,15 +102,39 @@ class QuotaContextInfo {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the level at which you can request an increase for this quota:</p>
+   * <ul> <li> <p> <code>ACCOUNT</code> – You can request an increase only at the
+   * account level.</p> </li> <li> <p> <code>PER_RESOURCE</code> – You can request an
+   * increase only for an individual resource.</p> </li> <li> <p> <code>ALL</code> –
+   * You can request an increase at either the account level or for an individual
+   * resource.</p> </li> </ul>
+   */
+  inline AdjustableAtLevelEnum GetAdjustableAtLevel() const { return m_adjustableAtLevel; }
+  inline bool AdjustableAtLevelHasBeenSet() const { return m_adjustableAtLevelHasBeenSet; }
+  inline void SetAdjustableAtLevel(AdjustableAtLevelEnum value) {
+    m_adjustableAtLevelHasBeenSet = true;
+    m_adjustableAtLevel = value;
+  }
+  inline QuotaContextInfo& WithAdjustableAtLevel(AdjustableAtLevelEnum value) {
+    SetAdjustableAtLevel(value);
+    return *this;
+  }
+  ///@}
  private:
   QuotaContextScope m_contextScope{QuotaContextScope::NOT_SET};
 
   Aws::String m_contextScopeType;
 
   Aws::String m_contextId;
+
+  AdjustableAtLevelEnum m_adjustableAtLevel{AdjustableAtLevelEnum::NOT_SET};
   bool m_contextScopeHasBeenSet = false;
   bool m_contextScopeTypeHasBeenSet = false;
   bool m_contextIdHasBeenSet = false;
+  bool m_adjustableAtLevelHasBeenSet = false;
 };
 
 }  // namespace Model

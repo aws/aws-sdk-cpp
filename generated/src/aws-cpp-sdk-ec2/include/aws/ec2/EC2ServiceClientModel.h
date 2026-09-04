@@ -1009,6 +1009,7 @@
 #include <aws/ec2/model/UpdateSecurityGroupRuleDescriptionsEgressResponse.h>
 #include <aws/ec2/model/UpdateSecurityGroupRuleDescriptionsIngressRequest.h>
 #include <aws/ec2/model/UpdateSecurityGroupRuleDescriptionsIngressResponse.h>
+#include <aws/ec2/model/ValidateSecurityGroupQuotasForInterfaceResponse.h>
 #include <aws/ec2/model/WithdrawByoipCidrResponse.h>
 /* End of service model headers required in EC2Client header */
 
@@ -1843,6 +1844,7 @@ class UpdateCapacityManagerOrganizationsAccessRequest;
 class UpdateInterruptibleCapacityReservationAllocationRequest;
 class UpdateSecurityGroupRuleDescriptionsEgressRequest;
 class UpdateSecurityGroupRuleDescriptionsIngressRequest;
+class ValidateSecurityGroupQuotasForInterfaceRequest;
 class WithdrawByoipCidrRequest;
 /* End of service model forward declarations required in EC2Client header */
 
@@ -2686,6 +2688,7 @@ typedef Aws::Utils::Outcome<UpdateInterruptibleCapacityReservationAllocationResp
     UpdateInterruptibleCapacityReservationAllocationOutcome;
 typedef Aws::Utils::Outcome<UpdateSecurityGroupRuleDescriptionsEgressResponse, EC2Error> UpdateSecurityGroupRuleDescriptionsEgressOutcome;
 typedef Aws::Utils::Outcome<UpdateSecurityGroupRuleDescriptionsIngressResponse, EC2Error> UpdateSecurityGroupRuleDescriptionsIngressOutcome;
+typedef Aws::Utils::Outcome<ValidateSecurityGroupQuotasForInterfaceResponse, EC2Error> ValidateSecurityGroupQuotasForInterfaceOutcome;
 typedef Aws::Utils::Outcome<WithdrawByoipCidrResponse, EC2Error> WithdrawByoipCidrOutcome;
 /* End of service model Outcome class definitions */
 
@@ -3499,6 +3502,7 @@ typedef std::future<UpdateInterruptibleCapacityReservationAllocationOutcome>
     UpdateInterruptibleCapacityReservationAllocationOutcomeCallable;
 typedef std::future<UpdateSecurityGroupRuleDescriptionsEgressOutcome> UpdateSecurityGroupRuleDescriptionsEgressOutcomeCallable;
 typedef std::future<UpdateSecurityGroupRuleDescriptionsIngressOutcome> UpdateSecurityGroupRuleDescriptionsIngressOutcomeCallable;
+typedef std::future<ValidateSecurityGroupQuotasForInterfaceOutcome> ValidateSecurityGroupQuotasForInterfaceOutcomeCallable;
 typedef std::future<WithdrawByoipCidrOutcome> WithdrawByoipCidrOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
@@ -6270,6 +6274,10 @@ typedef std::function<void(const EC2Client*, const Model::UpdateSecurityGroupRul
                            const Model::UpdateSecurityGroupRuleDescriptionsIngressOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateSecurityGroupRuleDescriptionsIngressResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::ValidateSecurityGroupQuotasForInterfaceRequest&,
+                           const Model::ValidateSecurityGroupQuotasForInterfaceOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ValidateSecurityGroupQuotasForInterfaceResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::WithdrawByoipCidrRequest&, const Model::WithdrawByoipCidrOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     WithdrawByoipCidrResponseReceivedHandler;

@@ -40,8 +40,13 @@ class AdsInteractionLog {
 
   ///@{
   /**
-   * <p>Indicates that MediaTailor emits <code>RAW_ADS_RESPONSE</code> logs for
-   * playback sessions that are initialized with this configuration.</p>
+   * <p>Indicates that MediaTailor will emit the selected events in the logs for
+   * playback sessions that are initialized with this configuration. These events are
+   * not emitted by default and must be explicitly opted in. For descriptions of each
+   * event type, see <a
+   * href="https://docs.aws.amazon.com/mediatailor/latest/ug/ads-log-format.html">MediaTailor
+   * ADS logs description and event types</a> in Elemental MediaTailor User
+   * Guide.</p>
    */
   inline const Aws::Vector<AdsInteractionPublishOptInEventType>& GetPublishOptInEventTypes() const { return m_publishOptInEventTypes; }
   inline bool PublishOptInEventTypesHasBeenSet() const { return m_publishOptInEventTypesHasBeenSet; }

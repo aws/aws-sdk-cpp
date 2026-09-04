@@ -12,6 +12,7 @@
 #include <aws/mediatailor/model/FunctionType.h>
 #include <aws/mediatailor/model/HttpRequestConfiguration.h>
 #include <aws/mediatailor/model/SequentialExecutorConfiguration.h>
+#include <aws/mediatailor/model/VastRequestConfiguration.h>
 
 #include <utility>
 
@@ -168,6 +169,24 @@ class Function {
 
   ///@{
   /**
+   * <p>The configuration for a <code>VAST_REQUEST</code> function.</p>
+   */
+  inline const VastRequestConfiguration& GetVastRequestConfiguration() const { return m_vastRequestConfiguration; }
+  inline bool VastRequestConfigurationHasBeenSet() const { return m_vastRequestConfigurationHasBeenSet; }
+  template <typename VastRequestConfigurationT = VastRequestConfiguration>
+  void SetVastRequestConfiguration(VastRequestConfigurationT&& value) {
+    m_vastRequestConfigurationHasBeenSet = true;
+    m_vastRequestConfiguration = std::forward<VastRequestConfigurationT>(value);
+  }
+  template <typename VastRequestConfigurationT = VastRequestConfiguration>
+  Function& WithVastRequestConfiguration(VastRequestConfigurationT&& value) {
+    SetVastRequestConfiguration(std::forward<VastRequestConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The tags assigned to the function. Tags are key-value pairs that you can
    * associate with Amazon resources to help with organization, access control, and
    * cost tracking. For more information, see <a
@@ -226,6 +245,8 @@ class Function {
 
   SequentialExecutorConfiguration m_sequentialExecutorConfiguration;
 
+  VastRequestConfiguration m_vastRequestConfiguration;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_arn;
@@ -236,6 +257,7 @@ class Function {
   bool m_customOutputConfigurationHasBeenSet = false;
   bool m_concurrentExecutorConfigurationHasBeenSet = false;
   bool m_sequentialExecutorConfigurationHasBeenSet = false;
+  bool m_vastRequestConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_arnHasBeenSet = false;
 };

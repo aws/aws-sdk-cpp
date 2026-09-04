@@ -3067,6 +3067,8 @@
 #include <aws/ec2/model/VCpuCountRange.h>
 #include <aws/ec2/model/VCpuCountRangeRequest.h>
 #include <aws/ec2/model/VCpuInfo.h>
+#include <aws/ec2/model/ValidateSecurityGroupQuotasForInterfaceRequest.h>
+#include <aws/ec2/model/ValidateSecurityGroupQuotasForInterfaceResponse.h>
 #include <aws/ec2/model/ValidationError.h>
 #include <aws/ec2/model/ValidationWarning.h>
 #include <aws/ec2/model/VerificationMethod.h>

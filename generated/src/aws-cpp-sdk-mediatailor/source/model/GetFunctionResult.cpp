@@ -50,6 +50,10 @@ GetFunctionResult& GetFunctionResult::operator=(const Aws::AmazonWebServiceResul
     m_sequentialExecutorConfiguration = jsonValue.GetObject("SequentialExecutorConfiguration");
     m_sequentialExecutorConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("VastRequestConfiguration")) {
+    m_vastRequestConfiguration = jsonValue.GetObject("VastRequestConfiguration");
+    m_vastRequestConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
     for (auto& tagsItem : tagsJsonMap) {

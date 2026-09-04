@@ -46,6 +46,10 @@ Function& Function::operator=(JsonView jsonValue) {
     m_sequentialExecutorConfiguration = jsonValue.GetObject("SequentialExecutorConfiguration");
     m_sequentialExecutorConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("VastRequestConfiguration")) {
+    m_vastRequestConfiguration = jsonValue.GetObject("VastRequestConfiguration");
+    m_vastRequestConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
     for (auto& tagsItem : tagsJsonMap) {
@@ -89,6 +93,10 @@ JsonValue Function::Jsonize() const {
 
   if (m_sequentialExecutorConfigurationHasBeenSet) {
     payload.WithObject("SequentialExecutorConfiguration", m_sequentialExecutorConfiguration.Jsonize());
+  }
+
+  if (m_vastRequestConfigurationHasBeenSet) {
+    payload.WithObject("VastRequestConfiguration", m_vastRequestConfiguration.Jsonize());
   }
 
   if (m_tagsHasBeenSet) {

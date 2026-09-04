@@ -17,6 +17,7 @@ namespace DataRetentionModeMapper {
 
 static const int default__HASH = HashingUtils::HashString("default");
 static const int none_HASH = HashingUtils::HashString("none");
+static const int aws_review_HASH = HashingUtils::HashString("aws_review");
 static const int provider_data_share_HASH = HashingUtils::HashString("provider_data_share");
 static const int inherit_HASH = HashingUtils::HashString("inherit");
 
@@ -26,6 +27,8 @@ DataRetentionMode GetDataRetentionModeForName(const Aws::String& name) {
     return DataRetentionMode::default_;
   } else if (hashCode == none_HASH) {
     return DataRetentionMode::none;
+  } else if (hashCode == aws_review_HASH) {
+    return DataRetentionMode::aws_review;
   } else if (hashCode == provider_data_share_HASH) {
     return DataRetentionMode::provider_data_share;
   } else if (hashCode == inherit_HASH) {
@@ -48,6 +51,8 @@ Aws::String GetNameForDataRetentionMode(DataRetentionMode enumValue) {
       return "default";
     case DataRetentionMode::none:
       return "none";
+    case DataRetentionMode::aws_review:
+      return "aws_review";
     case DataRetentionMode::provider_data_share:
       return "provider_data_share";
     case DataRetentionMode::inherit:

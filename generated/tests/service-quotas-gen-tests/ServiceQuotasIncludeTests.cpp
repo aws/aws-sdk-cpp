@@ -17,6 +17,7 @@
 #include <aws/service-quotas/ServiceQuotasWaiter.h>
 #include <aws/service-quotas/ServiceQuotas_EXPORTS.h>
 #include <aws/service-quotas/internal/ServiceQuotasEndpointRules.h>
+#include <aws/service-quotas/model/AdjustableAtLevelEnum.h>
 #include <aws/service-quotas/model/AppliedLevelEnum.h>
 #include <aws/service-quotas/model/AssociateServiceQuotaTemplateRequest.h>
 #include <aws/service-quotas/model/AssociateServiceQuotaTemplateResult.h>

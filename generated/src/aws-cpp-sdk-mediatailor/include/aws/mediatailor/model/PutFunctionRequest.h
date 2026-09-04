@@ -13,6 +13,7 @@
 #include <aws/mediatailor/model/FunctionType.h>
 #include <aws/mediatailor/model/HttpRequestConfiguration.h>
 #include <aws/mediatailor/model/SequentialExecutorConfiguration.h>
+#include <aws/mediatailor/model/VastRequestConfiguration.h>
 
 #include <utility>
 
@@ -62,9 +63,13 @@ class PutFunctionRequest : public MediaTailorRequest {
    * do at runtime. Valid values: <code>CUSTOM_OUTPUT</code> evaluates expressions
    * and produces output bindings with no external calls. <code>HTTP_REQUEST</code>
    * makes an HTTP call to an external service and evaluates output expressions that
-   * can reference the response. <code>SEQUENTIAL_EXECUTOR</code> runs a sequence of
-   * child functions in order, passing data between steps through temporary data. For
-   * more information, see <a
+   * can reference the response. <code>VAST_REQUEST</code> calls a VAST endpoint,
+   * parses the response as VAST, and makes the parsed ads available to output
+   * expressions. <code>SEQUENTIAL_EXECUTOR</code> runs a sequence of child functions
+   * in order, passing data between steps through temporary data.
+   * <code>CONCURRENT_EXECUTOR</code> runs a set of child functions in parallel, up
+   * to a maximum concurrency, and combines their output when all functions complete.
+   * For more information, see <a
    * href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-types.html">Function
    * types and composition</a> in the <i>MediaTailor User Guide</i>.</p>
    */
@@ -182,6 +187,26 @@ class PutFunctionRequest : public MediaTailorRequest {
 
   ///@{
   /**
+   * <p>The configuration for a <code>VAST_REQUEST</code> function. Specifies the
+   * HTTP method, URL, headers, body, timeout, and output expressions. Required when
+   * <code>FunctionType</code> is <code>VAST_REQUEST</code>.</p>
+   */
+  inline const VastRequestConfiguration& GetVastRequestConfiguration() const { return m_vastRequestConfiguration; }
+  inline bool VastRequestConfigurationHasBeenSet() const { return m_vastRequestConfigurationHasBeenSet; }
+  template <typename VastRequestConfigurationT = VastRequestConfiguration>
+  void SetVastRequestConfiguration(VastRequestConfigurationT&& value) {
+    m_vastRequestConfigurationHasBeenSet = true;
+    m_vastRequestConfiguration = std::forward<VastRequestConfigurationT>(value);
+  }
+  template <typename VastRequestConfigurationT = VastRequestConfiguration>
+  PutFunctionRequest& WithVastRequestConfiguration(VastRequestConfigurationT&& value) {
+    SetVastRequestConfiguration(std::forward<VastRequestConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The tags to assign to the function. Tags are key-value pairs that you can
    * associate with Amazon resources to help with organization, access control, and
    * cost tracking. For more information, see <a
@@ -222,6 +247,8 @@ class PutFunctionRequest : public MediaTailorRequest {
 
   SequentialExecutorConfiguration m_sequentialExecutorConfiguration;
 
+  VastRequestConfiguration m_vastRequestConfiguration;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_functionIdHasBeenSet = false;
   bool m_functionTypeHasBeenSet = false;
@@ -230,6 +257,7 @@ class PutFunctionRequest : public MediaTailorRequest {
   bool m_customOutputConfigurationHasBeenSet = false;
   bool m_concurrentExecutorConfigurationHasBeenSet = false;
   bool m_sequentialExecutorConfigurationHasBeenSet = false;
+  bool m_vastRequestConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

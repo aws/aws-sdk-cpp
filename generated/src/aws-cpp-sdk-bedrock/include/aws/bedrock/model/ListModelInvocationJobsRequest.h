@@ -80,7 +80,7 @@ class ListModelInvocationJobsRequest : public BedrockRequest {
    * <p>Specify a status to filter for batch inference jobs whose statuses match the
    * string you specify.</p> <p>The following statuses are possible:</p> <ul> <li>
    * <p>Submitted – This job has been submitted to a queue for validation.</p> </li>
-   * <li> <p>Validating – This job is being validated for the requirements described
+   * <li> <p>Validating �� This job is being validated for the requirements described
    * in <a
    * href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-data.html">Format
    * and upload your batch inference data</a>. The criteria include the

@@ -30,6 +30,10 @@ QuotaContextInfo& QuotaContextInfo::operator=(JsonView jsonValue) {
     m_contextId = jsonValue.GetString("ContextId");
     m_contextIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AdjustableAtLevel")) {
+    m_adjustableAtLevel = AdjustableAtLevelEnumMapper::GetAdjustableAtLevelEnumForName(jsonValue.GetString("AdjustableAtLevel"));
+    m_adjustableAtLevelHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue QuotaContextInfo::Jsonize() const {
 
   if (m_contextIdHasBeenSet) {
     payload.WithString("ContextId", m_contextId);
+  }
+
+  if (m_adjustableAtLevelHasBeenSet) {
+    payload.WithString("AdjustableAtLevel", AdjustableAtLevelEnumMapper::GetNameForAdjustableAtLevelEnum(m_adjustableAtLevel));
   }
 
   return payload;

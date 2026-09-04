@@ -10,13 +10,13 @@
 namespace Aws {
 namespace MediaTailor {
 namespace Model {
-enum class FunctionType { NOT_SET, HTTP_REQUEST, CUSTOM_OUTPUT, CONCURRENT_EXECUTOR, SEQUENTIAL_EXECUTOR, VAST_REQUEST };
+enum class ApsRegion { NOT_SET, AMERICAS, EUROPE, ASIA_PACIFIC };
 
-namespace FunctionTypeMapper {
-AWS_MEDIATAILOR_API FunctionType GetFunctionTypeForName(const Aws::String& name);
+namespace ApsRegionMapper {
+AWS_MEDIATAILOR_API ApsRegion GetApsRegionForName(const Aws::String& name);
 
-AWS_MEDIATAILOR_API Aws::String GetNameForFunctionType(FunctionType value);
-}  // namespace FunctionTypeMapper
+AWS_MEDIATAILOR_API Aws::String GetNameForApsRegion(ApsRegion value);
+}  // namespace ApsRegionMapper
 }  // namespace Model
 }  // namespace MediaTailor
 }  // namespace Aws
