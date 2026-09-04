@@ -668,12 +668,27 @@ set_compiler_flags(${PROJECT_NAME})
 set_compiler_warnings(${PROJECT_NAME})
 
 if(SIMPLE_INSTALL)
+    # Determine the component for this library based on service group mapping (CPack packaging support)
+    if(COMMAND get_service_group_component)
+        get_service_group_component(${PROJECT_NAME} SERVICE_GROUP)
+        if(BUILD_SHARED_LIBS)
+            set(INSTALL_COMPONENT "${SERVICE_GROUP}-runtime")
+        else()
+            set(INSTALL_COMPONENT "${SERVICE_GROUP}-static")
+        endif()
+    else()
+        set(INSTALL_COMPONENT "Unspecified")
+    endif()
+
     install (
         TARGETS ${PROJECT_NAME}
         EXPORT "${PROJECT_NAME}-targets"
         ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
+            COMPONENT ${INSTALL_COMPONENT}
         LIBRARY DESTINATION ${LIBRARY_DIRECTORY}
+            COMPONENT ${INSTALL_COMPONENT}
         RUNTIME DESTINATION ${BINARY_DIRECTORY}
+            COMPONENT ${INSTALL_COMPONENT}
     )
 else()
     if(PLATFORM_CUSTOM)
@@ -695,8 +710,15 @@ if(SIMPLE_INSTALL)
     if(BUILD_SHARED_LIBS)
         install(
             FILES "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.pc"
-            DESTINATION ${LIBRARY_DIRECTORY}/pkgconfig)
+            DESTINATION ${LIBRARY_DIRECTORY}/pkgconfig
+            COMPONENT ${INSTALL_COMPONENT})
     endif()
+endif()
+
+# Set default component for header installations (CPack packaging support)
+if(COMMAND get_service_group_component)
+    get_service_group_component(${PROJECT_NAME} SERVICE_GROUP)
+    set(CMAKE_INSTALL_DEFAULT_COMPONENT_NAME "${SERVICE_GROUP}-devel")
 endif()
 
 install (FILES ${AWS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core)

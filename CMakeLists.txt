@@ -73,6 +73,7 @@ if (LEGACY_BUILD)
     option(DISABLE_DNS_REQUIRED_TESTS "Disable unit tests that require DNS lookup to succeed, useful when using a http client that does not perform DNS lookup" OFF)
     option(AWS_APPSTORE_SAFE "Remove reference to private Apple APIs for AES GCM in Common Crypto. If set to OFF you application will get rejected from the apple app store." OFF)
     option(AWS_ENABLE_CORE_INTEGRATION_TEST "Enables the core integration tests to be built which contains dependencies on other clients for setup and tear down" OFF)
+    option(ENABLE_CPACK_PACKAGING "Enable CPack for DEB and RPM package generation (Linux only)" OFF)
 
 
     set(AWS_USER_AGENT_CUSTOMIZATION "" CACHE STRING "User agent extension")
@@ -244,7 +245,18 @@ if (LEGACY_BUILD)
             set(BUILD_SHARED_LIBS OFF)
         endif ()
         set(CRT_BUILD_SHARED_LIBS ${BUILD_SHARED_LIBS})
+        # Some CRT submodule install() calls (e.g. aws-c-http, aws-c-compression
+        # headers) omit COMPONENT, which would otherwise hit CMake's "Unspecified"
+        # default and produce a stray rpm/deb. Default them to "Development" so
+        # they merge with the rest of the CRT devel artifacts.
+        if(ENABLE_CPACK_PACKAGING)
+            set(_PREV_DEFAULT_COMPONENT "${CMAKE_INSTALL_DEFAULT_COMPONENT_NAME}")
+            set(CMAKE_INSTALL_DEFAULT_COMPONENT_NAME "Development")
+        endif()
         add_subdirectory(crt/aws-crt-cpp)
+        if(ENABLE_CPACK_PACKAGING)
+            set(CMAKE_INSTALL_DEFAULT_COMPONENT_NAME "${_PREV_DEFAULT_COMPONENT}")
+        endif()
         set(BUILD_TESTING ${BUILD_TESTING_PREV})
         if (ENABLE_OPENSSL_ENCRYPTION)
             set(BUILD_SHARED_LIBS ${BUILD_SHARED_LIBS_PREV})
@@ -343,6 +355,13 @@ if (LEGACY_BUILD)
 
     add_definitions("-DAWS_TEST_REGION=${AWS_TEST_REGION}")
 
+    # Load the service-to-group mapping BEFORE add_sdks() so each service's
+    # setup_install/do_packaging can route installs into per-group CPack
+    # components. Without this, every install falls through to "Unspecified".
+    if(ENABLE_CPACK_PACKAGING)
+        include(cmake/ServiceGroupMapping.cmake)
+    endif()
+
     add_sdks()
     include(tests)
 
@@ -360,6 +379,14 @@ if (LEGACY_BUILD)
     else ()
         ADD_CUSTOM_TARGET(uninstall-awssdk "${CMAKE_COMMAND}" -P "${AWS_NATIVE_SDK_ROOT}/cmake/make_uninstall.cmake")
     endif ()
+
+    # CPack packaging configuration (DEB and RPM packages). Must run after all
+    # install() calls and after add_sdks() so every component is registered
+    # before include(CPack) finalizes. ServiceGroupMapping is included earlier
+    # (before add_sdks) so the install rules themselves can use its mapping.
+    if(ENABLE_CPACK_PACKAGING)
+        include(cmake/CPackConfig.cmake)
+    endif()
 else () #  End of Legacy Build
     # -- Preamble --
     message(STATUS "Building with new CMake scripts.")
