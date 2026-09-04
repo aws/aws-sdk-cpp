@@ -34,12 +34,16 @@ void PooledThreadExecutor::WaitUntilStopped()
         std::lock_guard<std::mutex> locker(m_queueLock);
         m_stopped = true;
     }
-    for(auto threadTask : m_threadTaskHandles)
     {
-        threadTask->StopProcessingWork();
+        std::lock_guard lock(m_queueLock);
+
+        for(auto threadTask : m_threadTaskHandles)
+        {
+            threadTask->StopProcessingWork();
+        }
     }
 
-    m_sync.ReleaseAll();
+    m_sync.notify_all();
 
     const auto thisThreadId = std::this_thread::get_id();
     for (auto threadTask : m_threadTaskHandles)
@@ -83,15 +87,13 @@ bool PooledThreadExecutor::SubmitToThread(std::function<void()>&& fn)
         m_tasks.push(fnCpy);
     }
 
-    m_sync.Release();
+    m_sync.notify_one();
 
     return true;
 }
 
 std::function<void()>* PooledThreadExecutor::PopTask()
 {
-    std::lock_guard<std::mutex> locker(m_queueLock);
-
     if (m_tasks.size() > 0)
     {
         std::function<void()>* fn = m_tasks.front();
@@ -107,6 +109,5 @@ std::function<void()>* PooledThreadExecutor::PopTask()
 
 bool PooledThreadExecutor::HasTasks() const
 {
-    std::lock_guard<std::mutex> locker(m_queueLock);
     return m_tasks.size() > 0;
 }
