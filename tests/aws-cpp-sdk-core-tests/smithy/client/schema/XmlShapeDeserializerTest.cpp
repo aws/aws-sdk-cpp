@@ -432,3 +432,71 @@ TEST_F(XmlShapeDeserializerTest, AbsentMemberSkipped) {
   EXPECT_EQ(got["present"], "here");
   EXPECT_EQ(got.find("absent"), got.end());
 }
+
+TEST_F(XmlShapeDeserializerTest, DeserializesLiteralPayload) {
+  auto nested = Schema::StructureBuilder("Nested");
+  nested.PutMember("id", Schema::CreateInteger("NI"));
+  auto tags = Schema::ListBuilder("Tags");
+  auto meta = Schema::MapBuilder("Meta");
+  auto root = Schema::StructureBuilder("Root")
+                  .PutMember("name", Schema::CreateString("S"))
+                  .PutMember("count", Schema::CreateInteger("I"))
+                  .PutMember("ratio", Schema::CreateDouble("D"))
+                  .PutMember("active", Schema::CreateBoolean("B"))
+                  .PutMember("tags", tags)
+                  .PutMember("meta", meta)
+                  .PutMember("nested", nested)
+                  .Build();
+  auto elem = Schema::CreateMember("member", ShapeType::String);
+  auto mapVal = Schema::CreateMember("value", ShapeType::String);
+
+  const Aws::String payload =
+      "<Root><name>Alice</name><count>3</count><ratio>2.5</ratio><active>true</active>"
+      "<tags><member>x</member><member>y</member></tags>"
+      "<meta><entry><key>k1</key><value>v1</value></entry></meta>"
+      "<nested><id>7</id></nested></Root>";
+  SCOPED_TRACE(Aws::String("input XML: ") + payload);
+
+  Aws::String name;
+  int count = 0;
+  double ratio = 0.0;
+  bool active = false;
+  Aws::Vector<Aws::String> tagValues;
+  Aws::Map<Aws::String, Aws::String> metaValues;
+  int nestedId = -1;
+
+  XmlShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+    const Aws::String n = m.GetMemberName();
+    if (n == "name") {
+      name = de.ReadString(m).value();
+    } else if (n == "count") {
+      count = de.ReadInteger(m).value();
+    } else if (n == "ratio") {
+      ratio = de.ReadDouble(m).value();
+    } else if (n == "active") {
+      active = de.ReadBoolean(m).value();
+    } else if (n == "tags") {
+      de.ReadList(m, [&](ShapeDeserializer& e) { tagValues.push_back(e.ReadString(*elem).value()); });
+    } else if (n == "meta") {
+      de.ReadMap(m, [&](const Aws::String& k, ShapeDeserializer& v) { metaValues[k] = v.ReadString(*mapVal).value(); });
+    } else if (n == "nested") {
+      de.ReadStruct(*m.GetMemberTarget().value(), [&](const Schema& im, ShapeDeserializer& ide) {
+        if (im.GetMemberName() == "id") {
+          nestedId = ide.ReadInteger(im).value();
+        }
+      });
+    }
+  });
+
+  EXPECT_EQ(name, "Alice");
+  EXPECT_EQ(count, 3);
+  EXPECT_DOUBLE_EQ(ratio, 2.5);
+  EXPECT_TRUE(active);
+  ASSERT_EQ(tagValues.size(), 2u);
+  EXPECT_EQ(tagValues[0], "x");
+  EXPECT_EQ(tagValues[1], "y");
+  ASSERT_EQ(metaValues.size(), 1u);
+  EXPECT_EQ(metaValues["k1"], "v1");
+  EXPECT_EQ(nestedId, 7);
+}
