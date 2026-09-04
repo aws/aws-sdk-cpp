@@ -5,6 +5,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/crt/Optional.h>
 #include <aws/testing/AwsCppSdkGTestSuite.h>
+#include <smithy/client/schema/Codec.h>
 #include <smithy/client/schema/JsonShapeDeserializer.h>
 #include <smithy/client/schema/JsonShapeSerializer.h>
 #include <smithy/client/schema/JsonTraits.h>
@@ -357,4 +358,114 @@ TEST_F(JsonShapeDeserializerTest, MultipleScalarsByIndex) {
   EXPECT_EQ(bb.value(), 7);
   ASSERT_TRUE(bc.has_value());
   EXPECT_EQ(bc.value(), "x");
+}
+
+TEST_F(JsonShapeDeserializerTest, DeserializesLiteralPayload) {
+  auto nested = Schema::StructureBuilder("Nested");
+  nested.PutMember("id", Schema::CreateInteger("NI"));
+  auto tags = Schema::ListBuilder("Tags");
+  auto meta = Schema::MapBuilder("Meta");
+  auto root = Schema::StructureBuilder("Root")
+                  .PutMember("name", Schema::CreateString("S"))
+                  .PutMember("count", Schema::CreateInteger("I"))
+                  .PutMember("ratio", Schema::CreateDouble("D"))
+                  .PutMember("active", Schema::CreateBoolean("B"))
+                  .PutMember("tags", tags)
+                  .PutMember("meta", meta)
+                  .PutMember("nested", nested)
+                  .Build();
+  auto elem = Schema::CreateMember("member", ShapeType::String);
+  auto mapVal = Schema::CreateMember("value", ShapeType::String);
+
+  const Aws::String payload =
+      "{\"name\":\"Alice\",\"count\":3,\"ratio\":2.5,\"active\":true,"
+      "\"tags\":[\"x\",\"y\"],\"meta\":{\"k1\":\"v1\"},\"nested\":{\"id\":7}}";
+  SCOPED_TRACE(Aws::String("input JSON: ") + payload);
+
+  Aws::String name;
+  int count = 0;
+  double ratio = 0.0;
+  bool active = false;
+  Aws::Vector<Aws::String> tagValues;
+  Aws::Map<Aws::String, Aws::String> metaValues;
+  int nestedId = -1;
+
+  JsonShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+    const Aws::String n = m.GetMemberName();
+    if (n == "name") {
+      name = de.ReadString(m).value();
+    } else if (n == "count") {
+      count = de.ReadInteger(m).value();
+    } else if (n == "ratio") {
+      ratio = de.ReadDouble(m).value();
+    } else if (n == "active") {
+      active = de.ReadBoolean(m).value();
+    } else if (n == "tags") {
+      de.ReadList(m, [&](ShapeDeserializer& e) { tagValues.push_back(e.ReadString(*elem).value()); });
+    } else if (n == "meta") {
+      de.ReadMap(m, [&](const Aws::String& k, ShapeDeserializer& v) { metaValues[k] = v.ReadString(*mapVal).value(); });
+    } else if (n == "nested") {
+      de.ReadStruct(*m.GetMemberTarget().value(), [&](const Schema& im, ShapeDeserializer& ide) {
+        if (im.GetMemberName() == "id") {
+          nestedId = ide.ReadInteger(im).value();
+        }
+      });
+    }
+  });
+
+  EXPECT_EQ(name, "Alice");
+  EXPECT_EQ(count, 3);
+  EXPECT_DOUBLE_EQ(ratio, 2.5);
+  EXPECT_TRUE(active);
+  ASSERT_EQ(tagValues.size(), 2u);
+  EXPECT_EQ(tagValues[0], "x");
+  EXPECT_EQ(tagValues[1], "y");
+  ASSERT_EQ(metaValues.size(), 1u);
+  EXPECT_EQ(metaValues["k1"], "v1");
+  EXPECT_EQ(nestedId, 7);
+}
+
+// Sketch of a generated, schema-driven shape: it owns its Schema, writes its
+// members (push), and populates itself from per-member deserialize callbacks.
+class Widget : public SerializableStruct {
+ public:
+  const Schema& GetSchema() const override { return *Root(); }
+
+  void SerializeMembers(ShapeSerializer& serializer) const override {
+    serializer.WriteString(*GetSchema().GetMember("foo").value(), foo);
+  }
+
+  void From(const Schema& memberSchema, ShapeDeserializer& deserializer) override {
+    switch (memberSchema.GetMemberIndex()) {
+      case 0: {
+        auto v = deserializer.ReadString(memberSchema);
+        if (v.has_value()) {
+          foo = v.value();
+        }
+        break;
+      }
+      default:
+        break;
+    }
+  }
+
+  Aws::String foo{};
+
+ private:
+  static const std::shared_ptr<const Schema>& Root() {
+    static const std::shared_ptr<const Schema> schema =
+        Schema::StructureBuilder("Widget").PutMember("foo", Schema::CreateString("S")).Build();
+    return schema;
+  }
+};
+
+TEST_F(JsonShapeDeserializerTest, DeserializesIntoClass) {
+  const Aws::String serialized_struct{"{\"foo\":\"whatever\"}"};
+
+  JsonCodec codec;
+  Widget w{};
+  codec.DeserializeShape(reinterpret_cast<const unsigned char*>(serialized_struct.data()), serialized_struct.size(), w);
+
+  EXPECT_EQ(w.foo, "whatever");
 }
