@@ -157,6 +157,13 @@ namespace Aws
 
 
             /**
+             * Clamp a double to the int64 range, saturating out-of-range values and mapping NaN to 0.
+             * Converting an out-of-range or NaN double to int64 via a plain cast is undefined behavior.
+             */
+            static long long ClampDoubleToInt64(double value);
+
+
+            /**
              * convert to int 32
              */
             static long ConvertToInt32(const char* source);

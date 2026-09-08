@@ -622,10 +622,18 @@ static cJSON_AS4CPP_bool print_number(const cJSON * const item, printbuffer * co
     /* For integer which is out of the range of [INT_MIN, INT_MAX], valuestring is an integer literal. */
     if (item->valuestring)
     {
-        length = snprintf((char*)number_buffer, sizeof(number_buffer), "%s", item->valuestring);
+        size_t literal_length = strlen(item->valuestring);
+        output_pointer = ensure(output_buffer, literal_length + sizeof(""));
+        if (output_pointer == NULL)
+        {
+            return false;
+        }
+        memcpy(output_pointer, item->valuestring, literal_length + 1);
+        output_buffer->offset += literal_length;
+        return true;
     }
     /* This checks for NaN and Infinity */
-    else if (isnan(d) || isinf(d))
+    if (isnan(d) || isinf(d))
     {
         length = snprintf((char*)number_buffer, sizeof(number_buffer), "null");
     }

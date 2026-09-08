@@ -499,7 +499,7 @@ int64_t JsonView::GetInt64(const Aws::String& key) const
     }
     else
     {
-        return static_cast<int64_t>(item->valuedouble);
+        return Aws::Utils::StringUtils::ClampDoubleToInt64(item->valuedouble);
     }
 }
 
@@ -512,7 +512,7 @@ int64_t JsonView::AsInt64() const
     }
     else
     {
-        return static_cast<int64_t>(m_value->valuedouble);
+        return Aws::Utils::StringUtils::ClampDoubleToInt64(m_value->valuedouble);
     }
 }
 
@@ -678,6 +678,10 @@ Aws::String JsonView::WriteCompact(bool treatAsObject) const
     }
 
     auto temp = cJSON_AS4CPP_PrintUnformatted(m_value);
+    if (!temp)
+    {
+        return treatAsObject ? "{}" : "";
+    }
     Aws::String out(temp);
     cJSON_AS4CPP_free(temp);
     return out;
@@ -695,6 +699,10 @@ Aws::String JsonView::WriteReadable(bool treatAsObject) const
     }
 
     auto temp = cJSON_AS4CPP_Print(m_value);
+    if (!temp)
+    {
+        return treatAsObject ? "{\n}\n" : "";
+    }
     Aws::String out(temp);
     cJSON_AS4CPP_free(temp);
     return out;

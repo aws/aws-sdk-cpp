@@ -1,0 +1,6 @@
+{
+  "type": "bugfix",
+  "category": "aws-cpp-sdk-core",
+  "contributor": "pulimsr",
+  "description": "Fix JSON number parsing: avoid crash when printing large integer literals, saturate out-of-range double-to-int64 conversions instead of relying on undefined behavior, and correctly decode scientific-notation integers"
+}
