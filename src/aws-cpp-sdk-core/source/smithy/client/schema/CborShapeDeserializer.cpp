@@ -28,7 +28,6 @@ class CborShapeDeserializer::Impl final : public ShapeDeserializer {
       if (member.has_value() && *member && !IsNull()) {
         consumer(**member, *this);
       } else {
-
         SkipValue();
       }
     }
@@ -180,7 +179,6 @@ class CborShapeDeserializer::Impl final : public ShapeDeserializer {
   }
 
  private:
-
   bool OpenMap(bool& indefinite, size_t& count) {
     auto type = m_decoder.PeekType();
     if (!type.has_value()) {
@@ -252,12 +250,8 @@ CborShapeDeserializer::CborShapeDeserializer(const unsigned char* data, size_t l
     : m_impl(Aws::MakeUnique<Impl>("CborShapeDeserializer", data, length)) {}
 CborShapeDeserializer::~CborShapeDeserializer() = default;
 
-void CborShapeDeserializer::ReadStruct(const Schema& schema, const StructMemberConsumer& consumer) {
-  m_impl->ReadStruct(schema, consumer);
-}
-void CborShapeDeserializer::ReadList(const Schema& schema, const ListElementConsumer& consumer) {
-  m_impl->ReadList(schema, consumer);
-}
+void CborShapeDeserializer::ReadStruct(const Schema& schema, const StructMemberConsumer& consumer) { m_impl->ReadStruct(schema, consumer); }
+void CborShapeDeserializer::ReadList(const Schema& schema, const ListElementConsumer& consumer) { m_impl->ReadList(schema, consumer); }
 void CborShapeDeserializer::ReadMap(const Schema& schema, const MapEntryConsumer& consumer) { m_impl->ReadMap(schema, consumer); }
 Aws::Crt::Optional<bool> CborShapeDeserializer::ReadBoolean(const Schema& schema) { return m_impl->ReadBoolean(schema); }
 Aws::Crt::Optional<int> CborShapeDeserializer::ReadInteger(const Schema& schema) { return m_impl->ReadInteger(schema); }

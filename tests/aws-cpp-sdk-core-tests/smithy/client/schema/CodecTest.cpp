@@ -51,28 +51,23 @@ void RoundTrip(const Codec& codec, const std::shared_ptr<const Schema>& root) {
   EXPECT_EQ(gotCount.value(), 42);
 }
 
-}
+}  // namespace
 
 TEST_F(CodecTest, JsonRoundTrip) {
-  auto root = Schema::StructureBuilder("Root")
-                  .PutMember("name", Schema::CreateString("S"))
-                  .PutMember("count", Schema::CreateInteger("I"))
-                  .Build();
+  auto root =
+      Schema::StructureBuilder("Root").PutMember("name", Schema::CreateString("S")).PutMember("count", Schema::CreateInteger("I")).Build();
   JsonCodec codec;
   RoundTrip(codec, root);
 }
 
 TEST_F(CodecTest, CborRoundTrip) {
-  auto root = Schema::StructureBuilder("Root")
-                  .PutMember("name", Schema::CreateString("S"))
-                  .PutMember("count", Schema::CreateInteger("I"))
-                  .Build();
+  auto root =
+      Schema::StructureBuilder("Root").PutMember("name", Schema::CreateString("S")).PutMember("count", Schema::CreateInteger("I")).Build();
   CborCodec codec;
   RoundTrip(codec, root);
 }
 
 TEST_F(CodecTest, XmlRoundTrip) {
-
   auto root = Schema::StructureBuilder("Root", {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Test", "Root")}})
                   .PutMember("name", Schema::CreateString("S"))
                   .PutMember("count", Schema::CreateInteger("I"))
@@ -126,7 +121,7 @@ class Person : public SerializableStruct {
   }
 };
 
-}
+}  // namespace
 
 TEST_F(CodecTest, JsonDeserializeShapeReturnsTypedObject) {
   const Aws::String payload = "{\"name\":\"Alice\",\"count\":7}";
@@ -220,7 +215,7 @@ class Foo : public SerializableStruct {
   }
 };
 
-}
+}  // namespace
 
 TEST_F(CodecTest, JsonNestedShape) {
   JsonCodec codec;

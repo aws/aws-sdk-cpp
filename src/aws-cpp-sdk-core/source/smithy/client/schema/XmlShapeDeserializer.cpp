@@ -2,14 +2,14 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
-#include <cmath>
-#include <cstdlib>
-#include <limits>
-
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <smithy/client/schema/XmlShapeDeserializer.h>
 #include <smithy/client/schema/XmlTraits.h>
+
+#include <cmath>
+#include <cstdlib>
+#include <limits>
 
 using namespace smithy::schema;
 using namespace Aws::Utils;
@@ -97,8 +97,7 @@ class XmlShapeDeserializer::Impl final : public ShapeDeserializer {
     const Aws::String valueName = GetMapValueName(schema);
     const size_t begin = m_contentBegin;
     const size_t end = m_contentEnd;
-    for (Element entry = FindChild(begin, end, entryName, begin); entry.found;
-         entry = FindChild(begin, end, entryName, entry.nodeEnd)) {
+    for (Element entry = FindChild(begin, end, entryName, begin); entry.found; entry = FindChild(begin, end, entryName, entry.nodeEnd)) {
       const Element valueNode = FindChild(entry.contentBegin, entry.contentEnd, valueName, entry.contentBegin);
       if (!valueNode.found) {
         continue;
@@ -193,7 +192,6 @@ class XmlShapeDeserializer::Impl final : public ShapeDeserializer {
   bool IsNull() override { return !m_valid; }
 
  private:
-
   struct Element {
     bool found = false;
     size_t tagBegin = 0;
@@ -476,12 +474,8 @@ XmlShapeDeserializer::XmlShapeDeserializer(const unsigned char* data, size_t len
     : m_impl(Aws::MakeUnique<Impl>("XmlShapeDeserializer", data, length)) {}
 XmlShapeDeserializer::~XmlShapeDeserializer() = default;
 
-void XmlShapeDeserializer::ReadStruct(const Schema& schema, const StructMemberConsumer& consumer) {
-  m_impl->ReadStruct(schema, consumer);
-}
-void XmlShapeDeserializer::ReadList(const Schema& schema, const ListElementConsumer& consumer) {
-  m_impl->ReadList(schema, consumer);
-}
+void XmlShapeDeserializer::ReadStruct(const Schema& schema, const StructMemberConsumer& consumer) { m_impl->ReadStruct(schema, consumer); }
+void XmlShapeDeserializer::ReadList(const Schema& schema, const ListElementConsumer& consumer) { m_impl->ReadList(schema, consumer); }
 void XmlShapeDeserializer::ReadMap(const Schema& schema, const MapEntryConsumer& consumer) { m_impl->ReadMap(schema, consumer); }
 Aws::Crt::Optional<bool> XmlShapeDeserializer::ReadBoolean(const Schema& schema) { return m_impl->ReadBoolean(schema); }
 Aws::Crt::Optional<int> XmlShapeDeserializer::ReadInteger(const Schema& schema) { return m_impl->ReadInteger(schema); }

@@ -36,7 +36,7 @@ Aws::String Encode(const std::shared_ptr<const Schema>& root, const std::functio
   return s.GetPayload().GetResult();
 }
 
-}
+}  // namespace
 
 TEST_F(XmlShapeDeserializerTest, Boolean) {
   auto root = RootBuilder().PutMember("enabled", Schema::CreateBoolean("B")).Build();
@@ -254,7 +254,8 @@ TEST_F(XmlShapeDeserializerTest, WrappedListOfStrings) {
 
 TEST_F(XmlShapeDeserializerTest, FlattenedList) {
   auto listBuilder = Schema::ListBuilder("Tags");
-  auto root = RootBuilder().PutMember("tags", listBuilder, {{XmlFlattenedTrait::KEY(), Aws::MakeShared<XmlFlattenedTrait>("Test")}}).Build();
+  auto root =
+      RootBuilder().PutMember("tags", listBuilder, {{XmlFlattenedTrait::KEY(), Aws::MakeShared<XmlFlattenedTrait>("Test")}}).Build();
   auto tags = root->GetMember("tags").value();
   auto elem = Schema::CreateMember("member", ShapeType::String);
   auto payload = Encode(root, [&](ShapeSerializer& ser) {
@@ -361,8 +362,9 @@ TEST_F(XmlShapeDeserializerTest, CustomMapNames) {
   auto tags = root->GetMember("tags").value();
   auto valSchema = Schema::CreateMember("value", ShapeType::String);
   auto payload = Encode(root, [&](ShapeSerializer& ser) {
-    ser.WriteMap(*tags, 1,
-                 [&](MapSerializer& mapSer) { mapSer.WriteEntry("color", [&](ShapeSerializer& vser) { vser.WriteString(*valSchema, "red"); }); });
+    ser.WriteMap(*tags, 1, [&](MapSerializer& mapSer) {
+      mapSer.WriteEntry("color", [&](ShapeSerializer& vser) { vser.WriteString(*valSchema, "red"); });
+    });
   });
 
   XmlShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
@@ -413,10 +415,7 @@ TEST_F(XmlShapeDeserializerTest, CustomListItemName) {
 }
 
 TEST_F(XmlShapeDeserializerTest, AbsentMemberSkipped) {
-  auto root = RootBuilder()
-                  .PutMember("present", Schema::CreateString("S"))
-                  .PutMember("absent", Schema::CreateString("S2"))
-                  .Build();
+  auto root = RootBuilder().PutMember("present", Schema::CreateString("S")).PutMember("absent", Schema::CreateString("S2")).Build();
   auto present = root->GetMember("present").value();
   auto payload = Encode(root, [&](ShapeSerializer& ser) { ser.WriteString(*present, "here"); });
 

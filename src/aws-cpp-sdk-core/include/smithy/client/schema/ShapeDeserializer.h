@@ -40,5 +40,5 @@ class SMITHY_API ShapeDeserializer {
   virtual bool IsNull() = 0;
 };
 
-}
-}
+}  // namespace schema
+}  // namespace smithy

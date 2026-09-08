@@ -56,7 +56,7 @@ void RoundTrip(const ClientProtocol& protocol, const std::shared_ptr<const Schem
   EXPECT_EQ(gotCount.value(), 42);
 }
 
-}
+}  // namespace
 
 TEST_F(ClientProtocolTest, ContentTypesAndIds) {
   EXPECT_EQ(RestJsonProtocol().GetContentType(), "application/json");
@@ -102,7 +102,6 @@ TEST_F(ClientProtocolTest, Ec2QuerySerializesCapitalizedForm) {
 }
 
 TEST_F(ClientProtocolTest, QueryResponseParsedAsXml) {
-
   auto root = Schema::StructureBuilder("Root", {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Test", "Root")}})
                   .PutMember("status", Schema::CreateString("S"))
                   .Build();

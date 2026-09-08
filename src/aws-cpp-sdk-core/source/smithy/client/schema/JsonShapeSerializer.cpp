@@ -2,8 +2,6 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
-#include <cmath>
-
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <smithy/client/schema/JsonShapeSerializer.h>
@@ -11,6 +9,8 @@
 #include <smithy/client/schema/JsonWriteUtils.h>
 #include <smithy/client/schema/MapSerializer.h>
 #include <smithy/client/schema/SerializableStruct.h>
+
+#include <cmath>
 
 #include "aws/core/client/AWSClient.h"
 #include "aws/core/utils/Outcome.h"

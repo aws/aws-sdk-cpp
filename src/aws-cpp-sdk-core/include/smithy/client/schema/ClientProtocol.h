@@ -95,5 +95,5 @@ class SMITHY_API Ec2QueryProtocol final : public ClientProtocol {
   Aws::UniquePtr<ShapeDeserializer> CreateOutputDeserializer(const unsigned char* data, size_t length) const override;
 };
 
-}
-}
+}  // namespace schema
+}  // namespace smithy

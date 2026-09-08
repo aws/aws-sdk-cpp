@@ -33,5 +33,5 @@ class SMITHY_API JsonShapeDeserializer final : public ShapeDeserializer {
   Aws::UniquePtr<Impl> m_impl;
 };
 
-}
-}
+}  // namespace schema
+}  // namespace smithy

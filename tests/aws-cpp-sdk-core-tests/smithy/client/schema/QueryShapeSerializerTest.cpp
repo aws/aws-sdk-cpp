@@ -205,8 +205,7 @@ TEST_F(QueryShapeSerializerTest, MapOfStrings) {
 TEST_F(QueryShapeSerializerTest, FlattenedMap) {
   QueryShapeSerializer s;
   auto root = Schema::StructureBuilder("Root").Build();
-  auto mapMember =
-      Schema::CreateMember("attr", ShapeType::Map, {{XmlFlattenedTrait::KEY(), Aws::MakeShared<XmlFlattenedTrait>("Schema")}});
+  auto mapMember = Schema::CreateMember("attr", ShapeType::Map, {{XmlFlattenedTrait::KEY(), Aws::MakeShared<XmlFlattenedTrait>("Schema")}});
   auto valSchema = Schema::CreateMember("value", ShapeType::String);
   LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
     ser.WriteMap(*mapMember, 1, [&](MapSerializer& mapSer) {
@@ -248,8 +247,8 @@ TEST_F(QueryShapeSerializerTest, Ec2CapitalizesMemberName) {
 TEST_F(QueryShapeSerializerTest, Ec2CapitalizesXmlName) {
   QueryShapeSerializer s(QueryShapeSerializer::Flavor::Ec2Query);
   auto root = Schema::StructureBuilder("Root").Build();
-  auto member = Schema::CreateMember("internal", ShapeType::String,
-                                     {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "fooBar")}});
+  auto member =
+      Schema::CreateMember("internal", ShapeType::String, {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "fooBar")}});
   LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteString(*member, "v"); });
   s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();

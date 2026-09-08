@@ -2,9 +2,6 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
-#include <cctype>
-#include <cmath>
-
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <smithy/client/schema/MapSerializer.h>
@@ -12,6 +9,9 @@
 #include <smithy/client/schema/SerdeTraits.h>
 #include <smithy/client/schema/SerializableStruct.h>
 #include <smithy/client/schema/XmlTraits.h>
+
+#include <cctype>
+#include <cmath>
 
 #include "aws/core/client/AWSClient.h"
 #include "aws/core/utils/Outcome.h"
@@ -62,7 +62,6 @@ class QueryShapeSerializer::Impl final : public ShapeSerializer {
   void WriteDouble(const Schema&, double value) override { EmitField(FormatFloatingPoint(value)); }
   void WriteString(const Schema&, const Aws::String& value) override { EmitField(StringUtils::URLEncode(value.c_str())); }
   void WriteTimestamp(const Schema&, const DateTime& value) override {
-
     EmitField(StringUtils::URLEncode(value.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()));
   }
   void WriteBlob(const Schema&, const ByteBuffer& value) override {
@@ -83,7 +82,6 @@ class QueryShapeSerializer::Impl final : public ShapeSerializer {
   }
 
  private:
-
   class StructContext final : public ShapeSerializer {
    public:
     StructContext(Impl* outer, Aws::String base) : m_outer(outer), m_base(std::move(base)) {}

@@ -2,12 +2,12 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
-#include <cstring>
-#include <limits>
-
 #include <aws/core/utils/HashingUtils.h>
 #include <smithy/client/schema/JsonShapeDeserializer.h>
 #include <smithy/client/schema/JsonTraits.h>
+
+#include <cstring>
+#include <limits>
 
 using namespace smithy::schema;
 using namespace Aws::Utils;
@@ -128,7 +128,6 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
     char* end = nullptr;
     const long long value = std::strtoll(token.c_str(), &end, 10);
     if (end != token.c_str() + token.size()) {
-
       char* dend = nullptr;
       const double d = std::strtod(token.c_str(), &dend);
       if (dend != token.c_str() + token.size()) {
@@ -150,7 +149,6 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
   Aws::Crt::Optional<double> ReadDouble(const Schema&) override {
     const char c = PeekNonWs();
     if (c == '"') {
-
       auto token = ParseString();
       if (!token.has_value()) {
         return {};
@@ -464,12 +462,8 @@ JsonShapeDeserializer::JsonShapeDeserializer(const unsigned char* data, size_t l
     : m_impl(Aws::MakeUnique<Impl>("JsonShapeDeserializer", data, length)) {}
 JsonShapeDeserializer::~JsonShapeDeserializer() = default;
 
-void JsonShapeDeserializer::ReadStruct(const Schema& schema, const StructMemberConsumer& consumer) {
-  m_impl->ReadStruct(schema, consumer);
-}
-void JsonShapeDeserializer::ReadList(const Schema& schema, const ListElementConsumer& consumer) {
-  m_impl->ReadList(schema, consumer);
-}
+void JsonShapeDeserializer::ReadStruct(const Schema& schema, const StructMemberConsumer& consumer) { m_impl->ReadStruct(schema, consumer); }
+void JsonShapeDeserializer::ReadList(const Schema& schema, const ListElementConsumer& consumer) { m_impl->ReadList(schema, consumer); }
 void JsonShapeDeserializer::ReadMap(const Schema& schema, const MapEntryConsumer& consumer) { m_impl->ReadMap(schema, consumer); }
 Aws::Crt::Optional<bool> JsonShapeDeserializer::ReadBoolean(const Schema& schema) { return m_impl->ReadBoolean(schema); }
 Aws::Crt::Optional<int> JsonShapeDeserializer::ReadInteger(const Schema& schema) { return m_impl->ReadInteger(schema); }
