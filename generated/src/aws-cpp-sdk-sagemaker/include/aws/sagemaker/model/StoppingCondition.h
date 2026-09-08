@@ -106,6 +106,15 @@ class StoppingCondition {
    * <code>Pending</code> status between two capacity reservation periods</p> </li>
    * </ul> <p> <code>MaxPendingTimeInSeconds</code> only increments when jobs are
    * actively waiting for capacity in an <code>Active</code> plan.</p>
+   * <ul> <li> <p> <code>MaxPendingTimeInSeconds</code> takes effect only for jobs
+   * that request accelerated computing instance types, such as instances in the
+   * <code>ml.p</code>, <code>ml.g</code>, and <code>ml.trn</code> families. It has
+   * no effect on jobs that request CPU-only instance types.</p> </li> <li> <p>If the
+   * job specifies <code>InstancePreferences</code>,
+   * <code>MaxPendingTimeInSeconds</code> bounds the total time SageMaker spends
+   * working through your list of instance types. It is not applied per instance type
+   * preference, and takes effect only when the list includes at least one
+   * accelerated computing instance type.</p> </li> </ul>
    */
   inline int GetMaxPendingTimeInSeconds() const { return m_maxPendingTimeInSeconds; }
   inline bool MaxPendingTimeInSecondsHasBeenSet() const { return m_maxPendingTimeInSecondsHasBeenSet; }

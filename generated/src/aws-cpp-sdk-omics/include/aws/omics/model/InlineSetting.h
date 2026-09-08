@@ -128,8 +128,8 @@ class InlineSetting {
 
   ///@{
   /**
-   * <p>The expected AWS account ID of the owner of the output S3 bucket for this
-   * run.</p>
+   * <p>The expected Amazon Web Services account ID of the owner of the output S3
+   * bucket for this run.</p>
    */
   inline const Aws::String& GetOutputBucketOwnerId() const { return m_outputBucketOwnerId; }
   inline bool OutputBucketOwnerIdHasBeenSet() const { return m_outputBucketOwnerIdHasBeenSet; }
@@ -147,8 +147,9 @@ class InlineSetting {
 
   ///@{
   /**
-   * <p>Per-run AWS tags. Merged with <code>defaultRunSetting.runTags</code>; values
-   * in this object take precedence when keys overlap.</p>
+   * <p>Per-run Amazon Web Services tags. Merged with
+   * <code>defaultRunSetting.runTags</code>; values in this object take precedence
+   * when keys overlap.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetRunTags() const { return m_runTags; }
   inline bool RunTagsHasBeenSet() const { return m_runTagsHasBeenSet; }

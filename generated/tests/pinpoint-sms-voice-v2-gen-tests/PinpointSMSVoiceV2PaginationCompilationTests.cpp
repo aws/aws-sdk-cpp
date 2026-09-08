@@ -24,6 +24,7 @@
 #include <aws/pinpoint-sms-voice-v2/model/DescribeSenderIdsPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeVerifiedDestinationNumbersPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/ListProtectConfigurationRuleSetNumberOverridesPaginationTraits.h>
+#include <aws/pinpoint-sms-voice-v2/model/ListAvailablePhoneNumbersPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeOptOutListsPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeRegistrationTypeDefinitionsPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeRcsAgentsPaginationTraits.h>

@@ -110,7 +110,9 @@ class UpdateTrailResult {
   ///@{
   /**
    * <p>Specifies whether the trail is publishing events from global services such as
-   * IAM to the log files.</p>
+   * IAM to the log files. Setting this value to <code>true</code> only delivers
+   * global service events to the trail if the trail is multi-Region or if the
+   * trail's home Region is the partition leader Region (for example, us-east-1).</p>
    */
   inline bool GetIncludeGlobalServiceEvents() const { return m_includeGlobalServiceEvents; }
   inline void SetIncludeGlobalServiceEvents(bool value) {
@@ -245,6 +247,21 @@ class UpdateTrailResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Specifies whether recursive logging is enabled for the trail.</p>
+   */
+  inline bool GetRecursiveLogging() const { return m_recursiveLogging; }
+  inline void SetRecursiveLogging(bool value) {
+    m_recursiveLoggingHasBeenSet = true;
+    m_recursiveLogging = value;
+  }
+  inline UpdateTrailResult& WithRecursiveLogging(bool value) {
+    SetRecursiveLogging(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -285,6 +302,8 @@ class UpdateTrailResult {
 
   bool m_isOrganizationTrail{false};
 
+  bool m_recursiveLogging{false};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nameHasBeenSet = false;
@@ -299,6 +318,7 @@ class UpdateTrailResult {
   bool m_cloudWatchLogsRoleArnHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
   bool m_isOrganizationTrailHasBeenSet = false;
+  bool m_recursiveLoggingHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

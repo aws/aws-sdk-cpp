@@ -9,6 +9,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/InstanceGroup.h>
 #include <aws/sagemaker/model/InstancePlacementConfig.h>
+#include <aws/sagemaker/model/InstancePreference.h>
 #include <aws/sagemaker/model/TrainingInstanceType.h>
 
 #include <utility>
@@ -224,6 +225,79 @@ class ResourceConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An ordered list of ML compute instance types for the training job, in
+   * priority order. SageMaker launches the training job on the first instance type
+   * in the list that has available capacity. If capacity is insufficient, SageMaker
+   * evaluates the next instance type in the preferred list. Exactly one instance
+   * type is selected for the job.</p> <p> <code>InstancePreferences</code> is
+   * mutually exclusive with <code>InstanceType</code>, <code>InstanceGroups</code>,
+   * <code>InstancePlacementConfig</code>, and
+   * <code>EnableManagedSpotTraining</code>, and supports only Flexible Training
+   * Plans (FTP) and On-Demand capacity.</p>
+   */
+  inline const Aws::Vector<InstancePreference>& GetInstancePreferences() const { return m_instancePreferences; }
+  inline bool InstancePreferencesHasBeenSet() const { return m_instancePreferencesHasBeenSet; }
+  template <typename InstancePreferencesT = Aws::Vector<InstancePreference>>
+  void SetInstancePreferences(InstancePreferencesT&& value) {
+    m_instancePreferencesHasBeenSet = true;
+    m_instancePreferences = std::forward<InstancePreferencesT>(value);
+  }
+  template <typename InstancePreferencesT = Aws::Vector<InstancePreference>>
+  ResourceConfig& WithInstancePreferences(InstancePreferencesT&& value) {
+    SetInstancePreferences(std::forward<InstancePreferencesT>(value));
+    return *this;
+  }
+  template <typename InstancePreferencesT = InstancePreference>
+  ResourceConfig& AddInstancePreferences(InstancePreferencesT&& value) {
+    m_instancePreferencesHasBeenSet = true;
+    m_instancePreferences.emplace_back(std::forward<InstancePreferencesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The instance type that SageMaker selected for the job from the provided
+   * <code>InstancePreferences</code>. The job is billed for this instance type and
+   * count. Returned by <code> <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrainingJob.html">DescribeTrainingJob</a>
+   * </code> after an instance type is selected. This field is read-only and isn't
+   * accepted in <code>CreateTrainingJob</code> requests.</p>
+   */
+  inline TrainingInstanceType GetSelectedInstanceType() const { return m_selectedInstanceType; }
+  inline bool SelectedInstanceTypeHasBeenSet() const { return m_selectedInstanceTypeHasBeenSet; }
+  inline void SetSelectedInstanceType(TrainingInstanceType value) {
+    m_selectedInstanceTypeHasBeenSet = true;
+    m_selectedInstanceType = value;
+  }
+  inline ResourceConfig& WithSelectedInstanceType(TrainingInstanceType value) {
+    SetSelectedInstanceType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The number of instances of <code>SelectedInstanceType</code> that the
+   * training job launched with. The job is billed for this instance type and count.
+   * Returned by <code>DescribeTrainingJob</code> after an instance type is selected.
+   * This field is read-only and isn't accepted in <code>CreateTrainingJob</code>
+   * requests.</p>
+   */
+  inline int GetSelectedInstanceCount() const { return m_selectedInstanceCount; }
+  inline bool SelectedInstanceCountHasBeenSet() const { return m_selectedInstanceCountHasBeenSet; }
+  inline void SetSelectedInstanceCount(int value) {
+    m_selectedInstanceCountHasBeenSet = true;
+    m_selectedInstanceCount = value;
+  }
+  inline ResourceConfig& WithSelectedInstanceCount(int value) {
+    SetSelectedInstanceCount(value);
+    return *this;
+  }
+  ///@}
  private:
   TrainingInstanceType m_instanceType{TrainingInstanceType::NOT_SET};
 
@@ -240,6 +314,12 @@ class ResourceConfig {
   Aws::String m_trainingPlanArn;
 
   InstancePlacementConfig m_instancePlacementConfig;
+
+  Aws::Vector<InstancePreference> m_instancePreferences;
+
+  TrainingInstanceType m_selectedInstanceType{TrainingInstanceType::NOT_SET};
+
+  int m_selectedInstanceCount{0};
   bool m_instanceTypeHasBeenSet = false;
   bool m_instanceCountHasBeenSet = false;
   bool m_volumeSizeInGBHasBeenSet = false;
@@ -248,6 +328,9 @@ class ResourceConfig {
   bool m_instanceGroupsHasBeenSet = false;
   bool m_trainingPlanArnHasBeenSet = false;
   bool m_instancePlacementConfigHasBeenSet = false;
+  bool m_instancePreferencesHasBeenSet = false;
+  bool m_selectedInstanceTypeHasBeenSet = false;
+  bool m_selectedInstanceCountHasBeenSet = false;
 };
 
 }  // namespace Model

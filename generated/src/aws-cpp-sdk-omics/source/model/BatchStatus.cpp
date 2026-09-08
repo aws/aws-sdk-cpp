@@ -24,6 +24,7 @@ static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
 static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 static const int PROCESSED_HASH = HashingUtils::HashString("PROCESSED");
 static const int RUNS_DELETING_HASH = HashingUtils::HashString("RUNS_DELETING");
+static const int RUNS_DELETE_FAILED_HASH = HashingUtils::HashString("RUNS_DELETE_FAILED");
 static const int RUNS_DELETED_HASH = HashingUtils::HashString("RUNS_DELETED");
 
 BatchStatus GetBatchStatusForName(const Aws::String& name) {
@@ -46,6 +47,8 @@ BatchStatus GetBatchStatusForName(const Aws::String& name) {
     return BatchStatus::PROCESSED;
   } else if (hashCode == RUNS_DELETING_HASH) {
     return BatchStatus::RUNS_DELETING;
+  } else if (hashCode == RUNS_DELETE_FAILED_HASH) {
+    return BatchStatus::RUNS_DELETE_FAILED;
   } else if (hashCode == RUNS_DELETED_HASH) {
     return BatchStatus::RUNS_DELETED;
   }
@@ -80,6 +83,8 @@ Aws::String GetNameForBatchStatus(BatchStatus enumValue) {
       return "PROCESSED";
     case BatchStatus::RUNS_DELETING:
       return "RUNS_DELETING";
+    case BatchStatus::RUNS_DELETE_FAILED:
+      return "RUNS_DELETE_FAILED";
     case BatchStatus::RUNS_DELETED:
       return "RUNS_DELETED";
     default:

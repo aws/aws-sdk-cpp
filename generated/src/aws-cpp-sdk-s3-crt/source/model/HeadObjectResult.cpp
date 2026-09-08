@@ -302,6 +302,24 @@ HeadObjectResult& HeadObjectResult::operator=(const Aws::AmazonWebServiceResult<
     m_objectLockLegalHoldStatusHasBeenSet = true;
   }
 
+  const auto& objectLockEventHoldIter = headers.find("x-amz-object-lock-event-hold");
+  if (objectLockEventHoldIter != headers.end()) {
+    m_objectLockEventHold = ObjectLockEventHoldMapper::GetObjectLockEventHoldForName(objectLockEventHoldIter->second);
+    m_objectLockEventHoldHasBeenSet = true;
+  }
+
+  const auto& objectLockEventHoldDurationDaysIter = headers.find("x-amz-object-lock-event-hold-duration-days");
+  if (objectLockEventHoldDurationDaysIter != headers.end()) {
+    m_objectLockEventHoldDurationDays = StringUtils::ConvertToInt32(objectLockEventHoldDurationDaysIter->second.c_str());
+    m_objectLockEventHoldDurationDaysHasBeenSet = true;
+  }
+
+  const auto& objectLockEventHoldDurationYearsIter = headers.find("x-amz-object-lock-event-hold-duration-years");
+  if (objectLockEventHoldDurationYearsIter != headers.end()) {
+    m_objectLockEventHoldDurationYears = StringUtils::ConvertToInt32(objectLockEventHoldDurationYearsIter->second.c_str());
+    m_objectLockEventHoldDurationYearsHasBeenSet = true;
+  }
+
   const auto& expiresStringIter = headers.find("expires");
   if (expiresStringIter != headers.end()) {
     m_expiresString = expiresStringIter->second;

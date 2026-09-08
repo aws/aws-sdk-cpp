@@ -70,6 +70,10 @@ UpdateTrailResult& UpdateTrailResult::operator=(const Aws::AmazonWebServiceResul
     m_isOrganizationTrail = jsonValue.GetBool("IsOrganizationTrail");
     m_isOrganizationTrailHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RecursiveLogging")) {
+    m_recursiveLogging = jsonValue.GetBool("RecursiveLogging");
+    m_recursiveLoggingHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

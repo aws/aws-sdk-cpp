@@ -6,7 +6,9 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/NetworkCardInterfaceType.h>
 
 #include <utility>
 
@@ -182,6 +184,29 @@ class NetworkCardInfo {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The supported interface types for the network card.</p>
+   */
+  inline const Aws::Vector<NetworkCardInterfaceType>& GetInterfaceTypes() const { return m_interfaceTypes; }
+  inline bool InterfaceTypesHasBeenSet() const { return m_interfaceTypesHasBeenSet; }
+  template <typename InterfaceTypesT = Aws::Vector<NetworkCardInterfaceType>>
+  void SetInterfaceTypes(InterfaceTypesT&& value) {
+    m_interfaceTypesHasBeenSet = true;
+    m_interfaceTypes = std::forward<InterfaceTypesT>(value);
+  }
+  template <typename InterfaceTypesT = Aws::Vector<NetworkCardInterfaceType>>
+  NetworkCardInfo& WithInterfaceTypes(InterfaceTypesT&& value) {
+    SetInterfaceTypes(std::forward<InterfaceTypesT>(value));
+    return *this;
+  }
+  inline NetworkCardInfo& AddInterfaceTypes(NetworkCardInterfaceType value) {
+    m_interfaceTypesHasBeenSet = true;
+    m_interfaceTypes.push_back(value);
+    return *this;
+  }
+  ///@}
  private:
   int m_networkCardIndex{0};
 
@@ -200,6 +225,8 @@ class NetworkCardInfo {
   int m_maximumEnaQueueCount{0};
 
   int m_maximumEnaQueueCountPerInterface{0};
+
+  Aws::Vector<NetworkCardInterfaceType> m_interfaceTypes;
   bool m_networkCardIndexHasBeenSet = false;
   bool m_networkPerformanceHasBeenSet = false;
   bool m_maximumNetworkInterfacesHasBeenSet = false;
@@ -209,6 +236,7 @@ class NetworkCardInfo {
   bool m_defaultEnaQueueCountPerInterfaceHasBeenSet = false;
   bool m_maximumEnaQueueCountHasBeenSet = false;
   bool m_maximumEnaQueueCountPerInterfaceHasBeenSet = false;
+  bool m_interfaceTypesHasBeenSet = false;
 };
 
 }  // namespace Model

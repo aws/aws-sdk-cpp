@@ -98,7 +98,7 @@ class StartRunBatchResult {
 
   ///@{
   /**
-   * <p>AWS tags associated with the run batch.</p>
+   * <p>Amazon Web Services tags associated with the run batch.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
   template <typename TagsT = Aws::Map<Aws::String, Aws::String>>

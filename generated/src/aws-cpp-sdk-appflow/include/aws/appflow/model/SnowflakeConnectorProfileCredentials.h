@@ -67,12 +67,35 @@ class SnowflakeConnectorProfileCredentials {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The RSA private key used for key pair authentication with Snowflake. Provide
+   * this instead of a password when your Snowflake account uses key pair
+   * authentication. </p>
+   */
+  inline const Aws::String& GetPrivateKey() const { return m_privateKey; }
+  inline bool PrivateKeyHasBeenSet() const { return m_privateKeyHasBeenSet; }
+  template <typename PrivateKeyT = Aws::String>
+  void SetPrivateKey(PrivateKeyT&& value) {
+    m_privateKeyHasBeenSet = true;
+    m_privateKey = std::forward<PrivateKeyT>(value);
+  }
+  template <typename PrivateKeyT = Aws::String>
+  SnowflakeConnectorProfileCredentials& WithPrivateKey(PrivateKeyT&& value) {
+    SetPrivateKey(std::forward<PrivateKeyT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_username;
 
   Aws::String m_password;
+
+  Aws::String m_privateKey;
   bool m_usernameHasBeenSet = false;
   bool m_passwordHasBeenSet = false;
+  bool m_privateKeyHasBeenSet = false;
 };
 
 }  // namespace Model

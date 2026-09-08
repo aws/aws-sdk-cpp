@@ -46,6 +46,7 @@ static const int s3_ObjectTagging_Delete_HASH = HashingUtils::HashString("s3:Obj
 static const int s3_ObjectAnnotation_HASH = HashingUtils::HashString("s3:ObjectAnnotation:*");
 static const int s3_ObjectAnnotation_Put_HASH = HashingUtils::HashString("s3:ObjectAnnotation:Put");
 static const int s3_ObjectAnnotation_Delete_HASH = HashingUtils::HashString("s3:ObjectAnnotation:Delete");
+static const int s3_ObjectRetention_Put_HASH = HashingUtils::HashString("s3:ObjectRetention:Put");
 
 Event GetEventForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -109,6 +110,8 @@ Event GetEventForName(const Aws::String& name) {
     return Event::s3_ObjectAnnotation_Put;
   } else if (hashCode == s3_ObjectAnnotation_Delete_HASH) {
     return Event::s3_ObjectAnnotation_Delete;
+  } else if (hashCode == s3_ObjectRetention_Put_HASH) {
+    return Event::s3_ObjectRetention_Put;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -183,6 +186,8 @@ Aws::String GetNameForEvent(Event enumValue) {
       return "s3:ObjectAnnotation:Put";
     case Event::s3_ObjectAnnotation_Delete:
       return "s3:ObjectAnnotation:Delete";
+    case Event::s3_ObjectRetention_Put:
+      return "s3:ObjectRetention:Put";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

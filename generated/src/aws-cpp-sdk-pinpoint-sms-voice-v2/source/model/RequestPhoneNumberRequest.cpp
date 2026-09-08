@@ -49,6 +49,14 @@ Aws::String RequestPhoneNumberRequest::SerializePayload() const {
     payload.WithString("RegistrationId", m_registrationId);
   }
 
+  if (m_numberPreferenceHasBeenSet) {
+    Aws::Utils::Array<JsonValue> numberPreferenceJsonList(m_numberPreference.size());
+    for (unsigned numberPreferenceIndex = 0; numberPreferenceIndex < numberPreferenceJsonList.GetLength(); ++numberPreferenceIndex) {
+      numberPreferenceJsonList[numberPreferenceIndex].AsObject(m_numberPreference[numberPreferenceIndex].Jsonize());
+    }
+    payload.WithArray("NumberPreference", std::move(numberPreferenceJsonList));
+  }
+
   if (m_internationalSendingEnabledHasBeenSet) {
     payload.WithBool("InternationalSendingEnabled", m_internationalSendingEnabled);
   }

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
 #include <aws/pinpoint-sms-voice-v2/model/MessageType.h>
+#include <aws/pinpoint-sms-voice-v2/model/MessagingLimits.h>
 #include <aws/pinpoint-sms-voice-v2/model/NumberCapability.h>
 #include <aws/pinpoint-sms-voice-v2/model/NumberStatus.h>
 #include <aws/pinpoint-sms-voice-v2/model/NumberType.h>
@@ -368,6 +369,25 @@ class PhoneNumberInformation {
 
   ///@{
   /**
+   * <p>The messaging limits that apply to the phone number, including the
+   * per-capability send rates and any advisory per-provider daily message caps.</p>
+   */
+  inline const MessagingLimits& GetMessagingLimits() const { return m_messagingLimits; }
+  inline bool MessagingLimitsHasBeenSet() const { return m_messagingLimitsHasBeenSet; }
+  template <typename MessagingLimitsT = MessagingLimits>
+  void SetMessagingLimits(MessagingLimitsT&& value) {
+    m_messagingLimitsHasBeenSet = true;
+    m_messagingLimits = std::forward<MessagingLimitsT>(value);
+  }
+  template <typename MessagingLimitsT = MessagingLimits>
+  PhoneNumberInformation& WithMessagingLimits(MessagingLimitsT&& value) {
+    SetMessagingLimits(std::forward<MessagingLimitsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The time when the phone number was created, in <a
    * href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
    */
@@ -421,6 +441,8 @@ class PhoneNumberInformation {
 
   Aws::String m_registrationId;
 
+  MessagingLimits m_messagingLimits;
+
   Aws::Utils::DateTime m_createdTimestamp{};
   bool m_phoneNumberArnHasBeenSet = false;
   bool m_phoneNumberIdHasBeenSet = false;
@@ -440,6 +462,7 @@ class PhoneNumberInformation {
   bool m_deletionProtectionEnabledHasBeenSet = false;
   bool m_poolIdHasBeenSet = false;
   bool m_registrationIdHasBeenSet = false;
+  bool m_messagingLimitsHasBeenSet = false;
   bool m_createdTimestampHasBeenSet = false;
 };
 

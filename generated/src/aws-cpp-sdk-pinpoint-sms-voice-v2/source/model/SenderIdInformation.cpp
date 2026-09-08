@@ -53,6 +53,10 @@ SenderIdInformation& SenderIdInformation::operator=(JsonView jsonValue) {
     m_registrationId = jsonValue.GetString("RegistrationId");
     m_registrationIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MessagingLimits")) {
+    m_messagingLimits = jsonValue.GetObject("MessagingLimits");
+    m_messagingLimitsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -93,6 +97,10 @@ JsonValue SenderIdInformation::Jsonize() const {
 
   if (m_registrationIdHasBeenSet) {
     payload.WithString("RegistrationId", m_registrationId);
+  }
+
+  if (m_messagingLimitsHasBeenSet) {
+    payload.WithObject("MessagingLimits", m_messagingLimits.Jsonize());
   }
 
   return payload;

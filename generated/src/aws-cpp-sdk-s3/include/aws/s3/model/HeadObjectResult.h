@@ -11,6 +11,7 @@
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/model/ArchiveStatus.h>
 #include <aws/s3/model/ChecksumType.h>
+#include <aws/s3/model/ObjectLockEventHold.h>
 #include <aws/s3/model/ObjectLockLegalHoldStatus.h>
 #include <aws/s3/model/ObjectLockMode.h>
 #include <aws/s3/model/ReplicationStatus.h>
@@ -906,6 +907,57 @@ class HeadObjectResult {
 
   ///@{
   /**
+   * <p>The event hold status for this object. This header is only returned if the
+   * requester has the <code>s3:GetObjectRetention</code> permission.</p>
+   * <p>This functionality is not supported for directory buckets.</p>
+   */
+  inline ObjectLockEventHold GetObjectLockEventHold() const { return m_objectLockEventHold; }
+  inline void SetObjectLockEventHold(ObjectLockEventHold value) {
+    m_objectLockEventHoldHasBeenSet = true;
+    m_objectLockEventHold = value;
+  }
+  inline HeadObjectResult& WithObjectLockEventHold(ObjectLockEventHold value) {
+    SetObjectLockEventHold(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The event hold duration in days for this object. Only returned when the event
+   * hold is enabled.</p>  <p>This functionality is not supported for directory
+   * buckets.</p>
+   */
+  inline int GetObjectLockEventHoldDurationDays() const { return m_objectLockEventHoldDurationDays; }
+  inline void SetObjectLockEventHoldDurationDays(int value) {
+    m_objectLockEventHoldDurationDaysHasBeenSet = true;
+    m_objectLockEventHoldDurationDays = value;
+  }
+  inline HeadObjectResult& WithObjectLockEventHoldDurationDays(int value) {
+    SetObjectLockEventHoldDurationDays(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The event hold duration in years for this object. Only returned when the
+   * event hold is enabled.</p>  <p>This functionality is not supported for
+   * directory buckets.</p>
+   */
+  inline int GetObjectLockEventHoldDurationYears() const { return m_objectLockEventHoldDurationYears; }
+  inline void SetObjectLockEventHoldDurationYears(int value) {
+    m_objectLockEventHoldDurationYearsHasBeenSet = true;
+    m_objectLockEventHoldDurationYears = value;
+  }
+  inline HeadObjectResult& WithObjectLockEventHoldDurationYears(int value) {
+    SetObjectLockEventHoldDurationYears(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The date and time at which the object is no longer cacheable.</p>
    */
   inline const Aws::String& GetExpiresString() const { return m_expiresString; }
@@ -1024,6 +1076,12 @@ class HeadObjectResult {
 
   ObjectLockLegalHoldStatus m_objectLockLegalHoldStatus{ObjectLockLegalHoldStatus::NOT_SET};
 
+  ObjectLockEventHold m_objectLockEventHold{ObjectLockEventHold::NOT_SET};
+
+  int m_objectLockEventHoldDurationDays{0};
+
+  int m_objectLockEventHoldDurationYears{0};
+
   Aws::String m_expiresString;
 
   Aws::String m_requestId;
@@ -1071,6 +1129,9 @@ class HeadObjectResult {
   bool m_objectLockModeHasBeenSet = false;
   bool m_objectLockRetainUntilDateHasBeenSet = false;
   bool m_objectLockLegalHoldStatusHasBeenSet = false;
+  bool m_objectLockEventHoldHasBeenSet = false;
+  bool m_objectLockEventHoldDurationDaysHasBeenSet = false;
+  bool m_objectLockEventHoldDurationYearsHasBeenSet = false;
   bool m_expiresStringHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

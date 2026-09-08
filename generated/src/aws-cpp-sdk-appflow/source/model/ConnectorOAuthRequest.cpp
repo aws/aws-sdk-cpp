@@ -26,6 +26,10 @@ ConnectorOAuthRequest& ConnectorOAuthRequest::operator=(JsonView jsonValue) {
     m_redirectUri = jsonValue.GetString("redirectUri");
     m_redirectUriHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("codeVerifier")) {
+    m_codeVerifier = jsonValue.GetString("codeVerifier");
+    m_codeVerifierHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue ConnectorOAuthRequest::Jsonize() const {
 
   if (m_redirectUriHasBeenSet) {
     payload.WithString("redirectUri", m_redirectUri);
+  }
+
+  if (m_codeVerifierHasBeenSet) {
+    payload.WithString("codeVerifier", m_codeVerifier);
   }
 
   return payload;

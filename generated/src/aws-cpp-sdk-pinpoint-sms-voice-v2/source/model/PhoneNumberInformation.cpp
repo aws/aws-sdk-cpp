@@ -95,6 +95,10 @@ PhoneNumberInformation& PhoneNumberInformation::operator=(JsonView jsonValue) {
     m_registrationId = jsonValue.GetString("RegistrationId");
     m_registrationIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MessagingLimits")) {
+    m_messagingLimits = jsonValue.GetObject("MessagingLimits");
+    m_messagingLimitsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("CreatedTimestamp")) {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
     m_createdTimestampHasBeenSet = true;
@@ -181,6 +185,10 @@ JsonValue PhoneNumberInformation::Jsonize() const {
 
   if (m_registrationIdHasBeenSet) {
     payload.WithString("RegistrationId", m_registrationId);
+  }
+
+  if (m_messagingLimitsHasBeenSet) {
+    payload.WithObject("MessagingLimits", m_messagingLimits.Jsonize());
   }
 
   if (m_createdTimestampHasBeenSet) {

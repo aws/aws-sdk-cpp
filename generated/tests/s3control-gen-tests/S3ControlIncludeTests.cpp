@@ -307,6 +307,7 @@
 #include <aws/s3control/model/RequestedJobStatus.h>
 #include <aws/s3control/model/S3AccessControlList.h>
 #include <aws/s3control/model/S3AccessControlPolicy.h>
+#include <aws/s3control/model/S3AnnotationDirective.h>
 #include <aws/s3control/model/S3BucketDestination.h>
 #include <aws/s3control/model/S3CannedAccessControlList.h>
 #include <aws/s3control/model/S3ChecksumAlgorithm.h>
@@ -322,9 +323,13 @@
 #include <aws/s3control/model/S3JobManifestGenerator.h>
 #include <aws/s3control/model/S3ManifestOutputLocation.h>
 #include <aws/s3control/model/S3MetadataDirective.h>
+#include <aws/s3control/model/S3ObjectLockEventHold.h>
+#include <aws/s3control/model/S3ObjectLockEventHoldDuration.h>
 #include <aws/s3control/model/S3ObjectLockLegalHold.h>
 #include <aws/s3control/model/S3ObjectLockLegalHoldStatus.h>
 #include <aws/s3control/model/S3ObjectLockMode.h>
+#include <aws/s3control/model/S3ObjectLockRetentionEventHold.h>
+#include <aws/s3control/model/S3ObjectLockRetentionEventHoldDuration.h>
 #include <aws/s3control/model/S3ObjectLockRetentionMode.h>
 #include <aws/s3control/model/S3ObjectMetadata.h>
 #include <aws/s3control/model/S3ObjectOwner.h>

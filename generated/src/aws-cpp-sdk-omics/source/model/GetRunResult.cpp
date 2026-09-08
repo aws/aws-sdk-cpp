@@ -196,6 +196,10 @@ GetRunResult& GetRunResult::operator=(const Aws::AmazonWebServiceResult<JsonValu
     m_engineSettings = jsonValue.GetObject("engineSettings");
     m_engineSettingsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("sessionPolicy")) {
+    m_sessionPolicy = jsonValue.GetString("sessionPolicy");
+    m_sessionPolicyHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

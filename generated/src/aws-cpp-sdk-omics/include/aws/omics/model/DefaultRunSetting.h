@@ -81,9 +81,10 @@ class DefaultRunSetting {
 
   ///@{
   /**
-   * <p>The IAM role ARN that grants HealthOmics permissions to access required AWS
-   * resources such as Amazon S3 and CloudWatch. The role must have the same
-   * permissions required for individual <code>StartRun</code> calls.</p>
+   * <p>The IAM role ARN that grants HealthOmics permissions to access required
+   * Amazon Web Services resources such as Amazon S3 and CloudWatch. The role must
+   * have the same permissions required for individual <code>StartRun</code>
+   * calls.</p>
    */
   inline const Aws::String& GetRoleArn() const { return m_roleArn; }
   inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
@@ -263,8 +264,9 @@ class DefaultRunSetting {
 
   ///@{
   /**
-   * <p>AWS tags to associate with each workflow run. Merged with per-run
-   * <code>runTags</code>; run-specific values take precedence when keys overlap.</p>
+   * <p>Amazon Web Services tags to associate with each workflow run. Merged with
+   * per-run <code>runTags</code>; run-specific values take precedence when keys
+   * overlap.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetRunTags() const { return m_runTags; }
   inline bool RunTagsHasBeenSet() const { return m_runTagsHasBeenSet; }
@@ -320,8 +322,8 @@ class DefaultRunSetting {
 
   ///@{
   /**
-   * <p>The AWS account ID of the workflow owner, used for cross-account workflow
-   * sharing.</p>
+   * <p>The Amazon Web Services account ID of the workflow owner, used for
+   * cross-account workflow sharing.</p>
    */
   inline const Aws::String& GetWorkflowOwnerId() const { return m_workflowOwnerId; }
   inline bool WorkflowOwnerIdHasBeenSet() const { return m_workflowOwnerIdHasBeenSet; }
@@ -339,8 +341,8 @@ class DefaultRunSetting {
 
   ///@{
   /**
-   * <p>The expected AWS account ID of the owner of the output S3 bucket. Can be
-   * overridden per run.</p>
+   * <p>The expected Amazon Web Services account ID of the owner of the output S3
+   * bucket. Can be overridden per run.</p>
    */
   inline const Aws::String& GetOutputBucketOwnerId() const { return m_outputBucketOwnerId; }
   inline bool OutputBucketOwnerIdHasBeenSet() const { return m_outputBucketOwnerIdHasBeenSet; }
@@ -405,6 +407,25 @@ class DefaultRunSetting {
   template <typename ConfigurationNameT = Aws::String>
   DefaultRunSetting& WithConfigurationName(ConfigurationNameT&& value) {
     SetConfigurationName(std::forward<ConfigurationNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Optional inline policy json for scoping down permissions via a session policy
+   * on the IAM role provided in the roleArn parameter.</p>
+   */
+  inline const Aws::String& GetSessionPolicy() const { return m_sessionPolicy; }
+  inline bool SessionPolicyHasBeenSet() const { return m_sessionPolicyHasBeenSet; }
+  template <typename SessionPolicyT = Aws::String>
+  void SetSessionPolicy(SessionPolicyT&& value) {
+    m_sessionPolicyHasBeenSet = true;
+    m_sessionPolicy = std::forward<SessionPolicyT>(value);
+  }
+  template <typename SessionPolicyT = Aws::String>
+  DefaultRunSetting& WithSessionPolicy(SessionPolicyT&& value) {
+    SetSessionPolicy(std::forward<SessionPolicyT>(value));
     return *this;
   }
   ///@}
@@ -488,6 +509,8 @@ class DefaultRunSetting {
 
   Aws::String m_configurationName;
 
+  Aws::String m_sessionPolicy;
+
   Aws::Utils::Document m_engineSettings;
 
   ScratchStorageMode m_scratchStorageMode{ScratchStorageMode::NOT_SET};
@@ -511,6 +534,7 @@ class DefaultRunSetting {
   bool m_workflowVersionNameHasBeenSet = false;
   bool m_networkingModeHasBeenSet = false;
   bool m_configurationNameHasBeenSet = false;
+  bool m_sessionPolicyHasBeenSet = false;
   bool m_engineSettingsHasBeenSet = false;
   bool m_scratchStorageModeHasBeenSet = false;
 };

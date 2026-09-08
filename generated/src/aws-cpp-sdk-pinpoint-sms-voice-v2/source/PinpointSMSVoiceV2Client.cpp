@@ -86,6 +86,7 @@
 #include <aws/pinpoint-sms-voice-v2/model/DiscardRegistrationVersionRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/GetProtectConfigurationCountryRuleSetRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/GetResourcePolicyRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/ListAvailablePhoneNumbersRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/ListNotifyCountriesRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/ListPoolOriginationIdentitiesRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/ListProtectConfigurationRuleSetNumberOverridesRequest.h>
@@ -708,6 +709,13 @@ GetResourcePolicyOutcome PinpointSMSVoiceV2Client::GetResourcePolicy(const GetRe
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetResourcePolicyOutcome(result.GetResultWithOwnership())
                             : GetResourcePolicyOutcome(std::move(result.GetError()));
+}
+
+ListAvailablePhoneNumbersOutcome PinpointSMSVoiceV2Client::ListAvailablePhoneNumbers(
+    const ListAvailablePhoneNumbersRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAvailablePhoneNumbersOutcome(result.GetResultWithOwnership())
+                            : ListAvailablePhoneNumbersOutcome(std::move(result.GetError()));
 }
 
 ListNotifyCountriesOutcome PinpointSMSVoiceV2Client::ListNotifyCountries(const ListNotifyCountriesRequest& request) const {

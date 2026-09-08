@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/s3/S3_EXPORTS.h>
+#include <aws/s3/model/EventHoldDuration.h>
+#include <aws/s3/model/ObjectLockEventHold.h>
 #include <aws/s3/model/ObjectLockRetentionMode.h>
 
 #include <utility>
@@ -65,12 +67,54 @@ class ObjectLockRetention {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The event hold status for the object. Set to <code>ON</code> to enable an
+   * event hold or <code>OFF</code> to disable it.</p>
+   */
+  inline ObjectLockEventHold GetEventHold() const { return m_eventHold; }
+  inline bool EventHoldHasBeenSet() const { return m_eventHoldHasBeenSet; }
+  inline void SetEventHold(ObjectLockEventHold value) {
+    m_eventHoldHasBeenSet = true;
+    m_eventHold = value;
+  }
+  inline ObjectLockRetention& WithEventHold(ObjectLockEventHold value) {
+    SetEventHold(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The event hold duration for the object. Specifies how long the object remains
+   * protected after the event hold is released.</p>
+   */
+  inline const EventHoldDuration& GetEventHoldDuration() const { return m_eventHoldDuration; }
+  inline bool EventHoldDurationHasBeenSet() const { return m_eventHoldDurationHasBeenSet; }
+  template <typename EventHoldDurationT = EventHoldDuration>
+  void SetEventHoldDuration(EventHoldDurationT&& value) {
+    m_eventHoldDurationHasBeenSet = true;
+    m_eventHoldDuration = std::forward<EventHoldDurationT>(value);
+  }
+  template <typename EventHoldDurationT = EventHoldDuration>
+  ObjectLockRetention& WithEventHoldDuration(EventHoldDurationT&& value) {
+    SetEventHoldDuration(std::forward<EventHoldDurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ObjectLockRetentionMode m_mode{ObjectLockRetentionMode::NOT_SET};
 
   Aws::Utils::DateTime m_retainUntilDate{};
+
+  ObjectLockEventHold m_eventHold{ObjectLockEventHold::NOT_SET};
+
+  EventHoldDuration m_eventHoldDuration;
   bool m_modeHasBeenSet = false;
   bool m_retainUntilDateHasBeenSet = false;
+  bool m_eventHoldHasBeenSet = false;
+  bool m_eventHoldDurationHasBeenSet = false;
 };
 
 }  // namespace Model

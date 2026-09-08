@@ -41,7 +41,8 @@ enum class Event {
   s3_ObjectTagging_Delete,
   s3_ObjectAnnotation,
   s3_ObjectAnnotation_Put,
-  s3_ObjectAnnotation_Delete
+  s3_ObjectAnnotation_Delete,
+  s3_ObjectRetention_Put
 };
 
 namespace EventMapper {

@@ -78,15 +78,53 @@ class LaunchTemplateDiskConf {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Launch template disk volume initialization rate configuration.</p>
+   */
+  inline long long GetVolumeInitializationRate() const { return m_volumeInitializationRate; }
+  inline bool VolumeInitializationRateHasBeenSet() const { return m_volumeInitializationRateHasBeenSet; }
+  inline void SetVolumeInitializationRate(long long value) {
+    m_volumeInitializationRateHasBeenSet = true;
+    m_volumeInitializationRate = value;
+  }
+  inline LaunchTemplateDiskConf& WithVolumeInitializationRate(long long value) {
+    SetVolumeInitializationRate(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Launch template disk delete on termination configuration.</p>
+   */
+  inline bool GetDeleteOnTermination() const { return m_deleteOnTermination; }
+  inline bool DeleteOnTerminationHasBeenSet() const { return m_deleteOnTerminationHasBeenSet; }
+  inline void SetDeleteOnTermination(bool value) {
+    m_deleteOnTerminationHasBeenSet = true;
+    m_deleteOnTermination = value;
+  }
+  inline LaunchTemplateDiskConf& WithDeleteOnTermination(bool value) {
+    SetDeleteOnTermination(value);
+    return *this;
+  }
+  ///@}
  private:
   VolumeType m_volumeType{VolumeType::NOT_SET};
 
   long long m_iops{0};
 
   long long m_throughput{0};
+
+  long long m_volumeInitializationRate{0};
+
+  bool m_deleteOnTermination{false};
   bool m_volumeTypeHasBeenSet = false;
   bool m_iopsHasBeenSet = false;
   bool m_throughputHasBeenSet = false;
+  bool m_volumeInitializationRateHasBeenSet = false;
+  bool m_deleteOnTerminationHasBeenSet = false;
 };
 
 }  // namespace Model

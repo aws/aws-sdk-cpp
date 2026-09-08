@@ -22,6 +22,8 @@ enum class InventoryOptionalField {
   ObjectLockRetainUntilDate,
   ObjectLockMode,
   ObjectLockLegalHoldStatus,
+  ObjectLockEventHoldStatus,
+  ObjectLockEventHoldDuration,
   IntelligentTieringAccessTier,
   BucketKeyStatus,
   ChecksumAlgorithm,

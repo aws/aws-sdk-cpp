@@ -21,6 +21,7 @@ enum class BatchStatus {
   FAILED,
   PROCESSED,
   RUNS_DELETING,
+  RUNS_DELETE_FAILED,
   RUNS_DELETED
 };
 

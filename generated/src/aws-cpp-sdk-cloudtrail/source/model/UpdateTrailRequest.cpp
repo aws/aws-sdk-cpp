@@ -59,6 +59,10 @@ Aws::String UpdateTrailRequest::SerializePayload() const {
     payload.WithBool("IsOrganizationTrail", m_isOrganizationTrail);
   }
 
+  if (m_recursiveLoggingHasBeenSet) {
+    payload.WithBool("RecursiveLogging", m_recursiveLogging);
+  }
+
   return payload.View().WriteReadable();
 }
 

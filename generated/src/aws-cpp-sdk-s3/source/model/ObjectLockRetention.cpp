@@ -35,6 +35,17 @@ ObjectLockRetention& ObjectLockRetention::operator=(const XmlNode& xmlNode) {
                                    Aws::Utils::DateFormat::ISO_8601);
       m_retainUntilDateHasBeenSet = true;
     }
+    XmlNode eventHoldNode = resultNode.FirstChild("EventHold");
+    if (!eventHoldNode.IsNull()) {
+      m_eventHold = ObjectLockEventHoldMapper::GetObjectLockEventHoldForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(eventHoldNode.GetText()).c_str()));
+      m_eventHoldHasBeenSet = true;
+    }
+    XmlNode eventHoldDurationNode = resultNode.FirstChild("EventHoldDuration");
+    if (!eventHoldDurationNode.IsNull()) {
+      m_eventHoldDuration = eventHoldDurationNode;
+      m_eventHoldDurationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -50,6 +61,16 @@ void ObjectLockRetention::AddToNode(XmlNode& parentNode) const {
   if (m_retainUntilDateHasBeenSet) {
     XmlNode retainUntilDateNode = parentNode.CreateChildElement("RetainUntilDate");
     retainUntilDateNode.SetText(m_retainUntilDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_eventHoldHasBeenSet) {
+    XmlNode eventHoldNode = parentNode.CreateChildElement("EventHold");
+    eventHoldNode.SetText(ObjectLockEventHoldMapper::GetNameForObjectLockEventHold(m_eventHold));
+  }
+
+  if (m_eventHoldDurationHasBeenSet) {
+    XmlNode eventHoldDurationNode = parentNode.CreateChildElement("EventHoldDuration");
+    m_eventHoldDuration.AddToNode(eventHoldDurationNode);
   }
 }
 

@@ -99,8 +99,9 @@ class StartRunRequest : public OmicsRequest {
    * Amazon Web Services HealthOmics, S3, Cloudwatch logs, and EC2. An example
    * <code>roleArn</code> is
    * <code>arn:aws:iam::123456789012:role/omics-service-role-serviceRole-W8O1XMPL7QZ</code>.
-   * In this example, the AWS account ID is <code>123456789012</code> and the role
-   * name is <code>omics-service-role-serviceRole-W8O1XMPL7QZ</code>.</p>
+   * In this example, the Amazon Web Services account ID is <code>123456789012</code>
+   * and the role name is
+   * <code>omics-service-role-serviceRole-W8O1XMPL7QZ</code>.</p>
    */
   inline const Aws::String& GetRoleArn() const { return m_roleArn; }
   inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
@@ -488,6 +489,25 @@ class StartRunRequest : public OmicsRequest {
 
   ///@{
   /**
+   * <p>Optional inline policy json for scoping down permissions via a session policy
+   * on the IAM role provided in the roleArn parameter.</p>
+   */
+  inline const Aws::String& GetSessionPolicy() const { return m_sessionPolicy; }
+  inline bool SessionPolicyHasBeenSet() const { return m_sessionPolicyHasBeenSet; }
+  template <typename SessionPolicyT = Aws::String>
+  void SetSessionPolicy(SessionPolicyT&& value) {
+    m_sessionPolicyHasBeenSet = true;
+    m_sessionPolicy = std::forward<SessionPolicyT>(value);
+  }
+  template <typename SessionPolicyT = Aws::String>
+  StartRunRequest& WithSessionPolicy(SessionPolicyT&& value) {
+    SetSessionPolicy(std::forward<SessionPolicyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Engine-specific settings for the workflow run. Use this field to specify
    * configuration options that are specific to the workflow engine (for example,
    * Nextflow profiles).</p>
@@ -550,6 +570,8 @@ class StartRunRequest : public OmicsRequest {
 
   Aws::String m_configurationName;
 
+  Aws::String m_sessionPolicy;
+
   Aws::Utils::Document m_engineSettings;
   bool m_workflowIdHasBeenSet = false;
   bool m_workflowTypeHasBeenSet = false;
@@ -573,6 +595,7 @@ class StartRunRequest : public OmicsRequest {
   bool m_networkingModeHasBeenSet = false;
   bool m_scratchStorageModeHasBeenSet = false;
   bool m_configurationNameHasBeenSet = false;
+  bool m_sessionPolicyHasBeenSet = false;
   bool m_engineSettingsHasBeenSet = false;
 };
 

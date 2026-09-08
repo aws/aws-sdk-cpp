@@ -70,12 +70,34 @@ class ConnectorOAuthRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The code verifier used in the PKCE (Proof Key for Code Exchange) OAuth flow.
+   * </p>
+   */
+  inline const Aws::String& GetCodeVerifier() const { return m_codeVerifier; }
+  inline bool CodeVerifierHasBeenSet() const { return m_codeVerifierHasBeenSet; }
+  template <typename CodeVerifierT = Aws::String>
+  void SetCodeVerifier(CodeVerifierT&& value) {
+    m_codeVerifierHasBeenSet = true;
+    m_codeVerifier = std::forward<CodeVerifierT>(value);
+  }
+  template <typename CodeVerifierT = Aws::String>
+  ConnectorOAuthRequest& WithCodeVerifier(CodeVerifierT&& value) {
+    SetCodeVerifier(std::forward<CodeVerifierT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_authCode;
 
   Aws::String m_redirectUri;
+
+  Aws::String m_codeVerifier;
   bool m_authCodeHasBeenSet = false;
   bool m_redirectUriHasBeenSet = false;
+  bool m_codeVerifierHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -13,6 +13,7 @@
 #include <aws/s3-crt/model/ChecksumAlgorithm.h>
 #include <aws/s3-crt/model/MetadataDirective.h>
 #include <aws/s3-crt/model/ObjectCannedACL.h>
+#include <aws/s3-crt/model/ObjectLockEventHold.h>
 #include <aws/s3-crt/model/ObjectLockLegalHoldStatus.h>
 #include <aws/s3-crt/model/ObjectLockMode.h>
 #include <aws/s3-crt/model/RequestPayer.h>
@@ -1255,6 +1256,58 @@ class CopyObjectRequest : public S3CrtRequest {
 
   ///@{
   /**
+   * <p>The event hold status to apply to the object copy. Set to <code>ON</code> to
+   * enable or <code>OFF</code> to disable.</p>  <p>This functionality is not
+   * supported for directory buckets.</p>
+   */
+  inline ObjectLockEventHold GetObjectLockEventHold() const { return m_objectLockEventHold; }
+  inline bool ObjectLockEventHoldHasBeenSet() const { return m_objectLockEventHoldHasBeenSet; }
+  inline void SetObjectLockEventHold(ObjectLockEventHold value) {
+    m_objectLockEventHoldHasBeenSet = true;
+    m_objectLockEventHold = value;
+  }
+  inline CopyObjectRequest& WithObjectLockEventHold(ObjectLockEventHold value) {
+    SetObjectLockEventHold(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The event hold duration in days to apply to the object copy.</p>
+   * <p>This functionality is not supported for directory buckets.</p>
+   */
+  inline int GetObjectLockEventHoldDurationDays() const { return m_objectLockEventHoldDurationDays; }
+  inline bool ObjectLockEventHoldDurationDaysHasBeenSet() const { return m_objectLockEventHoldDurationDaysHasBeenSet; }
+  inline void SetObjectLockEventHoldDurationDays(int value) {
+    m_objectLockEventHoldDurationDaysHasBeenSet = true;
+    m_objectLockEventHoldDurationDays = value;
+  }
+  inline CopyObjectRequest& WithObjectLockEventHoldDurationDays(int value) {
+    SetObjectLockEventHoldDurationDays(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The event hold duration in years to apply to the object copy.</p>
+   * <p>This functionality is not supported for directory buckets.</p>
+   */
+  inline int GetObjectLockEventHoldDurationYears() const { return m_objectLockEventHoldDurationYears; }
+  inline bool ObjectLockEventHoldDurationYearsHasBeenSet() const { return m_objectLockEventHoldDurationYearsHasBeenSet; }
+  inline void SetObjectLockEventHoldDurationYears(int value) {
+    m_objectLockEventHoldDurationYearsHasBeenSet = true;
+    m_objectLockEventHoldDurationYears = value;
+  }
+  inline CopyObjectRequest& WithObjectLockEventHoldDurationYears(int value) {
+    SetObjectLockEventHoldDurationYears(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The account ID of the expected destination bucket owner. If the account ID
    * that you provide does not match the actual owner of the destination bucket, the
    * request fails with the HTTP status code <code>403 Forbidden</code> (access
@@ -1400,6 +1453,12 @@ class CopyObjectRequest : public S3CrtRequest {
 
   ObjectLockLegalHoldStatus m_objectLockLegalHoldStatus{ObjectLockLegalHoldStatus::NOT_SET};
 
+  ObjectLockEventHold m_objectLockEventHold{ObjectLockEventHold::NOT_SET};
+
+  int m_objectLockEventHoldDurationDays{0};
+
+  int m_objectLockEventHoldDurationYears{0};
+
   Aws::String m_expectedBucketOwner;
 
   Aws::String m_expectedSourceBucketOwner;
@@ -1447,6 +1506,9 @@ class CopyObjectRequest : public S3CrtRequest {
   bool m_objectLockModeHasBeenSet = false;
   bool m_objectLockRetainUntilDateHasBeenSet = false;
   bool m_objectLockLegalHoldStatusHasBeenSet = false;
+  bool m_objectLockEventHoldHasBeenSet = false;
+  bool m_objectLockEventHoldDurationDaysHasBeenSet = false;
+  bool m_objectLockEventHoldDurationYearsHasBeenSet = false;
   bool m_expectedBucketOwnerHasBeenSet = false;
   bool m_expectedSourceBucketOwnerHasBeenSet = false;
   bool m_customizedAccessLogTagHasBeenSet = false;

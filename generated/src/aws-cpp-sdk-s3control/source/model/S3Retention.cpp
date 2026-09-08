@@ -35,6 +35,17 @@ S3Retention& S3Retention::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(modeNode.GetText()).c_str()));
       m_modeHasBeenSet = true;
     }
+    XmlNode eventHoldNode = resultNode.FirstChild("EventHold");
+    if (!eventHoldNode.IsNull()) {
+      m_eventHold = S3ObjectLockRetentionEventHoldMapper::GetS3ObjectLockRetentionEventHoldForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(eventHoldNode.GetText()).c_str()));
+      m_eventHoldHasBeenSet = true;
+    }
+    XmlNode eventHoldDurationNode = resultNode.FirstChild("EventHoldDuration");
+    if (!eventHoldDurationNode.IsNull()) {
+      m_eventHoldDuration = eventHoldDurationNode;
+      m_eventHoldDurationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -50,6 +61,16 @@ void S3Retention::AddToNode(XmlNode& parentNode) const {
   if (m_modeHasBeenSet) {
     XmlNode modeNode = parentNode.CreateChildElement("Mode");
     modeNode.SetText(S3ObjectLockRetentionModeMapper::GetNameForS3ObjectLockRetentionMode(m_mode));
+  }
+
+  if (m_eventHoldHasBeenSet) {
+    XmlNode eventHoldNode = parentNode.CreateChildElement("EventHold");
+    eventHoldNode.SetText(S3ObjectLockRetentionEventHoldMapper::GetNameForS3ObjectLockRetentionEventHold(m_eventHold));
+  }
+
+  if (m_eventHoldDurationHasBeenSet) {
+    XmlNode eventHoldDurationNode = parentNode.CreateChildElement("EventHoldDuration");
+    m_eventHoldDuration.AddToNode(eventHoldDurationNode);
   }
 }
 

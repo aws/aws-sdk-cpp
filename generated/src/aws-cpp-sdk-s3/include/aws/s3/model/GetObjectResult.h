@@ -12,6 +12,7 @@
 #include <aws/core/utils/stream/ResponseStream.h>
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/model/ChecksumType.h>
+#include <aws/s3/model/ObjectLockEventHold.h>
 #include <aws/s3/model/ObjectLockLegalHoldStatus.h>
 #include <aws/s3/model/ObjectLockMode.h>
 #include <aws/s3/model/ReplicationStatus.h>
@@ -192,7 +193,7 @@ class GetObjectResult {
   ///@{
   /**
    * <p>The Base64 encoded, 32-bit <code>CRC32</code> checksum of the object. This
-   * checksum is only present if the object was uploaded with the object. For more
+   * checksum is only present if the checksum was uploaded with the object. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
    * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -847,6 +848,57 @@ class GetObjectResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The event hold status for this object. This header is only returned if the
+   * requester has the <code>s3:GetObjectRetention</code> permission.</p>
+   * <p>This functionality is not supported for directory buckets.</p>
+   */
+  inline ObjectLockEventHold GetObjectLockEventHold() const { return m_objectLockEventHold; }
+  inline void SetObjectLockEventHold(ObjectLockEventHold value) {
+    m_objectLockEventHoldHasBeenSet = true;
+    m_objectLockEventHold = value;
+  }
+  inline GetObjectResult& WithObjectLockEventHold(ObjectLockEventHold value) {
+    SetObjectLockEventHold(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The event hold duration in days for this object. Only returned when the event
+   * hold is enabled.</p>  <p>This functionality is not supported for directory
+   * buckets.</p>
+   */
+  inline int GetObjectLockEventHoldDurationDays() const { return m_objectLockEventHoldDurationDays; }
+  inline void SetObjectLockEventHoldDurationDays(int value) {
+    m_objectLockEventHoldDurationDaysHasBeenSet = true;
+    m_objectLockEventHoldDurationDays = value;
+  }
+  inline GetObjectResult& WithObjectLockEventHoldDurationDays(int value) {
+    SetObjectLockEventHoldDurationDays(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The event hold duration in years for this object. Only returned when the
+   * event hold is enabled.</p>  <p>This functionality is not supported for
+   * directory buckets.</p>
+   */
+  inline int GetObjectLockEventHoldDurationYears() const { return m_objectLockEventHoldDurationYears; }
+  inline void SetObjectLockEventHoldDurationYears(int value) {
+    m_objectLockEventHoldDurationYearsHasBeenSet = true;
+    m_objectLockEventHoldDurationYears = value;
+  }
+  inline GetObjectResult& WithObjectLockEventHoldDurationYears(int value) {
+    SetObjectLockEventHoldDurationYears(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetId2() const { return m_id2; }
   template <typename Id2T = Aws::String>
@@ -981,6 +1033,12 @@ class GetObjectResult {
 
   ObjectLockLegalHoldStatus m_objectLockLegalHoldStatus{ObjectLockLegalHoldStatus::NOT_SET};
 
+  ObjectLockEventHold m_objectLockEventHold{ObjectLockEventHold::NOT_SET};
+
+  int m_objectLockEventHoldDurationDays{0};
+
+  int m_objectLockEventHoldDurationYears{0};
+
   Aws::String m_id2;
 
   Aws::String m_requestId;
@@ -1030,6 +1088,9 @@ class GetObjectResult {
   bool m_objectLockModeHasBeenSet = false;
   bool m_objectLockRetainUntilDateHasBeenSet = false;
   bool m_objectLockLegalHoldStatusHasBeenSet = false;
+  bool m_objectLockEventHoldHasBeenSet = false;
+  bool m_objectLockEventHoldDurationDaysHasBeenSet = false;
+  bool m_objectLockEventHoldDurationYearsHasBeenSet = false;
   bool m_id2HasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
   bool m_expiresStringHasBeenSet = false;

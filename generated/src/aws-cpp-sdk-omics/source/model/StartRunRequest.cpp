@@ -109,6 +109,10 @@ Aws::String StartRunRequest::SerializePayload() const {
     payload.WithString("configurationName", m_configurationName);
   }
 
+  if (m_sessionPolicyHasBeenSet) {
+    payload.WithString("sessionPolicy", m_sessionPolicy);
+  }
+
   if (m_engineSettingsHasBeenSet) {
     if (!m_engineSettings.View().IsNull()) {
       payload.WithObject("engineSettings", JsonValue(m_engineSettings.View()));

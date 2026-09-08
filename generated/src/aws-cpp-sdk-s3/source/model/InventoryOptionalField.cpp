@@ -25,6 +25,8 @@ static const int EncryptionStatus_HASH = HashingUtils::HashString("EncryptionSta
 static const int ObjectLockRetainUntilDate_HASH = HashingUtils::HashString("ObjectLockRetainUntilDate");
 static const int ObjectLockMode_HASH = HashingUtils::HashString("ObjectLockMode");
 static const int ObjectLockLegalHoldStatus_HASH = HashingUtils::HashString("ObjectLockLegalHoldStatus");
+static const int ObjectLockEventHoldStatus_HASH = HashingUtils::HashString("ObjectLockEventHoldStatus");
+static const int ObjectLockEventHoldDuration_HASH = HashingUtils::HashString("ObjectLockEventHoldDuration");
 static const int IntelligentTieringAccessTier_HASH = HashingUtils::HashString("IntelligentTieringAccessTier");
 static const int BucketKeyStatus_HASH = HashingUtils::HashString("BucketKeyStatus");
 static const int ChecksumAlgorithm_HASH = HashingUtils::HashString("ChecksumAlgorithm");
@@ -54,6 +56,10 @@ InventoryOptionalField GetInventoryOptionalFieldForName(const Aws::String& name)
     return InventoryOptionalField::ObjectLockMode;
   } else if (hashCode == ObjectLockLegalHoldStatus_HASH) {
     return InventoryOptionalField::ObjectLockLegalHoldStatus;
+  } else if (hashCode == ObjectLockEventHoldStatus_HASH) {
+    return InventoryOptionalField::ObjectLockEventHoldStatus;
+  } else if (hashCode == ObjectLockEventHoldDuration_HASH) {
+    return InventoryOptionalField::ObjectLockEventHoldDuration;
   } else if (hashCode == IntelligentTieringAccessTier_HASH) {
     return InventoryOptionalField::IntelligentTieringAccessTier;
   } else if (hashCode == BucketKeyStatus_HASH) {
@@ -100,6 +106,10 @@ Aws::String GetNameForInventoryOptionalField(InventoryOptionalField enumValue) {
       return "ObjectLockMode";
     case InventoryOptionalField::ObjectLockLegalHoldStatus:
       return "ObjectLockLegalHoldStatus";
+    case InventoryOptionalField::ObjectLockEventHoldStatus:
+      return "ObjectLockEventHoldStatus";
+    case InventoryOptionalField::ObjectLockEventHoldDuration:
+      return "ObjectLockEventHoldDuration";
     case InventoryOptionalField::IntelligentTieringAccessTier:
       return "IntelligentTieringAccessTier";
     case InventoryOptionalField::BucketKeyStatus:

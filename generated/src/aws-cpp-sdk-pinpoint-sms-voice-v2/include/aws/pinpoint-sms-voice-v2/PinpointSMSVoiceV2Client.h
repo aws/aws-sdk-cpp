@@ -2196,6 +2196,38 @@ class AWS_PINPOINTSMSVOICEV2_API PinpointSMSVoiceV2Client : public Aws::Client::
   }
 
   /**
+   * <p>Search available phone numbers from aggregator inventory, optionally filtered
+   * by pattern. If NumberPreference is omitted, returns unfiltered available
+   * numbers. Returns empty list (not an exception) when no numbers match.
+   * ResourceNotFoundException is thrown only for invalid RegistrationId (campaign
+   * not found).</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/ListAvailablePhoneNumbers">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAvailablePhoneNumbersOutcome ListAvailablePhoneNumbers(const Model::ListAvailablePhoneNumbersRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListAvailablePhoneNumbers that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListAvailablePhoneNumbersRequestT = Model::ListAvailablePhoneNumbersRequest>
+  Model::ListAvailablePhoneNumbersOutcomeCallable ListAvailablePhoneNumbersCallable(
+      const ListAvailablePhoneNumbersRequestT& request) const {
+    return SubmitCallable(&PinpointSMSVoiceV2Client::ListAvailablePhoneNumbers, request);
+  }
+
+  /**
+   * An Async wrapper for ListAvailablePhoneNumbers that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListAvailablePhoneNumbersRequestT = Model::ListAvailablePhoneNumbersRequest>
+  void ListAvailablePhoneNumbersAsync(const ListAvailablePhoneNumbersRequestT& request,
+                                      const ListAvailablePhoneNumbersResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PinpointSMSVoiceV2Client::ListAvailablePhoneNumbers, request, handler, context);
+  }
+
+  /**
    * <p>Lists countries that support notify messaging. You can optionally filter by
    * channel, use case, or tier.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/ListNotifyCountries">AWS

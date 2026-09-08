@@ -86,6 +86,10 @@ RcsAgentInformation& RcsAgentInformation::operator=(JsonView jsonValue) {
     m_testingAgent = jsonValue.GetObject("TestingAgent");
     m_testingAgentHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MessagingLimits")) {
+    m_messagingLimits = jsonValue.GetObject("MessagingLimits");
+    m_messagingLimitsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -159,6 +163,10 @@ JsonValue RcsAgentInformation::Jsonize() const {
 
   if (m_testingAgentHasBeenSet) {
     payload.WithObject("TestingAgent", m_testingAgent.Jsonize());
+  }
+
+  if (m_messagingLimitsHasBeenSet) {
+    payload.WithObject("MessagingLimits", m_messagingLimits.Jsonize());
   }
 
   return payload;

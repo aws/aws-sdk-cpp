@@ -128,6 +128,7 @@
 #include <aws/s3-crt/model/ErrorDocument.h>
 #include <aws/s3-crt/model/Event.h>
 #include <aws/s3-crt/model/EventBridgeConfiguration.h>
+#include <aws/s3-crt/model/EventHoldDuration.h>
 #include <aws/s3-crt/model/ExistingObjectReplication.h>
 #include <aws/s3-crt/model/ExistingObjectReplicationStatus.h>
 #include <aws/s3-crt/model/ExpirationState.h>
@@ -306,6 +307,7 @@
 #include <aws/s3-crt/model/ObjectIdentifier.h>
 #include <aws/s3-crt/model/ObjectLockConfiguration.h>
 #include <aws/s3-crt/model/ObjectLockEnabled.h>
+#include <aws/s3-crt/model/ObjectLockEventHold.h>
 #include <aws/s3-crt/model/ObjectLockLegalHold.h>
 #include <aws/s3-crt/model/ObjectLockLegalHoldStatus.h>
 #include <aws/s3-crt/model/ObjectLockMode.h>
