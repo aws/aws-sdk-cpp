@@ -18,7 +18,7 @@ Aws::Utils::Stream::HttpWriteDataStreamBuf::HttpWriteDataStreamBuf(const std::sh
     : m_client{client}, m_buffer{bufferLength} {
   if (requestTimeoutMs > 0) {
     m_hasDeadline = true;
-    m_deadline = std::chrono::steady_clock::now() + std::chrono::milliseconds(requestTimeoutMs);
+    m_writeTimeout = std::chrono::milliseconds(requestTimeoutMs);
   }
   ResetPutArea();
 }
@@ -173,7 +173,7 @@ bool Aws::Utils::Stream::HttpWriteDataStreamBuf::SendBuffer(bool endStream) {
 
   std::unique_lock<std::mutex> lock{m_writeMutex};
   if (m_hasDeadline) {
-    bool completed = m_writeComplete.wait_until(lock, m_deadline,
+    bool completed = m_writeComplete.wait_for(lock, m_writeTimeout,
         [this]() -> bool { return !m_writeInProgress; });
     if (!completed) {
       m_writeError = true;

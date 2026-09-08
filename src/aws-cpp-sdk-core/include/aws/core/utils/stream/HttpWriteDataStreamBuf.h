@@ -104,7 +104,7 @@ class AWS_CORE_API HttpWriteDataStreamBuf : public std::streambuf {
   bool m_writeInProgress{false};
   bool m_writeError{false};
   bool m_hasDeadline{false};
-  std::chrono::steady_clock::time_point m_deadline;
+  std::chrono::milliseconds m_writeTimeout{0};
 
   // State management
   enum class STATE {
