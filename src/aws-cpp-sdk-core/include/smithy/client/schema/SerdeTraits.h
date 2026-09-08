@@ -8,12 +8,14 @@
 #include <smithy/client/schema/Trait.h>
 #include <smithy/client/schema/TraitKey.h>
 
+#include <cstdint>
+
 namespace smithy {
 namespace schema {
 
 class TimestampFormatTrait : public Trait {
  public:
-  enum class Format { DATE_TIME, HTTP_DATE, EPOCH_SECONDS };
+  enum class Format : std::uint8_t { DATE_TIME, HTTP_DATE, EPOCH_SECONDS };
 
   explicit TimestampFormatTrait(Format format) : m_format(format) {}
   Format GetFormat() const { return m_format; }
@@ -36,5 +38,5 @@ class Ec2QueryNameTrait : public Trait {
 extern template class TraitKey<TimestampFormatTrait>;
 extern template class TraitKey<Ec2QueryNameTrait>;
 
-}
-}
+}  // namespace schema
+}  // namespace smithy

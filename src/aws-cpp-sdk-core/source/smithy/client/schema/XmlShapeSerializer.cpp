@@ -2,8 +2,6 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
-#include <cmath>
-
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/Outcome.h>
@@ -14,6 +12,8 @@
 #include <smithy/client/schema/SpecificShapeSerializer.h>
 #include <smithy/client/schema/XmlShapeSerializer.h>
 #include <smithy/client/schema/XmlTraits.h>
+
+#include <cmath>
 
 using namespace smithy::schema;
 using namespace Aws::Utils;
@@ -215,7 +215,7 @@ class XmlShapeSerializer::Impl final : public InterceptingSerializer {
     if (trait) {
       return trait->GetValue();
     }
-    const auto member = schema.GetMemberName();
+    auto member = schema.GetMemberName();
     if (!member.empty()) {
       return member;
     }

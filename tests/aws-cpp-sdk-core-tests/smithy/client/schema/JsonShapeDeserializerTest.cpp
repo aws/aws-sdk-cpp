@@ -13,6 +13,7 @@
 #include <smithy/client/schema/Schema.h>
 #include <smithy/client/schema/SchemaBuilder.h>
 
+#include <cmath>
 #include <functional>
 #include <limits>
 
@@ -31,7 +32,7 @@ Aws::String Encode(const std::shared_ptr<const Schema>& root, const std::functio
   return s.GetPayload().GetResult();
 }
 
-}
+}  // namespace
 
 TEST_F(JsonShapeDeserializerTest, Boolean) {
   auto root = Schema::StructureBuilder("Root").PutMember("enabled", Schema::CreateBoolean("B")).Build();
@@ -146,7 +147,6 @@ TEST_F(JsonShapeDeserializerTest, Blob) {
 }
 
 TEST_F(JsonShapeDeserializerTest, TimestampEpochSeconds) {
-
   auto root = Schema::StructureBuilder("Root").PutMember("ts", Schema::CreateTimestamp("T")).Build();
   const Aws::String payload = "{\"ts\":1234567890}";
 
@@ -158,7 +158,6 @@ TEST_F(JsonShapeDeserializerTest, TimestampEpochSeconds) {
 }
 
 TEST_F(JsonShapeDeserializerTest, TimestampDateTimeString) {
-
   auto root = Schema::StructureBuilder("Root").PutMember("ts", Schema::CreateTimestamp("T")).Build();
   const Aws::String payload = "{\"ts\":\"2009-02-13T23:31:30Z\"}";
 
@@ -286,7 +285,6 @@ TEST_F(JsonShapeDeserializerTest, NestedStructure) {
 }
 
 TEST_F(JsonShapeDeserializerTest, SkipsUnknownField) {
-
   auto root = Schema::StructureBuilder("Root").PutMember("known", Schema::CreateInteger("I")).Build();
   auto known = Schema::CreateMember("known", ShapeType::Integer);
   auto extra = Schema::CreateMember("extra", ShapeType::String);
@@ -432,9 +430,7 @@ class Widget : public SerializableStruct {
  public:
   const Schema& GetSchema() const override { return *Root(); }
 
-  void SerializeMembers(ShapeSerializer& serializer) const override {
-    serializer.WriteString(*GetSchema().GetMember("foo").value(), foo);
-  }
+  void SerializeMembers(ShapeSerializer& serializer) const override { serializer.WriteString(*GetSchema().GetMember("foo").value(), foo); }
 
   void From(const Schema& memberSchema, ShapeDeserializer& deserializer) override {
     switch (memberSchema.GetMemberIndex()) {

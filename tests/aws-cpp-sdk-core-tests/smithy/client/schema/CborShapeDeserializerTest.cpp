@@ -28,7 +28,7 @@ Aws::String Encode(const std::shared_ptr<const Schema>& root, const std::functio
   return s.GetPayload().GetResult();
 }
 
-}
+}  // namespace
 
 TEST_F(CborShapeDeserializerTest, BooleanTrue) {
   auto root = Schema::StructureBuilder("Root").PutMember("enabled", Schema::CreateBoolean("B")).Build();
@@ -107,7 +107,6 @@ TEST_F(CborShapeDeserializerTest, DoubleValue) {
 }
 
 TEST_F(CborShapeDeserializerTest, DoubleWholeNumber) {
-
   auto root = Schema::StructureBuilder("Root").PutMember("d", Schema::CreateDouble("D")).Build();
   auto member = root->GetMember("d").value();
   auto payload = Encode(root, [&](ShapeSerializer& ser) { ser.WriteDouble(*member, 5.0); });
@@ -277,7 +276,6 @@ TEST_F(CborShapeDeserializerTest, NestedStructure) {
 }
 
 TEST_F(CborShapeDeserializerTest, SkipUnknownField) {
-
   auto root = Schema::StructureBuilder("Root")
                   .PutMember("known", Schema::CreateInteger("I"))
                   .PutMember("also_known", Schema::CreateInteger("I2"))
@@ -306,7 +304,6 @@ TEST_F(CborShapeDeserializerTest, SkipUnknownField) {
 }
 
 TEST_F(CborShapeDeserializerTest, SkipNestedUnknown) {
-
   auto root = Schema::StructureBuilder("Root").PutMember("known", Schema::CreateInteger("I")).Build();
   auto unknownStruct = Schema::CreateMember("unknown_struct", ShapeType::Structure);
   auto a = Schema::CreateMember("a", ShapeType::Integer);
@@ -314,9 +311,9 @@ TEST_F(CborShapeDeserializerTest, SkipNestedUnknown) {
   auto known = Schema::CreateMember("known", ShapeType::Integer);
   auto payload = Encode(root, [&](ShapeSerializer& ser) {
     ser.WriteStruct(*unknownStruct, LambdaStruct(*unknownStruct, [&](ShapeSerializer& ser2) {
-                      ser2.WriteInteger(*a, 1);
-                      ser2.WriteString(*b, "nested");
-                    }));
+      ser2.WriteInteger(*a, 1);
+      ser2.WriteString(*b, "nested");
+    }));
     ser.WriteInteger(*known, 42);
   });
 
@@ -398,11 +395,8 @@ TEST_F(CborShapeDeserializerTest, EmptyOptionalOnTypeMismatch) {
 }
 
 TEST_F(CborShapeDeserializerTest, DefiniteLengthStruct) {
-
-  auto root = Schema::StructureBuilder("Root")
-                  .PutMember("a", Schema::CreateInteger("I"))
-                  .PutMember("b", Schema::CreateInteger("I2"))
-                  .Build();
+  auto root =
+      Schema::StructureBuilder("Root").PutMember("a", Schema::CreateInteger("I")).PutMember("b", Schema::CreateInteger("I2")).Build();
   const unsigned char data[] = {0xA2, 0x61, 0x61, 0x01, 0x61, 0x62, 0x02};
   CborShapeDeserializer d(data, sizeof(data));
   Aws::Map<Aws::String, int> got;
@@ -430,7 +424,6 @@ TEST_F(CborShapeDeserializerTest, IndefiniteLengthStruct) {
 }
 
 TEST_F(CborShapeDeserializerTest, TimestampFromFloat) {
-
   auto scalar = Schema::CreateTimestamp("T");
   const unsigned char data[] = {0xC1, 0xFB, 0x41, 0xD2, 0x65, 0x80, 0xB4, 0xA0, 0x00, 0x00};
   CborShapeDeserializer d(data, sizeof(data));
