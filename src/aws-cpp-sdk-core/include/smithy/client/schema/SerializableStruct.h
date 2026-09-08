@@ -5,8 +5,8 @@
 
 namespace smithy {
 namespace schema {
-    class ShapeDeserializer;
-    class ShapeSerializer;
+class ShapeDeserializer;
+class ShapeSerializer;
 
 class SMITHY_API SerializableStruct {
  public:
@@ -14,8 +14,7 @@ class SMITHY_API SerializableStruct {
 
   virtual const Schema& GetSchema() const = 0;
   virtual void SerializeMembers(ShapeSerializer& serializer) const = 0;
-
-  virtual void From(const Schema& memberSchema, ShapeDeserializer& deserializer);
+  virtual void From(const Schema& memberSchema, ShapeDeserializer& deserializer) = 0;
 
   void Deserialize(ShapeDeserializer& deserializer);
 };

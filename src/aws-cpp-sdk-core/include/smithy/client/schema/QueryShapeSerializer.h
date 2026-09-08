@@ -9,6 +9,7 @@
 #include <smithy/Smithy_EXPORTS.h>
 #include <smithy/client/schema/ShapeSerializer.h>
 
+#include <cstdint>
 #include <functional>
 
 namespace smithy {
@@ -46,5 +47,5 @@ class SMITHY_API QueryShapeSerializer final : public ShapeSerializer {
   Aws::UniquePtr<Impl> m_impl;
 };
 
-}
-}
+}  // namespace schema
+}  // namespace smithy

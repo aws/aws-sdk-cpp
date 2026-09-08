@@ -47,5 +47,5 @@ class SMITHY_API CborCodec final : public Codec {
   Aws::UniquePtr<ShapeDeserializer> CreateDeserializer(const unsigned char* data, size_t length) const override;
 };
 
-}
-}
+}  // namespace schema
+}  // namespace smithy

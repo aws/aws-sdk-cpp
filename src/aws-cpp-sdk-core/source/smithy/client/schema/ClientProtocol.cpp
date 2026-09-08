@@ -3,7 +3,6 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <smithy/client/schema/ClientProtocol.h>
-
 #include <smithy/client/schema/QueryShapeSerializer.h>
 #include <smithy/client/schema/SerializableStruct.h>
 #include <smithy/client/schema/XmlShapeDeserializer.h>
@@ -19,7 +18,7 @@ ClientProtocol::SerializerOutcome SerializeQuery(const Schema& schema, const Ser
   serializer.WriteStruct(schema, input);
   return serializer.GetPayload();
 }
-}
+}  // namespace
 
 Aws::String RestJsonProtocol::GetProtocolId() const { return "aws.protocols#restJson1"; }
 Aws::String RestJsonProtocol::GetContentType() const { return "application/json"; }

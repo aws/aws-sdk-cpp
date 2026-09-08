@@ -2,10 +2,9 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
-#include <smithy/client/schema/Codec.h>
-
 #include <smithy/client/schema/CborShapeDeserializer.h>
 #include <smithy/client/schema/CborShapeSerializer.h>
+#include <smithy/client/schema/Codec.h>
 #include <smithy/client/schema/JsonShapeDeserializer.h>
 #include <smithy/client/schema/JsonShapeSerializer.h>
 #include <smithy/client/schema/XmlShapeDeserializer.h>
