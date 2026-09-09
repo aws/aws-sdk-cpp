@@ -4,6 +4,7 @@
  */
 package com.amazonaws.util.awsclientsmithygenerator.generators.model;
 
+import com.amazonaws.util.awsclientsmithygenerator.generators.ServiceNameUtil;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.ProtocolTraits;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.ServiceShape;
@@ -15,7 +16,7 @@ import software.amazon.smithy.model.shapes.ServiceShape;
  * @param model             the transformed Smithy model
  * @param service           the service shape being generated
  * @param protocolTraits    the resolved protocol rendering strategy
- * @param namespace         the C++ model namespace (e.g. "IAM")
+ * @param namespace         the C++ model namespace, may start lowercase (e.g. "iam", "drs")
  * @param exportMacro       the export macro (e.g. "AWS_IAM_API")
  * @param smithyServiceName the on-disk service directory name (e.g. "iam")
  */
@@ -25,4 +26,14 @@ public record RenderContext(
     ProtocolTraits protocolTraits,
     String namespace,
     String exportMacro,
-    String smithyServiceName) {}
+    String smithyServiceName) {
+
+    /**
+     * Capitalized namespace for class-name-derived artifacts (base {@code <Prefix>Request} and the
+     * {@code <Prefix>Request.h}/{@code <Prefix>_EXPORTS.h}/{@code <Prefix>ErrorMarshaller.h} includes),
+     * mirroring C2J {@code metadata.classNamePrefix}. The {@code namespace} block stays {@link #namespace()}.
+     */
+    public String classNamePrefix() {
+        return ServiceNameUtil.capitalize(namespace);
+    }
+}

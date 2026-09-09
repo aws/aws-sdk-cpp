@@ -22,23 +22,23 @@ final class IncludeSets {
 
     private IncludeSets() {}
 
-    static List<String> resultHeaderBase(String smithyServiceName, String namespace,
+    static List<String> resultHeaderBase(String smithyServiceName, String classPrefix,
                                          boolean includeAwsString) {
         List<String> inc = new ArrayList<>();
         inc.add("aws/core/http/HttpResponse.h");
-        inc.add("aws/" + smithyServiceName + "/" + namespace + "_EXPORTS.h");
+        inc.add("aws/" + smithyServiceName + "/" + classPrefix + "_EXPORTS.h");
         if (includeAwsString) {
             inc.add("aws/core/utils/memory/stl/AWSString.h");
         }
         return inc;
     }
 
-    static List<String> streamingResultHeaderBase(String smithyServiceName, String namespace) {
+    static List<String> streamingResultHeaderBase(String smithyServiceName, String classPrefix) {
         List<String> inc = new ArrayList<>();
         inc.add("aws/core/http/HttpResponse.h");
         inc.add("aws/core/utils/memory/stl/AWSString.h");
         inc.add("aws/core/utils/stream/ResponseStream.h");
-        inc.add("aws/" + smithyServiceName + "/" + namespace + "_EXPORTS.h");
+        inc.add("aws/" + smithyServiceName + "/" + classPrefix + "_EXPORTS.h");
         return inc;
     }
 

@@ -22,7 +22,11 @@ import software.amazon.smithy.model.shapes.ShapeId;
 import software.amazon.smithy.model.shapes.StringShape;
 import software.amazon.smithy.model.shapes.StructureShape;
 import software.amazon.smithy.model.shapes.UnionShape;
+import software.amazon.smithy.model.SourceLocation;
+import software.amazon.smithy.model.traits.AuthTrait;
+import software.amazon.smithy.model.traits.OptionalAuthTrait;
 import software.amazon.smithy.model.traits.StreamingTrait;
+import software.amazon.smithy.model.traits.Trait;
 import software.amazon.smithy.rulesengine.traits.OperationContextParamDefinition;
 import software.amazon.smithy.rulesengine.traits.OperationContextParamsTrait;
 
@@ -92,6 +96,117 @@ class RequestRendererTest {
                 .filter(p -> p.toString().endsWith(fileSuffix))
                 .findFirst().orElseThrow())
             .orElseThrow();
+    }
+
+    /** Renders a one-input-member request op ({@code opTrait} nullable) and returns the {@code fileSuffix} file. */
+    private static String renderSimpleRequest(String memberName, String namespace, Trait opTrait,
+                                              String fileSuffix) {
+        return renderSimpleRequestTraits(memberName, namespace,
+            opTrait == null ? java.util.List.of() : java.util.List.of(opTrait), fileSuffix);
+    }
+
+    /** Renders a one-input-member request op with the given operation traits and returns the {@code fileSuffix} file. */
+    private static String renderSimpleRequestTraits(String memberName, String namespace,
+                                                    java.util.List<Trait> opTraits, String fileSuffix) {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        StructureShape input = StructureShape.builder()
+            .id("com.example#DoThingInput").addMember(memberName, str.getId()).build();
+        OperationShape.Builder ob = OperationShape.builder()
+            .id("com.example#DoThing").input(input.getId());
+        for (Trait opTrait : opTraits) {
+            ob.addTrait(opTrait);
+        }
+        OperationShape op = ob.build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#Example").version("2024-01-01")
+            .addTrait(software.amazon.smithy.aws.traits.protocols.RestJson1Trait.builder().build())
+            .addOperation(op.getId()).build();
+        Model model = Model.builder().addShapes(str, input, op, service).build();
+        ServiceShape svc = model.expectShape(ShapeId.from("com.example#Example"), ServiceShape.class);
+        MockManifest manifest = new MockManifest();
+        CppWriterDelegator delegator = new CppWriterDelegator(manifest);
+        Protocol protocol = ProtocolResolver.resolve(svc, model);
+        new RequestRenderer(
+            ShapeClassifier.classify(model, svc, protocol).requests(),
+            new RenderContext(model, svc, ProtocolResolver.traitsFor(protocol),
+                namespace, "AWS_EXAMPLE_API", "example")).render(delegator);
+        delegator.flushWriters();
+        return manifest.getFileString(manifest.getFiles().stream()
+            .filter(p -> p.toString().endsWith(fileSuffix)).findFirst().orElseThrow()).orElseThrow();
+    }
+
+    @Test
+    void request_reservedBodyGetter_isRenamedToGetMemberBody() {
+        // A "body" member's getter collides with base GetBody(); renamed to GetMemberBody (Set/With unchanged).
+        String h = renderSimpleRequest("body", "Example", null, "DoThingRequest.h");
+        assertTrue(h.contains("GetMemberBody()"), "reserved getter must be GetMemberBody: " + h);
+        assertFalse(h.contains(" GetBody()"), "must not emit the reserved GetBody getter: " + h);
+        assertTrue(h.contains("SetBody("), "setter stays SetBody: " + h);
+    }
+
+    @Test
+    void request_lowercaseNamespace_usesCapitalizedBaseClassAndIncludes() {
+        // Lowercase namespace (drs) uses the capitalized prefix for the base class + Request.h/_EXPORTS.h.
+        String h = renderSimpleRequest("name", "drs", null, "DoThingRequest.h");
+        assertTrue(h.contains(": public DrsRequest {"), "base class must be capitalized: " + h);
+        assertTrue(h.contains("#include <aws/example/DrsRequest.h>"), "Request.h include capitalized: " + h);
+        assertTrue(h.contains("#include <aws/example/Drs_EXPORTS.h>"), "EXPORTS include capitalized: " + h);
+        assertFalse(h.contains("public drsRequest"), "must not use lowercase base class: " + h);
+    }
+
+    @Test
+    void request_operationAuthOverride_emitsSupportedAuthDecl() {
+        // An @auth([]) (anonymous) op must declare/define GetRequestSpecificSupportedAuth returning noAuth.
+        Trait emptyAuth = new AuthTrait(java.util.Collections.emptySet(), SourceLocation.NONE);
+        String h = renderSimpleRequest("name", "Example", emptyAuth, "DoThingRequest.h");
+        assertTrue(h.contains("Aws::Vector<smithy::AuthSchemeOption> GetRequestSpecificSupportedAuth() const override;"),
+            "auth override decl expected: " + h);
+        String cpp = renderSimpleRequest("name", "Example", emptyAuth, "DoThingRequest.cpp");
+        assertTrue(cpp.contains("GetRequestSpecificSupportedAuth() const {"), "auth impl expected: " + cpp);
+        assertTrue(cpp.contains("smithy::NoAuthSchemeOption::noAuthSchemeOption"), "noAuth scheme expected: " + cpp);
+        assertTrue(cpp.contains("NoAuthSchemeOption.h"), "noAuth include expected: " + cpp);
+    }
+
+    @Test
+    void request_sigv4AuthScheme_mapsToSigV4Option() {
+        // A concrete scheme override maps through AUTH_SCHEME_OPTION to its SchemeOption constant.
+        Trait auth = new AuthTrait(java.util.Set.of(ShapeId.from("aws.auth#sigv4")), SourceLocation.NONE);
+        String cpp = renderSimpleRequest("name", "Example", auth, "DoThingRequest.cpp");
+        assertTrue(cpp.contains("smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption"), "sigv4 scheme expected: " + cpp);
+        assertTrue(cpp.contains("SigV4AuthSchemeOption.h"), "sigv4 include expected: " + cpp);
+    }
+
+    @Test
+    void request_optionalAuthOverSigv4_appendsNoAuthFallback() {
+        // @optionalAuth means auth is optional: the real scheme(s) stay, with noAuth appended as a fallback.
+        Trait auth = new AuthTrait(java.util.Set.of(ShapeId.from("aws.auth#sigv4")), SourceLocation.NONE);
+        Trait optional = new OptionalAuthTrait();
+        String cpp = renderSimpleRequestTraits("name", "Example", java.util.List.of(auth, optional), "DoThingRequest.cpp");
+        assertTrue(cpp.contains("smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption"), "sigv4 scheme expected: " + cpp);
+        assertTrue(cpp.contains("smithy::NoAuthSchemeOption::noAuthSchemeOption"), "noAuth fallback expected: " + cpp);
+        assertTrue(cpp.indexOf("sigV4AuthSchemeOption") < cpp.indexOf("noAuthSchemeOption"),
+            "noAuth must come after the real scheme as a fallback: " + cpp);
+        assertTrue(cpp.contains("SigV4AuthSchemeOption.h") && cpp.contains("NoAuthSchemeOption.h"),
+            "both scheme includes expected: " + cpp);
+    }
+
+    @Test
+    void request_optionalAuthTrait_emitsSupportedAuthOverride() {
+        // @optionalAuth alone (no @auth) still overrides the resolved auth list, so the override must be emitted.
+        String h = renderSimpleRequestTraits("name", "Example", java.util.List.of(new OptionalAuthTrait()),
+            "DoThingRequest.h");
+        assertTrue(h.contains("Aws::Vector<smithy::AuthSchemeOption> GetRequestSpecificSupportedAuth() const override;"),
+            "auth override decl expected for @optionalAuth: " + h);
+        String cpp = renderSimpleRequestTraits("name", "Example", java.util.List.of(new OptionalAuthTrait()),
+            "DoThingRequest.cpp");
+        assertTrue(cpp.contains("smithy::NoAuthSchemeOption::noAuthSchemeOption"), "noAuth fallback expected: " + cpp);
+    }
+
+    @Test
+    void request_noAuthTraits_omitsSupportedAuthOverride() {
+        // Without @auth or @optionalAuth the operation inherits the service default; no per-request override.
+        String h = renderSimpleRequest("name", "Example", null, "DoThingRequest.h");
+        assertFalse(h.contains("GetRequestSpecificSupportedAuth"), "no auth override expected: " + h);
     }
 
     private static Model overrideStreamingModel(boolean marked) {

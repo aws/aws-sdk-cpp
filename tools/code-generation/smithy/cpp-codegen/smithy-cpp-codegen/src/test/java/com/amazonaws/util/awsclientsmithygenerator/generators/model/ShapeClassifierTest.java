@@ -424,6 +424,51 @@ class ShapeClassifierTest {
             "Expected a RequestInfo for the no-input operation Ping");
     }
 
+    @Test
+    void skipsUnitWhenReachableOnlyViaEnumValues() {
+        // Enum values target smithy.api#Unit but never reference it as a type -> Unit file is spurious.
+        StringShape str = StringShape.builder().id("com.example#Str").build();
+        EnumShape color = EnumShape.builder()
+            .id("com.example#Color").addMember("RED", "RED").addMember("GREEN", "GREEN").build();
+        StructureShape output = StructureShape.builder()
+            .id("com.example#DoOutput").addMember("color", color.getId()).build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#Do").output(output.getId()).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#Svc").version("2024-01-01").addOperation(op.getId()).build();
+        Model model = Model.assembler().addShapes(str, color, output, op, service).assemble().unwrap();
+
+        var classified = ShapeClassifier.classify(model, service, ProtocolResolver.resolve(service, model));
+        assertTrue(classified.subObjects().stream().noneMatch(s -> s.getId().equals(UnitTypeTrait.UNIT)),
+            "smithy.api#Unit reachable only via enum values must not be a sub-object");
+        assertTrue(classified.enums().stream().anyMatch(s -> s.getId().getName().equals("Color")),
+            "the enum should still be classified");
+    }
+
+    @Test
+    void emitsUnitWhenReferencedByUnionMember() {
+        // A union variant references smithy.api#Unit as a data type, so Unit must be emitted (else dangling).
+        StringShape str = StringShape.builder().id("com.example#Str").build();
+        UnionShape choice = UnionShape.builder()
+            .id("com.example#Choice")
+            .addMember("nothing", UnitTypeTrait.UNIT)
+            .addMember("something", str.getId())
+            .build();
+        StructureShape output = StructureShape.builder()
+            .id("com.example#DoOutput").addMember("choice", choice.getId()).build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#Do").output(output.getId()).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#Svc").version("2024-01-01").addOperation(op.getId()).build();
+        Model model = Model.assembler().addShapes(str, choice, output, op, service).assemble().unwrap();
+
+        var classified = ShapeClassifier.classify(model, service, ProtocolResolver.resolve(service, model));
+        assertTrue(classified.subObjects().stream().anyMatch(s -> s.getId().equals(UnitTypeTrait.UNIT)),
+            "Unit referenced by a union member must be emitted so the reference resolves");
+        assertTrue(classified.subObjects().stream().anyMatch(s -> s.getId().getName().equals("Choice")),
+            "the enclosing union Choice should still be a sub-object");
+    }
+
     /** Structure that is both an operation output and a list-element member (dual-role, like Lambda FunctionConfiguration); must end up in both results and subObjects. */
     private Model buildDualRoleModel() {
         StringShape str = StringShape.builder().id("com.example#String").build();

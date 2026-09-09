@@ -153,6 +153,10 @@ class EventStreamRendererTest {
     }
 
     private static String render(Model model, String fileSuffix) {
+        return render(model, fileSuffix, "Example");
+    }
+
+    private static String render(Model model, String fileSuffix, String namespace) {
         ServiceShape service = model.expectShape(ShapeId.from("com.example#Example"), ServiceShape.class);
         MockManifest manifest = new MockManifest();
         CppWriterDelegator delegator = new CppWriterDelegator(manifest);
@@ -160,7 +164,7 @@ class EventStreamRendererTest {
         EventStreamRenderer renderer = new EventStreamRenderer(
             ShapeClassifier.classify(model, service, protocol).eventStreamHandlers(),
             new RenderContext(model, service, ProtocolResolver.traitsFor(protocol),
-                "Example", "AWS_EXAMPLE_API", "example"));
+                namespace, "AWS_EXAMPLE_API", "example"));
         renderer.render(delegator);
         delegator.flushWriters();
         return manifest.getFileString(
@@ -168,6 +172,15 @@ class EventStreamRendererTest {
                 .filter(p -> p.toString().endsWith(fileSuffix))
                 .findFirst().orElseThrow())
             .orElseThrow();
+    }
+
+    @Test
+    void handlerHeader_lowercaseNamespace_capitalizesErrorsTypeAndInclude() {
+        // Errors include/type use the capitalized prefix (DrsErrors); namespace block stays lowercase.
+        String h = render(twoEventModel(), "DoStreamHandler.h", "drs");
+        assertTrue(h.contains("#include <aws/example/DrsErrors.h>"), "Errors include must be capitalized: " + h);
+        assertTrue(h.contains("AWSError<DrsErrors>"), "Errors type must be capitalized: " + h);
+        assertFalse(h.contains("drsErrors"), "must not use lowercase Errors type/include: " + h);
     }
 
     private static java.util.List<String> renderedFilePaths(Model model) {

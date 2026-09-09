@@ -89,6 +89,44 @@ class EnumRendererTest {
     }
 
     @Test
+    void renderHeader_doesNotSuffixPlatformValuesButStillSuffixesKeywords() {
+        // WINDOWS/LINUX/min/max ship bare (match C2J); a genuinely reserved word like GET still gets '_'.
+        EnumShape enumShape = EnumShape.builder()
+            .id("com.example#Mixed")
+            .addMember("WINDOWS", "WINDOWS")
+            .addMember("LINUX", "LINUX")
+            .addMember("min", "min")
+            .addMember("max", "max")
+            .addMember("GET", "GET")
+            .build();
+        CppWriter writer = new CppWriter();
+        EnumRenderer.renderHeader(writer, enumShape, "Svc", "AWS_SVC_API", "svc");
+        String out = writer.toString();
+        assertTrue(out.contains("NOT_SET, WINDOWS, LINUX, min, max, GET_"),
+            "WINDOWS/LINUX/min/max must be bare, GET_ still suffixed (C2J parity): " + out);
+        assertFalse(out.contains("WINDOWS_"), "WINDOWS must not be suffixed: " + out);
+        assertFalse(out.contains("LINUX_"), "LINUX must not be suffixed: " + out);
+        assertFalse(out.contains("min_"), "min must not be suffixed: " + out);
+        assertFalse(out.contains("max_"), "max must not be suffixed: " + out);
+    }
+
+    @Test
+    void renderHeader_capitalizesExportsPrefixForLowercaseNamespace() {
+        // Lowercase namespace (drs) must include the capitalized Drs_EXPORTS.h; namespace block stays lowercase.
+        EnumShape enumShape = EnumShape.builder()
+            .id("com.example#E")
+            .addMember("A", "A")
+            .build();
+        CppWriter writer = new CppWriter();
+        EnumRenderer.renderHeader(writer, enumShape, "drs", "AWS_DRS_API", "drs");
+        String out = writer.toString();
+        assertTrue(out.contains("#include <aws/drs/Drs_EXPORTS.h>"),
+            "EXPORTS include must use the capitalized class prefix: " + out);
+        assertTrue(out.contains("namespace drs {"),
+            "namespace block must stay lowercase: " + out);
+    }
+
+    @Test
     void renderHeader_includesMapperNamespace() {
         EnumShape enumShape = EnumShape.builder()
             .id("com.example#Color")

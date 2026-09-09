@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 import software.amazon.smithy.build.MockManifest;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.BlobShape;
+import software.amazon.smithy.model.shapes.IntegerShape;
 import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.ServiceShape;
@@ -23,6 +24,7 @@ import software.amazon.smithy.model.traits.StreamingTrait;
 import software.amazon.smithy.model.traits.Trait;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ResultRendererTest {
@@ -89,6 +91,153 @@ class ResultRendererTest {
         assertTrue(otherFiles.stream().anyMatch(f -> f.endsWith("DoThingResult.h")), otherFiles.toString());
     }
 
+    /** A JSON-protocol output whose sole member is named {@code memberName} (targets a string). */
+    private static String renderResultHeaderWithMember(String memberName, String smithyServiceName) {
+        StringShape str = StringShape.builder().id("com.example#Str").build();
+        StructureShape input = StructureShape.builder()
+            .id("com.example#DoThingInput").addMember("name", str.getId()).build();
+        StructureShape output = StructureShape.builder()
+            .id("com.example#DoThingOutput").addMember(memberName, str.getId()).build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#DoThing").input(input.getId()).output(output.getId()).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#Example").version("2024-01-01")
+            .addTrait(software.amazon.smithy.aws.traits.protocols.RestJson1Trait.builder().build())
+            .addOperation(op.getId()).build();
+        Model model = Model.builder().addShapes(str, input, output, op, service).build();
+        MockManifest manifest = new MockManifest();
+        CppWriterDelegator delegator = new CppWriterDelegator(manifest);
+        Protocol protocol = ProtocolResolver.resolve(service, model);
+        new ResultRenderer(
+            ShapeClassifier.classify(model, service, protocol).results(),
+            new RenderContext(model, service, ProtocolResolver.traitsFor(protocol),
+                "Example", "AWS_EXAMPLE_API", smithyServiceName)).render(delegator);
+        delegator.flushWriters();
+        return manifest.getFileString(manifest.getFiles().stream()
+            .filter(p -> p.toString().endsWith("DoThingResult.h")).findFirst().orElseThrow()).orElseThrow();
+    }
+
+    private static int count(String haystack, String needle) {
+        int n = 0, i = 0;
+        while ((i = haystack.indexOf(needle, i)) >= 0) { n++; i += needle.length(); }
+        return n;
+    }
+
+    @Test
+    void result_modeledCapitalRequestId_emitsSingleRequestIdGroup() {
+        // A modeled "RequestId" (string) stands; injection is skipped (else duplicate GetRequestId).
+        String h = renderResultHeaderWithMember("RequestId", "example");
+        assertTrue(count(h, "GetRequestId()") == 1,
+            "exactly one GetRequestId accessor expected: " + h);
+        assertTrue(count(h, "Aws::String m_requestId;") == 1,
+            "exactly one m_requestId field expected: " + h);
+    }
+
+    @Test
+    void result_modeledLowercaseRequestId_keepsModeledMemberNoInjection() {
+        // Lowercase "requestId" suppresses injection; the modeled member stands alone (still one group).
+        String h = renderResultHeaderWithMember("requestId", "example");
+        assertTrue(count(h, "GetRequestId()") == 1,
+            "exactly one GetRequestId accessor expected: " + h);
+        assertTrue(count(h, "Aws::String m_requestId;") == 1,
+            "exactly one m_requestId field expected: " + h);
+    }
+
+    @Test
+    void result_modeledOtherCasedRequestId_coexistsWithInjectedGroup() {
+        // A member keyed neither "requestId" nor "RequestId" (e.g. "RequestID") has distinct C++ names
+        // (GetRequestID / m_requestID), so it coexists with the injected RequestId group, matching C2J.
+        String h = renderResultHeaderWithMember("RequestID", "example");
+        assertTrue(h.contains("GetRequestID()"), "modeled RequestID accessor kept: " + h);
+        assertTrue(count(h, "GetRequestId()") == 1, "injected RequestId group still present once: " + h);
+    }
+
+    @Test
+    void result_nonStringRequestId_failsCodegen() {
+        // A modeled RequestId that isn't a string can't be honored (runtime fills it as Aws::String
+        // from x-amzn-requestid), so codegen fails fast rather than emit a wrong-typed field.
+        IntegerShape intShape = IntegerShape.builder().id("com.example#Int").build();
+        StructureShape input = StructureShape.builder()
+            .id("com.example#DoThingInput").addMember("name", intShape.getId()).build();
+        StructureShape output = StructureShape.builder()
+            .id("com.example#DoThingOutput").addMember("RequestId", intShape.getId()).build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#DoThing").input(input.getId()).output(output.getId()).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#Example").version("2024-01-01")
+            .addTrait(software.amazon.smithy.aws.traits.protocols.RestJson1Trait.builder().build())
+            .addOperation(op.getId()).build();
+        Model model = Model.builder().addShapes(intShape, input, output, op, service).build();
+        MockManifest manifest = new MockManifest();
+        CppWriterDelegator delegator = new CppWriterDelegator(manifest);
+        Protocol protocol = ProtocolResolver.resolve(service, model);
+        ResultRenderer renderer = new ResultRenderer(
+            ShapeClassifier.classify(model, service, protocol).results(),
+            new RenderContext(model, service, ProtocolResolver.traitsFor(protocol),
+                "Example", "AWS_EXAMPLE_API", "example"));
+        assertThrows(IllegalStateException.class, () -> renderer.render(delegator));
+    }
+
+    @Test
+    void result_lowercaseNamespace_usesCapitalizedExportsPrefix() {
+        // A lowercase C++ namespace (e.g. drs) must include the capitalized <Prefix>_EXPORTS.h.
+        StringShape str = StringShape.builder().id("com.example#Str").build();
+        StructureShape input = StructureShape.builder()
+            .id("com.example#DoThingInput").addMember("name", str.getId()).build();
+        StructureShape output = StructureShape.builder()
+            .id("com.example#DoThingOutput").addMember("field", str.getId()).build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#DoThing").input(input.getId()).output(output.getId()).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#Example").version("2024-01-01")
+            .addTrait(software.amazon.smithy.aws.traits.protocols.RestJson1Trait.builder().build())
+            .addOperation(op.getId()).build();
+        Model model = Model.builder().addShapes(str, input, output, op, service).build();
+        MockManifest manifest = new MockManifest();
+        CppWriterDelegator delegator = new CppWriterDelegator(manifest);
+        Protocol protocol = ProtocolResolver.resolve(service, model);
+        new ResultRenderer(
+            ShapeClassifier.classify(model, service, protocol).results(),
+            new RenderContext(model, service, ProtocolResolver.traitsFor(protocol),
+                "drs", "AWS_DRS_API", "drs")).render(delegator);
+        delegator.flushWriters();
+        String h = manifest.getFileString(manifest.getFiles().stream()
+            .filter(p -> p.toString().endsWith("DoThingResult.h")).findFirst().orElseThrow()).orElseThrow();
+        assertTrue(h.contains("#include <aws/drs/Drs_EXPORTS.h>"),
+            "EXPORTS include must use capitalized class prefix: " + h);
+        assertTrue(h.contains("namespace drs"), "namespace block stays lowercase: " + h);
+        assertFalse(h.contains("namespace Drs"), "namespace block must not be capitalized: " + h);
+    }
+
+    @Test
+    void result_getterCollidingWithClassName_isDoubleGetPrefixed() {
+        // Getter colliding with the enclosing class name must be double-Get-prefixed, else it won't compile.
+        StringShape str = StringShape.builder().id("com.example#Str").build();
+        StructureShape input = StructureShape.builder()
+            .id("com.example#GetRecommendationInput").addMember("id", str.getId()).build();
+        StructureShape output = StructureShape.builder()
+            .id("com.example#GetRecommendationOutput").addMember("recommendationResult", str.getId()).build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#GetRecommendation").input(input.getId()).output(output.getId()).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#Example").version("2024-01-01")
+            .addTrait(software.amazon.smithy.aws.traits.protocols.RestJson1Trait.builder().build())
+            .addOperation(op.getId()).build();
+        Model model = Model.builder().addShapes(str, input, output, op, service).build();
+        MockManifest manifest = new MockManifest();
+        CppWriterDelegator delegator = new CppWriterDelegator(manifest);
+        Protocol protocol = ProtocolResolver.resolve(service, model);
+        new ResultRenderer(
+            ShapeClassifier.classify(model, service, protocol).results(),
+            new RenderContext(model, service, ProtocolResolver.traitsFor(protocol),
+                "Example", "AWS_EXAMPLE_API", "example")).render(delegator);
+        delegator.flushWriters();
+        String h = manifest.getFileString(manifest.getFiles().stream()
+            .filter(p -> p.toString().endsWith("GetRecommendationResult.h")).findFirst().orElseThrow()).orElseThrow();
+        assertTrue(h.contains("GetGetRecommendationResult()"),
+            "getter colliding with class name must be double-Get prefixed: " + h);
+    }
+
     @Test
     void cborResult_omitsHasBeenSetAccessors() {
         // C2J's CborResultHeader.vm sets useRequiredField=false, so result classes never emit
@@ -138,6 +287,42 @@ class ResultRendererTest {
         delegator.flushWriters();
         return manifest.getFileString(manifest.getFiles().stream()
             .filter(p -> p.toString().endsWith(fileSuffix)).findFirst().orElseThrow()).orElseThrow();
+    }
+
+    @Test
+    void streamingResult_modeledRequestId_emitsSingleRequestIdGroup() {
+        // Streaming result modeling RequestId must not double-emit the group (same fix as non-streaming).
+        StringShape str = StringShape.builder().id("com.example#Str").build();
+        BlobShape blob = BlobShape.builder()
+            .id("com.example#StreamBlob").addTrait(new StreamingTrait()).build();
+        StructureShape input = StructureShape.builder()
+            .id("com.example#GetBlobInput").addMember("name", str.getId()).build();
+        StructureShape output = StructureShape.builder()
+            .id("com.example#GetBlobOutput")
+            .addMember(MemberShape.builder()
+                .id("com.example#GetBlobOutput$body").target(blob.getId())
+                .addTrait(new HttpPayloadTrait()).build())
+            .addMember("RequestId", str.getId())
+            .build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#GetBlob").input(input.getId()).output(output.getId()).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#Example").version("2024-01-01")
+            .addTrait(software.amazon.smithy.aws.traits.protocols.RestXmlTrait.builder().build())
+            .addOperation(op.getId()).build();
+        Model model = Model.builder().addShapes(str, blob, input, output, op, service).build();
+        MockManifest manifest = new MockManifest();
+        CppWriterDelegator delegator = new CppWriterDelegator(manifest);
+        Protocol protocol = ProtocolResolver.resolve(service, model);
+        new ResultRenderer(
+            ShapeClassifier.classify(model, service, protocol).results(),
+            new RenderContext(model, service, ProtocolResolver.traitsFor(protocol),
+                "Example", "AWS_EXAMPLE_API", "example")).render(delegator);
+        delegator.flushWriters();
+        String h = manifest.getFileString(manifest.getFiles().stream()
+            .filter(p -> p.toString().endsWith("GetBlobResult.h")).findFirst().orElseThrow()).orElseThrow();
+        assertTrue(count(h, "GetRequestId()") == 1, "exactly one GetRequestId accessor expected: " + h);
+        assertTrue(count(h, "Aws::String m_requestId;") == 1, "exactly one m_requestId field expected: " + h);
     }
 
     @Test

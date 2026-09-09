@@ -5,6 +5,7 @@
 package com.amazonaws.util.awsclientsmithygenerator.generators.model;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
+import com.amazonaws.util.awsclientsmithygenerator.generators.ServiceNameUtil;
 import software.amazon.smithy.model.shapes.Shape;
 import software.amazon.smithy.model.traits.EnumDefinition;
 import software.amazon.smithy.model.traits.EnumTrait;
@@ -37,7 +38,7 @@ public final class EnumRenderer {
      *
      * @param writer      the CppWriter to write to
      * @param enumShape   the enum shape (EnumShape or StringShape with @enum trait)
-     * @param serviceName the service name / C++ namespace (e.g., "Kinesis")
+     * @param serviceName the service name / C++ namespace, may start lowercase (e.g., "Kinesis", "drs")
      * @param exportMacro the export macro (e.g., "AWS_KINESIS_API")
      * @param projectName the project directory name for include paths (e.g., "kinesis")
      */
@@ -45,11 +46,13 @@ public final class EnumRenderer {
                                     String exportMacro, String projectName) {
         String enumName = CppTypeMapper.cppShapeName(enumShape);
         List<String> values = getEnumValues(enumShape);
+        // <Prefix>_EXPORTS.h uses the capitalized prefix; the namespace block keeps serviceName.
+        String classPrefix = ServiceNameUtil.capitalize(serviceName);
 
         writer.write("#pragma once");
         writer.write("#include <aws/core/utils/memory/stl/AWSString.h>");
         writer.write("#include <aws/$1L/$2L_EXPORTS.h>",
-            projectName, serviceName);
+            projectName, classPrefix);
         writer.write("");
 
         // Windows defines some enum values as preprocessor macros (e.g. EC2's `interface` via
@@ -229,10 +232,11 @@ public final class EnumRenderer {
         "throw", "true", "try", "typeid", "typename", "typeof", "union",
         "unsigned", "using", "virtual", "void", "volatile", "wchar_t", "while",
         "xor", "xor_eq",
-        // Platform macros and min/max (defined as macros on Windows)
+        // Platform macros. Must match C2J PlatformAndKeywordSanitizer.FORBIDDEN_WORDS, which omits
+        // LINUX/WINDOWS/min/max (they ship un-suffixed); real macro collisions use PREDEFINED_WINDOWS_SYMBOLS.
         "ANDROID", "BOOL", "CHAR", "DEBUG", "DELETE", "Double", "ERROR",
-        "GET", "LINUX", "max", "min", "NEW", "NULL", "PRIVATE", "PUBLIC",
-        "STATIC", "T_CHAR", "DOMAIN", "OVERFLOW", "WINDOWS"
+        "GET", "NEW", "NULL", "PRIVATE", "PUBLIC",
+        "STATIC", "T_CHAR", "DOMAIN", "OVERFLOW"
     );
 
     /**

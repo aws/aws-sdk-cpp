@@ -55,7 +55,7 @@ public final class OutgoingEventStreamRenderer implements ShapeRenderer {
         writerDelegator.useFileWriter(fileName, writer -> {
             writer.write("#pragma once");
             java.util.Set<String> includes = new java.util.TreeSet<>();
-            includes.add("<aws/" + ctx.smithyServiceName() + "/" + ctx.namespace() + "_EXPORTS.h>");
+            includes.add("<aws/" + ctx.smithyServiceName() + "/" + ctx.classNamePrefix() + "_EXPORTS.h>");
             includes.add("<aws/core/utils/event/EventStream.h>");
             includes.add("<aws/core/utils/stream/HttpWriteDataStreamBuf.h>");
             for (MemberShape event : union.getAllMembers().values()) {
