@@ -10,7 +10,6 @@
 #include <aws/core/utils/Array.h>
 #include <aws/crt/Types.h>
 
-#include <chrono>
 #include <condition_variable>
 #include <memory>
 #include <mutex>
@@ -36,7 +35,7 @@ namespace Stream {
  */
 class AWS_CORE_API HttpWriteDataStreamBuf : public std::streambuf {
  public:
-  explicit HttpWriteDataStreamBuf(const std::shared_ptr<Aws::Http::HttpClient>& client, size_t bufferLength = 8 * 1024, size_t requestTimeoutMs = 0);
+  explicit HttpWriteDataStreamBuf(const std::shared_ptr<Aws::Http::HttpClient>& client, size_t bufferLength = 8 * 1024);
   HttpWriteDataStreamBuf(const HttpWriteDataStreamBuf& other) = delete;
   HttpWriteDataStreamBuf(HttpWriteDataStreamBuf&& other) noexcept = delete;
   HttpWriteDataStreamBuf& operator=(const HttpWriteDataStreamBuf& other) = delete;
@@ -103,8 +102,6 @@ class AWS_CORE_API HttpWriteDataStreamBuf : public std::streambuf {
   std::condition_variable m_writeComplete;
   bool m_writeInProgress{false};
   bool m_writeError{false};
-  bool m_hasDeadline{false};
-  std::chrono::milliseconds m_writeTimeout{0};
 
   // State management
   enum class STATE {
