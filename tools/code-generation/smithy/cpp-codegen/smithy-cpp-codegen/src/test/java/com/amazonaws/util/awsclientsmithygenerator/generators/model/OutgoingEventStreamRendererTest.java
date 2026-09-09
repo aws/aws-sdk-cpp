@@ -16,10 +16,14 @@ import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.model.shapes.ShapeId;
+import software.amazon.smithy.model.shapes.Shape;
 import software.amazon.smithy.model.shapes.StringShape;
 import software.amazon.smithy.model.shapes.StructureShape;
 import software.amazon.smithy.model.shapes.UnionShape;
+import software.amazon.smithy.model.traits.EnumDefinition;
+import software.amazon.smithy.model.traits.EnumTrait;
 import software.amazon.smithy.model.traits.EventPayloadTrait;
+import software.amazon.smithy.model.traits.HttpPayloadTrait;
 import software.amazon.smithy.model.traits.StreamingTrait;
 
 import java.util.List;
@@ -88,6 +92,33 @@ class OutgoingEventStreamRendererTest {
         return Model.builder().addShapes(str, blob, event, stream, input, output, op, service).build();
     }
 
+    /** Streaming-union model whose sole event member (named {@code content}) targets {@code memberTarget}. */
+    private static Model singleMemberEventModel(Shape memberTarget) {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        StructureShape event = StructureShape.builder()
+            .id("com.example#ChunkEvent")
+            .addMember("content", memberTarget.getId())
+            .build();
+        UnionShape stream = UnionShape.builder()
+            .id("com.example#BidirectionalInput")
+            .addTrait(new StreamingTrait())
+            .addMember("chunk", event.getId())
+            .build();
+        StructureShape input = StructureShape.builder()
+            .id("com.example#DoStreamInput")
+            .addMember(MemberShape.builder()
+                .id("com.example#DoStreamInput$body").target(stream.getId())
+                .addTrait(new HttpPayloadTrait()).build())
+            .build();
+        StructureShape output = StructureShape.builder()
+            .id("com.example#DoStreamOutput").addMember("r", str.getId()).build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#DoStream").input(input.getId()).output(output.getId()).build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#Example").version("2024-01-01").addOperation(op.getId()).build();
+        return Model.builder().addShapes(str, memberTarget, event, stream, input, output, op, service).build();
+    }
+
     private static String render(Model model, Protocol protocol) {
         ServiceShape service = model.expectShape(ShapeId.from("com.example#Example"), ServiceShape.class);
         MockManifest manifest = new MockManifest();
@@ -129,6 +160,29 @@ class OutgoingEventStreamRendererTest {
         assertTrue(h.contains("value.CborEncode(encoder);"), h);
         assertTrue(h.contains("msg.WriteEventPayload(encoder.GetEncodedData().ptr, encoder.GetEncodedData().len);"), h);
         assertFalse(h.contains("Jsonize"), "CBOR must not use Jsonize: " + h);
+    }
+
+    @Test
+    void genuineStringPayload_usesTextPlain() {
+        // A single non-enum string member is the raw payload: text/plain, written directly (matches C2J).
+        StringShape strMember = StringShape.builder().id("com.example#PlainText").build();
+        String h = render(singleMemberEventModel(strMember), Protocol.JSON);
+        assertTrue(h.contains("msg.InsertEventHeader(\":content-type\", Aws::String(\"text/plain\"));"), h);
+        assertTrue(h.contains("msg.WriteEventPayload(value.GetContent());"), h);
+        assertFalse(h.contains("Jsonize"), "genuine string payload must not Jsonize: " + h);
+    }
+
+    @Test
+    void enumPayload_usesJsonizeNotTextPlain() {
+        // A single enum member (string + @enum, like connecthealth MedicalScribeSessionControlEventType) must
+        // serialize as a JSON structure (application/json), matching C2J whose isString() is false for enums.
+        StringShape enumMember = StringShape.builder().id("com.example#Kind")
+            .addTrait(EnumTrait.builder().addEnum(EnumDefinition.builder().value("SESSION_END").build()).build())
+            .build();
+        String h = render(singleMemberEventModel(enumMember), Protocol.JSON);
+        assertTrue(h.contains("msg.InsertEventHeader(\":content-type\", Aws::String(\"application/json\"));"), h);
+        assertTrue(h.contains("msg.WriteEventPayload(value.Jsonize().View().WriteCompact());"), h);
+        assertFalse(h.contains("text/plain"), "enum payload must not be text/plain: " + h);
     }
 
     @Test
