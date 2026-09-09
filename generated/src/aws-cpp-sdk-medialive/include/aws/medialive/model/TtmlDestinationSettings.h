@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
+#include <aws/medialive/model/TextCaptionPositionSettings.h>
 #include <aws/medialive/model/TtmlDestinationStyleControl.h>
 
 #include <utility>
@@ -33,8 +34,11 @@ class TtmlDestinationSettings {
 
   ///@{
   /**
-   * This field is not currently supported and will not affect the output styling.
-   * Leave the default value.
+   * Controls the source of style and position information for the output captions.
+   * PASSTHROUGH - Preserve the style and position from the source captions.
+   * USE_CONFIGURED - Don't pass through the style. The output captions will use the
+   * default styling.  MANUAL - Applies the specified styling and positioning. All
+   * other styling and positioning is given default values.
    */
   inline TtmlDestinationStyleControl GetStyleControl() const { return m_styleControl; }
   inline bool StyleControlHasBeenSet() const { return m_styleControlHasBeenSet; }
@@ -47,9 +51,31 @@ class TtmlDestinationSettings {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * Specifies the position of the output captions. Applies only when styleControl is
+   * set to manual.
+   */
+  inline const TextCaptionPositionSettings& GetPosition() const { return m_position; }
+  inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
+  template <typename PositionT = TextCaptionPositionSettings>
+  void SetPosition(PositionT&& value) {
+    m_positionHasBeenSet = true;
+    m_position = std::forward<PositionT>(value);
+  }
+  template <typename PositionT = TextCaptionPositionSettings>
+  TtmlDestinationSettings& WithPosition(PositionT&& value) {
+    SetPosition(std::forward<PositionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   TtmlDestinationStyleControl m_styleControl{TtmlDestinationStyleControl::NOT_SET};
+
+  TextCaptionPositionSettings m_position;
   bool m_styleControlHasBeenSet = false;
+  bool m_positionHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -100,6 +100,16 @@ CreateVolumeResponse& CreateVolumeResponse::operator=(const Aws::AmazonWebServic
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(volumeInitializationRateNode.GetText()).c_str()).c_str());
       m_volumeInitializationRateHasBeenSet = true;
     }
+    XmlNode volumeArnNode = resultNode.FirstChild("volumeArn");
+    if (!volumeArnNode.IsNull()) {
+      m_volumeArn = Aws::Utils::Xml::DecodeEscapedXmlText(volumeArnNode.GetText());
+      m_volumeArnHasBeenSet = true;
+    }
+    XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
+    if (!ownerIdNode.IsNull()) {
+      m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
+      m_ownerIdHasBeenSet = true;
+    }
     XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
     if (!volumeIdNode.IsNull()) {
       m_volumeId = Aws::Utils::Xml::DecodeEscapedXmlText(volumeIdNode.GetText());

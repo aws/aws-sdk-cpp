@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
+#include <aws/mediatailor/model/AwsServiceRequestConfiguration.h>
 #include <aws/mediatailor/model/ConcurrentExecutorConfiguration.h>
 #include <aws/mediatailor/model/CustomOutputConfiguration.h>
 #include <aws/mediatailor/model/FunctionType.h>
@@ -109,6 +110,25 @@ class Function {
   template <typename HttpRequestConfigurationT = HttpRequestConfiguration>
   Function& WithHttpRequestConfiguration(HttpRequestConfigurationT&& value) {
     SetHttpRequestConfiguration(std::forward<HttpRequestConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The configuration for an <code>AWS_SERVICE_REQUEST</code> function. Specifies
+   * the target service, target Region, and request parameters.</p>
+   */
+  inline const AwsServiceRequestConfiguration& GetAwsServiceRequestConfiguration() const { return m_awsServiceRequestConfiguration; }
+  inline bool AwsServiceRequestConfigurationHasBeenSet() const { return m_awsServiceRequestConfigurationHasBeenSet; }
+  template <typename AwsServiceRequestConfigurationT = AwsServiceRequestConfiguration>
+  void SetAwsServiceRequestConfiguration(AwsServiceRequestConfigurationT&& value) {
+    m_awsServiceRequestConfigurationHasBeenSet = true;
+    m_awsServiceRequestConfiguration = std::forward<AwsServiceRequestConfigurationT>(value);
+  }
+  template <typename AwsServiceRequestConfigurationT = AwsServiceRequestConfiguration>
+  Function& WithAwsServiceRequestConfiguration(AwsServiceRequestConfigurationT&& value) {
+    SetAwsServiceRequestConfiguration(std::forward<AwsServiceRequestConfigurationT>(value));
     return *this;
   }
   ///@}
@@ -239,6 +259,8 @@ class Function {
 
   HttpRequestConfiguration m_httpRequestConfiguration;
 
+  AwsServiceRequestConfiguration m_awsServiceRequestConfiguration;
+
   CustomOutputConfiguration m_customOutputConfiguration;
 
   ConcurrentExecutorConfiguration m_concurrentExecutorConfiguration;
@@ -254,6 +276,7 @@ class Function {
   bool m_functionTypeHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_httpRequestConfigurationHasBeenSet = false;
+  bool m_awsServiceRequestConfigurationHasBeenSet = false;
   bool m_customOutputConfigurationHasBeenSet = false;
   bool m_concurrentExecutorConfigurationHasBeenSet = false;
   bool m_sequentialExecutorConfigurationHasBeenSet = false;

@@ -22,6 +22,10 @@ TtmlDestinationSettings& TtmlDestinationSettings::operator=(JsonView jsonValue) 
     m_styleControl = TtmlDestinationStyleControlMapper::GetTtmlDestinationStyleControlForName(jsonValue.GetString("styleControl"));
     m_styleControlHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("position")) {
+    m_position = jsonValue.GetObject("position");
+    m_positionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue TtmlDestinationSettings::Jsonize() const {
 
   if (m_styleControlHasBeenSet) {
     payload.WithString("styleControl", TtmlDestinationStyleControlMapper::GetNameForTtmlDestinationStyleControl(m_styleControl));
+  }
+
+  if (m_positionHasBeenSet) {
+    payload.WithObject("position", m_position.Jsonize());
   }
 
   return payload;

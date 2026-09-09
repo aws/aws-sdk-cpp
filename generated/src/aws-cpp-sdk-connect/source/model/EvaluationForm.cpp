@@ -105,6 +105,10 @@ EvaluationForm& EvaluationForm::operator=(JsonView jsonValue) {
     m_lastValidationTime = jsonValue.GetDouble("LastValidationTime");
     m_lastValidationTimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AIVersion")) {
+    m_aIVersion = jsonValue.GetString("AIVersion");
+    m_aIVersionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -198,6 +202,10 @@ JsonValue EvaluationForm::Jsonize() const {
 
   if (m_lastValidationTimeHasBeenSet) {
     payload.WithDouble("LastValidationTime", m_lastValidationTime.SecondsWithMSPrecision());
+  }
+
+  if (m_aIVersionHasBeenSet) {
+    payload.WithString("AIVersion", m_aIVersion);
   }
 
   return payload;

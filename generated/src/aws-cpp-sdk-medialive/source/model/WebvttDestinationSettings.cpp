@@ -22,6 +22,10 @@ WebvttDestinationSettings& WebvttDestinationSettings::operator=(JsonView jsonVal
     m_styleControl = WebvttDestinationStyleControlMapper::GetWebvttDestinationStyleControlForName(jsonValue.GetString("styleControl"));
     m_styleControlHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("position")) {
+    m_position = jsonValue.GetObject("position");
+    m_positionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue WebvttDestinationSettings::Jsonize() const {
 
   if (m_styleControlHasBeenSet) {
     payload.WithString("styleControl", WebvttDestinationStyleControlMapper::GetNameForWebvttDestinationStyleControl(m_styleControl));
+  }
+
+  if (m_positionHasBeenSet) {
+    payload.WithObject("position", m_position.Jsonize());
   }
 
   return payload;

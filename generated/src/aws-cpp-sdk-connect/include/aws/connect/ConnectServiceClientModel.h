@@ -187,6 +187,7 @@
 #include <aws/connect/model/ListDataTablesResult.h>
 #include <aws/connect/model/ListDefaultVocabulariesResult.h>
 #include <aws/connect/model/ListEntitySecurityProfilesResult.h>
+#include <aws/connect/model/ListEvaluationFormAIVersionsResult.h>
 #include <aws/connect/model/ListEvaluationFormVersionsResult.h>
 #include <aws/connect/model/ListEvaluationFormsResult.h>
 #include <aws/connect/model/ListExtractionDefinitionsResult.h>
@@ -586,6 +587,7 @@ class ListDataTableValuesRequest;
 class ListDataTablesRequest;
 class ListDefaultVocabulariesRequest;
 class ListEntitySecurityProfilesRequest;
+class ListEvaluationFormAIVersionsRequest;
 class ListEvaluationFormVersionsRequest;
 class ListEvaluationFormsRequest;
 class ListExtractionDefinitionsRequest;
@@ -984,6 +986,7 @@ typedef Aws::Utils::Outcome<ListDataTableValuesResult, ConnectError> ListDataTab
 typedef Aws::Utils::Outcome<ListDataTablesResult, ConnectError> ListDataTablesOutcome;
 typedef Aws::Utils::Outcome<ListDefaultVocabulariesResult, ConnectError> ListDefaultVocabulariesOutcome;
 typedef Aws::Utils::Outcome<ListEntitySecurityProfilesResult, ConnectError> ListEntitySecurityProfilesOutcome;
+typedef Aws::Utils::Outcome<ListEvaluationFormAIVersionsResult, ConnectError> ListEvaluationFormAIVersionsOutcome;
 typedef Aws::Utils::Outcome<ListEvaluationFormVersionsResult, ConnectError> ListEvaluationFormVersionsOutcome;
 typedef Aws::Utils::Outcome<ListEvaluationFormsResult, ConnectError> ListEvaluationFormsOutcome;
 typedef Aws::Utils::Outcome<ListExtractionDefinitionsResult, ConnectError> ListExtractionDefinitionsOutcome;
@@ -1382,6 +1385,7 @@ typedef std::future<ListDataTableValuesOutcome> ListDataTableValuesOutcomeCallab
 typedef std::future<ListDataTablesOutcome> ListDataTablesOutcomeCallable;
 typedef std::future<ListDefaultVocabulariesOutcome> ListDefaultVocabulariesOutcomeCallable;
 typedef std::future<ListEntitySecurityProfilesOutcome> ListEntitySecurityProfilesOutcomeCallable;
+typedef std::future<ListEvaluationFormAIVersionsOutcome> ListEvaluationFormAIVersionsOutcomeCallable;
 typedef std::future<ListEvaluationFormVersionsOutcome> ListEvaluationFormVersionsOutcomeCallable;
 typedef std::future<ListEvaluationFormsOutcome> ListEvaluationFormsOutcomeCallable;
 typedef std::future<ListExtractionDefinitionsOutcome> ListExtractionDefinitionsOutcomeCallable;
@@ -2249,6 +2253,10 @@ typedef std::function<void(const ConnectClient*, const Model::ListDefaultVocabul
 typedef std::function<void(const ConnectClient*, const Model::ListEntitySecurityProfilesRequest&,
                            const Model::ListEntitySecurityProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListEntitySecurityProfilesResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::ListEvaluationFormAIVersionsRequest&,
+                           const Model::ListEvaluationFormAIVersionsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListEvaluationFormAIVersionsResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::ListEvaluationFormVersionsRequest&,
                            const Model::ListEvaluationFormVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListEvaluationFormVersionsResponseReceivedHandler;

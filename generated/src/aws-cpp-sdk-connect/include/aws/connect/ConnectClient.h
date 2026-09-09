@@ -6633,6 +6633,36 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Lists the available AI versions for evaluation forms in the specified Connect
+   * Customer instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListEvaluationFormAIVersions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListEvaluationFormAIVersionsOutcome ListEvaluationFormAIVersions(
+      const Model::ListEvaluationFormAIVersionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListEvaluationFormAIVersions that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListEvaluationFormAIVersionsRequestT = Model::ListEvaluationFormAIVersionsRequest>
+  Model::ListEvaluationFormAIVersionsOutcomeCallable ListEvaluationFormAIVersionsCallable(
+      const ListEvaluationFormAIVersionsRequestT& request) const {
+    return SubmitCallable(&ConnectClient::ListEvaluationFormAIVersions, request);
+  }
+
+  /**
+   * An Async wrapper for ListEvaluationFormAIVersions that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListEvaluationFormAIVersionsRequestT = Model::ListEvaluationFormAIVersionsRequest>
+  void ListEvaluationFormAIVersionsAsync(const ListEvaluationFormAIVersionsRequestT& request,
+                                         const ListEvaluationFormAIVersionsResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::ListEvaluationFormAIVersions, request, handler, context);
+  }
+
+  /**
    * <p>Lists versions of an evaluation form in the specified Connect Customer
    * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListEvaluationFormVersions">AWS
@@ -9413,9 +9443,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * the given evaluation form for the particular contact. The evaluation form
    * version used for the contact evaluation corresponds to the currently activated
    * version. If no version is activated for the evaluation form, the contact
-   * evaluation cannot be started. </p>  <p>Evaluations created through the
-   * public API do not contain answer values suggested from automation.</p>
-   * <p><h3>See Also:</h3>   <a
+   * evaluation cannot be started. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactEvaluation">AWS
    * API Reference</a></p>
    */

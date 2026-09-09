@@ -10,7 +10,7 @@
 namespace Aws {
 namespace mediapackagev2 {
 namespace Model {
-enum class InputType { NOT_SET, HLS, CMAF };
+enum class InputType { NOT_SET, HLS, CMAF, MULTIVIEW };
 
 namespace InputTypeMapper {
 AWS_MEDIAPACKAGEV2_API InputType GetInputTypeForName(const Aws::String& name);

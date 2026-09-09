@@ -30,6 +30,10 @@ OutputConfig& OutputConfig::operator=(JsonView jsonValue) {
     m_subtitling = jsonValue.GetObject("subtitling");
     m_subtitlingHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("contextualMetadata")) {
+    m_contextualMetadata = jsonValue.GetObject("contextualMetadata");
+    m_contextualMetadataHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue OutputConfig::Jsonize() const {
 
   if (m_subtitlingHasBeenSet) {
     payload.WithObject("subtitling", m_subtitling.Jsonize());
+  }
+
+  if (m_contextualMetadataHasBeenSet) {
+    payload.WithObject("contextualMetadata", m_contextualMetadata.Jsonize());
   }
 
   return payload;

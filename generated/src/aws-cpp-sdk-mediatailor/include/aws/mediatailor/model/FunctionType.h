@@ -10,7 +10,15 @@
 namespace Aws {
 namespace MediaTailor {
 namespace Model {
-enum class FunctionType { NOT_SET, HTTP_REQUEST, CUSTOM_OUTPUT, CONCURRENT_EXECUTOR, SEQUENTIAL_EXECUTOR, VAST_REQUEST };
+enum class FunctionType {
+  NOT_SET,
+  HTTP_REQUEST,
+  AWS_SERVICE_REQUEST,
+  CUSTOM_OUTPUT,
+  CONCURRENT_EXECUTOR,
+  SEQUENTIAL_EXECUTOR,
+  VAST_REQUEST
+};
 
 namespace FunctionTypeMapper {
 AWS_MEDIATAILOR_API FunctionType GetFunctionTypeForName(const Aws::String& name);

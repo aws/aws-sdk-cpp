@@ -53,6 +53,14 @@ Aws::String CopyVolumesRequest::SerializePayload() const {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
+  if (m_encryptedHasBeenSet) {
+    ss << "Encrypted=" << std::boolalpha << m_encrypted << "&";
+  }
+
+  if (m_kmsKeyIdHasBeenSet) {
+    ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
+  }
+
   ss << "Version=2016-11-15";
   return ss.str();
 }

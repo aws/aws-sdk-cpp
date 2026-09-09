@@ -17,6 +17,7 @@ namespace WebvttDestinationStyleControlMapper {
 
 static const int NO_STYLE_DATA_HASH = HashingUtils::HashString("NO_STYLE_DATA");
 static const int PASSTHROUGH_HASH = HashingUtils::HashString("PASSTHROUGH");
+static const int MANUAL_HASH = HashingUtils::HashString("MANUAL");
 
 WebvttDestinationStyleControl GetWebvttDestinationStyleControlForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ WebvttDestinationStyleControl GetWebvttDestinationStyleControlForName(const Aws:
     return WebvttDestinationStyleControl::NO_STYLE_DATA;
   } else if (hashCode == PASSTHROUGH_HASH) {
     return WebvttDestinationStyleControl::PASSTHROUGH;
+  } else if (hashCode == MANUAL_HASH) {
+    return WebvttDestinationStyleControl::MANUAL;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForWebvttDestinationStyleControl(WebvttDestinationStyleContro
       return "NO_STYLE_DATA";
     case WebvttDestinationStyleControl::PASSTHROUGH:
       return "PASSTHROUGH";
+    case WebvttDestinationStyleControl::MANUAL:
+      return "MANUAL";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

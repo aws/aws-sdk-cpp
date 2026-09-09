@@ -38,6 +38,7 @@
 #include <aws/mediatailor/model/AudienceMedia.h>
 #include <aws/mediatailor/model/AvailMatchingCriteria.h>
 #include <aws/mediatailor/model/AvailSuppression.h>
+#include <aws/mediatailor/model/AwsServiceRequestConfiguration.h>
 #include <aws/mediatailor/model/Bumper.h>
 #include <aws/mediatailor/model/CdnConfiguration.h>
 #include <aws/mediatailor/model/Channel.h>

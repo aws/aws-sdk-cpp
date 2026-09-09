@@ -67,5 +67,9 @@ Aws::String UpdateEvaluationFormRequest::SerializePayload() const {
     payload.WithObject("LanguageConfiguration", m_languageConfiguration.Jsonize());
   }
 
+  if (m_aIVersionHasBeenSet) {
+    payload.WithString("AIVersion", m_aIVersion);
+  }
+
   return payload.View().WriteReadable();
 }

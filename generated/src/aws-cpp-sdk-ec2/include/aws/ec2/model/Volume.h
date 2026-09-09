@@ -261,6 +261,42 @@ class Volume {
 
   ///@{
   /**
+   * <p>The Amazon Resource Name (ARN) of the volume.</p>
+   */
+  inline const Aws::String& GetVolumeArn() const { return m_volumeArn; }
+  inline bool VolumeArnHasBeenSet() const { return m_volumeArnHasBeenSet; }
+  template <typename VolumeArnT = Aws::String>
+  void SetVolumeArn(VolumeArnT&& value) {
+    m_volumeArnHasBeenSet = true;
+    m_volumeArn = std::forward<VolumeArnT>(value);
+  }
+  template <typename VolumeArnT = Aws::String>
+  Volume& WithVolumeArn(VolumeArnT&& value) {
+    SetVolumeArn(std::forward<VolumeArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the Amazon Web Services account that owns the volume.</p>
+   */
+  inline const Aws::String& GetOwnerId() const { return m_ownerId; }
+  inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
+  template <typename OwnerIdT = Aws::String>
+  void SetOwnerId(OwnerIdT&& value) {
+    m_ownerIdHasBeenSet = true;
+    m_ownerId = std::forward<OwnerIdT>(value);
+  }
+  template <typename OwnerIdT = Aws::String>
+  Volume& WithOwnerId(OwnerIdT&& value) {
+    SetOwnerId(std::forward<OwnerIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ID of the volume.</p>
    */
   inline const Aws::String& GetVolumeId() const { return m_volumeId; }
@@ -462,6 +498,10 @@ class Volume {
 
   int m_volumeInitializationRate{0};
 
+  Aws::String m_volumeArn;
+
+  Aws::String m_ownerId;
+
   Aws::String m_volumeId;
 
   int m_size{0};
@@ -493,6 +533,8 @@ class Volume {
   bool m_sseTypeHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
   bool m_volumeInitializationRateHasBeenSet = false;
+  bool m_volumeArnHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
   bool m_volumeIdHasBeenSet = false;
   bool m_sizeHasBeenSet = false;
   bool m_snapshotIdHasBeenSet = false;

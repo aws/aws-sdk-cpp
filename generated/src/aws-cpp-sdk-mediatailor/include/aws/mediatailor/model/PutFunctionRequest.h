@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediatailor/MediaTailorRequest.h>
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
+#include <aws/mediatailor/model/AwsServiceRequestConfiguration.h>
 #include <aws/mediatailor/model/ConcurrentExecutorConfiguration.h>
 #include <aws/mediatailor/model/CustomOutputConfiguration.h>
 #include <aws/mediatailor/model/FunctionType.h>
@@ -59,17 +60,21 @@ class PutFunctionRequest : public MediaTailorRequest {
 
   ///@{
   /**
-   * <p>The type of the function. The function type determines what the function can
-   * do at runtime. Valid values: <code>CUSTOM_OUTPUT</code> evaluates expressions
-   * and produces output bindings with no external calls. <code>HTTP_REQUEST</code>
-   * makes an HTTP call to an external service and evaluates output expressions that
-   * can reference the response. <code>VAST_REQUEST</code> calls a VAST endpoint,
+   * <p>The type of the function, which determines what the function can do at
+   * runtime. Valid values:</p> <ul> <li> <p> <code>CUSTOM_OUTPUT</code> – Evaluates
+   * expressions and produces output bindings with no external calls.</p> </li> <li>
+   * <p> <code>HTTP_REQUEST</code> – Makes an HTTP call to an external service and
+   * evaluates output expressions that can reference the response.</p> </li> <li> <p>
+   * <code>AWS_SERVICE_REQUEST</code> – Makes an authenticated request to a supported
+   * AWS service API and evaluates output expressions that can reference the
+   * response.</p> </li> <li> <p> <code>VAST_REQUEST</code> – Calls a VAST endpoint,
    * parses the response as VAST, and makes the parsed ads available to output
-   * expressions. <code>SEQUENTIAL_EXECUTOR</code> runs a sequence of child functions
-   * in order, passing data between steps through temporary data.
-   * <code>CONCURRENT_EXECUTOR</code> runs a set of child functions in parallel, up
-   * to a maximum concurrency, and combines their output when all functions complete.
-   * For more information, see <a
+   * expressions.</p> </li> <li> <p> <code>SEQUENTIAL_EXECUTOR</code> – Runs a
+   * sequence of child functions in order, passing data between steps through
+   * temporary data.</p> </li> <li> <p> <code>CONCURRENT_EXECUTOR</code> – Runs a set
+   * of child functions in parallel, up to a maximum concurrency, and combines their
+   * output when all functions complete.</p> </li> </ul> <p>For more information, see
+   * <a
    * href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-types.html">Function
    * types and composition</a> in the <i>MediaTailor User Guide</i>.</p>
    */
@@ -119,6 +124,26 @@ class PutFunctionRequest : public MediaTailorRequest {
   template <typename HttpRequestConfigurationT = HttpRequestConfiguration>
   PutFunctionRequest& WithHttpRequestConfiguration(HttpRequestConfigurationT&& value) {
     SetHttpRequestConfiguration(std::forward<HttpRequestConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The configuration for an <code>AWS_SERVICE_REQUEST</code> function. You must
+   * specify this parameter when <code>FunctionType</code> is
+   * <code>AWS_SERVICE_REQUEST</code>.</p>
+   */
+  inline const AwsServiceRequestConfiguration& GetAwsServiceRequestConfiguration() const { return m_awsServiceRequestConfiguration; }
+  inline bool AwsServiceRequestConfigurationHasBeenSet() const { return m_awsServiceRequestConfigurationHasBeenSet; }
+  template <typename AwsServiceRequestConfigurationT = AwsServiceRequestConfiguration>
+  void SetAwsServiceRequestConfiguration(AwsServiceRequestConfigurationT&& value) {
+    m_awsServiceRequestConfigurationHasBeenSet = true;
+    m_awsServiceRequestConfiguration = std::forward<AwsServiceRequestConfigurationT>(value);
+  }
+  template <typename AwsServiceRequestConfigurationT = AwsServiceRequestConfiguration>
+  PutFunctionRequest& WithAwsServiceRequestConfiguration(AwsServiceRequestConfigurationT&& value) {
+    SetAwsServiceRequestConfiguration(std::forward<AwsServiceRequestConfigurationT>(value));
     return *this;
   }
   ///@}
@@ -241,6 +266,8 @@ class PutFunctionRequest : public MediaTailorRequest {
 
   HttpRequestConfiguration m_httpRequestConfiguration;
 
+  AwsServiceRequestConfiguration m_awsServiceRequestConfiguration;
+
   CustomOutputConfiguration m_customOutputConfiguration;
 
   ConcurrentExecutorConfiguration m_concurrentExecutorConfiguration;
@@ -254,6 +281,7 @@ class PutFunctionRequest : public MediaTailorRequest {
   bool m_functionTypeHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_httpRequestConfigurationHasBeenSet = false;
+  bool m_awsServiceRequestConfigurationHasBeenSet = false;
   bool m_customOutputConfigurationHasBeenSet = false;
   bool m_concurrentExecutorConfigurationHasBeenSet = false;
   bool m_sequentialExecutorConfigurationHasBeenSet = false;

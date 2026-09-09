@@ -241,6 +241,34 @@ class AWS_ELEMENTALINFERENCE_API ElementalInferenceClient : public Aws::Client::
   }
 
   /**
+   * <p>Deletes the resource-based policy attached to the specified feed. After you
+   * delete the policy, the operation revokes the cross-account access that the
+   * policy granted. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/DeleteFeedPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteFeedPolicyOutcome DeleteFeedPolicy(const Model::DeleteFeedPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteFeedPolicy that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteFeedPolicyRequestT = Model::DeleteFeedPolicyRequest>
+  Model::DeleteFeedPolicyOutcomeCallable DeleteFeedPolicyCallable(const DeleteFeedPolicyRequestT& request) const {
+    return SubmitCallable(&ElementalInferenceClient::DeleteFeedPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteFeedPolicy that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteFeedPolicyRequestT = Model::DeleteFeedPolicyRequest>
+  void DeleteFeedPolicyAsync(const DeleteFeedPolicyRequestT& request, const DeleteFeedPolicyResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ElementalInferenceClient::DeleteFeedPolicy, request, handler, context);
+  }
+
+  /**
    * <p>Releases the resource (the source media) that is associated with this feed.
    * The outputs in the feed become DISABLED. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/DisassociateFeed">AWS
@@ -344,6 +372,32 @@ class AWS_ELEMENTALINFERENCE_API ElementalInferenceClient : public Aws::Client::
   void GetFeedAsync(const GetFeedRequestT& request, const GetFeedResponseReceivedHandler& handler,
                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ElementalInferenceClient::GetFeed, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the resource-based policy attached to the specified
+   * feed.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/GetFeedPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetFeedPolicyOutcome GetFeedPolicy(const Model::GetFeedPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetFeedPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetFeedPolicyRequestT = Model::GetFeedPolicyRequest>
+  Model::GetFeedPolicyOutcomeCallable GetFeedPolicyCallable(const GetFeedPolicyRequestT& request) const {
+    return SubmitCallable(&ElementalInferenceClient::GetFeedPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for GetFeedPolicy that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetFeedPolicyRequestT = Model::GetFeedPolicyRequest>
+  void GetFeedPolicyAsync(const GetFeedPolicyRequestT& request, const GetFeedPolicyResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ElementalInferenceClient::GetFeedPolicy, request, handler, context);
   }
 
   /**
@@ -452,6 +506,33 @@ class AWS_ELEMENTALINFERENCE_API ElementalInferenceClient : public Aws::Client::
   void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ElementalInferenceClient::ListTagsForResource, request, handler, context);
+  }
+
+  /**
+   * <p>Attaches or replaces a resource-based policy on the specified feed. A
+   * resource-based policy grants cross-account access to the feed. </p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/PutFeedPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutFeedPolicyOutcome PutFeedPolicy(const Model::PutFeedPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutFeedPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename PutFeedPolicyRequestT = Model::PutFeedPolicyRequest>
+  Model::PutFeedPolicyOutcomeCallable PutFeedPolicyCallable(const PutFeedPolicyRequestT& request) const {
+    return SubmitCallable(&ElementalInferenceClient::PutFeedPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for PutFeedPolicy that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename PutFeedPolicyRequestT = Model::PutFeedPolicyRequest>
+  void PutFeedPolicyAsync(const PutFeedPolicyRequestT& request, const PutFeedPolicyResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ElementalInferenceClient::PutFeedPolicy, request, handler, context);
   }
 
   /**

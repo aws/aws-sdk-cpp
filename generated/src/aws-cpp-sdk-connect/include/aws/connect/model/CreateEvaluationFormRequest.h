@@ -272,6 +272,25 @@ class CreateEvaluationFormRequest : public ConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The AI version to use for the evaluation form. This specifies which AI model
+   * version is used for automated evaluations.</p>
+   */
+  inline const Aws::String& GetAIVersion() const { return m_aIVersion; }
+  inline bool AIVersionHasBeenSet() const { return m_aIVersionHasBeenSet; }
+  template <typename AIVersionT = Aws::String>
+  void SetAIVersion(AIVersionT&& value) {
+    m_aIVersionHasBeenSet = true;
+    m_aIVersion = std::forward<AIVersionT>(value);
+  }
+  template <typename AIVersionT = Aws::String>
+  CreateEvaluationFormRequest& WithAIVersion(AIVersionT&& value) {
+    SetAIVersion(std::forward<AIVersionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_instanceId;
 
@@ -296,6 +315,8 @@ class CreateEvaluationFormRequest : public ConnectRequest {
   EvaluationFormTargetConfiguration m_targetConfiguration;
 
   EvaluationFormLanguageConfiguration m_languageConfiguration;
+
+  Aws::String m_aIVersion;
   bool m_instanceIdHasBeenSet = false;
   bool m_titleHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
@@ -308,6 +329,7 @@ class CreateEvaluationFormRequest : public ConnectRequest {
   bool m_reviewConfigurationHasBeenSet = false;
   bool m_targetConfigurationHasBeenSet = false;
   bool m_languageConfigurationHasBeenSet = false;
+  bool m_aIVersionHasBeenSet = false;
 };
 
 }  // namespace Model

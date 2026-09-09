@@ -243,6 +243,25 @@ class EvaluationFormContent {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The AI version to use for the evaluation form. This specifies which AI model
+   * version is used for automated evaluations.</p>
+   */
+  inline const Aws::String& GetAIVersion() const { return m_aIVersion; }
+  inline bool AIVersionHasBeenSet() const { return m_aIVersionHasBeenSet; }
+  template <typename AIVersionT = Aws::String>
+  void SetAIVersion(AIVersionT&& value) {
+    m_aIVersionHasBeenSet = true;
+    m_aIVersion = std::forward<AIVersionT>(value);
+  }
+  template <typename AIVersionT = Aws::String>
+  EvaluationFormContent& WithAIVersion(AIVersionT&& value) {
+    SetAIVersion(std::forward<AIVersionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_evaluationFormVersion{0};
 
@@ -265,6 +284,8 @@ class EvaluationFormContent {
   EvaluationFormLanguageConfiguration m_languageConfiguration;
 
   EvaluationReviewConfiguration m_reviewConfiguration;
+
+  Aws::String m_aIVersion;
   bool m_evaluationFormVersionHasBeenSet = false;
   bool m_evaluationFormIdHasBeenSet = false;
   bool m_evaluationFormArnHasBeenSet = false;
@@ -276,6 +297,7 @@ class EvaluationFormContent {
   bool m_targetConfigurationHasBeenSet = false;
   bool m_languageConfigurationHasBeenSet = false;
   bool m_reviewConfigurationHasBeenSet = false;
+  bool m_aIVersionHasBeenSet = false;
 };
 
 }  // namespace Model

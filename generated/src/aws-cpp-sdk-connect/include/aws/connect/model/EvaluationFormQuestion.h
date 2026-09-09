@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/EvaluationFormItemEnablementConfiguration.h>
+#include <aws/connect/model/EvaluationFormMetricConfiguration.h>
 #include <aws/connect/model/EvaluationFormQuestionScoringConfiguration.h>
 #include <aws/connect/model/EvaluationFormQuestionType.h>
 #include <aws/connect/model/EvaluationFormQuestionTypeProperties.h>
@@ -193,6 +194,25 @@ class EvaluationFormQuestion {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The metric configuration for the question. Use this to associate a business
+   * outcome metric with the question.</p>
+   */
+  inline const EvaluationFormMetricConfiguration& GetMetricConfiguration() const { return m_metricConfiguration; }
+  inline bool MetricConfigurationHasBeenSet() const { return m_metricConfigurationHasBeenSet; }
+  template <typename MetricConfigurationT = EvaluationFormMetricConfiguration>
+  void SetMetricConfiguration(MetricConfigurationT&& value) {
+    m_metricConfigurationHasBeenSet = true;
+    m_metricConfiguration = std::forward<MetricConfigurationT>(value);
+  }
+  template <typename MetricConfigurationT = EvaluationFormMetricConfiguration>
+  EvaluationFormQuestion& WithMetricConfiguration(MetricConfigurationT&& value) {
+    SetMetricConfiguration(std::forward<MetricConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_title;
 
@@ -211,6 +231,8 @@ class EvaluationFormQuestion {
   double m_weight{0.0};
 
   EvaluationFormQuestionScoringConfiguration m_scoringConfiguration;
+
+  EvaluationFormMetricConfiguration m_metricConfiguration;
   bool m_titleHasBeenSet = false;
   bool m_instructionsHasBeenSet = false;
   bool m_refIdHasBeenSet = false;
@@ -220,6 +242,7 @@ class EvaluationFormQuestion {
   bool m_enablementHasBeenSet = false;
   bool m_weightHasBeenSet = false;
   bool m_scoringConfigurationHasBeenSet = false;
+  bool m_metricConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

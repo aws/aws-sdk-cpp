@@ -29,6 +29,14 @@ DescribeInferenceSettings& DescribeInferenceSettings::operator=(JsonView jsonVal
     }
     m_audioFeedInputsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("enrichmentMethods")) {
+    Aws::Utils::Array<JsonView> enrichmentMethodsJsonList = jsonValue.GetArray("enrichmentMethods");
+    for (unsigned enrichmentMethodsIndex = 0; enrichmentMethodsIndex < enrichmentMethodsJsonList.GetLength(); ++enrichmentMethodsIndex) {
+      m_enrichmentMethods.push_back(
+          EnrichmentMethodMapper::GetEnrichmentMethodForName(enrichmentMethodsJsonList[enrichmentMethodsIndex].AsString()));
+    }
+    m_enrichmentMethodsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -45,6 +53,15 @@ JsonValue DescribeInferenceSettings::Jsonize() const {
       audioFeedInputsJsonList[audioFeedInputsIndex].AsObject(m_audioFeedInputs[audioFeedInputsIndex].Jsonize());
     }
     payload.WithArray("audioFeedInputs", std::move(audioFeedInputsJsonList));
+  }
+
+  if (m_enrichmentMethodsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> enrichmentMethodsJsonList(m_enrichmentMethods.size());
+    for (unsigned enrichmentMethodsIndex = 0; enrichmentMethodsIndex < enrichmentMethodsJsonList.GetLength(); ++enrichmentMethodsIndex) {
+      enrichmentMethodsJsonList[enrichmentMethodsIndex].AsString(
+          EnrichmentMethodMapper::GetNameForEnrichmentMethod(m_enrichmentMethods[enrichmentMethodsIndex]));
+    }
+    payload.WithArray("enrichmentMethods", std::move(enrichmentMethodsJsonList));
   }
 
   return payload;

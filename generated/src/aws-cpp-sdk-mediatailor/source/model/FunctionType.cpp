@@ -16,6 +16,7 @@ namespace Model {
 namespace FunctionTypeMapper {
 
 static const int HTTP_REQUEST_HASH = HashingUtils::HashString("HTTP_REQUEST");
+static const int AWS_SERVICE_REQUEST_HASH = HashingUtils::HashString("AWS_SERVICE_REQUEST");
 static const int CUSTOM_OUTPUT_HASH = HashingUtils::HashString("CUSTOM_OUTPUT");
 static const int CONCURRENT_EXECUTOR_HASH = HashingUtils::HashString("CONCURRENT_EXECUTOR");
 static const int SEQUENTIAL_EXECUTOR_HASH = HashingUtils::HashString("SEQUENTIAL_EXECUTOR");
@@ -25,6 +26,8 @@ FunctionType GetFunctionTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == HTTP_REQUEST_HASH) {
     return FunctionType::HTTP_REQUEST;
+  } else if (hashCode == AWS_SERVICE_REQUEST_HASH) {
+    return FunctionType::AWS_SERVICE_REQUEST;
   } else if (hashCode == CUSTOM_OUTPUT_HASH) {
     return FunctionType::CUSTOM_OUTPUT;
   } else if (hashCode == CONCURRENT_EXECUTOR_HASH) {
@@ -49,6 +52,8 @@ Aws::String GetNameForFunctionType(FunctionType enumValue) {
       return {};
     case FunctionType::HTTP_REQUEST:
       return "HTTP_REQUEST";
+    case FunctionType::AWS_SERVICE_REQUEST:
+      return "AWS_SERVICE_REQUEST";
     case FunctionType::CUSTOM_OUTPUT:
       return "CUSTOM_OUTPUT";
     case FunctionType::CONCURRENT_EXECUTOR:

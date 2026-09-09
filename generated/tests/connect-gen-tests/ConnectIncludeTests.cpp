@@ -548,6 +548,9 @@
 #include <aws/connect/model/EvaluationContactLensAnswerAnalysisDetails.h>
 #include <aws/connect/model/EvaluationContactParticipant.h>
 #include <aws/connect/model/EvaluationForm.h>
+#include <aws/connect/model/EvaluationFormAIVersionLifecycle.h>
+#include <aws/connect/model/EvaluationFormAIVersionStatus.h>
+#include <aws/connect/model/EvaluationFormAIVersionSummary.h>
 #include <aws/connect/model/EvaluationFormAutoEvaluationConfiguration.h>
 #include <aws/connect/model/EvaluationFormContent.h>
 #include <aws/connect/model/EvaluationFormItem.h>
@@ -564,6 +567,8 @@
 #include <aws/connect/model/EvaluationFormItemSourceValuesComparator.h>
 #include <aws/connect/model/EvaluationFormLanguageCode.h>
 #include <aws/connect/model/EvaluationFormLanguageConfiguration.h>
+#include <aws/connect/model/EvaluationFormMetricConfiguration.h>
+#include <aws/connect/model/EvaluationFormMetricType.h>
 #include <aws/connect/model/EvaluationFormMultiSelectQuestionAutomation.h>
 #include <aws/connect/model/EvaluationFormMultiSelectQuestionAutomationOption.h>
 #include <aws/connect/model/EvaluationFormMultiSelectQuestionDisplayMode.h>
@@ -826,6 +831,8 @@
 #include <aws/connect/model/ListEntitySecurityProfilesPaginationTraits.h>
 #include <aws/connect/model/ListEntitySecurityProfilesRequest.h>
 #include <aws/connect/model/ListEntitySecurityProfilesResult.h>
+#include <aws/connect/model/ListEvaluationFormAIVersionsRequest.h>
+#include <aws/connect/model/ListEvaluationFormAIVersionsResult.h>
 #include <aws/connect/model/ListEvaluationFormVersionsPaginationTraits.h>
 #include <aws/connect/model/ListEvaluationFormVersionsRequest.h>
 #include <aws/connect/model/ListEvaluationFormVersionsResult.h>

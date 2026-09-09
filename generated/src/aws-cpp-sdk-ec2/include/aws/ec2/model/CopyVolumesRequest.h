@@ -221,6 +221,50 @@ class CopyVolumesRequest : public EC2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether to encrypt the volume copy. If the source volume is
+   * encrypted, the service always encrypts the copy regardless of this value. Set to
+   * <code>true</code> to encrypt a copy of an unencrypted source volume during the
+   * copy operation. If you set <code>Encrypted</code> to <code>true</code> but do
+   * not specify <code>KmsKeyId</code>, the service uses the default KMS key for EBS
+   * encryption in your account.</p>
+   */
+  inline bool GetEncrypted() const { return m_encrypted; }
+  inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
+  inline void SetEncrypted(bool value) {
+    m_encryptedHasBeenSet = true;
+    m_encrypted = value;
+  }
+  inline CopyVolumesRequest& WithEncrypted(bool value) {
+    SetEncrypted(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of the KMS key to use for encryption of the volume copy.
+   * Specify a symmetric encryption KMS key. You can specify a KMS key using the key
+   * ID, key ARN, alias name, or alias ARN. If you set <code>Encrypted</code> to
+   * <code>true</code> but do not specify this parameter, the service uses the
+   * default KMS key for EBS encryption in your account. For cross-account volume
+   * copies, this must be a KMS key in the calling account.</p>
+   */
+  inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
+  inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
+  template <typename KmsKeyIdT = Aws::String>
+  void SetKmsKeyId(KmsKeyIdT&& value) {
+    m_kmsKeyIdHasBeenSet = true;
+    m_kmsKeyId = std::forward<KmsKeyIdT>(value);
+  }
+  template <typename KmsKeyIdT = Aws::String>
+  CopyVolumesRequest& WithKmsKeyId(KmsKeyIdT&& value) {
+    SetKmsKeyId(std::forward<KmsKeyIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_sourceVolumeId;
 
@@ -239,6 +283,10 @@ class CopyVolumesRequest : public EC2Request {
   int m_throughput{0};
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+
+  bool m_encrypted{false};
+
+  Aws::String m_kmsKeyId;
   bool m_sourceVolumeIdHasBeenSet = false;
   bool m_iopsHasBeenSet = false;
   bool m_sizeHasBeenSet = false;
@@ -248,6 +296,8 @@ class CopyVolumesRequest : public EC2Request {
   bool m_multiAttachEnabledHasBeenSet = false;
   bool m_throughputHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
+  bool m_encryptedHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
 };
 
 }  // namespace Model

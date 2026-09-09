@@ -413,6 +413,25 @@ class EvaluationForm {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The AI version to use for the evaluation form. This specifies which AI model
+   * version is used for automated evaluations.</p>
+   */
+  inline const Aws::String& GetAIVersion() const { return m_aIVersion; }
+  inline bool AIVersionHasBeenSet() const { return m_aIVersionHasBeenSet; }
+  template <typename AIVersionT = Aws::String>
+  void SetAIVersion(AIVersionT&& value) {
+    m_aIVersionHasBeenSet = true;
+    m_aIVersion = std::forward<AIVersionT>(value);
+  }
+  template <typename AIVersionT = Aws::String>
+  EvaluationForm& WithAIVersion(AIVersionT&& value) {
+    SetAIVersion(std::forward<AIVersionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_evaluationFormId;
 
@@ -453,6 +472,8 @@ class EvaluationForm {
   EvaluationFormValidationStatus m_latestValidationStatus{EvaluationFormValidationStatus::NOT_SET};
 
   Aws::Utils::DateTime m_lastValidationTime{};
+
+  Aws::String m_aIVersion;
   bool m_evaluationFormIdHasBeenSet = false;
   bool m_evaluationFormVersionHasBeenSet = false;
   bool m_lockedHasBeenSet = false;
@@ -473,6 +494,7 @@ class EvaluationForm {
   bool m_languageConfigurationHasBeenSet = false;
   bool m_latestValidationStatusHasBeenSet = false;
   bool m_lastValidationTimeHasBeenSet = false;
+  bool m_aIVersionHasBeenSet = false;
 };
 
 }  // namespace Model

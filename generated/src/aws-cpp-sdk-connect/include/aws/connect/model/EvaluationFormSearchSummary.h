@@ -337,6 +337,25 @@ class EvaluationFormSearchSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The AI version to use for the evaluation form. This specifies which AI model
+   * version is used for automated evaluations.</p>
+   */
+  inline const Aws::String& GetAIVersion() const { return m_aIVersion; }
+  inline bool AIVersionHasBeenSet() const { return m_aIVersionHasBeenSet; }
+  template <typename AIVersionT = Aws::String>
+  void SetAIVersion(AIVersionT&& value) {
+    m_aIVersionHasBeenSet = true;
+    m_aIVersion = std::forward<AIVersionT>(value);
+  }
+  template <typename AIVersionT = Aws::String>
+  EvaluationFormSearchSummary& WithAIVersion(AIVersionT&& value) {
+    SetAIVersion(std::forward<AIVersionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_evaluationFormId;
 
@@ -371,6 +390,8 @@ class EvaluationFormSearchSummary {
   ContactInteractionType m_contactInteractionType{ContactInteractionType::NOT_SET};
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+
+  Aws::String m_aIVersion;
   bool m_evaluationFormIdHasBeenSet = false;
   bool m_evaluationFormArnHasBeenSet = false;
   bool m_titleHasBeenSet = false;
@@ -388,6 +409,7 @@ class EvaluationFormSearchSummary {
   bool m_evaluationFormLanguageHasBeenSet = false;
   bool m_contactInteractionTypeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_aIVersionHasBeenSet = false;
 };
 
 }  // namespace Model

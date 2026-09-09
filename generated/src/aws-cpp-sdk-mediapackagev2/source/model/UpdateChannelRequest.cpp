@@ -28,6 +28,10 @@ Aws::String UpdateChannelRequest::SerializePayload() const {
     payload.WithObject("OutputHeaderConfiguration", m_outputHeaderConfiguration.Jsonize());
   }
 
+  if (m_multiviewConfigurationHasBeenSet) {
+    payload.WithObject("MultiviewConfiguration", m_multiviewConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

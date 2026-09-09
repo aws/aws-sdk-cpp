@@ -16,6 +16,7 @@
 #include <aws/connect/model/ListDataTablesRequest.h>
 #include <aws/connect/model/ListDefaultVocabulariesRequest.h>
 #include <aws/connect/model/ListEntitySecurityProfilesRequest.h>
+#include <aws/connect/model/ListEvaluationFormAIVersionsRequest.h>
 #include <aws/connect/model/ListEvaluationFormVersionsRequest.h>
 #include <aws/connect/model/ListEvaluationFormsRequest.h>
 #include <aws/connect/model/ListExtractionDefinitionsRequest.h>
@@ -105,7 +106,6 @@
 #include <aws/connect/model/SendOutboundWebNotificationRequest.h>
 #include <aws/connect/model/StartAssistantContactRequest.h>
 #include <aws/connect/model/StartAttachedFileUploadRequest.h>
-#include <aws/connect/model/StartChatContactRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/CoreErrors.h>
@@ -348,6 +348,30 @@ ListEntitySecurityProfilesOutcome ConnectClient::ListEntitySecurityProfiles(cons
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListEntitySecurityProfilesOutcome(result.GetResultWithOwnership())
                             : ListEntitySecurityProfilesOutcome(std::move(result.GetError()));
+}
+
+ListEvaluationFormAIVersionsOutcome ConnectClient::ListEvaluationFormAIVersions(const ListEvaluationFormAIVersionsRequest& request) const {
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListEvaluationFormAIVersions", "Required field: InstanceId, is not set");
+    return ListEvaluationFormAIVersionsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                    "Missing required field [InstanceId]", false));
+  }
+  if (!request.ContactInteractionTypeHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListEvaluationFormAIVersions", "Required field: ContactInteractionType, is not set");
+    return ListEvaluationFormAIVersionsOutcome(Aws::Client::AWSError<ConnectErrors>(
+        ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContactInteractionType]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/instances/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/evaluation-form-ai-versions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListEvaluationFormAIVersionsOutcome(result.GetResultWithOwnership())
+                            : ListEvaluationFormAIVersionsOutcome(std::move(result.GetError()));
 }
 
 ListEvaluationFormVersionsOutcome ConnectClient::ListEvaluationFormVersions(const ListEvaluationFormVersionsRequest& request) const {
@@ -1835,15 +1859,4 @@ StartAttachedFileUploadOutcome ConnectClient::StartAttachedFileUpload(const Star
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? StartAttachedFileUploadOutcome(result.GetResultWithOwnership())
                             : StartAttachedFileUploadOutcome(std::move(result.GetError()));
-}
-
-StartChatContactOutcome ConnectClient::StartChatContact(const StartChatContactRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/contact/chat");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? StartChatContactOutcome(result.GetResultWithOwnership())
-                            : StartChatContactOutcome(std::move(result.GetError()));
 }
