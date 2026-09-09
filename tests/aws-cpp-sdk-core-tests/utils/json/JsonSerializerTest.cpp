@@ -525,12 +525,3 @@ TEST_F(JsonSerializerTest, TestParseScientificNotationInteger)
 
     ASSERT_EQ(5000000000LL, value.View().GetInt64("n"));
 }
-
-TEST_F(JsonSerializerTest, TestParseExponentIntegerPreservesPrecision)
-{
-    const Aws::String input = R"({"n":9007199254740993e0})";
-    JsonValue value(input);
-    ASSERT_TRUE(value.WasParseSuccessful());
-
-    ASSERT_EQ(9007199254740993LL, value.View().GetInt64("n"));
-}

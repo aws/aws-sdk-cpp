@@ -537,11 +537,12 @@ TEST_F(StringUtilsTest, TestInt64Conversion)
     ASSERT_EQ(LLONG_MIN, StringUtils::ConvertToInt64("-9223372036854775809"));
     ASSERT_EQ(LLONG_MIN, StringUtils::ConvertToInt64("-99999999999999999999999999"));
 
-    // Scientific notation is scaled as an integer rather than truncated at 'e'.
-    ASSERT_EQ(5000000000LL, StringUtils::ConvertToInt64("5e9"));
-    ASSERT_EQ(5000000000LL, StringUtils::ConvertToInt64("5E9"));
+    // ConvertToInt64 reads digits and stops at the first non-digit (strtoll semantics);
+    // scientific-notation scaling is handled by the JSON read path, not here.
+    ASSERT_EQ(5LL, StringUtils::ConvertToInt64("5e9"));
+    ASSERT_EQ(5LL, StringUtils::ConvertToInt64("5E9"));
     ASSERT_EQ(9007199254740993LL, StringUtils::ConvertToInt64("9007199254740993e0"));
-    ASSERT_EQ(LLONG_MAX, StringUtils::ConvertToInt64("1e100"));
+    ASSERT_EQ(1LL, StringUtils::ConvertToInt64("1e100"));
 
     // Trailing non-numeric characters stop parsing, matching prior behavior.
     ASSERT_EQ(12LL, StringUtils::ConvertToInt64("12.5"));

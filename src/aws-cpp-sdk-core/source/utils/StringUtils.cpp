@@ -12,8 +12,6 @@
 #include <cstdlib>
 #include <cstdio>
 #include <cstring>
-#include <cmath>
-#include <climits>
 #include <functional>
 
 #ifdef _WIN32
@@ -338,113 +336,12 @@ Aws::String StringUtils::Trim(const char* source)
 
 long long StringUtils::ConvertToInt64(const char* source)
 {
-    if (!source)
+    if(!source)
     {
         return 0;
     }
 
-    const char* cursor = source;
-    while (*cursor == ' ' || *cursor == '\t')
-    {
-        ++cursor;
-    }
-
-    bool negative = false;
-    if (*cursor == '+' || *cursor == '-')
-    {
-        negative = (*cursor == '-');
-        ++cursor;
-    }
-
-    unsigned long long value = 0;
-    bool overflow = false;
-    bool anyDigits = false;
-    for (; *cursor >= '0' && *cursor <= '9'; ++cursor)
-    {
-        anyDigits = true;
-        const unsigned digit = static_cast<unsigned>(*cursor - '0');
-        if (value > (ULLONG_MAX - digit) / 10ULL)
-        {
-            overflow = true;
-        }
-        else
-        {
-            value = value * 10ULL + digit;
-        }
-    }
-
-    // Interpret an exponent so scientific-notation integers (e.g. "5e9") scale correctly rather than
-    // being truncated at 'e' as atoll would. cJSON keeps such literals verbatim for values outside the
-    // int range, so this is the read path for large wire numbers.
-    long exponent = 0;
-    if (anyDigits && (*cursor == 'e' || *cursor == 'E'))
-    {
-        const char* exponentCursor = cursor + 1;
-        bool exponentNegative = false;
-        if (*exponentCursor == '+' || *exponentCursor == '-')
-        {
-            exponentNegative = (*exponentCursor == '-');
-            ++exponentCursor;
-        }
-        if (*exponentCursor >= '0' && *exponentCursor <= '9')
-        {
-            long magnitude = 0;
-            for (; *exponentCursor >= '0' && *exponentCursor <= '9'; ++exponentCursor)
-            {
-                magnitude = magnitude < 1000 ? magnitude * 10 + (*exponentCursor - '0') : magnitude;
-            }
-            exponent = exponentNegative ? -magnitude : magnitude;
-        }
-    }
-
-    for (long i = 0; i < exponent && !overflow; ++i)
-    {
-        if (value > ULLONG_MAX / 10ULL)
-        {
-            overflow = true;
-        }
-        else
-        {
-            value *= 10ULL;
-        }
-    }
-    for (long i = 0; i > exponent; --i)
-    {
-        value /= 10ULL;
-    }
-
-    const unsigned long long limit = negative
-        ? static_cast<unsigned long long>(LLONG_MAX) + 1ULL
-        : static_cast<unsigned long long>(LLONG_MAX);
-    if (overflow || value > limit)
-    {
-        return negative ? LLONG_MIN : LLONG_MAX;
-    }
-    if (negative)
-    {
-        return value == static_cast<unsigned long long>(LLONG_MAX) + 1ULL
-            ? LLONG_MIN
-            : -static_cast<long long>(value);
-    }
-    return static_cast<long long>(value);
-}
-
-long long StringUtils::ClampDoubleToInt64(double value)
-{
-    if (std::isnan(value))
-    {
-        return 0;
-    }
-    // static_cast<double>(LLONG_MAX) rounds up to 2^63, so any value >= 2^63 is out of range.
-    if (value >= 9223372036854775808.0)
-    {
-        return LLONG_MAX;
-    }
-    if (value < -9223372036854775808.0)
-    {
-        return LLONG_MIN;
-    }
-    return static_cast<long long>(value);
+    return std::strtoll(source, nullptr, 10);
 }
 
 
@@ -455,7 +352,7 @@ long StringUtils::ConvertToInt32(const char* source)
         return 0;
     }
 
-    return std::atol(source);
+    return std::strtol(source, nullptr, 10);
 }
 
 
