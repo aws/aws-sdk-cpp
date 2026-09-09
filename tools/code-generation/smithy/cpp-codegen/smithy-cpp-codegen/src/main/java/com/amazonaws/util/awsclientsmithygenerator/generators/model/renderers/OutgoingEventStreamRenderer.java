@@ -143,7 +143,9 @@ public final class OutgoingEventStreamRenderer implements ShapeRenderer {
         if (nonHeader.size() == 1) {
             MemberShape member = nonHeader.get(0).getValue();
             Shape target = ctx.model().expectShape(member.getTarget());
-            if (target.isStringShape()) {
+            // Enums are not raw text/plain payloads: C2J's isString() is false for enums, so a single
+            // enum member serializes as a JSON structure (application/json), not the bare string value.
+            if (target.isStringShape() && !CppTypeMapper.isEnum(target)) {
                 return PayloadKind.STRING;
             }
             // Implicit single blob member => parent is the payload (C2J); raw blob only when explicitly @eventPayload
