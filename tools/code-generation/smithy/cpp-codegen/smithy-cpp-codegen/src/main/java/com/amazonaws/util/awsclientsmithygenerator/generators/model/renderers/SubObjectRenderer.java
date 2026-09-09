@@ -60,7 +60,7 @@ public final class SubObjectRenderer implements ShapeRenderer {
             writer.write("#pragma once");
 
             List<String> includes = new java.util.ArrayList<>();
-            includes.add("aws/" + ctx.smithyServiceName() + "/" + ctx.namespace() + "_EXPORTS.h");
+            includes.add("aws/" + ctx.smithyServiceName() + "/" + ctx.classNamePrefix() + "_EXPORTS.h");
             if (stampRequestId) {
                 includes.add("aws/core/utils/memory/stl/AWSString.h");
             }

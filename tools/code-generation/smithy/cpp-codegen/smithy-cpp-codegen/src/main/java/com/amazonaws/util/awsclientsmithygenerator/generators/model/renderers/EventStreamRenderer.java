@@ -107,8 +107,8 @@ public final class EventStreamRenderer implements ShapeRenderer {
             writer.write("#include <aws/core/client/AWSError.h>");
             writer.write("#include <aws/core/utils/HashingUtils.h>");
             writer.write("#include <aws/core/utils/event/EventStreamHandler.h>");
-            writer.write("#include <aws/$1L/$2LErrors.h>", ctx.smithyServiceName(), ctx.namespace());
-            writer.write("#include <aws/$1L/$2L_EXPORTS.h>", ctx.smithyServiceName(), ctx.namespace());
+            writer.write("#include <aws/$1L/$2LErrors.h>", ctx.smithyServiceName(), ctx.classNamePrefix());
+            writer.write("#include <aws/$1L/$2L_EXPORTS.h>", ctx.smithyServiceName(), ctx.classNamePrefix());
             writer.write("#include <aws/$1L/model/$2LInitialResponse.h>", ctx.smithyServiceName(), opName);
             for (MemberShape event : events) {
                 boolean emptyEvent = ctx.model().expectShape(event.getTarget()).members().isEmpty();
@@ -140,7 +140,7 @@ public final class EventStreamRenderer implements ShapeRenderer {
                         writer.write("typedef std::function<void(const $1L&)> $1LCallback;", ev);
                     }
                 }
-                writer.write("typedef std::function<void(const Aws::Client::AWSError<$1LErrors>& error)> ErrorCallback;", ctx.namespace());
+                writer.write("typedef std::function<void(const Aws::Client::AWSError<$1LErrors>& error)> ErrorCallback;", ctx.classNamePrefix());
                 writer.write("");
                 writer.dedent();
                 writer.write("public:");
@@ -212,7 +212,7 @@ public final class EventStreamRenderer implements ShapeRenderer {
             includes.add("aws/core/client/CoreErrors.h");
             includes.add("aws/core/utils/event/EventStreamErrors.h");
             includes.add("aws/core/utils/logging/LogMacros.h");
-            includes.add("aws/" + ctx.smithyServiceName() + "/" + ctx.namespace() + "ErrorMarshaller.h");
+            includes.add("aws/" + ctx.smithyServiceName() + "/" + ctx.classNamePrefix() + "ErrorMarshaller.h");
             includes.add("aws/" + ctx.smithyServiceName() + "/model/" + opName + "Handler.h");
             IncludeSets.emitSourceIncludes(writer, includes,
                 ctx.protocolTraits(), FileKind.EVENT_HANDLER_SOURCE);
@@ -247,8 +247,8 @@ public final class EventStreamRenderer implements ShapeRenderer {
                         });
                     }
                 }
-                writer.openBlock("m_onError = [&](const AWSError<$1LErrors>& error) {", "};", ctx.namespace(), () -> {
-                    writer.write("AWS_LOGSTREAM_TRACE($1L, \"$2L Errors received, \" << error);", tag, ctx.namespace());
+                writer.openBlock("m_onError = [&](const AWSError<$1LErrors>& error) {", "};", ctx.classNamePrefix(), () -> {
+                    writer.write("AWS_LOGSTREAM_TRACE($1L, \"$2L Errors received, \" << error);", tag, ctx.classNamePrefix());
                 });
             });
             writer.write("");
@@ -257,7 +257,7 @@ public final class EventStreamRenderer implements ShapeRenderer {
                 writer.openBlock("if (!*this) {", "}", () -> {
                     writer.write("AWSError<CoreErrors> error = EventStreamErrorsMapper::GetAwsErrorForEventStreamError(GetInternalError());");
                     writer.write("error.SetMessage(GetEventPayloadAsString());");
-                    writer.write("m_onError(AWSError<$1LErrors>(error));", ctx.namespace());
+                    writer.write("m_onError(AWSError<$1LErrors>(error));", ctx.classNamePrefix());
                     writer.write("return;");
                 });
                 writer.write("const auto& headers = GetEventHeaders();");
@@ -341,7 +341,7 @@ public final class EventStreamRenderer implements ShapeRenderer {
 
             // MarshallError (verbatim from C2J)
             writer.openBlock("void $1L::MarshallError(const Aws::String& errorCode, const Aws::String& errorMessage) {", "}", className, () -> {
-                writer.write("$1LErrorMarshaller errorMarshaller;", ctx.namespace());
+                writer.write("$1LErrorMarshaller errorMarshaller;", ctx.classNamePrefix());
                 writer.write("AWSError<CoreErrors> error;");
                 writer.openBlock("if (errorCode.empty()) {", "}", () -> {
                     writer.write("error = AWSError<CoreErrors>(CoreErrors::UNKNOWN, \"\", errorMessage, false);");
@@ -430,7 +430,7 @@ public final class EventStreamRenderer implements ShapeRenderer {
             writer.write("#pragma once");
             List<String> includes = new java.util.ArrayList<>();
             includes.add("<aws/core/http/HttpTypes.h>");
-            includes.add("<aws/" + ctx.smithyServiceName() + "/" + ctx.namespace() + "_EXPORTS.h>");
+            includes.add("<aws/" + ctx.smithyServiceName() + "/" + ctx.classNamePrefix() + "_EXPORTS.h>");
             includes.addAll(CppTypeMapper.getIncludesForShape(shape, ctx.model(), ctx.smithyServiceName()));
             IncludeSets.emitAngleIncludes(writer, includes);
             if (hasMembers) {

@@ -37,6 +37,7 @@ public final class MemberRenderer {
     private final boolean emitHasBeenSet;
     private boolean wideIntegers;
     private String exclude;
+    private boolean requestShape;
 
     private MemberRenderer(Model model, Shape shape, String className, boolean emitHasBeenSet) {
         this.model = model;
@@ -45,6 +46,7 @@ public final class MemberRenderer {
         this.emitHasBeenSet = emitHasBeenSet;
         this.wideIntegers = false;
         this.exclude = null;
+        this.requestShape = false;
     }
 
     /** Renderer for a request / sub-object / event structure: emits {@code HasBeenSet} accessors. */
@@ -60,6 +62,12 @@ public final class MemberRenderer {
     /** Widen {@code integer} members to {@code int64_t} (CBOR sub-objects / events). */
     public MemberRenderer wideIntegers(boolean value) {
         this.wideIntegers = value;
+        return this;
+    }
+
+    /** Marks a request input: only request getters get the reserved-name rename (GetBody -> GetMemberBody). */
+    public MemberRenderer asRequest(boolean value) {
+        this.requestShape = value;
         return this;
     }
 
@@ -85,6 +93,7 @@ public final class MemberRenderer {
             String cppType = CppTypeMapper.getCppType(targetShape, model, wideIntegers);
             String fieldName = CppNames.fieldName(memberName);
             String methodName = capitalize(memberName);
+            String getterName = getterName(memberName, targetShape);
             String templateParam = methodName + "T";
             boolean recursive = isRecursiveMember(member);
 
@@ -97,14 +106,14 @@ public final class MemberRenderer {
             }
 
             if (targetShape.isDocumentShape()) {
-                writer.write("inline Aws::Utils::DocumentView Get$L() const { return $L; }", methodName, fieldName);
+                writer.write("inline Aws::Utils::DocumentView $L() const { return $L; }", getterName, fieldName);
             } else if (isPrimitive(targetShape) || CppTypeMapper.isEnum(targetShape)) {
-                writer.write("inline $L Get$L() const { return $L; }", cppType, methodName, fieldName);
+                writer.write("inline $L $L() const { return $L; }", cppType, getterName, fieldName);
             } else if (recursive) {
                 // Stored as std::shared_ptr<T>; dereference for the const-ref getter. Matches C2J.
-                writer.write("inline const $L& Get$L() const { return *$L; }", cppType, methodName, fieldName);
+                writer.write("inline const $L& $L() const { return *$L; }", cppType, getterName, fieldName);
             } else {
-                writer.write("inline const $L& Get$L() const { return $L; }", cppType, methodName, fieldName);
+                writer.write("inline const $L& $L() const { return $L; }", cppType, getterName, fieldName);
             }
 
             // The injected ResponseMetadata envelope is always present, so (like C2J) gets no
@@ -410,6 +419,23 @@ public final class MemberRenderer {
      */
     private static boolean isByValueType(Shape shape) {
         return CppTypeMapper.isPrimitive(shape) || CppTypeMapper.isEnum(shape);
+    }
+
+    /**
+     * Getter name with C2J's collision guards (only the getter is renamed): double-{@code Get} when
+     * {@code Get<Name>} equals the target shape or enclosing class name (all shapes); and
+     * {@code GetBody} -> {@code GetMemberBody} for request shapes.
+     */
+    private String getterName(String memberName, Shape targetShape) {
+        String base = "Get" + capitalize(memberName);
+        String targetName = CppTypeMapper.cppShapeName(targetShape);
+        if (base.equals(targetName) || base.equals(className)) {
+            base = "Get" + base;
+        }
+        if (requestShape && "GetBody".equals(base)) {
+            base = "GetMember" + capitalize(memberName);
+        }
+        return base;
     }
 
     private static String capitalize(String name) {

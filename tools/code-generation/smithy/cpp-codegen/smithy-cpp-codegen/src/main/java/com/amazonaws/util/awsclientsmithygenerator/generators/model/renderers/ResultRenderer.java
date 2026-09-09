@@ -16,12 +16,14 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.model.ShapeRendere
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.TopLevelHostIdTrait;
 import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.OperationShape;
+import software.amazon.smithy.model.shapes.Shape;
 import software.amazon.smithy.model.shapes.StructureShape;
 import software.amazon.smithy.model.traits.DocumentationTrait;
 import software.amazon.smithy.model.traits.HttpPayloadTrait;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * Renders C++ headers and sources for result (operation output) shapes.
@@ -62,6 +64,28 @@ public final class ResultRenderer implements ShapeRenderer {
             "Streaming result " + shape.getId() + " has no @httpPayload member");
     }
 
+    /**
+     * True if the result already models the top-level RequestId member (accessor {@code GetRequestId},
+     * i.e. a member keyed {@code requestId} or {@code RequestId}); it stands and the injected group is
+     * skipped. Fails codegen if that member is not an {@code Aws::String}, since the runtime populates
+     * RequestId from the {@code x-amzn-requestid} header and cannot honor another type.
+     */
+    private boolean modelsRequestId(StructureShape shape) {
+        Optional<Map.Entry<String, MemberShape>> modeled = shape.getAllMembers().entrySet().stream()
+            .filter(e -> CppNames.capitalize(e.getKey()).equals("RequestId"))
+            .findFirst();
+        if (modeled.isEmpty()) {
+            return false;
+        }
+        Shape target = ctx.model().expectShape(modeled.get().getValue().getTarget());
+        if (!target.isStringShape() || CppTypeMapper.isEnum(target)) {
+            throw new IllegalStateException("Result " + shape.getId() + " models RequestId member '"
+                + modeled.get().getKey() + "' as a non-string type; the top-level RequestId is an "
+                + "Aws::String populated from the x-amzn-requestid header.");
+        }
+        return true;
+    }
+
     private void renderHeader(CppWriterDelegator writerDelegator,
                               StructureShape shape, OperationShape operation) {
         String className = operation.getId().getName() + ShapeUtil.getResultSuffix(ctx.model(), operation, ctx.smithyServiceName());
@@ -71,7 +95,7 @@ public final class ResultRenderer implements ShapeRenderer {
 
             // AWSString.h only for top-level m_requestId; string members self-include. Matches C2J.
             List<String> includes = new java.util.ArrayList<>(IncludeSets.resultHeaderBase(
-                ctx.smithyServiceName(), ctx.namespace(), ctx.protocolTraits().resultHasTopLevelRequestId()));
+                ctx.smithyServiceName(), ctx.classNamePrefix(), ctx.protocolTraits().resultHasTopLevelRequestId()));
             for (String memberInc : CppTypeMapper.getIncludesForShape(shape, ctx.model(), ctx.smithyServiceName())) {
                 includes.add(memberInc);
             }
@@ -102,11 +126,16 @@ public final class ResultRenderer implements ShapeRenderer {
                 ctx.protocolTraits().writeResultSerdeDecls(writer, ctx.exportMacro(), className);
                 writer.write("");
 
+                // A result that already models the RequestId member lets it stand; the injected
+                // top-level group is then skipped (modelsRequestId fails codegen if that member is
+                // not an Aws::String — the type the runtime fills from the x-amzn-requestid header).
+                boolean topLevelRequestId = ctx.protocolTraits().resultHasTopLevelRequestId()
+                    && !modelsRequestId(shape);
+
                 MemberRenderer members = MemberRenderer.forResult(ctx.model(), shape, className)
                     .wideIntegers(ctx.protocolTraits().widensIntegers());
                 members.renderPublicAccessors(writer);
 
-                boolean topLevelRequestId = ctx.protocolTraits().resultHasTopLevelRequestId();
                 if (topLevelRequestId) {
                     MemberRenderer.renderRequestIdAccessors(writer, className);
                 }
@@ -181,7 +210,7 @@ public final class ResultRenderer implements ShapeRenderer {
             writer.write("#pragma once");
 
             List<String> includes = new java.util.ArrayList<>(
-                IncludeSets.streamingResultHeaderBase(ctx.smithyServiceName(), ctx.namespace()));
+                IncludeSets.streamingResultHeaderBase(ctx.smithyServiceName(), ctx.classNamePrefix()));
             for (String memberInc : CppTypeMapper.getIncludesForShape(shape, ctx.model(), ctx.smithyServiceName())) {
                 includes.add(memberInc);
             }
@@ -233,12 +262,17 @@ public final class ResultRenderer implements ShapeRenderer {
                     + "$L = Aws::Utils::Stream::ResponseStream(body); }", streamField);
                 writer.write("///@}");
 
+                // Same rule as renderHeader: a modeled RequestId member stands and skips injection.
+                boolean injectRequestId = !modelsRequestId(shape);
+
                 MemberRenderer members = MemberRenderer.forResult(ctx.model(), shape, className)
                     .wideIntegers(ctx.protocolTraits().widensIntegers())
                     .excluding(streamMember);
                 members.renderPublicAccessors(writer);
 
-                MemberRenderer.renderRequestIdAccessors(writer, className);
+                if (injectRequestId) {
+                    MemberRenderer.renderRequestIdAccessors(writer, className);
+                }
 
                 // Defensive no-op: no streaming result is S3 Control today, so the marker is never stamped here.
                 boolean topLevelHostId = shape.hasTrait(TopLevelHostIdTrait.class);
@@ -254,8 +288,10 @@ public final class ResultRenderer implements ShapeRenderer {
                 writer.indent();
                 writer.write("Aws::Utils::Stream::ResponseStream $L{};", streamField);
                 members.renderDataMembers(writer);
-                writer.write("");
-                writer.write("Aws::String m_requestId;");
+                if (injectRequestId) {
+                    writer.write("");
+                    writer.write("Aws::String m_requestId;");
+                }
                 if (topLevelHostId) {
                     writer.write("");
                     writer.write("Aws::String m_hostId;");
@@ -263,7 +299,9 @@ public final class ResultRenderer implements ShapeRenderer {
                 writer.write("Aws::Http::HttpResponseCode m_HttpResponseCode;");
                 writer.write("bool $LHasBeenSet = false;", streamField);
                 members.renderHasBeenSetFlags(writer);
-                writer.write("bool m_requestIdHasBeenSet = false;");
+                if (injectRequestId) {
+                    writer.write("bool m_requestIdHasBeenSet = false;");
+                }
                 if (topLevelHostId) {
                     writer.write("bool m_hostIdHasBeenSet = false;");
                 }

@@ -60,7 +60,7 @@ public final class EventPayloadRenderer implements ShapeRenderer {
             writer.write("#pragma once");
             java.util.List<String> includes = new java.util.ArrayList<>();
             includes.add("aws/core/utils/Array.h");
-            includes.add("aws/" + ctx.smithyServiceName() + "/" + ctx.namespace() + "_EXPORTS.h");
+            includes.add("aws/" + ctx.smithyServiceName() + "/" + ctx.classNamePrefix() + "_EXPORTS.h");
             IncludeSets.emitAngleIncludes(writer, includes);
             writer.write("");
             writer.write("#include <utility>");

@@ -28,11 +28,15 @@ import software.amazon.smithy.model.node.NodeVisitor;
 import software.amazon.smithy.model.node.StringNode;
 import software.amazon.smithy.aws.traits.HttpChecksumTrait;
 import software.amazon.smithy.aws.traits.auth.UnsignedPayloadTrait;
+import software.amazon.smithy.model.knowledge.ServiceIndex;
 import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.OperationShape;
+import software.amazon.smithy.model.shapes.ShapeId;
 import software.amazon.smithy.model.shapes.StructureShape;
+import software.amazon.smithy.model.traits.AuthTrait;
 import software.amazon.smithy.model.traits.DocumentationTrait;
 import software.amazon.smithy.model.traits.HttpChecksumRequiredTrait;
+import software.amazon.smithy.model.traits.OptionalAuthTrait;
 import software.amazon.smithy.model.traits.RequestCompressionTrait;
 import software.amazon.smithy.rulesengine.traits.ContextParamTrait;
 import software.amazon.smithy.rulesengine.traits.OperationContextParamDefinition;
@@ -88,8 +92,8 @@ public final class RequestRenderer implements ShapeRenderer {
             writer.write("#pragma once");
 
             Set<String> includes = new TreeSet<>();
-            includes.add("<aws/" + ctx.smithyServiceName() + "/" + ctx.namespace() + "_EXPORTS.h>");
-            includes.add("<aws/" + ctx.smithyServiceName() + "/" + ctx.namespace() + "Request.h>");
+            includes.add("<aws/" + ctx.smithyServiceName() + "/" + ctx.classNamePrefix() + "_EXPORTS.h>");
+            includes.add("<aws/" + ctx.smithyServiceName() + "/" + ctx.classNamePrefix() + "Request.h>");
             // Request headers do NOT include <aws/core/http/URI.h> even with URI-taking methods
             // (DumpBodyToUrl / AddQueryStringParameters): AmazonWebServiceRequest.h forward-declares
             // Aws::Http::URI, sufficient for a reference param. Matches C2J.
@@ -125,7 +129,7 @@ public final class RequestRenderer implements ShapeRenderer {
 
             // Raw-streaming-payload requests derive from Streaming<Prefix>Request (a typedef for
             // AmazonStreamingWebServiceRequest declared in <Prefix>Request.h), matching C2J.
-            String baseClass = (rawStreamingPayload ? "Streaming" + ctx.namespace() : ctx.namespace()) + "Request";
+            String baseClass = (rawStreamingPayload ? "Streaming" + ctx.classNamePrefix() : ctx.classNamePrefix()) + "Request";
             writer.openBlock("class $L : public $L {", "};", className, baseClass, () -> {
                 writer.write("public:");
                 writer.write("$L $L() = default;", ctx.exportMacro(), className);
@@ -163,6 +167,8 @@ public final class RequestRenderer implements ShapeRenderer {
                     writer.write("$L std::shared_ptr<Aws::IOStream> GetBody() const override;", ctx.exportMacro());
                 }
                 ctx.protocolTraits().writeRequestMethodDecls(writer, ctx.exportMacro(), shape, operation, ctx.model());
+                // Per-request supported-auth override (after GetRequestSpecificHeaders, per RequestHeader.vm).
+                renderRequestSpecificAuthDecl(writer, operation);
                 // DumpBodyToUrl is emitted protocol-agnostically (C2J gates only on
                 // $shape.supportsPresigning). A protected virtual, so bracketed under protected: then
                 // restored to public:. The trait is on the OPERATION (SupportsPresigningTransform) to
@@ -241,7 +247,7 @@ public final class RequestRenderer implements ShapeRenderer {
                 }
 
                 writer.write("");
-                MemberRenderer members = MemberRenderer.forStructure(ctx.model(), shape, className);
+                MemberRenderer members = MemberRenderer.forStructure(ctx.model(), shape, className).asRequest(true);
                 members.renderPublicAccessors(writer);
                 eventStreamMember.ifPresent(m ->
                     renderEventStreamMemberAccessor(writer, className, rawShape, m));
@@ -302,6 +308,7 @@ public final class RequestRenderer implements ShapeRenderer {
                 // serde header (e.g. JsonSerializer.h). Matches C2J.
                 includes.add("aws/core/utils/HashingUtils.h");
                 includes.add("aws/core/utils/memory/stl/AWSStringStream.h");
+                addRequestAuthIncludes(includes, operation);
                 IncludeSets.emit(writer, includes);
                 writer.write("");
                 writer.write("using namespace Aws::$L::Model;", ctx.namespace());
@@ -316,6 +323,7 @@ public final class RequestRenderer implements ShapeRenderer {
                 });
                 // Header/query method bodies (SerializePayload is gated off for streaming requests).
                 ctx.protocolTraits().writeRequestMethodImpls(writer, className, shape, operation, ctx.service(), ctx.model());
+                renderRequestSpecificAuthImpl(writer, className, operation);
                 renderChecksumImpls(writer, className, shape, operation);
                 renderRequestCompressionImpl(writer, className, operation, true);
                 if (hasEndpointContextParams(operation, shape)) {
@@ -329,8 +337,10 @@ public final class RequestRenderer implements ShapeRenderer {
                 return;
             }
 
-            IncludeSets.emitSourceIncludes(writer,
-                IncludeSets.requestSourceBase(ctx.smithyServiceName(), className),
+            List<String> reqIncludes = new ArrayList<>(
+                IncludeSets.requestSourceBase(ctx.smithyServiceName(), className));
+            addRequestAuthIncludes(reqIncludes, operation);
+            IncludeSets.emitSourceIncludes(writer, reqIncludes,
                 ctx.protocolTraits(), FileKind.REQUEST_SOURCE);
             writer.write("");
 
@@ -339,6 +349,7 @@ public final class RequestRenderer implements ShapeRenderer {
             writer.write("");
 
             ctx.protocolTraits().writeRequestMethodImpls(writer, className, shape, operation, ctx.service(), ctx.model());
+            renderRequestSpecificAuthImpl(writer, className, operation);
             renderChecksumImpls(writer, className, shape, operation);
             renderRequestCompressionImpl(writer, className, operation, false);
 
@@ -525,6 +536,99 @@ public final class RequestRenderer implements ShapeRenderer {
     private void renderSignBodyDecl(CppWriter writer, StructureShape shape, OperationShape operation) {
         if (operation.hasTrait(UnsignedPayloadTrait.class) && !shape.getAllMembers().isEmpty()) {
             writer.write("$L bool SignBody() const override { return false; }", ctx.exportMacro());
+        }
+    }
+
+    // Real Smithy auth-scheme traits that can appear in an operation @auth override (per the multi-auth
+    // SEP). smithy.api#noAuth is NOT here — it is a C2J-only auth-list value; raw Smithy disables auth
+    // with @auth([]) (the empty-list branch below), which Coral2Smithy also emits instead of noAuth.
+    private static final String NO_AUTH_OPTION = "smithy::NoAuthSchemeOption::noAuthSchemeOption";
+    private static final String NO_AUTH_INCLUDE = "smithy/identity/auth/built-in/NoAuthSchemeOption.h";
+    private static final Map<String, String> AUTH_SCHEME_OPTION = Map.of(
+        "aws.auth#sigv4", "smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption",
+        "aws.auth#sigv4a", "smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption",
+        "smithy.api#httpBearerAuth", "smithy::BearerTokenAuthSchemeOption::bearerTokenAuthSchemeOption");
+    private static final Map<String, String> AUTH_SCHEME_INCLUDE = Map.of(
+        "aws.auth#sigv4", "smithy/identity/auth/built-in/SigV4AuthSchemeOption.h",
+        "aws.auth#sigv4a", "smithy/identity/auth/built-in/SigV4aAuthSchemeOption.h",
+        "smithy.api#httpBearerAuth", "smithy/identity/auth/built-in/BearerTokenAuthSchemeOption.h");
+
+    /** An operation overrides the resolved auth list when it carries {@code @auth} or {@code @optionalAuth}. */
+    private boolean hasAuthOverride(OperationShape operation) {
+        return operation.hasTrait(AuthTrait.class) || operation.hasTrait(OptionalAuthTrait.class);
+    }
+
+    /**
+     * The real (non-noAuth) auth schemes for an operation's override: its {@code @auth} value when set,
+     * otherwise the service's effective default (used when the operation only carries {@code @optionalAuth}).
+     */
+    private Set<ShapeId> effectiveRealSchemes(OperationShape operation) {
+        if (operation.hasTrait(AuthTrait.class)) {
+            return operation.expectTrait(AuthTrait.class).getValueSet();
+        }
+        return ServiceIndex.of(ctx.model()).getEffectiveAuthSchemes(ctx.service(), operation).keySet();
+    }
+
+    /**
+     * Whether the resolved list must carry noAuth: {@code @optionalAuth} adds it as a fallback alongside the
+     * real schemes, and an empty {@code @auth([])} disables authentication entirely so noAuth is the only option.
+     */
+    private boolean includesNoAuth(OperationShape operation, Set<ShapeId> realSchemes) {
+        return operation.hasTrait(OptionalAuthTrait.class) || realSchemes.isEmpty();
+    }
+
+    // AuthSchemeOptions for an operation's resolved auth override. The runtime needs noAuth to send the
+    // request unsigned (empty @auth([])) or to fall back to anonymous (@optionalAuth); matches shipped C2J.
+    private List<String> authSchemeOptions(OperationShape operation) {
+        if (!hasAuthOverride(operation)) {
+            return List.of();
+        }
+        Set<ShapeId> schemes = effectiveRealSchemes(operation);
+        List<String> options = new ArrayList<>();
+        for (ShapeId id : schemes) {
+            options.add(Optional.ofNullable(AUTH_SCHEME_OPTION.get(id.toString()))
+                .orElseThrow(() -> new RuntimeException(
+                    "Unknown auth scheme '" + id + "' on operation " + operation.getId())));
+        }
+        if (includesNoAuth(operation, schemes)) {
+            options.add(NO_AUTH_OPTION);
+        }
+        return options;
+    }
+
+    /** Declares GetRequestSpecificSupportedAuth for an operation with a resolved {@code @auth}/{@code @optionalAuth} override. */
+    private void renderRequestSpecificAuthDecl(CppWriter writer, OperationShape operation) {
+        if (hasAuthOverride(operation)) {
+            writer.write("$L Aws::Vector<smithy::AuthSchemeOption> GetRequestSpecificSupportedAuth() const override;",
+                ctx.exportMacro());
+        }
+    }
+
+    /** Defines {@code GetRequestSpecificSupportedAuth} returning the mapped scheme options. */
+    private void renderRequestSpecificAuthImpl(CppWriter writer, String className, OperationShape operation) {
+        List<String> options = authSchemeOptions(operation);
+        if (options.isEmpty()) {
+            return;
+        }
+        writer.openBlock("Aws::Vector<smithy::AuthSchemeOption> $L::GetRequestSpecificSupportedAuth() const {", "}",
+            className, () -> {
+            writer.write("Aws::Vector<smithy::AuthSchemeOption> authOptions{$L};", String.join(", ", options));
+            writer.write("return authOptions;");
+        });
+        writer.write("");
+    }
+
+    /** Adds the AuthSchemeOption include(s) for an operation's resolved auth override to {@code includes}. */
+    private void addRequestAuthIncludes(List<String> includes, OperationShape operation) {
+        if (!hasAuthOverride(operation)) {
+            return;
+        }
+        Set<ShapeId> schemes = effectiveRealSchemes(operation);
+        for (ShapeId id : schemes) {
+            Optional.ofNullable(AUTH_SCHEME_INCLUDE.get(id.toString())).ifPresent(includes::add);
+        }
+        if (includesNoAuth(operation, schemes)) {
+            includes.add(NO_AUTH_INCLUDE);
         }
     }
 

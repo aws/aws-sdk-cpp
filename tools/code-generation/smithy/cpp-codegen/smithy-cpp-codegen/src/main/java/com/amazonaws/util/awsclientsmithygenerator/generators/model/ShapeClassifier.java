@@ -21,6 +21,7 @@ import software.amazon.smithy.model.traits.ErrorTrait;
 import software.amazon.smithy.model.traits.EventPayloadTrait;
 import software.amazon.smithy.model.traits.HttpPayloadTrait;
 import software.amazon.smithy.model.traits.StreamingTrait;
+import software.amazon.smithy.model.traits.UnitTypeTrait;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -185,10 +186,22 @@ public final class ShapeClassifier {
                 .ifPresent(u -> incomingEventStreamUnionIds.add(u.getId()));
         }
 
+        // Emit smithy.api#Unit only when a service-reachable struct/union member references it (an empty
+        // union variant), matching C2J. Enum-value and no-input-op targets don't reference it as a type.
+        // Scope to `reachable`: framework unions like smithy.test#Expectation also carry Unit members
+        // but are never emitted, so a global model.shapes() scan would falsely force emission everywhere.
+        boolean unitIsDataMemberTarget = reachable.stream()
+            .map(model::expectShape)
+            .filter(s -> s.isStructureShape() || s.isUnionShape())
+            .flatMap(s -> s.members().stream())
+            .anyMatch(member -> member.getTarget().equals(UnitTypeTrait.UNIT));
+
         // Walk all reachable shapes and classify remaining ones
         for (ShapeId id : reachable) {
             Shape shape = model.expectShape(id);
-            if ((inputShapeIds.contains(id) || outputShapeIds.contains(id)) && !memberTargetIds.contains(id)) {
+            if (id.equals(UnitTypeTrait.UNIT) && !unitIsDataMemberTarget) {
+                // Unit not referenced as a data type here — its Model::Unit file would be spurious.
+            } else if ((inputShapeIds.contains(id) || outputShapeIds.contains(id)) && !memberTargetIds.contains(id)) {
                 // classified as request/result and not referenced as a member — nothing more to emit
             } else if (shape.isEnumShape() || (shape.isStringShape() && shape.hasTrait(EnumTrait.class))) {
                 enums.add(shape);
