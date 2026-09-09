@@ -1,0 +1,6 @@
+{
+  "type": "feature",
+  "category": "aws-cpp-sdk-core",
+  "contributor": "sbiscigl",
+  "description": "create async http api"
+}
