@@ -11,47 +11,7 @@
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/logging/LogMacros.h>
-#include <cstdlib>
-#include <limits>
-
-namespace
-{
-    const double LLONG_MIN_AS_DOUBLE = -9223372036854775808.0;
-    const double LLONG_MAX_PLUS_ONE = 9223372036854775808.0;
-
-    bool IsRepresentableAsInt64(double value)
-    {
-        return value >= LLONG_MIN_AS_DOUBLE && value < LLONG_MAX_PLUS_ONE;
-    }
-
-    int64_t ToInt64Saturating(double value)
-    {
-        if (value != value)
-        {
-            return 0;
-        }
-        if (value >= LLONG_MAX_PLUS_ONE)
-        {
-            return std::numeric_limits<int64_t>::max();
-        }
-        if (value < LLONG_MIN_AS_DOUBLE)
-        {
-            return std::numeric_limits<int64_t>::min();
-        }
-        return static_cast<int64_t>(value);
-    }
-
-    int64_t LiteralToInt64(const char* literal, double valuedouble)
-    {
-        char* end = nullptr;
-        const long long parsed = std::strtoll(literal, &end, 10);
-        if (*end == '\0')
-        {
-            return parsed;
-        }
-        return ToInt64Saturating(valuedouble);
-    }
-}
+#include <aws/core/utils/numeric/NumericUtils.h>
 
 using namespace Aws::Utils;
 
