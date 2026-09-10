@@ -8,6 +8,7 @@
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 
 #include <chrono>
+#include <limits>
 #include <memory>
 #include <thread>
 
@@ -103,6 +104,21 @@ class AsyncMockedCredsProvider : public Aws::Auth::CrtCredentialsProvider {
 };
 
 class CrtCredentialsProviderTest : public Aws::Testing::AwsCppSdkGTestSuite {};
+
+TEST_F(CrtCredentialsProviderTest, NonExpiringCredentialsMustNotBeExpired) {
+  auto underlying_mock = Aws::MakeShared<MockCrtCredentialsProvider>(CRT_CREDS_TEST_LOG);
+
+  underlying_mock->AddCredentialForReturn(Aws::MakeShared<Aws::Crt::Auth::Credentials>(
+      CRT_CREDS_TEST_LOG, Aws::Crt::ByteCursorFromCString("access"), Aws::Crt::ByteCursorFromCString("secret"),
+      Aws::Crt::ByteCursorFromCString(""), std::numeric_limits<uint64_t>::max()));
+
+  MockedCredsProvider provider(underlying_mock);
+  const auto credentials = provider.GetAWSCredentials();
+
+  EXPECT_FALSE(credentials.IsEmpty());
+  EXPECT_FALSE(credentials.IsExpired());
+  EXPECT_FALSE(credentials.IsExpiredOrEmpty());
+}
 
 TEST_F(CrtCredentialsProviderTest, ShouldNotUseFreedStateWhenRefreshOutlivesTimeout) {
   auto crtCreds = Aws::MakeShared<Aws::Crt::Auth::Credentials>(
