@@ -6,6 +6,7 @@
 
 #include <smithy/client/schema/Schema.h>
 #include <smithy/client/schema/SerializableStruct.h>
+#include <smithy/client/schema/ShapeDeserializer.h>
 #include <smithy/client/schema/ShapeSerializer.h>
 
 #include <functional>
@@ -28,6 +29,7 @@ class LambdaStruct final : public SerializableStruct {
       m_members(serializer);
     }
   }
+  void From(const Schema& /*memberSchema*/, ShapeDeserializer& /*deserializer*/) override {}
 
  private:
   const Schema& m_schema;

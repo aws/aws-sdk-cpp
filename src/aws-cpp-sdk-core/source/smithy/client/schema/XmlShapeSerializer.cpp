@@ -13,6 +13,8 @@
 #include <smithy/client/schema/XmlShapeSerializer.h>
 #include <smithy/client/schema/XmlTraits.h>
 
+#include <cmath>
+
 using namespace smithy::schema;
 using namespace Aws::Utils;
 using SerializerOutcome = Aws::Utils::Outcome<Aws::String, Aws::Client::AWSError<Aws::Client::CoreErrors>>;
@@ -213,7 +215,7 @@ class XmlShapeSerializer::Impl final : public InterceptingSerializer {
     if (trait) {
       return trait->GetValue();
     }
-    const auto member = schema.GetMemberName();
+    auto member = schema.GetMemberName();
     if (!member.empty()) {
       return member;
     }
@@ -330,11 +332,23 @@ void XmlShapeSerializer::Impl::ValueSerializer::WriteLong(const Schema&, int64_t
 }
 void XmlShapeSerializer::Impl::ValueSerializer::WriteFloat(const Schema&, float value) {
   m_outer->ClosePendingTag();
-  m_outer->AppendRaw(StringUtils::to_string(value));
+  if (std::isfinite(value)) {
+    m_outer->AppendRaw(StringUtils::to_string(value));
+  } else if (std::isnan(value)) {
+    m_outer->AppendRaw("NaN");
+  } else {
+    m_outer->AppendRaw(value > 0 ? "Infinity" : "-Infinity");
+  }
 }
 void XmlShapeSerializer::Impl::ValueSerializer::WriteDouble(const Schema&, double value) {
   m_outer->ClosePendingTag();
-  m_outer->AppendRaw(StringUtils::to_string(value));
+  if (std::isfinite(value)) {
+    m_outer->AppendRaw(StringUtils::to_string(value));
+  } else if (std::isnan(value)) {
+    m_outer->AppendRaw("NaN");
+  } else {
+    m_outer->AppendRaw(value > 0 ? "Infinity" : "-Infinity");
+  }
 }
 void XmlShapeSerializer::Impl::ValueSerializer::WriteString(const Schema&, const Aws::String& value) {
   m_outer->ClosePendingTag();

@@ -5,17 +5,18 @@
 
 namespace smithy {
 namespace schema {
-
+class ShapeDeserializer;
 class ShapeSerializer;
 
-// Implemented by generated shapes: knows its Schema and how to write its members
-// to whichever ShapeSerializer is passed in.
 class SMITHY_API SerializableStruct {
  public:
   virtual ~SerializableStruct() = default;
 
   virtual const Schema& GetSchema() const = 0;
   virtual void SerializeMembers(ShapeSerializer& serializer) const = 0;
+  virtual void From(const Schema& memberSchema, ShapeDeserializer& deserializer) = 0;
+
+  void Deserialize(ShapeDeserializer& deserializer);
 };
 
 }  // namespace schema
