@@ -1142,8 +1142,17 @@ DateTime::DateTime(double secondsSinceEpoch) : m_valid(true)
 
 DateTime::DateTime(uint64_t secondsSinceEpoch) : m_valid(true)
 {
-  std::chrono::duration<uint64_t, std::chrono::seconds::period> timestamp(secondsSinceEpoch);
-  m_time = std::chrono::system_clock::time_point(timestamp);
+    const auto maxTime = (std::chrono::system_clock::time_point::max)();
+    const auto maxSeconds = std::chrono::duration_cast<std::chrono::seconds>(maxTime.time_since_epoch()).count();
+    
+    if (secondsSinceEpoch > static_cast<uint64_t>(maxSeconds))
+    {
+        m_time = maxTime;
+    }
+    else
+    {
+        m_time = std::chrono::system_clock::time_point(std::chrono::seconds(static_cast<std::chrono::seconds::rep>(secondsSinceEpoch)));
+    }
 }
 
 DateTime::DateTime(const Aws::String& timestamp, DateFormat format) : m_valid(true)
