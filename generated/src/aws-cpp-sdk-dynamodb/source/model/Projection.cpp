@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/Projection.h>
 
 #include <utility>
@@ -17,36 +20,10 @@ namespace Model {
 
 Projection::Projection(JsonView jsonValue) { *this = jsonValue; }
 
-Projection& Projection::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("ProjectionType")) {
-    m_projectionType = ProjectionTypeMapper::GetProjectionTypeForName(jsonValue.GetString("ProjectionType"));
-    m_projectionTypeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("NonKeyAttributes")) {
-    Aws::Utils::Array<JsonView> nonKeyAttributesJsonList = jsonValue.GetArray("NonKeyAttributes");
-    for (unsigned nonKeyAttributesIndex = 0; nonKeyAttributesIndex < nonKeyAttributesJsonList.GetLength(); ++nonKeyAttributesIndex) {
-      m_nonKeyAttributes.push_back(nonKeyAttributesJsonList[nonKeyAttributesIndex].AsString());
-    }
-    m_nonKeyAttributesHasBeenSet = true;
-  }
-  return *this;
-}
+Projection& Projection::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue Projection::Jsonize() const {
   JsonValue payload;
-
-  if (m_projectionTypeHasBeenSet) {
-    payload.WithString("ProjectionType", ProjectionTypeMapper::GetNameForProjectionType(m_projectionType));
-  }
-
-  if (m_nonKeyAttributesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> nonKeyAttributesJsonList(m_nonKeyAttributes.size());
-    for (unsigned nonKeyAttributesIndex = 0; nonKeyAttributesIndex < nonKeyAttributesJsonList.GetLength(); ++nonKeyAttributesIndex) {
-      nonKeyAttributesJsonList[nonKeyAttributesIndex].AsString(m_nonKeyAttributes[nonKeyAttributesIndex]);
-    }
-    payload.WithArray("NonKeyAttributes", std::move(nonKeyAttributesJsonList));
-  }
-
   return payload;
 }
 

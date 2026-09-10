@@ -4,7 +4,9 @@
  */
 
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/GetBucketIntelligentTieringConfigurationResult.h>
@@ -23,21 +25,5 @@ GetBucketIntelligentTieringConfigurationResult::GetBucketIntelligentTieringConfi
 
 GetBucketIntelligentTieringConfigurationResult& GetBucketIntelligentTieringConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<XmlDocument>& result) {
-  m_HttpResponseCode = result.GetResponseCode();
-  const XmlDocument& xmlDocument = result.GetPayload();
-  XmlNode resultNode = xmlDocument.GetRootElement();
-
-  if (!resultNode.IsNull()) {
-    m_intelligentTieringConfiguration = resultNode;
-    m_intelligentTieringConfigurationHasBeenSet = true;
-  }
-
-  const auto& headers = result.GetHeaderValueCollection();
-  const auto& requestIdIter = headers.find("x-amz-request-id");
-  if (requestIdIter != headers.end()) {
-    m_requestId = requestIdIter->second;
-    m_requestIdHasBeenSet = true;
-  }
-
   return *this;
 }

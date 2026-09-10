@@ -29,7 +29,6 @@ class JSONInput {
   AWS_S3_API JSONInput() = default;
   AWS_S3_API JSONInput(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API JSONInput& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

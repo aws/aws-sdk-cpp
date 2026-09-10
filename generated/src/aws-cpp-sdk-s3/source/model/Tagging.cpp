@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/Tagging.h>
@@ -19,36 +20,9 @@ namespace Model {
 
 Tagging::Tagging(const XmlNode& xmlNode) { *this = xmlNode; }
 
-Tagging& Tagging::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+Tagging& Tagging::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode tagSetNode = resultNode.FirstChild("TagSet");
-    if (!tagSetNode.IsNull()) {
-      XmlNode tagSetMember = tagSetNode.FirstChild("Tag");
-      m_tagSetHasBeenSet = !tagSetMember.IsNull();
-      while (!tagSetMember.IsNull()) {
-        m_tagSet.push_back(tagSetMember);
-        tagSetMember = tagSetMember.NextNode("Tag");
-      }
-
-      m_tagSetHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void Tagging::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_tagSetHasBeenSet) {
-    XmlNode tagSetParentNode = parentNode.CreateChildElement("TagSet");
-    for (const auto& item : m_tagSet) {
-      XmlNode tagSetNode = tagSetParentNode.CreateChildElement("Tag");
-      item.AddToNode(tagSetNode);
-    }
-  }
-}
+void Tagging::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

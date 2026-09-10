@@ -33,7 +33,6 @@ class RestoreRequest {
   AWS_S3_API RestoreRequest() = default;
   AWS_S3_API RestoreRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API RestoreRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{
@@ -75,9 +74,8 @@ class RestoreRequest {
 
   ///@{
   /**
-   *  <p>Amazon S3 Select is no longer available to new customers.
-   * Existing customers of Amazon S3 Select can continue to use the feature as usual.
-   * <a
+   *  <p>Amazon S3 Select is no longer available to new customers. Existing customers
+   * of Amazon S3 Select can continue to use the feature as usual. <a
    * href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
    * more</a> </p>  <p>Type of restore request.</p>
    */
@@ -129,9 +127,8 @@ class RestoreRequest {
 
   ///@{
   /**
-   *  <p>Amazon S3 Select is no longer available to new customers.
-   * Existing customers of Amazon S3 Select can continue to use the feature as usual.
-   * <a
+   *  <p>Amazon S3 Select is no longer available to new customers. Existing customers
+   * of Amazon S3 Select can continue to use the feature as usual. <a
    * href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
    * more</a> </p>  <p>Describes the parameters for Select job types.</p>
    */

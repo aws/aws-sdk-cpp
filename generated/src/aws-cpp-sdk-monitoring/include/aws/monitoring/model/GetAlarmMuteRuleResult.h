@@ -15,6 +15,7 @@
 #include <aws/monitoring/model/Rule.h>
 
 #include <utility>
+
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
@@ -205,21 +206,6 @@ class GetAlarmMuteRuleResult {
 
   ///@{
 
-  inline const Aws::String& GetRequestId() const { return m_requestId; }
-  template <typename RequestIdT = Aws::String>
-  void SetRequestId(RequestIdT&& value) {
-    m_requestIdHasBeenSet = true;
-    m_requestId = std::forward<RequestIdT>(value);
-  }
-  template <typename RequestIdT = Aws::String>
-  GetAlarmMuteRuleResult& WithRequestId(RequestIdT&& value) {
-    SetRequestId(std::forward<RequestIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-
   inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
   template <typename ResponseMetadataT = ResponseMetadata>
   void SetResponseMetadata(ResponseMetadataT&& value) {
@@ -229,6 +215,21 @@ class GetAlarmMuteRuleResult {
   template <typename ResponseMetadataT = ResponseMetadata>
   GetAlarmMuteRuleResult& WithResponseMetadata(ResponseMetadataT&& value) {
     SetResponseMetadata(std::forward<ResponseMetadataT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  GetAlarmMuteRuleResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
     return *this;
   }
   ///@}
@@ -255,9 +256,9 @@ class GetAlarmMuteRuleResult {
 
   Aws::String m_muteType;
 
-  Aws::String m_requestId;
-
   ResponseMetadata m_responseMetadata;
+
+  Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nameHasBeenSet = false;
   bool m_alarmMuteRuleArnHasBeenSet = false;
@@ -269,8 +270,8 @@ class GetAlarmMuteRuleResult {
   bool m_statusHasBeenSet = false;
   bool m_lastUpdatedTimestampHasBeenSet = false;
   bool m_muteTypeHasBeenSet = false;
-  bool m_requestIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
 };
 
 }  // namespace Model

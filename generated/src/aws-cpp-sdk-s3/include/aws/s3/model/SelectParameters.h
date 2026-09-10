@@ -22,12 +22,10 @@ namespace S3 {
 namespace Model {
 
 /**
- *  <p>Amazon S3 Select is no longer available to new customers.
- * Existing customers of Amazon S3 Select can continue to use the feature as usual.
- * <a
+ *  <p>Amazon S3 Select is no longer available to new customers. Existing customers
+ * of Amazon S3 Select can continue to use the feature as usual. <a
  * href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
- * more</a> </p>  <p>Describes the parameters for Select job types.</p>
- * <p>Learn <a
+ * more</a> </p>  <p>Describes the parameters for Select job types.</p> <p>Learn <a
  * href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">How
  * to optimize querying your data in Amazon S3</a> using <a
  * href="https://docs.aws.amazon.com/athena/latest/ug/what-is.html">Amazon
@@ -42,7 +40,6 @@ class SelectParameters {
   AWS_S3_API SelectParameters() = default;
   AWS_S3_API SelectParameters(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API SelectParameters& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{
@@ -81,12 +78,10 @@ class SelectParameters {
 
   ///@{
   /**
-   *  <p>Amazon S3 Select is no longer available to new customers.
-   * Existing customers of Amazon S3 Select can continue to use the feature as usual.
-   * <a
+   *  <p>Amazon S3 Select is no longer available to new customers. Existing customers
+   * of Amazon S3 Select can continue to use the feature as usual. <a
    * href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
-   * more</a> </p>  <p>The expression that is used to query the
-   * object.</p>
+   * more</a> </p>  <p>The expression that is used to query the object.</p>
    */
   inline const Aws::String& GetExpression() const { return m_expression; }
   inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }

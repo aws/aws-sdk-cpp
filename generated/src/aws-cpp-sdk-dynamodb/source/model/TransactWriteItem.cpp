@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/TransactWriteItem.h>
 
 #include <utility>
@@ -17,45 +20,10 @@ namespace Model {
 
 TransactWriteItem::TransactWriteItem(JsonView jsonValue) { *this = jsonValue; }
 
-TransactWriteItem& TransactWriteItem::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("ConditionCheck")) {
-    m_conditionCheck = jsonValue.GetObject("ConditionCheck");
-    m_conditionCheckHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Put")) {
-    m_put = jsonValue.GetObject("Put");
-    m_putHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Delete")) {
-    m_delete = jsonValue.GetObject("Delete");
-    m_deleteHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Update")) {
-    m_update = jsonValue.GetObject("Update");
-    m_updateHasBeenSet = true;
-  }
-  return *this;
-}
+TransactWriteItem& TransactWriteItem::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue TransactWriteItem::Jsonize() const {
   JsonValue payload;
-
-  if (m_conditionCheckHasBeenSet) {
-    payload.WithObject("ConditionCheck", m_conditionCheck.Jsonize());
-  }
-
-  if (m_putHasBeenSet) {
-    payload.WithObject("Put", m_put.Jsonize());
-  }
-
-  if (m_deleteHasBeenSet) {
-    payload.WithObject("Delete", m_delete.Jsonize());
-  }
-
-  if (m_updateHasBeenSet) {
-    payload.WithObject("Update", m_update.Jsonize());
-  }
-
   return payload;
 }
 

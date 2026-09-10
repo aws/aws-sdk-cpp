@@ -35,7 +35,6 @@ class MultipartUpload {
   AWS_S3_API MultipartUpload() = default;
   AWS_S3_API MultipartUpload(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API MultipartUpload& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{
@@ -115,8 +114,8 @@ class MultipartUpload {
   ///@{
   /**
    * <p>Specifies the owner of the object that is part of the multipart upload. </p>
-   *  <p> <b>Directory buckets</b> - The bucket owner is returned as the object
-   * owner for all the objects.</p>
+   * <p> <b>Directory buckets</b> - The bucket owner is returned as the object owner
+   * for all the objects.</p>
    */
   inline const Owner& GetOwner() const { return m_owner; }
   inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }

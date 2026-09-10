@@ -33,7 +33,6 @@ EvaluationState GetEvaluationStateForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<EvaluationState>(hashCode);
   }
-
   return EvaluationState::NOT_SET;
 }
 
@@ -52,7 +51,6 @@ Aws::String GetNameForEvaluationState(EvaluationState enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

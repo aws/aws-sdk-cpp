@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/GlobalSecondaryIndexAutoScalingUpdate.h>
 
 #include <utility>
@@ -17,29 +20,10 @@ namespace Model {
 
 GlobalSecondaryIndexAutoScalingUpdate::GlobalSecondaryIndexAutoScalingUpdate(JsonView jsonValue) { *this = jsonValue; }
 
-GlobalSecondaryIndexAutoScalingUpdate& GlobalSecondaryIndexAutoScalingUpdate::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("IndexName")) {
-    m_indexName = jsonValue.GetString("IndexName");
-    m_indexNameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ProvisionedWriteCapacityAutoScalingUpdate")) {
-    m_provisionedWriteCapacityAutoScalingUpdate = jsonValue.GetObject("ProvisionedWriteCapacityAutoScalingUpdate");
-    m_provisionedWriteCapacityAutoScalingUpdateHasBeenSet = true;
-  }
-  return *this;
-}
+GlobalSecondaryIndexAutoScalingUpdate& GlobalSecondaryIndexAutoScalingUpdate::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue GlobalSecondaryIndexAutoScalingUpdate::Jsonize() const {
   JsonValue payload;
-
-  if (m_indexNameHasBeenSet) {
-    payload.WithString("IndexName", m_indexName);
-  }
-
-  if (m_provisionedWriteCapacityAutoScalingUpdateHasBeenSet) {
-    payload.WithObject("ProvisionedWriteCapacityAutoScalingUpdate", m_provisionedWriteCapacityAutoScalingUpdate.Jsonize());
-  }
-
   return payload;
 }
 

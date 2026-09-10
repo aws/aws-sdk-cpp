@@ -45,7 +45,6 @@ ComparisonOperator GetComparisonOperatorForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<ComparisonOperator>(hashCode);
   }
-
   return ComparisonOperator::NOT_SET;
 }
 
@@ -72,7 +71,6 @@ Aws::String GetNameForComparisonOperator(ComparisonOperator enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

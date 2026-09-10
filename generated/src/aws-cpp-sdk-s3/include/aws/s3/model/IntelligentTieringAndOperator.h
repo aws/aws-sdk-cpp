@@ -32,7 +32,6 @@ class IntelligentTieringAndOperator {
   AWS_S3_API IntelligentTieringAndOperator() = default;
   AWS_S3_API IntelligentTieringAndOperator(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API IntelligentTieringAndOperator& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

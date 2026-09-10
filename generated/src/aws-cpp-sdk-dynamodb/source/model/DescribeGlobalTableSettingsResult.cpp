@@ -4,6 +4,7 @@
  */
 
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -22,26 +23,5 @@ DescribeGlobalTableSettingsResult::DescribeGlobalTableSettingsResult(const Aws::
 }
 
 DescribeGlobalTableSettingsResult& DescribeGlobalTableSettingsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_HttpResponseCode = result.GetResponseCode();
-  JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("GlobalTableName")) {
-    m_globalTableName = jsonValue.GetString("GlobalTableName");
-    m_globalTableNameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ReplicaSettings")) {
-    Aws::Utils::Array<JsonView> replicaSettingsJsonList = jsonValue.GetArray("ReplicaSettings");
-    for (unsigned replicaSettingsIndex = 0; replicaSettingsIndex < replicaSettingsJsonList.GetLength(); ++replicaSettingsIndex) {
-      m_replicaSettings.push_back(replicaSettingsJsonList[replicaSettingsIndex].AsObject());
-    }
-    m_replicaSettingsHasBeenSet = true;
-  }
-
-  const auto& headers = result.GetHeaderValueCollection();
-  const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if (requestIdIter != headers.end()) {
-    m_requestId = requestIdIter->second;
-    m_requestIdHasBeenSet = true;
-  }
-
   return *this;
 }

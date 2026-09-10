@@ -41,7 +41,7 @@ class HeadObjectResult {
   /**
    * <p>Specifies whether the object retrieved was (true) or was not (false) a Delete
    * Marker. If false, this response header does not appear in the response.</p>
-   *  <p>This functionality is not supported for directory buckets.</p>
+   * <p>This functionality is not supported for directory buckets.</p>
    */
   inline bool GetDeleteMarker() const { return m_deleteMarker; }
   inline void SetDeleteMarker(bool value) {
@@ -78,10 +78,9 @@ class HeadObjectResult {
    * <code>PutBucketLifecycleConfiguration</code> </a>), the response includes this
    * header. It includes the <code>expiry-date</code> and <code>rule-id</code>
    * key-value pairs providing object expiration information. The value of the
-   * <code>rule-id</code> is URL-encoded.</p>  <p>Object expiration information
-   * is not returned in directory buckets and this header returns the value
+   * <code>rule-id</code> is URL-encoded.</p>  <p>Object expiration information is
+   * not returned in directory buckets and this header returns the value
    * "<code>NotImplemented</code>" in all responses for directory buckets.</p>
-   *
    */
   inline const Aws::String& GetExpiration() const { return m_expiration; }
   template <typename ExpirationT = Aws::String>
@@ -110,8 +109,8 @@ class HeadObjectResult {
    * <code>ongoing-request="true"</code>.</p> <p>For more information about archiving
    * objects, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html#lifecycle-transition-general-considerations">Transitioning
-   * Objects: General Considerations</a>.</p>  <p>This functionality is not
-   * supported for directory buckets. Directory buckets only support
+   * Objects: General Considerations</a>.</p>  <p>This functionality is not supported
+   * for directory buckets. Directory buckets only support
    * <code>EXPRESS_ONEZONE</code> (the S3 Express One Zone storage class) in
    * Availability Zones and <code>ONEZONE_IA</code> (the S3 One Zone-Infrequent
    * Access storage class) in Dedicated Local Zones.</p>
@@ -438,8 +437,7 @@ class HeadObjectResult {
    * <code>x-amz-meta</code> headers. This can happen if you create metadata using an
    * API like SOAP that supports more flexible metadata than the REST API. For
    * example, using SOAP, you can create metadata whose values are not legal HTTP
-   * headers.</p>  <p>This functionality is not supported for directory
-   * buckets.</p>
+   * headers.</p>  <p>This functionality is not supported for directory buckets.</p>
    */
   inline int GetMissingMeta() const { return m_missingMeta; }
   inline void SetMissingMeta(int value) {
@@ -454,8 +452,8 @@ class HeadObjectResult {
 
   ///@{
   /**
-   * <p>Version ID of the object.</p>  <p>This functionality is not supported
-   * for directory buckets.</p>
+   * <p>Version ID of the object.</p>  <p>This functionality is not supported for
+   * directory buckets.</p>
    */
   inline const Aws::String& GetVersionId() const { return m_versionId; }
   template <typename VersionIdT = Aws::String>
@@ -577,7 +575,8 @@ class HeadObjectResult {
 
   ///@{
   /**
-   * <p>The date and time at which the object is no longer cacheable.</p>
+   * Deprecated: Please use ExpiresString instead. * <p>The date and time at which
+   * the object is no longer cacheable.</p>
    */
   inline const Aws::Utils::DateTime& GetExpires() const { return m_expires; }
   template <typename ExpiresT = Aws::Utils::DateTime>
@@ -596,8 +595,8 @@ class HeadObjectResult {
   /**
    * <p>If the bucket is configured as a website, redirects requests for this object
    * to another object in the same bucket or to an external URL. Amazon S3 stores the
-   * value of this header in the object metadata.</p>  <p>This functionality is
-   * not supported for directory buckets.</p>
+   * value of this header in the object metadata.</p>  <p>This functionality is not
+   * supported for directory buckets.</p>
    */
   inline const Aws::String& GetWebsiteRedirectLocation() const { return m_websiteRedirectLocation; }
   template <typename WebsiteRedirectLocationT = Aws::String>
@@ -615,9 +614,9 @@ class HeadObjectResult {
   ///@{
   /**
    * <p>The server-side encryption algorithm used when you store this object in
-   * Amazon S3 or Amazon FSx.</p>  <p>When accessing data stored in Amazon FSx
-   * file systems using S3 access points, the only valid server side encryption
-   * option is <code>aws:fsx</code>.</p>
+   * Amazon S3 or Amazon FSx.</p>  <p>When accessing data stored in Amazon FSx file
+   * systems using S3 access points, the only valid server side encryption option is
+   * <code>aws:fsx</code>.</p>
    */
   inline ServerSideEncryption GetServerSideEncryption() const { return m_serverSideEncryption; }
   inline void SetServerSideEncryption(ServerSideEncryption value) {
@@ -657,8 +656,8 @@ class HeadObjectResult {
   /**
    * <p>If server-side encryption with a customer-provided encryption key was
    * requested, the response will include this header to confirm the encryption
-   * algorithm that's used.</p>  <p>This functionality is not supported for
-   * directory buckets.</p>
+   * algorithm that's used.</p>  <p>This functionality is not supported for directory
+   * buckets.</p>
    */
   inline const Aws::String& GetSSECustomerAlgorithm() const { return m_sSECustomerAlgorithm; }
   template <typename SSECustomerAlgorithmT = Aws::String>
@@ -678,7 +677,7 @@ class HeadObjectResult {
    * <p>If server-side encryption with a customer-provided encryption key was
    * requested, the response will include this header to provide the round-trip
    * message integrity verification of the customer-provided encryption key.</p>
-   *  <p>This functionality is not supported for directory buckets.</p>
+   * <p>This functionality is not supported for directory buckets.</p>
    */
   inline const Aws::String& GetSSECustomerKeyMD5() const { return m_sSECustomerKeyMD5; }
   template <typename SSECustomerKeyMD5T = Aws::String>
@@ -733,8 +732,8 @@ class HeadObjectResult {
    * header for all objects except for S3 Standard storage class objects.</p> <p>For
    * more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-   * Classes</a>.</p>  <p> <b>Directory buckets </b> - Directory buckets only
-   * support <code>EXPRESS_ONEZONE</code> (the S3 Express One Zone storage class) in
+   * Classes</a>.</p>  <p> <b>Directory buckets </b> - Directory buckets only support
+   * <code>EXPRESS_ONEZONE</code> (the S3 Express One Zone storage class) in
    * Availability Zones and <code>ONEZONE_IA</code> (the S3 One Zone-Infrequent
    * Access storage class) in Dedicated Local Zones.</p>
    */
@@ -828,8 +827,8 @@ class HeadObjectResult {
    * <p>The number of tags, if any, on the object, when you have the relevant
    * permission to read object tags.</p> <p>You can use <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
-   * to retrieve the tag set associated with an object.</p>  <p>This
-   * functionality is not supported for directory buckets.</p>
+   * to retrieve the tag set associated with an object.</p>  <p>This functionality is
+   * not supported for directory buckets.</p>
    */
   inline int GetTagCount() const { return m_tagCount; }
   inline void SetTagCount(int value) {
@@ -890,8 +889,7 @@ class HeadObjectResult {
    * has never had a legal hold applied. For more information about S3 Object Lock,
    * see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object
-   * Lock</a>.</p>  <p>This functionality is not supported for directory
-   * buckets.</p>
+   * Lock</a>.</p>  <p>This functionality is not supported for directory buckets.</p>
    */
   inline ObjectLockLegalHoldStatus GetObjectLockLegalHoldStatus() const { return m_objectLockLegalHoldStatus; }
   inline void SetObjectLockLegalHoldStatus(ObjectLockLegalHoldStatus value) {
@@ -905,9 +903,7 @@ class HeadObjectResult {
   ///@}
 
   ///@{
-  /**
-   * <p>The date and time at which the object is no longer cacheable.</p>
-   */
+
   inline const Aws::String& GetExpiresString() const { return m_expiresString; }
   template <typename ExpiresStringT = Aws::String>
   void SetExpiresString(ExpiresStringT&& value) {

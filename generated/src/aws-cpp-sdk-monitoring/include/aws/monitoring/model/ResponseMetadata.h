@@ -19,6 +19,8 @@ class CborValue;
 namespace CloudWatch {
 namespace Model {
 
+/**
+ */
 class ResponseMetadata {
  public:
   AWS_CLOUDWATCH_API ResponseMetadata() = default;

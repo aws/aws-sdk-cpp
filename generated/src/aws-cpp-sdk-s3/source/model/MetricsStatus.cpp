@@ -30,7 +30,6 @@ MetricsStatus GetMetricsStatusForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<MetricsStatus>(hashCode);
   }
-
   return MetricsStatus::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForMetricsStatus(MetricsStatus enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

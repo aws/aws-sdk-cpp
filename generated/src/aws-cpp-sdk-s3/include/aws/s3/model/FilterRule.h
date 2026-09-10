@@ -37,7 +37,6 @@ class FilterRule {
   AWS_S3_API FilterRule() = default;
   AWS_S3_API FilterRule(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API FilterRule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

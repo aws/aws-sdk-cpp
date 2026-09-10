@@ -16,9 +16,6 @@
 #include <utility>
 
 namespace Aws {
-namespace Http {
-class URI;
-}  // namespace Http
 namespace S3 {
 namespace Model {
 
@@ -36,11 +33,12 @@ class CreateBucketRequest : public S3Request {
 
   AWS_S3_API Aws::String SerializePayload() const override;
 
-  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
   AWS_S3_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
   AWS_S3_API bool HasEmbeddedError(IOStream& body, const Http::HeaderValueCollection& header) const override;
+
   /**
    * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
    */
@@ -48,8 +46,8 @@ class CreateBucketRequest : public S3Request {
 
   ///@{
   /**
-   * <p>The canned ACL to apply to the bucket.</p>  <p>This functionality is
-   * not supported for directory buckets.</p>
+   * <p>The canned ACL to apply to the bucket.</p>  <p>This functionality is not
+   * supported for directory buckets.</p>
    */
   inline BucketCannedACL GetACL() const { return m_aCL; }
   inline bool ACLHasBeenSet() const { return m_aCLHasBeenSet; }
@@ -116,8 +114,7 @@ class CreateBucketRequest : public S3Request {
   ///@{
   /**
    * <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
-   * bucket.</p>  <p>This functionality is not supported for directory
-   * buckets.</p>
+   * bucket.</p>  <p>This functionality is not supported for directory buckets.</p>
    */
   inline const Aws::String& GetGrantFullControl() const { return m_grantFullControl; }
   inline bool GrantFullControlHasBeenSet() const { return m_grantFullControlHasBeenSet; }
@@ -135,8 +132,8 @@ class CreateBucketRequest : public S3Request {
 
   ///@{
   /**
-   * <p>Allows grantee to list the objects in the bucket.</p>  <p>This
-   * functionality is not supported for directory buckets.</p>
+   * <p>Allows grantee to list the objects in the bucket.</p>  <p>This functionality
+   * is not supported for directory buckets.</p>
    */
   inline const Aws::String& GetGrantRead() const { return m_grantRead; }
   inline bool GrantReadHasBeenSet() const { return m_grantReadHasBeenSet; }
@@ -154,8 +151,8 @@ class CreateBucketRequest : public S3Request {
 
   ///@{
   /**
-   * <p>Allows grantee to read the bucket ACL.</p>  <p>This functionality is
-   * not supported for directory buckets.</p>
+   * <p>Allows grantee to read the bucket ACL.</p>  <p>This functionality is not
+   * supported for directory buckets.</p>
    */
   inline const Aws::String& GetGrantReadACP() const { return m_grantReadACP; }
   inline bool GrantReadACPHasBeenSet() const { return m_grantReadACPHasBeenSet; }
@@ -175,8 +172,7 @@ class CreateBucketRequest : public S3Request {
   /**
    * <p>Allows grantee to create new objects in the bucket.</p> <p>For the bucket and
    * object owners of existing objects, also allows deletions and overwrites of those
-   * objects.</p>  <p>This functionality is not supported for directory
-   * buckets.</p>
+   * objects.</p>  <p>This functionality is not supported for directory buckets.</p>
    */
   inline const Aws::String& GetGrantWrite() const { return m_grantWrite; }
   inline bool GrantWriteHasBeenSet() const { return m_grantWriteHasBeenSet; }
@@ -214,8 +210,7 @@ class CreateBucketRequest : public S3Request {
   ///@{
   /**
    * <p>Specifies whether you want S3 Object Lock to be enabled for the new
-   * bucket.</p>  <p>This functionality is not supported for directory
-   * buckets.</p>
+   * bucket.</p>  <p>This functionality is not supported for directory buckets.</p>
    */
   inline bool GetObjectLockEnabledForBucket() const { return m_objectLockEnabledForBucket; }
   inline bool ObjectLockEnabledForBucketHasBeenSet() const { return m_objectLockEnabledForBucketHasBeenSet; }
@@ -262,7 +257,7 @@ class CreateBucketRequest : public S3Request {
    * about bucket naming restrictions, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html#account-regional-naming-rules">Account
    * regional namespace naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>
-   *  <p>This functionality is not supported for directory buckets.</p>
+   * <p>This functionality is not supported for directory buckets.</p>
    */
   inline BucketNamespace GetBucketNamespace() const { return m_bucketNamespace; }
   inline bool BucketNamespaceHasBeenSet() const { return m_bucketNamespaceHasBeenSet; }

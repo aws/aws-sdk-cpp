@@ -63,7 +63,6 @@
 #include <aws/s3/model/ChecksumAlgorithm.h>
 #include <aws/s3/model/ChecksumMode.h>
 #include <aws/s3/model/ChecksumType.h>
-#include <aws/s3/model/CloudFunctionConfiguration.h>
 #include <aws/s3/model/CommonPrefix.h>
 #include <aws/s3/model/CompleteMultipartUploadRequest.h>
 #include <aws/s3/model/CompleteMultipartUploadResult.h>
@@ -240,7 +239,6 @@
 #include <aws/s3/model/JournalTableConfigurationResult.h>
 #include <aws/s3/model/JournalTableConfigurationUpdates.h>
 #include <aws/s3/model/LambdaFunctionConfiguration.h>
-#include <aws/s3/model/LifecycleConfiguration.h>
 #include <aws/s3/model/LifecycleExpiration.h>
 #include <aws/s3/model/LifecycleRule.h>
 #include <aws/s3/model/LifecycleRuleAndOperator.h>
@@ -295,7 +293,6 @@
 #include <aws/s3/model/NoncurrentVersionExpiration.h>
 #include <aws/s3/model/NoncurrentVersionTransition.h>
 #include <aws/s3/model/NotificationConfiguration.h>
-#include <aws/s3/model/NotificationConfigurationDeprecated.h>
 #include <aws/s3/model/NotificationConfigurationFilter.h>
 #include <aws/s3/model/Object.h>
 #include <aws/s3/model/ObjectAttributes.h>
@@ -369,7 +366,6 @@
 #include <aws/s3/model/PutObjectTaggingResult.h>
 #include <aws/s3/model/PutPublicAccessBlockRequest.h>
 #include <aws/s3/model/QueueConfiguration.h>
-#include <aws/s3/model/QueueConfigurationDeprecated.h>
 #include <aws/s3/model/QuoteFields.h>
 #include <aws/s3/model/RecordExpiration.h>
 #include <aws/s3/model/RecordsEvent.h>
@@ -398,7 +394,6 @@
 #include <aws/s3/model/RestoreRequestType.h>
 #include <aws/s3/model/RestoreStatus.h>
 #include <aws/s3/model/RoutingRule.h>
-#include <aws/s3/model/Rule.h>
 #include <aws/s3/model/S3KeyFilter.h>
 #include <aws/s3/model/S3Location.h>
 #include <aws/s3/model/S3TablesBucketType.h>
@@ -437,7 +432,6 @@
 #include <aws/s3/model/Tier.h>
 #include <aws/s3/model/Tiering.h>
 #include <aws/s3/model/TopicConfiguration.h>
-#include <aws/s3/model/TopicConfigurationDeprecated.h>
 #include <aws/s3/model/Transition.h>
 #include <aws/s3/model/TransitionDefaultMinimumObjectSize.h>
 #include <aws/s3/model/TransitionStorageClass.h>

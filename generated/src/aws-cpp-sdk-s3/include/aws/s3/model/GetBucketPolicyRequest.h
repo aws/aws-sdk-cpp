@@ -12,9 +12,6 @@
 #include <utility>
 
 namespace Aws {
-namespace Http {
-class URI;
-}  // namespace Http
 namespace S3 {
 namespace Model {
 
@@ -32,11 +29,12 @@ class GetBucketPolicyRequest : public S3Request {
 
   AWS_S3_API Aws::String SerializePayload() const override;
 
-  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
   AWS_S3_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
   AWS_S3_API bool HasEmbeddedError(IOStream& body, const Http::HeaderValueCollection& header) const override;
+
   /**
    * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
    */
@@ -64,8 +62,8 @@ class GetBucketPolicyRequest : public S3Request {
    * the error code <code>InvalidAccessPointAliasError</code> is returned. For more
    * information about <code>InvalidAccessPointAliasError</code>, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
-   * of Error Codes</a>.</p>  <p>Object Lambda access points are not supported
-   * by directory buckets.</p>
+   * of Error Codes</a>.</p>  <p>Object Lambda access points are not supported by
+   * directory buckets.</p>
    */
   inline const Aws::String& GetBucket() const { return m_bucket; }
   inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
@@ -85,10 +83,10 @@ class GetBucketPolicyRequest : public S3Request {
   /**
    * <p>The account ID of the expected bucket owner. If the account ID that you
    * provide does not match the actual owner of the bucket, the request fails with
-   * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-   * <p>For directory buckets, this header is not supported in this API operation. If
-   * you specify this header, the request fails with the HTTP status code <code>501
-   * Not Implemented</code>.</p>
+   * the HTTP status code <code>403 Forbidden</code> (access denied).</p>  <p>For
+   * directory buckets, this header is not supported in this API operation. If you
+   * specify this header, the request fails with the HTTP status code <code>501 Not
+   * Implemented</code>.</p>
    */
   inline const Aws::String& GetExpectedBucketOwner() const { return m_expectedBucketOwner; }
   inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }

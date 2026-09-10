@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/ObjectLockLegalHold.h>
@@ -19,28 +20,9 @@ namespace Model {
 
 ObjectLockLegalHold::ObjectLockLegalHold(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ObjectLockLegalHold& ObjectLockLegalHold::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+ObjectLockLegalHold& ObjectLockLegalHold::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode statusNode = resultNode.FirstChild("Status");
-    if (!statusNode.IsNull()) {
-      m_status = ObjectLockLegalHoldStatusMapper::GetObjectLockLegalHoldStatusForName(
-          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
-      m_statusHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void ObjectLockLegalHold::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_statusHasBeenSet) {
-    XmlNode statusNode = parentNode.CreateChildElement("Status");
-    statusNode.SetText(ObjectLockLegalHoldStatusMapper::GetNameForObjectLockLegalHoldStatus(m_status));
-  }
-}
+void ObjectLockLegalHold::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

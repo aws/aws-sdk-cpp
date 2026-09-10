@@ -3,6 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/model/UntagResourceRequest.h>
 
@@ -17,27 +21,9 @@ Aws::String UntagResourceRequest::SerializePayload() const {
 
   // Calculate map size
   size_t mapSize = 0;
-  if (m_resourceARNHasBeenSet) {
-    mapSize++;
-  }
-  if (m_tagKeysHasBeenSet) {
-    mapSize++;
-  }
 
   encoder.WriteMapStart(mapSize);
 
-  if (m_resourceARNHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ResourceARN"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_resourceARN.c_str()));
-  }
-
-  if (m_tagKeysHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("TagKeys"));
-    encoder.WriteArrayStart(m_tagKeys.size());
-    for (const auto& item_0 : m_tagKeys) {
-      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
-    }
-  }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
   return str;
 }

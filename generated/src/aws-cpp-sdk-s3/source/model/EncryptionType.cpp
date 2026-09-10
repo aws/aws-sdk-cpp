@@ -30,7 +30,6 @@ EncryptionType GetEncryptionTypeForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<EncryptionType>(hashCode);
   }
-
   return EncryptionType::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForEncryptionType(EncryptionType enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

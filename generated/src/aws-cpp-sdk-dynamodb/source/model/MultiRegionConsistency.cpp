@@ -30,7 +30,6 @@ MultiRegionConsistency GetMultiRegionConsistencyForName(const Aws::String& name)
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<MultiRegionConsistency>(hashCode);
   }
-
   return MultiRegionConsistency::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForMultiRegionConsistency(MultiRegionConsistency enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

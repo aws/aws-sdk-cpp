@@ -30,7 +30,6 @@ InventoryIncludedObjectVersions GetInventoryIncludedObjectVersionsForName(const 
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<InventoryIncludedObjectVersions>(hashCode);
   }
-
   return InventoryIncludedObjectVersions::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForInventoryIncludedObjectVersions(InventoryIncludedObjectVer
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

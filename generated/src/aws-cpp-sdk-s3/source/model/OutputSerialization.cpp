@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/OutputSerialization.h>
@@ -19,37 +20,9 @@ namespace Model {
 
 OutputSerialization::OutputSerialization(const XmlNode& xmlNode) { *this = xmlNode; }
 
-OutputSerialization& OutputSerialization::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+OutputSerialization& OutputSerialization::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode cSVNode = resultNode.FirstChild("CSV");
-    if (!cSVNode.IsNull()) {
-      m_cSV = cSVNode;
-      m_cSVHasBeenSet = true;
-    }
-    XmlNode jSONNode = resultNode.FirstChild("JSON");
-    if (!jSONNode.IsNull()) {
-      m_jSON = jSONNode;
-      m_jSONHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void OutputSerialization::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_cSVHasBeenSet) {
-    XmlNode cSVNode = parentNode.CreateChildElement("CSV");
-    m_cSV.AddToNode(cSVNode);
-  }
-
-  if (m_jSONHasBeenSet) {
-    XmlNode jSONNode = parentNode.CreateChildElement("JSON");
-    m_jSON.AddToNode(jSONNode);
-  }
-}
+void OutputSerialization::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

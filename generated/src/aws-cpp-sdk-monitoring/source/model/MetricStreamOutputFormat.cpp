@@ -33,7 +33,6 @@ MetricStreamOutputFormat GetMetricStreamOutputFormatForName(const Aws::String& n
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<MetricStreamOutputFormat>(hashCode);
   }
-
   return MetricStreamOutputFormat::NOT_SET;
 }
 
@@ -52,7 +51,6 @@ Aws::String GetNameForMetricStreamOutputFormat(MetricStreamOutputFormat enumValu
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

@@ -31,7 +31,6 @@ class JournalTableConfigurationResult {
   AWS_S3_API JournalTableConfigurationResult() = default;
   AWS_S3_API JournalTableConfigurationResult(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API JournalTableConfigurationResult& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

@@ -3,6 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/model/GetDashboardRequest.h>
 
@@ -17,16 +21,9 @@ Aws::String GetDashboardRequest::SerializePayload() const {
 
   // Calculate map size
   size_t mapSize = 0;
-  if (m_dashboardNameHasBeenSet) {
-    mapSize++;
-  }
 
   encoder.WriteMapStart(mapSize);
 
-  if (m_dashboardNameHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DashboardName"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_dashboardName.c_str()));
-  }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
   return str;
 }

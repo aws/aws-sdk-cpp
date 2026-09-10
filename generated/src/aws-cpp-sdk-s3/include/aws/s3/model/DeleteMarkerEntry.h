@@ -30,7 +30,6 @@ class DeleteMarkerEntry {
   AWS_S3_API DeleteMarkerEntry() = default;
   AWS_S3_API DeleteMarkerEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API DeleteMarkerEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

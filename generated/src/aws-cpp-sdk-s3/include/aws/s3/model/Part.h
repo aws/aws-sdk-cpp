@@ -29,7 +29,6 @@ class Part {
   AWS_S3_API Part() = default;
   AWS_S3_API Part(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API Part& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

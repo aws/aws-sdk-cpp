@@ -28,7 +28,6 @@ class ObjectLockLegalHold {
   AWS_S3_API ObjectLockLegalHold() = default;
   AWS_S3_API ObjectLockLegalHold(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API ObjectLockLegalHold& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

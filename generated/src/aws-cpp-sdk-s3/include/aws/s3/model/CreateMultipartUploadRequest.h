@@ -21,9 +21,6 @@
 #include <utility>
 
 namespace Aws {
-namespace Http {
-class URI;
-}  // namespace Http
 namespace S3 {
 namespace Model {
 
@@ -41,11 +38,12 @@ class CreateMultipartUploadRequest : public S3Request {
 
   AWS_S3_API Aws::String SerializePayload() const override;
 
-  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
   AWS_S3_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
   AWS_S3_API bool HasEmbeddedError(IOStream& body, const Http::HeaderValueCollection& header) const override;
+
   /**
    * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
    */
@@ -64,10 +62,10 @@ class CreateMultipartUploadRequest : public S3Request {
    * access control list (ACL) on the new object. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
    * ACLs</a>. One way to grant the permissions using the request headers is to
-   * specify a canned ACL with the <code>x-amz-acl</code> request header.</p>
-   * <ul> <li> <p>This functionality is not supported for directory buckets.</p>
-   * </li> <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p>
-   * </li> </ul>
+   * specify a canned ACL with the <code>x-amz-acl</code> request header.</p>  <ul>
+   * <li> <p>This functionality is not supported for directory buckets.</p> </li>
+   * <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+   * </ul>
    */
   inline ObjectCannedACL GetACL() const { return m_aCL; }
   inline bool ACLHasBeenSet() const { return m_aCLHasBeenSet; }
@@ -106,11 +104,11 @@ class CreateMultipartUploadRequest : public S3Request {
    * SDKs, you provide the access point ARN in place of the bucket name. For more
    * information about access point ARNs, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-   * access points</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>Object
-   * Lambda access points are not supported by directory buckets.</p>  <p>
-   * <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must
-   * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
-   * takes the form <code>
+   * access points</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>Object Lambda
+   * access points are not supported by directory buckets.</p>  <p> <b>S3 on
+   * Outposts</b> - When you use this action with S3 on Outposts, you must direct
+   * requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the
+   * form <code>
    * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
    * When you use this action with S3 on Outposts, the destination bucket must be the
    * Outposts access point ARN or the access point alias. For more information about
@@ -267,14 +265,13 @@ class CreateMultipartUploadRequest : public S3Request {
    * America (São Paulo)</p> </li> </ul> <p>For a list of all the Amazon S3 supported
    * Regions and endpoints, see <a
    * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
-   * and Endpoints</a> in the Amazon Web Services General Reference.</p>
-   * </li> </ul> <p>For example, the following <code>x-amz-grant-read</code> header
-   * grants the Amazon Web Services accounts identified by account IDs permissions to
-   * read object data and its metadata:</p> <p> <code>x-amz-grant-read:
-   * id="11112222333", id="444455556666" </code> </p>  <ul> <li> <p>This
-   * functionality is not supported for directory buckets.</p> </li> <li> <p>This
-   * functionality is not supported for Amazon S3 on Outposts.</p> </li> </ul>
-   *
+   * and Endpoints</a> in the Amazon Web Services General Reference.</p>  </li> </ul>
+   * <p>For example, the following <code>x-amz-grant-read</code> header grants the
+   * Amazon Web Services accounts identified by account IDs permissions to read
+   * object data and its metadata:</p> <p> <code>x-amz-grant-read: id="11112222333",
+   * id="444455556666" </code> </p>  <ul> <li> <p>This functionality is not supported
+   * for directory buckets.</p> </li> <li> <p>This functionality is not supported for
+   * Amazon S3 on Outposts.</p> </li> </ul>
    */
   inline const Aws::String& GetGrantFullControl() const { return m_grantFullControl; }
   inline bool GrantFullControlHasBeenSet() const { return m_grantFullControlHasBeenSet; }
@@ -314,14 +311,13 @@ class CreateMultipartUploadRequest : public S3Request {
    * America (São Paulo)</p> </li> </ul> <p>For a list of all the Amazon S3 supported
    * Regions and endpoints, see <a
    * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
-   * and Endpoints</a> in the Amazon Web Services General Reference.</p>
-   * </li> </ul> <p>For example, the following <code>x-amz-grant-read</code> header
-   * grants the Amazon Web Services accounts identified by account IDs permissions to
-   * read object data and its metadata:</p> <p> <code>x-amz-grant-read:
-   * id="11112222333", id="444455556666" </code> </p>  <ul> <li> <p>This
-   * functionality is not supported for directory buckets.</p> </li> <li> <p>This
-   * functionality is not supported for Amazon S3 on Outposts.</p> </li> </ul>
-   *
+   * and Endpoints</a> in the Amazon Web Services General Reference.</p>  </li> </ul>
+   * <p>For example, the following <code>x-amz-grant-read</code> header grants the
+   * Amazon Web Services accounts identified by account IDs permissions to read
+   * object data and its metadata:</p> <p> <code>x-amz-grant-read: id="11112222333",
+   * id="444455556666" </code> </p>  <ul> <li> <p>This functionality is not supported
+   * for directory buckets.</p> </li> <li> <p>This functionality is not supported for
+   * Amazon S3 on Outposts.</p> </li> </ul>
    */
   inline const Aws::String& GetGrantRead() const { return m_grantRead; }
   inline bool GrantReadHasBeenSet() const { return m_grantReadHasBeenSet; }
@@ -361,14 +357,13 @@ class CreateMultipartUploadRequest : public S3Request {
    * America (São Paulo)</p> </li> </ul> <p>For a list of all the Amazon S3 supported
    * Regions and endpoints, see <a
    * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
-   * and Endpoints</a> in the Amazon Web Services General Reference.</p>
-   * </li> </ul> <p>For example, the following <code>x-amz-grant-read</code> header
-   * grants the Amazon Web Services accounts identified by account IDs permissions to
-   * read object data and its metadata:</p> <p> <code>x-amz-grant-read:
-   * id="11112222333", id="444455556666" </code> </p>  <ul> <li> <p>This
-   * functionality is not supported for directory buckets.</p> </li> <li> <p>This
-   * functionality is not supported for Amazon S3 on Outposts.</p> </li> </ul>
-   *
+   * and Endpoints</a> in the Amazon Web Services General Reference.</p>  </li> </ul>
+   * <p>For example, the following <code>x-amz-grant-read</code> header grants the
+   * Amazon Web Services accounts identified by account IDs permissions to read
+   * object data and its metadata:</p> <p> <code>x-amz-grant-read: id="11112222333",
+   * id="444455556666" </code> </p>  <ul> <li> <p>This functionality is not supported
+   * for directory buckets.</p> </li> <li> <p>This functionality is not supported for
+   * Amazon S3 on Outposts.</p> </li> </ul>
    */
   inline const Aws::String& GetGrantReadACP() const { return m_grantReadACP; }
   inline bool GrantReadACPHasBeenSet() const { return m_grantReadACPHasBeenSet; }
@@ -408,14 +403,13 @@ class CreateMultipartUploadRequest : public S3Request {
    * America (São Paulo)</p> </li> </ul> <p>For a list of all the Amazon S3 supported
    * Regions and endpoints, see <a
    * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
-   * and Endpoints</a> in the Amazon Web Services General Reference.</p>
-   * </li> </ul> <p>For example, the following <code>x-amz-grant-read</code> header
-   * grants the Amazon Web Services accounts identified by account IDs permissions to
-   * read object data and its metadata:</p> <p> <code>x-amz-grant-read:
-   * id="11112222333", id="444455556666" </code> </p>  <ul> <li> <p>This
-   * functionality is not supported for directory buckets.</p> </li> <li> <p>This
-   * functionality is not supported for Amazon S3 on Outposts.</p> </li> </ul>
-   *
+   * and Endpoints</a> in the Amazon Web Services General Reference.</p>  </li> </ul>
+   * <p>For example, the following <code>x-amz-grant-read</code> header grants the
+   * Amazon Web Services accounts identified by account IDs permissions to read
+   * object data and its metadata:</p> <p> <code>x-amz-grant-read: id="11112222333",
+   * id="444455556666" </code> </p>  <ul> <li> <p>This functionality is not supported
+   * for directory buckets.</p> </li> <li> <p>This functionality is not supported for
+   * Amazon S3 on Outposts.</p> </li> </ul>
    */
   inline const Aws::String& GetGrantWriteACP() const { return m_grantWriteACP; }
   inline bool GrantWriteACPHasBeenSet() const { return m_grantWriteACPHasBeenSet; }
@@ -505,25 +499,24 @@ class CreateMultipartUploadRequest : public S3Request {
    * in the <code>CreateSession</code> request. You don't need to explicitly specify
    * these encryption settings values in Zonal endpoint API calls, and Amazon S3 will
    * use the encryption settings values from the <code>CreateSession</code> request
-   * to protect new objects in the directory bucket. </p>  <p>When you use the
-   * CLI or the Amazon Web Services SDKs, for <code>CreateSession</code>, the session
-   * token refreshes automatically to avoid service interruptions when a session
-   * expires. The CLI or the Amazon Web Services SDKs use the bucket's default
-   * encryption configuration for the <code>CreateSession</code> request. It's not
-   * supported to override the encryption settings values in the
-   * <code>CreateSession</code> request. So in the Zonal endpoint API calls (except
-   * <a
+   * to protect new objects in the directory bucket. </p>  <p>When you use the CLI or
+   * the Amazon Web Services SDKs, for <code>CreateSession</code>, the session token
+   * refreshes automatically to avoid service interruptions when a session expires.
+   * The CLI or the Amazon Web Services SDKs use the bucket's default encryption
+   * configuration for the <code>CreateSession</code> request. It's not supported to
+   * override the encryption settings values in the <code>CreateSession</code>
+   * request. So in the Zonal endpoint API calls (except <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>
    * and <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>),
    * the encryption request headers must match the default encryption configuration
-   * of the directory bucket. </p>  </li> <li> <p> <b>S3 access points for
-   * Amazon FSx </b> - When accessing data stored in Amazon FSx file systems using S3
-   * access points, the only valid server side encryption option is
-   * <code>aws:fsx</code>. All Amazon FSx file systems have encryption configured by
-   * default and are encrypted at rest. Data is automatically encrypted before being
-   * written to the file system, and automatically decrypted as it is read. These
-   * processes are handled transparently by Amazon FSx.</p> </li> </ul>
+   * of the directory bucket. </p>  </li> <li> <p> <b>S3 access points for Amazon FSx
+   * </b> - When accessing data stored in Amazon FSx file systems using S3 access
+   * points, the only valid server side encryption option is <code>aws:fsx</code>.
+   * All Amazon FSx file systems have encryption configured by default and are
+   * encrypted at rest. Data is automatically encrypted before being written to the
+   * file system, and automatically decrypted as it is read. These processes are
+   * handled transparently by Amazon FSx.</p> </li> </ul>
    */
   inline ServerSideEncryption GetServerSideEncryption() const { return m_serverSideEncryption; }
   inline bool ServerSideEncryptionHasBeenSet() const { return m_serverSideEncryptionHasBeenSet; }
@@ -544,12 +537,11 @@ class CreateMultipartUploadRequest : public S3Request {
    * availability. Depending on performance needs, you can specify a different
    * Storage Class. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-   * Classes</a> in the <i>Amazon S3 User Guide</i>.</p>  <ul> <li>
-   * <p>Directory buckets only support <code>EXPRESS_ONEZONE</code> (the S3 Express
-   * One Zone storage class) in Availability Zones and <code>ONEZONE_IA</code> (the
-   * S3 One Zone-Infrequent Access storage class) in Dedicated Local Zones.</p> </li>
-   * <li> <p>Amazon S3 on Outposts only uses the OUTPOSTS Storage Class.</p> </li>
-   * </ul>
+   * Classes</a> in the <i>Amazon S3 User Guide</i>.</p>  <ul> <li> <p>Directory
+   * buckets only support <code>EXPRESS_ONEZONE</code> (the S3 Express One Zone
+   * storage class) in Availability Zones and <code>ONEZONE_IA</code> (the S3 One
+   * Zone-Infrequent Access storage class) in Dedicated Local Zones.</p> </li> <li>
+   * <p>Amazon S3 on Outposts only uses the OUTPOSTS Storage Class.</p> </li> </ul>
    */
   inline StorageClass GetStorageClass() const { return m_storageClass; }
   inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
@@ -567,8 +559,8 @@ class CreateMultipartUploadRequest : public S3Request {
   /**
    * <p>If the bucket is configured as a website, redirects requests for this object
    * to another object in the same bucket or to an external URL. Amazon S3 stores the
-   * value of this header in the object metadata.</p>  <p>This functionality is
-   * not supported for directory buckets.</p>
+   * value of this header in the object metadata.</p>  <p>This functionality is not
+   * supported for directory buckets.</p>
    */
   inline const Aws::String& GetWebsiteRedirectLocation() const { return m_websiteRedirectLocation; }
   inline bool WebsiteRedirectLocationHasBeenSet() const { return m_websiteRedirectLocationHasBeenSet; }
@@ -587,8 +579,7 @@ class CreateMultipartUploadRequest : public S3Request {
   ///@{
   /**
    * <p>Specifies the algorithm to use when encrypting the object (for example,
-   * AES256).</p>  <p>This functionality is not supported for directory
-   * buckets.</p>
+   * AES256).</p>  <p>This functionality is not supported for directory buckets.</p>
    */
   inline const Aws::String& GetSSECustomerAlgorithm() const { return m_sSECustomerAlgorithm; }
   inline bool SSECustomerAlgorithmHasBeenSet() const { return m_sSECustomerAlgorithmHasBeenSet; }
@@ -631,8 +622,8 @@ class CreateMultipartUploadRequest : public S3Request {
   /**
    * <p>Specifies the 128-bit MD5 digest of the customer-provided encryption key
    * according to RFC 1321. Amazon S3 uses this header for a message integrity check
-   * to ensure that the encryption key was transmitted without error.</p>
-   * <p>This functionality is not supported for directory buckets.</p>
+   * to ensure that the encryption key was transmitted without error.</p>  <p>This
+   * functionality is not supported for directory buckets.</p>
    */
   inline const Aws::String& GetSSECustomerKeyMD5() const { return m_sSECustomerKeyMD5; }
   inline bool SSECustomerKeyMD5HasBeenSet() const { return m_sSECustomerKeyMD5HasBeenSet; }
@@ -784,8 +775,7 @@ class CreateMultipartUploadRequest : public S3Request {
   ///@{
   /**
    * <p>Specifies the Object Lock mode that you want to apply to the uploaded
-   * object.</p>  <p>This functionality is not supported for directory
-   * buckets.</p>
+   * object.</p>  <p>This functionality is not supported for directory buckets.</p>
    */
   inline ObjectLockMode GetObjectLockMode() const { return m_objectLockMode; }
   inline bool ObjectLockModeHasBeenSet() const { return m_objectLockModeHasBeenSet; }
@@ -802,7 +792,7 @@ class CreateMultipartUploadRequest : public S3Request {
   ///@{
   /**
    * <p>Specifies the date and time when you want the Object Lock to expire.</p>
-   *  <p>This functionality is not supported for directory buckets.</p>
+   * <p>This functionality is not supported for directory buckets.</p>
    */
   inline const Aws::Utils::DateTime& GetObjectLockRetainUntilDate() const { return m_objectLockRetainUntilDate; }
   inline bool ObjectLockRetainUntilDateHasBeenSet() const { return m_objectLockRetainUntilDateHasBeenSet; }
@@ -821,7 +811,7 @@ class CreateMultipartUploadRequest : public S3Request {
   ///@{
   /**
    * <p>Specifies whether you want to apply a legal hold to the uploaded object.</p>
-   *  <p>This functionality is not supported for directory buckets.</p>
+   * <p>This functionality is not supported for directory buckets.</p>
    */
   inline ObjectLockLegalHoldStatus GetObjectLockLegalHoldStatus() const { return m_objectLockLegalHoldStatus; }
   inline bool ObjectLockLegalHoldStatusHasBeenSet() const { return m_objectLockLegalHoldStatusHasBeenSet; }

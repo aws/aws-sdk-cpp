@@ -38,9 +38,7 @@ class GetObjectTorrentResult {
    */
   inline Aws::IOStream& GetBody() const { return m_body.GetUnderlyingStream(); }
   inline void ReplaceBody(Aws::IOStream* body) { m_body = Aws::Utils::Stream::ResponseStream(body); }
-
   ///@}
-
   ///@{
 
   inline RequestCharged GetRequestCharged() const { return m_requestCharged; }
@@ -72,7 +70,6 @@ class GetObjectTorrentResult {
 
  private:
   Aws::Utils::Stream::ResponseStream m_body{};
-
   RequestCharged m_requestCharged{RequestCharged::NOT_SET};
 
   Aws::String m_requestId;

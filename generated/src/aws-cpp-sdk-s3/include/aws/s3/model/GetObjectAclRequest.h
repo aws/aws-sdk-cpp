@@ -13,9 +13,6 @@
 #include <utility>
 
 namespace Aws {
-namespace Http {
-class URI;
-}  // namespace Http
 namespace S3 {
 namespace Model {
 
@@ -33,11 +30,12 @@ class GetObjectAclRequest : public S3Request {
 
   AWS_S3_API Aws::String SerializePayload() const override;
 
-  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
   AWS_S3_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
   AWS_S3_API bool HasEmbeddedError(IOStream& body, const Http::HeaderValueCollection& header) const override;
+
   /**
    * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
    */
@@ -94,8 +92,8 @@ class GetObjectAclRequest : public S3Request {
 
   ///@{
   /**
-   * <p>Version ID used to reference a specific version of the object.</p>
-   * <p>This functionality is not supported for directory buckets.</p>
+   * <p>Version ID used to reference a specific version of the object.</p>  <p>This
+   * functionality is not supported for directory buckets.</p>
    */
   inline const Aws::String& GetVersionId() const { return m_versionId; }
   inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }

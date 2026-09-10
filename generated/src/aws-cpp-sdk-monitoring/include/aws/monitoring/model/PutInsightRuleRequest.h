@@ -132,10 +132,10 @@ class PutInsightRuleRequest : public CloudWatchRequest {
    * groups that have transformers will be evaluated by Contributor Insights after
    * being transformed. Log groups that don't have transformers will still have their
    * original log events evaluated by Contributor Insights.</p> <p>The default is
-   * <code>false</code> </p>  <p>If a log group has a transformer, and
-   * transformation fails for some log events, those log events won't be evaluated by
-   * Contributor Insights. For information about investigating log transformation
-   * failures, see <a
+   * <code>false</code> </p>  <p>If a log group has a transformer, and transformation
+   * fails for some log events, those log events won't be evaluated by Contributor
+   * Insights. For information about investigating log transformation failures, see
+   * <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Transformation-Errors-Metrics.html">Transformation
    * metrics and errors</a>.</p>
    */

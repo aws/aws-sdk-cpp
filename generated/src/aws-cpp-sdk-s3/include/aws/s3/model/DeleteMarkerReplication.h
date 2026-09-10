@@ -30,8 +30,8 @@ namespace Model {
  * Rule Configuration</a>. </p> <p>For more information about delete marker
  * replication, see <a
  * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/delete-marker-replication.html">Basic
- * Rule Configuration</a>. </p>  <p>If you are using an earlier version of
- * the replication configuration, Amazon S3 handles replication of delete markers
+ * Rule Configuration</a>. </p>  <p>If you are using an earlier version of the
+ * replication configuration, Amazon S3 handles replication of delete markers
  * differently. For more information, see <a
  * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-backward-compat-considerations">Backward
  * Compatibility</a>.</p> <p><h3>See Also:</h3>   <a
@@ -43,13 +43,12 @@ class DeleteMarkerReplication {
   AWS_S3_API DeleteMarkerReplication() = default;
   AWS_S3_API DeleteMarkerReplication(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API DeleteMarkerReplication& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{
   /**
-   * <p>Indicates whether to replicate delete markers.</p>  <p>Indicates
-   * whether to replicate delete markers.</p>
+   * <p>Indicates whether to replicate delete markers.</p>  <p>Indicates whether to
+   * replicate delete markers.</p>
    */
   inline DeleteMarkerReplicationStatus GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

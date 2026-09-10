@@ -36,7 +36,6 @@ class S3Location {
   AWS_S3_API S3Location() = default;
   AWS_S3_API S3Location(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API S3Location& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

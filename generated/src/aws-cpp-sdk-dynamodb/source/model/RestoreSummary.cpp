@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/RestoreSummary.h>
 
 #include <utility>
@@ -17,45 +20,10 @@ namespace Model {
 
 RestoreSummary::RestoreSummary(JsonView jsonValue) { *this = jsonValue; }
 
-RestoreSummary& RestoreSummary::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("SourceBackupArn")) {
-    m_sourceBackupArn = jsonValue.GetString("SourceBackupArn");
-    m_sourceBackupArnHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("SourceTableArn")) {
-    m_sourceTableArn = jsonValue.GetString("SourceTableArn");
-    m_sourceTableArnHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("RestoreDateTime")) {
-    m_restoreDateTime = jsonValue.GetDouble("RestoreDateTime");
-    m_restoreDateTimeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("RestoreInProgress")) {
-    m_restoreInProgress = jsonValue.GetBool("RestoreInProgress");
-    m_restoreInProgressHasBeenSet = true;
-  }
-  return *this;
-}
+RestoreSummary& RestoreSummary::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue RestoreSummary::Jsonize() const {
   JsonValue payload;
-
-  if (m_sourceBackupArnHasBeenSet) {
-    payload.WithString("SourceBackupArn", m_sourceBackupArn);
-  }
-
-  if (m_sourceTableArnHasBeenSet) {
-    payload.WithString("SourceTableArn", m_sourceTableArn);
-  }
-
-  if (m_restoreDateTimeHasBeenSet) {
-    payload.WithDouble("RestoreDateTime", m_restoreDateTime.SecondsWithMSPrecision());
-  }
-
-  if (m_restoreInProgressHasBeenSet) {
-    payload.WithBool("RestoreInProgress", m_restoreInProgress);
-  }
-
   return payload;
 }
 

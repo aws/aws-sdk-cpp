@@ -30,7 +30,6 @@ class Tiering {
   AWS_S3_API Tiering() = default;
   AWS_S3_API Tiering(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API Tiering& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

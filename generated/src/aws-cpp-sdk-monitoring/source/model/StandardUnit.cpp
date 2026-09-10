@@ -105,7 +105,6 @@ StandardUnit GetStandardUnitForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<StandardUnit>(hashCode);
   }
-
   return StandardUnit::NOT_SET;
 }
 
@@ -172,7 +171,6 @@ Aws::String GetNameForStandardUnit(StandardUnit enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

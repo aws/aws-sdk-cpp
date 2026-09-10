@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/sqs/model/DeleteMessageBatchResultEntry.h>
 
 #include <utility>
@@ -17,21 +20,10 @@ namespace Model {
 
 DeleteMessageBatchResultEntry::DeleteMessageBatchResultEntry(JsonView jsonValue) { *this = jsonValue; }
 
-DeleteMessageBatchResultEntry& DeleteMessageBatchResultEntry::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("Id")) {
-    m_id = jsonValue.GetString("Id");
-    m_idHasBeenSet = true;
-  }
-  return *this;
-}
+DeleteMessageBatchResultEntry& DeleteMessageBatchResultEntry::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue DeleteMessageBatchResultEntry::Jsonize() const {
   JsonValue payload;
-
-  if (m_idHasBeenSet) {
-    payload.WithString("Id", m_id);
-  }
-
   return payload;
 }
 

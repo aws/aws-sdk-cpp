@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/FailureException.h>
 
 #include <utility>
@@ -17,29 +20,10 @@ namespace Model {
 
 FailureException::FailureException(JsonView jsonValue) { *this = jsonValue; }
 
-FailureException& FailureException::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("ExceptionName")) {
-    m_exceptionName = jsonValue.GetString("ExceptionName");
-    m_exceptionNameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ExceptionDescription")) {
-    m_exceptionDescription = jsonValue.GetString("ExceptionDescription");
-    m_exceptionDescriptionHasBeenSet = true;
-  }
-  return *this;
-}
+FailureException& FailureException::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue FailureException::Jsonize() const {
   JsonValue payload;
-
-  if (m_exceptionNameHasBeenSet) {
-    payload.WithString("ExceptionName", m_exceptionName);
-  }
-
-  if (m_exceptionDescriptionHasBeenSet) {
-    payload.WithString("ExceptionDescription", m_exceptionDescription);
-  }
-
   return payload;
 }
 

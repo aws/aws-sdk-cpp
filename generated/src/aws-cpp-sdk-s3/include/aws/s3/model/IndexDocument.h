@@ -28,7 +28,6 @@ class IndexDocument {
   AWS_S3_API IndexDocument() = default;
   AWS_S3_API IndexDocument(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API IndexDocument& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{
@@ -37,9 +36,9 @@ class IndexDocument {
    * endpoint. (For example, if the suffix is <code>index.html</code> and you make a
    * request to <code>samplebucket/images/</code>, the data that is returned will be
    * for the object with the key name <code>images/index.html</code>.) The suffix
-   * must not be empty and must not include a slash character.</p>
-   * <p>Replacement must be made for object keys containing special characters (such
-   * as carriage returns) when using XML requests. For more information, see <a
+   * must not be empty and must not include a slash character.</p>  <p>Replacement
+   * must be made for object keys containing special characters (such as carriage
+   * returns) when using XML requests. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
    * XML related object key constraints</a>.</p>
    */

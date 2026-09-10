@@ -33,7 +33,6 @@ Type GetTypeForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<Type>(hashCode);
   }
-
   return Type::NOT_SET;
 }
 
@@ -52,7 +51,6 @@ Aws::String GetNameForType(Type enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

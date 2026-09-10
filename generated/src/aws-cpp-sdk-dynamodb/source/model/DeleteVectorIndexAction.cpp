@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/DeleteVectorIndexAction.h>
 
 #include <utility>
@@ -17,21 +20,10 @@ namespace Model {
 
 DeleteVectorIndexAction::DeleteVectorIndexAction(JsonView jsonValue) { *this = jsonValue; }
 
-DeleteVectorIndexAction& DeleteVectorIndexAction::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("IndexName")) {
-    m_indexName = jsonValue.GetString("IndexName");
-    m_indexNameHasBeenSet = true;
-  }
-  return *this;
-}
+DeleteVectorIndexAction& DeleteVectorIndexAction::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue DeleteVectorIndexAction::Jsonize() const {
   JsonValue payload;
-
-  if (m_indexNameHasBeenSet) {
-    payload.WithString("IndexName", m_indexName);
-  }
-
   return payload;
 }
 

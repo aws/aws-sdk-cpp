@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/NoncurrentVersionExpiration.h>
@@ -19,43 +20,9 @@ namespace Model {
 
 NoncurrentVersionExpiration::NoncurrentVersionExpiration(const XmlNode& xmlNode) { *this = xmlNode; }
 
-NoncurrentVersionExpiration& NoncurrentVersionExpiration::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+NoncurrentVersionExpiration& NoncurrentVersionExpiration::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode noncurrentDaysNode = resultNode.FirstChild("NoncurrentDays");
-    if (!noncurrentDaysNode.IsNull()) {
-      m_noncurrentDays = StringUtils::ConvertToInt32(
-          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(noncurrentDaysNode.GetText()).c_str()).c_str());
-      m_noncurrentDaysHasBeenSet = true;
-    }
-    XmlNode newerNoncurrentVersionsNode = resultNode.FirstChild("NewerNoncurrentVersions");
-    if (!newerNoncurrentVersionsNode.IsNull()) {
-      m_newerNoncurrentVersions = StringUtils::ConvertToInt32(
-          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(newerNoncurrentVersionsNode.GetText()).c_str()).c_str());
-      m_newerNoncurrentVersionsHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void NoncurrentVersionExpiration::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_noncurrentDaysHasBeenSet) {
-    XmlNode noncurrentDaysNode = parentNode.CreateChildElement("NoncurrentDays");
-    ss << m_noncurrentDays;
-    noncurrentDaysNode.SetText(ss.str());
-    ss.str("");
-  }
-
-  if (m_newerNoncurrentVersionsHasBeenSet) {
-    XmlNode newerNoncurrentVersionsNode = parentNode.CreateChildElement("NewerNoncurrentVersions");
-    ss << m_newerNoncurrentVersions;
-    newerNoncurrentVersionsNode.SetText(ss.str());
-    ss.str("");
-  }
-}
+void NoncurrentVersionExpiration::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

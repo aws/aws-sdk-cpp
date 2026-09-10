@@ -33,7 +33,6 @@ class TopicConfiguration {
   AWS_S3_API TopicConfiguration() = default;
   AWS_S3_API TopicConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API TopicConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

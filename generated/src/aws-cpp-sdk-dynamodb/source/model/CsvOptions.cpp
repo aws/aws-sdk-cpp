@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/CsvOptions.h>
 
 #include <utility>
@@ -17,36 +20,10 @@ namespace Model {
 
 CsvOptions::CsvOptions(JsonView jsonValue) { *this = jsonValue; }
 
-CsvOptions& CsvOptions::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("Delimiter")) {
-    m_delimiter = jsonValue.GetString("Delimiter");
-    m_delimiterHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("HeaderList")) {
-    Aws::Utils::Array<JsonView> headerListJsonList = jsonValue.GetArray("HeaderList");
-    for (unsigned headerListIndex = 0; headerListIndex < headerListJsonList.GetLength(); ++headerListIndex) {
-      m_headerList.push_back(headerListJsonList[headerListIndex].AsString());
-    }
-    m_headerListHasBeenSet = true;
-  }
-  return *this;
-}
+CsvOptions& CsvOptions::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue CsvOptions::Jsonize() const {
   JsonValue payload;
-
-  if (m_delimiterHasBeenSet) {
-    payload.WithString("Delimiter", m_delimiter);
-  }
-
-  if (m_headerListHasBeenSet) {
-    Aws::Utils::Array<JsonValue> headerListJsonList(m_headerList.size());
-    for (unsigned headerListIndex = 0; headerListIndex < headerListJsonList.GetLength(); ++headerListIndex) {
-      headerListJsonList[headerListIndex].AsString(m_headerList[headerListIndex]);
-    }
-    payload.WithArray("HeaderList", std::move(headerListJsonList));
-  }
-
   return payload;
 }
 

@@ -30,7 +30,6 @@ class CompletedMultipartUpload {
   AWS_S3_API CompletedMultipartUpload() = default;
   AWS_S3_API CompletedMultipartUpload(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API CompletedMultipartUpload& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

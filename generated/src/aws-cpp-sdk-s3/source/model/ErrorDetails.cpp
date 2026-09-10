@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/ErrorDetails.h>
@@ -19,37 +20,9 @@ namespace Model {
 
 ErrorDetails::ErrorDetails(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ErrorDetails& ErrorDetails::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+ErrorDetails& ErrorDetails::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode errorCodeNode = resultNode.FirstChild("ErrorCode");
-    if (!errorCodeNode.IsNull()) {
-      m_errorCode = Aws::Utils::Xml::DecodeEscapedXmlText(errorCodeNode.GetText());
-      m_errorCodeHasBeenSet = true;
-    }
-    XmlNode errorMessageNode = resultNode.FirstChild("ErrorMessage");
-    if (!errorMessageNode.IsNull()) {
-      m_errorMessage = Aws::Utils::Xml::DecodeEscapedXmlText(errorMessageNode.GetText());
-      m_errorMessageHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void ErrorDetails::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_errorCodeHasBeenSet) {
-    XmlNode errorCodeNode = parentNode.CreateChildElement("ErrorCode");
-    errorCodeNode.SetText(m_errorCode);
-  }
-
-  if (m_errorMessageHasBeenSet) {
-    XmlNode errorMessageNode = parentNode.CreateChildElement("ErrorMessage");
-    errorMessageNode.SetText(m_errorMessage);
-  }
-}
+void ErrorDetails::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

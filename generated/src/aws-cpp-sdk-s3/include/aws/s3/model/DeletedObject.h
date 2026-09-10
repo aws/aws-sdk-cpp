@@ -28,7 +28,6 @@ class DeletedObject {
   AWS_S3_API DeletedObject() = default;
   AWS_S3_API DeletedObject(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API DeletedObject& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

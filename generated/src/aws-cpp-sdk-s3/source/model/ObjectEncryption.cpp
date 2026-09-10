@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/ObjectEncryption.h>
@@ -19,27 +20,9 @@ namespace Model {
 
 ObjectEncryption::ObjectEncryption(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ObjectEncryption& ObjectEncryption::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+ObjectEncryption& ObjectEncryption::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode sSEKMSNode = resultNode.FirstChild("SSE-KMS");
-    if (!sSEKMSNode.IsNull()) {
-      m_sSEKMS = sSEKMSNode;
-      m_sSEKMSHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void ObjectEncryption::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_sSEKMSHasBeenSet) {
-    XmlNode sSEKMSNode = parentNode.CreateChildElement("SSE-KMS");
-    m_sSEKMS.AddToNode(sSEKMSNode);
-  }
-}
+void ObjectEncryption::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

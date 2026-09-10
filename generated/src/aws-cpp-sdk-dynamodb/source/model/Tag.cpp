@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/Tag.h>
 
 #include <utility>
@@ -17,29 +20,10 @@ namespace Model {
 
 Tag::Tag(JsonView jsonValue) { *this = jsonValue; }
 
-Tag& Tag::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("Key")) {
-    m_key = jsonValue.GetString("Key");
-    m_keyHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Value")) {
-    m_value = jsonValue.GetString("Value");
-    m_valueHasBeenSet = true;
-  }
-  return *this;
-}
+Tag& Tag::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue Tag::Jsonize() const {
   JsonValue payload;
-
-  if (m_keyHasBeenSet) {
-    payload.WithString("Key", m_key);
-  }
-
-  if (m_valueHasBeenSet) {
-    payload.WithString("Value", m_value);
-  }
-
   return payload;
 }
 

@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/sqs/model/SendMessageBatchResultEntry.h>
 
 #include <utility>
@@ -17,61 +20,10 @@ namespace Model {
 
 SendMessageBatchResultEntry::SendMessageBatchResultEntry(JsonView jsonValue) { *this = jsonValue; }
 
-SendMessageBatchResultEntry& SendMessageBatchResultEntry::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("Id")) {
-    m_id = jsonValue.GetString("Id");
-    m_idHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("MessageId")) {
-    m_messageId = jsonValue.GetString("MessageId");
-    m_messageIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("MD5OfMessageBody")) {
-    m_mD5OfMessageBody = jsonValue.GetString("MD5OfMessageBody");
-    m_mD5OfMessageBodyHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("MD5OfMessageAttributes")) {
-    m_mD5OfMessageAttributes = jsonValue.GetString("MD5OfMessageAttributes");
-    m_mD5OfMessageAttributesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("MD5OfMessageSystemAttributes")) {
-    m_mD5OfMessageSystemAttributes = jsonValue.GetString("MD5OfMessageSystemAttributes");
-    m_mD5OfMessageSystemAttributesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("SequenceNumber")) {
-    m_sequenceNumber = jsonValue.GetString("SequenceNumber");
-    m_sequenceNumberHasBeenSet = true;
-  }
-  return *this;
-}
+SendMessageBatchResultEntry& SendMessageBatchResultEntry::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue SendMessageBatchResultEntry::Jsonize() const {
   JsonValue payload;
-
-  if (m_idHasBeenSet) {
-    payload.WithString("Id", m_id);
-  }
-
-  if (m_messageIdHasBeenSet) {
-    payload.WithString("MessageId", m_messageId);
-  }
-
-  if (m_mD5OfMessageBodyHasBeenSet) {
-    payload.WithString("MD5OfMessageBody", m_mD5OfMessageBody);
-  }
-
-  if (m_mD5OfMessageAttributesHasBeenSet) {
-    payload.WithString("MD5OfMessageAttributes", m_mD5OfMessageAttributes);
-  }
-
-  if (m_mD5OfMessageSystemAttributesHasBeenSet) {
-    payload.WithString("MD5OfMessageSystemAttributes", m_mD5OfMessageSystemAttributes);
-  }
-
-  if (m_sequenceNumberHasBeenSet) {
-    payload.WithString("SequenceNumber", m_sequenceNumber);
-  }
-
   return payload;
 }
 

@@ -30,7 +30,6 @@ KeyType GetKeyTypeForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<KeyType>(hashCode);
   }
-
   return KeyType::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForKeyType(KeyType enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

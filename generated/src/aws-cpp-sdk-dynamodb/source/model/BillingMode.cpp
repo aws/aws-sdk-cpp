@@ -30,7 +30,6 @@ BillingMode GetBillingModeForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<BillingMode>(hashCode);
   }
-
   return BillingMode::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForBillingMode(BillingMode enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

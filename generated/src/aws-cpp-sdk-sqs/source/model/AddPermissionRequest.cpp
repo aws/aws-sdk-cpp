@@ -3,44 +3,22 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/sqs/model/AddPermissionRequest.h>
 
+#include <numeric>
 #include <utility>
 
 using namespace Aws::SQS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AddPermissionRequest::SerializePayload() const {
-  JsonValue payload;
-
-  if (m_queueUrlHasBeenSet) {
-    payload.WithString("QueueUrl", m_queueUrl);
-  }
-
-  if (m_labelHasBeenSet) {
-    payload.WithString("Label", m_label);
-  }
-
-  if (m_aWSAccountIdsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> aWSAccountIdsJsonList(m_aWSAccountIds.size());
-    for (unsigned aWSAccountIdsIndex = 0; aWSAccountIdsIndex < aWSAccountIdsJsonList.GetLength(); ++aWSAccountIdsIndex) {
-      aWSAccountIdsJsonList[aWSAccountIdsIndex].AsString(m_aWSAccountIds[aWSAccountIdsIndex]);
-    }
-    payload.WithArray("AWSAccountIds", std::move(aWSAccountIdsJsonList));
-  }
-
-  if (m_actionsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> actionsJsonList(m_actions.size());
-    for (unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex) {
-      actionsJsonList[actionsIndex].AsString(m_actions[actionsIndex]);
-    }
-    payload.WithArray("Actions", std::move(actionsJsonList));
-  }
-
-  return payload.View().WriteReadable();
-}
+Aws::String AddPermissionRequest::SerializePayload() const { return "{}"; }
 
 Aws::Http::HeaderValueCollection AddPermissionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;

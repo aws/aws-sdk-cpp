@@ -3,6 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/model/ListAlarmMuteRulesRequest.h>
 
@@ -17,43 +21,9 @@ Aws::String ListAlarmMuteRulesRequest::SerializePayload() const {
 
   // Calculate map size
   size_t mapSize = 0;
-  if (m_alarmNameHasBeenSet) {
-    mapSize++;
-  }
-  if (m_statusesHasBeenSet) {
-    mapSize++;
-  }
-  if (m_maxRecordsHasBeenSet) {
-    mapSize++;
-  }
-  if (m_nextTokenHasBeenSet) {
-    mapSize++;
-  }
 
   encoder.WriteMapStart(mapSize);
 
-  if (m_alarmNameHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AlarmName"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_alarmName.c_str()));
-  }
-
-  if (m_statusesHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Statuses"));
-    encoder.WriteArrayStart(m_statuses.size());
-    for (const auto& item_0 : m_statuses) {
-      encoder.WriteText(Aws::Crt::ByteCursorFromCString(AlarmMuteRuleStatusMapper::GetNameForAlarmMuteRuleStatus(item_0).c_str()));
-    }
-  }
-
-  if (m_maxRecordsHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MaxRecords"));
-    (m_maxRecords >= 0) ? encoder.WriteUInt(m_maxRecords) : encoder.WriteNegInt(m_maxRecords);
-  }
-
-  if (m_nextTokenHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NextToken"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_nextToken.c_str()));
-  }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
   return str;
 }

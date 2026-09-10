@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/cbor/CborValue.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/model/Rule.h>
 
@@ -19,76 +22,13 @@ namespace Model {
 Rule::Rule(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
 Rule& Rule::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
-  if (decoder != nullptr) {
-    auto initialMapType = decoder->PeekType();
-    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
-      if (initialMapType.value() == CborType::MapStart) {
-        auto mapSize = decoder->PopNextMapStart();
-        if (mapSize.has_value()) {
-          for (size_t i = 0; i < mapSize.value(); ++i) {
-            auto initialKey = decoder->PopNextTextVal();
-            if (initialKey.has_value()) {
-              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
-
-              if (initialKeyStr == "Schedule") {
-                m_schedule = Schedule(decoder);
-                m_scheduleHasBeenSet = true;
-              } else {
-                // Unknown key, skip the value
-                decoder->ConsumeNextWholeDataItem();
-              }
-              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
-                AWS_LOG_ERROR("Rule", "Invalid data received for %s", initialKeyStr.c_str());
-                break;
-              }
-            }
-          }
-        }
-      } else  // IndefMapStart
-      {
-        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
-        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-          auto outerMapNextType = decoder->PeekType();
-          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
-            if (outerMapNextType.has_value()) {
-              decoder->ConsumeNextSingleElement();  // consume the Break
-            }
-            break;
-          }
-
-          auto initialKey = decoder->PopNextTextVal();
-          if (initialKey.has_value()) {
-            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
-
-            if (initialKeyStr == "Schedule") {
-              m_schedule = Schedule(decoder);
-              m_scheduleHasBeenSet = true;
-            } else {
-              // Unknown key, skip the value
-              decoder->ConsumeNextWholeDataItem();
-            }
-          }
-        }
-      }
-    }
-  }
-
+  AWS_UNREFERENCED_PARAM(decoder);
   return *this;
 }
 
 void Rule::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
-  // Calculate map size
   size_t mapSize = 0;
-  if (m_scheduleHasBeenSet) {
-    mapSize++;
-  }
-
   encoder.WriteMapStart(mapSize);
-
-  if (m_scheduleHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Schedule"));
-    m_schedule.CborEncode(encoder);
-  }
 }
 
 }  // namespace Model

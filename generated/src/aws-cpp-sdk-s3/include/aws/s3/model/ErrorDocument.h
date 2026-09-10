@@ -28,14 +28,13 @@ class ErrorDocument {
   AWS_S3_API ErrorDocument() = default;
   AWS_S3_API ErrorDocument(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API ErrorDocument& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{
   /**
-   * <p>The object key name to use when a 4XX class error occurs.</p>
-   * <p>Replacement must be made for object keys containing special characters (such
-   * as carriage returns) when using XML requests. For more information, see <a
+   * <p>The object key name to use when a 4XX class error occurs.</p>  <p>Replacement
+   * must be made for object keys containing special characters (such as carriage
+   * returns) when using XML requests. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
    * XML related object key constraints</a>.</p>
    */

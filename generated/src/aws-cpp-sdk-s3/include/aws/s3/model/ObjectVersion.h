@@ -35,7 +35,6 @@ class ObjectVersion {
   AWS_S3_API ObjectVersion() = default;
   AWS_S3_API ObjectVersion(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API ObjectVersion& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

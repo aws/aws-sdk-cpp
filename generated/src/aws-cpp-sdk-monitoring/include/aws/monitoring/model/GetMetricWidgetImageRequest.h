@@ -62,21 +62,19 @@ class GetMetricWidgetImageRequest : public CloudWatchRequest {
    * default is <code>png</code>. If you specify <code>png</code>, the API returns an
    * HTTP response with the content-type set to <code>text/xml</code>. The image data
    * is in a <code>MetricWidgetImage</code> field. For example:</p> <p> <code>
-   * &lt;GetMetricWidgetImageResponse xmlns=&lt;URLstring&gt;&gt;</code> </p> <p>
-   * <code> &lt;GetMetricWidgetImageResult&gt;</code> </p> <p> <code>
-   * &lt;MetricWidgetImage&gt;</code> </p> <p> <code>
-   * iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQEAYAAAAip...</code> </p> <p> <code>
-   * &lt;/MetricWidgetImage&gt;</code> </p> <p> <code>
-   * &lt;/GetMetricWidgetImageResult&gt;</code> </p> <p> <code>
-   * &lt;ResponseMetadata&gt;</code> </p> <p> <code>
-   * &lt;RequestId&gt;6f0d4192-4d42-11e8-82c1-f539a07e0e3b&lt;/RequestId&gt;</code>
-   * </p> <p> <code> &lt;/ResponseMetadata&gt;</code> </p> <p>
-   * <code>&lt;/GetMetricWidgetImageResponse&gt;</code> </p> <p>The
-   * <code>image/png</code> setting is intended only for custom HTTP requests. For
-   * most use cases, and all actions using an Amazon Web Services SDK, you should use
-   * <code>png</code>. If you specify <code>image/png</code>, the HTTP response has a
-   * content-type set to <code>image/png</code>, and the body of the response is a
-   * PNG image.</p>
+   * <GetMetricWidgetImageResponse xmlns=<URLstring>></code> </p> <p> <code>
+   * <GetMetricWidgetImageResult></code> </p> <p> <code> <MetricWidgetImage></code>
+   * </p> <p> <code> iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQEAYAAAAip...</code> </p> <p>
+   * <code> </MetricWidgetImage></code> </p> <p> <code>
+   * </GetMetricWidgetImageResult></code> </p> <p> <code> <ResponseMetadata></code>
+   * </p> <p> <code>
+   * <RequestId>6f0d4192-4d42-11e8-82c1-f539a07e0e3b</RequestId></code> </p> <p>
+   * <code> </ResponseMetadata></code> </p> <p>
+   * <code></GetMetricWidgetImageResponse></code> </p> <p>The <code>image/png</code>
+   * setting is intended only for custom HTTP requests. For most use cases, and all
+   * actions using an Amazon Web Services SDK, you should use <code>png</code>. If
+   * you specify <code>image/png</code>, the HTTP response has a content-type set to
+   * <code>image/png</code>, and the body of the response is a PNG image.</p>
    */
   inline const Aws::String& GetOutputFormat() const { return m_outputFormat; }
   inline bool OutputFormatHasBeenSet() const { return m_outputFormatHasBeenSet; }

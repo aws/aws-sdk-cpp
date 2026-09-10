@@ -30,7 +30,6 @@ class Redirect {
   AWS_S3_API Redirect() = default;
   AWS_S3_API Redirect(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API Redirect& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{
@@ -95,9 +94,9 @@ class Redirect {
    * block with <code>KeyPrefixEquals</code> set to <code>docs/</code> and in the
    * Redirect set <code>ReplaceKeyPrefixWith</code> to <code>/documents</code>. Not
    * required if one of the siblings is present. Can be present only if
-   * <code>ReplaceKeyWith</code> is not provided.</p>  <p>Replacement must
-   * be made for object keys containing special characters (such as carriage returns)
-   * when using XML requests. For more information, see <a
+   * <code>ReplaceKeyWith</code> is not provided.</p>  <p>Replacement must be made
+   * for object keys containing special characters (such as carriage returns) when
+   * using XML requests. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
    * XML related object key constraints</a>.</p>
    */
@@ -120,8 +119,8 @@ class Redirect {
    * <p>The specific object key to use in the redirect request. For example, redirect
    * request to <code>error.html</code>. Not required if one of the siblings is
    * present. Can be present only if <code>ReplaceKeyPrefixWith</code> is not
-   * provided.</p>  <p>Replacement must be made for object keys containing
-   * special characters (such as carriage returns) when using XML requests. For more
+   * provided.</p>  <p>Replacement must be made for object keys containing special
+   * characters (such as carriage returns) when using XML requests. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
    * XML related object key constraints</a>.</p>

@@ -33,7 +33,6 @@ ExportStatus GetExportStatusForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<ExportStatus>(hashCode);
   }
-
   return ExportStatus::NOT_SET;
 }
 
@@ -52,7 +51,6 @@ Aws::String GetNameForExportStatus(ExportStatus enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

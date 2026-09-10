@@ -29,7 +29,6 @@ class ScanRange {
   AWS_S3_API ScanRange() = default;
   AWS_S3_API ScanRange(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API ScanRange& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{
@@ -37,9 +36,8 @@ class ScanRange {
    * <p>Specifies the start of the byte range. This parameter is optional. Valid
    * values: non-negative integers. The default value is 0. If only
    * <code>start</code> is supplied, it means scan from that point to the end of the
-   * file. For example,
-   * <code>&lt;scanrange&gt;&lt;start&gt;50&lt;/start&gt;&lt;/scanrange&gt;</code>
-   * means scan from byte 50 until the end of the file.</p>
+   * file. For example, <code><scanrange><start>50</start></scanrange></code> means
+   * scan from byte 50 until the end of the file.</p>
    */
   inline long long GetStart() const { return m_start; }
   inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
@@ -59,8 +57,8 @@ class ScanRange {
    * values: non-negative integers. The default value is one less than the size of
    * the object being queried. If only the End parameter is supplied, it is
    * interpreted to mean scan the last N bytes of the file. For example,
-   * <code>&lt;scanrange&gt;&lt;end&gt;50&lt;/end&gt;&lt;/scanrange&gt;</code> means
-   * scan the last 50 bytes.</p>
+   * <code><scanrange><end>50</end></scanrange></code> means scan the last 50
+   * bytes.</p>
    */
   inline long long GetEnd() const { return m_end; }
   inline bool EndHasBeenSet() const { return m_endHasBeenSet; }

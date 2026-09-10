@@ -14,9 +14,6 @@
 #include <utility>
 
 namespace Aws {
-namespace Http {
-class URI;
-}  // namespace Http
 namespace S3 {
 namespace Model {
 
@@ -34,9 +31,9 @@ class PutBucketEncryptionRequest : public S3Request {
 
   AWS_S3_API Aws::String SerializePayload() const override;
 
-  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
   AWS_S3_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
   AWS_S3_API bool HasEmbeddedError(IOStream& body, const Http::HeaderValueCollection& header) const override;
   AWS_S3_API Aws::String GetChecksumAlgorithmName() const override;
@@ -111,9 +108,9 @@ class PutBucketEncryptionRequest : public S3Request {
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
    * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you provide
    * an individual checksum, Amazon S3 ignores any provided
-   * <code>ChecksumAlgorithm</code> parameter.</p>  <p>For directory buckets,
-   * when you use Amazon Web Services SDKs, <code>CRC32</code> is the default
-   * checksum algorithm that's used for performance.</p>
+   * <code>ChecksumAlgorithm</code> parameter.</p>  <p>For directory buckets, when
+   * you use Amazon Web Services SDKs, <code>CRC32</code> is the default checksum
+   * algorithm that's used for performance.</p>
    */
   inline ChecksumAlgorithm GetChecksumAlgorithm() const { return m_checksumAlgorithm; }
   inline bool ChecksumAlgorithmHasBeenSet() const { return m_checksumAlgorithmHasBeenSet; }
@@ -149,10 +146,10 @@ class PutBucketEncryptionRequest : public S3Request {
   /**
    * <p>The account ID of the expected bucket owner. If the account ID that you
    * provide does not match the actual owner of the bucket, the request fails with
-   * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-   * <p>For directory buckets, this header is not supported in this API operation. If
-   * you specify this header, the request fails with the HTTP status code <code>501
-   * Not Implemented</code>.</p>
+   * the HTTP status code <code>403 Forbidden</code> (access denied).</p>  <p>For
+   * directory buckets, this header is not supported in this API operation. If you
+   * specify this header, the request fails with the HTTP status code <code>501 Not
+   * Implemented</code>.</p>
    */
   inline const Aws::String& GetExpectedBucketOwner() const { return m_expectedBucketOwner; }
   inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }

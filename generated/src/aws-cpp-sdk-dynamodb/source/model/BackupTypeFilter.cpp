@@ -36,7 +36,6 @@ BackupTypeFilter GetBackupTypeFilterForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<BackupTypeFilter>(hashCode);
   }
-
   return BackupTypeFilter::NOT_SET;
 }
 
@@ -57,7 +56,6 @@ Aws::String GetNameForBackupTypeFilter(BackupTypeFilter enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

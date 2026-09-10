@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/ServerSideEncryptionRule.h>
@@ -19,50 +20,9 @@ namespace Model {
 
 ServerSideEncryptionRule::ServerSideEncryptionRule(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ServerSideEncryptionRule& ServerSideEncryptionRule::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+ServerSideEncryptionRule& ServerSideEncryptionRule::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode applyServerSideEncryptionByDefaultNode = resultNode.FirstChild("ApplyServerSideEncryptionByDefault");
-    if (!applyServerSideEncryptionByDefaultNode.IsNull()) {
-      m_applyServerSideEncryptionByDefault = applyServerSideEncryptionByDefaultNode;
-      m_applyServerSideEncryptionByDefaultHasBeenSet = true;
-    }
-    XmlNode bucketKeyEnabledNode = resultNode.FirstChild("BucketKeyEnabled");
-    if (!bucketKeyEnabledNode.IsNull()) {
-      m_bucketKeyEnabled = StringUtils::ConvertToBool(
-          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bucketKeyEnabledNode.GetText()).c_str()).c_str());
-      m_bucketKeyEnabledHasBeenSet = true;
-    }
-    XmlNode blockedEncryptionTypesNode = resultNode.FirstChild("BlockedEncryptionTypes");
-    if (!blockedEncryptionTypesNode.IsNull()) {
-      m_blockedEncryptionTypes = blockedEncryptionTypesNode;
-      m_blockedEncryptionTypesHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void ServerSideEncryptionRule::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_applyServerSideEncryptionByDefaultHasBeenSet) {
-    XmlNode applyServerSideEncryptionByDefaultNode = parentNode.CreateChildElement("ApplyServerSideEncryptionByDefault");
-    m_applyServerSideEncryptionByDefault.AddToNode(applyServerSideEncryptionByDefaultNode);
-  }
-
-  if (m_bucketKeyEnabledHasBeenSet) {
-    XmlNode bucketKeyEnabledNode = parentNode.CreateChildElement("BucketKeyEnabled");
-    ss << std::boolalpha << m_bucketKeyEnabled;
-    bucketKeyEnabledNode.SetText(ss.str());
-    ss.str("");
-  }
-
-  if (m_blockedEncryptionTypesHasBeenSet) {
-    XmlNode blockedEncryptionTypesNode = parentNode.CreateChildElement("BlockedEncryptionTypes");
-    m_blockedEncryptionTypes.AddToNode(blockedEncryptionTypesNode);
-  }
-}
+void ServerSideEncryptionRule::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

@@ -27,7 +27,6 @@ MessageSystemAttributeNameForSends GetMessageSystemAttributeNameForSendsForName(
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<MessageSystemAttributeNameForSends>(hashCode);
   }
-
   return MessageSystemAttributeNameForSends::NOT_SET;
 }
 
@@ -42,7 +41,6 @@ Aws::String GetNameForMessageSystemAttributeNameForSends(MessageSystemAttributeN
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

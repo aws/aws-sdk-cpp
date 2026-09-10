@@ -3,32 +3,22 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/BatchExecuteStatementRequest.h>
 
+#include <numeric>
 #include <utility>
 
 using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String BatchExecuteStatementRequest::SerializePayload() const {
-  JsonValue payload;
-
-  if (m_statementsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> statementsJsonList(m_statements.size());
-    for (unsigned statementsIndex = 0; statementsIndex < statementsJsonList.GetLength(); ++statementsIndex) {
-      statementsJsonList[statementsIndex].AsObject(m_statements[statementsIndex].Jsonize());
-    }
-    payload.WithArray("Statements", std::move(statementsJsonList));
-  }
-
-  if (m_returnConsumedCapacityHasBeenSet) {
-    payload.WithString("ReturnConsumedCapacity", ReturnConsumedCapacityMapper::GetNameForReturnConsumedCapacity(m_returnConsumedCapacity));
-  }
-
-  return payload.View().WriteReadable();
-}
+Aws::String BatchExecuteStatementRequest::SerializePayload() const { return "{}"; }
 
 Aws::Http::HeaderValueCollection BatchExecuteStatementRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;

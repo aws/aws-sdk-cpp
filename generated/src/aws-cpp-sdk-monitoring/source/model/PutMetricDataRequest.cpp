@@ -3,6 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/model/PutMetricDataRequest.h>
 
@@ -17,46 +21,9 @@ Aws::String PutMetricDataRequest::SerializePayload() const {
 
   // Calculate map size
   size_t mapSize = 0;
-  if (m_namespaceHasBeenSet) {
-    mapSize++;
-  }
-  if (m_metricDataHasBeenSet) {
-    mapSize++;
-  }
-  if (m_entityMetricDataHasBeenSet) {
-    mapSize++;
-  }
-  if (m_strictEntityValidationHasBeenSet) {
-    mapSize++;
-  }
 
   encoder.WriteMapStart(mapSize);
 
-  if (m_namespaceHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Namespace"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_namespace.c_str()));
-  }
-
-  if (m_metricDataHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MetricData"));
-    encoder.WriteArrayStart(m_metricData.size());
-    for (const auto& item_0 : m_metricData) {
-      item_0.CborEncode(encoder);
-    }
-  }
-
-  if (m_entityMetricDataHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("EntityMetricData"));
-    encoder.WriteArrayStart(m_entityMetricData.size());
-    for (const auto& item_0 : m_entityMetricData) {
-      item_0.CborEncode(encoder);
-    }
-  }
-
-  if (m_strictEntityValidationHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("StrictEntityValidation"));
-    encoder.WriteBool(m_strictEntityValidation);
-  }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
   return str;
 }
@@ -68,7 +35,6 @@ Aws::Http::HeaderValueCollection PutMetricDataRequest::GetRequestSpecificHeaders
   headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }
-
 #ifdef ENABLED_ZLIB_REQUEST_COMPRESSION
 Aws::Client::CompressionAlgorithm PutMetricDataRequest::GetSelectedCompressionAlgorithm(
     Aws::Client::RequestCompressionConfig config) const {

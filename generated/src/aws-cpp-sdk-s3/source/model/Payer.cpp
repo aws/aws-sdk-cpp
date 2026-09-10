@@ -30,7 +30,6 @@ Payer GetPayerForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<Payer>(hashCode);
   }
-
   return Payer::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForPayer(Payer enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

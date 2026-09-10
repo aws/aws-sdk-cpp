@@ -30,7 +30,6 @@ IntelligentTieringStatus GetIntelligentTieringStatusForName(const Aws::String& n
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<IntelligentTieringStatus>(hashCode);
   }
-
   return IntelligentTieringStatus::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForIntelligentTieringStatus(IntelligentTieringStatus enumValu
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

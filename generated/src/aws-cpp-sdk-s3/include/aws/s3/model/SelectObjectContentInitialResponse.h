@@ -21,7 +21,6 @@ class SelectObjectContentInitialResponse {
   AWS_S3_API SelectObjectContentInitialResponse() = default;
   AWS_S3_API SelectObjectContentInitialResponse(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API SelectObjectContentInitialResponse& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 };
 

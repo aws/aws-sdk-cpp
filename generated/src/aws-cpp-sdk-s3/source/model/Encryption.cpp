@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/Encryption.h>
@@ -19,48 +20,9 @@ namespace Model {
 
 Encryption::Encryption(const XmlNode& xmlNode) { *this = xmlNode; }
 
-Encryption& Encryption::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+Encryption& Encryption::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode encryptionTypeNode = resultNode.FirstChild("EncryptionType");
-    if (!encryptionTypeNode.IsNull()) {
-      m_encryptionType = ServerSideEncryptionMapper::GetServerSideEncryptionForName(
-          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(encryptionTypeNode.GetText()).c_str()));
-      m_encryptionTypeHasBeenSet = true;
-    }
-    XmlNode kMSKeyIdNode = resultNode.FirstChild("KMSKeyId");
-    if (!kMSKeyIdNode.IsNull()) {
-      m_kMSKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(kMSKeyIdNode.GetText());
-      m_kMSKeyIdHasBeenSet = true;
-    }
-    XmlNode kMSContextNode = resultNode.FirstChild("KMSContext");
-    if (!kMSContextNode.IsNull()) {
-      m_kMSContext = Aws::Utils::Xml::DecodeEscapedXmlText(kMSContextNode.GetText());
-      m_kMSContextHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void Encryption::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_encryptionTypeHasBeenSet) {
-    XmlNode encryptionTypeNode = parentNode.CreateChildElement("EncryptionType");
-    encryptionTypeNode.SetText(ServerSideEncryptionMapper::GetNameForServerSideEncryption(m_encryptionType));
-  }
-
-  if (m_kMSKeyIdHasBeenSet) {
-    XmlNode kMSKeyIdNode = parentNode.CreateChildElement("KMSKeyId");
-    kMSKeyIdNode.SetText(m_kMSKeyId);
-  }
-
-  if (m_kMSContextHasBeenSet) {
-    XmlNode kMSContextNode = parentNode.CreateChildElement("KMSContext");
-    kMSContextNode.SetText(m_kMSContext);
-  }
-}
+void Encryption::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

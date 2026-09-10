@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/SSEKMS.h>
@@ -19,27 +20,9 @@ namespace Model {
 
 SSEKMS::SSEKMS(const XmlNode& xmlNode) { *this = xmlNode; }
 
-SSEKMS& SSEKMS::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+SSEKMS& SSEKMS::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode keyIdNode = resultNode.FirstChild("KeyId");
-    if (!keyIdNode.IsNull()) {
-      m_keyId = Aws::Utils::Xml::DecodeEscapedXmlText(keyIdNode.GetText());
-      m_keyIdHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void SSEKMS::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_keyIdHasBeenSet) {
-    XmlNode keyIdNode = parentNode.CreateChildElement("KeyId");
-    keyIdNode.SetText(m_keyId);
-  }
-}
+void SSEKMS::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

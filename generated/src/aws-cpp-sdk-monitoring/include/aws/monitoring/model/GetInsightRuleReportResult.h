@@ -14,6 +14,7 @@
 #include <aws/monitoring/model/ResponseMetadata.h>
 
 #include <utility>
+
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
@@ -157,21 +158,6 @@ class GetInsightRuleReportResult {
 
   ///@{
 
-  inline const Aws::String& GetRequestId() const { return m_requestId; }
-  template <typename RequestIdT = Aws::String>
-  void SetRequestId(RequestIdT&& value) {
-    m_requestIdHasBeenSet = true;
-    m_requestId = std::forward<RequestIdT>(value);
-  }
-  template <typename RequestIdT = Aws::String>
-  GetInsightRuleReportResult& WithRequestId(RequestIdT&& value) {
-    SetRequestId(std::forward<RequestIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-
   inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
   template <typename ResponseMetadataT = ResponseMetadata>
   void SetResponseMetadata(ResponseMetadataT&& value) {
@@ -181,6 +167,21 @@ class GetInsightRuleReportResult {
   template <typename ResponseMetadataT = ResponseMetadata>
   GetInsightRuleReportResult& WithResponseMetadata(ResponseMetadataT&& value) {
     SetResponseMetadata(std::forward<ResponseMetadataT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  GetInsightRuleReportResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
     return *this;
   }
   ///@}
@@ -199,9 +200,9 @@ class GetInsightRuleReportResult {
 
   Aws::Vector<InsightRuleMetricDatapoint> m_metricDatapoints;
 
-  Aws::String m_requestId;
-
   ResponseMetadata m_responseMetadata;
+
+  Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_keyLabelsHasBeenSet = false;
   bool m_aggregationStatisticHasBeenSet = false;
@@ -209,8 +210,8 @@ class GetInsightRuleReportResult {
   bool m_approximateUniqueCountHasBeenSet = false;
   bool m_contributorsHasBeenSet = false;
   bool m_metricDatapointsHasBeenSet = false;
-  bool m_requestIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
 };
 
 }  // namespace Model

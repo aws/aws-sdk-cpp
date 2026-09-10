@@ -30,7 +30,6 @@ class MetadataTableEncryptionConfiguration {
   AWS_S3_API MetadataTableEncryptionConfiguration() = default;
   AWS_S3_API MetadataTableEncryptionConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API MetadataTableEncryptionConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

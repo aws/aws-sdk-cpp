@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/ProvisionedThroughputOverride.h>
 
 #include <utility>
@@ -17,21 +20,10 @@ namespace Model {
 
 ProvisionedThroughputOverride::ProvisionedThroughputOverride(JsonView jsonValue) { *this = jsonValue; }
 
-ProvisionedThroughputOverride& ProvisionedThroughputOverride::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("ReadCapacityUnits")) {
-    m_readCapacityUnits = jsonValue.GetInt64("ReadCapacityUnits");
-    m_readCapacityUnitsHasBeenSet = true;
-  }
-  return *this;
-}
+ProvisionedThroughputOverride& ProvisionedThroughputOverride::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue ProvisionedThroughputOverride::Jsonize() const {
   JsonValue payload;
-
-  if (m_readCapacityUnitsHasBeenSet) {
-    payload.WithInt64("ReadCapacityUnits", m_readCapacityUnits);
-  }
-
   return payload;
 }
 

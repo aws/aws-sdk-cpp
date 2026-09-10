@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/TargetObjectKeyFormat.h>
@@ -19,37 +20,9 @@ namespace Model {
 
 TargetObjectKeyFormat::TargetObjectKeyFormat(const XmlNode& xmlNode) { *this = xmlNode; }
 
-TargetObjectKeyFormat& TargetObjectKeyFormat::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+TargetObjectKeyFormat& TargetObjectKeyFormat::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode simplePrefixNode = resultNode.FirstChild("SimplePrefix");
-    if (!simplePrefixNode.IsNull()) {
-      m_simplePrefix = simplePrefixNode;
-      m_simplePrefixHasBeenSet = true;
-    }
-    XmlNode partitionedPrefixNode = resultNode.FirstChild("PartitionedPrefix");
-    if (!partitionedPrefixNode.IsNull()) {
-      m_partitionedPrefix = partitionedPrefixNode;
-      m_partitionedPrefixHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void TargetObjectKeyFormat::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_simplePrefixHasBeenSet) {
-    XmlNode simplePrefixNode = parentNode.CreateChildElement("SimplePrefix");
-    m_simplePrefix.AddToNode(simplePrefixNode);
-  }
-
-  if (m_partitionedPrefixHasBeenSet) {
-    XmlNode partitionedPrefixNode = parentNode.CreateChildElement("PartitionedPrefix");
-    m_partitionedPrefix.AddToNode(partitionedPrefixNode);
-  }
-}
+void TargetObjectKeyFormat::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

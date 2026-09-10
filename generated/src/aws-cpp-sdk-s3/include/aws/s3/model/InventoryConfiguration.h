@@ -38,7 +38,6 @@ class InventoryConfiguration {
   AWS_S3_API InventoryConfiguration() = default;
   AWS_S3_API InventoryConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API InventoryConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{
@@ -137,8 +136,8 @@ class InventoryConfiguration {
   ///@{
   /**
    * <p>Contains the optional fields that are included in the inventory results.</p>
-   *  <p>The following optional fields are supported for directory buckets
-   * <code>Size | LastModifiedDate | StorageClass | ETag | IsMultipartUploaded |
+   * <p>The following optional fields are supported for directory buckets <code>Size
+   * | LastModifiedDate | StorageClass | ETag | IsMultipartUploaded |
    * EncryptionStatus | BucketKeyStatus | ChecksumAlgorithm |
    * LifecycleExpirationDate.</code> Throws MalformedXML error if unsupported
    * optional field is provided. </p>

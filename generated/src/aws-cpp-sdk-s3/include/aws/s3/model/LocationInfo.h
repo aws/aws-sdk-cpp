@@ -24,18 +24,16 @@ namespace Model {
  * buckets, the location type is Availability Zone or Local Zone. For more
  * information about directory buckets, see <a
  * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Working
- * with directory buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
- * <p>This functionality is only supported by directory buckets.</p>
- * <p><h3>See Also:</h3>   <a
- * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/LocationInfo">AWS API
- * Reference</a></p>
+ * with directory buckets</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>This
+ * functionality is only supported by directory buckets.</p> <p><h3>See Also:</h3>
+ *  <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/LocationInfo">AWS
+ * API Reference</a></p>
  */
 class LocationInfo {
  public:
   AWS_S3_API LocationInfo() = default;
   AWS_S3_API LocationInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API LocationInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

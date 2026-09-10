@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/ArchivalSummary.h>
 
 #include <utility>
@@ -17,37 +20,10 @@ namespace Model {
 
 ArchivalSummary::ArchivalSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ArchivalSummary& ArchivalSummary::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("ArchivalDateTime")) {
-    m_archivalDateTime = jsonValue.GetDouble("ArchivalDateTime");
-    m_archivalDateTimeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ArchivalReason")) {
-    m_archivalReason = jsonValue.GetString("ArchivalReason");
-    m_archivalReasonHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ArchivalBackupArn")) {
-    m_archivalBackupArn = jsonValue.GetString("ArchivalBackupArn");
-    m_archivalBackupArnHasBeenSet = true;
-  }
-  return *this;
-}
+ArchivalSummary& ArchivalSummary::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue ArchivalSummary::Jsonize() const {
   JsonValue payload;
-
-  if (m_archivalDateTimeHasBeenSet) {
-    payload.WithDouble("ArchivalDateTime", m_archivalDateTime.SecondsWithMSPrecision());
-  }
-
-  if (m_archivalReasonHasBeenSet) {
-    payload.WithString("ArchivalReason", m_archivalReason);
-  }
-
-  if (m_archivalBackupArnHasBeenSet) {
-    payload.WithString("ArchivalBackupArn", m_archivalBackupArn);
-  }
-
   return payload;
 }
 

@@ -16,9 +16,6 @@
 #include <utility>
 
 namespace Aws {
-namespace Http {
-class URI;
-}  // namespace Http
 namespace S3 {
 namespace Model {
 
@@ -36,11 +33,12 @@ class ListObjectVersionsRequest : public S3Request {
 
   AWS_S3_API Aws::String SerializePayload() const override;
 
-  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
   AWS_S3_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
   AWS_S3_API bool HasEmbeddedError(IOStream& body, const Http::HeaderValueCollection& header) const override;
+
   /**
    * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
    */
@@ -126,9 +124,8 @@ class ListObjectVersionsRequest : public S3Request {
    * action returns up to 1,000 key names. The response might contain fewer keys but
    * will never contain more. If additional keys satisfy the search criteria, but
    * were not returned because <code>max-keys</code> was exceeded, the response
-   * contains <code>&lt;isTruncated&gt;true&lt;/isTruncated&gt;</code>. To return the
-   * additional keys, see <code>key-marker</code> and
-   * <code>version-id-marker</code>.</p>
+   * contains <code><isTruncated>true</isTruncated></code>. To return the additional
+   * keys, see <code>key-marker</code> and <code>version-id-marker</code>.</p>
    */
   inline int GetMaxKeys() const { return m_maxKeys; }
   inline bool MaxKeysHasBeenSet() const { return m_maxKeysHasBeenSet; }

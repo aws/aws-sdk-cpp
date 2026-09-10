@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/IndexDocument.h>
@@ -19,27 +20,9 @@ namespace Model {
 
 IndexDocument::IndexDocument(const XmlNode& xmlNode) { *this = xmlNode; }
 
-IndexDocument& IndexDocument::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+IndexDocument& IndexDocument::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode suffixNode = resultNode.FirstChild("Suffix");
-    if (!suffixNode.IsNull()) {
-      m_suffix = Aws::Utils::Xml::DecodeEscapedXmlText(suffixNode.GetText());
-      m_suffixHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void IndexDocument::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_suffixHasBeenSet) {
-    XmlNode suffixNode = parentNode.CreateChildElement("Suffix");
-    suffixNode.SetText(m_suffix);
-  }
-}
+void IndexDocument::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

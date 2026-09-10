@@ -30,7 +30,6 @@ ObjectLockMode GetObjectLockModeForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<ObjectLockMode>(hashCode);
   }
-
   return ObjectLockMode::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForObjectLockMode(ObjectLockMode enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

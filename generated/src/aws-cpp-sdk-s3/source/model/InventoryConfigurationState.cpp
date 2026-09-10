@@ -30,7 +30,6 @@ InventoryConfigurationState GetInventoryConfigurationStateForName(const Aws::Str
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<InventoryConfigurationState>(hashCode);
   }
-
   return InventoryConfigurationState::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForInventoryConfigurationState(InventoryConfigurationState en
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

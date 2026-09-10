@@ -3,6 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/model/EnableInsightRulesRequest.h>
 
@@ -17,19 +21,9 @@ Aws::String EnableInsightRulesRequest::SerializePayload() const {
 
   // Calculate map size
   size_t mapSize = 0;
-  if (m_ruleNamesHasBeenSet) {
-    mapSize++;
-  }
 
   encoder.WriteMapStart(mapSize);
 
-  if (m_ruleNamesHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RuleNames"));
-    encoder.WriteArrayStart(m_ruleNames.size());
-    for (const auto& item_0 : m_ruleNames) {
-      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
-    }
-  }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
   return str;
 }

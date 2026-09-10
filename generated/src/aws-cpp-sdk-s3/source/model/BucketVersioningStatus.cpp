@@ -30,7 +30,6 @@ BucketVersioningStatus GetBucketVersioningStatusForName(const Aws::String& name)
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<BucketVersioningStatus>(hashCode);
   }
-
   return BucketVersioningStatus::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForBucketVersioningStatus(BucketVersioningStatus enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

@@ -58,8 +58,8 @@ class GetBucketLifecycleConfigurationResult {
    * <p>Indicates which default minimum object size behavior is applied to the
    * lifecycle configuration.</p>  <p>This parameter applies to general purpose
    * buckets only. It isn't supported for directory bucket lifecycle
-   * configurations.</p>  <ul> <li> <p> <code>all_storage_classes_128K</code>
-   * - Objects smaller than 128 KB will not transition to any storage class by
+   * configurations.</p>  <ul> <li> <p> <code>all_storage_classes_128K</code> -
+   * Objects smaller than 128 KB will not transition to any storage class by
    * default.</p> </li> <li> <p> <code>varies_by_storage_class</code> - Objects
    * smaller than 128 KB will transition to Glacier Flexible Retrieval or Glacier
    * Deep Archive storage classes. By default, all other storage classes will prevent

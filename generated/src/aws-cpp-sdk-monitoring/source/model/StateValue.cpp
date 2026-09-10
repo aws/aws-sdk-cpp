@@ -33,7 +33,6 @@ StateValue GetStateValueForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<StateValue>(hashCode);
   }
-
   return StateValue::NOT_SET;
 }
 
@@ -52,7 +51,6 @@ Aws::String GetNameForStateValue(StateValue enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

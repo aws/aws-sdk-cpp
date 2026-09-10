@@ -35,7 +35,6 @@ class ReplicaModifications {
   AWS_S3_API ReplicaModifications() = default;
   AWS_S3_API ReplicaModifications(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API ReplicaModifications& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/AttributeDefinition.h>
 
 #include <utility>
@@ -17,29 +20,10 @@ namespace Model {
 
 AttributeDefinition::AttributeDefinition(JsonView jsonValue) { *this = jsonValue; }
 
-AttributeDefinition& AttributeDefinition::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("AttributeName")) {
-    m_attributeName = jsonValue.GetString("AttributeName");
-    m_attributeNameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("AttributeType")) {
-    m_attributeType = ScalarAttributeTypeMapper::GetScalarAttributeTypeForName(jsonValue.GetString("AttributeType"));
-    m_attributeTypeHasBeenSet = true;
-  }
-  return *this;
-}
+AttributeDefinition& AttributeDefinition::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue AttributeDefinition::Jsonize() const {
   JsonValue payload;
-
-  if (m_attributeNameHasBeenSet) {
-    payload.WithString("AttributeName", m_attributeName);
-  }
-
-  if (m_attributeTypeHasBeenSet) {
-    payload.WithString("AttributeType", ScalarAttributeTypeMapper::GetNameForScalarAttributeType(m_attributeType));
-  }
-
   return payload;
 }
 

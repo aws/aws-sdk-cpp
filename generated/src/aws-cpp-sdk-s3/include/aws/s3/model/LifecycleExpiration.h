@@ -32,7 +32,6 @@ class LifecycleExpiration {
   AWS_S3_API LifecycleExpiration() = default;
   AWS_S3_API LifecycleExpiration(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API LifecycleExpiration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{
@@ -78,8 +77,8 @@ class LifecycleExpiration {
    * <p>Indicates whether Amazon S3 will remove a delete marker with no noncurrent
    * versions. If set to true, the delete marker will be expired; if set to false the
    * policy takes no action. This cannot be specified with Days or Date in a
-   * Lifecycle Expiration Policy.</p>  <p>This parameter applies to general
-   * purpose buckets only. It is not supported for directory bucket lifecycle
+   * Lifecycle Expiration Policy.</p>  <p>This parameter applies to general purpose
+   * buckets only. It is not supported for directory bucket lifecycle
    * configurations.</p>
    */
   inline bool GetExpiredObjectDeleteMarker() const { return m_expiredObjectDeleteMarker; }

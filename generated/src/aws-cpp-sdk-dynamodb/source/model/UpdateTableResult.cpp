@@ -4,6 +4,7 @@
  */
 
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -19,20 +20,4 @@ using namespace Aws;
 
 UpdateTableResult::UpdateTableResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-UpdateTableResult& UpdateTableResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_HttpResponseCode = result.GetResponseCode();
-  JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("TableDescription")) {
-    m_tableDescription = jsonValue.GetObject("TableDescription");
-    m_tableDescriptionHasBeenSet = true;
-  }
-
-  const auto& headers = result.GetHeaderValueCollection();
-  const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if (requestIdIter != headers.end()) {
-    m_requestId = requestIdIter->second;
-    m_requestIdHasBeenSet = true;
-  }
-
-  return *this;
-}
+UpdateTableResult& UpdateTableResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) { return *this; }

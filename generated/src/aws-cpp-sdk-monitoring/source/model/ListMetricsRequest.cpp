@@ -3,6 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/model/ListMetricsRequest.h>
 
@@ -17,67 +21,9 @@ Aws::String ListMetricsRequest::SerializePayload() const {
 
   // Calculate map size
   size_t mapSize = 0;
-  if (m_namespaceHasBeenSet) {
-    mapSize++;
-  }
-  if (m_metricNameHasBeenSet) {
-    mapSize++;
-  }
-  if (m_dimensionsHasBeenSet) {
-    mapSize++;
-  }
-  if (m_nextTokenHasBeenSet) {
-    mapSize++;
-  }
-  if (m_recentlyActiveHasBeenSet) {
-    mapSize++;
-  }
-  if (m_includeLinkedAccountsHasBeenSet) {
-    mapSize++;
-  }
-  if (m_owningAccountHasBeenSet) {
-    mapSize++;
-  }
 
   encoder.WriteMapStart(mapSize);
 
-  if (m_namespaceHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Namespace"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_namespace.c_str()));
-  }
-
-  if (m_metricNameHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MetricName"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_metricName.c_str()));
-  }
-
-  if (m_dimensionsHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Dimensions"));
-    encoder.WriteArrayStart(m_dimensions.size());
-    for (const auto& item_0 : m_dimensions) {
-      item_0.CborEncode(encoder);
-    }
-  }
-
-  if (m_nextTokenHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NextToken"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_nextToken.c_str()));
-  }
-
-  if (m_recentlyActiveHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RecentlyActive"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(RecentlyActiveMapper::GetNameForRecentlyActive(m_recentlyActive).c_str()));
-  }
-
-  if (m_includeLinkedAccountsHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("IncludeLinkedAccounts"));
-    encoder.WriteBool(m_includeLinkedAccounts);
-  }
-
-  if (m_owningAccountHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("OwningAccount"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_owningAccount.c_str()));
-  }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
   return str;
 }

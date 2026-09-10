@@ -33,7 +33,6 @@ class BucketLifecycleConfiguration {
   AWS_S3_API BucketLifecycleConfiguration() = default;
   AWS_S3_API BucketLifecycleConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API BucketLifecycleConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

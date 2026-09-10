@@ -4,15 +4,23 @@
  */
 
 #include <aws/core/client/CoreErrors.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/event/EventStreamErrors.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/S3ErrorMarshaller.h>
 #include <aws/s3/model/SelectObjectContentHandler.h>
 
+#include <utility>
+
 using namespace Aws::S3::Model;
 using namespace Aws::Utils::Event;
 using namespace Aws::Utils::Xml;
+
+AWS_CORE_API extern const char MESSAGE_LOWER_CASE[];
+AWS_CORE_API extern const char MESSAGE_CAMEL_CASE[];
 
 namespace Aws {
 namespace S3 {
@@ -27,38 +35,29 @@ SelectObjectContentHandler::SelectObjectContentHandler() : EventStreamHandler() 
                         "SelectObjectContent initial response received from "
                             << (eventType == Utils::Event::InitialResponseType::ON_EVENT ? "event" : "http headers"));
   };
-
   m_onRecordsEvent = [&](const RecordsEvent&) { AWS_LOGSTREAM_TRACE(SELECTOBJECTCONTENT_HANDLER_CLASS_TAG, "RecordsEvent received."); };
-
   m_onStatsEvent = [&](const StatsEvent&) { AWS_LOGSTREAM_TRACE(SELECTOBJECTCONTENT_HANDLER_CLASS_TAG, "StatsEvent received."); };
-
   m_onProgressEvent = [&](const ProgressEvent&) { AWS_LOGSTREAM_TRACE(SELECTOBJECTCONTENT_HANDLER_CLASS_TAG, "ProgressEvent received."); };
-
   m_onContinuationEvent = [&]() { AWS_LOGSTREAM_TRACE(SELECTOBJECTCONTENT_HANDLER_CLASS_TAG, "ContinuationEvent received."); };
-
   m_onEndEvent = [&]() { AWS_LOGSTREAM_TRACE(SELECTOBJECTCONTENT_HANDLER_CLASS_TAG, "EndEvent received."); };
-
   m_onError = [&](const AWSError<S3Errors>& error) {
     AWS_LOGSTREAM_TRACE(SELECTOBJECTCONTENT_HANDLER_CLASS_TAG, "S3 Errors received, " << error);
   };
 }
 
 void SelectObjectContentHandler::OnEvent() {
-  // Handler internal error during event stream decoding.
   if (!*this) {
     AWSError<CoreErrors> error = EventStreamErrorsMapper::GetAwsErrorForEventStreamError(GetInternalError());
     error.SetMessage(GetEventPayloadAsString());
     m_onError(AWSError<S3Errors>(error));
     return;
   }
-
   const auto& headers = GetEventHeaders();
   auto messageTypeHeaderIter = headers.find(MESSAGE_TYPE_HEADER);
   if (messageTypeHeaderIter == headers.end()) {
     AWS_LOGSTREAM_WARN(SELECTOBJECTCONTENT_HANDLER_CLASS_TAG, "Header: " << MESSAGE_TYPE_HEADER << " not found in the message.");
     return;
   }
-
   switch (Aws::Utils::Event::Message::GetMessageTypeForName(messageTypeHeaderIter->second.GetEventHeaderValueAsString())) {
     case Aws::Utils::Event::Message::MessageType::EVENT:
       HandleEventInMessage();
@@ -96,30 +95,18 @@ void SelectObjectContentHandler::HandleEventInMessage() {
       break;
     }
     case SelectObjectContentEventType::RECORDS: {
-      RecordsEvent event(GetEventPayloadWithOwnership());
-      m_onRecordsEvent(event);
+      // TODO: protocol-specific event payload deserialization
+      m_onRecordsEvent(RecordsEvent{});
       break;
     }
     case SelectObjectContentEventType::STATS: {
-      auto xmlDoc = XmlDocument::CreateFromXmlString(GetEventPayloadAsString());
-      if (!xmlDoc.WasParseSuccessful()) {
-        AWS_LOGSTREAM_WARN(SELECTOBJECTCONTENT_HANDLER_CLASS_TAG,
-                           "Unable to generate a proper StatsEvent object from the response in XML format.");
-        break;
-      }
-
-      m_onStatsEvent(StatsEvent(xmlDoc.GetRootElement()));
+      // TODO: protocol-specific event payload deserialization
+      m_onStatsEvent(StatsEvent{});
       break;
     }
     case SelectObjectContentEventType::PROGRESS: {
-      auto xmlDoc = XmlDocument::CreateFromXmlString(GetEventPayloadAsString());
-      if (!xmlDoc.WasParseSuccessful()) {
-        AWS_LOGSTREAM_WARN(SELECTOBJECTCONTENT_HANDLER_CLASS_TAG,
-                           "Unable to generate a proper ProgressEvent object from the response in XML format.");
-        break;
-      }
-
-      m_onProgressEvent(ProgressEvent(xmlDoc.GetRootElement()));
+      // TODO: protocol-specific event payload deserialization
+      m_onProgressEvent(ProgressEvent{});
       break;
     }
     case SelectObjectContentEventType::CONT: {
@@ -149,28 +136,24 @@ void SelectObjectContentHandler::HandleErrorInMessage() {
       return;
     }
   }
-
   errorCode = errorHeaderIter->second.GetEventHeaderValueAsString();
   errorHeaderIter = headers.find(ERROR_MESSAGE_HEADER);
   if (errorHeaderIter == headers.end()) {
-    errorHeaderIter = headers.find(EXCEPTION_TYPE_HEADER);
-    if (errorHeaderIter == headers.end()) {
-      AWS_LOGSTREAM_WARN(SELECTOBJECTCONTENT_HANDLER_CLASS_TAG, "Error description was not found in the event message.");
-      return;
-    }
+    // TODO: read error message from payload once protocol-specific serde lands
+    // TODO: protocol-specific error payload deserialization
+  } else {
+    errorMessage = errorHeaderIter->second.GetEventHeaderValueAsString();
   }
-  errorMessage = errorHeaderIter->second.GetEventHeaderValueAsString();
   MarshallError(errorCode, errorMessage);
 }
 
 void SelectObjectContentHandler::MarshallError(const Aws::String& errorCode, const Aws::String& errorMessage) {
   S3ErrorMarshaller errorMarshaller;
   AWSError<CoreErrors> error;
-
   if (errorCode.empty()) {
     error = AWSError<CoreErrors>(CoreErrors::UNKNOWN, "", errorMessage, false);
   } else {
-    error = errorMarshaller.FindErrorByName(errorMessage.c_str());
+    error = errorMarshaller.FindErrorByName(errorCode.c_str());
     if (error.GetErrorType() != CoreErrors::UNKNOWN) {
       AWS_LOGSTREAM_WARN(SELECTOBJECTCONTENT_HANDLER_CLASS_TAG,
                          "Encountered AWSError '" << errorCode.c_str() << "': " << errorMessage.c_str());
@@ -183,7 +166,6 @@ void SelectObjectContentHandler::MarshallError(const Aws::String& errorCode, con
                                    "Unable to parse ExceptionName: " + errorCode + " Message: " + errorMessage, false);
     }
   }
-
   m_onError(AWSError<S3Errors>(error));
 }
 
@@ -197,12 +179,9 @@ static const int END_HASH = Aws::Utils::HashingUtils::HashString("End");
 
 SelectObjectContentEventType GetSelectObjectContentEventTypeForName(const Aws::String& name) {
   int hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
-
   if (hashCode == INITIAL_RESPONSE_HASH) {
     return SelectObjectContentEventType::INITIAL_RESPONSE;
-  }
-
-  else if (hashCode == RECORDS_HASH) {
+  } else if (hashCode == RECORDS_HASH) {
     return SelectObjectContentEventType::RECORDS;
   } else if (hashCode == STATS_HASH) {
     return SelectObjectContentEventType::STATS;

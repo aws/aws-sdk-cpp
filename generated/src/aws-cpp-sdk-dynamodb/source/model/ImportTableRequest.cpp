@@ -3,44 +3,22 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/ImportTableRequest.h>
 
+#include <numeric>
 #include <utility>
 
 using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ImportTableRequest::SerializePayload() const {
-  JsonValue payload;
-
-  if (m_clientTokenHasBeenSet) {
-    payload.WithString("ClientToken", m_clientToken);
-  }
-
-  if (m_s3BucketSourceHasBeenSet) {
-    payload.WithObject("S3BucketSource", m_s3BucketSource.Jsonize());
-  }
-
-  if (m_inputFormatHasBeenSet) {
-    payload.WithString("InputFormat", InputFormatMapper::GetNameForInputFormat(m_inputFormat));
-  }
-
-  if (m_inputFormatOptionsHasBeenSet) {
-    payload.WithObject("InputFormatOptions", m_inputFormatOptions.Jsonize());
-  }
-
-  if (m_inputCompressionTypeHasBeenSet) {
-    payload.WithString("InputCompressionType", InputCompressionTypeMapper::GetNameForInputCompressionType(m_inputCompressionType));
-  }
-
-  if (m_tableCreationParametersHasBeenSet) {
-    payload.WithObject("TableCreationParameters", m_tableCreationParameters.Jsonize());
-  }
-
-  return payload.View().WriteReadable();
-}
+Aws::String ImportTableRequest::SerializePayload() const { return "{}"; }
 
 Aws::Http::HeaderValueCollection ImportTableRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;

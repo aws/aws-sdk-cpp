@@ -15,9 +15,6 @@
 #include <utility>
 
 namespace Aws {
-namespace Http {
-class URI;
-}  // namespace Http
 namespace S3 {
 namespace Model {
 
@@ -33,13 +30,14 @@ class UploadPartRequest : public StreamingS3Request {
   // so we can not get operation's name from response.
   inline virtual const char* GetServiceRequestName() const override { return "UploadPart"; }
 
-  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
   AWS_S3_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
   AWS_S3_API bool HasEmbeddedError(IOStream& body, const Http::HeaderValueCollection& header) const override;
   AWS_S3_API Aws::String GetChecksumAlgorithmName() const override;
   AWS_S3_API bool ChecksumAlgorithmIsSet() const override;
+
   /**
    * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
    */
@@ -69,11 +67,11 @@ class UploadPartRequest : public StreamingS3Request {
    * SDKs, you provide the access point ARN in place of the bucket name. For more
    * information about access point ARNs, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-   * access points</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>Object
-   * Lambda access points are not supported by directory buckets.</p>  <p>
-   * <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must
-   * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
-   * takes the form <code>
+   * access points</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>Object Lambda
+   * access points are not supported by directory buckets.</p>  <p> <b>S3 on
+   * Outposts</b> - When you use this action with S3 on Outposts, you must direct
+   * requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the
+   * form <code>
    * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
    * When you use this action with S3 on Outposts, the destination bucket must be the
    * Outposts access point ARN or the access point alias. For more information about
@@ -500,8 +498,7 @@ class UploadPartRequest : public StreamingS3Request {
   ///@{
   /**
    * <p>Specifies the algorithm to use when encrypting the object (for example,
-   * AES256).</p>  <p>This functionality is not supported for directory
-   * buckets.</p>
+   * AES256).</p>  <p>This functionality is not supported for directory buckets.</p>
    */
   inline const Aws::String& GetSSECustomerAlgorithm() const { return m_sSECustomerAlgorithm; }
   inline bool SSECustomerAlgorithmHasBeenSet() const { return m_sSECustomerAlgorithmHasBeenSet; }
@@ -525,8 +522,7 @@ class UploadPartRequest : public StreamingS3Request {
    * appropriate for use with the algorithm specified in the
    * <code>x-amz-server-side-encryption-customer-algorithm header</code>. This must
    * be the same encryption key specified in the initiate multipart upload
-   * request.</p>  <p>This functionality is not supported for directory
-   * buckets.</p>
+   * request.</p>  <p>This functionality is not supported for directory buckets.</p>
    */
   inline const Aws::String& GetSSECustomerKey() const { return m_sSECustomerKey; }
   inline bool SSECustomerKeyHasBeenSet() const { return m_sSECustomerKeyHasBeenSet; }
@@ -546,8 +542,8 @@ class UploadPartRequest : public StreamingS3Request {
   /**
    * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
    * Amazon S3 uses this header for a message integrity check to ensure that the
-   * encryption key was transmitted without error.</p>  <p>This functionality
-   * is not supported for directory buckets.</p>
+   * encryption key was transmitted without error.</p>  <p>This functionality is not
+   * supported for directory buckets.</p>
    */
   inline const Aws::String& GetSSECustomerKeyMD5() const { return m_sSECustomerKeyMD5; }
   inline bool SSECustomerKeyMD5HasBeenSet() const { return m_sSECustomerKeyMD5HasBeenSet; }

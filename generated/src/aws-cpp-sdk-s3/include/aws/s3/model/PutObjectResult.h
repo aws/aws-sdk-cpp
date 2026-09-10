@@ -37,10 +37,9 @@ class PutObjectResult {
    * in the <i>Amazon S3 User Guide</i>, the response includes this header. It
    * includes the <code>expiry-date</code> and <code>rule-id</code> key-value pairs
    * that provide information about object expiration. The value of the
-   * <code>rule-id</code> is URL-encoded.</p>  <p>Object expiration information
-   * is not returned in directory buckets and this header returns the value
+   * <code>rule-id</code> is URL-encoded.</p>  <p>Object expiration information is
+   * not returned in directory buckets and this header returns the value
    * "<code>NotImplemented</code>" in all responses for directory buckets.</p>
-   *
    */
   inline const Aws::String& GetExpiration() const { return m_expiration; }
   template <typename ExpirationT = Aws::String>
@@ -327,9 +326,9 @@ class PutObjectResult {
   ///@{
   /**
    * <p>The server-side encryption algorithm used when you store this object in
-   * Amazon S3 or Amazon FSx.</p>  <p>When accessing data stored in Amazon FSx
-   * file systems using S3 access points, the only valid server side encryption
-   * option is <code>aws:fsx</code>.</p>
+   * Amazon S3 or Amazon FSx.</p>  <p>When accessing data stored in Amazon FSx file
+   * systems using S3 access points, the only valid server side encryption option is
+   * <code>aws:fsx</code>.</p>
    */
   inline ServerSideEncryption GetServerSideEncryption() const { return m_serverSideEncryption; }
   inline void SetServerSideEncryption(ServerSideEncryption value) {
@@ -355,7 +354,6 @@ class PutObjectResult {
    * For information about returning the versioning state of a bucket, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketVersioning.html">GetBucketVersioning</a>.
    * </p>  <p>This functionality is not supported for directory buckets.</p>
-   *
    */
   inline const Aws::String& GetVersionId() const { return m_versionId; }
   template <typename VersionIdT = Aws::String>
@@ -374,8 +372,8 @@ class PutObjectResult {
   /**
    * <p>If server-side encryption with a customer-provided encryption key was
    * requested, the response will include this header to confirm the encryption
-   * algorithm that's used.</p>  <p>This functionality is not supported for
-   * directory buckets.</p>
+   * algorithm that's used.</p>  <p>This functionality is not supported for directory
+   * buckets.</p>
    */
   inline const Aws::String& GetSSECustomerAlgorithm() const { return m_sSECustomerAlgorithm; }
   template <typename SSECustomerAlgorithmT = Aws::String>
@@ -395,7 +393,7 @@ class PutObjectResult {
    * <p>If server-side encryption with a customer-provided encryption key was
    * requested, the response will include this header to provide the round-trip
    * message integrity verification of the customer-provided encryption key.</p>
-   *  <p>This functionality is not supported for directory buckets.</p>
+   * <p>This functionality is not supported for directory buckets.</p>
    */
   inline const Aws::String& GetSSECustomerKeyMD5() const { return m_sSECustomerKeyMD5; }
   template <typename SSECustomerKeyMD5T = Aws::String>
@@ -469,8 +467,8 @@ class PutObjectResult {
   ///@{
   /**
    * <p> The size of the object in bytes. This value is only be present if you append
-   * to an object. </p>  <p>This functionality is only supported for objects in
-   * the Amazon S3 Express One Zone storage class in directory buckets.</p>
+   * to an object. </p>  <p>This functionality is only supported for objects in the
+   * Amazon S3 Express One Zone storage class in directory buckets.</p>
    */
   inline long long GetSize() const { return m_size; }
   inline void SetSize(long long value) {

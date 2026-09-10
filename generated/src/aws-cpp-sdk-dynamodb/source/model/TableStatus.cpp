@@ -48,7 +48,6 @@ TableStatus GetTableStatusForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<TableStatus>(hashCode);
   }
-
   return TableStatus::NOT_SET;
 }
 
@@ -77,7 +76,6 @@ Aws::String GetNameForTableStatus(TableStatus enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

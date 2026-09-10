@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/OnDemandThroughputOverride.h>
 
 #include <utility>
@@ -17,21 +20,10 @@ namespace Model {
 
 OnDemandThroughputOverride::OnDemandThroughputOverride(JsonView jsonValue) { *this = jsonValue; }
 
-OnDemandThroughputOverride& OnDemandThroughputOverride::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("MaxReadRequestUnits")) {
-    m_maxReadRequestUnits = jsonValue.GetInt64("MaxReadRequestUnits");
-    m_maxReadRequestUnitsHasBeenSet = true;
-  }
-  return *this;
-}
+OnDemandThroughputOverride& OnDemandThroughputOverride::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue OnDemandThroughputOverride::Jsonize() const {
   JsonValue payload;
-
-  if (m_maxReadRequestUnitsHasBeenSet) {
-    payload.WithInt64("MaxReadRequestUnits", m_maxReadRequestUnits);
-  }
-
   return payload;
 }
 

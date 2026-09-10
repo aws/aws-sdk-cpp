@@ -3,6 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/model/StopMetricStreamsRequest.h>
 
@@ -17,19 +21,9 @@ Aws::String StopMetricStreamsRequest::SerializePayload() const {
 
   // Calculate map size
   size_t mapSize = 0;
-  if (m_namesHasBeenSet) {
-    mapSize++;
-  }
 
   encoder.WriteMapStart(mapSize);
 
-  if (m_namesHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Names"));
-    encoder.WriteArrayStart(m_names.size());
-    for (const auto& item_0 : m_names) {
-      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
-    }
-  }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
   return str;
 }

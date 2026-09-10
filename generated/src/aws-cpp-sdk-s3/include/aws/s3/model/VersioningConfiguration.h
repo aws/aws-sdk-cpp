@@ -33,7 +33,6 @@ class VersioningConfiguration {
   AWS_S3_API VersioningConfiguration() = default;
   AWS_S3_API VersioningConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API VersioningConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

@@ -30,7 +30,6 @@ class CORSRule {
   AWS_S3_API CORSRule() = default;
   AWS_S3_API CORSRule(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API CORSRule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

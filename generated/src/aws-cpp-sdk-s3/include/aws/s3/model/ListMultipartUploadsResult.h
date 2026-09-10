@@ -111,8 +111,8 @@ class ListMultipartUploadsResult {
   /**
    * <p>When a prefix is provided in the request, this field contains the specified
    * prefix. The result contains only keys starting with the specified prefix.</p>
-   *  <p> <b>Directory buckets</b> - For directory buckets, only prefixes that
-   * end in a delimiter (<code>/</code>) are supported.</p>
+   * <p> <b>Directory buckets</b> - For directory buckets, only prefixes that end in
+   * a delimiter (<code>/</code>) are supported.</p>
    */
   inline const Aws::String& GetPrefix() const { return m_prefix; }
   template <typename PrefixT = Aws::String>
@@ -130,8 +130,8 @@ class ListMultipartUploadsResult {
   ///@{
   /**
    * <p>Contains the delimiter you specified in the request. If you don't specify a
-   * delimiter in your request, this element is absent from the response.</p>
-   * <p> <b>Directory buckets</b> - For directory buckets, <code>/</code> is the only
+   * delimiter in your request, this element is absent from the response.</p>  <p>
+   * <b>Directory buckets</b> - For directory buckets, <code>/</code> is the only
    * supported delimiter.</p>
    */
   inline const Aws::String& GetDelimiter() const { return m_delimiter; }
@@ -151,8 +151,7 @@ class ListMultipartUploadsResult {
   /**
    * <p>When a list is truncated, this element specifies the value that should be
    * used for the <code>upload-id-marker</code> request parameter in a subsequent
-   * request.</p>  <p>This functionality is not supported for directory
-   * buckets.</p>
+   * request.</p>  <p>This functionality is not supported for directory buckets.</p>
    */
   inline const Aws::String& GetNextUploadIdMarker() const { return m_nextUploadIdMarker; }
   template <typename NextUploadIdMarkerT = Aws::String>

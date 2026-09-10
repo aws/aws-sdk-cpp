@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/AutoScalingTargetTrackingScalingPolicyConfigurationUpdate.h>
 
 #include <utility>
@@ -21,44 +24,11 @@ AutoScalingTargetTrackingScalingPolicyConfigurationUpdate::AutoScalingTargetTrac
 
 AutoScalingTargetTrackingScalingPolicyConfigurationUpdate& AutoScalingTargetTrackingScalingPolicyConfigurationUpdate::operator=(
     JsonView jsonValue) {
-  if (jsonValue.ValueExists("DisableScaleIn")) {
-    m_disableScaleIn = jsonValue.GetBool("DisableScaleIn");
-    m_disableScaleInHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ScaleInCooldown")) {
-    m_scaleInCooldown = jsonValue.GetInteger("ScaleInCooldown");
-    m_scaleInCooldownHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ScaleOutCooldown")) {
-    m_scaleOutCooldown = jsonValue.GetInteger("ScaleOutCooldown");
-    m_scaleOutCooldownHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("TargetValue")) {
-    m_targetValue = jsonValue.GetDouble("TargetValue");
-    m_targetValueHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue AutoScalingTargetTrackingScalingPolicyConfigurationUpdate::Jsonize() const {
   JsonValue payload;
-
-  if (m_disableScaleInHasBeenSet) {
-    payload.WithBool("DisableScaleIn", m_disableScaleIn);
-  }
-
-  if (m_scaleInCooldownHasBeenSet) {
-    payload.WithInteger("ScaleInCooldown", m_scaleInCooldown);
-  }
-
-  if (m_scaleOutCooldownHasBeenSet) {
-    payload.WithInteger("ScaleOutCooldown", m_scaleOutCooldown);
-  }
-
-  if (m_targetValueHasBeenSet) {
-    payload.WithDouble("TargetValue", m_targetValue);
-  }
-
   return payload;
 }
 

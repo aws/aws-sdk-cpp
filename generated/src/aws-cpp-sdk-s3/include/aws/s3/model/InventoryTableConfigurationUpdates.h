@@ -30,7 +30,6 @@ class InventoryTableConfigurationUpdates {
   AWS_S3_API InventoryTableConfigurationUpdates() = default;
   AWS_S3_API InventoryTableConfigurationUpdates(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API InventoryTableConfigurationUpdates& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

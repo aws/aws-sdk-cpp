@@ -29,16 +29,15 @@ class Initiator {
   AWS_S3_API Initiator() = default;
   AWS_S3_API Initiator(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API Initiator& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{
   /**
    * <p>If the principal is an Amazon Web Services account, it provides the Canonical
-   * User ID. If the principal is an IAM User, it provides a user ARN value.</p>
-   *  <p> <b>Directory buckets</b> - If the principal is an Amazon Web Services
-   * account, it provides the Amazon Web Services account ID. If the principal is an
-   * IAM User, it provides a user ARN value.</p>
+   * User ID. If the principal is an IAM User, it provides a user ARN value.</p>  <p>
+   * <b>Directory buckets</b> - If the principal is an Amazon Web Services account,
+   * it provides the Amazon Web Services account ID. If the principal is an IAM User,
+   * it provides a user ARN value.</p>
    */
   inline const Aws::String& GetID() const { return m_iD; }
   inline bool IDHasBeenSet() const { return m_iDHasBeenSet; }
@@ -56,8 +55,7 @@ class Initiator {
 
   ///@{
   /**
-   * <p/>  <p>This functionality is not supported for directory buckets.</p>
-   *
+   * <p></p>  <p>This functionality is not supported for directory buckets.</p>
    */
   inline const Aws::String& GetDisplayName() const { return m_displayName; }
   inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }

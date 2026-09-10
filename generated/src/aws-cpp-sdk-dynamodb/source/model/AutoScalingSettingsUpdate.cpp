@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/AutoScalingSettingsUpdate.h>
 
 #include <utility>
@@ -17,53 +20,10 @@ namespace Model {
 
 AutoScalingSettingsUpdate::AutoScalingSettingsUpdate(JsonView jsonValue) { *this = jsonValue; }
 
-AutoScalingSettingsUpdate& AutoScalingSettingsUpdate::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("MinimumUnits")) {
-    m_minimumUnits = jsonValue.GetInt64("MinimumUnits");
-    m_minimumUnitsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("MaximumUnits")) {
-    m_maximumUnits = jsonValue.GetInt64("MaximumUnits");
-    m_maximumUnitsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("AutoScalingDisabled")) {
-    m_autoScalingDisabled = jsonValue.GetBool("AutoScalingDisabled");
-    m_autoScalingDisabledHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("AutoScalingRoleArn")) {
-    m_autoScalingRoleArn = jsonValue.GetString("AutoScalingRoleArn");
-    m_autoScalingRoleArnHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ScalingPolicyUpdate")) {
-    m_scalingPolicyUpdate = jsonValue.GetObject("ScalingPolicyUpdate");
-    m_scalingPolicyUpdateHasBeenSet = true;
-  }
-  return *this;
-}
+AutoScalingSettingsUpdate& AutoScalingSettingsUpdate::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue AutoScalingSettingsUpdate::Jsonize() const {
   JsonValue payload;
-
-  if (m_minimumUnitsHasBeenSet) {
-    payload.WithInt64("MinimumUnits", m_minimumUnits);
-  }
-
-  if (m_maximumUnitsHasBeenSet) {
-    payload.WithInt64("MaximumUnits", m_maximumUnits);
-  }
-
-  if (m_autoScalingDisabledHasBeenSet) {
-    payload.WithBool("AutoScalingDisabled", m_autoScalingDisabled);
-  }
-
-  if (m_autoScalingRoleArnHasBeenSet) {
-    payload.WithString("AutoScalingRoleArn", m_autoScalingRoleArn);
-  }
-
-  if (m_scalingPolicyUpdateHasBeenSet) {
-    payload.WithObject("ScalingPolicyUpdate", m_scalingPolicyUpdate.Jsonize());
-  }
-
   return payload;
 }
 

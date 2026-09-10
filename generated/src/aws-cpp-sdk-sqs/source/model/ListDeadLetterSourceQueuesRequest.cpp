@@ -3,32 +3,22 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/sqs/model/ListDeadLetterSourceQueuesRequest.h>
 
+#include <numeric>
 #include <utility>
 
 using namespace Aws::SQS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListDeadLetterSourceQueuesRequest::SerializePayload() const {
-  JsonValue payload;
-
-  if (m_queueUrlHasBeenSet) {
-    payload.WithString("QueueUrl", m_queueUrl);
-  }
-
-  if (m_nextTokenHasBeenSet) {
-    payload.WithString("NextToken", m_nextToken);
-  }
-
-  if (m_maxResultsHasBeenSet) {
-    payload.WithInteger("MaxResults", m_maxResults);
-  }
-
-  return payload.View().WriteReadable();
-}
+Aws::String ListDeadLetterSourceQueuesRequest::SerializePayload() const { return "{}"; }
 
 Aws::Http::HeaderValueCollection ListDeadLetterSourceQueuesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;

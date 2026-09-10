@@ -195,8 +195,8 @@ class GetItemRequest : public DynamoDBRequest {
    * then use this substitution in an expression, as in this example:</p> <ul> <li>
    * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
    * <b>:</b> character are <i>expression attribute values</i>, which are
-   * placeholders for the actual value at runtime.</p>  <p>For more
-   * information on expression attribute names, see <a
+   * placeholders for the actual value at runtime.</p>  <p>For more information on
+   * expression attribute names, see <a
    * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
    * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
    */

@@ -142,9 +142,9 @@ class GlobalSecondaryIndexDescription {
    * when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
    * true. You can't delete the index that is being created when
    * <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
-   * false. </p>  <p>For indexes that were created during a
-   * <code>CreateTable</code> operation, the <code>Backfilling</code> attribute does
-   * not appear in the <code>DescribeTable</code> output.</p>
+   * false. </p>  <p>For indexes that were created during a <code>CreateTable</code>
+   * operation, the <code>Backfilling</code> attribute does not appear in the
+   * <code>DescribeTable</code> output.</p>
    */
   inline bool GetBackfilling() const { return m_backfilling; }
   inline bool BackfillingHasBeenSet() const { return m_backfillingHasBeenSet; }

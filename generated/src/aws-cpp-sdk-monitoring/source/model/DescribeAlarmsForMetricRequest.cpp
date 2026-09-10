@@ -3,6 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/model/DescribeAlarmsForMetricRequest.h>
 
@@ -17,67 +21,9 @@ Aws::String DescribeAlarmsForMetricRequest::SerializePayload() const {
 
   // Calculate map size
   size_t mapSize = 0;
-  if (m_metricNameHasBeenSet) {
-    mapSize++;
-  }
-  if (m_namespaceHasBeenSet) {
-    mapSize++;
-  }
-  if (m_statisticHasBeenSet) {
-    mapSize++;
-  }
-  if (m_extendedStatisticHasBeenSet) {
-    mapSize++;
-  }
-  if (m_dimensionsHasBeenSet) {
-    mapSize++;
-  }
-  if (m_periodHasBeenSet) {
-    mapSize++;
-  }
-  if (m_unitHasBeenSet) {
-    mapSize++;
-  }
 
   encoder.WriteMapStart(mapSize);
 
-  if (m_metricNameHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MetricName"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_metricName.c_str()));
-  }
-
-  if (m_namespaceHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Namespace"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_namespace.c_str()));
-  }
-
-  if (m_statisticHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Statistic"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(StatisticMapper::GetNameForStatistic(m_statistic).c_str()));
-  }
-
-  if (m_extendedStatisticHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ExtendedStatistic"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_extendedStatistic.c_str()));
-  }
-
-  if (m_dimensionsHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Dimensions"));
-    encoder.WriteArrayStart(m_dimensions.size());
-    for (const auto& item_0 : m_dimensions) {
-      item_0.CborEncode(encoder);
-    }
-  }
-
-  if (m_periodHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Period"));
-    (m_period >= 0) ? encoder.WriteUInt(m_period) : encoder.WriteNegInt(m_period);
-  }
-
-  if (m_unitHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Unit"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(StandardUnitMapper::GetNameForStandardUnit(m_unit).c_str()));
-  }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
   return str;
 }

@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/WriteRequest.h>
 
 #include <utility>
@@ -17,29 +20,10 @@ namespace Model {
 
 WriteRequest::WriteRequest(JsonView jsonValue) { *this = jsonValue; }
 
-WriteRequest& WriteRequest::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("PutRequest")) {
-    m_putRequest = jsonValue.GetObject("PutRequest");
-    m_putRequestHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("DeleteRequest")) {
-    m_deleteRequest = jsonValue.GetObject("DeleteRequest");
-    m_deleteRequestHasBeenSet = true;
-  }
-  return *this;
-}
+WriteRequest& WriteRequest::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue WriteRequest::Jsonize() const {
   JsonValue payload;
-
-  if (m_putRequestHasBeenSet) {
-    payload.WithObject("PutRequest", m_putRequest.Jsonize());
-  }
-
-  if (m_deleteRequestHasBeenSet) {
-    payload.WithObject("DeleteRequest", m_deleteRequest.Jsonize());
-  }
-
   return payload;
 }
 

@@ -3,6 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/model/PutInsightRuleRequest.h>
 
@@ -17,51 +21,9 @@ Aws::String PutInsightRuleRequest::SerializePayload() const {
 
   // Calculate map size
   size_t mapSize = 0;
-  if (m_ruleNameHasBeenSet) {
-    mapSize++;
-  }
-  if (m_ruleStateHasBeenSet) {
-    mapSize++;
-  }
-  if (m_ruleDefinitionHasBeenSet) {
-    mapSize++;
-  }
-  if (m_tagsHasBeenSet) {
-    mapSize++;
-  }
-  if (m_applyOnTransformedLogsHasBeenSet) {
-    mapSize++;
-  }
 
   encoder.WriteMapStart(mapSize);
 
-  if (m_ruleNameHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RuleName"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_ruleName.c_str()));
-  }
-
-  if (m_ruleStateHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RuleState"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_ruleState.c_str()));
-  }
-
-  if (m_ruleDefinitionHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RuleDefinition"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_ruleDefinition.c_str()));
-  }
-
-  if (m_tagsHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Tags"));
-    encoder.WriteArrayStart(m_tags.size());
-    for (const auto& item_0 : m_tags) {
-      item_0.CborEncode(encoder);
-    }
-  }
-
-  if (m_applyOnTransformedLogsHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ApplyOnTransformedLogs"));
-    encoder.WriteBool(m_applyOnTransformedLogs);
-  }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
   return str;
 }

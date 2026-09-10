@@ -30,14 +30,13 @@ class ObjectIdentifier {
   AWS_S3_API ObjectIdentifier() = default;
   AWS_S3_API ObjectIdentifier(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API ObjectIdentifier& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{
   /**
-   * <p>Key name of the object.</p>  <p>Replacement must be made for
-   * object keys containing special characters (such as carriage returns) when using
-   * XML requests. For more information, see <a
+   * <p>Key name of the object.</p>  <p>Replacement must be made for object keys
+   * containing special characters (such as carriage returns) when using XML
+   * requests. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
    * XML related object key constraints</a>.</p>
    */
@@ -57,8 +56,8 @@ class ObjectIdentifier {
 
   ///@{
   /**
-   * <p>Version ID for the specific version of the object to delete.</p>
-   * <p>This functionality is not supported for directory buckets.</p>
+   * <p>Version ID for the specific version of the object to delete.</p>  <p>This
+   * functionality is not supported for directory buckets.</p>
    */
   inline const Aws::String& GetVersionId() const { return m_versionId; }
   inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
@@ -78,9 +77,8 @@ class ObjectIdentifier {
   /**
    * <p>An entity tag (ETag) is an identifier assigned by a web server to a specific
    * version of a resource found at a URL. This header field makes the request method
-   * conditional on <code>ETags</code>. </p>  <p>Entity tags (ETags) for S3
-   * Express One Zone are random alphanumeric strings unique to the object. </p>
-   *
+   * conditional on <code>ETags</code>. </p>  <p>Entity tags (ETags) for S3 Express
+   * One Zone are random alphanumeric strings unique to the object. </p>
    */
   inline const Aws::String& GetETag() const { return m_eTag; }
   inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }

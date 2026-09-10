@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/StorageClassAnalysis.h>
@@ -19,27 +20,9 @@ namespace Model {
 
 StorageClassAnalysis::StorageClassAnalysis(const XmlNode& xmlNode) { *this = xmlNode; }
 
-StorageClassAnalysis& StorageClassAnalysis::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+StorageClassAnalysis& StorageClassAnalysis::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode dataExportNode = resultNode.FirstChild("DataExport");
-    if (!dataExportNode.IsNull()) {
-      m_dataExport = dataExportNode;
-      m_dataExportHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void StorageClassAnalysis::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_dataExportHasBeenSet) {
-    XmlNode dataExportNode = parentNode.CreateChildElement("DataExport");
-    m_dataExport.AddToNode(dataExportNode);
-  }
-}
+void StorageClassAnalysis::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

@@ -43,10 +43,10 @@ class AnomalyDetector {
 
   ///@{
   /**
-   * <p>The unique identifier of the anomaly detector.</p>  <p>The identifier
-   * does not restrict access to a specific anomaly detector in an IAM policy.
-   * Permissions for anomaly detector operations apply to all anomaly detectors in
-   * the account.</p>
+   * <p>The unique identifier of the anomaly detector.</p>  <p>The identifier does
+   * not restrict access to a specific anomaly detector in an IAM policy. Permissions
+   * for anomaly detector operations apply to all anomaly detectors in the
+   * account.</p>
    */
   inline const Aws::String& GetAnomalyDetectorId() const { return m_anomalyDetectorId; }
   inline bool AnomalyDetectorIdHasBeenSet() const { return m_anomalyDetectorIdHasBeenSet; }

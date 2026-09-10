@@ -33,7 +33,6 @@ GlobalTableSettingsReplicationMode GetGlobalTableSettingsReplicationModeForName(
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<GlobalTableSettingsReplicationMode>(hashCode);
   }
-
   return GlobalTableSettingsReplicationMode::NOT_SET;
 }
 
@@ -52,7 +51,6 @@ Aws::String GetNameForGlobalTableSettingsReplicationMode(GlobalTableSettingsRepl
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

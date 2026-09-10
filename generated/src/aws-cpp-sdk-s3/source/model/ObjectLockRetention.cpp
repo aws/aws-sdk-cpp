@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/ObjectLockRetention.h>
@@ -19,39 +20,9 @@ namespace Model {
 
 ObjectLockRetention::ObjectLockRetention(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ObjectLockRetention& ObjectLockRetention::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+ObjectLockRetention& ObjectLockRetention::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode modeNode = resultNode.FirstChild("Mode");
-    if (!modeNode.IsNull()) {
-      m_mode = ObjectLockRetentionModeMapper::GetObjectLockRetentionModeForName(
-          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(modeNode.GetText()).c_str()));
-      m_modeHasBeenSet = true;
-    }
-    XmlNode retainUntilDateNode = resultNode.FirstChild("RetainUntilDate");
-    if (!retainUntilDateNode.IsNull()) {
-      m_retainUntilDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(retainUntilDateNode.GetText()).c_str()).c_str(),
-                                   Aws::Utils::DateFormat::ISO_8601);
-      m_retainUntilDateHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void ObjectLockRetention::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_modeHasBeenSet) {
-    XmlNode modeNode = parentNode.CreateChildElement("Mode");
-    modeNode.SetText(ObjectLockRetentionModeMapper::GetNameForObjectLockRetentionMode(m_mode));
-  }
-
-  if (m_retainUntilDateHasBeenSet) {
-    XmlNode retainUntilDateNode = parentNode.CreateChildElement("RetainUntilDate");
-    retainUntilDateNode.SetText(m_retainUntilDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-}
+void ObjectLockRetention::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

@@ -30,7 +30,6 @@ class GetObjectAttributesParts {
   AWS_S3_API GetObjectAttributesParts() = default;
   AWS_S3_API GetObjectAttributesParts(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API GetObjectAttributesParts& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{
@@ -121,9 +120,9 @@ class GetObjectAttributesParts {
   ///@{
   /**
    * <p>A container for elements related to a particular part. A response can contain
-   * zero or more <code>Parts</code> elements.</p>  <ul> <li> <p> <b>General
-   * purpose buckets</b> - For <code>GetObjectAttributes</code>, if an additional
-   * checksum (including <code>x-amz-checksum-crc32</code>,
+   * zero or more <code>Parts</code> elements.</p>  <ul> <li> <p> <b>General purpose
+   * buckets</b> - For <code>GetObjectAttributes</code>, if an additional checksum
+   * (including <code>x-amz-checksum-crc32</code>,
    * <code>x-amz-checksum-crc32c</code>, <code>x-amz-checksum-sha1</code>, or
    * <code>x-amz-checksum-sha256</code>) isn't applied to the object specified in the
    * request, the response doesn't return the <code>Part</code> element.</p> </li>

@@ -27,7 +27,6 @@ OwnerOverride GetOwnerOverrideForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<OwnerOverride>(hashCode);
   }
-
   return OwnerOverride::NOT_SET;
 }
 
@@ -42,7 +41,6 @@ Aws::String GetNameForOwnerOverride(OwnerOverride enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

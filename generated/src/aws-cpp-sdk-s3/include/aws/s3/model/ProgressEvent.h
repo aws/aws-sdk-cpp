@@ -29,7 +29,6 @@ class ProgressEvent {
   AWS_S3_API ProgressEvent() = default;
   AWS_S3_API ProgressEvent(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API ProgressEvent& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

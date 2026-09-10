@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/KeySchemaElement.h>
 
 #include <utility>
@@ -17,29 +20,10 @@ namespace Model {
 
 KeySchemaElement::KeySchemaElement(JsonView jsonValue) { *this = jsonValue; }
 
-KeySchemaElement& KeySchemaElement::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("AttributeName")) {
-    m_attributeName = jsonValue.GetString("AttributeName");
-    m_attributeNameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("KeyType")) {
-    m_keyType = KeyTypeMapper::GetKeyTypeForName(jsonValue.GetString("KeyType"));
-    m_keyTypeHasBeenSet = true;
-  }
-  return *this;
-}
+KeySchemaElement& KeySchemaElement::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue KeySchemaElement::Jsonize() const {
   JsonValue payload;
-
-  if (m_attributeNameHasBeenSet) {
-    payload.WithString("AttributeName", m_attributeName);
-  }
-
-  if (m_keyTypeHasBeenSet) {
-    payload.WithString("KeyType", KeyTypeMapper::GetNameForKeyType(m_keyType));
-  }
-
   return payload;
 }
 

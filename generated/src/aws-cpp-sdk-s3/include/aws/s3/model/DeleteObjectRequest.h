@@ -14,9 +14,6 @@
 #include <utility>
 
 namespace Aws {
-namespace Http {
-class URI;
-}  // namespace Http
 namespace S3 {
 namespace Model {
 
@@ -34,11 +31,12 @@ class DeleteObjectRequest : public S3Request {
 
   AWS_S3_API Aws::String SerializePayload() const override;
 
-  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
   AWS_S3_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
   AWS_S3_API bool HasEmbeddedError(IOStream& body, const Http::HeaderValueCollection& header) const override;
+
   /**
    * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
    */
@@ -68,11 +66,11 @@ class DeleteObjectRequest : public S3Request {
    * SDKs, you provide the access point ARN in place of the bucket name. For more
    * information about access point ARNs, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-   * access points</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>Object
-   * Lambda access points are not supported by directory buckets.</p>  <p>
-   * <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must
-   * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
-   * takes the form <code>
+   * access points</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>Object Lambda
+   * access points are not supported by directory buckets.</p>  <p> <b>S3 on
+   * Outposts</b> - When you use this action with S3 on Outposts, you must direct
+   * requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the
+   * form <code>
    * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
    * When you use this action with S3 on Outposts, the destination bucket must be the
    * Outposts access point ARN or the access point alias. For more information about
@@ -136,9 +134,9 @@ class DeleteObjectRequest : public S3Request {
 
   ///@{
   /**
-   * <p>Version ID used to reference a specific version of the object.</p>
-   * <p>For directory buckets in this API operation, only the <code>null</code> value
-   * of the version ID is supported.</p>
+   * <p>Version ID used to reference a specific version of the object.</p>  <p>For
+   * directory buckets in this API operation, only the <code>null</code> value of the
+   * version ID is supported.</p>
    */
   inline const Aws::String& GetVersionId() const { return m_versionId; }
   inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
@@ -172,8 +170,8 @@ class DeleteObjectRequest : public S3Request {
   /**
    * <p>Indicates whether S3 Object Lock should bypass Governance-mode restrictions
    * to process this operation. To use this header, you must have the
-   * <code>s3:BypassGovernanceRetention</code> permission.</p>  <p>This
-   * functionality is not supported for directory buckets.</p>
+   * <code>s3:BypassGovernanceRetention</code> permission.</p>  <p>This functionality
+   * is not supported for directory buckets.</p>
    */
   inline bool GetBypassGovernanceRetention() const { return m_bypassGovernanceRetention; }
   inline bool BypassGovernanceRetentionHasBeenSet() const { return m_bypassGovernanceRetentionHasBeenSet; }
@@ -261,8 +259,8 @@ class DeleteObjectRequest : public S3Request {
    * <code>412 Precondition Failed</code> error. If the <code>Size</code> matches or
    * if the object doesn’t exist, the operation returns a <code>204 Success (No
    * Content)</code> response.</p>  <p>This functionality is only supported for
-   * directory buckets.</p>   <p>You can use the
-   * <code>If-Match</code>, <code>x-amz-if-match-last-modified-time</code> and
+   * directory buckets.</p>   <p>You can use the <code>If-Match</code>,
+   * <code>x-amz-if-match-last-modified-time</code> and
    * <code>x-amz-if-match-size</code> conditional headers in conjunction with
    * each-other or individually.</p>
    */

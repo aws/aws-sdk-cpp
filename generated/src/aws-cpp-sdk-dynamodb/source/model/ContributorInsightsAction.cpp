@@ -30,7 +30,6 @@ ContributorInsightsAction GetContributorInsightsActionForName(const Aws::String&
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<ContributorInsightsAction>(hashCode);
   }
-
   return ContributorInsightsAction::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForContributorInsightsAction(ContributorInsightsAction enumVa
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

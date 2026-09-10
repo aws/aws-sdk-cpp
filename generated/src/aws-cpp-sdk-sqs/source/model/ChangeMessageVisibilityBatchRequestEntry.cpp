@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/sqs/model/ChangeMessageVisibilityBatchRequestEntry.h>
 
 #include <utility>
@@ -17,37 +20,10 @@ namespace Model {
 
 ChangeMessageVisibilityBatchRequestEntry::ChangeMessageVisibilityBatchRequestEntry(JsonView jsonValue) { *this = jsonValue; }
 
-ChangeMessageVisibilityBatchRequestEntry& ChangeMessageVisibilityBatchRequestEntry::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("Id")) {
-    m_id = jsonValue.GetString("Id");
-    m_idHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ReceiptHandle")) {
-    m_receiptHandle = jsonValue.GetString("ReceiptHandle");
-    m_receiptHandleHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("VisibilityTimeout")) {
-    m_visibilityTimeout = jsonValue.GetInteger("VisibilityTimeout");
-    m_visibilityTimeoutHasBeenSet = true;
-  }
-  return *this;
-}
+ChangeMessageVisibilityBatchRequestEntry& ChangeMessageVisibilityBatchRequestEntry::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue ChangeMessageVisibilityBatchRequestEntry::Jsonize() const {
   JsonValue payload;
-
-  if (m_idHasBeenSet) {
-    payload.WithString("Id", m_id);
-  }
-
-  if (m_receiptHandleHasBeenSet) {
-    payload.WithString("ReceiptHandle", m_receiptHandle);
-  }
-
-  if (m_visibilityTimeoutHasBeenSet) {
-    payload.WithInteger("VisibilityTimeout", m_visibilityTimeout);
-  }
-
   return payload;
 }
 

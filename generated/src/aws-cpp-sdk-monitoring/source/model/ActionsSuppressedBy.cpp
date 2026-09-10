@@ -33,7 +33,6 @@ ActionsSuppressedBy GetActionsSuppressedByForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<ActionsSuppressedBy>(hashCode);
   }
-
   return ActionsSuppressedBy::NOT_SET;
 }
 
@@ -52,7 +51,6 @@ Aws::String GetNameForActionsSuppressedBy(ActionsSuppressedBy enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

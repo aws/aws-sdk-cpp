@@ -33,7 +33,6 @@ InventoryFormat GetInventoryFormatForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<InventoryFormat>(hashCode);
   }
-
   return InventoryFormat::NOT_SET;
 }
 
@@ -52,7 +51,6 @@ Aws::String GetNameForInventoryFormat(InventoryFormat enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

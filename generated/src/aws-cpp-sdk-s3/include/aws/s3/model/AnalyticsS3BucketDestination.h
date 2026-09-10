@@ -30,7 +30,6 @@ class AnalyticsS3BucketDestination {
   AWS_S3_API AnalyticsS3BucketDestination() = default;
   AWS_S3_API AnalyticsS3BucketDestination(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API AnalyticsS3BucketDestination& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{
@@ -52,9 +51,9 @@ class AnalyticsS3BucketDestination {
   ///@{
   /**
    * <p>The account ID that owns the destination S3 bucket. If no account ID is
-   * provided, the owner is not validated before exporting data.</p>  <p>
-   * Although this value is optional, we strongly recommend that you set it to help
-   * prevent problems if the destination bucket ownership changes. </p>
+   * provided, the owner is not validated before exporting data.</p>  <p> Although
+   * this value is optional, we strongly recommend that you set it to help prevent
+   * problems if the destination bucket ownership changes. </p>
    */
   inline const Aws::String& GetBucketAccountId() const { return m_bucketAccountId; }
   inline bool BucketAccountIdHasBeenSet() const { return m_bucketAccountIdHasBeenSet; }

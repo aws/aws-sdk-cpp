@@ -4,7 +4,9 @@
  */
 
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/GetBucketAclResult.h>
@@ -18,36 +20,4 @@ using namespace Aws;
 
 GetBucketAclResult::GetBucketAclResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-GetBucketAclResult& GetBucketAclResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
-  m_HttpResponseCode = result.GetResponseCode();
-  const XmlDocument& xmlDocument = result.GetPayload();
-  XmlNode resultNode = xmlDocument.GetRootElement();
-
-  if (!resultNode.IsNull()) {
-    XmlNode ownerNode = resultNode.FirstChild("Owner");
-    if (!ownerNode.IsNull()) {
-      m_owner = ownerNode;
-      m_ownerHasBeenSet = true;
-    }
-    XmlNode grantsNode = resultNode.FirstChild("AccessControlList");
-    if (!grantsNode.IsNull()) {
-      XmlNode grantsMember = grantsNode.FirstChild("Grant");
-      m_grantsHasBeenSet = !grantsMember.IsNull();
-      while (!grantsMember.IsNull()) {
-        m_grants.push_back(grantsMember);
-        grantsMember = grantsMember.NextNode("Grant");
-      }
-
-      m_grantsHasBeenSet = true;
-    }
-  }
-
-  const auto& headers = result.GetHeaderValueCollection();
-  const auto& requestIdIter = headers.find("x-amz-request-id");
-  if (requestIdIter != headers.end()) {
-    m_requestId = requestIdIter->second;
-    m_requestIdHasBeenSet = true;
-  }
-
-  return *this;
-}
+GetBucketAclResult& GetBucketAclResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) { return *this; }

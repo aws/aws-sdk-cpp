@@ -30,7 +30,6 @@ class S3KeyFilter {
   AWS_S3_API S3KeyFilter() = default;
   AWS_S3_API S3KeyFilter(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API S3KeyFilter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

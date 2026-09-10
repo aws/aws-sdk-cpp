@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/ConditionalCheckFailedException.h>
 
 #include <utility>
@@ -17,36 +20,10 @@ namespace Model {
 
 ConditionalCheckFailedException::ConditionalCheckFailedException(JsonView jsonValue) { *this = jsonValue; }
 
-ConditionalCheckFailedException& ConditionalCheckFailedException::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("message")) {
-    m_message = jsonValue.GetString("message");
-    m_messageHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Item")) {
-    Aws::Map<Aws::String, JsonView> itemJsonMap = jsonValue.GetObject("Item").GetAllObjects();
-    for (auto& itemItem : itemJsonMap) {
-      m_item[itemItem.first] = itemItem.second.AsObject();
-    }
-    m_itemHasBeenSet = true;
-  }
-  return *this;
-}
+ConditionalCheckFailedException& ConditionalCheckFailedException::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue ConditionalCheckFailedException::Jsonize() const {
   JsonValue payload;
-
-  if (m_messageHasBeenSet) {
-    payload.WithString("message", m_message);
-  }
-
-  if (m_itemHasBeenSet) {
-    JsonValue itemJsonMap;
-    for (auto& itemItem : m_item) {
-      itemJsonMap.WithObject(itemItem.first, itemItem.second.Jsonize());
-    }
-    payload.WithObject("Item", std::move(itemJsonMap));
-  }
-
   return payload;
 }
 

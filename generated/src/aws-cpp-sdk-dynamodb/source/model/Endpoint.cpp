@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/Endpoint.h>
 
 #include <utility>
@@ -17,29 +20,10 @@ namespace Model {
 
 Endpoint::Endpoint(JsonView jsonValue) { *this = jsonValue; }
 
-Endpoint& Endpoint::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("Address")) {
-    m_address = jsonValue.GetString("Address");
-    m_addressHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("CachePeriodInMinutes")) {
-    m_cachePeriodInMinutes = jsonValue.GetInt64("CachePeriodInMinutes");
-    m_cachePeriodInMinutesHasBeenSet = true;
-  }
-  return *this;
-}
+Endpoint& Endpoint::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue Endpoint::Jsonize() const {
   JsonValue payload;
-
-  if (m_addressHasBeenSet) {
-    payload.WithString("Address", m_address);
-  }
-
-  if (m_cachePeriodInMinutesHasBeenSet) {
-    payload.WithInt64("CachePeriodInMinutes", m_cachePeriodInMinutes);
-  }
-
   return payload;
 }
 

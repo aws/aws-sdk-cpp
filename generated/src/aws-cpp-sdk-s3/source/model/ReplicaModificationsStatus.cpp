@@ -30,7 +30,6 @@ ReplicaModificationsStatus GetReplicaModificationsStatusForName(const Aws::Strin
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<ReplicaModificationsStatus>(hashCode);
   }
-
   return ReplicaModificationsStatus::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForReplicaModificationsStatus(ReplicaModificationsStatus enum
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

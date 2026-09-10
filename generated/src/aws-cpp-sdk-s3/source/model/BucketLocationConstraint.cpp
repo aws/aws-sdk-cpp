@@ -144,7 +144,6 @@ BucketLocationConstraint GetBucketLocationConstraintForName(const Aws::String& n
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<BucketLocationConstraint>(hashCode);
   }
-
   return BucketLocationConstraint::NOT_SET;
 }
 
@@ -237,7 +236,6 @@ Aws::String GetNameForBucketLocationConstraint(BucketLocationConstraint enumValu
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

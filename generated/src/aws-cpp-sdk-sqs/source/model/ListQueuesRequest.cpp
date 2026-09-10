@@ -3,32 +3,22 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/sqs/model/ListQueuesRequest.h>
 
+#include <numeric>
 #include <utility>
 
 using namespace Aws::SQS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListQueuesRequest::SerializePayload() const {
-  JsonValue payload;
-
-  if (m_queueNamePrefixHasBeenSet) {
-    payload.WithString("QueueNamePrefix", m_queueNamePrefix);
-  }
-
-  if (m_nextTokenHasBeenSet) {
-    payload.WithString("NextToken", m_nextToken);
-  }
-
-  if (m_maxResultsHasBeenSet) {
-    payload.WithInteger("MaxResults", m_maxResults);
-  }
-
-  return payload.View().WriteReadable();
-}
+Aws::String ListQueuesRequest::SerializePayload() const { return "{}"; }
 
 Aws::Http::HeaderValueCollection ListQueuesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
