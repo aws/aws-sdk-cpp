@@ -494,8 +494,7 @@ void LexRuntimeV2Client::StartConversationAsync(Model::StartConversationRequest&
 
 #if AWS_SDK_USE_CRT_HTTP
   // Push-based WriteData path (CRT HTTP client only)
-  auto writeDataStreamBuf = Aws::MakeShared<Aws::Utils::Stream::HttpWriteDataStreamBuf>(ALLOCATION_TAG, GetHttpClient(), 8 * 1024,
-                                                                                        m_clientConfiguration.requestTimeoutMs);
+  auto writeDataStreamBuf = Aws::MakeShared<Aws::Utils::Stream::HttpWriteDataStreamBuf>(ALLOCATION_TAG, GetHttpClient());
   auto signer = GetSignerByName(Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
 
   auto eventEncoderStream = Aws::MakeShared<Model::StartConversationRequestEventStream>(ALLOCATION_TAG, writeDataStreamBuf);

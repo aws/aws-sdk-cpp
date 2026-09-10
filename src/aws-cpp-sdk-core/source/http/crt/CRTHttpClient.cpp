@@ -593,8 +593,14 @@ namespace Aws
             connectionManagerOptions.ConnectionOptions = options;
             connectionManagerOptions.MaxConnections = m_configuration.maxConnections;
             connectionManagerOptions.EnableBlockingShutdown = true;
-            //TODO: need to bind out Monitoring options to handle the read timeout config value.
-            // once done, come back and use it to setup read timeouts.
+
+            if (m_configuration.lowSpeedLimit > 0 && m_configuration.requestTimeoutMs > 0)
+            {
+                connectionManagerOptions.MinThroughputBytesPerSecond =
+                    static_cast<uint64_t>(m_configuration.lowSpeedLimit);
+                connectionManagerOptions.AllowableThroughputFailureIntervalSeconds =
+                    static_cast<uint32_t>((m_configuration.requestTimeoutMs + 999) / 1000);
+            }
 
             auto connectionManager = Crt::Http::HttpClientConnectionManager::NewClientConnectionManager(connectionManagerOptions);
 

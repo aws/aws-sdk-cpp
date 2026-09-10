@@ -152,8 +152,8 @@ class AWS_CORE_LOCAL SmithyBidirectionalStreamingWriteDataTask final {
     m_sem->ReleaseAll();
 
     // Wait for stream to complete
-    m_writeDataStreamBuf->WaitForStreamComplete();
     auto response = m_writeDataStreamBuf->GetResponse();
+    m_writeDataStreamBuf->WaitForStreamComplete();
 
     // Flush any remaining buffered response data through the EventDecoderStream
     if (response) {

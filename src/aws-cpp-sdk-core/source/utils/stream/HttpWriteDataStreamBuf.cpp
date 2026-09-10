@@ -5,7 +5,6 @@
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/utils/stream/HttpWriteDataStreamBuf.h>
 
-#include <chrono>
 #include <utility>
 
 namespace {
@@ -13,13 +12,8 @@ const char* WRITE_DATA_BUF_LOG_NAME = "HttpWriteDataStreamBuf";
 }
 
 Aws::Utils::Stream::HttpWriteDataStreamBuf::HttpWriteDataStreamBuf(const std::shared_ptr<Aws::Http::HttpClient>& client,
-                                                                   size_t bufferLength,
-                                                                   size_t requestTimeoutMs)
+                                                                   size_t bufferLength)
     : m_client{client}, m_buffer{bufferLength} {
-  if (requestTimeoutMs > 0) {
-    m_hasDeadline = true;
-    m_deadline = std::chrono::steady_clock::now() + std::chrono::milliseconds(requestTimeoutMs);
-  }
   ResetPutArea();
 }
 
@@ -109,6 +103,9 @@ void Aws::Utils::Stream::HttpWriteDataStreamBuf::WaitForStreamComplete() {
     return;
   }
   m_shutdownCondition.wait(lock, [this]() -> bool { return m_streamComplete; });
+
+  m_stream.reset();
+  m_connection.reset();
 }
 
 std::streambuf::int_type Aws::Utils::Stream::HttpWriteDataStreamBuf::overflow(std::streambuf::int_type c) {
@@ -153,6 +150,13 @@ bool Aws::Utils::Stream::HttpWriteDataStreamBuf::SendBuffer(bool endStream) {
     return false;
   }
 
+  {
+    std::unique_lock<std::mutex> const lock{m_shutdownMutex};
+    if (m_streamComplete || !m_stream) {
+      return false;
+    }
+  }
+
   auto data = Aws::MakeShared<Aws::StringStream>(WRITE_DATA_BUF_LOG_NAME);
   data->write(pbase(), pptr() - pbase());
 
@@ -169,18 +173,7 @@ bool Aws::Utils::Stream::HttpWriteDataStreamBuf::SendBuffer(bool endStream) {
       endStream);
 
   std::unique_lock<std::mutex> lock{m_writeMutex};
-  if (m_hasDeadline) {
-    bool completed = m_writeComplete.wait_until(lock, m_deadline,
-        [this]() -> bool { return !m_writeInProgress; });
-    if (!completed) {
-      m_writeError = true;
-      m_writeInProgress = false;
-      ResetPutArea();
-      return false;
-    }
-  } else {
-    m_writeComplete.wait(lock, [this]() -> bool { return !m_writeInProgress; });
-  }
+  m_writeComplete.wait(lock, [this]() -> bool { return !m_writeInProgress; });
 
   ResetPutArea();
 

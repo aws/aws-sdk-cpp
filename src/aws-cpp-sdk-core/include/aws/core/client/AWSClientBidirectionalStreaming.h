@@ -111,8 +111,8 @@ void SubmitBidirectionalStreamingRequest(
         }
         Aws::Utils::RAIICounter raiiGuard(client->m_operationsProcessed, &client->m_shutdownSignal);
 
-        writeDataStreamBuf->WaitForStreamComplete();
         auto response = writeDataStreamBuf->GetResponse();
+        writeDataStreamBuf->WaitForStreamComplete();
 
         // Flush any remaining buffered response data through the EventDecoderStream
         if (response) {
