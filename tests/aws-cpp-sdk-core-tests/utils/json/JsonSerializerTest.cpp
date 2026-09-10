@@ -484,3 +484,44 @@ TEST_F(JsonSerializerTest, TestEquality)
     built.WithString("AWS", "Amazon Web Services");
     ASSERT_NE(parsed, built);
 }
+
+TEST_F(JsonSerializerTest, TestParseLargeIntegerLiteralRoundTrips)
+{
+    const Aws::String input = R"({"n":100000000000000000000000000})";
+    JsonValue value(input);
+    ASSERT_TRUE(value.WasParseSuccessful());
+
+    const Aws::String compact = value.View().WriteCompact();
+    ASSERT_FALSE(compact.empty());
+    ASSERT_EQ(input, compact);
+
+    const Aws::String readable = value.View().WriteReadable();
+    ASSERT_FALSE(readable.empty());
+}
+
+TEST_F(JsonSerializerTest, TestParseInt64OverflowLiteralSaturates)
+{
+    const Aws::String input = R"({"n":9223372036854775808})";
+    JsonValue value(input);
+    ASSERT_TRUE(value.WasParseSuccessful());
+
+    ASSERT_EQ(INT64_MAX, value.View().GetInt64("n"));
+}
+
+TEST_F(JsonSerializerTest, TestParseInt64OverflowDoubleSaturates)
+{
+    const Aws::String input = R"({"n":9223372036854775808.0})";
+    JsonValue value(input);
+    ASSERT_TRUE(value.WasParseSuccessful());
+
+    ASSERT_EQ(INT64_MAX, value.View().GetInt64("n"));
+}
+
+TEST_F(JsonSerializerTest, TestParseScientificNotationInteger)
+{
+    const Aws::String input = R"({"n":5e9})";
+    JsonValue value(input);
+    ASSERT_TRUE(value.WasParseSuccessful());
+
+    ASSERT_EQ(5000000000LL, value.View().GetInt64("n"));
+}

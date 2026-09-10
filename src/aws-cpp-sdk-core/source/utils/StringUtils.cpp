@@ -341,11 +341,7 @@ long long StringUtils::ConvertToInt64(const char* source)
         return 0;
     }
 
-#ifdef __ANDROID__
-    return atoll(source);
-#else
-    return std::atoll(source);
-#endif // __ANDROID__
+    return std::strtoll(source, nullptr, 10);
 }
 
 
@@ -356,7 +352,7 @@ long StringUtils::ConvertToInt32(const char* source)
         return 0;
     }
 
-    return std::atol(source);
+    return std::strtol(source, nullptr, 10);
 }
 
 

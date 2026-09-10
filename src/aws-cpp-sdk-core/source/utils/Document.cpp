@@ -10,6 +10,8 @@
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/numeric/NumericUtils.h>
 
 using namespace Aws::Utils;
 
@@ -489,7 +491,8 @@ bool DocumentView::IsIntegerType() const
         Aws::String valueString = m_json->valuestring;
         return std::all_of(valueString.begin(), valueString.end(), [](unsigned char c){ return ::isdigit(c) || c == '+' || c == '-'; });
     }
-    return m_json->valuedouble == static_cast<long long>(m_json->valuedouble);
+    return IsRepresentableAsInt64(m_json->valuedouble) &&
+           m_json->valuedouble == static_cast<long long>(m_json->valuedouble);
 }
 
 int64_t DocumentView::GetInt64(const Aws::String& key) const
@@ -499,11 +502,11 @@ int64_t DocumentView::GetInt64(const Aws::String& key) const
     assert(item);
     if (item->valuestring)
     {
-        return Aws::Utils::StringUtils::ConvertToInt64(item->valuestring);
+        return LiteralToInt64(item->valuestring, item->valuedouble);
     }
     else
     {
-        return static_cast<int64_t>(item->valuedouble);
+        return ToInt64Saturating(item->valuedouble);
     }
 }
 
@@ -512,11 +515,11 @@ int64_t DocumentView::AsInt64() const
     assert(cJSON_AS4CPP_IsNumber(m_json));
     if (m_json->valuestring)
     {
-        return Aws::Utils::StringUtils::ConvertToInt64(m_json->valuestring);
+        return LiteralToInt64(m_json->valuestring, m_json->valuedouble);
     }
     else
     {
-        return static_cast<int64_t>(m_json->valuedouble);
+        return ToInt64Saturating(m_json->valuedouble);
     }
 }
 
@@ -546,7 +549,8 @@ bool DocumentView::IsFloatingPointType() const
         Aws::String valueString = m_json->valuestring;
         return std::any_of(valueString.begin(), valueString.end(), [](unsigned char c){ return !::isdigit(c) && c != '+' && c != '-'; });
     }
-    return m_json->valuedouble != static_cast<long long>(m_json->valuedouble);
+    return !IsRepresentableAsInt64(m_json->valuedouble) ||
+           m_json->valuedouble != static_cast<long long>(m_json->valuedouble);
 }
 
 Array<DocumentView> DocumentView::GetArray(const Aws::String& key) const
@@ -653,6 +657,11 @@ Aws::String DocumentView::WriteCompact() const
     }
 
     auto temp = cJSON_AS4CPP_PrintUnformatted(m_json);
+    if (!temp)
+    {
+        AWS_LOGSTREAM_ERROR("DocumentView", "Failed to print JSON document");
+        return {};
+    }
     Aws::String out(temp);
     cJSON_AS4CPP_free(temp);
     return out;
@@ -666,6 +675,11 @@ Aws::String DocumentView::WriteReadable() const
     }
 
     auto temp = cJSON_AS4CPP_Print(m_json);
+    if (!temp)
+    {
+        AWS_LOGSTREAM_ERROR("DocumentView", "Failed to print JSON document");
+        return {};
+    }
     Aws::String out(temp);
     cJSON_AS4CPP_free(temp);
     return out;

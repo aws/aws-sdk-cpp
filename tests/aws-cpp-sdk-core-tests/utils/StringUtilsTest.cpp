@@ -522,6 +522,32 @@ TEST_F(StringUtilsTest, TestInt64Conversion)
     ASSERT_EQ(0, StringUtils::ConvertToInt64(NULL));
     ASSERT_EQ(0, StringUtils::ConvertToInt64(""));
     ASSERT_EQ(bigIntValue, StringUtils::ConvertToInt64(ss.str().c_str()));
+
+    // Plain integers, signs, and boundaries.
+    ASSERT_EQ(0LL, StringUtils::ConvertToInt64("0"));
+    ASSERT_EQ(42LL, StringUtils::ConvertToInt64("42"));
+    ASSERT_EQ(42LL, StringUtils::ConvertToInt64("+42"));
+    ASSERT_EQ(-42LL, StringUtils::ConvertToInt64("-42"));
+    ASSERT_EQ(LLONG_MAX, StringUtils::ConvertToInt64("9223372036854775807"));
+    ASSERT_EQ(LLONG_MIN, StringUtils::ConvertToInt64("-9223372036854775808"));
+
+    // Out-of-range values saturate instead of invoking undefined behavior.
+    ASSERT_EQ(LLONG_MAX, StringUtils::ConvertToInt64("9223372036854775808"));
+    ASSERT_EQ(LLONG_MAX, StringUtils::ConvertToInt64("99999999999999999999999999"));
+    ASSERT_EQ(LLONG_MIN, StringUtils::ConvertToInt64("-9223372036854775809"));
+    ASSERT_EQ(LLONG_MIN, StringUtils::ConvertToInt64("-99999999999999999999999999"));
+
+    // ConvertToInt64 reads digits and stops at the first non-digit (strtoll semantics);
+    // scientific-notation scaling is handled by the JSON read path, not here.
+    ASSERT_EQ(5LL, StringUtils::ConvertToInt64("5e9"));
+    ASSERT_EQ(5LL, StringUtils::ConvertToInt64("5E9"));
+    ASSERT_EQ(9007199254740993LL, StringUtils::ConvertToInt64("9007199254740993e0"));
+    ASSERT_EQ(1LL, StringUtils::ConvertToInt64("1e100"));
+
+    // Trailing non-numeric characters stop parsing, matching prior behavior.
+    ASSERT_EQ(12LL, StringUtils::ConvertToInt64("12.5"));
+    ASSERT_EQ(9LL, StringUtils::ConvertToInt64("9e"));
+    ASSERT_EQ(123LL, StringUtils::ConvertToInt64("123abc"));
 }
 
 TEST_F(StringUtilsTest, TestInt32Conversion)

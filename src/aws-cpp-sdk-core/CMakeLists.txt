@@ -58,6 +58,7 @@ file(GLOB ENDPOINT_INTERNAL_HEADERS "include/aws/core/endpoint/internal/*.h")
 file(GLOB MONITORING_HEADERS "include/aws/core/monitoring/*.h")
 file(GLOB PLATFORM_HEADERS "include/aws/core/platform/*.h")
 file(GLOB UTILS_HEADERS "include/aws/core/utils/*.h")
+file(GLOB UTILS_NUMERIC_HEADERS "include/aws/core/utils/numeric/*.h")
 file(GLOB UTILS_EVENT_HEADERS "include/aws/core/utils/event/*.h")
 file(GLOB UTILS_BASE64_HEADERS "include/aws/core/utils/base64/*.h")
 file(GLOB UTILS_CHECKSUM_HEADERS "include/aws/core/utils/checksum/*.h")
@@ -275,6 +276,7 @@ file(GLOB AWS_NATIVE_SDK_COMMON_HEADERS
   ${HTTP_CLIENT_HEADERS}
   ${PLATFORM_HEADERS}
   ${UTILS_HEADERS}
+  ${UTILS_NUMERIC_HEADERS}
   ${UTILS_EVENT_HEADERS}
   ${UTILS_BASE64_HEADERS}
   ${UTILS_CHECKSUM_HEADERS}
@@ -426,6 +428,7 @@ if(MSVC)
     source_group("Header Files\\aws\\core\\monitoring" FILES ${MONITORING_HEADERS})
     source_group("Header Files\\aws\\core\\platform" FILES ${PLATFORM_HEADERS})
     source_group("Header Files\\aws\\core\\utils" FILES ${UTILS_HEADERS})
+    source_group("Header Files\\aws\\core\\utils\\numeric" FILES ${UTILS_NUMERIC_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\base64" FILES ${UTILS_BASE64_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\checksum" FILES ${UTILS_CHECKSUM_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\crypto" FILES ${UTILS_CRYPTO_HEADERS})
