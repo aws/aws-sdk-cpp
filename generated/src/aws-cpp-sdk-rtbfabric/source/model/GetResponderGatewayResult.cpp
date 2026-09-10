@@ -111,6 +111,10 @@ GetResponderGatewayResult& GetResponderGatewayResult::operator=(const Aws::Amazo
     m_externalInboundEndpoint = jsonValue.GetString("externalInboundEndpoint");
     m_externalInboundEndpointHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("clientRoutingPolicy")) {
+    m_clientRoutingPolicy = ClientRoutingPolicyMapper::GetClientRoutingPolicyForName(jsonValue.GetString("clientRoutingPolicy"));
+    m_clientRoutingPolicyHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

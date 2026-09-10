@@ -73,7 +73,11 @@ class KnowledgeBaseConfiguration {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Contains configuration details for a knowledge base that uses a vector store
+   * fully managed by Amazon Bedrock. Specify this object when the knowledge base
+   * type is MANAGED.</p>
+   */
   inline const ManagedKnowledgeBaseConfiguration& GetManagedKnowledgeBaseConfiguration() const {
     return m_managedKnowledgeBaseConfiguration;
   }

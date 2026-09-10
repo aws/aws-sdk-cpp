@@ -44,8 +44,14 @@ class ParsingConfiguration {
 
   ///@{
   /**
-   * <p>The parsing strategy for the data source. Only <code>SMART_PARSING</code> can
-   * be selected for managed knowledge bases. For more information, see <a
+   * <p>The parsing strategy for the data source.</p> <p>For managed knowledge bases,
+   * the strategy that you can select depends on the embedding model that your
+   * knowledge base uses:</p> <ul> <li> <p>If your knowledge base uses a native
+   * multimodal embedding model, specify <code>MULTI_MODAL_EMBEDDINGS</code>. With
+   * this strategy, files are sent directly to the embedding model instead of being
+   * parsed into text. This is the only strategy that is supported for these
+   * knowledge bases.</p> </li> <li> <p>Otherwise, specify
+   * <code>SMART_PARSING</code>.</p> </li> </ul> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-managed-customize-ingestion.html">Customize
    * ingestion for managed knowledge bases</a>.</p>
    */

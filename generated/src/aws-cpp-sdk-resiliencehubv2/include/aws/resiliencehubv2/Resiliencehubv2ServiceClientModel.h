@@ -70,7 +70,9 @@
 #include <aws/resiliencehubv2/model/ListSystemsRequest.h>
 #include <aws/resiliencehubv2/model/ListSystemsResult.h>
 #include <aws/resiliencehubv2/model/ListTagsForResourceResult.h>
+#include <aws/resiliencehubv2/model/ListTestRunDependenciesResult.h>
 #include <aws/resiliencehubv2/model/ListTestRunEventsResult.h>
+#include <aws/resiliencehubv2/model/ListTestRunSourceEventsResult.h>
 #include <aws/resiliencehubv2/model/ListTestRunSourcesResult.h>
 #include <aws/resiliencehubv2/model/ListTestRunsResult.h>
 #include <aws/resiliencehubv2/model/ListTestSourcesResult.h>
@@ -172,7 +174,9 @@ class ListServicesRequest;
 class ListSystemEventsRequest;
 class ListSystemsRequest;
 class ListTagsForResourceRequest;
+class ListTestRunDependenciesRequest;
 class ListTestRunEventsRequest;
+class ListTestRunSourceEventsRequest;
 class ListTestRunSourcesRequest;
 class ListTestRunsRequest;
 class ListTestSourcesRequest;
@@ -243,7 +247,9 @@ typedef Aws::Utils::Outcome<ListServicesResult, Resiliencehubv2Error> ListServic
 typedef Aws::Utils::Outcome<ListSystemEventsResult, Resiliencehubv2Error> ListSystemEventsOutcome;
 typedef Aws::Utils::Outcome<ListSystemsResult, Resiliencehubv2Error> ListSystemsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, Resiliencehubv2Error> ListTagsForResourceOutcome;
+typedef Aws::Utils::Outcome<ListTestRunDependenciesResult, Resiliencehubv2Error> ListTestRunDependenciesOutcome;
 typedef Aws::Utils::Outcome<ListTestRunEventsResult, Resiliencehubv2Error> ListTestRunEventsOutcome;
+typedef Aws::Utils::Outcome<ListTestRunSourceEventsResult, Resiliencehubv2Error> ListTestRunSourceEventsOutcome;
 typedef Aws::Utils::Outcome<ListTestRunSourcesResult, Resiliencehubv2Error> ListTestRunSourcesOutcome;
 typedef Aws::Utils::Outcome<ListTestRunsResult, Resiliencehubv2Error> ListTestRunsOutcome;
 typedef Aws::Utils::Outcome<ListTestSourcesResult, Resiliencehubv2Error> ListTestSourcesOutcome;
@@ -314,7 +320,9 @@ typedef std::future<ListServicesOutcome> ListServicesOutcomeCallable;
 typedef std::future<ListSystemEventsOutcome> ListSystemEventsOutcomeCallable;
 typedef std::future<ListSystemsOutcome> ListSystemsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+typedef std::future<ListTestRunDependenciesOutcome> ListTestRunDependenciesOutcomeCallable;
 typedef std::future<ListTestRunEventsOutcome> ListTestRunEventsOutcomeCallable;
+typedef std::future<ListTestRunSourceEventsOutcome> ListTestRunSourceEventsOutcomeCallable;
 typedef std::future<ListTestRunSourcesOutcome> ListTestRunSourcesOutcomeCallable;
 typedef std::future<ListTestRunsOutcome> ListTestRunsOutcomeCallable;
 typedef std::future<ListTestSourcesOutcome> ListTestSourcesOutcomeCallable;
@@ -483,9 +491,15 @@ typedef std::function<void(const Resiliencehubv2Client*, const Model::ListSystem
 typedef std::function<void(const Resiliencehubv2Client*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;
+typedef std::function<void(const Resiliencehubv2Client*, const Model::ListTestRunDependenciesRequest&,
+                           const Model::ListTestRunDependenciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListTestRunDependenciesResponseReceivedHandler;
 typedef std::function<void(const Resiliencehubv2Client*, const Model::ListTestRunEventsRequest&, const Model::ListTestRunEventsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTestRunEventsResponseReceivedHandler;
+typedef std::function<void(const Resiliencehubv2Client*, const Model::ListTestRunSourceEventsRequest&,
+                           const Model::ListTestRunSourceEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListTestRunSourceEventsResponseReceivedHandler;
 typedef std::function<void(const Resiliencehubv2Client*, const Model::ListTestRunSourcesRequest&, const Model::ListTestRunSourcesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTestRunSourcesResponseReceivedHandler;

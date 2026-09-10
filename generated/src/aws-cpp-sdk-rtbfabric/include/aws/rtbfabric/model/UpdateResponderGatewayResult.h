@@ -7,6 +7,7 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rtbfabric/RTBFabric_EXPORTS.h>
+#include <aws/rtbfabric/model/ClientRoutingPolicy.h>
 #include <aws/rtbfabric/model/ResponderGatewayStatus.h>
 
 #include <utility>
@@ -61,6 +62,26 @@ class UpdateResponderGatewayResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The client routing policy of the gateway. If the operation changed this
+   * policy, the gateway uses the new policy after its status returns to
+   * <code>ACTIVE</code>. For more information, see <a
+   * href="https://docs.aws.amazon.com/rtb-fabric/latest/userguide/working-with-responder-gateways.html#configuring-availability-zone-affinity">Configuring
+   * Availability Zone affinity</a> in the <i>Amazon Web Services RTB Fabric User
+   * Guide</i>.</p>
+   */
+  inline ClientRoutingPolicy GetClientRoutingPolicy() const { return m_clientRoutingPolicy; }
+  inline void SetClientRoutingPolicy(ClientRoutingPolicy value) {
+    m_clientRoutingPolicyHasBeenSet = true;
+    m_clientRoutingPolicy = value;
+  }
+  inline UpdateResponderGatewayResult& WithClientRoutingPolicy(ClientRoutingPolicy value) {
+    SetClientRoutingPolicy(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -81,10 +102,13 @@ class UpdateResponderGatewayResult {
 
   ResponderGatewayStatus m_status{ResponderGatewayStatus::NOT_SET};
 
+  ClientRoutingPolicy m_clientRoutingPolicy{ClientRoutingPolicy::NOT_SET};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_gatewayIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_clientRoutingPolicyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

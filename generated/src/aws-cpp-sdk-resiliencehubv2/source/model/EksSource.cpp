@@ -29,6 +29,10 @@ EksSource& EksSource::operator=(JsonView jsonValue) {
     }
     m_namespacesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("labelSelector")) {
+    m_labelSelector = jsonValue.GetObject("labelSelector");
+    m_labelSelectorHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -45,6 +49,10 @@ JsonValue EksSource::Jsonize() const {
       namespacesJsonList[namespacesIndex].AsString(m_namespaces[namespacesIndex]);
     }
     payload.WithArray("namespaces", std::move(namespacesJsonList));
+  }
+
+  if (m_labelSelectorHasBeenSet) {
+    payload.WithObject("labelSelector", m_labelSelector.Jsonize());
   }
 
   return payload;

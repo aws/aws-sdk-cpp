@@ -120,6 +120,8 @@
 #include <aws/sagemaker/model/AthenaDatasetDefinition.h>
 #include <aws/sagemaker/model/AthenaResultCompressionType.h>
 #include <aws/sagemaker/model/AthenaResultFormat.h>
+#include <aws/sagemaker/model/AttachClusterNodeNetworkInterfaceRequest.h>
+#include <aws/sagemaker/model/AttachClusterNodeNetworkInterfaceResult.h>
 #include <aws/sagemaker/model/AttachClusterNodeVolumeRequest.h>
 #include <aws/sagemaker/model/AttachClusterNodeVolumeResult.h>
 #include <aws/sagemaker/model/AuthMode.h>

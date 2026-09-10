@@ -1041,7 +1041,13 @@ class AWS_RTBFABRIC_API RTBFabricClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates a responder gateway.</p><p><h3>See Also:</h3>   <a
+   * <p>Updates the description, Auto Scaling group managed endpoint configuration,
+   * trust store configuration, and client routing policy of a responder gateway.
+   * This operation also updates the <code>protocols</code> list in the listener
+   * configuration.</p> <p>You cannot change the <code>domainName</code>,
+   * <code>port</code>, and <code>protocol</code> values that you set when you create
+   * a responder gateway. To change any of them, delete the gateway and create a new
+   * one.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/UpdateResponderGateway">AWS
    * API Reference</a></p>
    */

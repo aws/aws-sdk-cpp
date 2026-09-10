@@ -161,8 +161,8 @@ class TestRunSummary {
 
   ///@{
   /**
-   * <p>Indicates whether this test run targets a single account or multiple
-   * accounts.</p>
+   * <p>Indicates whether the test run targets resources in a single AWS account or
+   * across multiple accounts.</p>
    */
   inline AccountTargeting GetAccountTargeting() const { return m_accountTargeting; }
   inline bool AccountTargetingHasBeenSet() const { return m_accountTargetingHasBeenSet; }

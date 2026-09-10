@@ -69,6 +69,14 @@ Outpost& Outpost::operator=(JsonView jsonValue) {
     m_supportedHardwareType = SupportedHardwareTypeMapper::GetSupportedHardwareTypeForName(jsonValue.GetString("SupportedHardwareType"));
     m_supportedHardwareTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Generation")) {
+    m_generation = OutpostGenerationMapper::GetOutpostGenerationForName(jsonValue.GetString("Generation"));
+    m_generationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("RackScalingType")) {
+    m_rackScalingType = RackScalingTypeMapper::GetRackScalingTypeForName(jsonValue.GetString("RackScalingType"));
+    m_rackScalingTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -125,6 +133,14 @@ JsonValue Outpost::Jsonize() const {
 
   if (m_supportedHardwareTypeHasBeenSet) {
     payload.WithString("SupportedHardwareType", SupportedHardwareTypeMapper::GetNameForSupportedHardwareType(m_supportedHardwareType));
+  }
+
+  if (m_generationHasBeenSet) {
+    payload.WithString("Generation", OutpostGenerationMapper::GetNameForOutpostGeneration(m_generation));
+  }
+
+  if (m_rackScalingTypeHasBeenSet) {
+    payload.WithString("RackScalingType", RackScalingTypeMapper::GetNameForRackScalingType(m_rackScalingType));
   }
 
   return payload;

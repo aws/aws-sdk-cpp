@@ -79,5 +79,9 @@ Aws::String CreateResponderGatewayRequest::SerializePayload() const {
     payload.WithString("gatewayType", GatewayTypeMapper::GetNameForGatewayType(m_gatewayType));
   }
 
+  if (m_clientRoutingPolicyHasBeenSet) {
+    payload.WithString("clientRoutingPolicy", ClientRoutingPolicyMapper::GetNameForClientRoutingPolicy(m_clientRoutingPolicy));
+  }
+
   return payload.View().WriteReadable();
 }

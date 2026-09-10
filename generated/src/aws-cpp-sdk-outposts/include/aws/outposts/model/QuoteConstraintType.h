@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Outposts {
 namespace Model {
-enum class QuoteConstraintType { NOT_SET, RACK_MAXIMUM, RACK_MAX_POWER_KVA, RACK_MAX_WEIGHT_LBS };
+enum class QuoteConstraintType { NOT_SET, RACK_MAXIMUM, RACK_MAX_POWER_KVA, RACK_MAX_WEIGHT_LBS, RACK_SPACE_CONSTRAINED };
 
 namespace QuoteConstraintTypeMapper {
 AWS_OUTPOSTS_API QuoteConstraintType GetQuoteConstraintTypeForName(const Aws::String& name);

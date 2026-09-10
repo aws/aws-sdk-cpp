@@ -21,7 +21,9 @@
 #include <aws/resiliencehubv2/model/ListServicesPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListSystemEventsPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListSystemsPaginationTraits.h>
+#include <aws/resiliencehubv2/model/ListTestRunDependenciesPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListTestRunEventsPaginationTraits.h>
+#include <aws/resiliencehubv2/model/ListTestRunSourceEventsPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListTestRunSourcesPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListTestRunsPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListTestSourcesPaginationTraits.h>
@@ -66,10 +68,16 @@ using ListSystemEventsPaginator = Aws::Utils::Pagination::Paginator<Resiliencehu
                                                                     Pagination::ListSystemEventsPaginationTraits<Resiliencehubv2Client>>;
 using ListSystemsPaginator = Aws::Utils::Pagination::Paginator<Resiliencehubv2Client, Model::ListSystemsRequest,
                                                                Pagination::ListSystemsPaginationTraits<Resiliencehubv2Client>>;
+using ListTestRunDependenciesPaginator =
+    Aws::Utils::Pagination::Paginator<Resiliencehubv2Client, Model::ListTestRunDependenciesRequest,
+                                      Pagination::ListTestRunDependenciesPaginationTraits<Resiliencehubv2Client>>;
 using ListTestRunEventsPaginator = Aws::Utils::Pagination::Paginator<Resiliencehubv2Client, Model::ListTestRunEventsRequest,
                                                                      Pagination::ListTestRunEventsPaginationTraits<Resiliencehubv2Client>>;
 using ListTestRunsPaginator = Aws::Utils::Pagination::Paginator<Resiliencehubv2Client, Model::ListTestRunsRequest,
                                                                 Pagination::ListTestRunsPaginationTraits<Resiliencehubv2Client>>;
+using ListTestRunSourceEventsPaginator =
+    Aws::Utils::Pagination::Paginator<Resiliencehubv2Client, Model::ListTestRunSourceEventsRequest,
+                                      Pagination::ListTestRunSourceEventsPaginationTraits<Resiliencehubv2Client>>;
 using ListTestRunSourcesPaginator =
     Aws::Utils::Pagination::Paginator<Resiliencehubv2Client, Model::ListTestRunSourcesRequest,
                                       Pagination::ListTestRunSourcesPaginationTraits<Resiliencehubv2Client>>;

@@ -9,6 +9,7 @@
 #include <aws/outposts/Outposts_EXPORTS.h>
 #include <aws/outposts/model/CatalogItemStatus.h>
 #include <aws/outposts/model/EC2Capacity.h>
+#include <aws/outposts/model/RackScalingType.h>
 #include <aws/outposts/model/SupportedStorageEnum.h>
 
 #include <utility>
@@ -171,6 +172,23 @@ class CatalogItem {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The rack scaling type supported by the catalog item. Valid values are
+   * <code>SINGLE_RACK</code> and <code>MULTI_RACK</code>.</p>
+   */
+  inline RackScalingType GetRackScalingType() const { return m_rackScalingType; }
+  inline bool RackScalingTypeHasBeenSet() const { return m_rackScalingTypeHasBeenSet; }
+  inline void SetRackScalingType(RackScalingType value) {
+    m_rackScalingTypeHasBeenSet = true;
+    m_rackScalingType = value;
+  }
+  inline CatalogItem& WithRackScalingType(RackScalingType value) {
+    SetRackScalingType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_catalogItemId;
 
@@ -185,6 +203,8 @@ class CatalogItem {
   Aws::Vector<int> m_supportedUplinkGbps;
 
   Aws::Vector<SupportedStorageEnum> m_supportedStorage;
+
+  RackScalingType m_rackScalingType{RackScalingType::NOT_SET};
   bool m_catalogItemIdHasBeenSet = false;
   bool m_itemStatusHasBeenSet = false;
   bool m_eC2CapacitiesHasBeenSet = false;
@@ -192,6 +212,7 @@ class CatalogItem {
   bool m_weightLbsHasBeenSet = false;
   bool m_supportedUplinkGbpsHasBeenSet = false;
   bool m_supportedStorageHasBeenSet = false;
+  bool m_rackScalingTypeHasBeenSet = false;
 };
 
 }  // namespace Model

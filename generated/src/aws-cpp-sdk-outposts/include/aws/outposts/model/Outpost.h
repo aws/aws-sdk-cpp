@@ -7,6 +7,8 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/outposts/Outposts_EXPORTS.h>
+#include <aws/outposts/model/OutpostGeneration.h>
+#include <aws/outposts/model/RackScalingType.h>
 #include <aws/outposts/model/SupportedHardwareType.h>
 
 #include <utility>
@@ -234,6 +236,42 @@ class Outpost {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Outpost generation. Valid values are <code>GENERATION_1</code> for
+   * first-generation rack deployments and <code>GENERATION_2</code> for
+   * second-generation rack deployments.</p>
+   */
+  inline OutpostGeneration GetGeneration() const { return m_generation; }
+  inline bool GenerationHasBeenSet() const { return m_generationHasBeenSet; }
+  inline void SetGeneration(OutpostGeneration value) {
+    m_generationHasBeenSet = true;
+    m_generation = value;
+  }
+  inline Outpost& WithGeneration(OutpostGeneration value) {
+    SetGeneration(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The rack scaling type. Valid values are <code>SINGLE_RACK</code> for
+   * single-rack Outposts and <code>MULTI_RACK</code> for multi-rack Outposts that
+   * can expand across multiple racks.</p>
+   */
+  inline RackScalingType GetRackScalingType() const { return m_rackScalingType; }
+  inline bool RackScalingTypeHasBeenSet() const { return m_rackScalingTypeHasBeenSet; }
+  inline void SetRackScalingType(RackScalingType value) {
+    m_rackScalingTypeHasBeenSet = true;
+    m_rackScalingType = value;
+  }
+  inline Outpost& WithRackScalingType(RackScalingType value) {
+    SetRackScalingType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_outpostId;
 
@@ -258,6 +296,10 @@ class Outpost {
   Aws::String m_siteArn;
 
   SupportedHardwareType m_supportedHardwareType{SupportedHardwareType::NOT_SET};
+
+  OutpostGeneration m_generation{OutpostGeneration::NOT_SET};
+
+  RackScalingType m_rackScalingType{RackScalingType::NOT_SET};
   bool m_outpostIdHasBeenSet = false;
   bool m_ownerIdHasBeenSet = false;
   bool m_outpostArnHasBeenSet = false;
@@ -270,6 +312,8 @@ class Outpost {
   bool m_tagsHasBeenSet = false;
   bool m_siteArnHasBeenSet = false;
   bool m_supportedHardwareTypeHasBeenSet = false;
+  bool m_generationHasBeenSet = false;
+  bool m_rackScalingTypeHasBeenSet = false;
 };
 
 }  // namespace Model

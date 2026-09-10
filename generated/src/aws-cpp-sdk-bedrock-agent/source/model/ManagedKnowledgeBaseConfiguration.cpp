@@ -34,6 +34,10 @@ ManagedKnowledgeBaseConfiguration& ManagedKnowledgeBaseConfiguration::operator=(
     m_serverSideEncryptionConfiguration = jsonValue.GetObject("serverSideEncryptionConfiguration");
     m_serverSideEncryptionConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("supplementalDataStorageConfiguration")) {
+    m_supplementalDataStorageConfiguration = jsonValue.GetObject("supplementalDataStorageConfiguration");
+    m_supplementalDataStorageConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue ManagedKnowledgeBaseConfiguration::Jsonize() const {
 
   if (m_serverSideEncryptionConfigurationHasBeenSet) {
     payload.WithObject("serverSideEncryptionConfiguration", m_serverSideEncryptionConfiguration.Jsonize());
+  }
+
+  if (m_supplementalDataStorageConfigurationHasBeenSet) {
+    payload.WithObject("supplementalDataStorageConfiguration", m_supplementalDataStorageConfiguration.Jsonize());
   }
 
   return payload;

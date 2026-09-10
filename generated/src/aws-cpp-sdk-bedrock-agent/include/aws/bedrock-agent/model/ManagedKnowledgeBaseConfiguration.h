@@ -8,6 +8,7 @@
 #include <aws/bedrock-agent/model/EmbeddingModelConfiguration.h>
 #include <aws/bedrock-agent/model/EmbeddingModelType.h>
 #include <aws/bedrock-agent/model/ServerSideEncryptionConfiguration.h>
+#include <aws/bedrock-agent/model/SupplementalDataStorageConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -35,7 +36,10 @@ class ManagedKnowledgeBaseConfiguration {
   AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p>Choose CUSTOM to provide your own Bedrock embedding model ARN. Choose MANAGED
+   * to use a service-managed embedding model.</p>
+   */
   inline EmbeddingModelType GetEmbeddingModelType() const { return m_embeddingModelType; }
   inline bool EmbeddingModelTypeHasBeenSet() const { return m_embeddingModelTypeHasBeenSet; }
   inline void SetEmbeddingModelType(EmbeddingModelType value) {
@@ -67,7 +71,10 @@ class ManagedKnowledgeBaseConfiguration {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The configuration details for the embeddings model. Not required when
+   * choosing the MANAGED embeddingModelType.</p>
+   */
   inline const EmbeddingModelConfiguration& GetEmbeddingModelConfiguration() const { return m_embeddingModelConfiguration; }
   inline bool EmbeddingModelConfigurationHasBeenSet() const { return m_embeddingModelConfigurationHasBeenSet; }
   template <typename EmbeddingModelConfigurationT = EmbeddingModelConfiguration>
@@ -83,7 +90,10 @@ class ManagedKnowledgeBaseConfiguration {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Contains the configuration for server-side encryption for your managed
+   * knowledge base.</p>
+   */
   inline const ServerSideEncryptionConfiguration& GetServerSideEncryptionConfiguration() const {
     return m_serverSideEncryptionConfiguration;
   }
@@ -99,6 +109,28 @@ class ManagedKnowledgeBaseConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Use this object to specify the Amazon S3 location that the knowledge base
+   * uses to process and ingest multimodal content. This field is required when you
+   * use a native multimodal embedding model.</p>
+   */
+  inline const SupplementalDataStorageConfiguration& GetSupplementalDataStorageConfiguration() const {
+    return m_supplementalDataStorageConfiguration;
+  }
+  inline bool SupplementalDataStorageConfigurationHasBeenSet() const { return m_supplementalDataStorageConfigurationHasBeenSet; }
+  template <typename SupplementalDataStorageConfigurationT = SupplementalDataStorageConfiguration>
+  void SetSupplementalDataStorageConfiguration(SupplementalDataStorageConfigurationT&& value) {
+    m_supplementalDataStorageConfigurationHasBeenSet = true;
+    m_supplementalDataStorageConfiguration = std::forward<SupplementalDataStorageConfigurationT>(value);
+  }
+  template <typename SupplementalDataStorageConfigurationT = SupplementalDataStorageConfiguration>
+  ManagedKnowledgeBaseConfiguration& WithSupplementalDataStorageConfiguration(SupplementalDataStorageConfigurationT&& value) {
+    SetSupplementalDataStorageConfiguration(std::forward<SupplementalDataStorageConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   EmbeddingModelType m_embeddingModelType{EmbeddingModelType::NOT_SET};
 
@@ -107,10 +139,13 @@ class ManagedKnowledgeBaseConfiguration {
   EmbeddingModelConfiguration m_embeddingModelConfiguration;
 
   ServerSideEncryptionConfiguration m_serverSideEncryptionConfiguration;
+
+  SupplementalDataStorageConfiguration m_supplementalDataStorageConfiguration;
   bool m_embeddingModelTypeHasBeenSet = false;
   bool m_embeddingModelArnHasBeenSet = false;
   bool m_embeddingModelConfigurationHasBeenSet = false;
   bool m_serverSideEncryptionConfigurationHasBeenSet = false;
+  bool m_supplementalDataStorageConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

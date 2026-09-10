@@ -18,6 +18,7 @@ namespace QuoteConstraintTypeMapper {
 static const int RACK_MAXIMUM_HASH = HashingUtils::HashString("RACK_MAXIMUM");
 static const int RACK_MAX_POWER_KVA_HASH = HashingUtils::HashString("RACK_MAX_POWER_KVA");
 static const int RACK_MAX_WEIGHT_LBS_HASH = HashingUtils::HashString("RACK_MAX_WEIGHT_LBS");
+static const int RACK_SPACE_CONSTRAINED_HASH = HashingUtils::HashString("RACK_SPACE_CONSTRAINED");
 
 QuoteConstraintType GetQuoteConstraintTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ QuoteConstraintType GetQuoteConstraintTypeForName(const Aws::String& name) {
     return QuoteConstraintType::RACK_MAX_POWER_KVA;
   } else if (hashCode == RACK_MAX_WEIGHT_LBS_HASH) {
     return QuoteConstraintType::RACK_MAX_WEIGHT_LBS;
+  } else if (hashCode == RACK_SPACE_CONSTRAINED_HASH) {
+    return QuoteConstraintType::RACK_SPACE_CONSTRAINED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForQuoteConstraintType(QuoteConstraintType enumValue) {
       return "RACK_MAX_POWER_KVA";
     case QuoteConstraintType::RACK_MAX_WEIGHT_LBS:
       return "RACK_MAX_WEIGHT_LBS";
+    case QuoteConstraintType::RACK_SPACE_CONSTRAINED:
+      return "RACK_SPACE_CONSTRAINED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

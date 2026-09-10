@@ -26,19 +26,9 @@ BedrockEmbeddingModelConfiguration& BedrockEmbeddingModelConfiguration::operator
     m_embeddingDataType = EmbeddingDataTypeMapper::GetEmbeddingDataTypeForName(jsonValue.GetString("embeddingDataType"));
     m_embeddingDataTypeHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("audio")) {
-    Aws::Utils::Array<JsonView> audioJsonList = jsonValue.GetArray("audio");
-    for (unsigned audioIndex = 0; audioIndex < audioJsonList.GetLength(); ++audioIndex) {
-      m_audio.push_back(audioJsonList[audioIndex].AsObject());
-    }
-    m_audioHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("video")) {
-    Aws::Utils::Array<JsonView> videoJsonList = jsonValue.GetArray("video");
-    for (unsigned videoIndex = 0; videoIndex < videoJsonList.GetLength(); ++videoIndex) {
-      m_video.push_back(videoJsonList[videoIndex].AsObject());
-    }
-    m_videoHasBeenSet = true;
+  if (jsonValue.ValueExists("modelConfiguration")) {
+    m_modelConfiguration = jsonValue.GetObject("modelConfiguration");
+    m_modelConfigurationHasBeenSet = true;
   }
   return *this;
 }
@@ -54,20 +44,10 @@ JsonValue BedrockEmbeddingModelConfiguration::Jsonize() const {
     payload.WithString("embeddingDataType", EmbeddingDataTypeMapper::GetNameForEmbeddingDataType(m_embeddingDataType));
   }
 
-  if (m_audioHasBeenSet) {
-    Aws::Utils::Array<JsonValue> audioJsonList(m_audio.size());
-    for (unsigned audioIndex = 0; audioIndex < audioJsonList.GetLength(); ++audioIndex) {
-      audioJsonList[audioIndex].AsObject(m_audio[audioIndex].Jsonize());
+  if (m_modelConfigurationHasBeenSet) {
+    if (!m_modelConfiguration.View().IsNull()) {
+      payload.WithObject("modelConfiguration", JsonValue(m_modelConfiguration.View()));
     }
-    payload.WithArray("audio", std::move(audioJsonList));
-  }
-
-  if (m_videoHasBeenSet) {
-    Aws::Utils::Array<JsonValue> videoJsonList(m_video.size());
-    for (unsigned videoIndex = 0; videoIndex < videoJsonList.GetLength(); ++videoIndex) {
-      videoJsonList[videoIndex].AsObject(m_video[videoIndex].Jsonize());
-    }
-    payload.WithArray("video", std::move(videoJsonList));
   }
 
   return payload;

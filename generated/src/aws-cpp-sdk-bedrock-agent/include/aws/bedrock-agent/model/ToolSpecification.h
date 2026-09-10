@@ -91,7 +91,7 @@ class ToolSpecification {
 
   ///@{
   /**
-   * <p>Whether to enforce strict JSON schema adherence for the tool input</p>
+   * <p>Whether the tool schema is strictly enforced.</p>
    */
   inline bool GetStrict() const { return m_strict; }
   inline bool StrictHasBeenSet() const { return m_strictHasBeenSet; }

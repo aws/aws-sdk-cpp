@@ -18,6 +18,7 @@ namespace ParsingStrategyMapper {
 static const int BEDROCK_FOUNDATION_MODEL_HASH = HashingUtils::HashString("BEDROCK_FOUNDATION_MODEL");
 static const int BEDROCK_DATA_AUTOMATION_HASH = HashingUtils::HashString("BEDROCK_DATA_AUTOMATION");
 static const int SMART_PARSING_HASH = HashingUtils::HashString("SMART_PARSING");
+static const int MULTI_MODAL_EMBEDDINGS_HASH = HashingUtils::HashString("MULTI_MODAL_EMBEDDINGS");
 
 ParsingStrategy GetParsingStrategyForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ ParsingStrategy GetParsingStrategyForName(const Aws::String& name) {
     return ParsingStrategy::BEDROCK_DATA_AUTOMATION;
   } else if (hashCode == SMART_PARSING_HASH) {
     return ParsingStrategy::SMART_PARSING;
+  } else if (hashCode == MULTI_MODAL_EMBEDDINGS_HASH) {
+    return ParsingStrategy::MULTI_MODAL_EMBEDDINGS;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForParsingStrategy(ParsingStrategy enumValue) {
       return "BEDROCK_DATA_AUTOMATION";
     case ParsingStrategy::SMART_PARSING:
       return "SMART_PARSING";
+    case ParsingStrategy::MULTI_MODAL_EMBEDDINGS:
+      return "MULTI_MODAL_EMBEDDINGS";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

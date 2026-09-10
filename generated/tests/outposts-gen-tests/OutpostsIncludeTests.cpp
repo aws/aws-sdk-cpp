@@ -171,6 +171,7 @@
 #include <aws/outposts/model/QuoteStatus.h>
 #include <aws/outposts/model/QuoteSummary.h>
 #include <aws/outposts/model/RackPhysicalProperties.h>
+#include <aws/outposts/model/RackScalingType.h>
 #include <aws/outposts/model/RackSpecificationDetails.h>
 #include <aws/outposts/model/RackUnitHeight.h>
 #include <aws/outposts/model/ResourceType.h>

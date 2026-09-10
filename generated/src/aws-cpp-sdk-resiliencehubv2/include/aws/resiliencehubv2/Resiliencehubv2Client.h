@@ -1285,6 +1285,36 @@ class AWS_RESILIENCEHUBV2_API Resiliencehubv2Client : public Aws::Client::AWSJso
   }
 
   /**
+   * <p>Lists the dependencies that a test run blocked. Each dependency reflects the
+   * discovered classification captured when the run started, so results do not
+   * change if a dependency is reclassified after the run.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/ListTestRunDependencies">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListTestRunDependenciesOutcome ListTestRunDependencies(const Model::ListTestRunDependenciesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListTestRunDependencies that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListTestRunDependenciesRequestT = Model::ListTestRunDependenciesRequest>
+  Model::ListTestRunDependenciesOutcomeCallable ListTestRunDependenciesCallable(const ListTestRunDependenciesRequestT& request) const {
+    return SubmitCallable(&Resiliencehubv2Client::ListTestRunDependencies, request);
+  }
+
+  /**
+   * An Async wrapper for ListTestRunDependencies that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListTestRunDependenciesRequestT = Model::ListTestRunDependenciesRequest>
+  void ListTestRunDependenciesAsync(const ListTestRunDependenciesRequestT& request,
+                                    const ListTestRunDependenciesResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&Resiliencehubv2Client::ListTestRunDependencies, request, handler, context);
+  }
+
+  /**
    * <p>Lists the events in a test run's timeline.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/ListTestRunEvents">AWS
    * API Reference</a></p>
@@ -1308,6 +1338,35 @@ class AWS_RESILIENCEHUBV2_API Resiliencehubv2Client : public Aws::Client::AWSJso
   void ListTestRunEventsAsync(const ListTestRunEventsRequestT& request, const ListTestRunEventsResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&Resiliencehubv2Client::ListTestRunEvents, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the state-change events observed for a test run monitoring source.
+   * Events are returned for one source per call, in chronological
+   * order.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/ListTestRunSourceEvents">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListTestRunSourceEventsOutcome ListTestRunSourceEvents(const Model::ListTestRunSourceEventsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListTestRunSourceEvents that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListTestRunSourceEventsRequestT = Model::ListTestRunSourceEventsRequest>
+  Model::ListTestRunSourceEventsOutcomeCallable ListTestRunSourceEventsCallable(const ListTestRunSourceEventsRequestT& request) const {
+    return SubmitCallable(&Resiliencehubv2Client::ListTestRunSourceEvents, request);
+  }
+
+  /**
+   * An Async wrapper for ListTestRunSourceEvents that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListTestRunSourceEventsRequestT = Model::ListTestRunSourceEventsRequest>
+  void ListTestRunSourceEventsAsync(const ListTestRunSourceEventsRequestT& request,
+                                    const ListTestRunSourceEventsResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&Resiliencehubv2Client::ListTestRunSourceEvents, request, handler, context);
   }
 
   /**

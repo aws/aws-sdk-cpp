@@ -22,7 +22,9 @@
 #include <aws/resiliencehubv2/model/ListServicesPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListSystemEventsPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListSystemsPaginationTraits.h>
+#include <aws/resiliencehubv2/model/ListTestRunDependenciesPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListTestRunEventsPaginationTraits.h>
+#include <aws/resiliencehubv2/model/ListTestRunSourceEventsPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListTestRunSourcesPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListTestRunsPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListTestSourcesPaginationTraits.h>
@@ -212,6 +214,18 @@ class Resiliencehubv2PaginationBase {
   }
 
   /**
+   * Create a paginator for ListTestRunDependencies operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTestRunDependenciesRequest,
+                                    Pagination::ListTestRunDependenciesPaginationTraits<DerivedClient>>
+  ListTestRunDependenciesPaginator(const Model::ListTestRunDependenciesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTestRunDependenciesRequest,
+                                             Pagination::ListTestRunDependenciesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
    * Create a paginator for ListTestRunEvents operation
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTestRunEventsRequest,
@@ -232,6 +246,18 @@ class Resiliencehubv2PaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTestRunsRequest,
                                              Pagination::ListTestRunsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
+  }
+
+  /**
+   * Create a paginator for ListTestRunSourceEvents operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTestRunSourceEventsRequest,
+                                    Pagination::ListTestRunSourceEventsPaginationTraits<DerivedClient>>
+  ListTestRunSourceEventsPaginator(const Model::ListTestRunSourceEventsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTestRunSourceEventsRequest,
+                                             Pagination::ListTestRunSourceEventsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 
   /**

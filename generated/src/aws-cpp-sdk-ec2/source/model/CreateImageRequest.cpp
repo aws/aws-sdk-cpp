@@ -26,6 +26,11 @@ Aws::String CreateImageRequest::SerializePayload() const {
        << "&";
   }
 
+  if (m_bootModeOverrideHasBeenSet) {
+    ss << "BootModeOverride=" << StringUtils::URLEncode(BootModeOverrideValuesMapper::GetNameForBootModeOverrideValues(m_bootModeOverride))
+       << "&";
+  }
+
   if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }

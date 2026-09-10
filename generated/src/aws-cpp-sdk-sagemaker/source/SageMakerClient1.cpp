@@ -20,6 +20,7 @@
 #include <aws/sagemaker/SageMakerClient.h>
 #include <aws/sagemaker/SageMakerEndpointProvider.h>
 #include <aws/sagemaker/SageMakerErrorMarshaller.h>
+#include <aws/sagemaker/model/DeleteEdgeDeploymentPlanRequest.h>
 #include <aws/sagemaker/model/DeleteEdgeDeploymentStageRequest.h>
 #include <aws/sagemaker/model/DeleteEndpointConfigRequest.h>
 #include <aws/sagemaker/model/DeleteEndpointRequest.h>
@@ -118,7 +119,6 @@
 #include <aws/sagemaker/model/DescribeModelQualityJobDefinitionRequest.h>
 #include <aws/sagemaker/model/DescribeModelRequest.h>
 #include <aws/sagemaker/model/DescribeMonitoringScheduleRequest.h>
-#include <aws/sagemaker/model/DescribeNotebookInstanceLifecycleConfigRequest.h>
 #include <aws/sagemaker/model/DescribeNotebookInstanceRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
@@ -131,6 +131,12 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DeleteEdgeDeploymentPlanOutcome SageMakerClient::DeleteEdgeDeploymentPlan(const DeleteEdgeDeploymentPlanRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteEdgeDeploymentPlanOutcome(result.GetResultWithOwnership())
+                            : DeleteEdgeDeploymentPlanOutcome(std::move(result.GetError()));
+}
 
 DeleteEdgeDeploymentStageOutcome SageMakerClient::DeleteEdgeDeploymentStage(const DeleteEdgeDeploymentStageRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -719,11 +725,4 @@ DescribeNotebookInstanceOutcome SageMakerClient::DescribeNotebookInstance(const 
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeNotebookInstanceOutcome(result.GetResultWithOwnership())
                             : DescribeNotebookInstanceOutcome(std::move(result.GetError()));
-}
-
-DescribeNotebookInstanceLifecycleConfigOutcome SageMakerClient::DescribeNotebookInstanceLifecycleConfig(
-    const DescribeNotebookInstanceLifecycleConfigRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeNotebookInstanceLifecycleConfigOutcome(result.GetResultWithOwnership())
-                            : DescribeNotebookInstanceLifecycleConfigOutcome(std::move(result.GetError()));
 }

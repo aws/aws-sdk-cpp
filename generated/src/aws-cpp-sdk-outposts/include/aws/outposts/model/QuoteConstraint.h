@@ -35,7 +35,8 @@ class QuoteConstraint {
   ///@{
   /**
    * <p>The type of constraint. Valid values are <code>RACK_MAXIMUM</code>,
-   * <code>RACK_MAX_POWER_KVA</code>, and <code>RACK_MAX_WEIGHT_LBS</code>.</p>
+   * <code>RACK_MAX_POWER_KVA</code>, <code>RACK_MAX_WEIGHT_LBS</code>, and
+   * <code>RACK_SPACE_CONSTRAINED</code>.</p>
    */
   inline QuoteConstraintType GetQuoteConstraintType() const { return m_quoteConstraintType; }
   inline bool QuoteConstraintTypeHasBeenSet() const { return m_quoteConstraintTypeHasBeenSet; }

@@ -47,5 +47,9 @@ Aws::String UpdateResponderGatewayRequest::SerializePayload() const {
     payload.WithString("description", m_description);
   }
 
+  if (m_clientRoutingPolicyHasBeenSet) {
+    payload.WithString("clientRoutingPolicy", ClientRoutingPolicyMapper::GetNameForClientRoutingPolicy(m_clientRoutingPolicy));
+  }
+
   return payload.View().WriteReadable();
 }

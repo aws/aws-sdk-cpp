@@ -41,7 +41,7 @@ class CreateLinkRoutingRuleRequest : public RTBFabricRequest {
    * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
    * value</a>.</p> <p>If you don't provide this value, then Amazon Web Services
    * generates a random one for you.</p> <p>If you retry the operation with the same
-   * <code>ClientToken</code>, but with different parameters, the retry fails with an
+   * <code>clientToken</code>, but with different parameters, the retry fails with an
    * <code>IdempotentParameterMismatch</code> error.</p>
    */
   inline const Aws::String& GetClientToken() const { return m_clientToken; }

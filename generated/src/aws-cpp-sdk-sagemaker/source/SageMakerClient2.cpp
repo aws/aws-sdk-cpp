@@ -20,6 +20,7 @@
 #include <aws/sagemaker/SageMakerClient.h>
 #include <aws/sagemaker/SageMakerEndpointProvider.h>
 #include <aws/sagemaker/SageMakerErrorMarshaller.h>
+#include <aws/sagemaker/model/DescribeNotebookInstanceLifecycleConfigRequest.h>
 #include <aws/sagemaker/model/DescribeOptimizationJobRequest.h>
 #include <aws/sagemaker/model/DescribePartnerAppRequest.h>
 #include <aws/sagemaker/model/DescribePipelineDefinitionForExecutionRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/sagemaker/model/ListNotebookInstancesRequest.h>
 #include <aws/sagemaker/model/ListOptimizationJobsRequest.h>
 #include <aws/sagemaker/model/ListPartnerAppsRequest.h>
-#include <aws/sagemaker/model/ListPipelineExecutionStepsRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,13 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DescribeNotebookInstanceLifecycleConfigOutcome SageMakerClient::DescribeNotebookInstanceLifecycleConfig(
+    const DescribeNotebookInstanceLifecycleConfigRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeNotebookInstanceLifecycleConfigOutcome(result.GetResultWithOwnership())
+                            : DescribeNotebookInstanceLifecycleConfigOutcome(std::move(result.GetError()));
+}
 
 DescribeOptimizationJobOutcome SageMakerClient::DescribeOptimizationJob(const DescribeOptimizationJobRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -719,10 +726,4 @@ ListPartnerAppsOutcome SageMakerClient::ListPartnerApps(const ListPartnerAppsReq
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListPartnerAppsOutcome(result.GetResultWithOwnership())
                             : ListPartnerAppsOutcome(std::move(result.GetError()));
-}
-
-ListPipelineExecutionStepsOutcome SageMakerClient::ListPipelineExecutionSteps(const ListPipelineExecutionStepsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ListPipelineExecutionStepsOutcome(result.GetResultWithOwnership())
-                            : ListPipelineExecutionStepsOutcome(std::move(result.GetError()));
 }

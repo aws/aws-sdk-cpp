@@ -30,6 +30,10 @@ UpdateResponderGatewayResult& UpdateResponderGatewayResult::operator=(const Aws:
     m_status = ResponderGatewayStatusMapper::GetResponderGatewayStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("clientRoutingPolicy")) {
+    m_clientRoutingPolicy = ClientRoutingPolicyMapper::GetClientRoutingPolicyForName(jsonValue.GetString("clientRoutingPolicy"));
+    m_clientRoutingPolicyHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

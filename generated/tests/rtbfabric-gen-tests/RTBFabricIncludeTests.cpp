@@ -25,6 +25,7 @@
 #include <aws/rtbfabric/model/AutoScalingGroupsConfiguration.h>
 #include <aws/rtbfabric/model/CertificateAssociationStatus.h>
 #include <aws/rtbfabric/model/CertificateAssociationSummary.h>
+#include <aws/rtbfabric/model/ClientRoutingPolicy.h>
 #include <aws/rtbfabric/model/ConnectivityType.h>
 #include <aws/rtbfabric/model/CreateInboundExternalLinkRequest.h>
 #include <aws/rtbfabric/model/CreateInboundExternalLinkResult.h>

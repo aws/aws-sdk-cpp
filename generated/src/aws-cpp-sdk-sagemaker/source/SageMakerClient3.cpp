@@ -20,6 +20,7 @@
 #include <aws/sagemaker/SageMakerClient.h>
 #include <aws/sagemaker/SageMakerEndpointProvider.h>
 #include <aws/sagemaker/SageMakerErrorMarshaller.h>
+#include <aws/sagemaker/model/ListPipelineExecutionStepsRequest.h>
 #include <aws/sagemaker/model/ListPipelineExecutionsRequest.h>
 #include <aws/sagemaker/model/ListPipelineParametersForExecutionRequest.h>
 #include <aws/sagemaker/model/ListPipelineVersionsRequest.h>
@@ -118,7 +119,6 @@
 #include <aws/sagemaker/model/UpdateProjectRequest.h>
 #include <aws/sagemaker/model/UpdateSpaceRequest.h>
 #include <aws/sagemaker/model/UpdateTrainingJobRequest.h>
-#include <aws/sagemaker/model/UpdateTrialComponentRequest.h>
 #include <aws/sagemaker/model/UpdateTrialRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
@@ -131,6 +131,12 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+ListPipelineExecutionStepsOutcome SageMakerClient::ListPipelineExecutionSteps(const ListPipelineExecutionStepsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPipelineExecutionStepsOutcome(result.GetResultWithOwnership())
+                            : ListPipelineExecutionStepsOutcome(std::move(result.GetError()));
+}
 
 ListPipelineExecutionsOutcome SageMakerClient::ListPipelineExecutions(const ListPipelineExecutionsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -709,10 +715,4 @@ UpdateTrainingJobOutcome SageMakerClient::UpdateTrainingJob(const UpdateTraining
 UpdateTrialOutcome SageMakerClient::UpdateTrial(const UpdateTrialRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateTrialOutcome(result.GetResultWithOwnership()) : UpdateTrialOutcome(std::move(result.GetError()));
-}
-
-UpdateTrialComponentOutcome SageMakerClient::UpdateTrialComponent(const UpdateTrialComponentRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateTrialComponentOutcome(result.GetResultWithOwnership())
-                            : UpdateTrialComponentOutcome(std::move(result.GetError()));
 }

@@ -23,6 +23,7 @@
 #include <aws/sagemaker/model/AddAssociationResult.h>
 #include <aws/sagemaker/model/AddTagsResult.h>
 #include <aws/sagemaker/model/AssociateTrialComponentResult.h>
+#include <aws/sagemaker/model/AttachClusterNodeNetworkInterfaceResult.h>
 #include <aws/sagemaker/model/AttachClusterNodeVolumeResult.h>
 #include <aws/sagemaker/model/BatchAddClusterNodesResult.h>
 #include <aws/sagemaker/model/BatchDeleteClusterNodesResult.h>
@@ -473,6 +474,7 @@ namespace Model {
 class AddAssociationRequest;
 class AddTagsRequest;
 class AssociateTrialComponentRequest;
+class AttachClusterNodeNetworkInterfaceRequest;
 class AttachClusterNodeVolumeRequest;
 class BatchAddClusterNodesRequest;
 class BatchDeleteClusterNodesRequest;
@@ -879,6 +881,7 @@ class UpdateWorkteamRequest;
 typedef Aws::Utils::Outcome<AddAssociationResult, SageMakerError> AddAssociationOutcome;
 typedef Aws::Utils::Outcome<AddTagsResult, SageMakerError> AddTagsOutcome;
 typedef Aws::Utils::Outcome<AssociateTrialComponentResult, SageMakerError> AssociateTrialComponentOutcome;
+typedef Aws::Utils::Outcome<AttachClusterNodeNetworkInterfaceResult, SageMakerError> AttachClusterNodeNetworkInterfaceOutcome;
 typedef Aws::Utils::Outcome<AttachClusterNodeVolumeResult, SageMakerError> AttachClusterNodeVolumeOutcome;
 typedef Aws::Utils::Outcome<BatchAddClusterNodesResult, SageMakerError> BatchAddClusterNodesOutcome;
 typedef Aws::Utils::Outcome<BatchDeleteClusterNodesResult, SageMakerError> BatchDeleteClusterNodesOutcome;
@@ -1287,6 +1290,7 @@ typedef Aws::Utils::Outcome<UpdateWorkteamResult, SageMakerError> UpdateWorkteam
 typedef std::future<AddAssociationOutcome> AddAssociationOutcomeCallable;
 typedef std::future<AddTagsOutcome> AddTagsOutcomeCallable;
 typedef std::future<AssociateTrialComponentOutcome> AssociateTrialComponentOutcomeCallable;
+typedef std::future<AttachClusterNodeNetworkInterfaceOutcome> AttachClusterNodeNetworkInterfaceOutcomeCallable;
 typedef std::future<AttachClusterNodeVolumeOutcome> AttachClusterNodeVolumeOutcomeCallable;
 typedef std::future<BatchAddClusterNodesOutcome> BatchAddClusterNodesOutcomeCallable;
 typedef std::future<BatchDeleteClusterNodesOutcome> BatchDeleteClusterNodesOutcomeCallable;
@@ -1702,6 +1706,10 @@ typedef std::function<void(const SageMakerClient*, const Model::AddTagsRequest&,
 typedef std::function<void(const SageMakerClient*, const Model::AssociateTrialComponentRequest&,
                            const Model::AssociateTrialComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AssociateTrialComponentResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::AttachClusterNodeNetworkInterfaceRequest&,
+                           const Model::AttachClusterNodeNetworkInterfaceOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    AttachClusterNodeNetworkInterfaceResponseReceivedHandler;
 typedef std::function<void(const SageMakerClient*, const Model::AttachClusterNodeVolumeRequest&,
                            const Model::AttachClusterNodeVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AttachClusterNodeVolumeResponseReceivedHandler;

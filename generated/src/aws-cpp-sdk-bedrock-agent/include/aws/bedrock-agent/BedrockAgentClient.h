@@ -20,8 +20,13 @@ namespace Aws {
 namespace BedrockAgent {
 AWS_BEDROCKAGENT_API extern const char SERVICE_NAME[];
 /**
- * <p>Describes the API operations for creating and managing Amazon Bedrock
- * agents.</p>
+ * <p> <p>Amazon Bedrock Agents (now Amazon Bedrock Agents Classic) is no
+ * longer open to new customers. For capabilities similar to Bedrock Agents
+ * Classic, explore Amazon Bedrock AgentCore. Existing customers can continue to
+ * use the service as normal. For more information, see <a
+ * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-classic-maintenance-mode.html">Amazon
+ * Bedrock Agents Classic availability change</a>.</p>  <p>Describes the API
+ * operations for creating and managing Amazon Bedrock agents.</p></p>
  */
 class AWS_BEDROCKAGENT_API BedrockAgentClient
     : Aws::Client::ClientWithAsyncTemplateMethods<BedrockAgentClient>,
@@ -150,13 +155,19 @@ class AWS_BEDROCKAGENT_API BedrockAgentClient
   }
 
   /**
-   * <p>Creates an agent that orchestrates interactions between foundation models,
-   * data sources, software applications, user conversations, and APIs to carry out
-   * tasks to help customers.</p> <ul> <li> <p>Specify the following fields for
-   * security purposes.</p> <ul> <li> <p> <code>agentResourceRoleArn</code> – The
-   * Amazon Resource Name (ARN) of the role with permissions to invoke API operations
-   * on an agent.</p> </li> <li> <p>(Optional) <code>customerEncryptionKeyArn</code>
-   * – The Amazon Resource Name (ARN) of a KMS key to encrypt the creation of the
+   * <p> <p>Amazon Bedrock Agents (now Amazon Bedrock Agents Classic) is no
+   * longer open to new customers. For capabilities similar to Bedrock Agents
+   * Classic, explore Amazon Bedrock AgentCore. Existing customers can continue to
+   * use the service as normal. For more information, see <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-classic-maintenance-mode.html">Amazon
+   * Bedrock Agents Classic availability change</a>.</p>  <p>Creates an agent
+   * that orchestrates interactions between foundation models, data sources, software
+   * applications, user conversations, and APIs to carry out tasks to help
+   * customers.</p> <ul> <li> <p>Specify the following fields for security
+   * purposes.</p> <ul> <li> <p> <code>agentResourceRoleArn</code> – The Amazon
+   * Resource Name (ARN) of the role with permissions to invoke API operations on an
+   * agent.</p> </li> <li> <p>(Optional) <code>customerEncryptionKeyArn</code> – The
+   * Amazon Resource Name (ARN) of a KMS key to encrypt the creation of the
    * agent.</p> </li> <li> <p>(Optional) <code>idleSessionTTLinSeconds</code> –
    * Specify the number of seconds for which the agent should maintain session
    * information. After this time expires, the subsequent <code>InvokeAgent</code>
@@ -173,7 +184,7 @@ class AWS_BEDROCKAGENT_API BedrockAgentClient
    * <code>recommendedActions</code> for you to troubleshoot.</p> </li> <li> <p>The
    * agent instructions will not be honored if your agent has only one knowledge
    * base, uses default prompts, has no action group, and user input is disabled.</p>
-   * </li> </ul><p><h3>See Also:</h3>   <a
+   * </li> </ul></p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreateAgent">AWS
    * API Reference</a></p>
    */

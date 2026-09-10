@@ -5,10 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/bedrock-agent/model/AudioConfiguration.h>
 #include <aws/bedrock-agent/model/EmbeddingDataType.h>
-#include <aws/bedrock-agent/model/VideoConfiguration.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/Document.h>
 
 #include <utility>
 
@@ -76,50 +74,23 @@ class BedrockEmbeddingModelConfiguration {
 
   ///@{
   /**
-   * <p>Configuration settings for processing audio content in multimodal knowledge
-   * bases.</p>
+   * <p>Model-specific configuration for the embedding model, provided as a JSON
+   * object. Use this field to specify settings that apply to the embedding model
+   * that you selected, such as how audio and video files are divided into
+   * segments.</p> <p>The fields that this object accepts depend on the embedding
+   * model. For the settings that each model accepts, see the documentation for that
+   * model.</p>
    */
-  inline const Aws::Vector<AudioConfiguration>& GetAudio() const { return m_audio; }
-  inline bool AudioHasBeenSet() const { return m_audioHasBeenSet; }
-  template <typename AudioT = Aws::Vector<AudioConfiguration>>
-  void SetAudio(AudioT&& value) {
-    m_audioHasBeenSet = true;
-    m_audio = std::forward<AudioT>(value);
+  inline Aws::Utils::DocumentView GetModelConfiguration() const { return m_modelConfiguration; }
+  inline bool ModelConfigurationHasBeenSet() const { return m_modelConfigurationHasBeenSet; }
+  template <typename ModelConfigurationT = Aws::Utils::Document>
+  void SetModelConfiguration(ModelConfigurationT&& value) {
+    m_modelConfigurationHasBeenSet = true;
+    m_modelConfiguration = std::forward<ModelConfigurationT>(value);
   }
-  template <typename AudioT = Aws::Vector<AudioConfiguration>>
-  BedrockEmbeddingModelConfiguration& WithAudio(AudioT&& value) {
-    SetAudio(std::forward<AudioT>(value));
-    return *this;
-  }
-  template <typename AudioT = AudioConfiguration>
-  BedrockEmbeddingModelConfiguration& AddAudio(AudioT&& value) {
-    m_audioHasBeenSet = true;
-    m_audio.emplace_back(std::forward<AudioT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Configuration settings for processing video content in multimodal knowledge
-   * bases.</p>
-   */
-  inline const Aws::Vector<VideoConfiguration>& GetVideo() const { return m_video; }
-  inline bool VideoHasBeenSet() const { return m_videoHasBeenSet; }
-  template <typename VideoT = Aws::Vector<VideoConfiguration>>
-  void SetVideo(VideoT&& value) {
-    m_videoHasBeenSet = true;
-    m_video = std::forward<VideoT>(value);
-  }
-  template <typename VideoT = Aws::Vector<VideoConfiguration>>
-  BedrockEmbeddingModelConfiguration& WithVideo(VideoT&& value) {
-    SetVideo(std::forward<VideoT>(value));
-    return *this;
-  }
-  template <typename VideoT = VideoConfiguration>
-  BedrockEmbeddingModelConfiguration& AddVideo(VideoT&& value) {
-    m_videoHasBeenSet = true;
-    m_video.emplace_back(std::forward<VideoT>(value));
+  template <typename ModelConfigurationT = Aws::Utils::Document>
+  BedrockEmbeddingModelConfiguration& WithModelConfiguration(ModelConfigurationT&& value) {
+    SetModelConfiguration(std::forward<ModelConfigurationT>(value));
     return *this;
   }
   ///@}
@@ -128,13 +99,10 @@ class BedrockEmbeddingModelConfiguration {
 
   EmbeddingDataType m_embeddingDataType{EmbeddingDataType::NOT_SET};
 
-  Aws::Vector<AudioConfiguration> m_audio;
-
-  Aws::Vector<VideoConfiguration> m_video;
+  Aws::Utils::Document m_modelConfiguration;
   bool m_dimensionsHasBeenSet = false;
   bool m_embeddingDataTypeHasBeenSet = false;
-  bool m_audioHasBeenSet = false;
-  bool m_videoHasBeenSet = false;
+  bool m_modelConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

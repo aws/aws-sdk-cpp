@@ -193,6 +193,38 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p> Attaches an elastic network interface (ENI) to a node in a HyperPod cluster.
+   * </p> <p> To use this operation, you must have the
+   * <code>sagemaker:AttachClusterNodeNetworkInterface</code> permission.
+   * </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AttachClusterNodeNetworkInterface">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AttachClusterNodeNetworkInterfaceOutcome AttachClusterNodeNetworkInterface(
+      const Model::AttachClusterNodeNetworkInterfaceRequest& request) const;
+
+  /**
+   * A Callable wrapper for AttachClusterNodeNetworkInterface that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename AttachClusterNodeNetworkInterfaceRequestT = Model::AttachClusterNodeNetworkInterfaceRequest>
+  Model::AttachClusterNodeNetworkInterfaceOutcomeCallable AttachClusterNodeNetworkInterfaceCallable(
+      const AttachClusterNodeNetworkInterfaceRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::AttachClusterNodeNetworkInterface, request);
+  }
+
+  /**
+   * An Async wrapper for AttachClusterNodeNetworkInterface that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename AttachClusterNodeNetworkInterfaceRequestT = Model::AttachClusterNodeNetworkInterfaceRequest>
+  void AttachClusterNodeNetworkInterfaceAsync(const AttachClusterNodeNetworkInterfaceRequestT& request,
+                                              const AttachClusterNodeNetworkInterfaceResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::AttachClusterNodeNetworkInterface, request, handler, context);
+  }
+
+  /**
    * <p> Attaches your Amazon Elastic Block Store (Amazon EBS) volume to a node in
    * your EKS orchestrated HyperPod cluster. </p> <p> This API works with the Amazon
    * Elastic Block Store (Amazon EBS) Container Storage Interface (CSI) driver to

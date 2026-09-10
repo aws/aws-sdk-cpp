@@ -128,7 +128,12 @@ class CreateLinkRequest : public RTBFabricRequest {
 
   ///@{
   /**
-   * <p>Settings for the application logs.</p>
+   * <p>Application log settings for the link. This value is required. Under
+   * <code>applicationLogs.sampling</code>, the <code>errorLog</code> and
+   * <code>filterLog</code> fields set the percentage of eligible events to log.
+   * Valid values range from <code>0</code> through <code>100</code>. To turn off
+   * application logs, set both fields to <code>0</code>, as in
+   * <code>{"applicationLogs":{"sampling":{"errorLog":0,"filterLog":0}}}</code>.</p>
    */
   inline const LinkLogSettings& GetLogSettings() const { return m_logSettings; }
   inline bool LogSettingsHasBeenSet() const { return m_logSettingsHasBeenSet; }

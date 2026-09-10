@@ -23,6 +23,7 @@
 #include <aws/sagemaker/model/AddAssociationRequest.h>
 #include <aws/sagemaker/model/AddTagsRequest.h>
 #include <aws/sagemaker/model/AssociateTrialComponentRequest.h>
+#include <aws/sagemaker/model/AttachClusterNodeNetworkInterfaceRequest.h>
 #include <aws/sagemaker/model/AttachClusterNodeVolumeRequest.h>
 #include <aws/sagemaker/model/BatchAddClusterNodesRequest.h>
 #include <aws/sagemaker/model/BatchDeleteClusterNodesRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/sagemaker/model/DeleteDataQualityJobDefinitionRequest.h>
 #include <aws/sagemaker/model/DeleteDeviceFleetRequest.h>
 #include <aws/sagemaker/model/DeleteDomainRequest.h>
-#include <aws/sagemaker/model/DeleteEdgeDeploymentPlanRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -285,6 +285,13 @@ AssociateTrialComponentOutcome SageMakerClient::AssociateTrialComponent(const As
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? AssociateTrialComponentOutcome(result.GetResultWithOwnership())
                             : AssociateTrialComponentOutcome(std::move(result.GetError()));
+}
+
+AttachClusterNodeNetworkInterfaceOutcome SageMakerClient::AttachClusterNodeNetworkInterface(
+    const AttachClusterNodeNetworkInterfaceRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AttachClusterNodeNetworkInterfaceOutcome(result.GetResultWithOwnership())
+                            : AttachClusterNodeNetworkInterfaceOutcome(std::move(result.GetError()));
 }
 
 AttachClusterNodeVolumeOutcome SageMakerClient::AttachClusterNodeVolume(const AttachClusterNodeVolumeRequest& request) const {
@@ -853,10 +860,4 @@ DeleteDeviceFleetOutcome SageMakerClient::DeleteDeviceFleet(const DeleteDeviceFl
 DeleteDomainOutcome SageMakerClient::DeleteDomain(const DeleteDomainRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteDomainOutcome(result.GetResultWithOwnership()) : DeleteDomainOutcome(std::move(result.GetError()));
-}
-
-DeleteEdgeDeploymentPlanOutcome SageMakerClient::DeleteEdgeDeploymentPlan(const DeleteEdgeDeploymentPlanRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteEdgeDeploymentPlanOutcome(result.GetResultWithOwnership())
-                            : DeleteEdgeDeploymentPlanOutcome(std::move(result.GetError()));
 }

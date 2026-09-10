@@ -20,6 +20,7 @@
 #include <aws/sagemaker/SageMakerClient.h>
 #include <aws/sagemaker/SageMakerEndpointProvider.h>
 #include <aws/sagemaker/SageMakerErrorMarshaller.h>
+#include <aws/sagemaker/model/UpdateTrialComponentRequest.h>
 #include <aws/sagemaker/model/UpdateUserProfileRequest.h>
 #include <aws/sagemaker/model/UpdateWorkforceRequest.h>
 #include <aws/sagemaker/model/UpdateWorkteamRequest.h>
@@ -34,6 +35,12 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+UpdateTrialComponentOutcome SageMakerClient::UpdateTrialComponent(const UpdateTrialComponentRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateTrialComponentOutcome(result.GetResultWithOwnership())
+                            : UpdateTrialComponentOutcome(std::move(result.GetError()));
+}
 
 UpdateUserProfileOutcome SageMakerClient::UpdateUserProfile(const UpdateUserProfileRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);

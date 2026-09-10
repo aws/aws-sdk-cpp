@@ -221,6 +221,7 @@
 #include <aws/ec2/model/BlockDeviceMappingResponse.h>
 #include <aws/ec2/model/BlockPublicAccessMode.h>
 #include <aws/ec2/model/BlockPublicAccessStates.h>
+#include <aws/ec2/model/BootModeOverrideValues.h>
 #include <aws/ec2/model/BootModeType.h>
 #include <aws/ec2/model/BootModeValues.h>
 #include <aws/ec2/model/BundleInstanceRequest.h>

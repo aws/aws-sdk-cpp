@@ -66,7 +66,9 @@
 #include <aws/resiliencehubv2/model/ListSystemEventsRequest.h>
 #include <aws/resiliencehubv2/model/ListSystemsRequest.h>
 #include <aws/resiliencehubv2/model/ListTagsForResourceRequest.h>
+#include <aws/resiliencehubv2/model/ListTestRunDependenciesRequest.h>
 #include <aws/resiliencehubv2/model/ListTestRunEventsRequest.h>
+#include <aws/resiliencehubv2/model/ListTestRunSourceEventsRequest.h>
 #include <aws/resiliencehubv2/model/ListTestRunSourcesRequest.h>
 #include <aws/resiliencehubv2/model/ListTestRunsRequest.h>
 #include <aws/resiliencehubv2/model/ListTestSourcesRequest.h>
@@ -875,6 +877,30 @@ ListTagsForResourceOutcome Resiliencehubv2Client::ListTagsForResource(const List
                             : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
+ListTestRunDependenciesOutcome Resiliencehubv2Client::ListTestRunDependencies(const ListTestRunDependenciesRequest& request) const {
+  if (!request.TestRunIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListTestRunDependencies", "Required field: TestRunId, is not set");
+    return ListTestRunDependenciesOutcome(Aws::Client::AWSError<Resiliencehubv2Errors>(
+        Resiliencehubv2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TestRunId]", false));
+  }
+  if (!request.ServiceArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListTestRunDependencies", "Required field: ServiceArn, is not set");
+    return ListTestRunDependenciesOutcome(Aws::Client::AWSError<Resiliencehubv2Errors>(
+        Resiliencehubv2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ServiceArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/test-runs/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTestRunId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/dependencies");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTestRunDependenciesOutcome(result.GetResultWithOwnership())
+                            : ListTestRunDependenciesOutcome(std::move(result.GetError()));
+}
+
 ListTestRunEventsOutcome Resiliencehubv2Client::ListTestRunEvents(const ListTestRunEventsRequest& request) const {
   if (!request.TestRunIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListTestRunEvents", "Required field: TestRunId, is not set");
@@ -897,6 +923,35 @@ ListTestRunEventsOutcome Resiliencehubv2Client::ListTestRunEvents(const ListTest
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListTestRunEventsOutcome(result.GetResultWithOwnership())
                             : ListTestRunEventsOutcome(std::move(result.GetError()));
+}
+
+ListTestRunSourceEventsOutcome Resiliencehubv2Client::ListTestRunSourceEvents(const ListTestRunSourceEventsRequest& request) const {
+  if (!request.TestRunIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListTestRunSourceEvents", "Required field: TestRunId, is not set");
+    return ListTestRunSourceEventsOutcome(Aws::Client::AWSError<Resiliencehubv2Errors>(
+        Resiliencehubv2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TestRunId]", false));
+  }
+  if (!request.ServiceArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListTestRunSourceEvents", "Required field: ServiceArn, is not set");
+    return ListTestRunSourceEventsOutcome(Aws::Client::AWSError<Resiliencehubv2Errors>(
+        Resiliencehubv2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ServiceArn]", false));
+  }
+  if (!request.SourceArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListTestRunSourceEvents", "Required field: SourceArn, is not set");
+    return ListTestRunSourceEventsOutcome(Aws::Client::AWSError<Resiliencehubv2Errors>(
+        Resiliencehubv2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SourceArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/test-runs/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTestRunId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/source-events");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTestRunSourceEventsOutcome(result.GetResultWithOwnership())
+                            : ListTestRunSourceEventsOutcome(std::move(result.GetError()));
 }
 
 ListTestRunSourcesOutcome Resiliencehubv2Client::ListTestRunSources(const ListTestRunSourcesRequest& request) const {

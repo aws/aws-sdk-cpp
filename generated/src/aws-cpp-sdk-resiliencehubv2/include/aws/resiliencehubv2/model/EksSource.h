@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/resiliencehubv2/Resiliencehubv2_EXPORTS.h>
+#include <aws/resiliencehubv2/model/EksLabelSelector.h>
 
 #include <utility>
 
@@ -72,12 +73,35 @@ class EksSource {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Filters discovery to the Kubernetes objects whose labels match the selector.
+   * When omitted, all supported objects in the specified namespaces are
+   * discovered.</p>
+   */
+  inline const EksLabelSelector& GetLabelSelector() const { return m_labelSelector; }
+  inline bool LabelSelectorHasBeenSet() const { return m_labelSelectorHasBeenSet; }
+  template <typename LabelSelectorT = EksLabelSelector>
+  void SetLabelSelector(LabelSelectorT&& value) {
+    m_labelSelectorHasBeenSet = true;
+    m_labelSelector = std::forward<LabelSelectorT>(value);
+  }
+  template <typename LabelSelectorT = EksLabelSelector>
+  EksSource& WithLabelSelector(LabelSelectorT&& value) {
+    SetLabelSelector(std::forward<LabelSelectorT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clusterArn;
 
   Aws::Vector<Aws::String> m_namespaces;
+
+  EksLabelSelector m_labelSelector;
   bool m_clusterArnHasBeenSet = false;
   bool m_namespacesHasBeenSet = false;
+  bool m_labelSelectorHasBeenSet = false;
 };
 
 }  // namespace Model

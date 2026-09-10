@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rtbfabric/RTBFabricRequest.h>
 #include <aws/rtbfabric/RTBFabric_EXPORTS.h>
+#include <aws/rtbfabric/model/ClientRoutingPolicy.h>
 #include <aws/rtbfabric/model/GatewayType.h>
 #include <aws/rtbfabric/model/ListenerConfig.h>
 #include <aws/rtbfabric/model/ManagedEndpointConfiguration.h>
@@ -56,7 +57,10 @@ class CreateResponderGatewayRequest : public RTBFabricRequest {
 
   ///@{
   /**
-   * <p>The unique identifiers of the subnets.</p>
+   * <p>Unique identifiers of the subnets. A service quota for your account sets the
+   * number of Availability Zones that your subnets can span. By default, this quota
+   * is one Availability Zone. To span more Availability Zones, request a quota
+   * increase.</p>
    */
   inline const Aws::Vector<Aws::String>& GetSubnetIds() const { return m_subnetIds; }
   inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
@@ -206,7 +210,16 @@ class CreateResponderGatewayRequest : public RTBFabricRequest {
 
   ///@{
   /**
-   * <p>The unique client token.</p>
+   * <p>Specifies a unique, case-sensitive identifier that you provide to ensure the
+   * idempotency of the request. This lets you safely retry the request without
+   * accidentally performing the same operation a second time. Passing the same value
+   * to a later call to an operation requires that you also pass the same value for
+   * all other parameters. We recommend that you use a <a
+   * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
+   * value</a>.</p> <p>If you don't provide this value, then Amazon Web Services
+   * generates a random one for you.</p> <p>If you retry the operation with the same
+   * <code>clientToken</code>, but with different parameters, the retry fails with an
+   * <code>IdempotentParameterMismatch</code> error.</p>
    */
   inline const Aws::String& GetClientToken() const { return m_clientToken; }
   inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
@@ -281,6 +294,40 @@ class CreateResponderGatewayRequest : public RTBFabricRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The client routing policy of the gateway. This policy controls which
+   * Availability Zones RTB Fabric uses to reach the gateway for the requester
+   * gateways that send traffic to it. Valid values are the following:</p> <ul> <li>
+   * <p> <code>AVAILABILITY_ZONE_AFFINITY</code>: RTB Fabric routes each requester's
+   * traffic to gateway capacity in the requester's own Availability Zone when the
+   * gateway has capacity available there. Otherwise, RTB Fabric routes the traffic
+   * to gateway capacity in the other Availability Zones of the gateway.</p> </li>
+   * <li> <p> <code>ANY_AVAILABILITY_ZONE</code>: RTB Fabric routes each requester's
+   * traffic to gateway capacity in every Availability Zone that the subnets of the
+   * gateway span. The Availability Zone that the requester is in does not change
+   * this.</p> </li> </ul> <p>If you don't specify a value, RTB Fabric uses
+   * <code>AVAILABILITY_ZONE_AFFINITY</code>. To get the behavior of
+   * <code>ANY_AVAILABILITY_ZONE</code>, create the gateway with subnets in more than
+   * one Availability Zone. RTB Fabric does not support partial Availability Zone
+   * affinity, so <code>PARTIAL_AVAILABILITY_ZONE_AFFINITY</code> is not a valid
+   * value. For more information, see <a
+   * href="https://docs.aws.amazon.com/rtb-fabric/latest/userguide/working-with-responder-gateways.html#configuring-availability-zone-affinity">Configuring
+   * Availability Zone affinity</a> in the <i>Amazon Web Services RTB Fabric User
+   * Guide</i>.</p>
+   */
+  inline ClientRoutingPolicy GetClientRoutingPolicy() const { return m_clientRoutingPolicy; }
+  inline bool ClientRoutingPolicyHasBeenSet() const { return m_clientRoutingPolicyHasBeenSet; }
+  inline void SetClientRoutingPolicy(ClientRoutingPolicy value) {
+    m_clientRoutingPolicyHasBeenSet = true;
+    m_clientRoutingPolicy = value;
+  }
+  inline CreateResponderGatewayRequest& WithClientRoutingPolicy(ClientRoutingPolicy value) {
+    SetClientRoutingPolicy(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_vpcId;
 
@@ -307,6 +354,8 @@ class CreateResponderGatewayRequest : public RTBFabricRequest {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   GatewayType m_gatewayType{GatewayType::NOT_SET};
+
+  ClientRoutingPolicy m_clientRoutingPolicy{ClientRoutingPolicy::NOT_SET};
   bool m_vpcIdHasBeenSet = false;
   bool m_subnetIdsHasBeenSet = false;
   bool m_securityGroupIdsHasBeenSet = false;
@@ -320,6 +369,7 @@ class CreateResponderGatewayRequest : public RTBFabricRequest {
   bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_gatewayTypeHasBeenSet = false;
+  bool m_clientRoutingPolicyHasBeenSet = false;
 };
 
 }  // namespace Model

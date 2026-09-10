@@ -57,6 +57,10 @@ CatalogItem& CatalogItem::operator=(JsonView jsonValue) {
     }
     m_supportedStorageHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RackScalingType")) {
+    m_rackScalingType = RackScalingTypeMapper::GetRackScalingTypeForName(jsonValue.GetString("RackScalingType"));
+    m_rackScalingTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -103,6 +107,10 @@ JsonValue CatalogItem::Jsonize() const {
           SupportedStorageEnumMapper::GetNameForSupportedStorageEnum(m_supportedStorage[supportedStorageIndex]));
     }
     payload.WithArray("SupportedStorage", std::move(supportedStorageJsonList));
+  }
+
+  if (m_rackScalingTypeHasBeenSet) {
+    payload.WithString("RackScalingType", RackScalingTypeMapper::GetNameForRackScalingType(m_rackScalingType));
   }
 
   return payload;
