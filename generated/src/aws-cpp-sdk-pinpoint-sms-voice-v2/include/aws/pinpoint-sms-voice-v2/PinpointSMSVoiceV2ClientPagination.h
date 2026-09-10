@@ -29,6 +29,7 @@
 #include <aws/pinpoint-sms-voice-v2/model/DescribeSenderIdsPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeSpendLimitsPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeVerifiedDestinationNumbersPaginationTraits.h>
+#include <aws/pinpoint-sms-voice-v2/model/ListAvailablePhoneNumbersPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/ListNotifyCountriesPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/ListPoolOriginationIdentitiesPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/ListProtectConfigurationRuleSetNumberOverridesPaginationTraits.h>
@@ -104,6 +105,9 @@ using DescribeSpendLimitsPaginator =
 using DescribeVerifiedDestinationNumbersPaginator =
     Aws::Utils::Pagination::Paginator<PinpointSMSVoiceV2Client, Model::DescribeVerifiedDestinationNumbersRequest,
                                       Pagination::DescribeVerifiedDestinationNumbersPaginationTraits<PinpointSMSVoiceV2Client>>;
+using ListAvailablePhoneNumbersPaginator =
+    Aws::Utils::Pagination::Paginator<PinpointSMSVoiceV2Client, Model::ListAvailablePhoneNumbersRequest,
+                                      Pagination::ListAvailablePhoneNumbersPaginationTraits<PinpointSMSVoiceV2Client>>;
 using ListNotifyCountriesPaginator =
     Aws::Utils::Pagination::Paginator<PinpointSMSVoiceV2Client, Model::ListNotifyCountriesRequest,
                                       Pagination::ListNotifyCountriesPaginationTraits<PinpointSMSVoiceV2Client>>;

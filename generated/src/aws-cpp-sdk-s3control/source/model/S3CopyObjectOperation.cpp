@@ -51,6 +51,12 @@ S3CopyObjectOperation& S3CopyObjectOperation::operator=(const XmlNode& xmlNode) 
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(metadataDirectiveNode.GetText()).c_str()));
       m_metadataDirectiveHasBeenSet = true;
     }
+    XmlNode annotationDirectiveNode = resultNode.FirstChild("AnnotationDirective");
+    if (!annotationDirectiveNode.IsNull()) {
+      m_annotationDirective = S3AnnotationDirectiveMapper::GetS3AnnotationDirectiveForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(annotationDirectiveNode.GetText()).c_str()));
+      m_annotationDirectiveHasBeenSet = true;
+    }
     XmlNode modifiedSinceConstraintNode = resultNode.FirstChild("ModifiedSinceConstraint");
     if (!modifiedSinceConstraintNode.IsNull()) {
       m_modifiedSinceConstraint =
@@ -139,6 +145,17 @@ S3CopyObjectOperation& S3CopyObjectOperation::operator=(const XmlNode& xmlNode) 
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(checksumAlgorithmNode.GetText()).c_str()));
       m_checksumAlgorithmHasBeenSet = true;
     }
+    XmlNode objectLockEventHoldNode = resultNode.FirstChild("ObjectLockEventHold");
+    if (!objectLockEventHoldNode.IsNull()) {
+      m_objectLockEventHold = S3ObjectLockEventHoldMapper::GetS3ObjectLockEventHoldForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(objectLockEventHoldNode.GetText()).c_str()));
+      m_objectLockEventHoldHasBeenSet = true;
+    }
+    XmlNode objectLockEventHoldDurationNode = resultNode.FirstChild("ObjectLockEventHoldDuration");
+    if (!objectLockEventHoldDurationNode.IsNull()) {
+      m_objectLockEventHoldDuration = objectLockEventHoldDurationNode;
+      m_objectLockEventHoldDurationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -167,6 +184,11 @@ void S3CopyObjectOperation::AddToNode(XmlNode& parentNode) const {
   if (m_metadataDirectiveHasBeenSet) {
     XmlNode metadataDirectiveNode = parentNode.CreateChildElement("MetadataDirective");
     metadataDirectiveNode.SetText(S3MetadataDirectiveMapper::GetNameForS3MetadataDirective(m_metadataDirective));
+  }
+
+  if (m_annotationDirectiveHasBeenSet) {
+    XmlNode annotationDirectiveNode = parentNode.CreateChildElement("AnnotationDirective");
+    annotationDirectiveNode.SetText(S3AnnotationDirectiveMapper::GetNameForS3AnnotationDirective(m_annotationDirective));
   }
 
   if (m_modifiedSinceConstraintHasBeenSet) {
@@ -245,6 +267,16 @@ void S3CopyObjectOperation::AddToNode(XmlNode& parentNode) const {
   if (m_checksumAlgorithmHasBeenSet) {
     XmlNode checksumAlgorithmNode = parentNode.CreateChildElement("ChecksumAlgorithm");
     checksumAlgorithmNode.SetText(S3ChecksumAlgorithmMapper::GetNameForS3ChecksumAlgorithm(m_checksumAlgorithm));
+  }
+
+  if (m_objectLockEventHoldHasBeenSet) {
+    XmlNode objectLockEventHoldNode = parentNode.CreateChildElement("ObjectLockEventHold");
+    objectLockEventHoldNode.SetText(S3ObjectLockEventHoldMapper::GetNameForS3ObjectLockEventHold(m_objectLockEventHold));
+  }
+
+  if (m_objectLockEventHoldDurationHasBeenSet) {
+    XmlNode objectLockEventHoldDurationNode = parentNode.CreateChildElement("ObjectLockEventHoldDuration");
+    m_objectLockEventHoldDuration.AddToNode(objectLockEventHoldDurationNode);
   }
 }
 

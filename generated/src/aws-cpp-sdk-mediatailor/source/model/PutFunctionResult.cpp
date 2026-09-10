@@ -38,6 +38,10 @@ PutFunctionResult& PutFunctionResult::operator=(const Aws::AmazonWebServiceResul
     m_httpRequestConfiguration = jsonValue.GetObject("HttpRequestConfiguration");
     m_httpRequestConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AwsServiceRequestConfiguration")) {
+    m_awsServiceRequestConfiguration = jsonValue.GetObject("AwsServiceRequestConfiguration");
+    m_awsServiceRequestConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("CustomOutputConfiguration")) {
     m_customOutputConfiguration = jsonValue.GetObject("CustomOutputConfiguration");
     m_customOutputConfigurationHasBeenSet = true;

@@ -612,11 +612,11 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Creates a cross-account shared resource. The resource owner makes an offer to
-   * share the resource with the principal subscriber (an AWS user with a different
-   * account than the resource owner).</p> <p>The following resources support
-   * cross-account sharing:</p> <ul> <li> <p>HealthOmics variant stores</p> </li>
-   * <li> <p>HealthOmics annotation stores</p> </li> <li> <p>Private workflows</p>
-   * </li> </ul><p><h3>See Also:</h3>   <a
+   * share the resource with the principal subscriber (an Amazon Web Services user
+   * with a different account than the resource owner).</p> <p>The following
+   * resources support cross-account sharing:</p> <ul> <li> <p>HealthOmics variant
+   * stores</p> </li> <li> <p>HealthOmics annotation stores</p> </li> <li> <p>Private
+   * workflows</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateShare">AWS
    * API Reference</a></p>
    */
@@ -829,11 +829,12 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient,
    * not delete the individual workflow runs. To delete the runs, call
    * <code>DeleteRunBatch</code> before calling <code>DeleteBatch</code>.</p> <p>
    * <code>DeleteBatch</code> requires the batch to be in a terminal state:
-   * <code>PROCESSED</code>, <code>FAILED</code>, <code>CANCELLED</code>, or
-   * <code>RUNS_DELETED</code>. After <code>DeleteBatch</code> completes, the batch
-   * metadata is no longer accessible. You cannot call <code>GetBatch</code>,
-   * <code>ListRunsInBatch</code>, <code>DeleteRunBatch</code>, or
-   * <code>CancelRunBatch</code> on a deleted batch.</p><p><h3>See Also:</h3>   <a
+   * <code>PROCESSED</code>, <code>FAILED</code>, <code>CANCELLED</code>,
+   * <code>RUNS_DELETE_FAILED</code>, or <code>RUNS_DELETED</code>. After
+   * <code>DeleteBatch</code> completes, the batch metadata is no longer accessible.
+   * You cannot call <code>GetBatch</code>, <code>ListRunsInBatch</code>,
+   * <code>DeleteRunBatch</code>, or <code>CancelRunBatch</code> on a deleted
+   * batch.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteBatch">AWS
    * API Reference</a></p>
    */
@@ -2800,8 +2801,8 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Activates an archived read set and returns its metadata in a JSON formatted
-   * output. AWS HealthOmics automatically archives unused read sets after 30 days.
-   * To monitor the status of your read set activation job, use the
+   * output. Amazon Web Services HealthOmics automatically archives unused read sets
+   * after 30 days. To monitor the status of your read set activation job, use the
    * <code>GetReadSetActivationJob</code> operation.</p> <p>To learn more, see <a
    * href="https://docs.aws.amazon.com/omics/latest/dev/activating-read-sets.html">Activating
    * read sets</a> in the <i>Amazon Web Services HealthOmics User

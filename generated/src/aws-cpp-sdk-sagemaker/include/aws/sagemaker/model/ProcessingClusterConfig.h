@@ -5,7 +5,9 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/model/ProcessingInstancePreference.h>
 #include <aws/sagemaker/model/ProcessingInstanceType.h>
 
 #include <utility>
@@ -121,6 +123,75 @@ class ProcessingClusterConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An ordered list of ML compute instance types for the processing job, in
+   * priority order. Amazon SageMaker launches the job on the first instance type in
+   * the list that has available capacity. If capacity is insufficient, Amazon
+   * SageMaker evaluates the next instance type in the list. Exactly one instance
+   * type is selected for the job.</p> <p> <code>InstancePreferences</code> is
+   * mutually exclusive with <code>InstanceType</code>.</p>
+   */
+  inline const Aws::Vector<ProcessingInstancePreference>& GetInstancePreferences() const { return m_instancePreferences; }
+  inline bool InstancePreferencesHasBeenSet() const { return m_instancePreferencesHasBeenSet; }
+  template <typename InstancePreferencesT = Aws::Vector<ProcessingInstancePreference>>
+  void SetInstancePreferences(InstancePreferencesT&& value) {
+    m_instancePreferencesHasBeenSet = true;
+    m_instancePreferences = std::forward<InstancePreferencesT>(value);
+  }
+  template <typename InstancePreferencesT = Aws::Vector<ProcessingInstancePreference>>
+  ProcessingClusterConfig& WithInstancePreferences(InstancePreferencesT&& value) {
+    SetInstancePreferences(std::forward<InstancePreferencesT>(value));
+    return *this;
+  }
+  template <typename InstancePreferencesT = ProcessingInstancePreference>
+  ProcessingClusterConfig& AddInstancePreferences(InstancePreferencesT&& value) {
+    m_instancePreferencesHasBeenSet = true;
+    m_instancePreferences.emplace_back(std::forward<InstancePreferencesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The instance type that Amazon SageMaker selected for the job from
+   * <code>InstancePreferences</code>. Returned by <code> <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeProcessingJob.html">DescribeProcessingJob</a>
+   * </code> after an instance type is selected. This field is read-only and isn't
+   * accepted in <code>CreateProcessingJob</code> requests.</p>
+   */
+  inline ProcessingInstanceType GetSelectedInstanceType() const { return m_selectedInstanceType; }
+  inline bool SelectedInstanceTypeHasBeenSet() const { return m_selectedInstanceTypeHasBeenSet; }
+  inline void SetSelectedInstanceType(ProcessingInstanceType value) {
+    m_selectedInstanceTypeHasBeenSet = true;
+    m_selectedInstanceType = value;
+  }
+  inline ProcessingClusterConfig& WithSelectedInstanceType(ProcessingInstanceType value) {
+    SetSelectedInstanceType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The number of instances of <code>SelectedInstanceType</code> that the job
+   * launched with. The job is billed for this instance type and count. Returned by
+   * <code>DescribeProcessingJob</code> after an instance type is selected. This
+   * field is read-only and isn't accepted in <code>CreateProcessingJob</code>
+   * requests.</p>
+   */
+  inline int GetSelectedInstanceCount() const { return m_selectedInstanceCount; }
+  inline bool SelectedInstanceCountHasBeenSet() const { return m_selectedInstanceCountHasBeenSet; }
+  inline void SetSelectedInstanceCount(int value) {
+    m_selectedInstanceCountHasBeenSet = true;
+    m_selectedInstanceCount = value;
+  }
+  inline ProcessingClusterConfig& WithSelectedInstanceCount(int value) {
+    SetSelectedInstanceCount(value);
+    return *this;
+  }
+  ///@}
  private:
   int m_instanceCount{0};
 
@@ -129,10 +200,19 @@ class ProcessingClusterConfig {
   int m_volumeSizeInGB{0};
 
   Aws::String m_volumeKmsKeyId;
+
+  Aws::Vector<ProcessingInstancePreference> m_instancePreferences;
+
+  ProcessingInstanceType m_selectedInstanceType{ProcessingInstanceType::NOT_SET};
+
+  int m_selectedInstanceCount{0};
   bool m_instanceCountHasBeenSet = false;
   bool m_instanceTypeHasBeenSet = false;
   bool m_volumeSizeInGBHasBeenSet = false;
   bool m_volumeKmsKeyIdHasBeenSet = false;
+  bool m_instancePreferencesHasBeenSet = false;
+  bool m_selectedInstanceTypeHasBeenSet = false;
+  bool m_selectedInstanceCountHasBeenSet = false;
 };
 
 }  // namespace Model

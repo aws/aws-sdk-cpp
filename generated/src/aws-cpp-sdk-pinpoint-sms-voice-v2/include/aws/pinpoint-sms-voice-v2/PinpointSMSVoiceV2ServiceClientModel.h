@@ -110,6 +110,7 @@
 #include <aws/pinpoint-sms-voice-v2/model/DiscardRegistrationVersionResult.h>
 #include <aws/pinpoint-sms-voice-v2/model/GetProtectConfigurationCountryRuleSetResult.h>
 #include <aws/pinpoint-sms-voice-v2/model/GetResourcePolicyResult.h>
+#include <aws/pinpoint-sms-voice-v2/model/ListAvailablePhoneNumbersResult.h>
 #include <aws/pinpoint-sms-voice-v2/model/ListNotifyCountriesRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/ListNotifyCountriesResult.h>
 #include <aws/pinpoint-sms-voice-v2/model/ListPoolOriginationIdentitiesResult.h>
@@ -253,6 +254,7 @@ class DisassociateProtectConfigurationRequest;
 class DiscardRegistrationVersionRequest;
 class GetProtectConfigurationCountryRuleSetRequest;
 class GetResourcePolicyRequest;
+class ListAvailablePhoneNumbersRequest;
 class ListNotifyCountriesRequest;
 class ListPoolOriginationIdentitiesRequest;
 class ListProtectConfigurationRuleSetNumberOverridesRequest;
@@ -373,6 +375,7 @@ typedef Aws::Utils::Outcome<DiscardRegistrationVersionResult, PinpointSMSVoiceV2
 typedef Aws::Utils::Outcome<GetProtectConfigurationCountryRuleSetResult, PinpointSMSVoiceV2Error>
     GetProtectConfigurationCountryRuleSetOutcome;
 typedef Aws::Utils::Outcome<GetResourcePolicyResult, PinpointSMSVoiceV2Error> GetResourcePolicyOutcome;
+typedef Aws::Utils::Outcome<ListAvailablePhoneNumbersResult, PinpointSMSVoiceV2Error> ListAvailablePhoneNumbersOutcome;
 typedef Aws::Utils::Outcome<ListNotifyCountriesResult, PinpointSMSVoiceV2Error> ListNotifyCountriesOutcome;
 typedef Aws::Utils::Outcome<ListPoolOriginationIdentitiesResult, PinpointSMSVoiceV2Error> ListPoolOriginationIdentitiesOutcome;
 typedef Aws::Utils::Outcome<ListProtectConfigurationRuleSetNumberOverridesResult, PinpointSMSVoiceV2Error>
@@ -490,6 +493,7 @@ typedef std::future<DisassociateProtectConfigurationOutcome> DisassociateProtect
 typedef std::future<DiscardRegistrationVersionOutcome> DiscardRegistrationVersionOutcomeCallable;
 typedef std::future<GetProtectConfigurationCountryRuleSetOutcome> GetProtectConfigurationCountryRuleSetOutcomeCallable;
 typedef std::future<GetResourcePolicyOutcome> GetResourcePolicyOutcomeCallable;
+typedef std::future<ListAvailablePhoneNumbersOutcome> ListAvailablePhoneNumbersOutcomeCallable;
 typedef std::future<ListNotifyCountriesOutcome> ListNotifyCountriesOutcomeCallable;
 typedef std::future<ListPoolOriginationIdentitiesOutcome> ListPoolOriginationIdentitiesOutcomeCallable;
 typedef std::future<ListProtectConfigurationRuleSetNumberOverridesOutcome> ListProtectConfigurationRuleSetNumberOverridesOutcomeCallable;
@@ -765,6 +769,9 @@ typedef std::function<void(const PinpointSMSVoiceV2Client*, const Model::GetProt
 typedef std::function<void(const PinpointSMSVoiceV2Client*, const Model::GetResourcePolicyRequest&, const Model::GetResourcePolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetResourcePolicyResponseReceivedHandler;
+typedef std::function<void(const PinpointSMSVoiceV2Client*, const Model::ListAvailablePhoneNumbersRequest&,
+                           const Model::ListAvailablePhoneNumbersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListAvailablePhoneNumbersResponseReceivedHandler;
 typedef std::function<void(const PinpointSMSVoiceV2Client*, const Model::ListNotifyCountriesRequest&,
                            const Model::ListNotifyCountriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListNotifyCountriesResponseReceivedHandler;

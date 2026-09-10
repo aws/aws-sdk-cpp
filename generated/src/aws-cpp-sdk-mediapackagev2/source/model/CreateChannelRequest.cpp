@@ -36,6 +36,10 @@ Aws::String CreateChannelRequest::SerializePayload() const {
     payload.WithObject("OutputHeaderConfiguration", m_outputHeaderConfiguration.Jsonize());
   }
 
+  if (m_multiviewConfigurationHasBeenSet) {
+    payload.WithObject("MultiviewConfiguration", m_multiviewConfiguration.Jsonize());
+  }
+
   if (m_outputLockingModeHasBeenSet) {
     payload.WithString("OutputLockingMode", OutputLockingModeMapper::GetNameForOutputLockingMode(m_outputLockingMode));
   }

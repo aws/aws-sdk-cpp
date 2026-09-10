@@ -71,8 +71,8 @@ class StartRunBatchRequest : public OmicsRequest {
 
   ///@{
   /**
-   * <p>AWS tags to associate with the batch resource. These tags are not inherited
-   * by individual runs. To tag individual runs, use
+   * <p>Amazon Web Services tags to associate with the batch resource. These tags are
+   * not inherited by individual runs. To tag individual runs, use
    * <code>defaultRunSetting.runTags</code>.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }

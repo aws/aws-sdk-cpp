@@ -4,6 +4,8 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/pcs/PCS_EXPORTS.h>
 #include <aws/pcs/model/SlurmCustomSetting.h>
@@ -77,12 +79,43 @@ class ComputeNodeGroupSlurmConfigurationRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The additional Slurm <code>gres.conf</code> records for the compute node
+   * group. Each item is a map of <code>gres.conf</code> attribute names to values
+   * that describes one <code>gres.conf</code> record, such as a GPU topology, MIG,
+   * MPS, or custom GRES entry. PCS adds the <code>NodeName=</code> prefix and merges
+   * these records with the GPU record it derives from the instance type.</p>
+   */
+  inline const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& GetGresCustomSettings() const { return m_gresCustomSettings; }
+  inline bool GresCustomSettingsHasBeenSet() const { return m_gresCustomSettingsHasBeenSet; }
+  template <typename GresCustomSettingsT = Aws::Vector<Aws::Map<Aws::String, Aws::String>>>
+  void SetGresCustomSettings(GresCustomSettingsT&& value) {
+    m_gresCustomSettingsHasBeenSet = true;
+    m_gresCustomSettings = std::forward<GresCustomSettingsT>(value);
+  }
+  template <typename GresCustomSettingsT = Aws::Vector<Aws::Map<Aws::String, Aws::String>>>
+  ComputeNodeGroupSlurmConfigurationRequest& WithGresCustomSettings(GresCustomSettingsT&& value) {
+    SetGresCustomSettings(std::forward<GresCustomSettingsT>(value));
+    return *this;
+  }
+  template <typename GresCustomSettingsT = Aws::Map<Aws::String, Aws::String>>
+  ComputeNodeGroupSlurmConfigurationRequest& AddGresCustomSettings(GresCustomSettingsT&& value) {
+    m_gresCustomSettingsHasBeenSet = true;
+    m_gresCustomSettings.emplace_back(std::forward<GresCustomSettingsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_scaleDownIdleTimeInSeconds{0};
 
   Aws::Vector<SlurmCustomSetting> m_slurmCustomSettings;
+
+  Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_gresCustomSettings;
   bool m_scaleDownIdleTimeInSecondsHasBeenSet = false;
   bool m_slurmCustomSettingsHasBeenSet = false;
+  bool m_gresCustomSettingsHasBeenSet = false;
 };
 
 }  // namespace Model

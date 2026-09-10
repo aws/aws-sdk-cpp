@@ -12,6 +12,7 @@
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/model/ChecksumAlgorithm.h>
 #include <aws/s3/model/ObjectCannedACL.h>
+#include <aws/s3/model/ObjectLockEventHold.h>
 #include <aws/s3/model/ObjectLockLegalHoldStatus.h>
 #include <aws/s3/model/ObjectLockMode.h>
 #include <aws/s3/model/RequestPayer.h>
@@ -1215,6 +1216,58 @@ class PutObjectRequest : public StreamingS3Request {
 
   ///@{
   /**
+   * <p>Specifies the event hold status to apply to this object. Set to
+   * <code>ON</code> to enable or <code>OFF</code> to disable.</p>  <p>This
+   * functionality is not supported for directory buckets.</p>
+   */
+  inline ObjectLockEventHold GetObjectLockEventHold() const { return m_objectLockEventHold; }
+  inline bool ObjectLockEventHoldHasBeenSet() const { return m_objectLockEventHoldHasBeenSet; }
+  inline void SetObjectLockEventHold(ObjectLockEventHold value) {
+    m_objectLockEventHoldHasBeenSet = true;
+    m_objectLockEventHold = value;
+  }
+  inline PutObjectRequest& WithObjectLockEventHold(ObjectLockEventHold value) {
+    SetObjectLockEventHold(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the event hold duration in days to apply to this object.</p>
+   * <p>This functionality is not supported for directory buckets.</p>
+   */
+  inline int GetObjectLockEventHoldDurationDays() const { return m_objectLockEventHoldDurationDays; }
+  inline bool ObjectLockEventHoldDurationDaysHasBeenSet() const { return m_objectLockEventHoldDurationDaysHasBeenSet; }
+  inline void SetObjectLockEventHoldDurationDays(int value) {
+    m_objectLockEventHoldDurationDaysHasBeenSet = true;
+    m_objectLockEventHoldDurationDays = value;
+  }
+  inline PutObjectRequest& WithObjectLockEventHoldDurationDays(int value) {
+    SetObjectLockEventHoldDurationDays(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the event hold duration in years to apply to this object.</p>
+   *  <p>This functionality is not supported for directory buckets.</p>
+   */
+  inline int GetObjectLockEventHoldDurationYears() const { return m_objectLockEventHoldDurationYears; }
+  inline bool ObjectLockEventHoldDurationYearsHasBeenSet() const { return m_objectLockEventHoldDurationYearsHasBeenSet; }
+  inline void SetObjectLockEventHoldDurationYears(int value) {
+    m_objectLockEventHoldDurationYearsHasBeenSet = true;
+    m_objectLockEventHoldDurationYears = value;
+  }
+  inline PutObjectRequest& WithObjectLockEventHoldDurationYears(int value) {
+    SetObjectLockEventHoldDurationYears(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The account ID of the expected bucket owner. If the account ID that you
    * provide does not match the actual owner of the bucket, the request fails with
    * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
@@ -1341,6 +1394,12 @@ class PutObjectRequest : public StreamingS3Request {
 
   ObjectLockLegalHoldStatus m_objectLockLegalHoldStatus{ObjectLockLegalHoldStatus::NOT_SET};
 
+  ObjectLockEventHold m_objectLockEventHold{ObjectLockEventHold::NOT_SET};
+
+  int m_objectLockEventHoldDurationDays{0};
+
+  int m_objectLockEventHoldDurationYears{0};
+
   Aws::String m_expectedBucketOwner;
 
   Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
@@ -1387,6 +1446,9 @@ class PutObjectRequest : public StreamingS3Request {
   bool m_objectLockModeHasBeenSet = false;
   bool m_objectLockRetainUntilDateHasBeenSet = false;
   bool m_objectLockLegalHoldStatusHasBeenSet = false;
+  bool m_objectLockEventHoldHasBeenSet = false;
+  bool m_objectLockEventHoldDurationDaysHasBeenSet = false;
+  bool m_objectLockEventHoldDurationYearsHasBeenSet = false;
   bool m_expectedBucketOwnerHasBeenSet = false;
   bool m_customizedAccessLogTagHasBeenSet = false;
 };

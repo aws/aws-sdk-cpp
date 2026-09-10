@@ -34,6 +34,10 @@ Function& Function::operator=(JsonView jsonValue) {
     m_httpRequestConfiguration = jsonValue.GetObject("HttpRequestConfiguration");
     m_httpRequestConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AwsServiceRequestConfiguration")) {
+    m_awsServiceRequestConfiguration = jsonValue.GetObject("AwsServiceRequestConfiguration");
+    m_awsServiceRequestConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("CustomOutputConfiguration")) {
     m_customOutputConfiguration = jsonValue.GetObject("CustomOutputConfiguration");
     m_customOutputConfigurationHasBeenSet = true;
@@ -81,6 +85,10 @@ JsonValue Function::Jsonize() const {
 
   if (m_httpRequestConfigurationHasBeenSet) {
     payload.WithObject("HttpRequestConfiguration", m_httpRequestConfiguration.Jsonize());
+  }
+
+  if (m_awsServiceRequestConfigurationHasBeenSet) {
+    payload.WithObject("AwsServiceRequestConfiguration", m_awsServiceRequestConfiguration.Jsonize());
   }
 
   if (m_customOutputConfigurationHasBeenSet) {

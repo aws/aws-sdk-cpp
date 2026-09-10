@@ -54,6 +54,10 @@ EvaluationFormQuestion& EvaluationFormQuestion::operator=(JsonView jsonValue) {
     m_scoringConfiguration = jsonValue.GetObject("ScoringConfiguration");
     m_scoringConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MetricConfiguration")) {
+    m_metricConfiguration = jsonValue.GetObject("MetricConfiguration");
+    m_metricConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -94,6 +98,10 @@ JsonValue EvaluationFormQuestion::Jsonize() const {
 
   if (m_scoringConfigurationHasBeenSet) {
     payload.WithObject("ScoringConfiguration", m_scoringConfiguration.Jsonize());
+  }
+
+  if (m_metricConfigurationHasBeenSet) {
+    payload.WithObject("MetricConfiguration", m_metricConfiguration.Jsonize());
   }
 
   return payload;

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/AudioFeedInput.h>
+#include <aws/medialive/model/EnrichmentMethod.h>
 
 #include <utility>
 
@@ -76,12 +77,42 @@ class InferenceSettings {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * The set of Contextual Metadata Enrichment methods enabled for this channel. Each
+   * method represents a specific way the channel will use the inference feed to
+   * augment its output with contextual metadata. An empty array (or omitting the
+   * field) disables enrichment. Order is not significant; duplicate values are not
+   * permitted.
+   */
+  inline const Aws::Vector<EnrichmentMethod>& GetEnrichmentMethods() const { return m_enrichmentMethods; }
+  inline bool EnrichmentMethodsHasBeenSet() const { return m_enrichmentMethodsHasBeenSet; }
+  template <typename EnrichmentMethodsT = Aws::Vector<EnrichmentMethod>>
+  void SetEnrichmentMethods(EnrichmentMethodsT&& value) {
+    m_enrichmentMethodsHasBeenSet = true;
+    m_enrichmentMethods = std::forward<EnrichmentMethodsT>(value);
+  }
+  template <typename EnrichmentMethodsT = Aws::Vector<EnrichmentMethod>>
+  InferenceSettings& WithEnrichmentMethods(EnrichmentMethodsT&& value) {
+    SetEnrichmentMethods(std::forward<EnrichmentMethodsT>(value));
+    return *this;
+  }
+  inline InferenceSettings& AddEnrichmentMethods(EnrichmentMethod value) {
+    m_enrichmentMethodsHasBeenSet = true;
+    m_enrichmentMethods.push_back(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_feedArn;
 
   Aws::Vector<AudioFeedInput> m_audioFeedInputs;
+
+  Aws::Vector<EnrichmentMethod> m_enrichmentMethods;
   bool m_feedArnHasBeenSet = false;
   bool m_audioFeedInputsHasBeenSet = false;
+  bool m_enrichmentMethodsHasBeenSet = false;
 };
 
 }  // namespace Model

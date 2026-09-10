@@ -1005,6 +1005,7 @@
 #include <aws/sagemaker/model/InstancePlacementConfig.h>
 #include <aws/sagemaker/model/InstancePool.h>
 #include <aws/sagemaker/model/InstancePoolSummary.h>
+#include <aws/sagemaker/model/InstancePreference.h>
 #include <aws/sagemaker/model/InstanceRequirementsEniConfiguration.h>
 #include <aws/sagemaker/model/InstanceType.h>
 #include <aws/sagemaker/model/IntegerParameterRange.h>
@@ -1556,6 +1557,7 @@
 #include <aws/sagemaker/model/ProcessingClusterConfig.h>
 #include <aws/sagemaker/model/ProcessingFeatureStoreOutput.h>
 #include <aws/sagemaker/model/ProcessingInput.h>
+#include <aws/sagemaker/model/ProcessingInstancePreference.h>
 #include <aws/sagemaker/model/ProcessingInstanceType.h>
 #include <aws/sagemaker/model/ProcessingJob.h>
 #include <aws/sagemaker/model/ProcessingJobStatus.h>

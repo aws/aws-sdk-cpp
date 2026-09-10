@@ -39,6 +39,11 @@ DefaultRetention& DefaultRetention::operator=(const XmlNode& xmlNode) {
       m_years = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(yearsNode.GetText()).c_str()).c_str());
       m_yearsHasBeenSet = true;
     }
+    XmlNode defaultEventHoldNode = resultNode.FirstChild("DefaultEventHold");
+    if (!defaultEventHoldNode.IsNull()) {
+      m_defaultEventHold = defaultEventHoldNode;
+      m_defaultEventHoldHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -63,6 +68,11 @@ void DefaultRetention::AddToNode(XmlNode& parentNode) const {
     ss << m_years;
     yearsNode.SetText(ss.str());
     ss.str("");
+  }
+
+  if (m_defaultEventHoldHasBeenSet) {
+    XmlNode defaultEventHoldNode = parentNode.CreateChildElement("DefaultEventHold");
+    m_defaultEventHold.AddToNode(defaultEventHoldNode);
   }
 }
 

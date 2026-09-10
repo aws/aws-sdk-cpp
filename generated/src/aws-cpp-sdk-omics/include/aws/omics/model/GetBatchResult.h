@@ -109,7 +109,8 @@ class GetBatchResult {
    * executing), <code>STOPPING</code> (cancellation in progress),
    * <code>PROCESSED</code> (all runs completed), <code>CANCELLED</code> (batch
    * cancelled), <code>FAILED</code> (batch failed), <code>RUNS_DELETING</code>
-   * (deleting runs), <code>RUNS_DELETED</code> (runs deleted).</p>
+   * (deleting runs), <code>RUNS_DELETE_FAILED</code> (run deletion failed for some
+   * or all runs), <code>RUNS_DELETED</code> (runs deleted).</p>
    */
   inline BatchStatus GetStatus() const { return m_status; }
   inline void SetStatus(BatchStatus value) {
@@ -124,7 +125,7 @@ class GetBatchResult {
 
   ///@{
   /**
-   * <p>AWS tags associated with the run batch.</p>
+   * <p>Amazon Web Services tags associated with the run batch.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
   template <typename TagsT = Aws::Map<Aws::String, Aws::String>>

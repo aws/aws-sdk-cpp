@@ -101,6 +101,10 @@ DefaultRunSetting& DefaultRunSetting::operator=(JsonView jsonValue) {
     m_configurationName = jsonValue.GetString("configurationName");
     m_configurationNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("sessionPolicy")) {
+    m_sessionPolicy = jsonValue.GetString("sessionPolicy");
+    m_sessionPolicyHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("engineSettings")) {
     m_engineSettings = jsonValue.GetObject("engineSettings");
     m_engineSettingsHasBeenSet = true;
@@ -199,6 +203,10 @@ JsonValue DefaultRunSetting::Jsonize() const {
 
   if (m_configurationNameHasBeenSet) {
     payload.WithString("configurationName", m_configurationName);
+  }
+
+  if (m_sessionPolicyHasBeenSet) {
+    payload.WithString("sessionPolicy", m_sessionPolicy);
   }
 
   if (m_engineSettingsHasBeenSet) {

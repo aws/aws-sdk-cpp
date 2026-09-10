@@ -50,6 +50,18 @@ ChannelListConfiguration& ChannelListConfiguration::operator=(JsonView jsonValue
     m_outputLockingMode = OutputLockingModeMapper::GetOutputLockingModeForName(jsonValue.GetString("OutputLockingMode"));
     m_outputLockingModeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MultiviewConfiguration")) {
+    m_multiviewConfiguration = jsonValue.GetObject("MultiviewConfiguration");
+    m_multiviewConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AttachedMultiviewChannels")) {
+    Aws::Utils::Array<JsonView> attachedMultiviewChannelsJsonList = jsonValue.GetArray("AttachedMultiviewChannels");
+    for (unsigned attachedMultiviewChannelsIndex = 0; attachedMultiviewChannelsIndex < attachedMultiviewChannelsJsonList.GetLength();
+         ++attachedMultiviewChannelsIndex) {
+      m_attachedMultiviewChannels.push_back(attachedMultiviewChannelsJsonList[attachedMultiviewChannelsIndex].AsString());
+    }
+    m_attachedMultiviewChannelsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -86,6 +98,20 @@ JsonValue ChannelListConfiguration::Jsonize() const {
 
   if (m_outputLockingModeHasBeenSet) {
     payload.WithString("OutputLockingMode", OutputLockingModeMapper::GetNameForOutputLockingMode(m_outputLockingMode));
+  }
+
+  if (m_multiviewConfigurationHasBeenSet) {
+    payload.WithObject("MultiviewConfiguration", m_multiviewConfiguration.Jsonize());
+  }
+
+  if (m_attachedMultiviewChannelsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> attachedMultiviewChannelsJsonList(m_attachedMultiviewChannels.size());
+    for (unsigned attachedMultiviewChannelsIndex = 0; attachedMultiviewChannelsIndex < attachedMultiviewChannelsJsonList.GetLength();
+         ++attachedMultiviewChannelsIndex) {
+      attachedMultiviewChannelsJsonList[attachedMultiviewChannelsIndex].AsString(
+          m_attachedMultiviewChannels[attachedMultiviewChannelsIndex]);
+    }
+    payload.WithArray("AttachedMultiviewChannels", std::move(attachedMultiviewChannelsJsonList));
   }
 
   return payload;

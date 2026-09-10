@@ -53,6 +53,22 @@ ResourceConfig& ResourceConfig::operator=(JsonView jsonValue) {
     m_instancePlacementConfig = jsonValue.GetObject("InstancePlacementConfig");
     m_instancePlacementConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("InstancePreferences")) {
+    Aws::Utils::Array<JsonView> instancePreferencesJsonList = jsonValue.GetArray("InstancePreferences");
+    for (unsigned instancePreferencesIndex = 0; instancePreferencesIndex < instancePreferencesJsonList.GetLength();
+         ++instancePreferencesIndex) {
+      m_instancePreferences.push_back(instancePreferencesJsonList[instancePreferencesIndex].AsObject());
+    }
+    m_instancePreferencesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SelectedInstanceType")) {
+    m_selectedInstanceType = TrainingInstanceTypeMapper::GetTrainingInstanceTypeForName(jsonValue.GetString("SelectedInstanceType"));
+    m_selectedInstanceTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SelectedInstanceCount")) {
+    m_selectedInstanceCount = jsonValue.GetInteger("SelectedInstanceCount");
+    m_selectedInstanceCountHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -93,6 +109,23 @@ JsonValue ResourceConfig::Jsonize() const {
 
   if (m_instancePlacementConfigHasBeenSet) {
     payload.WithObject("InstancePlacementConfig", m_instancePlacementConfig.Jsonize());
+  }
+
+  if (m_instancePreferencesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> instancePreferencesJsonList(m_instancePreferences.size());
+    for (unsigned instancePreferencesIndex = 0; instancePreferencesIndex < instancePreferencesJsonList.GetLength();
+         ++instancePreferencesIndex) {
+      instancePreferencesJsonList[instancePreferencesIndex].AsObject(m_instancePreferences[instancePreferencesIndex].Jsonize());
+    }
+    payload.WithArray("InstancePreferences", std::move(instancePreferencesJsonList));
+  }
+
+  if (m_selectedInstanceTypeHasBeenSet) {
+    payload.WithString("SelectedInstanceType", TrainingInstanceTypeMapper::GetNameForTrainingInstanceType(m_selectedInstanceType));
+  }
+
+  if (m_selectedInstanceCountHasBeenSet) {
+    payload.WithInteger("SelectedInstanceCount", m_selectedInstanceCount);
   }
 
   return payload;

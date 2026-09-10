@@ -17,6 +17,7 @@ namespace TtmlDestinationStyleControlMapper {
 
 static const int PASSTHROUGH_HASH = HashingUtils::HashString("PASSTHROUGH");
 static const int USE_CONFIGURED_HASH = HashingUtils::HashString("USE_CONFIGURED");
+static const int MANUAL_HASH = HashingUtils::HashString("MANUAL");
 
 TtmlDestinationStyleControl GetTtmlDestinationStyleControlForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ TtmlDestinationStyleControl GetTtmlDestinationStyleControlForName(const Aws::Str
     return TtmlDestinationStyleControl::PASSTHROUGH;
   } else if (hashCode == USE_CONFIGURED_HASH) {
     return TtmlDestinationStyleControl::USE_CONFIGURED;
+  } else if (hashCode == MANUAL_HASH) {
+    return TtmlDestinationStyleControl::MANUAL;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForTtmlDestinationStyleControl(TtmlDestinationStyleControl en
       return "PASSTHROUGH";
     case TtmlDestinationStyleControl::USE_CONFIGURED:
       return "USE_CONFIGURED";
+    case TtmlDestinationStyleControl::MANUAL:
+      return "MANUAL";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

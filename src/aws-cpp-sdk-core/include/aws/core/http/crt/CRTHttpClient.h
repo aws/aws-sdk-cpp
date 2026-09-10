@@ -33,6 +33,14 @@ namespace Aws
         struct ClientConfiguration;
     } // namespace Client
 
+    namespace Utils
+    {
+        namespace Threading
+        {
+            class WaitGroup;
+        }
+    }
+
     namespace Http
     {
         /**
@@ -52,6 +60,13 @@ namespace Aws
                 Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
                 Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const override;
 
+            Aws::Crt::Optional<Aws::Client::AWSError<Aws::Client::CoreErrors>> MakeRequestAsync(
+                const std::shared_ptr<HttpRequest>& request,
+                std::function<void(std::shared_ptr<HttpResponse>)> onResponseComplete,
+                std::function<void(const std::shared_ptr<Aws::Http::Connection>&)> onClientConnectionAvailable = nullptr,
+                Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
+                Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const override;
+
             bool IsDefaultAwsHttpClient() const override { return true; }
 
             Aws::Crt::Optional<Aws::Client::AWSError<Aws::Client::CoreErrors>> AcquireConnection(
@@ -70,6 +85,8 @@ namespace Aws
 
             Crt::Io::ClientBootstrap& m_bootstrap;
             Client::ClientConfiguration m_configuration;
+
+            std::shared_ptr<Aws::Utils::Threading::WaitGroup> m_requestLatch;
 
             std::shared_ptr<Crt::Http::HttpClientConnectionManager> GetWithCreateConnectionManagerForRequest(const std::shared_ptr<HttpRequest>& request, const Crt::Http::HttpClientConnectionOptions& connectionOptions) const;
             Crt::Http::HttpClientConnectionOptions CreateConnectionOptionsForRequest(const std::shared_ptr<HttpRequest>& request) const;

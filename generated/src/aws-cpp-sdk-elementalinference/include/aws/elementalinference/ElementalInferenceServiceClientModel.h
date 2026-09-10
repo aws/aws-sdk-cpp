@@ -28,6 +28,7 @@
 #include <aws/elementalinference/model/DisassociateFeedResult.h>
 #include <aws/elementalinference/model/ExportDictionaryEntriesResult.h>
 #include <aws/elementalinference/model/GetDictionaryResult.h>
+#include <aws/elementalinference/model/GetFeedPolicyResult.h>
 #include <aws/elementalinference/model/GetFeedResult.h>
 #include <aws/elementalinference/model/GetFixtureResult.h>
 #include <aws/elementalinference/model/ListDictionariesRequest.h>
@@ -35,6 +36,7 @@
 #include <aws/elementalinference/model/ListFeedsRequest.h>
 #include <aws/elementalinference/model/ListFeedsResult.h>
 #include <aws/elementalinference/model/ListTagsForResourceResult.h>
+#include <aws/elementalinference/model/PutFeedPolicyResult.h>
 #include <aws/elementalinference/model/SearchFixturesResult.h>
 #include <aws/elementalinference/model/UpdateDictionaryResult.h>
 #include <aws/elementalinference/model/UpdateFeedResult.h>
@@ -76,14 +78,17 @@ class CreateDictionaryRequest;
 class CreateFeedRequest;
 class DeleteDictionaryRequest;
 class DeleteFeedRequest;
+class DeleteFeedPolicyRequest;
 class DisassociateFeedRequest;
 class ExportDictionaryEntriesRequest;
 class GetDictionaryRequest;
 class GetFeedRequest;
+class GetFeedPolicyRequest;
 class GetFixtureRequest;
 class ListDictionariesRequest;
 class ListFeedsRequest;
 class ListTagsForResourceRequest;
+class PutFeedPolicyRequest;
 class SearchFixturesRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
@@ -97,14 +102,17 @@ typedef Aws::Utils::Outcome<CreateDictionaryResult, ElementalInferenceError> Cre
 typedef Aws::Utils::Outcome<CreateFeedResult, ElementalInferenceError> CreateFeedOutcome;
 typedef Aws::Utils::Outcome<DeleteDictionaryResult, ElementalInferenceError> DeleteDictionaryOutcome;
 typedef Aws::Utils::Outcome<DeleteFeedResult, ElementalInferenceError> DeleteFeedOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, ElementalInferenceError> DeleteFeedPolicyOutcome;
 typedef Aws::Utils::Outcome<DisassociateFeedResult, ElementalInferenceError> DisassociateFeedOutcome;
 typedef Aws::Utils::Outcome<ExportDictionaryEntriesResult, ElementalInferenceError> ExportDictionaryEntriesOutcome;
 typedef Aws::Utils::Outcome<GetDictionaryResult, ElementalInferenceError> GetDictionaryOutcome;
 typedef Aws::Utils::Outcome<GetFeedResult, ElementalInferenceError> GetFeedOutcome;
+typedef Aws::Utils::Outcome<GetFeedPolicyResult, ElementalInferenceError> GetFeedPolicyOutcome;
 typedef Aws::Utils::Outcome<GetFixtureResult, ElementalInferenceError> GetFixtureOutcome;
 typedef Aws::Utils::Outcome<ListDictionariesResult, ElementalInferenceError> ListDictionariesOutcome;
 typedef Aws::Utils::Outcome<ListFeedsResult, ElementalInferenceError> ListFeedsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, ElementalInferenceError> ListTagsForResourceOutcome;
+typedef Aws::Utils::Outcome<PutFeedPolicyResult, ElementalInferenceError> PutFeedPolicyOutcome;
 typedef Aws::Utils::Outcome<SearchFixturesResult, ElementalInferenceError> SearchFixturesOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ElementalInferenceError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ElementalInferenceError> UntagResourceOutcome;
@@ -118,14 +126,17 @@ typedef std::future<CreateDictionaryOutcome> CreateDictionaryOutcomeCallable;
 typedef std::future<CreateFeedOutcome> CreateFeedOutcomeCallable;
 typedef std::future<DeleteDictionaryOutcome> DeleteDictionaryOutcomeCallable;
 typedef std::future<DeleteFeedOutcome> DeleteFeedOutcomeCallable;
+typedef std::future<DeleteFeedPolicyOutcome> DeleteFeedPolicyOutcomeCallable;
 typedef std::future<DisassociateFeedOutcome> DisassociateFeedOutcomeCallable;
 typedef std::future<ExportDictionaryEntriesOutcome> ExportDictionaryEntriesOutcomeCallable;
 typedef std::future<GetDictionaryOutcome> GetDictionaryOutcomeCallable;
 typedef std::future<GetFeedOutcome> GetFeedOutcomeCallable;
+typedef std::future<GetFeedPolicyOutcome> GetFeedPolicyOutcomeCallable;
 typedef std::future<GetFixtureOutcome> GetFixtureOutcomeCallable;
 typedef std::future<ListDictionariesOutcome> ListDictionariesOutcomeCallable;
 typedef std::future<ListFeedsOutcome> ListFeedsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+typedef std::future<PutFeedPolicyOutcome> PutFeedPolicyOutcomeCallable;
 typedef std::future<SearchFixturesOutcome> SearchFixturesOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -152,6 +163,9 @@ typedef std::function<void(const ElementalInferenceClient*, const Model::DeleteD
 typedef std::function<void(const ElementalInferenceClient*, const Model::DeleteFeedRequest&, const Model::DeleteFeedOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteFeedResponseReceivedHandler;
+typedef std::function<void(const ElementalInferenceClient*, const Model::DeleteFeedPolicyRequest&, const Model::DeleteFeedPolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteFeedPolicyResponseReceivedHandler;
 typedef std::function<void(const ElementalInferenceClient*, const Model::DisassociateFeedRequest&, const Model::DisassociateFeedOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DisassociateFeedResponseReceivedHandler;
@@ -164,6 +178,9 @@ typedef std::function<void(const ElementalInferenceClient*, const Model::GetDict
 typedef std::function<void(const ElementalInferenceClient*, const Model::GetFeedRequest&, const Model::GetFeedOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetFeedResponseReceivedHandler;
+typedef std::function<void(const ElementalInferenceClient*, const Model::GetFeedPolicyRequest&, const Model::GetFeedPolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetFeedPolicyResponseReceivedHandler;
 typedef std::function<void(const ElementalInferenceClient*, const Model::GetFixtureRequest&, const Model::GetFixtureOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetFixtureResponseReceivedHandler;
@@ -176,6 +193,9 @@ typedef std::function<void(const ElementalInferenceClient*, const Model::ListFee
 typedef std::function<void(const ElementalInferenceClient*, const Model::ListTagsForResourceRequest&,
                            const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;
+typedef std::function<void(const ElementalInferenceClient*, const Model::PutFeedPolicyRequest&, const Model::PutFeedPolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutFeedPolicyResponseReceivedHandler;
 typedef std::function<void(const ElementalInferenceClient*, const Model::SearchFixturesRequest&, const Model::SearchFixturesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SearchFixturesResponseReceivedHandler;

@@ -24,15 +24,18 @@
 #include <aws/elementalinference/model/CreateDictionaryRequest.h>
 #include <aws/elementalinference/model/CreateFeedRequest.h>
 #include <aws/elementalinference/model/DeleteDictionaryRequest.h>
+#include <aws/elementalinference/model/DeleteFeedPolicyRequest.h>
 #include <aws/elementalinference/model/DeleteFeedRequest.h>
 #include <aws/elementalinference/model/DisassociateFeedRequest.h>
 #include <aws/elementalinference/model/ExportDictionaryEntriesRequest.h>
 #include <aws/elementalinference/model/GetDictionaryRequest.h>
+#include <aws/elementalinference/model/GetFeedPolicyRequest.h>
 #include <aws/elementalinference/model/GetFeedRequest.h>
 #include <aws/elementalinference/model/GetFixtureRequest.h>
 #include <aws/elementalinference/model/ListDictionariesRequest.h>
 #include <aws/elementalinference/model/ListFeedsRequest.h>
 #include <aws/elementalinference/model/ListTagsForResourceRequest.h>
+#include <aws/elementalinference/model/PutFeedPolicyRequest.h>
 #include <aws/elementalinference/model/SearchFixturesRequest.h>
 #include <aws/elementalinference/model/TagResourceRequest.h>
 #include <aws/elementalinference/model/UntagResourceRequest.h>
@@ -271,6 +274,25 @@ DeleteFeedOutcome ElementalInferenceClient::DeleteFeed(const DeleteFeedRequest& 
   return result.IsSuccess() ? DeleteFeedOutcome(result.GetResultWithOwnership()) : DeleteFeedOutcome(std::move(result.GetError()));
 }
 
+DeleteFeedPolicyOutcome ElementalInferenceClient::DeleteFeedPolicy(const DeleteFeedPolicyRequest& request) const {
+  if (!request.IdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteFeedPolicy", "Required field: Id, is not set");
+    return DeleteFeedPolicyOutcome(Aws::Client::AWSError<ElementalInferenceErrors>(
+        ElementalInferenceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/feed/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteFeedPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteFeedPolicyOutcome(std::move(result.GetError()));
+}
+
 DisassociateFeedOutcome ElementalInferenceClient::DisassociateFeed(const DisassociateFeedRequest& request) const {
   if (!request.IdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DisassociateFeed", "Required field: Id, is not set");
@@ -343,6 +365,24 @@ GetFeedOutcome ElementalInferenceClient::GetFeed(const GetFeedRequest& request) 
   return result.IsSuccess() ? GetFeedOutcome(result.GetResultWithOwnership()) : GetFeedOutcome(std::move(result.GetError()));
 }
 
+GetFeedPolicyOutcome ElementalInferenceClient::GetFeedPolicy(const GetFeedPolicyRequest& request) const {
+  if (!request.IdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetFeedPolicy", "Required field: Id, is not set");
+    return GetFeedPolicyOutcome(Aws::Client::AWSError<ElementalInferenceErrors>(ElementalInferenceErrors::MISSING_PARAMETER,
+                                                                                "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/feed/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFeedPolicyOutcome(result.GetResultWithOwnership()) : GetFeedPolicyOutcome(std::move(result.GetError()));
+}
+
 GetFixtureOutcome ElementalInferenceClient::GetFixture(const GetFixtureRequest& request) const {
   if (!request.FixtureIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetFixture", "Required field: FixtureId, is not set");
@@ -397,6 +437,24 @@ ListTagsForResourceOutcome ElementalInferenceClient::ListTagsForResource(const L
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
                             : ListTagsForResourceOutcome(std::move(result.GetError()));
+}
+
+PutFeedPolicyOutcome ElementalInferenceClient::PutFeedPolicy(const PutFeedPolicyRequest& request) const {
+  if (!request.IdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("PutFeedPolicy", "Required field: Id, is not set");
+    return PutFeedPolicyOutcome(Aws::Client::AWSError<ElementalInferenceErrors>(ElementalInferenceErrors::MISSING_PARAMETER,
+                                                                                "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/feed/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutFeedPolicyOutcome(result.GetResultWithOwnership()) : PutFeedPolicyOutcome(std::move(result.GetError()));
 }
 
 SearchFixturesOutcome ElementalInferenceClient::SearchFixtures(const SearchFixturesRequest& request) const {

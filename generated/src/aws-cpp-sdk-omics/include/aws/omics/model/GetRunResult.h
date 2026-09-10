@@ -754,6 +754,24 @@ class GetRunResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Inline policy json for scoping down permissions via a session policy on the
+   * IAM role.</p>
+   */
+  inline const Aws::String& GetSessionPolicy() const { return m_sessionPolicy; }
+  template <typename SessionPolicyT = Aws::String>
+  void SetSessionPolicy(SessionPolicyT&& value) {
+    m_sessionPolicyHasBeenSet = true;
+    m_sessionPolicy = std::forward<SessionPolicyT>(value);
+  }
+  template <typename SessionPolicyT = Aws::String>
+  GetRunResult& WithSessionPolicy(SessionPolicyT&& value) {
+    SetSessionPolicy(std::forward<SessionPolicyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -854,6 +872,8 @@ class GetRunResult {
 
   Aws::Utils::Document m_engineSettings;
 
+  Aws::String m_sessionPolicy;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
@@ -898,6 +918,7 @@ class GetRunResult {
   bool m_configurationHasBeenSet = false;
   bool m_vpcConfigHasBeenSet = false;
   bool m_engineSettingsHasBeenSet = false;
+  bool m_sessionPolicyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

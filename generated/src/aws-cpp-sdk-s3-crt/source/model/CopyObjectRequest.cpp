@@ -270,6 +270,22 @@ Aws::Http::HeaderValueCollection CopyObjectRequest::GetRequestSpecificHeaders() 
                     ObjectLockLegalHoldStatusMapper::GetNameForObjectLockLegalHoldStatus(m_objectLockLegalHoldStatus));
   }
 
+  if (m_objectLockEventHoldHasBeenSet && m_objectLockEventHold != ObjectLockEventHold::NOT_SET) {
+    headers.emplace("x-amz-object-lock-event-hold", ObjectLockEventHoldMapper::GetNameForObjectLockEventHold(m_objectLockEventHold));
+  }
+
+  if (m_objectLockEventHoldDurationDaysHasBeenSet) {
+    ss << m_objectLockEventHoldDurationDays;
+    headers.emplace("x-amz-object-lock-event-hold-duration-days", ss.str());
+    ss.str("");
+  }
+
+  if (m_objectLockEventHoldDurationYearsHasBeenSet) {
+    ss << m_objectLockEventHoldDurationYears;
+    headers.emplace("x-amz-object-lock-event-hold-duration-years", ss.str());
+    ss.str("");
+  }
+
   if (m_expectedBucketOwnerHasBeenSet) {
     ss << m_expectedBucketOwner;
     headers.emplace("x-amz-expected-bucket-owner", ss.str());

@@ -27,6 +27,10 @@ Aws::String PutFunctionRequest::SerializePayload() const {
     payload.WithObject("HttpRequestConfiguration", m_httpRequestConfiguration.Jsonize());
   }
 
+  if (m_awsServiceRequestConfigurationHasBeenSet) {
+    payload.WithObject("AwsServiceRequestConfiguration", m_awsServiceRequestConfiguration.Jsonize());
+  }
+
   if (m_customOutputConfigurationHasBeenSet) {
     payload.WithObject("CustomOutputConfiguration", m_customOutputConfiguration.Jsonize());
   }

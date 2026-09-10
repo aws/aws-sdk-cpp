@@ -234,6 +234,31 @@ explicitly specified so that the rectangle can be
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * Specifies the number of pixels of black border that will be inserted around the
+   * edge
+of the encoded picture. Must be an even integer from 0 (no border, the
+   * default) up
+to 100. The width and height of the VideoDescription must each be
+   * greater than twice
+this value. Cannot be used together with {@link
+   * outputPositionRectangle} -- both
+govern the position of the encoded content
+   * within the output frame.
+   */
+  inline int GetBorder() const { return m_border; }
+  inline bool BorderHasBeenSet() const { return m_borderHasBeenSet; }
+  inline void SetBorder(int value) {
+    m_borderHasBeenSet = true;
+    m_border = value;
+  }
+  inline VideoDescription& WithBorder(int value) {
+    SetBorder(value);
+    return *this;
+  }
+  ///@}
  private:
   VideoCodecSettings m_codecSettings;
 
@@ -252,6 +277,8 @@ explicitly specified so that the rectangle can be
   VideoPositionRectangle m_cropRectangle;
 
   VideoPositionRectangle m_outputPositionRectangle;
+
+  int m_border{0};
   bool m_codecSettingsHasBeenSet = false;
   bool m_heightHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -261,6 +288,7 @@ explicitly specified so that the rectangle can be
   bool m_widthHasBeenSet = false;
   bool m_cropRectangleHasBeenSet = false;
   bool m_outputPositionRectangleHasBeenSet = false;
+  bool m_borderHasBeenSet = false;
 };
 
 }  // namespace Model

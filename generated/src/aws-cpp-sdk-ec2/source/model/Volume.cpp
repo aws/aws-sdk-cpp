@@ -94,6 +94,16 @@ Volume& Volume::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(volumeInitializationRateNode.GetText()).c_str()).c_str());
       m_volumeInitializationRateHasBeenSet = true;
     }
+    XmlNode volumeArnNode = resultNode.FirstChild("volumeArn");
+    if (!volumeArnNode.IsNull()) {
+      m_volumeArn = Aws::Utils::Xml::DecodeEscapedXmlText(volumeArnNode.GetText());
+      m_volumeArnHasBeenSet = true;
+    }
+    XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
+    if (!ownerIdNode.IsNull()) {
+      m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
+      m_ownerIdHasBeenSet = true;
+    }
     XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
     if (!volumeIdNode.IsNull()) {
       m_volumeId = Aws::Utils::Xml::DecodeEscapedXmlText(volumeIdNode.GetText());
@@ -211,6 +221,14 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
     oStream << location << index << locationValue << ".VolumeInitializationRate=" << m_volumeInitializationRate << "&";
   }
 
+  if (m_volumeArnHasBeenSet) {
+    oStream << location << index << locationValue << ".VolumeArn=" << StringUtils::URLEncode(m_volumeArn.c_str()) << "&";
+  }
+
+  if (m_ownerIdHasBeenSet) {
+    oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
+  }
+
   if (m_volumeIdHasBeenSet) {
     oStream << location << index << locationValue << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
   }
@@ -302,6 +320,12 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location) const {
   }
   if (m_volumeInitializationRateHasBeenSet) {
     oStream << location << ".VolumeInitializationRate=" << m_volumeInitializationRate << "&";
+  }
+  if (m_volumeArnHasBeenSet) {
+    oStream << location << ".VolumeArn=" << StringUtils::URLEncode(m_volumeArn.c_str()) << "&";
+  }
+  if (m_ownerIdHasBeenSet) {
+    oStream << location << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
   }
   if (m_volumeIdHasBeenSet) {
     oStream << location << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";

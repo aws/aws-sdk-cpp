@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/s3-crt/S3Crt_EXPORTS.h>
+#include <aws/s3-crt/model/EventHoldDuration.h>
 #include <aws/s3-crt/model/ObjectLockRetentionMode.h>
 
 #include <utility>
@@ -88,15 +89,38 @@ class DefaultRetention {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The default event hold duration to be applied to new objects placed in the
+   * specified bucket. When configured, new objects will automatically have an event
+   * hold enabled with this duration.</p>
+   */
+  inline const EventHoldDuration& GetDefaultEventHold() const { return m_defaultEventHold; }
+  inline bool DefaultEventHoldHasBeenSet() const { return m_defaultEventHoldHasBeenSet; }
+  template <typename DefaultEventHoldT = EventHoldDuration>
+  void SetDefaultEventHold(DefaultEventHoldT&& value) {
+    m_defaultEventHoldHasBeenSet = true;
+    m_defaultEventHold = std::forward<DefaultEventHoldT>(value);
+  }
+  template <typename DefaultEventHoldT = EventHoldDuration>
+  DefaultRetention& WithDefaultEventHold(DefaultEventHoldT&& value) {
+    SetDefaultEventHold(std::forward<DefaultEventHoldT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ObjectLockRetentionMode m_mode{ObjectLockRetentionMode::NOT_SET};
 
   int m_days{0};
 
   int m_years{0};
+
+  EventHoldDuration m_defaultEventHold;
   bool m_modeHasBeenSet = false;
   bool m_daysHasBeenSet = false;
   bool m_yearsHasBeenSet = false;
+  bool m_defaultEventHoldHasBeenSet = false;
 };
 
 }  // namespace Model

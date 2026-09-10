@@ -26,6 +26,10 @@ SnowflakeConnectorProfileCredentials& SnowflakeConnectorProfileCredentials::oper
     m_password = jsonValue.GetString("password");
     m_passwordHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("privateKey")) {
+    m_privateKey = jsonValue.GetString("privateKey");
+    m_privateKeyHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue SnowflakeConnectorProfileCredentials::Jsonize() const {
 
   if (m_passwordHasBeenSet) {
     payload.WithString("password", m_password);
+  }
+
+  if (m_privateKeyHasBeenSet) {
+    payload.WithString("privateKey", m_privateKey);
   }
 
   return payload;

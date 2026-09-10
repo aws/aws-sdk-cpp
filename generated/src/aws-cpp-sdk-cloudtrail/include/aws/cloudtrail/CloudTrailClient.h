@@ -129,13 +129,18 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Cancels a query if the query is not in a terminated state, such as
-   * <code>CANCELLED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or
-   * <code>FINISHED</code>. You must specify an ARN value for
-   * <code>EventDataStore</code>. The ID of the query that you want to cancel is also
-   * required. When you run <code>CancelQuery</code>, the query status might show as
-   * <code>CANCELLED</code> even if the operation is not yet finished.</p><p><h3>See
-   * Also:</h3>   <a
+   *  <p>CloudTrail Lake will no longer be open to new customers starting
+   * May 31, 2026. If you would like to use CloudTrail Lake, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+   * Lake availability change</a>.</p>  <p>Cancels a query if the query
+   * is not in a terminated state, such as <code>CANCELLED</code>,
+   * <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>FINISHED</code>. You must
+   * specify an ARN value for <code>EventDataStore</code>. The ID of the query that
+   * you want to cancel is also required. When you run <code>CancelQuery</code>, the
+   * query status might show as <code>CANCELLED</code> even if the operation is not
+   * yet finished.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CancelQuery">AWS
    * API Reference</a></p>
    */
@@ -160,10 +165,15 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates a channel for CloudTrail to ingest events from a partner or external
-   * source. After you create a channel, a CloudTrail Lake event data store can log
-   * events from the partner or source that you specify.</p><p><h3>See Also:</h3>
-   * <a
+   *  <p>CloudTrail Lake will no longer be open to new customers starting
+   * May 31, 2026. If you would like to use CloudTrail Lake, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+   * Lake availability change</a>.</p>  <p>Creates a channel for
+   * CloudTrail to ingest events from a partner or external source. After you create
+   * a channel, a CloudTrail Lake event data store can log events from the partner or
+   * source that you specify.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateChannel">AWS
    * API Reference</a></p>
    */
@@ -188,20 +198,25 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> Creates a custom dashboard or the Highlights dashboard. </p> <ul> <li> <p>
-   * <b>Custom dashboards</b> - Custom dashboards allow you to query events in any
-   * event data store type. You can add up to 10 widgets to a custom dashboard. You
-   * can manually refresh a custom dashboard, or you can set a refresh schedule.</p>
-   * </li> <li> <p> <b>Highlights dashboard</b> - You can create the Highlights
-   * dashboard to see a summary of key user activities and API usage across all your
-   * event data stores. CloudTrail Lake manages the Highlights dashboard and
-   * refreshes the dashboard every 6 hours. To create the Highlights dashboard, you
-   * must set and enable a refresh schedule.</p> </li> </ul> <p> CloudTrail runs
-   * queries to populate the dashboard's widgets during a manual or scheduled
-   * refresh. CloudTrail must be granted permissions to run the
-   * <code>StartQuery</code> operation on your behalf. To provide permissions, run
-   * the <code>PutResourcePolicy</code> operation to attach a resource-based policy
-   * to each event data store. For more information, see <a
+   *  <p>CloudTrail Lake will no longer be open to new customers starting
+   * May 31, 2026. If you would like to use CloudTrail Lake, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+   * Lake availability change</a>.</p>  <p> Creates a custom dashboard or
+   * the Highlights dashboard. </p> <ul> <li> <p> <b>Custom dashboards</b> - Custom
+   * dashboards allow you to query events in any event data store type. You can add
+   * up to 10 widgets to a custom dashboard. You can manually refresh a custom
+   * dashboard, or you can set a refresh schedule.</p> </li> <li> <p> <b>Highlights
+   * dashboard</b> - You can create the Highlights dashboard to see a summary of key
+   * user activities and API usage across all your event data stores. CloudTrail Lake
+   * manages the Highlights dashboard and refreshes the dashboard every 6 hours. To
+   * create the Highlights dashboard, you must set and enable a refresh schedule.</p>
+   * </li> </ul> <p> CloudTrail runs queries to populate the dashboard's widgets
+   * during a manual or scheduled refresh. CloudTrail must be granted permissions to
+   * run the <code>StartQuery</code> operation on your behalf. To provide
+   * permissions, run the <code>PutResourcePolicy</code> operation to attach a
+   * resource-based policy to each event data store. For more information, see <a
    * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/security_iam_resource-based-policy-examples.html#security_iam_resource-based-policy-examples-eds-dashboard">Example:
    * Allow CloudTrail to run queries to populate a dashboard</a> in the <i>CloudTrail
    * User Guide</i>. </p> <p> To set a refresh schedule, CloudTrail must be granted
@@ -239,7 +254,13 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates a new event data store.</p><p><h3>See Also:</h3>   <a
+   *  <p>CloudTrail Lake will no longer be open to new customers starting
+   * May 31, 2026. If you would like to use CloudTrail Lake, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+   * Lake availability change</a>.</p>  <p>Creates a new event data
+   * store.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateEventDataStore">AWS
    * API Reference</a></p>
    */
@@ -291,7 +312,13 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Deletes a channel.</p><p><h3>See Also:</h3>   <a
+   *  <p>CloudTrail Lake will no longer be open to new customers starting
+   * May 31, 2026. If you would like to use CloudTrail Lake, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+   * Lake availability change</a>.</p>  <p>Deletes a
+   * channel.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteChannel">AWS
    * API Reference</a></p>
    */
@@ -316,8 +343,14 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> Deletes the specified dashboard. You cannot delete a dashboard that has
-   * termination protection enabled. </p><p><h3>See Also:</h3>   <a
+   *  <p>CloudTrail Lake will no longer be open to new customers starting
+   * May 31, 2026. If you would like to use CloudTrail Lake, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+   * Lake availability change</a>.</p>  <p> Deletes the specified
+   * dashboard. You cannot delete a dashboard that has termination protection
+   * enabled. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteDashboard">AWS
    * API Reference</a></p>
    */
@@ -342,9 +375,14 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Disables the event data store specified by <code>EventDataStore</code>, which
-   * accepts an event data store ARN. After you run
-   * <code>DeleteEventDataStore</code>, the event data store enters a
+   *  <p>CloudTrail Lake will no longer be open to new customers starting
+   * May 31, 2026. If you would like to use CloudTrail Lake, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+   * Lake availability change</a>.</p>  <p>Disables the event data store
+   * specified by <code>EventDataStore</code>, which accepts an event data store ARN.
+   * After you run <code>DeleteEventDataStore</code>, the event data store enters a
    * <code>PENDING_DELETION</code> state, and is automatically deleted after a wait
    * period of seven days. <code>TerminationProtectionEnabled</code> must be set to
    * <code>False</code> on the event data store and the <code>FederationStatus</code>
@@ -478,15 +516,20 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Returns metadata about a query, including query run time in milliseconds,
-   * number of events scanned and matched, and query status. If the query results
-   * were delivered to an S3 bucket, the response also provides the S3 URI and the
-   * delivery status.</p> <p>You must specify either <code>QueryId</code> or
-   * <code>QueryAlias</code>. Specifying the <code>QueryAlias</code> parameter
-   * returns information about the last query run for the alias. You can provide
-   * <code>RefreshId</code> along with <code>QueryAlias</code> to view the query
-   * results of a dashboard query for the specified
-   * <code>RefreshId</code>.</p><p><h3>See Also:</h3>   <a
+   *  <p>CloudTrail Lake will no longer be open to new customers starting
+   * May 31, 2026. If you would like to use CloudTrail Lake, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+   * Lake availability change</a>.</p>  <p>Returns metadata about a
+   * query, including query run time in milliseconds, number of events scanned and
+   * matched, and query status. If the query results were delivered to an S3 bucket,
+   * the response also provides the S3 URI and the delivery status.</p> <p>You must
+   * specify either <code>QueryId</code> or <code>QueryAlias</code>. Specifying the
+   * <code>QueryAlias</code> parameter returns information about the last query run
+   * for the alias. You can provide <code>RefreshId</code> along with
+   * <code>QueryAlias</code> to view the query results of a dashboard query for the
+   * specified <code>RefreshId</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DescribeQuery">AWS
    * API Reference</a></p>
    */
@@ -539,12 +582,18 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> Disables Lake query federation on the specified event data store. When you
-   * disable federation, CloudTrail disables the integration with Glue, Lake
-   * Formation, and Amazon Athena. After disabling Lake query federation, you can no
-   * longer query your event data in Amazon Athena.</p> <p>No CloudTrail Lake data is
-   * deleted when you disable federation and you can continue to run queries in
-   * CloudTrail Lake.</p><p><h3>See Also:</h3>   <a
+   *  <p>CloudTrail Lake will no longer be open to new customers starting
+   * May 31, 2026. If you would like to use CloudTrail Lake, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+   * Lake availability change</a>.</p>  <p> Disables Lake query
+   * federation on the specified event data store. When you disable federation,
+   * CloudTrail disables the integration with Glue, Lake Formation, and Amazon
+   * Athena. After disabling Lake query federation, you can no longer query your
+   * event data in Amazon Athena.</p> <p>No CloudTrail Lake data is deleted when you
+   * disable federation and you can continue to run queries in CloudTrail
+   * Lake.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DisableFederation">AWS
    * API Reference</a></p>
    */
@@ -570,9 +619,14 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> Enables Lake query federation on the specified event data store. Federating
-   * an event data store lets you view the metadata associated with the event data
-   * store in the Glue <a
+   *  <p>CloudTrail Lake will no longer be open to new customers starting
+   * May 31, 2026. If you would like to use CloudTrail Lake, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+   * Lake availability change</a>.</p>  <p> Enables Lake query federation
+   * on the specified event data store. Federating an event data store lets you view
+   * the metadata associated with the event data store in the Glue <a
    * href="https://docs.aws.amazon.com/glue/latest/dg/components-overview.html#data-catalog-intro">Data
    * Catalog</a> and run SQL queries against your event data using Amazon Athena. The
    * table metadata stored in the Glue Data Catalog lets the Athena query engine know
@@ -613,13 +667,19 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> Generates a query from a natural language prompt. This operation uses
-   * generative artificial intelligence (generative AI) to produce a ready-to-use SQL
-   * query from the prompt. </p> <p>The prompt can be a question or a statement about
-   * the event data in your event data store. For example, you can enter prompts like
-   * "What are my top errors in the past month?" and “Give me a list of users that
-   * used SNS.”</p> <p>The prompt must be in English. For information about
-   * limitations, permissions, and supported Regions, see <a
+   *  <p>CloudTrail Lake will no longer be open to new customers starting
+   * May 31, 2026. If you would like to use CloudTrail Lake, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+   * Lake availability change</a>.</p>  <p> Generates a query from a
+   * natural language prompt. This operation uses generative artificial intelligence
+   * (generative AI) to produce a ready-to-use SQL query from the prompt. </p> <p>The
+   * prompt can be a question or a statement about the event data in your event data
+   * store. For example, you can enter prompts like "What are my top errors in the
+   * past month?" and “Give me a list of users that used SNS.”</p> <p>The prompt must
+   * be in English. For information about limitations, permissions, and supported
+   * Regions, see <a
    * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/lake-query-generator.html">Create
    * CloudTrail Lake queries from natural language prompts</a> in the <i>CloudTrail
    * </i> user guide.</p>  <p>Do not include any personally identifying,
@@ -650,7 +710,13 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> Returns information about a specific channel. </p><p><h3>See Also:</h3>   <a
+   *  <p>CloudTrail Lake will no longer be open to new customers starting
+   * May 31, 2026. If you would like to use CloudTrail Lake, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+   * Lake availability change</a>.</p>  <p> Returns information about a
+   * specific channel. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetChannel">AWS
    * API Reference</a></p>
    */
@@ -675,7 +741,13 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> Returns the specified dashboard. </p><p><h3>See Also:</h3>   <a
+   *  <p>CloudTrail Lake will no longer be open to new customers starting
+   * May 31, 2026. If you would like to use CloudTrail Lake, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+   * Lake availability change</a>.</p>  <p> Returns the specified
+   * dashboard. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetDashboard">AWS
    * API Reference</a></p>
    */
@@ -730,8 +802,14 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Returns information about an event data store specified as either an ARN or
-   * the ID portion of the ARN.</p><p><h3>See Also:</h3>   <a
+   *  <p>CloudTrail Lake will no longer be open to new customers starting
+   * May 31, 2026. If you would like to use CloudTrail Lake, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+   * Lake availability change</a>.</p>  <p>Returns information about an
+   * event data store specified as either an ARN or the ID portion of the
+   * ARN.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventDataStore">AWS
    * API Reference</a></p>
    */
@@ -799,7 +877,13 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> Returns information about a specific import. </p><p><h3>See Also:</h3>   <a
+   *  <p>CloudTrail Lake will no longer be open to new customers starting
+   * May 31, 2026. If you would like to use CloudTrail Lake, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+   * Lake availability change</a>.</p>  <p> Returns information about a
+   * specific import. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetImport">AWS
    * API Reference</a></p>
    */
@@ -863,9 +947,14 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Gets event data results of a query. You must specify the <code>QueryID</code>
-   * value returned by the <code>StartQuery</code> operation.</p><p><h3>See
-   * Also:</h3>   <a
+   *  <p>CloudTrail Lake will no longer be open to new customers starting
+   * May 31, 2026. If you would like to use CloudTrail Lake, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+   * Lake availability change</a>.</p>  <p>Gets event data results of a
+   * query. You must specify the <code>QueryID</code> value returned by the
+   * <code>StartQuery</code> operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetQueryResults">AWS
    * API Reference</a></p>
    */
@@ -973,8 +1062,13 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> Lists the channels in the current account, and their source names.
-   * </p><p><h3>See Also:</h3>   <a
+   *  <p>CloudTrail Lake will no longer be open to new customers starting
+   * May 31, 2026. If you would like to use CloudTrail Lake, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+   * Lake availability change</a>.</p>  <p> Lists the channels in the
+   * current account, and their source names. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListChannels">AWS
    * API Reference</a></p>
    */
@@ -1000,8 +1094,13 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> Returns information about all dashboards in the account, in the current
-   * Region. </p><p><h3>See Also:</h3>   <a
+   *  <p>CloudTrail Lake will no longer be open to new customers starting
+   * May 31, 2026. If you would like to use CloudTrail Lake, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+   * Lake availability change</a>.</p>  <p> Returns information about all
+   * dashboards in the account, in the current Region. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListDashboards">AWS
    * API Reference</a></p>
    */
@@ -1027,8 +1126,14 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Returns information about all event data stores in the account, in the
-   * current Region.</p><p><h3>See Also:</h3>   <a
+   *  <p>CloudTrail Lake will no longer be open to new customers starting
+   * May 31, 2026. If you would like to use CloudTrail Lake, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+   * Lake availability change</a>.</p>  <p>Returns information about all
+   * event data stores in the account, in the current Region.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListEventDataStores">AWS
    * API Reference</a></p>
    */
@@ -1055,8 +1160,13 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> Returns a list of failures for the specified import. </p><p><h3>See
-   * Also:</h3>   <a
+   *  <p>CloudTrail Lake will no longer be open to new customers starting
+   * May 31, 2026. If you would like to use CloudTrail Lake, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+   * Lake availability change</a>.</p>  <p> Returns a list of failures
+   * for the specified import. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListImportFailures">AWS
    * API Reference</a></p>
    */
@@ -1082,9 +1192,14 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> Returns information on all imports, or a select set of imports by
-   * <code>ImportStatus</code> or <code>Destination</code>. </p><p><h3>See Also:</h3>
-   * <a
+   *  <p>CloudTrail Lake will no longer be open to new customers starting
+   * May 31, 2026. If you would like to use CloudTrail Lake, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+   * Lake availability change</a>.</p>  <p> Returns information on all
+   * imports, or a select set of imports by <code>ImportStatus</code> or
+   * <code>Destination</code>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListImports">AWS
    * API Reference</a></p>
    */
@@ -1118,8 +1233,12 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
    * results returned is 50, with a maximum of 50 possible. The response includes a
    * token that you can use to get the next page of results.</p> <p>The rate of
    * ListInsightsData requests is limited to two per second, per account, per Region.
-   * If this limit is exceeded, a throttling error occurs.</p><p><h3>See Also:</h3>
-   * <a
+   * If this limit is exceeded, a throttling error occurs.</p>  <p>For data
+   * event Insights on organization trails, only the management account and delegated
+   * administrator accounts can call <code>ListInsightsData</code>. For these
+   * callers, the API returns Insights events only for the caller's own account.
+   * Member accounts cannot call this API on organization trails.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListInsightsData">AWS
    * API Reference</a></p>
    */
@@ -1168,7 +1287,11 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
    * <code>ListInsightsMetricData</code> API operation is linked to the
    * <code>cloudtrail:LookupEvents</code> action only. To use this operation, you
    * must have permissions to perform the <code>cloudtrail:LookupEvents</code>
-   * action.</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * action.</p> </li> </ul>  <p>For data event Insights on organization
+   * trails, only the management account and delegated administrator accounts can
+   * call <code>ListInsightsMetricData</code>. For these callers, the API returns
+   * Insights metrics only for the caller's own account. Member accounts cannot call
+   * this API on organization trails.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListInsightsMetricData">AWS
    * API Reference</a></p>
    */
@@ -1227,14 +1350,19 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Returns a list of queries and query statuses for the past seven days. You
-   * must specify an ARN value for <code>EventDataStore</code>. Optionally, to
-   * shorten the list of results, you can specify a time range, formatted as
-   * timestamps, by adding <code>StartTime</code> and <code>EndTime</code>
-   * parameters, and a <code>QueryStatus</code> value. Valid values for
-   * <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>,
-   * <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or
-   * <code>CANCELLED</code>.</p><p><h3>See Also:</h3>   <a
+   *  <p>CloudTrail Lake will no longer be open to new customers starting
+   * May 31, 2026. If you would like to use CloudTrail Lake, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+   * Lake availability change</a>.</p>  <p>Returns a list of queries and
+   * query statuses for the past seven days. You must specify an ARN value for
+   * <code>EventDataStore</code>. Optionally, to shorten the list of results, you can
+   * specify a time range, formatted as timestamps, by adding <code>StartTime</code>
+   * and <code>EndTime</code> parameters, and a <code>QueryStatus</code> value. Valid
+   * values for <code>QueryStatus</code> include <code>QUEUED</code>,
+   * <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>,
+   * <code>TIMED_OUT</code>, or <code>CANCELLED</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListQueries">AWS
    * API Reference</a></p>
    */
@@ -1608,11 +1736,17 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Restores a deleted event data store specified by <code>EventDataStore</code>,
-   * which accepts an event data store ARN. You can only restore a deleted event data
-   * store within the seven-day wait period after deletion. Restoring an event data
-   * store can take several minutes, depending on the size of the event data
-   * store.</p><p><h3>See Also:</h3>   <a
+   *  <p>CloudTrail Lake will no longer be open to new customers starting
+   * May 31, 2026. If you would like to use CloudTrail Lake, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+   * Lake availability change</a>.</p>  <p>Restores a deleted event data
+   * store specified by <code>EventDataStore</code>, which accepts an event data
+   * store ARN. You can only restore a deleted event data store within the seven-day
+   * wait period after deletion. Restoring an event data store can take several
+   * minutes, depending on the size of the event data store.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RestoreEventDataStore">AWS
    * API Reference</a></p>
    */
@@ -1638,9 +1772,15 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> Searches sample queries and returns a list of sample queries that are sorted
-   * by relevance. To search for sample queries, provide a natural language
-   * <code>SearchPhrase</code> in English. </p><p><h3>See Also:</h3>   <a
+   *  <p>CloudTrail Lake will no longer be open to new customers starting
+   * May 31, 2026. If you would like to use CloudTrail Lake, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+   * Lake availability change</a>.</p>  <p> Searches sample queries and
+   * returns a list of sample queries that are sorted by relevance. To search for
+   * sample queries, provide a natural language <code>SearchPhrase</code> in English.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/SearchSampleQueries">AWS
    * API Reference</a></p>
    */
@@ -1666,12 +1806,17 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> Starts a refresh of the specified dashboard. </p> <p> Each time a dashboard
-   * is refreshed, CloudTrail runs queries to populate the dashboard's widgets.
-   * CloudTrail must be granted permissions to run the <code>StartQuery</code>
-   * operation on your behalf. To provide permissions, run the
-   * <code>PutResourcePolicy</code> operation to attach a resource-based policy to
-   * each event data store. For more information, see <a
+   *  <p>CloudTrail Lake will no longer be open to new customers starting
+   * May 31, 2026. If you would like to use CloudTrail Lake, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+   * Lake availability change</a>.</p>  <p> Starts a refresh of the
+   * specified dashboard. </p> <p> Each time a dashboard is refreshed, CloudTrail
+   * runs queries to populate the dashboard's widgets. CloudTrail must be granted
+   * permissions to run the <code>StartQuery</code> operation on your behalf. To
+   * provide permissions, run the <code>PutResourcePolicy</code> operation to attach
+   * a resource-based policy to each event data store. For more information, see <a
    * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/security_iam_resource-based-policy-examples.html#security_iam_resource-based-policy-examples-eds-dashboard">Example:
    * Allow CloudTrail to run queries to populate a dashboard</a> in the <i>CloudTrail
    * User Guide</i>. </p><p><h3>See Also:</h3>   <a
@@ -1700,12 +1845,17 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Starts the ingestion of live events on an event data store specified as
-   * either an ARN or the ID portion of the ARN. To start ingestion, the event data
-   * store <code>Status</code> must be <code>STOPPED_INGESTION</code> and the
-   * <code>eventCategory</code> must be <code>Management</code>, <code>Data</code>,
-   * <code>NetworkActivity</code>, or <code>ConfigurationItem</code>.</p><p><h3>See
-   * Also:</h3>   <a
+   *  <p>CloudTrail Lake will no longer be open to new customers starting
+   * May 31, 2026. If you would like to use CloudTrail Lake, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+   * Lake availability change</a>.</p>  <p>Starts the ingestion of live
+   * events on an event data store specified as either an ARN or the ID portion of
+   * the ARN. To start ingestion, the event data store <code>Status</code> must be
+   * <code>STOPPED_INGESTION</code> and the <code>eventCategory</code> must be
+   * <code>Management</code>, <code>Data</code>, <code>NetworkActivity</code>, or
+   * <code>ConfigurationItem</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartEventDataStoreIngestion">AWS
    * API Reference</a></p>
    */
@@ -1734,14 +1884,19 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> Starts an import of logged trail events from a source S3 bucket to a
-   * destination event data store. By default, CloudTrail only imports events
-   * contained in the S3 bucket's <code>CloudTrail</code> prefix and the prefixes
-   * inside the <code>CloudTrail</code> prefix, and does not check prefixes for other
-   * Amazon Web Services services. If you want to import CloudTrail events contained
-   * in another prefix, you must include the prefix in the
-   * <code>S3LocationUri</code>. For more considerations about importing trail
-   * events, see <a
+   *  <p>CloudTrail Lake will no longer be open to new customers starting
+   * May 31, 2026. If you would like to use CloudTrail Lake, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+   * Lake availability change</a>.</p>  <p> Starts an import of logged
+   * trail events from a source S3 bucket to a destination event data store. By
+   * default, CloudTrail only imports events contained in the S3 bucket's
+   * <code>CloudTrail</code> prefix and the prefixes inside the
+   * <code>CloudTrail</code> prefix, and does not check prefixes for other Amazon Web
+   * Services services. If you want to import CloudTrail events contained in another
+   * prefix, you must include the prefix in the <code>S3LocationUri</code>. For more
+   * considerations about importing trail events, see <a
    * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-copy-trail-to-lake.html#cloudtrail-trail-copy-considerations">Considerations
    * for copying trail events</a> in the <i>CloudTrail User Guide</i>. </p> <p> When
    * you start a new import, the <code>Destinations</code> and
@@ -1809,10 +1964,16 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Starts a CloudTrail Lake query. Use the <code>QueryStatement</code> parameter
-   * to provide your SQL query, enclosed in single quotation marks. Use the optional
-   * <code>DeliveryS3Uri</code> parameter to deliver the query results to an S3
-   * bucket.</p> <p> <code>StartQuery</code> requires you specify either the
+   *  <p>CloudTrail Lake will no longer be open to new customers starting
+   * May 31, 2026. If you would like to use CloudTrail Lake, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+   * Lake availability change</a>.</p>  <p>Starts a CloudTrail Lake
+   * query. Use the <code>QueryStatement</code> parameter to provide your SQL query,
+   * enclosed in single quotation marks. Use the optional <code>DeliveryS3Uri</code>
+   * parameter to deliver the query results to an S3 bucket.</p> <p>
+   * <code>StartQuery</code> requires you specify either the
    * <code>QueryStatement</code> parameter, or a <code>QueryAlias</code> and any
    * <code>QueryParameters</code>. In the current release, the
    * <code>QueryAlias</code> and <code>QueryParameters</code> parameters are used
@@ -1843,12 +2004,17 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Stops the ingestion of live events on an event data store specified as either
-   * an ARN or the ID portion of the ARN. To stop ingestion, the event data store
-   * <code>Status</code> must be <code>ENABLED</code> and the
-   * <code>eventCategory</code> must be <code>Management</code>, <code>Data</code>,
-   * <code>NetworkActivity</code>, or <code>ConfigurationItem</code>.</p><p><h3>See
-   * Also:</h3>   <a
+   *  <p>CloudTrail Lake will no longer be open to new customers starting
+   * May 31, 2026. If you would like to use CloudTrail Lake, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+   * Lake availability change</a>.</p>  <p>Stops the ingestion of live
+   * events on an event data store specified as either an ARN or the ID portion of
+   * the ARN. To stop ingestion, the event data store <code>Status</code> must be
+   * <code>ENABLED</code> and the <code>eventCategory</code> must be
+   * <code>Management</code>, <code>Data</code>, <code>NetworkActivity</code>, or
+   * <code>ConfigurationItem</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopEventDataStoreIngestion">AWS
    * API Reference</a></p>
    */
@@ -1877,7 +2043,13 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> Stops a specified import. </p><p><h3>See Also:</h3>   <a
+   *  <p>CloudTrail Lake will no longer be open to new customers starting
+   * May 31, 2026. If you would like to use CloudTrail Lake, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+   * Lake availability change</a>.</p>  <p> Stops a specified import.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopImport">AWS
    * API Reference</a></p>
    */
@@ -1934,8 +2106,13 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates a channel specified by a required channel ARN or UUID.</p><p><h3>See
-   * Also:</h3>   <a
+   *  <p>CloudTrail Lake will no longer be open to new customers starting
+   * May 31, 2026. If you would like to use CloudTrail Lake, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+   * Lake availability change</a>.</p>  <p>Updates a channel specified by
+   * a required channel ARN or UUID.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateChannel">AWS
    * API Reference</a></p>
    */
@@ -1960,11 +2137,17 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> Updates the specified dashboard. </p> <p> To set a refresh schedule,
-   * CloudTrail must be granted permissions to run the
-   * <code>StartDashboardRefresh</code> operation to refresh the dashboard on your
-   * behalf. To provide permissions, run the <code>PutResourcePolicy</code> operation
-   * to attach a resource-based policy to the dashboard. For more information, see <a
+   *  <p>CloudTrail Lake will no longer be open to new customers starting
+   * May 31, 2026. If you would like to use CloudTrail Lake, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+   * Lake availability change</a>.</p>  <p> Updates the specified
+   * dashboard. </p> <p> To set a refresh schedule, CloudTrail must be granted
+   * permissions to run the <code>StartDashboardRefresh</code> operation to refresh
+   * the dashboard on your behalf. To provide permissions, run the
+   * <code>PutResourcePolicy</code> operation to attach a resource-based policy to
+   * the dashboard. For more information, see <a
    * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/security_iam_resource-based-policy-examples.html#security_iam_resource-based-policy-examples-dashboards">
    * Resource-based policy example for a dashboard</a> in the <i>CloudTrail User
    * Guide</i>. </p> <p> CloudTrail runs queries to populate the dashboard's widgets
@@ -1999,17 +2182,23 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates an event data store. The required <code>EventDataStore</code> value
-   * is an ARN or the ID portion of the ARN. Other parameters are optional, but at
-   * least one optional parameter must be specified, or CloudTrail throws an error.
-   * <code>RetentionPeriod</code> is in days, and valid values are integers between 7
-   * and 3653 if the <code>BillingMode</code> is set to
-   * <code>EXTENDABLE_RETENTION_PRICING</code>, or between 7 and 2557 if
-   * <code>BillingMode</code> is set to <code>FIXED_RETENTION_PRICING</code>. By
-   * default, <code>TerminationProtection</code> is enabled.</p> <p>For event data
-   * stores for CloudTrail events, <code>AdvancedEventSelectors</code> includes or
-   * excludes management, data, or network activity events in your event data store.
-   * For more information about <code>AdvancedEventSelectors</code>, see <a
+   *  <p>CloudTrail Lake will no longer be open to new customers starting
+   * May 31, 2026. If you would like to use CloudTrail Lake, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+   * Lake availability change</a>.</p>  <p>Updates an event data store.
+   * The required <code>EventDataStore</code> value is an ARN or the ID portion of
+   * the ARN. Other parameters are optional, but at least one optional parameter must
+   * be specified, or CloudTrail throws an error. <code>RetentionPeriod</code> is in
+   * days, and valid values are integers between 7 and 3653 if the
+   * <code>BillingMode</code> is set to <code>EXTENDABLE_RETENTION_PRICING</code>, or
+   * between 7 and 2557 if <code>BillingMode</code> is set to
+   * <code>FIXED_RETENTION_PRICING</code>. By default,
+   * <code>TerminationProtection</code> is enabled.</p> <p>For event data stores for
+   * CloudTrail events, <code>AdvancedEventSelectors</code> includes or excludes
+   * management, data, or network activity events in your event data store. For more
+   * information about <code>AdvancedEventSelectors</code>, see <a
    * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">AdvancedEventSelectors</a>.</p>
    * <p> For event data stores for CloudTrail Insights events, Config configuration
    * items, Audit Manager evidence, or non-Amazon Web Services events,

@@ -65,6 +65,10 @@ EvaluationFormContent& EvaluationFormContent::operator=(JsonView jsonValue) {
     m_reviewConfiguration = jsonValue.GetObject("ReviewConfiguration");
     m_reviewConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AIVersion")) {
+    m_aIVersion = jsonValue.GetString("AIVersion");
+    m_aIVersionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -117,6 +121,10 @@ JsonValue EvaluationFormContent::Jsonize() const {
 
   if (m_reviewConfigurationHasBeenSet) {
     payload.WithObject("ReviewConfiguration", m_reviewConfiguration.Jsonize());
+  }
+
+  if (m_aIVersionHasBeenSet) {
+    payload.WithString("AIVersion", m_aIVersion);
   }
 
   return payload;

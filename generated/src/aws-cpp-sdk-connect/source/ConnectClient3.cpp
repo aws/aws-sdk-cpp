@@ -6,6 +6,7 @@
 #include <aws/connect/ConnectClient.h>
 #include <aws/connect/ConnectEndpointProvider.h>
 #include <aws/connect/ConnectErrorMarshaller.h>
+#include <aws/connect/model/StartChatContactRequest.h>
 #include <aws/connect/model/StartContactConversationalAnalyticsJobRequest.h>
 #include <aws/connect/model/StartContactEvaluationRequest.h>
 #include <aws/connect/model/StartContactMediaProcessingRequest.h>
@@ -126,6 +127,17 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+StartChatContactOutcome ConnectClient::StartChatContact(const StartChatContactRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/contact/chat");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StartChatContactOutcome(result.GetResultWithOwnership())
+                            : StartChatContactOutcome(std::move(result.GetError()));
+}
 
 StartContactConversationalAnalyticsJobOutcome ConnectClient::StartContactConversationalAnalyticsJob(
     const StartContactConversationalAnalyticsJobRequest& request) const {

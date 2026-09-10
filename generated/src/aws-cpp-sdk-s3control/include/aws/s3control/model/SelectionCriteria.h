@@ -67,9 +67,8 @@ class SelectionCriteria {
 
   ///@{
   /**
-   * <p>The minimum number of storage bytes percentage whose metrics will be
-   * selected.</p>  <p>You must choose a value greater than or equal to
-   * <code>1.0</code>.</p>
+   * <p>The minimum percentage of total bucket storage that a prefix must hold for
+   * its metrics to be included.</p>
    */
   inline double GetMinStorageBytesPercentage() const { return m_minStorageBytesPercentage; }
   inline bool MinStorageBytesPercentageHasBeenSet() const { return m_minStorageBytesPercentageHasBeenSet; }

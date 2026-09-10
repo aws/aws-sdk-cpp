@@ -5,9 +5,11 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/HlsAutoSelect.h>
 #include <aws/medialive/model/HlsDefault.h>
+#include <aws/medialive/model/OutputUsage.h>
 
 #include <utility>
 
@@ -125,6 +127,37 @@ When you consider all the renditions, follow these guidelines. You
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * List of usage tags declaring how this MediaPackage V2 output is used. Currently
+   * these are all multiview-related (multiviewPrimaryView, multiviewSecondaryView,
+   * multiviewEqualSizeView) and enable multiview validations and augmentations to
+   * help ensure proper multiview configuration and compatibility with MediaPackage.
+   * Leave empty (the default) if this output has no multiview role. If any
+   * video-carrying MediaPackage V2 output in an output group specifies a multiview
+   * value, every video-carrying MediaPackage V2 output in the group must also
+   * specify a multiview value; place standalone video outputs in a separate output
+   * group.
+   */
+  inline const Aws::Vector<OutputUsage>& GetOutputUsage() const { return m_outputUsage; }
+  inline bool OutputUsageHasBeenSet() const { return m_outputUsageHasBeenSet; }
+  template <typename OutputUsageT = Aws::Vector<OutputUsage>>
+  void SetOutputUsage(OutputUsageT&& value) {
+    m_outputUsageHasBeenSet = true;
+    m_outputUsage = std::forward<OutputUsageT>(value);
+  }
+  template <typename OutputUsageT = Aws::Vector<OutputUsage>>
+  MediaPackageV2DestinationSettings& WithOutputUsage(OutputUsageT&& value) {
+    SetOutputUsage(std::forward<OutputUsageT>(value));
+    return *this;
+  }
+  inline MediaPackageV2DestinationSettings& AddOutputUsage(OutputUsage value) {
+    m_outputUsageHasBeenSet = true;
+    m_outputUsage.push_back(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_audioGroupId;
 
@@ -133,10 +166,13 @@ When you consider all the renditions, follow these guidelines. You
   HlsAutoSelect m_hlsAutoSelect{HlsAutoSelect::NOT_SET};
 
   HlsDefault m_hlsDefault{HlsDefault::NOT_SET};
+
+  Aws::Vector<OutputUsage> m_outputUsage;
   bool m_audioGroupIdHasBeenSet = false;
   bool m_audioRenditionSetsHasBeenSet = false;
   bool m_hlsAutoSelectHasBeenSet = false;
   bool m_hlsDefaultHasBeenSet = false;
+  bool m_outputUsageHasBeenSet = false;
 };
 
 }  // namespace Model

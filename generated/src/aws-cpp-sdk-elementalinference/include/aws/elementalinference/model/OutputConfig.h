@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/elementalinference/ElementalInference_EXPORTS.h>
 #include <aws/elementalinference/model/ClippingConfig.h>
+#include <aws/elementalinference/model/ContextualMetadataConfig.h>
 #include <aws/elementalinference/model/CroppingConfig.h>
 #include <aws/elementalinference/model/SubtitlingConfig.h>
 
@@ -87,15 +88,36 @@ class OutputConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The output config type that applies to the contextual metadata feature.</p>
+   */
+  inline const ContextualMetadataConfig& GetContextualMetadata() const { return m_contextualMetadata; }
+  inline bool ContextualMetadataHasBeenSet() const { return m_contextualMetadataHasBeenSet; }
+  template <typename ContextualMetadataT = ContextualMetadataConfig>
+  void SetContextualMetadata(ContextualMetadataT&& value) {
+    m_contextualMetadataHasBeenSet = true;
+    m_contextualMetadata = std::forward<ContextualMetadataT>(value);
+  }
+  template <typename ContextualMetadataT = ContextualMetadataConfig>
+  OutputConfig& WithContextualMetadata(ContextualMetadataT&& value) {
+    SetContextualMetadata(std::forward<ContextualMetadataT>(value));
+    return *this;
+  }
+  ///@}
  private:
   CroppingConfig m_cropping;
 
   ClippingConfig m_clipping;
 
   SubtitlingConfig m_subtitling;
+
+  ContextualMetadataConfig m_contextualMetadata;
   bool m_croppingHasBeenSet = false;
   bool m_clippingHasBeenSet = false;
   bool m_subtitlingHasBeenSet = false;
+  bool m_contextualMetadataHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -36,9 +36,9 @@ class S3JobManifestGenerator {
 
   ///@{
   /**
-   * <p>The Amazon Web Services account ID that owns the bucket the generated
-   * manifest is written to. If provided the generated manifest bucket's owner Amazon
-   * Web Services account ID must match this value, else the job fails.</p>
+   * <p>The Amazon Web Services account ID that owns the source bucket specified in
+   * <code>SourceBucket</code>. If provided, the manifest source bucket owner's
+   * Amazon Web Services account ID must match this value, else the job fails.</p>
    */
   inline const Aws::String& GetExpectedBucketOwner() const { return m_expectedBucketOwner; }
   inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }

@@ -91,6 +91,10 @@ EvaluationFormSearchSummary& EvaluationFormSearchSummary::operator=(JsonView jso
     }
     m_tagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AIVersion")) {
+    m_aIVersion = jsonValue.GetString("AIVersion");
+    m_aIVersionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -168,6 +172,10 @@ JsonValue EvaluationFormSearchSummary::Jsonize() const {
       tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
     }
     payload.WithObject("Tags", std::move(tagsJsonMap));
+  }
+
+  if (m_aIVersionHasBeenSet) {
+    payload.WithString("AIVersion", m_aIVersion);
   }
 
   return payload;

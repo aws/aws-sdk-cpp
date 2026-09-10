@@ -8,6 +8,7 @@
 #include <aws/mediapackagev2/Mediapackagev2Request.h>
 #include <aws/mediapackagev2/Mediapackagev2_EXPORTS.h>
 #include <aws/mediapackagev2/model/InputSwitchConfiguration.h>
+#include <aws/mediapackagev2/model/MultiviewConfiguration.h>
 #include <aws/mediapackagev2/model/OutputHeaderConfiguration.h>
 
 #include <utility>
@@ -150,6 +151,28 @@ class UpdateChannelRequest : public Mediapackagev2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The multiview configuration for the channel. This setting is required when
+   * the channel's <code>InputType</code> is <code>MULTIVIEW</code>, and can't be set
+   * for any other input type. Because <code>InputType</code> is immutable, you can
+   * change a multiview channel's sources and layouts. You can't add or remove the
+   * multiview configuration itself.</p>
+   */
+  inline const MultiviewConfiguration& GetMultiviewConfiguration() const { return m_multiviewConfiguration; }
+  inline bool MultiviewConfigurationHasBeenSet() const { return m_multiviewConfigurationHasBeenSet; }
+  template <typename MultiviewConfigurationT = MultiviewConfiguration>
+  void SetMultiviewConfiguration(MultiviewConfigurationT&& value) {
+    m_multiviewConfigurationHasBeenSet = true;
+    m_multiviewConfiguration = std::forward<MultiviewConfigurationT>(value);
+  }
+  template <typename MultiviewConfigurationT = MultiviewConfiguration>
+  UpdateChannelRequest& WithMultiviewConfiguration(MultiviewConfigurationT&& value) {
+    SetMultiviewConfiguration(std::forward<MultiviewConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_channelGroupName;
 
@@ -162,12 +185,15 @@ class UpdateChannelRequest : public Mediapackagev2Request {
   InputSwitchConfiguration m_inputSwitchConfiguration;
 
   OutputHeaderConfiguration m_outputHeaderConfiguration;
+
+  MultiviewConfiguration m_multiviewConfiguration;
   bool m_channelGroupNameHasBeenSet = false;
   bool m_channelNameHasBeenSet = false;
   bool m_eTagHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_inputSwitchConfigurationHasBeenSet = false;
   bool m_outputHeaderConfigurationHasBeenSet = false;
+  bool m_multiviewConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

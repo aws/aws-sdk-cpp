@@ -132,7 +132,8 @@ class VastRequestConfiguration {
   /**
    * <p>An expression that evaluates to the VAST endpoint URL. Use
    * <code>{%...%}</code> delimiters for dynamic expressions. A literal value must be
-   * an <code>https://</code> URL. The maximum length is 25,000 characters.</p>
+   * an <code>https://</code> URL. The expression can be up to 25,000 characters, and
+   * the URL after evaluation can be up to 2,048 characters.</p>
    */
   inline const Aws::String& GetUrl() const { return m_url; }
   inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
@@ -150,9 +151,9 @@ class VastRequestConfiguration {
 
   ///@{
   /**
-   * <p>An expression that evaluates to the request body. Used with <code>POST</code>
-   * requests, for example to send an OpenRTB bid request. The maximum length is
-   * 100,000 characters.</p>
+   * <p>An expression that evaluates to the request body, for example to send an
+   * OpenRTB bid request. The expression can be up to 100,000 characters, and the
+   * body after evaluation can be up to 64 KB.</p>
    */
   inline const Aws::String& GetBody() const { return m_body; }
   inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }

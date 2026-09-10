@@ -76,6 +76,18 @@ NetworkCardInfo& NetworkCardInfo::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maximumEnaQueueCountPerInterfaceNode.GetText()).c_str()).c_str());
       m_maximumEnaQueueCountPerInterfaceHasBeenSet = true;
     }
+    XmlNode interfaceTypesNode = resultNode.FirstChild("interfaceTypeSet");
+    if (!interfaceTypesNode.IsNull()) {
+      XmlNode interfaceTypesMember = interfaceTypesNode.FirstChild("item");
+      m_interfaceTypesHasBeenSet = !interfaceTypesMember.IsNull();
+      while (!interfaceTypesMember.IsNull()) {
+        m_interfaceTypes.push_back(
+            NetworkCardInterfaceTypeMapper::GetNetworkCardInterfaceTypeForName(StringUtils::Trim(interfaceTypesMember.GetText().c_str())));
+        interfaceTypesMember = interfaceTypesMember.NextNode("item");
+      }
+
+      m_interfaceTypesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -119,6 +131,14 @@ void NetworkCardInfo::OutputToStream(Aws::OStream& oStream, const char* location
   if (m_maximumEnaQueueCountPerInterfaceHasBeenSet) {
     oStream << location << index << locationValue << ".MaximumEnaQueueCountPerInterface=" << m_maximumEnaQueueCountPerInterface << "&";
   }
+
+  if (m_interfaceTypesHasBeenSet) {
+    unsigned interfaceTypesIdx = 1;
+    for (auto& item : m_interfaceTypes) {
+      oStream << location << index << locationValue << ".InterfaceTypeSet." << interfaceTypesIdx++ << "="
+              << StringUtils::URLEncode(NetworkCardInterfaceTypeMapper::GetNameForNetworkCardInterfaceType(item)) << "&";
+    }
+  }
 }
 
 void NetworkCardInfo::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -148,6 +168,13 @@ void NetworkCardInfo::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if (m_maximumEnaQueueCountPerInterfaceHasBeenSet) {
     oStream << location << ".MaximumEnaQueueCountPerInterface=" << m_maximumEnaQueueCountPerInterface << "&";
+  }
+  if (m_interfaceTypesHasBeenSet) {
+    unsigned interfaceTypesIdx = 1;
+    for (auto& item : m_interfaceTypes) {
+      oStream << location << ".InterfaceTypeSet." << interfaceTypesIdx++ << "="
+              << StringUtils::URLEncode(NetworkCardInterfaceTypeMapper::GetNameForNetworkCardInterfaceType(item)) << "&";
+    }
   }
 }
 

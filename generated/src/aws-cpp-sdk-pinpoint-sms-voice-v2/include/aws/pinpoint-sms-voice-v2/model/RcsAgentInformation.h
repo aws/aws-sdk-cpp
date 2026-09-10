@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
+#include <aws/pinpoint-sms-voice-v2/model/MessagingLimits.h>
 #include <aws/pinpoint-sms-voice-v2/model/RcsAgentStatus.h>
 #include <aws/pinpoint-sms-voice-v2/model/TestingAgentInformation.h>
 
@@ -326,6 +327,25 @@ class RcsAgentInformation {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The messaging limits that apply to the RCS agent, including the
+   * per-capability send rates.</p>
+   */
+  inline const MessagingLimits& GetMessagingLimits() const { return m_messagingLimits; }
+  inline bool MessagingLimitsHasBeenSet() const { return m_messagingLimitsHasBeenSet; }
+  template <typename MessagingLimitsT = MessagingLimits>
+  void SetMessagingLimits(MessagingLimitsT&& value) {
+    m_messagingLimitsHasBeenSet = true;
+    m_messagingLimits = std::forward<MessagingLimitsT>(value);
+  }
+  template <typename MessagingLimitsT = MessagingLimits>
+  RcsAgentInformation& WithMessagingLimits(MessagingLimitsT&& value) {
+    SetMessagingLimits(std::forward<MessagingLimitsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_rcsAgentArn;
 
@@ -358,6 +378,8 @@ class RcsAgentInformation {
   Aws::Vector<Aws::String> m_twoWayRcsEventsEnabled;
 
   TestingAgentInformation m_testingAgent;
+
+  MessagingLimits m_messagingLimits;
   bool m_rcsAgentArnHasBeenSet = false;
   bool m_rcsAgentIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
@@ -374,6 +396,7 @@ class RcsAgentInformation {
   bool m_twoWayMediaS3RoleHasBeenSet = false;
   bool m_twoWayRcsEventsEnabledHasBeenSet = false;
   bool m_testingAgentHasBeenSet = false;
+  bool m_messagingLimitsHasBeenSet = false;
 };
 
 }  // namespace Model

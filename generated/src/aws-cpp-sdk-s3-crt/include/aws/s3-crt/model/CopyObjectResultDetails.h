@@ -92,7 +92,7 @@ class CopyObjectResultDetails {
   ///@{
   /**
    * <p>The Base64 encoded, 32-bit <code>CRC32</code> checksum of the object. This
-   * checksum is only present if the object was uploaded with the object. For more
+   * checksum is only present if the checksum was uploaded with the object. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
    * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>

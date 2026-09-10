@@ -67,6 +67,10 @@ Aws::String CreateTrailRequest::SerializePayload() const {
     payload.WithArray("TagsList", std::move(tagsListJsonList));
   }
 
+  if (m_recursiveLoggingHasBeenSet) {
+    payload.WithBool("RecursiveLogging", m_recursiveLogging);
+  }
+
   return payload.View().WriteReadable();
 }
 

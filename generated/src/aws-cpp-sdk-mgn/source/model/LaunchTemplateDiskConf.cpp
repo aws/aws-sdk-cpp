@@ -30,6 +30,14 @@ LaunchTemplateDiskConf& LaunchTemplateDiskConf::operator=(JsonView jsonValue) {
     m_throughput = jsonValue.GetInt64("throughput");
     m_throughputHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("volumeInitializationRate")) {
+    m_volumeInitializationRate = jsonValue.GetInt64("volumeInitializationRate");
+    m_volumeInitializationRateHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("deleteOnTermination")) {
+    m_deleteOnTermination = jsonValue.GetBool("deleteOnTermination");
+    m_deleteOnTerminationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +54,14 @@ JsonValue LaunchTemplateDiskConf::Jsonize() const {
 
   if (m_throughputHasBeenSet) {
     payload.WithInt64("throughput", m_throughput);
+  }
+
+  if (m_volumeInitializationRateHasBeenSet) {
+    payload.WithInt64("volumeInitializationRate", m_volumeInitializationRate);
+  }
+
+  if (m_deleteOnTerminationHasBeenSet) {
+    payload.WithBool("deleteOnTermination", m_deleteOnTermination);
   }
 
   return payload;

@@ -34,6 +34,13 @@ MediaPackageV2DestinationSettings& MediaPackageV2DestinationSettings::operator=(
     m_hlsDefault = HlsDefaultMapper::GetHlsDefaultForName(jsonValue.GetString("hlsDefault"));
     m_hlsDefaultHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("outputUsage")) {
+    Aws::Utils::Array<JsonView> outputUsageJsonList = jsonValue.GetArray("outputUsage");
+    for (unsigned outputUsageIndex = 0; outputUsageIndex < outputUsageJsonList.GetLength(); ++outputUsageIndex) {
+      m_outputUsage.push_back(OutputUsageMapper::GetOutputUsageForName(outputUsageJsonList[outputUsageIndex].AsString()));
+    }
+    m_outputUsageHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +61,14 @@ JsonValue MediaPackageV2DestinationSettings::Jsonize() const {
 
   if (m_hlsDefaultHasBeenSet) {
     payload.WithString("hlsDefault", HlsDefaultMapper::GetNameForHlsDefault(m_hlsDefault));
+  }
+
+  if (m_outputUsageHasBeenSet) {
+    Aws::Utils::Array<JsonValue> outputUsageJsonList(m_outputUsage.size());
+    for (unsigned outputUsageIndex = 0; outputUsageIndex < outputUsageJsonList.GetLength(); ++outputUsageIndex) {
+      outputUsageJsonList[outputUsageIndex].AsString(OutputUsageMapper::GetNameForOutputUsage(m_outputUsage[outputUsageIndex]));
+    }
+    payload.WithArray("outputUsage", std::move(outputUsageJsonList));
   }
 
   return payload;

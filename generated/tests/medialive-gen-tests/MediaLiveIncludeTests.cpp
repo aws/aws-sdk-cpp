@@ -331,12 +331,15 @@
 #include <aws/medialive/model/EbuTtDDestinationSettings.h>
 #include <aws/medialive/model/EbuTtDDestinationStyleControl.h>
 #include <aws/medialive/model/EbuTtDFillLineGapControl.h>
+#include <aws/medialive/model/EmbeddedCaptionPositionSettings.h>
 #include <aws/medialive/model/EmbeddedConvert608To708.h>
 #include <aws/medialive/model/EmbeddedDestinationSettings.h>
+#include <aws/medialive/model/EmbeddedDestinationStyleControl.h>
 #include <aws/medialive/model/EmbeddedPlusScte20DestinationSettings.h>
 #include <aws/medialive/model/EmbeddedScte20Detection.h>
 #include <aws/medialive/model/EmbeddedSourceSettings.h>
 #include <aws/medialive/model/EncoderSettings.h>
+#include <aws/medialive/model/EnrichmentMethod.h>
 #include <aws/medialive/model/EpochLockingSettings.h>
 #include <aws/medialive/model/Esam.h>
 #include <aws/medialive/model/EventBridgeRuleTemplateEventType.h>
@@ -751,6 +754,7 @@
 #include <aws/medialive/model/OutputLocationRef.h>
 #include <aws/medialive/model/OutputLockingSettings.h>
 #include <aws/medialive/model/OutputSettings.h>
+#include <aws/medialive/model/OutputUsage.h>
 #include <aws/medialive/model/PassThroughSettings.h>
 #include <aws/medialive/model/PauseStateScheduleActionSettings.h>
 #include <aws/medialive/model/PipelineDetail.h>
@@ -905,6 +909,7 @@
 #include <aws/medialive/model/TemporalFilterPostFilterSharpening.h>
 #include <aws/medialive/model/TemporalFilterSettings.h>
 #include <aws/medialive/model/TemporalFilterStrength.h>
+#include <aws/medialive/model/TextCaptionPositionSettings.h>
 #include <aws/medialive/model/Thumbnail.h>
 #include <aws/medialive/model/ThumbnailConfiguration.h>
 #include <aws/medialive/model/ThumbnailDetail.h>

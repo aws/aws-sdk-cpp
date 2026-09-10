@@ -140,221 +140,848 @@ static const int NON_EPOCH_LOCKED_WITH_FORCE_ENDPOINT_ERROR_CONFIGURATION_HASH =
 static const int ONLY_HLS_INPUT_TYPE_ALLOW_STREAM_NAME_OUTPUT_MODE_HASH =
     HashingUtils::HashString("ONLY_HLS_INPUT_TYPE_ALLOW_STREAM_NAME_OUTPUT_MODE");
 static const int STREAM_NAME_OUTPUT_MODE_IMMUTABLE_HASH = HashingUtils::HashString("STREAM_NAME_OUTPUT_MODE_IMMUTABLE");
+static const int MULTIVIEW_CONFIGURATION_REQUIRED_HASH = HashingUtils::HashString("MULTIVIEW_CONFIGURATION_REQUIRED");
+static const int MULTIVIEW_CONFIGURATION_NOT_ALLOWED_HASH = HashingUtils::HashString("MULTIVIEW_CONFIGURATION_NOT_ALLOWED");
+static const int MULTIVIEW_SOURCE_NOT_FOUND_HASH = HashingUtils::HashString("MULTIVIEW_SOURCE_NOT_FOUND");
+static const int MULTIVIEW_SOURCE_INVALID_INPUT_TYPE_HASH = HashingUtils::HashString("MULTIVIEW_SOURCE_INVALID_INPUT_TYPE");
+static const int MULTIVIEW_CHANNEL_POLICY_NOT_ALLOWED_HASH = HashingUtils::HashString("MULTIVIEW_CHANNEL_POLICY_NOT_ALLOWED");
+static const int MULTIVIEW_INPUT_TYPE_WITH_LL_HLS_MANIFEST_HASH = HashingUtils::HashString("MULTIVIEW_INPUT_TYPE_WITH_LL_HLS_MANIFEST");
+static const int MULTIVIEW_INPUT_TYPE_WITH_MSS_MANIFEST_HASH = HashingUtils::HashString("MULTIVIEW_INPUT_TYPE_WITH_MSS_MANIFEST");
+static const int MULTIVIEW_INPUT_TYPE_WITH_ISM_CONTAINER_HASH = HashingUtils::HashString("MULTIVIEW_INPUT_TYPE_WITH_ISM_CONTAINER");
+static const int MULTIVIEW_INPUT_TYPE_WITH_FILTER_CONFIGURATION_HASH =
+    HashingUtils::HashString("MULTIVIEW_INPUT_TYPE_WITH_FILTER_CONFIGURATION");
+static const int MULTIVIEW_INPUT_TYPE_WITH_START_TAG_HASH = HashingUtils::HashString("MULTIVIEW_INPUT_TYPE_WITH_START_TAG");
+static const int MULTIVIEW_INPUT_TYPE_WITH_HARVEST_JOB_HASH = HashingUtils::HashString("MULTIVIEW_INPUT_TYPE_WITH_HARVEST_JOB");
+static const int MULTIVIEW_RESET_NOT_ALLOWED_HASH = HashingUtils::HashString("MULTIVIEW_RESET_NOT_ALLOWED");
+static const int MULTIVIEW_DUPLICATE_SOURCE_HASH = HashingUtils::HashString("MULTIVIEW_DUPLICATE_SOURCE");
+static const int MULTIVIEW_DUPLICATE_LAYOUT_HASH = HashingUtils::HashString("MULTIVIEW_DUPLICATE_LAYOUT");
+static const int MULTIVIEW_INPUT_SWITCH_NOT_ALLOWED_HASH = HashingUtils::HashString("MULTIVIEW_INPUT_SWITCH_NOT_ALLOWED");
+static const int MULTIVIEW_OUTPUT_HEADER_NOT_ALLOWED_HASH = HashingUtils::HashString("MULTIVIEW_OUTPUT_HEADER_NOT_ALLOWED");
+static const int MULTIVIEW_STARTOVER_WINDOW_NOT_ALLOWED_HASH = HashingUtils::HashString("MULTIVIEW_STARTOVER_WINDOW_NOT_ALLOWED");
+static const int MULTIVIEW_INVALID_TIME_DELAY_SECONDS_HASH = HashingUtils::HashString("MULTIVIEW_INVALID_TIME_DELAY_SECONDS");
+static const int MULTIVIEW_MANIFEST_WINDOW_TOO_LONG_HASH = HashingUtils::HashString("MULTIVIEW_MANIFEST_WINDOW_TOO_LONG");
+static const int MULTIVIEW_INPUT_TYPE_WITH_IFRAME_ONLY_STREAMS_HASH =
+    HashingUtils::HashString("MULTIVIEW_INPUT_TYPE_WITH_IFRAME_ONLY_STREAMS");
+static const int MULTIVIEW_INPUT_TYPE_WITH_NON_EPOCH_LOCKED_HASH = HashingUtils::HashString("MULTIVIEW_INPUT_TYPE_WITH_NON_EPOCH_LOCKED");
+static const int MULTIVIEW_INPUT_TYPE_WITH_SEGMENT_DURATION_HASH = HashingUtils::HashString("MULTIVIEW_INPUT_TYPE_WITH_SEGMENT_DURATION");
+static const int MULTIVIEW_SOURCE_NON_EPOCH_LOCKED_HASH = HashingUtils::HashString("MULTIVIEW_SOURCE_NON_EPOCH_LOCKED");
+static const int MULTIVIEW_SCTE_REQUIRES_AVAILS_PERIOD_TRIGGER_HASH =
+    HashingUtils::HashString("MULTIVIEW_SCTE_REQUIRES_AVAILS_PERIOD_TRIGGER");
+
+/*
+The if-else chains in this file are converted into a jump table by the compiler,
+which allows constant time lookup. The chain has been broken into helper functions
+because MSVC has a maximum of 122 chained if-else blocks.
+*/
+static bool GetEnumForNameHelper0(int hashCode, ValidationExceptionType& enumValue) {
+  if (hashCode == CONTAINER_TYPE_IMMUTABLE_HASH) {
+    enumValue = ValidationExceptionType::CONTAINER_TYPE_IMMUTABLE;
+    return true;
+  } else if (hashCode == INVALID_PAGINATION_TOKEN_HASH) {
+    enumValue = ValidationExceptionType::INVALID_PAGINATION_TOKEN;
+    return true;
+  } else if (hashCode == INVALID_PAGINATION_MAX_RESULTS_HASH) {
+    enumValue = ValidationExceptionType::INVALID_PAGINATION_MAX_RESULTS;
+    return true;
+  } else if (hashCode == INVALID_POLICY_HASH) {
+    enumValue = ValidationExceptionType::INVALID_POLICY;
+    return true;
+  } else if (hashCode == INVALID_ROLE_ARN_HASH) {
+    enumValue = ValidationExceptionType::INVALID_ROLE_ARN;
+    return true;
+  } else if (hashCode == MANIFEST_NAME_COLLISION_HASH) {
+    enumValue = ValidationExceptionType::MANIFEST_NAME_COLLISION;
+    return true;
+  } else if (hashCode == ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH_HASH) {
+    enumValue = ValidationExceptionType::ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH;
+    return true;
+  } else if (hashCode == CENC_IV_INCOMPATIBLE_HASH) {
+    enumValue = ValidationExceptionType::CENC_IV_INCOMPATIBLE;
+    return true;
+  } else if (hashCode == ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE_HASH) {
+    enumValue = ValidationExceptionType::ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE;
+    return true;
+  } else if (hashCode == ENCRYPTION_CONTRACT_WITH_ISM_CONTAINER_INCOMPATIBLE_HASH) {
+    enumValue = ValidationExceptionType::ENCRYPTION_CONTRACT_WITH_ISM_CONTAINER_INCOMPATIBLE;
+    return true;
+  } else if (hashCode == ENCRYPTION_CONTRACT_UNENCRYPTED_HASH) {
+    enumValue = ValidationExceptionType::ENCRYPTION_CONTRACT_UNENCRYPTED;
+    return true;
+  } else if (hashCode == ENCRYPTION_CONTRACT_SHARED_HASH) {
+    enumValue = ValidationExceptionType::ENCRYPTION_CONTRACT_SHARED;
+    return true;
+  } else if (hashCode == NUM_MANIFESTS_LOW_HASH) {
+    enumValue = ValidationExceptionType::NUM_MANIFESTS_LOW;
+    return true;
+  } else if (hashCode == NUM_MANIFESTS_HIGH_HASH) {
+    enumValue = ValidationExceptionType::NUM_MANIFESTS_HIGH;
+    return true;
+  } else if (hashCode == MANIFEST_DRM_SYSTEMS_INCOMPATIBLE_HASH) {
+    enumValue = ValidationExceptionType::MANIFEST_DRM_SYSTEMS_INCOMPATIBLE;
+    return true;
+  } else if (hashCode == DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE_HASH) {
+    enumValue = ValidationExceptionType::DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE;
+    return true;
+  } else if (hashCode == ROLE_ARN_NOT_ASSUMABLE_HASH) {
+    enumValue = ValidationExceptionType::ROLE_ARN_NOT_ASSUMABLE;
+    return true;
+  } else if (hashCode == ROLE_ARN_LENGTH_OUT_OF_RANGE_HASH) {
+    enumValue = ValidationExceptionType::ROLE_ARN_LENGTH_OUT_OF_RANGE;
+    return true;
+  } else if (hashCode == ROLE_ARN_INVALID_FORMAT_HASH) {
+    enumValue = ValidationExceptionType::ROLE_ARN_INVALID_FORMAT;
+    return true;
+  } else if (hashCode == URL_INVALID_HASH) {
+    enumValue = ValidationExceptionType::URL_INVALID;
+    return true;
+  } else if (hashCode == URL_SCHEME_HASH) {
+    enumValue = ValidationExceptionType::URL_SCHEME;
+    return true;
+  } else if (hashCode == URL_USER_INFO_HASH) {
+    enumValue = ValidationExceptionType::URL_USER_INFO;
+    return true;
+  } else if (hashCode == URL_PORT_HASH) {
+    enumValue = ValidationExceptionType::URL_PORT;
+    return true;
+  } else if (hashCode == URL_UNKNOWN_HOST_HASH) {
+    enumValue = ValidationExceptionType::URL_UNKNOWN_HOST;
+    return true;
+  } else if (hashCode == URL_LOCAL_ADDRESS_HASH) {
+    enumValue = ValidationExceptionType::URL_LOCAL_ADDRESS;
+    return true;
+  } else if (hashCode == URL_LOOPBACK_ADDRESS_HASH) {
+    enumValue = ValidationExceptionType::URL_LOOPBACK_ADDRESS;
+    return true;
+  } else if (hashCode == URL_LINK_LOCAL_ADDRESS_HASH) {
+    enumValue = ValidationExceptionType::URL_LINK_LOCAL_ADDRESS;
+    return true;
+  } else if (hashCode == URL_MULTICAST_ADDRESS_HASH) {
+    enumValue = ValidationExceptionType::URL_MULTICAST_ADDRESS;
+    return true;
+  } else if (hashCode == MEMBER_INVALID_HASH) {
+    enumValue = ValidationExceptionType::MEMBER_INVALID;
+    return true;
+  } else if (hashCode == MEMBER_MISSING_HASH) {
+    enumValue = ValidationExceptionType::MEMBER_MISSING;
+    return true;
+  } else if (hashCode == MEMBER_MIN_VALUE_HASH) {
+    enumValue = ValidationExceptionType::MEMBER_MIN_VALUE;
+    return true;
+  } else if (hashCode == MEMBER_MAX_VALUE_HASH) {
+    enumValue = ValidationExceptionType::MEMBER_MAX_VALUE;
+    return true;
+  } else if (hashCode == MEMBER_MIN_LENGTH_HASH) {
+    enumValue = ValidationExceptionType::MEMBER_MIN_LENGTH;
+    return true;
+  } else if (hashCode == MEMBER_MAX_LENGTH_HASH) {
+    enumValue = ValidationExceptionType::MEMBER_MAX_LENGTH;
+    return true;
+  } else if (hashCode == MEMBER_INVALID_ENUM_VALUE_HASH) {
+    enumValue = ValidationExceptionType::MEMBER_INVALID_ENUM_VALUE;
+    return true;
+  } else if (hashCode == MEMBER_DOES_NOT_MATCH_PATTERN_HASH) {
+    enumValue = ValidationExceptionType::MEMBER_DOES_NOT_MATCH_PATTERN;
+    return true;
+  } else if (hashCode == INVALID_MANIFEST_FILTER_HASH) {
+    enumValue = ValidationExceptionType::INVALID_MANIFEST_FILTER;
+    return true;
+  } else if (hashCode == INVALID_DRM_SETTINGS_HASH) {
+    enumValue = ValidationExceptionType::INVALID_DRM_SETTINGS;
+    return true;
+  } else if (hashCode == INVALID_TIME_DELAY_SECONDS_HASH) {
+    enumValue = ValidationExceptionType::INVALID_TIME_DELAY_SECONDS;
+    return true;
+  } else if (hashCode == END_TIME_EARLIER_THAN_START_TIME_HASH) {
+    enumValue = ValidationExceptionType::END_TIME_EARLIER_THAN_START_TIME;
+    return true;
+  } else if (hashCode == TS_CONTAINER_TYPE_WITH_DASH_MANIFEST_HASH) {
+    enumValue = ValidationExceptionType::TS_CONTAINER_TYPE_WITH_DASH_MANIFEST;
+    return true;
+  } else if (hashCode == DIRECT_MODE_WITH_TIMING_SOURCE_HASH) {
+    enumValue = ValidationExceptionType::DIRECT_MODE_WITH_TIMING_SOURCE;
+    return true;
+  } else if (hashCode == NONE_MODE_WITH_TIMING_SOURCE_HASH) {
+    enumValue = ValidationExceptionType::NONE_MODE_WITH_TIMING_SOURCE;
+    return true;
+  } else if (hashCode == TIMING_SOURCE_MISSING_HASH) {
+    enumValue = ValidationExceptionType::TIMING_SOURCE_MISSING;
+    return true;
+  } else if (hashCode == UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION_HASH) {
+    enumValue = ValidationExceptionType::UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION;
+    return true;
+  } else if (hashCode == PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES_HASH) {
+    enumValue = ValidationExceptionType::PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES;
+    return true;
+  } else if (hashCode == DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS_HASH) {
+    enumValue = ValidationExceptionType::DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS;
+    return true;
+  } else if (hashCode == ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION_HASH) {
+    enumValue = ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION;
+    return true;
+  } else if (hashCode == SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY_HASH) {
+    enumValue = ValidationExceptionType::SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY;
+    return true;
+  } else if (hashCode == HARVESTED_MANIFEST_HAS_START_END_FILTER_CONFIGURATION_HASH) {
+    enumValue = ValidationExceptionType::HARVESTED_MANIFEST_HAS_START_END_FILTER_CONFIGURATION;
+    return true;
+  } else if (hashCode == HARVESTED_MANIFEST_NOT_FOUND_ON_ENDPOINT_HASH) {
+    enumValue = ValidationExceptionType::HARVESTED_MANIFEST_NOT_FOUND_ON_ENDPOINT;
+    return true;
+  } else if (hashCode == TOO_MANY_IN_PROGRESS_HARVEST_JOBS_HASH) {
+    enumValue = ValidationExceptionType::TOO_MANY_IN_PROGRESS_HARVEST_JOBS;
+    return true;
+  } else if (hashCode == HARVEST_JOB_INELIGIBLE_FOR_CANCELLATION_HASH) {
+    enumValue = ValidationExceptionType::HARVEST_JOB_INELIGIBLE_FOR_CANCELLATION;
+    return true;
+  } else if (hashCode == INVALID_HARVEST_JOB_DURATION_HASH) {
+    enumValue = ValidationExceptionType::INVALID_HARVEST_JOB_DURATION;
+    return true;
+  } else if (hashCode == HARVEST_JOB_S3_DESTINATION_MISSING_OR_INCOMPLETE_HASH) {
+    enumValue = ValidationExceptionType::HARVEST_JOB_S3_DESTINATION_MISSING_OR_INCOMPLETE;
+    return true;
+  } else if (hashCode == HARVEST_JOB_UNABLE_TO_WRITE_TO_S3_DESTINATION_HASH) {
+    enumValue = ValidationExceptionType::HARVEST_JOB_UNABLE_TO_WRITE_TO_S3_DESTINATION;
+    return true;
+  } else if (hashCode == HARVEST_JOB_CUSTOMER_ENDPOINT_READ_ACCESS_DENIED_HASH) {
+    enumValue = ValidationExceptionType::HARVEST_JOB_CUSTOMER_ENDPOINT_READ_ACCESS_DENIED;
+    return true;
+  } else if (hashCode == CLIP_START_TIME_WITH_START_OR_END_HASH) {
+    enumValue = ValidationExceptionType::CLIP_START_TIME_WITH_START_OR_END;
+    return true;
+  } else if (hashCode == START_TAG_TIME_OFFSET_INVALID_HASH) {
+    enumValue = ValidationExceptionType::START_TAG_TIME_OFFSET_INVALID;
+    return true;
+  } else if (hashCode == INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION_HASH) {
+    enumValue = ValidationExceptionType::INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION;
+    return true;
+  } else if (hashCode == DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE_HASH) {
+    enumValue = ValidationExceptionType::DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE;
+    return true;
+  } else if (hashCode == INCOMPATIBLE_DASH_COMPACTNESS_CONFIGURATION_HASH) {
+    enumValue = ValidationExceptionType::INCOMPATIBLE_DASH_COMPACTNESS_CONFIGURATION;
+    return true;
+  } else if (hashCode == INCOMPATIBLE_XML_ENCODING_HASH) {
+    enumValue = ValidationExceptionType::INCOMPATIBLE_XML_ENCODING;
+    return true;
+  } else if (hashCode == CMAF_EXCLUDE_SEGMENT_DRM_METADATA_INCOMPATIBLE_CONTAINER_TYPE_HASH) {
+    enumValue = ValidationExceptionType::CMAF_EXCLUDE_SEGMENT_DRM_METADATA_INCOMPATIBLE_CONTAINER_TYPE;
+    return true;
+  } else if (hashCode == ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING_HASH) {
+    enumValue = ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING;
+    return true;
+  } else if (hashCode == ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION_HASH) {
+    enumValue = ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION;
+    return true;
+  } else if (hashCode == ONLY_CMAF_INPUT_TYPE_ALLOW_PREFERRED_INPUT_CONFIGURATION_HASH) {
+    enumValue = ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_PREFERRED_INPUT_CONFIGURATION;
+    return true;
+  } else if (hashCode == TS_CONTAINER_TYPE_WITH_MSS_MANIFEST_HASH) {
+    enumValue = ValidationExceptionType::TS_CONTAINER_TYPE_WITH_MSS_MANIFEST;
+    return true;
+  } else if (hashCode == CMAF_CONTAINER_TYPE_WITH_MSS_MANIFEST_HASH) {
+    enumValue = ValidationExceptionType::CMAF_CONTAINER_TYPE_WITH_MSS_MANIFEST;
+    return true;
+  } else if (hashCode == ISM_CONTAINER_TYPE_WITH_HLS_MANIFEST_HASH) {
+    enumValue = ValidationExceptionType::ISM_CONTAINER_TYPE_WITH_HLS_MANIFEST;
+    return true;
+  } else if (hashCode == ISM_CONTAINER_TYPE_WITH_LL_HLS_MANIFEST_HASH) {
+    enumValue = ValidationExceptionType::ISM_CONTAINER_TYPE_WITH_LL_HLS_MANIFEST;
+    return true;
+  } else if (hashCode == ISM_CONTAINER_TYPE_WITH_DASH_MANIFEST_HASH) {
+    enumValue = ValidationExceptionType::ISM_CONTAINER_TYPE_WITH_DASH_MANIFEST;
+    return true;
+  } else if (hashCode == ISM_CONTAINER_TYPE_WITH_SCTE_HASH) {
+    enumValue = ValidationExceptionType::ISM_CONTAINER_TYPE_WITH_SCTE;
+    return true;
+  } else if (hashCode == ISM_CONTAINER_WITH_KEY_ROTATION_HASH) {
+    enumValue = ValidationExceptionType::ISM_CONTAINER_WITH_KEY_ROTATION;
+    return true;
+  } else if (hashCode == BATCH_GET_SECRET_VALUE_DENIED_HASH) {
+    enumValue = ValidationExceptionType::BATCH_GET_SECRET_VALUE_DENIED;
+    return true;
+  } else if (hashCode == GET_SECRET_VALUE_DENIED_HASH) {
+    enumValue = ValidationExceptionType::GET_SECRET_VALUE_DENIED;
+    return true;
+  } else if (hashCode == DESCRIBE_SECRET_DENIED_HASH) {
+    enumValue = ValidationExceptionType::DESCRIBE_SECRET_DENIED;
+    return true;
+  } else if (hashCode == INVALID_SECRET_FORMAT_HASH) {
+    enumValue = ValidationExceptionType::INVALID_SECRET_FORMAT;
+    return true;
+  } else if (hashCode == SECRET_IS_NOT_ONE_KEY_VALUE_PAIR_HASH) {
+    enumValue = ValidationExceptionType::SECRET_IS_NOT_ONE_KEY_VALUE_PAIR;
+    return true;
+  } else if (hashCode == INVALID_SECRET_KEY_HASH) {
+    enumValue = ValidationExceptionType::INVALID_SECRET_KEY;
+    return true;
+  } else if (hashCode == INVALID_SECRET_VALUE_HASH) {
+    enumValue = ValidationExceptionType::INVALID_SECRET_VALUE;
+    return true;
+  } else if (hashCode == SECRET_ARN_RESOURCE_NOT_FOUND_HASH) {
+    enumValue = ValidationExceptionType::SECRET_ARN_RESOURCE_NOT_FOUND;
+    return true;
+  } else if (hashCode == DECRYPT_SECRET_FAILED_HASH) {
+    enumValue = ValidationExceptionType::DECRYPT_SECRET_FAILED;
+    return true;
+  } else if (hashCode == TOO_MANY_SECRETS_HASH) {
+    enumValue = ValidationExceptionType::TOO_MANY_SECRETS;
+    return true;
+  } else if (hashCode == DUPLICATED_SECRET_HASH) {
+    enumValue = ValidationExceptionType::DUPLICATED_SECRET;
+    return true;
+  } else if (hashCode == MALFORMED_SECRET_ARN_HASH) {
+    enumValue = ValidationExceptionType::MALFORMED_SECRET_ARN;
+    return true;
+  } else if (hashCode == SECRET_FROM_DIFFERENT_ACCOUNT_HASH) {
+    enumValue = ValidationExceptionType::SECRET_FROM_DIFFERENT_ACCOUNT;
+    return true;
+  } else if (hashCode == SECRET_FROM_DIFFERENT_REGION_HASH) {
+    enumValue = ValidationExceptionType::SECRET_FROM_DIFFERENT_REGION;
+    return true;
+  } else if (hashCode == INVALID_SECRET_HASH) {
+    enumValue = ValidationExceptionType::INVALID_SECRET;
+    return true;
+  } else if (hashCode == RESOURCE_NOT_IN_SAME_REGION_HASH) {
+    enumValue = ValidationExceptionType::RESOURCE_NOT_IN_SAME_REGION;
+    return true;
+  } else if (hashCode == CERTIFICATE_RESOURCE_NOT_FOUND_HASH) {
+    enumValue = ValidationExceptionType::CERTIFICATE_RESOURCE_NOT_FOUND;
+    return true;
+  } else if (hashCode == CERTIFICATE_ACCESS_DENIED_HASH) {
+    enumValue = ValidationExceptionType::CERTIFICATE_ACCESS_DENIED;
+    return true;
+  } else if (hashCode == DESCRIBE_CERTIFICATE_FAILED_HASH) {
+    enumValue = ValidationExceptionType::DESCRIBE_CERTIFICATE_FAILED;
+    return true;
+  } else if (hashCode == INVALID_CERTIFICATE_STATUS_HASH) {
+    enumValue = ValidationExceptionType::INVALID_CERTIFICATE_STATUS;
+    return true;
+  } else if (hashCode == INVALID_CERTIFICATE_KEY_ALGORITHM_HASH) {
+    enumValue = ValidationExceptionType::INVALID_CERTIFICATE_KEY_ALGORITHM;
+    return true;
+  } else if (hashCode == INVALID_CERTIFICATE_SIGNATURE_ALGORITHM_HASH) {
+    enumValue = ValidationExceptionType::INVALID_CERTIFICATE_SIGNATURE_ALGORITHM;
+    return true;
+  } else if (hashCode == MISSING_CERTIFICATE_DOMAIN_NAME_HASH) {
+    enumValue = ValidationExceptionType::MISSING_CERTIFICATE_DOMAIN_NAME;
+    return true;
+  } else if (hashCode == INVALID_ARN_HASH) {
+    enumValue = ValidationExceptionType::INVALID_ARN;
+    return true;
+  } else if (hashCode == SCTE_IN_MANIFESTS_INVALID_CONFIGURATION_HASH) {
+    enumValue = ValidationExceptionType::SCTE_IN_MANIFESTS_INVALID_CONFIGURATION;
+    return true;
+  } else if (hashCode == CUSTOM_AD_TYPES_INVALID_CONFIGURATION_HASH) {
+    enumValue = ValidationExceptionType::CUSTOM_AD_TYPES_INVALID_CONFIGURATION;
+    return true;
+  } else if (hashCode == ONLY_CMAF_INPUT_TYPE_ALLOW_OUTPUT_LOCKING_MODE_HASH) {
+    enumValue = ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_OUTPUT_LOCKING_MODE;
+    return true;
+  } else if (hashCode == ONLY_NON_EPOCH_LOCKED_ALLOW_OUTPUT_TIMESTAMP_MODE_HASH) {
+    enumValue = ValidationExceptionType::ONLY_NON_EPOCH_LOCKED_ALLOW_OUTPUT_TIMESTAMP_MODE;
+    return true;
+  } else if (hashCode == OUTPUT_TIMESTAMP_MODE_IMMUTABLE_HASH) {
+    enumValue = ValidationExceptionType::OUTPUT_TIMESTAMP_MODE_IMMUTABLE;
+    return true;
+  } else if (hashCode == NON_EPOCH_LOCKED_WITH_FORCE_ENDPOINT_ERROR_CONFIGURATION_HASH) {
+    enumValue = ValidationExceptionType::NON_EPOCH_LOCKED_WITH_FORCE_ENDPOINT_ERROR_CONFIGURATION;
+    return true;
+  } else if (hashCode == ONLY_HLS_INPUT_TYPE_ALLOW_STREAM_NAME_OUTPUT_MODE_HASH) {
+    enumValue = ValidationExceptionType::ONLY_HLS_INPUT_TYPE_ALLOW_STREAM_NAME_OUTPUT_MODE;
+    return true;
+  } else if (hashCode == STREAM_NAME_OUTPUT_MODE_IMMUTABLE_HASH) {
+    enumValue = ValidationExceptionType::STREAM_NAME_OUTPUT_MODE_IMMUTABLE;
+    return true;
+  } else if (hashCode == MULTIVIEW_CONFIGURATION_REQUIRED_HASH) {
+    enumValue = ValidationExceptionType::MULTIVIEW_CONFIGURATION_REQUIRED;
+    return true;
+  } else if (hashCode == MULTIVIEW_CONFIGURATION_NOT_ALLOWED_HASH) {
+    enumValue = ValidationExceptionType::MULTIVIEW_CONFIGURATION_NOT_ALLOWED;
+    return true;
+  } else if (hashCode == MULTIVIEW_SOURCE_NOT_FOUND_HASH) {
+    enumValue = ValidationExceptionType::MULTIVIEW_SOURCE_NOT_FOUND;
+    return true;
+  } else if (hashCode == MULTIVIEW_SOURCE_INVALID_INPUT_TYPE_HASH) {
+    enumValue = ValidationExceptionType::MULTIVIEW_SOURCE_INVALID_INPUT_TYPE;
+    return true;
+  } else if (hashCode == MULTIVIEW_CHANNEL_POLICY_NOT_ALLOWED_HASH) {
+    enumValue = ValidationExceptionType::MULTIVIEW_CHANNEL_POLICY_NOT_ALLOWED;
+    return true;
+  } else if (hashCode == MULTIVIEW_INPUT_TYPE_WITH_LL_HLS_MANIFEST_HASH) {
+    enumValue = ValidationExceptionType::MULTIVIEW_INPUT_TYPE_WITH_LL_HLS_MANIFEST;
+    return true;
+  } else if (hashCode == MULTIVIEW_INPUT_TYPE_WITH_MSS_MANIFEST_HASH) {
+    enumValue = ValidationExceptionType::MULTIVIEW_INPUT_TYPE_WITH_MSS_MANIFEST;
+    return true;
+  } else if (hashCode == MULTIVIEW_INPUT_TYPE_WITH_ISM_CONTAINER_HASH) {
+    enumValue = ValidationExceptionType::MULTIVIEW_INPUT_TYPE_WITH_ISM_CONTAINER;
+    return true;
+  } else if (hashCode == MULTIVIEW_INPUT_TYPE_WITH_FILTER_CONFIGURATION_HASH) {
+    enumValue = ValidationExceptionType::MULTIVIEW_INPUT_TYPE_WITH_FILTER_CONFIGURATION;
+    return true;
+  } else if (hashCode == MULTIVIEW_INPUT_TYPE_WITH_START_TAG_HASH) {
+    enumValue = ValidationExceptionType::MULTIVIEW_INPUT_TYPE_WITH_START_TAG;
+    return true;
+  } else if (hashCode == MULTIVIEW_INPUT_TYPE_WITH_HARVEST_JOB_HASH) {
+    enumValue = ValidationExceptionType::MULTIVIEW_INPUT_TYPE_WITH_HARVEST_JOB;
+    return true;
+  } else if (hashCode == MULTIVIEW_RESET_NOT_ALLOWED_HASH) {
+    enumValue = ValidationExceptionType::MULTIVIEW_RESET_NOT_ALLOWED;
+    return true;
+  } else if (hashCode == MULTIVIEW_DUPLICATE_SOURCE_HASH) {
+    enumValue = ValidationExceptionType::MULTIVIEW_DUPLICATE_SOURCE;
+    return true;
+  } else if (hashCode == MULTIVIEW_DUPLICATE_LAYOUT_HASH) {
+    enumValue = ValidationExceptionType::MULTIVIEW_DUPLICATE_LAYOUT;
+    return true;
+  } else if (hashCode == MULTIVIEW_INPUT_SWITCH_NOT_ALLOWED_HASH) {
+    enumValue = ValidationExceptionType::MULTIVIEW_INPUT_SWITCH_NOT_ALLOWED;
+    return true;
+  } else if (hashCode == MULTIVIEW_OUTPUT_HEADER_NOT_ALLOWED_HASH) {
+    enumValue = ValidationExceptionType::MULTIVIEW_OUTPUT_HEADER_NOT_ALLOWED;
+    return true;
+  }
+  return false;
+}
+static bool GetEnumForNameHelper1(int hashCode, ValidationExceptionType& enumValue) {
+  if (hashCode == MULTIVIEW_STARTOVER_WINDOW_NOT_ALLOWED_HASH) {
+    enumValue = ValidationExceptionType::MULTIVIEW_STARTOVER_WINDOW_NOT_ALLOWED;
+    return true;
+  } else if (hashCode == MULTIVIEW_INVALID_TIME_DELAY_SECONDS_HASH) {
+    enumValue = ValidationExceptionType::MULTIVIEW_INVALID_TIME_DELAY_SECONDS;
+    return true;
+  } else if (hashCode == MULTIVIEW_MANIFEST_WINDOW_TOO_LONG_HASH) {
+    enumValue = ValidationExceptionType::MULTIVIEW_MANIFEST_WINDOW_TOO_LONG;
+    return true;
+  } else if (hashCode == MULTIVIEW_INPUT_TYPE_WITH_IFRAME_ONLY_STREAMS_HASH) {
+    enumValue = ValidationExceptionType::MULTIVIEW_INPUT_TYPE_WITH_IFRAME_ONLY_STREAMS;
+    return true;
+  } else if (hashCode == MULTIVIEW_INPUT_TYPE_WITH_NON_EPOCH_LOCKED_HASH) {
+    enumValue = ValidationExceptionType::MULTIVIEW_INPUT_TYPE_WITH_NON_EPOCH_LOCKED;
+    return true;
+  } else if (hashCode == MULTIVIEW_INPUT_TYPE_WITH_SEGMENT_DURATION_HASH) {
+    enumValue = ValidationExceptionType::MULTIVIEW_INPUT_TYPE_WITH_SEGMENT_DURATION;
+    return true;
+  } else if (hashCode == MULTIVIEW_SOURCE_NON_EPOCH_LOCKED_HASH) {
+    enumValue = ValidationExceptionType::MULTIVIEW_SOURCE_NON_EPOCH_LOCKED;
+    return true;
+  } else if (hashCode == MULTIVIEW_SCTE_REQUIRES_AVAILS_PERIOD_TRIGGER_HASH) {
+    enumValue = ValidationExceptionType::MULTIVIEW_SCTE_REQUIRES_AVAILS_PERIOD_TRIGGER;
+    return true;
+  }
+  return false;
+}
+
+static bool GetNameForEnumHelper0(ValidationExceptionType enumValue, Aws::String& value) {
+  switch (enumValue) {
+    case ValidationExceptionType::CONTAINER_TYPE_IMMUTABLE:
+      value = "CONTAINER_TYPE_IMMUTABLE";
+      return true;
+    case ValidationExceptionType::INVALID_PAGINATION_TOKEN:
+      value = "INVALID_PAGINATION_TOKEN";
+      return true;
+    case ValidationExceptionType::INVALID_PAGINATION_MAX_RESULTS:
+      value = "INVALID_PAGINATION_MAX_RESULTS";
+      return true;
+    case ValidationExceptionType::INVALID_POLICY:
+      value = "INVALID_POLICY";
+      return true;
+    case ValidationExceptionType::INVALID_ROLE_ARN:
+      value = "INVALID_ROLE_ARN";
+      return true;
+    case ValidationExceptionType::MANIFEST_NAME_COLLISION:
+      value = "MANIFEST_NAME_COLLISION";
+      return true;
+    case ValidationExceptionType::ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH:
+      value = "ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH";
+      return true;
+    case ValidationExceptionType::CENC_IV_INCOMPATIBLE:
+      value = "CENC_IV_INCOMPATIBLE";
+      return true;
+    case ValidationExceptionType::ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE:
+      value = "ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE";
+      return true;
+    case ValidationExceptionType::ENCRYPTION_CONTRACT_WITH_ISM_CONTAINER_INCOMPATIBLE:
+      value = "ENCRYPTION_CONTRACT_WITH_ISM_CONTAINER_INCOMPATIBLE";
+      return true;
+    case ValidationExceptionType::ENCRYPTION_CONTRACT_UNENCRYPTED:
+      value = "ENCRYPTION_CONTRACT_UNENCRYPTED";
+      return true;
+    case ValidationExceptionType::ENCRYPTION_CONTRACT_SHARED:
+      value = "ENCRYPTION_CONTRACT_SHARED";
+      return true;
+    case ValidationExceptionType::NUM_MANIFESTS_LOW:
+      value = "NUM_MANIFESTS_LOW";
+      return true;
+    case ValidationExceptionType::NUM_MANIFESTS_HIGH:
+      value = "NUM_MANIFESTS_HIGH";
+      return true;
+    case ValidationExceptionType::MANIFEST_DRM_SYSTEMS_INCOMPATIBLE:
+      value = "MANIFEST_DRM_SYSTEMS_INCOMPATIBLE";
+      return true;
+    case ValidationExceptionType::DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE:
+      value = "DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE";
+      return true;
+    case ValidationExceptionType::ROLE_ARN_NOT_ASSUMABLE:
+      value = "ROLE_ARN_NOT_ASSUMABLE";
+      return true;
+    case ValidationExceptionType::ROLE_ARN_LENGTH_OUT_OF_RANGE:
+      value = "ROLE_ARN_LENGTH_OUT_OF_RANGE";
+      return true;
+    case ValidationExceptionType::ROLE_ARN_INVALID_FORMAT:
+      value = "ROLE_ARN_INVALID_FORMAT";
+      return true;
+    case ValidationExceptionType::URL_INVALID:
+      value = "URL_INVALID";
+      return true;
+    case ValidationExceptionType::URL_SCHEME:
+      value = "URL_SCHEME";
+      return true;
+    case ValidationExceptionType::URL_USER_INFO:
+      value = "URL_USER_INFO";
+      return true;
+    case ValidationExceptionType::URL_PORT:
+      value = "URL_PORT";
+      return true;
+    case ValidationExceptionType::URL_UNKNOWN_HOST:
+      value = "URL_UNKNOWN_HOST";
+      return true;
+    case ValidationExceptionType::URL_LOCAL_ADDRESS:
+      value = "URL_LOCAL_ADDRESS";
+      return true;
+    case ValidationExceptionType::URL_LOOPBACK_ADDRESS:
+      value = "URL_LOOPBACK_ADDRESS";
+      return true;
+    case ValidationExceptionType::URL_LINK_LOCAL_ADDRESS:
+      value = "URL_LINK_LOCAL_ADDRESS";
+      return true;
+    case ValidationExceptionType::URL_MULTICAST_ADDRESS:
+      value = "URL_MULTICAST_ADDRESS";
+      return true;
+    case ValidationExceptionType::MEMBER_INVALID:
+      value = "MEMBER_INVALID";
+      return true;
+    case ValidationExceptionType::MEMBER_MISSING:
+      value = "MEMBER_MISSING";
+      return true;
+    case ValidationExceptionType::MEMBER_MIN_VALUE:
+      value = "MEMBER_MIN_VALUE";
+      return true;
+    case ValidationExceptionType::MEMBER_MAX_VALUE:
+      value = "MEMBER_MAX_VALUE";
+      return true;
+    case ValidationExceptionType::MEMBER_MIN_LENGTH:
+      value = "MEMBER_MIN_LENGTH";
+      return true;
+    case ValidationExceptionType::MEMBER_MAX_LENGTH:
+      value = "MEMBER_MAX_LENGTH";
+      return true;
+    case ValidationExceptionType::MEMBER_INVALID_ENUM_VALUE:
+      value = "MEMBER_INVALID_ENUM_VALUE";
+      return true;
+    case ValidationExceptionType::MEMBER_DOES_NOT_MATCH_PATTERN:
+      value = "MEMBER_DOES_NOT_MATCH_PATTERN";
+      return true;
+    case ValidationExceptionType::INVALID_MANIFEST_FILTER:
+      value = "INVALID_MANIFEST_FILTER";
+      return true;
+    case ValidationExceptionType::INVALID_DRM_SETTINGS:
+      value = "INVALID_DRM_SETTINGS";
+      return true;
+    case ValidationExceptionType::INVALID_TIME_DELAY_SECONDS:
+      value = "INVALID_TIME_DELAY_SECONDS";
+      return true;
+    case ValidationExceptionType::END_TIME_EARLIER_THAN_START_TIME:
+      value = "END_TIME_EARLIER_THAN_START_TIME";
+      return true;
+    case ValidationExceptionType::TS_CONTAINER_TYPE_WITH_DASH_MANIFEST:
+      value = "TS_CONTAINER_TYPE_WITH_DASH_MANIFEST";
+      return true;
+    case ValidationExceptionType::DIRECT_MODE_WITH_TIMING_SOURCE:
+      value = "DIRECT_MODE_WITH_TIMING_SOURCE";
+      return true;
+    case ValidationExceptionType::NONE_MODE_WITH_TIMING_SOURCE:
+      value = "NONE_MODE_WITH_TIMING_SOURCE";
+      return true;
+    case ValidationExceptionType::TIMING_SOURCE_MISSING:
+      value = "TIMING_SOURCE_MISSING";
+      return true;
+    case ValidationExceptionType::UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION:
+      value = "UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION";
+      return true;
+    case ValidationExceptionType::PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES:
+      value = "PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES";
+      return true;
+    case ValidationExceptionType::DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS:
+      value = "DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS";
+      return true;
+    case ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION:
+      value = "ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION";
+      return true;
+    case ValidationExceptionType::SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY:
+      value = "SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY";
+      return true;
+    case ValidationExceptionType::HARVESTED_MANIFEST_HAS_START_END_FILTER_CONFIGURATION:
+      value = "HARVESTED_MANIFEST_HAS_START_END_FILTER_CONFIGURATION";
+      return true;
+    case ValidationExceptionType::HARVESTED_MANIFEST_NOT_FOUND_ON_ENDPOINT:
+      value = "HARVESTED_MANIFEST_NOT_FOUND_ON_ENDPOINT";
+      return true;
+    case ValidationExceptionType::TOO_MANY_IN_PROGRESS_HARVEST_JOBS:
+      value = "TOO_MANY_IN_PROGRESS_HARVEST_JOBS";
+      return true;
+    case ValidationExceptionType::HARVEST_JOB_INELIGIBLE_FOR_CANCELLATION:
+      value = "HARVEST_JOB_INELIGIBLE_FOR_CANCELLATION";
+      return true;
+    case ValidationExceptionType::INVALID_HARVEST_JOB_DURATION:
+      value = "INVALID_HARVEST_JOB_DURATION";
+      return true;
+    case ValidationExceptionType::HARVEST_JOB_S3_DESTINATION_MISSING_OR_INCOMPLETE:
+      value = "HARVEST_JOB_S3_DESTINATION_MISSING_OR_INCOMPLETE";
+      return true;
+    case ValidationExceptionType::HARVEST_JOB_UNABLE_TO_WRITE_TO_S3_DESTINATION:
+      value = "HARVEST_JOB_UNABLE_TO_WRITE_TO_S3_DESTINATION";
+      return true;
+    case ValidationExceptionType::HARVEST_JOB_CUSTOMER_ENDPOINT_READ_ACCESS_DENIED:
+      value = "HARVEST_JOB_CUSTOMER_ENDPOINT_READ_ACCESS_DENIED";
+      return true;
+    case ValidationExceptionType::CLIP_START_TIME_WITH_START_OR_END:
+      value = "CLIP_START_TIME_WITH_START_OR_END";
+      return true;
+    case ValidationExceptionType::START_TAG_TIME_OFFSET_INVALID:
+      value = "START_TAG_TIME_OFFSET_INVALID";
+      return true;
+    case ValidationExceptionType::INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION:
+      value = "INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION";
+      return true;
+    case ValidationExceptionType::DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE:
+      value = "DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE";
+      return true;
+    case ValidationExceptionType::INCOMPATIBLE_DASH_COMPACTNESS_CONFIGURATION:
+      value = "INCOMPATIBLE_DASH_COMPACTNESS_CONFIGURATION";
+      return true;
+    case ValidationExceptionType::INCOMPATIBLE_XML_ENCODING:
+      value = "INCOMPATIBLE_XML_ENCODING";
+      return true;
+    case ValidationExceptionType::CMAF_EXCLUDE_SEGMENT_DRM_METADATA_INCOMPATIBLE_CONTAINER_TYPE:
+      value = "CMAF_EXCLUDE_SEGMENT_DRM_METADATA_INCOMPATIBLE_CONTAINER_TYPE";
+      return true;
+    case ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING:
+      value = "ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING";
+      return true;
+    case ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION:
+      value = "ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION";
+      return true;
+    case ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_PREFERRED_INPUT_CONFIGURATION:
+      value = "ONLY_CMAF_INPUT_TYPE_ALLOW_PREFERRED_INPUT_CONFIGURATION";
+      return true;
+    case ValidationExceptionType::TS_CONTAINER_TYPE_WITH_MSS_MANIFEST:
+      value = "TS_CONTAINER_TYPE_WITH_MSS_MANIFEST";
+      return true;
+    case ValidationExceptionType::CMAF_CONTAINER_TYPE_WITH_MSS_MANIFEST:
+      value = "CMAF_CONTAINER_TYPE_WITH_MSS_MANIFEST";
+      return true;
+    case ValidationExceptionType::ISM_CONTAINER_TYPE_WITH_HLS_MANIFEST:
+      value = "ISM_CONTAINER_TYPE_WITH_HLS_MANIFEST";
+      return true;
+    case ValidationExceptionType::ISM_CONTAINER_TYPE_WITH_LL_HLS_MANIFEST:
+      value = "ISM_CONTAINER_TYPE_WITH_LL_HLS_MANIFEST";
+      return true;
+    case ValidationExceptionType::ISM_CONTAINER_TYPE_WITH_DASH_MANIFEST:
+      value = "ISM_CONTAINER_TYPE_WITH_DASH_MANIFEST";
+      return true;
+    case ValidationExceptionType::ISM_CONTAINER_TYPE_WITH_SCTE:
+      value = "ISM_CONTAINER_TYPE_WITH_SCTE";
+      return true;
+    case ValidationExceptionType::ISM_CONTAINER_WITH_KEY_ROTATION:
+      value = "ISM_CONTAINER_WITH_KEY_ROTATION";
+      return true;
+    case ValidationExceptionType::BATCH_GET_SECRET_VALUE_DENIED:
+      value = "BATCH_GET_SECRET_VALUE_DENIED";
+      return true;
+    case ValidationExceptionType::GET_SECRET_VALUE_DENIED:
+      value = "GET_SECRET_VALUE_DENIED";
+      return true;
+    case ValidationExceptionType::DESCRIBE_SECRET_DENIED:
+      value = "DESCRIBE_SECRET_DENIED";
+      return true;
+    case ValidationExceptionType::INVALID_SECRET_FORMAT:
+      value = "INVALID_SECRET_FORMAT";
+      return true;
+    case ValidationExceptionType::SECRET_IS_NOT_ONE_KEY_VALUE_PAIR:
+      value = "SECRET_IS_NOT_ONE_KEY_VALUE_PAIR";
+      return true;
+    case ValidationExceptionType::INVALID_SECRET_KEY:
+      value = "INVALID_SECRET_KEY";
+      return true;
+    case ValidationExceptionType::INVALID_SECRET_VALUE:
+      value = "INVALID_SECRET_VALUE";
+      return true;
+    case ValidationExceptionType::SECRET_ARN_RESOURCE_NOT_FOUND:
+      value = "SECRET_ARN_RESOURCE_NOT_FOUND";
+      return true;
+    case ValidationExceptionType::DECRYPT_SECRET_FAILED:
+      value = "DECRYPT_SECRET_FAILED";
+      return true;
+    case ValidationExceptionType::TOO_MANY_SECRETS:
+      value = "TOO_MANY_SECRETS";
+      return true;
+    case ValidationExceptionType::DUPLICATED_SECRET:
+      value = "DUPLICATED_SECRET";
+      return true;
+    case ValidationExceptionType::MALFORMED_SECRET_ARN:
+      value = "MALFORMED_SECRET_ARN";
+      return true;
+    case ValidationExceptionType::SECRET_FROM_DIFFERENT_ACCOUNT:
+      value = "SECRET_FROM_DIFFERENT_ACCOUNT";
+      return true;
+    case ValidationExceptionType::SECRET_FROM_DIFFERENT_REGION:
+      value = "SECRET_FROM_DIFFERENT_REGION";
+      return true;
+    case ValidationExceptionType::INVALID_SECRET:
+      value = "INVALID_SECRET";
+      return true;
+    case ValidationExceptionType::RESOURCE_NOT_IN_SAME_REGION:
+      value = "RESOURCE_NOT_IN_SAME_REGION";
+      return true;
+    case ValidationExceptionType::CERTIFICATE_RESOURCE_NOT_FOUND:
+      value = "CERTIFICATE_RESOURCE_NOT_FOUND";
+      return true;
+    case ValidationExceptionType::CERTIFICATE_ACCESS_DENIED:
+      value = "CERTIFICATE_ACCESS_DENIED";
+      return true;
+    case ValidationExceptionType::DESCRIBE_CERTIFICATE_FAILED:
+      value = "DESCRIBE_CERTIFICATE_FAILED";
+      return true;
+    case ValidationExceptionType::INVALID_CERTIFICATE_STATUS:
+      value = "INVALID_CERTIFICATE_STATUS";
+      return true;
+    case ValidationExceptionType::INVALID_CERTIFICATE_KEY_ALGORITHM:
+      value = "INVALID_CERTIFICATE_KEY_ALGORITHM";
+      return true;
+    case ValidationExceptionType::INVALID_CERTIFICATE_SIGNATURE_ALGORITHM:
+      value = "INVALID_CERTIFICATE_SIGNATURE_ALGORITHM";
+      return true;
+    case ValidationExceptionType::MISSING_CERTIFICATE_DOMAIN_NAME:
+      value = "MISSING_CERTIFICATE_DOMAIN_NAME";
+      return true;
+    case ValidationExceptionType::INVALID_ARN:
+      value = "INVALID_ARN";
+      return true;
+    case ValidationExceptionType::SCTE_IN_MANIFESTS_INVALID_CONFIGURATION:
+      value = "SCTE_IN_MANIFESTS_INVALID_CONFIGURATION";
+      return true;
+    case ValidationExceptionType::CUSTOM_AD_TYPES_INVALID_CONFIGURATION:
+      value = "CUSTOM_AD_TYPES_INVALID_CONFIGURATION";
+      return true;
+    case ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_OUTPUT_LOCKING_MODE:
+      value = "ONLY_CMAF_INPUT_TYPE_ALLOW_OUTPUT_LOCKING_MODE";
+      return true;
+    case ValidationExceptionType::ONLY_NON_EPOCH_LOCKED_ALLOW_OUTPUT_TIMESTAMP_MODE:
+      value = "ONLY_NON_EPOCH_LOCKED_ALLOW_OUTPUT_TIMESTAMP_MODE";
+      return true;
+    case ValidationExceptionType::OUTPUT_TIMESTAMP_MODE_IMMUTABLE:
+      value = "OUTPUT_TIMESTAMP_MODE_IMMUTABLE";
+      return true;
+    case ValidationExceptionType::NON_EPOCH_LOCKED_WITH_FORCE_ENDPOINT_ERROR_CONFIGURATION:
+      value = "NON_EPOCH_LOCKED_WITH_FORCE_ENDPOINT_ERROR_CONFIGURATION";
+      return true;
+    case ValidationExceptionType::ONLY_HLS_INPUT_TYPE_ALLOW_STREAM_NAME_OUTPUT_MODE:
+      value = "ONLY_HLS_INPUT_TYPE_ALLOW_STREAM_NAME_OUTPUT_MODE";
+      return true;
+    case ValidationExceptionType::STREAM_NAME_OUTPUT_MODE_IMMUTABLE:
+      value = "STREAM_NAME_OUTPUT_MODE_IMMUTABLE";
+      return true;
+    case ValidationExceptionType::MULTIVIEW_CONFIGURATION_REQUIRED:
+      value = "MULTIVIEW_CONFIGURATION_REQUIRED";
+      return true;
+    case ValidationExceptionType::MULTIVIEW_CONFIGURATION_NOT_ALLOWED:
+      value = "MULTIVIEW_CONFIGURATION_NOT_ALLOWED";
+      return true;
+    case ValidationExceptionType::MULTIVIEW_SOURCE_NOT_FOUND:
+      value = "MULTIVIEW_SOURCE_NOT_FOUND";
+      return true;
+    case ValidationExceptionType::MULTIVIEW_SOURCE_INVALID_INPUT_TYPE:
+      value = "MULTIVIEW_SOURCE_INVALID_INPUT_TYPE";
+      return true;
+    case ValidationExceptionType::MULTIVIEW_CHANNEL_POLICY_NOT_ALLOWED:
+      value = "MULTIVIEW_CHANNEL_POLICY_NOT_ALLOWED";
+      return true;
+    case ValidationExceptionType::MULTIVIEW_INPUT_TYPE_WITH_LL_HLS_MANIFEST:
+      value = "MULTIVIEW_INPUT_TYPE_WITH_LL_HLS_MANIFEST";
+      return true;
+    case ValidationExceptionType::MULTIVIEW_INPUT_TYPE_WITH_MSS_MANIFEST:
+      value = "MULTIVIEW_INPUT_TYPE_WITH_MSS_MANIFEST";
+      return true;
+    case ValidationExceptionType::MULTIVIEW_INPUT_TYPE_WITH_ISM_CONTAINER:
+      value = "MULTIVIEW_INPUT_TYPE_WITH_ISM_CONTAINER";
+      return true;
+    case ValidationExceptionType::MULTIVIEW_INPUT_TYPE_WITH_FILTER_CONFIGURATION:
+      value = "MULTIVIEW_INPUT_TYPE_WITH_FILTER_CONFIGURATION";
+      return true;
+    case ValidationExceptionType::MULTIVIEW_INPUT_TYPE_WITH_START_TAG:
+      value = "MULTIVIEW_INPUT_TYPE_WITH_START_TAG";
+      return true;
+    case ValidationExceptionType::MULTIVIEW_INPUT_TYPE_WITH_HARVEST_JOB:
+      value = "MULTIVIEW_INPUT_TYPE_WITH_HARVEST_JOB";
+      return true;
+    case ValidationExceptionType::MULTIVIEW_RESET_NOT_ALLOWED:
+      value = "MULTIVIEW_RESET_NOT_ALLOWED";
+      return true;
+    case ValidationExceptionType::MULTIVIEW_DUPLICATE_SOURCE:
+      value = "MULTIVIEW_DUPLICATE_SOURCE";
+      return true;
+    case ValidationExceptionType::MULTIVIEW_DUPLICATE_LAYOUT:
+      value = "MULTIVIEW_DUPLICATE_LAYOUT";
+      return true;
+    case ValidationExceptionType::MULTIVIEW_INPUT_SWITCH_NOT_ALLOWED:
+      value = "MULTIVIEW_INPUT_SWITCH_NOT_ALLOWED";
+      return true;
+    case ValidationExceptionType::MULTIVIEW_OUTPUT_HEADER_NOT_ALLOWED:
+      value = "MULTIVIEW_OUTPUT_HEADER_NOT_ALLOWED";
+      return true;
+    default:
+      return false;
+  }
+}
+static bool GetNameForEnumHelper1(ValidationExceptionType enumValue, Aws::String& value) {
+  switch (enumValue) {
+    case ValidationExceptionType::MULTIVIEW_STARTOVER_WINDOW_NOT_ALLOWED:
+      value = "MULTIVIEW_STARTOVER_WINDOW_NOT_ALLOWED";
+      return true;
+    case ValidationExceptionType::MULTIVIEW_INVALID_TIME_DELAY_SECONDS:
+      value = "MULTIVIEW_INVALID_TIME_DELAY_SECONDS";
+      return true;
+    case ValidationExceptionType::MULTIVIEW_MANIFEST_WINDOW_TOO_LONG:
+      value = "MULTIVIEW_MANIFEST_WINDOW_TOO_LONG";
+      return true;
+    case ValidationExceptionType::MULTIVIEW_INPUT_TYPE_WITH_IFRAME_ONLY_STREAMS:
+      value = "MULTIVIEW_INPUT_TYPE_WITH_IFRAME_ONLY_STREAMS";
+      return true;
+    case ValidationExceptionType::MULTIVIEW_INPUT_TYPE_WITH_NON_EPOCH_LOCKED:
+      value = "MULTIVIEW_INPUT_TYPE_WITH_NON_EPOCH_LOCKED";
+      return true;
+    case ValidationExceptionType::MULTIVIEW_INPUT_TYPE_WITH_SEGMENT_DURATION:
+      value = "MULTIVIEW_INPUT_TYPE_WITH_SEGMENT_DURATION";
+      return true;
+    case ValidationExceptionType::MULTIVIEW_SOURCE_NON_EPOCH_LOCKED:
+      value = "MULTIVIEW_SOURCE_NON_EPOCH_LOCKED";
+      return true;
+    case ValidationExceptionType::MULTIVIEW_SCTE_REQUIRES_AVAILS_PERIOD_TRIGGER:
+      value = "MULTIVIEW_SCTE_REQUIRES_AVAILS_PERIOD_TRIGGER";
+      return true;
+    default:
+      return false;
+  }
+}
 
 ValidationExceptionType GetValidationExceptionTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == CONTAINER_TYPE_IMMUTABLE_HASH) {
-    return ValidationExceptionType::CONTAINER_TYPE_IMMUTABLE;
-  } else if (hashCode == INVALID_PAGINATION_TOKEN_HASH) {
-    return ValidationExceptionType::INVALID_PAGINATION_TOKEN;
-  } else if (hashCode == INVALID_PAGINATION_MAX_RESULTS_HASH) {
-    return ValidationExceptionType::INVALID_PAGINATION_MAX_RESULTS;
-  } else if (hashCode == INVALID_POLICY_HASH) {
-    return ValidationExceptionType::INVALID_POLICY;
-  } else if (hashCode == INVALID_ROLE_ARN_HASH) {
-    return ValidationExceptionType::INVALID_ROLE_ARN;
-  } else if (hashCode == MANIFEST_NAME_COLLISION_HASH) {
-    return ValidationExceptionType::MANIFEST_NAME_COLLISION;
-  } else if (hashCode == ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH_HASH) {
-    return ValidationExceptionType::ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH;
-  } else if (hashCode == CENC_IV_INCOMPATIBLE_HASH) {
-    return ValidationExceptionType::CENC_IV_INCOMPATIBLE;
-  } else if (hashCode == ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE_HASH) {
-    return ValidationExceptionType::ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE;
-  } else if (hashCode == ENCRYPTION_CONTRACT_WITH_ISM_CONTAINER_INCOMPATIBLE_HASH) {
-    return ValidationExceptionType::ENCRYPTION_CONTRACT_WITH_ISM_CONTAINER_INCOMPATIBLE;
-  } else if (hashCode == ENCRYPTION_CONTRACT_UNENCRYPTED_HASH) {
-    return ValidationExceptionType::ENCRYPTION_CONTRACT_UNENCRYPTED;
-  } else if (hashCode == ENCRYPTION_CONTRACT_SHARED_HASH) {
-    return ValidationExceptionType::ENCRYPTION_CONTRACT_SHARED;
-  } else if (hashCode == NUM_MANIFESTS_LOW_HASH) {
-    return ValidationExceptionType::NUM_MANIFESTS_LOW;
-  } else if (hashCode == NUM_MANIFESTS_HIGH_HASH) {
-    return ValidationExceptionType::NUM_MANIFESTS_HIGH;
-  } else if (hashCode == MANIFEST_DRM_SYSTEMS_INCOMPATIBLE_HASH) {
-    return ValidationExceptionType::MANIFEST_DRM_SYSTEMS_INCOMPATIBLE;
-  } else if (hashCode == DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE_HASH) {
-    return ValidationExceptionType::DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE;
-  } else if (hashCode == ROLE_ARN_NOT_ASSUMABLE_HASH) {
-    return ValidationExceptionType::ROLE_ARN_NOT_ASSUMABLE;
-  } else if (hashCode == ROLE_ARN_LENGTH_OUT_OF_RANGE_HASH) {
-    return ValidationExceptionType::ROLE_ARN_LENGTH_OUT_OF_RANGE;
-  } else if (hashCode == ROLE_ARN_INVALID_FORMAT_HASH) {
-    return ValidationExceptionType::ROLE_ARN_INVALID_FORMAT;
-  } else if (hashCode == URL_INVALID_HASH) {
-    return ValidationExceptionType::URL_INVALID;
-  } else if (hashCode == URL_SCHEME_HASH) {
-    return ValidationExceptionType::URL_SCHEME;
-  } else if (hashCode == URL_USER_INFO_HASH) {
-    return ValidationExceptionType::URL_USER_INFO;
-  } else if (hashCode == URL_PORT_HASH) {
-    return ValidationExceptionType::URL_PORT;
-  } else if (hashCode == URL_UNKNOWN_HOST_HASH) {
-    return ValidationExceptionType::URL_UNKNOWN_HOST;
-  } else if (hashCode == URL_LOCAL_ADDRESS_HASH) {
-    return ValidationExceptionType::URL_LOCAL_ADDRESS;
-  } else if (hashCode == URL_LOOPBACK_ADDRESS_HASH) {
-    return ValidationExceptionType::URL_LOOPBACK_ADDRESS;
-  } else if (hashCode == URL_LINK_LOCAL_ADDRESS_HASH) {
-    return ValidationExceptionType::URL_LINK_LOCAL_ADDRESS;
-  } else if (hashCode == URL_MULTICAST_ADDRESS_HASH) {
-    return ValidationExceptionType::URL_MULTICAST_ADDRESS;
-  } else if (hashCode == MEMBER_INVALID_HASH) {
-    return ValidationExceptionType::MEMBER_INVALID;
-  } else if (hashCode == MEMBER_MISSING_HASH) {
-    return ValidationExceptionType::MEMBER_MISSING;
-  } else if (hashCode == MEMBER_MIN_VALUE_HASH) {
-    return ValidationExceptionType::MEMBER_MIN_VALUE;
-  } else if (hashCode == MEMBER_MAX_VALUE_HASH) {
-    return ValidationExceptionType::MEMBER_MAX_VALUE;
-  } else if (hashCode == MEMBER_MIN_LENGTH_HASH) {
-    return ValidationExceptionType::MEMBER_MIN_LENGTH;
-  } else if (hashCode == MEMBER_MAX_LENGTH_HASH) {
-    return ValidationExceptionType::MEMBER_MAX_LENGTH;
-  } else if (hashCode == MEMBER_INVALID_ENUM_VALUE_HASH) {
-    return ValidationExceptionType::MEMBER_INVALID_ENUM_VALUE;
-  } else if (hashCode == MEMBER_DOES_NOT_MATCH_PATTERN_HASH) {
-    return ValidationExceptionType::MEMBER_DOES_NOT_MATCH_PATTERN;
-  } else if (hashCode == INVALID_MANIFEST_FILTER_HASH) {
-    return ValidationExceptionType::INVALID_MANIFEST_FILTER;
-  } else if (hashCode == INVALID_DRM_SETTINGS_HASH) {
-    return ValidationExceptionType::INVALID_DRM_SETTINGS;
-  } else if (hashCode == INVALID_TIME_DELAY_SECONDS_HASH) {
-    return ValidationExceptionType::INVALID_TIME_DELAY_SECONDS;
-  } else if (hashCode == END_TIME_EARLIER_THAN_START_TIME_HASH) {
-    return ValidationExceptionType::END_TIME_EARLIER_THAN_START_TIME;
-  } else if (hashCode == TS_CONTAINER_TYPE_WITH_DASH_MANIFEST_HASH) {
-    return ValidationExceptionType::TS_CONTAINER_TYPE_WITH_DASH_MANIFEST;
-  } else if (hashCode == DIRECT_MODE_WITH_TIMING_SOURCE_HASH) {
-    return ValidationExceptionType::DIRECT_MODE_WITH_TIMING_SOURCE;
-  } else if (hashCode == NONE_MODE_WITH_TIMING_SOURCE_HASH) {
-    return ValidationExceptionType::NONE_MODE_WITH_TIMING_SOURCE;
-  } else if (hashCode == TIMING_SOURCE_MISSING_HASH) {
-    return ValidationExceptionType::TIMING_SOURCE_MISSING;
-  } else if (hashCode == UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION_HASH) {
-    return ValidationExceptionType::UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION;
-  } else if (hashCode == PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES_HASH) {
-    return ValidationExceptionType::PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES;
-  } else if (hashCode == DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS_HASH) {
-    return ValidationExceptionType::DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS;
-  } else if (hashCode == ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION_HASH) {
-    return ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION;
-  } else if (hashCode == SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY_HASH) {
-    return ValidationExceptionType::SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY;
-  } else if (hashCode == HARVESTED_MANIFEST_HAS_START_END_FILTER_CONFIGURATION_HASH) {
-    return ValidationExceptionType::HARVESTED_MANIFEST_HAS_START_END_FILTER_CONFIGURATION;
-  } else if (hashCode == HARVESTED_MANIFEST_NOT_FOUND_ON_ENDPOINT_HASH) {
-    return ValidationExceptionType::HARVESTED_MANIFEST_NOT_FOUND_ON_ENDPOINT;
-  } else if (hashCode == TOO_MANY_IN_PROGRESS_HARVEST_JOBS_HASH) {
-    return ValidationExceptionType::TOO_MANY_IN_PROGRESS_HARVEST_JOBS;
-  } else if (hashCode == HARVEST_JOB_INELIGIBLE_FOR_CANCELLATION_HASH) {
-    return ValidationExceptionType::HARVEST_JOB_INELIGIBLE_FOR_CANCELLATION;
-  } else if (hashCode == INVALID_HARVEST_JOB_DURATION_HASH) {
-    return ValidationExceptionType::INVALID_HARVEST_JOB_DURATION;
-  } else if (hashCode == HARVEST_JOB_S3_DESTINATION_MISSING_OR_INCOMPLETE_HASH) {
-    return ValidationExceptionType::HARVEST_JOB_S3_DESTINATION_MISSING_OR_INCOMPLETE;
-  } else if (hashCode == HARVEST_JOB_UNABLE_TO_WRITE_TO_S3_DESTINATION_HASH) {
-    return ValidationExceptionType::HARVEST_JOB_UNABLE_TO_WRITE_TO_S3_DESTINATION;
-  } else if (hashCode == HARVEST_JOB_CUSTOMER_ENDPOINT_READ_ACCESS_DENIED_HASH) {
-    return ValidationExceptionType::HARVEST_JOB_CUSTOMER_ENDPOINT_READ_ACCESS_DENIED;
-  } else if (hashCode == CLIP_START_TIME_WITH_START_OR_END_HASH) {
-    return ValidationExceptionType::CLIP_START_TIME_WITH_START_OR_END;
-  } else if (hashCode == START_TAG_TIME_OFFSET_INVALID_HASH) {
-    return ValidationExceptionType::START_TAG_TIME_OFFSET_INVALID;
-  } else if (hashCode == INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION_HASH) {
-    return ValidationExceptionType::INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION;
-  } else if (hashCode == DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE_HASH) {
-    return ValidationExceptionType::DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE;
-  } else if (hashCode == INCOMPATIBLE_DASH_COMPACTNESS_CONFIGURATION_HASH) {
-    return ValidationExceptionType::INCOMPATIBLE_DASH_COMPACTNESS_CONFIGURATION;
-  } else if (hashCode == INCOMPATIBLE_XML_ENCODING_HASH) {
-    return ValidationExceptionType::INCOMPATIBLE_XML_ENCODING;
-  } else if (hashCode == CMAF_EXCLUDE_SEGMENT_DRM_METADATA_INCOMPATIBLE_CONTAINER_TYPE_HASH) {
-    return ValidationExceptionType::CMAF_EXCLUDE_SEGMENT_DRM_METADATA_INCOMPATIBLE_CONTAINER_TYPE;
-  } else if (hashCode == ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING_HASH) {
-    return ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING;
-  } else if (hashCode == ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION_HASH) {
-    return ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION;
-  } else if (hashCode == ONLY_CMAF_INPUT_TYPE_ALLOW_PREFERRED_INPUT_CONFIGURATION_HASH) {
-    return ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_PREFERRED_INPUT_CONFIGURATION;
-  } else if (hashCode == TS_CONTAINER_TYPE_WITH_MSS_MANIFEST_HASH) {
-    return ValidationExceptionType::TS_CONTAINER_TYPE_WITH_MSS_MANIFEST;
-  } else if (hashCode == CMAF_CONTAINER_TYPE_WITH_MSS_MANIFEST_HASH) {
-    return ValidationExceptionType::CMAF_CONTAINER_TYPE_WITH_MSS_MANIFEST;
-  } else if (hashCode == ISM_CONTAINER_TYPE_WITH_HLS_MANIFEST_HASH) {
-    return ValidationExceptionType::ISM_CONTAINER_TYPE_WITH_HLS_MANIFEST;
-  } else if (hashCode == ISM_CONTAINER_TYPE_WITH_LL_HLS_MANIFEST_HASH) {
-    return ValidationExceptionType::ISM_CONTAINER_TYPE_WITH_LL_HLS_MANIFEST;
-  } else if (hashCode == ISM_CONTAINER_TYPE_WITH_DASH_MANIFEST_HASH) {
-    return ValidationExceptionType::ISM_CONTAINER_TYPE_WITH_DASH_MANIFEST;
-  } else if (hashCode == ISM_CONTAINER_TYPE_WITH_SCTE_HASH) {
-    return ValidationExceptionType::ISM_CONTAINER_TYPE_WITH_SCTE;
-  } else if (hashCode == ISM_CONTAINER_WITH_KEY_ROTATION_HASH) {
-    return ValidationExceptionType::ISM_CONTAINER_WITH_KEY_ROTATION;
-  } else if (hashCode == BATCH_GET_SECRET_VALUE_DENIED_HASH) {
-    return ValidationExceptionType::BATCH_GET_SECRET_VALUE_DENIED;
-  } else if (hashCode == GET_SECRET_VALUE_DENIED_HASH) {
-    return ValidationExceptionType::GET_SECRET_VALUE_DENIED;
-  } else if (hashCode == DESCRIBE_SECRET_DENIED_HASH) {
-    return ValidationExceptionType::DESCRIBE_SECRET_DENIED;
-  } else if (hashCode == INVALID_SECRET_FORMAT_HASH) {
-    return ValidationExceptionType::INVALID_SECRET_FORMAT;
-  } else if (hashCode == SECRET_IS_NOT_ONE_KEY_VALUE_PAIR_HASH) {
-    return ValidationExceptionType::SECRET_IS_NOT_ONE_KEY_VALUE_PAIR;
-  } else if (hashCode == INVALID_SECRET_KEY_HASH) {
-    return ValidationExceptionType::INVALID_SECRET_KEY;
-  } else if (hashCode == INVALID_SECRET_VALUE_HASH) {
-    return ValidationExceptionType::INVALID_SECRET_VALUE;
-  } else if (hashCode == SECRET_ARN_RESOURCE_NOT_FOUND_HASH) {
-    return ValidationExceptionType::SECRET_ARN_RESOURCE_NOT_FOUND;
-  } else if (hashCode == DECRYPT_SECRET_FAILED_HASH) {
-    return ValidationExceptionType::DECRYPT_SECRET_FAILED;
-  } else if (hashCode == TOO_MANY_SECRETS_HASH) {
-    return ValidationExceptionType::TOO_MANY_SECRETS;
-  } else if (hashCode == DUPLICATED_SECRET_HASH) {
-    return ValidationExceptionType::DUPLICATED_SECRET;
-  } else if (hashCode == MALFORMED_SECRET_ARN_HASH) {
-    return ValidationExceptionType::MALFORMED_SECRET_ARN;
-  } else if (hashCode == SECRET_FROM_DIFFERENT_ACCOUNT_HASH) {
-    return ValidationExceptionType::SECRET_FROM_DIFFERENT_ACCOUNT;
-  } else if (hashCode == SECRET_FROM_DIFFERENT_REGION_HASH) {
-    return ValidationExceptionType::SECRET_FROM_DIFFERENT_REGION;
-  } else if (hashCode == INVALID_SECRET_HASH) {
-    return ValidationExceptionType::INVALID_SECRET;
-  } else if (hashCode == RESOURCE_NOT_IN_SAME_REGION_HASH) {
-    return ValidationExceptionType::RESOURCE_NOT_IN_SAME_REGION;
-  } else if (hashCode == CERTIFICATE_RESOURCE_NOT_FOUND_HASH) {
-    return ValidationExceptionType::CERTIFICATE_RESOURCE_NOT_FOUND;
-  } else if (hashCode == CERTIFICATE_ACCESS_DENIED_HASH) {
-    return ValidationExceptionType::CERTIFICATE_ACCESS_DENIED;
-  } else if (hashCode == DESCRIBE_CERTIFICATE_FAILED_HASH) {
-    return ValidationExceptionType::DESCRIBE_CERTIFICATE_FAILED;
-  } else if (hashCode == INVALID_CERTIFICATE_STATUS_HASH) {
-    return ValidationExceptionType::INVALID_CERTIFICATE_STATUS;
-  } else if (hashCode == INVALID_CERTIFICATE_KEY_ALGORITHM_HASH) {
-    return ValidationExceptionType::INVALID_CERTIFICATE_KEY_ALGORITHM;
-  } else if (hashCode == INVALID_CERTIFICATE_SIGNATURE_ALGORITHM_HASH) {
-    return ValidationExceptionType::INVALID_CERTIFICATE_SIGNATURE_ALGORITHM;
-  } else if (hashCode == MISSING_CERTIFICATE_DOMAIN_NAME_HASH) {
-    return ValidationExceptionType::MISSING_CERTIFICATE_DOMAIN_NAME;
-  } else if (hashCode == INVALID_ARN_HASH) {
-    return ValidationExceptionType::INVALID_ARN;
-  } else if (hashCode == SCTE_IN_MANIFESTS_INVALID_CONFIGURATION_HASH) {
-    return ValidationExceptionType::SCTE_IN_MANIFESTS_INVALID_CONFIGURATION;
-  } else if (hashCode == CUSTOM_AD_TYPES_INVALID_CONFIGURATION_HASH) {
-    return ValidationExceptionType::CUSTOM_AD_TYPES_INVALID_CONFIGURATION;
-  } else if (hashCode == ONLY_CMAF_INPUT_TYPE_ALLOW_OUTPUT_LOCKING_MODE_HASH) {
-    return ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_OUTPUT_LOCKING_MODE;
-  } else if (hashCode == ONLY_NON_EPOCH_LOCKED_ALLOW_OUTPUT_TIMESTAMP_MODE_HASH) {
-    return ValidationExceptionType::ONLY_NON_EPOCH_LOCKED_ALLOW_OUTPUT_TIMESTAMP_MODE;
-  } else if (hashCode == OUTPUT_TIMESTAMP_MODE_IMMUTABLE_HASH) {
-    return ValidationExceptionType::OUTPUT_TIMESTAMP_MODE_IMMUTABLE;
-  } else if (hashCode == NON_EPOCH_LOCKED_WITH_FORCE_ENDPOINT_ERROR_CONFIGURATION_HASH) {
-    return ValidationExceptionType::NON_EPOCH_LOCKED_WITH_FORCE_ENDPOINT_ERROR_CONFIGURATION;
-  } else if (hashCode == ONLY_HLS_INPUT_TYPE_ALLOW_STREAM_NAME_OUTPUT_MODE_HASH) {
-    return ValidationExceptionType::ONLY_HLS_INPUT_TYPE_ALLOW_STREAM_NAME_OUTPUT_MODE;
-  } else if (hashCode == STREAM_NAME_OUTPUT_MODE_IMMUTABLE_HASH) {
-    return ValidationExceptionType::STREAM_NAME_OUTPUT_MODE_IMMUTABLE;
+  ValidationExceptionType enumValue;
+  if (GetEnumForNameHelper0(hashCode, enumValue)) {
+    return enumValue;
+  } else if (GetEnumForNameHelper1(hashCode, enumValue)) {
+    return enumValue;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -366,229 +993,18 @@ ValidationExceptionType GetValidationExceptionTypeForName(const Aws::String& nam
 }
 
 Aws::String GetNameForValidationExceptionType(ValidationExceptionType enumValue) {
-  switch (enumValue) {
-    case ValidationExceptionType::NOT_SET:
-      return {};
-    case ValidationExceptionType::CONTAINER_TYPE_IMMUTABLE:
-      return "CONTAINER_TYPE_IMMUTABLE";
-    case ValidationExceptionType::INVALID_PAGINATION_TOKEN:
-      return "INVALID_PAGINATION_TOKEN";
-    case ValidationExceptionType::INVALID_PAGINATION_MAX_RESULTS:
-      return "INVALID_PAGINATION_MAX_RESULTS";
-    case ValidationExceptionType::INVALID_POLICY:
-      return "INVALID_POLICY";
-    case ValidationExceptionType::INVALID_ROLE_ARN:
-      return "INVALID_ROLE_ARN";
-    case ValidationExceptionType::MANIFEST_NAME_COLLISION:
-      return "MANIFEST_NAME_COLLISION";
-    case ValidationExceptionType::ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH:
-      return "ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH";
-    case ValidationExceptionType::CENC_IV_INCOMPATIBLE:
-      return "CENC_IV_INCOMPATIBLE";
-    case ValidationExceptionType::ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE:
-      return "ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE";
-    case ValidationExceptionType::ENCRYPTION_CONTRACT_WITH_ISM_CONTAINER_INCOMPATIBLE:
-      return "ENCRYPTION_CONTRACT_WITH_ISM_CONTAINER_INCOMPATIBLE";
-    case ValidationExceptionType::ENCRYPTION_CONTRACT_UNENCRYPTED:
-      return "ENCRYPTION_CONTRACT_UNENCRYPTED";
-    case ValidationExceptionType::ENCRYPTION_CONTRACT_SHARED:
-      return "ENCRYPTION_CONTRACT_SHARED";
-    case ValidationExceptionType::NUM_MANIFESTS_LOW:
-      return "NUM_MANIFESTS_LOW";
-    case ValidationExceptionType::NUM_MANIFESTS_HIGH:
-      return "NUM_MANIFESTS_HIGH";
-    case ValidationExceptionType::MANIFEST_DRM_SYSTEMS_INCOMPATIBLE:
-      return "MANIFEST_DRM_SYSTEMS_INCOMPATIBLE";
-    case ValidationExceptionType::DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE:
-      return "DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE";
-    case ValidationExceptionType::ROLE_ARN_NOT_ASSUMABLE:
-      return "ROLE_ARN_NOT_ASSUMABLE";
-    case ValidationExceptionType::ROLE_ARN_LENGTH_OUT_OF_RANGE:
-      return "ROLE_ARN_LENGTH_OUT_OF_RANGE";
-    case ValidationExceptionType::ROLE_ARN_INVALID_FORMAT:
-      return "ROLE_ARN_INVALID_FORMAT";
-    case ValidationExceptionType::URL_INVALID:
-      return "URL_INVALID";
-    case ValidationExceptionType::URL_SCHEME:
-      return "URL_SCHEME";
-    case ValidationExceptionType::URL_USER_INFO:
-      return "URL_USER_INFO";
-    case ValidationExceptionType::URL_PORT:
-      return "URL_PORT";
-    case ValidationExceptionType::URL_UNKNOWN_HOST:
-      return "URL_UNKNOWN_HOST";
-    case ValidationExceptionType::URL_LOCAL_ADDRESS:
-      return "URL_LOCAL_ADDRESS";
-    case ValidationExceptionType::URL_LOOPBACK_ADDRESS:
-      return "URL_LOOPBACK_ADDRESS";
-    case ValidationExceptionType::URL_LINK_LOCAL_ADDRESS:
-      return "URL_LINK_LOCAL_ADDRESS";
-    case ValidationExceptionType::URL_MULTICAST_ADDRESS:
-      return "URL_MULTICAST_ADDRESS";
-    case ValidationExceptionType::MEMBER_INVALID:
-      return "MEMBER_INVALID";
-    case ValidationExceptionType::MEMBER_MISSING:
-      return "MEMBER_MISSING";
-    case ValidationExceptionType::MEMBER_MIN_VALUE:
-      return "MEMBER_MIN_VALUE";
-    case ValidationExceptionType::MEMBER_MAX_VALUE:
-      return "MEMBER_MAX_VALUE";
-    case ValidationExceptionType::MEMBER_MIN_LENGTH:
-      return "MEMBER_MIN_LENGTH";
-    case ValidationExceptionType::MEMBER_MAX_LENGTH:
-      return "MEMBER_MAX_LENGTH";
-    case ValidationExceptionType::MEMBER_INVALID_ENUM_VALUE:
-      return "MEMBER_INVALID_ENUM_VALUE";
-    case ValidationExceptionType::MEMBER_DOES_NOT_MATCH_PATTERN:
-      return "MEMBER_DOES_NOT_MATCH_PATTERN";
-    case ValidationExceptionType::INVALID_MANIFEST_FILTER:
-      return "INVALID_MANIFEST_FILTER";
-    case ValidationExceptionType::INVALID_DRM_SETTINGS:
-      return "INVALID_DRM_SETTINGS";
-    case ValidationExceptionType::INVALID_TIME_DELAY_SECONDS:
-      return "INVALID_TIME_DELAY_SECONDS";
-    case ValidationExceptionType::END_TIME_EARLIER_THAN_START_TIME:
-      return "END_TIME_EARLIER_THAN_START_TIME";
-    case ValidationExceptionType::TS_CONTAINER_TYPE_WITH_DASH_MANIFEST:
-      return "TS_CONTAINER_TYPE_WITH_DASH_MANIFEST";
-    case ValidationExceptionType::DIRECT_MODE_WITH_TIMING_SOURCE:
-      return "DIRECT_MODE_WITH_TIMING_SOURCE";
-    case ValidationExceptionType::NONE_MODE_WITH_TIMING_SOURCE:
-      return "NONE_MODE_WITH_TIMING_SOURCE";
-    case ValidationExceptionType::TIMING_SOURCE_MISSING:
-      return "TIMING_SOURCE_MISSING";
-    case ValidationExceptionType::UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION:
-      return "UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION";
-    case ValidationExceptionType::PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES:
-      return "PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES";
-    case ValidationExceptionType::DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS:
-      return "DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS";
-    case ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION:
-      return "ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION";
-    case ValidationExceptionType::SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY:
-      return "SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY";
-    case ValidationExceptionType::HARVESTED_MANIFEST_HAS_START_END_FILTER_CONFIGURATION:
-      return "HARVESTED_MANIFEST_HAS_START_END_FILTER_CONFIGURATION";
-    case ValidationExceptionType::HARVESTED_MANIFEST_NOT_FOUND_ON_ENDPOINT:
-      return "HARVESTED_MANIFEST_NOT_FOUND_ON_ENDPOINT";
-    case ValidationExceptionType::TOO_MANY_IN_PROGRESS_HARVEST_JOBS:
-      return "TOO_MANY_IN_PROGRESS_HARVEST_JOBS";
-    case ValidationExceptionType::HARVEST_JOB_INELIGIBLE_FOR_CANCELLATION:
-      return "HARVEST_JOB_INELIGIBLE_FOR_CANCELLATION";
-    case ValidationExceptionType::INVALID_HARVEST_JOB_DURATION:
-      return "INVALID_HARVEST_JOB_DURATION";
-    case ValidationExceptionType::HARVEST_JOB_S3_DESTINATION_MISSING_OR_INCOMPLETE:
-      return "HARVEST_JOB_S3_DESTINATION_MISSING_OR_INCOMPLETE";
-    case ValidationExceptionType::HARVEST_JOB_UNABLE_TO_WRITE_TO_S3_DESTINATION:
-      return "HARVEST_JOB_UNABLE_TO_WRITE_TO_S3_DESTINATION";
-    case ValidationExceptionType::HARVEST_JOB_CUSTOMER_ENDPOINT_READ_ACCESS_DENIED:
-      return "HARVEST_JOB_CUSTOMER_ENDPOINT_READ_ACCESS_DENIED";
-    case ValidationExceptionType::CLIP_START_TIME_WITH_START_OR_END:
-      return "CLIP_START_TIME_WITH_START_OR_END";
-    case ValidationExceptionType::START_TAG_TIME_OFFSET_INVALID:
-      return "START_TAG_TIME_OFFSET_INVALID";
-    case ValidationExceptionType::INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION:
-      return "INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION";
-    case ValidationExceptionType::DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE:
-      return "DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE";
-    case ValidationExceptionType::INCOMPATIBLE_DASH_COMPACTNESS_CONFIGURATION:
-      return "INCOMPATIBLE_DASH_COMPACTNESS_CONFIGURATION";
-    case ValidationExceptionType::INCOMPATIBLE_XML_ENCODING:
-      return "INCOMPATIBLE_XML_ENCODING";
-    case ValidationExceptionType::CMAF_EXCLUDE_SEGMENT_DRM_METADATA_INCOMPATIBLE_CONTAINER_TYPE:
-      return "CMAF_EXCLUDE_SEGMENT_DRM_METADATA_INCOMPATIBLE_CONTAINER_TYPE";
-    case ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING:
-      return "ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING";
-    case ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION:
-      return "ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION";
-    case ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_PREFERRED_INPUT_CONFIGURATION:
-      return "ONLY_CMAF_INPUT_TYPE_ALLOW_PREFERRED_INPUT_CONFIGURATION";
-    case ValidationExceptionType::TS_CONTAINER_TYPE_WITH_MSS_MANIFEST:
-      return "TS_CONTAINER_TYPE_WITH_MSS_MANIFEST";
-    case ValidationExceptionType::CMAF_CONTAINER_TYPE_WITH_MSS_MANIFEST:
-      return "CMAF_CONTAINER_TYPE_WITH_MSS_MANIFEST";
-    case ValidationExceptionType::ISM_CONTAINER_TYPE_WITH_HLS_MANIFEST:
-      return "ISM_CONTAINER_TYPE_WITH_HLS_MANIFEST";
-    case ValidationExceptionType::ISM_CONTAINER_TYPE_WITH_LL_HLS_MANIFEST:
-      return "ISM_CONTAINER_TYPE_WITH_LL_HLS_MANIFEST";
-    case ValidationExceptionType::ISM_CONTAINER_TYPE_WITH_DASH_MANIFEST:
-      return "ISM_CONTAINER_TYPE_WITH_DASH_MANIFEST";
-    case ValidationExceptionType::ISM_CONTAINER_TYPE_WITH_SCTE:
-      return "ISM_CONTAINER_TYPE_WITH_SCTE";
-    case ValidationExceptionType::ISM_CONTAINER_WITH_KEY_ROTATION:
-      return "ISM_CONTAINER_WITH_KEY_ROTATION";
-    case ValidationExceptionType::BATCH_GET_SECRET_VALUE_DENIED:
-      return "BATCH_GET_SECRET_VALUE_DENIED";
-    case ValidationExceptionType::GET_SECRET_VALUE_DENIED:
-      return "GET_SECRET_VALUE_DENIED";
-    case ValidationExceptionType::DESCRIBE_SECRET_DENIED:
-      return "DESCRIBE_SECRET_DENIED";
-    case ValidationExceptionType::INVALID_SECRET_FORMAT:
-      return "INVALID_SECRET_FORMAT";
-    case ValidationExceptionType::SECRET_IS_NOT_ONE_KEY_VALUE_PAIR:
-      return "SECRET_IS_NOT_ONE_KEY_VALUE_PAIR";
-    case ValidationExceptionType::INVALID_SECRET_KEY:
-      return "INVALID_SECRET_KEY";
-    case ValidationExceptionType::INVALID_SECRET_VALUE:
-      return "INVALID_SECRET_VALUE";
-    case ValidationExceptionType::SECRET_ARN_RESOURCE_NOT_FOUND:
-      return "SECRET_ARN_RESOURCE_NOT_FOUND";
-    case ValidationExceptionType::DECRYPT_SECRET_FAILED:
-      return "DECRYPT_SECRET_FAILED";
-    case ValidationExceptionType::TOO_MANY_SECRETS:
-      return "TOO_MANY_SECRETS";
-    case ValidationExceptionType::DUPLICATED_SECRET:
-      return "DUPLICATED_SECRET";
-    case ValidationExceptionType::MALFORMED_SECRET_ARN:
-      return "MALFORMED_SECRET_ARN";
-    case ValidationExceptionType::SECRET_FROM_DIFFERENT_ACCOUNT:
-      return "SECRET_FROM_DIFFERENT_ACCOUNT";
-    case ValidationExceptionType::SECRET_FROM_DIFFERENT_REGION:
-      return "SECRET_FROM_DIFFERENT_REGION";
-    case ValidationExceptionType::INVALID_SECRET:
-      return "INVALID_SECRET";
-    case ValidationExceptionType::RESOURCE_NOT_IN_SAME_REGION:
-      return "RESOURCE_NOT_IN_SAME_REGION";
-    case ValidationExceptionType::CERTIFICATE_RESOURCE_NOT_FOUND:
-      return "CERTIFICATE_RESOURCE_NOT_FOUND";
-    case ValidationExceptionType::CERTIFICATE_ACCESS_DENIED:
-      return "CERTIFICATE_ACCESS_DENIED";
-    case ValidationExceptionType::DESCRIBE_CERTIFICATE_FAILED:
-      return "DESCRIBE_CERTIFICATE_FAILED";
-    case ValidationExceptionType::INVALID_CERTIFICATE_STATUS:
-      return "INVALID_CERTIFICATE_STATUS";
-    case ValidationExceptionType::INVALID_CERTIFICATE_KEY_ALGORITHM:
-      return "INVALID_CERTIFICATE_KEY_ALGORITHM";
-    case ValidationExceptionType::INVALID_CERTIFICATE_SIGNATURE_ALGORITHM:
-      return "INVALID_CERTIFICATE_SIGNATURE_ALGORITHM";
-    case ValidationExceptionType::MISSING_CERTIFICATE_DOMAIN_NAME:
-      return "MISSING_CERTIFICATE_DOMAIN_NAME";
-    case ValidationExceptionType::INVALID_ARN:
-      return "INVALID_ARN";
-    case ValidationExceptionType::SCTE_IN_MANIFESTS_INVALID_CONFIGURATION:
-      return "SCTE_IN_MANIFESTS_INVALID_CONFIGURATION";
-    case ValidationExceptionType::CUSTOM_AD_TYPES_INVALID_CONFIGURATION:
-      return "CUSTOM_AD_TYPES_INVALID_CONFIGURATION";
-    case ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_OUTPUT_LOCKING_MODE:
-      return "ONLY_CMAF_INPUT_TYPE_ALLOW_OUTPUT_LOCKING_MODE";
-    case ValidationExceptionType::ONLY_NON_EPOCH_LOCKED_ALLOW_OUTPUT_TIMESTAMP_MODE:
-      return "ONLY_NON_EPOCH_LOCKED_ALLOW_OUTPUT_TIMESTAMP_MODE";
-    case ValidationExceptionType::OUTPUT_TIMESTAMP_MODE_IMMUTABLE:
-      return "OUTPUT_TIMESTAMP_MODE_IMMUTABLE";
-    case ValidationExceptionType::NON_EPOCH_LOCKED_WITH_FORCE_ENDPOINT_ERROR_CONFIGURATION:
-      return "NON_EPOCH_LOCKED_WITH_FORCE_ENDPOINT_ERROR_CONFIGURATION";
-    case ValidationExceptionType::ONLY_HLS_INPUT_TYPE_ALLOW_STREAM_NAME_OUTPUT_MODE:
-      return "ONLY_HLS_INPUT_TYPE_ALLOW_STREAM_NAME_OUTPUT_MODE";
-    case ValidationExceptionType::STREAM_NAME_OUTPUT_MODE_IMMUTABLE:
-      return "STREAM_NAME_OUTPUT_MODE_IMMUTABLE";
-    default:
-      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-      if (overflowContainer) {
-        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-      }
-
-      return {};
+  Aws::String value;
+  if (GetNameForEnumHelper0(enumValue, value)) {
+    return value;
+  } else if (GetNameForEnumHelper1(enumValue, value)) {
+    return value;
   }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+  }
+
+  return {};
 }
 
 }  // namespace ValidationExceptionTypeMapper

@@ -208,6 +208,9 @@
 #include <aws/pinpoint-sms-voice-v2/model/KeywordInformation.h>
 #include <aws/pinpoint-sms-voice-v2/model/KinesisFirehoseDestination.h>
 #include <aws/pinpoint-sms-voice-v2/model/LanguageCode.h>
+#include <aws/pinpoint-sms-voice-v2/model/ListAvailablePhoneNumbersPaginationTraits.h>
+#include <aws/pinpoint-sms-voice-v2/model/ListAvailablePhoneNumbersRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/ListAvailablePhoneNumbersResult.h>
 #include <aws/pinpoint-sms-voice-v2/model/ListNotifyCountriesPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/ListNotifyCountriesRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/ListNotifyCountriesResult.h>
@@ -224,6 +227,7 @@
 #include <aws/pinpoint-sms-voice-v2/model/ListTagsForResourceResult.h>
 #include <aws/pinpoint-sms-voice-v2/model/MessageFeedbackStatus.h>
 #include <aws/pinpoint-sms-voice-v2/model/MessageType.h>
+#include <aws/pinpoint-sms-voice-v2/model/MessagingLimits.h>
 #include <aws/pinpoint-sms-voice-v2/model/NotifyConfigurationFilter.h>
 #include <aws/pinpoint-sms-voice-v2/model/NotifyConfigurationFilterName.h>
 #include <aws/pinpoint-sms-voice-v2/model/NotifyConfigurationInformation.h>
@@ -237,6 +241,7 @@
 #include <aws/pinpoint-sms-voice-v2/model/NotifyTemplateStatus.h>
 #include <aws/pinpoint-sms-voice-v2/model/NotifyTemplateType.h>
 #include <aws/pinpoint-sms-voice-v2/model/NumberCapability.h>
+#include <aws/pinpoint-sms-voice-v2/model/NumberPreferenceItem.h>
 #include <aws/pinpoint-sms-voice-v2/model/NumberStatus.h>
 #include <aws/pinpoint-sms-voice-v2/model/NumberType.h>
 #include <aws/pinpoint-sms-voice-v2/model/OptOutListInformation.h>
@@ -255,6 +260,7 @@
 #include <aws/pinpoint-sms-voice-v2/model/PoolOriginationIdentitiesFilter.h>
 #include <aws/pinpoint-sms-voice-v2/model/PoolOriginationIdentitiesFilterName.h>
 #include <aws/pinpoint-sms-voice-v2/model/PoolStatus.h>
+#include <aws/pinpoint-sms-voice-v2/model/PreferenceType.h>
 #include <aws/pinpoint-sms-voice-v2/model/ProtectConfigurationCountryRuleSetInformation.h>
 #include <aws/pinpoint-sms-voice-v2/model/ProtectConfigurationFilter.h>
 #include <aws/pinpoint-sms-voice-v2/model/ProtectConfigurationFilterName.h>
@@ -337,6 +343,7 @@
 #include <aws/pinpoint-sms-voice-v2/model/RequestableNumberType.h>
 #include <aws/pinpoint-sms-voice-v2/model/ResourceNotFoundException.h>
 #include <aws/pinpoint-sms-voice-v2/model/ResourceType.h>
+#include <aws/pinpoint-sms-voice-v2/model/SearchableNumberType.h>
 #include <aws/pinpoint-sms-voice-v2/model/SelectOptionDescription.h>
 #include <aws/pinpoint-sms-voice-v2/model/SelectValidation.h>
 #include <aws/pinpoint-sms-voice-v2/model/SendDestinationNumberVerificationCodeRequest.h>

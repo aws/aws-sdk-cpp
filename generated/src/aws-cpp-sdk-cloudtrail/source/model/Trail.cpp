@@ -78,6 +78,10 @@ Trail& Trail::operator=(JsonView jsonValue) {
     m_isOrganizationTrail = jsonValue.GetBool("IsOrganizationTrail");
     m_isOrganizationTrailHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RecursiveLogging")) {
+    m_recursiveLogging = jsonValue.GetBool("RecursiveLogging");
+    m_recursiveLoggingHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -142,6 +146,10 @@ JsonValue Trail::Jsonize() const {
 
   if (m_isOrganizationTrailHasBeenSet) {
     payload.WithBool("IsOrganizationTrail", m_isOrganizationTrail);
+  }
+
+  if (m_recursiveLoggingHasBeenSet) {
+    payload.WithBool("RecursiveLogging", m_recursiveLogging);
   }
 
   return payload;

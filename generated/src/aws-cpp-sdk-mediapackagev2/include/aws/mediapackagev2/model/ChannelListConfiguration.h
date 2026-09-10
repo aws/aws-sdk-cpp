@@ -6,8 +6,10 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediapackagev2/Mediapackagev2_EXPORTS.h>
 #include <aws/mediapackagev2/model/InputType.h>
+#include <aws/mediapackagev2/model/MultiviewConfiguration.h>
 #include <aws/mediapackagev2/model/OutputLockingMode.h>
 
 #include <utility>
@@ -149,13 +151,17 @@ class ChannelListConfiguration {
 
   ///@{
   /**
-   * <p>The input type will be an immutable field which will be used to define
-   * whether the channel will allow CMAF ingest or HLS ingest. If unprovided, it will
-   * default to HLS to preserve current behavior.</p> <p>The allowed values are:</p>
-   * <ul> <li> <p> <code>HLS</code> - The HLS streaming specification (which defines
-   * M3U8 manifests and TS segments).</p> </li> <li> <p> <code>CMAF</code> - The
-   * DASH-IF CMAF Ingest specification (which defines CMAF segments with optional
-   * DASH manifests).</p> </li> </ul>
+   * <p>The input type is an immutable field. It defines whether the channel allows
+   * CMAF ingest, HLS ingest, or server-side multiview output. Multiview channels
+   * receive no ingest of their own. If unprovided, the value defaults to HLS.</p>
+   * <p>The allowed values are:</p> <ul> <li> <p> <code>HLS</code> - The HLS
+   * streaming specification (which defines M3U8 manifests and TS segments).</p>
+   * </li> <li> <p> <code>CMAF</code> - The DASH-IF CMAF Ingest specification (which
+   * defines CMAF segments with optional DASH manifests).</p> </li> <li> <p>
+   * <code>MULTIVIEW</code> – Server-side multiview. The channel receives no ingest
+   * of its own. Instead, it composites video from the source channels in its
+   * <code>MultiviewConfiguration</code> into a single tiled output stream.</p> </li>
+   * </ul>
    */
   inline InputType GetInputType() const { return m_inputType; }
   inline bool InputTypeHasBeenSet() const { return m_inputTypeHasBeenSet; }
@@ -189,6 +195,50 @@ class ChannelListConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The multiview configuration for the channel. This is present only when
+   * <code>InputType</code> is <code>MULTIVIEW</code>.</p>
+   */
+  inline const MultiviewConfiguration& GetMultiviewConfiguration() const { return m_multiviewConfiguration; }
+  inline bool MultiviewConfigurationHasBeenSet() const { return m_multiviewConfigurationHasBeenSet; }
+  template <typename MultiviewConfigurationT = MultiviewConfiguration>
+  void SetMultiviewConfiguration(MultiviewConfigurationT&& value) {
+    m_multiviewConfigurationHasBeenSet = true;
+    m_multiviewConfiguration = std::forward<MultiviewConfigurationT>(value);
+  }
+  template <typename MultiviewConfigurationT = MultiviewConfiguration>
+  ChannelListConfiguration& WithMultiviewConfiguration(MultiviewConfigurationT&& value) {
+    SetMultiviewConfiguration(std::forward<MultiviewConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The multiview channels, in the same channel group, that list this channel as
+   * an available source. This is a read-only field.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetAttachedMultiviewChannels() const { return m_attachedMultiviewChannels; }
+  inline bool AttachedMultiviewChannelsHasBeenSet() const { return m_attachedMultiviewChannelsHasBeenSet; }
+  template <typename AttachedMultiviewChannelsT = Aws::Vector<Aws::String>>
+  void SetAttachedMultiviewChannels(AttachedMultiviewChannelsT&& value) {
+    m_attachedMultiviewChannelsHasBeenSet = true;
+    m_attachedMultiviewChannels = std::forward<AttachedMultiviewChannelsT>(value);
+  }
+  template <typename AttachedMultiviewChannelsT = Aws::Vector<Aws::String>>
+  ChannelListConfiguration& WithAttachedMultiviewChannels(AttachedMultiviewChannelsT&& value) {
+    SetAttachedMultiviewChannels(std::forward<AttachedMultiviewChannelsT>(value));
+    return *this;
+  }
+  template <typename AttachedMultiviewChannelsT = Aws::String>
+  ChannelListConfiguration& AddAttachedMultiviewChannels(AttachedMultiviewChannelsT&& value) {
+    m_attachedMultiviewChannelsHasBeenSet = true;
+    m_attachedMultiviewChannels.emplace_back(std::forward<AttachedMultiviewChannelsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -205,6 +255,10 @@ class ChannelListConfiguration {
   InputType m_inputType{InputType::NOT_SET};
 
   OutputLockingMode m_outputLockingMode{OutputLockingMode::NOT_SET};
+
+  MultiviewConfiguration m_multiviewConfiguration;
+
+  Aws::Vector<Aws::String> m_attachedMultiviewChannels;
   bool m_arnHasBeenSet = false;
   bool m_channelNameHasBeenSet = false;
   bool m_channelGroupNameHasBeenSet = false;
@@ -213,6 +267,8 @@ class ChannelListConfiguration {
   bool m_descriptionHasBeenSet = false;
   bool m_inputTypeHasBeenSet = false;
   bool m_outputLockingModeHasBeenSet = false;
+  bool m_multiviewConfigurationHasBeenSet = false;
+  bool m_attachedMultiviewChannelsHasBeenSet = false;
 };
 
 }  // namespace Model

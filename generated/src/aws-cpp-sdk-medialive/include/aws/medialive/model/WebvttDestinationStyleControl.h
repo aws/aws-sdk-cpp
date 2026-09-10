@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MediaLive {
 namespace Model {
-enum class WebvttDestinationStyleControl { NOT_SET, NO_STYLE_DATA, PASSTHROUGH };
+enum class WebvttDestinationStyleControl { NOT_SET, NO_STYLE_DATA, PASSTHROUGH, MANUAL };
 
 namespace WebvttDestinationStyleControlMapper {
 AWS_MEDIALIVE_API WebvttDestinationStyleControl GetWebvttDestinationStyleControlForName(const Aws::String& name);

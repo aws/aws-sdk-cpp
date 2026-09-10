@@ -22,6 +22,18 @@ GetChannelResult::GetChannelResult(const Aws::AmazonWebServiceResult<JsonValue>&
 GetChannelResult& GetChannelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("MultiviewConfiguration")) {
+    m_multiviewConfiguration = jsonValue.GetObject("MultiviewConfiguration");
+    m_multiviewConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AttachedMultiviewChannels")) {
+    Aws::Utils::Array<JsonView> attachedMultiviewChannelsJsonList = jsonValue.GetArray("AttachedMultiviewChannels");
+    for (unsigned attachedMultiviewChannelsIndex = 0; attachedMultiviewChannelsIndex < attachedMultiviewChannelsJsonList.GetLength();
+         ++attachedMultiviewChannelsIndex) {
+      m_attachedMultiviewChannels.push_back(attachedMultiviewChannelsJsonList[attachedMultiviewChannelsIndex].AsString());
+    }
+    m_attachedMultiviewChannelsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;

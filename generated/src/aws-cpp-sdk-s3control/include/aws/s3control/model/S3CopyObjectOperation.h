@@ -8,10 +8,13 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3control/S3Control_EXPORTS.h>
+#include <aws/s3control/model/S3AnnotationDirective.h>
 #include <aws/s3control/model/S3CannedAccessControlList.h>
 #include <aws/s3control/model/S3ChecksumAlgorithm.h>
 #include <aws/s3control/model/S3Grant.h>
 #include <aws/s3control/model/S3MetadataDirective.h>
+#include <aws/s3control/model/S3ObjectLockEventHold.h>
+#include <aws/s3control/model/S3ObjectLockEventHoldDuration.h>
 #include <aws/s3control/model/S3ObjectLockLegalHoldStatus.h>
 #include <aws/s3control/model/S3ObjectLockMode.h>
 #include <aws/s3control/model/S3ObjectMetadata.h>
@@ -134,6 +137,26 @@ class S3CopyObjectOperation {
   }
   inline S3CopyObjectOperation& WithMetadataDirective(S3MetadataDirective value) {
     SetMetadataDirective(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether the Batch Operations copy job copies object annotations
+   * from the source object or skips them. If this property isn't specified,
+   * <code>COPY</code> is the default behavior.</p> <p>Valid Values: <code>COPY |
+   * EXCLUDE</code> </p>  <p>This functionality is not supported by directory
+   * buckets.</p>
+   */
+  inline S3AnnotationDirective GetAnnotationDirective() const { return m_annotationDirective; }
+  inline bool AnnotationDirectiveHasBeenSet() const { return m_annotationDirectiveHasBeenSet; }
+  inline void SetAnnotationDirective(S3AnnotationDirective value) {
+    m_annotationDirectiveHasBeenSet = true;
+    m_annotationDirective = value;
+  }
+  inline S3CopyObjectOperation& WithAnnotationDirective(S3AnnotationDirective value) {
+    SetAnnotationDirective(value);
     return *this;
   }
   ///@}
@@ -443,6 +466,46 @@ class S3CopyObjectOperation {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The event hold status to be applied to all objects in the Batch Operations
+   * copy job. Set to <code>ON</code> to enable an event hold or <code>OFF</code> to
+   * disable it.</p>  <p>This functionality is not supported by directory
+   * buckets.</p>
+   */
+  inline S3ObjectLockEventHold GetObjectLockEventHold() const { return m_objectLockEventHold; }
+  inline bool ObjectLockEventHoldHasBeenSet() const { return m_objectLockEventHoldHasBeenSet; }
+  inline void SetObjectLockEventHold(S3ObjectLockEventHold value) {
+    m_objectLockEventHoldHasBeenSet = true;
+    m_objectLockEventHold = value;
+  }
+  inline S3CopyObjectOperation& WithObjectLockEventHold(S3ObjectLockEventHold value) {
+    SetObjectLockEventHold(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The event hold duration to be applied to all objects in the Batch Operations
+   * copy job. The duration specifies how long the object remains protected after the
+   * event hold is released.</p>  <p>This functionality is not supported by
+   * directory buckets.</p>
+   */
+  inline const S3ObjectLockEventHoldDuration& GetObjectLockEventHoldDuration() const { return m_objectLockEventHoldDuration; }
+  inline bool ObjectLockEventHoldDurationHasBeenSet() const { return m_objectLockEventHoldDurationHasBeenSet; }
+  template <typename ObjectLockEventHoldDurationT = S3ObjectLockEventHoldDuration>
+  void SetObjectLockEventHoldDuration(ObjectLockEventHoldDurationT&& value) {
+    m_objectLockEventHoldDurationHasBeenSet = true;
+    m_objectLockEventHoldDuration = std::forward<ObjectLockEventHoldDurationT>(value);
+  }
+  template <typename ObjectLockEventHoldDurationT = S3ObjectLockEventHoldDuration>
+  S3CopyObjectOperation& WithObjectLockEventHoldDuration(ObjectLockEventHoldDurationT&& value) {
+    SetObjectLockEventHoldDuration(std::forward<ObjectLockEventHoldDurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_targetResource;
 
@@ -451,6 +514,8 @@ class S3CopyObjectOperation {
   Aws::Vector<S3Grant> m_accessControlGrants;
 
   S3MetadataDirective m_metadataDirective{S3MetadataDirective::NOT_SET};
+
+  S3AnnotationDirective m_annotationDirective{S3AnnotationDirective::NOT_SET};
 
   Aws::Utils::DateTime m_modifiedSinceConstraint{};
 
@@ -479,10 +544,15 @@ class S3CopyObjectOperation {
   bool m_bucketKeyEnabled{false};
 
   S3ChecksumAlgorithm m_checksumAlgorithm{S3ChecksumAlgorithm::NOT_SET};
+
+  S3ObjectLockEventHold m_objectLockEventHold{S3ObjectLockEventHold::NOT_SET};
+
+  S3ObjectLockEventHoldDuration m_objectLockEventHoldDuration;
   bool m_targetResourceHasBeenSet = false;
   bool m_cannedAccessControlListHasBeenSet = false;
   bool m_accessControlGrantsHasBeenSet = false;
   bool m_metadataDirectiveHasBeenSet = false;
+  bool m_annotationDirectiveHasBeenSet = false;
   bool m_modifiedSinceConstraintHasBeenSet = false;
   bool m_newObjectMetadataHasBeenSet = false;
   bool m_newObjectTaggingHasBeenSet = false;
@@ -497,6 +567,8 @@ class S3CopyObjectOperation {
   bool m_objectLockRetainUntilDateHasBeenSet = false;
   bool m_bucketKeyEnabledHasBeenSet = false;
   bool m_checksumAlgorithmHasBeenSet = false;
+  bool m_objectLockEventHoldHasBeenSet = false;
+  bool m_objectLockEventHoldDurationHasBeenSet = false;
 };
 
 }  // namespace Model

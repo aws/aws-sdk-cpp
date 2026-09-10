@@ -39,7 +39,7 @@ class UpdateSchedulerRequest {
    * see <a
    * href="https://docs.aws.amazon.com/pcs/latest/userguide/working-with_clusters_version_update.html">Updating
    * the scheduler version on a cluster</a> in the <i>PCS User Guide</i>.</p>
-   * <p>Valid Values: <code>24.05 | 24.11 | 25.05 | 25.11</code> </p>
+   * <p>Valid Values: <code>24.05 | 24.11 | 25.05 | 25.11 | 26.05</code> </p>
    */
   inline const Aws::String& GetVersion() const { return m_version; }
   inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }

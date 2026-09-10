@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MediaLive {
 namespace Model {
-enum class TtmlDestinationStyleControl { NOT_SET, PASSTHROUGH, USE_CONFIGURED };
+enum class TtmlDestinationStyleControl { NOT_SET, PASSTHROUGH, USE_CONFIGURED, MANUAL };
 
 namespace TtmlDestinationStyleControlMapper {
 AWS_MEDIALIVE_API TtmlDestinationStyleControl GetTtmlDestinationStyleControlForName(const Aws::String& name);

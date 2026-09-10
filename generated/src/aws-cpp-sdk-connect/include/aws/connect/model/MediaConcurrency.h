@@ -7,6 +7,8 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/Channel.h>
 #include <aws/connect/model/CrossChannelBehavior.h>
+#include <aws/connect/model/WorkloadTypeConcurrency.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -90,15 +92,44 @@ class MediaConcurrency {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Defines the list of workload type concurrency configurations for a channel.
+   * When provided, enables granular concurrency control based on workload type
+   * values.</p>
+   */
+  inline const Aws::Vector<WorkloadTypeConcurrency>& GetWorkloadTypeConcurrencies() const { return m_workloadTypeConcurrencies; }
+  inline bool WorkloadTypeConcurrenciesHasBeenSet() const { return m_workloadTypeConcurrenciesHasBeenSet; }
+  template <typename WorkloadTypeConcurrenciesT = Aws::Vector<WorkloadTypeConcurrency>>
+  void SetWorkloadTypeConcurrencies(WorkloadTypeConcurrenciesT&& value) {
+    m_workloadTypeConcurrenciesHasBeenSet = true;
+    m_workloadTypeConcurrencies = std::forward<WorkloadTypeConcurrenciesT>(value);
+  }
+  template <typename WorkloadTypeConcurrenciesT = Aws::Vector<WorkloadTypeConcurrency>>
+  MediaConcurrency& WithWorkloadTypeConcurrencies(WorkloadTypeConcurrenciesT&& value) {
+    SetWorkloadTypeConcurrencies(std::forward<WorkloadTypeConcurrenciesT>(value));
+    return *this;
+  }
+  template <typename WorkloadTypeConcurrenciesT = WorkloadTypeConcurrency>
+  MediaConcurrency& AddWorkloadTypeConcurrencies(WorkloadTypeConcurrenciesT&& value) {
+    m_workloadTypeConcurrenciesHasBeenSet = true;
+    m_workloadTypeConcurrencies.emplace_back(std::forward<WorkloadTypeConcurrenciesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Channel m_channel{Channel::NOT_SET};
 
   int m_concurrency{0};
 
   CrossChannelBehavior m_crossChannelBehavior;
+
+  Aws::Vector<WorkloadTypeConcurrency> m_workloadTypeConcurrencies;
   bool m_channelHasBeenSet = false;
   bool m_concurrencyHasBeenSet = false;
   bool m_crossChannelBehaviorHasBeenSet = false;
+  bool m_workloadTypeConcurrenciesHasBeenSet = false;
 };
 
 }  // namespace Model

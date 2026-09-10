@@ -11,6 +11,7 @@
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
 #include <aws/pinpoint-sms-voice-v2/model/MessageType.h>
 #include <aws/pinpoint-sms-voice-v2/model/NumberCapability.h>
+#include <aws/pinpoint-sms-voice-v2/model/NumberPreferenceItem.h>
 #include <aws/pinpoint-sms-voice-v2/model/RequestableNumberType.h>
 #include <aws/pinpoint-sms-voice-v2/model/Tag.h>
 
@@ -177,6 +178,33 @@ class RequestPhoneNumberRequest : public PinpointSMSVoiceV2Request {
 
   ///@{
   /**
+   * <p>An optional selection preference used to request a specific phone number,
+   * such as a number that starts with, ends with, or contains a particular digit
+   * pattern. You can specify at most one preference. Number preferences apply only
+   * to <code>TEN_DLC</code> requests in the <code>US</code>.</p>
+   */
+  inline const Aws::Vector<NumberPreferenceItem>& GetNumberPreference() const { return m_numberPreference; }
+  inline bool NumberPreferenceHasBeenSet() const { return m_numberPreferenceHasBeenSet; }
+  template <typename NumberPreferenceT = Aws::Vector<NumberPreferenceItem>>
+  void SetNumberPreference(NumberPreferenceT&& value) {
+    m_numberPreferenceHasBeenSet = true;
+    m_numberPreference = std::forward<NumberPreferenceT>(value);
+  }
+  template <typename NumberPreferenceT = Aws::Vector<NumberPreferenceItem>>
+  RequestPhoneNumberRequest& WithNumberPreference(NumberPreferenceT&& value) {
+    SetNumberPreference(std::forward<NumberPreferenceT>(value));
+    return *this;
+  }
+  template <typename NumberPreferenceT = NumberPreferenceItem>
+  RequestPhoneNumberRequest& AddNumberPreference(NumberPreferenceT&& value) {
+    m_numberPreferenceHasBeenSet = true;
+    m_numberPreference.emplace_back(std::forward<NumberPreferenceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>By default this is set to false. When set to true the international sending
    * of phone number is Enabled. </p>
    */
@@ -268,6 +296,8 @@ class RequestPhoneNumberRequest : public PinpointSMSVoiceV2Request {
 
   Aws::String m_registrationId;
 
+  Aws::Vector<NumberPreferenceItem> m_numberPreference;
+
   bool m_internationalSendingEnabled{false};
 
   bool m_deletionProtectionEnabled{false};
@@ -282,6 +312,7 @@ class RequestPhoneNumberRequest : public PinpointSMSVoiceV2Request {
   bool m_optOutListNameHasBeenSet = false;
   bool m_poolIdHasBeenSet = false;
   bool m_registrationIdHasBeenSet = false;
+  bool m_numberPreferenceHasBeenSet = false;
   bool m_internationalSendingEnabledHasBeenSet = false;
   bool m_deletionProtectionEnabledHasBeenSet = false;
   bool m_tagsHasBeenSet = false;

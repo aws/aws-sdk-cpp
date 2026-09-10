@@ -22,6 +22,7 @@
 #include <aws/elementalinference/model/AssociateFeedResult.h>
 #include <aws/elementalinference/model/ClippingConfig.h>
 #include <aws/elementalinference/model/Competitor.h>
+#include <aws/elementalinference/model/ContextualMetadataConfig.h>
 #include <aws/elementalinference/model/CreateDictionaryRequest.h>
 #include <aws/elementalinference/model/CreateDictionaryResult.h>
 #include <aws/elementalinference/model/CreateFeedRequest.h>
@@ -32,6 +33,7 @@
 #include <aws/elementalinference/model/DataSourceSport.h>
 #include <aws/elementalinference/model/DeleteDictionaryRequest.h>
 #include <aws/elementalinference/model/DeleteDictionaryResult.h>
+#include <aws/elementalinference/model/DeleteFeedPolicyRequest.h>
 #include <aws/elementalinference/model/DeleteFeedRequest.h>
 #include <aws/elementalinference/model/DeleteFeedResult.h>
 #include <aws/elementalinference/model/DictionaryLanguage.h>
@@ -48,6 +50,8 @@
 #include <aws/elementalinference/model/FixtureSummary.h>
 #include <aws/elementalinference/model/GetDictionaryRequest.h>
 #include <aws/elementalinference/model/GetDictionaryResult.h>
+#include <aws/elementalinference/model/GetFeedPolicyRequest.h>
+#include <aws/elementalinference/model/GetFeedPolicyResult.h>
 #include <aws/elementalinference/model/GetFeedRequest.h>
 #include <aws/elementalinference/model/GetFeedResult.h>
 #include <aws/elementalinference/model/GetFixtureRequest.h>
@@ -64,11 +68,14 @@
 #include <aws/elementalinference/model/OutputConfig.h>
 #include <aws/elementalinference/model/OutputStatus.h>
 #include <aws/elementalinference/model/ProfanityFilterMode.h>
+#include <aws/elementalinference/model/PutFeedPolicyRequest.h>
+#include <aws/elementalinference/model/PutFeedPolicyResult.h>
 #include <aws/elementalinference/model/SearchFilter.h>
 #include <aws/elementalinference/model/SearchFixturesPaginationTraits.h>
 #include <aws/elementalinference/model/SearchFixturesRequest.h>
 #include <aws/elementalinference/model/SearchFixturesResult.h>
 #include <aws/elementalinference/model/SubtitlingConfig.h>
+#include <aws/elementalinference/model/SummaryGenerationMode.h>
 #include <aws/elementalinference/model/TagResourceRequest.h>
 #include <aws/elementalinference/model/TemplateGroup.h>
 #include <aws/elementalinference/model/TranscriptionLanguage.h>

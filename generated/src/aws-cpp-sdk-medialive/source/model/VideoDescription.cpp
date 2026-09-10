@@ -55,6 +55,10 @@ VideoDescription& VideoDescription::operator=(JsonView jsonValue) {
     m_outputPositionRectangle = jsonValue.GetObject("outputPositionRectangle");
     m_outputPositionRectangleHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("border")) {
+    m_border = jsonValue.GetInteger("border");
+    m_borderHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -96,6 +100,10 @@ JsonValue VideoDescription::Jsonize() const {
 
   if (m_outputPositionRectangleHasBeenSet) {
     payload.WithObject("outputPositionRectangle", m_outputPositionRectangle.Jsonize());
+  }
+
+  if (m_borderHasBeenSet) {
+    payload.WithInteger("border", m_border);
   }
 
   return payload;

@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/s3control/S3Control_EXPORTS.h>
+#include <aws/s3control/model/S3ObjectLockRetentionEventHold.h>
+#include <aws/s3control/model/S3ObjectLockRetentionEventHoldDuration.h>
 #include <aws/s3control/model/S3ObjectLockRetentionMode.h>
 
 #include <utility>
@@ -73,12 +75,56 @@ class S3Retention {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The event hold status to be applied to all objects in the Batch Operations
+   * job. Set to <code>ON</code> to enable an event hold or <code>OFF</code> to
+   * disable it.</p>
+   */
+  inline S3ObjectLockRetentionEventHold GetEventHold() const { return m_eventHold; }
+  inline bool EventHoldHasBeenSet() const { return m_eventHoldHasBeenSet; }
+  inline void SetEventHold(S3ObjectLockRetentionEventHold value) {
+    m_eventHoldHasBeenSet = true;
+    m_eventHold = value;
+  }
+  inline S3Retention& WithEventHold(S3ObjectLockRetentionEventHold value) {
+    SetEventHold(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The event hold duration to be applied to all objects in the Batch Operations
+   * job. The duration specifies how long the object remains protected after the
+   * event hold is released.</p>
+   */
+  inline const S3ObjectLockRetentionEventHoldDuration& GetEventHoldDuration() const { return m_eventHoldDuration; }
+  inline bool EventHoldDurationHasBeenSet() const { return m_eventHoldDurationHasBeenSet; }
+  template <typename EventHoldDurationT = S3ObjectLockRetentionEventHoldDuration>
+  void SetEventHoldDuration(EventHoldDurationT&& value) {
+    m_eventHoldDurationHasBeenSet = true;
+    m_eventHoldDuration = std::forward<EventHoldDurationT>(value);
+  }
+  template <typename EventHoldDurationT = S3ObjectLockRetentionEventHoldDuration>
+  S3Retention& WithEventHoldDuration(EventHoldDurationT&& value) {
+    SetEventHoldDuration(std::forward<EventHoldDurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Utils::DateTime m_retainUntilDate{};
 
   S3ObjectLockRetentionMode m_mode{S3ObjectLockRetentionMode::NOT_SET};
+
+  S3ObjectLockRetentionEventHold m_eventHold{S3ObjectLockRetentionEventHold::NOT_SET};
+
+  S3ObjectLockRetentionEventHoldDuration m_eventHoldDuration;
   bool m_retainUntilDateHasBeenSet = false;
   bool m_modeHasBeenSet = false;
+  bool m_eventHoldHasBeenSet = false;
+  bool m_eventHoldDurationHasBeenSet = false;
 };
 
 }  // namespace Model

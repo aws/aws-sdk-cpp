@@ -30,6 +30,7 @@
 #include <aws/pinpoint-sms-voice-v2/model/DescribeSenderIdsPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeSpendLimitsPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeVerifiedDestinationNumbersPaginationTraits.h>
+#include <aws/pinpoint-sms-voice-v2/model/ListAvailablePhoneNumbersPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/ListNotifyCountriesPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/ListPoolOriginationIdentitiesPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/ListProtectConfigurationRuleSetNumberOverridesPaginationTraits.h>
@@ -315,6 +316,18 @@ class PinpointSMSVoiceV2PaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVerifiedDestinationNumbersRequest,
                                              Pagination::DescribeVerifiedDestinationNumbersPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListAvailablePhoneNumbers operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAvailablePhoneNumbersRequest,
+                                    Pagination::ListAvailablePhoneNumbersPaginationTraits<DerivedClient>>
+  ListAvailablePhoneNumbersPaginator(const Model::ListAvailablePhoneNumbersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAvailablePhoneNumbersRequest,
+                                             Pagination::ListAvailablePhoneNumbersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

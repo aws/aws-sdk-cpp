@@ -30,6 +30,14 @@ MediaConcurrency& MediaConcurrency::operator=(JsonView jsonValue) {
     m_crossChannelBehavior = jsonValue.GetObject("CrossChannelBehavior");
     m_crossChannelBehaviorHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("WorkloadTypeConcurrencies")) {
+    Aws::Utils::Array<JsonView> workloadTypeConcurrenciesJsonList = jsonValue.GetArray("WorkloadTypeConcurrencies");
+    for (unsigned workloadTypeConcurrenciesIndex = 0; workloadTypeConcurrenciesIndex < workloadTypeConcurrenciesJsonList.GetLength();
+         ++workloadTypeConcurrenciesIndex) {
+      m_workloadTypeConcurrencies.push_back(workloadTypeConcurrenciesJsonList[workloadTypeConcurrenciesIndex].AsObject());
+    }
+    m_workloadTypeConcurrenciesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +54,16 @@ JsonValue MediaConcurrency::Jsonize() const {
 
   if (m_crossChannelBehaviorHasBeenSet) {
     payload.WithObject("CrossChannelBehavior", m_crossChannelBehavior.Jsonize());
+  }
+
+  if (m_workloadTypeConcurrenciesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> workloadTypeConcurrenciesJsonList(m_workloadTypeConcurrencies.size());
+    for (unsigned workloadTypeConcurrenciesIndex = 0; workloadTypeConcurrenciesIndex < workloadTypeConcurrenciesJsonList.GetLength();
+         ++workloadTypeConcurrenciesIndex) {
+      workloadTypeConcurrenciesJsonList[workloadTypeConcurrenciesIndex].AsObject(
+          m_workloadTypeConcurrencies[workloadTypeConcurrenciesIndex].Jsonize());
+    }
+    payload.WithArray("WorkloadTypeConcurrencies", std::move(workloadTypeConcurrenciesJsonList));
   }
 
   return payload;

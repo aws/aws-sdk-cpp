@@ -30,6 +30,19 @@ UpdateComputeNodeGroupSlurmConfigurationRequest& UpdateComputeNodeGroupSlurmConf
     }
     m_slurmCustomSettingsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("gresCustomSettings")) {
+    Aws::Utils::Array<JsonView> gresCustomSettingsJsonList = jsonValue.GetArray("gresCustomSettings");
+    for (unsigned gresCustomSettingsIndex = 0; gresCustomSettingsIndex < gresCustomSettingsJsonList.GetLength();
+         ++gresCustomSettingsIndex) {
+      Aws::Map<Aws::String, JsonView> gresCustomSettingMap2JsonMap = gresCustomSettingsJsonList[gresCustomSettingsIndex].GetAllObjects();
+      Aws::Map<Aws::String, Aws::String> gresCustomSettingMap2Map;
+      for (auto& gresCustomSettingMap2Item : gresCustomSettingMap2JsonMap) {
+        gresCustomSettingMap2Map[gresCustomSettingMap2Item.first] = gresCustomSettingMap2Item.second.AsString();
+      }
+      m_gresCustomSettings.push_back(std::move(gresCustomSettingMap2Map));
+    }
+    m_gresCustomSettingsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -47,6 +60,19 @@ JsonValue UpdateComputeNodeGroupSlurmConfigurationRequest::Jsonize() const {
       slurmCustomSettingsJsonList[slurmCustomSettingsIndex].AsObject(m_slurmCustomSettings[slurmCustomSettingsIndex].Jsonize());
     }
     payload.WithArray("slurmCustomSettings", std::move(slurmCustomSettingsJsonList));
+  }
+
+  if (m_gresCustomSettingsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> gresCustomSettingsJsonList(m_gresCustomSettings.size());
+    for (unsigned gresCustomSettingsIndex = 0; gresCustomSettingsIndex < gresCustomSettingsJsonList.GetLength();
+         ++gresCustomSettingsIndex) {
+      JsonValue gresCustomSettingMapJsonMap;
+      for (auto& gresCustomSettingMapItem : m_gresCustomSettings[gresCustomSettingsIndex]) {
+        gresCustomSettingMapJsonMap.WithString(gresCustomSettingMapItem.first, gresCustomSettingMapItem.second);
+      }
+      gresCustomSettingsJsonList[gresCustomSettingsIndex].AsObject(std::move(gresCustomSettingMapJsonMap));
+    }
+    payload.WithArray("gresCustomSettings", std::move(gresCustomSettingsJsonList));
   }
 
   return payload;

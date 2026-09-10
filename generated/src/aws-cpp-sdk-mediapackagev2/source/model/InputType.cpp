@@ -17,6 +17,7 @@ namespace InputTypeMapper {
 
 static const int HLS_HASH = HashingUtils::HashString("HLS");
 static const int CMAF_HASH = HashingUtils::HashString("CMAF");
+static const int MULTIVIEW_HASH = HashingUtils::HashString("MULTIVIEW");
 
 InputType GetInputTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ InputType GetInputTypeForName(const Aws::String& name) {
     return InputType::HLS;
   } else if (hashCode == CMAF_HASH) {
     return InputType::CMAF;
+  } else if (hashCode == MULTIVIEW_HASH) {
+    return InputType::MULTIVIEW;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForInputType(InputType enumValue) {
       return "HLS";
     case InputType::CMAF:
       return "CMAF";
+    case InputType::MULTIVIEW:
+      return "MULTIVIEW";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

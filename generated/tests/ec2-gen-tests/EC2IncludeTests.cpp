@@ -2457,6 +2457,7 @@
 #include <aws/ec2/model/NetworkBandwidthGbps.h>
 #include <aws/ec2/model/NetworkBandwidthGbpsRequest.h>
 #include <aws/ec2/model/NetworkCardInfo.h>
+#include <aws/ec2/model/NetworkCardInterfaceType.h>
 #include <aws/ec2/model/NetworkInfo.h>
 #include <aws/ec2/model/NetworkInsightsAccessScope.h>
 #include <aws/ec2/model/NetworkInsightsAccessScopeAnalysis.h>

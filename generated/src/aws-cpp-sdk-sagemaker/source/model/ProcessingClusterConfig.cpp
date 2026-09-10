@@ -34,6 +34,22 @@ ProcessingClusterConfig& ProcessingClusterConfig::operator=(JsonView jsonValue) 
     m_volumeKmsKeyId = jsonValue.GetString("VolumeKmsKeyId");
     m_volumeKmsKeyIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("InstancePreferences")) {
+    Aws::Utils::Array<JsonView> instancePreferencesJsonList = jsonValue.GetArray("InstancePreferences");
+    for (unsigned instancePreferencesIndex = 0; instancePreferencesIndex < instancePreferencesJsonList.GetLength();
+         ++instancePreferencesIndex) {
+      m_instancePreferences.push_back(instancePreferencesJsonList[instancePreferencesIndex].AsObject());
+    }
+    m_instancePreferencesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SelectedInstanceType")) {
+    m_selectedInstanceType = ProcessingInstanceTypeMapper::GetProcessingInstanceTypeForName(jsonValue.GetString("SelectedInstanceType"));
+    m_selectedInstanceTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SelectedInstanceCount")) {
+    m_selectedInstanceCount = jsonValue.GetInteger("SelectedInstanceCount");
+    m_selectedInstanceCountHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +70,23 @@ JsonValue ProcessingClusterConfig::Jsonize() const {
 
   if (m_volumeKmsKeyIdHasBeenSet) {
     payload.WithString("VolumeKmsKeyId", m_volumeKmsKeyId);
+  }
+
+  if (m_instancePreferencesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> instancePreferencesJsonList(m_instancePreferences.size());
+    for (unsigned instancePreferencesIndex = 0; instancePreferencesIndex < instancePreferencesJsonList.GetLength();
+         ++instancePreferencesIndex) {
+      instancePreferencesJsonList[instancePreferencesIndex].AsObject(m_instancePreferences[instancePreferencesIndex].Jsonize());
+    }
+    payload.WithArray("InstancePreferences", std::move(instancePreferencesJsonList));
+  }
+
+  if (m_selectedInstanceTypeHasBeenSet) {
+    payload.WithString("SelectedInstanceType", ProcessingInstanceTypeMapper::GetNameForProcessingInstanceType(m_selectedInstanceType));
+  }
+
+  if (m_selectedInstanceCountHasBeenSet) {
+    payload.WithInteger("SelectedInstanceCount", m_selectedInstanceCount);
   }
 
   return payload;
