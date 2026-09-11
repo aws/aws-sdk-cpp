@@ -147,6 +147,28 @@ bool GeneralHTTPCredentialsProvider::ShouldCreateGeneralHTTPProvider(const Aws::
     return false;
 }
 
+GeneralHTTPCredentialsProvider::GeneralHTTPCredentialsProvider(const Aws::Client::ClientConfiguration& clientConfig,
+                                                               const Aws::String& relativeUri,
+                                                               const Aws::String& absoluteUri,
+                                                               const Aws::String& authToken,
+                                                               const Aws::String& authTokenFilePath,
+                                                               long refreshRateMs,
+                                                               ShouldCreateFunc shouldCreateFunc) :
+    m_authTokenFilePath(authTokenFilePath),
+    m_loadFrequencyMs(refreshRateMs)
+{
+    if (shouldCreateFunc(relativeUri, absoluteUri, authToken))
+    {
+        AWS_LOGSTREAM_INFO(GEN_HTTP_LOG_TAG, "Creating GeneralHTTPCredentialsProvider with refresh rate " << refreshRateMs);
+        if (!relativeUri.empty()) {
+            m_ecsCredentialsClient = Aws::MakeShared<Aws::Internal::ECSCredentialsClient>(GEN_HTTP_LOG_TAG, clientConfig, relativeUri.c_str(), AWS_ECS_CONTAINER_HOST, authToken.c_str());
+        }
+        else if (!absoluteUri.empty()) {
+            m_ecsCredentialsClient = Aws::MakeShared<Aws::Internal::ECSCredentialsClient>(GEN_HTTP_LOG_TAG, clientConfig, "", absoluteUri.c_str(), authToken.c_str());
+        }
+    }
+}
+
 GeneralHTTPCredentialsProvider::GeneralHTTPCredentialsProvider(const Aws::String& relativeUri,
                                                                const Aws::String& absoluteUri,
                                                                const Aws::String& authToken,
