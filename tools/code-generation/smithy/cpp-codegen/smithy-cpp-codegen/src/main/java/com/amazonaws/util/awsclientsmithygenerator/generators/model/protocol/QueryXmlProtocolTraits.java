@@ -6,6 +6,7 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.SupportsPresigningTrait;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.ServiceShape;
@@ -95,8 +96,20 @@ public final class QueryXmlProtocolTraits implements ProtocolTraits {
             case RESULT_HEADER:
                 // Query/EC2 result headers forward-declare XmlDocument; no serde include.
                 return List.of();
-            case SUBOBJECT_SOURCE:
+            // Request sources also serialize @httpHeader/@httpQuery members, needing URI,
+            // StringUtils, the stringstream, and <numeric> (std::accumulate for comma-joined list
+            // headers). URI.h added only here to avoid widening other source kinds.
             case REQUEST_SOURCE:
+                return List.of(
+                    "aws/core/utils/xml/XmlSerializer.h",
+                    "aws/core/utils/logging/LogMacros.h",
+                    "aws/core/utils/UnreferencedParam.h",
+                    "aws/core/utils/StringUtils.h",
+                    "aws/core/utils/memory/stl/AWSStringStream.h",
+                    "aws/core/utils/HashingUtils.h",
+                    "aws/core/http/URI.h",
+                    "numeric");
+            case SUBOBJECT_SOURCE:
             case RESULT_SOURCE:
             case STREAMING_RESULT_SOURCE:
             case EVENT_HANDLER_SOURCE:
@@ -203,18 +216,8 @@ public final class QueryXmlProtocolTraits implements ProtocolTraits {
             writer.write("");
             writeAddQueryStringParametersDecl(writer, exportMacro);
         }
-        writer.write("");
-        // DumpBodyToUrl is a protected virtual in AmazonWebServiceRequest, so the override
-        // is bracketed under protected: and the section restored to public: afterwards,
-        // matching the legacy C2J layout.
-        writer.dedent();
-        writer.write("protected:");
-        writer.indent();
-        writer.write("$L void DumpBodyToUrl(Aws::Http::URI& uri) const override;", exportMacro);
-        writer.dedent();
-        writer.write("");
-        writer.write("public:");
-        writer.indent();
+        // The DumpBodyToUrl override decl is emitted protocol-agnostically by RequestRenderer
+        // (gated on SupportsPresigningTrait); only the impl below is protocol-specific.
     }
 
     @Override
@@ -230,10 +233,14 @@ public final class QueryXmlProtocolTraits implements ProtocolTraits {
         }
         if (RequestBindings.hasQueryStringMembers(shape, model)) {
             writer.write("");
-            writeAddQueryStringParametersImpl(writer, className);
+            writeAddQueryStringParametersImpl(writer, className, shape, model);
         }
-        writer.write("");
-        writer.write("void $L::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }",
-            className);
+        // Gate the DumpBodyToUrl impl on the same trait as the RequestRenderer decl so the two stay
+        // symmetric.
+        if (operation.hasTrait(SupportsPresigningTrait.class)) {
+            writer.write("");
+            writer.write("void $L::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }",
+                className);
+        }
     }
 }

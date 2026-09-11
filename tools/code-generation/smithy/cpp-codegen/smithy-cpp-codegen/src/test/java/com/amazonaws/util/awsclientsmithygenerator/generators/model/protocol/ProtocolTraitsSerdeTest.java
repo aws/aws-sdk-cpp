@@ -15,9 +15,8 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * Pins the invariant that the event- and error-payload stubs stay protocol-agnostic
- * for EVERY protocol -- they are {@code default} methods on {@link ProtocolTraits} and
- * no implementation should override them with protocol-specific text until
+ * Pins that event- and error-payload stubs stay protocol-agnostic for EVERY protocol: {@code default}
+ * methods on {@link ProtocolTraits} that no impl overrides with protocol-specific text until
  * schema-based serde lands.
  */
 class ProtocolTraitsSerdeTest {

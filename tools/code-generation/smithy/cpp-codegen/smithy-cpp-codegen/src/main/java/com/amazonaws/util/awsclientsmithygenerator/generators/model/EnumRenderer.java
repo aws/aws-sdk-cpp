@@ -5,12 +5,14 @@
 package com.amazonaws.util.awsclientsmithygenerator.generators.model;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
+import com.amazonaws.util.awsclientsmithygenerator.generators.ServiceNameUtil;
 import software.amazon.smithy.model.shapes.Shape;
 import software.amazon.smithy.model.traits.EnumDefinition;
 import software.amazon.smithy.model.traits.EnumTrait;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -36,7 +38,7 @@ public final class EnumRenderer {
      *
      * @param writer      the CppWriter to write to
      * @param enumShape   the enum shape (EnumShape or StringShape with @enum trait)
-     * @param serviceName the service name / C++ namespace (e.g., "Kinesis")
+     * @param serviceName the service name / C++ namespace, may start lowercase (e.g., "Kinesis", "drs")
      * @param exportMacro the export macro (e.g., "AWS_KINESIS_API")
      * @param projectName the project directory name for include paths (e.g., "kinesis")
      */
@@ -44,17 +46,32 @@ public final class EnumRenderer {
                                     String exportMacro, String projectName) {
         String enumName = CppTypeMapper.cppShapeName(enumShape);
         List<String> values = getEnumValues(enumShape);
+        // <Prefix>_EXPORTS.h uses the capitalized prefix; the namespace block keeps serviceName.
+        String classPrefix = ServiceNameUtil.capitalize(serviceName);
 
         writer.write("#pragma once");
         writer.write("#include <aws/core/utils/memory/stl/AWSString.h>");
         writer.write("#include <aws/$1L/$2L_EXPORTS.h>",
-            projectName, serviceName);
+            projectName, classPrefix);
         writer.write("");
+
+        // Windows defines some enum values as preprocessor macros (e.g. EC2's `interface` via
+        // <combaseapi.h>). Undefine them so the generated enum constant compiles, matching C2J's
+        // ModelEnumHeader.vm predefined-symbol guard.
+        List<String> windowsMacros = predefinedWindowsSymbols(serviceName, values);
+        if (!windowsMacros.isEmpty()) {
+            for (String macro : windowsMacros) {
+                writer.write("#if defined(_WIN32) && defined($L)", macro);
+                writer.write("#undef $L", macro);
+                writer.write("#endif");
+            }
+            writer.write("");
+        }
+
         writer.write("namespace Aws {");
         writer.write("namespace $L {", serviceName);
         writer.write("namespace Model {");
 
-        // Enum class declaration
         // Use single-line format if it fits within ~140 chars, multi-line otherwise
         String singleLine = "enum class " + enumName + " { NOT_SET, " +
             String.join(", ", values) + " };";
@@ -74,7 +91,6 @@ public final class EnumRenderer {
         }
         writer.write("");
 
-        // Mapper namespace
         writer.write("namespace $LMapper {", enumName);
         writer.write("$1L $2L Get$2LForName(const Aws::String& name);", exportMacro, enumName);
         writer.write("");
@@ -115,14 +131,12 @@ public final class EnumRenderer {
         writer.write("namespace $LMapper {", enumName);
         writer.write("");
 
-        // Hash constants
         for (int i = 0; i < values.size(); i++) {
             writer.write("  static const int $1L_HASH = HashingUtils::HashString(\"$2L\");",
                 values.get(i), wireValues.get(i));
         }
         writer.write("");
 
-        // GetForName
         writer.write("  $1L Get$1LForName(const Aws::String& name) {", enumName);
         writer.write("    int hashCode = HashingUtils::HashString(name.c_str());");
         for (int i = 0; i < values.size(); i++) {
@@ -140,7 +154,6 @@ public final class EnumRenderer {
         writer.write("  }");
         writer.write("");
 
-        // GetNameFor
         writer.write("  Aws::String GetNameFor$1L($1L enumValue) {", enumName);
         writer.write("    switch (enumValue) {");
         writer.write("    case $1L::NOT_SET:", enumName);
@@ -219,11 +232,40 @@ public final class EnumRenderer {
         "throw", "true", "try", "typeid", "typename", "typeof", "union",
         "unsigned", "using", "virtual", "void", "volatile", "wchar_t", "while",
         "xor", "xor_eq",
-        // Platform macros and min/max (defined as macros on Windows)
+        // Platform macros. Must match C2J PlatformAndKeywordSanitizer.FORBIDDEN_WORDS, which omits
+        // LINUX/WINDOWS/min/max (they ship un-suffixed); real macro collisions use PREDEFINED_WINDOWS_SYMBOLS.
         "ANDROID", "BOOL", "CHAR", "DEBUG", "DELETE", "Double", "ERROR",
-        "GET", "LINUX", "max", "min", "NEW", "NULL", "PRIVATE", "PUBLIC",
-        "STATIC", "T_CHAR", "DOMAIN", "OVERFLOW", "WINDOWS"
+        "GET", "NEW", "NULL", "PRIVATE", "PUBLIC",
+        "STATIC", "T_CHAR", "DOMAIN", "OVERFLOW"
     );
+
+    /**
+     * Per-service enum constant names that collide with a Windows preprocessor macro and must be
+     * {@code #undef}'d in the enum header. Keyed by C++ service namespace, mirroring C2J
+     * PlatformAndKeywordSanitizer.PREDEFINED_SYMBOLS_MAPPING.
+     */
+    private static final Map<String, Set<String>> PREDEFINED_WINDOWS_SYMBOLS = Map.of(
+        "DynamoDB", Set.of("IN"),
+        "EC2", Set.of("interface"),
+        "S3Crt", Set.of("IGNORE")
+    );
+
+    /**
+     * Returns, in enum-declaration order, the sanitized enum constant names of {@code values} that
+     * collide with a Windows macro for {@code serviceNamespace} (see
+     * {@link #PREDEFINED_WINDOWS_SYMBOLS}). Empty when the service has no such symbols.
+     *
+     * @param serviceNamespace the C++ service namespace (e.g., "EC2")
+     * @param values           the sanitized enum constant names in declaration order
+     * @return the subset needing a {@code #undef} guard, preserving declaration order
+     */
+    static List<String> predefinedWindowsSymbols(String serviceNamespace, List<String> values) {
+        Set<String> symbols = PREDEFINED_WINDOWS_SYMBOLS.get(serviceNamespace);
+        if (symbols == null) {
+            return List.of();
+        }
+        return values.stream().filter(symbols::contains).collect(Collectors.toList());
+    }
 
     /**
      * Sanitizes an enum wire value into a valid C++ identifier, matching C2J

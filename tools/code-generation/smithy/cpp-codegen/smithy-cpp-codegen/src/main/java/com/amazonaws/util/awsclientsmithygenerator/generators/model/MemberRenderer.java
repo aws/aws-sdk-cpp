@@ -7,15 +7,20 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model;
 import static com.amazonaws.util.awsclientsmithygenerator.generators.model.CppTypeMapper.isPrimitive;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.ChecksumMemberTrait;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.GlobalTransforms;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.ListShape;
 import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.Shape;
 import software.amazon.smithy.model.traits.DocumentationTrait;
+import software.amazon.smithy.model.traits.HttpPayloadTrait;
 import software.amazon.smithy.model.traits.IdempotencyTokenTrait;
 import software.amazon.smithy.model.traits.SparseTrait;
+import software.amazon.smithy.model.traits.StreamingTrait;
 
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * Renders C++ accessor methods (Get/Set/With/Add) and private member fields
@@ -32,6 +37,7 @@ public final class MemberRenderer {
     private final boolean emitHasBeenSet;
     private boolean wideIntegers;
     private String exclude;
+    private boolean requestShape;
 
     private MemberRenderer(Model model, Shape shape, String className, boolean emitHasBeenSet) {
         this.model = model;
@@ -40,6 +46,7 @@ public final class MemberRenderer {
         this.emitHasBeenSet = emitHasBeenSet;
         this.wideIntegers = false;
         this.exclude = null;
+        this.requestShape = false;
     }
 
     /** Renderer for a request / sub-object / event structure: emits {@code HasBeenSet} accessors. */
@@ -55,6 +62,12 @@ public final class MemberRenderer {
     /** Widen {@code integer} members to {@code int64_t} (CBOR sub-objects / events). */
     public MemberRenderer wideIntegers(boolean value) {
         this.wideIntegers = value;
+        return this;
+    }
+
+    /** Marks a request input: only request getters get the reserved-name rename (GetBody -> GetMemberBody). */
+    public MemberRenderer asRequest(boolean value) {
+        this.requestShape = value;
         return this;
     }
 
@@ -80,6 +93,7 @@ public final class MemberRenderer {
             String cppType = CppTypeMapper.getCppType(targetShape, model, wideIntegers);
             String fieldName = CppNames.fieldName(memberName);
             String methodName = capitalize(memberName);
+            String getterName = getterName(memberName, targetShape);
             String templateParam = methodName + "T";
             boolean recursive = isRecursiveMember(member);
 
@@ -92,17 +106,21 @@ public final class MemberRenderer {
             }
 
             if (targetShape.isDocumentShape()) {
-                writer.write("inline Aws::Utils::DocumentView Get$L() const { return $L; }", methodName, fieldName);
+                writer.write("inline Aws::Utils::DocumentView $L() const { return $L; }", getterName, fieldName);
             } else if (isPrimitive(targetShape) || CppTypeMapper.isEnum(targetShape)) {
-                writer.write("inline $L Get$L() const { return $L; }", cppType, methodName, fieldName);
+                writer.write("inline $L $L() const { return $L; }", cppType, getterName, fieldName);
             } else if (recursive) {
                 // Stored as std::shared_ptr<T>; dereference for the const-ref getter. Matches C2J.
-                writer.write("inline const $L& Get$L() const { return *$L; }", cppType, methodName, fieldName);
+                writer.write("inline const $L& $L() const { return *$L; }", cppType, getterName, fieldName);
             } else {
-                writer.write("inline const $L& Get$L() const { return $L; }", cppType, methodName, fieldName);
+                writer.write("inline const $L& $L() const { return $L; }", cppType, getterName, fieldName);
             }
 
-            if (emitHasBeenSet) {
+            // The injected ResponseMetadata envelope is always present, so (like C2J) gets no
+            // HasBeenSet getter (flag initialized true below). Every other member — including
+            // @required ones — tracks presence via HasBeenSet. emitHasBeenSet is the
+            // useRequiredField context (true for sub-objects/requests, false for results).
+            if (emitHasBeenSet && !isInjectedResponseMetadata(member)) {
                 writer.write("inline bool $LHasBeenSet() const { return $LHasBeenSet; }", methodName, fieldName);
             }
 
@@ -116,19 +134,30 @@ public final class MemberRenderer {
                     writer.write("return *this;");
                 });
             } else {
+                // S3 checksum members (stamped by S3Transforms) also select the ChecksumAlgorithm enum
+                // in their setter, matching C2J's ModelClassMembersAndInlines.vm isChecksumMember path.
+                Optional<ChecksumMemberTrait> checksum = member.getTrait(ChecksumMemberTrait.class);
                 writer.write("template <typename $L = $L>", templateParam, cppType);
                 writer.openBlock("void Set$L($L&& value) {", "}", methodName, templateParam, () -> {
                     writer.write("$LHasBeenSet = true;", fieldName);
                     if (recursive) {
-                        // Wrap the value in a shared_ptr, tagged with the enclosing class name for
-                        // the allocator. The template setter is only instantiated at call sites,
-                        // where T is complete, so the header can forward-declare T. Matches C2J.
+                        // Wrap in a shared_ptr tagged with the enclosing class name for the
+                        // allocator. The template setter instantiates only at call sites (where T
+                        // is complete), so the header can forward-declare T. Matches C2J.
                         writer.write("$L = Aws::MakeShared<$L>(\"$L\", std::forward<$L>(value));",
                             fieldName, cppType, className, templateParam);
                     } else {
                         writer.write("$L = std::forward<$L>(value);", fieldName, templateParam);
                     }
+                    checksum.ifPresent(t ->
+                        writer.write("SetChecksumAlgorithm(ChecksumAlgorithm::$L);", t.getValue()));
                 });
+                checksum.ifPresent(t ->
+                    writer.openBlock("inline void Set$L(const char* value) {", "}", methodName, () -> {
+                        writer.write("$LHasBeenSet = true;", fieldName);
+                        writer.write("$L.assign(value);", fieldName);
+                        writer.write("SetChecksumAlgorithm(ChecksumAlgorithm::$L);", t.getValue());
+                    }));
                 writer.write("template <typename $L = $L>", templateParam, cppType);
                 writer.openBlock("$L& With$L($L&& value) {", "}", className, methodName, templateParam, () -> {
                     writer.write("Set$L(std::forward<$L>(value));", methodName, templateParam);
@@ -255,10 +284,23 @@ public final class MemberRenderer {
      * {@code m_requestId} field and its {@code HasBeenSet} flag in the private section.
      */
     public static void renderRequestIdAccessors(CppWriter writer, String className) {
+        renderRequestIdAccessors(writer, className, false);
+    }
+
+    /**
+     * Renders the top-level {@code RequestId} accessor group. When {@code withHasBeenSetGetter} is
+     * true, also emits {@code RequestIdHasBeenSet()} — the model-class variant C2J stamps onto a
+     * dual-role output shape (also referenced as a member). Result classes pass false.
+     */
+    public static void renderRequestIdAccessors(CppWriter writer, String className,
+                                                boolean withHasBeenSetGetter) {
         writer.write("");
         writer.write("///@{");
         writer.write("");
         writer.write("inline const Aws::String& GetRequestId() const { return m_requestId; }");
+        if (withHasBeenSetGetter) {
+            writer.write("inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }");
+        }
         writer.write("template <typename RequestIdT = Aws::String>");
         writer.openBlock("void SetRequestId(RequestIdT&& value) {", "}", () -> {
             writer.write("m_requestIdHasBeenSet = true;");
@@ -273,10 +315,33 @@ public final class MemberRenderer {
     }
 
     /**
+     * Renders the top-level {@code HostId} (x-amz-id-2) accessor group emitted by S3 Control
+     * result headers after the {@code RequestId} group. Callers gate on {@code TopLevelHostIdTrait}
+     * and separately emit the {@code m_hostId} field and its {@code HasBeenSet} flag. Matches C2J's
+     * {@code addToAllResultsShape} HostId member.
+     */
+    public static void renderHostIdAccessors(CppWriter writer, String className) {
+        writer.write("");
+        writer.write("///@{");
+        writeDocComment(writer, "x-amz-id-2 header value, also known as Host Id");
+        writer.write("inline const Aws::String& GetHostId() const { return m_hostId; }");
+        writer.write("template <typename HostIdT = Aws::String>");
+        writer.openBlock("void SetHostId(HostIdT&& value) {", "}", () -> {
+            writer.write("m_hostIdHasBeenSet = true;");
+            writer.write("m_hostId = std::forward<HostIdT>(value);");
+        });
+        writer.write("template <typename HostIdT = Aws::String>");
+        writer.openBlock("$L& WithHostId(HostIdT&& value) {", "}", className, () -> {
+            writer.write("SetHostId(std::forward<HostIdT>(value));");
+            writer.write("return *this;");
+        });
+        writer.write("///@}");
+    }
+
+    /**
      * Writes a single private data member declaration. {@code @idempotencyToken} members are
-     * brace-initialized with {@code Aws::Utils::UUID::PseudoRandomUUID()} so a caller who omits
-     * the token still gets idempotent behavior; other members fall back to their type's default
-     * initializer (or none). Matches C2J's ServiceClientModelHeaderMemberDeclaration.vm.
+     * brace-initialized with {@code Aws::Utils::UUID::PseudoRandomUUID()} (idempotent even when the
+     * caller omits the token); others use their type's default initializer or none. C2J parity.
      */
     private static void writeDataMember(CppWriter writer, MemberShape member, String memberName, Model model,
                                         boolean wideIntegers, boolean recursive) {
@@ -299,23 +364,78 @@ public final class MemberRenderer {
     }
 
     /**
-     * Writes a single HasBeenSet flag. {@code @idempotencyToken} members default to {@code true}
-     * because they are auto-populated at construction; all others default to {@code false}.
-     * Matches C2J's ModelClassMembersAndInlines.vm.
+     * Writes a single HasBeenSet flag. Matches C2J: initialized true for an
+     * {@code @idempotencyToken} member or a {@code @required} member in a useRequiredField context
+     * ({@code emitHasBeenSet}), unless it is an event stream or raw streaming payload; else false.
      */
-    private static void writeHasBeenSetFlag(CppWriter writer, MemberShape member, String memberName) {
+    private void writeHasBeenSetFlag(CppWriter writer, MemberShape member, String memberName) {
         String fieldName = CppNames.fieldName(memberName);
-        boolean initialValue = member.hasTrait(IdempotencyTokenTrait.class);
-        writer.write("bool $LHasBeenSet = $L;", fieldName, initialValue);
+        writer.write("bool $LHasBeenSet = $L;", fieldName, initialHasBeenSet(member));
+    }
+
+    /** True if this member's HasBeenSet flag is initialized to {@code true}. Mirrors C2J. */
+    private boolean initialHasBeenSet(MemberShape member) {
+        if (isEventStreamMember(member) || isRawStreamingPayloadMember(member)) {
+            return false;
+        }
+        return member.hasTrait(IdempotencyTokenTrait.class)
+            || (emitHasBeenSet && isInjectedResponseMetadata(member));
+    }
+
+    /**
+     * True if this member is the framework-injected {@code ResponseMetadata} envelope: a member
+     * named {@code ResponseMetadata} whose target is the injected {@code ResponseMetadata} struct.
+     * It is the only always-present member (no {@code HasBeenSet} getter; flag true in a HasBeenSet
+     * context). C2J also identifies it by name; {@code injectResponseMetadata} fails fast on any
+     * modeled collision, so this check is unambiguous.
+     */
+    private boolean isInjectedResponseMetadata(MemberShape member) {
+        return GlobalTransforms.RESPONSE_METADATA.equals(member.getMemberName())
+            && GlobalTransforms.RESPONSE_METADATA.equals(
+                model.expectShape(member.getTarget()).getId().getName());
+    }
+
+    /** True if the member targets a {@code @streaming} union (an event stream member). */
+    private boolean isEventStreamMember(MemberShape member) {
+        Shape target = model.expectShape(member.getTarget());
+        return target.isUnionShape() && target.hasTrait(StreamingTrait.class);
+    }
+
+    /**
+     * True if the member is a raw streaming {@code @httpPayload} (blob/string, or explicitly
+     * {@code @streaming}) that is not an event stream. Mirrors {@code ShapeClassifier}'s predicate.
+     */
+    private boolean isRawStreamingPayloadMember(MemberShape member) {
+        if (!member.hasTrait(HttpPayloadTrait.class) || StreamingTrait.isEventStream(model, member)) {
+            return false;
+        }
+        Shape target = model.expectShape(member.getTarget());
+        return target.isBlobShape() || target.isStringShape() || target.hasTrait(StreamingTrait.class);
     }
 
     /**
      * True if a container element / map key or value is passed to {@code Add*} by value rather
-     * than by perfect-forwarding reference. Matches C2J: primitive and enum types are by-value
-     * (they are cheap and trivially copyable), everything else is forwarded.
+     * than perfect-forwarded. Matches C2J: primitives and enums are by-value, everything else forwarded.
      */
     private static boolean isByValueType(Shape shape) {
         return CppTypeMapper.isPrimitive(shape) || CppTypeMapper.isEnum(shape);
+    }
+
+    /**
+     * Getter name with C2J's collision guards (only the getter is renamed): double-{@code Get} when
+     * {@code Get<Name>} equals the target shape or enclosing class name (all shapes); and
+     * {@code GetBody} -> {@code GetMemberBody} for request shapes.
+     */
+    private String getterName(String memberName, Shape targetShape) {
+        String base = "Get" + capitalize(memberName);
+        String targetName = CppTypeMapper.cppShapeName(targetShape);
+        if (base.equals(targetName) || base.equals(className)) {
+            base = "Get" + base;
+        }
+        if (requestShape && "GetBody".equals(base)) {
+            base = "GetMember" + capitalize(memberName);
+        }
+        return base;
     }
 
     private static String capitalize(String name) {
@@ -336,10 +456,9 @@ public final class MemberRenderer {
     }
 
     /**
-     * Renders the class-level documentation comment for a shape: its {@code @documentation}
-     * text followed by a "See Also" link to the AWS API reference. Emits an empty doc comment
-     * ({@code /** *}{@code /}) when the shape carries no documentation. Shared by the
-     * request, result, sub-object, and event-stream union renderers.
+     * Renders a shape's class-level doc comment: its {@code @documentation} text plus a "See Also"
+     * link to the AWS API reference (empty doc comment when undocumented). Shared by the request,
+     * result, sub-object, and event-stream union renderers.
      *
      * @param writer            the CppWriter to write to
      * @param shape             the shape whose class doc to render (structure or union)

@@ -21,11 +21,9 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * C2J gates {@code SerializePayload()} on {@code !hasStreamMembers()} in the single shared
- * {@code RequestHeader.vm}, so the rule is protocol-agnostic: no protocol emits SerializePayload
- * for a request with a raw streaming {@code @httpPayload} member. These tests pin that every
- * {@link ProtocolTraits} implementation honours it (and still emits SerializePayload for a plain
- * request).
+ * C2J gates {@code SerializePayload()} on {@code !hasStreamMembers()}, so the rule is protocol-agnostic:
+ * no protocol emits it for a raw streaming {@code @httpPayload} request. Pins that every
+ * {@link ProtocolTraits} honours this (and still emits SerializePayload for a plain request).
  */
 class ProtocolTraitsStreamingPayloadTest {
 

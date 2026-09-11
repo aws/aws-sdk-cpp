@@ -38,6 +38,12 @@ public final class CborProtocolTraits implements ProtocolTraits {
     }
 
     @Override
+    public boolean serializesHttpBindingMembers() {
+        // rpcv2Cbor is an RPC protocol: @httpHeader / @httpQuery members go into the body, not the wire.
+        return false;
+    }
+
+    @Override
     public void writeShapeForwardDeclarations(CppWriter writer) {
         writer.writeNamespaceOpen("Utils");
         writer.writeNamespaceOpen("Cbor");
@@ -86,9 +92,10 @@ public final class CborProtocolTraits implements ProtocolTraits {
             case SUBOBJECT_HEADER:
             case RESULT_HEADER:
                 return List.of("aws/crt/cbor/Cbor.h");
-            // All source kinds share one union (supersets allowed). Usings are unchanged.
-            case SUBOBJECT_SOURCE:
+            // All source kinds share one include set. RPC CBOR request sources never run the shared
+            // @httpQuery/@httpHeader serializers, so REQUEST_SOURCE carries the same set as the rest.
             case REQUEST_SOURCE:
+            case SUBOBJECT_SOURCE:
             case RESULT_SOURCE:
             case STREAMING_RESULT_SOURCE:
             case EVENT_HANDLER_SOURCE:
@@ -157,6 +164,26 @@ public final class CborProtocolTraits implements ProtocolTraits {
     }
 
     @Override
+    public void writeInitialResponseCtorDecl(CppWriter writer, String exportMacro, String className) {
+        // CBOR initial responses arrive as an event message with headers.
+        writer.write("$L $L(const Http::HeaderValueCollection& responseHeaders);", exportMacro, className);
+    }
+
+    @Override
+    public void writeInitialResponseCtorImpl(CppWriter writer, String className) {
+        // Delegate to the default ctor so all members are value-initialized before the
+        // header-derived ones are set (matches C2J).
+        writer.openBlock("$1L::$1L(const Http::HeaderValueCollection& responseHeaders) : $1L() {", "}",
+            className, () -> writer.write("AWS_UNREFERENCED_PARAM(responseHeaders);"));
+    }
+
+    @Override
+    public void writeInitialResponseHandlerConstruction(CppWriter writer, String className,
+                                                        String handlerClassTag) {
+        writer.write("$L event(GetEventHeadersAsHttpHeaders());", className);
+    }
+
+    @Override
     public void writeRequestMethodDecls(CppWriter writer, String exportMacro,
                                         StructureShape shape, OperationShape operation, Model model) {
         if (RequestBindings.emitsSerializePayload(operation, model)) {
@@ -166,7 +193,8 @@ public final class CborProtocolTraits implements ProtocolTraits {
         // (content-type / smithy-protocol / accept) regardless of member bindings.
         writer.write("");
         writeGetRequestSpecificHeadersDecl(writer, exportMacro);
-        if (RequestBindings.hasQueryStringMembers(shape, model)) {
+        // RPC CBOR routes @httpQuery members to the body, so no AddQueryStringParameters is emitted.
+        if (serializesHttpBindingMembers() && RequestBindings.hasQueryStringMembers(shape, model)) {
             writer.write("");
             writeAddQueryStringParametersDecl(writer, exportMacro);
         }
@@ -204,11 +232,13 @@ public final class CborProtocolTraits implements ProtocolTraits {
             }
             writer.write("headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);");
             writer.write("headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);");
+            // RPC CBOR routes @httpHeader members to the body, so no member header serialization
+            // follows the fixed protocol headers.
             writer.write("return headers;");
         });
-        if (RequestBindings.hasQueryStringMembers(shape, model)) {
+        if (serializesHttpBindingMembers() && RequestBindings.hasQueryStringMembers(shape, model)) {
             writer.write("");
-            writeAddQueryStringParametersImpl(writer, className);
+            writeAddQueryStringParametersImpl(writer, className, shape, model);
         }
     }
 

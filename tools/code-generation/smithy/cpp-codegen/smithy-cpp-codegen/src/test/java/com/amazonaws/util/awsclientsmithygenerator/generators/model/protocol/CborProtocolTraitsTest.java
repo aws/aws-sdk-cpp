@@ -175,6 +175,27 @@ class CborProtocolTraitsTest {
         assertTrue(i.contains("headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);"), i);
     }
 
+    @Test
+    void cbor_queryMember_notWireSerialized_keepsProtocolHeaders() {
+        // RPC CBOR routes @httpQuery members to the body; no AddQueryStringParameters method, but
+        // the fixed CBOR protocol headers are still emitted.
+        var req = reqWith(false, true); var op = opWithInput(req); var model = modelWith(req);
+        String d = render(w -> cbor.writeRequestMethodDecls(w, "AWS_EX_API", req, op, model));
+        assertFalse(d.contains("AddQueryStringParameters"), d);
+        String i = render(w -> cbor.writeRequestMethodImpls(w, "DoThingRequest", req, op, svcAthena(), model));
+        assertFalse(i.contains("AddQueryStringParameters"), i);
+        assertTrue(i.contains("headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);"), i);
+    }
+
+    @Test
+    void cbor_headerMember_notWireSerialized_keepsProtocolHeaders() {
+        var req = reqWith(true, false); var op = opWithInput(req); var model = modelWith(req);
+        String i = render(w -> cbor.writeRequestMethodImpls(w, "DoThingRequest", req, op, svcAthena(), model));
+        assertFalse(i.contains("headers.emplace(\"x-h\""), i);
+        assertFalse(i.contains("ss << m_h;"), i);
+        assertTrue(i.contains("headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);"), i);
+    }
+
     // hasRequest()==false (input targets smithy.api#Unit): SerializePayload returns {}, NO CONTENT_TYPE.
     @Test
     void noInputRequest_returnsEmptyBracesAndOmitsContentType() {
@@ -186,5 +207,23 @@ class CborProtocolTraitsTest {
         assertFalse(i.contains("CONTENT_TYPE_HEADER"), i);
         assertTrue(i.contains("headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);"), i);
         assertTrue(i.contains("headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);"), i);
+    }
+
+    @Test
+    void initialResponse_emitsHeaderCollectionCtorAndHeaderConstruction() {
+        // CBOR initial responses arrive as an event message with headers, like JSON.
+        String decl = render(w -> cbor.writeInitialResponseCtorDecl(w, "AWS_EX_API", "DoStreamInitialResponse"));
+        assertTrue(decl.contains(
+            "AWS_EX_API DoStreamInitialResponse(const Http::HeaderValueCollection& responseHeaders);"), decl);
+
+        String impl = render(w -> cbor.writeInitialResponseCtorImpl(w, "DoStreamInitialResponse"));
+        assertTrue(impl.contains(
+            "DoStreamInitialResponse::DoStreamInitialResponse(const Http::HeaderValueCollection& "
+            + "responseHeaders) : DoStreamInitialResponse() {"), impl);
+        assertTrue(impl.contains("AWS_UNREFERENCED_PARAM(responseHeaders);"), impl);
+
+        String handler = render(w -> cbor.writeInitialResponseHandlerConstruction(w, "DoStreamInitialResponse", "DOSTREAM_HANDLER_CLASS_TAG"));
+        assertTrue(handler.contains("DoStreamInitialResponse event(GetEventHeadersAsHttpHeaders());"), handler);
+        assertFalse(handler.contains("xmlDoc"), handler);
     }
 }
