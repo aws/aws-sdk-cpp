@@ -8,6 +8,7 @@
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 
 #include <chrono>
+#include <limits>
 #include <memory>
 #include <thread>
 
@@ -103,6 +104,39 @@ class AsyncMockedCredsProvider : public Aws::Auth::CrtCredentialsProvider {
 };
 
 class CrtCredentialsProviderTest : public Aws::Testing::AwsCppSdkGTestSuite {};
+
+TEST_F(CrtCredentialsProviderTest, NonExpiringCredentialsMustNotBeExpired) {
+  auto underlying_mock = Aws::MakeShared<MockCrtCredentialsProvider>(CRT_CREDS_TEST_LOG);
+
+  underlying_mock->AddCredentialForReturn(Aws::MakeShared<Aws::Crt::Auth::Credentials>(
+      CRT_CREDS_TEST_LOG, Aws::Crt::ByteCursorFromCString("access"), Aws::Crt::ByteCursorFromCString("secret"),
+      Aws::Crt::ByteCursorFromCString(""), std::numeric_limits<uint64_t>::max()));
+
+  MockedCredsProvider provider(underlying_mock);
+  const auto credentials = provider.GetAWSCredentials();
+
+  EXPECT_FALSE(credentials.IsEmpty());
+  EXPECT_FALSE(credentials.IsExpired());
+  EXPECT_FALSE(credentials.IsExpiredOrEmpty());
+  EXPECT_EQ(credentials.GetExpiration(), Aws::Auth::AWSCredentials{}.GetExpiration());
+  EXPECT_FALSE(provider.GetAWSCredentials().IsExpiredOrEmpty());
+  EXPECT_EQ(underlying_mock->GetNumCalls(), 1);
+}
+
+TEST_F(CrtCredentialsProviderTest, ShouldPreserveFiniteExpiration) {
+  auto underlying_mock = Aws::MakeShared<MockCrtCredentialsProvider>(CRT_CREDS_TEST_LOG);
+  const auto expiration = (Aws::Utils::DateTime::Now() + std::chrono::minutes(100)).Seconds();
+
+  underlying_mock->AddCredentialForReturn(Aws::MakeShared<Aws::Crt::Auth::Credentials>(
+      CRT_CREDS_TEST_LOG, Aws::Crt::ByteCursorFromCString("access"), Aws::Crt::ByteCursorFromCString("secret"),
+      Aws::Crt::ByteCursorFromCString("token"), static_cast<uint64_t>(expiration)));
+
+  MockedCredsProvider provider(underlying_mock);
+  const auto credentials = provider.GetAWSCredentials();
+
+  EXPECT_EQ(credentials.GetExpiration().Seconds(), expiration);
+  EXPECT_FALSE(credentials.IsExpiredOrEmpty());
+}
 
 TEST_F(CrtCredentialsProviderTest, ShouldNotUseFreedStateWhenRefreshOutlivesTimeout) {
   auto crtCreds = Aws::MakeShared<Aws::Crt::Auth::Credentials>(

@@ -9,6 +9,7 @@
 #include <aws/crt/auth/Credentials.h>
 
 #include <condition_variable>
+#include <limits>
 #include <mutex>
 
 using namespace Aws::Auth;
@@ -99,8 +100,11 @@ AWSCredentials CrtCredentialsProvider::ExtractCredentialsFromCrt(const Aws::Crt:
   credentials.SetAWSAccessKeyId({reinterpret_cast<char*>(accountIdCursor.ptr), accountIdCursor.len});
   const auto secretKeyCursor = crtCredentials.GetSecretAccessKey();
   credentials.SetAWSSecretKey({reinterpret_cast<char*>(secretKeyCursor.ptr), secretKeyCursor.len});
-  const auto expiration = crtCredentials.GetExpirationTimepointInSeconds();
-  credentials.SetExpiration(DateTime{static_cast<double>(expiration)});
+  const uint64_t expiration = crtCredentials.GetExpirationTimepointInSeconds();
+  // CRT uses UINT64_MAX for no expiration; preserve AWSCredentials' non-expiring default.
+  if (expiration != (std::numeric_limits<uint64_t>::max)()) {
+    credentials.SetExpiration(DateTime{expiration});
+  }
   const auto sessionTokenCursor = crtCredentials.GetSessionToken();
   credentials.SetSessionToken({reinterpret_cast<char*>(sessionTokenCursor.ptr), sessionTokenCursor.len});
   return credentials;
