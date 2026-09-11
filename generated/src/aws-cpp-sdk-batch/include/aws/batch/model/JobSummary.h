@@ -320,6 +320,40 @@ class JobSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether a cancellation request has been accepted for the job. This
+   * field is only present when the value is <code>true</code>.</p>
+   */
+  inline bool GetIsCancelled() const { return m_isCancelled; }
+  inline bool IsCancelledHasBeenSet() const { return m_isCancelledHasBeenSet; }
+  inline void SetIsCancelled(bool value) {
+    m_isCancelledHasBeenSet = true;
+    m_isCancelled = value;
+  }
+  inline JobSummary& WithIsCancelled(bool value) {
+    SetIsCancelled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether a termination request has been accepted for the job. This
+   * field is only present when the value is <code>true</code>.</p>
+   */
+  inline bool GetIsTerminated() const { return m_isTerminated; }
+  inline bool IsTerminatedHasBeenSet() const { return m_isTerminatedHasBeenSet; }
+  inline void SetIsTerminated(bool value) {
+    m_isTerminatedHasBeenSet = true;
+    m_isTerminated = value;
+  }
+  inline JobSummary& WithIsTerminated(bool value) {
+    SetIsTerminated(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_jobArn;
 
@@ -350,6 +384,10 @@ class JobSummary {
   NodePropertiesSummary m_nodeProperties;
 
   Aws::String m_jobDefinition;
+
+  bool m_isCancelled{false};
+
+  bool m_isTerminated{false};
   bool m_jobArnHasBeenSet = false;
   bool m_jobIdHasBeenSet = false;
   bool m_jobNameHasBeenSet = false;
@@ -365,6 +403,8 @@ class JobSummary {
   bool m_arrayPropertiesHasBeenSet = false;
   bool m_nodePropertiesHasBeenSet = false;
   bool m_jobDefinitionHasBeenSet = false;
+  bool m_isCancelledHasBeenSet = false;
+  bool m_isTerminatedHasBeenSet = false;
 };
 
 }  // namespace Model

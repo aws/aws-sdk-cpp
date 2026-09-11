@@ -209,6 +209,7 @@
 #include <aws/ecs/model/ExecuteCommandLogging.h>
 #include <aws/ecs/model/ExecuteCommandRequest.h>
 #include <aws/ecs/model/ExecuteCommandResult.h>
+#include <aws/ecs/model/ExpressCpuArchitecture.h>
 #include <aws/ecs/model/ExpressGatewayContainer.h>
 #include <aws/ecs/model/ExpressGatewayRepositoryCredentials.h>
 #include <aws/ecs/model/ExpressGatewayScalingTarget.h>

@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/ECSRequest.h>
 #include <aws/ecs/ECS_EXPORTS.h>
+#include <aws/ecs/model/ExpressCpuArchitecture.h>
 #include <aws/ecs/model/ExpressGatewayContainer.h>
 #include <aws/ecs/model/ExpressGatewayScalingTarget.h>
 #include <aws/ecs/model/ExpressGatewayServiceNetworkConfiguration.h>
@@ -182,6 +183,33 @@ class UpdateExpressGatewayServiceRequest : public ECSRequest {
 
   ///@{
   /**
+   * <p>The CPU architecture that the tasks in the Express service run on. Amazon ECS
+   * applies this value to the task definition revision that it registers for the
+   * service. If you don't specify a value, the service keeps the architecture that
+   * it currently runs on.</p> <p>Valid values:</p> <ul> <li> <p> <code>X86_64</code>
+   * - The x86 64-bit architecture.</p> </li> <li> <p> <code>ARM64</code> - The
+   * 64-bit ARM architecture.</p> </li> </ul> <p>Changing the architecture starts a
+   * new deployment that replaces the running tasks. Make sure that the container
+   * image that the service uses supports the architecture that you choose. The
+   * operating system family for an Express service is always <code>LINUX</code>.</p>
+   * <p>You can't specify <code>cpuArchitecture</code> when you also specify
+   * <code>taskDefinitionArn</code>, because this value applies only to a task
+   * definition that Amazon ECS registers on your behalf.</p>
+   */
+  inline ExpressCpuArchitecture GetCpuArchitecture() const { return m_cpuArchitecture; }
+  inline bool CpuArchitectureHasBeenSet() const { return m_cpuArchitectureHasBeenSet; }
+  inline void SetCpuArchitecture(ExpressCpuArchitecture value) {
+    m_cpuArchitectureHasBeenSet = true;
+    m_cpuArchitecture = value;
+  }
+  inline UpdateExpressGatewayServiceRequest& WithCpuArchitecture(ExpressCpuArchitecture value) {
+    SetCpuArchitecture(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The auto-scaling configuration for the Express service.</p>
    */
   inline const ExpressGatewayScalingTarget& GetScalingTarget() const { return m_scalingTarget; }
@@ -208,7 +236,8 @@ class UpdateExpressGatewayServiceRequest : public ECSRequest {
    * and port name. The task definition must also have <code>FARGATE</code>
    * compatibility.</p> <p>If you provide a task definition ARN, you cannot also
    * specify <code>primaryContainer</code>, <code>executionRoleArn</code>,
-   * <code>taskRoleArn</code>, <code>cpu</code>, or <code>memory</code>.</p>
+   * <code>taskRoleArn</code>, <code>cpu</code>, <code>memory</code>, or
+   * <code>cpuArchitecture</code>.</p>
    */
   inline const Aws::String& GetTaskDefinitionArn() const { return m_taskDefinitionArn; }
   inline bool TaskDefinitionArnHasBeenSet() const { return m_taskDefinitionArnHasBeenSet; }
@@ -240,6 +269,8 @@ class UpdateExpressGatewayServiceRequest : public ECSRequest {
 
   Aws::String m_memory;
 
+  ExpressCpuArchitecture m_cpuArchitecture{ExpressCpuArchitecture::NOT_SET};
+
   ExpressGatewayScalingTarget m_scalingTarget;
 
   Aws::String m_taskDefinitionArn;
@@ -251,6 +282,7 @@ class UpdateExpressGatewayServiceRequest : public ECSRequest {
   bool m_networkConfigurationHasBeenSet = false;
   bool m_cpuHasBeenSet = false;
   bool m_memoryHasBeenSet = false;
+  bool m_cpuArchitectureHasBeenSet = false;
   bool m_scalingTargetHasBeenSet = false;
   bool m_taskDefinitionArnHasBeenSet = false;
 };

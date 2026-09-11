@@ -52,9 +52,9 @@ class TerminateJobRequest : public BatchRequest {
 
   ///@{
   /**
-   * <p>A message to attach to the job that explains the reason for canceling it.
+   * <p>A message to attach to the job that explains the reason for terminating it.
    * This message is returned by future <a>DescribeJobs</a> operations on the job. It
-   * is also recorded in the Batch activity logs.</p> <p>This parameter has as limit
+   * is also recorded in the Batch activity logs.</p> <p>This parameter has a limit
    * of 1024 characters.</p>
    */
   inline const Aws::String& GetReason() const { return m_reason; }

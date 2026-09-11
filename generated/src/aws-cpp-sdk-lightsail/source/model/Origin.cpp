@@ -42,6 +42,10 @@ Origin& Origin::operator=(JsonView jsonValue) {
     m_ipAddressType = OriginIpAddressTypeEnumMapper::GetOriginIpAddressTypeEnumForName(jsonValue.GetString("ipAddressType"));
     m_ipAddressTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("isPrivateOriginAccessEnabled")) {
+    m_isPrivateOriginAccessEnabled = jsonValue.GetBool("isPrivateOriginAccessEnabled");
+    m_isPrivateOriginAccessEnabledHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +74,10 @@ JsonValue Origin::Jsonize() const {
 
   if (m_ipAddressTypeHasBeenSet) {
     payload.WithString("ipAddressType", OriginIpAddressTypeEnumMapper::GetNameForOriginIpAddressTypeEnum(m_ipAddressType));
+  }
+
+  if (m_isPrivateOriginAccessEnabledHasBeenSet) {
+    payload.WithBool("isPrivateOriginAccessEnabled", m_isPrivateOriginAccessEnabled);
   }
 
   return payload;

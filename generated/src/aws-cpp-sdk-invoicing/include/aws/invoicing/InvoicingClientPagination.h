@@ -9,6 +9,8 @@
 #include <aws/invoicing/model/ListInvoiceSummariesPaginationTraits.h>
 #include <aws/invoicing/model/ListInvoiceUnitsPaginationTraits.h>
 #include <aws/invoicing/model/ListProcurementPortalPreferencesPaginationTraits.h>
+#include <aws/invoicing/model/ListProcurementPortalSuppliersPaginationTraits.h>
+#include <aws/invoicing/model/ListProcurementPortalsPaginationTraits.h>
 
 namespace Aws {
 namespace Invoicing {
@@ -20,6 +22,12 @@ using ListInvoiceUnitsPaginator = Aws::Utils::Pagination::Paginator<InvoicingCli
 using ListProcurementPortalPreferencesPaginator =
     Aws::Utils::Pagination::Paginator<InvoicingClient, Model::ListProcurementPortalPreferencesRequest,
                                       Pagination::ListProcurementPortalPreferencesPaginationTraits<InvoicingClient>>;
+using ListProcurementPortalsPaginator =
+    Aws::Utils::Pagination::Paginator<InvoicingClient, Model::ListProcurementPortalsRequest,
+                                      Pagination::ListProcurementPortalsPaginationTraits<InvoicingClient>>;
+using ListProcurementPortalSuppliersPaginator =
+    Aws::Utils::Pagination::Paginator<InvoicingClient, Model::ListProcurementPortalSuppliersRequest,
+                                      Pagination::ListProcurementPortalSuppliersPaginationTraits<InvoicingClient>>;
 
 }  // namespace Invoicing
 }  // namespace Aws

@@ -233,6 +233,8 @@
 #include <aws/mediaconvert/model/DolbyVisionLevel6Metadata.h>
 #include <aws/mediaconvert/model/DolbyVisionLevel6Mode.h>
 #include <aws/mediaconvert/model/DolbyVisionMapping.h>
+#include <aws/mediaconvert/model/DolbyVisionMetadata.h>
+#include <aws/mediaconvert/model/DolbyVisionPresence.h>
 #include <aws/mediaconvert/model/DolbyVisionProfile.h>
 #include <aws/mediaconvert/model/DropFrameTimecode.h>
 #include <aws/mediaconvert/model/DurationControl.h>

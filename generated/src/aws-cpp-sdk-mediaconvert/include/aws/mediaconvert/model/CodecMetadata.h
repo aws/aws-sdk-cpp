@@ -6,8 +6,10 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/mediaconvert/model/AspectRatio.h>
 #include <aws/mediaconvert/model/ColorPrimaries.h>
 #include <aws/mediaconvert/model/ContentLightLevel.h>
+#include <aws/mediaconvert/model/DolbyVisionMetadata.h>
 #include <aws/mediaconvert/model/FrameRate.h>
 #include <aws/mediaconvert/model/Hdr10PlusPresence.h>
 #include <aws/mediaconvert/model/MatrixCoefficients.h>
@@ -133,6 +135,56 @@ class CodecMetadata {
   template <typename ContentLightLevelT = ContentLightLevel>
   CodecMetadata& WithContentLightLevel(ContentLightLevelT&& value) {
     SetContentLightLevel(std::forward<ContentLightLevelT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * An aspect ratio expressed as a fraction with numerator and denominator values,
+   * reduced to lowest terms. Used for the sample (pixel) aspect ratio and the
+   * display aspect ratio of a video track. For example, a 720x576 anamorphic track
+   * has a sample aspect ratio of 64 / 45 and a display aspect ratio of 16 / 9. A
+   * video track can declare an aspect ratio in two independent places, and
+   * MediaConvert reports each one where it was found rather than choosing between
+   * them. The ratio declared by the container appears on the video track itself, and
+   * the ratio declared by the video essence appears under codecMetadata. When a file
+   * declares an aspect ratio in only one of the two places, the other is null; when
+   * it declares both and they disagree, you can compare them and decide which to
+   * use.
+   */
+  inline const AspectRatio& GetDisplayAspectRatio() const { return m_displayAspectRatio; }
+  inline bool DisplayAspectRatioHasBeenSet() const { return m_displayAspectRatioHasBeenSet; }
+  template <typename DisplayAspectRatioT = AspectRatio>
+  void SetDisplayAspectRatio(DisplayAspectRatioT&& value) {
+    m_displayAspectRatioHasBeenSet = true;
+    m_displayAspectRatio = std::forward<DisplayAspectRatioT>(value);
+  }
+  template <typename DisplayAspectRatioT = AspectRatio>
+  CodecMetadata& WithDisplayAspectRatio(DisplayAspectRatioT&& value) {
+    SetDisplayAspectRatio(std::forward<DisplayAspectRatioT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * Dolby Vision characteristics of the video track: the profile and level, and
+   * whether the RPU (dynamic metadata), base layer, and enhancement layer are
+   * present. Use this to distinguish Dolby Vision content from standard HEVC and to
+   * choose your encoding or passthrough settings. Omitted when the content is not
+   * Dolby Vision.
+   */
+  inline const DolbyVisionMetadata& GetDolbyVision() const { return m_dolbyVision; }
+  inline bool DolbyVisionHasBeenSet() const { return m_dolbyVisionHasBeenSet; }
+  template <typename DolbyVisionT = DolbyVisionMetadata>
+  void SetDolbyVision(DolbyVisionT&& value) {
+    m_dolbyVisionHasBeenSet = true;
+    m_dolbyVision = std::forward<DolbyVisionT>(value);
+  }
+  template <typename DolbyVisionT = DolbyVisionMetadata>
+  CodecMetadata& WithDolbyVision(DolbyVisionT&& value) {
+    SetDolbyVision(std::forward<DolbyVisionT>(value));
     return *this;
   }
   ///@}
@@ -273,6 +325,34 @@ class CodecMetadata {
 
   ///@{
   /**
+   * An aspect ratio expressed as a fraction with numerator and denominator values,
+   * reduced to lowest terms. Used for the sample (pixel) aspect ratio and the
+   * display aspect ratio of a video track. For example, a 720x576 anamorphic track
+   * has a sample aspect ratio of 64 / 45 and a display aspect ratio of 16 / 9. A
+   * video track can declare an aspect ratio in two independent places, and
+   * MediaConvert reports each one where it was found rather than choosing between
+   * them. The ratio declared by the container appears on the video track itself, and
+   * the ratio declared by the video essence appears under codecMetadata. When a file
+   * declares an aspect ratio in only one of the two places, the other is null; when
+   * it declares both and they disagree, you can compare them and decide which to
+   * use.
+   */
+  inline const AspectRatio& GetSampleAspectRatio() const { return m_sampleAspectRatio; }
+  inline bool SampleAspectRatioHasBeenSet() const { return m_sampleAspectRatioHasBeenSet; }
+  template <typename SampleAspectRatioT = AspectRatio>
+  void SetSampleAspectRatio(SampleAspectRatioT&& value) {
+    m_sampleAspectRatioHasBeenSet = true;
+    m_sampleAspectRatio = std::forward<SampleAspectRatioT>(value);
+  }
+  template <typename SampleAspectRatioT = AspectRatio>
+  CodecMetadata& WithSampleAspectRatio(SampleAspectRatioT&& value) {
+    SetSampleAspectRatio(std::forward<SampleAspectRatioT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * The scanning method specified in the video essence, indicating whether the video
    * uses progressive or interlaced scanning.
    */
@@ -335,6 +415,10 @@ class CodecMetadata {
 
   ContentLightLevel m_contentLightLevel;
 
+  AspectRatio m_displayAspectRatio;
+
+  DolbyVisionMetadata m_dolbyVision;
+
   Aws::String m_fieldOrder;
 
   Hdr10PlusPresence m_hdr10PlusPresence{Hdr10PlusPresence::NOT_SET};
@@ -349,6 +433,8 @@ class CodecMetadata {
 
   int m_rotation{0};
 
+  AspectRatio m_sampleAspectRatio;
+
   Aws::String m_scanType;
 
   TransferCharacteristics m_transferCharacteristics{TransferCharacteristics::NOT_SET};
@@ -359,6 +445,8 @@ class CodecMetadata {
   bool m_codedFrameRateHasBeenSet = false;
   bool m_colorPrimariesHasBeenSet = false;
   bool m_contentLightLevelHasBeenSet = false;
+  bool m_displayAspectRatioHasBeenSet = false;
+  bool m_dolbyVisionHasBeenSet = false;
   bool m_fieldOrderHasBeenSet = false;
   bool m_hdr10PlusPresenceHasBeenSet = false;
   bool m_heightHasBeenSet = false;
@@ -366,6 +454,7 @@ class CodecMetadata {
   bool m_matrixCoefficientsHasBeenSet = false;
   bool m_profileHasBeenSet = false;
   bool m_rotationHasBeenSet = false;
+  bool m_sampleAspectRatioHasBeenSet = false;
   bool m_scanTypeHasBeenSet = false;
   bool m_transferCharacteristicsHasBeenSet = false;
   bool m_widthHasBeenSet = false;

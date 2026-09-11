@@ -31,6 +31,8 @@
 #include <aws/invoicing/model/ListInvoiceSummariesRequest.h>
 #include <aws/invoicing/model/ListInvoiceUnitsRequest.h>
 #include <aws/invoicing/model/ListProcurementPortalPreferencesRequest.h>
+#include <aws/invoicing/model/ListProcurementPortalSuppliersRequest.h>
+#include <aws/invoicing/model/ListProcurementPortalsRequest.h>
 #include <aws/invoicing/model/ListTagsForResourceRequest.h>
 #include <aws/invoicing/model/PutProcurementPortalPreferenceRequest.h>
 #include <aws/invoicing/model/SendProcurementPortalValidationRequest.h>
@@ -256,6 +258,19 @@ ListProcurementPortalPreferencesOutcome InvoicingClient::ListProcurementPortalPr
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListProcurementPortalPreferencesOutcome(result.GetResultWithOwnership())
                             : ListProcurementPortalPreferencesOutcome(std::move(result.GetError()));
+}
+
+ListProcurementPortalSuppliersOutcome InvoicingClient::ListProcurementPortalSuppliers(
+    const ListProcurementPortalSuppliersRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListProcurementPortalSuppliersOutcome(result.GetResultWithOwnership())
+                            : ListProcurementPortalSuppliersOutcome(std::move(result.GetError()));
+}
+
+ListProcurementPortalsOutcome InvoicingClient::ListProcurementPortals(const ListProcurementPortalsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListProcurementPortalsOutcome(result.GetResultWithOwnership())
+                            : ListProcurementPortalsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome InvoicingClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {

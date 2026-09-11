@@ -92,15 +92,15 @@ class AWS_BATCH_API BatchClient : public Aws::Client::AWSJsonClient,
    * <p>Cancels a job in an Batch job queue. Jobs that are in a
    * <code>SUBMITTED</code>, <code>PENDING</code>, or <code>RUNNABLE</code> state are
    * cancelled and the job status is updated to <code>FAILED</code>.</p>  <p>A
-   * <code>PENDING</code> job is canceled after all dependency jobs are completed.
-   * Therefore, it may take longer than expected to cancel a job in
+   * <code>PENDING</code> job is cancelled after all dependency jobs are completed.
+   * Therefore, it might take longer than expected to cancel a job in
    * <code>PENDING</code> status.</p> <p>When you try to cancel an array parent job
    * in <code>PENDING</code>, Batch attempts to cancel all child jobs. The array
-   * parent job is canceled when all child jobs are completed.</p>  <p>Jobs
+   * parent job is cancelled when all child jobs are completed.</p>  <p>Jobs
    * that progressed to the <code>STARTING</code> or <code>RUNNING</code> state
-   * aren't canceled. However, the API operation still succeeds, even if no job is
-   * canceled. These jobs must be terminated with the <a>TerminateJob</a>
-   * operation.</p><p><h3>See Also:</h3>   <a
+   * aren't cancelled. However, the API operation still succeeds, even if no job is
+   * cancelled. These jobs must be terminated with the <a>TerminateJob</a> or
+   * <a>TerminateJobs</a> operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CancelJob">AWS API
    * Reference</a></p>
    */
@@ -122,6 +122,48 @@ class AWS_BATCH_API BatchClient : public Aws::Client::AWSJsonClient,
   void CancelJobAsync(const CancelJobRequestT& request, const CancelJobResponseReceivedHandler& handler,
                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BatchClient::CancelJob, request, handler, context);
+  }
+
+  /**
+   * <p>Cancels up to 50 jobs in an Batch job queue. This is a bulk version of
+   * <a>CancelJob</a>. Jobs that are in a <code>SUBMITTED</code>,
+   * <code>PENDING</code>, or <code>RUNNABLE</code> state are cancelled and the job
+   * status is updated to <code>FAILED</code>.</p>  <p>A <code>PENDING</code>
+   * job is cancelled after all dependency jobs are completed. Therefore, it might
+   * take longer than expected to cancel a job in <code>PENDING</code> status.</p>
+   * <p>When you try to cancel an array parent job in <code>PENDING</code>, Batch
+   * attempts to cancel all child jobs. The array parent job is cancelled when all
+   * child jobs are completed.</p>  <p>Jobs that progressed to the
+   * <code>STARTING</code> or <code>RUNNING</code> state aren't cancelled. These jobs
+   * must be terminated with the <a>TerminateJob</a> or <a>TerminateJobs</a>
+   * operation.</p> <p>Batch reports the result for each job individually in the
+   * response. Jobs that were processed successfully are reported in the
+   * <code>successful</code> list. Jobs that encountered errors are reported in the
+   * <code>errors</code> list. The response returns an HTTP status code of
+   * <code>200</code> even when some jobs encountered errors, so check the
+   * <code>errors</code> list. Jobs that can't be found are treated as successfully
+   * processed.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CancelJobs">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CancelJobsOutcome CancelJobs(const Model::CancelJobsRequest& request) const;
+
+  /**
+   * A Callable wrapper for CancelJobs that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CancelJobsRequestT = Model::CancelJobsRequest>
+  Model::CancelJobsOutcomeCallable CancelJobsCallable(const CancelJobsRequestT& request) const {
+    return SubmitCallable(&BatchClient::CancelJobs, request);
+  }
+
+  /**
+   * An Async wrapper for CancelJobs that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CancelJobsRequestT = Model::CancelJobsRequest>
+  void CancelJobsAsync(const CancelJobsRequestT& request, const CancelJobsResponseReceivedHandler& handler,
+                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BatchClient::CancelJobs, request, handler, context);
   }
 
   /**
@@ -1167,6 +1209,41 @@ class AWS_BATCH_API BatchClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Terminates up to 50 jobs in a job queue. This is a bulk version of
+   * <a>TerminateJob</a>. Jobs that are in the <code>STARTING</code> or
+   * <code>RUNNING</code> state are terminated, which causes them to transition to
+   * <code>FAILED</code>. Jobs that have not progressed to the <code>STARTING</code>
+   * state are cancelled.</p> <p>Batch reports the result for each job individually
+   * in the response. Jobs that were processed successfully are reported in the
+   * <code>successful</code> list. Jobs that encountered errors are reported in the
+   * <code>errors</code> list. The response returns an HTTP status code of
+   * <code>200</code> even when some jobs encountered errors, so check the
+   * <code>errors</code> list. Jobs that can't be found are treated as successfully
+   * processed.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TerminateJobs">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::TerminateJobsOutcome TerminateJobs(const Model::TerminateJobsRequest& request) const;
+
+  /**
+   * A Callable wrapper for TerminateJobs that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename TerminateJobsRequestT = Model::TerminateJobsRequest>
+  Model::TerminateJobsOutcomeCallable TerminateJobsCallable(const TerminateJobsRequestT& request) const {
+    return SubmitCallable(&BatchClient::TerminateJobs, request);
+  }
+
+  /**
+   * An Async wrapper for TerminateJobs that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename TerminateJobsRequestT = Model::TerminateJobsRequest>
+  void TerminateJobsAsync(const TerminateJobsRequestT& request, const TerminateJobsResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BatchClient::TerminateJobs, request, handler, context);
+  }
+
+  /**
    * <p>Terminates a service job in a job queue. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TerminateServiceJob">AWS
    * API Reference</a></p>
@@ -1190,6 +1267,39 @@ class AWS_BATCH_API BatchClient : public Aws::Client::AWSJsonClient,
   void TerminateServiceJobAsync(const TerminateServiceJobRequestT& request, const TerminateServiceJobResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BatchClient::TerminateServiceJob, request, handler, context);
+  }
+
+  /**
+   * <p>Terminates up to 50 service jobs in a job queue. This is a bulk version of
+   * <a>TerminateServiceJob</a>.</p> <p>Batch reports the result for each service job
+   * individually in the response. Service jobs that were processed successfully are
+   * reported in the <code>successful</code> list. Service jobs that encountered
+   * errors are reported in the <code>errors</code> list. The response returns an
+   * HTTP status code of <code>200</code> even when some service jobs encountered
+   * errors, so check the <code>errors</code> list. Service jobs that can't be found
+   * are treated as successfully processed.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TerminateServiceJobs">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::TerminateServiceJobsOutcome TerminateServiceJobs(const Model::TerminateServiceJobsRequest& request) const;
+
+  /**
+   * A Callable wrapper for TerminateServiceJobs that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename TerminateServiceJobsRequestT = Model::TerminateServiceJobsRequest>
+  Model::TerminateServiceJobsOutcomeCallable TerminateServiceJobsCallable(const TerminateServiceJobsRequestT& request) const {
+    return SubmitCallable(&BatchClient::TerminateServiceJobs, request);
+  }
+
+  /**
+   * An Async wrapper for TerminateServiceJobs that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename TerminateServiceJobsRequestT = Model::TerminateServiceJobsRequest>
+  void TerminateServiceJobsAsync(const TerminateServiceJobsRequestT& request, const TerminateServiceJobsResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BatchClient::TerminateServiceJobs, request, handler, context);
   }
 
   /**

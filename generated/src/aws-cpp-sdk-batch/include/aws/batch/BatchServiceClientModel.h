@@ -20,6 +20,7 @@
 
 /* Service model headers required in BatchClient header */
 #include <aws/batch/model/CancelJobResult.h>
+#include <aws/batch/model/CancelJobsResult.h>
 #include <aws/batch/model/CreateComputeEnvironmentResult.h>
 #include <aws/batch/model/CreateConsumableResourceResult.h>
 #include <aws/batch/model/CreateJobQueueResult.h>
@@ -63,7 +64,9 @@
 #include <aws/batch/model/SubmitServiceJobResult.h>
 #include <aws/batch/model/TagResourceResult.h>
 #include <aws/batch/model/TerminateJobResult.h>
+#include <aws/batch/model/TerminateJobsResult.h>
 #include <aws/batch/model/TerminateServiceJobResult.h>
+#include <aws/batch/model/TerminateServiceJobsResult.h>
 #include <aws/batch/model/UntagResourceResult.h>
 #include <aws/batch/model/UpdateComputeEnvironmentResult.h>
 #include <aws/batch/model/UpdateConsumableResourceResult.h>
@@ -106,6 +109,7 @@ using BatchEndpointProvider = Aws::Batch::Endpoint::BatchEndpointProvider;
 namespace Model {
 /* Service model forward declarations required in BatchClient header */
 class CancelJobRequest;
+class CancelJobsRequest;
 class CreateComputeEnvironmentRequest;
 class CreateConsumableResourceRequest;
 class CreateJobQueueRequest;
@@ -141,7 +145,9 @@ class SubmitJobRequest;
 class SubmitServiceJobRequest;
 class TagResourceRequest;
 class TerminateJobRequest;
+class TerminateJobsRequest;
 class TerminateServiceJobRequest;
+class TerminateServiceJobsRequest;
 class UntagResourceRequest;
 class UpdateComputeEnvironmentRequest;
 class UpdateConsumableResourceRequest;
@@ -154,6 +160,7 @@ class UpdateServiceJobRequest;
 
 /* Service model Outcome class definitions */
 typedef Aws::Utils::Outcome<CancelJobResult, BatchError> CancelJobOutcome;
+typedef Aws::Utils::Outcome<CancelJobsResult, BatchError> CancelJobsOutcome;
 typedef Aws::Utils::Outcome<CreateComputeEnvironmentResult, BatchError> CreateComputeEnvironmentOutcome;
 typedef Aws::Utils::Outcome<CreateConsumableResourceResult, BatchError> CreateConsumableResourceOutcome;
 typedef Aws::Utils::Outcome<CreateJobQueueResult, BatchError> CreateJobQueueOutcome;
@@ -189,7 +196,9 @@ typedef Aws::Utils::Outcome<SubmitJobResult, BatchError> SubmitJobOutcome;
 typedef Aws::Utils::Outcome<SubmitServiceJobResult, BatchError> SubmitServiceJobOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, BatchError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<TerminateJobResult, BatchError> TerminateJobOutcome;
+typedef Aws::Utils::Outcome<TerminateJobsResult, BatchError> TerminateJobsOutcome;
 typedef Aws::Utils::Outcome<TerminateServiceJobResult, BatchError> TerminateServiceJobOutcome;
+typedef Aws::Utils::Outcome<TerminateServiceJobsResult, BatchError> TerminateServiceJobsOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, BatchError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateComputeEnvironmentResult, BatchError> UpdateComputeEnvironmentOutcome;
 typedef Aws::Utils::Outcome<UpdateConsumableResourceResult, BatchError> UpdateConsumableResourceOutcome;
@@ -202,6 +211,7 @@ typedef Aws::Utils::Outcome<UpdateServiceJobResult, BatchError> UpdateServiceJob
 
 /* Service model Outcome callable definitions */
 typedef std::future<CancelJobOutcome> CancelJobOutcomeCallable;
+typedef std::future<CancelJobsOutcome> CancelJobsOutcomeCallable;
 typedef std::future<CreateComputeEnvironmentOutcome> CreateComputeEnvironmentOutcomeCallable;
 typedef std::future<CreateConsumableResourceOutcome> CreateConsumableResourceOutcomeCallable;
 typedef std::future<CreateJobQueueOutcome> CreateJobQueueOutcomeCallable;
@@ -237,7 +247,9 @@ typedef std::future<SubmitJobOutcome> SubmitJobOutcomeCallable;
 typedef std::future<SubmitServiceJobOutcome> SubmitServiceJobOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<TerminateJobOutcome> TerminateJobOutcomeCallable;
+typedef std::future<TerminateJobsOutcome> TerminateJobsOutcomeCallable;
 typedef std::future<TerminateServiceJobOutcome> TerminateServiceJobOutcomeCallable;
+typedef std::future<TerminateServiceJobsOutcome> TerminateServiceJobsOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateComputeEnvironmentOutcome> UpdateComputeEnvironmentOutcomeCallable;
 typedef std::future<UpdateConsumableResourceOutcome> UpdateConsumableResourceOutcomeCallable;
@@ -255,6 +267,9 @@ class BatchClient;
 typedef std::function<void(const BatchClient*, const Model::CancelJobRequest&, const Model::CancelJobOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CancelJobResponseReceivedHandler;
+typedef std::function<void(const BatchClient*, const Model::CancelJobsRequest&, const Model::CancelJobsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CancelJobsResponseReceivedHandler;
 typedef std::function<void(const BatchClient*, const Model::CreateComputeEnvironmentRequest&, const Model::CreateComputeEnvironmentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateComputeEnvironmentResponseReceivedHandler;
@@ -361,9 +376,15 @@ typedef std::function<void(const BatchClient*, const Model::TagResourceRequest&,
 typedef std::function<void(const BatchClient*, const Model::TerminateJobRequest&, const Model::TerminateJobOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     TerminateJobResponseReceivedHandler;
+typedef std::function<void(const BatchClient*, const Model::TerminateJobsRequest&, const Model::TerminateJobsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    TerminateJobsResponseReceivedHandler;
 typedef std::function<void(const BatchClient*, const Model::TerminateServiceJobRequest&, const Model::TerminateServiceJobOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     TerminateServiceJobResponseReceivedHandler;
+typedef std::function<void(const BatchClient*, const Model::TerminateServiceJobsRequest&, const Model::TerminateServiceJobsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    TerminateServiceJobsResponseReceivedHandler;
 typedef std::function<void(const BatchClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UntagResourceResponseReceivedHandler;

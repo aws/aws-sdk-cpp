@@ -143,6 +143,27 @@ class Origin {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether private origin access is enabled for the distribution's
+   * origin. With private origin access, the distribution can serve objects that
+   * aren't publicly accessible from a Lightsail bucket.</p> <p>This applies when you
+   * set the bucket's <code>getObject</code> access rule to <code>private</code>. It
+   * also applies when you set <code>getObject</code> to <code>public</code> but set
+   * individual objects to private.</p>
+   */
+  inline bool GetIsPrivateOriginAccessEnabled() const { return m_isPrivateOriginAccessEnabled; }
+  inline bool IsPrivateOriginAccessEnabledHasBeenSet() const { return m_isPrivateOriginAccessEnabledHasBeenSet; }
+  inline void SetIsPrivateOriginAccessEnabled(bool value) {
+    m_isPrivateOriginAccessEnabledHasBeenSet = true;
+    m_isPrivateOriginAccessEnabled = value;
+  }
+  inline Origin& WithIsPrivateOriginAccessEnabled(bool value) {
+    SetIsPrivateOriginAccessEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -155,12 +176,15 @@ class Origin {
   int m_responseTimeout{0};
 
   OriginIpAddressTypeEnum m_ipAddressType{OriginIpAddressTypeEnum::NOT_SET};
+
+  bool m_isPrivateOriginAccessEnabled{false};
   bool m_nameHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
   bool m_regionNameHasBeenSet = false;
   bool m_protocolPolicyHasBeenSet = false;
   bool m_responseTimeoutHasBeenSet = false;
   bool m_ipAddressTypeHasBeenSet = false;
+  bool m_isPrivateOriginAccessEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

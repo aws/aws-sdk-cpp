@@ -7,6 +7,7 @@
 #include <aws/batch/BatchEndpointProvider.h>
 #include <aws/batch/BatchErrorMarshaller.h>
 #include <aws/batch/model/CancelJobRequest.h>
+#include <aws/batch/model/CancelJobsRequest.h>
 #include <aws/batch/model/CreateComputeEnvironmentRequest.h>
 #include <aws/batch/model/CreateConsumableResourceRequest.h>
 #include <aws/batch/model/CreateJobQueueRequest.h>
@@ -42,7 +43,9 @@
 #include <aws/batch/model/SubmitServiceJobRequest.h>
 #include <aws/batch/model/TagResourceRequest.h>
 #include <aws/batch/model/TerminateJobRequest.h>
+#include <aws/batch/model/TerminateJobsRequest.h>
 #include <aws/batch/model/TerminateServiceJobRequest.h>
+#include <aws/batch/model/TerminateServiceJobsRequest.h>
 #include <aws/batch/model/UntagResourceRequest.h>
 #include <aws/batch/model/UpdateComputeEnvironmentRequest.h>
 #include <aws/batch/model/UpdateConsumableResourceRequest.h>
@@ -227,6 +230,16 @@ CancelJobOutcome BatchClient::CancelJob(const CancelJobRequest& request) const {
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CancelJobOutcome(result.GetResultWithOwnership()) : CancelJobOutcome(std::move(result.GetError()));
+}
+
+CancelJobsOutcome BatchClient::CancelJobs(const CancelJobsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/canceljobs");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelJobsOutcome(result.GetResultWithOwnership()) : CancelJobsOutcome(std::move(result.GetError()));
 }
 
 CreateComputeEnvironmentOutcome BatchClient::CreateComputeEnvironment(const CreateComputeEnvironmentRequest& request) const {
@@ -621,6 +634,16 @@ TerminateJobOutcome BatchClient::TerminateJob(const TerminateJobRequest& request
   return result.IsSuccess() ? TerminateJobOutcome(result.GetResultWithOwnership()) : TerminateJobOutcome(std::move(result.GetError()));
 }
 
+TerminateJobsOutcome BatchClient::TerminateJobs(const TerminateJobsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/terminatejobs");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TerminateJobsOutcome(result.GetResultWithOwnership()) : TerminateJobsOutcome(std::move(result.GetError()));
+}
+
 TerminateServiceJobOutcome BatchClient::TerminateServiceJob(const TerminateServiceJobRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -630,6 +653,17 @@ TerminateServiceJobOutcome BatchClient::TerminateServiceJob(const TerminateServi
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? TerminateServiceJobOutcome(result.GetResultWithOwnership())
                             : TerminateServiceJobOutcome(std::move(result.GetError()));
+}
+
+TerminateServiceJobsOutcome BatchClient::TerminateServiceJobs(const TerminateServiceJobsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/terminateservicejobs");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TerminateServiceJobsOutcome(result.GetResultWithOwnership())
+                            : TerminateServiceJobsOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome BatchClient::UntagResource(const UntagResourceRequest& request) const {

@@ -81,6 +81,14 @@ JobSummary& JobSummary::operator=(JsonView jsonValue) {
     m_jobDefinition = jsonValue.GetString("jobDefinition");
     m_jobDefinitionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("isCancelled")) {
+    m_isCancelled = jsonValue.GetBool("isCancelled");
+    m_isCancelledHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("isTerminated")) {
+    m_isTerminated = jsonValue.GetBool("isTerminated");
+    m_isTerminatedHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -149,6 +157,14 @@ JsonValue JobSummary::Jsonize() const {
 
   if (m_jobDefinitionHasBeenSet) {
     payload.WithString("jobDefinition", m_jobDefinition);
+  }
+
+  if (m_isCancelledHasBeenSet) {
+    payload.WithBool("isCancelled", m_isCancelled);
+  }
+
+  if (m_isTerminatedHasBeenSet) {
+    payload.WithBool("isTerminated", m_isTerminated);
   }
 
   return payload;

@@ -212,6 +212,7 @@
 #include <aws/lightsail/model/DiskSnapshotState.h>
 #include <aws/lightsail/model/DiskState.h>
 #include <aws/lightsail/model/DistributionBundle.h>
+#include <aws/lightsail/model/DistributionCustomErrorResponse.h>
 #include <aws/lightsail/model/DistributionMetricName.h>
 #include <aws/lightsail/model/DnsRecordCreationState.h>
 #include <aws/lightsail/model/DnsRecordCreationStateCode.h>

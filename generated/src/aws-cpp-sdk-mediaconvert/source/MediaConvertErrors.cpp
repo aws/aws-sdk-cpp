@@ -20,6 +20,7 @@ static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("Service
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
 static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
+static const int UNPROCESSABLE_ENTITY_HASH = HashingUtils::HashString("UnprocessableEntityException");
 static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
 static const int INTERNAL_SERVER_ERROR_HASH = HashingUtils::HashString("InternalServerErrorException");
 
@@ -36,6 +37,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaConvertErrors::FORBIDDEN), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == TOO_MANY_REQUESTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaConvertErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE_THROTTLING);
+  } else if (hashCode == UNPROCESSABLE_ENTITY_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaConvertErrors::UNPROCESSABLE_ENTITY), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == BAD_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaConvertErrors::BAD_REQUEST), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INTERNAL_SERVER_ERROR_HASH) {

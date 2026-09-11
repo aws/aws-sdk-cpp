@@ -112,6 +112,18 @@ LightsailDistribution& LightsailDistribution::operator=(JsonView jsonValue) {
     m_viewerMinimumTlsProtocolVersion = jsonValue.GetString("viewerMinimumTlsProtocolVersion");
     m_viewerMinimumTlsProtocolVersionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("defaultRootObject")) {
+    m_defaultRootObject = jsonValue.GetString("defaultRootObject");
+    m_defaultRootObjectHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("customErrorResponses")) {
+    Aws::Utils::Array<JsonView> customErrorResponsesJsonList = jsonValue.GetArray("customErrorResponses");
+    for (unsigned customErrorResponsesIndex = 0; customErrorResponsesIndex < customErrorResponsesJsonList.GetLength();
+         ++customErrorResponsesIndex) {
+      m_customErrorResponses.push_back(customErrorResponsesJsonList[customErrorResponsesIndex].AsObject());
+    }
+    m_customErrorResponsesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -213,6 +225,19 @@ JsonValue LightsailDistribution::Jsonize() const {
 
   if (m_viewerMinimumTlsProtocolVersionHasBeenSet) {
     payload.WithString("viewerMinimumTlsProtocolVersion", m_viewerMinimumTlsProtocolVersion);
+  }
+
+  if (m_defaultRootObjectHasBeenSet) {
+    payload.WithString("defaultRootObject", m_defaultRootObject);
+  }
+
+  if (m_customErrorResponsesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> customErrorResponsesJsonList(m_customErrorResponses.size());
+    for (unsigned customErrorResponsesIndex = 0; customErrorResponsesIndex < customErrorResponsesJsonList.GetLength();
+         ++customErrorResponsesIndex) {
+      customErrorResponsesJsonList[customErrorResponsesIndex].AsObject(m_customErrorResponses[customErrorResponsesIndex].Jsonize());
+    }
+    payload.WithArray("customErrorResponses", std::move(customErrorResponsesJsonList));
   }
 
   return payload;

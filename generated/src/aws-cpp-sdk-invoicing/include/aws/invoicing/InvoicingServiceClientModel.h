@@ -32,6 +32,9 @@
 #include <aws/invoicing/model/ListInvoiceUnitsResult.h>
 #include <aws/invoicing/model/ListProcurementPortalPreferencesRequest.h>
 #include <aws/invoicing/model/ListProcurementPortalPreferencesResult.h>
+#include <aws/invoicing/model/ListProcurementPortalSuppliersResult.h>
+#include <aws/invoicing/model/ListProcurementPortalsRequest.h>
+#include <aws/invoicing/model/ListProcurementPortalsResult.h>
 #include <aws/invoicing/model/ListTagsForResourceResult.h>
 #include <aws/invoicing/model/PutProcurementPortalPreferenceResult.h>
 #include <aws/invoicing/model/SendProcurementPortalValidationResult.h>
@@ -84,6 +87,8 @@ class GetProcurementPortalPreferenceRequest;
 class ListInvoiceSummariesRequest;
 class ListInvoiceUnitsRequest;
 class ListProcurementPortalPreferencesRequest;
+class ListProcurementPortalSuppliersRequest;
+class ListProcurementPortalsRequest;
 class ListTagsForResourceRequest;
 class PutProcurementPortalPreferenceRequest;
 class SendProcurementPortalValidationRequest;
@@ -106,6 +111,8 @@ typedef Aws::Utils::Outcome<GetProcurementPortalPreferenceResult, InvoicingError
 typedef Aws::Utils::Outcome<ListInvoiceSummariesResult, InvoicingError> ListInvoiceSummariesOutcome;
 typedef Aws::Utils::Outcome<ListInvoiceUnitsResult, InvoicingError> ListInvoiceUnitsOutcome;
 typedef Aws::Utils::Outcome<ListProcurementPortalPreferencesResult, InvoicingError> ListProcurementPortalPreferencesOutcome;
+typedef Aws::Utils::Outcome<ListProcurementPortalSuppliersResult, InvoicingError> ListProcurementPortalSuppliersOutcome;
+typedef Aws::Utils::Outcome<ListProcurementPortalsResult, InvoicingError> ListProcurementPortalsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, InvoicingError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<PutProcurementPortalPreferenceResult, InvoicingError> PutProcurementPortalPreferenceOutcome;
 typedef Aws::Utils::Outcome<SendProcurementPortalValidationResult, InvoicingError> SendProcurementPortalValidationOutcome;
@@ -128,6 +135,8 @@ typedef std::future<GetProcurementPortalPreferenceOutcome> GetProcurementPortalP
 typedef std::future<ListInvoiceSummariesOutcome> ListInvoiceSummariesOutcomeCallable;
 typedef std::future<ListInvoiceUnitsOutcome> ListInvoiceUnitsOutcomeCallable;
 typedef std::future<ListProcurementPortalPreferencesOutcome> ListProcurementPortalPreferencesOutcomeCallable;
+typedef std::future<ListProcurementPortalSuppliersOutcome> ListProcurementPortalSuppliersOutcomeCallable;
+typedef std::future<ListProcurementPortalsOutcome> ListProcurementPortalsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<PutProcurementPortalPreferenceOutcome> PutProcurementPortalPreferenceOutcomeCallable;
 typedef std::future<SendProcurementPortalValidationOutcome> SendProcurementPortalValidationOutcomeCallable;
@@ -179,6 +188,13 @@ typedef std::function<void(const InvoicingClient*, const Model::ListProcurementP
                            const Model::ListProcurementPortalPreferencesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListProcurementPortalPreferencesResponseReceivedHandler;
+typedef std::function<void(const InvoicingClient*, const Model::ListProcurementPortalSuppliersRequest&,
+                           const Model::ListProcurementPortalSuppliersOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListProcurementPortalSuppliersResponseReceivedHandler;
+typedef std::function<void(const InvoicingClient*, const Model::ListProcurementPortalsRequest&, const Model::ListProcurementPortalsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListProcurementPortalsResponseReceivedHandler;
 typedef std::function<void(const InvoicingClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;

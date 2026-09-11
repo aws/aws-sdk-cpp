@@ -10,6 +10,8 @@
 #include <aws/invoicing/model/ListInvoiceSummariesPaginationTraits.h>
 #include <aws/invoicing/model/ListInvoiceUnitsPaginationTraits.h>
 #include <aws/invoicing/model/ListProcurementPortalPreferencesPaginationTraits.h>
+#include <aws/invoicing/model/ListProcurementPortalSuppliersPaginationTraits.h>
+#include <aws/invoicing/model/ListProcurementPortalsPaginationTraits.h>
 
 #include <memory>
 
@@ -52,6 +54,30 @@ class InvoicingPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProcurementPortalPreferencesRequest,
                                              Pagination::ListProcurementPortalPreferencesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListProcurementPortals operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProcurementPortalsRequest,
+                                    Pagination::ListProcurementPortalsPaginationTraits<DerivedClient>>
+  ListProcurementPortalsPaginator(const Model::ListProcurementPortalsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProcurementPortalsRequest,
+                                             Pagination::ListProcurementPortalsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListProcurementPortalSuppliers operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProcurementPortalSuppliersRequest,
+                                    Pagination::ListProcurementPortalSuppliersPaginationTraits<DerivedClient>>
+  ListProcurementPortalSuppliersPaginator(const Model::ListProcurementPortalSuppliersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProcurementPortalSuppliersRequest,
+                                             Pagination::ListProcurementPortalSuppliersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 };

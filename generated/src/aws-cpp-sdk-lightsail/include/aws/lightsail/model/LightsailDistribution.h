@@ -11,6 +11,7 @@
 #include <aws/lightsail/model/CacheBehavior.h>
 #include <aws/lightsail/model/CacheBehaviorPerPath.h>
 #include <aws/lightsail/model/CacheSettings.h>
+#include <aws/lightsail/model/DistributionCustomErrorResponse.h>
 #include <aws/lightsail/model/IpAddressType.h>
 #include <aws/lightsail/model/Origin.h>
 #include <aws/lightsail/model/ResourceLocation.h>
@@ -447,6 +448,51 @@ class LightsailDistribution {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The object (for example, <code>index.html</code>) that the distribution
+   * returns when a viewer requests the root URL of the distribution (<code>/</code>)
+   * instead of a specific object.</p>
+   */
+  inline const Aws::String& GetDefaultRootObject() const { return m_defaultRootObject; }
+  inline bool DefaultRootObjectHasBeenSet() const { return m_defaultRootObjectHasBeenSet; }
+  template <typename DefaultRootObjectT = Aws::String>
+  void SetDefaultRootObject(DefaultRootObjectT&& value) {
+    m_defaultRootObjectHasBeenSet = true;
+    m_defaultRootObject = std::forward<DefaultRootObjectT>(value);
+  }
+  template <typename DefaultRootObjectT = Aws::String>
+  LightsailDistribution& WithDefaultRootObject(DefaultRootObjectT&& value) {
+    SetDefaultRootObject(std::forward<DefaultRootObjectT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An array of objects that describe the custom error responses configured for
+   * the distribution.</p>
+   */
+  inline const Aws::Vector<DistributionCustomErrorResponse>& GetCustomErrorResponses() const { return m_customErrorResponses; }
+  inline bool CustomErrorResponsesHasBeenSet() const { return m_customErrorResponsesHasBeenSet; }
+  template <typename CustomErrorResponsesT = Aws::Vector<DistributionCustomErrorResponse>>
+  void SetCustomErrorResponses(CustomErrorResponsesT&& value) {
+    m_customErrorResponsesHasBeenSet = true;
+    m_customErrorResponses = std::forward<CustomErrorResponsesT>(value);
+  }
+  template <typename CustomErrorResponsesT = Aws::Vector<DistributionCustomErrorResponse>>
+  LightsailDistribution& WithCustomErrorResponses(CustomErrorResponsesT&& value) {
+    SetCustomErrorResponses(std::forward<CustomErrorResponsesT>(value));
+    return *this;
+  }
+  template <typename CustomErrorResponsesT = DistributionCustomErrorResponse>
+  LightsailDistribution& AddCustomErrorResponses(CustomErrorResponsesT&& value) {
+    m_customErrorResponsesHasBeenSet = true;
+    m_customErrorResponses.emplace_back(std::forward<CustomErrorResponsesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -489,6 +535,10 @@ class LightsailDistribution {
   Aws::Vector<Tag> m_tags;
 
   Aws::String m_viewerMinimumTlsProtocolVersion;
+
+  Aws::String m_defaultRootObject;
+
+  Aws::Vector<DistributionCustomErrorResponse> m_customErrorResponses;
   bool m_nameHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_supportCodeHasBeenSet = false;
@@ -510,6 +560,8 @@ class LightsailDistribution {
   bool m_ipAddressTypeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_viewerMinimumTlsProtocolVersionHasBeenSet = false;
+  bool m_defaultRootObjectHasBeenSet = false;
+  bool m_customErrorResponsesHasBeenSet = false;
 };
 
 }  // namespace Model

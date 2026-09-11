@@ -601,7 +601,7 @@ class JobDetail {
 
   ///@{
   /**
-   * <p>Indicates whether the job is canceled.</p>
+   * <p>Indicates whether the job is cancelled.</p>
    */
   inline bool GetIsCancelled() const { return m_isCancelled; }
   inline bool IsCancelledHasBeenSet() const { return m_isCancelledHasBeenSet; }

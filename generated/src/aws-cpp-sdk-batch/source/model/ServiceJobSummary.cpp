@@ -77,6 +77,10 @@ ServiceJobSummary& ServiceJobSummary::operator=(JsonView jsonValue) {
     m_stoppedAt = jsonValue.GetInt64("stoppedAt");
     m_stoppedAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("isTerminated")) {
+    m_isTerminated = jsonValue.GetBool("isTerminated");
+    m_isTerminatedHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -141,6 +145,10 @@ JsonValue ServiceJobSummary::Jsonize() const {
 
   if (m_stoppedAtHasBeenSet) {
     payload.WithInt64("stoppedAt", m_stoppedAt);
+  }
+
+  if (m_isTerminatedHasBeenSet) {
+    payload.WithBool("isTerminated", m_isTerminated);
   }
 
   return payload;

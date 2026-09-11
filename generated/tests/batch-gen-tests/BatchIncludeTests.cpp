@@ -34,6 +34,9 @@
 #include <aws/batch/model/CRUpdateAllocationStrategy.h>
 #include <aws/batch/model/CancelJobRequest.h>
 #include <aws/batch/model/CancelJobResult.h>
+#include <aws/batch/model/CancelJobsErrorDetail.h>
+#include <aws/batch/model/CancelJobsRequest.h>
+#include <aws/batch/model/CancelJobsResult.h>
 #include <aws/batch/model/CapacityLimit.h>
 #include <aws/batch/model/CapacityReservationRequest.h>
 #include <aws/batch/model/ComputeEnvironmentDetail.h>
@@ -273,8 +276,14 @@
 #include <aws/batch/model/TaskPropertiesOverride.h>
 #include <aws/batch/model/TerminateJobRequest.h>
 #include <aws/batch/model/TerminateJobResult.h>
+#include <aws/batch/model/TerminateJobsErrorDetail.h>
+#include <aws/batch/model/TerminateJobsRequest.h>
+#include <aws/batch/model/TerminateJobsResult.h>
 #include <aws/batch/model/TerminateServiceJobRequest.h>
 #include <aws/batch/model/TerminateServiceJobResult.h>
+#include <aws/batch/model/TerminateServiceJobsErrorDetail.h>
+#include <aws/batch/model/TerminateServiceJobsRequest.h>
+#include <aws/batch/model/TerminateServiceJobsResult.h>
 #include <aws/batch/model/Tmpfs.h>
 #include <aws/batch/model/Ulimit.h>
 #include <aws/batch/model/UntagResourceRequest.h>

@@ -50,7 +50,8 @@ enum class MediaConvertErrors {
   INTERNAL_SERVER_ERROR,
   NOT_FOUND,
   SERVICE_QUOTA_EXCEEDED,
-  TOO_MANY_REQUESTS
+  TOO_MANY_REQUESTS,
+  UNPROCESSABLE_ENTITY
 };
 
 class AWS_MEDIACONVERT_API MediaConvertError : public Aws::Client::AWSError<MediaConvertErrors> {

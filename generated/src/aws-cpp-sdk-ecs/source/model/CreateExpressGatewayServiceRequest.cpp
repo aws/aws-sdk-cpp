@@ -55,6 +55,10 @@ Aws::String CreateExpressGatewayServiceRequest::SerializePayload() const {
     payload.WithString("memory", m_memory);
   }
 
+  if (m_cpuArchitectureHasBeenSet) {
+    payload.WithString("cpuArchitecture", ExpressCpuArchitectureMapper::GetNameForExpressCpuArchitecture(m_cpuArchitecture));
+  }
+
   if (m_scalingTargetHasBeenSet) {
     payload.WithObject("scalingTarget", m_scalingTarget.Jsonize());
   }

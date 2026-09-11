@@ -288,6 +288,23 @@ class ServiceJobSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether a termination request has been accepted for the service
+   * job. This field is only present when the value is <code>true</code>.</p>
+   */
+  inline bool GetIsTerminated() const { return m_isTerminated; }
+  inline bool IsTerminatedHasBeenSet() const { return m_isTerminatedHasBeenSet; }
+  inline void SetIsTerminated(bool value) {
+    m_isTerminatedHasBeenSet = true;
+    m_isTerminated = value;
+  }
+  inline ServiceJobSummary& WithIsTerminated(bool value) {
+    SetIsTerminated(value);
+    return *this;
+  }
+  ///@}
  private:
   LatestServiceJobAttempt m_latestAttempt;
 
@@ -316,6 +333,8 @@ class ServiceJobSummary {
   long long m_startedAt{0};
 
   long long m_stoppedAt{0};
+
+  bool m_isTerminated{false};
   bool m_latestAttemptHasBeenSet = false;
   bool m_capacityUsageHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
@@ -330,6 +349,7 @@ class ServiceJobSummary {
   bool m_statusReasonHasBeenSet = false;
   bool m_startedAtHasBeenSet = false;
   bool m_stoppedAtHasBeenSet = false;
+  bool m_isTerminatedHasBeenSet = false;
 };
 
 }  // namespace Model

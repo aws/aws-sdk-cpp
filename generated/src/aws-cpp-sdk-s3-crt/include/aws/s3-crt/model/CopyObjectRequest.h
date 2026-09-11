@@ -1274,8 +1274,9 @@ class CopyObjectRequest : public S3CrtRequest {
 
   ///@{
   /**
-   * <p>The event hold duration in days to apply to the object copy.</p>
-   * <p>This functionality is not supported for directory buckets.</p>
+   * <p>The event hold duration in days to apply to the object copy. You cannot
+   * specify a duration in both days and years.</p>  <p>This functionality is
+   * not supported for directory buckets.</p>
    */
   inline int GetObjectLockEventHoldDurationDays() const { return m_objectLockEventHoldDurationDays; }
   inline bool ObjectLockEventHoldDurationDaysHasBeenSet() const { return m_objectLockEventHoldDurationDaysHasBeenSet; }
@@ -1291,8 +1292,9 @@ class CopyObjectRequest : public S3CrtRequest {
 
   ///@{
   /**
-   * <p>The event hold duration in years to apply to the object copy.</p>
-   * <p>This functionality is not supported for directory buckets.</p>
+   * <p>The event hold duration in years to apply to the object copy. You cannot
+   * specify a duration in both days and years.</p>  <p>This functionality is
+   * not supported for directory buckets.</p>
    */
   inline int GetObjectLockEventHoldDurationYears() const { return m_objectLockEventHoldDurationYears; }
   inline bool ObjectLockEventHoldDurationYearsHasBeenSet() const { return m_objectLockEventHoldDurationYearsHasBeenSet; }

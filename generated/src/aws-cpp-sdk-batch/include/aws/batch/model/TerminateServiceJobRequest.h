@@ -48,9 +48,9 @@ class TerminateServiceJobRequest : public BatchRequest {
 
   ///@{
   /**
-   * <p>A message to attach to the service job that explains the reason for canceling
-   * it. This message is returned by <code>DescribeServiceJob</code> operations on
-   * the service job.</p>
+   * <p>A message to attach to the service job that explains the reason for
+   * terminating it. This message is returned by <code>DescribeServiceJob</code>
+   * operations on the service job.</p>
    */
   inline const Aws::String& GetReason() const { return m_reason; }
   inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }

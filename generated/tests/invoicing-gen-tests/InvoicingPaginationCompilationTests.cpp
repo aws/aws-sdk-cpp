@@ -10,7 +10,9 @@
 #include <aws/invoicing/InvoicingPaginationBase.h>
 #include <aws/invoicing/model/ListProcurementPortalPreferencesPaginationTraits.h>
 #include <aws/invoicing/model/ListInvoiceUnitsPaginationTraits.h>
+#include <aws/invoicing/model/ListProcurementPortalSuppliersPaginationTraits.h>
 #include <aws/invoicing/model/ListInvoiceSummariesPaginationTraits.h>
+#include <aws/invoicing/model/ListProcurementPortalsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

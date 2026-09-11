@@ -42,6 +42,10 @@ ExpressGatewayServiceConfiguration& ExpressGatewayServiceConfiguration::operator
     m_memory = jsonValue.GetString("memory");
     m_memoryHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("cpuArchitecture")) {
+    m_cpuArchitecture = ExpressCpuArchitectureMapper::GetExpressCpuArchitectureForName(jsonValue.GetString("cpuArchitecture"));
+    m_cpuArchitectureHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("networkConfiguration")) {
     m_networkConfiguration = jsonValue.GetObject("networkConfiguration");
     m_networkConfigurationHasBeenSet = true;
@@ -97,6 +101,10 @@ JsonValue ExpressGatewayServiceConfiguration::Jsonize() const {
 
   if (m_memoryHasBeenSet) {
     payload.WithString("memory", m_memory);
+  }
+
+  if (m_cpuArchitectureHasBeenSet) {
+    payload.WithString("cpuArchitecture", ExpressCpuArchitectureMapper::GetNameForExpressCpuArchitecture(m_cpuArchitecture));
   }
 
   if (m_networkConfigurationHasBeenSet) {
