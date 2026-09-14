@@ -156,7 +156,7 @@ namespace client
                               EndpointUpdateCallback&& endpointCallback,
                               ResponseHandlerFunc&& responseHandler,
                               AuthResolvedCallback&& authCallback,
-                              std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor) const;
+                              std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor = nullptr) const;
 
         HttpResponseOutcome MakeRequestSync(Aws::AmazonWebServiceRequest const * const request,
                                             const char* requestName,
@@ -219,9 +219,9 @@ namespace client
         std::shared_ptr<Aws::Http::HttpRequest> BuildHttpRequest(const std::shared_ptr<AwsSmithyClientAsyncRequestContext>& pRequestCtx, const Aws::Http::URI& uri, Aws::Http::HttpMethod method) const;
 
 
-        virtual void AttemptOneRequestAsync(std::shared_ptr<AwsSmithyClientAsyncRequestContext> pRequestCtx) const;
+        virtual std::shared_ptr<Aws::Http::HttpRequest> AttemptOneRequestAsync(std::shared_ptr<AwsSmithyClientAsyncRequestContext> pRequestCtx) const;
 
-        virtual void HandleAsyncReply(std::shared_ptr<AwsSmithyClientAsyncRequestContext> pRequestCtx,
+        virtual Aws::Http::HttpClient::AttemptOutcome HandleAsyncReply(std::shared_ptr<AwsSmithyClientAsyncRequestContext> pRequestCtx,
                                       std::shared_ptr<Aws::Http::HttpResponse> httpResponse) const;
 
         virtual ResolveEndpointOutcome ResolveEndpoint(const Aws::Endpoint::EndpointParameters& endpointParameters, EndpointUpdateCallback&& epCallback) const = 0;

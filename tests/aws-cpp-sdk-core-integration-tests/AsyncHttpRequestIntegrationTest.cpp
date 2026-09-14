@@ -63,11 +63,26 @@ TEST_F(AsyncHttpRequestIntegrationTest, AsynchronousGet)
     auto request = CreateHttpRequest(Aws::String(ENDPOINT), HttpMethod::HTTP_GET,
                                      Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
 
-    auto error = client->MakeRequestAsync(request,
-        [&](std::shared_ptr<HttpResponse> response)
+    bool requestSent = false;
+    auto error = client->MakeRequestAsync(
+        [&]() -> std::shared_ptr<HttpRequest>
+        {
+            if (requestSent)
+            {
+                return nullptr;
+            }
+            requestSent = true;
+            return request;
+        },
+        [&](std::shared_ptr<HttpResponse> response) -> Aws::Http::HttpClient::AttemptOutcome
         {
             std::lock_guard<std::mutex> lock(mutex);
             asyncResponse = std::move(response);
+            return {};
+        },
+        [&]()
+        {
+            std::lock_guard<std::mutex> lock(mutex);
             done = true;
             cv.notify_one();
         });
@@ -81,6 +96,58 @@ TEST_F(AsyncHttpRequestIntegrationTest, AsynchronousGet)
     ASSERT_NE(nullptr, asyncResponse);
     ASSERT_FALSE(asyncResponse->HasClientError()) << "async GET returned a client error";
     EXPECT_EQ(HttpResponseCode::OK, asyncResponse->GetResponseCode());
+}
+
+TEST_F(AsyncHttpRequestIntegrationTest, AsynchronousRetryLoopReattemptsAndSchedulesBackoff)
+{
+    std::mutex mutex;
+    std::condition_variable cv;
+    bool done = false;
+    int prepareCount = 0;
+    int evaluateCount = 0;
+    Aws::Vector<std::chrono::milliseconds> delaysScheduled;
+
+    auto client = CreateHttpClient(ClientConfiguration());
+
+    const int attemptsBeforeSuccess = 3;
+
+    auto error = client->MakeRequestAsync(
+        [&]() -> std::shared_ptr<HttpRequest>
+        {
+            std::lock_guard<std::mutex> lock(mutex);
+            ++prepareCount;
+            return CreateHttpRequest(Aws::String(ENDPOINT), HttpMethod::HTTP_GET,
+                                     Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+        },
+        [&](std::shared_ptr<HttpResponse>) -> Aws::Http::HttpClient::AttemptOutcome
+        {
+            std::lock_guard<std::mutex> lock(mutex);
+            ++evaluateCount;
+            if (evaluateCount < attemptsBeforeSuccess)
+            {
+                std::chrono::milliseconds backoff{10};
+                delaysScheduled.push_back(backoff);
+                return {true, backoff};
+            }
+            return {false, std::chrono::milliseconds(0)};
+        },
+        [&]()
+        {
+            std::lock_guard<std::mutex> lock(mutex);
+            done = true;
+            cv.notify_one();
+        });
+
+    ASSERT_FALSE(error.has_value()) << error->GetMessage();
+
+    std::unique_lock<std::mutex> lock(mutex);
+    ASSERT_TRUE(cv.wait_for(lock, std::chrono::seconds(30), [&] { return done; }))
+        << "async retry loop did not complete within 30 seconds";
+
+    EXPECT_EQ(attemptsBeforeSuccess, prepareCount) << "the loop did not re-enter RunAttempt for each retry";
+    EXPECT_EQ(attemptsBeforeSuccess, evaluateCount);
+    EXPECT_EQ(static_cast<size_t>(attemptsBeforeSuccess - 1), delaysScheduled.size())
+        << "backoff was not scheduled once per retry";
 }
 #endif
 
@@ -138,6 +205,87 @@ TEST_F(AsyncHttpRequestIntegrationTest, RequestTimeoutClosesConnectionAndDrains)
     auto drained = std::async(std::launch::async, [&] { client.reset(); });
     ASSERT_EQ(std::future_status::ready, drained.wait_for(std::chrono::seconds(10)))
         << "~CRTHttpClient hung draining a timed-out request";
+
+    accepter.join();
+    int fd = acceptedFd.load();
+    if (fd >= 0)
+    {
+        close(fd);
+    }
+    close(listenFd);
+}
+
+TEST_F(AsyncHttpRequestIntegrationTest, AsynchronousRequestTimeoutDeliversTimeout)
+{
+    int listenFd = socket(AF_INET, SOCK_STREAM, 0);
+    ASSERT_GE(listenFd, 0);
+
+    sockaddr_in addr{};
+    addr.sin_family = AF_INET;
+    addr.sin_addr.s_addr = htonl(INADDR_LOOPBACK);
+    addr.sin_port = 0;
+    ASSERT_EQ(0, bind(listenFd, reinterpret_cast<sockaddr*>(&addr), sizeof(addr)));
+    ASSERT_EQ(0, listen(listenFd, 1));
+
+    socklen_t addrLen = sizeof(addr);
+    ASSERT_EQ(0, getsockname(listenFd, reinterpret_cast<sockaddr*>(&addr), &addrLen));
+    unsigned short port = ntohs(addr.sin_port);
+
+    std::atomic<int> acceptedFd{-1};
+    std::thread accepter([listenFd, &acceptedFd]
+    {
+        acceptedFd.store(accept(listenFd, nullptr, nullptr));
+    });
+
+    ClientConfiguration config;
+    config.requestTimeoutMs = 500;
+    config.connectTimeoutMs = 5000;
+
+    std::string uri = "http://127.0.0.1:" + std::to_string(port) + "/";
+    auto client = CreateHttpClient(config);
+    auto request = CreateHttpRequest(Aws::String(uri.c_str()), HttpMethod::HTTP_GET,
+                                     Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+
+    std::mutex mutex;
+    std::condition_variable cv;
+    bool done = false;
+    std::shared_ptr<HttpResponse> asyncResponse;
+
+    bool requestSent = false;
+    auto error = client->MakeRequestAsync(
+        [&]() -> std::shared_ptr<HttpRequest>
+        {
+            if (requestSent)
+            {
+                return nullptr;
+            }
+            requestSent = true;
+            return request;
+        },
+        [&](std::shared_ptr<HttpResponse> response) -> Aws::Http::HttpClient::AttemptOutcome
+        {
+            std::lock_guard<std::mutex> lock(mutex);
+            asyncResponse = std::move(response);
+            return {};
+        },
+        [&]()
+        {
+            std::lock_guard<std::mutex> lock(mutex);
+            done = true;
+            cv.notify_one();
+        });
+
+    ASSERT_FALSE(error.has_value()) << error->GetMessage();
+
+    {
+        std::unique_lock<std::mutex> lock(mutex);
+        ASSERT_TRUE(cv.wait_for(lock, std::chrono::seconds(10), [&] { return done; }))
+            << "async request did not time out within 10 seconds";
+    }
+
+    ASSERT_NE(nullptr, asyncResponse);
+    ASSERT_TRUE(asyncResponse->HasClientError()) << "expected the stalled async request to time out";
+    EXPECT_EQ(CoreErrors::REQUEST_TIMEOUT, asyncResponse->GetClientErrorType());
 
     accepter.join();
     int fd = acceptedFd.load();
