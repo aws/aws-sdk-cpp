@@ -76,8 +76,8 @@ class CreateImageRecipeRequest : public ImagebuilderRequest {
    * version syntax.</p>  <p>The semantic version has four nodes:
    * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
    * for the first three, and can filter on all of them.</p> <p> <b>Assignment:</b>
-   * For the first three nodes you can assign any positive integer value, including
-   * zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder
+   * For the first three nodes, you can assign any positive integer value, including
+   * zero. The upper limit is 2^30-1, or 1073741823, for each node. Image Builder
    * automatically assigns the build number to the fourth node.</p> <p>
    * <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment
    * requirements for the nodes that you can assign. For example, you might choose a
@@ -215,7 +215,7 @@ class CreateImageRecipeRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Specify additional settings and launch scripts for your build instances.</p>
+   * <p>The additional settings and launch scripts for your build instances.</p>
    */
   inline const AdditionalInstanceConfiguration& GetAdditionalInstanceConfiguration() const { return m_additionalInstanceConfiguration; }
   inline bool AdditionalInstanceConfigurationHasBeenSet() const { return m_additionalInstanceConfigurationHasBeenSet; }
@@ -286,8 +286,10 @@ class CreateImageRecipeRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
-   * request. For more information, see <a
+   * <p>A unique, case-sensitive identifier you provide to ensure that the operation
+   * completes no more than one time. If this token matches a previous request, the
+   * service ignores the request, but does not return an error. For more information,
+   * see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
    * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
    */
@@ -301,6 +303,24 @@ class CreateImageRecipeRequest : public ImagebuilderRequest {
   template <typename ClientTokenT = Aws::String>
   CreateImageRecipeRequest& WithClientToken(ClientTokenT&& value) {
     SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Validates the required permissions and request parameters without making the
+   * request. If validation succeeds, the operation returns a
+   * <code>DryRunOperationException</code> error response.</p>
+   */
+  inline bool GetDryRun() const { return m_dryRun; }
+  inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+  inline void SetDryRun(bool value) {
+    m_dryRunHasBeenSet = true;
+    m_dryRun = value;
+  }
+  inline CreateImageRecipeRequest& WithDryRun(bool value) {
+    SetDryRun(value);
     return *this;
   }
   ///@}
@@ -328,6 +348,8 @@ class CreateImageRecipeRequest : public ImagebuilderRequest {
   Aws::Vector<Aws::String> m_amiWatermarks;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+
+  bool m_dryRun{false};
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_semanticVersionHasBeenSet = false;
@@ -340,6 +362,7 @@ class CreateImageRecipeRequest : public ImagebuilderRequest {
   bool m_amiTagsHasBeenSet = false;
   bool m_amiWatermarksHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
+  bool m_dryRunHasBeenSet = false;
 };
 
 }  // namespace Model

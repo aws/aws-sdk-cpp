@@ -78,6 +78,32 @@ class AssumeRootResult {
 
   ///@{
 
+  inline int GetSessionTokenUtilization() const { return m_sessionTokenUtilization; }
+  inline void SetSessionTokenUtilization(int value) {
+    m_sessionTokenUtilizationHasBeenSet = true;
+    m_sessionTokenUtilization = value;
+  }
+  inline AssumeRootResult& WithSessionTokenUtilization(int value) {
+    SetSessionTokenUtilization(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline int GetSessionTokenSize() const { return m_sessionTokenSize; }
+  inline void SetSessionTokenSize(int value) {
+    m_sessionTokenSizeHasBeenSet = true;
+    m_sessionTokenSize = value;
+  }
+  inline AssumeRootResult& WithSessionTokenSize(int value) {
+    SetSessionTokenSize(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
   inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
   template <typename ResponseMetadataT = ResponseMetadata>
   void SetResponseMetadata(ResponseMetadataT&& value) {
@@ -97,10 +123,16 @@ class AssumeRootResult {
 
   Aws::String m_sourceIdentity;
 
+  int m_sessionTokenUtilization{0};
+
+  int m_sessionTokenSize{0};
+
   ResponseMetadata m_responseMetadata;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_credentialsHasBeenSet = false;
   bool m_sourceIdentityHasBeenSet = false;
+  bool m_sessionTokenUtilizationHasBeenSet = false;
+  bool m_sessionTokenSizeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

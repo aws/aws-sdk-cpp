@@ -46,24 +46,6 @@ class GetDelegatedAccessTokenResult {
 
   ///@{
   /**
-   * <p>The percentage of the maximum policy size that is used by the session policy.
-   * The policy size is calculated as the sum of all the session policies and
-   * permission boundaries attached to the session. If the packed size exceeds 100%,
-   * the request fails.</p>
-   */
-  inline int GetPackedPolicySize() const { return m_packedPolicySize; }
-  inline void SetPackedPolicySize(int value) {
-    m_packedPolicySizeHasBeenSet = true;
-    m_packedPolicySize = value;
-  }
-  inline GetDelegatedAccessTokenResult& WithPackedPolicySize(int value) {
-    SetPackedPolicySize(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The Amazon Resource Name (ARN) of the principal that was assumed when
    * obtaining the delegated access token. This ARN identifies the IAM entity whose
    * permissions are granted by the temporary credentials.</p>
@@ -100,14 +82,11 @@ class GetDelegatedAccessTokenResult {
  private:
   Credentials m_credentials;
 
-  int m_packedPolicySize{0};
-
   Aws::String m_assumedPrincipal;
 
   ResponseMetadata m_responseMetadata;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_credentialsHasBeenSet = false;
-  bool m_packedPolicySizeHasBeenSet = false;
   bool m_assumedPrincipalHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

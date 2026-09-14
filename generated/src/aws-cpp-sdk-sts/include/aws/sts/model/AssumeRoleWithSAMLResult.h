@@ -77,24 +77,6 @@ class AssumeRoleWithSAMLResult {
 
   ///@{
   /**
-   * <p>A percentage value that indicates the packed size of the session policies and
-   * session tags combined passed in the request. The request fails if the packed
-   * size is greater than 100 percent, which means the policies and tags exceeded the
-   * allowed space.</p>
-   */
-  inline int GetPackedPolicySize() const { return m_packedPolicySize; }
-  inline void SetPackedPolicySize(int value) {
-    m_packedPolicySizeHasBeenSet = true;
-    m_packedPolicySize = value;
-  }
-  inline AssumeRoleWithSAMLResult& WithPackedPolicySize(int value) {
-    SetPackedPolicySize(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The value of the <code>NameID</code> element in the <code>Subject</code>
    * element of the SAML assertion.</p>
    */
@@ -233,6 +215,32 @@ class AssumeRoleWithSAMLResult {
 
   ///@{
 
+  inline int GetSessionTokenUtilization() const { return m_sessionTokenUtilization; }
+  inline void SetSessionTokenUtilization(int value) {
+    m_sessionTokenUtilizationHasBeenSet = true;
+    m_sessionTokenUtilization = value;
+  }
+  inline AssumeRoleWithSAMLResult& WithSessionTokenUtilization(int value) {
+    SetSessionTokenUtilization(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline int GetSessionTokenSize() const { return m_sessionTokenSize; }
+  inline void SetSessionTokenSize(int value) {
+    m_sessionTokenSizeHasBeenSet = true;
+    m_sessionTokenSize = value;
+  }
+  inline AssumeRoleWithSAMLResult& WithSessionTokenSize(int value) {
+    SetSessionTokenSize(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
   inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
   template <typename ResponseMetadataT = ResponseMetadata>
   void SetResponseMetadata(ResponseMetadataT&& value) {
@@ -252,8 +260,6 @@ class AssumeRoleWithSAMLResult {
 
   AssumedRoleUser m_assumedRoleUser;
 
-  int m_packedPolicySize{0};
-
   Aws::String m_subject;
 
   Aws::String m_subjectType;
@@ -266,17 +272,22 @@ class AssumeRoleWithSAMLResult {
 
   Aws::String m_sourceIdentity;
 
+  int m_sessionTokenUtilization{0};
+
+  int m_sessionTokenSize{0};
+
   ResponseMetadata m_responseMetadata;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_credentialsHasBeenSet = false;
   bool m_assumedRoleUserHasBeenSet = false;
-  bool m_packedPolicySizeHasBeenSet = false;
   bool m_subjectHasBeenSet = false;
   bool m_subjectTypeHasBeenSet = false;
   bool m_issuerHasBeenSet = false;
   bool m_audienceHasBeenSet = false;
   bool m_nameQualifierHasBeenSet = false;
   bool m_sourceIdentityHasBeenSet = false;
+  bool m_sessionTokenUtilizationHasBeenSet = false;
+  bool m_sessionTokenSizeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

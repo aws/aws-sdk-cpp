@@ -63,6 +63,14 @@ WorkflowStepMetadata& WorkflowStepMetadata::operator=(JsonView jsonValue) {
     m_endTime = jsonValue.GetString("endTime");
     m_endTimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("attemptNumber")) {
+    m_attemptNumber = jsonValue.GetInteger("attemptNumber");
+    m_attemptNumberHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("maxAttempts")) {
+    m_maxAttempts = jsonValue.GetInteger("maxAttempts");
+    m_maxAttemptsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -112,6 +120,14 @@ JsonValue WorkflowStepMetadata::Jsonize() const {
 
   if (m_endTimeHasBeenSet) {
     payload.WithString("endTime", m_endTime);
+  }
+
+  if (m_attemptNumberHasBeenSet) {
+    payload.WithInteger("attemptNumber", m_attemptNumber);
+  }
+
+  if (m_maxAttemptsHasBeenSet) {
+    payload.WithInteger("maxAttempts", m_maxAttempts);
   }
 
   return payload;

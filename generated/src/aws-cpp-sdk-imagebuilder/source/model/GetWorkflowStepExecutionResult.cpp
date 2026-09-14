@@ -90,6 +90,14 @@ GetWorkflowStepExecutionResult& GetWorkflowStepExecutionResult::operator=(const 
     m_timeoutSeconds = jsonValue.GetInteger("timeoutSeconds");
     m_timeoutSecondsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("attemptNumber")) {
+    m_attemptNumber = jsonValue.GetInteger("attemptNumber");
+    m_attemptNumberHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("maxAttempts")) {
+    m_maxAttempts = jsonValue.GetInteger("maxAttempts");
+    m_maxAttemptsHasBeenSet = true;
+  }
 
   return *this;
 }

@@ -16,10 +16,9 @@
 namespace Aws {
 namespace imagebuilder {
 /**
- * <p>EC2 Image Builder is a fully managed Amazon Web Services service that makes
- * it easier to automate the creation, management, and deployment of customized,
- * secure, and up-to-date "golden" server images that are pre-installed and
- * pre-configured with software and settings to meet specific IT standards.</p>
+ * <p>EC2 Image Builder automates the creation, management, and deployment of
+ * customized, secure, and up-to-date "golden" server images that are pre-installed
+ * and pre-configured with software and settings to meet specific IT standards.</p>
  */
 class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClient,
                                                 public Aws::Client::ClientWithAsyncTemplateMethods<ImagebuilderClient>,
@@ -82,8 +81,8 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   virtual ~ImagebuilderClient();
 
   /**
-   * <p>CancelImageCreation cancels the creation of Image. This operation can only be
-   * used on images in a non-terminal state.</p><p><h3>See Also:</h3>   <a
+   * <p>Cancels the creation of an image. This operation can only be used on images
+   * in a non-terminal state.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CancelImageCreation">AWS
    * API Reference</a></p>
    */
@@ -109,7 +108,7 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Cancel a specific image lifecycle policy runtime instance.</p><p><h3>See
+   * <p>Cancels a specific image lifecycle policy runtime instance.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CancelLifecycleExecution">AWS
    * API Reference</a></p>
@@ -224,10 +223,10 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Creates a new image. This request will create a new image along with all of
-   * the configured output resources defined in the distribution configuration. You
-   * must specify exactly one recipe for your image, using either a
-   * ContainerRecipeArn or an ImageRecipeArn.</p><p><h3>See Also:</h3>   <a
+   * <p>Creates a new image along with all configured output resources defined in the
+   * distribution configuration. You must specify exactly one recipe for your image,
+   * using either a ContainerRecipeArn or an ImageRecipeArn.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateImage">AWS
    * API Reference</a></p>
    */
@@ -252,8 +251,8 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Creates a new image pipeline. Image pipelines enable you to automate the
-   * creation and distribution of images.</p><p><h3>See Also:</h3>   <a
+   * <p>Creates a new image pipeline. Use image pipelines to automate the creation
+   * and distribution of images.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateImagePipeline">AWS
    * API Reference</a></p>
    */
@@ -337,7 +336,7 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Create a lifecycle policy resource.</p><p><h3>See Also:</h3>   <a
+   * <p>Creates a lifecycle policy resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateLifecyclePolicy">AWS
    * API Reference</a></p>
    */
@@ -363,8 +362,8 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Create a new workflow or a new version of an existing workflow.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Creates a new workflow or a new version of an existing
+   * workflow.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateWorkflow">AWS
    * API Reference</a></p>
    */
@@ -588,7 +587,8 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Delete the specified lifecycle policy resource.</p><p><h3>See Also:</h3>   <a
+   * <p>Deletes the specified lifecycle policy resource.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteLifecyclePolicy">AWS
    * API Reference</a></p>
    */
@@ -666,7 +666,7 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Gets a component object.</p><p><h3>See Also:</h3>   <a
+   * <p>Retrieves a component object.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetComponent">AWS
    * API Reference</a></p>
    */
@@ -691,7 +691,7 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Gets a component policy.</p><p><h3>See Also:</h3>   <a
+   * <p>Retrieves a component policy.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetComponentPolicy">AWS
    * API Reference</a></p>
    */
@@ -770,7 +770,7 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Gets a distribution configuration.</p><p><h3>See Also:</h3>   <a
+   * <p>Retrieves a distribution configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetDistributionConfiguration">AWS
    * API Reference</a></p>
    */
@@ -799,7 +799,7 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Gets an image.</p><p><h3>See Also:</h3>   <a
+   * <p>Retrieves an image.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetImage">AWS
    * API Reference</a></p>
    */
@@ -824,7 +824,7 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Gets an image pipeline.</p><p><h3>See Also:</h3>   <a
+   * <p>Retrieves an image pipeline.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetImagePipeline">AWS
    * API Reference</a></p>
    */
@@ -850,7 +850,7 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Gets an image policy.</p><p><h3>See Also:</h3>   <a
+   * <p>Retrieves an image policy.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetImagePolicy">AWS
    * API Reference</a></p>
    */
@@ -875,7 +875,7 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Gets an image recipe.</p><p><h3>See Also:</h3>   <a
+   * <p>Retrieves an image recipe.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetImageRecipe">AWS
    * API Reference</a></p>
    */
@@ -900,7 +900,7 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Gets an image recipe policy.</p><p><h3>See Also:</h3>   <a
+   * <p>Retrieves an image recipe policy.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetImageRecipePolicy">AWS
    * API Reference</a></p>
    */
@@ -926,7 +926,7 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Gets an infrastructure configuration.</p><p><h3>See Also:</h3>   <a
+   * <p>Retrieves an infrastructure configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetInfrastructureConfiguration">AWS
    * API Reference</a></p>
    */
@@ -955,8 +955,8 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Get the runtime information that was logged for a specific runtime instance
-   * of the lifecycle policy.</p><p><h3>See Also:</h3>   <a
+   * <p>Retrieves the runtime information for a specific runtime instance of the
+   * lifecycle policy.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetLifecycleExecution">AWS
    * API Reference</a></p>
    */
@@ -982,7 +982,7 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Get details for the specified image lifecycle policy.</p><p><h3>See
+   * <p>Retrieves details for the specified image lifecycle policy.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetLifecyclePolicy">AWS
    * API Reference</a></p>
@@ -1009,7 +1009,7 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Verify the subscription and perform resource dependency checks on the
+   * <p>Verifies the subscription and performs resource dependency checks on the
    * requested Amazon Web Services Marketplace resource. For Amazon Web Services
    * Marketplace components, the response contains fields to download the components
    * and their artifacts.</p><p><h3>See Also:</h3>   <a
@@ -1039,7 +1039,7 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Get a workflow resource object.</p><p><h3>See Also:</h3>   <a
+   * <p>Retrieves a workflow resource object.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetWorkflow">AWS
    * API Reference</a></p>
    */
@@ -1064,8 +1064,8 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Get the runtime information that was logged for a specific runtime instance
-   * of the workflow.</p><p><h3>See Also:</h3>   <a
+   * <p>Retrieves runtime information for a specific runtime instance of the
+   * workflow.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetWorkflowExecution">AWS
    * API Reference</a></p>
    */
@@ -1091,8 +1091,8 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Get the runtime information that was logged for a specific runtime instance
-   * of the workflow step.</p><p><h3>See Also:</h3>   <a
+   * <p>Retrieves runtime information for a specific runtime instance of the workflow
+   * step.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetWorkflowStepExecution">AWS
    * API Reference</a></p>
    */
@@ -1145,7 +1145,7 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Import a Windows operating system image from a verified Microsoft ISO disk
+   * <p>Imports a Windows operating system image from a verified Microsoft ISO disk
    * file. The following disk images are supported:</p> <ul> <li> <p>Windows 11
    * Enterprise</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImportDiskImage">AWS
@@ -1243,11 +1243,10 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
    * <p>The semantic version has four nodes:
    * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
    * for the first three, and can filter on all of them.</p> <p> <b>Filtering:</b>
-   * With semantic versioning, you have the flexibility to use wildcards (x) to
-   * specify the most recent versions or nodes when selecting the base image or
-   * components for your recipe. When you use a wildcard in any node, all nodes to
-   * the right of the first wildcard must also be wildcards.</p> <p><h3>See
-   * Also:</h3>   <a
+   * You can use wildcards (x) to specify the most recent versions or nodes when
+   * selecting the base image or components for your recipe. When you use a wildcard
+   * in any node, all nodes to the right of the first wildcard must also be
+   * wildcards.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListComponents">AWS
    * API Reference</a></p>
    */
@@ -1356,7 +1355,7 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>List the Packages that are associated with an Image Build Version, as
+   * <p>Lists the packages that are associated with an image build version, as
    * determined by Amazon Web Services Systems Manager Inventory at build
    * time.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImagePackages">AWS
@@ -1590,7 +1589,7 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>List resources that the runtime instance of the image lifecycle identified
+   * <p>Lists resources that the runtime instance of the image lifecycle identified
    * for lifecycle actions.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListLifecycleExecutionResources">AWS
    * API Reference</a></p>
@@ -1620,8 +1619,8 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Get the lifecycle runtime history for the specified resource.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Retrieves the lifecycle runtime history for the specified
+   * resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListLifecycleExecutions">AWS
    * API Reference</a></p>
    */
@@ -1648,7 +1647,7 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Get a list of lifecycle policies in your Amazon Web Services
+   * <p>Retrieves a list of lifecycle policies in your Amazon Web Services
    * account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListLifecyclePolicies">AWS
    * API Reference</a></p>
@@ -1703,8 +1702,8 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Get a list of workflow steps that are waiting for action for workflows in
-   * your Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
+   * <p>Retrieves a list of workflow steps that are waiting for action for workflows
+   * in your Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWaitingWorkflowSteps">AWS
    * API Reference</a></p>
    */
@@ -1847,13 +1846,12 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Applies a policy to a component. We recommend that you call the RAM API <a
-   * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>
-   * to share resources. If you call the Image Builder API
-   * <code>PutComponentPolicy</code>, you must also call the RAM API <a
+   * <p>Applies a policy to a component. To share resources, call the RAM API <a
+   * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>.
+   * If you call this API, you must also call the RAM API <a
    * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
-   * in order for the resource to be visible to all principals with whom the resource
-   * is shared.</p><p><h3>See Also:</h3>   <a
+   * so that the resource is visible to all principals with whom the resource is
+   * shared.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutComponentPolicy">AWS
    * API Reference</a></p>
    */
@@ -1879,15 +1877,13 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Applies a policy to a container image. We recommend that you call the RAM API
-   * CreateResourceShare
-   * (https://docs.aws.amazon.com//ram/latest/APIReference/API_CreateResourceShare.html)
-   * to share resources. If you call the Image Builder API
-   * <code>PutContainerImagePolicy</code>, you must also call the RAM API
-   * PromoteResourceShareCreatedFromPolicy
-   * (https://docs.aws.amazon.com//ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html)
-   * in order for the resource to be visible to all principals with whom the resource
-   * is shared.</p><p><h3>See Also:</h3>   <a
+   * <p>Applies a policy to a container image. To share resources, call the RAM API
+   * <a
+   * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>.
+   * If you call this API, you must also call the RAM API <a
+   * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
+   * so that the resource is visible to all principals with whom the resource is
+   * shared.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutContainerRecipePolicy">AWS
    * API Reference</a></p>
    */
@@ -1914,13 +1910,12 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Applies a policy to an image. We recommend that you call the RAM API <a
-   * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>
-   * to share resources. If you call the Image Builder API
-   * <code>PutImagePolicy</code>, you must also call the RAM API <a
+   * <p>Applies a policy to an image. To share resources, call the RAM API <a
+   * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>.
+   * If you call this API, you must also call the RAM API <a
    * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
-   * in order for the resource to be visible to all principals with whom the resource
-   * is shared.</p><p><h3>See Also:</h3>   <a
+   * so that the resource is visible to all principals with whom the resource is
+   * shared.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutImagePolicy">AWS
    * API Reference</a></p>
    */
@@ -1945,14 +1940,12 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Applies a policy to an image recipe. We recommend that you call the RAM API
-   * <a
-   * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>
-   * to share resources. If you call the Image Builder API
-   * <code>PutImageRecipePolicy</code>, you must also call the RAM API <a
+   * <p>Applies a policy to an image recipe. To share resources, call the RAM API <a
+   * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>.
+   * If you call this API, you must also call the RAM API <a
    * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
-   * in order for the resource to be visible to all principals with whom the resource
-   * is shared.</p><p><h3>See Also:</h3>   <a
+   * so that the resource is visible to all principals with whom the resource is
+   * shared.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutImageRecipePolicy">AWS
    * API Reference</a></p>
    */
@@ -1978,7 +1971,7 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>RetryImage retries an image distribution without rebuilding the
+   * <p>Retries an image distribution or test without rebuilding the
    * image.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/RetryImage">AWS
    * API Reference</a></p>
@@ -2062,7 +2055,7 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Begin asynchronous resource state update for lifecycle changes to the
+   * <p>Begins an asynchronous resource state update for lifecycle changes to the
    * specified image resources.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/StartResourceStateUpdate">AWS
    * API Reference</a></p>
@@ -2140,8 +2133,8 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Updates a new distribution configuration. Distribution configurations define
-   * and configure the outputs of your pipeline.</p><p><h3>See Also:</h3>   <a
+   * <p>Updates a distribution configuration. Distribution configurations define and
+   * configure the outputs of your pipeline.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateDistributionConfiguration">AWS
    * API Reference</a></p>
    */
@@ -2170,9 +2163,9 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Updates an image pipeline. Image pipelines enable you to automate the
-   * creation and distribution of images. You must specify exactly one recipe for
-   * your image, using either a <code>containerRecipeArn</code> or an
+   * <p>Updates an image pipeline. Use image pipelines to automate the creation and
+   * distribution of images. You must specify exactly one recipe for your image,
+   * using either a <code>containerRecipeArn</code> or an
    * <code>imageRecipeArn</code>.</p>  <p>UpdateImagePipeline does not support
    * selective updates for the pipeline. You must specify all of the required
    * properties in the update request, not just the properties that have changed.</p>
@@ -2202,9 +2195,9 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Updates a new infrastructure configuration. An infrastructure configuration
-   * defines the environment in which your image will be built and
-   * tested.</p><p><h3>See Also:</h3>   <a
+   * <p>Updates an infrastructure configuration. An infrastructure configuration
+   * defines the environment in which Image Builder builds and tests your
+   * image.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateInfrastructureConfiguration">AWS
    * API Reference</a></p>
    */
@@ -2233,7 +2226,7 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Update the specified lifecycle policy.</p><p><h3>See Also:</h3>   <a
+   * <p>Updates the specified lifecycle policy.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateLifecyclePolicy">AWS
    * API Reference</a></p>
    */

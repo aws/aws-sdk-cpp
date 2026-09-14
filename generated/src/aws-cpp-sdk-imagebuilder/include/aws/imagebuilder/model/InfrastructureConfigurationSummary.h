@@ -218,7 +218,7 @@ class InfrastructureConfigurationSummary {
   ///@{
   /**
    * <p>The instance placement settings that define where the instances that are
-   * launched from your image will run.</p>
+   * launched from your image run.</p>
    */
   inline const Placement& GetPlacement() const { return m_placement; }
   inline bool PlacementHasBeenSet() const { return m_placementHasBeenSet; }

@@ -53,7 +53,7 @@ class InstanceBlockDeviceMapping {
 
   ///@{
   /**
-   * <p>Use to manage Amazon EBS-specific configuration for this mapping.</p>
+   * <p>The Amazon EBS-specific configuration for this mapping.</p>
    */
   inline const EbsInstanceBlockDeviceSpecification& GetEbs() const { return m_ebs; }
   inline bool EbsHasBeenSet() const { return m_ebsHasBeenSet; }
@@ -71,7 +71,7 @@ class InstanceBlockDeviceMapping {
 
   ///@{
   /**
-   * <p>Use to manage instance ephemeral devices.</p>
+   * <p>The virtual device name for instance ephemeral devices.</p>
    */
   inline const Aws::String& GetVirtualName() const { return m_virtualName; }
   inline bool VirtualNameHasBeenSet() const { return m_virtualNameHasBeenSet; }
@@ -89,7 +89,7 @@ class InstanceBlockDeviceMapping {
 
   ///@{
   /**
-   * <p>Use to remove a mapping from the base image.</p>
+   * <p>Specifies a mapping to remove from the base image.</p>
    */
   inline const Aws::String& GetNoDevice() const { return m_noDevice; }
   inline bool NoDeviceHasBeenSet() const { return m_noDeviceHasBeenSet; }

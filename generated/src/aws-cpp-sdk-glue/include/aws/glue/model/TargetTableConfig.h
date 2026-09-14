@@ -93,15 +93,36 @@ class TargetTableConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the integration that owns this target table configuration.</p>
+   */
+  inline const Aws::String& GetIntegrationArn() const { return m_integrationArn; }
+  inline bool IntegrationArnHasBeenSet() const { return m_integrationArnHasBeenSet; }
+  template <typename IntegrationArnT = Aws::String>
+  void SetIntegrationArn(IntegrationArnT&& value) {
+    m_integrationArnHasBeenSet = true;
+    m_integrationArn = std::forward<IntegrationArnT>(value);
+  }
+  template <typename IntegrationArnT = Aws::String>
+  TargetTableConfig& WithIntegrationArn(IntegrationArnT&& value) {
+    SetIntegrationArn(std::forward<IntegrationArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   UnnestSpec m_unnestSpec{UnnestSpec::NOT_SET};
 
   Aws::Vector<IntegrationPartition> m_partitionSpec;
 
   Aws::String m_targetTableName;
+
+  Aws::String m_integrationArn;
   bool m_unnestSpecHasBeenSet = false;
   bool m_partitionSpecHasBeenSet = false;
   bool m_targetTableNameHasBeenSet = false;
+  bool m_integrationArnHasBeenSet = false;
 };
 
 }  // namespace Model

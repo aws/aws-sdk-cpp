@@ -75,8 +75,8 @@ class CreateImagePipelineRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the image recipe that will be used to
-   * configure images created by this image pipeline.</p>
+   * <p>The Amazon Resource Name (ARN) of the image recipe that configures images
+   * created by this image pipeline.</p>
    */
   inline const Aws::String& GetImageRecipeArn() const { return m_imageRecipeArn; }
   inline bool ImageRecipeArnHasBeenSet() const { return m_imageRecipeArnHasBeenSet; }
@@ -113,8 +113,8 @@ class CreateImagePipelineRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will
-   * be used to build images created by this image pipeline.</p>
+   * <p>The Amazon Resource Name (ARN) of the infrastructure configuration that
+   * builds images created by this image pipeline.</p>
    */
   inline const Aws::String& GetInfrastructureConfigurationArn() const { return m_infrastructureConfigurationArn; }
   inline bool InfrastructureConfigurationArnHasBeenSet() const { return m_infrastructureConfigurationArnHasBeenSet; }
@@ -132,8 +132,8 @@ class CreateImagePipelineRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the distribution configuration that will be
-   * used to configure and distribute images created by this image pipeline.</p>
+   * <p>The Amazon Resource Name (ARN) of the distribution configuration that
+   * configures and distributes images created by this image pipeline.</p>
    */
   inline const Aws::String& GetDistributionConfigurationArn() const { return m_distributionConfigurationArn; }
   inline bool DistributionConfigurationArnHasBeenSet() const { return m_distributionConfigurationArnHasBeenSet; }
@@ -169,10 +169,9 @@ class CreateImagePipelineRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Collects additional information about the image being created, including the
-   * operating system (OS) version and package list. This information is used to
-   * enhance the overall experience of using EC2 Image Builder. Enabled by
-   * default.</p>
+   * <p>Specifies whether to collect additional information about the image being
+   * created, including the operating system (OS) version and package list. Defaults
+   * to <code>true</code>.</p>
    */
   inline bool GetEnhancedImageMetadataEnabled() const { return m_enhancedImageMetadataEnabled; }
   inline bool EnhancedImageMetadataEnabledHasBeenSet() const { return m_enhancedImageMetadataEnabledHasBeenSet; }
@@ -270,8 +269,10 @@ class CreateImagePipelineRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
-   * request. For more information, see <a
+   * <p>A unique, case-sensitive identifier you provide to ensure that the operation
+   * completes no more than one time. If this token matches a previous request, the
+   * service ignores the request, but does not return an error. For more information,
+   * see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
    * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
    */
@@ -372,6 +373,24 @@ class CreateImagePipelineRequest : public ImagebuilderRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Validates the required permissions and request parameters without making the
+   * request. If validation succeeds, the operation returns a
+   * <code>DryRunOperationException</code> error response.</p>
+   */
+  inline bool GetDryRun() const { return m_dryRun; }
+  inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+  inline void SetDryRun(bool value) {
+    m_dryRunHasBeenSet = true;
+    m_dryRun = value;
+  }
+  inline CreateImagePipelineRequest& WithDryRun(bool value) {
+    SetDryRun(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -406,6 +425,8 @@ class CreateImagePipelineRequest : public ImagebuilderRequest {
   Aws::String m_executionRole;
 
   PipelineLoggingConfiguration m_loggingConfiguration;
+
+  bool m_dryRun{false};
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_imageRecipeArnHasBeenSet = false;
@@ -423,6 +444,7 @@ class CreateImagePipelineRequest : public ImagebuilderRequest {
   bool m_workflowsHasBeenSet = false;
   bool m_executionRoleHasBeenSet = false;
   bool m_loggingConfigurationHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
 };
 
 }  // namespace Model

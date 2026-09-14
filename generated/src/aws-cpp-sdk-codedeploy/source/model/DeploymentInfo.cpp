@@ -118,6 +118,10 @@ DeploymentInfo& DeploymentInfo::operator=(JsonView jsonValue) {
     m_fileExistsBehavior = FileExistsBehaviorMapper::GetFileExistsBehaviorForName(jsonValue.GetString("fileExistsBehavior"));
     m_fileExistsBehaviorHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("deploymentMode")) {
+    m_deploymentMode = DeploymentModeMapper::GetDeploymentModeForName(jsonValue.GetString("deploymentMode"));
+    m_deploymentModeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("deploymentStatusMessages")) {
     Aws::Utils::Array<JsonView> deploymentStatusMessagesJsonList = jsonValue.GetArray("deploymentStatusMessages");
     for (unsigned deploymentStatusMessagesIndex = 0; deploymentStatusMessagesIndex < deploymentStatusMessagesJsonList.GetLength();
@@ -246,6 +250,10 @@ JsonValue DeploymentInfo::Jsonize() const {
 
   if (m_fileExistsBehaviorHasBeenSet) {
     payload.WithString("fileExistsBehavior", FileExistsBehaviorMapper::GetNameForFileExistsBehavior(m_fileExistsBehavior));
+  }
+
+  if (m_deploymentModeHasBeenSet) {
+    payload.WithString("deploymentMode", DeploymentModeMapper::GetNameForDeploymentMode(m_deploymentMode));
   }
 
   if (m_deploymentStatusMessagesHasBeenSet) {

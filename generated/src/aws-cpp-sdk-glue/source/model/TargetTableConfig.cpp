@@ -33,6 +33,10 @@ TargetTableConfig& TargetTableConfig::operator=(JsonView jsonValue) {
     m_targetTableName = jsonValue.GetString("TargetTableName");
     m_targetTableNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("IntegrationArn")) {
+    m_integrationArn = jsonValue.GetString("IntegrationArn");
+    m_integrationArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -53,6 +57,10 @@ JsonValue TargetTableConfig::Jsonize() const {
 
   if (m_targetTableNameHasBeenSet) {
     payload.WithString("TargetTableName", m_targetTableName);
+  }
+
+  if (m_integrationArnHasBeenSet) {
+    payload.WithString("IntegrationArn", m_integrationArn);
   }
 
   return payload;

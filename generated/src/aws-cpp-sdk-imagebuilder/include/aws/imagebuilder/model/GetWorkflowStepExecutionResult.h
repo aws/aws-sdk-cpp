@@ -322,6 +322,40 @@ class GetWorkflowStepExecutionResult {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The current attempt number for the specified runtime instance of the workflow
+   * step. The first run is attempt one. The number increases by one for each
+   * retry.</p>
+   */
+  inline int GetAttemptNumber() const { return m_attemptNumber; }
+  inline void SetAttemptNumber(int value) {
+    m_attemptNumberHasBeenSet = true;
+    m_attemptNumber = value;
+  }
+  inline GetWorkflowStepExecutionResult& WithAttemptNumber(int value) {
+    SetAttemptNumber(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The maximum number of attempts allowed for the specified runtime instance of
+   * the workflow step, based on the retry configuration in the workflow document. If
+   * the step doesn't configure retries, the maximum is one attempt.</p>
+   */
+  inline int GetMaxAttempts() const { return m_maxAttempts; }
+  inline void SetMaxAttempts(int value) {
+    m_maxAttemptsHasBeenSet = true;
+    m_maxAttempts = value;
+  }
+  inline GetWorkflowStepExecutionResult& WithMaxAttempts(int value) {
+    SetMaxAttempts(value);
+    return *this;
+  }
+  ///@}
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
@@ -358,6 +392,10 @@ class GetWorkflowStepExecutionResult {
   Aws::String m_onFailure;
 
   int m_timeoutSeconds{0};
+
+  int m_attemptNumber{0};
+
+  int m_maxAttempts{0};
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_requestIdHasBeenSet = false;
   bool m_stepExecutionIdHasBeenSet = false;
@@ -376,6 +414,8 @@ class GetWorkflowStepExecutionResult {
   bool m_endTimeHasBeenSet = false;
   bool m_onFailureHasBeenSet = false;
   bool m_timeoutSecondsHasBeenSet = false;
+  bool m_attemptNumberHasBeenSet = false;
+  bool m_maxAttemptsHasBeenSet = false;
 };
 
 }  // namespace Model

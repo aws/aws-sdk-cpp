@@ -10,6 +10,7 @@
 #include <aws/codedeploy/model/BlueGreenDeploymentConfiguration.h>
 #include <aws/codedeploy/model/ComputePlatform.h>
 #include <aws/codedeploy/model/DeploymentCreator.h>
+#include <aws/codedeploy/model/DeploymentMode.h>
 #include <aws/codedeploy/model/DeploymentOverview.h>
 #include <aws/codedeploy/model/DeploymentStatus.h>
 #include <aws/codedeploy/model/DeploymentStyle.h>
@@ -535,6 +536,30 @@ class DeploymentInfo {
 
   ///@{
   /**
+   * <p>The deployment's type. Valid values are:</p> <ul> <li> <p>
+   * <code>STANDARD</code>: The deployment installed the specified revision.</p>
+   * </li> <li> <p> <code>RESTART</code>: The deployment restarted the application on
+   * the target instances using the revision from the deployment group's last
+   * successful deployment, without downloading a new revision.</p> </li> </ul>
+   * <p>This field is absent for deployments created before
+   * <code>deploymentMode</code> existed, and for <code>STANDARD</code> deployments.
+   * An absent value must not be interpreted as <code>STANDARD</code>; it simply
+   * means no value was recorded either way.</p>
+   */
+  inline DeploymentMode GetDeploymentMode() const { return m_deploymentMode; }
+  inline bool DeploymentModeHasBeenSet() const { return m_deploymentModeHasBeenSet; }
+  inline void SetDeploymentMode(DeploymentMode value) {
+    m_deploymentModeHasBeenSet = true;
+    m_deploymentMode = value;
+  }
+  inline DeploymentInfo& WithDeploymentMode(DeploymentMode value) {
+    SetDeploymentMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Messages that contain information about the status of a deployment.</p>
    */
   inline const Aws::Vector<Aws::String>& GetDeploymentStatusMessages() const { return m_deploymentStatusMessages; }
@@ -675,6 +700,8 @@ class DeploymentInfo {
 
   FileExistsBehavior m_fileExistsBehavior{FileExistsBehavior::NOT_SET};
 
+  DeploymentMode m_deploymentMode{DeploymentMode::NOT_SET};
+
   Aws::Vector<Aws::String> m_deploymentStatusMessages;
 
   ComputePlatform m_computePlatform{ComputePlatform::NOT_SET};
@@ -709,6 +736,7 @@ class DeploymentInfo {
   bool m_loadBalancerInfoHasBeenSet = false;
   bool m_additionalDeploymentStatusInfoHasBeenSet = false;
   bool m_fileExistsBehaviorHasBeenSet = false;
+  bool m_deploymentModeHasBeenSet = false;
   bool m_deploymentStatusMessagesHasBeenSet = false;
   bool m_computePlatformHasBeenSet = false;
   bool m_externalIdHasBeenSet = false;

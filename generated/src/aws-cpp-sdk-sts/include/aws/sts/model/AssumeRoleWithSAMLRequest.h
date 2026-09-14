@@ -215,6 +215,20 @@ class AssumeRoleWithSAMLRequest : public STSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline int GetMinimumSessionTokenSize() const { return m_minimumSessionTokenSize; }
+  inline bool MinimumSessionTokenSizeHasBeenSet() const { return m_minimumSessionTokenSizeHasBeenSet; }
+  inline void SetMinimumSessionTokenSize(int value) {
+    m_minimumSessionTokenSizeHasBeenSet = true;
+    m_minimumSessionTokenSize = value;
+  }
+  inline AssumeRoleWithSAMLRequest& WithMinimumSessionTokenSize(int value) {
+    SetMinimumSessionTokenSize(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_roleArn;
 
@@ -227,12 +241,15 @@ class AssumeRoleWithSAMLRequest : public STSRequest {
   Aws::String m_policy;
 
   int m_durationSeconds{0};
+
+  int m_minimumSessionTokenSize{0};
   bool m_roleArnHasBeenSet = false;
   bool m_principalArnHasBeenSet = false;
   bool m_sAMLAssertionHasBeenSet = false;
   bool m_policyArnsHasBeenSet = false;
   bool m_policyHasBeenSet = false;
   bool m_durationSecondsHasBeenSet = false;
+  bool m_minimumSessionTokenSizeHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -76,8 +76,8 @@ class UpdateImagePipelineRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the image recipe that will be used to
-   * configure images updated by this image pipeline.</p>
+   * <p>The Amazon Resource Name (ARN) of the image recipe that configures images
+   * updated by this image pipeline.</p>
    */
   inline const Aws::String& GetImageRecipeArn() const { return m_imageRecipeArn; }
   inline bool ImageRecipeArnHasBeenSet() const { return m_imageRecipeArnHasBeenSet; }
@@ -170,10 +170,9 @@ class UpdateImagePipelineRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Collects additional information about the image being created, including the
-   * operating system (OS) version and package list. This information is used to
-   * enhance the overall experience of using EC2 Image Builder. Enabled by
-   * default.</p>
+   * <p>Specifies whether to collect additional information about the image being
+   * created, including the operating system (OS) version and package list. Defaults
+   * to <code>true</code>.</p>
    */
   inline bool GetEnhancedImageMetadataEnabled() const { return m_enhancedImageMetadataEnabled; }
   inline bool EnhancedImageMetadataEnabledHasBeenSet() const { return m_enhancedImageMetadataEnabledHasBeenSet; }
@@ -223,8 +222,10 @@ class UpdateImagePipelineRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
-   * request. For more information, see <a
+   * <p>A unique, case-sensitive identifier you provide to ensure that the operation
+   * completes no more than one time. If this token matches a previous request, the
+   * service ignores the request, but does not return an error. For more information,
+   * see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
    * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
    */

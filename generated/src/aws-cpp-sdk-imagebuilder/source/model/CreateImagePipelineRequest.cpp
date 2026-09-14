@@ -95,5 +95,9 @@ Aws::String CreateImagePipelineRequest::SerializePayload() const {
     payload.WithObject("loggingConfiguration", m_loggingConfiguration.Jsonize());
   }
 
+  if (m_dryRunHasBeenSet) {
+    payload.WithBool("dryRun", m_dryRun);
+  }
+
   return payload.View().WriteReadable();
 }

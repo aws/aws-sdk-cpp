@@ -99,15 +99,32 @@ class AssumeRootRequest : public STSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline int GetMinimumSessionTokenSize() const { return m_minimumSessionTokenSize; }
+  inline bool MinimumSessionTokenSizeHasBeenSet() const { return m_minimumSessionTokenSizeHasBeenSet; }
+  inline void SetMinimumSessionTokenSize(int value) {
+    m_minimumSessionTokenSizeHasBeenSet = true;
+    m_minimumSessionTokenSize = value;
+  }
+  inline AssumeRootRequest& WithMinimumSessionTokenSize(int value) {
+    SetMinimumSessionTokenSize(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_targetPrincipal;
 
   PolicyDescriptorType m_taskPolicyArn;
 
   int m_durationSeconds{0};
+
+  int m_minimumSessionTokenSize{0};
   bool m_targetPrincipalHasBeenSet = false;
   bool m_taskPolicyArnHasBeenSet = false;
   bool m_durationSecondsHasBeenSet = false;
+  bool m_minimumSessionTokenSizeHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -104,24 +104,6 @@ class AssumeRoleWithWebIdentityResult {
 
   ///@{
   /**
-   * <p>A percentage value that indicates the packed size of the session policies and
-   * session tags combined passed in the request. The request fails if the packed
-   * size is greater than 100 percent, which means the policies and tags exceeded the
-   * allowed space.</p>
-   */
-  inline int GetPackedPolicySize() const { return m_packedPolicySize; }
-  inline void SetPackedPolicySize(int value) {
-    m_packedPolicySizeHasBeenSet = true;
-    m_packedPolicySize = value;
-  }
-  inline AssumeRoleWithWebIdentityResult& WithPackedPolicySize(int value) {
-    SetPackedPolicySize(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p> The issuing authority of the web identity token presented. For OpenID
    * Connect ID tokens, this contains the value of the <code>iss</code> field. For
    * OAuth 2.0 access tokens, this contains the value of the <code>ProviderId</code>
@@ -199,6 +181,32 @@ class AssumeRoleWithWebIdentityResult {
 
   ///@{
 
+  inline int GetSessionTokenUtilization() const { return m_sessionTokenUtilization; }
+  inline void SetSessionTokenUtilization(int value) {
+    m_sessionTokenUtilizationHasBeenSet = true;
+    m_sessionTokenUtilization = value;
+  }
+  inline AssumeRoleWithWebIdentityResult& WithSessionTokenUtilization(int value) {
+    SetSessionTokenUtilization(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline int GetSessionTokenSize() const { return m_sessionTokenSize; }
+  inline void SetSessionTokenSize(int value) {
+    m_sessionTokenSizeHasBeenSet = true;
+    m_sessionTokenSize = value;
+  }
+  inline AssumeRoleWithWebIdentityResult& WithSessionTokenSize(int value) {
+    SetSessionTokenSize(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
   inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
   template <typename ResponseMetadataT = ResponseMetadata>
   void SetResponseMetadata(ResponseMetadataT&& value) {
@@ -220,23 +228,26 @@ class AssumeRoleWithWebIdentityResult {
 
   AssumedRoleUser m_assumedRoleUser;
 
-  int m_packedPolicySize{0};
-
   Aws::String m_provider;
 
   Aws::String m_audience;
 
   Aws::String m_sourceIdentity;
 
+  int m_sessionTokenUtilization{0};
+
+  int m_sessionTokenSize{0};
+
   ResponseMetadata m_responseMetadata;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_credentialsHasBeenSet = false;
   bool m_subjectFromWebIdentityTokenHasBeenSet = false;
   bool m_assumedRoleUserHasBeenSet = false;
-  bool m_packedPolicySizeHasBeenSet = false;
   bool m_providerHasBeenSet = false;
   bool m_audienceHasBeenSet = false;
   bool m_sourceIdentityHasBeenSet = false;
+  bool m_sessionTokenUtilizationHasBeenSet = false;
+  bool m_sessionTokenSizeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

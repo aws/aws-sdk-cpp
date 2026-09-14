@@ -75,8 +75,8 @@ class SsmParameterConfiguration {
 
   ///@{
   /**
-   * <p>The data type specifies what type of value the Parameter contains. We
-   * recommend that you use data type <code>aws:ec2:image</code>.</p>
+   * <p>The type of value the parameter contains. We recommend the
+   * <code>aws:ec2:image</code> data type.</p>
    */
   inline SsmParameterDataType GetDataType() const { return m_dataType; }
   inline bool DataTypeHasBeenSet() const { return m_dataTypeHasBeenSet; }

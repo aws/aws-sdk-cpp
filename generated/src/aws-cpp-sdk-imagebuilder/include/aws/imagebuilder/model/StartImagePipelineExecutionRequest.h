@@ -51,8 +51,10 @@ class StartImagePipelineExecutionRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
-   * request. For more information, see <a
+   * <p>A unique, case-sensitive identifier you provide to ensure that the operation
+   * completes no more than one time. If this token matches a previous request, the
+   * service ignores the request, but does not return an error. For more information,
+   * see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
    * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
    */
@@ -72,8 +74,8 @@ class StartImagePipelineExecutionRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Specify tags for Image Builder to apply to the image resource that's created
-   * When it starts pipeline execution.</p>
+   * <p>The tags for Image Builder to apply to the image resource that's created when
+   * pipeline execution starts.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
   inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

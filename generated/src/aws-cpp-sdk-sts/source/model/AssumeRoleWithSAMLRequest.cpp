@@ -46,6 +46,10 @@ Aws::String AssumeRoleWithSAMLRequest::SerializePayload() const {
     ss << "DurationSeconds=" << m_durationSeconds << "&";
   }
 
+  if (m_minimumSessionTokenSizeHasBeenSet) {
+    ss << "MinimumSessionTokenSize=" << m_minimumSessionTokenSize << "&";
+  }
+
   ss << "Version=2011-06-15";
   return ss.str();
 }

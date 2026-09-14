@@ -185,7 +185,7 @@ class ImportDiskImageRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Define logging configuration for the image build process.</p>
+   * <p>The logging configuration for the image build process.</p>
    */
   inline const ImageLoggingConfiguration& GetLoggingConfiguration() const { return m_loggingConfiguration; }
   inline bool LoggingConfigurationHasBeenSet() const { return m_loggingConfigurationHasBeenSet; }
@@ -263,8 +263,10 @@ class ImportDiskImageRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
-   * request. For more information, see <a
+   * <p>A unique, case-sensitive identifier you provide to ensure that the operation
+   * completes no more than one time. If this token matches a previous request, the
+   * service ignores the request, but does not return an error. For more information,
+   * see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
    * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
    */

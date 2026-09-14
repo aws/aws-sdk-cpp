@@ -32,9 +32,9 @@ class ImageTestsConfiguration {
 
   ///@{
   /**
-   * <p>Determines if tests should run after building the image. Image Builder
-   * defaults to enable tests to run following the image build, before image
-   * distribution.</p>
+   * <p>Specifies whether tests run after building the image. When enabled, tests run
+   * after the image build and before image distribution. Defaults to
+   * <code>true</code>.</p>
    */
   inline bool GetImageTestsEnabled() const { return m_imageTestsEnabled; }
   inline bool ImageTestsEnabledHasBeenSet() const { return m_imageTestsEnabledHasBeenSet; }

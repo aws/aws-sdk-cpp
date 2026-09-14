@@ -35,8 +35,7 @@ class GetLifecycleExecutionRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Use the unique identifier for a runtime instance of the lifecycle policy to
-   * get runtime details.</p>
+   * <p>The unique identifier for a runtime instance of the lifecycle policy.</p>
    */
   inline const Aws::String& GetLifecycleExecutionId() const { return m_lifecycleExecutionId; }
   inline bool LifecycleExecutionIdHasBeenSet() const { return m_lifecycleExecutionIdHasBeenSet; }

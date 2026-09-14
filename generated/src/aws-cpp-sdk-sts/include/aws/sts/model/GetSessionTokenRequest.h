@@ -104,15 +104,32 @@ class GetSessionTokenRequest : public STSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline int GetMinimumSessionTokenSize() const { return m_minimumSessionTokenSize; }
+  inline bool MinimumSessionTokenSizeHasBeenSet() const { return m_minimumSessionTokenSizeHasBeenSet; }
+  inline void SetMinimumSessionTokenSize(int value) {
+    m_minimumSessionTokenSizeHasBeenSet = true;
+    m_minimumSessionTokenSize = value;
+  }
+  inline GetSessionTokenRequest& WithMinimumSessionTokenSize(int value) {
+    SetMinimumSessionTokenSize(value);
+    return *this;
+  }
+  ///@}
  private:
   int m_durationSeconds{0};
 
   Aws::String m_serialNumber;
 
   Aws::String m_tokenCode;
+
+  int m_minimumSessionTokenSize{0};
   bool m_durationSecondsHasBeenSet = false;
   bool m_serialNumberHasBeenSet = false;
   bool m_tokenCodeHasBeenSet = false;
+  bool m_minimumSessionTokenSizeHasBeenSet = false;
 };
 
 }  // namespace Model

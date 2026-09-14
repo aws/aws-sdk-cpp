@@ -61,7 +61,7 @@ class ListImagePipelinesRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Specify the maximum number of items to return in a request.</p>
+   * <p>The maximum number of items to return in a single request.</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -77,8 +77,8 @@ class ListImagePipelinesRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>A token to specify where to start paginating. This is the nextToken from a
-   * previously truncated response.</p>
+   * <p>A token to specify where to start paginating. Use the <code>nextToken</code>
+   * value from a previously truncated response.</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

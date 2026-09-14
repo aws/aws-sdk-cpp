@@ -113,10 +113,9 @@ class ImagePipeline {
 
   ///@{
   /**
-   * <p>Collects additional information about the image being created, including the
-   * operating system (OS) version and package list. This information is used to
-   * enhance the overall experience of using EC2 Image Builder. Enabled by
-   * default.</p>
+   * <p>Specifies whether to collect additional information about the image being
+   * created, including the operating system (OS) version and package list. Defaults
+   * to <code>true</code>.</p>
    */
   inline bool GetEnhancedImageMetadataEnabled() const { return m_enhancedImageMetadataEnabled; }
   inline bool EnhancedImageMetadataEnabledHasBeenSet() const { return m_enhancedImageMetadataEnabledHasBeenSet; }

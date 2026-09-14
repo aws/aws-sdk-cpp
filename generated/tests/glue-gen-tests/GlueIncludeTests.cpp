@@ -725,6 +725,8 @@
 #include <aws/glue/model/IntegrationResourceProperty.h>
 #include <aws/glue/model/IntegrationResourcePropertyFilter.h>
 #include <aws/glue/model/IntegrationStatus.h>
+#include <aws/glue/model/IntegrationTableProperties.h>
+#include <aws/glue/model/IntegrationTablePropertiesFilter.h>
 #include <aws/glue/model/IntegrationType.h>
 #include <aws/glue/model/InvalidInputException.h>
 #include <aws/glue/model/ItemError.h>
@@ -817,6 +819,8 @@
 #include <aws/glue/model/ListGlossaryTermsResult.h>
 #include <aws/glue/model/ListIntegrationResourcePropertiesRequest.h>
 #include <aws/glue/model/ListIntegrationResourcePropertiesResult.h>
+#include <aws/glue/model/ListIntegrationTablePropertiesRequest.h>
+#include <aws/glue/model/ListIntegrationTablePropertiesResult.h>
 #include <aws/glue/model/ListIterableFormsPaginationTraits.h>
 #include <aws/glue/model/ListIterableFormsRequest.h>
 #include <aws/glue/model/ListIterableFormsResult.h>

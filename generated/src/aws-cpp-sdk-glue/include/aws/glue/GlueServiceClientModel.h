@@ -271,6 +271,8 @@
 #include <aws/glue/model/ListGlossaryTermsResult.h>
 #include <aws/glue/model/ListIntegrationResourcePropertiesRequest.h>
 #include <aws/glue/model/ListIntegrationResourcePropertiesResult.h>
+#include <aws/glue/model/ListIntegrationTablePropertiesRequest.h>
+#include <aws/glue/model/ListIntegrationTablePropertiesResult.h>
 #include <aws/glue/model/ListIterableFormsResult.h>
 #include <aws/glue/model/ListJobsRequest.h>
 #include <aws/glue/model/ListJobsResult.h>
@@ -619,6 +621,7 @@ class ListFormTypesRequest;
 class ListGlossariesRequest;
 class ListGlossaryTermsRequest;
 class ListIntegrationResourcePropertiesRequest;
+class ListIntegrationTablePropertiesRequest;
 class ListIterableFormsRequest;
 class ListJobsRequest;
 class ListMLTransformsRequest;
@@ -921,6 +924,7 @@ typedef Aws::Utils::Outcome<ListFormTypesResult, GlueError> ListFormTypesOutcome
 typedef Aws::Utils::Outcome<ListGlossariesResult, GlueError> ListGlossariesOutcome;
 typedef Aws::Utils::Outcome<ListGlossaryTermsResult, GlueError> ListGlossaryTermsOutcome;
 typedef Aws::Utils::Outcome<ListIntegrationResourcePropertiesResult, GlueError> ListIntegrationResourcePropertiesOutcome;
+typedef Aws::Utils::Outcome<ListIntegrationTablePropertiesResult, GlueError> ListIntegrationTablePropertiesOutcome;
 typedef Aws::Utils::Outcome<ListIterableFormsResult, GlueError> ListIterableFormsOutcome;
 typedef Aws::Utils::Outcome<ListJobsResult, GlueError> ListJobsOutcome;
 typedef Aws::Utils::Outcome<ListMLTransformsResult, GlueError> ListMLTransformsOutcome;
@@ -1223,6 +1227,7 @@ typedef std::future<ListFormTypesOutcome> ListFormTypesOutcomeCallable;
 typedef std::future<ListGlossariesOutcome> ListGlossariesOutcomeCallable;
 typedef std::future<ListGlossaryTermsOutcome> ListGlossaryTermsOutcomeCallable;
 typedef std::future<ListIntegrationResourcePropertiesOutcome> ListIntegrationResourcePropertiesOutcomeCallable;
+typedef std::future<ListIntegrationTablePropertiesOutcome> ListIntegrationTablePropertiesOutcomeCallable;
 typedef std::future<ListIterableFormsOutcome> ListIterableFormsOutcomeCallable;
 typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
 typedef std::future<ListMLTransformsOutcome> ListMLTransformsOutcomeCallable;
@@ -1977,6 +1982,10 @@ typedef std::function<void(const GlueClient*, const Model::ListIntegrationResour
                            const Model::ListIntegrationResourcePropertiesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListIntegrationResourcePropertiesResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::ListIntegrationTablePropertiesRequest&,
+                           const Model::ListIntegrationTablePropertiesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListIntegrationTablePropertiesResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::ListIterableFormsRequest&, const Model::ListIterableFormsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListIterableFormsResponseReceivedHandler;

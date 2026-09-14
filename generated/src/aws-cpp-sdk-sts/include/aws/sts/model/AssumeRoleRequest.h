@@ -449,6 +449,20 @@ class AssumeRoleRequest : public STSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline int GetMinimumSessionTokenSize() const { return m_minimumSessionTokenSize; }
+  inline bool MinimumSessionTokenSizeHasBeenSet() const { return m_minimumSessionTokenSizeHasBeenSet; }
+  inline void SetMinimumSessionTokenSize(int value) {
+    m_minimumSessionTokenSizeHasBeenSet = true;
+    m_minimumSessionTokenSize = value;
+  }
+  inline AssumeRoleRequest& WithMinimumSessionTokenSize(int value) {
+    SetMinimumSessionTokenSize(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_roleArn;
 
@@ -473,6 +487,8 @@ class AssumeRoleRequest : public STSRequest {
   Aws::String m_sourceIdentity;
 
   Aws::Vector<ProvidedContext> m_providedContexts;
+
+  int m_minimumSessionTokenSize{0};
   bool m_roleArnHasBeenSet = false;
   bool m_roleSessionNameHasBeenSet = false;
   bool m_policyArnsHasBeenSet = false;
@@ -485,6 +501,7 @@ class AssumeRoleRequest : public STSRequest {
   bool m_tokenCodeHasBeenSet = false;
   bool m_sourceIdentityHasBeenSet = false;
   bool m_providedContextsHasBeenSet = false;
+  bool m_minimumSessionTokenSizeHasBeenSet = false;
 };
 
 }  // namespace Model

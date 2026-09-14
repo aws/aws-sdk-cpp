@@ -57,8 +57,8 @@ class ImportVmImageRequest : public ImagebuilderRequest {
    * <p>The semantic version has four nodes:
    * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
    * for the first three, and can filter on all of them.</p> <p> <b>Assignment:</b>
-   * For the first three nodes you can assign any positive integer value, including
-   * zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder
+   * For the first three nodes, you can assign any positive integer value, including
+   * zero. The upper limit is 2^30-1, or 1073741823, for each node. Image Builder
    * automatically assigns the build number to the fourth node.</p> <p>
    * <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment
    * requirements for the nodes that you can assign. For example, you might choose a
@@ -154,7 +154,7 @@ class ImportVmImageRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Define logging configuration for the image build process.</p>
+   * <p>The logging configuration for the image build process.</p>
    */
   inline const ImageLoggingConfiguration& GetLoggingConfiguration() const { return m_loggingConfiguration; }
   inline bool LoggingConfigurationHasBeenSet() const { return m_loggingConfigurationHasBeenSet; }
@@ -196,8 +196,10 @@ class ImportVmImageRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
-   * request. For more information, see <a
+   * <p>A unique, case-sensitive identifier you provide to ensure that the operation
+   * completes no more than one time. If this token matches a previous request, the
+   * service ignores the request, but does not return an error. For more information,
+   * see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
    * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
    */

@@ -1,3 +1,13 @@
+# 1.11.892 (2026-09-14)
+
+## Service Updates
+* **Billing**: Increased the maximum number of services returned in the supportEligibleSpendByService field of ListEnterpriseSupportLinkedAccountCharges
+* **CodeDeploy**: AWS CodeDeploy now returns the deployment mode on GetDeployment and BatchGetDeployments. The new deploymentMode field on DeploymentInfo indicates whether a deployment used the standard deployment process or restarted the application using a previously installed revision (RESTART mode).
+* **Glue**: Amazon Glue releasing the new API ListIntegrationTableProperties and adding IntegrationArn to TargetTableConfig
+* **STS**: Increases the maximum session token size to 4,096 bytes and removes the packed policy size limit. Adds SessionTokenSize and SessionTokenUtilization fields and a new MinimumSessionTokenSize parameter. PackedPolicySize is deprecated.
+* **billingconductor**: This release adds support for custom volume tiering. You can now define custom tiers on a pricing rule's tiering configuration, where each tier specifies a usage range and the rate applied to usage in that range.
+* **imagebuilder**: This release adds a dryRun option to Image Builder create APIs (except CreateImage), structured failure context on failed images including component and distribution failure details, and step retry attempt tracking.
+
 # 1.11.891 (2026-09-11)
 
 ## SDK Highlights

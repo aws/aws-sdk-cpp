@@ -77,19 +77,27 @@ class GetFederationTokenResult {
   ///@}
 
   ///@{
-  /**
-   * <p>A percentage value that indicates the packed size of the session policies and
-   * session tags combined passed in the request. The request fails if the packed
-   * size is greater than 100 percent, which means the policies and tags exceeded the
-   * allowed space.</p>
-   */
-  inline int GetPackedPolicySize() const { return m_packedPolicySize; }
-  inline void SetPackedPolicySize(int value) {
-    m_packedPolicySizeHasBeenSet = true;
-    m_packedPolicySize = value;
+
+  inline int GetSessionTokenUtilization() const { return m_sessionTokenUtilization; }
+  inline void SetSessionTokenUtilization(int value) {
+    m_sessionTokenUtilizationHasBeenSet = true;
+    m_sessionTokenUtilization = value;
   }
-  inline GetFederationTokenResult& WithPackedPolicySize(int value) {
-    SetPackedPolicySize(value);
+  inline GetFederationTokenResult& WithSessionTokenUtilization(int value) {
+    SetSessionTokenUtilization(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline int GetSessionTokenSize() const { return m_sessionTokenSize; }
+  inline void SetSessionTokenSize(int value) {
+    m_sessionTokenSizeHasBeenSet = true;
+    m_sessionTokenSize = value;
+  }
+  inline GetFederationTokenResult& WithSessionTokenSize(int value) {
+    SetSessionTokenSize(value);
     return *this;
   }
   ///@}
@@ -115,13 +123,16 @@ class GetFederationTokenResult {
 
   FederatedUser m_federatedUser;
 
-  int m_packedPolicySize{0};
+  int m_sessionTokenUtilization{0};
+
+  int m_sessionTokenSize{0};
 
   ResponseMetadata m_responseMetadata;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_credentialsHasBeenSet = false;
   bool m_federatedUserHasBeenSet = false;
-  bool m_packedPolicySizeHasBeenSet = false;
+  bool m_sessionTokenUtilizationHasBeenSet = false;
+  bool m_sessionTokenSizeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

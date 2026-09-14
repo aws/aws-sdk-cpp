@@ -29,6 +29,7 @@
 #include <aws/imagebuilder/model/CancelLifecycleExecutionResult.h>
 #include <aws/imagebuilder/model/Component.h>
 #include <aws/imagebuilder/model/ComponentConfiguration.h>
+#include <aws/imagebuilder/model/ComponentFailureContext.h>
 #include <aws/imagebuilder/model/ComponentFormat.h>
 #include <aws/imagebuilder/model/ComponentParameter.h>
 #include <aws/imagebuilder/model/ComponentParameterDetail.h>
@@ -88,6 +89,7 @@
 #include <aws/imagebuilder/model/Distribution.h>
 #include <aws/imagebuilder/model/DistributionConfiguration.h>
 #include <aws/imagebuilder/model/DistributionConfigurationSummary.h>
+#include <aws/imagebuilder/model/DistributionFailureContext.h>
 #include <aws/imagebuilder/model/EbsInstanceBlockDeviceSpecification.h>
 #include <aws/imagebuilder/model/EbsVolumeType.h>
 #include <aws/imagebuilder/model/EcrConfiguration.h>
@@ -131,6 +133,8 @@
 #include <aws/imagebuilder/model/GetWorkflowStepExecutionResult.h>
 #include <aws/imagebuilder/model/Image.h>
 #include <aws/imagebuilder/model/ImageAggregation.h>
+#include <aws/imagebuilder/model/ImageConfigurationStep.h>
+#include <aws/imagebuilder/model/ImageFailureContext.h>
 #include <aws/imagebuilder/model/ImageLoggingConfiguration.h>
 #include <aws/imagebuilder/model/ImagePackage.h>
 #include <aws/imagebuilder/model/ImagePipeline.h>
@@ -277,6 +281,8 @@
 #include <aws/imagebuilder/model/PutImagePolicyResult.h>
 #include <aws/imagebuilder/model/PutImageRecipePolicyRequest.h>
 #include <aws/imagebuilder/model/PutImageRecipePolicyResult.h>
+#include <aws/imagebuilder/model/RegionFailure.h>
+#include <aws/imagebuilder/model/RegionFailureStatus.h>
 #include <aws/imagebuilder/model/RegisterImageOptions.h>
 #include <aws/imagebuilder/model/Remediation.h>
 #include <aws/imagebuilder/model/RemediationRecommendation.h>

@@ -60,6 +60,7 @@
 #include <aws/billingconductor/model/CustomLineItemRelationship.h>
 #include <aws/billingconductor/model/CustomLineItemType.h>
 #include <aws/billingconductor/model/CustomLineItemVersionListElement.h>
+#include <aws/billingconductor/model/CustomTier.h>
 #include <aws/billingconductor/model/DeleteBillingGroupRequest.h>
 #include <aws/billingconductor/model/DeleteBillingGroupResult.h>
 #include <aws/billingconductor/model/DeleteCustomLineItemRequest.h>

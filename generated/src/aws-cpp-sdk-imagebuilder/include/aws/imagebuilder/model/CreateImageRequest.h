@@ -131,10 +131,9 @@ class CreateImageRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Collects additional information about the image being created, including the
-   * operating system (OS) version and package list. This information is used to
-   * enhance the overall experience of using EC2 Image Builder. Enabled by
-   * default.</p>
+   * <p>Specifies whether to collect additional information about the image being
+   * created, including the operating system (OS) version and package list. Defaults
+   * to <code>true</code>.</p>
    */
   inline bool GetEnhancedImageMetadataEnabled() const { return m_enhancedImageMetadataEnabled; }
   inline bool EnhancedImageMetadataEnabledHasBeenSet() const { return m_enhancedImageMetadataEnabledHasBeenSet; }
@@ -174,8 +173,10 @@ class CreateImageRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
-   * request. For more information, see <a
+   * <p>A unique, case-sensitive identifier you provide to ensure that the operation
+   * completes no more than one time. If this token matches a previous request, the
+   * service ignores the request, but does not return an error. For more information,
+   * see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
    * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
    */
@@ -256,7 +257,7 @@ class CreateImageRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Define logging configuration for the image build process.</p>
+   * <p>The logging configuration for the image build process.</p>
    */
   inline const ImageLoggingConfiguration& GetLoggingConfiguration() const { return m_loggingConfiguration; }
   inline bool LoggingConfigurationHasBeenSet() const { return m_loggingConfigurationHasBeenSet; }

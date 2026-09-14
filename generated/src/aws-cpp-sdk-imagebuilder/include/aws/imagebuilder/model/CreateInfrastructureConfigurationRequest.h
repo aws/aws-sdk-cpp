@@ -73,7 +73,7 @@ class CreateInfrastructureConfigurationRequest : public ImagebuilderRequest {
   ///@{
   /**
    * <p>The instance types of the infrastructure configuration. You can specify one
-   * or more instance types to use for this build. The service will pick one of these
+   * or more instance types to use for this build. Image Builder picks one of these
    * instance types based on availability.</p>
    */
   inline const Aws::Vector<Aws::String>& GetInstanceTypes() const { return m_instanceTypes; }
@@ -198,10 +198,9 @@ class CreateInfrastructureConfigurationRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The terminate instance on failure setting of the infrastructure
-   * configuration. Set to false if you want Image Builder to retain the instance
-   * used to configure your AMI if the build or test phase of your workflow
-   * fails.</p>
+   * <p>Specifies whether to terminate the instance on failure. Set to false if you
+   * want Image Builder to retain the instance used to configure your AMI if the
+   * build or test phase of your workflow fails. Defaults to <code>true</code>.</p>
    */
   inline bool GetTerminateInstanceOnFailure() const { return m_terminateInstanceOnFailure; }
   inline bool TerminateInstanceOnFailureHasBeenSet() const { return m_terminateInstanceOnFailureHasBeenSet; }
@@ -217,11 +216,11 @@ class CreateInfrastructureConfigurationRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build
-   * event notifications.</p>  <p>EC2 Image Builder is unable to send
-   * notifications to SNS topics that are encrypted using keys from other accounts.
-   * The key that is used to encrypt the SNS topic must reside in the account that
-   * the Image Builder service runs under.</p>
+   * <p>The Amazon Resource Name (ARN) of the SNS topic to which Image Builder sends
+   * image build event notifications.</p>  <p>EC2 Image Builder is unable to
+   * send notifications to SNS topics that are encrypted using keys from other
+   * accounts. The key that is used to encrypt the SNS topic must reside in the
+   * account that the Image Builder service runs under.</p>
    */
   inline const Aws::String& GetSnsTopicArn() const { return m_snsTopicArn; }
   inline bool SnsTopicArnHasBeenSet() const { return m_snsTopicArnHasBeenSet; }
@@ -309,7 +308,7 @@ class CreateInfrastructureConfigurationRequest : public ImagebuilderRequest {
   ///@{
   /**
    * <p>The instance placement settings that define where the instances that are
-   * launched from your image will run.</p>
+   * launched from your image run.</p>
    */
   inline const Placement& GetPlacement() const { return m_placement; }
   inline bool PlacementHasBeenSet() const { return m_placementHasBeenSet; }
@@ -327,8 +326,10 @@ class CreateInfrastructureConfigurationRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
-   * request. For more information, see <a
+   * <p>A unique, case-sensitive identifier you provide to ensure that the operation
+   * completes no more than one time. If this token matches a previous request, the
+   * service ignores the request, but does not return an error. For more information,
+   * see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
    * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
    */
@@ -342,6 +343,24 @@ class CreateInfrastructureConfigurationRequest : public ImagebuilderRequest {
   template <typename ClientTokenT = Aws::String>
   CreateInfrastructureConfigurationRequest& WithClientToken(ClientTokenT&& value) {
     SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Validates the required permissions and request parameters without making the
+   * request. If validation succeeds, the operation returns a
+   * <code>DryRunOperationException</code> error response.</p>
+   */
+  inline bool GetDryRun() const { return m_dryRun; }
+  inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+  inline void SetDryRun(bool value) {
+    m_dryRunHasBeenSet = true;
+    m_dryRun = value;
+  }
+  inline CreateInfrastructureConfigurationRequest& WithDryRun(bool value) {
+    SetDryRun(value);
     return *this;
   }
   ///@}
@@ -375,6 +394,8 @@ class CreateInfrastructureConfigurationRequest : public ImagebuilderRequest {
   Placement m_placement;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+
+  bool m_dryRun{false};
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_instanceTypesHasBeenSet = false;
@@ -390,6 +411,7 @@ class CreateInfrastructureConfigurationRequest : public ImagebuilderRequest {
   bool m_tagsHasBeenSet = false;
   bool m_placementHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
+  bool m_dryRunHasBeenSet = false;
 };
 
 }  // namespace Model

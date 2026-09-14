@@ -33,10 +33,8 @@ class ListImagesRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The owner defines which images you want to list. By default, this request
-   * will only show images owned by your account. You can use this field to specify
-   * if you want to view images owned by yourself, by Amazon, or those images that
-   * have been shared with you by other customers.</p>
+   * <p>Filters the list to images owned by you, by Amazon, or shared with you by
+   * other accounts. By default, only your account's images are returned.</p>
    */
   inline Ownership GetOwner() const { return m_owner; }
   inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
@@ -95,7 +93,7 @@ class ListImagesRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Specify the maximum number of items to return in a request.</p>
+   * <p>The maximum number of items to return in a single request.</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -111,8 +109,8 @@ class ListImagesRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>A token to specify where to start paginating. This is the nextToken from a
-   * previously truncated response.</p>
+   * <p>A token to specify where to start paginating. Use the <code>nextToken</code>
+   * value from a previously truncated response.</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

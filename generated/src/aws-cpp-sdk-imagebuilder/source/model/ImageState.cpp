@@ -26,6 +26,10 @@ ImageState& ImageState::operator=(JsonView jsonValue) {
     m_reason = jsonValue.GetString("reason");
     m_reasonHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("failureContext")) {
+    m_failureContext = jsonValue.GetObject("failureContext");
+    m_failureContextHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue ImageState::Jsonize() const {
 
   if (m_reasonHasBeenSet) {
     payload.WithString("reason", m_reason);
+  }
+
+  if (m_failureContextHasBeenSet) {
+    payload.WithObject("failureContext", m_failureContext.Jsonize());
   }
 
   return payload;

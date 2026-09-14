@@ -44,12 +44,6 @@ AssumeRoleWithWebIdentityResult& AssumeRoleWithWebIdentityResult::operator=(cons
       m_assumedRoleUser = assumedRoleUserNode;
       m_assumedRoleUserHasBeenSet = true;
     }
-    XmlNode packedPolicySizeNode = resultNode.FirstChild("PackedPolicySize");
-    if (!packedPolicySizeNode.IsNull()) {
-      m_packedPolicySize = StringUtils::ConvertToInt32(
-          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(packedPolicySizeNode.GetText()).c_str()).c_str());
-      m_packedPolicySizeHasBeenSet = true;
-    }
     XmlNode providerNode = resultNode.FirstChild("Provider");
     if (!providerNode.IsNull()) {
       m_provider = Aws::Utils::Xml::DecodeEscapedXmlText(providerNode.GetText());
@@ -64,6 +58,18 @@ AssumeRoleWithWebIdentityResult& AssumeRoleWithWebIdentityResult::operator=(cons
     if (!sourceIdentityNode.IsNull()) {
       m_sourceIdentity = Aws::Utils::Xml::DecodeEscapedXmlText(sourceIdentityNode.GetText());
       m_sourceIdentityHasBeenSet = true;
+    }
+    XmlNode sessionTokenUtilizationNode = resultNode.FirstChild("SessionTokenUtilization");
+    if (!sessionTokenUtilizationNode.IsNull()) {
+      m_sessionTokenUtilization = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sessionTokenUtilizationNode.GetText()).c_str()).c_str());
+      m_sessionTokenUtilizationHasBeenSet = true;
+    }
+    XmlNode sessionTokenSizeNode = resultNode.FirstChild("SessionTokenSize");
+    if (!sessionTokenSizeNode.IsNull()) {
+      m_sessionTokenSize = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sessionTokenSizeNode.GetText()).c_str()).c_str());
+      m_sessionTokenSizeHasBeenSet = true;
     }
   }
 

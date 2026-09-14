@@ -5,7 +5,9 @@
 
 #pragma once
 #include <aws/billingconductor/BillingConductor_EXPORTS.h>
+#include <aws/billingconductor/model/CustomTier.h>
 #include <aws/billingconductor/model/UpdateFreeTierConfig.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -49,9 +51,36 @@ class UpdateTieringInput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The set of custom tiers for the pricing rule. </p>
+   */
+  inline const Aws::Vector<CustomTier>& GetCustomTiers() const { return m_customTiers; }
+  inline bool CustomTiersHasBeenSet() const { return m_customTiersHasBeenSet; }
+  template <typename CustomTiersT = Aws::Vector<CustomTier>>
+  void SetCustomTiers(CustomTiersT&& value) {
+    m_customTiersHasBeenSet = true;
+    m_customTiers = std::forward<CustomTiersT>(value);
+  }
+  template <typename CustomTiersT = Aws::Vector<CustomTier>>
+  UpdateTieringInput& WithCustomTiers(CustomTiersT&& value) {
+    SetCustomTiers(std::forward<CustomTiersT>(value));
+    return *this;
+  }
+  template <typename CustomTiersT = CustomTier>
+  UpdateTieringInput& AddCustomTiers(CustomTiersT&& value) {
+    m_customTiersHasBeenSet = true;
+    m_customTiers.emplace_back(std::forward<CustomTiersT>(value));
+    return *this;
+  }
+  ///@}
  private:
   UpdateFreeTierConfig m_freeTier;
+
+  Aws::Vector<CustomTier> m_customTiers;
   bool m_freeTierHasBeenSet = false;
+  bool m_customTiersHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -35,7 +35,7 @@ class EbsInstanceBlockDeviceSpecification {
 
   ///@{
   /**
-   * <p>Use to configure device encryption.</p>
+   * <p>Specifies whether to encrypt the device.</p>
    */
   inline bool GetEncrypted() const { return m_encrypted; }
   inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
@@ -51,7 +51,7 @@ class EbsInstanceBlockDeviceSpecification {
 
   ///@{
   /**
-   * <p>Use to configure delete on termination of the associated device.</p>
+   * <p>Specifies whether to delete the associated device on termination.</p>
    */
   inline bool GetDeleteOnTermination() const { return m_deleteOnTermination; }
   inline bool DeleteOnTerminationHasBeenSet() const { return m_deleteOnTerminationHasBeenSet; }
@@ -67,7 +67,8 @@ class EbsInstanceBlockDeviceSpecification {
 
   ///@{
   /**
-   * <p>Use to configure device IOPS.</p>
+   * <p>The IOPS value for the device. Required only when volumeType is io1 or
+   * io2.</p>
    */
   inline int GetIops() const { return m_iops; }
   inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
@@ -124,7 +125,7 @@ class EbsInstanceBlockDeviceSpecification {
 
   ///@{
   /**
-   * <p>Use to override the device's volume size.</p>
+   * <p>Overrides the volume size for the device.</p>
    */
   inline int GetVolumeSize() const { return m_volumeSize; }
   inline bool VolumeSizeHasBeenSet() const { return m_volumeSizeHasBeenSet; }
@@ -140,7 +141,7 @@ class EbsInstanceBlockDeviceSpecification {
 
   ///@{
   /**
-   * <p>Use to override the device's volume type.</p>
+   * <p>Overrides the volume type for the device.</p>
    */
   inline EbsVolumeType GetVolumeType() const { return m_volumeType; }
   inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }

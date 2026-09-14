@@ -118,8 +118,10 @@ class CreateDistributionConfigurationRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
-   * request. For more information, see <a
+   * <p>A unique, case-sensitive identifier you provide to ensure that the operation
+   * completes no more than one time. If this token matches a previous request, the
+   * service ignores the request, but does not return an error. For more information,
+   * see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
    * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
    */
@@ -136,6 +138,24 @@ class CreateDistributionConfigurationRequest : public ImagebuilderRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Validates the required permissions and request parameters without making the
+   * request. If validation succeeds, the operation returns a
+   * <code>DryRunOperationException</code> error response.</p>
+   */
+  inline bool GetDryRun() const { return m_dryRun; }
+  inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+  inline void SetDryRun(bool value) {
+    m_dryRunHasBeenSet = true;
+    m_dryRun = value;
+  }
+  inline CreateDistributionConfigurationRequest& WithDryRun(bool value) {
+    SetDryRun(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -146,11 +166,14 @@ class CreateDistributionConfigurationRequest : public ImagebuilderRequest {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+
+  bool m_dryRun{false};
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_distributionsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
+  bool m_dryRunHasBeenSet = false;
 };
 
 }  // namespace Model

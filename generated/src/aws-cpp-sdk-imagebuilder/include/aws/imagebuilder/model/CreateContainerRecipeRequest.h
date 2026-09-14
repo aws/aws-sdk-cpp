@@ -94,8 +94,8 @@ class CreateContainerRecipeRequest : public ImagebuilderRequest {
    * semantic version syntax.</p>  <p>The semantic version has four nodes:
    * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
    * for the first three, and can filter on all of them.</p> <p> <b>Assignment:</b>
-   * For the first three nodes you can assign any positive integer value, including
-   * zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder
+   * For the first three nodes, you can assign any positive integer value, including
+   * zero. The upper limit is 2^30-1, or 1073741823, for each node. Image Builder
    * automatically assigns the build number to the fourth node.</p> <p>
    * <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment
    * requirements for the nodes that you can assign. For example, you might choose a
@@ -179,8 +179,8 @@ class CreateContainerRecipeRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The Amazon S3 URI for the Dockerfile that will be used to build your
-   * container image.</p>
+   * <p>The Amazon S3 URI for the Dockerfile that is used to build your container
+   * image.</p>
    */
   inline const Aws::String& GetDockerfileTemplateUri() const { return m_dockerfileTemplateUri; }
   inline bool DockerfileTemplateUriHasBeenSet() const { return m_dockerfileTemplateUriHasBeenSet; }
@@ -333,8 +333,10 @@ class CreateContainerRecipeRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
-   * request. For more information, see <a
+   * <p>A unique, case-sensitive identifier you provide to ensure that the operation
+   * completes no more than one time. If this token matches a previous request, the
+   * service ignores the request, but does not return an error. For more information,
+   * see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
    * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
    */
@@ -348,6 +350,24 @@ class CreateContainerRecipeRequest : public ImagebuilderRequest {
   template <typename ClientTokenT = Aws::String>
   CreateContainerRecipeRequest& WithClientToken(ClientTokenT&& value) {
     SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Validates the required permissions and request parameters without making the
+   * request. If validation succeeds, the operation returns a
+   * <code>DryRunOperationException</code> error response.</p>
+   */
+  inline bool GetDryRun() const { return m_dryRun; }
+  inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+  inline void SetDryRun(bool value) {
+    m_dryRunHasBeenSet = true;
+    m_dryRun = value;
+  }
+  inline CreateContainerRecipeRequest& WithDryRun(bool value) {
+    SetDryRun(value);
     return *this;
   }
   ///@}
@@ -383,6 +403,8 @@ class CreateContainerRecipeRequest : public ImagebuilderRequest {
   Aws::String m_kmsKeyId;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+
+  bool m_dryRun{false};
   bool m_containerTypeHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
@@ -399,6 +421,7 @@ class CreateContainerRecipeRequest : public ImagebuilderRequest {
   bool m_targetRepositoryHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
+  bool m_dryRunHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -59,5 +59,9 @@ Aws::String CreateLifecyclePolicyRequest::SerializePayload() const {
     payload.WithString("clientToken", m_clientToken);
   }
 
+  if (m_dryRunHasBeenSet) {
+    payload.WithBool("dryRun", m_dryRun);
+  }
+
   return payload.View().WriteReadable();
 }

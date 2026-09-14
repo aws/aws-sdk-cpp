@@ -29,6 +29,7 @@
 #include <aws/glue/model/ListGlossariesRequest.h>
 #include <aws/glue/model/ListGlossaryTermsRequest.h>
 #include <aws/glue/model/ListIntegrationResourcePropertiesRequest.h>
+#include <aws/glue/model/ListIntegrationTablePropertiesRequest.h>
 #include <aws/glue/model/ListIterableFormsRequest.h>
 #include <aws/glue/model/ListJobsRequest.h>
 #include <aws/glue/model/ListMLTransformsRequest.h>
@@ -182,6 +183,13 @@ ListIntegrationResourcePropertiesOutcome GlueClient::ListIntegrationResourceProp
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListIntegrationResourcePropertiesOutcome(result.GetResultWithOwnership())
                             : ListIntegrationResourcePropertiesOutcome(std::move(result.GetError()));
+}
+
+ListIntegrationTablePropertiesOutcome GlueClient::ListIntegrationTableProperties(
+    const ListIntegrationTablePropertiesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListIntegrationTablePropertiesOutcome(result.GetResultWithOwnership())
+                            : ListIntegrationTablePropertiesOutcome(std::move(result.GetError()));
 }
 
 ListIterableFormsOutcome GlueClient::ListIterableForms(const ListIterableFormsRequest& request) const {

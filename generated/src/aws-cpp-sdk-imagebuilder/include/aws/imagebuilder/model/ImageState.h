@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
+#include <aws/imagebuilder/model/ImageFailureContext.h>
 #include <aws/imagebuilder/model/ImageStatus.h>
 
 #include <utility>
@@ -65,12 +66,35 @@ class ImageState {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The details about the failure, for images that failed to complete. Image
+   * Builder only sets this property when the image status is
+   * <code>FAILED</code>.</p>
+   */
+  inline const ImageFailureContext& GetFailureContext() const { return m_failureContext; }
+  inline bool FailureContextHasBeenSet() const { return m_failureContextHasBeenSet; }
+  template <typename FailureContextT = ImageFailureContext>
+  void SetFailureContext(FailureContextT&& value) {
+    m_failureContextHasBeenSet = true;
+    m_failureContext = std::forward<FailureContextT>(value);
+  }
+  template <typename FailureContextT = ImageFailureContext>
+  ImageState& WithFailureContext(FailureContextT&& value) {
+    SetFailureContext(std::forward<FailureContextT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ImageStatus m_status{ImageStatus::NOT_SET};
 
   Aws::String m_reason;
+
+  ImageFailureContext m_failureContext;
   bool m_statusHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
+  bool m_failureContextHasBeenSet = false;
 };
 
 }  // namespace Model
