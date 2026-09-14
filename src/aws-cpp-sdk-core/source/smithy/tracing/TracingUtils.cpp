@@ -46,3 +46,18 @@ void TracingUtils::RecordExecutionDuration(
         histogram->record((double) duration, std::move(attributes));
     }
 }
+
+TracingUtils::ScopedMetricTimer::ScopedMetricTimer(Aws::String metricName, std::shared_ptr<Meter> meter, Aws::Map<Aws::String, Aws::String> attributes)
+    : m_start(std::chrono::steady_clock::now()),
+      m_metricName(std::move(metricName)),
+      m_meter(std::move(meter)),
+      m_attributes(std::move(attributes))
+{
+}
+
+TracingUtils::ScopedMetricTimer::~ScopedMetricTimer()
+{
+    if (m_meter) {
+        RecordExecutionDuration(m_start, std::chrono::steady_clock::now(), m_metricName, *m_meter, m_attributes, "");
+    }
+}

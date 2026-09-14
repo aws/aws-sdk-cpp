@@ -18,10 +18,12 @@ file(GLOB AWS_TESTING_EVENT_MOCKS_HEADERS "include/aws/testing/mocks/event/*.h")
 file(GLOB AWS_TESTING_HTTP_MOCKS_HEADERS "include/aws/testing/mocks/http/*.h")
 file(GLOB AWS_TESTING_CLIENT_MOCKS_HEADERS "include/aws/testing/mocks/aws/client/*.h")
 file(GLOB AWS_TESTING_MONITORING_MOCKS_HEADERS "include/aws/testing/mocks/monitoring/*.h")
+file(GLOB AWS_TESTING_TRACING_MOCKS_HEADERS "include/aws/testing/mocks/tracing/*.h")
 file(GLOB AWS_TESTING_PLATFORM_HEADERS "include/aws/testing/platform/*.h")
 file(GLOB AWS_TESTING_UTILS_HEADERS "include/aws/testing/utils/*.h")
 
 file(GLOB AWS_TESTING_SOURCE "source/*.cpp")
+file(GLOB AWS_TESTING_TRACING_MOCKS_SOURCE "source/mocks/tracing/*.cpp")
 file(GLOB AWS_TESTING_EXTERNAL_SOURCE "source/external/*.cc")
 file(GLOB AWS_TESTING_GTEST_SOURCE "source/external/gtest/*.cc")
 
@@ -36,9 +38,11 @@ file(GLOB TestingResources_SHARED_SRC
     ${AWS_TESTING_HTTP_MOCKS_HEADERS}
     ${AWS_TESTING_CLIENT_MOCKS_HEADERS}
     ${AWS_TESTING_MONITORING_MOCKS_HEADERS}
+    ${AWS_TESTING_TRACING_MOCKS_HEADERS}
     ${AWS_TESTING_PLATFORM_HEADERS}
     ${AWS_TESTING_UTILS_HEADERS}
     ${AWS_TESTING_SOURCE}
+    ${AWS_TESTING_TRACING_MOCKS_SOURCE}
     ${AWS_TESTING_EXTERNAL_SOURCE}
     ${AWS_TESTING_GTEST_SOURCE}
 )
@@ -71,7 +75,9 @@ if(PLATFORM_WINDOWS)
         source_group("Header Files\\aws\\testing\\mocks\\http" FILES ${AWS_TESTING_HTTP_MOCKS_HEADERS})
         source_group("Header Files\\aws\\testing\\mocks\\aws\\client" FILES ${AWS_TESTING_CLIENT_MOCKS_HEADERS})
         source_group("Header Files\\aws\\testing\\mocks\\monitoring" FILES ${AWS_TESTING_MONITORING_MOCKS_HEADERS})
+        source_group("Header Files\\aws\\testing\\mocks\\tracing" FILES ${AWS_TESTING_TRACING_MOCKS_HEADERS})
         source_group("Source Files" FILES ${AWS_TESTING_SOURCE})
+        source_group("Source Files\\mocks\\tracing" FILES ${AWS_TESTING_TRACING_MOCKS_SOURCE})
         source_group("Source Files\\external" FILES ${AWS_TESTING_EXTERNAL_SOURCE})
         source_group("Source Files\\external\\gtest" FILES ${AWS_TESTING_GTEST_SOURCE})
         source_group("Source Files\\platform\\windows" FILES ${TestingResources_PLATFORM_SRC})
@@ -157,5 +163,6 @@ install (FILES ${AWS_TESTING_CLIENT_MOCKS_HEADERS} DESTINATION ${INCLUDE_DIRECTO
 install (FILES ${AWS_TESTING_EVENT_MOCKS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/testing/mocks/event)
 install (FILES ${AWS_TESTING_HTTP_MOCKS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/testing/mocks/http)
 install (FILES ${AWS_TESTING_MONITORING_MOCKS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/testing/mocks/monitoring)
+install (FILES ${AWS_TESTING_TRACING_MOCKS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/testing/mocks/tracing)
 
 do_packaging()
