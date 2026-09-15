@@ -602,6 +602,9 @@ namespace Aws
                     static_cast<uint32_t>((m_configuration.requestTimeoutMs + 999) / 1000);
             }
 
+            // After a request is fully sent, fail it if the server doesn't begin responding within this window.
+            connectionManagerOptions.ResponseFirstByteTimeoutMs = m_configuration.responseFirstByteTimeoutMs;
+
             auto connectionManager = Crt::Http::HttpClientConnectionManager::NewClientConnectionManager(connectionManagerOptions);
 
             if (!connectionManager)

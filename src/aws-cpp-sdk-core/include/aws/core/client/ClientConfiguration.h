@@ -229,6 +229,12 @@ namespace Aws
              */
             unsigned long lowSpeedLimit = 1;
             /**
+             * After a request is fully sent, the maximum time in milliseconds to wait for the server to begin
+             * responding before the request fails with a first-byte timeout. Defaults to 0 (disabled).
+             * Only supported by the CRT HTTP client; it covers HTTP/2 (including bidirectional streaming) and HTTP/1.1.
+             */
+            uint64_t responseFirstByteTimeoutMs = 0;
+            /**
              * Strategy to use in case of failed requests. Default is DefaultRetryStrategy (i.e. exponential backoff).
              * Provide retry strategy here or via a factory method.
              */
