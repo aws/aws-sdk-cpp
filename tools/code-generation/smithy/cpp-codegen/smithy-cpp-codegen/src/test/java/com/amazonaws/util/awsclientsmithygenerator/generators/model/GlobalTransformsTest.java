@@ -8,6 +8,7 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.G
 import org.junit.jupiter.api.Test;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.*;
+import software.amazon.smithy.model.traits.ErrorTrait;
 import software.amazon.smithy.model.traits.JsonNameTrait;
 import software.amazon.smithy.model.traits.XmlNameTrait;
 
@@ -837,5 +838,33 @@ class GlobalTransformsTest {
             ShapeId.from("com.example#DoThingOutput"), StructureShape.class);
         assertFalse(result.getMember("ResponseMetadata").isPresent(),
             "Plain JSON protocols must not get ResponseMetadata injected");
+    }
+
+    @Test
+    void computeReachableShapes_includesServiceLevelCommonError() {
+        // A modeled exception attached only at the SERVICE level (on no operation) must still be
+        // reachable, else it gets no Model class while the legacy <Service>Errors source that still
+        // references it fails to compile.
+        StructureShape input = StructureShape.builder().id("com.example#DoThingRequest").build();
+        StructureShape output = StructureShape.builder().id("com.example#DoThingResponse").build();
+        OperationShape op = OperationShape.builder()
+            .id("com.example#DoThing").input(input.getId()).output(output.getId()).build();
+        StructureShape commonError = StructureShape.builder()
+            .id("com.example#ThrottlingException")
+            .addMember("message", ShapeId.from("smithy.api#String"))
+            .addMember("retryAfterSeconds", ShapeId.from("smithy.api#Integer"))
+            .addTrait(new ErrorTrait("client"))
+            .build();
+        ServiceShape service = ServiceShape.builder()
+            .id("com.example#Example").version("2024-01-01")
+            .addOperation(op.getId())
+            .addError(commonError.getId())
+            .build();
+        Model model = Model.assembler()
+            .addShapes(input, output, op, commonError, service).assemble().unwrap();
+
+        Set<ShapeId> reachable = GlobalTransforms.computeReachableShapes(model, serviceOf(model));
+        assertTrue(reachable.contains(commonError.getId()),
+            "service-level common error must be reachable so it gets a Model class");
     }
 }

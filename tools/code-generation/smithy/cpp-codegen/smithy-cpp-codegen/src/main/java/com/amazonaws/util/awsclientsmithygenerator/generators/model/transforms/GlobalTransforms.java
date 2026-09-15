@@ -123,7 +123,7 @@ public final class GlobalTransforms implements ModelTransform {
     /**
      * Computes the shape IDs reachable from the service's operations; only these generate model files.
      * Roots are each operation's input (including {@code smithy.api#Unit}), output, and error shapes,
-     * walked transitively via {@link Walker}. Each root id is included even if its shape is absent.
+     * plus the service's own common errors, walked transitively via {@link Walker}.
      *
      * @param model the Smithy model
      * @param service the service shape whose operations define the root set
@@ -132,6 +132,7 @@ public final class GlobalTransforms implements ModelTransform {
     public static Set<ShapeId> computeReachableShapes(Model model, ServiceShape service) {
         Walker walker = new Walker(model);
         Set<ShapeId> reachable = new HashSet<>();
+        service.getErrors().forEach(id -> addReachableFrom(id, walker, model, reachable));
         for (OperationShape op : nonDeprecatedOperations(model, service)) {
             addReachableFrom(op.getInputShape(), walker, model, reachable);
             op.getOutput().ifPresent(id -> addReachableFrom(id, walker, model, reachable));
