@@ -25,6 +25,7 @@
 #include <aws/directconnect/model/AllocatePublicVirtualInterfaceResult.h>
 #include <aws/directconnect/model/AllocateTransitVirtualInterfaceResult.h>
 #include <aws/directconnect/model/AssociateConnectionWithLagResult.h>
+#include <aws/directconnect/model/AssociateConnectionsToResiliencyGroupResult.h>
 #include <aws/directconnect/model/AssociateHostedConnectionResult.h>
 #include <aws/directconnect/model/AssociateMacSecKeyResult.h>
 #include <aws/directconnect/model/AssociateVirtualInterfaceResult.h>
@@ -44,6 +45,7 @@
 #include <aws/directconnect/model/CreateLagResult.h>
 #include <aws/directconnect/model/CreatePrivateVirtualInterfaceResult.h>
 #include <aws/directconnect/model/CreatePublicVirtualInterfaceResult.h>
+#include <aws/directconnect/model/CreateResiliencyGroupResult.h>
 #include <aws/directconnect/model/CreateTransitVirtualInterfaceResult.h>
 #include <aws/directconnect/model/DeleteBGPPeerRequest.h>
 #include <aws/directconnect/model/DeleteBGPPeerResult.h>
@@ -54,6 +56,7 @@
 #include <aws/directconnect/model/DeleteDirectConnectGatewayResult.h>
 #include <aws/directconnect/model/DeleteInterconnectResult.h>
 #include <aws/directconnect/model/DeleteLagResult.h>
+#include <aws/directconnect/model/DeleteResiliencyGroupResult.h>
 #include <aws/directconnect/model/DeleteVirtualInterfaceResult.h>
 #include <aws/directconnect/model/DescribeConnectionsRequest.h>
 #include <aws/directconnect/model/DescribeConnectionsResult.h>
@@ -82,7 +85,12 @@
 #include <aws/directconnect/model/DescribeVirtualInterfacesRequest.h>
 #include <aws/directconnect/model/DescribeVirtualInterfacesResult.h>
 #include <aws/directconnect/model/DisassociateConnectionFromLagResult.h>
+#include <aws/directconnect/model/DisassociateConnectionsFromResiliencyGroupResult.h>
 #include <aws/directconnect/model/DisassociateMacSecKeyResult.h>
+#include <aws/directconnect/model/GetResiliencyGroupResult.h>
+#include <aws/directconnect/model/ListResiliencyGroupAssociationsResult.h>
+#include <aws/directconnect/model/ListResiliencyGroupsRequest.h>
+#include <aws/directconnect/model/ListResiliencyGroupsResult.h>
 #include <aws/directconnect/model/ListVirtualInterfaceRoutesRequest.h>
 #include <aws/directconnect/model/ListVirtualInterfaceRoutesResult.h>
 #include <aws/directconnect/model/ListVirtualInterfaceTestHistoryRequest.h>
@@ -92,10 +100,12 @@
 #include <aws/directconnect/model/TagResourceResult.h>
 #include <aws/directconnect/model/UntagResourceResult.h>
 #include <aws/directconnect/model/UpdateConnectionResult.h>
+#include <aws/directconnect/model/UpdateConnectionsBillingModeResult.h>
 #include <aws/directconnect/model/UpdateDirectConnectGatewayAssociationRequest.h>
 #include <aws/directconnect/model/UpdateDirectConnectGatewayAssociationResult.h>
 #include <aws/directconnect/model/UpdateDirectConnectGatewayResult.h>
 #include <aws/directconnect/model/UpdateLagResult.h>
+#include <aws/directconnect/model/UpdateResiliencyGroupResult.h>
 #include <aws/directconnect/model/UpdateVirtualInterfaceAttributesResult.h>
 /* End of service model headers required in DirectConnectClient header */
 
@@ -136,6 +146,7 @@ class AllocatePrivateVirtualInterfaceRequest;
 class AllocatePublicVirtualInterfaceRequest;
 class AllocateTransitVirtualInterfaceRequest;
 class AssociateConnectionWithLagRequest;
+class AssociateConnectionsToResiliencyGroupRequest;
 class AssociateHostedConnectionRequest;
 class AssociateMacSecKeyRequest;
 class AssociateVirtualInterfaceRequest;
@@ -153,6 +164,7 @@ class CreateInterconnectRequest;
 class CreateLagRequest;
 class CreatePrivateVirtualInterfaceRequest;
 class CreatePublicVirtualInterfaceRequest;
+class CreateResiliencyGroupRequest;
 class CreateTransitVirtualInterfaceRequest;
 class DeleteBGPPeerRequest;
 class DeleteConnectionRequest;
@@ -161,6 +173,7 @@ class DeleteDirectConnectGatewayAssociationRequest;
 class DeleteDirectConnectGatewayAssociationProposalRequest;
 class DeleteInterconnectRequest;
 class DeleteLagRequest;
+class DeleteResiliencyGroupRequest;
 class DeleteVirtualInterfaceRequest;
 class DescribeConnectionsRequest;
 class DescribeCustomerMetadataRequest;
@@ -178,7 +191,11 @@ class DescribeTagsRequest;
 class DescribeVirtualGatewaysRequest;
 class DescribeVirtualInterfacesRequest;
 class DisassociateConnectionFromLagRequest;
+class DisassociateConnectionsFromResiliencyGroupRequest;
 class DisassociateMacSecKeyRequest;
+class GetResiliencyGroupRequest;
+class ListResiliencyGroupAssociationsRequest;
+class ListResiliencyGroupsRequest;
 class ListVirtualInterfaceRoutesRequest;
 class ListVirtualInterfaceTestHistoryRequest;
 class StartBgpFailoverTestRequest;
@@ -186,9 +203,11 @@ class StopBgpFailoverTestRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
 class UpdateConnectionRequest;
+class UpdateConnectionsBillingModeRequest;
 class UpdateDirectConnectGatewayRequest;
 class UpdateDirectConnectGatewayAssociationRequest;
 class UpdateLagRequest;
+class UpdateResiliencyGroupRequest;
 class UpdateVirtualInterfaceAttributesRequest;
 /* End of service model forward declarations required in DirectConnectClient header */
 
@@ -200,6 +219,7 @@ typedef Aws::Utils::Outcome<AllocatePrivateVirtualInterfaceResult, DirectConnect
 typedef Aws::Utils::Outcome<AllocatePublicVirtualInterfaceResult, DirectConnectError> AllocatePublicVirtualInterfaceOutcome;
 typedef Aws::Utils::Outcome<AllocateTransitVirtualInterfaceResult, DirectConnectError> AllocateTransitVirtualInterfaceOutcome;
 typedef Aws::Utils::Outcome<AssociateConnectionWithLagResult, DirectConnectError> AssociateConnectionWithLagOutcome;
+typedef Aws::Utils::Outcome<AssociateConnectionsToResiliencyGroupResult, DirectConnectError> AssociateConnectionsToResiliencyGroupOutcome;
 typedef Aws::Utils::Outcome<AssociateHostedConnectionResult, DirectConnectError> AssociateHostedConnectionOutcome;
 typedef Aws::Utils::Outcome<AssociateMacSecKeyResult, DirectConnectError> AssociateMacSecKeyOutcome;
 typedef Aws::Utils::Outcome<AssociateVirtualInterfaceResult, DirectConnectError> AssociateVirtualInterfaceOutcome;
@@ -218,6 +238,7 @@ typedef Aws::Utils::Outcome<CreateInterconnectResult, DirectConnectError> Create
 typedef Aws::Utils::Outcome<CreateLagResult, DirectConnectError> CreateLagOutcome;
 typedef Aws::Utils::Outcome<CreatePrivateVirtualInterfaceResult, DirectConnectError> CreatePrivateVirtualInterfaceOutcome;
 typedef Aws::Utils::Outcome<CreatePublicVirtualInterfaceResult, DirectConnectError> CreatePublicVirtualInterfaceOutcome;
+typedef Aws::Utils::Outcome<CreateResiliencyGroupResult, DirectConnectError> CreateResiliencyGroupOutcome;
 typedef Aws::Utils::Outcome<CreateTransitVirtualInterfaceResult, DirectConnectError> CreateTransitVirtualInterfaceOutcome;
 typedef Aws::Utils::Outcome<DeleteBGPPeerResult, DirectConnectError> DeleteBGPPeerOutcome;
 typedef Aws::Utils::Outcome<DeleteConnectionResult, DirectConnectError> DeleteConnectionOutcome;
@@ -227,6 +248,7 @@ typedef Aws::Utils::Outcome<DeleteDirectConnectGatewayAssociationProposalResult,
     DeleteDirectConnectGatewayAssociationProposalOutcome;
 typedef Aws::Utils::Outcome<DeleteInterconnectResult, DirectConnectError> DeleteInterconnectOutcome;
 typedef Aws::Utils::Outcome<DeleteLagResult, DirectConnectError> DeleteLagOutcome;
+typedef Aws::Utils::Outcome<DeleteResiliencyGroupResult, DirectConnectError> DeleteResiliencyGroupOutcome;
 typedef Aws::Utils::Outcome<DeleteVirtualInterfaceResult, DirectConnectError> DeleteVirtualInterfaceOutcome;
 typedef Aws::Utils::Outcome<DescribeConnectionsResult, DirectConnectError> DescribeConnectionsOutcome;
 typedef Aws::Utils::Outcome<DescribeCustomerMetadataResult, DirectConnectError> DescribeCustomerMetadataOutcome;
@@ -247,7 +269,12 @@ typedef Aws::Utils::Outcome<DescribeTagsResult, DirectConnectError> DescribeTags
 typedef Aws::Utils::Outcome<DescribeVirtualGatewaysResult, DirectConnectError> DescribeVirtualGatewaysOutcome;
 typedef Aws::Utils::Outcome<DescribeVirtualInterfacesResult, DirectConnectError> DescribeVirtualInterfacesOutcome;
 typedef Aws::Utils::Outcome<DisassociateConnectionFromLagResult, DirectConnectError> DisassociateConnectionFromLagOutcome;
+typedef Aws::Utils::Outcome<DisassociateConnectionsFromResiliencyGroupResult, DirectConnectError>
+    DisassociateConnectionsFromResiliencyGroupOutcome;
 typedef Aws::Utils::Outcome<DisassociateMacSecKeyResult, DirectConnectError> DisassociateMacSecKeyOutcome;
+typedef Aws::Utils::Outcome<GetResiliencyGroupResult, DirectConnectError> GetResiliencyGroupOutcome;
+typedef Aws::Utils::Outcome<ListResiliencyGroupAssociationsResult, DirectConnectError> ListResiliencyGroupAssociationsOutcome;
+typedef Aws::Utils::Outcome<ListResiliencyGroupsResult, DirectConnectError> ListResiliencyGroupsOutcome;
 typedef Aws::Utils::Outcome<ListVirtualInterfaceRoutesResult, DirectConnectError> ListVirtualInterfaceRoutesOutcome;
 typedef Aws::Utils::Outcome<ListVirtualInterfaceTestHistoryResult, DirectConnectError> ListVirtualInterfaceTestHistoryOutcome;
 typedef Aws::Utils::Outcome<StartBgpFailoverTestResult, DirectConnectError> StartBgpFailoverTestOutcome;
@@ -255,9 +282,11 @@ typedef Aws::Utils::Outcome<StopBgpFailoverTestResult, DirectConnectError> StopB
 typedef Aws::Utils::Outcome<TagResourceResult, DirectConnectError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, DirectConnectError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateConnectionResult, DirectConnectError> UpdateConnectionOutcome;
+typedef Aws::Utils::Outcome<UpdateConnectionsBillingModeResult, DirectConnectError> UpdateConnectionsBillingModeOutcome;
 typedef Aws::Utils::Outcome<UpdateDirectConnectGatewayResult, DirectConnectError> UpdateDirectConnectGatewayOutcome;
 typedef Aws::Utils::Outcome<UpdateDirectConnectGatewayAssociationResult, DirectConnectError> UpdateDirectConnectGatewayAssociationOutcome;
 typedef Aws::Utils::Outcome<UpdateLagResult, DirectConnectError> UpdateLagOutcome;
+typedef Aws::Utils::Outcome<UpdateResiliencyGroupResult, DirectConnectError> UpdateResiliencyGroupOutcome;
 typedef Aws::Utils::Outcome<UpdateVirtualInterfaceAttributesResult, DirectConnectError> UpdateVirtualInterfaceAttributesOutcome;
 /* End of service model Outcome class definitions */
 
@@ -268,6 +297,7 @@ typedef std::future<AllocatePrivateVirtualInterfaceOutcome> AllocatePrivateVirtu
 typedef std::future<AllocatePublicVirtualInterfaceOutcome> AllocatePublicVirtualInterfaceOutcomeCallable;
 typedef std::future<AllocateTransitVirtualInterfaceOutcome> AllocateTransitVirtualInterfaceOutcomeCallable;
 typedef std::future<AssociateConnectionWithLagOutcome> AssociateConnectionWithLagOutcomeCallable;
+typedef std::future<AssociateConnectionsToResiliencyGroupOutcome> AssociateConnectionsToResiliencyGroupOutcomeCallable;
 typedef std::future<AssociateHostedConnectionOutcome> AssociateHostedConnectionOutcomeCallable;
 typedef std::future<AssociateMacSecKeyOutcome> AssociateMacSecKeyOutcomeCallable;
 typedef std::future<AssociateVirtualInterfaceOutcome> AssociateVirtualInterfaceOutcomeCallable;
@@ -285,6 +315,7 @@ typedef std::future<CreateInterconnectOutcome> CreateInterconnectOutcomeCallable
 typedef std::future<CreateLagOutcome> CreateLagOutcomeCallable;
 typedef std::future<CreatePrivateVirtualInterfaceOutcome> CreatePrivateVirtualInterfaceOutcomeCallable;
 typedef std::future<CreatePublicVirtualInterfaceOutcome> CreatePublicVirtualInterfaceOutcomeCallable;
+typedef std::future<CreateResiliencyGroupOutcome> CreateResiliencyGroupOutcomeCallable;
 typedef std::future<CreateTransitVirtualInterfaceOutcome> CreateTransitVirtualInterfaceOutcomeCallable;
 typedef std::future<DeleteBGPPeerOutcome> DeleteBGPPeerOutcomeCallable;
 typedef std::future<DeleteConnectionOutcome> DeleteConnectionOutcomeCallable;
@@ -293,6 +324,7 @@ typedef std::future<DeleteDirectConnectGatewayAssociationOutcome> DeleteDirectCo
 typedef std::future<DeleteDirectConnectGatewayAssociationProposalOutcome> DeleteDirectConnectGatewayAssociationProposalOutcomeCallable;
 typedef std::future<DeleteInterconnectOutcome> DeleteInterconnectOutcomeCallable;
 typedef std::future<DeleteLagOutcome> DeleteLagOutcomeCallable;
+typedef std::future<DeleteResiliencyGroupOutcome> DeleteResiliencyGroupOutcomeCallable;
 typedef std::future<DeleteVirtualInterfaceOutcome> DeleteVirtualInterfaceOutcomeCallable;
 typedef std::future<DescribeConnectionsOutcome> DescribeConnectionsOutcomeCallable;
 typedef std::future<DescribeCustomerMetadataOutcome> DescribeCustomerMetadataOutcomeCallable;
@@ -311,7 +343,11 @@ typedef std::future<DescribeTagsOutcome> DescribeTagsOutcomeCallable;
 typedef std::future<DescribeVirtualGatewaysOutcome> DescribeVirtualGatewaysOutcomeCallable;
 typedef std::future<DescribeVirtualInterfacesOutcome> DescribeVirtualInterfacesOutcomeCallable;
 typedef std::future<DisassociateConnectionFromLagOutcome> DisassociateConnectionFromLagOutcomeCallable;
+typedef std::future<DisassociateConnectionsFromResiliencyGroupOutcome> DisassociateConnectionsFromResiliencyGroupOutcomeCallable;
 typedef std::future<DisassociateMacSecKeyOutcome> DisassociateMacSecKeyOutcomeCallable;
+typedef std::future<GetResiliencyGroupOutcome> GetResiliencyGroupOutcomeCallable;
+typedef std::future<ListResiliencyGroupAssociationsOutcome> ListResiliencyGroupAssociationsOutcomeCallable;
+typedef std::future<ListResiliencyGroupsOutcome> ListResiliencyGroupsOutcomeCallable;
 typedef std::future<ListVirtualInterfaceRoutesOutcome> ListVirtualInterfaceRoutesOutcomeCallable;
 typedef std::future<ListVirtualInterfaceTestHistoryOutcome> ListVirtualInterfaceTestHistoryOutcomeCallable;
 typedef std::future<StartBgpFailoverTestOutcome> StartBgpFailoverTestOutcomeCallable;
@@ -319,9 +355,11 @@ typedef std::future<StopBgpFailoverTestOutcome> StopBgpFailoverTestOutcomeCallab
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateConnectionOutcome> UpdateConnectionOutcomeCallable;
+typedef std::future<UpdateConnectionsBillingModeOutcome> UpdateConnectionsBillingModeOutcomeCallable;
 typedef std::future<UpdateDirectConnectGatewayOutcome> UpdateDirectConnectGatewayOutcomeCallable;
 typedef std::future<UpdateDirectConnectGatewayAssociationOutcome> UpdateDirectConnectGatewayAssociationOutcomeCallable;
 typedef std::future<UpdateLagOutcome> UpdateLagOutcomeCallable;
+typedef std::future<UpdateResiliencyGroupOutcome> UpdateResiliencyGroupOutcomeCallable;
 typedef std::future<UpdateVirtualInterfaceAttributesOutcome> UpdateVirtualInterfaceAttributesOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
@@ -351,6 +389,10 @@ typedef std::function<void(const DirectConnectClient*, const Model::AllocateTran
 typedef std::function<void(const DirectConnectClient*, const Model::AssociateConnectionWithLagRequest&,
                            const Model::AssociateConnectionWithLagOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AssociateConnectionWithLagResponseReceivedHandler;
+typedef std::function<void(const DirectConnectClient*, const Model::AssociateConnectionsToResiliencyGroupRequest&,
+                           const Model::AssociateConnectionsToResiliencyGroupOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    AssociateConnectionsToResiliencyGroupResponseReceivedHandler;
 typedef std::function<void(const DirectConnectClient*, const Model::AssociateHostedConnectionRequest&,
                            const Model::AssociateHostedConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AssociateHostedConnectionResponseReceivedHandler;
@@ -409,6 +451,9 @@ typedef std::function<void(const DirectConnectClient*, const Model::CreatePublic
                            const Model::CreatePublicVirtualInterfaceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreatePublicVirtualInterfaceResponseReceivedHandler;
+typedef std::function<void(const DirectConnectClient*, const Model::CreateResiliencyGroupRequest&,
+                           const Model::CreateResiliencyGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateResiliencyGroupResponseReceivedHandler;
 typedef std::function<void(const DirectConnectClient*, const Model::CreateTransitVirtualInterfaceRequest&,
                            const Model::CreateTransitVirtualInterfaceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -436,6 +481,9 @@ typedef std::function<void(const DirectConnectClient*, const Model::DeleteInterc
 typedef std::function<void(const DirectConnectClient*, const Model::DeleteLagRequest&, const Model::DeleteLagOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteLagResponseReceivedHandler;
+typedef std::function<void(const DirectConnectClient*, const Model::DeleteResiliencyGroupRequest&,
+                           const Model::DeleteResiliencyGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteResiliencyGroupResponseReceivedHandler;
 typedef std::function<void(const DirectConnectClient*, const Model::DeleteVirtualInterfaceRequest&,
                            const Model::DeleteVirtualInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteVirtualInterfaceResponseReceivedHandler;
@@ -492,9 +540,23 @@ typedef std::function<void(const DirectConnectClient*, const Model::Disassociate
                            const Model::DisassociateConnectionFromLagOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DisassociateConnectionFromLagResponseReceivedHandler;
+typedef std::function<void(const DirectConnectClient*, const Model::DisassociateConnectionsFromResiliencyGroupRequest&,
+                           const Model::DisassociateConnectionsFromResiliencyGroupOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DisassociateConnectionsFromResiliencyGroupResponseReceivedHandler;
 typedef std::function<void(const DirectConnectClient*, const Model::DisassociateMacSecKeyRequest&,
                            const Model::DisassociateMacSecKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DisassociateMacSecKeyResponseReceivedHandler;
+typedef std::function<void(const DirectConnectClient*, const Model::GetResiliencyGroupRequest&, const Model::GetResiliencyGroupOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetResiliencyGroupResponseReceivedHandler;
+typedef std::function<void(const DirectConnectClient*, const Model::ListResiliencyGroupAssociationsRequest&,
+                           const Model::ListResiliencyGroupAssociationsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListResiliencyGroupAssociationsResponseReceivedHandler;
+typedef std::function<void(const DirectConnectClient*, const Model::ListResiliencyGroupsRequest&, const Model::ListResiliencyGroupsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListResiliencyGroupsResponseReceivedHandler;
 typedef std::function<void(const DirectConnectClient*, const Model::ListVirtualInterfaceRoutesRequest&,
                            const Model::ListVirtualInterfaceRoutesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListVirtualInterfaceRoutesResponseReceivedHandler;
@@ -517,6 +579,10 @@ typedef std::function<void(const DirectConnectClient*, const Model::UntagResourc
 typedef std::function<void(const DirectConnectClient*, const Model::UpdateConnectionRequest&, const Model::UpdateConnectionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateConnectionResponseReceivedHandler;
+typedef std::function<void(const DirectConnectClient*, const Model::UpdateConnectionsBillingModeRequest&,
+                           const Model::UpdateConnectionsBillingModeOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateConnectionsBillingModeResponseReceivedHandler;
 typedef std::function<void(const DirectConnectClient*, const Model::UpdateDirectConnectGatewayRequest&,
                            const Model::UpdateDirectConnectGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateDirectConnectGatewayResponseReceivedHandler;
@@ -527,6 +593,9 @@ typedef std::function<void(const DirectConnectClient*, const Model::UpdateDirect
 typedef std::function<void(const DirectConnectClient*, const Model::UpdateLagRequest&, const Model::UpdateLagOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateLagResponseReceivedHandler;
+typedef std::function<void(const DirectConnectClient*, const Model::UpdateResiliencyGroupRequest&,
+                           const Model::UpdateResiliencyGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateResiliencyGroupResponseReceivedHandler;
 typedef std::function<void(const DirectConnectClient*, const Model::UpdateVirtualInterfaceAttributesRequest&,
                            const Model::UpdateVirtualInterfaceAttributesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

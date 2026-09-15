@@ -113,6 +113,10 @@ GetAgentRuntimeResult& GetAgentRuntimeResult::operator=(const Aws::AmazonWebServ
     m_capacityProviderConfiguration = jsonValue.GetObject("capacityProviderConfiguration");
     m_capacityProviderConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("platformVersion")) {
+    m_platformVersion = jsonValue.GetString("platformVersion");
+    m_platformVersionHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

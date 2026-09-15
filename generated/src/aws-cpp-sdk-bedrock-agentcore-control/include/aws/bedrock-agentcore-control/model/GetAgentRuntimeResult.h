@@ -409,6 +409,23 @@ class GetAgentRuntimeResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The version of the runtime platform used by the AgentCore Runtime.</p>
+   */
+  inline const Aws::String& GetPlatformVersion() const { return m_platformVersion; }
+  template <typename PlatformVersionT = Aws::String>
+  void SetPlatformVersion(PlatformVersionT&& value) {
+    m_platformVersionHasBeenSet = true;
+    m_platformVersion = std::forward<PlatformVersionT>(value);
+  }
+  template <typename PlatformVersionT = Aws::String>
+  GetAgentRuntimeResult& WithPlatformVersion(PlatformVersionT&& value) {
+    SetPlatformVersion(std::forward<PlatformVersionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -467,6 +484,8 @@ class GetAgentRuntimeResult {
 
   CapacityProviderConfiguration m_capacityProviderConfiguration;
 
+  Aws::String m_platformVersion;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_agentRuntimeArnHasBeenSet = false;
@@ -490,6 +509,7 @@ class GetAgentRuntimeResult {
   bool m_metadataConfigurationHasBeenSet = false;
   bool m_filesystemConfigurationsHasBeenSet = false;
   bool m_capacityProviderConfigurationHasBeenSet = false;
+  bool m_platformVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

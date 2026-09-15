@@ -132,6 +132,10 @@ Lag& Lag::operator=(JsonView jsonValue) {
     m_rateLimiterStatus = jsonValue.GetObject("rateLimiterStatus");
     m_rateLimiterStatusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("billingMode")) {
+    m_billingMode = BillingModeMapper::GetBillingModeForName(jsonValue.GetString("billingMode"));
+    m_billingModeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -252,6 +256,10 @@ JsonValue Lag::Jsonize() const {
 
   if (m_rateLimiterStatusHasBeenSet) {
     payload.WithObject("rateLimiterStatus", m_rateLimiterStatus.Jsonize());
+  }
+
+  if (m_billingModeHasBeenSet) {
+    payload.WithString("billingMode", BillingModeMapper::GetNameForBillingMode(m_billingMode));
   }
 
   return payload;

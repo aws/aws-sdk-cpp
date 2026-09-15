@@ -135,6 +135,10 @@ UpdateLagResult& UpdateLagResult::operator=(const Aws::AmazonWebServiceResult<Js
     m_rateLimiterStatus = jsonValue.GetObject("rateLimiterStatus");
     m_rateLimiterStatusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("billingMode")) {
+    m_billingMode = BillingModeMapper::GetBillingModeForName(jsonValue.GetString("billingMode"));
+    m_billingModeHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

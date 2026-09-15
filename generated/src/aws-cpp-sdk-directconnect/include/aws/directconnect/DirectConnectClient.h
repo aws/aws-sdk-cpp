@@ -304,6 +304,37 @@ class AWS_DIRECTCONNECT_API DirectConnectClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Associates one or more connections with the specified resiliency group. This
+   * operation is atomic: either all of the specified connections are associated, or
+   * the operation fails and no changes are made.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateConnectionsToResiliencyGroup">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AssociateConnectionsToResiliencyGroupOutcome AssociateConnectionsToResiliencyGroup(
+      const Model::AssociateConnectionsToResiliencyGroupRequest& request) const;
+
+  /**
+   * A Callable wrapper for AssociateConnectionsToResiliencyGroup that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename AssociateConnectionsToResiliencyGroupRequestT = Model::AssociateConnectionsToResiliencyGroupRequest>
+  Model::AssociateConnectionsToResiliencyGroupOutcomeCallable AssociateConnectionsToResiliencyGroupCallable(
+      const AssociateConnectionsToResiliencyGroupRequestT& request) const {
+    return SubmitCallable(&DirectConnectClient::AssociateConnectionsToResiliencyGroup, request);
+  }
+
+  /**
+   * An Async wrapper for AssociateConnectionsToResiliencyGroup that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename AssociateConnectionsToResiliencyGroupRequestT = Model::AssociateConnectionsToResiliencyGroupRequest>
+  void AssociateConnectionsToResiliencyGroupAsync(const AssociateConnectionsToResiliencyGroupRequestT& request,
+                                                  const AssociateConnectionsToResiliencyGroupResponseReceivedHandler& handler,
+                                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DirectConnectClient::AssociateConnectionsToResiliencyGroup, request, handler, context);
+  }
+
+  /**
    * <p>Associates a hosted connection and its virtual interfaces with a link
    * aggregation group (LAG) or interconnect. If the target interconnect or LAG has
    * an existing hosted connection with a conflicting VLAN number or IP address, the
@@ -906,6 +937,34 @@ class AWS_DIRECTCONNECT_API DirectConnectClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Creates a resiliency group. A resiliency group lets you group Direct Connect
+   * connections together and manage them as a single unit to meet a target
+   * resiliency model.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateResiliencyGroup">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateResiliencyGroupOutcome CreateResiliencyGroup(const Model::CreateResiliencyGroupRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateResiliencyGroup that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateResiliencyGroupRequestT = Model::CreateResiliencyGroupRequest>
+  Model::CreateResiliencyGroupOutcomeCallable CreateResiliencyGroupCallable(const CreateResiliencyGroupRequestT& request) const {
+    return SubmitCallable(&DirectConnectClient::CreateResiliencyGroup, request);
+  }
+
+  /**
+   * An Async wrapper for CreateResiliencyGroup that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateResiliencyGroupRequestT = Model::CreateResiliencyGroupRequest>
+  void CreateResiliencyGroupAsync(const CreateResiliencyGroupRequestT& request, const CreateResiliencyGroupResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DirectConnectClient::CreateResiliencyGroup, request, handler, context);
+  }
+
+  /**
    * <p>Creates a transit virtual interface. A transit virtual interface should be
    * used to access one or more transit gateways associated with Direct Connect
    * gateways. A transit virtual interface enables the connection of multiple VPCs
@@ -1157,6 +1216,36 @@ class AWS_DIRECTCONNECT_API DirectConnectClient : public Aws::Client::AWSJsonCli
   void DeleteLagAsync(const DeleteLagRequestT& request, const DeleteLagResponseReceivedHandler& handler,
                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&DirectConnectClient::DeleteLag, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes the specified resiliency group. Deletion is asynchronous: the
+   * resiliency group transitions through the <code>deleting</code> state before it
+   * reaches the <code>deleted</code> state. The response returns the resiliency
+   * group so you can observe its current state without a subsequent
+   * <a>GetResiliencyGroup</a> call.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteResiliencyGroup">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteResiliencyGroupOutcome DeleteResiliencyGroup(const Model::DeleteResiliencyGroupRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteResiliencyGroup that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteResiliencyGroupRequestT = Model::DeleteResiliencyGroupRequest>
+  Model::DeleteResiliencyGroupOutcomeCallable DeleteResiliencyGroupCallable(const DeleteResiliencyGroupRequestT& request) const {
+    return SubmitCallable(&DirectConnectClient::DeleteResiliencyGroup, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteResiliencyGroup that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteResiliencyGroupRequestT = Model::DeleteResiliencyGroupRequest>
+  void DeleteResiliencyGroupAsync(const DeleteResiliencyGroupRequestT& request, const DeleteResiliencyGroupResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DirectConnectClient::DeleteResiliencyGroup, request, handler, context);
   }
 
   /**
@@ -1703,6 +1792,39 @@ class AWS_DIRECTCONNECT_API DirectConnectClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Disassociates one or more connections from the specified resiliency group.
+   * This operation is atomic: either all of the specified connections are
+   * disassociated, or the operation fails and no changes are made.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DisassociateConnectionsFromResiliencyGroup">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DisassociateConnectionsFromResiliencyGroupOutcome DisassociateConnectionsFromResiliencyGroup(
+      const Model::DisassociateConnectionsFromResiliencyGroupRequest& request) const;
+
+  /**
+   * A Callable wrapper for DisassociateConnectionsFromResiliencyGroup that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DisassociateConnectionsFromResiliencyGroupRequestT = Model::DisassociateConnectionsFromResiliencyGroupRequest>
+  Model::DisassociateConnectionsFromResiliencyGroupOutcomeCallable DisassociateConnectionsFromResiliencyGroupCallable(
+      const DisassociateConnectionsFromResiliencyGroupRequestT& request) const {
+    return SubmitCallable(&DirectConnectClient::DisassociateConnectionsFromResiliencyGroup, request);
+  }
+
+  /**
+   * An Async wrapper for DisassociateConnectionsFromResiliencyGroup that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DisassociateConnectionsFromResiliencyGroupRequestT = Model::DisassociateConnectionsFromResiliencyGroupRequest>
+  void DisassociateConnectionsFromResiliencyGroupAsync(
+      const DisassociateConnectionsFromResiliencyGroupRequestT& request,
+      const DisassociateConnectionsFromResiliencyGroupResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DirectConnectClient::DisassociateConnectionsFromResiliencyGroup, request, handler, context);
+  }
+
+  /**
    * <p>Removes the association between a MAC Security (MACsec) security key and a
    * Direct Connect connection.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DisassociateMacSecKey">AWS
@@ -1727,6 +1849,91 @@ class AWS_DIRECTCONNECT_API DirectConnectClient : public Aws::Client::AWSJsonCli
   void DisassociateMacSecKeyAsync(const DisassociateMacSecKeyRequestT& request, const DisassociateMacSecKeyResponseReceivedHandler& handler,
                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&DirectConnectClient::DisassociateMacSecKey, request, handler, context);
+  }
+
+  /**
+   * <p>Gets information about the specified resiliency group.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/GetResiliencyGroup">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetResiliencyGroupOutcome GetResiliencyGroup(const Model::GetResiliencyGroupRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetResiliencyGroup that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetResiliencyGroupRequestT = Model::GetResiliencyGroupRequest>
+  Model::GetResiliencyGroupOutcomeCallable GetResiliencyGroupCallable(const GetResiliencyGroupRequestT& request) const {
+    return SubmitCallable(&DirectConnectClient::GetResiliencyGroup, request);
+  }
+
+  /**
+   * An Async wrapper for GetResiliencyGroup that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetResiliencyGroupRequestT = Model::GetResiliencyGroupRequest>
+  void GetResiliencyGroupAsync(const GetResiliencyGroupRequestT& request, const GetResiliencyGroupResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DirectConnectClient::GetResiliencyGroup, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the connection associations for the specified resiliency
+   * group.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ListResiliencyGroupAssociations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListResiliencyGroupAssociationsOutcome ListResiliencyGroupAssociations(
+      const Model::ListResiliencyGroupAssociationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListResiliencyGroupAssociations that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListResiliencyGroupAssociationsRequestT = Model::ListResiliencyGroupAssociationsRequest>
+  Model::ListResiliencyGroupAssociationsOutcomeCallable ListResiliencyGroupAssociationsCallable(
+      const ListResiliencyGroupAssociationsRequestT& request) const {
+    return SubmitCallable(&DirectConnectClient::ListResiliencyGroupAssociations, request);
+  }
+
+  /**
+   * An Async wrapper for ListResiliencyGroupAssociations that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListResiliencyGroupAssociationsRequestT = Model::ListResiliencyGroupAssociationsRequest>
+  void ListResiliencyGroupAssociationsAsync(const ListResiliencyGroupAssociationsRequestT& request,
+                                            const ListResiliencyGroupAssociationsResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DirectConnectClient::ListResiliencyGroupAssociations, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the resiliency groups owned by your Amazon Web Services account in the
+   * current Amazon Web Services Region.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ListResiliencyGroups">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListResiliencyGroupsOutcome ListResiliencyGroups(const Model::ListResiliencyGroupsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListResiliencyGroups that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListResiliencyGroupsRequestT = Model::ListResiliencyGroupsRequest>
+  Model::ListResiliencyGroupsOutcomeCallable ListResiliencyGroupsCallable(const ListResiliencyGroupsRequestT& request = {}) const {
+    return SubmitCallable(&DirectConnectClient::ListResiliencyGroups, request);
+  }
+
+  /**
+   * An Async wrapper for ListResiliencyGroups that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListResiliencyGroupsRequestT = Model::ListResiliencyGroupsRequest>
+  void ListResiliencyGroupsAsync(const ListResiliencyGroupsResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                 const ListResiliencyGroupsRequestT& request = {}) const {
+    return SubmitAsync(&DirectConnectClient::ListResiliencyGroups, request, handler, context);
   }
 
   /**
@@ -1938,6 +2145,37 @@ class AWS_DIRECTCONNECT_API DirectConnectClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Updates the billing mode for the specified Direct Connect connections. You
+   * can update the billing mode for up to 200 connections in a single
+   * request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateConnectionsBillingMode">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateConnectionsBillingModeOutcome UpdateConnectionsBillingMode(
+      const Model::UpdateConnectionsBillingModeRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateConnectionsBillingMode that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateConnectionsBillingModeRequestT = Model::UpdateConnectionsBillingModeRequest>
+  Model::UpdateConnectionsBillingModeOutcomeCallable UpdateConnectionsBillingModeCallable(
+      const UpdateConnectionsBillingModeRequestT& request) const {
+    return SubmitCallable(&DirectConnectClient::UpdateConnectionsBillingMode, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateConnectionsBillingMode that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateConnectionsBillingModeRequestT = Model::UpdateConnectionsBillingModeRequest>
+  void UpdateConnectionsBillingModeAsync(const UpdateConnectionsBillingModeRequestT& request,
+                                         const UpdateConnectionsBillingModeResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DirectConnectClient::UpdateConnectionsBillingMode, request, handler, context);
+  }
+
+  /**
    * <p>Updates the name of a current Direct Connect gateway.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateDirectConnectGateway">AWS
@@ -2030,6 +2268,33 @@ class AWS_DIRECTCONNECT_API DirectConnectClient : public Aws::Client::AWSJsonCli
   void UpdateLagAsync(const UpdateLagRequestT& request, const UpdateLagResponseReceivedHandler& handler,
                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&DirectConnectClient::UpdateLag, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the name of the specified resiliency group.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateResiliencyGroup">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateResiliencyGroupOutcome UpdateResiliencyGroup(const Model::UpdateResiliencyGroupRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateResiliencyGroup that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateResiliencyGroupRequestT = Model::UpdateResiliencyGroupRequest>
+  Model::UpdateResiliencyGroupOutcomeCallable UpdateResiliencyGroupCallable(const UpdateResiliencyGroupRequestT& request) const {
+    return SubmitCallable(&DirectConnectClient::UpdateResiliencyGroup, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateResiliencyGroup that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateResiliencyGroupRequestT = Model::UpdateResiliencyGroupRequest>
+  void UpdateResiliencyGroupAsync(const UpdateResiliencyGroupRequestT& request, const UpdateResiliencyGroupResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DirectConnectClient::UpdateResiliencyGroup, request, handler, context);
   }
 
   /**

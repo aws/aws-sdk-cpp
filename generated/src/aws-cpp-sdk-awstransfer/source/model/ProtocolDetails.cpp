@@ -38,6 +38,10 @@ ProtocolDetails& ProtocolDetails::operator=(JsonView jsonValue) {
     }
     m_as2TransportsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ProxyConfig")) {
+    m_proxyConfig = jsonValue.GetObject("ProxyConfig");
+    m_proxyConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -63,6 +67,10 @@ JsonValue ProtocolDetails::Jsonize() const {
       as2TransportsJsonList[as2TransportsIndex].AsString(As2TransportMapper::GetNameForAs2Transport(m_as2Transports[as2TransportsIndex]));
     }
     payload.WithArray("As2Transports", std::move(as2TransportsJsonList));
+  }
+
+  if (m_proxyConfigHasBeenSet) {
+    payload.WithObject("ProxyConfig", m_proxyConfig.Jsonize());
   }
 
   return payload;

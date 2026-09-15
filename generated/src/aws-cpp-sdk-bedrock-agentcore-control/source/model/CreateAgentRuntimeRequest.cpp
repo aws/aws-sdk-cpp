@@ -85,5 +85,9 @@ Aws::String CreateAgentRuntimeRequest::SerializePayload() const {
     payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
+  if (m_platformVersionHasBeenSet) {
+    payload.WithString("platformVersion", m_platformVersion);
+  }
+
   return payload.View().WriteReadable();
 }

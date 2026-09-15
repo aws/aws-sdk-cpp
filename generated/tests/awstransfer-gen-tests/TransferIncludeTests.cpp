@@ -201,6 +201,8 @@
 #include <aws/awstransfer/model/ProfileType.h>
 #include <aws/awstransfer/model/Protocol.h>
 #include <aws/awstransfer/model/ProtocolDetails.h>
+#include <aws/awstransfer/model/ProxyConfig.h>
+#include <aws/awstransfer/model/ProxyMode.h>
 #include <aws/awstransfer/model/ResourceExistsException.h>
 #include <aws/awstransfer/model/ResourceNotFoundException.h>
 #include <aws/awstransfer/model/S3FileLocation.h>

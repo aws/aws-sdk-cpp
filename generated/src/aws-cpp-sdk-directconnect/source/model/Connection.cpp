@@ -137,6 +137,10 @@ Connection& Connection::operator=(JsonView jsonValue) {
     m_prefixPoolUnallocatedCountIpv6 = jsonValue.GetInteger("prefixPoolUnallocatedCountIpv6");
     m_prefixPoolUnallocatedCountIpv6HasBeenSet = true;
   }
+  if (jsonValue.ValueExists("billingMode")) {
+    m_billingMode = BillingModeMapper::GetBillingModeForName(jsonValue.GetString("billingMode"));
+    m_billingModeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -261,6 +265,10 @@ JsonValue Connection::Jsonize() const {
 
   if (m_prefixPoolUnallocatedCountIpv6HasBeenSet) {
     payload.WithInteger("prefixPoolUnallocatedCountIpv6", m_prefixPoolUnallocatedCountIpv6);
+  }
+
+  if (m_billingModeHasBeenSet) {
+    payload.WithString("billingMode", BillingModeMapper::GetNameForBillingMode(m_billingMode));
   }
 
   return payload;

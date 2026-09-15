@@ -313,6 +313,24 @@ class CreateAgentRuntimeRequest : public BedrockAgentCoreControlRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The version of the runtime platform to use for the AgentCore Runtime.</p>
+   */
+  inline const Aws::String& GetPlatformVersion() const { return m_platformVersion; }
+  inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
+  template <typename PlatformVersionT = Aws::String>
+  void SetPlatformVersion(PlatformVersionT&& value) {
+    m_platformVersionHasBeenSet = true;
+    m_platformVersion = std::forward<PlatformVersionT>(value);
+  }
+  template <typename PlatformVersionT = Aws::String>
+  CreateAgentRuntimeRequest& WithPlatformVersion(PlatformVersionT&& value) {
+    SetPlatformVersion(std::forward<PlatformVersionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_agentRuntimeName;
 
@@ -341,6 +359,8 @@ class CreateAgentRuntimeRequest : public BedrockAgentCoreControlRequest {
   CapacityProviderConfiguration m_capacityProviderConfiguration;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+
+  Aws::String m_platformVersion;
   bool m_agentRuntimeNameHasBeenSet = false;
   bool m_agentRuntimeArtifactHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
@@ -355,6 +375,7 @@ class CreateAgentRuntimeRequest : public BedrockAgentCoreControlRequest {
   bool m_filesystemConfigurationsHasBeenSet = false;
   bool m_capacityProviderConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_platformVersionHasBeenSet = false;
 };
 
 }  // namespace Model

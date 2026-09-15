@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
+#include <aws/directconnect/model/BillingMode.h>
 #include <aws/directconnect/model/Connection.h>
 #include <aws/directconnect/model/HasLogicalRedundancy.h>
 #include <aws/directconnect/model/LagState.h>
@@ -507,6 +508,21 @@ class CreateLagResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The billing mode of the LAG.</p>
+   */
+  inline BillingMode GetBillingMode() const { return m_billingMode; }
+  inline void SetBillingMode(BillingMode value) {
+    m_billingModeHasBeenSet = true;
+    m_billingMode = value;
+  }
+  inline CreateLagResult& WithBillingMode(BillingMode value) {
+    SetBillingMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -575,6 +591,8 @@ class CreateLagResult {
 
   RateLimiterStatus m_rateLimiterStatus;
 
+  BillingMode m_billingMode{BillingMode::NOT_SET};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_connectionsBandwidthHasBeenSet = false;
@@ -603,6 +621,7 @@ class CreateLagResult {
   bool m_prefixPoolUnallocatedCountIpv4HasBeenSet = false;
   bool m_prefixPoolUnallocatedCountIpv6HasBeenSet = false;
   bool m_rateLimiterStatusHasBeenSet = false;
+  bool m_billingModeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

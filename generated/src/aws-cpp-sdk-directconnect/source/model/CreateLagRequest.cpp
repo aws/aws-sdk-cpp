@@ -60,6 +60,10 @@ Aws::String CreateLagRequest::SerializePayload() const {
     payload.WithBool("requestMACSec", m_requestMACSec);
   }
 
+  if (m_billingModeHasBeenSet) {
+    payload.WithString("billingMode", RequestBillingModeMapper::GetNameForRequestBillingMode(m_billingMode));
+  }
+
   return payload.View().WriteReadable();
 }
 

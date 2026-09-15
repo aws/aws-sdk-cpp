@@ -18,6 +18,7 @@ namespace ImageComputeTypeMapper {
 static const int BASE_HASH = HashingUtils::HashString("BASE");
 static const int GRAPHICS_G4DN_HASH = HashingUtils::HashString("GRAPHICS_G4DN");
 static const int GRAPHICS_G6_HASH = HashingUtils::HashString("GRAPHICS_G6");
+static const int GRAPHICS_G7_HASH = HashingUtils::HashString("GRAPHICS_G7");
 
 ImageComputeType GetImageComputeTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ ImageComputeType GetImageComputeTypeForName(const Aws::String& name) {
     return ImageComputeType::GRAPHICS_G4DN;
   } else if (hashCode == GRAPHICS_G6_HASH) {
     return ImageComputeType::GRAPHICS_G6;
+  } else if (hashCode == GRAPHICS_G7_HASH) {
+    return ImageComputeType::GRAPHICS_G7;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForImageComputeType(ImageComputeType enumValue) {
       return "GRAPHICS_G4DN";
     case ImageComputeType::GRAPHICS_G6:
       return "GRAPHICS_G6";
+    case ImageComputeType::GRAPHICS_G7:
+      return "GRAPHICS_G7";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

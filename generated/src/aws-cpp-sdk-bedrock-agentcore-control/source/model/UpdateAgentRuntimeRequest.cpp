@@ -73,6 +73,10 @@ Aws::String UpdateAgentRuntimeRequest::SerializePayload() const {
     payload.WithObject("capacityProviderConfiguration", m_capacityProviderConfiguration.Jsonize());
   }
 
+  if (m_platformVersionHasBeenSet) {
+    payload.WithString("platformVersion", m_platformVersion);
+  }
+
   if (m_clientTokenHasBeenSet) {
     payload.WithString("clientToken", m_clientToken);
   }

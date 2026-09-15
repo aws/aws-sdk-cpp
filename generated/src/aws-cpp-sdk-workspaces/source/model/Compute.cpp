@@ -38,6 +38,10 @@ static const int GRAPHICS_G6F_XLARGE_HASH = HashingUtils::HashString("GRAPHICS_G
 static const int GRAPHICS_G6F_2XLARGE_HASH = HashingUtils::HashString("GRAPHICS_G6F_2XLARGE");
 static const int GRAPHICS_G6F_4XLARGE_HASH = HashingUtils::HashString("GRAPHICS_G6F_4XLARGE");
 static const int GRAPHICS_GR6F_4XLARGE_HASH = HashingUtils::HashString("GRAPHICS_GR6F_4XLARGE");
+static const int GRAPHICS_G7_2XLARGE_HASH = HashingUtils::HashString("GRAPHICS_G7_2XLARGE");
+static const int GRAPHICS_G7_4XLARGE_HASH = HashingUtils::HashString("GRAPHICS_G7_4XLARGE");
+static const int GRAPHICS_G7_8XLARGE_HASH = HashingUtils::HashString("GRAPHICS_G7_8XLARGE");
+static const int GRAPHICS_G7_12XLARGE_HASH = HashingUtils::HashString("GRAPHICS_G7_12XLARGE");
 
 Compute GetComputeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -87,6 +91,14 @@ Compute GetComputeForName(const Aws::String& name) {
     return Compute::GRAPHICS_G6F_4XLARGE;
   } else if (hashCode == GRAPHICS_GR6F_4XLARGE_HASH) {
     return Compute::GRAPHICS_GR6F_4XLARGE;
+  } else if (hashCode == GRAPHICS_G7_2XLARGE_HASH) {
+    return Compute::GRAPHICS_G7_2XLARGE;
+  } else if (hashCode == GRAPHICS_G7_4XLARGE_HASH) {
+    return Compute::GRAPHICS_G7_4XLARGE;
+  } else if (hashCode == GRAPHICS_G7_8XLARGE_HASH) {
+    return Compute::GRAPHICS_G7_8XLARGE;
+  } else if (hashCode == GRAPHICS_G7_12XLARGE_HASH) {
+    return Compute::GRAPHICS_G7_12XLARGE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -147,6 +159,14 @@ Aws::String GetNameForCompute(Compute enumValue) {
       return "GRAPHICS_G6F_4XLARGE";
     case Compute::GRAPHICS_GR6F_4XLARGE:
       return "GRAPHICS_GR6F_4XLARGE";
+    case Compute::GRAPHICS_G7_2XLARGE:
+      return "GRAPHICS_G7_2XLARGE";
+    case Compute::GRAPHICS_G7_4XLARGE:
+      return "GRAPHICS_G7_4XLARGE";
+    case Compute::GRAPHICS_G7_8XLARGE:
+      return "GRAPHICS_G7_8XLARGE";
+    case Compute::GRAPHICS_G7_12XLARGE:
+      return "GRAPHICS_G7_12XLARGE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

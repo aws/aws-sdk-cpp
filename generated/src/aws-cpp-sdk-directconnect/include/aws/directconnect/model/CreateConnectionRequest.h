@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/directconnect/DirectConnectRequest.h>
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
+#include <aws/directconnect/model/RequestBillingMode.h>
 #include <aws/directconnect/model/Tag.h>
 
 #include <utility>
@@ -166,6 +167,22 @@ class CreateConnectionRequest : public DirectConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The billing mode for the connection.</p>
+   */
+  inline RequestBillingMode GetBillingMode() const { return m_billingMode; }
+  inline bool BillingModeHasBeenSet() const { return m_billingModeHasBeenSet; }
+  inline void SetBillingMode(RequestBillingMode value) {
+    m_billingModeHasBeenSet = true;
+    m_billingMode = value;
+  }
+  inline CreateConnectionRequest& WithBillingMode(RequestBillingMode value) {
+    SetBillingMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_location;
 
@@ -180,6 +197,8 @@ class CreateConnectionRequest : public DirectConnectRequest {
   Aws::String m_providerName;
 
   bool m_requestMACSec{false};
+
+  RequestBillingMode m_billingMode{RequestBillingMode::NOT_SET};
   bool m_locationHasBeenSet = false;
   bool m_bandwidthHasBeenSet = false;
   bool m_connectionNameHasBeenSet = false;
@@ -187,6 +206,7 @@ class CreateConnectionRequest : public DirectConnectRequest {
   bool m_tagsHasBeenSet = false;
   bool m_providerNameHasBeenSet = false;
   bool m_requestMACSecHasBeenSet = false;
+  bool m_billingModeHasBeenSet = false;
 };
 
 }  // namespace Model

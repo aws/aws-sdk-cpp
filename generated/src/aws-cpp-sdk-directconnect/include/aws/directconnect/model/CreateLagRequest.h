@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/directconnect/DirectConnectRequest.h>
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
+#include <aws/directconnect/model/RequestBillingMode.h>
 #include <aws/directconnect/model/Tag.h>
 
 #include <utility>
@@ -208,6 +209,22 @@ class CreateLagRequest : public DirectConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The billing mode for the LAG.</p>
+   */
+  inline RequestBillingMode GetBillingMode() const { return m_billingMode; }
+  inline bool BillingModeHasBeenSet() const { return m_billingModeHasBeenSet; }
+  inline void SetBillingMode(RequestBillingMode value) {
+    m_billingModeHasBeenSet = true;
+    m_billingMode = value;
+  }
+  inline CreateLagRequest& WithBillingMode(RequestBillingMode value) {
+    SetBillingMode(value);
+    return *this;
+  }
+  ///@}
  private:
   int m_numberOfConnections{0};
 
@@ -226,6 +243,8 @@ class CreateLagRequest : public DirectConnectRequest {
   Aws::String m_providerName;
 
   bool m_requestMACSec{false};
+
+  RequestBillingMode m_billingMode{RequestBillingMode::NOT_SET};
   bool m_numberOfConnectionsHasBeenSet = false;
   bool m_locationHasBeenSet = false;
   bool m_connectionsBandwidthHasBeenSet = false;
@@ -235,6 +254,7 @@ class CreateLagRequest : public DirectConnectRequest {
   bool m_childConnectionTagsHasBeenSet = false;
   bool m_providerNameHasBeenSet = false;
   bool m_requestMACSecHasBeenSet = false;
+  bool m_billingModeHasBeenSet = false;
 };
 
 }  // namespace Model

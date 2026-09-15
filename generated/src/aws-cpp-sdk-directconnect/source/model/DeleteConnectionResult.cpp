@@ -140,6 +140,10 @@ DeleteConnectionResult& DeleteConnectionResult::operator=(const Aws::AmazonWebSe
     m_prefixPoolUnallocatedCountIpv6 = jsonValue.GetInteger("prefixPoolUnallocatedCountIpv6");
     m_prefixPoolUnallocatedCountIpv6HasBeenSet = true;
   }
+  if (jsonValue.ValueExists("billingMode")) {
+    m_billingMode = BillingModeMapper::GetBillingModeForName(jsonValue.GetString("billingMode"));
+    m_billingModeHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

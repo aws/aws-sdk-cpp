@@ -54,6 +54,14 @@ Location& Location::operator=(JsonView jsonValue) {
     }
     m_availableMacSecPortSpeedsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("availableBillingModes")) {
+    Aws::Utils::Array<JsonView> availableBillingModesJsonList = jsonValue.GetArray("availableBillingModes");
+    for (unsigned availableBillingModesIndex = 0; availableBillingModesIndex < availableBillingModesJsonList.GetLength();
+         ++availableBillingModesIndex) {
+      m_availableBillingModes.push_back(availableBillingModesJsonList[availableBillingModesIndex].AsObject());
+    }
+    m_availableBillingModesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -98,6 +106,15 @@ JsonValue Location::Jsonize() const {
           m_availableMacSecPortSpeeds[availableMacSecPortSpeedsIndex]);
     }
     payload.WithArray("availableMacSecPortSpeeds", std::move(availableMacSecPortSpeedsJsonList));
+  }
+
+  if (m_availableBillingModesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> availableBillingModesJsonList(m_availableBillingModes.size());
+    for (unsigned availableBillingModesIndex = 0; availableBillingModesIndex < availableBillingModesJsonList.GetLength();
+         ++availableBillingModesIndex) {
+      availableBillingModesJsonList[availableBillingModesIndex].AsObject(m_availableBillingModes[availableBillingModesIndex].Jsonize());
+    }
+    payload.WithArray("availableBillingModes", std::move(availableBillingModesJsonList));
   }
 
   return payload;

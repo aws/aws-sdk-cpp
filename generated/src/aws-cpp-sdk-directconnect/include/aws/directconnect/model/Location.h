@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
+#include <aws/directconnect/model/AvailableBillingMode.h>
 
 #include <utility>
 
@@ -158,6 +159,31 @@ class Location {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The billing modes available at the location, including the port speeds and
+   * Amazon Web Services Regions supported by each mode.</p>
+   */
+  inline const Aws::Vector<AvailableBillingMode>& GetAvailableBillingModes() const { return m_availableBillingModes; }
+  inline bool AvailableBillingModesHasBeenSet() const { return m_availableBillingModesHasBeenSet; }
+  template <typename AvailableBillingModesT = Aws::Vector<AvailableBillingMode>>
+  void SetAvailableBillingModes(AvailableBillingModesT&& value) {
+    m_availableBillingModesHasBeenSet = true;
+    m_availableBillingModes = std::forward<AvailableBillingModesT>(value);
+  }
+  template <typename AvailableBillingModesT = Aws::Vector<AvailableBillingMode>>
+  Location& WithAvailableBillingModes(AvailableBillingModesT&& value) {
+    SetAvailableBillingModes(std::forward<AvailableBillingModesT>(value));
+    return *this;
+  }
+  template <typename AvailableBillingModesT = AvailableBillingMode>
+  Location& AddAvailableBillingModes(AvailableBillingModesT&& value) {
+    m_availableBillingModesHasBeenSet = true;
+    m_availableBillingModes.emplace_back(std::forward<AvailableBillingModesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_locationCode;
 
@@ -170,12 +196,15 @@ class Location {
   Aws::Vector<Aws::String> m_availableProviders;
 
   Aws::Vector<Aws::String> m_availableMacSecPortSpeeds;
+
+  Aws::Vector<AvailableBillingMode> m_availableBillingModes;
   bool m_locationCodeHasBeenSet = false;
   bool m_locationNameHasBeenSet = false;
   bool m_regionHasBeenSet = false;
   bool m_availablePortSpeedsHasBeenSet = false;
   bool m_availableProvidersHasBeenSet = false;
   bool m_availableMacSecPortSpeedsHasBeenSet = false;
+  bool m_availableBillingModesHasBeenSet = false;
 };
 
 }  // namespace Model

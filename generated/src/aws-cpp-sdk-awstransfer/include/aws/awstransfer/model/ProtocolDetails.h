@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/awstransfer/Transfer_EXPORTS.h>
 #include <aws/awstransfer/model/As2Transport.h>
+#include <aws/awstransfer/model/ProxyConfig.h>
 #include <aws/awstransfer/model/SetStatOption.h>
 #include <aws/awstransfer/model/TlsSessionResumptionMode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -181,6 +182,27 @@ class ProtocolDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration for PROXY protocol version 2 (PPv2) support on the Transfer
+   * Family server. For more information, see <a
+   * href="https://docs.aws.amazon.com/transfer/latest/userguide/working-with-nlb.html">Working
+   * with Network Load Balancers</a>.</p>
+   */
+  inline const ProxyConfig& GetProxyConfig() const { return m_proxyConfig; }
+  inline bool ProxyConfigHasBeenSet() const { return m_proxyConfigHasBeenSet; }
+  template <typename ProxyConfigT = ProxyConfig>
+  void SetProxyConfig(ProxyConfigT&& value) {
+    m_proxyConfigHasBeenSet = true;
+    m_proxyConfig = std::forward<ProxyConfigT>(value);
+  }
+  template <typename ProxyConfigT = ProxyConfig>
+  ProtocolDetails& WithProxyConfig(ProxyConfigT&& value) {
+    SetProxyConfig(std::forward<ProxyConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_passiveIp;
 
@@ -189,10 +211,13 @@ class ProtocolDetails {
   SetStatOption m_setStatOption{SetStatOption::NOT_SET};
 
   Aws::Vector<As2Transport> m_as2Transports;
+
+  ProxyConfig m_proxyConfig;
   bool m_passiveIpHasBeenSet = false;
   bool m_tlsSessionResumptionModeHasBeenSet = false;
   bool m_setStatOptionHasBeenSet = false;
   bool m_as2TransportsHasBeenSet = false;
+  bool m_proxyConfigHasBeenSet = false;
 };
 
 }  // namespace Model

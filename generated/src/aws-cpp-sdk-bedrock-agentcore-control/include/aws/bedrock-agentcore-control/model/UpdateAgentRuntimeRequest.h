@@ -291,6 +291,25 @@ class UpdateAgentRuntimeRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
+   * <p>The updated version of the runtime platform to use for the AgentCore
+   * Runtime.</p>
+   */
+  inline const Aws::String& GetPlatformVersion() const { return m_platformVersion; }
+  inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
+  template <typename PlatformVersionT = Aws::String>
+  void SetPlatformVersion(PlatformVersionT&& value) {
+    m_platformVersionHasBeenSet = true;
+    m_platformVersion = std::forward<PlatformVersionT>(value);
+  }
+  template <typename PlatformVersionT = Aws::String>
+  UpdateAgentRuntimeRequest& WithPlatformVersion(PlatformVersionT&& value) {
+    SetPlatformVersion(std::forward<PlatformVersionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
    */
   inline const Aws::String& GetClientToken() const { return m_clientToken; }
@@ -333,6 +352,8 @@ class UpdateAgentRuntimeRequest : public BedrockAgentCoreControlRequest {
 
   CapacityProviderConfiguration m_capacityProviderConfiguration;
 
+  Aws::String m_platformVersion;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_agentRuntimeIdHasBeenSet = false;
   bool m_agentRuntimeArtifactHasBeenSet = false;
@@ -347,6 +368,7 @@ class UpdateAgentRuntimeRequest : public BedrockAgentCoreControlRequest {
   bool m_environmentVariablesHasBeenSet = false;
   bool m_filesystemConfigurationsHasBeenSet = false;
   bool m_capacityProviderConfigurationHasBeenSet = false;
+  bool m_platformVersionHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 
