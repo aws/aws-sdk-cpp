@@ -1,0 +1,6 @@
+{
+  "type": "feature",
+  "category": "smithy-cpp-codegen",
+  "contributor": "sbaluja",
+  "description": "Smithy based codegen for shapes part 4. Gated on --use-smithy-models (default off)"
+}
