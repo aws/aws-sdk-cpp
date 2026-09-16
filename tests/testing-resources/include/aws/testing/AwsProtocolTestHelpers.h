@@ -227,6 +227,18 @@ public:
     EXPECT_STREQ(sortedQuery(expected, expQ).c_str(), sortedQuery(received, recQ).c_str());
   }
 
+  static Aws::String CanonicalizeHeaderValue(const Aws::String& value) {
+    const Aws::Vector<Aws::String> parts = Aws::Utils::StringUtils::Split(value, ',');
+    Aws::String joined;
+    for (const auto& part : parts) {
+      if (!joined.empty()) {
+        joined += ",";
+      }
+      joined += Aws::Utils::StringUtils::Trim(part.c_str());
+    }
+    return joined;
+  }
+
   void ValidateRequestSent(const std::function<void (const ExpectedRequest& expected, const Aws::ProtocolMock::Model::Request& receivedRequest)>& bodyCompare = ValidateBody) const {
     ValidateRequestSent(ExpectedRequest(), bodyCompare);
   }
@@ -260,8 +272,9 @@ public:
           return Aws::Utils::StringUtils::ToLower(hdr.GetKey().c_str()) == Aws::Utils::StringUtils::ToLower(expectedHeader.first.c_str());
         });
         ASSERT_TRUE(foundIt != receivedHeaders.end());
-        ASSERT_STREQ(Aws::Utils::StringUtils::ToLower(expectedHeader.second.c_str()).c_str(),
-                     Aws::Utils::StringUtils::ToLower(foundIt->GetVal().c_str()).c_str());
+        // Compare list-valued headers with OWS around commas normalized (RFC 7230).
+        ASSERT_STREQ(Aws::Utils::StringUtils::ToLower(CanonicalizeHeaderValue(expectedHeader.second).c_str()).c_str(),
+                     Aws::Utils::StringUtils::ToLower(CanonicalizeHeaderValue(foundIt->GetVal()).c_str()).c_str());
       }
     }
     if (!expected.forbidHeaders.empty()) {
