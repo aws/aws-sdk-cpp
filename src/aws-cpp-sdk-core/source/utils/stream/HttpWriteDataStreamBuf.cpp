@@ -5,6 +5,7 @@
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/utils/stream/HttpWriteDataStreamBuf.h>
 
+#include <chrono>
 #include <utility>
 
 namespace {
@@ -12,8 +13,9 @@ const char* WRITE_DATA_BUF_LOG_NAME = "HttpWriteDataStreamBuf";
 }
 
 Aws::Utils::Stream::HttpWriteDataStreamBuf::HttpWriteDataStreamBuf(const std::shared_ptr<Aws::Http::HttpClient>& client,
-                                                                   size_t bufferLength)
-    : m_client{client}, m_buffer{bufferLength} {
+                                                                   size_t bufferLength,
+                                                                   uint64_t requestTimeoutMs)
+    : m_client{client}, m_buffer{bufferLength}, m_writeTimeout{requestTimeoutMs} {
   ResetPutArea();
 }
 
@@ -102,10 +104,39 @@ void Aws::Utils::Stream::HttpWriteDataStreamBuf::WaitForStreamComplete() {
   if (m_state == STATE::UNINITIALIZED) {
     return;
   }
+  if (m_writeTimeout.count() > 0 && !m_responseStarted) {
+    const auto deadline = std::chrono::steady_clock::now() + m_writeTimeout;
+    if (!m_shutdownCondition.wait_until(lock, deadline,
+            [this]() -> bool { return m_streamComplete || m_responseStarted; })) {
+      m_writeError = true;
+      lock.unlock();
+      CloseConnection();
+      lock.lock();
+    }
+  }
   m_shutdownCondition.wait(lock, [this]() -> bool { return m_streamComplete; });
 
   m_stream.reset();
   m_connection.reset();
+}
+
+void Aws::Utils::Stream::HttpWriteDataStreamBuf::NotifyResponseStarted() {
+  {
+    std::unique_lock<std::mutex> const lock{m_shutdownMutex};
+    m_responseStarted = true;
+  }
+  m_shutdownCondition.notify_all();
+}
+
+void Aws::Utils::Stream::HttpWriteDataStreamBuf::CloseConnection() {
+  std::shared_ptr<Aws::Http::Connection> connection;
+  {
+    std::unique_lock<std::mutex> const lock{m_shutdownMutex};
+    connection = m_connection;
+  }
+  if (connection) {
+    connection->Close();
+  }
 }
 
 std::streambuf::int_type Aws::Utils::Stream::HttpWriteDataStreamBuf::overflow(std::streambuf::int_type c) {
@@ -173,7 +204,18 @@ bool Aws::Utils::Stream::HttpWriteDataStreamBuf::SendBuffer(bool endStream) {
       endStream);
 
   std::unique_lock<std::mutex> lock{m_writeMutex};
-  m_writeComplete.wait(lock, [this]() -> bool { return !m_writeInProgress; });
+  if (m_writeTimeout.count() > 0) {
+    const auto deadline = std::chrono::steady_clock::now() + m_writeTimeout;
+    if (!m_writeComplete.wait_until(lock, deadline, [this]() -> bool { return !m_writeInProgress; })) {
+      m_writeError = true;
+      lock.unlock();
+      CloseConnection();
+      lock.lock();
+      m_writeComplete.wait(lock, [this]() -> bool { return !m_writeInProgress; });
+    }
+  } else {
+    m_writeComplete.wait(lock, [this]() -> bool { return !m_writeInProgress; });
+  }
 
   ResetPutArea();
 

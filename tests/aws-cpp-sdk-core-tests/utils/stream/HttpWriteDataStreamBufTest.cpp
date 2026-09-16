@@ -6,6 +6,9 @@
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/testing/mocks/http/MockHttpClient.h>
 
+#include <atomic>
+#include <thread>
+
 namespace {
 const char* TEST_ALLOCATION_LOG_TAG = "HttpWriteDataStreamBufTest";
 }
@@ -162,6 +165,55 @@ TEST_F(HttpWriteDataStreamBufTest, TestGetResponse) {
   EXPECT_EQ(resp->GetResponseCode(), Aws::Http::HttpResponseCode::OK);
 }
 
+TEST_F(HttpWriteDataStreamBufTest, TestTimeoutSetPromptWriteUnaffected) {
+  auto output = Aws::MakeShared<Aws::StringStream>(TEST_ALLOCATION_LOG_TAG);
+  auto request = Aws::Http::CreateHttpRequest(Aws::String{"http://www.amazon.com/"}, Aws::Http::HttpMethod::HTTP_POST,
+                                              []() -> Aws::IOStream* { return Aws::New<Aws::StringStream>(TEST_ALLOCATION_LOG_TAG); });
+  auto response = Aws::MakeShared<Aws::Http::Standard::StandardHttpResponse>(TEST_ALLOCATION_LOG_TAG, request);
+  auto closeCount = Aws::MakeShared<int>(TEST_ALLOCATION_LOG_TAG, 0);
+  ConnectionTestCase testCase{};
+  testCase.writeDataStream = output;
+  testCase.response = response;
+  testCase.closeCount = closeCount;
+  client_->SetConnectionTestCase(testCase);
+  {
+    Aws::Utils::Stream::HttpWriteDataStreamBuf data_stream_buf{client_, 10, 1000};
+    data_stream_buf.Initialize(request);
+    Aws::IOStream stream(&data_stream_buf);
+    stream << "float on okay";
+  }
+  EXPECT_STREQ(output->str().c_str(), "float on okay");
+  EXPECT_EQ(*closeCount, 0);
+}
+
+TEST_F(HttpWriteDataStreamBufTest, TestPerWriteTimeoutClosesConnection) {
+  auto output = Aws::MakeShared<Aws::StringStream>(TEST_ALLOCATION_LOG_TAG);
+  auto request = Aws::Http::CreateHttpRequest(Aws::String{"http://www.amazon.com/"}, Aws::Http::HttpMethod::HTTP_POST,
+                                              []() -> Aws::IOStream* { return Aws::New<Aws::StringStream>(TEST_ALLOCATION_LOG_TAG); });
+  auto response = Aws::MakeShared<Aws::Http::Standard::StandardHttpResponse>(TEST_ALLOCATION_LOG_TAG, request);
+  auto closeCount = Aws::MakeShared<int>(TEST_ALLOCATION_LOG_TAG, 0);
+  ConnectionTestCase testCase{};
+  testCase.writeDataStream = output;
+  testCase.response = response;
+  testCase.withholdWriteComplete = true;
+  testCase.closeCount = closeCount;
+  client_->SetConnectionTestCase(testCase);
+  {
+    Aws::Utils::Stream::HttpWriteDataStreamBuf data_stream_buf{client_, 10, 50};
+    data_stream_buf.Initialize(request);
+    Aws::IOStream stream(&data_stream_buf);
+    const auto start = std::chrono::steady_clock::now();
+    stream << "a stalled write that never completes on its own";
+    stream.flush();
+    const auto elapsedMs = std::chrono::duration_cast<std::chrono::milliseconds>(
+        std::chrono::steady_clock::now() - start).count();
+    EXPECT_GE(elapsedMs, 40);
+    EXPECT_LT(elapsedMs, 5000);
+    EXPECT_TRUE(stream.fail());
+  }
+  EXPECT_EQ(*closeCount, 1);
+}
+
 TEST_F(HttpWriteDataStreamBufTest, TestExactBufferBoundary) {
   auto output = Aws::MakeShared<Aws::StringStream>(TEST_ALLOCATION_LOG_TAG);
   auto request = Aws::Http::CreateHttpRequest(Aws::String{"http://www.amazon.com/"}, Aws::Http::HttpMethod::HTTP_POST,
@@ -179,4 +231,58 @@ TEST_F(HttpWriteDataStreamBufTest, TestExactBufferBoundary) {
   }
 
   EXPECT_STREQ(output->str().c_str(), "well we are");
+}
+
+TEST_F(HttpWriteDataStreamBufTest, TestFirstByteTimeoutClosesConnection) {
+  auto request = Aws::Http::CreateHttpRequest(Aws::String{"http://www.amazon.com/"}, Aws::Http::HttpMethod::HTTP_POST,
+                                              []() -> Aws::IOStream* { return Aws::New<Aws::StringStream>(TEST_ALLOCATION_LOG_TAG); });
+  auto response = Aws::MakeShared<Aws::Http::Standard::StandardHttpResponse>(TEST_ALLOCATION_LOG_TAG, request);
+  auto output = Aws::MakeShared<Aws::StringStream>(TEST_ALLOCATION_LOG_TAG);
+  auto closeCount = Aws::MakeShared<int>(TEST_ALLOCATION_LOG_TAG, 0);
+  ConnectionTestCase testCase{};
+  testCase.writeDataStream = output;
+  testCase.response = response;
+  testCase.withholdStreamComplete = true;
+  testCase.closeCount = closeCount;
+  client_->SetConnectionTestCase(testCase);
+
+  Aws::Utils::Stream::HttpWriteDataStreamBuf data_stream_buf{client_, 10, 50};
+  data_stream_buf.Initialize(request);
+  const auto start = std::chrono::steady_clock::now();
+  data_stream_buf.WaitForStreamComplete();
+  const auto elapsedMs = std::chrono::duration_cast<std::chrono::milliseconds>(
+      std::chrono::steady_clock::now() - start).count();
+  EXPECT_GE(elapsedMs, 40);
+  EXPECT_LT(elapsedMs, 5000);
+  EXPECT_EQ(*closeCount, 1);
+}
+
+TEST_F(HttpWriteDataStreamBufTest, TestFirstByteReceivedThenUnbounded) {
+  auto request = Aws::Http::CreateHttpRequest(Aws::String{"http://www.amazon.com/"}, Aws::Http::HttpMethod::HTTP_POST,
+                                              []() -> Aws::IOStream* { return Aws::New<Aws::StringStream>(TEST_ALLOCATION_LOG_TAG); });
+  auto response = Aws::MakeShared<Aws::Http::Standard::StandardHttpResponse>(TEST_ALLOCATION_LOG_TAG, request);
+  auto output = Aws::MakeShared<Aws::StringStream>(TEST_ALLOCATION_LOG_TAG);
+  auto closeCount = Aws::MakeShared<int>(TEST_ALLOCATION_LOG_TAG, 0);
+  ConnectionTestCase testCase{};
+  testCase.writeDataStream = output;
+  testCase.response = response;
+  testCase.withholdStreamComplete = true;
+  testCase.closeCount = closeCount;
+  client_->SetConnectionTestCase(testCase);
+
+  auto buf = Aws::MakeShared<Aws::Utils::Stream::HttpWriteDataStreamBuf>(TEST_ALLOCATION_LOG_TAG, client_, 10, 50);
+  buf->Initialize(request);
+  buf->NotifyResponseStarted();
+
+  std::atomic<bool> returned{false};
+  std::thread waiter([&]() { buf->WaitForStreamComplete(); returned = true; });
+
+  std::this_thread::sleep_for(std::chrono::milliseconds(200));
+  EXPECT_FALSE(returned.load());
+  EXPECT_EQ(*closeCount, 0);
+
+  client_->GetLastConnection()->FireStreamComplete(0);
+  waiter.join();
+  EXPECT_TRUE(returned.load());
+  EXPECT_EQ(*closeCount, 0);
 }

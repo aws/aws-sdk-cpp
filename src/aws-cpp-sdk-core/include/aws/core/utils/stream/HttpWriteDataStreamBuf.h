@@ -10,7 +10,9 @@
 #include <aws/core/utils/Array.h>
 #include <aws/crt/Types.h>
 
+#include <chrono>
 #include <condition_variable>
+#include <cstdint>
 #include <memory>
 #include <mutex>
 
@@ -35,7 +37,9 @@ namespace Stream {
  */
 class AWS_CORE_API HttpWriteDataStreamBuf : public std::streambuf {
  public:
-  explicit HttpWriteDataStreamBuf(const std::shared_ptr<Aws::Http::HttpClient>& client, size_t bufferLength = 8 * 1024);
+  explicit HttpWriteDataStreamBuf(const std::shared_ptr<Aws::Http::HttpClient>& client,
+                                  size_t bufferLength = 8 * 1024,
+                                  uint64_t requestTimeoutMs = 0);
   HttpWriteDataStreamBuf(const HttpWriteDataStreamBuf& other) = delete;
   HttpWriteDataStreamBuf(HttpWriteDataStreamBuf&& other) noexcept = delete;
   HttpWriteDataStreamBuf& operator=(const HttpWriteDataStreamBuf& other) = delete;
@@ -65,6 +69,9 @@ class AWS_CORE_API HttpWriteDataStreamBuf : public std::streambuf {
    */
   void WaitForStreamComplete();
 
+  /** Marks that the first response byte/headers arrived; lifts WaitForStreamComplete()'s first-byte timeout. */
+  void NotifyResponseStarted();
+
  protected:
   // Write support
   int_type overflow(int_type c) override;
@@ -88,6 +95,7 @@ class AWS_CORE_API HttpWriteDataStreamBuf : public std::streambuf {
    */
   bool SendBuffer(bool endStream = false);
   void ResetPutArea();
+  void CloseConnection();
 
   // Client state
   std::shared_ptr<Aws::Http::HttpClient> m_client;
@@ -112,6 +120,9 @@ class AWS_CORE_API HttpWriteDataStreamBuf : public std::streambuf {
   std::condition_variable m_shutdownCondition;
   std::mutex m_shutdownMutex;
   bool m_streamComplete{false};
+  bool m_responseStarted{false};
+
+  std::chrono::milliseconds m_writeTimeout{0};
 };
 }  // namespace Stream
 }  // namespace Utils
