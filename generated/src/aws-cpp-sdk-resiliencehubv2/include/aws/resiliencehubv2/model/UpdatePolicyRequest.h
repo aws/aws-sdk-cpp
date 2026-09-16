@@ -135,6 +135,23 @@ class UpdatePolicyRequest : public Resiliencehubv2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether cross-account sharing is enabled for the policy. Disabling
+   * sharing stops member services from using the policy.</p>
+   */
+  inline bool GetSharingEnabled() const { return m_sharingEnabled; }
+  inline bool SharingEnabledHasBeenSet() const { return m_sharingEnabledHasBeenSet; }
+  inline void SetSharingEnabled(bool value) {
+    m_sharingEnabledHasBeenSet = true;
+    m_sharingEnabled = value;
+  }
+  inline UpdatePolicyRequest& WithSharingEnabled(bool value) {
+    SetSharingEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_policyArn;
 
@@ -147,12 +164,15 @@ class UpdatePolicyRequest : public Resiliencehubv2Request {
   MultiRegionTargets m_multiRegion;
 
   DataRecoveryTargets m_dataRecovery;
+
+  bool m_sharingEnabled{false};
   bool m_policyArnHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_availabilitySloHasBeenSet = false;
   bool m_multiAzHasBeenSet = false;
   bool m_multiRegionHasBeenSet = false;
   bool m_dataRecoveryHasBeenSet = false;
+  bool m_sharingEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -139,6 +139,23 @@ class CreatePolicyRequest : public Resiliencehubv2Request {
   ///@}
 
   ///@{
+  /**
+   * <p>Specifies whether cross-account sharing is enabled for the policy. Only a
+   * delegated administrator or the management account can enable sharing.</p>
+   */
+  inline bool GetSharingEnabled() const { return m_sharingEnabled; }
+  inline bool SharingEnabledHasBeenSet() const { return m_sharingEnabledHasBeenSet; }
+  inline void SetSharingEnabled(bool value) {
+    m_sharingEnabledHasBeenSet = true;
+    m_sharingEnabled = value;
+  }
+  inline CreatePolicyRequest& WithSharingEnabled(bool value) {
+    SetSharingEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
   inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
@@ -204,6 +221,8 @@ class CreatePolicyRequest : public Resiliencehubv2Request {
 
   DataRecoveryTargets m_dataRecovery;
 
+  bool m_sharingEnabled{false};
+
   Aws::String m_kmsKeyId;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
@@ -215,6 +234,7 @@ class CreatePolicyRequest : public Resiliencehubv2Request {
   bool m_multiAzHasBeenSet = false;
   bool m_multiRegionHasBeenSet = false;
   bool m_dataRecoveryHasBeenSet = false;
+  bool m_sharingEnabledHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;

@@ -54,7 +54,7 @@ class ListServiceEventsRequest : public Resiliencehubv2Request {
 
   ///@{
   /**
-   * <p>Filter events by type.</p>
+   * <p>The type of events to include in the results.</p>
    */
   inline const Aws::Vector<ServiceEventType>& GetEventTypes() const { return m_eventTypes; }
   inline bool EventTypesHasBeenSet() const { return m_eventTypesHasBeenSet; }

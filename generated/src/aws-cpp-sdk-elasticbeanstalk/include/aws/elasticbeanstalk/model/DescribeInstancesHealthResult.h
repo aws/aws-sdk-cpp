@@ -26,7 +26,7 @@ class XmlDocument;
 namespace ElasticBeanstalk {
 namespace Model {
 /**
- * <p>Detailed health information about the Amazon EC2 instances in an AWS Elastic
+ * <p>Detailed health information about the Amazon EC2 instances in an Elastic
  * Beanstalk environment.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeInstancesHealthResult">AWS
  * API Reference</a></p>

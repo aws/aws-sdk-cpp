@@ -56,7 +56,8 @@ class PlatformSummary {
 
   ///@{
   /**
-   * <p>The AWS account ID of the person who created the platform version.</p>
+   * <p>The Amazon Web Services account ID of the person who created the platform
+   * version.</p>
    */
   inline const Aws::String& GetPlatformOwner() const { return m_platformOwner; }
   inline bool PlatformOwnerHasBeenSet() const { return m_platformOwnerHasBeenSet; }

@@ -12,6 +12,7 @@
 #include <aws/resiliencehubv2/model/ListFailureModeFindingsPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListInputSourcesPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListPoliciesPaginationTraits.h>
+#include <aws/resiliencehubv2/model/ListPolicyEventsPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListReportsPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListResolvedTestRunTargetResourcesPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListResourcesPaginationTraits.h>
@@ -47,6 +48,8 @@ using ListInputSourcesPaginator = Aws::Utils::Pagination::Paginator<Resiliencehu
                                                                     Pagination::ListInputSourcesPaginationTraits<Resiliencehubv2Client>>;
 using ListPoliciesPaginator = Aws::Utils::Pagination::Paginator<Resiliencehubv2Client, Model::ListPoliciesRequest,
                                                                 Pagination::ListPoliciesPaginationTraits<Resiliencehubv2Client>>;
+using ListPolicyEventsPaginator = Aws::Utils::Pagination::Paginator<Resiliencehubv2Client, Model::ListPolicyEventsRequest,
+                                                                    Pagination::ListPolicyEventsPaginationTraits<Resiliencehubv2Client>>;
 using ListReportsPaginator = Aws::Utils::Pagination::Paginator<Resiliencehubv2Client, Model::ListReportsRequest,
                                                                Pagination::ListReportsPaginationTraits<Resiliencehubv2Client>>;
 using ListResolvedTestRunTargetResourcesPaginator =

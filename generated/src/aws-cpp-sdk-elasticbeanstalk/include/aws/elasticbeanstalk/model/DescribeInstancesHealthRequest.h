@@ -40,7 +40,7 @@ class DescribeInstancesHealthRequest : public ElasticBeanstalkRequest {
  public:
   ///@{
   /**
-   * <p>Specify the AWS Elastic Beanstalk environment by name.</p>
+   * <p>Specify the Elastic Beanstalk environment by name.</p>
    */
   inline const Aws::String& GetEnvironmentName() const { return m_environmentName; }
   inline bool EnvironmentNameHasBeenSet() const { return m_environmentNameHasBeenSet; }
@@ -58,7 +58,7 @@ class DescribeInstancesHealthRequest : public ElasticBeanstalkRequest {
 
   ///@{
   /**
-   * <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
+   * <p>Specify the Elastic Beanstalk environment by ID.</p>
    */
   inline const Aws::String& GetEnvironmentId() const { return m_environmentId; }
   inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }

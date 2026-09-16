@@ -86,8 +86,8 @@ class CreateConfigurationTemplateRequest : public ElasticBeanstalkRequest {
    * configuration options as well as the possible and default values. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Supported
-   * Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <p>You
-   * must specify <code>SolutionStackName</code> if you don't specify
+   * Platforms</a> in the <i>Elastic Beanstalk Developer Guide</i>.</p> <p>You must
+   * specify <code>SolutionStackName</code> if you don't specify
    * <code>PlatformArn</code>, <code>EnvironmentId</code>, or
    * <code>SourceConfiguration</code>.</p> <p>Use the <a
    * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListAvailableSolutionStacks.html">
@@ -113,8 +113,8 @@ class CreateConfigurationTemplateRequest : public ElasticBeanstalkRequest {
    * <p>The Amazon Resource Name (ARN) of the custom platform. For more information,
    * see <a
    * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">
-   * Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
-   *  <p>If you specify <code>PlatformArn</code>, then don't specify
+   * Custom Platforms</a> in the <i>Elastic Beanstalk Developer Guide</i>.</p>
+   * <p>If you specify <code>PlatformArn</code>, then don't specify
    * <code>SolutionStackName</code>.</p>
    */
   inline const Aws::String& GetPlatformArn() const { return m_platformArn; }
@@ -204,7 +204,7 @@ class CreateConfigurationTemplateRequest : public ElasticBeanstalkRequest {
    * stack or the source configuration template. For a complete list of Elastic
    * Beanstalk configuration options, see <a
    * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option
-   * Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+   * Values</a> in the <i>Elastic Beanstalk Developer Guide</i>.</p>
    */
   inline const Aws::Vector<ConfigurationOptionSetting>& GetOptionSettings() const { return m_optionSettings; }
   inline bool OptionSettingsHasBeenSet() const { return m_optionSettingsHasBeenSet; }

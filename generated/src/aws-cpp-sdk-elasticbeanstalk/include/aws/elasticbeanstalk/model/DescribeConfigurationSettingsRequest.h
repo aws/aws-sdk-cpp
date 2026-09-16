@@ -58,10 +58,9 @@ class DescribeConfigurationSettingsRequest : public ElasticBeanstalkRequest {
   /**
    * <p>The name of the configuration template to describe.</p> <p> Conditional: You
    * must specify either this parameter or an EnvironmentName, but not both. If you
-   * specify both, AWS Elastic Beanstalk returns an
+   * specify both, Elastic Beanstalk returns an
    * <code>InvalidParameterCombination</code> error. If you do not specify either,
-   * AWS Elastic Beanstalk returns a <code>MissingRequiredParameter</code> error.
-   * </p>
+   * Elastic Beanstalk returns a <code>MissingRequiredParameter</code> error. </p>
    */
   inline const Aws::String& GetTemplateName() const { return m_templateName; }
   inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
@@ -80,9 +79,9 @@ class DescribeConfigurationSettingsRequest : public ElasticBeanstalkRequest {
   ///@{
   /**
    * <p>The name of the environment to describe.</p> <p> Condition: You must specify
-   * either this or a TemplateName, but not both. If you specify both, AWS Elastic
+   * either this or a TemplateName, but not both. If you specify both, Elastic
    * Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do
-   * not specify either, AWS Elastic Beanstalk returns
+   * not specify either, Elastic Beanstalk returns
    * <code>MissingRequiredParameter</code> error. </p>
    */
   inline const Aws::String& GetEnvironmentName() const { return m_environmentName; }

@@ -9,6 +9,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalkRequest.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/elasticbeanstalk/model/BuildConfiguration.h>
+#include <aws/elasticbeanstalk/model/ImageConfiguration.h>
 #include <aws/elasticbeanstalk/model/S3Location.h>
 #include <aws/elasticbeanstalk/model/SourceBuildInformation.h>
 #include <aws/elasticbeanstalk/model/Tag.h>
@@ -64,7 +65,7 @@ class CreateApplicationVersionRequest : public ElasticBeanstalkRequest {
   /**
    * <p>A label identifying this version.</p> <p>Constraint: Must be unique per
    * application. If an application version already exists with this label for the
-   * specified application, AWS Elastic Beanstalk returns an
+   * specified application, Elastic Beanstalk returns an
    * <code>InvalidParameterValue</code> error. </p>
    */
   inline const Aws::String& GetVersionLabel() const { return m_versionLabel; }
@@ -101,8 +102,8 @@ class CreateApplicationVersionRequest : public ElasticBeanstalkRequest {
 
   ///@{
   /**
-   * <p>Specify a commit in an AWS CodeCommit Git repository to use as the source
-   * code for the application version.</p>
+   * <p>Specify a commit in an CodeCommit Git repository to use as the source code
+   * for the application version.</p>
    */
   inline const SourceBuildInformation& GetSourceBuildInformation() const { return m_sourceBuildInformation; }
   inline bool SourceBuildInformationHasBeenSet() const { return m_sourceBuildInformationHasBeenSet; }
@@ -122,11 +123,15 @@ class CreateApplicationVersionRequest : public ElasticBeanstalkRequest {
   /**
    * <p>The Amazon S3 bucket and key that identify the location of the source bundle
    * for this version.</p>  <p>The Amazon S3 bucket must be in the same region
-   * as the environment.</p>  <p>Specify a source bundle in S3 or a commit in
-   * an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not
-   * both. If neither <code>SourceBundle</code> nor
-   * <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a
-   * sample application.</p>
+   * as the environment.</p> <p>Unless you're specifying a source bundle in the
+   * bucket that Elastic Beanstalk manages in your account, you must assign a custom
+   * policy to your user, and grant <code>Allow</code> permission to the
+   * <code>s3:Get*</code> actions on your S3 object resource, for example,
+   * <code>arn:aws:s3:::your-bucket/your-source-bundle-object</code>.</p>
+   * <p>Specify a source bundle in Amazon S3 or a commit in an CodeCommit repository
+   * (with <code>SourceBuildInformation</code>), but not both. If neither
+   * <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided,
+   * Elastic Beanstalk uses a sample application.</p>
    */
   inline const S3Location& GetSourceBundle() const { return m_sourceBundle; }
   inline bool SourceBundleHasBeenSet() const { return m_sourceBundleHasBeenSet; }
@@ -144,7 +149,9 @@ class CreateApplicationVersionRequest : public ElasticBeanstalkRequest {
 
   ///@{
   /**
-   * <p>Settings for an AWS CodeBuild build.</p>
+   * <p>Settings for an CodeBuild build.</p> <p>Don't specify
+   * <code>BuildConfiguration</code> together with <code>ImageConfiguration</code>,
+   * which configures a container image build instead.</p>
    */
   inline const BuildConfiguration& GetBuildConfiguration() const { return m_buildConfiguration; }
   inline bool BuildConfigurationHasBeenSet() const { return m_buildConfigurationHasBeenSet; }
@@ -184,11 +191,11 @@ class CreateApplicationVersionRequest : public ElasticBeanstalkRequest {
    * <code>.ebextensions</code> folder) in the source bundle. Validating
    * configuration files can identify issues prior to deploying the application
    * version to an environment.</p> <p>You must turn processing on for application
-   * versions that you create using AWS CodeBuild or AWS CodeCommit. For application
-   * versions built from a source bundle in Amazon S3, processing is optional.</p>
-   *  <p>The <code>Process</code> option validates Elastic Beanstalk
-   * configuration files. It doesn't validate your application's configuration files,
-   * like proxy server or Docker configuration.</p>
+   * versions that you create using CodeBuild or CodeCommit. For application versions
+   * built from a source bundle in Amazon S3, processing is optional.</p>
+   * <p>The <code>Process</code> option validates Elastic Beanstalk configuration
+   * files. It doesn't validate your application's configuration files, like proxy
+   * server or Docker configuration.</p>
    */
   inline bool GetProcess() const { return m_process; }
   inline bool ProcessHasBeenSet() const { return m_processHasBeenSet; }
@@ -227,6 +234,30 @@ class CreateApplicationVersionRequest : public ElasticBeanstalkRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The source of the container image for this application version. You can
+   * specify an image that you built and pushed to a container registry yourself, or
+   * settings for Elastic Beanstalk to build one from your source bundle. Specify
+   * exactly one of the <code>Source</code> and <code>Build</code> members.</p>
+   * <p>Don't specify <code>ImageConfiguration</code> together with
+   * <code>BuildConfiguration</code>, which configures an CodeBuild build
+   * instead.</p>
+   */
+  inline const ImageConfiguration& GetImageConfiguration() const { return m_imageConfiguration; }
+  inline bool ImageConfigurationHasBeenSet() const { return m_imageConfigurationHasBeenSet; }
+  template <typename ImageConfigurationT = ImageConfiguration>
+  void SetImageConfiguration(ImageConfigurationT&& value) {
+    m_imageConfigurationHasBeenSet = true;
+    m_imageConfiguration = std::forward<ImageConfigurationT>(value);
+  }
+  template <typename ImageConfigurationT = ImageConfiguration>
+  CreateApplicationVersionRequest& WithImageConfiguration(ImageConfigurationT&& value) {
+    SetImageConfiguration(std::forward<ImageConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_applicationName;
 
@@ -245,6 +276,8 @@ class CreateApplicationVersionRequest : public ElasticBeanstalkRequest {
   bool m_process{false};
 
   Aws::Vector<Tag> m_tags;
+
+  ImageConfiguration m_imageConfiguration;
   bool m_applicationNameHasBeenSet = false;
   bool m_versionLabelHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
@@ -254,6 +287,7 @@ class CreateApplicationVersionRequest : public ElasticBeanstalkRequest {
   bool m_autoCreateApplicationHasBeenSet = false;
   bool m_processHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_imageConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

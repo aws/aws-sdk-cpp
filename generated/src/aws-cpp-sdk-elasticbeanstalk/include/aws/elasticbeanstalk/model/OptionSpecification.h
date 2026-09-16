@@ -55,7 +55,8 @@ class OptionSpecification {
 
   ///@{
   /**
-   * <p>A unique namespace identifying the option's associated AWS resource.</p>
+   * <p>A unique namespace identifying the option's associated Amazon Web Services
+   * resource.</p>
    */
   inline const Aws::String& GetNamespace() const { return m_namespace; }
   inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }

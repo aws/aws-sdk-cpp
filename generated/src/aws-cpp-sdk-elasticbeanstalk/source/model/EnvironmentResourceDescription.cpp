@@ -39,6 +39,11 @@ EnvironmentResourceDescription& EnvironmentResourceDescription::operator=(const 
 
       m_autoScalingGroupsHasBeenSet = true;
     }
+    XmlNode clusterNode = resultNode.FirstChild("Cluster");
+    if (!clusterNode.IsNull()) {
+      m_cluster = clusterNode;
+      m_clusterHasBeenSet = true;
+    }
     XmlNode instancesNode = resultNode.FirstChild("Instances");
     if (!instancesNode.IsNull()) {
       XmlNode instancesMember = instancesNode.FirstChild("member");
@@ -125,6 +130,12 @@ void EnvironmentResourceDescription::OutputToStream(Aws::OStream& oStream, const
     }
   }
 
+  if (m_clusterHasBeenSet) {
+    Aws::StringStream clusterLocationAndMemberSs;
+    clusterLocationAndMemberSs << location << index << locationValue << ".Cluster";
+    m_cluster.OutputToStream(oStream, clusterLocationAndMemberSs.str().c_str());
+  }
+
   if (m_instancesHasBeenSet) {
     unsigned instancesIdx = 1;
     for (auto& item : m_instances) {
@@ -191,6 +202,11 @@ void EnvironmentResourceDescription::OutputToStream(Aws::OStream& oStream, const
       autoScalingGroupsSs << location << ".AutoScalingGroups.member." << autoScalingGroupsIdx++;
       item.OutputToStream(oStream, autoScalingGroupsSs.str().c_str());
     }
+  }
+  if (m_clusterHasBeenSet) {
+    Aws::String clusterLocationAndMember(location);
+    clusterLocationAndMember += ".Cluster";
+    m_cluster.OutputToStream(oStream, clusterLocationAndMember.c_str());
   }
   if (m_instancesHasBeenSet) {
     unsigned instancesIdx = 1;

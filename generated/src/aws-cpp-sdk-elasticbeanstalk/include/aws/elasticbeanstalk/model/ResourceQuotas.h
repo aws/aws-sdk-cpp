@@ -20,8 +20,8 @@ namespace ElasticBeanstalk {
 namespace Model {
 
 /**
- * <p>A set of per-resource AWS Elastic Beanstalk quotas associated with an AWS
- * account. They reflect Elastic Beanstalk resource limits for this
+ * <p>A set of per-resource Elastic Beanstalk quotas associated with an Amazon Web
+ * Services account. They reflect Elastic Beanstalk resource limits for this
  * account.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ResourceQuotas">AWS
  * API Reference</a></p>
@@ -38,7 +38,7 @@ class ResourceQuotas {
 
   ///@{
   /**
-   * <p>The quota for applications in the AWS account.</p>
+   * <p>The quota for applications in the Amazon Web Services account.</p>
    */
   inline const ResourceQuota& GetApplicationQuota() const { return m_applicationQuota; }
   inline bool ApplicationQuotaHasBeenSet() const { return m_applicationQuotaHasBeenSet; }
@@ -56,7 +56,7 @@ class ResourceQuotas {
 
   ///@{
   /**
-   * <p>The quota for application versions in the AWS account.</p>
+   * <p>The quota for application versions in the Amazon Web Services account.</p>
    */
   inline const ResourceQuota& GetApplicationVersionQuota() const { return m_applicationVersionQuota; }
   inline bool ApplicationVersionQuotaHasBeenSet() const { return m_applicationVersionQuotaHasBeenSet; }
@@ -74,7 +74,7 @@ class ResourceQuotas {
 
   ///@{
   /**
-   * <p>The quota for environments in the AWS account.</p>
+   * <p>The quota for environments in the Amazon Web Services account.</p>
    */
   inline const ResourceQuota& GetEnvironmentQuota() const { return m_environmentQuota; }
   inline bool EnvironmentQuotaHasBeenSet() const { return m_environmentQuotaHasBeenSet; }
@@ -92,7 +92,7 @@ class ResourceQuotas {
 
   ///@{
   /**
-   * <p>The quota for configuration templates in the AWS account.</p>
+   * <p>The quota for configuration templates in the Amazon Web Services account.</p>
    */
   inline const ResourceQuota& GetConfigurationTemplateQuota() const { return m_configurationTemplateQuota; }
   inline bool ConfigurationTemplateQuotaHasBeenSet() const { return m_configurationTemplateQuotaHasBeenSet; }
@@ -110,7 +110,7 @@ class ResourceQuotas {
 
   ///@{
   /**
-   * <p>The quota for custom platforms in the AWS account.</p>
+   * <p>The quota for custom platforms in the Amazon Web Services account.</p>
    */
   inline const ResourceQuota& GetCustomPlatformQuota() const { return m_customPlatformQuota; }
   inline bool CustomPlatformQuotaHasBeenSet() const { return m_customPlatformQuotaHasBeenSet; }

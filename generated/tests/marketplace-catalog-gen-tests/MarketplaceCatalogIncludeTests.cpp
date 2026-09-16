@@ -160,6 +160,7 @@
 #include <aws/marketplace-catalog/model/ResaleAuthorizationCreatedDateFilterDateRange.h>
 #include <aws/marketplace-catalog/model/ResaleAuthorizationEntityIdFilter.h>
 #include <aws/marketplace-catalog/model/ResaleAuthorizationFilters.h>
+#include <aws/marketplace-catalog/model/ResaleAuthorizationIssuerAccountIdFilter.h>
 #include <aws/marketplace-catalog/model/ResaleAuthorizationLastModifiedDateFilter.h>
 #include <aws/marketplace-catalog/model/ResaleAuthorizationLastModifiedDateFilterDateRange.h>
 #include <aws/marketplace-catalog/model/ResaleAuthorizationManufacturerAccountIdFilter.h>
@@ -174,6 +175,7 @@
 #include <aws/marketplace-catalog/model/ResaleAuthorizationResellerRoleString.h>
 #include <aws/marketplace-catalog/model/ResaleAuthorizationSort.h>
 #include <aws/marketplace-catalog/model/ResaleAuthorizationSortBy.h>
+#include <aws/marketplace-catalog/model/ResaleAuthorizationSourceAuthorizationFilter.h>
 #include <aws/marketplace-catalog/model/ResaleAuthorizationStatusFilter.h>
 #include <aws/marketplace-catalog/model/ResaleAuthorizationStatusString.h>
 #include <aws/marketplace-catalog/model/ResaleAuthorizationSummary.h>

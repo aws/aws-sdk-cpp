@@ -46,6 +46,14 @@ Policy& Policy::operator=(JsonView jsonValue) {
     m_dataRecovery = jsonValue.GetObject("dataRecovery");
     m_dataRecoveryHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("sharingEnabled")) {
+    m_sharingEnabled = jsonValue.GetBool("sharingEnabled");
+    m_sharingEnabledHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("organizationId")) {
+    m_organizationId = jsonValue.GetString("organizationId");
+    m_organizationIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("kmsKeyId")) {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
     m_kmsKeyIdHasBeenSet = true;
@@ -101,6 +109,14 @@ JsonValue Policy::Jsonize() const {
 
   if (m_dataRecoveryHasBeenSet) {
     payload.WithObject("dataRecovery", m_dataRecovery.Jsonize());
+  }
+
+  if (m_sharingEnabledHasBeenSet) {
+    payload.WithBool("sharingEnabled", m_sharingEnabled);
+  }
+
+  if (m_organizationIdHasBeenSet) {
+    payload.WithString("organizationId", m_organizationId);
   }
 
   if (m_kmsKeyIdHasBeenSet) {

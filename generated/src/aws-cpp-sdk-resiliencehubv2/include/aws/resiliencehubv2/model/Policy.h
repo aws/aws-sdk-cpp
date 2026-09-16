@@ -159,6 +159,40 @@ class Policy {
   ///@}
 
   ///@{
+  /**
+   * <p>Specifies whether cross-account sharing is enabled.</p>
+   */
+  inline bool GetSharingEnabled() const { return m_sharingEnabled; }
+  inline bool SharingEnabledHasBeenSet() const { return m_sharingEnabledHasBeenSet; }
+  inline void SetSharingEnabled(bool value) {
+    m_sharingEnabledHasBeenSet = true;
+    m_sharingEnabled = value;
+  }
+  inline Policy& WithSharingEnabled(bool value) {
+    SetSharingEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of the organization this policy is shared with.</p>
+   */
+  inline const Aws::String& GetOrganizationId() const { return m_organizationId; }
+  inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
+  template <typename OrganizationIdT = Aws::String>
+  void SetOrganizationId(OrganizationIdT&& value) {
+    m_organizationIdHasBeenSet = true;
+    m_organizationId = std::forward<OrganizationIdT>(value);
+  }
+  template <typename OrganizationIdT = Aws::String>
+  Policy& WithOrganizationId(OrganizationIdT&& value) {
+    SetOrganizationId(std::forward<OrganizationIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
   inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
@@ -262,6 +296,10 @@ class Policy {
 
   DataRecoveryTargets m_dataRecovery;
 
+  bool m_sharingEnabled{false};
+
+  Aws::String m_organizationId;
+
   Aws::String m_kmsKeyId;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
@@ -278,6 +316,8 @@ class Policy {
   bool m_multiAzHasBeenSet = false;
   bool m_multiRegionHasBeenSet = false;
   bool m_dataRecoveryHasBeenSet = false;
+  bool m_sharingEnabledHasBeenSet = false;
+  bool m_organizationIdHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_associatedServiceCountHasBeenSet = false;

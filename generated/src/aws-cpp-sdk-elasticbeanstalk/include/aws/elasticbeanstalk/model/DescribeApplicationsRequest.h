@@ -38,8 +38,8 @@ class DescribeApplicationsRequest : public ElasticBeanstalkRequest {
  public:
   ///@{
   /**
-   * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-   * only include those with the specified names.</p>
+   * <p>If specified, Elastic Beanstalk restricts the returned descriptions to only
+   * include those with the specified names.</p>
    */
   inline const Aws::Vector<Aws::String>& GetApplicationNames() const { return m_applicationNames; }
   inline bool ApplicationNamesHasBeenSet() const { return m_applicationNamesHasBeenSet; }

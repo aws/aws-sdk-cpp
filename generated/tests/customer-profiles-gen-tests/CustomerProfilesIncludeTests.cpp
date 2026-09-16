@@ -373,6 +373,8 @@
 #include <aws/customer-profiles/model/ReadinessStatus.h>
 #include <aws/customer-profiles/model/Recommendation.h>
 #include <aws/customer-profiles/model/RecommendationDiversityConfig.h>
+#include <aws/customer-profiles/model/RecommendationMetadata.h>
+#include <aws/customer-profiles/model/Recommender.h>
 #include <aws/customer-profiles/model/RecommenderConfig.h>
 #include <aws/customer-profiles/model/RecommenderFilter.h>
 #include <aws/customer-profiles/model/RecommenderFilterStatus.h>
@@ -403,6 +405,8 @@
 #include <aws/customer-profiles/model/Scope.h>
 #include <aws/customer-profiles/model/SearchProfilesRequest.h>
 #include <aws/customer-profiles/model/SearchProfilesResult.h>
+#include <aws/customer-profiles/model/SearchRecommendationsRequest.h>
+#include <aws/customer-profiles/model/SearchRecommendationsResult.h>
 #include <aws/customer-profiles/model/SegmentDefinitionItem.h>
 #include <aws/customer-profiles/model/SegmentGroup.h>
 #include <aws/customer-profiles/model/SegmentGroupStructure.h>

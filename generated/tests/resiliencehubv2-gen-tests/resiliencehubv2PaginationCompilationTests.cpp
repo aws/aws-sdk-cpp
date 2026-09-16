@@ -20,6 +20,7 @@
 #include <aws/resiliencehubv2/model/ListServicesPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListReportsPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListResourcesPaginationTraits.h>
+#include <aws/resiliencehubv2/model/ListPolicyEventsPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListResolvedTestRunTargetResourcesPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListSystemsPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListTestSourcesPaginationTraits.h>

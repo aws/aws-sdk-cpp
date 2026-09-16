@@ -39,5 +39,9 @@ Aws::String UpdatePolicyRequest::SerializePayload() const {
     payload.WithObject("dataRecovery", m_dataRecovery.Jsonize());
   }
 
+  if (m_sharingEnabledHasBeenSet) {
+    payload.WithBool("sharingEnabled", m_sharingEnabled);
+  }
+
   return payload.View().WriteReadable();
 }

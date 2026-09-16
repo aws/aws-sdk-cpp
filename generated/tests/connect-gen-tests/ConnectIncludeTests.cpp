@@ -173,6 +173,7 @@
 #include <aws/connect/model/ConnectionData.h>
 #include <aws/connect/model/Contact.h>
 #include <aws/connect/model/ContactAnalysis.h>
+#include <aws/connect/model/ContactAnalysisReference.h>
 #include <aws/connect/model/ContactConfiguration.h>
 #include <aws/connect/model/ContactDataRequest.h>
 #include <aws/connect/model/ContactDetails.h>

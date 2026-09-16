@@ -38,9 +38,9 @@ class DescribeEnvironmentResourcesRequest : public ElasticBeanstalkRequest {
  public:
   ///@{
   /**
-   * <p>The ID of the environment to retrieve AWS resource usage data.</p> <p>
-   * Condition: You must specify either this or an EnvironmentName, or both. If you
-   * do not specify either, AWS Elastic Beanstalk returns
+   * <p>The ID of the environment to retrieve Amazon Web Services resource usage
+   * data.</p> <p> Condition: You must specify either this or an EnvironmentName, or
+   * both. If you do not specify either, Elastic Beanstalk returns
    * <code>MissingRequiredParameter</code> error. </p>
    */
   inline const Aws::String& GetEnvironmentId() const { return m_environmentId; }
@@ -59,9 +59,9 @@ class DescribeEnvironmentResourcesRequest : public ElasticBeanstalkRequest {
 
   ///@{
   /**
-   * <p>The name of the environment to retrieve AWS resource usage data.</p> <p>
-   * Condition: You must specify either this or an EnvironmentId, or both. If you do
-   * not specify either, AWS Elastic Beanstalk returns
+   * <p>The name of the environment to retrieve Amazon Web Services resource usage
+   * data.</p> <p> Condition: You must specify either this or an EnvironmentId, or
+   * both. If you do not specify either, Elastic Beanstalk returns
    * <code>MissingRequiredParameter</code> error. </p>
    */
   inline const Aws::String& GetEnvironmentName() const { return m_environmentName; }

@@ -245,6 +245,42 @@ class ResaleAuthorizationSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The source authorization of the ResaleAuthorization.</p>
+   */
+  inline const Aws::String& GetSourceAuthorization() const { return m_sourceAuthorization; }
+  inline bool SourceAuthorizationHasBeenSet() const { return m_sourceAuthorizationHasBeenSet; }
+  template <typename SourceAuthorizationT = Aws::String>
+  void SetSourceAuthorization(SourceAuthorizationT&& value) {
+    m_sourceAuthorizationHasBeenSet = true;
+    m_sourceAuthorization = std::forward<SourceAuthorizationT>(value);
+  }
+  template <typename SourceAuthorizationT = Aws::String>
+  ResaleAuthorizationSummary& WithSourceAuthorization(SourceAuthorizationT&& value) {
+    SetSourceAuthorization(std::forward<SourceAuthorizationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The issuer account ID of the ResaleAuthorization.</p>
+   */
+  inline const Aws::String& GetIssuerAccountId() const { return m_issuerAccountId; }
+  inline bool IssuerAccountIdHasBeenSet() const { return m_issuerAccountIdHasBeenSet; }
+  template <typename IssuerAccountIdT = Aws::String>
+  void SetIssuerAccountId(IssuerAccountIdT&& value) {
+    m_issuerAccountIdHasBeenSet = true;
+    m_issuerAccountId = std::forward<IssuerAccountIdT>(value);
+  }
+  template <typename IssuerAccountIdT = Aws::String>
+  ResaleAuthorizationSummary& WithIssuerAccountId(IssuerAccountIdT&& value) {
+    SetIssuerAccountId(std::forward<IssuerAccountIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -269,6 +305,10 @@ class ResaleAuthorizationSummary {
   Aws::String m_availabilityEndDate;
 
   ResaleAuthorizationResellerRoleString m_resellerRole{ResaleAuthorizationResellerRoleString::NOT_SET};
+
+  Aws::String m_sourceAuthorization;
+
+  Aws::String m_issuerAccountId;
   bool m_nameHasBeenSet = false;
   bool m_productIdHasBeenSet = false;
   bool m_productNameHasBeenSet = false;
@@ -281,6 +321,8 @@ class ResaleAuthorizationSummary {
   bool m_createdDateHasBeenSet = false;
   bool m_availabilityEndDateHasBeenSet = false;
   bool m_resellerRoleHasBeenSet = false;
+  bool m_sourceAuthorizationHasBeenSet = false;
+  bool m_issuerAccountIdHasBeenSet = false;
 };
 
 }  // namespace Model

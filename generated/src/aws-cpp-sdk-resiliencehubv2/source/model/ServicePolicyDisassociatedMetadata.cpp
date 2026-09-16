@@ -26,6 +26,18 @@ ServicePolicyDisassociatedMetadata& ServicePolicyDisassociatedMetadata::operator
     m_policyArn = jsonValue.GetString("policyArn");
     m_policyArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("policyOwnerAccountId")) {
+    m_policyOwnerAccountId = jsonValue.GetString("policyOwnerAccountId");
+    m_policyOwnerAccountIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("policySource")) {
+    m_policySource = PolicyValueSourceMapper::GetPolicyValueSourceForName(jsonValue.GetString("policySource"));
+    m_policySourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("reason")) {
+    m_reason = PolicyDisassociationReasonMapper::GetPolicyDisassociationReasonForName(jsonValue.GetString("reason"));
+    m_reasonHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +50,18 @@ JsonValue ServicePolicyDisassociatedMetadata::Jsonize() const {
 
   if (m_policyArnHasBeenSet) {
     payload.WithString("policyArn", m_policyArn);
+  }
+
+  if (m_policyOwnerAccountIdHasBeenSet) {
+    payload.WithString("policyOwnerAccountId", m_policyOwnerAccountId);
+  }
+
+  if (m_policySourceHasBeenSet) {
+    payload.WithString("policySource", PolicyValueSourceMapper::GetNameForPolicyValueSource(m_policySource));
+  }
+
+  if (m_reasonHasBeenSet) {
+    payload.WithString("reason", PolicyDisassociationReasonMapper::GetNameForPolicyDisassociationReason(m_reason));
   }
 
   return payload;

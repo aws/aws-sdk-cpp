@@ -20,8 +20,8 @@ namespace ElasticBeanstalk {
 namespace Model {
 
 /**
- * <p>Describes the AWS resources in use by this environment. This data is not live
- * data.</p><p><h3>See Also:</h3>   <a
+ * <p>Describes the Amazon Web Services resources in use by this environment. This
+ * data is not live data.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/EnvironmentResourcesDescription">AWS
  * API Reference</a></p>
  */

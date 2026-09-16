@@ -39,8 +39,8 @@ class RestartAppServerRequest : public ElasticBeanstalkRequest {
   /**
    * <p>The ID of the environment to restart the server for.</p> <p> Condition: You
    * must specify either this or an EnvironmentName, or both. If you do not specify
-   * either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
-   * error. </p>
+   * either, Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
+   * </p>
    */
   inline const Aws::String& GetEnvironmentId() const { return m_environmentId; }
   inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
@@ -60,8 +60,8 @@ class RestartAppServerRequest : public ElasticBeanstalkRequest {
   /**
    * <p>The name of the environment to restart the server for.</p> <p> Condition: You
    * must specify either this or an EnvironmentId, or both. If you do not specify
-   * either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
-   * error. </p>
+   * either, Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
+   * </p>
    */
   inline const Aws::String& GetEnvironmentName() const { return m_environmentName; }
   inline bool EnvironmentNameHasBeenSet() const { return m_environmentNameHasBeenSet; }

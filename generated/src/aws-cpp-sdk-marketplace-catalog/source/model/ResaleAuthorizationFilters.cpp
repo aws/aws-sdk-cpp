@@ -74,6 +74,14 @@ ResaleAuthorizationFilters& ResaleAuthorizationFilters::operator=(JsonView jsonV
     m_resellerRole = jsonValue.GetObject("ResellerRole");
     m_resellerRoleHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SourceAuthorization")) {
+    m_sourceAuthorization = jsonValue.GetObject("SourceAuthorization");
+    m_sourceAuthorizationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("IssuerAccountId")) {
+    m_issuerAccountId = jsonValue.GetObject("IssuerAccountId");
+    m_issuerAccountIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -134,6 +142,14 @@ JsonValue ResaleAuthorizationFilters::Jsonize() const {
 
   if (m_resellerRoleHasBeenSet) {
     payload.WithObject("ResellerRole", m_resellerRole.Jsonize());
+  }
+
+  if (m_sourceAuthorizationHasBeenSet) {
+    payload.WithObject("SourceAuthorization", m_sourceAuthorization.Jsonize());
+  }
+
+  if (m_issuerAccountIdHasBeenSet) {
+    payload.WithObject("IssuerAccountId", m_issuerAccountId.Jsonize());
   }
 
   return payload;

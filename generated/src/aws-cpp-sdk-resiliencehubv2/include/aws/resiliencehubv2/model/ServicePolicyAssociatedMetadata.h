@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/resiliencehubv2/Resiliencehubv2_EXPORTS.h>
+#include <aws/resiliencehubv2/model/PolicyValueSource.h>
 
 #include <utility>
 
@@ -64,12 +65,54 @@ class ServicePolicyAssociatedMetadata {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The account that owns the policy.</p>
+   */
+  inline const Aws::String& GetPolicyOwnerAccountId() const { return m_policyOwnerAccountId; }
+  inline bool PolicyOwnerAccountIdHasBeenSet() const { return m_policyOwnerAccountIdHasBeenSet; }
+  template <typename PolicyOwnerAccountIdT = Aws::String>
+  void SetPolicyOwnerAccountId(PolicyOwnerAccountIdT&& value) {
+    m_policyOwnerAccountIdHasBeenSet = true;
+    m_policyOwnerAccountId = std::forward<PolicyOwnerAccountIdT>(value);
+  }
+  template <typename PolicyOwnerAccountIdT = Aws::String>
+  ServicePolicyAssociatedMetadata& WithPolicyOwnerAccountId(PolicyOwnerAccountIdT&& value) {
+    SetPolicyOwnerAccountId(std::forward<PolicyOwnerAccountIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The source of the policy.</p> <ul> <li> <p>SELF — the policy belongs to the
+   * account that owns the service.</p> </li> <li> <p>CROSS_ACCOUNT — the policy
+   * belongs to another account and was shared with the organization.</p> </li> </ul>
+   */
+  inline PolicyValueSource GetPolicySource() const { return m_policySource; }
+  inline bool PolicySourceHasBeenSet() const { return m_policySourceHasBeenSet; }
+  inline void SetPolicySource(PolicyValueSource value) {
+    m_policySourceHasBeenSet = true;
+    m_policySource = value;
+  }
+  inline ServicePolicyAssociatedMetadata& WithPolicySource(PolicyValueSource value) {
+    SetPolicySource(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_policyName;
 
   Aws::String m_policyArn;
+
+  Aws::String m_policyOwnerAccountId;
+
+  PolicyValueSource m_policySource{PolicyValueSource::NOT_SET};
   bool m_policyNameHasBeenSet = false;
   bool m_policyArnHasBeenSet = false;
+  bool m_policyOwnerAccountIdHasBeenSet = false;
+  bool m_policySourceHasBeenSet = false;
 };
 
 }  // namespace Model

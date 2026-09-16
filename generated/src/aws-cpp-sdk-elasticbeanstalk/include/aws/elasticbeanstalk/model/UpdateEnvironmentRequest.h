@@ -60,9 +60,9 @@ class UpdateEnvironmentRequest : public ElasticBeanstalkRequest {
   ///@{
   /**
    * <p>The ID of the environment to update.</p> <p>If no environment with this ID
-   * exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
+   * exists, Elastic Beanstalk returns an <code>InvalidParameterValue</code>
    * error.</p> <p>Condition: You must specify either this or an EnvironmentName, or
-   * both. If you do not specify either, AWS Elastic Beanstalk returns
+   * both. If you do not specify either, Elastic Beanstalk returns
    * <code>MissingRequiredParameter</code> error. </p>
    */
   inline const Aws::String& GetEnvironmentId() const { return m_environmentId; }
@@ -82,9 +82,9 @@ class UpdateEnvironmentRequest : public ElasticBeanstalkRequest {
   ///@{
   /**
    * <p>The name of the environment to update. If no environment with this name
-   * exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
-   * error. </p> <p>Condition: You must specify either this or an EnvironmentId, or
-   * both. If you do not specify either, AWS Elastic Beanstalk returns
+   * exists, Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
+   * </p> <p>Condition: You must specify either this or an EnvironmentId, or both. If
+   * you do not specify either, Elastic Beanstalk returns
    * <code>MissingRequiredParameter</code> error. </p>
    */
   inline const Aws::String& GetEnvironmentName() const { return m_environmentName; }
@@ -125,8 +125,8 @@ class UpdateEnvironmentRequest : public ElasticBeanstalkRequest {
 
   ///@{
   /**
-   * <p>If this parameter is specified, AWS Elastic Beanstalk updates the description
-   * of this environment.</p>
+   * <p>If this parameter is specified, Elastic Beanstalk updates the description of
+   * this environment.</p>
    */
   inline const Aws::String& GetDescription() const { return m_description; }
   inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -145,8 +145,8 @@ class UpdateEnvironmentRequest : public ElasticBeanstalkRequest {
   ///@{
   /**
    * <p>This specifies the tier to use to update the environment.</p> <p>Condition:
-   * At this time, if you change the tier version, name, or type, AWS Elastic
-   * Beanstalk returns <code>InvalidParameterValue</code> error. </p>
+   * At this time, if you change the tier version, name, or type, Elastic Beanstalk
+   * returns <code>InvalidParameterValue</code> error. </p>
    */
   inline const EnvironmentTier& GetTier() const { return m_tier; }
   inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
@@ -164,7 +164,7 @@ class UpdateEnvironmentRequest : public ElasticBeanstalkRequest {
 
   ///@{
   /**
-   * <p>If this parameter is specified, AWS Elastic Beanstalk deploys the named
+   * <p>If this parameter is specified, Elastic Beanstalk deploys the named
    * application version to the environment. If no such application version is found,
    * returns an <code>InvalidParameterValue</code> error. </p>
    */
@@ -184,10 +184,9 @@ class UpdateEnvironmentRequest : public ElasticBeanstalkRequest {
 
   ///@{
   /**
-   * <p>If this parameter is specified, AWS Elastic Beanstalk deploys this
-   * configuration template to the environment. If no such configuration template is
-   * found, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
-   * error. </p>
+   * <p>If this parameter is specified, Elastic Beanstalk deploys this configuration
+   * template to the environment. If no such configuration template is found, Elastic
+   * Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
    */
   inline const Aws::String& GetTemplateName() const { return m_templateName; }
   inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
@@ -242,8 +241,8 @@ class UpdateEnvironmentRequest : public ElasticBeanstalkRequest {
 
   ///@{
   /**
-   * <p>If specified, AWS Elastic Beanstalk updates the configuration set associated
-   * with the running environment and sets the specified configuration options to the
+   * <p>If specified, Elastic Beanstalk updates the configuration set associated with
+   * the running environment and sets the specified configuration options to the
    * requested value.</p>
    */
   inline const Aws::Vector<ConfigurationOptionSetting>& GetOptionSettings() const { return m_optionSettings; }

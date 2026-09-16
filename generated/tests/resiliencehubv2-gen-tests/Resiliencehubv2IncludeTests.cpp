@@ -83,6 +83,9 @@
 #include <aws/resiliencehubv2/model/DependencyDiscoveryConfig.h>
 #include <aws/resiliencehubv2/model/DependencyDiscoveryInput.h>
 #include <aws/resiliencehubv2/model/DependencyDiscoveryStatus.h>
+#include <aws/resiliencehubv2/model/DependencyInsight.h>
+#include <aws/resiliencehubv2/model/DependencyInsightsErrorCode.h>
+#include <aws/resiliencehubv2/model/DependencyInsightsStatus.h>
 #include <aws/resiliencehubv2/model/DependencySummary.h>
 #include <aws/resiliencehubv2/model/DisasterRecoverySource.h>
 #include <aws/resiliencehubv2/model/EdgePropertySummary.h>
@@ -99,6 +102,8 @@
 #include <aws/resiliencehubv2/model/FindingSeverity.h>
 #include <aws/resiliencehubv2/model/FindingStatus.h>
 #include <aws/resiliencehubv2/model/FindingSummary.h>
+#include <aws/resiliencehubv2/model/GetDependencyInsightsRequest.h>
+#include <aws/resiliencehubv2/model/GetDependencyInsightsResult.h>
 #include <aws/resiliencehubv2/model/GetFailureModeFindingRequest.h>
 #include <aws/resiliencehubv2/model/GetFailureModeFindingResult.h>
 #include <aws/resiliencehubv2/model/GetPolicyRequest.h>
@@ -123,6 +128,7 @@
 #include <aws/resiliencehubv2/model/InputSource.h>
 #include <aws/resiliencehubv2/model/InputSourceSummary.h>
 #include <aws/resiliencehubv2/model/InputSourceType.h>
+#include <aws/resiliencehubv2/model/InsightsCategory.h>
 #include <aws/resiliencehubv2/model/ListAssertionsPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListAssertionsRequest.h>
 #include <aws/resiliencehubv2/model/ListAssertionsResult.h>
@@ -141,6 +147,9 @@
 #include <aws/resiliencehubv2/model/ListPoliciesPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListPoliciesRequest.h>
 #include <aws/resiliencehubv2/model/ListPoliciesResult.h>
+#include <aws/resiliencehubv2/model/ListPolicyEventsPaginationTraits.h>
+#include <aws/resiliencehubv2/model/ListPolicyEventsRequest.h>
+#include <aws/resiliencehubv2/model/ListPolicyEventsResult.h>
 #include <aws/resiliencehubv2/model/ListReportsPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListReportsRequest.h>
 #include <aws/resiliencehubv2/model/ListReportsResult.h>
@@ -207,7 +216,16 @@
 #include <aws/resiliencehubv2/model/ParameterType.h>
 #include <aws/resiliencehubv2/model/PermissionModel.h>
 #include <aws/resiliencehubv2/model/Policy.h>
+#include <aws/resiliencehubv2/model/PolicyAttachedToServiceMetadata.h>
 #include <aws/resiliencehubv2/model/PolicyComponent.h>
+#include <aws/resiliencehubv2/model/PolicyDeletedMetadata.h>
+#include <aws/resiliencehubv2/model/PolicyDetachedFromServiceMetadata.h>
+#include <aws/resiliencehubv2/model/PolicyDisassociationReason.h>
+#include <aws/resiliencehubv2/model/PolicyEvent.h>
+#include <aws/resiliencehubv2/model/PolicyEventDetails.h>
+#include <aws/resiliencehubv2/model/PolicyEventMetadata.h>
+#include <aws/resiliencehubv2/model/PolicyEventType.h>
+#include <aws/resiliencehubv2/model/PolicySharingRevokedMetadata.h>
 #include <aws/resiliencehubv2/model/PolicySummary.h>
 #include <aws/resiliencehubv2/model/PolicyValueSource.h>
 #include <aws/resiliencehubv2/model/PutTestSourcesRequest.h>
@@ -263,6 +281,8 @@
 #include <aws/resiliencehubv2/model/ServiceWorkflowUpdatedMetadata.h>
 #include <aws/resiliencehubv2/model/SloSource.h>
 #include <aws/resiliencehubv2/model/SortOrder.h>
+#include <aws/resiliencehubv2/model/StartDependencyInsightsRequest.h>
+#include <aws/resiliencehubv2/model/StartDependencyInsightsResult.h>
 #include <aws/resiliencehubv2/model/StartFailureModeAssessmentRequest.h>
 #include <aws/resiliencehubv2/model/StartFailureModeAssessmentResult.h>
 #include <aws/resiliencehubv2/model/StartTestRunRequest.h>

@@ -122,6 +122,7 @@
 #include <aws/customer-profiles/model/PutProfileObjectTypeRequest.h>
 #include <aws/customer-profiles/model/PutSegmentSubscriptionRequest.h>
 #include <aws/customer-profiles/model/SearchProfilesRequest.h>
+#include <aws/customer-profiles/model/SearchRecommendationsRequest.h>
 #include <aws/customer-profiles/model/StartRecommenderRequest.h>
 #include <aws/customer-profiles/model/StartUploadJobRequest.h>
 #include <aws/customer-profiles/model/StopRecommenderRequest.h>
@@ -2557,6 +2558,25 @@ SearchProfilesOutcome CustomerProfilesClient::SearchProfiles(const SearchProfile
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? SearchProfilesOutcome(result.GetResultWithOwnership()) : SearchProfilesOutcome(std::move(result.GetError()));
+}
+
+SearchRecommendationsOutcome CustomerProfilesClient::SearchRecommendations(const SearchRecommendationsRequest& request) const {
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("SearchRecommendations", "Required field: DomainName, is not set");
+    return SearchRecommendationsOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/recommendations");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchRecommendationsOutcome(result.GetResultWithOwnership())
+                            : SearchRecommendationsOutcome(std::move(result.GetError()));
 }
 
 StartRecommenderOutcome CustomerProfilesClient::StartRecommender(const StartRecommenderRequest& request) const {

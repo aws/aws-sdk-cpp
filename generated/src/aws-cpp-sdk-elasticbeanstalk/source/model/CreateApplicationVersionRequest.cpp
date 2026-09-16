@@ -57,6 +57,10 @@ Aws::String CreateApplicationVersionRequest::SerializePayload() const {
     }
   }
 
+  if (m_imageConfigurationHasBeenSet) {
+    m_imageConfiguration.OutputToStream(ss, "ImageConfiguration");
+  }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

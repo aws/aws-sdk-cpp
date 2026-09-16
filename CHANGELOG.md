@@ -1,3 +1,17 @@
+# 1.11.894 (2026-09-16)
+
+## SDK Highlights
+* **Feature**: Smithy based codegen for shapes part 4. Gated on --use-smithy-models (default off)
+
+## Service Updates
+* **Bedrock AgentCore Control**: Adds support for a new DELETE FAILED status for Bedrock AgentCore Runtimes and Bedrock AgentCore Runtime Endpoints.
+* **Connect**: Adds support for ContactAnalysis via ListContactReferences.
+* **Customer Profiles**: This release introduces the SearchRecommendations API, which retrieves recommendations for a profile identified by a search key.
+* **EC2**: Releasing new EC2 R9g and R9gd memory-optimized instances powered by AWS Graviton5 processors, with up to 25 percent better compute performance than R8g instances, faster DDR5 memory, and up to 100 Gbps network and 72 Gbps EBS bandwidth. R9gd instances additionally provide local NVMe SSD storage.
+* **Elastic Beanstalk**: Adds support to create and manage Elastic Beanstalk Cluster Environments.
+* **Marketplace Catalog**: This release enhances the ListEntities API to support issuerAccountId and SourceAuthorization filter for ResaleAuthorization entity.
+* **resiliencehubv2**: Next Gen Resilience Hub now supports dependency insights (LLM-based insights about customer's service dependencies) and organization-level policy sharing (provision to share policy with member accounts for an organization)
+
 # 1.11.893 (2026-09-15)
 
 ## Service Updates

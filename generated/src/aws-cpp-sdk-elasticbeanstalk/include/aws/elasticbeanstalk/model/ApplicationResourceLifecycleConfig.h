@@ -23,7 +23,7 @@ namespace Model {
 /**
  * <p>The resource lifecycle configuration for an application. Defines lifecycle
  * settings for resources that belong to the application, and the service role that
- * AWS Elastic Beanstalk assumes in order to apply lifecycle settings. The version
+ * Elastic Beanstalk assumes in order to apply lifecycle settings. The version
  * lifecycle configuration defines lifecycle settings for application
  * versions.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplicationResourceLifecycleConfig">AWS

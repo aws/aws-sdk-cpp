@@ -29,6 +29,7 @@
 #include <aws/elasticbeanstalk/model/ApplicationVersionStatus.h>
 #include <aws/elasticbeanstalk/model/ApplyEnvironmentManagedActionRequest.h>
 #include <aws/elasticbeanstalk/model/ApplyEnvironmentManagedActionResult.h>
+#include <aws/elasticbeanstalk/model/ArchitectureType.h>
 #include <aws/elasticbeanstalk/model/AssociateEnvironmentOperationsRoleRequest.h>
 #include <aws/elasticbeanstalk/model/AutoScalingGroup.h>
 #include <aws/elasticbeanstalk/model/BuildConfiguration.h>
@@ -36,6 +37,7 @@
 #include <aws/elasticbeanstalk/model/CPUUtilization.h>
 #include <aws/elasticbeanstalk/model/CheckDNSAvailabilityRequest.h>
 #include <aws/elasticbeanstalk/model/CheckDNSAvailabilityResult.h>
+#include <aws/elasticbeanstalk/model/Cluster.h>
 #include <aws/elasticbeanstalk/model/ComposeEnvironmentsRequest.h>
 #include <aws/elasticbeanstalk/model/ComposeEnvironmentsResult.h>
 #include <aws/elasticbeanstalk/model/ComputeType.h>
@@ -107,6 +109,10 @@
 #include <aws/elasticbeanstalk/model/EventDescription.h>
 #include <aws/elasticbeanstalk/model/EventSeverity.h>
 #include <aws/elasticbeanstalk/model/FailureType.h>
+#include <aws/elasticbeanstalk/model/ImageBuildConfiguration.h>
+#include <aws/elasticbeanstalk/model/ImageBuildType.h>
+#include <aws/elasticbeanstalk/model/ImageConfiguration.h>
+#include <aws/elasticbeanstalk/model/ImageSource.h>
 #include <aws/elasticbeanstalk/model/Instance.h>
 #include <aws/elasticbeanstalk/model/InstanceHealthSummary.h>
 #include <aws/elasticbeanstalk/model/InstancesHealthAttribute.h>

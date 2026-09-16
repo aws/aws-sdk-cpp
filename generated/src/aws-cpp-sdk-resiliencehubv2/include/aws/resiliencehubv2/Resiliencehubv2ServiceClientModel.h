@@ -39,6 +39,7 @@
 #include <aws/resiliencehubv2/model/DeleteTestResult.h>
 #include <aws/resiliencehubv2/model/DeleteTestSourcesResult.h>
 #include <aws/resiliencehubv2/model/DeleteUserJourneyResult.h>
+#include <aws/resiliencehubv2/model/GetDependencyInsightsResult.h>
 #include <aws/resiliencehubv2/model/GetFailureModeFindingResult.h>
 #include <aws/resiliencehubv2/model/GetPolicyResult.h>
 #include <aws/resiliencehubv2/model/GetServiceResult.h>
@@ -57,6 +58,7 @@
 #include <aws/resiliencehubv2/model/ListInputSourcesResult.h>
 #include <aws/resiliencehubv2/model/ListPoliciesRequest.h>
 #include <aws/resiliencehubv2/model/ListPoliciesResult.h>
+#include <aws/resiliencehubv2/model/ListPolicyEventsResult.h>
 #include <aws/resiliencehubv2/model/ListReportsRequest.h>
 #include <aws/resiliencehubv2/model/ListReportsResult.h>
 #include <aws/resiliencehubv2/model/ListResolvedTestRunTargetResourcesResult.h>
@@ -81,6 +83,7 @@
 #include <aws/resiliencehubv2/model/ListTestsResult.h>
 #include <aws/resiliencehubv2/model/ListUserJourneysResult.h>
 #include <aws/resiliencehubv2/model/PutTestSourcesResult.h>
+#include <aws/resiliencehubv2/model/StartDependencyInsightsResult.h>
 #include <aws/resiliencehubv2/model/StartFailureModeAssessmentResult.h>
 #include <aws/resiliencehubv2/model/StartTestRunResult.h>
 #include <aws/resiliencehubv2/model/StopTestRunResult.h>
@@ -148,6 +151,7 @@ class DeleteSystemRequest;
 class DeleteTestRequest;
 class DeleteTestSourcesRequest;
 class DeleteUserJourneyRequest;
+class GetDependencyInsightsRequest;
 class GetFailureModeFindingRequest;
 class GetPolicyRequest;
 class GetServiceRequest;
@@ -164,6 +168,7 @@ class ListFailureModeAssessmentsRequest;
 class ListFailureModeFindingsRequest;
 class ListInputSourcesRequest;
 class ListPoliciesRequest;
+class ListPolicyEventsRequest;
 class ListReportsRequest;
 class ListResolvedTestRunTargetResourcesRequest;
 class ListResourcesRequest;
@@ -184,6 +189,7 @@ class ListTestTemplatesRequest;
 class ListTestsRequest;
 class ListUserJourneysRequest;
 class PutTestSourcesRequest;
+class StartDependencyInsightsRequest;
 class StartFailureModeAssessmentRequest;
 class StartTestRunRequest;
 class StopTestRunRequest;
@@ -221,6 +227,7 @@ typedef Aws::Utils::Outcome<DeleteSystemResult, Resiliencehubv2Error> DeleteSyst
 typedef Aws::Utils::Outcome<DeleteTestResult, Resiliencehubv2Error> DeleteTestOutcome;
 typedef Aws::Utils::Outcome<DeleteTestSourcesResult, Resiliencehubv2Error> DeleteTestSourcesOutcome;
 typedef Aws::Utils::Outcome<DeleteUserJourneyResult, Resiliencehubv2Error> DeleteUserJourneyOutcome;
+typedef Aws::Utils::Outcome<GetDependencyInsightsResult, Resiliencehubv2Error> GetDependencyInsightsOutcome;
 typedef Aws::Utils::Outcome<GetFailureModeFindingResult, Resiliencehubv2Error> GetFailureModeFindingOutcome;
 typedef Aws::Utils::Outcome<GetPolicyResult, Resiliencehubv2Error> GetPolicyOutcome;
 typedef Aws::Utils::Outcome<GetServiceResult, Resiliencehubv2Error> GetServiceOutcome;
@@ -237,6 +244,7 @@ typedef Aws::Utils::Outcome<ListFailureModeAssessmentsResult, Resiliencehubv2Err
 typedef Aws::Utils::Outcome<ListFailureModeFindingsResult, Resiliencehubv2Error> ListFailureModeFindingsOutcome;
 typedef Aws::Utils::Outcome<ListInputSourcesResult, Resiliencehubv2Error> ListInputSourcesOutcome;
 typedef Aws::Utils::Outcome<ListPoliciesResult, Resiliencehubv2Error> ListPoliciesOutcome;
+typedef Aws::Utils::Outcome<ListPolicyEventsResult, Resiliencehubv2Error> ListPolicyEventsOutcome;
 typedef Aws::Utils::Outcome<ListReportsResult, Resiliencehubv2Error> ListReportsOutcome;
 typedef Aws::Utils::Outcome<ListResolvedTestRunTargetResourcesResult, Resiliencehubv2Error> ListResolvedTestRunTargetResourcesOutcome;
 typedef Aws::Utils::Outcome<ListResourcesResult, Resiliencehubv2Error> ListResourcesOutcome;
@@ -257,6 +265,7 @@ typedef Aws::Utils::Outcome<ListTestTemplatesResult, Resiliencehubv2Error> ListT
 typedef Aws::Utils::Outcome<ListTestsResult, Resiliencehubv2Error> ListTestsOutcome;
 typedef Aws::Utils::Outcome<ListUserJourneysResult, Resiliencehubv2Error> ListUserJourneysOutcome;
 typedef Aws::Utils::Outcome<PutTestSourcesResult, Resiliencehubv2Error> PutTestSourcesOutcome;
+typedef Aws::Utils::Outcome<StartDependencyInsightsResult, Resiliencehubv2Error> StartDependencyInsightsOutcome;
 typedef Aws::Utils::Outcome<StartFailureModeAssessmentResult, Resiliencehubv2Error> StartFailureModeAssessmentOutcome;
 typedef Aws::Utils::Outcome<StartTestRunResult, Resiliencehubv2Error> StartTestRunOutcome;
 typedef Aws::Utils::Outcome<StopTestRunResult, Resiliencehubv2Error> StopTestRunOutcome;
@@ -294,6 +303,7 @@ typedef std::future<DeleteSystemOutcome> DeleteSystemOutcomeCallable;
 typedef std::future<DeleteTestOutcome> DeleteTestOutcomeCallable;
 typedef std::future<DeleteTestSourcesOutcome> DeleteTestSourcesOutcomeCallable;
 typedef std::future<DeleteUserJourneyOutcome> DeleteUserJourneyOutcomeCallable;
+typedef std::future<GetDependencyInsightsOutcome> GetDependencyInsightsOutcomeCallable;
 typedef std::future<GetFailureModeFindingOutcome> GetFailureModeFindingOutcomeCallable;
 typedef std::future<GetPolicyOutcome> GetPolicyOutcomeCallable;
 typedef std::future<GetServiceOutcome> GetServiceOutcomeCallable;
@@ -310,6 +320,7 @@ typedef std::future<ListFailureModeAssessmentsOutcome> ListFailureModeAssessment
 typedef std::future<ListFailureModeFindingsOutcome> ListFailureModeFindingsOutcomeCallable;
 typedef std::future<ListInputSourcesOutcome> ListInputSourcesOutcomeCallable;
 typedef std::future<ListPoliciesOutcome> ListPoliciesOutcomeCallable;
+typedef std::future<ListPolicyEventsOutcome> ListPolicyEventsOutcomeCallable;
 typedef std::future<ListReportsOutcome> ListReportsOutcomeCallable;
 typedef std::future<ListResolvedTestRunTargetResourcesOutcome> ListResolvedTestRunTargetResourcesOutcomeCallable;
 typedef std::future<ListResourcesOutcome> ListResourcesOutcomeCallable;
@@ -330,6 +341,7 @@ typedef std::future<ListTestTemplatesOutcome> ListTestTemplatesOutcomeCallable;
 typedef std::future<ListTestsOutcome> ListTestsOutcomeCallable;
 typedef std::future<ListUserJourneysOutcome> ListUserJourneysOutcomeCallable;
 typedef std::future<PutTestSourcesOutcome> PutTestSourcesOutcomeCallable;
+typedef std::future<StartDependencyInsightsOutcome> StartDependencyInsightsOutcomeCallable;
 typedef std::future<StartFailureModeAssessmentOutcome> StartFailureModeAssessmentOutcomeCallable;
 typedef std::future<StartTestRunOutcome> StartTestRunOutcomeCallable;
 typedef std::future<StopTestRunOutcome> StopTestRunOutcomeCallable;
@@ -412,6 +424,9 @@ typedef std::function<void(const Resiliencehubv2Client*, const Model::DeleteTest
 typedef std::function<void(const Resiliencehubv2Client*, const Model::DeleteUserJourneyRequest&, const Model::DeleteUserJourneyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteUserJourneyResponseReceivedHandler;
+typedef std::function<void(const Resiliencehubv2Client*, const Model::GetDependencyInsightsRequest&,
+                           const Model::GetDependencyInsightsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetDependencyInsightsResponseReceivedHandler;
 typedef std::function<void(const Resiliencehubv2Client*, const Model::GetFailureModeFindingRequest&,
                            const Model::GetFailureModeFindingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetFailureModeFindingResponseReceivedHandler;
@@ -460,6 +475,9 @@ typedef std::function<void(const Resiliencehubv2Client*, const Model::ListInputS
 typedef std::function<void(const Resiliencehubv2Client*, const Model::ListPoliciesRequest&, const Model::ListPoliciesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListPoliciesResponseReceivedHandler;
+typedef std::function<void(const Resiliencehubv2Client*, const Model::ListPolicyEventsRequest&, const Model::ListPolicyEventsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListPolicyEventsResponseReceivedHandler;
 typedef std::function<void(const Resiliencehubv2Client*, const Model::ListReportsRequest&, const Model::ListReportsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListReportsResponseReceivedHandler;
@@ -521,6 +539,9 @@ typedef std::function<void(const Resiliencehubv2Client*, const Model::ListUserJo
 typedef std::function<void(const Resiliencehubv2Client*, const Model::PutTestSourcesRequest&, const Model::PutTestSourcesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutTestSourcesResponseReceivedHandler;
+typedef std::function<void(const Resiliencehubv2Client*, const Model::StartDependencyInsightsRequest&,
+                           const Model::StartDependencyInsightsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartDependencyInsightsResponseReceivedHandler;
 typedef std::function<void(const Resiliencehubv2Client*, const Model::StartFailureModeAssessmentRequest&,
                            const Model::StartFailureModeAssessmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartFailureModeAssessmentResponseReceivedHandler;

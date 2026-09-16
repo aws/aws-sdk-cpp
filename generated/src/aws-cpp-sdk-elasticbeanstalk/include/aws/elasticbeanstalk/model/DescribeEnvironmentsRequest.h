@@ -39,7 +39,7 @@ class DescribeEnvironmentsRequest : public ElasticBeanstalkRequest {
  public:
   ///@{
   /**
-   * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+   * <p>If specified, Elastic Beanstalk restricts the returned descriptions to
    * include only those that are associated with this application.</p>
    */
   inline const Aws::String& GetApplicationName() const { return m_applicationName; }
@@ -58,7 +58,7 @@ class DescribeEnvironmentsRequest : public ElasticBeanstalkRequest {
 
   ///@{
   /**
-   * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+   * <p>If specified, Elastic Beanstalk restricts the returned descriptions to
    * include only those that are associated with this application version.</p>
    */
   inline const Aws::String& GetVersionLabel() const { return m_versionLabel; }
@@ -77,7 +77,7 @@ class DescribeEnvironmentsRequest : public ElasticBeanstalkRequest {
 
   ///@{
   /**
-   * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+   * <p>If specified, Elastic Beanstalk restricts the returned descriptions to
    * include only those that have the specified IDs.</p>
    */
   inline const Aws::Vector<Aws::String>& GetEnvironmentIds() const { return m_environmentIds; }
@@ -102,7 +102,7 @@ class DescribeEnvironmentsRequest : public ElasticBeanstalkRequest {
 
   ///@{
   /**
-   * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+   * <p>If specified, Elastic Beanstalk restricts the returned descriptions to
    * include only those that have the specified names.</p>
    */
   inline const Aws::Vector<Aws::String>& GetEnvironmentNames() const { return m_environmentNames; }

@@ -40,6 +40,7 @@
 #include <aws/resiliencehubv2/model/DeleteTestRequest.h>
 #include <aws/resiliencehubv2/model/DeleteTestSourcesRequest.h>
 #include <aws/resiliencehubv2/model/DeleteUserJourneyRequest.h>
+#include <aws/resiliencehubv2/model/GetDependencyInsightsRequest.h>
 #include <aws/resiliencehubv2/model/GetFailureModeFindingRequest.h>
 #include <aws/resiliencehubv2/model/GetPolicyRequest.h>
 #include <aws/resiliencehubv2/model/GetServiceRequest.h>
@@ -56,6 +57,7 @@
 #include <aws/resiliencehubv2/model/ListFailureModeFindingsRequest.h>
 #include <aws/resiliencehubv2/model/ListInputSourcesRequest.h>
 #include <aws/resiliencehubv2/model/ListPoliciesRequest.h>
+#include <aws/resiliencehubv2/model/ListPolicyEventsRequest.h>
 #include <aws/resiliencehubv2/model/ListReportsRequest.h>
 #include <aws/resiliencehubv2/model/ListResolvedTestRunTargetResourcesRequest.h>
 #include <aws/resiliencehubv2/model/ListResourcesRequest.h>
@@ -76,6 +78,7 @@
 #include <aws/resiliencehubv2/model/ListTestsRequest.h>
 #include <aws/resiliencehubv2/model/ListUserJourneysRequest.h>
 #include <aws/resiliencehubv2/model/PutTestSourcesRequest.h>
+#include <aws/resiliencehubv2/model/StartDependencyInsightsRequest.h>
 #include <aws/resiliencehubv2/model/StartFailureModeAssessmentRequest.h>
 #include <aws/resiliencehubv2/model/StartTestRunRequest.h>
 #include <aws/resiliencehubv2/model/StopTestRunRequest.h>
@@ -461,6 +464,23 @@ DeleteUserJourneyOutcome Resiliencehubv2Client::DeleteUserJourney(const DeleteUs
                             : DeleteUserJourneyOutcome(std::move(result.GetError()));
 }
 
+GetDependencyInsightsOutcome Resiliencehubv2Client::GetDependencyInsights(const GetDependencyInsightsRequest& request) const {
+  if (!request.ServiceArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetDependencyInsights", "Required field: ServiceArn, is not set");
+    return GetDependencyInsightsOutcome(Aws::Client::AWSError<Resiliencehubv2Errors>(
+        Resiliencehubv2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ServiceArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/get-dependency-insights");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDependencyInsightsOutcome(result.GetResultWithOwnership())
+                            : GetDependencyInsightsOutcome(std::move(result.GetError()));
+}
+
 GetFailureModeFindingOutcome Resiliencehubv2Client::GetFailureModeFinding(const GetFailureModeFindingRequest& request) const {
   if (!request.FindingIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetFailureModeFinding", "Required field: FindingId, is not set");
@@ -718,6 +738,23 @@ ListPoliciesOutcome Resiliencehubv2Client::ListPolicies(const ListPoliciesReques
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListPoliciesOutcome(result.GetResultWithOwnership()) : ListPoliciesOutcome(std::move(result.GetError()));
+}
+
+ListPolicyEventsOutcome Resiliencehubv2Client::ListPolicyEvents(const ListPolicyEventsRequest& request) const {
+  if (!request.PolicyArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListPolicyEvents", "Required field: PolicyArn, is not set");
+    return ListPolicyEventsOutcome(Aws::Client::AWSError<Resiliencehubv2Errors>(
+        Resiliencehubv2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PolicyArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/list-policy-events");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPolicyEventsOutcome(result.GetResultWithOwnership())
+                            : ListPolicyEventsOutcome(std::move(result.GetError()));
 }
 
 ListReportsOutcome Resiliencehubv2Client::ListReports(const ListReportsRequest& request) const {
@@ -1070,6 +1107,17 @@ PutTestSourcesOutcome Resiliencehubv2Client::PutTestSources(const PutTestSources
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? PutTestSourcesOutcome(result.GetResultWithOwnership()) : PutTestSourcesOutcome(std::move(result.GetError()));
+}
+
+StartDependencyInsightsOutcome Resiliencehubv2Client::StartDependencyInsights(const StartDependencyInsightsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/start-dependency-insights");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartDependencyInsightsOutcome(result.GetResultWithOwnership())
+                            : StartDependencyInsightsOutcome(std::move(result.GetError()));
 }
 
 StartFailureModeAssessmentOutcome Resiliencehubv2Client::StartFailureModeAssessment(

@@ -31,8 +31,8 @@ class DescribeAccountAttributesResult {
 
   ///@{
   /**
-   * <p>The Elastic Beanstalk resource quotas associated with the calling AWS
-   * account.</p>
+   * <p>The Elastic Beanstalk resource quotas associated with the calling Amazon Web
+   * Services account.</p>
    */
   inline const ResourceQuotas& GetResourceQuotas() const { return m_resourceQuotas; }
   template <typename ResourceQuotasT = ResourceQuotas>

@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/elasticbeanstalk/model/ApplicationVersionStatus.h>
+#include <aws/elasticbeanstalk/model/ImageBuildConfiguration.h>
+#include <aws/elasticbeanstalk/model/ImageSource.h>
 #include <aws/elasticbeanstalk/model/S3Location.h>
 #include <aws/elasticbeanstalk/model/SourceBuildInformation.h>
 
@@ -113,8 +115,8 @@ class ApplicationVersionDescription {
 
   ///@{
   /**
-   * <p>If the version's source code was retrieved from AWS CodeCommit, the location
-   * of the source code for the application version.</p>
+   * <p>If the version's source code was retrieved from CodeCommit, the location of
+   * the source code for the application version.</p>
    */
   inline const SourceBuildInformation& GetSourceBuildInformation() const { return m_sourceBuildInformation; }
   inline bool SourceBuildInformationHasBeenSet() const { return m_sourceBuildInformationHasBeenSet; }
@@ -132,7 +134,7 @@ class ApplicationVersionDescription {
 
   ///@{
   /**
-   * <p>Reference to the artifact from the AWS CodeBuild build.</p>
+   * <p>Reference to the artifact from the CodeBuild build.</p>
    */
   inline const Aws::String& GetBuildArn() const { return m_buildArn; }
   inline bool BuildArnHasBeenSet() const { return m_buildArnHasBeenSet; }
@@ -163,6 +165,66 @@ class ApplicationVersionDescription {
   template <typename SourceBundleT = S3Location>
   ApplicationVersionDescription& WithSourceBundle(SourceBundleT&& value) {
     SetSourceBundle(std::forward<SourceBundleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The location of the container image for the application version.</p> <p>For
+   * an application version created from an image you provide, this is that image.
+   * For one that Elastic Beanstalk builds from your source bundle, Elastic Beanstalk
+   * fills this in with the image it pushed after the build succeeds.</p>
+   */
+  inline const ImageSource& GetImageSource() const { return m_imageSource; }
+  inline bool ImageSourceHasBeenSet() const { return m_imageSourceHasBeenSet; }
+  template <typename ImageSourceT = ImageSource>
+  void SetImageSource(ImageSourceT&& value) {
+    m_imageSourceHasBeenSet = true;
+    m_imageSource = std::forward<ImageSourceT>(value);
+  }
+  template <typename ImageSourceT = ImageSource>
+  ApplicationVersionDescription& WithImageSource(ImageSourceT&& value) {
+    SetImageSource(std::forward<ImageSourceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The settings that Elastic Beanstalk uses to build a container image from the
+   * source bundle of the application version. Not present for an application version
+   * created from an image you provide.</p>
+   */
+  inline const ImageBuildConfiguration& GetImageBuildConfiguration() const { return m_imageBuildConfiguration; }
+  inline bool ImageBuildConfigurationHasBeenSet() const { return m_imageBuildConfigurationHasBeenSet; }
+  template <typename ImageBuildConfigurationT = ImageBuildConfiguration>
+  void SetImageBuildConfiguration(ImageBuildConfigurationT&& value) {
+    m_imageBuildConfigurationHasBeenSet = true;
+    m_imageBuildConfiguration = std::forward<ImageBuildConfigurationT>(value);
+  }
+  template <typename ImageBuildConfigurationT = ImageBuildConfiguration>
+  ApplicationVersionDescription& WithImageBuildConfiguration(ImageBuildConfigurationT&& value) {
+    SetImageBuildConfiguration(std::forward<ImageBuildConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether Elastic Beanstalk pre-processed and validated the
+   * environment manifest (<code>env.yaml</code>) and configuration files
+   * (<code>*.config</code> files in the <code>.ebextensions</code> folder) in the
+   * source bundle of the application version.</p>
+   */
+  inline bool GetProcess() const { return m_process; }
+  inline bool ProcessHasBeenSet() const { return m_processHasBeenSet; }
+  inline void SetProcess(bool value) {
+    m_processHasBeenSet = true;
+    m_process = value;
+  }
+  inline ApplicationVersionDescription& WithProcess(bool value) {
+    SetProcess(value);
     return *this;
   }
   ///@}
@@ -214,12 +276,11 @@ class ApplicationVersionDescription {
    * configuration files during deployment of the application version to an
    * environment.</p> </li> <li> <p> <code>Processing</code> – Elastic Beanstalk is
    * currently processing the application version.</p> </li> <li> <p>
-   * <code>Building</code> – Application version is currently undergoing an AWS
-   * CodeBuild build.</p> </li> <li> <p> <code>Processed</code> – Elastic Beanstalk
-   * was successfully pre-processed and validated.</p> </li> <li> <p>
-   * <code>Failed</code> – Either the AWS CodeBuild build failed or configuration
-   * files didn't pass validation. This application version isn't usable.</p> </li>
-   * </ul>
+   * <code>Building</code> – Application version is currently undergoing an CodeBuild
+   * build.</p> </li> <li> <p> <code>Processed</code> – Elastic Beanstalk was
+   * successfully pre-processed and validated.</p> </li> <li> <p> <code>Failed</code>
+   * – Either the CodeBuild build failed or configuration files didn't pass
+   * validation. This application version isn't usable.</p> </li> </ul>
    */
   inline ApplicationVersionStatus GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -247,6 +308,12 @@ class ApplicationVersionDescription {
 
   S3Location m_sourceBundle;
 
+  ImageSource m_imageSource;
+
+  ImageBuildConfiguration m_imageBuildConfiguration;
+
+  bool m_process{false};
+
   Aws::Utils::DateTime m_dateCreated{};
 
   Aws::Utils::DateTime m_dateUpdated{};
@@ -259,6 +326,9 @@ class ApplicationVersionDescription {
   bool m_sourceBuildInformationHasBeenSet = false;
   bool m_buildArnHasBeenSet = false;
   bool m_sourceBundleHasBeenSet = false;
+  bool m_imageSourceHasBeenSet = false;
+  bool m_imageBuildConfigurationHasBeenSet = false;
+  bool m_processHasBeenSet = false;
   bool m_dateCreatedHasBeenSet = false;
   bool m_dateUpdatedHasBeenSet = false;
   bool m_statusHasBeenSet = false;

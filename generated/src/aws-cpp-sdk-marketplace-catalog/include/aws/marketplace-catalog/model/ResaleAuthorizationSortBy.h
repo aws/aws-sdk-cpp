@@ -24,7 +24,10 @@ enum class ResaleAuthorizationSortBy {
   OfferExtendedStatus,
   CreatedDate,
   AvailabilityEndDate,
-  LastModifiedDate
+  LastModifiedDate,
+  ResellerRole,
+  SourceAuthorization,
+  IssuerAccountId
 };
 
 namespace ResaleAuthorizationSortByMapper {

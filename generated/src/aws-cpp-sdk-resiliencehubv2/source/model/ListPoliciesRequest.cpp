@@ -19,6 +19,12 @@ Aws::String ListPoliciesRequest::SerializePayload() const { return {}; }
 
 void ListPoliciesRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;
+  if (m_accountIdHasBeenSet) {
+    ss << m_accountId;
+    uri.AddQueryStringParameter("accountId", ss.str());
+    ss.str("");
+  }
+
   if (m_maxResultsHasBeenSet) {
     ss << m_maxResults;
     uri.AddQueryStringParameter("maxResults", ss.str());

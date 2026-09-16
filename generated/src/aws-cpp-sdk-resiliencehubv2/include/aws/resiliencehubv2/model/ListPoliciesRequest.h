@@ -34,6 +34,25 @@ class ListPoliciesRequest : public Resiliencehubv2Request {
   AWS_RESILIENCEHUBV2_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
   ///@{
+  /**
+   * <p>The identifier of the account that owns the policies to include in the
+   * results.</p>
+   */
+  inline const Aws::String& GetAccountId() const { return m_accountId; }
+  inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+  template <typename AccountIdT = Aws::String>
+  void SetAccountId(AccountIdT&& value) {
+    m_accountIdHasBeenSet = true;
+    m_accountId = std::forward<AccountIdT>(value);
+  }
+  template <typename AccountIdT = Aws::String>
+  ListPoliciesRequest& WithAccountId(AccountIdT&& value) {
+    SetAccountId(std::forward<AccountIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -63,9 +82,12 @@ class ListPoliciesRequest : public Resiliencehubv2Request {
   }
   ///@}
  private:
+  Aws::String m_accountId;
+
   int m_maxResults{0};
 
   Aws::String m_nextToken;
+  bool m_accountIdHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };

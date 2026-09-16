@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/elasticbeanstalk/model/AutoScalingGroup.h>
+#include <aws/elasticbeanstalk/model/Cluster.h>
 #include <aws/elasticbeanstalk/model/Instance.h>
 #include <aws/elasticbeanstalk/model/LaunchConfiguration.h>
 #include <aws/elasticbeanstalk/model/LaunchTemplate.h>
@@ -28,8 +29,8 @@ namespace ElasticBeanstalk {
 namespace Model {
 
 /**
- * <p>Describes the AWS resources in use by this environment. This data is
- * live.</p><p><h3>See Also:</h3>   <a
+ * <p>Describes the Amazon Web Services resources in use by this environment. This
+ * data is live.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/EnvironmentResourceDescription">AWS
  * API Reference</a></p>
  */
@@ -81,6 +82,25 @@ class EnvironmentResourceDescription {
   EnvironmentResourceDescription& AddAutoScalingGroups(AutoScalingGroupsT&& value) {
     m_autoScalingGroupsHasBeenSet = true;
     m_autoScalingGroups.emplace_back(std::forward<AutoScalingGroupsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon EKS cluster that this environment runs on. This member is present
+   * only for environments in the <i>Cluster</i> tier.</p>
+   */
+  inline const Cluster& GetCluster() const { return m_cluster; }
+  inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
+  template <typename ClusterT = Cluster>
+  void SetCluster(ClusterT&& value) {
+    m_clusterHasBeenSet = true;
+    m_cluster = std::forward<ClusterT>(value);
+  }
+  template <typename ClusterT = Cluster>
+  EnvironmentResourceDescription& WithCluster(ClusterT&& value) {
+    SetCluster(std::forward<ClusterT>(value));
     return *this;
   }
   ///@}
@@ -233,6 +253,8 @@ class EnvironmentResourceDescription {
 
   Aws::Vector<AutoScalingGroup> m_autoScalingGroups;
 
+  Cluster m_cluster;
+
   Aws::Vector<Instance> m_instances;
 
   Aws::Vector<LaunchConfiguration> m_launchConfigurations;
@@ -246,6 +268,7 @@ class EnvironmentResourceDescription {
   Aws::Vector<Queue> m_queues;
   bool m_environmentNameHasBeenSet = false;
   bool m_autoScalingGroupsHasBeenSet = false;
+  bool m_clusterHasBeenSet = false;
   bool m_instancesHasBeenSet = false;
   bool m_launchConfigurationsHasBeenSet = false;
   bool m_launchTemplatesHasBeenSet = false;

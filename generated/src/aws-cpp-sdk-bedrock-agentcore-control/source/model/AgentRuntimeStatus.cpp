@@ -21,6 +21,7 @@ static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
 static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
 static const int READY_HASH = HashingUtils::HashString("READY");
 static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+static const int DELETE_FAILED_HASH = HashingUtils::HashString("DELETE_FAILED");
 
 AgentRuntimeStatus GetAgentRuntimeStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +37,8 @@ AgentRuntimeStatus GetAgentRuntimeStatusForName(const Aws::String& name) {
     return AgentRuntimeStatus::READY;
   } else if (hashCode == DELETING_HASH) {
     return AgentRuntimeStatus::DELETING;
+  } else if (hashCode == DELETE_FAILED_HASH) {
+    return AgentRuntimeStatus::DELETE_FAILED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +65,8 @@ Aws::String GetNameForAgentRuntimeStatus(AgentRuntimeStatus enumValue) {
       return "READY";
     case AgentRuntimeStatus::DELETING:
       return "DELETING";
+    case AgentRuntimeStatus::DELETE_FAILED:
+      return "DELETE_FAILED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

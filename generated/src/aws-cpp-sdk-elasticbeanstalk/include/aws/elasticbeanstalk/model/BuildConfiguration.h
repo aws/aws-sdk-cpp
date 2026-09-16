@@ -21,7 +21,7 @@ namespace ElasticBeanstalk {
 namespace Model {
 
 /**
- * <p>Settings for an AWS CodeBuild build.</p><p><h3>See Also:</h3>   <a
+ * <p>Settings for an CodeBuild build.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/BuildConfiguration">AWS
  * API Reference</a></p>
  */
@@ -60,9 +60,9 @@ class BuildConfiguration {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-   * (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on
-   * behalf of the AWS account.</p>
+   * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+   * role that enables CodeBuild to interact with dependent Amazon Web Services
+   * service on behalf of the Amazon Web Services account.</p>
    */
   inline const Aws::String& GetCodeBuildServiceRole() const { return m_codeBuildServiceRole; }
   inline bool CodeBuildServiceRoleHasBeenSet() const { return m_codeBuildServiceRoleHasBeenSet; }
@@ -119,7 +119,7 @@ class BuildConfiguration {
 
   ///@{
   /**
-   * <p>How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until
+   * <p>How long in minutes, from 5 to 480 (8 hours), for CodeBuild to wait until
    * timing out any related build that does not get marked as completed. The default
    * is 60 minutes.</p>
    */

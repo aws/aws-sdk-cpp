@@ -39,6 +39,10 @@ Aws::String CreatePolicyRequest::SerializePayload() const {
     payload.WithObject("dataRecovery", m_dataRecovery.Jsonize());
   }
 
+  if (m_sharingEnabledHasBeenSet) {
+    payload.WithBool("sharingEnabled", m_sharingEnabled);
+  }
+
   if (m_kmsKeyIdHasBeenSet) {
     payload.WithString("kmsKeyId", m_kmsKeyId);
   }

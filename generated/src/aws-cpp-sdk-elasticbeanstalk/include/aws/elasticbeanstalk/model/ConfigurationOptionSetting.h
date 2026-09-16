@@ -23,7 +23,7 @@ namespace Model {
  * <p>A specification identifying an individual configuration option along with its
  * current value. For a list of possible namespaces and option values, see <a
  * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option
- * Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>. </p><p><h3>See
+ * Values</a> in the <i>Elastic Beanstalk Developer Guide</i>. </p><p><h3>See
  * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ConfigurationOptionSetting">AWS
  * API Reference</a></p>
@@ -59,7 +59,8 @@ class ConfigurationOptionSetting {
 
   ///@{
   /**
-   * <p>A unique namespace that identifies the option's associated AWS resource.</p>
+   * <p>A unique namespace that identifies the option's associated Amazon Web
+   * Services resource.</p>
    */
   inline const Aws::String& GetNamespace() const { return m_namespace; }
   inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace BedrockAgentCoreControl {
 namespace Model {
-enum class AgentRuntimeStatus { NOT_SET, CREATING, CREATE_FAILED, UPDATING, UPDATE_FAILED, READY, DELETING };
+enum class AgentRuntimeStatus { NOT_SET, CREATING, CREATE_FAILED, UPDATING, UPDATE_FAILED, READY, DELETING, DELETE_FAILED };
 
 namespace AgentRuntimeStatusMapper {
 AWS_BEDROCKAGENTCORECONTROL_API AgentRuntimeStatus GetAgentRuntimeStatusForName(const Aws::String& name);

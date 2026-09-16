@@ -17,18 +17,18 @@
 namespace Aws {
 namespace ElasticBeanstalk {
 /**
- * <fullname>AWS Elastic Beanstalk</fullname> <p>AWS Elastic Beanstalk makes it
- * easy for you to create, deploy, and manage scalable, fault-tolerant applications
- * running on the Amazon Web Services cloud.</p> <p>For more information about this
- * product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/">AWS Elastic
- * Beanstalk</a> details page. The location of the latest AWS Elastic Beanstalk
- * WSDL is <a
+ * <fullname>Elastic Beanstalk</fullname> <p>Elastic Beanstalk makes it easy for
+ * you to create, deploy, and manage scalable, fault-tolerant applications running
+ * on the Amazon Web Services Cloud.</p> <p>For more information about this
+ * product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/">Elastic
+ * Beanstalk</a> details page. The location of the latest Elastic Beanstalk WSDL is
+ * <a
  * href="https://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">https://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>.
  * To install the Software Development Kits (SDKs), Integrated Development
  * Environment (IDE) Toolkits, and command line tools that enable you to access the
  * API, go to <a href="http://aws.amazon.com/tools/">Tools for Amazon Web
  * Services</a>.</p> <p> <b>Endpoints</b> </p> <p>For a list of region-specific
- * endpoints that AWS Elastic Beanstalk supports, go to <a
+ * endpoints that Elastic Beanstalk supports, go to <a
  * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">Regions
  * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p>
  */
@@ -159,12 +159,11 @@ class AWS_ELASTICBEANSTALK_API ElasticBeanstalkClient : public Aws::Client::AWSX
   }
 
   /**
-   * <p>Add or change the operations role used by an environment. After this call is
-   * made, Elastic Beanstalk uses the associated operations role for permissions to
-   * downstream services during subsequent calls acting on this environment. For more
-   * information, see <a
-   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
-   * roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p><p><h3>See
+   *  <p>The operations role feature of Elastic Beanstalk is in beta
+   * release and is subject to change.</p>  <p>Add or change the
+   * operations role used by an environment. After this call is made, Elastic
+   * Beanstalk uses the associated operations role for permissions to downstream
+   * services during subsequent calls acting on this environment.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AssociateEnvironmentOperationsRole">AWS
    * API Reference</a></p>
@@ -281,18 +280,18 @@ class AWS_ELASTICBEANSTALK_API ElasticBeanstalkClient : public Aws::Client::AWSX
 
   /**
    * <p>Creates an application version for the specified application. You can create
-   * an application version from a source bundle in Amazon S3, a commit in AWS
-   * CodeCommit, or the output of an AWS CodeBuild build as follows:</p> <p>Specify a
-   * commit in an AWS CodeCommit repository with
-   * <code>SourceBuildInformation</code>.</p> <p>Specify a build in an AWS CodeBuild
-   * with <code>SourceBuildInformation</code> and
-   * <code>BuildConfiguration</code>.</p> <p>Specify a source bundle in S3 with
-   * <code>SourceBundle</code> </p> <p>Omit both <code>SourceBuildInformation</code>
-   * and <code>SourceBundle</code> to use the default sample application.</p>
-   * <p>After you create an application version with a specified Amazon S3 bucket and
-   * key location, you can't change that Amazon S3 location. If you change the Amazon
-   * S3 location, you receive an exception when you attempt to launch an environment
-   * from the application version.</p> <p><h3>See Also:</h3>   <a
+   * an application version from a source bundle in Amazon S3, a commit in
+   * CodeCommit, or the output of an CodeBuild build as follows:</p> <p>Specify a
+   * commit in an CodeCommit repository with <code>SourceBuildInformation</code>.</p>
+   * <p>Specify a build in an CodeBuild with <code>SourceBuildInformation</code> and
+   * <code>BuildConfiguration</code>.</p> <p>Specify a source bundle in Amazon S3
+   * with <code>SourceBundle</code> </p> <p>Omit both
+   * <code>SourceBuildInformation</code> and <code>SourceBundle</code> to use the
+   * default sample application.</p>  <p>After you create an application
+   * version with a specified Amazon S3 bucket and key location, you can't change
+   * that Amazon S3 location. If you change the Amazon S3 location, you receive an
+   * exception when you attempt to launch an environment from the application
+   * version.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplicationVersion">AWS
    * API Reference</a></p>
    */
@@ -319,7 +318,7 @@ class AWS_ELASTICBEANSTALK_API ElasticBeanstalkClient : public Aws::Client::AWSX
   }
 
   /**
-   * <p>Creates an AWS Elastic Beanstalk configuration template, associated with a
+   * <p>Creates an Elastic Beanstalk configuration template, associated with a
    * specific Elastic Beanstalk application. You define application configuration
    * settings in a configuration template. You can then use the configuration
    * template to deploy different versions of the application with the same
@@ -357,8 +356,8 @@ class AWS_ELASTICBEANSTALK_API ElasticBeanstalkClient : public Aws::Client::AWSX
   }
 
   /**
-   * <p>Launches an AWS Elastic Beanstalk environment for the specified application
-   * using the specified configuration.</p><p><h3>See Also:</h3>   <a
+   * <p>Launches an Elastic Beanstalk environment for the specified application using
+   * the specified configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateEnvironment">AWS
    * API Reference</a></p>
    */
@@ -596,9 +595,25 @@ class AWS_ELASTICBEANSTALK_API ElasticBeanstalkClient : public Aws::Client::AWSX
   }
 
   /**
-   * <p>Returns attributes related to AWS Elastic Beanstalk that are associated with
-   * the calling AWS account.</p> <p>The result currently has one set of
-   * attributes—resource quotas.</p><p><h3>See Also:</h3>   <a
+   * <p>Returns attributes related to Elastic Beanstalk that are associated with the
+   * calling Amazon Web Services account.</p> <p>The result currently has one set of
+   * attributes—resource quotas.</p> <p>This action only returns information about
+   * resources that the calling principle has IAM permissions to access. For example,
+   * consider a case where a user only has permission to access one of three
+   * resources. When the user calls the this action, the response will only include
+   * the one resource that the user has permission to access instead of all three
+   * resources. If the user doesn’t have access to any of the resources an empty
+   * result is returned.</p>  <p>The <a
+   * href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+   * managed policy allows operators to view information about resources related to
+   * Elastic Beanstalk. For more information, see <a
+   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+   * Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk
+   * Developer Guide</i>. For detailed instructions to attach a policy to a user or
+   * group, see the section <a
+   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+   * Controlling access with managed policies</a> in the same topic.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeAccountAttributes">AWS
    * API Reference</a></p>
    */
@@ -627,7 +642,23 @@ class AWS_ELASTICBEANSTALK_API ElasticBeanstalkClient : public Aws::Client::AWSX
   }
 
   /**
-   * <p>Retrieve a list of application versions.</p><p><h3>See Also:</h3>   <a
+   * <p>Retrieve a list of application versions.</p> <p>This action only returns
+   * information about resources that the calling principle has IAM permissions to
+   * access. For example, consider a case where a user only has permission to access
+   * one of three resources. When the user calls the this action, the response will
+   * only include the one resource that the user has permission to access instead of
+   * all three resources. If the user doesn’t have access to any of the resources an
+   * empty result is returned.</p>  <p>The <a
+   * href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+   * managed policy allows operators to view information about resources related to
+   * Elastic Beanstalk. For more information, see <a
+   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+   * Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk
+   * Developer Guide</i>. For detailed instructions to attach a policy to a user or
+   * group, see the section <a
+   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+   * Controlling access with managed policies</a> in the same topic.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplicationVersions">AWS
    * API Reference</a></p>
    */
@@ -656,8 +687,23 @@ class AWS_ELASTICBEANSTALK_API ElasticBeanstalkClient : public Aws::Client::AWSX
   }
 
   /**
-   * <p>Returns the descriptions of existing applications.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Returns the descriptions of existing applications.</p> <p>This action only
+   * returns information about applications that the calling principle has IAM
+   * permissions to access. For example, consider a case where a user only has
+   * permission to access two of three applications. When the user calls the
+   * <i>DescribeApplications</i> action, the response will only include the two
+   * applications that the user has permission to access instead of all three
+   * applications. If the user doesn’t have access to any of the applications an
+   * empty result is returned.</p>  <p>The <i>AWSElasticBeanstalkReadOnly</i>
+   * managed policy allows operators to view information about resources related to
+   * Elastic Beanstalk environments. For more information, see <a
+   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+   * Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk
+   * Developer Guide</i>. For detailed instructions to attach a policy to a user or
+   * group, see the section <a
+   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+   * Controlling access with managed policies</a> in the same topic.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplications">AWS
    * API Reference</a></p>
    */
@@ -688,7 +734,23 @@ class AWS_ELASTICBEANSTALK_API ElasticBeanstalkClient : public Aws::Client::AWSX
    * configuration template or environment, or that a specified solution stack
    * defines. The description includes the values the options, their default values,
    * and an indication of the required action on a running environment if an option
-   * value is changed.</p><p><h3>See Also:</h3>   <a
+   * value is changed.</p> <p>This action only returns information about resources
+   * that the calling principle has IAM permissions to access. For example, consider
+   * a case where a user only has permission to access one of three resources. When
+   * the user calls the this action, the response will only include the one resource
+   * that the user has permission to access instead of all three resources. If the
+   * user doesn’t have access to any of the resources an empty result is
+   * returned.</p>  <p>The <a
+   * href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+   * managed policy allows operators to view information about resources related to
+   * Elastic Beanstalk. For more information, see <a
+   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+   * Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk
+   * Developer Guide</i>. For detailed instructions to attach a policy to a user or
+   * group, see the section <a
+   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+   * Controlling access with managed policies</a> in the same topic.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationOptions">AWS
    * API Reference</a></p>
    */
@@ -723,9 +785,24 @@ class AWS_ELASTICBEANSTALK_API ElasticBeanstalkClient : public Aws::Client::AWSX
    * configuration set associated with a running environment, it is possible to
    * receive two sets of setting descriptions. One is the deployed configuration set,
    * and the other is a draft configuration of an environment that is either in the
-   * process of deployment or that failed to deploy.</p> <p>Related Topics</p> <ul>
-   * <li> <p> <a>DeleteEnvironmentConfiguration</a> </p> </li> </ul><p><h3>See
-   * Also:</h3>   <a
+   * process of deployment or that failed to deploy.</p> <p>This action only returns
+   * information about resources that the calling principle has IAM permissions to
+   * access. For example, consider a case where a user only has permission to access
+   * one of three resources. When the user calls the this action, the response will
+   * only include the one resource that the user has permission to access instead of
+   * all three resources. If the user doesn’t have access to any of the resources an
+   * empty result is returned.</p>  <p>The <a
+   * href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+   * managed policy allows operators to view information about resources related to
+   * Elastic Beanstalk. For more information, see <a
+   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+   * Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk
+   * Developer Guide</i>. For detailed instructions to attach a policy to a user or
+   * group, see the section <a
+   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+   * Controlling access with managed policies</a> in the same topic.</p>
+   * <p>Related Topics</p> <ul> <li> <p> <a>DeleteEnvironmentConfiguration</a> </p>
+   * </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationSettings">AWS
    * API Reference</a></p>
    */
@@ -755,8 +832,24 @@ class AWS_ELASTICBEANSTALK_API ElasticBeanstalkClient : public Aws::Client::AWSX
 
   /**
    * <p>Returns information about the overall health of the specified environment.
-   * The <b>DescribeEnvironmentHealth</b> operation is only available with AWS
-   * Elastic Beanstalk Enhanced Health.</p><p><h3>See Also:</h3>   <a
+   * The <b>DescribeEnvironmentHealth</b> operation is only available with Elastic
+   * Beanstalk Enhanced Health.</p> <p>This action only returns information about
+   * environments that the calling principle has IAM permissions to access. For
+   * example, consider a case where a user only has permission to access one of three
+   * environments. When the user calls this action, the response will only include
+   * the one environment that the user has permission to access instead of all three
+   * environments. If the user doesn’t have access to any of the environments an
+   * empty result is returned.</p>  <p>The <a
+   * href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+   * managed policy allows operators to view information about resources related to
+   * Elastic Beanstalk environments. For more information, see <a
+   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+   * Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk
+   * Developer Guide</i>. For detailed instructions to attach a policy to a user or
+   * group, see the section <a
+   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+   * Controlling access with managed policies</a> in the same topic.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentHealth">AWS
    * API Reference</a></p>
    */
@@ -815,8 +908,24 @@ class AWS_ELASTICBEANSTALK_API ElasticBeanstalkClient : public Aws::Client::AWSX
   }
 
   /**
-   * <p>Lists an environment's upcoming and in-progress managed
-   * actions.</p><p><h3>See Also:</h3>   <a
+   * <p>Lists an environment's upcoming and in-progress managed actions.</p> <p>This
+   * action only returns information about environments that the calling principle
+   * has IAM permissions to access. For example, consider a case where a user only
+   * has permission to access one of three environments. When the user calls this
+   * action, the response will only include the one environment that the user has
+   * permission to access instead of all three environments. If the user doesn’t have
+   * access to any of the environments an empty result is returned.</p>  <p>The
+   * <a
+   * href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+   * managed policy allows operators to view information about resources related to
+   * Elastic Beanstalk environments. For more information, see <a
+   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+   * Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk
+   * Developer Guide</i>. For detailed instructions to attach a policy to a user or
+   * group, see the section <a
+   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+   * Controlling access with managed policies</a> in the same topic.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActions">AWS
    * API Reference</a></p>
    */
@@ -845,7 +954,8 @@ class AWS_ELASTICBEANSTALK_API ElasticBeanstalkClient : public Aws::Client::AWSX
   }
 
   /**
-   * <p>Returns AWS resources for this environment.</p><p><h3>See Also:</h3>   <a
+   * <p>Returns Amazon Web Services resources for this environment.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentResources">AWS
    * API Reference</a></p>
    */
@@ -874,7 +984,24 @@ class AWS_ELASTICBEANSTALK_API ElasticBeanstalkClient : public Aws::Client::AWSX
   }
 
   /**
-   * <p>Returns descriptions for existing environments.</p><p><h3>See Also:</h3>   <a
+   * <p>Returns descriptions for existing environments.</p> <p>This action only
+   * returns information about environments that the calling principle has IAM
+   * permissions to access. For example, consider a case where a user only has
+   * permission to access one of three environments. When the user calls the
+   * <i>DescribeEnvironments</i> action, the response will only include the one
+   * environment that the user has permission to access instead of all three
+   * environments. If the user doesn’t have access to any of the environments an
+   * empty result is returned.</p>  <p>The <a
+   * href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+   * managed policy allows operators to view information about resources related to
+   * Elastic Beanstalk environments. For more information, see <a
+   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+   * Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk
+   * Developer Guide</i>. For detailed instructions to attach a policy to a user or
+   * group, see the section <a
+   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+   * Controlling access with managed policies</a> in the same topic.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironments">AWS
    * API Reference</a></p>
    */
@@ -902,8 +1029,24 @@ class AWS_ELASTICBEANSTALK_API ElasticBeanstalkClient : public Aws::Client::AWSX
 
   /**
    * <p>Returns list of event descriptions matching criteria up to the last 6
-   * weeks.</p>  <p>This action returns the most recent 1,000 events from the
-   * specified <code>NextToken</code>.</p> <p><h3>See Also:</h3>   <a
+   * weeks.</p> <p>This action returns the most recent 1,000 events from the
+   * specified <code>NextToken</code>.</p> <p>This action only returns information
+   * about resources that the calling principle has IAM permissions to access. For
+   * example, consider a case where a user only has permission to access one of three
+   * resources. When the user calls the this action, the response will only include
+   * the one resource that the user has permission to access instead of all three
+   * resources. If the user doesn’t have access to any of the resources an empty
+   * result is returned.</p>  <p>The <a
+   * href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+   * managed policy allows operators to view information about resources related to
+   * Elastic Beanstalk. For more information, see <a
+   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+   * Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk
+   * Developer Guide</i>. For detailed instructions to attach a policy to a user or
+   * group, see the section <a
+   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+   * Controlling access with managed policies</a> in the same topic.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEvents">AWS
    * API Reference</a></p>
    */
@@ -929,10 +1072,26 @@ class AWS_ELASTICBEANSTALK_API ElasticBeanstalkClient : public Aws::Client::AWSX
   }
 
   /**
-   * <p>Retrieves detailed information about the health of instances in your AWS
-   * Elastic Beanstalk. This operation requires <a
+   * <p>Retrieves detailed information about the health of instances in your Elastic
+   * Beanstalk environments. This operation requires <a
    * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced
-   * health reporting</a>.</p><p><h3>See Also:</h3>   <a
+   * health reporting</a>.</p> <p>This action only returns information about
+   * environments that the calling principle has IAM permissions to access. For
+   * example, consider a case where a user only has permission to access one of three
+   * environments. When the user calls this action, the response will only include
+   * the one environment that the user has permission to access instead of all three
+   * environments. If the user doesn’t have access to any of the environments an
+   * empty result is returned.</p>  <p>The <a
+   * href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+   * managed policy allows operators to view information about resources related to
+   * Elastic Beanstalk environments. For more information, see <a
+   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+   * Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk
+   * Developer Guide</i>. For detailed instructions to attach a policy to a user or
+   * group, see the section <a
+   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+   * Controlling access with managed policies</a> in the same topic.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeInstancesHealth">AWS
    * API Reference</a></p>
    */
@@ -963,8 +1122,24 @@ class AWS_ELASTICBEANSTALK_API ElasticBeanstalkClient : public Aws::Client::AWSX
    * <a>ListPlatformVersions</a>, which provides summary information about a list of
    * platform versions.</p> <p>For definitions of platform version and other
    * platform-related terms, see <a
-   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS
-   * Elastic Beanstalk Platforms Glossary</a>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">Elastic
+   * Beanstalk Platforms Glossary</a>.</p> <p>This action only returns information
+   * about resources that the calling principle has IAM permissions to access. For
+   * example, consider a case where a user only has permission to access one of three
+   * resources. When the user calls the this action, the response will only include
+   * the one resource that the user has permission to access instead of all three
+   * resources. If the user doesn’t have access to any of the resources an empty
+   * result is returned.</p>  <p>The <a
+   * href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+   * managed policy allows operators to view information about resources related to
+   * Elastic Beanstalk. For more information, see <a
+   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+   * Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk
+   * Developer Guide</i>. For detailed instructions to attach a policy to a user or
+   * group, see the section <a
+   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+   * Controlling access with managed policies</a> in the same topic.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribePlatformVersion">AWS
    * API Reference</a></p>
    */
@@ -991,13 +1166,11 @@ class AWS_ELASTICBEANSTALK_API ElasticBeanstalkClient : public Aws::Client::AWSX
   }
 
   /**
-   * <p>Disassociate the operations role from an environment. After this call is
-   * made, Elastic Beanstalk uses the caller's permissions for permissions to
-   * downstream services during subsequent calls acting on this environment. For more
-   * information, see <a
-   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
-   * roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p><p><h3>See
-   * Also:</h3>   <a
+   *  <p>The operations role feature of Elastic Beanstalk is in beta
+   * release and is subject to change.</p>  <p>Disassociate the
+   * operations role from an environment. After this call is made, Elastic Beanstalk
+   * uses the caller's permissions for permissions to downstream services during
+   * subsequent calls acting on this environment.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DisassociateEnvironmentOperationsRole">AWS
    * API Reference</a></p>
    */
@@ -1027,7 +1200,23 @@ class AWS_ELASTICBEANSTALK_API ElasticBeanstalkClient : public Aws::Client::AWSX
 
   /**
    * <p>Returns a list of the available solution stack names, with the public version
-   * first and then in reverse chronological order.</p><p><h3>See Also:</h3>   <a
+   * first and then in reverse chronological order.</p> <p>This action only returns
+   * information about resources that the calling principle has IAM permissions to
+   * access. For example, consider a case where a user only has permission to access
+   * one of three resources. When the user calls the this action, the response will
+   * only include the one resource that the user has permission to access instead of
+   * all three resources. If the user doesn’t have access to any of the resources an
+   * empty result is returned.</p>  <p>The <a
+   * href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+   * managed policy allows operators to view information about resources related to
+   * Elastic Beanstalk. For more information, see <a
+   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+   * Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk
+   * Developer Guide</i>. For detailed instructions to attach a policy to a user or
+   * group, see the section <a
+   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+   * Controlling access with managed policies</a> in the same topic.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListAvailableSolutionStacks">AWS
    * API Reference</a></p>
    */
@@ -1056,11 +1245,27 @@ class AWS_ELASTICBEANSTALK_API ElasticBeanstalkClient : public Aws::Client::AWSX
   }
 
   /**
-   * <p>Lists the platform branches available for your account in an AWS Region.
-   * Provides summary information about each platform branch.</p> <p>For definitions
-   * of platform branch and other platform-related terms, see <a
-   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS
-   * Elastic Beanstalk Platforms Glossary</a>.</p><p><h3>See Also:</h3>   <a
+   * <p>Lists the platform branches available for your account in an Amazon Web
+   * Services Region. Provides summary information about each platform branch.</p>
+   * <p>For definitions of platform branch and other platform-related terms, see <a
+   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">Elastic
+   * Beanstalk Platforms Glossary</a>.</p> <p>This action only returns information
+   * about resources that the calling principle has IAM permissions to access. For
+   * example, consider a case where a user only has permission to access one of three
+   * resources. When the user calls the this action, the response will only include
+   * the one resource that the user has permission to access instead of all three
+   * resources. If the user doesn’t have access to any of the resources an empty
+   * result is returned.</p>  <p>The <a
+   * href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+   * managed policy allows operators to view information about resources related to
+   * Elastic Beanstalk. For more information, see <a
+   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+   * Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk
+   * Developer Guide</i>. For detailed instructions to attach a policy to a user or
+   * group, see the section <a
+   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+   * Controlling access with managed policies</a> in the same topic.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformBranches">AWS
    * API Reference</a></p>
    */
@@ -1087,13 +1292,28 @@ class AWS_ELASTICBEANSTALK_API ElasticBeanstalkClient : public Aws::Client::AWSX
   }
 
   /**
-   * <p>Lists the platform versions available for your account in an AWS Region.
-   * Provides summary information about each platform version. Compare to
-   * <a>DescribePlatformVersion</a>, which provides full details about a single
-   * platform version.</p> <p>For definitions of platform version and other
-   * platform-related terms, see <a
-   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS
-   * Elastic Beanstalk Platforms Glossary</a>.</p><p><h3>See Also:</h3>   <a
+   * <p>Lists the platform versions available for your account in an Amazon Web
+   * Services Region. Provides summary information about each platform version.
+   * Compare to <a>DescribePlatformVersion</a>, which provides full details about a
+   * single platform version.</p> <p>This action only returns information about
+   * platform versions that the calling principle has IAM permissions to access. For
+   * example, consider a case where a user only has permission to access one of ten
+   * platform versions. When the user calls the <i>ListPlatformVersions</i> action,
+   * the response will only include the one platform version that the user has
+   * permission to access instead of all ten platform versions. If the user doesn’t
+   * have access to any of the platform versions an empty result is returned.</p>
+   *  <p>The <i>AWSElasticBeanstalkReadOnly</i> managed policy allows operators
+   * to view information about resources related to Elastic Beanstalk environments.
+   * For more information, see <a
+   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+   * Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk
+   * Developer Guide</i>. For detailed instructions to attach a policy to a user or
+   * group, see the section <a
+   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+   * Controlling access with managed policies</a> in the same topic.</p>
+   * <p>For definitions of platform version and other platform-related terms, see <a
+   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">Elastic
+   * Beanstalk Platforms Glossary</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformVersions">AWS
    * API Reference</a></p>
    */
@@ -1120,11 +1340,27 @@ class AWS_ELASTICBEANSTALK_API ElasticBeanstalkClient : public Aws::Client::AWSX
   }
 
   /**
-   * <p>Return the tags applied to an AWS Elastic Beanstalk resource. The response
+   * <p>Return the tags applied to an Elastic Beanstalk resource. The response
    * contains a list of tag key-value pairs.</p> <p>Elastic Beanstalk supports
    * tagging of all of its resources. For details about resource tagging, see <a
    * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/applications-tagging-resources.html">Tagging
-   * Application Resources</a>.</p><p><h3>See Also:</h3>   <a
+   * Application Resources</a>.</p> <p>This action only returns information about
+   * resources that the calling principle has IAM permissions to access. For example,
+   * consider a case where a user only has permission to access one of three
+   * resources. When the user calls the this action, the response will only include
+   * the one resource that the user has permission to access instead of all three
+   * resources. If the user doesn’t have access to any of the resources an empty
+   * result is returned.</p>  <p>The <a
+   * href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+   * managed policy allows operators to view information about resources related to
+   * Elastic Beanstalk. For more information, see <a
+   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+   * Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk
+   * Developer Guide</i>. For detailed instructions to attach a policy to a user or
+   * group, see the section <a
+   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+   * Controlling access with managed policies</a> in the same topic.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListTagsForResource">AWS
    * API Reference</a></p>
    */
@@ -1150,9 +1386,9 @@ class AWS_ELASTICBEANSTALK_API ElasticBeanstalkClient : public Aws::Client::AWSX
   }
 
   /**
-   * <p>Deletes and recreates all of the AWS resources (for example: the Auto Scaling
-   * group, load balancer, etc.) for a specified environment and forces a
-   * restart.</p><p><h3>See Also:</h3>   <a
+   * <p>Deletes and recreates all of the Amazon Web Services resources (for example:
+   * the Auto Scaling group, load balancer, etc.) for a specified environment and
+   * forces a restart.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RebuildEnvironment">AWS
    * API Reference</a></p>
    */
@@ -1454,7 +1690,7 @@ class AWS_ELASTICBEANSTALK_API ElasticBeanstalkClient : public Aws::Client::AWSX
    * <p>Updates the environment description, deploys a new application version,
    * updates the configuration settings to an entirely new configuration template, or
    * updates select configuration option values in the running environment.</p> <p>
-   * Attempting to update both the release and configuration is not allowed and AWS
+   * Attempting to update both the release and configuration is not allowed and
    * Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error.
    * </p> <p> When updating the configuration settings to a new template or
    * individual settings, a draft configuration is created and
@@ -1487,14 +1723,14 @@ class AWS_ELASTICBEANSTALK_API ElasticBeanstalkClient : public Aws::Client::AWSX
   }
 
   /**
-   * <p>Update the list of tags applied to an AWS Elastic Beanstalk resource. Two
-   * lists can be passed: <code>TagsToAdd</code> for tags to add or update, and
+   * <p>Update the list of tags applied to an Elastic Beanstalk resource. Two lists
+   * can be passed: <code>TagsToAdd</code> for tags to add or update, and
    * <code>TagsToRemove</code>.</p> <p>Elastic Beanstalk supports tagging of all of
    * its resources. For details about resource tagging, see <a
    * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/applications-tagging-resources.html">Tagging
-   * Application Resources</a>.</p> <p>If you create a custom IAM user policy to
-   * control permission to this operation, specify one of the following two virtual
-   * actions (or both) instead of the API operation name:</p> <dl>
+   * Application Resources</a>.</p> <p>If you create a custom policy to control
+   * permission to this operation, specify one of the following two virtual actions
+   * (or both) instead of the API operation name:</p> <dl>
    * <dt>elasticbeanstalk:AddTags</dt> <dd> <p>Controls permission to call
    * <code>UpdateTagsForResource</code> and pass a list of tags to add in the
    * <code>TagsToAdd</code> parameter.</p> </dd> <dt>elasticbeanstalk:RemoveTags</dt>

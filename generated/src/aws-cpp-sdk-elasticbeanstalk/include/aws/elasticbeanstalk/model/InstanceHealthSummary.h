@@ -36,8 +36,8 @@ class InstanceHealthSummary {
 
   ///@{
   /**
-   * <p> <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no
-   * data on an instance.</p>
+   * <p> <b>Grey.</b> Elastic Beanstalk and the health agent are reporting no data on
+   * an instance.</p>
    */
   inline int GetNoData() const { return m_noData; }
   inline bool NoDataHasBeenSet() const { return m_noDataHasBeenSet; }
@@ -53,7 +53,7 @@ class InstanceHealthSummary {
 
   ///@{
   /**
-   * <p> <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an
+   * <p> <b>Grey.</b> Elastic Beanstalk and the health agent are reporting an
    * insufficient amount of data on an instance.</p>
    */
   inline int GetUnknown() const { return m_unknown; }

@@ -124,6 +124,7 @@
 #include <aws/customer-profiles/model/PutProfileObjectTypeResult.h>
 #include <aws/customer-profiles/model/PutSegmentSubscriptionResult.h>
 #include <aws/customer-profiles/model/SearchProfilesResult.h>
+#include <aws/customer-profiles/model/SearchRecommendationsResult.h>
 #include <aws/customer-profiles/model/StartRecommenderResult.h>
 #include <aws/customer-profiles/model/StartUploadJobResult.h>
 #include <aws/customer-profiles/model/StopRecommenderResult.h>
@@ -271,6 +272,7 @@ class PutProfileObjectRequest;
 class PutProfileObjectTypeRequest;
 class PutSegmentSubscriptionRequest;
 class SearchProfilesRequest;
+class SearchRecommendationsRequest;
 class StartRecommenderRequest;
 class StartUploadJobRequest;
 class StopRecommenderRequest;
@@ -389,6 +391,7 @@ typedef Aws::Utils::Outcome<PutProfileObjectResult, CustomerProfilesError> PutPr
 typedef Aws::Utils::Outcome<PutProfileObjectTypeResult, CustomerProfilesError> PutProfileObjectTypeOutcome;
 typedef Aws::Utils::Outcome<PutSegmentSubscriptionResult, CustomerProfilesError> PutSegmentSubscriptionOutcome;
 typedef Aws::Utils::Outcome<SearchProfilesResult, CustomerProfilesError> SearchProfilesOutcome;
+typedef Aws::Utils::Outcome<SearchRecommendationsResult, CustomerProfilesError> SearchRecommendationsOutcome;
 typedef Aws::Utils::Outcome<StartRecommenderResult, CustomerProfilesError> StartRecommenderOutcome;
 typedef Aws::Utils::Outcome<StartUploadJobResult, CustomerProfilesError> StartUploadJobOutcome;
 typedef Aws::Utils::Outcome<StopRecommenderResult, CustomerProfilesError> StopRecommenderOutcome;
@@ -506,6 +509,7 @@ typedef std::future<PutProfileObjectOutcome> PutProfileObjectOutcomeCallable;
 typedef std::future<PutProfileObjectTypeOutcome> PutProfileObjectTypeOutcomeCallable;
 typedef std::future<PutSegmentSubscriptionOutcome> PutSegmentSubscriptionOutcomeCallable;
 typedef std::future<SearchProfilesOutcome> SearchProfilesOutcomeCallable;
+typedef std::future<SearchRecommendationsOutcome> SearchRecommendationsOutcomeCallable;
 typedef std::future<StartRecommenderOutcome> StartRecommenderOutcomeCallable;
 typedef std::future<StartUploadJobOutcome> StartUploadJobOutcomeCallable;
 typedef std::future<StopRecommenderOutcome> StopRecommenderOutcomeCallable;
@@ -843,6 +847,9 @@ typedef std::function<void(const CustomerProfilesClient*, const Model::PutSegmen
 typedef std::function<void(const CustomerProfilesClient*, const Model::SearchProfilesRequest&, const Model::SearchProfilesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SearchProfilesResponseReceivedHandler;
+typedef std::function<void(const CustomerProfilesClient*, const Model::SearchRecommendationsRequest&,
+                           const Model::SearchRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    SearchRecommendationsResponseReceivedHandler;
 typedef std::function<void(const CustomerProfilesClient*, const Model::StartRecommenderRequest&, const Model::StartRecommenderOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartRecommenderResponseReceivedHandler;

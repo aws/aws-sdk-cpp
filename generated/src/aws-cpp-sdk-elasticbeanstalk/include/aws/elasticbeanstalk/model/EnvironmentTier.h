@@ -37,8 +37,10 @@ class EnvironmentTier {
   ///@{
   /**
    * <p>The name of this environment tier.</p> <p>Valid values:</p> <ul> <li> <p>For
-   * <i>Web server tier</i> – <code>WebServer</code> </p> </li> <li> <p>For <i>Worker
-   * tier</i> – <code>Worker</code> </p> </li> </ul>
+   * <i>Standard-mode EC2-based web server</i> – <code>WebServer</code> </p> </li>
+   * <li> <p>For <i>Standard-mode EC2-based backend application with Amazon SQS</i> –
+   * <code>Worker</code> </p> </li> <li> <p>For <i>Cluster-mode Amazon EKS-based
+   * applications</i> – <code>Cluster</code> </p> </li> </ul>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -58,7 +60,8 @@ class EnvironmentTier {
   /**
    * <p>The type of this environment tier.</p> <p>Valid values:</p> <ul> <li> <p>For
    * <i>Web server tier</i> – <code>Standard</code> </p> </li> <li> <p>For <i>Worker
-   * tier</i> – <code>SQS/HTTP</code> </p> </li> </ul>
+   * tier</i> – <code>SQS/HTTP</code> </p> </li> <li> <p>For <i>Cluster tier</i> –
+   * <code>EKS</code> </p> </li> </ul>
    */
   inline const Aws::String& GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

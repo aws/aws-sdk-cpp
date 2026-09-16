@@ -605,6 +605,38 @@ class AWS_RESILIENCEHUBV2_API Resiliencehubv2Client : public Aws::Client::AWSJso
   }
 
   /**
+   * <p>Retrieves the dependency insights generated for a service. The response
+   * reports the current generation status; insights are populated once generation
+   * has completed. If generation failed, the response includes an error code, whose
+   * possible values are listed under the response's errorCode field, and a message
+   * describing the cause. To use this operation, you must have the
+   * <code>resiliencehub:GetDependencyInsights</code> permission on the
+   * service.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/GetDependencyInsights">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetDependencyInsightsOutcome GetDependencyInsights(const Model::GetDependencyInsightsRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetDependencyInsights that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetDependencyInsightsRequestT = Model::GetDependencyInsightsRequest>
+  Model::GetDependencyInsightsOutcomeCallable GetDependencyInsightsCallable(const GetDependencyInsightsRequestT& request) const {
+    return SubmitCallable(&Resiliencehubv2Client::GetDependencyInsights, request);
+  }
+
+  /**
+   * An Async wrapper for GetDependencyInsights that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetDependencyInsightsRequestT = Model::GetDependencyInsightsRequest>
+  void GetDependencyInsightsAsync(const GetDependencyInsightsRequestT& request, const GetDependencyInsightsResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&Resiliencehubv2Client::GetDependencyInsights, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves a finding by findingId.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/GetFailureModeFinding">AWS
    * API Reference</a></p>
@@ -1017,6 +1049,34 @@ class AWS_RESILIENCEHUBV2_API Resiliencehubv2Client : public Aws::Client::AWSJso
                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                          const ListPoliciesRequestT& request = {}) const {
     return SubmitAsync(&Resiliencehubv2Client::ListPolicies, request, handler, context);
+  }
+
+  /**
+   * <p>Lists events for a resilience policy, including services that started or
+   * stopped using it, changes to cross-account sharing, and deletion of the
+   * policy.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/ListPolicyEvents">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListPolicyEventsOutcome ListPolicyEvents(const Model::ListPolicyEventsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListPolicyEvents that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListPolicyEventsRequestT = Model::ListPolicyEventsRequest>
+  Model::ListPolicyEventsOutcomeCallable ListPolicyEventsCallable(const ListPolicyEventsRequestT& request) const {
+    return SubmitCallable(&Resiliencehubv2Client::ListPolicyEvents, request);
+  }
+
+  /**
+   * An Async wrapper for ListPolicyEvents that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListPolicyEventsRequestT = Model::ListPolicyEventsRequest>
+  void ListPolicyEventsAsync(const ListPolicyEventsRequestT& request, const ListPolicyEventsResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&Resiliencehubv2Client::ListPolicyEvents, request, handler, context);
   }
 
   /**
@@ -1553,6 +1613,37 @@ class AWS_RESILIENCEHUBV2_API Resiliencehubv2Client : public Aws::Client::AWSJso
   void PutTestSourcesAsync(const PutTestSourcesRequestT& request, const PutTestSourcesResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&Resiliencehubv2Client::PutTestSources, request, handler, context);
+  }
+
+  /**
+   * <p>Starts generating dependency insights for a service. Generation runs
+   * asynchronously; the response returns the initial status, and you retrieve the
+   * results with GetDependencyInsights. To use this operation, you must have the
+   * <code>resiliencehub:StartDependencyInsights</code> permission on the
+   * service.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/StartDependencyInsights">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartDependencyInsightsOutcome StartDependencyInsights(const Model::StartDependencyInsightsRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartDependencyInsights that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartDependencyInsightsRequestT = Model::StartDependencyInsightsRequest>
+  Model::StartDependencyInsightsOutcomeCallable StartDependencyInsightsCallable(const StartDependencyInsightsRequestT& request) const {
+    return SubmitCallable(&Resiliencehubv2Client::StartDependencyInsights, request);
+  }
+
+  /**
+   * An Async wrapper for StartDependencyInsights that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StartDependencyInsightsRequestT = Model::StartDependencyInsightsRequest>
+  void StartDependencyInsightsAsync(const StartDependencyInsightsRequestT& request,
+                                    const StartDependencyInsightsResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&Resiliencehubv2Client::StartDependencyInsights, request, handler, context);
   }
 
   /**

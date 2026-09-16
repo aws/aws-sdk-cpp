@@ -17,9 +17,9 @@ namespace ElasticBeanstalk {
 namespace Model {
 
 /**
- * <p>The AWS Elastic Beanstalk quota information for a single resource type in an
- * AWS account. It reflects the resource's limits for this account.</p><p><h3>See
- * Also:</h3>   <a
+ * <p>The Elastic Beanstalk quota information for a single resource type in an
+ * Amazon Web Services account. It reflects the resource's limits for this
+ * account.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ResourceQuota">AWS
  * API Reference</a></p>
  */
@@ -36,7 +36,7 @@ class ResourceQuota {
   ///@{
   /**
    * <p>The maximum number of instances of this Elastic Beanstalk resource type that
-   * an AWS account can use.</p>
+   * an Amazon Web Services account can use.</p>
    */
   inline int GetMaximum() const { return m_maximum; }
   inline bool MaximumHasBeenSet() const { return m_maximumHasBeenSet; }

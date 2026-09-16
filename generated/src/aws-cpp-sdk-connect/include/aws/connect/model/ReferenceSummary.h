@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/AttachmentReference.h>
+#include <aws/connect/model/ContactAnalysisReference.h>
 #include <aws/connect/model/DateReference.h>
 #include <aws/connect/model/EmailMessageReference.h>
 #include <aws/connect/model/EmailReference.h>
@@ -219,6 +220,22 @@ class ReferenceSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const ContactAnalysisReference& GetContactAnalysis() const { return m_contactAnalysis; }
+  inline bool ContactAnalysisHasBeenSet() const { return m_contactAnalysisHasBeenSet; }
+  template <typename ContactAnalysisT = ContactAnalysisReference>
+  void SetContactAnalysis(ContactAnalysisT&& value) {
+    m_contactAnalysisHasBeenSet = true;
+    m_contactAnalysis = std::forward<ContactAnalysisT>(value);
+  }
+  template <typename ContactAnalysisT = ContactAnalysisReference>
+  ReferenceSummary& WithContactAnalysis(ContactAnalysisT&& value) {
+    SetContactAnalysis(std::forward<ContactAnalysisT>(value));
+    return *this;
+  }
+  ///@}
  private:
   UrlReference m_url;
 
@@ -239,6 +256,8 @@ class ReferenceSummary {
   DateReference m_date;
 
   EmailReference m_email;
+
+  ContactAnalysisReference m_contactAnalysis;
   bool m_urlHasBeenSet = false;
   bool m_attachmentHasBeenSet = false;
   bool m_emailMessageHasBeenSet = false;
@@ -249,6 +268,7 @@ class ReferenceSummary {
   bool m_numberHasBeenSet = false;
   bool m_dateHasBeenSet = false;
   bool m_emailHasBeenSet = false;
+  bool m_contactAnalysisHasBeenSet = false;
 };
 
 }  // namespace Model

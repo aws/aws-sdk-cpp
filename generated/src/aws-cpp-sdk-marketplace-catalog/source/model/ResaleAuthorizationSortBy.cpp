@@ -28,6 +28,9 @@ static const int OfferExtendedStatus_HASH = HashingUtils::HashString("OfferExten
 static const int CreatedDate_HASH = HashingUtils::HashString("CreatedDate");
 static const int AvailabilityEndDate_HASH = HashingUtils::HashString("AvailabilityEndDate");
 static const int LastModifiedDate_HASH = HashingUtils::HashString("LastModifiedDate");
+static const int ResellerRole_HASH = HashingUtils::HashString("ResellerRole");
+static const int SourceAuthorization_HASH = HashingUtils::HashString("SourceAuthorization");
+static const int IssuerAccountId_HASH = HashingUtils::HashString("IssuerAccountId");
 
 ResaleAuthorizationSortBy GetResaleAuthorizationSortByForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -57,6 +60,12 @@ ResaleAuthorizationSortBy GetResaleAuthorizationSortByForName(const Aws::String&
     return ResaleAuthorizationSortBy::AvailabilityEndDate;
   } else if (hashCode == LastModifiedDate_HASH) {
     return ResaleAuthorizationSortBy::LastModifiedDate;
+  } else if (hashCode == ResellerRole_HASH) {
+    return ResaleAuthorizationSortBy::ResellerRole;
+  } else if (hashCode == SourceAuthorization_HASH) {
+    return ResaleAuthorizationSortBy::SourceAuthorization;
+  } else if (hashCode == IssuerAccountId_HASH) {
+    return ResaleAuthorizationSortBy::IssuerAccountId;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -97,6 +106,12 @@ Aws::String GetNameForResaleAuthorizationSortBy(ResaleAuthorizationSortBy enumVa
       return "AvailabilityEndDate";
     case ResaleAuthorizationSortBy::LastModifiedDate:
       return "LastModifiedDate";
+    case ResaleAuthorizationSortBy::ResellerRole:
+      return "ResellerRole";
+    case ResaleAuthorizationSortBy::SourceAuthorization:
+      return "SourceAuthorization";
+    case ResaleAuthorizationSortBy::IssuerAccountId:
+      return "IssuerAccountId";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

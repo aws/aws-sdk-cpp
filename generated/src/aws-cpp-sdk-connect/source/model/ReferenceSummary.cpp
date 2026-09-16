@@ -58,6 +58,10 @@ ReferenceSummary& ReferenceSummary::operator=(JsonView jsonValue) {
     m_email = jsonValue.GetObject("Email");
     m_emailHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ContactAnalysis")) {
+    m_contactAnalysis = jsonValue.GetObject("ContactAnalysis");
+    m_contactAnalysisHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -102,6 +106,10 @@ JsonValue ReferenceSummary::Jsonize() const {
 
   if (m_emailHasBeenSet) {
     payload.WithObject("Email", m_email.Jsonize());
+  }
+
+  if (m_contactAnalysisHasBeenSet) {
+    payload.WithObject("ContactAnalysis", m_contactAnalysis.Jsonize());
   }
 
   return payload;

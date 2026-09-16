@@ -3049,6 +3049,41 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>Retrieves recommendations for a profile in a specific domain. The profile is
+   * identified using a search key, which consists of a <code>KeyName</code> and a
+   * <code>KeyValues</code> list. The <code>KeyName</code> can be a predefined key
+   * (for example, <code>_profileId</code>, <code>_phone</code>, <code>_email</code>)
+   * or a custom-defined key.</p> <p>The search key must match exactly one profile.
+   * If no profile matches the search key, the operation returns a
+   * <code>ResourceNotFoundException</code>. If more than one profile matches the
+   * search key, the operation returns a <code>BadRequestException</code>. You can
+   * use the SearchProfiles API to review the matching profiles.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/SearchRecommendations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SearchRecommendationsOutcome SearchRecommendations(const Model::SearchRecommendationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for SearchRecommendations that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename SearchRecommendationsRequestT = Model::SearchRecommendationsRequest>
+  Model::SearchRecommendationsOutcomeCallable SearchRecommendationsCallable(const SearchRecommendationsRequestT& request) const {
+    return SubmitCallable(&CustomerProfilesClient::SearchRecommendations, request);
+  }
+
+  /**
+   * An Async wrapper for SearchRecommendations that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename SearchRecommendationsRequestT = Model::SearchRecommendationsRequest>
+  void SearchRecommendationsAsync(const SearchRecommendationsRequestT& request, const SearchRecommendationsResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CustomerProfilesClient::SearchRecommendations, request, handler, context);
+  }
+
+  /**
    * <p>Starts a recommender that was previously stopped. Starting a recommender
    * resumes its ability to generate recommendations.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/StartRecommender">AWS

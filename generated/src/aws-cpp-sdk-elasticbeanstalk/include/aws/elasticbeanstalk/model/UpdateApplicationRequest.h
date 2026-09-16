@@ -57,7 +57,7 @@ class UpdateApplicationRequest : public ElasticBeanstalkRequest {
 
   ///@{
   /**
-   * <p>A new description for the application.</p> <p>Default: If not specified, AWS
+   * <p>A new description for the application.</p> <p>Default: If not specified,
    * Elastic Beanstalk does not update the description.</p>
    */
   inline const Aws::String& GetDescription() const { return m_description; }

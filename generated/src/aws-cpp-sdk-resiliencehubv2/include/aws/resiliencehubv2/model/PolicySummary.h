@@ -143,6 +143,40 @@ class PolicySummary {
 
   ///@{
   /**
+   * <p>Specifies whether cross-account sharing is enabled.</p>
+   */
+  inline bool GetSharingEnabled() const { return m_sharingEnabled; }
+  inline bool SharingEnabledHasBeenSet() const { return m_sharingEnabledHasBeenSet; }
+  inline void SetSharingEnabled(bool value) {
+    m_sharingEnabledHasBeenSet = true;
+    m_sharingEnabled = value;
+  }
+  inline PolicySummary& WithSharingEnabled(bool value) {
+    SetSharingEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of the organization this policy is shared with.</p>
+   */
+  inline const Aws::String& GetOrganizationId() const { return m_organizationId; }
+  inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
+  template <typename OrganizationIdT = Aws::String>
+  void SetOrganizationId(OrganizationIdT&& value) {
+    m_organizationIdHasBeenSet = true;
+    m_organizationId = std::forward<OrganizationIdT>(value);
+  }
+  template <typename OrganizationIdT = Aws::String>
+  PolicySummary& WithOrganizationId(OrganizationIdT&& value) {
+    SetOrganizationId(std::forward<OrganizationIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The number of services associated with this policy.</p>
    */
   inline int GetAssociatedServiceCount() const { return m_associatedServiceCount; }
@@ -205,6 +239,10 @@ class PolicySummary {
 
   DataRecoveryTargets m_dataRecovery;
 
+  bool m_sharingEnabled{false};
+
+  Aws::String m_organizationId;
+
   int m_associatedServiceCount{0};
 
   Aws::Utils::DateTime m_createdAt{};
@@ -216,6 +254,8 @@ class PolicySummary {
   bool m_multiAzHasBeenSet = false;
   bool m_multiRegionHasBeenSet = false;
   bool m_dataRecoveryHasBeenSet = false;
+  bool m_sharingEnabledHasBeenSet = false;
+  bool m_organizationIdHasBeenSet = false;
   bool m_associatedServiceCountHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;

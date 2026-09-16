@@ -40,7 +40,7 @@ class DescribeEventsRequest : public ElasticBeanstalkRequest {
  public:
   ///@{
   /**
-   * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+   * <p>If specified, Elastic Beanstalk restricts the returned descriptions to
    * include only those associated with this application.</p>
    */
   inline const Aws::String& GetApplicationName() const { return m_applicationName; }
@@ -59,8 +59,8 @@ class DescribeEventsRequest : public ElasticBeanstalkRequest {
 
   ///@{
   /**
-   * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-   * those associated with this application version.</p>
+   * <p>If specified, Elastic Beanstalk restricts the returned descriptions to those
+   * associated with this application version.</p>
    */
   inline const Aws::String& GetVersionLabel() const { return m_versionLabel; }
   inline bool VersionLabelHasBeenSet() const { return m_versionLabelHasBeenSet; }
@@ -78,8 +78,8 @@ class DescribeEventsRequest : public ElasticBeanstalkRequest {
 
   ///@{
   /**
-   * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-   * those that are associated with this environment configuration.</p>
+   * <p>If specified, Elastic Beanstalk restricts the returned descriptions to those
+   * that are associated with this environment configuration.</p>
    */
   inline const Aws::String& GetTemplateName() const { return m_templateName; }
   inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
@@ -97,8 +97,8 @@ class DescribeEventsRequest : public ElasticBeanstalkRequest {
 
   ///@{
   /**
-   * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-   * those associated with this environment.</p>
+   * <p>If specified, Elastic Beanstalk restricts the returned descriptions to those
+   * associated with this environment.</p>
    */
   inline const Aws::String& GetEnvironmentId() const { return m_environmentId; }
   inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
@@ -116,8 +116,8 @@ class DescribeEventsRequest : public ElasticBeanstalkRequest {
 
   ///@{
   /**
-   * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-   * those associated with this environment.</p>
+   * <p>If specified, Elastic Beanstalk restricts the returned descriptions to those
+   * associated with this environment.</p>
    */
   inline const Aws::String& GetEnvironmentName() const { return m_environmentName; }
   inline bool EnvironmentNameHasBeenSet() const { return m_environmentNameHasBeenSet; }
@@ -135,7 +135,7 @@ class DescribeEventsRequest : public ElasticBeanstalkRequest {
 
   ///@{
   /**
-   * <p>The ARN of a custom platform version. If specified, AWS Elastic Beanstalk
+   * <p>The ARN of a custom platform version. If specified, Elastic Beanstalk
    * restricts the returned descriptions to those associated with this custom
    * platform version.</p>
    */
@@ -155,7 +155,7 @@ class DescribeEventsRequest : public ElasticBeanstalkRequest {
 
   ///@{
   /**
-   * <p>If specified, AWS Elastic Beanstalk restricts the described events to include
+   * <p>If specified, Elastic Beanstalk restricts the described events to include
    * only those associated with this request ID.</p>
    */
   inline const Aws::String& GetRequestId() const { return m_requestId; }
@@ -191,8 +191,8 @@ class DescribeEventsRequest : public ElasticBeanstalkRequest {
 
   ///@{
   /**
-   * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-   * those that occur on or after this time.</p>
+   * <p>If specified, Elastic Beanstalk restricts the returned descriptions to those
+   * that occur on or after this time.</p>
    */
   inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
   inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
@@ -210,8 +210,8 @@ class DescribeEventsRequest : public ElasticBeanstalkRequest {
 
   ///@{
   /**
-   * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-   * those that occur up to, but not including, the <code>EndTime</code>. </p>
+   * <p> If specified, Elastic Beanstalk restricts the returned descriptions to those
+   * that occur up to, but not including, the <code>EndTime</code>. </p>
    */
   inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
   inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }

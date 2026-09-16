@@ -26,6 +26,14 @@ ServicePolicyAssociatedMetadata& ServicePolicyAssociatedMetadata::operator=(Json
     m_policyArn = jsonValue.GetString("policyArn");
     m_policyArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("policyOwnerAccountId")) {
+    m_policyOwnerAccountId = jsonValue.GetString("policyOwnerAccountId");
+    m_policyOwnerAccountIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("policySource")) {
+    m_policySource = PolicyValueSourceMapper::GetPolicyValueSourceForName(jsonValue.GetString("policySource"));
+    m_policySourceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +46,14 @@ JsonValue ServicePolicyAssociatedMetadata::Jsonize() const {
 
   if (m_policyArnHasBeenSet) {
     payload.WithString("policyArn", m_policyArn);
+  }
+
+  if (m_policyOwnerAccountIdHasBeenSet) {
+    payload.WithString("policyOwnerAccountId", m_policyOwnerAccountId);
+  }
+
+  if (m_policySourceHasBeenSet) {
+    payload.WithString("policySource", PolicyValueSourceMapper::GetNameForPolicyValueSource(m_policySource));
   }
 
   return payload;

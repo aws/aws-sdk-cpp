@@ -58,6 +58,22 @@ ApplicationVersionDescription& ApplicationVersionDescription::operator=(const Xm
       m_sourceBundle = sourceBundleNode;
       m_sourceBundleHasBeenSet = true;
     }
+    XmlNode imageSourceNode = resultNode.FirstChild("ImageSource");
+    if (!imageSourceNode.IsNull()) {
+      m_imageSource = imageSourceNode;
+      m_imageSourceHasBeenSet = true;
+    }
+    XmlNode imageBuildConfigurationNode = resultNode.FirstChild("ImageBuildConfiguration");
+    if (!imageBuildConfigurationNode.IsNull()) {
+      m_imageBuildConfiguration = imageBuildConfigurationNode;
+      m_imageBuildConfigurationHasBeenSet = true;
+    }
+    XmlNode processNode = resultNode.FirstChild("Process");
+    if (!processNode.IsNull()) {
+      m_process =
+          StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(processNode.GetText()).c_str()).c_str());
+      m_processHasBeenSet = true;
+    }
     XmlNode dateCreatedNode = resultNode.FirstChild("DateCreated");
     if (!dateCreatedNode.IsNull()) {
       m_dateCreated = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dateCreatedNode.GetText()).c_str()).c_str(),
@@ -116,6 +132,22 @@ void ApplicationVersionDescription::OutputToStream(Aws::OStream& oStream, const 
     m_sourceBundle.OutputToStream(oStream, sourceBundleLocationAndMemberSs.str().c_str());
   }
 
+  if (m_imageSourceHasBeenSet) {
+    Aws::StringStream imageSourceLocationAndMemberSs;
+    imageSourceLocationAndMemberSs << location << index << locationValue << ".ImageSource";
+    m_imageSource.OutputToStream(oStream, imageSourceLocationAndMemberSs.str().c_str());
+  }
+
+  if (m_imageBuildConfigurationHasBeenSet) {
+    Aws::StringStream imageBuildConfigurationLocationAndMemberSs;
+    imageBuildConfigurationLocationAndMemberSs << location << index << locationValue << ".ImageBuildConfiguration";
+    m_imageBuildConfiguration.OutputToStream(oStream, imageBuildConfigurationLocationAndMemberSs.str().c_str());
+  }
+
+  if (m_processHasBeenSet) {
+    oStream << location << index << locationValue << ".Process=" << std::boolalpha << m_process << "&";
+  }
+
   if (m_dateCreatedHasBeenSet) {
     oStream << location << index << locationValue
             << ".DateCreated=" << StringUtils::URLEncode(m_dateCreated.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
@@ -157,6 +189,19 @@ void ApplicationVersionDescription::OutputToStream(Aws::OStream& oStream, const 
     Aws::String sourceBundleLocationAndMember(location);
     sourceBundleLocationAndMember += ".SourceBundle";
     m_sourceBundle.OutputToStream(oStream, sourceBundleLocationAndMember.c_str());
+  }
+  if (m_imageSourceHasBeenSet) {
+    Aws::String imageSourceLocationAndMember(location);
+    imageSourceLocationAndMember += ".ImageSource";
+    m_imageSource.OutputToStream(oStream, imageSourceLocationAndMember.c_str());
+  }
+  if (m_imageBuildConfigurationHasBeenSet) {
+    Aws::String imageBuildConfigurationLocationAndMember(location);
+    imageBuildConfigurationLocationAndMember += ".ImageBuildConfiguration";
+    m_imageBuildConfiguration.OutputToStream(oStream, imageBuildConfigurationLocationAndMember.c_str());
+  }
+  if (m_processHasBeenSet) {
+    oStream << location << ".Process=" << std::boolalpha << m_process << "&";
   }
   if (m_dateCreatedHasBeenSet) {
     oStream << location << ".DateCreated=" << StringUtils::URLEncode(m_dateCreated.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str())

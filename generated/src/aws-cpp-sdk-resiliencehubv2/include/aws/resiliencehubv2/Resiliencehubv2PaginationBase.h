@@ -13,6 +13,7 @@
 #include <aws/resiliencehubv2/model/ListFailureModeFindingsPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListInputSourcesPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListPoliciesPaginationTraits.h>
+#include <aws/resiliencehubv2/model/ListPolicyEventsPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListReportsPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListResolvedTestRunTargetResourcesPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListResourcesPaginationTraits.h>
@@ -107,6 +108,18 @@ class Resiliencehubv2PaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPoliciesRequest,
                                              Pagination::ListPoliciesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
+  }
+
+  /**
+   * Create a paginator for ListPolicyEvents operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPolicyEventsRequest,
+                                    Pagination::ListPolicyEventsPaginationTraits<DerivedClient>>
+  ListPolicyEventsPaginator(const Model::ListPolicyEventsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPolicyEventsRequest,
+                                             Pagination::ListPolicyEventsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                          request};
   }
 
   /**
