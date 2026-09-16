@@ -3,6 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/model/ListManagedInsightRulesRequest.h>
 
@@ -17,32 +21,9 @@ Aws::String ListManagedInsightRulesRequest::SerializePayload() const {
 
   // Calculate map size
   size_t mapSize = 0;
-  if (m_resourceARNHasBeenSet) {
-    mapSize++;
-  }
-  if (m_nextTokenHasBeenSet) {
-    mapSize++;
-  }
-  if (m_maxResultsHasBeenSet) {
-    mapSize++;
-  }
 
   encoder.WriteMapStart(mapSize);
 
-  if (m_resourceARNHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ResourceARN"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_resourceARN.c_str()));
-  }
-
-  if (m_nextTokenHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NextToken"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_nextToken.c_str()));
-  }
-
-  if (m_maxResultsHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MaxResults"));
-    (m_maxResults >= 0) ? encoder.WriteUInt(m_maxResults) : encoder.WriteNegInt(m_maxResults);
-  }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
   return str;
 }

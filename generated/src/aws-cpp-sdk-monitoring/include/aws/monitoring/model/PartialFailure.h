@@ -23,7 +23,7 @@ namespace Model {
  * <p>This array is empty if the API operation was successful for all the rules
  * specified in the request. If the operation could not process one of the rules,
  * the following data is returned for each of those rules.</p><p><h3>See Also:</h3>
- * <a
+ *   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PartialFailure">AWS
  * API Reference</a></p>
  */

@@ -21,7 +21,7 @@ namespace Model {
 
 /**
  * <p> The status of a managed Contributor Insights rule. </p><p><h3>See Also:</h3>
- * <a
+ *   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ManagedRuleState">AWS
  * API Reference</a></p>
  */
