@@ -16,7 +16,6 @@ namespace Aws
     namespace Auth
     {
         class PersistentCognitoIdentityProvider;
-
         /**
          * Credentials provider that can be used to authenticate a user with any other AWS service.
          * This credentials provider can be passed to any other Aws Client.
@@ -25,6 +24,11 @@ namespace Aws
         {
         public:
             AWSCredentials GetAWSCredentials() override;
+
+            /**
+             * Invalidate marks the cached credentials for refresh if they match accessKeyId.
+             */
+            void Invalidate(const Aws::String& accessKeyId) override;
 
         protected:
             /**
@@ -43,10 +47,15 @@ namespace Aws
 
         private:
             void OnLoginsUpdated(const PersistentCognitoIdentityProvider&);
+            // RetrieveCredentials loads credentials from Cognito into m_cachedCredentials.
+            AWSCredentials RetrieveCredentials();
 
             AWSCredentials m_cachedCredentials;
             std::atomic<double> m_expiry;
             std::mutex m_credsMutex;
+            // RetrieveForCache forces RetrieveCredentials() to fetch and returns the credentials with their expiration.
+            AWSCredentials RetrieveForCache();
+            std::shared_ptr<AWSCredentialsProvider> m_cachingProvider;
         };
 
         /**
