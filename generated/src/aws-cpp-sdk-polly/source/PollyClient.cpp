@@ -345,7 +345,8 @@ void PollyClient::StartSpeechSynthesisStreamAsync(Model::StartSpeechSynthesisStr
 
 #if AWS_SDK_USE_CRT_HTTP
   // Push-based WriteData path (CRT HTTP client only)
-  auto writeDataStreamBuf = Aws::MakeShared<Aws::Utils::Stream::HttpWriteDataStreamBuf>(ALLOCATION_TAG, GetHttpClient());
+  auto writeDataStreamBuf = Aws::MakeShared<Aws::Utils::Stream::HttpWriteDataStreamBuf>(ALLOCATION_TAG, GetHttpClient(), 8 * 1024,
+                                                                                        m_clientConfiguration.requestTimeoutMs);
   auto signer = GetSignerByName(Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
 
   auto eventEncoderStream = Aws::MakeShared<Model::StartSpeechSynthesisStreamActionStream>(ALLOCATION_TAG, writeDataStreamBuf);
