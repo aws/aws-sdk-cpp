@@ -30,7 +30,6 @@ class ServerSideEncryptionConfiguration {
   AWS_S3_API ServerSideEncryptionConfiguration() = default;
   AWS_S3_API ServerSideEncryptionConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API ServerSideEncryptionConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

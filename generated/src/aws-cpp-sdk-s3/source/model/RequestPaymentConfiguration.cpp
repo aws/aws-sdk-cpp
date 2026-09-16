@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/RequestPaymentConfiguration.h>
@@ -19,27 +20,9 @@ namespace Model {
 
 RequestPaymentConfiguration::RequestPaymentConfiguration(const XmlNode& xmlNode) { *this = xmlNode; }
 
-RequestPaymentConfiguration& RequestPaymentConfiguration::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+RequestPaymentConfiguration& RequestPaymentConfiguration::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode payerNode = resultNode.FirstChild("Payer");
-    if (!payerNode.IsNull()) {
-      m_payer = PayerMapper::GetPayerForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(payerNode.GetText()).c_str()));
-      m_payerHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void RequestPaymentConfiguration::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_payerHasBeenSet) {
-    XmlNode payerNode = parentNode.CreateChildElement("Payer");
-    payerNode.SetText(PayerMapper::GetNameForPayer(m_payer));
-  }
-}
+void RequestPaymentConfiguration::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

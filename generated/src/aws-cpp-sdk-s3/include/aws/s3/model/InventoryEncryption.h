@@ -30,7 +30,6 @@ class InventoryEncryption {
   AWS_S3_API InventoryEncryption() = default;
   AWS_S3_API InventoryEncryption(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API InventoryEncryption& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

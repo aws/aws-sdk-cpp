@@ -4,7 +4,9 @@
  */
 
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/ListDirectoryBucketsResult.h>
@@ -18,36 +20,4 @@ using namespace Aws;
 
 ListDirectoryBucketsResult::ListDirectoryBucketsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-ListDirectoryBucketsResult& ListDirectoryBucketsResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
-  m_HttpResponseCode = result.GetResponseCode();
-  const XmlDocument& xmlDocument = result.GetPayload();
-  XmlNode resultNode = xmlDocument.GetRootElement();
-
-  if (!resultNode.IsNull()) {
-    XmlNode bucketsNode = resultNode.FirstChild("Buckets");
-    if (!bucketsNode.IsNull()) {
-      XmlNode bucketsMember = bucketsNode.FirstChild("Bucket");
-      m_bucketsHasBeenSet = !bucketsMember.IsNull();
-      while (!bucketsMember.IsNull()) {
-        m_buckets.push_back(bucketsMember);
-        bucketsMember = bucketsMember.NextNode("Bucket");
-      }
-
-      m_bucketsHasBeenSet = true;
-    }
-    XmlNode continuationTokenNode = resultNode.FirstChild("ContinuationToken");
-    if (!continuationTokenNode.IsNull()) {
-      m_continuationToken = Aws::Utils::Xml::DecodeEscapedXmlText(continuationTokenNode.GetText());
-      m_continuationTokenHasBeenSet = true;
-    }
-  }
-
-  const auto& headers = result.GetHeaderValueCollection();
-  const auto& requestIdIter = headers.find("x-amz-request-id");
-  if (requestIdIter != headers.end()) {
-    m_requestId = requestIdIter->second;
-    m_requestIdHasBeenSet = true;
-  }
-
-  return *this;
-}
+ListDirectoryBucketsResult& ListDirectoryBucketsResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) { return *this; }

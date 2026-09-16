@@ -27,7 +27,6 @@ ExpressionType GetExpressionTypeForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<ExpressionType>(hashCode);
   }
-
   return ExpressionType::NOT_SET;
 }
 
@@ -42,7 +41,6 @@ Aws::String GetNameForExpressionType(ExpressionType enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

@@ -32,6 +32,23 @@ class CopyObjectResult {
 
   ///@{
   /**
+   * <p>Container for all response elements.</p>
+   */
+  inline const CopyObjectResultDetails& GetCopyObjectResultDetails() const { return m_copyObjectResultDetails; }
+  template <typename CopyObjectResultDetailsT = CopyObjectResultDetails>
+  void SetCopyObjectResultDetails(CopyObjectResultDetailsT&& value) {
+    m_copyObjectResultDetailsHasBeenSet = true;
+    m_copyObjectResultDetails = std::forward<CopyObjectResultDetailsT>(value);
+  }
+  template <typename CopyObjectResultDetailsT = CopyObjectResultDetails>
+  CopyObjectResult& WithCopyObjectResultDetails(CopyObjectResultDetailsT&& value) {
+    SetCopyObjectResultDetails(std::forward<CopyObjectResultDetailsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>If the object expiration is configured, the response includes this
    * header.</p>  <p>Object expiration information is not returned in directory
    * buckets and this header returns the value "<code>NotImplemented</code>" in all
@@ -52,9 +69,8 @@ class CopyObjectResult {
 
   ///@{
   /**
-   * <p>Version ID of the source object that was copied.</p>  <p>This
-   * functionality is not supported when the source object is in a directory
-   * bucket.</p>
+   * <p>Version ID of the source object that was copied.</p>  <p>This functionality
+   * is not supported when the source object is in a directory bucket.</p>
    */
   inline const Aws::String& GetCopySourceVersionId() const { return m_copySourceVersionId; }
   template <typename CopySourceVersionIdT = Aws::String>
@@ -90,9 +106,9 @@ class CopyObjectResult {
   ///@{
   /**
    * <p>The server-side encryption algorithm used when you store this object in
-   * Amazon S3 or Amazon FSx.</p>  <p>When accessing data stored in Amazon FSx
-   * file systems using S3 access points, the only valid server side encryption
-   * option is <code>aws:fsx</code>.</p>
+   * Amazon S3 or Amazon FSx.</p>  <p>When accessing data stored in Amazon FSx file
+   * systems using S3 access points, the only valid server side encryption option is
+   * <code>aws:fsx</code>.</p>
    */
   inline ServerSideEncryption GetServerSideEncryption() const { return m_serverSideEncryption; }
   inline void SetServerSideEncryption(ServerSideEncryption value) {
@@ -109,8 +125,8 @@ class CopyObjectResult {
   /**
    * <p>If server-side encryption with a customer-provided encryption key was
    * requested, the response will include this header to confirm the encryption
-   * algorithm that's used.</p>  <p>This functionality is not supported for
-   * directory buckets.</p>
+   * algorithm that's used.</p>  <p>This functionality is not supported for directory
+   * buckets.</p>
    */
   inline const Aws::String& GetSSECustomerAlgorithm() const { return m_sSECustomerAlgorithm; }
   template <typename SSECustomerAlgorithmT = Aws::String>
@@ -130,7 +146,7 @@ class CopyObjectResult {
    * <p>If server-side encryption with a customer-provided encryption key was
    * requested, the response will include this header to provide the round-trip
    * message integrity verification of the customer-provided encryption key.</p>
-   *  <p>This functionality is not supported for directory buckets.</p>
+   * <p>This functionality is not supported for directory buckets.</p>
    */
   inline const Aws::String& GetSSECustomerKeyMD5() const { return m_sSECustomerKeyMD5; }
   template <typename SSECustomerKeyMD5T = Aws::String>
@@ -212,23 +228,6 @@ class CopyObjectResult {
   ///@}
 
   ///@{
-  /**
-   * <p>Container for all response elements.</p>
-   */
-  inline const CopyObjectResultDetails& GetCopyObjectResultDetails() const { return m_copyObjectResultDetails; }
-  template <typename CopyObjectResultDetailsT = CopyObjectResultDetails>
-  void SetCopyObjectResultDetails(CopyObjectResultDetailsT&& value) {
-    m_copyObjectResultDetailsHasBeenSet = true;
-    m_copyObjectResultDetails = std::forward<CopyObjectResultDetailsT>(value);
-  }
-  template <typename CopyObjectResultDetailsT = CopyObjectResultDetails>
-  CopyObjectResult& WithCopyObjectResultDetails(CopyObjectResultDetailsT&& value) {
-    SetCopyObjectResultDetails(std::forward<CopyObjectResultDetailsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -245,6 +244,8 @@ class CopyObjectResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
+  CopyObjectResultDetails m_copyObjectResultDetails;
+
   Aws::String m_expiration;
 
   Aws::String m_copySourceVersionId;
@@ -265,10 +266,9 @@ class CopyObjectResult {
 
   RequestCharged m_requestCharged{RequestCharged::NOT_SET};
 
-  CopyObjectResultDetails m_copyObjectResultDetails;
-
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_copyObjectResultDetailsHasBeenSet = false;
   bool m_expirationHasBeenSet = false;
   bool m_copySourceVersionIdHasBeenSet = false;
   bool m_versionIdHasBeenSet = false;
@@ -279,7 +279,6 @@ class CopyObjectResult {
   bool m_sSEKMSEncryptionContextHasBeenSet = false;
   bool m_bucketKeyEnabledHasBeenSet = false;
   bool m_requestChargedHasBeenSet = false;
-  bool m_copyObjectResultDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

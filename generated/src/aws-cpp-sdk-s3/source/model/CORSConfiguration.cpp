@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/CORSConfiguration.h>
@@ -19,35 +20,9 @@ namespace Model {
 
 CORSConfiguration::CORSConfiguration(const XmlNode& xmlNode) { *this = xmlNode; }
 
-CORSConfiguration& CORSConfiguration::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+CORSConfiguration& CORSConfiguration::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode cORSRulesNode = resultNode.FirstChild("CORSRule");
-    if (!cORSRulesNode.IsNull()) {
-      XmlNode cORSRuleMember = cORSRulesNode;
-      m_cORSRulesHasBeenSet = !cORSRuleMember.IsNull();
-      while (!cORSRuleMember.IsNull()) {
-        m_cORSRules.push_back(cORSRuleMember);
-        cORSRuleMember = cORSRuleMember.NextNode("CORSRule");
-      }
-
-      m_cORSRulesHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void CORSConfiguration::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_cORSRulesHasBeenSet) {
-    for (const auto& item : m_cORSRules) {
-      XmlNode cORSRulesNode = parentNode.CreateChildElement("CORSRule");
-      item.AddToNode(cORSRulesNode);
-    }
-  }
-}
+void CORSConfiguration::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

@@ -4,11 +4,14 @@
  */
 
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/CreateBucketRequest.h>
 
+#include <numeric>
 #include <utility>
 
 using namespace Aws::S3::Model;
@@ -16,38 +19,54 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-bool CreateBucketRequest::HasEmbeddedError(Aws::IOStream& body, const Aws::Http::HeaderValueCollection& header) const {
-  // Header is unused
-  AWS_UNREFERENCED_PARAM(header);
+Aws::String CreateBucketRequest::SerializePayload() const { return {}; }
 
-  auto readPointer = body.tellg();
-  Utils::Xml::XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
-  body.seekg(readPointer);
-  if (!doc.WasParseSuccessful()) {
-    return false;
+Aws::Http::HeaderValueCollection CreateBucketRequest::GetRequestSpecificHeaders() const {
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if (m_aCLHasBeenSet && m_aCL != BucketCannedACL::NOT_SET) {
+    headers.emplace("x-amz-acl", BucketCannedACLMapper::GetNameForBucketCannedACL(m_aCL));
   }
-
-  if (!doc.GetRootElement().IsNull() && doc.GetRootElement().GetName() == Aws::String("Error")) {
-    return true;
+  if (m_grantFullControlHasBeenSet) {
+    ss << m_grantFullControl;
+    headers.emplace("x-amz-grant-full-control", ss.str());
+    ss.str("");
   }
-  return false;
+  if (m_grantReadHasBeenSet) {
+    ss << m_grantRead;
+    headers.emplace("x-amz-grant-read", ss.str());
+    ss.str("");
+  }
+  if (m_grantReadACPHasBeenSet) {
+    ss << m_grantReadACP;
+    headers.emplace("x-amz-grant-read-acp", ss.str());
+    ss.str("");
+  }
+  if (m_grantWriteHasBeenSet) {
+    ss << m_grantWrite;
+    headers.emplace("x-amz-grant-write", ss.str());
+    ss.str("");
+  }
+  if (m_grantWriteACPHasBeenSet) {
+    ss << m_grantWriteACP;
+    headers.emplace("x-amz-grant-write-acp", ss.str());
+    ss.str("");
+  }
+  if (m_objectLockEnabledForBucketHasBeenSet) {
+    ss << std::boolalpha << m_objectLockEnabledForBucket;
+    headers.emplace("x-amz-bucket-object-lock-enabled", ss.str());
+    ss.str("");
+  }
+  if (m_objectOwnershipHasBeenSet && m_objectOwnership != ObjectOwnership::NOT_SET) {
+    headers.emplace("x-amz-object-ownership", ObjectOwnershipMapper::GetNameForObjectOwnership(m_objectOwnership));
+  }
+  if (m_bucketNamespaceHasBeenSet && m_bucketNamespace != BucketNamespace::NOT_SET) {
+    headers.emplace("x-amz-bucket-namespace", BucketNamespaceMapper::GetNameForBucketNamespace(m_bucketNamespace));
+  }
+  return headers;
 }
 
-Aws::String CreateBucketRequest::SerializePayload() const {
-  XmlDocument payloadDoc = XmlDocument::CreateWithRootNode("CreateBucketConfiguration");
-
-  XmlNode parentNode = payloadDoc.GetRootElement();
-  parentNode.SetAttributeValue("xmlns", "http://s3.amazonaws.com/doc/2006-03-01/");
-
-  m_createBucketConfiguration.AddToNode(parentNode);
-  if (parentNode.HasChildren()) {
-    return payloadDoc.ConvertToString();
-  }
-
-  return {};
-}
-
-void CreateBucketRequest::AddQueryStringParameters(URI& uri) const {
+void CreateBucketRequest::AddQueryStringParameters(Aws::Http::URI& uri) const {
   Aws::StringStream ss;
   if (!m_customizedAccessLogTag.empty()) {
     // only accept customized LogTag which starts with "x-"
@@ -57,73 +76,32 @@ void CreateBucketRequest::AddQueryStringParameters(URI& uri) const {
         collectedLogTags.emplace(entry.first, entry.second);
       }
     }
-
     if (!collectedLogTags.empty()) {
       uri.AddQueryStringParameter(collectedLogTags);
     }
   }
 }
 
-Aws::Http::HeaderValueCollection CreateBucketRequest::GetRequestSpecificHeaders() const {
-  Aws::Http::HeaderValueCollection headers;
-  Aws::StringStream ss;
-  if (m_aCLHasBeenSet && m_aCL != BucketCannedACL::NOT_SET) {
-    headers.emplace("x-amz-acl", BucketCannedACLMapper::GetNameForBucketCannedACL(m_aCL));
+bool CreateBucketRequest::HasEmbeddedError(Aws::IOStream& body, const Aws::Http::HeaderValueCollection& header) const {
+  AWS_UNREFERENCED_PARAM(header);
+  auto readPointer = body.tellg();
+  Utils::Xml::XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
+  body.seekg(readPointer);
+  if (!doc.WasParseSuccessful()) {
+    return false;
   }
-
-  if (m_grantFullControlHasBeenSet) {
-    ss << m_grantFullControl;
-    headers.emplace("x-amz-grant-full-control", ss.str());
-    ss.str("");
+  if (!doc.GetRootElement().IsNull() && doc.GetRootElement().GetName() == Aws::String("Error")) {
+    return true;
   }
-
-  if (m_grantReadHasBeenSet) {
-    ss << m_grantRead;
-    headers.emplace("x-amz-grant-read", ss.str());
-    ss.str("");
-  }
-
-  if (m_grantReadACPHasBeenSet) {
-    ss << m_grantReadACP;
-    headers.emplace("x-amz-grant-read-acp", ss.str());
-    ss.str("");
-  }
-
-  if (m_grantWriteHasBeenSet) {
-    ss << m_grantWrite;
-    headers.emplace("x-amz-grant-write", ss.str());
-    ss.str("");
-  }
-
-  if (m_grantWriteACPHasBeenSet) {
-    ss << m_grantWriteACP;
-    headers.emplace("x-amz-grant-write-acp", ss.str());
-    ss.str("");
-  }
-
-  if (m_objectLockEnabledForBucketHasBeenSet) {
-    ss << std::boolalpha << m_objectLockEnabledForBucket;
-    headers.emplace("x-amz-bucket-object-lock-enabled", ss.str());
-    ss.str("");
-  }
-
-  if (m_objectOwnershipHasBeenSet && m_objectOwnership != ObjectOwnership::NOT_SET) {
-    headers.emplace("x-amz-object-ownership", ObjectOwnershipMapper::GetNameForObjectOwnership(m_objectOwnership));
-  }
-
-  if (m_bucketNamespaceHasBeenSet && m_bucketNamespace != BucketNamespace::NOT_SET) {
-    headers.emplace("x-amz-bucket-namespace", BucketNamespaceMapper::GetNameForBucketNamespace(m_bucketNamespace));
-  }
-
-  return headers;
+  return false;
 }
 
 CreateBucketRequest::EndpointParameters CreateBucketRequest::GetEndpointContextParams() const {
   EndpointParameters parameters;
   // Static context parameters
-  parameters.emplace_back(Aws::String("DisableAccessPoints"), true, Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
   parameters.emplace_back(Aws::String("UseS3ExpressControlEndpoint"), true,
                           Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+  parameters.emplace_back(Aws::String("DisableAccessPoints"), true, Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
   // Operation context parameters
   if (BucketHasBeenSet()) {
     parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);

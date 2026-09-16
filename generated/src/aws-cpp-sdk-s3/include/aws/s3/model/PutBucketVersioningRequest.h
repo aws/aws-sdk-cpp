@@ -14,9 +14,6 @@
 #include <utility>
 
 namespace Aws {
-namespace Http {
-class URI;
-}  // namespace Http
 namespace S3 {
 namespace Model {
 
@@ -34,9 +31,9 @@ class PutBucketVersioningRequest : public S3Request {
 
   AWS_S3_API Aws::String SerializePayload() const override;
 
-  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
   AWS_S3_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
   AWS_S3_API bool HasEmbeddedError(IOStream& body, const Http::HeaderValueCollection& header) const override;
   AWS_S3_API Aws::String GetChecksumAlgorithmName() const override;
@@ -68,9 +65,9 @@ class PutBucketVersioningRequest : public S3Request {
 
   ///@{
   /**
-   * <p>&gt;The Base64 encoded 128-bit <code>MD5</code> digest of the data. You must
-   * use this header as a message integrity check to verify that the request body was
-   * not corrupted in transit. For more information, see <a
+   * <p>>The Base64 encoded 128-bit <code>MD5</code> digest of the data. You must use
+   * this header as a message integrity check to verify that the request body was not
+   * corrupted in transit. For more information, see <a
    * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p> <p>For requests
    * made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web
    * Services SDKs, this field is calculated automatically.</p>

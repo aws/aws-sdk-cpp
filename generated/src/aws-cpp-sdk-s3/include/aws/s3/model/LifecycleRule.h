@@ -40,7 +40,6 @@ class LifecycleRule {
   AWS_S3_API LifecycleRule() = default;
   AWS_S3_API LifecycleRule(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API LifecycleRule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{
@@ -91,9 +90,8 @@ class LifecycleRule {
    * contain a <code>Prefix</code> element.</p> <p>For more information about
    * <code>Tag</code> filters, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-filters.html">Adding
-   * filters to Lifecycle rules</a> in the <i>Amazon S3 User Guide</i>.</p>
-   * <p> <code>Tag</code> filters are not supported for directory buckets.</p>
-   *
+   * filters to Lifecycle rules</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>
+   * <code>Tag</code> filters are not supported for directory buckets.</p>
    */
   inline const LifecycleRuleFilter& GetFilter() const { return m_filter; }
   inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
@@ -129,8 +127,8 @@ class LifecycleRule {
   ///@{
   /**
    * <p>Specifies when an Amazon S3 object transitions to a specified storage
-   * class.</p>  <p>This parameter applies to general purpose buckets only. It
-   * is not supported for directory bucket lifecycle configurations.</p>
+   * class.</p>  <p>This parameter applies to general purpose buckets only. It is not
+   * supported for directory bucket lifecycle configurations.</p>
    */
   inline const Aws::Vector<Transition>& GetTransitions() const { return m_transitions; }
   inline bool TransitionsHasBeenSet() const { return m_transitionsHasBeenSet; }
@@ -158,9 +156,9 @@ class LifecycleRule {
    * noncurrent objects transition to a specific storage class. If your bucket is
    * versioning-enabled (or versioning is suspended), you can set this action to
    * request that Amazon S3 transition noncurrent object versions to a specific
-   * storage class at a set period in the object's lifetime.</p>  <p>This
-   * parameter applies to general purpose buckets only. It is not supported for
-   * directory bucket lifecycle configurations.</p>
+   * storage class at a set period in the object's lifetime.</p>  <p>This parameter
+   * applies to general purpose buckets only. It is not supported for directory
+   * bucket lifecycle configurations.</p>
    */
   inline const Aws::Vector<NoncurrentVersionTransition>& GetNoncurrentVersionTransitions() const { return m_noncurrentVersionTransitions; }
   inline bool NoncurrentVersionTransitionsHasBeenSet() const { return m_noncurrentVersionTransitionsHasBeenSet; }

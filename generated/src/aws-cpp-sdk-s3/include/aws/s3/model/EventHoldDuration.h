@@ -26,7 +26,6 @@ class EventHoldDuration {
   AWS_S3_API EventHoldDuration() = default;
   AWS_S3_API EventHoldDuration(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API EventHoldDuration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

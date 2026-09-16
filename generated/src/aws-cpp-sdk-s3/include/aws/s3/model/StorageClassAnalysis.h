@@ -30,7 +30,6 @@ class StorageClassAnalysis {
   AWS_S3_API StorageClassAnalysis() = default;
   AWS_S3_API StorageClassAnalysis(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API StorageClassAnalysis& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

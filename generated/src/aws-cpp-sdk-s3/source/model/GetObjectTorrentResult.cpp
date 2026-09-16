@@ -6,7 +6,9 @@
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/GetObjectTorrentResult.h>
 
 #include <utility>
@@ -22,19 +24,6 @@ GetObjectTorrentResult& GetObjectTorrentResult::operator=(Aws::AmazonWebServiceR
   m_HttpResponseCode = result.GetResponseCode();
   m_body = result.TakeOwnershipOfPayload();
   m_bodyHasBeenSet = true;
-
-  const auto& headers = result.GetHeaderValueCollection();
-  const auto& requestChargedIter = headers.find("x-amz-request-charged");
-  if (requestChargedIter != headers.end()) {
-    m_requestCharged = RequestChargedMapper::GetRequestChargedForName(requestChargedIter->second);
-    m_requestChargedHasBeenSet = true;
-  }
-
-  const auto& requestIdIter = headers.find("x-amz-request-id");
-  if (requestIdIter != headers.end()) {
-    m_requestId = requestIdIter->second;
-    m_requestIdHasBeenSet = true;
-  }
-
+  // TODO: header-bound member deserialization
   return *this;
 }

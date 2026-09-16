@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/AccessControlTranslation.h>
@@ -19,28 +20,9 @@ namespace Model {
 
 AccessControlTranslation::AccessControlTranslation(const XmlNode& xmlNode) { *this = xmlNode; }
 
-AccessControlTranslation& AccessControlTranslation::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+AccessControlTranslation& AccessControlTranslation::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode ownerNode = resultNode.FirstChild("Owner");
-    if (!ownerNode.IsNull()) {
-      m_owner = OwnerOverrideMapper::GetOwnerOverrideForName(
-          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ownerNode.GetText()).c_str()));
-      m_ownerHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void AccessControlTranslation::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_ownerHasBeenSet) {
-    XmlNode ownerNode = parentNode.CreateChildElement("Owner");
-    ownerNode.SetText(OwnerOverrideMapper::GetNameForOwnerOverride(m_owner));
-  }
-}
+void AccessControlTranslation::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

@@ -30,7 +30,6 @@ AnnotationConfigurationState GetAnnotationConfigurationStateForName(const Aws::S
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<AnnotationConfigurationState>(hashCode);
   }
-
   return AnnotationConfigurationState::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForAnnotationConfigurationState(AnnotationConfigurationState 
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

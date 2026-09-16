@@ -27,8 +27,8 @@ namespace Model {
  * <p>This functionality is not supported for directory buckets. Directory buckets
  * only support <code>EXPRESS_ONEZONE</code> (the S3 Express One Zone storage
  * class) in Availability Zones and <code>ONEZONE_IA</code> (the S3 One
- * Zone-Infrequent Access storage class) in Dedicated Local Zones.</p>
- * <p><h3>See Also:</h3>   <a
+ * Zone-Infrequent Access storage class) in Dedicated Local Zones.</p> <p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreStatus">AWS
  * API Reference</a></p>
  */
@@ -37,7 +37,6 @@ class RestoreStatus {
   AWS_S3_API RestoreStatus() = default;
   AWS_S3_API RestoreStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API RestoreStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

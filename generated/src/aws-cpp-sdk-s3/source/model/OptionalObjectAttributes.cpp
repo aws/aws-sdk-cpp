@@ -27,7 +27,6 @@ OptionalObjectAttributes GetOptionalObjectAttributesForName(const Aws::String& n
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<OptionalObjectAttributes>(hashCode);
   }
-
   return OptionalObjectAttributes::NOT_SET;
 }
 
@@ -42,7 +41,6 @@ Aws::String GetNameForOptionalObjectAttributes(OptionalObjectAttributes enumValu
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

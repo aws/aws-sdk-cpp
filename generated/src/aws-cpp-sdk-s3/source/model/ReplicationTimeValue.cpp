@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/ReplicationTimeValue.h>
@@ -19,30 +20,9 @@ namespace Model {
 
 ReplicationTimeValue::ReplicationTimeValue(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ReplicationTimeValue& ReplicationTimeValue::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+ReplicationTimeValue& ReplicationTimeValue::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode minutesNode = resultNode.FirstChild("Minutes");
-    if (!minutesNode.IsNull()) {
-      m_minutes =
-          StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minutesNode.GetText()).c_str()).c_str());
-      m_minutesHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void ReplicationTimeValue::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_minutesHasBeenSet) {
-    XmlNode minutesNode = parentNode.CreateChildElement("Minutes");
-    ss << m_minutes;
-    minutesNode.SetText(ss.str());
-    ss.str("");
-  }
-}
+void ReplicationTimeValue::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

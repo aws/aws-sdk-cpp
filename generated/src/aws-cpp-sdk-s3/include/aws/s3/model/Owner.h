@@ -28,12 +28,11 @@ class Owner {
   AWS_S3_API Owner() = default;
   AWS_S3_API Owner(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API Owner& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{
   /**
-   * <p/>
+   * <p></p>
    */
   inline const Aws::String& GetDisplayName() const { return m_displayName; }
   inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }

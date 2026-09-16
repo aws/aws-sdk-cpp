@@ -28,7 +28,6 @@ class MetadataEntry {
   AWS_S3_API MetadataEntry() = default;
   AWS_S3_API MetadataEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API MetadataEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

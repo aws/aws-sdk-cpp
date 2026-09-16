@@ -20,9 +20,9 @@ namespace Model {
  * permanently deletes the noncurrent object versions. You set this lifecycle
  * configuration action on a bucket that has versioning enabled (or suspended) to
  * request that Amazon S3 delete noncurrent object versions at a specific period in
- * the object's lifetime.</p>  <p>This parameter applies to general purpose
- * buckets only. It is not supported for directory bucket lifecycle
- * configurations.</p> <p><h3>See Also:</h3>   <a
+ * the object's lifetime.</p>  <p>This parameter applies to general purpose buckets
+ * only. It is not supported for directory bucket lifecycle configurations.</p>
+ * <p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/NoncurrentVersionExpiration">AWS
  * API Reference</a></p>
  */
@@ -31,7 +31,6 @@ class NoncurrentVersionExpiration {
   AWS_S3_API NoncurrentVersionExpiration() = default;
   AWS_S3_API NoncurrentVersionExpiration(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API NoncurrentVersionExpiration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{
@@ -41,9 +40,8 @@ class NoncurrentVersionExpiration {
    * For information about the noncurrent days calculations, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How
    * Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3
-   * User Guide</i>.</p>  <p>This parameter applies to general purpose buckets
-   * only. It is not supported for directory bucket lifecycle configurations.</p>
-   *
+   * User Guide</i>.</p>  <p>This parameter applies to general purpose buckets only.
+   * It is not supported for directory bucket lifecycle configurations.</p>
    */
   inline int GetNoncurrentDays() const { return m_noncurrentDays; }
   inline bool NoncurrentDaysHasBeenSet() const { return m_noncurrentDaysHasBeenSet; }
@@ -64,9 +62,9 @@ class NoncurrentVersionExpiration {
    * additional noncurrent versions beyond the specified number to retain. For more
    * information about noncurrent versions, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle
-   * configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
-   * <p>This parameter applies to general purpose buckets only. It is not supported
-   * for directory bucket lifecycle configurations.</p>
+   * configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>This
+   * parameter applies to general purpose buckets only. It is not supported for
+   * directory bucket lifecycle configurations.</p>
    */
   inline int GetNewerNoncurrentVersions() const { return m_newerNoncurrentVersions; }
   inline bool NewerNoncurrentVersionsHasBeenSet() const { return m_newerNoncurrentVersionsHasBeenSet; }

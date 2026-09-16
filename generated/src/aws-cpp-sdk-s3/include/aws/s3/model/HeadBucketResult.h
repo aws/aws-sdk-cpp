@@ -31,9 +31,9 @@ class HeadBucketResult {
   ///@{
   /**
    * <p>The Amazon Resource Name (ARN) of the S3 bucket. ARNs uniquely identify
-   * Amazon Web Services resources across all of Amazon Web Services.</p>
-   * <p>This parameter is only supported for S3 directory buckets. For more
-   * information, see <a
+   * Amazon Web Services resources across all of Amazon Web Services.</p>  <p>This
+   * parameter is only supported for S3 directory buckets. For more information, see
+   * <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Using
    * tags with directory buckets</a>.</p>
    */
@@ -52,8 +52,8 @@ class HeadBucketResult {
 
   ///@{
   /**
-   * <p>The type of location where the bucket is created.</p>  <p>This
-   * functionality is only supported by directory buckets.</p>
+   * <p>The type of location where the bucket is created.</p>  <p>This functionality
+   * is only supported by directory buckets.</p>
    */
   inline LocationType GetBucketLocationType() const { return m_bucketLocationType; }
   inline void SetBucketLocationType(LocationType value) {
@@ -71,8 +71,8 @@ class HeadBucketResult {
    * <p>The name of the location where the bucket will be created.</p> <p>For
    * directory buckets, the Zone ID of the Availability Zone or the Local Zone where
    * the bucket is created. An example Zone ID value for an Availability Zone is
-   * <code>usw2-az1</code>.</p>  <p>This functionality is only supported by
-   * directory buckets.</p>
+   * <code>usw2-az1</code>.</p>  <p>This functionality is only supported by directory
+   * buckets.</p>
    */
   inline const Aws::String& GetBucketLocationName() const { return m_bucketLocationName; }
   template <typename BucketLocationNameT = Aws::String>

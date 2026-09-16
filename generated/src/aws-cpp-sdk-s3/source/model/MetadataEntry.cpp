@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/MetadataEntry.h>
@@ -19,37 +20,9 @@ namespace Model {
 
 MetadataEntry::MetadataEntry(const XmlNode& xmlNode) { *this = xmlNode; }
 
-MetadataEntry& MetadataEntry::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+MetadataEntry& MetadataEntry::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode nameNode = resultNode.FirstChild("Name");
-    if (!nameNode.IsNull()) {
-      m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
-      m_nameHasBeenSet = true;
-    }
-    XmlNode valueNode = resultNode.FirstChild("Value");
-    if (!valueNode.IsNull()) {
-      m_value = Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText());
-      m_valueHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void MetadataEntry::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_nameHasBeenSet) {
-    XmlNode nameNode = parentNode.CreateChildElement("Name");
-    nameNode.SetText(m_name);
-  }
-
-  if (m_valueHasBeenSet) {
-    XmlNode valueNode = parentNode.CreateChildElement("Value");
-    valueNode.SetText(m_value);
-  }
-}
+void MetadataEntry::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

@@ -4,11 +4,14 @@
  */
 
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/PutBucketInventoryConfigurationRequest.h>
 
+#include <numeric>
 #include <utility>
 
 using namespace Aws::S3::Model;
@@ -16,59 +19,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-bool PutBucketInventoryConfigurationRequest::HasEmbeddedError(Aws::IOStream& body, const Aws::Http::HeaderValueCollection& header) const {
-  // Header is unused
-  AWS_UNREFERENCED_PARAM(header);
-
-  auto readPointer = body.tellg();
-  Utils::Xml::XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
-  body.seekg(readPointer);
-  if (!doc.WasParseSuccessful()) {
-    return false;
-  }
-
-  if (!doc.GetRootElement().IsNull() && doc.GetRootElement().GetName() == Aws::String("Error")) {
-    return true;
-  }
-  return false;
-}
-
-Aws::String PutBucketInventoryConfigurationRequest::SerializePayload() const {
-  XmlDocument payloadDoc = XmlDocument::CreateWithRootNode("InventoryConfiguration");
-
-  XmlNode parentNode = payloadDoc.GetRootElement();
-  parentNode.SetAttributeValue("xmlns", "http://s3.amazonaws.com/doc/2006-03-01/");
-
-  m_inventoryConfiguration.AddToNode(parentNode);
-  if (parentNode.HasChildren()) {
-    return payloadDoc.ConvertToString();
-  }
-
-  return {};
-}
-
-void PutBucketInventoryConfigurationRequest::AddQueryStringParameters(URI& uri) const {
-  Aws::StringStream ss;
-  if (m_idHasBeenSet) {
-    ss << m_id;
-    uri.AddQueryStringParameter("id", ss.str());
-    ss.str("");
-  }
-
-  if (!m_customizedAccessLogTag.empty()) {
-    // only accept customized LogTag which starts with "x-"
-    Aws::Map<Aws::String, Aws::String> collectedLogTags;
-    for (const auto& entry : m_customizedAccessLogTag) {
-      if (!entry.first.empty() && !entry.second.empty() && entry.first.substr(0, 2) == "x-") {
-        collectedLogTags.emplace(entry.first, entry.second);
-      }
-    }
-
-    if (!collectedLogTags.empty()) {
-      uri.AddQueryStringParameter(collectedLogTags);
-    }
-  }
-}
+Aws::String PutBucketInventoryConfigurationRequest::SerializePayload() const { return {}; }
 
 Aws::Http::HeaderValueCollection PutBucketInventoryConfigurationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
@@ -78,8 +29,42 @@ Aws::Http::HeaderValueCollection PutBucketInventoryConfigurationRequest::GetRequ
     headers.emplace("x-amz-expected-bucket-owner", ss.str());
     ss.str("");
   }
-
   return headers;
+}
+
+void PutBucketInventoryConfigurationRequest::AddQueryStringParameters(Aws::Http::URI& uri) const {
+  Aws::StringStream ss;
+  if (m_idHasBeenSet) {
+    ss << m_id;
+    uri.AddQueryStringParameter("id", ss.str());
+    ss.str("");
+  }
+  if (!m_customizedAccessLogTag.empty()) {
+    // only accept customized LogTag which starts with "x-"
+    Aws::Map<Aws::String, Aws::String> collectedLogTags;
+    for (const auto& entry : m_customizedAccessLogTag) {
+      if (!entry.first.empty() && !entry.second.empty() && entry.first.substr(0, 2) == "x-") {
+        collectedLogTags.emplace(entry.first, entry.second);
+      }
+    }
+    if (!collectedLogTags.empty()) {
+      uri.AddQueryStringParameter(collectedLogTags);
+    }
+  }
+}
+
+bool PutBucketInventoryConfigurationRequest::HasEmbeddedError(Aws::IOStream& body, const Aws::Http::HeaderValueCollection& header) const {
+  AWS_UNREFERENCED_PARAM(header);
+  auto readPointer = body.tellg();
+  Utils::Xml::XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
+  body.seekg(readPointer);
+  if (!doc.WasParseSuccessful()) {
+    return false;
+  }
+  if (!doc.GetRootElement().IsNull() && doc.GetRootElement().GetName() == Aws::String("Error")) {
+    return true;
+  }
+  return false;
 }
 
 PutBucketInventoryConfigurationRequest::EndpointParameters PutBucketInventoryConfigurationRequest::GetEndpointContextParams() const {

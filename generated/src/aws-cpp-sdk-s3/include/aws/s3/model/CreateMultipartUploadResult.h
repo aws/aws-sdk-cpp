@@ -43,8 +43,8 @@ class CreateMultipartUploadResult {
    * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a>
    * in the <i>Amazon S3 User Guide</i>.</p> <p>The response also includes the
    * <code>x-amz-abort-rule-id</code> header that provides the ID of the lifecycle
-   * configuration rule that defines the abort action.</p>  <p>This
-   * functionality is not supported for directory buckets.</p>
+   * configuration rule that defines the abort action.</p>  <p>This functionality is
+   * not supported for directory buckets.</p>
    */
   inline const Aws::Utils::DateTime& GetAbortDate() const { return m_abortDate; }
   template <typename AbortDateT = Aws::Utils::DateTime>
@@ -63,8 +63,8 @@ class CreateMultipartUploadResult {
   /**
    * <p>This header is returned along with the <code>x-amz-abort-date</code> header.
    * It identifies the applicable lifecycle configuration rule that defines the
-   * action to abort incomplete multipart uploads.</p>  <p>This functionality
-   * is not supported for directory buckets.</p>
+   * action to abort incomplete multipart uploads.</p>  <p>This functionality is not
+   * supported for directory buckets.</p>
    */
   inline const Aws::String& GetAbortRuleId() const { return m_abortRuleId; }
   template <typename AbortRuleIdT = Aws::String>
@@ -82,8 +82,8 @@ class CreateMultipartUploadResult {
   ///@{
   /**
    * <p>The name of the bucket to which the multipart upload was initiated. Does not
-   * return the access point ARN or access point alias if used.</p>  <p>Access
-   * points are not supported by directory buckets.</p>
+   * return the access point ARN or access point alias if used.</p>  <p>Access points
+   * are not supported by directory buckets.</p>
    */
   inline const Aws::String& GetBucket() const { return m_bucket; }
   template <typename BucketT = Aws::String>
@@ -135,9 +135,9 @@ class CreateMultipartUploadResult {
   ///@{
   /**
    * <p>The server-side encryption algorithm used when you store this object in
-   * Amazon S3 or Amazon FSx.</p>  <p>When accessing data stored in Amazon FSx
-   * file systems using S3 access points, the only valid server side encryption
-   * option is <code>aws:fsx</code>.</p>
+   * Amazon S3 or Amazon FSx.</p>  <p>When accessing data stored in Amazon FSx file
+   * systems using S3 access points, the only valid server side encryption option is
+   * <code>aws:fsx</code>.</p>
    */
   inline ServerSideEncryption GetServerSideEncryption() const { return m_serverSideEncryption; }
   inline void SetServerSideEncryption(ServerSideEncryption value) {
@@ -154,8 +154,8 @@ class CreateMultipartUploadResult {
   /**
    * <p>If server-side encryption with a customer-provided encryption key was
    * requested, the response will include this header to confirm the encryption
-   * algorithm that's used.</p>  <p>This functionality is not supported for
-   * directory buckets.</p>
+   * algorithm that's used.</p>  <p>This functionality is not supported for directory
+   * buckets.</p>
    */
   inline const Aws::String& GetSSECustomerAlgorithm() const { return m_sSECustomerAlgorithm; }
   template <typename SSECustomerAlgorithmT = Aws::String>
@@ -175,7 +175,7 @@ class CreateMultipartUploadResult {
    * <p>If server-side encryption with a customer-provided encryption key was
    * requested, the response will include this header to provide the round-trip
    * message integrity verification of the customer-provided encryption key.</p>
-   *  <p>This functionality is not supported for directory buckets.</p>
+   * <p>This functionality is not supported for directory buckets.</p>
    */
   inline const Aws::String& GetSSECustomerKeyMD5() const { return m_sSECustomerKeyMD5; }
   template <typename SSECustomerKeyMD5T = Aws::String>

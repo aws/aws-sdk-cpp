@@ -35,7 +35,6 @@ class MetricsFilter {
   AWS_S3_API MetricsFilter() = default;
   AWS_S3_API MetricsFilter(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API MetricsFilter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{
@@ -58,8 +57,8 @@ class MetricsFilter {
 
   ///@{
   /**
-   * <p>The tag used when evaluating a metrics filter.</p>  <p>
-   * <code>Tag</code> filters are not supported for directory buckets.</p>
+   * <p>The tag used when evaluating a metrics filter.</p>  <p> <code>Tag</code>
+   * filters are not supported for directory buckets.</p>
    */
   inline const Tag& GetTag() const { return m_tag; }
   inline bool TagHasBeenSet() const { return m_tagHasBeenSet; }

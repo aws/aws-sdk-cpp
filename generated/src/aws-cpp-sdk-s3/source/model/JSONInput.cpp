@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/JSONInput.h>
@@ -19,27 +20,9 @@ namespace Model {
 
 JSONInput::JSONInput(const XmlNode& xmlNode) { *this = xmlNode; }
 
-JSONInput& JSONInput::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+JSONInput& JSONInput::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode typeNode = resultNode.FirstChild("Type");
-    if (!typeNode.IsNull()) {
-      m_type = JSONTypeMapper::GetJSONTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
-      m_typeHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void JSONInput::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_typeHasBeenSet) {
-    XmlNode typeNode = parentNode.CreateChildElement("Type");
-    typeNode.SetText(JSONTypeMapper::GetNameForJSONType(m_type));
-  }
-}
+void JSONInput::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

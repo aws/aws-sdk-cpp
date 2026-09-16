@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/AmazonWebServiceResult.h>
-#include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/s3/model/PutBucketPolicyRequest.h>
 
@@ -13,25 +13,7 @@
 using namespace Aws::S3::Model;
 using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
-using namespace Aws::Http;
 using namespace Aws;
-
-void PutBucketPolicyRequest::AddQueryStringParameters(URI& uri) const {
-  Aws::StringStream ss;
-  if (!m_customizedAccessLogTag.empty()) {
-    // only accept customized LogTag which starts with "x-"
-    Aws::Map<Aws::String, Aws::String> collectedLogTags;
-    for (const auto& entry : m_customizedAccessLogTag) {
-      if (!entry.first.empty() && !entry.second.empty() && entry.first.substr(0, 2) == "x-") {
-        collectedLogTags.emplace(entry.first, entry.second);
-      }
-    }
-
-    if (!collectedLogTags.empty()) {
-      uri.AddQueryStringParameter(collectedLogTags);
-    }
-  }
-}
 
 Aws::Http::HeaderValueCollection PutBucketPolicyRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
@@ -41,44 +23,60 @@ Aws::Http::HeaderValueCollection PutBucketPolicyRequest::GetRequestSpecificHeade
     headers.emplace("content-md5", ss.str());
     ss.str("");
   }
-
   if (m_checksumAlgorithmHasBeenSet && m_checksumAlgorithm != ChecksumAlgorithm::NOT_SET) {
     headers.emplace("x-amz-sdk-checksum-algorithm", ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm));
   }
-
   if (m_confirmRemoveSelfBucketAccessHasBeenSet) {
     ss << std::boolalpha << m_confirmRemoveSelfBucketAccess;
     headers.emplace("x-amz-confirm-remove-self-bucket-access", ss.str());
     ss.str("");
   }
-
   if (m_expectedBucketOwnerHasBeenSet) {
     ss << m_expectedBucketOwner;
     headers.emplace("x-amz-expected-bucket-owner", ss.str());
     ss.str("");
   }
-
   return headers;
 }
 
+void PutBucketPolicyRequest::AddQueryStringParameters(Aws::Http::URI& uri) const {
+  Aws::StringStream ss;
+  if (!m_customizedAccessLogTag.empty()) {
+    // only accept customized LogTag which starts with "x-"
+    Aws::Map<Aws::String, Aws::String> collectedLogTags;
+    for (const auto& entry : m_customizedAccessLogTag) {
+      if (!entry.first.empty() && !entry.second.empty() && entry.first.substr(0, 2) == "x-") {
+        collectedLogTags.emplace(entry.first, entry.second);
+      }
+    }
+    if (!collectedLogTags.empty()) {
+      uri.AddQueryStringParameter(collectedLogTags);
+    }
+  }
+}
+
 bool PutBucketPolicyRequest::HasEmbeddedError(Aws::IOStream& body, const Aws::Http::HeaderValueCollection& header) const {
-  // Header is unused
   AWS_UNREFERENCED_PARAM(header);
-
   auto readPointer = body.tellg();
-  Utils::Xml::XmlDocument doc = Utils::Xml::XmlDocument::CreateFromXmlStream(body);
+  Utils::Xml::XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
   body.seekg(readPointer);
-
   if (!doc.WasParseSuccessful()) {
     return false;
   }
-
   if (!doc.GetRootElement().IsNull() && doc.GetRootElement().GetName() == Aws::String("Error")) {
     return true;
   }
-
   return false;
 }
+Aws::String PutBucketPolicyRequest::GetChecksumAlgorithmName() const {
+  if (m_checksumAlgorithm == ChecksumAlgorithm::NOT_SET) {
+    return "crc64nvme";
+  } else {
+    return ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm);
+  }
+}
+
+bool PutBucketPolicyRequest::ChecksumAlgorithmIsSet() const { return m_checksumAlgorithm != ChecksumAlgorithm::NOT_SET; }
 
 PutBucketPolicyRequest::EndpointParameters PutBucketPolicyRequest::GetEndpointContextParams() const {
   EndpointParameters parameters;
@@ -91,13 +89,3 @@ PutBucketPolicyRequest::EndpointParameters PutBucketPolicyRequest::GetEndpointCo
   }
   return parameters;
 }
-
-Aws::String PutBucketPolicyRequest::GetChecksumAlgorithmName() const {
-  if (m_checksumAlgorithm == ChecksumAlgorithm::NOT_SET) {
-    return "crc64nvme";
-  } else {
-    return ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm);
-  }
-}
-
-bool PutBucketPolicyRequest::ChecksumAlgorithmIsSet() const { return m_checksumAlgorithm != ChecksumAlgorithm::NOT_SET; }

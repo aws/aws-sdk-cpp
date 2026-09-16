@@ -24,10 +24,10 @@ namespace Model {
  * bucket. If a PUT Object request doesn't specify any server-side encryption, this
  * default encryption will be applied. For more information, see <a
  * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTencryption.html">PutBucketEncryption</a>.</p>
- *  <ul> <li> <p> <b>General purpose buckets</b> - If you don't specify a
- * customer managed key at configuration, Amazon S3 automatically creates an Amazon
- * Web Services KMS key (<code>aws/s3</code>) in your Amazon Web Services account
- * the first time that you add an object encrypted with SSE-KMS to a bucket. By
+ *  <ul> <li> <p> <b>General purpose buckets</b> - If you don't specify a customer
+ * managed key at configuration, Amazon S3 automatically creates an Amazon Web
+ * Services KMS key (<code>aws/s3</code>) in your Amazon Web Services account the
+ * first time that you add an object encrypted with SSE-KMS to a bucket. By
  * default, Amazon S3 uses this KMS key for SSE-KMS. </p> </li> <li> <p>
  * <b>Directory buckets</b> - Your SSE-KMS configuration can only support 1 <a
  * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
@@ -45,15 +45,13 @@ class ServerSideEncryptionByDefault {
   AWS_S3_API ServerSideEncryptionByDefault() = default;
   AWS_S3_API ServerSideEncryptionByDefault(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API ServerSideEncryptionByDefault& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{
   /**
    * <p>Server-side encryption algorithm to use for the default encryption.</p>
-   *  <p>For directory buckets, there are only two supported values for
-   * server-side encryption: <code>AES256</code> and <code>aws:kms</code>.</p>
-   *
+   * <p>For directory buckets, there are only two supported values for server-side
+   * encryption: <code>AES256</code> and <code>aws:kms</code>.</p>
    */
   inline ServerSideEncryption GetSSEAlgorithm() const { return m_sSEAlgorithm; }
   inline bool SSEAlgorithmHasBeenSet() const { return m_sSEAlgorithmHasBeenSet; }
@@ -75,8 +73,8 @@ class ServerSideEncryptionByDefault {
    * is set to <code>aws:kms</code> or <code>aws:kms:dsse</code>.</p> </li> <li> <p>
    * <b>Directory buckets</b> - This parameter is allowed if and only if
    * <code>SSEAlgorithm</code> is set to <code>aws:kms</code>.</p> </li> </ul>
-   *  <p>You can specify the key ID, key alias, or the Amazon Resource Name
-   * (ARN) of the KMS key.</p> <ul> <li> <p>Key ID:
+   * <p>You can specify the key ID, key alias, or the Amazon Resource Name (ARN) of
+   * the KMS key.</p> <ul> <li> <p>Key ID:
    * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
    * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
    * </p> </li> <li> <p>Key Alias: <code>alias/alias-name</code> </p> </li> </ul>
@@ -95,8 +93,8 @@ class ServerSideEncryptionByDefault {
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">KMS
    * customer managed key</a> for encryption in your directory bucket, only use the
    * key ID or key ARN. The key alias format of the KMS key isn't supported.</p>
-   * </li> </ul>   <p>Amazon S3 only supports symmetric encryption
-   * KMS keys. For more information, see <a
+   * </li> </ul>   <p>Amazon S3 only supports symmetric encryption KMS keys. For more
+   * information, see <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
    * keys in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management
    * Service Developer Guide</i>.</p>
