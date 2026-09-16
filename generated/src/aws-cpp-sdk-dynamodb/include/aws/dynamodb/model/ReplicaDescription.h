@@ -66,14 +66,14 @@ class ReplicaDescription {
    * is being deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The replica is ready
    * for use.</p> </li> <li> <p> <code>REGION_DISABLED</code> - The replica is
    * inaccessible because the Amazon Web Services Region has been disabled.</p>
-   *  <p>If the Amazon Web Services Region remains inaccessible for more than
-   * 20 hours, DynamoDB will remove this replica from the replication group. The
-   * replica will not be deleted and replication will stop from and to this
-   * region.</p>  </li> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS
-   * </code> - The KMS key used to encrypt the table is inaccessible.</p>
-   * <p>If the KMS key remains inaccessible for more than 20 hours, DynamoDB will
-   * remove this replica from the replication group. The replica will not be deleted
-   * and replication will stop from and to this region.</p>  </li> </ul>
+   * <p>If the Amazon Web Services Region remains inaccessible for more than 20
+   * hours, DynamoDB will remove this replica from the replication group. The replica
+   * will not be deleted and replication will stop from and to this region.</p>
+   * </li> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS </code> - The KMS key
+   * used to encrypt the table is inaccessible.</p>  <p>If the KMS key remains
+   * inaccessible for more than 20 hours, DynamoDB will remove this replica from the
+   * replication group. The replica will not be deleted and replication will stop
+   * from and to this region.</p>  </li> </ul>
    */
   inline ReplicaStatus GetReplicaStatus() const { return m_replicaStatus; }
   inline bool ReplicaStatusHasBeenSet() const { return m_replicaStatusHasBeenSet; }

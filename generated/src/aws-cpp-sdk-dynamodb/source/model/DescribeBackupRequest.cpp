@@ -3,24 +3,22 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/DescribeBackupRequest.h>
 
+#include <numeric>
 #include <utility>
 
 using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeBackupRequest::SerializePayload() const {
-  JsonValue payload;
-
-  if (m_backupArnHasBeenSet) {
-    payload.WithString("BackupArn", m_backupArn);
-  }
-
-  return payload.View().WriteReadable();
-}
+Aws::String DescribeBackupRequest::SerializePayload() const { return "{}"; }
 
 Aws::Http::HeaderValueCollection DescribeBackupRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;

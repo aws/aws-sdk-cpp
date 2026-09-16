@@ -33,7 +33,6 @@ ProjectionType GetProjectionTypeForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<ProjectionType>(hashCode);
   }
-
   return ProjectionType::NOT_SET;
 }
 
@@ -52,7 +51,6 @@ Aws::String GetNameForProjectionType(ProjectionType enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

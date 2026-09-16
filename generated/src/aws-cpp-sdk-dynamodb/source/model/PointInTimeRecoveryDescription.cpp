@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/PointInTimeRecoveryDescription.h>
 
 #include <utility>
@@ -17,47 +20,10 @@ namespace Model {
 
 PointInTimeRecoveryDescription::PointInTimeRecoveryDescription(JsonView jsonValue) { *this = jsonValue; }
 
-PointInTimeRecoveryDescription& PointInTimeRecoveryDescription::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("PointInTimeRecoveryStatus")) {
-    m_pointInTimeRecoveryStatus =
-        PointInTimeRecoveryStatusMapper::GetPointInTimeRecoveryStatusForName(jsonValue.GetString("PointInTimeRecoveryStatus"));
-    m_pointInTimeRecoveryStatusHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("RecoveryPeriodInDays")) {
-    m_recoveryPeriodInDays = jsonValue.GetInteger("RecoveryPeriodInDays");
-    m_recoveryPeriodInDaysHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("EarliestRestorableDateTime")) {
-    m_earliestRestorableDateTime = jsonValue.GetDouble("EarliestRestorableDateTime");
-    m_earliestRestorableDateTimeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("LatestRestorableDateTime")) {
-    m_latestRestorableDateTime = jsonValue.GetDouble("LatestRestorableDateTime");
-    m_latestRestorableDateTimeHasBeenSet = true;
-  }
-  return *this;
-}
+PointInTimeRecoveryDescription& PointInTimeRecoveryDescription::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue PointInTimeRecoveryDescription::Jsonize() const {
   JsonValue payload;
-
-  if (m_pointInTimeRecoveryStatusHasBeenSet) {
-    payload.WithString("PointInTimeRecoveryStatus",
-                       PointInTimeRecoveryStatusMapper::GetNameForPointInTimeRecoveryStatus(m_pointInTimeRecoveryStatus));
-  }
-
-  if (m_recoveryPeriodInDaysHasBeenSet) {
-    payload.WithInteger("RecoveryPeriodInDays", m_recoveryPeriodInDays);
-  }
-
-  if (m_earliestRestorableDateTimeHasBeenSet) {
-    payload.WithDouble("EarliestRestorableDateTime", m_earliestRestorableDateTime.SecondsWithMSPrecision());
-  }
-
-  if (m_latestRestorableDateTimeHasBeenSet) {
-    payload.WithDouble("LatestRestorableDateTime", m_latestRestorableDateTime.SecondsWithMSPrecision());
-  }
-
   return payload;
 }
 

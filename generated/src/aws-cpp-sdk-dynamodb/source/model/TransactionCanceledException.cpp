@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/TransactionCanceledException.h>
 
 #include <utility>
@@ -17,38 +20,10 @@ namespace Model {
 
 TransactionCanceledException::TransactionCanceledException(JsonView jsonValue) { *this = jsonValue; }
 
-TransactionCanceledException& TransactionCanceledException::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("Message")) {
-    m_message = jsonValue.GetString("Message");
-    m_messageHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("CancellationReasons")) {
-    Aws::Utils::Array<JsonView> cancellationReasonsJsonList = jsonValue.GetArray("CancellationReasons");
-    for (unsigned cancellationReasonsIndex = 0; cancellationReasonsIndex < cancellationReasonsJsonList.GetLength();
-         ++cancellationReasonsIndex) {
-      m_cancellationReasons.push_back(cancellationReasonsJsonList[cancellationReasonsIndex].AsObject());
-    }
-    m_cancellationReasonsHasBeenSet = true;
-  }
-  return *this;
-}
+TransactionCanceledException& TransactionCanceledException::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue TransactionCanceledException::Jsonize() const {
   JsonValue payload;
-
-  if (m_messageHasBeenSet) {
-    payload.WithString("Message", m_message);
-  }
-
-  if (m_cancellationReasonsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> cancellationReasonsJsonList(m_cancellationReasons.size());
-    for (unsigned cancellationReasonsIndex = 0; cancellationReasonsIndex < cancellationReasonsJsonList.GetLength();
-         ++cancellationReasonsIndex) {
-      cancellationReasonsJsonList[cancellationReasonsIndex].AsObject(m_cancellationReasons[cancellationReasonsIndex].Jsonize());
-    }
-    payload.WithArray("CancellationReasons", std::move(cancellationReasonsJsonList));
-  }
-
   return payload;
 }
 

@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/VectorCapacity.h>
 
 #include <utility>
@@ -17,29 +20,10 @@ namespace Model {
 
 VectorCapacity::VectorCapacity(JsonView jsonValue) { *this = jsonValue; }
 
-VectorCapacity& VectorCapacity::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("VectorSearchRequestBytes")) {
-    m_vectorSearchRequestBytes = jsonValue.GetDouble("VectorSearchRequestBytes");
-    m_vectorSearchRequestBytesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("VectorWriteRequestBytes")) {
-    m_vectorWriteRequestBytes = jsonValue.GetDouble("VectorWriteRequestBytes");
-    m_vectorWriteRequestBytesHasBeenSet = true;
-  }
-  return *this;
-}
+VectorCapacity& VectorCapacity::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue VectorCapacity::Jsonize() const {
   JsonValue payload;
-
-  if (m_vectorSearchRequestBytesHasBeenSet) {
-    payload.WithDouble("VectorSearchRequestBytes", m_vectorSearchRequestBytes);
-  }
-
-  if (m_vectorWriteRequestBytesHasBeenSet) {
-    payload.WithDouble("VectorWriteRequestBytes", m_vectorWriteRequestBytes);
-  }
-
   return payload;
 }
 

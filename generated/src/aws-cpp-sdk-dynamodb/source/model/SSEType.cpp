@@ -30,7 +30,6 @@ SSEType GetSSETypeForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<SSEType>(hashCode);
   }
-
   return SSEType::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForSSEType(SSEType enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

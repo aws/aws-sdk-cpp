@@ -39,7 +39,6 @@ ReturnValue GetReturnValueForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<ReturnValue>(hashCode);
   }
-
   return ReturnValue::NOT_SET;
 }
 
@@ -62,7 +61,6 @@ Aws::String GetNameForReturnValue(ReturnValue enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

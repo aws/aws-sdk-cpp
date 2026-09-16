@@ -4,6 +4,7 @@
  */
 
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -19,39 +20,4 @@ using namespace Aws;
 
 TransactWriteItemsResult::TransactWriteItemsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-TransactWriteItemsResult& TransactWriteItemsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_HttpResponseCode = result.GetResponseCode();
-  JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("ConsumedCapacity")) {
-    Aws::Utils::Array<JsonView> consumedCapacityJsonList = jsonValue.GetArray("ConsumedCapacity");
-    for (unsigned consumedCapacityIndex = 0; consumedCapacityIndex < consumedCapacityJsonList.GetLength(); ++consumedCapacityIndex) {
-      m_consumedCapacity.push_back(consumedCapacityJsonList[consumedCapacityIndex].AsObject());
-    }
-    m_consumedCapacityHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ItemCollectionMetrics")) {
-    Aws::Map<Aws::String, JsonView> itemCollectionMetricsJsonMap = jsonValue.GetObject("ItemCollectionMetrics").GetAllObjects();
-    for (auto& itemCollectionMetricsItem : itemCollectionMetricsJsonMap) {
-      Aws::Utils::Array<JsonView> itemCollectionMetricsMultiple2JsonList = itemCollectionMetricsItem.second.AsArray();
-      Aws::Vector<ItemCollectionMetrics> itemCollectionMetricsMultiple2List;
-      itemCollectionMetricsMultiple2List.reserve((size_t)itemCollectionMetricsMultiple2JsonList.GetLength());
-      for (unsigned itemCollectionMetricsMultiple2Index = 0;
-           itemCollectionMetricsMultiple2Index < itemCollectionMetricsMultiple2JsonList.GetLength();
-           ++itemCollectionMetricsMultiple2Index) {
-        itemCollectionMetricsMultiple2List.push_back(
-            itemCollectionMetricsMultiple2JsonList[itemCollectionMetricsMultiple2Index].AsObject());
-      }
-      m_itemCollectionMetrics[itemCollectionMetricsItem.first] = std::move(itemCollectionMetricsMultiple2List);
-    }
-    m_itemCollectionMetricsHasBeenSet = true;
-  }
-
-  const auto& headers = result.GetHeaderValueCollection();
-  const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if (requestIdIter != headers.end()) {
-    m_requestId = requestIdIter->second;
-    m_requestIdHasBeenSet = true;
-  }
-
-  return *this;
-}
+TransactWriteItemsResult& TransactWriteItemsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) { return *this; }

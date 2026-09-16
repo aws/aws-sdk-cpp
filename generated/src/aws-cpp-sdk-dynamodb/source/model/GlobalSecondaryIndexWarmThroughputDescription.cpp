@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/GlobalSecondaryIndexWarmThroughputDescription.h>
 
 #include <utility>
@@ -18,36 +21,11 @@ namespace Model {
 GlobalSecondaryIndexWarmThroughputDescription::GlobalSecondaryIndexWarmThroughputDescription(JsonView jsonValue) { *this = jsonValue; }
 
 GlobalSecondaryIndexWarmThroughputDescription& GlobalSecondaryIndexWarmThroughputDescription::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("ReadUnitsPerSecond")) {
-    m_readUnitsPerSecond = jsonValue.GetInt64("ReadUnitsPerSecond");
-    m_readUnitsPerSecondHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("WriteUnitsPerSecond")) {
-    m_writeUnitsPerSecond = jsonValue.GetInt64("WriteUnitsPerSecond");
-    m_writeUnitsPerSecondHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Status")) {
-    m_status = IndexStatusMapper::GetIndexStatusForName(jsonValue.GetString("Status"));
-    m_statusHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue GlobalSecondaryIndexWarmThroughputDescription::Jsonize() const {
   JsonValue payload;
-
-  if (m_readUnitsPerSecondHasBeenSet) {
-    payload.WithInt64("ReadUnitsPerSecond", m_readUnitsPerSecond);
-  }
-
-  if (m_writeUnitsPerSecondHasBeenSet) {
-    payload.WithInt64("WriteUnitsPerSecond", m_writeUnitsPerSecond);
-  }
-
-  if (m_statusHasBeenSet) {
-    payload.WithString("Status", IndexStatusMapper::GetNameForIndexStatus(m_status));
-  }
-
   return payload;
 }
 

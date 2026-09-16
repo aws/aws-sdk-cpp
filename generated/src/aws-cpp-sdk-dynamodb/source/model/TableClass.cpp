@@ -30,7 +30,6 @@ TableClass GetTableClassForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<TableClass>(hashCode);
   }
-
   return TableClass::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForTableClass(TableClass enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

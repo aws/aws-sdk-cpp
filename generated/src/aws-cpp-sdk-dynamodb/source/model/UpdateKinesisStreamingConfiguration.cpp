@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/UpdateKinesisStreamingConfiguration.h>
 
 #include <utility>
@@ -17,24 +20,10 @@ namespace Model {
 
 UpdateKinesisStreamingConfiguration::UpdateKinesisStreamingConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-UpdateKinesisStreamingConfiguration& UpdateKinesisStreamingConfiguration::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("ApproximateCreationDateTimePrecision")) {
-    m_approximateCreationDateTimePrecision = ApproximateCreationDateTimePrecisionMapper::GetApproximateCreationDateTimePrecisionForName(
-        jsonValue.GetString("ApproximateCreationDateTimePrecision"));
-    m_approximateCreationDateTimePrecisionHasBeenSet = true;
-  }
-  return *this;
-}
+UpdateKinesisStreamingConfiguration& UpdateKinesisStreamingConfiguration::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue UpdateKinesisStreamingConfiguration::Jsonize() const {
   JsonValue payload;
-
-  if (m_approximateCreationDateTimePrecisionHasBeenSet) {
-    payload.WithString(
-        "ApproximateCreationDateTimePrecision",
-        ApproximateCreationDateTimePrecisionMapper::GetNameForApproximateCreationDateTimePrecision(m_approximateCreationDateTimePrecision));
-  }
-
   return payload;
 }
 
