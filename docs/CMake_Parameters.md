@@ -88,6 +88,9 @@ For more information, see the CMake documentation for your platform.
 ### ENABLE_ADDRESS_SANITIZER
 (Defaults to OFF) Flags to enable/disable Address Sanitizer for gcc or clang
 
+### ENABLE_UB_SANITIZER
+(Defaults to OFF) Flags to enable/disable Undefined Behavior Sanitizer for gcc or clang
+
 ### BYPASS_DEFAULT_PROXY
 (Defaults to ON) Bypass the machine's default proxy settings when using IXmlHttpRequest2
 
