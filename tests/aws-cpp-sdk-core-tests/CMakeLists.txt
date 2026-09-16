@@ -127,7 +127,8 @@ endif()
 target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS} ${CLIENT_LIBS})
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE
-    "CLOCK_SKEW_TEST_CASES_PATH=\"${CMAKE_CURRENT_SOURCE_DIR}/resources/clock-skew-test-cases.json\"")
+    "CLOCK_SKEW_TEST_CASES_PATH=\"${CMAKE_CURRENT_SOURCE_DIR}/resources/clock-skew-test-cases.json\""
+    "CREDENTIALS_REFRESH_TEST_CASES_PATH=\"${CMAKE_CURRENT_SOURCE_DIR}/resources/credentials-refresh-tests.json\"")
 
 add_custom_command(TARGET aws-cpp-sdk-core-tests PRE_BUILD
                    COMMAND ${CMAKE_COMMAND} -E copy_directory
