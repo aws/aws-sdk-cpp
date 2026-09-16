@@ -8,6 +8,7 @@ import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.IntegerShape;
 import software.amazon.smithy.model.shapes.LongShape;
 import software.amazon.smithy.model.shapes.OperationShape;
+import software.amazon.smithy.model.shapes.ResourceShape;
 import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.model.shapes.Shape;
 import software.amazon.smithy.model.shapes.StructureShape;
@@ -64,54 +65,6 @@ public class ShapeUtil {
         "cloudfront", "2020_05_31"
     );
     
-    /**
-     * Hardcoded shape rename collision resolutions from C2J.
-     * These shapes had name collisions with operation result wrappers in C2J
-     * and were given specific alternative names.
-     * Map: service-name -> Map of original-shape-name -> resolved-name
-     */
-    private static final Map<String, Map<String, String>> HARDCODED_COLLISION_RESOLUTIONS = Map.of(
-        "s3", Map.of("CopyObjectResult", "CopyObjectResultDetails"),
-        "accessanalyzer", Map.of("GeneratedPolicyResult", "GeneratedPolicyResults"),
-        "cloudsearchdomain", Map.of("SearchResult", "SearchResultDetails")
-    );
-
-    /**
-     * S3 shapes that exist in C2J but not in Smithy.
-     * These must be synthetically injected into the model before generation.
-     */
-    public static final Map<String, Set<String>> C2J_ONLY_SHAPES = Map.of(
-        "s3", Set.of(
-            "CopyObjectResultDetails", "SelectObjectContentEventStreamUnmarshallerError",
-            "CloudFunctionConfiguration", "QueueConfigurationDeprecated",
-            "TopicConfigurationDeprecated", "NotificationConfigurationDeprecated",
-            "RequestPaymentConfiguration", "PutObjectLockConfigurationRequestAlias",
-            "GetObjectLockConfigurationResultAlias", "ObjectLockConfigurationAlias",
-            "ObjectLockRuleAlias", "DefaultRetentionAlias", "ObjectLockRetentionAlias"
-        )
-    );
-
-    /**
-     * Returns the hardcoded collision resolution for a shape, if one exists.
-     */
-    public static Optional<String> getHardcodedResolution(String smithyServiceName, String shapeName) {
-        Map<String, String> serviceResolutions = HARDCODED_COLLISION_RESOLUTIONS.get(smithyServiceName);
-        if (serviceResolutions == null) return Optional.empty();
-        return Optional.ofNullable(serviceResolutions.get(shapeName));
-    }
-
-    /**
-     * Returns the C++ class name for a shape, applying collision renames and numeric prefix rules.
-     */
-    public static String getShapeCppName(String shapeName, String smithyServiceName) {
-        Optional<String> resolved = getHardcodedResolution(smithyServiceName, shapeName);
-        if (resolved.isPresent()) return resolved.get();
-        if (!shapeName.isEmpty() && Character.isDigit(shapeName.charAt(0))) {
-            return "The" + shapeName;
-        }
-        return shapeName;
-    }
-
     /**
      * C2J/Smithy model mismatches: tokens that are integers in C2J but strings in Smithy.
      *
@@ -209,8 +162,13 @@ public class ShapeUtil {
         }
         
         String baseName = operation.getId().getName();
+        // Only data shapes collide with a result class name; counting an operation named "<Op>Result"
+        // would wrongly force the SdkResult suffix. Matches C2J renameShape (checks the shape map only).
         Set<String> allShapeNames = new HashSet<>();
-        model.shapes().forEach(s -> allShapeNames.add(s.getId().getName()));
+        model.shapes()
+            .filter(s -> !(s instanceof OperationShape) && !(s instanceof ServiceShape)
+                && !(s instanceof ResourceShape))
+            .forEach(s -> allShapeNames.add(s.getId().getName()));
         
         // Output shape name (used for legacy early-accept behavior)
         String outputShapeName = operation.getOutput().isPresent()

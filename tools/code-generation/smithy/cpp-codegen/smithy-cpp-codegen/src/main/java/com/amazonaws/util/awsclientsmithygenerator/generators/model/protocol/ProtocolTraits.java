@@ -7,6 +7,9 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol;
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.CppNames;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.RequestHeaderSerializer;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.renderers.RequestQuerySerializer;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.AdditionalRequestHeadersTrait;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.OperationShape;
@@ -18,10 +21,9 @@ import java.util.List;
 /**
  * Owns every protocol-specific rendering decision for generated model code.
  *
- * <p>Renderers receive a {@code ProtocolTraits} and call these methods; they never
- * branch on {@link Protocol} themselves. One implementation exists per serde
- * <em>family</em> (JSON-like, REST-XML, query-XML), not per protocol, so the
- * conditional arms that used to be repeated across renderers are now classes.
+ * <p>Renderers receive a {@code ProtocolTraits} and call these methods; they never branch on
+ * {@link Protocol}. One implementation exists per serde <em>family</em> (JSON-like, REST-XML,
+ * query-XML), not per protocol.
  *
  * <p>Obtain an instance from
  * {@code ProtocolResolver.traitsFor(ProtocolResolver.resolve(service, model))}.
@@ -148,21 +150,30 @@ public interface ProtocolTraits {
     }
 
     /**
-     * Whether {@code integer} members widen to {@code int64_t} (rather than {@code int}) in this
-     * protocol's sub-object and result headers. C2J does this only for CBOR
-     * ({@code CORAL_TYPE_TO_CBOR_CPP_TYPE_MAPPING}: {@code integer -> int64_t}, applied where the
-     * template sets {@code $protocol == "smithy-rpc-v2-cbor"}). Request headers use the shared
-     * {@code RequestHeader.vm}, which does not widen, so this never affects request members.
+     * Whether this protocol honors HTTP binding traits ({@code @httpHeader} /
+     * {@code @httpPrefixHeaders} / {@code @httpQuery} / {@code @httpQueryParams}) by serializing
+     * those members onto the wire.
+     *
+     * <p>REST protocols return {@code true}. RPC protocols (awsJson, rpcv2Cbor) route these members
+     * into the body and return {@code false}: they still emit fixed protocol headers but no member
+     * header/query serialization and no {@code AddQueryStringParameters}. C2J parity.
+     */
+    default boolean serializesHttpBindingMembers() {
+        return true;
+    }
+
+    /**
+     * Whether {@code integer} members widen to {@code int64_t} in this protocol's sub-object and
+     * result headers. C2J does this only for CBOR; request headers never widen.
      */
     default boolean widensIntegers() {
         return false;
     }
 
     /**
-     * Whether result classes for this protocol expose a top-level {@code GetRequestId()} /
-     * {@code m_requestId} accessor. C2J emits it for every protocol <em>except</em> Query/EC2,
-     * whose results instead carry the request id inside the injected {@code ResponseMetadata}
-     * member. Query/EC2 override this to {@code false}.
+     * Whether result classes expose a top-level {@code GetRequestId()} / {@code m_requestId}
+     * accessor. C2J emits it for every protocol except Query/EC2 (which carry the request id inside
+     * the injected {@code ResponseMetadata}); Query/EC2 override to {@code false}.
      */
     default boolean resultHasTopLevelRequestId() {
         return true;
@@ -186,21 +197,79 @@ public interface ProtocolTraits {
                 writer.write("headers.insert(Aws::Http::HeaderValuePair(\"X-Amz-Target\", \"$L.$L\"));",
                     service.getId().getName(), operation.getId().getName());
             }
+            // Per-service constant request headers (C2J metadata.additionalHeaders, e.g. Glacier's
+            // x-amz-glacier-version). Streaming requests bypass <Prefix>Request::GetHeaders, so
+            // these are emitted here (after X-Amz-Target, before member-driven headers). Trait-gated.
+            shape.getTrait(AdditionalRequestHeadersTrait.class).ifPresent(trait ->
+                trait.getHeaders().forEach((name, value) ->
+                    writer.write("headers.insert(Aws::Http::HeaderValuePair(\"$L\", \"$L\"));", name, value)));
+            // C2J declares the stringstream once after `headers` whenever the request has >=1
+            // header member. RPC protocols route HTTP-binding members to the body, so they emit
+            // neither the stringstream nor member serialization.
+            if (serializesHttpBindingMembers() && RequestBindings.hasHeaderMembers(shape, model)) {
+                writer.write("Aws::StringStream ss;");
+            }
+            if (serializesHttpBindingMembers()) {
+                RequestHeaderSerializer.render(writer, shape, model);
+            }
             writer.write("return headers;");
         });
     }
 
-    default void writeAddQueryStringParametersImpl(CppWriter writer, String className) {
+    default void writeAddQueryStringParametersImpl(CppWriter writer, String className,
+                                                   StructureShape shape, Model model) {
         writer.openBlock("void $L::AddQueryStringParameters(Aws::Http::URI& uri) const {", "}",
             className, () -> {
-            writer.write("AWS_UNREFERENCED_PARAM(uri);");
-            writer.write("// TODO: serialize httpQuery/httpQueryParams members");
+            // C2J declares the stringstream unconditionally in AddQueryStringParameters; every query
+            // case routes its value through it.
+            writer.write("Aws::StringStream ss;");
+            RequestQuerySerializer.render(writer, shape, model);
         });
     }
 
     // ------------------------------------------------------------------
     // Protocol-agnostic today; kept here so callers have one place to look.
     // ------------------------------------------------------------------
+
+    /**
+     * Emits the extra {@code <op>InitialResponse} constructor declaration that sits before the
+     * body serde method, beyond the body serde ctor already emitted by
+     * {@link #writeSerdeMethodDecls}. JSON/CBOR initial responses arrive as an event message with
+     * headers, so they add a {@code (const Http::HeaderValueCollection&)} ctor; REST-XML builds its
+     * initial response from the XML body root via its {@code XmlNode} serde ctor and adds nothing.
+     *
+     * <p>Default: no extra ctor (REST-XML / query-XML).
+     */
+    default void writeInitialResponseCtorDecl(CppWriter writer, String exportMacro, String className) {
+    }
+
+    /**
+     * Emits the body for the extra ctor declared by {@link #writeInitialResponseCtorDecl}.
+     *
+     * <p>Default: nothing (protocols with no extra ctor).
+     */
+    default void writeInitialResponseCtorImpl(CppWriter writer, String className) {
+    }
+
+    /**
+     * Emits the statement(s) that build the {@code event} local in the event-stream handler's
+     * {@code INITIAL_RESPONSE} case. JSON/CBOR build it from the event message headers in a single
+     * statement; REST-XML parses the event payload as an XML document first (declaring the
+     * {@code xmlDoc} local and guarding {@code WasParseSuccessful} with a WARN + {@code break}),
+     * then builds the event from the XML root element.
+     *
+     * @param handlerClassTag the handler's log-tag identifier (e.g.
+     *        {@code SELECTOBJECTCONTENT_HANDLER_CLASS_TAG}), used by protocols that log during
+     *        construction. Protocols that build purely from headers ignore it.
+     *
+     * <p>Default: throws — a protocol with event streams must define how its initial response is
+     * constructed. (Query-XML has no event streams, so this is never reached.)
+     */
+    default void writeInitialResponseHandlerConstruction(CppWriter writer, String className,
+                                                         String handlerClassTag) {
+        throw new UnsupportedOperationException(
+            "Protocol " + protocol() + " does not define event-stream initial-response construction");
+    }
 
     /**
      * Emits a placeholder for an event-stream event case body: a TODO marker plus a

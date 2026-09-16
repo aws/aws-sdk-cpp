@@ -33,7 +33,9 @@ public final class TransformPipeline {
     public Model apply(Model model, ServiceShape service) {
         Model current = model;
         for (ModelTransform transform : transforms) {
-            current = transform.apply(current, service);
+            if (transform.shouldRun(service)) {
+                current = transform.transform(current, service);
+            }
         }
         return current;
     }

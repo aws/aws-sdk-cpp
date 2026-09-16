@@ -6,7 +6,23 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator;
 import com.amazonaws.util.awsclientsmithygenerator.generators.ServiceNameUtil;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.AccessAnalyzerTransforms;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.ApiGatewayTransforms;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.ApiGatewayV2Transforms;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.ChunkedEncodingTransform;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.CloudFrontTransforms;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.DynamoDbTransforms;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.Ec2Transforms;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.GlacierTransforms;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.GlobalTransforms;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.LambdaTransforms;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.LongPollingTransform;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.Route53Transforms;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.S3ControlTransforms;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.S3Transforms;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.SourceRegionTransform;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.SqsTransforms;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.SupportsPresigningTransform;
 import software.amazon.smithy.build.PluginContext;
 import software.amazon.smithy.build.SmithyBuildPlugin;
 import software.amazon.smithy.model.Model;
@@ -30,20 +46,32 @@ public class ModelCodegenPlugin implements SmithyBuildPlugin {
     public void execute(PluginContext context) {
         Model model = context.getModel();
 
-        // Skip legacy mock projections (no model files to generate)
         if (context.getProjectionName().endsWith(".mock")) {
             return;
         }
 
-        // Parse settings
         ObjectNode settings = context.getSettings();
         Map<String, String> serviceMap = parseMapSetting(settings, "c2jMap");
         Map<String, String> namespaceMap = parseNamespaceMap(settings);
 
-        // Build transform pipeline (service-level transforms will be registered here)
         TransformPipeline pipeline = new TransformPipeline(List.of(
-            GlobalTransforms.asTransform()
-            // Future: S3Transforms.asTransform(), Ec2Transforms.asTransform(), etc.
+            new GlobalTransforms(),
+            new SourceRegionTransform(),
+            new LambdaTransforms(),
+            new SqsTransforms(),
+            new ApiGatewayTransforms(),
+            new ApiGatewayV2Transforms(),
+            new Ec2Transforms(),
+            new AccessAnalyzerTransforms(),
+            new DynamoDbTransforms(),
+            new S3Transforms(),
+            new S3ControlTransforms(),
+            new GlacierTransforms(),
+            new CloudFrontTransforms(),
+            new Route53Transforms(),
+            new SupportsPresigningTransform(),
+            new ChunkedEncodingTransform(),
+            new LongPollingTransform()
         ));
 
         CppWriterDelegator writerDelegator = new CppWriterDelegator(context.getFileManifest());
@@ -52,14 +80,12 @@ public class ModelCodegenPlugin implements SmithyBuildPlugin {
             ServiceShape processedService = ServiceNameUtil.processS3CrtProjection(
                 service, context.getProjectionName());
 
-            // Apply transforms for this service
             Model transformedModel = pipeline.apply(model, processedService);
 
             String serviceName = ServiceNameUtil.getServiceName(processedService);
             String smithyServiceName = ServiceNameUtil.getSmithyServiceName(processedService, serviceMap);
             String exportMacro = ServiceNameUtil.getExportMacro(processedService, serviceMap);
 
-            // Resolve namespace override
             String namespace = namespaceMap.getOrDefault(smithyServiceName, serviceName);
 
             ModelGenerator generator = new ModelGenerator(

@@ -20,21 +20,17 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.Que
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol.RestXmlProtocolTraits;
 
 /**
- * Resolves the wire protocol for a Smithy service shape, and maps a resolved
- * protocol to the {@link ProtocolTraits} strategy that owns its rendering.
- *
- * <p>{@link #traitsFor} is the single protocol-to-behavior switch in the generator;
- * downstream generators hold a {@code ProtocolTraits} and never branch on
- * {@link Protocol} themselves.
+ * Resolves the wire protocol for a Smithy service shape and maps it to the {@link ProtocolTraits}
+ * strategy that owns its rendering. {@link #traitsFor} is the generator's single
+ * protocol-to-behavior switch; downstream generators hold a {@code ProtocolTraits} and never
+ * branch on {@link Protocol}.
  */
 public final class ProtocolResolver {
 
     /**
-     * Wire protocol variants supported by the C++ SDK code generator.
-     *
-     * <p>Each variant encapsulates the C++ serde namespace, the type used for
-     * deserialization (view), the type used for serialization (value), and the
-     * method name emitted on request shapes.
+     * Wire protocol variants supported by the C++ SDK code generator. Each carries its C++ serde
+     * namespace, view (deserialize) type, value (serialize) type, and the serialize method name
+     * emitted on request shapes.
      */
     public enum Protocol {
         JSON("Aws::Utils::Json", "Aws::Utils::Json::JsonView", "Aws::Utils::Json::JsonValue", "Jsonize"),
@@ -130,10 +126,8 @@ public final class ProtocolResolver {
     /**
      * Returns the rendering strategy for a resolved protocol.
      *
-     * <p>This is the <em>only</em> place in the generator that switches on
-     * {@link Protocol}. Every other class receives a {@link ProtocolTraits} and calls
-     * it, so adding a protocol means adding a case here plus (if its C++ surface is
-     * genuinely new) one implementation class.
+     * <p>The only place in the generator that switches on {@link Protocol}; adding a protocol
+     * means a case here plus (if its C++ surface is genuinely new) one implementation class.
      *
      * @param protocol the protocol returned by {@link #resolve}
      * @return the strategy that owns this protocol's serde rendering

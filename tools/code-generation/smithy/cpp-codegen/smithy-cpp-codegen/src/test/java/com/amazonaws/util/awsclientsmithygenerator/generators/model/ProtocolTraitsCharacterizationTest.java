@@ -28,13 +28,10 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * Characterization tests pinning the exact generated C++ text for every supported
- * protocol, so that changes to the model renderers or their {@link ProtocolTraits}
- * strategies cannot silently alter generated output.
- *
- * <p>A failure here means generated output changed. Unless the change is intentional,
- * fix the production code rather than the assertion; if it is intentional, update the
- * assertion in the same commit that changes the renderer.
+ * Characterization tests pinning the exact generated C++ text for every supported protocol, so
+ * changes to the renderers or their {@link ProtocolTraits} strategies cannot silently alter output.
+ * A failure means generated output changed: fix the production code, or update the assertion in the
+ * same commit if the change is intentional.
  */
 class ProtocolTraitsCharacterizationTest {
 
@@ -72,9 +69,8 @@ class ProtocolTraitsCharacterizationTest {
             .id("com.example#Nested")
             .addMember("value", str.getId())
             .build();
-        // Input carries a plain member, an httpHeader member, and an httpQuery member so
-        // both request Axis-1 predicates (header + query) fire.
-        StructureShape input = StructureShape.builder()
+        // Input carries plain + httpHeader + httpQuery members so both request predicates fire.
+        StructureShape.Builder inputBuilder = StructureShape.builder()
             .id("com.example#DoThingInput")
             .addMember("name", str.getId())
             .addMember("nested", nested.getId())
@@ -83,8 +79,8 @@ class ProtocolTraitsCharacterizationTest {
                 .addTrait(new software.amazon.smithy.model.traits.HttpHeaderTrait("X-Thing")).build())
             .addMember(software.amazon.smithy.model.shapes.MemberShape.builder()
                 .id("com.example#DoThingInput$q").target(str.getId())
-                .addTrait(new software.amazon.smithy.model.traits.HttpQueryTrait("q")).build())
-            .build();
+                .addTrait(new software.amazon.smithy.model.traits.HttpQueryTrait("q")).build());
+        StructureShape input = inputBuilder.build();
         // Output carries a plain member and an httpResponseCode member.
         StructureShape output = StructureShape.builder()
             .id("com.example#DoThingOutput")
@@ -93,11 +89,17 @@ class ProtocolTraitsCharacterizationTest {
                 .id("com.example#DoThingOutput$status").target(intShape.getId())
                 .addTrait(new software.amazon.smithy.model.traits.HttpResponseCodeTrait()).build())
             .build();
-        OperationShape op = OperationShape.builder()
+        // SupportsPresigningTransform stamps every query/ec2 operation; mirror it so this pins the
+        // same post-transform output (protected DumpBodyToUrl decl + protocol-specific impl).
+        OperationShape.Builder opBuilder = OperationShape.builder()
             .id("com.example#DoThing")
             .input(input.getId())
-            .output(output.getId())
-            .build();
+            .output(output.getId());
+        if (p == Protocol.QUERY_XML || p == Protocol.EC2) {
+            opBuilder.addTrait(new com.amazonaws.util.awsclientsmithygenerator.generators.model
+                .transforms.SupportsPresigningTrait());
+        }
+        OperationShape op = opBuilder.build();
         ServiceShape service = ServiceShape.builder()
             .id("com.example#Example")
             .version("2024-01-01")
@@ -125,7 +127,7 @@ class ProtocolTraitsCharacterizationTest {
         ProtocolTraits traits = ProtocolResolver.traitsFor(resolved);
         RenderContext ctx = new RenderContext(model, service, traits,
             "Example", "AWS_EXAMPLE_API", "example");
-        new SubObjectRenderer(classified.subObjects(), ctx).render(delegator);
+        new SubObjectRenderer(classified.subObjects(), classified.resultOutputIds(), ctx).render(delegator);
         new RequestRenderer(classified.requests(), ctx).render(delegator);
         new ResultRenderer(classified.results(), ctx).render(delegator);
 
@@ -391,12 +393,17 @@ class ProtocolTraitsCharacterizationTest {
 
     @ParameterizedTest
     @EnumSource(value = Protocol.class, names = {"JSON"})
-    void awsJson_request_hasTargetHeaderAndQueryAndSerialize(Protocol p) {
+    void awsJson_request_hasTargetHeaderAndSerialize_noWireBindings(Protocol p) {
         String h = file(p, "DoThingRequest.h");
         assertTrue(h.contains("SerializePayload() const override;"), h);
-        assertTrue(h.contains("GetRequestSpecificHeaders() const override;"), h);   // header member OR target
-        assertTrue(h.contains("AddQueryStringParameters(Aws::Http::URI& uri) const override;"), h);
+        assertTrue(h.contains("GetRequestSpecificHeaders() const override;"), h);   // X-Amz-Target
+        // RPC awsJson routes @httpHeader/@httpQuery members to the body: no AddQueryStringParameters,
+        // and no member header serialization inside GetRequestSpecificHeaders.
+        assertFalse(h.contains("AddQueryStringParameters(Aws::Http::URI& uri) const override;"), h);
         assertFalse(h.contains("DumpBodyToUrl"), h);
+        String c = file(p, "DoThingRequest.cpp");
+        assertTrue(c.contains("X-Amz-Target"), c);
+        assertFalse(c.contains("uri.AddQueryStringParameter"), c);
     }
 
     @ParameterizedTest
@@ -488,8 +495,7 @@ class ProtocolTraitsCharacterizationTest {
     @EnumSource(value = Protocol.class, names = {"QUERY_XML", "EC2"})
     void queryLikeResultHeader_noBlankBeforeHttpResponseCodeWhenNoRequestId(Protocol p) {
         // Without a top-level m_requestId, the last data member is followed directly by
-        // m_HttpResponseCode (no intervening blank line), matching C2J. The fixture's last
-        // result member is the @httpResponseCode int "status".
+        // m_HttpResponseCode (no blank line), matching C2J.
         String h = stripIndent(file(p, "DoThingResult.h"));
         assertTrue(h.contains("int m_status{0};\nAws::Http::HttpResponseCode m_HttpResponseCode;"), h);
     }
@@ -506,9 +512,8 @@ class ProtocolTraitsCharacterizationTest {
     @ParameterizedTest
     @EnumSource(value = Protocol.class, names = {"QUERY_XML", "EC2"})
     void queryLikeResultHeader_omitsAWSStringWhenNoStringMemberOrRequestId(Protocol p) {
-        // With no top-level m_requestId and no string-typed member, the Query/EC2 result header
-        // has no Aws::String use and must not include AWSString.h, matching C2J include hygiene.
-        // (The fixture DoThingOutput has only a nested struct + httpResponseCode int member.)
+        // With no top-level m_requestId and no string-typed member, the Query/EC2 result header has
+        // no Aws::String use and must not include AWSString.h, matching C2J.
         String h = file(p, "DoThingResult.h");
         assertFalse(h.contains("AWSString.h"), h);
     }

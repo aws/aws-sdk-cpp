@@ -43,9 +43,8 @@ class EnumRendererTest {
 
     @Test
     void renderHeader_capitalizesLowerCamelEnumName() {
-        // Some Smithy models (e.g. IAM) name enum shapes in lowerCamel. C2J normalizes every
-        // shape name to UpperCamel, so the C++ enum type, mapper namespace, and mapper
-        // functions must be capitalized regardless of the model's casing.
+        // Some Smithy models (e.g. IAM) name enum shapes in lowerCamel; C2J normalizes to UpperCamel,
+        // so the C++ enum type, mapper namespace, and functions must all be capitalized.
         EnumShape enumShape = EnumShape.builder()
             .id("com.example#statusType")
             .addMember("Active", "Active")
@@ -87,6 +86,44 @@ class EnumRendererTest {
         String output = writer.toString();
         assertTrue(output.contains("#include <aws/kinesis/Kinesis_EXPORTS.h>"),
             "Missing exports header include: " + output);
+    }
+
+    @Test
+    void renderHeader_doesNotSuffixPlatformValuesButStillSuffixesKeywords() {
+        // WINDOWS/LINUX/min/max ship bare (match C2J); a genuinely reserved word like GET still gets '_'.
+        EnumShape enumShape = EnumShape.builder()
+            .id("com.example#Mixed")
+            .addMember("WINDOWS", "WINDOWS")
+            .addMember("LINUX", "LINUX")
+            .addMember("min", "min")
+            .addMember("max", "max")
+            .addMember("GET", "GET")
+            .build();
+        CppWriter writer = new CppWriter();
+        EnumRenderer.renderHeader(writer, enumShape, "Svc", "AWS_SVC_API", "svc");
+        String out = writer.toString();
+        assertTrue(out.contains("NOT_SET, WINDOWS, LINUX, min, max, GET_"),
+            "WINDOWS/LINUX/min/max must be bare, GET_ still suffixed (C2J parity): " + out);
+        assertFalse(out.contains("WINDOWS_"), "WINDOWS must not be suffixed: " + out);
+        assertFalse(out.contains("LINUX_"), "LINUX must not be suffixed: " + out);
+        assertFalse(out.contains("min_"), "min must not be suffixed: " + out);
+        assertFalse(out.contains("max_"), "max must not be suffixed: " + out);
+    }
+
+    @Test
+    void renderHeader_capitalizesExportsPrefixForLowercaseNamespace() {
+        // Lowercase namespace (drs) must include the capitalized Drs_EXPORTS.h; namespace block stays lowercase.
+        EnumShape enumShape = EnumShape.builder()
+            .id("com.example#E")
+            .addMember("A", "A")
+            .build();
+        CppWriter writer = new CppWriter();
+        EnumRenderer.renderHeader(writer, enumShape, "drs", "AWS_DRS_API", "drs");
+        String out = writer.toString();
+        assertTrue(out.contains("#include <aws/drs/Drs_EXPORTS.h>"),
+            "EXPORTS include must use the capitalized class prefix: " + out);
+        assertTrue(out.contains("namespace drs {"),
+            "namespace block must stay lowercase: " + out);
     }
 
     @Test
@@ -326,5 +363,56 @@ class EnumRendererTest {
         assertEquals("co_yield_", EnumRenderer.sanitizeEnumValue("co_yield"));
         // Verify module (was misspelled as moduel) is now correctly forbidden
         assertEquals("module_", EnumRenderer.sanitizeEnumValue("module"));
+    }
+
+    @Test
+    void renderHeader_emitsWindowsUndefGuardForEc2InterfaceEnumValue() {
+        // EC2's NetworkInterfaceType has an `interface` value that collides with the Windows
+        // `interface` macro (<combaseapi.h>); C2J's ModelEnumHeader.vm #undef's it.
+        EnumShape enumShape = EnumShape.builder()
+            .id("com.example#NetworkInterfaceType")
+            .addMember("interface", "interface")
+            .addMember("natGateway", "natGateway")
+            .build();
+        CppWriter writer = new CppWriter();
+        EnumRenderer.renderHeader(writer, enumShape, "EC2", "AWS_EC2_API", "ec2");
+        String output = writer.toString();
+        assertTrue(output.contains("#if defined(_WIN32) && defined(interface)"),
+            "Missing Windows guard for `interface`: " + output);
+        assertTrue(output.contains("#undef interface"), "Missing #undef interface: " + output);
+        assertTrue(output.contains("#endif"), "Missing #endif: " + output);
+        // The guard must sit before the namespace block, matching C2J.
+        assertTrue(output.indexOf("#undef interface") < output.indexOf("namespace Aws {"),
+            "#undef must precede the namespace block: " + output);
+    }
+
+    @Test
+    void renderHeader_noWindowsUndefGuardForOtherServicesWithInterfaceValue() {
+        // The mapping is per-service: only EC2 gets the `interface` guard. A different service
+        // with the same enum value must not emit it (matches C2J's namespace-keyed mapping).
+        EnumShape enumShape = EnumShape.builder()
+            .id("com.example#SomeType")
+            .addMember("interface", "interface")
+            .build();
+        CppWriter writer = new CppWriter();
+        EnumRenderer.renderHeader(writer, enumShape, "TestService", "AWS_TESTSERVICE_API", "testservice");
+        String output = writer.toString();
+        assertFalse(output.contains("#undef interface"),
+            "Only EC2 should get the interface guard: " + output);
+    }
+
+    @Test
+    void predefinedWindowsSymbols_matchesC2jNamespaceKeyedMapping() {
+        // EC2 -> interface, DynamoDB -> IN, S3Crt -> IGNORE; order follows the value list.
+        assertEquals(List.of("interface"),
+            EnumRenderer.predefinedWindowsSymbols("EC2", List.of("natGateway", "interface", "efa")));
+        assertEquals(List.of("IN"),
+            EnumRenderer.predefinedWindowsSymbols("DynamoDB", List.of("EQ", "IN", "LE")));
+        assertEquals(List.of("IGNORE"),
+            EnumRenderer.predefinedWindowsSymbols("S3Crt", List.of("IGNORE")));
+        // No collisions -> empty.
+        assertTrue(EnumRenderer.predefinedWindowsSymbols("EC2", List.of("natGateway")).isEmpty());
+        // Unknown service -> empty even if a value matches another service's symbol.
+        assertTrue(EnumRenderer.predefinedWindowsSymbols("TestService", List.of("interface")).isEmpty());
     }
 }

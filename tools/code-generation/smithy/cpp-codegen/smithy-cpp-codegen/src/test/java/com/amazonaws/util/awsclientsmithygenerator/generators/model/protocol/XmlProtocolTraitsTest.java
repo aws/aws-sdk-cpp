@@ -24,10 +24,8 @@ class XmlProtocolTraitsTest {
     }
 
     /**
-     * Renders inside a simulated class body (indent level 1), matching how request-method
-     * declarations are emitted by {@code RequestRenderer}. Query/EC2 decls open with a
-     * {@code dedent()} for the {@code protected:} sandwich, which requires a non-zero
-     * starting indent.
+     * Renders at indent level 1, as {@code RequestRenderer} emits request-method decls. Query/EC2
+     * decls open with a {@code dedent()} for the {@code protected:} sandwich, needing a non-zero indent.
      */
     private static String renderInClassBody(java.util.function.Consumer<CppWriter> body) {
         CppWriter writer = new CppWriter();
@@ -57,6 +55,12 @@ class XmlProtocolTraitsTest {
     }
     private static software.amazon.smithy.model.shapes.OperationShape opDoThing() {
         return software.amazon.smithy.model.shapes.OperationShape.builder().id("com.example#DoThing").build();
+    }
+    /** A presignable operation: carries the internal trait stamped by SupportsPresigningTransform. */
+    private static software.amazon.smithy.model.shapes.OperationShape opDoThingPresigning() {
+        return software.amazon.smithy.model.shapes.OperationShape.builder().id("com.example#DoThing")
+            .addTrait(new com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.SupportsPresigningTrait())
+            .build();
     }
     private static software.amazon.smithy.model.shapes.ServiceShape svcAthena() {
         return software.amazon.smithy.model.shapes.ServiceShape.builder()
@@ -118,6 +122,34 @@ class XmlProtocolTraitsTest {
         int serialize = out.indexOf("AddToNode");
         assertTrue(hook >= 0 && serialize > hook,
             "Hook must run before the serialize method: " + out);
+    }
+
+    // ---------- REST_XML: event-stream initial response ----------
+
+    @Test
+    void restXml_initialResponse_omitsHeaderCollectionCtor_buildsFromXmlRoot() {
+        // REST-XML reuses its XmlNode serde ctor; the initial response is built from the XML body
+        // root element, so no (const Http::HeaderValueCollection&) ctor is emitted.
+        String decl = render(w -> restXml.writeInitialResponseCtorDecl(w, "AWS_EX_API", "DoStreamInitialResponse"));
+        assertFalse(decl.contains("HeaderValueCollection"),
+            "REST-XML must not emit a header-collection initial-response ctor: " + decl);
+
+        String impl = render(w -> restXml.writeInitialResponseCtorImpl(w, "DoStreamInitialResponse"));
+        assertFalse(impl.contains("HeaderValueCollection"),
+            "REST-XML must not emit a header-collection initial-response ctor impl: " + impl);
+
+        // The handler-construction block must declare xmlDoc, guard the parse (WARN + break), and
+        // then build the event from the XML root — mirroring C2J's XmlRequestEventStreamHandlerSource.
+        String handler = render(w -> restXml.writeInitialResponseHandlerConstruction(
+            w, "DoStreamInitialResponse", "DOSTREAM_HANDLER_CLASS_TAG"));
+        assertTrue(handler.contains(
+            "auto xmlDoc = XmlDocument::CreateFromXmlString(GetEventPayloadAsString());"), handler);
+        assertTrue(handler.contains("if (!xmlDoc.WasParseSuccessful()) {"), handler);
+        assertTrue(handler.contains("AWS_LOGSTREAM_WARN(DOSTREAM_HANDLER_CLASS_TAG, \"Unable to generate "
+            + "a proper InitialResponse object from the response in XML format.\");"), handler);
+        assertTrue(handler.contains("break;"), handler);
+        assertTrue(handler.contains("DoStreamInitialResponse event(xmlDoc.GetRootElement());"), handler);
+        assertFalse(handler.contains("GetEventHeadersAsHttpHeaders"), handler);
     }
 
     // ---------- QUERY_XML / EC2: two OutputToStream overloads ----------
@@ -235,30 +267,78 @@ class XmlProtocolTraitsTest {
         assertTrue(d.contains("void AddQueryStringParameters(Aws::Http::URI& uri) const override;"), d);
     }
 
+    private static software.amazon.smithy.model.shapes.StructureShape reqWithEmbeddedErrors() {
+        return software.amazon.smithy.model.shapes.StructureShape.builder()
+            .id("com.example#DoThingRequest")
+            .addTrait(new com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms
+                .EmbeddedErrorsTrait())
+            .build();
+    }
+
+    @Test
+    void restXml_withEmbeddedErrorsTrait_emitsHasEmbeddedError() {
+        var req = reqWithEmbeddedErrors(); var model = modelWith(req);
+        ProtocolTraits xml = new RestXmlProtocolTraits();
+        String d = render(w -> xml.writeRequestMethodDecls(w, "AWS_EX_API", req, opDoThing(), model));
+        assertTrue(d.contains("AWS_EX_API bool HasEmbeddedError(IOStream &body, "
+            + "const Http::HeaderValueCollection &header) const override;"), d);
+        String i = render(w -> xml.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model));
+        // The impl is the real constant XML error-sniff body (not a stub) — matches C2J's S3
+        // request-source templates: parse the body and report true iff the root element is <Error>.
+        assertTrue(i.contains("bool DoThingRequest::HasEmbeddedError("), i);
+        assertTrue(i.contains("XmlDocument doc = XmlDocument::CreateFromXmlStream(body);"), i);
+        assertTrue(i.contains("doc.GetRootElement().GetName() == Aws::String(\"Error\")"), i);
+        assertFalse(i.contains("return false; }"), "impl must not be the one-line stub");
+    }
+
+    @Test
+    void restXml_withoutEmbeddedErrorsTrait_omitsHasEmbeddedError() {
+        var req = reqWith(false, false); var model = modelWith(req);
+        ProtocolTraits xml = new RestXmlProtocolTraits();
+        String d = render(w -> xml.writeRequestMethodDecls(w, "AWS_EX_API", req, opDoThing(), model));
+        assertFalse(d.contains("HasEmbeddedError"), d);
+        String i = render(w -> xml.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model));
+        assertFalse(i.contains("HasEmbeddedError"), i);
+    }
+
     // ---------- Query/EC2 request contract (Axis-1 gating + protected DumpBodyToUrl) ----------
 
     @Test
-    void queryXml_serializePayloadAndProtectedDumpBodyToUrl() {
+    void queryXml_serializePayloadAndDumpBodyToUrlImpl() {
+        // DumpBodyToUrl DECL is emitted by RequestRenderer (gated on SupportsPresigningTrait), not the
+        // query traits; the IMPL is here, gated on the SAME operation trait so decl+impl stay symmetric.
         var req = reqWith(false, false); var model = modelWith(req);
         ProtocolTraits q = new QueryXmlProtocolTraits(Protocol.QUERY_XML);
-        String d = renderInClassBody(w -> q.writeRequestMethodDecls(w, "AWS_EX_API", req, opDoThing(), model));
+        String d = renderInClassBody(w -> q.writeRequestMethodDecls(w, "AWS_EX_API", req, opDoThingPresigning(), model));
         assertTrue(d.contains("Aws::String SerializePayload() const override;"), d);
-        assertTrue(d.contains("void DumpBodyToUrl(Aws::Http::URI& uri) const override;"), d);
-        assertTrue(d.contains("protected:"), d);
-        assertTrue(d.contains("public:"), d);
+        assertFalse(d.contains("DumpBodyToUrl"),
+            "DumpBodyToUrl decl moved to RequestRenderer; query traits must not emit it: " + d);
         assertFalse(d.contains("GetRequestSpecificHeaders"), d);
-        String i = render(w -> q.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model));
+        String i = render(w -> q.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThingPresigning(), svcAthena(), model));
         assertTrue(i.contains("Aws::String DoThingRequest::SerializePayload() const { return {}; }"), i);
         assertTrue(i.contains("void DoThingRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }"), i);
     }
 
     @Test
-    void queryXml_withHeaderMember_alsoEmitsHeaders_andStillDumpBodyToUrl() {
+    void queryXml_withoutPresigningOperation_omitsDumpBodyToUrlImpl() {
+        // Compile-break regression: the impl must be ABSENT when the operation lacks the trait, so a
+        // Unit-input op that never got the operation trait doesn't emit an impl with no declaration.
+        var req = reqWith(false, false); var model = modelWith(req);
+        ProtocolTraits q = new QueryXmlProtocolTraits(Protocol.QUERY_XML);
+        String i = render(w -> q.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model));
+        assertTrue(i.contains("Aws::String DoThingRequest::SerializePayload() const { return {}; }"), i);
+        assertFalse(i.contains("DumpBodyToUrl"),
+            "operation without SupportsPresigningTrait must not emit the DumpBodyToUrl impl: " + i);
+    }
+
+    @Test
+    void queryXml_withHeaderMember_alsoEmitsHeaders() {
         var req = reqWith(true, false); var model = modelWith(req);
         ProtocolTraits q = new QueryXmlProtocolTraits(Protocol.QUERY_XML);
         String d = renderInClassBody(w -> q.writeRequestMethodDecls(w, "AWS_EX_API", req, opDoThing(), model));
         assertTrue(d.contains("GetRequestSpecificHeaders() const override;"), d);
-        assertTrue(d.contains("DumpBodyToUrl"), d);
+        assertFalse(d.contains("DumpBodyToUrl"),
+            "DumpBodyToUrl decl moved to RequestRenderer; query traits must not emit it: " + d);
     }
 
     // ---------- Query/EC2 result ResponseMetadata / requestId extraction ----------

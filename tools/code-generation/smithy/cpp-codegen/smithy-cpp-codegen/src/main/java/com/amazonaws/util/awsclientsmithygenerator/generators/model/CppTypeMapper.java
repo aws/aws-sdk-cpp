@@ -34,11 +34,9 @@ public final class CppTypeMapper {
     }
 
     /**
-     * Returns the C++ type/file name for a shape, capitalizing the first character so that
-     * lowerCamel Smithy shape names (e.g. IAM's {@code statusType}) become UpperCamel C++
-     * identifiers ({@code StatusType}). This matches the legacy C2J normalization, which
-     * upper-camel-cases every shape name at model load
-     * ({@code C2jModelToGeneratorModelTransformer}).
+     * Returns the C++ type/file name for a shape, upper-casing the first character so lowerCamel
+     * Smithy names (e.g. {@code statusType}) become UpperCamel C++ identifiers ({@code StatusType}).
+     * Matches C2J's model-load normalization.
      *
      * @param shape the shape whose C++ type/file name is needed
      * @return the shape's name with its first character upper-cased
@@ -68,12 +66,8 @@ public final class CppTypeMapper {
      * @param shape        the shape to map
      * @param model        the model (needed to resolve list/map member targets)
      * @param wideIntegers when {@code true}, {@code integer} maps to {@code int64_t} instead of
-     *        {@code int}. C2J applies this only under the CBOR protocol
-     *        ({@code CORAL_TYPE_TO_CBOR_CPP_TYPE_MAPPING}: {@code integer -> int64_t}), and only
-     *        in the file kinds whose templates set {@code $protocol == "smithy-rpc-v2-cbor"} —
-     *        the CBOR sub-object and result headers. Request headers use the shared
-     *        {@code RequestHeader.vm}, which does not, so they keep {@code int}. {@code long} is
-     *        {@code long long} in every mapping and is unaffected.
+     *        {@code int}. C2J applies this only for CBOR sub-object and result headers; request
+     *        headers keep {@code int}. {@code long} is {@code long long} everywhere, unaffected.
      */
     public static String getCppType(Shape shape, Model model, boolean wideIntegers) {
         // Check enum BEFORE string — a Smithy 2.0 EnumShape extends StringShape, and a Smithy 1.0
@@ -266,37 +260,20 @@ public final class CppTypeMapper {
             Shape target = model.expectShape(member.getTarget());
             if (isRecursiveStructMember(structureShape, target, model)) {
                 // A recursive member is stored as std::shared_ptr<T>. A mutually-referenced T is
-                // forward-declared (see getForwardDeclarations), so the header needs the allocator
-                // header for the inline MakeShared setter rather than T's own header. A directly
-                // self-referential member (T == enclosing) needs neither: the class declares itself
-                // and MakeShared resolves transitively. Both match C2J.
+                // forward-declared, so the header needs the allocator header (for the inline
+                // MakeShared setter) not T's own. A directly self-referential member needs neither.
+                // Both match C2J.
                 if (!target.getId().equals(selfId)) {
                     includes.add("<aws/core/utils/memory/stl/AWSAllocator.h>");
                 }
             } else {
                 addMemberInclude(includes, target, selfId, model, projectName);
-                // For list/map, also include the element/key/value types
-                if (target.isListShape()) {
-                    ListShape list = target.asListShape().get();
-                    addMemberInclude(includes, model.expectShape(list.getMember().getTarget()),
-                        selfId, model, projectName);
-                }
-                if (target.isMapShape()) {
-                    MapShape map = target.asMapShape().get();
-                    addMemberInclude(includes, model.expectShape(map.getKey().getTarget()),
-                        selfId, model, projectName);
-                    addMemberInclude(includes, model.expectShape(map.getValue().getTarget()),
-                        selfId, model, projectName);
-                }
-                // A @sparse list/map wraps its element/value in Aws::Crt::Optional, declared in
-                // <aws/crt/Optional.h>. Matches C2J's generated SparseNullsOperationRequest.h.
-                if ((target.isListShape() || target.isMapShape()) && target.hasTrait(SparseTrait.class)) {
-                    includes.add("<aws/crt/Optional.h>");
-                }
+                // For list/map, recursively include every nested element/key/value type so leaf
+                // struct/enum headers surface even through nested containers.
+                addContainerIncludes(includes, target, selfId, model, projectName);
             }
-            // @idempotencyToken members are brace-initialized with
-            // Aws::Utils::UUID::PseudoRandomUUID(), which requires UUID.h. Matches C2J
-            // (CppViewHelper.computeMemberIncludeName).
+            // @idempotencyToken members are brace-initialized with PseudoRandomUUID(), needing
+            // UUID.h. Matches C2J.
             if (member.hasTrait(IdempotencyTokenTrait.class)) {
                 includes.add("<aws/core/utils/UUID.h>");
             }
@@ -317,10 +294,38 @@ public final class CppTypeMapper {
     }
 
     /**
+     * Recursively adds member-type includes for every nested element/key/value of a list or map,
+     * descending only through further list/map shapes (bounded by nesting depth). Lets a member
+     * typed {@code Map<String, Map<String, Leaf>>} reach {@code Leaf}'s header. C2J parity.
+     *
+     * <p>{@code @sparse} adds {@code <aws/crt/Optional.h>} at each sparse nesting level.
+     */
+    private static void addContainerIncludes(Set<String> includes, Shape target, ShapeId selfId,
+                                             Model model, String projectName) {
+        if (target.isListShape()) {
+            Shape elem = model.expectShape(target.asListShape().get().getMember().getTarget());
+            addMemberInclude(includes, elem, selfId, model, projectName);
+            addContainerIncludes(includes, elem, selfId, model, projectName);
+        } else if (target.isMapShape()) {
+            MapShape map = target.asMapShape().get();
+            Shape key = model.expectShape(map.getKey().getTarget());
+            Shape value = model.expectShape(map.getValue().getTarget());
+            addMemberInclude(includes, key, selfId, model, projectName);
+            addMemberInclude(includes, value, selfId, model, projectName);
+            addContainerIncludes(includes, key, selfId, model, projectName);
+            addContainerIncludes(includes, value, selfId, model, projectName);
+        }
+        // A @sparse list/map wraps its element/value in Aws::Crt::Optional (<aws/crt/Optional.h>).
+        // C2J parity.
+        if ((target.isListShape() || target.isMapShape()) && target.hasTrait(SparseTrait.class)) {
+            includes.add("<aws/crt/Optional.h>");
+        }
+    }
+
+    /**
      * Returns the sorted C++ class names of every direct member whose target forms a reference
-     * cycle with {@code structureShape} (see {@link #isRecursiveStructMember}). These are stored
-     * as {@code std::shared_ptr<T>} and must be forward-declared (not included) in the header to
-     * break the otherwise-infinite by-value member. Matches C2J's {@code computeForwardDeclarations}.
+     * cycle with {@code structureShape}. Stored as {@code std::shared_ptr<T>}, they are
+     * forward-declared (not included) to break the otherwise-infinite by-value member. C2J parity.
      *
      * @param structureShape the enclosing structure/union
      * @param model          the model

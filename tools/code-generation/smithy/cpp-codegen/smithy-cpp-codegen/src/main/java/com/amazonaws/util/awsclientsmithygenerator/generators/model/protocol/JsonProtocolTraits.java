@@ -6,6 +6,7 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.ProtocolResolver.Protocol;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.SupportsPresigningTrait;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.ServiceShape;
@@ -88,10 +89,21 @@ public final class JsonProtocolTraits implements ProtocolTraits {
             case SUBOBJECT_HEADER:
             case RESULT_HEADER:
                 return List.of();
-            // All source kinds share one union (supersets allowed: a .cpp may carry an
-            // include it doesn't strictly use). Usings are unchanged; only #includes widen.
-            case SUBOBJECT_SOURCE:
+            // Request sources also serialize @httpHeader/@httpQuery members, needing URI,
+            // StringUtils, and <numeric> (std::accumulate for comma-joined list headers). Added
+            // only here to avoid widening other source kinds.
             case REQUEST_SOURCE:
+                return List.of(
+                    "aws/core/utils/json/JsonSerializer.h",
+                    "aws/core/utils/UnreferencedParam.h",
+                    "aws/core/utils/memory/stl/AWSStringStream.h",
+                    "aws/core/utils/HashingUtils.h",
+                    "aws/core/utils/StringUtils.h",
+                    "aws/core/http/URI.h",
+                    "numeric",
+                    "utility");
+            // All source kinds share one union (supersets allowed). Only #includes widen; usings unchanged.
+            case SUBOBJECT_SOURCE:
             case RESULT_SOURCE:
             case STREAMING_RESULT_SOURCE:
             case EVENT_HANDLER_SOURCE:
@@ -158,6 +170,32 @@ public final class JsonProtocolTraits implements ProtocolTraits {
     }
 
     @Override
+    public boolean serializesHttpBindingMembers() {
+        // rest-json honors HTTP bindings; awsJson (RPC) routes those members to the body.
+        return protocol == Protocol.REST_JSON;
+    }
+
+    @Override
+    public void writeInitialResponseCtorDecl(CppWriter writer, String exportMacro, String className) {
+        // JSON initial responses arrive as an event message with headers.
+        writer.write("$L $L(const Http::HeaderValueCollection& responseHeaders);", exportMacro, className);
+    }
+
+    @Override
+    public void writeInitialResponseCtorImpl(CppWriter writer, String className) {
+        // Delegate to the default ctor so all members are value-initialized before the
+        // header-derived ones are set (matches C2J).
+        writer.openBlock("$1L::$1L(const Http::HeaderValueCollection& responseHeaders) : $1L() {", "}",
+            className, () -> writer.write("AWS_UNREFERENCED_PARAM(responseHeaders);"));
+    }
+
+    @Override
+    public void writeInitialResponseHandlerConstruction(CppWriter writer, String className,
+                                                        String handlerClassTag) {
+        writer.write("$L event(GetEventHeadersAsHttpHeaders());", className);
+    }
+
+    @Override
     public void writeRequestMethodDecls(CppWriter writer, String exportMacro,
                                         StructureShape shape, OperationShape operation, Model model) {
         // A raw-streaming-payload request sends its body via the streaming base class, so no
@@ -165,11 +203,12 @@ public final class JsonProtocolTraits implements ProtocolTraits {
         if (RequestBindings.emitsSerializePayload(operation, model)) {
             writer.write("$L Aws::String SerializePayload() const override;", exportMacro);
         }
-        if (hasTargetHeader() || RequestBindings.hasHeaderMembers(shape, model)) {
+        if (hasTargetHeader()
+                || (serializesHttpBindingMembers() && RequestBindings.hasHeaderMembers(shape, model))) {
             writer.write("");
             writeGetRequestSpecificHeadersDecl(writer, exportMacro);
         }
-        if (RequestBindings.hasQueryStringMembers(shape, model)) {
+        if (serializesHttpBindingMembers() && RequestBindings.hasQueryStringMembers(shape, model)) {
             writer.write("");
             writeAddQueryStringParametersDecl(writer, exportMacro);
         }
@@ -183,13 +222,20 @@ public final class JsonProtocolTraits implements ProtocolTraits {
             String payloadBody = protocol == Protocol.JSON ? "\"{}\"" : "{}";
             writer.write("Aws::String $L::SerializePayload() const { return $L; }", className, payloadBody);
         }
-        if (hasTargetHeader() || RequestBindings.hasHeaderMembers(shape, model)) {
+        if (hasTargetHeader()
+                || (serializesHttpBindingMembers() && RequestBindings.hasHeaderMembers(shape, model))) {
             writer.write("");
             writeGetRequestSpecificHeadersImpl(writer, className, shape, operation, service, model);
         }
-        if (RequestBindings.hasQueryStringMembers(shape, model)) {
+        if (serializesHttpBindingMembers() && RequestBindings.hasQueryStringMembers(shape, model)) {
             writer.write("");
-            writeAddQueryStringParametersImpl(writer, className);
+            writeAddQueryStringParametersImpl(writer, className, shape, model);
+        }
+        // DumpBodyToUrl stub for presigning-capable operations; body serialization pending schema serde.
+        if (operation.hasTrait(SupportsPresigningTrait.class)) {
+            writer.write("");
+            writer.write("void $L::DumpBodyToUrl(Aws::Http::URI& uri) const { AWS_UNREFERENCED_PARAM(uri); }",
+                className);
         }
     }
 }
