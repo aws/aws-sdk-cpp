@@ -41,10 +41,10 @@ namespace Aws
                 void MainTaskRunner();
 
             private:
-                std::atomic<bool> m_continue;
                 PooledThreadExecutor& m_executor;
+                std::atomic<bool> m_continue;
+                std::atomic<bool> m_detached;
                 std::thread m_thread;
-                bool m_detached = false;
             };
         }
     }
