@@ -3,32 +3,22 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/sqs/model/SendMessageBatchRequest.h>
 
+#include <numeric>
 #include <utility>
 
 using namespace Aws::SQS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String SendMessageBatchRequest::SerializePayload() const {
-  JsonValue payload;
-
-  if (m_queueUrlHasBeenSet) {
-    payload.WithString("QueueUrl", m_queueUrl);
-  }
-
-  if (m_entriesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> entriesJsonList(m_entries.size());
-    for (unsigned entriesIndex = 0; entriesIndex < entriesJsonList.GetLength(); ++entriesIndex) {
-      entriesJsonList[entriesIndex].AsObject(m_entries[entriesIndex].Jsonize());
-    }
-    payload.WithArray("Entries", std::move(entriesJsonList));
-  }
-
-  return payload.View().WriteReadable();
-}
+Aws::String SendMessageBatchRequest::SerializePayload() const { return "{}"; }
 
 Aws::Http::HeaderValueCollection SendMessageBatchRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;

@@ -204,10 +204,10 @@ class ReceiveMessageRequest : public SQSRequest {
    * than <code>WaitTimeSeconds</code>. If no messages are available and the wait
    * time expires, the call does not return a message list. If you are using the Java
    * SDK, it returns a <code>ReceiveMessageResponse</code> object, which has a empty
-   * list instead of a Null object.</p>  <p>To avoid HTTP errors, ensure
-   * that the HTTP response timeout for <code>ReceiveMessage</code> requests is
-   * longer than the <code>WaitTimeSeconds</code> parameter. For example, with the
-   * Java SDK, you can set HTTP transport settings using the <a
+   * list instead of a Null object.</p>  <p>To avoid HTTP errors, ensure that the
+   * HTTP response timeout for <code>ReceiveMessage</code> requests is longer than
+   * the <code>WaitTimeSeconds</code> parameter. For example, with the Java SDK, you
+   * can set HTTP transport settings using the <a
    * href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/nio/netty/NettyNioAsyncHttpClient.html">
    * NettyNioAsyncHttpClient</a> for asynchronous clients, or the <a
    * href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/apache/ApacheHttpClient.html">
@@ -245,28 +245,28 @@ class ReceiveMessageRequest : public SQSRequest {
    * deduplication interval, it resets the visibility timeout. For more information,
    * see <a
    * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-   * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p>  <p>If a
-   * caller of the <code>ReceiveMessage</code> action still processes messages when
-   * the visibility timeout expires and messages become visible, another worker
-   * consuming from the same queue can receive the same messages and therefore
-   * process duplicates. Also, if a consumer whose message processing time is longer
-   * than the visibility timeout tries to delete the processed messages, the action
-   * fails with an error.</p> <p>To mitigate this effect, ensure that your
-   * application observes a safe threshold before the visibility timeout expires and
-   * extend the visibility timeout as necessary.</p>  </li> <li> <p>While
-   * messages with a particular <code>MessageGroupId</code> are invisible, no more
-   * messages belonging to the same <code>MessageGroupId</code> are returned until
-   * the visibility timeout expires. You can still receive messages with another
-   * <code>MessageGroupId</code> from your FIFO queue as long as they are
-   * visible.</p> </li> <li> <p>If a caller of <code>ReceiveMessage</code> can't
-   * track the <code>ReceiveRequestAttemptId</code>, no retries work until the
-   * original visibility timeout expires. As a result, delays might occur but the
-   * messages in the queue remain in a strict order.</p> </li> </ul> <p>The maximum
-   * length of <code>ReceiveRequestAttemptId</code> is 128 characters.
+   * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p>  <p>If a caller of the
+   * <code>ReceiveMessage</code> action still processes messages when the visibility
+   * timeout expires and messages become visible, another worker consuming from the
+   * same queue can receive the same messages and therefore process duplicates. Also,
+   * if a consumer whose message processing time is longer than the visibility
+   * timeout tries to delete the processed messages, the action fails with an
+   * error.</p> <p>To mitigate this effect, ensure that your application observes a
+   * safe threshold before the visibility timeout expires and extend the visibility
+   * timeout as necessary.</p>  </li> <li> <p>While messages with a particular
+   * <code>MessageGroupId</code> are invisible, no more messages belonging to the
+   * same <code>MessageGroupId</code> are returned until the visibility timeout
+   * expires. You can still receive messages with another <code>MessageGroupId</code>
+   * from your FIFO queue as long as they are visible.</p> </li> <li> <p>If a caller
+   * of <code>ReceiveMessage</code> can't track the
+   * <code>ReceiveRequestAttemptId</code>, no retries work until the original
+   * visibility timeout expires. As a result, delays might occur but the messages in
+   * the queue remain in a strict order.</p> </li> </ul> <p>The maximum length of
+   * <code>ReceiveRequestAttemptId</code> is 128 characters.
    * <code>ReceiveRequestAttemptId</code> can contain alphanumeric characters
    * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
-   * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
-   * practices of using <code>ReceiveRequestAttemptId</code>, see <a
+   * (<code>!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~</code>).</p> <p>For best practices of
+   * using <code>ReceiveRequestAttemptId</code>, see <a
    * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using
    * the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon SQS Developer
    * Guide</i>.</p>

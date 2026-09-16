@@ -3,6 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/sqs/model/ResponseMetadata.h>
@@ -18,14 +20,10 @@ namespace Model {
 
 ResponseMetadata::ResponseMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-ResponseMetadata& ResponseMetadata::operator=(JsonView jsonValue) {
-  AWS_UNREFERENCED_PARAM(jsonValue);
-  return *this;
-}
+ResponseMetadata& ResponseMetadata::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue ResponseMetadata::Jsonize() const {
   JsonValue payload;
-
   return payload;
 }
 
