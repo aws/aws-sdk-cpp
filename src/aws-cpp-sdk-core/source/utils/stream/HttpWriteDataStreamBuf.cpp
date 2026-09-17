@@ -100,22 +100,28 @@ std::shared_ptr<Aws::Http::HttpResponse> Aws::Utils::Stream::HttpWriteDataStream
 }
 
 void Aws::Utils::Stream::HttpWriteDataStreamBuf::WaitForStreamComplete() {
-  std::unique_lock<std::mutex> lock{m_shutdownMutex};
-  if (m_state == STATE::UNINITIALIZED) {
-    return;
-  }
-  if (m_writeTimeout.count() > 0 && !m_responseStarted) {
-    const auto deadline = std::chrono::steady_clock::now() + m_writeTimeout;
-    if (!m_shutdownCondition.wait_until(lock, deadline,
-            [this]() -> bool { return m_streamComplete || m_responseStarted; })) {
-      m_writeError = true;
-      lock.unlock();
-      CloseConnection();
-      lock.lock();
+  bool timedOut = false;
+  {
+    std::unique_lock<std::mutex> lock{m_shutdownMutex};
+    if (m_state == STATE::UNINITIALIZED) {
+      return;
+    }
+    if (m_writeTimeout.count() > 0 && !m_responseStarted) {
+      const auto deadline = std::chrono::steady_clock::now() + m_writeTimeout;
+      if (!m_shutdownCondition.wait_until(lock, deadline,
+              [this]() -> bool { return m_streamComplete || m_responseStarted; })) {
+        m_writeError = true;
+        timedOut = true;
+      }
     }
   }
-  m_shutdownCondition.wait(lock, [this]() -> bool { return m_streamComplete; });
 
+  if (timedOut) {
+    CloseConnection();
+  }
+
+  std::unique_lock<std::mutex> lock{m_shutdownMutex};
+  m_shutdownCondition.wait(lock, [this]() -> bool { return m_streamComplete; });
   m_stream.reset();
   m_connection.reset();
 }
@@ -203,17 +209,23 @@ bool Aws::Utils::Stream::HttpWriteDataStreamBuf::SendBuffer(bool endStream) {
       },
       endStream);
 
-  std::unique_lock<std::mutex> lock{m_writeMutex};
-  if (m_writeTimeout.count() > 0) {
-    const auto deadline = std::chrono::steady_clock::now() + m_writeTimeout;
-    if (!m_writeComplete.wait_until(lock, deadline, [this]() -> bool { return !m_writeInProgress; })) {
-      m_writeError = true;
-      lock.unlock();
-      CloseConnection();
-      lock.lock();
+  bool timedOut = false;
+  {
+    std::unique_lock<std::mutex> lock{m_writeMutex};
+    if (m_writeTimeout.count() > 0) {
+      const auto deadline = std::chrono::steady_clock::now() + m_writeTimeout;
+      if (!m_writeComplete.wait_until(lock, deadline, [this]() -> bool { return !m_writeInProgress; })) {
+        m_writeError = true;
+        timedOut = true;
+      }
+    } else {
       m_writeComplete.wait(lock, [this]() -> bool { return !m_writeInProgress; });
     }
-  } else {
+  }
+
+  if (timedOut) {
+    CloseConnection();
+    std::unique_lock<std::mutex> lock{m_writeMutex};
     m_writeComplete.wait(lock, [this]() -> bool { return !m_writeInProgress; });
   }
 
