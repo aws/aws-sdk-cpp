@@ -141,6 +141,30 @@ class MessageInsightsFilters {
 
   ///@{
   /**
+   * <p>The name of the tenant used when sending the message.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetTenantName() const { return m_tenantName; }
+  inline bool TenantNameHasBeenSet() const { return m_tenantNameHasBeenSet; }
+  template <typename TenantNameT = Aws::Vector<Aws::String>>
+  void SetTenantName(TenantNameT&& value) {
+    m_tenantNameHasBeenSet = true;
+    m_tenantName = std::forward<TenantNameT>(value);
+  }
+  template <typename TenantNameT = Aws::Vector<Aws::String>>
+  MessageInsightsFilters& WithTenantName(TenantNameT&& value) {
+    SetTenantName(std::forward<TenantNameT>(value));
+    return *this;
+  }
+  template <typename TenantNameT = Aws::String>
+  MessageInsightsFilters& AddTenantName(TenantNameT&& value) {
+    m_tenantNameHasBeenSet = true;
+    m_tenantName.emplace_back(std::forward<TenantNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p> The last delivery-related event for the email, where the ordering is as
    * follows: <code>SEND</code> &lt; <code>BOUNCE</code> &lt; <code>DELIVERY</code>
    * &lt; <code>COMPLAINT</code>. </p>
@@ -199,6 +223,8 @@ class MessageInsightsFilters {
 
   Aws::Vector<Aws::String> m_isp;
 
+  Aws::Vector<Aws::String> m_tenantName;
+
   Aws::Vector<DeliveryEventType> m_lastDeliveryEvent;
 
   Aws::Vector<EngagementEventType> m_lastEngagementEvent;
@@ -206,6 +232,7 @@ class MessageInsightsFilters {
   bool m_destinationHasBeenSet = false;
   bool m_subjectHasBeenSet = false;
   bool m_ispHasBeenSet = false;
+  bool m_tenantNameHasBeenSet = false;
   bool m_lastDeliveryEventHasBeenSet = false;
   bool m_lastEngagementEventHasBeenSet = false;
 };

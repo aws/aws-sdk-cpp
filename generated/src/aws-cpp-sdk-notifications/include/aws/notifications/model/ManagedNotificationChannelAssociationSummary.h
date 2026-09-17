@@ -97,15 +97,35 @@ class ManagedNotificationChannelAssociationSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether this channel association is subscribed to sensitive events.
+   * Defaults to false for associations created without the flag.</p>
+   */
+  inline bool GetIsSensitiveEventsSubscribed() const { return m_isSensitiveEventsSubscribed; }
+  inline bool IsSensitiveEventsSubscribedHasBeenSet() const { return m_isSensitiveEventsSubscribedHasBeenSet; }
+  inline void SetIsSensitiveEventsSubscribed(bool value) {
+    m_isSensitiveEventsSubscribedHasBeenSet = true;
+    m_isSensitiveEventsSubscribed = value;
+  }
+  inline ManagedNotificationChannelAssociationSummary& WithIsSensitiveEventsSubscribed(bool value) {
+    SetIsSensitiveEventsSubscribed(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_channelIdentifier;
 
   ChannelType m_channelType{ChannelType::NOT_SET};
 
   ChannelAssociationOverrideOption m_overrideOption{ChannelAssociationOverrideOption::NOT_SET};
+
+  bool m_isSensitiveEventsSubscribed{false};
   bool m_channelIdentifierHasBeenSet = false;
   bool m_channelTypeHasBeenSet = false;
   bool m_overrideOptionHasBeenSet = false;
+  bool m_isSensitiveEventsSubscribedHasBeenSet = false;
 };
 
 }  // namespace Model

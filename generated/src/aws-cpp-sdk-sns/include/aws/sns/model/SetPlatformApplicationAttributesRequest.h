@@ -81,7 +81,7 @@ class SetPlatformApplicationAttributesRequest : public SNSRequest {
    * Services using token credentials, <code>PlatformPrincipal</code> is signing key
    * ID.</p> </li> <li> <p>For GCM (Firebase Cloud Messaging), there is no
    * <code>PlatformPrincipal</code>. </p> </li> </ul> </li> </ul> <ul> <li> <p>
-   * <code>EventEndpointCreated</code> – Topic ARN to which
+   * <code>EventEndpointCreated</code> ��� Topic ARN to which
    * <code>EndpointCreated</code> event notifications are sent.</p> </li> <li> <p>
    * <code>EventEndpointDeleted</code> – Topic ARN to which
    * <code>EndpointDeleted</code> event notifications are sent.</p> </li> <li> <p>

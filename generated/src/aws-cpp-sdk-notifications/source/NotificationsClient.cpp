@@ -58,6 +58,7 @@
 #include <aws/notifications/model/TagResourceRequest.h>
 #include <aws/notifications/model/UntagResourceRequest.h>
 #include <aws/notifications/model/UpdateEventRuleRequest.h>
+#include <aws/notifications/model/UpdateManagedNotificationChannelAssociationRequest.h>
 #include <aws/notifications/model/UpdateNotificationConfigurationRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
@@ -838,6 +839,18 @@ UpdateEventRuleOutcome NotificationsClient::UpdateEventRule(const UpdateEventRul
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? UpdateEventRuleOutcome(result.GetResultWithOwnership())
                             : UpdateEventRuleOutcome(std::move(result.GetError()));
+}
+
+UpdateManagedNotificationChannelAssociationOutcome NotificationsClient::UpdateManagedNotificationChannelAssociation(
+    const UpdateManagedNotificationChannelAssociationRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/channels/update-managed-notification-channel-association");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateManagedNotificationChannelAssociationOutcome(result.GetResultWithOwnership())
+                            : UpdateManagedNotificationChannelAssociationOutcome(std::move(result.GetError()));
 }
 
 UpdateNotificationConfigurationOutcome NotificationsClient::UpdateNotificationConfiguration(

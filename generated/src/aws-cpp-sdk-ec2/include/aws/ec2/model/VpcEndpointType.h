@@ -10,7 +10,7 @@
 namespace Aws {
 namespace EC2 {
 namespace Model {
-enum class VpcEndpointType { NOT_SET, Interface, Gateway, GatewayLoadBalancer, Resource, ServiceNetwork };
+enum class VpcEndpointType { NOT_SET, Interface, Gateway, GatewayLoadBalancer, Resource, ServiceNetwork, Tunnel };
 
 namespace VpcEndpointTypeMapper {
 AWS_EC2_API VpcEndpointType GetVpcEndpointTypeForName(const Aws::String& name);

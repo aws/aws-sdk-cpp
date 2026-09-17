@@ -334,12 +334,12 @@ class AWS_NOTIFICATIONS_API NotificationsClient : public Aws::Client::AWSJsonCli
   }
 
   /**
-   * <p>Deregisters a <code>NotificationConfiguration</code> in the specified
-   * Region.</p>  <p>You can't deregister the last <code>NotificationHub</code>
-   * in the account. <code>NotificationEvents</code> stored in the deregistered
-   * <code>NotificationConfiguration</code> are no longer be visible. Recreating a
-   * new <code>NotificationConfiguration</code> in the same Region restores access to
-   * those <code>NotificationEvents</code>.</p> <p><h3>See Also:</h3>   <a
+   * <p>Deregisters a <code>NotificationHub</code> in the specified Region.</p>
+   *  <p>You can't deregister the last <code>NotificationHub</code> in the
+   * account. <code>NotificationEvents</code> stored in the deregistered
+   * <code>NotificationHub</code> are no longer visible. Recreating a new
+   * <code>NotificationHub</code> in the same Region restores access to those
+   * <code>NotificationEvents</code>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DeregisterNotificationHub">AWS
    * API Reference</a></p>
    */
@@ -1123,10 +1123,10 @@ class AWS_NOTIFICATIONS_API NotificationsClient : public Aws::Client::AWSJsonCli
   }
 
   /**
-   * <p>Registers a <code>NotificationConfiguration</code> in the specified
-   * Region.</p> <p>There is a maximum of one <code>NotificationConfiguration</code>
-   * per Region. You can have a maximum of 3 <code>NotificationHub</code> resources
-   * at a time.</p><p><h3>See Also:</h3>   <a
+   * <p>Registers a <code>NotificationHub</code> in the specified Region.</p>
+   * <p>There is a maximum of one <code>NotificationHub</code> per Region. You can
+   * have a maximum of 3 <code>NotificationHub</code> resources at a
+   * time.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/RegisterNotificationHub">AWS
    * API Reference</a></p>
    */
@@ -1234,6 +1234,37 @@ class AWS_NOTIFICATIONS_API NotificationsClient : public Aws::Client::AWSJsonCli
   void UpdateEventRuleAsync(const UpdateEventRuleRequestT& request, const UpdateEventRuleResponseReceivedHandler& handler,
                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&NotificationsClient::UpdateEventRule, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the <code>isSensitiveEventsSubscribed</code> property of a particular
+   * ManagedNotification channel association.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/UpdateManagedNotificationChannelAssociation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateManagedNotificationChannelAssociationOutcome UpdateManagedNotificationChannelAssociation(
+      const Model::UpdateManagedNotificationChannelAssociationRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateManagedNotificationChannelAssociation that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename UpdateManagedNotificationChannelAssociationRequestT = Model::UpdateManagedNotificationChannelAssociationRequest>
+  Model::UpdateManagedNotificationChannelAssociationOutcomeCallable UpdateManagedNotificationChannelAssociationCallable(
+      const UpdateManagedNotificationChannelAssociationRequestT& request) const {
+    return SubmitCallable(&NotificationsClient::UpdateManagedNotificationChannelAssociation, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateManagedNotificationChannelAssociation that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename UpdateManagedNotificationChannelAssociationRequestT = Model::UpdateManagedNotificationChannelAssociationRequest>
+  void UpdateManagedNotificationChannelAssociationAsync(
+      const UpdateManagedNotificationChannelAssociationRequestT& request,
+      const UpdateManagedNotificationChannelAssociationResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NotificationsClient::UpdateManagedNotificationChannelAssociation, request, handler, context);
   }
 
   /**

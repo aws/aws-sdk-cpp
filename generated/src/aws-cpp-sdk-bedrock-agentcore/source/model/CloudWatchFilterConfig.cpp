@@ -29,6 +29,13 @@ CloudWatchFilterConfig& CloudWatchFilterConfig::operator=(JsonView jsonValue) {
     m_timeRange = jsonValue.GetObject("timeRange");
     m_timeRangeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("sessionTraceIds")) {
+    Aws::Utils::Array<JsonView> sessionTraceIdsJsonList = jsonValue.GetArray("sessionTraceIds");
+    for (unsigned sessionTraceIdsIndex = 0; sessionTraceIdsIndex < sessionTraceIdsJsonList.GetLength(); ++sessionTraceIdsIndex) {
+      m_sessionTraceIds.push_back(sessionTraceIdsJsonList[sessionTraceIdsIndex].AsObject());
+    }
+    m_sessionTraceIdsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -45,6 +52,14 @@ JsonValue CloudWatchFilterConfig::Jsonize() const {
 
   if (m_timeRangeHasBeenSet) {
     payload.WithObject("timeRange", m_timeRange.Jsonize());
+  }
+
+  if (m_sessionTraceIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> sessionTraceIdsJsonList(m_sessionTraceIds.size());
+    for (unsigned sessionTraceIdsIndex = 0; sessionTraceIdsIndex < sessionTraceIdsJsonList.GetLength(); ++sessionTraceIdsIndex) {
+      sessionTraceIdsJsonList[sessionTraceIdsIndex].AsObject(m_sessionTraceIds[sessionTraceIdsIndex].Jsonize());
+    }
+    payload.WithArray("sessionTraceIds", std::move(sessionTraceIdsJsonList));
   }
 
   return payload;

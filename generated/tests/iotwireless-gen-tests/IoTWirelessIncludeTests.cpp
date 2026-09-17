@@ -194,6 +194,8 @@
 #include <aws/iotwireless/model/GetWirelessGatewayTaskResult.h>
 #include <aws/iotwireless/model/GlobalIdentity.h>
 #include <aws/iotwireless/model/Gnss.h>
+#include <aws/iotwireless/model/GnssCapture.h>
+#include <aws/iotwireless/model/GnssMultiFrame.h>
 #include <aws/iotwireless/model/GsmLocalId.h>
 #include <aws/iotwireless/model/GsmNmrObj.h>
 #include <aws/iotwireless/model/GsmObj.h>

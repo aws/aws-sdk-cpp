@@ -10,7 +10,7 @@
 namespace Aws {
 namespace EC2 {
 namespace Model {
-enum class PayerResponsibilityType { NOT_SET, vpc_endpoint_account, vpc_endpoint_service_account };
+enum class PayerResponsibilityType { NOT_SET, vpc_endpoint_account, resource_gateway_account, vpc_endpoint_service_account };
 
 namespace PayerResponsibilityTypeMapper {
 AWS_EC2_API PayerResponsibilityType GetPayerResponsibilityTypeForName(const Aws::String& name);

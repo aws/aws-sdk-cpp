@@ -69,12 +69,33 @@ class AssociateManagedNotificationAdditionalChannelRequest : public Notification
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether this channel is subscribed to sensitive events. The
+   * <code>notifications:SubscribeSensitiveEvents</code> permission controls access
+   * to sensitive events. Defaults to false.</p>
+   */
+  inline bool GetIsSensitiveEventsSubscribed() const { return m_isSensitiveEventsSubscribed; }
+  inline bool IsSensitiveEventsSubscribedHasBeenSet() const { return m_isSensitiveEventsSubscribedHasBeenSet; }
+  inline void SetIsSensitiveEventsSubscribed(bool value) {
+    m_isSensitiveEventsSubscribedHasBeenSet = true;
+    m_isSensitiveEventsSubscribed = value;
+  }
+  inline AssociateManagedNotificationAdditionalChannelRequest& WithIsSensitiveEventsSubscribed(bool value) {
+    SetIsSensitiveEventsSubscribed(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_channelArn;
 
   Aws::String m_managedNotificationConfigurationArn;
+
+  bool m_isSensitiveEventsSubscribed{false};
   bool m_channelArnHasBeenSet = false;
   bool m_managedNotificationConfigurationArnHasBeenSet = false;
+  bool m_isSensitiveEventsSubscribedHasBeenSet = false;
 };
 
 }  // namespace Model

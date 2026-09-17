@@ -20,8 +20,9 @@ namespace IoTWireless {
 namespace Model {
 
 /**
- * Optional configuration to customize location estimates.<p><h3>See Also:</h3>
- * <a
+ * <p>Optional configuration for customizing position estimates, including
+ * parameters that affect the accuracy and uncertainty of WiFi and cellular-based
+ * location estimates.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AdvancedConfiguration">AWS
  * API Reference</a></p>
  */
@@ -34,7 +35,8 @@ class AdvancedConfiguration {
 
   ///@{
   /**
-   * Configuration for WiFi and cellular-based payloads for location estimates.
+   * <p>Configuration for WiFi and cellular-based location estimate payloads resolved
+   * by HERE's solvers.</p>
    */
   inline const WiFiCellular& GetWiFiCellular() const { return m_wiFiCellular; }
   inline bool WiFiCellularHasBeenSet() const { return m_wiFiCellularHasBeenSet; }

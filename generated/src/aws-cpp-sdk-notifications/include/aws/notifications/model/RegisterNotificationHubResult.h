@@ -49,7 +49,7 @@ class RegisterNotificationHubResult {
   ///@{
   /**
    * <p>Provides additional information about the current
-   * <code>NotificationConfiguration</code> status information.</p>
+   * <code>NotificationHub</code> status information.</p>
    */
   inline const NotificationHubStatusSummary& GetStatusSummary() const { return m_statusSummary; }
   template <typename StatusSummaryT = NotificationHubStatusSummary>

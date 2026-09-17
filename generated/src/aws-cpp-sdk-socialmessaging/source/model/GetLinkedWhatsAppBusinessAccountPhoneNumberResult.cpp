@@ -34,6 +34,10 @@ GetLinkedWhatsAppBusinessAccountPhoneNumberResult& GetLinkedWhatsAppBusinessAcco
     m_linkedWhatsAppBusinessAccountId = jsonValue.GetString("linkedWhatsAppBusinessAccountId");
     m_linkedWhatsAppBusinessAccountIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("callSettings")) {
+    m_callSettings = jsonValue.GetObject("callSettings");
+    m_callSettingsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

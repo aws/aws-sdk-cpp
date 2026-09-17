@@ -46,6 +46,13 @@ MessageInsightsFilters& MessageInsightsFilters::operator=(JsonView jsonValue) {
     }
     m_ispHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("TenantName")) {
+    Aws::Utils::Array<JsonView> tenantNameJsonList = jsonValue.GetArray("TenantName");
+    for (unsigned tenantNameIndex = 0; tenantNameIndex < tenantNameJsonList.GetLength(); ++tenantNameIndex) {
+      m_tenantName.push_back(tenantNameJsonList[tenantNameIndex].AsString());
+    }
+    m_tenantNameHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("LastDeliveryEvent")) {
     Aws::Utils::Array<JsonView> lastDeliveryEventJsonList = jsonValue.GetArray("LastDeliveryEvent");
     for (unsigned lastDeliveryEventIndex = 0; lastDeliveryEventIndex < lastDeliveryEventJsonList.GetLength(); ++lastDeliveryEventIndex) {
@@ -99,6 +106,14 @@ JsonValue MessageInsightsFilters::Jsonize() const {
       ispJsonList[ispIndex].AsString(m_isp[ispIndex]);
     }
     payload.WithArray("Isp", std::move(ispJsonList));
+  }
+
+  if (m_tenantNameHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tenantNameJsonList(m_tenantName.size());
+    for (unsigned tenantNameIndex = 0; tenantNameIndex < tenantNameJsonList.GetLength(); ++tenantNameIndex) {
+      tenantNameJsonList[tenantNameIndex].AsString(m_tenantName[tenantNameIndex]);
+    }
+    payload.WithArray("TenantName", std::move(tenantNameJsonList));
   }
 
   if (m_lastDeliveryEventHasBeenSet) {

@@ -31,6 +31,16 @@ static const int CLOUDFORMATION_STACK_HASH = HashingUtils::HashString("CLOUDFORM
 static const int EC2_LAUNCH_TEMPLATE_HASH = HashingUtils::HashString("EC2_LAUNCH_TEMPLATE");
 static const int EC2_VPC_HASH = HashingUtils::HashString("EC2_VPC");
 static const int EC2_IMAGE_HASH = HashingUtils::HashString("EC2_IMAGE");
+static const int BEDROCK_CUSTOM_MODEL_HASH = HashingUtils::HashString("BEDROCK_CUSTOM_MODEL");
+static const int BEDROCK_IMPORTED_MODEL_HASH = HashingUtils::HashString("BEDROCK_IMPORTED_MODEL");
+static const int BEDROCK_PROVISIONED_MODEL_HASH = HashingUtils::HashString("BEDROCK_PROVISIONED_MODEL");
+static const int BEDROCK_CUSTOM_MODEL_DEPLOYMENT_HASH = HashingUtils::HashString("BEDROCK_CUSTOM_MODEL_DEPLOYMENT");
+static const int BEDROCK_INFERENCE_PROFILE_HASH = HashingUtils::HashString("BEDROCK_INFERENCE_PROFILE");
+static const int BEDROCK_APPLICATION_INFERENCE_PROFILE_HASH = HashingUtils::HashString("BEDROCK_APPLICATION_INFERENCE_PROFILE");
+static const int BEDROCK_PROMPT_HASH = HashingUtils::HashString("BEDROCK_PROMPT");
+static const int BEDROCK_PROMPT_ROUTER_HASH = HashingUtils::HashString("BEDROCK_PROMPT_ROUTER");
+static const int BEDROCK_GUARDRAIL_HASH = HashingUtils::HashString("BEDROCK_GUARDRAIL");
+static const int SAGEMAKER_ENDPOINT_HASH = HashingUtils::HashString("SAGEMAKER_ENDPOINT");
 
 FindingResourceType GetFindingResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -66,6 +76,26 @@ FindingResourceType GetFindingResourceTypeForName(const Aws::String& name) {
     return FindingResourceType::EC2_VPC;
   } else if (hashCode == EC2_IMAGE_HASH) {
     return FindingResourceType::EC2_IMAGE;
+  } else if (hashCode == BEDROCK_CUSTOM_MODEL_HASH) {
+    return FindingResourceType::BEDROCK_CUSTOM_MODEL;
+  } else if (hashCode == BEDROCK_IMPORTED_MODEL_HASH) {
+    return FindingResourceType::BEDROCK_IMPORTED_MODEL;
+  } else if (hashCode == BEDROCK_PROVISIONED_MODEL_HASH) {
+    return FindingResourceType::BEDROCK_PROVISIONED_MODEL;
+  } else if (hashCode == BEDROCK_CUSTOM_MODEL_DEPLOYMENT_HASH) {
+    return FindingResourceType::BEDROCK_CUSTOM_MODEL_DEPLOYMENT;
+  } else if (hashCode == BEDROCK_INFERENCE_PROFILE_HASH) {
+    return FindingResourceType::BEDROCK_INFERENCE_PROFILE;
+  } else if (hashCode == BEDROCK_APPLICATION_INFERENCE_PROFILE_HASH) {
+    return FindingResourceType::BEDROCK_APPLICATION_INFERENCE_PROFILE;
+  } else if (hashCode == BEDROCK_PROMPT_HASH) {
+    return FindingResourceType::BEDROCK_PROMPT;
+  } else if (hashCode == BEDROCK_PROMPT_ROUTER_HASH) {
+    return FindingResourceType::BEDROCK_PROMPT_ROUTER;
+  } else if (hashCode == BEDROCK_GUARDRAIL_HASH) {
+    return FindingResourceType::BEDROCK_GUARDRAIL;
+  } else if (hashCode == SAGEMAKER_ENDPOINT_HASH) {
+    return FindingResourceType::SAGEMAKER_ENDPOINT;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -112,6 +142,26 @@ Aws::String GetNameForFindingResourceType(FindingResourceType enumValue) {
       return "EC2_VPC";
     case FindingResourceType::EC2_IMAGE:
       return "EC2_IMAGE";
+    case FindingResourceType::BEDROCK_CUSTOM_MODEL:
+      return "BEDROCK_CUSTOM_MODEL";
+    case FindingResourceType::BEDROCK_IMPORTED_MODEL:
+      return "BEDROCK_IMPORTED_MODEL";
+    case FindingResourceType::BEDROCK_PROVISIONED_MODEL:
+      return "BEDROCK_PROVISIONED_MODEL";
+    case FindingResourceType::BEDROCK_CUSTOM_MODEL_DEPLOYMENT:
+      return "BEDROCK_CUSTOM_MODEL_DEPLOYMENT";
+    case FindingResourceType::BEDROCK_INFERENCE_PROFILE:
+      return "BEDROCK_INFERENCE_PROFILE";
+    case FindingResourceType::BEDROCK_APPLICATION_INFERENCE_PROFILE:
+      return "BEDROCK_APPLICATION_INFERENCE_PROFILE";
+    case FindingResourceType::BEDROCK_PROMPT:
+      return "BEDROCK_PROMPT";
+    case FindingResourceType::BEDROCK_PROMPT_ROUTER:
+      return "BEDROCK_PROMPT_ROUTER";
+    case FindingResourceType::BEDROCK_GUARDRAIL:
+      return "BEDROCK_GUARDRAIL";
+    case FindingResourceType::SAGEMAKER_ENDPOINT:
+      return "SAGEMAKER_ENDPOINT";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -187,17 +187,21 @@ class CreateResourceGatewayRequest : public VPCLatticeRequest {
 
   ///@{
   /**
-   * <p>Indicates how DNS is resolved for resource configurations associated to this
-   * resource gateway. ResourceConfigDnsResolution is set at creation time and cannot
-   * be changed.</p> <ul> <li> <p> <code>IN_VPC</code> - DNS resolution occurs
-   * privately within the resource gateway's VPC. DNS queries for resources behind
-   * this resource gateway resolve using the DNS resolvers defined in the VPC's DHCP
-   * option sets. Use this when your resource domain names are hosted in private
-   * Route 53 hosted zones or on-premises DNS servers reachable from the VPC.</p>
-   * </li> <li> <p> <code>PUBLIC</code> - DNS resolution occurs against public DNS
-   * resolvers. DNS queries for resources behind this resource gateway resolve using
-   * standard public DNS. Use this when your resource domain names are publicly
-   * resolvable.</p> </li> </ul>
+   * <p>Indicates how DNS is resolved for resource configurations associated with
+   * this resource gateway. This value is set when you create the resource gateway
+   * and can't be changed afterward. The default is <code>PUBLIC</code>.</p> <ul>
+   * <li> <p> <code>IN_VPC</code> - DNS resolution occurs privately within the
+   * resource gateway's VPC. DNS queries for resources behind this resource gateway
+   * resolve using the DNS resolvers defined in the VPC's DHCP option sets. Use this
+   * when your resource domain names are hosted in private Route 53 hosted zones or
+   * on-premises DNS servers reachable from the VPC. A CIDR resource configuration
+   * requires a resource gateway that uses <code>IN_VPC</code>, and an
+   * <code>IN_VPC</code> resource gateway can't be used for ARN resource
+   * configurations, so a single resource gateway can't serve both ARN and CIDR
+   * resource configurations.</p> </li> <li> <p> <code>PUBLIC</code> - DNS resolution
+   * occurs against public DNS resolvers. DNS queries for resources behind this
+   * resource gateway resolve using standard public DNS. Use this when your resource
+   * domain names are publicly resolvable.</p> </li> </ul>
    */
   inline ResourceConfigDnsResolution GetResourceConfigDnsResolution() const { return m_resourceConfigDnsResolution; }
   inline bool ResourceConfigDnsResolutionHasBeenSet() const { return m_resourceConfigDnsResolutionHasBeenSet; }

@@ -54,6 +54,14 @@ ResourceEndpointAssociationSummary& ResourceEndpointAssociationSummary::operator
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("payerResponsibility")) {
+    Aws::Utils::Array<JsonView> payerResponsibilityJsonList = jsonValue.GetArray("payerResponsibility");
+    for (unsigned payerResponsibilityIndex = 0; payerResponsibilityIndex < payerResponsibilityJsonList.GetLength();
+         ++payerResponsibilityIndex) {
+      m_payerResponsibility.push_back(payerResponsibilityJsonList[payerResponsibilityIndex].AsObject());
+    }
+    m_payerResponsibilityHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -94,6 +102,15 @@ JsonValue ResourceEndpointAssociationSummary::Jsonize() const {
 
   if (m_createdAtHasBeenSet) {
     payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_payerResponsibilityHasBeenSet) {
+    Aws::Utils::Array<JsonValue> payerResponsibilityJsonList(m_payerResponsibility.size());
+    for (unsigned payerResponsibilityIndex = 0; payerResponsibilityIndex < payerResponsibilityJsonList.GetLength();
+         ++payerResponsibilityIndex) {
+      payerResponsibilityJsonList[payerResponsibilityIndex].AsObject(m_payerResponsibility[payerResponsibilityIndex].Jsonize());
+    }
+    payload.WithArray("payerResponsibility", std::move(payerResponsibilityJsonList));
   }
 
   return payload;

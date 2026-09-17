@@ -15,6 +15,7 @@ namespace Aws {
 namespace SocialMessaging {
 namespace SocialMessagingErrorMapper {
 
+static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int DEPENDENCY_HASH = HashingUtils::HashString("DependencyException");
 static const int ACCESS_DENIED_BY_META_HASH = HashingUtils::HashString("AccessDeniedByMetaException");
@@ -25,7 +26,9 @@ static const int INVALID_PARAMETERS_HASH = HashingUtils::HashString("InvalidPara
 AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == LIMIT_EXCEEDED_HASH) {
+  if (hashCode == CONFLICT_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SocialMessagingErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SocialMessagingErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == DEPENDENCY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SocialMessagingErrors::DEPENDENCY), RetryableType::RETRYABLE);

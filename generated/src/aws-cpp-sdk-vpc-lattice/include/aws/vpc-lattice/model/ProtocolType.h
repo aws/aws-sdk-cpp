@@ -10,7 +10,7 @@
 namespace Aws {
 namespace VPCLattice {
 namespace Model {
-enum class ProtocolType { NOT_SET, TCP };
+enum class ProtocolType { NOT_SET, TCP, TCP_UDP };
 
 namespace ProtocolTypeMapper {
 AWS_VPCLATTICE_API ProtocolType GetProtocolTypeForName(const Aws::String& name);

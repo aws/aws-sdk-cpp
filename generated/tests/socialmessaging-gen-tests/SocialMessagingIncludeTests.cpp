@@ -45,6 +45,8 @@
 #include <aws/socialmessaging/model/GetLinkedWhatsAppBusinessAccountResult.h>
 #include <aws/socialmessaging/model/GetWhatsAppBusinessPublicKeyRequest.h>
 #include <aws/socialmessaging/model/GetWhatsAppBusinessPublicKeyResult.h>
+#include <aws/socialmessaging/model/GetWhatsAppCallPermissionRequest.h>
+#include <aws/socialmessaging/model/GetWhatsAppCallPermissionResult.h>
 #include <aws/socialmessaging/model/GetWhatsAppFlowPreviewRequest.h>
 #include <aws/socialmessaging/model/GetWhatsAppFlowPreviewResult.h>
 #include <aws/socialmessaging/model/GetWhatsAppFlowRequest.h>
@@ -97,6 +99,8 @@
 #include <aws/socialmessaging/model/RegistrationStatus.h>
 #include <aws/socialmessaging/model/S3File.h>
 #include <aws/socialmessaging/model/S3PresignedUrl.h>
+#include <aws/socialmessaging/model/SendWhatsAppCallEventRequest.h>
+#include <aws/socialmessaging/model/SendWhatsAppCallEventResult.h>
 #include <aws/socialmessaging/model/SendWhatsAppConversionEventRequest.h>
 #include <aws/socialmessaging/model/SendWhatsAppConversionEventResult.h>
 #include <aws/socialmessaging/model/SendWhatsAppMessageRequest.h>
@@ -107,6 +111,8 @@
 #include <aws/socialmessaging/model/TemplateSummary.h>
 #include <aws/socialmessaging/model/UntagResourceRequest.h>
 #include <aws/socialmessaging/model/UntagResourceResult.h>
+#include <aws/socialmessaging/model/UpdateLinkedWhatsAppBusinessAccountPhoneNumberRequest.h>
+#include <aws/socialmessaging/model/UpdateLinkedWhatsAppBusinessAccountPhoneNumberResult.h>
 #include <aws/socialmessaging/model/UpdateWhatsAppFlowAssetsRequest.h>
 #include <aws/socialmessaging/model/UpdateWhatsAppFlowAssetsResult.h>
 #include <aws/socialmessaging/model/UpdateWhatsAppFlowRequest.h>
@@ -116,11 +122,20 @@
 #include <aws/socialmessaging/model/WabaPhoneNumberSetupFinalization.h>
 #include <aws/socialmessaging/model/WabaSetupFinalization.h>
 #include <aws/socialmessaging/model/WhatsAppBusinessAccountEventDestination.h>
+#include <aws/socialmessaging/model/WhatsAppCallHours.h>
+#include <aws/socialmessaging/model/WhatsAppCallPermission.h>
+#include <aws/socialmessaging/model/WhatsAppCallPermissionAction.h>
+#include <aws/socialmessaging/model/WhatsAppCallPermissionLimit.h>
+#include <aws/socialmessaging/model/WhatsAppCallSettings.h>
+#include <aws/socialmessaging/model/WhatsAppDayOfWeek.h>
+#include <aws/socialmessaging/model/WhatsAppHolidayScheduleEntry.h>
 #include <aws/socialmessaging/model/WhatsAppPhoneNumberDetail.h>
 #include <aws/socialmessaging/model/WhatsAppPhoneNumberSummary.h>
 #include <aws/socialmessaging/model/WhatsAppSetupFinalization.h>
 #include <aws/socialmessaging/model/WhatsAppSignupCallback.h>
 #include <aws/socialmessaging/model/WhatsAppSignupCallbackResult.h>
+#include <aws/socialmessaging/model/WhatsAppTimeOfDay.h>
+#include <aws/socialmessaging/model/WhatsAppWeeklyOperatingHoursEntry.h>
 
 using SocialMessagingIncludeTest = ::testing::Test;
 

@@ -49,7 +49,8 @@ class PutWhatsAppBusinessPublicKeyRequest : public SocialMessagingRequest {
 
   ///@{
   /**
-   * <p>PEM-encoded RSA public key. Mutually exclusive with kmsKeyArn.</p>
+   * <p>The PEM-encoded 2048-bit RSA public key to set. Mutually exclusive with
+   * <code>kmsKeyArn</code>.</p>
    */
   inline const Aws::String& GetBusinessPublicKey() const { return m_businessPublicKey; }
   inline bool BusinessPublicKeyHasBeenSet() const { return m_businessPublicKeyHasBeenSet; }
@@ -67,8 +68,8 @@ class PutWhatsAppBusinessPublicKeyRequest : public SocialMessagingRequest {
 
   ///@{
   /**
-   * <p>Customer-managed KMS asymmetric RSA key ARN. Mutually exclusive with
-   * businessPublicKey.</p>
+   * <p>The ARN of a customer managed asymmetric RSA key in Amazon Web Services KMS.
+   * Mutually exclusive with <code>businessPublicKey</code>.</p>
    */
   inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
   inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }

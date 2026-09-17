@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
 #include <aws/vpc-lattice/model/ArnResource.h>
+#include <aws/vpc-lattice/model/CidrResource.h>
 #include <aws/vpc-lattice/model/DnsResource.h>
 #include <aws/vpc-lattice/model/IpResource.h>
 
@@ -86,15 +87,39 @@ class ResourceConfigurationDefinition {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The network segment for a resource configuration of type CIDR, specified as
+   * one or more CIDR ranges (<code>cidrRanges</code>). Resources whose IP addresses
+   * fall within these ranges are reachable through a <code>Tunnel</code> VPC
+   * endpoint.</p>
+   */
+  inline const CidrResource& GetCidrResource() const { return m_cidrResource; }
+  inline bool CidrResourceHasBeenSet() const { return m_cidrResourceHasBeenSet; }
+  template <typename CidrResourceT = CidrResource>
+  void SetCidrResource(CidrResourceT&& value) {
+    m_cidrResourceHasBeenSet = true;
+    m_cidrResource = std::forward<CidrResourceT>(value);
+  }
+  template <typename CidrResourceT = CidrResource>
+  ResourceConfigurationDefinition& WithCidrResource(CidrResourceT&& value) {
+    SetCidrResource(std::forward<CidrResourceT>(value));
+    return *this;
+  }
+  ///@}
  private:
   DnsResource m_dnsResource;
 
   IpResource m_ipResource;
 
   ArnResource m_arnResource;
+
+  CidrResource m_cidrResource;
   bool m_dnsResourceHasBeenSet = false;
   bool m_ipResourceHasBeenSet = false;
   bool m_arnResourceHasBeenSet = false;
+  bool m_cidrResourceHasBeenSet = false;
 };
 
 }  // namespace Model

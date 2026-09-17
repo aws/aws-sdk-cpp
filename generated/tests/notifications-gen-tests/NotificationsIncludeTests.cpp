@@ -131,6 +131,7 @@
 #include <aws/notifications/model/NotificationConfigurationStructure.h>
 #include <aws/notifications/model/NotificationConfigurationSubtype.h>
 #include <aws/notifications/model/NotificationEvent.h>
+#include <aws/notifications/model/NotificationEventAttachment.h>
 #include <aws/notifications/model/NotificationEventOverview.h>
 #include <aws/notifications/model/NotificationEventSummary.h>
 #include <aws/notifications/model/NotificationHubOverview.h>
@@ -157,6 +158,8 @@
 #include <aws/notifications/model/UntagResourceResult.h>
 #include <aws/notifications/model/UpdateEventRuleRequest.h>
 #include <aws/notifications/model/UpdateEventRuleResult.h>
+#include <aws/notifications/model/UpdateManagedNotificationChannelAssociationRequest.h>
+#include <aws/notifications/model/UpdateManagedNotificationChannelAssociationResult.h>
 #include <aws/notifications/model/UpdateNotificationConfigurationRequest.h>
 #include <aws/notifications/model/UpdateNotificationConfigurationResult.h>
 #include <aws/notifications/model/ValidationException.h>

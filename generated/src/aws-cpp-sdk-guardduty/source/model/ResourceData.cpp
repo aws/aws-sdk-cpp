@@ -82,6 +82,10 @@ ResourceData& ResourceData::operator=(JsonView jsonValue) {
     m_cloudformationStack = jsonValue.GetObject("cloudformationStack");
     m_cloudformationStackHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("bedrockGuardrail")) {
+    m_bedrockGuardrail = jsonValue.GetObject("bedrockGuardrail");
+    m_bedrockGuardrailHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -150,6 +154,10 @@ JsonValue ResourceData::Jsonize() const {
 
   if (m_cloudformationStackHasBeenSet) {
     payload.WithObject("cloudformationStack", m_cloudformationStack.Jsonize());
+  }
+
+  if (m_bedrockGuardrailHasBeenSet) {
+    payload.WithObject("bedrockGuardrail", m_bedrockGuardrail.Jsonize());
   }
 
   return payload;

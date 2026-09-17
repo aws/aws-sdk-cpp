@@ -17,7 +17,9 @@ namespace IoTWireless {
 namespace Model {
 
 /**
- * Configuration for WiFi and cellular location payloads.<p><h3>See Also:</h3>   <a
+ * <p>Configuration for WiFi and cellular location payloads. Contains the
+ * confidence level that determines the size of the uncertainty radius in the
+ * position estimate.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/WiFiCellular">AWS
  * API Reference</a></p>
  */
@@ -30,8 +32,13 @@ class WiFiCellular {
 
   ///@{
   /**
-   * Confidence level for WiFi and cellular position estimates, expressed as a
-   * percentage. Valid range: 50–99 inclusive. Defaults to 68 if not specified.
+   * <p>The confidence level for WiFi and cellular position estimates, expressed as a
+   * percentage. This value determines the size of the confidence area or uncertainty
+   * radius for the estimated position. A higher confidence level produces a larger
+   * uncertainty radius, while a lower confidence level produces a smaller, more
+   * precise radius.</p> <p>Valid range: 50 to 99 inclusive. If not specified, the
+   * default value of 68 is used, which corresponds to approximately one standard
+   * deviation of the normal distribution.</p>
    */
   inline int GetConfidencePercent() const { return m_confidencePercent; }
   inline bool ConfidencePercentHasBeenSet() const { return m_confidencePercentHasBeenSet; }

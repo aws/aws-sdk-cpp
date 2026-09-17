@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Notifications {
 namespace Model {
-enum class TextPartType { NOT_SET, LOCALIZED_TEXT, PLAIN_TEXT, URL };
+enum class TextPartType { NOT_SET, LOCALIZED_TEXT, PLAIN_TEXT, URL, PORTABLE_TEXT };
 
 namespace TextPartTypeMapper {
 AWS_NOTIFICATIONS_API TextPartType GetTextPartTypeForName(const Aws::String& name);

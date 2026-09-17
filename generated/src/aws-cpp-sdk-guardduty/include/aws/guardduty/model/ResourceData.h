@@ -7,6 +7,7 @@
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/guardduty/model/AccessKey.h>
 #include <aws/guardduty/model/AutoscalingAutoScalingGroup.h>
+#include <aws/guardduty/model/BedrockGuardrailResource.h>
 #include <aws/guardduty/model/CloudformationStack.h>
 #include <aws/guardduty/model/ContainerFindingResource.h>
 #include <aws/guardduty/model/Ec2Image.h>
@@ -348,6 +349,25 @@ class ResourceData {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Contains detailed information about the Amazon Bedrock guardrail associated
+   * with the activity that prompted GuardDuty to generate a finding.</p>
+   */
+  inline const BedrockGuardrailResource& GetBedrockGuardrail() const { return m_bedrockGuardrail; }
+  inline bool BedrockGuardrailHasBeenSet() const { return m_bedrockGuardrailHasBeenSet; }
+  template <typename BedrockGuardrailT = BedrockGuardrailResource>
+  void SetBedrockGuardrail(BedrockGuardrailT&& value) {
+    m_bedrockGuardrailHasBeenSet = true;
+    m_bedrockGuardrail = std::forward<BedrockGuardrailT>(value);
+  }
+  template <typename BedrockGuardrailT = BedrockGuardrailResource>
+  ResourceData& WithBedrockGuardrail(BedrockGuardrailT&& value) {
+    SetBedrockGuardrail(std::forward<BedrockGuardrailT>(value));
+    return *this;
+  }
+  ///@}
  private:
   S3Bucket m_s3Bucket;
 
@@ -380,6 +400,8 @@ class ResourceData {
   Ec2Image m_ec2Image;
 
   CloudformationStack m_cloudformationStack;
+
+  BedrockGuardrailResource m_bedrockGuardrail;
   bool m_s3BucketHasBeenSet = false;
   bool m_ec2InstanceHasBeenSet = false;
   bool m_accessKeyHasBeenSet = false;
@@ -396,6 +418,7 @@ class ResourceData {
   bool m_ec2VpcHasBeenSet = false;
   bool m_ec2ImageHasBeenSet = false;
   bool m_cloudformationStackHasBeenSet = false;
+  bool m_bedrockGuardrailHasBeenSet = false;
 };
 
 }  // namespace Model

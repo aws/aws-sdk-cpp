@@ -66,4 +66,10 @@ void ListManagedNotificationEventsRequest::AddQueryStringParameters(URI& uri) co
     uri.AddQueryStringParameter("relatedAccount", ss.str());
     ss.str("");
   }
+
+  if (m_includeSensitiveEventsHasBeenSet) {
+    ss << m_includeSensitiveEvents;
+    uri.AddQueryStringParameter("includeSensitiveEvents", ss.str());
+    ss.str("");
+  }
 }

@@ -7,6 +7,7 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/socialmessaging/SocialMessaging_EXPORTS.h>
+#include <aws/socialmessaging/model/WhatsAppCallSettings.h>
 #include <aws/socialmessaging/model/WhatsAppPhoneNumberDetail.h>
 
 #include <utility>
@@ -64,6 +65,24 @@ class GetLinkedWhatsAppBusinessAccountPhoneNumberResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The calling settings configured for the phone number. This value is absent
+   * when calling is not configured.</p>
+   */
+  inline const WhatsAppCallSettings& GetCallSettings() const { return m_callSettings; }
+  template <typename CallSettingsT = WhatsAppCallSettings>
+  void SetCallSettings(CallSettingsT&& value) {
+    m_callSettingsHasBeenSet = true;
+    m_callSettings = std::forward<CallSettingsT>(value);
+  }
+  template <typename CallSettingsT = WhatsAppCallSettings>
+  GetLinkedWhatsAppBusinessAccountPhoneNumberResult& WithCallSettings(CallSettingsT&& value) {
+    SetCallSettings(std::forward<CallSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -84,10 +103,13 @@ class GetLinkedWhatsAppBusinessAccountPhoneNumberResult {
 
   Aws::String m_linkedWhatsAppBusinessAccountId;
 
+  WhatsAppCallSettings m_callSettings;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_phoneNumberHasBeenSet = false;
   bool m_linkedWhatsAppBusinessAccountIdHasBeenSet = false;
+  bool m_callSettingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

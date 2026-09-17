@@ -16,11 +16,14 @@ namespace Model {
 namespace PayerResponsibilityScopeMapper {
 
 static const int vpc_endpoint_charges_HASH = HashingUtils::HashString("vpc-endpoint-charges");
+static const int resource_gateway_charges_HASH = HashingUtils::HashString("resource-gateway-charges");
 
 PayerResponsibilityScope GetPayerResponsibilityScopeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == vpc_endpoint_charges_HASH) {
     return PayerResponsibilityScope::vpc_endpoint_charges;
+  } else if (hashCode == resource_gateway_charges_HASH) {
+    return PayerResponsibilityScope::resource_gateway_charges;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForPayerResponsibilityScope(PayerResponsibilityScope enumValu
       return {};
     case PayerResponsibilityScope::vpc_endpoint_charges:
       return "vpc-endpoint-charges";
+    case PayerResponsibilityScope::resource_gateway_charges:
+      return "resource-gateway-charges";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

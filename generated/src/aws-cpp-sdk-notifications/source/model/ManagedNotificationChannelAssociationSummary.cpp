@@ -31,6 +31,10 @@ ManagedNotificationChannelAssociationSummary& ManagedNotificationChannelAssociat
         ChannelAssociationOverrideOptionMapper::GetChannelAssociationOverrideOptionForName(jsonValue.GetString("overrideOption"));
     m_overrideOptionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("isSensitiveEventsSubscribed")) {
+    m_isSensitiveEventsSubscribed = jsonValue.GetBool("isSensitiveEventsSubscribed");
+    m_isSensitiveEventsSubscribedHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -48,6 +52,10 @@ JsonValue ManagedNotificationChannelAssociationSummary::Jsonize() const {
   if (m_overrideOptionHasBeenSet) {
     payload.WithString("overrideOption",
                        ChannelAssociationOverrideOptionMapper::GetNameForChannelAssociationOverrideOption(m_overrideOption));
+  }
+
+  if (m_isSensitiveEventsSubscribedHasBeenSet) {
+    payload.WithBool("isSensitiveEventsSubscribed", m_isSensitiveEventsSubscribed);
   }
 
   return payload;

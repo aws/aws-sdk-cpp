@@ -91,6 +91,26 @@ class MessageComponents {
 
   ///@{
   /**
+   * <p>A rich description in Portable Text format, which you can convert to markup
+   * formats such as HTML, Markdown, or plain text. Channels that don't support rich
+   * rendering ignore this field and use the plain text components instead.</p>
+   */
+  inline const Aws::String& GetMarkupDescription() const { return m_markupDescription; }
+  inline bool MarkupDescriptionHasBeenSet() const { return m_markupDescriptionHasBeenSet; }
+  template <typename MarkupDescriptionT = Aws::String>
+  void SetMarkupDescription(MarkupDescriptionT&& value) {
+    m_markupDescriptionHasBeenSet = true;
+    m_markupDescription = std::forward<MarkupDescriptionT>(value);
+  }
+  template <typename MarkupDescriptionT = Aws::String>
+  MessageComponents& WithMarkupDescription(MarkupDescriptionT&& value) {
+    SetMarkupDescription(std::forward<MarkupDescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A list of properties in key-value pairs. Pairs are shown in order of
    * importance from most important to least important. Channels may limit the number
    * of dimensions shown to the notification viewer.</p>  <p>Included
@@ -122,10 +142,13 @@ class MessageComponents {
 
   Aws::String m_completeDescription;
 
+  Aws::String m_markupDescription;
+
   Aws::Vector<Dimension> m_dimensions;
   bool m_headlineHasBeenSet = false;
   bool m_paragraphSummaryHasBeenSet = false;
   bool m_completeDescriptionHasBeenSet = false;
+  bool m_markupDescriptionHasBeenSet = false;
   bool m_dimensionsHasBeenSet = false;
 };
 

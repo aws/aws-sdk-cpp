@@ -18,6 +18,7 @@ namespace TextPartTypeMapper {
 static const int LOCALIZED_TEXT_HASH = HashingUtils::HashString("LOCALIZED_TEXT");
 static const int PLAIN_TEXT_HASH = HashingUtils::HashString("PLAIN_TEXT");
 static const int URL_HASH = HashingUtils::HashString("URL");
+static const int PORTABLE_TEXT_HASH = HashingUtils::HashString("PORTABLE_TEXT");
 
 TextPartType GetTextPartTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ TextPartType GetTextPartTypeForName(const Aws::String& name) {
     return TextPartType::PLAIN_TEXT;
   } else if (hashCode == URL_HASH) {
     return TextPartType::URL;
+  } else if (hashCode == PORTABLE_TEXT_HASH) {
+    return TextPartType::PORTABLE_TEXT;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForTextPartType(TextPartType enumValue) {
       return "PLAIN_TEXT";
     case TextPartType::URL:
       return "URL";
+    case TextPartType::PORTABLE_TEXT:
+      return "PORTABLE_TEXT";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -73,6 +73,13 @@ ManagedNotificationEvent& ManagedNotificationEvent::operator=(JsonView jsonValue
     m_organizationalUnitId = jsonValue.GetString("organizationalUnitId");
     m_organizationalUnitIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("attachments")) {
+    Aws::Utils::Array<JsonView> attachmentsJsonList = jsonValue.GetArray("attachments");
+    for (unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex) {
+      m_attachments.push_back(attachmentsJsonList[attachmentsIndex].AsObject());
+    }
+    m_attachmentsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -133,6 +140,14 @@ JsonValue ManagedNotificationEvent::Jsonize() const {
 
   if (m_organizationalUnitIdHasBeenSet) {
     payload.WithString("organizationalUnitId", m_organizationalUnitId);
+  }
+
+  if (m_attachmentsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> attachmentsJsonList(m_attachments.size());
+    for (unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex) {
+      attachmentsJsonList[attachmentsIndex].AsObject(m_attachments[attachmentsIndex].Jsonize());
+    }
+    payload.WithArray("attachments", std::move(attachmentsJsonList));
   }
 
   return payload;

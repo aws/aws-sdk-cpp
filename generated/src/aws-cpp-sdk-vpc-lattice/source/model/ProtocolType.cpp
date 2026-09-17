@@ -16,11 +16,14 @@ namespace Model {
 namespace ProtocolTypeMapper {
 
 static const int TCP_HASH = HashingUtils::HashString("TCP");
+static const int TCP_UDP_HASH = HashingUtils::HashString("TCP_UDP");
 
 ProtocolType GetProtocolTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == TCP_HASH) {
     return ProtocolType::TCP;
+  } else if (hashCode == TCP_UDP_HASH) {
+    return ProtocolType::TCP_UDP;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForProtocolType(ProtocolType enumValue) {
       return {};
     case ProtocolType::TCP:
       return "TCP";
+    case ProtocolType::TCP_UDP:
+      return "TCP_UDP";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

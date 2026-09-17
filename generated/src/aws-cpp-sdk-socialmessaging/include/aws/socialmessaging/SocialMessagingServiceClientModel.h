@@ -34,6 +34,7 @@
 #include <aws/socialmessaging/model/GetLinkedWhatsAppBusinessAccountPhoneNumberResult.h>
 #include <aws/socialmessaging/model/GetLinkedWhatsAppBusinessAccountResult.h>
 #include <aws/socialmessaging/model/GetWhatsAppBusinessPublicKeyResult.h>
+#include <aws/socialmessaging/model/GetWhatsAppCallPermissionResult.h>
 #include <aws/socialmessaging/model/GetWhatsAppFlowPreviewResult.h>
 #include <aws/socialmessaging/model/GetWhatsAppFlowResult.h>
 #include <aws/socialmessaging/model/GetWhatsAppMessageMediaResult.h>
@@ -49,10 +50,12 @@
 #include <aws/socialmessaging/model/PublishWhatsAppFlowResult.h>
 #include <aws/socialmessaging/model/PutWhatsAppBusinessAccountEventDestinationsResult.h>
 #include <aws/socialmessaging/model/PutWhatsAppBusinessPublicKeyResult.h>
+#include <aws/socialmessaging/model/SendWhatsAppCallEventResult.h>
 #include <aws/socialmessaging/model/SendWhatsAppConversionEventResult.h>
 #include <aws/socialmessaging/model/SendWhatsAppMessageResult.h>
 #include <aws/socialmessaging/model/TagResourceResult.h>
 #include <aws/socialmessaging/model/UntagResourceResult.h>
+#include <aws/socialmessaging/model/UpdateLinkedWhatsAppBusinessAccountPhoneNumberResult.h>
 #include <aws/socialmessaging/model/UpdateWhatsAppFlowAssetsResult.h>
 #include <aws/socialmessaging/model/UpdateWhatsAppFlowResult.h>
 #include <aws/socialmessaging/model/UpdateWhatsAppMessageTemplateResult.h>
@@ -103,6 +106,7 @@ class DisassociateWhatsAppBusinessAccountRequest;
 class GetLinkedWhatsAppBusinessAccountRequest;
 class GetLinkedWhatsAppBusinessAccountPhoneNumberRequest;
 class GetWhatsAppBusinessPublicKeyRequest;
+class GetWhatsAppCallPermissionRequest;
 class GetWhatsAppFlowRequest;
 class GetWhatsAppFlowPreviewRequest;
 class GetWhatsAppMessageMediaRequest;
@@ -117,10 +121,12 @@ class PostWhatsAppMessageMediaRequest;
 class PublishWhatsAppFlowRequest;
 class PutWhatsAppBusinessAccountEventDestinationsRequest;
 class PutWhatsAppBusinessPublicKeyRequest;
+class SendWhatsAppCallEventRequest;
 class SendWhatsAppConversionEventRequest;
 class SendWhatsAppMessageRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
+class UpdateLinkedWhatsAppBusinessAccountPhoneNumberRequest;
 class UpdateWhatsAppFlowRequest;
 class UpdateWhatsAppFlowAssetsRequest;
 class UpdateWhatsAppMessageTemplateRequest;
@@ -143,6 +149,7 @@ typedef Aws::Utils::Outcome<GetLinkedWhatsAppBusinessAccountResult, SocialMessag
 typedef Aws::Utils::Outcome<GetLinkedWhatsAppBusinessAccountPhoneNumberResult, SocialMessagingError>
     GetLinkedWhatsAppBusinessAccountPhoneNumberOutcome;
 typedef Aws::Utils::Outcome<GetWhatsAppBusinessPublicKeyResult, SocialMessagingError> GetWhatsAppBusinessPublicKeyOutcome;
+typedef Aws::Utils::Outcome<GetWhatsAppCallPermissionResult, SocialMessagingError> GetWhatsAppCallPermissionOutcome;
 typedef Aws::Utils::Outcome<GetWhatsAppFlowResult, SocialMessagingError> GetWhatsAppFlowOutcome;
 typedef Aws::Utils::Outcome<GetWhatsAppFlowPreviewResult, SocialMessagingError> GetWhatsAppFlowPreviewOutcome;
 typedef Aws::Utils::Outcome<GetWhatsAppMessageMediaResult, SocialMessagingError> GetWhatsAppMessageMediaOutcome;
@@ -158,10 +165,13 @@ typedef Aws::Utils::Outcome<PublishWhatsAppFlowResult, SocialMessagingError> Pub
 typedef Aws::Utils::Outcome<PutWhatsAppBusinessAccountEventDestinationsResult, SocialMessagingError>
     PutWhatsAppBusinessAccountEventDestinationsOutcome;
 typedef Aws::Utils::Outcome<PutWhatsAppBusinessPublicKeyResult, SocialMessagingError> PutWhatsAppBusinessPublicKeyOutcome;
+typedef Aws::Utils::Outcome<SendWhatsAppCallEventResult, SocialMessagingError> SendWhatsAppCallEventOutcome;
 typedef Aws::Utils::Outcome<SendWhatsAppConversionEventResult, SocialMessagingError> SendWhatsAppConversionEventOutcome;
 typedef Aws::Utils::Outcome<SendWhatsAppMessageResult, SocialMessagingError> SendWhatsAppMessageOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, SocialMessagingError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, SocialMessagingError> UntagResourceOutcome;
+typedef Aws::Utils::Outcome<UpdateLinkedWhatsAppBusinessAccountPhoneNumberResult, SocialMessagingError>
+    UpdateLinkedWhatsAppBusinessAccountPhoneNumberOutcome;
 typedef Aws::Utils::Outcome<UpdateWhatsAppFlowResult, SocialMessagingError> UpdateWhatsAppFlowOutcome;
 typedef Aws::Utils::Outcome<UpdateWhatsAppFlowAssetsResult, SocialMessagingError> UpdateWhatsAppFlowAssetsOutcome;
 typedef Aws::Utils::Outcome<UpdateWhatsAppMessageTemplateResult, SocialMessagingError> UpdateWhatsAppMessageTemplateOutcome;
@@ -182,6 +192,7 @@ typedef std::future<DisassociateWhatsAppBusinessAccountOutcome> DisassociateWhat
 typedef std::future<GetLinkedWhatsAppBusinessAccountOutcome> GetLinkedWhatsAppBusinessAccountOutcomeCallable;
 typedef std::future<GetLinkedWhatsAppBusinessAccountPhoneNumberOutcome> GetLinkedWhatsAppBusinessAccountPhoneNumberOutcomeCallable;
 typedef std::future<GetWhatsAppBusinessPublicKeyOutcome> GetWhatsAppBusinessPublicKeyOutcomeCallable;
+typedef std::future<GetWhatsAppCallPermissionOutcome> GetWhatsAppCallPermissionOutcomeCallable;
 typedef std::future<GetWhatsAppFlowOutcome> GetWhatsAppFlowOutcomeCallable;
 typedef std::future<GetWhatsAppFlowPreviewOutcome> GetWhatsAppFlowPreviewOutcomeCallable;
 typedef std::future<GetWhatsAppMessageMediaOutcome> GetWhatsAppMessageMediaOutcomeCallable;
@@ -196,10 +207,12 @@ typedef std::future<PostWhatsAppMessageMediaOutcome> PostWhatsAppMessageMediaOut
 typedef std::future<PublishWhatsAppFlowOutcome> PublishWhatsAppFlowOutcomeCallable;
 typedef std::future<PutWhatsAppBusinessAccountEventDestinationsOutcome> PutWhatsAppBusinessAccountEventDestinationsOutcomeCallable;
 typedef std::future<PutWhatsAppBusinessPublicKeyOutcome> PutWhatsAppBusinessPublicKeyOutcomeCallable;
+typedef std::future<SendWhatsAppCallEventOutcome> SendWhatsAppCallEventOutcomeCallable;
 typedef std::future<SendWhatsAppConversionEventOutcome> SendWhatsAppConversionEventOutcomeCallable;
 typedef std::future<SendWhatsAppMessageOutcome> SendWhatsAppMessageOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+typedef std::future<UpdateLinkedWhatsAppBusinessAccountPhoneNumberOutcome> UpdateLinkedWhatsAppBusinessAccountPhoneNumberOutcomeCallable;
 typedef std::future<UpdateWhatsAppFlowOutcome> UpdateWhatsAppFlowOutcomeCallable;
 typedef std::future<UpdateWhatsAppFlowAssetsOutcome> UpdateWhatsAppFlowAssetsOutcomeCallable;
 typedef std::future<UpdateWhatsAppMessageTemplateOutcome> UpdateWhatsAppMessageTemplateOutcomeCallable;
@@ -260,6 +273,9 @@ typedef std::function<void(const SocialMessagingClient*, const Model::GetWhatsAp
                            const Model::GetWhatsAppBusinessPublicKeyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetWhatsAppBusinessPublicKeyResponseReceivedHandler;
+typedef std::function<void(const SocialMessagingClient*, const Model::GetWhatsAppCallPermissionRequest&,
+                           const Model::GetWhatsAppCallPermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetWhatsAppCallPermissionResponseReceivedHandler;
 typedef std::function<void(const SocialMessagingClient*, const Model::GetWhatsAppFlowRequest&, const Model::GetWhatsAppFlowOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetWhatsAppFlowResponseReceivedHandler;
@@ -306,6 +322,9 @@ typedef std::function<void(const SocialMessagingClient*, const Model::PutWhatsAp
                            const Model::PutWhatsAppBusinessPublicKeyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutWhatsAppBusinessPublicKeyResponseReceivedHandler;
+typedef std::function<void(const SocialMessagingClient*, const Model::SendWhatsAppCallEventRequest&,
+                           const Model::SendWhatsAppCallEventOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    SendWhatsAppCallEventResponseReceivedHandler;
 typedef std::function<void(const SocialMessagingClient*, const Model::SendWhatsAppConversionEventRequest&,
                            const Model::SendWhatsAppConversionEventOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SendWhatsAppConversionEventResponseReceivedHandler;
@@ -318,6 +337,10 @@ typedef std::function<void(const SocialMessagingClient*, const Model::TagResourc
 typedef std::function<void(const SocialMessagingClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UntagResourceResponseReceivedHandler;
+typedef std::function<void(const SocialMessagingClient*, const Model::UpdateLinkedWhatsAppBusinessAccountPhoneNumberRequest&,
+                           const Model::UpdateLinkedWhatsAppBusinessAccountPhoneNumberOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateLinkedWhatsAppBusinessAccountPhoneNumberResponseReceivedHandler;
 typedef std::function<void(const SocialMessagingClient*, const Model::UpdateWhatsAppFlowRequest&, const Model::UpdateWhatsAppFlowOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateWhatsAppFlowResponseReceivedHandler;

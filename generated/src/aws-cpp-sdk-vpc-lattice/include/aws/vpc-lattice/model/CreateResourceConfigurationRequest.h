@@ -62,7 +62,13 @@ class CreateResourceConfigurationRequest : public VPCLatticeRequest {
    * resource configuration before you create a child resource configuration.</p>
    * </li> <li> <p> <b>CHILD</b> - A single resource that is part of a group resource
    * configuration.</p> </li> <li> <p> <b>ARN</b> - An Amazon Web Services
-   * resource.</p> </li> </ul>
+   * resource.</p> </li> <li> <p> <b>CIDR</b> - A network segment, expressed as a
+   * range of IP addresses (a CIDR block). Use this type to share a portion of your
+   * network rather than an individual resource. A consumer accesses the resources
+   * within the CIDR range through a <code>Tunnel</code> VPC endpoint. You can't add
+   * a CIDR resource configuration to a service network. A CIDR resource
+   * configuration must be associated with a resource gateway whose DNS resolution is
+   * set to <code>IN_VPC</code>.</p> </li> </ul>
    */
   inline ResourceConfigurationType GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -78,9 +84,10 @@ class CreateResourceConfigurationRequest : public VPCLatticeRequest {
 
   ///@{
   /**
-   * <p>(SINGLE, GROUP, CHILD) The TCP port ranges that a consumer can use to access
-   * a resource configuration (for example: 1-65535). You can separate port ranges
-   * using commas (for example: 1,2,22-30).</p>
+   * <p>(SINGLE, GROUP, CHILD, CIDR) The port ranges that a consumer can use to
+   * access a resource configuration (for example: 1-65535). You can separate port
+   * ranges using commas (for example: 1,2,22-30). To resolve DNS through a CIDR
+   * resource configuration, include port 53 in the port ranges.</p>
    */
   inline const Aws::Vector<Aws::String>& GetPortRanges() const { return m_portRanges; }
   inline bool PortRangesHasBeenSet() const { return m_portRangesHasBeenSet; }
@@ -104,7 +111,10 @@ class CreateResourceConfigurationRequest : public VPCLatticeRequest {
 
   ///@{
   /**
-   * <p>(SINGLE, GROUP) The protocol accepted by the resource configuration.</p>
+   * <p>(SINGLE, GROUP, CIDR) The protocol accepted by the resource configuration.
+   * The default is <code>TCP</code>. <code>TCP_UDP</code> is supported only for CIDR
+   * resource configurations; specify it for a CIDR resource configuration to allow
+   * DNS resolution, which uses UDP.</p>
    */
   inline ProtocolType GetProtocol() const { return m_protocol; }
   inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
@@ -120,9 +130,12 @@ class CreateResourceConfigurationRequest : public VPCLatticeRequest {
 
   ///@{
   /**
-   * <p>(SINGLE, GROUP, ARN) The ID or ARN of the resource gateway used to connect to
-   * the resource configuration. For a child resource configuration, this value is
-   * inherited from the parent resource configuration.</p>
+   * <p>(SINGLE, GROUP, ARN, CIDR) The ID or ARN of the resource gateway used to
+   * connect to the resource configuration. For a child resource configuration, this
+   * value is inherited from the parent resource configuration. For a CIDR resource
+   * configuration, the associated resource gateway must have its DNS resolution set
+   * to <code>IN_VPC</code> so that DNS queries resolve in the context of your
+   * VPC.</p>
    */
   inline const Aws::String& GetResourceGatewayIdentifier() const { return m_resourceGatewayIdentifier; }
   inline bool ResourceGatewayIdentifierHasBeenSet() const { return m_resourceGatewayIdentifierHasBeenSet; }
@@ -165,7 +178,16 @@ class CreateResourceConfigurationRequest : public VPCLatticeRequest {
    * provisioned by Amazon Web Services services, such as RDS databases, can be
    * identified by their ARN.</p> </li> <li> <p> <b>Domain name</b> - Any domain name
    * that is publicly resolvable.</p> </li> <li> <p> <b>IP address</b> - For IPv4 and
-   * IPv6, only IP addresses in the VPC are supported.</p> </li> </ul>
+   * IPv6, only IP addresses in the VPC are supported.</p> </li> <li> <p> <b>CIDR
+   * range</b> - For a resource configuration of type CIDR, specify a
+   * <code>cidrResource</code> with one or more <code>cidrRanges</code> (for example,
+   * <code>10.0.0.0/16</code>) that cover the IP addresses of the resources you want
+   * to make accessible. You can specify up to 10 ranges, using IPv4, IPv6, or both,
+   * and each range must include a prefix length. To represent your entire network,
+   * specify <code>0.0.0.0/0</code> (IPv4) or <code>::/0</code> (IPv6) as the only
+   * range. You can't use reserved ranges such as <code>169.254.0.0/16</code>,
+   * <code>100.64.0.0/10</code>, <code>224.0.0.0/4</code>, <code>fe80::/10</code>, or
+   * <code>ff00::/8</code>.</p> </li> </ul>
    */
   inline const ResourceConfigurationDefinition& GetResourceConfigurationDefinition() const { return m_resourceConfigurationDefinition; }
   inline bool ResourceConfigurationDefinitionHasBeenSet() const { return m_resourceConfigurationDefinitionHasBeenSet; }

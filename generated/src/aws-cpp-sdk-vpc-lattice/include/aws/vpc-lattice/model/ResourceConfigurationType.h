@@ -10,7 +10,7 @@
 namespace Aws {
 namespace VPCLattice {
 namespace Model {
-enum class ResourceConfigurationType { NOT_SET, GROUP, CHILD, SINGLE, ARN };
+enum class ResourceConfigurationType { NOT_SET, GROUP, CHILD, SINGLE, ARN, CIDR };
 
 namespace ResourceConfigurationTypeMapper {
 AWS_VPCLATTICE_API ResourceConfigurationType GetResourceConfigurationTypeForName(const Aws::String& name);

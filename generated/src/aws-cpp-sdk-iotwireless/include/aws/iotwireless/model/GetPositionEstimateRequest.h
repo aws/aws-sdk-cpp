@@ -11,6 +11,7 @@
 #include <aws/iotwireless/model/AdvancedConfiguration.h>
 #include <aws/iotwireless/model/CellTowers.h>
 #include <aws/iotwireless/model/Gnss.h>
+#include <aws/iotwireless/model/GnssMultiFrame.h>
 #include <aws/iotwireless/model/Ip.h>
 #include <aws/iotwireless/model/WiFiAccessPoint.h>
 
@@ -103,7 +104,8 @@ class GetPositionEstimateRequest : public IoTWirelessRequest {
   /**
    * <p>Retrieves an estimated device position by resolving the global navigation
    * satellite system (GNSS) scan data. The position is resolved using the GNSS
-   * solver powered by LoRa Cloud.</p>
+   * solver powered by LoRa Cloud. This field is mutually exclusive with the
+   * GnssMultiFrame field.</p>
    */
   inline const Gnss& GetGnss() const { return m_gnss; }
   inline bool GnssHasBeenSet() const { return m_gnssHasBeenSet; }
@@ -115,6 +117,27 @@ class GetPositionEstimateRequest : public IoTWirelessRequest {
   template <typename GnssT = Gnss>
   GetPositionEstimateRequest& WithGnss(GnssT&& value) {
     SetGnss(std::forward<GnssT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Retrieves an estimated device position by resolving multiple global
+   * navigation satellite system (GNSS) scan captures. The position is resolved using
+   * the multi-frame GNSS solver powered by LoRa Cloud. This field is mutually
+   * exclusive with the Gnss field.</p>
+   */
+  inline const GnssMultiFrame& GetGnssMultiFrame() const { return m_gnssMultiFrame; }
+  inline bool GnssMultiFrameHasBeenSet() const { return m_gnssMultiFrameHasBeenSet; }
+  template <typename GnssMultiFrameT = GnssMultiFrame>
+  void SetGnssMultiFrame(GnssMultiFrameT&& value) {
+    m_gnssMultiFrameHasBeenSet = true;
+    m_gnssMultiFrame = std::forward<GnssMultiFrameT>(value);
+  }
+  template <typename GnssMultiFrameT = GnssMultiFrame>
+  GetPositionEstimateRequest& WithGnssMultiFrame(GnssMultiFrameT&& value) {
+    SetGnssMultiFrame(std::forward<GnssMultiFrameT>(value));
     return *this;
   }
   ///@}
@@ -141,8 +164,7 @@ class GetPositionEstimateRequest : public IoTWirelessRequest {
 
   ///@{
   /**
-   * Optional configuration to customize position estimates. If not provided,
-   * defaults are applied.
+   * <p>Optional configuration for customizing position measurement data.</p>
    */
   inline const AdvancedConfiguration& GetAdvancedConfiguration() const { return m_advancedConfiguration; }
   inline bool AdvancedConfigurationHasBeenSet() const { return m_advancedConfigurationHasBeenSet; }
@@ -166,6 +188,8 @@ class GetPositionEstimateRequest : public IoTWirelessRequest {
 
   Gnss m_gnss;
 
+  GnssMultiFrame m_gnssMultiFrame;
+
   Aws::Utils::DateTime m_timestamp{};
 
   AdvancedConfiguration m_advancedConfiguration;
@@ -173,6 +197,7 @@ class GetPositionEstimateRequest : public IoTWirelessRequest {
   bool m_cellTowersHasBeenSet = false;
   bool m_ipHasBeenSet = false;
   bool m_gnssHasBeenSet = false;
+  bool m_gnssMultiFrameHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
   bool m_advancedConfigurationHasBeenSet = false;
 };

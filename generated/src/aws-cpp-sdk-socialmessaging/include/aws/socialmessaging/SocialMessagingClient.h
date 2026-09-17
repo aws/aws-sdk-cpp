@@ -535,6 +535,37 @@ class AWS_SOCIALMESSAGING_API SocialMessagingClient : public Aws::Client::AWSJso
   }
 
   /**
+   * <p>Retrieves the current calling permission for a WhatsApp end user, along with
+   * the calling actions the business is allowed to take with that user. Provide the
+   * destination phone number or the business-scoped user ID to identify the end
+   * user.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/GetWhatsAppCallPermission">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetWhatsAppCallPermissionOutcome GetWhatsAppCallPermission(const Model::GetWhatsAppCallPermissionRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetWhatsAppCallPermission that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetWhatsAppCallPermissionRequestT = Model::GetWhatsAppCallPermissionRequest>
+  Model::GetWhatsAppCallPermissionOutcomeCallable GetWhatsAppCallPermissionCallable(
+      const GetWhatsAppCallPermissionRequestT& request) const {
+    return SubmitCallable(&SocialMessagingClient::GetWhatsAppCallPermission, request);
+  }
+
+  /**
+   * An Async wrapper for GetWhatsAppCallPermission that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetWhatsAppCallPermissionRequestT = Model::GetWhatsAppCallPermissionRequest>
+  void GetWhatsAppCallPermissionAsync(const GetWhatsAppCallPermissionRequestT& request,
+                                      const GetWhatsAppCallPermissionResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SocialMessagingClient::GetWhatsAppCallPermission, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves the metadata and status of a WhatsApp Flow, including validation
    * errors, preview information, and health status.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/GetWhatsAppFlow">AWS
@@ -950,6 +981,36 @@ class AWS_SOCIALMESSAGING_API SocialMessagingClient : public Aws::Client::AWSJso
   }
 
   /**
+   * <p>Sends a WhatsApp calling event, such as connecting or terminating a call, for
+   * a business phone number. This operation passes the event through to Meta. To use
+   * this operation, the origination phone number must belong to a WhatsApp Business
+   * Account that is linked to your Amazon Web Services account.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/SendWhatsAppCallEvent">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SendWhatsAppCallEventOutcome SendWhatsAppCallEvent(const Model::SendWhatsAppCallEventRequest& request) const;
+
+  /**
+   * A Callable wrapper for SendWhatsAppCallEvent that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename SendWhatsAppCallEventRequestT = Model::SendWhatsAppCallEventRequest>
+  Model::SendWhatsAppCallEventOutcomeCallable SendWhatsAppCallEventCallable(const SendWhatsAppCallEventRequestT& request) const {
+    return SubmitCallable(&SocialMessagingClient::SendWhatsAppCallEvent, request);
+  }
+
+  /**
+   * An Async wrapper for SendWhatsAppCallEvent that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename SendWhatsAppCallEventRequestT = Model::SendWhatsAppCallEventRequest>
+  void SendWhatsAppCallEventAsync(const SendWhatsAppCallEventRequestT& request, const SendWhatsAppCallEventResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SocialMessagingClient::SendWhatsAppCallEvent, request, handler, context);
+  }
+
+  /**
    * <p>Sends a conversion event to Meta's Conversions API for the specified WhatsApp
    * Business Account dataset.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/SendWhatsAppConversionEvent">AWS
@@ -1059,6 +1120,38 @@ class AWS_SOCIALMESSAGING_API SocialMessagingClient : public Aws::Client::AWSJso
   void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SocialMessagingClient::UntagResource, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the calling settings for a linked WhatsApp business phone number,
+   * such as whether calling is enabled and the hours during which the business
+   * accepts calls.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/UpdateLinkedWhatsAppBusinessAccountPhoneNumber">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateLinkedWhatsAppBusinessAccountPhoneNumberOutcome UpdateLinkedWhatsAppBusinessAccountPhoneNumber(
+      const Model::UpdateLinkedWhatsAppBusinessAccountPhoneNumberRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateLinkedWhatsAppBusinessAccountPhoneNumber that returns a future to the operation so that it can be executed
+   * in parallel to other requests.
+   */
+  template <typename UpdateLinkedWhatsAppBusinessAccountPhoneNumberRequestT = Model::UpdateLinkedWhatsAppBusinessAccountPhoneNumberRequest>
+  Model::UpdateLinkedWhatsAppBusinessAccountPhoneNumberOutcomeCallable UpdateLinkedWhatsAppBusinessAccountPhoneNumberCallable(
+      const UpdateLinkedWhatsAppBusinessAccountPhoneNumberRequestT& request) const {
+    return SubmitCallable(&SocialMessagingClient::UpdateLinkedWhatsAppBusinessAccountPhoneNumber, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateLinkedWhatsAppBusinessAccountPhoneNumber that queues the request into a thread executor and triggers
+   * associated callback when operation has finished.
+   */
+  template <typename UpdateLinkedWhatsAppBusinessAccountPhoneNumberRequestT = Model::UpdateLinkedWhatsAppBusinessAccountPhoneNumberRequest>
+  void UpdateLinkedWhatsAppBusinessAccountPhoneNumberAsync(
+      const UpdateLinkedWhatsAppBusinessAccountPhoneNumberRequestT& request,
+      const UpdateLinkedWhatsAppBusinessAccountPhoneNumberResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SocialMessagingClient::UpdateLinkedWhatsAppBusinessAccountPhoneNumber, request, handler, context);
   }
 
   /**

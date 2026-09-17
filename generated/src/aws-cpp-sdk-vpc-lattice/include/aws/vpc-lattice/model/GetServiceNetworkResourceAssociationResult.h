@@ -276,7 +276,8 @@ class GetServiceNetworkResourceAssociationResult {
 
   ///@{
   /**
-   * <p>The private DNS entry for the service.</p>
+   * <p>The private DNS entry for the service. This entry includes only the domain
+   * name.</p>
    */
   inline const DnsEntry& GetPrivateDnsEntry() const { return m_privateDnsEntry; }
   template <typename PrivateDnsEntryT = DnsEntry>

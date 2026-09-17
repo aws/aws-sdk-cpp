@@ -19,5 +19,9 @@ Aws::String AssociateManagedNotificationAdditionalChannelRequest::SerializePaylo
     payload.WithString("managedNotificationConfigurationArn", m_managedNotificationConfigurationArn);
   }
 
+  if (m_isSensitiveEventsSubscribedHasBeenSet) {
+    payload.WithBool("isSensitiveEventsSubscribed", m_isSensitiveEventsSubscribed);
+  }
+
   return payload.View().WriteReadable();
 }

@@ -35,6 +35,10 @@ Aws::String GetPositionEstimateRequest::SerializePayload() const {
     payload.WithObject("Gnss", m_gnss.Jsonize());
   }
 
+  if (m_gnssMultiFrameHasBeenSet) {
+    payload.WithObject("GnssMultiFrame", m_gnssMultiFrame.Jsonize());
+  }
+
   if (m_timestampHasBeenSet) {
     payload.WithDouble("Timestamp", m_timestamp.SecondsWithMSPrecision());
   }

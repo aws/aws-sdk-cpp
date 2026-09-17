@@ -30,7 +30,7 @@ class DeregisterNotificationHubResult {
 
   ///@{
   /**
-   * <p>The <code>NotificationConfiguration</code> Region.</p>
+   * <p>The <code>NotificationHub</code> Region.</p>
    */
   inline const Aws::String& GetNotificationHubRegion() const { return m_notificationHubRegion; }
   template <typename NotificationHubRegionT = Aws::String>
@@ -47,7 +47,7 @@ class DeregisterNotificationHubResult {
 
   ///@{
   /**
-   * <p> <code>NotificationConfiguration</code> status information.</p>
+   * <p> <code>NotificationHub</code> status information.</p>
    */
   inline const NotificationHubStatusSummary& GetStatusSummary() const { return m_statusSummary; }
   template <typename StatusSummaryT = NotificationHubStatusSummary>

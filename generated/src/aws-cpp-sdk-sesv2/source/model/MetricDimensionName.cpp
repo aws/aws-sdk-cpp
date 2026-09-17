@@ -18,6 +18,7 @@ namespace MetricDimensionNameMapper {
 static const int EMAIL_IDENTITY_HASH = HashingUtils::HashString("EMAIL_IDENTITY");
 static const int CONFIGURATION_SET_HASH = HashingUtils::HashString("CONFIGURATION_SET");
 static const int ISP_HASH = HashingUtils::HashString("ISP");
+static const int TENANT_NAME_HASH = HashingUtils::HashString("TENANT_NAME");
 
 MetricDimensionName GetMetricDimensionNameForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ MetricDimensionName GetMetricDimensionNameForName(const Aws::String& name) {
     return MetricDimensionName::CONFIGURATION_SET;
   } else if (hashCode == ISP_HASH) {
     return MetricDimensionName::ISP;
+  } else if (hashCode == TENANT_NAME_HASH) {
+    return MetricDimensionName::TENANT_NAME;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForMetricDimensionName(MetricDimensionName enumValue) {
       return "CONFIGURATION_SET";
     case MetricDimensionName::ISP:
       return "ISP";
+    case MetricDimensionName::TENANT_NAME:
+      return "TENANT_NAME";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

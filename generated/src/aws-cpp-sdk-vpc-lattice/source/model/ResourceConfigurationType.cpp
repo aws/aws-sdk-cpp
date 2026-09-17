@@ -19,6 +19,7 @@ static const int GROUP_HASH = HashingUtils::HashString("GROUP");
 static const int CHILD_HASH = HashingUtils::HashString("CHILD");
 static const int SINGLE_HASH = HashingUtils::HashString("SINGLE");
 static const int ARN_HASH = HashingUtils::HashString("ARN");
+static const int CIDR_HASH = HashingUtils::HashString("CIDR");
 
 ResourceConfigurationType GetResourceConfigurationTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ ResourceConfigurationType GetResourceConfigurationTypeForName(const Aws::String&
     return ResourceConfigurationType::SINGLE;
   } else if (hashCode == ARN_HASH) {
     return ResourceConfigurationType::ARN;
+  } else if (hashCode == CIDR_HASH) {
+    return ResourceConfigurationType::CIDR;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForResourceConfigurationType(ResourceConfigurationType enumVa
       return "SINGLE";
     case ResourceConfigurationType::ARN:
       return "ARN";
+    case ResourceConfigurationType::CIDR:
+      return "CIDR";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

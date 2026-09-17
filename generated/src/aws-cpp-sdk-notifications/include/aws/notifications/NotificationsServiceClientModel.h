@@ -65,6 +65,7 @@
 #include <aws/notifications/model/TagResourceResult.h>
 #include <aws/notifications/model/UntagResourceResult.h>
 #include <aws/notifications/model/UpdateEventRuleResult.h>
+#include <aws/notifications/model/UpdateManagedNotificationChannelAssociationResult.h>
 #include <aws/notifications/model/UpdateNotificationConfigurationResult.h>
 /* End of service model headers required in NotificationsClient header */
 
@@ -137,6 +138,7 @@ class RegisterNotificationHubRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
 class UpdateEventRuleRequest;
+class UpdateManagedNotificationChannelAssociationRequest;
 class UpdateNotificationConfigurationRequest;
 /* End of service model forward declarations required in NotificationsClient header */
 
@@ -186,6 +188,8 @@ typedef Aws::Utils::Outcome<RegisterNotificationHubResult, NotificationsError> R
 typedef Aws::Utils::Outcome<TagResourceResult, NotificationsError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, NotificationsError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateEventRuleResult, NotificationsError> UpdateEventRuleOutcome;
+typedef Aws::Utils::Outcome<UpdateManagedNotificationChannelAssociationResult, NotificationsError>
+    UpdateManagedNotificationChannelAssociationOutcome;
 typedef Aws::Utils::Outcome<UpdateNotificationConfigurationResult, NotificationsError> UpdateNotificationConfigurationOutcome;
 /* End of service model Outcome class definitions */
 
@@ -229,6 +233,7 @@ typedef std::future<RegisterNotificationHubOutcome> RegisterNotificationHubOutco
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateEventRuleOutcome> UpdateEventRuleOutcomeCallable;
+typedef std::future<UpdateManagedNotificationChannelAssociationOutcome> UpdateManagedNotificationChannelAssociationOutcomeCallable;
 typedef std::future<UpdateNotificationConfigurationOutcome> UpdateNotificationConfigurationOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
@@ -368,6 +373,10 @@ typedef std::function<void(const NotificationsClient*, const Model::UntagResourc
 typedef std::function<void(const NotificationsClient*, const Model::UpdateEventRuleRequest&, const Model::UpdateEventRuleOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateEventRuleResponseReceivedHandler;
+typedef std::function<void(const NotificationsClient*, const Model::UpdateManagedNotificationChannelAssociationRequest&,
+                           const Model::UpdateManagedNotificationChannelAssociationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateManagedNotificationChannelAssociationResponseReceivedHandler;
 typedef std::function<void(const NotificationsClient*, const Model::UpdateNotificationConfigurationRequest&,
                            const Model::UpdateNotificationConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

@@ -7,11 +7,13 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/notifications/Notifications_EXPORTS.h>
 #include <aws/notifications/model/AggregationEventType.h>
 #include <aws/notifications/model/AggregationSummary.h>
 #include <aws/notifications/model/EventStatus.h>
 #include <aws/notifications/model/MessageComponents.h>
+#include <aws/notifications/model/NotificationEventAttachment.h>
 #include <aws/notifications/model/NotificationType.h>
 #include <aws/notifications/model/SchemaVersion.h>
 #include <aws/notifications/model/TextPartValue.h>
@@ -288,6 +290,30 @@ class ManagedNotificationEvent {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of files attached to the notification event.</p>
+   */
+  inline const Aws::Vector<NotificationEventAttachment>& GetAttachments() const { return m_attachments; }
+  inline bool AttachmentsHasBeenSet() const { return m_attachmentsHasBeenSet; }
+  template <typename AttachmentsT = Aws::Vector<NotificationEventAttachment>>
+  void SetAttachments(AttachmentsT&& value) {
+    m_attachmentsHasBeenSet = true;
+    m_attachments = std::forward<AttachmentsT>(value);
+  }
+  template <typename AttachmentsT = Aws::Vector<NotificationEventAttachment>>
+  ManagedNotificationEvent& WithAttachments(AttachmentsT&& value) {
+    SetAttachments(std::forward<AttachmentsT>(value));
+    return *this;
+  }
+  template <typename AttachmentsT = NotificationEventAttachment>
+  ManagedNotificationEvent& AddAttachments(AttachmentsT&& value) {
+    m_attachmentsHasBeenSet = true;
+    m_attachments.emplace_back(std::forward<AttachmentsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   SchemaVersion m_schemaVersion{SchemaVersion::NOT_SET};
 
@@ -314,6 +340,8 @@ class ManagedNotificationEvent {
   Aws::Map<Aws::String, TextPartValue> m_textParts;
 
   Aws::String m_organizationalUnitId;
+
+  Aws::Vector<NotificationEventAttachment> m_attachments;
   bool m_schemaVersionHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_messageComponentsHasBeenSet = false;
@@ -327,6 +355,7 @@ class ManagedNotificationEvent {
   bool m_endTimeHasBeenSet = false;
   bool m_textPartsHasBeenSet = false;
   bool m_organizationalUnitIdHasBeenSet = false;
+  bool m_attachmentsHasBeenSet = false;
 };
 
 }  // namespace Model

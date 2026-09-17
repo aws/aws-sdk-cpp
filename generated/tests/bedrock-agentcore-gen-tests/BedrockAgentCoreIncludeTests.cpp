@@ -416,6 +416,7 @@
 #include <aws/bedrock-agentcore/model/SessionMetadataShape.h>
 #include <aws/bedrock-agentcore/model/SessionStatus.h>
 #include <aws/bedrock-agentcore/model/SessionSummary.h>
+#include <aws/bedrock-agentcore/model/SessionTraceIds.h>
 #include <aws/bedrock-agentcore/model/SkillDefinition.h>
 #include <aws/bedrock-agentcore/model/SkillMdDefinition.h>
 #include <aws/bedrock-agentcore/model/SpanContext.h>

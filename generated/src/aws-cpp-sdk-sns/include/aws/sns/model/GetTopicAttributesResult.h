@@ -41,22 +41,28 @@ class GetTopicAttributesResult {
    * serialization of the topic's delivery policy.</p> </li> <li> <p>
    * <code>DisplayName</code> – The human-readable name used in the <code>From</code>
    * field for notifications to <code>email</code> and <code>email-json</code>
-   * endpoints.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON
+   * endpoints. For subscription confirmation and unsubscribe confirmation emails,
+   * the sender name is always "Amazon Web Services Notifications" regardless of this
+   * attribute.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON
    * serialization of the effective delivery policy, taking system defaults into
-   * account.</p> </li> <li> <p> <code>Owner</code> – The Amazon Web Services account
-   * ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The JSON
-   * serialization of the topic's access control policy.</p> </li> <li> <p>
-   * <code>SignatureVersion</code> – The signature version corresponds to the hashing
-   * algorithm used while creating the signature of the notifications, subscription
-   * confirmations, or unsubscribe confirmation messages sent by Amazon SNS.</p> <ul>
-   * <li> <p>By default, <code>SignatureVersion</code> is set to <b>1</b>. The
-   * signature is a Base64-encoded <b>SHA1withRSA</b> signature.</p> </li> <li>
-   * <p>When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS uses a
-   * Base64-encoded <b>SHA256withRSA</b> signature. </p>  <p>If the API
-   * response does not include the <code>SignatureVersion</code> attribute, it means
-   * that the <code>SignatureVersion</code> for the topic has value <b>1</b>.</p>
-   *  </li> </ul> </li> <li> <p> <code>SubscriptionsConfirmed</code> – The
-   * number of confirmed subscriptions for the topic.</p> </li> <li> <p>
+   * account.</p> </li> <li> <p> <code>MaximumMessageSize</code> – The maximum size,
+   * in bytes, of a message that can be published to the topic. Amazon SNS returns
+   * this attribute only if you explicitly set it. If Amazon SNS doesn't return it,
+   * the topic uses the default of <code>262144</code> (256 KiB).</p> </li> <li> <p>
+   * <code>Owner</code> – The Amazon Web Services account ID of the topic's
+   * owner.</p> </li> <li> <p> <code>Policy</code> – The JSON serialization of the
+   * topic's access control policy.</p> </li> <li> <p> <code>SignatureVersion</code>
+   * – The signature version corresponds to the hashing algorithm used while creating
+   * the signature of the notifications, subscription confirmations, or unsubscribe
+   * confirmation messages sent by Amazon SNS.</p> <ul> <li> <p>By default,
+   * <code>SignatureVersion</code> is set to <b>1</b>. The signature is a
+   * Base64-encoded <b>SHA1withRSA</b> signature.</p> </li> <li> <p>When you set
+   * <code>SignatureVersion</code> to <b>2</b>. Amazon SNS uses a Base64-encoded
+   * <b>SHA256withRSA</b> signature. </p>  <p>If the API response does not
+   * include the <code>SignatureVersion</code> attribute, it means that the
+   * <code>SignatureVersion</code> for the topic has value <b>1</b>.</p>
+   * </li> </ul> </li> <li> <p> <code>SubscriptionsConfirmed</code> – The number of
+   * confirmed subscriptions for the topic.</p> </li> <li> <p>
    * <code>SubscriptionsDeleted</code> – The number of deleted subscriptions for the
    * topic.</p> </li> <li> <p> <code>SubscriptionsPending</code> – The number of
    * subscriptions pending confirmation for the topic.</p> </li> <li> <p>

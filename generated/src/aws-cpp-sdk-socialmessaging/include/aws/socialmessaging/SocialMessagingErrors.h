@@ -45,6 +45,7 @@ enum class SocialMessagingErrors {
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   ACCESS_DENIED_BY_META = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT,
   DEPENDENCY,
   INTERNAL_SERVICE,
   INVALID_PARAMETERS,

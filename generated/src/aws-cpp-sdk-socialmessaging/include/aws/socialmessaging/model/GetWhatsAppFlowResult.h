@@ -166,7 +166,7 @@ class GetWhatsAppFlowResult {
 
   ///@{
   /**
-   * <p>The endpoint URI for data exchange Flows, if configured.</p>
+   * <p>The HTTPS endpoint that Meta calls for a data exchange Flow.</p>
    */
   inline const Aws::String& GetEndpointUri() const { return m_endpointUri; }
   template <typename EndpointUriT = Aws::String>

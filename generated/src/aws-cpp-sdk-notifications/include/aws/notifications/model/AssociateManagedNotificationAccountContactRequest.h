@@ -65,12 +65,33 @@ class AssociateManagedNotificationAccountContactRequest : public NotificationsRe
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether this contact is subscribed to sensitive events. The
+   * <code>notifications:SubscribeSensitiveEvents</code> permission controls access
+   * to sensitive events. Defaults to false.</p>
+   */
+  inline bool GetIsSensitiveEventsSubscribed() const { return m_isSensitiveEventsSubscribed; }
+  inline bool IsSensitiveEventsSubscribedHasBeenSet() const { return m_isSensitiveEventsSubscribedHasBeenSet; }
+  inline void SetIsSensitiveEventsSubscribed(bool value) {
+    m_isSensitiveEventsSubscribedHasBeenSet = true;
+    m_isSensitiveEventsSubscribed = value;
+  }
+  inline AssociateManagedNotificationAccountContactRequest& WithIsSensitiveEventsSubscribed(bool value) {
+    SetIsSensitiveEventsSubscribed(value);
+    return *this;
+  }
+  ///@}
  private:
   AccountContactType m_contactIdentifier{AccountContactType::NOT_SET};
 
   Aws::String m_managedNotificationConfigurationArn;
+
+  bool m_isSensitiveEventsSubscribed{false};
   bool m_contactIdentifierHasBeenSet = false;
   bool m_managedNotificationConfigurationArnHasBeenSet = false;
+  bool m_isSensitiveEventsSubscribedHasBeenSet = false;
 };
 
 }  // namespace Model

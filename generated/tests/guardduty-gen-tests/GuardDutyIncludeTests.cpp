@@ -55,6 +55,7 @@
 #include <aws/guardduty/model/BadRequestException.h>
 #include <aws/guardduty/model/BedrockGuardrail.h>
 #include <aws/guardduty/model/BedrockGuardrailDetails.h>
+#include <aws/guardduty/model/BedrockGuardrailResource.h>
 #include <aws/guardduty/model/BlockPublicAccess.h>
 #include <aws/guardduty/model/BucketLevelPermissions.h>
 #include <aws/guardduty/model/BucketPolicy.h>

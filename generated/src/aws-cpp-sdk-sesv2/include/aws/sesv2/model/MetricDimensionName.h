@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SESV2 {
 namespace Model {
-enum class MetricDimensionName { NOT_SET, EMAIL_IDENTITY, CONFIGURATION_SET, ISP };
+enum class MetricDimensionName { NOT_SET, EMAIL_IDENTITY, CONFIGURATION_SET, ISP, TENANT_NAME };
 
 namespace MetricDimensionNameMapper {
 AWS_SESV2_API MetricDimensionName GetMetricDimensionNameForName(const Aws::String& name);

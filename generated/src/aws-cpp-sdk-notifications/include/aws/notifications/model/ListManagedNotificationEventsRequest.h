@@ -181,6 +181,25 @@ class ListManagedNotificationEventsRequest : public NotificationsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to include sensitive events in the result. By default, only
+   * non-sensitive events are returned. The
+   * <code>notifications:AccessSensitiveEvents</code> permission controls access to
+   * sensitive events.</p>
+   */
+  inline bool GetIncludeSensitiveEvents() const { return m_includeSensitiveEvents; }
+  inline bool IncludeSensitiveEventsHasBeenSet() const { return m_includeSensitiveEventsHasBeenSet; }
+  inline void SetIncludeSensitiveEvents(bool value) {
+    m_includeSensitiveEventsHasBeenSet = true;
+    m_includeSensitiveEvents = value;
+  }
+  inline ListManagedNotificationEventsRequest& WithIncludeSensitiveEvents(bool value) {
+    SetIncludeSensitiveEvents(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Utils::DateTime m_startTime{};
 
@@ -197,6 +216,8 @@ class ListManagedNotificationEventsRequest : public NotificationsRequest {
   Aws::String m_organizationalUnitId;
 
   Aws::String m_relatedAccount;
+
+  bool m_includeSensitiveEvents{false};
   bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
   bool m_localeHasBeenSet = false;
@@ -205,6 +226,7 @@ class ListManagedNotificationEventsRequest : public NotificationsRequest {
   bool m_nextTokenHasBeenSet = false;
   bool m_organizationalUnitIdHasBeenSet = false;
   bool m_relatedAccountHasBeenSet = false;
+  bool m_includeSensitiveEventsHasBeenSet = false;
 };
 
 }  // namespace Model

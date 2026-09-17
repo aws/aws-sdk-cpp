@@ -30,6 +30,10 @@ MessageComponents& MessageComponents::operator=(JsonView jsonValue) {
     m_completeDescription = jsonValue.GetString("completeDescription");
     m_completeDescriptionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("markupDescription")) {
+    m_markupDescription = jsonValue.GetString("markupDescription");
+    m_markupDescriptionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("dimensions")) {
     Aws::Utils::Array<JsonView> dimensionsJsonList = jsonValue.GetArray("dimensions");
     for (unsigned dimensionsIndex = 0; dimensionsIndex < dimensionsJsonList.GetLength(); ++dimensionsIndex) {
@@ -53,6 +57,10 @@ JsonValue MessageComponents::Jsonize() const {
 
   if (m_completeDescriptionHasBeenSet) {
     payload.WithString("completeDescription", m_completeDescription);
+  }
+
+  if (m_markupDescriptionHasBeenSet) {
+    payload.WithString("markupDescription", m_markupDescription);
   }
 
   if (m_dimensionsHasBeenSet) {

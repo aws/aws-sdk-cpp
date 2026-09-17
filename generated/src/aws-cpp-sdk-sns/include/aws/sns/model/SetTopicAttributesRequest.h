@@ -60,26 +60,42 @@ class SetTopicAttributesRequest : public SNSRequest {
    * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
    * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
    * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-   * <code>DisplayName</code> – The display name to use for a topic with SMS
-   * subscriptions.</p> </li> <li> <p> <code>Policy</code> – The policy that defines
-   * who can access your topic. By default, only the topic owner can publish or
-   * subscribe to the topic.</p> </li> <li> <p> <code>TracingConfig</code> – Tracing
-   * mode of an Amazon SNS topic. By default <code>TracingConfig</code> is set to
-   * <code>PassThrough</code>, and the topic passes through the tracing header it
-   * receives from an Amazon SNS publisher to its subscriptions. If set to
-   * <code>Active</code>, Amazon SNS will vend X-Ray segment data to topic owner
-   * account if the sampled flag in the tracing header is true. This is only
-   * supported on standard topics.</p> </li> <li> <p>HTTP</p> <ul> <li> <p>
-   * <code>HTTPSuccessFeedbackRoleArn</code> – Indicates successful message delivery
-   * status for an Amazon SNS topic that is subscribed to an HTTP endpoint. </p>
-   * </li> <li> <p> <code>HTTPSuccessFeedbackSampleRate</code> – Indicates percentage
-   * of successful messages to sample for an Amazon SNS topic that is subscribed to
-   * an HTTP endpoint.</p> </li> <li> <p> <code>HTTPFailureFeedbackRoleArn</code> –
-   * Indicates failed message delivery status for an Amazon SNS topic that is
-   * subscribed to an HTTP endpoint.</p> </li> </ul> </li> <li> <p>Amazon Data
-   * Firehose</p> <ul> <li> <p> <code>FirehoseSuccessFeedbackRoleArn</code> –
-   * Indicates successful message delivery status for an Amazon SNS topic that is
-   * subscribed to an Amazon Data Firehose endpoint.</p> </li> <li> <p>
+   * <code>DisplayName</code> – The display name to use for a topic with SMS,
+   * <code>email</code>, and <code>email-json</code> subscriptions. For
+   * <code>email</code> and <code>email-json</code> subscriptions, the display name
+   * is used as the sender name for regular notification messages. Subscription
+   * confirmation and unsubscribe confirmation emails always use "Amazon Web Services
+   * Notifications" as the sender name.</p> </li> <li> <p>
+   * <code>MaximumMessageSize</code> – The maximum size, in bytes, of a message that
+   * can be published to the topic. Valid values are <code>1024</code> to
+   * <code>1048576</code> (1 MiB). The default is <code>262144</code> (256 KiB).</p>
+   * <p>A topic with a <code>MaximumMessageSize</code> above 256 KiB must have 100 or
+   * fewer subscriptions, and each subscription must be an Amazon SQS, Amazon Data
+   * Firehose, or Lambda subscription.</p> <p>You can increase or decrease this value
+   * at any time. If the topic doesn't meet these requirements when you set a value
+   * above 256 KiB, Amazon SNS returns an <code>InvalidParameter</code> error. For
+   * more information, see <a
+   * href="https://docs.aws.amazon.com/sns/latest/dg/large-message-payloads.html">Large
+   * message payloads</a> in the <i>Amazon SNS Developer Guide.</i> </p> </li> <li>
+   * <p> <code>Policy</code> – The policy that defines who can access your topic. By
+   * default, only the topic owner can publish or subscribe to the topic.</p> </li>
+   * <li> <p> <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By
+   * default <code>TracingConfig</code> is set to <code>PassThrough</code>, and the
+   * topic passes through the tracing header it receives from an Amazon SNS publisher
+   * to its subscriptions. If set to <code>Active</code>, Amazon SNS will vend X-Ray
+   * segment data to topic owner account if the sampled flag in the tracing header is
+   * true. This is only supported on standard topics.</p> </li> <li> <p>HTTP</p> <ul>
+   * <li> <p> <code>HTTPSuccessFeedbackRoleArn</code> – Indicates successful message
+   * delivery status for an Amazon SNS topic that is subscribed to an HTTP endpoint.
+   * </p> </li> <li> <p> <code>HTTPSuccessFeedbackSampleRate</code> – Indicates
+   * percentage of successful messages to sample for an Amazon SNS topic that is
+   * subscribed to an HTTP endpoint.</p> </li> <li> <p>
+   * <code>HTTPFailureFeedbackRoleArn</code> – Indicates failed message delivery
+   * status for an Amazon SNS topic that is subscribed to an HTTP endpoint.</p> </li>
+   * </ul> </li> <li> <p>Amazon Data Firehose</p> <ul> <li> <p>
+   * <code>FirehoseSuccessFeedbackRoleArn</code> – Indicates successful message
+   * delivery status for an Amazon SNS topic that is subscribed to an Amazon Data
+   * Firehose endpoint.</p> </li> <li> <p>
    * <code>FirehoseSuccessFeedbackSampleRate</code> – Indicates percentage of
    * successful messages to sample for an Amazon SNS topic that is subscribed to an
    * Amazon Data Firehose endpoint.</p> </li> <li> <p>
@@ -160,12 +176,12 @@ class SetTopicAttributesRequest : public SNSRequest {
    * deduplication is across the entire topic. This is the default value and
    * maintains existing behavior, with a maximum throughput of 3000 messages per
    * second or 20MB per second, whichever comes first.</p> </li> <li> <p>
-   * <code>MessageGroup</code> ��� The scope of deduplication is within each
-   * individual message group, which enables higher throughput per topic subject to
-   * regional quotas. For more information on quotas or to request an increase, see
-   * <a href="https://docs.aws.amazon.com/general/latest/gr/sns.html">Amazon SNS
-   * service quotas</a> in the Amazon Web Services General Reference.</p> </li> </ul>
-   * </li> </ul>
+   * <code>MessageGroup</code> – The scope of deduplication is within each individual
+   * message group, which enables higher throughput per topic subject to regional
+   * quotas. For more information on quotas or to request an increase, see <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/sns.html">Amazon SNS service
+   * quotas</a> in the Amazon Web Services General Reference.</p> </li> </ul> </li>
+   * </ul>
    */
   inline const Aws::String& GetAttributeName() const { return m_attributeName; }
   inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }

@@ -23,6 +23,7 @@
 #include <aws/vpc-lattice/model/AuthType.h>
 #include <aws/vpc-lattice/model/BatchUpdateRuleRequest.h>
 #include <aws/vpc-lattice/model/BatchUpdateRuleResult.h>
+#include <aws/vpc-lattice/model/CidrResource.h>
 #include <aws/vpc-lattice/model/ConflictException.h>
 #include <aws/vpc-lattice/model/CreateAccessLogSubscriptionRequest.h>
 #include <aws/vpc-lattice/model/CreateAccessLogSubscriptionResult.h>
@@ -173,6 +174,9 @@
 #include <aws/vpc-lattice/model/Matcher.h>
 #include <aws/vpc-lattice/model/PathMatch.h>
 #include <aws/vpc-lattice/model/PathMatchType.h>
+#include <aws/vpc-lattice/model/PayerResponsibilityEntry.h>
+#include <aws/vpc-lattice/model/PayerResponsibilityPayer.h>
+#include <aws/vpc-lattice/model/PayerResponsibilityScope.h>
 #include <aws/vpc-lattice/model/PrivateDnsPreference.h>
 #include <aws/vpc-lattice/model/ProtocolType.h>
 #include <aws/vpc-lattice/model/PutAuthPolicyRequest.h>

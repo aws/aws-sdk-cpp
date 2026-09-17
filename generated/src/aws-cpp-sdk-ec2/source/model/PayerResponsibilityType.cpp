@@ -16,12 +16,15 @@ namespace Model {
 namespace PayerResponsibilityTypeMapper {
 
 static const int vpc_endpoint_account_HASH = HashingUtils::HashString("vpc-endpoint-account");
+static const int resource_gateway_account_HASH = HashingUtils::HashString("resource-gateway-account");
 static const int vpc_endpoint_service_account_HASH = HashingUtils::HashString("vpc-endpoint-service-account");
 
 PayerResponsibilityType GetPayerResponsibilityTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == vpc_endpoint_account_HASH) {
     return PayerResponsibilityType::vpc_endpoint_account;
+  } else if (hashCode == resource_gateway_account_HASH) {
+    return PayerResponsibilityType::resource_gateway_account;
   } else if (hashCode == vpc_endpoint_service_account_HASH) {
     return PayerResponsibilityType::vpc_endpoint_service_account;
   }
@@ -40,6 +43,8 @@ Aws::String GetNameForPayerResponsibilityType(PayerResponsibilityType enumValue)
       return {};
     case PayerResponsibilityType::vpc_endpoint_account:
       return "vpc-endpoint-account";
+    case PayerResponsibilityType::resource_gateway_account:
+      return "resource-gateway-account";
     case PayerResponsibilityType::vpc_endpoint_service_account:
       return "vpc-endpoint-service-account";
     default:

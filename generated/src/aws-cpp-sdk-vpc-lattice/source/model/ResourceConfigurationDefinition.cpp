@@ -30,6 +30,10 @@ ResourceConfigurationDefinition& ResourceConfigurationDefinition::operator=(Json
     m_arnResource = jsonValue.GetObject("arnResource");
     m_arnResourceHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("cidrResource")) {
+    m_cidrResource = jsonValue.GetObject("cidrResource");
+    m_cidrResourceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue ResourceConfigurationDefinition::Jsonize() const {
 
   if (m_arnResourceHasBeenSet) {
     payload.WithObject("arnResource", m_arnResource.Jsonize());
+  }
+
+  if (m_cidrResourceHasBeenSet) {
+    payload.WithObject("cidrResource", m_cidrResource.Jsonize());
   }
 
   return payload;

@@ -30,7 +30,7 @@ class GetWhatsAppBusinessPublicKeyResult {
 
   ///@{
   /**
-   * <p>The stored RSA business public key (PEM), if present.</p>
+   * <p>The stored PEM-encoded 2048-bit RSA public key.</p>
    */
   inline const Aws::String& GetBusinessPublicKey() const { return m_businessPublicKey; }
   template <typename BusinessPublicKeyT = Aws::String>
@@ -47,7 +47,8 @@ class GetWhatsAppBusinessPublicKeyResult {
 
   ///@{
   /**
-   * <p>Meta's signing status: &quot;VALID&quot; | &quot;MISMATCH&quot;.</p>
+   * <p>The signature status of the stored business public key. Valid values are
+   * VALID and MISMATCH.</p>
    */
   inline const Aws::String& GetBusinessPublicKeySignatureStatus() const { return m_businessPublicKeySignatureStatus; }
   template <typename BusinessPublicKeySignatureStatusT = Aws::String>

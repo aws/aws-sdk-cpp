@@ -124,7 +124,9 @@ class UpdateResourceConfigurationResult {
    * single resource.</p> </li> <li> <p> <code>GROUP</code> - A group of
    * resources.</p> </li> <li> <p> <code>CHILD</code> - A single resource that is
    * part of a group resource configuration.</p> </li> <li> <p> <code>ARN</code> - An
-   * Amazon Web Services resource.</p> </li> </ul>
+   * Amazon Web Services resource.</p> </li> <li> <p> <code>CIDR</code> - A network
+   * segment (a range of IP addresses) accessed through a <code>Tunnel</code> VPC
+   * endpoint.</p> </li> </ul>
    */
   inline ResourceConfigurationType GetType() const { return m_type; }
   inline void SetType(ResourceConfigurationType value) {

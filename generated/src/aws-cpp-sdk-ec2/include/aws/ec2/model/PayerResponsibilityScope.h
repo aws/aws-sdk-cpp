@@ -10,7 +10,7 @@
 namespace Aws {
 namespace EC2 {
 namespace Model {
-enum class PayerResponsibilityScope { NOT_SET, vpc_endpoint_charges };
+enum class PayerResponsibilityScope { NOT_SET, vpc_endpoint_charges, resource_gateway_charges };
 
 namespace PayerResponsibilityScopeMapper {
 AWS_EC2_API PayerResponsibilityScope GetPayerResponsibilityScopeForName(const Aws::String& name);

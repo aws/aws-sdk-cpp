@@ -28,9 +28,9 @@ namespace Notifications {
 namespace Model {
 
 /**
- * <p>A ManagedNotificationChildEvent is a notification-focused representation of
- * an event. They contain semantic information used to create aggregated or
- * non-aggregated end-user notifications.</p><p><h3>See Also:</h3>   <a
+ * <p>A notification-focused representation of an event. They contain semantic
+ * information used to create aggregated or non-aggregated end-user
+ * notifications.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ManagedNotificationChildEvent">AWS
  * API Reference</a></p>
  */

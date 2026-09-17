@@ -6,7 +6,9 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
+#include <aws/vpc-lattice/model/PayerResponsibilityEntry.h>
 
 #include <utility>
 
@@ -195,6 +197,30 @@ class ResourceEndpointAssociationSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Who pays for each category of charges on the VPC endpoint association.</p>
+   */
+  inline const Aws::Vector<PayerResponsibilityEntry>& GetPayerResponsibility() const { return m_payerResponsibility; }
+  inline bool PayerResponsibilityHasBeenSet() const { return m_payerResponsibilityHasBeenSet; }
+  template <typename PayerResponsibilityT = Aws::Vector<PayerResponsibilityEntry>>
+  void SetPayerResponsibility(PayerResponsibilityT&& value) {
+    m_payerResponsibilityHasBeenSet = true;
+    m_payerResponsibility = std::forward<PayerResponsibilityT>(value);
+  }
+  template <typename PayerResponsibilityT = Aws::Vector<PayerResponsibilityEntry>>
+  ResourceEndpointAssociationSummary& WithPayerResponsibility(PayerResponsibilityT&& value) {
+    SetPayerResponsibility(std::forward<PayerResponsibilityT>(value));
+    return *this;
+  }
+  template <typename PayerResponsibilityT = PayerResponsibilityEntry>
+  ResourceEndpointAssociationSummary& AddPayerResponsibility(PayerResponsibilityT&& value) {
+    m_payerResponsibilityHasBeenSet = true;
+    m_payerResponsibility.emplace_back(std::forward<PayerResponsibilityT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -213,6 +239,8 @@ class ResourceEndpointAssociationSummary {
   Aws::String m_createdBy;
 
   Aws::Utils::DateTime m_createdAt{};
+
+  Aws::Vector<PayerResponsibilityEntry> m_payerResponsibility;
   bool m_idHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_resourceConfigurationIdHasBeenSet = false;
@@ -222,6 +250,7 @@ class ResourceEndpointAssociationSummary {
   bool m_vpcEndpointOwnerHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
+  bool m_payerResponsibilityHasBeenSet = false;
 };
 
 }  // namespace Model
