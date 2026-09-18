@@ -50,8 +50,8 @@ class CompleteMultipartUploadResult {
   ///@{
   /**
    * <p>The name of the bucket that contains the newly created object. Does not
-   * return the access point ARN or access point alias if used.</p>  <p>Access
-   * points are not supported by directory buckets.</p>
+   * return the access point ARN or access point alias if used.</p>  <p>Access points
+   * are not supported by directory buckets.</p>
    */
   inline const Aws::String& GetBucket() const { return m_bucket; }
   template <typename BucketT = Aws::String>
@@ -87,8 +87,8 @@ class CompleteMultipartUploadResult {
   /**
    * <p>If the object expiration is configured, this will contain the expiration date
    * (<code>expiry-date</code>) and rule ID (<code>rule-id</code>). The value of
-   * <code>rule-id</code> is URL-encoded.</p>  <p>This functionality is not
-   * supported for directory buckets.</p>
+   * <code>rule-id</code> is URL-encoded.</p>  <p>This functionality is not supported
+   * for directory buckets.</p>
    */
   inline const Aws::String& GetExpiration() const { return m_expiration; }
   template <typename ExpirationT = Aws::String>
@@ -373,7 +373,7 @@ class CompleteMultipartUploadResult {
    * <p>The server-side encryption algorithm used when storing this object in Amazon
    * S3.</p>  <p>When accessing data stored in Amazon FSx file systems using S3
    * access points, the only valid server side encryption option is
-   * <code>aws:fsx</code>.</p>  <p/>
+   * <code>aws:fsx</code>.</p>  <p></p>
    */
   inline ServerSideEncryption GetServerSideEncryption() const { return m_serverSideEncryption; }
   inline void SetServerSideEncryption(ServerSideEncryption value) {

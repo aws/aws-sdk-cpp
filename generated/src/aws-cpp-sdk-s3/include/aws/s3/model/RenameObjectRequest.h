@@ -14,9 +14,6 @@
 #include <utility>
 
 namespace Aws {
-namespace Http {
-class URI;
-}  // namespace Http
 namespace S3 {
 namespace Model {
 
@@ -34,9 +31,9 @@ class RenameObjectRequest : public S3Request {
 
   AWS_S3_API Aws::String SerializePayload() const override;
 
-  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
   AWS_S3_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
   /**
    * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
@@ -271,8 +268,8 @@ class RenameObjectRequest : public S3Request {
   ///@{
   /**
    * <p> A unique string with a max of 64 ASCII characters in the ASCII range of 33 -
-   * 126.</p>  <p> <code>RenameObject</code> supports idempotency using a
-   * client token. To make an idempotent API request using <code>RenameObject</code>,
+   * 126.</p>  <p> <code>RenameObject</code> supports idempotency using a client
+   * token. To make an idempotent API request using <code>RenameObject</code>,
    * specify a client token in the request. You should not reuse the same client
    * token for other API requests. If you retry a request that completed successfully
    * using the same client token and the same parameters, the retry succeeds without

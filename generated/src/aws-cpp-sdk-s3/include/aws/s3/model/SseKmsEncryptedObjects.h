@@ -29,7 +29,6 @@ class SseKmsEncryptedObjects {
   AWS_S3_API SseKmsEncryptedObjects() = default;
   AWS_S3_API SseKmsEncryptedObjects(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API SseKmsEncryptedObjects& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

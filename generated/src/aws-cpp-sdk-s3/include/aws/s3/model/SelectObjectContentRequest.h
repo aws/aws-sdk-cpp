@@ -19,24 +19,19 @@
 #include <utility>
 
 namespace Aws {
-namespace Http {
-class URI;
-}  // namespace Http
 namespace S3 {
 namespace Model {
 
 /**
- *  <p>Learn Amazon S3 Select is no longer available to new customers.
- * Existing customers of Amazon S3 Select can continue to use the feature as usual.
- * <a
+ *  <p>Learn Amazon S3 Select is no longer available to new customers. Existing
+ * customers of Amazon S3 Select can continue to use the feature as usual. <a
  * href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
- * more</a> </p>  <p>Request to filter the contents of an Amazon S3 object
- * based on a simple Structured Query Language (SQL) statement. In the request,
- * along with the SQL expression, you must specify a data serialization format
- * (JSON or CSV) of the object. Amazon S3 uses this to parse object data into
- * records. It returns only records that match the specified SQL expression. You
- * must also specify the data serialization format for the response. For more
- * information, see <a
+ * more</a> </p>  <p>Request to filter the contents of an Amazon S3 object based on
+ * a simple Structured Query Language (SQL) statement. In the request, along with
+ * the SQL expression, you must specify a data serialization format (JSON or CSV)
+ * of the object. Amazon S3 uses this to parse object data into records. It returns
+ * only records that match the specified SQL expression. You must also specify the
+ * data serialization format for the response. For more information, see <a
  * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectSELECTContent.html">S3Select
  * API Documentation</a>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SelectObjectContentRequest">AWS
@@ -55,11 +50,12 @@ class SelectObjectContentRequest : public S3Request {
   inline virtual bool HasEventStreamResponse() const override { return true; }
   AWS_S3_API Aws::String SerializePayload() const override;
 
-  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
   AWS_S3_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
   AWS_S3_API bool HasEmbeddedError(IOStream& body, const Http::HeaderValueCollection& header) const override;
+
   /**
    * Underlying Event Stream Decoder.
    */
@@ -289,13 +285,12 @@ class SelectObjectContentRequest : public S3Request {
    * optional, but when specified, it must not be empty. See RFC 2616, Section
    * 14.35.1 about how to specify the start and end of the range.</p> <p>
    * <code>ScanRange</code>may be used in the following ways:</p> <ul> <li> <p>
-   * <code>&lt;scanrange&gt;&lt;start&gt;50&lt;/start&gt;&lt;end&gt;100&lt;/end&gt;&lt;/scanrange&gt;</code>
-   * - process only the records starting between the bytes 50 and 100 (inclusive,
-   * counting from zero)</p> </li> <li> <p>
-   * <code>&lt;scanrange&gt;&lt;start&gt;50&lt;/start&gt;&lt;/scanrange&gt;</code> -
+   * <code><scanrange><start>50</start><end>100</end></scanrange></code> - process
+   * only the records starting between the bytes 50 and 100 (inclusive, counting from
+   * zero)</p> </li> <li> <p> <code><scanrange><start>50</start></scanrange></code> -
    * process only the records starting after the byte 50</p> </li> <li> <p>
-   * <code>&lt;scanrange&gt;&lt;end&gt;50&lt;/end&gt;&lt;/scanrange&gt;</code> -
-   * process only the records within the last 50 bytes of the file.</p> </li> </ul>
+   * <code><scanrange><end>50</end></scanrange></code> - process only the records
+   * within the last 50 bytes of the file.</p> </li> </ul>
    */
   inline const ScanRange& GetScanRange() const { return m_scanRange; }
   inline bool ScanRangeHasBeenSet() const { return m_scanRangeHasBeenSet; }

@@ -17,7 +17,7 @@ namespace SQS {
 namespace Model {
 
 /**
- * <p/><p><h3>See Also:</h3>   <a
+ * <p></p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueueRequest">AWS
  * API Reference</a></p>
  */
@@ -120,10 +120,10 @@ class CreateQueueRequest : public SQSRequest {
    * <code>redrivePermission</code> parameter is set to <code>byQueue</code>. You can
    * specify up to 10 source queue ARNs. To allow more than 10 source queues to
    * specify dead-letter queues, set the <code>redrivePermission</code> parameter to
-   * <code>allowAll</code>.</p> </li> </ul> </li> </ul>  <p>The dead-letter
-   * queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter
-   * queue of a standard queue must also be a standard queue.</p>  <p>The
-   * following attributes apply only to <a
+   * <code>allowAll</code>.</p> </li> </ul> </li> </ul>  <p>The dead-letter queue of
+   * a FIFO queue must also be a FIFO queue. Similarly, the dead-letter queue of a
+   * standard queue must also be a standard queue.</p>  <p>The following attributes
+   * apply only to <a
    * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
    * <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services
    * managed customer master key (CMK) for Amazon SQS or a custom CMK. For more
@@ -237,11 +237,10 @@ class CreateQueueRequest : public SQSRequest {
    * with a key identical to that of an existing tag overwrites the existing tag.</p>
    * </li> </ul> <p>For a full list of tag restrictions, see <a
    * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Quotas
-   * related to queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>  <p>To
-   * be able to tag a queue on creation, you must have the
-   * <code>sqs:CreateQueue</code> and <code>sqs:TagQueue</code> permissions.</p>
-   * <p>Cross-account permissions don't apply to this action. For more information,
-   * see <a
+   * related to queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>  <p>To be
+   * able to tag a queue on creation, you must have the <code>sqs:CreateQueue</code>
+   * and <code>sqs:TagQueue</code> permissions.</p> <p>Cross-account permissions
+   * don't apply to this action. For more information, see <a
    * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
    * cross-account permissions to a role and a username</a> in the <i>Amazon SQS
    * Developer Guide</i>.</p>

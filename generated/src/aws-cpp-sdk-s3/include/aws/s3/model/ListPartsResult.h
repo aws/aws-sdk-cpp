@@ -47,8 +47,7 @@ class ListPartsResult {
    * Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a>.</p>
    * <p>The response will also include the <code>x-amz-abort-rule-id</code> header
    * that will provide the ID of the lifecycle configuration rule that defines this
-   * action.</p>  <p>This functionality is not supported for directory
-   * buckets.</p>
+   * action.</p>  <p>This functionality is not supported for directory buckets.</p>
    */
   inline const Aws::Utils::DateTime& GetAbortDate() const { return m_abortDate; }
   template <typename AbortDateT = Aws::Utils::DateTime>
@@ -67,8 +66,8 @@ class ListPartsResult {
   /**
    * <p>This header is returned along with the <code>x-amz-abort-date</code> header.
    * It identifies applicable lifecycle configuration rule that defines the action to
-   * abort incomplete multipart uploads.</p>  <p>This functionality is not
-   * supported for directory buckets.</p>
+   * abort incomplete multipart uploads.</p>  <p>This functionality is not supported
+   * for directory buckets.</p>
    */
   inline const Aws::String& GetAbortRuleId() const { return m_abortRuleId; }
   template <typename AbortRuleIdT = Aws::String>
@@ -248,8 +247,8 @@ class ListPartsResult {
   /**
    * <p>Container element that identifies the object owner, after the object is
    * created. If multipart upload is initiated by an IAM user, this element provides
-   * the parent account ID.</p>  <p> <b>Directory buckets</b> - The bucket
-   * owner is returned as the object owner for all the parts.</p>
+   * the parent account ID.</p>  <p> <b>Directory buckets</b> - The bucket owner is
+   * returned as the object owner for all the parts.</p>
    */
   inline const Owner& GetOwner() const { return m_owner; }
   template <typename OwnerT = Owner>
@@ -266,11 +265,11 @@ class ListPartsResult {
 
   ///@{
   /**
-   * <p>The class of storage used to store the uploaded object.</p>  <p>
-   * <b>Directory buckets</b> - Directory buckets only support
-   * <code>EXPRESS_ONEZONE</code> (the S3 Express One Zone storage class) in
-   * Availability Zones and <code>ONEZONE_IA</code> (the S3 One Zone-Infrequent
-   * Access storage class) in Dedicated Local Zones.</p>
+   * <p>The class of storage used to store the uploaded object.</p>  <p> <b>Directory
+   * buckets</b> - Directory buckets only support <code>EXPRESS_ONEZONE</code> (the
+   * S3 Express One Zone storage class) in Availability Zones and
+   * <code>ONEZONE_IA</code> (the S3 One Zone-Infrequent Access storage class) in
+   * Dedicated Local Zones.</p>
    */
   inline StorageClass GetStorageClass() const { return m_storageClass; }
   inline void SetStorageClass(StorageClass value) {

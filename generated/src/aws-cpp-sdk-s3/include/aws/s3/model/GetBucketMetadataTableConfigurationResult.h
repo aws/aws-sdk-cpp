@@ -21,9 +21,9 @@ namespace S3 {
 namespace Model {
 
 /**
- * <p> The V1 S3 Metadata configuration for a general purpose bucket. </p>
- * <p>If you created your S3 Metadata configuration before July 15, 2025, we
- * recommend that you delete and re-create your configuration by using <a
+ * <p> The V1 S3 Metadata configuration for a general purpose bucket. </p>  <p>If
+ * you created your S3 Metadata configuration before July 15, 2025, we recommend
+ * that you delete and re-create your configuration by using <a
  * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataConfiguration.html">CreateBucketMetadataConfiguration</a>
  * so that you can expire journal table records and create a live inventory
  * table.</p> <p><h3>See Also:</h3>   <a
@@ -35,7 +35,6 @@ class GetBucketMetadataTableConfigurationResult {
   AWS_S3_API GetBucketMetadataTableConfigurationResult() = default;
   AWS_S3_API GetBucketMetadataTableConfigurationResult(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API GetBucketMetadataTableConfigurationResult& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

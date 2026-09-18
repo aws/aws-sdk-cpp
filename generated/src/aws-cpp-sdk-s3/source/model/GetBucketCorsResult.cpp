@@ -4,7 +4,9 @@
  */
 
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/GetBucketCorsResult.h>
@@ -18,31 +20,4 @@ using namespace Aws;
 
 GetBucketCorsResult::GetBucketCorsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-GetBucketCorsResult& GetBucketCorsResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
-  m_HttpResponseCode = result.GetResponseCode();
-  const XmlDocument& xmlDocument = result.GetPayload();
-  XmlNode resultNode = xmlDocument.GetRootElement();
-
-  if (!resultNode.IsNull()) {
-    XmlNode cORSRulesNode = resultNode.FirstChild("CORSRule");
-    if (!cORSRulesNode.IsNull()) {
-      XmlNode cORSRuleMember = cORSRulesNode;
-      m_cORSRulesHasBeenSet = !cORSRuleMember.IsNull();
-      while (!cORSRuleMember.IsNull()) {
-        m_cORSRules.push_back(cORSRuleMember);
-        cORSRuleMember = cORSRuleMember.NextNode("CORSRule");
-      }
-
-      m_cORSRulesHasBeenSet = true;
-    }
-  }
-
-  const auto& headers = result.GetHeaderValueCollection();
-  const auto& requestIdIter = headers.find("x-amz-request-id");
-  if (requestIdIter != headers.end()) {
-    m_requestId = requestIdIter->second;
-    m_requestIdHasBeenSet = true;
-  }
-
-  return *this;
-}
+GetBucketCorsResult& GetBucketCorsResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) { return *this; }

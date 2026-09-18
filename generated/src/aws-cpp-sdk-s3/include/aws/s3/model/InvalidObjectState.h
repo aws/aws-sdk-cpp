@@ -39,7 +39,6 @@ class InvalidObjectState {
   AWS_S3_API InvalidObjectState() = default;
   AWS_S3_API InvalidObjectState(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API InvalidObjectState& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

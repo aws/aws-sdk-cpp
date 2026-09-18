@@ -33,7 +33,6 @@ WitnessStatus GetWitnessStatusForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<WitnessStatus>(hashCode);
   }
-
   return WitnessStatus::NOT_SET;
 }
 
@@ -52,7 +51,6 @@ Aws::String GetNameForWitnessStatus(WitnessStatus enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

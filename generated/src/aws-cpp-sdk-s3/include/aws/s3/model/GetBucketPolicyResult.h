@@ -36,7 +36,6 @@ class GetBucketPolicyResult {
    */
   inline Aws::IOStream& GetPolicy() const { return m_policy.GetUnderlyingStream(); }
   inline void ReplaceBody(Aws::IOStream* body) { m_policy = Aws::Utils::Stream::ResponseStream(body); }
-
   ///@}
 
   ///@{
@@ -56,7 +55,7 @@ class GetBucketPolicyResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
-  Aws::Utils::Stream::ResponseStream m_policy;
+  Aws::Utils::Stream::ResponseStream m_policy{};
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;

@@ -3,6 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/model/DeleteAnomalyDetectorRequest.h>
 
@@ -17,32 +21,9 @@ Aws::String DeleteAnomalyDetectorRequest::SerializePayload() const {
 
   // Calculate map size
   size_t mapSize = 0;
-  if (m_anomalyDetectorIdHasBeenSet) {
-    mapSize++;
-  }
-  if (m_singleMetricAnomalyDetectorHasBeenSet) {
-    mapSize++;
-  }
-  if (m_metricMathAnomalyDetectorHasBeenSet) {
-    mapSize++;
-  }
 
   encoder.WriteMapStart(mapSize);
 
-  if (m_anomalyDetectorIdHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AnomalyDetectorId"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_anomalyDetectorId.c_str()));
-  }
-
-  if (m_singleMetricAnomalyDetectorHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SingleMetricAnomalyDetector"));
-    m_singleMetricAnomalyDetector.CborEncode(encoder);
-  }
-
-  if (m_metricMathAnomalyDetectorHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MetricMathAnomalyDetector"));
-    m_metricMathAnomalyDetector.CborEncode(encoder);
-  }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
   return str;
 }

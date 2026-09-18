@@ -42,9 +42,7 @@ class GetObjectAnnotationResult {
    */
   inline Aws::IOStream& GetAnnotationPayload() const { return m_annotationPayload.GetUnderlyingStream(); }
   inline void ReplaceBody(Aws::IOStream* body) { m_annotationPayload = Aws::Utils::Stream::ResponseStream(body); }
-
   ///@}
-
   ///@{
   /**
    * <p>The version ID of the object that the annotation is attached to.</p>
@@ -359,7 +357,6 @@ class GetObjectAnnotationResult {
 
  private:
   Aws::Utils::Stream::ResponseStream m_annotationPayload{};
-
   Aws::String m_objectVersionId;
 
   Aws::Utils::DateTime m_lastModified{};

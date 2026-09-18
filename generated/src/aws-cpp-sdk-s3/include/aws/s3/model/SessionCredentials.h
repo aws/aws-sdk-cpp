@@ -32,7 +32,6 @@ class SessionCredentials {
   AWS_S3_API SessionCredentials() = default;
   AWS_S3_API SessionCredentials(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API SessionCredentials& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

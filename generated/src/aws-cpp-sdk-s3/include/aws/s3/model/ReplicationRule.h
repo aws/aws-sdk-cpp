@@ -35,7 +35,6 @@ class ReplicationRule {
   AWS_S3_API ReplicationRule() = default;
   AWS_S3_API ReplicationRule(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API ReplicationRule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{
@@ -136,8 +135,7 @@ class ReplicationRule {
   ///@{
   /**
    * <p>Optional configuration to replicate existing source bucket objects. </p>
-   *  <p>This parameter is no longer supported. To replicate existing objects,
-   * see <a
+   * <p>This parameter is no longer supported. To replicate existing objects, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-batch-replication-batch.html">Replicating
    * existing objects with S3 Batch Replication</a> in the <i>Amazon S3 User
    * Guide</i>.</p>

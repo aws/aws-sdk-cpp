@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/MetricsAndOperator.h>
@@ -19,55 +20,9 @@ namespace Model {
 
 MetricsAndOperator::MetricsAndOperator(const XmlNode& xmlNode) { *this = xmlNode; }
 
-MetricsAndOperator& MetricsAndOperator::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+MetricsAndOperator& MetricsAndOperator::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode prefixNode = resultNode.FirstChild("Prefix");
-    if (!prefixNode.IsNull()) {
-      m_prefix = Aws::Utils::Xml::DecodeEscapedXmlText(prefixNode.GetText());
-      m_prefixHasBeenSet = true;
-    }
-    XmlNode tagsNode = resultNode.FirstChild("Tag");
-    if (!tagsNode.IsNull()) {
-      XmlNode tagMember = tagsNode;
-      m_tagsHasBeenSet = !tagMember.IsNull();
-      while (!tagMember.IsNull()) {
-        m_tags.push_back(tagMember);
-        tagMember = tagMember.NextNode("Tag");
-      }
-
-      m_tagsHasBeenSet = true;
-    }
-    XmlNode accessPointArnNode = resultNode.FirstChild("AccessPointArn");
-    if (!accessPointArnNode.IsNull()) {
-      m_accessPointArn = Aws::Utils::Xml::DecodeEscapedXmlText(accessPointArnNode.GetText());
-      m_accessPointArnHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void MetricsAndOperator::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_prefixHasBeenSet) {
-    XmlNode prefixNode = parentNode.CreateChildElement("Prefix");
-    prefixNode.SetText(m_prefix);
-  }
-
-  if (m_tagsHasBeenSet) {
-    for (const auto& item : m_tags) {
-      XmlNode tagsNode = parentNode.CreateChildElement("Tag");
-      item.AddToNode(tagsNode);
-    }
-  }
-
-  if (m_accessPointArnHasBeenSet) {
-    XmlNode accessPointArnNode = parentNode.CreateChildElement("AccessPointArn");
-    accessPointArnNode.SetText(m_accessPointArn);
-  }
-}
+void MetricsAndOperator::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

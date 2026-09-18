@@ -118,7 +118,6 @@ Event GetEventForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<Event>(hashCode);
   }
-
   return Event::NOT_SET;
 }
 
@@ -193,7 +192,6 @@ Aws::String GetNameForEvent(Event enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

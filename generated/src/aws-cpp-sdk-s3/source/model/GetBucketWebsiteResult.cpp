@@ -4,7 +4,9 @@
  */
 
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/GetBucketWebsiteResult.h>
@@ -18,46 +20,4 @@ using namespace Aws;
 
 GetBucketWebsiteResult::GetBucketWebsiteResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-GetBucketWebsiteResult& GetBucketWebsiteResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
-  m_HttpResponseCode = result.GetResponseCode();
-  const XmlDocument& xmlDocument = result.GetPayload();
-  XmlNode resultNode = xmlDocument.GetRootElement();
-
-  if (!resultNode.IsNull()) {
-    XmlNode redirectAllRequestsToNode = resultNode.FirstChild("RedirectAllRequestsTo");
-    if (!redirectAllRequestsToNode.IsNull()) {
-      m_redirectAllRequestsTo = redirectAllRequestsToNode;
-      m_redirectAllRequestsToHasBeenSet = true;
-    }
-    XmlNode indexDocumentNode = resultNode.FirstChild("IndexDocument");
-    if (!indexDocumentNode.IsNull()) {
-      m_indexDocument = indexDocumentNode;
-      m_indexDocumentHasBeenSet = true;
-    }
-    XmlNode errorDocumentNode = resultNode.FirstChild("ErrorDocument");
-    if (!errorDocumentNode.IsNull()) {
-      m_errorDocument = errorDocumentNode;
-      m_errorDocumentHasBeenSet = true;
-    }
-    XmlNode routingRulesNode = resultNode.FirstChild("RoutingRules");
-    if (!routingRulesNode.IsNull()) {
-      XmlNode routingRulesMember = routingRulesNode.FirstChild("RoutingRule");
-      m_routingRulesHasBeenSet = !routingRulesMember.IsNull();
-      while (!routingRulesMember.IsNull()) {
-        m_routingRules.push_back(routingRulesMember);
-        routingRulesMember = routingRulesMember.NextNode("RoutingRule");
-      }
-
-      m_routingRulesHasBeenSet = true;
-    }
-  }
-
-  const auto& headers = result.GetHeaderValueCollection();
-  const auto& requestIdIter = headers.find("x-amz-request-id");
-  if (requestIdIter != headers.end()) {
-    m_requestId = requestIdIter->second;
-    m_requestIdHasBeenSet = true;
-  }
-
-  return *this;
-}
+GetBucketWebsiteResult& GetBucketWebsiteResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) { return *this; }

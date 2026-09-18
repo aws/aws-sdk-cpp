@@ -30,7 +30,6 @@ class Bucket {
   AWS_S3_API Bucket() = default;
   AWS_S3_API Bucket(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API Bucket& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{
@@ -93,9 +92,9 @@ class Bucket {
   ///@{
   /**
    * <p>The Amazon Resource Name (ARN) of the S3 bucket. ARNs uniquely identify
-   * Amazon Web Services resources across all of Amazon Web Services.</p>
-   * <p>This parameter is only supported for S3 directory buckets. For more
-   * information, see <a
+   * Amazon Web Services resources across all of Amazon Web Services.</p>  <p>This
+   * parameter is only supported for S3 directory buckets. For more information, see
+   * <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Using
    * tags with directory buckets</a>.</p>
    */

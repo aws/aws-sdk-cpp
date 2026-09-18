@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/SimplePrefix.h>
@@ -19,19 +20,9 @@ namespace Model {
 
 SimplePrefix::SimplePrefix(const XmlNode& xmlNode) { *this = xmlNode; }
 
-SimplePrefix& SimplePrefix::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+SimplePrefix& SimplePrefix::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-  }
-
-  return *this;
-}
-
-void SimplePrefix::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  AWS_UNREFERENCED_PARAM(parentNode);
-}
+void SimplePrefix::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

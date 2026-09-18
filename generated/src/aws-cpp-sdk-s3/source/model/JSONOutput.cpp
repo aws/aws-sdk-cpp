@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/JSONOutput.h>
@@ -19,27 +20,9 @@ namespace Model {
 
 JSONOutput::JSONOutput(const XmlNode& xmlNode) { *this = xmlNode; }
 
-JSONOutput& JSONOutput::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+JSONOutput& JSONOutput::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode recordDelimiterNode = resultNode.FirstChild("RecordDelimiter");
-    if (!recordDelimiterNode.IsNull()) {
-      m_recordDelimiter = Aws::Utils::Xml::DecodeEscapedXmlText(recordDelimiterNode.GetText());
-      m_recordDelimiterHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void JSONOutput::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_recordDelimiterHasBeenSet) {
-    XmlNode recordDelimiterNode = parentNode.CreateChildElement("RecordDelimiter");
-    recordDelimiterNode.SetText(m_recordDelimiter);
-  }
-}
+void JSONOutput::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

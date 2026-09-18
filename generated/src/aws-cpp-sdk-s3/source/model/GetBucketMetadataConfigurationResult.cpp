@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/GetBucketMetadataConfigurationResult.h>
@@ -19,27 +20,9 @@ namespace Model {
 
 GetBucketMetadataConfigurationResult::GetBucketMetadataConfigurationResult(const XmlNode& xmlNode) { *this = xmlNode; }
 
-GetBucketMetadataConfigurationResult& GetBucketMetadataConfigurationResult::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+GetBucketMetadataConfigurationResult& GetBucketMetadataConfigurationResult::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode metadataConfigurationResultNode = resultNode.FirstChild("MetadataConfigurationResult");
-    if (!metadataConfigurationResultNode.IsNull()) {
-      m_metadataConfigurationResult = metadataConfigurationResultNode;
-      m_metadataConfigurationResultHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void GetBucketMetadataConfigurationResult::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_metadataConfigurationResultHasBeenSet) {
-    XmlNode metadataConfigurationResultNode = parentNode.CreateChildElement("MetadataConfigurationResult");
-    m_metadataConfigurationResult.AddToNode(metadataConfigurationResultNode);
-  }
-}
+void GetBucketMetadataConfigurationResult::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

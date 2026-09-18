@@ -17,7 +17,7 @@ namespace SQS {
 namespace Model {
 
 /**
- * <p/><p><h3>See Also:</h3>   <a
+ * <p></p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributesRequest">AWS
  * API Reference</a></p>
  */
@@ -117,10 +117,10 @@ class SetQueueAttributesRequest : public SQSRequest {
    * <code>redrivePermission</code> parameter is set to <code>byQueue</code>. You can
    * specify up to 10 source queue ARNs. To allow more than 10 source queues to
    * specify dead-letter queues, set the <code>redrivePermission</code> parameter to
-   * <code>allowAll</code>.</p> </li> </ul> </li> </ul>  <p>The dead-letter
-   * queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter
-   * queue of a standard queue must also be a standard queue.</p>  <p>The
-   * following attributes apply only to <a
+   * <code>allowAll</code>.</p> </li> </ul> </li> </ul>  <p>The dead-letter queue of
+   * a FIFO queue must also be a FIFO queue. Similarly, the dead-letter queue of a
+   * standard queue must also be a standard queue.</p>  <p>The following attributes
+   * apply only to <a
    * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
    * <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services
    * managed customer master key (CMK) for Amazon SQS or a custom CMK. For more

@@ -17,7 +17,7 @@ namespace SQS {
 namespace Model {
 
 /**
- * <p/><p><h3>See Also:</h3>   <a
+ * <p></p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributesRequest">AWS
  * API Reference</a></p>
  */
@@ -58,19 +58,18 @@ class GetQueueAttributesRequest : public SQSRequest {
   /**
    * <p>A list of attributes for which to retrieve information.</p> <p>The
    * <code>AttributeNames</code> parameter is optional, but if you don't specify
-   * values for this parameter, the request returns empty results.</p>  <p>In
-   * the future, new attributes might be added. If you write code that calls this
-   * action, we recommend that you structure your code so that it can handle new
-   * attributes gracefully.</p>  <p>The following attributes are
-   * supported:</p>  <p>The
+   * values for this parameter, the request returns empty results.</p>  <p>In the
+   * future, new attributes might be added. If you write code that calls this action,
+   * we recommend that you structure your code so that it can handle new attributes
+   * gracefully.</p>  <p>The following attributes are supported:</p>  <p>The
    * <code>ApproximateNumberOfMessagesDelayed</code>,
    * <code>ApproximateNumberOfMessagesNotVisible</code>, and
    * <code>ApproximateNumberOfMessages</code> metrics may not achieve consistency
    * until at least 1 minute after the producers stop sending messages. This period
-   * is required for the queue metadata to reach eventual consistency. </p>
-   *  <ul> <li> <p> <code>All</code> – Returns all values. </p> </li>
-   * <li> <p> <code>ApproximateNumberOfMessages</code> – Returns the approximate
-   * number of messages available for retrieval from the queue.</p> </li> <li> <p>
+   * is required for the queue metadata to reach eventual consistency. </p>  <ul>
+   * <li> <p> <code>All</code> – Returns all values. </p> </li> <li> <p>
+   * <code>ApproximateNumberOfMessages</code> – Returns the approximate number of
+   * messages available for retrieval from the queue.</p> </li> <li> <p>
    * <code>ApproximateNumberOfMessagesDelayed</code> – Returns the approximate number
    * of messages in the queue that are delayed and not available for reading
    * immediately. This can happen when the queue is configured as a delay queue or
@@ -134,10 +133,10 @@ class GetQueueAttributesRequest : public SQSRequest {
    * <code>redrivePermission</code> parameter is set to <code>byQueue</code>. You can
    * specify up to 10 source queue ARNs. To allow more than 10 source queues to
    * specify dead-letter queues, set the <code>redrivePermission</code> parameter to
-   * <code>allowAll</code>.</p> </li> </ul> </li> </ul>  <p>The dead-letter
-   * queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter
-   * queue of a standard queue must also be a standard queue.</p>  <p>The
-   * following attributes apply only to <a
+   * <code>allowAll</code>.</p> </li> </ul> </li> </ul>  <p>The dead-letter queue of
+   * a FIFO queue must also be a FIFO queue. Similarly, the dead-letter queue of a
+   * standard queue must also be a standard queue.</p>  <p>The following attributes
+   * apply only to <a
    * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
    * <ul> <li> <p> <code>KmsMasterKeyId</code> – Returns the ID of an Amazon Web
    * Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For
@@ -161,12 +160,12 @@ class GetQueueAttributesRequest : public SQSRequest {
    * Returns information about whether the queue is FIFO. For more information, see
    * <a
    * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html">FIFO
-   * queue logic</a> in the <i>Amazon SQS Developer Guide</i>.</p>  <p>To
-   * determine whether a queue is <a
+   * queue logic</a> in the <i>Amazon SQS Developer Guide</i>.</p>  <p>To determine
+   * whether a queue is <a
    * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>,
    * you can check whether <code>QueueName</code> ends with the <code>.fifo</code>
-   * suffix.</p>  </li> <li> <p> <code>ContentBasedDeduplication</code> –
-   * Returns whether content-based deduplication is enabled for the queue. For more
+   * suffix.</p>  </li> <li> <p> <code>ContentBasedDeduplication</code> – Returns
+   * whether content-based deduplication is enabled for the queue. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once
    * processing</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li> </ul> <p>The

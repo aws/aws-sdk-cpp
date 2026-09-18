@@ -176,10 +176,10 @@ class ScanRequest : public DynamoDBRequest {
    * single request, unless the value for <code>Select</code> is
    * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying
    * <code>ProjectionExpression</code> without any value for
-   * <code>Select</code>.)</p>  <p>If you use the
-   * <code>ProjectionExpression</code> parameter, then the value for
-   * <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any other
-   * value for <code>Select</code> will return an error.</p>
+   * <code>Select</code>.)</p>  <p>If you use the <code>ProjectionExpression</code>
+   * parameter, then the value for <code>Select</code> can only be
+   * <code>SPECIFIC_ATTRIBUTES</code>. Any other value for <code>Select</code> will
+   * return an error.</p>
    */
   inline Select GetSelect() const { return m_select; }
   inline bool SelectHasBeenSet() const { return m_selectHasBeenSet; }
@@ -366,9 +366,9 @@ class ScanRequest : public DynamoDBRequest {
    * <p>A string that contains conditions that DynamoDB applies after the
    * <code>Scan</code> operation, but before the data is returned to you. Items that
    * do not satisfy the <code>FilterExpression</code> criteria are not returned.</p>
-   *  <p>A <code>FilterExpression</code> is applied after the items have
-   * already been read; the process of filtering does not consume any additional read
-   * capacity units.</p>  <p>For more information, see <a
+   * <p>A <code>FilterExpression</code> is applied after the items have already been
+   * read; the process of filtering does not consume any additional read capacity
+   * units.</p>  <p>For more information, see <a
    * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.FilterExpression">Filter
    * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
    */
@@ -407,8 +407,8 @@ class ScanRequest : public DynamoDBRequest {
    * then use this substitution in an expression, as in this example:</p> <ul> <li>
    * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
    * <b>:</b> character are <i>expression attribute values</i>, which are
-   * placeholders for the actual value at runtime.</p>  <p>For more
-   * information on expression attribute names, see <a
+   * placeholders for the actual value at runtime.</p>  <p>For more information on
+   * expression attribute names, see <a
    * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
    * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
    */

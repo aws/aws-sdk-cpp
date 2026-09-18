@@ -4,7 +4,9 @@
  */
 
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/CreateBucketResult.h>
@@ -18,32 +20,4 @@ using namespace Aws;
 
 CreateBucketResult::CreateBucketResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-CreateBucketResult& CreateBucketResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
-  m_HttpResponseCode = result.GetResponseCode();
-  const XmlDocument& xmlDocument = result.GetPayload();
-  XmlNode resultNode = xmlDocument.GetRootElement();
-
-  if (!resultNode.IsNull()) {
-  }
-
-  const auto& headers = result.GetHeaderValueCollection();
-  const auto& locationIter = headers.find("location");
-  if (locationIter != headers.end()) {
-    m_location = locationIter->second;
-    m_locationHasBeenSet = true;
-  }
-
-  const auto& bucketArnIter = headers.find("x-amz-bucket-arn");
-  if (bucketArnIter != headers.end()) {
-    m_bucketArn = bucketArnIter->second;
-    m_bucketArnHasBeenSet = true;
-  }
-
-  const auto& requestIdIter = headers.find("x-amz-request-id");
-  if (requestIdIter != headers.end()) {
-    m_requestId = requestIdIter->second;
-    m_requestIdHasBeenSet = true;
-  }
-
-  return *this;
-}
+CreateBucketResult& CreateBucketResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) { return *this; }

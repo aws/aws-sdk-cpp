@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/InventorySchedule.h>
@@ -19,28 +20,9 @@ namespace Model {
 
 InventorySchedule::InventorySchedule(const XmlNode& xmlNode) { *this = xmlNode; }
 
-InventorySchedule& InventorySchedule::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+InventorySchedule& InventorySchedule::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode frequencyNode = resultNode.FirstChild("Frequency");
-    if (!frequencyNode.IsNull()) {
-      m_frequency = InventoryFrequencyMapper::GetInventoryFrequencyForName(
-          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(frequencyNode.GetText()).c_str()));
-      m_frequencyHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void InventorySchedule::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_frequencyHasBeenSet) {
-    XmlNode frequencyNode = parentNode.CreateChildElement("Frequency");
-    frequencyNode.SetText(InventoryFrequencyMapper::GetNameForInventoryFrequency(m_frequency));
-  }
-}
+void InventorySchedule::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

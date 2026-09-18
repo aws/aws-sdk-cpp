@@ -19,7 +19,7 @@ namespace SQS {
 namespace Model {
 
 /**
- * <p/><p><h3>See Also:</h3>   <a
+ * <p></p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageRequest">AWS
  * API Reference</a></p>
  */
@@ -59,8 +59,8 @@ class SendMessageRequest : public SQSRequest {
   ///@{
   /**
    * <p>The message to send. The minimum size is one character. The maximum size is 1
-   * MiB or 1,048,576 bytes</p>  <p>A message can include only XML, JSON,
-   * and unformatted text. The following Unicode characters are allowed. For more
+   * MiB or 1,048,576 bytes</p>  <p>A message can include only XML, JSON, and
+   * unformatted text. The following Unicode characters are allowed. For more
    * information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C
    * specification for characters</a>.</p> <p> <code>#x9</code> | <code>#xA</code> |
    * <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
@@ -136,12 +136,12 @@ class SendMessageRequest : public SQSRequest {
   ///@{
   /**
    * <p>The message system attribute to send. Each message system attribute consists
-   * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
-   *  <ul> <li> <p>Currently, the only supported message system attribute
-   * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
-   * value must be a correctly formatted X-Ray trace header string.</p> </li> <li>
-   * <p>The size of a message system attribute doesn't count towards the total size
-   * of a message.</p> </li> </ul>
+   * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>  <ul>
+   * <li> <p>Currently, the only supported message system attribute is
+   * <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its value
+   * must be a correctly formatted X-Ray trace header string.</p> </li> <li> <p>The
+   * size of a message system attribute doesn't count towards the total size of a
+   * message.</p> </li> </ul>
    */
   inline const Aws::Map<MessageSystemAttributeNameForSends, MessageSystemAttributeValue>& GetMessageSystemAttributes() const {
     return m_messageSystemAttributes;
@@ -199,11 +199,11 @@ class SendMessageRequest : public SQSRequest {
    * <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS
    * can't detect duplicate messages.</p> <p>Amazon SQS continues to keep track of
    * the message deduplication ID even after the message is received and deleted.</p>
-   *  <p>The maximum length of <code>MessageDeduplicationId</code> is 128
-   * characters. <code>MessageDeduplicationId</code> can contain alphanumeric
-   * characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and
-   * punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p>
-   * <p>For best practices of using <code>MessageDeduplicationId</code>, see <a
+   *  <p>The maximum length of <code>MessageDeduplicationId</code> is 128 characters.
+   * <code>MessageDeduplicationId</code> can contain alphanumeric characters
+   * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
+   * (<code>!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~</code>).</p> <p>For best practices of
+   * using <code>MessageDeduplicationId</code>, see <a
    * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using
    * the MessageDeduplicationId Property</a> in the <i>Amazon SQS Developer
    * Guide</i>.</p>
@@ -257,8 +257,8 @@ class SendMessageRequest : public SQSRequest {
    * you include a <code>MessageGroupId</code> in all messages when using fair
    * queues.</p> </li> </ul> <p>The length of <code>MessageGroupId</code> is 128
    * characters. Valid values: alphanumeric characters and punctuation
-   * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <p>For best
-   * practices of using <code>MessageGroupId</code>, see <a
+   * <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p> <p>For best practices of
+   * using <code>MessageGroupId</code>, see <a
    * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using
    * the MessageGroupId Property</a> in the <i>Amazon SQS Developer Guide</i>.</p>
    */

@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/BackupDescription.h>
 
 #include <utility>
@@ -17,37 +20,10 @@ namespace Model {
 
 BackupDescription::BackupDescription(JsonView jsonValue) { *this = jsonValue; }
 
-BackupDescription& BackupDescription::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("BackupDetails")) {
-    m_backupDetails = jsonValue.GetObject("BackupDetails");
-    m_backupDetailsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("SourceTableDetails")) {
-    m_sourceTableDetails = jsonValue.GetObject("SourceTableDetails");
-    m_sourceTableDetailsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("SourceTableFeatureDetails")) {
-    m_sourceTableFeatureDetails = jsonValue.GetObject("SourceTableFeatureDetails");
-    m_sourceTableFeatureDetailsHasBeenSet = true;
-  }
-  return *this;
-}
+BackupDescription& BackupDescription::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue BackupDescription::Jsonize() const {
   JsonValue payload;
-
-  if (m_backupDetailsHasBeenSet) {
-    payload.WithObject("BackupDetails", m_backupDetails.Jsonize());
-  }
-
-  if (m_sourceTableDetailsHasBeenSet) {
-    payload.WithObject("SourceTableDetails", m_sourceTableDetails.Jsonize());
-  }
-
-  if (m_sourceTableFeatureDetailsHasBeenSet) {
-    payload.WithObject("SourceTableFeatureDetails", m_sourceTableFeatureDetails.Jsonize());
-  }
-
   return payload;
 }
 

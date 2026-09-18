@@ -3,112 +3,22 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/QueryRequest.h>
 
+#include <numeric>
 #include <utility>
 
 using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String QueryRequest::SerializePayload() const {
-  JsonValue payload;
-
-  if (m_tableNameHasBeenSet) {
-    payload.WithString("TableName", m_tableName);
-  }
-
-  if (m_indexNameHasBeenSet) {
-    payload.WithString("IndexName", m_indexName);
-  }
-
-  if (m_selectHasBeenSet) {
-    payload.WithString("Select", SelectMapper::GetNameForSelect(m_select));
-  }
-
-  if (m_attributesToGetHasBeenSet) {
-    Aws::Utils::Array<JsonValue> attributesToGetJsonList(m_attributesToGet.size());
-    for (unsigned attributesToGetIndex = 0; attributesToGetIndex < attributesToGetJsonList.GetLength(); ++attributesToGetIndex) {
-      attributesToGetJsonList[attributesToGetIndex].AsString(m_attributesToGet[attributesToGetIndex]);
-    }
-    payload.WithArray("AttributesToGet", std::move(attributesToGetJsonList));
-  }
-
-  if (m_limitHasBeenSet) {
-    payload.WithInteger("Limit", m_limit);
-  }
-
-  if (m_consistentReadHasBeenSet) {
-    payload.WithBool("ConsistentRead", m_consistentRead);
-  }
-
-  if (m_keyConditionsHasBeenSet) {
-    JsonValue keyConditionsJsonMap;
-    for (auto& keyConditionsItem : m_keyConditions) {
-      keyConditionsJsonMap.WithObject(keyConditionsItem.first, keyConditionsItem.second.Jsonize());
-    }
-    payload.WithObject("KeyConditions", std::move(keyConditionsJsonMap));
-  }
-
-  if (m_queryFilterHasBeenSet) {
-    JsonValue queryFilterJsonMap;
-    for (auto& queryFilterItem : m_queryFilter) {
-      queryFilterJsonMap.WithObject(queryFilterItem.first, queryFilterItem.second.Jsonize());
-    }
-    payload.WithObject("QueryFilter", std::move(queryFilterJsonMap));
-  }
-
-  if (m_conditionalOperatorHasBeenSet) {
-    payload.WithString("ConditionalOperator", ConditionalOperatorMapper::GetNameForConditionalOperator(m_conditionalOperator));
-  }
-
-  if (m_scanIndexForwardHasBeenSet) {
-    payload.WithBool("ScanIndexForward", m_scanIndexForward);
-  }
-
-  if (m_exclusiveStartKeyHasBeenSet) {
-    JsonValue exclusiveStartKeyJsonMap;
-    for (auto& exclusiveStartKeyItem : m_exclusiveStartKey) {
-      exclusiveStartKeyJsonMap.WithObject(exclusiveStartKeyItem.first, exclusiveStartKeyItem.second.Jsonize());
-    }
-    payload.WithObject("ExclusiveStartKey", std::move(exclusiveStartKeyJsonMap));
-  }
-
-  if (m_returnConsumedCapacityHasBeenSet) {
-    payload.WithString("ReturnConsumedCapacity", ReturnConsumedCapacityMapper::GetNameForReturnConsumedCapacity(m_returnConsumedCapacity));
-  }
-
-  if (m_projectionExpressionHasBeenSet) {
-    payload.WithString("ProjectionExpression", m_projectionExpression);
-  }
-
-  if (m_filterExpressionHasBeenSet) {
-    payload.WithString("FilterExpression", m_filterExpression);
-  }
-
-  if (m_keyConditionExpressionHasBeenSet) {
-    payload.WithString("KeyConditionExpression", m_keyConditionExpression);
-  }
-
-  if (m_expressionAttributeNamesHasBeenSet) {
-    JsonValue expressionAttributeNamesJsonMap;
-    for (auto& expressionAttributeNamesItem : m_expressionAttributeNames) {
-      expressionAttributeNamesJsonMap.WithString(expressionAttributeNamesItem.first, expressionAttributeNamesItem.second);
-    }
-    payload.WithObject("ExpressionAttributeNames", std::move(expressionAttributeNamesJsonMap));
-  }
-
-  if (m_expressionAttributeValuesHasBeenSet) {
-    JsonValue expressionAttributeValuesJsonMap;
-    for (auto& expressionAttributeValuesItem : m_expressionAttributeValues) {
-      expressionAttributeValuesJsonMap.WithObject(expressionAttributeValuesItem.first, expressionAttributeValuesItem.second.Jsonize());
-    }
-    payload.WithObject("ExpressionAttributeValues", std::move(expressionAttributeValuesJsonMap));
-  }
-
-  return payload.View().WriteReadable();
-}
+Aws::String QueryRequest::SerializePayload() const { return "{}"; }
 
 Aws::Http::HeaderValueCollection QueryRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;

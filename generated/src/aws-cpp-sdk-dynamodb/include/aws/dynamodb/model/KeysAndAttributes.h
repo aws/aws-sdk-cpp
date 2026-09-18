@@ -28,7 +28,7 @@ namespace Model {
  * <i>all</i> of the key attributes. For example, with a simple primary key, you
  * only need to provide the partition key. For a composite primary key, you must
  * provide <i>both</i> the partition key and the sort key.</p><p><h3>See Also:</h3>
- * <a
+ *   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/KeysAndAttributes">AWS
  * API Reference</a></p>
  */
@@ -155,8 +155,8 @@ class KeysAndAttributes {
    * then use this substitution in an expression, as in this example:</p> <ul> <li>
    * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
    * <b>:</b> character are <i>expression attribute values</i>, which are
-   * placeholders for the actual value at runtime.</p>  <p>For more
-   * information on expression attribute names, see <a
+   * placeholders for the actual value at runtime.</p>  <p>For more information on
+   * expression attribute names, see <a
    * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
    * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
    */

@@ -62,12 +62,31 @@ class ResourceNotFoundException {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const Aws::String& GetMessage() const { return m_message; }
+  inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+  template <typename MessageT = Aws::String>
+  void SetMessage(MessageT&& value) {
+    m_messageHasBeenSet = true;
+    m_message = std::forward<MessageT>(value);
+  }
+  template <typename MessageT = Aws::String>
+  ResourceNotFoundException& WithMessage(MessageT&& value) {
+    SetMessage(std::forward<MessageT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_resourceType;
 
   Aws::String m_resourceId;
+
+  Aws::String m_message;
   bool m_resourceTypeHasBeenSet = false;
   bool m_resourceIdHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
 };
 
 }  // namespace Model

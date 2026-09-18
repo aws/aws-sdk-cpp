@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/Capacity.h>
 
 #include <utility>
@@ -17,37 +20,10 @@ namespace Model {
 
 Capacity::Capacity(JsonView jsonValue) { *this = jsonValue; }
 
-Capacity& Capacity::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("ReadCapacityUnits")) {
-    m_readCapacityUnits = jsonValue.GetDouble("ReadCapacityUnits");
-    m_readCapacityUnitsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("WriteCapacityUnits")) {
-    m_writeCapacityUnits = jsonValue.GetDouble("WriteCapacityUnits");
-    m_writeCapacityUnitsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("CapacityUnits")) {
-    m_capacityUnits = jsonValue.GetDouble("CapacityUnits");
-    m_capacityUnitsHasBeenSet = true;
-  }
-  return *this;
-}
+Capacity& Capacity::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue Capacity::Jsonize() const {
   JsonValue payload;
-
-  if (m_readCapacityUnitsHasBeenSet) {
-    payload.WithDouble("ReadCapacityUnits", m_readCapacityUnits);
-  }
-
-  if (m_writeCapacityUnitsHasBeenSet) {
-    payload.WithDouble("WriteCapacityUnits", m_writeCapacityUnits);
-  }
-
-  if (m_capacityUnitsHasBeenSet) {
-    payload.WithDouble("CapacityUnits", m_capacityUnits);
-  }
-
   return payload;
 }
 

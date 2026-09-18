@@ -30,7 +30,6 @@ MetadataDirective GetMetadataDirectiveForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<MetadataDirective>(hashCode);
   }
-
   return MetadataDirective::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForMetadataDirective(MetadataDirective enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

@@ -4,7 +4,10 @@
  */
 
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/GetBucketLocationResult.h>
 
@@ -15,19 +18,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBucketLocationResult::GetBucketLocationResult(const AmazonWebServiceResult<XmlDocument>& result)
-    : m_locationConstraint(BucketLocationConstraint::NOT_SET) {
-  *this = result;
-}
+GetBucketLocationResult::GetBucketLocationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-GetBucketLocationResult& GetBucketLocationResult::operator=(const AmazonWebServiceResult<XmlDocument>& result) {
-  const XmlDocument& xmlDocument = result.GetPayload();
-  XmlNode resultNode = xmlDocument.GetRootElement();
-
-  if (!resultNode.IsNull()) {
-    m_locationConstraint =
-        BucketLocationConstraintMapper::GetBucketLocationConstraintForName(StringUtils::Trim(resultNode.GetText().c_str()).c_str());
-  }
-
-  return *this;
-}
+GetBucketLocationResult& GetBucketLocationResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) { return *this; }

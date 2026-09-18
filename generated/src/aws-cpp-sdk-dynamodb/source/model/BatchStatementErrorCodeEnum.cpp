@@ -57,7 +57,6 @@ BatchStatementErrorCodeEnum GetBatchStatementErrorCodeEnumForName(const Aws::Str
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<BatchStatementErrorCodeEnum>(hashCode);
   }
-
   return BatchStatementErrorCodeEnum::NOT_SET;
 }
 
@@ -92,7 +91,6 @@ Aws::String GetNameForBatchStatementErrorCodeEnum(BatchStatementErrorCodeEnum en
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

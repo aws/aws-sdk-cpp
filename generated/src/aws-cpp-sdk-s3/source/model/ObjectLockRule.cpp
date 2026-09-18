@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/ObjectLockRule.h>
@@ -19,27 +20,9 @@ namespace Model {
 
 ObjectLockRule::ObjectLockRule(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ObjectLockRule& ObjectLockRule::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+ObjectLockRule& ObjectLockRule::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode defaultRetentionNode = resultNode.FirstChild("DefaultRetention");
-    if (!defaultRetentionNode.IsNull()) {
-      m_defaultRetention = defaultRetentionNode;
-      m_defaultRetentionHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void ObjectLockRule::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_defaultRetentionHasBeenSet) {
-    XmlNode defaultRetentionNode = parentNode.CreateChildElement("DefaultRetention");
-    m_defaultRetention.AddToNode(defaultRetentionNode);
-  }
-}
+void ObjectLockRule::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

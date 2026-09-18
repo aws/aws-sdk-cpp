@@ -30,7 +30,6 @@ ObjectLockEventHold GetObjectLockEventHoldForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<ObjectLockEventHold>(hashCode);
   }
-
   return ObjectLockEventHold::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForObjectLockEventHold(ObjectLockEventHold enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

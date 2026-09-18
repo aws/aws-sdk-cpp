@@ -109,18 +109,18 @@ class CreateTableRequest : public DynamoDBRequest {
    * <code>AttributeName</code> - The name of this key attribute.</p> </li> <li> <p>
    * <code>KeyType</code> - The role that the key attribute will assume:</p> <ul>
    * <li> <p> <code>HASH</code> - partition key</p> </li> <li> <p> <code>RANGE</code>
-   * - sort key</p> </li> </ul> </li> </ul>  <p>The partition key of an item is
-   * also known as its <i>hash attribute</i>. The term "hash attribute" derives from
-   * the DynamoDB usage of an internal hash function to evenly distribute data items
+   * - sort key</p> </li> </ul> </li> </ul>  <p>The partition key of an item is also
+   * known as its <i>hash attribute</i>. The term "hash attribute" derives from the
+   * DynamoDB usage of an internal hash function to evenly distribute data items
    * across partitions, based on their partition key values.</p> <p>The sort key of
    * an item is also known as its <i>range attribute</i>. The term "range attribute"
    * derives from the way DynamoDB stores items with the same partition key
-   * physically close together, in sorted order by the sort key value.</p>
-   * <p>For a simple primary key (partition key), you must provide exactly one
-   * element with a <code>KeyType</code> of <code>HASH</code>.</p> <p>For a composite
-   * primary key (partition key and sort key), you must provide exactly two elements,
-   * in this order: The first element must have a <code>KeyType</code> of
-   * <code>HASH</code>, and the second element must have a <code>KeyType</code> of
+   * physically close together, in sorted order by the sort key value.</p>  <p>For a
+   * simple primary key (partition key), you must provide exactly one element with a
+   * <code>KeyType</code> of <code>HASH</code>.</p> <p>For a composite primary key
+   * (partition key and sort key), you must provide exactly two elements, in this
+   * order: The first element must have a <code>KeyType</code> of <code>HASH</code>,
+   * and the second element must have a <code>KeyType</code> of
    * <code>RANGE</code>.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Working
    * with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -152,7 +152,7 @@ class CreateTableRequest : public DynamoDBRequest {
    * size limit per partition key value; otherwise, the size of a local secondary
    * index is unconstrained.</p> <p>Each local secondary index in the array includes
    * the following:</p> <ul> <li> <p> <code>IndexName</code> - The name of the local
-   * secondary index. Must be unique only for this table.</p> <p/> </li> <li> <p>
+   * secondary index. Must be unique only for this table.</p> <p></p> </li> <li> <p>
    * <code>KeySchema</code> - Specifies the key schema for the local secondary index.
    * The key schema must begin with the same partition key as the table.</p> </li>
    * <li> <p> <code>Projection</code> - Specifies attributes that are copied
@@ -200,8 +200,8 @@ class CreateTableRequest : public DynamoDBRequest {
    * <p>One or more global secondary indexes (the maximum is 20) to be created on the
    * table. Each global secondary index in the array includes the following:</p> <ul>
    * <li> <p> <code>IndexName</code> - The name of the global secondary index. Must
-   * be unique only for this table.</p> <p/> </li> <li> <p> <code>KeySchema</code> -
-   * Specifies the key schema for the global secondary index. Each global secondary
+   * be unique only for this table.</p> <p></p> </li> <li> <p> <code>KeySchema</code>
+   * - Specifies the key schema for the global secondary index. Each global secondary
    * index supports up to 4 partition keys and up to 4 sort keys.</p> </li> <li> <p>
    * <code>Projection</code> - Specifies attributes that are copied (projected) from
    * the table into the index. These are in addition to the primary key attributes

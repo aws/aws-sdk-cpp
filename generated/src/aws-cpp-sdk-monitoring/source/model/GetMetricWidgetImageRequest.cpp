@@ -3,6 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/model/GetMetricWidgetImageRequest.h>
 
@@ -17,24 +21,9 @@ Aws::String GetMetricWidgetImageRequest::SerializePayload() const {
 
   // Calculate map size
   size_t mapSize = 0;
-  if (m_metricWidgetHasBeenSet) {
-    mapSize++;
-  }
-  if (m_outputFormatHasBeenSet) {
-    mapSize++;
-  }
 
   encoder.WriteMapStart(mapSize);
 
-  if (m_metricWidgetHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MetricWidget"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_metricWidget.c_str()));
-  }
-
-  if (m_outputFormatHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("OutputFormat"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_outputFormat.c_str()));
-  }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
   return str;
 }

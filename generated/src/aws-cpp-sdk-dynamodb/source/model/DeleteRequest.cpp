@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/DeleteRequest.h>
 
 #include <utility>
@@ -17,28 +20,10 @@ namespace Model {
 
 DeleteRequest::DeleteRequest(JsonView jsonValue) { *this = jsonValue; }
 
-DeleteRequest& DeleteRequest::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("Key")) {
-    Aws::Map<Aws::String, JsonView> keyJsonMap = jsonValue.GetObject("Key").GetAllObjects();
-    for (auto& keyItem : keyJsonMap) {
-      m_key[keyItem.first] = keyItem.second.AsObject();
-    }
-    m_keyHasBeenSet = true;
-  }
-  return *this;
-}
+DeleteRequest& DeleteRequest::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue DeleteRequest::Jsonize() const {
   JsonValue payload;
-
-  if (m_keyHasBeenSet) {
-    JsonValue keyJsonMap;
-    for (auto& keyItem : m_key) {
-      keyJsonMap.WithObject(keyItem.first, keyItem.second.Jsonize());
-    }
-    payload.WithObject("Key", std::move(keyJsonMap));
-  }
-
   return payload;
 }
 

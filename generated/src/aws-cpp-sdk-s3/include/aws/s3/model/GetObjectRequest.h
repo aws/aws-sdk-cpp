@@ -15,9 +15,6 @@
 #include <utility>
 
 namespace Aws {
-namespace Http {
-class URI;
-}  // namespace Http
 namespace S3 {
 namespace Model {
 
@@ -35,12 +32,10 @@ class GetObjectRequest : public S3Request {
 
   AWS_S3_API Aws::String SerializePayload() const override;
 
-  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
   AWS_S3_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
   AWS_S3_API bool ShouldValidateResponseChecksum() const override;
-
   AWS_S3_API Aws::Vector<Aws::String> GetResponseChecksumAlgorithmNames() const override;
 
   /**
@@ -77,10 +72,10 @@ class GetObjectRequest : public S3Request {
    * you must direct requests to the Object Lambda access point hostname. The Object
    * Lambda access point hostname takes the form
    * <i>AccessPointName</i>-<i>AccountId</i>.s3-object-lambda.<i>Region</i>.amazonaws.com.</p>
-   *  <p>Object Lambda access points are not supported by directory
-   * buckets.</p>  <p> <b>S3 on Outposts</b> - When you use this action with
-   * S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3
-   * on Outposts hostname takes the form <code>
+   *  <p>Object Lambda access points are not supported by directory buckets.</p>  <p>
+   * <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must
+   * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
+   * takes the form <code>
    * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
    * When you use this action with S3 on Outposts, the destination bucket must be the
    * Outposts access point ARN or the access point alias. For more information about
@@ -357,19 +352,19 @@ class GetObjectRequest : public S3Request {
    * <p>Version ID used to reference a specific version of the object.</p> <p>By
    * default, the <code>GetObject</code> operation returns the current version of an
    * object. To return a different version, use the <code>versionId</code>
-   * subresource.</p>  <ul> <li> <p>If you include a <code>versionId</code> in
-   * your request header, you must have the <code>s3:GetObjectVersion</code>
-   * permission to access a specific version of an object. The
-   * <code>s3:GetObject</code> permission is not required in this scenario.</p> </li>
-   * <li> <p>If you request the current version of an object without a specific
-   * <code>versionId</code> in the request header, only the <code>s3:GetObject</code>
-   * permission is required. The <code>s3:GetObjectVersion</code> permission is not
-   * required in this scenario.</p> </li> <li> <p> <b>Directory buckets</b> - S3
-   * Versioning isn't enabled and supported for directory buckets. For this API
-   * operation, only the <code>null</code> value of the version ID is supported by
-   * directory buckets. You can only specify <code>null</code> to the
-   * <code>versionId</code> query parameter in the request.</p> </li> </ul>
-   * <p>For more information about versioning, see <a
+   * subresource.</p>  <ul> <li> <p>If you include a <code>versionId</code> in your
+   * request header, you must have the <code>s3:GetObjectVersion</code> permission to
+   * access a specific version of an object. The <code>s3:GetObject</code> permission
+   * is not required in this scenario.</p> </li> <li> <p>If you request the current
+   * version of an object without a specific <code>versionId</code> in the request
+   * header, only the <code>s3:GetObject</code> permission is required. The
+   * <code>s3:GetObjectVersion</code> permission is not required in this
+   * scenario.</p> </li> <li> <p> <b>Directory buckets</b> - S3 Versioning isn't
+   * enabled and supported for directory buckets. For this API operation, only the
+   * <code>null</code> value of the version ID is supported by directory buckets. You
+   * can only specify <code>null</code> to the <code>versionId</code> query parameter
+   * in the request.</p> </li> </ul>  <p>For more information about versioning, see
+   * <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html">PutBucketVersioning</a>.</p>
    */
   inline const Aws::String& GetVersionId() const { return m_versionId; }

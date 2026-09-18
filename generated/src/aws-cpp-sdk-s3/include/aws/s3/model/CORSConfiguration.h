@@ -33,7 +33,6 @@ class CORSConfiguration {
   AWS_S3_API CORSConfiguration() = default;
   AWS_S3_API CORSConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API CORSConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

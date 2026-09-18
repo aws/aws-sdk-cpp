@@ -33,7 +33,6 @@ class AnnotationTableConfiguration {
   AWS_S3_API AnnotationTableConfiguration() = default;
   AWS_S3_API AnnotationTableConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API AnnotationTableConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

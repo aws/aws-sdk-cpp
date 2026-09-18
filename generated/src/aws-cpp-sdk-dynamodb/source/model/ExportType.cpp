@@ -30,7 +30,6 @@ ExportType GetExportTypeForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<ExportType>(hashCode);
   }
-
   return ExportType::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForExportType(ExportType enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

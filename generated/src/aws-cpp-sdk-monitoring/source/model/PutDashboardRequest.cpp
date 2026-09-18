@@ -3,6 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/model/PutDashboardRequest.h>
 
@@ -17,35 +21,9 @@ Aws::String PutDashboardRequest::SerializePayload() const {
 
   // Calculate map size
   size_t mapSize = 0;
-  if (m_dashboardNameHasBeenSet) {
-    mapSize++;
-  }
-  if (m_dashboardBodyHasBeenSet) {
-    mapSize++;
-  }
-  if (m_tagsHasBeenSet) {
-    mapSize++;
-  }
 
   encoder.WriteMapStart(mapSize);
 
-  if (m_dashboardNameHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DashboardName"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_dashboardName.c_str()));
-  }
-
-  if (m_dashboardBodyHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DashboardBody"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_dashboardBody.c_str()));
-  }
-
-  if (m_tagsHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Tags"));
-    encoder.WriteArrayStart(m_tags.size());
-    for (const auto& item_0 : m_tags) {
-      item_0.CborEncode(encoder);
-    }
-  }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
   return str;
 }
