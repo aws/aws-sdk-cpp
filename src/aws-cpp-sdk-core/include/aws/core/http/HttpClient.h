@@ -12,6 +12,7 @@
 
 #include <atomic>
 #include <condition_variable>
+#include <functional>
 #include <memory>
 #include <mutex>
 
@@ -91,22 +92,23 @@ namespace Aws
                 false};
             }
 
-            /**
-             * Starts an http request and returns as soon as it has been started. onResponseComplete is
-             * invoked with the finished response, on whichever thread the implementation completes on.
-             * Only implemented by http clients that can drive a request without a thread of their own.
-             */
+            struct AttemptOutcome
+            {
+                bool shouldRetry;
+                std::chrono::milliseconds backoff;
+            };
+
+            using PrepareAttempt = std::function<std::shared_ptr<HttpRequest>()>;
+            using EvaluateAttempt = std::function<AttemptOutcome(std::shared_ptr<HttpResponse>)>;
+            using OnRetryableRequestComplete = std::function<void()>;
+
             virtual Aws::Crt::Optional<Aws::Client::AWSError<Aws::Client::CoreErrors>> MakeRequestAsync(
-                const std::shared_ptr<HttpRequest>& request,
-                std::function<void(std::shared_ptr<HttpResponse>)> onResponseComplete,
-                std::function<void(const std::shared_ptr<Aws::Http::Connection>&)> onClientConnectionAvailable = nullptr,
-                Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
-                Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const {
-              AWS_UNREFERENCED_PARAM(request);
-              AWS_UNREFERENCED_PARAM(onResponseComplete);
-              AWS_UNREFERENCED_PARAM(onClientConnectionAvailable);
-              AWS_UNREFERENCED_PARAM(readLimiter);
-              AWS_UNREFERENCED_PARAM(writeLimiter);
+                const PrepareAttempt& prepareAttempt,
+                const EvaluateAttempt& evaluateAttempt,
+                const OnRetryableRequestComplete& onComplete) const {
+              AWS_UNREFERENCED_PARAM(prepareAttempt);
+              AWS_UNREFERENCED_PARAM(evaluateAttempt);
+              AWS_UNREFERENCED_PARAM(onComplete);
               return Aws::Client::AWSError<Aws::Client::CoreErrors>{Aws::Client::CoreErrors::NOT_IMPLEMENTED,
                 "NotImplemented",
                 "async requests are not supported on this http client",

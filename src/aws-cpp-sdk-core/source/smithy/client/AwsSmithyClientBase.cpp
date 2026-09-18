@@ -24,6 +24,9 @@
 #include <aws/core/utils/stream/ResponseStream.h>
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/threading/SameThreadExecutor.h>
+#if defined(AWS_CRT_HTTP_USE_ASYNC_IO)
+#include <aws/core/utils/threading/Semaphore.h>
+#endif
 #include <aws/crt/Variant.h>
 #include <smithy/identity/auth/built-in/GenericAuthSchemeResolver.h>
 #include <smithy/identity/auth/built-in/SigV4aAuthSchemeOption.h>
@@ -41,6 +44,18 @@ namespace smithy {
 }
 
 namespace {
+#if defined(AWS_CRT_HTTP_USE_ASYNC_IO)
+class SmithySyncInlineExecutor : public Aws::Utils::Threading::Executor
+{
+protected:
+    bool SubmitToThread(std::function<void()>&& task) override
+    {
+        task();
+        return true;
+    }
+};
+#endif
+
 void AddHeadersToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest,
     const Aws::Http::HeaderValueCollection& headerValues)
 {
@@ -272,6 +287,10 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
                                            AuthResolvedCallback&& authCallback,
                                            std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor) const
 {
+    if (!pExecutor)
+    {
+        pExecutor = m_clientConfig->executor;
+    }
     if(!responseHandler)
     {
         assert(!"Missing a mandatory response handler!");
@@ -317,7 +336,51 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
     pRequestCtx->m_interceptorContext = Aws::MakeShared<InterceptorContext>(AWS_SMITHY_CLIENT_LOG, *request);
     pRequestCtx->m_responseHandler = std::move(responseHandler);
     pRequestCtx->m_authResolvedCallback = std::move(authCallback);
-    AttemptOneRequestAsync(std::move(pRequestCtx));
+
+    const AwsSmithyClientBase* self = this;
+    auto prepareAttempt = [self, pRequestCtx]() -> std::shared_ptr<Aws::Http::HttpRequest>
+    {
+        return self->AttemptOneRequestAsync(pRequestCtx);
+    };
+    auto evaluateAttempt = [self, pRequestCtx](std::shared_ptr<Aws::Http::HttpResponse> httpResponse) -> Aws::Http::HttpClient::AttemptOutcome
+    {
+        return self->HandleAsyncReply(pRequestCtx, std::move(httpResponse));
+    };
+    auto onComplete = [pRequestCtx]()
+    {
+        pRequestCtx->m_pExecutor->Submit([pRequestCtx]()
+        {
+            pRequestCtx->m_responseHandler(std::move(pRequestCtx->m_outcome));
+        });
+    };
+
+#if defined(AWS_CRT_HTTP_USE_ASYNC_IO)
+    auto error = m_httpClient->MakeRequestAsync(prepareAttempt, evaluateAttempt, onComplete);
+    if (error.has_value())
+    {
+        pRequestCtx->m_outcome = HttpResponseOutcome(*error);
+        onComplete();
+    }
+#else
+    for (std::shared_ptr<Aws::Http::HttpRequest> httpRequest = prepareAttempt(); httpRequest; httpRequest = prepareAttempt())
+    {
+        auto httpResponse = TracingUtils::MakeCallWithTiming<std::shared_ptr<Aws::Http::HttpResponse>>(
+            [&]() -> std::shared_ptr<Aws::Http::HttpResponse> {
+                return m_httpClient->MakeRequest(httpRequest, m_clientConfig->readRateLimiter.get(), m_clientConfig->writeRateLimiter.get());
+            },
+            TracingUtils::SMITHY_CLIENT_SERVICE_CALL_METRIC,
+            *m_clientConfig->telemetryProvider->getMeter(this->GetServiceClientName(), {}),
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, pRequestCtx->m_requestName},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        auto outcome = evaluateAttempt(std::move(httpResponse));
+        if (!outcome.shouldRetry)
+        {
+            break;
+        }
+        m_httpClient->RetryRequestSleep(outcome.backoff);
+    }
+    onComplete();
+#endif
 }
 
 void AwsSmithyClientBase::UpdateAuthSchemeFromEndpoint(const Aws::Endpoint::AWSEndpoint& endpoint, smithy::AuthSchemeOption& authscheme) const
@@ -347,16 +410,14 @@ void AwsSmithyClientBase::UpdateAuthSchemeFromEndpoint(const Aws::Endpoint::AWSE
 
 
 /*HttpResponseOutcome*/
-void AwsSmithyClientBase::AttemptOneRequestAsync(std::shared_ptr<AwsSmithyClientAsyncRequestContext> pRequestCtx) const
+std::shared_ptr<Aws::Http::HttpRequest> AwsSmithyClientBase::AttemptOneRequestAsync(std::shared_ptr<AwsSmithyClientAsyncRequestContext> pRequestCtx) const
 {
     if(!pRequestCtx)
     {
         assert(!"Missing pRequestCtx");
         AWS_LOGSTREAM_FATAL(AWS_SMITHY_CLIENT_LOG, "Missing request context!");
     }
-    auto& responseHandler = pRequestCtx->m_responseHandler;
     auto& authCallback = pRequestCtx->m_authResolvedCallback;
-    auto pExecutor = pRequestCtx->m_pExecutor;
 
     //This is extracted here so that on retry with correct region, signer region override is honored
     UpdateAuthSchemeFromEndpoint(pRequestCtx->m_endpoint, pRequestCtx->m_authSchemeOption);
@@ -373,12 +434,8 @@ void AwsSmithyClientBase::AttemptOneRequestAsync(std::shared_ptr<AwsSmithyClient
     if (!pRequestCtx->m_httpRequest)
     {
         AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_LOG, "Failed to BuildHttpRequest");
-        auto outcome = HttpResponseOutcome(ClientError(CoreErrors::VALIDATION, "", "Unable to create HttpRequest object", false/*retryable*/));
-        pExecutor->Submit([outcome, responseHandler]() mutable
-          {
-              responseHandler(std::move(outcome));
-          } );
-        return;
+        pRequestCtx->m_outcome = HttpResponseOutcome(ClientError(CoreErrors::VALIDATION, "", "Unable to create HttpRequest object", false/*retryable*/));
+        return nullptr;
     }
 
     pRequestCtx->m_interceptorContext->SetTransmitRequest(pRequestCtx->m_httpRequest);
@@ -387,11 +444,8 @@ void AwsSmithyClientBase::AttemptOneRequestAsync(std::shared_ptr<AwsSmithyClient
         auto modifiedRequest = interceptor->ModifyBeforeSigning(*pRequestCtx->m_interceptorContext);
         if (!modifiedRequest.IsSuccess())
         {
-            pExecutor->Submit([modifiedRequest, responseHandler]() mutable
-              {
-                  responseHandler(modifiedRequest.GetError());
-              });
-            return;
+            pRequestCtx->m_outcome = HttpResponseOutcome(modifiedRequest.GetError());
+            return nullptr;
         }
     }
 
@@ -402,15 +456,8 @@ void AwsSmithyClientBase::AttemptOneRequestAsync(std::shared_ptr<AwsSmithyClient
 
     if(m_clientConfig->retryStrategy && !m_clientConfig->retryStrategy->HasSendToken())
     {
-        auto errOutcome = HttpResponseOutcome(ClientError(CoreErrors::SLOW_DOWN,
-                                                                "",
-                                                                "Unable to acquire enough send tokens to execute request.",
-                                                                false/*retryable*/));
-        pExecutor->Submit([errOutcome, responseHandler]() mutable
-          {
-              responseHandler(std::move(errOutcome));
-          } );
-        return;
+        pRequestCtx->m_outcome = HttpResponseOutcome(ClientError(CoreErrors::SLOW_DOWN, "", "Unable to acquire enough send tokens to execute request.", false/*retryable*/));
+        return nullptr;
     };
     if (authCallback) {
       authCallback(pRequestCtx);
@@ -428,12 +475,8 @@ void AwsSmithyClientBase::AttemptOneRequestAsync(std::shared_ptr<AwsSmithyClient
     if (!signingOutcome.IsSuccess())
     {
         AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_LOG, "Request signing failed. Returning error.");
-        auto errOutcome = HttpResponseOutcome(ClientError(CoreErrors::CLIENT_SIGNING_FAILURE, "", "SDK failed to sign the request", false/*retryable*/));
-        pRequestCtx->m_pExecutor->Submit([errOutcome, pRequestCtx]() mutable
-          {
-              pRequestCtx->m_responseHandler(std::move(errOutcome));
-          } );
-        return;
+        pRequestCtx->m_outcome = HttpResponseOutcome(ClientError(CoreErrors::CLIENT_SIGNING_FAILURE, "", "SDK failed to sign the request", false/*retryable*/));
+        return nullptr;
     }
 
     std::shared_ptr<Aws::Http::HttpRequest> signedHttpRequest = signingOutcome.GetResultWithOwnership();
@@ -444,55 +487,25 @@ void AwsSmithyClientBase::AttemptOneRequestAsync(std::shared_ptr<AwsSmithyClient
         pRequestCtx->m_pRequest->GetRequestSignedHandler()(*signedHttpRequest);
     }
 
-    // handler for a single http reply (vs final AWS response handler)
-    auto httpResponseHandler = [this, pRequestCtx](std::shared_ptr<Aws::Http::HttpResponse> pResponse) mutable
-    {
-        HandleAsyncReply(std::move(pRequestCtx), std::move(pResponse));
-    };
-
     for (const auto& interceptor : m_interceptors)
     {
       auto modifiedRequest = interceptor->ModifyBeforeTransmit(*pRequestCtx->m_interceptorContext);
       if (!modifiedRequest.IsSuccess())
       {
-        pExecutor->Submit([modifiedRequest, responseHandler]() mutable
-          {
-              responseHandler(modifiedRequest.GetError());
-          });
-        return;
+        pRequestCtx->m_outcome = HttpResponseOutcome(modifiedRequest.GetError());
+        return nullptr;
       }
     }
 
-    // TODO: async http client
-#if 0
     AWS_LOGSTREAM_DEBUG(AWS_SMITHY_CLIENT_LOG, "Request Successfully signed");
-    TracingUtils::MakeCallWithTiming(
-        [&]() -> void {
-            m_httpClient->MakeAsyncRequest(pRequestCtx->m_httpRequest,
-                                           pRequestCtx->m_pExecutor,
-                                           responseHandler,
-                                           m_clientConfig->readRateLimiter.get(),
-                                           m_clientConfig->writeRateLimiter.get());
-    },
-    TracingUtils::SMITHY_CLIENT_SERVICE_CALL_METRIC,
-    *m_clientConfig->telemetryProvider->getMeter(this->GetServiceClientName(), {}),
-    {{TracingUtils::SMITHY_METHOD_DIMENSION, pRequestCtx->m_requestName},
-     {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-#else
-    auto httpResponse = TracingUtils::MakeCallWithTiming<std::shared_ptr<HttpResponse>>(
-        [&]() -> std::shared_ptr<HttpResponse> {
-            return m_httpClient->MakeRequest(signedHttpRequest, m_clientConfig->readRateLimiter.get(), m_clientConfig->writeRateLimiter.get());
-        },
-        TracingUtils::SMITHY_CLIENT_SERVICE_CALL_METRIC,
-        *m_clientConfig->telemetryProvider->getMeter(this->GetServiceClientName(), {}),
-        {{TracingUtils::SMITHY_METHOD_DIMENSION, pRequestCtx->m_requestName},{TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-
-    pRequestCtx->m_pExecutor->Submit([httpResponse, httpResponseHandler]() mutable
-      {
-          httpResponseHandler(std::move(httpResponse));
-      } );
+#if defined(AWS_CRT_HTTP_USE_ASYNC_IO)
+    pRequestCtx->m_serviceCallTimer.emplace(TracingUtils::SMITHY_CLIENT_SERVICE_CALL_METRIC,
+        m_clientConfig->telemetryProvider->getMeter(this->GetServiceClientName(), {}),
+        Aws::Map<Aws::String, Aws::String>{
+            {TracingUtils::SMITHY_METHOD_DIMENSION, pRequestCtx->m_requestName},
+            {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 #endif
-    return;
+    return signedHttpRequest;
 }
 
 void AwsSmithyClientBase::RecordClockSkew(const Aws::Http::HttpResponse& response, const AwsSmithyClientAsyncRequestContext& ctx) const
@@ -523,12 +536,21 @@ bool AwsSmithyClientBase::AdjustClockSkew(HttpResponseOutcome& outcome, const Aw
     return false;
 }
 
-void AwsSmithyClientBase::HandleAsyncReply(std::shared_ptr<AwsSmithyClientAsyncRequestContext> pRequestCtx,
+Aws::Http::HttpClient::AttemptOutcome AwsSmithyClientBase::HandleAsyncReply(std::shared_ptr<AwsSmithyClientAsyncRequestContext> pRequestCtx,
                                            std::shared_ptr<Aws::Http::HttpResponse> httpResponse) const
 {
-    assert(pRequestCtx && httpResponse);
+    assert(pRequestCtx);
+
+    if (!httpResponse)
+    {
+        pRequestCtx->m_outcome = HttpResponseOutcome(ClientError(CoreErrors::USER_CANCELLED, "", "Request cancelled during retry backoff", false/*retryable*/));
+        return {};
+    }
 
     pRequestCtx->m_timeResponseReceived = Aws::Utils::DateTime::Now();
+#if defined(AWS_CRT_HTTP_USE_ASYNC_IO)
+    pRequestCtx->m_serviceCallTimer.reset();
+#endif
 
     pRequestCtx->m_interceptorContext->SetTransmitResponse(httpResponse);
     for (const auto& interceptor : m_interceptors)
@@ -536,7 +558,8 @@ void AwsSmithyClientBase::HandleAsyncReply(std::shared_ptr<AwsSmithyClientAsyncR
         const auto modifiedResponse = interceptor->ModifyBeforeDeserialization(*pRequestCtx->m_interceptorContext);
         if (!modifiedResponse.IsSuccess())
         {
-            return pRequestCtx->m_responseHandler(HttpResponseOutcome(modifiedResponse.GetError()));
+            pRequestCtx->m_outcome = HttpResponseOutcome(modifiedResponse.GetError());
+            return {};
         }
     };
 
@@ -659,11 +682,6 @@ void AwsSmithyClientBase::HandleAsyncReply(std::shared_ptr<AwsSmithyClientAsyncR
 
         if (!retryWithCorrectRegion && !m_clientConfig->retryStrategy->ShouldRetry(outcome.GetError(), static_cast<long>(pRequestCtx->m_retryCount)))
         {
-            const bool blockedByQuotaOnly = outcome.GetError().ShouldRetry() &&
-                static_cast<long>(pRequestCtx->m_retryCount) + 1 < m_clientConfig->retryStrategy->GetMaxAttempts();
-            if (m_enableNewRetries && blockedByQuotaOnly && pRequestCtx->m_pRequest && pRequestCtx->m_pRequest->IsLongPollingOperation()) {
-                m_httpClient->RetryRequestSleep(std::chrono::milliseconds(sleepMillis));
-            }
             break;
         }
 
@@ -678,11 +696,6 @@ void AwsSmithyClientBase::HandleAsyncReply(std::shared_ptr<AwsSmithyClientAsyncR
           if (pRequestCtx->m_pRequest->GetRequestRetryHandler()) {
             pRequestCtx->m_pRequest->GetRequestRetryHandler()(*pRequestCtx->m_pRequest);
           }
-        }
-
-        if (shouldSleep)
-        {
-            m_httpClient->RetryRequestSleep(std::chrono::milliseconds(sleepMillis));
         }
 
         if (retryWithCorrectRegion)
@@ -705,8 +718,7 @@ void AwsSmithyClientBase::HandleAsyncReply(std::shared_ptr<AwsSmithyClientAsyncR
         Aws::Monitoring::OnRequestRetry(this->GetServiceClientName(), pRequestCtx->m_requestName, pRequestCtx->m_httpRequest, pRequestCtx->m_monitoringContexts);
 
         pRequestCtx->m_retryCount++;
-        AttemptOneRequestAsync(std::move(pRequestCtx));
-        return;
+        return {true, shouldSleep ? std::chrono::milliseconds(sleepMillis) : std::chrono::milliseconds(0)};
     } while(false); // end of goto in a form of "do { break; } while(false);"
 
     auto meter = m_clientConfig->telemetryProvider->getMeter(this->GetServiceClientName(), {});
@@ -715,7 +727,8 @@ void AwsSmithyClientBase::HandleAsyncReply(std::shared_ptr<AwsSmithyClientAsyncR
                                                       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
     Aws::Monitoring::OnFinish(this->GetServiceClientName(), pRequestCtx->m_requestName, pRequestCtx->m_httpRequest, pRequestCtx->m_monitoringContexts);
 
-    return pRequestCtx->m_responseHandler(std::move(outcome));
+    pRequestCtx->m_outcome = std::move(outcome);
+    return {};
 }
 
 AwsSmithyClientBase::HttpResponseOutcome
@@ -725,6 +738,28 @@ AwsSmithyClientBase::MakeRequestSync(Aws::AmazonWebServiceRequest const * const 
                                      EndpointUpdateCallback&& endpointCallback,
                                      AuthResolvedCallback&& authCallback = nullptr) const
 {
+#if defined(AWS_CRT_HTTP_USE_ASYNC_IO)
+    struct SyncState
+    {
+        HttpResponseOutcome outcome = ClientError(CoreErrors::INTERNAL_FAILURE, "", "Response handler was not called", false);
+        Aws::Utils::Threading::Semaphore signal{0, 1};
+    };
+    auto state = Aws::MakeShared<SyncState>(AWS_SMITHY_CLIENT_LOG);
+
+    std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor = Aws::MakeShared<SmithySyncInlineExecutor>(AWS_SMITHY_CLIENT_LOG);
+    assert(pExecutor);
+
+    ResponseHandlerFunc responseHandler = [state](HttpResponseOutcome&& asyncOutcome)
+    {
+        state->outcome = std::move(asyncOutcome);
+        state->signal.Release();
+    };
+
+    this->MakeRequestAsync(request, requestName, method, std::move(endpointCallback), std::move(responseHandler), std::move(authCallback), pExecutor);
+    state->signal.WaitOne();
+
+    return std::move(state->outcome);
+#else
     std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor = Aws::MakeShared<Aws::Utils::Threading::SameThreadExecutor>(AWS_SMITHY_CLIENT_LOG);
     assert(pExecutor);
 
@@ -741,6 +776,7 @@ AwsSmithyClientBase::MakeRequestSync(Aws::AmazonWebServiceRequest const * const 
     pExecutor->WaitUntilStopped();
 
     return outcome;
+#endif
 }
 
 void AwsSmithyClientBase::DisableRequestProcessing()

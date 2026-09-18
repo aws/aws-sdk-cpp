@@ -13,6 +13,9 @@
 #include <smithy/identity/auth/AuthSchemeOption.h>
 #include <smithy/interceptor/InterceptorContext.h>
 #include <smithy/identity/auth/AuthSchemeResolverBase.h>
+#if defined(AWS_CRT_HTTP_USE_ASYNC_IO)
+#include <smithy/tracing/TracingUtils.h>
+#endif
 
 namespace smithy
 {
@@ -69,11 +72,15 @@ namespace smithy
             std::chrono::milliseconds m_attemptSkew{0};
             Aws::Utils::DateTime m_timeRequestSent;
             Aws::Utils::DateTime m_timeResponseReceived;
+#if defined(AWS_CRT_HTTP_USE_ASYNC_IO)
+            Aws::Crt::Optional<smithy::components::tracing::TracingUtils::ScopedMetricTimer> m_serviceCallTimer;
+#endif
 
             size_t m_retryCount;
             Aws::Vector<void*> m_monitoringContexts;
 
             ResponseHandlerFunc m_responseHandler;
+            HttpResponseOutcome m_outcome;
             AuthResolvedCallback m_authResolvedCallback;
             std::shared_ptr<Aws::Utils::Threading::Executor> m_pExecutor;
             std::shared_ptr<interceptor::InterceptorContext> m_interceptorContext;

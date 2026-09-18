@@ -13,8 +13,10 @@
 #include <aws/core/utils/threading/WaitGroup.h>
 #include <aws/crt/http/HttpConnectionManager.h>
 #include <aws/crt/http/HttpRequestResponse.h>
+#include <aws/crt/io/Bootstrap.h>
 
 #include <atomic>
+#include <chrono>
 #include <mutex>
 #include <utility>
 
@@ -120,6 +122,7 @@ struct AsyncRequestState {
   std::function<void(std::shared_ptr<Aws::Http::HttpResponse>)> onComplete;
   std::atomic<bool> finished{false};
   std::shared_ptr<Aws::Utils::Threading::WaitGroup> latch;
+  std::weak_ptr<Aws::Crt::Http::HttpClientConnection> connection;
 
   void Finish() {
     if (finished.exchange(true)) {
@@ -132,29 +135,41 @@ struct AsyncRequestState {
       latch->Done();
     }
   }
+
+  void CompleteWithError(Aws::Client::CoreErrors errorType, const char* errorMessage) {
+    if (finished.exchange(true)) {
+      return;
+    }
+    response->SetClientErrorType(errorType);
+    response->SetClientErrorMessage(errorMessage);
+    if (onComplete) {
+      onComplete(response);
+    }
+    if (latch) {
+      latch->Done();
+    }
+  }
 };
 
 void OnStreamCompleteAsync(int errorCode, const std::shared_ptr<AsyncRequestState>& state) {
   if (errorCode) {
-    state->response->SetClientErrorType(Aws::Client::CoreErrors::NETWORK_CONNECTION);
-    state->response->SetClientErrorMessage(aws_error_debug_str(errorCode));
+    state->CompleteWithError(Aws::Client::CoreErrors::NETWORK_CONNECTION, aws_error_debug_str(errorCode));
+  } else {
+    state->Finish();
   }
-
-  state->Finish();
 }
 
 void OnClientConnectionAvailableAsync(const std::shared_ptr<Aws::Crt::Http::HttpClientConnection>& connection, int errorCode,
                                       const std::shared_ptr<AsyncRequestState>& state, const Aws::Http::HttpClient& client) {
   bool shouldContinueRequest = client.ContinueRequest(*state->request);
   if (!shouldContinueRequest) {
-    state->response->SetClientErrorType(Aws::Client::CoreErrors::USER_CANCELLED);
-    state->response->SetClientErrorMessage("Request cancelled by user's continuation handler");
-    state->Finish();
+    state->CompleteWithError(Aws::Client::CoreErrors::USER_CANCELLED, "Request cancelled by user's continuation handler");
     return;
   }
 
   int finalErrorCode = errorCode;
   if (connection) {
+    state->connection = connection;
     AWS_LOGSTREAM_DEBUG(CRT_HTTP_CLIENT_TAG, "Obtained connection handle " << (void*)connection.get());
 
     Aws::Crt::Http::HttpRequestOptions requestOptions{};
@@ -198,10 +213,7 @@ void OnClientConnectionAvailableAsync(const std::shared_ptr<Aws::Crt::Http::Http
 
   const char* errorMsg = aws_error_debug_str(finalErrorCode);
   AWS_LOGSTREAM_ERROR(CRT_HTTP_CLIENT_TAG, "Obtaining connection failed because " << errorMsg);
-  state->response->SetClientErrorType(Aws::Client::CoreErrors::NETWORK_CONNECTION);
-  state->response->SetClientErrorMessage(errorMsg);
-
-  state->Finish();
+  state->CompleteWithError(Aws::Client::CoreErrors::NETWORK_CONNECTION, errorMsg);
 }
 
 struct SyncRequestState {
@@ -461,7 +473,7 @@ namespace Aws
             m_connectionPools.clear();
         }
 
-        Aws::Crt::Optional<Aws::Client::AWSError<Aws::Client::CoreErrors>> CRTHttpClient::MakeRequestAsync(
+        Aws::Crt::Optional<Aws::Client::AWSError<Aws::Client::CoreErrors>> CRTHttpClient::SendOneAttemptAsync(
             const std::shared_ptr<HttpRequest>& request,
             std::function<void(std::shared_ptr<HttpResponse>)> onResponseComplete,
             std::function<void(const std::shared_ptr<Aws::Http::Connection>&)> onClientConnectionAvailable,
@@ -494,16 +506,134 @@ namespace Aws
             state->latch = m_requestLatch;
             m_requestLatch->Add();
 
-            connectionManager->AcquireConnection(
-                    [state, this, onClientConnectionAvailable](std::shared_ptr<Crt::Http::HttpClientConnection> connection, int errorCode)
-                    {
-                        if (connection && onClientConnectionAvailable)
+            auto startSend = [state, this, onClientConnectionAvailable, connectionManager]()
+            {
+                if (m_configuration.requestTimeoutMs > 0)
+                {
+                    std::weak_ptr<AsyncRequestState> weakState = state;
+                    m_bootstrap.GetNextEventLoop().Schedule(
+                        [weakState](Aws::Crt::Io::TaskStatus status)
                         {
-                            onClientConnectionAvailable(Aws::MakeShared<CRTConnection>(CRT_HTTP_CLIENT_TAG, connection));
-                        }
-                        OnClientConnectionAvailableAsync(connection, errorCode, state, *this);
-                    });
+                            if (status != Aws::Crt::Io::TaskStatus::RunReady)
+                            {
+                                return;
+                            }
+                            auto state = weakState.lock();
+                            if (!state)
+                            {
+                                return;
+                            }
+                            if (auto connection = state->connection.lock())
+                            {
+                                connection->Close();
+                            }
+                            state->CompleteWithError(Aws::Client::CoreErrors::REQUEST_TIMEOUT, "Request Timeout Has Expired");
+                        },
+                        std::chrono::milliseconds(m_configuration.requestTimeoutMs));
+                }
 
+                connectionManager->AcquireConnection(
+                        [state, this, onClientConnectionAvailable](std::shared_ptr<Crt::Http::HttpClientConnection> connection, int errorCode)
+                        {
+                            if (connection && onClientConnectionAvailable)
+                            {
+                                onClientConnectionAvailable(Aws::MakeShared<CRTConnection>(CRT_HTTP_CLIENT_TAG, connection));
+                            }
+                            OnClientConnectionAvailableAsync(connection, errorCode, state, *this);
+                        });
+            };
+
+            startSend();
+
+            return {};
+        }
+
+        namespace
+        {
+            struct CRTAttemptLoop : std::enable_shared_from_this<CRTAttemptLoop>
+            {
+                HttpClient::PrepareAttempt prepare;
+                HttpClient::EvaluateAttempt evaluate;
+                HttpClient::OnRetryableRequestComplete complete;
+                std::function<void(const std::shared_ptr<HttpRequest>&, std::function<void(std::shared_ptr<HttpResponse>)>)> send;
+                std::function<void(std::function<void(bool)>, std::chrono::milliseconds)> schedule;
+
+                void RunAttempt()
+                {
+                    auto request = prepare();
+                    auto self = shared_from_this();
+                    if (!request)
+                    {
+                        complete();
+                        return;
+                    }
+                    send(request, [self](std::shared_ptr<HttpResponse> response)
+                    {
+                        auto outcome = self->evaluate(response);
+                        if (outcome.shouldRetry)
+                        {
+                            self->schedule([self](bool canceled)
+                            {
+                                if (canceled)
+                                {
+                                    self->evaluate(nullptr);
+                                    self->complete();
+                                }
+                                else
+                                {
+                                    self->RunAttempt();
+                                }
+                            }, outcome.backoff);
+                        }
+                        else
+                        {
+                            self->complete();
+                        }
+                    });
+                }
+            };
+        }
+
+        Aws::Crt::Optional<Aws::Client::AWSError<Aws::Client::CoreErrors>> CRTHttpClient::MakeRequestAsync(
+            const HttpClient::PrepareAttempt& prepareAttempt,
+            const HttpClient::EvaluateAttempt& evaluateAttempt,
+            const HttpClient::OnRetryableRequestComplete& onComplete) const
+        {
+            auto attemptLoop = Aws::MakeShared<CRTAttemptLoop>(CRT_HTTP_CLIENT_TAG);
+            attemptLoop->prepare = prepareAttempt;
+            attemptLoop->evaluate = evaluateAttempt;
+
+            auto latch = m_requestLatch;
+            latch->Add();
+            attemptLoop->complete = [onComplete, latch]()
+            {
+                onComplete();
+                latch->Done();
+            };
+
+            const CRTHttpClient* self = this;
+            attemptLoop->send = [self](const std::shared_ptr<HttpRequest>& request,
+                                  std::function<void(std::shared_ptr<HttpResponse>)> onResponse)
+            {
+                auto error = self->SendOneAttemptAsync(request, onResponse);
+                if (error.has_value())
+                {
+                    auto response = Aws::MakeShared<Standard::StandardHttpResponse>(CRT_HTTP_CLIENT_TAG, request);
+                    response->SetResponseCode(Aws::Http::HttpResponseCode::REQUEST_NOT_MADE);
+                    onResponse(std::move(response));
+                }
+            };
+            attemptLoop->schedule = [self](std::function<void(bool)> task, std::chrono::milliseconds delay)
+            {
+                self->m_bootstrap.GetNextEventLoop().Schedule(
+                    [task](Aws::Crt::Io::TaskStatus status)
+                    {
+                        task(status != Aws::Crt::Io::TaskStatus::RunReady);
+                    },
+                    delay);
+            };
+
+            attemptLoop->RunAttempt();
             return {};
         }
 
@@ -513,7 +643,7 @@ namespace Aws
         {
             auto sync = Aws::MakeShared<SyncRequestState>(CRT_HTTP_CLIENT_TAG);
 
-            auto error = MakeRequestAsync(request,
+            auto error = SendOneAttemptAsync(request,
                 [sync](std::shared_ptr<HttpResponse> response)
                 {
                     sync->response = std::move(response);
