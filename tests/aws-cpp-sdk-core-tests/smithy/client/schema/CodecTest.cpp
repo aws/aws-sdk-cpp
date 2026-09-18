@@ -80,7 +80,7 @@ namespace {
 
 class Person : public SerializableStruct {
  public:
-  const Schema& GetSchema() const override { return *Root(); }
+  const Schema& GetSchema() const override { return *m_schema; }
 
   void SerializeMembers(ShapeSerializer& serializer) const override {
     serializer.WriteString(*GetSchema().GetMember("name").value(), name);
@@ -112,13 +112,13 @@ class Person : public SerializableStruct {
   int count = 0;
 
  private:
-  static const std::shared_ptr<const Schema>& Root() {
-    static const std::shared_ptr<const Schema> schema = Schema::StructureBuilder("Person")
-                                                            .PutMember("name", Schema::CreateString("S"))
-                                                            .PutMember("count", Schema::CreateInteger("I"))
-                                                            .Build();
-    return schema;
+  static std::shared_ptr<const Schema> BuildSchema() {
+    return Schema::StructureBuilder("Person")
+        .PutMember("name", Schema::CreateString("S"))
+        .PutMember("count", Schema::CreateInteger("I"))
+        .Build();
   }
+  std::shared_ptr<const Schema> m_schema{BuildSchema()};
 };
 
 }  // namespace
@@ -152,7 +152,8 @@ namespace {
 
 class Bar : public SerializableStruct {
  public:
-  const Schema& GetSchema() const override { return *Root(); }
+  const Schema& GetSchema() const override { return *m_schema; }
+  const std::shared_ptr<const Schema>& SchemaPtr() const { return m_schema; }
 
   void SerializeMembers(ShapeSerializer& serializer) const override {
     serializer.WriteString(*GetSchema().GetMember("buzz").value(), buzz);
@@ -174,18 +175,18 @@ class Bar : public SerializableStruct {
 
   Aws::String buzz;
 
-  static const std::shared_ptr<const Schema>& Root() {
-    static const std::shared_ptr<const Schema> schema =
-        Schema::StructureBuilder("Bar", {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Test", "Bar")}})
-            .PutMember("buzz", Schema::CreateString("S"))
-            .Build();
-    return schema;
+ private:
+  static std::shared_ptr<const Schema> BuildSchema() {
+    return Schema::StructureBuilder("Bar", {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Test", "Bar")}})
+        .PutMember("buzz", Schema::CreateString("S"))
+        .Build();
   }
+  std::shared_ptr<const Schema> m_schema{BuildSchema()};
 };
 
 class Foo : public SerializableStruct {
  public:
-  const Schema& GetSchema() const override { return *Root(); }
+  const Schema& GetSchema() const override { return *m_schema; }
 
   void SerializeMembers(ShapeSerializer& serializer) const override {
     serializer.WriteStruct(*GetSchema().GetMember("fizz").value(), fizz);
@@ -206,13 +207,14 @@ class Foo : public SerializableStruct {
 
   Bar fizz;
 
-  static const std::shared_ptr<const Schema>& Root() {
-    static const std::shared_ptr<const Schema> schema =
-        Schema::StructureBuilder("Foo", {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Test", "Foo")}})
-            .PutMember("fizz", Bar::Root())
-            .Build();
-    return schema;
+ private:
+  static std::shared_ptr<const Schema> BuildSchema(const Bar& fizz) {
+    return Schema::StructureBuilder("Foo", {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Test", "Foo")}})
+        .PutMember("fizz", fizz.SchemaPtr())
+        .Build();
   }
+  // fizz is declared above, so it is fully constructed before m_schema is built from it.
+  std::shared_ptr<const Schema> m_schema{BuildSchema(fizz)};
 };
 
 }  // namespace

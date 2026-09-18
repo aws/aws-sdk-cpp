@@ -12,6 +12,7 @@ class SMITHY_API SerializableStruct {
  public:
   virtual ~SerializableStruct() = default;
 
+  // Schema must be owned per-instance (per request/result).
   virtual const Schema& GetSchema() const = 0;
   virtual void SerializeMembers(ShapeSerializer& serializer) const = 0;
   virtual void From(const Schema& memberSchema, ShapeDeserializer& deserializer) = 0;
