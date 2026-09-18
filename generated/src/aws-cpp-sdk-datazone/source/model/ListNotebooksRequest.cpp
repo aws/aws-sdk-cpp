@@ -49,6 +49,12 @@ void ListNotebooksRequest::AddQueryStringParameters(URI& uri) const {
     ss.str("");
   }
 
+  if (m_typeHasBeenSet) {
+    ss << NotebookTypeMapper::GetNameForNotebookType(m_type);
+    uri.AddQueryStringParameter("type", ss.str());
+    ss.str("");
+  }
+
   if (m_nextTokenHasBeenSet) {
     ss << m_nextToken;
     uri.AddQueryStringParameter("nextToken", ss.str());

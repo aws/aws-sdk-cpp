@@ -26985,8 +26985,9 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
    * <p>Validates whether the specified security groups can be associated with a
    * single network interface. The operation checks Amazon Virtual Private Cloud
    * (Amazon VPC) quotas. It checks inbound or outbound rules per security group and
-   * security groups per network interface. Only authorized AWS services can call
-   * this operation.</p> <p>For more information about security group quotas, see <a
+   * security groups per network interface. Only authorized Amazon Web Services
+   * services can call this operation.</p> <p>For more information about security
+   * group quotas, see <a
    * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-security-groups">Amazon
    * VPC quotas</a> in the <i>Amazon VPC User Guide</i>.</p><p><h3>See Also:</h3>
    * <a

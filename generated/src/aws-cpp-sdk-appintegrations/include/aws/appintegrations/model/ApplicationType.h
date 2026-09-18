@@ -10,7 +10,7 @@
 namespace Aws {
 namespace AppIntegrationsService {
 namespace Model {
-enum class ApplicationType { NOT_SET, STANDARD, SERVICE, MCP_SERVER };
+enum class ApplicationType { NOT_SET, STANDARD, SERVICE, MCP_SERVER, A2A_SERVER };
 
 namespace ApplicationTypeMapper {
 AWS_APPINTEGRATIONSSERVICE_API ApplicationType GetApplicationTypeForName(const Aws::String& name);

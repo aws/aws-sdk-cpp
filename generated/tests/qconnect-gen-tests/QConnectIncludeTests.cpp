@@ -44,6 +44,7 @@
 #include <aws/qconnect/model/ActivateMessageTemplateRequest.h>
 #include <aws/qconnect/model/ActivateMessageTemplateResult.h>
 #include <aws/qconnect/model/AgentAttributes.h>
+#include <aws/qconnect/model/AgentTarget.h>
 #include <aws/qconnect/model/AmazonConnectGuideAssociationData.h>
 #include <aws/qconnect/model/Annotation.h>
 #include <aws/qconnect/model/AnswerRecommendationAIAgentConfiguration.h>
@@ -127,6 +128,7 @@
 #include <aws/qconnect/model/DataSummary.h>
 #include <aws/qconnect/model/DeactivateMessageTemplateRequest.h>
 #include <aws/qconnect/model/DeactivateMessageTemplateResult.h>
+#include <aws/qconnect/model/DelegateAgentConfiguration.h>
 #include <aws/qconnect/model/DeleteAIAgentRequest.h>
 #include <aws/qconnect/model/DeleteAIAgentResult.h>
 #include <aws/qconnect/model/DeleteAIAgentVersionRequest.h>
@@ -228,6 +230,7 @@
 #include <aws/qconnect/model/GuardrailTopicConfig.h>
 #include <aws/qconnect/model/GuardrailTopicType.h>
 #include <aws/qconnect/model/GuardrailWordConfig.h>
+#include <aws/qconnect/model/HandoffAgentConfiguration.h>
 #include <aws/qconnect/model/HierarchicalChunkingConfiguration.h>
 #include <aws/qconnect/model/HierarchicalChunkingLevelConfiguration.h>
 #include <aws/qconnect/model/Highlight.h>
@@ -237,6 +240,7 @@
 #include <aws/qconnect/model/ImportJobType.h>
 #include <aws/qconnect/model/IntentDetectedDataDetails.h>
 #include <aws/qconnect/model/IntentInputData.h>
+#include <aws/qconnect/model/InteractionMode.h>
 #include <aws/qconnect/model/KnowledgeBaseAssociationConfigurationData.h>
 #include <aws/qconnect/model/KnowledgeBaseAssociationData.h>
 #include <aws/qconnect/model/KnowledgeBaseData.h>
@@ -328,6 +332,8 @@
 #include <aws/qconnect/model/MessageType.h>
 #include <aws/qconnect/model/ModelLifecycle.h>
 #include <aws/qconnect/model/ModelSummary.h>
+#include <aws/qconnect/model/MultiAgentConfiguration.h>
+#include <aws/qconnect/model/MultiAgentInstruction.h>
 #include <aws/qconnect/model/NoteTakingAIAgentConfiguration.h>
 #include <aws/qconnect/model/NotesChunkDataDetails.h>
 #include <aws/qconnect/model/NotesDataDetails.h>
@@ -397,6 +403,7 @@
 #include <aws/qconnect/model/RetrieveRequest.h>
 #include <aws/qconnect/model/RetrieveResult.h>
 #include <aws/qconnect/model/RetrieveSdkResult.h>
+#include <aws/qconnect/model/ReturnReason.h>
 #include <aws/qconnect/model/RuntimeSessionData.h>
 #include <aws/qconnect/model/RuntimeSessionDataValue.h>
 #include <aws/qconnect/model/SMSMessageTemplateContent.h>

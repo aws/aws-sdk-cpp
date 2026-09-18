@@ -1,6 +1,0 @@
-{
-  "type": "bugfix",
-  "category": "aws-cpp-sdk-core",
-  "contributor": "",
-  "description": "Fixed bug where non-expiry would fail to return true on IsExpired"
-}

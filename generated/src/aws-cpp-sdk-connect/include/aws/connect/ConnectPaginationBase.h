@@ -55,6 +55,7 @@
 #include <aws/connect/model/ListRoutingProfilesPaginationTraits.h>
 #include <aws/connect/model/ListRulesPaginationTraits.h>
 #include <aws/connect/model/ListSecurityKeysPaginationTraits.h>
+#include <aws/connect/model/ListSecurityProfileAIAgentsPaginationTraits.h>
 #include <aws/connect/model/ListSecurityProfileApplicationsPaginationTraits.h>
 #include <aws/connect/model/ListSecurityProfileFlowModulesPaginationTraits.h>
 #include <aws/connect/model/ListSecurityProfilePermissionsPaginationTraits.h>
@@ -693,6 +694,18 @@ class ConnectPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSecurityKeysRequest,
                                              Pagination::ListSecurityKeysPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
+  }
+
+  /**
+   * Create a paginator for ListSecurityProfileAIAgents operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSecurityProfileAIAgentsRequest,
+                                    Pagination::ListSecurityProfileAIAgentsPaginationTraits<DerivedClient>>
+  ListSecurityProfileAIAgentsPaginator(const Model::ListSecurityProfileAIAgentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSecurityProfileAIAgentsRequest,
+                                             Pagination::ListSecurityProfileAIAgentsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 
   /**

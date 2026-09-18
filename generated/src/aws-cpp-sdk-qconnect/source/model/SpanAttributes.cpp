@@ -78,6 +78,18 @@ SpanAttributes& SpanAttributes::operator=(JsonView jsonValue) {
     m_aiAgentOrchestratorUseCase = jsonValue.GetString("aiAgentOrchestratorUseCase");
     m_aiAgentOrchestratorUseCaseHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("interactionMode")) {
+    m_interactionMode = InteractionModeMapper::GetInteractionModeForName(jsonValue.GetString("interactionMode"));
+    m_interactionModeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("targetAgentId")) {
+    m_targetAgentId = jsonValue.GetString("targetAgentId");
+    m_targetAgentIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("returnReason")) {
+    m_returnReason = ReturnReasonMapper::GetReturnReasonForName(jsonValue.GetString("returnReason"));
+    m_returnReasonHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("requestModel")) {
     m_requestModel = jsonValue.GetString("requestModel");
     m_requestModelHasBeenSet = true;
@@ -244,6 +256,18 @@ JsonValue SpanAttributes::Jsonize() const {
 
   if (m_aiAgentOrchestratorUseCaseHasBeenSet) {
     payload.WithString("aiAgentOrchestratorUseCase", m_aiAgentOrchestratorUseCase);
+  }
+
+  if (m_interactionModeHasBeenSet) {
+    payload.WithString("interactionMode", InteractionModeMapper::GetNameForInteractionMode(m_interactionMode));
+  }
+
+  if (m_targetAgentIdHasBeenSet) {
+    payload.WithString("targetAgentId", m_targetAgentId);
+  }
+
+  if (m_returnReasonHasBeenSet) {
+    payload.WithString("returnReason", ReturnReasonMapper::GetNameForReturnReason(m_returnReason));
   }
 
   if (m_requestModelHasBeenSet) {

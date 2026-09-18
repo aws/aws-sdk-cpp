@@ -55,6 +55,7 @@
 #include <aws/transcribe/model/DeleteVocabularyRequest.h>
 #include <aws/transcribe/model/DescribeLanguageModelRequest.h>
 #include <aws/transcribe/model/DescribeLanguageModelResult.h>
+#include <aws/transcribe/model/EncryptionConfiguration.h>
 #include <aws/transcribe/model/GetCallAnalyticsCategoryRequest.h>
 #include <aws/transcribe/model/GetCallAnalyticsCategoryResult.h>
 #include <aws/transcribe/model/GetCallAnalyticsJobRequest.h>
@@ -169,6 +170,8 @@
 #include <aws/transcribe/model/UntagResourceResult.h>
 #include <aws/transcribe/model/UpdateCallAnalyticsCategoryRequest.h>
 #include <aws/transcribe/model/UpdateCallAnalyticsCategoryResult.h>
+#include <aws/transcribe/model/UpdateLanguageModelRequest.h>
+#include <aws/transcribe/model/UpdateLanguageModelResult.h>
 #include <aws/transcribe/model/UpdateMedicalVocabularyRequest.h>
 #include <aws/transcribe/model/UpdateMedicalVocabularyResult.h>
 #include <aws/transcribe/model/UpdateVocabularyFilterRequest.h>

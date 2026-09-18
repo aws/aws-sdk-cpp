@@ -68,7 +68,7 @@ class UpdateIngestConfigurationRequest : public IvsrealtimeRequest {
   ///@{
   /**
    * <p>Indicates whether redundant ingest is enabled for the ingest configuration.
-   * Default: <code>false</code>.</p>
+   * Default: <code>false</code>. </p>
    */
   inline bool GetRedundantIngest() const { return m_redundantIngest; }
   inline bool RedundantIngestHasBeenSet() const { return m_redundantIngestHasBeenSet; }

@@ -46,6 +46,14 @@ GetVocabularyResult& GetVocabularyResult::operator=(const Aws::AmazonWebServiceR
     m_downloadUri = jsonValue.GetString("DownloadUri");
     m_downloadUriHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DataAccessRoleArn")) {
+    m_dataAccessRoleArn = jsonValue.GetString("DataAccessRoleArn");
+    m_dataAccessRoleArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("EncryptionConfiguration")) {
+    m_encryptionConfiguration = jsonValue.GetObject("EncryptionConfiguration");
+    m_encryptionConfigurationHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

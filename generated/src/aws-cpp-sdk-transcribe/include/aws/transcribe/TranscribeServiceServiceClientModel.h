@@ -62,6 +62,7 @@
 #include <aws/transcribe/model/TagResourceResult.h>
 #include <aws/transcribe/model/UntagResourceResult.h>
 #include <aws/transcribe/model/UpdateCallAnalyticsCategoryResult.h>
+#include <aws/transcribe/model/UpdateLanguageModelResult.h>
 #include <aws/transcribe/model/UpdateMedicalVocabularyResult.h>
 #include <aws/transcribe/model/UpdateVocabularyFilterResult.h>
 #include <aws/transcribe/model/UpdateVocabularyResult.h>
@@ -138,6 +139,7 @@ class StartTranscriptionJobRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
 class UpdateCallAnalyticsCategoryRequest;
+class UpdateLanguageModelRequest;
 class UpdateMedicalVocabularyRequest;
 class UpdateVocabularyRequest;
 class UpdateVocabularyFilterRequest;
@@ -184,6 +186,7 @@ typedef Aws::Utils::Outcome<StartTranscriptionJobResult, TranscribeServiceError>
 typedef Aws::Utils::Outcome<TagResourceResult, TranscribeServiceError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, TranscribeServiceError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateCallAnalyticsCategoryResult, TranscribeServiceError> UpdateCallAnalyticsCategoryOutcome;
+typedef Aws::Utils::Outcome<UpdateLanguageModelResult, TranscribeServiceError> UpdateLanguageModelOutcome;
 typedef Aws::Utils::Outcome<UpdateMedicalVocabularyResult, TranscribeServiceError> UpdateMedicalVocabularyOutcome;
 typedef Aws::Utils::Outcome<UpdateVocabularyResult, TranscribeServiceError> UpdateVocabularyOutcome;
 typedef Aws::Utils::Outcome<UpdateVocabularyFilterResult, TranscribeServiceError> UpdateVocabularyFilterOutcome;
@@ -230,6 +233,7 @@ typedef std::future<StartTranscriptionJobOutcome> StartTranscriptionJobOutcomeCa
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateCallAnalyticsCategoryOutcome> UpdateCallAnalyticsCategoryOutcomeCallable;
+typedef std::future<UpdateLanguageModelOutcome> UpdateLanguageModelOutcomeCallable;
 typedef std::future<UpdateMedicalVocabularyOutcome> UpdateMedicalVocabularyOutcomeCallable;
 typedef std::future<UpdateVocabularyOutcome> UpdateVocabularyOutcomeCallable;
 typedef std::future<UpdateVocabularyFilterOutcome> UpdateVocabularyFilterOutcomeCallable;
@@ -362,6 +366,9 @@ typedef std::function<void(const TranscribeServiceClient*, const Model::UntagRes
 typedef std::function<void(const TranscribeServiceClient*, const Model::UpdateCallAnalyticsCategoryRequest&,
                            const Model::UpdateCallAnalyticsCategoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateCallAnalyticsCategoryResponseReceivedHandler;
+typedef std::function<void(const TranscribeServiceClient*, const Model::UpdateLanguageModelRequest&,
+                           const Model::UpdateLanguageModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateLanguageModelResponseReceivedHandler;
 typedef std::function<void(const TranscribeServiceClient*, const Model::UpdateMedicalVocabularyRequest&,
                            const Model::UpdateMedicalVocabularyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateMedicalVocabularyResponseReceivedHandler;

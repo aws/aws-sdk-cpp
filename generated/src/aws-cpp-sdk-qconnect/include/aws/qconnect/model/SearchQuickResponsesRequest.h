@@ -112,7 +112,7 @@ class SearchQuickResponsesRequest : public QConnectRequest {
   /**
    * <p>The <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-attrib-list.html#user-defined-attributes">user-defined
-   * Amazon Connect contact attributes</a> to be resolved when search results are
+   * Connect Customer contact attributes</a> to be resolved when search results are
    * returned.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const { return m_attributes; }

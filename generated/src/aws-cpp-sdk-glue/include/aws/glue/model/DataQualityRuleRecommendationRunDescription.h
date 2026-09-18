@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/model/DataSource.h>
+#include <aws/glue/model/RecommendationMode.h>
 #include <aws/glue/model/TaskStatusType.h>
 
 #include <utility>
@@ -122,6 +123,23 @@ class DataQualityRuleRecommendationRunDescription {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The mode that Glue Data Quality uses to recommend rules.</p> <p>The default
+   * is <code>BASIC</code>.</p>
+   */
+  inline RecommendationMode GetRecommendationMode() const { return m_recommendationMode; }
+  inline bool RecommendationModeHasBeenSet() const { return m_recommendationModeHasBeenSet; }
+  inline void SetRecommendationMode(RecommendationMode value) {
+    m_recommendationModeHasBeenSet = true;
+    m_recommendationMode = value;
+  }
+  inline DataQualityRuleRecommendationRunDescription& WithRecommendationMode(RecommendationMode value) {
+    SetRecommendationMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_runId;
 
@@ -132,11 +150,14 @@ class DataQualityRuleRecommendationRunDescription {
   DataSource m_dataSource;
 
   Aws::String m_createdRulesetName;
+
+  RecommendationMode m_recommendationMode{RecommendationMode::NOT_SET};
   bool m_runIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_startedOnHasBeenSet = false;
   bool m_dataSourceHasBeenSet = false;
   bool m_createdRulesetNameHasBeenSet = false;
+  bool m_recommendationModeHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -67,5 +67,9 @@ Aws::String CreateApplicationRequest::SerializePayload() const {
     payload.WithString("ApplicationType", ApplicationTypeMapper::GetNameForApplicationType(m_applicationType));
   }
 
+  if (m_authConfigHasBeenSet) {
+    payload.WithObject("AuthConfig", m_authConfig.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

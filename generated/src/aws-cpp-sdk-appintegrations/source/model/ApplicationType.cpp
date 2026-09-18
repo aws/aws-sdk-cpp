@@ -18,6 +18,7 @@ namespace ApplicationTypeMapper {
 static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
 static const int SERVICE_HASH = HashingUtils::HashString("SERVICE");
 static const int MCP_SERVER_HASH = HashingUtils::HashString("MCP_SERVER");
+static const int A2A_SERVER_HASH = HashingUtils::HashString("A2A_SERVER");
 
 ApplicationType GetApplicationTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ ApplicationType GetApplicationTypeForName(const Aws::String& name) {
     return ApplicationType::SERVICE;
   } else if (hashCode == MCP_SERVER_HASH) {
     return ApplicationType::MCP_SERVER;
+  } else if (hashCode == A2A_SERVER_HASH) {
+    return ApplicationType::A2A_SERVER;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForApplicationType(ApplicationType enumValue) {
       return "SERVICE";
     case ApplicationType::MCP_SERVER:
       return "MCP_SERVER";
+    case ApplicationType::A2A_SERVER:
+      return "A2A_SERVER";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -31,6 +31,10 @@ Aws::String CreateLanguageModelRequest::SerializePayload() const {
     payload.WithObject("InputDataConfig", m_inputDataConfig.Jsonize());
   }
 
+  if (m_encryptionConfigurationHasBeenSet) {
+    payload.WithObject("EncryptionConfiguration", m_encryptionConfiguration.Jsonize());
+  }
+
   if (m_tagsHasBeenSet) {
     Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
     for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {

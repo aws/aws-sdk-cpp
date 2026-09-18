@@ -38,6 +38,10 @@ NotebookSummary& NotebookSummary::operator=(JsonView jsonValue) {
     m_status = NotebookStatusMapper::GetNotebookStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("type")) {
+    m_type = NotebookTypeMapper::GetNotebookTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
@@ -82,6 +86,10 @@ JsonValue NotebookSummary::Jsonize() const {
 
   if (m_statusHasBeenSet) {
     payload.WithString("status", NotebookStatusMapper::GetNameForNotebookStatus(m_status));
+  }
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", NotebookTypeMapper::GetNameForNotebookType(m_type));
   }
 
   if (m_descriptionHasBeenSet) {

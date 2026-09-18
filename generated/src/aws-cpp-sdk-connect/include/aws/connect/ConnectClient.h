@@ -7536,6 +7536,36 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns a list of the allowed AI agents in a specific security
+   * profile.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityProfileAIAgents">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListSecurityProfileAIAgentsOutcome ListSecurityProfileAIAgents(
+      const Model::ListSecurityProfileAIAgentsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListSecurityProfileAIAgents that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListSecurityProfileAIAgentsRequestT = Model::ListSecurityProfileAIAgentsRequest>
+  Model::ListSecurityProfileAIAgentsOutcomeCallable ListSecurityProfileAIAgentsCallable(
+      const ListSecurityProfileAIAgentsRequestT& request) const {
+    return SubmitCallable(&ConnectClient::ListSecurityProfileAIAgents, request);
+  }
+
+  /**
+   * An Async wrapper for ListSecurityProfileAIAgents that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListSecurityProfileAIAgentsRequestT = Model::ListSecurityProfileAIAgentsRequest>
+  void ListSecurityProfileAIAgentsAsync(const ListSecurityProfileAIAgentsRequestT& request,
+                                        const ListSecurityProfileAIAgentsResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::ListSecurityProfileAIAgents, request, handler, context);
+  }
+
+  /**
    * <p>Returns a list of third-party applications or MCP Servers in a specific
    * security profile.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityProfileApplications">AWS

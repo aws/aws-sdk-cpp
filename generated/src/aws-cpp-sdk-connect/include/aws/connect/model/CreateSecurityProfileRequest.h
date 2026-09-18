@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/ConnectRequest.h>
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/AIAgent.h>
 #include <aws/connect/model/Application.h>
 #include <aws/connect/model/FlowModule.h>
 #include <aws/connect/model/GranularAccessControlConfiguration.h>
@@ -291,6 +292,30 @@ class CreateSecurityProfileRequest : public ConnectRequest {
 
   ///@{
   /**
+   * <p>A list of AI agents that the security profile will give access to.</p>
+   */
+  inline const Aws::Vector<AIAgent>& GetAllowedAIAgents() const { return m_allowedAIAgents; }
+  inline bool AllowedAIAgentsHasBeenSet() const { return m_allowedAIAgentsHasBeenSet; }
+  template <typename AllowedAIAgentsT = Aws::Vector<AIAgent>>
+  void SetAllowedAIAgents(AllowedAIAgentsT&& value) {
+    m_allowedAIAgentsHasBeenSet = true;
+    m_allowedAIAgents = std::forward<AllowedAIAgentsT>(value);
+  }
+  template <typename AllowedAIAgentsT = Aws::Vector<AIAgent>>
+  CreateSecurityProfileRequest& WithAllowedAIAgents(AllowedAIAgentsT&& value) {
+    SetAllowedAIAgents(std::forward<AllowedAIAgentsT>(value));
+    return *this;
+  }
+  template <typename AllowedAIAgentsT = AIAgent>
+  CreateSecurityProfileRequest& AddAllowedAIAgents(AllowedAIAgentsT&& value) {
+    m_allowedAIAgentsHasBeenSet = true;
+    m_allowedAIAgents.emplace_back(std::forward<AllowedAIAgentsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The granular access control configuration for the security profile, including
    * data table permissions.</p>
    */
@@ -332,6 +357,8 @@ class CreateSecurityProfileRequest : public ConnectRequest {
 
   Aws::Vector<FlowModule> m_allowedFlowModules;
 
+  Aws::Vector<AIAgent> m_allowedAIAgents;
+
   GranularAccessControlConfiguration m_granularAccessControlConfiguration;
   bool m_securityProfileNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
@@ -344,6 +371,7 @@ class CreateSecurityProfileRequest : public ConnectRequest {
   bool m_hierarchyRestrictedResourcesHasBeenSet = false;
   bool m_allowedAccessControlHierarchyGroupIdHasBeenSet = false;
   bool m_allowedFlowModulesHasBeenSet = false;
+  bool m_allowedAIAgentsHasBeenSet = false;
   bool m_granularAccessControlConfigurationHasBeenSet = false;
 };
 

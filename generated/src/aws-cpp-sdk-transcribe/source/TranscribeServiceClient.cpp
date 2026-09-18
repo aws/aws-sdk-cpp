@@ -60,6 +60,7 @@
 #include <aws/transcribe/model/TagResourceRequest.h>
 #include <aws/transcribe/model/UntagResourceRequest.h>
 #include <aws/transcribe/model/UpdateCallAnalyticsCategoryRequest.h>
+#include <aws/transcribe/model/UpdateLanguageModelRequest.h>
 #include <aws/transcribe/model/UpdateMedicalVocabularyRequest.h>
 #include <aws/transcribe/model/UpdateVocabularyFilterRequest.h>
 #include <aws/transcribe/model/UpdateVocabularyRequest.h>
@@ -462,6 +463,12 @@ UpdateCallAnalyticsCategoryOutcome TranscribeServiceClient::UpdateCallAnalyticsC
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateCallAnalyticsCategoryOutcome(result.GetResultWithOwnership())
                             : UpdateCallAnalyticsCategoryOutcome(std::move(result.GetError()));
+}
+
+UpdateLanguageModelOutcome TranscribeServiceClient::UpdateLanguageModel(const UpdateLanguageModelRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLanguageModelOutcome(result.GetResultWithOwnership())
+                            : UpdateLanguageModelOutcome(std::move(result.GetError()));
 }
 
 UpdateMedicalVocabularyOutcome TranscribeServiceClient::UpdateMedicalVocabulary(const UpdateMedicalVocabularyRequest& request) const {

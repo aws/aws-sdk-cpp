@@ -27,6 +27,10 @@ Aws::String CreateNotebookRequest::SerializePayload() const {
     payload.WithString("description", m_description);
   }
 
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", NotebookTypeMapper::GetNameForNotebookType(m_type));
+  }
+
   if (m_metadataHasBeenSet) {
     JsonValue metadataJsonMap;
     for (auto& metadataItem : m_metadata) {

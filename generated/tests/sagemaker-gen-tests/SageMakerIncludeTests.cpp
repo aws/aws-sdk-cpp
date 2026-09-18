@@ -898,6 +898,7 @@
 #include <aws/sagemaker/model/HolidayConfigAttributes.h>
 #include <aws/sagemaker/model/HomeEfsFileSystemCreation.h>
 #include <aws/sagemaker/model/HubAccessConfig.h>
+#include <aws/sagemaker/model/HubContent.h>
 #include <aws/sagemaker/model/HubContentDependency.h>
 #include <aws/sagemaker/model/HubContentInfo.h>
 #include <aws/sagemaker/model/HubContentSortBy.h>

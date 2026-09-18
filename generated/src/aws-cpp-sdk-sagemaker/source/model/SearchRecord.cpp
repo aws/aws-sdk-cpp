@@ -86,6 +86,10 @@ SearchRecord& SearchRecord::operator=(JsonView jsonValue) {
     m_job = jsonValue.GetObject("Job");
     m_jobHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("HubContent")) {
+    m_hubContent = jsonValue.GetObject("HubContent");
+    m_hubContentHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -158,6 +162,10 @@ JsonValue SearchRecord::Jsonize() const {
 
   if (m_jobHasBeenSet) {
     payload.WithObject("Job", m_job.Jsonize());
+  }
+
+  if (m_hubContentHasBeenSet) {
+    payload.WithObject("HubContent", m_hubContent.Jsonize());
   }
 
   return payload;

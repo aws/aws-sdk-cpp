@@ -47,6 +47,10 @@ Aws::String StartDataQualityRuleRecommendationRunRequest::SerializePayload() con
     payload.WithObject("AdditionalRunOptions", m_additionalRunOptions.Jsonize());
   }
 
+  if (m_recommendationModeHasBeenSet) {
+    payload.WithString("RecommendationMode", RecommendationModeMapper::GetNameForRecommendationMode(m_recommendationMode));
+  }
+
   return payload.View().WriteReadable();
 }
 

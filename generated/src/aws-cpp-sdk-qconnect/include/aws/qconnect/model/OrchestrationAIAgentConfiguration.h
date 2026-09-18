@@ -4,9 +4,11 @@
  */
 
 #pragma once
+#include <aws/core/utils/Document.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qconnect/QConnect_EXPORTS.h>
+#include <aws/qconnect/model/MultiAgentConfiguration.h>
 #include <aws/qconnect/model/ToolConfiguration.h>
 
 #include <utility>
@@ -96,6 +98,32 @@ class OrchestrationAIAgentConfiguration {
 
   ///@{
   /**
+   * <p>The collaborator agents that the Orchestration AI Agent can work with. Each
+   * entry defines another agent that the orchestrator either delegates to or hands
+   * the conversation off to.</p>
+   */
+  inline const Aws::Vector<MultiAgentConfiguration>& GetMultiAgentConfigurations() const { return m_multiAgentConfigurations; }
+  inline bool MultiAgentConfigurationsHasBeenSet() const { return m_multiAgentConfigurationsHasBeenSet; }
+  template <typename MultiAgentConfigurationsT = Aws::Vector<MultiAgentConfiguration>>
+  void SetMultiAgentConfigurations(MultiAgentConfigurationsT&& value) {
+    m_multiAgentConfigurationsHasBeenSet = true;
+    m_multiAgentConfigurations = std::forward<MultiAgentConfigurationsT>(value);
+  }
+  template <typename MultiAgentConfigurationsT = Aws::Vector<MultiAgentConfiguration>>
+  OrchestrationAIAgentConfiguration& WithMultiAgentConfigurations(MultiAgentConfigurationsT&& value) {
+    SetMultiAgentConfigurations(std::forward<MultiAgentConfigurationsT>(value));
+    return *this;
+  }
+  template <typename MultiAgentConfigurationsT = MultiAgentConfiguration>
+  OrchestrationAIAgentConfiguration& AddMultiAgentConfigurations(MultiAgentConfigurationsT&& value) {
+    m_multiAgentConfigurationsHasBeenSet = true;
+    m_multiAgentConfigurations.emplace_back(std::forward<MultiAgentConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Amazon Resource Name (ARN) of the Amazon Connect instance used by the
    * Orchestration AI Agent.</p>
    */
@@ -130,6 +158,58 @@ class OrchestrationAIAgentConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The JSON schemas that define the structure of the structured data input
+   * accepted by the Orchestration AI Agent. The data in a <code>DATA</code> message
+   * sent to the agent is validated against these schemas. You can specify at most
+   * one schema.</p>
+   */
+  inline const Aws::Vector<Aws::Utils::Document>& GetInputSchemas() const { return m_inputSchemas; }
+  inline bool InputSchemasHasBeenSet() const { return m_inputSchemasHasBeenSet; }
+  template <typename InputSchemasT = Aws::Vector<Aws::Utils::Document>>
+  void SetInputSchemas(InputSchemasT&& value) {
+    m_inputSchemasHasBeenSet = true;
+    m_inputSchemas = std::forward<InputSchemasT>(value);
+  }
+  template <typename InputSchemasT = Aws::Vector<Aws::Utils::Document>>
+  OrchestrationAIAgentConfiguration& WithInputSchemas(InputSchemasT&& value) {
+    SetInputSchemas(std::forward<InputSchemasT>(value));
+    return *this;
+  }
+  template <typename InputSchemasT = Aws::Utils::Document>
+  OrchestrationAIAgentConfiguration& AddInputSchemas(InputSchemasT&& value) {
+    m_inputSchemasHasBeenSet = true;
+    m_inputSchemas.emplace_back(std::forward<InputSchemasT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The JSON schemas that define the structure of the structured output generated
+   * by the Orchestration AI Agent. You can specify at most one schema.</p>
+   */
+  inline const Aws::Vector<Aws::Utils::Document>& GetOutputSchemas() const { return m_outputSchemas; }
+  inline bool OutputSchemasHasBeenSet() const { return m_outputSchemasHasBeenSet; }
+  template <typename OutputSchemasT = Aws::Vector<Aws::Utils::Document>>
+  void SetOutputSchemas(OutputSchemasT&& value) {
+    m_outputSchemasHasBeenSet = true;
+    m_outputSchemas = std::forward<OutputSchemasT>(value);
+  }
+  template <typename OutputSchemasT = Aws::Vector<Aws::Utils::Document>>
+  OrchestrationAIAgentConfiguration& WithOutputSchemas(OutputSchemasT&& value) {
+    SetOutputSchemas(std::forward<OutputSchemasT>(value));
+    return *this;
+  }
+  template <typename OutputSchemasT = Aws::Utils::Document>
+  OrchestrationAIAgentConfiguration& AddOutputSchemas(OutputSchemasT&& value) {
+    m_outputSchemasHasBeenSet = true;
+    m_outputSchemas.emplace_back(std::forward<OutputSchemasT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_orchestrationAIPromptId;
 
@@ -137,14 +217,23 @@ class OrchestrationAIAgentConfiguration {
 
   Aws::Vector<ToolConfiguration> m_toolConfigurations;
 
+  Aws::Vector<MultiAgentConfiguration> m_multiAgentConfigurations;
+
   Aws::String m_connectInstanceArn;
 
   Aws::String m_locale;
+
+  Aws::Vector<Aws::Utils::Document> m_inputSchemas;
+
+  Aws::Vector<Aws::Utils::Document> m_outputSchemas;
   bool m_orchestrationAIPromptIdHasBeenSet = false;
   bool m_orchestrationAIGuardrailIdHasBeenSet = false;
   bool m_toolConfigurationsHasBeenSet = false;
+  bool m_multiAgentConfigurationsHasBeenSet = false;
   bool m_connectInstanceArnHasBeenSet = false;
   bool m_localeHasBeenSet = false;
+  bool m_inputSchemasHasBeenSet = false;
+  bool m_outputSchemasHasBeenSet = false;
 };
 
 }  // namespace Model

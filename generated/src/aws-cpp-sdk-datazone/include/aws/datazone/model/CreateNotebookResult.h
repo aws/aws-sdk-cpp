@@ -15,6 +15,7 @@
 #include <aws/datazone/model/GitMetadata.h>
 #include <aws/datazone/model/NotebookError.h>
 #include <aws/datazone/model/NotebookStatus.h>
+#include <aws/datazone/model/NotebookType.h>
 
 #include <utility>
 
@@ -137,6 +138,21 @@ class CreateNotebookResult {
   }
   inline CreateNotebookResult& WithStatus(NotebookStatus value) {
     SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The type of the notebook.</p>
+   */
+  inline NotebookType GetType() const { return m_type; }
+  inline void SetType(NotebookType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline CreateNotebookResult& WithType(NotebookType value) {
+    SetType(value);
     return *this;
   }
   ///@}
@@ -420,6 +436,8 @@ class CreateNotebookResult {
 
   NotebookStatus m_status{NotebookStatus::NOT_SET};
 
+  NotebookType m_type{NotebookType::NOT_SET};
+
   Aws::String m_description;
 
   Aws::Utils::DateTime m_createdAt{};
@@ -456,6 +474,7 @@ class CreateNotebookResult {
   bool m_domainIdHasBeenSet = false;
   bool m_cellOrderHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_createdByHasBeenSet = false;

@@ -9,6 +9,7 @@
 #include <aws/appintegrations/model/ApplicationConfig.h>
 #include <aws/appintegrations/model/ApplicationSourceConfig.h>
 #include <aws/appintegrations/model/ApplicationType.h>
+#include <aws/appintegrations/model/AuthConfig.h>
 #include <aws/appintegrations/model/IframeConfig.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -198,6 +199,25 @@ class UpdateApplicationRequest : public AppIntegrationsServiceRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The authentication settings that Connect Customer uses when calling the
+   * external application.</p>
+   */
+  inline const AuthConfig& GetAuthConfig() const { return m_authConfig; }
+  inline bool AuthConfigHasBeenSet() const { return m_authConfigHasBeenSet; }
+  template <typename AuthConfigT = AuthConfig>
+  void SetAuthConfig(AuthConfigT&& value) {
+    m_authConfigHasBeenSet = true;
+    m_authConfig = std::forward<AuthConfigT>(value);
+  }
+  template <typename AuthConfigT = AuthConfig>
+  UpdateApplicationRequest& WithAuthConfig(AuthConfigT&& value) {
+    SetAuthConfig(std::forward<AuthConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -216,6 +236,8 @@ class UpdateApplicationRequest : public AppIntegrationsServiceRequest {
   IframeConfig m_iframeConfig;
 
   ApplicationType m_applicationType{ApplicationType::NOT_SET};
+
+  AuthConfig m_authConfig;
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
@@ -225,6 +247,7 @@ class UpdateApplicationRequest : public AppIntegrationsServiceRequest {
   bool m_applicationConfigHasBeenSet = false;
   bool m_iframeConfigHasBeenSet = false;
   bool m_applicationTypeHasBeenSet = false;
+  bool m_authConfigHasBeenSet = false;
 };
 
 }  // namespace Model

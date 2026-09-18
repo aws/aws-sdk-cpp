@@ -39,6 +39,10 @@ Aws::String UpdateVocabularyRequest::SerializePayload() const {
     payload.WithString("DataAccessRoleArn", m_dataAccessRoleArn);
   }
 
+  if (m_encryptionConfigurationHasBeenSet) {
+    payload.WithObject("EncryptionConfiguration", m_encryptionConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -17,6 +17,8 @@
 #include <aws/connect/ConnectWaiter.h>
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/internal/ConnectEndpointRules.h>
+#include <aws/connect/model/AIAgent.h>
+#include <aws/connect/model/AIAgentType.h>
 #include <aws/connect/model/AccessType.h>
 #include <aws/connect/model/ActionSummary.h>
 #include <aws/connect/model/ActionType.h>
@@ -918,6 +920,9 @@
 #include <aws/connect/model/ListSecurityKeysPaginationTraits.h>
 #include <aws/connect/model/ListSecurityKeysRequest.h>
 #include <aws/connect/model/ListSecurityKeysResult.h>
+#include <aws/connect/model/ListSecurityProfileAIAgentsPaginationTraits.h>
+#include <aws/connect/model/ListSecurityProfileAIAgentsRequest.h>
+#include <aws/connect/model/ListSecurityProfileAIAgentsResult.h>
 #include <aws/connect/model/ListSecurityProfileApplicationsPaginationTraits.h>
 #include <aws/connect/model/ListSecurityProfileApplicationsRequest.h>
 #include <aws/connect/model/ListSecurityProfileApplicationsResult.h>

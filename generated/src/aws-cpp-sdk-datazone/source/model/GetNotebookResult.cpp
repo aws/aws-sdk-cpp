@@ -49,6 +49,10 @@ GetNotebookResult& GetNotebookResult::operator=(const Aws::AmazonWebServiceResul
     m_status = NotebookStatusMapper::GetNotebookStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("type")) {
+    m_type = NotebookTypeMapper::GetNotebookTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;

@@ -75,6 +75,14 @@ Aws::String UpdateSecurityProfileRequest::SerializePayload() const {
     payload.WithArray("AllowedFlowModules", std::move(allowedFlowModulesJsonList));
   }
 
+  if (m_allowedAIAgentsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> allowedAIAgentsJsonList(m_allowedAIAgents.size());
+    for (unsigned allowedAIAgentsIndex = 0; allowedAIAgentsIndex < allowedAIAgentsJsonList.GetLength(); ++allowedAIAgentsIndex) {
+      allowedAIAgentsJsonList[allowedAIAgentsIndex].AsObject(m_allowedAIAgents[allowedAIAgentsIndex].Jsonize());
+    }
+    payload.WithArray("AllowedAIAgents", std::move(allowedAIAgentsJsonList));
+  }
+
   if (m_granularAccessControlConfigurationHasBeenSet) {
     payload.WithObject("GranularAccessControlConfiguration", m_granularAccessControlConfiguration.Jsonize());
   }

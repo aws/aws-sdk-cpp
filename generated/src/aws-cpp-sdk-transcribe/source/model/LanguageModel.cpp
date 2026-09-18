@@ -54,6 +54,10 @@ LanguageModel& LanguageModel::operator=(JsonView jsonValue) {
     m_inputDataConfig = jsonValue.GetObject("InputDataConfig");
     m_inputDataConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EncryptionConfiguration")) {
+    m_encryptionConfiguration = jsonValue.GetObject("EncryptionConfiguration");
+    m_encryptionConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -94,6 +98,10 @@ JsonValue LanguageModel::Jsonize() const {
 
   if (m_inputDataConfigHasBeenSet) {
     payload.WithObject("InputDataConfig", m_inputDataConfig.Jsonize());
+  }
+
+  if (m_encryptionConfigurationHasBeenSet) {
+    payload.WithObject("EncryptionConfiguration", m_encryptionConfiguration.Jsonize());
   }
 
   return payload;

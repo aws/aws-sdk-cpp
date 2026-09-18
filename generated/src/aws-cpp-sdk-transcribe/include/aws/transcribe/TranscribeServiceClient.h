@@ -1457,6 +1457,40 @@ class AWS_TRANSCRIBESERVICE_API TranscribeServiceClient : public Aws::Client::AW
   }
 
   /**
+   * <p>Updates the encryption configuration for an existing custom language model.
+   * You can use this operation to change the KMS key used to encrypt your model
+   * artifacts. The model artifacts are re-encrypted in place. No model training is
+   * required.</p> <p>Your custom language model must not be in the
+   * <code>IN_PROGRESS</code> state when you call this operation. You cannot submit
+   * another update while a previous update is in progress. Use to check the current
+   * state of your model.</p> <p>Your custom language model remains available for
+   * transcription jobs while the update is being processed.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateLanguageModel">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateLanguageModelOutcome UpdateLanguageModel(const Model::UpdateLanguageModelRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateLanguageModel that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateLanguageModelRequestT = Model::UpdateLanguageModelRequest>
+  Model::UpdateLanguageModelOutcomeCallable UpdateLanguageModelCallable(const UpdateLanguageModelRequestT& request) const {
+    return SubmitCallable(&TranscribeServiceClient::UpdateLanguageModel, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateLanguageModel that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateLanguageModelRequestT = Model::UpdateLanguageModelRequest>
+  void UpdateLanguageModelAsync(const UpdateLanguageModelRequestT& request, const UpdateLanguageModelResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&TranscribeServiceClient::UpdateLanguageModel, request, handler, context);
+  }
+
+  /**
    * <p>Updates an existing custom medical vocabulary with new values. This operation
    * overwrites all existing information with your new values; you cannot append new
    * terms onto an existing custom vocabulary.</p><p><h3>See Also:</h3>   <a
@@ -1488,7 +1522,10 @@ class AWS_TRANSCRIBESERVICE_API TranscribeServiceClient : public Aws::Client::AW
   /**
    * <p>Updates an existing custom vocabulary with new values. This operation
    * overwrites all existing information with your new values; you cannot append new
-   * terms onto an existing custom vocabulary.</p><p><h3>See Also:</h3>   <a
+   * terms onto an existing custom vocabulary.</p> <p>Your custom vocabulary must be
+   * in a terminal state (<code>READY</code> or <code>FAILED</code>) before you can
+   * update it. You must include either <code>Phrases</code> or
+   * <code>VocabularyFileUri</code> in your request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateVocabulary">AWS
    * API Reference</a></p>
    */
@@ -1516,7 +1553,9 @@ class AWS_TRANSCRIBESERVICE_API TranscribeServiceClient : public Aws::Client::AW
   /**
    * <p>Updates an existing custom vocabulary filter with a new list of words. The
    * new list you provide overwrites all previous entries; you cannot append new
-   * terms onto an existing custom vocabulary filter.</p><p><h3>See Also:</h3>   <a
+   * terms onto an existing custom vocabulary filter.</p> <p>You must include either
+   * <code>Words</code> or <code>VocabularyFilterFileUri</code> in your
+   * request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateVocabularyFilter">AWS
    * API Reference</a></p>
    */

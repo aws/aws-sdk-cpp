@@ -9,6 +9,8 @@
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/qconnect/model/AIAgentType.h>
 #include <aws/qconnect/model/AIPromptType.h>
+#include <aws/qconnect/model/InteractionMode.h>
+#include <aws/qconnect/model/ReturnReason.h>
 #include <aws/qconnect/model/SpanGuardrailAssessment.h>
 #include <aws/qconnect/model/SpanMessage.h>
 #include <aws/qconnect/model/SpanMessageValue.h>
@@ -300,6 +302,60 @@ class SpanAttributes {
   template <typename AiAgentOrchestratorUseCaseT = Aws::String>
   SpanAttributes& WithAiAgentOrchestratorUseCase(AiAgentOrchestratorUseCaseT&& value) {
     SetAiAgentOrchestratorUseCase(std::forward<AiAgentOrchestratorUseCaseT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>How the orchestrator engaged the collaborator agent. Present on spans that
+   * invoke a collaborator agent.</p>
+   */
+  inline InteractionMode GetInteractionMode() const { return m_interactionMode; }
+  inline bool InteractionModeHasBeenSet() const { return m_interactionModeHasBeenSet; }
+  inline void SetInteractionMode(InteractionMode value) {
+    m_interactionModeHasBeenSet = true;
+    m_interactionMode = value;
+  }
+  inline SpanAttributes& WithInteractionMode(InteractionMode value) {
+    SetInteractionMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Identifier of the collaborator agent being invoked. For first-party
+   * collaborators this is the Amazon Connect AI agent ID; for third-party
+   * collaborators this is the external application ID.</p>
+   */
+  inline const Aws::String& GetTargetAgentId() const { return m_targetAgentId; }
+  inline bool TargetAgentIdHasBeenSet() const { return m_targetAgentIdHasBeenSet; }
+  template <typename TargetAgentIdT = Aws::String>
+  void SetTargetAgentId(TargetAgentIdT&& value) {
+    m_targetAgentIdHasBeenSet = true;
+    m_targetAgentId = std::forward<TargetAgentIdT>(value);
+  }
+  template <typename TargetAgentIdT = Aws::String>
+  SpanAttributes& WithTargetAgentId(TargetAgentIdT&& value) {
+    SetTargetAgentId(std::forward<TargetAgentIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Reason a sub-agent returned control to the calling agent. Present on
+   * return_to_agent spans.</p>
+   */
+  inline ReturnReason GetReturnReason() const { return m_returnReason; }
+  inline bool ReturnReasonHasBeenSet() const { return m_returnReasonHasBeenSet; }
+  inline void SetReturnReason(ReturnReason value) {
+    m_returnReasonHasBeenSet = true;
+    m_returnReason = value;
+  }
+  inline SpanAttributes& WithReturnReason(ReturnReason value) {
+    SetReturnReason(value);
     return *this;
   }
   ///@}
@@ -722,6 +778,12 @@ class SpanAttributes {
 
   Aws::String m_aiAgentOrchestratorUseCase;
 
+  InteractionMode m_interactionMode{InteractionMode::NOT_SET};
+
+  Aws::String m_targetAgentId;
+
+  ReturnReason m_returnReason{ReturnReason::NOT_SET};
+
   Aws::String m_requestModel;
 
   int m_requestMaxTokens{0};
@@ -778,6 +840,9 @@ class SpanAttributes {
   bool m_aiAgentVersionHasBeenSet = false;
   bool m_aiAgentInvokerHasBeenSet = false;
   bool m_aiAgentOrchestratorUseCaseHasBeenSet = false;
+  bool m_interactionModeHasBeenSet = false;
+  bool m_targetAgentIdHasBeenSet = false;
+  bool m_returnReasonHasBeenSet = false;
   bool m_requestModelHasBeenSet = false;
   bool m_requestMaxTokensHasBeenSet = false;
   bool m_temperatureHasBeenSet = false;

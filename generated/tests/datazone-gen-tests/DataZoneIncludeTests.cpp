@@ -606,6 +606,7 @@
 #include <aws/datazone/model/NotebookRunSummary.h>
 #include <aws/datazone/model/NotebookStatus.h>
 #include <aws/datazone/model/NotebookSummary.h>
+#include <aws/datazone/model/NotebookType.h>
 #include <aws/datazone/model/NotificationOutput.h>
 #include <aws/datazone/model/NotificationResource.h>
 #include <aws/datazone/model/NotificationResourceType.h>

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/transcribe/TranscribeServiceRequest.h>
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
+#include <aws/transcribe/model/EncryptionConfiguration.h>
 #include <aws/transcribe/model/LanguageCode.h>
 
 #include <utility>
@@ -137,9 +138,10 @@ class UpdateVocabularyRequest : public TranscribeServiceRequest {
   /**
    * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
    * the Amazon S3 bucket that contains your input files (in this case, your custom
-   * vocabulary). If the role that you specify doesn’t have the appropriate
-   * permissions to access the specified Amazon S3 location, your request fails.</p>
-   * <p>IAM role ARNs have the format
+   * vocabulary). If you include <code>EncryptionConfiguration</code> in your
+   * request, this role must also have permissions to access the specified KMS key.
+   * If the role that you specify doesn’t have the appropriate permissions, your
+   * request fails.</p> <p>IAM role ARNs have the format
    * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
    * <code>arn:aws:iam::111122223333:role/Admin</code>.</p> <p>For more information,
    * see <a
@@ -159,6 +161,26 @@ class UpdateVocabularyRequest : public TranscribeServiceRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the new encryption configuration for your custom vocabulary. The
+   * vocabulary artifacts are re-encrypted in place using the specified KMS key or
+   * with an AWS-owned key if a key is not supplied.</p>
+   */
+  inline const EncryptionConfiguration& GetEncryptionConfiguration() const { return m_encryptionConfiguration; }
+  inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
+  template <typename EncryptionConfigurationT = EncryptionConfiguration>
+  void SetEncryptionConfiguration(EncryptionConfigurationT&& value) {
+    m_encryptionConfigurationHasBeenSet = true;
+    m_encryptionConfiguration = std::forward<EncryptionConfigurationT>(value);
+  }
+  template <typename EncryptionConfigurationT = EncryptionConfiguration>
+  UpdateVocabularyRequest& WithEncryptionConfiguration(EncryptionConfigurationT&& value) {
+    SetEncryptionConfiguration(std::forward<EncryptionConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_vocabularyName;
 
@@ -169,11 +191,14 @@ class UpdateVocabularyRequest : public TranscribeServiceRequest {
   Aws::String m_vocabularyFileUri;
 
   Aws::String m_dataAccessRoleArn;
+
+  EncryptionConfiguration m_encryptionConfiguration;
   bool m_vocabularyNameHasBeenSet = false;
   bool m_languageCodeHasBeenSet = false;
   bool m_phrasesHasBeenSet = false;
   bool m_vocabularyFileUriHasBeenSet = false;
   bool m_dataAccessRoleArnHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

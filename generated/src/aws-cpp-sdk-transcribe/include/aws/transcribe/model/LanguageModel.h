@@ -9,6 +9,7 @@
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
 #include <aws/transcribe/model/BaseModelName.h>
 #include <aws/transcribe/model/CLMLanguageCode.h>
+#include <aws/transcribe/model/EncryptionConfiguration.h>
 #include <aws/transcribe/model/InputDataConfig.h>
 #include <aws/transcribe/model/ModelStatus.h>
 
@@ -224,6 +225,24 @@ class LanguageModel {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The encryption configuration used for your custom language model.</p>
+   */
+  inline const EncryptionConfiguration& GetEncryptionConfiguration() const { return m_encryptionConfiguration; }
+  inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
+  template <typename EncryptionConfigurationT = EncryptionConfiguration>
+  void SetEncryptionConfiguration(EncryptionConfigurationT&& value) {
+    m_encryptionConfigurationHasBeenSet = true;
+    m_encryptionConfiguration = std::forward<EncryptionConfigurationT>(value);
+  }
+  template <typename EncryptionConfigurationT = EncryptionConfiguration>
+  LanguageModel& WithEncryptionConfiguration(EncryptionConfigurationT&& value) {
+    SetEncryptionConfiguration(std::forward<EncryptionConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_modelName;
 
@@ -242,6 +261,8 @@ class LanguageModel {
   Aws::String m_failureReason;
 
   InputDataConfig m_inputDataConfig;
+
+  EncryptionConfiguration m_encryptionConfiguration;
   bool m_modelNameHasBeenSet = false;
   bool m_createTimeHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
@@ -251,6 +272,7 @@ class LanguageModel {
   bool m_upgradeAvailabilityHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
   bool m_inputDataConfigHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

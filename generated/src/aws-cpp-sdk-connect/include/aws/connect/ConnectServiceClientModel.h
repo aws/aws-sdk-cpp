@@ -218,6 +218,7 @@
 #include <aws/connect/model/ListRoutingProfilesResult.h>
 #include <aws/connect/model/ListRulesResult.h>
 #include <aws/connect/model/ListSecurityKeysResult.h>
+#include <aws/connect/model/ListSecurityProfileAIAgentsResult.h>
 #include <aws/connect/model/ListSecurityProfileApplicationsResult.h>
 #include <aws/connect/model/ListSecurityProfileFlowModulesResult.h>
 #include <aws/connect/model/ListSecurityProfilePermissionsResult.h>
@@ -616,6 +617,7 @@ class ListRoutingProfileQueuesRequest;
 class ListRoutingProfilesRequest;
 class ListRulesRequest;
 class ListSecurityKeysRequest;
+class ListSecurityProfileAIAgentsRequest;
 class ListSecurityProfileApplicationsRequest;
 class ListSecurityProfileFlowModulesRequest;
 class ListSecurityProfilePermissionsRequest;
@@ -1015,6 +1017,7 @@ typedef Aws::Utils::Outcome<ListRoutingProfileQueuesResult, ConnectError> ListRo
 typedef Aws::Utils::Outcome<ListRoutingProfilesResult, ConnectError> ListRoutingProfilesOutcome;
 typedef Aws::Utils::Outcome<ListRulesResult, ConnectError> ListRulesOutcome;
 typedef Aws::Utils::Outcome<ListSecurityKeysResult, ConnectError> ListSecurityKeysOutcome;
+typedef Aws::Utils::Outcome<ListSecurityProfileAIAgentsResult, ConnectError> ListSecurityProfileAIAgentsOutcome;
 typedef Aws::Utils::Outcome<ListSecurityProfileApplicationsResult, ConnectError> ListSecurityProfileApplicationsOutcome;
 typedef Aws::Utils::Outcome<ListSecurityProfileFlowModulesResult, ConnectError> ListSecurityProfileFlowModulesOutcome;
 typedef Aws::Utils::Outcome<ListSecurityProfilePermissionsResult, ConnectError> ListSecurityProfilePermissionsOutcome;
@@ -1414,6 +1417,7 @@ typedef std::future<ListRoutingProfileQueuesOutcome> ListRoutingProfileQueuesOut
 typedef std::future<ListRoutingProfilesOutcome> ListRoutingProfilesOutcomeCallable;
 typedef std::future<ListRulesOutcome> ListRulesOutcomeCallable;
 typedef std::future<ListSecurityKeysOutcome> ListSecurityKeysOutcomeCallable;
+typedef std::future<ListSecurityProfileAIAgentsOutcome> ListSecurityProfileAIAgentsOutcomeCallable;
 typedef std::future<ListSecurityProfileApplicationsOutcome> ListSecurityProfileApplicationsOutcomeCallable;
 typedef std::future<ListSecurityProfileFlowModulesOutcome> ListSecurityProfileFlowModulesOutcomeCallable;
 typedef std::future<ListSecurityProfilePermissionsOutcome> ListSecurityProfilePermissionsOutcomeCallable;
@@ -2344,6 +2348,9 @@ typedef std::function<void(const ConnectClient*, const Model::ListRulesRequest&,
 typedef std::function<void(const ConnectClient*, const Model::ListSecurityKeysRequest&, const Model::ListSecurityKeysOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListSecurityKeysResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::ListSecurityProfileAIAgentsRequest&,
+                           const Model::ListSecurityProfileAIAgentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListSecurityProfileAIAgentsResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::ListSecurityProfileApplicationsRequest&,
                            const Model::ListSecurityProfileApplicationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

@@ -20,7 +20,7 @@ namespace QConnect {
 namespace Model {
 
 /**
- * <p>The configuration information of the Amazon Connect data
+ * <p>The configuration information of the Connect Customer data
  * source.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ConnectConfiguration">AWS
  * API Reference</a></p>
@@ -34,8 +34,8 @@ class ConnectConfiguration {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
-   * the ARN of the instance.</p>
+   * <p>The identifier of the Connect Customer instance. You can find the instanceId
+   * in the ARN of the instance.</p>
    */
   inline const Aws::String& GetInstanceId() const { return m_instanceId; }
   inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/utils/Document.h>
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/qconnect/model/TextMessage.h>
 #include <aws/qconnect/model/ToolUseResultData.h>
@@ -67,12 +68,35 @@ class MessageData {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The message data as a structured JSON document. This is the payload for a
+   * message of type <code>DATA</code>, and must be a JSON object at the root
+   * level.</p>
+   */
+  inline Aws::Utils::DocumentView GetData() const { return m_data; }
+  inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
+  template <typename DataT = Aws::Utils::Document>
+  void SetData(DataT&& value) {
+    m_dataHasBeenSet = true;
+    m_data = std::forward<DataT>(value);
+  }
+  template <typename DataT = Aws::Utils::Document>
+  MessageData& WithData(DataT&& value) {
+    SetData(std::forward<DataT>(value));
+    return *this;
+  }
+  ///@}
  private:
   TextMessage m_text;
 
   ToolUseResultData m_toolUseResult;
+
+  Aws::Utils::Document m_data;
   bool m_textHasBeenSet = false;
   bool m_toolUseResultHasBeenSet = false;
+  bool m_dataHasBeenSet = false;
 };
 
 }  // namespace Model

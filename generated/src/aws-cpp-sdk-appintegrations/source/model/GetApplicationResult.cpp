@@ -84,6 +84,10 @@ GetApplicationResult& GetApplicationResult::operator=(const Aws::AmazonWebServic
     m_applicationType = ApplicationTypeMapper::GetApplicationTypeForName(jsonValue.GetString("ApplicationType"));
     m_applicationTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AuthConfig")) {
+    m_authConfig = jsonValue.GetObject("AuthConfig");
+    m_authConfigHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

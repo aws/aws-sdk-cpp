@@ -34,7 +34,7 @@ class Configuration {
 
   ///@{
   /**
-   * <p>The configuration information of the Amazon Connect data source.</p>
+   * <p>The configuration information of the Connect Customer data source.</p>
    */
   inline const ConnectConfiguration& GetConnectConfiguration() const { return m_connectConfiguration; }
   inline bool ConnectConfigurationHasBeenSet() const { return m_connectConfigurationHasBeenSet; }

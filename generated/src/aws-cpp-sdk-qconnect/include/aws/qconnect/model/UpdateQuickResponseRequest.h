@@ -247,7 +247,7 @@ class UpdateQuickResponseRequest : public QConnectRequest {
 
   ///@{
   /**
-   * <p>The Amazon Connect contact channels this quick response applies to. The
+   * <p>The Connect Customer contact channels this quick response applies to. The
    * supported contact channel types include <code>Chat</code>.</p>
    */
   inline const Aws::Vector<Aws::String>& GetChannels() const { return m_channels; }

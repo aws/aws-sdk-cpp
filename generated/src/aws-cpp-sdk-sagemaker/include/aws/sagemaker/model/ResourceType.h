@@ -30,7 +30,8 @@ enum class ResourceType {
   HyperParameterTuningJob,
   ModelCard,
   PipelineVersion,
-  Job
+  Job,
+  HubContent
 };
 
 namespace ResourceTypeMapper {

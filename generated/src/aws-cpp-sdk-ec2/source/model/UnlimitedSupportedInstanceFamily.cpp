@@ -19,6 +19,7 @@ static const int t2_HASH = HashingUtils::HashString("t2");
 static const int t3_HASH = HashingUtils::HashString("t3");
 static const int t3a_HASH = HashingUtils::HashString("t3a");
 static const int t4g_HASH = HashingUtils::HashString("t4g");
+static const int t8i_HASH = HashingUtils::HashString("t8i");
 
 UnlimitedSupportedInstanceFamily GetUnlimitedSupportedInstanceFamilyForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ UnlimitedSupportedInstanceFamily GetUnlimitedSupportedInstanceFamilyForName(cons
     return UnlimitedSupportedInstanceFamily::t3a;
   } else if (hashCode == t4g_HASH) {
     return UnlimitedSupportedInstanceFamily::t4g;
+  } else if (hashCode == t8i_HASH) {
+    return UnlimitedSupportedInstanceFamily::t8i;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForUnlimitedSupportedInstanceFamily(UnlimitedSupportedInstanc
       return "t3a";
     case UnlimitedSupportedInstanceFamily::t4g:
       return "t4g";
+    case UnlimitedSupportedInstanceFamily::t8i:
+      return "t8i";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

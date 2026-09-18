@@ -35,6 +35,10 @@ Aws::String UpdateNotebookRequest::SerializePayload() const {
     payload.WithArray("cellOrder", std::move(cellOrderJsonList));
   }
 
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", NotebookTypeMapper::GetNameForNotebookType(m_type));
+  }
+
   if (m_metadataHasBeenSet) {
     JsonValue metadataJsonMap;
     for (auto& metadataItem : m_metadata) {

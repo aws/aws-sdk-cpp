@@ -35,7 +35,7 @@ class AmazonConnectGuideAssociationData {
 
   ///@{
   /**
-   * <p> The Amazon Resource Name (ARN) of an Amazon Connect flow. Step-by-step
+   * <p> The Amazon Resource Name (ARN) of an Connect Customer flow. Step-by-step
    * guides are a type of flow.</p>
    */
   inline const Aws::String& GetFlowId() const { return m_flowId; }

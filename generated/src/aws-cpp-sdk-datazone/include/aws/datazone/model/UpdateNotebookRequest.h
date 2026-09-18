@@ -13,6 +13,7 @@
 #include <aws/datazone/model/CellInformation.h>
 #include <aws/datazone/model/EnvironmentConfig.h>
 #include <aws/datazone/model/NotebookStatus.h>
+#include <aws/datazone/model/NotebookType.h>
 
 #include <utility>
 
@@ -149,6 +150,22 @@ class UpdateNotebookRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The updated type of the notebook.</p>
+   */
+  inline NotebookType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(NotebookType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline UpdateNotebookRequest& WithType(NotebookType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The updated metadata for the notebook, specified as key-value pairs.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const { return m_metadata; }
@@ -245,6 +262,8 @@ class UpdateNotebookRequest : public DataZoneRequest {
 
   Aws::Vector<CellInformation> m_cellOrder;
 
+  NotebookType m_type{NotebookType::NOT_SET};
+
   Aws::Map<Aws::String, Aws::String> m_metadata;
 
   Aws::Map<Aws::String, Aws::String> m_parameters;
@@ -258,6 +277,7 @@ class UpdateNotebookRequest : public DataZoneRequest {
   bool m_statusHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_cellOrderHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
   bool m_environmentConfigurationHasBeenSet = false;

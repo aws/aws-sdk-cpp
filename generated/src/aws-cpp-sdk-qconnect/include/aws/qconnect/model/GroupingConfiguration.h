@@ -64,8 +64,8 @@ class GroupingConfiguration {
    * <p>The list of values that define different groups of Amazon Q in Connect
    * users.</p> <ul> <li> <p>When setting <code>criteria</code> to
    * <code>RoutingProfileArn</code>, you need to provide a list of ARNs of <a
-   * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_RoutingProfile.html">Amazon
-   * Connect routing profiles</a> as values of this parameter.</p> </li> </ul>
+   * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_RoutingProfile.html">Connect
+   * Customer routing profiles</a> as values of this parameter.</p> </li> </ul>
    */
   inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
   inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }

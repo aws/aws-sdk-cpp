@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/datazone/model/NotebookStatus.h>
+#include <aws/datazone/model/NotebookType.h>
 
 #include <utility>
 
@@ -124,6 +125,22 @@ class NotebookSummary {
 
   ///@{
   /**
+   * <p>The type of the notebook.</p>
+   */
+  inline NotebookType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(NotebookType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline NotebookSummary& WithType(NotebookType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The description of the notebook.</p>
    */
   inline const Aws::String& GetDescription() const { return m_description; }
@@ -222,6 +239,8 @@ class NotebookSummary {
 
   NotebookStatus m_status{NotebookStatus::NOT_SET};
 
+  NotebookType m_type{NotebookType::NOT_SET};
+
   Aws::String m_description;
 
   Aws::Utils::DateTime m_createdAt{};
@@ -236,6 +255,7 @@ class NotebookSummary {
   bool m_owningProjectIdHasBeenSet = false;
   bool m_domainIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_createdByHasBeenSet = false;

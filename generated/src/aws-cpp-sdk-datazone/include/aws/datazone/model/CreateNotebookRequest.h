@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datazone/DataZoneRequest.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
+#include <aws/datazone/model/NotebookType.h>
 
 #include <utility>
 
@@ -105,6 +106,22 @@ class CreateNotebookRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The type of the notebook.</p>
+   */
+  inline NotebookType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(NotebookType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline CreateNotebookRequest& WithType(NotebookType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The metadata for the notebook, specified as key-value pairs. You can specify
    * up to 50 entries, with keys up to 128 characters and values up to 1024
    * characters.</p>
@@ -182,6 +199,8 @@ class CreateNotebookRequest : public DataZoneRequest {
 
   Aws::String m_description;
 
+  NotebookType m_type{NotebookType::NOT_SET};
+
   Aws::Map<Aws::String, Aws::String> m_metadata;
 
   Aws::Map<Aws::String, Aws::String> m_parameters;
@@ -191,6 +210,7 @@ class CreateNotebookRequest : public DataZoneRequest {
   bool m_owningProjectIdentifierHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;

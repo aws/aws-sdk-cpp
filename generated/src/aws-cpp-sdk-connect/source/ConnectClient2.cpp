@@ -45,6 +45,7 @@
 #include <aws/connect/model/ListRoutingProfilesRequest.h>
 #include <aws/connect/model/ListRulesRequest.h>
 #include <aws/connect/model/ListSecurityKeysRequest.h>
+#include <aws/connect/model/ListSecurityProfileAIAgentsRequest.h>
 #include <aws/connect/model/ListSecurityProfileApplicationsRequest.h>
 #include <aws/connect/model/ListSecurityProfileFlowModulesRequest.h>
 #include <aws/connect/model/ListSecurityProfilePermissionsRequest.h>
@@ -105,7 +106,6 @@
 #include <aws/connect/model/SendOutboundEmailRequest.h>
 #include <aws/connect/model/SendOutboundWebNotificationRequest.h>
 #include <aws/connect/model/StartAssistantContactRequest.h>
-#include <aws/connect/model/StartAttachedFileUploadRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/CoreErrors.h>
@@ -918,6 +918,30 @@ ListSecurityKeysOutcome ConnectClient::ListSecurityKeys(const ListSecurityKeysRe
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListSecurityKeysOutcome(result.GetResultWithOwnership())
                             : ListSecurityKeysOutcome(std::move(result.GetError()));
+}
+
+ListSecurityProfileAIAgentsOutcome ConnectClient::ListSecurityProfileAIAgents(const ListSecurityProfileAIAgentsRequest& request) const {
+  if (!request.SecurityProfileIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListSecurityProfileAIAgents", "Required field: SecurityProfileId, is not set");
+    return ListSecurityProfileAIAgentsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                   "Missing required field [SecurityProfileId]", false));
+  }
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListSecurityProfileAIAgents", "Required field: InstanceId, is not set");
+    return ListSecurityProfileAIAgentsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                   "Missing required field [InstanceId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/security-profiles-ai-agents/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSecurityProfileId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSecurityProfileAIAgentsOutcome(result.GetResultWithOwnership())
+                            : ListSecurityProfileAIAgentsOutcome(std::move(result.GetError()));
 }
 
 ListSecurityProfileApplicationsOutcome ConnectClient::ListSecurityProfileApplications(
@@ -1836,27 +1860,4 @@ StartAssistantContactOutcome ConnectClient::StartAssistantContact(const StartAss
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? StartAssistantContactOutcome(result.GetResultWithOwnership())
                             : StartAssistantContactOutcome(std::move(result.GetError()));
-}
-
-StartAttachedFileUploadOutcome ConnectClient::StartAttachedFileUpload(const StartAttachedFileUploadRequest& request) const {
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("StartAttachedFileUpload", "Required field: InstanceId, is not set");
-    return StartAttachedFileUploadOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                               "Missing required field [InstanceId]", false));
-  }
-  if (!request.AssociatedResourceArnHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("StartAttachedFileUpload", "Required field: AssociatedResourceArn, is not set");
-    return StartAttachedFileUploadOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                               "Missing required field [AssociatedResourceArn]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/attached-files/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? StartAttachedFileUploadOutcome(result.GetResultWithOwnership())
-                            : StartAttachedFileUploadOutcome(std::move(result.GetError()));
 }

@@ -184,7 +184,7 @@ class CreateQuickResponseRequest : public QConnectRequest {
 
   ///@{
   /**
-   * <p>The Amazon Connect channels this quick response applies to.</p>
+   * <p>The Connect Customer channels this quick response applies to.</p>
    */
   inline const Aws::Vector<Aws::String>& GetChannels() const { return m_channels; }
   inline bool ChannelsHasBeenSet() const { return m_channelsHasBeenSet; }

@@ -9,6 +9,7 @@
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/model/DataQualityRuleRecommendationRunAdditionalRunOptions.h>
 #include <aws/glue/model/DataSource.h>
+#include <aws/glue/model/RecommendationMode.h>
 
 #include <utility>
 
@@ -56,7 +57,10 @@ class StartDataQualityRuleRecommendationRunRequest : public GlueRequest {
 
   ///@{
   /**
-   * <p>An IAM role supplied to encrypt the results of the run.</p>
+   * <p>The IAM role that Glue assumes to access resources for the run.</p> <p>For
+   * more information, see <a
+   * href="https://docs.aws.amazon.com/glue/latest/dg/data-quality-authorization.html">Configure
+   * IAM permissions for Glue Data Quality</a>.</p>
    */
   inline const Aws::String& GetRole() const { return m_role; }
   inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
@@ -180,6 +184,23 @@ class StartDataQualityRuleRecommendationRunRequest : public GlueRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The mode that Glue Data Quality uses to recommend rules.</p> <p>The default
+   * is <code>BASIC</code>.</p>
+   */
+  inline RecommendationMode GetRecommendationMode() const { return m_recommendationMode; }
+  inline bool RecommendationModeHasBeenSet() const { return m_recommendationModeHasBeenSet; }
+  inline void SetRecommendationMode(RecommendationMode value) {
+    m_recommendationModeHasBeenSet = true;
+    m_recommendationMode = value;
+  }
+  inline StartDataQualityRuleRecommendationRunRequest& WithRecommendationMode(RecommendationMode value) {
+    SetRecommendationMode(value);
+    return *this;
+  }
+  ///@}
  private:
   DataSource m_dataSource;
 
@@ -196,6 +217,8 @@ class StartDataQualityRuleRecommendationRunRequest : public GlueRequest {
   Aws::String m_clientToken;
 
   DataQualityRuleRecommendationRunAdditionalRunOptions m_additionalRunOptions;
+
+  RecommendationMode m_recommendationMode{RecommendationMode::NOT_SET};
   bool m_dataSourceHasBeenSet = false;
   bool m_roleHasBeenSet = false;
   bool m_numberOfWorkersHasBeenSet = false;
@@ -204,6 +227,7 @@ class StartDataQualityRuleRecommendationRunRequest : public GlueRequest {
   bool m_dataQualitySecurityConfigurationHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
   bool m_additionalRunOptionsHasBeenSet = false;
+  bool m_recommendationModeHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -9,6 +9,7 @@
 #include <aws/sagemaker/model/Experiment.h>
 #include <aws/sagemaker/model/FeatureGroup.h>
 #include <aws/sagemaker/model/FeatureMetadata.h>
+#include <aws/sagemaker/model/HubContent.h>
 #include <aws/sagemaker/model/HyperParameterTuningJobSearchEntity.h>
 #include <aws/sagemaker/model/Job.h>
 #include <aws/sagemaker/model/ModelCard.h>
@@ -341,6 +342,24 @@ class SearchRecord {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The properties of a hub content resource.</p>
+   */
+  inline const HubContent& GetHubContent() const { return m_hubContent; }
+  inline bool HubContentHasBeenSet() const { return m_hubContentHasBeenSet; }
+  template <typename HubContentT = HubContent>
+  void SetHubContent(HubContentT&& value) {
+    m_hubContentHasBeenSet = true;
+    m_hubContent = std::forward<HubContentT>(value);
+  }
+  template <typename HubContentT = HubContent>
+  SearchRecord& WithHubContent(HubContentT&& value) {
+    SetHubContent(std::forward<HubContentT>(value));
+    return *this;
+  }
+  ///@}
  private:
   TrainingJob m_trainingJob;
 
@@ -375,6 +394,8 @@ class SearchRecord {
   ModelDashboardModel m_model;
 
   Job m_job;
+
+  HubContent m_hubContent;
   bool m_trainingJobHasBeenSet = false;
   bool m_experimentHasBeenSet = false;
   bool m_trialHasBeenSet = false;
@@ -392,6 +413,7 @@ class SearchRecord {
   bool m_modelCardHasBeenSet = false;
   bool m_modelHasBeenSet = false;
   bool m_jobHasBeenSet = false;
+  bool m_hubContentHasBeenSet = false;
 };
 
 }  // namespace Model

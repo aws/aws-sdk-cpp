@@ -8,6 +8,7 @@
 #include <aws/appintegrations/model/ApplicationConfig.h>
 #include <aws/appintegrations/model/ApplicationSourceConfig.h>
 #include <aws/appintegrations/model/ApplicationType.h>
+#include <aws/appintegrations/model/AuthConfig.h>
 #include <aws/appintegrations/model/IframeConfig.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
@@ -284,6 +285,24 @@ class GetApplicationResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The authentication settings that Connect Customer uses when calling the
+   * external application.</p>
+   */
+  inline const AuthConfig& GetAuthConfig() const { return m_authConfig; }
+  template <typename AuthConfigT = AuthConfig>
+  void SetAuthConfig(AuthConfigT&& value) {
+    m_authConfigHasBeenSet = true;
+    m_authConfig = std::forward<AuthConfigT>(value);
+  }
+  template <typename AuthConfigT = AuthConfig>
+  GetApplicationResult& WithAuthConfig(AuthConfigT&& value) {
+    SetAuthConfig(std::forward<AuthConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -328,6 +347,8 @@ class GetApplicationResult {
 
   ApplicationType m_applicationType{ApplicationType::NOT_SET};
 
+  AuthConfig m_authConfig;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
@@ -344,6 +365,7 @@ class GetApplicationResult {
   bool m_applicationConfigHasBeenSet = false;
   bool m_iframeConfigHasBeenSet = false;
   bool m_applicationTypeHasBeenSet = false;
+  bool m_authConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

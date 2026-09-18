@@ -10,6 +10,7 @@
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
 #include <aws/transcribe/model/BaseModelName.h>
 #include <aws/transcribe/model/CLMLanguageCode.h>
+#include <aws/transcribe/model/EncryptionConfiguration.h>
 #include <aws/transcribe/model/InputDataConfig.h>
 #include <aws/transcribe/model/Tag.h>
 
@@ -134,6 +135,26 @@ class CreateLanguageModelRequest : public TranscribeServiceRequest {
 
   ///@{
   /**
+   * <p>Specifies the encryption configuration for your custom language model. Your
+   * model artifacts are encrypted with the specified KMS key or with an AWS-owned
+   * key if a key is not supplied.</p>
+   */
+  inline const EncryptionConfiguration& GetEncryptionConfiguration() const { return m_encryptionConfiguration; }
+  inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
+  template <typename EncryptionConfigurationT = EncryptionConfiguration>
+  void SetEncryptionConfiguration(EncryptionConfigurationT&& value) {
+    m_encryptionConfigurationHasBeenSet = true;
+    m_encryptionConfiguration = std::forward<EncryptionConfigurationT>(value);
+  }
+  template <typename EncryptionConfigurationT = EncryptionConfiguration>
+  CreateLanguageModelRequest& WithEncryptionConfiguration(EncryptionConfigurationT&& value) {
+    SetEncryptionConfiguration(std::forward<EncryptionConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Adds one or more custom tags, each in the form of a key:value pair, to a new
    * custom language model at the time you create this new model.</p> <p>To learn
    * more about using tags with Amazon Transcribe, refer to <a
@@ -168,11 +189,14 @@ class CreateLanguageModelRequest : public TranscribeServiceRequest {
 
   InputDataConfig m_inputDataConfig;
 
+  EncryptionConfiguration m_encryptionConfiguration;
+
   Aws::Vector<Tag> m_tags;
   bool m_languageCodeHasBeenSet = false;
   bool m_baseModelNameHasBeenSet = false;
   bool m_modelNameHasBeenSet = false;
   bool m_inputDataConfigHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

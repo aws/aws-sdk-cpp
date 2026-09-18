@@ -119,13 +119,13 @@ class GuardrailPiiEntityConfig {
    * (SIN) is a nine-digit unique identifier, required for individuals to access
    * government programs and benefits.</p> <p>The SIN is formatted as three groups of
    * three digits, such as <i> 123-456-789</i>. A SIN can be validated through a
-   * simple check-digit process called the <a
-   * href="https://www.wikipedia.org/wiki/Luhn_algorithm">Luhn algorithm</a> .</p>
-   * </li> </ul> </li> <li> <p> <b>UK Specific</b> </p> <ul> <li> <p>
-   * <b>UK_NATIONAL_HEALTH_SERVICE_NUMBER</b> </p> <p>A UK National Health Service
-   * Number is a 10-17 digit number, such as <i>485 555 3456</i>. The current system
-   * formats the 10-digit number with spaces after the third and sixth digits. The
-   * final digit is an error-detecting checksum.</p> </li> <li> <p>
+   * simple check-digit process called the Luhn algorithm. For more information, see
+   * <a href="https://www.wikipedia.org/wiki/Luhn_algorithm">Luhn algorithm</a> on
+   * the Wikipedia website.</p> </li> </ul> </li> <li> <p> <b>UK Specific</b> </p>
+   * <ul> <li> <p> <b>UK_NATIONAL_HEALTH_SERVICE_NUMBER</b> </p> <p>A UK National
+   * Health Service Number is a 10-17 digit number, such as <i>485 555 3456</i>. The
+   * current system formats the 10-digit number with spaces after the third and sixth
+   * digits. The final digit is an error-detecting checksum.</p> </li> <li> <p>
    * <b>UK_NATIONAL_INSURANCE_NUMBER</b> </p> <p>A UK National Insurance Number
    * (NINO) provides individuals with access to National Insurance (social security)
    * benefits. It is also used for some purposes in the UK tax system.</p> <p>The

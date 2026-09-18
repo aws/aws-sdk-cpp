@@ -961,6 +961,7 @@
 #include <aws/glue/model/RecipeAction.h>
 #include <aws/glue/model/RecipeReference.h>
 #include <aws/glue/model/RecipeStep.h>
+#include <aws/glue/model/RecommendationMode.h>
 #include <aws/glue/model/RecrawlBehavior.h>
 #include <aws/glue/model/RecrawlPolicy.h>
 #include <aws/glue/model/RedshiftSource.h>

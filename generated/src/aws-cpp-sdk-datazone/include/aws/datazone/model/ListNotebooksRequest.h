@@ -8,6 +8,7 @@
 #include <aws/datazone/DataZoneRequest.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/datazone/model/NotebookStatus.h>
+#include <aws/datazone/model/NotebookType.h>
 #include <aws/datazone/model/SortKey.h>
 #include <aws/datazone/model/SortOrder.h>
 
@@ -141,6 +142,22 @@ class ListNotebooksRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The type to filter notebooks by.</p>
+   */
+  inline NotebookType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(NotebookType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline ListNotebooksRequest& WithType(NotebookType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>When the number of notebooks is greater than the default value for the
    * <code>MaxResults</code> parameter, or if you explicitly specify a value for
    * <code>MaxResults</code> that is less than the number of notebooks, the response
@@ -174,6 +191,8 @@ class ListNotebooksRequest : public DataZoneRequest {
 
   NotebookStatus m_status{NotebookStatus::NOT_SET};
 
+  NotebookType m_type{NotebookType::NOT_SET};
+
   Aws::String m_nextToken;
   bool m_domainIdentifierHasBeenSet = false;
   bool m_owningProjectIdentifierHasBeenSet = false;
@@ -181,6 +200,7 @@ class ListNotebooksRequest : public DataZoneRequest {
   bool m_sortOrderHasBeenSet = false;
   bool m_sortByHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

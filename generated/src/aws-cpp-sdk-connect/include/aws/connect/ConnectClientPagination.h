@@ -55,6 +55,7 @@
 #include <aws/connect/model/ListRoutingProfilesPaginationTraits.h>
 #include <aws/connect/model/ListRulesPaginationTraits.h>
 #include <aws/connect/model/ListSecurityKeysPaginationTraits.h>
+#include <aws/connect/model/ListSecurityProfileAIAgentsPaginationTraits.h>
 #include <aws/connect/model/ListSecurityProfileApplicationsPaginationTraits.h>
 #include <aws/connect/model/ListSecurityProfileFlowModulesPaginationTraits.h>
 #include <aws/connect/model/ListSecurityProfilePermissionsPaginationTraits.h>
@@ -224,6 +225,9 @@ using ListRulesPaginator =
     Aws::Utils::Pagination::Paginator<ConnectClient, Model::ListRulesRequest, Pagination::ListRulesPaginationTraits<ConnectClient>>;
 using ListSecurityKeysPaginator = Aws::Utils::Pagination::Paginator<ConnectClient, Model::ListSecurityKeysRequest,
                                                                     Pagination::ListSecurityKeysPaginationTraits<ConnectClient>>;
+using ListSecurityProfileAIAgentsPaginator =
+    Aws::Utils::Pagination::Paginator<ConnectClient, Model::ListSecurityProfileAIAgentsRequest,
+                                      Pagination::ListSecurityProfileAIAgentsPaginationTraits<ConnectClient>>;
 using ListSecurityProfileApplicationsPaginator =
     Aws::Utils::Pagination::Paginator<ConnectClient, Model::ListSecurityProfileApplicationsRequest,
                                       Pagination::ListSecurityProfileApplicationsPaginationTraits<ConnectClient>>;

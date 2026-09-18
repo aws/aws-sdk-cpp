@@ -82,6 +82,7 @@
 #include <aws/connect/model/ListIntegrationAssociationsPaginationTraits.h>
 #include <aws/connect/model/ListContactReferencesPaginationTraits.h>
 #include <aws/connect/model/SearchPredefinedAttributesPaginationTraits.h>
+#include <aws/connect/model/ListSecurityProfileAIAgentsPaginationTraits.h>
 #include <aws/connect/model/ListContactFlowVersionsPaginationTraits.h>
 #include <aws/connect/model/ListLexBotsPaginationTraits.h>
 #include <aws/connect/model/ListDataTablesPaginationTraits.h>

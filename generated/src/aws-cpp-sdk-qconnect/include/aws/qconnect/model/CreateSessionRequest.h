@@ -180,7 +180,7 @@ class CreateSessionRequest : public QConnectRequest {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the email contact in Amazon Connect. Used
+   * <p>The Amazon Resource Name (ARN) of the email contact in Connect Customer. Used
    * to retrieve email content and establish session context for AI-powered email
    * assistance.</p>
    */
