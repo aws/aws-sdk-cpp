@@ -15,6 +15,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/threading/ReaderWriterLock.h>
 #include <aws/core/internal/AWSHttpResourceClient.h>
+#include <aws/core/auth/CredentialRefreshResult.h>
 #include <aws/core/auth/AWSCredentials.h>
 #include <aws/core/config/AWSProfileConfigLoader.h>
 #include <aws/core/client/RetryStrategy.h>
@@ -22,6 +23,7 @@
 
 namespace Aws
 {
+    namespace Internal { class CredentialRefreshStateImpl; }
     namespace Client
     {
         struct ClientConfiguration;
@@ -58,20 +60,19 @@ namespace Aws
         class AWS_CORE_API AWSCredentialsProvider
         {
         public:
-            /**
-             * Initializes provider. Sets last Loaded time count to 0, forcing a refresh on the
-             * first call to GetAWSCredentials.
-             */
-            AWSCredentialsProvider() : m_lastLoadedMs(0)
-            {
-            }
+            AWSCredentialsProvider();
 
-            virtual ~AWSCredentialsProvider() = default;
+            virtual ~AWSCredentialsProvider();
 
             /**
              * The core of the credential provider interface. Override this method to control how credentials are retrieved.
              */
             virtual AWSCredentials GetAWSCredentials() = 0;
+
+            /**
+             * Marks cached credentials for refresh after a service rejects them (ExpiredToken/InvalidToken).
+             */
+            virtual void Invalidate();
 
         protected:
             /**
@@ -80,9 +81,30 @@ namespace Aws
              */
             virtual bool IsTimeToRefresh(long reloadFrequency);
             virtual void Reload();
+
+            /**
+             * One attempt against the credential source, classified fresh/recoverable/non-recoverable.
+             * Providers on the refresh lifecycle override this; the default returns a recoverable failure.
+             */
+            virtual Aws::Auth::RefreshResult<AWSCredentials> FetchCredentialsFromSource();
+
+            /**
+             * Runs the refresh lifecycle over FetchCredentialsFromSource(): windows, backoff, serve-last-good.
+             * Returns the resolved credentials, or empty when a refresh fails with nothing cached to serve.
+             * Intended for a provider's GetAWSCredentials() to call once it adopts the lifecycle under
+             * AWS_NEW_CREDENTIAL_REFRESH_2026.
+             */
+            AWSCredentials ResolveCredentialsWithLifecycle();
+
+            /**
+             * Clock for the refresh windows/backoff; defaults to the system clock, overridable for tests.
+             */
+            virtual Aws::Utils::DateTime CurrentTime() const;
+
             mutable Aws::Utils::Threading::ReaderWriterLock m_reloadLock;
         private:
             long long m_lastLoadedMs;
+            std::unique_ptr<Aws::Internal::CredentialRefreshStateImpl> m_refreshState;
         };
 
         /**

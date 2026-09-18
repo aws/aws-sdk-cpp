@@ -5,6 +5,7 @@
 
 
 #include <aws/core/auth/AWSCredentialsProvider.h>
+#include <aws/core/internal/CredentialRefresh.h>
 
 #include <aws/core/config/AWSProfileConfigLoader.h>
 #include <aws/core/client/ClientConfiguration.h>
@@ -51,6 +52,18 @@ static const char DEFAULT_CREDENTIALS_FILE[] = "credentials";
 extern const char DEFAULT_CONFIG_FILE[] = "config";
 
 
+namespace Aws
+{
+    namespace Internal
+    {
+        class CredentialRefreshStateImpl : public CredentialRefreshState<Aws::Auth::AWSCredentials>
+        {
+        public:
+            using CredentialRefreshState<Aws::Auth::AWSCredentials>::CredentialRefreshState;
+        };
+    }
+}
+
 void AWSCredentialsProvider::Reload()
 {
     m_lastLoadedMs = DateTime::Now().Millis();
@@ -63,6 +76,46 @@ bool AWSCredentialsProvider::IsTimeToRefresh(long reloadFrequency)
         return true;
     }
     return false;
+}
+
+AWSCredentialsProvider::AWSCredentialsProvider()
+    : m_lastLoadedMs(0),
+      m_refreshState(new Aws::Internal::CredentialRefreshStateImpl(
+          [this]() { return FetchCredentialsFromSource(); },
+          [this]() { return CurrentTime(); }))
+{
+}
+
+AWSCredentialsProvider::~AWSCredentialsProvider() = default;
+
+static const char AWS_CREDENTIALS_PROVIDER_BASE_LOG_TAG[] = "AWSCredentialsProvider";
+
+Aws::Auth::RefreshResult<AWSCredentials> AWSCredentialsProvider::FetchCredentialsFromSource()
+{
+    // Non-recoverable (not a silent backoff) so a missing override surfaces fast.
+    AWS_LOGSTREAM_ERROR(AWS_CREDENTIALS_PROVIDER_BASE_LOG_TAG, "FetchCredentialsFromSource() not overridden by this provider");
+    return Aws::Auth::RefreshResult<AWSCredentials>::NonRecoverable("FetchCredentialsFromSource not overridden");
+}
+
+DateTime AWSCredentialsProvider::CurrentTime() const
+{
+    return DateTime::Now();
+}
+
+AWSCredentials AWSCredentialsProvider::ResolveCredentialsWithLifecycle()
+{
+    auto outcome = m_refreshState->GetCredentials();
+    if (!outcome.IsSuccess())
+    {
+        AWS_LOGSTREAM_ERROR(AWS_CREDENTIALS_PROVIDER_BASE_LOG_TAG, "Credential refresh failed, returning empty credentials: " << outcome.GetError());
+        return AWSCredentials();
+    }
+    return outcome.GetResult();
+}
+
+void AWSCredentialsProvider::Invalidate()
+{
+    m_refreshState->Invalidate();
 }
 
 
