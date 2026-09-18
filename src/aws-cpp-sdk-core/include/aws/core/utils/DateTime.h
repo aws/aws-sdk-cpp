@@ -79,6 +79,7 @@ namespace Aws
 
            /**
             * Initializes time point to epoch time in seconds
+            * Values beyond the system clock's range are clamped to its maximum time point.
             */
             DateTime(uint64_t secondsSinceEpoch);
 
