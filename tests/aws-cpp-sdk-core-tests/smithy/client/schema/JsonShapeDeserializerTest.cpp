@@ -428,7 +428,7 @@ TEST_F(JsonShapeDeserializerTest, DeserializesLiteralPayload) {
 // members (push), and populates itself from per-member deserialize callbacks.
 class Widget : public SerializableStruct {
  public:
-  const Schema& GetSchema() const override { return *Root(); }
+  const Schema& GetSchema() const override { return *m_schema; }
 
   void SerializeMembers(ShapeSerializer& serializer) const override { serializer.WriteString(*GetSchema().GetMember("foo").value(), foo); }
 
@@ -449,11 +449,10 @@ class Widget : public SerializableStruct {
   Aws::String foo{};
 
  private:
-  static const std::shared_ptr<const Schema>& Root() {
-    static const std::shared_ptr<const Schema> schema =
-        Schema::StructureBuilder("Widget").PutMember("foo", Schema::CreateString("S")).Build();
-    return schema;
+  static std::shared_ptr<const Schema> BuildSchema() {
+    return Schema::StructureBuilder("Widget").PutMember("foo", Schema::CreateString("S")).Build();
   }
+  std::shared_ptr<const Schema> m_schema{BuildSchema()};
 };
 
 TEST_F(JsonShapeDeserializerTest, DeserializesIntoClass) {
