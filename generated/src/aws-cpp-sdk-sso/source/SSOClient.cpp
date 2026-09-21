@@ -139,7 +139,7 @@ void SSOClient::OverrideEndpoint(const Aws::String& endpoint) {
 }
 SSOClient::InvokeOperationOutcome SSOClient::InvokeServiceOperation(
     const AmazonWebServiceRequest& request, const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
-    Aws::Http::HttpMethod httpMethod) const {
+    Aws::Http::HttpMethod httpMethod, const char* signerName) const {
   auto operationName = request.GetServiceRequestName();
   auto serviceName = GetServiceClientName();
 
@@ -170,7 +170,7 @@ SSOClient::InvokeOperationOutcome SSOClient::InvokeServiceOperation(
 
         resolveUri(endpointResolutionOutcome);
 
-        return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, Aws::Auth::SIGV4_SIGNER)};
+        return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, signerName)};
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
@@ -198,7 +198,7 @@ GetRoleCredentialsOutcome SSOClient::GetRoleCredentials(const GetRoleCredentials
     endpointResolutionOutcome.GetResult().AddPathSegments("/federation/credentials");
   };
 
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? GetRoleCredentialsOutcome(result.GetResultWithOwnership())
                             : GetRoleCredentialsOutcome(std::move(result.GetError()));
 }
@@ -220,7 +220,7 @@ ListAccountRolesOutcome SSOClient::ListAccountRoles(const ListAccountRolesReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/assignment/roles");
   };
 
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? ListAccountRolesOutcome(result.GetResultWithOwnership())
                             : ListAccountRolesOutcome(std::move(result.GetError()));
 }
@@ -237,7 +237,7 @@ ListAccountsOutcome SSOClient::ListAccounts(const ListAccountsRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/assignment/accounts");
   };
 
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? ListAccountsOutcome(result.GetResultWithOwnership()) : ListAccountsOutcome(std::move(result.GetError()));
 }
 
@@ -253,6 +253,6 @@ LogoutOutcome SSOClient::Logout(const LogoutRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/logout");
   };
 
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? LogoutOutcome(result.GetResultWithOwnership()) : LogoutOutcome(std::move(result.GetError()));
 }

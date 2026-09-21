@@ -1,6 +1,11 @@
 #set($emitGenericOperation = true)
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationRequestRequiredMemberValidate.vm")
 #set($emitGenericOperation = false)
+#if($operation.signerName == "Aws::Auth::SIGV4_SIGNER")
+#set($signerArg = "")
+#else
+#set($signerArg = ", ${operation.signerName}")
+#end
 
 #if($serviceModel.metadata.serviceId == "EC2")
 #set($presignSpelling = "PresignedUrl")
@@ -30,13 +35,13 @@
                                                 Aws::Http::HttpMethod::HTTP_GET, request.GetSourceRegion().c_str(),
                                                 {{ "DestinationRegion", m_region }}, 3600));
 
-        auto result = InvokeServiceOperation(newRequest, Aws::Http::HttpMethod::HTTP_${operation.http.method});
+        auto result = InvokeServiceOperation(newRequest, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerArg});
         return result.IsSuccess() ? ${operation.name}Outcome(result.GetResultWithOwnership()) : ${operation.name}Outcome(std::move(result.GetError()));
     }
 #end
 
 #if($metadata.protocol == "ec2" || $metadata.protocol == "json" || $metadata.protocol == "query" || $metadata.protocol == "smithy-rpc-v2-cbor")
-    auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_${operation.http.method});
+    auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerArg});
     return result.IsSuccess() ? ${operation.name}Outcome(result.GetResultWithOwnership()) : ${operation.name}Outcome(std::move(result.GetError()));
 #elseif($metadata.protocol == "rest-json" || $metadata.protocol == "rest-xml")
     auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
@@ -46,14 +51,14 @@
 
     #if($serviceModel.metadata.namespace == "S3" || $serviceModel.metadata.namespace == "S3Crt")
         #if(($serviceModel.metadata.namespace == "S3" || ($serviceModel.metadata.namespace == "S3Crt" && !$operation.s3CrtEnabled)) && $operation.shouldUsePropertyBag)
-            auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_${operation.http.method});
+            auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerArg});
             return result.IsSuccess() ? ${operation.name}Outcome(result.GetResultWithOwnership()) : ${operation.name}Outcome(std::move(result.GetError()));
         #else
-            auto result = InvokeServiceOperation(request, uriResolver, "", Aws::Http::HttpMethod::HTTP_${operation.http.method});
+            auto result = InvokeServiceOperation(request, uriResolver, "", Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerArg});
             return result.IsSuccess() ? ${operation.name}Outcome(result.GetResultWithOwnership()) : ${operation.name}Outcome(std::move(result.GetError()));
         #end
     #else
-        auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_${operation.http.method});
+        auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerArg});
         return result.IsSuccess() ? ${operation.name}Outcome(result.GetResultWithOwnership()) : ${operation.name}Outcome(std::move(result.GetError()));
     #end
 #end

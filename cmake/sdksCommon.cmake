@@ -124,6 +124,7 @@ list(APPEND SDK_TEST_PROJECT_LIST "timestream-query:tests/aws-cpp-sdk-timestream
 list(APPEND SDK_TEST_PROJECT_LIST "transcribestreaming:tests/aws-cpp-sdk-transcribestreaming-integ-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "eventbridge:tests/aws-cpp-sdk-eventbridge-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "dsql:tests/aws-cpp-sdk-dsql-unit-tests")
+list(APPEND SDK_TEST_PROJECT_LIST "sso-oidc:tests/aws-cpp-sdk-sso-oidc-unit-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "bedrock-runtime:tests/aws-cpp-sdk-bedrock-runtime-integration-tests")
 
 

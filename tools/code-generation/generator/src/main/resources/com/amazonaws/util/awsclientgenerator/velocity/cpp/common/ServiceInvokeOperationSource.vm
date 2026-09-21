@@ -1,3 +1,9 @@
+#set($serviceHasNonDefaultSigner = false)
+#foreach($signerOp in $serviceModel.operations)
+#if($signerOp.signerName != "Aws::Auth::SIGV4_SIGNER")
+#set($serviceHasNonDefaultSigner = true)
+#end
+#end
 ${className}::InvokeOperationOutcome ${className}::InvokeServiceOperation(
     const AmazonWebServiceRequest& request,
 #if($metadata.protocol == "rest-json" || $metadata.protocol == "rest-xml")
@@ -6,7 +12,8 @@ ${className}::InvokeOperationOutcome ${className}::InvokeServiceOperation(
 #if($serviceModel.metadata.namespace == "S3" || $serviceModel.metadata.namespace == "S3Crt")
     Aws::String bucketName,
 #end
-    Aws::Http::HttpMethod httpMethod
+    Aws::Http::HttpMethod httpMethod#if($serviceHasNonDefaultSigner),
+    const char* signerName#end
 ) const
 {
   auto operationName = request.GetServiceRequestName();
@@ -58,7 +65,7 @@ ${className}::InvokeOperationOutcome ${className}::InvokeServiceOperation(
         resolveUri(endpointResolutionOutcome);
 #end
 
-        return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, Aws::Auth::SIGV4_SIGNER)};
+        return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, #if($serviceHasNonDefaultSigner)signerName#{else}Aws::Auth::SIGV4_SIGNER#end)};
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName},

@@ -223,7 +223,7 @@ class AWS_SSO_API SSOClient : public Aws::Client::AWSJsonClient,
 
   InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
                                                 const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
-                                                Aws::Http::HttpMethod httpMethod) const;
+                                                Aws::Http::HttpMethod httpMethod, const char* signerName = Aws::Auth::SIGV4_SIGNER) const;
 
   SSOClientConfiguration m_clientConfiguration;
   std::shared_ptr<SSOEndpointProviderBase> m_endpointProvider;

@@ -5509,7 +5509,8 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
 
   typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CognitoIdentityProviderError> InvokeOperationOutcome;
 
-  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod,
+                                                const char* signerName = Aws::Auth::SIGV4_SIGNER) const;
 
   CognitoIdentityProviderClientConfiguration m_clientConfiguration;
   std::shared_ptr<CognitoIdentityProviderEndpointProviderBase> m_endpointProvider;
