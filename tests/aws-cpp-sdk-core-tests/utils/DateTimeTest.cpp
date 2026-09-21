@@ -264,6 +264,20 @@ TEST_F(DateTimeTest, TestISO_8601ParsingNSPrecision)
     ASSERT_EQ(gmtDate, DateTime(utcOffsetVersion, DateFormat::ISO_8601));
 }
 
+TEST_F(DateTimeTest, TestISO_8601ParsingPreservesMilliseconds)
+{
+    DateTime gmtDate("2026-09-15T18:00:00.016Z", DateFormat::ISO_8601);
+    ASSERT_TRUE(gmtDate.WasParseSuccessful());
+    ASSERT_EQ(16, gmtDate.Millis() % 1000);
+}
+
+TEST_F(DateTimeTest, TestISO_8601MillisecondRoundTrip)
+{
+    DateTime gmtDate("2026-09-15T18:00:00.016Z", DateFormat::ISO_8601);
+    ASSERT_TRUE(gmtDate.WasParseSuccessful());
+    ASSERT_EQ("2026-09-15T18:00:00.016", gmtDate.ToGmtStringWithMs());
+}
+
 TEST_F(DateTimeTest, TestISO_8601ParsingTooLowPrecision)
 {
     const char* gmtDateStr = "2002-10-02T08:05:09.12Z";
@@ -294,6 +308,20 @@ TEST_F(DateTimeTest, TestISO_8601BasicParsingMSPrecision)
     ASSERT_EQ("20021002T080509Z", gmtDate.ToGmtString(DateFormat::ISO_8601_BASIC));
 
     ASSERT_EQ(gmtDate, DateTime(utcOffsetVersion, DateFormat::ISO_8601_BASIC));
+}
+
+TEST_F(DateTimeTest, TestISO_8601BasicParsingPreservesMilliseconds)
+{
+    DateTime gmtDate("20021002T080509016Z", DateFormat::ISO_8601_BASIC);
+    ASSERT_TRUE(gmtDate.WasParseSuccessful());
+    ASSERT_EQ(16, gmtDate.Millis() % 1000);
+}
+
+TEST_F(DateTimeTest, TestISO_8601BasicMillisecondRoundTrip)
+{
+    DateTime gmtDate("20021002T080509016Z", DateFormat::ISO_8601_BASIC);
+    ASSERT_TRUE(gmtDate.WasParseSuccessful());
+    ASSERT_EQ("2002-10-02T08:05:09.016", gmtDate.ToGmtStringWithMs());
 }
 
 TEST_F(DateTimeTest, TestISO_8601Parsing_DOS_Stopped)
@@ -379,4 +407,22 @@ TEST_F(DateTimeTest, TestFormatAutoDetect)
     const char badDate[] = "2002 10,02T08 05 09G";
     DateTime parsedBadDate(badDate, DateFormat::AutoDetect);
     ASSERT_FALSE(parsedBadDate.WasParseSuccessful());
+}
+
+TEST_F(DateTimeTest, TestAutoDetectPreservesMilliseconds)
+{
+    const char* isoMsDate = "2026-09-15T18:00:00.016Z";
+    DateTime parsed(isoMsDate, DateFormat::AutoDetect);
+    ASSERT_TRUE(parsed.WasParseSuccessful());
+    ASSERT_EQ(16, parsed.Millis() % 1000);
+    ASSERT_EQ(DateTime(isoMsDate, DateFormat::ISO_8601), parsed);
+}
+
+TEST_F(DateTimeTest, TestAutoDetectBasicPreservesMilliseconds)
+{
+    const char* basicMsDate = "20021002T080509016Z";
+    DateTime parsed(basicMsDate, DateFormat::AutoDetect);
+    ASSERT_TRUE(parsed.WasParseSuccessful());
+    ASSERT_EQ(16, parsed.Millis() % 1000);
+    ASSERT_EQ(DateTime(basicMsDate, DateFormat::ISO_8601_BASIC), parsed);
 }
