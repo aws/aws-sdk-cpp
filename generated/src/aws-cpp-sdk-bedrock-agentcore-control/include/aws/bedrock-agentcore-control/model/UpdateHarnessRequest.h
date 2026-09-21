@@ -7,6 +7,7 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlRequest.h>
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/HarnessEnvironmentProviderRequest.h>
+#include <aws/bedrock-agentcore-control/model/HarnessHook.h>
 #include <aws/bedrock-agentcore-control/model/HarnessModelConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/HarnessSkill.h>
 #include <aws/bedrock-agentcore-control/model/HarnessSystemContentBlock.h>
@@ -334,6 +335,32 @@ class UpdateHarnessRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
+   * <p>The lifecycle hooks to run at defined points in the agent loop. If specified,
+   * this replaces all existing hooks. If not specified, the existing hooks are
+   * retained.</p>
+   */
+  inline const Aws::Vector<HarnessHook>& GetHooks() const { return m_hooks; }
+  inline bool HooksHasBeenSet() const { return m_hooksHasBeenSet; }
+  template <typename HooksT = Aws::Vector<HarnessHook>>
+  void SetHooks(HooksT&& value) {
+    m_hooksHasBeenSet = true;
+    m_hooks = std::forward<HooksT>(value);
+  }
+  template <typename HooksT = Aws::Vector<HarnessHook>>
+  UpdateHarnessRequest& WithHooks(HooksT&& value) {
+    SetHooks(std::forward<HooksT>(value));
+    return *this;
+  }
+  template <typename HooksT = HarnessHook>
+  UpdateHarnessRequest& AddHooks(HooksT&& value) {
+    m_hooksHasBeenSet = true;
+    m_hooks.emplace_back(std::forward<HooksT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The maximum number of iterations the agent loop can execute per invocation.
    * If not specified, the existing value is retained.</p>
    */
@@ -412,6 +439,8 @@ class UpdateHarnessRequest : public BedrockAgentCoreControlRequest {
 
   HarnessTruncationConfiguration m_truncation;
 
+  Aws::Vector<HarnessHook> m_hooks;
+
   int m_maxIterations{0};
 
   int m_maxTokens{0};
@@ -431,6 +460,7 @@ class UpdateHarnessRequest : public BedrockAgentCoreControlRequest {
   bool m_allowedToolsHasBeenSet = false;
   bool m_memoryHasBeenSet = false;
   bool m_truncationHasBeenSet = false;
+  bool m_hooksHasBeenSet = false;
   bool m_maxIterationsHasBeenSet = false;
   bool m_maxTokensHasBeenSet = false;
   bool m_timeoutSecondsHasBeenSet = false;

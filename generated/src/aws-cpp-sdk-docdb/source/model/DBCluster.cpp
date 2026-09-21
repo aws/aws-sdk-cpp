@@ -256,6 +256,12 @@ DBCluster& DBCluster::operator=(const XmlNode& xmlNode) {
       m_networkType = Aws::Utils::Xml::DecodeEscapedXmlText(networkTypeNode.GetText());
       m_networkTypeHasBeenSet = true;
     }
+    XmlNode copyTagsToSnapshotNode = resultNode.FirstChild("CopyTagsToSnapshot");
+    if (!copyTagsToSnapshotNode.IsNull()) {
+      m_copyTagsToSnapshot = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(copyTagsToSnapshotNode.GetText()).c_str()).c_str());
+      m_copyTagsToSnapshotHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -453,6 +459,10 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   if (m_networkTypeHasBeenSet) {
     oStream << location << index << locationValue << ".NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
   }
+
+  if (m_copyTagsToSnapshotHasBeenSet) {
+    oStream << location << index << locationValue << ".CopyTagsToSnapshot=" << std::boolalpha << m_copyTagsToSnapshot << "&";
+  }
 }
 
 void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -603,6 +613,9 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   }
   if (m_networkTypeHasBeenSet) {
     oStream << location << ".NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
+  }
+  if (m_copyTagsToSnapshotHasBeenSet) {
+    oStream << location << ".CopyTagsToSnapshot=" << std::boolalpha << m_copyTagsToSnapshot << "&";
   }
 }
 

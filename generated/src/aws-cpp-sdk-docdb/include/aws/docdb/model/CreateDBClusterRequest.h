@@ -402,9 +402,9 @@ class CreateDBClusterRequest : public DocDBRequest {
    * <p>A list of log types that need to be enabled for exporting to Amazon
    * CloudWatch Logs. You can enable audit logs or profiler logs. For more
    * information, see <a
-   * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/event-auditing.html">
+   * href="https://docs.aws.amazon.com/documentdb/latest/devguide/event-auditing.html">
    * Auditing Amazon DocumentDB Events</a> and <a
-   * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/profiling.html">
+   * href="https://docs.aws.amazon.com/documentdb/latest/devguide/profiling.html">
    * Profiling Amazon DocumentDB Operations</a>. </p>
    */
   inline const Aws::Vector<Aws::String>& GetEnableCloudwatchLogsExports() const { return m_enableCloudwatchLogsExports; }
@@ -565,7 +565,7 @@ class CreateDBClusterRequest : public DocDBRequest {
    * <code>DBSubnetGroup</code> specified for the cluster. A
    * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and
    * the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
-   * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/vpc-clusters.html">DocumentDB
+   * href="https://docs.aws.amazon.com/documentdb/latest/devguide/vpc-clusters.html">DocumentDB
    * clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p> <p>Valid
    * Values: <code>IPV4</code> | <code>DUAL</code> </p>
    */
@@ -579,6 +579,23 @@ class CreateDBClusterRequest : public DocDBRequest {
   template <typename NetworkTypeT = Aws::String>
   CreateDBClusterRequest& WithNetworkType(NetworkTypeT&& value) {
     SetNetworkType(std::forward<NetworkTypeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to copy all tags from the DB cluster to snapshots of the DB
+   * cluster. The default is not to copy them.</p>
+   */
+  inline bool GetCopyTagsToSnapshot() const { return m_copyTagsToSnapshot; }
+  inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
+  inline void SetCopyTagsToSnapshot(bool value) {
+    m_copyTagsToSnapshotHasBeenSet = true;
+    m_copyTagsToSnapshot = value;
+  }
+  inline CreateDBClusterRequest& WithCopyTagsToSnapshot(bool value) {
+    SetCopyTagsToSnapshot(value);
     return *this;
   }
   ///@}
@@ -651,6 +668,8 @@ class CreateDBClusterRequest : public DocDBRequest {
 
   Aws::String m_networkType;
 
+  bool m_copyTagsToSnapshot{false};
+
   Aws::String m_sourceRegion;
   bool m_availabilityZonesHasBeenSet = false;
   bool m_backupRetentionPeriodHasBeenSet = false;
@@ -677,6 +696,7 @@ class CreateDBClusterRequest : public DocDBRequest {
   bool m_manageMasterUserPasswordHasBeenSet = false;
   bool m_masterUserSecretKmsKeyIdHasBeenSet = false;
   bool m_networkTypeHasBeenSet = false;
+  bool m_copyTagsToSnapshotHasBeenSet = false;
   bool m_sourceRegionHasBeenSet = false;
 };
 

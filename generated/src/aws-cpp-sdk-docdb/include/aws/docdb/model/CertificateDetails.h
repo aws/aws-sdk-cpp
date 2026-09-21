@@ -23,9 +23,9 @@ namespace Model {
 /**
  * <p>Returns the details of the DB instance’s server certificate.</p> <p>For more
  * information, see <a
- * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating
+ * href="https://docs.aws.amazon.com/documentdb/latest/devguide/ca_cert_rotation.html">Updating
  * Your Amazon DocumentDB TLS Certificates</a> and <a
- * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html">
+ * href="https://docs.aws.amazon.com/documentdb/latest/devguide/security.encryption.ssl.html">
  * Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer
  * Guide</i>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CertificateDetails">AWS

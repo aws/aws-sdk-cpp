@@ -101,6 +101,10 @@ Aws::String ModifyDBClusterRequest::SerializePayload() const {
     ss << "NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
   }
 
+  if (m_copyTagsToSnapshotHasBeenSet) {
+    ss << "CopyTagsToSnapshot=" << std::boolalpha << m_copyTagsToSnapshot << "&";
+  }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

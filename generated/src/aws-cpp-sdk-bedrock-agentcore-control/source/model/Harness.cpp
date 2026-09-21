@@ -109,6 +109,13 @@ Harness& Harness::operator=(JsonView jsonValue) {
     m_memory = jsonValue.GetObject("memory");
     m_memoryHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("hooks")) {
+    Aws::Utils::Array<JsonView> hooksJsonList = jsonValue.GetArray("hooks");
+    for (unsigned hooksIndex = 0; hooksIndex < hooksJsonList.GetLength(); ++hooksIndex) {
+      m_hooks.push_back(hooksJsonList[hooksIndex].AsObject());
+    }
+    m_hooksHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("maxIterations")) {
     m_maxIterations = jsonValue.GetInteger("maxIterations");
     m_maxIterationsHasBeenSet = true;
@@ -225,6 +232,14 @@ JsonValue Harness::Jsonize() const {
 
   if (m_memoryHasBeenSet) {
     payload.WithObject("memory", m_memory.Jsonize());
+  }
+
+  if (m_hooksHasBeenSet) {
+    Aws::Utils::Array<JsonValue> hooksJsonList(m_hooks.size());
+    for (unsigned hooksIndex = 0; hooksIndex < hooksJsonList.GetLength(); ++hooksIndex) {
+      hooksJsonList[hooksIndex].AsObject(m_hooks[hooksIndex].Jsonize());
+    }
+    payload.WithArray("hooks", std::move(hooksJsonList));
   }
 
   if (m_maxIterationsHasBeenSet) {

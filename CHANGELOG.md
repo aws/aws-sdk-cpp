@@ -1,3 +1,12 @@
+# 1.11.897 (2026-09-21)
+
+## Service Updates
+* **Bedrock AgentCore Control**: Amazon Bedrock AgentCore Harness now supports lifecycle hooks for invocations and tool calls, with Lambda, SNS, and EventBridge targets. This release also adds apiBase for custom OpenAI-compatible endpoints
+* **Bedrock AgentCore**: Amazon Bedrock AgentCore Harness now supports lifecycle hooks for invocations and tool calls, with Lambda, SNS, and EventBridge targets. This release also adds apiBase for custom OpenAI-compatible endpoints.
+* **DocDB**: Add support for CopyTagsToSnapshot field in CreateDbCluster, ModifyDbCluster, RestoreDbClusterFromSnapshot and RestoreDbClusterToPointInTime for DocumentDB.
+* **SageMaker**: Add support for r6i, m8i, c8i, r8i instance types in Training and Processing
+* **billingconductor**: Launching Auto Billing Transfer Billing Group Creation Preference feature
+
 # 1.11.896 (2026-09-18)
 
 ## SDK Highlights

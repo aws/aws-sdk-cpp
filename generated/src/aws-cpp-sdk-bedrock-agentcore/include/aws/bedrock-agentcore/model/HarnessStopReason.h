@@ -25,7 +25,8 @@ enum class HarnessStopReason {
   model_context_window_exceeded,
   max_iterations_exceeded,
   max_output_tokens_exceeded,
-  timeout_exceeded
+  timeout_exceeded,
+  hook_stopped
 };
 
 namespace HarnessStopReasonMapper {

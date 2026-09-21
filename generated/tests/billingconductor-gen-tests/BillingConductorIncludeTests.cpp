@@ -27,6 +27,7 @@
 #include <aws/billingconductor/model/AssociateResourceErrorReason.h>
 #include <aws/billingconductor/model/AssociateResourceResponseElement.h>
 #include <aws/billingconductor/model/Attribute.h>
+#include <aws/billingconductor/model/AutoTransferBillingGroupCreationPreference.h>
 #include <aws/billingconductor/model/BatchAssociateResourcesToCustomLineItemRequest.h>
 #include <aws/billingconductor/model/BatchAssociateResourcesToCustomLineItemResult.h>
 #include <aws/billingconductor/model/BatchDisassociateResourcesFromCustomLineItemRequest.h>
@@ -78,6 +79,8 @@
 #include <aws/billingconductor/model/GetBillingGroupCostReportPaginationTraits.h>
 #include <aws/billingconductor/model/GetBillingGroupCostReportRequest.h>
 #include <aws/billingconductor/model/GetBillingGroupCostReportResult.h>
+#include <aws/billingconductor/model/GetBillingTransferPreferenceRequest.h>
+#include <aws/billingconductor/model/GetBillingTransferPreferenceResult.h>
 #include <aws/billingconductor/model/GroupByAttributeName.h>
 #include <aws/billingconductor/model/InternalServerException.h>
 #include <aws/billingconductor/model/LineItemFilter.h>
@@ -148,6 +151,8 @@
 #include <aws/billingconductor/model/UpdateBillingGroupAccountGrouping.h>
 #include <aws/billingconductor/model/UpdateBillingGroupRequest.h>
 #include <aws/billingconductor/model/UpdateBillingGroupResult.h>
+#include <aws/billingconductor/model/UpdateBillingTransferPreferenceRequest.h>
+#include <aws/billingconductor/model/UpdateBillingTransferPreferenceResult.h>
 #include <aws/billingconductor/model/UpdateCustomLineItemChargeDetails.h>
 #include <aws/billingconductor/model/UpdateCustomLineItemFlatChargeDetails.h>
 #include <aws/billingconductor/model/UpdateCustomLineItemPercentageChargeDetails.h>

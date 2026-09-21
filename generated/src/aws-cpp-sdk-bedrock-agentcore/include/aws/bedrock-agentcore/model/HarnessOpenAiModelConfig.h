@@ -72,6 +72,24 @@ class HarnessOpenAiModelConfig {
 
   ///@{
   /**
+   * <p>Optional custom endpoint URL for an OpenAI-compatible endpoint.</p>
+   */
+  inline const Aws::String& GetApiBase() const { return m_apiBase; }
+  inline bool ApiBaseHasBeenSet() const { return m_apiBaseHasBeenSet; }
+  template <typename ApiBaseT = Aws::String>
+  void SetApiBase(ApiBaseT&& value) {
+    m_apiBaseHasBeenSet = true;
+    m_apiBase = std::forward<ApiBaseT>(value);
+  }
+  template <typename ApiBaseT = Aws::String>
+  HarnessOpenAiModelConfig& WithApiBase(ApiBaseT&& value) {
+    SetApiBase(std::forward<ApiBaseT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The maximum number of tokens to allow in the generated response per
    * iteration.</p>
    */
@@ -158,6 +176,8 @@ class HarnessOpenAiModelConfig {
 
   Aws::String m_apiKeyArn;
 
+  Aws::String m_apiBase;
+
   int m_maxTokens{0};
 
   double m_temperature{0.0};
@@ -169,6 +189,7 @@ class HarnessOpenAiModelConfig {
   Aws::Utils::Document m_additionalParams;
   bool m_modelIdHasBeenSet = false;
   bool m_apiKeyArnHasBeenSet = false;
+  bool m_apiBaseHasBeenSet = false;
   bool m_maxTokensHasBeenSet = false;
   bool m_temperatureHasBeenSet = false;
   bool m_topPHasBeenSet = false;

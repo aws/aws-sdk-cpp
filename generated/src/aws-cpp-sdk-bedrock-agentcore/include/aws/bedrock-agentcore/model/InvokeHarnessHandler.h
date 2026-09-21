@@ -9,6 +9,7 @@
 #include <aws/bedrock-agentcore/model/HarnessContentBlockDeltaEvent.h>
 #include <aws/bedrock-agentcore/model/HarnessContentBlockStartEvent.h>
 #include <aws/bedrock-agentcore/model/HarnessContentBlockStopEvent.h>
+#include <aws/bedrock-agentcore/model/HarnessHookEvent.h>
 #include <aws/bedrock-agentcore/model/HarnessMessageStartEvent.h>
 #include <aws/bedrock-agentcore/model/HarnessMessageStopEvent.h>
 #include <aws/bedrock-agentcore/model/HarnessMetadataEvent.h>
@@ -28,6 +29,7 @@ enum class InvokeHarnessEventType {
   CONTENTBLOCKSTOP,
   MESSAGESTOP,
   METADATA,
+  HOOKEVENT,
   UNKNOWN
 };
 
@@ -41,6 +43,7 @@ class InvokeHarnessHandler : public Aws::Utils::Event::EventStreamHandler {
   typedef std::function<void(const HarnessContentBlockStopEvent&)> HarnessContentBlockStopEventCallback;
   typedef std::function<void(const HarnessMessageStopEvent&)> HarnessMessageStopEventCallback;
   typedef std::function<void(const HarnessMetadataEvent&)> HarnessMetadataEventCallback;
+  typedef std::function<void(const HarnessHookEvent&)> HarnessHookEventCallback;
   typedef std::function<void(const Aws::Client::AWSError<BedrockAgentCoreErrors>& error)> ErrorCallback;
 
  public:
@@ -83,6 +86,7 @@ class InvokeHarnessHandler : public Aws::Utils::Event::EventStreamHandler {
     m_onHarnessMessageStopEvent = callback;
   }
   inline void SetHarnessMetadataEventCallback(const HarnessMetadataEventCallback& callback) { m_onHarnessMetadataEvent = callback; }
+  inline void SetHarnessHookEventCallback(const HarnessHookEventCallback& callback) { m_onHarnessHookEvent = callback; }
   inline void SetOnErrorCallback(const ErrorCallback& callback) { m_onError = callback; }
 
   inline InvokeHarnessInitialResponseCallbackEx& GetInitialResponseCallbackEx() { return m_onInitialResponse; }
@@ -99,6 +103,7 @@ class InvokeHarnessHandler : public Aws::Utils::Event::EventStreamHandler {
   HarnessContentBlockStopEventCallback m_onHarnessContentBlockStopEvent;
   HarnessMessageStopEventCallback m_onHarnessMessageStopEvent;
   HarnessMetadataEventCallback m_onHarnessMetadataEvent;
+  HarnessHookEventCallback m_onHarnessHookEvent;
   ErrorCallback m_onError;
 };
 

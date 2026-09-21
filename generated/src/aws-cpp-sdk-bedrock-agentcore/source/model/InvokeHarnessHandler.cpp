@@ -55,6 +55,10 @@ InvokeHarnessHandler::InvokeHarnessHandler() : EventStreamHandler() {
     AWS_LOGSTREAM_TRACE(INVOKEHARNESS_HANDLER_CLASS_TAG, "HarnessMetadataEvent received.");
   };
 
+  m_onHarnessHookEvent = [&](const HarnessHookEvent&) {
+    AWS_LOGSTREAM_TRACE(INVOKEHARNESS_HANDLER_CLASS_TAG, "HarnessHookEvent received.");
+  };
+
   m_onError = [&](const AWSError<BedrockAgentCoreErrors>& error) {
     AWS_LOGSTREAM_TRACE(INVOKEHARNESS_HANDLER_CLASS_TAG, "BedrockAgentCore Errors received, " << error);
   };
@@ -172,6 +176,17 @@ void InvokeHarnessHandler::HandleEventInMessage() {
       m_onHarnessMetadataEvent(HarnessMetadataEvent{json.View()});
       break;
     }
+    case InvokeHarnessEventType::HOOKEVENT: {
+      JsonValue json(GetEventPayloadAsString());
+      if (!json.WasParseSuccessful()) {
+        AWS_LOGSTREAM_WARN(INVOKEHARNESS_HANDLER_CLASS_TAG,
+                           "Unable to generate a proper HarnessHookEvent object from the response in JSON format.");
+        break;
+      }
+
+      m_onHarnessHookEvent(HarnessHookEvent{json.View()});
+      break;
+    }
     default:
       AWS_LOGSTREAM_WARN(INVOKEHARNESS_HANDLER_CLASS_TAG,
                          "Unexpected event type: " << eventTypeHeaderIter->second.GetEventHeaderValueAsString());
@@ -204,7 +219,7 @@ void InvokeHarnessHandler::HandleErrorInMessage() {
     JsonValue exceptionPayload(GetEventPayloadAsString());
     if (!exceptionPayload.WasParseSuccessful()) {
       AWS_LOGSTREAM_ERROR(INVOKEHARNESS_HANDLER_CLASS_TAG,
-                          "Unable to generate a proper RuntimeClientError object from the response in JSON format.");
+                          "Unable to generate a proper HarnessHookEvent object from the response in JSON format.");
       auto contentTypeIter = headers.find(Aws::Utils::Event::CONTENT_TYPE_HEADER);
       if (contentTypeIter != headers.end()) {
         AWS_LOGSTREAM_DEBUG(INVOKEHARNESS_HANDLER_CLASS_TAG,
@@ -255,6 +270,7 @@ static const int CONTENTBLOCKDELTA_HASH = Aws::Utils::HashingUtils::HashString("
 static const int CONTENTBLOCKSTOP_HASH = Aws::Utils::HashingUtils::HashString("contentBlockStop");
 static const int MESSAGESTOP_HASH = Aws::Utils::HashingUtils::HashString("messageStop");
 static const int METADATA_HASH = Aws::Utils::HashingUtils::HashString("metadata");
+static const int HOOKEVENT_HASH = Aws::Utils::HashingUtils::HashString("hookEvent");
 
 InvokeHarnessEventType GetInvokeHarnessEventTypeForName(const Aws::String& name) {
   int hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
@@ -273,6 +289,8 @@ InvokeHarnessEventType GetInvokeHarnessEventTypeForName(const Aws::String& name)
     return InvokeHarnessEventType::MESSAGESTOP;
   } else if (hashCode == METADATA_HASH) {
     return InvokeHarnessEventType::METADATA;
+  } else if (hashCode == HOOKEVENT_HASH) {
+    return InvokeHarnessEventType::HOOKEVENT;
   }
   return InvokeHarnessEventType::UNKNOWN;
 }
@@ -293,6 +311,8 @@ Aws::String GetNameForInvokeHarnessEventType(InvokeHarnessEventType value) {
       return "messageStop";
     case InvokeHarnessEventType::METADATA:
       return "metadata";
+    case InvokeHarnessEventType::HOOKEVENT:
+      return "hookEvent";
     default:
       return "Unknown";
   }

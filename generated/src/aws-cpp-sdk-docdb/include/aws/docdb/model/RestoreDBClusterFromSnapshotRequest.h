@@ -378,7 +378,7 @@ class RestoreDBClusterFromSnapshotRequest : public DocDBRequest {
    * <code>DBSubnetGroup</code> specified for the cluster. A
    * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and
    * the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
-   * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/vpc-clusters.html">DocumentDB
+   * href="https://docs.aws.amazon.com/documentdb/latest/devguide/vpc-clusters.html">DocumentDB
    * clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p> <p>Valid
    * Values: <code>IPV4</code> | <code>DUAL</code> </p>
    */
@@ -392,6 +392,23 @@ class RestoreDBClusterFromSnapshotRequest : public DocDBRequest {
   template <typename NetworkTypeT = Aws::String>
   RestoreDBClusterFromSnapshotRequest& WithNetworkType(NetworkTypeT&& value) {
     SetNetworkType(std::forward<NetworkTypeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to copy all tags from the restored DB cluster to snapshots
+   * of the restored DB cluster. The default is not to copy them.</p>
+   */
+  inline bool GetCopyTagsToSnapshot() const { return m_copyTagsToSnapshot; }
+  inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
+  inline void SetCopyTagsToSnapshot(bool value) {
+    m_copyTagsToSnapshotHasBeenSet = true;
+    m_copyTagsToSnapshot = value;
+  }
+  inline RestoreDBClusterFromSnapshotRequest& WithCopyTagsToSnapshot(bool value) {
+    SetCopyTagsToSnapshot(value);
     return *this;
   }
   ///@}
@@ -427,6 +444,8 @@ class RestoreDBClusterFromSnapshotRequest : public DocDBRequest {
   Aws::String m_storageType;
 
   Aws::String m_networkType;
+
+  bool m_copyTagsToSnapshot{false};
   bool m_availabilityZonesHasBeenSet = false;
   bool m_dBClusterIdentifierHasBeenSet = false;
   bool m_snapshotIdentifierHasBeenSet = false;
@@ -443,6 +462,7 @@ class RestoreDBClusterFromSnapshotRequest : public DocDBRequest {
   bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
   bool m_storageTypeHasBeenSet = false;
   bool m_networkTypeHasBeenSet = false;
+  bool m_copyTagsToSnapshotHasBeenSet = false;
 };
 
 }  // namespace Model

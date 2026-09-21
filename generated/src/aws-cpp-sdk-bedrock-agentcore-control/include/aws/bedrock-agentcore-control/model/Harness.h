@@ -8,6 +8,7 @@
 #include <aws/bedrock-agentcore-control/model/AuthorizerConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/HarnessEnvironmentArtifact.h>
 #include <aws/bedrock-agentcore-control/model/HarnessEnvironmentProvider.h>
+#include <aws/bedrock-agentcore-control/model/HarnessHook.h>
 #include <aws/bedrock-agentcore-control/model/HarnessMemoryConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/HarnessModelConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/HarnessSkill.h>
@@ -416,6 +417,30 @@ class Harness {
 
   ///@{
   /**
+   * <p>The lifecycle hooks configured for the harness.</p>
+   */
+  inline const Aws::Vector<HarnessHook>& GetHooks() const { return m_hooks; }
+  inline bool HooksHasBeenSet() const { return m_hooksHasBeenSet; }
+  template <typename HooksT = Aws::Vector<HarnessHook>>
+  void SetHooks(HooksT&& value) {
+    m_hooksHasBeenSet = true;
+    m_hooks = std::forward<HooksT>(value);
+  }
+  template <typename HooksT = Aws::Vector<HarnessHook>>
+  Harness& WithHooks(HooksT&& value) {
+    SetHooks(std::forward<HooksT>(value));
+    return *this;
+  }
+  template <typename HooksT = HarnessHook>
+  Harness& AddHooks(HooksT&& value) {
+    m_hooksHasBeenSet = true;
+    m_hooks.emplace_back(std::forward<HooksT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The maximum number of iterations in the agent loop allowed before exiting per
    * invocation.</p>
    */
@@ -520,6 +545,8 @@ class Harness {
 
   HarnessMemoryConfiguration m_memory;
 
+  Aws::Vector<HarnessHook> m_hooks;
+
   int m_maxIterations{0};
 
   int m_maxTokens{0};
@@ -546,6 +573,7 @@ class Harness {
   bool m_environmentVariablesHasBeenSet = false;
   bool m_authorizerConfigurationHasBeenSet = false;
   bool m_memoryHasBeenSet = false;
+  bool m_hooksHasBeenSet = false;
   bool m_maxIterationsHasBeenSet = false;
   bool m_maxTokensHasBeenSet = false;
   bool m_timeoutSecondsHasBeenSet = false;

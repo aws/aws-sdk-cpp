@@ -8,6 +8,7 @@
 #include <aws/bedrock-agentcore/model/HarnessContentBlockDeltaEvent.h>
 #include <aws/bedrock-agentcore/model/HarnessContentBlockStartEvent.h>
 #include <aws/bedrock-agentcore/model/HarnessContentBlockStopEvent.h>
+#include <aws/bedrock-agentcore/model/HarnessHookEvent.h>
 #include <aws/bedrock-agentcore/model/HarnessMessageStartEvent.h>
 #include <aws/bedrock-agentcore/model/HarnessMessageStopEvent.h>
 #include <aws/bedrock-agentcore/model/HarnessMetadataEvent.h>
@@ -195,6 +196,24 @@ class InvokeHarnessStreamOutput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A lifecycle hook event emitted when a configured hook runs.</p>
+   */
+  inline const HarnessHookEvent& GetHookEvent() const { return m_hookEvent; }
+  inline bool HookEventHasBeenSet() const { return m_hookEventHasBeenSet; }
+  template <typename HookEventT = HarnessHookEvent>
+  void SetHookEvent(HookEventT&& value) {
+    m_hookEventHasBeenSet = true;
+    m_hookEvent = std::forward<HookEventT>(value);
+  }
+  template <typename HookEventT = HarnessHookEvent>
+  InvokeHarnessStreamOutput& WithHookEvent(HookEventT&& value) {
+    SetHookEvent(std::forward<HookEventT>(value));
+    return *this;
+  }
+  ///@}
  private:
   HarnessMessageStartEvent m_messageStart;
 
@@ -213,6 +232,8 @@ class InvokeHarnessStreamOutput {
   ValidationException m_validationException;
 
   BedrockAgentCoreError m_runtimeClientError;
+
+  HarnessHookEvent m_hookEvent;
   bool m_messageStartHasBeenSet = false;
   bool m_contentBlockStartHasBeenSet = false;
   bool m_contentBlockDeltaHasBeenSet = false;
@@ -222,6 +243,7 @@ class InvokeHarnessStreamOutput {
   bool m_internalServerExceptionHasBeenSet = false;
   bool m_validationExceptionHasBeenSet = false;
   bool m_runtimeClientErrorHasBeenSet = false;
+  bool m_hookEventHasBeenSet = false;
 };
 
 }  // namespace Model

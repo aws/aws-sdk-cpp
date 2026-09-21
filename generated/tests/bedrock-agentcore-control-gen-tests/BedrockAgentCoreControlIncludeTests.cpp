@@ -385,6 +385,8 @@
 #include <aws/bedrock-agentcore-control/model/GoogleOauth2ProviderConfigInput.h>
 #include <aws/bedrock-agentcore-control/model/GoogleOauth2ProviderConfigOutput.h>
 #include <aws/bedrock-agentcore-control/model/Harness.h>
+#include <aws/bedrock-agentcore-control/model/HarnessAfterInvocationHook.h>
+#include <aws/bedrock-agentcore-control/model/HarnessAfterToolCallHook.h>
 #include <aws/bedrock-agentcore-control/model/HarnessAgentCoreBrowserConfig.h>
 #include <aws/bedrock-agentcore-control/model/HarnessAgentCoreCodeInterpreterConfig.h>
 #include <aws/bedrock-agentcore-control/model/HarnessAgentCoreGatewayConfig.h>
@@ -394,6 +396,8 @@
 #include <aws/bedrock-agentcore-control/model/HarnessAgentCoreRuntimeEnvironmentRequest.h>
 #include <aws/bedrock-agentcore-control/model/HarnessBedrockApiFormat.h>
 #include <aws/bedrock-agentcore-control/model/HarnessBedrockModelConfig.h>
+#include <aws/bedrock-agentcore-control/model/HarnessBeforeInvocationHook.h>
+#include <aws/bedrock-agentcore-control/model/HarnessBeforeToolCallHook.h>
 #include <aws/bedrock-agentcore-control/model/HarnessDisabledMemoryConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/HarnessEndpoint.h>
 #include <aws/bedrock-agentcore-control/model/HarnessEndpointStatus.h>
@@ -402,6 +406,12 @@
 #include <aws/bedrock-agentcore-control/model/HarnessEnvironmentProviderRequest.h>
 #include <aws/bedrock-agentcore-control/model/HarnessGatewayOutboundAuth.h>
 #include <aws/bedrock-agentcore-control/model/HarnessGeminiModelConfig.h>
+#include <aws/bedrock-agentcore-control/model/HarnessHook.h>
+#include <aws/bedrock-agentcore-control/model/HarnessHookEventBridgeTarget.h>
+#include <aws/bedrock-agentcore-control/model/HarnessHookFailureMode.h>
+#include <aws/bedrock-agentcore-control/model/HarnessHookLambdaTarget.h>
+#include <aws/bedrock-agentcore-control/model/HarnessHookSnsTarget.h>
+#include <aws/bedrock-agentcore-control/model/HarnessHookTarget.h>
 #include <aws/bedrock-agentcore-control/model/HarnessInlineFunctionConfig.h>
 #include <aws/bedrock-agentcore-control/model/HarnessLiteLlmModelConfig.h>
 #include <aws/bedrock-agentcore-control/model/HarnessManagedMemoryConfiguration.h>

@@ -87,6 +87,14 @@ Aws::String UpdateHarnessRequest::SerializePayload() const {
     payload.WithObject("truncation", m_truncation.Jsonize());
   }
 
+  if (m_hooksHasBeenSet) {
+    Aws::Utils::Array<JsonValue> hooksJsonList(m_hooks.size());
+    for (unsigned hooksIndex = 0; hooksIndex < hooksJsonList.GetLength(); ++hooksIndex) {
+      hooksJsonList[hooksIndex].AsObject(m_hooks[hooksIndex].Jsonize());
+    }
+    payload.WithArray("hooks", std::move(hooksJsonList));
+  }
+
   if (m_maxIterationsHasBeenSet) {
     payload.WithInteger("maxIterations", m_maxIterations);
   }

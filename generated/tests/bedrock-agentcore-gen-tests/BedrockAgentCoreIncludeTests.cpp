@@ -208,6 +208,9 @@
 #include <aws/bedrock-agentcore/model/HarnessConversationRole.h>
 #include <aws/bedrock-agentcore/model/HarnessGatewayOutboundAuth.h>
 #include <aws/bedrock-agentcore/model/HarnessGeminiModelConfig.h>
+#include <aws/bedrock-agentcore/model/HarnessHookDecision.h>
+#include <aws/bedrock-agentcore/model/HarnessHookEvent.h>
+#include <aws/bedrock-agentcore/model/HarnessHookEventType.h>
 #include <aws/bedrock-agentcore/model/HarnessInlineFunctionConfig.h>
 #include <aws/bedrock-agentcore/model/HarnessLiteLlmModelConfig.h>
 #include <aws/bedrock-agentcore/model/HarnessMessage.h>

@@ -26,6 +26,10 @@ HarnessOpenAiModelConfig& HarnessOpenAiModelConfig::operator=(JsonView jsonValue
     m_apiKeyArn = jsonValue.GetString("apiKeyArn");
     m_apiKeyArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("apiBase")) {
+    m_apiBase = jsonValue.GetString("apiBase");
+    m_apiBaseHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("maxTokens")) {
     m_maxTokens = jsonValue.GetInteger("maxTokens");
     m_maxTokensHasBeenSet = true;
@@ -58,6 +62,10 @@ JsonValue HarnessOpenAiModelConfig::Jsonize() const {
 
   if (m_apiKeyArnHasBeenSet) {
     payload.WithString("apiKeyArn", m_apiKeyArn);
+  }
+
+  if (m_apiBaseHasBeenSet) {
+    payload.WithString("apiBase", m_apiBase);
   }
 
   if (m_maxTokensHasBeenSet) {

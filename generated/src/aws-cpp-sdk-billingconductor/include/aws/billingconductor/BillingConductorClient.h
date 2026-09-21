@@ -520,6 +520,36 @@ class AWS_BILLINGCONDUCTOR_API BillingConductorClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>Retrieves the auto billing group creation preference for a billing
+   * transfer.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/GetBillingTransferPreference">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetBillingTransferPreferenceOutcome GetBillingTransferPreference(
+      const Model::GetBillingTransferPreferenceRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetBillingTransferPreference that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetBillingTransferPreferenceRequestT = Model::GetBillingTransferPreferenceRequest>
+  Model::GetBillingTransferPreferenceOutcomeCallable GetBillingTransferPreferenceCallable(
+      const GetBillingTransferPreferenceRequestT& request) const {
+    return SubmitCallable(&BillingConductorClient::GetBillingTransferPreference, request);
+  }
+
+  /**
+   * An Async wrapper for GetBillingTransferPreference that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetBillingTransferPreferenceRequestT = Model::GetBillingTransferPreferenceRequest>
+  void GetBillingTransferPreferenceAsync(const GetBillingTransferPreferenceRequestT& request,
+                                         const GetBillingTransferPreferenceResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BillingConductorClient::GetBillingTransferPreference, request, handler, context);
+  }
+
+  /**
    * <p> This is a paginated call to list linked accounts that are linked to the
    * payer account for the specified time period. If no information is provided, the
    * current billing period is used. The response will optionally include the billing
@@ -918,6 +948,43 @@ class AWS_BILLINGCONDUCTOR_API BillingConductorClient : public Aws::Client::AWSJ
   void UpdateBillingGroupAsync(const UpdateBillingGroupRequestT& request, const UpdateBillingGroupResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BillingConductorClient::UpdateBillingGroup, request, handler, context);
+  }
+
+  /**
+   * <p>Sets the auto billing group creation preference for a billing transfer. When
+   * the preference is enabled, Billing Conductor automatically creates an indirect
+   * billing transfer billing group in your account, with the pricing plan that you
+   * specify, for each account that transfers its bill to the bill source account of
+   * this billing transfer. The preference applies only to billing groups that are
+   * created after you enable it.</p> <p>Enabling the preference requires the
+   * <code>iam:CreateServiceLinkedRole</code> permission. While a pricing plan is
+   * specified in an enabled preference, you can't delete that pricing
+   * plan.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/UpdateBillingTransferPreference">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateBillingTransferPreferenceOutcome UpdateBillingTransferPreference(
+      const Model::UpdateBillingTransferPreferenceRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateBillingTransferPreference that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateBillingTransferPreferenceRequestT = Model::UpdateBillingTransferPreferenceRequest>
+  Model::UpdateBillingTransferPreferenceOutcomeCallable UpdateBillingTransferPreferenceCallable(
+      const UpdateBillingTransferPreferenceRequestT& request) const {
+    return SubmitCallable(&BillingConductorClient::UpdateBillingTransferPreference, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateBillingTransferPreference that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename UpdateBillingTransferPreferenceRequestT = Model::UpdateBillingTransferPreferenceRequest>
+  void UpdateBillingTransferPreferenceAsync(const UpdateBillingTransferPreferenceRequestT& request,
+                                            const UpdateBillingTransferPreferenceResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BillingConductorClient::UpdateBillingTransferPreference, request, handler, context);
   }
 
   /**

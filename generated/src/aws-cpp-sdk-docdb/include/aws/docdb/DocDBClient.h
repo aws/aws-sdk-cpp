@@ -269,14 +269,14 @@ class AWS_DOCDB_API DocDBClient : public Aws::Client::AWSXMLClient,
    * cannot make modifications directly to the <code>default.docdb3.6</code> cluster
    * parameter group. If your Amazon DocumentDB cluster is using the default cluster
    * parameter group and you want to modify a value in it, you must first <a
-   * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/cluster_parameter_group-create.html">
+   * href="https://docs.aws.amazon.com/documentdb/latest/devguide/cluster_parameter_group-create.html">
    * create a new parameter group</a> or <a
-   * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/cluster_parameter_group-copy.html">
+   * href="https://docs.aws.amazon.com/documentdb/latest/devguide/cluster_parameter_group-copy.html">
    * copy an existing parameter group</a>, modify it, and then apply the modified
    * parameter group to your cluster. For the new cluster parameter group and
    * associated settings to take effect, you must then reboot the instances in the
    * cluster without failover. For more information, see <a
-   * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/cluster_parameter_group-modify.html">
+   * href="https://docs.aws.amazon.com/documentdb/latest/devguide/cluster_parameter_group-modify.html">
    * Modifying Amazon DocumentDB Cluster Parameter Groups</a>. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBClusterParameterGroup">AWS
@@ -1700,7 +1700,7 @@ class AWS_DOCDB_API DocDBClient : public Aws::Client::AWSXMLClient,
   /**
    * <p>Restarts the stopped cluster that is specified by
    * <code>DBClusterIdentifier</code>. For more information, see <a
-   * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/db-cluster-stop-start.html">Stopping
+   * href="https://docs.aws.amazon.com/documentdb/latest/devguide/db-cluster-stop-start.html">Stopping
    * and Starting an Amazon DocumentDB Cluster</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/StartDBCluster">AWS
    * API Reference</a></p>
@@ -1729,7 +1729,7 @@ class AWS_DOCDB_API DocDBClient : public Aws::Client::AWSXMLClient,
    * <p>Stops the running cluster that is specified by
    * <code>DBClusterIdentifier</code>. The cluster must be in the <i>available</i>
    * state. For more information, see <a
-   * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/db-cluster-stop-start.html">Stopping
+   * href="https://docs.aws.amazon.com/documentdb/latest/devguide/db-cluster-stop-start.html">Stopping
    * and Starting an Amazon DocumentDB Cluster</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/StopDBCluster">AWS
    * API Reference</a></p>

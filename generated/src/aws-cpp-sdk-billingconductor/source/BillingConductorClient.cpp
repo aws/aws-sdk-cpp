@@ -21,6 +21,7 @@
 #include <aws/billingconductor/model/DisassociateAccountsRequest.h>
 #include <aws/billingconductor/model/DisassociatePricingRulesRequest.h>
 #include <aws/billingconductor/model/GetBillingGroupCostReportRequest.h>
+#include <aws/billingconductor/model/GetBillingTransferPreferenceRequest.h>
 #include <aws/billingconductor/model/ListAccountAssociationsRequest.h>
 #include <aws/billingconductor/model/ListBillingGroupCostReportsRequest.h>
 #include <aws/billingconductor/model/ListBillingGroupsRequest.h>
@@ -35,6 +36,7 @@
 #include <aws/billingconductor/model/TagResourceRequest.h>
 #include <aws/billingconductor/model/UntagResourceRequest.h>
 #include <aws/billingconductor/model/UpdateBillingGroupRequest.h>
+#include <aws/billingconductor/model/UpdateBillingTransferPreferenceRequest.h>
 #include <aws/billingconductor/model/UpdateCustomLineItemRequest.h>
 #include <aws/billingconductor/model/UpdatePricingPlanRequest.h>
 #include <aws/billingconductor/model/UpdatePricingRuleRequest.h>
@@ -378,6 +380,18 @@ GetBillingGroupCostReportOutcome BillingConductorClient::GetBillingGroupCostRepo
                             : GetBillingGroupCostReportOutcome(std::move(result.GetError()));
 }
 
+GetBillingTransferPreferenceOutcome BillingConductorClient::GetBillingTransferPreference(
+    const GetBillingTransferPreferenceRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/get-billing-transfer-preference");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetBillingTransferPreferenceOutcome(result.GetResultWithOwnership())
+                            : GetBillingTransferPreferenceOutcome(std::move(result.GetError()));
+}
+
 ListAccountAssociationsOutcome BillingConductorClient::ListAccountAssociations(const ListAccountAssociationsRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -559,6 +573,18 @@ UpdateBillingGroupOutcome BillingConductorClient::UpdateBillingGroup(const Updat
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateBillingGroupOutcome(result.GetResultWithOwnership())
                             : UpdateBillingGroupOutcome(std::move(result.GetError()));
+}
+
+UpdateBillingTransferPreferenceOutcome BillingConductorClient::UpdateBillingTransferPreference(
+    const UpdateBillingTransferPreferenceRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/update-billing-transfer-preference");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateBillingTransferPreferenceOutcome(result.GetResultWithOwnership())
+                            : UpdateBillingTransferPreferenceOutcome(std::move(result.GetError()));
 }
 
 UpdateCustomLineItemOutcome BillingConductorClient::UpdateCustomLineItem(const UpdateCustomLineItemRequest& request) const {

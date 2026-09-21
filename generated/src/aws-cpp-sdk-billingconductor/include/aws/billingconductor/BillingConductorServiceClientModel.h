@@ -34,6 +34,7 @@
 #include <aws/billingconductor/model/DisassociateAccountsResult.h>
 #include <aws/billingconductor/model/DisassociatePricingRulesResult.h>
 #include <aws/billingconductor/model/GetBillingGroupCostReportResult.h>
+#include <aws/billingconductor/model/GetBillingTransferPreferenceResult.h>
 #include <aws/billingconductor/model/ListAccountAssociationsRequest.h>
 #include <aws/billingconductor/model/ListAccountAssociationsResult.h>
 #include <aws/billingconductor/model/ListBillingGroupCostReportsRequest.h>
@@ -54,6 +55,7 @@
 #include <aws/billingconductor/model/TagResourceResult.h>
 #include <aws/billingconductor/model/UntagResourceResult.h>
 #include <aws/billingconductor/model/UpdateBillingGroupResult.h>
+#include <aws/billingconductor/model/UpdateBillingTransferPreferenceResult.h>
 #include <aws/billingconductor/model/UpdateCustomLineItemResult.h>
 #include <aws/billingconductor/model/UpdatePricingPlanResult.h>
 #include <aws/billingconductor/model/UpdatePricingRuleResult.h>
@@ -105,6 +107,7 @@ class DeletePricingRuleRequest;
 class DisassociateAccountsRequest;
 class DisassociatePricingRulesRequest;
 class GetBillingGroupCostReportRequest;
+class GetBillingTransferPreferenceRequest;
 class ListAccountAssociationsRequest;
 class ListBillingGroupCostReportsRequest;
 class ListBillingGroupsRequest;
@@ -119,6 +122,7 @@ class ListTagsForResourceRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
 class UpdateBillingGroupRequest;
+class UpdateBillingTransferPreferenceRequest;
 class UpdateCustomLineItemRequest;
 class UpdatePricingPlanRequest;
 class UpdatePricingRuleRequest;
@@ -142,6 +146,7 @@ typedef Aws::Utils::Outcome<DeletePricingRuleResult, BillingConductorError> Dele
 typedef Aws::Utils::Outcome<DisassociateAccountsResult, BillingConductorError> DisassociateAccountsOutcome;
 typedef Aws::Utils::Outcome<DisassociatePricingRulesResult, BillingConductorError> DisassociatePricingRulesOutcome;
 typedef Aws::Utils::Outcome<GetBillingGroupCostReportResult, BillingConductorError> GetBillingGroupCostReportOutcome;
+typedef Aws::Utils::Outcome<GetBillingTransferPreferenceResult, BillingConductorError> GetBillingTransferPreferenceOutcome;
 typedef Aws::Utils::Outcome<ListAccountAssociationsResult, BillingConductorError> ListAccountAssociationsOutcome;
 typedef Aws::Utils::Outcome<ListBillingGroupCostReportsResult, BillingConductorError> ListBillingGroupCostReportsOutcome;
 typedef Aws::Utils::Outcome<ListBillingGroupsResult, BillingConductorError> ListBillingGroupsOutcome;
@@ -159,6 +164,7 @@ typedef Aws::Utils::Outcome<ListTagsForResourceResult, BillingConductorError> Li
 typedef Aws::Utils::Outcome<TagResourceResult, BillingConductorError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, BillingConductorError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateBillingGroupResult, BillingConductorError> UpdateBillingGroupOutcome;
+typedef Aws::Utils::Outcome<UpdateBillingTransferPreferenceResult, BillingConductorError> UpdateBillingTransferPreferenceOutcome;
 typedef Aws::Utils::Outcome<UpdateCustomLineItemResult, BillingConductorError> UpdateCustomLineItemOutcome;
 typedef Aws::Utils::Outcome<UpdatePricingPlanResult, BillingConductorError> UpdatePricingPlanOutcome;
 typedef Aws::Utils::Outcome<UpdatePricingRuleResult, BillingConductorError> UpdatePricingRuleOutcome;
@@ -180,6 +186,7 @@ typedef std::future<DeletePricingRuleOutcome> DeletePricingRuleOutcomeCallable;
 typedef std::future<DisassociateAccountsOutcome> DisassociateAccountsOutcomeCallable;
 typedef std::future<DisassociatePricingRulesOutcome> DisassociatePricingRulesOutcomeCallable;
 typedef std::future<GetBillingGroupCostReportOutcome> GetBillingGroupCostReportOutcomeCallable;
+typedef std::future<GetBillingTransferPreferenceOutcome> GetBillingTransferPreferenceOutcomeCallable;
 typedef std::future<ListAccountAssociationsOutcome> ListAccountAssociationsOutcomeCallable;
 typedef std::future<ListBillingGroupCostReportsOutcome> ListBillingGroupCostReportsOutcomeCallable;
 typedef std::future<ListBillingGroupsOutcome> ListBillingGroupsOutcomeCallable;
@@ -194,6 +201,7 @@ typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallab
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateBillingGroupOutcome> UpdateBillingGroupOutcomeCallable;
+typedef std::future<UpdateBillingTransferPreferenceOutcome> UpdateBillingTransferPreferenceOutcomeCallable;
 typedef std::future<UpdateCustomLineItemOutcome> UpdateCustomLineItemOutcomeCallable;
 typedef std::future<UpdatePricingPlanOutcome> UpdatePricingPlanOutcomeCallable;
 typedef std::future<UpdatePricingRuleOutcome> UpdatePricingRuleOutcomeCallable;
@@ -250,6 +258,10 @@ typedef std::function<void(const BillingConductorClient*, const Model::Disassoci
 typedef std::function<void(const BillingConductorClient*, const Model::GetBillingGroupCostReportRequest&,
                            const Model::GetBillingGroupCostReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetBillingGroupCostReportResponseReceivedHandler;
+typedef std::function<void(const BillingConductorClient*, const Model::GetBillingTransferPreferenceRequest&,
+                           const Model::GetBillingTransferPreferenceOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetBillingTransferPreferenceResponseReceivedHandler;
 typedef std::function<void(const BillingConductorClient*, const Model::ListAccountAssociationsRequest&,
                            const Model::ListAccountAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAccountAssociationsResponseReceivedHandler;
@@ -295,6 +307,10 @@ typedef std::function<void(const BillingConductorClient*, const Model::UntagReso
 typedef std::function<void(const BillingConductorClient*, const Model::UpdateBillingGroupRequest&, const Model::UpdateBillingGroupOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateBillingGroupResponseReceivedHandler;
+typedef std::function<void(const BillingConductorClient*, const Model::UpdateBillingTransferPreferenceRequest&,
+                           const Model::UpdateBillingTransferPreferenceOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateBillingTransferPreferenceResponseReceivedHandler;
 typedef std::function<void(const BillingConductorClient*, const Model::UpdateCustomLineItemRequest&,
                            const Model::UpdateCustomLineItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateCustomLineItemResponseReceivedHandler;

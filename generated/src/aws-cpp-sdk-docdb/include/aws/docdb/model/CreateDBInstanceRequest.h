@@ -241,7 +241,7 @@ class CreateDBInstanceRequest : public DocDBRequest {
   /**
    * <p>A value that indicates whether to enable Performance Insights for the DB
    * Instance. For more information, see <a
-   * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/performance-insights.html">Using
+   * href="https://docs.aws.amazon.com/documentdb/latest/devguide/performance-insights.html">Using
    * Amazon Performance Insights</a>.</p>
    */
   inline bool GetEnablePerformanceInsights() const { return m_enablePerformanceInsights; }
@@ -284,9 +284,9 @@ class CreateDBInstanceRequest : public DocDBRequest {
   /**
    * <p>The CA certificate identifier to use for the DB instance's server
    * certificate.</p> <p>For more information, see <a
-   * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating
+   * href="https://docs.aws.amazon.com/documentdb/latest/devguide/ca_cert_rotation.html">Updating
    * Your Amazon DocumentDB TLS Certificates</a> and <a
-   * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html">
+   * href="https://docs.aws.amazon.com/documentdb/latest/devguide/security.encryption.ssl.html">
    * Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer
    * Guide</i>.</p>
    */

@@ -29,6 +29,7 @@ static const int model_context_window_exceeded_HASH = HashingUtils::HashString("
 static const int max_iterations_exceeded_HASH = HashingUtils::HashString("max_iterations_exceeded");
 static const int max_output_tokens_exceeded_HASH = HashingUtils::HashString("max_output_tokens_exceeded");
 static const int timeout_exceeded_HASH = HashingUtils::HashString("timeout_exceeded");
+static const int hook_stopped_HASH = HashingUtils::HashString("hook_stopped");
 
 HarnessStopReason GetHarnessStopReasonForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -60,6 +61,8 @@ HarnessStopReason GetHarnessStopReasonForName(const Aws::String& name) {
     return HarnessStopReason::max_output_tokens_exceeded;
   } else if (hashCode == timeout_exceeded_HASH) {
     return HarnessStopReason::timeout_exceeded;
+  } else if (hashCode == hook_stopped_HASH) {
+    return HarnessStopReason::hook_stopped;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -102,6 +105,8 @@ Aws::String GetNameForHarnessStopReason(HarnessStopReason enumValue) {
       return "max_output_tokens_exceeded";
     case HarnessStopReason::timeout_exceeded:
       return "timeout_exceeded";
+    case HarnessStopReason::hook_stopped:
+      return "hook_stopped";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

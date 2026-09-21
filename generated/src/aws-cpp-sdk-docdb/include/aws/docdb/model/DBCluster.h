@@ -763,7 +763,7 @@ class DBCluster {
    * <code>DBSubnetGroup</code> specified for the cluster. A
    * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and
    * the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
-   * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/vpc-clusters.html">DocumentDB
+   * href="https://docs.aws.amazon.com/documentdb/latest/devguide/vpc-clusters.html">DocumentDB
    * clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p> <p>Valid
    * Values: <code>IPV4</code> | <code>DUAL</code> </p>
    */
@@ -777,6 +777,23 @@ class DBCluster {
   template <typename NetworkTypeT = Aws::String>
   DBCluster& WithNetworkType(NetworkTypeT&& value) {
     SetNetworkType(std::forward<NetworkTypeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to copy all tags from the DB cluster to snapshots of the DB
+   * cluster. The default is not to copy them.</p>
+   */
+  inline bool GetCopyTagsToSnapshot() const { return m_copyTagsToSnapshot; }
+  inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
+  inline void SetCopyTagsToSnapshot(bool value) {
+    m_copyTagsToSnapshotHasBeenSet = true;
+    m_copyTagsToSnapshot = value;
+  }
+  inline DBCluster& WithCopyTagsToSnapshot(bool value) {
+    SetCopyTagsToSnapshot(value);
     return *this;
   }
   ///@}
@@ -854,6 +871,8 @@ class DBCluster {
   ClusterMasterUserSecret m_masterUserSecret;
 
   Aws::String m_networkType;
+
+  bool m_copyTagsToSnapshot{false};
   bool m_availabilityZonesHasBeenSet = false;
   bool m_backupRetentionPeriodHasBeenSet = false;
   bool m_dBClusterIdentifierHasBeenSet = false;
@@ -891,6 +910,7 @@ class DBCluster {
   bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
   bool m_masterUserSecretHasBeenSet = false;
   bool m_networkTypeHasBeenSet = false;
+  bool m_copyTagsToSnapshotHasBeenSet = false;
 };
 
 }  // namespace Model
