@@ -45,7 +45,7 @@ class ApplicationStatus {
    * included checks passed.</p> </li> <li> <p> <code>impaired</code> – At least one
    * included check failed.</p> </li> <li> <p> <code>initializing</code> – At least
    * one included check is initializing, and no included check is impaired.</p> </li>
-   * <li> <p> <code>insufficient-data</code> ��� At least one included check has
+   * <li> <p> <code>insufficient-data</code> – At least one included check has
    * insufficient data, and no included check is impaired or initializing.</p> </li>
    * <li> <p> <code>not-applicable</code> – No checks with <code>Aggregation</code>
    * set to <code>included</code> apply to the instance.</p> </li> <li> <p>

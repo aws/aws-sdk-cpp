@@ -20,6 +20,7 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/DeleteIpamRoutingPolicyRegistrationRequest.h>
 #include <aws/ec2/model/DeleteIpamScopeRequest.h>
 #include <aws/ec2/model/DeleteKeyPairRequest.h>
 #include <aws/ec2/model/DeleteLaunchTemplateRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/ec2/model/DescribeCapacityBlocksRequest.h>
 #include <aws/ec2/model/DescribeCapacityManagerDataExportsRequest.h>
 #include <aws/ec2/model/DescribeCapacityReservationBillingRequestsRequest.h>
-#include <aws/ec2/model/DescribeCapacityReservationCancellationQuotesRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,13 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DeleteIpamRoutingPolicyRegistrationOutcome EC2Client::DeleteIpamRoutingPolicyRegistration(
+    const DeleteIpamRoutingPolicyRegistrationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteIpamRoutingPolicyRegistrationOutcome(result.GetResultWithOwnership())
+                            : DeleteIpamRoutingPolicyRegistrationOutcome(std::move(result.GetError()));
+}
 
 DeleteIpamScopeOutcome EC2Client::DeleteIpamScope(const DeleteIpamScopeRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -753,11 +760,4 @@ DescribeCapacityReservationBillingRequestsOutcome EC2Client::DescribeCapacityRes
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeCapacityReservationBillingRequestsOutcome(result.GetResultWithOwnership())
                             : DescribeCapacityReservationBillingRequestsOutcome(std::move(result.GetError()));
-}
-
-DescribeCapacityReservationCancellationQuotesOutcome EC2Client::DescribeCapacityReservationCancellationQuotes(
-    const DescribeCapacityReservationCancellationQuotesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeCapacityReservationCancellationQuotesOutcome(result.GetResultWithOwnership())
-                            : DescribeCapacityReservationCancellationQuotesOutcome(std::move(result.GetError()));
 }

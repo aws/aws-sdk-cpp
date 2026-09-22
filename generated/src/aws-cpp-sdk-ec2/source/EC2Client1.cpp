@@ -20,6 +20,7 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/CreateIpamResourceDiscoveryRequest.h>
 #include <aws/ec2/model/CreateIpamRoutingPolicyRegistrationRequest.h>
 #include <aws/ec2/model/CreateIpamScopeRequest.h>
 #include <aws/ec2/model/CreateKeyPairRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/ec2/model/DeleteIpamPrefixListResolverTargetRequest.h>
 #include <aws/ec2/model/DeleteIpamRequest.h>
 #include <aws/ec2/model/DeleteIpamResourceDiscoveryRequest.h>
-#include <aws/ec2/model/DeleteIpamRoutingPolicyRegistrationRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,12 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+CreateIpamResourceDiscoveryOutcome EC2Client::CreateIpamResourceDiscovery(const CreateIpamResourceDiscoveryRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIpamResourceDiscoveryOutcome(result.GetResultWithOwnership())
+                            : CreateIpamResourceDiscoveryOutcome(std::move(result.GetError()));
+}
 
 CreateIpamRoutingPolicyRegistrationOutcome EC2Client::CreateIpamRoutingPolicyRegistration(
     const CreateIpamRoutingPolicyRegistrationRequest& request) const {
@@ -741,11 +747,4 @@ DeleteIpamResourceDiscoveryOutcome EC2Client::DeleteIpamResourceDiscovery(const 
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteIpamResourceDiscoveryOutcome(result.GetResultWithOwnership())
                             : DeleteIpamResourceDiscoveryOutcome(std::move(result.GetError()));
-}
-
-DeleteIpamRoutingPolicyRegistrationOutcome EC2Client::DeleteIpamRoutingPolicyRegistration(
-    const DeleteIpamRoutingPolicyRegistrationRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteIpamRoutingPolicyRegistrationOutcome(result.GetResultWithOwnership())
-                            : DeleteIpamRoutingPolicyRegistrationOutcome(std::move(result.GetError()));
 }

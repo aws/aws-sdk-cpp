@@ -59,6 +59,10 @@ CentralizationRuleSummary& CentralizationRuleSummary::operator=(JsonView jsonVal
         TagPropagationFailureReasonMapper::GetTagPropagationFailureReasonForName(jsonValue.GetString("TagPropagationFailureReason"));
     m_tagPropagationFailureReasonHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ContextGraphStatus")) {
+    m_contextGraphStatus = ContextGraphStatusMapper::GetContextGraphStatusForName(jsonValue.GetString("ContextGraphStatus"));
+    m_contextGraphStatusHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("DestinationAccountId")) {
     m_destinationAccountId = jsonValue.GetString("DestinationAccountId");
     m_destinationAccountIdHasBeenSet = true;
@@ -112,6 +116,10 @@ JsonValue CentralizationRuleSummary::Jsonize() const {
   if (m_tagPropagationFailureReasonHasBeenSet) {
     payload.WithString("TagPropagationFailureReason",
                        TagPropagationFailureReasonMapper::GetNameForTagPropagationFailureReason(m_tagPropagationFailureReason));
+  }
+
+  if (m_contextGraphStatusHasBeenSet) {
+    payload.WithString("ContextGraphStatus", ContextGraphStatusMapper::GetNameForContextGraphStatus(m_contextGraphStatus));
   }
 
   if (m_destinationAccountIdHasBeenSet) {

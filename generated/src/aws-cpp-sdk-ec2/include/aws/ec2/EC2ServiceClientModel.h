@@ -91,6 +91,7 @@
 #include <aws/ec2/model/CreateCapacityManagerDataExportResponse.h>
 #include <aws/ec2/model/CreateCapacityReservationBySplittingResponse.h>
 #include <aws/ec2/model/CreateCapacityReservationCancellationQuoteResponse.h>
+#include <aws/ec2/model/CreateCapacityReservationDateChangeQuoteResponse.h>
 #include <aws/ec2/model/CreateCapacityReservationFleetResponse.h>
 #include <aws/ec2/model/CreateCapacityReservationResponse.h>
 #include <aws/ec2/model/CreateCarrierGatewayResponse.h>
@@ -340,6 +341,8 @@
 #include <aws/ec2/model/DescribeCapacityReservationBillingRequestsResponse.h>
 #include <aws/ec2/model/DescribeCapacityReservationCancellationQuotesRequest.h>
 #include <aws/ec2/model/DescribeCapacityReservationCancellationQuotesResponse.h>
+#include <aws/ec2/model/DescribeCapacityReservationDateChangeQuotesRequest.h>
+#include <aws/ec2/model/DescribeCapacityReservationDateChangeQuotesResponse.h>
 #include <aws/ec2/model/DescribeCapacityReservationFleetsRequest.h>
 #include <aws/ec2/model/DescribeCapacityReservationFleetsResponse.h>
 #include <aws/ec2/model/DescribeCapacityReservationTopologyRequest.h>
@@ -1114,6 +1117,7 @@ class CreateCapacityManagerDataExportRequest;
 class CreateCapacityReservationRequest;
 class CreateCapacityReservationBySplittingRequest;
 class CreateCapacityReservationCancellationQuoteRequest;
+class CreateCapacityReservationDateChangeQuoteRequest;
 class CreateCapacityReservationFleetRequest;
 class CreateCarrierGatewayRequest;
 class CreateClientVpnEndpointRequest;
@@ -1344,6 +1348,7 @@ class DescribeCapacityBlocksRequest;
 class DescribeCapacityManagerDataExportsRequest;
 class DescribeCapacityReservationBillingRequestsRequest;
 class DescribeCapacityReservationCancellationQuotesRequest;
+class DescribeCapacityReservationDateChangeQuotesRequest;
 class DescribeCapacityReservationFleetsRequest;
 class DescribeCapacityReservationTopologyRequest;
 class DescribeCapacityReservationsRequest;
@@ -1921,6 +1926,7 @@ typedef Aws::Utils::Outcome<CreateCapacityManagerDataExportResponse, EC2Error> C
 typedef Aws::Utils::Outcome<CreateCapacityReservationResponse, EC2Error> CreateCapacityReservationOutcome;
 typedef Aws::Utils::Outcome<CreateCapacityReservationBySplittingResponse, EC2Error> CreateCapacityReservationBySplittingOutcome;
 typedef Aws::Utils::Outcome<CreateCapacityReservationCancellationQuoteResponse, EC2Error> CreateCapacityReservationCancellationQuoteOutcome;
+typedef Aws::Utils::Outcome<CreateCapacityReservationDateChangeQuoteResponse, EC2Error> CreateCapacityReservationDateChangeQuoteOutcome;
 typedef Aws::Utils::Outcome<CreateCapacityReservationFleetResponse, EC2Error> CreateCapacityReservationFleetOutcome;
 typedef Aws::Utils::Outcome<CreateCarrierGatewayResponse, EC2Error> CreateCarrierGatewayOutcome;
 typedef Aws::Utils::Outcome<CreateClientVpnEndpointResponse, EC2Error> CreateClientVpnEndpointOutcome;
@@ -2162,6 +2168,8 @@ typedef Aws::Utils::Outcome<DescribeCapacityManagerDataExportsResponse, EC2Error
 typedef Aws::Utils::Outcome<DescribeCapacityReservationBillingRequestsResponse, EC2Error> DescribeCapacityReservationBillingRequestsOutcome;
 typedef Aws::Utils::Outcome<DescribeCapacityReservationCancellationQuotesResponse, EC2Error>
     DescribeCapacityReservationCancellationQuotesOutcome;
+typedef Aws::Utils::Outcome<DescribeCapacityReservationDateChangeQuotesResponse, EC2Error>
+    DescribeCapacityReservationDateChangeQuotesOutcome;
 typedef Aws::Utils::Outcome<DescribeCapacityReservationFleetsResponse, EC2Error> DescribeCapacityReservationFleetsOutcome;
 typedef Aws::Utils::Outcome<DescribeCapacityReservationTopologyResponse, EC2Error> DescribeCapacityReservationTopologyOutcome;
 typedef Aws::Utils::Outcome<DescribeCapacityReservationsResponse, EC2Error> DescribeCapacityReservationsOutcome;
@@ -2763,6 +2771,7 @@ typedef std::future<CreateCapacityManagerDataExportOutcome> CreateCapacityManage
 typedef std::future<CreateCapacityReservationOutcome> CreateCapacityReservationOutcomeCallable;
 typedef std::future<CreateCapacityReservationBySplittingOutcome> CreateCapacityReservationBySplittingOutcomeCallable;
 typedef std::future<CreateCapacityReservationCancellationQuoteOutcome> CreateCapacityReservationCancellationQuoteOutcomeCallable;
+typedef std::future<CreateCapacityReservationDateChangeQuoteOutcome> CreateCapacityReservationDateChangeQuoteOutcomeCallable;
 typedef std::future<CreateCapacityReservationFleetOutcome> CreateCapacityReservationFleetOutcomeCallable;
 typedef std::future<CreateCarrierGatewayOutcome> CreateCarrierGatewayOutcomeCallable;
 typedef std::future<CreateClientVpnEndpointOutcome> CreateClientVpnEndpointOutcomeCallable;
@@ -2998,6 +3007,7 @@ typedef std::future<DescribeCapacityBlocksOutcome> DescribeCapacityBlocksOutcome
 typedef std::future<DescribeCapacityManagerDataExportsOutcome> DescribeCapacityManagerDataExportsOutcomeCallable;
 typedef std::future<DescribeCapacityReservationBillingRequestsOutcome> DescribeCapacityReservationBillingRequestsOutcomeCallable;
 typedef std::future<DescribeCapacityReservationCancellationQuotesOutcome> DescribeCapacityReservationCancellationQuotesOutcomeCallable;
+typedef std::future<DescribeCapacityReservationDateChangeQuotesOutcome> DescribeCapacityReservationDateChangeQuotesOutcomeCallable;
 typedef std::future<DescribeCapacityReservationFleetsOutcome> DescribeCapacityReservationFleetsOutcomeCallable;
 typedef std::future<DescribeCapacityReservationTopologyOutcome> DescribeCapacityReservationTopologyOutcomeCallable;
 typedef std::future<DescribeCapacityReservationsOutcome> DescribeCapacityReservationsOutcomeCallable;
@@ -3749,6 +3759,10 @@ typedef std::function<void(const EC2Client*, const Model::CreateCapacityReservat
                            const Model::CreateCapacityReservationCancellationQuoteOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateCapacityReservationCancellationQuoteResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::CreateCapacityReservationDateChangeQuoteRequest&,
+                           const Model::CreateCapacityReservationDateChangeQuoteOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateCapacityReservationDateChangeQuoteResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::CreateCapacityReservationFleetRequest&,
                            const Model::CreateCapacityReservationFleetOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -4531,6 +4545,10 @@ typedef std::function<void(const EC2Client*, const Model::DescribeCapacityReserv
                            const Model::DescribeCapacityReservationCancellationQuotesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeCapacityReservationCancellationQuotesResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DescribeCapacityReservationDateChangeQuotesRequest&,
+                           const Model::DescribeCapacityReservationDateChangeQuotesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeCapacityReservationDateChangeQuotesResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::DescribeCapacityReservationFleetsRequest&,
                            const Model::DescribeCapacityReservationFleetsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

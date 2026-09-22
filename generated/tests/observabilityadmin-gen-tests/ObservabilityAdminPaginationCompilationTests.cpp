@@ -10,6 +10,7 @@
 #include <aws/observabilityadmin/ObservabilityAdminPaginationBase.h>
 #include <aws/observabilityadmin/model/ListResourceTelemetryPaginationTraits.h>
 #include <aws/observabilityadmin/model/ListTelemetryRulesPaginationTraits.h>
+#include <aws/observabilityadmin/model/ListDatasetIntegrationsPaginationTraits.h>
 #include <aws/observabilityadmin/model/ListTelemetryPipelinesPaginationTraits.h>
 #include <aws/observabilityadmin/model/ListS3TableIntegrationsPaginationTraits.h>
 #include <aws/observabilityadmin/model/ListCentralizationRulesForOrganizationPaginationTraits.h>

@@ -83,6 +83,7 @@
 #include <aws/cloudsearchdomain/CloudSearchDomainClient.h>
 #include <aws/cloudtrail-data/CloudTrailDataClient.h>
 #include <aws/cloudtrail/CloudTrailClient.h>
+#include <aws/cloudwatchomni/CloudWatchOmniClient.h>
 #include <aws/codeartifact/CodeArtifactClient.h>
 #include <aws/codebuild/CodeBuildClient.h>
 #include <aws/codecatalyst/CodeCatalystClient.h>

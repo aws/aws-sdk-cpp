@@ -20,6 +20,8 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/UpdateSecurityGroupRuleDescriptionsEgressRequest.h>
+#include <aws/ec2/model/UpdateSecurityGroupRuleDescriptionsIngressRequest.h>
 #include <aws/ec2/model/ValidateSecurityGroupQuotasForInterfaceRequest.h>
 #include <aws/ec2/model/WithdrawByoipCidrRequest.h>
 #include <smithy/tracing/TracingUtils.h>
@@ -33,6 +35,20 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+UpdateSecurityGroupRuleDescriptionsEgressOutcome EC2Client::UpdateSecurityGroupRuleDescriptionsEgress(
+    const UpdateSecurityGroupRuleDescriptionsEgressRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSecurityGroupRuleDescriptionsEgressOutcome(result.GetResultWithOwnership())
+                            : UpdateSecurityGroupRuleDescriptionsEgressOutcome(std::move(result.GetError()));
+}
+
+UpdateSecurityGroupRuleDescriptionsIngressOutcome EC2Client::UpdateSecurityGroupRuleDescriptionsIngress(
+    const UpdateSecurityGroupRuleDescriptionsIngressRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSecurityGroupRuleDescriptionsIngressOutcome(result.GetResultWithOwnership())
+                            : UpdateSecurityGroupRuleDescriptionsIngressOutcome(std::move(result.GetError()));
+}
 
 ValidateSecurityGroupQuotasForInterfaceOutcome EC2Client::ValidateSecurityGroupQuotasForInterface(
     const ValidateSecurityGroupQuotasForInterfaceRequest& request) const {

@@ -127,6 +127,7 @@ static const int vpn_concentrator_HASH = HashingUtils::HashString("vpn-concentra
 static const int ipam_pool_allocation_HASH = HashingUtils::HashString("ipam-pool-allocation");
 static const int capacity_reservation_cancellation_quote_HASH = HashingUtils::HashString("capacity-reservation-cancellation-quote");
 static const int application_status_check_HASH = HashingUtils::HashString("application-status-check");
+static const int capacity_reservation_modification_quote_HASH = HashingUtils::HashString("capacity-reservation-modification-quote");
 
 ResourceType GetResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -352,6 +353,8 @@ ResourceType GetResourceTypeForName(const Aws::String& name) {
     return ResourceType::capacity_reservation_cancellation_quote;
   } else if (hashCode == application_status_check_HASH) {
     return ResourceType::application_status_check;
+  } else if (hashCode == capacity_reservation_modification_quote_HASH) {
+    return ResourceType::capacity_reservation_modification_quote;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -588,6 +591,8 @@ Aws::String GetNameForResourceType(ResourceType enumValue) {
       return "capacity-reservation-cancellation-quote";
     case ResourceType::application_status_check:
       return "application-status-check";
+    case ResourceType::capacity_reservation_modification_quote:
+      return "capacity-reservation-modification-quote";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

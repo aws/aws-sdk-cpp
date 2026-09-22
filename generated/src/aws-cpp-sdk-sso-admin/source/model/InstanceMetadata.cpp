@@ -26,6 +26,10 @@ InstanceMetadata& InstanceMetadata::operator=(JsonView jsonValue) {
     m_identityStoreId = jsonValue.GetString("IdentityStoreId");
     m_identityStoreIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("IdentityStoreArn")) {
+    m_identityStoreArn = jsonValue.GetString("IdentityStoreArn");
+    m_identityStoreArnHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("OwnerAccountId")) {
     m_ownerAccountId = jsonValue.GetString("OwnerAccountId");
     m_ownerAccountIdHasBeenSet = true;
@@ -69,6 +73,10 @@ JsonValue InstanceMetadata::Jsonize() const {
 
   if (m_identityStoreIdHasBeenSet) {
     payload.WithString("IdentityStoreId", m_identityStoreId);
+  }
+
+  if (m_identityStoreArnHasBeenSet) {
+    payload.WithString("IdentityStoreArn", m_identityStoreArn);
   }
 
   if (m_ownerAccountIdHasBeenSet) {

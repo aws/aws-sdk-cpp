@@ -31,8 +31,11 @@
 #include <aws/observabilityadmin/model/Condition.h>
 #include <aws/observabilityadmin/model/ConfigurationSummary.h>
 #include <aws/observabilityadmin/model/ConflictException.h>
+#include <aws/observabilityadmin/model/ContextGraphStatus.h>
 #include <aws/observabilityadmin/model/CreateCentralizationRuleForOrganizationRequest.h>
 #include <aws/observabilityadmin/model/CreateCentralizationRuleForOrganizationResult.h>
+#include <aws/observabilityadmin/model/CreateDatasetIntegrationRequest.h>
+#include <aws/observabilityadmin/model/CreateDatasetIntegrationResult.h>
 #include <aws/observabilityadmin/model/CreateS3TableIntegrationRequest.h>
 #include <aws/observabilityadmin/model/CreateS3TableIntegrationResult.h>
 #include <aws/observabilityadmin/model/CreateTelemetryPipelineRequest.h>
@@ -42,7 +45,9 @@
 #include <aws/observabilityadmin/model/CreateTelemetryRuleRequest.h>
 #include <aws/observabilityadmin/model/CreateTelemetryRuleResult.h>
 #include <aws/observabilityadmin/model/DataSource.h>
+#include <aws/observabilityadmin/model/DatasetIntegrationSummary.h>
 #include <aws/observabilityadmin/model/DeleteCentralizationRuleForOrganizationRequest.h>
+#include <aws/observabilityadmin/model/DeleteDatasetIntegrationRequest.h>
 #include <aws/observabilityadmin/model/DeleteS3TableIntegrationRequest.h>
 #include <aws/observabilityadmin/model/DeleteTelemetryPipelineRequest.h>
 #include <aws/observabilityadmin/model/DeleteTelemetryPipelineResult.h>
@@ -63,6 +68,8 @@
 #include <aws/observabilityadmin/model/FilterRequirement.h>
 #include <aws/observabilityadmin/model/GetCentralizationRuleForOrganizationRequest.h>
 #include <aws/observabilityadmin/model/GetCentralizationRuleForOrganizationResult.h>
+#include <aws/observabilityadmin/model/GetDatasetIntegrationRequest.h>
+#include <aws/observabilityadmin/model/GetDatasetIntegrationResult.h>
 #include <aws/observabilityadmin/model/GetS3TableIntegrationRequest.h>
 #include <aws/observabilityadmin/model/GetS3TableIntegrationResult.h>
 #include <aws/observabilityadmin/model/GetTelemetryEnrichmentStatusRequest.h>
@@ -84,6 +91,9 @@
 #include <aws/observabilityadmin/model/ListCentralizationRulesForOrganizationPaginationTraits.h>
 #include <aws/observabilityadmin/model/ListCentralizationRulesForOrganizationRequest.h>
 #include <aws/observabilityadmin/model/ListCentralizationRulesForOrganizationResult.h>
+#include <aws/observabilityadmin/model/ListDatasetIntegrationsPaginationTraits.h>
+#include <aws/observabilityadmin/model/ListDatasetIntegrationsRequest.h>
+#include <aws/observabilityadmin/model/ListDatasetIntegrationsResult.h>
 #include <aws/observabilityadmin/model/ListResourceTelemetryForOrganizationPaginationTraits.h>
 #include <aws/observabilityadmin/model/ListResourceTelemetryForOrganizationRequest.h>
 #include <aws/observabilityadmin/model/ListResourceTelemetryForOrganizationResult.h>
@@ -127,6 +137,7 @@
 #include <aws/observabilityadmin/model/SignalType.h>
 #include <aws/observabilityadmin/model/SingleHeader.h>
 #include <aws/observabilityadmin/model/Source.h>
+#include <aws/observabilityadmin/model/SourceContextGraphConfiguration.h>
 #include <aws/observabilityadmin/model/SourceLogsConfiguration.h>
 #include <aws/observabilityadmin/model/SourceMetricsConfiguration.h>
 #include <aws/observabilityadmin/model/StartTelemetryEnrichmentRequest.h>
@@ -161,6 +172,8 @@
 #include <aws/observabilityadmin/model/UntagResourceRequest.h>
 #include <aws/observabilityadmin/model/UpdateCentralizationRuleForOrganizationRequest.h>
 #include <aws/observabilityadmin/model/UpdateCentralizationRuleForOrganizationResult.h>
+#include <aws/observabilityadmin/model/UpdateDatasetIntegrationRequest.h>
+#include <aws/observabilityadmin/model/UpdateDatasetIntegrationResult.h>
 #include <aws/observabilityadmin/model/UpdateTelemetryPipelineRequest.h>
 #include <aws/observabilityadmin/model/UpdateTelemetryPipelineResult.h>
 #include <aws/observabilityadmin/model/UpdateTelemetryRuleForOrganizationRequest.h>

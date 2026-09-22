@@ -1087,6 +1087,473 @@ Capabilities& Capabilities::operator=(JsonView jsonValue) {
     m_useNewRelicAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseNewRelicAction"));
     m_useNewRelicActionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("PagerDutyAgentAction")) {
+    m_pagerDutyAgentAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("PagerDutyAgentAction"));
+    m_pagerDutyAgentActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdatePagerDutyAgentAction")) {
+    m_createAndUpdatePagerDutyAgentAction =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdatePagerDutyAgentAction"));
+    m_createAndUpdatePagerDutyAgentActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SharePagerDutyAgentAction")) {
+    m_sharePagerDutyAgentAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("SharePagerDutyAgentAction"));
+    m_sharePagerDutyAgentActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UsePagerDutyAgentAction")) {
+    m_usePagerDutyAgentAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UsePagerDutyAgentAction"));
+    m_usePagerDutyAgentActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("VisierAgentAction")) {
+    m_visierAgentAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("VisierAgentAction"));
+    m_visierAgentActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateVisierAgentAction")) {
+    m_createAndUpdateVisierAgentAction =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateVisierAgentAction"));
+    m_createAndUpdateVisierAgentActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareVisierAgentAction")) {
+    m_shareVisierAgentAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareVisierAgentAction"));
+    m_shareVisierAgentActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseVisierAgentAction")) {
+    m_useVisierAgentAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseVisierAgentAction"));
+    m_useVisierAgentActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ZoomAction")) {
+    m_zoomAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ZoomAction"));
+    m_zoomActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateZoomAction")) {
+    m_createAndUpdateZoomAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateZoomAction"));
+    m_createAndUpdateZoomActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareZoomAction")) {
+    m_shareZoomAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareZoomAction"));
+    m_shareZoomActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseZoomAction")) {
+    m_useZoomAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseZoomAction"));
+    m_useZoomActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SnowFlakeAction")) {
+    m_snowFlakeAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("SnowFlakeAction"));
+    m_snowFlakeActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateSnowFlakeAction")) {
+    m_createAndUpdateSnowFlakeAction =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateSnowFlakeAction"));
+    m_createAndUpdateSnowFlakeActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareSnowFlakeAction")) {
+    m_shareSnowFlakeAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareSnowFlakeAction"));
+    m_shareSnowFlakeActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseSnowFlakeAction")) {
+    m_useSnowFlakeAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseSnowFlakeAction"));
+    m_useSnowFlakeActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ZapierAction")) {
+    m_zapierAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ZapierAction"));
+    m_zapierActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateZapierAction")) {
+    m_createAndUpdateZapierAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateZapierAction"));
+    m_createAndUpdateZapierActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareZapierAction")) {
+    m_shareZapierAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareZapierAction"));
+    m_shareZapierActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseZapierAction")) {
+    m_useZapierAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseZapierAction"));
+    m_useZapierActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AirtableAction")) {
+    m_airtableAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("AirtableAction"));
+    m_airtableActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateAirtableAction")) {
+    m_createAndUpdateAirtableAction =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateAirtableAction"));
+    m_createAndUpdateAirtableActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareAirtableAction")) {
+    m_shareAirtableAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareAirtableAction"));
+    m_shareAirtableActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseAirtableAction")) {
+    m_useAirtableAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseAirtableAction"));
+    m_useAirtableActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("DropboxAction")) {
+    m_dropboxAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("DropboxAction"));
+    m_dropboxActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateDropboxAction")) {
+    m_createAndUpdateDropboxAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateDropboxAction"));
+    m_createAndUpdateDropboxActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareDropboxAction")) {
+    m_shareDropboxAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareDropboxAction"));
+    m_shareDropboxActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseDropboxAction")) {
+    m_useDropboxAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseDropboxAction"));
+    m_useDropboxActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("GmailAction")) {
+    m_gmailAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("GmailAction"));
+    m_gmailActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateGmailAction")) {
+    m_createAndUpdateGmailAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateGmailAction"));
+    m_createAndUpdateGmailActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareGmailAction")) {
+    m_shareGmailAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareGmailAction"));
+    m_shareGmailActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseGmailAction")) {
+    m_useGmailAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseGmailAction"));
+    m_useGmailActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("GoogleAnalyticsAction")) {
+    m_googleAnalyticsAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("GoogleAnalyticsAction"));
+    m_googleAnalyticsActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateGoogleAnalyticsAction")) {
+    m_createAndUpdateGoogleAnalyticsAction =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateGoogleAnalyticsAction"));
+    m_createAndUpdateGoogleAnalyticsActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareGoogleAnalyticsAction")) {
+    m_shareGoogleAnalyticsAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareGoogleAnalyticsAction"));
+    m_shareGoogleAnalyticsActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseGoogleAnalyticsAction")) {
+    m_useGoogleAnalyticsAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseGoogleAnalyticsAction"));
+    m_useGoogleAnalyticsActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("GoogleDocsAction")) {
+    m_googleDocsAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("GoogleDocsAction"));
+    m_googleDocsActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateGoogleDocsAction")) {
+    m_createAndUpdateGoogleDocsAction =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateGoogleDocsAction"));
+    m_createAndUpdateGoogleDocsActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareGoogleDocsAction")) {
+    m_shareGoogleDocsAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareGoogleDocsAction"));
+    m_shareGoogleDocsActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseGoogleDocsAction")) {
+    m_useGoogleDocsAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseGoogleDocsAction"));
+    m_useGoogleDocsActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("GoogleDriveAction")) {
+    m_googleDriveAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("GoogleDriveAction"));
+    m_googleDriveActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateGoogleDriveAction")) {
+    m_createAndUpdateGoogleDriveAction =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateGoogleDriveAction"));
+    m_createAndUpdateGoogleDriveActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareGoogleDriveAction")) {
+    m_shareGoogleDriveAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareGoogleDriveAction"));
+    m_shareGoogleDriveActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseGoogleDriveAction")) {
+    m_useGoogleDriveAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseGoogleDriveAction"));
+    m_useGoogleDriveActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("GoogleMeetAction")) {
+    m_googleMeetAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("GoogleMeetAction"));
+    m_googleMeetActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateGoogleMeetAction")) {
+    m_createAndUpdateGoogleMeetAction =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateGoogleMeetAction"));
+    m_createAndUpdateGoogleMeetActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareGoogleMeetAction")) {
+    m_shareGoogleMeetAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareGoogleMeetAction"));
+    m_shareGoogleMeetActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseGoogleMeetAction")) {
+    m_useGoogleMeetAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseGoogleMeetAction"));
+    m_useGoogleMeetActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("GoogleSheetsAction")) {
+    m_googleSheetsAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("GoogleSheetsAction"));
+    m_googleSheetsActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateGoogleSheetsAction")) {
+    m_createAndUpdateGoogleSheetsAction =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateGoogleSheetsAction"));
+    m_createAndUpdateGoogleSheetsActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareGoogleSheetsAction")) {
+    m_shareGoogleSheetsAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareGoogleSheetsAction"));
+    m_shareGoogleSheetsActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseGoogleSheetsAction")) {
+    m_useGoogleSheetsAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseGoogleSheetsAction"));
+    m_useGoogleSheetsActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("GoogleSlidesAction")) {
+    m_googleSlidesAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("GoogleSlidesAction"));
+    m_googleSlidesActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateGoogleSlidesAction")) {
+    m_createAndUpdateGoogleSlidesAction =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateGoogleSlidesAction"));
+    m_createAndUpdateGoogleSlidesActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareGoogleSlidesAction")) {
+    m_shareGoogleSlidesAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareGoogleSlidesAction"));
+    m_shareGoogleSlidesActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseGoogleSlidesAction")) {
+    m_useGoogleSlidesAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseGoogleSlidesAction"));
+    m_useGoogleSlidesActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("QuickBooksAction")) {
+    m_quickBooksAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("QuickBooksAction"));
+    m_quickBooksActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateQuickBooksAction")) {
+    m_createAndUpdateQuickBooksAction =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateQuickBooksAction"));
+    m_createAndUpdateQuickBooksActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareQuickBooksAction")) {
+    m_shareQuickBooksAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareQuickBooksAction"));
+    m_shareQuickBooksActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseQuickBooksAction")) {
+    m_useQuickBooksAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseQuickBooksAction"));
+    m_useQuickBooksActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("FigmaAction")) {
+    m_figmaAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("FigmaAction"));
+    m_figmaActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateFigmaAction")) {
+    m_createAndUpdateFigmaAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateFigmaAction"));
+    m_createAndUpdateFigmaActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareFigmaAction")) {
+    m_shareFigmaAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareFigmaAction"));
+    m_shareFigmaActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseFigmaAction")) {
+    m_useFigmaAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseFigmaAction"));
+    m_useFigmaActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("WhatsAppAction")) {
+    m_whatsAppAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("WhatsAppAction"));
+    m_whatsAppActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateWhatsAppAction")) {
+    m_createAndUpdateWhatsAppAction =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateWhatsAppAction"));
+    m_createAndUpdateWhatsAppActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareWhatsAppAction")) {
+    m_shareWhatsAppAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareWhatsAppAction"));
+    m_shareWhatsAppActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseWhatsAppAction")) {
+    m_useWhatsAppAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseWhatsAppAction"));
+    m_useWhatsAppActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("GoogleChatAction")) {
+    m_googleChatAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("GoogleChatAction"));
+    m_googleChatActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateGoogleChatAction")) {
+    m_createAndUpdateGoogleChatAction =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateGoogleChatAction"));
+    m_createAndUpdateGoogleChatActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareGoogleChatAction")) {
+    m_shareGoogleChatAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareGoogleChatAction"));
+    m_shareGoogleChatActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseGoogleChatAction")) {
+    m_useGoogleChatAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseGoogleChatAction"));
+    m_useGoogleChatActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("OneNoteAction")) {
+    m_oneNoteAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("OneNoteAction"));
+    m_oneNoteActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateOneNoteAction")) {
+    m_createAndUpdateOneNoteAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateOneNoteAction"));
+    m_createAndUpdateOneNoteActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareOneNoteAction")) {
+    m_shareOneNoteAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareOneNoteAction"));
+    m_shareOneNoteActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseOneNoteAction")) {
+    m_useOneNoteAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseOneNoteAction"));
+    m_useOneNoteActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShopifyAction")) {
+    m_shopifyAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShopifyAction"));
+    m_shopifyActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateShopifyAction")) {
+    m_createAndUpdateShopifyAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateShopifyAction"));
+    m_createAndUpdateShopifyActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareShopifyAction")) {
+    m_shareShopifyAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareShopifyAction"));
+    m_shareShopifyActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseShopifyAction")) {
+    m_useShopifyAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseShopifyAction"));
+    m_useShopifyActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AdobeAction")) {
+    m_adobeAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("AdobeAction"));
+    m_adobeActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateAdobeAction")) {
+    m_createAndUpdateAdobeAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateAdobeAction"));
+    m_createAndUpdateAdobeActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareAdobeAction")) {
+    m_shareAdobeAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareAdobeAction"));
+    m_shareAdobeActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseAdobeAction")) {
+    m_useAdobeAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseAdobeAction"));
+    m_useAdobeActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CiscoWebexVidcastAction")) {
+    m_ciscoWebexVidcastAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CiscoWebexVidcastAction"));
+    m_ciscoWebexVidcastActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateCiscoWebexVidcastAction")) {
+    m_createAndUpdateCiscoWebexVidcastAction =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateCiscoWebexVidcastAction"));
+    m_createAndUpdateCiscoWebexVidcastActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareCiscoWebexVidcastAction")) {
+    m_shareCiscoWebexVidcastAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareCiscoWebexVidcastAction"));
+    m_shareCiscoWebexVidcastActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseCiscoWebexVidcastAction")) {
+    m_useCiscoWebexVidcastAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseCiscoWebexVidcastAction"));
+    m_useCiscoWebexVidcastActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CiscoWebexMeetingsAction")) {
+    m_ciscoWebexMeetingsAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CiscoWebexMeetingsAction"));
+    m_ciscoWebexMeetingsActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateCiscoWebexMeetingsAction")) {
+    m_createAndUpdateCiscoWebexMeetingsAction =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateCiscoWebexMeetingsAction"));
+    m_createAndUpdateCiscoWebexMeetingsActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareCiscoWebexMeetingsAction")) {
+    m_shareCiscoWebexMeetingsAction =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareCiscoWebexMeetingsAction"));
+    m_shareCiscoWebexMeetingsActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseCiscoWebexMeetingsAction")) {
+    m_useCiscoWebexMeetingsAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseCiscoWebexMeetingsAction"));
+    m_useCiscoWebexMeetingsActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("DunAndBradstreetAction")) {
+    m_dunAndBradstreetAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("DunAndBradstreetAction"));
+    m_dunAndBradstreetActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateDunAndBradstreetAction")) {
+    m_createAndUpdateDunAndBradstreetAction =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateDunAndBradstreetAction"));
+    m_createAndUpdateDunAndBradstreetActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareDunAndBradstreetAction")) {
+    m_shareDunAndBradstreetAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareDunAndBradstreetAction"));
+    m_shareDunAndBradstreetActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseDunAndBradstreetAction")) {
+    m_useDunAndBradstreetAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseDunAndBradstreetAction"));
+    m_useDunAndBradstreetActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("HGInsightsAction")) {
+    m_hGInsightsAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("HGInsightsAction"));
+    m_hGInsightsActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateHGInsightsAction")) {
+    m_createAndUpdateHGInsightsAction =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateHGInsightsAction"));
+    m_createAndUpdateHGInsightsActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareHGInsightsAction")) {
+    m_shareHGInsightsAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareHGInsightsAction"));
+    m_shareHGInsightsActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseHGInsightsAction")) {
+    m_useHGInsightsAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseHGInsightsAction"));
+    m_useHGInsightsActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ZoomInfoAction")) {
+    m_zoomInfoAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ZoomInfoAction"));
+    m_zoomInfoActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateZoomInfoAction")) {
+    m_createAndUpdateZoomInfoAction =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateZoomInfoAction"));
+    m_createAndUpdateZoomInfoActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareZoomInfoAction")) {
+    m_shareZoomInfoAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareZoomInfoAction"));
+    m_shareZoomInfoActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseZoomInfoAction")) {
+    m_useZoomInfoAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseZoomInfoAction"));
+    m_useZoomInfoActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("MoodysAction")) {
+    m_moodysAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("MoodysAction"));
+    m_moodysActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateMoodysAction")) {
+    m_createAndUpdateMoodysAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateMoodysAction"));
+    m_createAndUpdateMoodysActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareMoodysAction")) {
+    m_shareMoodysAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareMoodysAction"));
+    m_shareMoodysActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseMoodysAction")) {
+    m_useMoodysAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseMoodysAction"));
+    m_useMoodysActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("BeeAction")) {
+    m_beeAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("BeeAction"));
+    m_beeActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateBeeAction")) {
+    m_createAndUpdateBeeAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateBeeAction"));
+    m_createAndUpdateBeeActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareBeeAction")) {
+    m_shareBeeAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareBeeAction"));
+    m_shareBeeActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseBeeAction")) {
+    m_useBeeAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseBeeAction"));
+    m_useBeeActionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Topic")) {
     m_topic = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("Topic"));
     m_topicHasBeenSet = true;
@@ -2251,6 +2718,469 @@ JsonValue Capabilities::Jsonize() const {
 
   if (m_useNewRelicActionHasBeenSet) {
     payload.WithString("UseNewRelicAction", CapabilityStateMapper::GetNameForCapabilityState(m_useNewRelicAction));
+  }
+
+  if (m_pagerDutyAgentActionHasBeenSet) {
+    payload.WithString("PagerDutyAgentAction", CapabilityStateMapper::GetNameForCapabilityState(m_pagerDutyAgentAction));
+  }
+
+  if (m_createAndUpdatePagerDutyAgentActionHasBeenSet) {
+    payload.WithString("CreateAndUpdatePagerDutyAgentAction",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdatePagerDutyAgentAction));
+  }
+
+  if (m_sharePagerDutyAgentActionHasBeenSet) {
+    payload.WithString("SharePagerDutyAgentAction", CapabilityStateMapper::GetNameForCapabilityState(m_sharePagerDutyAgentAction));
+  }
+
+  if (m_usePagerDutyAgentActionHasBeenSet) {
+    payload.WithString("UsePagerDutyAgentAction", CapabilityStateMapper::GetNameForCapabilityState(m_usePagerDutyAgentAction));
+  }
+
+  if (m_visierAgentActionHasBeenSet) {
+    payload.WithString("VisierAgentAction", CapabilityStateMapper::GetNameForCapabilityState(m_visierAgentAction));
+  }
+
+  if (m_createAndUpdateVisierAgentActionHasBeenSet) {
+    payload.WithString("CreateAndUpdateVisierAgentAction",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateVisierAgentAction));
+  }
+
+  if (m_shareVisierAgentActionHasBeenSet) {
+    payload.WithString("ShareVisierAgentAction", CapabilityStateMapper::GetNameForCapabilityState(m_shareVisierAgentAction));
+  }
+
+  if (m_useVisierAgentActionHasBeenSet) {
+    payload.WithString("UseVisierAgentAction", CapabilityStateMapper::GetNameForCapabilityState(m_useVisierAgentAction));
+  }
+
+  if (m_zoomActionHasBeenSet) {
+    payload.WithString("ZoomAction", CapabilityStateMapper::GetNameForCapabilityState(m_zoomAction));
+  }
+
+  if (m_createAndUpdateZoomActionHasBeenSet) {
+    payload.WithString("CreateAndUpdateZoomAction", CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateZoomAction));
+  }
+
+  if (m_shareZoomActionHasBeenSet) {
+    payload.WithString("ShareZoomAction", CapabilityStateMapper::GetNameForCapabilityState(m_shareZoomAction));
+  }
+
+  if (m_useZoomActionHasBeenSet) {
+    payload.WithString("UseZoomAction", CapabilityStateMapper::GetNameForCapabilityState(m_useZoomAction));
+  }
+
+  if (m_snowFlakeActionHasBeenSet) {
+    payload.WithString("SnowFlakeAction", CapabilityStateMapper::GetNameForCapabilityState(m_snowFlakeAction));
+  }
+
+  if (m_createAndUpdateSnowFlakeActionHasBeenSet) {
+    payload.WithString("CreateAndUpdateSnowFlakeAction",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateSnowFlakeAction));
+  }
+
+  if (m_shareSnowFlakeActionHasBeenSet) {
+    payload.WithString("ShareSnowFlakeAction", CapabilityStateMapper::GetNameForCapabilityState(m_shareSnowFlakeAction));
+  }
+
+  if (m_useSnowFlakeActionHasBeenSet) {
+    payload.WithString("UseSnowFlakeAction", CapabilityStateMapper::GetNameForCapabilityState(m_useSnowFlakeAction));
+  }
+
+  if (m_zapierActionHasBeenSet) {
+    payload.WithString("ZapierAction", CapabilityStateMapper::GetNameForCapabilityState(m_zapierAction));
+  }
+
+  if (m_createAndUpdateZapierActionHasBeenSet) {
+    payload.WithString("CreateAndUpdateZapierAction", CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateZapierAction));
+  }
+
+  if (m_shareZapierActionHasBeenSet) {
+    payload.WithString("ShareZapierAction", CapabilityStateMapper::GetNameForCapabilityState(m_shareZapierAction));
+  }
+
+  if (m_useZapierActionHasBeenSet) {
+    payload.WithString("UseZapierAction", CapabilityStateMapper::GetNameForCapabilityState(m_useZapierAction));
+  }
+
+  if (m_airtableActionHasBeenSet) {
+    payload.WithString("AirtableAction", CapabilityStateMapper::GetNameForCapabilityState(m_airtableAction));
+  }
+
+  if (m_createAndUpdateAirtableActionHasBeenSet) {
+    payload.WithString("CreateAndUpdateAirtableAction", CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateAirtableAction));
+  }
+
+  if (m_shareAirtableActionHasBeenSet) {
+    payload.WithString("ShareAirtableAction", CapabilityStateMapper::GetNameForCapabilityState(m_shareAirtableAction));
+  }
+
+  if (m_useAirtableActionHasBeenSet) {
+    payload.WithString("UseAirtableAction", CapabilityStateMapper::GetNameForCapabilityState(m_useAirtableAction));
+  }
+
+  if (m_dropboxActionHasBeenSet) {
+    payload.WithString("DropboxAction", CapabilityStateMapper::GetNameForCapabilityState(m_dropboxAction));
+  }
+
+  if (m_createAndUpdateDropboxActionHasBeenSet) {
+    payload.WithString("CreateAndUpdateDropboxAction", CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateDropboxAction));
+  }
+
+  if (m_shareDropboxActionHasBeenSet) {
+    payload.WithString("ShareDropboxAction", CapabilityStateMapper::GetNameForCapabilityState(m_shareDropboxAction));
+  }
+
+  if (m_useDropboxActionHasBeenSet) {
+    payload.WithString("UseDropboxAction", CapabilityStateMapper::GetNameForCapabilityState(m_useDropboxAction));
+  }
+
+  if (m_gmailActionHasBeenSet) {
+    payload.WithString("GmailAction", CapabilityStateMapper::GetNameForCapabilityState(m_gmailAction));
+  }
+
+  if (m_createAndUpdateGmailActionHasBeenSet) {
+    payload.WithString("CreateAndUpdateGmailAction", CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateGmailAction));
+  }
+
+  if (m_shareGmailActionHasBeenSet) {
+    payload.WithString("ShareGmailAction", CapabilityStateMapper::GetNameForCapabilityState(m_shareGmailAction));
+  }
+
+  if (m_useGmailActionHasBeenSet) {
+    payload.WithString("UseGmailAction", CapabilityStateMapper::GetNameForCapabilityState(m_useGmailAction));
+  }
+
+  if (m_googleAnalyticsActionHasBeenSet) {
+    payload.WithString("GoogleAnalyticsAction", CapabilityStateMapper::GetNameForCapabilityState(m_googleAnalyticsAction));
+  }
+
+  if (m_createAndUpdateGoogleAnalyticsActionHasBeenSet) {
+    payload.WithString("CreateAndUpdateGoogleAnalyticsAction",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateGoogleAnalyticsAction));
+  }
+
+  if (m_shareGoogleAnalyticsActionHasBeenSet) {
+    payload.WithString("ShareGoogleAnalyticsAction", CapabilityStateMapper::GetNameForCapabilityState(m_shareGoogleAnalyticsAction));
+  }
+
+  if (m_useGoogleAnalyticsActionHasBeenSet) {
+    payload.WithString("UseGoogleAnalyticsAction", CapabilityStateMapper::GetNameForCapabilityState(m_useGoogleAnalyticsAction));
+  }
+
+  if (m_googleDocsActionHasBeenSet) {
+    payload.WithString("GoogleDocsAction", CapabilityStateMapper::GetNameForCapabilityState(m_googleDocsAction));
+  }
+
+  if (m_createAndUpdateGoogleDocsActionHasBeenSet) {
+    payload.WithString("CreateAndUpdateGoogleDocsAction",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateGoogleDocsAction));
+  }
+
+  if (m_shareGoogleDocsActionHasBeenSet) {
+    payload.WithString("ShareGoogleDocsAction", CapabilityStateMapper::GetNameForCapabilityState(m_shareGoogleDocsAction));
+  }
+
+  if (m_useGoogleDocsActionHasBeenSet) {
+    payload.WithString("UseGoogleDocsAction", CapabilityStateMapper::GetNameForCapabilityState(m_useGoogleDocsAction));
+  }
+
+  if (m_googleDriveActionHasBeenSet) {
+    payload.WithString("GoogleDriveAction", CapabilityStateMapper::GetNameForCapabilityState(m_googleDriveAction));
+  }
+
+  if (m_createAndUpdateGoogleDriveActionHasBeenSet) {
+    payload.WithString("CreateAndUpdateGoogleDriveAction",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateGoogleDriveAction));
+  }
+
+  if (m_shareGoogleDriveActionHasBeenSet) {
+    payload.WithString("ShareGoogleDriveAction", CapabilityStateMapper::GetNameForCapabilityState(m_shareGoogleDriveAction));
+  }
+
+  if (m_useGoogleDriveActionHasBeenSet) {
+    payload.WithString("UseGoogleDriveAction", CapabilityStateMapper::GetNameForCapabilityState(m_useGoogleDriveAction));
+  }
+
+  if (m_googleMeetActionHasBeenSet) {
+    payload.WithString("GoogleMeetAction", CapabilityStateMapper::GetNameForCapabilityState(m_googleMeetAction));
+  }
+
+  if (m_createAndUpdateGoogleMeetActionHasBeenSet) {
+    payload.WithString("CreateAndUpdateGoogleMeetAction",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateGoogleMeetAction));
+  }
+
+  if (m_shareGoogleMeetActionHasBeenSet) {
+    payload.WithString("ShareGoogleMeetAction", CapabilityStateMapper::GetNameForCapabilityState(m_shareGoogleMeetAction));
+  }
+
+  if (m_useGoogleMeetActionHasBeenSet) {
+    payload.WithString("UseGoogleMeetAction", CapabilityStateMapper::GetNameForCapabilityState(m_useGoogleMeetAction));
+  }
+
+  if (m_googleSheetsActionHasBeenSet) {
+    payload.WithString("GoogleSheetsAction", CapabilityStateMapper::GetNameForCapabilityState(m_googleSheetsAction));
+  }
+
+  if (m_createAndUpdateGoogleSheetsActionHasBeenSet) {
+    payload.WithString("CreateAndUpdateGoogleSheetsAction",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateGoogleSheetsAction));
+  }
+
+  if (m_shareGoogleSheetsActionHasBeenSet) {
+    payload.WithString("ShareGoogleSheetsAction", CapabilityStateMapper::GetNameForCapabilityState(m_shareGoogleSheetsAction));
+  }
+
+  if (m_useGoogleSheetsActionHasBeenSet) {
+    payload.WithString("UseGoogleSheetsAction", CapabilityStateMapper::GetNameForCapabilityState(m_useGoogleSheetsAction));
+  }
+
+  if (m_googleSlidesActionHasBeenSet) {
+    payload.WithString("GoogleSlidesAction", CapabilityStateMapper::GetNameForCapabilityState(m_googleSlidesAction));
+  }
+
+  if (m_createAndUpdateGoogleSlidesActionHasBeenSet) {
+    payload.WithString("CreateAndUpdateGoogleSlidesAction",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateGoogleSlidesAction));
+  }
+
+  if (m_shareGoogleSlidesActionHasBeenSet) {
+    payload.WithString("ShareGoogleSlidesAction", CapabilityStateMapper::GetNameForCapabilityState(m_shareGoogleSlidesAction));
+  }
+
+  if (m_useGoogleSlidesActionHasBeenSet) {
+    payload.WithString("UseGoogleSlidesAction", CapabilityStateMapper::GetNameForCapabilityState(m_useGoogleSlidesAction));
+  }
+
+  if (m_quickBooksActionHasBeenSet) {
+    payload.WithString("QuickBooksAction", CapabilityStateMapper::GetNameForCapabilityState(m_quickBooksAction));
+  }
+
+  if (m_createAndUpdateQuickBooksActionHasBeenSet) {
+    payload.WithString("CreateAndUpdateQuickBooksAction",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateQuickBooksAction));
+  }
+
+  if (m_shareQuickBooksActionHasBeenSet) {
+    payload.WithString("ShareQuickBooksAction", CapabilityStateMapper::GetNameForCapabilityState(m_shareQuickBooksAction));
+  }
+
+  if (m_useQuickBooksActionHasBeenSet) {
+    payload.WithString("UseQuickBooksAction", CapabilityStateMapper::GetNameForCapabilityState(m_useQuickBooksAction));
+  }
+
+  if (m_figmaActionHasBeenSet) {
+    payload.WithString("FigmaAction", CapabilityStateMapper::GetNameForCapabilityState(m_figmaAction));
+  }
+
+  if (m_createAndUpdateFigmaActionHasBeenSet) {
+    payload.WithString("CreateAndUpdateFigmaAction", CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateFigmaAction));
+  }
+
+  if (m_shareFigmaActionHasBeenSet) {
+    payload.WithString("ShareFigmaAction", CapabilityStateMapper::GetNameForCapabilityState(m_shareFigmaAction));
+  }
+
+  if (m_useFigmaActionHasBeenSet) {
+    payload.WithString("UseFigmaAction", CapabilityStateMapper::GetNameForCapabilityState(m_useFigmaAction));
+  }
+
+  if (m_whatsAppActionHasBeenSet) {
+    payload.WithString("WhatsAppAction", CapabilityStateMapper::GetNameForCapabilityState(m_whatsAppAction));
+  }
+
+  if (m_createAndUpdateWhatsAppActionHasBeenSet) {
+    payload.WithString("CreateAndUpdateWhatsAppAction", CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateWhatsAppAction));
+  }
+
+  if (m_shareWhatsAppActionHasBeenSet) {
+    payload.WithString("ShareWhatsAppAction", CapabilityStateMapper::GetNameForCapabilityState(m_shareWhatsAppAction));
+  }
+
+  if (m_useWhatsAppActionHasBeenSet) {
+    payload.WithString("UseWhatsAppAction", CapabilityStateMapper::GetNameForCapabilityState(m_useWhatsAppAction));
+  }
+
+  if (m_googleChatActionHasBeenSet) {
+    payload.WithString("GoogleChatAction", CapabilityStateMapper::GetNameForCapabilityState(m_googleChatAction));
+  }
+
+  if (m_createAndUpdateGoogleChatActionHasBeenSet) {
+    payload.WithString("CreateAndUpdateGoogleChatAction",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateGoogleChatAction));
+  }
+
+  if (m_shareGoogleChatActionHasBeenSet) {
+    payload.WithString("ShareGoogleChatAction", CapabilityStateMapper::GetNameForCapabilityState(m_shareGoogleChatAction));
+  }
+
+  if (m_useGoogleChatActionHasBeenSet) {
+    payload.WithString("UseGoogleChatAction", CapabilityStateMapper::GetNameForCapabilityState(m_useGoogleChatAction));
+  }
+
+  if (m_oneNoteActionHasBeenSet) {
+    payload.WithString("OneNoteAction", CapabilityStateMapper::GetNameForCapabilityState(m_oneNoteAction));
+  }
+
+  if (m_createAndUpdateOneNoteActionHasBeenSet) {
+    payload.WithString("CreateAndUpdateOneNoteAction", CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateOneNoteAction));
+  }
+
+  if (m_shareOneNoteActionHasBeenSet) {
+    payload.WithString("ShareOneNoteAction", CapabilityStateMapper::GetNameForCapabilityState(m_shareOneNoteAction));
+  }
+
+  if (m_useOneNoteActionHasBeenSet) {
+    payload.WithString("UseOneNoteAction", CapabilityStateMapper::GetNameForCapabilityState(m_useOneNoteAction));
+  }
+
+  if (m_shopifyActionHasBeenSet) {
+    payload.WithString("ShopifyAction", CapabilityStateMapper::GetNameForCapabilityState(m_shopifyAction));
+  }
+
+  if (m_createAndUpdateShopifyActionHasBeenSet) {
+    payload.WithString("CreateAndUpdateShopifyAction", CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateShopifyAction));
+  }
+
+  if (m_shareShopifyActionHasBeenSet) {
+    payload.WithString("ShareShopifyAction", CapabilityStateMapper::GetNameForCapabilityState(m_shareShopifyAction));
+  }
+
+  if (m_useShopifyActionHasBeenSet) {
+    payload.WithString("UseShopifyAction", CapabilityStateMapper::GetNameForCapabilityState(m_useShopifyAction));
+  }
+
+  if (m_adobeActionHasBeenSet) {
+    payload.WithString("AdobeAction", CapabilityStateMapper::GetNameForCapabilityState(m_adobeAction));
+  }
+
+  if (m_createAndUpdateAdobeActionHasBeenSet) {
+    payload.WithString("CreateAndUpdateAdobeAction", CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateAdobeAction));
+  }
+
+  if (m_shareAdobeActionHasBeenSet) {
+    payload.WithString("ShareAdobeAction", CapabilityStateMapper::GetNameForCapabilityState(m_shareAdobeAction));
+  }
+
+  if (m_useAdobeActionHasBeenSet) {
+    payload.WithString("UseAdobeAction", CapabilityStateMapper::GetNameForCapabilityState(m_useAdobeAction));
+  }
+
+  if (m_ciscoWebexVidcastActionHasBeenSet) {
+    payload.WithString("CiscoWebexVidcastAction", CapabilityStateMapper::GetNameForCapabilityState(m_ciscoWebexVidcastAction));
+  }
+
+  if (m_createAndUpdateCiscoWebexVidcastActionHasBeenSet) {
+    payload.WithString("CreateAndUpdateCiscoWebexVidcastAction",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateCiscoWebexVidcastAction));
+  }
+
+  if (m_shareCiscoWebexVidcastActionHasBeenSet) {
+    payload.WithString("ShareCiscoWebexVidcastAction", CapabilityStateMapper::GetNameForCapabilityState(m_shareCiscoWebexVidcastAction));
+  }
+
+  if (m_useCiscoWebexVidcastActionHasBeenSet) {
+    payload.WithString("UseCiscoWebexVidcastAction", CapabilityStateMapper::GetNameForCapabilityState(m_useCiscoWebexVidcastAction));
+  }
+
+  if (m_ciscoWebexMeetingsActionHasBeenSet) {
+    payload.WithString("CiscoWebexMeetingsAction", CapabilityStateMapper::GetNameForCapabilityState(m_ciscoWebexMeetingsAction));
+  }
+
+  if (m_createAndUpdateCiscoWebexMeetingsActionHasBeenSet) {
+    payload.WithString("CreateAndUpdateCiscoWebexMeetingsAction",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateCiscoWebexMeetingsAction));
+  }
+
+  if (m_shareCiscoWebexMeetingsActionHasBeenSet) {
+    payload.WithString("ShareCiscoWebexMeetingsAction", CapabilityStateMapper::GetNameForCapabilityState(m_shareCiscoWebexMeetingsAction));
+  }
+
+  if (m_useCiscoWebexMeetingsActionHasBeenSet) {
+    payload.WithString("UseCiscoWebexMeetingsAction", CapabilityStateMapper::GetNameForCapabilityState(m_useCiscoWebexMeetingsAction));
+  }
+
+  if (m_dunAndBradstreetActionHasBeenSet) {
+    payload.WithString("DunAndBradstreetAction", CapabilityStateMapper::GetNameForCapabilityState(m_dunAndBradstreetAction));
+  }
+
+  if (m_createAndUpdateDunAndBradstreetActionHasBeenSet) {
+    payload.WithString("CreateAndUpdateDunAndBradstreetAction",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateDunAndBradstreetAction));
+  }
+
+  if (m_shareDunAndBradstreetActionHasBeenSet) {
+    payload.WithString("ShareDunAndBradstreetAction", CapabilityStateMapper::GetNameForCapabilityState(m_shareDunAndBradstreetAction));
+  }
+
+  if (m_useDunAndBradstreetActionHasBeenSet) {
+    payload.WithString("UseDunAndBradstreetAction", CapabilityStateMapper::GetNameForCapabilityState(m_useDunAndBradstreetAction));
+  }
+
+  if (m_hGInsightsActionHasBeenSet) {
+    payload.WithString("HGInsightsAction", CapabilityStateMapper::GetNameForCapabilityState(m_hGInsightsAction));
+  }
+
+  if (m_createAndUpdateHGInsightsActionHasBeenSet) {
+    payload.WithString("CreateAndUpdateHGInsightsAction",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateHGInsightsAction));
+  }
+
+  if (m_shareHGInsightsActionHasBeenSet) {
+    payload.WithString("ShareHGInsightsAction", CapabilityStateMapper::GetNameForCapabilityState(m_shareHGInsightsAction));
+  }
+
+  if (m_useHGInsightsActionHasBeenSet) {
+    payload.WithString("UseHGInsightsAction", CapabilityStateMapper::GetNameForCapabilityState(m_useHGInsightsAction));
+  }
+
+  if (m_zoomInfoActionHasBeenSet) {
+    payload.WithString("ZoomInfoAction", CapabilityStateMapper::GetNameForCapabilityState(m_zoomInfoAction));
+  }
+
+  if (m_createAndUpdateZoomInfoActionHasBeenSet) {
+    payload.WithString("CreateAndUpdateZoomInfoAction", CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateZoomInfoAction));
+  }
+
+  if (m_shareZoomInfoActionHasBeenSet) {
+    payload.WithString("ShareZoomInfoAction", CapabilityStateMapper::GetNameForCapabilityState(m_shareZoomInfoAction));
+  }
+
+  if (m_useZoomInfoActionHasBeenSet) {
+    payload.WithString("UseZoomInfoAction", CapabilityStateMapper::GetNameForCapabilityState(m_useZoomInfoAction));
+  }
+
+  if (m_moodysActionHasBeenSet) {
+    payload.WithString("MoodysAction", CapabilityStateMapper::GetNameForCapabilityState(m_moodysAction));
+  }
+
+  if (m_createAndUpdateMoodysActionHasBeenSet) {
+    payload.WithString("CreateAndUpdateMoodysAction", CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateMoodysAction));
+  }
+
+  if (m_shareMoodysActionHasBeenSet) {
+    payload.WithString("ShareMoodysAction", CapabilityStateMapper::GetNameForCapabilityState(m_shareMoodysAction));
+  }
+
+  if (m_useMoodysActionHasBeenSet) {
+    payload.WithString("UseMoodysAction", CapabilityStateMapper::GetNameForCapabilityState(m_useMoodysAction));
+  }
+
+  if (m_beeActionHasBeenSet) {
+    payload.WithString("BeeAction", CapabilityStateMapper::GetNameForCapabilityState(m_beeAction));
+  }
+
+  if (m_createAndUpdateBeeActionHasBeenSet) {
+    payload.WithString("CreateAndUpdateBeeAction", CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateBeeAction));
+  }
+
+  if (m_shareBeeActionHasBeenSet) {
+    payload.WithString("ShareBeeAction", CapabilityStateMapper::GetNameForCapabilityState(m_shareBeeAction));
+  }
+
+  if (m_useBeeActionHasBeenSet) {
+    payload.WithString("UseBeeAction", CapabilityStateMapper::GetNameForCapabilityState(m_useBeeAction));
   }
 
   if (m_topicHasBeenSet) {

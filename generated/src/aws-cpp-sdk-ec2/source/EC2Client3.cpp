@@ -20,6 +20,8 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/DescribeCapacityReservationCancellationQuotesRequest.h>
+#include <aws/ec2/model/DescribeCapacityReservationDateChangeQuotesRequest.h>
 #include <aws/ec2/model/DescribeCapacityReservationFleetsRequest.h>
 #include <aws/ec2/model/DescribeCapacityReservationTopologyRequest.h>
 #include <aws/ec2/model/DescribeCapacityReservationsRequest.h>
@@ -117,8 +119,6 @@
 #include <aws/ec2/model/DescribePublicIpv4PoolsRequest.h>
 #include <aws/ec2/model/DescribeRegionsRequest.h>
 #include <aws/ec2/model/DescribeReplaceRootVolumeTasksRequest.h>
-#include <aws/ec2/model/DescribeReservedInstancesListingsRequest.h>
-#include <aws/ec2/model/DescribeReservedInstancesModificationsRequest.h>
 #include <aws/ec2/model/DescribeReservedInstancesRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
@@ -131,6 +131,20 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DescribeCapacityReservationCancellationQuotesOutcome EC2Client::DescribeCapacityReservationCancellationQuotes(
+    const DescribeCapacityReservationCancellationQuotesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCapacityReservationCancellationQuotesOutcome(result.GetResultWithOwnership())
+                            : DescribeCapacityReservationCancellationQuotesOutcome(std::move(result.GetError()));
+}
+
+DescribeCapacityReservationDateChangeQuotesOutcome EC2Client::DescribeCapacityReservationDateChangeQuotes(
+    const DescribeCapacityReservationDateChangeQuotesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCapacityReservationDateChangeQuotesOutcome(result.GetResultWithOwnership())
+                            : DescribeCapacityReservationDateChangeQuotesOutcome(std::move(result.GetError()));
+}
 
 DescribeCapacityReservationFleetsOutcome EC2Client::DescribeCapacityReservationFleets(
     const DescribeCapacityReservationFleetsRequest& request) const {
@@ -746,18 +760,4 @@ DescribeReservedInstancesOutcome EC2Client::DescribeReservedInstances(const Desc
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeReservedInstancesOutcome(result.GetResultWithOwnership())
                             : DescribeReservedInstancesOutcome(std::move(result.GetError()));
-}
-
-DescribeReservedInstancesListingsOutcome EC2Client::DescribeReservedInstancesListings(
-    const DescribeReservedInstancesListingsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeReservedInstancesListingsOutcome(result.GetResultWithOwnership())
-                            : DescribeReservedInstancesListingsOutcome(std::move(result.GetError()));
-}
-
-DescribeReservedInstancesModificationsOutcome EC2Client::DescribeReservedInstancesModifications(
-    const DescribeReservedInstancesModificationsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeReservedInstancesModificationsOutcome(result.GetResultWithOwnership())
-                            : DescribeReservedInstancesModificationsOutcome(std::move(result.GetError()));
 }

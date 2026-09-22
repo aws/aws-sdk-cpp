@@ -64,6 +64,21 @@ ViewDefinitionInput& ViewDefinitionInput::operator=(JsonView jsonValue) {
     }
     m_subObjectVersionIdsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SubObjectsStatistics")) {
+    Aws::Utils::Array<JsonView> subObjectsStatisticsJsonList = jsonValue.GetArray("SubObjectsStatistics");
+    for (unsigned subObjectsStatisticsIndex = 0; subObjectsStatisticsIndex < subObjectsStatisticsJsonList.GetLength();
+         ++subObjectsStatisticsIndex) {
+      m_subObjectsStatistics.push_back(subObjectsStatisticsJsonList[subObjectsStatisticsIndex].AsObject());
+    }
+    m_subObjectsStatisticsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SparkPipelineInfo")) {
+    Aws::Map<Aws::String, JsonView> sparkPipelineInfoJsonMap = jsonValue.GetObject("SparkPipelineInfo").GetAllObjects();
+    for (auto& sparkPipelineInfoItem : sparkPipelineInfoJsonMap) {
+      m_sparkPipelineInfo[sparkPipelineInfoItem.first] = sparkPipelineInfoItem.second.AsString();
+    }
+    m_sparkPipelineInfoHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -117,6 +132,23 @@ JsonValue ViewDefinitionInput::Jsonize() const {
       subObjectVersionIdsJsonList[subObjectVersionIdsIndex].AsInt64(m_subObjectVersionIds[subObjectVersionIdsIndex]);
     }
     payload.WithArray("SubObjectVersionIds", std::move(subObjectVersionIdsJsonList));
+  }
+
+  if (m_subObjectsStatisticsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> subObjectsStatisticsJsonList(m_subObjectsStatistics.size());
+    for (unsigned subObjectsStatisticsIndex = 0; subObjectsStatisticsIndex < subObjectsStatisticsJsonList.GetLength();
+         ++subObjectsStatisticsIndex) {
+      subObjectsStatisticsJsonList[subObjectsStatisticsIndex].AsObject(m_subObjectsStatistics[subObjectsStatisticsIndex].Jsonize());
+    }
+    payload.WithArray("SubObjectsStatistics", std::move(subObjectsStatisticsJsonList));
+  }
+
+  if (m_sparkPipelineInfoHasBeenSet) {
+    JsonValue sparkPipelineInfoJsonMap;
+    for (auto& sparkPipelineInfoItem : m_sparkPipelineInfo) {
+      sparkPipelineInfoJsonMap.WithString(sparkPipelineInfoItem.first, sparkPipelineInfoItem.second);
+    }
+    payload.WithObject("SparkPipelineInfo", std::move(sparkPipelineInfoJsonMap));
   }
 
   return payload;

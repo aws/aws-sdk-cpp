@@ -46,6 +46,18 @@ Aws::String ModifyCapacityReservationRequest::SerializePayload() const {
        << StringUtils::URLEncode(InstanceMatchCriteriaMapper::GetNameForInstanceMatchCriteria(m_instanceMatchCriteria)) << "&";
   }
 
+  if (m_acceptModificationTermsHasBeenSet) {
+    ss << "AcceptModificationTerms=" << std::boolalpha << m_acceptModificationTerms << "&";
+  }
+
+  if (m_startDateHasBeenSet) {
+    ss << "StartDate=" << StringUtils::URLEncode(m_startDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+
+  if (m_quoteIdHasBeenSet) {
+    ss << "QuoteId=" << StringUtils::URLEncode(m_quoteId.c_str()) << "&";
+  }
+
   ss << "Version=2016-11-15";
   return ss.str();
 }

@@ -124,6 +124,38 @@ class AWS_OBSERVABILITYADMIN_API ObservabilityAdminClient : public Aws::Client::
   }
 
   /**
+   * <p>Creates a dataset integration for the caller's account in the current region
+   * and returns its ARN.</p> <p>To use this operation, you must have permission to
+   * access the dataset integration resources through the IAM role specified in the
+   * <code>RoleArn</code> parameter.</p> <p>If a dataset integration already exists
+   * for the account, this operation fails with a
+   * <code>ConflictException</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/CreateDatasetIntegration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateDatasetIntegrationOutcome CreateDatasetIntegration(const Model::CreateDatasetIntegrationRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateDatasetIntegration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateDatasetIntegrationRequestT = Model::CreateDatasetIntegrationRequest>
+  Model::CreateDatasetIntegrationOutcomeCallable CreateDatasetIntegrationCallable(const CreateDatasetIntegrationRequestT& request) const {
+    return SubmitCallable(&ObservabilityAdminClient::CreateDatasetIntegration, request);
+  }
+
+  /**
+   * An Async wrapper for CreateDatasetIntegration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateDatasetIntegrationRequestT = Model::CreateDatasetIntegrationRequest>
+  void CreateDatasetIntegrationAsync(const CreateDatasetIntegrationRequestT& request,
+                                     const CreateDatasetIntegrationResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ObservabilityAdminClient::CreateDatasetIntegration, request, handler, context);
+  }
+
+  /**
    * <p>Creates an integration between CloudWatch and S3 Tables for analytics. This
    * integration enables querying CloudWatch telemetry data using analytics engines
    * like Amazon Athena, Amazon Redshift, and Apache Spark.</p><p><h3>See Also:</h3>
@@ -276,6 +308,35 @@ class AWS_OBSERVABILITYADMIN_API ObservabilityAdminClient : public Aws::Client::
   }
 
   /**
+   * <p>Deletes a dataset integration for the caller's account in the current region.
+   * This operation is idempotent; if you submit the same delete more than once, each
+   * call succeeds.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/DeleteDatasetIntegration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteDatasetIntegrationOutcome DeleteDatasetIntegration(const Model::DeleteDatasetIntegrationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteDatasetIntegration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteDatasetIntegrationRequestT = Model::DeleteDatasetIntegrationRequest>
+  Model::DeleteDatasetIntegrationOutcomeCallable DeleteDatasetIntegrationCallable(const DeleteDatasetIntegrationRequestT& request) const {
+    return SubmitCallable(&ObservabilityAdminClient::DeleteDatasetIntegration, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteDatasetIntegration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteDatasetIntegrationRequestT = Model::DeleteDatasetIntegrationRequest>
+  void DeleteDatasetIntegrationAsync(const DeleteDatasetIntegrationRequestT& request,
+                                     const DeleteDatasetIntegrationResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ObservabilityAdminClient::DeleteDatasetIntegration, request, handler, context);
+  }
+
+  /**
    * <p>Deletes an S3 Table integration and its associated data. This operation
    * removes the connection between CloudWatch Observability Admin and S3
    * Tables.</p><p><h3>See Also:</h3>   <a
@@ -421,6 +482,33 @@ class AWS_OBSERVABILITYADMIN_API ObservabilityAdminClient : public Aws::Client::
                                                  const GetCentralizationRuleForOrganizationResponseReceivedHandler& handler,
                                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ObservabilityAdminClient::GetCentralizationRuleForOrganization, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the dataset integration for the caller's account in the current
+   * region.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetDatasetIntegration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetDatasetIntegrationOutcome GetDatasetIntegration(const Model::GetDatasetIntegrationRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetDatasetIntegration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetDatasetIntegrationRequestT = Model::GetDatasetIntegrationRequest>
+  Model::GetDatasetIntegrationOutcomeCallable GetDatasetIntegrationCallable(const GetDatasetIntegrationRequestT& request) const {
+    return SubmitCallable(&ObservabilityAdminClient::GetDatasetIntegration, request);
+  }
+
+  /**
+   * An Async wrapper for GetDatasetIntegration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetDatasetIntegrationRequestT = Model::GetDatasetIntegrationRequest>
+  void GetDatasetIntegrationAsync(const GetDatasetIntegrationRequestT& request, const GetDatasetIntegrationResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ObservabilityAdminClient::GetDatasetIntegration, request, handler, context);
   }
 
   /**
@@ -658,6 +746,34 @@ class AWS_OBSERVABILITYADMIN_API ObservabilityAdminClient : public Aws::Client::
                                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                                    const ListCentralizationRulesForOrganizationRequestT& request = {}) const {
     return SubmitAsync(&ObservabilityAdminClient::ListCentralizationRulesForOrganization, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the dataset integrations in your account.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListDatasetIntegrations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListDatasetIntegrationsOutcome ListDatasetIntegrations(const Model::ListDatasetIntegrationsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListDatasetIntegrations that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListDatasetIntegrationsRequestT = Model::ListDatasetIntegrationsRequest>
+  Model::ListDatasetIntegrationsOutcomeCallable ListDatasetIntegrationsCallable(const ListDatasetIntegrationsRequestT& request = {}) const {
+    return SubmitCallable(&ObservabilityAdminClient::ListDatasetIntegrations, request);
+  }
+
+  /**
+   * An Async wrapper for ListDatasetIntegrations that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListDatasetIntegrationsRequestT = Model::ListDatasetIntegrationsRequest>
+  void ListDatasetIntegrationsAsync(const ListDatasetIntegrationsResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                    const ListDatasetIntegrationsRequestT& request = {}) const {
+    return SubmitAsync(&ObservabilityAdminClient::ListDatasetIntegrations, request, handler, context);
   }
 
   /**
@@ -1153,6 +1269,35 @@ class AWS_OBSERVABILITYADMIN_API ObservabilityAdminClient : public Aws::Client::
                                                     const UpdateCentralizationRuleForOrganizationResponseReceivedHandler& handler,
                                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ObservabilityAdminClient::UpdateCentralizationRuleForOrganization, request, handler, context);
+  }
+
+  /**
+   * <p>Updates a dataset integration for the caller's account in the current region.
+   * This operation is idempotent; if you submit the same update more than once, each
+   * call succeeds.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/UpdateDatasetIntegration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateDatasetIntegrationOutcome UpdateDatasetIntegration(const Model::UpdateDatasetIntegrationRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateDatasetIntegration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateDatasetIntegrationRequestT = Model::UpdateDatasetIntegrationRequest>
+  Model::UpdateDatasetIntegrationOutcomeCallable UpdateDatasetIntegrationCallable(const UpdateDatasetIntegrationRequestT& request) const {
+    return SubmitCallable(&ObservabilityAdminClient::UpdateDatasetIntegration, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateDatasetIntegration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateDatasetIntegrationRequestT = Model::UpdateDatasetIntegrationRequest>
+  void UpdateDatasetIntegrationAsync(const UpdateDatasetIntegrationRequestT& request,
+                                     const UpdateDatasetIntegrationResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ObservabilityAdminClient::UpdateDatasetIntegration, request, handler, context);
   }
 
   /**

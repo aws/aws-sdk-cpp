@@ -7,6 +7,7 @@
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/observabilityadmin/ObservabilityAdminClient.h>
 #include <aws/observabilityadmin/model/ListCentralizationRulesForOrganizationPaginationTraits.h>
+#include <aws/observabilityadmin/model/ListDatasetIntegrationsPaginationTraits.h>
 #include <aws/observabilityadmin/model/ListResourceTelemetryForOrganizationPaginationTraits.h>
 #include <aws/observabilityadmin/model/ListResourceTelemetryPaginationTraits.h>
 #include <aws/observabilityadmin/model/ListS3TableIntegrationsPaginationTraits.h>
@@ -20,6 +21,9 @@ namespace ObservabilityAdmin {
 using ListCentralizationRulesForOrganizationPaginator =
     Aws::Utils::Pagination::Paginator<ObservabilityAdminClient, Model::ListCentralizationRulesForOrganizationRequest,
                                       Pagination::ListCentralizationRulesForOrganizationPaginationTraits<ObservabilityAdminClient>>;
+using ListDatasetIntegrationsPaginator =
+    Aws::Utils::Pagination::Paginator<ObservabilityAdminClient, Model::ListDatasetIntegrationsRequest,
+                                      Pagination::ListDatasetIntegrationsPaginationTraits<ObservabilityAdminClient>>;
 using ListResourceTelemetryPaginator =
     Aws::Utils::Pagination::Paginator<ObservabilityAdminClient, Model::ListResourceTelemetryRequest,
                                       Pagination::ListResourceTelemetryPaginationTraits<ObservabilityAdminClient>>;

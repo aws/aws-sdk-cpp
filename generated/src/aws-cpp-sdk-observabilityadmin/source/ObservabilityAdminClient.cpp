@@ -21,16 +21,19 @@
 #include <aws/observabilityadmin/ObservabilityAdminEndpointProvider.h>
 #include <aws/observabilityadmin/ObservabilityAdminErrorMarshaller.h>
 #include <aws/observabilityadmin/model/CreateCentralizationRuleForOrganizationRequest.h>
+#include <aws/observabilityadmin/model/CreateDatasetIntegrationRequest.h>
 #include <aws/observabilityadmin/model/CreateS3TableIntegrationRequest.h>
 #include <aws/observabilityadmin/model/CreateTelemetryPipelineRequest.h>
 #include <aws/observabilityadmin/model/CreateTelemetryRuleForOrganizationRequest.h>
 #include <aws/observabilityadmin/model/CreateTelemetryRuleRequest.h>
 #include <aws/observabilityadmin/model/DeleteCentralizationRuleForOrganizationRequest.h>
+#include <aws/observabilityadmin/model/DeleteDatasetIntegrationRequest.h>
 #include <aws/observabilityadmin/model/DeleteS3TableIntegrationRequest.h>
 #include <aws/observabilityadmin/model/DeleteTelemetryPipelineRequest.h>
 #include <aws/observabilityadmin/model/DeleteTelemetryRuleForOrganizationRequest.h>
 #include <aws/observabilityadmin/model/DeleteTelemetryRuleRequest.h>
 #include <aws/observabilityadmin/model/GetCentralizationRuleForOrganizationRequest.h>
+#include <aws/observabilityadmin/model/GetDatasetIntegrationRequest.h>
 #include <aws/observabilityadmin/model/GetS3TableIntegrationRequest.h>
 #include <aws/observabilityadmin/model/GetTelemetryEnrichmentStatusRequest.h>
 #include <aws/observabilityadmin/model/GetTelemetryEvaluationStatusForOrganizationRequest.h>
@@ -39,6 +42,7 @@
 #include <aws/observabilityadmin/model/GetTelemetryRuleForOrganizationRequest.h>
 #include <aws/observabilityadmin/model/GetTelemetryRuleRequest.h>
 #include <aws/observabilityadmin/model/ListCentralizationRulesForOrganizationRequest.h>
+#include <aws/observabilityadmin/model/ListDatasetIntegrationsRequest.h>
 #include <aws/observabilityadmin/model/ListResourceTelemetryForOrganizationRequest.h>
 #include <aws/observabilityadmin/model/ListResourceTelemetryRequest.h>
 #include <aws/observabilityadmin/model/ListS3TableIntegrationsRequest.h>
@@ -56,6 +60,7 @@
 #include <aws/observabilityadmin/model/TestTelemetryPipelineRequest.h>
 #include <aws/observabilityadmin/model/UntagResourceRequest.h>
 #include <aws/observabilityadmin/model/UpdateCentralizationRuleForOrganizationRequest.h>
+#include <aws/observabilityadmin/model/UpdateDatasetIntegrationRequest.h>
 #include <aws/observabilityadmin/model/UpdateTelemetryPipelineRequest.h>
 #include <aws/observabilityadmin/model/UpdateTelemetryRuleForOrganizationRequest.h>
 #include <aws/observabilityadmin/model/UpdateTelemetryRuleRequest.h>
@@ -231,6 +236,17 @@ CreateCentralizationRuleForOrganizationOutcome ObservabilityAdminClient::CreateC
                             : CreateCentralizationRuleForOrganizationOutcome(std::move(result.GetError()));
 }
 
+CreateDatasetIntegrationOutcome ObservabilityAdminClient::CreateDatasetIntegration(const CreateDatasetIntegrationRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/CreateDatasetIntegration");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDatasetIntegrationOutcome(result.GetResultWithOwnership())
+                            : CreateDatasetIntegrationOutcome(std::move(result.GetError()));
+}
+
 CreateS3TableIntegrationOutcome ObservabilityAdminClient::CreateS3TableIntegration(const CreateS3TableIntegrationRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -288,6 +304,17 @@ DeleteCentralizationRuleForOrganizationOutcome ObservabilityAdminClient::DeleteC
                             : DeleteCentralizationRuleForOrganizationOutcome(std::move(result.GetError()));
 }
 
+DeleteDatasetIntegrationOutcome ObservabilityAdminClient::DeleteDatasetIntegration(const DeleteDatasetIntegrationRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteDatasetIntegration");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDatasetIntegrationOutcome(result.GetResultWithOwnership())
+                            : DeleteDatasetIntegrationOutcome(std::move(result.GetError()));
+}
+
 DeleteS3TableIntegrationOutcome ObservabilityAdminClient::DeleteS3TableIntegration(const DeleteS3TableIntegrationRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -343,6 +370,17 @@ GetCentralizationRuleForOrganizationOutcome ObservabilityAdminClient::GetCentral
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetCentralizationRuleForOrganizationOutcome(result.GetResultWithOwnership())
                             : GetCentralizationRuleForOrganizationOutcome(std::move(result.GetError()));
+}
+
+GetDatasetIntegrationOutcome ObservabilityAdminClient::GetDatasetIntegration(const GetDatasetIntegrationRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/GetDatasetIntegration");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDatasetIntegrationOutcome(result.GetResultWithOwnership())
+                            : GetDatasetIntegrationOutcome(std::move(result.GetError()));
 }
 
 GetS3TableIntegrationOutcome ObservabilityAdminClient::GetS3TableIntegration(const GetS3TableIntegrationRequest& request) const {
@@ -436,6 +474,17 @@ ListCentralizationRulesForOrganizationOutcome ObservabilityAdminClient::ListCent
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListCentralizationRulesForOrganizationOutcome(result.GetResultWithOwnership())
                             : ListCentralizationRulesForOrganizationOutcome(std::move(result.GetError()));
+}
+
+ListDatasetIntegrationsOutcome ObservabilityAdminClient::ListDatasetIntegrations(const ListDatasetIntegrationsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/ListDatasetIntegrations");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDatasetIntegrationsOutcome(result.GetResultWithOwnership())
+                            : ListDatasetIntegrationsOutcome(std::move(result.GetError()));
 }
 
 ListResourceTelemetryOutcome ObservabilityAdminClient::ListResourceTelemetry(const ListResourceTelemetryRequest& request) const {
@@ -626,6 +675,17 @@ UpdateCentralizationRuleForOrganizationOutcome ObservabilityAdminClient::UpdateC
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateCentralizationRuleForOrganizationOutcome(result.GetResultWithOwnership())
                             : UpdateCentralizationRuleForOrganizationOutcome(std::move(result.GetError()));
+}
+
+UpdateDatasetIntegrationOutcome ObservabilityAdminClient::UpdateDatasetIntegration(const UpdateDatasetIntegrationRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateDatasetIntegration");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDatasetIntegrationOutcome(result.GetResultWithOwnership())
+                            : UpdateDatasetIntegrationOutcome(std::move(result.GetError()));
 }
 
 UpdateTelemetryPipelineOutcome ObservabilityAdminClient::UpdateTelemetryPipeline(const UpdateTelemetryPipelineRequest& request) const {

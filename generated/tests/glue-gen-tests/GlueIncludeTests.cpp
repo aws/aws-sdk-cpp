@@ -1142,6 +1142,8 @@
 #include <aws/glue/model/StorageDescriptor.h>
 #include <aws/glue/model/StreamingDataPreviewOptions.h>
 #include <aws/glue/model/StringColumnStatisticsData.h>
+#include <aws/glue/model/SubObjectSourceType.h>
+#include <aws/glue/model/SubObjectStatistics.h>
 #include <aws/glue/model/SupportedDialect.h>
 #include <aws/glue/model/Table.h>
 #include <aws/glue/model/TableAttributes.h>

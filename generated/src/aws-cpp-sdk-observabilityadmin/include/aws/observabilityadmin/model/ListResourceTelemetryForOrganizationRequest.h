@@ -81,8 +81,15 @@ class ListResourceTelemetryForOrganizationRequest : public ObservabilityAdminReq
   ///@{
   /**
    * <p> A list of resource types used to filter resources in the organization. If
-   * this parameter is provided, the resources will be returned in the same order
-   * used in the request. </p>
+   * this parameter is provided, the service returns the resources in the same order
+   * as specified in the request. Currently supported resource types for discovery
+   * are:</p> <ul> <li> <p> <code>AWS::EC2::Instance</code> </p> </li> <li> <p>
+   * <code>AWS::EC2::VPC</code> </p> </li> <li> <p>
+   * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
+   * <code>AWS::EKS::Cluster</code> </p> </li> <li> <p>
+   * <code>AWS::WAFv2::WebACL</code> </p> </li> <li> <p>
+   * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> (Network Load Balancers
+   * only)</p> </li> </ul>
    */
   inline const Aws::Vector<ResourceType>& GetResourceTypes() const { return m_resourceTypes; }
   inline bool ResourceTypesHasBeenSet() const { return m_resourceTypesHasBeenSet; }

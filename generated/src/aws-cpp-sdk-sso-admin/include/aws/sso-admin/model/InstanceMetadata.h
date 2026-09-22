@@ -79,6 +79,25 @@ class InstanceMetadata {
 
   ///@{
   /**
+   * <p>The ARN of the identity store that is connected to the Identity Center
+   * instance.</p>
+   */
+  inline const Aws::String& GetIdentityStoreArn() const { return m_identityStoreArn; }
+  inline bool IdentityStoreArnHasBeenSet() const { return m_identityStoreArnHasBeenSet; }
+  template <typename IdentityStoreArnT = Aws::String>
+  void SetIdentityStoreArn(IdentityStoreArnT&& value) {
+    m_identityStoreArnHasBeenSet = true;
+    m_identityStoreArn = std::forward<IdentityStoreArnT>(value);
+  }
+  template <typename IdentityStoreArnT = Aws::String>
+  InstanceMetadata& WithIdentityStoreArn(IdentityStoreArnT&& value) {
+    SetIdentityStoreArn(std::forward<IdentityStoreArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Amazon Web Services account ID number of the owner of the Identity Center
    * instance.</p>
    */
@@ -218,6 +237,8 @@ class InstanceMetadata {
 
   Aws::String m_identityStoreId;
 
+  Aws::String m_identityStoreArn;
+
   Aws::String m_ownerAccountId;
 
   Aws::String m_name;
@@ -233,6 +254,7 @@ class InstanceMetadata {
   Aws::Vector<RegionMetadata> m_regions;
   bool m_instanceArnHasBeenSet = false;
   bool m_identityStoreIdHasBeenSet = false;
+  bool m_identityStoreArnHasBeenSet = false;
   bool m_ownerAccountIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_createdDateHasBeenSet = false;

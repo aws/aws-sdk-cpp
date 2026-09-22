@@ -10,6 +10,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/CapacityAllocation.h>
+#include <aws/ec2/model/CapacityReservationAdjustmentDetails.h>
+#include <aws/ec2/model/CapacityReservationAdjustmentStatus.h>
 #include <aws/ec2/model/CapacityReservationCommitmentInfo.h>
 #include <aws/ec2/model/CapacityReservationDeliveryPreference.h>
 #include <aws/ec2/model/CapacityReservationInstancePlatform.h>
@@ -675,6 +677,68 @@ class CapacityReservation {
 
   ///@{
   /**
+   * <p>The status of the most recent modification to the Capacity Reservation. A
+   * Capacity Reservation can have one of the following adjustment statuses:</p> <ul>
+   * <li> <p> <code>requested</code> - The modification was requested and is being
+   * processed.</p> </li> <li> <p> <code>applied</code> - The modification was
+   * applied to the Capacity Reservation.</p> </li> <li> <p> <code>rejected</code> -
+   * The modification was not applied and the Capacity Reservation keeps its existing
+   * configuration.</p> </li> </ul> <p>This field is not returned if the Capacity
+   * Reservation has never been modified.</p>
+   */
+  inline CapacityReservationAdjustmentStatus GetAdjustmentStatus() const { return m_adjustmentStatus; }
+  inline bool AdjustmentStatusHasBeenSet() const { return m_adjustmentStatusHasBeenSet; }
+  inline void SetAdjustmentStatus(CapacityReservationAdjustmentStatus value) {
+    m_adjustmentStatusHasBeenSet = true;
+    m_adjustmentStatus = value;
+  }
+  inline CapacityReservation& WithAdjustmentStatus(CapacityReservationAdjustmentStatus value) {
+    SetAdjustmentStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The configuration that the Capacity Reservation will have after the requested
+   * adjustment is applied.</p>
+   */
+  inline const CapacityReservationAdjustmentDetails& GetAdjustmentDetails() const { return m_adjustmentDetails; }
+  inline bool AdjustmentDetailsHasBeenSet() const { return m_adjustmentDetailsHasBeenSet; }
+  template <typename AdjustmentDetailsT = CapacityReservationAdjustmentDetails>
+  void SetAdjustmentDetails(AdjustmentDetailsT&& value) {
+    m_adjustmentDetailsHasBeenSet = true;
+    m_adjustmentDetails = std::forward<AdjustmentDetailsT>(value);
+  }
+  template <typename AdjustmentDetailsT = CapacityReservationAdjustmentDetails>
+  CapacityReservation& WithAdjustmentDetails(AdjustmentDetailsT&& value) {
+    SetAdjustmentDetails(std::forward<AdjustmentDetailsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The start date that you originally requested for the Capacity Reservation, in
+   * the ISO8601 format in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).
+   * This value doesn't change when you push out the start date.</p>
+   */
+  inline const Aws::Utils::DateTime& GetOriginalStartDate() const { return m_originalStartDate; }
+  inline bool OriginalStartDateHasBeenSet() const { return m_originalStartDateHasBeenSet; }
+  template <typename OriginalStartDateT = Aws::Utils::DateTime>
+  void SetOriginalStartDate(OriginalStartDateT&& value) {
+    m_originalStartDateHasBeenSet = true;
+    m_originalStartDate = std::forward<OriginalStartDateT>(value);
+  }
+  template <typename OriginalStartDateT = Aws::Utils::DateTime>
+  CapacityReservation& WithOriginalStartDate(OriginalStartDateT&& value) {
+    SetOriginalStartDate(std::forward<OriginalStartDateT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p> The zero-size preference configured for the interruptible Capacity
    * Reservation. A value of <code>retain</code> keeps the interruptible Capacity
    * Reservation active at zero capacity when you reduce its allocation to zero. A
@@ -755,6 +819,12 @@ class CapacityReservation {
 
   InterruptionInfo m_interruptionInfo;
 
+  CapacityReservationAdjustmentStatus m_adjustmentStatus{CapacityReservationAdjustmentStatus::NOT_SET};
+
+  CapacityReservationAdjustmentDetails m_adjustmentDetails;
+
+  Aws::Utils::DateTime m_originalStartDate{};
+
   ZeroSizePreference m_zeroSizePreference{ZeroSizePreference::NOT_SET};
   bool m_capacityReservationIdHasBeenSet = false;
   bool m_ownerIdHasBeenSet = false;
@@ -787,6 +857,9 @@ class CapacityReservation {
   bool m_interruptibleHasBeenSet = false;
   bool m_interruptibleCapacityAllocationHasBeenSet = false;
   bool m_interruptionInfoHasBeenSet = false;
+  bool m_adjustmentStatusHasBeenSet = false;
+  bool m_adjustmentDetailsHasBeenSet = false;
+  bool m_originalStartDateHasBeenSet = false;
   bool m_zeroSizePreferenceHasBeenSet = false;
 };
 

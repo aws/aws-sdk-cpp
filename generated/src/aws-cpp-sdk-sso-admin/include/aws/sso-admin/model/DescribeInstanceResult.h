@@ -7,9 +7,11 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
 #include <aws/sso-admin/model/EncryptionConfigurationDetails.h>
 #include <aws/sso-admin/model/InstanceStatus.h>
+#include <aws/sso-admin/model/RegionMetadata.h>
 
 #include <utility>
 
@@ -65,6 +67,24 @@ class DescribeInstanceResult {
   template <typename IdentityStoreIdT = Aws::String>
   DescribeInstanceResult& WithIdentityStoreId(IdentityStoreIdT&& value) {
     SetIdentityStoreId(std::forward<IdentityStoreIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the identity store that is connected to the instance of IAM
+   * Identity Center.</p>
+   */
+  inline const Aws::String& GetIdentityStoreArn() const { return m_identityStoreArn; }
+  template <typename IdentityStoreArnT = Aws::String>
+  void SetIdentityStoreArn(IdentityStoreArnT&& value) {
+    m_identityStoreArnHasBeenSet = true;
+    m_identityStoreArn = std::forward<IdentityStoreArnT>(value);
+  }
+  template <typename IdentityStoreArnT = Aws::String>
+  DescribeInstanceResult& WithIdentityStoreArn(IdentityStoreArnT&& value) {
+    SetIdentityStoreArn(std::forward<IdentityStoreArnT>(value));
     return *this;
   }
   ///@}
@@ -160,6 +180,48 @@ class DescribeInstanceResult {
 
   ///@{
   /**
+   * <p>The primary Region where the IAM Identity Center instance was originally
+   * enabled. The primary Region cannot be removed.</p>
+   */
+  inline const Aws::String& GetPrimaryRegion() const { return m_primaryRegion; }
+  template <typename PrimaryRegionT = Aws::String>
+  void SetPrimaryRegion(PrimaryRegionT&& value) {
+    m_primaryRegionHasBeenSet = true;
+    m_primaryRegion = std::forward<PrimaryRegionT>(value);
+  }
+  template <typename PrimaryRegionT = Aws::String>
+  DescribeInstanceResult& WithPrimaryRegion(PrimaryRegionT&& value) {
+    SetPrimaryRegion(std::forward<PrimaryRegionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The list of Regions enabled in the IAM Identity Center instance, including
+   * Regions with ACTIVE, ADDING, or REMOVING status.</p>
+   */
+  inline const Aws::Vector<RegionMetadata>& GetRegions() const { return m_regions; }
+  template <typename RegionsT = Aws::Vector<RegionMetadata>>
+  void SetRegions(RegionsT&& value) {
+    m_regionsHasBeenSet = true;
+    m_regions = std::forward<RegionsT>(value);
+  }
+  template <typename RegionsT = Aws::Vector<RegionMetadata>>
+  DescribeInstanceResult& WithRegions(RegionsT&& value) {
+    SetRegions(std::forward<RegionsT>(value));
+    return *this;
+  }
+  template <typename RegionsT = RegionMetadata>
+  DescribeInstanceResult& AddRegions(RegionsT&& value) {
+    m_regionsHasBeenSet = true;
+    m_regions.emplace_back(std::forward<RegionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Contains the encryption configuration for your IAM Identity Center instance,
    * including the encryption status, KMS key type, and KMS key ARN.</p>
    */
@@ -213,6 +275,8 @@ class DescribeInstanceResult {
 
   Aws::String m_identityStoreId;
 
+  Aws::String m_identityStoreArn;
+
   Aws::String m_ownerAccountId;
 
   Aws::String m_name;
@@ -223,6 +287,10 @@ class DescribeInstanceResult {
 
   Aws::String m_statusReason;
 
+  Aws::String m_primaryRegion;
+
+  Aws::Vector<RegionMetadata> m_regions;
+
   EncryptionConfigurationDetails m_encryptionConfigurationDetails;
 
   bool m_permissionSetsEnabled{false};
@@ -231,11 +299,14 @@ class DescribeInstanceResult {
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_instanceArnHasBeenSet = false;
   bool m_identityStoreIdHasBeenSet = false;
+  bool m_identityStoreArnHasBeenSet = false;
   bool m_ownerAccountIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_createdDateHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
+  bool m_primaryRegionHasBeenSet = false;
+  bool m_regionsHasBeenSet = false;
   bool m_encryptionConfigurationDetailsHasBeenSet = false;
   bool m_permissionSetsEnabledHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

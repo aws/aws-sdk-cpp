@@ -8,6 +8,7 @@
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/observabilityadmin/model/ListCentralizationRulesForOrganizationPaginationTraits.h>
+#include <aws/observabilityadmin/model/ListDatasetIntegrationsPaginationTraits.h>
 #include <aws/observabilityadmin/model/ListResourceTelemetryForOrganizationPaginationTraits.h>
 #include <aws/observabilityadmin/model/ListResourceTelemetryPaginationTraits.h>
 #include <aws/observabilityadmin/model/ListS3TableIntegrationsPaginationTraits.h>
@@ -32,6 +33,18 @@ class ObservabilityAdminPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCentralizationRulesForOrganizationRequest,
                                              Pagination::ListCentralizationRulesForOrganizationPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListDatasetIntegrations operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatasetIntegrationsRequest,
+                                    Pagination::ListDatasetIntegrationsPaginationTraits<DerivedClient>>
+  ListDatasetIntegrationsPaginator(const Model::ListDatasetIntegrationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatasetIntegrationsRequest,
+                                             Pagination::ListDatasetIntegrationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

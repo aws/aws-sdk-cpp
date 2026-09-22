@@ -17,6 +17,7 @@
 #include <aws/ec2/model/DescribeCapacityBlocksPaginationTraits.h>
 #include <aws/ec2/model/DescribeCapacityManagerDataExportsPaginationTraits.h>
 #include <aws/ec2/model/DescribeCapacityReservationBillingRequestsPaginationTraits.h>
+#include <aws/ec2/model/DescribeCapacityReservationDateChangeQuotesPaginationTraits.h>
 #include <aws/ec2/model/DescribeCapacityReservationFleetsPaginationTraits.h>
 #include <aws/ec2/model/DescribeCapacityReservationsPaginationTraits.h>
 #include <aws/ec2/model/DescribeCarrierGatewaysPaginationTraits.h>
@@ -211,6 +212,9 @@ using DescribeCapacityManagerDataExportsPaginator =
 using DescribeCapacityReservationBillingRequestsPaginator =
     Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeCapacityReservationBillingRequestsRequest,
                                       Pagination::DescribeCapacityReservationBillingRequestsPaginationTraits<EC2Client>>;
+using DescribeCapacityReservationDateChangeQuotesPaginator =
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeCapacityReservationDateChangeQuotesRequest,
+                                      Pagination::DescribeCapacityReservationDateChangeQuotesPaginationTraits<EC2Client>>;
 using DescribeCapacityReservationFleetsPaginator =
     Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeCapacityReservationFleetsRequest,
                                       Pagination::DescribeCapacityReservationFleetsPaginationTraits<EC2Client>>;

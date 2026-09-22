@@ -4,10 +4,12 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/model/LastRefreshType.h>
+#include <aws/glue/model/SubObjectStatistics.h>
 #include <aws/glue/model/ViewRepresentationInput.h>
 
 #include <utility>
@@ -214,6 +216,57 @@ class ViewDefinitionInput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Statistics for each sub-object referenced by the materialized view, such as
+   * the source type, Glue version ID, and the partition, file, and byte counts. Each
+   * entry describes one sub-object, identified by its source type.</p>
+   */
+  inline const Aws::Vector<SubObjectStatistics>& GetSubObjectsStatistics() const { return m_subObjectsStatistics; }
+  inline bool SubObjectsStatisticsHasBeenSet() const { return m_subObjectsStatisticsHasBeenSet; }
+  template <typename SubObjectsStatisticsT = Aws::Vector<SubObjectStatistics>>
+  void SetSubObjectsStatistics(SubObjectsStatisticsT&& value) {
+    m_subObjectsStatisticsHasBeenSet = true;
+    m_subObjectsStatistics = std::forward<SubObjectsStatisticsT>(value);
+  }
+  template <typename SubObjectsStatisticsT = Aws::Vector<SubObjectStatistics>>
+  ViewDefinitionInput& WithSubObjectsStatistics(SubObjectsStatisticsT&& value) {
+    SetSubObjectsStatistics(std::forward<SubObjectsStatisticsT>(value));
+    return *this;
+  }
+  template <typename SubObjectsStatisticsT = SubObjectStatistics>
+  ViewDefinitionInput& AddSubObjectsStatistics(SubObjectsStatisticsT&& value) {
+    m_subObjectsStatisticsHasBeenSet = true;
+    m_subObjectsStatistics.emplace_back(std::forward<SubObjectsStatisticsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A map of key-value pairs containing Spark Declarative Pipelines (SDP)
+   * information for the materialized view.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetSparkPipelineInfo() const { return m_sparkPipelineInfo; }
+  inline bool SparkPipelineInfoHasBeenSet() const { return m_sparkPipelineInfoHasBeenSet; }
+  template <typename SparkPipelineInfoT = Aws::Map<Aws::String, Aws::String>>
+  void SetSparkPipelineInfo(SparkPipelineInfoT&& value) {
+    m_sparkPipelineInfoHasBeenSet = true;
+    m_sparkPipelineInfo = std::forward<SparkPipelineInfoT>(value);
+  }
+  template <typename SparkPipelineInfoT = Aws::Map<Aws::String, Aws::String>>
+  ViewDefinitionInput& WithSparkPipelineInfo(SparkPipelineInfoT&& value) {
+    SetSparkPipelineInfo(std::forward<SparkPipelineInfoT>(value));
+    return *this;
+  }
+  template <typename SparkPipelineInfoKeyT = Aws::String, typename SparkPipelineInfoValueT = Aws::String>
+  ViewDefinitionInput& AddSparkPipelineInfo(SparkPipelineInfoKeyT&& key, SparkPipelineInfoValueT&& value) {
+    m_sparkPipelineInfoHasBeenSet = true;
+    m_sparkPipelineInfo.emplace(std::forward<SparkPipelineInfoKeyT>(key), std::forward<SparkPipelineInfoValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   bool m_isProtected{false};
 
@@ -232,6 +285,10 @@ class ViewDefinitionInput {
   Aws::Vector<Aws::String> m_subObjects;
 
   Aws::Vector<long long> m_subObjectVersionIds;
+
+  Aws::Vector<SubObjectStatistics> m_subObjectsStatistics;
+
+  Aws::Map<Aws::String, Aws::String> m_sparkPipelineInfo;
   bool m_isProtectedHasBeenSet = false;
   bool m_definerHasBeenSet = false;
   bool m_representationsHasBeenSet = false;
@@ -241,6 +298,8 @@ class ViewDefinitionInput {
   bool m_lastRefreshTypeHasBeenSet = false;
   bool m_subObjectsHasBeenSet = false;
   bool m_subObjectVersionIdsHasBeenSet = false;
+  bool m_subObjectsStatisticsHasBeenSet = false;
+  bool m_sparkPipelineInfoHasBeenSet = false;
 };
 
 }  // namespace Model

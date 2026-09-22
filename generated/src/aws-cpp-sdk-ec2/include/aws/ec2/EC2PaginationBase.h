@@ -18,6 +18,7 @@
 #include <aws/ec2/model/DescribeCapacityBlocksPaginationTraits.h>
 #include <aws/ec2/model/DescribeCapacityManagerDataExportsPaginationTraits.h>
 #include <aws/ec2/model/DescribeCapacityReservationBillingRequestsPaginationTraits.h>
+#include <aws/ec2/model/DescribeCapacityReservationDateChangeQuotesPaginationTraits.h>
 #include <aws/ec2/model/DescribeCapacityReservationFleetsPaginationTraits.h>
 #include <aws/ec2/model/DescribeCapacityReservationsPaginationTraits.h>
 #include <aws/ec2/model/DescribeCarrierGatewaysPaginationTraits.h>
@@ -315,6 +316,18 @@ class EC2PaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCapacityReservationBillingRequestsRequest,
                                              Pagination::DescribeCapacityReservationBillingRequestsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for DescribeCapacityReservationDateChangeQuotes operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCapacityReservationDateChangeQuotesRequest,
+                                    Pagination::DescribeCapacityReservationDateChangeQuotesPaginationTraits<DerivedClient>>
+  DescribeCapacityReservationDateChangeQuotesPaginator(const Model::DescribeCapacityReservationDateChangeQuotesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCapacityReservationDateChangeQuotesRequest,
+                                             Pagination::DescribeCapacityReservationDateChangeQuotesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

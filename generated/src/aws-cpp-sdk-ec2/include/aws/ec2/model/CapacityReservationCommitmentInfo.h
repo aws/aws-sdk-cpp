@@ -71,12 +71,34 @@ class CapacityReservationCommitmentInfo {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The commitment duration, in seconds, for the future-dated Capacity
+   * Reservation. This is the minimum duration for which you commit to having the
+   * Capacity Reservation in the <code>active</code> state in your account after it
+   * has been delivered.</p>
+   */
+  inline long long GetCommitmentDuration() const { return m_commitmentDuration; }
+  inline bool CommitmentDurationHasBeenSet() const { return m_commitmentDurationHasBeenSet; }
+  inline void SetCommitmentDuration(long long value) {
+    m_commitmentDurationHasBeenSet = true;
+    m_commitmentDuration = value;
+  }
+  inline CapacityReservationCommitmentInfo& WithCommitmentDuration(long long value) {
+    SetCommitmentDuration(value);
+    return *this;
+  }
+  ///@}
  private:
   int m_committedInstanceCount{0};
 
   Aws::Utils::DateTime m_commitmentEndDate{};
+
+  long long m_commitmentDuration{0};
   bool m_committedInstanceCountHasBeenSet = false;
   bool m_commitmentEndDateHasBeenSet = false;
+  bool m_commitmentDurationHasBeenSet = false;
 };
 
 }  // namespace Model

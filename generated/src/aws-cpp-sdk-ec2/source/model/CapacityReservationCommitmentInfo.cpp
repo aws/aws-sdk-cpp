@@ -36,6 +36,12 @@ CapacityReservationCommitmentInfo& CapacityReservationCommitmentInfo::operator=(
                    Aws::Utils::DateFormat::ISO_8601);
       m_commitmentEndDateHasBeenSet = true;
     }
+    XmlNode commitmentDurationNode = resultNode.FirstChild("commitmentDuration");
+    if (!commitmentDurationNode.IsNull()) {
+      m_commitmentDuration = StringUtils::ConvertToInt64(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(commitmentDurationNode.GetText()).c_str()).c_str());
+      m_commitmentDurationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -52,6 +58,10 @@ void CapacityReservationCommitmentInfo::OutputToStream(Aws::OStream& oStream, co
             << ".CommitmentEndDate=" << StringUtils::URLEncode(m_commitmentEndDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str())
             << "&";
   }
+
+  if (m_commitmentDurationHasBeenSet) {
+    oStream << location << index << locationValue << ".CommitmentDuration=" << m_commitmentDuration << "&";
+  }
 }
 
 void CapacityReservationCommitmentInfo::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -62,6 +72,9 @@ void CapacityReservationCommitmentInfo::OutputToStream(Aws::OStream& oStream, co
     oStream << location
             << ".CommitmentEndDate=" << StringUtils::URLEncode(m_commitmentEndDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str())
             << "&";
+  }
+  if (m_commitmentDurationHasBeenSet) {
+    oStream << location << ".CommitmentDuration=" << m_commitmentDuration << "&";
   }
 }
 

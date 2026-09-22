@@ -205,6 +205,24 @@ CapacityReservation& CapacityReservation::operator=(const XmlNode& xmlNode) {
       m_interruptionInfo = interruptionInfoNode;
       m_interruptionInfoHasBeenSet = true;
     }
+    XmlNode adjustmentStatusNode = resultNode.FirstChild("adjustmentStatus");
+    if (!adjustmentStatusNode.IsNull()) {
+      m_adjustmentStatus = CapacityReservationAdjustmentStatusMapper::GetCapacityReservationAdjustmentStatusForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(adjustmentStatusNode.GetText()).c_str()));
+      m_adjustmentStatusHasBeenSet = true;
+    }
+    XmlNode adjustmentDetailsNode = resultNode.FirstChild("adjustmentDetails");
+    if (!adjustmentDetailsNode.IsNull()) {
+      m_adjustmentDetails = adjustmentDetailsNode;
+      m_adjustmentDetailsHasBeenSet = true;
+    }
+    XmlNode originalStartDateNode = resultNode.FirstChild("originalStartDate");
+    if (!originalStartDateNode.IsNull()) {
+      m_originalStartDate =
+          DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(originalStartDateNode.GetText()).c_str()).c_str(),
+                   Aws::Utils::DateFormat::ISO_8601);
+      m_originalStartDateHasBeenSet = true;
+    }
     XmlNode zeroSizePreferenceNode = resultNode.FirstChild("zeroSizePreference");
     if (!zeroSizePreferenceNode.IsNull()) {
       m_zeroSizePreference = ZeroSizePreferenceMapper::GetZeroSizePreferenceForName(
@@ -376,6 +394,25 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
     m_interruptionInfo.OutputToStream(oStream, interruptionInfoLocationAndMemberSs.str().c_str());
   }
 
+  if (m_adjustmentStatusHasBeenSet) {
+    oStream << location << index << locationValue << ".AdjustmentStatus="
+            << StringUtils::URLEncode(
+                   CapacityReservationAdjustmentStatusMapper::GetNameForCapacityReservationAdjustmentStatus(m_adjustmentStatus))
+            << "&";
+  }
+
+  if (m_adjustmentDetailsHasBeenSet) {
+    Aws::StringStream adjustmentDetailsLocationAndMemberSs;
+    adjustmentDetailsLocationAndMemberSs << location << index << locationValue << ".AdjustmentDetails";
+    m_adjustmentDetails.OutputToStream(oStream, adjustmentDetailsLocationAndMemberSs.str().c_str());
+  }
+
+  if (m_originalStartDateHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".OriginalStartDate=" << StringUtils::URLEncode(m_originalStartDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str())
+            << "&";
+  }
+
   if (m_zeroSizePreferenceHasBeenSet) {
     oStream << location << index << locationValue << ".ZeroSizePreference="
             << StringUtils::URLEncode(ZeroSizePreferenceMapper::GetNameForZeroSizePreference(m_zeroSizePreference)) << "&";
@@ -504,6 +541,22 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
     Aws::String interruptionInfoLocationAndMember(location);
     interruptionInfoLocationAndMember += ".InterruptionInfo";
     m_interruptionInfo.OutputToStream(oStream, interruptionInfoLocationAndMember.c_str());
+  }
+  if (m_adjustmentStatusHasBeenSet) {
+    oStream << location << ".AdjustmentStatus="
+            << StringUtils::URLEncode(
+                   CapacityReservationAdjustmentStatusMapper::GetNameForCapacityReservationAdjustmentStatus(m_adjustmentStatus))
+            << "&";
+  }
+  if (m_adjustmentDetailsHasBeenSet) {
+    Aws::String adjustmentDetailsLocationAndMember(location);
+    adjustmentDetailsLocationAndMember += ".AdjustmentDetails";
+    m_adjustmentDetails.OutputToStream(oStream, adjustmentDetailsLocationAndMember.c_str());
+  }
+  if (m_originalStartDateHasBeenSet) {
+    oStream << location
+            << ".OriginalStartDate=" << StringUtils::URLEncode(m_originalStartDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str())
+            << "&";
   }
   if (m_zeroSizePreferenceHasBeenSet) {
     oStream << location << ".ZeroSizePreference="

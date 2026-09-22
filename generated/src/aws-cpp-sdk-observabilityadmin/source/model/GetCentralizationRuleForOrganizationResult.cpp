@@ -67,6 +67,10 @@ GetCentralizationRuleForOrganizationResult& GetCentralizationRuleForOrganization
         TagPropagationFailureReasonMapper::GetTagPropagationFailureReasonForName(jsonValue.GetString("TagPropagationFailureReason"));
     m_tagPropagationFailureReasonHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ContextGraphStatus")) {
+    m_contextGraphStatus = ContextGraphStatusMapper::GetContextGraphStatusForName(jsonValue.GetString("ContextGraphStatus"));
+    m_contextGraphStatusHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("CentralizationRule")) {
     m_centralizationRule = jsonValue.GetObject("CentralizationRule");
     m_centralizationRuleHasBeenSet = true;

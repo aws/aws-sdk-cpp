@@ -281,6 +281,8 @@
 #include <aws/ec2/model/CapacityManagerStatus.h>
 #include <aws/ec2/model/CapacityManagerTagDimension.h>
 #include <aws/ec2/model/CapacityReservation.h>
+#include <aws/ec2/model/CapacityReservationAdjustmentDetails.h>
+#include <aws/ec2/model/CapacityReservationAdjustmentStatus.h>
 #include <aws/ec2/model/CapacityReservationBillingRequest.h>
 #include <aws/ec2/model/CapacityReservationBillingRequestStatus.h>
 #include <aws/ec2/model/CapacityReservationCancellationQuote.h>
@@ -294,6 +296,8 @@
 #include <aws/ec2/model/CapacityReservationGroup.h>
 #include <aws/ec2/model/CapacityReservationInfo.h>
 #include <aws/ec2/model/CapacityReservationInstancePlatform.h>
+#include <aws/ec2/model/CapacityReservationModificationQuote.h>
+#include <aws/ec2/model/CapacityReservationModificationQuoteState.h>
 #include <aws/ec2/model/CapacityReservationOptions.h>
 #include <aws/ec2/model/CapacityReservationOptionsRequest.h>
 #include <aws/ec2/model/CapacityReservationPreference.h>
@@ -386,6 +390,8 @@
 #include <aws/ec2/model/CreateCapacityReservationBySplittingResponse.h>
 #include <aws/ec2/model/CreateCapacityReservationCancellationQuoteRequest.h>
 #include <aws/ec2/model/CreateCapacityReservationCancellationQuoteResponse.h>
+#include <aws/ec2/model/CreateCapacityReservationDateChangeQuoteRequest.h>
+#include <aws/ec2/model/CreateCapacityReservationDateChangeQuoteResponse.h>
 #include <aws/ec2/model/CreateCapacityReservationFleetRequest.h>
 #include <aws/ec2/model/CreateCapacityReservationFleetResponse.h>
 #include <aws/ec2/model/CreateCapacityReservationRequest.h>
@@ -885,6 +891,9 @@
 #include <aws/ec2/model/DescribeCapacityReservationBillingRequestsResponse.h>
 #include <aws/ec2/model/DescribeCapacityReservationCancellationQuotesRequest.h>
 #include <aws/ec2/model/DescribeCapacityReservationCancellationQuotesResponse.h>
+#include <aws/ec2/model/DescribeCapacityReservationDateChangeQuotesPaginationTraits.h>
+#include <aws/ec2/model/DescribeCapacityReservationDateChangeQuotesRequest.h>
+#include <aws/ec2/model/DescribeCapacityReservationDateChangeQuotesResponse.h>
 #include <aws/ec2/model/DescribeCapacityReservationFleetsPaginationTraits.h>
 #include <aws/ec2/model/DescribeCapacityReservationFleetsRequest.h>
 #include <aws/ec2/model/DescribeCapacityReservationFleetsResponse.h>
@@ -2258,6 +2267,9 @@
 #include <aws/ec2/model/MetricPoint.h>
 #include <aws/ec2/model/MetricType.h>
 #include <aws/ec2/model/MetricValue.h>
+#include <aws/ec2/model/ModificationQuoteCurrentConfiguration.h>
+#include <aws/ec2/model/ModificationReservationUpdate.h>
+#include <aws/ec2/model/ModificationTerms.h>
 #include <aws/ec2/model/ModifyAccountVpcEncryptionControlRequest.h>
 #include <aws/ec2/model/ModifyAccountVpcEncryptionControlResponse.h>
 #include <aws/ec2/model/ModifyAddressAttributeRequest.h>

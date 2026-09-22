@@ -20,6 +20,8 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/DescribeReservedInstancesListingsRequest.h>
+#include <aws/ec2/model/DescribeReservedInstancesModificationsRequest.h>
 #include <aws/ec2/model/DescribeReservedInstancesOfferingsRequest.h>
 #include <aws/ec2/model/DescribeRouteServerEndpointsRequest.h>
 #include <aws/ec2/model/DescribeRouteServerPeersRequest.h>
@@ -118,8 +120,6 @@
 #include <aws/ec2/model/DisableSnapshotBlockPublicAccessRequest.h>
 #include <aws/ec2/model/DisableTransitGatewayRouteTablePropagationRequest.h>
 #include <aws/ec2/model/DisableVgwRoutePropagationRequest.h>
-#include <aws/ec2/model/DisableVpcClassicLinkDnsSupportRequest.h>
-#include <aws/ec2/model/DisableVpcClassicLinkRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,20 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DescribeReservedInstancesListingsOutcome EC2Client::DescribeReservedInstancesListings(
+    const DescribeReservedInstancesListingsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeReservedInstancesListingsOutcome(result.GetResultWithOwnership())
+                            : DescribeReservedInstancesListingsOutcome(std::move(result.GetError()));
+}
+
+DescribeReservedInstancesModificationsOutcome EC2Client::DescribeReservedInstancesModifications(
+    const DescribeReservedInstancesModificationsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeReservedInstancesModificationsOutcome(result.GetResultWithOwnership())
+                            : DescribeReservedInstancesModificationsOutcome(std::move(result.GetError()));
+}
 
 DescribeReservedInstancesOfferingsOutcome EC2Client::DescribeReservedInstancesOfferings(
     const DescribeReservedInstancesOfferingsRequest& request) const {
@@ -753,17 +767,4 @@ DisableVgwRoutePropagationOutcome EC2Client::DisableVgwRoutePropagation(const Di
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DisableVgwRoutePropagationOutcome(result.GetResultWithOwnership())
                             : DisableVgwRoutePropagationOutcome(std::move(result.GetError()));
-}
-
-DisableVpcClassicLinkOutcome EC2Client::DisableVpcClassicLink(const DisableVpcClassicLinkRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DisableVpcClassicLinkOutcome(result.GetResultWithOwnership())
-                            : DisableVpcClassicLinkOutcome(std::move(result.GetError()));
-}
-
-DisableVpcClassicLinkDnsSupportOutcome EC2Client::DisableVpcClassicLinkDnsSupport(
-    const DisableVpcClassicLinkDnsSupportRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DisableVpcClassicLinkDnsSupportOutcome(result.GetResultWithOwnership())
-                            : DisableVpcClassicLinkDnsSupportOutcome(std::move(result.GetError()));
 }

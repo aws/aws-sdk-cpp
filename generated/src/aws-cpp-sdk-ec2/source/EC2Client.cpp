@@ -89,6 +89,7 @@
 #include <aws/ec2/model/CreateCapacityManagerDataExportRequest.h>
 #include <aws/ec2/model/CreateCapacityReservationBySplittingRequest.h>
 #include <aws/ec2/model/CreateCapacityReservationCancellationQuoteRequest.h>
+#include <aws/ec2/model/CreateCapacityReservationDateChangeQuoteRequest.h>
 #include <aws/ec2/model/CreateCapacityReservationFleetRequest.h>
 #include <aws/ec2/model/CreateCapacityReservationRequest.h>
 #include <aws/ec2/model/CreateCarrierGatewayRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/ec2/model/CreateIpamPrefixListResolverRequest.h>
 #include <aws/ec2/model/CreateIpamPrefixListResolverTargetRequest.h>
 #include <aws/ec2/model/CreateIpamRequest.h>
-#include <aws/ec2/model/CreateIpamResourceDiscoveryRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -721,6 +721,13 @@ CreateCapacityReservationCancellationQuoteOutcome EC2Client::CreateCapacityReser
                             : CreateCapacityReservationCancellationQuoteOutcome(std::move(result.GetError()));
 }
 
+CreateCapacityReservationDateChangeQuoteOutcome EC2Client::CreateCapacityReservationDateChangeQuote(
+    const CreateCapacityReservationDateChangeQuoteRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCapacityReservationDateChangeQuoteOutcome(result.GetResultWithOwnership())
+                            : CreateCapacityReservationDateChangeQuoteOutcome(std::move(result.GetError()));
+}
+
 CreateCapacityReservationFleetOutcome EC2Client::CreateCapacityReservationFleet(
     const CreateCapacityReservationFleetRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -893,10 +900,4 @@ CreateIpamPrefixListResolverTargetOutcome EC2Client::CreateIpamPrefixListResolve
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateIpamPrefixListResolverTargetOutcome(result.GetResultWithOwnership())
                             : CreateIpamPrefixListResolverTargetOutcome(std::move(result.GetError()));
-}
-
-CreateIpamResourceDiscoveryOutcome EC2Client::CreateIpamResourceDiscovery(const CreateIpamResourceDiscoveryRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? CreateIpamResourceDiscoveryOutcome(result.GetResultWithOwnership())
-                            : CreateIpamResourceDiscoveryOutcome(std::move(result.GetError()));
 }

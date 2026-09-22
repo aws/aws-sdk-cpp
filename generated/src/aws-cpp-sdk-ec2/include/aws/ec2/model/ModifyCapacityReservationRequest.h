@@ -196,6 +196,68 @@ class ModifyCapacityReservationRequest : public EC2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates that you accept the modification terms of the quote identified by
+   * <code>QuoteId</code>. To apply a quoted modification, set this parameter to
+   * <code>true</code>.</p>
+   */
+  inline bool GetAcceptModificationTerms() const { return m_acceptModificationTerms; }
+  inline bool AcceptModificationTermsHasBeenSet() const { return m_acceptModificationTermsHasBeenSet; }
+  inline void SetAcceptModificationTerms(bool value) {
+    m_acceptModificationTermsHasBeenSet = true;
+    m_acceptModificationTerms = value;
+  }
+  inline ModifyCapacityReservationRequest& WithAcceptModificationTerms(bool value) {
+    SetAcceptModificationTerms(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The new start date for the Capacity Reservation, in the ISO8601 format in the
+   * UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>). Applies to future-dated
+   * Capacity Reservations only. Requires a quote from
+   * <code>CreateCapacityReservationDateChangeQuote</code>; pass the quote ID in
+   * <code>QuoteId</code> with <code>AcceptModificationTerms</code> set to
+   * <code>true</code>.</p>
+   */
+  inline const Aws::Utils::DateTime& GetStartDate() const { return m_startDate; }
+  inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
+  template <typename StartDateT = Aws::Utils::DateTime>
+  void SetStartDate(StartDateT&& value) {
+    m_startDateHasBeenSet = true;
+    m_startDate = std::forward<StartDateT>(value);
+  }
+  template <typename StartDateT = Aws::Utils::DateTime>
+  ModifyCapacityReservationRequest& WithStartDate(StartDateT&& value) {
+    SetStartDate(std::forward<StartDateT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the quote that describes the modification you want to apply.
+   * Generate a quote by using <code>CreateCapacityReservationDateChangeQuote</code>.
+   * The quote must be in the <code>active</code> state, and each quote can be used
+   * only once.</p>
+   */
+  inline const Aws::String& GetQuoteId() const { return m_quoteId; }
+  inline bool QuoteIdHasBeenSet() const { return m_quoteIdHasBeenSet; }
+  template <typename QuoteIdT = Aws::String>
+  void SetQuoteId(QuoteIdT&& value) {
+    m_quoteIdHasBeenSet = true;
+    m_quoteId = std::forward<QuoteIdT>(value);
+  }
+  template <typename QuoteIdT = Aws::String>
+  ModifyCapacityReservationRequest& WithQuoteId(QuoteIdT&& value) {
+    SetQuoteId(std::forward<QuoteIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_capacityReservationId;
 
@@ -212,6 +274,12 @@ class ModifyCapacityReservationRequest : public EC2Request {
   Aws::String m_additionalInfo;
 
   InstanceMatchCriteria m_instanceMatchCriteria{InstanceMatchCriteria::NOT_SET};
+
+  bool m_acceptModificationTerms{false};
+
+  Aws::Utils::DateTime m_startDate{};
+
+  Aws::String m_quoteId;
   bool m_capacityReservationIdHasBeenSet = false;
   bool m_instanceCountHasBeenSet = false;
   bool m_endDateHasBeenSet = false;
@@ -220,6 +288,9 @@ class ModifyCapacityReservationRequest : public EC2Request {
   bool m_dryRunHasBeenSet = false;
   bool m_additionalInfoHasBeenSet = false;
   bool m_instanceMatchCriteriaHasBeenSet = false;
+  bool m_acceptModificationTermsHasBeenSet = false;
+  bool m_startDateHasBeenSet = false;
+  bool m_quoteIdHasBeenSet = false;
 };
 
 }  // namespace Model

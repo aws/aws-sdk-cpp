@@ -30,6 +30,10 @@ DescribeInstanceResult& DescribeInstanceResult::operator=(const Aws::AmazonWebSe
     m_identityStoreId = jsonValue.GetString("IdentityStoreId");
     m_identityStoreIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("IdentityStoreArn")) {
+    m_identityStoreArn = jsonValue.GetString("IdentityStoreArn");
+    m_identityStoreArnHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("OwnerAccountId")) {
     m_ownerAccountId = jsonValue.GetString("OwnerAccountId");
     m_ownerAccountIdHasBeenSet = true;
@@ -49,6 +53,17 @@ DescribeInstanceResult& DescribeInstanceResult::operator=(const Aws::AmazonWebSe
   if (jsonValue.ValueExists("StatusReason")) {
     m_statusReason = jsonValue.GetString("StatusReason");
     m_statusReasonHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("PrimaryRegion")) {
+    m_primaryRegion = jsonValue.GetString("PrimaryRegion");
+    m_primaryRegionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Regions")) {
+    Aws::Utils::Array<JsonView> regionsJsonList = jsonValue.GetArray("Regions");
+    for (unsigned regionsIndex = 0; regionsIndex < regionsJsonList.GetLength(); ++regionsIndex) {
+      m_regions.push_back(regionsJsonList[regionsIndex].AsObject());
+    }
+    m_regionsHasBeenSet = true;
   }
   if (jsonValue.ValueExists("EncryptionConfigurationDetails")) {
     m_encryptionConfigurationDetails = jsonValue.GetObject("EncryptionConfigurationDetails");

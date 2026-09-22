@@ -4009,6 +4009,1800 @@ class Capabilities {
 
   ///@{
   /**
+   * <p>The ability to perform actions using PagerDuty Agent connectors.</p>
+   */
+  inline CapabilityState GetPagerDutyAgentAction() const { return m_pagerDutyAgentAction; }
+  inline bool PagerDutyAgentActionHasBeenSet() const { return m_pagerDutyAgentActionHasBeenSet; }
+  inline void SetPagerDutyAgentAction(CapabilityState value) {
+    m_pagerDutyAgentActionHasBeenSet = true;
+    m_pagerDutyAgentAction = value;
+  }
+  inline Capabilities& WithPagerDutyAgentAction(CapabilityState value) {
+    SetPagerDutyAgentAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create and update PagerDuty Agent actions.</p>
+   */
+  inline CapabilityState GetCreateAndUpdatePagerDutyAgentAction() const { return m_createAndUpdatePagerDutyAgentAction; }
+  inline bool CreateAndUpdatePagerDutyAgentActionHasBeenSet() const { return m_createAndUpdatePagerDutyAgentActionHasBeenSet; }
+  inline void SetCreateAndUpdatePagerDutyAgentAction(CapabilityState value) {
+    m_createAndUpdatePagerDutyAgentActionHasBeenSet = true;
+    m_createAndUpdatePagerDutyAgentAction = value;
+  }
+  inline Capabilities& WithCreateAndUpdatePagerDutyAgentAction(CapabilityState value) {
+    SetCreateAndUpdatePagerDutyAgentAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share PagerDuty Agent actions.</p>
+   */
+  inline CapabilityState GetSharePagerDutyAgentAction() const { return m_sharePagerDutyAgentAction; }
+  inline bool SharePagerDutyAgentActionHasBeenSet() const { return m_sharePagerDutyAgentActionHasBeenSet; }
+  inline void SetSharePagerDutyAgentAction(CapabilityState value) {
+    m_sharePagerDutyAgentActionHasBeenSet = true;
+    m_sharePagerDutyAgentAction = value;
+  }
+  inline Capabilities& WithSharePagerDutyAgentAction(CapabilityState value) {
+    SetSharePagerDutyAgentAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to use PagerDuty Agent actions.</p>
+   */
+  inline CapabilityState GetUsePagerDutyAgentAction() const { return m_usePagerDutyAgentAction; }
+  inline bool UsePagerDutyAgentActionHasBeenSet() const { return m_usePagerDutyAgentActionHasBeenSet; }
+  inline void SetUsePagerDutyAgentAction(CapabilityState value) {
+    m_usePagerDutyAgentActionHasBeenSet = true;
+    m_usePagerDutyAgentAction = value;
+  }
+  inline Capabilities& WithUsePagerDutyAgentAction(CapabilityState value) {
+    SetUsePagerDutyAgentAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to perform actions using Visier Agent connectors.</p>
+   */
+  inline CapabilityState GetVisierAgentAction() const { return m_visierAgentAction; }
+  inline bool VisierAgentActionHasBeenSet() const { return m_visierAgentActionHasBeenSet; }
+  inline void SetVisierAgentAction(CapabilityState value) {
+    m_visierAgentActionHasBeenSet = true;
+    m_visierAgentAction = value;
+  }
+  inline Capabilities& WithVisierAgentAction(CapabilityState value) {
+    SetVisierAgentAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create and update Visier Agent actions.</p>
+   */
+  inline CapabilityState GetCreateAndUpdateVisierAgentAction() const { return m_createAndUpdateVisierAgentAction; }
+  inline bool CreateAndUpdateVisierAgentActionHasBeenSet() const { return m_createAndUpdateVisierAgentActionHasBeenSet; }
+  inline void SetCreateAndUpdateVisierAgentAction(CapabilityState value) {
+    m_createAndUpdateVisierAgentActionHasBeenSet = true;
+    m_createAndUpdateVisierAgentAction = value;
+  }
+  inline Capabilities& WithCreateAndUpdateVisierAgentAction(CapabilityState value) {
+    SetCreateAndUpdateVisierAgentAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Visier Agent actions.</p>
+   */
+  inline CapabilityState GetShareVisierAgentAction() const { return m_shareVisierAgentAction; }
+  inline bool ShareVisierAgentActionHasBeenSet() const { return m_shareVisierAgentActionHasBeenSet; }
+  inline void SetShareVisierAgentAction(CapabilityState value) {
+    m_shareVisierAgentActionHasBeenSet = true;
+    m_shareVisierAgentAction = value;
+  }
+  inline Capabilities& WithShareVisierAgentAction(CapabilityState value) {
+    SetShareVisierAgentAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to use Visier Agent actions.</p>
+   */
+  inline CapabilityState GetUseVisierAgentAction() const { return m_useVisierAgentAction; }
+  inline bool UseVisierAgentActionHasBeenSet() const { return m_useVisierAgentActionHasBeenSet; }
+  inline void SetUseVisierAgentAction(CapabilityState value) {
+    m_useVisierAgentActionHasBeenSet = true;
+    m_useVisierAgentAction = value;
+  }
+  inline Capabilities& WithUseVisierAgentAction(CapabilityState value) {
+    SetUseVisierAgentAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to perform actions using Zoom connectors.</p>
+   */
+  inline CapabilityState GetZoomAction() const { return m_zoomAction; }
+  inline bool ZoomActionHasBeenSet() const { return m_zoomActionHasBeenSet; }
+  inline void SetZoomAction(CapabilityState value) {
+    m_zoomActionHasBeenSet = true;
+    m_zoomAction = value;
+  }
+  inline Capabilities& WithZoomAction(CapabilityState value) {
+    SetZoomAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create and update Zoom actions.</p>
+   */
+  inline CapabilityState GetCreateAndUpdateZoomAction() const { return m_createAndUpdateZoomAction; }
+  inline bool CreateAndUpdateZoomActionHasBeenSet() const { return m_createAndUpdateZoomActionHasBeenSet; }
+  inline void SetCreateAndUpdateZoomAction(CapabilityState value) {
+    m_createAndUpdateZoomActionHasBeenSet = true;
+    m_createAndUpdateZoomAction = value;
+  }
+  inline Capabilities& WithCreateAndUpdateZoomAction(CapabilityState value) {
+    SetCreateAndUpdateZoomAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Zoom actions.</p>
+   */
+  inline CapabilityState GetShareZoomAction() const { return m_shareZoomAction; }
+  inline bool ShareZoomActionHasBeenSet() const { return m_shareZoomActionHasBeenSet; }
+  inline void SetShareZoomAction(CapabilityState value) {
+    m_shareZoomActionHasBeenSet = true;
+    m_shareZoomAction = value;
+  }
+  inline Capabilities& WithShareZoomAction(CapabilityState value) {
+    SetShareZoomAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to use Zoom actions.</p>
+   */
+  inline CapabilityState GetUseZoomAction() const { return m_useZoomAction; }
+  inline bool UseZoomActionHasBeenSet() const { return m_useZoomActionHasBeenSet; }
+  inline void SetUseZoomAction(CapabilityState value) {
+    m_useZoomActionHasBeenSet = true;
+    m_useZoomAction = value;
+  }
+  inline Capabilities& WithUseZoomAction(CapabilityState value) {
+    SetUseZoomAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to perform actions using Snowflake Cortex Agent connectors.</p>
+   */
+  inline CapabilityState GetSnowFlakeAction() const { return m_snowFlakeAction; }
+  inline bool SnowFlakeActionHasBeenSet() const { return m_snowFlakeActionHasBeenSet; }
+  inline void SetSnowFlakeAction(CapabilityState value) {
+    m_snowFlakeActionHasBeenSet = true;
+    m_snowFlakeAction = value;
+  }
+  inline Capabilities& WithSnowFlakeAction(CapabilityState value) {
+    SetSnowFlakeAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create and update Snowflake Cortex Agent actions.</p>
+   */
+  inline CapabilityState GetCreateAndUpdateSnowFlakeAction() const { return m_createAndUpdateSnowFlakeAction; }
+  inline bool CreateAndUpdateSnowFlakeActionHasBeenSet() const { return m_createAndUpdateSnowFlakeActionHasBeenSet; }
+  inline void SetCreateAndUpdateSnowFlakeAction(CapabilityState value) {
+    m_createAndUpdateSnowFlakeActionHasBeenSet = true;
+    m_createAndUpdateSnowFlakeAction = value;
+  }
+  inline Capabilities& WithCreateAndUpdateSnowFlakeAction(CapabilityState value) {
+    SetCreateAndUpdateSnowFlakeAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Snowflake Cortex Agent actions.</p>
+   */
+  inline CapabilityState GetShareSnowFlakeAction() const { return m_shareSnowFlakeAction; }
+  inline bool ShareSnowFlakeActionHasBeenSet() const { return m_shareSnowFlakeActionHasBeenSet; }
+  inline void SetShareSnowFlakeAction(CapabilityState value) {
+    m_shareSnowFlakeActionHasBeenSet = true;
+    m_shareSnowFlakeAction = value;
+  }
+  inline Capabilities& WithShareSnowFlakeAction(CapabilityState value) {
+    SetShareSnowFlakeAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to use Snowflake Cortex Agent actions.</p>
+   */
+  inline CapabilityState GetUseSnowFlakeAction() const { return m_useSnowFlakeAction; }
+  inline bool UseSnowFlakeActionHasBeenSet() const { return m_useSnowFlakeActionHasBeenSet; }
+  inline void SetUseSnowFlakeAction(CapabilityState value) {
+    m_useSnowFlakeActionHasBeenSet = true;
+    m_useSnowFlakeAction = value;
+  }
+  inline Capabilities& WithUseSnowFlakeAction(CapabilityState value) {
+    SetUseSnowFlakeAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to perform actions using Zapier Agent connectors.</p>
+   */
+  inline CapabilityState GetZapierAction() const { return m_zapierAction; }
+  inline bool ZapierActionHasBeenSet() const { return m_zapierActionHasBeenSet; }
+  inline void SetZapierAction(CapabilityState value) {
+    m_zapierActionHasBeenSet = true;
+    m_zapierAction = value;
+  }
+  inline Capabilities& WithZapierAction(CapabilityState value) {
+    SetZapierAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create and update Zapier Agent actions.</p>
+   */
+  inline CapabilityState GetCreateAndUpdateZapierAction() const { return m_createAndUpdateZapierAction; }
+  inline bool CreateAndUpdateZapierActionHasBeenSet() const { return m_createAndUpdateZapierActionHasBeenSet; }
+  inline void SetCreateAndUpdateZapierAction(CapabilityState value) {
+    m_createAndUpdateZapierActionHasBeenSet = true;
+    m_createAndUpdateZapierAction = value;
+  }
+  inline Capabilities& WithCreateAndUpdateZapierAction(CapabilityState value) {
+    SetCreateAndUpdateZapierAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Zapier Agent actions.</p>
+   */
+  inline CapabilityState GetShareZapierAction() const { return m_shareZapierAction; }
+  inline bool ShareZapierActionHasBeenSet() const { return m_shareZapierActionHasBeenSet; }
+  inline void SetShareZapierAction(CapabilityState value) {
+    m_shareZapierActionHasBeenSet = true;
+    m_shareZapierAction = value;
+  }
+  inline Capabilities& WithShareZapierAction(CapabilityState value) {
+    SetShareZapierAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to use Zapier Agent actions.</p>
+   */
+  inline CapabilityState GetUseZapierAction() const { return m_useZapierAction; }
+  inline bool UseZapierActionHasBeenSet() const { return m_useZapierActionHasBeenSet; }
+  inline void SetUseZapierAction(CapabilityState value) {
+    m_useZapierActionHasBeenSet = true;
+    m_useZapierAction = value;
+  }
+  inline Capabilities& WithUseZapierAction(CapabilityState value) {
+    SetUseZapierAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to perform actions using Airtable connectors.</p>
+   */
+  inline CapabilityState GetAirtableAction() const { return m_airtableAction; }
+  inline bool AirtableActionHasBeenSet() const { return m_airtableActionHasBeenSet; }
+  inline void SetAirtableAction(CapabilityState value) {
+    m_airtableActionHasBeenSet = true;
+    m_airtableAction = value;
+  }
+  inline Capabilities& WithAirtableAction(CapabilityState value) {
+    SetAirtableAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create and update Airtable actions.</p>
+   */
+  inline CapabilityState GetCreateAndUpdateAirtableAction() const { return m_createAndUpdateAirtableAction; }
+  inline bool CreateAndUpdateAirtableActionHasBeenSet() const { return m_createAndUpdateAirtableActionHasBeenSet; }
+  inline void SetCreateAndUpdateAirtableAction(CapabilityState value) {
+    m_createAndUpdateAirtableActionHasBeenSet = true;
+    m_createAndUpdateAirtableAction = value;
+  }
+  inline Capabilities& WithCreateAndUpdateAirtableAction(CapabilityState value) {
+    SetCreateAndUpdateAirtableAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Airtable actions.</p>
+   */
+  inline CapabilityState GetShareAirtableAction() const { return m_shareAirtableAction; }
+  inline bool ShareAirtableActionHasBeenSet() const { return m_shareAirtableActionHasBeenSet; }
+  inline void SetShareAirtableAction(CapabilityState value) {
+    m_shareAirtableActionHasBeenSet = true;
+    m_shareAirtableAction = value;
+  }
+  inline Capabilities& WithShareAirtableAction(CapabilityState value) {
+    SetShareAirtableAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to use Airtable actions.</p>
+   */
+  inline CapabilityState GetUseAirtableAction() const { return m_useAirtableAction; }
+  inline bool UseAirtableActionHasBeenSet() const { return m_useAirtableActionHasBeenSet; }
+  inline void SetUseAirtableAction(CapabilityState value) {
+    m_useAirtableActionHasBeenSet = true;
+    m_useAirtableAction = value;
+  }
+  inline Capabilities& WithUseAirtableAction(CapabilityState value) {
+    SetUseAirtableAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to perform actions using Dropbox connectors.</p>
+   */
+  inline CapabilityState GetDropboxAction() const { return m_dropboxAction; }
+  inline bool DropboxActionHasBeenSet() const { return m_dropboxActionHasBeenSet; }
+  inline void SetDropboxAction(CapabilityState value) {
+    m_dropboxActionHasBeenSet = true;
+    m_dropboxAction = value;
+  }
+  inline Capabilities& WithDropboxAction(CapabilityState value) {
+    SetDropboxAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create and update Dropbox actions.</p>
+   */
+  inline CapabilityState GetCreateAndUpdateDropboxAction() const { return m_createAndUpdateDropboxAction; }
+  inline bool CreateAndUpdateDropboxActionHasBeenSet() const { return m_createAndUpdateDropboxActionHasBeenSet; }
+  inline void SetCreateAndUpdateDropboxAction(CapabilityState value) {
+    m_createAndUpdateDropboxActionHasBeenSet = true;
+    m_createAndUpdateDropboxAction = value;
+  }
+  inline Capabilities& WithCreateAndUpdateDropboxAction(CapabilityState value) {
+    SetCreateAndUpdateDropboxAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Dropbox actions.</p>
+   */
+  inline CapabilityState GetShareDropboxAction() const { return m_shareDropboxAction; }
+  inline bool ShareDropboxActionHasBeenSet() const { return m_shareDropboxActionHasBeenSet; }
+  inline void SetShareDropboxAction(CapabilityState value) {
+    m_shareDropboxActionHasBeenSet = true;
+    m_shareDropboxAction = value;
+  }
+  inline Capabilities& WithShareDropboxAction(CapabilityState value) {
+    SetShareDropboxAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to use Dropbox actions.</p>
+   */
+  inline CapabilityState GetUseDropboxAction() const { return m_useDropboxAction; }
+  inline bool UseDropboxActionHasBeenSet() const { return m_useDropboxActionHasBeenSet; }
+  inline void SetUseDropboxAction(CapabilityState value) {
+    m_useDropboxActionHasBeenSet = true;
+    m_useDropboxAction = value;
+  }
+  inline Capabilities& WithUseDropboxAction(CapabilityState value) {
+    SetUseDropboxAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to perform actions using Gmail connectors.</p>
+   */
+  inline CapabilityState GetGmailAction() const { return m_gmailAction; }
+  inline bool GmailActionHasBeenSet() const { return m_gmailActionHasBeenSet; }
+  inline void SetGmailAction(CapabilityState value) {
+    m_gmailActionHasBeenSet = true;
+    m_gmailAction = value;
+  }
+  inline Capabilities& WithGmailAction(CapabilityState value) {
+    SetGmailAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create and update Gmail actions.</p>
+   */
+  inline CapabilityState GetCreateAndUpdateGmailAction() const { return m_createAndUpdateGmailAction; }
+  inline bool CreateAndUpdateGmailActionHasBeenSet() const { return m_createAndUpdateGmailActionHasBeenSet; }
+  inline void SetCreateAndUpdateGmailAction(CapabilityState value) {
+    m_createAndUpdateGmailActionHasBeenSet = true;
+    m_createAndUpdateGmailAction = value;
+  }
+  inline Capabilities& WithCreateAndUpdateGmailAction(CapabilityState value) {
+    SetCreateAndUpdateGmailAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Gmail actions.</p>
+   */
+  inline CapabilityState GetShareGmailAction() const { return m_shareGmailAction; }
+  inline bool ShareGmailActionHasBeenSet() const { return m_shareGmailActionHasBeenSet; }
+  inline void SetShareGmailAction(CapabilityState value) {
+    m_shareGmailActionHasBeenSet = true;
+    m_shareGmailAction = value;
+  }
+  inline Capabilities& WithShareGmailAction(CapabilityState value) {
+    SetShareGmailAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to use Gmail actions.</p>
+   */
+  inline CapabilityState GetUseGmailAction() const { return m_useGmailAction; }
+  inline bool UseGmailActionHasBeenSet() const { return m_useGmailActionHasBeenSet; }
+  inline void SetUseGmailAction(CapabilityState value) {
+    m_useGmailActionHasBeenSet = true;
+    m_useGmailAction = value;
+  }
+  inline Capabilities& WithUseGmailAction(CapabilityState value) {
+    SetUseGmailAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to perform actions using Google Analytics connectors.</p>
+   */
+  inline CapabilityState GetGoogleAnalyticsAction() const { return m_googleAnalyticsAction; }
+  inline bool GoogleAnalyticsActionHasBeenSet() const { return m_googleAnalyticsActionHasBeenSet; }
+  inline void SetGoogleAnalyticsAction(CapabilityState value) {
+    m_googleAnalyticsActionHasBeenSet = true;
+    m_googleAnalyticsAction = value;
+  }
+  inline Capabilities& WithGoogleAnalyticsAction(CapabilityState value) {
+    SetGoogleAnalyticsAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create and update Google Analytics actions.</p>
+   */
+  inline CapabilityState GetCreateAndUpdateGoogleAnalyticsAction() const { return m_createAndUpdateGoogleAnalyticsAction; }
+  inline bool CreateAndUpdateGoogleAnalyticsActionHasBeenSet() const { return m_createAndUpdateGoogleAnalyticsActionHasBeenSet; }
+  inline void SetCreateAndUpdateGoogleAnalyticsAction(CapabilityState value) {
+    m_createAndUpdateGoogleAnalyticsActionHasBeenSet = true;
+    m_createAndUpdateGoogleAnalyticsAction = value;
+  }
+  inline Capabilities& WithCreateAndUpdateGoogleAnalyticsAction(CapabilityState value) {
+    SetCreateAndUpdateGoogleAnalyticsAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Google Analytics actions.</p>
+   */
+  inline CapabilityState GetShareGoogleAnalyticsAction() const { return m_shareGoogleAnalyticsAction; }
+  inline bool ShareGoogleAnalyticsActionHasBeenSet() const { return m_shareGoogleAnalyticsActionHasBeenSet; }
+  inline void SetShareGoogleAnalyticsAction(CapabilityState value) {
+    m_shareGoogleAnalyticsActionHasBeenSet = true;
+    m_shareGoogleAnalyticsAction = value;
+  }
+  inline Capabilities& WithShareGoogleAnalyticsAction(CapabilityState value) {
+    SetShareGoogleAnalyticsAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to use Google Analytics actions.</p>
+   */
+  inline CapabilityState GetUseGoogleAnalyticsAction() const { return m_useGoogleAnalyticsAction; }
+  inline bool UseGoogleAnalyticsActionHasBeenSet() const { return m_useGoogleAnalyticsActionHasBeenSet; }
+  inline void SetUseGoogleAnalyticsAction(CapabilityState value) {
+    m_useGoogleAnalyticsActionHasBeenSet = true;
+    m_useGoogleAnalyticsAction = value;
+  }
+  inline Capabilities& WithUseGoogleAnalyticsAction(CapabilityState value) {
+    SetUseGoogleAnalyticsAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to perform actions using Google Docs connectors.</p>
+   */
+  inline CapabilityState GetGoogleDocsAction() const { return m_googleDocsAction; }
+  inline bool GoogleDocsActionHasBeenSet() const { return m_googleDocsActionHasBeenSet; }
+  inline void SetGoogleDocsAction(CapabilityState value) {
+    m_googleDocsActionHasBeenSet = true;
+    m_googleDocsAction = value;
+  }
+  inline Capabilities& WithGoogleDocsAction(CapabilityState value) {
+    SetGoogleDocsAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create and update Google Docs actions.</p>
+   */
+  inline CapabilityState GetCreateAndUpdateGoogleDocsAction() const { return m_createAndUpdateGoogleDocsAction; }
+  inline bool CreateAndUpdateGoogleDocsActionHasBeenSet() const { return m_createAndUpdateGoogleDocsActionHasBeenSet; }
+  inline void SetCreateAndUpdateGoogleDocsAction(CapabilityState value) {
+    m_createAndUpdateGoogleDocsActionHasBeenSet = true;
+    m_createAndUpdateGoogleDocsAction = value;
+  }
+  inline Capabilities& WithCreateAndUpdateGoogleDocsAction(CapabilityState value) {
+    SetCreateAndUpdateGoogleDocsAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Google Docs actions.</p>
+   */
+  inline CapabilityState GetShareGoogleDocsAction() const { return m_shareGoogleDocsAction; }
+  inline bool ShareGoogleDocsActionHasBeenSet() const { return m_shareGoogleDocsActionHasBeenSet; }
+  inline void SetShareGoogleDocsAction(CapabilityState value) {
+    m_shareGoogleDocsActionHasBeenSet = true;
+    m_shareGoogleDocsAction = value;
+  }
+  inline Capabilities& WithShareGoogleDocsAction(CapabilityState value) {
+    SetShareGoogleDocsAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to use Google Docs actions.</p>
+   */
+  inline CapabilityState GetUseGoogleDocsAction() const { return m_useGoogleDocsAction; }
+  inline bool UseGoogleDocsActionHasBeenSet() const { return m_useGoogleDocsActionHasBeenSet; }
+  inline void SetUseGoogleDocsAction(CapabilityState value) {
+    m_useGoogleDocsActionHasBeenSet = true;
+    m_useGoogleDocsAction = value;
+  }
+  inline Capabilities& WithUseGoogleDocsAction(CapabilityState value) {
+    SetUseGoogleDocsAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to perform actions using Google Drive connectors.</p>
+   */
+  inline CapabilityState GetGoogleDriveAction() const { return m_googleDriveAction; }
+  inline bool GoogleDriveActionHasBeenSet() const { return m_googleDriveActionHasBeenSet; }
+  inline void SetGoogleDriveAction(CapabilityState value) {
+    m_googleDriveActionHasBeenSet = true;
+    m_googleDriveAction = value;
+  }
+  inline Capabilities& WithGoogleDriveAction(CapabilityState value) {
+    SetGoogleDriveAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create and update Google Drive actions.</p>
+   */
+  inline CapabilityState GetCreateAndUpdateGoogleDriveAction() const { return m_createAndUpdateGoogleDriveAction; }
+  inline bool CreateAndUpdateGoogleDriveActionHasBeenSet() const { return m_createAndUpdateGoogleDriveActionHasBeenSet; }
+  inline void SetCreateAndUpdateGoogleDriveAction(CapabilityState value) {
+    m_createAndUpdateGoogleDriveActionHasBeenSet = true;
+    m_createAndUpdateGoogleDriveAction = value;
+  }
+  inline Capabilities& WithCreateAndUpdateGoogleDriveAction(CapabilityState value) {
+    SetCreateAndUpdateGoogleDriveAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Google Drive actions.</p>
+   */
+  inline CapabilityState GetShareGoogleDriveAction() const { return m_shareGoogleDriveAction; }
+  inline bool ShareGoogleDriveActionHasBeenSet() const { return m_shareGoogleDriveActionHasBeenSet; }
+  inline void SetShareGoogleDriveAction(CapabilityState value) {
+    m_shareGoogleDriveActionHasBeenSet = true;
+    m_shareGoogleDriveAction = value;
+  }
+  inline Capabilities& WithShareGoogleDriveAction(CapabilityState value) {
+    SetShareGoogleDriveAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to use Google Drive actions.</p>
+   */
+  inline CapabilityState GetUseGoogleDriveAction() const { return m_useGoogleDriveAction; }
+  inline bool UseGoogleDriveActionHasBeenSet() const { return m_useGoogleDriveActionHasBeenSet; }
+  inline void SetUseGoogleDriveAction(CapabilityState value) {
+    m_useGoogleDriveActionHasBeenSet = true;
+    m_useGoogleDriveAction = value;
+  }
+  inline Capabilities& WithUseGoogleDriveAction(CapabilityState value) {
+    SetUseGoogleDriveAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to perform actions using Google Meet connectors.</p>
+   */
+  inline CapabilityState GetGoogleMeetAction() const { return m_googleMeetAction; }
+  inline bool GoogleMeetActionHasBeenSet() const { return m_googleMeetActionHasBeenSet; }
+  inline void SetGoogleMeetAction(CapabilityState value) {
+    m_googleMeetActionHasBeenSet = true;
+    m_googleMeetAction = value;
+  }
+  inline Capabilities& WithGoogleMeetAction(CapabilityState value) {
+    SetGoogleMeetAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create and update Google Meet actions.</p>
+   */
+  inline CapabilityState GetCreateAndUpdateGoogleMeetAction() const { return m_createAndUpdateGoogleMeetAction; }
+  inline bool CreateAndUpdateGoogleMeetActionHasBeenSet() const { return m_createAndUpdateGoogleMeetActionHasBeenSet; }
+  inline void SetCreateAndUpdateGoogleMeetAction(CapabilityState value) {
+    m_createAndUpdateGoogleMeetActionHasBeenSet = true;
+    m_createAndUpdateGoogleMeetAction = value;
+  }
+  inline Capabilities& WithCreateAndUpdateGoogleMeetAction(CapabilityState value) {
+    SetCreateAndUpdateGoogleMeetAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Google Meet actions.</p>
+   */
+  inline CapabilityState GetShareGoogleMeetAction() const { return m_shareGoogleMeetAction; }
+  inline bool ShareGoogleMeetActionHasBeenSet() const { return m_shareGoogleMeetActionHasBeenSet; }
+  inline void SetShareGoogleMeetAction(CapabilityState value) {
+    m_shareGoogleMeetActionHasBeenSet = true;
+    m_shareGoogleMeetAction = value;
+  }
+  inline Capabilities& WithShareGoogleMeetAction(CapabilityState value) {
+    SetShareGoogleMeetAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to use Google Meet actions.</p>
+   */
+  inline CapabilityState GetUseGoogleMeetAction() const { return m_useGoogleMeetAction; }
+  inline bool UseGoogleMeetActionHasBeenSet() const { return m_useGoogleMeetActionHasBeenSet; }
+  inline void SetUseGoogleMeetAction(CapabilityState value) {
+    m_useGoogleMeetActionHasBeenSet = true;
+    m_useGoogleMeetAction = value;
+  }
+  inline Capabilities& WithUseGoogleMeetAction(CapabilityState value) {
+    SetUseGoogleMeetAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to perform actions using Google Sheets connectors.</p>
+   */
+  inline CapabilityState GetGoogleSheetsAction() const { return m_googleSheetsAction; }
+  inline bool GoogleSheetsActionHasBeenSet() const { return m_googleSheetsActionHasBeenSet; }
+  inline void SetGoogleSheetsAction(CapabilityState value) {
+    m_googleSheetsActionHasBeenSet = true;
+    m_googleSheetsAction = value;
+  }
+  inline Capabilities& WithGoogleSheetsAction(CapabilityState value) {
+    SetGoogleSheetsAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create and update Google Sheets actions.</p>
+   */
+  inline CapabilityState GetCreateAndUpdateGoogleSheetsAction() const { return m_createAndUpdateGoogleSheetsAction; }
+  inline bool CreateAndUpdateGoogleSheetsActionHasBeenSet() const { return m_createAndUpdateGoogleSheetsActionHasBeenSet; }
+  inline void SetCreateAndUpdateGoogleSheetsAction(CapabilityState value) {
+    m_createAndUpdateGoogleSheetsActionHasBeenSet = true;
+    m_createAndUpdateGoogleSheetsAction = value;
+  }
+  inline Capabilities& WithCreateAndUpdateGoogleSheetsAction(CapabilityState value) {
+    SetCreateAndUpdateGoogleSheetsAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Google Sheets actions.</p>
+   */
+  inline CapabilityState GetShareGoogleSheetsAction() const { return m_shareGoogleSheetsAction; }
+  inline bool ShareGoogleSheetsActionHasBeenSet() const { return m_shareGoogleSheetsActionHasBeenSet; }
+  inline void SetShareGoogleSheetsAction(CapabilityState value) {
+    m_shareGoogleSheetsActionHasBeenSet = true;
+    m_shareGoogleSheetsAction = value;
+  }
+  inline Capabilities& WithShareGoogleSheetsAction(CapabilityState value) {
+    SetShareGoogleSheetsAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to use Google Sheets actions.</p>
+   */
+  inline CapabilityState GetUseGoogleSheetsAction() const { return m_useGoogleSheetsAction; }
+  inline bool UseGoogleSheetsActionHasBeenSet() const { return m_useGoogleSheetsActionHasBeenSet; }
+  inline void SetUseGoogleSheetsAction(CapabilityState value) {
+    m_useGoogleSheetsActionHasBeenSet = true;
+    m_useGoogleSheetsAction = value;
+  }
+  inline Capabilities& WithUseGoogleSheetsAction(CapabilityState value) {
+    SetUseGoogleSheetsAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to perform actions using Google Slides connectors.</p>
+   */
+  inline CapabilityState GetGoogleSlidesAction() const { return m_googleSlidesAction; }
+  inline bool GoogleSlidesActionHasBeenSet() const { return m_googleSlidesActionHasBeenSet; }
+  inline void SetGoogleSlidesAction(CapabilityState value) {
+    m_googleSlidesActionHasBeenSet = true;
+    m_googleSlidesAction = value;
+  }
+  inline Capabilities& WithGoogleSlidesAction(CapabilityState value) {
+    SetGoogleSlidesAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create and update Google Slides actions.</p>
+   */
+  inline CapabilityState GetCreateAndUpdateGoogleSlidesAction() const { return m_createAndUpdateGoogleSlidesAction; }
+  inline bool CreateAndUpdateGoogleSlidesActionHasBeenSet() const { return m_createAndUpdateGoogleSlidesActionHasBeenSet; }
+  inline void SetCreateAndUpdateGoogleSlidesAction(CapabilityState value) {
+    m_createAndUpdateGoogleSlidesActionHasBeenSet = true;
+    m_createAndUpdateGoogleSlidesAction = value;
+  }
+  inline Capabilities& WithCreateAndUpdateGoogleSlidesAction(CapabilityState value) {
+    SetCreateAndUpdateGoogleSlidesAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Google Slides actions.</p>
+   */
+  inline CapabilityState GetShareGoogleSlidesAction() const { return m_shareGoogleSlidesAction; }
+  inline bool ShareGoogleSlidesActionHasBeenSet() const { return m_shareGoogleSlidesActionHasBeenSet; }
+  inline void SetShareGoogleSlidesAction(CapabilityState value) {
+    m_shareGoogleSlidesActionHasBeenSet = true;
+    m_shareGoogleSlidesAction = value;
+  }
+  inline Capabilities& WithShareGoogleSlidesAction(CapabilityState value) {
+    SetShareGoogleSlidesAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to use Google Slides actions.</p>
+   */
+  inline CapabilityState GetUseGoogleSlidesAction() const { return m_useGoogleSlidesAction; }
+  inline bool UseGoogleSlidesActionHasBeenSet() const { return m_useGoogleSlidesActionHasBeenSet; }
+  inline void SetUseGoogleSlidesAction(CapabilityState value) {
+    m_useGoogleSlidesActionHasBeenSet = true;
+    m_useGoogleSlidesAction = value;
+  }
+  inline Capabilities& WithUseGoogleSlidesAction(CapabilityState value) {
+    SetUseGoogleSlidesAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to perform actions using QuickBooks connectors.</p>
+   */
+  inline CapabilityState GetQuickBooksAction() const { return m_quickBooksAction; }
+  inline bool QuickBooksActionHasBeenSet() const { return m_quickBooksActionHasBeenSet; }
+  inline void SetQuickBooksAction(CapabilityState value) {
+    m_quickBooksActionHasBeenSet = true;
+    m_quickBooksAction = value;
+  }
+  inline Capabilities& WithQuickBooksAction(CapabilityState value) {
+    SetQuickBooksAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create and update QuickBooks actions.</p>
+   */
+  inline CapabilityState GetCreateAndUpdateQuickBooksAction() const { return m_createAndUpdateQuickBooksAction; }
+  inline bool CreateAndUpdateQuickBooksActionHasBeenSet() const { return m_createAndUpdateQuickBooksActionHasBeenSet; }
+  inline void SetCreateAndUpdateQuickBooksAction(CapabilityState value) {
+    m_createAndUpdateQuickBooksActionHasBeenSet = true;
+    m_createAndUpdateQuickBooksAction = value;
+  }
+  inline Capabilities& WithCreateAndUpdateQuickBooksAction(CapabilityState value) {
+    SetCreateAndUpdateQuickBooksAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share QuickBooks actions.</p>
+   */
+  inline CapabilityState GetShareQuickBooksAction() const { return m_shareQuickBooksAction; }
+  inline bool ShareQuickBooksActionHasBeenSet() const { return m_shareQuickBooksActionHasBeenSet; }
+  inline void SetShareQuickBooksAction(CapabilityState value) {
+    m_shareQuickBooksActionHasBeenSet = true;
+    m_shareQuickBooksAction = value;
+  }
+  inline Capabilities& WithShareQuickBooksAction(CapabilityState value) {
+    SetShareQuickBooksAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to use QuickBooks actions.</p>
+   */
+  inline CapabilityState GetUseQuickBooksAction() const { return m_useQuickBooksAction; }
+  inline bool UseQuickBooksActionHasBeenSet() const { return m_useQuickBooksActionHasBeenSet; }
+  inline void SetUseQuickBooksAction(CapabilityState value) {
+    m_useQuickBooksActionHasBeenSet = true;
+    m_useQuickBooksAction = value;
+  }
+  inline Capabilities& WithUseQuickBooksAction(CapabilityState value) {
+    SetUseQuickBooksAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to perform actions using Figma connectors.</p>
+   */
+  inline CapabilityState GetFigmaAction() const { return m_figmaAction; }
+  inline bool FigmaActionHasBeenSet() const { return m_figmaActionHasBeenSet; }
+  inline void SetFigmaAction(CapabilityState value) {
+    m_figmaActionHasBeenSet = true;
+    m_figmaAction = value;
+  }
+  inline Capabilities& WithFigmaAction(CapabilityState value) {
+    SetFigmaAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create and update Figma actions.</p>
+   */
+  inline CapabilityState GetCreateAndUpdateFigmaAction() const { return m_createAndUpdateFigmaAction; }
+  inline bool CreateAndUpdateFigmaActionHasBeenSet() const { return m_createAndUpdateFigmaActionHasBeenSet; }
+  inline void SetCreateAndUpdateFigmaAction(CapabilityState value) {
+    m_createAndUpdateFigmaActionHasBeenSet = true;
+    m_createAndUpdateFigmaAction = value;
+  }
+  inline Capabilities& WithCreateAndUpdateFigmaAction(CapabilityState value) {
+    SetCreateAndUpdateFigmaAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Figma actions.</p>
+   */
+  inline CapabilityState GetShareFigmaAction() const { return m_shareFigmaAction; }
+  inline bool ShareFigmaActionHasBeenSet() const { return m_shareFigmaActionHasBeenSet; }
+  inline void SetShareFigmaAction(CapabilityState value) {
+    m_shareFigmaActionHasBeenSet = true;
+    m_shareFigmaAction = value;
+  }
+  inline Capabilities& WithShareFigmaAction(CapabilityState value) {
+    SetShareFigmaAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to use Figma actions.</p>
+   */
+  inline CapabilityState GetUseFigmaAction() const { return m_useFigmaAction; }
+  inline bool UseFigmaActionHasBeenSet() const { return m_useFigmaActionHasBeenSet; }
+  inline void SetUseFigmaAction(CapabilityState value) {
+    m_useFigmaActionHasBeenSet = true;
+    m_useFigmaAction = value;
+  }
+  inline Capabilities& WithUseFigmaAction(CapabilityState value) {
+    SetUseFigmaAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to perform actions using WhatsApp connectors.</p>
+   */
+  inline CapabilityState GetWhatsAppAction() const { return m_whatsAppAction; }
+  inline bool WhatsAppActionHasBeenSet() const { return m_whatsAppActionHasBeenSet; }
+  inline void SetWhatsAppAction(CapabilityState value) {
+    m_whatsAppActionHasBeenSet = true;
+    m_whatsAppAction = value;
+  }
+  inline Capabilities& WithWhatsAppAction(CapabilityState value) {
+    SetWhatsAppAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create and update WhatsApp actions.</p>
+   */
+  inline CapabilityState GetCreateAndUpdateWhatsAppAction() const { return m_createAndUpdateWhatsAppAction; }
+  inline bool CreateAndUpdateWhatsAppActionHasBeenSet() const { return m_createAndUpdateWhatsAppActionHasBeenSet; }
+  inline void SetCreateAndUpdateWhatsAppAction(CapabilityState value) {
+    m_createAndUpdateWhatsAppActionHasBeenSet = true;
+    m_createAndUpdateWhatsAppAction = value;
+  }
+  inline Capabilities& WithCreateAndUpdateWhatsAppAction(CapabilityState value) {
+    SetCreateAndUpdateWhatsAppAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share WhatsApp actions.</p>
+   */
+  inline CapabilityState GetShareWhatsAppAction() const { return m_shareWhatsAppAction; }
+  inline bool ShareWhatsAppActionHasBeenSet() const { return m_shareWhatsAppActionHasBeenSet; }
+  inline void SetShareWhatsAppAction(CapabilityState value) {
+    m_shareWhatsAppActionHasBeenSet = true;
+    m_shareWhatsAppAction = value;
+  }
+  inline Capabilities& WithShareWhatsAppAction(CapabilityState value) {
+    SetShareWhatsAppAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to use WhatsApp actions.</p>
+   */
+  inline CapabilityState GetUseWhatsAppAction() const { return m_useWhatsAppAction; }
+  inline bool UseWhatsAppActionHasBeenSet() const { return m_useWhatsAppActionHasBeenSet; }
+  inline void SetUseWhatsAppAction(CapabilityState value) {
+    m_useWhatsAppActionHasBeenSet = true;
+    m_useWhatsAppAction = value;
+  }
+  inline Capabilities& WithUseWhatsAppAction(CapabilityState value) {
+    SetUseWhatsAppAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to perform actions using Google Chat connectors.</p>
+   */
+  inline CapabilityState GetGoogleChatAction() const { return m_googleChatAction; }
+  inline bool GoogleChatActionHasBeenSet() const { return m_googleChatActionHasBeenSet; }
+  inline void SetGoogleChatAction(CapabilityState value) {
+    m_googleChatActionHasBeenSet = true;
+    m_googleChatAction = value;
+  }
+  inline Capabilities& WithGoogleChatAction(CapabilityState value) {
+    SetGoogleChatAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create and update Google Chat actions.</p>
+   */
+  inline CapabilityState GetCreateAndUpdateGoogleChatAction() const { return m_createAndUpdateGoogleChatAction; }
+  inline bool CreateAndUpdateGoogleChatActionHasBeenSet() const { return m_createAndUpdateGoogleChatActionHasBeenSet; }
+  inline void SetCreateAndUpdateGoogleChatAction(CapabilityState value) {
+    m_createAndUpdateGoogleChatActionHasBeenSet = true;
+    m_createAndUpdateGoogleChatAction = value;
+  }
+  inline Capabilities& WithCreateAndUpdateGoogleChatAction(CapabilityState value) {
+    SetCreateAndUpdateGoogleChatAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Google Chat actions.</p>
+   */
+  inline CapabilityState GetShareGoogleChatAction() const { return m_shareGoogleChatAction; }
+  inline bool ShareGoogleChatActionHasBeenSet() const { return m_shareGoogleChatActionHasBeenSet; }
+  inline void SetShareGoogleChatAction(CapabilityState value) {
+    m_shareGoogleChatActionHasBeenSet = true;
+    m_shareGoogleChatAction = value;
+  }
+  inline Capabilities& WithShareGoogleChatAction(CapabilityState value) {
+    SetShareGoogleChatAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to use Google Chat actions.</p>
+   */
+  inline CapabilityState GetUseGoogleChatAction() const { return m_useGoogleChatAction; }
+  inline bool UseGoogleChatActionHasBeenSet() const { return m_useGoogleChatActionHasBeenSet; }
+  inline void SetUseGoogleChatAction(CapabilityState value) {
+    m_useGoogleChatActionHasBeenSet = true;
+    m_useGoogleChatAction = value;
+  }
+  inline Capabilities& WithUseGoogleChatAction(CapabilityState value) {
+    SetUseGoogleChatAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to perform actions using Microsoft OneNote connectors.</p>
+   */
+  inline CapabilityState GetOneNoteAction() const { return m_oneNoteAction; }
+  inline bool OneNoteActionHasBeenSet() const { return m_oneNoteActionHasBeenSet; }
+  inline void SetOneNoteAction(CapabilityState value) {
+    m_oneNoteActionHasBeenSet = true;
+    m_oneNoteAction = value;
+  }
+  inline Capabilities& WithOneNoteAction(CapabilityState value) {
+    SetOneNoteAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create and update Microsoft OneNote actions.</p>
+   */
+  inline CapabilityState GetCreateAndUpdateOneNoteAction() const { return m_createAndUpdateOneNoteAction; }
+  inline bool CreateAndUpdateOneNoteActionHasBeenSet() const { return m_createAndUpdateOneNoteActionHasBeenSet; }
+  inline void SetCreateAndUpdateOneNoteAction(CapabilityState value) {
+    m_createAndUpdateOneNoteActionHasBeenSet = true;
+    m_createAndUpdateOneNoteAction = value;
+  }
+  inline Capabilities& WithCreateAndUpdateOneNoteAction(CapabilityState value) {
+    SetCreateAndUpdateOneNoteAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Microsoft OneNote actions.</p>
+   */
+  inline CapabilityState GetShareOneNoteAction() const { return m_shareOneNoteAction; }
+  inline bool ShareOneNoteActionHasBeenSet() const { return m_shareOneNoteActionHasBeenSet; }
+  inline void SetShareOneNoteAction(CapabilityState value) {
+    m_shareOneNoteActionHasBeenSet = true;
+    m_shareOneNoteAction = value;
+  }
+  inline Capabilities& WithShareOneNoteAction(CapabilityState value) {
+    SetShareOneNoteAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to use Microsoft OneNote actions.</p>
+   */
+  inline CapabilityState GetUseOneNoteAction() const { return m_useOneNoteAction; }
+  inline bool UseOneNoteActionHasBeenSet() const { return m_useOneNoteActionHasBeenSet; }
+  inline void SetUseOneNoteAction(CapabilityState value) {
+    m_useOneNoteActionHasBeenSet = true;
+    m_useOneNoteAction = value;
+  }
+  inline Capabilities& WithUseOneNoteAction(CapabilityState value) {
+    SetUseOneNoteAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to perform actions using Shopify connectors.</p>
+   */
+  inline CapabilityState GetShopifyAction() const { return m_shopifyAction; }
+  inline bool ShopifyActionHasBeenSet() const { return m_shopifyActionHasBeenSet; }
+  inline void SetShopifyAction(CapabilityState value) {
+    m_shopifyActionHasBeenSet = true;
+    m_shopifyAction = value;
+  }
+  inline Capabilities& WithShopifyAction(CapabilityState value) {
+    SetShopifyAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create and update Shopify actions.</p>
+   */
+  inline CapabilityState GetCreateAndUpdateShopifyAction() const { return m_createAndUpdateShopifyAction; }
+  inline bool CreateAndUpdateShopifyActionHasBeenSet() const { return m_createAndUpdateShopifyActionHasBeenSet; }
+  inline void SetCreateAndUpdateShopifyAction(CapabilityState value) {
+    m_createAndUpdateShopifyActionHasBeenSet = true;
+    m_createAndUpdateShopifyAction = value;
+  }
+  inline Capabilities& WithCreateAndUpdateShopifyAction(CapabilityState value) {
+    SetCreateAndUpdateShopifyAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Shopify actions.</p>
+   */
+  inline CapabilityState GetShareShopifyAction() const { return m_shareShopifyAction; }
+  inline bool ShareShopifyActionHasBeenSet() const { return m_shareShopifyActionHasBeenSet; }
+  inline void SetShareShopifyAction(CapabilityState value) {
+    m_shareShopifyActionHasBeenSet = true;
+    m_shareShopifyAction = value;
+  }
+  inline Capabilities& WithShareShopifyAction(CapabilityState value) {
+    SetShareShopifyAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to use Shopify actions.</p>
+   */
+  inline CapabilityState GetUseShopifyAction() const { return m_useShopifyAction; }
+  inline bool UseShopifyActionHasBeenSet() const { return m_useShopifyActionHasBeenSet; }
+  inline void SetUseShopifyAction(CapabilityState value) {
+    m_useShopifyActionHasBeenSet = true;
+    m_useShopifyAction = value;
+  }
+  inline Capabilities& WithUseShopifyAction(CapabilityState value) {
+    SetUseShopifyAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to perform actions using Adobe Marketing Agent connectors.</p>
+   */
+  inline CapabilityState GetAdobeAction() const { return m_adobeAction; }
+  inline bool AdobeActionHasBeenSet() const { return m_adobeActionHasBeenSet; }
+  inline void SetAdobeAction(CapabilityState value) {
+    m_adobeActionHasBeenSet = true;
+    m_adobeAction = value;
+  }
+  inline Capabilities& WithAdobeAction(CapabilityState value) {
+    SetAdobeAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create and update Adobe Marketing Agent actions.</p>
+   */
+  inline CapabilityState GetCreateAndUpdateAdobeAction() const { return m_createAndUpdateAdobeAction; }
+  inline bool CreateAndUpdateAdobeActionHasBeenSet() const { return m_createAndUpdateAdobeActionHasBeenSet; }
+  inline void SetCreateAndUpdateAdobeAction(CapabilityState value) {
+    m_createAndUpdateAdobeActionHasBeenSet = true;
+    m_createAndUpdateAdobeAction = value;
+  }
+  inline Capabilities& WithCreateAndUpdateAdobeAction(CapabilityState value) {
+    SetCreateAndUpdateAdobeAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Adobe Marketing Agent actions.</p>
+   */
+  inline CapabilityState GetShareAdobeAction() const { return m_shareAdobeAction; }
+  inline bool ShareAdobeActionHasBeenSet() const { return m_shareAdobeActionHasBeenSet; }
+  inline void SetShareAdobeAction(CapabilityState value) {
+    m_shareAdobeActionHasBeenSet = true;
+    m_shareAdobeAction = value;
+  }
+  inline Capabilities& WithShareAdobeAction(CapabilityState value) {
+    SetShareAdobeAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to use Adobe Marketing Agent actions.</p>
+   */
+  inline CapabilityState GetUseAdobeAction() const { return m_useAdobeAction; }
+  inline bool UseAdobeActionHasBeenSet() const { return m_useAdobeActionHasBeenSet; }
+  inline void SetUseAdobeAction(CapabilityState value) {
+    m_useAdobeActionHasBeenSet = true;
+    m_useAdobeAction = value;
+  }
+  inline Capabilities& WithUseAdobeAction(CapabilityState value) {
+    SetUseAdobeAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to perform actions using Cisco Webex Video Messaging Agent
+   * connectors.</p>
+   */
+  inline CapabilityState GetCiscoWebexVidcastAction() const { return m_ciscoWebexVidcastAction; }
+  inline bool CiscoWebexVidcastActionHasBeenSet() const { return m_ciscoWebexVidcastActionHasBeenSet; }
+  inline void SetCiscoWebexVidcastAction(CapabilityState value) {
+    m_ciscoWebexVidcastActionHasBeenSet = true;
+    m_ciscoWebexVidcastAction = value;
+  }
+  inline Capabilities& WithCiscoWebexVidcastAction(CapabilityState value) {
+    SetCiscoWebexVidcastAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create and update Cisco Webex Video Messaging Agent
+   * actions.</p>
+   */
+  inline CapabilityState GetCreateAndUpdateCiscoWebexVidcastAction() const { return m_createAndUpdateCiscoWebexVidcastAction; }
+  inline bool CreateAndUpdateCiscoWebexVidcastActionHasBeenSet() const { return m_createAndUpdateCiscoWebexVidcastActionHasBeenSet; }
+  inline void SetCreateAndUpdateCiscoWebexVidcastAction(CapabilityState value) {
+    m_createAndUpdateCiscoWebexVidcastActionHasBeenSet = true;
+    m_createAndUpdateCiscoWebexVidcastAction = value;
+  }
+  inline Capabilities& WithCreateAndUpdateCiscoWebexVidcastAction(CapabilityState value) {
+    SetCreateAndUpdateCiscoWebexVidcastAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Cisco Webex Video Messaging Agent actions.</p>
+   */
+  inline CapabilityState GetShareCiscoWebexVidcastAction() const { return m_shareCiscoWebexVidcastAction; }
+  inline bool ShareCiscoWebexVidcastActionHasBeenSet() const { return m_shareCiscoWebexVidcastActionHasBeenSet; }
+  inline void SetShareCiscoWebexVidcastAction(CapabilityState value) {
+    m_shareCiscoWebexVidcastActionHasBeenSet = true;
+    m_shareCiscoWebexVidcastAction = value;
+  }
+  inline Capabilities& WithShareCiscoWebexVidcastAction(CapabilityState value) {
+    SetShareCiscoWebexVidcastAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to use Cisco Webex Video Messaging Agent actions.</p>
+   */
+  inline CapabilityState GetUseCiscoWebexVidcastAction() const { return m_useCiscoWebexVidcastAction; }
+  inline bool UseCiscoWebexVidcastActionHasBeenSet() const { return m_useCiscoWebexVidcastActionHasBeenSet; }
+  inline void SetUseCiscoWebexVidcastAction(CapabilityState value) {
+    m_useCiscoWebexVidcastActionHasBeenSet = true;
+    m_useCiscoWebexVidcastAction = value;
+  }
+  inline Capabilities& WithUseCiscoWebexVidcastAction(CapabilityState value) {
+    SetUseCiscoWebexVidcastAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to perform actions using Cisco Webex Meetings connectors.</p>
+   */
+  inline CapabilityState GetCiscoWebexMeetingsAction() const { return m_ciscoWebexMeetingsAction; }
+  inline bool CiscoWebexMeetingsActionHasBeenSet() const { return m_ciscoWebexMeetingsActionHasBeenSet; }
+  inline void SetCiscoWebexMeetingsAction(CapabilityState value) {
+    m_ciscoWebexMeetingsActionHasBeenSet = true;
+    m_ciscoWebexMeetingsAction = value;
+  }
+  inline Capabilities& WithCiscoWebexMeetingsAction(CapabilityState value) {
+    SetCiscoWebexMeetingsAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create and update Cisco Webex Meetings actions.</p>
+   */
+  inline CapabilityState GetCreateAndUpdateCiscoWebexMeetingsAction() const { return m_createAndUpdateCiscoWebexMeetingsAction; }
+  inline bool CreateAndUpdateCiscoWebexMeetingsActionHasBeenSet() const { return m_createAndUpdateCiscoWebexMeetingsActionHasBeenSet; }
+  inline void SetCreateAndUpdateCiscoWebexMeetingsAction(CapabilityState value) {
+    m_createAndUpdateCiscoWebexMeetingsActionHasBeenSet = true;
+    m_createAndUpdateCiscoWebexMeetingsAction = value;
+  }
+  inline Capabilities& WithCreateAndUpdateCiscoWebexMeetingsAction(CapabilityState value) {
+    SetCreateAndUpdateCiscoWebexMeetingsAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Cisco Webex Meetings actions.</p>
+   */
+  inline CapabilityState GetShareCiscoWebexMeetingsAction() const { return m_shareCiscoWebexMeetingsAction; }
+  inline bool ShareCiscoWebexMeetingsActionHasBeenSet() const { return m_shareCiscoWebexMeetingsActionHasBeenSet; }
+  inline void SetShareCiscoWebexMeetingsAction(CapabilityState value) {
+    m_shareCiscoWebexMeetingsActionHasBeenSet = true;
+    m_shareCiscoWebexMeetingsAction = value;
+  }
+  inline Capabilities& WithShareCiscoWebexMeetingsAction(CapabilityState value) {
+    SetShareCiscoWebexMeetingsAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to use Cisco Webex Meetings actions.</p>
+   */
+  inline CapabilityState GetUseCiscoWebexMeetingsAction() const { return m_useCiscoWebexMeetingsAction; }
+  inline bool UseCiscoWebexMeetingsActionHasBeenSet() const { return m_useCiscoWebexMeetingsActionHasBeenSet; }
+  inline void SetUseCiscoWebexMeetingsAction(CapabilityState value) {
+    m_useCiscoWebexMeetingsActionHasBeenSet = true;
+    m_useCiscoWebexMeetingsAction = value;
+  }
+  inline Capabilities& WithUseCiscoWebexMeetingsAction(CapabilityState value) {
+    SetUseCiscoWebexMeetingsAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to perform actions using Dun and Bradstreet connectors.</p>
+   */
+  inline CapabilityState GetDunAndBradstreetAction() const { return m_dunAndBradstreetAction; }
+  inline bool DunAndBradstreetActionHasBeenSet() const { return m_dunAndBradstreetActionHasBeenSet; }
+  inline void SetDunAndBradstreetAction(CapabilityState value) {
+    m_dunAndBradstreetActionHasBeenSet = true;
+    m_dunAndBradstreetAction = value;
+  }
+  inline Capabilities& WithDunAndBradstreetAction(CapabilityState value) {
+    SetDunAndBradstreetAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create and update Dun and Bradstreet actions.</p>
+   */
+  inline CapabilityState GetCreateAndUpdateDunAndBradstreetAction() const { return m_createAndUpdateDunAndBradstreetAction; }
+  inline bool CreateAndUpdateDunAndBradstreetActionHasBeenSet() const { return m_createAndUpdateDunAndBradstreetActionHasBeenSet; }
+  inline void SetCreateAndUpdateDunAndBradstreetAction(CapabilityState value) {
+    m_createAndUpdateDunAndBradstreetActionHasBeenSet = true;
+    m_createAndUpdateDunAndBradstreetAction = value;
+  }
+  inline Capabilities& WithCreateAndUpdateDunAndBradstreetAction(CapabilityState value) {
+    SetCreateAndUpdateDunAndBradstreetAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Dun and Bradstreet actions.</p>
+   */
+  inline CapabilityState GetShareDunAndBradstreetAction() const { return m_shareDunAndBradstreetAction; }
+  inline bool ShareDunAndBradstreetActionHasBeenSet() const { return m_shareDunAndBradstreetActionHasBeenSet; }
+  inline void SetShareDunAndBradstreetAction(CapabilityState value) {
+    m_shareDunAndBradstreetActionHasBeenSet = true;
+    m_shareDunAndBradstreetAction = value;
+  }
+  inline Capabilities& WithShareDunAndBradstreetAction(CapabilityState value) {
+    SetShareDunAndBradstreetAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to use Dun and Bradstreet actions.</p>
+   */
+  inline CapabilityState GetUseDunAndBradstreetAction() const { return m_useDunAndBradstreetAction; }
+  inline bool UseDunAndBradstreetActionHasBeenSet() const { return m_useDunAndBradstreetActionHasBeenSet; }
+  inline void SetUseDunAndBradstreetAction(CapabilityState value) {
+    m_useDunAndBradstreetActionHasBeenSet = true;
+    m_useDunAndBradstreetAction = value;
+  }
+  inline Capabilities& WithUseDunAndBradstreetAction(CapabilityState value) {
+    SetUseDunAndBradstreetAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to perform actions using HG Insights Agent connectors.</p>
+   */
+  inline CapabilityState GetHGInsightsAction() const { return m_hGInsightsAction; }
+  inline bool HGInsightsActionHasBeenSet() const { return m_hGInsightsActionHasBeenSet; }
+  inline void SetHGInsightsAction(CapabilityState value) {
+    m_hGInsightsActionHasBeenSet = true;
+    m_hGInsightsAction = value;
+  }
+  inline Capabilities& WithHGInsightsAction(CapabilityState value) {
+    SetHGInsightsAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create and update HG Insights Agent actions.</p>
+   */
+  inline CapabilityState GetCreateAndUpdateHGInsightsAction() const { return m_createAndUpdateHGInsightsAction; }
+  inline bool CreateAndUpdateHGInsightsActionHasBeenSet() const { return m_createAndUpdateHGInsightsActionHasBeenSet; }
+  inline void SetCreateAndUpdateHGInsightsAction(CapabilityState value) {
+    m_createAndUpdateHGInsightsActionHasBeenSet = true;
+    m_createAndUpdateHGInsightsAction = value;
+  }
+  inline Capabilities& WithCreateAndUpdateHGInsightsAction(CapabilityState value) {
+    SetCreateAndUpdateHGInsightsAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share HG Insights Agent actions.</p>
+   */
+  inline CapabilityState GetShareHGInsightsAction() const { return m_shareHGInsightsAction; }
+  inline bool ShareHGInsightsActionHasBeenSet() const { return m_shareHGInsightsActionHasBeenSet; }
+  inline void SetShareHGInsightsAction(CapabilityState value) {
+    m_shareHGInsightsActionHasBeenSet = true;
+    m_shareHGInsightsAction = value;
+  }
+  inline Capabilities& WithShareHGInsightsAction(CapabilityState value) {
+    SetShareHGInsightsAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to use HG Insights Agent actions.</p>
+   */
+  inline CapabilityState GetUseHGInsightsAction() const { return m_useHGInsightsAction; }
+  inline bool UseHGInsightsActionHasBeenSet() const { return m_useHGInsightsActionHasBeenSet; }
+  inline void SetUseHGInsightsAction(CapabilityState value) {
+    m_useHGInsightsActionHasBeenSet = true;
+    m_useHGInsightsAction = value;
+  }
+  inline Capabilities& WithUseHGInsightsAction(CapabilityState value) {
+    SetUseHGInsightsAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to perform actions using ZoomInfo Agent connectors.</p>
+   */
+  inline CapabilityState GetZoomInfoAction() const { return m_zoomInfoAction; }
+  inline bool ZoomInfoActionHasBeenSet() const { return m_zoomInfoActionHasBeenSet; }
+  inline void SetZoomInfoAction(CapabilityState value) {
+    m_zoomInfoActionHasBeenSet = true;
+    m_zoomInfoAction = value;
+  }
+  inline Capabilities& WithZoomInfoAction(CapabilityState value) {
+    SetZoomInfoAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create and update ZoomInfo Agent actions.</p>
+   */
+  inline CapabilityState GetCreateAndUpdateZoomInfoAction() const { return m_createAndUpdateZoomInfoAction; }
+  inline bool CreateAndUpdateZoomInfoActionHasBeenSet() const { return m_createAndUpdateZoomInfoActionHasBeenSet; }
+  inline void SetCreateAndUpdateZoomInfoAction(CapabilityState value) {
+    m_createAndUpdateZoomInfoActionHasBeenSet = true;
+    m_createAndUpdateZoomInfoAction = value;
+  }
+  inline Capabilities& WithCreateAndUpdateZoomInfoAction(CapabilityState value) {
+    SetCreateAndUpdateZoomInfoAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share ZoomInfo Agent actions.</p>
+   */
+  inline CapabilityState GetShareZoomInfoAction() const { return m_shareZoomInfoAction; }
+  inline bool ShareZoomInfoActionHasBeenSet() const { return m_shareZoomInfoActionHasBeenSet; }
+  inline void SetShareZoomInfoAction(CapabilityState value) {
+    m_shareZoomInfoActionHasBeenSet = true;
+    m_shareZoomInfoAction = value;
+  }
+  inline Capabilities& WithShareZoomInfoAction(CapabilityState value) {
+    SetShareZoomInfoAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to use ZoomInfo Agent actions.</p>
+   */
+  inline CapabilityState GetUseZoomInfoAction() const { return m_useZoomInfoAction; }
+  inline bool UseZoomInfoActionHasBeenSet() const { return m_useZoomInfoActionHasBeenSet; }
+  inline void SetUseZoomInfoAction(CapabilityState value) {
+    m_useZoomInfoActionHasBeenSet = true;
+    m_useZoomInfoAction = value;
+  }
+  inline Capabilities& WithUseZoomInfoAction(CapabilityState value) {
+    SetUseZoomInfoAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to perform actions using Moody's GenAI Ready Data connectors.</p>
+   */
+  inline CapabilityState GetMoodysAction() const { return m_moodysAction; }
+  inline bool MoodysActionHasBeenSet() const { return m_moodysActionHasBeenSet; }
+  inline void SetMoodysAction(CapabilityState value) {
+    m_moodysActionHasBeenSet = true;
+    m_moodysAction = value;
+  }
+  inline Capabilities& WithMoodysAction(CapabilityState value) {
+    SetMoodysAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create and update Moody's GenAI Ready Data actions.</p>
+   */
+  inline CapabilityState GetCreateAndUpdateMoodysAction() const { return m_createAndUpdateMoodysAction; }
+  inline bool CreateAndUpdateMoodysActionHasBeenSet() const { return m_createAndUpdateMoodysActionHasBeenSet; }
+  inline void SetCreateAndUpdateMoodysAction(CapabilityState value) {
+    m_createAndUpdateMoodysActionHasBeenSet = true;
+    m_createAndUpdateMoodysAction = value;
+  }
+  inline Capabilities& WithCreateAndUpdateMoodysAction(CapabilityState value) {
+    SetCreateAndUpdateMoodysAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Moody's GenAI Ready Data actions.</p>
+   */
+  inline CapabilityState GetShareMoodysAction() const { return m_shareMoodysAction; }
+  inline bool ShareMoodysActionHasBeenSet() const { return m_shareMoodysActionHasBeenSet; }
+  inline void SetShareMoodysAction(CapabilityState value) {
+    m_shareMoodysActionHasBeenSet = true;
+    m_shareMoodysAction = value;
+  }
+  inline Capabilities& WithShareMoodysAction(CapabilityState value) {
+    SetShareMoodysAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to use Moody's GenAI Ready Data actions.</p>
+   */
+  inline CapabilityState GetUseMoodysAction() const { return m_useMoodysAction; }
+  inline bool UseMoodysActionHasBeenSet() const { return m_useMoodysActionHasBeenSet; }
+  inline void SetUseMoodysAction(CapabilityState value) {
+    m_useMoodysActionHasBeenSet = true;
+    m_useMoodysAction = value;
+  }
+  inline Capabilities& WithUseMoodysAction(CapabilityState value) {
+    SetUseMoodysAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to perform actions using Bee connectors.</p>
+   */
+  inline CapabilityState GetBeeAction() const { return m_beeAction; }
+  inline bool BeeActionHasBeenSet() const { return m_beeActionHasBeenSet; }
+  inline void SetBeeAction(CapabilityState value) {
+    m_beeActionHasBeenSet = true;
+    m_beeAction = value;
+  }
+  inline Capabilities& WithBeeAction(CapabilityState value) {
+    SetBeeAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create and update Bee actions.</p>
+   */
+  inline CapabilityState GetCreateAndUpdateBeeAction() const { return m_createAndUpdateBeeAction; }
+  inline bool CreateAndUpdateBeeActionHasBeenSet() const { return m_createAndUpdateBeeActionHasBeenSet; }
+  inline void SetCreateAndUpdateBeeAction(CapabilityState value) {
+    m_createAndUpdateBeeActionHasBeenSet = true;
+    m_createAndUpdateBeeAction = value;
+  }
+  inline Capabilities& WithCreateAndUpdateBeeAction(CapabilityState value) {
+    SetCreateAndUpdateBeeAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Bee actions.</p>
+   */
+  inline CapabilityState GetShareBeeAction() const { return m_shareBeeAction; }
+  inline bool ShareBeeActionHasBeenSet() const { return m_shareBeeActionHasBeenSet; }
+  inline void SetShareBeeAction(CapabilityState value) {
+    m_shareBeeActionHasBeenSet = true;
+    m_shareBeeAction = value;
+  }
+  inline Capabilities& WithShareBeeAction(CapabilityState value) {
+    SetShareBeeAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to use Bee actions.</p>
+   */
+  inline CapabilityState GetUseBeeAction() const { return m_useBeeAction; }
+  inline bool UseBeeActionHasBeenSet() const { return m_useBeeActionHasBeenSet; }
+  inline void SetUseBeeAction(CapabilityState value) {
+    m_useBeeActionHasBeenSet = true;
+    m_useBeeAction = value;
+  }
+  inline Capabilities& WithUseBeeAction(CapabilityState value) {
+    SetUseBeeAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ability to perform Topic-related actions.</p>
    */
   inline CapabilityState GetTopic() const { return m_topic; }
@@ -4937,6 +6731,230 @@ class Capabilities {
 
   CapabilityState m_useNewRelicAction{CapabilityState::NOT_SET};
 
+  CapabilityState m_pagerDutyAgentAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdatePagerDutyAgentAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_sharePagerDutyAgentAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_usePagerDutyAgentAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_visierAgentAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateVisierAgentAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareVisierAgentAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_useVisierAgentAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_zoomAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateZoomAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareZoomAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_useZoomAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_snowFlakeAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateSnowFlakeAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareSnowFlakeAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_useSnowFlakeAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_zapierAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateZapierAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareZapierAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_useZapierAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_airtableAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateAirtableAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareAirtableAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_useAirtableAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_dropboxAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateDropboxAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareDropboxAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_useDropboxAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_gmailAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateGmailAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareGmailAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_useGmailAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_googleAnalyticsAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateGoogleAnalyticsAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareGoogleAnalyticsAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_useGoogleAnalyticsAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_googleDocsAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateGoogleDocsAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareGoogleDocsAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_useGoogleDocsAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_googleDriveAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateGoogleDriveAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareGoogleDriveAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_useGoogleDriveAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_googleMeetAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateGoogleMeetAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareGoogleMeetAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_useGoogleMeetAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_googleSheetsAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateGoogleSheetsAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareGoogleSheetsAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_useGoogleSheetsAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_googleSlidesAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateGoogleSlidesAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareGoogleSlidesAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_useGoogleSlidesAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_quickBooksAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateQuickBooksAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareQuickBooksAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_useQuickBooksAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_figmaAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateFigmaAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareFigmaAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_useFigmaAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_whatsAppAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateWhatsAppAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareWhatsAppAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_useWhatsAppAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_googleChatAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateGoogleChatAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareGoogleChatAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_useGoogleChatAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_oneNoteAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateOneNoteAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareOneNoteAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_useOneNoteAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_shopifyAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateShopifyAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareShopifyAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_useShopifyAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_adobeAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateAdobeAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareAdobeAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_useAdobeAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_ciscoWebexVidcastAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateCiscoWebexVidcastAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareCiscoWebexVidcastAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_useCiscoWebexVidcastAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_ciscoWebexMeetingsAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateCiscoWebexMeetingsAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareCiscoWebexMeetingsAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_useCiscoWebexMeetingsAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_dunAndBradstreetAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateDunAndBradstreetAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareDunAndBradstreetAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_useDunAndBradstreetAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_hGInsightsAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateHGInsightsAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareHGInsightsAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_useHGInsightsAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_zoomInfoAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateZoomInfoAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareZoomInfoAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_useZoomInfoAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_moodysAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateMoodysAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareMoodysAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_useMoodysAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_beeAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateBeeAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareBeeAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_useBeeAction{CapabilityState::NOT_SET};
+
   CapabilityState m_topic{CapabilityState::NOT_SET};
 
   CapabilityState m_editVisualWithQ{CapabilityState::NOT_SET};
@@ -5241,6 +7259,118 @@ class Capabilities {
   bool m_createAndUpdateNewRelicActionHasBeenSet = false;
   bool m_shareNewRelicActionHasBeenSet = false;
   bool m_useNewRelicActionHasBeenSet = false;
+  bool m_pagerDutyAgentActionHasBeenSet = false;
+  bool m_createAndUpdatePagerDutyAgentActionHasBeenSet = false;
+  bool m_sharePagerDutyAgentActionHasBeenSet = false;
+  bool m_usePagerDutyAgentActionHasBeenSet = false;
+  bool m_visierAgentActionHasBeenSet = false;
+  bool m_createAndUpdateVisierAgentActionHasBeenSet = false;
+  bool m_shareVisierAgentActionHasBeenSet = false;
+  bool m_useVisierAgentActionHasBeenSet = false;
+  bool m_zoomActionHasBeenSet = false;
+  bool m_createAndUpdateZoomActionHasBeenSet = false;
+  bool m_shareZoomActionHasBeenSet = false;
+  bool m_useZoomActionHasBeenSet = false;
+  bool m_snowFlakeActionHasBeenSet = false;
+  bool m_createAndUpdateSnowFlakeActionHasBeenSet = false;
+  bool m_shareSnowFlakeActionHasBeenSet = false;
+  bool m_useSnowFlakeActionHasBeenSet = false;
+  bool m_zapierActionHasBeenSet = false;
+  bool m_createAndUpdateZapierActionHasBeenSet = false;
+  bool m_shareZapierActionHasBeenSet = false;
+  bool m_useZapierActionHasBeenSet = false;
+  bool m_airtableActionHasBeenSet = false;
+  bool m_createAndUpdateAirtableActionHasBeenSet = false;
+  bool m_shareAirtableActionHasBeenSet = false;
+  bool m_useAirtableActionHasBeenSet = false;
+  bool m_dropboxActionHasBeenSet = false;
+  bool m_createAndUpdateDropboxActionHasBeenSet = false;
+  bool m_shareDropboxActionHasBeenSet = false;
+  bool m_useDropboxActionHasBeenSet = false;
+  bool m_gmailActionHasBeenSet = false;
+  bool m_createAndUpdateGmailActionHasBeenSet = false;
+  bool m_shareGmailActionHasBeenSet = false;
+  bool m_useGmailActionHasBeenSet = false;
+  bool m_googleAnalyticsActionHasBeenSet = false;
+  bool m_createAndUpdateGoogleAnalyticsActionHasBeenSet = false;
+  bool m_shareGoogleAnalyticsActionHasBeenSet = false;
+  bool m_useGoogleAnalyticsActionHasBeenSet = false;
+  bool m_googleDocsActionHasBeenSet = false;
+  bool m_createAndUpdateGoogleDocsActionHasBeenSet = false;
+  bool m_shareGoogleDocsActionHasBeenSet = false;
+  bool m_useGoogleDocsActionHasBeenSet = false;
+  bool m_googleDriveActionHasBeenSet = false;
+  bool m_createAndUpdateGoogleDriveActionHasBeenSet = false;
+  bool m_shareGoogleDriveActionHasBeenSet = false;
+  bool m_useGoogleDriveActionHasBeenSet = false;
+  bool m_googleMeetActionHasBeenSet = false;
+  bool m_createAndUpdateGoogleMeetActionHasBeenSet = false;
+  bool m_shareGoogleMeetActionHasBeenSet = false;
+  bool m_useGoogleMeetActionHasBeenSet = false;
+  bool m_googleSheetsActionHasBeenSet = false;
+  bool m_createAndUpdateGoogleSheetsActionHasBeenSet = false;
+  bool m_shareGoogleSheetsActionHasBeenSet = false;
+  bool m_useGoogleSheetsActionHasBeenSet = false;
+  bool m_googleSlidesActionHasBeenSet = false;
+  bool m_createAndUpdateGoogleSlidesActionHasBeenSet = false;
+  bool m_shareGoogleSlidesActionHasBeenSet = false;
+  bool m_useGoogleSlidesActionHasBeenSet = false;
+  bool m_quickBooksActionHasBeenSet = false;
+  bool m_createAndUpdateQuickBooksActionHasBeenSet = false;
+  bool m_shareQuickBooksActionHasBeenSet = false;
+  bool m_useQuickBooksActionHasBeenSet = false;
+  bool m_figmaActionHasBeenSet = false;
+  bool m_createAndUpdateFigmaActionHasBeenSet = false;
+  bool m_shareFigmaActionHasBeenSet = false;
+  bool m_useFigmaActionHasBeenSet = false;
+  bool m_whatsAppActionHasBeenSet = false;
+  bool m_createAndUpdateWhatsAppActionHasBeenSet = false;
+  bool m_shareWhatsAppActionHasBeenSet = false;
+  bool m_useWhatsAppActionHasBeenSet = false;
+  bool m_googleChatActionHasBeenSet = false;
+  bool m_createAndUpdateGoogleChatActionHasBeenSet = false;
+  bool m_shareGoogleChatActionHasBeenSet = false;
+  bool m_useGoogleChatActionHasBeenSet = false;
+  bool m_oneNoteActionHasBeenSet = false;
+  bool m_createAndUpdateOneNoteActionHasBeenSet = false;
+  bool m_shareOneNoteActionHasBeenSet = false;
+  bool m_useOneNoteActionHasBeenSet = false;
+  bool m_shopifyActionHasBeenSet = false;
+  bool m_createAndUpdateShopifyActionHasBeenSet = false;
+  bool m_shareShopifyActionHasBeenSet = false;
+  bool m_useShopifyActionHasBeenSet = false;
+  bool m_adobeActionHasBeenSet = false;
+  bool m_createAndUpdateAdobeActionHasBeenSet = false;
+  bool m_shareAdobeActionHasBeenSet = false;
+  bool m_useAdobeActionHasBeenSet = false;
+  bool m_ciscoWebexVidcastActionHasBeenSet = false;
+  bool m_createAndUpdateCiscoWebexVidcastActionHasBeenSet = false;
+  bool m_shareCiscoWebexVidcastActionHasBeenSet = false;
+  bool m_useCiscoWebexVidcastActionHasBeenSet = false;
+  bool m_ciscoWebexMeetingsActionHasBeenSet = false;
+  bool m_createAndUpdateCiscoWebexMeetingsActionHasBeenSet = false;
+  bool m_shareCiscoWebexMeetingsActionHasBeenSet = false;
+  bool m_useCiscoWebexMeetingsActionHasBeenSet = false;
+  bool m_dunAndBradstreetActionHasBeenSet = false;
+  bool m_createAndUpdateDunAndBradstreetActionHasBeenSet = false;
+  bool m_shareDunAndBradstreetActionHasBeenSet = false;
+  bool m_useDunAndBradstreetActionHasBeenSet = false;
+  bool m_hGInsightsActionHasBeenSet = false;
+  bool m_createAndUpdateHGInsightsActionHasBeenSet = false;
+  bool m_shareHGInsightsActionHasBeenSet = false;
+  bool m_useHGInsightsActionHasBeenSet = false;
+  bool m_zoomInfoActionHasBeenSet = false;
+  bool m_createAndUpdateZoomInfoActionHasBeenSet = false;
+  bool m_shareZoomInfoActionHasBeenSet = false;
+  bool m_useZoomInfoActionHasBeenSet = false;
+  bool m_moodysActionHasBeenSet = false;
+  bool m_createAndUpdateMoodysActionHasBeenSet = false;
+  bool m_shareMoodysActionHasBeenSet = false;
+  bool m_useMoodysActionHasBeenSet = false;
+  bool m_beeActionHasBeenSet = false;
+  bool m_createAndUpdateBeeActionHasBeenSet = false;
+  bool m_shareBeeActionHasBeenSet = false;
+  bool m_useBeeActionHasBeenSet = false;
   bool m_topicHasBeenSet = false;
   bool m_editVisualWithQHasBeenSet = false;
   bool m_buildCalculatedFieldWithQHasBeenSet = false;

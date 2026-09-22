@@ -53,6 +53,7 @@
 #include <aws/ec2/model/DescribeIpamPrefixListResolversPaginationTraits.h>
 #include <aws/ec2/model/DescribeVpcClassicLinkDnsSupportPaginationTraits.h>
 #include <aws/ec2/model/GetManagedPrefixListEntriesPaginationTraits.h>
+#include <aws/ec2/model/DescribeCapacityReservationDateChangeQuotesPaginationTraits.h>
 #include <aws/ec2/model/GetCapacityManagerMonitoredTagKeysPaginationTraits.h>
 #include <aws/ec2/model/GetTransitGatewayMulticastDomainAssociationsPaginationTraits.h>
 #include <aws/ec2/model/DescribeTransitGatewayPeeringAttachmentsPaginationTraits.h>

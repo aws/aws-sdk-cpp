@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/observabilityadmin/ObservabilityAdmin_EXPORTS.h>
+#include <aws/observabilityadmin/model/SourceContextGraphConfiguration.h>
 #include <aws/observabilityadmin/model/SourceLogsConfiguration.h>
 #include <aws/observabilityadmin/model/SourceMetricsConfiguration.h>
 
@@ -114,6 +115,26 @@ class CentralizationRuleSource {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration that enables centralization of the context graph for the
+   * selected sources. Including this configuration in a rule's source opts the rule
+   * into centralizing the context graph for the selected sources.</p>
+   */
+  inline const SourceContextGraphConfiguration& GetSourceContextGraphConfiguration() const { return m_sourceContextGraphConfiguration; }
+  inline bool SourceContextGraphConfigurationHasBeenSet() const { return m_sourceContextGraphConfigurationHasBeenSet; }
+  template <typename SourceContextGraphConfigurationT = SourceContextGraphConfiguration>
+  void SetSourceContextGraphConfiguration(SourceContextGraphConfigurationT&& value) {
+    m_sourceContextGraphConfigurationHasBeenSet = true;
+    m_sourceContextGraphConfiguration = std::forward<SourceContextGraphConfigurationT>(value);
+  }
+  template <typename SourceContextGraphConfigurationT = SourceContextGraphConfiguration>
+  CentralizationRuleSource& WithSourceContextGraphConfiguration(SourceContextGraphConfigurationT&& value) {
+    SetSourceContextGraphConfiguration(std::forward<SourceContextGraphConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_regions;
 
@@ -122,10 +143,13 @@ class CentralizationRuleSource {
   SourceLogsConfiguration m_sourceLogsConfiguration;
 
   SourceMetricsConfiguration m_sourceMetricsConfiguration;
+
+  SourceContextGraphConfiguration m_sourceContextGraphConfiguration;
   bool m_regionsHasBeenSet = false;
   bool m_scopeHasBeenSet = false;
   bool m_sourceLogsConfigurationHasBeenSet = false;
   bool m_sourceMetricsConfigurationHasBeenSet = false;
+  bool m_sourceContextGraphConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

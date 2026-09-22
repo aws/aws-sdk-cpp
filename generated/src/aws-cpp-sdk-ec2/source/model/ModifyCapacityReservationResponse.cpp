@@ -36,6 +36,17 @@ ModifyCapacityReservationResponse& ModifyCapacityReservationResponse::operator=(
       m_return = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(returnNode.GetText()).c_str()).c_str());
       m_returnHasBeenSet = true;
     }
+    XmlNode adjustmentStatusNode = resultNode.FirstChild("adjustmentStatus");
+    if (!adjustmentStatusNode.IsNull()) {
+      m_adjustmentStatus = CapacityReservationAdjustmentStatusMapper::GetCapacityReservationAdjustmentStatusForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(adjustmentStatusNode.GetText()).c_str()));
+      m_adjustmentStatusHasBeenSet = true;
+    }
+    XmlNode adjustmentDetailsNode = resultNode.FirstChild("adjustmentDetails");
+    if (!adjustmentDetailsNode.IsNull()) {
+      m_adjustmentDetails = adjustmentDetailsNode;
+      m_adjustmentDetailsHasBeenSet = true;
+    }
   }
 
   if (!rootNode.IsNull()) {
