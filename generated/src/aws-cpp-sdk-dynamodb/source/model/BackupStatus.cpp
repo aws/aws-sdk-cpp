@@ -33,7 +33,6 @@ BackupStatus GetBackupStatusForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<BackupStatus>(hashCode);
   }
-
   return BackupStatus::NOT_SET;
 }
 
@@ -52,7 +51,6 @@ Aws::String GetNameForBackupStatus(BackupStatus enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

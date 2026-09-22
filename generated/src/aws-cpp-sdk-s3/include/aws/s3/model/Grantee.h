@@ -21,7 +21,7 @@ namespace Model {
 
 /**
  * <p>Container for the person being granted permissions.</p><p><h3>See Also:</h3>
- * <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Grantee">AWS API
+ *  <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Grantee">AWS API
  * Reference</a></p>
  */
 class Grantee {
@@ -29,12 +29,11 @@ class Grantee {
   AWS_S3_API Grantee() = default;
   AWS_S3_API Grantee(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API Grantee& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{
   /**
-   * <p/>
+   * <p></p>
    */
   inline const Aws::String& GetDisplayName() const { return m_displayName; }
   inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
@@ -52,7 +51,7 @@ class Grantee {
 
   ///@{
   /**
-   * <p/>
+   * <p></p>
    */
   inline const Aws::String& GetEmailAddress() const { return m_emailAddress; }
   inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
@@ -88,22 +87,6 @@ class Grantee {
 
   ///@{
   /**
-   * <p>Type of grantee</p>
-   */
-  inline Type GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  inline void SetType(Type value) {
-    m_typeHasBeenSet = true;
-    m_type = value;
-  }
-  inline Grantee& WithType(Type value) {
-    SetType(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>URI of the grantee group.</p>
    */
   inline const Aws::String& GetURI() const { return m_uRI; }
@@ -119,6 +102,22 @@ class Grantee {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Type of grantee</p>
+   */
+  inline Type GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(Type value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline Grantee& WithType(Type value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_displayName;
 
@@ -126,14 +125,14 @@ class Grantee {
 
   Aws::String m_iD;
 
-  Type m_type{Type::NOT_SET};
-
   Aws::String m_uRI;
+
+  Type m_type{Type::NOT_SET};
   bool m_displayNameHasBeenSet = false;
   bool m_emailAddressHasBeenSet = false;
   bool m_iDHasBeenSet = false;
-  bool m_typeHasBeenSet = false;
   bool m_uRIHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -12,9 +12,6 @@
 #include <utility>
 
 namespace Aws {
-namespace Http {
-class URI;
-}  // namespace Http
 namespace S3 {
 namespace Model {
 
@@ -32,11 +29,12 @@ class HeadBucketRequest : public S3Request {
 
   AWS_S3_API Aws::String SerializePayload() const override;
 
-  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
   AWS_S3_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
   AWS_S3_API bool HasEmbeddedError(IOStream& body, const Http::HeaderValueCollection& header) const override;
+
   /**
    * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
    */
@@ -73,10 +71,10 @@ class HeadBucketRequest : public S3Request {
    * the error code <code>InvalidAccessPointAliasError</code> is returned. For more
    * information about <code>InvalidAccessPointAliasError</code>, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
-   * of Error Codes</a>.</p>  <p>Object Lambda access points are not supported
-   * by directory buckets.</p>  <p> <b>S3 on Outposts</b> - When you use this
-   * action with S3 on Outposts, you must direct requests to the S3 on Outposts
-   * hostname. The S3 on Outposts hostname takes the form <code>
+   * of Error Codes</a>.</p>  <p>Object Lambda access points are not supported by
+   * directory buckets.</p>  <p> <b>S3 on Outposts</b> - When you use this action
+   * with S3 on Outposts, you must direct requests to the S3 on Outposts hostname.
+   * The S3 on Outposts hostname takes the form <code>
    * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
    * When you use this action with S3 on Outposts, the destination bucket must be the
    * Outposts access point ARN or the access point alias. For more information about

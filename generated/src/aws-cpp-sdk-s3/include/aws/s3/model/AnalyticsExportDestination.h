@@ -28,7 +28,6 @@ class AnalyticsExportDestination {
   AWS_S3_API AnalyticsExportDestination() = default;
   AWS_S3_API AnalyticsExportDestination(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API AnalyticsExportDestination& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

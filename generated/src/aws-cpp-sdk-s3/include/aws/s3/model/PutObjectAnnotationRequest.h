@@ -15,9 +15,6 @@
 #include <utility>
 
 namespace Aws {
-namespace Http {
-class URI;
-}  // namespace Http
 namespace S3 {
 namespace Model {
 
@@ -33,10 +30,9 @@ class PutObjectAnnotationRequest : public StreamingS3Request {
   // so we can not get operation's name from response.
   inline virtual const char* GetServiceRequestName() const override { return "PutObjectAnnotation"; }
 
-  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
   AWS_S3_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
   AWS_S3_API Aws::String GetChecksumAlgorithmName() const override;
   AWS_S3_API bool ChecksumAlgorithmIsSet() const override;
   AWS_S3_API bool IsStreaming() const override { return false; }

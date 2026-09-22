@@ -52,9 +52,9 @@ class CreateBucketResult {
   ///@{
   /**
    * <p>The Amazon Resource Name (ARN) of the S3 bucket. ARNs uniquely identify
-   * Amazon Web Services resources across all of Amazon Web Services.</p>
-   * <p>This parameter is only supported for S3 directory buckets. For more
-   * information, see <a
+   * Amazon Web Services resources across all of Amazon Web Services.</p>  <p>This
+   * parameter is only supported for S3 directory buckets. For more information, see
+   * <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Using
    * tags with directory buckets</a>.</p>
    */

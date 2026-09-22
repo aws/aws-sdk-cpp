@@ -39,7 +39,6 @@ HistoryItemType GetHistoryItemTypeForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<HistoryItemType>(hashCode);
   }
-
   return HistoryItemType::NOT_SET;
 }
 
@@ -62,7 +61,6 @@ Aws::String GetNameForHistoryItemType(HistoryItemType enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

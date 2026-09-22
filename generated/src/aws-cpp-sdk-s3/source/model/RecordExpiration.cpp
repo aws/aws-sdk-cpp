@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/RecordExpiration.h>
@@ -19,40 +20,9 @@ namespace Model {
 
 RecordExpiration::RecordExpiration(const XmlNode& xmlNode) { *this = xmlNode; }
 
-RecordExpiration& RecordExpiration::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+RecordExpiration& RecordExpiration::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode expirationNode = resultNode.FirstChild("Expiration");
-    if (!expirationNode.IsNull()) {
-      m_expiration = ExpirationStateMapper::GetExpirationStateForName(
-          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(expirationNode.GetText()).c_str()));
-      m_expirationHasBeenSet = true;
-    }
-    XmlNode daysNode = resultNode.FirstChild("Days");
-    if (!daysNode.IsNull()) {
-      m_days = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(daysNode.GetText()).c_str()).c_str());
-      m_daysHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void RecordExpiration::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_expirationHasBeenSet) {
-    XmlNode expirationNode = parentNode.CreateChildElement("Expiration");
-    expirationNode.SetText(ExpirationStateMapper::GetNameForExpirationState(m_expiration));
-  }
-
-  if (m_daysHasBeenSet) {
-    XmlNode daysNode = parentNode.CreateChildElement("Days");
-    ss << m_days;
-    daysNode.SetText(ss.str());
-    ss.str("");
-  }
-}
+void RecordExpiration::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

@@ -14,9 +14,6 @@
 #include <utility>
 
 namespace Aws {
-namespace Http {
-class URI;
-}  // namespace Http
 namespace S3 {
 namespace Model {
 
@@ -34,11 +31,12 @@ class ListMultipartUploadsRequest : public S3Request {
 
   AWS_S3_API Aws::String SerializePayload() const override;
 
-  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
   AWS_S3_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
   AWS_S3_API bool HasEmbeddedError(IOStream& body, const Http::HeaderValueCollection& header) const override;
+
   /**
    * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
    */
@@ -68,11 +66,11 @@ class ListMultipartUploadsRequest : public S3Request {
    * SDKs, you provide the access point ARN in place of the bucket name. For more
    * information about access point ARNs, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-   * access points</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>Object
-   * Lambda access points are not supported by directory buckets.</p>  <p>
-   * <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must
-   * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
-   * takes the form <code>
+   * access points</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>Object Lambda
+   * access points are not supported by directory buckets.</p>  <p> <b>S3 on
+   * Outposts</b> - When you use this action with S3 on Outposts, you must direct
+   * requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the
+   * form <code>
    * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
    * When you use this action with S3 on Outposts, the destination bucket must be the
    * Outposts access point ARN or the access point alias. For more information about
@@ -103,9 +101,9 @@ class ListMultipartUploadsRequest : public S3Request {
    * substring starts at the beginning of the key. The keys that are grouped under
    * <code>CommonPrefixes</code> result element are not returned elsewhere in the
    * response.</p> <p> <code>CommonPrefixes</code> is filtered out from results if it
-   * is not lexicographically greater than the key-marker.</p>  <p>
-   * <b>Directory buckets</b> - For directory buckets, <code>/</code> is the only
-   * supported delimiter.</p>
+   * is not lexicographically greater than the key-marker.</p>  <p> <b>Directory
+   * buckets</b> - For directory buckets, <code>/</code> is the only supported
+   * delimiter.</p>
    */
   inline const Aws::String& GetDelimiter() const { return m_delimiter; }
   inline bool DelimiterHasBeenSet() const { return m_delimiterHasBeenSet; }
@@ -137,8 +135,8 @@ class ListMultipartUploadsRequest : public S3Request {
 
   ///@{
   /**
-   * <p>Specifies the multipart upload after which listing should begin.</p>
-   * <ul> <li> <p> <b>General purpose buckets</b> - For general purpose buckets,
+   * <p>Specifies the multipart upload after which listing should begin.</p>  <ul>
+   * <li> <p> <b>General purpose buckets</b> - For general purpose buckets,
    * <code>key-marker</code> is an object key. Together with
    * <code>upload-id-marker</code>, this parameter specifies the multipart upload
    * after which listing should begin.</p> <p>If <code>upload-id-marker</code> is not
@@ -193,9 +191,9 @@ class ListMultipartUploadsRequest : public S3Request {
    * <p>Lists in-progress uploads only for those keys that begin with the specified
    * prefix. You can use prefixes to separate a bucket into different grouping of
    * keys. (You can think of using <code>prefix</code> to make groups in the same way
-   * that you'd use a folder in a file system.)</p>  <p> <b>Directory
-   * buckets</b> - For directory buckets, only prefixes that end in a delimiter
-   * (<code>/</code>) are supported.</p>
+   * that you'd use a folder in a file system.)</p>  <p> <b>Directory buckets</b> -
+   * For directory buckets, only prefixes that end in a delimiter (<code>/</code>)
+   * are supported.</p>
    */
   inline const Aws::String& GetPrefix() const { return m_prefix; }
   inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }

@@ -27,7 +27,6 @@ ObjectVersionStorageClass GetObjectVersionStorageClassForName(const Aws::String&
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<ObjectVersionStorageClass>(hashCode);
   }
-
   return ObjectVersionStorageClass::NOT_SET;
 }
 
@@ -42,7 +41,6 @@ Aws::String GetNameForObjectVersionStorageClass(ObjectVersionStorageClass enumVa
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

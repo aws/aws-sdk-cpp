@@ -120,13 +120,12 @@ class DescribeAlarmsRequest : public CloudWatchRequest {
    * name in <code>ChildrenOfAlarmName</code> is not returned.</p> <p>If you specify
    * <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the
    * request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do
-   * so, you receive a validation error.</p>  <p>Only the <code>Alarm
-   * Name</code>, <code>ARN</code>, <code>StateValue</code>
-   * (OK/ALARM/INSUFFICIENT_DATA), and <code>StateUpdatedTimestamp</code> information
-   * are returned by this operation when you use this parameter. To get complete
-   * information about these alarms, perform another <code>DescribeAlarms</code>
-   * operation and specify the parent alarm names in the <code>AlarmNames</code>
-   * parameter.</p>
+   * so, you receive a validation error.</p>  <p>Only the <code>Alarm Name</code>,
+   * <code>ARN</code>, <code>StateValue</code> (OK/ALARM/INSUFFICIENT_DATA), and
+   * <code>StateUpdatedTimestamp</code> information are returned by this operation
+   * when you use this parameter. To get complete information about these alarms,
+   * perform another <code>DescribeAlarms</code> operation and specify the parent
+   * alarm names in the <code>AlarmNames</code> parameter.</p>
    */
   inline const Aws::String& GetChildrenOfAlarmName() const { return m_childrenOfAlarmName; }
   inline bool ChildrenOfAlarmNameHasBeenSet() const { return m_childrenOfAlarmNameHasBeenSet; }

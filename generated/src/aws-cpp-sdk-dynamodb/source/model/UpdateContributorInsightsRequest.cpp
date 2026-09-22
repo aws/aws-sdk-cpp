@@ -3,38 +3,22 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/UpdateContributorInsightsRequest.h>
 
+#include <numeric>
 #include <utility>
 
 using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateContributorInsightsRequest::SerializePayload() const {
-  JsonValue payload;
-
-  if (m_tableNameHasBeenSet) {
-    payload.WithString("TableName", m_tableName);
-  }
-
-  if (m_indexNameHasBeenSet) {
-    payload.WithString("IndexName", m_indexName);
-  }
-
-  if (m_contributorInsightsActionHasBeenSet) {
-    payload.WithString("ContributorInsightsAction",
-                       ContributorInsightsActionMapper::GetNameForContributorInsightsAction(m_contributorInsightsAction));
-  }
-
-  if (m_contributorInsightsModeHasBeenSet) {
-    payload.WithString("ContributorInsightsMode",
-                       ContributorInsightsModeMapper::GetNameForContributorInsightsMode(m_contributorInsightsMode));
-  }
-
-  return payload.View().WriteReadable();
-}
+Aws::String UpdateContributorInsightsRequest::SerializePayload() const { return "{}"; }
 
 Aws::Http::HeaderValueCollection UpdateContributorInsightsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;

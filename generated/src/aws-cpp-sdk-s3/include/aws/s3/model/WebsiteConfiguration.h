@@ -33,7 +33,6 @@ class WebsiteConfiguration {
   AWS_S3_API WebsiteConfiguration() = default;
   AWS_S3_API WebsiteConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API WebsiteConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{
@@ -75,8 +74,8 @@ class WebsiteConfiguration {
   ///@{
   /**
    * <p>The redirect behavior for every request to this bucket's website
-   * endpoint.</p>  <p>If you specify this property, you can't specify any
-   * other property.</p>
+   * endpoint.</p>  <p>If you specify this property, you can't specify any other
+   * property.</p>
    */
   inline const RedirectAllRequestsTo& GetRedirectAllRequestsTo() const { return m_redirectAllRequestsTo; }
   inline bool RedirectAllRequestsToHasBeenSet() const { return m_redirectAllRequestsToHasBeenSet; }

@@ -82,8 +82,8 @@ class SendMessageBatchRequestEntry {
    * Valid values: 0 to 900. Maximum: 15 minutes. Messages with a positive
    * <code>DelaySeconds</code> value become available for processing after the delay
    * period is finished. If you don't specify a value, the default value for the
-   * queue is applied. </p>  <p>When you set <code>FifoQueue</code>, you can't
-   * set <code>DelaySeconds</code> per message. You can set this parameter only on a
+   * queue is applied. </p>  <p>When you set <code>FifoQueue</code>, you can't set
+   * <code>DelaySeconds</code> per message. You can set this parameter only on a
    * queue level.</p>
    */
   inline int GetDelaySeconds() const { return m_delaySeconds; }
@@ -128,12 +128,12 @@ class SendMessageBatchRequestEntry {
   ///@{
   /**
    * <p>The message system attribute to send Each message system attribute consists
-   * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
-   *  <ul> <li> <p>Currently, the only supported message system attribute
-   * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
-   * value must be a correctly formatted X-Ray trace header string.</p> </li> <li>
-   * <p>The size of a message system attribute doesn't count towards the total size
-   * of a message.</p> </li> </ul>
+   * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>  <ul>
+   * <li> <p>Currently, the only supported message system attribute is
+   * <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its value
+   * must be a correctly formatted X-Ray trace header string.</p> </li> <li> <p>The
+   * size of a message system attribute doesn't count towards the total size of a
+   * message.</p> </li> </ul>
    */
   inline const Aws::Map<MessageSystemAttributeNameForSends, MessageSystemAttributeValue>& GetMessageSystemAttributes() const {
     return m_messageSystemAttributes;
@@ -195,8 +195,8 @@ class SendMessageBatchRequestEntry {
    *  <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
    * <code>MessageDeduplicationId</code> can contain alphanumeric characters
    * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
-   * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
-   * practices of using <code>MessageDeduplicationId</code>, see <a
+   * (<code>!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~</code>).</p> <p>For best practices of
+   * using <code>MessageDeduplicationId</code>, see <a
    * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using
    * the MessageDeduplicationId Property</a> in the <i>Amazon SQS Developer
    * Guide</i>.</p>
@@ -250,8 +250,8 @@ class SendMessageBatchRequestEntry {
    * you include a <code>MessageGroupId</code> in all messages when using fair
    * queues.</p> </li> </ul> <p>The length of <code>MessageGroupId</code> is 128
    * characters. Valid values: alphanumeric characters and punctuation
-   * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <p>For best
-   * practices of using <code>MessageGroupId</code>, see <a
+   * <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p> <p>For best practices of
+   * using <code>MessageGroupId</code>, see <a
    * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using
    * the MessageGroupId Property</a> in the <i>Amazon SQS Developer Guide</i>.</p>
    */

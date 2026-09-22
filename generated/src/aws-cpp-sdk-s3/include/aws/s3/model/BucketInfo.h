@@ -23,8 +23,8 @@ namespace Model {
  * <p>Specifies the information about the bucket that will be created. For more
  * information about directory buckets, see <a
  * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory
- * buckets</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>This functionality
- * is only supported by directory buckets.</p> <p><h3>See Also:</h3>   <a
+ * buckets</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>This functionality is
+ * only supported by directory buckets.</p> <p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/BucketInfo">AWS API
  * Reference</a></p>
  */
@@ -33,7 +33,6 @@ class BucketInfo {
   AWS_S3_API BucketInfo() = default;
   AWS_S3_API BucketInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API BucketInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

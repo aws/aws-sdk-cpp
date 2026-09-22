@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/PointInTimeRecoverySpecification.h>
 
 #include <utility>
@@ -17,29 +20,10 @@ namespace Model {
 
 PointInTimeRecoverySpecification::PointInTimeRecoverySpecification(JsonView jsonValue) { *this = jsonValue; }
 
-PointInTimeRecoverySpecification& PointInTimeRecoverySpecification::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("PointInTimeRecoveryEnabled")) {
-    m_pointInTimeRecoveryEnabled = jsonValue.GetBool("PointInTimeRecoveryEnabled");
-    m_pointInTimeRecoveryEnabledHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("RecoveryPeriodInDays")) {
-    m_recoveryPeriodInDays = jsonValue.GetInteger("RecoveryPeriodInDays");
-    m_recoveryPeriodInDaysHasBeenSet = true;
-  }
-  return *this;
-}
+PointInTimeRecoverySpecification& PointInTimeRecoverySpecification::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue PointInTimeRecoverySpecification::Jsonize() const {
   JsonValue payload;
-
-  if (m_pointInTimeRecoveryEnabledHasBeenSet) {
-    payload.WithBool("PointInTimeRecoveryEnabled", m_pointInTimeRecoveryEnabled);
-  }
-
-  if (m_recoveryPeriodInDaysHasBeenSet) {
-    payload.WithInteger("RecoveryPeriodInDays", m_recoveryPeriodInDays);
-  }
-
   return payload;
 }
 

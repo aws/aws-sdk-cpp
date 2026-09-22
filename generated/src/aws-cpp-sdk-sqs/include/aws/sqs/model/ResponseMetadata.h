@@ -19,6 +19,8 @@ class JsonView;
 namespace SQS {
 namespace Model {
 
+/**
+ */
 class ResponseMetadata {
  public:
   AWS_SQS_API ResponseMetadata() = default;

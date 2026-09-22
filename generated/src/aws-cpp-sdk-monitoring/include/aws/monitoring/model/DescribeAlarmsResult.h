@@ -15,6 +15,7 @@
 #include <aws/monitoring/model/ResponseMetadata.h>
 
 #include <utility>
+
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
@@ -120,21 +121,6 @@ class DescribeAlarmsResult {
 
   ///@{
 
-  inline const Aws::String& GetRequestId() const { return m_requestId; }
-  template <typename RequestIdT = Aws::String>
-  void SetRequestId(RequestIdT&& value) {
-    m_requestIdHasBeenSet = true;
-    m_requestId = std::forward<RequestIdT>(value);
-  }
-  template <typename RequestIdT = Aws::String>
-  DescribeAlarmsResult& WithRequestId(RequestIdT&& value) {
-    SetRequestId(std::forward<RequestIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-
   inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
   template <typename ResponseMetadataT = ResponseMetadata>
   void SetResponseMetadata(ResponseMetadataT&& value) {
@@ -144,6 +130,21 @@ class DescribeAlarmsResult {
   template <typename ResponseMetadataT = ResponseMetadata>
   DescribeAlarmsResult& WithResponseMetadata(ResponseMetadataT&& value) {
     SetResponseMetadata(std::forward<ResponseMetadataT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  DescribeAlarmsResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
     return *this;
   }
   ///@}
@@ -158,16 +159,16 @@ class DescribeAlarmsResult {
 
   Aws::String m_nextToken;
 
-  Aws::String m_requestId;
-
   ResponseMetadata m_responseMetadata;
+
+  Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_compositeAlarmsHasBeenSet = false;
   bool m_metricAlarmsHasBeenSet = false;
   bool m_logAlarmsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
-  bool m_requestIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
 };
 
 }  // namespace Model

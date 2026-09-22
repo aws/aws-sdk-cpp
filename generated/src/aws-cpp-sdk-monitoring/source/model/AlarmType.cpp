@@ -33,7 +33,6 @@ AlarmType GetAlarmTypeForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<AlarmType>(hashCode);
   }
-
   return AlarmType::NOT_SET;
 }
 
@@ -52,7 +51,6 @@ Aws::String GetNameForAlarmType(AlarmType enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

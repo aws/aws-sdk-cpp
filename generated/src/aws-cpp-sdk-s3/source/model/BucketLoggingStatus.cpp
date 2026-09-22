@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/BucketLoggingStatus.h>
@@ -19,27 +20,9 @@ namespace Model {
 
 BucketLoggingStatus::BucketLoggingStatus(const XmlNode& xmlNode) { *this = xmlNode; }
 
-BucketLoggingStatus& BucketLoggingStatus::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+BucketLoggingStatus& BucketLoggingStatus::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode loggingEnabledNode = resultNode.FirstChild("LoggingEnabled");
-    if (!loggingEnabledNode.IsNull()) {
-      m_loggingEnabled = loggingEnabledNode;
-      m_loggingEnabledHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void BucketLoggingStatus::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_loggingEnabledHasBeenSet) {
-    XmlNode loggingEnabledNode = parentNode.CreateChildElement("LoggingEnabled");
-    m_loggingEnabled.AddToNode(loggingEnabledNode);
-  }
-}
+void BucketLoggingStatus::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

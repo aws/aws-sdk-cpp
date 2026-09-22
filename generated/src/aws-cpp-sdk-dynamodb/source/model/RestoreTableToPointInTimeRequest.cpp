@@ -3,85 +3,22 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/RestoreTableToPointInTimeRequest.h>
 
+#include <numeric>
 #include <utility>
 
 using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String RestoreTableToPointInTimeRequest::SerializePayload() const {
-  JsonValue payload;
-
-  if (m_sourceTableArnHasBeenSet) {
-    payload.WithString("SourceTableArn", m_sourceTableArn);
-  }
-
-  if (m_sourceTableNameHasBeenSet) {
-    payload.WithString("SourceTableName", m_sourceTableName);
-  }
-
-  if (m_targetTableNameHasBeenSet) {
-    payload.WithString("TargetTableName", m_targetTableName);
-  }
-
-  if (m_useLatestRestorableTimeHasBeenSet) {
-    payload.WithBool("UseLatestRestorableTime", m_useLatestRestorableTime);
-  }
-
-  if (m_restoreDateTimeHasBeenSet) {
-    payload.WithDouble("RestoreDateTime", m_restoreDateTime.SecondsWithMSPrecision());
-  }
-
-  if (m_billingModeOverrideHasBeenSet) {
-    payload.WithString("BillingModeOverride", BillingModeMapper::GetNameForBillingMode(m_billingModeOverride));
-  }
-
-  if (m_globalSecondaryIndexOverrideHasBeenSet) {
-    Aws::Utils::Array<JsonValue> globalSecondaryIndexOverrideJsonList(m_globalSecondaryIndexOverride.size());
-    for (unsigned globalSecondaryIndexOverrideIndex = 0;
-         globalSecondaryIndexOverrideIndex < globalSecondaryIndexOverrideJsonList.GetLength(); ++globalSecondaryIndexOverrideIndex) {
-      globalSecondaryIndexOverrideJsonList[globalSecondaryIndexOverrideIndex].AsObject(
-          m_globalSecondaryIndexOverride[globalSecondaryIndexOverrideIndex].Jsonize());
-    }
-    payload.WithArray("GlobalSecondaryIndexOverride", std::move(globalSecondaryIndexOverrideJsonList));
-  }
-
-  if (m_localSecondaryIndexOverrideHasBeenSet) {
-    Aws::Utils::Array<JsonValue> localSecondaryIndexOverrideJsonList(m_localSecondaryIndexOverride.size());
-    for (unsigned localSecondaryIndexOverrideIndex = 0; localSecondaryIndexOverrideIndex < localSecondaryIndexOverrideJsonList.GetLength();
-         ++localSecondaryIndexOverrideIndex) {
-      localSecondaryIndexOverrideJsonList[localSecondaryIndexOverrideIndex].AsObject(
-          m_localSecondaryIndexOverride[localSecondaryIndexOverrideIndex].Jsonize());
-    }
-    payload.WithArray("LocalSecondaryIndexOverride", std::move(localSecondaryIndexOverrideJsonList));
-  }
-
-  if (m_provisionedThroughputOverrideHasBeenSet) {
-    payload.WithObject("ProvisionedThroughputOverride", m_provisionedThroughputOverride.Jsonize());
-  }
-
-  if (m_onDemandThroughputOverrideHasBeenSet) {
-    payload.WithObject("OnDemandThroughputOverride", m_onDemandThroughputOverride.Jsonize());
-  }
-
-  if (m_sSESpecificationOverrideHasBeenSet) {
-    payload.WithObject("SSESpecificationOverride", m_sSESpecificationOverride.Jsonize());
-  }
-
-  if (m_vectorIndexOverrideHasBeenSet) {
-    Aws::Utils::Array<JsonValue> vectorIndexOverrideJsonList(m_vectorIndexOverride.size());
-    for (unsigned vectorIndexOverrideIndex = 0; vectorIndexOverrideIndex < vectorIndexOverrideJsonList.GetLength();
-         ++vectorIndexOverrideIndex) {
-      vectorIndexOverrideJsonList[vectorIndexOverrideIndex].AsObject(m_vectorIndexOverride[vectorIndexOverrideIndex].Jsonize());
-    }
-    payload.WithArray("VectorIndexOverride", std::move(vectorIndexOverrideJsonList));
-  }
-
-  return payload.View().WriteReadable();
-}
+Aws::String RestoreTableToPointInTimeRequest::SerializePayload() const { return "{}"; }
 
 Aws::Http::HeaderValueCollection RestoreTableToPointInTimeRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;

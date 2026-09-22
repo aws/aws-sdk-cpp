@@ -37,7 +37,6 @@ class IntelligentTieringConfiguration {
   AWS_S3_API IntelligentTieringConfiguration() = default;
   AWS_S3_API IntelligentTieringConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API IntelligentTieringConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

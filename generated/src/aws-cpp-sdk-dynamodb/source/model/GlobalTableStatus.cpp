@@ -36,7 +36,6 @@ GlobalTableStatus GetGlobalTableStatusForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<GlobalTableStatus>(hashCode);
   }
-
   return GlobalTableStatus::NOT_SET;
 }
 
@@ -57,7 +56,6 @@ Aws::String GetNameForGlobalTableStatus(GlobalTableStatus enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/TableCreationParameters.h>
 
 #include <utility>
@@ -17,117 +20,10 @@ namespace Model {
 
 TableCreationParameters::TableCreationParameters(JsonView jsonValue) { *this = jsonValue; }
 
-TableCreationParameters& TableCreationParameters::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("TableName")) {
-    m_tableName = jsonValue.GetString("TableName");
-    m_tableNameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("AttributeDefinitions")) {
-    Aws::Utils::Array<JsonView> attributeDefinitionsJsonList = jsonValue.GetArray("AttributeDefinitions");
-    for (unsigned attributeDefinitionsIndex = 0; attributeDefinitionsIndex < attributeDefinitionsJsonList.GetLength();
-         ++attributeDefinitionsIndex) {
-      m_attributeDefinitions.push_back(attributeDefinitionsJsonList[attributeDefinitionsIndex].AsObject());
-    }
-    m_attributeDefinitionsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("KeySchema")) {
-    Aws::Utils::Array<JsonView> keySchemaJsonList = jsonValue.GetArray("KeySchema");
-    for (unsigned keySchemaIndex = 0; keySchemaIndex < keySchemaJsonList.GetLength(); ++keySchemaIndex) {
-      m_keySchema.push_back(keySchemaJsonList[keySchemaIndex].AsObject());
-    }
-    m_keySchemaHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("BillingMode")) {
-    m_billingMode = BillingModeMapper::GetBillingModeForName(jsonValue.GetString("BillingMode"));
-    m_billingModeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ProvisionedThroughput")) {
-    m_provisionedThroughput = jsonValue.GetObject("ProvisionedThroughput");
-    m_provisionedThroughputHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("OnDemandThroughput")) {
-    m_onDemandThroughput = jsonValue.GetObject("OnDemandThroughput");
-    m_onDemandThroughputHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("SSESpecification")) {
-    m_sSESpecification = jsonValue.GetObject("SSESpecification");
-    m_sSESpecificationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("GlobalSecondaryIndexes")) {
-    Aws::Utils::Array<JsonView> globalSecondaryIndexesJsonList = jsonValue.GetArray("GlobalSecondaryIndexes");
-    for (unsigned globalSecondaryIndexesIndex = 0; globalSecondaryIndexesIndex < globalSecondaryIndexesJsonList.GetLength();
-         ++globalSecondaryIndexesIndex) {
-      m_globalSecondaryIndexes.push_back(globalSecondaryIndexesJsonList[globalSecondaryIndexesIndex].AsObject());
-    }
-    m_globalSecondaryIndexesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("VectorIndexes")) {
-    Aws::Utils::Array<JsonView> vectorIndexesJsonList = jsonValue.GetArray("VectorIndexes");
-    for (unsigned vectorIndexesIndex = 0; vectorIndexesIndex < vectorIndexesJsonList.GetLength(); ++vectorIndexesIndex) {
-      m_vectorIndexes.push_back(vectorIndexesJsonList[vectorIndexesIndex].AsObject());
-    }
-    m_vectorIndexesHasBeenSet = true;
-  }
-  return *this;
-}
+TableCreationParameters& TableCreationParameters::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue TableCreationParameters::Jsonize() const {
   JsonValue payload;
-
-  if (m_tableNameHasBeenSet) {
-    payload.WithString("TableName", m_tableName);
-  }
-
-  if (m_attributeDefinitionsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> attributeDefinitionsJsonList(m_attributeDefinitions.size());
-    for (unsigned attributeDefinitionsIndex = 0; attributeDefinitionsIndex < attributeDefinitionsJsonList.GetLength();
-         ++attributeDefinitionsIndex) {
-      attributeDefinitionsJsonList[attributeDefinitionsIndex].AsObject(m_attributeDefinitions[attributeDefinitionsIndex].Jsonize());
-    }
-    payload.WithArray("AttributeDefinitions", std::move(attributeDefinitionsJsonList));
-  }
-
-  if (m_keySchemaHasBeenSet) {
-    Aws::Utils::Array<JsonValue> keySchemaJsonList(m_keySchema.size());
-    for (unsigned keySchemaIndex = 0; keySchemaIndex < keySchemaJsonList.GetLength(); ++keySchemaIndex) {
-      keySchemaJsonList[keySchemaIndex].AsObject(m_keySchema[keySchemaIndex].Jsonize());
-    }
-    payload.WithArray("KeySchema", std::move(keySchemaJsonList));
-  }
-
-  if (m_billingModeHasBeenSet) {
-    payload.WithString("BillingMode", BillingModeMapper::GetNameForBillingMode(m_billingMode));
-  }
-
-  if (m_provisionedThroughputHasBeenSet) {
-    payload.WithObject("ProvisionedThroughput", m_provisionedThroughput.Jsonize());
-  }
-
-  if (m_onDemandThroughputHasBeenSet) {
-    payload.WithObject("OnDemandThroughput", m_onDemandThroughput.Jsonize());
-  }
-
-  if (m_sSESpecificationHasBeenSet) {
-    payload.WithObject("SSESpecification", m_sSESpecification.Jsonize());
-  }
-
-  if (m_globalSecondaryIndexesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> globalSecondaryIndexesJsonList(m_globalSecondaryIndexes.size());
-    for (unsigned globalSecondaryIndexesIndex = 0; globalSecondaryIndexesIndex < globalSecondaryIndexesJsonList.GetLength();
-         ++globalSecondaryIndexesIndex) {
-      globalSecondaryIndexesJsonList[globalSecondaryIndexesIndex].AsObject(m_globalSecondaryIndexes[globalSecondaryIndexesIndex].Jsonize());
-    }
-    payload.WithArray("GlobalSecondaryIndexes", std::move(globalSecondaryIndexesJsonList));
-  }
-
-  if (m_vectorIndexesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> vectorIndexesJsonList(m_vectorIndexes.size());
-    for (unsigned vectorIndexesIndex = 0; vectorIndexesIndex < vectorIndexesJsonList.GetLength(); ++vectorIndexesIndex) {
-      vectorIndexesJsonList[vectorIndexesIndex].AsObject(m_vectorIndexes[vectorIndexesIndex].Jsonize());
-    }
-    payload.WithArray("VectorIndexes", std::move(vectorIndexesJsonList));
-  }
-
   return payload;
 }
 

@@ -35,7 +35,6 @@ class Destination {
   AWS_S3_API Destination() = default;
   AWS_S3_API Destination(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API Destination& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

@@ -22,7 +22,7 @@ namespace Model {
 
 /**
  * <p>Container for all response elements.</p><p><h3>See Also:</h3>   <a
- * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CopyObjectResult">AWS
+ * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CopyObjectResultDetails">AWS
  * API Reference</a></p>
  */
 class CopyObjectResultDetails {
@@ -30,7 +30,6 @@ class CopyObjectResultDetails {
   AWS_S3_API CopyObjectResultDetails() = default;
   AWS_S3_API CopyObjectResultDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API CopyObjectResultDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

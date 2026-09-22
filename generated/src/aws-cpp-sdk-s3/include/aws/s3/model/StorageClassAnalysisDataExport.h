@@ -30,7 +30,6 @@ class StorageClassAnalysisDataExport {
   AWS_S3_API StorageClassAnalysisDataExport() = default;
   AWS_S3_API StorageClassAnalysisDataExport(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API StorageClassAnalysisDataExport& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

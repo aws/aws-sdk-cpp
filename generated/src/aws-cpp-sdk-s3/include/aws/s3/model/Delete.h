@@ -29,7 +29,6 @@ class Delete {
   AWS_S3_API Delete() = default;
   AWS_S3_API Delete(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API Delete& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

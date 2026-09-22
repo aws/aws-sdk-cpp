@@ -49,15 +49,14 @@ class BlockedEncryptionTypes {
   AWS_S3_API BlockedEncryptionTypes() = default;
   AWS_S3_API BlockedEncryptionTypes(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API BlockedEncryptionTypes& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{
   /**
    * <p>The object encryption type that you want to block or unblock for an Amazon S3
-   * general purpose bucket.</p>  <p>Currently, this parameter only supports
-   * blocking or unblocking server side encryption with customer-provided keys
-   * (SSE-C). For more information about SSE-C, see <a
+   * general purpose bucket.</p>  <p>Currently, this parameter only supports blocking
+   * or unblocking server side encryption with customer-provided keys (SSE-C). For
+   * more information about SSE-C, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html">Using
    * server-side encryption with customer-provided keys (SSE-C)</a>.</p>
    */

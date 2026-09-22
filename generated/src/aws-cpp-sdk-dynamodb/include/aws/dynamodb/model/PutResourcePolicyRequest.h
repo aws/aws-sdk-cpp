@@ -91,12 +91,12 @@ class PutResourcePolicyRequest : public DynamoDBRequest {
   /**
    * <p>A string value that you can use to conditionally update your policy. You can
    * provide the revision ID of your existing policy to make mutating requests
-   * against that policy.</p>  <p>When you provide an expected revision ID, if
-   * the revision ID of the existing policy on the resource doesn't match or if
-   * there's no policy attached to the resource, your request will be rejected with a
-   * <code>PolicyNotFoundException</code>.</p>  <p>To conditionally attach a
-   * policy when no policy exists for the resource, specify <code>NO_POLICY</code>
-   * for the revision ID.</p>
+   * against that policy.</p>  <p>When you provide an expected revision ID, if the
+   * revision ID of the existing policy on the resource doesn't match or if there's
+   * no policy attached to the resource, your request will be rejected with a
+   * <code>PolicyNotFoundException</code>.</p>  <p>To conditionally attach a policy
+   * when no policy exists for the resource, specify <code>NO_POLICY</code> for the
+   * revision ID.</p>
    */
   inline const Aws::String& GetExpectedRevisionId() const { return m_expectedRevisionId; }
   inline bool ExpectedRevisionIdHasBeenSet() const { return m_expectedRevisionIdHasBeenSet; }

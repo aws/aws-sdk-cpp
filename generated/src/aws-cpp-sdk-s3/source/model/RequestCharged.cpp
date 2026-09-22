@@ -27,7 +27,6 @@ RequestCharged GetRequestChargedForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<RequestCharged>(hashCode);
   }
-
   return RequestCharged::NOT_SET;
 }
 
@@ -42,7 +41,6 @@ Aws::String GetNameForRequestCharged(RequestCharged enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

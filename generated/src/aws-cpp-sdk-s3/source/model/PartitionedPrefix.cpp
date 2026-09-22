@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/PartitionedPrefix.h>
@@ -19,28 +20,9 @@ namespace Model {
 
 PartitionedPrefix::PartitionedPrefix(const XmlNode& xmlNode) { *this = xmlNode; }
 
-PartitionedPrefix& PartitionedPrefix::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+PartitionedPrefix& PartitionedPrefix::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode partitionDateSourceNode = resultNode.FirstChild("PartitionDateSource");
-    if (!partitionDateSourceNode.IsNull()) {
-      m_partitionDateSource = PartitionDateSourceMapper::GetPartitionDateSourceForName(
-          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(partitionDateSourceNode.GetText()).c_str()));
-      m_partitionDateSourceHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void PartitionedPrefix::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_partitionDateSourceHasBeenSet) {
-    XmlNode partitionDateSourceNode = parentNode.CreateChildElement("PartitionDateSource");
-    partitionDateSourceNode.SetText(PartitionDateSourceMapper::GetNameForPartitionDateSource(m_partitionDateSource));
-  }
-}
+void PartitionedPrefix::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

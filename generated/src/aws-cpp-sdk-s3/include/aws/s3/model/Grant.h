@@ -29,7 +29,6 @@ class Grant {
   AWS_S3_API Grant() = default;
   AWS_S3_API Grant(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API Grant& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/BillingModeSummary.h>
 
 #include <utility>
@@ -17,29 +20,10 @@ namespace Model {
 
 BillingModeSummary::BillingModeSummary(JsonView jsonValue) { *this = jsonValue; }
 
-BillingModeSummary& BillingModeSummary::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("BillingMode")) {
-    m_billingMode = BillingModeMapper::GetBillingModeForName(jsonValue.GetString("BillingMode"));
-    m_billingModeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("LastUpdateToPayPerRequestDateTime")) {
-    m_lastUpdateToPayPerRequestDateTime = jsonValue.GetDouble("LastUpdateToPayPerRequestDateTime");
-    m_lastUpdateToPayPerRequestDateTimeHasBeenSet = true;
-  }
-  return *this;
-}
+BillingModeSummary& BillingModeSummary::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue BillingModeSummary::Jsonize() const {
   JsonValue payload;
-
-  if (m_billingModeHasBeenSet) {
-    payload.WithString("BillingMode", BillingModeMapper::GetNameForBillingMode(m_billingMode));
-  }
-
-  if (m_lastUpdateToPayPerRequestDateTimeHasBeenSet) {
-    payload.WithDouble("LastUpdateToPayPerRequestDateTime", m_lastUpdateToPayPerRequestDateTime.SecondsWithMSPrecision());
-  }
-
   return payload;
 }
 

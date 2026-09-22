@@ -122,10 +122,10 @@ class QueryRequest : public DynamoDBRequest {
    * single request, unless the value for <code>Select</code> is
    * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying
    * <code>ProjectionExpression</code> without any value for
-   * <code>Select</code>.)</p>  <p>If you use the
-   * <code>ProjectionExpression</code> parameter, then the value for
-   * <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any other
-   * value for <code>Select</code> will return an error.</p>
+   * <code>Select</code>.)</p>  <p>If you use the <code>ProjectionExpression</code>
+   * parameter, then the value for <code>Select</code> can only be
+   * <code>SPECIFIC_ATTRIBUTES</code>. Any other value for <code>Select</code> will
+   * return an error.</p>
    */
   inline Select GetSelect() const { return m_select; }
   inline bool SelectHasBeenSet() const { return m_selectHasBeenSet; }
@@ -385,9 +385,9 @@ class QueryRequest : public DynamoDBRequest {
    * <code>Query</code> operation, but before the data is returned to you. Items that
    * do not satisfy the <code>FilterExpression</code> criteria are not returned.</p>
    * <p>A <code>FilterExpression</code> does not allow key attributes. You cannot
-   * define a filter expression based on a partition key or a sort key.</p>
-   * <p>A <code>FilterExpression</code> is applied after the items have already been
-   * read; the process of filtering does not consume any additional read capacity
+   * define a filter expression based on a partition key or a sort key.</p>  <p>A
+   * <code>FilterExpression</code> is applied after the items have already been read;
+   * the process of filtering does not consume any additional read capacity
    * units.</p>  <p>For more information, see <a
    * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Query.FilterExpression.html">Filter
    * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -426,32 +426,32 @@ class QueryRequest : public DynamoDBRequest {
    * are as follows:</p> <ul> <li> <p> <code>sortKeyName</code> <code>=</code>
    * <code>:sortkeyval</code> - true if the sort key value is equal to
    * <code>:sortkeyval</code>.</p> </li> <li> <p> <code>sortKeyName</code>
-   * <code>&lt;</code> <code>:sortkeyval</code> - true if the sort key value is less
+   * <code><</code> <code>:sortkeyval</code> - true if the sort key value is less
    * than <code>:sortkeyval</code>.</p> </li> <li> <p> <code>sortKeyName</code>
-   * <code>&lt;=</code> <code>:sortkeyval</code> - true if the sort key value is less
+   * <code><=</code> <code>:sortkeyval</code> - true if the sort key value is less
    * than or equal to <code>:sortkeyval</code>.</p> </li> <li> <p>
-   * <code>sortKeyName</code> <code>&gt;</code> <code>:sortkeyval</code> - true if
-   * the sort key value is greater than <code>:sortkeyval</code>.</p> </li> <li> <p>
-   * <code>sortKeyName</code> <code>&gt;= </code> <code>:sortkeyval</code> - true if
-   * the sort key value is greater than or equal to <code>:sortkeyval</code>.</p>
-   * </li> <li> <p> <code>sortKeyName</code> <code>BETWEEN</code>
-   * <code>:sortkeyval1</code> <code>AND</code> <code>:sortkeyval2</code> - true if
-   * the sort key value is greater than or equal to <code>:sortkeyval1</code>, and
-   * less than or equal to <code>:sortkeyval2</code>.</p> </li> <li> <p>
-   * <code>begins_with (</code> <code>sortKeyName</code>, <code>:sortkeyval</code>
-   * <code>)</code> - true if the sort key value begins with a particular operand.
-   * (You cannot use this function with a sort key that is of type Number.) Note that
-   * the function name <code>begins_with</code> is case-sensitive.</p> </li> </ul>
-   * <p>Use the <code>ExpressionAttributeValues</code> parameter to replace tokens
-   * such as <code>:partitionval</code> and <code>:sortval</code> with actual values
-   * at runtime.</p> <p>You can optionally use the
-   * <code>ExpressionAttributeNames</code> parameter to replace the names of the
-   * partition key and sort key with placeholder tokens. This option might be
-   * necessary if an attribute name conflicts with a DynamoDB reserved word. For
-   * example, the following <code>KeyConditionExpression</code> parameter causes an
-   * error because <i>Size</i> is a reserved word:</p> <ul> <li> <p> <code>Size =
-   * :myval</code> </p> </li> </ul> <p>To work around this, define a placeholder
-   * (such a <code>#S</code>) to represent the attribute name <i>Size</i>.
+   * <code>sortKeyName</code> <code>></code> <code>:sortkeyval</code> - true if the
+   * sort key value is greater than <code>:sortkeyval</code>.</p> </li> <li> <p>
+   * <code>sortKeyName</code> <code>>= </code> <code>:sortkeyval</code> - true if the
+   * sort key value is greater than or equal to <code>:sortkeyval</code>.</p> </li>
+   * <li> <p> <code>sortKeyName</code> <code>BETWEEN</code> <code>:sortkeyval1</code>
+   * <code>AND</code> <code>:sortkeyval2</code> - true if the sort key value is
+   * greater than or equal to <code>:sortkeyval1</code>, and less than or equal to
+   * <code>:sortkeyval2</code>.</p> </li> <li> <p> <code>begins_with (</code>
+   * <code>sortKeyName</code>, <code>:sortkeyval</code> <code>)</code> - true if the
+   * sort key value begins with a particular operand. (You cannot use this function
+   * with a sort key that is of type Number.) Note that the function name
+   * <code>begins_with</code> is case-sensitive.</p> </li> </ul> <p>Use the
+   * <code>ExpressionAttributeValues</code> parameter to replace tokens such as
+   * <code>:partitionval</code> and <code>:sortval</code> with actual values at
+   * runtime.</p> <p>You can optionally use the <code>ExpressionAttributeNames</code>
+   * parameter to replace the names of the partition key and sort key with
+   * placeholder tokens. This option might be necessary if an attribute name
+   * conflicts with a DynamoDB reserved word. For example, the following
+   * <code>KeyConditionExpression</code> parameter causes an error because
+   * <i>Size</i> is a reserved word:</p> <ul> <li> <p> <code>Size = :myval</code>
+   * </p> </li> </ul> <p>To work around this, define a placeholder (such a
+   * <code>#S</code>) to represent the attribute name <i>Size</i>.
    * <code>KeyConditionExpression</code> then is as follows:</p> <ul> <li> <p>
    * <code>#S = :myval</code> </p> </li> </ul> <p>For a list of reserved words, see
    * <a
@@ -498,8 +498,8 @@ class QueryRequest : public DynamoDBRequest {
    * then use this substitution in an expression, as in this example:</p> <ul> <li>
    * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
    * <b>:</b> character are <i>expression attribute values</i>, which are
-   * placeholders for the actual value at runtime.</p>  <p>For more
-   * information on expression attribute names, see <a
+   * placeholders for the actual value at runtime.</p>  <p>For more information on
+   * expression attribute names, see <a
    * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
    * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
    */

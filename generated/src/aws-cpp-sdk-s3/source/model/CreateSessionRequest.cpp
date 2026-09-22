@@ -4,11 +4,14 @@
  */
 
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/CreateSessionRequest.h>
 
+#include <numeric>
 #include <utility>
 
 using namespace Aws::S3::Model;
@@ -16,26 +19,36 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-bool CreateSessionRequest::HasEmbeddedError(Aws::IOStream& body, const Aws::Http::HeaderValueCollection& header) const {
-  // Header is unused
-  AWS_UNREFERENCED_PARAM(header);
-
-  auto readPointer = body.tellg();
-  Utils::Xml::XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
-  body.seekg(readPointer);
-  if (!doc.WasParseSuccessful()) {
-    return false;
-  }
-
-  if (!doc.GetRootElement().IsNull() && doc.GetRootElement().GetName() == Aws::String("Error")) {
-    return true;
-  }
-  return false;
-}
-
 Aws::String CreateSessionRequest::SerializePayload() const { return {}; }
 
-void CreateSessionRequest::AddQueryStringParameters(URI& uri) const {
+Aws::Http::HeaderValueCollection CreateSessionRequest::GetRequestSpecificHeaders() const {
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if (m_sessionModeHasBeenSet && m_sessionMode != SessionMode::NOT_SET) {
+    headers.emplace("x-amz-create-session-mode", SessionModeMapper::GetNameForSessionMode(m_sessionMode));
+  }
+  if (m_serverSideEncryptionHasBeenSet && m_serverSideEncryption != ServerSideEncryption::NOT_SET) {
+    headers.emplace("x-amz-server-side-encryption", ServerSideEncryptionMapper::GetNameForServerSideEncryption(m_serverSideEncryption));
+  }
+  if (m_sSEKMSKeyIdHasBeenSet) {
+    ss << m_sSEKMSKeyId;
+    headers.emplace("x-amz-server-side-encryption-aws-kms-key-id", ss.str());
+    ss.str("");
+  }
+  if (m_sSEKMSEncryptionContextHasBeenSet) {
+    ss << m_sSEKMSEncryptionContext;
+    headers.emplace("x-amz-server-side-encryption-context", ss.str());
+    ss.str("");
+  }
+  if (m_bucketKeyEnabledHasBeenSet) {
+    ss << std::boolalpha << m_bucketKeyEnabled;
+    headers.emplace("x-amz-server-side-encryption-bucket-key-enabled", ss.str());
+    ss.str("");
+  }
+  return headers;
+}
+
+void CreateSessionRequest::AddQueryStringParameters(Aws::Http::URI& uri) const {
   Aws::StringStream ss;
   if (!m_customizedAccessLogTag.empty()) {
     // only accept customized LogTag which starts with "x-"
@@ -45,43 +58,24 @@ void CreateSessionRequest::AddQueryStringParameters(URI& uri) const {
         collectedLogTags.emplace(entry.first, entry.second);
       }
     }
-
     if (!collectedLogTags.empty()) {
       uri.AddQueryStringParameter(collectedLogTags);
     }
   }
 }
 
-Aws::Http::HeaderValueCollection CreateSessionRequest::GetRequestSpecificHeaders() const {
-  Aws::Http::HeaderValueCollection headers;
-  Aws::StringStream ss;
-  if (m_sessionModeHasBeenSet && m_sessionMode != SessionMode::NOT_SET) {
-    headers.emplace("x-amz-create-session-mode", SessionModeMapper::GetNameForSessionMode(m_sessionMode));
+bool CreateSessionRequest::HasEmbeddedError(Aws::IOStream& body, const Aws::Http::HeaderValueCollection& header) const {
+  AWS_UNREFERENCED_PARAM(header);
+  auto readPointer = body.tellg();
+  Utils::Xml::XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
+  body.seekg(readPointer);
+  if (!doc.WasParseSuccessful()) {
+    return false;
   }
-
-  if (m_serverSideEncryptionHasBeenSet && m_serverSideEncryption != ServerSideEncryption::NOT_SET) {
-    headers.emplace("x-amz-server-side-encryption", ServerSideEncryptionMapper::GetNameForServerSideEncryption(m_serverSideEncryption));
+  if (!doc.GetRootElement().IsNull() && doc.GetRootElement().GetName() == Aws::String("Error")) {
+    return true;
   }
-
-  if (m_sSEKMSKeyIdHasBeenSet) {
-    ss << m_sSEKMSKeyId;
-    headers.emplace("x-amz-server-side-encryption-aws-kms-key-id", ss.str());
-    ss.str("");
-  }
-
-  if (m_sSEKMSEncryptionContextHasBeenSet) {
-    ss << m_sSEKMSEncryptionContext;
-    headers.emplace("x-amz-server-side-encryption-context", ss.str());
-    ss.str("");
-  }
-
-  if (m_bucketKeyEnabledHasBeenSet) {
-    ss << std::boolalpha << m_bucketKeyEnabled;
-    headers.emplace("x-amz-server-side-encryption-bucket-key-enabled", ss.str());
-    ss.str("");
-  }
-
-  return headers;
+  return false;
 }
 
 CreateSessionRequest::EndpointParameters CreateSessionRequest::GetEndpointContextParams() const {

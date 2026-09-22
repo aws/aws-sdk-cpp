@@ -24,7 +24,7 @@ namespace Model {
  * <p>A filter that identifies the subset of objects to which the replication rule
  * applies. A <code>Filter</code> must specify exactly one <code>Prefix</code>,
  * <code>Tag</code>, or an <code>And</code> child element.</p><p><h3>See Also:</h3>
- * <a
+ *   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ReplicationRuleFilter">AWS
  * API Reference</a></p>
  */
@@ -33,15 +33,14 @@ class ReplicationRuleFilter {
   AWS_S3_API ReplicationRuleFilter() = default;
   AWS_S3_API ReplicationRuleFilter(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API ReplicationRuleFilter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{
   /**
    * <p>An object key name prefix that identifies the subset of objects to which the
-   * rule applies.</p>  <p>Replacement must be made for object keys
-   * containing special characters (such as carriage returns) when using XML
-   * requests. For more information, see <a
+   * rule applies.</p>  <p>Replacement must be made for object keys containing
+   * special characters (such as carriage returns) when using XML requests. For more
+   * information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
    * XML related object key constraints</a>.</p>
    */

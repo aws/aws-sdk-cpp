@@ -32,7 +32,6 @@ class Condition {
   AWS_S3_API Condition() = default;
   AWS_S3_API Condition(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API Condition& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

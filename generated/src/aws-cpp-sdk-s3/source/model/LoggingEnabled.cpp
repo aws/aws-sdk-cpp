@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/LoggingEnabled.h>
@@ -19,66 +20,9 @@ namespace Model {
 
 LoggingEnabled::LoggingEnabled(const XmlNode& xmlNode) { *this = xmlNode; }
 
-LoggingEnabled& LoggingEnabled::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+LoggingEnabled& LoggingEnabled::operator=(const XmlNode& xmlNode) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode targetBucketNode = resultNode.FirstChild("TargetBucket");
-    if (!targetBucketNode.IsNull()) {
-      m_targetBucket = Aws::Utils::Xml::DecodeEscapedXmlText(targetBucketNode.GetText());
-      m_targetBucketHasBeenSet = true;
-    }
-    XmlNode targetGrantsNode = resultNode.FirstChild("TargetGrants");
-    if (!targetGrantsNode.IsNull()) {
-      XmlNode targetGrantsMember = targetGrantsNode.FirstChild("Grant");
-      m_targetGrantsHasBeenSet = !targetGrantsMember.IsNull();
-      while (!targetGrantsMember.IsNull()) {
-        m_targetGrants.push_back(targetGrantsMember);
-        targetGrantsMember = targetGrantsMember.NextNode("Grant");
-      }
-
-      m_targetGrantsHasBeenSet = true;
-    }
-    XmlNode targetPrefixNode = resultNode.FirstChild("TargetPrefix");
-    if (!targetPrefixNode.IsNull()) {
-      m_targetPrefix = Aws::Utils::Xml::DecodeEscapedXmlText(targetPrefixNode.GetText());
-      m_targetPrefixHasBeenSet = true;
-    }
-    XmlNode targetObjectKeyFormatNode = resultNode.FirstChild("TargetObjectKeyFormat");
-    if (!targetObjectKeyFormatNode.IsNull()) {
-      m_targetObjectKeyFormat = targetObjectKeyFormatNode;
-      m_targetObjectKeyFormatHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void LoggingEnabled::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_targetBucketHasBeenSet) {
-    XmlNode targetBucketNode = parentNode.CreateChildElement("TargetBucket");
-    targetBucketNode.SetText(m_targetBucket);
-  }
-
-  if (m_targetGrantsHasBeenSet) {
-    XmlNode targetGrantsParentNode = parentNode.CreateChildElement("TargetGrants");
-    for (const auto& item : m_targetGrants) {
-      XmlNode targetGrantsNode = targetGrantsParentNode.CreateChildElement("Grant");
-      item.AddToNode(targetGrantsNode);
-    }
-  }
-
-  if (m_targetPrefixHasBeenSet) {
-    XmlNode targetPrefixNode = parentNode.CreateChildElement("TargetPrefix");
-    targetPrefixNode.SetText(m_targetPrefix);
-  }
-
-  if (m_targetObjectKeyFormatHasBeenSet) {
-    XmlNode targetObjectKeyFormatNode = parentNode.CreateChildElement("TargetObjectKeyFormat");
-    m_targetObjectKeyFormat.AddToNode(targetObjectKeyFormatNode);
-  }
-}
+void LoggingEnabled::AddToNode(XmlNode& parentNode) const {}
 
 }  // namespace Model
 }  // namespace S3

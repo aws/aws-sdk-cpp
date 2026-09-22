@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/CreateGlobalTableWitnessGroupMemberAction.h>
 
 #include <utility>
@@ -17,21 +20,10 @@ namespace Model {
 
 CreateGlobalTableWitnessGroupMemberAction::CreateGlobalTableWitnessGroupMemberAction(JsonView jsonValue) { *this = jsonValue; }
 
-CreateGlobalTableWitnessGroupMemberAction& CreateGlobalTableWitnessGroupMemberAction::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("RegionName")) {
-    m_regionName = jsonValue.GetString("RegionName");
-    m_regionNameHasBeenSet = true;
-  }
-  return *this;
-}
+CreateGlobalTableWitnessGroupMemberAction& CreateGlobalTableWitnessGroupMemberAction::operator=(JsonView jsonValue) { return *this; }
 
 JsonValue CreateGlobalTableWitnessGroupMemberAction::Jsonize() const {
   JsonValue payload;
-
-  if (m_regionNameHasBeenSet) {
-    payload.WithString("RegionName", m_regionName);
-  }
-
   return payload;
 }
 

@@ -4,11 +4,14 @@
  */
 
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/DeleteBucketMetadataConfigurationRequest.h>
 
+#include <numeric>
 #include <utility>
 
 using namespace Aws::S3::Model;
@@ -18,7 +21,18 @@ using namespace Aws::Http;
 
 Aws::String DeleteBucketMetadataConfigurationRequest::SerializePayload() const { return {}; }
 
-void DeleteBucketMetadataConfigurationRequest::AddQueryStringParameters(URI& uri) const {
+Aws::Http::HeaderValueCollection DeleteBucketMetadataConfigurationRequest::GetRequestSpecificHeaders() const {
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if (m_expectedBucketOwnerHasBeenSet) {
+    ss << m_expectedBucketOwner;
+    headers.emplace("x-amz-expected-bucket-owner", ss.str());
+    ss.str("");
+  }
+  return headers;
+}
+
+void DeleteBucketMetadataConfigurationRequest::AddQueryStringParameters(Aws::Http::URI& uri) const {
   Aws::StringStream ss;
   if (!m_customizedAccessLogTag.empty()) {
     // only accept customized LogTag which starts with "x-"
@@ -28,23 +42,10 @@ void DeleteBucketMetadataConfigurationRequest::AddQueryStringParameters(URI& uri
         collectedLogTags.emplace(entry.first, entry.second);
       }
     }
-
     if (!collectedLogTags.empty()) {
       uri.AddQueryStringParameter(collectedLogTags);
     }
   }
-}
-
-Aws::Http::HeaderValueCollection DeleteBucketMetadataConfigurationRequest::GetRequestSpecificHeaders() const {
-  Aws::Http::HeaderValueCollection headers;
-  Aws::StringStream ss;
-  if (m_expectedBucketOwnerHasBeenSet) {
-    ss << m_expectedBucketOwner;
-    headers.emplace("x-amz-expected-bucket-owner", ss.str());
-    ss.str("");
-  }
-
-  return headers;
 }
 
 DeleteBucketMetadataConfigurationRequest::EndpointParameters DeleteBucketMetadataConfigurationRequest::GetEndpointContextParams() const {

@@ -71,13 +71,12 @@ class ListObjectsResult {
    * <p>When the response is truncated (the <code>IsTruncated</code> element value in
    * the response is <code>true</code>), you can use the key name in this field as
    * the <code>marker</code> parameter in the subsequent request to get the next set
-   * of objects. Amazon S3 lists objects in alphabetical order. </p>  <p>This
-   * element is returned only if you have the <code>delimiter</code> request
-   * parameter specified. If the response does not include the
-   * <code>NextMarker</code> element and it is truncated, you can use the value of
-   * the last <code>Key</code> element in the response as the <code>marker</code>
-   * parameter in the subsequent request to get the next set of object keys.</p>
-   *
+   * of objects. Amazon S3 lists objects in alphabetical order. </p>  <p>This element
+   * is returned only if you have the <code>delimiter</code> request parameter
+   * specified. If the response does not include the <code>NextMarker</code> element
+   * and it is truncated, you can use the value of the last <code>Key</code> element
+   * in the response as the <code>marker</code> parameter in the subsequent request
+   * to get the next set of object keys.</p>
    */
   inline const Aws::String& GetNextMarker() const { return m_nextMarker; }
   template <typename NextMarkerT = Aws::String>
@@ -229,9 +228,9 @@ class ListObjectsResult {
    * Amazon S3 encode the keys in the response. For more information about characters
    * to avoid in object key names, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-guidelines">Object
-   * key naming guidelines</a>.</p>  <p>When using the URL encoding type,
-   * non-ASCII characters that are used in an object's key name will be
-   * percent-encoded according to UTF-8 code values. For example, the object
+   * key naming guidelines</a>.</p>  <p>When using the URL encoding type, non-ASCII
+   * characters that are used in an object's key name will be percent-encoded
+   * according to UTF-8 code values. For example, the object
    * <code>test_file(3).png</code> will appear as
    * <code>test_file%283%29.png</code>.</p>
    */

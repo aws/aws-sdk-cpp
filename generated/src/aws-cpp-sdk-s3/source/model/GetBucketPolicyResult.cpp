@@ -4,8 +4,11 @@
  */
 
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/GetBucketPolicyResult.h>
 
 #include <utility>
@@ -21,13 +24,6 @@ GetBucketPolicyResult& GetBucketPolicyResult::operator=(Aws::AmazonWebServiceRes
   m_HttpResponseCode = result.GetResponseCode();
   m_policy = result.TakeOwnershipOfPayload();
   m_policyHasBeenSet = true;
-
-  const auto& headers = result.GetHeaderValueCollection();
-  const auto& requestIdIter = headers.find("x-amz-request-id");
-  if (requestIdIter != headers.end()) {
-    m_requestId = requestIdIter->second;
-    m_requestIdHasBeenSet = true;
-  }
-
+  // TODO: header-bound member deserialization
   return *this;
 }

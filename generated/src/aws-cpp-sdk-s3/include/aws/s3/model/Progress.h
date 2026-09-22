@@ -26,7 +26,6 @@ class Progress {
   AWS_S3_API Progress() = default;
   AWS_S3_API Progress(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API Progress& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

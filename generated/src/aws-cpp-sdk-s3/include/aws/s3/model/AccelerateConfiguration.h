@@ -32,7 +32,6 @@ class AccelerateConfiguration {
   AWS_S3_API AccelerateConfiguration() = default;
   AWS_S3_API AccelerateConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_S3_API AccelerateConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

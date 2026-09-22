@@ -16,9 +16,6 @@
 #include <utility>
 
 namespace Aws {
-namespace Http {
-class URI;
-}  // namespace Http
 namespace S3 {
 namespace Model {
 
@@ -36,11 +33,12 @@ class ListObjectsV2Request : public S3Request {
 
   AWS_S3_API Aws::String SerializePayload() const override;
 
-  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
   AWS_S3_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+  AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
   AWS_S3_API bool HasEmbeddedError(IOStream& body, const Http::HeaderValueCollection& header) const override;
+
   /**
    * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
    */
@@ -69,11 +67,11 @@ class ListObjectsV2Request : public S3Request {
    * SDKs, you provide the access point ARN in place of the bucket name. For more
    * information about access point ARNs, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-   * access points</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>Object
-   * Lambda access points are not supported by directory buckets.</p>  <p>
-   * <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must
-   * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
-   * takes the form <code>
+   * access points</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>Object Lambda
+   * access points are not supported by directory buckets.</p>  <p> <b>S3 on
+   * Outposts</b> - When you use this action with S3 on Outposts, you must direct
+   * requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the
+   * form <code>
    * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
    * When you use this action with S3 on Outposts, the destination bucket must be the
    * Outposts access point ARN or the access point alias. For more information about
@@ -99,13 +97,13 @@ class ListObjectsV2Request : public S3Request {
   /**
    * <p>A delimiter is a character that you use to group keys.</p> <p>
    * <code>CommonPrefixes</code> is filtered out from results if it is not
-   * lexicographically greater than the <code>StartAfter</code> value.</p>
-   * <ul> <li> <p> <b>Directory buckets</b> - For directory buckets, <code>/</code>
-   * is the only supported delimiter.</p> </li> <li> <p> <b>Directory buckets </b> -
-   * When you query <code>ListObjectsV2</code> with a delimiter during in-progress
-   * multipart uploads, the <code>CommonPrefixes</code> response parameter contains
-   * the prefixes that are associated with the in-progress multipart uploads. For
-   * more information about multipart uploads, see <a
+   * lexicographically greater than the <code>StartAfter</code> value.</p>  <ul> <li>
+   * <p> <b>Directory buckets</b> - For directory buckets, <code>/</code> is the only
+   * supported delimiter.</p> </li> <li> <p> <b>Directory buckets </b> - When you
+   * query <code>ListObjectsV2</code> with a delimiter during in-progress multipart
+   * uploads, the <code>CommonPrefixes</code> response parameter contains the
+   * prefixes that are associated with the in-progress multipart uploads. For more
+   * information about multipart uploads, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart
    * Upload Overview</a> in the <i>Amazon S3 User Guide</i>.</p> </li> </ul>
    */
@@ -134,9 +132,9 @@ class ListObjectsV2Request : public S3Request {
    * Amazon S3 encode the keys in the response. For more information about characters
    * to avoid in object key names, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-guidelines">Object
-   * key naming guidelines</a>.</p>  <p>When using the URL encoding type,
-   * non-ASCII characters that are used in an object's key name will be
-   * percent-encoded according to UTF-8 code values. For example, the object
+   * key naming guidelines</a>.</p>  <p>When using the URL encoding type, non-ASCII
+   * characters that are used in an object's key name will be percent-encoded
+   * according to UTF-8 code values. For example, the object
    * <code>test_file(3).png</code> will appear as
    * <code>test_file%283%29.png</code>.</p>
    */
@@ -172,9 +170,9 @@ class ListObjectsV2Request : public S3Request {
 
   ///@{
   /**
-   * <p>Limits the response to keys that begin with the specified prefix.</p>
-   * <p> <b>Directory buckets</b> - For directory buckets, only prefixes that end in
-   * a delimiter (<code>/</code>) are supported.</p>
+   * <p>Limits the response to keys that begin with the specified prefix.</p>  <p>
+   * <b>Directory buckets</b> - For directory buckets, only prefixes that end in a
+   * delimiter (<code>/</code>) are supported.</p>
    */
   inline const Aws::String& GetPrefix() const { return m_prefix; }
   inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
@@ -235,8 +233,7 @@ class ListObjectsV2Request : public S3Request {
   /**
    * <p>StartAfter is where you want Amazon S3 to start listing from. Amazon S3
    * starts listing after this specified key. StartAfter can be any key in the
-   * bucket.</p>  <p>This functionality is not supported for directory
-   * buckets.</p>
+   * bucket.</p>  <p>This functionality is not supported for directory buckets.</p>
    */
   inline const Aws::String& GetStartAfter() const { return m_startAfter; }
   inline bool StartAfterHasBeenSet() const { return m_startAfterHasBeenSet; }
@@ -294,8 +291,8 @@ class ListObjectsV2Request : public S3Request {
   ///@{
   /**
    * <p>Specifies the optional fields that you want returned in the response. Fields
-   * that you do not specify are not returned.</p>  <p>This functionality is
-   * not supported for directory buckets.</p>
+   * that you do not specify are not returned.</p>  <p>This functionality is not
+   * supported for directory buckets.</p>
    */
   inline const Aws::Vector<OptionalObjectAttributes>& GetOptionalObjectAttributes() const { return m_optionalObjectAttributes; }
   inline bool OptionalObjectAttributesHasBeenSet() const { return m_optionalObjectAttributesHasBeenSet; }

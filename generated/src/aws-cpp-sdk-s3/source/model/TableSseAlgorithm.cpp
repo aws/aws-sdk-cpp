@@ -30,7 +30,6 @@ TableSseAlgorithm GetTableSseAlgorithmForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<TableSseAlgorithm>(hashCode);
   }
-
   return TableSseAlgorithm::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForTableSseAlgorithm(TableSseAlgorithm enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

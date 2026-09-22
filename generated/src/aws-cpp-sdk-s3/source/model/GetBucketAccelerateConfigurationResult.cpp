@@ -4,7 +4,9 @@
  */
 
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/model/GetBucketAccelerateConfigurationResult.h>
@@ -22,31 +24,5 @@ GetBucketAccelerateConfigurationResult::GetBucketAccelerateConfigurationResult(c
 
 GetBucketAccelerateConfigurationResult& GetBucketAccelerateConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<XmlDocument>& result) {
-  m_HttpResponseCode = result.GetResponseCode();
-  const XmlDocument& xmlDocument = result.GetPayload();
-  XmlNode resultNode = xmlDocument.GetRootElement();
-
-  if (!resultNode.IsNull()) {
-    XmlNode statusNode = resultNode.FirstChild("Status");
-    if (!statusNode.IsNull()) {
-      m_status = BucketAccelerateStatusMapper::GetBucketAccelerateStatusForName(
-          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
-      m_statusHasBeenSet = true;
-    }
-  }
-
-  const auto& headers = result.GetHeaderValueCollection();
-  const auto& requestChargedIter = headers.find("x-amz-request-charged");
-  if (requestChargedIter != headers.end()) {
-    m_requestCharged = RequestChargedMapper::GetRequestChargedForName(requestChargedIter->second);
-    m_requestChargedHasBeenSet = true;
-  }
-
-  const auto& requestIdIter = headers.find("x-amz-request-id");
-  if (requestIdIter != headers.end()) {
-    m_requestId = requestIdIter->second;
-    m_requestIdHasBeenSet = true;
-  }
-
   return *this;
 }
