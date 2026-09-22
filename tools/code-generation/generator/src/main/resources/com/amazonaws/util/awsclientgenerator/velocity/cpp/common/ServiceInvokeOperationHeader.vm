@@ -2,6 +2,12 @@
 ## Be careful to not have this outcome name clash with an operation outcome name (specifically lambda:Invoke)
 typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ${metadata.classNamePrefix}Error> InvokeOperationOutcome;
 
+#set($serviceHasNonDefaultSigner = false)
+#foreach($signerOp in $serviceModel.operations)
+#if($signerOp.signerName != "Aws::Auth::SIGV4_SIGNER")
+#set($serviceHasNonDefaultSigner = true)
+#end
+#end
 InvokeOperationOutcome InvokeServiceOperation(
     const AmazonWebServiceRequest& request,
 #if($metadata.protocol == "rest-json" || $metadata.protocol == "rest-xml")
@@ -10,5 +16,6 @@ InvokeOperationOutcome InvokeServiceOperation(
 #if($serviceModel.metadata.namespace == "S3" || $serviceModel.metadata.namespace == "S3Crt")
     Aws::String bucketName,
 #end
-    Aws::Http::HttpMethod httpMethod
+    Aws::Http::HttpMethod httpMethod#if($serviceHasNonDefaultSigner),
+    const char* signerName = Aws::Auth::SIGV4_SIGNER#end
 ) const;

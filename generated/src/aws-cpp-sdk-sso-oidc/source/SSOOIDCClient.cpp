@@ -141,7 +141,7 @@ void SSOOIDCClient::OverrideEndpoint(const Aws::String& endpoint) {
 }
 SSOOIDCClient::InvokeOperationOutcome SSOOIDCClient::InvokeServiceOperation(
     const AmazonWebServiceRequest& request, const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
-    Aws::Http::HttpMethod httpMethod) const {
+    Aws::Http::HttpMethod httpMethod, const char* signerName) const {
   auto operationName = request.GetServiceRequestName();
   auto serviceName = GetServiceClientName();
 
@@ -172,7 +172,7 @@ SSOOIDCClient::InvokeOperationOutcome SSOOIDCClient::InvokeServiceOperation(
 
         resolveUri(endpointResolutionOutcome);
 
-        return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, Aws::Auth::SIGV4_SIGNER)};
+        return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, signerName)};
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
@@ -184,7 +184,7 @@ CreateTokenOutcome SSOOIDCClient::CreateToken(const CreateTokenRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegments("/token");
   };
 
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? CreateTokenOutcome(result.GetResultWithOwnership()) : CreateTokenOutcome(std::move(result.GetError()));
 }
 
@@ -208,7 +208,7 @@ RegisterClientOutcome SSOOIDCClient::RegisterClient(const RegisterClientRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/client/register");
   };
 
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? RegisterClientOutcome(result.GetResultWithOwnership()) : RegisterClientOutcome(std::move(result.GetError()));
 }
 
@@ -218,7 +218,7 @@ StartDeviceAuthorizationOutcome SSOOIDCClient::StartDeviceAuthorization(const St
     endpointResolutionOutcome.GetResult().AddPathSegments("/device_authorization");
   };
 
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? StartDeviceAuthorizationOutcome(result.GetResultWithOwnership())
                             : StartDeviceAuthorizationOutcome(std::move(result.GetError()));
 }

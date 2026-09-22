@@ -440,7 +440,7 @@ class AWS_SIGNIN_API SigninClient : public Aws::Client::AWSJsonClient,
 
   InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
                                                 const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
-                                                Aws::Http::HttpMethod httpMethod) const;
+                                                Aws::Http::HttpMethod httpMethod, const char* signerName = Aws::Auth::SIGV4_SIGNER) const;
 
   SigninClientConfiguration m_clientConfiguration;
   std::shared_ptr<SigninEndpointProviderBase> m_endpointProvider;

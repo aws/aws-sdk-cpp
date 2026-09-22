@@ -163,7 +163,8 @@ void CognitoIdentityClient::OverrideEndpoint(const Aws::String& endpoint) {
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
 CognitoIdentityClient::InvokeOperationOutcome CognitoIdentityClient::InvokeServiceOperation(const AmazonWebServiceRequest& request,
-                                                                                            Aws::Http::HttpMethod httpMethod) const {
+                                                                                            Aws::Http::HttpMethod httpMethod,
+                                                                                            const char* signerName) const {
   auto operationName = request.GetServiceRequestName();
   auto serviceName = GetServiceClientName();
 
@@ -192,7 +193,7 @@ CognitoIdentityClient::InvokeOperationOutcome CognitoIdentityClient::InvokeServi
         AWS_OPERATION_CHECK_SUCCESS_DYNAMIC(endpointResolutionOutcome, operationName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                             endpointResolutionOutcome.GetError().GetMessage());
 
-        return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, Aws::Auth::SIGV4_SIGNER)};
+        return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, signerName)};
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
@@ -229,13 +230,13 @@ DescribeIdentityPoolOutcome CognitoIdentityClient::DescribeIdentityPool(const De
 }
 
 GetCredentialsForIdentityOutcome CognitoIdentityClient::GetCredentialsForIdentity(const GetCredentialsForIdentityRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? GetCredentialsForIdentityOutcome(result.GetResultWithOwnership())
                             : GetCredentialsForIdentityOutcome(std::move(result.GetError()));
 }
 
 GetIdOutcome CognitoIdentityClient::GetId(const GetIdRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? GetIdOutcome(result.GetResultWithOwnership()) : GetIdOutcome(std::move(result.GetError()));
 }
 
@@ -246,7 +247,7 @@ GetIdentityPoolRolesOutcome CognitoIdentityClient::GetIdentityPoolRoles(const Ge
 }
 
 GetOpenIdTokenOutcome CognitoIdentityClient::GetOpenIdToken(const GetOpenIdTokenRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? GetOpenIdTokenOutcome(result.GetResultWithOwnership()) : GetOpenIdTokenOutcome(std::move(result.GetError()));
 }
 
@@ -318,7 +319,7 @@ UnlinkDeveloperIdentityOutcome CognitoIdentityClient::UnlinkDeveloperIdentity(co
 }
 
 UnlinkIdentityOutcome CognitoIdentityClient::UnlinkIdentity(const UnlinkIdentityRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? UnlinkIdentityOutcome(result.GetResultWithOwnership()) : UnlinkIdentityOutcome(std::move(result.GetError()));
 }
 

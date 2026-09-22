@@ -148,7 +148,7 @@ void SigninClient::OverrideEndpoint(const Aws::String& endpoint) {
 }
 SigninClient::InvokeOperationOutcome SigninClient::InvokeServiceOperation(
     const AmazonWebServiceRequest& request, const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
-    Aws::Http::HttpMethod httpMethod) const {
+    Aws::Http::HttpMethod httpMethod, const char* signerName) const {
   auto operationName = request.GetServiceRequestName();
   auto serviceName = GetServiceClientName();
 
@@ -179,7 +179,7 @@ SigninClient::InvokeOperationOutcome SigninClient::InvokeServiceOperation(
 
         resolveUri(endpointResolutionOutcome);
 
-        return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, Aws::Auth::SIGV4_SIGNER)};
+        return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, signerName)};
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
@@ -191,7 +191,7 @@ CreateOAuth2TokenOutcome SigninClient::CreateOAuth2Token(const CreateOAuth2Token
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/token");
   };
 
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? CreateOAuth2TokenOutcome(result.GetResultWithOwnership())
                             : CreateOAuth2TokenOutcome(std::move(result.GetError()));
 }

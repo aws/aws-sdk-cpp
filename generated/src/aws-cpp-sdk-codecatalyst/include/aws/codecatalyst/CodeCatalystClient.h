@@ -1179,7 +1179,7 @@ class AWS_CODECATALYST_API CodeCatalystClient : public Aws::Client::AWSJsonClien
 
   InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
                                                 const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
-                                                Aws::Http::HttpMethod httpMethod) const;
+                                                Aws::Http::HttpMethod httpMethod, const char* signerName = Aws::Auth::SIGV4_SIGNER) const;
 
   CodeCatalystClientConfiguration m_clientConfiguration;
   std::shared_ptr<CodeCatalystEndpointProviderBase> m_endpointProvider;

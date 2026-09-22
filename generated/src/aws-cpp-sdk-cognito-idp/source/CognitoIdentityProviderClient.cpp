@@ -277,7 +277,7 @@ void CognitoIdentityProviderClient::OverrideEndpoint(const Aws::String& endpoint
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
 CognitoIdentityProviderClient::InvokeOperationOutcome CognitoIdentityProviderClient::InvokeServiceOperation(
-    const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const {
+    const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod, const char* signerName) const {
   auto operationName = request.GetServiceRequestName();
   auto serviceName = GetServiceClientName();
 
@@ -306,7 +306,7 @@ CognitoIdentityProviderClient::InvokeOperationOutcome CognitoIdentityProviderCli
         AWS_OPERATION_CHECK_SUCCESS_DYNAMIC(endpointResolutionOutcome, operationName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                             endpointResolutionOutcome.GetError().GetMessage());
 
-        return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, Aws::Auth::SIGV4_SIGNER)};
+        return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, signerName)};
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
@@ -500,36 +500,36 @@ AdminUserGlobalSignOutOutcome CognitoIdentityProviderClient::AdminUserGlobalSign
 }
 
 AssociateSoftwareTokenOutcome CognitoIdentityProviderClient::AssociateSoftwareToken(const AssociateSoftwareTokenRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? AssociateSoftwareTokenOutcome(result.GetResultWithOwnership())
                             : AssociateSoftwareTokenOutcome(std::move(result.GetError()));
 }
 
 ChangePasswordOutcome CognitoIdentityProviderClient::ChangePassword(const ChangePasswordRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? ChangePasswordOutcome(result.GetResultWithOwnership()) : ChangePasswordOutcome(std::move(result.GetError()));
 }
 
 CompleteWebAuthnRegistrationOutcome CognitoIdentityProviderClient::CompleteWebAuthnRegistration(
     const CompleteWebAuthnRegistrationRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? CompleteWebAuthnRegistrationOutcome(result.GetResultWithOwnership())
                             : CompleteWebAuthnRegistrationOutcome(std::move(result.GetError()));
 }
 
 ConfirmDeviceOutcome CognitoIdentityProviderClient::ConfirmDevice(const ConfirmDeviceRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? ConfirmDeviceOutcome(result.GetResultWithOwnership()) : ConfirmDeviceOutcome(std::move(result.GetError()));
 }
 
 ConfirmForgotPasswordOutcome CognitoIdentityProviderClient::ConfirmForgotPassword(const ConfirmForgotPasswordRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? ConfirmForgotPasswordOutcome(result.GetResultWithOwnership())
                             : ConfirmForgotPasswordOutcome(std::move(result.GetError()));
 }
 
 ConfirmSignUpOutcome CognitoIdentityProviderClient::ConfirmSignUp(const ConfirmSignUpRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? ConfirmSignUpOutcome(result.GetResultWithOwnership()) : ConfirmSignUpOutcome(std::move(result.GetError()));
 }
 
@@ -621,12 +621,12 @@ DeleteTermsOutcome CognitoIdentityProviderClient::DeleteTerms(const DeleteTermsR
 }
 
 DeleteUserOutcome CognitoIdentityProviderClient::DeleteUser(const DeleteUserRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? DeleteUserOutcome(result.GetResultWithOwnership()) : DeleteUserOutcome(std::move(result.GetError()));
 }
 
 DeleteUserAttributesOutcome CognitoIdentityProviderClient::DeleteUserAttributes(const DeleteUserAttributesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? DeleteUserAttributesOutcome(result.GetResultWithOwnership())
                             : DeleteUserAttributesOutcome(std::move(result.GetError()));
 }
@@ -663,7 +663,7 @@ DeleteUserPoolReplicaOutcome CognitoIdentityProviderClient::DeleteUserPoolReplic
 
 DeleteWebAuthnCredentialOutcome CognitoIdentityProviderClient::DeleteWebAuthnCredential(
     const DeleteWebAuthnCredentialRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? DeleteWebAuthnCredentialOutcome(result.GetResultWithOwnership())
                             : DeleteWebAuthnCredentialOutcome(std::move(result.GetError()));
 }
@@ -738,12 +738,12 @@ DescribeUserPoolDomainOutcome CognitoIdentityProviderClient::DescribeUserPoolDom
 }
 
 ForgetDeviceOutcome CognitoIdentityProviderClient::ForgetDevice(const ForgetDeviceRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? ForgetDeviceOutcome(result.GetResultWithOwnership()) : ForgetDeviceOutcome(std::move(result.GetError()));
 }
 
 ForgotPasswordOutcome CognitoIdentityProviderClient::ForgotPassword(const ForgotPasswordRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? ForgotPasswordOutcome(result.GetResultWithOwnership()) : ForgotPasswordOutcome(std::move(result.GetError()));
 }
 
@@ -758,7 +758,7 @@ GetClientTokenOutcome CognitoIdentityProviderClient::GetClientToken(const GetCli
 }
 
 GetDeviceOutcome CognitoIdentityProviderClient::GetDevice(const GetDeviceRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? GetDeviceOutcome(result.GetResultWithOwnership()) : GetDeviceOutcome(std::move(result.GetError()));
 }
 
@@ -795,7 +795,7 @@ GetSigningCertificateOutcome CognitoIdentityProviderClient::GetSigningCertificat
 
 GetTokensFromRefreshTokenOutcome CognitoIdentityProviderClient::GetTokensFromRefreshToken(
     const GetTokensFromRefreshTokenRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? GetTokensFromRefreshTokenOutcome(result.GetResultWithOwnership())
                             : GetTokensFromRefreshTokenOutcome(std::move(result.GetError()));
 }
@@ -807,19 +807,19 @@ GetUICustomizationOutcome CognitoIdentityProviderClient::GetUICustomization(cons
 }
 
 GetUserOutcome CognitoIdentityProviderClient::GetUser(const GetUserRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? GetUserOutcome(result.GetResultWithOwnership()) : GetUserOutcome(std::move(result.GetError()));
 }
 
 GetUserAttributeVerificationCodeOutcome CognitoIdentityProviderClient::GetUserAttributeVerificationCode(
     const GetUserAttributeVerificationCodeRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? GetUserAttributeVerificationCodeOutcome(result.GetResultWithOwnership())
                             : GetUserAttributeVerificationCodeOutcome(std::move(result.GetError()));
 }
 
 GetUserAuthFactorsOutcome CognitoIdentityProviderClient::GetUserAuthFactors(const GetUserAuthFactorsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? GetUserAuthFactorsOutcome(result.GetResultWithOwnership())
                             : GetUserAuthFactorsOutcome(std::move(result.GetError()));
 }
@@ -831,17 +831,17 @@ GetUserPoolMfaConfigOutcome CognitoIdentityProviderClient::GetUserPoolMfaConfig(
 }
 
 GlobalSignOutOutcome CognitoIdentityProviderClient::GlobalSignOut(const GlobalSignOutRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? GlobalSignOutOutcome(result.GetResultWithOwnership()) : GlobalSignOutOutcome(std::move(result.GetError()));
 }
 
 InitiateAuthOutcome CognitoIdentityProviderClient::InitiateAuth(const InitiateAuthRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? InitiateAuthOutcome(result.GetResultWithOwnership()) : InitiateAuthOutcome(std::move(result.GetError()));
 }
 
 ListDevicesOutcome CognitoIdentityProviderClient::ListDevices(const ListDevicesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? ListDevicesOutcome(result.GetResultWithOwnership()) : ListDevicesOutcome(std::move(result.GetError()));
 }
 
@@ -915,25 +915,25 @@ ListUsersInGroupOutcome CognitoIdentityProviderClient::ListUsersInGroup(const Li
 }
 
 ListWebAuthnCredentialsOutcome CognitoIdentityProviderClient::ListWebAuthnCredentials(const ListWebAuthnCredentialsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? ListWebAuthnCredentialsOutcome(result.GetResultWithOwnership())
                             : ListWebAuthnCredentialsOutcome(std::move(result.GetError()));
 }
 
 ResendConfirmationCodeOutcome CognitoIdentityProviderClient::ResendConfirmationCode(const ResendConfirmationCodeRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? ResendConfirmationCodeOutcome(result.GetResultWithOwnership())
                             : ResendConfirmationCodeOutcome(std::move(result.GetError()));
 }
 
 RespondToAuthChallengeOutcome CognitoIdentityProviderClient::RespondToAuthChallenge(const RespondToAuthChallengeRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? RespondToAuthChallengeOutcome(result.GetResultWithOwnership())
                             : RespondToAuthChallengeOutcome(std::move(result.GetError()));
 }
 
 RevokeTokenOutcome CognitoIdentityProviderClient::RevokeToken(const RevokeTokenRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? RevokeTokenOutcome(result.GetResultWithOwnership()) : RevokeTokenOutcome(std::move(result.GetError()));
 }
 
@@ -957,7 +957,7 @@ SetUICustomizationOutcome CognitoIdentityProviderClient::SetUICustomization(cons
 }
 
 SetUserMFAPreferenceOutcome CognitoIdentityProviderClient::SetUserMFAPreference(const SetUserMFAPreferenceRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? SetUserMFAPreferenceOutcome(result.GetResultWithOwnership())
                             : SetUserMFAPreferenceOutcome(std::move(result.GetError()));
 }
@@ -969,13 +969,13 @@ SetUserPoolMfaConfigOutcome CognitoIdentityProviderClient::SetUserPoolMfaConfig(
 }
 
 SetUserSettingsOutcome CognitoIdentityProviderClient::SetUserSettings(const SetUserSettingsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? SetUserSettingsOutcome(result.GetResultWithOwnership())
                             : SetUserSettingsOutcome(std::move(result.GetError()));
 }
 
 SignUpOutcome CognitoIdentityProviderClient::SignUp(const SignUpRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? SignUpOutcome(result.GetResultWithOwnership()) : SignUpOutcome(std::move(result.GetError()));
 }
 
@@ -987,7 +987,7 @@ StartUserImportJobOutcome CognitoIdentityProviderClient::StartUserImportJob(cons
 
 StartWebAuthnRegistrationOutcome CognitoIdentityProviderClient::StartWebAuthnRegistration(
     const StartWebAuthnRegistrationRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? StartWebAuthnRegistrationOutcome(result.GetResultWithOwnership())
                             : StartWebAuthnRegistrationOutcome(std::move(result.GetError()));
 }
@@ -1009,13 +1009,13 @@ UntagResourceOutcome CognitoIdentityProviderClient::UntagResource(const UntagRes
 }
 
 UpdateAuthEventFeedbackOutcome CognitoIdentityProviderClient::UpdateAuthEventFeedback(const UpdateAuthEventFeedbackRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? UpdateAuthEventFeedbackOutcome(result.GetResultWithOwnership())
                             : UpdateAuthEventFeedbackOutcome(std::move(result.GetError()));
 }
 
 UpdateDeviceStatusOutcome CognitoIdentityProviderClient::UpdateDeviceStatus(const UpdateDeviceStatusRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? UpdateDeviceStatusOutcome(result.GetResultWithOwnership())
                             : UpdateDeviceStatusOutcome(std::move(result.GetError()));
 }
@@ -1056,7 +1056,7 @@ UpdateTermsOutcome CognitoIdentityProviderClient::UpdateTerms(const UpdateTermsR
 }
 
 UpdateUserAttributesOutcome CognitoIdentityProviderClient::UpdateUserAttributes(const UpdateUserAttributesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? UpdateUserAttributesOutcome(result.GetResultWithOwnership())
                             : UpdateUserAttributesOutcome(std::move(result.GetError()));
 }
@@ -1085,13 +1085,13 @@ UpdateUserPoolReplicaOutcome CognitoIdentityProviderClient::UpdateUserPoolReplic
 }
 
 VerifySoftwareTokenOutcome CognitoIdentityProviderClient::VerifySoftwareToken(const VerifySoftwareTokenRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? VerifySoftwareTokenOutcome(result.GetResultWithOwnership())
                             : VerifySoftwareTokenOutcome(std::move(result.GetError()));
 }
 
 VerifyUserAttributeOutcome CognitoIdentityProviderClient::VerifyUserAttribute(const VerifyUserAttributeRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? VerifyUserAttributeOutcome(result.GetResultWithOwnership())
                             : VerifyUserAttributeOutcome(std::move(result.GetError()));
 }
