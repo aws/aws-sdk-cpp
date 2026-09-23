@@ -118,8 +118,12 @@ class AWS_CORE_LOCAL SmithyBidirectionalStreamingWriteDataTask final {
 
     // Wire initial response handler on httpRequest (CRT reads it from here)
     std::weak_ptr<RequestT> wReq = m_request;
+    std::weak_ptr<Aws::Utils::Stream::HttpWriteDataStreamBuf> wBuf = m_writeDataStreamBuf;
     httpRequest->SetHeadersReceivedEventHandler(
-        [wReq](const Aws::Http::HttpRequest*, Aws::Http::HttpResponse* response) {
+        [wReq, wBuf](const Aws::Http::HttpRequest*, Aws::Http::HttpResponse* response) {
+          if (auto buf = wBuf.lock()) {
+            buf->NotifyResponseStarted();
+          }
           auto req = wReq.lock();
           if (!req || !response) return;
           auto& cb = req->GetEventStreamHandler().GetInitialResponseCallbackEx();

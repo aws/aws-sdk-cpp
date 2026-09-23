@@ -94,15 +94,19 @@ public:
         const std::function<void(std::shared_ptr<Aws::Http::Connection>, int)>& onClientConnectionAvailable) override {
       AWS_UNREFERENCED_PARAM(request);
       auto connection = Aws::MakeShared<MockConnection>(MockHttpAllocationTag, m_connectionTestCase);
+      m_lastConnection = connection;
       onClientConnectionAvailable(connection, m_connectionTestCase.connectionErrorCode);
       return m_connectionTestCase.connectionError;
     }
+
+  std::shared_ptr<MockConnection> GetLastConnection() const { return m_lastConnection; }
 
    private:
     mutable ConnectionTestCase m_connectionTestCase;
     mutable Aws::Vector<Aws::Http::Standard::StandardHttpRequest> m_requestsMade;
     mutable Aws::Queue<ResponseCallbackTuple> m_responsesToUse;
     mutable Aws::Queue<ResponseAndRequestCallbackTuple> m_responseAndRequestsCallback;
+    mutable std::shared_ptr<MockConnection> m_lastConnection;
 };
 
 class MockHttpClientFactory : public Aws::Http::HttpClientFactory
