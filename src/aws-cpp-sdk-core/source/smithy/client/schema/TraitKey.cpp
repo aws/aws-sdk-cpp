@@ -22,7 +22,7 @@ const TraitKey<T>& TraitKey<T>::Instance() {
   return instance;
 }
 
-#ifdef _MSC_VER
+#if defined(_MSC_VER) && defined(USE_IMPORT_EXPORT)
 #define SMITHY_TEMPLATE_EXPORT __declspec(dllexport)
 #else
 #define SMITHY_TEMPLATE_EXPORT
