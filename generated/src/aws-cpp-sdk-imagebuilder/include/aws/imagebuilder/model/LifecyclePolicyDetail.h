@@ -22,8 +22,9 @@ namespace imagebuilder {
 namespace Model {
 
 /**
- * <p>The configuration details for a lifecycle policy resource.</p><p><h3>See
- * Also:</h3>   <a
+ * <p>Defines one lifecycle policy rule: the action to take, the filter that
+ * determines which resources the rule applies to, and optional exclusion
+ * rules.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/LifecyclePolicyDetail">AWS
  * API Reference</a></p>
  */

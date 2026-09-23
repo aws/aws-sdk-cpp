@@ -23,6 +23,7 @@
 #include <aws/billing/model/ApplicationType.h>
 #include <aws/billing/model/AssociateSourceViewsRequest.h>
 #include <aws/billing/model/AssociateSourceViewsResult.h>
+#include <aws/billing/model/BillingDomain.h>
 #include <aws/billing/model/BillingFeature.h>
 #include <aws/billing/model/BillingFeatureFilter.h>
 #include <aws/billing/model/BillingFeatureFilterName.h>
@@ -32,6 +33,8 @@
 #include <aws/billing/model/BillingViewElement.h>
 #include <aws/billing/model/BillingViewHealthStatus.h>
 #include <aws/billing/model/BillingViewListElement.h>
+#include <aws/billing/model/BillingViewSegmentTimeRange.h>
+#include <aws/billing/model/BillingViewSegmentsListElement.h>
 #include <aws/billing/model/BillingViewStatus.h>
 #include <aws/billing/model/BillingViewStatusReason.h>
 #include <aws/billing/model/BillingViewType.h>
@@ -69,6 +72,9 @@
 #include <aws/billing/model/GetResourcePolicyRequest.h>
 #include <aws/billing/model/GetResourcePolicyResult.h>
 #include <aws/billing/model/LinkedAccountCharge.h>
+#include <aws/billing/model/ListBillingViewSegmentsPaginationTraits.h>
+#include <aws/billing/model/ListBillingViewSegmentsRequest.h>
+#include <aws/billing/model/ListBillingViewSegmentsResult.h>
 #include <aws/billing/model/ListBillingViewsPaginationTraits.h>
 #include <aws/billing/model/ListBillingViewsRequest.h>
 #include <aws/billing/model/ListBillingViewsResult.h>

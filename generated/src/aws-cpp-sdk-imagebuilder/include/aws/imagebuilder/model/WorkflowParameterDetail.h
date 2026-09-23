@@ -53,8 +53,9 @@ class WorkflowParameterDetail {
 
   ///@{
   /**
-   * <p>The type of input this parameter provides. The currently supported value is
-   * "string".</p>
+   * <p>The type of input this parameter provides. Supported values are
+   * <code>string</code>, <code>integer</code>, <code>boolean</code>, and
+   * <code>stringList</code>.</p>
    */
   inline const Aws::String& GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

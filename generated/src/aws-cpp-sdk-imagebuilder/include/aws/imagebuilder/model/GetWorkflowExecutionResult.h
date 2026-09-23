@@ -85,8 +85,8 @@ class GetWorkflowExecutionResult {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the image resource build version that the
-   * specified runtime instance of the workflow created.</p>
+   * <p>The Amazon Resource Name (ARN) of the image build version that owns the
+   * specified runtime instance of the workflow.</p>
    */
   inline const Aws::String& GetImageBuildVersionArn() const { return m_imageBuildVersionArn; }
   template <typename ImageBuildVersionArnT = Aws::String>
@@ -120,7 +120,9 @@ class GetWorkflowExecutionResult {
   ///@{
   /**
    * <p>The current runtime status for the specified runtime instance of the
-   * workflow.</p>
+   * workflow. <code>COMPLETED</code>, <code>FAILED</code>,
+   * <code>ROLLBACK_COMPLETED</code>, <code>CANCELLED</code>, and
+   * <code>SKIPPED</code> are terminal states.</p>
    */
   inline WorkflowExecutionStatus GetStatus() const { return m_status; }
   inline void SetStatus(WorkflowExecutionStatus value) {
@@ -153,9 +155,10 @@ class GetWorkflowExecutionResult {
 
   ///@{
   /**
-   * <p>The total number of steps in the specified runtime instance of the workflow
-   * that ran. This number should equal the sum of the step counts for steps that
-   * succeeded, were skipped, and failed.</p>
+   * <p>The total number of steps that the workflow document defines for this runtime
+   * instance of the workflow. Image Builder sets this count before any steps run.
+   * The sum of succeeded, skipped, and failed steps only reaches this total if every
+   * step finishes in one of those states.</p>
    */
   inline int GetTotalStepCount() const { return m_totalStepCount; }
   inline void SetTotalStepCount(int value) {
@@ -254,8 +257,8 @@ class GetWorkflowExecutionResult {
 
   ///@{
   /**
-   * <p>Test workflows are defined within named runtime groups. The parallel group is
-   * a named group that contains one or more test workflows.</p>
+   * <p>The name of the parallel group that this runtime instance of the workflow ran
+   * in, if configured. Parallel groups apply only to test workflows.</p>
    */
   inline const Aws::String& GetParallelGroup() const { return m_parallelGroup; }
   template <typename ParallelGroupT = Aws::String>

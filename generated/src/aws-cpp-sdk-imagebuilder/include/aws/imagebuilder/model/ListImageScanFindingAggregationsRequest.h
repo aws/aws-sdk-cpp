@@ -30,7 +30,14 @@ class ListImageScanFindingAggregationsRequest : public ImagebuilderRequest {
   AWS_IMAGEBUILDER_API Aws::String SerializePayload() const override;
 
   ///@{
-
+  /**
+   * <p>A filter name and value pair that determines the type of aggregation that
+   * Image Builder returns. Use one of the following filter names:</p> <ul> <li> <p>
+   * <code>imageBuildVersionArn</code> </p> </li> <li> <p>
+   * <code>imagePipelineArn</code> </p> </li> <li> <p> <code>vulnerabilityId</code>
+   * </p> </li> </ul> <p>If you don't specify a filter, Image Builder returns an
+   * aggregation for your account.</p>
+   */
   inline const Filter& GetFilter() const { return m_filter; }
   inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
   template <typename FilterT = Filter>

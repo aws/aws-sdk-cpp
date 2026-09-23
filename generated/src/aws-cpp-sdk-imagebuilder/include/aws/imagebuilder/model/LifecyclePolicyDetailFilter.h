@@ -35,7 +35,8 @@ class LifecyclePolicyDetailFilter {
 
   ///@{
   /**
-   * <p>Filter resources based on either <code>age</code> or <code>count</code>.</p>
+   * <p>Filter resources based on either <code>AGE</code> or <code>COUNT</code>. You
+   * can only use the count filter with the <code>DELETE</code> action type.</p>
    */
   inline LifecyclePolicyDetailFilterType GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

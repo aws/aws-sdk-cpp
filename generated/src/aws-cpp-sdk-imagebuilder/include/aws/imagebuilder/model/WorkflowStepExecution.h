@@ -20,8 +20,9 @@ namespace imagebuilder {
 namespace Model {
 
 /**
- * <p>Contains runtime details for an instance of a workflow that ran for the
- * associated image build version.</p><p><h3>See Also:</h3>   <a
+ * <p>Contains runtime details for a workflow step that has paused at a
+ * <code>WaitForAction</code> step, and is waiting for you to send an
+ * action.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/WorkflowStepExecution">AWS
  * API Reference</a></p>
  */

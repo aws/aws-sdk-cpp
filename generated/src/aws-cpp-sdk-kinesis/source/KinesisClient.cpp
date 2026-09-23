@@ -64,6 +64,7 @@
 #include <aws/kinesis/model/UpdateMaxRecordSizeRequest.h>
 #include <aws/kinesis/model/UpdateShardCountRequest.h>
 #include <aws/kinesis/model/UpdateStreamModeRequest.h>
+#include <aws/kinesis/model/UpdateStreamRecordDistributionStrategyRequest.h>
 #include <aws/kinesis/model/UpdateStreamWarmThroughputRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
@@ -493,6 +494,13 @@ UpdateStreamModeOutcome KinesisClient::UpdateStreamMode(const UpdateStreamModeRe
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateStreamModeOutcome(result.GetResultWithOwnership())
                             : UpdateStreamModeOutcome(std::move(result.GetError()));
+}
+
+UpdateStreamRecordDistributionStrategyOutcome KinesisClient::UpdateStreamRecordDistributionStrategy(
+    const UpdateStreamRecordDistributionStrategyRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateStreamRecordDistributionStrategyOutcome(result.GetResultWithOwnership())
+                            : UpdateStreamRecordDistributionStrategyOutcome(std::move(result.GetError()));
 }
 
 UpdateStreamWarmThroughputOutcome KinesisClient::UpdateStreamWarmThroughput(const UpdateStreamWarmThroughputRequest& request) const {

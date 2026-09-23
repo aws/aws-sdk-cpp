@@ -169,7 +169,9 @@ class ComponentSummary {
 
   ///@{
   /**
-   * <p>The owner of the component.</p>
+   * <p>The owner of the component. The value is your account ID for components that
+   * you own, the sharing account's ID for shared components, or <code>Amazon</code>,
+   * <code>ThirdParty</code>, or <code>AWSMarketplace</code>.</p>
    */
   inline const Aws::String& GetOwner() const { return m_owner; }
   inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
@@ -205,7 +207,7 @@ class ComponentSummary {
 
   ///@{
   /**
-   * <p>The change description for the current version of the component.</p>
+   * <p>The change description for this version of the component.</p>
    */
   inline const Aws::String& GetChangeDescription() const { return m_changeDescription; }
   inline bool ChangeDescriptionHasBeenSet() const { return m_changeDescriptionHasBeenSet; }
@@ -223,7 +225,7 @@ class ComponentSummary {
 
   ///@{
   /**
-   * <p>The original creation date of the component.</p>
+   * <p>The date that Image Builder created this version of the component.</p>
    */
   inline const Aws::String& GetDateCreated() const { return m_dateCreated; }
   inline bool DateCreatedHasBeenSet() const { return m_dateCreatedHasBeenSet; }

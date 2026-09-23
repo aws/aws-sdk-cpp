@@ -38,7 +38,7 @@ class LifecyclePolicySummary {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the lifecycle policy summary resource.</p>
+   * <p>The Amazon Resource Name (ARN) of the lifecycle policy.</p>
    */
   inline const Aws::String& GetArn() const { return m_arn; }
   inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }

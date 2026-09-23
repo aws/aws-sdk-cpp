@@ -32,7 +32,9 @@ class ListWaitingWorkflowStepsResult {
   ///@{
   /**
    * <p>An array of the workflow steps that are waiting for action in your Amazon Web
-   * Services account.</p>
+   * Services account. Each step is paused at a <code>WaitForAction</code> step, and
+   * remains in the list until you respond with <a>SendWorkflowStepAction</a> or the
+   * wait times out.</p>
    */
   inline const Aws::Vector<WorkflowStepExecution>& GetSteps() const { return m_steps; }
   template <typename StepsT = Aws::Vector<WorkflowStepExecution>>

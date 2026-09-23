@@ -30,8 +30,10 @@ class ListComponentBuildVersionsRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The component version Amazon Resource Name (ARN) whose versions you want to
-   * list.</p>
+   * <p>The component version ARN whose build versions you want to list. The ARN must
+   * specify an exact version, without a build number suffix. If you don't specify an
+   * ARN, Image Builder returns build versions for the components that your account
+   * owns.</p>
    */
   inline const Aws::String& GetComponentVersionArn() const { return m_componentVersionArn; }
   inline bool ComponentVersionArnHasBeenSet() const { return m_componentVersionArnHasBeenSet; }

@@ -21,7 +21,7 @@ namespace Model {
 
 /**
  * <p>Identifies the launch template that the associated Windows AMI uses for
- * launching an instance when faster launching is enabled.</p>  <p>You can
+ * launching an instance when Windows fast launch is enabled.</p>  <p>You can
  * specify either the <code>launchTemplateName</code> or the
  * <code>launchTemplateId</code>, but not both.</p> <p><h3>See Also:</h3>
  * <a
@@ -37,7 +37,7 @@ class FastLaunchLaunchTemplateSpecification {
 
   ///@{
   /**
-   * <p>The ID of the launch template to use for faster launching for a Windows
+   * <p>The ID of the launch template to use for Windows fast launch for a Windows
    * AMI.</p>
    */
   inline const Aws::String& GetLaunchTemplateId() const { return m_launchTemplateId; }
@@ -56,7 +56,7 @@ class FastLaunchLaunchTemplateSpecification {
 
   ///@{
   /**
-   * <p>The name of the launch template to use for faster launching for a Windows
+   * <p>The name of the launch template to use for Windows fast launch for a Windows
    * AMI.</p>
    */
   inline const Aws::String& GetLaunchTemplateName() const { return m_launchTemplateName; }
@@ -75,8 +75,8 @@ class FastLaunchLaunchTemplateSpecification {
 
   ///@{
   /**
-   * <p>The version of the launch template to use for faster launching for a Windows
-   * AMI.</p>
+   * <p>The version of the launch template to use for Windows fast launch for a
+   * Windows AMI.</p>
    */
   inline const Aws::String& GetLaunchTemplateVersion() const { return m_launchTemplateVersion; }
   inline bool LaunchTemplateVersionHasBeenSet() const { return m_launchTemplateVersionHasBeenSet; }

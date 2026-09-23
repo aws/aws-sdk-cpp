@@ -17,8 +17,12 @@ namespace Aws {
 namespace imagebuilder {
 /**
  * <p>EC2 Image Builder automates the creation, management, and deployment of
- * customized, secure, and up-to-date "golden" server images that are pre-installed
- * and pre-configured with software and settings to meet specific IT standards.</p>
+ * customized, secure, and up-to-date server images. You can build Amazon Machine
+ * Images (AMIs) and container images that are pre-installed and pre-configured
+ * with software and settings to meet specific IT standards.</p> <p>For an
+ * introduction to the service concepts that these API operations work with, see <a
+ * href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/how-image-builder-works.html">How
+ * Image Builder works</a> in the <i>EC2 Image Builder User Guide</i>.</p>
  */
 class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClient,
                                                 public Aws::Client::ClientWithAsyncTemplateMethods<ImagebuilderClient>,
@@ -82,7 +86,11 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
 
   /**
    * <p>Cancels the creation of an image. This operation can only be used on images
-   * in a non-terminal state.</p><p><h3>See Also:</h3>   <a
+   * in a non-terminal state. Cancellation is asynchronous: the request returns
+   * immediately, then Image Builder stops the running build and moves the image to
+   * the <code>CANCELLED</code> state. Output resources that the build already
+   * created, such as AMIs and snapshots, aren't removed.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CancelImageCreation">AWS
    * API Reference</a></p>
    */
@@ -108,7 +116,10 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Cancels a specific image lifecycle policy runtime instance.</p><p><h3>See
+   * <p>Cancels a lifecycle execution – a single run of lifecycle actions that a
+   * lifecycle policy or a <a>StartResourceStateUpdate</a> request started. You can
+   * only cancel an execution that hasn't reached a terminal state. Cancellation is
+   * asynchronous and doesn't undo completed lifecycle actions.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CancelLifecycleExecution">AWS
    * API Reference</a></p>
@@ -141,7 +152,10 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
    * exactly one of the following methods:</p> <ul> <li> <p>Inline, using the
    * <code>data</code> property in the request body.</p> </li> <li> <p>A URL that
    * points to a YAML document file stored in Amazon S3, using the <code>uri</code>
-   * property in the request body.</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * property in the request body.</p> </li> </ul> <p>Image Builder determines the
+   * component type from the document. If the document contains a single phase named
+   * <code>test</code>, the component type is <code>TEST</code>. Otherwise, the
+   * component type is <code>BUILD</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateComponent">AWS
    * API Reference</a></p>
    */
@@ -194,7 +208,8 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
 
   /**
    * <p>Creates a new distribution configuration. Distribution configurations define
-   * and configure the outputs of your pipeline.</p><p><h3>See Also:</h3>   <a
+   * and configure the outputs for your images, including the target Regions,
+   * accounts, and settings for each Region.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateDistributionConfiguration">AWS
    * API Reference</a></p>
    */
@@ -225,8 +240,12 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   /**
    * <p>Creates a new image along with all configured output resources defined in the
    * distribution configuration. You must specify exactly one recipe for your image,
-   * using either a ContainerRecipeArn or an ImageRecipeArn.</p><p><h3>See Also:</h3>
-   * <a
+   * using either a <code>containerRecipeArn</code> or an
+   * <code>imageRecipeArn</code>.</p> <p>The response returns as soon as Image
+   * Builder creates the new image resource. The image build process runs
+   * asynchronously. To check its progress, call <a
+   * href="https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetImage.html">GetImage</a>
+   * and check the image status.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateImage">AWS
    * API Reference</a></p>
    */
@@ -252,7 +271,9 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
 
   /**
    * <p>Creates a new image pipeline. Use image pipelines to automate the creation
-   * and distribution of images.</p><p><h3>See Also:</h3>   <a
+   * and distribution of images. You must specify exactly one recipe for the
+   * pipeline, using either a <code>containerRecipeArn</code> or an
+   * <code>imageRecipeArn</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateImagePipeline">AWS
    * API Reference</a></p>
    */
@@ -362,8 +383,12 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Creates a new workflow or a new version of an existing
-   * workflow.</p><p><h3>See Also:</h3>   <a
+   * <p>Creates a new workflow or a new version of an existing workflow. If a
+   * workflow with the same name and semantic version already exists, and your
+   * request changes its configuration, Image Builder creates a new build version. If
+   * the configuration is identical to the latest build version, the request fails
+   * because that workflow configuration already exists.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateWorkflow">AWS
    * API Reference</a></p>
    */
@@ -388,7 +413,10 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Deletes a component build version.</p><p><h3>See Also:</h3>   <a
+   * <p>Deletes a component build version. The request fails with
+   * <code>ResourceDependencyException</code> if an image recipe or container recipe
+   * references this component version. It also fails if the component build version
+   * is shared with other accounts.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteComponent">AWS
    * API Reference</a></p>
    */
@@ -413,7 +441,9 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Deletes a container recipe.</p><p><h3>See Also:</h3>   <a
+   * <p>Deletes a container recipe. The request fails with
+   * <code>ResourceDependencyException</code> if the recipe is shared with other
+   * accounts, or if an image pipeline references it.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteContainerRecipe">AWS
    * API Reference</a></p>
    */
@@ -439,7 +469,10 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Deletes a distribution configuration.</p><p><h3>See Also:</h3>   <a
+   * <p>Deletes a distribution configuration. You can't delete a configuration that
+   * an image pipeline still references. The request fails with
+   * <code>ResourceDependencyException</code>. Update or delete the referencing
+   * pipelines first.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteDistributionConfiguration">AWS
    * API Reference</a></p>
    */
@@ -471,8 +504,12 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
    * <p>Deletes an Image Builder image resource. This does not delete any EC2 AMIs or
    * ECR container images that are created during the image build process. You must
    * clean those up separately, using the appropriate Amazon EC2 or Amazon ECR
-   * console actions, or API or CLI commands.</p> <ul> <li> <p>To deregister an EC2
-   * Linux AMI, see <a
+   * console actions, or API or CLI commands.</p> <p>The request fails with
+   * <code>ResourceDependencyException</code> if the image is shared with other
+   * accounts, or if other resources depend on it. It also fails while the image
+   * build is still running. Cancel an in-progress build with
+   * <a>CancelImageCreation</a> before you delete the image.</p> <ul> <li> <p>To
+   * deregister an EC2 Linux AMI, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html">Deregister
    * your Linux AMI</a> in the <i> <i>Amazon EC2 User Guide</i> </i>.</p> </li> <li>
    * <p>To deregister an EC2 Windows AMI, see <a
@@ -506,7 +543,10 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Deletes an image pipeline.</p><p><h3>See Also:</h3>   <a
+   * <p>Deletes an image pipeline. Images that the pipeline created aren't deleted -
+   * remove those separately with <a>DeleteImage</a>. You can delete a pipeline while
+   * a build that it started is still running. The build continues
+   * independently.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteImagePipeline">AWS
    * API Reference</a></p>
    */
@@ -558,7 +598,10 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Deletes an infrastructure configuration.</p><p><h3>See Also:</h3>   <a
+   * <p>Deletes an infrastructure configuration. You can't delete a configuration
+   * that an image pipeline still references. The request fails with
+   * <code>ResourceDependencyException</code>. Update or delete the referencing
+   * pipelines first.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteInfrastructureConfiguration">AWS
    * API Reference</a></p>
    */
@@ -587,8 +630,11 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Deletes the specified lifecycle policy resource.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Deletes the specified lifecycle policy resource. Deleting the policy removes
+   * its schedule, so no further lifecycle runs occur for that policy. If a lifecycle
+   * execution is in progress for the policy, Image Builder cancels it. Deletion
+   * doesn't revert actions that the policy already applied to your
+   * resources.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteLifecyclePolicy">AWS
    * API Reference</a></p>
    */
@@ -614,7 +660,9 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Deletes a specific workflow resource.</p><p><h3>See Also:</h3>   <a
+   * <p>Deletes a specific workflow resource. You can't delete a workflow build
+   * version while an image pipeline references it. The request fails with
+   * <code>ResourceDependencyException</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteWorkflow">AWS
    * API Reference</a></p>
    */
@@ -955,8 +1003,9 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Retrieves the runtime information for a specific runtime instance of the
-   * lifecycle policy.</p><p><h3>See Also:</h3>   <a
+   * <p>Retrieves runtime information for a lifecycle execution – a single run of
+   * lifecycle actions that a lifecycle policy or a <a>StartResourceStateUpdate</a>
+   * request started.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetLifecycleExecution">AWS
    * API Reference</a></p>
    */
@@ -1010,9 +1059,10 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
 
   /**
    * <p>Verifies the subscription and performs resource dependency checks on the
-   * requested Amazon Web Services Marketplace resource. For Amazon Web Services
-   * Marketplace components, the response contains fields to download the components
-   * and their artifacts.</p><p><h3>See Also:</h3>   <a
+   * requested Amazon Web Services Marketplace resource. The caller must be entitled
+   * to the resource. For Amazon Web Services Marketplace components, the response
+   * contains fields to download the components and their artifacts.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetMarketplaceResource">AWS
    * API Reference</a></p>
    */
@@ -1119,8 +1169,9 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Imports a component and transforms its data into a component
-   * document.</p><p><h3>See Also:</h3>   <a
+   * <p>Imports a component and transforms its data into a component document. For
+   * the <code>SHELL</code> format, Image Builder wraps your script in a component
+   * document with a single step that runs the script.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImportComponent">AWS
    * API Reference</a></p>
    */
@@ -1147,7 +1198,11 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   /**
    * <p>Imports a Windows operating system image from a verified Microsoft ISO disk
    * file. The following disk images are supported:</p> <ul> <li> <p>Windows 11
-   * Enterprise</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * Enterprise</p> </li> </ul> <p>The response returns as soon as Image Builder
+   * creates the new image resource in the <code>PENDING</code> state. The conversion
+   * from ISO file to AMI then runs asynchronously on an EC2 instance that Image
+   * Builder launches with the specified infrastructure configuration.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImportDiskImage">AWS
    * API Reference</a></p>
    */
@@ -1172,17 +1227,17 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>When you export your virtual machine (VM) from its virtualization
-   * environment, that process creates a set of one or more disk container files that
-   * act as snapshots of your VM’s environment, settings, and data. The Amazon EC2
-   * API <a
+   * <p>Creates an Image Builder image resource from an Amazon EC2 VM import task.
+   * The response returns as soon as Image Builder creates the image resource in the
+   * <code>PENDING</code> state. Image Builder then monitors the import task
+   * asynchronously. When the task completes, Image Builder records the AMI that it
+   * produced as the new image's output resource and marks the image
+   * <code>AVAILABLE</code>. You can then use the imported image as the base image
+   * for your recipes.</p> <p>To create the VM import task, use the Amazon EC2 API <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportImage.html">ImportImage</a>
-   * action uses those files to import your VM and create an AMI. To import using the
-   * CLI command, see <a
+   * operation, or the <a
    * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html">import-image</a>
-   * </p> <p>You can reference the task ID from the VM import to pull in the AMI that
-   * the import created as the base image for your Image Builder
-   * recipe.</p><p><h3>See Also:</h3>   <a
+   * CLI command.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImportVmImage">AWS
    * API Reference</a></p>
    */
@@ -1207,8 +1262,10 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Returns the list of component build versions for the specified component
-   * version Amazon Resource Name (ARN).</p><p><h3>See Also:</h3>   <a
+   * <p>Returns a list of component build versions for the specified component
+   * version ARN. You can only list build versions for components that your account
+   * owns. Deprecated build versions aren't included in the results.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListComponentBuildVersions">AWS
    * API Reference</a></p>
    */
@@ -1237,10 +1294,10 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Returns the list of components that can be filtered by name, or by using the
-   * listed <code>filters</code> to streamline results. Newly created components can
-   * take up to two minutes to appear in the ListComponents API Results.</p>
-   * <p>The semantic version has four nodes:
+   * <p>Returns the list of components that you have access to. By default, the
+   * response doesn't include components in the <code>DEPRECATED</code> state. To
+   * list deprecated components, use the <code>status</code> filter with the value
+   * <code>DEPRECATED</code>.</p>  <p>The semantic version has four nodes:
    * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
    * for the first three, and can filter on all of them.</p> <p> <b>Filtering:</b>
    * You can use wildcards (x) to specify the most recent versions or nodes when
@@ -1471,8 +1528,7 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
    * might specify your pipeline with the <code>imagePipelineArn</code> filter. If
    * you don't specify a filter, Image Builder returns an aggregation for your
    * account.</p> <p>To streamline results, you can use the following filters in your
-   * request:</p> <ul> <li> <p> <code>accountId</code> </p> </li> <li> <p>
-   * <code>imageBuildVersionArn</code> </p> </li> <li> <p>
+   * request:</p> <ul> <li> <p> <code>imageBuildVersionArn</code> </p> </li> <li> <p>
    * <code>imagePipelineArn</code> </p> </li> <li> <p> <code>vulnerabilityId</code>
    * </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageScanFindingAggregations">AWS
@@ -1503,8 +1559,9 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Returns a list of image scan findings for your account.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Returns a list of image scan findings for your account. Amazon Inspector
+   * generates the findings when it scans images that have scanning
+   * enabled.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageScanFindings">AWS
    * API Reference</a></p>
    */
@@ -1531,9 +1588,8 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Returns the list of images that you have access to. Newly created images can
-   * take up to two minutes to appear in the ListImages API Results.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Returns the list of images that you have access to.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImages">AWS
    * API Reference</a></p>
    */
@@ -1702,8 +1758,10 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Retrieves a list of workflow steps that are waiting for action for workflows
-   * in your Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
+   * <p>Lists the workflow steps in your Amazon Web Services account that have paused
+   * at a <code>WaitForAction</code> step, and are waiting for you to respond. To
+   * send a response, call <a>SendWorkflowStepAction</a>.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWaitingWorkflowSteps">AWS
    * API Reference</a></p>
    */
@@ -1819,8 +1877,9 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Lists workflow build versions based on filtering parameters.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Lists workflow versions based on filtering parameters. To list the build
+   * versions of a specific workflow version, call
+   * <a>ListWorkflowBuildVersions</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWorkflows">AWS
    * API Reference</a></p>
    */
@@ -1846,12 +1905,14 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Applies a policy to a component. To share resources, call the RAM API <a
+   * <p>Applies a policy to a component. The preferred way to share resources is with
+   * the RAM API <a
    * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>.
-   * If you call this API, you must also call the RAM API <a
-   * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
-   * so that the resource is visible to all principals with whom the resource is
-   * shared.</p><p><h3>See Also:</h3>   <a
+   * If you use the PutComponentPolicy operation instead, you must also call the RAM
+   * API <a
+   * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>.
+   * Otherwise, the resource isn't visible to the principals that it's shared
+   * with.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutComponentPolicy">AWS
    * API Reference</a></p>
    */
@@ -1877,13 +1938,14 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Applies a policy to a container image. To share resources, call the RAM API
-   * <a
+   * <p>Applies a policy to a container recipe. The preferred way to share resources
+   * is with the RAM API <a
    * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>.
-   * If you call this API, you must also call the RAM API <a
-   * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
-   * so that the resource is visible to all principals with whom the resource is
-   * shared.</p><p><h3>See Also:</h3>   <a
+   * If you use the PutContainerRecipePolicy operation instead, you must also call
+   * the RAM API <a
+   * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>.
+   * Otherwise, the resource isn't visible to the principals that it's shared
+   * with.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutContainerRecipePolicy">AWS
    * API Reference</a></p>
    */
@@ -1910,12 +1972,14 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Applies a policy to an image. To share resources, call the RAM API <a
+   * <p>Applies a policy to an image. The preferred way to share resources is with
+   * the RAM API <a
    * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>.
-   * If you call this API, you must also call the RAM API <a
-   * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
-   * so that the resource is visible to all principals with whom the resource is
-   * shared.</p><p><h3>See Also:</h3>   <a
+   * If you use the PutImagePolicy operation instead, you must also call the RAM API
+   * <a
+   * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>.
+   * Otherwise, the resource isn't visible to the principals that it's shared
+   * with.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutImagePolicy">AWS
    * API Reference</a></p>
    */
@@ -1940,12 +2004,14 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Applies a policy to an image recipe. To share resources, call the RAM API <a
+   * <p>Applies a policy to an image recipe. The preferred way to share resources is
+   * with the RAM API <a
    * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>.
-   * If you call this API, you must also call the RAM API <a
-   * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
-   * so that the resource is visible to all principals with whom the resource is
-   * shared.</p><p><h3>See Also:</h3>   <a
+   * If you use the PutImageRecipePolicy operation instead, you must also call the
+   * RAM API <a
+   * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>.
+   * Otherwise, the resource isn't visible to the principals that it's shared
+   * with.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutImageRecipePolicy">AWS
    * API Reference</a></p>
    */
@@ -1971,8 +2037,11 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Retries an image distribution or test without rebuilding the
-   * image.</p><p><h3>See Also:</h3>   <a
+   * <p>Retries a failed or canceled image build without rebuilding the phases that
+   * already completed. The image re-runs asynchronously in place: the same build
+   * version returns to the test or distribution phase where it failed and continues
+   * from there. No new image build version is created. Retry is only supported for
+   * AMI-based images.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/RetryImage">AWS
    * API Reference</a></p>
    */
@@ -1997,8 +2066,10 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Pauses or resumes image creation when the associated workflow runs a
-   * <code>WaitForAction</code> step.</p><p><h3>See Also:</h3>   <a
+   * <p>Sends an action to a workflow step that has paused at a
+   * <code>WaitForAction</code> step, so that image creation can continue. To find
+   * the steps that are waiting for an action, call
+   * <a>ListWaitingWorkflowSteps</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/SendWorkflowStepAction">AWS
    * API Reference</a></p>
    */
@@ -2025,8 +2096,11 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Manually triggers a pipeline to create an image.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Manually triggers a pipeline to create an image. You can start a build this
+   * way whether the pipeline is enabled or disabled. The response returns as soon as
+   * Image Builder creates the new image resource and queues the build. Use the
+   * returned <code>imageBuildVersionArn</code> with <a>GetImage</a> to track build
+   * progress.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/StartImagePipelineExecution">AWS
    * API Reference</a></p>
    */
@@ -2055,8 +2129,14 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Begins an asynchronous resource state update for lifecycle changes to the
-   * specified image resources.</p><p><h3>See Also:</h3>   <a
+   * <p>Begins an ad-hoc state change for the specified image build version. This is
+   * a one-time operation - if you schedule the update, it runs only once. If the
+   * request includes underlying resources, or schedules the update far enough in the
+   * future, Image Builder runs the update as an asynchronous lifecycle execution and
+   * returns its identifier. Otherwise, for target states other than
+   * <code>DELETED</code>, the state change applies immediately. If a request that
+   * starts a lifecycle execution arrives while the image already has one in
+   * progress, Image Builder rejects it.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/StartResourceStateUpdate">AWS
    * API Reference</a></p>
    */
@@ -2134,7 +2214,10 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
 
   /**
    * <p>Updates a distribution configuration. Distribution configurations define and
-   * configure the outputs of your pipeline.</p><p><h3>See Also:</h3>   <a
+   * configure the outputs for your images, including the target Regions, accounts,
+   * and settings for each Region.</p>  <p>This operation doesn't support
+   * selective updates. The request replaces the stored configuration, so include
+   * every setting that you want to keep.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateDistributionConfiguration">AWS
    * API Reference</a></p>
    */
@@ -2166,10 +2249,12 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
    * <p>Updates an image pipeline. Use image pipelines to automate the creation and
    * distribution of images. You must specify exactly one recipe for your image,
    * using either a <code>containerRecipeArn</code> or an
-   * <code>imageRecipeArn</code>.</p>  <p>UpdateImagePipeline does not support
-   * selective updates for the pipeline. You must specify all of the required
-   * properties in the update request, not just the properties that have changed.</p>
-   * <p><h3>See Also:</h3>   <a
+   * <code>imageRecipeArn</code>. The recipe must be the same type, image or
+   * container, as the pipeline's current recipe.</p>  <p>UpdateImagePipeline
+   * does not support selective updates. The request replaces the pipeline's entire
+   * configuration, so include every setting that you want to keep. Any optional
+   * property that you omit is removed or reset to its default.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateImagePipeline">AWS
    * API Reference</a></p>
    */
@@ -2196,8 +2281,10 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
 
   /**
    * <p>Updates an infrastructure configuration. An infrastructure configuration
-   * defines the environment in which Image Builder builds and tests your
-   * image.</p><p><h3>See Also:</h3>   <a
+   * defines the environment in which Image Builder builds and tests your image.</p>
+   *  <p>This operation doesn't support selective updates. The request replaces
+   * the configuration, so include every setting that you want to keep. Omitted
+   * optional properties are cleared.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateInfrastructureConfiguration">AWS
    * API Reference</a></p>
    */
@@ -2226,7 +2313,10 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Updates the specified lifecycle policy.</p><p><h3>See Also:</h3>   <a
+   * <p>Updates the specified lifecycle policy. The request replaces the existing
+   * policy configuration rather than merging changes, so re-specify every setting
+   * that you want to keep. The <code>resourceType</code> must match the existing
+   * policy's value.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateLifecyclePolicy">AWS
    * API Reference</a></p>
    */

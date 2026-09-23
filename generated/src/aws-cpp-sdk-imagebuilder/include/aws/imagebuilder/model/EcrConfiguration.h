@@ -36,12 +36,12 @@ class EcrConfiguration {
 
   ///@{
   /**
-   * <p>The name of the container repository that Amazon Inspector scans to identify
-   * findings for your container images. The name includes the path for the
-   * repository location. If you don’t provide this information, Image Builder
-   * creates a repository in your account named
-   * <code>image-builder-image-scanning-repository</code> for vulnerability scans of
-   * your output container images.</p>
+   * <p>The name of the container repository where Image Builder pushes the container
+   * image for the vulnerability scan. Provide the repository name only (a namespace
+   * path is allowed, but not the registry hostname); the repository must already
+   * exist in your account. If you don't specify a repository name, Image Builder
+   * creates the default repository
+   * <code>image-builder-image-scanning-repository</code> in your account.</p>
    */
   inline const Aws::String& GetRepositoryName() const { return m_repositoryName; }
   inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }

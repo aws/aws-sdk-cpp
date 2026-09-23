@@ -46,8 +46,10 @@ class ImportDiskImageResult {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the output AMI that was created from the
-   * ISO disk file.</p>
+   * <p>The Amazon Resource Name (ARN) of the Image Builder image resource that this
+   * request created. The AMI doesn't exist yet when the response returns. The import
+   * runs asynchronously, and the output AMI appears in the image's output resources
+   * when the import completes.</p>
    */
   inline const Aws::String& GetImageBuildVersionArn() const { return m_imageBuildVersionArn; }
   template <typename ImageBuildVersionArnT = Aws::String>

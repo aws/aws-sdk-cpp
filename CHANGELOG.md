@@ -1,3 +1,21 @@
+# 1.11.899 (2026-09-23)
+
+## SDK Highlights
+* **Bug Fix**: fix noauth in operations that support it
+* **Bug Fix**: fix static linking on msvc
+* **Bug Fix**: Bidirectional streaming timeout
+
+## Service Updates
+* **Billing**: Added the ListBillingViewSegments API, which returns billing view segment information for a specified billing view ARN and time range. This API enables customers and integrated tools to programmatically determine the billing context of their accounts.
+* **ConnectHealth**: Multi language support with code switching, custom template sectionHeader now allows underscores.
+* **Kinesis**: Amazon Kinesis Data Streams now supports service managed record distribution for on demand streams. Set the record distribution strategy to AUTO to evenly distribute records across shards. Configure it at stream creation with CreateStream or update anytime with UpdateStreamRecordDistributionStrategy
+* **Lex Models V2**: Adds support for speaker diarization on Amazon Lex V2 bot locales. Speaker diarization keeps your bot on the primary (loudest) speaker during a streaming voice conversation, so background voices do not start a turn or interrupt a prompt.
+* **MediaConvert**: This release adds support for SMPTE 337M audio passthrough, compositing up to five motion graphic overlays in a single output, and controlling how passthrough video is segmented in ABR outputs. It also adds 3GP, 3G2, AAC, AC-3, and E-AC-3 as supported input containers for the Probe operation.
+* **MediaPackageV2**: This release adds support for signalling start and end in the ContentKeyPeriod element in key request from MediaPackageV2
+* **Network Security Manager**: AWS Network Security Manager is a new service that helps you centrally configure, deploy, and continuously enforce security policies on network security services across the accounts and resources in your AWS Organization.
+* **Payment Cryptography Data**: Adds asymmetric key support to ReEncryptData for re-encrypting data between RSA and symmetric data encryption keys.
+* **imagebuilder**: Documentation update for EC2 Image Builder - adds API request and response examples for all operations, improves descriptions throughout, and corrects response field patterns for image versions and workflow ARNs.
+
 # 1.11.898 (2026-09-22)
 
 ## Service Updates

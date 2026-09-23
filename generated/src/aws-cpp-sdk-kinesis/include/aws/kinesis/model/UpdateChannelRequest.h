@@ -58,8 +58,9 @@ class UpdateChannelRequest : public KinesisRequest {
 
   ///@{
   /**
-   * <p>The updated configuration for a general purpose Amazon S3 destination. Only
-   * <code>DataFreshnessInSeconds</code> can be updated.</p>
+   * <p>The updated configuration for a general purpose Amazon S3 destination.
+   * Specify this parameter when the channel delivers to a general purpose Amazon S3
+   * bucket. Only <code>DataFreshnessInSeconds</code> can be updated.</p>
    */
   inline const S3DestinationUpdateInput& GetS3DestinationConfiguration() const { return m_s3DestinationConfiguration; }
   inline bool S3DestinationConfigurationHasBeenSet() const { return m_s3DestinationConfigurationHasBeenSet; }
@@ -77,8 +78,9 @@ class UpdateChannelRequest : public KinesisRequest {
 
   ///@{
   /**
-   * <p>The updated configuration for a streaming table destination. Only
-   * <code>DataFreshnessInSeconds</code> can be updated.</p>
+   * <p>The updated configuration for a streaming table destination. Specify this
+   * parameter when the channel delivers to streaming tables on Apache Iceberg in
+   * Amazon S3 Tables. Only <code>DataFreshnessInSeconds</code> can be updated.</p>
    */
   inline const S3TablesDestinationUpdateInput& GetS3TablesDestinationConfiguration() const { return m_s3TablesDestinationConfiguration; }
   inline bool S3TablesDestinationConfigurationHasBeenSet() const { return m_s3TablesDestinationConfigurationHasBeenSet; }

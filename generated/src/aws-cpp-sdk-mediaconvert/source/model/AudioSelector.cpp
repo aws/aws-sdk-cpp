@@ -66,6 +66,10 @@ AudioSelector& AudioSelector::operator=(JsonView jsonValue) {
     m_selectorType = AudioSelectorTypeMapper::GetAudioSelectorTypeForName(jsonValue.GetString("selectorType"));
     m_selectorTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("smpte337Passthrough")) {
+    m_smpte337Passthrough = AudioSmpte337PassthroughMapper::GetAudioSmpte337PassthroughForName(jsonValue.GetString("smpte337Passthrough"));
+    m_smpte337PassthroughHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("streams")) {
     Aws::Utils::Array<JsonView> streamsJsonList = jsonValue.GetArray("streams");
     for (unsigned streamsIndex = 0; streamsIndex < streamsJsonList.GetLength(); ++streamsIndex) {
@@ -133,6 +137,10 @@ JsonValue AudioSelector::Jsonize() const {
 
   if (m_selectorTypeHasBeenSet) {
     payload.WithString("selectorType", AudioSelectorTypeMapper::GetNameForAudioSelectorType(m_selectorType));
+  }
+
+  if (m_smpte337PassthroughHasBeenSet) {
+    payload.WithString("smpte337Passthrough", AudioSmpte337PassthroughMapper::GetNameForAudioSmpte337Passthrough(m_smpte337Passthrough));
   }
 
   if (m_streamsHasBeenSet) {

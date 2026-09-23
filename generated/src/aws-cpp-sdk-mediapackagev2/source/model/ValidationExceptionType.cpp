@@ -167,6 +167,10 @@ static const int MULTIVIEW_INPUT_TYPE_WITH_SEGMENT_DURATION_HASH = HashingUtils:
 static const int MULTIVIEW_SOURCE_NON_EPOCH_LOCKED_HASH = HashingUtils::HashString("MULTIVIEW_SOURCE_NON_EPOCH_LOCKED");
 static const int MULTIVIEW_SCTE_REQUIRES_AVAILS_PERIOD_TRIGGER_HASH =
     HashingUtils::HashString("MULTIVIEW_SCTE_REQUIRES_AVAILS_PERIOD_TRIGGER");
+static const int CONTENT_KEY_PERIOD_TIMING_WITHOUT_KEY_ROTATION_HASH =
+    HashingUtils::HashString("CONTENT_KEY_PERIOD_TIMING_WITHOUT_KEY_ROTATION");
+static const int CONTENT_KEY_PERIOD_TIMING_REQUIRES_SPEKE_V2_1_HASH =
+    HashingUtils::HashString("CONTENT_KEY_PERIOD_TIMING_REQUIRES_SPEKE_V2_1");
 
 /*
 The if-else chains in this file are converted into a jump table by the compiler,
@@ -567,6 +571,12 @@ static bool GetEnumForNameHelper1(int hashCode, ValidationExceptionType& enumVal
     return true;
   } else if (hashCode == MULTIVIEW_SCTE_REQUIRES_AVAILS_PERIOD_TRIGGER_HASH) {
     enumValue = ValidationExceptionType::MULTIVIEW_SCTE_REQUIRES_AVAILS_PERIOD_TRIGGER;
+    return true;
+  } else if (hashCode == CONTENT_KEY_PERIOD_TIMING_WITHOUT_KEY_ROTATION_HASH) {
+    enumValue = ValidationExceptionType::CONTENT_KEY_PERIOD_TIMING_WITHOUT_KEY_ROTATION;
+    return true;
+  } else if (hashCode == CONTENT_KEY_PERIOD_TIMING_REQUIRES_SPEKE_V2_1_HASH) {
+    enumValue = ValidationExceptionType::CONTENT_KEY_PERIOD_TIMING_REQUIRES_SPEKE_V2_1;
     return true;
   }
   return false;
@@ -969,6 +979,12 @@ static bool GetNameForEnumHelper1(ValidationExceptionType enumValue, Aws::String
       return true;
     case ValidationExceptionType::MULTIVIEW_SCTE_REQUIRES_AVAILS_PERIOD_TRIGGER:
       value = "MULTIVIEW_SCTE_REQUIRES_AVAILS_PERIOD_TRIGGER";
+      return true;
+    case ValidationExceptionType::CONTENT_KEY_PERIOD_TIMING_WITHOUT_KEY_ROTATION:
+      value = "CONTENT_KEY_PERIOD_TIMING_WITHOUT_KEY_ROTATION";
+      return true;
+    case ValidationExceptionType::CONTENT_KEY_PERIOD_TIMING_REQUIRES_SPEKE_V2_1:
+      value = "CONTENT_KEY_PERIOD_TIMING_REQUIRES_SPEKE_V2_1";
       return true;
     default:
       return false;

@@ -22,7 +22,7 @@ namespace imagebuilder {
 namespace Model {
 
 /**
- * <p>Define and configure faster launching for output Windows AMIs.</p><p><h3>See
+ * <p>Defines and configures EC2 Fast Launch for output Windows AMIs.</p><p><h3>See
  * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/FastLaunchConfiguration">AWS
  * API Reference</a></p>
@@ -36,9 +36,9 @@ class FastLaunchConfiguration {
 
   ///@{
   /**
-   * <p>A Boolean that represents the current state of faster launching for the
-   * Windows AMI. Set to <code>true</code> to start using Windows faster launching,
-   * or <code>false</code> to stop using it.</p>
+   * <p>Specifies whether to enable Windows fast launch on the output AMI during
+   * distribution. A value of <code>false</code> means Image Builder takes no
+   * fast-launch action for this configuration.</p>
    */
   inline bool GetEnabled() const { return m_enabled; }
   inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
@@ -55,7 +55,7 @@ class FastLaunchConfiguration {
   ///@{
   /**
    * <p>Configuration settings for managing the number of snapshots that are created
-   * from pre-provisioned instances for the Windows AMI when faster launching is
+   * from pre-provisioned instances for the Windows AMI when Windows fast launch is
    * enabled.</p>
    */
   inline const FastLaunchSnapshotConfiguration& GetSnapshotConfiguration() const { return m_snapshotConfiguration; }

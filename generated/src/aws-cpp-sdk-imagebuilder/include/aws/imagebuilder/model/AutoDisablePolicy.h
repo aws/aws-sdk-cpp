@@ -18,7 +18,9 @@ namespace Model {
 
 /**
  * <p>Defines the rules by which an image pipeline is automatically disabled when
- * it fails.</p><p><h3>See Also:</h3>   <a
+ * it fails. By default, if the schedule doesn't include an auto-disable policy,
+ * Image Builder disables the pipeline after 5 consecutive failed scheduled
+ * builds.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/AutoDisablePolicy">AWS
  * API Reference</a></p>
  */

@@ -35,8 +35,9 @@ class ListComponentsRequest : public ImagebuilderRequest {
   /**
    * <p>Filters results based on the type of owner for the component. By default,
    * this request returns a list of components that your account owns. To see results
-   * for other types of owners, you can specify components that Amazon manages, third
-   * party components, or components that other accounts have shared with you.</p>
+   * for other types of owners, you can specify components that Amazon manages,
+   * components from the Amazon Web Services Marketplace, third party components, or
+   * components that other accounts have shared with you.</p>
    */
   inline Ownership GetOwner() const { return m_owner; }
   inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
@@ -54,9 +55,10 @@ class ListComponentsRequest : public ImagebuilderRequest {
   /**
    * <p>Use the following filters to streamline results:</p> <ul> <li> <p>
    * <code>description</code> </p> </li> <li> <p> <code>name</code> </p> </li> <li>
-   * <p> <code>platform</code> </p> </li> <li> <p> <code>supportedOsVersion</code>
-   * </p> </li> <li> <p> <code>type</code> </p> </li> <li> <p> <code>version</code>
-   * </p> </li> </ul>
+   * <p> <code>platform</code> </p> </li> <li> <p> <code>productCodes</code> </p>
+   * </li> <li> <p> <code>status</code> </p> </li> <li> <p>
+   * <code>supportedOsVersion</code> </p> </li> <li> <p> <code>type</code> </p> </li>
+   * <li> <p> <code>version</code> </p> </li> </ul>
    */
   inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
   inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
@@ -80,7 +82,10 @@ class ListComponentsRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Returns the list of components for the specified name.</p>
+   * <p>Specifies whether to return one entry per component name, with all versions
+   * of each component aggregated. Defaults to <code>false</code>, which returns one
+   * entry per component version. You can't combine this option with the
+   * <code>version</code> filter.</p>
    */
   inline bool GetByName() const { return m_byName; }
   inline bool ByNameHasBeenSet() const { return m_byNameHasBeenSet; }

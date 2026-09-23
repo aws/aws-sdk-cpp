@@ -30,8 +30,7 @@ class GetLifecyclePolicyResult {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the image lifecycle policy resource that
-   * was returned.</p>
+   * <p>The details of the lifecycle policy that the request retrieved.</p>
    */
   inline const LifecyclePolicy& GetLifecyclePolicy() const { return m_lifecyclePolicy; }
   template <typename LifecyclePolicyT = LifecyclePolicy>

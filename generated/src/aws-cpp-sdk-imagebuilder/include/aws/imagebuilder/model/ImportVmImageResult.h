@@ -46,9 +46,9 @@ class ImportVmImageResult {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the AMI that was created during the VM
-   * import process. This AMI is used as the base image for the recipe that imported
-   * the VM.</p>
+   * <p>The Amazon Resource Name (ARN) of the Image Builder image resource that this
+   * request created. Image Builder records the AMI from the VM import task in the
+   * image's output resources after the task completes.</p>
    */
   inline const Aws::String& GetImageArn() const { return m_imageArn; }
   template <typename ImageArnT = Aws::String>

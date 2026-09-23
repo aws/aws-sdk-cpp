@@ -176,7 +176,9 @@ class InfrastructureConfiguration {
 
   ///@{
   /**
-   * <p>The logging configuration of the infrastructure configuration.</p>
+   * <p>The logging configuration of the infrastructure configuration. When you
+   * configure S3 logs, Image Builder writes logs from the build and test process to
+   * the specified bucket under the key prefix.</p>
    */
   inline const Logging& GetLogging() const { return m_logging; }
   inline bool LoggingHasBeenSet() const { return m_loggingHasBeenSet; }
@@ -212,8 +214,9 @@ class InfrastructureConfiguration {
 
   ///@{
   /**
-   * <p>The terminate instance on failure configuration of the infrastructure
-   * configuration.</p>
+   * <p>Indicates whether Image Builder terminates the build and test instances when
+   * the image build fails. When <code>false</code>, Image Builder retains the
+   * instance so that you can debug it.</p>
    */
   inline bool GetTerminateInstanceOnFailure() const { return m_terminateInstanceOnFailure; }
   inline bool TerminateInstanceOnFailureHasBeenSet() const { return m_terminateInstanceOnFailureHasBeenSet; }
@@ -230,10 +233,11 @@ class InfrastructureConfiguration {
   ///@{
   /**
    * <p>The Amazon Resource Name (ARN) of the SNS topic to which Image Builder sends
-   * image build event notifications.</p>  <p>EC2 Image Builder is unable to
-   * send notifications to SNS topics that are encrypted using keys from other
-   * accounts. The key that is used to encrypt the SNS topic must reside in the
-   * account that the Image Builder service runs under.</p>
+   * image build event notifications. Specify a standard topic. Image Builder doesn't
+   * support FIFO topics.</p>  <p>EC2 Image Builder can't send notifications to
+   * SNS topics that are encrypted using keys from other accounts. If your SNS topic
+   * is encrypted, the key must be owned by the same account that owns your Image
+   * Builder resources.</p>
    */
   inline const Aws::String& GetSnsTopicArn() const { return m_snsTopicArn; }
   inline bool SnsTopicArnHasBeenSet() const { return m_snsTopicArnHasBeenSet; }
@@ -287,7 +291,8 @@ class InfrastructureConfiguration {
 
   ///@{
   /**
-   * <p>The tags attached to the resource created by Image Builder.</p>
+   * <p>The metadata tags assigned to the Amazon EC2 build and test instances that
+   * Image Builder launches during image creation.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetResourceTags() const { return m_resourceTags; }
   inline bool ResourceTagsHasBeenSet() const { return m_resourceTagsHasBeenSet; }
@@ -354,8 +359,9 @@ class InfrastructureConfiguration {
 
   ///@{
   /**
-   * <p>The instance placement settings that define where the instances that are
-   * launched from your image run.</p>
+   * <p>The instance placement settings that define where the build and test
+   * instances that Image Builder launches during image creation run. These settings
+   * don't affect instances that you launch from the output image.</p>
    */
   inline const Placement& GetPlacement() const { return m_placement; }
   inline bool PlacementHasBeenSet() const { return m_placementHasBeenSet; }

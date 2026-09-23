@@ -20,15 +20,10 @@ namespace imagebuilder {
 namespace Model {
 
 /**
- * <p>The instance metadata options that apply to the HTTP requests that pipeline
- * builds use to launch EC2 build and test instances. For more information about
- * instance metadata options, see <a
- * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
- * the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i>
- * for Linux instances, or <a
- * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure
- * the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i>
- * </i> for Windows instances.</p><p><h3>See Also:</h3>   <a
+ * <p>The instance metadata service (IMDS) settings that Image Builder applies to
+ * the EC2 build and test instances it launches. These settings control how
+ * software on those instances retrieves instance metadata and IAM role
+ * credentials.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/InstanceMetadataOptions">AWS
  * API Reference</a></p>
  */
@@ -48,7 +43,12 @@ class InstanceMetadataOptions {
    * can include a signed token header in your request to retrieve instance metadata,
    * or you can leave it out. If you include it, version 2.0 credentials are returned
    * for the IAM role. Otherwise, version 1.0 credentials are returned.</p> </li>
-   * </ul> <p>The default setting is <b>optional</b>.</p>
+   * </ul> <p>If you don't set a value, the EC2 launch default applies to the build
+   * and test instances. That default depends on the base AMI and any account-level
+   * instance metadata defaults. For more information, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
+   * the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i>
+   * </i>.</p>
    */
   inline const Aws::String& GetHttpTokens() const { return m_httpTokens; }
   inline bool HttpTokensHasBeenSet() const { return m_httpTokensHasBeenSet; }
@@ -67,8 +67,9 @@ class InstanceMetadataOptions {
   ///@{
   /**
    * <p>Limit the number of hops that an instance metadata request can traverse to
-   * reach its destination. The default is one hop. However, if HTTP tokens are
-   * required, container image builds need a minimum of two hops.</p>
+   * reach its destination. If you don't set a value, the EC2 launch default for the
+   * instance applies. If HTTP tokens are required, container image builds need a
+   * minimum of two hops.</p>
    */
   inline int GetHttpPutResponseHopLimit() const { return m_httpPutResponseHopLimit; }
   inline bool HttpPutResponseHopLimitHasBeenSet() const { return m_httpPutResponseHopLimitHasBeenSet; }

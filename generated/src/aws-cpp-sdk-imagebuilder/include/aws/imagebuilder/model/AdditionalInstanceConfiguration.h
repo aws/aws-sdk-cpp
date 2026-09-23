@@ -42,7 +42,9 @@ class AdditionalInstanceConfiguration {
 
   ///@{
   /**
-   * <p>Contains settings for the Systems Manager agent on your build instance.</p>
+   * <p>The Systems Manager agent settings for your build instance. This setting
+   * applies to Linux and macOS build instances only. Requests that set it for a
+   * recipe with a Windows base image are rejected.</p>
    */
   inline const SystemsManagerAgent& GetSystemsManagerAgent() const { return m_systemsManagerAgent; }
   inline bool SystemsManagerAgentHasBeenSet() const { return m_systemsManagerAgentHasBeenSet; }
@@ -67,7 +69,7 @@ class AdditionalInstanceConfiguration {
    * that you add commands to install Systems Manager, if it is not pre-installed on
    * your base image.</p>  <p>The user data is always base 64 encoded. For
    * example, the following commands are encoded as
-   * <code>IyEvYmluL2Jhc2gKbWtkaXIgLXAgL3Zhci9iYi8KdG91Y2ggL3Zhci$</code>:</p> <p>
+   * <code>IyEvYmluL2Jhc2gKbWtkaXIgLXAgL3Zhci9iYi8KdG91Y2ggL3Zhcg==</code>:</p> <p>
    * <i>#!/bin/bash</i> </p> <p>mkdir -p /var/bb/</p> <p>touch /var</p>
    */
   inline const Aws::String& GetUserDataOverride() const { return m_userDataOverride; }

@@ -65,8 +65,10 @@ class ListLifecycleExecutionsRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the resource for which to get a list of
-   * lifecycle runtime instances.</p>
+   * <p>The Amazon Resource Name (ARN) of the resource for which to list lifecycle
+   * executions. Specify a lifecycle policy ARN to list its executions, or an image
+   * build version ARN to list the executions that <a>StartResourceStateUpdate</a>
+   * started for that image. Other ARN types aren't valid for this request.</p>
    */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
   inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }

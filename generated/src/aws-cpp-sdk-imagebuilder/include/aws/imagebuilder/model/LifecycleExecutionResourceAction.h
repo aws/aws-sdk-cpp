@@ -35,8 +35,7 @@ class LifecycleExecutionResourceAction {
 
   ///@{
   /**
-   * <p>The name of the resource that was identified for a lifecycle policy
-   * action.</p>
+   * <p>The name of the lifecycle action that was identified for the resource.</p>
    */
   inline LifecycleExecutionResourceActionName GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

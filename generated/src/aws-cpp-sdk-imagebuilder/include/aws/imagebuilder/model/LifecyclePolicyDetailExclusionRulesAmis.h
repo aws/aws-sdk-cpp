@@ -78,8 +78,8 @@ class LifecyclePolicyDetailExclusionRulesAmis {
 
   ///@{
   /**
-   * <p>Specifies Amazon Web Services accounts whose resources are excluded from the
-   * lifecycle action.</p>
+   * <p>The lifecycle action doesn't apply to AMIs that are shared with any of the
+   * specified Amazon Web Services accounts.</p>
    */
   inline const Aws::Vector<Aws::String>& GetSharedAccounts() const { return m_sharedAccounts; }
   inline bool SharedAccountsHasBeenSet() const { return m_sharedAccountsHasBeenSet; }
@@ -103,8 +103,9 @@ class LifecyclePolicyDetailExclusionRulesAmis {
 
   ///@{
   /**
-   * <p>Specifies configuration details for Image Builder to exclude the most recent
-   * resources from lifecycle actions.</p>
+   * <p>Configures Image Builder to exclude AMIs that were launched within the
+   * specified time period from lifecycle actions. AMIs with no recorded
+   * last-launched time aren't excluded by this rule.</p>
    */
   inline const LifecyclePolicyDetailExclusionRulesAmisLastLaunched& GetLastLaunched() const { return m_lastLaunched; }
   inline bool LastLaunchedHasBeenSet() const { return m_lastLaunchedHasBeenSet; }
@@ -122,8 +123,8 @@ class LifecyclePolicyDetailExclusionRulesAmis {
 
   ///@{
   /**
-   * <p>Lists tags that should be excluded from lifecycle actions for the AMIs that
-   * have them.</p>
+   * <p>Lifecycle actions don't apply to AMIs that have any of these tags. Both the
+   * key and the value must match.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTagMap() const { return m_tagMap; }
   inline bool TagMapHasBeenSet() const { return m_tagMapHasBeenSet; }

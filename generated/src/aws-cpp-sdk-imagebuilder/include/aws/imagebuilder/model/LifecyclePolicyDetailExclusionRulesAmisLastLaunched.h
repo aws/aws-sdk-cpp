@@ -52,8 +52,7 @@ class LifecyclePolicyDetailExclusionRulesAmisLastLaunched {
   ///@{
   /**
    * <p>Defines the unit of time that the lifecycle policy uses to calculate elapsed
-   * time since the last instance launched from the AMI. For example: days, weeks,
-   * months, or years.</p>
+   * time since the last launch.</p>
    */
   inline LifecyclePolicyTimeUnit GetUnit() const { return m_unit; }
   inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }

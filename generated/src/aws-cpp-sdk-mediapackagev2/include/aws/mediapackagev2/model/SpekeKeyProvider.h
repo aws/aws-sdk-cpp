@@ -7,8 +7,10 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediapackagev2/Mediapackagev2_EXPORTS.h>
+#include <aws/mediapackagev2/model/ContentKeyPeriodConfiguration.h>
 #include <aws/mediapackagev2/model/DrmSystem.h>
 #include <aws/mediapackagev2/model/EncryptionContractConfiguration.h>
+#include <aws/mediapackagev2/model/SpekeVersion.h>
 
 #include <utility>
 
@@ -168,6 +170,54 @@ class SpekeKeyProvider {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the SPEKE version used with your DRM key provider. If you don't
+   * specify a value, the default is <code>V2_0</code>.</p> <p>The allowed values
+   * are:</p> <ul> <li> <p> <code>V2_0</code> - Follows the SPEKE Version 2.0
+   * contract and signals only the content key index in key requests. This is the
+   * default.</p> </li> <li> <p> <code>V2_1</code> - Follows the SPEKE Version 2.1
+   * contract and additionally supports signaling the start and end times a content
+   * key is used for, using <code>ContentKeyPeriodConfiguration</code>.</p> </li>
+   * </ul> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/speke/latest/documentation/standard-payload-components-v2.html">SPEKE
+   * Version 2.0 payload</a>.</p>
+   */
+  inline SpekeVersion GetSpekeVersion() const { return m_spekeVersion; }
+  inline bool SpekeVersionHasBeenSet() const { return m_spekeVersionHasBeenSet; }
+  inline void SetSpekeVersion(SpekeVersion value) {
+    m_spekeVersionHasBeenSet = true;
+    m_spekeVersion = value;
+  }
+  inline SpekeKeyProvider& WithSpekeVersion(SpekeVersion value) {
+    SetSpekeVersion(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The configuration that controls whether MediaPackage signals the start and
+   * end times a content key is used for, in the <code>ContentKeyPeriod</code> sent
+   * to your DRM key provider. Signaling this timing is supported only when key
+   * rotation is enabled (<code>KeyRotationIntervalSeconds</code> is set to a
+   * non-zero value) and <code>SpekeVersion</code> is <code>V2_1</code>. You can
+   * update these settings on an existing origin endpoint.</p>
+   */
+  inline const ContentKeyPeriodConfiguration& GetContentKeyPeriodConfiguration() const { return m_contentKeyPeriodConfiguration; }
+  inline bool ContentKeyPeriodConfigurationHasBeenSet() const { return m_contentKeyPeriodConfigurationHasBeenSet; }
+  template <typename ContentKeyPeriodConfigurationT = ContentKeyPeriodConfiguration>
+  void SetContentKeyPeriodConfiguration(ContentKeyPeriodConfigurationT&& value) {
+    m_contentKeyPeriodConfigurationHasBeenSet = true;
+    m_contentKeyPeriodConfiguration = std::forward<ContentKeyPeriodConfigurationT>(value);
+  }
+  template <typename ContentKeyPeriodConfigurationT = ContentKeyPeriodConfiguration>
+  SpekeKeyProvider& WithContentKeyPeriodConfiguration(ContentKeyPeriodConfigurationT&& value) {
+    SetContentKeyPeriodConfiguration(std::forward<ContentKeyPeriodConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   EncryptionContractConfiguration m_encryptionContractConfiguration;
 
@@ -180,12 +230,18 @@ class SpekeKeyProvider {
   Aws::String m_url;
 
   Aws::String m_certificateArn;
+
+  SpekeVersion m_spekeVersion{SpekeVersion::NOT_SET};
+
+  ContentKeyPeriodConfiguration m_contentKeyPeriodConfiguration;
   bool m_encryptionContractConfigurationHasBeenSet = false;
   bool m_resourceIdHasBeenSet = false;
   bool m_drmSystemsHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
   bool m_urlHasBeenSet = false;
   bool m_certificateArnHasBeenSet = false;
+  bool m_spekeVersionHasBeenSet = false;
+  bool m_contentKeyPeriodConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

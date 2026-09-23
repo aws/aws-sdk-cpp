@@ -47,7 +47,8 @@ class GetMarketplaceResourceResult {
 
   ///@{
   /**
-   * <p>The obfuscated S3 URL to download the component artifact from.</p>
+   * <p>A time-limited presigned URL for downloading the component artifact from
+   * Amazon S3.</p>
    */
   inline const Aws::String& GetUrl() const { return m_url; }
   template <typename UrlT = Aws::String>

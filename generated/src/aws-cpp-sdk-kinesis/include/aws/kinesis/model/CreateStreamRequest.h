@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kinesis/KinesisRequest.h>
 #include <aws/kinesis/Kinesis_EXPORTS.h>
+#include <aws/kinesis/model/RecordDistributionStrategy.h>
 #include <aws/kinesis/model/StreamModeDetails.h>
 
 #include <utility>
@@ -161,6 +162,32 @@ class CreateStreamRequest : public KinesisRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The record distribution strategy for the stream, which determines how Amazon
+   * Kinesis Data Streams distributes records across shards. Specify one of the
+   * following values:</p> <ul> <li> <p> <code>AUTO</code> – Amazon Kinesis Data
+   * Streams distributes records evenly across shards and ignores any partition key
+   * and <code>ExplicitHashKey</code> that producers supply. Use this value for
+   * stateless workloads that do not require partition-key ordering.</p> </li> <li>
+   * <p> <code>USER_PARTITION_KEY</code> – Producers must supply a partition key,
+   * which Amazon Kinesis Data Streams uses to determine shard placement. This is the
+   * default.</p> </li> </ul> <p>The record distribution strategy is only supported
+   * for streams that use the on-demand capacity mode. If you do not specify this
+   * parameter, the stream uses <code>USER_PARTITION_KEY</code>.</p>
+   */
+  inline RecordDistributionStrategy GetRecordDistributionStrategy() const { return m_recordDistributionStrategy; }
+  inline bool RecordDistributionStrategyHasBeenSet() const { return m_recordDistributionStrategyHasBeenSet; }
+  inline void SetRecordDistributionStrategy(RecordDistributionStrategy value) {
+    m_recordDistributionStrategyHasBeenSet = true;
+    m_recordDistributionStrategy = value;
+  }
+  inline CreateStreamRequest& WithRecordDistributionStrategy(RecordDistributionStrategy value) {
+    SetRecordDistributionStrategy(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_streamName;
 
@@ -173,12 +200,15 @@ class CreateStreamRequest : public KinesisRequest {
   int m_warmThroughputMiBps{0};
 
   int m_maxRecordSizeInKiB{0};
+
+  RecordDistributionStrategy m_recordDistributionStrategy{RecordDistributionStrategy::NOT_SET};
   bool m_streamNameHasBeenSet = false;
   bool m_shardCountHasBeenSet = false;
   bool m_streamModeDetailsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_warmThroughputMiBpsHasBeenSet = false;
   bool m_maxRecordSizeInKiBHasBeenSet = false;
+  bool m_recordDistributionStrategyHasBeenSet = false;
 };
 
 }  // namespace Model

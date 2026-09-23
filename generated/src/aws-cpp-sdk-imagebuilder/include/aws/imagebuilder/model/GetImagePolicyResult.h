@@ -46,7 +46,9 @@ class GetImagePolicyResult {
 
   ///@{
   /**
-   * <p>The image policy object.</p>
+   * <p>The resource policy for the image, as a JSON policy document. If the image
+   * has no policy applied, the response contains an empty JSON object
+   * (<code>{}</code>).</p>
    */
   inline const Aws::String& GetPolicy() const { return m_policy; }
   template <typename PolicyT = Aws::String>

@@ -25,8 +25,8 @@ namespace imagebuilder {
 namespace Model {
 
 /**
- * <p>The defining characteristics of a specific version of an Amazon Web Services
- * TOE component.</p><p><h3>See Also:</h3>   <a
+ * <p>The defining characteristics of a specific version of a
+ * component.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ComponentVersion">AWS
  * API Reference</a></p>
  */
@@ -190,7 +190,9 @@ class ComponentVersion {
 
   ///@{
   /**
-   * <p>The owner of the component.</p>
+   * <p>The owner of the component. The value is your account ID for components that
+   * you own, the sharing account's ID for shared components, or <code>Amazon</code>,
+   * <code>ThirdParty</code>, or <code>AWSMarketplace</code>.</p>
    */
   inline const Aws::String& GetOwner() const { return m_owner; }
   inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }

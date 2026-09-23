@@ -108,8 +108,7 @@ class WorkflowVersion {
 
   ///@{
   /**
-   * <p>The image creation stage that this workflow applies to. Image Builder
-   * currently supports build and test stage workflows.</p>
+   * <p>The image creation stage that this workflow applies to.</p>
    */
   inline WorkflowType GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

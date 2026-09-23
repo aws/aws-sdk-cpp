@@ -394,6 +394,40 @@ class AWS_BILLING_API BillingClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Lists the segments of a billing view over a given time period. Each segment
+   * identifies the billing domain (<code>PRO_FORMA</code> or <code>BILLABLE</code>)
+   * and the account relationships that apply during its time range.</p> <p>If you
+   * don't provide an <code>arn</code>, the response includes segments for the
+   * caller's <code>PRIMARY</code> billing view.</p> <p>If a mid-period change
+   * occurs, the response includes multiple segments, each with its own time range.
+   * The response omits hidden segments, so the segments it returns might not cover
+   * the entire requested time period.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListBillingViewSegments">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListBillingViewSegmentsOutcome ListBillingViewSegments(const Model::ListBillingViewSegmentsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListBillingViewSegments that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListBillingViewSegmentsRequestT = Model::ListBillingViewSegmentsRequest>
+  Model::ListBillingViewSegmentsOutcomeCallable ListBillingViewSegmentsCallable(const ListBillingViewSegmentsRequestT& request = {}) const {
+    return SubmitCallable(&BillingClient::ListBillingViewSegments, request);
+  }
+
+  /**
+   * An Async wrapper for ListBillingViewSegments that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListBillingViewSegmentsRequestT = Model::ListBillingViewSegmentsRequest>
+  void ListBillingViewSegmentsAsync(const ListBillingViewSegmentsResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                    const ListBillingViewSegmentsRequestT& request = {}) const {
+    return SubmitAsync(&BillingClient::ListBillingViewSegments, request, handler, context);
+  }
+
+  /**
    * <p>Lists the billing views available for a given time period. </p> <p>Every
    * Amazon Web Services account has a unique <code>PRIMARY</code> billing view that
    * represents the billing data available by default. Accounts that use Billing

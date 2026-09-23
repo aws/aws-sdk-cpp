@@ -77,7 +77,10 @@ class ListImagesRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Requests a list of images with a specific recipe name.</p>
+   * <p>Specifies whether to return one entry per image name, with all versions of
+   * each image aggregated. Defaults to <code>false</code>, which returns one entry
+   * per image version. You can't combine this option with the <code>version</code>
+   * filter.</p>
    */
   inline bool GetByName() const { return m_byName; }
   inline bool ByNameHasBeenSet() const { return m_byNameHasBeenSet; }
@@ -128,7 +131,9 @@ class ListImagesRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Includes deprecated images in the response list.</p>
+   * <p>Specifies whether to include deprecated Amazon-managed images in the results.
+   * Deprecated images that you own are always returned. Defaults to
+   * <code>false</code>.</p>
    */
   inline bool GetIncludeDeprecated() const { return m_includeDeprecated; }
   inline bool IncludeDeprecatedHasBeenSet() const { return m_includeDeprecatedHasBeenSet; }

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace ConnectHealth {
 namespace Model {
-enum class MedicalScribeLanguageCode { NOT_SET, en_US };
+enum class MedicalScribeLanguageCode { NOT_SET, en_US, multi };
 
 namespace MedicalScribeLanguageCodeMapper {
 AWS_CONNECTHEALTH_API MedicalScribeLanguageCode GetMedicalScribeLanguageCodeForName(const Aws::String& name);

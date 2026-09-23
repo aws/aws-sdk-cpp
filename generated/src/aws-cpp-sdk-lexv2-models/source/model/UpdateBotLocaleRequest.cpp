@@ -48,5 +48,9 @@ Aws::String UpdateBotLocaleRequest::SerializePayload() const {
                        SpeechDetectionSensitivityMapper::GetNameForSpeechDetectionSensitivity(m_speechDetectionSensitivity));
   }
 
+  if (m_speakerDiarizationSettingsHasBeenSet) {
+    payload.WithObject("speakerDiarizationSettings", m_speakerDiarizationSettings.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

@@ -158,7 +158,8 @@ class WorkflowStepMetadata {
 
   ///@{
   /**
-   * <p>Input parameters that Image Builder provides for the workflow step.</p>
+   * <p>Input parameters that Image Builder provides for the workflow step, as a
+   * JSON-encoded string.</p>
    */
   inline const Aws::String& GetInputs() const { return m_inputs; }
   inline bool InputsHasBeenSet() const { return m_inputsHasBeenSet; }
@@ -176,8 +177,10 @@ class WorkflowStepMetadata {
 
   ///@{
   /**
-   * <p>The file names that the workflow step created as output for this runtime
-   * instance of the workflow.</p>
+   * <p>The output values that the workflow step produced for this runtime instance
+   * of the workflow, as a JSON-encoded string. For example, a step that launches an
+   * instance outputs the instance ID. If the step failed, this field contains the
+   * error message.</p>
    */
   inline const Aws::String& GetOutputs() const { return m_outputs; }
   inline bool OutputsHasBeenSet() const { return m_outputsHasBeenSet; }

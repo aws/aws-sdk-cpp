@@ -45,6 +45,14 @@ SpekeKeyProvider& SpekeKeyProvider::operator=(JsonView jsonValue) {
     m_certificateArn = jsonValue.GetString("CertificateArn");
     m_certificateArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SpekeVersion")) {
+    m_spekeVersion = SpekeVersionMapper::GetSpekeVersionForName(jsonValue.GetString("SpekeVersion"));
+    m_spekeVersionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ContentKeyPeriodConfiguration")) {
+    m_contentKeyPeriodConfiguration = jsonValue.GetObject("ContentKeyPeriodConfiguration");
+    m_contentKeyPeriodConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -77,6 +85,14 @@ JsonValue SpekeKeyProvider::Jsonize() const {
 
   if (m_certificateArnHasBeenSet) {
     payload.WithString("CertificateArn", m_certificateArn);
+  }
+
+  if (m_spekeVersionHasBeenSet) {
+    payload.WithString("SpekeVersion", SpekeVersionMapper::GetNameForSpekeVersion(m_spekeVersion));
+  }
+
+  if (m_contentKeyPeriodConfigurationHasBeenSet) {
+    payload.WithObject("ContentKeyPeriodConfiguration", m_contentKeyPeriodConfiguration.Jsonize());
   }
 
   return payload;

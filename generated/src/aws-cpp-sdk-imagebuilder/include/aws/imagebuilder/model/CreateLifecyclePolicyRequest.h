@@ -37,7 +37,11 @@ class CreateLifecyclePolicyRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The name of the lifecycle policy to create.</p>
+   * <p>The name of the lifecycle policy to create. Policy names must be unique to
+   * your account in each Amazon Web Services Region. Image Builder generates the
+   * policy ARN from a normalized form of the name, so names that differ only in
+   * case, spaces, or underscores count as the same name. You can't change the name
+   * after creation.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -73,7 +77,9 @@ class CreateLifecyclePolicyRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Indicates whether the lifecycle policy resource is enabled.</p>
+   * <p>Indicates whether the lifecycle policy resource is enabled. If you don't
+   * specify a status, it defaults to <code>ENABLED</code>. Only enabled policies run
+   * on their schedule.</p>
    */
   inline LifecyclePolicyStatus GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -90,7 +96,9 @@ class CreateLifecyclePolicyRequest : public ImagebuilderRequest {
   ///@{
   /**
    * <p>The name or Amazon Resource Name (ARN) for the IAM role you create that
-   * grants Image Builder access to run lifecycle actions.</p>
+   * grants Image Builder access to run lifecycle actions. You must have permission
+   * to pass the role, and the role's trust policy must allow the Image Builder
+   * service principal to assume it.</p>
    */
   inline const Aws::String& GetExecutionRole() const { return m_executionRole; }
   inline bool ExecutionRoleHasBeenSet() const { return m_executionRoleHasBeenSet; }
@@ -108,7 +116,12 @@ class CreateLifecyclePolicyRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The type of Image Builder resource that the lifecycle policy applies to.</p>
+   * <p>The type of Image Builder resource that the lifecycle policy applies to. The
+   * resource type determines the allowed rule actions: policies for AMI-based Image
+   * Builder images support <code>DELETE</code>, <code>DEPRECATE</code>, and
+   * <code>DISABLE</code>, and policies for container-based Image Builder images
+   * support only <code>DELETE</code>. You can't change the resource type after
+   * creation.</p>
    */
   inline LifecyclePolicyResourceType GetResourceType() const { return m_resourceType; }
   inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
@@ -124,7 +137,9 @@ class CreateLifecyclePolicyRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Configuration details for the lifecycle policy rules.</p>
+   * <p>Configuration details for the lifecycle policy rules. A policy can contain at
+   * most one rule per action type: one <code>DELETE</code>, one
+   * <code>DEPRECATE</code>, and one <code>DISABLE</code>.</p>
    */
   inline const Aws::Vector<LifecyclePolicyDetail>& GetPolicyDetails() const { return m_policyDetails; }
   inline bool PolicyDetailsHasBeenSet() const { return m_policyDetailsHasBeenSet; }
@@ -149,7 +164,8 @@ class CreateLifecyclePolicyRequest : public ImagebuilderRequest {
   ///@{
   /**
    * <p>Selection criteria for the resources that the lifecycle policy applies to.
-   * </p>
+   * You must specify exactly one selection criteria: either recipes or a tag map,
+   * not both.</p>
    */
   inline const LifecyclePolicyResourceSelection& GetResourceSelection() const { return m_resourceSelection; }
   inline bool ResourceSelectionHasBeenSet() const { return m_resourceSelectionHasBeenSet; }
@@ -192,9 +208,9 @@ class CreateLifecyclePolicyRequest : public ImagebuilderRequest {
   ///@{
   /**
    * <p>A unique, case-sensitive identifier you provide to ensure that the operation
-   * completes no more than one time. If this token matches a previous request, the
-   * service ignores the request, but does not return an error. For more information,
-   * see <a
+   * runs no more than one time. If you retry a request with the same client token,
+   * Image Builder returns the original response without running the operation again.
+   * For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
    * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
    */
@@ -214,8 +230,8 @@ class CreateLifecyclePolicyRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Validates the required permissions and request parameters without making the
-   * request. If validation succeeds, the operation returns a
+   * <p>Validates the required permissions and request parameters without performing
+   * the operation. If validation succeeds, the operation returns a
    * <code>DryRunOperationException</code> error response.</p>
    */
   inline bool GetDryRun() const { return m_dryRun; }

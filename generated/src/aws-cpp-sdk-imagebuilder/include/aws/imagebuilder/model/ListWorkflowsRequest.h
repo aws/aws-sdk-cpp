@@ -33,8 +33,11 @@ class ListWorkflowsRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Used to get a list of workflow build version filtered by the identity of the
-   * creator.</p>
+   * <p>Filters results based on the workflow owner. By default, this request returns
+   * the workflows that your account owns (<code>Self</code>). Specify
+   * <code>Amazon</code> to list the workflows that Image Builder manages. Image
+   * Builder rejects the <code>Shared</code> and <code>ThirdParty</code> owner values
+   * for workflows, and <code>AWSMarketplace</code> returns no results.</p>
    */
   inline Ownership GetOwner() const { return m_owner; }
   inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
@@ -50,7 +53,8 @@ class ListWorkflowsRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Used to streamline search results.</p>
+   * <p>Filters to narrow the list of workflows. You can filter on <code>name</code>,
+   * <code>version</code>, <code>description</code>, and <code>type</code>.</p>
    */
   inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
   inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
@@ -74,7 +78,10 @@ class ListWorkflowsRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Specify all or part of the workflow name to streamline results.</p>
+   * <p>Specifies whether to return one entry per workflow name, with all versions of
+   * each workflow aggregated. Defaults to <code>false</code>, which returns one
+   * entry per workflow version. You can't combine this option with the
+   * <code>version</code> filter.</p>
    */
   inline bool GetByName() const { return m_byName; }
   inline bool ByNameHasBeenSet() const { return m_byNameHasBeenSet; }

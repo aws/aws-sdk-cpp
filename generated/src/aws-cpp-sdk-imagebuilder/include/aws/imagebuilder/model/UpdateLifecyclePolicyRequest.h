@@ -54,7 +54,9 @@ class UpdateLifecyclePolicyRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Optional description for the lifecycle policy.</p>
+   * <p>Optional description for the lifecycle policy. Because the update replaces
+   * the entire configuration, omitting this property removes any existing
+   * description.</p>
    */
   inline const Aws::String& GetDescription() const { return m_description; }
   inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -72,7 +74,9 @@ class UpdateLifecyclePolicyRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Indicates whether the lifecycle policy resource is enabled.</p>
+   * <p>Indicates whether the lifecycle policy resource is enabled. Defaults to
+   * <code>ENABLED</code> when omitted, so updating a disabled policy without setting
+   * this property re-enables it.</p>
    */
   inline LifecyclePolicyStatus GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -88,8 +92,8 @@ class UpdateLifecyclePolicyRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The name or Amazon Resource Name (ARN) of the IAM role that Image Builder
-   * uses to update the lifecycle policy.</p>
+   * <p>The name or Amazon Resource Name (ARN) for the IAM role you create that
+   * grants Image Builder access to run lifecycle actions.</p>
    */
   inline const Aws::String& GetExecutionRole() const { return m_executionRole; }
   inline bool ExecutionRoleHasBeenSet() const { return m_executionRoleHasBeenSet; }
@@ -107,7 +111,9 @@ class UpdateLifecyclePolicyRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The type of image resource that the lifecycle policy applies to.</p>
+   * <p>The type of image resource that the lifecycle policy applies to. The value
+   * must match the policy's existing resource type. You can't change the resource
+   * type of an existing lifecycle policy.</p>
    */
   inline LifecyclePolicyResourceType GetResourceType() const { return m_resourceType; }
   inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
@@ -147,7 +153,9 @@ class UpdateLifecyclePolicyRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Selection criteria for resources that the lifecycle policy applies to.</p>
+   * <p>Selection criteria for resources that the lifecycle policy applies to. You
+   * must specify exactly one selection criteria: either recipes or a tag map, not
+   * both.</p>
    */
   inline const LifecyclePolicyResourceSelection& GetResourceSelection() const { return m_resourceSelection; }
   inline bool ResourceSelectionHasBeenSet() const { return m_resourceSelectionHasBeenSet; }
@@ -166,9 +174,9 @@ class UpdateLifecyclePolicyRequest : public ImagebuilderRequest {
   ///@{
   /**
    * <p>A unique, case-sensitive identifier you provide to ensure that the operation
-   * completes no more than one time. If this token matches a previous request, the
-   * service ignores the request, but does not return an error. For more information,
-   * see <a
+   * runs no more than one time. If you retry a request with the same client token,
+   * Image Builder returns the original response without running the operation again.
+   * For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
    * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
    */

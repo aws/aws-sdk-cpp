@@ -59,8 +59,8 @@ class InstanceConfiguration {
 
   ///@{
   /**
-   * <p>Defines the block devices to attach for building an instance from this Image
-   * Builder AMI.</p>
+   * <p>Defines the block device mappings for the EC2 instance that Image Builder
+   * launches to build and test your container image.</p>
    */
   inline const Aws::Vector<InstanceBlockDeviceMapping>& GetBlockDeviceMappings() const { return m_blockDeviceMappings; }
   inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }

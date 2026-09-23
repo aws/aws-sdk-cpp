@@ -50,9 +50,9 @@ class ImageTestsConfiguration {
 
   ///@{
   /**
-   * <p>The maximum time in minutes that tests are permitted to run.</p>
-   * <p>The timeout property is not currently active. This value is ignored.</p>
-   *
+   * <p>The maximum time in minutes that tests are permitted to run. If you don't
+   * specify a value, Image Builder stores and returns 720.</p>  <p>The timeout
+   * property is not currently active. This value is ignored.</p>
    */
   inline int GetTimeoutMinutes() const { return m_timeoutMinutes; }
   inline bool TimeoutMinutesHasBeenSet() const { return m_timeoutMinutesHasBeenSet; }

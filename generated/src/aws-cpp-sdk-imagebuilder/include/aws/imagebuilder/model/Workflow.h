@@ -25,8 +25,8 @@ namespace imagebuilder {
 namespace Model {
 
 /**
- * <p>Defines a process that Image Builder uses to build and test images during the
- * image creation process.</p><p><h3>See Also:</h3>   <a
+ * <p>Defines a process that Image Builder runs during the build, test, or
+ * distribution stage of the image creation process.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/Workflow">AWS
  * API Reference</a></p>
  */
@@ -131,8 +131,7 @@ class Workflow {
 
   ///@{
   /**
-   * <p>Specifies the image creation stage that the workflow applies to. Image
-   * Builder currently supports build and test workflows.</p>
+   * <p>The image creation stage that the workflow applies to.</p>
    */
   inline WorkflowType GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -243,7 +242,7 @@ class Workflow {
 
   ///@{
   /**
-   * <p>The tags that apply to the workflow resource</p>
+   * <p>The tags that apply to the workflow resource.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
   inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -267,8 +266,8 @@ class Workflow {
 
   ///@{
   /**
-   * <p>An array of input parameters that that the image workflow uses to control
-   * actions or configure settings.</p>
+   * <p>An array of input parameters that the image workflow uses to control actions
+   * or configure settings.</p>
    */
   inline const Aws::Vector<WorkflowParameterDetail>& GetParameters() const { return m_parameters; }
   inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }

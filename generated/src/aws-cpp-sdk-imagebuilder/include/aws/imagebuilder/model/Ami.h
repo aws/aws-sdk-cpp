@@ -106,7 +106,10 @@ class Ami {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The state of the AMI, which includes the status and, if applicable, the
+   * reason for that status.</p>
+   */
   inline const ImageState& GetState() const { return m_state; }
   inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
   template <typename StateT = ImageState>

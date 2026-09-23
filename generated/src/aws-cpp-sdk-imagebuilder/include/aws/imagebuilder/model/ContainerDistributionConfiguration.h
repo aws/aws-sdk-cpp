@@ -22,8 +22,9 @@ namespace imagebuilder {
 namespace Model {
 
 /**
- * <p>Container distribution settings for encryption, licensing, and sharing in a
- * specific Region.</p><p><h3>See Also:</h3>   <a
+ * <p>Defines how the output container image is distributed in a specific Amazon
+ * Web Services Region: the target repository, the image tags to apply to the
+ * distributed image, and an optional description.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ContainerDistributionConfiguration">AWS
  * API Reference</a></p>
  */
@@ -54,7 +55,8 @@ class ContainerDistributionConfiguration {
 
   ///@{
   /**
-   * <p>Tags that are attached to the container distribution configuration.</p>
+   * <p>Tags that Image Builder applies to the distributed container image in the
+   * target repository. These are repository image tags, not resource tags.</p>
    */
   inline const Aws::Vector<Aws::String>& GetContainerTags() const { return m_containerTags; }
   inline bool ContainerTagsHasBeenSet() const { return m_containerTagsHasBeenSet; }

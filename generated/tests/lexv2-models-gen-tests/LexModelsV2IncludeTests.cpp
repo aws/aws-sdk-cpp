@@ -527,6 +527,7 @@
 #include <aws/lexv2-models/model/SlotValueResolutionStrategy.h>
 #include <aws/lexv2-models/model/SlotValueSelectionSetting.h>
 #include <aws/lexv2-models/model/SortOrder.h>
+#include <aws/lexv2-models/model/SpeakerDiarizationSettings.h>
 #include <aws/lexv2-models/model/Specifications.h>
 #include <aws/lexv2-models/model/SpeechDetectionSensitivity.h>
 #include <aws/lexv2-models/model/SpeechFoundationModel.h>

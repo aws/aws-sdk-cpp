@@ -29,8 +29,8 @@ class CancelLifecycleExecutionResult {
 
   ///@{
   /**
-   * <p>The unique identifier for the image lifecycle runtime instance that was
-   * canceled.</p>
+   * <p>The unique identifier of the lifecycle execution that the cancellation
+   * request applies to. The cancellation completes asynchronously.</p>
    */
   inline const Aws::String& GetLifecycleExecutionId() const { return m_lifecycleExecutionId; }
   template <typename LifecycleExecutionIdT = Aws::String>

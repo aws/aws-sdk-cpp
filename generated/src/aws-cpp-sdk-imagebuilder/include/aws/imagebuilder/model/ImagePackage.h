@@ -20,8 +20,9 @@ namespace imagebuilder {
 namespace Model {
 
 /**
- * <p>A software package that's installed on top of the base image to create a
- * customized image.</p><p><h3>See Also:</h3>   <a
+ * <p>A software package that's installed on an image, as detected by Amazon Web
+ * Services Systems Manager Inventory at build time. The list includes packages
+ * that shipped with the base image.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImagePackage">AWS
  * API Reference</a></p>
  */

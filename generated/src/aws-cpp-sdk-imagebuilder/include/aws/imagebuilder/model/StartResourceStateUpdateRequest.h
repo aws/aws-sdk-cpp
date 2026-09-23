@@ -78,8 +78,9 @@ class StartResourceStateUpdateRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The name or Amazon Resource Name (ARN) of the IAM role that’s used to update
-   * image state.</p>
+   * <p>The name or Amazon Resource Name (ARN) of the IAM role that's used to update
+   * image state. You must provide this property together with
+   * <code>includeResources</code>. Neither is valid without the other.</p>
    */
   inline const Aws::String& GetExecutionRole() const { return m_executionRole; }
   inline bool ExecutionRoleHasBeenSet() const { return m_executionRoleHasBeenSet; }
@@ -97,14 +98,11 @@ class StartResourceStateUpdateRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Specifies which image resources to include in the state update. When
-   * specified, the lifecycle action applies to underlying resources. These resources
-   * include AMIs, snapshots, and containers in addition to the Image Builder image
-   * resource. Requires <code>executionRole</code> to also be specified. To delete an
-   * image and its underlying resources, you must specify
-   * <code>includeResources</code>. To delete only the Image Builder image record
-   * without affecting underlying resources, use the <code>DeleteImage</code> API
-   * instead.</p>
+   * <p>Specifies which underlying resources to update, in addition to the Image
+   * Builder image resource itself. Snapshots and containers are only valid for the
+   * <code>DELETED</code> state. To set an image to <code>DELETED</code>, you must
+   * include its underlying resources. To delete only the Image Builder image record,
+   * use the <a>DeleteImage</a> operation instead.</p>
    */
   inline const ResourceStateUpdateIncludeResources& GetIncludeResources() const { return m_includeResources; }
   inline bool IncludeResourcesHasBeenSet() const { return m_includeResourcesHasBeenSet; }
@@ -122,8 +120,12 @@ class StartResourceStateUpdateRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Skip action on the image resource and associated resources if specified
-   * exclusion rules are met.</p>
+   * <p>Rules that Image Builder evaluates against each of the image's AMIs. Matching
+   * AMIs and their snapshots are skipped. Exclusion rules only take effect when the
+   * request includes AMIs. If the target state is <code>DELETED</code> and any
+   * resource was skipped, the Image Builder image resource itself is also retained.
+   * For the <code>DEPRECATED</code> and <code>DISABLED</code> target states, Image
+   * Builder updates the image resource's state regardless of exclusions.</p>
    */
   inline const ResourceStateUpdateExclusionRules& GetExclusionRules() const { return m_exclusionRules; }
   inline bool ExclusionRulesHasBeenSet() const { return m_exclusionRulesHasBeenSet; }
@@ -141,9 +143,13 @@ class StartResourceStateUpdateRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Specifies the timestamp when the state transition takes effect. Use this
-   * parameter only when the target status is <code>DEPRECATED</code>. The value must
-   * be a future time.</p>
+   * <p>The timestamp that indicates when resources are updated by a lifecycle
+   * action. This property is valid only when the target status is
+   * <code>DEPRECATED</code>, and the value must be a future time. If you don't
+   * specify a value, Image Builder begins the state update right away. For a
+   * scheduled deprecation, included AMIs get their EC2 deprecation time set
+   * immediately, and Image Builder schedules the image resource to transition to
+   * <code>DEPRECATED</code> at that time.</p>
    */
   inline const Aws::Utils::DateTime& GetUpdateAt() const { return m_updateAt; }
   inline bool UpdateAtHasBeenSet() const { return m_updateAtHasBeenSet; }
@@ -162,9 +168,9 @@ class StartResourceStateUpdateRequest : public ImagebuilderRequest {
   ///@{
   /**
    * <p>A unique, case-sensitive identifier you provide to ensure that the operation
-   * completes no more than one time. If this token matches a previous request, the
-   * service ignores the request, but does not return an error. For more information,
-   * see <a
+   * runs no more than one time. If you retry a request with the same client token,
+   * Image Builder returns the original response without running the operation again.
+   * For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
    * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
    */

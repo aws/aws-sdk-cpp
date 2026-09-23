@@ -52,8 +52,8 @@ class TargetContainerRepository {
   ///@{
   /**
    * <p>The name of the container repository where the output container image is
-   * stored. This name is prefixed by the repository location. For example,
-   * <code>&lt;repository location url&gt;/repository_name</code>.</p>
+   * stored. Provide the repository name only (a namespace path such as
+   * <code>team-a/my-repo</code> is allowed, but not the registry hostname).</p>
    */
   inline const Aws::String& GetRepositoryName() const { return m_repositoryName; }
   inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }

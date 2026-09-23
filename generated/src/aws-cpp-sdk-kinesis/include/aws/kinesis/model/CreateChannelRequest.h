@@ -107,9 +107,9 @@ class CreateChannelRequest : public KinesisRequest {
 
   ///@{
   /**
-   * <p>The configuration for delivery to a general purpose Amazon S3 bucket. You
-   * must specify either <code>S3DestinationConfiguration</code> or
-   * <code>S3TablesDestinationConfiguration</code>, but not both.</p>
+   * <p>The configuration for delivery to a general purpose Amazon S3 bucket. Specify
+   * this parameter when <code>S3TablesDestinationConfiguration</code> is not
+   * specified.</p>
    */
   inline const S3DestinationConfiguration& GetS3DestinationConfiguration() const { return m_s3DestinationConfiguration; }
   inline bool S3DestinationConfigurationHasBeenSet() const { return m_s3DestinationConfigurationHasBeenSet; }
@@ -128,9 +128,8 @@ class CreateChannelRequest : public KinesisRequest {
   ///@{
   /**
    * <p>The configuration for delivery to streaming tables on Apache Iceberg in
-   * Amazon S3 Tables. You must specify either
-   * <code>S3DestinationConfiguration</code> or
-   * <code>S3TablesDestinationConfiguration</code>, but not both.</p>
+   * Amazon S3 Tables. Specify this parameter when
+   * <code>S3DestinationConfiguration</code> is not specified.</p>
    */
   inline const S3TablesDestinationConfiguration& GetS3TablesDestinationConfiguration() const { return m_s3TablesDestinationConfiguration; }
   inline bool S3TablesDestinationConfigurationHasBeenSet() const { return m_s3TablesDestinationConfigurationHasBeenSet; }

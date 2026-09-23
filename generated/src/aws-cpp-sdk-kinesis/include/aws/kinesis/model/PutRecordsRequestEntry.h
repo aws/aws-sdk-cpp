@@ -82,7 +82,14 @@ class PutRecordsRequestEntry {
    * shard. Specifically, an MD5 hash function is used to map partition keys to
    * 128-bit integer values and to map associated data records to shards. As a result
    * of this hashing mechanism, all data records with the same partition key map to
-   * the same shard within the stream.</p>
+   * the same shard within the stream.</p> <p>If the stream uses the
+   * <code>USER_PARTITION_KEY</code> record distribution strategy (the default), a
+   * partition key is required for each record. If the stream uses the
+   * <code>AUTO</code> record distribution strategy, the partition key is optional
+   * and any value you provide is ignored, along with any
+   * <code>ExplicitHashKey</code> you provide. In that case, Amazon Kinesis Data
+   * Streams distributes records across shards using service-managed algorithms. For
+   * more information, see <code>UpdateStreamRecordDistributionStrategy</code>.</p>
    */
   inline const Aws::String& GetPartitionKey() const { return m_partitionKey; }
   inline bool PartitionKeyHasBeenSet() const { return m_partitionKeyHasBeenSet; }

@@ -27,7 +27,8 @@ namespace imagebuilder {
 namespace Model {
 
 /**
- * <p>The configuration details for a lifecycle policy resource.</p><p><h3>See
+ * <p>Defines a lifecycle policy resource: its identity, status, execution role,
+ * resource type, rules, resource selection, timestamps, and tags.</p><p><h3>See
  * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/LifecyclePolicy">AWS
  * API Reference</a></p>
@@ -95,7 +96,9 @@ class LifecyclePolicy {
 
   ///@{
   /**
-   * <p>Indicates whether the lifecycle policy resource is enabled.</p>
+   * <p>Indicates whether the lifecycle policy resource is enabled. Only enabled
+   * policies run on their schedule. Disabling or deleting a policy removes its
+   * schedule and cancels any in-flight lifecycle execution.</p>
    */
   inline LifecyclePolicyStatus GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -146,7 +149,9 @@ class LifecyclePolicy {
 
   ///@{
   /**
-   * <p>The configuration details for a lifecycle policy resource.</p>
+   * <p>The list of rules for the lifecycle policy. Each rule pairs an action with a
+   * filter and optional exclusion rules. A policy can contain at most one rule per
+   * action type.</p>
    */
   inline const Aws::Vector<LifecyclePolicyDetail>& GetPolicyDetails() const { return m_policyDetails; }
   inline bool PolicyDetailsHasBeenSet() const { return m_policyDetailsHasBeenSet; }

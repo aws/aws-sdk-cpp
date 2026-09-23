@@ -37,7 +37,11 @@ class AmiDistributionConfiguration {
 
   ///@{
   /**
-   * <p>The name of the output AMI.</p>
+   * <p>The name of the output AMI. The name must include the <code>{{
+   * imagebuilder:buildDate }}</code> dynamic tag so that each build produces a
+   * uniquely named AMI. If you don't specify a name, Image Builder names the output
+   * AMI with the image name followed by the build timestamp, for example
+   * <code>my-image 2022-10-26T22-30-05.912619Z</code>.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -55,8 +59,11 @@ class AmiDistributionConfiguration {
 
   ///@{
   /**
-   * <p>The description of the AMI distribution configuration. Minimum and maximum
-   * length are in characters.</p>
+   * <p>The description to apply to the distributed AMI. Image Builder sets this as
+   * the output AMI's description in each target Region and account. If you don't
+   * specify a description, the AMI in the build Region uses the image recipe's
+   * description, if the recipe has one. Copies distributed to other Regions and
+   * accounts don't receive a default description.</p>
    */
   inline const Aws::String& GetDescription() const { return m_description; }
   inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -74,7 +81,10 @@ class AmiDistributionConfiguration {
 
   ///@{
   /**
-   * <p>The ID of an account to which you want to distribute an image.</p>
+   * <p>The Amazon Web Services account IDs to distribute the AMI to in this Region.
+   * Each listed account receives its own copy of the output AMI. If you don't
+   * specify accounts, Image Builder distributes the AMI only to your own
+   * account.</p>
    */
   inline const Aws::Vector<Aws::String>& GetTargetAccountIds() const { return m_targetAccountIds; }
   inline bool TargetAccountIdsHasBeenSet() const { return m_targetAccountIdsHasBeenSet; }

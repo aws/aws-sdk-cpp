@@ -150,7 +150,8 @@ class DistributionConfigurationSummary {
 
   ///@{
   /**
-   * <p>A list of Regions where the container image is distributed to.</p>
+   * <p>A list of the Regions that the distribution configuration distributes images
+   * to.</p>
    */
   inline const Aws::Vector<Aws::String>& GetRegions() const { return m_regions; }
   inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }

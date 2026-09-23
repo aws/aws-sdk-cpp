@@ -21,8 +21,9 @@ namespace imagebuilder {
 namespace Model {
 
 /**
- * <p>Properties that configure export from your build instance to a compatible
- * file format for your VM.</p><p><h3>See Also:</h3>   <a
+ * <p>Properties that configure exporting the output image to a disk image file in
+ * an Amazon S3 bucket, in a format that's compatible with your VMs.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/S3ExportConfiguration">AWS
  * API Reference</a></p>
  */

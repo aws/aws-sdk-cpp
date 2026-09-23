@@ -46,7 +46,9 @@ class GetContainerRecipePolicyResult {
 
   ///@{
   /**
-   * <p>The container recipe policy object that is returned.</p>
+   * <p>The resource policy for the container recipe, as a JSON policy document. If
+   * no policy has been applied, the response contains an empty JSON object
+   * (<code>{}</code>).</p>
    */
   inline const Aws::String& GetPolicy() const { return m_policy; }
   template <typename PolicyT = Aws::String>

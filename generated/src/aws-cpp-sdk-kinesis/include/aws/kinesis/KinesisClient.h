@@ -266,12 +266,12 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient,
   /**
    * <p>Deletes the specified channel. Deleting a channel stops delivery from the
    * source stream to the destination. Data already delivered to the destination is
-   * not deleted.</p> <p>A stream cannot be deleted while it has active channels. To
-   * delete the stream, first delete all channels attached to it. To find them, use
-   * <a>ListChannels</a> with a stream filter.</p> <p>This operation has a call limit
-   * of 5 transactions per second (TPS) for each Amazon Web Services account.
-   * Exceeding 5 TPS results in a <code>LimitExceededException</code>.</p><p><h3>See
-   * Also:</h3>   <a
+   * not deleted.</p> <p>A stream cannot be deleted while it has active channels. Use
+   * <a>ListChannels</a> with a stream filter to find the channels attached to a
+   * stream before deleting it.</p> <p>This operation has a call limit of 5
+   * transactions per second (TPS) for each Amazon Web Services account. Exceeding 5
+   * TPS results in a <code>LimitExceededException</code>.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeleteChannel">AWS
    * API Reference</a></p>
    */
@@ -1894,6 +1894,57 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient,
   void UpdateStreamModeAsync(const UpdateStreamModeRequestT& request, const UpdateStreamModeResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&KinesisClient::UpdateStreamMode, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the record distribution strategy for the specified Amazon Kinesis
+   * Data Streams on-demand data stream. The record distribution strategy determines
+   * how Amazon Kinesis Data Streams distributes records across the shards in a
+   * stream.</p>  <p>You must specify the stream using the
+   * <code>StreamARN</code> parameter.</p>  <p>The record distribution
+   * strategy is a stream-level setting. You can switch between the following
+   * strategies at any time, and the change takes effect immediately without
+   * downtime, data loss, or disruption to producer or consumer applications:</p>
+   * <ul> <li> <p> <code>AUTO</code> – Amazon Kinesis Data Streams distributes
+   * records evenly across shards using service-managed algorithms, and ignores any
+   * partition key and <code>ExplicitHashKey</code> that a producer provides. Use
+   * this strategy for stateless workloads that do not require partition-key
+   * ordering.</p> </li> <li> <p> <code>USER_PARTITION_KEY</code> – Producers must
+   * provide a partition key, and Amazon Kinesis Data Streams uses the partition key
+   * to determine shard placement. Records that share a partition key are sent to the
+   * same shard. This is the default strategy.</p> </li> </ul> <p>This operation is
+   * only supported for data streams that use the on-demand capacity mode.
+   * Provisioned capacity mode streams do not support the record distribution
+   * strategy setting. Attempting to set <code>AUTO</code> on a provisioned stream
+   * results in an <code>InvalidArgumentException</code>.</p> <p>New records that
+   * arrive after the change are distributed according to the new strategy. Records
+   * already in the stream keep their original shard assignments and are not
+   * redistributed.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateStreamRecordDistributionStrategy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateStreamRecordDistributionStrategyOutcome UpdateStreamRecordDistributionStrategy(
+      const Model::UpdateStreamRecordDistributionStrategyRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateStreamRecordDistributionStrategy that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename UpdateStreamRecordDistributionStrategyRequestT = Model::UpdateStreamRecordDistributionStrategyRequest>
+  Model::UpdateStreamRecordDistributionStrategyOutcomeCallable UpdateStreamRecordDistributionStrategyCallable(
+      const UpdateStreamRecordDistributionStrategyRequestT& request) const {
+    return SubmitCallable(&KinesisClient::UpdateStreamRecordDistributionStrategy, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateStreamRecordDistributionStrategy that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename UpdateStreamRecordDistributionStrategyRequestT = Model::UpdateStreamRecordDistributionStrategyRequest>
+  void UpdateStreamRecordDistributionStrategyAsync(const UpdateStreamRecordDistributionStrategyRequestT& request,
+                                                   const UpdateStreamRecordDistributionStrategyResponseReceivedHandler& handler,
+                                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KinesisClient::UpdateStreamRecordDistributionStrategy, request, handler, context);
   }
 
   /**

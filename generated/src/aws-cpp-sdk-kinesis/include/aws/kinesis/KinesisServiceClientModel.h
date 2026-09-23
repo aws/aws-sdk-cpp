@@ -131,6 +131,7 @@ class UpdateChannelRequest;
 class UpdateMaxRecordSizeRequest;
 class UpdateShardCountRequest;
 class UpdateStreamModeRequest;
+class UpdateStreamRecordDistributionStrategyRequest;
 class UpdateStreamWarmThroughputRequest;
 /* End of service model forward declarations required in KinesisClient header */
 
@@ -178,6 +179,7 @@ typedef Aws::Utils::Outcome<UpdateChannelResult, KinesisError> UpdateChannelOutc
 typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> UpdateMaxRecordSizeOutcome;
 typedef Aws::Utils::Outcome<UpdateShardCountResult, KinesisError> UpdateShardCountOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> UpdateStreamModeOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> UpdateStreamRecordDistributionStrategyOutcome;
 typedef Aws::Utils::Outcome<UpdateStreamWarmThroughputResult, KinesisError> UpdateStreamWarmThroughputOutcome;
 /* End of service model Outcome class definitions */
 
@@ -225,6 +227,7 @@ typedef std::future<UpdateChannelOutcome> UpdateChannelOutcomeCallable;
 typedef std::future<UpdateMaxRecordSizeOutcome> UpdateMaxRecordSizeOutcomeCallable;
 typedef std::future<UpdateShardCountOutcome> UpdateShardCountOutcomeCallable;
 typedef std::future<UpdateStreamModeOutcome> UpdateStreamModeOutcomeCallable;
+typedef std::future<UpdateStreamRecordDistributionStrategyOutcome> UpdateStreamRecordDistributionStrategyOutcomeCallable;
 typedef std::future<UpdateStreamWarmThroughputOutcome> UpdateStreamWarmThroughputOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
@@ -363,6 +366,10 @@ typedef std::function<void(const KinesisClient*, const Model::UpdateShardCountRe
 typedef std::function<void(const KinesisClient*, const Model::UpdateStreamModeRequest&, const Model::UpdateStreamModeOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateStreamModeResponseReceivedHandler;
+typedef std::function<void(const KinesisClient*, const Model::UpdateStreamRecordDistributionStrategyRequest&,
+                           const Model::UpdateStreamRecordDistributionStrategyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateStreamRecordDistributionStrategyResponseReceivedHandler;
 typedef std::function<void(const KinesisClient*, const Model::UpdateStreamWarmThroughputRequest&,
                            const Model::UpdateStreamWarmThroughputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateStreamWarmThroughputResponseReceivedHandler;

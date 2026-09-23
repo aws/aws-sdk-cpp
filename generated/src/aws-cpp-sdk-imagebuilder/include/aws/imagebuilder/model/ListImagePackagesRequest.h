@@ -30,8 +30,8 @@ class ListImagePackagesRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Filter results for the ListImagePackages request by the Image Build Version
-   * ARN</p>
+   * <p>The Amazon Resource Name (ARN) of the image build version whose packages you
+   * want to list. The value must be a full build version ARN.</p>
    */
   inline const Aws::String& GetImageBuildVersionArn() const { return m_imageBuildVersionArn; }
   inline bool ImageBuildVersionArnHasBeenSet() const { return m_imageBuildVersionArnHasBeenSet; }

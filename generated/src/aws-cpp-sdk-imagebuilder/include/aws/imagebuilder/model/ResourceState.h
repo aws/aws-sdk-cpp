@@ -20,7 +20,8 @@ namespace imagebuilder {
 namespace Model {
 
 /**
- * <p>The current state of an impacted resource.</p><p><h3>See Also:</h3>   <a
+ * <p>The state to apply to the image resource in a resource state update
+ * request.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ResourceState">AWS
  * API Reference</a></p>
  */
@@ -33,8 +34,9 @@ class ResourceState {
 
   ///@{
   /**
-   * <p>Shows the current lifecycle policy action that was applied to an impacted
-   * resource.</p>
+   * <p>The status to which you want to move the image resource. Set the status to
+   * <code>AVAILABLE</code> to restore an image that's currently deprecated or
+   * disabled.</p>
    */
   inline ResourceStatus GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

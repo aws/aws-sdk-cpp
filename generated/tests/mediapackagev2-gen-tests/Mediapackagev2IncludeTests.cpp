@@ -28,6 +28,8 @@
 #include <aws/mediapackagev2/model/ConflictException.h>
 #include <aws/mediapackagev2/model/ConflictExceptionType.h>
 #include <aws/mediapackagev2/model/ContainerType.h>
+#include <aws/mediapackagev2/model/ContentKeyPeriodConfiguration.h>
+#include <aws/mediapackagev2/model/ContentKeyPeriodTiming.h>
 #include <aws/mediapackagev2/model/CreateChannelGroupRequest.h>
 #include <aws/mediapackagev2/model/CreateChannelGroupResult.h>
 #include <aws/mediapackagev2/model/CreateChannelRequest.h>
@@ -149,6 +151,7 @@
 #include <aws/mediapackagev2/model/ScteInSegments.h>
 #include <aws/mediapackagev2/model/Segment.h>
 #include <aws/mediapackagev2/model/SpekeKeyProvider.h>
+#include <aws/mediapackagev2/model/SpekeVersion.h>
 #include <aws/mediapackagev2/model/StartTag.h>
 #include <aws/mediapackagev2/model/StreamNameOutputMode.h>
 #include <aws/mediapackagev2/model/TagResourceRequest.h>

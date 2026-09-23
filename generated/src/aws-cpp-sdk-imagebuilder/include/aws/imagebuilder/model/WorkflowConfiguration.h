@@ -103,7 +103,10 @@ class WorkflowConfiguration {
 
   ///@{
   /**
-   * <p>The action to take if the workflow fails.</p>
+   * <p>The action to take if the workflow fails. With <code>CONTINUE</code>, a
+   * failed workflow is logged and image creation proceeds to the next workflow. If
+   * you don't set a value, the image build fails when the workflow fails. You can
+   * only set this property for test workflows.</p>
    */
   inline OnWorkflowFailure GetOnFailure() const { return m_onFailure; }
   inline bool OnFailureHasBeenSet() const { return m_onFailureHasBeenSet; }

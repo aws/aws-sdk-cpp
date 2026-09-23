@@ -76,6 +76,7 @@
 #include <aws/mediaconvert/model/AudioSelector.h>
 #include <aws/mediaconvert/model/AudioSelectorGroup.h>
 #include <aws/mediaconvert/model/AudioSelectorType.h>
+#include <aws/mediaconvert/model/AudioSmpte337Passthrough.h>
 #include <aws/mediaconvert/model/AudioTypeControl.h>
 #include <aws/mediaconvert/model/AutomatedAbrRule.h>
 #include <aws/mediaconvert/model/AutomatedAbrSettings.h>
@@ -602,6 +603,7 @@
 #include <aws/mediaconvert/model/OutputSettings.h>
 #include <aws/mediaconvert/model/PadVideo.h>
 #include <aws/mediaconvert/model/PartnerWatermarking.h>
+#include <aws/mediaconvert/model/PassthroughSegmentationMode.h>
 #include <aws/mediaconvert/model/PassthroughSettings.h>
 #include <aws/mediaconvert/model/Policy.h>
 #include <aws/mediaconvert/model/Preset.h>

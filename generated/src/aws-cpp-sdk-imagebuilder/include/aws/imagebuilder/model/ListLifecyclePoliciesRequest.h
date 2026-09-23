@@ -32,8 +32,9 @@ class ListLifecyclePoliciesRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Streamline results based on one of the following values: <code>Name</code>,
-   * <code>Status</code>.</p>
+   * <p>Use the following filters to streamline results: <code>name</code>,
+   * <code>resourceType</code>, and <code>status</code>. Filter names are matched
+   * exactly as shown.</p>
    */
   inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
   inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }

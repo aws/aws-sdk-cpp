@@ -30,7 +30,11 @@ namespace imagebuilder {
 namespace Model {
 
 /**
- * <p>Details of an image pipeline.</p><p><h3>See Also:</h3>   <a
+ * <p>Defines the automation configuration for building, testing, and distributing
+ * images. A pipeline references the resources that its builds use, such as the
+ * recipe and infrastructure configuration. It also holds the settings that control
+ * its builds, such as the schedule and custom workflows.</p><p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImagePipeline">AWS
  * API Reference</a></p>
  */
@@ -97,7 +101,8 @@ class ImagePipeline {
 
   ///@{
   /**
-   * <p>The platform of the image pipeline.</p>
+   * <p>The platform of the image pipeline, inherited from the recipe that the
+   * pipeline uses.</p>
    */
   inline Platform GetPlatform() const { return m_platform; }
   inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
@@ -243,7 +248,9 @@ class ImagePipeline {
 
   ///@{
   /**
-   * <p>The status of the image pipeline.</p>
+   * <p>The status of the image pipeline. A disabled pipeline doesn't run on its
+   * schedule, but you can still start builds manually. Image Builder can also
+   * disable a pipeline automatically when consecutive scheduled builds fail.</p>
    */
   inline PipelineStatus GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -295,7 +302,7 @@ class ImagePipeline {
 
   ///@{
   /**
-   * <p>This is no longer supported, and does not return a value.</p>
+   * <p>The date on which this image pipeline was last run.</p>
    */
   inline const Aws::String& GetDateLastRun() const { return m_dateLastRun; }
   inline bool DateLastRunHasBeenSet() const { return m_dateLastRunHasBeenSet; }
@@ -373,7 +380,8 @@ class ImagePipeline {
 
   ///@{
   /**
-   * <p>Contains settings for vulnerability scans.</p>
+   * <p>Contains settings for vulnerability scans that Amazon Inspector runs against
+   * the test instance during image creation.</p>
    */
   inline const ImageScanningConfiguration& GetImageScanningConfiguration() const { return m_imageScanningConfiguration; }
   inline bool ImageScanningConfigurationHasBeenSet() const { return m_imageScanningConfigurationHasBeenSet; }
@@ -391,7 +399,11 @@ class ImagePipeline {
 
   ///@{
   /**
-   * <p>The tags to be applied to the images produced by this pipeline.</p>
+   * <p>The tags that Image Builder applies to the Image Builder image resource that
+   * this pipeline's scheduled executions create. These tags don't apply to the
+   * output AMI. Builds that you start manually use the tags from the <a
+   * href="https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_StartImagePipelineExecution.html">StartImagePipelineExecution</a>
+   * request instead.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetImageTags() const { return m_imageTags; }
   inline bool ImageTagsHasBeenSet() const { return m_imageTagsHasBeenSet; }
@@ -458,7 +470,8 @@ class ImagePipeline {
 
   ///@{
   /**
-   * <p>Defines logging configuration for the output image.</p>
+   * <p>The CloudWatch Logs configuration for the pipeline: the log group for image
+   * build logs and the log group for pipeline execution logs.</p>
    */
   inline const PipelineLoggingConfiguration& GetLoggingConfiguration() const { return m_loggingConfiguration; }
   inline bool LoggingConfigurationHasBeenSet() const { return m_loggingConfigurationHasBeenSet; }
@@ -481,13 +494,13 @@ class ImagePipeline {
    * a schedule:</p> <ul> <li> <p>If the pipeline execution is successful, the number
    * of consecutive failures resets to zero.</p> </li> <li> <p>If the pipeline
    * execution fails, Image Builder increments the number of consecutive failures. If
-   * the failure count exceeds the limit defined in the
-   * <code>AutoDisablePolicy</code>, Image Builder disables the pipeline.</p> </li>
-   * </ul> <p>The consecutive failure count is also reset to zero under the following
-   * conditions:</p> <ul> <li> <p>The pipeline runs manually and succeeds.</p> </li>
-   * <li> <p>The pipeline configuration is updated.</p> </li> </ul> <p>If the
-   * pipeline runs manually and fails, the count remains the same. The next scheduled
-   * run continues to increment where it left off before.</p>
+   * the failure count reaches the limit defined in the <a>AutoDisablePolicy</a>,
+   * Image Builder disables the pipeline.</p> </li> </ul> <p>The consecutive failure
+   * count is also reset to zero under the following conditions:</p> <ul> <li> <p>The
+   * pipeline runs manually and succeeds.</p> </li> <li> <p>The pipeline
+   * configuration is updated.</p> </li> </ul> <p>If the pipeline runs manually and
+   * fails, the count remains the same. The next scheduled run continues to increment
+   * where it left off before.</p>
    */
   inline int GetConsecutiveFailures() const { return m_consecutiveFailures; }
   inline bool ConsecutiveFailuresHasBeenSet() const { return m_consecutiveFailuresHasBeenSet; }

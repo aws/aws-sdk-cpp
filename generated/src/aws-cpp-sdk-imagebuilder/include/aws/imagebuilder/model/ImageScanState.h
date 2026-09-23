@@ -35,7 +35,12 @@ class ImageScanState {
 
   ///@{
   /**
-   * <p>The current state of vulnerability scans for the image.</p>
+   * <p>The current state of vulnerability scans for the image. The scan starts as
+   * <code>PENDING</code> and moves through <code>SCANNING</code> and
+   * <code>COLLECTING</code> to <code>COMPLETED</code>. Image Builder sets the status
+   * to <code>ABANDONED</code> if the image reaches a terminal state before the scan
+   * finding collection completes. A scan can also end as <code>FAILED</code> or
+   * <code>TIMED_OUT</code>.</p>
    */
   inline ImageScanStatus GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

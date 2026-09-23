@@ -32,8 +32,11 @@ class ListImageBuildVersionsRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the image whose build versions you want to
-   * retrieve.</p>
+   * <p>The Amazon Resource Name (ARN) of the image version whose build versions you
+   * want to retrieve. The ARN must specify an exact version
+   * (<code>&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</code>) - wildcards aren't
+   * allowed. This parameter is optional. If you don't specify it, Image Builder
+   * returns build versions for all of the images in your account.</p>
    */
   inline const Aws::String& GetImageVersionArn() const { return m_imageVersionArn; }
   inline bool ImageVersionArnHasBeenSet() const { return m_imageVersionArnHasBeenSet; }

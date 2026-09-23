@@ -1,6 +1,0 @@
-{
-  "type": "bugfix",
-  "category": "aws-cpp-sdk-core",
-  "contributor": "sbaluja",
-  "description": "Bidirectional streaming timeout"
-}

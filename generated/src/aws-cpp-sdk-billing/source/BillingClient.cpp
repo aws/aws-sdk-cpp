@@ -17,6 +17,7 @@
 #include <aws/billing/model/GetEnterpriseSupportChargeSummaryRequest.h>
 #include <aws/billing/model/GetEnterpriseSupportContractDetailsRequest.h>
 #include <aws/billing/model/GetResourcePolicyRequest.h>
+#include <aws/billing/model/ListBillingViewSegmentsRequest.h>
 #include <aws/billing/model/ListBillingViewsRequest.h>
 #include <aws/billing/model/ListEnterpriseSupportLinkedAccountChargesRequest.h>
 #include <aws/billing/model/ListSourceViewsForBillingViewRequest.h>
@@ -255,6 +256,12 @@ GetResourcePolicyOutcome BillingClient::GetResourcePolicy(const GetResourcePolic
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetResourcePolicyOutcome(result.GetResultWithOwnership())
                             : GetResourcePolicyOutcome(std::move(result.GetError()));
+}
+
+ListBillingViewSegmentsOutcome BillingClient::ListBillingViewSegments(const ListBillingViewSegmentsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBillingViewSegmentsOutcome(result.GetResultWithOwnership())
+                            : ListBillingViewSegmentsOutcome(std::move(result.GetError()));
 }
 
 ListBillingViewsOutcome BillingClient::ListBillingViews(const ListBillingViewsRequest& request) const {

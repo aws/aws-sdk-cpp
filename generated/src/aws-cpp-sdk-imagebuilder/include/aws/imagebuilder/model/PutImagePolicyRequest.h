@@ -49,7 +49,10 @@ class PutImagePolicyRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The policy to apply.</p>
+   * <p>The resource policy to apply to the image, as a JSON policy document. Image
+   * Builder validates the policy with Amazon Web Services RAM before applying it,
+   * and rejects invalid policies with
+   * <code>InvalidParameterValueException</code>.</p>
    */
   inline const Aws::String& GetPolicy() const { return m_policy; }
   inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }

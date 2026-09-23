@@ -22,7 +22,10 @@ namespace imagebuilder {
 namespace Model {
 
 /**
- * <p>Configuration details of the component.</p><p><h3>See Also:</h3>   <a
+ * <p>Configuration details of the component. You can specify each component only
+ * once in a recipe, regardless of version. Components with a status of
+ * <code>DEPRECATED</code> or <code>DISABLED</code> can't be added to new
+ * recipes.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ComponentConfiguration">AWS
  * API Reference</a></p>
  */
@@ -35,7 +38,9 @@ class ComponentConfiguration {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the component.</p>
+   * <p>The Amazon Resource Name (ARN) of the component. You can specify a build
+   * version ARN, or a component version ARN whose version segments can use
+   * <code>x</code> wildcards, for example <code>1.x.x</code>.</p>
    */
   inline const Aws::String& GetComponentArn() const { return m_componentArn; }
   inline bool ComponentArnHasBeenSet() const { return m_componentArnHasBeenSet; }
@@ -54,7 +59,9 @@ class ComponentConfiguration {
   ///@{
   /**
    * <p>A group of parameter settings that Image Builder uses to configure the
-   * component for a specific recipe.</p>
+   * component for a specific recipe. You must supply a value for every component
+   * parameter that has no default value, and you can only supply parameters that the
+   * component defines.</p>
    */
   inline const Aws::Vector<ComponentParameter>& GetParameters() const { return m_parameters; }
   inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }

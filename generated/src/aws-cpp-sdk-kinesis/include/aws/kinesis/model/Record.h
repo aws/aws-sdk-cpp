@@ -96,6 +96,10 @@ class Record {
   ///@{
   /**
    * <p>Identifies which shard in the stream the data record is assigned to.</p>
+   * <p>For a stream that uses the <code>AUTO</code> record distribution strategy,
+   * this value is not returned if the producer did not provide a partition key when
+   * writing the record. If the producer provided a partition key, the original value
+   * is returned even though it was not used to determine shard placement.</p>
    */
   inline const Aws::String& GetPartitionKey() const { return m_partitionKey; }
   inline bool PartitionKeyHasBeenSet() const { return m_partitionKeyHasBeenSet; }

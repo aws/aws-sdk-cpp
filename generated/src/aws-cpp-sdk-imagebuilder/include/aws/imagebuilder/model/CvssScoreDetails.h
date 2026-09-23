@@ -54,7 +54,8 @@ class CvssScoreDetails {
 
   ///@{
   /**
-   * <p>The source of the finding.</p>
+   * <p>The source of the CVSS data that the Amazon Inspector score for the finding
+   * is based on, for example NVD or a vendor security feed.</p>
    */
   inline const Aws::String& GetCvssSource() const { return m_cvssSource; }
   inline bool CvssSourceHasBeenSet() const { return m_cvssSourceHasBeenSet; }
@@ -124,8 +125,9 @@ class CvssScoreDetails {
 
   ///@{
   /**
-   * <p>An object that contains details about an adjustment that Amazon Inspector
-   * made to the CVSS score for the finding.</p>
+   * <p>The adjustments that Amazon Inspector applied to the base CVSS score to
+   * produce its own score for the finding. The list is empty when Amazon Inspector
+   * made no adjustments.</p>
    */
   inline const Aws::Vector<CvssScoreAdjustment>& GetAdjustments() const { return m_adjustments; }
   inline bool AdjustmentsHasBeenSet() const { return m_adjustmentsHasBeenSet; }

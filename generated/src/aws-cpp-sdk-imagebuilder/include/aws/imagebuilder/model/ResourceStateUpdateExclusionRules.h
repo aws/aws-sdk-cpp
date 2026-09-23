@@ -33,7 +33,10 @@ class ResourceStateUpdateExclusionRules {
   AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p>Defines criteria for AMIs that Image Builder should exclude from the resource
+   * state update.</p>
+   */
   inline const LifecyclePolicyDetailExclusionRulesAmis& GetAmis() const { return m_amis; }
   inline bool AmisHasBeenSet() const { return m_amisHasBeenSet; }
   template <typename AmisT = LifecyclePolicyDetailExclusionRulesAmis>

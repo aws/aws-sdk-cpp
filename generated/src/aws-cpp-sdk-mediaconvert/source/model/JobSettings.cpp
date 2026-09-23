@@ -61,6 +61,14 @@ JobSettings& JobSettings::operator=(JsonView jsonValue) {
     m_motionImageInserter = jsonValue.GetObject("motionImageInserter");
     m_motionImageInserterHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("motionImageInserters")) {
+    Aws::Utils::Array<JsonView> motionImageInsertersJsonList = jsonValue.GetArray("motionImageInserters");
+    for (unsigned motionImageInsertersIndex = 0; motionImageInsertersIndex < motionImageInsertersJsonList.GetLength();
+         ++motionImageInsertersIndex) {
+      m_motionImageInserters.push_back(motionImageInsertersJsonList[motionImageInsertersIndex].AsObject());
+    }
+    m_motionImageInsertersHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("nielsenConfiguration")) {
     m_nielsenConfiguration = jsonValue.GetObject("nielsenConfiguration");
     m_nielsenConfigurationHasBeenSet = true;
@@ -134,6 +142,15 @@ JsonValue JobSettings::Jsonize() const {
 
   if (m_motionImageInserterHasBeenSet) {
     payload.WithObject("motionImageInserter", m_motionImageInserter.Jsonize());
+  }
+
+  if (m_motionImageInsertersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> motionImageInsertersJsonList(m_motionImageInserters.size());
+    for (unsigned motionImageInsertersIndex = 0; motionImageInsertersIndex < motionImageInsertersJsonList.GetLength();
+         ++motionImageInsertersIndex) {
+      motionImageInsertersJsonList[motionImageInsertersIndex].AsObject(m_motionImageInserters[motionImageInsertersIndex].Jsonize());
+    }
+    payload.WithArray("motionImageInserters", std::move(motionImageInsertersJsonList));
   }
 
   if (m_nielsenConfigurationHasBeenSet) {

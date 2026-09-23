@@ -35,7 +35,13 @@ class ImportComponentRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The name of the component.</p>
+   * <p>The name of the component. Image Builder generates the component ARN from a
+   * normalized form of the name, so names that differ only in case, spaces, or
+   * underscores count as the same name. If a component with the same name and
+   * semantic version already exists in your account in the same Amazon Web Services
+   * Region, the request creates a new build version for it. If the content is also
+   * identical to the latest build version, the request fails because the component
+   * already exists.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -56,11 +62,14 @@ class ImportComponentRequest : public ImagebuilderRequest {
    * <p>The semantic version of the component. This version follows the semantic
    * version syntax.</p>  <p>The semantic version has four nodes:
    * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
-   * for the first three, and can filter on all of them.</p> <p> <b>Filtering:</b>
-   * You can use wildcards (x) to specify the most recent versions or nodes when
-   * selecting the base image or components for your recipe. When you use a wildcard
-   * in any node, all nodes to the right of the first wildcard must also be
-   * wildcards.</p>
+   * for the first three, and can filter on all of them.</p> <p> <b>Assignment:</b>
+   * For the first three nodes, you can assign any positive integer value, including
+   * zero. The upper limit is 2^30-1, or 1073741823, for each node. Image Builder
+   * automatically assigns the build number to the fourth node.</p> <p>
+   * <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment
+   * requirements for the nodes that you can assign. For example, you might choose a
+   * software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+   *
    */
   inline const Aws::String& GetSemanticVersion() const { return m_semanticVersion; }
   inline bool SemanticVersionHasBeenSet() const { return m_semanticVersionHasBeenSet; }
@@ -166,9 +175,10 @@ class ImportComponentRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The data of the component. Used to specify the data inline. Either
-   * <code>data</code> or <code>uri</code> can be used to specify the data within the
-   * component.</p>
+   * <p>The data of the component. For the <code>SHELL</code> format, this is the
+   * plain script content. You must specify exactly one of the <code>data</code> or
+   * <code>uri</code> properties. For scripts that exceed the inline length
+   * constraint, use the <code>uri</code> property.</p>
    */
   inline const Aws::String& GetData() const { return m_data; }
   inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
@@ -207,12 +217,13 @@ class ImportComponentRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) that uniquely identifies the KMS key used to
-   * encrypt this component. This can be either the Key ARN or the Alias ARN. For
-   * more information, see <a
+   * <p>The Amazon Resource Name (ARN) of the KMS key that is used to encrypt this
+   * component. This can be either the Key ARN or the Alias ARN. For more
+   * information, see <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key
-   * identifiers (KeyId)</a> in the <i>Key Management Service Developer
-   * Guide</i>.</p>
+   * identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>. If
+   * you don't specify a key, Image Builder encrypts the component data with a KMS
+   * key that Image Builder owns.</p>
    */
   inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
   inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
@@ -255,9 +266,9 @@ class ImportComponentRequest : public ImagebuilderRequest {
   ///@{
   /**
    * <p>A unique, case-sensitive identifier you provide to ensure that the operation
-   * completes no more than one time. If this token matches a previous request, the
-   * service ignores the request, but does not return an error. For more information,
-   * see <a
+   * runs no more than one time. If you retry a request with the same client token,
+   * Image Builder returns the original response without running the operation again.
+   * For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
    * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
    */

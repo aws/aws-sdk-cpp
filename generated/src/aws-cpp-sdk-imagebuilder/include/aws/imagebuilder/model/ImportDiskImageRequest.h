@@ -35,7 +35,11 @@ class ImportDiskImageRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The name of the image resource that's created from the import.</p>
+   * <p>The name of the image resource that's created from the import. Image Builder
+   * generates the image ARN from a normalized form of the name, so names that differ
+   * only in case, spaces, or underscores count as the same name. If an image with
+   * the same name and semantic version already exists in your account in the same
+   * Amazon Web Services Region, the import creates a new build version for it.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -109,8 +113,8 @@ class ImportDiskImageRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The operating system version for the imported image. Allowed values include
-   * the following: <code>Microsoft Windows 11</code>.</p>
+   * <p>The operating system version for the imported image. The only supported value
+   * is <code>Microsoft Windows 11</code>.</p>
    */
   inline const Aws::String& GetOsVersion() const { return m_osVersion; }
   inline bool OsVersionHasBeenSet() const { return m_osVersionHasBeenSet; }
@@ -130,7 +134,9 @@ class ImportDiskImageRequest : public ImagebuilderRequest {
   /**
    * <p>The name or Amazon Resource Name (ARN) for the IAM role you create that
    * grants Image Builder access to perform workflow actions to import an image from
-   * a Microsoft ISO file.</p>
+   * a Microsoft ISO file. If you don't provide a role, Image Builder uses the Image
+   * Builder service-linked role in your account, and creates it if it doesn't
+   * exist.</p>
    */
   inline const Aws::String& GetExecutionRole() const { return m_executionRole; }
   inline bool ExecutionRoleHasBeenSet() const { return m_executionRoleHasBeenSet; }
@@ -167,7 +173,10 @@ class ImportDiskImageRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The <code>uri</code> of the ISO disk file that's stored in Amazon S3.</p>
+   * <p>The <code>uri</code> of the ISO disk file that's stored in Amazon S3, in
+   * <code>s3://bucket/key</code> format. The key must end with the
+   * <code>.iso</code>, <code>.ISO</code>, or <code>.Iso</code> extension, and the
+   * bucket must be owned by the account that makes the request.</p>
    */
   inline const Aws::String& GetUri() const { return m_uri; }
   inline bool UriHasBeenSet() const { return m_uriHasBeenSet; }
@@ -185,7 +194,10 @@ class ImportDiskImageRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The logging configuration for the image build process.</p>
+   * <p>The CloudWatch Logs log group where Image Builder sends the import logs. If
+   * you specify a log group name outside of the <code>/aws/imagebuilder/</code>
+   * namespace, you must also provide an <code>executionRole</code> that has
+   * permission to write to that log group.</p>
    */
   inline const ImageLoggingConfiguration& GetLoggingConfiguration() const { return m_loggingConfiguration; }
   inline bool LoggingConfigurationHasBeenSet() const { return m_loggingConfigurationHasBeenSet; }
@@ -264,9 +276,9 @@ class ImportDiskImageRequest : public ImagebuilderRequest {
   ///@{
   /**
    * <p>A unique, case-sensitive identifier you provide to ensure that the operation
-   * completes no more than one time. If this token matches a previous request, the
-   * service ignores the request, but does not return an error. For more information,
-   * see <a
+   * runs no more than one time. If you retry a request with the same client token,
+   * Image Builder returns the original response without running the operation again.
+   * For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
    * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
    */

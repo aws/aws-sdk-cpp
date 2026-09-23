@@ -82,8 +82,7 @@ class ListChannelsRequest : public KinesisRequest {
   ///@{
   /**
    * <p>The pagination token returned by a previous call. Specify this token to
-   * retrieve the next page of results. This value is <code>null</code> when there
-   * are no more results to return.</p>
+   * retrieve the next page of results.</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

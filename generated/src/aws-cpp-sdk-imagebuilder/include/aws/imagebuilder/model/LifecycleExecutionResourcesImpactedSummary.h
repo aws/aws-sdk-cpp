@@ -17,8 +17,8 @@ namespace imagebuilder {
 namespace Model {
 
 /**
- * <p>Contains details for an image resource that was identified for a lifecycle
- * action.</p><p><h3>See Also:</h3>   <a
+ * <p>Contains an indicator that shows whether the lifecycle execution identified
+ * any resources to take lifecycle actions on.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/LifecycleExecutionResourcesImpactedSummary">AWS
  * API Reference</a></p>
  */
@@ -31,8 +31,8 @@ class LifecycleExecutionResourcesImpactedSummary {
 
   ///@{
   /**
-   * <p>Indicates whether an image resource that was identified for a lifecycle
-   * action has associated resources that are also impacted.</p>
+   * <p>Indicates whether the lifecycle execution identified any resources to take
+   * lifecycle actions on.</p>
    */
   inline bool GetHasImpactedResources() const { return m_hasImpactedResources; }
   inline bool HasImpactedResourcesHasBeenSet() const { return m_hasImpactedResourcesHasBeenSet; }

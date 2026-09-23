@@ -18,6 +18,7 @@ namespace SpeechModelPreferenceMapper {
 static const int Standard_HASH = HashingUtils::HashString("Standard");
 static const int Neural_HASH = HashingUtils::HashString("Neural");
 static const int Deepgram_HASH = HashingUtils::HashString("Deepgram");
+static const int Advanced_HASH = HashingUtils::HashString("Advanced");
 
 SpeechModelPreference GetSpeechModelPreferenceForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ SpeechModelPreference GetSpeechModelPreferenceForName(const Aws::String& name) {
     return SpeechModelPreference::Neural;
   } else if (hashCode == Deepgram_HASH) {
     return SpeechModelPreference::Deepgram;
+  } else if (hashCode == Advanced_HASH) {
+    return SpeechModelPreference::Advanced;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForSpeechModelPreference(SpeechModelPreference enumValue) {
       return "Neural";
     case SpeechModelPreference::Deepgram:
       return "Deepgram";
+    case SpeechModelPreference::Advanced:
+      return "Advanced";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -125,8 +125,10 @@ class WorkflowExecutionMetadata {
 
   ///@{
   /**
-   * <p>The total number of steps in the workflow. This should equal the sum of the
-   * step counts for steps that succeeded, were skipped, and failed.</p>
+   * <p>The total number of steps that the workflow document defines for this runtime
+   * instance of the workflow. Image Builder sets this count before any steps run.
+   * The sum of succeeded, skipped, and failed steps only reaches this total if every
+   * step finishes in one of those states.</p>
    */
   inline int GetTotalStepCount() const { return m_totalStepCount; }
   inline bool TotalStepCountHasBeenSet() const { return m_totalStepCountHasBeenSet; }
@@ -247,7 +249,10 @@ class WorkflowExecutionMetadata {
 
   ///@{
   /**
-   * <p>Indicates retry status for this runtime instance of the workflow.</p>
+   * <p>Indicates whether a retry of the image build superseded this runtime instance
+   * of the workflow. When you retry a failed image build, Image Builder sets this
+   * flag to <code>true</code> on the original workflow executions that the retry
+   * re-ran.</p>
    */
   inline bool GetRetried() const { return m_retried; }
   inline bool RetriedHasBeenSet() const { return m_retriedHasBeenSet; }

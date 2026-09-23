@@ -46,7 +46,9 @@ class GetImageRecipePolicyResult {
 
   ///@{
   /**
-   * <p>The image recipe policy object.</p>
+   * <p>The resource policy for the image recipe, as a JSON policy document. If no
+   * policy has been applied, the response contains an empty JSON object
+   * (<code>{}</code>).</p>
    */
   inline const Aws::String& GetPolicy() const { return m_policy; }
   template <typename PolicyT = Aws::String>

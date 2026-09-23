@@ -6,6 +6,7 @@
 #pragma once
 
 #include <aws/billing/model/GetCreditAllocationHistoryPaginationTraits.h>
+#include <aws/billing/model/ListBillingViewSegmentsPaginationTraits.h>
 #include <aws/billing/model/ListBillingViewsPaginationTraits.h>
 #include <aws/billing/model/ListEnterpriseSupportLinkedAccountChargesPaginationTraits.h>
 #include <aws/billing/model/ListSourceViewsForBillingViewPaginationTraits.h>
@@ -42,6 +43,18 @@ class BillingPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBillingViewsRequest,
                                              Pagination::ListBillingViewsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
+  }
+
+  /**
+   * Create a paginator for ListBillingViewSegments operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBillingViewSegmentsRequest,
+                                    Pagination::ListBillingViewSegmentsPaginationTraits<DerivedClient>>
+  ListBillingViewSegmentsPaginator(const Model::ListBillingViewSegmentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBillingViewSegmentsRequest,
+                                             Pagination::ListBillingViewSegmentsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 
   /**

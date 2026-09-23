@@ -35,7 +35,9 @@ class ComponentState {
 
   ///@{
   /**
-   * <p>The current state of the component.</p>
+   * <p>The current state of the component. Components with a status of
+   * <code>DEPRECATED</code> or <code>DISABLED</code> can't be added to new
+   * recipes.</p>
    */
   inline ComponentStatus GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

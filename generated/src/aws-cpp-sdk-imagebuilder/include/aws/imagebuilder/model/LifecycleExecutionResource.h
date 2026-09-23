@@ -79,7 +79,7 @@ class LifecycleExecutionResource {
 
   ///@{
   /**
-   * <p>The runtime state for the lifecycle execution.</p>
+   * <p>The runtime state of the lifecycle action for this resource.</p>
    */
   inline const LifecycleExecutionResourceState& GetState() const { return m_state; }
   inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }

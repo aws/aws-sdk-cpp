@@ -16,11 +16,14 @@ namespace Model {
 namespace MedicalScribeLanguageCodeMapper {
 
 static const int en_US_HASH = HashingUtils::HashString("en-US");
+static const int multi_HASH = HashingUtils::HashString("multi");
 
 MedicalScribeLanguageCode GetMedicalScribeLanguageCodeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == en_US_HASH) {
     return MedicalScribeLanguageCode::en_US;
+  } else if (hashCode == multi_HASH) {
+    return MedicalScribeLanguageCode::multi;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForMedicalScribeLanguageCode(MedicalScribeLanguageCode enumVa
       return {};
     case MedicalScribeLanguageCode::en_US:
       return "en-US";
+    case MedicalScribeLanguageCode::multi:
+      return "multi";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

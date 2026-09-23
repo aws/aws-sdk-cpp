@@ -34,7 +34,9 @@ class AudioProperties {
 
   ///@{
   /**
-   * The bit depth of the audio track.
+   * The bit depth of the audio track. This value is exact for PCM and FLAC audio.
+   * For lossy codecs, such as AAC, AC-3, and E-AC-3, it is a nominal value and
+   * should be treated as approximate.
    */
   inline int GetBitDepth() const { return m_bitDepth; }
   inline bool BitDepthHasBeenSet() const { return m_bitDepthHasBeenSet; }
@@ -67,7 +69,9 @@ class AudioProperties {
   ///@{
   /**
    * The audio channel layout of the track, such as "mono", "stereo", "5.1", or
-   * "7.1". Object-based or immersive audio is reported as "5.1.4" or "7.1.4".
+   * "7.1". Object-based or immersive audio is reported as "5.1.4" or "7.1.4". The
+   * layout is exact for AC-3 and E-AC-3 audio. For other codecs, it is inferred from
+   * the channel count and should be treated as approximate.
    */
   inline const Aws::String& GetChannelLayout() const { return m_channelLayout; }
   inline bool ChannelLayoutHasBeenSet() const { return m_channelLayoutHasBeenSet; }

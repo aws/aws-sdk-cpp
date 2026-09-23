@@ -284,6 +284,7 @@
 #include <aws/neptune/NeptuneClient.h>
 #include <aws/neptunedata/NeptunedataClient.h>
 #include <aws/network-firewall/NetworkFirewallClient.h>
+#include <aws/network-security-manager/NetworkSecurityManagerClient.h>
 #include <aws/networkflowmonitor/NetworkFlowMonitorClient.h>
 #include <aws/networkmanager/NetworkManagerClient.h>
 #include <aws/networkmonitor/NetworkMonitorClient.h>

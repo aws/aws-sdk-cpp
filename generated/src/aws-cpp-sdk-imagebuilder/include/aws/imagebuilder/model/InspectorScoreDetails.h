@@ -34,8 +34,9 @@ class InspectorScoreDetails {
 
   ///@{
   /**
-   * <p>An object that contains details about an adjustment that Amazon Inspector
-   * made to the CVSS score for the finding.</p>
+   * <p>The CVSS score that Amazon Inspector assigned to the finding after applying
+   * its adjustments. It includes the score source, CVSS version, scoring vector, and
+   * the adjustments applied.</p>
    */
   inline const CvssScoreDetails& GetAdjustedCvss() const { return m_adjustedCvss; }
   inline bool AdjustedCvssHasBeenSet() const { return m_adjustedCvssHasBeenSet; }

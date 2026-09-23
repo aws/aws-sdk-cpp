@@ -23,7 +23,7 @@ namespace imagebuilder {
 namespace Model {
 
 /**
- * <p>A summary of a container recipe</p><p><h3>See Also:</h3>   <a
+ * <p>A summary of a container recipe.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ContainerRecipeSummary">AWS
  * API Reference</a></p>
  */
@@ -88,7 +88,8 @@ class ContainerRecipeSummary {
 
   ///@{
   /**
-   * <p>The system platform for the container, such as Windows or Linux.</p>
+   * <p>The system platform for the container. Container recipes support only the
+   * Linux and Windows platforms.</p>
    */
   inline Platform GetPlatform() const { return m_platform; }
   inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }

@@ -35,7 +35,11 @@ class ImageState {
 
   ///@{
   /**
-   * <p>The status of the image.</p>
+   * <p>The status of the image. A new image moves through build, test, and
+   * distribution statuses during creation, and ends in the <code>AVAILABLE</code>,
+   * <code>FAILED</code>, or <code>CANCELLED</code> state. The
+   * <code>DEPRECATED</code>, <code>DISABLED</code>, and <code>DELETED</code>
+   * statuses come from later resource management actions.</p>
    */
   inline ImageStatus GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

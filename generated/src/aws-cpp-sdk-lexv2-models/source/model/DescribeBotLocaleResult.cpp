@@ -118,6 +118,10 @@ DescribeBotLocaleResult& DescribeBotLocaleResult::operator=(const Aws::AmazonWeb
         SpeechDetectionSensitivityMapper::GetSpeechDetectionSensitivityForName(jsonValue.GetString("speechDetectionSensitivity"));
     m_speechDetectionSensitivityHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("speakerDiarizationSettings")) {
+    m_speakerDiarizationSettings = jsonValue.GetObject("speakerDiarizationSettings");
+    m_speakerDiarizationSettingsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

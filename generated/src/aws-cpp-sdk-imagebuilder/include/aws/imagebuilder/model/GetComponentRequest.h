@@ -35,8 +35,11 @@ class GetComponentRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the component that you want to get. Regex
-   * requires the suffix <code>/\d+$</code>.</p>
+   * <p>The Amazon Resource Name (ARN) of the component that you want to get. You can
+   * specify a build version ARN, or a component version ARN. The version can use the
+   * <code>x</code> wildcard in trailing positions, for example <code>1.0.x</code> or
+   * <code>1.x.x</code>. Version ARNs resolve to the latest available matching
+   * component build version.</p>
    */
   inline const Aws::String& GetComponentBuildVersionArn() const { return m_componentBuildVersionArn; }
   inline bool ComponentBuildVersionArnHasBeenSet() const { return m_componentBuildVersionArnHasBeenSet; }

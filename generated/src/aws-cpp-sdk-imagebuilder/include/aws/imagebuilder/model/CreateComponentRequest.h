@@ -34,7 +34,13 @@ class CreateComponentRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The name of the component.</p>
+   * <p>The name of the component. Image Builder generates the component ARN from a
+   * normalized form of the name, so names that differ only in case, spaces, or
+   * underscores count as the same name. If a component with the same name and
+   * semantic version already exists in your account in the same Amazon Web Services
+   * Region, the request creates a new build version for it. If the content is also
+   * identical to the latest build version, the request fails because the component
+   * already exists.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -184,9 +190,9 @@ class CreateComponentRequest : public ImagebuilderRequest {
    * <p>The <code>uri</code> of a YAML component document file. This must be an S3
    * URL (<code>s3://bucket/key</code>), and you must have permission to access the
    * S3 bucket it points to. If you use Amazon S3, you can specify component content
-   * up to your service quota.</p> <p>Alternatively, you can specify the YAML
-   * document inline, using the component <code>data</code> property. You cannot
-   * specify both properties.</p>
+   * up to your service quota for component size, which is 64 KB by default.</p>
+   * <p>Alternatively, you can specify the YAML document inline, using the component
+   * <code>data</code> property. You cannot specify both properties.</p>
    */
   inline const Aws::String& GetUri() const { return m_uri; }
   inline bool UriHasBeenSet() const { return m_uriHasBeenSet; }
@@ -208,8 +214,9 @@ class CreateComponentRequest : public ImagebuilderRequest {
    * encrypt this component. This can be either the Key ARN or the Alias ARN. For
    * more information, see <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key
-   * identifiers (KeyId)</a> in the <i>Key Management Service Developer
-   * Guide</i>.</p>
+   * identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>. If
+   * you don't specify a key, Image Builder encrypts the component data with a KMS
+   * key that Image Builder owns.</p>
    */
   inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
   inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
@@ -252,9 +259,9 @@ class CreateComponentRequest : public ImagebuilderRequest {
   ///@{
   /**
    * <p>A unique, case-sensitive identifier you provide to ensure that the operation
-   * completes no more than one time. If this token matches a previous request, the
-   * service ignores the request, but does not return an error. For more information,
-   * see <a
+   * runs no more than one time. If you retry a request with the same client token,
+   * Image Builder returns the original response without running the operation again.
+   * For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
    * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
    */
@@ -274,8 +281,8 @@ class CreateComponentRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Validates the required permissions and request parameters without making the
-   * request. If validation succeeds, the operation returns a
+   * <p>Validates the required permissions and request parameters without performing
+   * the operation. If validation succeeds, the operation returns a
    * <code>DryRunOperationException</code> error response.</p>
    */
   inline bool GetDryRun() const { return m_dryRun; }

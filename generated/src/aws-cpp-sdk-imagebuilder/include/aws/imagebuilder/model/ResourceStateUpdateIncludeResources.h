@@ -17,8 +17,10 @@ namespace imagebuilder {
 namespace Model {
 
 /**
- * <p>Specifies if the lifecycle policy should apply actions to selected
- * resources.</p><p><h3>See Also:</h3>   <a
+ * <p>Specifies which underlying resources the resource state update applies to, in
+ * addition to the Image Builder image resource itself: distributed AMIs and their
+ * snapshots for AMI images, or distributed container images for container
+ * images.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ResourceStateUpdateIncludeResources">AWS
  * API Reference</a></p>
  */
@@ -31,7 +33,7 @@ class ResourceStateUpdateIncludeResources {
 
   ///@{
   /**
-   * <p>Specifies whether the lifecycle action should apply to distributed AMIs</p>
+   * <p>Specifies whether the lifecycle action should apply to distributed AMIs.</p>
    */
   inline bool GetAmis() const { return m_amis; }
   inline bool AmisHasBeenSet() const { return m_amisHasBeenSet; }

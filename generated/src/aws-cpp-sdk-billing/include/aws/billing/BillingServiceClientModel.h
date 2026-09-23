@@ -30,6 +30,8 @@
 #include <aws/billing/model/GetEnterpriseSupportChargeSummaryResult.h>
 #include <aws/billing/model/GetEnterpriseSupportContractDetailsResult.h>
 #include <aws/billing/model/GetResourcePolicyResult.h>
+#include <aws/billing/model/ListBillingViewSegmentsRequest.h>
+#include <aws/billing/model/ListBillingViewSegmentsResult.h>
 #include <aws/billing/model/ListBillingViewsRequest.h>
 #include <aws/billing/model/ListBillingViewsResult.h>
 #include <aws/billing/model/ListEnterpriseSupportLinkedAccountChargesResult.h>
@@ -84,6 +86,7 @@ class GetCreditsRequest;
 class GetEnterpriseSupportChargeSummaryRequest;
 class GetEnterpriseSupportContractDetailsRequest;
 class GetResourcePolicyRequest;
+class ListBillingViewSegmentsRequest;
 class ListBillingViewsRequest;
 class ListEnterpriseSupportLinkedAccountChargesRequest;
 class ListSourceViewsForBillingViewRequest;
@@ -107,6 +110,7 @@ typedef Aws::Utils::Outcome<GetCreditsResult, BillingError> GetCreditsOutcome;
 typedef Aws::Utils::Outcome<GetEnterpriseSupportChargeSummaryResult, BillingError> GetEnterpriseSupportChargeSummaryOutcome;
 typedef Aws::Utils::Outcome<GetEnterpriseSupportContractDetailsResult, BillingError> GetEnterpriseSupportContractDetailsOutcome;
 typedef Aws::Utils::Outcome<GetResourcePolicyResult, BillingError> GetResourcePolicyOutcome;
+typedef Aws::Utils::Outcome<ListBillingViewSegmentsResult, BillingError> ListBillingViewSegmentsOutcome;
 typedef Aws::Utils::Outcome<ListBillingViewsResult, BillingError> ListBillingViewsOutcome;
 typedef Aws::Utils::Outcome<ListEnterpriseSupportLinkedAccountChargesResult, BillingError> ListEnterpriseSupportLinkedAccountChargesOutcome;
 typedef Aws::Utils::Outcome<ListSourceViewsForBillingViewResult, BillingError> ListSourceViewsForBillingViewOutcome;
@@ -130,6 +134,7 @@ typedef std::future<GetCreditsOutcome> GetCreditsOutcomeCallable;
 typedef std::future<GetEnterpriseSupportChargeSummaryOutcome> GetEnterpriseSupportChargeSummaryOutcomeCallable;
 typedef std::future<GetEnterpriseSupportContractDetailsOutcome> GetEnterpriseSupportContractDetailsOutcomeCallable;
 typedef std::future<GetResourcePolicyOutcome> GetResourcePolicyOutcomeCallable;
+typedef std::future<ListBillingViewSegmentsOutcome> ListBillingViewSegmentsOutcomeCallable;
 typedef std::future<ListBillingViewsOutcome> ListBillingViewsOutcomeCallable;
 typedef std::future<ListEnterpriseSupportLinkedAccountChargesOutcome> ListEnterpriseSupportLinkedAccountChargesOutcomeCallable;
 typedef std::future<ListSourceViewsForBillingViewOutcome> ListSourceViewsForBillingViewOutcomeCallable;
@@ -180,6 +185,9 @@ typedef std::function<void(const BillingClient*, const Model::GetEnterpriseSuppo
 typedef std::function<void(const BillingClient*, const Model::GetResourcePolicyRequest&, const Model::GetResourcePolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetResourcePolicyResponseReceivedHandler;
+typedef std::function<void(const BillingClient*, const Model::ListBillingViewSegmentsRequest&, const Model::ListBillingViewSegmentsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListBillingViewSegmentsResponseReceivedHandler;
 typedef std::function<void(const BillingClient*, const Model::ListBillingViewsRequest&, const Model::ListBillingViewsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListBillingViewsResponseReceivedHandler;

@@ -35,7 +35,8 @@ class ListContainerRecipesRequest : public ImagebuilderRequest {
   /**
    * <p>Returns container recipes belonging to the specified owner, that have been
    * shared with you. You can omit this field to return container recipes belonging
-   * to your account.</p>
+   * to your account. For container recipes, the valid owner values are
+   * <code>Self</code>, <code>Shared</code>, and <code>Amazon</code>.</p>
    */
   inline Ownership GetOwner() const { return m_owner; }
   inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }

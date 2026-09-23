@@ -31,7 +31,7 @@ class ListWorkflowsResult {
 
   ///@{
   /**
-   * <p>A list of workflow build versions that match the request criteria.</p>
+   * <p>A list of workflow versions that match the request criteria.</p>
    */
   inline const Aws::Vector<WorkflowVersion>& GetWorkflowVersionList() const { return m_workflowVersionList; }
   template <typename WorkflowVersionListT = Aws::Vector<WorkflowVersion>>

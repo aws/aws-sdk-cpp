@@ -23,7 +23,11 @@ namespace imagebuilder {
 namespace Model {
 
 /**
- * <p>A distribution configuration.</p><p><h3>See Also:</h3>   <a
+ * <p>Defines how Image Builder distributes the output of an image build. You can
+ * configure:</p> <ul> <li> <p>The Regions to distribute the image to.</p> </li>
+ * <li> <p>The Region-specific settings to apply, such as output AMI names, launch
+ * permissions for other Amazon Web Services accounts, and target container
+ * repositories.</p> </li> </ul><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DistributionConfiguration">AWS
  * API Reference</a></p>
  */
@@ -115,7 +119,9 @@ class DistributionConfiguration {
 
   ///@{
   /**
-   * <p>The maximum duration in minutes for this distribution configuration.</p>
+   * <p>A property that Image Builder doesn't use. You can't set this property when
+   * you create or update a distribution configuration, and it has no effect on
+   * distribution behavior.</p>
    */
   inline int GetTimeoutMinutes() const { return m_timeoutMinutes; }
   inline bool TimeoutMinutesHasBeenSet() const { return m_timeoutMinutesHasBeenSet; }

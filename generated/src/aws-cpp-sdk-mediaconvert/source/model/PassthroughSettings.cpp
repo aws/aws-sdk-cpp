@@ -22,6 +22,14 @@ PassthroughSettings& PassthroughSettings::operator=(JsonView jsonValue) {
     m_frameControl = FrameControlMapper::GetFrameControlForName(jsonValue.GetString("frameControl"));
     m_frameControlHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("gopsPerSegment")) {
+    m_gopsPerSegment = jsonValue.GetInteger("gopsPerSegment");
+    m_gopsPerSegmentHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("segmentationMode")) {
+    m_segmentationMode = PassthroughSegmentationModeMapper::GetPassthroughSegmentationModeForName(jsonValue.GetString("segmentationMode"));
+    m_segmentationModeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("videoSelectorMode")) {
     m_videoSelectorMode = VideoSelectorModeMapper::GetVideoSelectorModeForName(jsonValue.GetString("videoSelectorMode"));
     m_videoSelectorModeHasBeenSet = true;
@@ -34,6 +42,14 @@ JsonValue PassthroughSettings::Jsonize() const {
 
   if (m_frameControlHasBeenSet) {
     payload.WithString("frameControl", FrameControlMapper::GetNameForFrameControl(m_frameControl));
+  }
+
+  if (m_gopsPerSegmentHasBeenSet) {
+    payload.WithInteger("gopsPerSegment", m_gopsPerSegment);
+  }
+
+  if (m_segmentationModeHasBeenSet) {
+    payload.WithString("segmentationMode", PassthroughSegmentationModeMapper::GetNameForPassthroughSegmentationMode(m_segmentationMode));
   }
 
   if (m_videoSelectorModeHasBeenSet) {

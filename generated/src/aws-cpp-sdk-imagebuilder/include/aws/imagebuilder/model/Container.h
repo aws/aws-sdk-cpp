@@ -21,8 +21,9 @@ namespace imagebuilder {
 namespace Model {
 
 /**
- * <p>A container encapsulates the runtime environment for an
- * application.</p><p><h3>See Also:</h3>   <a
+ * <p>Details of the container images that are output resources of an image build
+ * in a given Amazon Web Services Region: the Region, and the URIs of the container
+ * images.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/Container">AWS
  * API Reference</a></p>
  */

@@ -35,7 +35,9 @@ class OutputResources {
 
   ///@{
   /**
-   * <p>The Amazon EC2 AMIs created by this image.</p>
+   * <p>The Amazon EC2 AMIs created by this image. The list contains one entry per
+   * AMI, including copies that distribution created in each target Amazon Web
+   * Services Region and account.</p>
    */
   inline const Aws::Vector<Ami>& GetAmis() const { return m_amis; }
   inline bool AmisHasBeenSet() const { return m_amisHasBeenSet; }
@@ -59,8 +61,8 @@ class OutputResources {
 
   ///@{
   /**
-   * <p>Container images that the pipeline has generated and stored in the output
-   * repository.</p>
+   * <p>The container images that Image Builder created when it built this image,
+   * stored in the output Amazon ECR repository.</p>
    */
   inline const Aws::Vector<Container>& GetContainers() const { return m_containers; }
   inline bool ContainersHasBeenSet() const { return m_containersHasBeenSet; }

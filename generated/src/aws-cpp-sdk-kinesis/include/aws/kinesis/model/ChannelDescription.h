@@ -236,7 +236,8 @@ class ChannelDescription {
 
   ///@{
   /**
-   * <p>The server-side encryption configuration for the channel.</p>
+   * <p>The Amazon Web Services KMS key configuration that Amazon Kinesis Data
+   * Streams uses to encrypt data delivered to the channel's destination.</p>
    */
   inline const ChannelEncryptionConfiguration& GetEncryptionConfiguration() const { return m_encryptionConfiguration; }
   inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }

@@ -35,8 +35,10 @@ class GetWorkflowRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the workflow resource that you want to
-   * get.</p>
+   * <p>The Amazon Resource Name (ARN) of the workflow resource that you want to get.
+   * You can specify a build version ARN, or a version ARN with or without wildcards
+   * (<code>x</code>) in its version segments. Image Builder resolves version and
+   * wildcard ARNs to the most recent matching build version.</p>
    */
   inline const Aws::String& GetWorkflowBuildVersionArn() const { return m_workflowBuildVersionArn; }
   inline bool WorkflowBuildVersionArnHasBeenSet() const { return m_workflowBuildVersionArnHasBeenSet; }

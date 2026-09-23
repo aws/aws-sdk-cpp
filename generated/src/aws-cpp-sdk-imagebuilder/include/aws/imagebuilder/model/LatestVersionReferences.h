@@ -20,8 +20,10 @@ namespace imagebuilder {
 namespace Model {
 
 /**
- * <p>The resource ARNs with different wildcard variations of semantic
- * versioning.</p><p><h3>See Also:</h3>   <a
+ * <p>A set of wildcard version ARNs that always reference the latest version of
+ * the resource. ARNs are included for the latest version overall, and for the
+ * latest versions within the same major, minor, and patch levels.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/LatestVersionReferences">AWS
  * API Reference</a></p>
  */

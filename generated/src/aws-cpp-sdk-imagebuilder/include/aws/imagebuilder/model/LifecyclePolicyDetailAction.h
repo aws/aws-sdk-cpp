@@ -21,7 +21,8 @@ namespace imagebuilder {
 namespace Model {
 
 /**
- * <p>Contains selection criteria for the lifecycle policy.</p><p><h3>See
+ * <p>Contains the action configuration for a lifecycle policy rule: the action to
+ * take, and which underlying resources the action extends to.</p><p><h3>See
  * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/LifecyclePolicyDetailAction">AWS
  * API Reference</a></p>
@@ -35,7 +36,11 @@ class LifecyclePolicyDetailAction {
 
   ///@{
   /**
-   * <p>Specifies the lifecycle action to take.</p>
+   * <p>Specifies the lifecycle action to take. <code>DELETE</code> deletes the image
+   * resource and, with <code>includeResources</code>, also removes distributed AMIs,
+   * snapshots, or container images. <code>DEPRECATE</code> and <code>DISABLE</code>
+   * set the corresponding status on the image resource and, if
+   * <code>includeResources.amis</code> is set, on its distributed AMIs.</p>
    */
   inline LifecyclePolicyDetailActionType GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -51,7 +56,11 @@ class LifecyclePolicyDetailAction {
 
   ///@{
   /**
-   * <p>Specifies the resources that the lifecycle policy applies to.</p>
+   * <p>Specifies which underlying resources the action extends to beyond the Image
+   * Builder image resource itself: distributed AMIs, their snapshots, or distributed
+   * container images. <code>DELETE</code> rules can include all three,
+   * <code>DEPRECATE</code> and <code>DISABLE</code> rules can include AMIs only, and
+   * you can only include snapshots together with AMIs.</p>
    */
   inline const LifecyclePolicyDetailActionIncludeResources& GetIncludeResources() const { return m_includeResources; }
   inline bool IncludeResourcesHasBeenSet() const { return m_includeResourcesHasBeenSet; }

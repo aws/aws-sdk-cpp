@@ -25,9 +25,9 @@ namespace Model {
  * modification request is sent to the <a
  * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html">Amazon
  * EC2 ModifyImageAttribute</a> API on behalf of the user for each Region they have
- * selected to distribute the AMI. To make an AMI public, set the launch permission
- * authorized accounts to <code>all</code>. See the examples for making an AMI
- * public at <a
+ * selected to distribute the AMI. To make an AMI public, set
+ * <code>userGroups</code> to the value <code>all</code>. See the examples for
+ * making an AMI public at <a
  * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html">Amazon
  * EC2 ModifyImageAttribute</a>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/LaunchPermissionConfiguration">AWS
@@ -42,7 +42,8 @@ class LaunchPermissionConfiguration {
 
   ///@{
   /**
-   * <p>The Amazon Web Services account ID.</p>
+   * <p>The Amazon Web Services account IDs to grant launch permission to. Each
+   * listed account can use the distributed AMI to launch instances.</p>
    */
   inline const Aws::Vector<Aws::String>& GetUserIds() const { return m_userIds; }
   inline bool UserIdsHasBeenSet() const { return m_userIdsHasBeenSet; }
@@ -66,7 +67,8 @@ class LaunchPermissionConfiguration {
 
   ///@{
   /**
-   * <p>The name of the group.</p>
+   * <p>The name of the group that you want to grant launch permission to. The only
+   * supported value is <code>all</code>, which makes the distributed AMI public.</p>
    */
   inline const Aws::Vector<Aws::String>& GetUserGroups() const { return m_userGroups; }
   inline bool UserGroupsHasBeenSet() const { return m_userGroupsHasBeenSet; }

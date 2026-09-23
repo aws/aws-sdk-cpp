@@ -82,6 +82,11 @@ StreamDescriptionSummary& StreamDescriptionSummary::operator=(JsonView jsonValue
     m_channelCount = jsonValue.GetInteger("ChannelCount");
     m_channelCountHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RecordDistributionStrategy")) {
+    m_recordDistributionStrategy =
+        RecordDistributionStrategyMapper::GetRecordDistributionStrategyForName(jsonValue.GetString("RecordDistributionStrategy"));
+    m_recordDistributionStrategyHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -151,6 +156,11 @@ JsonValue StreamDescriptionSummary::Jsonize() const {
 
   if (m_channelCountHasBeenSet) {
     payload.WithInteger("ChannelCount", m_channelCount);
+  }
+
+  if (m_recordDistributionStrategyHasBeenSet) {
+    payload.WithString("RecordDistributionStrategy",
+                       RecordDistributionStrategyMapper::GetNameForRecordDistributionStrategy(m_recordDistributionStrategy));
   }
 
   return payload;

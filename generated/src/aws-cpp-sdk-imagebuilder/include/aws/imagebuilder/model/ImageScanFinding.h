@@ -24,8 +24,8 @@ namespace imagebuilder {
 namespace Model {
 
 /**
- * <p>Contains details about a vulnerability scan finding.</p><p><h3>See Also:</h3>
- * <a
+ * <p>Contains details about a vulnerability scan finding that Amazon Inspector
+ * generated for an image.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImageScanFinding">AWS
  * API Reference</a></p>
  */
@@ -168,7 +168,10 @@ class ImageScanFinding {
 
   ///@{
   /**
-   * <p>The severity of the finding.</p>
+   * <p>The severity of the finding. For more information, see <a
+   * href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-severity.html">Severity
+   * levels for Amazon Inspector findings</a> in the <i>Amazon Inspector User
+   * Guide</i>.</p>
    */
   inline const Aws::String& GetSeverity() const { return m_severity; }
   inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
@@ -275,7 +278,11 @@ class ImageScanFinding {
   ///@{
   /**
    * <p>Details about whether a fix is available for any of the packages that are
-   * identified in the finding through a version update.</p>
+   * identified in the finding through a version update. Valid values include:</p>
+   * <ul> <li> <p> <code>YES</code> – A fix is available for all of the packages
+   * identified in the finding.</p> </li> <li> <p> <code>NO</code> – No fix is
+   * available.</p> </li> <li> <p> <code>PARTIAL</code> – A fix is available for
+   * some, but not all, of the packages identified in the finding.</p> </li> </ul>
    */
   inline const Aws::String& GetFixAvailable() const { return m_fixAvailable; }
   inline bool FixAvailableHasBeenSet() const { return m_fixAvailableHasBeenSet; }

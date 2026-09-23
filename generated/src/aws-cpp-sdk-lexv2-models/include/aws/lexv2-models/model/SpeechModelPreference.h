@@ -10,7 +10,7 @@
 namespace Aws {
 namespace LexModelsV2 {
 namespace Model {
-enum class SpeechModelPreference { NOT_SET, Standard, Neural, Deepgram };
+enum class SpeechModelPreference { NOT_SET, Standard, Neural, Deepgram, Advanced };
 
 namespace SpeechModelPreferenceMapper {
 AWS_LEXMODELSV2_API SpeechModelPreference GetSpeechModelPreferenceForName(const Aws::String& name);

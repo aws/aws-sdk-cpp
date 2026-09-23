@@ -36,9 +36,10 @@ class Schedule {
 
   ///@{
   /**
-   * <p>The cron expression determines how often EC2 Image Builder evaluates your
-   * <code>pipelineExecutionStartCondition</code>.</p> <p>For information on how to
-   * format a cron expression in Image Builder, see <a
+   * <p>The expression determines how often EC2 Image Builder evaluates your
+   * <code>pipelineExecutionStartCondition</code>. You can specify a cron expression,
+   * or a rate expression such as <code>rate(1 day)</code>.</p> <p>For information on
+   * how to format a cron expression in Image Builder, see <a
    * href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/image-builder-cron.html">Use
    * cron expressions in EC2 Image Builder</a>.</p>
    */
@@ -58,10 +59,10 @@ class Schedule {
 
   ///@{
   /**
-   * <p>The timezone that applies to the scheduling expression. For example,
-   * "Etc/UTC", "America/Los_Angeles" in the <a
-   * href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>.
-   * If not specified this defaults to UTC.</p>
+   * <p>The timezone that applies to the scheduling expression. Specify a value in <a
+   * href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>,
+   * for example <code>Etc/UTC</code> or <code>America/Los_Angeles</code>. If not
+   * specified, this defaults to UTC.</p>
    */
   inline const Aws::String& GetTimezone() const { return m_timezone; }
   inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
@@ -90,7 +91,9 @@ class Schedule {
    * href="https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateComponent.html">CreateComponent</a>.</p>
    *  </li> <li> <p> <code>EXPRESSION_MATCH_ONLY</code> – This condition
    * builds a new image every time the CRON expression matches the current time.</p>
-   * </li> </ul>
+   * </li> </ul>  <p>If the recipe references its base image through an Amazon
+   * Web Services Systems Manager Parameter Store parameter, a change in the
+   * parameter's value also counts as an available dependency update.</p>
    */
   inline PipelineExecutionStartCondition GetPipelineExecutionStartCondition() const { return m_pipelineExecutionStartCondition; }
   inline bool PipelineExecutionStartConditionHasBeenSet() const { return m_pipelineExecutionStartConditionHasBeenSet; }

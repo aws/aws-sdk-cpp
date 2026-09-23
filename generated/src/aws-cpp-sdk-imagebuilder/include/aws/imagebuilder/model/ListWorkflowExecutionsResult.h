@@ -48,8 +48,10 @@ class ListWorkflowExecutionsResult {
 
   ///@{
   /**
-   * <p>Contains an array of runtime details that represents each time a workflow ran
-   * for the requested image build version.</p>
+   * <p>An array of runtime details that represents each time a workflow ran for the
+   * requested image build version. Image Builder retains workflow execution records
+   * for a limited time, so this array can be empty for older image build
+   * versions.</p>
    */
   inline const Aws::Vector<WorkflowExecutionMetadata>& GetWorkflowExecutions() const { return m_workflowExecutions; }
   template <typename WorkflowExecutionsT = Aws::Vector<WorkflowExecutionMetadata>>
@@ -90,7 +92,9 @@ class ListWorkflowExecutionsResult {
 
   ///@{
   /**
-   * <p>The output message from the list action, if applicable.</p>
+   * <p>The failure reason for the image build version, if it's in a failed state.
+   * This comes from the image itself, not from an individual workflow, so it's
+   * available even when no workflow executions remain for the image.</p>
    */
   inline const Aws::String& GetMessage() const { return m_message; }
   template <typename MessageT = Aws::String>

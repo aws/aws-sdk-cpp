@@ -233,7 +233,9 @@ class Component {
 
   ///@{
   /**
-   * <p>The owner of the component.</p>
+   * <p>The owner of the component. The value is your account ID for components that
+   * you own, the sharing account's ID for shared components, or <code>Amazon</code>,
+   * <code>ThirdParty</code>, or <code>AWSMarketplace</code>.</p>
    */
   inline const Aws::String& GetOwner() const { return m_owner; }
   inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
@@ -291,7 +293,9 @@ class Component {
 
   ///@{
   /**
-   * <p>The encryption status of the component.</p>
+   * <p>Indicates whether the component data is encrypted at rest. Image Builder
+   * encrypts all component data at rest, so this value is always <code>true</code>.
+   * This field is retained for backward compatibility.</p>
    */
   inline bool GetEncrypted() const { return m_encrypted; }
   inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }

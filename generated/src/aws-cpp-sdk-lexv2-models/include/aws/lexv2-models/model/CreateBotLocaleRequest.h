@@ -9,6 +9,7 @@
 #include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/lexv2-models/model/AudioFillerSettings.h>
 #include <aws/lexv2-models/model/GenerativeAISettings.h>
+#include <aws/lexv2-models/model/SpeakerDiarizationSettings.h>
 #include <aws/lexv2-models/model/SpeechDetectionSensitivity.h>
 #include <aws/lexv2-models/model/SpeechRecognitionSettings.h>
 #include <aws/lexv2-models/model/UnifiedSpeechSettings.h>
@@ -248,6 +249,26 @@ class CreateBotLocaleRequest : public LexModelsV2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The speaker diarization settings to configure for the new bot locale. When
+   * enabled, Amazon Lex restricts speech detection to the primary (loudest) speaker
+   * during streaming audio conversations.</p>
+   */
+  inline const SpeakerDiarizationSettings& GetSpeakerDiarizationSettings() const { return m_speakerDiarizationSettings; }
+  inline bool SpeakerDiarizationSettingsHasBeenSet() const { return m_speakerDiarizationSettingsHasBeenSet; }
+  template <typename SpeakerDiarizationSettingsT = SpeakerDiarizationSettings>
+  void SetSpeakerDiarizationSettings(SpeakerDiarizationSettingsT&& value) {
+    m_speakerDiarizationSettingsHasBeenSet = true;
+    m_speakerDiarizationSettings = std::forward<SpeakerDiarizationSettingsT>(value);
+  }
+  template <typename SpeakerDiarizationSettingsT = SpeakerDiarizationSettings>
+  CreateBotLocaleRequest& WithSpeakerDiarizationSettings(SpeakerDiarizationSettingsT&& value) {
+    SetSpeakerDiarizationSettings(std::forward<SpeakerDiarizationSettingsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_botId;
 
@@ -270,6 +291,8 @@ class CreateBotLocaleRequest : public LexModelsV2Request {
   GenerativeAISettings m_generativeAISettings;
 
   SpeechDetectionSensitivity m_speechDetectionSensitivity{SpeechDetectionSensitivity::NOT_SET};
+
+  SpeakerDiarizationSettings m_speakerDiarizationSettings;
   bool m_botIdHasBeenSet = false;
   bool m_botVersionHasBeenSet = false;
   bool m_localeIdHasBeenSet = false;
@@ -281,6 +304,7 @@ class CreateBotLocaleRequest : public LexModelsV2Request {
   bool m_speechRecognitionSettingsHasBeenSet = false;
   bool m_generativeAISettingsHasBeenSet = false;
   bool m_speechDetectionSensitivityHasBeenSet = false;
+  bool m_speakerDiarizationSettingsHasBeenSet = false;
 };
 
 }  // namespace Model

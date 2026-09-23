@@ -20,15 +20,10 @@ namespace imagebuilder {
 namespace Model {
 
 /**
- * <p>Amazon Inspector generates a risk score for each finding. This score helps
- * you to prioritize findings, to focus on the most critical findings and the most
- * vulnerable resources. The score uses the Common Vulnerability Scoring System
- * (CVSS) format. This format is a modification of the base CVSS score that the
- * National Vulnerability Database (NVD) provides. For more information about
- * severity levels, see <a
- * href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-severity.html">Severity
- * levels for Amazon Inspector findings</a> in the <i>Amazon Inspector User
- * Guide</i>.</p><p><h3>See Also:</h3>   <a
+ * <p>A CVSS score for the vulnerability, as published by the vulnerability source.
+ * Sources include the National Vulnerability Database (NVD) and the operating
+ * system vendor's security feed. A finding can include CVSS scores from multiple
+ * sources and CVSS versions.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CvssScore">AWS
  * API Reference</a></p>
  */

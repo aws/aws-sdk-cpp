@@ -31,8 +31,8 @@ class ListWorkflowBuildVersionsResult {
 
   ///@{
   /**
-   * <p>A list that contains metadata for the workflow builds that have run for the
-   * workflow resource specified in the request.</p>
+   * <p>A list that contains metadata for the build versions of the workflow resource
+   * specified in the request.</p>
    */
   inline const Aws::Vector<WorkflowSummary>& GetWorkflowSummaryList() const { return m_workflowSummaryList; }
   template <typename WorkflowSummaryListT = Aws::Vector<WorkflowSummary>>

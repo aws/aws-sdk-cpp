@@ -10,6 +10,7 @@
 #include <aws/mediaconvert/model/AudioDefaultSelection.h>
 #include <aws/mediaconvert/model/AudioDurationCorrection.h>
 #include <aws/mediaconvert/model/AudioSelectorType.h>
+#include <aws/mediaconvert/model/AudioSmpte337Passthrough.h>
 #include <aws/mediaconvert/model/HlsRenditionGroupSettings.h>
 #include <aws/mediaconvert/model/LanguageCode.h>
 #include <aws/mediaconvert/model/RemixSettings.h>
@@ -300,6 +301,27 @@ To specify an offset:
 
   ///@{
   /**
+   * Specify whether to pass SMPTE 337M-wrapped audio (such as Dolby E) through
+   * without unwrapping. Choose Enabled to pass the SMPTE 337M container through
+   * unchanged, treating the track as raw PCM. Choose Disabled (default) to
+   * automatically detect and unwrap SMPTE 337M data, extracting the underlying Dolby
+   * E programs as separate audio tracks for encoding. When this field is absent, the
+   * service defaults to Disabled (auto-unwrap).
+   */
+  inline AudioSmpte337Passthrough GetSmpte337Passthrough() const { return m_smpte337Passthrough; }
+  inline bool Smpte337PassthroughHasBeenSet() const { return m_smpte337PassthroughHasBeenSet; }
+  inline void SetSmpte337Passthrough(AudioSmpte337Passthrough value) {
+    m_smpte337PassthroughHasBeenSet = true;
+    m_smpte337Passthrough = value;
+  }
+  inline AudioSelector& WithSmpte337Passthrough(AudioSmpte337Passthrough value) {
+    SetSmpte337Passthrough(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * Identify a track from the input audio to include in this selector by entering
    * the stream index number. These numberings count all tracks in the input file,
    * but only a track containing audio data may be used here. To include several
@@ -376,6 +398,8 @@ To specify an offset:
 
   AudioSelectorType m_selectorType{AudioSelectorType::NOT_SET};
 
+  AudioSmpte337Passthrough m_smpte337Passthrough{AudioSmpte337Passthrough::NOT_SET};
+
   Aws::Vector<int> m_streams;
 
   Aws::Vector<int> m_tracks;
@@ -390,6 +414,7 @@ To specify an offset:
   bool m_programSelectionHasBeenSet = false;
   bool m_remixSettingsHasBeenSet = false;
   bool m_selectorTypeHasBeenSet = false;
+  bool m_smpte337PassthroughHasBeenSet = false;
   bool m_streamsHasBeenSet = false;
   bool m_tracksHasBeenSet = false;
 };

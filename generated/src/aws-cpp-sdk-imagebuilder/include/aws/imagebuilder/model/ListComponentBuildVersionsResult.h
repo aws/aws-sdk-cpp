@@ -48,7 +48,9 @@ class ListComponentBuildVersionsResult {
 
   ///@{
   /**
-   * <p>The list of component summaries for the specified semantic version.</p>
+   * <p>The list of component summaries. Each summary represents one build version of
+   * the specified component version, or of the components that your account owns if
+   * you didn't specify an ARN. Deprecated build versions aren't included.</p>
    */
   inline const Aws::Vector<ComponentSummary>& GetComponentSummaryList() const { return m_componentSummaryList; }
   template <typename ComponentSummaryListT = Aws::Vector<ComponentSummary>>

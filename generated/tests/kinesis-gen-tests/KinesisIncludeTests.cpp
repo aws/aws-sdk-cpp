@@ -104,6 +104,7 @@
 #include <aws/kinesis/model/PutResourcePolicyRequest.h>
 #include <aws/kinesis/model/Record.h>
 #include <aws/kinesis/model/RecordConfiguration.h>
+#include <aws/kinesis/model/RecordDistributionStrategy.h>
 #include <aws/kinesis/model/RecordFormatType.h>
 #include <aws/kinesis/model/RegisterStreamConsumerRequest.h>
 #include <aws/kinesis/model/RegisterStreamConsumerResult.h>
@@ -152,6 +153,7 @@
 #include <aws/kinesis/model/UpdateShardCountRequest.h>
 #include <aws/kinesis/model/UpdateShardCountResult.h>
 #include <aws/kinesis/model/UpdateStreamModeRequest.h>
+#include <aws/kinesis/model/UpdateStreamRecordDistributionStrategyRequest.h>
 #include <aws/kinesis/model/UpdateStreamWarmThroughputRequest.h>
 #include <aws/kinesis/model/UpdateStreamWarmThroughputResult.h>
 #include <aws/kinesis/model/WarmThroughputObject.h>

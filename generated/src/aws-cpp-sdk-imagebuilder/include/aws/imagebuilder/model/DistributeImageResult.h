@@ -46,7 +46,9 @@ class DistributeImageResult {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the image to be distributed.</p>
+   * <p>The Amazon Resource Name (ARN) of the new Image Builder image resource that
+   * this operation creates to track the distribution. Use this ARN with
+   * <a>GetImage</a> to monitor distribution progress.</p>
    */
   inline const Aws::String& GetImageBuildVersionArn() const { return m_imageBuildVersionArn; }
   template <typename ImageBuildVersionArnT = Aws::String>

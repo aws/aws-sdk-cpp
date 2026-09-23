@@ -30,7 +30,8 @@ class DescribeChannelResult {
 
   ///@{
   /**
-   * <p>The configuration and current status of the channel.</p>
+   * <p>The configuration and current status of the channel, including its ARN,
+   * source stream, destination configuration, and lifecycle state.</p>
    */
   inline const ChannelDescription& GetChannelDescription() const { return m_channelDescription; }
   template <typename ChannelDescriptionT = ChannelDescription>

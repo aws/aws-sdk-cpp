@@ -29,7 +29,8 @@ class SendWorkflowStepActionResult {
 
   ///@{
   /**
-   * <p>The workflow step that sent the step action.</p>
+   * <p>The unique identifier for the workflow step that received the action, as
+   * specified in the request.</p>
    */
   inline const Aws::String& GetStepExecutionId() const { return m_stepExecutionId; }
   template <typename StepExecutionIdT = Aws::String>

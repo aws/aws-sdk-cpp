@@ -55,7 +55,7 @@ class UtteranceBotResponse {
   ///@{
   /**
    * <p>The type of the response. The following values are possible:</p> <ul> <li>
-   * <p> <code>PlainText</code> – A plain text string.</p> </li> <li> <p>
+   * <p> <code>PlainText</code> ��� A plain text string.</p> </li> <li> <p>
    * <code>CustomPayload</code> – A response string that you can customize to include
    * data or metadata for your application.</p> </li> <li> <p> <code>SSML</code> – A
    * string that includes Speech Synthesis Markup Language to customize the audio

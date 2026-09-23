@@ -70,7 +70,10 @@ class UpdateDistributionConfigurationRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The distributions of the distribution configuration.</p>
+   * <p>The distribution settings for the configuration. Each entry defines how
+   * output images are distributed in one target Amazon Web Services Region. A Region
+   * can appear at most once in the list. This list replaces the configuration's
+   * existing distributions entirely.</p>
    */
   inline const Aws::Vector<Distribution>& GetDistributions() const { return m_distributions; }
   inline bool DistributionsHasBeenSet() const { return m_distributionsHasBeenSet; }
@@ -95,9 +98,9 @@ class UpdateDistributionConfigurationRequest : public ImagebuilderRequest {
   ///@{
   /**
    * <p>A unique, case-sensitive identifier you provide to ensure that the operation
-   * completes no more than one time. If this token matches a previous request, the
-   * service ignores the request, but does not return an error. For more information,
-   * see <a
+   * runs no more than one time. If you retry a request with the same client token,
+   * Image Builder returns the original response without running the operation again.
+   * For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
    * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
    */

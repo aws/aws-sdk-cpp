@@ -33,8 +33,7 @@ class ListLifecycleExecutionResourcesResult {
 
   ///@{
   /**
-   * <p>Runtime details for the specified runtime instance of the lifecycle
-   * policy.</p>
+   * <p>The unique identifier for the runtime instance of the lifecycle policy.</p>
    */
   inline const Aws::String& GetLifecycleExecutionId() const { return m_lifecycleExecutionId; }
   template <typename LifecycleExecutionIdT = Aws::String>

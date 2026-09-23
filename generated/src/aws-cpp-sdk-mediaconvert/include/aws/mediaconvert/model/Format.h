@@ -10,7 +10,27 @@
 namespace Aws {
 namespace MediaConvert {
 namespace Model {
-enum class Format { NOT_SET, mp4, quicktime, matroska, webm, mxf, wave, avi, mpegts, mpegps, mp3, flac, asf, ogg };
+enum class Format {
+  NOT_SET,
+  mp4,
+  quicktime,
+  matroska,
+  webm,
+  mxf,
+  wave,
+  avi,
+  mpegts,
+  mpegps,
+  mp3,
+  flac,
+  asf,
+  ogg,
+  three_gp,
+  three_g2,
+  aac,
+  ac3,
+  eac3
+};
 
 namespace FormatMapper {
 AWS_MEDIACONVERT_API Format GetFormatForName(const Aws::String& name);

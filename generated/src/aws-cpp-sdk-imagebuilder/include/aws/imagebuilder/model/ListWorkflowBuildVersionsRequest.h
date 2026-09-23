@@ -31,7 +31,10 @@ class ListWorkflowBuildVersionsRequest : public ImagebuilderRequest {
   ///@{
   /**
    * <p>The Amazon Resource Name (ARN) of the workflow resource for which to get a
-   * list of build versions.</p>
+   * list of build versions. The version segments can contain wildcards
+   * (<code>x</code>) to match multiple versions of the workflow. If you don't
+   * specify an ARN, the response lists build versions for all of the workflows in
+   * your account.</p>
    */
   inline const Aws::String& GetWorkflowVersionArn() const { return m_workflowVersionArn; }
   inline bool WorkflowVersionArnHasBeenSet() const { return m_workflowVersionArnHasBeenSet; }

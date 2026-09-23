@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/billing/BillingClient.h>
 #include <aws/billing/model/GetCreditAllocationHistoryPaginationTraits.h>
+#include <aws/billing/model/ListBillingViewSegmentsPaginationTraits.h>
 #include <aws/billing/model/ListBillingViewsPaginationTraits.h>
 #include <aws/billing/model/ListEnterpriseSupportLinkedAccountChargesPaginationTraits.h>
 #include <aws/billing/model/ListSourceViewsForBillingViewPaginationTraits.h>
@@ -19,6 +20,9 @@ using GetCreditAllocationHistoryPaginator =
                                       Pagination::GetCreditAllocationHistoryPaginationTraits<BillingClient>>;
 using ListBillingViewsPaginator = Aws::Utils::Pagination::Paginator<BillingClient, Model::ListBillingViewsRequest,
                                                                     Pagination::ListBillingViewsPaginationTraits<BillingClient>>;
+using ListBillingViewSegmentsPaginator =
+    Aws::Utils::Pagination::Paginator<BillingClient, Model::ListBillingViewSegmentsRequest,
+                                      Pagination::ListBillingViewSegmentsPaginationTraits<BillingClient>>;
 using ListEnterpriseSupportLinkedAccountChargesPaginator =
     Aws::Utils::Pagination::Paginator<BillingClient, Model::ListEnterpriseSupportLinkedAccountChargesRequest,
                                       Pagination::ListEnterpriseSupportLinkedAccountChargesPaginationTraits<BillingClient>>;

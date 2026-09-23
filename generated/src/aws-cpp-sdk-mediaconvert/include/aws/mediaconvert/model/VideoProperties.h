@@ -77,7 +77,11 @@ class VideoProperties {
    * information provides detailed technical specifications about how the video was
    * encoded, including profile settings, resolution details, and color space
    * information that can help you understand the source video characteristics and
-   * make informed encoding decisions.
+   * make informed encoding decisions. These fields are returned for H.264 (AVC),
+   * H.265 (HEVC), and MPEG-2 video, and might not be returned for other codecs. For
+   * MPEG-TS and MPEG-PS inputs, color information (color primaries, transfer
+   * characteristics, and matrix coefficients) appears in these fields rather than in
+   * the top-level videoProperties.
    */
   inline const CodecMetadata& GetCodecMetadata() const { return m_codecMetadata; }
   inline bool CodecMetadataHasBeenSet() const { return m_codecMetadataHasBeenSet; }

@@ -31,7 +31,9 @@ class RetryImageRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The source image Amazon Resource Name (ARN) to retry.</p>
+   * <p>The Amazon Resource Name (ARN) of the image build version that you want to
+   * retry. The image must be in the <code>FAILED</code> or <code>CANCELLED</code>
+   * state.</p>
    */
   inline const Aws::String& GetImageBuildVersionArn() const { return m_imageBuildVersionArn; }
   inline bool ImageBuildVersionArnHasBeenSet() const { return m_imageBuildVersionArnHasBeenSet; }
@@ -50,9 +52,9 @@ class RetryImageRequest : public ImagebuilderRequest {
   ///@{
   /**
    * <p>A unique, case-sensitive identifier you provide to ensure that the operation
-   * completes no more than one time. If this token matches a previous request, the
-   * service ignores the request, but does not return an error. For more information,
-   * see <a
+   * runs no more than one time. If you retry a request with the same client token,
+   * Image Builder returns the original response without running the operation again.
+   * For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
    * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
    */

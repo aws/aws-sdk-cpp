@@ -32,7 +32,8 @@ class SendWorkflowStepActionRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Uniquely identifies the workflow step that sent the step action.</p>
+   * <p>Uniquely identifies the waiting workflow step that you send the action to. To
+   * get this identifier, call <a>ListWaitingWorkflowSteps</a>.</p>
    */
   inline const Aws::String& GetStepExecutionId() const { return m_stepExecutionId; }
   inline bool StepExecutionIdHasBeenSet() const { return m_stepExecutionIdHasBeenSet; }
@@ -71,9 +72,12 @@ class SendWorkflowStepActionRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The action to perform on the paused workflow step. The workflow step must be
-   * in a waiting state to accept an action. The request fails if the step has
-   * already timed out or been actioned.</p>
+   * <p>The action to perform on the paused workflow step. <code>RESUME</code>
+   * completes the waiting step, and the workflow continues. <code>STOP</code> fails
+   * the step, and the step's <code>onFailure</code> setting determines whether the
+   * workflow continues or aborts. The workflow step must be in a waiting state to
+   * accept an action. The request fails if the step has already timed out or been
+   * actioned.</p>
    */
   inline WorkflowStepActionType GetAction() const { return m_action; }
   inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
@@ -110,9 +114,9 @@ class SendWorkflowStepActionRequest : public ImagebuilderRequest {
   ///@{
   /**
    * <p>A unique, case-sensitive identifier you provide to ensure that the operation
-   * completes no more than one time. If this token matches a previous request, the
-   * service ignores the request, but does not return an error. For more information,
-   * see <a
+   * runs no more than one time. If you retry a request with the same client token,
+   * Image Builder returns the original response without running the operation again.
+   * For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
    * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
    */

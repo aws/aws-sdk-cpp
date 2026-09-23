@@ -30,7 +30,9 @@ class CreateChannelResult {
 
   ///@{
   /**
-   * <p>The configuration and current status of the channel.</p>
+   * <p>The configuration and current status of the channel, including its ARN,
+   * destination configuration, and lifecycle state. Immediately after creation, the
+   * state is <code>CREATING</code>.</p>
    */
   inline const ChannelDescription& GetChannelDescription() const { return m_channelDescription; }
   template <typename ChannelDescriptionT = ChannelDescription>

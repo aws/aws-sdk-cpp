@@ -32,8 +32,8 @@ class S3TablesDestinationUpdateInput {
 
   ///@{
   /**
-   * <p>The maximum age, in seconds, of undelivered data. Valid range is 300 to 900
-   * seconds (5 to 15 minutes).</p>
+   * <p>The maximum age, in seconds, of undelivered data before the channel delivers
+   * it to the destination.</p>
    */
   inline int GetDataFreshnessInSeconds() const { return m_dataFreshnessInSeconds; }
   inline bool DataFreshnessInSecondsHasBeenSet() const { return m_dataFreshnessInSecondsHasBeenSet; }

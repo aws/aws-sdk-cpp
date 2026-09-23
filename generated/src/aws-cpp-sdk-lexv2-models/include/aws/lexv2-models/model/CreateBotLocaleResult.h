@@ -11,6 +11,7 @@
 #include <aws/lexv2-models/model/AudioFillerSettings.h>
 #include <aws/lexv2-models/model/BotLocaleStatus.h>
 #include <aws/lexv2-models/model/GenerativeAISettings.h>
+#include <aws/lexv2-models/model/SpeakerDiarizationSettings.h>
 #include <aws/lexv2-models/model/SpeechDetectionSensitivity.h>
 #include <aws/lexv2-models/model/SpeechRecognitionSettings.h>
 #include <aws/lexv2-models/model/UnifiedSpeechSettings.h>
@@ -277,6 +278,23 @@ class CreateBotLocaleResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The speaker diarization settings configured for the created bot locale.</p>
+   */
+  inline const SpeakerDiarizationSettings& GetSpeakerDiarizationSettings() const { return m_speakerDiarizationSettings; }
+  template <typename SpeakerDiarizationSettingsT = SpeakerDiarizationSettings>
+  void SetSpeakerDiarizationSettings(SpeakerDiarizationSettingsT&& value) {
+    m_speakerDiarizationSettingsHasBeenSet = true;
+    m_speakerDiarizationSettings = std::forward<SpeakerDiarizationSettingsT>(value);
+  }
+  template <typename SpeakerDiarizationSettingsT = SpeakerDiarizationSettings>
+  CreateBotLocaleResult& WithSpeakerDiarizationSettings(SpeakerDiarizationSettingsT&& value) {
+    SetSpeakerDiarizationSettings(std::forward<SpeakerDiarizationSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -321,6 +339,8 @@ class CreateBotLocaleResult {
 
   SpeechDetectionSensitivity m_speechDetectionSensitivity{SpeechDetectionSensitivity::NOT_SET};
 
+  SpeakerDiarizationSettings m_speakerDiarizationSettings;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_botIdHasBeenSet = false;
@@ -337,6 +357,7 @@ class CreateBotLocaleResult {
   bool m_creationDateTimeHasBeenSet = false;
   bool m_generativeAISettingsHasBeenSet = false;
   bool m_speechDetectionSensitivityHasBeenSet = false;
+  bool m_speakerDiarizationSettingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

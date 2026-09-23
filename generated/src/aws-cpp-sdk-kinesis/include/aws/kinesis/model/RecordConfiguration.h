@@ -59,8 +59,7 @@ class RecordConfiguration {
   /**
    * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Glue Schema
    * Registry schema used to validate records. Required when the channel destination
-   * is a streaming table (Amazon S3 Tables), for both the <code>JSON</code> and
-   * <code>GSR_JSON</code> record formats.</p>
+   * is a streaming table.</p>
    */
   inline const Aws::String& GetGSRSchemaARN() const { return m_gSRSchemaARN; }
   inline bool GSRSchemaARNHasBeenSet() const { return m_gSRSchemaARNHasBeenSet; }

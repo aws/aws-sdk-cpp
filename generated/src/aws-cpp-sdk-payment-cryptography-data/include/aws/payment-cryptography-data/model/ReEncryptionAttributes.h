@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/payment-cryptography-data/PaymentCryptographyData_EXPORTS.h>
+#include <aws/payment-cryptography-data/model/AsymmetricEncryptionAttributes.h>
 #include <aws/payment-cryptography-data/model/DukptEncryptionAttributes.h>
 #include <aws/payment-cryptography-data/model/SymmetricEncryptionAttributes.h>
 
@@ -35,7 +36,7 @@ class ReEncryptionAttributes {
 
   ///@{
   /**
-   * <p>Parameters that are required to encrypt data using symmetric keys.</p>
+   * <p>Specifies the parameters required to encrypt data using symmetric keys.</p>
    */
   inline const SymmetricEncryptionAttributes& GetSymmetric() const { return m_symmetric; }
   inline bool SymmetricHasBeenSet() const { return m_symmetricHasBeenSet; }
@@ -52,7 +53,28 @@ class ReEncryptionAttributes {
   ///@}
 
   ///@{
+  /**
+   * <p>Specifies the parameters required to encrypt data using an asymmetric key
+   * pair. You must specify a <code>PaddingType</code>.</p>
+   */
+  inline const AsymmetricEncryptionAttributes& GetAsymmetric() const { return m_asymmetric; }
+  inline bool AsymmetricHasBeenSet() const { return m_asymmetricHasBeenSet; }
+  template <typename AsymmetricT = AsymmetricEncryptionAttributes>
+  void SetAsymmetric(AsymmetricT&& value) {
+    m_asymmetricHasBeenSet = true;
+    m_asymmetric = std::forward<AsymmetricT>(value);
+  }
+  template <typename AsymmetricT = AsymmetricEncryptionAttributes>
+  ReEncryptionAttributes& WithAsymmetric(AsymmetricT&& value) {
+    SetAsymmetric(std::forward<AsymmetricT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>Specifies the parameters required to encrypt data using DUKPT.</p>
+   */
   inline const DukptEncryptionAttributes& GetDukpt() const { return m_dukpt; }
   inline bool DukptHasBeenSet() const { return m_dukptHasBeenSet; }
   template <typename DukptT = DukptEncryptionAttributes>
@@ -69,8 +91,11 @@ class ReEncryptionAttributes {
  private:
   SymmetricEncryptionAttributes m_symmetric;
 
+  AsymmetricEncryptionAttributes m_asymmetric;
+
   DukptEncryptionAttributes m_dukpt;
   bool m_symmetricHasBeenSet = false;
+  bool m_asymmetricHasBeenSet = false;
   bool m_dukptHasBeenSet = false;
 };
 

@@ -33,10 +33,13 @@ class DistributeImageRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The source image to distribute. Specify an AMI identifier, SSM parameter
-   * path, or Image Builder image Amazon Resource Name (ARN). When you specify an
-   * Image Builder image Amazon Resource Name (ARN), the image must be in the
-   * <code>AVAILABLE</code> state.</p>
+   * <p>The source image to distribute. You can specify the source in any of the
+   * following formats:</p> <ul> <li> <p>An AMI ID.</p> </li> <li> <p>An Amazon Web
+   * Services Systems Manager Parameter Store reference, prefixed by
+   * <code>ssm:</code>, followed by the parameter name or ARN.</p> </li> <li> <p>An
+   * Image Builder image Amazon Resource Name (ARN). An image version ARN resolves to
+   * the latest available build version.</p> </li> </ul> <p>Whichever format you use,
+   * the source must resolve to an AMI in the current Amazon Web Services Region.</p>
    */
   inline const Aws::String& GetSourceImage() const { return m_sourceImage; }
   inline bool SourceImageHasBeenSet() const { return m_sourceImageHasBeenSet; }
@@ -93,7 +96,9 @@ class DistributeImageRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The tags to apply to the distributed image.</p>
+   * <p>The tags to apply to the new Image Builder image resource that this operation
+   * creates. To tag the output AMIs, use <code>amiTags</code> in the distribution
+   * configuration.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
   inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -118,9 +123,9 @@ class DistributeImageRequest : public ImagebuilderRequest {
   ///@{
   /**
    * <p>A unique, case-sensitive identifier you provide to ensure that the operation
-   * completes no more than one time. If this token matches a previous request, the
-   * service ignores the request, but does not return an error. For more information,
-   * see <a
+   * runs no more than one time. If you retry a request with the same client token,
+   * Image Builder returns the original response without running the operation again.
+   * For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
    * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
    */

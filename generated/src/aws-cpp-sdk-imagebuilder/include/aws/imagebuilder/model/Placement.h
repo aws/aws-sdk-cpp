@@ -80,9 +80,7 @@ class Placement {
   ///@{
   /**
    * <p>The ID of the Dedicated Host on which build and test instances run. This only
-   * applies if <code>tenancy</code> is <code>host</code>. If you specify the host
-   * ID, you must not specify the resource group ARN. If you specify both, Image
-   * Builder returns an error.</p>
+   * applies if <code>tenancy</code> is <code>host</code>.</p>
    */
   inline const Aws::String& GetHostId() const { return m_hostId; }
   inline bool HostIdHasBeenSet() const { return m_hostIdHasBeenSet; }
@@ -102,8 +100,7 @@ class Placement {
   /**
    * <p>The Amazon Resource Name (ARN) of the host resource group in which to launch
    * build and test instances. This only applies if <code>tenancy</code> is
-   * <code>host</code>. If you specify the resource group ARN, you must not specify
-   * the host ID. If you specify both, Image Builder returns an error.</p>
+   * <code>host</code>.</p>
    */
   inline const Aws::String& GetHostResourceGroupArn() const { return m_hostResourceGroupArn; }
   inline bool HostResourceGroupArnHasBeenSet() const { return m_hostResourceGroupArnHasBeenSet; }

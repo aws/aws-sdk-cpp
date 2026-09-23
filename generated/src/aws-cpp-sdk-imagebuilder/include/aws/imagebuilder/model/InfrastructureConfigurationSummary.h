@@ -23,8 +23,9 @@ namespace imagebuilder {
 namespace Model {
 
 /**
- * <p>The infrastructure used when building Amazon EC2 AMIs.</p><p><h3>See
- * Also:</h3>   <a
+ * <p>Contains a high-level summary of an infrastructure configuration, including
+ * the environment settings that Image Builder uses to build and test
+ * images.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/InfrastructureConfigurationSummary">AWS
  * API Reference</a></p>
  */
@@ -127,7 +128,8 @@ class InfrastructureConfigurationSummary {
 
   ///@{
   /**
-   * <p>The tags attached to the image created by Image Builder.</p>
+   * <p>The metadata tags assigned to the Amazon EC2 build and test instances that
+   * Image Builder launches during image creation.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetResourceTags() const { return m_resourceTags; }
   inline bool ResourceTagsHasBeenSet() const { return m_resourceTagsHasBeenSet; }
@@ -217,8 +219,9 @@ class InfrastructureConfigurationSummary {
 
   ///@{
   /**
-   * <p>The instance placement settings that define where the instances that are
-   * launched from your image run.</p>
+   * <p>The instance placement settings that define where the build and test
+   * instances that Image Builder launches during image creation run. These settings
+   * don't affect instances that you launch from the output image.</p>
    */
   inline const Placement& GetPlacement() const { return m_placement; }
   inline bool PlacementHasBeenSet() const { return m_placementHasBeenSet; }

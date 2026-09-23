@@ -81,8 +81,9 @@ class CreateComponentResult {
 
   ///@{
   /**
-   * <p>The resource ARNs with different wildcard variations of semantic
-   * versioning.</p>
+   * <p>A set of wildcard version ARNs that always reference the latest version of
+   * the resource. ARNs are included for the latest version overall, and for the
+   * latest versions within the same major, minor, and patch levels.</p>
    */
   inline const LatestVersionReferences& GetLatestVersionReferences() const { return m_latestVersionReferences; }
   template <typename LatestVersionReferencesT = LatestVersionReferences>

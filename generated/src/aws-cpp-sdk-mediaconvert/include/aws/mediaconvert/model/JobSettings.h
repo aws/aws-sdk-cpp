@@ -243,6 +243,32 @@ class JobSettings {
 
   ///@{
   /**
+   * Array of motion image inserters for overlaying multiple independent motion
+   * graphics. Compositing order follows array index. Mutually exclusive with
+   * motionImageInserter.
+   */
+  inline const Aws::Vector<MotionImageInserter>& GetMotionImageInserters() const { return m_motionImageInserters; }
+  inline bool MotionImageInsertersHasBeenSet() const { return m_motionImageInsertersHasBeenSet; }
+  template <typename MotionImageInsertersT = Aws::Vector<MotionImageInserter>>
+  void SetMotionImageInserters(MotionImageInsertersT&& value) {
+    m_motionImageInsertersHasBeenSet = true;
+    m_motionImageInserters = std::forward<MotionImageInsertersT>(value);
+  }
+  template <typename MotionImageInsertersT = Aws::Vector<MotionImageInserter>>
+  JobSettings& WithMotionImageInserters(MotionImageInsertersT&& value) {
+    SetMotionImageInserters(std::forward<MotionImageInsertersT>(value));
+    return *this;
+  }
+  template <typename MotionImageInsertersT = MotionImageInserter>
+  JobSettings& AddMotionImageInserters(MotionImageInsertersT&& value) {
+    m_motionImageInsertersHasBeenSet = true;
+    m_motionImageInserters.emplace_back(std::forward<MotionImageInsertersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * Settings for your Nielsen configuration. If you don't do Nielsen measurement and
    * analytics, ignore these settings. When you enable Nielsen configuration,
    * MediaConvert enables PCM to ID3 tagging for all outputs in the job.
@@ -373,6 +399,8 @@ class JobSettings {
 
   MotionImageInserter m_motionImageInserter;
 
+  Aws::Vector<MotionImageInserter> m_motionImageInserters;
+
   NielsenConfiguration m_nielsenConfiguration;
 
   NielsenNonLinearWatermarkSettings m_nielsenNonLinearWatermark;
@@ -391,6 +419,7 @@ class JobSettings {
   bool m_inputsHasBeenSet = false;
   bool m_kantarWatermarkHasBeenSet = false;
   bool m_motionImageInserterHasBeenSet = false;
+  bool m_motionImageInsertersHasBeenSet = false;
   bool m_nielsenConfigurationHasBeenSet = false;
   bool m_nielsenNonLinearWatermarkHasBeenSet = false;
   bool m_outputGroupsHasBeenSet = false;

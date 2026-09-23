@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/lexv2-models/model/AudioFillerSettings.h>
+#include <aws/lexv2-models/model/SpeakerDiarizationSettings.h>
 #include <aws/lexv2-models/model/SpeechDetectionSensitivity.h>
 #include <aws/lexv2-models/model/SpeechRecognitionSettings.h>
 #include <aws/lexv2-models/model/UnifiedSpeechSettings.h>
@@ -215,6 +216,25 @@ class BotLocaleImportSpecification {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The speaker diarization settings to apply when importing the bot locale
+   * configuration.</p>
+   */
+  inline const SpeakerDiarizationSettings& GetSpeakerDiarizationSettings() const { return m_speakerDiarizationSettings; }
+  inline bool SpeakerDiarizationSettingsHasBeenSet() const { return m_speakerDiarizationSettingsHasBeenSet; }
+  template <typename SpeakerDiarizationSettingsT = SpeakerDiarizationSettings>
+  void SetSpeakerDiarizationSettings(SpeakerDiarizationSettingsT&& value) {
+    m_speakerDiarizationSettingsHasBeenSet = true;
+    m_speakerDiarizationSettings = std::forward<SpeakerDiarizationSettingsT>(value);
+  }
+  template <typename SpeakerDiarizationSettingsT = SpeakerDiarizationSettings>
+  BotLocaleImportSpecification& WithSpeakerDiarizationSettings(SpeakerDiarizationSettingsT&& value) {
+    SetSpeakerDiarizationSettings(std::forward<SpeakerDiarizationSettingsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_botId;
 
@@ -233,6 +253,8 @@ class BotLocaleImportSpecification {
   UnifiedSpeechSettings m_unifiedSpeechSettings;
 
   AudioFillerSettings m_audioFillerSettings;
+
+  SpeakerDiarizationSettings m_speakerDiarizationSettings;
   bool m_botIdHasBeenSet = false;
   bool m_botVersionHasBeenSet = false;
   bool m_localeIdHasBeenSet = false;
@@ -242,6 +264,7 @@ class BotLocaleImportSpecification {
   bool m_speechDetectionSensitivityHasBeenSet = false;
   bool m_unifiedSpeechSettingsHasBeenSet = false;
   bool m_audioFillerSettingsHasBeenSet = false;
+  bool m_speakerDiarizationSettingsHasBeenSet = false;
 };
 
 }  // namespace Model

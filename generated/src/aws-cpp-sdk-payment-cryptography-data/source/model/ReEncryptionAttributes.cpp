@@ -22,6 +22,10 @@ ReEncryptionAttributes& ReEncryptionAttributes::operator=(JsonView jsonValue) {
     m_symmetric = jsonValue.GetObject("Symmetric");
     m_symmetricHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Asymmetric")) {
+    m_asymmetric = jsonValue.GetObject("Asymmetric");
+    m_asymmetricHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Dukpt")) {
     m_dukpt = jsonValue.GetObject("Dukpt");
     m_dukptHasBeenSet = true;
@@ -34,6 +38,10 @@ JsonValue ReEncryptionAttributes::Jsonize() const {
 
   if (m_symmetricHasBeenSet) {
     payload.WithObject("Symmetric", m_symmetric.Jsonize());
+  }
+
+  if (m_asymmetricHasBeenSet) {
+    payload.WithObject("Asymmetric", m_asymmetric.Jsonize());
   }
 
   if (m_dukptHasBeenSet) {

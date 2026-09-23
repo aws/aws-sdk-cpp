@@ -23,8 +23,9 @@ namespace imagebuilder {
 namespace Model {
 
 /**
- * <p>Resource selection criteria for the lifecycle policy.</p><p><h3>See
- * Also:</h3>   <a
+ * <p>Resource selection criteria for the lifecycle policy. You must provide
+ * exactly one selection criteria: either recipes or a tag map, not
+ * both.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/LifecyclePolicyResourceSelection">AWS
  * API Reference</a></p>
  */

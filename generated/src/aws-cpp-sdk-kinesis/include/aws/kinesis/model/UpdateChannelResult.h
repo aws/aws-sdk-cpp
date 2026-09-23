@@ -30,7 +30,9 @@ class UpdateChannelResult {
 
   ///@{
   /**
-   * <p>The configuration and current status of the updated channel.</p>
+   * <p>The configuration and current status of the channel after the update,
+   * including its ARN, destination configuration, and lifecycle state. Immediately
+   * after the request, the state is <code>UPDATING</code>.</p>
    */
   inline const ChannelDescription& GetChannelDescription() const { return m_channelDescription; }
   template <typename ChannelDescriptionT = ChannelDescription>

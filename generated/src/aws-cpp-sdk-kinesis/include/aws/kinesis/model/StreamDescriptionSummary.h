@@ -10,6 +10,7 @@
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 #include <aws/kinesis/model/EncryptionType.h>
 #include <aws/kinesis/model/EnhancedMetrics.h>
+#include <aws/kinesis/model/RecordDistributionStrategy.h>
 #include <aws/kinesis/model/StreamModeDetails.h>
 #include <aws/kinesis/model/StreamStatus.h>
 #include <aws/kinesis/model/WarmThroughputObject.h>
@@ -328,6 +329,27 @@ class StreamDescriptionSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The record distribution strategy that the stream currently uses. A value of
+   * <code>AUTO</code> indicates that Amazon Kinesis Data Streams distributes records
+   * across shards using service-managed algorithms. A value of
+   * <code>USER_PARTITION_KEY</code> indicates that shard placement is determined by
+   * the partition key that producers supply. This field is only present for streams
+   * that use the on-demand capacity mode.</p>
+   */
+  inline RecordDistributionStrategy GetRecordDistributionStrategy() const { return m_recordDistributionStrategy; }
+  inline bool RecordDistributionStrategyHasBeenSet() const { return m_recordDistributionStrategyHasBeenSet; }
+  inline void SetRecordDistributionStrategy(RecordDistributionStrategy value) {
+    m_recordDistributionStrategyHasBeenSet = true;
+    m_recordDistributionStrategy = value;
+  }
+  inline StreamDescriptionSummary& WithRecordDistributionStrategy(RecordDistributionStrategy value) {
+    SetRecordDistributionStrategy(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_streamName;
 
@@ -358,6 +380,8 @@ class StreamDescriptionSummary {
   int m_maxRecordSizeInKiB{0};
 
   int m_channelCount{0};
+
+  RecordDistributionStrategy m_recordDistributionStrategy{RecordDistributionStrategy::NOT_SET};
   bool m_streamNameHasBeenSet = false;
   bool m_streamARNHasBeenSet = false;
   bool m_streamIdHasBeenSet = false;
@@ -373,6 +397,7 @@ class StreamDescriptionSummary {
   bool m_warmThroughputHasBeenSet = false;
   bool m_maxRecordSizeInKiBHasBeenSet = false;
   bool m_channelCountHasBeenSet = false;
+  bool m_recordDistributionStrategyHasBeenSet = false;
 };
 
 }  // namespace Model

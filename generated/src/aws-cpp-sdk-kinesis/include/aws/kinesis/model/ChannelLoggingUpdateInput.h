@@ -34,7 +34,8 @@ class ChannelLoggingUpdateInput {
 
   ///@{
   /**
-   * <p>The updated Amazon CloudWatch Logs settings for the channel.</p>
+   * <p>The updated Amazon CloudWatch Logs settings, including whether logging is
+   * enabled and the target log group and log stream.</p>
    */
   inline const CloudWatchLogsUpdateInput& GetCloudWatchLogs() const { return m_cloudWatchLogs; }
   inline bool CloudWatchLogsHasBeenSet() const { return m_cloudWatchLogsHasBeenSet; }

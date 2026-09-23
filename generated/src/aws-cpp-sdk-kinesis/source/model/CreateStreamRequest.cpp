@@ -43,6 +43,11 @@ Aws::String CreateStreamRequest::SerializePayload() const {
     payload.WithInteger("MaxRecordSizeInKiB", m_maxRecordSizeInKiB);
   }
 
+  if (m_recordDistributionStrategyHasBeenSet) {
+    payload.WithString("RecordDistributionStrategy",
+                       RecordDistributionStrategyMapper::GetNameForRecordDistributionStrategy(m_recordDistributionStrategy));
+  }
+
   return payload.View().WriteReadable();
 }
 

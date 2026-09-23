@@ -48,12 +48,13 @@ class ListLifecycleExecutionResourcesRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>You can leave this empty to get a list of Image Builder resources that were
-   * identified for lifecycle actions.</p> <p>To get a list of associated resources
-   * that are impacted for an individual resource (the parent), specify its Amazon
-   * Resource Name (ARN). Associated resources are produced from your image and
-   * distributed when you run a build, such as AMIs or container images stored in ECR
-   * repositories.</p>
+   * <p>The Amazon Resource Name (ARN) of an image build version to get the output
+   * resources for, such as AMIs or container images in Amazon ECR. You can get this
+   * value from the <code>resourceId</code> in the top-level response. If you leave
+   * this property empty, the response lists the Image Builder resources that the
+   * lifecycle execution identified for lifecycle actions. If the image build version
+   * that you specify in <code>parentResourceId</code> wasn't part of this lifecycle
+   * execution, the response contains an empty list.</p>
    */
   inline const Aws::String& GetParentResourceId() const { return m_parentResourceId; }
   inline bool ParentResourceIdHasBeenSet() const { return m_parentResourceIdHasBeenSet; }

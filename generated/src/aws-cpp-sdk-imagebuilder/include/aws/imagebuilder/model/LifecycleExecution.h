@@ -73,8 +73,8 @@ class LifecycleExecution {
 
   ///@{
   /**
-   * <p>Contains information about associated resources that are identified for
-   * action by the runtime instance of the lifecycle policy.</p>
+   * <p>A summary flag that indicates whether the lifecycle execution identified any
+   * resources to take lifecycle actions on.</p>
    */
   inline const LifecycleExecutionResourcesImpactedSummary& GetResourcesImpactedSummary() const { return m_resourcesImpactedSummary; }
   inline bool ResourcesImpactedSummaryHasBeenSet() const { return m_resourcesImpactedSummaryHasBeenSet; }
@@ -92,8 +92,8 @@ class LifecycleExecution {
 
   ///@{
   /**
-   * <p>Runtime state that reports if the policy action ran successfully, failed, or
-   * was skipped.</p>
+   * <p>Runtime state that reports whether the lifecycle execution is in progress,
+   * succeeded, or failed.</p>
    */
   inline const LifecycleExecutionState& GetState() const { return m_state; }
   inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
