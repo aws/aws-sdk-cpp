@@ -2,6 +2,7 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <smithy/client/schema/ClientProtocol.h>
 #include <smithy/client/schema/QueryShapeSerializer.h>
 #include <smithy/client/schema/SerializableStruct.h>
@@ -18,7 +19,33 @@ ClientProtocol::SerializerOutcome SerializeQuery(const Schema& schema, const Ser
   serializer.WriteStruct(schema, input);
   return serializer.GetPayload();
 }
+
+ClientProtocol::SerializerOutcome WrapQueryEnvelope(const OperationRequestContext& operation,
+                                                    ClientProtocol::SerializerOutcome bodyOutcome) {
+  if (!bodyOutcome.IsSuccess()) {
+    return bodyOutcome;
+  }
+  Aws::StringStream ss;
+  ss << "Action=" << operation.action << "&";
+  if (!bodyOutcome.GetResult().empty()) {
+    ss << bodyOutcome.GetResult() << "&";
+  }
+  ss << "Version=" << operation.version;
+  return ClientProtocol::SerializerOutcome(ss.str());
+}
 }  // namespace
+
+ClientProtocol::SerializerOutcome ClientProtocol::SerializeRequest(const OperationRequestContext&,
+                                                                  const Schema& inputSchema,
+                                                                  const SerializableStruct& input) const {
+  return SerializeInput(inputSchema, input);
+}
+
+void ClientProtocol::DeserializeResponse(const OperationRequestContext&, const unsigned char* data, size_t length,
+                                         SerializableStruct& output) const {
+  auto deserializer = CreateOutputDeserializer(data, length);
+  output.Deserialize(*deserializer);
+}
 
 Aws::String RestJsonProtocol::GetProtocolId() const { return "aws.protocols#restJson1"; }
 Aws::String RestJsonProtocol::GetContentType() const { return "application/json"; }
@@ -73,6 +100,17 @@ ClientProtocol::SerializerOutcome AwsQueryProtocol::SerializeInput(const Schema&
 Aws::UniquePtr<ShapeDeserializer> AwsQueryProtocol::CreateOutputDeserializer(const unsigned char* data, size_t length) const {
   return Aws::MakeUnique<XmlShapeDeserializer>(ALLOC_TAG, data, length);
 }
+ClientProtocol::SerializerOutcome AwsQueryProtocol::SerializeRequest(const OperationRequestContext& operation,
+                                                                    const Schema& inputSchema,
+                                                                    const SerializableStruct& input) const {
+  return WrapQueryEnvelope(operation, SerializeInput(inputSchema, input));
+}
+void AwsQueryProtocol::DeserializeResponse(const OperationRequestContext& operation, const unsigned char* data, size_t length,
+                                           SerializableStruct& output) const {
+  XmlShapeDeserializer deserializer(data, length);
+  deserializer.EnterWrapperElement(operation.action + "Result");
+  output.Deserialize(deserializer);
+}
 
 Aws::String Ec2QueryProtocol::GetProtocolId() const { return "aws.protocols#ec2Query"; }
 Aws::String Ec2QueryProtocol::GetContentType() const { return "application/x-www-form-urlencoded"; }
@@ -81,4 +119,9 @@ ClientProtocol::SerializerOutcome Ec2QueryProtocol::SerializeInput(const Schema&
 }
 Aws::UniquePtr<ShapeDeserializer> Ec2QueryProtocol::CreateOutputDeserializer(const unsigned char* data, size_t length) const {
   return Aws::MakeUnique<XmlShapeDeserializer>(ALLOC_TAG, data, length);
+}
+ClientProtocol::SerializerOutcome Ec2QueryProtocol::SerializeRequest(const OperationRequestContext& operation,
+                                                                    const Schema& inputSchema,
+                                                                    const SerializableStruct& input) const {
+  return WrapQueryEnvelope(operation, SerializeInput(inputSchema, input));
 }

@@ -222,6 +222,22 @@ class XmlShapeDeserializer::Impl final : public ShapeDeserializer {
     m_contentBegin = e.contentBegin;
     m_contentEnd = e.contentEnd;
   }
+ public:
+  bool EnterWrapper(const Aws::String& name) {
+    if (!m_valid) {
+      return false;
+    }
+    const Element child = FindChild(m_contentBegin, m_contentEnd, name, m_contentBegin);
+    if (!child.found) {
+      return false;
+    }
+    EnterElement(child);
+    m_flattened = false;
+    m_attr.clear();
+    return true;
+  }
+
+ private:
 
   static bool IsWs(char c) { return c == ' ' || c == '\t' || c == '\n' || c == '\r'; }
   bool StartsWith(size_t pos, const char* lit) const {
@@ -474,6 +490,7 @@ XmlShapeDeserializer::XmlShapeDeserializer(const unsigned char* data, size_t len
     : m_impl(Aws::MakeUnique<Impl>("XmlShapeDeserializer", data, length)) {}
 XmlShapeDeserializer::~XmlShapeDeserializer() = default;
 
+bool XmlShapeDeserializer::EnterWrapperElement(const Aws::String& name) { return m_impl->EnterWrapper(name); }
 void XmlShapeDeserializer::ReadStruct(const Schema& schema, const StructMemberConsumer& consumer) { m_impl->ReadStruct(schema, consumer); }
 void XmlShapeDeserializer::ReadList(const Schema& schema, const ListElementConsumer& consumer) { m_impl->ReadList(schema, consumer); }
 void XmlShapeDeserializer::ReadMap(const Schema& schema, const MapEntryConsumer& consumer) { m_impl->ReadMap(schema, consumer); }

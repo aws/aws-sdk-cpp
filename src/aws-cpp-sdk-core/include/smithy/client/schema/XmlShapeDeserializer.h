@@ -12,6 +12,8 @@ class SMITHY_API XmlShapeDeserializer final : public ShapeDeserializer {
   XmlShapeDeserializer(const unsigned char* data, size_t length);
   ~XmlShapeDeserializer();
 
+  bool EnterWrapperElement(const Aws::String& name);
+
   void ReadStruct(const Schema& schema, const StructMemberConsumer& consumer) override;
   void ReadList(const Schema& schema, const ListElementConsumer& consumer) override;
   void ReadMap(const Schema& schema, const MapEntryConsumer& consumer) override;

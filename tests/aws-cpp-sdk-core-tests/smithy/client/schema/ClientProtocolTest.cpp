@@ -56,6 +56,41 @@ void RoundTrip(const ClientProtocol& protocol, const std::shared_ptr<const Schem
   EXPECT_EQ(gotCount.value(), 42);
 }
 
+// A deserialize-only shape that captures three string members through From() — the result-adapter
+// pattern the codegen emits.
+class CaptureResult : public SerializableStruct {
+ public:
+  explicit CaptureResult(std::shared_ptr<const Schema> schema) : m_schema(std::move(schema)) {}
+  const Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(ShapeSerializer&) const override {}
+  void From(const Schema& memberSchema, ShapeDeserializer& de) override {
+    const Aws::String name = memberSchema.GetMemberName();
+    auto value = de.ReadString(memberSchema);
+    if (!value.has_value()) {
+      return;
+    }
+    if (name == "Arn") {
+      arn = value.value();
+    } else if (name == "UserId") {
+      userId = value.value();
+    } else if (name == "Account") {
+      account = value.value();
+    }
+  }
+  Aws::String arn, userId, account;
+
+ private:
+  std::shared_ptr<const Schema> m_schema;
+};
+
+std::shared_ptr<const Schema> CallerIdentityResultSchema() {
+  return Schema::StructureBuilder("GetCallerIdentityResult")
+      .PutMember("Arn", Schema::CreateString("Arn"))
+      .PutMember("UserId", Schema::CreateString("UserId"))
+      .PutMember("Account", Schema::CreateString("Account"))
+      .Build();
+}
+
 }  // namespace
 
 TEST_F(ClientProtocolTest, ContentTypesAndIds) {
@@ -99,6 +134,72 @@ TEST_F(ClientProtocolTest, Ec2QuerySerializesCapitalizedForm) {
   auto payload = Ec2QueryProtocol().SerializeInput(*root, shape);
   ASSERT_TRUE(payload.IsSuccess());
   EXPECT_EQ(payload.GetResult(), "Name=hello&Count=42");
+}
+
+TEST_F(ClientProtocolTest, AwsQuerySerializeRequestWrapsActionAndVersion) {
+  auto root = TwoMemberRoot(false);
+  auto name = root->GetMember("name").value();
+  auto count = root->GetMember("count").value();
+  LambdaStruct shape(*root, [&](ShapeSerializer& ser) {
+    ser.WriteString(*name, "hello");
+    ser.WriteInteger(*count, 42);
+  });
+  OperationRequestContext ctx{"GetSessionToken", "2011-06-15"};
+  auto payload = AwsQueryProtocol().SerializeRequest(ctx, *root, shape);
+  ASSERT_TRUE(payload.IsSuccess());
+  // The Action/Version envelope is owned by the protocol, not the shape.
+  EXPECT_EQ(payload.GetResult(), "Action=GetSessionToken&name=hello&count=42&Version=2011-06-15");
+}
+
+TEST_F(ClientProtocolTest, AwsQuerySerializeRequestWithEmptyBodyOmitsMembersSegment) {
+  auto root = TwoMemberRoot(false);
+  LambdaStruct shape(*root, [&](ShapeSerializer&) {});  // no members set
+  OperationRequestContext ctx{"GetCallerIdentity", "2011-06-15"};
+  auto payload = AwsQueryProtocol().SerializeRequest(ctx, *root, shape);
+  ASSERT_TRUE(payload.IsSuccess());
+  EXPECT_EQ(payload.GetResult(), "Action=GetCallerIdentity&Version=2011-06-15");
+}
+
+TEST_F(ClientProtocolTest, NonQuerySerializeRequestHasNoEnvelope) {
+  auto root = TwoMemberRoot(false);
+  auto name = root->GetMember("name").value();
+  auto count = root->GetMember("count").value();
+  LambdaStruct shape(*root, [&](ShapeSerializer& ser) {
+    ser.WriteString(*name, "hello");
+    ser.WriteInteger(*count, 42);
+  });
+  OperationRequestContext ctx{"Op", "2020-01-01"};
+  // Base SerializeRequest is envelope-free: identical to SerializeInput for JSON.
+  auto viaRequest = RestJsonProtocol().SerializeRequest(ctx, *root, shape);
+  auto viaInput = RestJsonProtocol().SerializeInput(*root, shape);
+  ASSERT_TRUE(viaRequest.IsSuccess());
+  ASSERT_TRUE(viaInput.IsSuccess());
+  EXPECT_EQ(viaRequest.GetResult(), viaInput.GetResult());
+}
+
+TEST_F(ClientProtocolTest, AwsQueryDeserializeResponsePeelsResultWrapper) {
+  // aws-query nests the output members under <GetCallerIdentityResult>; DeserializeResponse peels it.
+  const Aws::String xml =
+      "<GetCallerIdentityResponse><GetCallerIdentityResult>"
+      "<Arn>arn:aws:iam::123456789012:user/x</Arn><UserId>AIDAEXAMPLE</UserId><Account>123456789012</Account>"
+      "</GetCallerIdentityResult><ResponseMetadata><RequestId>req-1</RequestId></ResponseMetadata></GetCallerIdentityResponse>";
+  CaptureResult result(CallerIdentityResultSchema());
+  OperationRequestContext ctx{"GetCallerIdentity", "2011-06-15"};
+  AwsQueryProtocol().DeserializeResponse(ctx, reinterpret_cast<const unsigned char*>(xml.data()), xml.size(), result);
+  EXPECT_EQ(result.arn, "arn:aws:iam::123456789012:user/x");
+  EXPECT_EQ(result.userId, "AIDAEXAMPLE");
+  EXPECT_EQ(result.account, "123456789012");
+}
+
+TEST_F(ClientProtocolTest, RestJsonDeserializeResponseReadsBody) {
+  // Base DeserializeResponse (no envelope): read the members straight off the JSON body.
+  const Aws::String json = R"({"Arn":"arn:aws:iam::123456789012:user/y","UserId":"AIDAJSON","Account":"123456789012"})";
+  CaptureResult result(CallerIdentityResultSchema());
+  OperationRequestContext ctx{"GetCallerIdentity", "2011-06-15"};
+  RestJsonProtocol().DeserializeResponse(ctx, reinterpret_cast<const unsigned char*>(json.data()), json.size(), result);
+  EXPECT_EQ(result.arn, "arn:aws:iam::123456789012:user/y");
+  EXPECT_EQ(result.userId, "AIDAJSON");
+  EXPECT_EQ(result.account, "123456789012");
 }
 
 TEST_F(ClientProtocolTest, QueryResponseParsedAsXml) {
