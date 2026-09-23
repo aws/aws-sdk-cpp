@@ -47,19 +47,41 @@ if (NOT SIMPLE_INSTALL)
         "set(AWSSDK_PLATFORM_PREFIX ${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER})\n")
 endif()
 
+# When ENABLE_CPACK_PACKAGING is ON these consumer-facing CMake config files are
+# tagged so they land in the core devel package rather than CPack's catch-all
+# "Unspecified" bucket (which would produce a stray rpm/deb). When it is OFF the
+# variable expands to nothing and the install() calls behave exactly as they did
+# before packaging support was added.
+if(ENABLE_CPACK_PACKAGING)
+    set(AWSSDK_CORE_DEVEL_COMPONENT COMPONENT core-devel)
+else()
+    set(AWSSDK_CORE_DEVEL_COMPONENT)
+endif()
+
 # copy version file to destination
 install(
     FILES "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}/${PROJECT_NAME}ConfigVersion.cmake"
-    DESTINATION "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}")
+    DESTINATION "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}"
+    ${AWSSDK_CORE_DEVEL_COMPONENT})
 
 # platform external dependencies
 install(
     FILES "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}/platformDeps.cmake"
-    DESTINATION "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}/")
+    DESTINATION "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}/"
+    ${AWSSDK_CORE_DEVEL_COMPONENT})
 
-# copy all cmake files to destination, these files include useful macros, functions and variables for users.
-# useful macros and variables will be included in this cmake file for user to use
-install(DIRECTORY "${AWS_NATIVE_SDK_ROOT}/cmake/" DESTINATION "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}")
+# copy cmake files to destination, these files include useful macros, functions and variables for users.
+# The EXCLUDEs are unconditional: they only ever match files added by this
+# packaging support, so keeping them always-on leaves the installed tree
+# identical to what it was before, rather than shipping build-only scaffolding
+# to consumers when packaging is disabled.
+install(DIRECTORY "${AWS_NATIVE_SDK_ROOT}/cmake/" DESTINATION "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}"
+    ${AWSSDK_CORE_DEVEL_COMPONENT}
+    PATTERN "CPackConfig.cmake"          EXCLUDE
+    PATTERN "CPackComponents.cmake"      EXCLUDE
+    PATTERN "ServiceGroupMapping.cmake"  EXCLUDE
+    PATTERN "rpm-scripts"                EXCLUDE
+    PATTERN "deb-scripts"                EXCLUDE)
 
 # following two files are vital for cmake to find correct package, but since we copied all files from above
 # we left the code here to give you bettern understanding

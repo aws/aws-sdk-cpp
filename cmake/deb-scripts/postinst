@@ -1,0 +1,14 @@
+#!/bin/sh
+# DEB post-install script for AWS SDK C++
+# Updates the shared library cache after installation
+
+set -e
+
+# Only run ldconfig on configure
+if [ "$1" = "configure" ]; then
+    if [ -x /sbin/ldconfig ]; then
+        ldconfig
+    fi
+fi
+
+exit 0
