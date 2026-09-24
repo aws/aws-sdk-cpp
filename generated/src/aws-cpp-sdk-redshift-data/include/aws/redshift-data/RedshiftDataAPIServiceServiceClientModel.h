@@ -26,6 +26,7 @@
 #include <aws/redshift-data/model/ExecuteStatementResult.h>
 #include <aws/redshift-data/model/GetStatementResultResult.h>
 #include <aws/redshift-data/model/GetStatementResultV2Result.h>
+#include <aws/redshift-data/model/ListDatabasesRequest.h>
 #include <aws/redshift-data/model/ListDatabasesResult.h>
 #include <aws/redshift-data/model/ListSchemasResult.h>
 #include <aws/redshift-data/model/ListSessionsRequest.h>

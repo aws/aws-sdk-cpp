@@ -84,6 +84,7 @@
 #include <aws/datazone/model/BatchPutAttributeOutput.h>
 #include <aws/datazone/model/BatchPutAttributesMetadataRequest.h>
 #include <aws/datazone/model/BatchPutAttributesMetadataResult.h>
+#include <aws/datazone/model/BlueprintCategory.h>
 #include <aws/datazone/model/BusinessNameGenerationConfiguration.h>
 #include <aws/datazone/model/CancelMetadataGenerationRunRequest.h>
 #include <aws/datazone/model/CancelMetadataGenerationRunResult.h>

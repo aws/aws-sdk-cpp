@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticache/ElastiCacheRequest.h>
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
+#include <aws/elasticache/model/Tag.h>
 
 #include <utility>
 
@@ -95,15 +97,43 @@ class CreateGlobalReplicationGroupRequest : public ElastiCacheRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag
+   * key must be accompanied by a tag value, although null is accepted.</p>
+   */
+  inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Vector<Tag>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Vector<Tag>>
+  CreateGlobalReplicationGroupRequest& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsT = Tag>
+  CreateGlobalReplicationGroupRequest& AddTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace_back(std::forward<TagsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_globalReplicationGroupIdSuffix;
 
   Aws::String m_globalReplicationGroupDescription;
 
   Aws::String m_primaryReplicationGroupId;
+
+  Aws::Vector<Tag> m_tags;
   bool m_globalReplicationGroupIdSuffixHasBeenSet = false;
   bool m_globalReplicationGroupDescriptionHasBeenSet = false;
   bool m_primaryReplicationGroupIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
 };
 
 }  // namespace Model

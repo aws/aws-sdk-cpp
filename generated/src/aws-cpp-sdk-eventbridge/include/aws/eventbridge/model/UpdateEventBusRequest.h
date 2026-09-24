@@ -131,8 +131,8 @@ class UpdateEventBusRequest : public EventBridgeRequest {
   /**
    * <p>The logging configuration settings for the event bus.</p> <p>For more
    * information, see <a
-   * href="https://docs.aws.amazon.com/eb-event-bus-logs.html">Configuring logs for
-   * event buses</a> in the <i>EventBridge User Guide</i>.</p>
+   * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus-logs.html">Configuring
+   * logs for event buses</a> in the <i>EventBridge User Guide</i>.</p>
    */
   inline const LogConfig& GetLogConfig() const { return m_logConfig; }
   inline bool LogConfigHasBeenSet() const { return m_logConfigHasBeenSet; }

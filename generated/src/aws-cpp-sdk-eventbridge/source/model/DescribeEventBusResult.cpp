@@ -58,6 +58,10 @@ DescribeEventBusResult& DescribeEventBusResult::operator=(const Aws::AmazonWebSe
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ManagedBy")) {
+    m_managedBy = jsonValue.GetString("ManagedBy");
+    m_managedByHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

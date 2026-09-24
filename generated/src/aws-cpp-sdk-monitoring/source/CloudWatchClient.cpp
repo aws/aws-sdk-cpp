@@ -21,12 +21,14 @@
 #include <aws/monitoring/CloudWatchEndpointProvider.h>
 #include <aws/monitoring/CloudWatchErrorMarshaller.h>
 #include <aws/monitoring/model/AssociateDatasetKmsKeyRequest.h>
+#include <aws/monitoring/model/CreateResourceMetricsConfigurationRequest.h>
 #include <aws/monitoring/model/DeleteAlarmMuteRuleRequest.h>
 #include <aws/monitoring/model/DeleteAlarmsRequest.h>
 #include <aws/monitoring/model/DeleteAnomalyDetectorRequest.h>
 #include <aws/monitoring/model/DeleteDashboardsRequest.h>
 #include <aws/monitoring/model/DeleteInsightRulesRequest.h>
 #include <aws/monitoring/model/DeleteMetricStreamRequest.h>
+#include <aws/monitoring/model/DeleteResourceMetricsConfigurationRequest.h>
 #include <aws/monitoring/model/DescribeAlarmContributorsRequest.h>
 #include <aws/monitoring/model/DescribeAlarmHistoryRequest.h>
 #include <aws/monitoring/model/DescribeAlarmsForMetricRequest.h>
@@ -47,6 +49,7 @@
 #include <aws/monitoring/model/GetMetricStreamRequest.h>
 #include <aws/monitoring/model/GetMetricWidgetImageRequest.h>
 #include <aws/monitoring/model/GetOTelEnrichmentRequest.h>
+#include <aws/monitoring/model/GetResourceMetricsConfigurationRequest.h>
 #include <aws/monitoring/model/ListAlarmMuteRulesRequest.h>
 #include <aws/monitoring/model/ListDashboardsRequest.h>
 #include <aws/monitoring/model/ListManagedInsightRulesRequest.h>
@@ -70,6 +73,8 @@
 #include <aws/monitoring/model/StopOTelEnrichmentRequest.h>
 #include <aws/monitoring/model/TagResourceRequest.h>
 #include <aws/monitoring/model/UntagResourceRequest.h>
+#include <aws/monitoring/model/UpdateOTelEnrichmentRequest.h>
+#include <aws/monitoring/model/UpdateResourceMetricsConfigurationRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -230,6 +235,13 @@ AssociateDatasetKmsKeyOutcome CloudWatchClient::AssociateDatasetKmsKey(const Ass
                             : AssociateDatasetKmsKeyOutcome(std::move(result.GetError()));
 }
 
+CreateResourceMetricsConfigurationOutcome CloudWatchClient::CreateResourceMetricsConfiguration(
+    const CreateResourceMetricsConfigurationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateResourceMetricsConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateResourceMetricsConfigurationOutcome(std::move(result.GetError()));
+}
+
 DeleteAlarmMuteRuleOutcome CloudWatchClient::DeleteAlarmMuteRule(const DeleteAlarmMuteRuleRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteAlarmMuteRuleOutcome(result.GetResultWithOwnership())
@@ -263,6 +275,13 @@ DeleteMetricStreamOutcome CloudWatchClient::DeleteMetricStream(const DeleteMetri
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteMetricStreamOutcome(result.GetResultWithOwnership())
                             : DeleteMetricStreamOutcome(std::move(result.GetError()));
+}
+
+DeleteResourceMetricsConfigurationOutcome CloudWatchClient::DeleteResourceMetricsConfiguration(
+    const DeleteResourceMetricsConfigurationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteResourceMetricsConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteResourceMetricsConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeAlarmContributorsOutcome CloudWatchClient::DescribeAlarmContributors(const DescribeAlarmContributorsRequest& request) const {
@@ -379,6 +398,13 @@ GetOTelEnrichmentOutcome CloudWatchClient::GetOTelEnrichment(const GetOTelEnrich
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetOTelEnrichmentOutcome(result.GetResultWithOwnership())
                             : GetOTelEnrichmentOutcome(std::move(result.GetError()));
+}
+
+GetResourceMetricsConfigurationOutcome CloudWatchClient::GetResourceMetricsConfiguration(
+    const GetResourceMetricsConfigurationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResourceMetricsConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetResourceMetricsConfigurationOutcome(std::move(result.GetError()));
 }
 
 ListAlarmMuteRulesOutcome CloudWatchClient::ListAlarmMuteRules(const ListAlarmMuteRulesRequest& request) const {
@@ -507,4 +533,17 @@ TagResourceOutcome CloudWatchClient::TagResource(const TagResourceRequest& reque
 UntagResourceOutcome CloudWatchClient::UntagResource(const UntagResourceRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
+}
+
+UpdateOTelEnrichmentOutcome CloudWatchClient::UpdateOTelEnrichment(const UpdateOTelEnrichmentRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateOTelEnrichmentOutcome(result.GetResultWithOwnership())
+                            : UpdateOTelEnrichmentOutcome(std::move(result.GetError()));
+}
+
+UpdateResourceMetricsConfigurationOutcome CloudWatchClient::UpdateResourceMetricsConfiguration(
+    const UpdateResourceMetricsConfigurationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateResourceMetricsConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateResourceMetricsConfigurationOutcome(std::move(result.GetError()));
 }

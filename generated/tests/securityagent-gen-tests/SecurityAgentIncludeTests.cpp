@@ -289,6 +289,7 @@
 #include <aws/securityagent/model/ProviderResourceCapabilities.h>
 #include <aws/securityagent/model/ProviderType.h>
 #include <aws/securityagent/model/ReportDestination.h>
+#include <aws/securityagent/model/ReportFilters.h>
 #include <aws/securityagent/model/ResourceConfigDnsResolution.h>
 #include <aws/securityagent/model/ResourceType.h>
 #include <aws/securityagent/model/RiskLevel.h>

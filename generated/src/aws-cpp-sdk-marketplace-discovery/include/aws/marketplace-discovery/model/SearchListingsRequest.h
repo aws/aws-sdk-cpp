@@ -34,6 +34,27 @@ class SearchListingsRequest : public MarketplaceDiscoveryRequest {
 
   ///@{
   /**
+   * <p>A BCP 47 language tag or comma-separated priority list specifying the
+   * preferred locale for response content. See <code>Locale</code> for supported
+   * values, constraints, fallback behavior, and the default locale. If omitted, the
+   * service returns content in the default locale.</p>
+   */
+  inline const Aws::String& GetLocale() const { return m_locale; }
+  inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }
+  template <typename LocaleT = Aws::String>
+  void SetLocale(LocaleT&& value) {
+    m_localeHasBeenSet = true;
+    m_locale = std::forward<LocaleT>(value);
+  }
+  template <typename LocaleT = Aws::String>
+  SearchListingsRequest& WithLocale(LocaleT&& value) {
+    SetLocale(std::forward<LocaleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The search query text to find relevant listings.</p>
    */
   inline const Aws::String& GetSearchText() const { return m_searchText; }
@@ -145,6 +166,8 @@ class SearchListingsRequest : public MarketplaceDiscoveryRequest {
   }
   ///@}
  private:
+  Aws::String m_locale;
+
   Aws::String m_searchText;
 
   Aws::Vector<SearchFilter> m_filters;
@@ -156,6 +179,7 @@ class SearchListingsRequest : public MarketplaceDiscoveryRequest {
   SearchListingsSortOrder m_sortOrder{SearchListingsSortOrder::NOT_SET};
 
   Aws::String m_nextToken;
+  bool m_localeHasBeenSet = false;
   bool m_searchTextHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;

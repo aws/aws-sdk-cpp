@@ -22,6 +22,10 @@ GetOfferSetResult::GetOfferSetResult(const Aws::AmazonWebServiceResult<JsonValue
 GetOfferSetResult& GetOfferSetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("locale")) {
+    m_locale = jsonValue.GetString("locale");
+    m_localeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("offerSetId")) {
     m_offerSetId = jsonValue.GetString("offerSetId");
     m_offerSetIdHasBeenSet = true;

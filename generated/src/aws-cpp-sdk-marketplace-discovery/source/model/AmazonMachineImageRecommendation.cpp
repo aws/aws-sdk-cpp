@@ -22,6 +22,13 @@ AmazonMachineImageRecommendation& AmazonMachineImageRecommendation::operator=(Js
     m_instanceType = jsonValue.GetString("instanceType");
     m_instanceTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("securityGroups")) {
+    Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("securityGroups");
+    for (unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex) {
+      m_securityGroups.push_back(securityGroupsJsonList[securityGroupsIndex].AsObject());
+    }
+    m_securityGroupsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +37,14 @@ JsonValue AmazonMachineImageRecommendation::Jsonize() const {
 
   if (m_instanceTypeHasBeenSet) {
     payload.WithString("instanceType", m_instanceType);
+  }
+
+  if (m_securityGroupsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> securityGroupsJsonList(m_securityGroups.size());
+    for (unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex) {
+      securityGroupsJsonList[securityGroupsIndex].AsObject(m_securityGroups[securityGroupsIndex].Jsonize());
+    }
+    payload.WithArray("securityGroups", std::move(securityGroupsJsonList));
   }
 
   return payload;

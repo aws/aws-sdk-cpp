@@ -15,6 +15,10 @@ using namespace Aws::Utils;
 Aws::String GetListingRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_localeHasBeenSet) {
+    payload.WithString("locale", m_locale);
+  }
+
   if (m_listingIdHasBeenSet) {
     payload.WithString("listingId", m_listingId);
   }

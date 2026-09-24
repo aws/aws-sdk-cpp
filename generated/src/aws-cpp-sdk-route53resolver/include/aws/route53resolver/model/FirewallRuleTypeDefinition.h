@@ -112,9 +112,10 @@ class FirewallRuleTypeDefinition {
   ///@{
   /**
    * <p>For rule types that require an external subscription (today, only the
-   * <code>PartnerThreatProtection</code> variant), describes the AWS Marketplace
-   * product that backs the rule type. Absent for rule types that are managed by AWS
-   * and do not require a separate subscription. See <a>SubscriptionInfo</a>.</p>
+   * <code>PartnerThreatProtection</code> variant), describes the Amazon Web Services
+   * Marketplace product that backs the rule type. Absent for rule types that are
+   * managed by Amazon Web Services and do not require a separate subscription. See
+   * <a>SubscriptionInfo</a>.</p>
    */
   inline const SubscriptionInfo& GetSubscriptionInfo() const { return m_subscriptionInfo; }
   inline bool SubscriptionInfoHasBeenSet() const { return m_subscriptionInfoHasBeenSet; }

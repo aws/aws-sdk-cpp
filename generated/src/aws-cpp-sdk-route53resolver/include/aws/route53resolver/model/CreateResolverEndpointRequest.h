@@ -138,7 +138,19 @@ class CreateResolverEndpointRequest : public Route53ResolverRequest {
    * <p>The subnets and IP addresses in your VPC that DNS queries originate from (for
    * outbound endpoints) or that you forward DNS queries to (for inbound endpoints).
    * The subnet ID uniquely identifies a VPC. </p>  <p>Even though the minimum
-   * is 1, Route 53 requires that you create at least two.</p>
+   * is 1, Route 53 requires that you create at least two.</p>  <p>We
+   * recommend using <a
+   * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/outpost-resolver-getting-started.html">VPC
+   * Resolver on Outposts</a> to create endpoints on Outposts Racks.</p>
+   * <p>Outposts subnets with <a
+   * href="https://docs.aws.amazon.com/outposts/latest/server-userguide/local-network-interface.html">Local
+   * Network Interface (LNI)</a> enabled are not compatible with Route 53 Resolver
+   * endpoints. If you enable LNI on a subnet that contains Route 53 Resolver
+   * endpoint elastic network interfaces (ENIs), those ENIs will stop functioning.
+   * For more information, see <a
+   * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/best-practices-resolver.html#best-practices-resolver-subnet-compatibility">Subnet
+   * compatibility for Resolver endpoints</a> in the <i>Amazon Route 53 Developer
+   * Guide</i>.</p>
    */
   inline const Aws::Vector<IpAddressRequest>& GetIpAddresses() const { return m_ipAddresses; }
   inline bool IpAddressesHasBeenSet() const { return m_ipAddressesHasBeenSet; }
@@ -164,6 +176,9 @@ class CreateResolverEndpointRequest : public Route53ResolverRequest {
   /**
    * <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must
    * also specify a value for the <code>PreferredInstanceType</code>. </p>
+   * <p>Resolver endpoints on Outposts are supported on first-generation Outposts
+   * only. Inbound and outbound Resolver endpoints aren't supported on
+   * second-generation Outposts.</p>
    */
   inline const Aws::String& GetOutpostArn() const { return m_outpostArn; }
   inline bool OutpostArnHasBeenSet() const { return m_outpostArnHasBeenSet; }

@@ -53,6 +53,10 @@ ThreatModel& ThreatModel::operator=(JsonView jsonValue) {
     m_logConfig = jsonValue.GetObject("logConfig");
     m_logConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("reportDestination")) {
+    m_reportDestination = jsonValue.GetObject("reportDestination");
+    m_reportDestinationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
@@ -101,6 +105,10 @@ JsonValue ThreatModel::Jsonize() const {
 
   if (m_logConfigHasBeenSet) {
     payload.WithObject("logConfig", m_logConfig.Jsonize());
+  }
+
+  if (m_reportDestinationHasBeenSet) {
+    payload.WithObject("reportDestination", m_reportDestination.Jsonize());
   }
 
   if (m_createdAtHasBeenSet) {

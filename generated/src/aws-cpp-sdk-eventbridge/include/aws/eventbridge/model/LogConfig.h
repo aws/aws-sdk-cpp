@@ -23,9 +23,9 @@ namespace Model {
 /**
  * <p>The logging configuration settings for the event bus.</p> <p>For more
  * information, see <a
- * href="https://docs.aws.amazon.com/eb-event-bus-logs.html">Configuring logs for
- * event buses</a> in the <i>EventBridge User Guide</i>.</p><p><h3>See Also:</h3>
- * <a
+ * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus-logs.html">Configuring
+ * logs for event buses</a> in the <i>EventBridge User Guide</i>.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/LogConfig">AWS
  * API Reference</a></p>
  */

@@ -59,6 +59,18 @@ class IpAddressUpdate {
    * <p>The ID of the subnet that includes the IP address that you want to update. To
    * get this ID, use <a
    * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.</p>
+   * <p>We recommend using <a
+   * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/outpost-resolver-getting-started.html">VPC
+   * Resolver on Outposts</a> to create endpoints on Outposts Racks.</p>
+   * <p>Outposts subnets with <a
+   * href="https://docs.aws.amazon.com/outposts/latest/server-userguide/local-network-interface.html">Local
+   * Network Interface (LNI)</a> enabled are not compatible with Route 53 Resolver
+   * endpoints. If you enable LNI on a subnet that contains Route 53 Resolver
+   * endpoint elastic network interfaces (ENIs), those ENIs will stop functioning.
+   * For more information, see <a
+   * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/best-practices-resolver.html#best-practices-resolver-subnet-compatibility">Subnet
+   * compatibility for Resolver endpoints</a> in the <i>Amazon Route 53 Developer
+   * Guide</i>.</p>
    */
   inline const Aws::String& GetSubnetId() const { return m_subnetId; }
   inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }

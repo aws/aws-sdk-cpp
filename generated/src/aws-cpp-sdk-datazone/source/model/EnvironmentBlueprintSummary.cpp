@@ -46,6 +46,10 @@ EnvironmentBlueprintSummary& EnvironmentBlueprintSummary::operator=(JsonView jso
     m_updatedAt = jsonValue.GetString("updatedAt");
     m_updatedAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("blueprintCategory")) {
+    m_blueprintCategory = BlueprintCategoryMapper::GetBlueprintCategoryForName(jsonValue.GetString("blueprintCategory"));
+    m_blueprintCategoryHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -78,6 +82,10 @@ JsonValue EnvironmentBlueprintSummary::Jsonize() const {
 
   if (m_updatedAtHasBeenSet) {
     payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_blueprintCategoryHasBeenSet) {
+    payload.WithString("blueprintCategory", BlueprintCategoryMapper::GetNameForBlueprintCategory(m_blueprintCategory));
   }
 
   return payload;

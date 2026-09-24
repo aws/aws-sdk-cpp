@@ -30,6 +30,27 @@ class GetOfferTermsRequest : public MarketplaceDiscoveryRequest {
 
   ///@{
   /**
+   * <p>A BCP 47 language tag or comma-separated priority list specifying the
+   * preferred locale for response content. See <code>Locale</code> for supported
+   * values, constraints, fallback behavior, and the default locale. If omitted, the
+   * service returns content in the default locale.</p>
+   */
+  inline const Aws::String& GetLocale() const { return m_locale; }
+  inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }
+  template <typename LocaleT = Aws::String>
+  void SetLocale(LocaleT&& value) {
+    m_localeHasBeenSet = true;
+    m_locale = std::forward<LocaleT>(value);
+  }
+  template <typename LocaleT = Aws::String>
+  GetOfferTermsRequest& WithLocale(LocaleT&& value) {
+    SetLocale(std::forward<LocaleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The unique identifier of the offer whose terms to retrieve.</p>
    */
   inline const Aws::String& GetOfferId() const { return m_offerId; }
@@ -82,11 +103,14 @@ class GetOfferTermsRequest : public MarketplaceDiscoveryRequest {
   }
   ///@}
  private:
+  Aws::String m_locale;
+
   Aws::String m_offerId;
 
   int m_maxResults{0};
 
   Aws::String m_nextToken;
+  bool m_localeHasBeenSet = false;
   bool m_offerIdHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

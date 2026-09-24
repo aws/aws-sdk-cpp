@@ -32,6 +32,8 @@
 #include <aws/monitoring/model/AssociateDatasetKmsKeyResult.h>
 #include <aws/monitoring/model/ComparisonOperator.h>
 #include <aws/monitoring/model/CompositeAlarm.h>
+#include <aws/monitoring/model/CreateResourceMetricsConfigurationRequest.h>
+#include <aws/monitoring/model/CreateResourceMetricsConfigurationResult.h>
 #include <aws/monitoring/model/DashboardEntry.h>
 #include <aws/monitoring/model/DashboardInvalidInputError.h>
 #include <aws/monitoring/model/DashboardValidationMessage.h>
@@ -46,6 +48,8 @@
 #include <aws/monitoring/model/DeleteInsightRulesResult.h>
 #include <aws/monitoring/model/DeleteMetricStreamRequest.h>
 #include <aws/monitoring/model/DeleteMetricStreamResult.h>
+#include <aws/monitoring/model/DeleteResourceMetricsConfigurationRequest.h>
+#include <aws/monitoring/model/DeleteResourceMetricsConfigurationResult.h>
 #include <aws/monitoring/model/DescribeAlarmContributorsRequest.h>
 #include <aws/monitoring/model/DescribeAlarmContributorsResult.h>
 #include <aws/monitoring/model/DescribeAlarmHistoryPaginationTraits.h>
@@ -96,6 +100,8 @@
 #include <aws/monitoring/model/GetMetricWidgetImageResult.h>
 #include <aws/monitoring/model/GetOTelEnrichmentRequest.h>
 #include <aws/monitoring/model/GetOTelEnrichmentResult.h>
+#include <aws/monitoring/model/GetResourceMetricsConfigurationRequest.h>
+#include <aws/monitoring/model/GetResourceMetricsConfigurationResult.h>
 #include <aws/monitoring/model/HistoryItemType.h>
 #include <aws/monitoring/model/InsightRule.h>
 #include <aws/monitoring/model/InsightRuleContributor.h>
@@ -138,6 +144,7 @@
 #include <aws/monitoring/model/MetricStreamStatisticsConfiguration.h>
 #include <aws/monitoring/model/MetricStreamStatisticsMetric.h>
 #include <aws/monitoring/model/MuteTargets.h>
+#include <aws/monitoring/model/OTelEnrichmentMetricSelector.h>
 #include <aws/monitoring/model/OTelEnrichmentStatus.h>
 #include <aws/monitoring/model/PartialFailure.h>
 #include <aws/monitoring/model/PutAlarmMuteRuleRequest.h>
@@ -157,6 +164,8 @@
 #include <aws/monitoring/model/PutMetricStreamResult.h>
 #include <aws/monitoring/model/Range.h>
 #include <aws/monitoring/model/RecentlyActive.h>
+#include <aws/monitoring/model/ResourceMetricSelection.h>
+#include <aws/monitoring/model/ResourceMetricsConfiguration.h>
 #include <aws/monitoring/model/ResourceNotFoundException.h>
 #include <aws/monitoring/model/ResponseMetadata.h>
 #include <aws/monitoring/model/Rule.h>
@@ -185,6 +194,10 @@
 #include <aws/monitoring/model/TagResourceResult.h>
 #include <aws/monitoring/model/UntagResourceRequest.h>
 #include <aws/monitoring/model/UntagResourceResult.h>
+#include <aws/monitoring/model/UpdateOTelEnrichmentRequest.h>
+#include <aws/monitoring/model/UpdateOTelEnrichmentResult.h>
+#include <aws/monitoring/model/UpdateResourceMetricsConfigurationRequest.h>
+#include <aws/monitoring/model/UpdateResourceMetricsConfigurationResult.h>
 #include <aws/monitoring/model/WallClockWindow.h>
 #include <aws/monitoring/model/WarmUpConfiguration.h>
 

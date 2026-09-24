@@ -17,9 +17,30 @@ Aws::String StartOTelEnrichmentRequest::SerializePayload() const {
 
   // Calculate map size
   size_t mapSize = 0;
+  if (m_includeFiltersHasBeenSet) {
+    mapSize++;
+  }
+  if (m_excludeFiltersHasBeenSet) {
+    mapSize++;
+  }
 
   encoder.WriteMapStart(mapSize);
 
+  if (m_includeFiltersHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("IncludeFilters"));
+    encoder.WriteArrayStart(m_includeFilters.size());
+    for (const auto& item_0 : m_includeFilters) {
+      item_0.CborEncode(encoder);
+    }
+  }
+
+  if (m_excludeFiltersHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ExcludeFilters"));
+    encoder.WriteArrayStart(m_excludeFilters.size());
+    for (const auto& item_0 : m_excludeFilters) {
+      item_0.CborEncode(encoder);
+    }
+  }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
   return str;
 }

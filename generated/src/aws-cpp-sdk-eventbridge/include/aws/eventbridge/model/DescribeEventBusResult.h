@@ -141,8 +141,8 @@ class DescribeEventBusResult {
   /**
    * <p>The logging configuration settings for the event bus.</p> <p>For more
    * information, see <a
-   * href="https://docs.aws.amazon.com/eb-event-bus-logs.html">Configuring logs for
-   * event buses</a> in the <i>EventBridge User Guide</i>.</p>
+   * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus-logs.html">Configuring
+   * logs for event buses</a> in the <i>EventBridge User Guide</i>.</p>
    */
   inline const LogConfig& GetLogConfig() const { return m_logConfig; }
   template <typename LogConfigT = LogConfig>
@@ -192,6 +192,25 @@ class DescribeEventBusResult {
   ///@}
 
   ///@{
+  /**
+   * <p>If the event bus was created on behalf of your account by an Amazon Web
+   * Services service, this field displays the principal name of the service that
+   * created the event bus.</p>
+   */
+  inline const Aws::String& GetManagedBy() const { return m_managedBy; }
+  template <typename ManagedByT = Aws::String>
+  void SetManagedBy(ManagedByT&& value) {
+    m_managedByHasBeenSet = true;
+    m_managedBy = std::forward<ManagedByT>(value);
+  }
+  template <typename ManagedByT = Aws::String>
+  DescribeEventBusResult& WithManagedBy(ManagedByT&& value) {
+    SetManagedBy(std::forward<ManagedByT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -226,6 +245,8 @@ class DescribeEventBusResult {
 
   Aws::Utils::DateTime m_lastModifiedTime{};
 
+  Aws::String m_managedBy;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nameHasBeenSet = false;
@@ -237,6 +258,7 @@ class DescribeEventBusResult {
   bool m_logConfigHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_managedByHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

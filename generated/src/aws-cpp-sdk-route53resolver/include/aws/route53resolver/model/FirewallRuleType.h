@@ -43,10 +43,10 @@ class FirewallRuleType {
 
   ///@{
   /**
-   * <p>Configures the rule to match a third-party threat feed delivered through AWS
-   * Marketplace. The calling account must hold an active subscription to the partner
-   * product named in <code>Partner</code>; if the subscription is missing or
-   * revoked, the rule is created with <code>Status</code>
+   * <p>Configures the rule to match a third-party threat feed delivered through
+   * Amazon Web Services Marketplace. The calling account must hold an active
+   * subscription to the partner product named in <code>Partner</code>; if the
+   * subscription is missing or revoked, the rule is created with <code>Status</code>
    * <code>CREATION_FAILED</code> and cannot be modified — only deleted. See
    * <a>PartnerThreatProtectionConfig</a>.</p>
    */
@@ -66,8 +66,8 @@ class FirewallRuleType {
 
   ///@{
   /**
-   * <p>Configures the rule to match an AWS-managed content category (for example,
-   * <code>VIOLENCE_AND_HATE_SPEECH</code>). See
+   * <p>Configures the rule to match an Amazon Web Services-managed content category
+   * (for example, <code>VIOLENCE_AND_HATE_SPEECH</code>). See
    * <a>FirewallAdvancedContentCategoryConfig</a>.</p>
    */
   inline const FirewallAdvancedContentCategoryConfig& GetFirewallAdvancedContentCategory() const {
@@ -88,8 +88,8 @@ class FirewallRuleType {
 
   ///@{
   /**
-   * <p>Configures the rule to match an AWS-managed advanced threat category (for
-   * example, <code>PHISHING</code>). See
+   * <p>Configures the rule to match an Amazon Web Services-managed advanced threat
+   * category (for example, <code>PHISHING</code>). See
    * <a>FirewallAdvancedThreatCategoryConfig</a>.</p>
    */
   inline const FirewallAdvancedThreatCategoryConfig& GetFirewallAdvancedThreatCategory() const { return m_firewallAdvancedThreatCategory; }

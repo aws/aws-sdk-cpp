@@ -416,13 +416,13 @@ class AWS_REDSHIFTDATAAPISERVICE_API RedshiftDataAPIServiceClient
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListDatabases">AWS
    * API Reference</a></p>
    */
-  virtual Model::ListDatabasesOutcome ListDatabases(const Model::ListDatabasesRequest& request) const;
+  virtual Model::ListDatabasesOutcome ListDatabases(const Model::ListDatabasesRequest& request = {}) const;
 
   /**
    * A Callable wrapper for ListDatabases that returns a future to the operation so that it can be executed in parallel to other requests.
    */
   template <typename ListDatabasesRequestT = Model::ListDatabasesRequest>
-  Model::ListDatabasesOutcomeCallable ListDatabasesCallable(const ListDatabasesRequestT& request) const {
+  Model::ListDatabasesOutcomeCallable ListDatabasesCallable(const ListDatabasesRequestT& request = {}) const {
     return SubmitCallable(&RedshiftDataAPIServiceClient::ListDatabases, request);
   }
 
@@ -431,8 +431,9 @@ class AWS_REDSHIFTDATAAPISERVICE_API RedshiftDataAPIServiceClient
    * finished.
    */
   template <typename ListDatabasesRequestT = Model::ListDatabasesRequest>
-  void ListDatabasesAsync(const ListDatabasesRequestT& request, const ListDatabasesResponseReceivedHandler& handler,
-                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+  void ListDatabasesAsync(const ListDatabasesResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                          const ListDatabasesRequestT& request = {}) const {
     return SubmitAsync(&RedshiftDataAPIServiceClient::ListDatabases, request, handler, context);
   }
 
@@ -499,9 +500,9 @@ class AWS_REDSHIFTDATAAPISERVICE_API RedshiftDataAPIServiceClient
    * <code>NextToken</code> to page through the session list.</p> <p>Returns only the
    * sessions that the caller created. When identity-enhanced role sessions are used,
    * you must provide either the <code>ClusterIdentifier</code> or
-   * <code>WorkgroupName</code> parameter to ensure that the AWS IAM Identity Center
-   * user can only access the Amazon Redshift IAM Identity Center applications they
-   * are assigned. For more information, see <a
+   * <code>WorkgroupName</code> parameter to ensure that the IAM Identity Center user
+   * can only access the Amazon Redshift IAM Identity Center applications they are
+   * assigned. For more information, see <a
    * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation-overview.html">
    * Trusted identity propagation overview</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListSessions">AWS

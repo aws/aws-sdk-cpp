@@ -20,8 +20,8 @@ namespace EventBridge {
 namespace Model {
 
 /**
- * <p>This structure includes the custom parameter to be used when the target is an
- * SQS FIFO queue.</p><p><h3>See Also:</h3>   <a
+ * <p>The custom parameters for EventBridge to use for a target that is an Amazon
+ * SQS fair or FIFO queue. </p> <p/><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/SqsParameters">AWS
  * API Reference</a></p>
  */
@@ -34,7 +34,7 @@ class SqsParameters {
 
   ///@{
   /**
-   * <p>The FIFO message group ID to use as the target.</p>
+   * <p>The ID of the message group to use as the target.</p>
    */
   inline const Aws::String& GetMessageGroupId() const { return m_messageGroupId; }
   inline bool MessageGroupIdHasBeenSet() const { return m_messageGroupIdHasBeenSet; }

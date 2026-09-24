@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/marketplace-discovery/MarketplaceDiscovery_EXPORTS.h>
 #include <aws/marketplace-discovery/model/FulfillmentOptionType.h>
 #include <aws/marketplace-discovery/model/SageMakerModelRecommendation.h>
@@ -158,6 +159,54 @@ class SageMakerModelFulfillmentOption {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The MIME types that this model accepts as input.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetSupportedContentTypes() const { return m_supportedContentTypes; }
+  inline bool SupportedContentTypesHasBeenSet() const { return m_supportedContentTypesHasBeenSet; }
+  template <typename SupportedContentTypesT = Aws::Vector<Aws::String>>
+  void SetSupportedContentTypes(SupportedContentTypesT&& value) {
+    m_supportedContentTypesHasBeenSet = true;
+    m_supportedContentTypes = std::forward<SupportedContentTypesT>(value);
+  }
+  template <typename SupportedContentTypesT = Aws::Vector<Aws::String>>
+  SageMakerModelFulfillmentOption& WithSupportedContentTypes(SupportedContentTypesT&& value) {
+    SetSupportedContentTypes(std::forward<SupportedContentTypesT>(value));
+    return *this;
+  }
+  template <typename SupportedContentTypesT = Aws::String>
+  SageMakerModelFulfillmentOption& AddSupportedContentTypes(SupportedContentTypesT&& value) {
+    m_supportedContentTypesHasBeenSet = true;
+    m_supportedContentTypes.emplace_back(std::forward<SupportedContentTypesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The MIME types that this model returns as output.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetSupportedResponseMimeTypes() const { return m_supportedResponseMimeTypes; }
+  inline bool SupportedResponseMimeTypesHasBeenSet() const { return m_supportedResponseMimeTypesHasBeenSet; }
+  template <typename SupportedResponseMimeTypesT = Aws::Vector<Aws::String>>
+  void SetSupportedResponseMimeTypes(SupportedResponseMimeTypesT&& value) {
+    m_supportedResponseMimeTypesHasBeenSet = true;
+    m_supportedResponseMimeTypes = std::forward<SupportedResponseMimeTypesT>(value);
+  }
+  template <typename SupportedResponseMimeTypesT = Aws::Vector<Aws::String>>
+  SageMakerModelFulfillmentOption& WithSupportedResponseMimeTypes(SupportedResponseMimeTypesT&& value) {
+    SetSupportedResponseMimeTypes(std::forward<SupportedResponseMimeTypesT>(value));
+    return *this;
+  }
+  template <typename SupportedResponseMimeTypesT = Aws::String>
+  SageMakerModelFulfillmentOption& AddSupportedResponseMimeTypes(SupportedResponseMimeTypesT&& value) {
+    m_supportedResponseMimeTypesHasBeenSet = true;
+    m_supportedResponseMimeTypes.emplace_back(std::forward<SupportedResponseMimeTypesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_fulfillmentOptionId;
 
@@ -172,6 +221,10 @@ class SageMakerModelFulfillmentOption {
   Aws::String m_usageInstructions;
 
   SageMakerModelRecommendation m_recommendation;
+
+  Aws::Vector<Aws::String> m_supportedContentTypes;
+
+  Aws::Vector<Aws::String> m_supportedResponseMimeTypes;
   bool m_fulfillmentOptionIdHasBeenSet = false;
   bool m_fulfillmentOptionTypeHasBeenSet = false;
   bool m_fulfillmentOptionDisplayNameHasBeenSet = false;
@@ -179,6 +232,8 @@ class SageMakerModelFulfillmentOption {
   bool m_releaseNotesHasBeenSet = false;
   bool m_usageInstructionsHasBeenSet = false;
   bool m_recommendationHasBeenSet = false;
+  bool m_supportedContentTypesHasBeenSet = false;
+  bool m_supportedResponseMimeTypesHasBeenSet = false;
 };
 
 }  // namespace Model

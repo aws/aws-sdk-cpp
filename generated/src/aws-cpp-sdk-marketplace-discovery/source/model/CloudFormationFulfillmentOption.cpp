@@ -46,6 +46,18 @@ CloudFormationFulfillmentOption& CloudFormationFulfillmentOption::operator=(Json
     m_usageInstructions = jsonValue.GetString("usageInstructions");
     m_usageInstructionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("availableFromTime")) {
+    m_availableFromTime = jsonValue.GetDouble("availableFromTime");
+    m_availableFromTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("shortDescription")) {
+    m_shortDescription = jsonValue.GetString("shortDescription");
+    m_shortDescriptionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("longDescription")) {
+    m_longDescription = jsonValue.GetString("longDescription");
+    m_longDescriptionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -78,6 +90,18 @@ JsonValue CloudFormationFulfillmentOption::Jsonize() const {
 
   if (m_usageInstructionsHasBeenSet) {
     payload.WithString("usageInstructions", m_usageInstructions);
+  }
+
+  if (m_availableFromTimeHasBeenSet) {
+    payload.WithDouble("availableFromTime", m_availableFromTime.SecondsWithMSPrecision());
+  }
+
+  if (m_shortDescriptionHasBeenSet) {
+    payload.WithString("shortDescription", m_shortDescription);
+  }
+
+  if (m_longDescriptionHasBeenSet) {
+    payload.WithString("longDescription", m_longDescription);
   }
 
   return payload;

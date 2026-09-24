@@ -182,6 +182,51 @@ class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSRpcV2CborClie
   }
 
   /**
+   * <p>Creates a resource metrics configuration for an Amazon Web Services resource.
+   * After you create a configuration, Amazon CloudWatch collects detailed metrics
+   * for that resource.</p> <p>Each Amazon Web Services resource can have only one
+   * resource metrics configuration. If a configuration already exists for the
+   * specified resource ARN, this operation returns a <code>ConflictException</code>.
+   * To modify an existing configuration, use <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UpdateResourceMetricsConfiguration.html">UpdateResourceMetricsConfiguration</a>.</p>
+   * <p>If the Amazon Web Services resource that you specify in
+   * <code>ResourceArn</code> does not exist, this operation returns a
+   * <code>ResourceNotFoundException</code>. Verify that the resource ARN is correct
+   * and that the resource exists before you retry the request.</p> <p>To create a
+   * resource metrics configuration, you must have the
+   * <code>cloudwatch:CreateResourceMetricsConfiguration</code> permission. For
+   * information about scoping this permission to specific resources, see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/iam-cw-condition-keys-resource-arn.html">Condition
+   * keys for resource metrics configuration access</a> in the <i>Amazon CloudWatch
+   * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/CreateResourceMetricsConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateResourceMetricsConfigurationOutcome CreateResourceMetricsConfiguration(
+      const Model::CreateResourceMetricsConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateResourceMetricsConfiguration that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename CreateResourceMetricsConfigurationRequestT = Model::CreateResourceMetricsConfigurationRequest>
+  Model::CreateResourceMetricsConfigurationOutcomeCallable CreateResourceMetricsConfigurationCallable(
+      const CreateResourceMetricsConfigurationRequestT& request) const {
+    return SubmitCallable(&CloudWatchClient::CreateResourceMetricsConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for CreateResourceMetricsConfiguration that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename CreateResourceMetricsConfigurationRequestT = Model::CreateResourceMetricsConfigurationRequest>
+  void CreateResourceMetricsConfigurationAsync(const CreateResourceMetricsConfigurationRequestT& request,
+                                               const CreateResourceMetricsConfigurationResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchClient::CreateResourceMetricsConfiguration, request, handler, context);
+  }
+
+  /**
    * <p>Deletes a specific alarm mute rule.</p> <p>When you delete a mute rule, any
    * alarms that are currently being muted by that rule are immediately unmuted. If
    * those alarms are in an ALARM state, their configured actions will trigger.</p>
@@ -372,6 +417,46 @@ class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSRpcV2CborClie
   void DeleteMetricStreamAsync(const DeleteMetricStreamRequestT& request, const DeleteMetricStreamResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CloudWatchClient::DeleteMetricStream, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes the resource metrics configuration for an Amazon Web Services
+   * resource. After you delete the configuration, Amazon CloudWatch stops collecting
+   * detailed metrics for the resource. Metric data that Amazon CloudWatch already
+   * collected for the resource is not deleted.</p> <p>This operation returns a
+   * <code>ResourceNotFoundException</code> if no resource metrics configuration
+   * exists for the specified resource ARN. Verify that the resource ARN is
+   * correct.</p> <p>To delete a resource metrics configuration, you must have the
+   * <code>cloudwatch:DeleteResourceMetricsConfiguration</code> permission. For
+   * information about scoping this permission to specific resources, see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/iam-cw-condition-keys-resource-arn.html">Condition
+   * keys for resource metrics configuration access</a> in the <i>Amazon CloudWatch
+   * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteResourceMetricsConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteResourceMetricsConfigurationOutcome DeleteResourceMetricsConfiguration(
+      const Model::DeleteResourceMetricsConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteResourceMetricsConfiguration that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename DeleteResourceMetricsConfigurationRequestT = Model::DeleteResourceMetricsConfigurationRequest>
+  Model::DeleteResourceMetricsConfigurationOutcomeCallable DeleteResourceMetricsConfigurationCallable(
+      const DeleteResourceMetricsConfigurationRequestT& request) const {
+    return SubmitCallable(&CloudWatchClient::DeleteResourceMetricsConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteResourceMetricsConfiguration that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DeleteResourceMetricsConfigurationRequestT = Model::DeleteResourceMetricsConfigurationRequest>
+  void DeleteResourceMetricsConfigurationAsync(const DeleteResourceMetricsConfigurationRequestT& request,
+                                               const DeleteResourceMetricsConfigurationResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchClient::DeleteResourceMetricsConfiguration, request, handler, context);
   }
 
   /**
@@ -771,8 +856,16 @@ class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSRpcV2CborClie
    * <p>Displays the details of the dashboard that you specify.</p> <p>To copy an
    * existing dashboard, use <code>GetDashboard</code>, and then use the data
    * returned within <code>DashboardBody</code> as the template for the new dashboard
-   * when you call <code>PutDashboard</code> to create the copy.</p><p><h3>See
-   * Also:</h3>   <a
+   * when you call <code>PutDashboard</code> to create the copy.</p> <p>You might
+   * have recently enabled an <a
+   * href="https://docs.aws.amazon.com/glossary/latest/reference/glos-chap.html#optinregion">opt-in
+   * Region (Region that is disabled by default)</a> for your account. In that
+   * Region, <code>GetDashboard</code> can return an access denied error for up to 24
+   * hours after you enable the Region. This delay occurs while dashboard data
+   * propagates. The error does not indicate a problem with your permissions. Because
+   * dashboards are global, you can call <code>GetDashboard</code> in any other
+   * enabled Region, or retry after propagation completes.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetDashboard">AWS
    * API Reference</a></p>
    */
@@ -897,8 +990,9 @@ class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSRpcV2CborClie
    * <p>If you include a Metrics Insights query, each <code>GetMetricData</code>
    * operation can include only one query. But the same <code>GetMetricData</code>
    * operation can also retrieve other metrics. Metrics Insights queries can query
-   * only the most recent three hours of metric data. For more information about
-   * Metrics Insights, see <a
+   * the most recent two weeks of metric data. For alarm condition evaluations,
+   * Metrics Insights queries can query only the most recent three hours of metric
+   * data. For more information about Metrics Insights, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/query_with_cloudwatch-metrics-insights.html">Query
    * your metrics with CloudWatch Metrics Insights</a>.</p> <p>Calls to the
    * <code>GetMetricData</code> API have a different pricing structure than calls to
@@ -1112,6 +1206,47 @@ class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSRpcV2CborClie
   }
 
   /**
+   * <p>Retrieves the current resource metrics configuration for an Amazon Web
+   * Services resource. The response includes the resource ARN, any metric
+   * selections, and the times at which the configuration was created and last
+   * updated.</p> <p>This operation returns a <code>ResourceNotFoundException</code>
+   * if no resource metrics configuration exists for the specified resource ARN. To
+   * create a configuration, use <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_CreateResourceMetricsConfiguration.html">CreateResourceMetricsConfiguration</a>.</p>
+   * <p>To retrieve a resource metrics configuration, you must have the
+   * <code>cloudwatch:GetResourceMetricsConfiguration</code> permission. For
+   * information about scoping this permission to specific resources, see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/iam-cw-condition-keys-resource-arn.html">Condition
+   * keys for resource metrics configuration access</a> in the <i>Amazon CloudWatch
+   * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetResourceMetricsConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetResourceMetricsConfigurationOutcome GetResourceMetricsConfiguration(
+      const Model::GetResourceMetricsConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetResourceMetricsConfiguration that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetResourceMetricsConfigurationRequestT = Model::GetResourceMetricsConfigurationRequest>
+  Model::GetResourceMetricsConfigurationOutcomeCallable GetResourceMetricsConfigurationCallable(
+      const GetResourceMetricsConfigurationRequestT& request) const {
+    return SubmitCallable(&CloudWatchClient::GetResourceMetricsConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for GetResourceMetricsConfiguration that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetResourceMetricsConfigurationRequestT = Model::GetResourceMetricsConfigurationRequest>
+  void GetResourceMetricsConfigurationAsync(const GetResourceMetricsConfigurationRequestT& request,
+                                            const GetResourceMetricsConfigurationResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchClient::GetResourceMetricsConfiguration, request, handler, context);
+  }
+
+  /**
    * <p>Lists alarm mute rules in your Amazon Web Services account and region.</p>
    * <p>You can filter the results by alarm name to find all mute rules targeting a
    * specific alarm, or by status to find rules that are scheduled, active, or
@@ -1152,7 +1287,16 @@ class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSRpcV2CborClie
    * </p> <p> <code>ListDashboards</code> returns up to 1000 results on one page. If
    * there are more than 1000 dashboards, you can call <code>ListDashboards</code>
    * again and include the value you received for <code>NextToken</code> in the first
-   * call, to receive the next 1000 results.</p><p><h3>See Also:</h3>   <a
+   * call, to receive the next 1000 results.</p> <p>You might have recently enabled
+   * an <a
+   * href="https://docs.aws.amazon.com/glossary/latest/reference/glos-chap.html#optinregion">opt-in
+   * Region (Region that is disabled by default)</a> for your account. In that
+   * Region, <code>ListDashboards</code> can return an access denied error for up to
+   * 24 hours after you enable the Region. This delay occurs while dashboard data
+   * propagates. The error does not indicate a problem with your permissions. Because
+   * dashboards are global, you can call <code>ListDashboards</code> in any other
+   * enabled Region, or retry after propagation completes.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListDashboards">AWS
    * API Reference</a></p>
    */
@@ -1886,7 +2030,14 @@ class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSRpcV2CborClie
    * PromQL.</p> <p>Before calling this operation, you must enable resource tags on
    * telemetry for your account. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/EnableResourceTagsOnTelemetry.html">Enable
-   * resource tags on telemetry</a>.</p><p><h3>See Also:</h3>   <a
+   * resource tags on telemetry</a>.</p> <p>Optionally, <code>IncludeFilters</code>
+   * and <code>ExcludeFilters</code> limit enrichment to a subset of the account's
+   * metrics. These filters are stored only when this operation starts enrichment.
+   * Calling <code>StartOTelEnrichment</code> for an account where enrichment is
+   * already running has no effect and does not modify the filters that are applied.
+   * To change them, use <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UpdateOTelEnrichment.html">UpdateOTelEnrichment</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StartOTelEnrichment">AWS
    * API Reference</a></p>
    */
@@ -2032,6 +2183,86 @@ class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSRpcV2CborClie
   void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CloudWatchClient::UntagResource, request, handler, context);
+  }
+
+  /**
+   * <p>Replaces the filters that determine which CloudWatch vended metrics are
+   * enriched with resource ARN and resource tag labels for the account. Enrichment
+   * must already be running for the account. If it is not, this operation returns a
+   * <code>ResourceNotFoundException</code>. To start enrichment, use <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_StartOTelEnrichment.html">StartOTelEnrichment</a>.</p>
+   * <p>The filters in the request completely replace the stored filters; they are
+   * not merged with them. <code>IncludeFilters</code> and
+   * <code>ExcludeFilters</code> are replaced as a pair, so a request that specifies
+   * only <code>IncludeFilters</code> also clears the stored
+   * <code>ExcludeFilters</code>, and a request that specifies neither clears
+   * both.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/UpdateOTelEnrichment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateOTelEnrichmentOutcome UpdateOTelEnrichment(const Model::UpdateOTelEnrichmentRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for UpdateOTelEnrichment that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateOTelEnrichmentRequestT = Model::UpdateOTelEnrichmentRequest>
+  Model::UpdateOTelEnrichmentOutcomeCallable UpdateOTelEnrichmentCallable(const UpdateOTelEnrichmentRequestT& request = {}) const {
+    return SubmitCallable(&CloudWatchClient::UpdateOTelEnrichment, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateOTelEnrichment that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateOTelEnrichmentRequestT = Model::UpdateOTelEnrichmentRequest>
+  void UpdateOTelEnrichmentAsync(const UpdateOTelEnrichmentResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                 const UpdateOTelEnrichmentRequestT& request = {}) const {
+    return SubmitAsync(&CloudWatchClient::UpdateOTelEnrichment, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the resource metrics configuration for an Amazon Web Services
+   * resource. The <code>MetricSelections</code> value that you provide replaces any
+   * existing metric selections for the resource; it is not merged with them.</p>
+   * <p>If you omit <code>MetricSelections</code>, Amazon CloudWatch removes any
+   * existing metric selection filter and collects all available detailed metrics for
+   * the resource.</p> <p>This operation returns a
+   * <code>ResourceNotFoundException</code> if no resource metrics configuration
+   * exists for the specified resource ARN. To create a configuration, use <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_CreateResourceMetricsConfiguration.html">CreateResourceMetricsConfiguration</a>.</p>
+   * <p>To update a resource metrics configuration, you must have the
+   * <code>cloudwatch:UpdateResourceMetricsConfiguration</code> permission. For
+   * information about scoping this permission to specific resources, see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/iam-cw-condition-keys-resource-arn.html">Condition
+   * keys for resource metrics configuration access</a> in the <i>Amazon CloudWatch
+   * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/UpdateResourceMetricsConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateResourceMetricsConfigurationOutcome UpdateResourceMetricsConfiguration(
+      const Model::UpdateResourceMetricsConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateResourceMetricsConfiguration that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename UpdateResourceMetricsConfigurationRequestT = Model::UpdateResourceMetricsConfigurationRequest>
+  Model::UpdateResourceMetricsConfigurationOutcomeCallable UpdateResourceMetricsConfigurationCallable(
+      const UpdateResourceMetricsConfigurationRequestT& request) const {
+    return SubmitCallable(&CloudWatchClient::UpdateResourceMetricsConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateResourceMetricsConfiguration that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename UpdateResourceMetricsConfigurationRequestT = Model::UpdateResourceMetricsConfigurationRequest>
+  void UpdateResourceMetricsConfigurationAsync(const UpdateResourceMetricsConfigurationRequestT& request,
+                                               const UpdateResourceMetricsConfigurationResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchClient::UpdateResourceMetricsConfiguration, request, handler, context);
   }
 
   virtual void OverrideEndpoint(const Aws::String& endpoint);

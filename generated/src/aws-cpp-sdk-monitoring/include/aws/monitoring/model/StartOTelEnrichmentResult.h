@@ -5,9 +5,12 @@
 
 #pragma once
 #include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
+#include <aws/monitoring/model/OTelEnrichmentMetricSelector.h>
 #include <aws/monitoring/model/ResponseMetadata.h>
 
 #include <utility>
@@ -27,6 +30,87 @@ class StartOTelEnrichmentResult {
   AWS_CLOUDWATCH_API StartOTelEnrichmentResult() = default;
   AWS_CLOUDWATCH_API StartOTelEnrichmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
   AWS_CLOUDWATCH_API StartOTelEnrichmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
+
+  ///@{
+  /**
+   * <p>The include filters that are stored for the account.</p>
+   */
+  inline const Aws::Vector<OTelEnrichmentMetricSelector>& GetIncludeFilters() const { return m_includeFilters; }
+  template <typename IncludeFiltersT = Aws::Vector<OTelEnrichmentMetricSelector>>
+  void SetIncludeFilters(IncludeFiltersT&& value) {
+    m_includeFiltersHasBeenSet = true;
+    m_includeFilters = std::forward<IncludeFiltersT>(value);
+  }
+  template <typename IncludeFiltersT = Aws::Vector<OTelEnrichmentMetricSelector>>
+  StartOTelEnrichmentResult& WithIncludeFilters(IncludeFiltersT&& value) {
+    SetIncludeFilters(std::forward<IncludeFiltersT>(value));
+    return *this;
+  }
+  template <typename IncludeFiltersT = OTelEnrichmentMetricSelector>
+  StartOTelEnrichmentResult& AddIncludeFilters(IncludeFiltersT&& value) {
+    m_includeFiltersHasBeenSet = true;
+    m_includeFilters.emplace_back(std::forward<IncludeFiltersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The exclude filters that are stored for the account.</p>
+   */
+  inline const Aws::Vector<OTelEnrichmentMetricSelector>& GetExcludeFilters() const { return m_excludeFilters; }
+  template <typename ExcludeFiltersT = Aws::Vector<OTelEnrichmentMetricSelector>>
+  void SetExcludeFilters(ExcludeFiltersT&& value) {
+    m_excludeFiltersHasBeenSet = true;
+    m_excludeFilters = std::forward<ExcludeFiltersT>(value);
+  }
+  template <typename ExcludeFiltersT = Aws::Vector<OTelEnrichmentMetricSelector>>
+  StartOTelEnrichmentResult& WithExcludeFilters(ExcludeFiltersT&& value) {
+    SetExcludeFilters(std::forward<ExcludeFiltersT>(value));
+    return *this;
+  }
+  template <typename ExcludeFiltersT = OTelEnrichmentMetricSelector>
+  StartOTelEnrichmentResult& AddExcludeFilters(ExcludeFiltersT&& value) {
+    m_excludeFiltersHasBeenSet = true;
+    m_excludeFilters.emplace_back(std::forward<ExcludeFiltersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The date and time that enrichment started for the account.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  StartOTelEnrichmentResult& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The date and time that the enrichment configuration for the account was last
+   * stored.</p>
+   */
+  inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
+  template <typename UpdatedAtT = Aws::Utils::DateTime>
+  void SetUpdatedAt(UpdatedAtT&& value) {
+    m_updatedAtHasBeenSet = true;
+    m_updatedAt = std::forward<UpdatedAtT>(value);
+  }
+  template <typename UpdatedAtT = Aws::Utils::DateTime>
+  StartOTelEnrichmentResult& WithUpdatedAt(UpdatedAtT&& value) {
+    SetUpdatedAt(std::forward<UpdatedAtT>(value));
+    return *this;
+  }
+  ///@}
 
   ///@{
 
@@ -60,10 +144,22 @@ class StartOTelEnrichmentResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
+  Aws::Vector<OTelEnrichmentMetricSelector> m_includeFilters;
+
+  Aws::Vector<OTelEnrichmentMetricSelector> m_excludeFilters;
+
+  Aws::Utils::DateTime m_createdAt{};
+
+  Aws::Utils::DateTime m_updatedAt{};
+
   Aws::String m_requestId;
 
   ResponseMetadata m_responseMetadata;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_includeFiltersHasBeenSet = false;
+  bool m_excludeFiltersHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

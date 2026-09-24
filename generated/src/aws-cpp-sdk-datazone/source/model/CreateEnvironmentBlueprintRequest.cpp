@@ -35,5 +35,9 @@ Aws::String CreateEnvironmentBlueprintRequest::SerializePayload() const {
     payload.WithArray("userParameters", std::move(userParametersJsonList));
   }
 
+  if (m_blueprintCategoryHasBeenSet) {
+    payload.WithString("blueprintCategory", BlueprintCategoryMapper::GetNameForBlueprintCategory(m_blueprintCategory));
+  }
+
   return payload.View().WriteReadable();
 }

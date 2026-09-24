@@ -47,6 +47,110 @@ GetOTelEnrichmentResult& GetOTelEnrichmentResult::operator=(const Aws::AmazonWeb
                 m_statusHasBeenSet = true;
               }
 
+              else if (initialKeyStr == "IncludeFilters") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_includeFilters.push_back(OTelEnrichmentMetricSelector(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_includeFilters.push_back(OTelEnrichmentMetricSelector(decoder));
+                    }
+                  }
+                }
+                m_includeFiltersHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "ExcludeFilters") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_excludeFilters.push_back(OTelEnrichmentMetricSelector(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_excludeFilters.push_back(OTelEnrichmentMetricSelector(decoder));
+                    }
+                  }
+                }
+                m_excludeFiltersHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "CreatedAt") {
+                auto tag = decoder->PopNextTagVal();
+                if (tag.has_value() &&
+                    tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+                {
+                  auto dateType = decoder->PeekType();
+                  if (dateType.has_value()) {
+                    if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                      auto val = decoder->PopNextFloatVal();
+                      if (val.has_value()) {
+                        m_createdAt = Aws::Utils::DateTime(val.value());
+                      }
+                    } else {
+                      auto val = decoder->PopNextUnsignedIntVal();
+                      if (val.has_value()) {
+                        m_createdAt = Aws::Utils::DateTime(val.value());
+                      }
+                    }
+                  }
+                }
+                m_createdAtHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "UpdatedAt") {
+                auto tag = decoder->PopNextTagVal();
+                if (tag.has_value() &&
+                    tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+                {
+                  auto dateType = decoder->PeekType();
+                  if (dateType.has_value()) {
+                    if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                      auto val = decoder->PopNextFloatVal();
+                      if (val.has_value()) {
+                        m_updatedAt = Aws::Utils::DateTime(val.value());
+                      }
+                    } else {
+                      auto val = decoder->PopNextUnsignedIntVal();
+                      if (val.has_value()) {
+                        m_updatedAt = Aws::Utils::DateTime(val.value());
+                      }
+                    }
+                  }
+                }
+                m_updatedAtHasBeenSet = true;
+              }
+
               else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
@@ -81,6 +185,110 @@ GetOTelEnrichmentResult& GetOTelEnrichmentResult::operator=(const Aws::AmazonWeb
                     Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
               }
               m_statusHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "IncludeFilters") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_includeFilters.push_back(OTelEnrichmentMetricSelector(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_includeFilters.push_back(OTelEnrichmentMetricSelector(decoder));
+                  }
+                }
+              }
+              m_includeFiltersHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ExcludeFilters") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_excludeFilters.push_back(OTelEnrichmentMetricSelector(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_excludeFilters.push_back(OTelEnrichmentMetricSelector(decoder));
+                  }
+                }
+              }
+              m_excludeFiltersHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "CreatedAt") {
+              auto tag = decoder->PopNextTagVal();
+              if (tag.has_value() &&
+                  tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+              {
+                auto dateType = decoder->PeekType();
+                if (dateType.has_value()) {
+                  if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                    auto val = decoder->PopNextFloatVal();
+                    if (val.has_value()) {
+                      m_createdAt = Aws::Utils::DateTime(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_createdAt = Aws::Utils::DateTime(val.value());
+                    }
+                  }
+                }
+              }
+              m_createdAtHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "UpdatedAt") {
+              auto tag = decoder->PopNextTagVal();
+              if (tag.has_value() &&
+                  tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+              {
+                auto dateType = decoder->PeekType();
+                if (dateType.has_value()) {
+                  if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                    auto val = decoder->PopNextFloatVal();
+                    if (val.has_value()) {
+                      m_updatedAt = Aws::Utils::DateTime(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_updatedAt = Aws::Utils::DateTime(val.value());
+                    }
+                  }
+                }
+              }
+              m_updatedAtHasBeenSet = true;
             }
 
             else {

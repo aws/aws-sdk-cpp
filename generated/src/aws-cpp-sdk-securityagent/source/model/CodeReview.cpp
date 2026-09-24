@@ -55,6 +55,14 @@ CodeReview& CodeReview::operator=(JsonView jsonValue) {
     m_maxTaskHours = jsonValue.GetDouble("maxTaskHours");
     m_maxTaskHoursHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("reportDestination")) {
+    m_reportDestination = jsonValue.GetObject("reportDestination");
+    m_reportDestinationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("reportFilters")) {
+    m_reportFilters = jsonValue.GetObject("reportFilters");
+    m_reportFiltersHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
@@ -104,6 +112,14 @@ JsonValue CodeReview::Jsonize() const {
 
   if (m_maxTaskHoursHasBeenSet) {
     payload.WithDouble("maxTaskHours", m_maxTaskHours);
+  }
+
+  if (m_reportDestinationHasBeenSet) {
+    payload.WithObject("reportDestination", m_reportDestination.Jsonize());
+  }
+
+  if (m_reportFiltersHasBeenSet) {
+    payload.WithObject("reportFilters", m_reportFilters.Jsonize());
   }
 
   if (m_createdAtHasBeenSet) {

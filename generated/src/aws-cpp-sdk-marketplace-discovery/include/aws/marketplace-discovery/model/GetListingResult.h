@@ -42,6 +42,25 @@ class GetListingResult {
 
   ///@{
   /**
+   * <p>The locale of the returned content. Indicates whether the response contains
+   * content in the requested locale, or fell back to the default locale. See
+   * <code>Locale</code> for details.</p>
+   */
+  inline const Aws::String& GetLocale() const { return m_locale; }
+  template <typename LocaleT = Aws::String>
+  void SetLocale(LocaleT&& value) {
+    m_localeHasBeenSet = true;
+    m_locale = std::forward<LocaleT>(value);
+  }
+  template <typename LocaleT = Aws::String>
+  GetListingResult& WithLocale(LocaleT&& value) {
+    SetLocale(std::forward<LocaleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The products and offers associated with this listing. Each entity contains
    * product and offer information.</p>
    */
@@ -475,6 +494,8 @@ class GetListingResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
+  Aws::String m_locale;
+
   Aws::Vector<ListingAssociatedEntity> m_associatedEntities;
 
   Aws::Vector<ListingBadge> m_badges;
@@ -517,6 +538,7 @@ class GetListingResult {
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_localeHasBeenSet = false;
   bool m_associatedEntitiesHasBeenSet = false;
   bool m_badgesHasBeenSet = false;
   bool m_catalogHasBeenSet = false;

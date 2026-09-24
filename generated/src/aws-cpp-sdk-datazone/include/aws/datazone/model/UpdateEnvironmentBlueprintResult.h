@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
+#include <aws/datazone/model/BlueprintCategory.h>
 #include <aws/datazone/model/CustomParameter.h>
 #include <aws/datazone/model/DeploymentProperties.h>
 #include <aws/datazone/model/ProvisioningProperties.h>
@@ -188,6 +189,22 @@ class UpdateEnvironmentBlueprintResult {
 
   ///@{
   /**
+   * <p>The category of the environment blueprint. The only valid value is
+   * <code>TOOLING</code>.</p>
+   */
+  inline BlueprintCategory GetBlueprintCategory() const { return m_blueprintCategory; }
+  inline void SetBlueprintCategory(BlueprintCategory value) {
+    m_blueprintCategoryHasBeenSet = true;
+    m_blueprintCategory = value;
+  }
+  inline UpdateEnvironmentBlueprintResult& WithBlueprintCategory(BlueprintCategory value) {
+    SetBlueprintCategory(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The timestamp of when the environment blueprint was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -253,6 +270,8 @@ class UpdateEnvironmentBlueprintResult {
 
   Aws::Vector<Aws::String> m_glossaryTerms;
 
+  BlueprintCategory m_blueprintCategory{BlueprintCategory::NOT_SET};
+
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
@@ -267,6 +286,7 @@ class UpdateEnvironmentBlueprintResult {
   bool m_deploymentPropertiesHasBeenSet = false;
   bool m_userParametersHasBeenSet = false;
   bool m_glossaryTermsHasBeenSet = false;
+  bool m_blueprintCategoryHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

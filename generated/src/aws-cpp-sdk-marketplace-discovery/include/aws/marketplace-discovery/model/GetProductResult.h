@@ -37,6 +37,25 @@ class GetProductResult {
 
   ///@{
   /**
+   * <p>The locale of the returned content. Indicates whether the response contains
+   * content in the requested locale, or fell back to the default locale. See
+   * <code>Locale</code> for details.</p>
+   */
+  inline const Aws::String& GetLocale() const { return m_locale; }
+  template <typename LocaleT = Aws::String>
+  void SetLocale(LocaleT&& value) {
+    m_localeHasBeenSet = true;
+    m_locale = std::forward<LocaleT>(value);
+  }
+  template <typename LocaleT = Aws::String>
+  GetProductResult& WithLocale(LocaleT&& value) {
+    SetLocale(std::forward<LocaleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The unique identifier of the product.</p>
    */
   inline const Aws::String& GetProductId() const { return m_productId; }
@@ -313,6 +332,23 @@ class GetProductResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The default listing identifier associated with the product.</p>
+   */
+  inline const Aws::String& GetListingId() const { return m_listingId; }
+  template <typename ListingIdT = Aws::String>
+  void SetListingId(ListingIdT&& value) {
+    m_listingIdHasBeenSet = true;
+    m_listingId = std::forward<ListingIdT>(value);
+  }
+  template <typename ListingIdT = Aws::String>
+  GetProductResult& WithListingId(ListingIdT&& value) {
+    SetListingId(std::forward<ListingIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -329,6 +365,8 @@ class GetProductResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
+  Aws::String m_locale;
+
   Aws::String m_productId;
 
   Aws::String m_catalog;
@@ -357,8 +395,11 @@ class GetProductResult {
 
   Aws::Vector<SellerEngagement> m_sellerEngagements;
 
+  Aws::String m_listingId;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_localeHasBeenSet = false;
   bool m_productIdHasBeenSet = false;
   bool m_catalogHasBeenSet = false;
   bool m_productNameHasBeenSet = false;
@@ -373,6 +414,7 @@ class GetProductResult {
   bool m_promotionalMediaHasBeenSet = false;
   bool m_resourcesHasBeenSet = false;
   bool m_sellerEngagementsHasBeenSet = false;
+  bool m_listingIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

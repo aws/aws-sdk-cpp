@@ -22,6 +22,10 @@ GetListingResult::GetListingResult(const Aws::AmazonWebServiceResult<JsonValue>&
 GetListingResult& GetListingResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("locale")) {
+    m_locale = jsonValue.GetString("locale");
+    m_localeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("associatedEntities")) {
     Aws::Utils::Array<JsonView> associatedEntitiesJsonList = jsonValue.GetArray("associatedEntities");
     for (unsigned associatedEntitiesIndex = 0; associatedEntitiesIndex < associatedEntitiesJsonList.GetLength();

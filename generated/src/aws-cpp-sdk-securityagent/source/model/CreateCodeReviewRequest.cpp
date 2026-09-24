@@ -48,5 +48,13 @@ Aws::String CreateCodeReviewRequest::SerializePayload() const {
     payload.WithDouble("maxTaskHours", m_maxTaskHours);
   }
 
+  if (m_reportDestinationHasBeenSet) {
+    payload.WithObject("reportDestination", m_reportDestination.Jsonize());
+  }
+
+  if (m_reportFiltersHasBeenSet) {
+    payload.WithObject("reportFilters", m_reportFilters.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
