@@ -1,0 +1,6 @@
+{
+  "type": "bugfix",
+  "category": "aws-cpp-sdk-core",
+  "contributor": "averyk22",
+  "description": "Preserve millisecond precision when constructing DateTime from an ISO-8601 string."
+}
