@@ -1,0 +1,6 @@
+{
+  "type": "feature",
+  "category": "aws-cpp-sdk-core",
+  "contributor": "pulimsr",
+  "description": "Add schema-serde buffer-based JSON/XML deserializers, Query serializer (awsQuery/ec2Query), and Codec/ClientProtocol"
+}
