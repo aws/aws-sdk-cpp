@@ -277,7 +277,7 @@ void S3CrtClient::InitCrtEndpointFromUri(aws_uri &endpoint_uri, const Aws::Http:
 
 void S3CrtClient::InitCommonCrtRequestOption(CrtRequestCallbackUserData *userData,
                                              aws_s3_meta_request_options *options,
-                                             const Aws::AmazonWebServiceRequest *request,
+                                             Aws::UniquePtr<Aws::AmazonWebServiceRequest> request,
                                              const Aws::Http::URI &uri,
                                              Aws::Http::HttpMethod method) const
 {
@@ -286,7 +286,7 @@ void S3CrtClient::InitCommonCrtRequestOption(CrtRequestCallbackUserData *userDat
   std::shared_ptr<smithy::client::AwsSmithyClientAsyncRequestContext> pRequestCtx =
         Aws::MakeShared<smithy::client::AwsSmithyClientAsyncRequestContext>(ALLOCATION_TAG);
   assert(pRequestCtx);
-  pRequestCtx->m_pRequest = request;
+  pRequestCtx->m_pRequest = request.get();
   pRequestCtx->m_invocationId = Aws::Utils::UUID::PseudoRandomUUID();
   pRequestCtx->m_requestInfo.attempt = 1;
   pRequestCtx->m_requestInfo.maxAttempts = 0;
@@ -295,7 +295,7 @@ void S3CrtClient::InitCommonCrtRequestOption(CrtRequestCallbackUserData *userDat
   std::shared_ptr<HttpResponse> httpResponse = Aws::MakeShared<Aws::Http::Standard::StandardHttpResponse>(ALLOCATION_TAG, httpRequest);
 
   userData->s3CrtClient = this;
-  userData->originalRequest = request;
+  userData->originalRequest = std::move(request);
   userData->request = httpRequest;
   userData->response = httpResponse;
 
@@ -512,11 +512,11 @@ static void ${operation.name}RequestShutdownCallback(void *user_data)
   }
 #if($operation.request)
 #if($operation.name == "PutObject")
-  userData->putResponseHandler(userData->s3CrtClient, *(reinterpret_cast<const ${operation.request.shape.name}*>(userData->originalRequest)), std::move(outcome), userData->asyncCallerContext);
+  userData->putResponseHandler(userData->s3CrtClient, *(static_cast<const ${operation.request.shape.name}*>(userData->originalRequest.get())), std::move(outcome), userData->asyncCallerContext);
 #elseif($operation.name == "GetObject")
-  userData->getResponseHandler(userData->s3CrtClient, *(reinterpret_cast<const ${operation.request.shape.name}*>(userData->originalRequest)), std::move(outcome), userData->asyncCallerContext);
+  userData->getResponseHandler(userData->s3CrtClient, *(static_cast<const ${operation.request.shape.name}*>(userData->originalRequest.get())), std::move(outcome), userData->asyncCallerContext);
 #elseif($operation.name == "CopyObject")
-  userData->copyResponseHandler(userData->s3CrtClient, *(reinterpret_cast<const ${operation.request.shape.name}*>(userData->originalRequest)), std::move(outcome), userData->asyncCallerContext);
+  userData->copyResponseHandler(userData->s3CrtClient, *(static_cast<const ${operation.request.shape.name}*>(userData->originalRequest.get())), std::move(outcome), userData->asyncCallerContext);
 #end
 #else
   (*handler)(userData->s3CrtClient, outcome, userData->userCallbackContext);
@@ -612,7 +612,8 @@ void ${className}::${operation.name}Async(${constText}${operation.request.shape.
     userData->asyncCallerContext = handlerContext;
   }
 #if($serviceModel.endpointRules)
-  InitCommonCrtRequestOption(userData, &options, &request, endpointResolutionOutcome.GetResult().GetURI(), Aws::Http::HttpMethod::HTTP_${operation.http.method});
+  auto requestCopy = Aws::MakeUnique<${operation.request.shape.name}>(ALLOCATION_TAG, request);
+  InitCommonCrtRequestOption(userData, &options, std::move(requestCopy), endpointResolutionOutcome.GetResult().GetURI(), Aws::Http::HttpMethod::HTTP_${operation.http.method});
   if (userData != nullptr &&
     userData->request != nullptr &&
     userData->request->GetContentBody() != nullptr &&
@@ -627,7 +628,8 @@ void ${className}::${operation.name}Async(${constText}${operation.request.shape.
 #end
   }
 #else
-  InitCommonCrtRequestOption(userData, &options, &request, uri, Aws::Http::HttpMethod::HTTP_${operation.http.method});
+  auto requestCopy = Aws::MakeUnique<${operation.request.shape.name}>(ALLOCATION_TAG, request);
+  InitCommonCrtRequestOption(userData, &options, std::move(requestCopy), uri, Aws::Http::HttpMethod::HTTP_${operation.http.method});
 #end
 #if($operation.name == "CopyObject")
   {

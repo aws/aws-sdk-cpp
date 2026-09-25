@@ -56,6 +56,7 @@
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/testing/TestingEnvironment.h>
 #include <fstream>
+#include <future>
 
 #ifdef _WIN32
 #pragma warning(disable: 4127)
@@ -1531,6 +1532,70 @@ namespace
         putObjectRequest.SetBody(Aws::MakeShared<StringStream>(ALLOCATION_TAG, ""));
         PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
         AWS_ASSERT_SUCCESS(putObjectOutcome);
+    }
+
+    TEST_F(BucketAndObjectOperationTest, TestAsyncRequestsOutliveCallerRequest)
+    {
+        const Aws::String fullBucketName = CalculateBucketName(BASE_PUT_OBJECTS_BUCKET_NAME.c_str());
+        SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
+        CreateBucketRequest createBucketRequest;
+        createBucketRequest.SetBucket(fullBucketName);
+        createBucketRequest.SetACL(BucketCannedACL::private_);
+
+        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        AWS_ASSERT_SUCCESS(createBucketOutcome);
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        TagTestBucket(fullBucketName, Client);
+
+        const Aws::String key = "async-lifetime";
+        const Aws::String copyKey = "async-lifetime-copy";
+
+        std::promise<std::pair<Aws::String, PutObjectOutcome>> putPromise;
+        {
+            PutObjectRequest putObjectRequest;
+            putObjectRequest.SetBucket(fullBucketName);
+            putObjectRequest.SetKey(key);
+            putObjectRequest.SetBody(Aws::MakeShared<StringStream>(ALLOCATION_TAG, "Test Object"));
+            Client->PutObjectAsync(putObjectRequest,
+                [&putPromise](const S3CrtClient*, const PutObjectRequest& request, const PutObjectOutcome& outcome,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) {
+                    putPromise.set_value({request.GetKey(), outcome});
+                });
+        }
+        auto putResult = putPromise.get_future().get();
+        AWS_ASSERT_SUCCESS(putResult.second);
+        EXPECT_EQ(key, putResult.first);
+
+        std::promise<std::pair<Aws::String, bool>> getPromise;
+        {
+            GetObjectRequest getObjectRequest;
+            getObjectRequest.SetBucket(fullBucketName);
+            getObjectRequest.SetKey(key);
+            Client->GetObjectAsync(getObjectRequest,
+                [&getPromise](const S3CrtClient*, const GetObjectRequest& request, GetObjectOutcome outcome,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) {
+                    getPromise.set_value({request.GetKey(), outcome.IsSuccess()});
+                });
+        }
+        auto getResult = getPromise.get_future().get();
+        EXPECT_TRUE(getResult.second);
+        EXPECT_EQ(key, getResult.first);
+
+        std::promise<std::pair<Aws::String, CopyObjectOutcome>> copyPromise;
+        {
+            CopyObjectRequest copyObjectRequest;
+            copyObjectRequest.SetBucket(fullBucketName);
+            copyObjectRequest.SetKey(copyKey);
+            copyObjectRequest.SetCopySource(fullBucketName + "/" + key);
+            Client->CopyObjectAsync(copyObjectRequest,
+                [&copyPromise](const S3CrtClient*, const CopyObjectRequest& request, const CopyObjectOutcome& outcome,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) {
+                    copyPromise.set_value({request.GetKey(), outcome});
+                });
+        }
+        auto copyResult = copyPromise.get_future().get();
+        AWS_ASSERT_SUCCESS(copyResult.second);
+        EXPECT_EQ(copyKey, copyResult.first);
     }
 
     TEST_F(BucketAndObjectOperationTest, NoAuthPublicBucket) {
