@@ -61,11 +61,9 @@ namespace Aws
                 Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const override;
 
             Aws::Crt::Optional<Aws::Client::AWSError<Aws::Client::CoreErrors>> MakeRequestAsync(
-                const std::shared_ptr<HttpRequest>& request,
-                std::function<void(std::shared_ptr<HttpResponse>)> onResponseComplete,
-                std::function<void(const std::shared_ptr<Aws::Http::Connection>&)> onClientConnectionAvailable = nullptr,
-                Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
-                Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const override;
+                const HttpClient::PrepareAttempt& prepareAttempt,
+                const HttpClient::EvaluateAttempt& evaluateAttempt,
+                const HttpClient::OnRetryableRequestComplete& onComplete) const override;
 
             bool IsDefaultAwsHttpClient() const override { return true; }
 
@@ -87,6 +85,13 @@ namespace Aws
             Client::ClientConfiguration m_configuration;
 
             std::shared_ptr<Aws::Utils::Threading::WaitGroup> m_requestLatch;
+
+            Aws::Crt::Optional<Aws::Client::AWSError<Aws::Client::CoreErrors>> SendOneAttemptAsync(
+                const std::shared_ptr<HttpRequest>& request,
+                std::function<void(std::shared_ptr<HttpResponse>)> onResponseComplete,
+                std::function<void(const std::shared_ptr<Aws::Http::Connection>&)> onClientConnectionAvailable = nullptr,
+                Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
+                Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const;
 
             std::shared_ptr<Crt::Http::HttpClientConnectionManager> GetWithCreateConnectionManagerForRequest(const std::shared_ptr<HttpRequest>& request, const Crt::Http::HttpClientConnectionOptions& connectionOptions) const;
             Crt::Http::HttpClientConnectionOptions CreateConnectionOptionsForRequest(const std::shared_ptr<HttpRequest>& request) const;

@@ -39,6 +39,8 @@
 #include <aws/core/utils/event/EventStream.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/monitoring/MonitoringManager.h>
+#include <aws/core/utils/threading/Executor.h>
+#include <aws/crt/Optional.h>
 #include <aws/core/Region.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/Version.h>
@@ -114,6 +116,40 @@ struct RequestInfo
     }
 };
 
+namespace Aws
+{
+    namespace Client
+    {
+#if defined(AWS_CRT_HTTP_USE_ASYNC_IO)
+        struct AWSClientAsyncRequestContext
+        {
+            Aws::Http::URI uri;
+            const Aws::AmazonWebServiceRequest* request = nullptr;
+            Aws::Http::HttpMethod method = Aws::Http::HttpMethod::HTTP_GET;
+            Aws::String signerName;
+            Aws::Crt::Optional<Aws::String> signerRegion;
+            Aws::Crt::Optional<Aws::String> signerServiceName;
+
+            std::shared_ptr<Aws::Http::HttpRequest> httpRequest;
+            HttpResponseOutcome outcome;
+            AWSError<CoreErrors> lastError;
+            Aws::Monitoring::CoreMetricsCollection coreMetrics;
+            Aws::Vector<void*> monitoringContexts;
+            Aws::String invocationId;
+            RequestInfo requestInfo;
+            std::shared_ptr<smithy::interceptor::InterceptorContext> interceptorContext;
+
+            std::chrono::milliseconds attemptSkew{0};
+            Aws::Utils::DateTime attemptSentTime;
+            long retries = 0;
+
+            HttpResponseOutcomeReceivedHandler handler;
+            std::shared_ptr<Aws::Utils::Threading::Executor> executor;
+        };
+#endif
+    } // namespace Client
+} // namespace Aws
+
 AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
     const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
@@ -142,7 +178,8 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
         configuration.awsChunkedBufferSize),
         m_userAgentInterceptor},
     m_enableNewRetries{Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) == "true"},
-    m_disableExpectHeader(configuration.disableExpectHeader)
+    m_disableExpectHeader(configuration.disableExpectHeader),
+    m_executor(configuration.executor ? configuration.executor : configuration.configFactories.executorCreateFn())
 {
 }
 
@@ -174,7 +211,8 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
         configuration.awsChunkedBufferSize),
         m_userAgentInterceptor},
     m_enableNewRetries{Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) == "true"},
-    m_disableExpectHeader(configuration.disableExpectHeader)
+    m_disableExpectHeader(configuration.disableExpectHeader),
+    m_executor(configuration.executor ? configuration.executor : configuration.configFactories.executorCreateFn())
 {
 }
 
@@ -697,6 +735,320 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<Aws::Http
 
     return HttpResponseOutcome(std::move(httpResponse));
 }
+
+#if defined(AWS_CRT_HTTP_USE_ASYNC_IO)
+void AWSClient::AttemptExhaustivelyAsync(const Aws::Http::URI& uri,
+    const Aws::AmazonWebServiceRequest& request,
+    Http::HttpMethod method,
+    const char* signerName,
+    HttpResponseOutcomeReceivedHandler handler,
+    const std::shared_ptr<Aws::Utils::Threading::Executor>& executor,
+    const char* signerRegionOverride,
+    const char* signerServiceNameOverride) const
+{
+    if (!Aws::Utils::IsValidHost(uri.GetHost()))
+    {
+        handler(HttpResponseOutcome(AWSError<CoreErrors>(CoreErrors::VALIDATION, "", "Invalid DNS Label found in URI host", false/*retryable*/)));
+        return;
+    }
+
+    auto context = Aws::MakeShared<AWSClientAsyncRequestContext>(AWS_CLIENT_LOG_TAG);
+    context->uri = uri;
+    context->request = &request;
+    context->method = method;
+    context->signerName = signerName ? signerName : "";
+    if (signerRegionOverride)
+    {
+        context->signerRegion = signerRegionOverride;
+    }
+    if (signerServiceNameOverride)
+    {
+        context->signerServiceName = signerServiceNameOverride;
+    }
+    context->handler = std::move(handler);
+    context->executor = executor ? executor : m_executor;
+    context->invocationId = Aws::Utils::UUID::PseudoRandomUUID();
+
+    context->httpRequest = CreateHttpRequest(uri, method, request.GetResponseStreamFactory());
+    context->monitoringContexts = Aws::Monitoring::OnRequestStarted(this->GetServiceClientName(), request.GetServiceRequestName(), context->httpRequest);
+    context->attemptSkew = m_clientSkew->Load();
+    context->requestInfo.attempt = 1;
+    context->requestInfo.maxAttempts = m_enableNewRetries ? m_retryStrategy->GetMaxAttempts() : 0;
+    context->httpRequest->SetHeaderValue(Http::SDK_INVOCATION_ID_HEADER, context->invocationId);
+    context->httpRequest->SetHeaderValue(Http::SDK_REQUEST_HEADER, context->requestInfo);
+    AppendRecursionDetectionHeader(context->httpRequest);
+
+    const AWSClient* self = this;
+    auto prepareAttempt = [self, context]() -> std::shared_ptr<Aws::Http::HttpRequest>
+    {
+        return self->StartOneAttemptAsync(context);
+    };
+    auto evaluateAttempt = [self, context](std::shared_ptr<HttpResponse> httpResponse) -> Http::HttpClient::AttemptOutcome
+    {
+        return self->OnResponseReceivedAsync(context, std::move(httpResponse));
+    };
+    auto onComplete = [self, context]()
+    {
+        self->FinishAsync(context);
+    };
+
+    auto error = m_httpClient->MakeRequestAsync(prepareAttempt, evaluateAttempt, onComplete);
+    if (error.has_value())
+    {
+        context->outcome = HttpResponseOutcome(*error);
+        FinishAsync(context);
+    }
+}
+
+std::shared_ptr<Aws::Http::HttpRequest> AWSClient::StartOneAttemptAsync(const std::shared_ptr<AWSClientAsyncRequestContext>& context) const
+{
+    const Aws::AmazonWebServiceRequest& request = *context->request;
+
+    if (!m_retryStrategy->HasSendToken())
+    {
+        context->outcome = HttpResponseOutcome(AWSError<CoreErrors>(CoreErrors::SLOW_DOWN, "", "Unable to acquire enough send tokens to execute request.", false/*retryable*/));
+        return nullptr;
+    }
+
+    context->httpRequest->SetEventStreamRequest(request.IsEventStreamRequest());
+    context->httpRequest->SetHasEventStreamResponse(request.HasEventStreamResponse());
+
+    context->attemptSentTime = DateTime::Now();
+    context->httpRequest->SetSigningTimestampOverride(context->attemptSentTime + context->attemptSkew);
+
+    const char* signerRegion = context->signerRegion ? context->signerRegion->c_str() : nullptr;
+    const char* signerServiceName = context->signerServiceName ? context->signerServiceName->c_str() : nullptr;
+
+    BuildHttpRequest(request, context->httpRequest);
+
+    context->interceptorContext = Aws::MakeShared<InterceptorContext>(AWS_CLIENT_LOG_TAG, request);
+    context->interceptorContext->SetTransmitRequest(context->httpRequest);
+    context->interceptorContext->SetAttribute("signer_name", context->signerName.c_str());
+    for (const auto& interceptor : m_interceptors)
+    {
+        const auto modifiedRequest = interceptor->ModifyBeforeSigning(*context->interceptorContext);
+        if (!modifiedRequest.IsSuccess())
+        {
+            context->outcome = HttpResponseOutcome(modifiedRequest.GetError());
+            return nullptr;
+        }
+    }
+
+    auto signer = GetSignerByName(context->signerName.c_str());
+    const bool signedRequest = signer->SignRequest(*context->httpRequest, signerRegion, signerServiceName, true);
+    if (!signedRequest)
+    {
+        AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, "Request signing failed. Returning error.");
+        context->outcome = HttpResponseOutcome(AWSError<CoreErrors>(CoreErrors::CLIENT_SIGNING_FAILURE, "", "SDK failed to sign the request", false/*retryable*/));
+        return nullptr;
+    }
+
+    if (request.GetRequestSignedHandler())
+    {
+        request.GetRequestSignedHandler()(*context->httpRequest);
+    }
+
+    for (const auto& interceptor : m_interceptors)
+    {
+        const auto modifiedRequest = interceptor->ModifyBeforeTransmit(*context->interceptorContext);
+        if (!modifiedRequest.IsSuccess())
+        {
+            context->outcome = HttpResponseOutcome(modifiedRequest.GetError());
+            return nullptr;
+        }
+    }
+
+    return context->httpRequest;
+}
+
+Http::HttpClient::AttemptOutcome AWSClient::OnResponseReceivedAsync(const std::shared_ptr<AWSClientAsyncRequestContext>& context, std::shared_ptr<HttpResponse> httpResponse) const
+{
+    const Aws::AmazonWebServiceRequest& request = *context->request;
+
+    if (!httpResponse)
+    {
+        context->outcome = HttpResponseOutcome(AWSError<CoreErrors>(CoreErrors::USER_CANCELLED, "", "Request cancelled during retry backoff", false/*retryable*/));
+        return {};
+    }
+
+    if (DoesResponseGenerateError(httpResponse))
+    {
+        AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request returned error. Attempting to generate appropriate error codes from response");
+        return OnAttemptCompleteAsync(context, HttpResponseOutcome(BuildAWSError(httpResponse)));
+    }
+
+    if (request.HasEmbeddedError(httpResponse->GetResponseBody(), httpResponse->GetHeaders()))
+    {
+        AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Response has embedded errors");
+        return OnAttemptCompleteAsync(context, HttpResponseOutcome(GetErrorMarshaller()->Marshall(*httpResponse)));
+    }
+
+    context->interceptorContext->SetTransmitResponse(httpResponse);
+    for (const auto& interceptor : m_interceptors)
+    {
+        const auto modifiedRequest = interceptor->ModifyBeforeDeserialization(*context->interceptorContext);
+        if (!modifiedRequest.IsSuccess())
+        {
+            return OnAttemptCompleteAsync(context, HttpResponseOutcome(modifiedRequest.GetError()));
+        }
+    }
+
+    return OnAttemptCompleteAsync(context, HttpResponseOutcome(std::move(httpResponse)));
+}
+
+Http::HttpClient::AttemptOutcome AWSClient::OnAttemptCompleteAsync(const std::shared_ptr<AWSClientAsyncRequestContext>& context, HttpResponseOutcome&& outcomeParam) const
+{
+    const Aws::AmazonWebServiceRequest& request = *context->request;
+    HttpResponseOutcome outcome = std::move(outcomeParam);
+
+    const DateTime timeResponseReceived = DateTime::Now();
+    outcome.SetRetryCount(context->retries);
+    if (context->retries == 0)
+    {
+        m_retryStrategy->RequestBookkeeping(outcome);
+    }
+    else
+    {
+        m_retryStrategy->RequestBookkeeping(outcome, context->lastError);
+    }
+
+    context->coreMetrics.httpClientMetrics = context->httpRequest->GetRequestMetrics();
+    TracingUtils::EmitCoreHttpMetrics(context->httpRequest->GetRequestMetrics(),
+        *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
+        {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+         {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+    if (outcome.IsSuccess())
+    {
+        if (m_enableClockSkewAdjustment && outcome.GetResult())
+        {
+            m_clientSkew->RecordResponse(Aws::Internal::MakeClockSkewMeasurement(outcome.GetResult()->GetHeaders(), context->attemptSentTime, timeResponseReceived));
+        }
+        Aws::Monitoring::OnRequestSucceeded(this->GetServiceClientName(), request.GetServiceRequestName(), context->httpRequest, outcome, context->coreMetrics, context->monitoringContexts);
+        AWS_LOGSTREAM_TRACE(AWS_CLIENT_LOG_TAG, "Request successful returning.");
+        context->outcome = std::move(outcome);
+        return {};
+    }
+
+    context->lastError = outcome.GetError();
+
+    DateTime serverTime = GetServerTimeFromError(outcome.GetError());
+    auto clockSkew = DateTime::Diff(serverTime, DateTime::Now());
+
+    Aws::Monitoring::OnRequestFailed(this->GetServiceClientName(), request.GetServiceRequestName(), context->httpRequest, outcome, context->coreMetrics, context->monitoringContexts);
+
+    if (!m_httpClient->IsRequestProcessingEnabled())
+    {
+        AWS_LOGSTREAM_TRACE(AWS_CLIENT_LOG_TAG, "Request was cancelled externally.");
+        context->outcome = std::move(outcome);
+        return {};
+    }
+
+    bool retryWithCorrectRegion = false;
+    HttpResponseCode httpResponseCode = outcome.GetError().GetResponseCode();
+    if (httpResponseCode == HttpResponseCode::MOVED_PERMANENTLY ||
+        httpResponseCode == HttpResponseCode::TEMPORARY_REDIRECT ||
+        httpResponseCode == HttpResponseCode::BAD_REQUEST ||
+        httpResponseCode == HttpResponseCode::FORBIDDEN)
+    {
+        Aws::String regionFromResponse = GetErrorMarshaller()->ExtractRegion(outcome.GetError());
+        Aws::String currentSignerRegion = context->signerRegion ? *context->signerRegion : Aws::String();
+        if (m_region == Aws::Region::AWS_GLOBAL && !regionFromResponse.empty() && regionFromResponse != currentSignerRegion)
+        {
+            context->signerRegion = regionFromResponse;
+            retryWithCorrectRegion = true;
+        }
+    }
+
+    long sleepMillis = TracingUtils::MakeCallWithTiming<long>(
+        [&]() -> long {
+            return m_retryStrategy->CalculateDelayBeforeNextRetry(outcome.GetError(), context->retries);
+        },
+        TracingUtils::SMITHY_CLIENT_SERVICE_BACKOFF_DELAY_METRIC,
+        *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
+        {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},{TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+    bool shouldSleep = !AdjustClockSkew(outcome, context->attemptSentTime, timeResponseReceived, context->attemptSkew) && !retryWithCorrectRegion;
+    context->attemptSkew = m_clientSkew->Load();
+
+    if (!retryWithCorrectRegion && !m_retryStrategy->ShouldRetry(outcome.GetError(), context->retries))
+    {
+        context->outcome = std::move(outcome);
+        return {};
+    }
+
+    if (request.IsEventStreamRequest() &&
+         (request.GetBody()->eof() ||
+         (outcome.GetError().GetResponseCode() != Http::HttpResponseCode::REQUEST_NOT_MADE &&
+          outcome.GetError().GetResponseCode() != Http::HttpResponseCode::NETWORK_CONNECT_TIMEOUT &&
+          outcome.GetError().GetResponseCode() != Http::HttpResponseCode::SERVICE_UNAVAILABLE)))
+    {
+        AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, "SDK is not able to retry EventStream request after the connection was established");
+        context->outcome = std::move(outcome);
+        return {};
+    }
+
+    AWS_LOGSTREAM_WARN(AWS_CLIENT_LOG_TAG, "Request failed, now waiting " << sleepMillis << " ms before attempting again.");
+    if (request.GetBody())
+    {
+        if (request.GetBody()->tellg() == EOF)
+        {
+            RetryContext retryContext = request.GetRetryContext();
+            if (retryContext.m_requestHash == nullptr)
+            {
+                auto originalRequestHash = context->httpRequest->GetRequestHash();
+                if (originalRequestHash.second != nullptr)
+                {
+                    retryContext.m_requestHash = Aws::MakeShared<std::pair<Aws::String, std::shared_ptr<Aws::Utils::Crypto::Hash>>>(AWS_CLIENT_LOG_TAG, originalRequestHash);
+                    request.SetRetryContext(retryContext);
+                }
+            }
+        }
+        request.GetBody()->clear();
+        request.GetBody()->seekg(0);
+    }
+
+    if (request.GetRequestRetryHandler())
+    {
+        request.GetRequestRetryHandler()(request);
+    }
+
+    Aws::Http::URI newUri = context->uri;
+    Aws::String newEndpoint = GetErrorMarshaller()->ExtractEndpoint(outcome.GetError());
+    if (!newEndpoint.empty())
+    {
+        newUri.SetAuthority(newEndpoint);
+    }
+    context->httpRequest = CreateHttpRequest(newUri, context->method, request.GetResponseStreamFactory());
+    context->httpRequest->SetHeaderValue(Http::SDK_INVOCATION_ID_HEADER, context->invocationId);
+    if (serverTime.WasParseSuccessful() && serverTime != DateTime())
+    {
+        context->requestInfo.ttl = DateTime::Now() + clockSkew + std::chrono::milliseconds(m_requestTimeoutMs);
+    }
+    context->requestInfo.attempt++;
+    context->requestInfo.maxAttempts = m_retryStrategy->GetMaxAttempts();
+    context->httpRequest->SetHeaderValue(Http::SDK_REQUEST_HEADER, context->requestInfo);
+    Aws::Monitoring::OnRequestRetry(this->GetServiceClientName(), request.GetServiceRequestName(), context->httpRequest, context->monitoringContexts);
+
+    context->retries++;
+    return {true, shouldSleep ? std::chrono::milliseconds(sleepMillis) : std::chrono::milliseconds(0)};
+}
+
+void AWSClient::FinishAsync(const std::shared_ptr<AWSClientAsyncRequestContext>& context) const
+{
+    const Aws::AmazonWebServiceRequest& request = *context->request;
+    auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+    auto counter = meter->CreateCounter(TracingUtils::SMITHY_CLIENT_SERVICE_ATTEMPTS_METRIC, TracingUtils::COUNT_METRIC_TYPE, "");
+    counter->add(context->requestInfo.attempt, {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},{TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+    Aws::Monitoring::OnFinish(this->GetServiceClientName(), request.GetServiceRequestName(), context->httpRequest, context->monitoringContexts);
+    if (context->handler)
+    {
+        context->executor->Submit([context]()
+        {
+            context->handler(std::move(context->outcome));
+        });
+    }
+}
+#endif
 
 StreamOutcome AWSClient::MakeRequestWithUnparsedResponse(const Aws::Http::URI& uri,
     const Aws::AmazonWebServiceRequest& request,

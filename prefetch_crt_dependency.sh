@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: Apache-2.0.
 
 CRT_URI_PREFIX=https://codeload.github.com/awslabs
-CRT_URI=${CRT_URI_PREFIX}/aws-crt-cpp/zip/8adb7b87f18654ba2147667d2b43a017c7a3c957  # v0.43.6
+CRT_URI=${CRT_URI_PREFIX}/aws-crt-cpp/zip/72f9b52d34b746b0a017f5c3c191ce687805bc24  # v0.43.7
 
 AWS_C_AUTH_URI=${CRT_URI_PREFIX}/aws-c-auth/zip/4b5d524bf1a511b05e0fffe5bdc51800770b9427  # v0.10.4
 AWS_C_CAL_URI=${CRT_URI_PREFIX}/aws-c-cal/zip/8aa2a48a09f93c65d4cf06388e143a6584de6321  # v0.9.15

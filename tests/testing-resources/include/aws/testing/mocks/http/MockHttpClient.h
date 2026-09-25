@@ -17,6 +17,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/testing/mocks/http/MockConnection.h>
 
+#include <thread>
+
 static const char MockHttpAllocationTag[] = "MockHttp";
 
 
@@ -63,6 +65,55 @@ public:
         return Aws::MakeShared<Aws::Http::Standard::StandardHttpResponse>(MockHttpAllocationTag, request);
     }
 
+    ~MockHttpClient() override
+    {
+        if (m_asyncThread.joinable())
+        {
+            m_asyncThread.join();
+        }
+    }
+
+    // When set, MakeRequestAsync drives the retry loop and completes on a separate thread and returns
+    // immediately, mirroring the real CRTHttpClient (which completes on the event-loop thread) instead of
+    // inline. Off by default so existing inline-completion tests are unaffected.
+    void SetCompleteAsynchronously(bool completeAsynchronously) { m_completeAsynchronously = completeAsynchronously; }
+
+    Aws::Crt::Optional<Aws::Client::AWSError<Aws::Client::CoreErrors>> MakeRequestAsync(
+        const Aws::Http::HttpClient::PrepareAttempt& prepareAttempt,
+        const Aws::Http::HttpClient::EvaluateAttempt& evaluateAttempt,
+        const Aws::Http::HttpClient::OnRetryableRequestComplete& onComplete) const override
+    {
+        auto driveLoop = [this, prepareAttempt, evaluateAttempt, onComplete]()
+        {
+            for (auto request = prepareAttempt(); request; request = prepareAttempt())
+            {
+                auto outcome = evaluateAttempt(MakeRequest(request));
+                if (!outcome.shouldRetry)
+                {
+                    break;
+                }
+                m_delaysSeen.push_back(outcome.backoff);
+            }
+            onComplete();
+        };
+
+        if (m_completeAsynchronously)
+        {
+            if (m_asyncThread.joinable())
+            {
+                m_asyncThread.join();
+            }
+            m_asyncThread = std::thread(std::move(driveLoop));
+        }
+        else
+        {
+            driveLoop();
+        }
+        return {};
+    }
+
+    const Aws::Vector<std::chrono::milliseconds>& GetDelaysSeen() const { return m_delaysSeen; }
+
     const Aws::Http::Standard::StandardHttpRequest& GetMostRecentHttpRequest() const
     {
         assert(!m_requestsMade.empty());
@@ -103,6 +154,9 @@ public:
 
    private:
     mutable ConnectionTestCase m_connectionTestCase;
+    bool m_completeAsynchronously = false;
+    mutable std::thread m_asyncThread;
+    mutable Aws::Vector<std::chrono::milliseconds> m_delaysSeen;
     mutable Aws::Vector<Aws::Http::Standard::StandardHttpRequest> m_requestsMade;
     mutable Aws::Queue<ResponseCallbackTuple> m_responsesToUse;
     mutable Aws::Queue<ResponseAndRequestCallbackTuple> m_responseAndRequestsCallback;

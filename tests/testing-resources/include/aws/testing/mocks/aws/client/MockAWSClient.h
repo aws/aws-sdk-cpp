@@ -9,6 +9,7 @@
 #include <aws/core/client/AWSErrorMarshaller.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/utils/threading/Executor.h>
 #include <aws/core/client/DefaultRetryStrategy.h>
 #include <aws/core/AmazonWebServiceRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -136,6 +137,16 @@ public:
         const auto method = Aws::Http::HttpMethod::HTTP_GET;
         Aws::Client::HttpResponseOutcome httpOutcome(Aws::Client::AWSClient::AttemptExhaustively(uri, request, method, Aws::Auth::SIGV4_SIGNER));
         return httpOutcome;
+    }
+
+    void MakeRequestAsync(const Aws::AmazonWebServiceRequest& request,
+                          Aws::Client::HttpResponseOutcomeReceivedHandler handler,
+                          const std::shared_ptr<Aws::Utils::Threading::Executor>& executor)
+    {
+        m_countedRetryStrategy->ResetAttemptedRetriesCount();
+        const Aws::Http::URI uri("domain.com/something");
+        const auto method = Aws::Http::HttpMethod::HTTP_GET;
+        Aws::Client::AWSClient::AttemptExhaustivelyAsync(uri, request, method, Aws::Auth::SIGV4_SIGNER, std::move(handler), executor);
     }
 
     inline static const char* GetMockAccessKey() { return "AKIDEXAMPLE"; }
