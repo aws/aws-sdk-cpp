@@ -10,7 +10,9 @@
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/rekognition/model/AuditImage.h>
 #include <aws/rekognition/model/Challenge.h>
+#include <aws/rekognition/model/FeedbackItem.h>
 #include <aws/rekognition/model/LivenessSessionStatus.h>
+#include <aws/rekognition/model/SessionMetadata.h>
 
 #include <utility>
 
@@ -150,6 +152,51 @@ class GetFaceLivenessSessionResultsResult {
   ///@}
 
   ///@{
+  /**
+   * <p>A list of conditions that were detected in the Face Liveness video and that
+   * contributed to the returned <code>Confidence</code> score. Each item contains a
+   * code and a human-readable message. Feedback is returned only for sessions with a
+   * <code>Status</code> of <code>SUCCEEDED</code>, and the list is empty when no
+   * such conditions were detected.</p>
+   */
+  inline const Aws::Vector<FeedbackItem>& GetFeedback() const { return m_feedback; }
+  template <typename FeedbackT = Aws::Vector<FeedbackItem>>
+  void SetFeedback(FeedbackT&& value) {
+    m_feedbackHasBeenSet = true;
+    m_feedback = std::forward<FeedbackT>(value);
+  }
+  template <typename FeedbackT = Aws::Vector<FeedbackItem>>
+  GetFaceLivenessSessionResultsResult& WithFeedback(FeedbackT&& value) {
+    SetFeedback(std::forward<FeedbackT>(value));
+    return *this;
+  }
+  template <typename FeedbackT = FeedbackItem>
+  GetFaceLivenessSessionResultsResult& AddFeedback(FeedbackT&& value) {
+    m_feedbackHasBeenSet = true;
+    m_feedback.emplace_back(std::forward<FeedbackT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Metadata about the client that streamed the video for the Face Liveness
+   * session.</p>
+   */
+  inline const SessionMetadata& GetMetadata() const { return m_metadata; }
+  template <typename MetadataT = SessionMetadata>
+  void SetMetadata(MetadataT&& value) {
+    m_metadataHasBeenSet = true;
+    m_metadata = std::forward<MetadataT>(value);
+  }
+  template <typename MetadataT = SessionMetadata>
+  GetFaceLivenessSessionResultsResult& WithMetadata(MetadataT&& value) {
+    SetMetadata(std::forward<MetadataT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -178,6 +225,10 @@ class GetFaceLivenessSessionResultsResult {
 
   Challenge m_challenge;
 
+  Aws::Vector<FeedbackItem> m_feedback;
+
+  SessionMetadata m_metadata;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_sessionIdHasBeenSet = false;
@@ -186,6 +237,8 @@ class GetFaceLivenessSessionResultsResult {
   bool m_referenceImageHasBeenSet = false;
   bool m_auditImagesHasBeenSet = false;
   bool m_challengeHasBeenSet = false;
+  bool m_feedbackHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

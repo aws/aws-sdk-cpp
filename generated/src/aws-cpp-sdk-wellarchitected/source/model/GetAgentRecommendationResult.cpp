@@ -30,6 +30,10 @@ GetAgentRecommendationResult& GetAgentRecommendationResult::operator=(const Aws:
     m_profileArn = jsonValue.GetString("profileArn");
     m_profileArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("generationId")) {
+    m_generationId = jsonValue.GetString("generationId");
+    m_generationIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("title")) {
     m_title = jsonValue.GetString("title");
     m_titleHasBeenSet = true;

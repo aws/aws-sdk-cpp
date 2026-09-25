@@ -13,6 +13,7 @@
 #include <aws/qconnect/model/IntentDetectedDataDetails.h>
 #include <aws/qconnect/model/NotesChunkDataDetails.h>
 #include <aws/qconnect/model/NotesDataDetails.h>
+#include <aws/qconnect/model/ProactiveRecommendationDataDetails.h>
 #include <aws/qconnect/model/SourceContentDataDetails.h>
 #include <aws/qconnect/model/SuggestedMessageDataDetails.h>
 
@@ -264,6 +265,25 @@ class DataDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Details about a proactive recommendation, including the token used to
+   * retrieve its chunked response with <code>GetNextMessage</code>.</p>
+   */
+  inline const ProactiveRecommendationDataDetails& GetProactiveRecommendationData() const { return m_proactiveRecommendationData; }
+  inline bool ProactiveRecommendationDataHasBeenSet() const { return m_proactiveRecommendationDataHasBeenSet; }
+  template <typename ProactiveRecommendationDataT = ProactiveRecommendationDataDetails>
+  void SetProactiveRecommendationData(ProactiveRecommendationDataT&& value) {
+    m_proactiveRecommendationDataHasBeenSet = true;
+    m_proactiveRecommendationData = std::forward<ProactiveRecommendationDataT>(value);
+  }
+  template <typename ProactiveRecommendationDataT = ProactiveRecommendationDataDetails>
+  DataDetails& WithProactiveRecommendationData(ProactiveRecommendationDataT&& value) {
+    SetProactiveRecommendationData(std::forward<ProactiveRecommendationDataT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ContentDataDetails m_contentData;
 
@@ -288,6 +308,8 @@ class DataDetails {
   NotesDataDetails m_notesData;
 
   NotesChunkDataDetails m_notesChunkData;
+
+  ProactiveRecommendationDataDetails m_proactiveRecommendationData;
   bool m_contentDataHasBeenSet = false;
   bool m_generativeDataHasBeenSet = false;
   bool m_intentDetectedDataHasBeenSet = false;
@@ -300,6 +322,7 @@ class DataDetails {
   bool m_suggestedMessageDataHasBeenSet = false;
   bool m_notesDataHasBeenSet = false;
   bool m_notesChunkDataHasBeenSet = false;
+  bool m_proactiveRecommendationDataHasBeenSet = false;
 };
 
 }  // namespace Model

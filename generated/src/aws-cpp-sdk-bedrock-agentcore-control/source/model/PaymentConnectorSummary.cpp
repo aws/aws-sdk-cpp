@@ -30,6 +30,10 @@ PaymentConnectorSummary& PaymentConnectorSummary::operator=(JsonView jsonValue) 
     m_type = PaymentConnectorTypeMapper::GetPaymentConnectorTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("provisionMode")) {
+    m_provisionMode = PaymentConnectorProvisionModeMapper::GetPaymentConnectorProvisionModeForName(jsonValue.GetString("provisionMode"));
+    m_provisionModeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("status")) {
     m_status = PaymentConnectorStatusMapper::GetPaymentConnectorStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
@@ -54,6 +58,10 @@ JsonValue PaymentConnectorSummary::Jsonize() const {
 
   if (m_typeHasBeenSet) {
     payload.WithString("type", PaymentConnectorTypeMapper::GetNameForPaymentConnectorType(m_type));
+  }
+
+  if (m_provisionModeHasBeenSet) {
+    payload.WithString("provisionMode", PaymentConnectorProvisionModeMapper::GetNameForPaymentConnectorProvisionMode(m_provisionMode));
   }
 
   if (m_statusHasBeenSet) {

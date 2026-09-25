@@ -28,6 +28,11 @@ class GetAgentProfileRequest : public WellArchitectedRequest {
 
   AWS_WELLARCHITECTED_API Aws::String SerializePayload() const override;
 
+  /**
+   * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
+   */
+  AWS_WELLARCHITECTED_API EndpointParameters GetEndpointContextParams() const override;
+
   ///@{
   /**
    * <p>The Amazon Resource Name (ARN) of the optimization profile to retrieve.</p>

@@ -527,6 +527,37 @@ class AWS_BEDROCKAGENT_API BedrockAgentClient
   }
 
   /**
+   * <p>Creates a VPC configuration that lets a knowledge base connect to a resource
+   * in your private VPC. This operation is asynchronous: it returns a
+   * <code>vpcConfigurationId</code> with status <code>CREATING</code>. Poll
+   * <code>GetVpcConfiguration</code> until the status becomes <code>CREATED</code>
+   * or <code>CREATE_FAILED</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreateVpcConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateVpcConfigurationOutcome CreateVpcConfiguration(const Model::CreateVpcConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateVpcConfiguration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateVpcConfigurationRequestT = Model::CreateVpcConfigurationRequest>
+  Model::CreateVpcConfigurationOutcomeCallable CreateVpcConfigurationCallable(const CreateVpcConfigurationRequestT& request) const {
+    return SubmitCallable(&BedrockAgentClient::CreateVpcConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for CreateVpcConfiguration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateVpcConfigurationRequestT = Model::CreateVpcConfigurationRequest>
+  void CreateVpcConfigurationAsync(const CreateVpcConfigurationRequestT& request,
+                                   const CreateVpcConfigurationResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentClient::CreateVpcConfiguration, request, handler, context);
+  }
+
+  /**
    * <p>Deletes an agent.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteAgent">AWS
    * API Reference</a></p>
@@ -852,6 +883,37 @@ class AWS_BEDROCKAGENT_API BedrockAgentClient
   void DeleteResourcePolicyAsync(const DeleteResourcePolicyRequestT& request, const DeleteResourcePolicyResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentClient::DeleteResourcePolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a VPC configuration. This operation is asynchronous: it returns
+   * status <code>DELETING</code>. Poll <code>GetVpcConfiguration</code> until it
+   * returns a <code>ResourceNotFoundException</code>, indicating the configuration
+   * is deleted. Delete requests are idempotent and safe to retry.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteVpcConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteVpcConfigurationOutcome DeleteVpcConfiguration(const Model::DeleteVpcConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteVpcConfiguration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteVpcConfigurationRequestT = Model::DeleteVpcConfigurationRequest>
+  Model::DeleteVpcConfigurationOutcomeCallable DeleteVpcConfigurationCallable(const DeleteVpcConfigurationRequestT& request) const {
+    return SubmitCallable(&BedrockAgentClient::DeleteVpcConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteVpcConfiguration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteVpcConfigurationRequestT = Model::DeleteVpcConfigurationRequest>
+  void DeleteVpcConfigurationAsync(const DeleteVpcConfigurationRequestT& request,
+                                   const DeleteVpcConfigurationResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentClient::DeleteVpcConfiguration, request, handler, context);
   }
 
   /**
@@ -1322,6 +1384,34 @@ class AWS_BEDROCKAGENT_API BedrockAgentClient
   }
 
   /**
+   * <p>Returns the details and current status of a single VPC configuration. Use
+   * this operation to poll for the outcome of an asynchronous create or
+   * delete.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetVpcConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetVpcConfigurationOutcome GetVpcConfiguration(const Model::GetVpcConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetVpcConfiguration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetVpcConfigurationRequestT = Model::GetVpcConfigurationRequest>
+  Model::GetVpcConfigurationOutcomeCallable GetVpcConfigurationCallable(const GetVpcConfigurationRequestT& request) const {
+    return SubmitCallable(&BedrockAgentClient::GetVpcConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for GetVpcConfiguration that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetVpcConfigurationRequestT = Model::GetVpcConfigurationRequest>
+  void GetVpcConfigurationAsync(const GetVpcConfigurationRequestT& request, const GetVpcConfigurationResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentClient::GetVpcConfiguration, request, handler, context);
+  }
+
+  /**
    * <p>Ingests documents directly into the knowledge base that is connected to the
    * data source. The <code>dataSourceType</code> specified in the content for each
    * document must match the type of the data source that you specify in the header.
@@ -1773,6 +1863,34 @@ class AWS_BEDROCKAGENT_API BedrockAgentClient
   void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentClient::ListTagsForResource, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a paginated list of the VPC configurations for a knowledge base. You
+   * can optionally filter by status. Use the <code>nextToken</code> parameter to
+   * retrieve additional results.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListVpcConfigurations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListVpcConfigurationsOutcome ListVpcConfigurations(const Model::ListVpcConfigurationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListVpcConfigurations that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListVpcConfigurationsRequestT = Model::ListVpcConfigurationsRequest>
+  Model::ListVpcConfigurationsOutcomeCallable ListVpcConfigurationsCallable(const ListVpcConfigurationsRequestT& request) const {
+    return SubmitCallable(&BedrockAgentClient::ListVpcConfigurations, request);
+  }
+
+  /**
+   * An Async wrapper for ListVpcConfigurations that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListVpcConfigurationsRequestT = Model::ListVpcConfigurationsRequest>
+  void ListVpcConfigurationsAsync(const ListVpcConfigurationsRequestT& request, const ListVpcConfigurationsResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentClient::ListVpcConfigurations, request, handler, context);
   }
 
   /**

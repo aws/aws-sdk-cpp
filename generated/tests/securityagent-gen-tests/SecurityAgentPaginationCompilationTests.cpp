@@ -9,6 +9,7 @@
 #include <aws/securityagent/SecurityAgentClientPagination.h>
 #include <aws/securityagent/SecurityAgentPaginationBase.h>
 #include <aws/securityagent/model/ListTargetDomainsPaginationTraits.h>
+#include <aws/securityagent/model/ListActorMessagesPaginationTraits.h>
 #include <aws/securityagent/model/ListCodeReviewsPaginationTraits.h>
 #include <aws/securityagent/model/ListThreatModelJobsPaginationTraits.h>
 #include <aws/securityagent/model/ListApplicationsPaginationTraits.h>

@@ -23,6 +23,7 @@ static const int AUTO_RESOLVE_BEST_VOICES_HASH = HashingUtils::HashString("AUTO_
 static const int USE_CUSTOM_TTS_VOICES_HASH = HashingUtils::HashString("USE_CUSTOM_TTS_VOICES");
 static const int EARLY_MEDIA_HASH = HashingUtils::HashString("EARLY_MEDIA");
 static const int MULTI_PARTY_CONFERENCE_HASH = HashingUtils::HashString("MULTI_PARTY_CONFERENCE");
+static const int AUTO_MUTE_AGENT_ON_HOLD_HASH = HashingUtils::HashString("AUTO_MUTE_AGENT_ON_HOLD");
 static const int HIGH_VOLUME_OUTBOUND_HASH = HashingUtils::HashString("HIGH_VOLUME_OUTBOUND");
 static const int ENHANCED_CONTACT_MONITORING_HASH = HashingUtils::HashString("ENHANCED_CONTACT_MONITORING");
 static const int ENHANCED_CHAT_MONITORING_HASH = HashingUtils::HashString("ENHANCED_CHAT_MONITORING");
@@ -47,6 +48,8 @@ InstanceAttributeType GetInstanceAttributeTypeForName(const Aws::String& name) {
     return InstanceAttributeType::EARLY_MEDIA;
   } else if (hashCode == MULTI_PARTY_CONFERENCE_HASH) {
     return InstanceAttributeType::MULTI_PARTY_CONFERENCE;
+  } else if (hashCode == AUTO_MUTE_AGENT_ON_HOLD_HASH) {
+    return InstanceAttributeType::AUTO_MUTE_AGENT_ON_HOLD;
   } else if (hashCode == HIGH_VOLUME_OUTBOUND_HASH) {
     return InstanceAttributeType::HIGH_VOLUME_OUTBOUND;
   } else if (hashCode == ENHANCED_CONTACT_MONITORING_HASH) {
@@ -87,6 +90,8 @@ Aws::String GetNameForInstanceAttributeType(InstanceAttributeType enumValue) {
       return "EARLY_MEDIA";
     case InstanceAttributeType::MULTI_PARTY_CONFERENCE:
       return "MULTI_PARTY_CONFERENCE";
+    case InstanceAttributeType::AUTO_MUTE_AGENT_ON_HOLD:
+      return "AUTO_MUTE_AGENT_ON_HOLD";
     case InstanceAttributeType::HIGH_VOLUME_OUTBOUND:
       return "HIGH_VOLUME_OUTBOUND";
     case InstanceAttributeType::ENHANCED_CONTACT_MONITORING:

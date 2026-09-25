@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/securityagent/SecurityAgentClient.h>
+#include <aws/securityagent/model/ListActorMessagesPaginationTraits.h>
 #include <aws/securityagent/model/ListAgentSpacesPaginationTraits.h>
 #include <aws/securityagent/model/ListApplicationsPaginationTraits.h>
 #include <aws/securityagent/model/ListArtifactsPaginationTraits.h>
@@ -32,6 +33,8 @@
 namespace Aws {
 namespace SecurityAgent {
 
+using ListActorMessagesPaginator = Aws::Utils::Pagination::Paginator<SecurityAgentClient, Model::ListActorMessagesRequest,
+                                                                     Pagination::ListActorMessagesPaginationTraits<SecurityAgentClient>>;
 using ListAgentSpacesPaginator = Aws::Utils::Pagination::Paginator<SecurityAgentClient, Model::ListAgentSpacesRequest,
                                                                    Pagination::ListAgentSpacesPaginationTraits<SecurityAgentClient>>;
 using ListApplicationsPaginator = Aws::Utils::Pagination::Paginator<SecurityAgentClient, Model::ListApplicationsRequest,

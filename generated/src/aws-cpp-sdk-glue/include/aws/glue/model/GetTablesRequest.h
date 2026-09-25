@@ -11,6 +11,7 @@
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/model/AuditContext.h>
 #include <aws/glue/model/TableAttributes.h>
+#include <aws/glue/model/TableResourceShareType.h>
 
 #include <utility>
 
@@ -185,6 +186,27 @@ class GetTablesRequest : public GlueRequest {
 
   ///@{
   /**
+   * <p>Specifies which tables the <code>GetTables</code> call returns. The allowable
+   * values are <code>FEDERATED</code> or <code>ALL</code>. </p> <ul> <li> <p>If set
+   * to <code>FEDERATED</code>, returns only federated tables, which reference an
+   * entity outside the Glue Data Catalog.</p> </li> <li> <p>If set to
+   * <code>ALL</code>, returns all tables in the database, both federated and
+   * non-federated. </p> </li> </ul>
+   */
+  inline TableResourceShareType GetResourceShareType() const { return m_resourceShareType; }
+  inline bool ResourceShareTypeHasBeenSet() const { return m_resourceShareTypeHasBeenSet; }
+  inline void SetResourceShareType(TableResourceShareType value) {
+    m_resourceShareTypeHasBeenSet = true;
+    m_resourceShareType = value;
+  }
+  inline GetTablesRequest& WithResourceShareType(TableResourceShareType value) {
+    SetResourceShareType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies whether to include status details related to a request to create or
    * update an Glue Data Catalog view.</p>
    */
@@ -244,6 +266,8 @@ class GetTablesRequest : public GlueRequest {
 
   AuditContext m_auditContext;
 
+  TableResourceShareType m_resourceShareType{TableResourceShareType::NOT_SET};
+
   bool m_includeStatusDetails{false};
 
   Aws::Vector<TableAttributes> m_attributesToGet;
@@ -255,6 +279,7 @@ class GetTablesRequest : public GlueRequest {
   bool m_transactionIdHasBeenSet = false;
   bool m_queryAsOfTimeHasBeenSet = false;
   bool m_auditContextHasBeenSet = false;
+  bool m_resourceShareTypeHasBeenSet = false;
   bool m_includeStatusDetailsHasBeenSet = false;
   bool m_attributesToGetHasBeenSet = false;
 };

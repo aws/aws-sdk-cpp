@@ -40,6 +40,26 @@ class ListImportTasksRequest : public NeptuneGraphRequest {
 
   ///@{
   /**
+   * <p>The unique identifier of the Neptune Analytics graph. When provided, the
+   * service returns only import tasks associated with this graph. If not specified,
+   * the service returns all import tasks.</p>
+   */
+  inline const Aws::String& GetGraphIdentifier() const { return m_graphIdentifier; }
+  inline bool GraphIdentifierHasBeenSet() const { return m_graphIdentifierHasBeenSet; }
+  template <typename GraphIdentifierT = Aws::String>
+  void SetGraphIdentifier(GraphIdentifierT&& value) {
+    m_graphIdentifierHasBeenSet = true;
+    m_graphIdentifier = std::forward<GraphIdentifierT>(value);
+  }
+  template <typename GraphIdentifierT = Aws::String>
+  ListImportTasksRequest& WithGraphIdentifier(GraphIdentifierT&& value) {
+    SetGraphIdentifier(std::forward<GraphIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Pagination token used to paginate output.</p> <p>When this value is provided
    * as input, the service returns results from where the previous response left off.
    * When this value is present in output, it indicates that there are more results
@@ -80,9 +100,12 @@ class ListImportTasksRequest : public NeptuneGraphRequest {
   }
   ///@}
  private:
+  Aws::String m_graphIdentifier;
+
   Aws::String m_nextToken;
 
   int m_maxResults{0};
+  bool m_graphIdentifierHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };

@@ -203,6 +203,27 @@ class Plan {
 
   ///@{
   /**
+   * <p>Indicates whether service quota checks are enabled for the Region switch
+   * plan. When enabled, Region switch compares the applied service quota values
+   * across the plan's Amazon Web Services Regions and creates a warning when a quota
+   * in one Region is lower than the value required for the matching resource in
+   * another Region. Service quota checks are advisory and don't prevent you from
+   * creating, evaluating, or executing a plan.</p>
+   */
+  inline bool GetServiceQuotaChecksEnabled() const { return m_serviceQuotaChecksEnabled; }
+  inline bool ServiceQuotaChecksEnabledHasBeenSet() const { return m_serviceQuotaChecksEnabledHasBeenSet; }
+  inline void SetServiceQuotaChecksEnabled(bool value) {
+    m_serviceQuotaChecksEnabledHasBeenSet = true;
+    m_serviceQuotaChecksEnabled = value;
+  }
+  inline Plan& WithServiceQuotaChecksEnabled(bool value) {
+    SetServiceQuotaChecksEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The name for a plan.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
@@ -348,6 +369,8 @@ class Plan {
 
   ReportConfiguration m_reportConfiguration;
 
+  bool m_serviceQuotaChecksEnabled{false};
+
   Aws::String m_name;
 
   Aws::Vector<Aws::String> m_regions;
@@ -369,6 +392,7 @@ class Plan {
   bool m_associatedAlarmsHasBeenSet = false;
   bool m_triggersHasBeenSet = false;
   bool m_reportConfigurationHasBeenSet = false;
+  bool m_serviceQuotaChecksEnabledHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_regionsHasBeenSet = false;
   bool m_recoveryApproachHasBeenSet = false;

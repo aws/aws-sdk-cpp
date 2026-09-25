@@ -37,3 +37,10 @@ Aws::String UpdateAgentGoalRequest::SerializePayload() const {
 
   return payload.View().WriteReadable();
 }
+
+UpdateAgentGoalRequest::EndpointParameters UpdateAgentGoalRequest::GetEndpointContextParams() const {
+  EndpointParameters parameters;
+  // Static context parameters
+  parameters.emplace_back(Aws::String("SubServiceType"), "AGENT", Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+  return parameters;
+}

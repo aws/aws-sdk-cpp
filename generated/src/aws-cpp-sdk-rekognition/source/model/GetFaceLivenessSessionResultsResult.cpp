@@ -51,6 +51,17 @@ GetFaceLivenessSessionResultsResult& GetFaceLivenessSessionResultsResult::operat
     m_challenge = jsonValue.GetObject("Challenge");
     m_challengeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Feedback")) {
+    Aws::Utils::Array<JsonView> feedbackJsonList = jsonValue.GetArray("Feedback");
+    for (unsigned feedbackIndex = 0; feedbackIndex < feedbackJsonList.GetLength(); ++feedbackIndex) {
+      m_feedback.push_back(feedbackJsonList[feedbackIndex].AsObject());
+    }
+    m_feedbackHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Metadata")) {
+    m_metadata = jsonValue.GetObject("Metadata");
+    m_metadataHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

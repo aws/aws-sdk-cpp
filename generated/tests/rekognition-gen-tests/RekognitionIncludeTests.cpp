@@ -152,6 +152,8 @@
 #include <aws/rekognition/model/FaceRecord.h>
 #include <aws/rekognition/model/FaceSearchSettings.h>
 #include <aws/rekognition/model/FaceSearchSortBy.h>
+#include <aws/rekognition/model/FeedbackCode.h>
+#include <aws/rekognition/model/FeedbackItem.h>
 #include <aws/rekognition/model/Gender.h>
 #include <aws/rekognition/model/GenderType.h>
 #include <aws/rekognition/model/GeneralLabelsSettings.h>
@@ -300,6 +302,7 @@
 #include <aws/rekognition/model/SegmentDetection.h>
 #include <aws/rekognition/model/SegmentType.h>
 #include <aws/rekognition/model/SegmentTypeInfo.h>
+#include <aws/rekognition/model/SessionMetadata.h>
 #include <aws/rekognition/model/ShotSegment.h>
 #include <aws/rekognition/model/Smile.h>
 #include <aws/rekognition/model/StartCelebrityRecognitionRequest.h>

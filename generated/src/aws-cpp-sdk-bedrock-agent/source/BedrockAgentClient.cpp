@@ -19,6 +19,7 @@
 #include <aws/bedrock-agent/model/CreateKnowledgeBaseRequest.h>
 #include <aws/bedrock-agent/model/CreatePromptRequest.h>
 #include <aws/bedrock-agent/model/CreatePromptVersionRequest.h>
+#include <aws/bedrock-agent/model/CreateVpcConfigurationRequest.h>
 #include <aws/bedrock-agent/model/DeleteAgentActionGroupRequest.h>
 #include <aws/bedrock-agent/model/DeleteAgentAliasRequest.h>
 #include <aws/bedrock-agent/model/DeleteAgentRequest.h>
@@ -31,6 +32,7 @@
 #include <aws/bedrock-agent/model/DeleteKnowledgeBaseRequest.h>
 #include <aws/bedrock-agent/model/DeletePromptRequest.h>
 #include <aws/bedrock-agent/model/DeleteResourcePolicyRequest.h>
+#include <aws/bedrock-agent/model/DeleteVpcConfigurationRequest.h>
 #include <aws/bedrock-agent/model/DisassociateAgentCollaboratorRequest.h>
 #include <aws/bedrock-agent/model/DisassociateAgentKnowledgeBaseRequest.h>
 #include <aws/bedrock-agent/model/GetAgentActionGroupRequest.h>
@@ -48,6 +50,7 @@
 #include <aws/bedrock-agent/model/GetKnowledgeBaseRequest.h>
 #include <aws/bedrock-agent/model/GetPromptRequest.h>
 #include <aws/bedrock-agent/model/GetResourcePolicyRequest.h>
+#include <aws/bedrock-agent/model/GetVpcConfigurationRequest.h>
 #include <aws/bedrock-agent/model/IngestKnowledgeBaseDocumentsRequest.h>
 #include <aws/bedrock-agent/model/ListAgentActionGroupsRequest.h>
 #include <aws/bedrock-agent/model/ListAgentAliasesRequest.h>
@@ -64,6 +67,7 @@
 #include <aws/bedrock-agent/model/ListKnowledgeBasesRequest.h>
 #include <aws/bedrock-agent/model/ListPromptsRequest.h>
 #include <aws/bedrock-agent/model/ListTagsForResourceRequest.h>
+#include <aws/bedrock-agent/model/ListVpcConfigurationsRequest.h>
 #include <aws/bedrock-agent/model/PrepareAgentRequest.h>
 #include <aws/bedrock-agent/model/PrepareFlowRequest.h>
 #include <aws/bedrock-agent/model/PutResourcePolicyRequest.h>
@@ -429,6 +433,24 @@ CreatePromptVersionOutcome BedrockAgentClient::CreatePromptVersion(const CreateP
   return result.IsSuccess() ? CreatePromptVersionOutcome(result.GetResultWithOwnership())
                             : CreatePromptVersionOutcome(std::move(result.GetError()));
 }
+CreateVpcConfigurationOutcome BedrockAgentClient::CreateVpcConfiguration(const CreateVpcConfigurationRequest& request) const {
+  if (!request.KnowledgeBaseIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateVpcConfiguration", "Required field: KnowledgeBaseId, is not set");
+    return CreateVpcConfigurationOutcome(Aws::Client::AWSError<BedrockAgentErrors>(
+        BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/knowledgebases/");
+        resolvedEndpoint.AddPathSegment(request.GetKnowledgeBaseId());
+        resolvedEndpoint.AddPathSegments("/vpcconfigurations/");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateVpcConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateVpcConfigurationOutcome(std::move(result.GetError()));
+}
 DeleteAgentOutcome BedrockAgentClient::DeleteAgent(const DeleteAgentRequest& request) const {
   if (!request.AgentIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteAgent", "Required field: AgentId, is not set");
@@ -687,6 +709,30 @@ DeleteResourcePolicyOutcome BedrockAgentClient::DeleteResourcePolicy(const Delet
       Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteResourcePolicyOutcome(result.GetResultWithOwnership())
                             : DeleteResourcePolicyOutcome(std::move(result.GetError()));
+}
+DeleteVpcConfigurationOutcome BedrockAgentClient::DeleteVpcConfiguration(const DeleteVpcConfigurationRequest& request) const {
+  if (!request.KnowledgeBaseIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteVpcConfiguration", "Required field: KnowledgeBaseId, is not set");
+    return DeleteVpcConfigurationOutcome(Aws::Client::AWSError<BedrockAgentErrors>(
+        BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
+  }
+  if (!request.VpcConfigurationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteVpcConfiguration", "Required field: VpcConfigurationId, is not set");
+    return DeleteVpcConfigurationOutcome(Aws::Client::AWSError<BedrockAgentErrors>(
+        BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VpcConfigurationId]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/knowledgebases/");
+        resolvedEndpoint.AddPathSegment(request.GetKnowledgeBaseId());
+        resolvedEndpoint.AddPathSegments("/vpcconfigurations/");
+        resolvedEndpoint.AddPathSegment(request.GetVpcConfigurationId());
+      },
+      Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteVpcConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteVpcConfigurationOutcome(std::move(result.GetError()));
 }
 DisassociateAgentCollaboratorOutcome BedrockAgentClient::DisassociateAgentCollaborator(
     const DisassociateAgentCollaboratorRequest& request) const {
@@ -1099,6 +1145,30 @@ GetResourcePolicyOutcome BedrockAgentClient::GetResourcePolicy(const GetResource
   return result.IsSuccess() ? GetResourcePolicyOutcome(result.GetResultWithOwnership())
                             : GetResourcePolicyOutcome(std::move(result.GetError()));
 }
+GetVpcConfigurationOutcome BedrockAgentClient::GetVpcConfiguration(const GetVpcConfigurationRequest& request) const {
+  if (!request.KnowledgeBaseIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetVpcConfiguration", "Required field: KnowledgeBaseId, is not set");
+    return GetVpcConfigurationOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                "Missing required field [KnowledgeBaseId]", false));
+  }
+  if (!request.VpcConfigurationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetVpcConfiguration", "Required field: VpcConfigurationId, is not set");
+    return GetVpcConfigurationOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                "Missing required field [VpcConfigurationId]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/knowledgebases/");
+        resolvedEndpoint.AddPathSegment(request.GetKnowledgeBaseId());
+        resolvedEndpoint.AddPathSegments("/vpcconfigurations/");
+        resolvedEndpoint.AddPathSegment(request.GetVpcConfigurationId());
+      },
+      Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetVpcConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetVpcConfigurationOutcome(std::move(result.GetError()));
+}
 IngestKnowledgeBaseDocumentsOutcome BedrockAgentClient::IngestKnowledgeBaseDocuments(
     const IngestKnowledgeBaseDocumentsRequest& request) const {
   if (!request.KnowledgeBaseIdHasBeenSet()) {
@@ -1381,6 +1451,24 @@ ListTagsForResourceOutcome BedrockAgentClient::ListTagsForResource(const ListTag
       Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
                             : ListTagsForResourceOutcome(std::move(result.GetError()));
+}
+ListVpcConfigurationsOutcome BedrockAgentClient::ListVpcConfigurations(const ListVpcConfigurationsRequest& request) const {
+  if (!request.KnowledgeBaseIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListVpcConfigurations", "Required field: KnowledgeBaseId, is not set");
+    return ListVpcConfigurationsOutcome(Aws::Client::AWSError<BedrockAgentErrors>(
+        BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/knowledgebases/");
+        resolvedEndpoint.AddPathSegment(request.GetKnowledgeBaseId());
+        resolvedEndpoint.AddPathSegments("/vpcconfigurations/");
+      },
+      Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListVpcConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListVpcConfigurationsOutcome(std::move(result.GetError()));
 }
 PrepareAgentOutcome BedrockAgentClient::PrepareAgent(const PrepareAgentRequest& request) const {
   if (!request.AgentIdHasBeenSet()) {

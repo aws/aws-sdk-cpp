@@ -31,6 +31,11 @@ class CreateAgentGoalRequest : public WellArchitectedRequest {
 
   AWS_WELLARCHITECTED_API Aws::String SerializePayload() const override;
 
+  /**
+   * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
+   */
+  AWS_WELLARCHITECTED_API EndpointParameters GetEndpointContextParams() const override;
+
   ///@{
   /**
    * <p>A unique, case-sensitive identifier that you provide to ensure the

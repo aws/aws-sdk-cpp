@@ -106,6 +106,9 @@
 #include <aws/arc-region-switch/model/ListRoute53HealthChecksPaginationTraits.h>
 #include <aws/arc-region-switch/model/ListRoute53HealthChecksRequest.h>
 #include <aws/arc-region-switch/model/ListRoute53HealthChecksResult.h>
+#include <aws/arc-region-switch/model/ListServiceQuotaWarningsPaginationTraits.h>
+#include <aws/arc-region-switch/model/ListServiceQuotaWarningsRequest.h>
+#include <aws/arc-region-switch/model/ListServiceQuotaWarningsResult.h>
 #include <aws/arc-region-switch/model/ListTagsForResourceRequest.h>
 #include <aws/arc-region-switch/model/ListTagsForResourceResult.h>
 #include <aws/arc-region-switch/model/MinimalWorkflow.h>
@@ -136,6 +139,8 @@
 #include <aws/arc-region-switch/model/S3ReportOutput.h>
 #include <aws/arc-region-switch/model/S3ReportOutputConfiguration.h>
 #include <aws/arc-region-switch/model/Service.h>
+#include <aws/arc-region-switch/model/ServiceQuotaWarningStatus.h>
+#include <aws/arc-region-switch/model/ServiceQuotaWarningSummary.h>
 #include <aws/arc-region-switch/model/StartPlanExecutionRequest.h>
 #include <aws/arc-region-switch/model/StartPlanExecutionResult.h>
 #include <aws/arc-region-switch/model/Step.h>
@@ -155,6 +160,7 @@
 #include <aws/arc-region-switch/model/UpdatePlanExecutionStepResult.h>
 #include <aws/arc-region-switch/model/UpdatePlanRequest.h>
 #include <aws/arc-region-switch/model/UpdatePlanResult.h>
+#include <aws/arc-region-switch/model/WaitELBTargetGroupHealthy.h>
 #include <aws/arc-region-switch/model/Workflow.h>
 #include <aws/arc-region-switch/model/WorkflowTargetAction.h>
 

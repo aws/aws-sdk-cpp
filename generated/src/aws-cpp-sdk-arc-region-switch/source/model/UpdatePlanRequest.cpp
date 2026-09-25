@@ -59,6 +59,10 @@ Aws::String UpdatePlanRequest::SerializePayload() const {
     payload.WithObject("reportConfiguration", m_reportConfiguration.Jsonize());
   }
 
+  if (m_serviceQuotaChecksEnabledHasBeenSet) {
+    payload.WithBool("serviceQuotaChecksEnabled", m_serviceQuotaChecksEnabled);
+  }
+
   return payload.View().WriteReadable();
 }
 

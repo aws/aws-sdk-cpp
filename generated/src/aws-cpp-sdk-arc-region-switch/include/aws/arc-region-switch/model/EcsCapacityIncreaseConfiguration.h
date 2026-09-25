@@ -8,6 +8,7 @@
 #include <aws/arc-region-switch/model/EcsCapacityMonitoringApproach.h>
 #include <aws/arc-region-switch/model/EcsUngraceful.h>
 #include <aws/arc-region-switch/model/Service.h>
+#include <aws/arc-region-switch/model/WaitELBTargetGroupHealthy.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
@@ -126,6 +127,24 @@ class EcsCapacityIncreaseConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>If enabled, the step completes only after each attached ELB target group
+   * reports a healthy target count that matches the service's new desired task count
+   * calculated in the step.</p>
+   */
+  inline WaitELBTargetGroupHealthy GetWaitELBTargetGroupHealthy() const { return m_waitELBTargetGroupHealthy; }
+  inline bool WaitELBTargetGroupHealthyHasBeenSet() const { return m_waitELBTargetGroupHealthyHasBeenSet; }
+  inline void SetWaitELBTargetGroupHealthy(WaitELBTargetGroupHealthy value) {
+    m_waitELBTargetGroupHealthyHasBeenSet = true;
+    m_waitELBTargetGroupHealthy = value;
+  }
+  inline EcsCapacityIncreaseConfiguration& WithWaitELBTargetGroupHealthy(WaitELBTargetGroupHealthy value) {
+    SetWaitELBTargetGroupHealthy(value);
+    return *this;
+  }
+  ///@}
  private:
   int m_timeoutMinutes{0};
 
@@ -136,11 +155,14 @@ class EcsCapacityIncreaseConfiguration {
   int m_targetPercent{0};
 
   EcsCapacityMonitoringApproach m_capacityMonitoringApproach{EcsCapacityMonitoringApproach::NOT_SET};
+
+  WaitELBTargetGroupHealthy m_waitELBTargetGroupHealthy{WaitELBTargetGroupHealthy::NOT_SET};
   bool m_timeoutMinutesHasBeenSet = false;
   bool m_servicesHasBeenSet = false;
   bool m_ungracefulHasBeenSet = false;
   bool m_targetPercentHasBeenSet = false;
   bool m_capacityMonitoringApproachHasBeenSet = false;
+  bool m_waitELBTargetGroupHealthyHasBeenSet = false;
 };
 
 }  // namespace Model

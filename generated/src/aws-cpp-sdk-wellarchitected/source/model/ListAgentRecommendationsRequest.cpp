@@ -43,3 +43,10 @@ void ListAgentRecommendationsRequest::AddQueryStringParameters(URI& uri) const {
     ss.str("");
   }
 }
+
+ListAgentRecommendationsRequest::EndpointParameters ListAgentRecommendationsRequest::GetEndpointContextParams() const {
+  EndpointParameters parameters;
+  // Static context parameters
+  parameters.emplace_back(Aws::String("SubServiceType"), "AGENT", Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+  return parameters;
+}

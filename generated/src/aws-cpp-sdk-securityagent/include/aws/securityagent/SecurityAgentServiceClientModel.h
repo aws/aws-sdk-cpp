@@ -68,6 +68,7 @@
 #include <aws/securityagent/model/GetSecurityRequirementPackResult.h>
 #include <aws/securityagent/model/ImportSecurityRequirementsResult.h>
 #include <aws/securityagent/model/InitiateProviderRegistrationResult.h>
+#include <aws/securityagent/model/ListActorMessagesResult.h>
 #include <aws/securityagent/model/ListAgentSpacesRequest.h>
 #include <aws/securityagent/model/ListAgentSpacesResult.h>
 #include <aws/securityagent/model/ListApplicationsRequest.h>
@@ -199,6 +200,7 @@ class GetIntegrationRequest;
 class GetSecurityRequirementPackRequest;
 class ImportSecurityRequirementsRequest;
 class InitiateProviderRegistrationRequest;
+class ListActorMessagesRequest;
 class ListAgentSpacesRequest;
 class ListApplicationsRequest;
 class ListArtifactsRequest;
@@ -294,6 +296,7 @@ typedef Aws::Utils::Outcome<GetIntegrationResult, SecurityAgentError> GetIntegra
 typedef Aws::Utils::Outcome<GetSecurityRequirementPackResult, SecurityAgentError> GetSecurityRequirementPackOutcome;
 typedef Aws::Utils::Outcome<ImportSecurityRequirementsResult, SecurityAgentError> ImportSecurityRequirementsOutcome;
 typedef Aws::Utils::Outcome<InitiateProviderRegistrationResult, SecurityAgentError> InitiateProviderRegistrationOutcome;
+typedef Aws::Utils::Outcome<ListActorMessagesResult, SecurityAgentError> ListActorMessagesOutcome;
 typedef Aws::Utils::Outcome<ListAgentSpacesResult, SecurityAgentError> ListAgentSpacesOutcome;
 typedef Aws::Utils::Outcome<ListApplicationsResult, SecurityAgentError> ListApplicationsOutcome;
 typedef Aws::Utils::Outcome<ListArtifactsResult, SecurityAgentError> ListArtifactsOutcome;
@@ -389,6 +392,7 @@ typedef std::future<GetIntegrationOutcome> GetIntegrationOutcomeCallable;
 typedef std::future<GetSecurityRequirementPackOutcome> GetSecurityRequirementPackOutcomeCallable;
 typedef std::future<ImportSecurityRequirementsOutcome> ImportSecurityRequirementsOutcomeCallable;
 typedef std::future<InitiateProviderRegistrationOutcome> InitiateProviderRegistrationOutcomeCallable;
+typedef std::future<ListActorMessagesOutcome> ListActorMessagesOutcomeCallable;
 typedef std::future<ListAgentSpacesOutcome> ListAgentSpacesOutcomeCallable;
 typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
 typedef std::future<ListArtifactsOutcome> ListArtifactsOutcomeCallable;
@@ -590,6 +594,9 @@ typedef std::function<void(const SecurityAgentClient*, const Model::InitiateProv
                            const Model::InitiateProviderRegistrationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     InitiateProviderRegistrationResponseReceivedHandler;
+typedef std::function<void(const SecurityAgentClient*, const Model::ListActorMessagesRequest&, const Model::ListActorMessagesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListActorMessagesResponseReceivedHandler;
 typedef std::function<void(const SecurityAgentClient*, const Model::ListAgentSpacesRequest&, const Model::ListAgentSpacesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAgentSpacesResponseReceivedHandler;

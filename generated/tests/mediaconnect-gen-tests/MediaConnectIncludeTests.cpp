@@ -264,6 +264,7 @@
 #include <aws/mediaconnect/model/Protocol.h>
 #include <aws/mediaconnect/model/PublicRouterNetworkInterfaceConfiguration.h>
 #include <aws/mediaconnect/model/PublicRouterNetworkInterfaceRule.h>
+#include <aws/mediaconnect/model/PublicTlsEncryptionConfiguration.h>
 #include <aws/mediaconnect/model/PurchaseOfferingRequest.h>
 #include <aws/mediaconnect/model/PurchaseOfferingResult.h>
 #include <aws/mediaconnect/model/Range.h>
@@ -326,6 +327,7 @@
 #include <aws/mediaconnect/model/RouterOutputTier.h>
 #include <aws/mediaconnect/model/RouterOutputType.h>
 #include <aws/mediaconnect/model/RoutingScope.h>
+#include <aws/mediaconnect/model/RtmpPushRouterOutputConfiguration.h>
 #include <aws/mediaconnect/model/RtpRouterInputConfiguration.h>
 #include <aws/mediaconnect/model/RtpRouterOutputConfiguration.h>
 #include <aws/mediaconnect/model/ScanMode.h>
@@ -368,6 +370,9 @@
 #include <aws/mediaconnect/model/Tcs.h>
 #include <aws/mediaconnect/model/ThumbnailDetails.h>
 #include <aws/mediaconnect/model/ThumbnailState.h>
+#include <aws/mediaconnect/model/TlsEncryption.h>
+#include <aws/mediaconnect/model/TlsEncryptionConfiguration.h>
+#include <aws/mediaconnect/model/TlsEncryptionType.h>
 #include <aws/mediaconnect/model/Transport.h>
 #include <aws/mediaconnect/model/TransportMediaInfo.h>
 #include <aws/mediaconnect/model/TransportStream.h>

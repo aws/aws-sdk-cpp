@@ -68,6 +68,7 @@
 #include <aws/securityagent/model/GetSecurityRequirementPackRequest.h>
 #include <aws/securityagent/model/ImportSecurityRequirementsRequest.h>
 #include <aws/securityagent/model/InitiateProviderRegistrationRequest.h>
+#include <aws/securityagent/model/ListActorMessagesRequest.h>
 #include <aws/securityagent/model/ListAgentSpacesRequest.h>
 #include <aws/securityagent/model/ListApplicationsRequest.h>
 #include <aws/securityagent/model/ListArtifactsRequest.h>
@@ -794,6 +795,17 @@ InitiateProviderRegistrationOutcome SecurityAgentClient::InitiateProviderRegistr
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? InitiateProviderRegistrationOutcome(result.GetResultWithOwnership())
                             : InitiateProviderRegistrationOutcome(std::move(result.GetError()));
+}
+
+ListActorMessagesOutcome SecurityAgentClient::ListActorMessages(const ListActorMessagesRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/ListActorMessages");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListActorMessagesOutcome(result.GetResultWithOwnership())
+                            : ListActorMessagesOutcome(std::move(result.GetError()));
 }
 
 ListAgentSpacesOutcome SecurityAgentClient::ListAgentSpaces(const ListAgentSpacesRequest& request) const {

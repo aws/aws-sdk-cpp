@@ -26,6 +26,10 @@ RouterOutputProtocolConfiguration& RouterOutputProtocolConfiguration::operator=(
     m_srtListener = jsonValue.GetObject("srtListener");
     m_srtListenerHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("rtmpPush")) {
+    m_rtmpPush = jsonValue.GetObject("rtmpPush");
+    m_rtmpPushHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("srtCaller")) {
     m_srtCaller = jsonValue.GetObject("srtCaller");
     m_srtCallerHasBeenSet = true;
@@ -46,6 +50,10 @@ JsonValue RouterOutputProtocolConfiguration::Jsonize() const {
 
   if (m_srtListenerHasBeenSet) {
     payload.WithObject("srtListener", m_srtListener.Jsonize());
+  }
+
+  if (m_rtmpPushHasBeenSet) {
+    payload.WithObject("rtmpPush", m_rtmpPush.Jsonize());
   }
 
   if (m_srtCallerHasBeenSet) {

@@ -486,6 +486,42 @@ class AWS_ARCREGIONSWITCH_API ARCRegionswitchClient : public Aws::Client::AWSJso
   }
 
   /**
+   * <p>Lists the service quota warnings for the plans that you can access. Region
+   * switch creates a warning when the applied quota value in one Region of a plan is
+   * lower than the value required for the matching resource in another Region or
+   * account in the plan.</p> <p>Returns the warnings for the plans that you own and
+   * for plans that are shared with your account through AWS Resource Access Manager
+   * (AWS RAM). To return warnings for specific plans, provide a list of plan Amazon
+   * Resource Names (ARNs). Region switch ignores any plan ARN that you can't access.
+   * If you don't provide any plan ARNs, Region switch returns the warnings for all
+   * of your accessible plans.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListServiceQuotaWarnings">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListServiceQuotaWarningsOutcome ListServiceQuotaWarnings(const Model::ListServiceQuotaWarningsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListServiceQuotaWarnings that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListServiceQuotaWarningsRequestT = Model::ListServiceQuotaWarningsRequest>
+  Model::ListServiceQuotaWarningsOutcomeCallable ListServiceQuotaWarningsCallable(
+      const ListServiceQuotaWarningsRequestT& request = {}) const {
+    return SubmitCallable(&ARCRegionswitchClient::ListServiceQuotaWarnings, request);
+  }
+
+  /**
+   * An Async wrapper for ListServiceQuotaWarnings that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListServiceQuotaWarningsRequestT = Model::ListServiceQuotaWarningsRequest>
+  void ListServiceQuotaWarningsAsync(const ListServiceQuotaWarningsResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                     const ListServiceQuotaWarningsRequestT& request = {}) const {
+    return SubmitAsync(&ARCRegionswitchClient::ListServiceQuotaWarnings, request, handler, context);
+  }
+
+  /**
    * <p>Lists the tags attached to a Region switch resource.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListTagsForResource">AWS

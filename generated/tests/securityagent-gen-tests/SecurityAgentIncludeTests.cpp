@@ -20,6 +20,7 @@
 #include <aws/securityagent/model/AWSResources.h>
 #include <aws/securityagent/model/AccessType.h>
 #include <aws/securityagent/model/Actor.h>
+#include <aws/securityagent/model/ActorMessage.h>
 #include <aws/securityagent/model/AddArtifactRequest.h>
 #include <aws/securityagent/model/AddArtifactResult.h>
 #include <aws/securityagent/model/AgentSpace.h>
@@ -195,6 +196,9 @@
 #include <aws/securityagent/model/IpAddressType.h>
 #include <aws/securityagent/model/JobStatus.h>
 #include <aws/securityagent/model/JobType.h>
+#include <aws/securityagent/model/ListActorMessagesPaginationTraits.h>
+#include <aws/securityagent/model/ListActorMessagesRequest.h>
+#include <aws/securityagent/model/ListActorMessagesResult.h>
 #include <aws/securityagent/model/ListAgentSpacesPaginationTraits.h>
 #include <aws/securityagent/model/ListAgentSpacesRequest.h>
 #include <aws/securityagent/model/ListAgentSpacesResult.h>

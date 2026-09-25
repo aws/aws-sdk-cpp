@@ -19,10 +19,14 @@ namespace Rekognition {
  * <p>This is the API Reference for <a
  * href="https://docs.aws.amazon.com/rekognition/latest/dg/images.html">Amazon
  * Rekognition Image</a>, <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/dg/bulk-analysis.html">Amazon
+ * Rekognition Bulk Image Analysis</a>, <a
  * href="https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/what-is.html">Amazon
  * Rekognition Custom Labels</a>, <a
  * href="https://docs.aws.amazon.com/rekognition/latest/dg/video.html">Amazon
  * Rekognition Stored Video</a>, <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/dg/face-liveness.html">Amazon
+ * Rekognition Face Liveness</a>, <a
  * href="https://docs.aws.amazon.com/rekognition/latest/dg/streaming-video.html">Amazon
  * Rekognition Streaming Video</a>. It provides descriptions of actions, data
  * types, common parameters, and common errors.</p> <p> <b>Amazon Rekognition
@@ -57,13 +61,9 @@ namespace Rekognition {
  * </p> </li> <li> <p> <a
  * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetCelebrityInfo.html">GetCelebrityInfo</a>
  * </p> </li> <li> <p> <a
- * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetMediaAnalysisJob.html">GetMediaAnalysisJob</a>
- * </p> </li> <li> <p> <a
  * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_IndexFaces.html">IndexFaces</a>
  * </p> </li> <li> <p> <a
  * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListCollections.html">ListCollections</a>
- * </p> </li> <li> <p> <a
- * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListMediaAnalysisJob.html">ListMediaAnalysisJob</a>
  * </p> </li> <li> <p> <a
  * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListFaces.html">ListFaces</a>
  * </p> </li> <li> <p> <a
@@ -78,6 +78,11 @@ namespace Rekognition {
  * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_SearchUsers.html">SearchUsers</a>
  * </p> </li> <li> <p> <a
  * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_SearchUsersByImage.html">SearchUsersByImage</a>
+ * </p> </li> </ul> <p> <b>Amazon Rekognition Bulk Image Analysis</b> </p> <ul>
+ * <li> <p> <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetMediaAnalysisJob.html">GetMediaAnalysisJob</a>
+ * </p> </li> <li> <p> <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListMediaAnalysisJob.html">ListMediaAnalysisJob</a>
  * </p> </li> <li> <p> <a
  * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartMediaAnalysisJob.html">StartMediaAnalysisJob</a>
  * </p> </li> </ul> <p> <b>Amazon Rekognition Custom Labels</b> </p> <ul> <li> <p>
@@ -121,8 +126,8 @@ namespace Rekognition {
  * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StopProjectVersion.html">StopProjectVersion</a>
  * </p> </li> <li> <p> <a
  * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_UpdateDatasetEntries.html">UpdateDatasetEntries</a>
- * </p> </li> </ul> <p> <b>Amazon Rekognition Video Stored Video</b> </p> <ul> <li>
- * <p> <a
+ * </p> </li> </ul> <p> <b>Amazon Rekognition Stored Video</b> </p> <ul> <li> <p>
+ * <a
  * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetCelebrityRecognition.html">GetCelebrityRecognition</a>
  * </p> </li> <li> <p> <a
  * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetContentModeration.html">GetContentModeration</a>
@@ -154,8 +159,15 @@ namespace Rekognition {
  * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartSegmentDetection.html">StartSegmentDetection</a>
  * </p> </li> <li> <p> <a
  * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartTextDetection.html">StartTextDetection</a>
- * </p> </li> </ul> <p> <b>Amazon Rekognition Video Streaming Video</b> </p> <ul>
- * <li> <p> <a
+ * </p> </li> </ul> <p> <b>Amazon Rekognition Face Liveness</b> </p> <ul> <li> <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateFaceLivenessSession.html">CreateFaceLivenessSession</a>
+ * </p> </li> <li> <p> <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetFaceLivenessSessionResults.html">GetFaceLivenessSessionResults</a>
+ * </p> </li> <li> <p> <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_rekognitionstreaming_StartFaceLivenessSession.html">StartFaceLivenessSession</a>
+ * </p> </li> </ul> <p> <b>Amazon Rekognition Streaming Video</b> </p> <ul> <li>
+ * <p> <a
  * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateStreamProcessor.html">CreateStreamProcessor</a>
  * </p> </li> <li> <p> <a
  * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteStreamProcessor.html">DeleteStreamProcessor</a>
@@ -491,7 +503,16 @@ class AWS_REKOGNITION_API RekognitionClient : public Aws::Client::AWSJsonClient,
    * <p>You can use <code>AuditImagesLimit</code> to limit the number of audit images
    * returned when <code>GetFaceLivenessSessionResults</code> is called. This number
    * is between 0 and 4. By default, it is set to 0. The limit is best effort and
-   * based on the duration of the selfie-video. </p><p><h3>See Also:</h3>   <a
+   * based on the duration of the selfie-video. </p> <p>You can use the
+   * <code>ChallengePreferences</code> option in the <code>Settings</code> parameter
+   * to choose between the 'FaceMovementAndLightChallenge' or FaceMovementChallenge'
+   * settings. See the <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/dg/face-liveness-shared-responsibility-model.html">Shared
+   * Responsibility</a> page for details on guidance for which setting to choose
+   * between these two settings depending on your use case and preferences. This
+   * parameter is optional and if no parameter is provided, then the
+   * 'FaceMovementAndLightChallenge' settings is applied by default.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateFaceLivenessSession">AWS
    * API Reference</a></p>
    */
@@ -601,6 +622,11 @@ class AWS_REKOGNITION_API RekognitionClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   *  <p>Service availability notice: Streaming Video and Bulk Image
+   * Analysis is no longer available to new customers. For more information, see <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition
+   * feature availability changes</a>.</p> <p> <b>This change does not impact the
+   * availability of other Amazon Rekognition features.</b> </p>
    * <p>Creates an Amazon Rekognition stream processor that you can use to detect and
    * recognize faces or to detect labels in a streaming video.</p> <p>Amazon
    * Rekognition Video is a consumer of live video from Amazon Kinesis Video Streams.
@@ -880,6 +906,11 @@ class AWS_REKOGNITION_API RekognitionClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   *  <p>Service availability notice: Streaming Video and Bulk Image
+   * Analysis is no longer available to new customers. For more information, see <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition
+   * feature availability changes</a>.</p> <p> <b>This change does not impact the
+   * availability of other Amazon Rekognition features.</b> </p>
    * <p>Deletes the stream processor identified by <code>Name</code>. You assign the
    * value for <code>Name</code> when you create the stream processor with
    * <a>CreateStreamProcessor</a>. You might not be able to use the same name for a
@@ -1061,6 +1092,11 @@ class AWS_REKOGNITION_API RekognitionClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   *  <p>Service availability notice: Streaming Video and Bulk Image
+   * Analysis is no longer available to new customers. For more information, see <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition
+   * feature availability changes</a>.</p> <p> <b>This change does not impact the
+   * availability of other Amazon Rekognition features.</b> </p>
    * <p>Provides information about a stream processor created by
    * <a>CreateStreamProcessor</a>. You can get information about the input and output
    * streams, the input parameters for the face recognition being performed, and the
@@ -1712,7 +1748,11 @@ class AWS_REKOGNITION_API RekognitionClient : public Aws::Client::AWSJsonClient,
    * <code>GetFaceLivenessSessionResults</code> is defined by the
    * <code>AuditImagesLimit</code> paramater when calling
    * <code>CreateFaceLivenessSession</code>. Reference images are always returned
-   * when possible.</p><p><h3>See Also:</h3>   <a
+   * when possible.</p> <p>For a session that has completed, the response can also
+   * include a <code>Feedback</code> list describing conditions that were detected in
+   * the selfie-video, such as low lighting or an obstructed face, and
+   * <code>Metadata</code> about the client that streamed the session.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetFaceLivenessSessionResults">AWS
    * API Reference</a></p>
    */
@@ -1874,6 +1914,11 @@ class AWS_REKOGNITION_API RekognitionClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   *  <p>Service availability notice: Streaming Video and Bulk Image
+   * Analysis is no longer available to new customers. For more information, see <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition
+   * feature availability changes</a>.</p> <p> <b>This change does not impact the
+   * availability of other Amazon Rekognition features.</b> </p>
    * <p>Retrieves the results for a given media analysis job. Takes a
    * <code>JobId</code> returned by StartMediaAnalysisJob.</p><p><h3>See Also:</h3>
    * <a
@@ -2288,6 +2333,11 @@ class AWS_REKOGNITION_API RekognitionClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   *  <p>Service availability notice: Streaming Video and Bulk Image
+   * Analysis is no longer available to new customers. For more information, see <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition
+   * feature availability changes</a>.</p> <p> <b>This change does not impact the
+   * availability of other Amazon Rekognition features.</b> </p>
    * <p>Returns a list of media analysis jobs. Results are sorted by
    * <code>CreationTimestamp</code> in descending order.</p><p><h3>See Also:</h3>
    * <a
@@ -2349,7 +2399,12 @@ class AWS_REKOGNITION_API RekognitionClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Gets a list of stream processors that you have created with
+   *  <p>Service availability notice: Streaming Video and Bulk Image
+   * Analysis is no longer available to new customers. For more information, see <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition
+   * feature availability changes</a>.</p> <p> <b>This change does not impact the
+   * availability of other Amazon Rekognition features.</b> </p>  <p>Gets
+   * a list of stream processors that you have created with
    * <a>CreateStreamProcessor</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListStreamProcessors">AWS
    * API Reference</a></p>
@@ -2905,6 +2960,11 @@ class AWS_REKOGNITION_API RekognitionClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   *  <p>Service availability notice: Streaming Video and Bulk Image
+   * Analysis is no longer available to new customers. For more information, see <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition
+   * feature availability changes</a>.</p> <p> <b>This change does not impact the
+   * availability of other Amazon Rekognition features.</b> </p>
    * <p>Initiates a new media analysis job. Accepts a manifest file in an Amazon S3
    * bucket. The output is a manifest file and a summary of the manifest stored in
    * the Amazon S3 bucket.</p><p><h3>See Also:</h3>   <a
@@ -3054,6 +3114,11 @@ class AWS_REKOGNITION_API RekognitionClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   *  <p>Service availability notice: Streaming Video and Bulk Image
+   * Analysis is no longer available to new customers. For more information, see <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition
+   * feature availability changes</a>.</p> <p> <b>This change does not impact the
+   * availability of other Amazon Rekognition features.</b> </p>
    * <p>Starts processing a stream processor. You create a stream processor by
    * calling <a>CreateStreamProcessor</a>. To tell <code>StartStreamProcessor</code>
    * which stream processor to start, use the value of the <code>Name</code> field
@@ -3154,6 +3219,11 @@ class AWS_REKOGNITION_API RekognitionClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   *  <p>Service availability notice: Streaming Video and Bulk Image
+   * Analysis is no longer available to new customers. For more information, see <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition
+   * feature availability changes</a>.</p> <p> <b>This change does not impact the
+   * availability of other Amazon Rekognition features.</b> </p>
    * <p>Stops a running stream processor that was created by
    * <a>CreateStreamProcessor</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StopStreamProcessor">AWS
@@ -3287,7 +3357,12 @@ class AWS_REKOGNITION_API RekognitionClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> Allows you to update a stream processor. You can change some settings and
+   *  <p>Service availability notice: Streaming Video and Bulk Image
+   * Analysis is no longer available to new customers. For more information, see <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition
+   * feature availability changes</a>.</p> <p> <b>This change does not impact the
+   * availability of other Amazon Rekognition features.</b> </p>  <p>
+   * Allows you to update a stream processor. You can change some settings and
    * regions of interest and delete certain parameters. </p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/UpdateStreamProcessor">AWS

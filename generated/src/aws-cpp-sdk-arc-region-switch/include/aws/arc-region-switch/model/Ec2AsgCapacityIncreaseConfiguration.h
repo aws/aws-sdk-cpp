@@ -8,6 +8,7 @@
 #include <aws/arc-region-switch/model/Asg.h>
 #include <aws/arc-region-switch/model/Ec2AsgCapacityMonitoringApproach.h>
 #include <aws/arc-region-switch/model/Ec2Ungraceful.h>
+#include <aws/arc-region-switch/model/WaitELBTargetGroupHealthy.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
@@ -126,6 +127,24 @@ class Ec2AsgCapacityIncreaseConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>If enabled, the step completes only after each attached ELB target group
+   * reports a healthy target count that matches the group's new desired capacity
+   * calculated in the step.</p>
+   */
+  inline WaitELBTargetGroupHealthy GetWaitELBTargetGroupHealthy() const { return m_waitELBTargetGroupHealthy; }
+  inline bool WaitELBTargetGroupHealthyHasBeenSet() const { return m_waitELBTargetGroupHealthyHasBeenSet; }
+  inline void SetWaitELBTargetGroupHealthy(WaitELBTargetGroupHealthy value) {
+    m_waitELBTargetGroupHealthyHasBeenSet = true;
+    m_waitELBTargetGroupHealthy = value;
+  }
+  inline Ec2AsgCapacityIncreaseConfiguration& WithWaitELBTargetGroupHealthy(WaitELBTargetGroupHealthy value) {
+    SetWaitELBTargetGroupHealthy(value);
+    return *this;
+  }
+  ///@}
  private:
   int m_timeoutMinutes{0};
 
@@ -136,11 +155,14 @@ class Ec2AsgCapacityIncreaseConfiguration {
   int m_targetPercent{0};
 
   Ec2AsgCapacityMonitoringApproach m_capacityMonitoringApproach{Ec2AsgCapacityMonitoringApproach::NOT_SET};
+
+  WaitELBTargetGroupHealthy m_waitELBTargetGroupHealthy{WaitELBTargetGroupHealthy::NOT_SET};
   bool m_timeoutMinutesHasBeenSet = false;
   bool m_asgsHasBeenSet = false;
   bool m_ungracefulHasBeenSet = false;
   bool m_targetPercentHasBeenSet = false;
   bool m_capacityMonitoringApproachHasBeenSet = false;
+  bool m_waitELBTargetGroupHealthyHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -19,6 +19,12 @@ Aws::String ListImportTasksRequest::SerializePayload() const { return {}; }
 
 void ListImportTasksRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;
+  if (m_graphIdentifierHasBeenSet) {
+    ss << m_graphIdentifier;
+    uri.AddQueryStringParameter("graphIdentifier", ss.str());
+    ss.str("");
+  }
+
   if (m_nextTokenHasBeenSet) {
     ss << m_nextToken;
     uri.AddQueryStringParameter("nextToken", ss.str());

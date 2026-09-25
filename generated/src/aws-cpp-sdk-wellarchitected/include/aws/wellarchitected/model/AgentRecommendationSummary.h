@@ -80,6 +80,25 @@ class AgentRecommendationSummary {
 
   ///@{
   /**
+   * <p>The identifier of the generation process that produced this
+   * recommendation.</p>
+   */
+  inline const Aws::String& GetGenerationId() const { return m_generationId; }
+  inline bool GenerationIdHasBeenSet() const { return m_generationIdHasBeenSet; }
+  template <typename GenerationIdT = Aws::String>
+  void SetGenerationId(GenerationIdT&& value) {
+    m_generationIdHasBeenSet = true;
+    m_generationId = std::forward<GenerationIdT>(value);
+  }
+  template <typename GenerationIdT = Aws::String>
+  AgentRecommendationSummary& WithGenerationId(GenerationIdT&& value) {
+    SetGenerationId(std::forward<GenerationIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The title of the recommendation.</p>
    */
   inline const Aws::String& GetTitle() const { return m_title; }
@@ -429,6 +448,8 @@ class AgentRecommendationSummary {
 
   Aws::String m_profileArn;
 
+  Aws::String m_generationId;
+
   Aws::String m_title;
 
   Aws::String m_description;
@@ -468,6 +489,7 @@ class AgentRecommendationSummary {
   Aws::Utils::DateTime m_lastModifiedAt{};
   bool m_recommendationArnHasBeenSet = false;
   bool m_profileArnHasBeenSet = false;
+  bool m_generationIdHasBeenSet = false;
   bool m_titleHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_typeHasBeenSet = false;

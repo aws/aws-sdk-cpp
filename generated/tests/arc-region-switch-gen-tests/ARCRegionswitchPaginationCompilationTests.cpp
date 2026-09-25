@@ -10,6 +10,7 @@
 #include <aws/arc-region-switch/ARCRegionswitchPaginationBase.h>
 #include <aws/arc-region-switch/model/ListRoute53HealthChecksInRegionPaginationTraits.h>
 #include <aws/arc-region-switch/model/GetPlanExecutionPaginationTraits.h>
+#include <aws/arc-region-switch/model/ListServiceQuotaWarningsPaginationTraits.h>
 #include <aws/arc-region-switch/model/ListPlanExecutionEventsPaginationTraits.h>
 #include <aws/arc-region-switch/model/ListPlanExecutionsPaginationTraits.h>
 #include <aws/arc-region-switch/model/ListPlansInRegionPaginationTraits.h>

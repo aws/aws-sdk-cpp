@@ -79,7 +79,13 @@ class BedrockEmbeddingModelConfiguration {
    * that you selected, such as how audio and video files are divided into
    * segments.</p> <p>The fields that this object accepts depend on the embedding
    * model. For the settings that each model accepts, see the documentation for that
-   * model.</p>
+   * model.</p> <p>For an example of a <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateKnowledgeBase.html">CreateKnowledgeBase</a>
+   * request that uses this field to configure a multimodal embedding model, see the
+   * <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateKnowledgeBase.html#API_agent_CreateKnowledgeBase_Examples">Examples</a>
+   * section of <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateKnowledgeBase.html">CreateKnowledgeBase</a>.</p>
    */
   inline Aws::Utils::DocumentView GetModelConfiguration() const { return m_modelConfiguration; }
   inline bool ModelConfigurationHasBeenSet() const { return m_modelConfigurationHasBeenSet; }

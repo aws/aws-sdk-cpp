@@ -350,6 +350,7 @@
 #include <aws/qconnect/model/ParsingStrategy.h>
 #include <aws/qconnect/model/Participant.h>
 #include <aws/qconnect/model/Priority.h>
+#include <aws/qconnect/model/ProactiveRecommendationDataDetails.h>
 #include <aws/qconnect/model/PushADMMessageTemplateContent.h>
 #include <aws/qconnect/model/PushAPNSMessageTemplateContent.h>
 #include <aws/qconnect/model/PushBaiduMessageTemplateContent.h>
@@ -400,6 +401,8 @@
 #include <aws/qconnect/model/ResultData.h>
 #include <aws/qconnect/model/RetrievalConfiguration.h>
 #include <aws/qconnect/model/RetrievalFilterConfiguration.h>
+#include <aws/qconnect/model/RetrieveError.h>
+#include <aws/qconnect/model/RetrieveErrorCode.h>
 #include <aws/qconnect/model/RetrieveRequest.h>
 #include <aws/qconnect/model/RetrieveResult.h>
 #include <aws/qconnect/model/RetrieveSdkResult.h>

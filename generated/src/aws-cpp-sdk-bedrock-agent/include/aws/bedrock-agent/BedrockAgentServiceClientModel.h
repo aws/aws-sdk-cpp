@@ -31,6 +31,7 @@
 #include <aws/bedrock-agent/model/CreateKnowledgeBaseResult.h>
 #include <aws/bedrock-agent/model/CreatePromptResult.h>
 #include <aws/bedrock-agent/model/CreatePromptVersionResult.h>
+#include <aws/bedrock-agent/model/CreateVpcConfigurationResult.h>
 #include <aws/bedrock-agent/model/DeleteAgentActionGroupResult.h>
 #include <aws/bedrock-agent/model/DeleteAgentAliasResult.h>
 #include <aws/bedrock-agent/model/DeleteAgentResult.h>
@@ -43,6 +44,7 @@
 #include <aws/bedrock-agent/model/DeleteKnowledgeBaseResult.h>
 #include <aws/bedrock-agent/model/DeletePromptResult.h>
 #include <aws/bedrock-agent/model/DeleteResourcePolicyResult.h>
+#include <aws/bedrock-agent/model/DeleteVpcConfigurationResult.h>
 #include <aws/bedrock-agent/model/DisassociateAgentCollaboratorResult.h>
 #include <aws/bedrock-agent/model/DisassociateAgentKnowledgeBaseResult.h>
 #include <aws/bedrock-agent/model/GetAgentActionGroupResult.h>
@@ -60,6 +62,7 @@
 #include <aws/bedrock-agent/model/GetKnowledgeBaseResult.h>
 #include <aws/bedrock-agent/model/GetPromptResult.h>
 #include <aws/bedrock-agent/model/GetResourcePolicyResult.h>
+#include <aws/bedrock-agent/model/GetVpcConfigurationResult.h>
 #include <aws/bedrock-agent/model/IngestKnowledgeBaseDocumentsResult.h>
 #include <aws/bedrock-agent/model/ListAgentActionGroupsResult.h>
 #include <aws/bedrock-agent/model/ListAgentAliasesResult.h>
@@ -80,6 +83,7 @@
 #include <aws/bedrock-agent/model/ListPromptsRequest.h>
 #include <aws/bedrock-agent/model/ListPromptsResult.h>
 #include <aws/bedrock-agent/model/ListTagsForResourceResult.h>
+#include <aws/bedrock-agent/model/ListVpcConfigurationsResult.h>
 #include <aws/bedrock-agent/model/PrepareAgentResult.h>
 #include <aws/bedrock-agent/model/PrepareFlowResult.h>
 #include <aws/bedrock-agent/model/PutResourcePolicyResult.h>
@@ -142,6 +146,7 @@ class CreateFlowVersionRequest;
 class CreateKnowledgeBaseRequest;
 class CreatePromptRequest;
 class CreatePromptVersionRequest;
+class CreateVpcConfigurationRequest;
 class DeleteAgentRequest;
 class DeleteAgentActionGroupRequest;
 class DeleteAgentAliasRequest;
@@ -154,6 +159,7 @@ class DeleteKnowledgeBaseRequest;
 class DeleteKnowledgeBaseDocumentsRequest;
 class DeletePromptRequest;
 class DeleteResourcePolicyRequest;
+class DeleteVpcConfigurationRequest;
 class DisassociateAgentCollaboratorRequest;
 class DisassociateAgentKnowledgeBaseRequest;
 class GetAgentRequest;
@@ -171,6 +177,7 @@ class GetKnowledgeBaseRequest;
 class GetKnowledgeBaseDocumentsRequest;
 class GetPromptRequest;
 class GetResourcePolicyRequest;
+class GetVpcConfigurationRequest;
 class IngestKnowledgeBaseDocumentsRequest;
 class ListAgentActionGroupsRequest;
 class ListAgentAliasesRequest;
@@ -187,6 +194,7 @@ class ListKnowledgeBaseDocumentsRequest;
 class ListKnowledgeBasesRequest;
 class ListPromptsRequest;
 class ListTagsForResourceRequest;
+class ListVpcConfigurationsRequest;
 class PrepareAgentRequest;
 class PrepareFlowRequest;
 class PutResourcePolicyRequest;
@@ -220,6 +228,7 @@ typedef Aws::Utils::Outcome<CreateFlowVersionResult, BedrockAgentError> CreateFl
 typedef Aws::Utils::Outcome<CreateKnowledgeBaseResult, BedrockAgentError> CreateKnowledgeBaseOutcome;
 typedef Aws::Utils::Outcome<CreatePromptResult, BedrockAgentError> CreatePromptOutcome;
 typedef Aws::Utils::Outcome<CreatePromptVersionResult, BedrockAgentError> CreatePromptVersionOutcome;
+typedef Aws::Utils::Outcome<CreateVpcConfigurationResult, BedrockAgentError> CreateVpcConfigurationOutcome;
 typedef Aws::Utils::Outcome<DeleteAgentResult, BedrockAgentError> DeleteAgentOutcome;
 typedef Aws::Utils::Outcome<DeleteAgentActionGroupResult, BedrockAgentError> DeleteAgentActionGroupOutcome;
 typedef Aws::Utils::Outcome<DeleteAgentAliasResult, BedrockAgentError> DeleteAgentAliasOutcome;
@@ -232,6 +241,7 @@ typedef Aws::Utils::Outcome<DeleteKnowledgeBaseResult, BedrockAgentError> Delete
 typedef Aws::Utils::Outcome<DeleteKnowledgeBaseDocumentsResult, BedrockAgentError> DeleteKnowledgeBaseDocumentsOutcome;
 typedef Aws::Utils::Outcome<DeletePromptResult, BedrockAgentError> DeletePromptOutcome;
 typedef Aws::Utils::Outcome<DeleteResourcePolicyResult, BedrockAgentError> DeleteResourcePolicyOutcome;
+typedef Aws::Utils::Outcome<DeleteVpcConfigurationResult, BedrockAgentError> DeleteVpcConfigurationOutcome;
 typedef Aws::Utils::Outcome<DisassociateAgentCollaboratorResult, BedrockAgentError> DisassociateAgentCollaboratorOutcome;
 typedef Aws::Utils::Outcome<DisassociateAgentKnowledgeBaseResult, BedrockAgentError> DisassociateAgentKnowledgeBaseOutcome;
 typedef Aws::Utils::Outcome<GetAgentResult, BedrockAgentError> GetAgentOutcome;
@@ -249,6 +259,7 @@ typedef Aws::Utils::Outcome<GetKnowledgeBaseResult, BedrockAgentError> GetKnowle
 typedef Aws::Utils::Outcome<GetKnowledgeBaseDocumentsResult, BedrockAgentError> GetKnowledgeBaseDocumentsOutcome;
 typedef Aws::Utils::Outcome<GetPromptResult, BedrockAgentError> GetPromptOutcome;
 typedef Aws::Utils::Outcome<GetResourcePolicyResult, BedrockAgentError> GetResourcePolicyOutcome;
+typedef Aws::Utils::Outcome<GetVpcConfigurationResult, BedrockAgentError> GetVpcConfigurationOutcome;
 typedef Aws::Utils::Outcome<IngestKnowledgeBaseDocumentsResult, BedrockAgentError> IngestKnowledgeBaseDocumentsOutcome;
 typedef Aws::Utils::Outcome<ListAgentActionGroupsResult, BedrockAgentError> ListAgentActionGroupsOutcome;
 typedef Aws::Utils::Outcome<ListAgentAliasesResult, BedrockAgentError> ListAgentAliasesOutcome;
@@ -265,6 +276,7 @@ typedef Aws::Utils::Outcome<ListKnowledgeBaseDocumentsResult, BedrockAgentError>
 typedef Aws::Utils::Outcome<ListKnowledgeBasesResult, BedrockAgentError> ListKnowledgeBasesOutcome;
 typedef Aws::Utils::Outcome<ListPromptsResult, BedrockAgentError> ListPromptsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, BedrockAgentError> ListTagsForResourceOutcome;
+typedef Aws::Utils::Outcome<ListVpcConfigurationsResult, BedrockAgentError> ListVpcConfigurationsOutcome;
 typedef Aws::Utils::Outcome<PrepareAgentResult, BedrockAgentError> PrepareAgentOutcome;
 typedef Aws::Utils::Outcome<PrepareFlowResult, BedrockAgentError> PrepareFlowOutcome;
 typedef Aws::Utils::Outcome<PutResourcePolicyResult, BedrockAgentError> PutResourcePolicyOutcome;
@@ -298,6 +310,7 @@ typedef std::future<CreateFlowVersionOutcome> CreateFlowVersionOutcomeCallable;
 typedef std::future<CreateKnowledgeBaseOutcome> CreateKnowledgeBaseOutcomeCallable;
 typedef std::future<CreatePromptOutcome> CreatePromptOutcomeCallable;
 typedef std::future<CreatePromptVersionOutcome> CreatePromptVersionOutcomeCallable;
+typedef std::future<CreateVpcConfigurationOutcome> CreateVpcConfigurationOutcomeCallable;
 typedef std::future<DeleteAgentOutcome> DeleteAgentOutcomeCallable;
 typedef std::future<DeleteAgentActionGroupOutcome> DeleteAgentActionGroupOutcomeCallable;
 typedef std::future<DeleteAgentAliasOutcome> DeleteAgentAliasOutcomeCallable;
@@ -310,6 +323,7 @@ typedef std::future<DeleteKnowledgeBaseOutcome> DeleteKnowledgeBaseOutcomeCallab
 typedef std::future<DeleteKnowledgeBaseDocumentsOutcome> DeleteKnowledgeBaseDocumentsOutcomeCallable;
 typedef std::future<DeletePromptOutcome> DeletePromptOutcomeCallable;
 typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
+typedef std::future<DeleteVpcConfigurationOutcome> DeleteVpcConfigurationOutcomeCallable;
 typedef std::future<DisassociateAgentCollaboratorOutcome> DisassociateAgentCollaboratorOutcomeCallable;
 typedef std::future<DisassociateAgentKnowledgeBaseOutcome> DisassociateAgentKnowledgeBaseOutcomeCallable;
 typedef std::future<GetAgentOutcome> GetAgentOutcomeCallable;
@@ -327,6 +341,7 @@ typedef std::future<GetKnowledgeBaseOutcome> GetKnowledgeBaseOutcomeCallable;
 typedef std::future<GetKnowledgeBaseDocumentsOutcome> GetKnowledgeBaseDocumentsOutcomeCallable;
 typedef std::future<GetPromptOutcome> GetPromptOutcomeCallable;
 typedef std::future<GetResourcePolicyOutcome> GetResourcePolicyOutcomeCallable;
+typedef std::future<GetVpcConfigurationOutcome> GetVpcConfigurationOutcomeCallable;
 typedef std::future<IngestKnowledgeBaseDocumentsOutcome> IngestKnowledgeBaseDocumentsOutcomeCallable;
 typedef std::future<ListAgentActionGroupsOutcome> ListAgentActionGroupsOutcomeCallable;
 typedef std::future<ListAgentAliasesOutcome> ListAgentAliasesOutcomeCallable;
@@ -343,6 +358,7 @@ typedef std::future<ListKnowledgeBaseDocumentsOutcome> ListKnowledgeBaseDocument
 typedef std::future<ListKnowledgeBasesOutcome> ListKnowledgeBasesOutcomeCallable;
 typedef std::future<ListPromptsOutcome> ListPromptsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+typedef std::future<ListVpcConfigurationsOutcome> ListVpcConfigurationsOutcomeCallable;
 typedef std::future<PrepareAgentOutcome> PrepareAgentOutcomeCallable;
 typedef std::future<PrepareFlowOutcome> PrepareFlowOutcomeCallable;
 typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
@@ -403,6 +419,9 @@ typedef std::function<void(const BedrockAgentClient*, const Model::CreatePromptR
 typedef std::function<void(const BedrockAgentClient*, const Model::CreatePromptVersionRequest&, const Model::CreatePromptVersionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreatePromptVersionResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentClient*, const Model::CreateVpcConfigurationRequest&,
+                           const Model::CreateVpcConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateVpcConfigurationResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentClient*, const Model::DeleteAgentRequest&, const Model::DeleteAgentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteAgentResponseReceivedHandler;
@@ -440,6 +459,9 @@ typedef std::function<void(const BedrockAgentClient*, const Model::DeletePromptR
 typedef std::function<void(const BedrockAgentClient*, const Model::DeleteResourcePolicyRequest&, const Model::DeleteResourcePolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteResourcePolicyResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentClient*, const Model::DeleteVpcConfigurationRequest&,
+                           const Model::DeleteVpcConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteVpcConfigurationResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentClient*, const Model::DisassociateAgentCollaboratorRequest&,
                            const Model::DisassociateAgentCollaboratorOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -493,6 +515,9 @@ typedef std::function<void(const BedrockAgentClient*, const Model::GetPromptRequ
 typedef std::function<void(const BedrockAgentClient*, const Model::GetResourcePolicyRequest&, const Model::GetResourcePolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetResourcePolicyResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentClient*, const Model::GetVpcConfigurationRequest&, const Model::GetVpcConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetVpcConfigurationResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentClient*, const Model::IngestKnowledgeBaseDocumentsRequest&,
                            const Model::IngestKnowledgeBaseDocumentsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -542,6 +567,9 @@ typedef std::function<void(const BedrockAgentClient*, const Model::ListPromptsRe
 typedef std::function<void(const BedrockAgentClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentClient*, const Model::ListVpcConfigurationsRequest&,
+                           const Model::ListVpcConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListVpcConfigurationsResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentClient*, const Model::PrepareAgentRequest&, const Model::PrepareAgentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PrepareAgentResponseReceivedHandler;
