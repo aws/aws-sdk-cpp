@@ -799,7 +799,7 @@ void S3CrtClient::InitCrtEndpointFromUri(aws_uri& endpoint_uri, const Aws::Http:
 }
 
 void S3CrtClient::InitCommonCrtRequestOption(CrtRequestCallbackUserData* userData, aws_s3_meta_request_options* options,
-                                             const Aws::AmazonWebServiceRequest* request, const Aws::Http::URI& uri,
+                                             Aws::UniquePtr<Aws::AmazonWebServiceRequest> request, const Aws::Http::URI& uri,
                                              Aws::Http::HttpMethod method) const {
   std::shared_ptr<HttpRequest> httpRequest(nullptr);
   if (request) {
@@ -812,7 +812,7 @@ void S3CrtClient::InitCommonCrtRequestOption(CrtRequestCallbackUserData* userDat
   std::shared_ptr<HttpResponse> httpResponse = Aws::MakeShared<Aws::Http::Standard::StandardHttpResponse>(ALLOCATION_TAG, httpRequest);
 
   userData->s3CrtClient = this;
-  userData->originalRequest = request;
+  userData->originalRequest = std::move(request);
   userData->request = httpRequest;
   userData->response = httpResponse;
 
@@ -1000,7 +1000,7 @@ static void CopyObjectRequestShutdownCallback(void* user_data) {
       userData->asyncCallerContext->GetMonitorContext().OnRequestSucceeded(userData->request, userData->response);
     }
   }
-  userData->copyResponseHandler(userData->s3CrtClient, *(reinterpret_cast<const CopyObjectRequest*>(userData->originalRequest)),
+  userData->copyResponseHandler(userData->s3CrtClient, *(static_cast<const CopyObjectRequest*>(userData->originalRequest.get())),
                                 std::move(outcome), userData->asyncCallerContext);
 
   Aws::Delete(userData);
@@ -1071,7 +1071,8 @@ void S3CrtClient::CopyObjectAsync(const CopyObjectRequest& request, const CopyOb
   if (handlerContext) {
     userData->asyncCallerContext = handlerContext;
   }
-  InitCommonCrtRequestOption(userData, &options, &request, endpointResolutionOutcome.GetResult().GetURI(), Aws::Http::HttpMethod::HTTP_PUT);
+  auto requestCopy = Aws::MakeUnique<CopyObjectRequest>(ALLOCATION_TAG, request);
+  InitCommonCrtRequestOption(userData, &options, std::move(requestCopy), endpointResolutionOutcome.GetResult().GetURI(), Aws::Http::HttpMethod::HTTP_PUT);
   if (userData != nullptr && userData->request != nullptr && userData->request->GetContentBody() != nullptr &&
       userData->request->GetContentBody()->fail()) {
     return handler(this, request,
@@ -1245,7 +1246,7 @@ static void GetObjectRequestShutdownCallback(void* user_data) {
       userData->asyncCallerContext->GetMonitorContext().OnRequestSucceeded(userData->request, userData->response);
     }
   }
-  userData->getResponseHandler(userData->s3CrtClient, *(reinterpret_cast<const GetObjectRequest*>(userData->originalRequest)),
+  userData->getResponseHandler(userData->s3CrtClient, *(static_cast<const GetObjectRequest*>(userData->originalRequest.get())),
                                std::move(outcome), userData->asyncCallerContext);
 
   Aws::Delete(userData);
@@ -1309,7 +1310,8 @@ void S3CrtClient::GetObjectAsync(const GetObjectRequest& request, const GetObjec
   if (handlerContext) {
     userData->asyncCallerContext = handlerContext;
   }
-  InitCommonCrtRequestOption(userData, &options, &request, endpointResolutionOutcome.GetResult().GetURI(), Aws::Http::HttpMethod::HTTP_GET);
+  auto requestCopy = Aws::MakeUnique<GetObjectRequest>(ALLOCATION_TAG, request);
+  InitCommonCrtRequestOption(userData, &options, std::move(requestCopy), endpointResolutionOutcome.GetResult().GetURI(), Aws::Http::HttpMethod::HTTP_GET);
   if (userData != nullptr && userData->request != nullptr && userData->request->GetContentBody() != nullptr &&
       userData->request->GetContentBody()->fail()) {
     return handler(this, request,
@@ -1406,7 +1408,7 @@ static void PutObjectRequestShutdownCallback(void* user_data) {
       userData->asyncCallerContext->GetMonitorContext().OnRequestSucceeded(userData->request, userData->response);
     }
   }
-  userData->putResponseHandler(userData->s3CrtClient, *(reinterpret_cast<const PutObjectRequest*>(userData->originalRequest)),
+  userData->putResponseHandler(userData->s3CrtClient, *(static_cast<const PutObjectRequest*>(userData->originalRequest.get())),
                                std::move(outcome), userData->asyncCallerContext);
 
   Aws::Delete(userData);
@@ -1470,7 +1472,8 @@ void S3CrtClient::PutObjectAsync(const PutObjectRequest& request, const PutObjec
   if (handlerContext) {
     userData->asyncCallerContext = handlerContext;
   }
-  InitCommonCrtRequestOption(userData, &options, &request, endpointResolutionOutcome.GetResult().GetURI(), Aws::Http::HttpMethod::HTTP_PUT);
+  auto requestCopy = Aws::MakeUnique<PutObjectRequest>(ALLOCATION_TAG, request);
+  InitCommonCrtRequestOption(userData, &options, std::move(requestCopy), endpointResolutionOutcome.GetResult().GetURI(), Aws::Http::HttpMethod::HTTP_PUT);
   if (userData != nullptr && userData->request != nullptr && userData->request->GetContentBody() != nullptr &&
       userData->request->GetContentBody()->fail()) {
     return handler(this, request,
