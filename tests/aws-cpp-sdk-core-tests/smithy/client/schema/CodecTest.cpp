@@ -34,7 +34,7 @@ void RoundTrip(const Codec& codec, const std::shared_ptr<const Schema>& root) {
   ASSERT_TRUE(payload.IsSuccess());
   const Aws::String bytes = payload.GetResult();
 
-  auto d = codec.CreateDeserializer(reinterpret_cast<const unsigned char*>(bytes.data()), bytes.size());
+  auto d = codec.CreateDeserializer(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(bytes.data()), bytes.size()));
   ASSERT_NE(d, nullptr);
   Aws::Crt::Optional<Aws::String> gotName;
   Aws::Crt::Optional<int> gotCount;
@@ -128,7 +128,7 @@ TEST_F(CodecTest, JsonDeserializeShapeReturnsTypedObject) {
   SCOPED_TRACE(Aws::String("input JSON: ") + payload);
   JsonCodec codec;
   Person p;
-  codec.DeserializeShape(reinterpret_cast<const unsigned char*>(payload.data()), payload.size(), p);
+  codec.DeserializeShape(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()), p);
   EXPECT_EQ(p.name, "Alice");
   EXPECT_EQ(p.count, 7);
 }
@@ -143,7 +143,7 @@ TEST_F(CodecTest, CborDeserializeShapeRoundTrip) {
   const Aws::String encoded = bytes.GetResult();
 
   Person p;
-  codec.DeserializeShape(reinterpret_cast<const unsigned char*>(encoded.data()), encoded.size(), p);
+  codec.DeserializeShape(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(encoded.data()), encoded.size()), p);
   EXPECT_EQ(p.name, "Bob");
   EXPECT_EQ(p.count, 9);
 }
@@ -230,7 +230,7 @@ TEST_F(CodecTest, JsonNestedShape) {
   EXPECT_EQ(encoded, "{\"fizz\":{\"buzz\":\"value\"}}");
 
   Foo f;
-  codec.DeserializeShape(reinterpret_cast<const unsigned char*>(encoded.data()), encoded.size(), f);
+  codec.DeserializeShape(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(encoded.data()), encoded.size()), f);
   EXPECT_EQ(f.fizz.buzz, "value");
 }
 
@@ -244,7 +244,7 @@ TEST_F(CodecTest, XmlNestedShape) {
   SCOPED_TRACE(Aws::String("encoded XML: ") + encoded);
 
   Foo f;
-  codec.DeserializeShape(reinterpret_cast<const unsigned char*>(encoded.data()), encoded.size(), f);
+  codec.DeserializeShape(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(encoded.data()), encoded.size()), f);
   EXPECT_EQ(f.fizz.buzz, "value");
 }
 
@@ -257,6 +257,6 @@ TEST_F(CodecTest, CborNestedShape) {
   const Aws::String encoded = bytes.GetResult();
 
   Foo f;
-  codec.DeserializeShape(reinterpret_cast<const unsigned char*>(encoded.data()), encoded.size(), f);
+  codec.DeserializeShape(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(encoded.data()), encoded.size()), f);
   EXPECT_EQ(f.fizz.buzz, "value");
 }

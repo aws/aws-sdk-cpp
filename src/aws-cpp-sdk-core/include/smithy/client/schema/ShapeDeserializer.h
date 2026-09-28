@@ -35,7 +35,6 @@ class SMITHY_API ShapeDeserializer {
   virtual Aws::Crt::Optional<Aws::String> ReadString(const Schema& schema) = 0;
   virtual Aws::Crt::Optional<Aws::Utils::DateTime> ReadTimestamp(const Schema& schema) = 0;
   virtual Aws::Crt::Optional<Aws::Utils::ByteBuffer> ReadBlob(const Schema& schema) = 0;
-  virtual Aws::Crt::Optional<int> ReadEnum(const Schema& schema) = 0;
 
   virtual bool IsNull() = 0;
 };

@@ -287,3 +287,30 @@ TEST_F(QueryShapeSerializerTest, Ec2ListIsFlatWithDotN) {
   ASSERT_TRUE(outcome.IsSuccess());
   EXPECT_EQ(outcome.GetResult(), "Items.1=a&Items.2=b");
 }
+
+TEST_F(QueryShapeSerializerTest, TimestampFormatTraitControlsWireForm) {
+  auto root = Schema::StructureBuilder("Root").Build();
+  const Aws::Utils::DateTime dt(1234567890.0);
+  auto epoch = Schema::CreateMember(
+      "t", ShapeType::Timestamp,
+      {{TimestampFormatTrait::KEY(), Aws::MakeShared<TimestampFormatTrait>("Test", TimestampFormatTrait::Format::EPOCH_SECONDS)}});
+  auto defaulted = Schema::CreateMember("t", ShapeType::Timestamp);
+
+  {
+    QueryShapeSerializer s;
+    LambdaStruct rs(*root, [&](ShapeSerializer& ser) { ser.WriteTimestamp(*epoch, dt); });
+    s.WriteStruct(*root, rs);
+    auto out = s.GetPayload();
+    ASSERT_TRUE(out.IsSuccess());
+    EXPECT_NE(out.GetResult().find("t=1234567890"), Aws::String::npos);
+    EXPECT_EQ(out.GetResult().find("%3A"), Aws::String::npos);
+  }
+  {
+    QueryShapeSerializer s;
+    LambdaStruct rs(*root, [&](ShapeSerializer& ser) { ser.WriteTimestamp(*defaulted, dt); });
+    s.WriteStruct(*root, rs);
+    auto out = s.GetPayload();
+    ASSERT_TRUE(out.IsSuccess());
+    EXPECT_NE(out.GetResult().find("%3A"), Aws::String::npos);
+  }
+}

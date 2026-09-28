@@ -23,7 +23,6 @@ class SMITHY_API SpecificShapeSerializer : public ShapeSerializer {
   void WriteString(const Schema&, const Aws::String&) override {}
   void WriteTimestamp(const Schema&, const Aws::Utils::DateTime&) override {}
   void WriteBlob(const Schema&, const Aws::Utils::ByteBuffer&) override {}
-  void WriteEnum(const Schema&, int) override {}
   void WriteNull(const Schema&) override {}
 };
 

@@ -9,6 +9,7 @@
 #include <smithy/client/schema/MapSerializer.h>
 #include <smithy/client/schema/Schema.h>
 #include <smithy/client/schema/SchemaBuilder.h>
+#include <smithy/client/schema/SerdeTraits.h>
 
 #include <functional>
 
@@ -458,4 +459,38 @@ TEST_F(JsonShapeSerializerTest, FloatNegativeValue) {
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   EXPECT_EQ(outcome.GetResult(), "{\"f\":-2.25}");
+}
+
+TEST_F(JsonShapeSerializerTest, TimestampFormatTraitControlsWireForm) {
+  auto root = Schema::StructureBuilder("Root").Build();
+  const Aws::Utils::DateTime dt(1234567890.0);
+
+  auto dateTime = Schema::CreateMember(
+      "t", ShapeType::Timestamp,
+      {{TimestampFormatTrait::KEY(), Aws::MakeShared<TimestampFormatTrait>("Test", TimestampFormatTrait::Format::DATE_TIME)}});
+  auto httpDate = Schema::CreateMember(
+      "t", ShapeType::Timestamp,
+      {{TimestampFormatTrait::KEY(), Aws::MakeShared<TimestampFormatTrait>("Test", TimestampFormatTrait::Format::HTTP_DATE)}});
+  auto defaulted = Schema::CreateMember("t", ShapeType::Timestamp);
+
+  {
+    JsonShapeSerializer s;
+    LambdaStruct rs(*root, [&](ShapeSerializer& ser) { ser.WriteTimestamp(*dateTime, dt); });
+    s.WriteStruct(*root, rs);
+    EXPECT_NE(s.GetPayload().GetResult().find("\"t\":\"2009-02-13T23:31:30Z\""), Aws::String::npos);
+  }
+  {
+    JsonShapeSerializer s;
+    LambdaStruct rs(*root, [&](ShapeSerializer& ser) { ser.WriteTimestamp(*httpDate, dt); });
+    s.WriteStruct(*root, rs);
+    EXPECT_NE(s.GetPayload().GetResult().find("\"t\":\"Fri, 13 Feb 2009 23:31:30 GMT\""), Aws::String::npos);
+  }
+  {
+    JsonShapeSerializer s;
+    LambdaStruct rs(*root, [&](ShapeSerializer& ser) { ser.WriteTimestamp(*defaulted, dt); });
+    s.WriteStruct(*root, rs);
+    const Aws::String payload = s.GetPayload().GetResult();
+    EXPECT_NE(payload.find("\"t\":1234567890"), Aws::String::npos);
+    EXPECT_EQ(payload.find("\"t\":\""), Aws::String::npos);
+  }
 }

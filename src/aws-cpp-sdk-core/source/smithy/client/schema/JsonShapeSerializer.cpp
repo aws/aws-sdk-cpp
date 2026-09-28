@@ -8,6 +8,7 @@
 #include <smithy/client/schema/JsonTraits.h>
 #include <smithy/client/schema/JsonWriteUtils.h>
 #include <smithy/client/schema/MapSerializer.h>
+#include <smithy/client/schema/SerdeTraits.h>
 #include <smithy/client/schema/SerializableStruct.h>
 
 #include <cmath>
@@ -59,13 +60,19 @@ class JsonShapeSerializer::Impl final : public ShapeSerializer {
   void WriteFloat(const Schema&, float value) override { WriteFloatingPoint(value); }
   void WriteDouble(const Schema&, double value) override { WriteFloatingPoint(value); }
   void WriteString(const Schema&, const Aws::String& value) override { Aws::Schema::WriteQuotedJsonString(m_buf, value); }
-  void WriteTimestamp(const Schema&, const DateTime& value) override { m_buf += StringUtils::to_string(value.SecondsWithMSPrecision()); }
+  void WriteTimestamp(const Schema& schema, const DateTime& value) override {
+    const auto format = ResolveTimestampFormat(schema, TimestampFormatTrait::Format::EPOCH_SECONDS);
+    if (format == TimestampFormatTrait::Format::EPOCH_SECONDS) {
+      m_buf += FormatTimestampText(value, format);
+    } else {
+      Aws::Schema::WriteQuotedJsonString(m_buf, FormatTimestampText(value, format));
+    }
+  }
   void WriteBlob(const Schema&, const ByteBuffer& value) override {
     m_buf += '"';
     m_buf += HashingUtils::Base64Encode(value);
     m_buf += '"';
   }
-  void WriteEnum(const Schema& schema, int value) override { WriteInteger(schema, value); }
   void WriteNull(const Schema&) override { m_buf += "null"; }
 
   // Non-finite floats have no JSON number form; Smithy encodes them as quoted strings.
@@ -157,10 +164,6 @@ class JsonShapeSerializer::Impl final : public ShapeSerializer {
       m_outer->WriteFieldName(s);
       m_outer->WriteBlob(s, v);
     }
-    void WriteEnum(const Schema& s, int v) override {
-      m_outer->WriteFieldName(s);
-      m_outer->WriteEnum(s, v);
-    }
     void WriteNull(const Schema& s) override {
       m_outer->WriteFieldName(s);
       m_outer->WriteNull(s);
@@ -217,10 +220,6 @@ class JsonShapeSerializer::Impl final : public ShapeSerializer {
     void WriteBlob(const Schema& s, const ByteBuffer& v) override {
       m_outer->WriteCommaIfNeeded();
       m_outer->WriteBlob(s, v);
-    }
-    void WriteEnum(const Schema& s, int v) override {
-      m_outer->WriteCommaIfNeeded();
-      m_outer->WriteEnum(s, v);
     }
     void WriteNull(const Schema& s) override {
       m_outer->WriteCommaIfNeeded();
@@ -289,7 +288,6 @@ void JsonShapeSerializer::WriteDouble(const Schema& schema, double value) { m_im
 void JsonShapeSerializer::WriteString(const Schema& schema, const Aws::String& value) { m_impl->WriteString(schema, value); }
 void JsonShapeSerializer::WriteTimestamp(const Schema& schema, const DateTime& value) { m_impl->WriteTimestamp(schema, value); }
 void JsonShapeSerializer::WriteBlob(const Schema& schema, const ByteBuffer& value) { m_impl->WriteBlob(schema, value); }
-void JsonShapeSerializer::WriteEnum(const Schema& schema, int value) { m_impl->WriteEnum(schema, value); }
 void JsonShapeSerializer::WriteNull(const Schema& schema) { m_impl->WriteNull(schema); }
 
 JsonShapeSerializer::SerializerOutcome JsonShapeSerializer::GetPayload() { return m_impl->GetPayload(); }

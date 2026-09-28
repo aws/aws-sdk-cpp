@@ -61,14 +61,13 @@ class QueryShapeSerializer::Impl final : public ShapeSerializer {
   void WriteFloat(const Schema&, float value) override { EmitField(FormatFloatingPoint(value)); }
   void WriteDouble(const Schema&, double value) override { EmitField(FormatFloatingPoint(value)); }
   void WriteString(const Schema&, const Aws::String& value) override { EmitField(StringUtils::URLEncode(value.c_str())); }
-  void WriteTimestamp(const Schema&, const DateTime& value) override {
-    EmitField(StringUtils::URLEncode(value.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()));
+  void WriteTimestamp(const Schema& schema, const DateTime& value) override {
+    EmitField(StringUtils::URLEncode(
+        FormatTimestampText(value, ResolveTimestampFormat(schema, TimestampFormatTrait::Format::DATE_TIME)).c_str()));
   }
   void WriteBlob(const Schema&, const ByteBuffer& value) override {
     EmitField(StringUtils::URLEncode(HashingUtils::Base64Encode(value).c_str()));
   }
-  void WriteEnum(const Schema& schema, int value) override { WriteInteger(schema, value); }
-
   void WriteNull(const Schema&) override {}
 
   SerializerOutcome GetPayload() {
@@ -130,10 +129,6 @@ class QueryShapeSerializer::Impl final : public ShapeSerializer {
       m_outer->m_prefix = ChildKey(s);
       m_outer->WriteBlob(s, v);
     }
-    void WriteEnum(const Schema& s, int v) override {
-      m_outer->m_prefix = ChildKey(s);
-      m_outer->WriteEnum(s, v);
-    }
     void WriteNull(const Schema&) override {}
 
    private:
@@ -192,11 +187,6 @@ class QueryShapeSerializer::Impl final : public ShapeSerializer {
       m_outer->m_prefix = ItemKey();
       m_outer->WriteBlob(s, v);
     }
-    void WriteEnum(const Schema& s, int v) override {
-      m_outer->m_prefix = ItemKey();
-      m_outer->WriteEnum(s, v);
-    }
-
     void WriteNull(const Schema&) override { ++m_index; }
 
    private:
@@ -359,7 +349,6 @@ void QueryShapeSerializer::WriteDouble(const Schema& schema, double value) { m_i
 void QueryShapeSerializer::WriteString(const Schema& schema, const Aws::String& value) { m_impl->WriteString(schema, value); }
 void QueryShapeSerializer::WriteTimestamp(const Schema& schema, const DateTime& value) { m_impl->WriteTimestamp(schema, value); }
 void QueryShapeSerializer::WriteBlob(const Schema& schema, const ByteBuffer& value) { m_impl->WriteBlob(schema, value); }
-void QueryShapeSerializer::WriteEnum(const Schema& schema, int value) { m_impl->WriteEnum(schema, value); }
 void QueryShapeSerializer::WriteNull(const Schema& schema) { m_impl->WriteNull(schema); }
 
 QueryShapeSerializer::SerializerOutcome QueryShapeSerializer::GetPayload() { return m_impl->GetPayload(); }

@@ -9,6 +9,7 @@
 #include <smithy/client/schema/MapSerializer.h>
 #include <smithy/client/schema/Schema.h>
 #include <smithy/client/schema/SchemaBuilder.h>
+#include <smithy/client/schema/SerdeTraits.h>
 #include <smithy/client/schema/XmlShapeDeserializer.h>
 #include <smithy/client/schema/XmlShapeSerializer.h>
 #include <smithy/client/schema/XmlTraits.h>
@@ -43,7 +44,7 @@ TEST_F(XmlShapeDeserializerTest, Boolean) {
   auto enabled = root->GetMember("enabled").value();
   auto payload = Encode(root, [&](ShapeSerializer& ser) { ser.WriteBoolean(*enabled, true); });
 
-  XmlShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
   Aws::Crt::Optional<bool> got;
   d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadBoolean(m); });
   ASSERT_TRUE(got.has_value());
@@ -55,7 +56,7 @@ TEST_F(XmlShapeDeserializerTest, Integer) {
   auto n = root->GetMember("n").value();
   auto payload = Encode(root, [&](ShapeSerializer& ser) { ser.WriteInteger(*n, -42); });
 
-  XmlShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
   Aws::Crt::Optional<int> got;
   d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadInteger(m); });
   ASSERT_TRUE(got.has_value());
@@ -67,7 +68,7 @@ TEST_F(XmlShapeDeserializerTest, Long) {
   auto big = root->GetMember("big").value();
   auto payload = Encode(root, [&](ShapeSerializer& ser) { ser.WriteLong(*big, 9876543210LL); });
 
-  XmlShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
   Aws::Crt::Optional<int64_t> got;
   d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadLong(m); });
   ASSERT_TRUE(got.has_value());
@@ -79,7 +80,7 @@ TEST_F(XmlShapeDeserializerTest, Double) {
   auto member = root->GetMember("d").value();
   auto payload = Encode(root, [&](ShapeSerializer& ser) { ser.WriteDouble(*member, 3.25); });
 
-  XmlShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
   Aws::Crt::Optional<double> got;
   d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadDouble(m); });
   ASSERT_TRUE(got.has_value());
@@ -101,7 +102,7 @@ TEST_F(XmlShapeDeserializerTest, NonFiniteDoubles) {
     ser.WriteDouble(*ninf, -std::numeric_limits<double>::infinity());
   });
 
-  XmlShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
   bool sawNan = false, sawInf = false, sawNinf = false;
   d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
     auto v = de.ReadDouble(m);
@@ -124,7 +125,7 @@ TEST_F(XmlShapeDeserializerTest, StringWithEscapes) {
   auto member = root->GetMember("msg").value();
   auto payload = Encode(root, [&](ShapeSerializer& ser) { ser.WriteString(*member, "x < 5 & y > 3"); });
 
-  XmlShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
   Aws::Crt::Optional<Aws::String> got;
   d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadString(m); });
   ASSERT_TRUE(got.has_value());
@@ -140,7 +141,7 @@ TEST_F(XmlShapeDeserializerTest, Blob) {
   blob[2] = 0x6f;
   auto payload = Encode(root, [&](ShapeSerializer& ser) { ser.WriteBlob(*member, blob); });
 
-  XmlShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
   Aws::Crt::Optional<Aws::Utils::ByteBuffer> got;
   d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadBlob(m); });
   ASSERT_TRUE(got.has_value());
@@ -156,7 +157,7 @@ TEST_F(XmlShapeDeserializerTest, Timestamp) {
   Aws::Utils::DateTime dt(1234567890.0);
   auto payload = Encode(root, [&](ShapeSerializer& ser) { ser.WriteTimestamp(*member, dt); });
 
-  XmlShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
   Aws::Crt::Optional<Aws::Utils::DateTime> got;
   d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadTimestamp(m); });
   ASSERT_TRUE(got.has_value());
@@ -172,7 +173,7 @@ TEST_F(XmlShapeDeserializerTest, XmlNameOverride) {
   auto payload = Encode(root, [&](ShapeSerializer& ser) { ser.WriteString(*member, "hello"); });
   EXPECT_NE(payload.find("<ExternalName>"), Aws::String::npos);
 
-  XmlShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
   Aws::Crt::Optional<Aws::String> got;
   d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadString(m); });
   ASSERT_TRUE(got.has_value());
@@ -187,7 +188,7 @@ TEST_F(XmlShapeDeserializerTest, Attribute) {
   auto payload = Encode(root, [&](ShapeSerializer& ser) { ser.WriteString(*member, "abc"); });
   EXPECT_NE(payload.find("id=\"abc\""), Aws::String::npos);
 
-  XmlShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
   Aws::Crt::Optional<Aws::String> got;
   d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadString(m); });
   ASSERT_TRUE(got.has_value());
@@ -204,7 +205,7 @@ TEST_F(XmlShapeDeserializerTest, NestedStructure) {
     ser.WriteStruct(*meta, LambdaStruct(*meta, [&](ShapeSerializer& ser2) { ser2.WriteString(*inner, "val"); }));
   });
 
-  XmlShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
   Aws::String got;
   d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
     if (m.GetMemberName() == "meta") {
@@ -234,7 +235,7 @@ TEST_F(XmlShapeDeserializerTest, WrappedListOfStrings) {
     });
   });
 
-  XmlShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
   Aws::Vector<Aws::String> values;
   d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
     if (m.GetMemberName() == "tags") {
@@ -267,7 +268,7 @@ TEST_F(XmlShapeDeserializerTest, FlattenedList) {
 
   EXPECT_NE(payload.find("<tags>a</tags><tags>b</tags>"), Aws::String::npos);
 
-  XmlShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
   Aws::Vector<Aws::String> values;
   d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
     if (m.GetMemberName() == "tags") {
@@ -301,7 +302,7 @@ TEST_F(XmlShapeDeserializerTest, ListOfStructures) {
   elemStruct.PutMember("id", Schema::CreateInteger("I"));
   auto elemSchema = elemStruct.Build();
 
-  XmlShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
   Aws::Vector<int> ids;
   d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
     if (m.GetMemberName() == "items") {
@@ -334,7 +335,7 @@ TEST_F(XmlShapeDeserializerTest, WrappedMapOfStrings) {
     });
   });
 
-  XmlShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
   Aws::Map<Aws::String, Aws::String> entries;
   d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
     if (m.GetMemberName() == "headers") {
@@ -367,7 +368,7 @@ TEST_F(XmlShapeDeserializerTest, CustomMapNames) {
     });
   });
 
-  XmlShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
   Aws::Map<Aws::String, Aws::String> entries;
   d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
     if (m.GetMemberName() == "tags") {
@@ -397,7 +398,7 @@ TEST_F(XmlShapeDeserializerTest, CustomListItemName) {
     });
   });
 
-  XmlShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
   Aws::Vector<Aws::String> values;
   d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
     if (m.GetMemberName() == "things") {
@@ -419,7 +420,7 @@ TEST_F(XmlShapeDeserializerTest, AbsentMemberSkipped) {
   auto present = root->GetMember("present").value();
   auto payload = Encode(root, [&](ShapeSerializer& ser) { ser.WriteString(*present, "here"); });
 
-  XmlShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
   Aws::Map<Aws::String, Aws::String> got;
   d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
     auto v = de.ReadString(m);
@@ -464,7 +465,7 @@ TEST_F(XmlShapeDeserializerTest, DeserializesLiteralPayload) {
   Aws::Map<Aws::String, Aws::String> metaValues;
   int nestedId = -1;
 
-  XmlShapeDeserializer d(reinterpret_cast<const unsigned char*>(payload.data()), payload.size());
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
   d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
     const Aws::String n = m.GetMemberName();
     if (n == "name") {
@@ -498,4 +499,97 @@ TEST_F(XmlShapeDeserializerTest, DeserializesLiteralPayload) {
   ASSERT_EQ(metaValues.size(), 1u);
   EXPECT_EQ(metaValues["k1"], "v1");
   EXPECT_EQ(nestedId, 7);
+}
+
+namespace {
+
+class XmlNestedBar final : public SerializableStruct {
+ public:
+  const Schema& GetSchema() const override { return *m_schema; }
+  const std::shared_ptr<const Schema>& SchemaPtr() const { return m_schema; }
+
+  void SerializeMembers(ShapeSerializer& serializer) const override {
+    serializer.WriteString(*GetSchema().GetMember("buzz").value(), buzz);
+  }
+
+  void From(const Schema& memberSchema, ShapeDeserializer& deserializer) override {
+    if (memberSchema.GetMemberIndex() == 0) {
+      auto v = deserializer.ReadString(memberSchema);
+      if (v.has_value()) {
+        buzz = v.value();
+      }
+    }
+  }
+
+  Aws::String buzz;
+
+ private:
+  static std::shared_ptr<const Schema> BuildSchema() {
+    return Schema::StructureBuilder("Bar", {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Test", "Bar")}})
+        .PutMember("buzz", Schema::CreateString("S"))
+        .Build();
+  }
+  std::shared_ptr<const Schema> m_schema{BuildSchema()};
+};
+
+class XmlNestedFoo final : public SerializableStruct {
+ public:
+  const Schema& GetSchema() const override { return *m_schema; }
+
+  void SerializeMembers(ShapeSerializer& serializer) const override {
+    serializer.WriteStruct(*GetSchema().GetMember("fizz").value(), fizz);
+  }
+
+  void From(const Schema& memberSchema, ShapeDeserializer& deserializer) override {
+    if (memberSchema.GetMemberIndex() == 0) {
+      deserializer.ReadStruct(*memberSchema.GetMemberTarget().value(),
+                              [this](const Schema& im, ShapeDeserializer& ide) { fizz.From(im, ide); });
+    }
+  }
+
+  XmlNestedBar fizz;
+
+ private:
+  static std::shared_ptr<const Schema> BuildSchema(const XmlNestedBar& fizz) {
+    return Schema::StructureBuilder("Foo", {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Test", "Foo")}})
+        .PutMember("fizz", fizz.SchemaPtr())
+        .Build();
+  }
+  std::shared_ptr<const Schema> m_schema{BuildSchema(fizz)};
+};
+
+}  // namespace
+
+TEST_F(XmlShapeDeserializerTest, DeserializesNestedIntoClass) {
+  XmlNestedFoo source;
+  source.fizz.buzz = "value";
+  XmlShapeSerializer s;
+  s.WriteStruct(source.GetSchema(), source);
+  const Aws::String encoded = s.GetPayload().GetResult();
+  SCOPED_TRACE(Aws::String("encoded XML: ") + encoded);
+
+  XmlNestedFoo f;
+  XmlShapeDeserializer d(
+      Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(encoded.data()), encoded.size()));
+  f.Deserialize(d);
+
+  EXPECT_EQ(f.fizz.buzz, "value");
+}
+
+TEST_F(XmlShapeDeserializerTest, TimestampFormatTraitControlsParsing) {
+  const Aws::Utils::DateTime dt(1234567890.0);
+  for (auto fmt : {TimestampFormatTrait::Format::EPOCH_SECONDS, TimestampFormatTrait::Format::HTTP_DATE}) {
+    auto root = RootBuilder()
+                    .PutMember("ts", Schema::CreateTimestamp("T"),
+                               {{TimestampFormatTrait::KEY(), Aws::MakeShared<TimestampFormatTrait>("Test", fmt)}})
+                    .Build();
+    auto member = root->GetMember("ts").value();
+    auto payload = Encode(root, [&](ShapeSerializer& ser) { ser.WriteTimestamp(*member, dt); });
+
+    XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
+    Aws::Crt::Optional<Aws::Utils::DateTime> got;
+    d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadTimestamp(m); });
+    ASSERT_TRUE(got.has_value());
+    EXPECT_EQ(got.value().Seconds(), 1234567890);
+  }
 }

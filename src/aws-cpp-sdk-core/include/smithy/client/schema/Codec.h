@@ -5,6 +5,7 @@
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/Types.h>
 #include <smithy/Smithy_EXPORTS.h>
 #include <smithy/client/schema/SerializableStruct.h>
 #include <smithy/client/schema/ShapeDeserializer.h>
@@ -22,29 +23,29 @@ class SMITHY_API Codec {
 
   virtual SerializerOutcome Serialize(const Schema& schema, const SerializableStruct& shape) const = 0;
 
-  virtual Aws::UniquePtr<ShapeDeserializer> CreateDeserializer(const unsigned char* data, size_t length) const = 0;
+  virtual Aws::UniquePtr<ShapeDeserializer> CreateDeserializer(Aws::Crt::ByteCursor data) const = 0;
 
-  void DeserializeShape(const unsigned char* data, size_t length, SerializableStruct& shape) const {
-    shape.Deserialize(*CreateDeserializer(data, length));
+  void DeserializeShape(Aws::Crt::ByteCursor data, SerializableStruct& shape) const {
+    shape.Deserialize(*CreateDeserializer(data));
   }
 };
 
 class SMITHY_API JsonCodec final : public Codec {
  public:
   SerializerOutcome Serialize(const Schema& schema, const SerializableStruct& shape) const override;
-  Aws::UniquePtr<ShapeDeserializer> CreateDeserializer(const unsigned char* data, size_t length) const override;
+  Aws::UniquePtr<ShapeDeserializer> CreateDeserializer(Aws::Crt::ByteCursor data) const override;
 };
 
 class SMITHY_API XmlCodec final : public Codec {
  public:
   SerializerOutcome Serialize(const Schema& schema, const SerializableStruct& shape) const override;
-  Aws::UniquePtr<ShapeDeserializer> CreateDeserializer(const unsigned char* data, size_t length) const override;
+  Aws::UniquePtr<ShapeDeserializer> CreateDeserializer(Aws::Crt::ByteCursor data) const override;
 };
 
 class SMITHY_API CborCodec final : public Codec {
  public:
   SerializerOutcome Serialize(const Schema& schema, const SerializableStruct& shape) const override;
-  Aws::UniquePtr<ShapeDeserializer> CreateDeserializer(const unsigned char* data, size_t length) const override;
+  Aws::UniquePtr<ShapeDeserializer> CreateDeserializer(Aws::Crt::ByteCursor data) const override;
 };
 
 }  // namespace schema

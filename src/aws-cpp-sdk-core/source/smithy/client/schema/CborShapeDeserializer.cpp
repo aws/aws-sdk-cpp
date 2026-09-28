@@ -11,7 +11,7 @@ using namespace Aws::Crt::Cbor;
 
 class CborShapeDeserializer::Impl final : public ShapeDeserializer {
  public:
-  Impl(const unsigned char* data, size_t length) : m_decoder(Aws::Crt::ByteCursorFromArray(data, length)) {}
+  explicit Impl(Aws::Crt::ByteCursor data) : m_decoder(data) {}
 
   void ReadStruct(const Schema& schema, const StructMemberConsumer& consumer) override {
     bool indefinite = false;
@@ -171,8 +171,6 @@ class CborShapeDeserializer::Impl final : public ShapeDeserializer {
     return ByteBuffer(val->ptr, val->len);
   }
 
-  Aws::Crt::Optional<int> ReadEnum(const Schema& schema) override { return ReadInteger(schema); }
-
   bool IsNull() override {
     auto type = m_decoder.PeekType();
     return type.has_value() && *type == CborType::Null;
@@ -246,8 +244,8 @@ class CborShapeDeserializer::Impl final : public ShapeDeserializer {
   CborDecoder m_decoder;
 };
 
-CborShapeDeserializer::CborShapeDeserializer(const unsigned char* data, size_t length)
-    : m_impl(Aws::MakeUnique<Impl>("CborShapeDeserializer", data, length)) {}
+CborShapeDeserializer::CborShapeDeserializer(Aws::Crt::ByteCursor data)
+    : m_impl(Aws::MakeUnique<Impl>("CborShapeDeserializer", data)) {}
 CborShapeDeserializer::~CborShapeDeserializer() = default;
 
 void CborShapeDeserializer::ReadStruct(const Schema& schema, const StructMemberConsumer& consumer) { m_impl->ReadStruct(schema, consumer); }
@@ -261,5 +259,4 @@ Aws::Crt::Optional<double> CborShapeDeserializer::ReadDouble(const Schema& schem
 Aws::Crt::Optional<Aws::String> CborShapeDeserializer::ReadString(const Schema& schema) { return m_impl->ReadString(schema); }
 Aws::Crt::Optional<DateTime> CborShapeDeserializer::ReadTimestamp(const Schema& schema) { return m_impl->ReadTimestamp(schema); }
 Aws::Crt::Optional<ByteBuffer> CborShapeDeserializer::ReadBlob(const Schema& schema) { return m_impl->ReadBlob(schema); }
-Aws::Crt::Optional<int> CborShapeDeserializer::ReadEnum(const Schema& schema) { return m_impl->ReadEnum(schema); }
 bool CborShapeDeserializer::IsNull() { return m_impl->IsNull(); }

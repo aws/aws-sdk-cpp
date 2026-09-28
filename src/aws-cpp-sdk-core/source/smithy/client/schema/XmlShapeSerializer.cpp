@@ -9,6 +9,7 @@
 #include <smithy/client/schema/InterceptingSerializer.h>
 #include <smithy/client/schema/MapSerializer.h>
 #include <smithy/client/schema/SerializableStruct.h>
+#include <smithy/client/schema/SerdeTraits.h>
 #include <smithy/client/schema/SpecificShapeSerializer.h>
 #include <smithy/client/schema/XmlShapeSerializer.h>
 #include <smithy/client/schema/XmlTraits.h>
@@ -76,7 +77,6 @@ class XmlShapeSerializer::Impl final : public InterceptingSerializer {
     void WriteString(const Schema& schema, const Aws::String& value) override;
     void WriteTimestamp(const Schema& schema, const Aws::Utils::DateTime& value) override;
     void WriteBlob(const Schema& schema, const Aws::Utils::ByteBuffer& value) override;
-    void WriteEnum(const Schema& schema, int value) override;
     void WriteNull(const Schema& schema) override;
 
    private:
@@ -116,7 +116,6 @@ class XmlShapeSerializer::Impl final : public InterceptingSerializer {
     void WriteDouble(const Schema& schema, double value) override;
     void WriteString(const Schema& schema, const Aws::String& value) override;
     void WriteTimestamp(const Schema& schema, const Aws::Utils::DateTime& value) override;
-    void WriteEnum(const Schema& schema, int value) override;
 
    private:
     void WriteAttr(const Schema& schema, const Aws::String& value);
@@ -354,15 +353,14 @@ void XmlShapeSerializer::Impl::ValueSerializer::WriteString(const Schema&, const
   m_outer->ClosePendingTag();
   m_outer->AppendEscaped(value);
 }
-void XmlShapeSerializer::Impl::ValueSerializer::WriteTimestamp(const Schema&, const Aws::Utils::DateTime& value) {
+void XmlShapeSerializer::Impl::ValueSerializer::WriteTimestamp(const Schema& schema, const Aws::Utils::DateTime& value) {
   m_outer->ClosePendingTag();
-  m_outer->AppendRaw(value.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  m_outer->AppendRaw(FormatTimestampText(value, ResolveTimestampFormat(schema, TimestampFormatTrait::Format::DATE_TIME)));
 }
 void XmlShapeSerializer::Impl::ValueSerializer::WriteBlob(const Schema&, const Aws::Utils::ByteBuffer& value) {
   m_outer->ClosePendingTag();
   m_outer->AppendRaw(HashingUtils::Base64Encode(value));
 }
-void XmlShapeSerializer::Impl::ValueSerializer::WriteEnum(const Schema& schema, int value) { WriteInteger(schema, value); }
 void XmlShapeSerializer::Impl::ValueSerializer::WriteNull(const Schema&) { m_outer->ClosePendingTag(); }
 
 ShapeSerializer& XmlShapeSerializer::Impl::StructElementSerializer::Before(const Schema& schema) {
@@ -416,12 +414,8 @@ void XmlShapeSerializer::Impl::InlineAttributeSerializer::WriteString(const Sche
   WriteAttr(schema, value);
 }
 void XmlShapeSerializer::Impl::InlineAttributeSerializer::WriteTimestamp(const Schema& schema, const Aws::Utils::DateTime& value) {
-  WriteAttr(schema, value.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  WriteAttr(schema, FormatTimestampText(value, ResolveTimestampFormat(schema, TimestampFormatTrait::Format::DATE_TIME)));
 }
-void XmlShapeSerializer::Impl::InlineAttributeSerializer::WriteEnum(const Schema& schema, int value) {
-  WriteAttr(schema, StringUtils::to_string(value));
-}
-
 ShapeSerializer& XmlShapeSerializer::Impl::ListItemSerializer::Before(const Schema&) {
   m_outer->WriteStartOpen(m_itemName, m_itemNamespace);
   return m_outer->Value();
@@ -458,7 +452,6 @@ void XmlShapeSerializer::WriteDouble(const Schema& schema, double value) { m_imp
 void XmlShapeSerializer::WriteString(const Schema& schema, const Aws::String& value) { m_impl->WriteString(schema, value); }
 void XmlShapeSerializer::WriteTimestamp(const Schema& schema, const DateTime& value) { m_impl->WriteTimestamp(schema, value); }
 void XmlShapeSerializer::WriteBlob(const Schema& schema, const ByteBuffer& value) { m_impl->WriteBlob(schema, value); }
-void XmlShapeSerializer::WriteEnum(const Schema& schema, int value) { m_impl->WriteEnum(schema, value); }
 void XmlShapeSerializer::WriteNull(const Schema& schema) { m_impl->WriteNull(schema); }
 
 XmlShapeSerializer::SerializerOutcome XmlShapeSerializer::GetPayload() { return m_impl->GetPayload(); }

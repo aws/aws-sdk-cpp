@@ -5,6 +5,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <smithy/client/schema/JsonShapeDeserializer.h>
 #include <smithy/client/schema/JsonTraits.h>
+#include <smithy/client/schema/SerdeTraits.h>
 
 #include <cstring>
 #include <limits>
@@ -14,7 +15,7 @@ using namespace Aws::Utils;
 
 class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
  public:
-  Impl(const unsigned char* data, size_t length) : m_bytes(reinterpret_cast<const char*>(data), length), m_pos(0) {}
+  explicit Impl(Aws::Crt::ByteCursor data) : m_bytes(reinterpret_cast<const char*>(data.ptr), data.len), m_pos(0) {}
 
   void ReadStruct(const Schema& schema, const StructMemberConsumer& consumer) override {
     if (PeekNonWs() != '{') {
@@ -185,7 +186,7 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
     return ParseString();
   }
 
-  Aws::Crt::Optional<DateTime> ReadTimestamp(const Schema&) override {
+  Aws::Crt::Optional<DateTime> ReadTimestamp(const Schema& schema) override {
     const char c = PeekNonWs();
     if (IsNumberStart(c)) {
       const Aws::String token = ReadNumberToken();
@@ -201,7 +202,11 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
       if (!token.has_value()) {
         return {};
       }
-      DateTime parsed(*token, DateFormat::ISO_8601);
+      const DateFormat df = ResolveTimestampFormat(schema, TimestampFormatTrait::Format::EPOCH_SECONDS) ==
+                                    TimestampFormatTrait::Format::HTTP_DATE
+                                ? DateFormat::RFC822
+                                : DateFormat::ISO_8601;
+      DateTime parsed(*token, df);
       if (!parsed.WasParseSuccessful()) {
         return {};
       }
@@ -222,8 +227,6 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
     }
     return HashingUtils::Base64Decode(*encoded);
   }
-
-  Aws::Crt::Optional<int> ReadEnum(const Schema& schema) override { return ReadInteger(schema); }
 
   bool IsNull() override {
     size_t p = m_pos;
@@ -458,8 +461,8 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
   size_t m_pos;
 };
 
-JsonShapeDeserializer::JsonShapeDeserializer(const unsigned char* data, size_t length)
-    : m_impl(Aws::MakeUnique<Impl>("JsonShapeDeserializer", data, length)) {}
+JsonShapeDeserializer::JsonShapeDeserializer(Aws::Crt::ByteCursor data)
+    : m_impl(Aws::MakeUnique<Impl>("JsonShapeDeserializer", data)) {}
 JsonShapeDeserializer::~JsonShapeDeserializer() = default;
 
 void JsonShapeDeserializer::ReadStruct(const Schema& schema, const StructMemberConsumer& consumer) { m_impl->ReadStruct(schema, consumer); }
@@ -473,5 +476,4 @@ Aws::Crt::Optional<double> JsonShapeDeserializer::ReadDouble(const Schema& schem
 Aws::Crt::Optional<Aws::String> JsonShapeDeserializer::ReadString(const Schema& schema) { return m_impl->ReadString(schema); }
 Aws::Crt::Optional<DateTime> JsonShapeDeserializer::ReadTimestamp(const Schema& schema) { return m_impl->ReadTimestamp(schema); }
 Aws::Crt::Optional<ByteBuffer> JsonShapeDeserializer::ReadBlob(const Schema& schema) { return m_impl->ReadBlob(schema); }
-Aws::Crt::Optional<int> JsonShapeDeserializer::ReadEnum(const Schema& schema) { return m_impl->ReadEnum(schema); }
 bool JsonShapeDeserializer::IsNull() { return m_impl->IsNull(); }

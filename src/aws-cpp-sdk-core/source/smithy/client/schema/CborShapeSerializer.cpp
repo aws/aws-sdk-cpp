@@ -47,7 +47,6 @@ class CborShapeSerializer::Impl final : public ShapeSerializer {
   void WriteBlob(const Schema&, const ByteBuffer& value) override {
     m_encoder.WriteBytes(Aws::Crt::ByteCursorFromArray(value.GetUnderlyingData(), value.GetLength()));
   }
-  void WriteEnum(const Schema& schema, int value) override { WriteInteger(schema, value); }
   void WriteNull(const Schema&) override { m_encoder.WriteNull(); }
 
   void WriteMemberKey(const Schema& schema) { WriteText(schema.GetMemberName()); }
@@ -115,10 +114,6 @@ class CborShapeSerializer::Impl final : public ShapeSerializer {
       m_outer->WriteMemberKey(s);
       m_outer->WriteBlob(s, v);
     }
-    void WriteEnum(const Schema& s, int v) override {
-      m_outer->WriteMemberKey(s);
-      m_outer->WriteEnum(s, v);
-    }
     void WriteNull(const Schema& s) override {
       m_outer->WriteMemberKey(s);
       m_outer->WriteNull(s);
@@ -143,7 +138,6 @@ class CborShapeSerializer::Impl final : public ShapeSerializer {
     void WriteString(const Schema& s, const Aws::String& v) override { m_outer->WriteString(s, v); }
     void WriteTimestamp(const Schema& s, const DateTime& v) override { m_outer->WriteTimestamp(s, v); }
     void WriteBlob(const Schema& s, const ByteBuffer& v) override { m_outer->WriteBlob(s, v); }
-    void WriteEnum(const Schema& s, int v) override { m_outer->WriteEnum(s, v); }
     void WriteNull(const Schema& s) override { m_outer->WriteNull(s); }
 
    private:
@@ -193,7 +187,6 @@ void CborShapeSerializer::WriteDouble(const Schema& schema, double value) { m_im
 void CborShapeSerializer::WriteString(const Schema& schema, const Aws::String& value) { m_impl->WriteString(schema, value); }
 void CborShapeSerializer::WriteTimestamp(const Schema& schema, const DateTime& value) { m_impl->WriteTimestamp(schema, value); }
 void CborShapeSerializer::WriteBlob(const Schema& schema, const ByteBuffer& value) { m_impl->WriteBlob(schema, value); }
-void CborShapeSerializer::WriteEnum(const Schema& schema, int value) { m_impl->WriteEnum(schema, value); }
 void CborShapeSerializer::WriteNull(const Schema& schema) { m_impl->WriteNull(schema); }
 
 CborShapeSerializer::SerializerOutcome CborShapeSerializer::GetPayload() { return m_impl->GetPayload(); }

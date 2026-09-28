@@ -1,6 +1,7 @@
 #pragma once
 
 #include <aws/core/utils/memory/AWSMemory.h>
+#include <aws/crt/Types.h>
 #include <smithy/Smithy_EXPORTS.h>
 #include <smithy/client/schema/ShapeDeserializer.h>
 
@@ -9,7 +10,7 @@ namespace schema {
 
 class SMITHY_API XmlShapeDeserializer final : public ShapeDeserializer {
  public:
-  XmlShapeDeserializer(const unsigned char* data, size_t length);
+  explicit XmlShapeDeserializer(Aws::Crt::ByteCursor data);
   ~XmlShapeDeserializer();
 
   bool EnterWrapperElement(const Aws::String& name);
@@ -26,7 +27,6 @@ class SMITHY_API XmlShapeDeserializer final : public ShapeDeserializer {
   Aws::Crt::Optional<Aws::String> ReadString(const Schema& schema) override;
   Aws::Crt::Optional<Aws::Utils::DateTime> ReadTimestamp(const Schema& schema) override;
   Aws::Crt::Optional<Aws::Utils::ByteBuffer> ReadBlob(const Schema& schema) override;
-  Aws::Crt::Optional<int> ReadEnum(const Schema& schema) override;
 
   bool IsNull() override;
 

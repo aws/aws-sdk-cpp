@@ -21,8 +21,8 @@ Codec::SerializerOutcome JsonCodec::Serialize(const Schema& schema, const Serial
   serializer.WriteStruct(schema, shape);
   return serializer.GetPayload();
 }
-Aws::UniquePtr<ShapeDeserializer> JsonCodec::CreateDeserializer(const unsigned char* data, size_t length) const {
-  return Aws::MakeUnique<JsonShapeDeserializer>(ALLOC_TAG, data, length);
+Aws::UniquePtr<ShapeDeserializer> JsonCodec::CreateDeserializer(Aws::Crt::ByteCursor data) const {
+  return Aws::MakeUnique<JsonShapeDeserializer>(ALLOC_TAG, data);
 }
 
 Codec::SerializerOutcome XmlCodec::Serialize(const Schema& schema, const SerializableStruct& shape) const {
@@ -30,8 +30,8 @@ Codec::SerializerOutcome XmlCodec::Serialize(const Schema& schema, const Seriali
   serializer.WriteStruct(schema, shape);
   return serializer.GetPayload();
 }
-Aws::UniquePtr<ShapeDeserializer> XmlCodec::CreateDeserializer(const unsigned char* data, size_t length) const {
-  return Aws::MakeUnique<XmlShapeDeserializer>(ALLOC_TAG, data, length);
+Aws::UniquePtr<ShapeDeserializer> XmlCodec::CreateDeserializer(Aws::Crt::ByteCursor data) const {
+  return Aws::MakeUnique<XmlShapeDeserializer>(ALLOC_TAG, data);
 }
 
 Codec::SerializerOutcome CborCodec::Serialize(const Schema& schema, const SerializableStruct& shape) const {
@@ -39,6 +39,6 @@ Codec::SerializerOutcome CborCodec::Serialize(const Schema& schema, const Serial
   serializer.WriteStruct(schema, shape);
   return serializer.GetPayload();
 }
-Aws::UniquePtr<ShapeDeserializer> CborCodec::CreateDeserializer(const unsigned char* data, size_t length) const {
-  return Aws::MakeUnique<CborShapeDeserializer>(ALLOC_TAG, data, length);
+Aws::UniquePtr<ShapeDeserializer> CborCodec::CreateDeserializer(Aws::Crt::ByteCursor data) const {
+  return Aws::MakeUnique<CborShapeDeserializer>(ALLOC_TAG, data);
 }

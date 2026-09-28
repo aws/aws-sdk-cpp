@@ -39,7 +39,7 @@ void RoundTrip(const ClientProtocol& protocol, const std::shared_ptr<const Schem
   ASSERT_TRUE(payload.IsSuccess());
   const Aws::String bytes = payload.GetResult();
 
-  auto d = protocol.CreateOutputDeserializer(reinterpret_cast<const unsigned char*>(bytes.data()), bytes.size());
+  auto d = protocol.CreateOutputDeserializer(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(bytes.data()), bytes.size()));
   ASSERT_NE(d, nullptr);
   Aws::Crt::Optional<Aws::String> gotName;
   Aws::Crt::Optional<int> gotCount;
@@ -185,7 +185,7 @@ TEST_F(ClientProtocolTest, AwsQueryDeserializeResponsePeelsResultWrapper) {
       "</GetCallerIdentityResult><ResponseMetadata><RequestId>req-1</RequestId></ResponseMetadata></GetCallerIdentityResponse>";
   CaptureResult result(CallerIdentityResultSchema());
   OperationRequestContext ctx{"GetCallerIdentity", "2011-06-15"};
-  AwsQueryProtocol().DeserializeResponse(ctx, reinterpret_cast<const unsigned char*>(xml.data()), xml.size(), result);
+  AwsQueryProtocol().DeserializeResponse(ctx, Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(xml.data()), xml.size()), result);
   EXPECT_EQ(result.arn, "arn:aws:iam::123456789012:user/x");
   EXPECT_EQ(result.userId, "AIDAEXAMPLE");
   EXPECT_EQ(result.account, "123456789012");
@@ -196,7 +196,7 @@ TEST_F(ClientProtocolTest, RestJsonDeserializeResponseReadsBody) {
   const Aws::String json = R"({"Arn":"arn:aws:iam::123456789012:user/y","UserId":"AIDAJSON","Account":"123456789012"})";
   CaptureResult result(CallerIdentityResultSchema());
   OperationRequestContext ctx{"GetCallerIdentity", "2011-06-15"};
-  RestJsonProtocol().DeserializeResponse(ctx, reinterpret_cast<const unsigned char*>(json.data()), json.size(), result);
+  RestJsonProtocol().DeserializeResponse(ctx, Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()), result);
   EXPECT_EQ(result.arn, "arn:aws:iam::123456789012:user/y");
   EXPECT_EQ(result.userId, "AIDAJSON");
   EXPECT_EQ(result.account, "123456789012");
@@ -207,7 +207,7 @@ TEST_F(ClientProtocolTest, QueryResponseParsedAsXml) {
                   .PutMember("status", Schema::CreateString("S"))
                   .Build();
   const Aws::String xml = "<Root><status>ok</status></Root>";
-  auto d = AwsQueryProtocol().CreateOutputDeserializer(reinterpret_cast<const unsigned char*>(xml.data()), xml.size());
+  auto d = AwsQueryProtocol().CreateOutputDeserializer(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(xml.data()), xml.size()));
   Aws::Crt::Optional<Aws::String> got;
   d->ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
     if (m.GetMemberName() == "status") {

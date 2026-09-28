@@ -617,24 +617,6 @@ TEST_F(CborShapeSerializerTest, GetPayloadCalledTwice) {
   EXPECT_NE(outcome2.GetError().GetMessage().find("finalized"), Aws::String::npos);
 }
 
-TEST_F(CborShapeSerializerTest, EnumValue) {
-  CborShapeSerializer s;
-  auto root = Schema::StructureBuilder("Root").Build();
-  auto member = Schema::CreateMember("status", ShapeType::Enum);
-  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteEnum(*member, 3); });
-  s.WriteStruct(*root, rootStruct);
-  auto outcome = s.GetPayload();
-  ASSERT_TRUE(outcome.IsSuccess());
-  const auto& payload = outcome.GetResult();
-  Aws::String expected;
-  expected += '\xBF';
-  expected += '\x66';  // text "status" length 6
-  expected += "status";
-  expected += '\x03';  // integer 3
-  expected += '\xFF';
-  EXPECT_EQ(payload, expected);
-}
-
 TEST_F(CborShapeSerializerTest, StructureWithListAndMap) {
   CborShapeSerializer s;
   auto root = Schema::StructureBuilder("Root").Build();

@@ -4,6 +4,7 @@
  */
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <smithy/client/schema/SerdeTraits.h>
 #include <smithy/client/schema/XmlShapeDeserializer.h>
 #include <smithy/client/schema/XmlTraits.h>
 
@@ -16,7 +17,7 @@ using namespace Aws::Utils;
 
 class XmlShapeDeserializer::Impl final : public ShapeDeserializer {
  public:
-  Impl(const unsigned char* data, size_t length) : m_xml(reinterpret_cast<const char*>(data), length) {
+  explicit Impl(Aws::Crt::ByteCursor data) : m_xml(reinterpret_cast<const char*>(data.ptr), data.len) {
     const Element root = FindRoot();
     m_tagBegin = root.tagBegin;
     m_tagEnd = root.tagEnd;
@@ -177,8 +178,20 @@ class XmlShapeDeserializer::Impl final : public ShapeDeserializer {
 
   Aws::Crt::Optional<Aws::String> ReadString(const Schema&) override { return CurrentText(); }
 
-  Aws::Crt::Optional<DateTime> ReadTimestamp(const Schema&) override {
-    DateTime parsed(CurrentText(), DateFormat::ISO_8601);
+  Aws::Crt::Optional<DateTime> ReadTimestamp(const Schema& schema) override {
+    const auto format = ResolveTimestampFormat(schema, TimestampFormatTrait::Format::DATE_TIME);
+    if (format == TimestampFormatTrait::Format::EPOCH_SECONDS) {
+      const Aws::String text = CurrentText();
+      char* end = nullptr;
+      const double seconds = std::strtod(text.c_str(), &end);
+      if (text.empty() || end != text.c_str() + text.size()) {
+        return {};
+      }
+      return DateTime(seconds);
+    }
+    const DateFormat df =
+        format == TimestampFormatTrait::Format::HTTP_DATE ? DateFormat::RFC822 : DateFormat::ISO_8601;
+    DateTime parsed(CurrentText(), df);
     if (!parsed.WasParseSuccessful()) {
       return {};
     }
@@ -186,8 +199,6 @@ class XmlShapeDeserializer::Impl final : public ShapeDeserializer {
   }
 
   Aws::Crt::Optional<ByteBuffer> ReadBlob(const Schema&) override { return HashingUtils::Base64Decode(CurrentText()); }
-
-  Aws::Crt::Optional<int> ReadEnum(const Schema& schema) override { return ReadInteger(schema); }
 
   bool IsNull() override { return !m_valid; }
 
@@ -486,8 +497,8 @@ class XmlShapeDeserializer::Impl final : public ShapeDeserializer {
   Aws::String m_attr;
 };
 
-XmlShapeDeserializer::XmlShapeDeserializer(const unsigned char* data, size_t length)
-    : m_impl(Aws::MakeUnique<Impl>("XmlShapeDeserializer", data, length)) {}
+XmlShapeDeserializer::XmlShapeDeserializer(Aws::Crt::ByteCursor data)
+    : m_impl(Aws::MakeUnique<Impl>("XmlShapeDeserializer", data)) {}
 XmlShapeDeserializer::~XmlShapeDeserializer() = default;
 
 bool XmlShapeDeserializer::EnterWrapperElement(const Aws::String& name) { return m_impl->EnterWrapper(name); }
@@ -502,5 +513,4 @@ Aws::Crt::Optional<double> XmlShapeDeserializer::ReadDouble(const Schema& schema
 Aws::Crt::Optional<Aws::String> XmlShapeDeserializer::ReadString(const Schema& schema) { return m_impl->ReadString(schema); }
 Aws::Crt::Optional<DateTime> XmlShapeDeserializer::ReadTimestamp(const Schema& schema) { return m_impl->ReadTimestamp(schema); }
 Aws::Crt::Optional<ByteBuffer> XmlShapeDeserializer::ReadBlob(const Schema& schema) { return m_impl->ReadBlob(schema); }
-Aws::Crt::Optional<int> XmlShapeDeserializer::ReadEnum(const Schema& schema) { return m_impl->ReadEnum(schema); }
 bool XmlShapeDeserializer::IsNull() { return m_impl->IsNull(); }
