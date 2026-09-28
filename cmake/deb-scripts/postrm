@@ -1,0 +1,14 @@
+#!/bin/sh
+# DEB post-remove script for AWS SDK C++
+# Updates the shared library cache after removal
+
+set -e
+
+# Run ldconfig on remove
+if [ "$1" = "remove" ]; then
+    if [ -x /sbin/ldconfig ]; then
+        ldconfig
+    fi
+fi
+
+exit 0
