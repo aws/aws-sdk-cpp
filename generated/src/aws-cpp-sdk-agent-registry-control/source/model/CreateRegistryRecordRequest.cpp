@@ -51,6 +51,12 @@ Aws::String CreateRegistryRecordRequest::SerializePayload() const {
     payload.WithArray("provenance", std::move(provenanceJsonList));
   }
 
+  if (m_customMetadataHasBeenSet) {
+    if (!m_customMetadata.View().IsNull()) {
+      payload.WithObject("customMetadata", JsonValue(m_customMetadata.View()));
+    }
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {

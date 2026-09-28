@@ -27,6 +27,10 @@ Aws::String DeleteResourcePolicyRequest::SerializePayload() const {
     payload.WithString("PolicyHash", m_policyHash);
   }
 
+  if (m_deletionModeHasBeenSet) {
+    payload.WithString("DeletionMode", DeletionModeMapper::GetNameForDeletionMode(m_deletionMode));
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -29,6 +29,7 @@
 #include <aws/connect/model/ListDataTablesPaginationTraits.h>
 #include <aws/connect/model/ListDefaultVocabulariesPaginationTraits.h>
 #include <aws/connect/model/ListEntitySecurityProfilesPaginationTraits.h>
+#include <aws/connect/model/ListEvaluationFormAIVersionsPaginationTraits.h>
 #include <aws/connect/model/ListEvaluationFormVersionsPaginationTraits.h>
 #include <aws/connect/model/ListEvaluationFormsPaginationTraits.h>
 #include <aws/connect/model/ListExtractionDefinitionsPaginationTraits.h>
@@ -388,6 +389,18 @@ class ConnectPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEntitySecurityProfilesRequest,
                                              Pagination::ListEntitySecurityProfilesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListEvaluationFormAIVersions operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEvaluationFormAIVersionsRequest,
+                                    Pagination::ListEvaluationFormAIVersionsPaginationTraits<DerivedClient>>
+  ListEvaluationFormAIVersionsPaginator(const Model::ListEvaluationFormAIVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEvaluationFormAIVersionsRequest,
+                                             Pagination::ListEvaluationFormAIVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

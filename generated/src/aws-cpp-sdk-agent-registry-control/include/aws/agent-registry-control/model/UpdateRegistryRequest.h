@@ -8,6 +8,7 @@
 #include <aws/agent-registry-control/AgentRegistryControl_EXPORTS.h>
 #include <aws/agent-registry-control/model/UpdatedApprovalConfiguration.h>
 #include <aws/agent-registry-control/model/UpdatedAutoDetectionConfiguration.h>
+#include <aws/agent-registry-control/model/UpdatedCustomMetadataSchemaConfiguration.h>
 #include <aws/agent-registry-control/model/UpdatedDescription.h>
 #include <aws/agent-registry-control/model/UpdatedDiscoveryConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -130,6 +131,30 @@ class UpdateRegistryRequest : public AgentRegistryControlRequest {
 
   ///@{
   /**
+   * <p>Updated custom metadata schema configuration for the registry. Omit to leave
+   * the existing schema unchanged. Schema evolution is additive only: you can add
+   * properties and enum values, but you cannot remove properties, change property
+   * types or formats, add or remove enum constraints, or remove record type
+   * overrides.</p>
+   */
+  inline const UpdatedCustomMetadataSchemaConfiguration& GetCustomMetadataSchemaConfiguration() const {
+    return m_customMetadataSchemaConfiguration;
+  }
+  inline bool CustomMetadataSchemaConfigurationHasBeenSet() const { return m_customMetadataSchemaConfigurationHasBeenSet; }
+  template <typename CustomMetadataSchemaConfigurationT = UpdatedCustomMetadataSchemaConfiguration>
+  void SetCustomMetadataSchemaConfiguration(CustomMetadataSchemaConfigurationT&& value) {
+    m_customMetadataSchemaConfigurationHasBeenSet = true;
+    m_customMetadataSchemaConfiguration = std::forward<CustomMetadataSchemaConfigurationT>(value);
+  }
+  template <typename CustomMetadataSchemaConfigurationT = UpdatedCustomMetadataSchemaConfiguration>
+  UpdateRegistryRequest& WithCustomMetadataSchemaConfiguration(CustomMetadataSchemaConfigurationT&& value) {
+    SetCustomMetadataSchemaConfiguration(std::forward<CustomMetadataSchemaConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The updated auto-detection configuration for the registry, with PATCH
    * semantics. Omit this field to leave the current configuration unchanged. Supply
    * an empty wrapper to unset it. Supply <code>optionalValue</code> to replace
@@ -159,12 +184,15 @@ class UpdateRegistryRequest : public AgentRegistryControlRequest {
 
   UpdatedApprovalConfiguration m_approvalConfiguration;
 
+  UpdatedCustomMetadataSchemaConfiguration m_customMetadataSchemaConfiguration;
+
   UpdatedAutoDetectionConfiguration m_autoDetectionConfiguration;
   bool m_registryIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_discoveryConfigurationHasBeenSet = false;
   bool m_approvalConfigurationHasBeenSet = false;
+  bool m_customMetadataSchemaConfigurationHasBeenSet = false;
   bool m_autoDetectionConfigurationHasBeenSet = false;
 };
 

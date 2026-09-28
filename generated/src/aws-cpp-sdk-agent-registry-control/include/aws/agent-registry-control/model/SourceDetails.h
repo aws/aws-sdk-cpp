@@ -35,7 +35,11 @@ class SourceDetails {
   AWS_AGENTREGISTRYCONTROL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p>The source details for a registry record that was auto-detected from an
+   * Amazon Bedrock AgentCore Runtime resource. Populated when the source type is
+   * <code>AWS::BedrockAgentCore::Runtime</code>.</p>
+   */
   inline const AgentCoreRuntimeSourceDetails& GetAgentcoreRuntime() const { return m_agentcoreRuntime; }
   inline bool AgentcoreRuntimeHasBeenSet() const { return m_agentcoreRuntimeHasBeenSet; }
   template <typename AgentcoreRuntimeT = AgentCoreRuntimeSourceDetails>
@@ -51,7 +55,11 @@ class SourceDetails {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The source details for a registry record that was auto-detected from an
+   * Amazon Bedrock AgentCore Gateway resource. Populated when the source type is
+   * <code>AWS::BedrockAgentCore::Gateway</code>.</p>
+   */
   inline const AgentCoreGatewaySourceDetails& GetAgentcoreGateway() const { return m_agentcoreGateway; }
   inline bool AgentcoreGatewayHasBeenSet() const { return m_agentcoreGatewayHasBeenSet; }
   template <typename AgentcoreGatewayT = AgentCoreGatewaySourceDetails>

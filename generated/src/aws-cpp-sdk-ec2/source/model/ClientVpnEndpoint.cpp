@@ -190,6 +190,11 @@ ClientVpnEndpoint& ClientVpnEndpoint::operator=(const XmlNode& xmlNode) {
       m_transitGatewayConfiguration = transitGatewayConfigurationNode;
       m_transitGatewayConfigurationHasBeenSet = true;
     }
+    XmlNode devicePostureOptionsNode = resultNode.FirstChild("devicePostureOptions");
+    if (!devicePostureOptionsNode.IsNull()) {
+      m_devicePostureOptions = devicePostureOptionsNode;
+      m_devicePostureOptionsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -342,6 +347,12 @@ void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* locati
     transitGatewayConfigurationLocationAndMemberSs << location << index << locationValue << ".TransitGatewayConfiguration";
     m_transitGatewayConfiguration.OutputToStream(oStream, transitGatewayConfigurationLocationAndMemberSs.str().c_str());
   }
+
+  if (m_devicePostureOptionsHasBeenSet) {
+    Aws::StringStream devicePostureOptionsLocationAndMemberSs;
+    devicePostureOptionsLocationAndMemberSs << location << index << locationValue << ".DevicePostureOptions";
+    m_devicePostureOptions.OutputToStream(oStream, devicePostureOptionsLocationAndMemberSs.str().c_str());
+  }
 }
 
 void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -457,6 +468,11 @@ void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* locati
     Aws::String transitGatewayConfigurationLocationAndMember(location);
     transitGatewayConfigurationLocationAndMember += ".TransitGatewayConfiguration";
     m_transitGatewayConfiguration.OutputToStream(oStream, transitGatewayConfigurationLocationAndMember.c_str());
+  }
+  if (m_devicePostureOptionsHasBeenSet) {
+    Aws::String devicePostureOptionsLocationAndMember(location);
+    devicePostureOptionsLocationAndMember += ".DevicePostureOptions";
+    m_devicePostureOptions.OutputToStream(oStream, devicePostureOptionsLocationAndMember.c_str());
   }
 }
 

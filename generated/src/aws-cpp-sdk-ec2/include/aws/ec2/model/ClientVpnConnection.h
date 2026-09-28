@@ -317,6 +317,25 @@ class ClientVpnConnection {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The date and time the authorization policy was last evaluated for the client
+   * connection, if applicable.</p>
+   */
+  inline const Aws::String& GetAuthorizationPolicyLastEvaluatedTime() const { return m_authorizationPolicyLastEvaluatedTime; }
+  inline bool AuthorizationPolicyLastEvaluatedTimeHasBeenSet() const { return m_authorizationPolicyLastEvaluatedTimeHasBeenSet; }
+  template <typename AuthorizationPolicyLastEvaluatedTimeT = Aws::String>
+  void SetAuthorizationPolicyLastEvaluatedTime(AuthorizationPolicyLastEvaluatedTimeT&& value) {
+    m_authorizationPolicyLastEvaluatedTimeHasBeenSet = true;
+    m_authorizationPolicyLastEvaluatedTime = std::forward<AuthorizationPolicyLastEvaluatedTimeT>(value);
+  }
+  template <typename AuthorizationPolicyLastEvaluatedTimeT = Aws::String>
+  ClientVpnConnection& WithAuthorizationPolicyLastEvaluatedTime(AuthorizationPolicyLastEvaluatedTimeT&& value) {
+    SetAuthorizationPolicyLastEvaluatedTime(std::forward<AuthorizationPolicyLastEvaluatedTimeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clientVpnEndpointId;
 
@@ -347,6 +366,8 @@ class ClientVpnConnection {
   Aws::String m_connectionEndTime;
 
   Aws::Vector<Aws::String> m_postureComplianceStatuses;
+
+  Aws::String m_authorizationPolicyLastEvaluatedTime;
   bool m_clientVpnEndpointIdHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
   bool m_connectionIdHasBeenSet = false;
@@ -362,6 +383,7 @@ class ClientVpnConnection {
   bool m_statusHasBeenSet = false;
   bool m_connectionEndTimeHasBeenSet = false;
   bool m_postureComplianceStatusesHasBeenSet = false;
+  bool m_authorizationPolicyLastEvaluatedTimeHasBeenSet = false;
 };
 
 }  // namespace Model

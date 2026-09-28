@@ -39,6 +39,10 @@ Aws::String UpdateRegistryRecordRequest::SerializePayload() const {
     payload.WithString("recordVersion", m_recordVersion);
   }
 
+  if (m_customMetadataHasBeenSet) {
+    payload.WithObject("customMetadata", m_customMetadata.Jsonize());
+  }
+
   if (m_triggerSynchronizationHasBeenSet) {
     payload.WithBool("triggerSynchronization", m_triggerSynchronization);
   }

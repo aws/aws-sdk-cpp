@@ -21,6 +21,9 @@ static const int create_failed_HASH = HashingUtils::HashString("create-failed");
 static const int enable_in_progress_HASH = HashingUtils::HashString("enable-in-progress");
 static const int enable_complete_HASH = HashingUtils::HashString("enable-complete");
 static const int enable_failed_HASH = HashingUtils::HashString("enable-failed");
+static const int disable_in_progress_HASH = HashingUtils::HashString("disable-in-progress");
+static const int disable_complete_HASH = HashingUtils::HashString("disable-complete");
+static const int disable_failed_HASH = HashingUtils::HashString("disable-failed");
 static const int delete_in_progress_HASH = HashingUtils::HashString("delete-in-progress");
 static const int delete_complete_HASH = HashingUtils::HashString("delete-complete");
 static const int delete_failed_HASH = HashingUtils::HashString("delete-failed");
@@ -39,6 +42,12 @@ IpamInternetRegistryAssociationState GetIpamInternetRegistryAssociationStateForN
     return IpamInternetRegistryAssociationState::enable_complete;
   } else if (hashCode == enable_failed_HASH) {
     return IpamInternetRegistryAssociationState::enable_failed;
+  } else if (hashCode == disable_in_progress_HASH) {
+    return IpamInternetRegistryAssociationState::disable_in_progress;
+  } else if (hashCode == disable_complete_HASH) {
+    return IpamInternetRegistryAssociationState::disable_complete;
+  } else if (hashCode == disable_failed_HASH) {
+    return IpamInternetRegistryAssociationState::disable_failed;
   } else if (hashCode == delete_in_progress_HASH) {
     return IpamInternetRegistryAssociationState::delete_in_progress;
   } else if (hashCode == delete_complete_HASH) {
@@ -71,6 +80,12 @@ Aws::String GetNameForIpamInternetRegistryAssociationState(IpamInternetRegistryA
       return "enable-complete";
     case IpamInternetRegistryAssociationState::enable_failed:
       return "enable-failed";
+    case IpamInternetRegistryAssociationState::disable_in_progress:
+      return "disable-in-progress";
+    case IpamInternetRegistryAssociationState::disable_complete:
+      return "disable-complete";
+    case IpamInternetRegistryAssociationState::disable_failed:
+      return "disable-failed";
     case IpamInternetRegistryAssociationState::delete_in_progress:
       return "delete-in-progress";
     case IpamInternetRegistryAssociationState::delete_complete:

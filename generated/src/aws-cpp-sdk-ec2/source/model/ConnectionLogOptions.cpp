@@ -39,6 +39,12 @@ ConnectionLogOptions& ConnectionLogOptions::operator=(const XmlNode& xmlNode) {
       m_cloudwatchLogStream = Aws::Utils::Xml::DecodeEscapedXmlText(cloudwatchLogStreamNode.GetText());
       m_cloudwatchLogStreamHasBeenSet = true;
     }
+    XmlNode includeAuthorizationPolicyContextNode = resultNode.FirstChild("IncludeAuthorizationPolicyContext");
+    if (!includeAuthorizationPolicyContextNode.IsNull()) {
+      m_includeAuthorizationPolicyContext = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(includeAuthorizationPolicyContextNode.GetText()).c_str()).c_str());
+      m_includeAuthorizationPolicyContextHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -57,6 +63,11 @@ void ConnectionLogOptions::OutputToStream(Aws::OStream& oStream, const char* loc
     oStream << location << index << locationValue << ".CloudwatchLogStream=" << StringUtils::URLEncode(m_cloudwatchLogStream.c_str())
             << "&";
   }
+
+  if (m_includeAuthorizationPolicyContextHasBeenSet) {
+    oStream << location << index << locationValue << ".IncludeAuthorizationPolicyContext=" << std::boolalpha
+            << m_includeAuthorizationPolicyContext << "&";
+  }
 }
 
 void ConnectionLogOptions::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -68,6 +79,9 @@ void ConnectionLogOptions::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if (m_cloudwatchLogStreamHasBeenSet) {
     oStream << location << ".CloudwatchLogStream=" << StringUtils::URLEncode(m_cloudwatchLogStream.c_str()) << "&";
+  }
+  if (m_includeAuthorizationPolicyContextHasBeenSet) {
+    oStream << location << ".IncludeAuthorizationPolicyContext=" << std::boolalpha << m_includeAuthorizationPolicyContext << "&";
   }
 }
 

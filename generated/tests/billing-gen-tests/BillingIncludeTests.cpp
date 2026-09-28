@@ -38,6 +38,11 @@
 #include <aws/billing/model/BillingViewStatus.h>
 #include <aws/billing/model/BillingViewStatusReason.h>
 #include <aws/billing/model/BillingViewType.h>
+#include <aws/billing/model/BusinessSupportAccountCharge.h>
+#include <aws/billing/model/BusinessSupportDiscount.h>
+#include <aws/billing/model/BusinessSupportServiceSpend.h>
+#include <aws/billing/model/BusinessSupportSubscriptionContract.h>
+#include <aws/billing/model/BusinessSupportTierCharge.h>
 #include <aws/billing/model/ChargeAccount.h>
 #include <aws/billing/model/ConflictException.h>
 #include <aws/billing/model/ContractAccount.h>
@@ -78,6 +83,12 @@
 #include <aws/billing/model/ListBillingViewsPaginationTraits.h>
 #include <aws/billing/model/ListBillingViewsRequest.h>
 #include <aws/billing/model/ListBillingViewsResult.h>
+#include <aws/billing/model/ListBusinessSupportAccountChargesPaginationTraits.h>
+#include <aws/billing/model/ListBusinessSupportAccountChargesRequest.h>
+#include <aws/billing/model/ListBusinessSupportAccountChargesResult.h>
+#include <aws/billing/model/ListBusinessSupportSubscriptionHistoryPaginationTraits.h>
+#include <aws/billing/model/ListBusinessSupportSubscriptionHistoryRequest.h>
+#include <aws/billing/model/ListBusinessSupportSubscriptionHistoryResult.h>
 #include <aws/billing/model/ListEnterpriseSupportLinkedAccountChargesPaginationTraits.h>
 #include <aws/billing/model/ListEnterpriseSupportLinkedAccountChargesRequest.h>
 #include <aws/billing/model/ListEnterpriseSupportLinkedAccountChargesResult.h>

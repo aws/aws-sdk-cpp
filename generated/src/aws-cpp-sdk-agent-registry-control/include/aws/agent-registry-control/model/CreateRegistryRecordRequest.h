@@ -9,6 +9,7 @@
 #include <aws/agent-registry-control/model/Descriptors.h>
 #include <aws/agent-registry-control/model/Provenance.h>
 #include <aws/agent-registry-control/model/RecordType.h>
+#include <aws/core/utils/Document.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -177,7 +178,11 @@ class CreateRegistryRecordRequest : public AgentRegistryControlRequest {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The provenance lineage entries for the registry record. This field is
+   * reserved for the Amazon Web Services Agent Registry auto-detection service
+   * principal. Requests that include this field from other callers are rejected.</p>
+   */
   inline const Aws::Vector<Provenance>& GetProvenance() const { return m_provenance; }
   inline bool ProvenanceHasBeenSet() const { return m_provenanceHasBeenSet; }
   template <typename ProvenanceT = Aws::Vector<Provenance>>
@@ -194,6 +199,28 @@ class CreateRegistryRecordRequest : public AgentRegistryControlRequest {
   CreateRegistryRecordRequest& AddProvenance(ProvenanceT&& value) {
     m_provenanceHasBeenSet = true;
     m_provenance.emplace_back(std::forward<ProvenanceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The custom metadata to attach to the registry record. Each key must match a
+   * property defined in the registry's custom metadata schema. Values can be strings
+   * (maximum 128 characters) or native JSON booleans (<code>true</code> or
+   * <code>false</code>). Values are validated against the schema at creation
+   * time.</p>
+   */
+  inline Aws::Utils::DocumentView GetCustomMetadata() const { return m_customMetadata; }
+  inline bool CustomMetadataHasBeenSet() const { return m_customMetadataHasBeenSet; }
+  template <typename CustomMetadataT = Aws::Utils::Document>
+  void SetCustomMetadata(CustomMetadataT&& value) {
+    m_customMetadataHasBeenSet = true;
+    m_customMetadata = std::forward<CustomMetadataT>(value);
+  }
+  template <typename CustomMetadataT = Aws::Utils::Document>
+  CreateRegistryRecordRequest& WithCustomMetadata(CustomMetadataT&& value) {
+    SetCustomMetadata(std::forward<CustomMetadataT>(value));
     return *this;
   }
   ///@}
@@ -240,6 +267,8 @@ class CreateRegistryRecordRequest : public AgentRegistryControlRequest {
 
   Aws::Vector<Provenance> m_provenance;
 
+  Aws::Utils::Document m_customMetadata;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_registryIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -250,6 +279,7 @@ class CreateRegistryRecordRequest : public AgentRegistryControlRequest {
   bool m_recordVersionHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_provenanceHasBeenSet = false;
+  bool m_customMetadataHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

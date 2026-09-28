@@ -20,6 +20,8 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/GetManagedPrefixListAssociationsRequest.h>
+#include <aws/ec2/model/GetManagedPrefixListEntriesRequest.h>
 #include <aws/ec2/model/GetManagedResourceVisibilityRequest.h>
 #include <aws/ec2/model/GetNetworkInsightsAccessScopeAnalysisFindingsRequest.h>
 #include <aws/ec2/model/GetNetworkInsightsAccessScopeContentRequest.h>
@@ -64,6 +66,7 @@
 #include <aws/ec2/model/ModifyAvailabilityZoneGroupRequest.h>
 #include <aws/ec2/model/ModifyCapacityReservationFleetRequest.h>
 #include <aws/ec2/model/ModifyCapacityReservationRequest.h>
+#include <aws/ec2/model/ModifyClientVpnEndpointAuthorizationPolicyRequest.h>
 #include <aws/ec2/model/ModifyClientVpnEndpointRequest.h>
 #include <aws/ec2/model/ModifyDefaultCreditSpecificationRequest.h>
 #include <aws/ec2/model/ModifyEbsDefaultKmsKeyIdRequest.h>
@@ -117,9 +120,6 @@
 #include <aws/ec2/model/ModifyTransitGatewayPrefixListReferenceRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayVpcAttachmentRequest.h>
-#include <aws/ec2/model/ModifyVerifiedAccessEndpointPolicyRequest.h>
-#include <aws/ec2/model/ModifyVerifiedAccessEndpointRequest.h>
-#include <aws/ec2/model/ModifyVerifiedAccessGroupRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,19 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+GetManagedPrefixListAssociationsOutcome EC2Client::GetManagedPrefixListAssociations(
+    const GetManagedPrefixListAssociationsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetManagedPrefixListAssociationsOutcome(result.GetResultWithOwnership())
+                            : GetManagedPrefixListAssociationsOutcome(std::move(result.GetError()));
+}
+
+GetManagedPrefixListEntriesOutcome EC2Client::GetManagedPrefixListEntries(const GetManagedPrefixListEntriesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetManagedPrefixListEntriesOutcome(result.GetResultWithOwnership())
+                            : GetManagedPrefixListEntriesOutcome(std::move(result.GetError()));
+}
 
 GetManagedResourceVisibilityOutcome EC2Client::GetManagedResourceVisibility(const GetManagedResourceVisibilityRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -413,6 +426,13 @@ ModifyClientVpnEndpointOutcome EC2Client::ModifyClientVpnEndpoint(const ModifyCl
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ModifyClientVpnEndpointOutcome(result.GetResultWithOwnership())
                             : ModifyClientVpnEndpointOutcome(std::move(result.GetError()));
+}
+
+ModifyClientVpnEndpointAuthorizationPolicyOutcome EC2Client::ModifyClientVpnEndpointAuthorizationPolicy(
+    const ModifyClientVpnEndpointAuthorizationPolicyRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyClientVpnEndpointAuthorizationPolicyOutcome(result.GetResultWithOwnership())
+                            : ModifyClientVpnEndpointAuthorizationPolicyOutcome(std::move(result.GetError()));
 }
 
 ModifyDefaultCreditSpecificationOutcome EC2Client::ModifyDefaultCreditSpecification(
@@ -736,23 +756,4 @@ ModifyTransitGatewayVpcAttachmentOutcome EC2Client::ModifyTransitGatewayVpcAttac
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ModifyTransitGatewayVpcAttachmentOutcome(result.GetResultWithOwnership())
                             : ModifyTransitGatewayVpcAttachmentOutcome(std::move(result.GetError()));
-}
-
-ModifyVerifiedAccessEndpointOutcome EC2Client::ModifyVerifiedAccessEndpoint(const ModifyVerifiedAccessEndpointRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ModifyVerifiedAccessEndpointOutcome(result.GetResultWithOwnership())
-                            : ModifyVerifiedAccessEndpointOutcome(std::move(result.GetError()));
-}
-
-ModifyVerifiedAccessEndpointPolicyOutcome EC2Client::ModifyVerifiedAccessEndpointPolicy(
-    const ModifyVerifiedAccessEndpointPolicyRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ModifyVerifiedAccessEndpointPolicyOutcome(result.GetResultWithOwnership())
-                            : ModifyVerifiedAccessEndpointPolicyOutcome(std::move(result.GetError()));
-}
-
-ModifyVerifiedAccessGroupOutcome EC2Client::ModifyVerifiedAccessGroup(const ModifyVerifiedAccessGroupRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ModifyVerifiedAccessGroupOutcome(result.GetResultWithOwnership())
-                            : ModifyVerifiedAccessGroupOutcome(std::move(result.GetError()));
 }

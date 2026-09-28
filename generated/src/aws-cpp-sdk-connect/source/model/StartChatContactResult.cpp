@@ -38,6 +38,18 @@ StartChatContactResult& StartChatContactResult::operator=(const Aws::AmazonWebSe
     m_continuedFromContactId = jsonValue.GetString("ContinuedFromContactId");
     m_continuedFromContactIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ConnectionCredentials")) {
+    m_connectionCredentials = jsonValue.GetObject("ConnectionCredentials");
+    m_connectionCredentialsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Websocket")) {
+    m_websocket = jsonValue.GetObject("Websocket");
+    m_websocketHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("StreamingId")) {
+    m_streamingId = jsonValue.GetString("StreamingId");
+    m_streamingIdHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

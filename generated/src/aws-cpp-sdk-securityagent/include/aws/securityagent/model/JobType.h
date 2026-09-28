@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SecurityAgent {
 namespace Model {
-enum class JobType { NOT_SET, FULL, REVALIDATION };
+enum class JobType { NOT_SET, FULL, REVALIDATION, CICD };
 
 namespace JobTypeMapper {
 AWS_SECURITYAGENT_API JobType GetJobTypeForName(const Aws::String& name);

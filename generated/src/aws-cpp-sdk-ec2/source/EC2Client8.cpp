@@ -20,6 +20,9 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/UpdateCapacityManagerMonitoredTagKeysRequest.h>
+#include <aws/ec2/model/UpdateCapacityManagerOrganizationsAccessRequest.h>
+#include <aws/ec2/model/UpdateInterruptibleCapacityReservationAllocationRequest.h>
 #include <aws/ec2/model/UpdateSecurityGroupRuleDescriptionsEgressRequest.h>
 #include <aws/ec2/model/UpdateSecurityGroupRuleDescriptionsIngressRequest.h>
 #include <aws/ec2/model/ValidateSecurityGroupQuotasForInterfaceRequest.h>
@@ -35,6 +38,27 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+UpdateCapacityManagerMonitoredTagKeysOutcome EC2Client::UpdateCapacityManagerMonitoredTagKeys(
+    const UpdateCapacityManagerMonitoredTagKeysRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCapacityManagerMonitoredTagKeysOutcome(result.GetResultWithOwnership())
+                            : UpdateCapacityManagerMonitoredTagKeysOutcome(std::move(result.GetError()));
+}
+
+UpdateCapacityManagerOrganizationsAccessOutcome EC2Client::UpdateCapacityManagerOrganizationsAccess(
+    const UpdateCapacityManagerOrganizationsAccessRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCapacityManagerOrganizationsAccessOutcome(result.GetResultWithOwnership())
+                            : UpdateCapacityManagerOrganizationsAccessOutcome(std::move(result.GetError()));
+}
+
+UpdateInterruptibleCapacityReservationAllocationOutcome EC2Client::UpdateInterruptibleCapacityReservationAllocation(
+    const UpdateInterruptibleCapacityReservationAllocationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateInterruptibleCapacityReservationAllocationOutcome(result.GetResultWithOwnership())
+                            : UpdateInterruptibleCapacityReservationAllocationOutcome(std::move(result.GetError()));
+}
 
 UpdateSecurityGroupRuleDescriptionsEgressOutcome EC2Client::UpdateSecurityGroupRuleDescriptionsEgress(
     const UpdateSecurityGroupRuleDescriptionsEgressRequest& request) const {

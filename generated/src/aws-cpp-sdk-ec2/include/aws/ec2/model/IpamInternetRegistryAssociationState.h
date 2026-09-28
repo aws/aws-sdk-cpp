@@ -18,6 +18,9 @@ enum class IpamInternetRegistryAssociationState {
   enable_in_progress,
   enable_complete,
   enable_failed,
+  disable_in_progress,
+  disable_complete,
+  disable_failed,
   delete_in_progress,
   delete_complete,
   delete_failed

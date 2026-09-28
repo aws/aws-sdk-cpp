@@ -17,6 +17,7 @@ namespace JobTypeMapper {
 
 static const int FULL_HASH = HashingUtils::HashString("FULL");
 static const int REVALIDATION_HASH = HashingUtils::HashString("REVALIDATION");
+static const int CICD_HASH = HashingUtils::HashString("CICD");
 
 JobType GetJobTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ JobType GetJobTypeForName(const Aws::String& name) {
     return JobType::FULL;
   } else if (hashCode == REVALIDATION_HASH) {
     return JobType::REVALIDATION;
+  } else if (hashCode == CICD_HASH) {
+    return JobType::CICD;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForJobType(JobType enumValue) {
       return "FULL";
     case JobType::REVALIDATION:
       return "REVALIDATION";
+    case JobType::CICD:
+      return "CICD";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -99,7 +99,7 @@ class DescribeVpcEndpointsRequest : public EC2Request {
    * <code>failed</code>).</p> </li> <li> <p> <code>vpc-endpoint-type</code> - The
    * type of VPC endpoint (<code>Interface</code> | <code>Gateway</code> |
    * <code>GatewayLoadBalancer</code> | <code>Resource</code> |
-   * <code>ServiceNetwork</code>).</p> </li> </ul>
+   * <code>ServiceNetwork</code> | <code>Tunnel</code>).</p> </li> </ul>
    */
   inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
   inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }

@@ -19,6 +19,7 @@
 #include <aws/connect/model/SearchDataTablesPaginationTraits.h>
 #include <aws/connect/model/SearchTestCasesPaginationTraits.h>
 #include <aws/connect/model/ListDataTableValuesPaginationTraits.h>
+#include <aws/connect/model/ListEvaluationFormAIVersionsPaginationTraits.h>
 #include <aws/connect/model/ListRoutingProfileQueuesPaginationTraits.h>
 #include <aws/connect/model/ListSecurityProfilePermissionsPaginationTraits.h>
 #include <aws/connect/model/ListExtractionDefinitionsPaginationTraits.h>

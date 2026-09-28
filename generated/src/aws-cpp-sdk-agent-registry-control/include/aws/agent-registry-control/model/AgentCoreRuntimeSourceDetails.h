@@ -22,8 +22,8 @@ namespace AgentRegistryControl {
 namespace Model {
 
 /**
- * <p>Source details for a record auto-detected from an AgentCore Runtime
- * resource.</p><p><h3>See Also:</h3>   <a
+ * <p>The source details for a registry record that was auto-detected from an
+ * Amazon Bedrock AgentCore Runtime resource.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/AgentCoreRuntimeSourceDetails">AWS
  * API Reference</a></p>
  */
@@ -35,7 +35,10 @@ class AgentCoreRuntimeSourceDetails {
   AWS_AGENTREGISTRYCONTROL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p>The protocol configuration of the AgentCore Runtime resource that the
+   * registry record was detected from.</p>
+   */
   inline const AgentCoreRuntimeProtocolConfiguration& GetProtocolConfiguration() const { return m_protocolConfiguration; }
   inline bool ProtocolConfigurationHasBeenSet() const { return m_protocolConfigurationHasBeenSet; }
   template <typename ProtocolConfigurationT = AgentCoreRuntimeProtocolConfiguration>
@@ -67,7 +70,10 @@ class AgentCoreRuntimeSourceDetails {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The workload identity details for the AgentCore Runtime resource. Present
+   * when the runtime has a workload identity configured.</p>
+   */
   inline const WorkloadIdentityDetails& GetWorkloadIdentityDetails() const { return m_workloadIdentityDetails; }
   inline bool WorkloadIdentityDetailsHasBeenSet() const { return m_workloadIdentityDetailsHasBeenSet; }
   template <typename WorkloadIdentityDetailsT = WorkloadIdentityDetails>

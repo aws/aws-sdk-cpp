@@ -26,6 +26,10 @@ RemoteAccountDetails& RemoteAccountDetails::operator=(JsonView jsonValue) {
     m_affiliated = jsonValue.GetBool("affiliated");
     m_affiliatedHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("awsServiceName")) {
+    m_awsServiceName = jsonValue.GetString("awsServiceName");
+    m_awsServiceNameHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue RemoteAccountDetails::Jsonize() const {
 
   if (m_affiliatedHasBeenSet) {
     payload.WithBool("affiliated", m_affiliated);
+  }
+
+  if (m_awsServiceNameHasBeenSet) {
+    payload.WithString("awsServiceName", m_awsServiceName);
   }
 
   return payload;

@@ -20,7 +20,10 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/ModifyVerifiedAccessEndpointPolicyRequest.h>
+#include <aws/ec2/model/ModifyVerifiedAccessEndpointRequest.h>
 #include <aws/ec2/model/ModifyVerifiedAccessGroupPolicyRequest.h>
+#include <aws/ec2/model/ModifyVerifiedAccessGroupRequest.h>
 #include <aws/ec2/model/ModifyVerifiedAccessInstanceLoggingConfigurationRequest.h>
 #include <aws/ec2/model/ModifyVerifiedAccessInstanceRequest.h>
 #include <aws/ec2/model/ModifyVerifiedAccessTrustProviderRequest.h>
@@ -117,9 +120,6 @@
 #include <aws/ec2/model/UnassignPrivateNatGatewayAddressRequest.h>
 #include <aws/ec2/model/UnlockSnapshotRequest.h>
 #include <aws/ec2/model/UnmonitorInstancesRequest.h>
-#include <aws/ec2/model/UpdateCapacityManagerMonitoredTagKeysRequest.h>
-#include <aws/ec2/model/UpdateCapacityManagerOrganizationsAccessRequest.h>
-#include <aws/ec2/model/UpdateInterruptibleCapacityReservationAllocationRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,25 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+ModifyVerifiedAccessEndpointOutcome EC2Client::ModifyVerifiedAccessEndpoint(const ModifyVerifiedAccessEndpointRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyVerifiedAccessEndpointOutcome(result.GetResultWithOwnership())
+                            : ModifyVerifiedAccessEndpointOutcome(std::move(result.GetError()));
+}
+
+ModifyVerifiedAccessEndpointPolicyOutcome EC2Client::ModifyVerifiedAccessEndpointPolicy(
+    const ModifyVerifiedAccessEndpointPolicyRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyVerifiedAccessEndpointPolicyOutcome(result.GetResultWithOwnership())
+                            : ModifyVerifiedAccessEndpointPolicyOutcome(std::move(result.GetError()));
+}
+
+ModifyVerifiedAccessGroupOutcome EC2Client::ModifyVerifiedAccessGroup(const ModifyVerifiedAccessGroupRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyVerifiedAccessGroupOutcome(result.GetResultWithOwnership())
+                            : ModifyVerifiedAccessGroupOutcome(std::move(result.GetError()));
+}
 
 ModifyVerifiedAccessGroupPolicyOutcome EC2Client::ModifyVerifiedAccessGroupPolicy(
     const ModifyVerifiedAccessGroupPolicyRequest& request) const {
@@ -735,25 +754,4 @@ UnmonitorInstancesOutcome EC2Client::UnmonitorInstances(const UnmonitorInstances
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UnmonitorInstancesOutcome(result.GetResultWithOwnership())
                             : UnmonitorInstancesOutcome(std::move(result.GetError()));
-}
-
-UpdateCapacityManagerMonitoredTagKeysOutcome EC2Client::UpdateCapacityManagerMonitoredTagKeys(
-    const UpdateCapacityManagerMonitoredTagKeysRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateCapacityManagerMonitoredTagKeysOutcome(result.GetResultWithOwnership())
-                            : UpdateCapacityManagerMonitoredTagKeysOutcome(std::move(result.GetError()));
-}
-
-UpdateCapacityManagerOrganizationsAccessOutcome EC2Client::UpdateCapacityManagerOrganizationsAccess(
-    const UpdateCapacityManagerOrganizationsAccessRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateCapacityManagerOrganizationsAccessOutcome(result.GetResultWithOwnership())
-                            : UpdateCapacityManagerOrganizationsAccessOutcome(std::move(result.GetError()));
-}
-
-UpdateInterruptibleCapacityReservationAllocationOutcome EC2Client::UpdateInterruptibleCapacityReservationAllocation(
-    const UpdateInterruptibleCapacityReservationAllocationRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateInterruptibleCapacityReservationAllocationOutcome(result.GetResultWithOwnership())
-                            : UpdateInterruptibleCapacityReservationAllocationOutcome(std::move(result.GetError()));
 }

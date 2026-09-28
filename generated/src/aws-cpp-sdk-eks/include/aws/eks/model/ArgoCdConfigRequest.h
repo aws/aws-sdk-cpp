@@ -125,6 +125,26 @@ class ArgoCdConfigRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An optional prefix used to construct the hostname of the Argo CD server
+   * endpoint. If not specified, Amazon EKS automatically generates the endpoint.
+   * This value can't be changed after the capability is created.</p>
+   */
+  inline const Aws::String& GetEndpointPrefix() const { return m_endpointPrefix; }
+  inline bool EndpointPrefixHasBeenSet() const { return m_endpointPrefixHasBeenSet; }
+  template <typename EndpointPrefixT = Aws::String>
+  void SetEndpointPrefix(EndpointPrefixT&& value) {
+    m_endpointPrefixHasBeenSet = true;
+    m_endpointPrefix = std::forward<EndpointPrefixT>(value);
+  }
+  template <typename EndpointPrefixT = Aws::String>
+  ArgoCdConfigRequest& WithEndpointPrefix(EndpointPrefixT&& value) {
+    SetEndpointPrefix(std::forward<EndpointPrefixT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_namespace;
 
@@ -133,10 +153,13 @@ class ArgoCdConfigRequest {
   Aws::Vector<ArgoCdRoleMapping> m_rbacRoleMappings;
 
   ArgoCdNetworkAccessConfigRequest m_networkAccess;
+
+  Aws::String m_endpointPrefix;
   bool m_namespaceHasBeenSet = false;
   bool m_awsIdcHasBeenSet = false;
   bool m_rbacRoleMappingsHasBeenSet = false;
   bool m_networkAccessHasBeenSet = false;
+  bool m_endpointPrefixHasBeenSet = false;
 };
 
 }  // namespace Model

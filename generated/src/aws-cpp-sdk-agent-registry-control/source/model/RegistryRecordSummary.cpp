@@ -78,6 +78,11 @@ RegistryRecordSummary& RegistryRecordSummary::operator=(JsonView jsonValue) {
     }
     m_provenanceSummaryListHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("customMetadataSchemaComplianceStatus")) {
+    m_customMetadataSchemaComplianceStatus = CustomMetadataSchemaComplianceStatusMapper::GetCustomMetadataSchemaComplianceStatusForName(
+        jsonValue.GetString("customMetadataSchemaComplianceStatus"));
+    m_customMetadataSchemaComplianceStatusHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -143,6 +148,12 @@ JsonValue RegistryRecordSummary::Jsonize() const {
       provenanceSummaryListJsonList[provenanceSummaryListIndex].AsObject(m_provenanceSummaryList[provenanceSummaryListIndex].Jsonize());
     }
     payload.WithArray("provenanceSummaryList", std::move(provenanceSummaryListJsonList));
+  }
+
+  if (m_customMetadataSchemaComplianceStatusHasBeenSet) {
+    payload.WithString(
+        "customMetadataSchemaComplianceStatus",
+        CustomMetadataSchemaComplianceStatusMapper::GetNameForCustomMetadataSchemaComplianceStatus(m_customMetadataSchemaComplianceStatus));
   }
 
   return payload;

@@ -44,6 +44,8 @@
 #include <aws/agent-registry-control/model/CustomClaimValidationType.h>
 #include <aws/agent-registry-control/model/CustomDescriptor.h>
 #include <aws/agent-registry-control/model/CustomJWTAuthorizerConfiguration.h>
+#include <aws/agent-registry-control/model/CustomMetadataSchemaComplianceStatus.h>
+#include <aws/agent-registry-control/model/CustomMetadataSchemaConfiguration.h>
 #include <aws/agent-registry-control/model/DeleteRegistryRecordRequest.h>
 #include <aws/agent-registry-control/model/DeleteRegistryRecordResult.h>
 #include <aws/agent-registry-control/model/DeleteRegistryRequest.h>
@@ -78,6 +80,7 @@
 #include <aws/agent-registry-control/model/ProvenanceRelation.h>
 #include <aws/agent-registry-control/model/ProvenanceSummary.h>
 #include <aws/agent-registry-control/model/RecordType.h>
+#include <aws/agent-registry-control/model/RecordTypeSchemaOverride.h>
 #include <aws/agent-registry-control/model/RegistryAuthorizerType.h>
 #include <aws/agent-registry-control/model/RegistryFilter.h>
 #include <aws/agent-registry-control/model/RegistryFilterName.h>
@@ -123,6 +126,8 @@
 #include <aws/agent-registry-control/model/UpdatedAutoDetectionConfiguration.h>
 #include <aws/agent-registry-control/model/UpdatedCustomDescriptor.h>
 #include <aws/agent-registry-control/model/UpdatedCustomDescriptorFields.h>
+#include <aws/agent-registry-control/model/UpdatedCustomMetadataMap.h>
+#include <aws/agent-registry-control/model/UpdatedCustomMetadataSchemaConfiguration.h>
 #include <aws/agent-registry-control/model/UpdatedDataSchemaVersion.h>
 #include <aws/agent-registry-control/model/UpdatedDescription.h>
 #include <aws/agent-registry-control/model/UpdatedDescriptorData.h>

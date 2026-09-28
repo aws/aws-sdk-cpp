@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/SSMRequest.h>
 #include <aws/ssm/SSM_EXPORTS.h>
+#include <aws/ssm/model/DeletionMode.h>
 
 #include <utility>
 
@@ -85,15 +86,40 @@ class DeleteResourcePolicyRequest : public SSMRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the intended outcome of the operation. Applies only to the
+   * <code>Document</code> resource type. The operation ignores this parameter for
+   * other resource types. Optional. Defaults to <code>RemoveSharing</code>.</p> <ul>
+   * <li> <p> <code>RemoveSharing</code> – Deletes the resource policy and removes
+   * sharing of the document.</p> </li> <li> <p> <code>RollbackMigration</code> –
+   * Reverts the document to Custom sharing, preserving existing consumer access,
+   * instead of removing the policy.</p> </li> </ul>
+   */
+  inline DeletionMode GetDeletionMode() const { return m_deletionMode; }
+  inline bool DeletionModeHasBeenSet() const { return m_deletionModeHasBeenSet; }
+  inline void SetDeletionMode(DeletionMode value) {
+    m_deletionModeHasBeenSet = true;
+    m_deletionMode = value;
+  }
+  inline DeleteResourcePolicyRequest& WithDeletionMode(DeletionMode value) {
+    SetDeletionMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_resourceArn;
 
   Aws::String m_policyId;
 
   Aws::String m_policyHash;
+
+  DeletionMode m_deletionMode{DeletionMode::NOT_SET};
   bool m_resourceArnHasBeenSet = false;
   bool m_policyIdHasBeenSet = false;
   bool m_policyHashHasBeenSet = false;
+  bool m_deletionModeHasBeenSet = false;
 };
 
 }  // namespace Model

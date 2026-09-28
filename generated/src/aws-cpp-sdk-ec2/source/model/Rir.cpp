@@ -19,6 +19,7 @@ static const int ripe_HASH = HashingUtils::HashString("ripe");
 static const int apnic_HASH = HashingUtils::HashString("apnic");
 static const int arin_HASH = HashingUtils::HashString("arin");
 static const int lacnic_HASH = HashingUtils::HashString("lacnic");
+static const int nicbr_HASH = HashingUtils::HashString("nicbr");
 
 Rir GetRirForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ Rir GetRirForName(const Aws::String& name) {
     return Rir::arin;
   } else if (hashCode == lacnic_HASH) {
     return Rir::lacnic;
+  } else if (hashCode == nicbr_HASH) {
+    return Rir::nicbr;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForRir(Rir enumValue) {
       return "arin";
     case Rir::lacnic:
       return "lacnic";
+    case Rir::nicbr:
+      return "nicbr";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

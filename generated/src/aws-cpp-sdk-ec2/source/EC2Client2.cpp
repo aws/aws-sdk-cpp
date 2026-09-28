@@ -20,6 +20,7 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/DeleteIpamResourceDiscoveryRequest.h>
 #include <aws/ec2/model/DeleteIpamRoutingPolicyRegistrationRequest.h>
 #include <aws/ec2/model/DeleteIpamScopeRequest.h>
 #include <aws/ec2/model/DeleteKeyPairRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/ec2/model/DescribeCapacityBlockStatusRequest.h>
 #include <aws/ec2/model/DescribeCapacityBlocksRequest.h>
 #include <aws/ec2/model/DescribeCapacityManagerDataExportsRequest.h>
-#include <aws/ec2/model/DescribeCapacityReservationBillingRequestsRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,12 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DeleteIpamResourceDiscoveryOutcome EC2Client::DeleteIpamResourceDiscovery(const DeleteIpamResourceDiscoveryRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteIpamResourceDiscoveryOutcome(result.GetResultWithOwnership())
+                            : DeleteIpamResourceDiscoveryOutcome(std::move(result.GetError()));
+}
 
 DeleteIpamRoutingPolicyRegistrationOutcome EC2Client::DeleteIpamRoutingPolicyRegistration(
     const DeleteIpamRoutingPolicyRegistrationRequest& request) const {
@@ -753,11 +759,4 @@ DescribeCapacityManagerDataExportsOutcome EC2Client::DescribeCapacityManagerData
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeCapacityManagerDataExportsOutcome(result.GetResultWithOwnership())
                             : DescribeCapacityManagerDataExportsOutcome(std::move(result.GetError()));
-}
-
-DescribeCapacityReservationBillingRequestsOutcome EC2Client::DescribeCapacityReservationBillingRequests(
-    const DescribeCapacityReservationBillingRequestsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeCapacityReservationBillingRequestsOutcome(result.GetResultWithOwnership())
-                            : DescribeCapacityReservationBillingRequestsOutcome(std::move(result.GetError()));
 }

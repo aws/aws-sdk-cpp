@@ -84,6 +84,7 @@
 #include <aws/securityagent/model/BitbucketResourceCapabilities.h>
 #include <aws/securityagent/model/CaCertificateSource.h>
 #include <aws/securityagent/model/Category.h>
+#include <aws/securityagent/model/CiCdConfiguration.h>
 #include <aws/securityagent/model/CleanUpStrategy.h>
 #include <aws/securityagent/model/CloudWatchLog.h>
 #include <aws/securityagent/model/CodeLocation.h>
@@ -298,6 +299,9 @@
 #include <aws/securityagent/model/ResourceType.h>
 #include <aws/securityagent/model/RiskLevel.h>
 #include <aws/securityagent/model/RiskType.h>
+#include <aws/securityagent/model/ScopeChange.h>
+#include <aws/securityagent/model/ScopeDecision.h>
+#include <aws/securityagent/model/ScopeResult.h>
 #include <aws/securityagent/model/SecurityRequirementArtifact.h>
 #include <aws/securityagent/model/SecurityRequirementArtifactFormat.h>
 #include <aws/securityagent/model/SecurityRequirementPackImportStatus.h>

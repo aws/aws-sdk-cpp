@@ -944,6 +944,11 @@ class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient,
    * (RAM). For more information about cross-account sharing of parameters, see <a
    * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
    * with shared parameters</a> in the <i>Amazon Web Services Systems Manager User
+   * Guide</i>.</p> </li> <li> <p> <code>Document</code> – Shares the document using
+   * Resource Access Manager (RAM). For more information about sharing documents, see
+   * <a
+   * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-ssm-sharing.html">Sharing
+   * Systems Manager documents</a> in the <i>Amazon Web Services Systems Manager User
    * Guide</i>.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourcePolicy">AWS
    * API Reference</a></p>
@@ -3864,7 +3869,24 @@ class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient,
    * information, see <a
    * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html#share">Sharing
    * a parameter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>
-   * </p>  </li> </ul><p><h3>See Also:</h3>   <a
+   * </p>  </li> <li> <p> <code>Document</code> – Shares the document
+   * using Resource Access Manager (RAM). For more information about sharing
+   * documents, see <a
+   * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-ssm-sharing.html">Sharing
+   * Systems Manager documents</a> in the <i>Amazon Web Services Systems Manager User
+   * Guide</i>.</p> </li> </ul>  <p>While you can share a document using
+   * the Systems Manager <code>PutResourcePolicy</code> operation, we recommend using
+   * Resource Access Manager (RAM) instead. Using <code>PutResourcePolicy</code>
+   * requires an extra step. You must promote the document to a standard RAM Resource
+   * Share using the RAM <a
+   * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
+   * API operation. Otherwise, the Systems Manager <a
+   * href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListDocuments.html">ListDocuments</a>
+   * API operation won't return the document when filtering for shared documents. The
+   * Amazon Web Services Config <a
+   * href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutRemediationConfigurations.html">PutRemediationConfigurations</a>
+   * API operation also can't use the document.</p> <p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutResourcePolicy">AWS
    * API Reference</a></p>
    */

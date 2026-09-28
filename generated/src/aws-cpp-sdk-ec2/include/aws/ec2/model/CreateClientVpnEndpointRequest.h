@@ -14,6 +14,7 @@
 #include <aws/ec2/model/ClientRouteEnforcementOptions.h>
 #include <aws/ec2/model/ClientVpnAuthenticationRequest.h>
 #include <aws/ec2/model/ConnectionLogOptions.h>
+#include <aws/ec2/model/DevicePostureOptions.h>
 #include <aws/ec2/model/EndpointIpAddressType.h>
 #include <aws/ec2/model/SelfServicePortal.h>
 #include <aws/ec2/model/TagSpecification.h>
@@ -522,6 +523,26 @@ class CreateClientVpnEndpointRequest : public EC2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The device posture options for the Client VPN endpoint. Use this parameter to
+   * specify the device trust providers that the endpoint uses to evaluate the
+   * security posture of connecting devices.</p>
+   */
+  inline const DevicePostureOptions& GetDevicePostureOptions() const { return m_devicePostureOptions; }
+  inline bool DevicePostureOptionsHasBeenSet() const { return m_devicePostureOptionsHasBeenSet; }
+  template <typename DevicePostureOptionsT = DevicePostureOptions>
+  void SetDevicePostureOptions(DevicePostureOptionsT&& value) {
+    m_devicePostureOptionsHasBeenSet = true;
+    m_devicePostureOptions = std::forward<DevicePostureOptionsT>(value);
+  }
+  template <typename DevicePostureOptionsT = DevicePostureOptions>
+  CreateClientVpnEndpointRequest& WithDevicePostureOptions(DevicePostureOptionsT&& value) {
+    SetDevicePostureOptions(std::forward<DevicePostureOptionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clientCidrBlock;
 
@@ -568,6 +589,8 @@ class CreateClientVpnEndpointRequest : public EC2Request {
   TrafficIpAddressType m_trafficIpAddressType{TrafficIpAddressType::NOT_SET};
 
   TransitGatewayConfigurationInputStructure m_transitGatewayConfiguration;
+
+  DevicePostureOptions m_devicePostureOptions;
   bool m_clientCidrBlockHasBeenSet = false;
   bool m_serverCertificateArnHasBeenSet = false;
   bool m_authenticationOptionsHasBeenSet = false;
@@ -591,6 +614,7 @@ class CreateClientVpnEndpointRequest : public EC2Request {
   bool m_endpointIpAddressTypeHasBeenSet = false;
   bool m_trafficIpAddressTypeHasBeenSet = false;
   bool m_transitGatewayConfigurationHasBeenSet = false;
+  bool m_devicePostureOptionsHasBeenSet = false;
 };
 
 }  // namespace Model

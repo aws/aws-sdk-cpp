@@ -135,6 +135,26 @@ class MCPGatewayConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether pagination is disabled for the Model Context Protocol (MCP)
+   * <code>tools/list</code> operation. When set to <code>true</code>, the gateway
+   * returns the complete list of tools in a single response without a pagination
+   * cursor. When set to <code>false</code> or omitted, the gateway returns tools in
+   * paginated responses.</p>
+   */
+  inline bool GetDisableMcpListToolsPagination() const { return m_disableMcpListToolsPagination; }
+  inline bool DisableMcpListToolsPaginationHasBeenSet() const { return m_disableMcpListToolsPaginationHasBeenSet; }
+  inline void SetDisableMcpListToolsPagination(bool value) {
+    m_disableMcpListToolsPaginationHasBeenSet = true;
+    m_disableMcpListToolsPagination = value;
+  }
+  inline MCPGatewayConfiguration& WithDisableMcpListToolsPagination(bool value) {
+    SetDisableMcpListToolsPagination(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_supportedVersions;
 
@@ -145,11 +165,14 @@ class MCPGatewayConfiguration {
   SessionConfiguration m_sessionConfiguration;
 
   StreamingConfiguration m_streamingConfiguration;
+
+  bool m_disableMcpListToolsPagination{false};
   bool m_supportedVersionsHasBeenSet = false;
   bool m_instructionsHasBeenSet = false;
   bool m_searchTypeHasBeenSet = false;
   bool m_sessionConfigurationHasBeenSet = false;
   bool m_streamingConfigurationHasBeenSet = false;
+  bool m_disableMcpListToolsPaginationHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -6387,6 +6387,37 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Deletes the authorization policy for a Client VPN endpoint.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteClientVpnEndpointAuthorizationPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteClientVpnEndpointAuthorizationPolicyOutcome DeleteClientVpnEndpointAuthorizationPolicy(
+      const Model::DeleteClientVpnEndpointAuthorizationPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteClientVpnEndpointAuthorizationPolicy that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DeleteClientVpnEndpointAuthorizationPolicyRequestT = Model::DeleteClientVpnEndpointAuthorizationPolicyRequest>
+  Model::DeleteClientVpnEndpointAuthorizationPolicyOutcomeCallable DeleteClientVpnEndpointAuthorizationPolicyCallable(
+      const DeleteClientVpnEndpointAuthorizationPolicyRequestT& request) const {
+    return SubmitCallable(&EC2Client::DeleteClientVpnEndpointAuthorizationPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteClientVpnEndpointAuthorizationPolicy that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DeleteClientVpnEndpointAuthorizationPolicyRequestT = Model::DeleteClientVpnEndpointAuthorizationPolicyRequest>
+  void DeleteClientVpnEndpointAuthorizationPolicyAsync(
+      const DeleteClientVpnEndpointAuthorizationPolicyRequestT& request,
+      const DeleteClientVpnEndpointAuthorizationPolicyResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::DeleteClientVpnEndpointAuthorizationPolicy, request, handler, context);
+  }
+
+  /**
    * <p>Deletes a route from a Client VPN endpoint. You can only delete routes that
    * you manually added using the <b>CreateClientVpnRoute</b> action. You cannot
    * delete routes that were automatically added when associating a subnet. To remove
@@ -18809,6 +18840,36 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Describes the authorization policy for a Client VPN endpoint.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetClientVpnEndpointAuthorizationPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetClientVpnEndpointAuthorizationPolicyOutcome GetClientVpnEndpointAuthorizationPolicy(
+      const Model::GetClientVpnEndpointAuthorizationPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetClientVpnEndpointAuthorizationPolicy that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename GetClientVpnEndpointAuthorizationPolicyRequestT = Model::GetClientVpnEndpointAuthorizationPolicyRequest>
+  Model::GetClientVpnEndpointAuthorizationPolicyOutcomeCallable GetClientVpnEndpointAuthorizationPolicyCallable(
+      const GetClientVpnEndpointAuthorizationPolicyRequestT& request) const {
+    return SubmitCallable(&EC2Client::GetClientVpnEndpointAuthorizationPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for GetClientVpnEndpointAuthorizationPolicy that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename GetClientVpnEndpointAuthorizationPolicyRequestT = Model::GetClientVpnEndpointAuthorizationPolicyRequest>
+  void GetClientVpnEndpointAuthorizationPolicyAsync(const GetClientVpnEndpointAuthorizationPolicyRequestT& request,
+                                                    const GetClientVpnEndpointAuthorizationPolicyResponseReceivedHandler& handler,
+                                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::GetClientVpnEndpointAuthorizationPolicy, request, handler, context);
+  }
+
+  /**
    * <p>Describes the allocations from the specified customer-owned address
    * pool.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCoipPoolUsage">AWS
@@ -21582,6 +21643,40 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
                                     const ModifyClientVpnEndpointResponseReceivedHandler& handler,
                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::ModifyClientVpnEndpoint, request, handler, context);
+  }
+
+  /**
+   * <p>Creates or updates the authorization policy for a Client VPN endpoint. A
+   * Client VPN endpoint can have one authorization policy. If a policy already
+   * exists for the endpoint, the values that you specify replace the corresponding
+   * values in the existing policy, and values that you do not specify remain
+   * unchanged.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyClientVpnEndpointAuthorizationPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ModifyClientVpnEndpointAuthorizationPolicyOutcome ModifyClientVpnEndpointAuthorizationPolicy(
+      const Model::ModifyClientVpnEndpointAuthorizationPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for ModifyClientVpnEndpointAuthorizationPolicy that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename ModifyClientVpnEndpointAuthorizationPolicyRequestT = Model::ModifyClientVpnEndpointAuthorizationPolicyRequest>
+  Model::ModifyClientVpnEndpointAuthorizationPolicyOutcomeCallable ModifyClientVpnEndpointAuthorizationPolicyCallable(
+      const ModifyClientVpnEndpointAuthorizationPolicyRequestT& request) const {
+    return SubmitCallable(&EC2Client::ModifyClientVpnEndpointAuthorizationPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for ModifyClientVpnEndpointAuthorizationPolicy that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename ModifyClientVpnEndpointAuthorizationPolicyRequestT = Model::ModifyClientVpnEndpointAuthorizationPolicyRequest>
+  void ModifyClientVpnEndpointAuthorizationPolicyAsync(
+      const ModifyClientVpnEndpointAuthorizationPolicyRequestT& request,
+      const ModifyClientVpnEndpointAuthorizationPolicyResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::ModifyClientVpnEndpointAuthorizationPolicy, request, handler, context);
   }
 
   /**

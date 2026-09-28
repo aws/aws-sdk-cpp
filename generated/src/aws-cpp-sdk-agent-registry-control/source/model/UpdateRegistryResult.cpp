@@ -50,6 +50,10 @@ UpdateRegistryResult& UpdateRegistryResult::operator=(const Aws::AmazonWebServic
     m_approvalConfiguration = jsonValue.GetObject("approvalConfiguration");
     m_approvalConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("customMetadataSchemaConfiguration")) {
+    m_customMetadataSchemaConfiguration = jsonValue.GetObject("customMetadataSchemaConfiguration");
+    m_customMetadataSchemaConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("status")) {
     m_status = RegistryStatusMapper::GetRegistryStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;

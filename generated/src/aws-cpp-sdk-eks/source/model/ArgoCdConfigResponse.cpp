@@ -41,6 +41,10 @@ ArgoCdConfigResponse& ArgoCdConfigResponse::operator=(JsonView jsonValue) {
     m_serverUrl = jsonValue.GetString("serverUrl");
     m_serverUrlHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("endpointPrefix")) {
+    m_endpointPrefix = jsonValue.GetString("endpointPrefix");
+    m_endpointPrefixHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -69,6 +73,10 @@ JsonValue ArgoCdConfigResponse::Jsonize() const {
 
   if (m_serverUrlHasBeenSet) {
     payload.WithString("serverUrl", m_serverUrl);
+  }
+
+  if (m_endpointPrefixHasBeenSet) {
+    payload.WithString("endpointPrefix", m_endpointPrefix);
   }
 
   return payload;

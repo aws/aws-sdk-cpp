@@ -29,6 +29,7 @@
 #include <aws/connect/model/ListDataTablesPaginationTraits.h>
 #include <aws/connect/model/ListDefaultVocabulariesPaginationTraits.h>
 #include <aws/connect/model/ListEntitySecurityProfilesPaginationTraits.h>
+#include <aws/connect/model/ListEvaluationFormAIVersionsPaginationTraits.h>
 #include <aws/connect/model/ListEvaluationFormVersionsPaginationTraits.h>
 #include <aws/connect/model/ListEvaluationFormsPaginationTraits.h>
 #include <aws/connect/model/ListExtractionDefinitionsPaginationTraits.h>
@@ -162,6 +163,9 @@ using ListDefaultVocabulariesPaginator =
 using ListEntitySecurityProfilesPaginator =
     Aws::Utils::Pagination::Paginator<ConnectClient, Model::ListEntitySecurityProfilesRequest,
                                       Pagination::ListEntitySecurityProfilesPaginationTraits<ConnectClient>>;
+using ListEvaluationFormAIVersionsPaginator =
+    Aws::Utils::Pagination::Paginator<ConnectClient, Model::ListEvaluationFormAIVersionsRequest,
+                                      Pagination::ListEvaluationFormAIVersionsPaginationTraits<ConnectClient>>;
 using ListEvaluationFormsPaginator = Aws::Utils::Pagination::Paginator<ConnectClient, Model::ListEvaluationFormsRequest,
                                                                        Pagination::ListEvaluationFormsPaginationTraits<ConnectClient>>;
 using ListEvaluationFormVersionsPaginator =

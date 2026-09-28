@@ -8,6 +8,7 @@
 #include <aws/agent-registry-control/AgentRegistryControl_EXPORTS.h>
 #include <aws/agent-registry-control/model/Provenance.h>
 #include <aws/agent-registry-control/model/RecordType.h>
+#include <aws/agent-registry-control/model/UpdatedCustomMetadataMap.h>
 #include <aws/agent-registry-control/model/UpdatedDescription.h>
 #include <aws/agent-registry-control/model/UpdatedDescriptors.h>
 #include <aws/agent-registry-control/model/UpdatedDisplayName.h>
@@ -184,6 +185,28 @@ class UpdateRegistryRecordRequest : public AgentRegistryControlRequest {
 
   ///@{
   /**
+   * <p>The updated custom metadata for the registry record. Values can be strings
+   * (maximum 128 characters) or native JSON booleans (<code>true</code> or
+   * <code>false</code>). Omit to leave the existing metadata unchanged. Supply the
+   * wrapper with a full replacement set to update, or with a null value to clear all
+   * metadata.</p>
+   */
+  inline const UpdatedCustomMetadataMap& GetCustomMetadata() const { return m_customMetadata; }
+  inline bool CustomMetadataHasBeenSet() const { return m_customMetadataHasBeenSet; }
+  template <typename CustomMetadataT = UpdatedCustomMetadataMap>
+  void SetCustomMetadata(CustomMetadataT&& value) {
+    m_customMetadataHasBeenSet = true;
+    m_customMetadata = std::forward<CustomMetadataT>(value);
+  }
+  template <typename CustomMetadataT = UpdatedCustomMetadataMap>
+  UpdateRegistryRecordRequest& WithCustomMetadata(CustomMetadataT&& value) {
+    SetCustomMetadata(std::forward<CustomMetadataT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Whether to trigger synchronization of the record's descriptor content from
    * its source</p>
    */
@@ -200,7 +223,13 @@ class UpdateRegistryRecordRequest : public AgentRegistryControlRequest {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The provenance lineage re-assertion for the registry record. This field is
+   * reserved for the Amazon Web Services Agent Registry auto-detection service
+   * principal. Requests that include this field from other callers are rejected. The
+   * source identity of an existing lineage is immutable; a re-assertion may only
+   * refresh the source details.</p>
+   */
   inline const Aws::Vector<Provenance>& GetProvenance() const { return m_provenance; }
   inline bool ProvenanceHasBeenSet() const { return m_provenanceHasBeenSet; }
   template <typename ProvenanceT = Aws::Vector<Provenance>>
@@ -237,6 +266,8 @@ class UpdateRegistryRecordRequest : public AgentRegistryControlRequest {
 
   Aws::String m_recordVersion;
 
+  UpdatedCustomMetadataMap m_customMetadata;
+
   bool m_triggerSynchronization{false};
 
   Aws::Vector<Provenance> m_provenance;
@@ -248,6 +279,7 @@ class UpdateRegistryRecordRequest : public AgentRegistryControlRequest {
   bool m_recordTypeHasBeenSet = false;
   bool m_descriptorsHasBeenSet = false;
   bool m_recordVersionHasBeenSet = false;
+  bool m_customMetadataHasBeenSet = false;
   bool m_triggerSynchronizationHasBeenSet = false;
   bool m_provenanceHasBeenSet = false;
 };
