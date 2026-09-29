@@ -1,0 +1,6 @@
+{
+  "type": "bugfix",
+  "category": "aws-cpp-sdk-s3-crt",
+  "contributor": "FranciscoMaxwell",
+  "description": "Fix use-after-free in S3 CRT async operations by owning a request copy"
+}

@@ -8739,7 +8739,7 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient,
     PutObjectResponseReceivedHandler putResponseHandler;
     CopyObjectResponseReceivedHandler copyResponseHandler;
     std::shared_ptr<const Aws::Client::AsyncCallerContext> asyncCallerContext;
-    const Aws::AmazonWebServiceRequest* originalRequest;
+    Aws::UniquePtr<Aws::AmazonWebServiceRequest> originalRequest;
     std::shared_ptr<Aws::Http::HttpRequest> request;
     std::shared_ptr<Aws::Http::HttpResponse> response;
     std::shared_ptr<Aws::Crt::Http::HttpRequest> crtHttpRequest;
@@ -8778,7 +8778,7 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient,
   void InitCrtEndpointFromUri(aws_uri& endpoint_uri, const Aws::Http::URI& uri) const;
 
   void InitCommonCrtRequestOption(CrtRequestCallbackUserData* userData, aws_s3_meta_request_options* options,
-                                  const Aws::AmazonWebServiceRequest* request, const Aws::Http::URI& uri,
+                                  Aws::UniquePtr<Aws::AmazonWebServiceRequest> request, const Aws::Http::URI& uri,
                                   Aws::Http::HttpMethod method) const;
 
   using CopyObjectPropertiesOutcome = Aws::Utils::Outcome<Aws::Map<Aws::String, Aws::String>, S3CrtError>;
