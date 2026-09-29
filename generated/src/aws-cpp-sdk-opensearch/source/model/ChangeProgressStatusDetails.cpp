@@ -69,6 +69,21 @@ ChangeProgressStatusDetails& ChangeProgressStatusDetails::operator=(JsonView jso
     m_initiatedBy = InitiatedByMapper::GetInitiatedByForName(jsonValue.GetString("InitiatedBy"));
     m_initiatedByHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ValidationFailures")) {
+    Aws::Utils::Array<JsonView> validationFailuresJsonList = jsonValue.GetArray("ValidationFailures");
+    for (unsigned validationFailuresIndex = 0; validationFailuresIndex < validationFailuresJsonList.GetLength();
+         ++validationFailuresIndex) {
+      m_validationFailures.push_back(validationFailuresJsonList[validationFailuresIndex].AsObject());
+    }
+    m_validationFailuresHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AcceptedWarnings")) {
+    Aws::Utils::Array<JsonView> acceptedWarningsJsonList = jsonValue.GetArray("AcceptedWarnings");
+    for (unsigned acceptedWarningsIndex = 0; acceptedWarningsIndex < acceptedWarningsJsonList.GetLength(); ++acceptedWarningsIndex) {
+      m_acceptedWarnings.push_back(acceptedWarningsJsonList[acceptedWarningsIndex].AsString());
+    }
+    m_acceptedWarningsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -127,6 +142,23 @@ JsonValue ChangeProgressStatusDetails::Jsonize() const {
 
   if (m_initiatedByHasBeenSet) {
     payload.WithString("InitiatedBy", InitiatedByMapper::GetNameForInitiatedBy(m_initiatedBy));
+  }
+
+  if (m_validationFailuresHasBeenSet) {
+    Aws::Utils::Array<JsonValue> validationFailuresJsonList(m_validationFailures.size());
+    for (unsigned validationFailuresIndex = 0; validationFailuresIndex < validationFailuresJsonList.GetLength();
+         ++validationFailuresIndex) {
+      validationFailuresJsonList[validationFailuresIndex].AsObject(m_validationFailures[validationFailuresIndex].Jsonize());
+    }
+    payload.WithArray("ValidationFailures", std::move(validationFailuresJsonList));
+  }
+
+  if (m_acceptedWarningsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> acceptedWarningsJsonList(m_acceptedWarnings.size());
+    for (unsigned acceptedWarningsIndex = 0; acceptedWarningsIndex < acceptedWarningsJsonList.GetLength(); ++acceptedWarningsIndex) {
+      acceptedWarningsJsonList[acceptedWarningsIndex].AsString(m_acceptedWarnings[acceptedWarningsIndex]);
+    }
+    payload.WithArray("AcceptedWarnings", std::move(acceptedWarningsJsonList));
   }
 
   return payload;

@@ -21,7 +21,23 @@ UpdateUserResult::UpdateUserResult(const Aws::AmazonWebServiceResult<JsonValue>&
 
 UpdateUserResult& UpdateUserResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
-  AWS_UNREFERENCED_PARAM(result);
+  JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("IdentityStoreId")) {
+    m_identityStoreId = jsonValue.GetString("IdentityStoreId");
+    m_identityStoreIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UserId")) {
+    m_userId = jsonValue.GetString("UserId");
+    m_userIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UserArn")) {
+    m_userArn = jsonValue.GetString("UserArn");
+    m_userArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Revision")) {
+    m_revision = jsonValue.GetString("Revision");
+    m_revisionHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

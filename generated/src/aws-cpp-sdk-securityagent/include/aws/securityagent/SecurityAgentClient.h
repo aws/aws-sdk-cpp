@@ -2456,6 +2456,34 @@ class AWS_SECURITYAGENT_API SecurityAgentClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Creates an integration's webhook, or rotates the HMAC signing secret of an
+   * existing one. The secret is returned only once, in this response, and cannot be
+   * retrieved again.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/UpdateIntegration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateIntegrationOutcome UpdateIntegration(const Model::UpdateIntegrationRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateIntegration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateIntegrationRequestT = Model::UpdateIntegrationRequest>
+  Model::UpdateIntegrationOutcomeCallable UpdateIntegrationCallable(const UpdateIntegrationRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::UpdateIntegration, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateIntegration that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateIntegrationRequestT = Model::UpdateIntegrationRequest>
+  void UpdateIntegrationAsync(const UpdateIntegrationRequestT& request, const UpdateIntegrationResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::UpdateIntegration, request, handler, context);
+  }
+
+  /**
    * <p>Updates an existing pentest configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/UpdatePentest">AWS
    * API Reference</a></p>

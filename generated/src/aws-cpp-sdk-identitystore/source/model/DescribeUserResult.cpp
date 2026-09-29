@@ -30,6 +30,14 @@ DescribeUserResult& DescribeUserResult::operator=(const Aws::AmazonWebServiceRes
     m_userId = jsonValue.GetString("UserId");
     m_userIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("UserArn")) {
+    m_userArn = jsonValue.GetString("UserArn");
+    m_userArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Revision")) {
+    m_revision = jsonValue.GetString("Revision");
+    m_revisionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("UserName")) {
     m_userName = jsonValue.GetString("UserName");
     m_userNameHasBeenSet = true;

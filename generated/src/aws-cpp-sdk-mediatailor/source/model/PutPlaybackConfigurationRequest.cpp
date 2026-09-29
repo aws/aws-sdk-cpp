@@ -115,5 +115,9 @@ Aws::String PutPlaybackConfigurationRequest::SerializePayload() const {
     payload.WithObject("AdsPersonalizationConcurrency", m_adsPersonalizationConcurrency.Jsonize());
   }
 
+  if (m_beaconingConfigurationHasBeenSet) {
+    payload.WithObject("BeaconingConfiguration", m_beaconingConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

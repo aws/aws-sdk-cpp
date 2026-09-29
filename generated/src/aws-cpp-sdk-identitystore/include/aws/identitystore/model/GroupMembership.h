@@ -74,6 +74,26 @@ class GroupMembership {
 
   ///@{
   /**
+   * <p>The Amazon Resource Name (ARN) of the group membership in the identity store.
+   * For example,
+   * <code>arn:aws:identitystore:::membership/a1b2c3d4-5678-90ab-cdef-EXAMPLE33333</code>.</p>
+   */
+  inline const Aws::String& GetMembershipArn() const { return m_membershipArn; }
+  inline bool MembershipArnHasBeenSet() const { return m_membershipArnHasBeenSet; }
+  template <typename MembershipArnT = Aws::String>
+  void SetMembershipArn(MembershipArnT&& value) {
+    m_membershipArnHasBeenSet = true;
+    m_membershipArn = std::forward<MembershipArnT>(value);
+  }
+  template <typename MembershipArnT = Aws::String>
+  GroupMembership& WithMembershipArn(MembershipArnT&& value) {
+    SetMembershipArn(std::forward<MembershipArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The identifier for a group in the identity store.</p>
    */
   inline const Aws::String& GetGroupId() const { return m_groupId; }
@@ -187,6 +207,8 @@ class GroupMembership {
 
   Aws::String m_membershipId;
 
+  Aws::String m_membershipArn;
+
   Aws::String m_groupId;
 
   MemberId m_memberId;
@@ -200,6 +222,7 @@ class GroupMembership {
   Aws::String m_updatedBy;
   bool m_identityStoreIdHasBeenSet = false;
   bool m_membershipIdHasBeenSet = false;
+  bool m_membershipArnHasBeenSet = false;
   bool m_groupIdHasBeenSet = false;
   bool m_memberIdHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;

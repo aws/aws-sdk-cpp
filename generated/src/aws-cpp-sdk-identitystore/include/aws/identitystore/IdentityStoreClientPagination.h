@@ -9,6 +9,7 @@
 #include <aws/identitystore/model/ListGroupMembershipsForMemberPaginationTraits.h>
 #include <aws/identitystore/model/ListGroupMembershipsPaginationTraits.h>
 #include <aws/identitystore/model/ListGroupsPaginationTraits.h>
+#include <aws/identitystore/model/ListIdentityStoresPaginationTraits.h>
 #include <aws/identitystore/model/ListUsersPaginationTraits.h>
 
 namespace Aws {
@@ -22,6 +23,8 @@ using ListGroupMembershipsForMemberPaginator =
                                       Pagination::ListGroupMembershipsForMemberPaginationTraits<IdentityStoreClient>>;
 using ListGroupsPaginator = Aws::Utils::Pagination::Paginator<IdentityStoreClient, Model::ListGroupsRequest,
                                                               Pagination::ListGroupsPaginationTraits<IdentityStoreClient>>;
+using ListIdentityStoresPaginator = Aws::Utils::Pagination::Paginator<IdentityStoreClient, Model::ListIdentityStoresRequest,
+                                                                      Pagination::ListIdentityStoresPaginationTraits<IdentityStoreClient>>;
 using ListUsersPaginator = Aws::Utils::Pagination::Paginator<IdentityStoreClient, Model::ListUsersRequest,
                                                              Pagination::ListUsersPaginationTraits<IdentityStoreClient>>;
 

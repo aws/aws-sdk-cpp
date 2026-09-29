@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/securityagent/SecurityAgent_EXPORTS.h>
+#include <aws/securityagent/model/AzureDevOpsRepositoryMetadata.h>
 #include <aws/securityagent/model/BitbucketRepositoryMetadata.h>
 #include <aws/securityagent/model/ConfluenceDocumentMetadata.h>
 #include <aws/securityagent/model/GitHubRepositoryMetadata.h>
@@ -100,6 +101,24 @@ class IntegratedResourceMetadata {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Azure DevOps repository metadata.</p>
+   */
+  inline const AzureDevOpsRepositoryMetadata& GetAzureDevOpsRepository() const { return m_azureDevOpsRepository; }
+  inline bool AzureDevOpsRepositoryHasBeenSet() const { return m_azureDevOpsRepositoryHasBeenSet; }
+  template <typename AzureDevOpsRepositoryT = AzureDevOpsRepositoryMetadata>
+  void SetAzureDevOpsRepository(AzureDevOpsRepositoryT&& value) {
+    m_azureDevOpsRepositoryHasBeenSet = true;
+    m_azureDevOpsRepository = std::forward<AzureDevOpsRepositoryT>(value);
+  }
+  template <typename AzureDevOpsRepositoryT = AzureDevOpsRepositoryMetadata>
+  IntegratedResourceMetadata& WithAzureDevOpsRepository(AzureDevOpsRepositoryT&& value) {
+    SetAzureDevOpsRepository(std::forward<AzureDevOpsRepositoryT>(value));
+    return *this;
+  }
+  ///@}
  private:
   GitHubRepositoryMetadata m_githubRepository;
 
@@ -108,10 +127,13 @@ class IntegratedResourceMetadata {
   BitbucketRepositoryMetadata m_bitbucketRepository;
 
   ConfluenceDocumentMetadata m_confluenceDocument;
+
+  AzureDevOpsRepositoryMetadata m_azureDevOpsRepository;
   bool m_githubRepositoryHasBeenSet = false;
   bool m_gitlabRepositoryHasBeenSet = false;
   bool m_bitbucketRepositoryHasBeenSet = false;
   bool m_confluenceDocumentHasBeenSet = false;
+  bool m_azureDevOpsRepositoryHasBeenSet = false;
 };
 
 }  // namespace Model

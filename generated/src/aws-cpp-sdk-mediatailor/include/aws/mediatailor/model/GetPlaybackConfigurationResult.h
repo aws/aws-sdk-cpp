@@ -13,6 +13,7 @@
 #include <aws/mediatailor/model/AdsPersonalizationConcurrency.h>
 #include <aws/mediatailor/model/AdsPersonalizationTimeouts.h>
 #include <aws/mediatailor/model/AvailSuppression.h>
+#include <aws/mediatailor/model/BeaconingConfiguration.h>
 #include <aws/mediatailor/model/Bumper.h>
 #include <aws/mediatailor/model/CdnConfiguration.h>
 #include <aws/mediatailor/model/DashConfiguration.h>
@@ -597,6 +598,28 @@ class GetPlaybackConfigurationResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The beaconing configuration for this playback configuration, which controls
+   * whether MediaTailor includes beacons of its own in the ad tracking response.
+   * MediaTailor always returns this setting. If you created the playback
+   * configuration before this setting existed, MediaTailor reports
+   * <code>ReportingMode</code> as <code>INSIGHTS</code>. This is also the value
+   * MediaTailor uses for that configuration at playback time.</p>
+   */
+  inline const BeaconingConfiguration& GetBeaconingConfiguration() const { return m_beaconingConfiguration; }
+  template <typename BeaconingConfigurationT = BeaconingConfiguration>
+  void SetBeaconingConfiguration(BeaconingConfigurationT&& value) {
+    m_beaconingConfigurationHasBeenSet = true;
+    m_beaconingConfiguration = std::forward<BeaconingConfigurationT>(value);
+  }
+  template <typename BeaconingConfigurationT = BeaconingConfiguration>
+  GetPlaybackConfigurationResult& WithBeaconingConfiguration(BeaconingConfigurationT&& value) {
+    SetBeaconingConfiguration(std::forward<BeaconingConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -669,6 +692,8 @@ class GetPlaybackConfigurationResult {
 
   AdsPersonalizationConcurrency m_adsPersonalizationConcurrency;
 
+  BeaconingConfiguration m_beaconingConfiguration;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_adDecisionServerUrlHasBeenSet = false;
@@ -699,6 +724,7 @@ class GetPlaybackConfigurationResult {
   bool m_functionMappingHasBeenSet = false;
   bool m_adsPersonalizationTimeoutsHasBeenSet = false;
   bool m_adsPersonalizationConcurrencyHasBeenSet = false;
+  bool m_beaconingConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

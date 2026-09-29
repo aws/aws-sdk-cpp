@@ -134,6 +134,12 @@ ServerlessCache& ServerlessCache::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(networkTypeNode.GetText()).c_str()));
       m_networkTypeHasBeenSet = true;
     }
+    XmlNode connectionTypeNode = resultNode.FirstChild("ConnectionType");
+    if (!connectionTypeNode.IsNull()) {
+      m_connectionType = ConnectionTypeMapper::GetConnectionTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(connectionTypeNode.GetText()).c_str()));
+      m_connectionTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -233,6 +239,11 @@ void ServerlessCache::OutputToStream(Aws::OStream& oStream, const char* location
     oStream << location << index << locationValue
             << ".NetworkType=" << StringUtils::URLEncode(NetworkTypeMapper::GetNameForNetworkType(m_networkType)) << "&";
   }
+
+  if (m_connectionTypeHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".ConnectionType=" << StringUtils::URLEncode(ConnectionTypeMapper::GetNameForConnectionType(m_connectionType)) << "&";
+  }
 }
 
 void ServerlessCache::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -307,6 +318,10 @@ void ServerlessCache::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if (m_networkTypeHasBeenSet) {
     oStream << location << ".NetworkType=" << StringUtils::URLEncode(NetworkTypeMapper::GetNameForNetworkType(m_networkType)) << "&";
+  }
+  if (m_connectionTypeHasBeenSet) {
+    oStream << location << ".ConnectionType=" << StringUtils::URLEncode(ConnectionTypeMapper::GetNameForConnectionType(m_connectionType))
+            << "&";
   }
 }
 

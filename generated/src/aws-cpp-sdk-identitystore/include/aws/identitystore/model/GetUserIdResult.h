@@ -62,6 +62,25 @@ class GetUserIdResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the user in the identity store. For
+   * example,
+   * <code>arn:aws:identitystore:::user/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
+   */
+  inline const Aws::String& GetUserArn() const { return m_userArn; }
+  template <typename UserArnT = Aws::String>
+  void SetUserArn(UserArnT&& value) {
+    m_userArnHasBeenSet = true;
+    m_userArn = std::forward<UserArnT>(value);
+  }
+  template <typename UserArnT = Aws::String>
+  GetUserIdResult& WithUserArn(UserArnT&& value) {
+    SetUserArn(std::forward<UserArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -82,10 +101,13 @@ class GetUserIdResult {
 
   Aws::String m_userId;
 
+  Aws::String m_userArn;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_identityStoreIdHasBeenSet = false;
   bool m_userIdHasBeenSet = false;
+  bool m_userArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

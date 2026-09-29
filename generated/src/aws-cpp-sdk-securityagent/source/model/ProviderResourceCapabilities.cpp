@@ -34,6 +34,10 @@ ProviderResourceCapabilities& ProviderResourceCapabilities::operator=(JsonView j
     m_confluence = jsonValue.GetObject("confluence");
     m_confluenceHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("azureDevOps")) {
+    m_azureDevOps = jsonValue.GetObject("azureDevOps");
+    m_azureDevOpsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue ProviderResourceCapabilities::Jsonize() const {
 
   if (m_confluenceHasBeenSet) {
     payload.WithObject("confluence", m_confluence.Jsonize());
+  }
+
+  if (m_azureDevOpsHasBeenSet) {
+    payload.WithObject("azureDevOps", m_azureDevOps.Jsonize());
   }
 
   return payload;

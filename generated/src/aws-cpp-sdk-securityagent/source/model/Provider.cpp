@@ -19,6 +19,7 @@ static const int GITHUB_HASH = HashingUtils::HashString("GITHUB");
 static const int GITLAB_HASH = HashingUtils::HashString("GITLAB");
 static const int BITBUCKET_HASH = HashingUtils::HashString("BITBUCKET");
 static const int CONFLUENCE_HASH = HashingUtils::HashString("CONFLUENCE");
+static const int AZURE_DEVOPS_HASH = HashingUtils::HashString("AZURE_DEVOPS");
 
 Provider GetProviderForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ Provider GetProviderForName(const Aws::String& name) {
     return Provider::BITBUCKET;
   } else if (hashCode == CONFLUENCE_HASH) {
     return Provider::CONFLUENCE;
+  } else if (hashCode == AZURE_DEVOPS_HASH) {
+    return Provider::AZURE_DEVOPS;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForProvider(Provider enumValue) {
       return "BITBUCKET";
     case Provider::CONFLUENCE:
       return "CONFLUENCE";
+    case Provider::AZURE_DEVOPS:
+      return "AZURE_DEVOPS";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

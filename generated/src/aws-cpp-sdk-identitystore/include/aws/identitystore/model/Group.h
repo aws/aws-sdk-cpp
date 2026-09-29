@@ -37,6 +37,24 @@ class Group {
 
   ///@{
   /**
+   * <p>The globally unique identifier for the identity store.</p>
+   */
+  inline const Aws::String& GetIdentityStoreId() const { return m_identityStoreId; }
+  inline bool IdentityStoreIdHasBeenSet() const { return m_identityStoreIdHasBeenSet; }
+  template <typename IdentityStoreIdT = Aws::String>
+  void SetIdentityStoreId(IdentityStoreIdT&& value) {
+    m_identityStoreIdHasBeenSet = true;
+    m_identityStoreId = std::forward<IdentityStoreIdT>(value);
+  }
+  template <typename IdentityStoreIdT = Aws::String>
+  Group& WithIdentityStoreId(IdentityStoreIdT&& value) {
+    SetIdentityStoreId(std::forward<IdentityStoreIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The identifier for a group in the identity store.</p>
    */
   inline const Aws::String& GetGroupId() const { return m_groupId; }
@@ -49,6 +67,48 @@ class Group {
   template <typename GroupIdT = Aws::String>
   Group& WithGroupId(GroupIdT&& value) {
     SetGroupId(std::forward<GroupIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the group in the identity store. For
+   * example,
+   * <code>arn:aws:identitystore:::group/a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</code>.</p>
+   */
+  inline const Aws::String& GetGroupArn() const { return m_groupArn; }
+  inline bool GroupArnHasBeenSet() const { return m_groupArnHasBeenSet; }
+  template <typename GroupArnT = Aws::String>
+  void SetGroupArn(GroupArnT&& value) {
+    m_groupArnHasBeenSet = true;
+    m_groupArn = std::forward<GroupArnT>(value);
+  }
+  template <typename GroupArnT = Aws::String>
+  Group& WithGroupArn(GroupArnT&& value) {
+    SetGroupArn(std::forward<GroupArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The current revision of the group in the identity store. This value changes
+   * each time the group is modified. You can provide it as the <code>Revision</code>
+   * parameter of an <code>UpdateGroup</code> or <code>DeleteGroup</code> request to
+   * make the operation conditional on the group not having changed. Treat this value
+   * as an opaque token: don't parse it or rely on its format or ordering.</p>
+   */
+  inline const Aws::String& GetRevision() const { return m_revision; }
+  inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
+  template <typename RevisionT = Aws::String>
+  void SetRevision(RevisionT&& value) {
+    m_revisionHasBeenSet = true;
+    m_revision = std::forward<RevisionT>(value);
+  }
+  template <typename RevisionT = Aws::String>
+  Group& WithRevision(RevisionT&& value) {
+    SetRevision(std::forward<RevisionT>(value));
     return *this;
   }
   ///@}
@@ -190,26 +250,14 @@ class Group {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The globally unique identifier for the identity store.</p>
-   */
-  inline const Aws::String& GetIdentityStoreId() const { return m_identityStoreId; }
-  inline bool IdentityStoreIdHasBeenSet() const { return m_identityStoreIdHasBeenSet; }
-  template <typename IdentityStoreIdT = Aws::String>
-  void SetIdentityStoreId(IdentityStoreIdT&& value) {
-    m_identityStoreIdHasBeenSet = true;
-    m_identityStoreId = std::forward<IdentityStoreIdT>(value);
-  }
-  template <typename IdentityStoreIdT = Aws::String>
-  Group& WithIdentityStoreId(IdentityStoreIdT&& value) {
-    SetIdentityStoreId(std::forward<IdentityStoreIdT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_identityStoreId;
+
   Aws::String m_groupId;
+
+  Aws::String m_groupArn;
+
+  Aws::String m_revision;
 
   Aws::String m_displayName;
 
@@ -224,9 +272,10 @@ class Group {
   Aws::String m_createdBy;
 
   Aws::String m_updatedBy;
-
-  Aws::String m_identityStoreId;
+  bool m_identityStoreIdHasBeenSet = false;
   bool m_groupIdHasBeenSet = false;
+  bool m_groupArnHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
   bool m_externalIdsHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
@@ -234,7 +283,6 @@ class Group {
   bool m_updatedAtHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
   bool m_updatedByHasBeenSet = false;
-  bool m_identityStoreIdHasBeenSet = false;
 };
 
 }  // namespace Model

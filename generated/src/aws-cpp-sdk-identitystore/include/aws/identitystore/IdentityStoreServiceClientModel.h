@@ -27,6 +27,7 @@
 #include <aws/identitystore/model/DeleteUserResult.h>
 #include <aws/identitystore/model/DescribeGroupMembershipResult.h>
 #include <aws/identitystore/model/DescribeGroupResult.h>
+#include <aws/identitystore/model/DescribeIdentityStoreResult.h>
 #include <aws/identitystore/model/DescribeUserResult.h>
 #include <aws/identitystore/model/GetGroupIdResult.h>
 #include <aws/identitystore/model/GetGroupMembershipIdResult.h>
@@ -35,8 +36,11 @@
 #include <aws/identitystore/model/ListGroupMembershipsForMemberResult.h>
 #include <aws/identitystore/model/ListGroupMembershipsResult.h>
 #include <aws/identitystore/model/ListGroupsResult.h>
+#include <aws/identitystore/model/ListIdentityStoresRequest.h>
+#include <aws/identitystore/model/ListIdentityStoresResult.h>
 #include <aws/identitystore/model/ListUsersResult.h>
 #include <aws/identitystore/model/UpdateGroupResult.h>
+#include <aws/identitystore/model/UpdateIdentityStoreResult.h>
 #include <aws/identitystore/model/UpdateUserResult.h>
 /* End of service model headers required in IdentityStoreClient header */
 
@@ -79,6 +83,7 @@ class DeleteGroupMembershipRequest;
 class DeleteUserRequest;
 class DescribeGroupRequest;
 class DescribeGroupMembershipRequest;
+class DescribeIdentityStoreRequest;
 class DescribeUserRequest;
 class GetGroupIdRequest;
 class GetGroupMembershipIdRequest;
@@ -87,8 +92,10 @@ class IsMemberInGroupsRequest;
 class ListGroupMembershipsRequest;
 class ListGroupMembershipsForMemberRequest;
 class ListGroupsRequest;
+class ListIdentityStoresRequest;
 class ListUsersRequest;
 class UpdateGroupRequest;
+class UpdateIdentityStoreRequest;
 class UpdateUserRequest;
 /* End of service model forward declarations required in IdentityStoreClient header */
 
@@ -101,6 +108,7 @@ typedef Aws::Utils::Outcome<DeleteGroupMembershipResult, IdentityStoreError> Del
 typedef Aws::Utils::Outcome<DeleteUserResult, IdentityStoreError> DeleteUserOutcome;
 typedef Aws::Utils::Outcome<DescribeGroupResult, IdentityStoreError> DescribeGroupOutcome;
 typedef Aws::Utils::Outcome<DescribeGroupMembershipResult, IdentityStoreError> DescribeGroupMembershipOutcome;
+typedef Aws::Utils::Outcome<DescribeIdentityStoreResult, IdentityStoreError> DescribeIdentityStoreOutcome;
 typedef Aws::Utils::Outcome<DescribeUserResult, IdentityStoreError> DescribeUserOutcome;
 typedef Aws::Utils::Outcome<GetGroupIdResult, IdentityStoreError> GetGroupIdOutcome;
 typedef Aws::Utils::Outcome<GetGroupMembershipIdResult, IdentityStoreError> GetGroupMembershipIdOutcome;
@@ -109,8 +117,10 @@ typedef Aws::Utils::Outcome<IsMemberInGroupsResult, IdentityStoreError> IsMember
 typedef Aws::Utils::Outcome<ListGroupMembershipsResult, IdentityStoreError> ListGroupMembershipsOutcome;
 typedef Aws::Utils::Outcome<ListGroupMembershipsForMemberResult, IdentityStoreError> ListGroupMembershipsForMemberOutcome;
 typedef Aws::Utils::Outcome<ListGroupsResult, IdentityStoreError> ListGroupsOutcome;
+typedef Aws::Utils::Outcome<ListIdentityStoresResult, IdentityStoreError> ListIdentityStoresOutcome;
 typedef Aws::Utils::Outcome<ListUsersResult, IdentityStoreError> ListUsersOutcome;
 typedef Aws::Utils::Outcome<UpdateGroupResult, IdentityStoreError> UpdateGroupOutcome;
+typedef Aws::Utils::Outcome<UpdateIdentityStoreResult, IdentityStoreError> UpdateIdentityStoreOutcome;
 typedef Aws::Utils::Outcome<UpdateUserResult, IdentityStoreError> UpdateUserOutcome;
 /* End of service model Outcome class definitions */
 
@@ -123,6 +133,7 @@ typedef std::future<DeleteGroupMembershipOutcome> DeleteGroupMembershipOutcomeCa
 typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
 typedef std::future<DescribeGroupOutcome> DescribeGroupOutcomeCallable;
 typedef std::future<DescribeGroupMembershipOutcome> DescribeGroupMembershipOutcomeCallable;
+typedef std::future<DescribeIdentityStoreOutcome> DescribeIdentityStoreOutcomeCallable;
 typedef std::future<DescribeUserOutcome> DescribeUserOutcomeCallable;
 typedef std::future<GetGroupIdOutcome> GetGroupIdOutcomeCallable;
 typedef std::future<GetGroupMembershipIdOutcome> GetGroupMembershipIdOutcomeCallable;
@@ -131,8 +142,10 @@ typedef std::future<IsMemberInGroupsOutcome> IsMemberInGroupsOutcomeCallable;
 typedef std::future<ListGroupMembershipsOutcome> ListGroupMembershipsOutcomeCallable;
 typedef std::future<ListGroupMembershipsForMemberOutcome> ListGroupMembershipsForMemberOutcomeCallable;
 typedef std::future<ListGroupsOutcome> ListGroupsOutcomeCallable;
+typedef std::future<ListIdentityStoresOutcome> ListIdentityStoresOutcomeCallable;
 typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
 typedef std::future<UpdateGroupOutcome> UpdateGroupOutcomeCallable;
+typedef std::future<UpdateIdentityStoreOutcome> UpdateIdentityStoreOutcomeCallable;
 typedef std::future<UpdateUserOutcome> UpdateUserOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
@@ -164,6 +177,9 @@ typedef std::function<void(const IdentityStoreClient*, const Model::DescribeGrou
 typedef std::function<void(const IdentityStoreClient*, const Model::DescribeGroupMembershipRequest&,
                            const Model::DescribeGroupMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeGroupMembershipResponseReceivedHandler;
+typedef std::function<void(const IdentityStoreClient*, const Model::DescribeIdentityStoreRequest&,
+                           const Model::DescribeIdentityStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeIdentityStoreResponseReceivedHandler;
 typedef std::function<void(const IdentityStoreClient*, const Model::DescribeUserRequest&, const Model::DescribeUserOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeUserResponseReceivedHandler;
@@ -189,12 +205,18 @@ typedef std::function<void(const IdentityStoreClient*, const Model::ListGroupMem
 typedef std::function<void(const IdentityStoreClient*, const Model::ListGroupsRequest&, const Model::ListGroupsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListGroupsResponseReceivedHandler;
+typedef std::function<void(const IdentityStoreClient*, const Model::ListIdentityStoresRequest&, const Model::ListIdentityStoresOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListIdentityStoresResponseReceivedHandler;
 typedef std::function<void(const IdentityStoreClient*, const Model::ListUsersRequest&, const Model::ListUsersOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListUsersResponseReceivedHandler;
 typedef std::function<void(const IdentityStoreClient*, const Model::UpdateGroupRequest&, const Model::UpdateGroupOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateGroupResponseReceivedHandler;
+typedef std::function<void(const IdentityStoreClient*, const Model::UpdateIdentityStoreRequest&, const Model::UpdateIdentityStoreOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateIdentityStoreResponseReceivedHandler;
 typedef std::function<void(const IdentityStoreClient*, const Model::UpdateUserRequest&, const Model::UpdateUserOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateUserResponseReceivedHandler;

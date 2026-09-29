@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/deadline/Deadline_EXPORTS.h>
@@ -111,6 +112,31 @@ class AssignedSession {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Key-value hints that the service provides to guide how the session runs. This
+   * value is used by the worker agent.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const { return m_metadata; }
+  inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+  template <typename MetadataT = Aws::Map<Aws::String, Aws::String>>
+  void SetMetadata(MetadataT&& value) {
+    m_metadataHasBeenSet = true;
+    m_metadata = std::forward<MetadataT>(value);
+  }
+  template <typename MetadataT = Aws::Map<Aws::String, Aws::String>>
+  AssignedSession& WithMetadata(MetadataT&& value) {
+    SetMetadata(std::forward<MetadataT>(value));
+    return *this;
+  }
+  template <typename MetadataKeyT = Aws::String, typename MetadataValueT = Aws::String>
+  AssignedSession& AddMetadata(MetadataKeyT&& key, MetadataValueT&& value) {
+    m_metadataHasBeenSet = true;
+    m_metadata.emplace(std::forward<MetadataKeyT>(key), std::forward<MetadataValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_queueId;
 
@@ -119,10 +145,13 @@ class AssignedSession {
   Aws::Vector<AssignedSessionAction> m_sessionActions;
 
   LogConfiguration m_logConfiguration;
+
+  Aws::Map<Aws::String, Aws::String> m_metadata;
   bool m_queueIdHasBeenSet = false;
   bool m_jobIdHasBeenSet = false;
   bool m_sessionActionsHasBeenSet = false;
   bool m_logConfigurationHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
 };
 
 }  // namespace Model

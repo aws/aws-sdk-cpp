@@ -313,6 +313,8 @@
 #include <aws/bedrock-agent-runtime/model/ManagedSearchConfiguration.h>
 #include <aws/bedrock-agent-runtime/model/ManagedSearchRerankingConfiguration.h>
 #include <aws/bedrock-agent-runtime/model/ManagedSearchRerankingConfigurationType.h>
+#include <aws/bedrock-agent-runtime/model/MantleFoundationModelConfiguration.h>
+#include <aws/bedrock-agent-runtime/model/MantleFoundationModelModelConfiguration.h>
 #include <aws/bedrock-agent-runtime/model/Memory.h>
 #include <aws/bedrock-agent-runtime/model/MemorySessionSummary.h>
 #include <aws/bedrock-agent-runtime/model/MemoryType.h>

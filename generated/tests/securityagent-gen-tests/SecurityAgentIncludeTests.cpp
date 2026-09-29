@@ -33,6 +33,10 @@
 #include <aws/securityagent/model/Assets.h>
 #include <aws/securityagent/model/Authentication.h>
 #include <aws/securityagent/model/AuthenticationProviderType.h>
+#include <aws/securityagent/model/AzureDevOpsIntegrationInput.h>
+#include <aws/securityagent/model/AzureDevOpsRepositoryMetadata.h>
+#include <aws/securityagent/model/AzureDevOpsRepositoryResource.h>
+#include <aws/securityagent/model/AzureDevOpsResourceCapabilities.h>
 #include <aws/securityagent/model/BatchCreateSecurityRequirementResult.h>
 #include <aws/securityagent/model/BatchCreateSecurityRequirementsRequest.h>
 #include <aws/securityagent/model/BatchCreateSecurityRequirementsResult.h>
@@ -78,6 +82,7 @@
 #include <aws/securityagent/model/BatchSecurityRequirementError.h>
 #include <aws/securityagent/model/BatchUpdateSecurityRequirementsRequest.h>
 #include <aws/securityagent/model/BatchUpdateSecurityRequirementsResult.h>
+#include <aws/securityagent/model/BitbucketDataCenterIntegrationInput.h>
 #include <aws/securityagent/model/BitbucketIntegrationInput.h>
 #include <aws/securityagent/model/BitbucketRepositoryMetadata.h>
 #include <aws/securityagent/model/BitbucketRepositoryResource.h>
@@ -365,6 +370,8 @@
 #include <aws/securityagent/model/UpdateFindingResult.h>
 #include <aws/securityagent/model/UpdateIntegratedResourcesRequest.h>
 #include <aws/securityagent/model/UpdateIntegratedResourcesResult.h>
+#include <aws/securityagent/model/UpdateIntegrationRequest.h>
+#include <aws/securityagent/model/UpdateIntegrationResult.h>
 #include <aws/securityagent/model/UpdatePentestRequest.h>
 #include <aws/securityagent/model/UpdatePentestResult.h>
 #include <aws/securityagent/model/UpdatePrivateConnectionCertificateRequest.h>
@@ -391,6 +398,7 @@
 #include <aws/securityagent/model/VerifyTargetDomainRequest.h>
 #include <aws/securityagent/model/VerifyTargetDomainResult.h>
 #include <aws/securityagent/model/VpcConfig.h>
+#include <aws/securityagent/model/WebhookAction.h>
 
 using SecurityAgentIncludeTest = ::testing::Test;
 

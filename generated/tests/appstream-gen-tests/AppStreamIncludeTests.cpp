@@ -209,6 +209,7 @@
 #include <aws/appstream/model/ImageBuilderStateChangeReasonCode.h>
 #include <aws/appstream/model/ImagePermissions.h>
 #include <aws/appstream/model/ImageSharedWithOthers.h>
+#include <aws/appstream/model/ImageSoftwareMetadata.h>
 #include <aws/appstream/model/ImageState.h>
 #include <aws/appstream/model/ImageStateChangeReason.h>
 #include <aws/appstream/model/ImageStateChangeReasonCode.h>

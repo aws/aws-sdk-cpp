@@ -22,7 +22,7 @@ namespace deadline {
 namespace Model {
 
 /**
- * <p>The time stamp in date-time format.</p><p><h3>See Also:</h3>   <a
+ * <p>The timestamp in date-time format.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DateTimeFilterExpression">AWS
  * API Reference</a></p>
  */

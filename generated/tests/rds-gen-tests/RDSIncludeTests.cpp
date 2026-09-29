@@ -529,6 +529,7 @@
 #include <aws/rds/model/TargetConnectionNetworkType.h>
 #include <aws/rds/model/TargetHealth.h>
 #include <aws/rds/model/TargetHealthReason.h>
+#include <aws/rds/model/TargetResourceConfiguration.h>
 #include <aws/rds/model/TargetRole.h>
 #include <aws/rds/model/TargetState.h>
 #include <aws/rds/model/TargetType.h>

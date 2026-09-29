@@ -112,6 +112,7 @@
 #include <aws/securityagent/model/UpdateCodeReviewResult.h>
 #include <aws/securityagent/model/UpdateFindingResult.h>
 #include <aws/securityagent/model/UpdateIntegratedResourcesResult.h>
+#include <aws/securityagent/model/UpdateIntegrationResult.h>
 #include <aws/securityagent/model/UpdatePentestResult.h>
 #include <aws/securityagent/model/UpdatePrivateConnectionCertificateResult.h>
 #include <aws/securityagent/model/UpdateSecurityRequirementPackResult.h>
@@ -238,6 +239,7 @@ class UpdateApplicationRequest;
 class UpdateCodeReviewRequest;
 class UpdateFindingRequest;
 class UpdateIntegratedResourcesRequest;
+class UpdateIntegrationRequest;
 class UpdatePentestRequest;
 class UpdatePrivateConnectionCertificateRequest;
 class UpdateSecurityRequirementPackRequest;
@@ -334,6 +336,7 @@ typedef Aws::Utils::Outcome<UpdateApplicationResult, SecurityAgentError> UpdateA
 typedef Aws::Utils::Outcome<UpdateCodeReviewResult, SecurityAgentError> UpdateCodeReviewOutcome;
 typedef Aws::Utils::Outcome<UpdateFindingResult, SecurityAgentError> UpdateFindingOutcome;
 typedef Aws::Utils::Outcome<UpdateIntegratedResourcesResult, SecurityAgentError> UpdateIntegratedResourcesOutcome;
+typedef Aws::Utils::Outcome<UpdateIntegrationResult, SecurityAgentError> UpdateIntegrationOutcome;
 typedef Aws::Utils::Outcome<UpdatePentestResult, SecurityAgentError> UpdatePentestOutcome;
 typedef Aws::Utils::Outcome<UpdatePrivateConnectionCertificateResult, SecurityAgentError> UpdatePrivateConnectionCertificateOutcome;
 typedef Aws::Utils::Outcome<UpdateSecurityRequirementPackResult, SecurityAgentError> UpdateSecurityRequirementPackOutcome;
@@ -430,6 +433,7 @@ typedef std::future<UpdateApplicationOutcome> UpdateApplicationOutcomeCallable;
 typedef std::future<UpdateCodeReviewOutcome> UpdateCodeReviewOutcomeCallable;
 typedef std::future<UpdateFindingOutcome> UpdateFindingOutcomeCallable;
 typedef std::future<UpdateIntegratedResourcesOutcome> UpdateIntegratedResourcesOutcomeCallable;
+typedef std::future<UpdateIntegrationOutcome> UpdateIntegrationOutcomeCallable;
 typedef std::future<UpdatePentestOutcome> UpdatePentestOutcomeCallable;
 typedef std::future<UpdatePrivateConnectionCertificateOutcome> UpdatePrivateConnectionCertificateOutcomeCallable;
 typedef std::future<UpdateSecurityRequirementPackOutcome> UpdateSecurityRequirementPackOutcomeCallable;
@@ -710,6 +714,9 @@ typedef std::function<void(const SecurityAgentClient*, const Model::UpdateFindin
 typedef std::function<void(const SecurityAgentClient*, const Model::UpdateIntegratedResourcesRequest&,
                            const Model::UpdateIntegratedResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateIntegratedResourcesResponseReceivedHandler;
+typedef std::function<void(const SecurityAgentClient*, const Model::UpdateIntegrationRequest&, const Model::UpdateIntegrationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateIntegrationResponseReceivedHandler;
 typedef std::function<void(const SecurityAgentClient*, const Model::UpdatePentestRequest&, const Model::UpdatePentestOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdatePentestResponseReceivedHandler;

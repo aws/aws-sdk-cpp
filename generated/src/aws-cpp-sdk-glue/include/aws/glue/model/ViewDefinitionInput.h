@@ -59,6 +59,22 @@ class ViewDefinitionInput {
 
   ///@{
   /**
+   * <p>Specifies whether the materialized view is managed by Glue.</p>
+   */
+  inline bool GetIsManaged() const { return m_isManaged; }
+  inline bool IsManagedHasBeenSet() const { return m_isManagedHasBeenSet; }
+  inline void SetIsManaged(bool value) {
+    m_isManagedHasBeenSet = true;
+    m_isManaged = value;
+  }
+  inline ViewDefinitionInput& WithIsManaged(bool value) {
+    SetIsManaged(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The definer of a view in SQL.</p>
    */
   inline const Aws::String& GetDefiner() const { return m_definer; }
@@ -270,6 +286,8 @@ class ViewDefinitionInput {
  private:
   bool m_isProtected{false};
 
+  bool m_isManaged{false};
+
   Aws::String m_definer;
 
   Aws::Vector<ViewRepresentationInput> m_representations;
@@ -290,6 +308,7 @@ class ViewDefinitionInput {
 
   Aws::Map<Aws::String, Aws::String> m_sparkPipelineInfo;
   bool m_isProtectedHasBeenSet = false;
+  bool m_isManagedHasBeenSet = false;
   bool m_definerHasBeenSet = false;
   bool m_representationsHasBeenSet = false;
   bool m_viewVersionIdHasBeenSet = false;

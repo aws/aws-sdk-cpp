@@ -148,6 +148,10 @@ GetPlaybackConfigurationResult& GetPlaybackConfigurationResult::operator=(const 
     m_adsPersonalizationConcurrency = jsonValue.GetObject("AdsPersonalizationConcurrency");
     m_adsPersonalizationConcurrencyHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("BeaconingConfiguration")) {
+    m_beaconingConfiguration = jsonValue.GetObject("BeaconingConfiguration");
+    m_beaconingConfigurationHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

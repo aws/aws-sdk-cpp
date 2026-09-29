@@ -12,6 +12,7 @@
 #include <aws/mediatailor/model/AdsPersonalizationConcurrency.h>
 #include <aws/mediatailor/model/AdsPersonalizationTimeouts.h>
 #include <aws/mediatailor/model/AvailSuppression.h>
+#include <aws/mediatailor/model/BeaconingConfiguration.h>
 #include <aws/mediatailor/model/Bumper.h>
 #include <aws/mediatailor/model/CdnConfiguration.h>
 #include <aws/mediatailor/model/DashConfiguration.h>
@@ -628,6 +629,25 @@ class PlaybackConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The beaconing configuration for this playback configuration, which controls
+   * whether MediaTailor includes beacons of its own in the ad tracking response.</p>
+   */
+  inline const BeaconingConfiguration& GetBeaconingConfiguration() const { return m_beaconingConfiguration; }
+  inline bool BeaconingConfigurationHasBeenSet() const { return m_beaconingConfigurationHasBeenSet; }
+  template <typename BeaconingConfigurationT = BeaconingConfiguration>
+  void SetBeaconingConfiguration(BeaconingConfigurationT&& value) {
+    m_beaconingConfigurationHasBeenSet = true;
+    m_beaconingConfiguration = std::forward<BeaconingConfigurationT>(value);
+  }
+  template <typename BeaconingConfigurationT = BeaconingConfiguration>
+  PlaybackConfiguration& WithBeaconingConfiguration(BeaconingConfigurationT&& value) {
+    SetBeaconingConfiguration(std::forward<BeaconingConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_adDecisionServerUrl;
 
@@ -684,6 +704,8 @@ class PlaybackConfiguration {
   AdsPersonalizationTimeouts m_adsPersonalizationTimeouts;
 
   AdsPersonalizationConcurrency m_adsPersonalizationConcurrency;
+
+  BeaconingConfiguration m_beaconingConfiguration;
   bool m_adDecisionServerUrlHasBeenSet = false;
   bool m_availSuppressionHasBeenSet = false;
   bool m_bumperHasBeenSet = false;
@@ -712,6 +734,7 @@ class PlaybackConfiguration {
   bool m_functionMappingHasBeenSet = false;
   bool m_adsPersonalizationTimeoutsHasBeenSet = false;
   bool m_adsPersonalizationConcurrencyHasBeenSet = false;
+  bool m_beaconingConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

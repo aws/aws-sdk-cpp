@@ -41,6 +41,12 @@ static const int NODEJS_24_X_HASH = HashingUtils::HashString("NODEJS_24_X");
 static const int NODEJS_22_X_HASH = HashingUtils::HashString("NODEJS_22_X");
 static const int JAVA_21_HASH = HashingUtils::HashString("JAVA_21");
 static const int JAVA_25_HASH = HashingUtils::HashString("JAVA_25");
+static const int PYTHON_3_12_HASH = HashingUtils::HashString("PYTHON_3_12");
+static const int PYTHON_3_13_HASH = HashingUtils::HashString("PYTHON_3_13");
+static const int PYTHON_3_14_HASH = HashingUtils::HashString("PYTHON_3_14");
+static const int RUBY_3_3_HASH = HashingUtils::HashString("RUBY_3_3");
+static const int DOTNET_8_HASH = HashingUtils::HashString("DOTNET_8");
+static const int NODEJS_20_X_HASH = HashingUtils::HashString("NODEJS_20_X");
 
 Runtime GetRuntimeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -96,6 +102,18 @@ Runtime GetRuntimeForName(const Aws::String& name) {
     return Runtime::JAVA_21;
   } else if (hashCode == JAVA_25_HASH) {
     return Runtime::JAVA_25;
+  } else if (hashCode == PYTHON_3_12_HASH) {
+    return Runtime::PYTHON_3_12;
+  } else if (hashCode == PYTHON_3_13_HASH) {
+    return Runtime::PYTHON_3_13;
+  } else if (hashCode == PYTHON_3_14_HASH) {
+    return Runtime::PYTHON_3_14;
+  } else if (hashCode == RUBY_3_3_HASH) {
+    return Runtime::RUBY_3_3;
+  } else if (hashCode == DOTNET_8_HASH) {
+    return Runtime::DOTNET_8;
+  } else if (hashCode == NODEJS_20_X_HASH) {
+    return Runtime::NODEJS_20_X;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -162,6 +180,18 @@ Aws::String GetNameForRuntime(Runtime enumValue) {
       return "JAVA_21";
     case Runtime::JAVA_25:
       return "JAVA_25";
+    case Runtime::PYTHON_3_12:
+      return "PYTHON_3_12";
+    case Runtime::PYTHON_3_13:
+      return "PYTHON_3_13";
+    case Runtime::PYTHON_3_14:
+      return "PYTHON_3_14";
+    case Runtime::RUBY_3_3:
+      return "RUBY_3_3";
+    case Runtime::DOTNET_8:
+      return "DOTNET_8";
+    case Runtime::NODEJS_20_X:
+      return "NODEJS_20_X";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

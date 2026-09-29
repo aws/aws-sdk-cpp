@@ -296,6 +296,7 @@
 #include <aws/ec2/model/CapacityReservationGroup.h>
 #include <aws/ec2/model/CapacityReservationInfo.h>
 #include <aws/ec2/model/CapacityReservationInstancePlatform.h>
+#include <aws/ec2/model/CapacityReservationLaunchStatus.h>
 #include <aws/ec2/model/CapacityReservationModificationQuote.h>
 #include <aws/ec2/model/CapacityReservationModificationQuoteState.h>
 #include <aws/ec2/model/CapacityReservationOptions.h>

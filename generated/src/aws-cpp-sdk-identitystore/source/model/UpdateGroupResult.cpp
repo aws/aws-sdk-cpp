@@ -21,7 +21,23 @@ UpdateGroupResult::UpdateGroupResult(const Aws::AmazonWebServiceResult<JsonValue
 
 UpdateGroupResult& UpdateGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
-  AWS_UNREFERENCED_PARAM(result);
+  JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("IdentityStoreId")) {
+    m_identityStoreId = jsonValue.GetString("IdentityStoreId");
+    m_identityStoreIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("GroupId")) {
+    m_groupId = jsonValue.GetString("GroupId");
+    m_groupIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("GroupArn")) {
+    m_groupArn = jsonValue.GetString("GroupArn");
+    m_groupArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Revision")) {
+    m_revision = jsonValue.GetString("Revision");
+    m_revisionHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

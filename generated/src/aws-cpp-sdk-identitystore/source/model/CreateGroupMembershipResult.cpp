@@ -22,13 +22,17 @@ CreateGroupMembershipResult::CreateGroupMembershipResult(const Aws::AmazonWebSer
 CreateGroupMembershipResult& CreateGroupMembershipResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("IdentityStoreId")) {
+    m_identityStoreId = jsonValue.GetString("IdentityStoreId");
+    m_identityStoreIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("MembershipId")) {
     m_membershipId = jsonValue.GetString("MembershipId");
     m_membershipIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("IdentityStoreId")) {
-    m_identityStoreId = jsonValue.GetString("IdentityStoreId");
-    m_identityStoreIdHasBeenSet = true;
+  if (jsonValue.ValueExists("MembershipArn")) {
+    m_membershipArn = jsonValue.GetString("MembershipArn");
+    m_membershipArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

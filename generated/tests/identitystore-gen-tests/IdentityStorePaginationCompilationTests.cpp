@@ -9,6 +9,7 @@
 #include <aws/identitystore/IdentityStoreClientPagination.h>
 #include <aws/identitystore/IdentityStorePaginationBase.h>
 #include <aws/identitystore/model/ListUsersPaginationTraits.h>
+#include <aws/identitystore/model/ListIdentityStoresPaginationTraits.h>
 #include <aws/identitystore/model/ListGroupMembershipsPaginationTraits.h>
 #include <aws/identitystore/model/ListGroupMembershipsForMemberPaginationTraits.h>
 #include <aws/identitystore/model/ListGroupsPaginationTraits.h>

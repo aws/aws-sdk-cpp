@@ -41,6 +41,17 @@ StepDetailsEntity& StepDetailsEntity::operator=(JsonView jsonValue) {
     }
     m_dependenciesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("extensions")) {
+    Aws::Utils::Array<JsonView> extensionsJsonList = jsonValue.GetArray("extensions");
+    for (unsigned extensionsIndex = 0; extensionsIndex < extensionsJsonList.GetLength(); ++extensionsIndex) {
+      m_extensions.push_back(extensionsJsonList[extensionsIndex].AsString());
+    }
+    m_extensionsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("resolvedSymbolTable")) {
+    m_resolvedSymbolTable = jsonValue.GetString("resolvedSymbolTable");
+    m_resolvedSymbolTableHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -71,6 +82,18 @@ JsonValue StepDetailsEntity::Jsonize() const {
       dependenciesJsonList[dependenciesIndex].AsString(m_dependencies[dependenciesIndex]);
     }
     payload.WithArray("dependencies", std::move(dependenciesJsonList));
+  }
+
+  if (m_extensionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> extensionsJsonList(m_extensions.size());
+    for (unsigned extensionsIndex = 0; extensionsIndex < extensionsJsonList.GetLength(); ++extensionsIndex) {
+      extensionsJsonList[extensionsIndex].AsString(m_extensions[extensionsIndex]);
+    }
+    payload.WithArray("extensions", std::move(extensionsJsonList));
+  }
+
+  if (m_resolvedSymbolTableHasBeenSet) {
+    payload.WithString("resolvedSymbolTable", m_resolvedSymbolTable);
   }
 
   return payload;

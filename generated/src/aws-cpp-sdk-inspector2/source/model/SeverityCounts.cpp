@@ -34,6 +34,18 @@ SeverityCounts& SeverityCounts::operator=(JsonView jsonValue) {
     m_critical = jsonValue.GetInt64("critical");
     m_criticalHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("low")) {
+    m_low = jsonValue.GetInt64("low");
+    m_lowHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("informational")) {
+    m_informational = jsonValue.GetInt64("informational");
+    m_informationalHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("untriaged")) {
+    m_untriaged = jsonValue.GetInt64("untriaged");
+    m_untriagedHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +66,18 @@ JsonValue SeverityCounts::Jsonize() const {
 
   if (m_criticalHasBeenSet) {
     payload.WithInt64("critical", m_critical);
+  }
+
+  if (m_lowHasBeenSet) {
+    payload.WithInt64("low", m_low);
+  }
+
+  if (m_informationalHasBeenSet) {
+    payload.WithInt64("informational", m_informational);
+  }
+
+  if (m_untriagedHasBeenSet) {
+    payload.WithInt64("untriaged", m_untriaged);
   }
 
   return payload;

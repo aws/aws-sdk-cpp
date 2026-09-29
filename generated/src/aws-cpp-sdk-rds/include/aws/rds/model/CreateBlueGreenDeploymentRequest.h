@@ -9,6 +9,7 @@
 #include <aws/rds/RDSRequest.h>
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/model/Tag.h>
+#include <aws/rds/model/TargetResourceConfiguration.h>
 
 #include <utility>
 
@@ -281,6 +282,38 @@ class CreateBlueGreenDeploymentRequest : public RDSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies resource-level configuration overrides for the green
+   * environment.</p> <p>Each entry identifies a resource in the blue environment by
+   * its Amazon Resource Name (ARN). It defines the desired configuration for the
+   * corresponding resource in the green environment. Any resource that you don't
+   * include in this parameter retains the same configuration as its counterpart in
+   * the blue environment.</p> <p>Use this parameter when one or more resources in
+   * the green environment require a different configuration than what they have in
+   * the blue environment.</p> <p>Constraints:</p> <ul> <li> <p>You can't specify the
+   * same <code>SourceArn</code> in more than one entry.</p> </li> </ul>
+   */
+  inline const Aws::Vector<TargetResourceConfiguration>& GetTargetResourceConfigurations() const { return m_targetResourceConfigurations; }
+  inline bool TargetResourceConfigurationsHasBeenSet() const { return m_targetResourceConfigurationsHasBeenSet; }
+  template <typename TargetResourceConfigurationsT = Aws::Vector<TargetResourceConfiguration>>
+  void SetTargetResourceConfigurations(TargetResourceConfigurationsT&& value) {
+    m_targetResourceConfigurationsHasBeenSet = true;
+    m_targetResourceConfigurations = std::forward<TargetResourceConfigurationsT>(value);
+  }
+  template <typename TargetResourceConfigurationsT = Aws::Vector<TargetResourceConfiguration>>
+  CreateBlueGreenDeploymentRequest& WithTargetResourceConfigurations(TargetResourceConfigurationsT&& value) {
+    SetTargetResourceConfigurations(std::forward<TargetResourceConfigurationsT>(value));
+    return *this;
+  }
+  template <typename TargetResourceConfigurationsT = TargetResourceConfiguration>
+  CreateBlueGreenDeploymentRequest& AddTargetResourceConfigurations(TargetResourceConfigurationsT&& value) {
+    m_targetResourceConfigurationsHasBeenSet = true;
+    m_targetResourceConfigurations.emplace_back(std::forward<TargetResourceConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_blueGreenDeploymentName;
 
@@ -305,6 +338,8 @@ class CreateBlueGreenDeploymentRequest : public RDSRequest {
   int m_targetAllocatedStorage{0};
 
   int m_targetStorageThroughput{0};
+
+  Aws::Vector<TargetResourceConfiguration> m_targetResourceConfigurations;
   bool m_blueGreenDeploymentNameHasBeenSet = false;
   bool m_sourceHasBeenSet = false;
   bool m_targetEngineVersionHasBeenSet = false;
@@ -317,6 +352,7 @@ class CreateBlueGreenDeploymentRequest : public RDSRequest {
   bool m_targetStorageTypeHasBeenSet = false;
   bool m_targetAllocatedStorageHasBeenSet = false;
   bool m_targetStorageThroughputHasBeenSet = false;
+  bool m_targetResourceConfigurationsHasBeenSet = false;
 };
 
 }  // namespace Model

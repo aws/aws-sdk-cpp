@@ -34,7 +34,10 @@ class MemberId {
 
   ///@{
   /**
-   * <p>An object containing the identifiers of resources that can be members.</p>
+   * <p>The identifier for a user in the identity store.</p> <p>You can specify the
+   * user by ID or by Amazon Resource Name (ARN). For example, user ID
+   * <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code> or user ARN
+   * <code>arn:aws:identitystore:::user/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
    */
   inline const Aws::String& GetUserId() const { return m_userId; }
   inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }

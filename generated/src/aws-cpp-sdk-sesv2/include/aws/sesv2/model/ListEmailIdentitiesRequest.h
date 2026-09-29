@@ -4,16 +4,15 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sesv2/SESV2Request.h>
 #include <aws/sesv2/SESV2_EXPORTS.h>
+#include <aws/sesv2/model/IdentityFilterKey.h>
 
 #include <utility>
 
 namespace Aws {
-namespace Http {
-class URI;
-}  // namespace Http
 namespace SESV2 {
 namespace Model {
 
@@ -37,7 +36,29 @@ class ListEmailIdentitiesRequest : public SESV2Request {
 
   AWS_SESV2_API Aws::String SerializePayload() const override;
 
-  AWS_SESV2_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+  ///@{
+  /**
+   * <p>An object that contains filters to apply when listing email identities. You
+   * can filter by identity name, identity type, or verification status.</p>
+   */
+  inline const Aws::Map<IdentityFilterKey, Aws::String>& GetFilter() const { return m_filter; }
+  inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+  template <typename FilterT = Aws::Map<IdentityFilterKey, Aws::String>>
+  void SetFilter(FilterT&& value) {
+    m_filterHasBeenSet = true;
+    m_filter = std::forward<FilterT>(value);
+  }
+  template <typename FilterT = Aws::Map<IdentityFilterKey, Aws::String>>
+  ListEmailIdentitiesRequest& WithFilter(FilterT&& value) {
+    SetFilter(std::forward<FilterT>(value));
+    return *this;
+  }
+  inline ListEmailIdentitiesRequest& AddFilter(IdentityFilterKey key, Aws::String value) {
+    m_filterHasBeenSet = true;
+    m_filter.emplace(key, value);
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -79,9 +100,12 @@ class ListEmailIdentitiesRequest : public SESV2Request {
   }
   ///@}
  private:
+  Aws::Map<IdentityFilterKey, Aws::String> m_filter;
+
   Aws::String m_nextToken;
 
   int m_pageSize{0};
+  bool m_filterHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_pageSizeHasBeenSet = false;
 };

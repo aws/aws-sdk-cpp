@@ -144,6 +144,10 @@ PlaybackConfiguration& PlaybackConfiguration::operator=(JsonView jsonValue) {
     m_adsPersonalizationConcurrency = jsonValue.GetObject("AdsPersonalizationConcurrency");
     m_adsPersonalizationConcurrencyHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("BeaconingConfiguration")) {
+    m_beaconingConfiguration = jsonValue.GetObject("BeaconingConfiguration");
+    m_beaconingConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -276,6 +280,10 @@ JsonValue PlaybackConfiguration::Jsonize() const {
 
   if (m_adsPersonalizationConcurrencyHasBeenSet) {
     payload.WithObject("AdsPersonalizationConcurrency", m_adsPersonalizationConcurrency.Jsonize());
+  }
+
+  if (m_beaconingConfigurationHasBeenSet) {
+    payload.WithObject("BeaconingConfiguration", m_beaconingConfiguration.Jsonize());
   }
 
   return payload;

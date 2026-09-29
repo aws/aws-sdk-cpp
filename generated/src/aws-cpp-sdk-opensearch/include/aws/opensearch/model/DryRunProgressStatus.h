@@ -108,7 +108,7 @@ class DryRunProgressStatus {
 
   ///@{
   /**
-   * <p>Any validation failures that occurred as a result of the dry run.</p>
+   * <p>The validation failures that occurred as a result of the dry run.</p>
    */
   inline const Aws::Vector<ValidationFailure>& GetValidationFailures() const { return m_validationFailures; }
   inline bool ValidationFailuresHasBeenSet() const { return m_validationFailuresHasBeenSet; }
@@ -129,6 +129,31 @@ class DryRunProgressStatus {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The list of advisory warning codes that were accepted for the configuration
+   * change.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetAcceptedWarnings() const { return m_acceptedWarnings; }
+  inline bool AcceptedWarningsHasBeenSet() const { return m_acceptedWarningsHasBeenSet; }
+  template <typename AcceptedWarningsT = Aws::Vector<Aws::String>>
+  void SetAcceptedWarnings(AcceptedWarningsT&& value) {
+    m_acceptedWarningsHasBeenSet = true;
+    m_acceptedWarnings = std::forward<AcceptedWarningsT>(value);
+  }
+  template <typename AcceptedWarningsT = Aws::Vector<Aws::String>>
+  DryRunProgressStatus& WithAcceptedWarnings(AcceptedWarningsT&& value) {
+    SetAcceptedWarnings(std::forward<AcceptedWarningsT>(value));
+    return *this;
+  }
+  template <typename AcceptedWarningsT = Aws::String>
+  DryRunProgressStatus& AddAcceptedWarnings(AcceptedWarningsT&& value) {
+    m_acceptedWarningsHasBeenSet = true;
+    m_acceptedWarnings.emplace_back(std::forward<AcceptedWarningsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_dryRunId;
 
@@ -139,11 +164,14 @@ class DryRunProgressStatus {
   Aws::String m_updateDate;
 
   Aws::Vector<ValidationFailure> m_validationFailures;
+
+  Aws::Vector<Aws::String> m_acceptedWarnings;
   bool m_dryRunIdHasBeenSet = false;
   bool m_dryRunStatusHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;
   bool m_updateDateHasBeenSet = false;
   bool m_validationFailuresHasBeenSet = false;
+  bool m_acceptedWarningsHasBeenSet = false;
 };
 
 }  // namespace Model

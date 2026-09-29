@@ -29,6 +29,23 @@ class GetGroupMembershipIdResult {
 
   ///@{
   /**
+   * <p>The globally unique identifier for the identity store.</p>
+   */
+  inline const Aws::String& GetIdentityStoreId() const { return m_identityStoreId; }
+  template <typename IdentityStoreIdT = Aws::String>
+  void SetIdentityStoreId(IdentityStoreIdT&& value) {
+    m_identityStoreIdHasBeenSet = true;
+    m_identityStoreId = std::forward<IdentityStoreIdT>(value);
+  }
+  template <typename IdentityStoreIdT = Aws::String>
+  GetGroupMembershipIdResult& WithIdentityStoreId(IdentityStoreIdT&& value) {
+    SetIdentityStoreId(std::forward<IdentityStoreIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
    */
   inline const Aws::String& GetMembershipId() const { return m_membershipId; }
@@ -46,17 +63,19 @@ class GetGroupMembershipIdResult {
 
   ///@{
   /**
-   * <p>The globally unique identifier for the identity store.</p>
+   * <p>The Amazon Resource Name (ARN) of the group membership in the identity store.
+   * For example,
+   * <code>arn:aws:identitystore:::membership/a1b2c3d4-5678-90ab-cdef-EXAMPLE33333</code>.</p>
    */
-  inline const Aws::String& GetIdentityStoreId() const { return m_identityStoreId; }
-  template <typename IdentityStoreIdT = Aws::String>
-  void SetIdentityStoreId(IdentityStoreIdT&& value) {
-    m_identityStoreIdHasBeenSet = true;
-    m_identityStoreId = std::forward<IdentityStoreIdT>(value);
+  inline const Aws::String& GetMembershipArn() const { return m_membershipArn; }
+  template <typename MembershipArnT = Aws::String>
+  void SetMembershipArn(MembershipArnT&& value) {
+    m_membershipArnHasBeenSet = true;
+    m_membershipArn = std::forward<MembershipArnT>(value);
   }
-  template <typename IdentityStoreIdT = Aws::String>
-  GetGroupMembershipIdResult& WithIdentityStoreId(IdentityStoreIdT&& value) {
-    SetIdentityStoreId(std::forward<IdentityStoreIdT>(value));
+  template <typename MembershipArnT = Aws::String>
+  GetGroupMembershipIdResult& WithMembershipArn(MembershipArnT&& value) {
+    SetMembershipArn(std::forward<MembershipArnT>(value));
     return *this;
   }
   ///@}
@@ -78,14 +97,17 @@ class GetGroupMembershipIdResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
+  Aws::String m_identityStoreId;
+
   Aws::String m_membershipId;
 
-  Aws::String m_identityStoreId;
+  Aws::String m_membershipArn;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
-  bool m_membershipIdHasBeenSet = false;
   bool m_identityStoreIdHasBeenSet = false;
+  bool m_membershipIdHasBeenSet = false;
+  bool m_membershipArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

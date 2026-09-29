@@ -18,9 +18,21 @@ namespace Model {
 Group::Group(JsonView jsonValue) { *this = jsonValue; }
 
 Group& Group::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("IdentityStoreId")) {
+    m_identityStoreId = jsonValue.GetString("IdentityStoreId");
+    m_identityStoreIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("GroupId")) {
     m_groupId = jsonValue.GetString("GroupId");
     m_groupIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("GroupArn")) {
+    m_groupArn = jsonValue.GetString("GroupArn");
+    m_groupArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Revision")) {
+    m_revision = jsonValue.GetString("Revision");
+    m_revisionHasBeenSet = true;
   }
   if (jsonValue.ValueExists("DisplayName")) {
     m_displayName = jsonValue.GetString("DisplayName");
@@ -53,18 +65,26 @@ Group& Group::operator=(JsonView jsonValue) {
     m_updatedBy = jsonValue.GetString("UpdatedBy");
     m_updatedByHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("IdentityStoreId")) {
-    m_identityStoreId = jsonValue.GetString("IdentityStoreId");
-    m_identityStoreIdHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue Group::Jsonize() const {
   JsonValue payload;
 
+  if (m_identityStoreIdHasBeenSet) {
+    payload.WithString("IdentityStoreId", m_identityStoreId);
+  }
+
   if (m_groupIdHasBeenSet) {
     payload.WithString("GroupId", m_groupId);
+  }
+
+  if (m_groupArnHasBeenSet) {
+    payload.WithString("GroupArn", m_groupArn);
+  }
+
+  if (m_revisionHasBeenSet) {
+    payload.WithString("Revision", m_revision);
   }
 
   if (m_displayNameHasBeenSet) {
@@ -97,10 +117,6 @@ JsonValue Group::Jsonize() const {
 
   if (m_updatedByHasBeenSet) {
     payload.WithString("UpdatedBy", m_updatedBy);
-  }
-
-  if (m_identityStoreIdHasBeenSet) {
-    payload.WithString("IdentityStoreId", m_identityStoreId);
   }
 
   return payload;

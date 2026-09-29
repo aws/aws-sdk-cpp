@@ -24,6 +24,7 @@
 #include <aws/awstransfer/model/CertificateStatusType.h>
 #include <aws/awstransfer/model/CertificateType.h>
 #include <aws/awstransfer/model/CertificateUsageType.h>
+#include <aws/awstransfer/model/CommunicationMode.h>
 #include <aws/awstransfer/model/CompressionEnum.h>
 #include <aws/awstransfer/model/ConnectorEgressConfig.h>
 #include <aws/awstransfer/model/ConnectorEgressType.h>
@@ -218,6 +219,7 @@
 #include <aws/awstransfer/model/SftpAuthenticationMethods.h>
 #include <aws/awstransfer/model/SftpConnectorConfig.h>
 #include <aws/awstransfer/model/SftpConnectorConnectionDetails.h>
+#include <aws/awstransfer/model/SftpPortWithOptions.h>
 #include <aws/awstransfer/model/SigningAlg.h>
 #include <aws/awstransfer/model/SshPublicKey.h>
 #include <aws/awstransfer/model/StartDirectoryListingRequest.h>

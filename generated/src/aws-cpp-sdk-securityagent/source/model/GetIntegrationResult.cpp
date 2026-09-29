@@ -50,6 +50,10 @@ GetIntegrationResult& GetIntegrationResult::operator=(const Aws::AmazonWebServic
     m_targetUrl = jsonValue.GetString("targetUrl");
     m_targetUrlHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("webhookUrl")) {
+    m_webhookUrl = jsonValue.GetString("webhookUrl");
+    m_webhookUrlHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("privateConnectionName")) {
     m_privateConnectionName = jsonValue.GetString("privateConnectionName");
     m_privateConnectionNameHasBeenSet = true;

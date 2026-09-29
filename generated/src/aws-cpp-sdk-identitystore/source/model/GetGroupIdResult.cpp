@@ -22,13 +22,17 @@ GetGroupIdResult::GetGroupIdResult(const Aws::AmazonWebServiceResult<JsonValue>&
 GetGroupIdResult& GetGroupIdResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("IdentityStoreId")) {
+    m_identityStoreId = jsonValue.GetString("IdentityStoreId");
+    m_identityStoreIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("GroupId")) {
     m_groupId = jsonValue.GetString("GroupId");
     m_groupIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("IdentityStoreId")) {
-    m_identityStoreId = jsonValue.GetString("IdentityStoreId");
-    m_identityStoreIdHasBeenSet = true;
+  if (jsonValue.ValueExists("GroupArn")) {
+    m_groupArn = jsonValue.GetString("GroupArn");
+    m_groupArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

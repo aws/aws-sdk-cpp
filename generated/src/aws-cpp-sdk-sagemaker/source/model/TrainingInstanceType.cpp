@@ -207,6 +207,39 @@ static const int ml_r8i_24xlarge_HASH = HashingUtils::HashString("ml.r8i.24xlarg
 static const int ml_r8i_32xlarge_HASH = HashingUtils::HashString("ml.r8i.32xlarge");
 static const int ml_r8i_48xlarge_HASH = HashingUtils::HashString("ml.r8i.48xlarge");
 static const int ml_r8i_96xlarge_HASH = HashingUtils::HashString("ml.r8i.96xlarge");
+static const int ml_m7i_flex_large_HASH = HashingUtils::HashString("ml.m7i-flex.large");
+static const int ml_m7i_flex_xlarge_HASH = HashingUtils::HashString("ml.m7i-flex.xlarge");
+static const int ml_m7i_flex_2xlarge_HASH = HashingUtils::HashString("ml.m7i-flex.2xlarge");
+static const int ml_m7i_flex_4xlarge_HASH = HashingUtils::HashString("ml.m7i-flex.4xlarge");
+static const int ml_m7i_flex_8xlarge_HASH = HashingUtils::HashString("ml.m7i-flex.8xlarge");
+static const int ml_m7i_flex_12xlarge_HASH = HashingUtils::HashString("ml.m7i-flex.12xlarge");
+static const int ml_m7i_flex_16xlarge_HASH = HashingUtils::HashString("ml.m7i-flex.16xlarge");
+static const int ml_c7i_flex_xlarge_HASH = HashingUtils::HashString("ml.c7i-flex.xlarge");
+static const int ml_c7i_flex_2xlarge_HASH = HashingUtils::HashString("ml.c7i-flex.2xlarge");
+static const int ml_c7i_flex_4xlarge_HASH = HashingUtils::HashString("ml.c7i-flex.4xlarge");
+static const int ml_c7i_flex_8xlarge_HASH = HashingUtils::HashString("ml.c7i-flex.8xlarge");
+static const int ml_c7i_flex_12xlarge_HASH = HashingUtils::HashString("ml.c7i-flex.12xlarge");
+static const int ml_c7i_flex_16xlarge_HASH = HashingUtils::HashString("ml.c7i-flex.16xlarge");
+static const int ml_m8i_flex_large_HASH = HashingUtils::HashString("ml.m8i-flex.large");
+static const int ml_m8i_flex_xlarge_HASH = HashingUtils::HashString("ml.m8i-flex.xlarge");
+static const int ml_m8i_flex_2xlarge_HASH = HashingUtils::HashString("ml.m8i-flex.2xlarge");
+static const int ml_m8i_flex_4xlarge_HASH = HashingUtils::HashString("ml.m8i-flex.4xlarge");
+static const int ml_m8i_flex_8xlarge_HASH = HashingUtils::HashString("ml.m8i-flex.8xlarge");
+static const int ml_m8i_flex_12xlarge_HASH = HashingUtils::HashString("ml.m8i-flex.12xlarge");
+static const int ml_m8i_flex_16xlarge_HASH = HashingUtils::HashString("ml.m8i-flex.16xlarge");
+static const int ml_c8i_flex_xlarge_HASH = HashingUtils::HashString("ml.c8i-flex.xlarge");
+static const int ml_c8i_flex_2xlarge_HASH = HashingUtils::HashString("ml.c8i-flex.2xlarge");
+static const int ml_c8i_flex_4xlarge_HASH = HashingUtils::HashString("ml.c8i-flex.4xlarge");
+static const int ml_c8i_flex_8xlarge_HASH = HashingUtils::HashString("ml.c8i-flex.8xlarge");
+static const int ml_c8i_flex_12xlarge_HASH = HashingUtils::HashString("ml.c8i-flex.12xlarge");
+static const int ml_c8i_flex_16xlarge_HASH = HashingUtils::HashString("ml.c8i-flex.16xlarge");
+static const int ml_r8i_flex_large_HASH = HashingUtils::HashString("ml.r8i-flex.large");
+static const int ml_r8i_flex_xlarge_HASH = HashingUtils::HashString("ml.r8i-flex.xlarge");
+static const int ml_r8i_flex_2xlarge_HASH = HashingUtils::HashString("ml.r8i-flex.2xlarge");
+static const int ml_r8i_flex_4xlarge_HASH = HashingUtils::HashString("ml.r8i-flex.4xlarge");
+static const int ml_r8i_flex_8xlarge_HASH = HashingUtils::HashString("ml.r8i-flex.8xlarge");
+static const int ml_r8i_flex_12xlarge_HASH = HashingUtils::HashString("ml.r8i-flex.12xlarge");
+static const int ml_r8i_flex_16xlarge_HASH = HashingUtils::HashString("ml.r8i-flex.16xlarge");
 
 /*
 The if-else chains in this file are converted into a jump table by the compiler,
@@ -793,6 +826,105 @@ static bool GetEnumForNameHelper1(int hashCode, TrainingInstanceType& enumValue)
     return true;
   } else if (hashCode == ml_r8i_96xlarge_HASH) {
     enumValue = TrainingInstanceType::ml_r8i_96xlarge;
+    return true;
+  } else if (hashCode == ml_m7i_flex_large_HASH) {
+    enumValue = TrainingInstanceType::ml_m7i_flex_large;
+    return true;
+  } else if (hashCode == ml_m7i_flex_xlarge_HASH) {
+    enumValue = TrainingInstanceType::ml_m7i_flex_xlarge;
+    return true;
+  } else if (hashCode == ml_m7i_flex_2xlarge_HASH) {
+    enumValue = TrainingInstanceType::ml_m7i_flex_2xlarge;
+    return true;
+  } else if (hashCode == ml_m7i_flex_4xlarge_HASH) {
+    enumValue = TrainingInstanceType::ml_m7i_flex_4xlarge;
+    return true;
+  } else if (hashCode == ml_m7i_flex_8xlarge_HASH) {
+    enumValue = TrainingInstanceType::ml_m7i_flex_8xlarge;
+    return true;
+  } else if (hashCode == ml_m7i_flex_12xlarge_HASH) {
+    enumValue = TrainingInstanceType::ml_m7i_flex_12xlarge;
+    return true;
+  } else if (hashCode == ml_m7i_flex_16xlarge_HASH) {
+    enumValue = TrainingInstanceType::ml_m7i_flex_16xlarge;
+    return true;
+  } else if (hashCode == ml_c7i_flex_xlarge_HASH) {
+    enumValue = TrainingInstanceType::ml_c7i_flex_xlarge;
+    return true;
+  } else if (hashCode == ml_c7i_flex_2xlarge_HASH) {
+    enumValue = TrainingInstanceType::ml_c7i_flex_2xlarge;
+    return true;
+  } else if (hashCode == ml_c7i_flex_4xlarge_HASH) {
+    enumValue = TrainingInstanceType::ml_c7i_flex_4xlarge;
+    return true;
+  } else if (hashCode == ml_c7i_flex_8xlarge_HASH) {
+    enumValue = TrainingInstanceType::ml_c7i_flex_8xlarge;
+    return true;
+  } else if (hashCode == ml_c7i_flex_12xlarge_HASH) {
+    enumValue = TrainingInstanceType::ml_c7i_flex_12xlarge;
+    return true;
+  } else if (hashCode == ml_c7i_flex_16xlarge_HASH) {
+    enumValue = TrainingInstanceType::ml_c7i_flex_16xlarge;
+    return true;
+  } else if (hashCode == ml_m8i_flex_large_HASH) {
+    enumValue = TrainingInstanceType::ml_m8i_flex_large;
+    return true;
+  } else if (hashCode == ml_m8i_flex_xlarge_HASH) {
+    enumValue = TrainingInstanceType::ml_m8i_flex_xlarge;
+    return true;
+  } else if (hashCode == ml_m8i_flex_2xlarge_HASH) {
+    enumValue = TrainingInstanceType::ml_m8i_flex_2xlarge;
+    return true;
+  } else if (hashCode == ml_m8i_flex_4xlarge_HASH) {
+    enumValue = TrainingInstanceType::ml_m8i_flex_4xlarge;
+    return true;
+  } else if (hashCode == ml_m8i_flex_8xlarge_HASH) {
+    enumValue = TrainingInstanceType::ml_m8i_flex_8xlarge;
+    return true;
+  } else if (hashCode == ml_m8i_flex_12xlarge_HASH) {
+    enumValue = TrainingInstanceType::ml_m8i_flex_12xlarge;
+    return true;
+  } else if (hashCode == ml_m8i_flex_16xlarge_HASH) {
+    enumValue = TrainingInstanceType::ml_m8i_flex_16xlarge;
+    return true;
+  } else if (hashCode == ml_c8i_flex_xlarge_HASH) {
+    enumValue = TrainingInstanceType::ml_c8i_flex_xlarge;
+    return true;
+  } else if (hashCode == ml_c8i_flex_2xlarge_HASH) {
+    enumValue = TrainingInstanceType::ml_c8i_flex_2xlarge;
+    return true;
+  } else if (hashCode == ml_c8i_flex_4xlarge_HASH) {
+    enumValue = TrainingInstanceType::ml_c8i_flex_4xlarge;
+    return true;
+  } else if (hashCode == ml_c8i_flex_8xlarge_HASH) {
+    enumValue = TrainingInstanceType::ml_c8i_flex_8xlarge;
+    return true;
+  } else if (hashCode == ml_c8i_flex_12xlarge_HASH) {
+    enumValue = TrainingInstanceType::ml_c8i_flex_12xlarge;
+    return true;
+  } else if (hashCode == ml_c8i_flex_16xlarge_HASH) {
+    enumValue = TrainingInstanceType::ml_c8i_flex_16xlarge;
+    return true;
+  } else if (hashCode == ml_r8i_flex_large_HASH) {
+    enumValue = TrainingInstanceType::ml_r8i_flex_large;
+    return true;
+  } else if (hashCode == ml_r8i_flex_xlarge_HASH) {
+    enumValue = TrainingInstanceType::ml_r8i_flex_xlarge;
+    return true;
+  } else if (hashCode == ml_r8i_flex_2xlarge_HASH) {
+    enumValue = TrainingInstanceType::ml_r8i_flex_2xlarge;
+    return true;
+  } else if (hashCode == ml_r8i_flex_4xlarge_HASH) {
+    enumValue = TrainingInstanceType::ml_r8i_flex_4xlarge;
+    return true;
+  } else if (hashCode == ml_r8i_flex_8xlarge_HASH) {
+    enumValue = TrainingInstanceType::ml_r8i_flex_8xlarge;
+    return true;
+  } else if (hashCode == ml_r8i_flex_12xlarge_HASH) {
+    enumValue = TrainingInstanceType::ml_r8i_flex_12xlarge;
+    return true;
+  } else if (hashCode == ml_r8i_flex_16xlarge_HASH) {
+    enumValue = TrainingInstanceType::ml_r8i_flex_16xlarge;
     return true;
   }
   return false;
@@ -1381,6 +1513,105 @@ static bool GetNameForEnumHelper1(TrainingInstanceType enumValue, Aws::String& v
       return true;
     case TrainingInstanceType::ml_r8i_96xlarge:
       value = "ml.r8i.96xlarge";
+      return true;
+    case TrainingInstanceType::ml_m7i_flex_large:
+      value = "ml.m7i-flex.large";
+      return true;
+    case TrainingInstanceType::ml_m7i_flex_xlarge:
+      value = "ml.m7i-flex.xlarge";
+      return true;
+    case TrainingInstanceType::ml_m7i_flex_2xlarge:
+      value = "ml.m7i-flex.2xlarge";
+      return true;
+    case TrainingInstanceType::ml_m7i_flex_4xlarge:
+      value = "ml.m7i-flex.4xlarge";
+      return true;
+    case TrainingInstanceType::ml_m7i_flex_8xlarge:
+      value = "ml.m7i-flex.8xlarge";
+      return true;
+    case TrainingInstanceType::ml_m7i_flex_12xlarge:
+      value = "ml.m7i-flex.12xlarge";
+      return true;
+    case TrainingInstanceType::ml_m7i_flex_16xlarge:
+      value = "ml.m7i-flex.16xlarge";
+      return true;
+    case TrainingInstanceType::ml_c7i_flex_xlarge:
+      value = "ml.c7i-flex.xlarge";
+      return true;
+    case TrainingInstanceType::ml_c7i_flex_2xlarge:
+      value = "ml.c7i-flex.2xlarge";
+      return true;
+    case TrainingInstanceType::ml_c7i_flex_4xlarge:
+      value = "ml.c7i-flex.4xlarge";
+      return true;
+    case TrainingInstanceType::ml_c7i_flex_8xlarge:
+      value = "ml.c7i-flex.8xlarge";
+      return true;
+    case TrainingInstanceType::ml_c7i_flex_12xlarge:
+      value = "ml.c7i-flex.12xlarge";
+      return true;
+    case TrainingInstanceType::ml_c7i_flex_16xlarge:
+      value = "ml.c7i-flex.16xlarge";
+      return true;
+    case TrainingInstanceType::ml_m8i_flex_large:
+      value = "ml.m8i-flex.large";
+      return true;
+    case TrainingInstanceType::ml_m8i_flex_xlarge:
+      value = "ml.m8i-flex.xlarge";
+      return true;
+    case TrainingInstanceType::ml_m8i_flex_2xlarge:
+      value = "ml.m8i-flex.2xlarge";
+      return true;
+    case TrainingInstanceType::ml_m8i_flex_4xlarge:
+      value = "ml.m8i-flex.4xlarge";
+      return true;
+    case TrainingInstanceType::ml_m8i_flex_8xlarge:
+      value = "ml.m8i-flex.8xlarge";
+      return true;
+    case TrainingInstanceType::ml_m8i_flex_12xlarge:
+      value = "ml.m8i-flex.12xlarge";
+      return true;
+    case TrainingInstanceType::ml_m8i_flex_16xlarge:
+      value = "ml.m8i-flex.16xlarge";
+      return true;
+    case TrainingInstanceType::ml_c8i_flex_xlarge:
+      value = "ml.c8i-flex.xlarge";
+      return true;
+    case TrainingInstanceType::ml_c8i_flex_2xlarge:
+      value = "ml.c8i-flex.2xlarge";
+      return true;
+    case TrainingInstanceType::ml_c8i_flex_4xlarge:
+      value = "ml.c8i-flex.4xlarge";
+      return true;
+    case TrainingInstanceType::ml_c8i_flex_8xlarge:
+      value = "ml.c8i-flex.8xlarge";
+      return true;
+    case TrainingInstanceType::ml_c8i_flex_12xlarge:
+      value = "ml.c8i-flex.12xlarge";
+      return true;
+    case TrainingInstanceType::ml_c8i_flex_16xlarge:
+      value = "ml.c8i-flex.16xlarge";
+      return true;
+    case TrainingInstanceType::ml_r8i_flex_large:
+      value = "ml.r8i-flex.large";
+      return true;
+    case TrainingInstanceType::ml_r8i_flex_xlarge:
+      value = "ml.r8i-flex.xlarge";
+      return true;
+    case TrainingInstanceType::ml_r8i_flex_2xlarge:
+      value = "ml.r8i-flex.2xlarge";
+      return true;
+    case TrainingInstanceType::ml_r8i_flex_4xlarge:
+      value = "ml.r8i-flex.4xlarge";
+      return true;
+    case TrainingInstanceType::ml_r8i_flex_8xlarge:
+      value = "ml.r8i-flex.8xlarge";
+      return true;
+    case TrainingInstanceType::ml_r8i_flex_12xlarge:
+      value = "ml.r8i-flex.12xlarge";
+      return true;
+    case TrainingInstanceType::ml_r8i_flex_16xlarge:
+      value = "ml.r8i-flex.16xlarge";
       return true;
     default:
       return false;

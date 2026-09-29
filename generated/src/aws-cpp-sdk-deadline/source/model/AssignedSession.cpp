@@ -37,6 +37,13 @@ AssignedSession& AssignedSession::operator=(JsonView jsonValue) {
     m_logConfiguration = jsonValue.GetObject("logConfiguration");
     m_logConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("metadata")) {
+    Aws::Map<Aws::String, JsonView> metadataJsonMap = jsonValue.GetObject("metadata").GetAllObjects();
+    for (auto& metadataItem : metadataJsonMap) {
+      m_metadata[metadataItem.first] = metadataItem.second.AsString();
+    }
+    m_metadataHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -61,6 +68,14 @@ JsonValue AssignedSession::Jsonize() const {
 
   if (m_logConfigurationHasBeenSet) {
     payload.WithObject("logConfiguration", m_logConfiguration.Jsonize());
+  }
+
+  if (m_metadataHasBeenSet) {
+    JsonValue metadataJsonMap;
+    for (auto& metadataItem : m_metadata) {
+      metadataJsonMap.WithString(metadataItem.first, metadataItem.second);
+    }
+    payload.WithObject("metadata", std::move(metadataJsonMap));
   }
 
   return payload;

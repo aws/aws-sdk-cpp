@@ -29,6 +29,23 @@ class GetGroupIdResult {
 
   ///@{
   /**
+   * <p>The globally unique identifier for the identity store.</p>
+   */
+  inline const Aws::String& GetIdentityStoreId() const { return m_identityStoreId; }
+  template <typename IdentityStoreIdT = Aws::String>
+  void SetIdentityStoreId(IdentityStoreIdT&& value) {
+    m_identityStoreIdHasBeenSet = true;
+    m_identityStoreId = std::forward<IdentityStoreIdT>(value);
+  }
+  template <typename IdentityStoreIdT = Aws::String>
+  GetGroupIdResult& WithIdentityStoreId(IdentityStoreIdT&& value) {
+    SetIdentityStoreId(std::forward<IdentityStoreIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The identifier for a group in the identity store.</p>
    */
   inline const Aws::String& GetGroupId() const { return m_groupId; }
@@ -46,17 +63,19 @@ class GetGroupIdResult {
 
   ///@{
   /**
-   * <p>The globally unique identifier for the identity store.</p>
+   * <p>The Amazon Resource Name (ARN) of the group in the identity store. For
+   * example,
+   * <code>arn:aws:identitystore:::group/a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</code>.</p>
    */
-  inline const Aws::String& GetIdentityStoreId() const { return m_identityStoreId; }
-  template <typename IdentityStoreIdT = Aws::String>
-  void SetIdentityStoreId(IdentityStoreIdT&& value) {
-    m_identityStoreIdHasBeenSet = true;
-    m_identityStoreId = std::forward<IdentityStoreIdT>(value);
+  inline const Aws::String& GetGroupArn() const { return m_groupArn; }
+  template <typename GroupArnT = Aws::String>
+  void SetGroupArn(GroupArnT&& value) {
+    m_groupArnHasBeenSet = true;
+    m_groupArn = std::forward<GroupArnT>(value);
   }
-  template <typename IdentityStoreIdT = Aws::String>
-  GetGroupIdResult& WithIdentityStoreId(IdentityStoreIdT&& value) {
-    SetIdentityStoreId(std::forward<IdentityStoreIdT>(value));
+  template <typename GroupArnT = Aws::String>
+  GetGroupIdResult& WithGroupArn(GroupArnT&& value) {
+    SetGroupArn(std::forward<GroupArnT>(value));
     return *this;
   }
   ///@}
@@ -78,14 +97,17 @@ class GetGroupIdResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
+  Aws::String m_identityStoreId;
+
   Aws::String m_groupId;
 
-  Aws::String m_identityStoreId;
+  Aws::String m_groupArn;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
-  bool m_groupIdHasBeenSet = false;
   bool m_identityStoreIdHasBeenSet = false;
+  bool m_groupIdHasBeenSet = false;
+  bool m_groupArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

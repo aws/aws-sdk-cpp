@@ -23,6 +23,10 @@ Aws::String DeleteUserRequest::SerializePayload() const {
     payload.WithString("UserId", m_userId);
   }
 
+  if (m_revisionHasBeenSet) {
+    payload.WithString("Revision", m_revision);
+  }
+
   return payload.View().WriteReadable();
 }
 

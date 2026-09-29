@@ -31,6 +31,13 @@ ProtocolDetails& ProtocolDetails::operator=(JsonView jsonValue) {
     m_setStatOption = SetStatOptionMapper::GetSetStatOptionForName(jsonValue.GetString("SetStatOption"));
     m_setStatOptionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SftpPorts")) {
+    Aws::Utils::Array<JsonView> sftpPortsJsonList = jsonValue.GetArray("SftpPorts");
+    for (unsigned sftpPortsIndex = 0; sftpPortsIndex < sftpPortsJsonList.GetLength(); ++sftpPortsIndex) {
+      m_sftpPorts.push_back(sftpPortsJsonList[sftpPortsIndex].AsObject());
+    }
+    m_sftpPortsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("As2Transports")) {
     Aws::Utils::Array<JsonView> as2TransportsJsonList = jsonValue.GetArray("As2Transports");
     for (unsigned as2TransportsIndex = 0; as2TransportsIndex < as2TransportsJsonList.GetLength(); ++as2TransportsIndex) {
@@ -59,6 +66,14 @@ JsonValue ProtocolDetails::Jsonize() const {
 
   if (m_setStatOptionHasBeenSet) {
     payload.WithString("SetStatOption", SetStatOptionMapper::GetNameForSetStatOption(m_setStatOption));
+  }
+
+  if (m_sftpPortsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> sftpPortsJsonList(m_sftpPorts.size());
+    for (unsigned sftpPortsIndex = 0; sftpPortsIndex < sftpPortsJsonList.GetLength(); ++sftpPortsIndex) {
+      sftpPortsJsonList[sftpPortsIndex].AsObject(m_sftpPorts[sftpPortsIndex].Jsonize());
+    }
+    payload.WithArray("SftpPorts", std::move(sftpPortsJsonList));
   }
 
   if (m_as2TransportsHasBeenSet) {

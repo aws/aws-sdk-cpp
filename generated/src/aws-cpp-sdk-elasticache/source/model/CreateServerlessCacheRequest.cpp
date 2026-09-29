@@ -101,6 +101,10 @@ Aws::String CreateServerlessCacheRequest::SerializePayload() const {
     ss << "NetworkType=" << StringUtils::URLEncode(NetworkTypeMapper::GetNameForNetworkType(m_networkType)) << "&";
   }
 
+  if (m_connectionTypeHasBeenSet) {
+    ss << "ConnectionType=" << StringUtils::URLEncode(ConnectionTypeMapper::GetNameForConnectionType(m_connectionType)) << "&";
+  }
+
   ss << "Version=2015-02-02";
   return ss.str();
 }

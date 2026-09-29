@@ -22,6 +22,10 @@ FoundationModelConfiguration& FoundationModelConfiguration::operator=(JsonView j
     m_bedrockFoundationModelConfiguration = jsonValue.GetObject("bedrockFoundationModelConfiguration");
     m_bedrockFoundationModelConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("mantleFoundationModelConfiguration")) {
+    m_mantleFoundationModelConfiguration = jsonValue.GetObject("mantleFoundationModelConfiguration");
+    m_mantleFoundationModelConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("type")) {
     m_type = FoundationModelConfigurationTypeMapper::GetFoundationModelConfigurationTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
@@ -34,6 +38,10 @@ JsonValue FoundationModelConfiguration::Jsonize() const {
 
   if (m_bedrockFoundationModelConfigurationHasBeenSet) {
     payload.WithObject("bedrockFoundationModelConfiguration", m_bedrockFoundationModelConfiguration.Jsonize());
+  }
+
+  if (m_mantleFoundationModelConfigurationHasBeenSet) {
+    payload.WithObject("mantleFoundationModelConfiguration", m_mantleFoundationModelConfiguration.Jsonize());
   }
 
   if (m_typeHasBeenSet) {

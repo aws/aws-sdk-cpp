@@ -128,6 +128,50 @@ class StepDetailsEntity {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Open Job Description extensions that the step uses. This value is used by
+   * the worker agent.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetExtensions() const { return m_extensions; }
+  inline bool ExtensionsHasBeenSet() const { return m_extensionsHasBeenSet; }
+  template <typename ExtensionsT = Aws::Vector<Aws::String>>
+  void SetExtensions(ExtensionsT&& value) {
+    m_extensionsHasBeenSet = true;
+    m_extensions = std::forward<ExtensionsT>(value);
+  }
+  template <typename ExtensionsT = Aws::Vector<Aws::String>>
+  StepDetailsEntity& WithExtensions(ExtensionsT&& value) {
+    SetExtensions(std::forward<ExtensionsT>(value));
+    return *this;
+  }
+  template <typename ExtensionsT = Aws::String>
+  StepDetailsEntity& AddExtensions(ExtensionsT&& value) {
+    m_extensionsHasBeenSet = true;
+    m_extensions.emplace_back(std::forward<ExtensionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The resolved symbol table for the step's expressions, serialized as JSON.
+   * This value is used by the worker agent.</p>
+   */
+  inline const Aws::String& GetResolvedSymbolTable() const { return m_resolvedSymbolTable; }
+  inline bool ResolvedSymbolTableHasBeenSet() const { return m_resolvedSymbolTableHasBeenSet; }
+  template <typename ResolvedSymbolTableT = Aws::String>
+  void SetResolvedSymbolTable(ResolvedSymbolTableT&& value) {
+    m_resolvedSymbolTableHasBeenSet = true;
+    m_resolvedSymbolTable = std::forward<ResolvedSymbolTableT>(value);
+  }
+  template <typename ResolvedSymbolTableT = Aws::String>
+  StepDetailsEntity& WithResolvedSymbolTable(ResolvedSymbolTableT&& value) {
+    SetResolvedSymbolTable(std::forward<ResolvedSymbolTableT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_jobId;
 
@@ -138,11 +182,17 @@ class StepDetailsEntity {
   Aws::Utils::Document m_template;
 
   Aws::Vector<Aws::String> m_dependencies;
+
+  Aws::Vector<Aws::String> m_extensions;
+
+  Aws::String m_resolvedSymbolTable;
   bool m_jobIdHasBeenSet = false;
   bool m_stepIdHasBeenSet = false;
   bool m_schemaVersionHasBeenSet = false;
   bool m_templateHasBeenSet = false;
   bool m_dependenciesHasBeenSet = false;
+  bool m_extensionsHasBeenSet = false;
+  bool m_resolvedSymbolTableHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -514,6 +514,11 @@ Image& Image::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& deco
                       ImageTypeMapper::GetImageTypeForName(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
                 }
                 m_imageTypeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "ImageSoftwareMetadata") {
+                m_imageSoftwareMetadata = ImageSoftwareMetadata(decoder);
+                m_imageSoftwareMetadataHasBeenSet = true;
               } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
@@ -1025,6 +1030,11 @@ Image& Image::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& deco
                     ImageTypeMapper::GetImageTypeForName(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
               }
               m_imageTypeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ImageSoftwareMetadata") {
+              m_imageSoftwareMetadata = ImageSoftwareMetadata(decoder);
+              m_imageSoftwareMetadataHasBeenSet = true;
             } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
@@ -1108,6 +1118,9 @@ void Image::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
     mapSize++;
   }
   if (m_imageTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_imageSoftwareMetadataHasBeenSet) {
     mapSize++;
   }
 
@@ -1240,6 +1253,11 @@ void Image::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
   if (m_imageTypeHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("ImageType"));
     encoder.WriteText(Aws::Crt::ByteCursorFromCString(ImageTypeMapper::GetNameForImageType(m_imageType).c_str()));
+  }
+
+  if (m_imageSoftwareMetadataHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ImageSoftwareMetadata"));
+    m_imageSoftwareMetadata.CborEncode(encoder);
   }
 }
 

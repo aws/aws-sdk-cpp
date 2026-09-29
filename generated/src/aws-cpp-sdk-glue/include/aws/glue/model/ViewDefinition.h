@@ -59,6 +59,22 @@ class ViewDefinition {
 
   ///@{
   /**
+   * <p>Specifies whether the materialized view is managed by Glue.</p>
+   */
+  inline bool GetIsManaged() const { return m_isManaged; }
+  inline bool IsManagedHasBeenSet() const { return m_isManagedHasBeenSet; }
+  inline void SetIsManaged(bool value) {
+    m_isManagedHasBeenSet = true;
+    m_isManaged = value;
+  }
+  inline ViewDefinition& WithIsManaged(bool value) {
+    SetIsManaged(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The definer of a view in SQL.</p>
    */
   inline const Aws::String& GetDefiner() const { return m_definer; }
@@ -269,6 +285,8 @@ class ViewDefinition {
  private:
   bool m_isProtected{false};
 
+  bool m_isManaged{false};
+
   Aws::String m_definer;
 
   long long m_viewVersionId{0};
@@ -289,6 +307,7 @@ class ViewDefinition {
 
   Aws::Map<Aws::String, Aws::String> m_sparkPipelineInfo;
   bool m_isProtectedHasBeenSet = false;
+  bool m_isManagedHasBeenSet = false;
   bool m_definerHasBeenSet = false;
   bool m_viewVersionIdHasBeenSet = false;
   bool m_viewVersionTokenHasBeenSet = false;

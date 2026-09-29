@@ -43,6 +43,7 @@
 #include <aws/elementalinference/model/DisassociateFeedResult.h>
 #include <aws/elementalinference/model/ExportDictionaryEntriesRequest.h>
 #include <aws/elementalinference/model/ExportDictionaryEntriesResult.h>
+#include <aws/elementalinference/model/ExtendedAnalysisMode.h>
 #include <aws/elementalinference/model/FeedAssociation.h>
 #include <aws/elementalinference/model/FeedStatus.h>
 #include <aws/elementalinference/model/FeedSummary.h>

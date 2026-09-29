@@ -32,7 +32,10 @@ class DeleteUserRequest : public IdentityStoreRequest {
 
   ///@{
   /**
-   * <p>The globally unique identifier for the identity store.</p>
+   * <p>The globally unique identifier for the identity store.</p> <p>You can specify
+   * the identity store by ID or by Amazon Resource Name (ARN). For example, identity
+   * store ID <code>d-1234567890</code> or identity store ARN
+   * <code>arn:aws:identitystore::111122223333:identitystore/d-1234567890</code>.</p>
    */
   inline const Aws::String& GetIdentityStoreId() const { return m_identityStoreId; }
   inline bool IdentityStoreIdHasBeenSet() const { return m_identityStoreIdHasBeenSet; }
@@ -50,7 +53,10 @@ class DeleteUserRequest : public IdentityStoreRequest {
 
   ///@{
   /**
-   * <p>The identifier for a user in the identity store.</p>
+   * <p>The identifier for a user in the identity store.</p> <p>You can specify the
+   * user by ID or by Amazon Resource Name (ARN). For example, user ID
+   * <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code> or user ARN
+   * <code>arn:aws:identitystore:::user/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
    */
   inline const Aws::String& GetUserId() const { return m_userId; }
   inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
@@ -65,12 +71,37 @@ class DeleteUserRequest : public IdentityStoreRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The expected current revision of the user. When you provide this value, the
+   * user is deleted only if it matches the current revision of the user in the
+   * identity store. If the value doesn't match, the operation fails with a
+   * <code>ConflictException</code>. If you don't provide this value, the user is
+   * deleted regardless of its current revision.</p>
+   */
+  inline const Aws::String& GetRevision() const { return m_revision; }
+  inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
+  template <typename RevisionT = Aws::String>
+  void SetRevision(RevisionT&& value) {
+    m_revisionHasBeenSet = true;
+    m_revision = std::forward<RevisionT>(value);
+  }
+  template <typename RevisionT = Aws::String>
+  DeleteUserRequest& WithRevision(RevisionT&& value) {
+    SetRevision(std::forward<RevisionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_identityStoreId;
 
   Aws::String m_userId;
+
+  Aws::String m_revision;
   bool m_identityStoreIdHasBeenSet = false;
   bool m_userIdHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
 };
 
 }  // namespace Model

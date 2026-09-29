@@ -26,6 +26,14 @@ User& User::operator=(JsonView jsonValue) {
     m_userId = jsonValue.GetString("UserId");
     m_userIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("UserArn")) {
+    m_userArn = jsonValue.GetString("UserArn");
+    m_userArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Revision")) {
+    m_revision = jsonValue.GetString("Revision");
+    m_revisionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("UserName")) {
     m_userName = jsonValue.GetString("UserName");
     m_userNameHasBeenSet = true;
@@ -155,6 +163,14 @@ JsonValue User::Jsonize() const {
 
   if (m_userIdHasBeenSet) {
     payload.WithString("UserId", m_userId);
+  }
+
+  if (m_userArnHasBeenSet) {
+    payload.WithString("UserArn", m_userArn);
+  }
+
+  if (m_revisionHasBeenSet) {
+    payload.WithString("Revision", m_revision);
   }
 
   if (m_userNameHasBeenSet) {

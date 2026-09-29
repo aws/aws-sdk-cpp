@@ -4,9 +4,11 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sesv2/SESV2Request.h>
 #include <aws/sesv2/SESV2_EXPORTS.h>
+#include <aws/sesv2/model/ListTenantsFilterKey.h>
 
 #include <utility>
 
@@ -31,6 +33,30 @@ class ListTenantsRequest : public SESV2Request {
   inline virtual const char* GetServiceRequestName() const override { return "ListTenants"; }
 
   AWS_SESV2_API Aws::String SerializePayload() const override;
+
+  ///@{
+  /**
+   * <p>An object that contains filters to apply when listing tenants. You can filter
+   * by tenant name or sending status.</p>
+   */
+  inline const Aws::Map<ListTenantsFilterKey, Aws::String>& GetFilter() const { return m_filter; }
+  inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+  template <typename FilterT = Aws::Map<ListTenantsFilterKey, Aws::String>>
+  void SetFilter(FilterT&& value) {
+    m_filterHasBeenSet = true;
+    m_filter = std::forward<FilterT>(value);
+  }
+  template <typename FilterT = Aws::Map<ListTenantsFilterKey, Aws::String>>
+  ListTenantsRequest& WithFilter(FilterT&& value) {
+    SetFilter(std::forward<FilterT>(value));
+    return *this;
+  }
+  inline ListTenantsRequest& AddFilter(ListTenantsFilterKey key, Aws::String value) {
+    m_filterHasBeenSet = true;
+    m_filter.emplace(key, value);
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -70,9 +96,12 @@ class ListTenantsRequest : public SESV2Request {
   }
   ///@}
  private:
+  Aws::Map<ListTenantsFilterKey, Aws::String> m_filter;
+
   Aws::String m_nextToken;
 
   int m_pageSize{0};
+  bool m_filterHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_pageSizeHasBeenSet = false;
 };

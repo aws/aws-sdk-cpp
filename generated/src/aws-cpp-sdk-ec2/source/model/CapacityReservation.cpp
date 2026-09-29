@@ -229,6 +229,12 @@ CapacityReservation& CapacityReservation::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(zeroSizePreferenceNode.GetText()).c_str()));
       m_zeroSizePreferenceHasBeenSet = true;
     }
+    XmlNode launchStatusNode = resultNode.FirstChild("launchStatus");
+    if (!launchStatusNode.IsNull()) {
+      m_launchStatus = CapacityReservationLaunchStatusMapper::GetCapacityReservationLaunchStatusForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(launchStatusNode.GetText()).c_str()));
+      m_launchStatusHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -417,6 +423,12 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
     oStream << location << index << locationValue << ".ZeroSizePreference="
             << StringUtils::URLEncode(ZeroSizePreferenceMapper::GetNameForZeroSizePreference(m_zeroSizePreference)) << "&";
   }
+
+  if (m_launchStatusHasBeenSet) {
+    oStream << location << index << locationValue << ".LaunchStatus="
+            << StringUtils::URLEncode(CapacityReservationLaunchStatusMapper::GetNameForCapacityReservationLaunchStatus(m_launchStatus))
+            << "&";
+  }
 }
 
 void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -561,6 +573,11 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
   if (m_zeroSizePreferenceHasBeenSet) {
     oStream << location << ".ZeroSizePreference="
             << StringUtils::URLEncode(ZeroSizePreferenceMapper::GetNameForZeroSizePreference(m_zeroSizePreference)) << "&";
+  }
+  if (m_launchStatusHasBeenSet) {
+    oStream << location << ".LaunchStatus="
+            << StringUtils::URLEncode(CapacityReservationLaunchStatusMapper::GetNameForCapacityReservationLaunchStatus(m_launchStatus))
+            << "&";
   }
 }
 
