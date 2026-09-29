@@ -6,6 +6,7 @@
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/crt/Optional.h>
 #include <aws/testing/AwsCppSdkGTestSuite.h>
+#include <smithy/client/schema/Document.h>
 #include <smithy/client/schema/MapSerializer.h>
 #include <smithy/client/schema/Schema.h>
 #include <smithy/client/schema/SchemaBuilder.h>
@@ -592,4 +593,11 @@ TEST_F(XmlShapeDeserializerTest, TimestampFormatTraitControlsParsing) {
     ASSERT_TRUE(got.has_value());
     EXPECT_EQ(got.value().Seconds(), 1234567890);
   }
+}
+
+TEST_F(XmlShapeDeserializerTest, ReadDocumentIsUnsupported) {
+  Aws::String xml = "<x/>";
+  XmlShapeDeserializer deser(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(xml.c_str()), xml.size()));
+  auto schema = Schema::CreateDocument("smithy.api#Document");
+  EXPECT_FALSE(deser.ReadDocument(*schema).has_value());
 }

@@ -4,6 +4,8 @@
  */
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <smithy/client/schema/Document.h>
 #include <smithy/client/schema/JsonShapeSerializer.h>
 #include <smithy/client/schema/JsonTraits.h>
 #include <smithy/client/schema/JsonWriteUtils.h>
@@ -12,6 +14,8 @@
 #include <smithy/client/schema/SerializableStruct.h>
 
 #include <cmath>
+#include <cstdlib>
+#include <iomanip>
 
 #include "aws/core/client/AWSClient.h"
 #include "aws/core/utils/Outcome.h"
@@ -57,7 +61,15 @@ class JsonShapeSerializer::Impl final : public ShapeSerializer {
   void WriteBoolean(const Schema&, bool value) override { m_buf += value ? "true" : "false"; }
   void WriteInteger(const Schema&, int value) override { m_buf += StringUtils::to_string(value); }
   void WriteLong(const Schema&, int64_t value) override { m_buf += StringUtils::to_string(value); }
-  void WriteFloat(const Schema&, float value) override { WriteFloatingPoint(value); }
+  void WriteFloat(const Schema&, float value) override {
+    // Format at float precision; a float widened to double and printed at double precision emits the
+    // double expansion of the float's imprecision (e.g. "3.1400001049041748" for 3.14f).
+    if (std::isfinite(value)) {
+      m_buf += FormatFloat(value);
+    } else {
+      WriteFloatingPoint(static_cast<double>(value));  // NaN/Infinity widen exactly; reuse the shared path
+    }
+  }
   void WriteDouble(const Schema&, double value) override { WriteFloatingPoint(value); }
   void WriteString(const Schema&, const Aws::String& value) override { Aws::Schema::WriteQuotedJsonString(m_buf, value); }
   void WriteTimestamp(const Schema& schema, const DateTime& value) override {
@@ -74,11 +86,54 @@ class JsonShapeSerializer::Impl final : public ShapeSerializer {
     m_buf += '"';
   }
   void WriteNull(const Schema&) override { m_buf += "null"; }
+  void WriteDocument(const Schema& schema, const Document& value) override { value.SerializeContents(*this, schema); }
+
+  // Shortest decimal that round-trips (matches the SDK cJSON writer): 15 significant digits,
+  // falling back to 17 (max_digits10, always round-trips) when 15 does not reparse equal.
+  static Aws::String RoundTripDouble(double value) {
+    Aws::OStringStream s15;
+    s15 << std::setprecision(15) << value;
+    Aws::String t15 = s15.str();
+    if (std::strtod(t15.c_str(), nullptr) == value) {
+      return t15;
+    }
+    Aws::OStringStream s17;
+    s17 << std::setprecision(17) << value;
+    return s17.str();
+  }
+
+  // Preserve the double type through a JSON round-trip: an integral-valued double formats as "2",
+  // which the document deserializer reclassifies as Long. Append a ".0" marker when absent.
+  static Aws::String FormatDouble(double value) {
+    Aws::String text = RoundTripDouble(value);
+    if (text.find_first_of(".eE") == Aws::String::npos) {
+      text += ".0";
+    }
+    return text;
+  }
+
+  // Float counterpart of FormatDouble: reparse at float precision (strtof) so a float emits the
+  // shortest decimal that round-trips the float ("3.14"), not the double expansion of its imprecision
+  // ("3.1400001049041748"). 6 significant digits, falling back to 9 (max_digits10 for float).
+  static Aws::String FormatFloat(float value) {
+    Aws::OStringStream s6;
+    s6 << std::setprecision(6) << value;
+    Aws::String text = s6.str();
+    if (std::strtof(text.c_str(), nullptr) != value) {
+      Aws::OStringStream s9;
+      s9 << std::setprecision(9) << value;
+      text = s9.str();
+    }
+    if (text.find_first_of(".eE") == Aws::String::npos) {
+      text += ".0";
+    }
+    return text;
+  }
 
   // Non-finite floats have no JSON number form; Smithy encodes them as quoted strings.
   void WriteFloatingPoint(double value) {
     if (std::isfinite(value)) {
-      m_buf += StringUtils::to_string(value);
+      m_buf += FormatDouble(value);
     } else if (std::isnan(value)) {
       m_buf += "\"NaN\"";
     } else {
@@ -168,6 +223,10 @@ class JsonShapeSerializer::Impl final : public ShapeSerializer {
       m_outer->WriteFieldName(s);
       m_outer->WriteNull(s);
     }
+    void WriteDocument(const Schema& s, const Document& v) override {
+      m_outer->WriteFieldName(s);
+      m_outer->WriteDocument(s, v);
+    }
 
    private:
     Impl* m_outer;
@@ -224,6 +283,10 @@ class JsonShapeSerializer::Impl final : public ShapeSerializer {
     void WriteNull(const Schema& s) override {
       m_outer->WriteCommaIfNeeded();
       m_outer->WriteNull(s);
+    }
+    void WriteDocument(const Schema& s, const Document& v) override {
+      m_outer->WriteCommaIfNeeded();
+      m_outer->WriteDocument(s, v);
     }
 
    private:
@@ -289,5 +352,6 @@ void JsonShapeSerializer::WriteString(const Schema& schema, const Aws::String& v
 void JsonShapeSerializer::WriteTimestamp(const Schema& schema, const DateTime& value) { m_impl->WriteTimestamp(schema, value); }
 void JsonShapeSerializer::WriteBlob(const Schema& schema, const ByteBuffer& value) { m_impl->WriteBlob(schema, value); }
 void JsonShapeSerializer::WriteNull(const Schema& schema) { m_impl->WriteNull(schema); }
+void JsonShapeSerializer::WriteDocument(const Schema& schema, const Document& value) { m_impl->WriteDocument(schema, value); }
 
 JsonShapeSerializer::SerializerOutcome JsonShapeSerializer::GetPayload() { return m_impl->GetPayload(); }

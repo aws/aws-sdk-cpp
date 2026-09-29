@@ -4,6 +4,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <smithy/Smithy_EXPORTS.h>
+#include <smithy/client/schema/Document.h>
 #include <smithy/client/schema/Schema.h>
 
 #include <cstdint>
@@ -34,6 +35,7 @@ class SMITHY_API ShapeSerializer {
   virtual void WriteTimestamp(const Schema& schema, const Aws::Utils::DateTime& value) = 0;
   virtual void WriteBlob(const Schema& schema, const Aws::Utils::ByteBuffer& value) = 0;
   virtual void WriteNull(const Schema& schema) = 0;
+  virtual void WriteDocument(const Schema& schema, const Document& value) = 0;
 };
 
 }  // namespace schema

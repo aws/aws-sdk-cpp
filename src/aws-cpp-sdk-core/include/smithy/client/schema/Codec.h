@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/crt/Types.h>
 #include <smithy/Smithy_EXPORTS.h>
+#include <smithy/client/schema/SerdeTraits.h>
 #include <smithy/client/schema/SerializableStruct.h>
 #include <smithy/client/schema/ShapeDeserializer.h>
 
@@ -32,8 +33,14 @@ class SMITHY_API Codec {
 
 class SMITHY_API JsonCodec final : public Codec {
  public:
+  explicit JsonCodec(
+      TimestampFormatTrait::Format defaultStringTimestampFormat = TimestampFormatTrait::Format::EPOCH_SECONDS)
+      : m_defaultStringTimestampFormat(defaultStringTimestampFormat) {}
   SerializerOutcome Serialize(const Schema& schema, const SerializableStruct& shape) const override;
   Aws::UniquePtr<ShapeDeserializer> CreateDeserializer(Aws::Crt::ByteCursor data) const override;
+
+ private:
+  TimestampFormatTrait::Format m_defaultStringTimestampFormat;
 };
 
 class SMITHY_API XmlCodec final : public Codec {

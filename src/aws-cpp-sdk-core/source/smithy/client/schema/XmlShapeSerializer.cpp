@@ -6,6 +6,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/StringUtils.h>
+#include <smithy/client/schema/Document.h>
 #include <smithy/client/schema/InterceptingSerializer.h>
 #include <smithy/client/schema/MapSerializer.h>
 #include <smithy/client/schema/SerializableStruct.h>
@@ -78,6 +79,7 @@ class XmlShapeSerializer::Impl final : public InterceptingSerializer {
     void WriteTimestamp(const Schema& schema, const Aws::Utils::DateTime& value) override;
     void WriteBlob(const Schema& schema, const Aws::Utils::ByteBuffer& value) override;
     void WriteNull(const Schema& schema) override;
+    void WriteDocument(const Schema& schema, const Document& value) override;
 
    private:
     Impl* m_outer;
@@ -162,6 +164,12 @@ class XmlShapeSerializer::Impl final : public InterceptingSerializer {
     }
     m_finalized = true;
     return std::move(m_buf);
+  }
+
+  void SetUnsupported(const char* message) {
+    if (m_errorMessage.empty()) {
+      m_errorMessage = message;
+    }
   }
 
   bool EnterContainer() {
@@ -362,6 +370,9 @@ void XmlShapeSerializer::Impl::ValueSerializer::WriteBlob(const Schema&, const A
   m_outer->AppendRaw(HashingUtils::Base64Encode(value));
 }
 void XmlShapeSerializer::Impl::ValueSerializer::WriteNull(const Schema&) { m_outer->ClosePendingTag(); }
+void XmlShapeSerializer::Impl::ValueSerializer::WriteDocument(const Schema&, const Document&) {
+  m_outer->SetUnsupported("document type is not supported by the REST XML protocol");
+}
 
 ShapeSerializer& XmlShapeSerializer::Impl::StructElementSerializer::Before(const Schema& schema) {
   if (Impl::IsAttribute(schema)) {
@@ -453,5 +464,6 @@ void XmlShapeSerializer::WriteString(const Schema& schema, const Aws::String& va
 void XmlShapeSerializer::WriteTimestamp(const Schema& schema, const DateTime& value) { m_impl->WriteTimestamp(schema, value); }
 void XmlShapeSerializer::WriteBlob(const Schema& schema, const ByteBuffer& value) { m_impl->WriteBlob(schema, value); }
 void XmlShapeSerializer::WriteNull(const Schema& schema) { m_impl->WriteNull(schema); }
+void XmlShapeSerializer::WriteDocument(const Schema& schema, const Document& value) { m_impl->WriteDocument(schema, value); }
 
 XmlShapeSerializer::SerializerOutcome XmlShapeSerializer::GetPayload() { return m_impl->GetPayload(); }

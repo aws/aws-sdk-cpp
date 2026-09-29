@@ -38,6 +38,7 @@ class SMITHY_API QueryShapeSerializer final : public ShapeSerializer {
   void WriteTimestamp(const Schema& schema, const Aws::Utils::DateTime& value) override;
   void WriteBlob(const Schema& schema, const Aws::Utils::ByteBuffer& value) override;
   void WriteNull(const Schema& schema) override;
+  void WriteDocument(const Schema& schema, const Document& value) override;
 
   SerializerOutcome GetPayload();
 

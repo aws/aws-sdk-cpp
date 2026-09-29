@@ -5,6 +5,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <smithy/client/schema/CborShapeSerializer.h>
+#include <smithy/client/schema/Document.h>
 #include <smithy/client/schema/MapSerializer.h>
 #include <smithy/client/schema/Schema.h>
 #include <smithy/client/schema/SchemaBuilder.h>
@@ -1035,4 +1036,13 @@ TEST_F(CborShapeSerializerTest, UnionAsStructure) {
   expected += '\xFF';  // end union
   expected += '\xFF';  // end outer
   EXPECT_EQ(payload, expected);
+}
+
+TEST_F(CborShapeSerializerTest, DocumentIsUnsupported) {
+  CborShapeSerializer s;
+  auto member = Schema::CreateMember("doc", ShapeType::Document);
+  s.WriteDocument(*member, Document::FromString("x"));
+  auto outcome = s.GetPayload();
+  ASSERT_FALSE(outcome.IsSuccess());
+  EXPECT_EQ(outcome.GetError().GetExceptionName(), "SerializationException");
 }

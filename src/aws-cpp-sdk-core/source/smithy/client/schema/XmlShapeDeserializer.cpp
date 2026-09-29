@@ -3,7 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <smithy/client/schema/Document.h>
 #include <smithy/client/schema/SerdeTraits.h>
 #include <smithy/client/schema/XmlShapeDeserializer.h>
 #include <smithy/client/schema/XmlTraits.h>
@@ -199,6 +201,11 @@ class XmlShapeDeserializer::Impl final : public ShapeDeserializer {
   }
 
   Aws::Crt::Optional<ByteBuffer> ReadBlob(const Schema&) override { return HashingUtils::Base64Decode(CurrentText()); }
+
+  Aws::Crt::Optional<Document> ReadDocument(const Schema&) override {
+    AWS_LOGSTREAM_WARN("XmlShapeDeserializer", "document type is not supported by the REST XML protocol");
+    return {};
+  }
 
   bool IsNull() override { return !m_valid; }
 
@@ -513,4 +520,5 @@ Aws::Crt::Optional<double> XmlShapeDeserializer::ReadDouble(const Schema& schema
 Aws::Crt::Optional<Aws::String> XmlShapeDeserializer::ReadString(const Schema& schema) { return m_impl->ReadString(schema); }
 Aws::Crt::Optional<DateTime> XmlShapeDeserializer::ReadTimestamp(const Schema& schema) { return m_impl->ReadTimestamp(schema); }
 Aws::Crt::Optional<ByteBuffer> XmlShapeDeserializer::ReadBlob(const Schema& schema) { return m_impl->ReadBlob(schema); }
+Aws::Crt::Optional<Document> XmlShapeDeserializer::ReadDocument(const Schema& schema) { return m_impl->ReadDocument(schema); }
 bool XmlShapeDeserializer::IsNull() { return m_impl->IsNull(); }

@@ -4,6 +4,7 @@
  */
 #include <aws/core/utils/DateTime.h>
 #include <aws/testing/AwsCppSdkGTestSuite.h>
+#include <smithy/client/schema/Document.h>
 #include <smithy/client/schema/MapSerializer.h>
 #include <smithy/client/schema/QueryShapeSerializer.h>
 #include <smithy/client/schema/Schema.h>
@@ -313,4 +314,13 @@ TEST_F(QueryShapeSerializerTest, TimestampFormatTraitControlsWireForm) {
     ASSERT_TRUE(out.IsSuccess());
     EXPECT_NE(out.GetResult().find("%3A"), Aws::String::npos);
   }
+}
+
+TEST_F(QueryShapeSerializerTest, DocumentIsUnsupported) {
+  QueryShapeSerializer s;
+  auto member = Schema::CreateMember("doc", ShapeType::Document);
+  s.WriteDocument(*member, Document::FromString("x"));
+  auto outcome = s.GetPayload();
+  ASSERT_FALSE(outcome.IsSuccess());
+  EXPECT_EQ(outcome.GetError().GetExceptionName(), "SerializationException");
 }

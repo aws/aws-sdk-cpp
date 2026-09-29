@@ -7,6 +7,7 @@
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <smithy/client/schema/CborShapeDeserializer.h>
 #include <smithy/client/schema/CborShapeSerializer.h>
+#include <smithy/client/schema/Document.h>
 #include <smithy/client/schema/MapSerializer.h>
 #include <smithy/client/schema/Schema.h>
 #include <smithy/client/schema/SchemaBuilder.h>
@@ -524,4 +525,33 @@ TEST_F(CborShapeDeserializerTest, DeserializesNestedIntoClass) {
   f.Deserialize(d);
 
   EXPECT_EQ(f.fizz.buzz, "value");
+}
+
+TEST_F(CborShapeDeserializerTest, ReadDocumentIsUnsupported) {
+  const unsigned char cbor[] = {0xf6};  // CBOR null; ReadDocument returns empty regardless of input
+  CborShapeDeserializer deser(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(cbor), sizeof(cbor)));
+  auto schema = Schema::CreateDocument("smithy.api#Document");
+  EXPECT_FALSE(deser.ReadDocument(*schema).has_value());
+}
+
+TEST_F(CborShapeDeserializerTest, ReadDocumentConsumesValueSoTrailingMemberSurvives) {
+  // CBOR: map(2){ "doc": 5, "trailing": "x" }. "doc" is document-typed.
+  const uint8_t cbor[] = {0xA2,
+                          0x63, 'd', 'o', 'c', 0x05,
+                          0x68, 't', 'r', 'a', 'i', 'l', 'i', 'n', 'g', 0x61, 'x'};
+  auto root = Schema::StructureBuilder("Root")
+                  .PutMember("doc", Schema::CreateDocument("smithy.api#Document"))
+                  .PutMember("trailing", Schema::CreateString("S"))
+                  .Build();
+  CborShapeDeserializer d(Aws::Crt::ByteCursorFromArray(cbor, sizeof(cbor)));
+  Aws::String trailing;
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+    if (m.GetMemberName() == "doc") {
+      de.ReadDocument(m);  // must consume the encoded 5
+    } else if (m.GetMemberName() == "trailing") {
+      auto v = de.ReadString(m);
+      if (v.has_value()) trailing = v.value();
+    }
+  });
+  EXPECT_EQ(trailing, "x");
 }

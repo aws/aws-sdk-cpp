@@ -6,6 +6,7 @@
 #include <aws/core/utils/Outcome.h>
 #include <aws/crt/cbor/Cbor.h>
 #include <smithy/client/schema/CborShapeSerializer.h>
+#include <smithy/client/schema/Document.h>
 #include <smithy/client/schema/MapSerializer.h>
 #include <smithy/client/schema/SerializableStruct.h>
 
@@ -48,6 +49,11 @@ class CborShapeSerializer::Impl final : public ShapeSerializer {
     m_encoder.WriteBytes(Aws::Crt::ByteCursorFromArray(value.GetUnderlyingData(), value.GetLength()));
   }
   void WriteNull(const Schema&) override { m_encoder.WriteNull(); }
+  void WriteDocument(const Schema&, const Document&) override {
+    if (m_errorMessage.empty()) {
+      m_errorMessage = "document type is not yet supported by the RPCv2 CBOR protocol";
+    }
+  }
 
   void WriteMemberKey(const Schema& schema) { WriteText(schema.GetMemberName()); }
   void WriteText(const Aws::String& str) {
@@ -55,10 +61,10 @@ class CborShapeSerializer::Impl final : public ShapeSerializer {
   }
 
   SerializerOutcome GetPayload() {
-    if (m_finalized) {
+    if (m_finalized || !m_errorMessage.empty()) {
       return Aws::Client::AWSError<Aws::Client::CoreErrors>(
           Aws::Client::CoreErrors::INTERNAL_FAILURE, "SerializationException",
-          "Serializer has already been finalized", false);
+          !m_errorMessage.empty() ? m_errorMessage : "Serializer has already been finalized", false);
     }
     m_finalized = true;
     auto encoded = m_encoder.GetEncodedData();
@@ -118,6 +124,7 @@ class CborShapeSerializer::Impl final : public ShapeSerializer {
       m_outer->WriteMemberKey(s);
       m_outer->WriteNull(s);
     }
+    void WriteDocument(const Schema& s, const Document& v) override { m_outer->WriteDocument(s, v); }
 
    private:
     Impl* m_outer;
@@ -139,6 +146,7 @@ class CborShapeSerializer::Impl final : public ShapeSerializer {
     void WriteTimestamp(const Schema& s, const DateTime& v) override { m_outer->WriteTimestamp(s, v); }
     void WriteBlob(const Schema& s, const ByteBuffer& v) override { m_outer->WriteBlob(s, v); }
     void WriteNull(const Schema& s) override { m_outer->WriteNull(s); }
+    void WriteDocument(const Schema& s, const Document& v) override { m_outer->WriteDocument(s, v); }
 
    private:
     Impl* m_outer;
@@ -167,6 +175,7 @@ class CborShapeSerializer::Impl final : public ShapeSerializer {
 
   Aws::Crt::Cbor::CborEncoder m_encoder;
   bool m_finalized = false;
+  Aws::String m_errorMessage;
 };
 
 CborShapeSerializer::CborShapeSerializer() : m_impl(Aws::MakeUnique<Impl>("CborShapeSerializer")) {}
@@ -188,5 +197,6 @@ void CborShapeSerializer::WriteString(const Schema& schema, const Aws::String& v
 void CborShapeSerializer::WriteTimestamp(const Schema& schema, const DateTime& value) { m_impl->WriteTimestamp(schema, value); }
 void CborShapeSerializer::WriteBlob(const Schema& schema, const ByteBuffer& value) { m_impl->WriteBlob(schema, value); }
 void CborShapeSerializer::WriteNull(const Schema& schema) { m_impl->WriteNull(schema); }
+void CborShapeSerializer::WriteDocument(const Schema& schema, const Document& value) { m_impl->WriteDocument(schema, value); }
 
 CborShapeSerializer::SerializerOutcome CborShapeSerializer::GetPayload() { return m_impl->GetPayload(); }

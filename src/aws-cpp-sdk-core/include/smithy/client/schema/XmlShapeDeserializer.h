@@ -27,6 +27,7 @@ class SMITHY_API XmlShapeDeserializer final : public ShapeDeserializer {
   Aws::Crt::Optional<Aws::String> ReadString(const Schema& schema) override;
   Aws::Crt::Optional<Aws::Utils::DateTime> ReadTimestamp(const Schema& schema) override;
   Aws::Crt::Optional<Aws::Utils::ByteBuffer> ReadBlob(const Schema& schema) override;
+  Aws::Crt::Optional<Document> ReadDocument(const Schema& schema) override;
 
   bool IsNull() override;
 

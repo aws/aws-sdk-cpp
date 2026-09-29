@@ -4,6 +4,7 @@
  */
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <smithy/client/schema/Document.h>
 #include <smithy/client/schema/MapSerializer.h>
 #include <smithy/client/schema/QueryShapeSerializer.h>
 #include <smithy/client/schema/SerdeTraits.h>
@@ -69,6 +70,11 @@ class QueryShapeSerializer::Impl final : public ShapeSerializer {
     EmitField(StringUtils::URLEncode(HashingUtils::Base64Encode(value).c_str()));
   }
   void WriteNull(const Schema&) override {}
+  void WriteDocument(const Schema&, const Document&) override {
+    if (m_errorMessage.empty()) {
+      m_errorMessage = "document type is not supported by the AWS Query protocol";
+    }
+  }
 
   SerializerOutcome GetPayload() {
     if (m_finalized || !m_errorMessage.empty()) {
@@ -130,6 +136,7 @@ class QueryShapeSerializer::Impl final : public ShapeSerializer {
       m_outer->WriteBlob(s, v);
     }
     void WriteNull(const Schema&) override {}
+    void WriteDocument(const Schema& s, const Document& v) override { m_outer->WriteDocument(s, v); }
 
    private:
     Aws::String ChildKey(const Schema& s) const { return Impl::JoinKey(m_base, Impl::ResolveName(s, m_outer->m_ec2)); }
@@ -188,6 +195,7 @@ class QueryShapeSerializer::Impl final : public ShapeSerializer {
       m_outer->WriteBlob(s, v);
     }
     void WriteNull(const Schema&) override { ++m_index; }
+    void WriteDocument(const Schema& s, const Document& v) override { m_outer->WriteDocument(s, v); }
 
    private:
     Aws::String ItemKey() {
@@ -350,5 +358,6 @@ void QueryShapeSerializer::WriteString(const Schema& schema, const Aws::String& 
 void QueryShapeSerializer::WriteTimestamp(const Schema& schema, const DateTime& value) { m_impl->WriteTimestamp(schema, value); }
 void QueryShapeSerializer::WriteBlob(const Schema& schema, const ByteBuffer& value) { m_impl->WriteBlob(schema, value); }
 void QueryShapeSerializer::WriteNull(const Schema& schema) { m_impl->WriteNull(schema); }
+void QueryShapeSerializer::WriteDocument(const Schema& schema, const Document& value) { m_impl->WriteDocument(schema, value); }
 
 QueryShapeSerializer::SerializerOutcome QueryShapeSerializer::GetPayload() { return m_impl->GetPayload(); }

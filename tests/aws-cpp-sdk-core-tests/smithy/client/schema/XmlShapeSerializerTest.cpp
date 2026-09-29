@@ -4,6 +4,7 @@
  */
 #include <aws/core/utils/DateTime.h>
 #include <aws/testing/AwsCppSdkGTestSuite.h>
+#include <smithy/client/schema/Document.h>
 #include <smithy/client/schema/MapSerializer.h>
 #include <smithy/client/schema/Schema.h>
 #include <smithy/client/schema/SchemaBuilder.h>
@@ -510,4 +511,13 @@ TEST_F(XmlShapeSerializerTest, TimestampFormatTraitControlsWireForm) {
     EXPECT_NE(payload.find("<t>1234567890"), Aws::String::npos);
     EXPECT_EQ(payload.find("2009-02-13T23:31:30Z"), Aws::String::npos);
   }
+}
+
+TEST_F(XmlShapeSerializerTest, DocumentIsUnsupported) {
+  XmlShapeSerializer s;
+  auto member = Schema::CreateMember("doc", ShapeType::Document);
+  s.WriteDocument(*member, Document::FromString("x"));
+  auto outcome = s.GetPayload();
+  ASSERT_FALSE(outcome.IsSuccess());
+  EXPECT_EQ(outcome.GetError().GetExceptionName(), "SerializationException");
 }
