@@ -263,12 +263,24 @@ Aws::Crt::Optional<Aws::Utils::ByteBuffer> JsonDocumentImpl::CoerceBlob() const 
 }
 
 Aws::Crt::Optional<Aws::Utils::DateTime> JsonDocumentImpl::CoerceTimestamp() const {
+  // SEP format-gating: a number coerces only under a numeric default (epoch-seconds); a string only
+  // under a string-based default (date-time / http-date). Otherwise the value does not coerce.
+  const bool numericFormat = m_defaultStringTimestampFormat == TimestampFormatTrait::Format::EPOCH_SECONDS;
   switch (m_type) {
     case ShapeType::Long:
+      if (!numericFormat) {
+        return {};
+      }
       return Aws::Utils::DateTime(static_cast<double>(m_int));
     case ShapeType::Double:
+      if (!numericFormat) {
+        return {};
+      }
       return Aws::Utils::DateTime(m_double);
     case ShapeType::String: {
+      if (numericFormat) {
+        return {};
+      }
       const Aws::Utils::DateFormat df = (m_defaultStringTimestampFormat == TimestampFormatTrait::Format::HTTP_DATE)
                                              ? Aws::Utils::DateFormat::RFC822
                                              : Aws::Utils::DateFormat::ISO_8601;

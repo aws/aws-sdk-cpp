@@ -594,7 +594,8 @@ TEST_F(JsonShapeDeserializerTest, ReadDocumentOverflowIntegerBecomesDouble) {
 TEST_F(JsonShapeDeserializerTest, DocumentJsonCoercesBase64AndIsoAndRejectsMalformed) {
   Aws::String json = "{\"b\":\"aGk=\",\"t\":\"2023-11-14T22:13:20Z\",\"bad\":\"!!!not-base64!!!\"}";
   JsonShapeDeserializer d(
-      Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()));
+      Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()),
+      CodecSettings{TimestampFormatTrait::Format::DATE_TIME});
   auto schema = Schema::CreateDocument("smithy.api#Document");
   auto doc = d.ReadDocument(*schema);
   ASSERT_TRUE(doc.has_value());
@@ -605,7 +606,7 @@ TEST_F(JsonShapeDeserializerTest, DocumentJsonCoercesBase64AndIsoAndRejectsMalfo
   EXPECT_EQ(blob->GetLength(), 2u);  // "hi"
   const Document* t = doc->GetMember("t");
   ASSERT_NE(t, nullptr);
-  EXPECT_TRUE(t->AsTimestamp().has_value());  // ISO-8601 (default)
+  EXPECT_TRUE(t->AsTimestamp().has_value());  // ISO-8601 under a string-based default
   const Document* bad = doc->GetMember("bad");
   ASSERT_NE(bad, nullptr);
   EXPECT_FALSE(bad->AsBlob().has_value());  // malformed base64 -> absent, not present-empty
@@ -638,11 +639,50 @@ TEST_F(JsonShapeDeserializerTest, DocumentTimestampHonorsConfiguredHttpDate) {
   EXPECT_EQ(ts->Seconds(), 0);
 }
 
-TEST_F(JsonShapeDeserializerTest, DocumentTimestampDefaultsToIso8601) {
+TEST_F(JsonShapeDeserializerTest, DocumentTimestampCoercesUnderDateTimeFormat) {
   Aws::String json = "\"1970-01-01T00:00:00Z\"";
-  JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()));
+  JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()),
+                          CodecSettings{TimestampFormatTrait::Format::DATE_TIME});
   auto schema = Schema::CreateDocument("smithy.api#Document");
   auto doc = d.ReadDocument(*schema);
   ASSERT_TRUE(doc.has_value());
-  EXPECT_TRUE(doc->AsTimestamp().has_value());  // ISO-8601 by default
+  EXPECT_TRUE(doc->AsTimestamp().has_value());  // ISO-8601 under a string-based (DATE_TIME) default
+}
+
+TEST_F(JsonShapeDeserializerTest, DocumentStringTimestampGatedByConfiguredFormat) {
+  auto schema = Schema::CreateDocument("smithy.api#Document");
+  const Aws::String iso = "\"2009-02-13T23:31:30Z\"";
+  {  // epoch (numeric) default: a string does NOT coerce to timestamp (SEP format-gating)
+    JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(iso.data()), iso.size()));
+    auto doc = d.ReadDocument(*schema);
+    ASSERT_TRUE(doc.has_value());
+    EXPECT_FALSE(doc->AsTimestamp().has_value());
+  }
+  {  // date-time (string-based) default: the string coerces
+    JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(iso.data()), iso.size()),
+                            CodecSettings{TimestampFormatTrait::Format::DATE_TIME});
+    auto doc = d.ReadDocument(*schema);
+    ASSERT_TRUE(doc.has_value());
+    ASSERT_TRUE(doc->AsTimestamp().has_value());
+    EXPECT_EQ(doc->AsTimestamp()->Seconds(), 1234567890);
+  }
+}
+
+TEST_F(JsonShapeDeserializerTest, DocumentNumberTimestampGatedByConfiguredFormat) {
+  auto schema = Schema::CreateDocument("smithy.api#Document");
+  const Aws::String num = "1234567890";
+  {  // epoch default: a number coerces as epoch seconds
+    JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(num.data()), num.size()));
+    auto doc = d.ReadDocument(*schema);
+    ASSERT_TRUE(doc.has_value());
+    ASSERT_TRUE(doc->AsTimestamp().has_value());
+    EXPECT_EQ(doc->AsTimestamp()->Seconds(), 1234567890);
+  }
+  {  // date-time (string-based) default: a number does NOT coerce
+    JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(num.data()), num.size()),
+                            CodecSettings{TimestampFormatTrait::Format::DATE_TIME});
+    auto doc = d.ReadDocument(*schema);
+    ASSERT_TRUE(doc.has_value());
+    EXPECT_FALSE(doc->AsTimestamp().has_value());
+  }
 }
