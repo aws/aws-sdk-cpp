@@ -22,7 +22,7 @@ Codec::SerializerOutcome JsonCodec::Serialize(const Schema& schema, const Serial
   return serializer.GetPayload();
 }
 Aws::UniquePtr<ShapeDeserializer> JsonCodec::CreateDeserializer(Aws::Crt::ByteCursor data) const {
-  return Aws::MakeUnique<JsonShapeDeserializer>(ALLOC_TAG, data, m_settings.defaultTimestampFormat);
+  return Aws::MakeUnique<JsonShapeDeserializer>(ALLOC_TAG, data, m_settings);
 }
 
 Codec::SerializerOutcome XmlCodec::Serialize(const Schema& schema, const SerializableStruct& shape) const {

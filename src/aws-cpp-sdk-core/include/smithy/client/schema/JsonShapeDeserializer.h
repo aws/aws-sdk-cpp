@@ -3,6 +3,7 @@
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/crt/Types.h>
 #include <smithy/Smithy_EXPORTS.h>
+#include <smithy/client/schema/Codec.h>
 #include <smithy/client/schema/SerdeTraits.h>
 #include <smithy/client/schema/ShapeDeserializer.h>
 
@@ -11,9 +12,7 @@ namespace schema {
 
 class SMITHY_API JsonShapeDeserializer final : public ShapeDeserializer {
  public:
-  explicit JsonShapeDeserializer(
-      Aws::Crt::ByteCursor data,
-      TimestampFormatTrait::Format defaultStringTimestampFormat = TimestampFormatTrait::Format::EPOCH_SECONDS);
+  explicit JsonShapeDeserializer(Aws::Crt::ByteCursor data, CodecSettings settings = {});
   ~JsonShapeDeserializer();
 
   void ReadStruct(const Schema& schema, const StructMemberConsumer& consumer) override;

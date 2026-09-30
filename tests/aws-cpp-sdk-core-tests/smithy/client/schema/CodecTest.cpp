@@ -389,7 +389,7 @@ TEST_F(CodecTest, JsonDocumentDoubleRoundTripsWithPrecisionAndType) {
 }
 
 TEST_F(CodecTest, JsonCodecHttpDateDocumentTimestampParses) {
-  JsonCodec codec(TimestampFormatTrait::Format::HTTP_DATE);
+  JsonCodec codec(CodecSettings{TimestampFormatTrait::Format::HTTP_DATE});
   const Aws::String body = "{\"payload\":\"Thu, 01 Jan 1970 00:00:00 GMT\"}";
   DocHolder in;
   codec.DeserializeShape(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(body.c_str()), body.size()), in);

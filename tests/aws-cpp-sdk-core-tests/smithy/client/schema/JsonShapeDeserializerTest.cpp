@@ -494,6 +494,27 @@ TEST_F(JsonShapeDeserializerTest, TimestampFormatTraitControlsParsing) {
   }
 }
 
+TEST_F(JsonShapeDeserializerTest, TimestampHonorsCodecSettingsDefault) {
+  auto root = Schema::StructureBuilder("Root").PutMember("t", Schema::CreateTimestamp("T")).Build();
+  {  // default epoch: numeric wire value read as epoch seconds
+    const Aws::String wire = "{\"t\":0}";
+    JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(wire.data()), wire.size()));
+    Aws::Crt::Optional<Aws::Utils::DateTime> got;
+    d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadTimestamp(m); });
+    ASSERT_TRUE(got.has_value());
+    EXPECT_EQ(got->Seconds(), 0);
+  }
+  {  // DATE_TIME: ISO-8601 string wire value read via date-time
+    const Aws::String wire = "{\"t\":\"1970-01-01T00:00:00Z\"}";
+    JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(wire.data()), wire.size()),
+                            CodecSettings{TimestampFormatTrait::Format::DATE_TIME});
+    Aws::Crt::Optional<Aws::Utils::DateTime> got;
+    d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadTimestamp(m); });
+    ASSERT_TRUE(got.has_value());
+    EXPECT_EQ(got->Seconds(), 0);
+  }
+}
+
 TEST_F(JsonShapeDeserializerTest, ReadDocumentBuildsNestedTree) {
   Aws::String json = "{\"n\":1,\"d\":2.5,\"b\":true,\"nil\":null,\"list\":[\"x\",false]}";
   JsonShapeDeserializer deser(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.c_str()), json.size()));

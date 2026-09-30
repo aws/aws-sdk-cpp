@@ -24,10 +24,8 @@ using namespace Aws::Utils;
 
 class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
  public:
-  explicit Impl(Aws::Crt::ByteCursor data, TimestampFormatTrait::Format defaultStringTimestampFormat)
-      : m_bytes(reinterpret_cast<const char*>(data.ptr), data.len),
-        m_pos(0),
-        m_docTimestampFormat(defaultStringTimestampFormat) {}
+  explicit Impl(Aws::Crt::ByteCursor data, CodecSettings settings)
+      : m_bytes(reinterpret_cast<const char*>(data.ptr), data.len), m_pos(0), m_settings(settings) {}
 
   void ReadStruct(const Schema& schema, const StructMemberConsumer& consumer) override {
     if (PeekNonWs() != '{') {
@@ -220,10 +218,8 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
       if (!token.has_value()) {
         return {};
       }
-      const DateFormat df = ResolveTimestampFormat(schema, TimestampFormatTrait::Format::EPOCH_SECONDS) ==
-                                    TimestampFormatTrait::Format::HTTP_DATE
-                                ? DateFormat::RFC822
-                                : DateFormat::ISO_8601;
+      const auto format = ResolveTimestampFormat(schema, m_settings.defaultTimestampFormat);
+      const DateFormat df = format == TimestampFormatTrait::Format::HTTP_DATE ? DateFormat::RFC822 : DateFormat::ISO_8601;
       DateTime parsed(*token, df);
       if (!parsed.WasParseSuccessful()) {
         return {};
@@ -262,7 +258,7 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
   // JSON-flavored document nodes: carries this deserializer's timestamp format so AsBlob/AsTimestamp
   // on the resulting Document apply JSON coercion (base64 strings, epoch/ISO-8601 timestamps).
   Document MakeJsonDoc(const std::function<void(DocumentImpl&)>& init) const {
-    auto impl = Aws::MakeShared<JsonDocumentImpl>("JsonDocumentImpl", m_docTimestampFormat);
+    auto impl = Aws::MakeShared<JsonDocumentImpl>("JsonDocumentImpl", m_settings.defaultTimestampFormat);
     init(*impl);
     return detail::MakeDocument(impl);
   }
@@ -582,12 +578,11 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
 
   Aws::String m_bytes;
   size_t m_pos;
-  TimestampFormatTrait::Format m_docTimestampFormat;
+  CodecSettings m_settings;
 };
 
-JsonShapeDeserializer::JsonShapeDeserializer(Aws::Crt::ByteCursor data,
-                                             TimestampFormatTrait::Format defaultStringTimestampFormat)
-    : m_impl(Aws::MakeUnique<Impl>("JsonShapeDeserializer", data, defaultStringTimestampFormat)) {}
+JsonShapeDeserializer::JsonShapeDeserializer(Aws::Crt::ByteCursor data, CodecSettings settings)
+    : m_impl(Aws::MakeUnique<Impl>("JsonShapeDeserializer", data, settings)) {}
 JsonShapeDeserializer::~JsonShapeDeserializer() = default;
 
 void JsonShapeDeserializer::ReadStruct(const Schema& schema, const StructMemberConsumer& consumer) { m_impl->ReadStruct(schema, consumer); }
@@ -601,5 +596,5 @@ Aws::Crt::Optional<double> JsonShapeDeserializer::ReadDouble(const Schema& schem
 Aws::Crt::Optional<Aws::String> JsonShapeDeserializer::ReadString(const Schema& schema) { return m_impl->ReadString(schema); }
 Aws::Crt::Optional<DateTime> JsonShapeDeserializer::ReadTimestamp(const Schema& schema) { return m_impl->ReadTimestamp(schema); }
 Aws::Crt::Optional<ByteBuffer> JsonShapeDeserializer::ReadBlob(const Schema& schema) { return m_impl->ReadBlob(schema); }
-Aws::Crt::Optional<Document> JsonShapeDeserializer::ReadDocument(const Schema& schema) { return m_impl->ReadDocument(schema); }
+Aws::Crt::Optional<smithy::schema::Document> JsonShapeDeserializer::ReadDocument(const Schema& schema) { return m_impl->ReadDocument(schema); }
 bool JsonShapeDeserializer::IsNull() { return m_impl->IsNull(); }
