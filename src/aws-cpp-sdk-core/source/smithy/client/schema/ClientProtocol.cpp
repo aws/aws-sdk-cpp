@@ -15,7 +15,7 @@ constexpr char ALLOC_TAG[] = "SmithyClientProtocol";
 
 ClientProtocol::SerializerOutcome SerializeQuery(const Schema& schema, const SerializableStruct& input,
                                                  QueryShapeSerializer::Flavor flavor) {
-  QueryShapeSerializer serializer(flavor);
+  QueryShapeSerializer serializer(flavor, CodecSettings{TimestampFormatTrait::Format::DATE_TIME});
   serializer.WriteStruct(schema, input);
   return serializer.GetPayload();
 }

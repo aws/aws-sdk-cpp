@@ -25,7 +25,7 @@ static constexpr int MAX_DEPTH = 500;
 
 class QueryShapeSerializer::Impl final : public ShapeSerializer {
  public:
-  explicit Impl(bool ec2) : m_ec2(ec2) { m_buf.reserve(1024); }
+  explicit Impl(bool ec2, CodecSettings settings) : m_ec2(ec2), m_settings(settings) { m_buf.reserve(1024); }
 
   void WriteStruct(const Schema&, const SerializableStruct& value) override {
     if (!EnterContainer()) {
@@ -64,7 +64,7 @@ class QueryShapeSerializer::Impl final : public ShapeSerializer {
   void WriteString(const Schema&, const Aws::String& value) override { EmitField(StringUtils::URLEncode(value.c_str())); }
   void WriteTimestamp(const Schema& schema, const DateTime& value) override {
     EmitField(StringUtils::URLEncode(
-        FormatTimestampText(value, ResolveTimestampFormat(schema, TimestampFormatTrait::Format::DATE_TIME)).c_str()));
+        FormatTimestampText(value, ResolveTimestampFormat(schema, m_settings.defaultTimestampFormat)).c_str()));
   }
   void WriteBlob(const Schema&, const ByteBuffer& value) override {
     EmitField(StringUtils::URLEncode(HashingUtils::Base64Encode(value).c_str()));
@@ -332,14 +332,16 @@ class QueryShapeSerializer::Impl final : public ShapeSerializer {
   Aws::String m_prefix;
   int m_depth = 0;
   bool m_ec2 = false;
+  CodecSettings m_settings;
   bool m_hasContent = false;
   bool m_finalized = false;
   Aws::String m_errorMessage;
 };
 
-QueryShapeSerializer::QueryShapeSerializer() : m_impl(Aws::MakeUnique<Impl>("QueryShapeSerializer", false)) {}
-QueryShapeSerializer::QueryShapeSerializer(Flavor flavor)
-    : m_impl(Aws::MakeUnique<Impl>("QueryShapeSerializer", flavor == Flavor::Ec2Query)) {}
+QueryShapeSerializer::QueryShapeSerializer()
+    : m_impl(Aws::MakeUnique<Impl>("QueryShapeSerializer", false, CodecSettings{TimestampFormatTrait::Format::DATE_TIME})) {}
+QueryShapeSerializer::QueryShapeSerializer(Flavor flavor, CodecSettings settings)
+    : m_impl(Aws::MakeUnique<Impl>("QueryShapeSerializer", flavor == Flavor::Ec2Query, settings)) {}
 QueryShapeSerializer::~QueryShapeSerializer() = default;
 
 void QueryShapeSerializer::WriteStruct(const Schema& schema, const SerializableStruct& value) { m_impl->WriteStruct(schema, value); }

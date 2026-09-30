@@ -4,6 +4,7 @@
  */
 #include <aws/core/utils/DateTime.h>
 #include <aws/testing/AwsCppSdkGTestSuite.h>
+#include <smithy/client/schema/Codec.h>
 #include <smithy/client/schema/Document.h>
 #include <smithy/client/schema/MapSerializer.h>
 #include <smithy/client/schema/QueryShapeSerializer.h>
@@ -287,6 +288,21 @@ TEST_F(QueryShapeSerializerTest, Ec2ListIsFlatWithDotN) {
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   EXPECT_EQ(outcome.GetResult(), "Items.1=a&Items.2=b");
+}
+
+TEST_F(QueryShapeSerializerTest, TimestampHonorsCodecSettingsDefault) {
+  // Query's protocol default is date-time; an EPOCH_SECONDS CodecSettings must override it for a
+  // member with no @timestampFormat trait (proves the setting is threaded, not hard-coded).
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("t", ShapeType::Timestamp);
+  const Aws::Utils::DateTime dt(1234567890.0);
+  QueryShapeSerializer s(QueryShapeSerializer::Flavor::AwsQuery, CodecSettings{TimestampFormatTrait::Format::EPOCH_SECONDS});
+  LambdaStruct rs(*root, [&](ShapeSerializer& ser) { ser.WriteTimestamp(*member, dt); });
+  s.WriteStruct(*root, rs);
+  auto out = s.GetPayload();
+  ASSERT_TRUE(out.IsSuccess());
+  EXPECT_NE(out.GetResult().find("t=1234567890"), Aws::String::npos);
+  EXPECT_EQ(out.GetResult().find("%3A"), Aws::String::npos);  // not date-time (no encoded ':')
 }
 
 TEST_F(QueryShapeSerializerTest, TimestampFormatTraitControlsWireForm) {
