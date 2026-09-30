@@ -12,7 +12,8 @@ namespace schema {
 
 class SMITHY_API JsonShapeDeserializer final : public ShapeDeserializer {
  public:
-  explicit JsonShapeDeserializer(Aws::Crt::ByteCursor data, CodecSettings settings = {});
+  explicit JsonShapeDeserializer(Aws::Crt::ByteCursor data,
+                                 CodecSettings settings = CodecSettings{TimestampFormatTrait::Format::EPOCH_SECONDS});
   ~JsonShapeDeserializer();
 
   void ReadStruct(const Schema& schema, const StructMemberConsumer& consumer) override;

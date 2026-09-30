@@ -165,6 +165,21 @@ TEST_F(XmlShapeDeserializerTest, Timestamp) {
   EXPECT_EQ(got.value().Seconds(), 1234567890);
 }
 
+TEST_F(XmlShapeDeserializerTest, TimestampHonorsCodecSettingsDefault) {
+  // XML's default is date-time (see the Timestamp test above); a numeric wire value only parses
+  // under an EPOCH_SECONDS setting for a member with no @timestampFormat trait -- proving the
+  // setting reached ReadTimestamp rather than a hard-coded default.
+  auto root = RootBuilder().PutMember("ts", Schema::CreateTimestamp("T")).Build();
+  const Aws::String payload = "<Root><ts>1234567890</ts></Root>";
+
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()),
+                         CodecSettings{TimestampFormatTrait::Format::EPOCH_SECONDS});
+  Aws::Crt::Optional<Aws::Utils::DateTime> got;
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadTimestamp(m); });
+  ASSERT_TRUE(got.has_value());
+  EXPECT_EQ(got.value().Seconds(), 1234567890);
+}
+
 TEST_F(XmlShapeDeserializerTest, XmlNameOverride) {
   auto root = RootBuilder()
                   .PutMember("internalName", Schema::CreateString("S"),

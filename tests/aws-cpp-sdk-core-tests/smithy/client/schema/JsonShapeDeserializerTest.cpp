@@ -630,7 +630,7 @@ TEST_F(JsonShapeDeserializerTest, DocumentTimestampHonorsConfiguredHttpDate) {
   Aws::String json = "\"Thu, 01 Jan 1970 00:00:00 GMT\"";
   JsonShapeDeserializer d(
       Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()),
-      TimestampFormatTrait::Format::HTTP_DATE);
+      CodecSettings{TimestampFormatTrait::Format::HTTP_DATE});
   auto schema = Schema::CreateDocument("smithy.api#Document");
   auto doc = d.ReadDocument(*schema);
   ASSERT_TRUE(doc.has_value());

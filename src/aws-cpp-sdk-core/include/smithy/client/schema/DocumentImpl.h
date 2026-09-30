@@ -84,8 +84,9 @@ class AWS_CORE_LOCAL DocumentImpl {
   Aws::Map<Aws::String, Document> m_map;
 };
 
-// JSON-flavored coercion: a String node base64-decodes to a blob, and a String/number node parses
-// as a timestamp (epoch seconds, or ISO-8601/HTTP-date per the format). Built by the JSON deserializer.
+// JSON-flavored coercion: a String node base64-decodes to a blob. For timestamps, the configured
+// format gates which node type coerces: a number under EPOCH_SECONDS, a string under DATE_TIME/HTTP_DATE
+// -- never both. Built by the JSON deserializer.
 class AWS_CORE_LOCAL JsonDocumentImpl final : public DocumentImpl {
  public:
   explicit JsonDocumentImpl(TimestampFormatTrait::Format defaultStringTimestampFormat)
