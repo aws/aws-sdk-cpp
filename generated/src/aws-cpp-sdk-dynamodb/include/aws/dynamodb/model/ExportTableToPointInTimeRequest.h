@@ -11,6 +11,7 @@
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/dynamodb/model/ExportFormat.h>
 #include <aws/dynamodb/model/ExportType.h>
+#include <aws/dynamodb/model/FilterSpecification.h>
 #include <aws/dynamodb/model/IncrementalExportSpecification.h>
 #include <aws/dynamodb/model/S3SseAlgorithm.h>
 
@@ -255,6 +256,26 @@ class ExportTableToPointInTimeRequest : public DynamoDBRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The criteria used to filter which items are included in the point-in-time
+   * export. When you specify this parameter, only items that match the key
+   * conditions and filter expressions are exported.</p>
+   */
+  inline const FilterSpecification& GetFilterSpecification() const { return m_filterSpecification; }
+  inline bool FilterSpecificationHasBeenSet() const { return m_filterSpecificationHasBeenSet; }
+  template <typename FilterSpecificationT = FilterSpecification>
+  void SetFilterSpecification(FilterSpecificationT&& value) {
+    m_filterSpecificationHasBeenSet = true;
+    m_filterSpecification = std::forward<FilterSpecificationT>(value);
+  }
+  template <typename FilterSpecificationT = FilterSpecification>
+  ExportTableToPointInTimeRequest& WithFilterSpecification(FilterSpecificationT&& value) {
+    SetFilterSpecification(std::forward<FilterSpecificationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_tableArn;
 
@@ -277,6 +298,8 @@ class ExportTableToPointInTimeRequest : public DynamoDBRequest {
   ExportType m_exportType{ExportType::NOT_SET};
 
   IncrementalExportSpecification m_incrementalExportSpecification;
+
+  FilterSpecification m_filterSpecification;
   bool m_tableArnHasBeenSet = false;
   bool m_exportTimeHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
@@ -288,6 +311,7 @@ class ExportTableToPointInTimeRequest : public DynamoDBRequest {
   bool m_exportFormatHasBeenSet = false;
   bool m_exportTypeHasBeenSet = false;
   bool m_incrementalExportSpecificationHasBeenSet = false;
+  bool m_filterSpecificationHasBeenSet = false;
 };
 
 }  // namespace Model

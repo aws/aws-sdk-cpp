@@ -102,6 +102,10 @@ ExportDescription& ExportDescription::operator=(JsonView jsonValue) {
     m_incrementalExportSpecification = jsonValue.GetObject("IncrementalExportSpecification");
     m_incrementalExportSpecificationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("FilterSpecification")) {
+    m_filterSpecification = jsonValue.GetObject("FilterSpecification");
+    m_filterSpecificationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -190,6 +194,10 @@ JsonValue ExportDescription::Jsonize() const {
 
   if (m_incrementalExportSpecificationHasBeenSet) {
     payload.WithObject("IncrementalExportSpecification", m_incrementalExportSpecification.Jsonize());
+  }
+
+  if (m_filterSpecificationHasBeenSet) {
+    payload.WithObject("FilterSpecification", m_filterSpecification.Jsonize());
   }
 
   return payload;

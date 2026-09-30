@@ -72,6 +72,7 @@
 #include <aws/bedrock-agentcore-control/model/CategoricalScaleDefinition.h>
 #include <aws/bedrock-agentcore-control/model/CedarPolicy.h>
 #include <aws/bedrock-agentcore-control/model/Certificate.h>
+#include <aws/bedrock-agentcore-control/model/CertificateConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/CertificateLocation.h>
 #include <aws/bedrock-agentcore-control/model/ClaimMatchOperatorType.h>
 #include <aws/bedrock-agentcore-control/model/ClaimMatchValueType.h>
@@ -736,6 +737,7 @@
 #include <aws/bedrock-agentcore-control/model/Rule.h>
 #include <aws/bedrock-agentcore-control/model/RuntimeMetadataConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/RuntimeTargetConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/S3CertificateConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/S3Configuration.h>
 #include <aws/bedrock-agentcore-control/model/S3FilesAccessPointConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/S3FilesConfiguration.h>
@@ -750,6 +752,7 @@
 #include <aws/bedrock-agentcore-control/model/Secret.h>
 #include <aws/bedrock-agentcore-control/model/SecretReference.h>
 #include <aws/bedrock-agentcore-control/model/SecretSourceType.h>
+#include <aws/bedrock-agentcore-control/model/SecretsManagerCertificateConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/SecretsManagerLocation.h>
 #include <aws/bedrock-agentcore-control/model/SelfManagedConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/SelfManagedConfigurationInput.h>

@@ -32,6 +32,10 @@ Aws::String PutDeliveryDestinationRequest::SerializePayload() const {
                        DeliveryDestinationTypeMapper::GetNameForDeliveryDestinationType(m_deliveryDestinationType));
   }
 
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("roleArn", m_roleArn);
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {

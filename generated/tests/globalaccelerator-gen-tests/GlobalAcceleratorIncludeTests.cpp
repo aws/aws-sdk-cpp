@@ -95,6 +95,7 @@
 #include <aws/globalaccelerator/model/EndpointIdentifier.h>
 #include <aws/globalaccelerator/model/HealthCheckProtocol.h>
 #include <aws/globalaccelerator/model/HealthState.h>
+#include <aws/globalaccelerator/model/IpAddressDetail.h>
 #include <aws/globalaccelerator/model/IpAddressFamily.h>
 #include <aws/globalaccelerator/model/IpAddressType.h>
 #include <aws/globalaccelerator/model/IpSet.h>

@@ -34,6 +34,10 @@ VectorBucket& VectorBucket::operator=(JsonView jsonValue) {
     m_encryptionConfiguration = jsonValue.GetObject("encryptionConfiguration");
     m_encryptionConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("defaultIndexMode")) {
+    m_defaultIndexMode = IndexModeMapper::GetIndexModeForName(jsonValue.GetString("defaultIndexMode"));
+    m_defaultIndexModeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue VectorBucket::Jsonize() const {
 
   if (m_encryptionConfigurationHasBeenSet) {
     payload.WithObject("encryptionConfiguration", m_encryptionConfiguration.Jsonize());
+  }
+
+  if (m_defaultIndexModeHasBeenSet) {
+    payload.WithString("defaultIndexMode", IndexModeMapper::GetNameForIndexMode(m_defaultIndexMode));
   }
 
   return payload;

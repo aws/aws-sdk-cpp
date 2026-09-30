@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3vectors/S3VectorsRequest.h>
 #include <aws/s3vectors/S3Vectors_EXPORTS.h>
+#include <aws/s3vectors/model/IndexMode.h>
 #include <aws/s3vectors/model/VectorData.h>
 
 #include <utility>
@@ -144,6 +145,27 @@ class QueryVectorsRequest : public S3VectorsRequest {
 
   ///@{
   /**
+   * <p>The mode to use to process the query. If you don't specify a query mode, the
+   * operation uses the mode that's currently configured for the vector index.</p>
+   * <p>Valid values:</p> <ul> <li> <p> <code>CLASSIC</code> - Applies metadata
+   * filters during the vector search. You can't specify <code>CLASSIC</code> for an
+   * <code>ENHANCED</code> index.</p> </li> <li> <p> <code>ENHANCED</code> - Applies
+   * metadata filters before the vector search.</p> </li> </ul>
+   */
+  inline IndexMode GetQueryMode() const { return m_queryMode; }
+  inline bool QueryModeHasBeenSet() const { return m_queryModeHasBeenSet; }
+  inline void SetQueryMode(IndexMode value) {
+    m_queryModeHasBeenSet = true;
+    m_queryMode = value;
+  }
+  inline QueryVectorsRequest& WithQueryMode(IndexMode value) {
+    SetQueryMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Indicates whether to include metadata in the response. The default value is
    * <code>false</code>.</p>
    */
@@ -207,6 +229,8 @@ class QueryVectorsRequest : public S3VectorsRequest {
 
   Aws::Utils::Document m_filter;
 
+  IndexMode m_queryMode{IndexMode::NOT_SET};
+
   bool m_returnMetadata{false};
 
   bool m_returnDistance{false};
@@ -218,6 +242,7 @@ class QueryVectorsRequest : public S3VectorsRequest {
   bool m_topKHasBeenSet = false;
   bool m_queryVectorHasBeenSet = false;
   bool m_filterHasBeenSet = false;
+  bool m_queryModeHasBeenSet = false;
   bool m_returnMetadataHasBeenSet = false;
   bool m_returnDistanceHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

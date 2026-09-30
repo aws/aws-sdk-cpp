@@ -170,8 +170,9 @@ class TelemetryDestinationConfiguration {
   ///@{
   /**
    * <p>The configuration parameters for log delivery when the resource type supports
-   * configurable log types, such as Amazon Bedrock Knowledge Bases or Elastic Load
-   * Balancing Application Load Balancers.</p>
+   * configurable log types, such as Amazon Bedrock Knowledge Bases, Amazon Bedrock
+   * AgentCore payment managers, or Elastic Load Balancing Application Load
+   * Balancers.</p>
    */
   inline const LogDeliveryParameters& GetLogDeliveryParameters() const { return m_logDeliveryParameters; }
   inline bool LogDeliveryParametersHasBeenSet() const { return m_logDeliveryParametersHasBeenSet; }

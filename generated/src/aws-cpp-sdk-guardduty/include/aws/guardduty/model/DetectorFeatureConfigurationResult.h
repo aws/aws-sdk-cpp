@@ -10,6 +10,7 @@
 #include <aws/guardduty/model/DetectorAdditionalConfigurationResult.h>
 #include <aws/guardduty/model/DetectorFeatureResult.h>
 #include <aws/guardduty/model/FeatureStatus.h>
+#include <aws/guardduty/model/ManagedBy.h>
 
 #include <utility>
 
@@ -114,6 +115,23 @@ class DetectorFeatureConfigurationResult {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates what manages the feature. A value of <code>GUARDDUTY_POLICY</code>
+   * means a GuardDuty policy manages the feature.</p>
+   */
+  inline ManagedBy GetManagedBy() const { return m_managedBy; }
+  inline bool ManagedByHasBeenSet() const { return m_managedByHasBeenSet; }
+  inline void SetManagedBy(ManagedBy value) {
+    m_managedByHasBeenSet = true;
+    m_managedBy = value;
+  }
+  inline DetectorFeatureConfigurationResult& WithManagedBy(ManagedBy value) {
+    SetManagedBy(value);
+    return *this;
+  }
+  ///@}
  private:
   DetectorFeatureResult m_name{DetectorFeatureResult::NOT_SET};
 
@@ -122,10 +140,13 @@ class DetectorFeatureConfigurationResult {
   Aws::Utils::DateTime m_updatedAt{};
 
   Aws::Vector<DetectorAdditionalConfigurationResult> m_additionalConfiguration;
+
+  ManagedBy m_managedBy{ManagedBy::NOT_SET};
   bool m_nameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_additionalConfigurationHasBeenSet = false;
+  bool m_managedByHasBeenSet = false;
 };
 
 }  // namespace Model

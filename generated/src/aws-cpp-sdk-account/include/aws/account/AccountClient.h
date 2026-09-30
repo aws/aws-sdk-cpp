@@ -539,6 +539,41 @@ class AWS_ACCOUNT_API AccountClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Sends a one-time passcode to the phone number in the primary contact
+   * information of an Amazon Web Services account. Use <a>VerifyPhoneNumber</a> to
+   * submit the passcode and complete the verification.</p> <p>For complete details
+   * about how to use the primary contact operations, see <a
+   * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact-primary.html">Update
+   * the primary contact for your Amazon Web Services account</a>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/SendPhoneNumberVerification">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SendPhoneNumberVerificationOutcome SendPhoneNumberVerification(
+      const Model::SendPhoneNumberVerificationRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for SendPhoneNumberVerification that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename SendPhoneNumberVerificationRequestT = Model::SendPhoneNumberVerificationRequest>
+  Model::SendPhoneNumberVerificationOutcomeCallable SendPhoneNumberVerificationCallable(
+      const SendPhoneNumberVerificationRequestT& request = {}) const {
+    return SubmitCallable(&AccountClient::SendPhoneNumberVerification, request);
+  }
+
+  /**
+   * An Async wrapper for SendPhoneNumberVerification that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename SendPhoneNumberVerificationRequestT = Model::SendPhoneNumberVerificationRequest>
+  void SendPhoneNumberVerificationAsync(const SendPhoneNumberVerificationResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                        const SendPhoneNumberVerificationRequestT& request = {}) const {
+    return SubmitAsync(&AccountClient::SendPhoneNumberVerification, request, handler, context);
+  }
+
+  /**
    * <p>Starts the process to update the primary email address for the specified
    * account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/StartPrimaryEmailUpdate">AWS
@@ -564,6 +599,38 @@ class AWS_ACCOUNT_API AccountClient : public Aws::Client::AWSJsonClient,
                                     const StartPrimaryEmailUpdateResponseReceivedHandler& handler,
                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&AccountClient::StartPrimaryEmailUpdate, request, handler, context);
+  }
+
+  /**
+   * <p>Verifies the phone number in the primary contact information of an Amazon Web
+   * Services account by submitting the one-time passcode that
+   * <a>SendPhoneNumberVerification</a> sent to that phone number.</p> <p>For
+   * complete details about how to use the primary contact operations, see <a
+   * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact-primary.html">Update
+   * the primary contact for your Amazon Web Services account</a>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/VerifyPhoneNumber">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::VerifyPhoneNumberOutcome VerifyPhoneNumber(const Model::VerifyPhoneNumberRequest& request) const;
+
+  /**
+   * A Callable wrapper for VerifyPhoneNumber that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename VerifyPhoneNumberRequestT = Model::VerifyPhoneNumberRequest>
+  Model::VerifyPhoneNumberOutcomeCallable VerifyPhoneNumberCallable(const VerifyPhoneNumberRequestT& request) const {
+    return SubmitCallable(&AccountClient::VerifyPhoneNumber, request);
+  }
+
+  /**
+   * An Async wrapper for VerifyPhoneNumber that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename VerifyPhoneNumberRequestT = Model::VerifyPhoneNumberRequest>
+  void VerifyPhoneNumberAsync(const VerifyPhoneNumberRequestT& request, const VerifyPhoneNumberResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AccountClient::VerifyPhoneNumber, request, handler, context);
   }
 
   virtual void OverrideEndpoint(const Aws::String& endpoint);

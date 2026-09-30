@@ -38,6 +38,10 @@ DetectorFeatureConfigurationResult& DetectorFeatureConfigurationResult::operator
     }
     m_additionalConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("managedBy")) {
+    m_managedBy = ManagedByMapper::GetManagedByForName(jsonValue.GetString("managedBy"));
+    m_managedByHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -64,6 +68,10 @@ JsonValue DetectorFeatureConfigurationResult::Jsonize() const {
           m_additionalConfiguration[additionalConfigurationIndex].Jsonize());
     }
     payload.WithArray("additionalConfiguration", std::move(additionalConfigurationJsonList));
+  }
+
+  if (m_managedByHasBeenSet) {
+    payload.WithString("managedBy", ManagedByMapper::GetNameForManagedBy(m_managedBy));
   }
 
   return payload;

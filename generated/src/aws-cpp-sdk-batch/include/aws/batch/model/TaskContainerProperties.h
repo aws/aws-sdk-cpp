@@ -403,8 +403,9 @@ class TaskContainerProperties {
 
   ///@{
   /**
-   * <p>The type and amount of a resource to assign to a container. The only
-   * supported resource is a GPU.</p>
+   * <p>The type and amount of a resource to assign to a container. The supported
+   * resources include <code>GPU</code>, <code>MEMORY</code>, and
+   * <code>VCPU</code>.</p>
    */
   inline const Aws::Vector<ResourceRequirement>& GetResourceRequirements() const { return m_resourceRequirements; }
   inline bool ResourceRequirementsHasBeenSet() const { return m_resourceRequirementsHasBeenSet; }

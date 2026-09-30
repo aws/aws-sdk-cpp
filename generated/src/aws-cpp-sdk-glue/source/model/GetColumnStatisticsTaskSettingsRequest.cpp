@@ -23,6 +23,10 @@ Aws::String GetColumnStatisticsTaskSettingsRequest::SerializePayload() const {
     payload.WithString("TableName", m_tableName);
   }
 
+  if (m_catalogIDHasBeenSet) {
+    payload.WithString("CatalogID", m_catalogID);
+  }
+
   return payload.View().WriteReadable();
 }
 

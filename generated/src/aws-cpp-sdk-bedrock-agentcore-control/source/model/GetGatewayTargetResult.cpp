@@ -100,6 +100,14 @@ GetGatewayTargetResult& GetGatewayTargetResult::operator=(const Aws::AmazonWebSe
     m_protocolType = TargetProtocolTypeMapper::GetTargetProtocolTypeForName(jsonValue.GetString("protocolType"));
     m_protocolTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("certificateConfigurations")) {
+    Aws::Utils::Array<JsonView> certificateConfigurationsJsonList = jsonValue.GetArray("certificateConfigurations");
+    for (unsigned certificateConfigurationsIndex = 0; certificateConfigurationsIndex < certificateConfigurationsJsonList.GetLength();
+         ++certificateConfigurationsIndex) {
+      m_certificateConfigurations.push_back(certificateConfigurationsJsonList[certificateConfigurationsIndex].AsObject());
+    }
+    m_certificateConfigurationsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -41,6 +41,10 @@ Aws::String QueryVectorsRequest::SerializePayload() const {
     }
   }
 
+  if (m_queryModeHasBeenSet) {
+    payload.WithString("queryMode", IndexModeMapper::GetNameForIndexMode(m_queryMode));
+  }
+
   if (m_returnMetadataHasBeenSet) {
     payload.WithBool("returnMetadata", m_returnMetadata);
   }

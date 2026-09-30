@@ -608,11 +608,13 @@
 #include <aws/datazone/model/NotebookStatus.h>
 #include <aws/datazone/model/NotebookSummary.h>
 #include <aws/datazone/model/NotebookType.h>
+#include <aws/datazone/model/NotificationConfig.h>
 #include <aws/datazone/model/NotificationOutput.h>
 #include <aws/datazone/model/NotificationResource.h>
 #include <aws/datazone/model/NotificationResourceType.h>
 #include <aws/datazone/model/NotificationRole.h>
 #include <aws/datazone/model/NotificationType.h>
+#include <aws/datazone/model/NotifyOnState.h>
 #include <aws/datazone/model/OAuth2ClientApplication.h>
 #include <aws/datazone/model/OAuth2GrantType.h>
 #include <aws/datazone/model/OAuth2Properties.h>

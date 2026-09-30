@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/AuthorizationData.h>
+#include <aws/bedrock-agentcore-control/model/CertificateConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/CredentialProviderConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ManagedResourceDetails.h>
 #include <aws/bedrock-agentcore-control/model/MetadataConfiguration.h>
@@ -345,6 +346,31 @@ class GatewayTarget {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The private certificate authority (CA) configurations for the gateway
+   * target.</p>
+   */
+  inline const Aws::Vector<CertificateConfiguration>& GetCertificateConfigurations() const { return m_certificateConfigurations; }
+  inline bool CertificateConfigurationsHasBeenSet() const { return m_certificateConfigurationsHasBeenSet; }
+  template <typename CertificateConfigurationsT = Aws::Vector<CertificateConfiguration>>
+  void SetCertificateConfigurations(CertificateConfigurationsT&& value) {
+    m_certificateConfigurationsHasBeenSet = true;
+    m_certificateConfigurations = std::forward<CertificateConfigurationsT>(value);
+  }
+  template <typename CertificateConfigurationsT = Aws::Vector<CertificateConfiguration>>
+  GatewayTarget& WithCertificateConfigurations(CertificateConfigurationsT&& value) {
+    SetCertificateConfigurations(std::forward<CertificateConfigurationsT>(value));
+    return *this;
+  }
+  template <typename CertificateConfigurationsT = CertificateConfiguration>
+  GatewayTarget& AddCertificateConfigurations(CertificateConfigurationsT&& value) {
+    m_certificateConfigurationsHasBeenSet = true;
+    m_certificateConfigurations.emplace_back(std::forward<CertificateConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_gatewayArn;
 
@@ -377,6 +403,8 @@ class GatewayTarget {
   AuthorizationData m_authorizationData;
 
   TargetProtocolType m_protocolType{TargetProtocolType::NOT_SET};
+
+  Aws::Vector<CertificateConfiguration> m_certificateConfigurations;
   bool m_gatewayArnHasBeenSet = false;
   bool m_targetIdHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
@@ -393,6 +421,7 @@ class GatewayTarget {
   bool m_privateEndpointManagedResourcesHasBeenSet = false;
   bool m_authorizationDataHasBeenSet = false;
   bool m_protocolTypeHasBeenSet = false;
+  bool m_certificateConfigurationsHasBeenSet = false;
 };
 
 }  // namespace Model

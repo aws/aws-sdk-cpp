@@ -42,6 +42,7 @@
 #include <aws/s3vectors/model/GetVectorsRequest.h>
 #include <aws/s3vectors/model/GetVectorsResult.h>
 #include <aws/s3vectors/model/Index.h>
+#include <aws/s3vectors/model/IndexMode.h>
 #include <aws/s3vectors/model/IndexSummary.h>
 #include <aws/s3vectors/model/ListIndexesPaginationTraits.h>
 #include <aws/s3vectors/model/ListIndexesRequest.h>
@@ -57,6 +58,8 @@
 #include <aws/s3vectors/model/ListVectorsResult.h>
 #include <aws/s3vectors/model/MetadataConfiguration.h>
 #include <aws/s3vectors/model/PutInputVector.h>
+#include <aws/s3vectors/model/PutVectorBucketDefaultIndexModeRequest.h>
+#include <aws/s3vectors/model/PutVectorBucketDefaultIndexModeResult.h>
 #include <aws/s3vectors/model/PutVectorBucketPolicyRequest.h>
 #include <aws/s3vectors/model/PutVectorBucketPolicyResult.h>
 #include <aws/s3vectors/model/PutVectorsRequest.h>
@@ -70,6 +73,8 @@
 #include <aws/s3vectors/model/TagResourceResult.h>
 #include <aws/s3vectors/model/UntagResourceRequest.h>
 #include <aws/s3vectors/model/UntagResourceResult.h>
+#include <aws/s3vectors/model/UpdateIndexModeRequest.h>
+#include <aws/s3vectors/model/UpdateIndexModeResult.h>
 #include <aws/s3vectors/model/ValidationException.h>
 #include <aws/s3vectors/model/ValidationExceptionField.h>
 #include <aws/s3vectors/model/VectorBucket.h>

@@ -25,6 +25,7 @@ static const int ASSIGN_SLA_HASH = HashingUtils::HashString("ASSIGN_SLA");
 static const int END_ASSOCIATED_TASKS_HASH = HashingUtils::HashString("END_ASSOCIATED_TASKS");
 static const int SUBMIT_AUTO_EVALUATION_HASH = HashingUtils::HashString("SUBMIT_AUTO_EVALUATION");
 static const int EXTRACT_INFORMATION_HASH = HashingUtils::HashString("EXTRACT_INFORMATION");
+static const int SEND_IN_APP_NOTIFICATION_HASH = HashingUtils::HashString("SEND_IN_APP_NOTIFICATION");
 
 ActionType GetActionTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -48,6 +49,8 @@ ActionType GetActionTypeForName(const Aws::String& name) {
     return ActionType::SUBMIT_AUTO_EVALUATION;
   } else if (hashCode == EXTRACT_INFORMATION_HASH) {
     return ActionType::EXTRACT_INFORMATION;
+  } else if (hashCode == SEND_IN_APP_NOTIFICATION_HASH) {
+    return ActionType::SEND_IN_APP_NOTIFICATION;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -82,6 +85,8 @@ Aws::String GetNameForActionType(ActionType enumValue) {
       return "SUBMIT_AUTO_EVALUATION";
     case ActionType::EXTRACT_INFORMATION:
       return "EXTRACT_INFORMATION";
+    case ActionType::SEND_IN_APP_NOTIFICATION:
+      return "SEND_IN_APP_NOTIFICATION";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

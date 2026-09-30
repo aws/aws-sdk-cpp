@@ -29,6 +29,7 @@ static const int AWS_BedrockAgentCore_CodeInterpreter_HASH = HashingUtils::HashS
 static const int AWS_BedrockAgentCore_Gateway_HASH = HashingUtils::HashString("AWS::BedrockAgentCore::Gateway");
 static const int AWS_BedrockAgentCore_Memory_HASH = HashingUtils::HashString("AWS::BedrockAgentCore::Memory");
 static const int AWS_BedrockAgentCore_WorkloadIdentity_HASH = HashingUtils::HashString("AWS::BedrockAgentCore::WorkloadIdentity");
+static const int AWS_BedrockAgentCore_PaymentManager_HASH = HashingUtils::HashString("AWS::BedrockAgentCore::PaymentManager");
 static const int AWS_SecurityHub_Hub_HASH = HashingUtils::HashString("AWS::SecurityHub::Hub");
 static const int AWS_CloudFront_Distribution_HASH = HashingUtils::HashString("AWS::CloudFront::Distribution");
 static const int AWS_SecurityHub_HubV2_HASH = HashingUtils::HashString("AWS::SecurityHub::HubV2");
@@ -67,6 +68,8 @@ ResourceType GetResourceTypeForName(const Aws::String& name) {
     return ResourceType::AWS_BedrockAgentCore_Memory;
   } else if (hashCode == AWS_BedrockAgentCore_WorkloadIdentity_HASH) {
     return ResourceType::AWS_BedrockAgentCore_WorkloadIdentity;
+  } else if (hashCode == AWS_BedrockAgentCore_PaymentManager_HASH) {
+    return ResourceType::AWS_BedrockAgentCore_PaymentManager;
   } else if (hashCode == AWS_SecurityHub_Hub_HASH) {
     return ResourceType::AWS_SecurityHub_Hub;
   } else if (hashCode == AWS_CloudFront_Distribution_HASH) {
@@ -123,6 +126,8 @@ Aws::String GetNameForResourceType(ResourceType enumValue) {
       return "AWS::BedrockAgentCore::Memory";
     case ResourceType::AWS_BedrockAgentCore_WorkloadIdentity:
       return "AWS::BedrockAgentCore::WorkloadIdentity";
+    case ResourceType::AWS_BedrockAgentCore_PaymentManager:
+      return "AWS::BedrockAgentCore::PaymentManager";
     case ResourceType::AWS_SecurityHub_Hub:
       return "AWS::SecurityHub::Hub";
     case ResourceType::AWS_CloudFront_Distribution:

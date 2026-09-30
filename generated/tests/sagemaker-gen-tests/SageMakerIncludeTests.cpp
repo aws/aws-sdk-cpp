@@ -246,6 +246,7 @@
 #include <aws/sagemaker/model/ClarifyTextConfig.h>
 #include <aws/sagemaker/model/ClarifyTextGranularity.h>
 #include <aws/sagemaker/model/ClarifyTextLanguage.h>
+#include <aws/sagemaker/model/ClusterAccountingDatabase.h>
 #include <aws/sagemaker/model/ClusterAutoPatchConfig.h>
 #include <aws/sagemaker/model/ClusterAutoPatchConfigDetails.h>
 #include <aws/sagemaker/model/ClusterAutoScalerType.h>
@@ -503,6 +504,8 @@
 #include <aws/sagemaker/model/DataQualityJobInput.h>
 #include <aws/sagemaker/model/DataSource.h>
 #include <aws/sagemaker/model/DataSourceName.h>
+#include <aws/sagemaker/model/DatabaseConfigurationMetadata.h>
+#include <aws/sagemaker/model/DatabaseConfigurationRollbackStatus.h>
 #include <aws/sagemaker/model/DatasetDefinition.h>
 #include <aws/sagemaker/model/DatasetSource.h>
 #include <aws/sagemaker/model/DebugHookConfig.h>
@@ -1728,6 +1731,10 @@
 #include <aws/sagemaker/model/SharingType.h>
 #include <aws/sagemaker/model/ShuffleConfig.h>
 #include <aws/sagemaker/model/SkipModelValidation.h>
+#include <aws/sagemaker/model/SlurmHealthComponent.h>
+#include <aws/sagemaker/model/SlurmHealthMetadata.h>
+#include <aws/sagemaker/model/SlurmHealthReason.h>
+#include <aws/sagemaker/model/SlurmHealthStatus.h>
 #include <aws/sagemaker/model/SoftwareUpdateStatus.h>
 #include <aws/sagemaker/model/SortActionsBy.h>
 #include <aws/sagemaker/model/SortArtifactsBy.h>

@@ -305,6 +305,25 @@ class UpdateCrawlerRequest : public GlueRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the Data Catalog in which to store the crawler's output. If you
+   * omit this value, the existing value on the crawler is preserved.</p>
+   */
+  inline const Aws::String& GetCatalogId() const { return m_catalogId; }
+  inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
+  template <typename CatalogIdT = Aws::String>
+  void SetCatalogId(CatalogIdT&& value) {
+    m_catalogIdHasBeenSet = true;
+    m_catalogId = std::forward<CatalogIdT>(value);
+  }
+  template <typename CatalogIdT = Aws::String>
+  UpdateCrawlerRequest& WithCatalogId(CatalogIdT&& value) {
+    SetCatalogId(std::forward<CatalogIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -333,6 +352,8 @@ class UpdateCrawlerRequest : public GlueRequest {
   Aws::String m_configuration;
 
   Aws::String m_crawlerSecurityConfiguration;
+
+  Aws::String m_catalogId;
   bool m_nameHasBeenSet = false;
   bool m_roleHasBeenSet = false;
   bool m_databaseNameHasBeenSet = false;
@@ -347,6 +368,7 @@ class UpdateCrawlerRequest : public GlueRequest {
   bool m_lakeFormationConfigurationHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
   bool m_crawlerSecurityConfigurationHasBeenSet = false;
+  bool m_catalogIdHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -402,6 +402,7 @@
 #include <aws/ecs/model/ServiceRevisionLoadBalancer.h>
 #include <aws/ecs/model/ServiceRevisionOverrides.h>
 #include <aws/ecs/model/ServiceRevisionSummary.h>
+#include <aws/ecs/model/ServiceRevisionVpcLatticeConfiguration.h>
 #include <aws/ecs/model/ServiceVolumeConfiguration.h>
 #include <aws/ecs/model/Session.h>
 #include <aws/ecs/model/Setting.h>
@@ -483,6 +484,7 @@
 #include <aws/ecs/model/VersionInfo.h>
 #include <aws/ecs/model/Volume.h>
 #include <aws/ecs/model/VolumeFrom.h>
+#include <aws/ecs/model/VpcLatticeAdvancedConfiguration.h>
 #include <aws/ecs/model/VpcLatticeConfiguration.h>
 
 using ECSIncludeTest = ::testing::Test;

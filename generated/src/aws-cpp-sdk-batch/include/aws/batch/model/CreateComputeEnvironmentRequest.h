@@ -237,7 +237,10 @@ class CreateComputeEnvironmentRequest : public BatchRequest {
    * <p>The details for the Amazon EKS cluster that supports the compute
    * environment.</p>  <p>To create a compute environment that uses EKS
    * resources, the caller must have permissions to call
-   * <code>eks:DescribeCluster</code>.</p>
+   * <code>eks:DescribeCluster</code>. Additional Amazon EKS permissions are required
+   * for Batch to manage an access entry on the cluster; see <a
+   * href="https://docs.aws.amazon.com/batch/latest/userguide/eks-access-entries.html">Amazon
+   * EKS access entry authentication</a> in the <i>Batch User Guide</i>.</p>
    */
   inline const EksConfiguration& GetEksConfiguration() const { return m_eksConfiguration; }
   inline bool EksConfigurationHasBeenSet() const { return m_eksConfigurationHasBeenSet; }

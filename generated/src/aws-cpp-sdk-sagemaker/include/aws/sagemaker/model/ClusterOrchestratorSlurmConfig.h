@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/model/ClusterAccountingDatabase.h>
 #include <aws/sagemaker/model/ClusterSlurmConfigStrategy.h>
 
 #include <utility>
@@ -49,9 +50,34 @@ class ClusterOrchestratorSlurmConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The external database that stores the Slurm accounting data for the cluster,
+   * such as job history, associations, and usage. When you omit this field, Slurm
+   * accounting uses a database on the cluster's controller node.</p>  <p>This
+   * field is only supported for clusters using <code>Continuous</code> as the
+   * <code>NodeProvisioningMode</code>.</p>
+   */
+  inline const ClusterAccountingDatabase& GetAccountingDatabase() const { return m_accountingDatabase; }
+  inline bool AccountingDatabaseHasBeenSet() const { return m_accountingDatabaseHasBeenSet; }
+  template <typename AccountingDatabaseT = ClusterAccountingDatabase>
+  void SetAccountingDatabase(AccountingDatabaseT&& value) {
+    m_accountingDatabaseHasBeenSet = true;
+    m_accountingDatabase = std::forward<AccountingDatabaseT>(value);
+  }
+  template <typename AccountingDatabaseT = ClusterAccountingDatabase>
+  ClusterOrchestratorSlurmConfig& WithAccountingDatabase(AccountingDatabaseT&& value) {
+    SetAccountingDatabase(std::forward<AccountingDatabaseT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ClusterSlurmConfigStrategy m_slurmConfigStrategy{ClusterSlurmConfigStrategy::NOT_SET};
+
+  ClusterAccountingDatabase m_accountingDatabase;
   bool m_slurmConfigStrategyHasBeenSet = false;
+  bool m_accountingDatabaseHasBeenSet = false;
 };
 
 }  // namespace Model

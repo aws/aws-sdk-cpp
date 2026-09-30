@@ -147,6 +147,26 @@ class DeliveryDestination {
 
   ///@{
   /**
+   * <p>The ARN of the IAM role that CloudWatch Logs assumes to deliver to this
+   * delivery destination. This field is present only for X-Ray trace delivery
+   * destinations that were created with a role.</p>
+   */
+  inline const Aws::String& GetRoleArn() const { return m_roleArn; }
+  inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+  template <typename RoleArnT = Aws::String>
+  void SetRoleArn(RoleArnT&& value) {
+    m_roleArnHasBeenSet = true;
+    m_roleArn = std::forward<RoleArnT>(value);
+  }
+  template <typename RoleArnT = Aws::String>
+  DeliveryDestination& WithRoleArn(RoleArnT&& value) {
+    SetRoleArn(std::forward<RoleArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The tags that have been assigned to this delivery destination.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
@@ -179,12 +199,15 @@ class DeliveryDestination {
 
   DeliveryDestinationConfiguration m_deliveryDestinationConfiguration;
 
+  Aws::String m_roleArn;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_nameHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_deliveryDestinationTypeHasBeenSet = false;
   bool m_outputFormatHasBeenSet = false;
   bool m_deliveryDestinationConfigurationHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

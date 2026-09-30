@@ -87,6 +87,10 @@ StartNotebookRunResult& StartNotebookRunResult::operator=(const Aws::AmazonWebSe
     m_storageConfiguration = jsonValue.GetObject("storageConfiguration");
     m_storageConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("notificationConfiguration")) {
+    m_notificationConfiguration = jsonValue.GetObject("notificationConfiguration");
+    m_notificationConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("triggerSource")) {
     m_triggerSource = jsonValue.GetObject("triggerSource");
     m_triggerSourceHasBeenSet = true;

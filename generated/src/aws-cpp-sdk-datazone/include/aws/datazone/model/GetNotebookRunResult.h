@@ -16,6 +16,7 @@
 #include <aws/datazone/model/NetworkConfig.h>
 #include <aws/datazone/model/NotebookRunError.h>
 #include <aws/datazone/model/NotebookRunStatus.h>
+#include <aws/datazone/model/NotificationConfig.h>
 #include <aws/datazone/model/StorageConfig.h>
 #include <aws/datazone/model/TimeoutConfig.h>
 #include <aws/datazone/model/TriggerSource.h>
@@ -297,6 +298,24 @@ class GetNotebookRunResult {
 
   ///@{
   /**
+   * <p>The notification configuration of the notebook run, including the notebook
+   * run states that trigger notifications.</p>
+   */
+  inline const NotificationConfig& GetNotificationConfiguration() const { return m_notificationConfiguration; }
+  template <typename NotificationConfigurationT = NotificationConfig>
+  void SetNotificationConfiguration(NotificationConfigurationT&& value) {
+    m_notificationConfigurationHasBeenSet = true;
+    m_notificationConfiguration = std::forward<NotificationConfigurationT>(value);
+  }
+  template <typename NotificationConfigurationT = NotificationConfig>
+  GetNotebookRunResult& WithNotificationConfiguration(NotificationConfigurationT&& value) {
+    SetNotificationConfiguration(std::forward<NotificationConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The source that triggered the notebook run.</p>
    */
   inline const TriggerSource& GetTriggerSource() const { return m_triggerSource; }
@@ -476,6 +495,8 @@ class GetNotebookRunResult {
 
   StorageConfig m_storageConfiguration;
 
+  NotificationConfig m_notificationConfiguration;
+
   TriggerSource m_triggerSource;
 
   NotebookRunError m_error;
@@ -508,6 +529,7 @@ class GetNotebookRunResult {
   bool m_timeoutConfigurationHasBeenSet = false;
   bool m_environmentConfigurationHasBeenSet = false;
   bool m_storageConfigurationHasBeenSet = false;
+  bool m_notificationConfigurationHasBeenSet = false;
   bool m_triggerSourceHasBeenSet = false;
   bool m_errorHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;

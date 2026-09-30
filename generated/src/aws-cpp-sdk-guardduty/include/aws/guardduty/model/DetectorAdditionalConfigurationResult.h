@@ -8,6 +8,7 @@
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/guardduty/model/FeatureAdditionalConfiguration.h>
 #include <aws/guardduty/model/FeatureStatus.h>
+#include <aws/guardduty/model/ManagedBy.h>
 
 #include <utility>
 
@@ -83,15 +84,36 @@ class DetectorAdditionalConfigurationResult {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates what manages the additional configuration. A value of
+   * <code>GUARDDUTY_POLICY</code> means a GuardDuty policy manages the additional
+   * configuration.</p>
+   */
+  inline ManagedBy GetManagedBy() const { return m_managedBy; }
+  inline bool ManagedByHasBeenSet() const { return m_managedByHasBeenSet; }
+  inline void SetManagedBy(ManagedBy value) {
+    m_managedByHasBeenSet = true;
+    m_managedBy = value;
+  }
+  inline DetectorAdditionalConfigurationResult& WithManagedBy(ManagedBy value) {
+    SetManagedBy(value);
+    return *this;
+  }
+  ///@}
  private:
   FeatureAdditionalConfiguration m_name{FeatureAdditionalConfiguration::NOT_SET};
 
   FeatureStatus m_status{FeatureStatus::NOT_SET};
 
   Aws::Utils::DateTime m_updatedAt{};
+
+  ManagedBy m_managedBy{ManagedBy::NOT_SET};
   bool m_nameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
+  bool m_managedByHasBeenSet = false;
 };
 
 }  // namespace Model

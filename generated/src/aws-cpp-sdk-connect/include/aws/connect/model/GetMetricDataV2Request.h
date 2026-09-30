@@ -146,10 +146,11 @@ class GetMetricDataV2Request : public ConnectRequest {
    * </p> <p>The following are valid filter keys for a <code>GetMetricDataV2</code>
    * request:</p> <p> <code>AGENT</code> | <code>AI_AGENT</code> |
    * <code>AI_AGENT_ID</code> | <code>AI_AGENT_NAME</code> |
-   * <code>AI_AGENT_TYPE</code> | <code>AI_PROMPT</code> | <code>AI_PROMPT_ID</code>
-   * | <code>AI_PROMPT_NAME</code> | <code>AI_PROMPT_TYPE</code> |
-   * <code>AI_TOOL_ID</code> | <code>AI_TOOL_NAME</code> | <code>AI_TOOL_TYPE</code>
-   * | <code>AI_USE_CASE</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> |
+   * <code>AI_AGENT_NAME_VERSION</code> | <code>AI_AGENT_TYPE</code> |
+   * <code>AI_PROMPT</code> | <code>AI_PROMPT_ID</code> | <code>AI_PROMPT_NAME</code>
+   * | <code>AI_PROMPT_TYPE</code> | <code>AI_TOOL_ID</code> |
+   * <code>AI_TOOL_NAME</code> | <code>AI_TOOL_TYPE</code> | <code>AI_USE_CASE</code>
+   * | <code>AGENT_HIERARCHY_LEVEL_ONE</code> |
    * <code>AGENT_HIERARCHY_LEVEL_TWO</code> |
    * <code>AGENT_HIERARCHY_LEVEL_THREE</code> |
    * <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
@@ -283,14 +284,13 @@ class GetMetricDataV2Request : public ConnectRequest {
    * <code>ROUTING_STEP_EXPRESSION</code> | <code>SESSION_ID</code> |
    * <code>TEST_CASE</code> | <code>TEST_CASE_EXECUTION_FAILURE_REASON</code> |
    * <code>TEST_CASE_INVOCATION_METHOD</code> | <code>WEB_NOTIFICATION_TYPE</code>
-   * </p>  <p> <code>AI_AGENT_NAME_VERSION</code>,
-   * <code>AI_PROMPT_NAME_VERSION</code>, and <code>KNOWLEDGE_ARTICLE_NAME</code> are
-   * valid groupings but not valid filters.</p>  <p>API, SCHEDULE, and EVENT
-   * are the only valid filterValues for TEST_CASE_INVOCATION_METHOD.</p>
-   * <p>OBSERVE_EVENT, SEND_INSTRUCTION, ASSERT_DATA, and OVERRIDE_SYSTEM_BEHAVIOR
-   * are the only valid filterValues for TEST_CASE_EXECUTION_FAILURE_REASON</p>
-   * <p>Type: Array of strings</p> <p>Array Members: Maximum number of 4 items</p>
-   * <p>Required: No</p>
+   * </p>  <p> <code>AI_PROMPT_NAME_VERSION</code> and
+   * <code>KNOWLEDGE_ARTICLE_NAME</code> are valid groupings but not valid
+   * filters.</p>  <p>API, SCHEDULE, and EVENT are the only valid filterValues
+   * for TEST_CASE_INVOCATION_METHOD.</p> <p>OBSERVE_EVENT, SEND_INSTRUCTION,
+   * ASSERT_DATA, and OVERRIDE_SYSTEM_BEHAVIOR are the only valid filterValues for
+   * TEST_CASE_EXECUTION_FAILURE_REASON</p> <p>Type: Array of strings</p> <p>Array
+   * Members: Maximum number of 4 items</p> <p>Required: No</p>
    */
   inline const Aws::Vector<Aws::String>& GetGroupings() const { return m_groupings; }
   inline bool GroupingsHasBeenSet() const { return m_groupingsHasBeenSet; }
@@ -484,182 +484,176 @@ class GetMetricDataV2Request : public ConnectRequest {
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-handle-time">Average
    * handle time</a> </p>  <p>Feature is a valid filter but not a valid
    * grouping.</p>  </dd> <dt>ACTIVE_AI_AGENTS</dt> <dd> <p>Unit: Count</p>
-   * <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Type, AI Use
-   * Case, Channel, Queue, Routing Profile</p> <p>UI name: <a
+   * <p>Valid groupings and filters: AI Agent, AI Agent ID, AI Agent Name, AI Agent
+   * Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile,
+   * Session ID</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#active-ai-agents">Active
    * AI Agents</a> </p> </dd> <dt>AI_HANDOFF_RATE</dt> <dd> <p>Unit: Percent</p>
-   * <p>Valid groupings and filters: AI Agent ID, AI Agent Name, AI Agent Type, AI
-   * Use Case, Channel, Queue, Routing Profile</p> <p>UI name: <a
+   * <p>Valid groupings and filters: AI Agent ID, AI Agent Name, AI Agent Name
+   * Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile, Session
+   * ID</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-handoff-rate">AI
    * Handoff Rate</a> </p> </dd> <dt>AI_HANDOFFS</dt> <dd> <p>Unit: Count</p>
-   * <p>Valid groupings and filters: AI Agent ID, AI Agent Name, AI Agent Type, AI
-   * Use Case, Channel, Queue, Routing Profile</p> <p>UI name: <a
+   * <p>Valid groupings and filters: AI Agent ID, AI Agent Name, AI Agent Name
+   * Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile, Session
+   * ID</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-handoffs">AI
    * Handoff Count</a> </p> </dd> <dt>AI_AGENT_INVOCATION_SUCCESS</dt> <dd> <p>Unit:
-   * Count</p> <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name
-   * Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile</p> <p>UI
-   * name: <a
+   * Count</p> <p>Valid groupings and filters: AI Agent, AI Agent ID, AI Agent Name,
+   * AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing
+   * Profile, Session ID</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-agent-invocation-success">AI
-   * Agent Invocation Success</a> </p>  <p>AI Agent Name Version is not a valid
-   * filter but a valid grouping.</p>  </dd>
+   * Agent Invocation Success</a> </p> </dd>
    * <dt>AI_AGENT_INVOCATION_SUCCESS_RATE</dt> <dd> <p>Unit: Percent</p> <p>Valid
-   * groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent
-   * Type, AI Use Case, Channel, Queue, Routing Profile</p> <p>UI name: <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-agent-invocation-success-rate">AI
-   * Agent Invocation Success Rate</a> </p>  <p>AI Agent Name Version is not a
-   * valid filter but a valid grouping.</p>  </dd>
-   * <dt>AI_AGENT_INVOCATIONS</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
-   * filters: AI Agent, AI Agent Name, AI Agent Type, AI Agent Name Version, AI Use
-   * Case, Channel, Queue, Routing Profile</p> <p>UI name: <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-agent-invocations">AI
-   * Agent Invocation Count</a> </p>  <p>AI Agent Name Version is not a valid
-   * filter but a valid grouping.</p>  </dd>
-   * <dt>AI_AGENT_RESPONSE_HELPFUL</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
-   * and filters: AI Agent, AI Agent ID, AI Agent Name, AI Agent Name Version, AI
-   * Agent Type, AI Use Case, Channel, Queue, Routing Profile</p> <p>UI name: <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-agent-response-helpful">AI
-   * Agent Response Helpful</a> </p>  <p>AI Agent Name Version is not a valid
-   * filter but a valid grouping.</p>  </dd>
-   * <dt>AI_AGENT_RESPONSE_NOT_HELPFUL</dt> <dd> <p>Unit: Count</p> <p>Valid
    * groupings and filters: AI Agent, AI Agent ID, AI Agent Name, AI Agent Name
-   * Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile</p> <p>UI
-   * name: <a
+   * Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile, Session
+   * ID</p> <p>UI name: <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-agent-invocation-success-rate">AI
+   * Agent Invocation Success Rate</a> </p> </dd> <dt>AI_AGENT_INVOCATIONS</dt> <dd>
+   * <p>Unit: Count</p> <p>Valid groupings and filters: AI Agent, AI Agent ID, AI
+   * Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue,
+   * Routing Profile, Session ID</p> <p>UI name: <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-agent-invocations">AI
+   * Agent Invocation Count</a> </p> </dd> <dt>AI_AGENT_RESPONSE_HELPFUL</dt> <dd>
+   * <p>Unit: Count</p> <p>Valid groupings and filters: AI Agent, AI Agent ID, AI
+   * Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue,
+   * Routing Profile, Session ID</p> <p>UI name: <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-agent-response-helpful">AI
+   * Agent Response Helpful</a> </p> </dd> <dt>AI_AGENT_RESPONSE_NOT_HELPFUL</dt>
+   * <dd> <p>Unit: Count</p> <p>Valid groupings and filters: AI Agent, AI Agent ID,
+   * AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel,
+   * Queue, Routing Profile, Session ID</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-agent-response-not-helpful">AI
-   * Agent Response Not Helpful</a> </p>  <p>AI Agent Name Version is not a
-   * valid filter but a valid grouping.</p>  </dd>
-   * <dt>AI_RESPONSE_COMPLETION_RATE</dt> <dd> <p>Unit: Percent</p> <p>Valid
-   * groupings and filters: AI Agent ID, AI Agent Name, AI Agent Type, AI Use Case,
-   * Channel, Queue, Routing Profile</p> <p>UI name: <a
+   * Agent Response Not Helpful</a> </p> </dd> <dt>AI_RESPONSE_COMPLETION_RATE</dt>
+   * <dd> <p>Unit: Percent</p> <p>Valid groupings and filters: AI Agent ID, AI Agent
+   * Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing
+   * Profile, Session ID</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-response-completion-rate">AI
    * Response Completion Rate</a> </p> </dd> <dt>AI_INVOLVED_CONTACTS</dt> <dd>
    * <p>Unit: Count</p> <p>Valid groupings and filters: AI Agent ID, AI Agent Name,
-   * AI Agent Type, AI Use Case, Channel, Queue, Routing Profile</p> <p>UI name: <a
+   * AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing
+   * Profile, Session ID</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-involved-contacts">AI
    * Involved Contacts</a> </p> </dd> <dt>AI_PROMPT_INVOCATION_SUCCESS</dt> <dd>
-   * <p>Unit: Count</p> <p>Valid groupings and filters: AI Agent, AI Agent Name, AI
-   * Agent Name Version, AI Agent Type, AI Prompt, AI Prompt ID, AI Prompt Name, AI
-   * Prompt Type, AI Use Case, Channel, Queue, Routing Profile</p> <p>UI name: <a
+   * <p>Unit: Count</p> <p>Valid groupings and filters: AI Agent, AI Agent ID, AI
+   * Agent Name, AI Agent Name Version, AI Agent Type, AI Prompt, AI Prompt ID, AI
+   * Prompt Name, AI Prompt Type, AI Use Case, Channel, Queue, Routing Profile,
+   * Session ID</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-prompt-invocation-success">AI
-   * Prompt Invocation Success</a> </p>  <p>AI Agent Name Version is not a
-   * valid filter but a valid grouping.</p>  </dd>
+   * Prompt Invocation Success</a> </p> </dd>
    * <dt>AI_PROMPT_INVOCATION_SUCCESS_RATE</dt> <dd> <p>Unit: Percent</p> <p>Valid
-   * groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent
-   * Type, AI Prompt, AI Prompt ID, AI Prompt Name, AI Prompt Type, AI Use Case,
-   * Channel, Queue, Routing Profile</p> <p>UI name: <a
+   * groupings and filters: AI Agent, AI Agent ID, AI Agent Name, AI Agent Name
+   * Version, AI Agent Type, AI Prompt, AI Prompt ID, AI Prompt Name, AI Prompt Type,
+   * AI Use Case, Channel, Queue, Routing Profile, Session ID</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-prompt-invocation-success-rate">AI
-   * Prompt Invocation Success Rate</a> </p>  <p>AI Agent Name Version is not a
-   * valid filter but a valid grouping.</p>  </dd>
-   * <dt>AI_PROMPT_INVOCATIONS</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
-   * filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI
-   * Prompt, AI Prompt ID, AI Prompt Name, AI Prompt Type, AI Use Case, Channel,
-   * Queue, Routing Profile</p> <p>UI name: <a
+   * Prompt Invocation Success Rate</a> </p> </dd> <dt>AI_PROMPT_INVOCATIONS</dt>
+   * <dd> <p>Unit: Count</p> <p>Valid groupings and filters: AI Agent, AI Agent ID,
+   * AI Agent Name, AI Agent Name Version, AI Agent Type, AI Prompt, AI Prompt ID, AI
+   * Prompt Name, AI Prompt Type, AI Use Case, Channel, Queue, Routing Profile,
+   * Session ID</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-prompt-invocations">AI
-   * Prompt Invocations</a> </p>  <p>AI Agent Name Version is not a valid
-   * filter but a valid grouping.</p>  </dd>
-   * <dt>AI_TOOL_INVOCATION_SUCCESS</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
-   * and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI
-   * Tool ID, AI Tool Name, AI Tool Type, AI Use Case, Channel, Queue, Routing
-   * Profile</p> <p>UI name: <a
+   * Prompt Invocations</a> </p> </dd> <dt>AI_TOOL_INVOCATION_SUCCESS</dt> <dd>
+   * <p>Unit: Count</p> <p>Valid groupings and filters: AI Agent, AI Agent ID, AI
+   * Agent Name, AI Agent Name Version, AI Agent Type, AI Tool ID, AI Tool Name, AI
+   * Tool Type, AI Use Case, Channel, Queue, Routing Profile, Session ID</p> <p>UI
+   * name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-tool-invocation-success">AI
-   * Tool Invocation Success</a> </p>  <p>AI Agent Name Version is not a valid
-   * filter but a valid grouping.</p>  </dd>
-   * <dt>AI_TOOL_INVOCATION_SUCCESS_RATE</dt> <dd> <p>Unit: Percent</p> <p>Valid
-   * groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent
-   * Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use Case, Channel, Queue,
-   * Routing Profile</p> <p>UI name: <a
+   * Tool Invocation Success</a> </p> </dd> <dt>AI_TOOL_INVOCATION_SUCCESS_RATE</dt>
+   * <dd> <p>Unit: Percent</p> <p>Valid groupings and filters: AI Agent, AI Agent ID,
+   * AI Agent Name, AI Agent Name Version, AI Agent Type, AI Tool ID, AI Tool Name,
+   * AI Tool Type, AI Use Case, Channel, Queue, Routing Profile, Session ID</p> <p>UI
+   * name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-tool-invocation-success-rate">AI
-   * Tool Invocation Success Rate</a> </p>  <p>AI Agent Name Version is not a
-   * valid filter but a valid grouping.</p>  </dd>
-   * <dt>AI_TOOL_INVOCATIONS</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
-   * filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Tool
-   * ID, AI Tool Name, AI Tool Type, AI Use Case, Channel, Queue, Routing Profile</p>
-   * <p>UI name: <a
+   * Tool Invocation Success Rate</a> </p> </dd> <dt>AI_TOOL_INVOCATIONS</dt> <dd>
+   * <p>Unit: Count</p> <p>Valid groupings and filters: AI Agent, AI Agent ID, AI
+   * Agent Name, AI Agent Name Version, AI Agent Type, AI Tool ID, AI Tool Name, AI
+   * Tool Type, AI Use Case, Channel, Queue, Routing Profile, Session ID</p> <p>UI
+   * name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-tool-invocations">AI
-   * Tool Invocations</a> </p>  <p>AI Agent Name Version is not a valid filter
-   * but a valid grouping.</p>  </dd> <dt>AVG_AI_AGENT_CONVERSATION_TURNS</dt>
-   * <dd> <p>Unit: Count</p> <p>Valid groupings and filters: AI Agent, AI Agent Name,
-   * AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing
-   * Profile </p> <p>UI name: <a
+   * Tool Invocations</a> </p> </dd> <dt>AVG_AI_AGENT_CONVERSATION_TURNS</dt> <dd>
+   * <p>Unit: Count</p> <p>Valid groupings and filters: AI Agent, AI Agent ID, AI
+   * Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue,
+   * Routing Profile, Session ID</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-ai-agent-conversation-turns">Average
-   * AI Agent Conversation Turns</a> </p>  <p>AI Agent Name Version is not a
-   * valid filter but a valid grouping.</p>  </dd>
-   * <dt>AVG_AI_CONVERSATION_TURNS</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
-   * and filters: AI Agent ID, AI Agent Name, AI Agent Type, AI Use Case, Channel,
-   * Queue, Routing Profile</p> <p>UI name: <a
+   * AI Agent Conversation Turns</a> </p> </dd> <dt>AVG_AI_CONVERSATION_TURNS</dt>
+   * <dd> <p>Unit: Count</p> <p>Valid groupings and filters: AI Agent ID, AI Agent
+   * Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing
+   * Profile, Session ID</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-ai-conversation-turns">Average
    * AI Conversation Turns</a> </p> </dd> <dt>AVG_AI_PROMPT_INVOCATION_LATENCY</dt>
    * <dd> <p>Unit: Milliseconds</p> <p>Valid groupings and filters: AI Agent, AI
-   * Agent Name, AI Agent Name Version, AI Agent Type, AI Prompt, AI Prompt ID, AI
-   * Prompt Name, AI Prompt Type, AI Use Case, Channel, Queue, Routing Profile</p>
-   * <p>UI name: <a
+   * Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Prompt, AI
+   * Prompt ID, AI Prompt Name, AI Prompt Type, AI Use Case, Channel, Queue, Routing
+   * Profile, Session ID</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-ai-prompt-invocation-latency">Average
-   * AI Prompt Invocation Latency</a> </p>  <p>AI Agent Name Version is not a
-   * valid filter but a valid grouping.</p>  </dd>
+   * AI Prompt Invocation Latency</a> </p> </dd>
    * <dt>AVG_AI_TOOL_INVOCATION_LATENCY</dt> <dd> <p>Unit: Milliseconds</p> <p>Valid
-   * groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent
-   * Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use Case, Channel, Queue,
-   * Routing Profile</p> <p>UI name: <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-ai-tool-invocation-latency">Average
-   * AI Tool Invocation Latency</a> </p>  <p>AI Agent Name Version is not a
-   * valid filter but a valid grouping.</p>  </dd>
-   * <dt>AI_TOOL_PARAMETER_ACCURACY</dt> <dd> <p>Unit: Double</p> <p>Valid groupings
-   * and filters: AI Agent, AI Agent ID, AI Agent Name, AI Agent Name Version, AI
-   * Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use Case, Channel, Queue,
-   * Routing Profile</p> <p>UI name: <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-tool-parameter-accuracy">AI
-   * Tool Parameter Accuracy</a> </p>  <p>AI Agent Name Version is not a valid
-   * filter but a valid grouping.</p>  </dd>
-   * <dt>AI_TOOL_SELECTION_ACCURACY</dt> <dd> <p>Unit: Double</p> <p>Valid groupings
-   * and filters: AI Agent, AI Agent ID, AI Agent Name, AI Agent Name Version, AI
-   * Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use Case, Channel, Queue,
-   * Routing Profile</p> <p>UI name: <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-tool-selection-accuracy">AI
-   * Tool Selection Accuracy</a> </p>  <p>AI Agent Name Version is not a valid
-   * filter but a valid grouping.</p>  </dd>
-   * <dt>AI_TOOL_UTILIZATION_ACCURACY</dt> <dd> <p>Unit: Double</p> <p>Valid
    * groupings and filters: AI Agent, AI Agent ID, AI Agent Name, AI Agent Name
    * Version, AI Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use Case,
    * Channel, Queue, Routing Profile, Session ID</p> <p>UI name: <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-ai-tool-invocation-latency">Average
+   * AI Tool Invocation Latency</a> </p> </dd> <dt>AI_TOOL_PARAMETER_ACCURACY</dt>
+   * <dd> <p>Unit: Double</p> <p>Valid groupings and filters: AI Agent, AI Agent ID,
+   * AI Agent Name, AI Agent Name Version, AI Agent Type, AI Tool ID, AI Tool Name,
+   * AI Tool Type, AI Use Case, Channel, Queue, Routing Profile, Session ID</p> <p>UI
+   * name: <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-tool-parameter-accuracy">AI
+   * Tool Parameter Accuracy</a> </p> </dd> <dt>AI_TOOL_SELECTION_ACCURACY</dt> <dd>
+   * <p>Unit: Double</p> <p>Valid groupings and filters: AI Agent, AI Agent ID, AI
+   * Agent Name, AI Agent Name Version, AI Agent Type, AI Tool ID, AI Tool Name, AI
+   * Tool Type, AI Use Case, Channel, Queue, Routing Profile, Session ID</p> <p>UI
+   * name: <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-tool-selection-accuracy">AI
+   * Tool Selection Accuracy</a> </p> </dd> <dt>AI_TOOL_UTILIZATION_ACCURACY</dt>
+   * <dd> <p>Unit: Double</p> <p>Valid groupings and filters: AI Agent, AI Agent ID,
+   * AI Agent Name, AI Agent Name Version, AI Agent Type, AI Tool ID, AI Tool Name,
+   * AI Tool Type, AI Use Case, Channel, Queue, Routing Profile, Session ID</p> <p>UI
+   * name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-tool-utilization-accuracy">AI
-   * Tool Utilization Accuracy</a> </p>  <p>AI Agent Name Version is not a
-   * valid filter but a valid grouping.</p>  </dd> <dt>COMPLETENESS_SCORE</dt>
-   * <dd> <p>Unit: Double</p> <p>Valid groupings and filters: AI Agent ID, AI Agent
-   * Name, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile, Session
-   * ID</p> <p>UI name: <a
+   * Tool Utilization Accuracy</a> </p> </dd> <dt>COMPLETENESS_SCORE</dt> <dd>
+   * <p>Unit: Double</p> <p>Valid groupings and filters: AI Agent ID, AI Agent Name,
+   * AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing
+   * Profile, Session ID</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#completeness-score">Completeness
    * Score</a> </p> </dd> <dt>FAITHFULNESS_SCORE</dt> <dd> <p>Unit: Double</p>
-   * <p>Valid groupings and filters: AI Agent ID, AI Agent Name, AI Agent Type, AI
-   * Use Case, Channel, Queue, Routing Profile, Session ID</p> <p>UI name: <a
+   * <p>Valid groupings and filters: AI Agent ID, AI Agent Name, AI Agent Name
+   * Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile, Session
+   * ID</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#faithfulness-score">Faithfulness
    * Score</a> </p> </dd> <dt>GOAL_SUCCESS_RATE</dt> <dd> <p>Unit: Double</p>
-   * <p>Valid groupings and filters: AI Agent ID, AI Agent Name, AI Agent Type, AI
-   * Use Case, Channel, Queue, Routing Profile, Session ID</p> <p>UI name: <a
+   * <p>Valid groupings and filters: AI Agent ID, AI Agent Name, AI Agent Name
+   * Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile, Session
+   * ID</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#goal-success-rate">Goal
    * Success Rate</a> </p> </dd> <dt>KNOWLEDGE_CONTENT_REFERENCES</dt> <dd> <p>Unit:
-   * Count</p> <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent
-   * Type, AI Use Case, Channel, Knowledge Base Name, Queue, Routing Profile</p>
-   * <p>UI name: <a
+   * Count</p> <p>Valid groupings and filters: AI Agent, AI Agent ID, AI Agent Name,
+   * AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Knowledge Base Name,
+   * Queue, Routing Profile, Session ID</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#knowledge-content-references">Knowledge
    * Content References</a> </p> </dd> <dt>PROACTIVE_INTENT_ENGAGEMENT_RATE</dt> <dd>
    * <p>Unit: Percent</p> <p>Valid groupings and filters: AI Agent ID, AI Agent Name,
-   * AI Agent Type, AI Use Case, Channel, Queue, Routing Profile</p> <p>UI name: <a
+   * AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing
+   * Profile, Session ID</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#proactive-intents-engagement-rate">Proactive
    * Intent Engagement Rate</a> </p> </dd> <dt>PROACTIVE_INTENT_RESPONSE_RATE</dt>
    * <dd> <p>Unit: Percent</p> <p>Valid groupings and filters: AI Agent ID, AI Agent
-   * Name, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile</p> <p>UI
-   * name: <a
+   * Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing
+   * Profile, Session ID</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#proactive-intents-response-rate">Proactive
    * Intent Response Rate</a> </p> </dd> <dt>PROACTIVE_INTENTS_ANSWERED</dt> <dd>
    * <p>Unit: Count</p> <p>Valid groupings and filters: AI Agent ID, AI Agent Name,
-   * AI Agent Type, AI Use Case, Channel, Queue, Routing Profile</p> <p>UI name: <a
+   * AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing
+   * Profile, Session ID</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#proactive-intents-answered">Proactive
    * Intents Answered</a> </p> </dd> <dt>PROACTIVE_INTENTS_DETECTED</dt> <dd>
    * <p>Unit: Count</p> <p>Valid groupings and filters: AI Agent ID, AI Agent Name,
-   * AI Agent Type, AI Use Case, Channel, Queue, Routing Profile</p> <p>UI name: <a
+   * AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing
+   * Profile, Session ID</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#proactive-intents-detected">Proactive
    * Intents Detected</a> </p> </dd> <dt>PROACTIVE_INTENTS_ENGAGED</dt> <dd> <p>Unit:
    * Count</p> <p>Valid groupings and filters: AI Agent ID, AI Agent Name, AI Agent
-   * Type, AI Use Case, Channel, Queue, Routing Profile</p> <p>UI name: <a
+   * Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile,
+   * Session ID</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#proactive-intents-engaged">Proactive
    * Intents Engaged</a> </p> </dd> <dt>AVG_HOLD_TIME</dt> <dd> <p>Unit: Seconds</p>
    * <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
@@ -1111,9 +1105,37 @@ class GetMetricDataV2Request : public ConnectRequest {
    * filters: Campaign, Channel, contact/segmentAttributes/connect:Subtype, Campaign
    * Execution Timestamp</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#recipients-interacted">Recipients
-   * interacted</a> </p> </dd> <dt>RECIPIENTS_TARGETED</dt> <dd> <p>This metric is
-   * only available for outbound campaigns initiated using a customer segment. It is
-   * not available for event triggered campaigns.</p> <p>Unit: Count</p> <p>Valid
+   * interacted</a> </p> </dd> <dt>AI_AGENT_COLLABORATORS</dt> <dd> <p>Unit:
+   * Count</p> <p>Valid groupings and filters: AI Agent ID, AI Agent Name, AI Agent
+   * Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile,
+   * Session ID</p> <p>UI name: <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-agent-collaborators">AI
+   * Agent Collaborators</a> </p> </dd> <dt>AI_AGENT_COLLABORATION_INVOCATIONS</dt>
+   * <dd> <p>Unit: Count</p> <p>Valid groupings and filters: AI Agent ID, AI Agent
+   * Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing
+   * Profile, Session ID</p> <p>UI name: <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-agent-collaboration-invocations">AI
+   * Agent Collaboration Invocations</a> </p> </dd>
+   * <dt>AI_AGENT_SELECTION_ACCURACY</dt> <dd> <p>Unit: Double</p> <p>Valid groupings
+   * and filters: AI Agent, AI Agent ID, AI Agent Name, AI Agent Name Version, AI
+   * Agent Type, AI Use Case, Channel, Queue, Routing Profile, Session ID</p> <p>UI
+   * name: <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-agent-selection-accuracy">AI
+   * Agent Selection Accuracy</a> </p>  <p>This metric is available as part of
+   * Connect Customer AI.</p>  </dd> <dt>AVG_AI_AGENT_INVOCATION_LATENCY</dt>
+   * <dd> <p>Unit: Milliseconds</p> <p>Valid groupings and filters: AI Agent, AI
+   * Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case,
+   * Channel, Queue, Routing Profile, Session ID</p> <p>UI name: <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-ai-agent-invocation-latency">Average
+   * AI Agent Invocation Latency</a> </p> </dd> <dt>CONTEXT_FIDELITY_SCORE</dt> <dd>
+   * <p>Unit: Double</p> <p>Valid groupings and filters: AI Agent, AI Agent ID, AI
+   * Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue,
+   * Routing Profile, Session ID</p> <p>UI name: <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#context-fidelity-score">Context
+   * Fidelity Score</a> </p>  <p>This metric is available as part of Connect
+   * Customer AI.</p>  </dd> <dt>RECIPIENTS_TARGETED</dt> <dd> <p>This metric
+   * is only available for outbound campaigns initiated using a customer segment. It
+   * is not available for event triggered campaigns.</p> <p>Unit: Count</p> <p>Valid
    * groupings and filters: Campaign, Campaign Execution Timestamp</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#recipients-targeted">Recipients
    * targeted</a> </p> </dd> <dt>REOPENED_CASE_ACTIONS</dt> <dd> <p>Unit: Count</p>

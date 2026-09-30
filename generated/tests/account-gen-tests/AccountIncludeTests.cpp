@@ -47,6 +47,7 @@
 #include <aws/account/model/ListRegionsPaginationTraits.h>
 #include <aws/account/model/ListRegionsRequest.h>
 #include <aws/account/model/ListRegionsResult.h>
+#include <aws/account/model/PhoneNumberVerificationStatus.h>
 #include <aws/account/model/PrimaryEmailUpdateStatus.h>
 #include <aws/account/model/PutAccountNameRequest.h>
 #include <aws/account/model/PutAlternateContactRequest.h>
@@ -55,12 +56,16 @@
 #include <aws/account/model/RegionOptStatus.h>
 #include <aws/account/model/ResourceNotFoundException.h>
 #include <aws/account/model/ResourceUnavailableException.h>
+#include <aws/account/model/SendPhoneNumberVerificationRequest.h>
+#include <aws/account/model/SendPhoneNumberVerificationResult.h>
 #include <aws/account/model/StartPrimaryEmailUpdateRequest.h>
 #include <aws/account/model/StartPrimaryEmailUpdateResult.h>
 #include <aws/account/model/TooManyRequestsException.h>
 #include <aws/account/model/ValidationException.h>
 #include <aws/account/model/ValidationExceptionField.h>
 #include <aws/account/model/ValidationExceptionReason.h>
+#include <aws/account/model/VerifyPhoneNumberRequest.h>
+#include <aws/account/model/VerifyPhoneNumberResult.h>
 
 using AccountIncludeTest = ::testing::Test;
 

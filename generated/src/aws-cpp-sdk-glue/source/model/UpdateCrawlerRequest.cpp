@@ -75,6 +75,10 @@ Aws::String UpdateCrawlerRequest::SerializePayload() const {
     payload.WithString("CrawlerSecurityConfiguration", m_crawlerSecurityConfiguration);
   }
 
+  if (m_catalogIdHasBeenSet) {
+    payload.WithString("CatalogId", m_catalogId);
+  }
+
   return payload.View().WriteReadable();
 }
 

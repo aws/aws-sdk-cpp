@@ -10,6 +10,7 @@
 #include <aws/s3vectors/model/DataType.h>
 #include <aws/s3vectors/model/DistanceMetric.h>
 #include <aws/s3vectors/model/EncryptionConfiguration.h>
+#include <aws/s3vectors/model/IndexMode.h>
 #include <aws/s3vectors/model/MetadataConfiguration.h>
 
 #include <utility>
@@ -194,6 +195,25 @@ class Index {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The mode that determines how the vector index processes queries.</p> <p>Valid
+   * values:</p> <ul> <li> <p> <code>CLASSIC</code> - Applies metadata filters during
+   * the vector search.</p> </li> <li> <p> <code>ENHANCED</code> - Applies metadata
+   * filters before the vector search.</p> </li> </ul>
+   */
+  inline IndexMode GetIndexMode() const { return m_indexMode; }
+  inline bool IndexModeHasBeenSet() const { return m_indexModeHasBeenSet; }
+  inline void SetIndexMode(IndexMode value) {
+    m_indexModeHasBeenSet = true;
+    m_indexMode = value;
+  }
+  inline Index& WithIndexMode(IndexMode value) {
+    SetIndexMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_vectorBucketName;
 
@@ -212,6 +232,8 @@ class Index {
   MetadataConfiguration m_metadataConfiguration;
 
   EncryptionConfiguration m_encryptionConfiguration;
+
+  IndexMode m_indexMode{IndexMode::NOT_SET};
   bool m_vectorBucketNameHasBeenSet = false;
   bool m_indexNameHasBeenSet = false;
   bool m_indexArnHasBeenSet = false;
@@ -221,6 +243,7 @@ class Index {
   bool m_distanceMetricHasBeenSet = false;
   bool m_metadataConfigurationHasBeenSet = false;
   bool m_encryptionConfigurationHasBeenSet = false;
+  bool m_indexModeHasBeenSet = false;
 };
 
 }  // namespace Model

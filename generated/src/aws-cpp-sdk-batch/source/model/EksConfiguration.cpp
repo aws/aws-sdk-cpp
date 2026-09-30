@@ -26,6 +26,10 @@ EksConfiguration& EksConfiguration::operator=(JsonView jsonValue) {
     m_kubernetesNamespace = jsonValue.GetString("kubernetesNamespace");
     m_kubernetesNamespaceHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("accessEntry")) {
+    m_accessEntry = jsonValue.GetObject("accessEntry");
+    m_accessEntryHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue EksConfiguration::Jsonize() const {
 
   if (m_kubernetesNamespaceHasBeenSet) {
     payload.WithString("kubernetesNamespace", m_kubernetesNamespace);
+  }
+
+  if (m_accessEntryHasBeenSet) {
+    payload.WithObject("accessEntry", m_accessEntry.Jsonize());
   }
 
   return payload;

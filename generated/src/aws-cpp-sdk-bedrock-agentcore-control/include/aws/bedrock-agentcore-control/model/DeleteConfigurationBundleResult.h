@@ -31,6 +31,23 @@ class DeleteConfigurationBundleResult {
 
   ///@{
   /**
+   * <p>The Amazon Resource Name (ARN) of the deleted configuration bundle.</p>
+   */
+  inline const Aws::String& GetBundleArn() const { return m_bundleArn; }
+  template <typename BundleArnT = Aws::String>
+  void SetBundleArn(BundleArnT&& value) {
+    m_bundleArnHasBeenSet = true;
+    m_bundleArn = std::forward<BundleArnT>(value);
+  }
+  template <typename BundleArnT = Aws::String>
+  DeleteConfigurationBundleResult& WithBundleArn(BundleArnT&& value) {
+    SetBundleArn(std::forward<BundleArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The unique identifier of the deleted configuration bundle.</p>
    */
   inline const Aws::String& GetBundleId() const { return m_bundleId; }
@@ -78,12 +95,15 @@ class DeleteConfigurationBundleResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
+  Aws::String m_bundleArn;
+
   Aws::String m_bundleId;
 
   ConfigurationBundleStatus m_status{ConfigurationBundleStatus::NOT_SET};
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_bundleArnHasBeenSet = false;
   bool m_bundleIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

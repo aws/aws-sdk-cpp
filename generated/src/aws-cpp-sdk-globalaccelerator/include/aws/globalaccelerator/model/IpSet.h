@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/globalaccelerator/GlobalAccelerator_EXPORTS.h>
+#include <aws/globalaccelerator/model/IpAddressDetail.h>
 #include <aws/globalaccelerator/model/IpAddressFamily.h>
 
 #include <utility>
@@ -74,12 +75,41 @@ class IpSet {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The array of IP addresses in the IP address set, with detailed information
+   * about the IP addresses. An IP address set can have a maximum of two IP
+   * addresses.</p>
+   */
+  inline const Aws::Vector<IpAddressDetail>& GetIpAddressDetails() const { return m_ipAddressDetails; }
+  inline bool IpAddressDetailsHasBeenSet() const { return m_ipAddressDetailsHasBeenSet; }
+  template <typename IpAddressDetailsT = Aws::Vector<IpAddressDetail>>
+  void SetIpAddressDetails(IpAddressDetailsT&& value) {
+    m_ipAddressDetailsHasBeenSet = true;
+    m_ipAddressDetails = std::forward<IpAddressDetailsT>(value);
+  }
+  template <typename IpAddressDetailsT = Aws::Vector<IpAddressDetail>>
+  IpSet& WithIpAddressDetails(IpAddressDetailsT&& value) {
+    SetIpAddressDetails(std::forward<IpAddressDetailsT>(value));
+    return *this;
+  }
+  template <typename IpAddressDetailsT = IpAddressDetail>
+  IpSet& AddIpAddressDetails(IpAddressDetailsT&& value) {
+    m_ipAddressDetailsHasBeenSet = true;
+    m_ipAddressDetails.emplace_back(std::forward<IpAddressDetailsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_ipAddresses;
 
   IpAddressFamily m_ipAddressFamily{IpAddressFamily::NOT_SET};
+
+  Aws::Vector<IpAddressDetail> m_ipAddressDetails;
   bool m_ipAddressesHasBeenSet = false;
   bool m_ipAddressFamilyHasBeenSet = false;
+  bool m_ipAddressDetailsHasBeenSet = false;
 };
 
 }  // namespace Model

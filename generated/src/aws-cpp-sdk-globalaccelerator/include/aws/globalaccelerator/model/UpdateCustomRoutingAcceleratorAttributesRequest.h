@@ -94,9 +94,8 @@ class UpdateCustomRoutingAcceleratorAttributesRequest : public GlobalAccelerator
   /**
    * <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs.
    * Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>
-   * <p>If you don’t specify a prefix, the flow logs are stored in the root of the
-   * bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket
-   * folder structure will include a double slash (//), like the following:</p>
+   * <p>If you specify slash (/) for the S3 bucket prefix, the log file bucket folder
+   * structure will include a double slash (//), like the following:</p>
    * <p>DOC-EXAMPLE-BUCKET//AWSLogs/aws_account_id</p>
    */
   inline const Aws::String& GetFlowLogsS3Prefix() const { return m_flowLogsS3Prefix; }

@@ -34,6 +34,14 @@ EventMetadata& EventMetadata::operator=(JsonView jsonValue) {
     m_instance = jsonValue.GetObject("Instance");
     m_instanceHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DatabaseConfiguration")) {
+    m_databaseConfiguration = jsonValue.GetObject("DatabaseConfiguration");
+    m_databaseConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SlurmHealth")) {
+    m_slurmHealth = jsonValue.GetObject("SlurmHealth");
+    m_slurmHealthHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +62,14 @@ JsonValue EventMetadata::Jsonize() const {
 
   if (m_instanceHasBeenSet) {
     payload.WithObject("Instance", m_instance.Jsonize());
+  }
+
+  if (m_databaseConfigurationHasBeenSet) {
+    payload.WithObject("DatabaseConfiguration", m_databaseConfiguration.Jsonize());
+  }
+
+  if (m_slurmHealthHasBeenSet) {
+    payload.WithObject("SlurmHealth", m_slurmHealth.Jsonize());
   }
 
   return payload;

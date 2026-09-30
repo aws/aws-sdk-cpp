@@ -62,6 +62,10 @@ RuleAction& RuleAction::operator=(JsonView jsonValue) {
     m_extractInformationAction = jsonValue.GetObject("ExtractInformationAction");
     m_extractInformationActionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SendInAppNotificationAction")) {
+    m_sendInAppNotificationAction = jsonValue.GetObject("SendInAppNotificationAction");
+    m_sendInAppNotificationActionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -110,6 +114,10 @@ JsonValue RuleAction::Jsonize() const {
 
   if (m_extractInformationActionHasBeenSet) {
     payload.WithObject("ExtractInformationAction", m_extractInformationAction.Jsonize());
+  }
+
+  if (m_sendInAppNotificationActionHasBeenSet) {
+    payload.WithObject("SendInAppNotificationAction", m_sendInAppNotificationAction.Jsonize());
   }
 
   return payload;

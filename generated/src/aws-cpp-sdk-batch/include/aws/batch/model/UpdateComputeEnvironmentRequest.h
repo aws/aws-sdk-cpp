@@ -9,6 +9,7 @@
 #include <aws/batch/model/CEState.h>
 #include <aws/batch/model/ComputeResourceUpdate.h>
 #include <aws/batch/model/EcsSettings.h>
+#include <aws/batch/model/EksConfigurationUpdate.h>
 #include <aws/batch/model/UpdatePolicy.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -227,6 +228,31 @@ class UpdateComputeEnvironmentRequest : public BatchRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Updates the Amazon EKS configuration for the compute environment. Only
+   * specify this parameter if the compute environment's
+   * <code>containerOrchestrationType</code> is <code>EKS</code>. Currently, the
+   * <code>accessEntry</code> setting is the only Amazon EKS configuration that you
+   * can change after the compute environment is created. For more information, see
+   * <a
+   * href="https://docs.aws.amazon.com/batch/latest/userguide/eks-access-entries.html">Amazon
+   * EKS access entry authentication</a> in the <i>Batch User Guide</i>.</p>
+   */
+  inline const EksConfigurationUpdate& GetEksConfiguration() const { return m_eksConfiguration; }
+  inline bool EksConfigurationHasBeenSet() const { return m_eksConfigurationHasBeenSet; }
+  template <typename EksConfigurationT = EksConfigurationUpdate>
+  void SetEksConfiguration(EksConfigurationT&& value) {
+    m_eksConfigurationHasBeenSet = true;
+    m_eksConfiguration = std::forward<EksConfigurationT>(value);
+  }
+  template <typename EksConfigurationT = EksConfigurationUpdate>
+  UpdateComputeEnvironmentRequest& WithEksConfiguration(EksConfigurationT&& value) {
+    SetEksConfiguration(std::forward<EksConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_computeEnvironment;
 
@@ -243,6 +269,8 @@ class UpdateComputeEnvironmentRequest : public BatchRequest {
   Aws::String m_context;
 
   EcsSettings m_ecsSettings;
+
+  EksConfigurationUpdate m_eksConfiguration;
   bool m_computeEnvironmentHasBeenSet = false;
   bool m_stateHasBeenSet = false;
   bool m_unmanagedvCpusHasBeenSet = false;
@@ -251,6 +279,7 @@ class UpdateComputeEnvironmentRequest : public BatchRequest {
   bool m_updatePolicyHasBeenSet = false;
   bool m_contextHasBeenSet = false;
   bool m_ecsSettingsHasBeenSet = false;
+  bool m_eksConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

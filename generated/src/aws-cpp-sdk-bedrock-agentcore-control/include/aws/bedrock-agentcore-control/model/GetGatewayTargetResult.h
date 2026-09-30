@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/AuthorizationData.h>
+#include <aws/bedrock-agentcore-control/model/CertificateConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/CredentialProviderConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ManagedResourceDetails.h>
 #include <aws/bedrock-agentcore-control/model/MetadataConfiguration.h>
@@ -328,6 +329,30 @@ class GetGatewayTargetResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The private certificate authority (CA) configurations for the gateway
+   * target.</p>
+   */
+  inline const Aws::Vector<CertificateConfiguration>& GetCertificateConfigurations() const { return m_certificateConfigurations; }
+  template <typename CertificateConfigurationsT = Aws::Vector<CertificateConfiguration>>
+  void SetCertificateConfigurations(CertificateConfigurationsT&& value) {
+    m_certificateConfigurationsHasBeenSet = true;
+    m_certificateConfigurations = std::forward<CertificateConfigurationsT>(value);
+  }
+  template <typename CertificateConfigurationsT = Aws::Vector<CertificateConfiguration>>
+  GetGatewayTargetResult& WithCertificateConfigurations(CertificateConfigurationsT&& value) {
+    SetCertificateConfigurations(std::forward<CertificateConfigurationsT>(value));
+    return *this;
+  }
+  template <typename CertificateConfigurationsT = CertificateConfiguration>
+  GetGatewayTargetResult& AddCertificateConfigurations(CertificateConfigurationsT&& value) {
+    m_certificateConfigurationsHasBeenSet = true;
+    m_certificateConfigurations.emplace_back(std::forward<CertificateConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -376,6 +401,8 @@ class GetGatewayTargetResult {
 
   TargetProtocolType m_protocolType{TargetProtocolType::NOT_SET};
 
+  Aws::Vector<CertificateConfiguration> m_certificateConfigurations;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_gatewayArnHasBeenSet = false;
@@ -394,6 +421,7 @@ class GetGatewayTargetResult {
   bool m_privateEndpointManagedResourcesHasBeenSet = false;
   bool m_authorizationDataHasBeenSet = false;
   bool m_protocolTypeHasBeenSet = false;
+  bool m_certificateConfigurationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

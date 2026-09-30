@@ -47,5 +47,9 @@ Aws::String UpdateComputeEnvironmentRequest::SerializePayload() const {
     payload.WithObject("ecsSettings", m_ecsSettings.Jsonize());
   }
 
+  if (m_eksConfigurationHasBeenSet) {
+    payload.WithObject("eksConfiguration", m_eksConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlRequest.h>
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/CertificateConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/CredentialProviderConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/MetadataConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/PrivateEndpoint.h>
@@ -195,6 +196,34 @@ class CreateGatewayTargetRequest : public BedrockAgentCoreControlRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The private certificate authority (CA) configurations for the gateway target.
+   * Use this to have the gateway trust a private CA when it establishes TLS
+   * connections to the target endpoint. Provide each certificate by reference to an
+   * Amazon S3 object or an Amazon Web Services Secrets Manager secret. You can
+   * specify only one certificate authority configuration in this list.</p>
+   */
+  inline const Aws::Vector<CertificateConfiguration>& GetCertificateConfigurations() const { return m_certificateConfigurations; }
+  inline bool CertificateConfigurationsHasBeenSet() const { return m_certificateConfigurationsHasBeenSet; }
+  template <typename CertificateConfigurationsT = Aws::Vector<CertificateConfiguration>>
+  void SetCertificateConfigurations(CertificateConfigurationsT&& value) {
+    m_certificateConfigurationsHasBeenSet = true;
+    m_certificateConfigurations = std::forward<CertificateConfigurationsT>(value);
+  }
+  template <typename CertificateConfigurationsT = Aws::Vector<CertificateConfiguration>>
+  CreateGatewayTargetRequest& WithCertificateConfigurations(CertificateConfigurationsT&& value) {
+    SetCertificateConfigurations(std::forward<CertificateConfigurationsT>(value));
+    return *this;
+  }
+  template <typename CertificateConfigurationsT = CertificateConfiguration>
+  CreateGatewayTargetRequest& AddCertificateConfigurations(CertificateConfigurationsT&& value) {
+    m_certificateConfigurationsHasBeenSet = true;
+    m_certificateConfigurations.emplace_back(std::forward<CertificateConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_gatewayIdentifier;
 
@@ -211,6 +240,8 @@ class CreateGatewayTargetRequest : public BedrockAgentCoreControlRequest {
   MetadataConfiguration m_metadataConfiguration;
 
   PrivateEndpoint m_privateEndpoint;
+
+  Aws::Vector<CertificateConfiguration> m_certificateConfigurations;
   bool m_gatewayIdentifierHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
@@ -219,6 +250,7 @@ class CreateGatewayTargetRequest : public BedrockAgentCoreControlRequest {
   bool m_credentialProviderConfigurationsHasBeenSet = false;
   bool m_metadataConfigurationHasBeenSet = false;
   bool m_privateEndpointHasBeenSet = false;
+  bool m_certificateConfigurationsHasBeenSet = false;
 };
 
 }  // namespace Model

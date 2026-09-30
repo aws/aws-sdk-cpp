@@ -30,6 +30,10 @@ VpcLatticeConfiguration& VpcLatticeConfiguration::operator=(JsonView jsonValue) 
     m_portName = jsonValue.GetString("portName");
     m_portNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("advancedConfiguration")) {
+    m_advancedConfiguration = jsonValue.GetObject("advancedConfiguration");
+    m_advancedConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue VpcLatticeConfiguration::Jsonize() const {
 
   if (m_portNameHasBeenSet) {
     payload.WithString("portName", m_portName);
+  }
+
+  if (m_advancedConfigurationHasBeenSet) {
+    payload.WithObject("advancedConfiguration", m_advancedConfiguration.Jsonize());
   }
 
   return payload;

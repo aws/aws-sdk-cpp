@@ -142,7 +142,12 @@ class AWS_BATCH_API BatchClient : public Aws::Client::AWSJsonClient,
    * <code>errors</code> list. The response returns an HTTP status code of
    * <code>200</code> even when some jobs encountered errors, so check the
    * <code>errors</code> list. Jobs that can't be found are treated as successfully
-   * processed.</p><p><h3>See Also:</h3>   <a
+   * processed.</p>  <p>This operation requires
+   * <code>batch:CancelJob</code> permission for each job in the request. There is no
+   * separate <code>batch:CancelJobs</code> IAM action. If a caller's IAM policy
+   * grants <code>batch:CancelJob</code>, they can use both the singular
+   * <a>CancelJob</a> and bulk <code>CancelJobs</code> operations.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CancelJobs">AWS
    * API Reference</a></p>
    */
@@ -1219,7 +1224,12 @@ class AWS_BATCH_API BatchClient : public Aws::Client::AWSJsonClient,
    * <code>errors</code> list. The response returns an HTTP status code of
    * <code>200</code> even when some jobs encountered errors, so check the
    * <code>errors</code> list. Jobs that can't be found are treated as successfully
-   * processed.</p><p><h3>See Also:</h3>   <a
+   * processed.</p>  <p>This operation requires
+   * <code>batch:TerminateJob</code> permission for each job in the request. There is
+   * no separate <code>batch:TerminateJobs</code> IAM action. If a caller's IAM
+   * policy grants <code>batch:TerminateJob</code>, they can use both the singular
+   * <a>TerminateJob</a> and bulk <code>TerminateJobs</code> operations.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TerminateJobs">AWS
    * API Reference</a></p>
    */
@@ -1277,7 +1287,13 @@ class AWS_BATCH_API BatchClient : public Aws::Client::AWSJsonClient,
    * errors are reported in the <code>errors</code> list. The response returns an
    * HTTP status code of <code>200</code> even when some service jobs encountered
    * errors, so check the <code>errors</code> list. Service jobs that can't be found
-   * are treated as successfully processed.</p><p><h3>See Also:</h3>   <a
+   * are treated as successfully processed.</p>  <p>This operation
+   * requires <code>batch:TerminateServiceJob</code> permission for each service job
+   * in the request. There is no separate <code>batch:TerminateServiceJobs</code> IAM
+   * action. If a caller's IAM policy grants <code>batch:TerminateServiceJob</code>,
+   * they can use both the singular <code>TerminateServiceJob</code> and bulk
+   * <code>TerminateServiceJobs</code> operations.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TerminateServiceJobs">AWS
    * API Reference</a></p>
    */

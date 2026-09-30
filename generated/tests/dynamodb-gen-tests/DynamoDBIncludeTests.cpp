@@ -137,6 +137,7 @@
 #include <aws/dynamodb/model/ExportType.h>
 #include <aws/dynamodb/model/ExportViewType.h>
 #include <aws/dynamodb/model/FailureException.h>
+#include <aws/dynamodb/model/FilterSpecification.h>
 #include <aws/dynamodb/model/Get.h>
 #include <aws/dynamodb/model/GetItemRequest.h>
 #include <aws/dynamodb/model/GetItemResult.h>

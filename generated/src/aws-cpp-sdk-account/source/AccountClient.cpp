@@ -21,7 +21,9 @@
 #include <aws/account/model/PutAccountNameRequest.h>
 #include <aws/account/model/PutAlternateContactRequest.h>
 #include <aws/account/model/PutContactInformationRequest.h>
+#include <aws/account/model/SendPhoneNumberVerificationRequest.h>
 #include <aws/account/model/StartPrimaryEmailUpdateRequest.h>
+#include <aws/account/model/VerifyPhoneNumberRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/CoreErrors.h>
@@ -352,6 +354,17 @@ PutContactInformationOutcome AccountClient::PutContactInformation(const PutConta
                             : PutContactInformationOutcome(std::move(result.GetError()));
 }
 
+SendPhoneNumberVerificationOutcome AccountClient::SendPhoneNumberVerification(const SendPhoneNumberVerificationRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/sendPhoneNumberVerification");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendPhoneNumberVerificationOutcome(result.GetResultWithOwnership())
+                            : SendPhoneNumberVerificationOutcome(std::move(result.GetError()));
+}
+
 StartPrimaryEmailUpdateOutcome AccountClient::StartPrimaryEmailUpdate(const StartPrimaryEmailUpdateRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -361,4 +374,15 @@ StartPrimaryEmailUpdateOutcome AccountClient::StartPrimaryEmailUpdate(const Star
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? StartPrimaryEmailUpdateOutcome(result.GetResultWithOwnership())
                             : StartPrimaryEmailUpdateOutcome(std::move(result.GetError()));
+}
+
+VerifyPhoneNumberOutcome AccountClient::VerifyPhoneNumber(const VerifyPhoneNumberRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/verifyPhoneNumber");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? VerifyPhoneNumberOutcome(result.GetResultWithOwnership())
+                            : VerifyPhoneNumberOutcome(std::move(result.GetError()));
 }

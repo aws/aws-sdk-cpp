@@ -59,6 +59,10 @@ Aws::String ExportTableToPointInTimeRequest::SerializePayload() const {
     payload.WithObject("IncrementalExportSpecification", m_incrementalExportSpecification.Jsonize());
   }
 
+  if (m_filterSpecificationHasBeenSet) {
+    payload.WithObject("FilterSpecification", m_filterSpecification.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

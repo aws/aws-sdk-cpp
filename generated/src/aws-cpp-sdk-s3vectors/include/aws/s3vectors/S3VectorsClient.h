@@ -525,6 +525,41 @@ class AWS_S3VECTORS_API S3VectorsClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Updates the default index mode for a vector bucket. The updated default
+   * applies to vector indexes that you create after the request succeeds. The
+   * operation doesn't change existing vector indexes. To specify the vector bucket,
+   * you must use either the vector bucket name or the vector bucket Amazon Resource
+   * Name (ARN).</p> <dl> <dt>Permissions</dt> <dd> <p>You must have the
+   * <code>s3vectors:PutVectorBucketDefaultIndexMode</code> permission to use this
+   * operation.</p> </dd> </dl><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/PutVectorBucketDefaultIndexMode">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutVectorBucketDefaultIndexModeOutcome PutVectorBucketDefaultIndexMode(
+      const Model::PutVectorBucketDefaultIndexModeRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutVectorBucketDefaultIndexMode that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename PutVectorBucketDefaultIndexModeRequestT = Model::PutVectorBucketDefaultIndexModeRequest>
+  Model::PutVectorBucketDefaultIndexModeOutcomeCallable PutVectorBucketDefaultIndexModeCallable(
+      const PutVectorBucketDefaultIndexModeRequestT& request) const {
+    return SubmitCallable(&S3VectorsClient::PutVectorBucketDefaultIndexMode, request);
+  }
+
+  /**
+   * An Async wrapper for PutVectorBucketDefaultIndexMode that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename PutVectorBucketDefaultIndexModeRequestT = Model::PutVectorBucketDefaultIndexModeRequest>
+  void PutVectorBucketDefaultIndexModeAsync(const PutVectorBucketDefaultIndexModeRequestT& request,
+                                            const PutVectorBucketDefaultIndexModeResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3VectorsClient::PutVectorBucketDefaultIndexMode, request, handler, context);
+  }
+
+  /**
    * <p>Creates a bucket policy for a vector bucket. To specify the bucket, you must
    * use either the vector bucket name or the vector bucket Amazon Resource Name
    * (ARN). </p> <dl> <dt>Permissions</dt> <dd> <p>You must have the
@@ -705,6 +740,39 @@ class AWS_S3VECTORS_API S3VectorsClient : public Aws::Client::AWSJsonClient,
   void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&S3VectorsClient::UntagResource, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the mode for an existing vector index. You can set the mode to
+   * <code>ENHANCED</code> for any vector index. You can set the mode to
+   * <code>CLASSIC</code> only for a vector index in a vector bucket created before
+   * September 30, 2026. This operation doesn't change the default index mode of the
+   * vector bucket or the mode of other vector indexes. Specify the vector index by
+   * using its Amazon Resource Name (ARN) or both the vector bucket name and vector
+   * index name.</p> <dl> <dt>Permissions</dt> <dd> <p>You must have the
+   * <code>s3vectors:UpdateIndexMode</code> permission to use this operation.</p>
+   * </dd> </dl><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/UpdateIndexMode">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateIndexModeOutcome UpdateIndexMode(const Model::UpdateIndexModeRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateIndexMode that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UpdateIndexModeRequestT = Model::UpdateIndexModeRequest>
+  Model::UpdateIndexModeOutcomeCallable UpdateIndexModeCallable(const UpdateIndexModeRequestT& request) const {
+    return SubmitCallable(&S3VectorsClient::UpdateIndexMode, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateIndexMode that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UpdateIndexModeRequestT = Model::UpdateIndexModeRequest>
+  void UpdateIndexModeAsync(const UpdateIndexModeRequestT& request, const UpdateIndexModeResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3VectorsClient::UpdateIndexMode, request, handler, context);
   }
 
   virtual void OverrideEndpoint(const Aws::String& endpoint);

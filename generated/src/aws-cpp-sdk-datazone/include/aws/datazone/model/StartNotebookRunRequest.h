@@ -11,6 +11,7 @@
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/datazone/model/ComputeConfig.h>
 #include <aws/datazone/model/NetworkConfig.h>
+#include <aws/datazone/model/NotificationConfig.h>
 #include <aws/datazone/model/TimeoutConfig.h>
 #include <aws/datazone/model/TriggerSource.h>
 
@@ -166,6 +167,25 @@ class StartNotebookRunRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The notification configuration for the notebook run. Use this to specify the
+   * notebook run states that trigger notifications.</p>
+   */
+  inline const NotificationConfig& GetNotificationConfiguration() const { return m_notificationConfiguration; }
+  inline bool NotificationConfigurationHasBeenSet() const { return m_notificationConfigurationHasBeenSet; }
+  template <typename NotificationConfigurationT = NotificationConfig>
+  void SetNotificationConfiguration(NotificationConfigurationT&& value) {
+    m_notificationConfigurationHasBeenSet = true;
+    m_notificationConfiguration = std::forward<NotificationConfigurationT>(value);
+  }
+  template <typename NotificationConfigurationT = NotificationConfig>
+  StartNotebookRunRequest& WithNotificationConfiguration(NotificationConfigurationT&& value) {
+    SetNotificationConfiguration(std::forward<NotificationConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The source that triggered the notebook run.</p>
    */
   inline const TriggerSource& GetTriggerSource() const { return m_triggerSource; }
@@ -267,6 +287,8 @@ class StartNotebookRunRequest : public DataZoneRequest {
 
   TimeoutConfig m_timeoutConfiguration;
 
+  NotificationConfig m_notificationConfiguration;
+
   TriggerSource m_triggerSource;
 
   Aws::Map<Aws::String, Aws::String> m_metadata;
@@ -281,6 +303,7 @@ class StartNotebookRunRequest : public DataZoneRequest {
   bool m_computeConfigurationHasBeenSet = false;
   bool m_networkConfigurationHasBeenSet = false;
   bool m_timeoutConfigurationHasBeenSet = false;
+  bool m_notificationConfigurationHasBeenSet = false;
   bool m_triggerSourceHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
   bool m_parametersHasBeenSet = false;

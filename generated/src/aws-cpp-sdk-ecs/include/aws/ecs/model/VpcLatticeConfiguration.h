@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/ECS_EXPORTS.h>
+#include <aws/ecs/model/VpcLatticeAdvancedConfiguration.h>
 
 #include <utility>
 
@@ -92,15 +93,34 @@ class VpcLatticeConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const VpcLatticeAdvancedConfiguration& GetAdvancedConfiguration() const { return m_advancedConfiguration; }
+  inline bool AdvancedConfigurationHasBeenSet() const { return m_advancedConfigurationHasBeenSet; }
+  template <typename AdvancedConfigurationT = VpcLatticeAdvancedConfiguration>
+  void SetAdvancedConfiguration(AdvancedConfigurationT&& value) {
+    m_advancedConfigurationHasBeenSet = true;
+    m_advancedConfiguration = std::forward<AdvancedConfigurationT>(value);
+  }
+  template <typename AdvancedConfigurationT = VpcLatticeAdvancedConfiguration>
+  VpcLatticeConfiguration& WithAdvancedConfiguration(AdvancedConfigurationT&& value) {
+    SetAdvancedConfiguration(std::forward<AdvancedConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_roleArn;
 
   Aws::String m_targetGroupArn;
 
   Aws::String m_portName;
+
+  VpcLatticeAdvancedConfiguration m_advancedConfiguration;
   bool m_roleArnHasBeenSet = false;
   bool m_targetGroupArnHasBeenSet = false;
   bool m_portNameHasBeenSet = false;
+  bool m_advancedConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

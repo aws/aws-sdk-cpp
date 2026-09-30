@@ -23,6 +23,10 @@ ClusterOrchestratorSlurmConfig& ClusterOrchestratorSlurmConfig::operator=(JsonVi
         ClusterSlurmConfigStrategyMapper::GetClusterSlurmConfigStrategyForName(jsonValue.GetString("SlurmConfigStrategy"));
     m_slurmConfigStrategyHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AccountingDatabase")) {
+    m_accountingDatabase = jsonValue.GetObject("AccountingDatabase");
+    m_accountingDatabaseHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -32,6 +36,10 @@ JsonValue ClusterOrchestratorSlurmConfig::Jsonize() const {
   if (m_slurmConfigStrategyHasBeenSet) {
     payload.WithString("SlurmConfigStrategy",
                        ClusterSlurmConfigStrategyMapper::GetNameForClusterSlurmConfigStrategy(m_slurmConfigStrategy));
+  }
+
+  if (m_accountingDatabaseHasBeenSet) {
+    payload.WithObject("AccountingDatabase", m_accountingDatabase.Jsonize());
   }
 
   return payload;

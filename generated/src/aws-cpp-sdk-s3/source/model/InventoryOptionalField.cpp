@@ -33,6 +33,7 @@ static const int ChecksumAlgorithm_HASH = HashingUtils::HashString("ChecksumAlgo
 static const int ObjectAccessControlList_HASH = HashingUtils::HashString("ObjectAccessControlList");
 static const int ObjectOwner_HASH = HashingUtils::HashString("ObjectOwner");
 static const int LifecycleExpirationDate_HASH = HashingUtils::HashString("LifecycleExpirationDate");
+static const int IntelligentTieringReferenceDate_HASH = HashingUtils::HashString("IntelligentTieringReferenceDate");
 
 InventoryOptionalField GetInventoryOptionalFieldForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -72,6 +73,8 @@ InventoryOptionalField GetInventoryOptionalFieldForName(const Aws::String& name)
     return InventoryOptionalField::ObjectOwner;
   } else if (hashCode == LifecycleExpirationDate_HASH) {
     return InventoryOptionalField::LifecycleExpirationDate;
+  } else if (hashCode == IntelligentTieringReferenceDate_HASH) {
+    return InventoryOptionalField::IntelligentTieringReferenceDate;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -122,6 +125,8 @@ Aws::String GetNameForInventoryOptionalField(InventoryOptionalField enumValue) {
       return "ObjectOwner";
     case InventoryOptionalField::LifecycleExpirationDate:
       return "LifecycleExpirationDate";
+    case InventoryOptionalField::IntelligentTieringReferenceDate:
+      return "IntelligentTieringReferenceDate";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

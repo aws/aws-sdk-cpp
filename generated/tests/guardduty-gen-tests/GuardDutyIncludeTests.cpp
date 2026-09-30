@@ -395,6 +395,7 @@
 #include <aws/guardduty/model/MalwareProtectionScanType.h>
 #include <aws/guardduty/model/MalwareScan.h>
 #include <aws/guardduty/model/MalwareScanDetails.h>
+#include <aws/guardduty/model/ManagedBy.h>
 #include <aws/guardduty/model/ManagementType.h>
 #include <aws/guardduty/model/Master.h>
 #include <aws/guardduty/model/Member.h>

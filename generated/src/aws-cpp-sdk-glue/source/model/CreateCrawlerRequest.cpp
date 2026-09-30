@@ -83,6 +83,10 @@ Aws::String CreateCrawlerRequest::SerializePayload() const {
     payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
+  if (m_catalogIdHasBeenSet) {
+    payload.WithString("CatalogId", m_catalogId);
+  }
+
   return payload.View().WriteReadable();
 }
 

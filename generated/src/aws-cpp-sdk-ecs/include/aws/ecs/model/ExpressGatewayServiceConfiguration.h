@@ -152,16 +152,12 @@ class ExpressGatewayServiceConfiguration {
 
   ///@{
   /**
-   * <p>The CPU architecture that the tasks in this service revision run on. This is
-   * the architecture from the task definition that the service revision uses, so it
-   * reflects the default or the previously configured architecture when the request
-   * that created the revision didn't specify one.</p> <p>Valid values:</p> <ul> <li>
-   * <p> <code>X86_64</code> - The x86 64-bit architecture.</p> </li> <li> <p>
-   * <code>ARM64</code> - The 64-bit ARM architecture.</p> </li> </ul> <p>This value
-   * isn't returned when the task definition for the service revision doesn't specify
-   * a runtime platform. Because the architecture comes from each service revision's
-   * own task definition, revisions of the same service can report different
-   * architectures.</p>
+   * <p>The CPU architecture that the task runs on.</p> <p>Valid values:</p> <ul>
+   * <li> <p> <code>X86_64</code> - The x86 64-bit architecture.</p> </li> <li> <p>
+   * <code>ARM64</code> - The 64-bit ARM architecture.</p> </li> </ul> <p>Different
+   * service revisions can report different architectures. This value isn't returned
+   * when the service uses a customer-provided task definition that doesn't specify a
+   * CPU architecture.</p>
    */
   inline ExpressCpuArchitecture GetCpuArchitecture() const { return m_cpuArchitecture; }
   inline bool CpuArchitectureHasBeenSet() const { return m_cpuArchitectureHasBeenSet; }

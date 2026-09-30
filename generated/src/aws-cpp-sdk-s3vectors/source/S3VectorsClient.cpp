@@ -34,11 +34,13 @@
 #include <aws/s3vectors/model/ListTagsForResourceRequest.h>
 #include <aws/s3vectors/model/ListVectorBucketsRequest.h>
 #include <aws/s3vectors/model/ListVectorsRequest.h>
+#include <aws/s3vectors/model/PutVectorBucketDefaultIndexModeRequest.h>
 #include <aws/s3vectors/model/PutVectorBucketPolicyRequest.h>
 #include <aws/s3vectors/model/PutVectorsRequest.h>
 #include <aws/s3vectors/model/QueryVectorsRequest.h>
 #include <aws/s3vectors/model/TagResourceRequest.h>
 #include <aws/s3vectors/model/UntagResourceRequest.h>
+#include <aws/s3vectors/model/UpdateIndexModeRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -347,6 +349,18 @@ ListVectorsOutcome S3VectorsClient::ListVectors(const ListVectorsRequest& reques
   return result.IsSuccess() ? ListVectorsOutcome(result.GetResultWithOwnership()) : ListVectorsOutcome(std::move(result.GetError()));
 }
 
+PutVectorBucketDefaultIndexModeOutcome S3VectorsClient::PutVectorBucketDefaultIndexMode(
+    const PutVectorBucketDefaultIndexModeRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/PutVectorBucketDefaultIndexMode");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutVectorBucketDefaultIndexModeOutcome(result.GetResultWithOwnership())
+                            : PutVectorBucketDefaultIndexModeOutcome(std::move(result.GetError()));
+}
+
 PutVectorBucketPolicyOutcome S3VectorsClient::PutVectorBucketPolicy(const PutVectorBucketPolicyRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -415,4 +429,15 @@ UntagResourceOutcome S3VectorsClient::UntagResource(const UntagResourceRequest& 
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
+}
+
+UpdateIndexModeOutcome S3VectorsClient::UpdateIndexMode(const UpdateIndexModeRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateIndexMode");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateIndexModeOutcome(result.GetResultWithOwnership())
+                            : UpdateIndexModeOutcome(std::move(result.GetError()));
 }

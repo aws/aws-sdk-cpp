@@ -10,6 +10,7 @@
 #include <aws/dynamodb/model/ExportFormat.h>
 #include <aws/dynamodb/model/ExportStatus.h>
 #include <aws/dynamodb/model/ExportType.h>
+#include <aws/dynamodb/model/FilterSpecification.h>
 #include <aws/dynamodb/model/IncrementalExportSpecification.h>
 #include <aws/dynamodb/model/S3SseAlgorithm.h>
 
@@ -416,6 +417,26 @@ class ExportDescription {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The filter criteria applied to the export. When present, only items that
+   * match the specified key conditions and filter expressions are included in the
+   * export output.</p>
+   */
+  inline const FilterSpecification& GetFilterSpecification() const { return m_filterSpecification; }
+  inline bool FilterSpecificationHasBeenSet() const { return m_filterSpecificationHasBeenSet; }
+  template <typename FilterSpecificationT = FilterSpecification>
+  void SetFilterSpecification(FilterSpecificationT&& value) {
+    m_filterSpecificationHasBeenSet = true;
+    m_filterSpecification = std::forward<FilterSpecificationT>(value);
+  }
+  template <typename FilterSpecificationT = FilterSpecification>
+  ExportDescription& WithFilterSpecification(FilterSpecificationT&& value) {
+    SetFilterSpecification(std::forward<FilterSpecificationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_exportArn;
 
@@ -458,6 +479,8 @@ class ExportDescription {
   ExportType m_exportType{ExportType::NOT_SET};
 
   IncrementalExportSpecification m_incrementalExportSpecification;
+
+  FilterSpecification m_filterSpecification;
   bool m_exportArnHasBeenSet = false;
   bool m_exportStatusHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
@@ -479,6 +502,7 @@ class ExportDescription {
   bool m_itemCountHasBeenSet = false;
   bool m_exportTypeHasBeenSet = false;
   bool m_incrementalExportSpecificationHasBeenSet = false;
+  bool m_filterSpecificationHasBeenSet = false;
 };
 
 }  // namespace Model

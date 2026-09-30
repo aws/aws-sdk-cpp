@@ -54,6 +54,10 @@ Index& Index::operator=(JsonView jsonValue) {
     m_encryptionConfiguration = jsonValue.GetObject("encryptionConfiguration");
     m_encryptionConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("indexMode")) {
+    m_indexMode = IndexModeMapper::GetIndexModeForName(jsonValue.GetString("indexMode"));
+    m_indexModeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -94,6 +98,10 @@ JsonValue Index::Jsonize() const {
 
   if (m_encryptionConfigurationHasBeenSet) {
     payload.WithObject("encryptionConfiguration", m_encryptionConfiguration.Jsonize());
+  }
+
+  if (m_indexModeHasBeenSet) {
+    payload.WithString("indexMode", IndexModeMapper::GetNameForIndexMode(m_indexMode));
   }
 
   return payload;

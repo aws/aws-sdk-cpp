@@ -101,6 +101,10 @@ Crawler& Crawler::operator=(JsonView jsonValue) {
     m_lakeFormationConfiguration = jsonValue.GetObject("LakeFormationConfiguration");
     m_lakeFormationConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CatalogId")) {
+    m_catalogId = jsonValue.GetString("CatalogId");
+    m_catalogIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -189,6 +193,10 @@ JsonValue Crawler::Jsonize() const {
 
   if (m_lakeFormationConfigurationHasBeenSet) {
     payload.WithObject("LakeFormationConfiguration", m_lakeFormationConfiguration.Jsonize());
+  }
+
+  if (m_catalogIdHasBeenSet) {
+    payload.WithString("CatalogId", m_catalogId);
   }
 
   return payload;

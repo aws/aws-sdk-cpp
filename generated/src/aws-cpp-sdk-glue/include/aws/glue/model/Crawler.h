@@ -413,6 +413,24 @@ class Crawler {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the Data Catalog in which the crawler's output is stored.</p>
+   */
+  inline const Aws::String& GetCatalogId() const { return m_catalogId; }
+  inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
+  template <typename CatalogIdT = Aws::String>
+  void SetCatalogId(CatalogIdT&& value) {
+    m_catalogIdHasBeenSet = true;
+    m_catalogId = std::forward<CatalogIdT>(value);
+  }
+  template <typename CatalogIdT = Aws::String>
+  Crawler& WithCatalogId(CatalogIdT&& value) {
+    SetCatalogId(std::forward<CatalogIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -453,6 +471,8 @@ class Crawler {
   Aws::String m_crawlerSecurityConfiguration;
 
   LakeFormationConfiguration m_lakeFormationConfiguration;
+
+  Aws::String m_catalogId;
   bool m_nameHasBeenSet = false;
   bool m_roleHasBeenSet = false;
   bool m_targetsHasBeenSet = false;
@@ -473,6 +493,7 @@ class Crawler {
   bool m_configurationHasBeenSet = false;
   bool m_crawlerSecurityConfigurationHasBeenSet = false;
   bool m_lakeFormationConfigurationHasBeenSet = false;
+  bool m_catalogIdHasBeenSet = false;
 };
 
 }  // namespace Model

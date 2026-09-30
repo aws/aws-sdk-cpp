@@ -31,6 +31,10 @@ Aws::String GetColumnStatisticsTaskRunsRequest::SerializePayload() const {
     payload.WithString("NextToken", m_nextToken);
   }
 
+  if (m_catalogIDHasBeenSet) {
+    payload.WithString("CatalogID", m_catalogID);
+  }
+
   return payload.View().WriteReadable();
 }
 

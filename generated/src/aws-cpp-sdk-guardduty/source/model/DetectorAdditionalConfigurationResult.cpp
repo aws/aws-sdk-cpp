@@ -30,6 +30,10 @@ DetectorAdditionalConfigurationResult& DetectorAdditionalConfigurationResult::op
     m_updatedAt = jsonValue.GetDouble("updatedAt");
     m_updatedAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("managedBy")) {
+    m_managedBy = ManagedByMapper::GetManagedByForName(jsonValue.GetString("managedBy"));
+    m_managedByHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue DetectorAdditionalConfigurationResult::Jsonize() const {
 
   if (m_updatedAtHasBeenSet) {
     payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
+  }
+
+  if (m_managedByHasBeenSet) {
+    payload.WithString("managedBy", ManagedByMapper::GetNameForManagedBy(m_managedBy));
   }
 
   return payload;

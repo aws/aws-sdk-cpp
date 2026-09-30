@@ -29,6 +29,13 @@ IpSet& IpSet::operator=(JsonView jsonValue) {
     m_ipAddressFamily = IpAddressFamilyMapper::GetIpAddressFamilyForName(jsonValue.GetString("IpAddressFamily"));
     m_ipAddressFamilyHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("IpAddressDetails")) {
+    Aws::Utils::Array<JsonView> ipAddressDetailsJsonList = jsonValue.GetArray("IpAddressDetails");
+    for (unsigned ipAddressDetailsIndex = 0; ipAddressDetailsIndex < ipAddressDetailsJsonList.GetLength(); ++ipAddressDetailsIndex) {
+      m_ipAddressDetails.push_back(ipAddressDetailsJsonList[ipAddressDetailsIndex].AsObject());
+    }
+    m_ipAddressDetailsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -45,6 +52,14 @@ JsonValue IpSet::Jsonize() const {
 
   if (m_ipAddressFamilyHasBeenSet) {
     payload.WithString("IpAddressFamily", IpAddressFamilyMapper::GetNameForIpAddressFamily(m_ipAddressFamily));
+  }
+
+  if (m_ipAddressDetailsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> ipAddressDetailsJsonList(m_ipAddressDetails.size());
+    for (unsigned ipAddressDetailsIndex = 0; ipAddressDetailsIndex < ipAddressDetailsJsonList.GetLength(); ++ipAddressDetailsIndex) {
+      ipAddressDetailsJsonList[ipAddressDetailsIndex].AsObject(m_ipAddressDetails[ipAddressDetailsIndex].Jsonize());
+    }
+    payload.WithArray("IpAddressDetails", std::move(ipAddressDetailsJsonList));
   }
 
   return payload;

@@ -26,6 +26,11 @@ GetContactInformationResult& GetContactInformationResult::operator=(const Aws::A
     m_contactInformation = jsonValue.GetObject("ContactInformation");
     m_contactInformationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("VerificationStatus")) {
+    m_verificationStatus =
+        PhoneNumberVerificationStatusMapper::GetPhoneNumberVerificationStatusForName(jsonValue.GetString("VerificationStatus"));
+    m_verificationStatusHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

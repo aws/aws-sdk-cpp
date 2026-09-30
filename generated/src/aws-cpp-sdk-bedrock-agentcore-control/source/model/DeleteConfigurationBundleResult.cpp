@@ -22,6 +22,10 @@ DeleteConfigurationBundleResult::DeleteConfigurationBundleResult(const Aws::Amaz
 DeleteConfigurationBundleResult& DeleteConfigurationBundleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("bundleArn")) {
+    m_bundleArn = jsonValue.GetString("bundleArn");
+    m_bundleArnHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("bundleId")) {
     m_bundleId = jsonValue.GetString("bundleId");
     m_bundleIdHasBeenSet = true;

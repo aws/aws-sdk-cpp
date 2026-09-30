@@ -1330,6 +1330,7 @@
 #include <aws/connect/model/SegmentAttributeValue.h>
 #include <aws/connect/model/SendChatIntegrationEventRequest.h>
 #include <aws/connect/model/SendChatIntegrationEventResult.h>
+#include <aws/connect/model/SendInAppNotificationActionDefinition.h>
 #include <aws/connect/model/SendNotificationActionDefinition.h>
 #include <aws/connect/model/SendOutboundEmailRequest.h>
 #include <aws/connect/model/SendOutboundEmailResult.h>

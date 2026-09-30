@@ -183,18 +183,15 @@ class UpdateExpressGatewayServiceRequest : public ECSRequest {
 
   ///@{
   /**
-   * <p>The CPU architecture that the tasks in the Express service run on. Amazon ECS
-   * applies this value to the task definition revision that it registers for the
-   * service. If you don't specify a value, the service keeps the architecture that
-   * it currently runs on.</p> <p>Valid values:</p> <ul> <li> <p> <code>X86_64</code>
-   * - The x86 64-bit architecture.</p> </li> <li> <p> <code>ARM64</code> - The
-   * 64-bit ARM architecture.</p> </li> </ul> <p>Changing the architecture starts a
-   * new deployment that replaces the running tasks. Make sure that the container
-   * image that the service uses supports the architecture that you choose. The
+   * <p>The CPU architecture that the task runs on. If you don't specify a value, the
+   * service keeps its current architecture.</p> <p>Valid values:</p> <ul> <li> <p>
+   * <code>X86_64</code> - The x86 64-bit architecture.</p> </li> <li> <p>
+   * <code>ARM64</code> - The 64-bit ARM architecture.</p> </li> </ul> <p>Changing
+   * the architecture starts a new deployment that replaces the running tasks. Ensure
+   * that the container image you specify supports the architecture you choose. The
    * operating system family for an Express service is always <code>LINUX</code>.</p>
-   * <p>You can't specify <code>cpuArchitecture</code> when you also specify
-   * <code>taskDefinitionArn</code>, because this value applies only to a task
-   * definition that Amazon ECS registers on your behalf.</p>
+   * <p>You can't specify <code>cpuArchitecture</code> together with
+   * <code>taskDefinitionArn</code>.</p>
    */
   inline ExpressCpuArchitecture GetCpuArchitecture() const { return m_cpuArchitecture; }
   inline bool CpuArchitectureHasBeenSet() const { return m_cpuArchitectureHasBeenSet; }

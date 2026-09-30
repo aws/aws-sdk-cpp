@@ -39,6 +39,10 @@ DeliveryDestination& DeliveryDestination::operator=(JsonView jsonValue) {
     m_deliveryDestinationConfiguration = jsonValue.GetObject("deliveryDestinationConfiguration");
     m_deliveryDestinationConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("roleArn")) {
+    m_roleArn = jsonValue.GetString("roleArn");
+    m_roleArnHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
     for (auto& tagsItem : tagsJsonMap) {
@@ -71,6 +75,10 @@ JsonValue DeliveryDestination::Jsonize() const {
 
   if (m_deliveryDestinationConfigurationHasBeenSet) {
     payload.WithObject("deliveryDestinationConfiguration", m_deliveryDestinationConfiguration.Jsonize());
+  }
+
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("roleArn", m_roleArn);
   }
 
   if (m_tagsHasBeenSet) {

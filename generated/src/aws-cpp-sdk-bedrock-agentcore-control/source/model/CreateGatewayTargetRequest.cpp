@@ -50,5 +50,15 @@ Aws::String CreateGatewayTargetRequest::SerializePayload() const {
     payload.WithObject("privateEndpoint", m_privateEndpoint.Jsonize());
   }
 
+  if (m_certificateConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> certificateConfigurationsJsonList(m_certificateConfigurations.size());
+    for (unsigned certificateConfigurationsIndex = 0; certificateConfigurationsIndex < certificateConfigurationsJsonList.GetLength();
+         ++certificateConfigurationsIndex) {
+      certificateConfigurationsJsonList[certificateConfigurationsIndex].AsObject(
+          m_certificateConfigurations[certificateConfigurationsIndex].Jsonize());
+    }
+    payload.WithArray("certificateConfigurations", std::move(certificateConfigurationsJsonList));
+  }
+
   return payload.View().WriteReadable();
 }

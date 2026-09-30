@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3vectors/S3Vectors_EXPORTS.h>
 #include <aws/s3vectors/model/EncryptionConfiguration.h>
+#include <aws/s3vectors/model/IndexMode.h>
 
 #include <utility>
 
@@ -104,6 +105,24 @@ class VectorBucket {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The mode that is automatically assigned to new vector indexes in the vector
+   * bucket. Changing the default index mode doesn't affect existing vector
+   * indexes.</p>
+   */
+  inline IndexMode GetDefaultIndexMode() const { return m_defaultIndexMode; }
+  inline bool DefaultIndexModeHasBeenSet() const { return m_defaultIndexModeHasBeenSet; }
+  inline void SetDefaultIndexMode(IndexMode value) {
+    m_defaultIndexModeHasBeenSet = true;
+    m_defaultIndexMode = value;
+  }
+  inline VectorBucket& WithDefaultIndexMode(IndexMode value) {
+    SetDefaultIndexMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_vectorBucketName;
 
@@ -112,10 +131,13 @@ class VectorBucket {
   Aws::Utils::DateTime m_creationTime{};
 
   EncryptionConfiguration m_encryptionConfiguration;
+
+  IndexMode m_defaultIndexMode{IndexMode::NOT_SET};
   bool m_vectorBucketNameHasBeenSet = false;
   bool m_vectorBucketArnHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
   bool m_encryptionConfigurationHasBeenSet = false;
+  bool m_defaultIndexModeHasBeenSet = false;
 };
 
 }  // namespace Model

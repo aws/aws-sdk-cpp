@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/account/Account_EXPORTS.h>
 #include <aws/account/model/ContactInformation.h>
+#include <aws/account/model/PhoneNumberVerificationStatus.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -47,6 +48,27 @@ class GetContactInformationResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The verification status of the phone number in the primary contact
+   * information associated with an Amazon Web Services account. Valid values:</p>
+   * <ul> <li> <p> <code>PENDING</code> – A one-time passcode has been sent and is
+   * waiting to be submitted.</p> </li> <li> <p> <code>VERIFIED</code> – The phone
+   * number has been verified.</p> </li> <li> <p> <code>UNVERIFIED</code> – The phone
+   * number has not been verified.</p> </li> <li> <p> <code>NOT_SUPPORTED</code> –
+   * Phone number verification isn't available for this account.</p> </li> </ul>
+   */
+  inline PhoneNumberVerificationStatus GetVerificationStatus() const { return m_verificationStatus; }
+  inline void SetVerificationStatus(PhoneNumberVerificationStatus value) {
+    m_verificationStatusHasBeenSet = true;
+    m_verificationStatus = value;
+  }
+  inline GetContactInformationResult& WithVerificationStatus(PhoneNumberVerificationStatus value) {
+    SetVerificationStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -65,9 +87,12 @@ class GetContactInformationResult {
  private:
   ContactInformation m_contactInformation;
 
+  PhoneNumberVerificationStatus m_verificationStatus{PhoneNumberVerificationStatus::NOT_SET};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_contactInformationHasBeenSet = false;
+  bool m_verificationStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

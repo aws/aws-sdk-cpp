@@ -113,9 +113,13 @@
 #include <aws/batch/model/EcsSettings.h>
 #include <aws/batch/model/EcsTaskDetails.h>
 #include <aws/batch/model/EcsTaskProperties.h>
+#include <aws/batch/model/EksAccessEntry.h>
+#include <aws/batch/model/EksAccessEntryDesiredState.h>
+#include <aws/batch/model/EksAccessEntryStatus.h>
 #include <aws/batch/model/EksAttemptContainerDetail.h>
 #include <aws/batch/model/EksAttemptDetail.h>
 #include <aws/batch/model/EksConfiguration.h>
+#include <aws/batch/model/EksConfigurationUpdate.h>
 #include <aws/batch/model/EksContainer.h>
 #include <aws/batch/model/EksContainerDetail.h>
 #include <aws/batch/model/EksContainerEnvironmentVariable.h>

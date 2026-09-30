@@ -26,6 +26,7 @@ enum class ResourceType {
   AWS_BedrockAgentCore_Gateway,
   AWS_BedrockAgentCore_Memory,
   AWS_BedrockAgentCore_WorkloadIdentity,
+  AWS_BedrockAgentCore_PaymentManager,
   AWS_SecurityHub_Hub,
   AWS_CloudFront_Distribution,
   AWS_SecurityHub_HubV2,

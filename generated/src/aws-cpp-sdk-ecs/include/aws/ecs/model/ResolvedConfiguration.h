@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/model/ServiceRevisionLoadBalancer.h>
+#include <aws/ecs/model/ServiceRevisionVpcLatticeConfiguration.h>
 
 #include <utility>
 
@@ -59,9 +60,40 @@ class ResolvedConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The resolved VPC Lattice configuration for the service revision. This
+   * includes information about which target groups serve traffic and which listener
+   * rules direct traffic to them.</p>
+   */
+  inline const Aws::Vector<ServiceRevisionVpcLatticeConfiguration>& GetVpcLatticeConfigurations() const {
+    return m_vpcLatticeConfigurations;
+  }
+  inline bool VpcLatticeConfigurationsHasBeenSet() const { return m_vpcLatticeConfigurationsHasBeenSet; }
+  template <typename VpcLatticeConfigurationsT = Aws::Vector<ServiceRevisionVpcLatticeConfiguration>>
+  void SetVpcLatticeConfigurations(VpcLatticeConfigurationsT&& value) {
+    m_vpcLatticeConfigurationsHasBeenSet = true;
+    m_vpcLatticeConfigurations = std::forward<VpcLatticeConfigurationsT>(value);
+  }
+  template <typename VpcLatticeConfigurationsT = Aws::Vector<ServiceRevisionVpcLatticeConfiguration>>
+  ResolvedConfiguration& WithVpcLatticeConfigurations(VpcLatticeConfigurationsT&& value) {
+    SetVpcLatticeConfigurations(std::forward<VpcLatticeConfigurationsT>(value));
+    return *this;
+  }
+  template <typename VpcLatticeConfigurationsT = ServiceRevisionVpcLatticeConfiguration>
+  ResolvedConfiguration& AddVpcLatticeConfigurations(VpcLatticeConfigurationsT&& value) {
+    m_vpcLatticeConfigurationsHasBeenSet = true;
+    m_vpcLatticeConfigurations.emplace_back(std::forward<VpcLatticeConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<ServiceRevisionLoadBalancer> m_loadBalancers;
+
+  Aws::Vector<ServiceRevisionVpcLatticeConfiguration> m_vpcLatticeConfigurations;
   bool m_loadBalancersHasBeenSet = false;
+  bool m_vpcLatticeConfigurationsHasBeenSet = false;
 };
 
 }  // namespace Model

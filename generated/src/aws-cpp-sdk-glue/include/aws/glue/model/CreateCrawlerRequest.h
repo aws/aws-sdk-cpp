@@ -333,6 +333,25 @@ class CreateCrawlerRequest : public GlueRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the Data Catalog in which to store the crawler's output. If none is
+   * supplied, the Amazon Web Services account ID is used by default.</p>
+   */
+  inline const Aws::String& GetCatalogId() const { return m_catalogId; }
+  inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
+  template <typename CatalogIdT = Aws::String>
+  void SetCatalogId(CatalogIdT&& value) {
+    m_catalogIdHasBeenSet = true;
+    m_catalogId = std::forward<CatalogIdT>(value);
+  }
+  template <typename CatalogIdT = Aws::String>
+  CreateCrawlerRequest& WithCatalogId(CatalogIdT&& value) {
+    SetCatalogId(std::forward<CatalogIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -363,6 +382,8 @@ class CreateCrawlerRequest : public GlueRequest {
   Aws::String m_crawlerSecurityConfiguration;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+
+  Aws::String m_catalogId;
   bool m_nameHasBeenSet = false;
   bool m_roleHasBeenSet = false;
   bool m_databaseNameHasBeenSet = false;
@@ -378,6 +399,7 @@ class CreateCrawlerRequest : public GlueRequest {
   bool m_configurationHasBeenSet = false;
   bool m_crawlerSecurityConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_catalogIdHasBeenSet = false;
 };
 
 }  // namespace Model

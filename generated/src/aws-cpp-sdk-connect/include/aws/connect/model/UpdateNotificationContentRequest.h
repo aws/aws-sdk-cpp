@@ -71,7 +71,7 @@ class UpdateNotificationContentRequest : public ConnectRequest {
   ///@{
   /**
    * <p>The updated localized content of the notification. A map of locale codes and
-   * values. Maximum 500 characters per locale.</p>
+   * values. Maximum 500 visible characters per locale.</p>
    */
   inline const Aws::Map<LocaleCode, Aws::String>& GetContent() const { return m_content; }
   inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }

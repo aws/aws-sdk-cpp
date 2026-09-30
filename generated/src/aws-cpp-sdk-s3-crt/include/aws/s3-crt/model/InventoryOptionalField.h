@@ -29,7 +29,8 @@ enum class InventoryOptionalField {
   ChecksumAlgorithm,
   ObjectAccessControlList,
   ObjectOwner,
-  LifecycleExpirationDate
+  LifecycleExpirationDate,
+  IntelligentTieringReferenceDate
 };
 
 namespace InventoryOptionalFieldMapper {

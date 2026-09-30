@@ -12,6 +12,7 @@
 #include <aws/connect/model/EndAssociatedTasksActionDefinition.h>
 #include <aws/connect/model/EventBridgeActionDefinition.h>
 #include <aws/connect/model/ExtractInformationActionDefinition.h>
+#include <aws/connect/model/SendInAppNotificationActionDefinition.h>
 #include <aws/connect/model/SendNotificationActionDefinition.h>
 #include <aws/connect/model/SubmitAutoEvaluationActionDefinition.h>
 #include <aws/connect/model/TaskActionDefinition.h>
@@ -261,6 +262,34 @@ class RuleAction {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Information about the send in-app notification action.</p> <p>Supported only
+   * for <code>TriggerEventSource</code> values:
+   * <code>OnPostCallAnalysisAvailable</code> |
+   * <code>OnRealTimeCallAnalysisAvailable</code> |
+   * <code>OnRealTimeChatAnalysisAvailable</code> |
+   * <code>OnPostChatAnalysisAvailable</code> | <code>OnAfterCallWorkAvailable</code>
+   * | <code>OnAfterChatWorkAvailable</code> | <code>OnEmailAnalysisAvailable</code>
+   * | <code>OnContactEvaluationSubmit</code> | <code>OnCaseCreate</code> |
+   * <code>OnCaseUpdate</code> | <code>OnSlaBreach</code> |
+   * <code>OnSchedulePublish</code> | <code>OnScheduleUpdate</code> |
+   * <code>OnScheduleTimeOffRequestActivity</code> </p>
+   */
+  inline const SendInAppNotificationActionDefinition& GetSendInAppNotificationAction() const { return m_sendInAppNotificationAction; }
+  inline bool SendInAppNotificationActionHasBeenSet() const { return m_sendInAppNotificationActionHasBeenSet; }
+  template <typename SendInAppNotificationActionT = SendInAppNotificationActionDefinition>
+  void SetSendInAppNotificationAction(SendInAppNotificationActionT&& value) {
+    m_sendInAppNotificationActionHasBeenSet = true;
+    m_sendInAppNotificationAction = std::forward<SendInAppNotificationActionT>(value);
+  }
+  template <typename SendInAppNotificationActionT = SendInAppNotificationActionDefinition>
+  RuleAction& WithSendInAppNotificationAction(SendInAppNotificationActionT&& value) {
+    SetSendInAppNotificationAction(std::forward<SendInAppNotificationActionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ActionType m_actionType{ActionType::NOT_SET};
 
@@ -283,6 +312,8 @@ class RuleAction {
   SubmitAutoEvaluationActionDefinition m_submitAutoEvaluationAction;
 
   ExtractInformationActionDefinition m_extractInformationAction;
+
+  SendInAppNotificationActionDefinition m_sendInAppNotificationAction;
   bool m_actionTypeHasBeenSet = false;
   bool m_taskActionHasBeenSet = false;
   bool m_eventBridgeActionHasBeenSet = false;
@@ -294,6 +325,7 @@ class RuleAction {
   bool m_endAssociatedTasksActionHasBeenSet = false;
   bool m_submitAutoEvaluationActionHasBeenSet = false;
   bool m_extractInformationActionHasBeenSet = false;
+  bool m_sendInAppNotificationActionHasBeenSet = false;
 };
 
 }  // namespace Model

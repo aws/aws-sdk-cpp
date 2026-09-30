@@ -57,7 +57,11 @@ class UpdateInstanceAttributeRequest : public ConnectRequest {
    * Support for allowlisting.</p>   <p>If you set the attribute type as
    * <code>MESSAGE_STREAMING</code>, you need to update the Lex bot alias resource
    * based policy to include the <code>lex:RecognizeMessageAsync</code> action for
-   * the connect instance ARN resource.</p>
+   * the connect instance ARN resource.</p>   <p>If you set the
+   * attribute type <code>AUTO_MUTE_AGENT_ON_HOLD</code> to <code>true</code>, the
+   * system automatically mutes agents while they're on hold and unmutes them when
+   * they resume the contact. Agents can't change their mute state while on hold.</p>
+   *
    */
   inline InstanceAttributeType GetAttributeType() const { return m_attributeType; }
   inline bool AttributeTypeHasBeenSet() const { return m_attributeTypeHasBeenSet; }

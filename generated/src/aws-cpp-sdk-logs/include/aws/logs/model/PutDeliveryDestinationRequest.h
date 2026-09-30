@@ -119,6 +119,27 @@ class PutDeliveryDestinationRequest : public CloudWatchLogsRequest {
 
   ///@{
   /**
+   * <p>The ARN of an IAM role in your account that CloudWatch Logs assumes to
+   * deliver to this delivery destination. The trust policy of the role must allow
+   * CloudWatch Logs to assume it. This parameter is supported only for X-Ray trace
+   * delivery destinations.</p>
+   */
+  inline const Aws::String& GetRoleArn() const { return m_roleArn; }
+  inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+  template <typename RoleArnT = Aws::String>
+  void SetRoleArn(RoleArnT&& value) {
+    m_roleArnHasBeenSet = true;
+    m_roleArn = std::forward<RoleArnT>(value);
+  }
+  template <typename RoleArnT = Aws::String>
+  PutDeliveryDestinationRequest& WithRoleArn(RoleArnT&& value) {
+    SetRoleArn(std::forward<RoleArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>An optional list of key-value pairs to associate with the resource.</p>
    * <p>For more information about tagging, see <a
    * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
@@ -152,11 +173,14 @@ class PutDeliveryDestinationRequest : public CloudWatchLogsRequest {
 
   DeliveryDestinationType m_deliveryDestinationType{DeliveryDestinationType::NOT_SET};
 
+  Aws::String m_roleArn;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_nameHasBeenSet = false;
   bool m_outputFormatHasBeenSet = false;
   bool m_deliveryDestinationConfigurationHasBeenSet = false;
   bool m_deliveryDestinationTypeHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

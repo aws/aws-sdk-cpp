@@ -39,6 +39,10 @@ Aws::String StartNotebookRunRequest::SerializePayload() const {
     payload.WithObject("timeoutConfiguration", m_timeoutConfiguration.Jsonize());
   }
 
+  if (m_notificationConfigurationHasBeenSet) {
+    payload.WithObject("notificationConfiguration", m_notificationConfiguration.Jsonize());
+  }
+
   if (m_triggerSourceHasBeenSet) {
     payload.WithObject("triggerSource", m_triggerSource.Jsonize());
   }

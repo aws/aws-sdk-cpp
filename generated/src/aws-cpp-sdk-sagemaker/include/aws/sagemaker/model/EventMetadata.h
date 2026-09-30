@@ -6,9 +6,11 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/ClusterMetadata.h>
+#include <aws/sagemaker/model/DatabaseConfigurationMetadata.h>
 #include <aws/sagemaker/model/InstanceGroupMetadata.h>
 #include <aws/sagemaker/model/InstanceGroupScalingMetadata.h>
 #include <aws/sagemaker/model/InstanceMetadata.h>
+#include <aws/sagemaker/model/SlurmHealthMetadata.h>
 
 #include <utility>
 
@@ -106,6 +108,44 @@ class EventMetadata {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Metadata specific to events about the external Slurm accounting database of
+   * the cluster.</p>
+   */
+  inline const DatabaseConfigurationMetadata& GetDatabaseConfiguration() const { return m_databaseConfiguration; }
+  inline bool DatabaseConfigurationHasBeenSet() const { return m_databaseConfigurationHasBeenSet; }
+  template <typename DatabaseConfigurationT = DatabaseConfigurationMetadata>
+  void SetDatabaseConfiguration(DatabaseConfigurationT&& value) {
+    m_databaseConfigurationHasBeenSet = true;
+    m_databaseConfiguration = std::forward<DatabaseConfigurationT>(value);
+  }
+  template <typename DatabaseConfigurationT = DatabaseConfigurationMetadata>
+  EventMetadata& WithDatabaseConfiguration(DatabaseConfigurationT&& value) {
+    SetDatabaseConfiguration(std::forward<DatabaseConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Metadata specific to events about the health of the Slurm components on the
+   * controller node of the cluster.</p>
+   */
+  inline const SlurmHealthMetadata& GetSlurmHealth() const { return m_slurmHealth; }
+  inline bool SlurmHealthHasBeenSet() const { return m_slurmHealthHasBeenSet; }
+  template <typename SlurmHealthT = SlurmHealthMetadata>
+  void SetSlurmHealth(SlurmHealthT&& value) {
+    m_slurmHealthHasBeenSet = true;
+    m_slurmHealth = std::forward<SlurmHealthT>(value);
+  }
+  template <typename SlurmHealthT = SlurmHealthMetadata>
+  EventMetadata& WithSlurmHealth(SlurmHealthT&& value) {
+    SetSlurmHealth(std::forward<SlurmHealthT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ClusterMetadata m_cluster;
 
@@ -114,10 +154,16 @@ class EventMetadata {
   InstanceGroupScalingMetadata m_instanceGroupScaling;
 
   InstanceMetadata m_instance;
+
+  DatabaseConfigurationMetadata m_databaseConfiguration;
+
+  SlurmHealthMetadata m_slurmHealth;
   bool m_clusterHasBeenSet = false;
   bool m_instanceGroupHasBeenSet = false;
   bool m_instanceGroupScalingHasBeenSet = false;
   bool m_instanceHasBeenSet = false;
+  bool m_databaseConfigurationHasBeenSet = false;
+  bool m_slurmHealthHasBeenSet = false;
 };
 
 }  // namespace Model

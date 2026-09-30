@@ -1,3 +1,28 @@
+# 1.11.904 (2026-09-30)
+
+## SDK Highlights
+* **Feature**: Add schema-serde buffer-based JSON/XML deserializers, Query serializer (awsQuery/ec2Query), and Codec/ClientProtocol
+
+## Service Updates
+* **Account**: This release adds support for verifying an AWS account's primary contact phone number. SendPhoneNumberVerification sends a one-time code by SMS, VerifyPhoneNumber validates it, and GetContactInformation now returns the verification status.
+* **Agent Registry**: Minor doc update for the AWS Agent Registry Custom metadata SearchDiscoverableRegistryRecords API
+* **Batch**: AWS Batch adds support for Amazon EKS access entries on EKS compute environments through the new accessEntry setting in CreateComputeEnvironment and UpdateComputeEnvironment.
+* **Bedrock AgentCore Control**: This release adds support for private certificate authorities on Amazon Bedrock AgentCore Gateway targets. The new certificateConfigurations parameter on CreateGatewayTarget and UpdateGatewayTarget references a PEM-encoded CA certificate in Amazon S3 or AWS Secrets Manager.
+* **Bedrock**: Amazon Bedrock Automated Reasoning policies now accept Unicode letters in identifier names such as type names, type value names, and variable names. You can now author policies in non-English languages using accented or non-Latin characters.
+* **CloudWatch Logs**: Amazon CloudWatch Logs now supports an optional roleArn parameter on PutDeliveryDestination for X-Ray trace delivery destinations, specifying the IAM role to assume when delivering traces.
+* **Connect**: Amazon Connect Rules can now trigger in-app notifications to users as a rule action. Notification character limit was increased to 500 visible characters.
+* **DataZone**: Support for setting notebook run notification configurations
+* **DynamoDB**: Adds support for filtering exported table data using FilterExpression, ProjectionExpression and KeyConditionExpression with ExportTableToPointInTime.
+* **ECS**: Releasing VPCL for BlueGreen ecs deployments.
+* **Global Accelerator**: IpSets now include the Network Zone for each Static IP address.
+* **Glue**: Enable Catalog ID for crawler, column statistics and materialized views.
+* **GuardDuty**: GuardDuty AWS Organizations policy integration. GetDetector and GetMemberDetectors now show whether a GuardDuty policy manages a feature.
+* **ObservabilityAdmin**: Enablement for Bedrock PaymentManager logs via Observability Admin Telemetry Rule
+* **Organizations**: Add support for policy operations on the GUARDDUTY POLICY policy type.
+* **S3**: Amazon S3 adds a new optional S3 Inventory field, IntelligentTieringReferenceDate, reporting the reference date S3 Intelligent-Tiering uses to evaluate an object's tier-transition eligibility. The value is populated for objects in the Intelligent-Tiering storage class and left blank for others.
+* **S3Vectors**: Amazon S3 Vectors now supports metadata prefiltering, providing higher recall on filtered queries.
+* **SageMaker**: This feature enables customers to modify their accounting database via API.
+
 # 1.11.903 (2026-09-29)
 
 ## SDK Highlights

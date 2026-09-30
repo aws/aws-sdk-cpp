@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/batch/Batch_EXPORTS.h>
+#include <aws/batch/model/EksAccessEntry.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -76,12 +77,51 @@ class EksConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Batch-managed Amazon EKS access entry for the compute environment. Set
+   * <code>desiredState</code> to declare whether Batch manages an access entry on
+   * the cluster. In a <code>DescribeComputeEnvironments</code> response,
+   * <code>desiredState</code> is the value that Batch recorded for the compute
+   * environment and <code>status</code> is the observed state of the access entry on
+   * the cluster. To change the access entry on an existing compute environment, use
+   * <a
+   * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_EksConfigurationUpdate.html#Batch-Type-EksConfigurationUpdate-accessEntry">
+   * <code>EksConfigurationUpdate.accessEntry</code> </a>.</p> <p>Whether the entry
+   * is provisioned on the cluster depends on the cluster's
+   * <code>authenticationMode</code> and the <code>desiredState</code> recorded for
+   * each Batch compute environment targeting the cluster. For more information, see
+   * <a
+   * href="https://docs.aws.amazon.com/batch/latest/userguide/eks-access-entries.html">Amazon
+   * EKS access entry authentication</a> in the <i>Batch User Guide</i>.</p> <p>If
+   * you don't specify this field, Batch doesn't record a <code>desiredState</code>
+   * for the compute environment and <code>DescribeComputeEnvironments</code> doesn't
+   * return one. For the purpose of provisioning the access entry, Batch behaves as
+   * it does for <code>INHERIT_FROM_CLUSTER</code>.</p>
+   */
+  inline const EksAccessEntry& GetAccessEntry() const { return m_accessEntry; }
+  inline bool AccessEntryHasBeenSet() const { return m_accessEntryHasBeenSet; }
+  template <typename AccessEntryT = EksAccessEntry>
+  void SetAccessEntry(AccessEntryT&& value) {
+    m_accessEntryHasBeenSet = true;
+    m_accessEntry = std::forward<AccessEntryT>(value);
+  }
+  template <typename AccessEntryT = EksAccessEntry>
+  EksConfiguration& WithAccessEntry(AccessEntryT&& value) {
+    SetAccessEntry(std::forward<AccessEntryT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_eksClusterArn;
 
   Aws::String m_kubernetesNamespace;
+
+  EksAccessEntry m_accessEntry;
   bool m_eksClusterArnHasBeenSet = false;
   bool m_kubernetesNamespaceHasBeenSet = false;
+  bool m_accessEntryHasBeenSet = false;
 };
 
 }  // namespace Model

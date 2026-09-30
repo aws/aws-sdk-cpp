@@ -99,6 +99,25 @@ class GetColumnStatisticsTaskRunsRequest : public GlueRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the Data Catalog where the table resides. If none is supplied, the
+   * Amazon Web Services account ID is used by default.</p>
+   */
+  inline const Aws::String& GetCatalogID() const { return m_catalogID; }
+  inline bool CatalogIDHasBeenSet() const { return m_catalogIDHasBeenSet; }
+  template <typename CatalogIDT = Aws::String>
+  void SetCatalogID(CatalogIDT&& value) {
+    m_catalogIDHasBeenSet = true;
+    m_catalogID = std::forward<CatalogIDT>(value);
+  }
+  template <typename CatalogIDT = Aws::String>
+  GetColumnStatisticsTaskRunsRequest& WithCatalogID(CatalogIDT&& value) {
+    SetCatalogID(std::forward<CatalogIDT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_databaseName;
 
@@ -107,10 +126,13 @@ class GetColumnStatisticsTaskRunsRequest : public GlueRequest {
   int m_maxResults{0};
 
   Aws::String m_nextToken;
+
+  Aws::String m_catalogID;
   bool m_databaseNameHasBeenSet = false;
   bool m_tableNameHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
+  bool m_catalogIDHasBeenSet = false;
 };
 
 }  // namespace Model
