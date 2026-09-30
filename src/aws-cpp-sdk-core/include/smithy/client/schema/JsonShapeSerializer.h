@@ -3,6 +3,7 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <smithy/Smithy_EXPORTS.h>
+#include <smithy/client/schema/Codec.h>
 #include <smithy/client/schema/ShapeSerializer.h>
 
 #include <functional>
@@ -13,7 +14,7 @@ namespace schema {
 class SMITHY_API JsonShapeSerializer final : public ShapeSerializer {
  public:
   using SerializerOutcome = Aws::Utils::Outcome<Aws::String, Aws::Client::AWSError<Aws::Client::CoreErrors>>;
-  JsonShapeSerializer();
+  explicit JsonShapeSerializer(CodecSettings settings = {});
   ~JsonShapeSerializer();
 
   void WriteStruct(const Schema& schema, const SerializableStruct& value) override;

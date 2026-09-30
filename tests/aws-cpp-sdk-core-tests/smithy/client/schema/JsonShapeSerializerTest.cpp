@@ -4,6 +4,7 @@
  */
 #include <aws/core/utils/DateTime.h>
 #include <aws/testing/AwsCppSdkGTestSuite.h>
+#include <smithy/client/schema/Codec.h>
 #include <smithy/client/schema/Document.h>
 #include <smithy/client/schema/JsonShapeSerializer.h>
 #include <smithy/client/schema/JsonTraits.h>
@@ -74,6 +75,24 @@ TEST_F(JsonShapeSerializerTest, Double) {
   LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteDouble(*member, 3.14); });
   s.WriteStruct(*root, rootStruct);
   EXPECT_NE(s.GetPayload().GetResult().find("\"ratio\":3.14"), Aws::String::npos);
+}
+
+TEST_F(JsonShapeSerializerTest, TimestampHonorsCodecSettingsDefault) {
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("t", ShapeType::Timestamp);  // no @timestampFormat trait
+  const Aws::Utils::DateTime epoch0(0.0);
+  {  // default settings -> epoch-seconds -> bare number
+    JsonShapeSerializer s;
+    LambdaStruct rs(*root, [&](ShapeSerializer& ser) { ser.WriteTimestamp(*member, epoch0); });
+    s.WriteStruct(*root, rs);
+    EXPECT_NE(s.GetPayload().GetResult().find("\"t\":0"), Aws::String::npos);
+  }
+  {  // DATE_TIME settings -> quoted ISO-8601 string
+    JsonShapeSerializer s(CodecSettings{TimestampFormatTrait::Format::DATE_TIME});
+    LambdaStruct rs(*root, [&](ShapeSerializer& ser) { ser.WriteTimestamp(*member, epoch0); });
+    s.WriteStruct(*root, rs);
+    EXPECT_NE(s.GetPayload().GetResult().find("\"t\":\""), Aws::String::npos);
+  }
 }
 
 TEST_F(JsonShapeSerializerTest, FloatUsesFloatPrecisionRoundTrip) {

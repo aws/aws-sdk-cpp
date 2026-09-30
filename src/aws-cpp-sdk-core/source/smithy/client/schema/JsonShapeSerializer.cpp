@@ -29,7 +29,7 @@ static constexpr int MAX_DEPTH = 64;
 
 class JsonShapeSerializer::Impl final : public ShapeSerializer {
  public:
-  Impl() { m_buf.reserve(8192); }
+  explicit Impl(CodecSettings settings) : m_settings(settings) { m_buf.reserve(8192); }
 
   void WriteStruct(const Schema&, const SerializableStruct& value) override {
     if (!OpenContainer('{')) {
@@ -73,7 +73,7 @@ class JsonShapeSerializer::Impl final : public ShapeSerializer {
   void WriteDouble(const Schema&, double value) override { WriteFloatingPoint(value); }
   void WriteString(const Schema&, const Aws::String& value) override { Aws::Schema::WriteQuotedJsonString(m_buf, value); }
   void WriteTimestamp(const Schema& schema, const DateTime& value) override {
-    const auto format = ResolveTimestampFormat(schema, TimestampFormatTrait::Format::EPOCH_SECONDS);
+    const auto format = ResolveTimestampFormat(schema, m_settings.defaultTimestampFormat);
     if (format == TimestampFormatTrait::Format::EPOCH_SECONDS) {
       m_buf += FormatTimestampText(value, format);
     } else {
@@ -331,9 +331,11 @@ class JsonShapeSerializer::Impl final : public ShapeSerializer {
   Aws::Array<bool, MAX_DEPTH> m_needsComma{};
   bool m_finalized = false;
   Aws::String m_errorMessage;
+  CodecSettings m_settings;
 };
 
-JsonShapeSerializer::JsonShapeSerializer() : m_impl(Aws::MakeUnique<Impl>("JsonShapeSerializer")) {}
+JsonShapeSerializer::JsonShapeSerializer(CodecSettings settings)
+    : m_impl(Aws::MakeUnique<Impl>("JsonShapeSerializer", settings)) {}
 JsonShapeSerializer::~JsonShapeSerializer() = default;
 
 void JsonShapeSerializer::WriteStruct(const Schema& schema, const SerializableStruct& value) { m_impl->WriteStruct(schema, value); }

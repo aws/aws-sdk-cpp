@@ -16,6 +16,20 @@ namespace schema {
 
 class Schema;
 
+// Per-protocol codec configuration threaded to the ShapeSerializer/ShapeDeserializer a codec creates.
+// Not part of the Codec interface (per the serialization/schema-decoupling SEP). Extensible: future
+// knobs (useJsonName, defaultNamespace) become new fields without changing serde signatures.
+struct CodecSettings {
+  CodecSettings() = default;
+  // Non-explicit: lets callers pass a bare Format where a CodecSettings is expected (matches the
+  // pre-existing single-Format JsonCodec constructor call sites). Also required under C++11, where a
+  // member with a default initializer is not an aggregate and brace-init needs a real constructor.
+  CodecSettings(TimestampFormatTrait::Format defaultTimestampFormat)  // NOLINT(google-explicit-constructor)
+      : defaultTimestampFormat(defaultTimestampFormat) {}
+
+  TimestampFormatTrait::Format defaultTimestampFormat = TimestampFormatTrait::Format::EPOCH_SECONDS;
+};
+
 class SMITHY_API Codec {
  public:
   using SerializerOutcome = Aws::Utils::Outcome<Aws::String, Aws::Client::AWSError<Aws::Client::CoreErrors>>;
@@ -33,14 +47,12 @@ class SMITHY_API Codec {
 
 class SMITHY_API JsonCodec final : public Codec {
  public:
-  explicit JsonCodec(
-      TimestampFormatTrait::Format defaultStringTimestampFormat = TimestampFormatTrait::Format::EPOCH_SECONDS)
-      : m_defaultStringTimestampFormat(defaultStringTimestampFormat) {}
+  explicit JsonCodec(CodecSettings settings = {}) : m_settings(settings) {}
   SerializerOutcome Serialize(const Schema& schema, const SerializableStruct& shape) const override;
   Aws::UniquePtr<ShapeDeserializer> CreateDeserializer(Aws::Crt::ByteCursor data) const override;
 
  private:
-  TimestampFormatTrait::Format m_defaultStringTimestampFormat;
+  CodecSettings m_settings;
 };
 
 class SMITHY_API XmlCodec final : public Codec {

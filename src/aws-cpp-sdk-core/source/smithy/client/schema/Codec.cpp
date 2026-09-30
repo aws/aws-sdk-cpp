@@ -17,12 +17,12 @@ constexpr char ALLOC_TAG[] = "SmithyCodec";
 }
 
 Codec::SerializerOutcome JsonCodec::Serialize(const Schema& schema, const SerializableStruct& shape) const {
-  JsonShapeSerializer serializer;
+  JsonShapeSerializer serializer(m_settings);
   serializer.WriteStruct(schema, shape);
   return serializer.GetPayload();
 }
 Aws::UniquePtr<ShapeDeserializer> JsonCodec::CreateDeserializer(Aws::Crt::ByteCursor data) const {
-  return Aws::MakeUnique<JsonShapeDeserializer>(ALLOC_TAG, data, m_defaultStringTimestampFormat);
+  return Aws::MakeUnique<JsonShapeDeserializer>(ALLOC_TAG, data, m_settings.defaultTimestampFormat);
 }
 
 Codec::SerializerOutcome XmlCodec::Serialize(const Schema& schema, const SerializableStruct& shape) const {
