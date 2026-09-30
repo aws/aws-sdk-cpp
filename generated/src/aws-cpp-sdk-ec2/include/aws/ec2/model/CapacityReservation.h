@@ -15,6 +15,7 @@
 #include <aws/ec2/model/CapacityReservationCommitmentInfo.h>
 #include <aws/ec2/model/CapacityReservationDeliveryPreference.h>
 #include <aws/ec2/model/CapacityReservationInstancePlatform.h>
+#include <aws/ec2/model/CapacityReservationLaunchStatus.h>
 #include <aws/ec2/model/CapacityReservationState.h>
 #include <aws/ec2/model/CapacityReservationTenancy.h>
 #include <aws/ec2/model/CapacityReservationType.h>
@@ -756,6 +757,28 @@ class CapacityReservation {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   *  <p>Only supported for UltraServers.</p>  <p>Indicates whether you
+   * can launch instances into the Capacity Reservation. A Capacity Reservation can
+   * have the following launch statuses:</p> <ul> <li> <p> <code>launchable</code> -
+   * You can launch instances into the Capacity Reservation.</p> </li> <li> <p>
+   * <code>unlaunchable</code> - You can't launch instances into the Capacity
+   * Reservation. For example, the Capacity Reservation is not active.</p> </li>
+   * </ul>
+   */
+  inline CapacityReservationLaunchStatus GetLaunchStatus() const { return m_launchStatus; }
+  inline bool LaunchStatusHasBeenSet() const { return m_launchStatusHasBeenSet; }
+  inline void SetLaunchStatus(CapacityReservationLaunchStatus value) {
+    m_launchStatusHasBeenSet = true;
+    m_launchStatus = value;
+  }
+  inline CapacityReservation& WithLaunchStatus(CapacityReservationLaunchStatus value) {
+    SetLaunchStatus(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_capacityReservationId;
 
@@ -826,6 +849,8 @@ class CapacityReservation {
   Aws::Utils::DateTime m_originalStartDate{};
 
   ZeroSizePreference m_zeroSizePreference{ZeroSizePreference::NOT_SET};
+
+  CapacityReservationLaunchStatus m_launchStatus{CapacityReservationLaunchStatus::NOT_SET};
   bool m_capacityReservationIdHasBeenSet = false;
   bool m_ownerIdHasBeenSet = false;
   bool m_capacityReservationArnHasBeenSet = false;
@@ -861,6 +886,7 @@ class CapacityReservation {
   bool m_adjustmentDetailsHasBeenSet = false;
   bool m_originalStartDateHasBeenSet = false;
   bool m_zeroSizePreferenceHasBeenSet = false;
+  bool m_launchStatusHasBeenSet = false;
 };
 
 }  // namespace Model

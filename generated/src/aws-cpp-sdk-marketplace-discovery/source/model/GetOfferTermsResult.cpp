@@ -22,6 +22,10 @@ GetOfferTermsResult::GetOfferTermsResult(const Aws::AmazonWebServiceResult<JsonV
 GetOfferTermsResult& GetOfferTermsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("locale")) {
+    m_locale = jsonValue.GetString("locale");
+    m_localeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("offerTerms")) {
     Aws::Utils::Array<JsonView> offerTermsJsonList = jsonValue.GetArray("offerTerms");
     for (unsigned offerTermsIndex = 0; offerTermsIndex < offerTermsJsonList.GetLength(); ++offerTermsIndex) {

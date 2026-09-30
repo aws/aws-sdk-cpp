@@ -34,6 +34,14 @@ ProviderInput& ProviderInput::operator=(JsonView jsonValue) {
     m_confluence = jsonValue.GetObject("confluence");
     m_confluenceHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("azureDevOps")) {
+    m_azureDevOps = jsonValue.GetObject("azureDevOps");
+    m_azureDevOpsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("bitbucketDataCenter")) {
+    m_bitbucketDataCenter = jsonValue.GetObject("bitbucketDataCenter");
+    m_bitbucketDataCenterHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +62,14 @@ JsonValue ProviderInput::Jsonize() const {
 
   if (m_confluenceHasBeenSet) {
     payload.WithObject("confluence", m_confluence.Jsonize());
+  }
+
+  if (m_azureDevOpsHasBeenSet) {
+    payload.WithObject("azureDevOps", m_azureDevOps.Jsonize());
+  }
+
+  if (m_bitbucketDataCenterHasBeenSet) {
+    payload.WithObject("bitbucketDataCenter", m_bitbucketDataCenter.Jsonize());
   }
 
   return payload;

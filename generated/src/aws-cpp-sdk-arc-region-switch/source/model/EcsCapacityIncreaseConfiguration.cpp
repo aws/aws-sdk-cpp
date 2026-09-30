@@ -42,6 +42,11 @@ EcsCapacityIncreaseConfiguration& EcsCapacityIncreaseConfiguration::operator=(Js
         EcsCapacityMonitoringApproachMapper::GetEcsCapacityMonitoringApproachForName(jsonValue.GetString("capacityMonitoringApproach"));
     m_capacityMonitoringApproachHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("waitELBTargetGroupHealthy")) {
+    m_waitELBTargetGroupHealthy =
+        WaitELBTargetGroupHealthyMapper::GetWaitELBTargetGroupHealthyForName(jsonValue.GetString("waitELBTargetGroupHealthy"));
+    m_waitELBTargetGroupHealthyHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -71,6 +76,11 @@ JsonValue EcsCapacityIncreaseConfiguration::Jsonize() const {
   if (m_capacityMonitoringApproachHasBeenSet) {
     payload.WithString("capacityMonitoringApproach",
                        EcsCapacityMonitoringApproachMapper::GetNameForEcsCapacityMonitoringApproach(m_capacityMonitoringApproach));
+  }
+
+  if (m_waitELBTargetGroupHealthyHasBeenSet) {
+    payload.WithString("waitELBTargetGroupHealthy",
+                       WaitELBTargetGroupHealthyMapper::GetNameForWaitELBTargetGroupHealthy(m_waitELBTargetGroupHealthy));
   }
 
   return payload;

@@ -76,6 +76,10 @@ TableInput& TableInput::operator=(JsonView jsonValue) {
     m_targetTable = jsonValue.GetObject("TargetTable");
     m_targetTableHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("FederatedTable")) {
+    m_federatedTable = jsonValue.GetObject("FederatedTable");
+    m_federatedTableHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ViewDefinition")) {
     m_viewDefinition = jsonValue.GetObject("ViewDefinition");
     m_viewDefinitionHasBeenSet = true;
@@ -144,6 +148,10 @@ JsonValue TableInput::Jsonize() const {
 
   if (m_targetTableHasBeenSet) {
     payload.WithObject("TargetTable", m_targetTable.Jsonize());
+  }
+
+  if (m_federatedTableHasBeenSet) {
+    payload.WithObject("FederatedTable", m_federatedTable.Jsonize());
   }
 
   if (m_viewDefinitionHasBeenSet) {

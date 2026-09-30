@@ -33,6 +33,11 @@ class ListAgentProfilesRequest : public WellArchitectedRequest {
 
   AWS_WELLARCHITECTED_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+  /**
+   * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
+   */
+  AWS_WELLARCHITECTED_API EndpointParameters GetEndpointContextParams() const override;
+
   ///@{
   /**
    * <p>The maximum number of profiles to return in a single call. Default is

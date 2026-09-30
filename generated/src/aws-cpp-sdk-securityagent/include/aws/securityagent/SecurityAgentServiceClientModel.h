@@ -68,6 +68,7 @@
 #include <aws/securityagent/model/GetSecurityRequirementPackResult.h>
 #include <aws/securityagent/model/ImportSecurityRequirementsResult.h>
 #include <aws/securityagent/model/InitiateProviderRegistrationResult.h>
+#include <aws/securityagent/model/ListActorMessagesResult.h>
 #include <aws/securityagent/model/ListAgentSpacesRequest.h>
 #include <aws/securityagent/model/ListAgentSpacesResult.h>
 #include <aws/securityagent/model/ListApplicationsRequest.h>
@@ -111,6 +112,7 @@
 #include <aws/securityagent/model/UpdateCodeReviewResult.h>
 #include <aws/securityagent/model/UpdateFindingResult.h>
 #include <aws/securityagent/model/UpdateIntegratedResourcesResult.h>
+#include <aws/securityagent/model/UpdateIntegrationResult.h>
 #include <aws/securityagent/model/UpdatePentestResult.h>
 #include <aws/securityagent/model/UpdatePrivateConnectionCertificateResult.h>
 #include <aws/securityagent/model/UpdateSecurityRequirementPackResult.h>
@@ -199,6 +201,7 @@ class GetIntegrationRequest;
 class GetSecurityRequirementPackRequest;
 class ImportSecurityRequirementsRequest;
 class InitiateProviderRegistrationRequest;
+class ListActorMessagesRequest;
 class ListAgentSpacesRequest;
 class ListApplicationsRequest;
 class ListArtifactsRequest;
@@ -236,6 +239,7 @@ class UpdateApplicationRequest;
 class UpdateCodeReviewRequest;
 class UpdateFindingRequest;
 class UpdateIntegratedResourcesRequest;
+class UpdateIntegrationRequest;
 class UpdatePentestRequest;
 class UpdatePrivateConnectionCertificateRequest;
 class UpdateSecurityRequirementPackRequest;
@@ -294,6 +298,7 @@ typedef Aws::Utils::Outcome<GetIntegrationResult, SecurityAgentError> GetIntegra
 typedef Aws::Utils::Outcome<GetSecurityRequirementPackResult, SecurityAgentError> GetSecurityRequirementPackOutcome;
 typedef Aws::Utils::Outcome<ImportSecurityRequirementsResult, SecurityAgentError> ImportSecurityRequirementsOutcome;
 typedef Aws::Utils::Outcome<InitiateProviderRegistrationResult, SecurityAgentError> InitiateProviderRegistrationOutcome;
+typedef Aws::Utils::Outcome<ListActorMessagesResult, SecurityAgentError> ListActorMessagesOutcome;
 typedef Aws::Utils::Outcome<ListAgentSpacesResult, SecurityAgentError> ListAgentSpacesOutcome;
 typedef Aws::Utils::Outcome<ListApplicationsResult, SecurityAgentError> ListApplicationsOutcome;
 typedef Aws::Utils::Outcome<ListArtifactsResult, SecurityAgentError> ListArtifactsOutcome;
@@ -331,6 +336,7 @@ typedef Aws::Utils::Outcome<UpdateApplicationResult, SecurityAgentError> UpdateA
 typedef Aws::Utils::Outcome<UpdateCodeReviewResult, SecurityAgentError> UpdateCodeReviewOutcome;
 typedef Aws::Utils::Outcome<UpdateFindingResult, SecurityAgentError> UpdateFindingOutcome;
 typedef Aws::Utils::Outcome<UpdateIntegratedResourcesResult, SecurityAgentError> UpdateIntegratedResourcesOutcome;
+typedef Aws::Utils::Outcome<UpdateIntegrationResult, SecurityAgentError> UpdateIntegrationOutcome;
 typedef Aws::Utils::Outcome<UpdatePentestResult, SecurityAgentError> UpdatePentestOutcome;
 typedef Aws::Utils::Outcome<UpdatePrivateConnectionCertificateResult, SecurityAgentError> UpdatePrivateConnectionCertificateOutcome;
 typedef Aws::Utils::Outcome<UpdateSecurityRequirementPackResult, SecurityAgentError> UpdateSecurityRequirementPackOutcome;
@@ -389,6 +395,7 @@ typedef std::future<GetIntegrationOutcome> GetIntegrationOutcomeCallable;
 typedef std::future<GetSecurityRequirementPackOutcome> GetSecurityRequirementPackOutcomeCallable;
 typedef std::future<ImportSecurityRequirementsOutcome> ImportSecurityRequirementsOutcomeCallable;
 typedef std::future<InitiateProviderRegistrationOutcome> InitiateProviderRegistrationOutcomeCallable;
+typedef std::future<ListActorMessagesOutcome> ListActorMessagesOutcomeCallable;
 typedef std::future<ListAgentSpacesOutcome> ListAgentSpacesOutcomeCallable;
 typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
 typedef std::future<ListArtifactsOutcome> ListArtifactsOutcomeCallable;
@@ -426,6 +433,7 @@ typedef std::future<UpdateApplicationOutcome> UpdateApplicationOutcomeCallable;
 typedef std::future<UpdateCodeReviewOutcome> UpdateCodeReviewOutcomeCallable;
 typedef std::future<UpdateFindingOutcome> UpdateFindingOutcomeCallable;
 typedef std::future<UpdateIntegratedResourcesOutcome> UpdateIntegratedResourcesOutcomeCallable;
+typedef std::future<UpdateIntegrationOutcome> UpdateIntegrationOutcomeCallable;
 typedef std::future<UpdatePentestOutcome> UpdatePentestOutcomeCallable;
 typedef std::future<UpdatePrivateConnectionCertificateOutcome> UpdatePrivateConnectionCertificateOutcomeCallable;
 typedef std::future<UpdateSecurityRequirementPackOutcome> UpdateSecurityRequirementPackOutcomeCallable;
@@ -590,6 +598,9 @@ typedef std::function<void(const SecurityAgentClient*, const Model::InitiateProv
                            const Model::InitiateProviderRegistrationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     InitiateProviderRegistrationResponseReceivedHandler;
+typedef std::function<void(const SecurityAgentClient*, const Model::ListActorMessagesRequest&, const Model::ListActorMessagesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListActorMessagesResponseReceivedHandler;
 typedef std::function<void(const SecurityAgentClient*, const Model::ListAgentSpacesRequest&, const Model::ListAgentSpacesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAgentSpacesResponseReceivedHandler;
@@ -703,6 +714,9 @@ typedef std::function<void(const SecurityAgentClient*, const Model::UpdateFindin
 typedef std::function<void(const SecurityAgentClient*, const Model::UpdateIntegratedResourcesRequest&,
                            const Model::UpdateIntegratedResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateIntegratedResourcesResponseReceivedHandler;
+typedef std::function<void(const SecurityAgentClient*, const Model::UpdateIntegrationRequest&, const Model::UpdateIntegrationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateIntegrationResponseReceivedHandler;
 typedef std::function<void(const SecurityAgentClient*, const Model::UpdatePentestRequest&, const Model::UpdatePentestOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdatePentestResponseReceivedHandler;

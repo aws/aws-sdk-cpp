@@ -98,6 +98,7 @@
 #include <aws/ec2/model/DeleteApplicationStatusCheckRequest.h>
 #include <aws/ec2/model/DeleteCapacityManagerDataExportRequest.h>
 #include <aws/ec2/model/DeleteCarrierGatewayRequest.h>
+#include <aws/ec2/model/DeleteClientVpnEndpointAuthorizationPolicyRequest.h>
 #include <aws/ec2/model/DeleteClientVpnEndpointRequest.h>
 #include <aws/ec2/model/DeleteClientVpnRouteRequest.h>
 #include <aws/ec2/model/DeleteCoipCidrRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/ec2/model/DeleteIpamPrefixListResolverRequest.h>
 #include <aws/ec2/model/DeleteIpamPrefixListResolverTargetRequest.h>
 #include <aws/ec2/model/DeleteIpamRequest.h>
-#include <aws/ec2/model/DeleteIpamResourceDiscoveryRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -625,6 +625,13 @@ DeleteClientVpnEndpointOutcome EC2Client::DeleteClientVpnEndpoint(const DeleteCl
                             : DeleteClientVpnEndpointOutcome(std::move(result.GetError()));
 }
 
+DeleteClientVpnEndpointAuthorizationPolicyOutcome EC2Client::DeleteClientVpnEndpointAuthorizationPolicy(
+    const DeleteClientVpnEndpointAuthorizationPolicyRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteClientVpnEndpointAuthorizationPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteClientVpnEndpointAuthorizationPolicyOutcome(std::move(result.GetError()));
+}
+
 DeleteClientVpnRouteOutcome EC2Client::DeleteClientVpnRoute(const DeleteClientVpnRouteRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteClientVpnRouteOutcome(result.GetResultWithOwnership())
@@ -741,10 +748,4 @@ DeleteIpamPrefixListResolverTargetOutcome EC2Client::DeleteIpamPrefixListResolve
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteIpamPrefixListResolverTargetOutcome(result.GetResultWithOwnership())
                             : DeleteIpamPrefixListResolverTargetOutcome(std::move(result.GetError()));
-}
-
-DeleteIpamResourceDiscoveryOutcome EC2Client::DeleteIpamResourceDiscovery(const DeleteIpamResourceDiscoveryRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteIpamResourceDiscoveryOutcome(result.GetResultWithOwnership())
-                            : DeleteIpamResourceDiscoveryOutcome(std::move(result.GetError()));
 }

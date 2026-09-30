@@ -42,6 +42,10 @@ EventBus& EventBus::operator=(JsonView jsonValue) {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ManagedBy")) {
+    m_managedBy = jsonValue.GetString("ManagedBy");
+    m_managedByHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +74,10 @@ JsonValue EventBus::Jsonize() const {
 
   if (m_lastModifiedTimeHasBeenSet) {
     payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  }
+
+  if (m_managedByHasBeenSet) {
+    payload.WithString("ManagedBy", m_managedBy);
   }
 
   return payload;

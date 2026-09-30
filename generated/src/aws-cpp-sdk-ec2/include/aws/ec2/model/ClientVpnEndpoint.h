@@ -14,6 +14,7 @@
 #include <aws/ec2/model/ClientVpnAuthentication.h>
 #include <aws/ec2/model/ClientVpnEndpointStatus.h>
 #include <aws/ec2/model/ConnectionLogResponseOptions.h>
+#include <aws/ec2/model/DevicePostureResponseOptions.h>
 #include <aws/ec2/model/EndpointIpAddressType.h>
 #include <aws/ec2/model/Tag.h>
 #include <aws/ec2/model/TrafficIpAddressType.h>
@@ -568,6 +569,25 @@ class ClientVpnEndpoint {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The device trust providers configured for the Client VPN endpoint, if
+   * applicable.</p>
+   */
+  inline const DevicePostureResponseOptions& GetDevicePostureOptions() const { return m_devicePostureOptions; }
+  inline bool DevicePostureOptionsHasBeenSet() const { return m_devicePostureOptionsHasBeenSet; }
+  template <typename DevicePostureOptionsT = DevicePostureResponseOptions>
+  void SetDevicePostureOptions(DevicePostureOptionsT&& value) {
+    m_devicePostureOptionsHasBeenSet = true;
+    m_devicePostureOptions = std::forward<DevicePostureOptionsT>(value);
+  }
+  template <typename DevicePostureOptionsT = DevicePostureResponseOptions>
+  ClientVpnEndpoint& WithDevicePostureOptions(DevicePostureOptionsT&& value) {
+    SetDevicePostureOptions(std::forward<DevicePostureOptionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clientVpnEndpointId;
 
@@ -622,6 +642,8 @@ class ClientVpnEndpoint {
   TrafficIpAddressType m_trafficIpAddressType{TrafficIpAddressType::NOT_SET};
 
   TransitGatewayConfigurationDescribeEndpointStructure m_transitGatewayConfiguration;
+
+  DevicePostureResponseOptions m_devicePostureOptions;
   bool m_clientVpnEndpointIdHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_statusHasBeenSet = false;
@@ -649,6 +671,7 @@ class ClientVpnEndpoint {
   bool m_endpointIpAddressTypeHasBeenSet = false;
   bool m_trafficIpAddressTypeHasBeenSet = false;
   bool m_transitGatewayConfigurationHasBeenSet = false;
+  bool m_devicePostureOptionsHasBeenSet = false;
 };
 
 }  // namespace Model

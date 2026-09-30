@@ -69,6 +69,18 @@ Aws::String CreateBlueGreenDeploymentRequest::SerializePayload() const {
     ss << "TargetStorageThroughput=" << m_targetStorageThroughput << "&";
   }
 
+  if (m_targetResourceConfigurationsHasBeenSet) {
+    if (m_targetResourceConfigurations.empty()) {
+      ss << "TargetResourceConfigurations=&";
+    } else {
+      unsigned targetResourceConfigurationsCount = 1;
+      for (auto& item : m_targetResourceConfigurations) {
+        item.OutputToStream(ss, "TargetResourceConfigurations.TargetResourceConfiguration.", targetResourceConfigurationsCount, "");
+        targetResourceConfigurationsCount++;
+      }
+    }
+  }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

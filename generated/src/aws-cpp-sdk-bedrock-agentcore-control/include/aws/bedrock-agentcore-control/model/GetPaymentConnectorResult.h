@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/CredentialsProviderConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/PaymentConnectorProvisionMode.h>
 #include <aws/bedrock-agentcore-control/model/PaymentConnectorStatus.h>
 #include <aws/bedrock-agentcore-control/model/PaymentConnectorType.h>
 #include <aws/core/http/HttpResponse.h>
@@ -96,6 +97,28 @@ class GetPaymentConnectorResult {
   }
   inline GetPaymentConnectorResult& WithType(PaymentConnectorType value) {
     SetType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies how the payment connector was provisioned. Payment connectors that
+   * were created before this field was available return <code>MANUAL</code>.</p>
+   * <ul> <li> <p> <code>MANUAL</code> - You provided the credential provider
+   * configurations, so you own the credentials. Rotate them with the payment
+   * provider, then call <code>UpdatePaymentCredentialProvider</code>.</p> </li> <li>
+   * <p> <code>QUICK_CREATE</code> - AgentCore provisioned the credential provider
+   * for you, so the credentials are service-managed. You can rotate them with
+   * <code>RotatePaymentConnectorCredentials</code>.</p> </li> </ul>
+   */
+  inline PaymentConnectorProvisionMode GetProvisionMode() const { return m_provisionMode; }
+  inline void SetProvisionMode(PaymentConnectorProvisionMode value) {
+    m_provisionModeHasBeenSet = true;
+    m_provisionMode = value;
+  }
+  inline GetPaymentConnectorResult& WithProvisionMode(PaymentConnectorProvisionMode value) {
+    SetProvisionMode(value);
     return *this;
   }
   ///@}
@@ -197,6 +220,26 @@ class GetPaymentConnectorResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The timestamp when the payment connector's current service-managed
+   * credentials took effect. It is first set when the credentials are provisioned
+   * and is updated by each rotation. This field is present only for payment
+   * connectors with a <code>provisionMode</code> of <code>QUICK_CREATE</code>.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCredentialsUpdatedAt() const { return m_credentialsUpdatedAt; }
+  template <typename CredentialsUpdatedAtT = Aws::Utils::DateTime>
+  void SetCredentialsUpdatedAt(CredentialsUpdatedAtT&& value) {
+    m_credentialsUpdatedAtHasBeenSet = true;
+    m_credentialsUpdatedAt = std::forward<CredentialsUpdatedAtT>(value);
+  }
+  template <typename CredentialsUpdatedAtT = Aws::Utils::DateTime>
+  GetPaymentConnectorResult& WithCredentialsUpdatedAt(CredentialsUpdatedAtT&& value) {
+    SetCredentialsUpdatedAt(std::forward<CredentialsUpdatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -221,6 +264,8 @@ class GetPaymentConnectorResult {
 
   PaymentConnectorType m_type{PaymentConnectorType::NOT_SET};
 
+  PaymentConnectorProvisionMode m_provisionMode{PaymentConnectorProvisionMode::NOT_SET};
+
   Aws::Vector<CredentialsProviderConfiguration> m_credentialProviderConfigurations;
 
   Aws::Utils::DateTime m_createdAt{};
@@ -231,17 +276,21 @@ class GetPaymentConnectorResult {
 
   Aws::String m_authorizationUrl;
 
+  Aws::Utils::DateTime m_credentialsUpdatedAt{};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_paymentConnectorIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_typeHasBeenSet = false;
+  bool m_provisionModeHasBeenSet = false;
   bool m_credentialProviderConfigurationsHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_lastUpdatedAtHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_authorizationUrlHasBeenSet = false;
+  bool m_credentialsUpdatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

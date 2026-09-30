@@ -104,6 +104,11 @@ ClientVpnConnection& ClientVpnConnection::operator=(const XmlNode& xmlNode) {
 
       m_postureComplianceStatusesHasBeenSet = true;
     }
+    XmlNode authorizationPolicyLastEvaluatedTimeNode = resultNode.FirstChild("authorizationPolicyLastEvaluatedTime");
+    if (!authorizationPolicyLastEvaluatedTimeNode.IsNull()) {
+      m_authorizationPolicyLastEvaluatedTime = Aws::Utils::Xml::DecodeEscapedXmlText(authorizationPolicyLastEvaluatedTimeNode.GetText());
+      m_authorizationPolicyLastEvaluatedTimeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -177,6 +182,11 @@ void ClientVpnConnection::OutputToStream(Aws::OStream& oStream, const char* loca
               << StringUtils::URLEncode(item.c_str()) << "&";
     }
   }
+
+  if (m_authorizationPolicyLastEvaluatedTimeHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".AuthorizationPolicyLastEvaluatedTime=" << StringUtils::URLEncode(m_authorizationPolicyLastEvaluatedTime.c_str()) << "&";
+  }
 }
 
 void ClientVpnConnection::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -230,6 +240,10 @@ void ClientVpnConnection::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << ".PostureComplianceStatusSet." << postureComplianceStatusesIdx++ << "=" << StringUtils::URLEncode(item.c_str())
               << "&";
     }
+  }
+  if (m_authorizationPolicyLastEvaluatedTimeHasBeenSet) {
+    oStream << location
+            << ".AuthorizationPolicyLastEvaluatedTime=" << StringUtils::URLEncode(m_authorizationPolicyLastEvaluatedTime.c_str()) << "&";
   }
 }
 

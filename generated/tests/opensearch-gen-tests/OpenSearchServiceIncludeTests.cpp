@@ -451,6 +451,7 @@
 #include <aws/opensearch/model/VPCDerivedInfoStatus.h>
 #include <aws/opensearch/model/VPCOptions.h>
 #include <aws/opensearch/model/ValidationFailure.h>
+#include <aws/opensearch/model/ValidationFailureSeverity.h>
 #include <aws/opensearch/model/VersionStatus.h>
 #include <aws/opensearch/model/VolumeType.h>
 #include <aws/opensearch/model/VpcEndpoint.h>

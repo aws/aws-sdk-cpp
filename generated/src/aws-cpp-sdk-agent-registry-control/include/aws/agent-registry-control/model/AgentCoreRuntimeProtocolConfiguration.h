@@ -20,8 +20,8 @@ namespace AgentRegistryControl {
 namespace Model {
 
 /**
- * <p>Protocol configuration for an AgentCore Runtime.</p><p><h3>See Also:</h3>
- * <a
+ * <p>The protocol configuration of an AgentCore Runtime resource that a registry
+ * record was auto-detected from.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/AgentCoreRuntimeProtocolConfiguration">AWS
  * API Reference</a></p>
  */
@@ -33,7 +33,10 @@ class AgentCoreRuntimeProtocolConfiguration {
   AWS_AGENTREGISTRYCONTROL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p>The server protocol used by the AgentCore Runtime, such as <code>MCP</code>,
+   * <code>HTTP</code>, <code>A2A</code>, or <code>AGUI</code>.</p>
+   */
   inline AgentCoreRuntimeServerProtocol GetServerProtocol() const { return m_serverProtocol; }
   inline bool ServerProtocolHasBeenSet() const { return m_serverProtocolHasBeenSet; }
   inline void SetServerProtocol(AgentCoreRuntimeServerProtocol value) {

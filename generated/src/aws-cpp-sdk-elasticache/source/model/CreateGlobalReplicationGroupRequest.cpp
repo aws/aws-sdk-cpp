@@ -25,6 +25,18 @@ Aws::String CreateGlobalReplicationGroupRequest::SerializePayload() const {
     ss << "PrimaryReplicationGroupId=" << StringUtils::URLEncode(m_primaryReplicationGroupId.c_str()) << "&";
   }
 
+  if (m_tagsHasBeenSet) {
+    if (m_tags.empty()) {
+      ss << "Tags=&";
+    } else {
+      unsigned tagsCount = 1;
+      for (auto& item : m_tags) {
+        item.OutputToStream(ss, "Tags.Tag.", tagsCount, "");
+        tagsCount++;
+      }
+    }
+  }
+
   ss << "Version=2015-02-02";
   return ss.str();
 }

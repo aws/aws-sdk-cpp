@@ -31,6 +31,7 @@ static const int BLOCKED_CASE_SUMMARIZATION_CHUNK_HASH = HashingUtils::HashStrin
 static const int SUGGESTED_MESSAGE_HASH = HashingUtils::HashString("SUGGESTED_MESSAGE");
 static const int NOTES_CHUNK_HASH = HashingUtils::HashString("NOTES_CHUNK");
 static const int BLOCKED_NOTES_CHUNK_HASH = HashingUtils::HashString("BLOCKED_NOTES_CHUNK");
+static const int PROACTIVE_RECOMMENDATION_HASH = HashingUtils::HashString("PROACTIVE_RECOMMENDATION");
 
 RecommendationType GetRecommendationTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -66,6 +67,8 @@ RecommendationType GetRecommendationTypeForName(const Aws::String& name) {
     return RecommendationType::NOTES_CHUNK;
   } else if (hashCode == BLOCKED_NOTES_CHUNK_HASH) {
     return RecommendationType::BLOCKED_NOTES_CHUNK;
+  } else if (hashCode == PROACTIVE_RECOMMENDATION_HASH) {
+    return RecommendationType::PROACTIVE_RECOMMENDATION;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -112,6 +115,8 @@ Aws::String GetNameForRecommendationType(RecommendationType enumValue) {
       return "NOTES_CHUNK";
     case RecommendationType::BLOCKED_NOTES_CHUNK:
       return "BLOCKED_NOTES_CHUNK";
+    case RecommendationType::PROACTIVE_RECOMMENDATION:
+      return "PROACTIVE_RECOMMENDATION";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

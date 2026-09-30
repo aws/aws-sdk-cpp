@@ -36,7 +36,10 @@ class DescribeGroupRequest : public IdentityStoreRequest {
    * <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix,
    * and <code>1234567890</code> is a randomly generated string that contains numbers
    * and lower case letters. This value is generated at the time that a new identity
-   * store is created.</p>
+   * store is created.</p> <p>You can specify the identity store by ID or by Amazon
+   * Resource Name (ARN). For example, identity store ID <code>d-1234567890</code> or
+   * identity store ARN
+   * <code>arn:aws:identitystore::111122223333:identitystore/d-1234567890</code>.</p>
    */
   inline const Aws::String& GetIdentityStoreId() const { return m_identityStoreId; }
   inline bool IdentityStoreIdHasBeenSet() const { return m_identityStoreIdHasBeenSet; }
@@ -54,7 +57,10 @@ class DescribeGroupRequest : public IdentityStoreRequest {
 
   ///@{
   /**
-   * <p>The identifier for a group in the identity store.</p>
+   * <p>The identifier for a group in the identity store.</p> <p>You can specify the
+   * group by ID or by Amazon Resource Name (ARN). For example, group ID
+   * <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</code> or group ARN
+   * <code>arn:aws:identitystore:::group/a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</code>.</p>
    */
   inline const Aws::String& GetGroupId() const { return m_groupId; }
   inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }

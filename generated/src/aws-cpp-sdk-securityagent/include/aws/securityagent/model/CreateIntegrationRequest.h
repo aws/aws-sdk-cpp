@@ -33,7 +33,7 @@ class CreateIntegrationRequest : public SecurityAgentRequest {
 
   ///@{
   /**
-   * <p>The integration provider. Currently, only GITHUB is supported.</p>
+   * <p>The integration provider.</p>
    */
   inline Provider GetProvider() const { return m_provider; }
   inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }

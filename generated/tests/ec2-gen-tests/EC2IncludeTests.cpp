@@ -296,6 +296,7 @@
 #include <aws/ec2/model/CapacityReservationGroup.h>
 #include <aws/ec2/model/CapacityReservationInfo.h>
 #include <aws/ec2/model/CapacityReservationInstancePlatform.h>
+#include <aws/ec2/model/CapacityReservationLaunchStatus.h>
 #include <aws/ec2/model/CapacityReservationModificationQuote.h>
 #include <aws/ec2/model/CapacityReservationModificationQuoteState.h>
 #include <aws/ec2/model/CapacityReservationOptions.h>
@@ -334,11 +335,14 @@
 #include <aws/ec2/model/ClientVpnAuthentication.h>
 #include <aws/ec2/model/ClientVpnAuthenticationRequest.h>
 #include <aws/ec2/model/ClientVpnAuthenticationType.h>
+#include <aws/ec2/model/ClientVpnAuthorizationPolicyShadowMode.h>
+#include <aws/ec2/model/ClientVpnAuthorizationPolicyStatus.h>
 #include <aws/ec2/model/ClientVpnAuthorizationRuleStatus.h>
 #include <aws/ec2/model/ClientVpnAuthorizationRuleStatusCode.h>
 #include <aws/ec2/model/ClientVpnConnection.h>
 #include <aws/ec2/model/ClientVpnConnectionStatus.h>
 #include <aws/ec2/model/ClientVpnConnectionStatusCode.h>
+#include <aws/ec2/model/ClientVpnDeviceTrustProviderType.h>
 #include <aws/ec2/model/ClientVpnEndpoint.h>
 #include <aws/ec2/model/ClientVpnEndpointAttributeStatus.h>
 #include <aws/ec2/model/ClientVpnEndpointAttributeStatusCode.h>
@@ -347,6 +351,8 @@
 #include <aws/ec2/model/ClientVpnRoute.h>
 #include <aws/ec2/model/ClientVpnRouteStatus.h>
 #include <aws/ec2/model/ClientVpnRouteStatusCode.h>
+#include <aws/ec2/model/ClientVpnTrustProvider.h>
+#include <aws/ec2/model/ClientVpnTrustProviderRequest.h>
 #include <aws/ec2/model/CloudWatchLogOptions.h>
 #include <aws/ec2/model/CloudWatchLogOptionsSpecification.h>
 #include <aws/ec2/model/CoipAddressUsage.h>
@@ -640,6 +646,8 @@
 #include <aws/ec2/model/DeleteCapacityManagerDataExportResponse.h>
 #include <aws/ec2/model/DeleteCarrierGatewayRequest.h>
 #include <aws/ec2/model/DeleteCarrierGatewayResponse.h>
+#include <aws/ec2/model/DeleteClientVpnEndpointAuthorizationPolicyRequest.h>
+#include <aws/ec2/model/DeleteClientVpnEndpointAuthorizationPolicyResponse.h>
 #include <aws/ec2/model/DeleteClientVpnEndpointRequest.h>
 #include <aws/ec2/model/DeleteClientVpnEndpointResponse.h>
 #include <aws/ec2/model/DeleteClientVpnRouteRequest.h>
@@ -1380,6 +1388,8 @@
 #include <aws/ec2/model/DetachVolumeResponse.h>
 #include <aws/ec2/model/DetachVpnGatewayRequest.h>
 #include <aws/ec2/model/DeviceOptions.h>
+#include <aws/ec2/model/DevicePostureOptions.h>
+#include <aws/ec2/model/DevicePostureResponseOptions.h>
 #include <aws/ec2/model/DeviceTrustProviderType.h>
 #include <aws/ec2/model/DeviceType.h>
 #include <aws/ec2/model/DhcpConfiguration.h>
@@ -1687,6 +1697,8 @@
 #include <aws/ec2/model/GetCapacityManagerMonitoredTagKeysResponse.h>
 #include <aws/ec2/model/GetCapacityReservationUsageRequest.h>
 #include <aws/ec2/model/GetCapacityReservationUsageResponse.h>
+#include <aws/ec2/model/GetClientVpnEndpointAuthorizationPolicyRequest.h>
+#include <aws/ec2/model/GetClientVpnEndpointAuthorizationPolicyResponse.h>
 #include <aws/ec2/model/GetCoipPoolUsageRequest.h>
 #include <aws/ec2/model/GetCoipPoolUsageResponse.h>
 #include <aws/ec2/model/GetConsoleOutputRequest.h>
@@ -2283,6 +2295,8 @@
 #include <aws/ec2/model/ModifyCapacityReservationFleetResponse.h>
 #include <aws/ec2/model/ModifyCapacityReservationRequest.h>
 #include <aws/ec2/model/ModifyCapacityReservationResponse.h>
+#include <aws/ec2/model/ModifyClientVpnEndpointAuthorizationPolicyRequest.h>
+#include <aws/ec2/model/ModifyClientVpnEndpointAuthorizationPolicyResponse.h>
 #include <aws/ec2/model/ModifyClientVpnEndpointRequest.h>
 #include <aws/ec2/model/ModifyClientVpnEndpointResponse.h>
 #include <aws/ec2/model/ModifyDefaultCreditSpecificationRequest.h>

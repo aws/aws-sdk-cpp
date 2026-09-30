@@ -22,6 +22,10 @@ ListFulfillmentOptionsResult::ListFulfillmentOptionsResult(const Aws::AmazonWebS
 ListFulfillmentOptionsResult& ListFulfillmentOptionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("locale")) {
+    m_locale = jsonValue.GetString("locale");
+    m_localeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("fulfillmentOptions")) {
     Aws::Utils::Array<JsonView> fulfillmentOptionsJsonList = jsonValue.GetArray("fulfillmentOptions");
     for (unsigned fulfillmentOptionsIndex = 0; fulfillmentOptionsIndex < fulfillmentOptionsJsonList.GetLength();

@@ -51,5 +51,9 @@ Aws::String UpdateThreatModelRequest::SerializePayload() const {
     payload.WithObject("logConfig", m_logConfig.Jsonize());
   }
 
+  if (m_reportDestinationHasBeenSet) {
+    payload.WithObject("reportDestination", m_reportDestination.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

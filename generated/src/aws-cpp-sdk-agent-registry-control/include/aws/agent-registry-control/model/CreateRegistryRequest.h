@@ -8,6 +8,7 @@
 #include <aws/agent-registry-control/AgentRegistryControl_EXPORTS.h>
 #include <aws/agent-registry-control/model/ApprovalConfiguration.h>
 #include <aws/agent-registry-control/model/AutoDetectionConfiguration.h>
+#include <aws/agent-registry-control/model/CustomMetadataSchemaConfiguration.h>
 #include <aws/agent-registry-control/model/DiscoveryConfiguration.h>
 #include <aws/agent-registry-control/model/EncryptionConfiguration.h>
 #include <aws/core/utils/UUID.h>
@@ -177,6 +178,28 @@ class CreateRegistryRequest : public AgentRegistryControlRequest {
 
   ///@{
   /**
+   * <p>The optional custom metadata schema configuration for the registry. When
+   * provided, registry records can carry structured metadata validated against this
+   * schema.</p>
+   */
+  inline const CustomMetadataSchemaConfiguration& GetCustomMetadataSchemaConfiguration() const {
+    return m_customMetadataSchemaConfiguration;
+  }
+  inline bool CustomMetadataSchemaConfigurationHasBeenSet() const { return m_customMetadataSchemaConfigurationHasBeenSet; }
+  template <typename CustomMetadataSchemaConfigurationT = CustomMetadataSchemaConfiguration>
+  void SetCustomMetadataSchemaConfiguration(CustomMetadataSchemaConfigurationT&& value) {
+    m_customMetadataSchemaConfigurationHasBeenSet = true;
+    m_customMetadataSchemaConfiguration = std::forward<CustomMetadataSchemaConfigurationT>(value);
+  }
+  template <typename CustomMetadataSchemaConfigurationT = CustomMetadataSchemaConfiguration>
+  CreateRegistryRequest& WithCustomMetadataSchemaConfiguration(CustomMetadataSchemaConfigurationT&& value) {
+    SetCustomMetadataSchemaConfiguration(std::forward<CustomMetadataSchemaConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The optional auto-detection configuration for the registry. When provided,
    * the registry is automatically populated with resources discovered according to
    * the configuration. Omit this field for registries whose records are managed
@@ -210,6 +233,8 @@ class CreateRegistryRequest : public AgentRegistryControlRequest {
 
   ApprovalConfiguration m_approvalConfiguration;
 
+  CustomMetadataSchemaConfiguration m_customMetadataSchemaConfiguration;
+
   AutoDetectionConfiguration m_autoDetectionConfiguration;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
@@ -218,6 +243,7 @@ class CreateRegistryRequest : public AgentRegistryControlRequest {
   bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
   bool m_approvalConfigurationHasBeenSet = false;
+  bool m_customMetadataSchemaConfigurationHasBeenSet = false;
   bool m_autoDetectionConfigurationHasBeenSet = false;
 };
 

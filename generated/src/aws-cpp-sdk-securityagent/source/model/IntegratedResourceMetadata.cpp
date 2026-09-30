@@ -34,6 +34,10 @@ IntegratedResourceMetadata& IntegratedResourceMetadata::operator=(JsonView jsonV
     m_confluenceDocument = jsonValue.GetObject("confluenceDocument");
     m_confluenceDocumentHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("azureDevOpsRepository")) {
+    m_azureDevOpsRepository = jsonValue.GetObject("azureDevOpsRepository");
+    m_azureDevOpsRepositoryHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue IntegratedResourceMetadata::Jsonize() const {
 
   if (m_confluenceDocumentHasBeenSet) {
     payload.WithObject("confluenceDocument", m_confluenceDocument.Jsonize());
+  }
+
+  if (m_azureDevOpsRepositoryHasBeenSet) {
+    payload.WithObject("azureDevOpsRepository", m_azureDevOpsRepository.Jsonize());
   }
 
   return payload;

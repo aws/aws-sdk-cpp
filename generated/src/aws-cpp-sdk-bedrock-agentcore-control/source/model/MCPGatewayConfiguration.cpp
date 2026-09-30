@@ -41,6 +41,10 @@ MCPGatewayConfiguration& MCPGatewayConfiguration::operator=(JsonView jsonValue) 
     m_streamingConfiguration = jsonValue.GetObject("streamingConfiguration");
     m_streamingConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("disableMcpListToolsPagination")) {
+    m_disableMcpListToolsPagination = jsonValue.GetBool("disableMcpListToolsPagination");
+    m_disableMcpListToolsPaginationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -69,6 +73,10 @@ JsonValue MCPGatewayConfiguration::Jsonize() const {
 
   if (m_streamingConfigurationHasBeenSet) {
     payload.WithObject("streamingConfiguration", m_streamingConfiguration.Jsonize());
+  }
+
+  if (m_disableMcpListToolsPaginationHasBeenSet) {
+    payload.WithBool("disableMcpListToolsPagination", m_disableMcpListToolsPagination);
   }
 
   return payload;

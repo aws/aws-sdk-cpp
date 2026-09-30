@@ -4,9 +4,11 @@
  */
 
 #pragma once
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/marketplace-discovery/MarketplaceDiscovery_EXPORTS.h>
+#include <aws/marketplace-discovery/model/AmazonMachineImageEbsVolume.h>
 #include <aws/marketplace-discovery/model/AmazonMachineImageOperatingSystem.h>
 #include <aws/marketplace-discovery/model/AmazonMachineImageRecommendation.h>
 #include <aws/marketplace-discovery/model/FulfillmentOptionType.h>
@@ -203,6 +205,114 @@ class AmazonMachineImageFulfillmentOption {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The date and time when the AMI became available for fulfillment.</p>
+   */
+  inline const Aws::Utils::DateTime& GetAvailableFromTime() const { return m_availableFromTime; }
+  inline bool AvailableFromTimeHasBeenSet() const { return m_availableFromTimeHasBeenSet; }
+  template <typename AvailableFromTimeT = Aws::Utils::DateTime>
+  void SetAvailableFromTime(AvailableFromTimeT&& value) {
+    m_availableFromTimeHasBeenSet = true;
+    m_availableFromTime = std::forward<AvailableFromTimeT>(value);
+  }
+  template <typename AvailableFromTimeT = Aws::Utils::DateTime>
+  AmazonMachineImageFulfillmentOption& WithAvailableFromTime(AvailableFromTimeT&& value) {
+    SetAvailableFromTime(std::forward<AvailableFromTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The URL pattern for accessing the product when an instance is running.</p>
+   */
+  inline const Aws::String& GetAccessUrlTemplate() const { return m_accessUrlTemplate; }
+  inline bool AccessUrlTemplateHasBeenSet() const { return m_accessUrlTemplateHasBeenSet; }
+  template <typename AccessUrlTemplateT = Aws::String>
+  void SetAccessUrlTemplate(AccessUrlTemplateT&& value) {
+    m_accessUrlTemplateHasBeenSet = true;
+    m_accessUrlTemplate = std::forward<AccessUrlTemplateT>(value);
+  }
+  template <typename AccessUrlTemplateT = Aws::String>
+  AmazonMachineImageFulfillmentOption& WithAccessUrlTemplate(AccessUrlTemplateT&& value) {
+    SetAccessUrlTemplate(std::forward<AccessUrlTemplateT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The architecture of the AMI, such as <code>x86_64</code>.</p>
+   */
+  inline const Aws::String& GetArchitecture() const { return m_architecture; }
+  inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
+  template <typename ArchitectureT = Aws::String>
+  void SetArchitecture(ArchitectureT&& value) {
+    m_architectureHasBeenSet = true;
+    m_architecture = std::forward<ArchitectureT>(value);
+  }
+  template <typename ArchitectureT = Aws::String>
+  AmazonMachineImageFulfillmentOption& WithArchitecture(ArchitectureT&& value) {
+    SetArchitecture(std::forward<ArchitectureT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The alias of the AMI associated with this fulfillment option.</p>
+   */
+  inline const Aws::String& GetAmiAlias() const { return m_amiAlias; }
+  inline bool AmiAliasHasBeenSet() const { return m_amiAliasHasBeenSet; }
+  template <typename AmiAliasT = Aws::String>
+  void SetAmiAlias(AmiAliasT&& value) {
+    m_amiAliasHasBeenSet = true;
+    m_amiAlias = std::forward<AmiAliasT>(value);
+  }
+  template <typename AmiAliasT = Aws::String>
+  AmazonMachineImageFulfillmentOption& WithAmiAlias(AmiAliasT&& value) {
+    SetAmiAlias(std::forward<AmiAliasT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The supported Amazon EBS volume configuration for the AMI.</p>
+   */
+  inline const AmazonMachineImageEbsVolume& GetEbsVolume() const { return m_ebsVolume; }
+  inline bool EbsVolumeHasBeenSet() const { return m_ebsVolumeHasBeenSet; }
+  template <typename EbsVolumeT = AmazonMachineImageEbsVolume>
+  void SetEbsVolume(EbsVolumeT&& value) {
+    m_ebsVolumeHasBeenSet = true;
+    m_ebsVolume = std::forward<EbsVolumeT>(value);
+  }
+  template <typename EbsVolumeT = AmazonMachineImageEbsVolume>
+  AmazonMachineImageFulfillmentOption& WithEbsVolume(EbsVolumeT&& value) {
+    SetEbsVolume(std::forward<EbsVolumeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A short description of the fulfillment option.</p>
+   */
+  inline const Aws::String& GetShortDescription() const { return m_shortDescription; }
+  inline bool ShortDescriptionHasBeenSet() const { return m_shortDescriptionHasBeenSet; }
+  template <typename ShortDescriptionT = Aws::String>
+  void SetShortDescription(ShortDescriptionT&& value) {
+    m_shortDescriptionHasBeenSet = true;
+    m_shortDescription = std::forward<ShortDescriptionT>(value);
+  }
+  template <typename ShortDescriptionT = Aws::String>
+  AmazonMachineImageFulfillmentOption& WithShortDescription(ShortDescriptionT&& value) {
+    SetShortDescription(std::forward<ShortDescriptionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_fulfillmentOptionId;
 
@@ -221,6 +331,18 @@ class AmazonMachineImageFulfillmentOption {
   Aws::String m_releaseNotes;
 
   Aws::String m_usageInstructions;
+
+  Aws::Utils::DateTime m_availableFromTime{};
+
+  Aws::String m_accessUrlTemplate;
+
+  Aws::String m_architecture;
+
+  Aws::String m_amiAlias;
+
+  AmazonMachineImageEbsVolume m_ebsVolume;
+
+  Aws::String m_shortDescription;
   bool m_fulfillmentOptionIdHasBeenSet = false;
   bool m_fulfillmentOptionNameHasBeenSet = false;
   bool m_fulfillmentOptionVersionHasBeenSet = false;
@@ -230,6 +352,12 @@ class AmazonMachineImageFulfillmentOption {
   bool m_recommendationHasBeenSet = false;
   bool m_releaseNotesHasBeenSet = false;
   bool m_usageInstructionsHasBeenSet = false;
+  bool m_availableFromTimeHasBeenSet = false;
+  bool m_accessUrlTemplateHasBeenSet = false;
+  bool m_architectureHasBeenSet = false;
+  bool m_amiAliasHasBeenSet = false;
+  bool m_ebsVolumeHasBeenSet = false;
+  bool m_shortDescriptionHasBeenSet = false;
 };
 
 }  // namespace Model

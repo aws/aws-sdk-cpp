@@ -146,6 +146,26 @@ class EventBus {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>If the event bus was created on behalf of your account by an Amazon Web
+   * Services service, this field displays the principal name of the service that
+   * created the event bus.</p>
+   */
+  inline const Aws::String& GetManagedBy() const { return m_managedBy; }
+  inline bool ManagedByHasBeenSet() const { return m_managedByHasBeenSet; }
+  template <typename ManagedByT = Aws::String>
+  void SetManagedBy(ManagedByT&& value) {
+    m_managedByHasBeenSet = true;
+    m_managedBy = std::forward<ManagedByT>(value);
+  }
+  template <typename ManagedByT = Aws::String>
+  EventBus& WithManagedBy(ManagedByT&& value) {
+    SetManagedBy(std::forward<ManagedByT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -158,12 +178,15 @@ class EventBus {
   Aws::Utils::DateTime m_creationTime{};
 
   Aws::Utils::DateTime m_lastModifiedTime{};
+
+  Aws::String m_managedBy;
   bool m_nameHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_policyHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_managedByHasBeenSet = false;
 };
 
 }  // namespace Model

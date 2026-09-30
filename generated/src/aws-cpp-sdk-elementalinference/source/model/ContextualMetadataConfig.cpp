@@ -22,6 +22,10 @@ ContextualMetadataConfig& ContextualMetadataConfig::operator=(JsonView jsonValue
     m_summaryGeneration = SummaryGenerationModeMapper::GetSummaryGenerationModeForName(jsonValue.GetString("summaryGeneration"));
     m_summaryGenerationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("extendedAnalysis")) {
+    m_extendedAnalysis = ExtendedAnalysisModeMapper::GetExtendedAnalysisModeForName(jsonValue.GetString("extendedAnalysis"));
+    m_extendedAnalysisHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue ContextualMetadataConfig::Jsonize() const {
 
   if (m_summaryGenerationHasBeenSet) {
     payload.WithString("summaryGeneration", SummaryGenerationModeMapper::GetNameForSummaryGenerationMode(m_summaryGeneration));
+  }
+
+  if (m_extendedAnalysisHasBeenSet) {
+    payload.WithString("extendedAnalysis", ExtendedAnalysisModeMapper::GetNameForExtendedAnalysisMode(m_extendedAnalysis));
   }
 
   return payload;

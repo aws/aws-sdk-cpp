@@ -37,6 +37,10 @@ ArgoCdConfigRequest& ArgoCdConfigRequest::operator=(JsonView jsonValue) {
     m_networkAccess = jsonValue.GetObject("networkAccess");
     m_networkAccessHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("endpointPrefix")) {
+    m_endpointPrefix = jsonValue.GetString("endpointPrefix");
+    m_endpointPrefixHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -61,6 +65,10 @@ JsonValue ArgoCdConfigRequest::Jsonize() const {
 
   if (m_networkAccessHasBeenSet) {
     payload.WithObject("networkAccess", m_networkAccess.Jsonize());
+  }
+
+  if (m_endpointPrefixHasBeenSet) {
+    payload.WithString("endpointPrefix", m_endpointPrefix);
   }
 
   return payload;

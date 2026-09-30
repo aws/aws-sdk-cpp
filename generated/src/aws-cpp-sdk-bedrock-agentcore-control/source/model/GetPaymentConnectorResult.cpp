@@ -38,6 +38,10 @@ GetPaymentConnectorResult& GetPaymentConnectorResult::operator=(const Aws::Amazo
     m_type = PaymentConnectorTypeMapper::GetPaymentConnectorTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("provisionMode")) {
+    m_provisionMode = PaymentConnectorProvisionModeMapper::GetPaymentConnectorProvisionModeForName(jsonValue.GetString("provisionMode"));
+    m_provisionModeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("credentialProviderConfigurations")) {
     Aws::Utils::Array<JsonView> credentialProviderConfigurationsJsonList = jsonValue.GetArray("credentialProviderConfigurations");
     for (unsigned credentialProviderConfigurationsIndex = 0;
@@ -63,6 +67,10 @@ GetPaymentConnectorResult& GetPaymentConnectorResult::operator=(const Aws::Amazo
   if (jsonValue.ValueExists("authorizationUrl")) {
     m_authorizationUrl = jsonValue.GetString("authorizationUrl");
     m_authorizationUrlHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("credentialsUpdatedAt")) {
+    m_credentialsUpdatedAt = jsonValue.GetString("credentialsUpdatedAt");
+    m_credentialsUpdatedAtHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -30,6 +30,10 @@ GetUserIdResult& GetUserIdResult::operator=(const Aws::AmazonWebServiceResult<Js
     m_userId = jsonValue.GetString("UserId");
     m_userIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("UserArn")) {
+    m_userArn = jsonValue.GetString("UserArn");
+    m_userArnHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

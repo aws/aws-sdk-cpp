@@ -16,11 +16,14 @@ namespace Model {
 namespace FoundationModelConfigurationTypeMapper {
 
 static const int BEDROCK_FOUNDATION_MODEL_HASH = HashingUtils::HashString("BEDROCK_FOUNDATION_MODEL");
+static const int MANTLE_FOUNDATION_MODEL_HASH = HashingUtils::HashString("MANTLE_FOUNDATION_MODEL");
 
 FoundationModelConfigurationType GetFoundationModelConfigurationTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == BEDROCK_FOUNDATION_MODEL_HASH) {
     return FoundationModelConfigurationType::BEDROCK_FOUNDATION_MODEL;
+  } else if (hashCode == MANTLE_FOUNDATION_MODEL_HASH) {
+    return FoundationModelConfigurationType::MANTLE_FOUNDATION_MODEL;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForFoundationModelConfigurationType(FoundationModelConfigurat
       return {};
     case FoundationModelConfigurationType::BEDROCK_FOUNDATION_MODEL:
       return "BEDROCK_FOUNDATION_MODEL";
+    case FoundationModelConfigurationType::MANTLE_FOUNDATION_MODEL:
+      return "MANTLE_FOUNDATION_MODEL";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

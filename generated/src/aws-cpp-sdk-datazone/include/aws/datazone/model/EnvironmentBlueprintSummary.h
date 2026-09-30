@@ -7,6 +7,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
+#include <aws/datazone/model/BlueprintCategory.h>
 #include <aws/datazone/model/ProvisioningProperties.h>
 
 #include <utility>
@@ -159,6 +160,23 @@ class EnvironmentBlueprintSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The category of the environment blueprint. The only valid value is
+   * <code>TOOLING</code>.</p>
+   */
+  inline BlueprintCategory GetBlueprintCategory() const { return m_blueprintCategory; }
+  inline bool BlueprintCategoryHasBeenSet() const { return m_blueprintCategoryHasBeenSet; }
+  inline void SetBlueprintCategory(BlueprintCategory value) {
+    m_blueprintCategoryHasBeenSet = true;
+    m_blueprintCategory = value;
+  }
+  inline EnvironmentBlueprintSummary& WithBlueprintCategory(BlueprintCategory value) {
+    SetBlueprintCategory(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -173,6 +191,8 @@ class EnvironmentBlueprintSummary {
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
+
+  BlueprintCategory m_blueprintCategory{BlueprintCategory::NOT_SET};
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
@@ -180,6 +200,7 @@ class EnvironmentBlueprintSummary {
   bool m_provisioningPropertiesHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
+  bool m_blueprintCategoryHasBeenSet = false;
 };
 
 }  // namespace Model

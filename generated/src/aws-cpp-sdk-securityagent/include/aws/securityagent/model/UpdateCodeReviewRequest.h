@@ -10,6 +10,8 @@
 #include <aws/securityagent/model/Assets.h>
 #include <aws/securityagent/model/CloudWatchLog.h>
 #include <aws/securityagent/model/CodeRemediationStrategy.h>
+#include <aws/securityagent/model/ReportDestination.h>
+#include <aws/securityagent/model/ReportFilters.h>
 #include <aws/securityagent/model/ValidationMode.h>
 
 #include <utility>
@@ -192,6 +194,43 @@ class UpdateCodeReviewRequest : public SecurityAgentRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The destination for publishing scan reports to an integrated document
+   * provider.</p>
+   */
+  inline const ReportDestination& GetReportDestination() const { return m_reportDestination; }
+  inline bool ReportDestinationHasBeenSet() const { return m_reportDestinationHasBeenSet; }
+  template <typename ReportDestinationT = ReportDestination>
+  void SetReportDestination(ReportDestinationT&& value) {
+    m_reportDestinationHasBeenSet = true;
+    m_reportDestination = std::forward<ReportDestinationT>(value);
+  }
+  template <typename ReportDestinationT = ReportDestination>
+  UpdateCodeReviewRequest& WithReportDestination(ReportDestinationT&& value) {
+    SetReportDestination(std::forward<ReportDestinationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The report-generation filters applied when the report is exported.</p>
+   */
+  inline const ReportFilters& GetReportFilters() const { return m_reportFilters; }
+  inline bool ReportFiltersHasBeenSet() const { return m_reportFiltersHasBeenSet; }
+  template <typename ReportFiltersT = ReportFilters>
+  void SetReportFilters(ReportFiltersT&& value) {
+    m_reportFiltersHasBeenSet = true;
+    m_reportFilters = std::forward<ReportFiltersT>(value);
+  }
+  template <typename ReportFiltersT = ReportFilters>
+  UpdateCodeReviewRequest& WithReportFilters(ReportFiltersT&& value) {
+    SetReportFilters(std::forward<ReportFiltersT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_codeReviewId;
 
@@ -210,6 +249,10 @@ class UpdateCodeReviewRequest : public SecurityAgentRequest {
   ValidationMode m_validationMode{ValidationMode::NOT_SET};
 
   double m_maxTaskHours{0.0};
+
+  ReportDestination m_reportDestination;
+
+  ReportFilters m_reportFilters;
   bool m_codeReviewIdHasBeenSet = false;
   bool m_agentSpaceIdHasBeenSet = false;
   bool m_titleHasBeenSet = false;
@@ -219,6 +262,8 @@ class UpdateCodeReviewRequest : public SecurityAgentRequest {
   bool m_codeRemediationStrategyHasBeenSet = false;
   bool m_validationModeHasBeenSet = false;
   bool m_maxTaskHoursHasBeenSet = false;
+  bool m_reportDestinationHasBeenSet = false;
+  bool m_reportFiltersHasBeenSet = false;
 };
 
 }  // namespace Model

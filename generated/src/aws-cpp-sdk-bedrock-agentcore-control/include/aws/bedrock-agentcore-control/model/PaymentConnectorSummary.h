@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/PaymentConnectorProvisionMode.h>
 #include <aws/bedrock-agentcore-control/model/PaymentConnectorStatus.h>
 #include <aws/bedrock-agentcore-control/model/PaymentConnectorType.h>
 #include <aws/core/utils/DateTime.h>
@@ -90,6 +91,28 @@ class PaymentConnectorSummary {
 
   ///@{
   /**
+   * <p>Specifies how the payment connector was provisioned. Payment connectors that
+   * were created before this field was available return <code>MANUAL</code>.</p>
+   * <ul> <li> <p> <code>MANUAL</code> - You provided the credential provider
+   * configurations, so you own the credentials.</p> </li> <li> <p>
+   * <code>QUICK_CREATE</code> - AgentCore provisioned the credential provider for
+   * you, so the credentials are service-managed and you can rotate them with
+   * <code>RotatePaymentConnectorCredentials</code>.</p> </li> </ul>
+   */
+  inline PaymentConnectorProvisionMode GetProvisionMode() const { return m_provisionMode; }
+  inline bool ProvisionModeHasBeenSet() const { return m_provisionModeHasBeenSet; }
+  inline void SetProvisionMode(PaymentConnectorProvisionMode value) {
+    m_provisionModeHasBeenSet = true;
+    m_provisionMode = value;
+  }
+  inline PaymentConnectorSummary& WithProvisionMode(PaymentConnectorProvisionMode value) {
+    SetProvisionMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The current status of the payment connector. Possible values include
    * <code>CREATING</code>, <code>READY</code>, <code>UPDATING</code>,
    * <code>DELETING</code>, <code>CREATE_FAILED</code>, <code>UPDATE_FAILED</code>,
@@ -131,12 +154,15 @@ class PaymentConnectorSummary {
 
   PaymentConnectorType m_type{PaymentConnectorType::NOT_SET};
 
+  PaymentConnectorProvisionMode m_provisionMode{PaymentConnectorProvisionMode::NOT_SET};
+
   PaymentConnectorStatus m_status{PaymentConnectorStatus::NOT_SET};
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
   bool m_paymentConnectorIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
+  bool m_provisionModeHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_lastUpdatedAtHasBeenSet = false;
 };

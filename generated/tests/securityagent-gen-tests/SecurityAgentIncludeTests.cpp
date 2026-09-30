@@ -20,6 +20,7 @@
 #include <aws/securityagent/model/AWSResources.h>
 #include <aws/securityagent/model/AccessType.h>
 #include <aws/securityagent/model/Actor.h>
+#include <aws/securityagent/model/ActorMessage.h>
 #include <aws/securityagent/model/AddArtifactRequest.h>
 #include <aws/securityagent/model/AddArtifactResult.h>
 #include <aws/securityagent/model/AgentSpace.h>
@@ -32,6 +33,10 @@
 #include <aws/securityagent/model/Assets.h>
 #include <aws/securityagent/model/Authentication.h>
 #include <aws/securityagent/model/AuthenticationProviderType.h>
+#include <aws/securityagent/model/AzureDevOpsIntegrationInput.h>
+#include <aws/securityagent/model/AzureDevOpsRepositoryMetadata.h>
+#include <aws/securityagent/model/AzureDevOpsRepositoryResource.h>
+#include <aws/securityagent/model/AzureDevOpsResourceCapabilities.h>
 #include <aws/securityagent/model/BatchCreateSecurityRequirementResult.h>
 #include <aws/securityagent/model/BatchCreateSecurityRequirementsRequest.h>
 #include <aws/securityagent/model/BatchCreateSecurityRequirementsResult.h>
@@ -77,12 +82,14 @@
 #include <aws/securityagent/model/BatchSecurityRequirementError.h>
 #include <aws/securityagent/model/BatchUpdateSecurityRequirementsRequest.h>
 #include <aws/securityagent/model/BatchUpdateSecurityRequirementsResult.h>
+#include <aws/securityagent/model/BitbucketDataCenterIntegrationInput.h>
 #include <aws/securityagent/model/BitbucketIntegrationInput.h>
 #include <aws/securityagent/model/BitbucketRepositoryMetadata.h>
 #include <aws/securityagent/model/BitbucketRepositoryResource.h>
 #include <aws/securityagent/model/BitbucketResourceCapabilities.h>
 #include <aws/securityagent/model/CaCertificateSource.h>
 #include <aws/securityagent/model/Category.h>
+#include <aws/securityagent/model/CiCdConfiguration.h>
 #include <aws/securityagent/model/CleanUpStrategy.h>
 #include <aws/securityagent/model/CloudWatchLog.h>
 #include <aws/securityagent/model/CodeLocation.h>
@@ -195,6 +202,9 @@
 #include <aws/securityagent/model/IpAddressType.h>
 #include <aws/securityagent/model/JobStatus.h>
 #include <aws/securityagent/model/JobType.h>
+#include <aws/securityagent/model/ListActorMessagesPaginationTraits.h>
+#include <aws/securityagent/model/ListActorMessagesRequest.h>
+#include <aws/securityagent/model/ListActorMessagesResult.h>
 #include <aws/securityagent/model/ListAgentSpacesPaginationTraits.h>
 #include <aws/securityagent/model/ListAgentSpacesRequest.h>
 #include <aws/securityagent/model/ListAgentSpacesResult.h>
@@ -289,10 +299,14 @@
 #include <aws/securityagent/model/ProviderResourceCapabilities.h>
 #include <aws/securityagent/model/ProviderType.h>
 #include <aws/securityagent/model/ReportDestination.h>
+#include <aws/securityagent/model/ReportFilters.h>
 #include <aws/securityagent/model/ResourceConfigDnsResolution.h>
 #include <aws/securityagent/model/ResourceType.h>
 #include <aws/securityagent/model/RiskLevel.h>
 #include <aws/securityagent/model/RiskType.h>
+#include <aws/securityagent/model/ScopeChange.h>
+#include <aws/securityagent/model/ScopeDecision.h>
+#include <aws/securityagent/model/ScopeResult.h>
 #include <aws/securityagent/model/SecurityRequirementArtifact.h>
 #include <aws/securityagent/model/SecurityRequirementArtifactFormat.h>
 #include <aws/securityagent/model/SecurityRequirementPackImportStatus.h>
@@ -356,6 +370,8 @@
 #include <aws/securityagent/model/UpdateFindingResult.h>
 #include <aws/securityagent/model/UpdateIntegratedResourcesRequest.h>
 #include <aws/securityagent/model/UpdateIntegratedResourcesResult.h>
+#include <aws/securityagent/model/UpdateIntegrationRequest.h>
+#include <aws/securityagent/model/UpdateIntegrationResult.h>
 #include <aws/securityagent/model/UpdatePentestRequest.h>
 #include <aws/securityagent/model/UpdatePentestResult.h>
 #include <aws/securityagent/model/UpdatePrivateConnectionCertificateRequest.h>
@@ -382,6 +398,7 @@
 #include <aws/securityagent/model/VerifyTargetDomainRequest.h>
 #include <aws/securityagent/model/VerifyTargetDomainResult.h>
 #include <aws/securityagent/model/VpcConfig.h>
+#include <aws/securityagent/model/WebhookAction.h>
 
 using SecurityAgentIncludeTest = ::testing::Test;
 

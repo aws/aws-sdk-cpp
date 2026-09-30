@@ -51,6 +51,7 @@
 #include <aws/elasticache/model/CompleteMigrationRequest.h>
 #include <aws/elasticache/model/CompleteMigrationResult.h>
 #include <aws/elasticache/model/ConfigureShard.h>
+#include <aws/elasticache/model/ConnectionType.h>
 #include <aws/elasticache/model/CopyServerlessCacheSnapshotRequest.h>
 #include <aws/elasticache/model/CopyServerlessCacheSnapshotResult.h>
 #include <aws/elasticache/model/CopySnapshotRequest.h>

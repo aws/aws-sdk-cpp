@@ -31,6 +31,25 @@ class GetOfferTermsResult {
 
   ///@{
   /**
+   * <p>The locale of the returned content. Indicates whether the response contains
+   * content in the requested locale, or fell back to the default locale. See
+   * <code>Locale</code> for details.</p>
+   */
+  inline const Aws::String& GetLocale() const { return m_locale; }
+  template <typename LocaleT = Aws::String>
+  void SetLocale(LocaleT&& value) {
+    m_localeHasBeenSet = true;
+    m_locale = std::forward<LocaleT>(value);
+  }
+  template <typename LocaleT = Aws::String>
+  GetOfferTermsResult& WithLocale(LocaleT&& value) {
+    SetLocale(std::forward<LocaleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The terms attached to the offer. Each element contains exactly one term
    * type.</p>
    */
@@ -88,12 +107,15 @@ class GetOfferTermsResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
+  Aws::String m_locale;
+
   Aws::Vector<OfferTerm> m_offerTerms;
 
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_localeHasBeenSet = false;
   bool m_offerTermsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

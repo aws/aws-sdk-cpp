@@ -41,7 +41,10 @@ class CreateUserRequest : public IdentityStoreRequest {
 
   ///@{
   /**
-   * <p>The globally unique identifier for the identity store.</p>
+   * <p>The globally unique identifier for the identity store.</p> <p>You can specify
+   * the identity store by ID or by Amazon Resource Name (ARN). For example, identity
+   * store ID <code>d-1234567890</code> or identity store ARN
+   * <code>arn:aws:identitystore::111122223333:identitystore/d-1234567890</code>.</p>
    */
   inline const Aws::String& GetIdentityStoreId() const { return m_identityStoreId; }
   inline bool IdentityStoreIdHasBeenSet() const { return m_identityStoreIdHasBeenSet; }

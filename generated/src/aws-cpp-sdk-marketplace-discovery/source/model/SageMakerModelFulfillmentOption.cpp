@@ -46,6 +46,22 @@ SageMakerModelFulfillmentOption& SageMakerModelFulfillmentOption::operator=(Json
     m_recommendation = jsonValue.GetObject("recommendation");
     m_recommendationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("supportedContentTypes")) {
+    Aws::Utils::Array<JsonView> supportedContentTypesJsonList = jsonValue.GetArray("supportedContentTypes");
+    for (unsigned supportedContentTypesIndex = 0; supportedContentTypesIndex < supportedContentTypesJsonList.GetLength();
+         ++supportedContentTypesIndex) {
+      m_supportedContentTypes.push_back(supportedContentTypesJsonList[supportedContentTypesIndex].AsString());
+    }
+    m_supportedContentTypesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("supportedResponseMimeTypes")) {
+    Aws::Utils::Array<JsonView> supportedResponseMimeTypesJsonList = jsonValue.GetArray("supportedResponseMimeTypes");
+    for (unsigned supportedResponseMimeTypesIndex = 0; supportedResponseMimeTypesIndex < supportedResponseMimeTypesJsonList.GetLength();
+         ++supportedResponseMimeTypesIndex) {
+      m_supportedResponseMimeTypes.push_back(supportedResponseMimeTypesJsonList[supportedResponseMimeTypesIndex].AsString());
+    }
+    m_supportedResponseMimeTypesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -78,6 +94,25 @@ JsonValue SageMakerModelFulfillmentOption::Jsonize() const {
 
   if (m_recommendationHasBeenSet) {
     payload.WithObject("recommendation", m_recommendation.Jsonize());
+  }
+
+  if (m_supportedContentTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> supportedContentTypesJsonList(m_supportedContentTypes.size());
+    for (unsigned supportedContentTypesIndex = 0; supportedContentTypesIndex < supportedContentTypesJsonList.GetLength();
+         ++supportedContentTypesIndex) {
+      supportedContentTypesJsonList[supportedContentTypesIndex].AsString(m_supportedContentTypes[supportedContentTypesIndex]);
+    }
+    payload.WithArray("supportedContentTypes", std::move(supportedContentTypesJsonList));
+  }
+
+  if (m_supportedResponseMimeTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> supportedResponseMimeTypesJsonList(m_supportedResponseMimeTypes.size());
+    for (unsigned supportedResponseMimeTypesIndex = 0; supportedResponseMimeTypesIndex < supportedResponseMimeTypesJsonList.GetLength();
+         ++supportedResponseMimeTypesIndex) {
+      supportedResponseMimeTypesJsonList[supportedResponseMimeTypesIndex].AsString(
+          m_supportedResponseMimeTypes[supportedResponseMimeTypesIndex]);
+    }
+    payload.WithArray("supportedResponseMimeTypes", std::move(supportedResponseMimeTypesJsonList));
   }
 
   return payload;

@@ -12,6 +12,7 @@
 #include <aws/securityagent/model/Assets.h>
 #include <aws/securityagent/model/CloudWatchLog.h>
 #include <aws/securityagent/model/DocumentInfo.h>
+#include <aws/securityagent/model/ReportDestination.h>
 
 #include <utility>
 
@@ -214,6 +215,24 @@ class UpdateThreatModelResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The destination for publishing scan reports to an integrated document
+   * provider.</p>
+   */
+  inline const ReportDestination& GetReportDestination() const { return m_reportDestination; }
+  template <typename ReportDestinationT = ReportDestination>
+  void SetReportDestination(ReportDestinationT&& value) {
+    m_reportDestinationHasBeenSet = true;
+    m_reportDestination = std::forward<ReportDestinationT>(value);
+  }
+  template <typename ReportDestinationT = ReportDestination>
+  UpdateThreatModelResult& WithReportDestination(ReportDestinationT&& value) {
+    SetReportDestination(std::forward<ReportDestinationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -250,6 +269,8 @@ class UpdateThreatModelResult {
 
   Aws::Utils::DateTime m_updatedAt{};
 
+  ReportDestination m_reportDestination;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_threatModelIdHasBeenSet = false;
@@ -262,6 +283,7 @@ class UpdateThreatModelResult {
   bool m_logConfigHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
+  bool m_reportDestinationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -7,6 +7,7 @@
 
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
+#include <aws/securityagent/model/ListActorMessagesPaginationTraits.h>
 #include <aws/securityagent/model/ListAgentSpacesPaginationTraits.h>
 #include <aws/securityagent/model/ListApplicationsPaginationTraits.h>
 #include <aws/securityagent/model/ListArtifactsPaginationTraits.h>
@@ -38,6 +39,18 @@ namespace SecurityAgent {
 template <typename DerivedClient>
 class SecurityAgentPaginationBase {
  public:
+  /**
+   * Create a paginator for ListActorMessages operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListActorMessagesRequest,
+                                    Pagination::ListActorMessagesPaginationTraits<DerivedClient>>
+  ListActorMessagesPaginator(const Model::ListActorMessagesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListActorMessagesRequest,
+                                             Pagination::ListActorMessagesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
   /**
    * Create a paginator for ListAgentSpaces operation
    */

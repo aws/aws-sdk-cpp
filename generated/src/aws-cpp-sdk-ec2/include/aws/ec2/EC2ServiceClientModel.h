@@ -213,6 +213,7 @@
 #include <aws/ec2/model/DeleteApplicationStatusCheckResponse.h>
 #include <aws/ec2/model/DeleteCapacityManagerDataExportResponse.h>
 #include <aws/ec2/model/DeleteCarrierGatewayResponse.h>
+#include <aws/ec2/model/DeleteClientVpnEndpointAuthorizationPolicyResponse.h>
 #include <aws/ec2/model/DeleteClientVpnEndpointResponse.h>
 #include <aws/ec2/model/DeleteClientVpnRouteResponse.h>
 #include <aws/ec2/model/DeleteCoipCidrResponse.h>
@@ -765,6 +766,7 @@
 #include <aws/ec2/model/GetCapacityManagerMonitoredTagKeysRequest.h>
 #include <aws/ec2/model/GetCapacityManagerMonitoredTagKeysResponse.h>
 #include <aws/ec2/model/GetCapacityReservationUsageResponse.h>
+#include <aws/ec2/model/GetClientVpnEndpointAuthorizationPolicyResponse.h>
 #include <aws/ec2/model/GetCoipPoolUsageResponse.h>
 #include <aws/ec2/model/GetConsoleOutputResponse.h>
 #include <aws/ec2/model/GetConsoleScreenshotResponse.h>
@@ -863,6 +865,7 @@
 #include <aws/ec2/model/ModifyAvailabilityZoneGroupResponse.h>
 #include <aws/ec2/model/ModifyCapacityReservationFleetResponse.h>
 #include <aws/ec2/model/ModifyCapacityReservationResponse.h>
+#include <aws/ec2/model/ModifyClientVpnEndpointAuthorizationPolicyResponse.h>
 #include <aws/ec2/model/ModifyClientVpnEndpointResponse.h>
 #include <aws/ec2/model/ModifyDefaultCreditSpecificationResponse.h>
 #include <aws/ec2/model/ModifyEbsDefaultKmsKeyIdResponse.h>
@@ -1226,6 +1229,7 @@ class DeleteApplicationStatusCheckRequest;
 class DeleteCapacityManagerDataExportRequest;
 class DeleteCarrierGatewayRequest;
 class DeleteClientVpnEndpointRequest;
+class DeleteClientVpnEndpointAuthorizationPolicyRequest;
 class DeleteClientVpnRouteRequest;
 class DeleteCoipCidrRequest;
 class DeleteCoipPoolRequest;
@@ -1608,6 +1612,7 @@ class GetCapacityManagerMetricDataRequest;
 class GetCapacityManagerMetricDimensionsRequest;
 class GetCapacityManagerMonitoredTagKeysRequest;
 class GetCapacityReservationUsageRequest;
+class GetClientVpnEndpointAuthorizationPolicyRequest;
 class GetCoipPoolUsageRequest;
 class GetConsoleOutputRequest;
 class GetConsoleScreenshotRequest;
@@ -1692,6 +1697,7 @@ class ModifyAvailabilityZoneGroupRequest;
 class ModifyCapacityReservationRequest;
 class ModifyCapacityReservationFleetRequest;
 class ModifyClientVpnEndpointRequest;
+class ModifyClientVpnEndpointAuthorizationPolicyRequest;
 class ModifyDefaultCreditSpecificationRequest;
 class ModifyEbsDefaultKmsKeyIdRequest;
 class ModifyFleetRequest;
@@ -2039,6 +2045,7 @@ typedef Aws::Utils::Outcome<DeleteApplicationStatusCheckResponse, EC2Error> Dele
 typedef Aws::Utils::Outcome<DeleteCapacityManagerDataExportResponse, EC2Error> DeleteCapacityManagerDataExportOutcome;
 typedef Aws::Utils::Outcome<DeleteCarrierGatewayResponse, EC2Error> DeleteCarrierGatewayOutcome;
 typedef Aws::Utils::Outcome<DeleteClientVpnEndpointResponse, EC2Error> DeleteClientVpnEndpointOutcome;
+typedef Aws::Utils::Outcome<DeleteClientVpnEndpointAuthorizationPolicyResponse, EC2Error> DeleteClientVpnEndpointAuthorizationPolicyOutcome;
 typedef Aws::Utils::Outcome<DeleteClientVpnRouteResponse, EC2Error> DeleteClientVpnRouteOutcome;
 typedef Aws::Utils::Outcome<DeleteCoipCidrResponse, EC2Error> DeleteCoipCidrOutcome;
 typedef Aws::Utils::Outcome<DeleteCoipPoolResponse, EC2Error> DeleteCoipPoolOutcome;
@@ -2441,6 +2448,7 @@ typedef Aws::Utils::Outcome<GetCapacityManagerMetricDataResponse, EC2Error> GetC
 typedef Aws::Utils::Outcome<GetCapacityManagerMetricDimensionsResponse, EC2Error> GetCapacityManagerMetricDimensionsOutcome;
 typedef Aws::Utils::Outcome<GetCapacityManagerMonitoredTagKeysResponse, EC2Error> GetCapacityManagerMonitoredTagKeysOutcome;
 typedef Aws::Utils::Outcome<GetCapacityReservationUsageResponse, EC2Error> GetCapacityReservationUsageOutcome;
+typedef Aws::Utils::Outcome<GetClientVpnEndpointAuthorizationPolicyResponse, EC2Error> GetClientVpnEndpointAuthorizationPolicyOutcome;
 typedef Aws::Utils::Outcome<GetCoipPoolUsageResponse, EC2Error> GetCoipPoolUsageOutcome;
 typedef Aws::Utils::Outcome<GetConsoleOutputResponse, EC2Error> GetConsoleOutputOutcome;
 typedef Aws::Utils::Outcome<GetConsoleScreenshotResponse, EC2Error> GetConsoleScreenshotOutcome;
@@ -2529,6 +2537,7 @@ typedef Aws::Utils::Outcome<ModifyAvailabilityZoneGroupResponse, EC2Error> Modif
 typedef Aws::Utils::Outcome<ModifyCapacityReservationResponse, EC2Error> ModifyCapacityReservationOutcome;
 typedef Aws::Utils::Outcome<ModifyCapacityReservationFleetResponse, EC2Error> ModifyCapacityReservationFleetOutcome;
 typedef Aws::Utils::Outcome<ModifyClientVpnEndpointResponse, EC2Error> ModifyClientVpnEndpointOutcome;
+typedef Aws::Utils::Outcome<ModifyClientVpnEndpointAuthorizationPolicyResponse, EC2Error> ModifyClientVpnEndpointAuthorizationPolicyOutcome;
 typedef Aws::Utils::Outcome<ModifyDefaultCreditSpecificationResponse, EC2Error> ModifyDefaultCreditSpecificationOutcome;
 typedef Aws::Utils::Outcome<ModifyEbsDefaultKmsKeyIdResponse, EC2Error> ModifyEbsDefaultKmsKeyIdOutcome;
 typedef Aws::Utils::Outcome<ModifyFleetResponse, EC2Error> ModifyFleetOutcome;
@@ -2883,6 +2892,7 @@ typedef std::future<DeleteApplicationStatusCheckOutcome> DeleteApplicationStatus
 typedef std::future<DeleteCapacityManagerDataExportOutcome> DeleteCapacityManagerDataExportOutcomeCallable;
 typedef std::future<DeleteCarrierGatewayOutcome> DeleteCarrierGatewayOutcomeCallable;
 typedef std::future<DeleteClientVpnEndpointOutcome> DeleteClientVpnEndpointOutcomeCallable;
+typedef std::future<DeleteClientVpnEndpointAuthorizationPolicyOutcome> DeleteClientVpnEndpointAuthorizationPolicyOutcomeCallable;
 typedef std::future<DeleteClientVpnRouteOutcome> DeleteClientVpnRouteOutcomeCallable;
 typedef std::future<DeleteCoipCidrOutcome> DeleteCoipCidrOutcomeCallable;
 typedef std::future<DeleteCoipPoolOutcome> DeleteCoipPoolOutcomeCallable;
@@ -3269,6 +3279,7 @@ typedef std::future<GetCapacityManagerMetricDataOutcome> GetCapacityManagerMetri
 typedef std::future<GetCapacityManagerMetricDimensionsOutcome> GetCapacityManagerMetricDimensionsOutcomeCallable;
 typedef std::future<GetCapacityManagerMonitoredTagKeysOutcome> GetCapacityManagerMonitoredTagKeysOutcomeCallable;
 typedef std::future<GetCapacityReservationUsageOutcome> GetCapacityReservationUsageOutcomeCallable;
+typedef std::future<GetClientVpnEndpointAuthorizationPolicyOutcome> GetClientVpnEndpointAuthorizationPolicyOutcomeCallable;
 typedef std::future<GetCoipPoolUsageOutcome> GetCoipPoolUsageOutcomeCallable;
 typedef std::future<GetConsoleOutputOutcome> GetConsoleOutputOutcomeCallable;
 typedef std::future<GetConsoleScreenshotOutcome> GetConsoleScreenshotOutcomeCallable;
@@ -3353,6 +3364,7 @@ typedef std::future<ModifyAvailabilityZoneGroupOutcome> ModifyAvailabilityZoneGr
 typedef std::future<ModifyCapacityReservationOutcome> ModifyCapacityReservationOutcomeCallable;
 typedef std::future<ModifyCapacityReservationFleetOutcome> ModifyCapacityReservationFleetOutcomeCallable;
 typedef std::future<ModifyClientVpnEndpointOutcome> ModifyClientVpnEndpointOutcomeCallable;
+typedef std::future<ModifyClientVpnEndpointAuthorizationPolicyOutcome> ModifyClientVpnEndpointAuthorizationPolicyOutcomeCallable;
 typedef std::future<ModifyDefaultCreditSpecificationOutcome> ModifyDefaultCreditSpecificationOutcomeCallable;
 typedef std::future<ModifyEbsDefaultKmsKeyIdOutcome> ModifyEbsDefaultKmsKeyIdOutcomeCallable;
 typedef std::future<ModifyFleetOutcome> ModifyFleetOutcomeCallable;
@@ -4127,6 +4139,10 @@ typedef std::function<void(const EC2Client*, const Model::DeleteCarrierGatewayRe
 typedef std::function<void(const EC2Client*, const Model::DeleteClientVpnEndpointRequest&, const Model::DeleteClientVpnEndpointOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteClientVpnEndpointResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DeleteClientVpnEndpointAuthorizationPolicyRequest&,
+                           const Model::DeleteClientVpnEndpointAuthorizationPolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteClientVpnEndpointAuthorizationPolicyResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::DeleteClientVpnRouteRequest&, const Model::DeleteClientVpnRouteOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteClientVpnRouteResponseReceivedHandler;
@@ -5455,6 +5471,10 @@ typedef std::function<void(const EC2Client*, const Model::GetCapacityManagerMoni
 typedef std::function<void(const EC2Client*, const Model::GetCapacityReservationUsageRequest&,
                            const Model::GetCapacityReservationUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetCapacityReservationUsageResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::GetClientVpnEndpointAuthorizationPolicyRequest&,
+                           const Model::GetClientVpnEndpointAuthorizationPolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetClientVpnEndpointAuthorizationPolicyResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::GetCoipPoolUsageRequest&, const Model::GetCoipPoolUsageOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetCoipPoolUsageResponseReceivedHandler;
@@ -5753,6 +5773,10 @@ typedef std::function<void(const EC2Client*, const Model::ModifyCapacityReservat
 typedef std::function<void(const EC2Client*, const Model::ModifyClientVpnEndpointRequest&, const Model::ModifyClientVpnEndpointOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ModifyClientVpnEndpointResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::ModifyClientVpnEndpointAuthorizationPolicyRequest&,
+                           const Model::ModifyClientVpnEndpointAuthorizationPolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ModifyClientVpnEndpointAuthorizationPolicyResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::ModifyDefaultCreditSpecificationRequest&,
                            const Model::ModifyDefaultCreditSpecificationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

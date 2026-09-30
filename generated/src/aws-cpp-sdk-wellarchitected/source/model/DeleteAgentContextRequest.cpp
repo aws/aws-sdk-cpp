@@ -13,3 +13,10 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 Aws::String DeleteAgentContextRequest::SerializePayload() const { return {}; }
+
+DeleteAgentContextRequest::EndpointParameters DeleteAgentContextRequest::GetEndpointContextParams() const {
+  EndpointParameters parameters;
+  // Static context parameters
+  parameters.emplace_back(Aws::String("SubServiceType"), "AGENT", Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+  return parameters;
+}

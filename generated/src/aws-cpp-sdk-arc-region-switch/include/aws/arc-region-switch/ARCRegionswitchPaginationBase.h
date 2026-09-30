@@ -13,6 +13,7 @@
 #include <aws/arc-region-switch/model/ListPlansPaginationTraits.h>
 #include <aws/arc-region-switch/model/ListRoute53HealthChecksInRegionPaginationTraits.h>
 #include <aws/arc-region-switch/model/ListRoute53HealthChecksPaginationTraits.h>
+#include <aws/arc-region-switch/model/ListServiceQuotaWarningsPaginationTraits.h>
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
@@ -115,6 +116,18 @@ class ARCRegionswitchPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRoute53HealthChecksInRegionRequest,
                                              Pagination::ListRoute53HealthChecksInRegionPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListServiceQuotaWarnings operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListServiceQuotaWarningsRequest,
+                                    Pagination::ListServiceQuotaWarningsPaginationTraits<DerivedClient>>
+  ListServiceQuotaWarningsPaginator(const Model::ListServiceQuotaWarningsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListServiceQuotaWarningsRequest,
+                                             Pagination::ListServiceQuotaWarningsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 };

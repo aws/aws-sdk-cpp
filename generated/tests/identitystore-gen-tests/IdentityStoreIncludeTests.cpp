@@ -40,6 +40,8 @@
 #include <aws/identitystore/model/DescribeGroupMembershipResult.h>
 #include <aws/identitystore/model/DescribeGroupRequest.h>
 #include <aws/identitystore/model/DescribeGroupResult.h>
+#include <aws/identitystore/model/DescribeIdentityStoreRequest.h>
+#include <aws/identitystore/model/DescribeIdentityStoreResult.h>
 #include <aws/identitystore/model/DescribeUserRequest.h>
 #include <aws/identitystore/model/DescribeUserResult.h>
 #include <aws/identitystore/model/Email.h>
@@ -54,6 +56,7 @@
 #include <aws/identitystore/model/Group.h>
 #include <aws/identitystore/model/GroupMembership.h>
 #include <aws/identitystore/model/GroupMembershipExistenceResult.h>
+#include <aws/identitystore/model/IdentityStore.h>
 #include <aws/identitystore/model/InternalServerException.h>
 #include <aws/identitystore/model/IsMemberInGroupsRequest.h>
 #include <aws/identitystore/model/IsMemberInGroupsResult.h>
@@ -66,11 +69,16 @@
 #include <aws/identitystore/model/ListGroupsPaginationTraits.h>
 #include <aws/identitystore/model/ListGroupsRequest.h>
 #include <aws/identitystore/model/ListGroupsResult.h>
+#include <aws/identitystore/model/ListIdentityStoresPaginationTraits.h>
+#include <aws/identitystore/model/ListIdentityStoresRequest.h>
+#include <aws/identitystore/model/ListIdentityStoresResult.h>
 #include <aws/identitystore/model/ListUsersPaginationTraits.h>
 #include <aws/identitystore/model/ListUsersRequest.h>
 #include <aws/identitystore/model/ListUsersResult.h>
 #include <aws/identitystore/model/MemberId.h>
 #include <aws/identitystore/model/Name.h>
+#include <aws/identitystore/model/NetworkConfiguration.h>
+#include <aws/identitystore/model/NetworkConfigurationDetails.h>
 #include <aws/identitystore/model/PhoneNumber.h>
 #include <aws/identitystore/model/Photo.h>
 #include <aws/identitystore/model/ResourceNotFoundException.h>
@@ -83,6 +91,8 @@
 #include <aws/identitystore/model/UniqueAttribute.h>
 #include <aws/identitystore/model/UpdateGroupRequest.h>
 #include <aws/identitystore/model/UpdateGroupResult.h>
+#include <aws/identitystore/model/UpdateIdentityStoreRequest.h>
+#include <aws/identitystore/model/UpdateIdentityStoreResult.h>
 #include <aws/identitystore/model/UpdateUserRequest.h>
 #include <aws/identitystore/model/UpdateUserResult.h>
 #include <aws/identitystore/model/User.h>

@@ -15,6 +15,10 @@ using namespace Aws::Utils;
 Aws::String ListFulfillmentOptionsRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_localeHasBeenSet) {
+    payload.WithString("locale", m_locale);
+  }
+
   if (m_productIdHasBeenSet) {
     payload.WithString("productId", m_productId);
   }

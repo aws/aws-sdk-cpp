@@ -16,18 +16,30 @@
 namespace Aws {
 namespace IdentityStore {
 /**
- * <p>The Identity Store service used by IAM Identity Center provides a single
- * place to retrieve all of your identities (users and groups). For more
- * information, see the <a
- * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">
- * IAM Identity Center User Guide</a>.</p> <p>This reference guide describes the
- * identity store operations that you can call programmatically and includes
- * detailed information about data types and errors.</p>  <p> IAM Identity
- * Center uses the <code>sso</code>, <code>sso-directory</code>, and
- * <code>identitystore</code> API namespaces. The <code>sso-directory</code> and
- * <code>identitystore</code> namespaces authorize access to data in the Identity
- * Store. Make sure your policies with IAM actions from these two namespaces are
- * consistent to avoid conflicting authorization to the same data.</p>
+ * <p> <p> IAM Identity Center uses the <code>sso</code>,
+ * <code>sso-directory</code>, and <code>identitystore</code> API namespaces. The
+ * <code>sso-directory</code> and <code>identitystore</code> namespaces authorize
+ * access to data in the Identity Store. Make sure your policies with IAM actions
+ * from these two namespaces are consistent to avoid conflicting authorization to
+ * the same data.</p>  <p>The Identity Store service used by IAM Identity
+ * Center provides a single place to retrieve all of your identities (users and
+ * groups). You can use the identity store API operations in this guide to manage
+ * your identity data programmatically. The scope of these APIs allows you to
+ * create, read, update, delete, and list users, groups, and memberships.</p>
+ * <p>This guide also describes identity store operations that you can call and
+ * includes detailed information about data types and errors.</p>  <p>If
+ * you use an external identity provider or Active Directory as your identity
+ * source, we recommend that you use the <code>Create</code>, <code>Update</code>,
+ * and <code>Delete</code> APIs with caution. Because IAM Identity Center doesn't
+ * support outbound synchronization, your identity source won't automatically
+ * update with the changes that you make to users or groups using these APIs.</p>
+ *  <p>Amazon Web Services provides SDKs that consist of libraries and
+ * sample code for various programming languages and platforms (Java, Ruby, .Net,
+ * iOS, Android, and more). The SDKs provide a convenient way to programmatically
+ * access the identity store and other Amazon Web Services services. For more
+ * information about the Amazon Web Services SDKs, including how to download and
+ * install them, see <a href="http://aws.amazon.com/tools/">Amazon Web Services
+ * Builder Center Toolbox</a>.</p></p>
  */
 class AWS_IDENTITYSTORE_API IdentityStoreClient : public Aws::Client::AWSJsonClient,
                                                   public Aws::Client::ClientWithAsyncTemplateMethods<IdentityStoreClient>,
@@ -313,6 +325,33 @@ class AWS_IDENTITYSTORE_API IdentityStoreClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Retrieves details about the specified identity store, including its Amazon
+   * Resource Name (ARN) and network configuration.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DescribeIdentityStore">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeIdentityStoreOutcome DescribeIdentityStore(const Model::DescribeIdentityStoreRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeIdentityStore that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeIdentityStoreRequestT = Model::DescribeIdentityStoreRequest>
+  Model::DescribeIdentityStoreOutcomeCallable DescribeIdentityStoreCallable(const DescribeIdentityStoreRequestT& request) const {
+    return SubmitCallable(&IdentityStoreClient::DescribeIdentityStore, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeIdentityStore that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeIdentityStoreRequestT = Model::DescribeIdentityStoreRequest>
+  void DescribeIdentityStoreAsync(const DescribeIdentityStoreRequestT& request, const DescribeIdentityStoreResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&IdentityStoreClient::DescribeIdentityStore, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves the user metadata and attributes from the <code>UserId</code> in an
    * identity store.</p>  <p>If you have access to a member account, you can
    * use this API operation from the member account. For more information, see <a
@@ -566,6 +605,38 @@ class AWS_IDENTITYSTORE_API IdentityStoreClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Lists the identity stores that you have access to. This operation returns
+   * only the identity store ID and Amazon Resource Name (ARN) of each identity
+   * store. To obtain additional information about an identity store, call
+   * <code>DescribeIdentityStore</code>.</p> <p>This operation returns results in
+   * paginated form. Use the <code>NextToken</code> parameter to retrieve additional
+   * pages of results.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/ListIdentityStores">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListIdentityStoresOutcome ListIdentityStores(const Model::ListIdentityStoresRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListIdentityStores that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListIdentityStoresRequestT = Model::ListIdentityStoresRequest>
+  Model::ListIdentityStoresOutcomeCallable ListIdentityStoresCallable(const ListIdentityStoresRequestT& request = {}) const {
+    return SubmitCallable(&IdentityStoreClient::ListIdentityStores, request);
+  }
+
+  /**
+   * An Async wrapper for ListIdentityStores that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListIdentityStoresRequestT = Model::ListIdentityStoresRequest>
+  void ListIdentityStoresAsync(const ListIdentityStoresResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                               const ListIdentityStoresRequestT& request = {}) const {
+    return SubmitAsync(&IdentityStoreClient::ListIdentityStores, request, handler, context);
+  }
+
+  /**
    * <p>Lists all users in the identity store. Returns a paginated list of complete
    * <code>User</code> objects. Filtering for a <code>User</code> by the
    * <code>UserName</code> attribute is deprecated. Instead, use the
@@ -622,6 +693,33 @@ class AWS_IDENTITYSTORE_API IdentityStoreClient : public Aws::Client::AWSJsonCli
   void UpdateGroupAsync(const UpdateGroupRequestT& request, const UpdateGroupResponseReceivedHandler& handler,
                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&IdentityStoreClient::UpdateGroup, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the configuration of the specified identity store, including its
+   * network configuration.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/UpdateIdentityStore">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateIdentityStoreOutcome UpdateIdentityStore(const Model::UpdateIdentityStoreRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateIdentityStore that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateIdentityStoreRequestT = Model::UpdateIdentityStoreRequest>
+  Model::UpdateIdentityStoreOutcomeCallable UpdateIdentityStoreCallable(const UpdateIdentityStoreRequestT& request) const {
+    return SubmitCallable(&IdentityStoreClient::UpdateIdentityStore, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateIdentityStore that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateIdentityStoreRequestT = Model::UpdateIdentityStoreRequest>
+  void UpdateIdentityStoreAsync(const UpdateIdentityStoreRequestT& request, const UpdateIdentityStoreResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&IdentityStoreClient::UpdateIdentityStore, request, handler, context);
   }
 
   /**

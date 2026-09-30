@@ -34,6 +34,10 @@ TenantInfo& TenantInfo::operator=(JsonView jsonValue) {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
     m_createdTimestampHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SendingStatus")) {
+    m_sendingStatus = SendingStatusMapper::GetSendingStatusForName(jsonValue.GetString("SendingStatus"));
+    m_sendingStatusHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue TenantInfo::Jsonize() const {
 
   if (m_createdTimestampHasBeenSet) {
     payload.WithDouble("CreatedTimestamp", m_createdTimestamp.SecondsWithMSPrecision());
+  }
+
+  if (m_sendingStatusHasBeenSet) {
+    payload.WithString("SendingStatus", SendingStatusMapper::GetNameForSendingStatus(m_sendingStatus));
   }
 
   return payload;

@@ -24,8 +24,8 @@ namespace Model {
  * partners available in your account, call <a>ListFirewallRuleTypes</a> with
  * <code>RuleType</code> set to <code>PartnerThreatProtection</code> — each
  * returned <a>FirewallRuleTypeDefinition</a> includes a <a>SubscriptionInfo</a>
- * identifying the AWS Marketplace product that backs it.</p><p><h3>See Also:</h3>
- * <a
+ * identifying the Amazon Web Services Marketplace product that backs
+ * it.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PartnerThreatProtectionConfig">AWS
  * API Reference</a></p>
  */
@@ -41,7 +41,8 @@ class PartnerThreatProtectionConfig {
    * <p>The identifier of the partner threat-protection product, exactly as returned
    * in the <code>Value</code> field of a <a>FirewallRuleTypeDefinition</a> with
    * <code>RuleType</code> set to <code>PartnerThreatProtection</code>. The calling
-   * account must hold an active AWS Marketplace subscription to this product.</p>
+   * account must hold an active Amazon Web Services Marketplace subscription to this
+   * product.</p>
    */
   inline const Aws::String& GetPartner() const { return m_partner; }
   inline bool PartnerHasBeenSet() const { return m_partnerHasBeenSet; }

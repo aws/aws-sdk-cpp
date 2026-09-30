@@ -1425,6 +1425,34 @@ class AWS_SECURITYAGENT_API SecurityAgentClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Returns a paginated list of the email MFA messages received for an actor at
+   * its server-generated email address, most recent first.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListActorMessages">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListActorMessagesOutcome ListActorMessages(const Model::ListActorMessagesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListActorMessages that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListActorMessagesRequestT = Model::ListActorMessagesRequest>
+  Model::ListActorMessagesOutcomeCallable ListActorMessagesCallable(const ListActorMessagesRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::ListActorMessages, request);
+  }
+
+  /**
+   * An Async wrapper for ListActorMessages that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListActorMessagesRequestT = Model::ListActorMessagesRequest>
+  void ListActorMessagesAsync(const ListActorMessagesRequestT& request, const ListActorMessagesResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::ListActorMessages, request, handler, context);
+  }
+
+  /**
    * <p>Returns a paginated list of agent space summaries in your
    * account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListAgentSpaces">AWS
@@ -2425,6 +2453,34 @@ class AWS_SECURITYAGENT_API SecurityAgentClient : public Aws::Client::AWSJsonCli
                                       const UpdateIntegratedResourcesResponseReceivedHandler& handler,
                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SecurityAgentClient::UpdateIntegratedResources, request, handler, context);
+  }
+
+  /**
+   * <p>Creates an integration's webhook, or rotates the HMAC signing secret of an
+   * existing one. The secret is returned only once, in this response, and cannot be
+   * retrieved again.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/UpdateIntegration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateIntegrationOutcome UpdateIntegration(const Model::UpdateIntegrationRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateIntegration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateIntegrationRequestT = Model::UpdateIntegrationRequest>
+  Model::UpdateIntegrationOutcomeCallable UpdateIntegrationCallable(const UpdateIntegrationRequestT& request) const {
+    return SubmitCallable(&SecurityAgentClient::UpdateIntegration, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateIntegration that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateIntegrationRequestT = Model::UpdateIntegrationRequest>
+  void UpdateIntegrationAsync(const UpdateIntegrationRequestT& request, const UpdateIntegrationResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityAgentClient::UpdateIntegration, request, handler, context);
   }
 
   /**

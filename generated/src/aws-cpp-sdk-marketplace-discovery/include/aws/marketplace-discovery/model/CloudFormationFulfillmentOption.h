@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/marketplace-discovery/MarketplaceDiscovery_EXPORTS.h>
 #include <aws/marketplace-discovery/model/FulfillmentOptionType.h>
@@ -157,6 +158,61 @@ class CloudFormationFulfillmentOption {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The date and time when the CloudFormation fulfillment option became available
+   * for fulfillment.</p>
+   */
+  inline const Aws::Utils::DateTime& GetAvailableFromTime() const { return m_availableFromTime; }
+  inline bool AvailableFromTimeHasBeenSet() const { return m_availableFromTimeHasBeenSet; }
+  template <typename AvailableFromTimeT = Aws::Utils::DateTime>
+  void SetAvailableFromTime(AvailableFromTimeT&& value) {
+    m_availableFromTimeHasBeenSet = true;
+    m_availableFromTime = std::forward<AvailableFromTimeT>(value);
+  }
+  template <typename AvailableFromTimeT = Aws::Utils::DateTime>
+  CloudFormationFulfillmentOption& WithAvailableFromTime(AvailableFromTimeT&& value) {
+    SetAvailableFromTime(std::forward<AvailableFromTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A short description of the fulfillment option.</p>
+   */
+  inline const Aws::String& GetShortDescription() const { return m_shortDescription; }
+  inline bool ShortDescriptionHasBeenSet() const { return m_shortDescriptionHasBeenSet; }
+  template <typename ShortDescriptionT = Aws::String>
+  void SetShortDescription(ShortDescriptionT&& value) {
+    m_shortDescriptionHasBeenSet = true;
+    m_shortDescription = std::forward<ShortDescriptionT>(value);
+  }
+  template <typename ShortDescriptionT = Aws::String>
+  CloudFormationFulfillmentOption& WithShortDescription(ShortDescriptionT&& value) {
+    SetShortDescription(std::forward<ShortDescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A detailed description of the fulfillment option.</p>
+   */
+  inline const Aws::String& GetLongDescription() const { return m_longDescription; }
+  inline bool LongDescriptionHasBeenSet() const { return m_longDescriptionHasBeenSet; }
+  template <typename LongDescriptionT = Aws::String>
+  void SetLongDescription(LongDescriptionT&& value) {
+    m_longDescriptionHasBeenSet = true;
+    m_longDescription = std::forward<LongDescriptionT>(value);
+  }
+  template <typename LongDescriptionT = Aws::String>
+  CloudFormationFulfillmentOption& WithLongDescription(LongDescriptionT&& value) {
+    SetLongDescription(std::forward<LongDescriptionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_fulfillmentOptionId;
 
@@ -171,6 +227,12 @@ class CloudFormationFulfillmentOption {
   Aws::String m_releaseNotes;
 
   Aws::String m_usageInstructions;
+
+  Aws::Utils::DateTime m_availableFromTime{};
+
+  Aws::String m_shortDescription;
+
+  Aws::String m_longDescription;
   bool m_fulfillmentOptionIdHasBeenSet = false;
   bool m_fulfillmentOptionNameHasBeenSet = false;
   bool m_fulfillmentOptionTypeHasBeenSet = false;
@@ -178,6 +240,9 @@ class CloudFormationFulfillmentOption {
   bool m_fulfillmentOptionVersionHasBeenSet = false;
   bool m_releaseNotesHasBeenSet = false;
   bool m_usageInstructionsHasBeenSet = false;
+  bool m_availableFromTimeHasBeenSet = false;
+  bool m_shortDescriptionHasBeenSet = false;
+  bool m_longDescriptionHasBeenSet = false;
 };
 
 }  // namespace Model

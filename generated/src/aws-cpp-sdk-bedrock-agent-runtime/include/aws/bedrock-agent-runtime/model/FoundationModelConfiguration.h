@@ -7,6 +7,7 @@
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/bedrock-agent-runtime/model/BedrockFoundationModelConfiguration.h>
 #include <aws/bedrock-agent-runtime/model/FoundationModelConfigurationType.h>
+#include <aws/bedrock-agent-runtime/model/MantleFoundationModelConfiguration.h>
 
 #include <utility>
 
@@ -54,6 +55,26 @@ class FoundationModelConfiguration {
 
   ///@{
   /**
+   * <p>The Mantle foundation model configuration.</p>
+   */
+  inline const MantleFoundationModelConfiguration& GetMantleFoundationModelConfiguration() const {
+    return m_mantleFoundationModelConfiguration;
+  }
+  inline bool MantleFoundationModelConfigurationHasBeenSet() const { return m_mantleFoundationModelConfigurationHasBeenSet; }
+  template <typename MantleFoundationModelConfigurationT = MantleFoundationModelConfiguration>
+  void SetMantleFoundationModelConfiguration(MantleFoundationModelConfigurationT&& value) {
+    m_mantleFoundationModelConfigurationHasBeenSet = true;
+    m_mantleFoundationModelConfiguration = std::forward<MantleFoundationModelConfigurationT>(value);
+  }
+  template <typename MantleFoundationModelConfigurationT = MantleFoundationModelConfiguration>
+  FoundationModelConfiguration& WithMantleFoundationModelConfiguration(MantleFoundationModelConfigurationT&& value) {
+    SetMantleFoundationModelConfiguration(std::forward<MantleFoundationModelConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The type of foundation model configuration.</p>
    */
   inline FoundationModelConfigurationType GetType() const { return m_type; }
@@ -70,8 +91,11 @@ class FoundationModelConfiguration {
  private:
   BedrockFoundationModelConfiguration m_bedrockFoundationModelConfiguration;
 
+  MantleFoundationModelConfiguration m_mantleFoundationModelConfiguration;
+
   FoundationModelConfigurationType m_type{FoundationModelConfigurationType::NOT_SET};
   bool m_bedrockFoundationModelConfigurationHasBeenSet = false;
+  bool m_mantleFoundationModelConfigurationHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

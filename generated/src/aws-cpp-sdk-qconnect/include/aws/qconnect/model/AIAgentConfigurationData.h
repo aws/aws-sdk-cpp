@@ -50,9 +50,33 @@ class AIAgentConfigurationData {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether the AI Agent configured for this AI Agent type is enabled.
+   * When this value is omitted or set to true, the configured AI Agent runs; when
+   * set to false, the AI Agent ID is retained but no AI Agent runs for the AI Agent
+   * type. Setting this value to false is currently supported only for the
+   * <code>ANSWER_RECOMMENDATION</code> AI Agent type; other requests to set it to
+   * false are rejected with a validation error.</p>
+   */
+  inline bool GetEnabled() const { return m_enabled; }
+  inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+  inline void SetEnabled(bool value) {
+    m_enabledHasBeenSet = true;
+    m_enabled = value;
+  }
+  inline AIAgentConfigurationData& WithEnabled(bool value) {
+    SetEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_aiAgentId;
+
+  bool m_enabled{false};
   bool m_aiAgentIdHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
 };
 
 }  // namespace Model

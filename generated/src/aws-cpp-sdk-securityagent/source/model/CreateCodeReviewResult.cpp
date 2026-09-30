@@ -67,6 +67,14 @@ CreateCodeReviewResult& CreateCodeReviewResult::operator=(const Aws::AmazonWebSe
     m_maxTaskHours = jsonValue.GetDouble("maxTaskHours");
     m_maxTaskHoursHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("reportDestination")) {
+    m_reportDestination = jsonValue.GetObject("reportDestination");
+    m_reportDestinationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("reportFilters")) {
+    m_reportFilters = jsonValue.GetObject("reportFilters");
+    m_reportFiltersHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

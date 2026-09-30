@@ -42,6 +42,10 @@ IntegrationSummary& IntegrationSummary::operator=(JsonView jsonValue) {
     m_targetUrl = jsonValue.GetString("targetUrl");
     m_targetUrlHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("webhookUrl")) {
+    m_webhookUrl = jsonValue.GetString("webhookUrl");
+    m_webhookUrlHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("privateConnectionName")) {
     m_privateConnectionName = jsonValue.GetString("privateConnectionName");
     m_privateConnectionNameHasBeenSet = true;
@@ -74,6 +78,10 @@ JsonValue IntegrationSummary::Jsonize() const {
 
   if (m_targetUrlHasBeenSet) {
     payload.WithString("targetUrl", m_targetUrl);
+  }
+
+  if (m_webhookUrlHasBeenSet) {
+    payload.WithString("webhookUrl", m_webhookUrl);
   }
 
   if (m_privateConnectionNameHasBeenSet) {

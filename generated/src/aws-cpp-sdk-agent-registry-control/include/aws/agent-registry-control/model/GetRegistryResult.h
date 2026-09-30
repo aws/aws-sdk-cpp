@@ -7,6 +7,7 @@
 #include <aws/agent-registry-control/AgentRegistryControl_EXPORTS.h>
 #include <aws/agent-registry-control/model/ApprovalConfiguration.h>
 #include <aws/agent-registry-control/model/AutoDetection.h>
+#include <aws/agent-registry-control/model/CustomMetadataSchemaConfiguration.h>
 #include <aws/agent-registry-control/model/DiscoveryConfiguration.h>
 #include <aws/agent-registry-control/model/EncryptionConfiguration.h>
 #include <aws/agent-registry-control/model/RegistryStatus.h>
@@ -160,6 +161,26 @@ class GetRegistryResult {
 
   ///@{
   /**
+   * <p>The custom metadata schema configuration for this registry, if one has been
+   * defined.</p>
+   */
+  inline const CustomMetadataSchemaConfiguration& GetCustomMetadataSchemaConfiguration() const {
+    return m_customMetadataSchemaConfiguration;
+  }
+  template <typename CustomMetadataSchemaConfigurationT = CustomMetadataSchemaConfiguration>
+  void SetCustomMetadataSchemaConfiguration(CustomMetadataSchemaConfigurationT&& value) {
+    m_customMetadataSchemaConfigurationHasBeenSet = true;
+    m_customMetadataSchemaConfiguration = std::forward<CustomMetadataSchemaConfigurationT>(value);
+  }
+  template <typename CustomMetadataSchemaConfigurationT = CustomMetadataSchemaConfiguration>
+  GetRegistryResult& WithCustomMetadataSchemaConfiguration(CustomMetadataSchemaConfigurationT&& value) {
+    SetCustomMetadataSchemaConfiguration(std::forward<CustomMetadataSchemaConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Current status of the registry</p>
    */
   inline RegistryStatus GetStatus() const { return m_status; }
@@ -275,6 +296,8 @@ class GetRegistryResult {
 
   ApprovalConfiguration m_approvalConfiguration;
 
+  CustomMetadataSchemaConfiguration m_customMetadataSchemaConfiguration;
+
   RegistryStatus m_status{RegistryStatus::NOT_SET};
 
   Aws::String m_statusReason;
@@ -294,6 +317,7 @@ class GetRegistryResult {
   bool m_discoveryConfigurationHasBeenSet = false;
   bool m_encryptionConfigurationHasBeenSet = false;
   bool m_approvalConfigurationHasBeenSet = false;
+  bool m_customMetadataSchemaConfigurationHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
   bool m_autoDetectionHasBeenSet = false;

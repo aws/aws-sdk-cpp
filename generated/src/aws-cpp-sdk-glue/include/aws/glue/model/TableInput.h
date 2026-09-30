@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/model/Column.h>
+#include <aws/glue/model/FederatedTable.h>
 #include <aws/glue/model/StorageDescriptor.h>
 #include <aws/glue/model/TableIdentifier.h>
 #include <aws/glue/model/ViewDefinitionInput.h>
@@ -300,6 +301,27 @@ class TableInput {
 
   ///@{
   /**
+   * <p>A <code>FederatedTable</code> structure that references an entity outside the
+   * Glue Data Catalog. Specify this field to create a federated table, which points
+   * to a table in an external metastore instead of describing data managed in the
+   * Glue Data Catalog.</p>
+   */
+  inline const FederatedTable& GetFederatedTable() const { return m_federatedTable; }
+  inline bool FederatedTableHasBeenSet() const { return m_federatedTableHasBeenSet; }
+  template <typename FederatedTableT = FederatedTable>
+  void SetFederatedTable(FederatedTableT&& value) {
+    m_federatedTableHasBeenSet = true;
+    m_federatedTable = std::forward<FederatedTableT>(value);
+  }
+  template <typename FederatedTableT = FederatedTable>
+  TableInput& WithFederatedTable(FederatedTableT&& value) {
+    SetFederatedTable(std::forward<FederatedTableT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A structure that contains all the information that defines the view,
    * including the dialect or dialects for the view, and the query.</p>
    */
@@ -343,6 +365,8 @@ class TableInput {
 
   TableIdentifier m_targetTable;
 
+  FederatedTable m_federatedTable;
+
   ViewDefinitionInput m_viewDefinition;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
@@ -357,6 +381,7 @@ class TableInput {
   bool m_tableTypeHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
   bool m_targetTableHasBeenSet = false;
+  bool m_federatedTableHasBeenSet = false;
   bool m_viewDefinitionHasBeenSet = false;
 };
 

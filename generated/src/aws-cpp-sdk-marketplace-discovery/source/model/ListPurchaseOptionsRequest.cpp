@@ -15,6 +15,10 @@ using namespace Aws::Utils;
 Aws::String ListPurchaseOptionsRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_localeHasBeenSet) {
+    payload.WithString("locale", m_locale);
+  }
+
   if (m_filtersHasBeenSet) {
     Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
     for (unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex) {

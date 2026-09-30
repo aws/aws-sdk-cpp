@@ -123,6 +123,10 @@ Aws::String CreateClientVpnEndpointRequest::SerializePayload() const {
     m_transitGatewayConfiguration.OutputToStream(ss, "TransitGatewayConfiguration");
   }
 
+  if (m_devicePostureOptionsHasBeenSet) {
+    m_devicePostureOptions.OutputToStream(ss, "DevicePostureOptions");
+  }
+
   ss << "Version=2016-11-15";
   return ss.str();
 }

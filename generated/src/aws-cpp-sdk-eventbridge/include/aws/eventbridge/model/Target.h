@@ -257,9 +257,9 @@ class Target {
 
   ///@{
   /**
-   * <p>Contains the message group ID to use when the target is a FIFO queue.</p>
-   * <p>If you specify an SQS FIFO queue as a target, the queue must have
-   * content-based deduplication enabled.</p>
+   * <p>Contains the message group ID to use when the target is an Amazon SQS fair or
+   * FIFO queue.</p> <p>If you specify a fair or FIFO queue as a target, the queue
+   * must have content-based deduplication enabled.</p>
    */
   inline const SqsParameters& GetSqsParameters() const { return m_sqsParameters; }
   inline bool SqsParametersHasBeenSet() const { return m_sqsParametersHasBeenSet; }

@@ -65,7 +65,10 @@ class VpcEndpoint {
 
   ///@{
   /**
-   * <p>The type of endpoint.</p>
+   * <p>The type of endpoint.</p> <p>For more information about the types of VPC
+   * endpoints, see <a
+   * href="https://docs.aws.amazon.com/vpc/latest/privatelink/concepts.html#concepts-vpc-endpoints">VPC
+   * endpoints</a> in the <i>Amazon Web Services PrivateLink User Guide</i>.</p>
    */
   inline VpcEndpointType GetVpcEndpointType() const { return m_vpcEndpointType; }
   inline bool VpcEndpointTypeHasBeenSet() const { return m_vpcEndpointTypeHasBeenSet; }
@@ -176,7 +179,8 @@ class VpcEndpoint {
 
   ///@{
   /**
-   * <p>(Interface endpoint) The subnets for the endpoint.</p>
+   * <p>(Interface, Gateway Load Balancer endpoints, Resource, ServiceNetwork, and
+   * Tunnel endpoints only) The subnets for the endpoint.</p>
    */
   inline const Aws::Vector<Aws::String>& GetSubnetIds() const { return m_subnetIds; }
   inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
@@ -200,8 +204,8 @@ class VpcEndpoint {
 
   ///@{
   /**
-   * <p>(Interface endpoint) Information about the security groups that are
-   * associated with the network interface.</p>
+   * <p>(Interface, Resource, ServiceNetwork, and Tunnel endpoints only) Information
+   * about the security groups that are associated with the network interface.</p>
    */
   inline const Aws::Vector<SecurityGroupIdentifier>& GetGroups() const { return m_groups; }
   inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
@@ -292,7 +296,8 @@ class VpcEndpoint {
 
   ///@{
   /**
-   * <p>(Interface endpoint) The network interfaces for the endpoint.</p>
+   * <p>(Interface, Gateway Load Balancer endpoints, Resource, ServiceNetwork, and
+   * Tunnel endpoints only) The network interfaces for the endpoint.</p>
    */
   inline const Aws::Vector<Aws::String>& GetNetworkInterfaceIds() const { return m_networkInterfaceIds; }
   inline bool NetworkInterfaceIdsHasBeenSet() const { return m_networkInterfaceIdsHasBeenSet; }

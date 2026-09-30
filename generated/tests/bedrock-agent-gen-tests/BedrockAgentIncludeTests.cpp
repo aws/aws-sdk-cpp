@@ -99,6 +99,8 @@
 #include <aws/bedrock-agent/model/CreatePromptResult.h>
 #include <aws/bedrock-agent/model/CreatePromptVersionRequest.h>
 #include <aws/bedrock-agent/model/CreatePromptVersionResult.h>
+#include <aws/bedrock-agent/model/CreateVpcConfigurationRequest.h>
+#include <aws/bedrock-agent/model/CreateVpcConfigurationResult.h>
 #include <aws/bedrock-agent/model/CreationMode.h>
 #include <aws/bedrock-agent/model/CuratedQuery.h>
 #include <aws/bedrock-agent/model/CustomContent.h>
@@ -142,6 +144,8 @@
 #include <aws/bedrock-agent/model/DeletePromptResult.h>
 #include <aws/bedrock-agent/model/DeleteResourcePolicyRequest.h>
 #include <aws/bedrock-agent/model/DeleteResourcePolicyResult.h>
+#include <aws/bedrock-agent/model/DeleteVpcConfigurationRequest.h>
+#include <aws/bedrock-agent/model/DeleteVpcConfigurationResult.h>
 #include <aws/bedrock-agent/model/DeletionProtectionConfiguration.h>
 #include <aws/bedrock-agent/model/DisassociateAgentCollaboratorRequest.h>
 #include <aws/bedrock-agent/model/DisassociateAgentCollaboratorResult.h>
@@ -218,6 +222,8 @@
 #include <aws/bedrock-agent/model/GetPromptResult.h>
 #include <aws/bedrock-agent/model/GetResourcePolicyRequest.h>
 #include <aws/bedrock-agent/model/GetResourcePolicyResult.h>
+#include <aws/bedrock-agent/model/GetVpcConfigurationRequest.h>
+#include <aws/bedrock-agent/model/GetVpcConfigurationResult.h>
 #include <aws/bedrock-agent/model/GuardrailConfiguration.h>
 #include <aws/bedrock-agent/model/HierarchicalChunkingConfiguration.h>
 #include <aws/bedrock-agent/model/HierarchicalChunkingLevelConfiguration.h>
@@ -305,6 +311,9 @@
 #include <aws/bedrock-agent/model/ListPromptsResult.h>
 #include <aws/bedrock-agent/model/ListTagsForResourceRequest.h>
 #include <aws/bedrock-agent/model/ListTagsForResourceResult.h>
+#include <aws/bedrock-agent/model/ListVpcConfigurationsPaginationTraits.h>
+#include <aws/bedrock-agent/model/ListVpcConfigurationsRequest.h>
+#include <aws/bedrock-agent/model/ListVpcConfigurationsResult.h>
 #include <aws/bedrock-agent/model/LoopControllerFlowNodeConfiguration.h>
 #include <aws/bedrock-agent/model/LoopFlowNodeConfiguration.h>
 #include <aws/bedrock-agent/model/LoopIncompatibleNodeTypeFlowValidationDetails.h>
@@ -508,6 +517,11 @@
 #include <aws/bedrock-agent/model/VideoConfiguration.h>
 #include <aws/bedrock-agent/model/VideoExtractionConfiguration.h>
 #include <aws/bedrock-agent/model/VideoSegmentationConfiguration.h>
+#include <aws/bedrock-agent/model/VpcConfiguration.h>
+#include <aws/bedrock-agent/model/VpcConfigurationStatus.h>
+#include <aws/bedrock-agent/model/VpcConfigurationSummary.h>
+#include <aws/bedrock-agent/model/VpcProtocol.h>
+#include <aws/bedrock-agent/model/VpcResolutionMode.h>
 #include <aws/bedrock-agent/model/WebCrawlerConfiguration.h>
 #include <aws/bedrock-agent/model/WebCrawlerLimits.h>
 #include <aws/bedrock-agent/model/WebDataSourceConfiguration.h>

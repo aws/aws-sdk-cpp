@@ -34,6 +34,25 @@ class GetOfferSetResult {
 
   ///@{
   /**
+   * <p>The locale of the returned content. Indicates whether the response contains
+   * content in the requested locale, or fell back to the default locale. See
+   * <code>Locale</code> for details.</p>
+   */
+  inline const Aws::String& GetLocale() const { return m_locale; }
+  template <typename LocaleT = Aws::String>
+  void SetLocale(LocaleT&& value) {
+    m_localeHasBeenSet = true;
+    m_locale = std::forward<LocaleT>(value);
+  }
+  template <typename LocaleT = Aws::String>
+  GetOfferSetResult& WithLocale(LocaleT&& value) {
+    SetLocale(std::forward<LocaleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The unique identifier of the offer set.</p>
    */
   inline const Aws::String& GetOfferSetId() const { return m_offerSetId; }
@@ -217,6 +236,8 @@ class GetOfferSetResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
+  Aws::String m_locale;
+
   Aws::String m_offerSetId;
 
   Aws::String m_catalog;
@@ -237,6 +258,7 @@ class GetOfferSetResult {
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_localeHasBeenSet = false;
   bool m_offerSetIdHasBeenSet = false;
   bool m_catalogHasBeenSet = false;
   bool m_offerSetNameHasBeenSet = false;

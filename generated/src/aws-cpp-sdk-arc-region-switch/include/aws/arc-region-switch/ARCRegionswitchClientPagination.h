@@ -13,6 +13,7 @@
 #include <aws/arc-region-switch/model/ListPlansPaginationTraits.h>
 #include <aws/arc-region-switch/model/ListRoute53HealthChecksInRegionPaginationTraits.h>
 #include <aws/arc-region-switch/model/ListRoute53HealthChecksPaginationTraits.h>
+#include <aws/arc-region-switch/model/ListServiceQuotaWarningsPaginationTraits.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 namespace Aws {
@@ -39,6 +40,9 @@ using ListRoute53HealthChecksPaginator =
 using ListRoute53HealthChecksInRegionPaginator =
     Aws::Utils::Pagination::Paginator<ARCRegionswitchClient, Model::ListRoute53HealthChecksInRegionRequest,
                                       Pagination::ListRoute53HealthChecksInRegionPaginationTraits<ARCRegionswitchClient>>;
+using ListServiceQuotaWarningsPaginator =
+    Aws::Utils::Pagination::Paginator<ARCRegionswitchClient, Model::ListServiceQuotaWarningsRequest,
+                                      Pagination::ListServiceQuotaWarningsPaginationTraits<ARCRegionswitchClient>>;
 
 }  // namespace ARCRegionswitch
 }  // namespace Aws

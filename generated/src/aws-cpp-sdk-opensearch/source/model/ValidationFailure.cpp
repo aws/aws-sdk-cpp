@@ -26,6 +26,10 @@ ValidationFailure& ValidationFailure::operator=(JsonView jsonValue) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Severity")) {
+    m_severity = ValidationFailureSeverityMapper::GetValidationFailureSeverityForName(jsonValue.GetString("Severity"));
+    m_severityHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue ValidationFailure::Jsonize() const {
 
   if (m_messageHasBeenSet) {
     payload.WithString("Message", m_message);
+  }
+
+  if (m_severityHasBeenSet) {
+    payload.WithString("Severity", ValidationFailureSeverityMapper::GetNameForValidationFailureSeverity(m_severity));
   }
 
   return payload;

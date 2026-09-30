@@ -71,3 +71,10 @@ Aws::String CreateAgentProfileRequest::SerializePayload() const {
 
   return payload.View().WriteReadable();
 }
+
+CreateAgentProfileRequest::EndpointParameters CreateAgentProfileRequest::GetEndpointContextParams() const {
+  EndpointParameters parameters;
+  // Static context parameters
+  parameters.emplace_back(Aws::String("SubServiceType"), "AGENT", Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+  return parameters;
+}

@@ -202,6 +202,23 @@ class UpdatePlanRequest : public ARCRegionswitchRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether service quota checks are enabled for the Region switch
+   * plan.</p>
+   */
+  inline bool GetServiceQuotaChecksEnabled() const { return m_serviceQuotaChecksEnabled; }
+  inline bool ServiceQuotaChecksEnabledHasBeenSet() const { return m_serviceQuotaChecksEnabledHasBeenSet; }
+  inline void SetServiceQuotaChecksEnabled(bool value) {
+    m_serviceQuotaChecksEnabledHasBeenSet = true;
+    m_serviceQuotaChecksEnabled = value;
+  }
+  inline UpdatePlanRequest& WithServiceQuotaChecksEnabled(bool value) {
+    SetServiceQuotaChecksEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -218,6 +235,8 @@ class UpdatePlanRequest : public ARCRegionswitchRequest {
   Aws::Vector<Trigger> m_triggers;
 
   ReportConfiguration m_reportConfiguration;
+
+  bool m_serviceQuotaChecksEnabled{false};
   bool m_arnHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_workflowsHasBeenSet = false;
@@ -226,6 +245,7 @@ class UpdatePlanRequest : public ARCRegionswitchRequest {
   bool m_associatedAlarmsHasBeenSet = false;
   bool m_triggersHasBeenSet = false;
   bool m_reportConfigurationHasBeenSet = false;
+  bool m_serviceQuotaChecksEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

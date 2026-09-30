@@ -19,6 +19,8 @@
 #include <aws/billing/model/GetResourcePolicyRequest.h>
 #include <aws/billing/model/ListBillingViewSegmentsRequest.h>
 #include <aws/billing/model/ListBillingViewsRequest.h>
+#include <aws/billing/model/ListBusinessSupportAccountChargesRequest.h>
+#include <aws/billing/model/ListBusinessSupportSubscriptionHistoryRequest.h>
 #include <aws/billing/model/ListEnterpriseSupportLinkedAccountChargesRequest.h>
 #include <aws/billing/model/ListSourceViewsForBillingViewRequest.h>
 #include <aws/billing/model/ListTagsForResourceRequest.h>
@@ -268,6 +270,20 @@ ListBillingViewsOutcome BillingClient::ListBillingViews(const ListBillingViewsRe
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListBillingViewsOutcome(result.GetResultWithOwnership())
                             : ListBillingViewsOutcome(std::move(result.GetError()));
+}
+
+ListBusinessSupportAccountChargesOutcome BillingClient::ListBusinessSupportAccountCharges(
+    const ListBusinessSupportAccountChargesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBusinessSupportAccountChargesOutcome(result.GetResultWithOwnership())
+                            : ListBusinessSupportAccountChargesOutcome(std::move(result.GetError()));
+}
+
+ListBusinessSupportSubscriptionHistoryOutcome BillingClient::ListBusinessSupportSubscriptionHistory(
+    const ListBusinessSupportSubscriptionHistoryRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBusinessSupportSubscriptionHistoryOutcome(result.GetResultWithOwnership())
+                            : ListBusinessSupportSubscriptionHistoryOutcome(std::move(result.GetError()));
 }
 
 ListEnterpriseSupportLinkedAccountChargesOutcome BillingClient::ListEnterpriseSupportLinkedAccountCharges(

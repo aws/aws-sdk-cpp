@@ -39,10 +39,14 @@
 #include <aws/mediatailor/model/AvailMatchingCriteria.h>
 #include <aws/mediatailor/model/AvailSuppression.h>
 #include <aws/mediatailor/model/AwsServiceRequestConfiguration.h>
+#include <aws/mediatailor/model/BeaconEventType.h>
+#include <aws/mediatailor/model/BeaconingConfiguration.h>
 #include <aws/mediatailor/model/Bumper.h>
 #include <aws/mediatailor/model/CdnConfiguration.h>
 #include <aws/mediatailor/model/Channel.h>
 #include <aws/mediatailor/model/ChannelState.h>
+#include <aws/mediatailor/model/ClientSideBeaconingConfiguration.h>
+#include <aws/mediatailor/model/ClientSideBeaconingMode.h>
 #include <aws/mediatailor/model/ClipRange.h>
 #include <aws/mediatailor/model/CompressionMethod.h>
 #include <aws/mediatailor/model/ConcurrentExecutorConfiguration.h>

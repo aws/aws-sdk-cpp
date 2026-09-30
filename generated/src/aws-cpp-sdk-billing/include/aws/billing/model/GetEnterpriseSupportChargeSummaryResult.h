@@ -107,7 +107,7 @@ class GetEnterpriseSupportChargeSummaryResult {
 
   ///@{
   /**
-   * <p>When true, the Support charge amount is estimated. When false, the Support
+   * <p>Specifies whether the Support charge amount is estimated. When false, the
    * charge amount is finalized.</p>
    */
   inline bool GetIsEstimated() const { return m_isEstimated; }

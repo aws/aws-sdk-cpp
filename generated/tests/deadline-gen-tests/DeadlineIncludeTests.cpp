@@ -210,6 +210,8 @@
 #include <aws/deadline/model/FleetCapabilities.h>
 #include <aws/deadline/model/FleetConfiguration.h>
 #include <aws/deadline/model/FleetMember.h>
+#include <aws/deadline/model/FleetSoftwareAddOn.h>
+#include <aws/deadline/model/FleetSoftwareAddOnName.h>
 #include <aws/deadline/model/FleetStatus.h>
 #include <aws/deadline/model/FleetSummary.h>
 #include <aws/deadline/model/GetBudgetRequest.h>

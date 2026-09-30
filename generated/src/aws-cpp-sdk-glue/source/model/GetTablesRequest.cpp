@@ -47,6 +47,10 @@ Aws::String GetTablesRequest::SerializePayload() const {
     payload.WithObject("AuditContext", m_auditContext.Jsonize());
   }
 
+  if (m_resourceShareTypeHasBeenSet) {
+    payload.WithString("ResourceShareType", TableResourceShareTypeMapper::GetNameForTableResourceShareType(m_resourceShareType));
+  }
+
   if (m_includeStatusDetailsHasBeenSet) {
     payload.WithBool("IncludeStatusDetails", m_includeStatusDetails);
   }

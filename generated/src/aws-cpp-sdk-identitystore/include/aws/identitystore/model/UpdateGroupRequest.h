@@ -34,7 +34,10 @@ class UpdateGroupRequest : public IdentityStoreRequest {
 
   ///@{
   /**
-   * <p>The globally unique identifier for the identity store.</p>
+   * <p>The globally unique identifier for the identity store.</p> <p>You can specify
+   * the identity store by ID or by Amazon Resource Name (ARN). For example, identity
+   * store ID <code>d-1234567890</code> or identity store ARN
+   * <code>arn:aws:identitystore::111122223333:identitystore/d-1234567890</code>.</p>
    */
   inline const Aws::String& GetIdentityStoreId() const { return m_identityStoreId; }
   inline bool IdentityStoreIdHasBeenSet() const { return m_identityStoreIdHasBeenSet; }
@@ -52,7 +55,10 @@ class UpdateGroupRequest : public IdentityStoreRequest {
 
   ///@{
   /**
-   * <p>The identifier for a group in the identity store.</p>
+   * <p>The identifier for a group in the identity store.</p> <p>You can specify the
+   * group by ID or by Amazon Resource Name (ARN). For example, group ID
+   * <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</code> or group ARN
+   * <code>arn:aws:identitystore:::group/a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</code>.</p>
    */
   inline const Aws::String& GetGroupId() const { return m_groupId; }
   inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
@@ -94,15 +100,40 @@ class UpdateGroupRequest : public IdentityStoreRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The expected current revision of the group. When you provide this value, the
+   * update is applied only if it matches the current revision of the group in the
+   * identity store, which prevents you from overwriting concurrent changes. If the
+   * value doesn't match, the operation fails with a <code>ConflictException</code>.
+   * If you don't provide this value, the update is applied unconditionally.</p>
+   */
+  inline const Aws::String& GetRevision() const { return m_revision; }
+  inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
+  template <typename RevisionT = Aws::String>
+  void SetRevision(RevisionT&& value) {
+    m_revisionHasBeenSet = true;
+    m_revision = std::forward<RevisionT>(value);
+  }
+  template <typename RevisionT = Aws::String>
+  UpdateGroupRequest& WithRevision(RevisionT&& value) {
+    SetRevision(std::forward<RevisionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_identityStoreId;
 
   Aws::String m_groupId;
 
   Aws::Vector<AttributeOperation> m_operations;
+
+  Aws::String m_revision;
   bool m_identityStoreIdHasBeenSet = false;
   bool m_groupIdHasBeenSet = false;
   bool m_operationsHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
 };
 
 }  // namespace Model

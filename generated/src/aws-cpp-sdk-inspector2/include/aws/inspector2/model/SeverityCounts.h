@@ -92,6 +92,54 @@ class SeverityCounts {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The total count of low severity findings.</p>
+   */
+  inline long long GetLow() const { return m_low; }
+  inline bool LowHasBeenSet() const { return m_lowHasBeenSet; }
+  inline void SetLow(long long value) {
+    m_lowHasBeenSet = true;
+    m_low = value;
+  }
+  inline SeverityCounts& WithLow(long long value) {
+    SetLow(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The total count of informational severity findings.</p>
+   */
+  inline long long GetInformational() const { return m_informational; }
+  inline bool InformationalHasBeenSet() const { return m_informationalHasBeenSet; }
+  inline void SetInformational(long long value) {
+    m_informationalHasBeenSet = true;
+    m_informational = value;
+  }
+  inline SeverityCounts& WithInformational(long long value) {
+    SetInformational(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The total count of untriaged findings.</p>
+   */
+  inline long long GetUntriaged() const { return m_untriaged; }
+  inline bool UntriagedHasBeenSet() const { return m_untriagedHasBeenSet; }
+  inline void SetUntriaged(long long value) {
+    m_untriagedHasBeenSet = true;
+    m_untriaged = value;
+  }
+  inline SeverityCounts& WithUntriaged(long long value) {
+    SetUntriaged(value);
+    return *this;
+  }
+  ///@}
  private:
   long long m_all{0};
 
@@ -100,10 +148,19 @@ class SeverityCounts {
   long long m_high{0};
 
   long long m_critical{0};
+
+  long long m_low{0};
+
+  long long m_informational{0};
+
+  long long m_untriaged{0};
   bool m_allHasBeenSet = false;
   bool m_mediumHasBeenSet = false;
   bool m_highHasBeenSet = false;
   bool m_criticalHasBeenSet = false;
+  bool m_lowHasBeenSet = false;
+  bool m_informationalHasBeenSet = false;
+  bool m_untriagedHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -38,6 +38,18 @@ SaasFulfillmentOption& SaasFulfillmentOption::operator=(JsonView jsonValue) {
     m_usageInstructions = jsonValue.GetString("usageInstructions");
     m_usageInstructionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("availableFromTime")) {
+    m_availableFromTime = jsonValue.GetDouble("availableFromTime");
+    m_availableFromTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("launchUrl")) {
+    m_launchUrl = jsonValue.GetString("launchUrl");
+    m_launchUrlHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("quickLaunch")) {
+    m_quickLaunch = SaasQuickLaunchStatusMapper::GetSaasQuickLaunchStatusForName(jsonValue.GetString("quickLaunch"));
+    m_quickLaunchHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +74,18 @@ JsonValue SaasFulfillmentOption::Jsonize() const {
 
   if (m_usageInstructionsHasBeenSet) {
     payload.WithString("usageInstructions", m_usageInstructions);
+  }
+
+  if (m_availableFromTimeHasBeenSet) {
+    payload.WithDouble("availableFromTime", m_availableFromTime.SecondsWithMSPrecision());
+  }
+
+  if (m_launchUrlHasBeenSet) {
+    payload.WithString("launchUrl", m_launchUrl);
+  }
+
+  if (m_quickLaunchHasBeenSet) {
+    payload.WithString("quickLaunch", SaasQuickLaunchStatusMapper::GetNameForSaasQuickLaunchStatus(m_quickLaunch));
   }
 
   return payload;

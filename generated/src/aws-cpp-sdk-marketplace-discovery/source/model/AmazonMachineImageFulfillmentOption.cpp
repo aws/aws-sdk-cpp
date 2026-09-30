@@ -57,6 +57,30 @@ AmazonMachineImageFulfillmentOption& AmazonMachineImageFulfillmentOption::operat
     m_usageInstructions = jsonValue.GetString("usageInstructions");
     m_usageInstructionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("availableFromTime")) {
+    m_availableFromTime = jsonValue.GetDouble("availableFromTime");
+    m_availableFromTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("accessUrlTemplate")) {
+    m_accessUrlTemplate = jsonValue.GetString("accessUrlTemplate");
+    m_accessUrlTemplateHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("architecture")) {
+    m_architecture = jsonValue.GetString("architecture");
+    m_architectureHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("amiAlias")) {
+    m_amiAlias = jsonValue.GetString("amiAlias");
+    m_amiAliasHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ebsVolume")) {
+    m_ebsVolume = jsonValue.GetObject("ebsVolume");
+    m_ebsVolumeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("shortDescription")) {
+    m_shortDescription = jsonValue.GetString("shortDescription");
+    m_shortDescriptionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -101,6 +125,30 @@ JsonValue AmazonMachineImageFulfillmentOption::Jsonize() const {
 
   if (m_usageInstructionsHasBeenSet) {
     payload.WithString("usageInstructions", m_usageInstructions);
+  }
+
+  if (m_availableFromTimeHasBeenSet) {
+    payload.WithDouble("availableFromTime", m_availableFromTime.SecondsWithMSPrecision());
+  }
+
+  if (m_accessUrlTemplateHasBeenSet) {
+    payload.WithString("accessUrlTemplate", m_accessUrlTemplate);
+  }
+
+  if (m_architectureHasBeenSet) {
+    payload.WithString("architecture", m_architecture);
+  }
+
+  if (m_amiAliasHasBeenSet) {
+    payload.WithString("amiAlias", m_amiAlias);
+  }
+
+  if (m_ebsVolumeHasBeenSet) {
+    payload.WithObject("ebsVolume", m_ebsVolume.Jsonize());
+  }
+
+  if (m_shortDescriptionHasBeenSet) {
+    payload.WithString("shortDescription", m_shortDescription);
   }
 
   return payload;

@@ -11,6 +11,7 @@
 #include <aws/securityagent/model/Assets.h>
 #include <aws/securityagent/model/CloudWatchLog.h>
 #include <aws/securityagent/model/DocumentInfo.h>
+#include <aws/securityagent/model/ReportDestination.h>
 
 #include <utility>
 
@@ -186,6 +187,25 @@ class UpdateThreatModelRequest : public SecurityAgentRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The destination for publishing scan reports to an integrated document
+   * provider.</p>
+   */
+  inline const ReportDestination& GetReportDestination() const { return m_reportDestination; }
+  inline bool ReportDestinationHasBeenSet() const { return m_reportDestinationHasBeenSet; }
+  template <typename ReportDestinationT = ReportDestination>
+  void SetReportDestination(ReportDestinationT&& value) {
+    m_reportDestinationHasBeenSet = true;
+    m_reportDestination = std::forward<ReportDestinationT>(value);
+  }
+  template <typename ReportDestinationT = ReportDestination>
+  UpdateThreatModelRequest& WithReportDestination(ReportDestinationT&& value) {
+    SetReportDestination(std::forward<ReportDestinationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_threatModelId;
 
@@ -202,6 +222,8 @@ class UpdateThreatModelRequest : public SecurityAgentRequest {
   Aws::String m_serviceRole;
 
   CloudWatchLog m_logConfig;
+
+  ReportDestination m_reportDestination;
   bool m_threatModelIdHasBeenSet = false;
   bool m_agentSpaceIdHasBeenSet = false;
   bool m_titleHasBeenSet = false;
@@ -210,6 +232,7 @@ class UpdateThreatModelRequest : public SecurityAgentRequest {
   bool m_scopeDocsHasBeenSet = false;
   bool m_serviceRoleHasBeenSet = false;
   bool m_logConfigHasBeenSet = false;
+  bool m_reportDestinationHasBeenSet = false;
 };
 
 }  // namespace Model

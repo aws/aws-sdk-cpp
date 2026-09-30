@@ -34,7 +34,7 @@ class TrustedCaCertificate {
 
   ///@{
   /**
-   * <p>The source that AWS Security Agent reads the certificate from.</p>
+   * <p>The source that Security Agent reads the certificate from.</p>
    */
   inline const CaCertificateSource& GetSource() const { return m_source; }
   inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }

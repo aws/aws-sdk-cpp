@@ -1156,6 +1156,7 @@
 #include <aws/glue/model/TableOptimizerRun.h>
 #include <aws/glue/model/TableOptimizerType.h>
 #include <aws/glue/model/TableOptimizerVpcConfiguration.h>
+#include <aws/glue/model/TableResourceShareType.h>
 #include <aws/glue/model/TableStatus.h>
 #include <aws/glue/model/TableVersion.h>
 #include <aws/glue/model/TableVersionError.h>

@@ -20,6 +20,7 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/DisableVgwRoutePropagationRequest.h>
 #include <aws/ec2/model/DisableVpcClassicLinkDnsSupportRequest.h>
 #include <aws/ec2/model/DisableVpcClassicLinkRequest.h>
 #include <aws/ec2/model/DisassociateAddressRequest.h>
@@ -81,6 +82,7 @@
 #include <aws/ec2/model/GetCapacityManagerMetricDimensionsRequest.h>
 #include <aws/ec2/model/GetCapacityManagerMonitoredTagKeysRequest.h>
 #include <aws/ec2/model/GetCapacityReservationUsageRequest.h>
+#include <aws/ec2/model/GetClientVpnEndpointAuthorizationPolicyRequest.h>
 #include <aws/ec2/model/GetCoipPoolUsageRequest.h>
 #include <aws/ec2/model/GetConsoleOutputRequest.h>
 #include <aws/ec2/model/GetConsoleScreenshotRequest.h>
@@ -118,8 +120,6 @@
 #include <aws/ec2/model/GetIpamRoutingPolicyRegistrationDeltasRequest.h>
 #include <aws/ec2/model/GetIpamRoutingPolicyRegistrationsRequest.h>
 #include <aws/ec2/model/GetLaunchTemplateDataRequest.h>
-#include <aws/ec2/model/GetManagedPrefixListAssociationsRequest.h>
-#include <aws/ec2/model/GetManagedPrefixListEntriesRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,12 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DisableVgwRoutePropagationOutcome EC2Client::DisableVgwRoutePropagation(const DisableVgwRoutePropagationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableVgwRoutePropagationOutcome(result.GetResultWithOwnership())
+                            : DisableVgwRoutePropagationOutcome(std::move(result.GetError()));
+}
 
 DisableVpcClassicLinkOutcome EC2Client::DisableVpcClassicLink(const DisableVpcClassicLinkRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -522,6 +528,13 @@ GetCapacityReservationUsageOutcome EC2Client::GetCapacityReservationUsage(const 
                             : GetCapacityReservationUsageOutcome(std::move(result.GetError()));
 }
 
+GetClientVpnEndpointAuthorizationPolicyOutcome EC2Client::GetClientVpnEndpointAuthorizationPolicy(
+    const GetClientVpnEndpointAuthorizationPolicyRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetClientVpnEndpointAuthorizationPolicyOutcome(result.GetResultWithOwnership())
+                            : GetClientVpnEndpointAuthorizationPolicyOutcome(std::move(result.GetError()));
+}
+
 GetCoipPoolUsageOutcome EC2Client::GetCoipPoolUsage(const GetCoipPoolUsageRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetCoipPoolUsageOutcome(result.GetResultWithOwnership())
@@ -760,17 +773,4 @@ GetLaunchTemplateDataOutcome EC2Client::GetLaunchTemplateData(const GetLaunchTem
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetLaunchTemplateDataOutcome(result.GetResultWithOwnership())
                             : GetLaunchTemplateDataOutcome(std::move(result.GetError()));
-}
-
-GetManagedPrefixListAssociationsOutcome EC2Client::GetManagedPrefixListAssociations(
-    const GetManagedPrefixListAssociationsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetManagedPrefixListAssociationsOutcome(result.GetResultWithOwnership())
-                            : GetManagedPrefixListAssociationsOutcome(std::move(result.GetError()));
-}
-
-GetManagedPrefixListEntriesOutcome EC2Client::GetManagedPrefixListEntries(const GetManagedPrefixListEntriesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetManagedPrefixListEntriesOutcome(result.GetResultWithOwnership())
-                            : GetManagedPrefixListEntriesOutcome(std::move(result.GetError()));
 }

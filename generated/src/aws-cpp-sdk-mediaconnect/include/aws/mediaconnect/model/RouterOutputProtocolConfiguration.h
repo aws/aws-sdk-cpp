@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 #include <aws/mediaconnect/model/RistRouterOutputConfiguration.h>
+#include <aws/mediaconnect/model/RtmpPushRouterOutputConfiguration.h>
 #include <aws/mediaconnect/model/RtpRouterOutputConfiguration.h>
 #include <aws/mediaconnect/model/SrtCallerRouterOutputConfiguration.h>
 #include <aws/mediaconnect/model/SrtListenerRouterOutputConfiguration.h>
@@ -69,6 +70,22 @@ class RouterOutputProtocolConfiguration {
 
   ///@{
 
+  inline const RtmpPushRouterOutputConfiguration& GetRtmpPush() const { return m_rtmpPush; }
+  inline bool RtmpPushHasBeenSet() const { return m_rtmpPushHasBeenSet; }
+  template <typename RtmpPushT = RtmpPushRouterOutputConfiguration>
+  void SetRtmpPush(RtmpPushT&& value) {
+    m_rtmpPushHasBeenSet = true;
+    m_rtmpPush = std::forward<RtmpPushT>(value);
+  }
+  template <typename RtmpPushT = RtmpPushRouterOutputConfiguration>
+  RouterOutputProtocolConfiguration& WithRtmpPush(RtmpPushT&& value) {
+    SetRtmpPush(std::forward<RtmpPushT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
   inline const SrtCallerRouterOutputConfiguration& GetSrtCaller() const { return m_srtCaller; }
   inline bool SrtCallerHasBeenSet() const { return m_srtCallerHasBeenSet; }
   template <typename SrtCallerT = SrtCallerRouterOutputConfiguration>
@@ -103,11 +120,14 @@ class RouterOutputProtocolConfiguration {
 
   SrtListenerRouterOutputConfiguration m_srtListener;
 
+  RtmpPushRouterOutputConfiguration m_rtmpPush;
+
   SrtCallerRouterOutputConfiguration m_srtCaller;
 
   RtpRouterOutputConfiguration m_rtp;
   bool m_ristHasBeenSet = false;
   bool m_srtListenerHasBeenSet = false;
+  bool m_rtmpPushHasBeenSet = false;
   bool m_srtCallerHasBeenSet = false;
   bool m_rtpHasBeenSet = false;
 };

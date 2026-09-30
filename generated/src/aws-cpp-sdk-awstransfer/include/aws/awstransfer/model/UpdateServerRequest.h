@@ -96,9 +96,11 @@ class UpdateServerRequest : public TransferRequest {
    * <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter
    * to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon
    * CloudWatch Logs, so that you can determine when the client is making a
-   * <code>SETSTAT</code> call.</p> </li> <li> <p>To determine whether your Transfer
-   * Family server resumes recent, negotiated sessions through a unique session ID,
-   * use the <code>TlsSessionResumptionMode</code> parameter.</p> </li> <li> <p>
+   * <code>SETSTAT</code> call.</p> </li> <li> <p>To specify which ports your
+   * Transfer Family server listens to, use the <code>SftpPorts</code> parameter.</p>
+   * </li> <li> <p>To determine whether your Transfer Family server resumes recent,
+   * negotiated sessions through a unique session ID, use the
+   * <code>TlsSessionResumptionMode</code> parameter.</p> </li> <li> <p>
    * <code>As2Transports</code> indicates the transport method for the AS2 messages.
    * Currently, only HTTP is supported.</p> </li> </ul>
    */

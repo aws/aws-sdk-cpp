@@ -9,6 +9,7 @@
 #include <aws/agent-registry/model/RecordType.h>
 #include <aws/agent-registry/model/RegistryRecordStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/Document.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -260,6 +261,26 @@ class RegistryRecordSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The custom metadata attached to this registry record. Values are strings
+   * (maximum 128 characters) or booleans. This field is only present if the registry
+   * has a custom metadata schema configured.</p>
+   */
+  inline Aws::Utils::DocumentView GetCustomMetadata() const { return m_customMetadata; }
+  inline bool CustomMetadataHasBeenSet() const { return m_customMetadataHasBeenSet; }
+  template <typename CustomMetadataT = Aws::Utils::Document>
+  void SetCustomMetadata(CustomMetadataT&& value) {
+    m_customMetadataHasBeenSet = true;
+    m_customMetadata = std::forward<CustomMetadataT>(value);
+  }
+  template <typename CustomMetadataT = Aws::Utils::Document>
+  RegistryRecordSummary& WithCustomMetadata(CustomMetadataT&& value) {
+    SetCustomMetadata(std::forward<CustomMetadataT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_registryArn;
 
@@ -284,6 +305,8 @@ class RegistryRecordSummary {
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
+
+  Aws::Utils::Document m_customMetadata;
   bool m_registryArnHasBeenSet = false;
   bool m_recordArnHasBeenSet = false;
   bool m_recordIdHasBeenSet = false;
@@ -296,6 +319,7 @@ class RegistryRecordSummary {
   bool m_statusHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
+  bool m_customMetadataHasBeenSet = false;
 };
 
 }  // namespace Model

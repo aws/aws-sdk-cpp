@@ -10,7 +10,7 @@
 namespace Aws {
 namespace EC2 {
 namespace Model {
-enum class Rir { NOT_SET, ripe, apnic, arin, lacnic };
+enum class Rir { NOT_SET, ripe, apnic, arin, lacnic, nicbr };
 
 namespace RirMapper {
 AWS_EC2_API Rir GetRirForName(const Aws::String& name);

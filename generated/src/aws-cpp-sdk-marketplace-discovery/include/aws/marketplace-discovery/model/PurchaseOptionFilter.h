@@ -53,8 +53,19 @@ class PurchaseOptionFilter {
 
   ///@{
   /**
-   * <p>The values to filter by. Multiple values within the same filter are combined
-   * with OR logic.</p>
+   * <p>The values to filter by. Supported values depend on
+   * <code>filterType</code>:</p> <ul> <li> <p> <code>PRODUCT_ID</code> – One or more
+   * product identifiers to filter by.</p> </li> <li> <p>
+   * <code>SELLER_OF_RECORD_PROFILE_ID</code> – One or more seller profile
+   * identifiers to filter by.</p> </li> <li> <p> <code>PURCHASE_OPTION_TYPE</code> –
+   * One or more purchase option types to filter by: <code>OFFER</code> or
+   * <code>OFFERSET</code>.</p> </li> <li> <p> <code>VISIBILITY_SCOPE</code> – The
+   * visibility scope to filter by: <code>PRIVATE</code>.</p> </li> <li> <p>
+   * <code>AVAILABILITY_STATUS</code> – One or more availability statuses to filter
+   * by: <code>AVAILABLE</code> or <code>EXPIRED</code>.</p> </li> </ul> <p>To
+   * retrieve private offers and offer sets visible to you, use
+   * <code>VISIBILITY_SCOPE</code> with <code>PRIVATE</code>. OR logic combines
+   * multiple values within the same filter.</p>
    */
   inline const Aws::Vector<Aws::String>& GetFilterValues() const { return m_filterValues; }
   inline bool FilterValuesHasBeenSet() const { return m_filterValuesHasBeenSet; }

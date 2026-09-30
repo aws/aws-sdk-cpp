@@ -35,9 +35,8 @@ class PaymentScheduleEntry {
   ///@{
   /**
    * <p>The relative offset from the renewal agreement start date when this
-   * installment is due, in ISO 8601 duration format. The offset uses months only or
-   * days only (for example, P1M or P30D); mixed units are not supported, and every
-   * offset in a schedule uses the same unit.</p>
+   * installment is due, represented in ISO 8601 duration format (for example, P1M or
+   * P30D).</p>
    */
   inline const Aws::String& GetChargeDateOffset() const { return m_chargeDateOffset; }
   inline bool ChargeDateOffsetHasBeenSet() const { return m_chargeDateOffsetHasBeenSet; }
@@ -55,8 +54,8 @@ class PaymentScheduleEntry {
 
   ///@{
   /**
-   * <p>The percentage of the increased TCV to charge in this installment. All
-   * entries in a schedule sum to 100.00.</p>
+   * <p>The percentage of the increased Total Contract Value (TCV) to charge in this
+   * installment. All entries in a schedule sum to 100.00.</p>
    */
   inline const Aws::String& GetChargePercentage() const { return m_chargePercentage; }
   inline bool ChargePercentageHasBeenSet() const { return m_chargePercentageHasBeenSet; }
@@ -75,11 +74,10 @@ class PaymentScheduleEntry {
   ///@{
   /**
    * <p>The optional calendar day of month on which the charge occurs. When absent,
-   * the charge day is derived from <code>chargeDateOffset</code>, and this field
-   * does not apply when <code>chargeDateOffset</code> is expressed in days. For
-   * months with fewer days than the specified day, the charge occurs on the last day
-   * of the month. For example, if <code>dayOfMonth</code> is 31, the charge in April
-   * occurs on April 30.</p>
+   * the charge day is derived from <code>chargeDateOffset</code>. For months with
+   * fewer days than the specified day, the charge occurs on the last day of the
+   * month. For example, if <code>dayOfMonth</code> is 31, the charge in April occurs
+   * on April 30.</p>
    */
   inline int GetDayOfMonth() const { return m_dayOfMonth; }
   inline bool DayOfMonthHasBeenSet() const { return m_dayOfMonthHasBeenSet; }

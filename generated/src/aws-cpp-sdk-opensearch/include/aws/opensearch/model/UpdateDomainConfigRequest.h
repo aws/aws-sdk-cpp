@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opensearch/OpenSearchServiceRequest.h>
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/opensearch/model/AIMLOptionsInput.h>
@@ -544,6 +545,39 @@ class UpdateDomainConfigRequest : public OpenSearchServiceRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of advisory warning codes to accept for this configuration change. By
+   * default, any advisory warning blocks the change. Include the code of each
+   * warning you want to accept so the change can proceed. You can find warning codes
+   * in the<code>ValidationFailures</code> list returned by
+   * <code>DescribeDomainChangeProgress</code>and
+   * <code>DescribeDryRunProgress</code>. Critical validation failures cannot be
+   * accepted and always block the change. If you omit this parameter or pass an
+   * empty list, all warnings block the change. For more information, see <a
+   * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#validation-check">Validating
+   * a domain update</a>.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetAcceptedWarnings() const { return m_acceptedWarnings; }
+  inline bool AcceptedWarningsHasBeenSet() const { return m_acceptedWarningsHasBeenSet; }
+  template <typename AcceptedWarningsT = Aws::Vector<Aws::String>>
+  void SetAcceptedWarnings(AcceptedWarningsT&& value) {
+    m_acceptedWarningsHasBeenSet = true;
+    m_acceptedWarnings = std::forward<AcceptedWarningsT>(value);
+  }
+  template <typename AcceptedWarningsT = Aws::Vector<Aws::String>>
+  UpdateDomainConfigRequest& WithAcceptedWarnings(AcceptedWarningsT&& value) {
+    SetAcceptedWarnings(std::forward<AcceptedWarningsT>(value));
+    return *this;
+  }
+  template <typename AcceptedWarningsT = Aws::String>
+  UpdateDomainConfigRequest& AddAcceptedWarnings(AcceptedWarningsT&& value) {
+    m_acceptedWarningsHasBeenSet = true;
+    m_acceptedWarnings.emplace_back(std::forward<AcceptedWarningsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainName;
 
@@ -594,6 +628,8 @@ class UpdateDomainConfigRequest : public OpenSearchServiceRequest {
   DomainUseCase m_useCase{DomainUseCase::NOT_SET};
 
   EngineMode m_engineMode{EngineMode::NOT_SET};
+
+  Aws::Vector<Aws::String> m_acceptedWarnings;
   bool m_domainNameHasBeenSet = false;
   bool m_clusterConfigHasBeenSet = false;
   bool m_eBSOptionsHasBeenSet = false;
@@ -619,6 +655,7 @@ class UpdateDomainConfigRequest : public OpenSearchServiceRequest {
   bool m_automatedSnapshotPauseOptionsHasBeenSet = false;
   bool m_useCaseHasBeenSet = false;
   bool m_engineModeHasBeenSet = false;
+  bool m_acceptedWarningsHasBeenSet = false;
 };
 
 }  // namespace Model

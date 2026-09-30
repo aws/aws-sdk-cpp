@@ -20,9 +20,9 @@ namespace Route53Resolver {
 namespace Model {
 
 /**
- * <p>Identifies the AWS Marketplace product that backs a partner-managed rule
- * type. Returned as part of <a>FirewallRuleTypeDefinition</a> when the rule type
- * variant requires an active customer subscription to the named
+ * <p>Identifies the Amazon Web Services Marketplace product that backs a
+ * partner-managed rule type. Returned as part of <a>FirewallRuleTypeDefinition</a>
+ * when the rule type variant requires an active customer subscription to the named
  * product.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/SubscriptionInfo">AWS
  * API Reference</a></p>
@@ -36,8 +36,9 @@ class SubscriptionInfo {
 
   ///@{
   /**
-   * <p>The name of the AWS Marketplace seller (vendor) that publishes the partner
-   * threat-protection product (for example, <code>Palo Alto Networks</code>).</p>
+   * <p>The name of the Amazon Web Services Marketplace seller (vendor) that
+   * publishes the partner threat-protection product (for example, <code>Palo Alto
+   * Networks</code>).</p>
    */
   inline const Aws::String& GetVendorName() const { return m_vendorName; }
   inline bool VendorNameHasBeenSet() const { return m_vendorNameHasBeenSet; }
@@ -55,9 +56,9 @@ class SubscriptionInfo {
 
   ///@{
   /**
-   * <p>The AWS Marketplace product identifier of the partner threat-protection
-   * product. Use this value to verify or manage the calling account's subscription
-   * in AWS Marketplace.</p>
+   * <p>The Amazon Web Services Marketplace product identifier of the partner
+   * threat-protection product. Use this value to verify or manage the calling
+   * account's subscription in Amazon Web Services Marketplace.</p>
    */
   inline const Aws::String& GetProductId() const { return m_productId; }
   inline bool ProductIdHasBeenSet() const { return m_productIdHasBeenSet; }

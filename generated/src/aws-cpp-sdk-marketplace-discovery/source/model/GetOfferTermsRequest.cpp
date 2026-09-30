@@ -15,6 +15,10 @@ using namespace Aws::Utils;
 Aws::String GetOfferTermsRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_localeHasBeenSet) {
+    payload.WithString("locale", m_locale);
+  }
+
   if (m_offerIdHasBeenSet) {
     payload.WithString("offerId", m_offerId);
   }

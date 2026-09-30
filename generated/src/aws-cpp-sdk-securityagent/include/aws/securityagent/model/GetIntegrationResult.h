@@ -149,6 +149,24 @@ class GetIntegrationResult {
 
   ///@{
   /**
+   * <p>The payload URL of the integration's webhook, once it has been created. The
+   * signing secret is never returned on a read.</p>
+   */
+  inline const Aws::String& GetWebhookUrl() const { return m_webhookUrl; }
+  template <typename WebhookUrlT = Aws::String>
+  void SetWebhookUrl(WebhookUrlT&& value) {
+    m_webhookUrlHasBeenSet = true;
+    m_webhookUrl = std::forward<WebhookUrlT>(value);
+  }
+  template <typename WebhookUrlT = Aws::String>
+  GetIntegrationResult& WithWebhookUrl(WebhookUrlT&& value) {
+    SetWebhookUrl(std::forward<WebhookUrlT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The name of the private connection used to reach the integration's
    * self-hosted instance over private networking, if one is configured.</p>
    */
@@ -196,6 +214,8 @@ class GetIntegrationResult {
 
   Aws::String m_targetUrl;
 
+  Aws::String m_webhookUrl;
+
   Aws::String m_privateConnectionName;
 
   Aws::String m_requestId;
@@ -207,6 +227,7 @@ class GetIntegrationResult {
   bool m_displayNameHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
   bool m_targetUrlHasBeenSet = false;
+  bool m_webhookUrlHasBeenSet = false;
   bool m_privateConnectionNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -120,5 +120,13 @@ Aws::String UpdateDomainConfigRequest::SerializePayload() const {
     payload.WithString("EngineMode", EngineModeMapper::GetNameForEngineMode(m_engineMode));
   }
 
+  if (m_acceptedWarningsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> acceptedWarningsJsonList(m_acceptedWarnings.size());
+    for (unsigned acceptedWarningsIndex = 0; acceptedWarningsIndex < acceptedWarningsJsonList.GetLength(); ++acceptedWarningsIndex) {
+      acceptedWarningsJsonList[acceptedWarningsIndex].AsString(m_acceptedWarnings[acceptedWarningsIndex]);
+    }
+    payload.WithArray("AcceptedWarnings", std::move(acceptedWarningsJsonList));
+  }
+
   return payload.View().WriteReadable();
 }

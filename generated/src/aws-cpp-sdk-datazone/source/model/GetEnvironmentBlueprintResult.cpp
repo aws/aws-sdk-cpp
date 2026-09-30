@@ -60,6 +60,10 @@ GetEnvironmentBlueprintResult& GetEnvironmentBlueprintResult::operator=(const Aw
     }
     m_glossaryTermsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("blueprintCategory")) {
+    m_blueprintCategory = BlueprintCategoryMapper::GetBlueprintCategoryForName(jsonValue.GetString("blueprintCategory"));
+    m_blueprintCategoryHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;

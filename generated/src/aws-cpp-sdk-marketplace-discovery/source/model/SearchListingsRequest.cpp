@@ -15,6 +15,10 @@ using namespace Aws::Utils;
 Aws::String SearchListingsRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_localeHasBeenSet) {
+    payload.WithString("locale", m_locale);
+  }
+
   if (m_searchTextHasBeenSet) {
     payload.WithString("searchText", m_searchText);
   }

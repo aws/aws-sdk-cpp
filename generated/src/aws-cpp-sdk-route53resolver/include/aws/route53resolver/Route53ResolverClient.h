@@ -111,8 +111,9 @@ class AWS_ROUTE53RESOLVER_API Route53ResolverClient : public Aws::Client::AWSJso
    * <p>Associates a <a>FirewallRuleGroup</a> with a VPC, to provide DNS filtering
    * for the VPC.</p> <p>If the rule group contains any rule configured with the
    * <code>PartnerThreatProtection</code> rule type, the calling account must hold an
-   * active AWS Marketplace subscription to the named partner. If the subscription is
-   * missing, the association request is rejected.</p><p><h3>See Also:</h3>   <a
+   * active Amazon Web Services Marketplace subscription to the named partner. If the
+   * subscription is missing, the association request is rejected.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/AssociateFirewallRuleGroup">AWS
    * API Reference</a></p>
    */
@@ -363,16 +364,17 @@ class AWS_ROUTE53RESOLVER_API Route53ResolverClient : public Aws::Client::AWSJso
    * use any one of the following match sources, and the chosen source must be
    * supplied through the matching request field — they are mutually exclusive:</p>
    * <ul> <li> <p> <code>FirewallDomainListId</code> — match a customer-managed or
-   * AWS-managed domain list.</p> </li> <li> <p> <code>DnsThreatProtection</code> —
-   * match a built-in DNS Firewall Advanced threat detector (<code>DGA</code>,
-   * <code>DNS_TUNNELING</code>, or <code>DICTIONARY_DGA</code>).</p> </li> <li> <p>
-   * <code>FirewallRuleType</code> — match one of the rule-type variants returned by
-   * <a>ListFirewallRuleTypes</a>: <code>FirewallAdvancedContentCategory</code>,
+   * Amazon Web Services-managed domain list.</p> </li> <li> <p>
+   * <code>DnsThreatProtection</code> — match a built-in DNS Firewall Advanced threat
+   * detector (<code>DGA</code>, <code>DNS_TUNNELING</code>, or
+   * <code>DICTIONARY_DGA</code>).</p> </li> <li> <p> <code>FirewallRuleType</code> —
+   * match one of the rule-type variants returned by <a>ListFirewallRuleTypes</a>:
+   * <code>FirewallAdvancedContentCategory</code>,
    * <code>FirewallAdvancedThreatCategory</code>, <code>DnsThreatProtection</code>,
    * or <code>PartnerThreatProtection</code>. The
-   * <code>PartnerThreatProtection</code> variant requires an active AWS Marketplace
-   * subscription to the named partner product.</p> </li> </ul> <p>For rules that
-   * require asynchronous provisioning (today, the
+   * <code>PartnerThreatProtection</code> variant requires an active Amazon Web
+   * Services Marketplace subscription to the named partner product.</p> </li> </ul>
+   * <p>For rules that require asynchronous provisioning (today, the
    * <code>PartnerThreatProtection</code> rule type), the rule's <code>Status</code>
    * begins at <code>CREATING</code> and transitions to <code>COMPLETE</code> once
    * the rule is provisioned and the marketplace entitlement is verified. If
@@ -434,7 +436,10 @@ class AWS_ROUTE53RESOLVER_API Route53ResolverClient : public Aws::Client::AWSJso
   }
 
   /**
-   * <p>Creates a Route 53 Resolver on an Outpost.</p><p><h3>See Also:</h3>   <a
+   * <p>Creates a Route 53 Resolver on an Outpost.</p>  <p>This operation
+   * applies to first-generation Outposts only. On second-generation Outposts,
+   * Resolver is enabled by default and managed automatically by Amazon Web Services,
+   * so you don't need to create it.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateOutpostResolver">AWS
    * API Reference</a></p>
    */
@@ -646,7 +651,11 @@ class AWS_ROUTE53RESOLVER_API Route53ResolverClient : public Aws::Client::AWSJso
   }
 
   /**
-   * <p>Deletes a Resolver on the Outpost.</p><p><h3>See Also:</h3>   <a
+   * <p>Deletes a Resolver on the Outpost.</p>  <p>This operation applies to
+   * first-generation Outposts only. On second-generation Outposts, Resolver is
+   * managed automatically by Amazon Web Services and can't be deleted directly. To
+   * opt out of Resolver on second-generation Outposts, contact Amazon Web Services
+   * Support.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteOutpostResolver">AWS
    * API Reference</a></p>
    */
@@ -1540,9 +1549,10 @@ class AWS_ROUTE53RESOLVER_API Route53ResolverClient : public Aws::Client::AWSJso
    * and <code>PartnerThreatProtection</code>. When a returned definition's variant
    * requires an external subscription (currently only
    * <code>PartnerThreatProtection</code>), the response also includes a
-   * <a>SubscriptionInfo</a> identifying the AWS Marketplace product that backs it;
-   * absence of <code>SubscriptionInfo</code> means the variant is fully managed by
-   * AWS and requires no separate subscription.</p><p><h3>See Also:</h3>   <a
+   * <a>SubscriptionInfo</a> identifying the Amazon Web Services Marketplace product
+   * that backs it; absence of <code>SubscriptionInfo</code> means the variant is
+   * fully managed by Amazon Web Services and requires no separate
+   * subscription.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallRuleTypes">AWS
    * API Reference</a></p>
    */
@@ -2153,7 +2163,10 @@ class AWS_ROUTE53RESOLVER_API Route53ResolverClient : public Aws::Client::AWSJso
 
   /**
    * <p>You can use <code>UpdateOutpostResolver</code> to update the instance count,
-   * type, or name of a Resolver on an Outpost.</p><p><h3>See Also:</h3>   <a
+   * type, or name of a Resolver on an Outpost.</p>  <p>This operation applies
+   * to first-generation Outposts only. On second-generation Outposts, Resolver is
+   * managed automatically by Amazon Web Services and can't be updated directly.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateOutpostResolver">AWS
    * API Reference</a></p>
    */

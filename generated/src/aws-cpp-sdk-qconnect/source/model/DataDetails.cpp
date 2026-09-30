@@ -70,6 +70,10 @@ DataDetails& DataDetails::operator=(JsonView jsonValue) {
     m_notesChunkData = jsonValue.GetObject("notesChunkData");
     m_notesChunkDataHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("proactiveRecommendationData")) {
+    m_proactiveRecommendationData = jsonValue.GetObject("proactiveRecommendationData");
+    m_proactiveRecommendationDataHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -122,6 +126,10 @@ JsonValue DataDetails::Jsonize() const {
 
   if (m_notesChunkDataHasBeenSet) {
     payload.WithObject("notesChunkData", m_notesChunkData.Jsonize());
+  }
+
+  if (m_proactiveRecommendationDataHasBeenSet) {
+    payload.WithObject("proactiveRecommendationData", m_proactiveRecommendationData.Jsonize());
   }
 
   return payload;

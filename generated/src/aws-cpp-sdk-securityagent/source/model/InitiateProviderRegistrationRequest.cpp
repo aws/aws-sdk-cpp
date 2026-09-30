@@ -19,5 +19,21 @@ Aws::String InitiateProviderRegistrationRequest::SerializePayload() const {
     payload.WithString("provider", ProviderMapper::GetNameForProvider(m_provider));
   }
 
+  if (m_targetUrlHasBeenSet) {
+    payload.WithString("targetUrl", m_targetUrl);
+  }
+
+  if (m_organizationNameHasBeenSet) {
+    payload.WithString("organizationName", m_organizationName);
+  }
+
+  if (m_clientIdHasBeenSet) {
+    payload.WithString("clientId", m_clientId);
+  }
+
+  if (m_clientSecretHasBeenSet) {
+    payload.WithString("clientSecret", m_clientSecret);
+  }
+
   return payload.View().WriteReadable();
 }

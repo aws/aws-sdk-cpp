@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/agent-registry-control/AgentRegistryControl_EXPORTS.h>
+#include <aws/agent-registry-control/model/CustomMetadataSchemaComplianceStatus.h>
 #include <aws/agent-registry-control/model/ProvenanceSummary.h>
 #include <aws/agent-registry-control/model/RecordType.h>
 #include <aws/agent-registry-control/model/RegistryRecordStatus.h>
@@ -272,7 +273,11 @@ class RegistryRecordSummary {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The condensed provenance lineage for the registry record. Each entry contains
+   * the source relation, source identifier, and source type of an auto-detection
+   * lineage entry. Populated for records created by auto-detection.</p>
+   */
   inline const Aws::Vector<ProvenanceSummary>& GetProvenanceSummaryList() const { return m_provenanceSummaryList; }
   inline bool ProvenanceSummaryListHasBeenSet() const { return m_provenanceSummaryListHasBeenSet; }
   template <typename ProvenanceSummaryListT = Aws::Vector<ProvenanceSummary>>
@@ -289,6 +294,25 @@ class RegistryRecordSummary {
   RegistryRecordSummary& AddProvenanceSummaryList(ProvenanceSummaryListT&& value) {
     m_provenanceSummaryListHasBeenSet = true;
     m_provenanceSummaryList.emplace_back(std::forward<ProvenanceSummaryListT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether this record's custom metadata conforms to the registry's
+   * current schema.</p>
+   */
+  inline CustomMetadataSchemaComplianceStatus GetCustomMetadataSchemaComplianceStatus() const {
+    return m_customMetadataSchemaComplianceStatus;
+  }
+  inline bool CustomMetadataSchemaComplianceStatusHasBeenSet() const { return m_customMetadataSchemaComplianceStatusHasBeenSet; }
+  inline void SetCustomMetadataSchemaComplianceStatus(CustomMetadataSchemaComplianceStatus value) {
+    m_customMetadataSchemaComplianceStatusHasBeenSet = true;
+    m_customMetadataSchemaComplianceStatus = value;
+  }
+  inline RegistryRecordSummary& WithCustomMetadataSchemaComplianceStatus(CustomMetadataSchemaComplianceStatus value) {
+    SetCustomMetadataSchemaComplianceStatus(value);
     return *this;
   }
   ///@}
@@ -320,6 +344,8 @@ class RegistryRecordSummary {
   Aws::String m_createdBy;
 
   Aws::Vector<ProvenanceSummary> m_provenanceSummaryList;
+
+  CustomMetadataSchemaComplianceStatus m_customMetadataSchemaComplianceStatus{CustomMetadataSchemaComplianceStatus::NOT_SET};
   bool m_registryArnHasBeenSet = false;
   bool m_recordArnHasBeenSet = false;
   bool m_recordIdHasBeenSet = false;
@@ -334,6 +360,7 @@ class RegistryRecordSummary {
   bool m_createdByAutoDetectionHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
   bool m_provenanceSummaryListHasBeenSet = false;
+  bool m_customMetadataSchemaComplianceStatusHasBeenSet = false;
 };
 
 }  // namespace Model

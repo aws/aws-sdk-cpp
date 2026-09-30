@@ -15,6 +15,14 @@ using namespace Aws::Utils;
 Aws::String ListTenantsRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_filterHasBeenSet) {
+    JsonValue filterJsonMap;
+    for (auto& filterItem : m_filter) {
+      filterJsonMap.WithString(ListTenantsFilterKeyMapper::GetNameForListTenantsFilterKey(filterItem.first), filterItem.second);
+    }
+    payload.WithObject("Filter", std::move(filterJsonMap));
+  }
+
   if (m_nextTokenHasBeenSet) {
     payload.WithString("NextToken", m_nextToken);
   }

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datazone/DataZoneRequest.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
+#include <aws/datazone/model/BlueprintCategory.h>
 #include <aws/datazone/model/CustomParameter.h>
 #include <aws/datazone/model/ProvisioningProperties.h>
 
@@ -130,6 +131,22 @@ class UpdateEnvironmentBlueprintRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The category to update. The only valid value is <code>TOOLING</code>.</p>
+   */
+  inline BlueprintCategory GetBlueprintCategory() const { return m_blueprintCategory; }
+  inline bool BlueprintCategoryHasBeenSet() const { return m_blueprintCategoryHasBeenSet; }
+  inline void SetBlueprintCategory(BlueprintCategory value) {
+    m_blueprintCategoryHasBeenSet = true;
+    m_blueprintCategory = value;
+  }
+  inline UpdateEnvironmentBlueprintRequest& WithBlueprintCategory(BlueprintCategory value) {
+    SetBlueprintCategory(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainIdentifier;
 
@@ -140,11 +157,14 @@ class UpdateEnvironmentBlueprintRequest : public DataZoneRequest {
   ProvisioningProperties m_provisioningProperties;
 
   Aws::Vector<CustomParameter> m_userParameters;
+
+  BlueprintCategory m_blueprintCategory{BlueprintCategory::NOT_SET};
   bool m_domainIdentifierHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_provisioningPropertiesHasBeenSet = false;
   bool m_userParametersHasBeenSet = false;
+  bool m_blueprintCategoryHasBeenSet = false;
 };
 
 }  // namespace Model

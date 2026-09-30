@@ -51,7 +51,7 @@ class ApplicationSettingsResponse {
 
   ///@{
   /**
-   * <p>The path prefix for the S3 bucket where users’ persistent application
+   * <p>The path prefix for the S3 bucket where users�� persistent application
    * settings are stored.</p>
    */
   inline const Aws::String& GetSettingsGroup() const { return m_settingsGroup; }

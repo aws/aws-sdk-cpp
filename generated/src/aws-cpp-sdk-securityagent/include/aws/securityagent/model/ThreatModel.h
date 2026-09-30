@@ -11,6 +11,7 @@
 #include <aws/securityagent/model/Assets.h>
 #include <aws/securityagent/model/CloudWatchLog.h>
 #include <aws/securityagent/model/DocumentInfo.h>
+#include <aws/securityagent/model/ReportDestination.h>
 
 #include <utility>
 
@@ -190,6 +191,25 @@ class ThreatModel {
 
   ///@{
   /**
+   * <p>The destination for publishing scan reports to an integrated document
+   * provider.</p>
+   */
+  inline const ReportDestination& GetReportDestination() const { return m_reportDestination; }
+  inline bool ReportDestinationHasBeenSet() const { return m_reportDestinationHasBeenSet; }
+  template <typename ReportDestinationT = ReportDestination>
+  void SetReportDestination(ReportDestinationT&& value) {
+    m_reportDestinationHasBeenSet = true;
+    m_reportDestination = std::forward<ReportDestinationT>(value);
+  }
+  template <typename ReportDestinationT = ReportDestination>
+  ThreatModel& WithReportDestination(ReportDestinationT&& value) {
+    SetReportDestination(std::forward<ReportDestinationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The date and time the threat model was created, in UTC format.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -240,6 +260,8 @@ class ThreatModel {
 
   CloudWatchLog m_logConfig;
 
+  ReportDestination m_reportDestination;
+
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
@@ -251,6 +273,7 @@ class ThreatModel {
   bool m_scopeDocsHasBeenSet = false;
   bool m_serviceRoleHasBeenSet = false;
   bool m_logConfigHasBeenSet = false;
+  bool m_reportDestinationHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };

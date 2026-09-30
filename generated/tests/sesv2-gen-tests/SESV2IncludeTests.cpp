@@ -42,6 +42,7 @@
 #include <aws/sesv2/model/CloudWatchDimensionConfiguration.h>
 #include <aws/sesv2/model/Complaint.h>
 #include <aws/sesv2/model/ConfigurationOverrides.h>
+#include <aws/sesv2/model/ConfigurationSetFilterKey.h>
 #include <aws/sesv2/model/Contact.h>
 #include <aws/sesv2/model/ContactLanguage.h>
 #include <aws/sesv2/model/ContactList.h>
@@ -207,6 +208,7 @@
 #include <aws/sesv2/model/HttpsPolicy.h>
 #include <aws/sesv2/model/IdentityCertificate.h>
 #include <aws/sesv2/model/IdentityCertificateStatus.h>
+#include <aws/sesv2/model/IdentityFilterKey.h>
 #include <aws/sesv2/model/IdentityInfo.h>
 #include <aws/sesv2/model/IdentityType.h>
 #include <aws/sesv2/model/ImportDataSource.h>
@@ -278,6 +280,7 @@
 #include <aws/sesv2/model/ListTenantResourcesPaginationTraits.h>
 #include <aws/sesv2/model/ListTenantResourcesRequest.h>
 #include <aws/sesv2/model/ListTenantResourcesResult.h>
+#include <aws/sesv2/model/ListTenantsFilterKey.h>
 #include <aws/sesv2/model/ListTenantsPaginationTraits.h>
 #include <aws/sesv2/model/ListTenantsRequest.h>
 #include <aws/sesv2/model/ListTenantsResult.h>

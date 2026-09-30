@@ -144,7 +144,7 @@ class CreateGraphUsingImportTaskRequest : public NeptuneGraphRequest {
   ///@{
   /**
    * <p>The number of replicas in other AZs to provision on the new graph after
-   * import. Default = 0, Min = 0, Max = 2.</p>  <p> Additional charges
+   * import. Default = 1, Min = 0, Max = 2.</p>  <p> Additional charges
    * equivalent to the m-NCUs selected for the graph apply for each replica. </p>
    *
    */

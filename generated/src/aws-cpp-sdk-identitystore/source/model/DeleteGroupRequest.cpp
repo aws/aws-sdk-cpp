@@ -23,6 +23,10 @@ Aws::String DeleteGroupRequest::SerializePayload() const {
     payload.WithString("GroupId", m_groupId);
   }
 
+  if (m_revisionHasBeenSet) {
+    payload.WithString("Revision", m_revision);
+  }
+
   return payload.View().WriteReadable();
 }
 

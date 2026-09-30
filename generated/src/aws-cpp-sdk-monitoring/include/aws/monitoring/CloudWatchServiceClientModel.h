@@ -21,11 +21,13 @@
 /* Service model headers required in CloudWatchClient header */
 #include <aws/core/NoResult.h>
 #include <aws/monitoring/model/AssociateDatasetKmsKeyResult.h>
+#include <aws/monitoring/model/CreateResourceMetricsConfigurationResult.h>
 #include <aws/monitoring/model/DeleteAnomalyDetectorRequest.h>
 #include <aws/monitoring/model/DeleteAnomalyDetectorResult.h>
 #include <aws/monitoring/model/DeleteDashboardsResult.h>
 #include <aws/monitoring/model/DeleteInsightRulesResult.h>
 #include <aws/monitoring/model/DeleteMetricStreamResult.h>
+#include <aws/monitoring/model/DeleteResourceMetricsConfigurationResult.h>
 #include <aws/monitoring/model/DescribeAlarmContributorsResult.h>
 #include <aws/monitoring/model/DescribeAlarmHistoryRequest.h>
 #include <aws/monitoring/model/DescribeAlarmHistoryResult.h>
@@ -49,6 +51,7 @@
 #include <aws/monitoring/model/GetMetricWidgetImageResult.h>
 #include <aws/monitoring/model/GetOTelEnrichmentRequest.h>
 #include <aws/monitoring/model/GetOTelEnrichmentResult.h>
+#include <aws/monitoring/model/GetResourceMetricsConfigurationResult.h>
 #include <aws/monitoring/model/ListAlarmMuteRulesRequest.h>
 #include <aws/monitoring/model/ListAlarmMuteRulesResult.h>
 #include <aws/monitoring/model/ListDashboardsRequest.h>
@@ -73,6 +76,9 @@
 #include <aws/monitoring/model/StopOTelEnrichmentResult.h>
 #include <aws/monitoring/model/TagResourceResult.h>
 #include <aws/monitoring/model/UntagResourceResult.h>
+#include <aws/monitoring/model/UpdateOTelEnrichmentRequest.h>
+#include <aws/monitoring/model/UpdateOTelEnrichmentResult.h>
+#include <aws/monitoring/model/UpdateResourceMetricsConfigurationResult.h>
 /* End of service model headers required in CloudWatchClient header */
 
 namespace Aws {
@@ -107,12 +113,14 @@ using CloudWatchEndpointProvider = Aws::CloudWatch::Endpoint::CloudWatchEndpoint
 namespace Model {
 /* Service model forward declarations required in CloudWatchClient header */
 class AssociateDatasetKmsKeyRequest;
+class CreateResourceMetricsConfigurationRequest;
 class DeleteAlarmMuteRuleRequest;
 class DeleteAlarmsRequest;
 class DeleteAnomalyDetectorRequest;
 class DeleteDashboardsRequest;
 class DeleteInsightRulesRequest;
 class DeleteMetricStreamRequest;
+class DeleteResourceMetricsConfigurationRequest;
 class DescribeAlarmContributorsRequest;
 class DescribeAlarmHistoryRequest;
 class DescribeAlarmsRequest;
@@ -133,6 +141,7 @@ class GetMetricStatisticsRequest;
 class GetMetricStreamRequest;
 class GetMetricWidgetImageRequest;
 class GetOTelEnrichmentRequest;
+class GetResourceMetricsConfigurationRequest;
 class ListAlarmMuteRulesRequest;
 class ListDashboardsRequest;
 class ListManagedInsightRulesRequest;
@@ -156,16 +165,20 @@ class StopMetricStreamsRequest;
 class StopOTelEnrichmentRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
+class UpdateOTelEnrichmentRequest;
+class UpdateResourceMetricsConfigurationRequest;
 /* End of service model forward declarations required in CloudWatchClient header */
 
 /* Service model Outcome class definitions */
 typedef Aws::Utils::Outcome<AssociateDatasetKmsKeyResult, CloudWatchError> AssociateDatasetKmsKeyOutcome;
+typedef Aws::Utils::Outcome<CreateResourceMetricsConfigurationResult, CloudWatchError> CreateResourceMetricsConfigurationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchError> DeleteAlarmMuteRuleOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchError> DeleteAlarmsOutcome;
 typedef Aws::Utils::Outcome<DeleteAnomalyDetectorResult, CloudWatchError> DeleteAnomalyDetectorOutcome;
 typedef Aws::Utils::Outcome<DeleteDashboardsResult, CloudWatchError> DeleteDashboardsOutcome;
 typedef Aws::Utils::Outcome<DeleteInsightRulesResult, CloudWatchError> DeleteInsightRulesOutcome;
 typedef Aws::Utils::Outcome<DeleteMetricStreamResult, CloudWatchError> DeleteMetricStreamOutcome;
+typedef Aws::Utils::Outcome<DeleteResourceMetricsConfigurationResult, CloudWatchError> DeleteResourceMetricsConfigurationOutcome;
 typedef Aws::Utils::Outcome<DescribeAlarmContributorsResult, CloudWatchError> DescribeAlarmContributorsOutcome;
 typedef Aws::Utils::Outcome<DescribeAlarmHistoryResult, CloudWatchError> DescribeAlarmHistoryOutcome;
 typedef Aws::Utils::Outcome<DescribeAlarmsResult, CloudWatchError> DescribeAlarmsOutcome;
@@ -186,6 +199,7 @@ typedef Aws::Utils::Outcome<GetMetricStatisticsResult, CloudWatchError> GetMetri
 typedef Aws::Utils::Outcome<GetMetricStreamResult, CloudWatchError> GetMetricStreamOutcome;
 typedef Aws::Utils::Outcome<GetMetricWidgetImageResult, CloudWatchError> GetMetricWidgetImageOutcome;
 typedef Aws::Utils::Outcome<GetOTelEnrichmentResult, CloudWatchError> GetOTelEnrichmentOutcome;
+typedef Aws::Utils::Outcome<GetResourceMetricsConfigurationResult, CloudWatchError> GetResourceMetricsConfigurationOutcome;
 typedef Aws::Utils::Outcome<ListAlarmMuteRulesResult, CloudWatchError> ListAlarmMuteRulesOutcome;
 typedef Aws::Utils::Outcome<ListDashboardsResult, CloudWatchError> ListDashboardsOutcome;
 typedef Aws::Utils::Outcome<ListManagedInsightRulesResult, CloudWatchError> ListManagedInsightRulesOutcome;
@@ -209,16 +223,20 @@ typedef Aws::Utils::Outcome<StopMetricStreamsResult, CloudWatchError> StopMetric
 typedef Aws::Utils::Outcome<StopOTelEnrichmentResult, CloudWatchError> StopOTelEnrichmentOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, CloudWatchError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, CloudWatchError> UntagResourceOutcome;
+typedef Aws::Utils::Outcome<UpdateOTelEnrichmentResult, CloudWatchError> UpdateOTelEnrichmentOutcome;
+typedef Aws::Utils::Outcome<UpdateResourceMetricsConfigurationResult, CloudWatchError> UpdateResourceMetricsConfigurationOutcome;
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
 typedef std::future<AssociateDatasetKmsKeyOutcome> AssociateDatasetKmsKeyOutcomeCallable;
+typedef std::future<CreateResourceMetricsConfigurationOutcome> CreateResourceMetricsConfigurationOutcomeCallable;
 typedef std::future<DeleteAlarmMuteRuleOutcome> DeleteAlarmMuteRuleOutcomeCallable;
 typedef std::future<DeleteAlarmsOutcome> DeleteAlarmsOutcomeCallable;
 typedef std::future<DeleteAnomalyDetectorOutcome> DeleteAnomalyDetectorOutcomeCallable;
 typedef std::future<DeleteDashboardsOutcome> DeleteDashboardsOutcomeCallable;
 typedef std::future<DeleteInsightRulesOutcome> DeleteInsightRulesOutcomeCallable;
 typedef std::future<DeleteMetricStreamOutcome> DeleteMetricStreamOutcomeCallable;
+typedef std::future<DeleteResourceMetricsConfigurationOutcome> DeleteResourceMetricsConfigurationOutcomeCallable;
 typedef std::future<DescribeAlarmContributorsOutcome> DescribeAlarmContributorsOutcomeCallable;
 typedef std::future<DescribeAlarmHistoryOutcome> DescribeAlarmHistoryOutcomeCallable;
 typedef std::future<DescribeAlarmsOutcome> DescribeAlarmsOutcomeCallable;
@@ -239,6 +257,7 @@ typedef std::future<GetMetricStatisticsOutcome> GetMetricStatisticsOutcomeCallab
 typedef std::future<GetMetricStreamOutcome> GetMetricStreamOutcomeCallable;
 typedef std::future<GetMetricWidgetImageOutcome> GetMetricWidgetImageOutcomeCallable;
 typedef std::future<GetOTelEnrichmentOutcome> GetOTelEnrichmentOutcomeCallable;
+typedef std::future<GetResourceMetricsConfigurationOutcome> GetResourceMetricsConfigurationOutcomeCallable;
 typedef std::future<ListAlarmMuteRulesOutcome> ListAlarmMuteRulesOutcomeCallable;
 typedef std::future<ListDashboardsOutcome> ListDashboardsOutcomeCallable;
 typedef std::future<ListManagedInsightRulesOutcome> ListManagedInsightRulesOutcomeCallable;
@@ -262,6 +281,8 @@ typedef std::future<StopMetricStreamsOutcome> StopMetricStreamsOutcomeCallable;
 typedef std::future<StopOTelEnrichmentOutcome> StopOTelEnrichmentOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+typedef std::future<UpdateOTelEnrichmentOutcome> UpdateOTelEnrichmentOutcomeCallable;
+typedef std::future<UpdateResourceMetricsConfigurationOutcome> UpdateResourceMetricsConfigurationOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
 
@@ -271,6 +292,10 @@ class CloudWatchClient;
 typedef std::function<void(const CloudWatchClient*, const Model::AssociateDatasetKmsKeyRequest&,
                            const Model::AssociateDatasetKmsKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AssociateDatasetKmsKeyResponseReceivedHandler;
+typedef std::function<void(const CloudWatchClient*, const Model::CreateResourceMetricsConfigurationRequest&,
+                           const Model::CreateResourceMetricsConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateResourceMetricsConfigurationResponseReceivedHandler;
 typedef std::function<void(const CloudWatchClient*, const Model::DeleteAlarmMuteRuleRequest&, const Model::DeleteAlarmMuteRuleOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteAlarmMuteRuleResponseReceivedHandler;
@@ -289,6 +314,10 @@ typedef std::function<void(const CloudWatchClient*, const Model::DeleteInsightRu
 typedef std::function<void(const CloudWatchClient*, const Model::DeleteMetricStreamRequest&, const Model::DeleteMetricStreamOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteMetricStreamResponseReceivedHandler;
+typedef std::function<void(const CloudWatchClient*, const Model::DeleteResourceMetricsConfigurationRequest&,
+                           const Model::DeleteResourceMetricsConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteResourceMetricsConfigurationResponseReceivedHandler;
 typedef std::function<void(const CloudWatchClient*, const Model::DescribeAlarmContributorsRequest&,
                            const Model::DescribeAlarmContributorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeAlarmContributorsResponseReceivedHandler;
@@ -349,6 +378,10 @@ typedef std::function<void(const CloudWatchClient*, const Model::GetMetricWidget
 typedef std::function<void(const CloudWatchClient*, const Model::GetOTelEnrichmentRequest&, const Model::GetOTelEnrichmentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetOTelEnrichmentResponseReceivedHandler;
+typedef std::function<void(const CloudWatchClient*, const Model::GetResourceMetricsConfigurationRequest&,
+                           const Model::GetResourceMetricsConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetResourceMetricsConfigurationResponseReceivedHandler;
 typedef std::function<void(const CloudWatchClient*, const Model::ListAlarmMuteRulesRequest&, const Model::ListAlarmMuteRulesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAlarmMuteRulesResponseReceivedHandler;
@@ -418,6 +451,13 @@ typedef std::function<void(const CloudWatchClient*, const Model::TagResourceRequ
 typedef std::function<void(const CloudWatchClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UntagResourceResponseReceivedHandler;
+typedef std::function<void(const CloudWatchClient*, const Model::UpdateOTelEnrichmentRequest&, const Model::UpdateOTelEnrichmentOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateOTelEnrichmentResponseReceivedHandler;
+typedef std::function<void(const CloudWatchClient*, const Model::UpdateResourceMetricsConfigurationRequest&,
+                           const Model::UpdateResourceMetricsConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateResourceMetricsConfigurationResponseReceivedHandler;
 /* End of service model async handlers definitions */
 }  // namespace CloudWatch
 }  // namespace Aws

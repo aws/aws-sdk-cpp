@@ -68,12 +68,34 @@ class RemoteAccountDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>If the remote account belongs to an Amazon Web Services service, this field
+   * indicates which service the remote account belongs to.</p>
+   */
+  inline const Aws::String& GetAwsServiceName() const { return m_awsServiceName; }
+  inline bool AwsServiceNameHasBeenSet() const { return m_awsServiceNameHasBeenSet; }
+  template <typename AwsServiceNameT = Aws::String>
+  void SetAwsServiceName(AwsServiceNameT&& value) {
+    m_awsServiceNameHasBeenSet = true;
+    m_awsServiceName = std::forward<AwsServiceNameT>(value);
+  }
+  template <typename AwsServiceNameT = Aws::String>
+  RemoteAccountDetails& WithAwsServiceName(AwsServiceNameT&& value) {
+    SetAwsServiceName(std::forward<AwsServiceNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_accountId;
 
   bool m_affiliated{false};
+
+  Aws::String m_awsServiceName;
   bool m_accountIdHasBeenSet = false;
   bool m_affiliatedHasBeenSet = false;
+  bool m_awsServiceNameHasBeenSet = false;
 };
 
 }  // namespace Model

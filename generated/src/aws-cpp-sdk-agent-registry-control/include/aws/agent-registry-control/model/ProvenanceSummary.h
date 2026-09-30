@@ -22,9 +22,9 @@ namespace AgentRegistryControl {
 namespace Model {
 
 /**
- * <p>Condensed provenance entry for list results — the key triple only (no
- * sourceDetails union). Enough to display and client-side-filter lineage without
- * the full-read config payload.</p><p><h3>See Also:</h3>   <a
+ * <p>A condensed provenance entry surfaced in list results. Contains the source
+ * identity of a lineage entry without the source details returned by
+ * <code>GetRegistryRecord</code>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/ProvenanceSummary">AWS
  * API Reference</a></p>
  */
@@ -36,7 +36,11 @@ class ProvenanceSummary {
   AWS_AGENTREGISTRYCONTROL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p>The relationship between the registry record and its upstream source.
+   * <code>DETECTED_FROM</code> indicates that the record was auto-detected from the
+   * source resource.</p>
+   */
   inline ProvenanceRelation GetRelation() const { return m_relation; }
   inline bool RelationHasBeenSet() const { return m_relationHasBeenSet; }
   inline void SetRelation(ProvenanceRelation value) {

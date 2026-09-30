@@ -1227,10 +1227,10 @@ GetTenantOutcome SESV2Client::GetTenant(const GetTenantRequest& request) const {
 ListConfigurationSetsOutcome SESV2Client::ListConfigurationSets(const ListConfigurationSetsRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/configuration-sets");
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/list-configuration-sets");
   };
 
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListConfigurationSetsOutcome(result.GetResultWithOwnership())
                             : ListConfigurationSetsOutcome(std::move(result.GetError()));
 }
@@ -1331,10 +1331,10 @@ ListDomainDeliverabilityCampaignsOutcome SESV2Client::ListDomainDeliverabilityCa
 ListEmailIdentitiesOutcome SESV2Client::ListEmailIdentities(const ListEmailIdentitiesRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/identities");
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/list-identities");
   };
 
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListEmailIdentitiesOutcome(result.GetResultWithOwnership())
                             : ListEmailIdentitiesOutcome(std::move(result.GetError()));
 }

@@ -17,9 +17,11 @@
 #include <aws/marketplace-discovery/MarketplaceDiscoveryWaiter.h>
 #include <aws/marketplace-discovery/MarketplaceDiscovery_EXPORTS.h>
 #include <aws/marketplace-discovery/internal/MarketplaceDiscoveryEndpointRules.h>
+#include <aws/marketplace-discovery/model/AmazonMachineImageEbsVolume.h>
 #include <aws/marketplace-discovery/model/AmazonMachineImageFulfillmentOption.h>
 #include <aws/marketplace-discovery/model/AmazonMachineImageOperatingSystem.h>
 #include <aws/marketplace-discovery/model/AmazonMachineImageRecommendation.h>
+#include <aws/marketplace-discovery/model/AmazonMachineImageSecurityGroup.h>
 #include <aws/marketplace-discovery/model/ApiFulfillmentOption.h>
 #include <aws/marketplace-discovery/model/AwsSupportedService.h>
 #include <aws/marketplace-discovery/model/BillingPeriodType.h>
@@ -112,6 +114,7 @@
 #include <aws/marketplace-discovery/model/ReviewSourceSummary.h>
 #include <aws/marketplace-discovery/model/ReviewSummary.h>
 #include <aws/marketplace-discovery/model/SaasFulfillmentOption.h>
+#include <aws/marketplace-discovery/model/SaasQuickLaunchStatus.h>
 #include <aws/marketplace-discovery/model/SageMakerAlgorithmFulfillmentOption.h>
 #include <aws/marketplace-discovery/model/SageMakerAlgorithmRecommendation.h>
 #include <aws/marketplace-discovery/model/SageMakerModelFulfillmentOption.h>

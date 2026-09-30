@@ -68,6 +68,7 @@
 #include <aws/securityagent/model/GetSecurityRequirementPackRequest.h>
 #include <aws/securityagent/model/ImportSecurityRequirementsRequest.h>
 #include <aws/securityagent/model/InitiateProviderRegistrationRequest.h>
+#include <aws/securityagent/model/ListActorMessagesRequest.h>
 #include <aws/securityagent/model/ListAgentSpacesRequest.h>
 #include <aws/securityagent/model/ListApplicationsRequest.h>
 #include <aws/securityagent/model/ListArtifactsRequest.h>
@@ -105,6 +106,7 @@
 #include <aws/securityagent/model/UpdateCodeReviewRequest.h>
 #include <aws/securityagent/model/UpdateFindingRequest.h>
 #include <aws/securityagent/model/UpdateIntegratedResourcesRequest.h>
+#include <aws/securityagent/model/UpdateIntegrationRequest.h>
 #include <aws/securityagent/model/UpdatePentestRequest.h>
 #include <aws/securityagent/model/UpdatePrivateConnectionCertificateRequest.h>
 #include <aws/securityagent/model/UpdateSecurityRequirementPackRequest.h>
@@ -796,6 +798,17 @@ InitiateProviderRegistrationOutcome SecurityAgentClient::InitiateProviderRegistr
                             : InitiateProviderRegistrationOutcome(std::move(result.GetError()));
 }
 
+ListActorMessagesOutcome SecurityAgentClient::ListActorMessages(const ListActorMessagesRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/ListActorMessages");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListActorMessagesOutcome(result.GetResultWithOwnership())
+                            : ListActorMessagesOutcome(std::move(result.GetError()));
+}
+
 ListAgentSpacesOutcome SecurityAgentClient::ListAgentSpaces(const ListAgentSpacesRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -1221,6 +1234,17 @@ UpdateIntegratedResourcesOutcome SecurityAgentClient::UpdateIntegratedResources(
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateIntegratedResourcesOutcome(result.GetResultWithOwnership())
                             : UpdateIntegratedResourcesOutcome(std::move(result.GetError()));
+}
+
+UpdateIntegrationOutcome SecurityAgentClient::UpdateIntegration(const UpdateIntegrationRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateIntegration");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateIntegrationOutcome(result.GetResultWithOwnership())
+                            : UpdateIntegrationOutcome(std::move(result.GetError()));
 }
 
 UpdatePentestOutcome SecurityAgentClient::UpdatePentest(const UpdatePentestRequest& request) const {

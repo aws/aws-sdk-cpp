@@ -22,9 +22,21 @@ DescribeGroupResult::DescribeGroupResult(const Aws::AmazonWebServiceResult<JsonV
 DescribeGroupResult& DescribeGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("IdentityStoreId")) {
+    m_identityStoreId = jsonValue.GetString("IdentityStoreId");
+    m_identityStoreIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("GroupId")) {
     m_groupId = jsonValue.GetString("GroupId");
     m_groupIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("GroupArn")) {
+    m_groupArn = jsonValue.GetString("GroupArn");
+    m_groupArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Revision")) {
+    m_revision = jsonValue.GetString("Revision");
+    m_revisionHasBeenSet = true;
   }
   if (jsonValue.ValueExists("DisplayName")) {
     m_displayName = jsonValue.GetString("DisplayName");
@@ -56,10 +68,6 @@ DescribeGroupResult& DescribeGroupResult::operator=(const Aws::AmazonWebServiceR
   if (jsonValue.ValueExists("UpdatedBy")) {
     m_updatedBy = jsonValue.GetString("UpdatedBy");
     m_updatedByHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("IdentityStoreId")) {
-    m_identityStoreId = jsonValue.GetString("IdentityStoreId");
-    m_identityStoreIdHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

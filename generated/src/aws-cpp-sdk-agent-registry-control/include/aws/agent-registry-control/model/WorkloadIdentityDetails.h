@@ -20,8 +20,9 @@ namespace AgentRegistryControl {
 namespace Model {
 
 /**
- * <p>Workload identity details associated with a source resource.</p><p><h3>See
- * Also:</h3>   <a
+ * <p>The workload identity details associated with a source resource. Present on
+ * the source details of a provenance entry when the upstream resource has a
+ * workload identity configured.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/WorkloadIdentityDetails">AWS
  * API Reference</a></p>
  */

@@ -161,8 +161,8 @@ class UpdateDocumentRequest : public SSMRequest {
 
   ///@{
   /**
-   * <p>Specify the document format for the new document version. Systems Manager
-   * supports JSON and YAML documents. JSON is the default format.</p>
+   * <p>Specify the document format for the new document version. The document format
+   * can be JSON, YAML, or TEXT. JSON is the default format.</p>
    */
   inline DocumentFormat GetDocumentFormat() const { return m_documentFormat; }
   inline bool DocumentFormatHasBeenSet() const { return m_documentFormatHasBeenSet; }

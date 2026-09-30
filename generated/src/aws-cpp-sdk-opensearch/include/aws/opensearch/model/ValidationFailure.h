@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
+#include <aws/opensearch/model/ValidationFailureSeverity.h>
 
 #include <utility>
 
@@ -67,12 +68,31 @@ class ValidationFailure {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The severity of the validation failure.</p>
+   */
+  inline ValidationFailureSeverity GetSeverity() const { return m_severity; }
+  inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
+  inline void SetSeverity(ValidationFailureSeverity value) {
+    m_severityHasBeenSet = true;
+    m_severity = value;
+  }
+  inline ValidationFailure& WithSeverity(ValidationFailureSeverity value) {
+    SetSeverity(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_code;
 
   Aws::String m_message;
+
+  ValidationFailureSeverity m_severity{ValidationFailureSeverity::NOT_SET};
   bool m_codeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -22,6 +22,10 @@ AIAgentConfigurationData& AIAgentConfigurationData::operator=(JsonView jsonValue
     m_aiAgentId = jsonValue.GetString("aiAgentId");
     m_aiAgentIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("enabled")) {
+    m_enabled = jsonValue.GetBool("enabled");
+    m_enabledHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue AIAgentConfigurationData::Jsonize() const {
 
   if (m_aiAgentIdHasBeenSet) {
     payload.WithString("aiAgentId", m_aiAgentId);
+  }
+
+  if (m_enabledHasBeenSet) {
+    payload.WithBool("enabled", m_enabled);
   }
 
   return payload;

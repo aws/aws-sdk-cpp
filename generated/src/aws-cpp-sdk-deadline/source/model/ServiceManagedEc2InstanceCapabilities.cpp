@@ -73,6 +73,13 @@ ServiceManagedEc2InstanceCapabilities& ServiceManagedEc2InstanceCapabilities::op
     }
     m_customAttributesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("softwareAddOns")) {
+    Aws::Utils::Array<JsonView> softwareAddOnsJsonList = jsonValue.GetArray("softwareAddOns");
+    for (unsigned softwareAddOnsIndex = 0; softwareAddOnsIndex < softwareAddOnsJsonList.GetLength(); ++softwareAddOnsIndex) {
+      m_softwareAddOns.push_back(softwareAddOnsJsonList[softwareAddOnsIndex].AsObject());
+    }
+    m_softwareAddOnsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -136,6 +143,14 @@ JsonValue ServiceManagedEc2InstanceCapabilities::Jsonize() const {
       customAttributesJsonList[customAttributesIndex].AsObject(m_customAttributes[customAttributesIndex].Jsonize());
     }
     payload.WithArray("customAttributes", std::move(customAttributesJsonList));
+  }
+
+  if (m_softwareAddOnsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> softwareAddOnsJsonList(m_softwareAddOns.size());
+    for (unsigned softwareAddOnsIndex = 0; softwareAddOnsIndex < softwareAddOnsJsonList.GetLength(); ++softwareAddOnsIndex) {
+      softwareAddOnsJsonList[softwareAddOnsIndex].AsObject(m_softwareAddOns[softwareAddOnsIndex].Jsonize());
+    }
+    payload.WithArray("softwareAddOns", std::move(softwareAddOnsJsonList));
   }
 
   return payload;

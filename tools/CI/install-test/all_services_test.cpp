@@ -160,6 +160,7 @@
 #include <aws/entityresolution/EntityResolutionClient.h>
 #include <aws/es/ElasticsearchServiceClient.h>
 #include <aws/eventbridge/EventBridgeClient.h>
+#include <aws/eventbridgev2/EventBridgeV2Client.h>
 #include <aws/events/CloudWatchEventsClient.h>
 #include <aws/evs/EVSClient.h>
 #include <aws/finspace-data/FinSpaceDataClient.h>

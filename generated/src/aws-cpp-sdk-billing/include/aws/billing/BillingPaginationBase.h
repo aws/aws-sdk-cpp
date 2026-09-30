@@ -8,6 +8,8 @@
 #include <aws/billing/model/GetCreditAllocationHistoryPaginationTraits.h>
 #include <aws/billing/model/ListBillingViewSegmentsPaginationTraits.h>
 #include <aws/billing/model/ListBillingViewsPaginationTraits.h>
+#include <aws/billing/model/ListBusinessSupportAccountChargesPaginationTraits.h>
+#include <aws/billing/model/ListBusinessSupportSubscriptionHistoryPaginationTraits.h>
 #include <aws/billing/model/ListEnterpriseSupportLinkedAccountChargesPaginationTraits.h>
 #include <aws/billing/model/ListSourceViewsForBillingViewPaginationTraits.h>
 #include <aws/core/client/UserAgent.h>
@@ -54,6 +56,30 @@ class BillingPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBillingViewSegmentsRequest,
                                              Pagination::ListBillingViewSegmentsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListBusinessSupportAccountCharges operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBusinessSupportAccountChargesRequest,
+                                    Pagination::ListBusinessSupportAccountChargesPaginationTraits<DerivedClient>>
+  ListBusinessSupportAccountChargesPaginator(const Model::ListBusinessSupportAccountChargesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBusinessSupportAccountChargesRequest,
+                                             Pagination::ListBusinessSupportAccountChargesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListBusinessSupportSubscriptionHistory operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBusinessSupportSubscriptionHistoryRequest,
+                                    Pagination::ListBusinessSupportSubscriptionHistoryPaginationTraits<DerivedClient>>
+  ListBusinessSupportSubscriptionHistoryPaginator(const Model::ListBusinessSupportSubscriptionHistoryRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBusinessSupportSubscriptionHistoryRequest,
+                                             Pagination::ListBusinessSupportSubscriptionHistoryPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

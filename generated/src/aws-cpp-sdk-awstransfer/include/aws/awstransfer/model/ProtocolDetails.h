@@ -8,6 +8,7 @@
 #include <aws/awstransfer/model/As2Transport.h>
 #include <aws/awstransfer/model/ProxyConfig.h>
 #include <aws/awstransfer/model/SetStatOption.h>
+#include <aws/awstransfer/model/SftpPortWithOptions.h>
 #include <aws/awstransfer/model/TlsSessionResumptionMode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -161,6 +162,48 @@ class ProtocolDetails {
 
   ///@{
   /**
+   * <p>A property used with Transfer Family servers that use the SFTP protocol and
+   * have <code>PUBLIC</code> endpoints. This property accepts a list of up to three
+   * port configurations that the service opens on the server endpoint.</p> <p>Each
+   * entry in the list consists of two parameters, the <code>SftpPort</code> and the
+   * <code>CommunicationMode</code>. The <code>SftpPort</code> takes any integer from
+   * 2000 to 65535, or 22. <code>CommunicationMode</code> can be one of the following
+   * options:</p> <ul> <li> <p> <code>SERVER_TALK_FIRST</code>: The server responds
+   * to initial TCP connections first. Many older clients expect that an SFTP server
+   * responds with its server string before starting SSH negotiations.</p> </li> <li>
+   * <p> <code>CLIENT_TALK_FIRST</code>: The server responds to the initial TCP
+   * connection only after receiving a data packet. Most modern clients support this
+   * behavior and send their client string along with the initial data packets for
+   * SSH negotiation. Additionally, this mode is more resilient to TCP
+   * retransmissions that can occur during the initial TCP connection.</p> </li>
+   * </ul> <p>The following is an <code>SftpPorts</code> example for port 2222 with
+   * <code>CLIENT_TALK_FIRST</code>.</p> <p> <code>[ { "SftpPort": 2222,
+   * "CommunicationMode": "CLIENT_TALK_FIRST" } ]</code> </p> <p>If you don't specify
+   * any configurations during <code>CreateServer</code>, the service uses port 22
+   * with <code>SERVER_TALK_FIRST</code> by default.</p>
+   */
+  inline const Aws::Vector<SftpPortWithOptions>& GetSftpPorts() const { return m_sftpPorts; }
+  inline bool SftpPortsHasBeenSet() const { return m_sftpPortsHasBeenSet; }
+  template <typename SftpPortsT = Aws::Vector<SftpPortWithOptions>>
+  void SetSftpPorts(SftpPortsT&& value) {
+    m_sftpPortsHasBeenSet = true;
+    m_sftpPorts = std::forward<SftpPortsT>(value);
+  }
+  template <typename SftpPortsT = Aws::Vector<SftpPortWithOptions>>
+  ProtocolDetails& WithSftpPorts(SftpPortsT&& value) {
+    SetSftpPorts(std::forward<SftpPortsT>(value));
+    return *this;
+  }
+  template <typename SftpPortsT = SftpPortWithOptions>
+  ProtocolDetails& AddSftpPorts(SftpPortsT&& value) {
+    m_sftpPortsHasBeenSet = true;
+    m_sftpPorts.emplace_back(std::forward<SftpPortsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Indicates the transport method for the AS2 messages. Currently, only HTTP is
    * supported.</p>
    */
@@ -210,12 +253,15 @@ class ProtocolDetails {
 
   SetStatOption m_setStatOption{SetStatOption::NOT_SET};
 
+  Aws::Vector<SftpPortWithOptions> m_sftpPorts;
+
   Aws::Vector<As2Transport> m_as2Transports;
 
   ProxyConfig m_proxyConfig;
   bool m_passiveIpHasBeenSet = false;
   bool m_tlsSessionResumptionModeHasBeenSet = false;
   bool m_setStatOptionHasBeenSet = false;
+  bool m_sftpPortsHasBeenSet = false;
   bool m_as2TransportsHasBeenSet = false;
   bool m_proxyConfigHasBeenSet = false;
 };

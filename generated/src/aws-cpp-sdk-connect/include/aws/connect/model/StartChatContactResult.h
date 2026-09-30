@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/ConnectionCredentials.h>
+#include <aws/connect/model/Websocket.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -100,6 +102,63 @@ class StartChatContactResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The connection credentials for the chat participant. Returned only when the
+   * request includes <code>CONNECTION_CREDENTIALS</code> in
+   * <code>ConnectionTypes</code>.</p>
+   */
+  inline const ConnectionCredentials& GetConnectionCredentials() const { return m_connectionCredentials; }
+  template <typename ConnectionCredentialsT = ConnectionCredentials>
+  void SetConnectionCredentials(ConnectionCredentialsT&& value) {
+    m_connectionCredentialsHasBeenSet = true;
+    m_connectionCredentials = std::forward<ConnectionCredentialsT>(value);
+  }
+  template <typename ConnectionCredentialsT = ConnectionCredentials>
+  StartChatContactResult& WithConnectionCredentials(ConnectionCredentialsT&& value) {
+    SetConnectionCredentials(std::forward<ConnectionCredentialsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The websocket for the chat participant. Returned only when the request
+   * includes <code>WEBSOCKET</code> in <code>ConnectionTypes</code>.</p>
+   */
+  inline const Websocket& GetWebsocket() const { return m_websocket; }
+  template <typename WebsocketT = Websocket>
+  void SetWebsocket(WebsocketT&& value) {
+    m_websocketHasBeenSet = true;
+    m_websocket = std::forward<WebsocketT>(value);
+  }
+  template <typename WebsocketT = Websocket>
+  StartChatContactResult& WithWebsocket(WebsocketT&& value) {
+    SetWebsocket(std::forward<WebsocketT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of the streaming configuration enabled with the chat. Returned
+   * only when the request sets <code>ChatStreamingConfiguration</code>. Use this
+   * value to call <a
+   * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StopContactStreaming.html">StopContactStreaming</a>.</p>
+   */
+  inline const Aws::String& GetStreamingId() const { return m_streamingId; }
+  template <typename StreamingIdT = Aws::String>
+  void SetStreamingId(StreamingIdT&& value) {
+    m_streamingIdHasBeenSet = true;
+    m_streamingId = std::forward<StreamingIdT>(value);
+  }
+  template <typename StreamingIdT = Aws::String>
+  StartChatContactResult& WithStreamingId(StreamingIdT&& value) {
+    SetStreamingId(std::forward<StreamingIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -124,12 +183,21 @@ class StartChatContactResult {
 
   Aws::String m_continuedFromContactId;
 
+  ConnectionCredentials m_connectionCredentials;
+
+  Websocket m_websocket;
+
+  Aws::String m_streamingId;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_contactIdHasBeenSet = false;
   bool m_participantIdHasBeenSet = false;
   bool m_participantTokenHasBeenSet = false;
   bool m_continuedFromContactIdHasBeenSet = false;
+  bool m_connectionCredentialsHasBeenSet = false;
+  bool m_websocketHasBeenSet = false;
+  bool m_streamingIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

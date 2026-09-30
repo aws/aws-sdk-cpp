@@ -9387,10 +9387,13 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * is successfully created, clients must subscribe to the participant’s connection
    * for the created chat within 5 minutes. This is achieved by invoking <a
    * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
-   * with WEBSOCKET and CONNECTION_CREDENTIALS. </p> <p>A 429 error occurs in the
-   * following situations:</p> <ul> <li> <p>API rate limit is exceeded. API TPS
-   * throttling returns a <code>TooManyRequests</code> exception.</p> </li> <li>
-   * <p>The <a
+   * with WEBSOCKET and CONNECTION_CREDENTIALS. </p> <p>To receive connection
+   * information directly in the response, set <code>ConnectionTypes</code> on the
+   * request. To initiate real-time message streaming when the chat is created, set
+   * <code>ChatStreamingConfiguration</code> on the request. Both parameters are
+   * optional.</p> <p>A 429 error occurs in the following situations:</p> <ul> <li>
+   * <p>API rate limit is exceeded. API TPS throttling returns a
+   * <code>TooManyRequests</code> exception.</p> </li> <li> <p>The <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">quota
    * for concurrent active chats</a> is exceeded. Active chat throttling returns a
    * <code>LimitExceededException</code>.</p> </li> </ul> <p>If you use the

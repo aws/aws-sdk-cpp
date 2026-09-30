@@ -23,8 +23,8 @@ namespace AgentRegistryControl {
 namespace Model {
 
 /**
- * <p>Source details for a record auto-detected from an AgentCore Gateway
- * resource.</p><p><h3>See Also:</h3>   <a
+ * <p>The source details for a registry record that was auto-detected from an
+ * Amazon Bedrock AgentCore Gateway resource.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/AgentCoreGatewaySourceDetails">AWS
  * API Reference</a></p>
  */
@@ -36,7 +36,10 @@ class AgentCoreGatewaySourceDetails {
   AWS_AGENTREGISTRYCONTROL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p>The protocol type of the AgentCore Gateway resource that the registry record
+   * was detected from, for example <code>MCP</code>.</p>
+   */
   inline AgentCoreGatewayProtocolType GetProtocolType() const { return m_protocolType; }
   inline bool ProtocolTypeHasBeenSet() const { return m_protocolTypeHasBeenSet; }
   inline void SetProtocolType(AgentCoreGatewayProtocolType value) {
@@ -85,7 +88,10 @@ class AgentCoreGatewaySourceDetails {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The workload identity details for the AgentCore Gateway resource. Present
+   * when the gateway has a workload identity configured.</p>
+   */
   inline const WorkloadIdentityDetails& GetWorkloadIdentityDetails() const { return m_workloadIdentityDetails; }
   inline bool WorkloadIdentityDetailsHasBeenSet() const { return m_workloadIdentityDetailsHasBeenSet; }
   template <typename WorkloadIdentityDetailsT = WorkloadIdentityDetails>

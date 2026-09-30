@@ -49,6 +49,13 @@ JobDetailsEntity& JobDetailsEntity::operator=(JsonView jsonValue) {
     m_schemaVersion = jsonValue.GetString("schemaVersion");
     m_schemaVersionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("extensions")) {
+    Aws::Utils::Array<JsonView> extensionsJsonList = jsonValue.GetArray("extensions");
+    for (unsigned extensionsIndex = 0; extensionsIndex < extensionsJsonList.GetLength(); ++extensionsIndex) {
+      m_extensions.push_back(extensionsJsonList[extensionsIndex].AsString());
+    }
+    m_extensionsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("pathMappingRules")) {
     Aws::Utils::Array<JsonView> pathMappingRulesJsonList = jsonValue.GetArray("pathMappingRules");
     for (unsigned pathMappingRulesIndex = 0; pathMappingRulesIndex < pathMappingRulesJsonList.GetLength(); ++pathMappingRulesIndex) {
@@ -92,6 +99,14 @@ JsonValue JobDetailsEntity::Jsonize() const {
 
   if (m_schemaVersionHasBeenSet) {
     payload.WithString("schemaVersion", m_schemaVersion);
+  }
+
+  if (m_extensionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> extensionsJsonList(m_extensions.size());
+    for (unsigned extensionsIndex = 0; extensionsIndex < extensionsJsonList.GetLength(); ++extensionsIndex) {
+      extensionsJsonList[extensionsIndex].AsString(m_extensions[extensionsIndex]);
+    }
+    payload.WithArray("extensions", std::move(extensionsJsonList));
   }
 
   if (m_pathMappingRulesHasBeenSet) {

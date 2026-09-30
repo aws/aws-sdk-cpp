@@ -54,7 +54,8 @@ class ListEnterpriseSupportLinkedAccountChargesRequest : public BillingRequest {
 
   ///@{
   /**
-   * <p>An optional linked account ID to filter results to a specific account.</p>
+   * <p>The linked account ID to filter results to a specific account. If you don't
+   * specify a value, the response includes charges for all linked accounts.</p>
    */
   inline const Aws::String& GetAccountId() const { return m_accountId; }
   inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
@@ -72,7 +73,7 @@ class ListEnterpriseSupportLinkedAccountChargesRequest : public BillingRequest {
 
   ///@{
   /**
-   * <p>The maximum number of results to return per page.</p>
+   * <p>The maximum number of results to return per page. Default is 100.</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

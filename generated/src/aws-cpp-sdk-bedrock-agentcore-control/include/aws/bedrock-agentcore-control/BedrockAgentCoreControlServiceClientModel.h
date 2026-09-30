@@ -178,6 +178,7 @@
 #include <aws/bedrock-agentcore-control/model/ListWorkloadIdentitiesRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListWorkloadIdentitiesResult.h>
 #include <aws/bedrock-agentcore-control/model/PutResourcePolicyResult.h>
+#include <aws/bedrock-agentcore-control/model/RotatePaymentConnectorCredentialsResult.h>
 #include <aws/bedrock-agentcore-control/model/SetTokenVaultCMKResult.h>
 #include <aws/bedrock-agentcore-control/model/StartPolicyGenerationResult.h>
 #include <aws/bedrock-agentcore-control/model/SubmitRegistryRecordForApprovalResult.h>
@@ -381,6 +382,7 @@ class ListRegistryRecordsRequest;
 class ListTagsForResourceRequest;
 class ListWorkloadIdentitiesRequest;
 class PutResourcePolicyRequest;
+class RotatePaymentConnectorCredentialsRequest;
 class SetTokenVaultCMKRequest;
 class StartPolicyGenerationRequest;
 class SubmitRegistryRecordForApprovalRequest;
@@ -555,6 +557,7 @@ typedef Aws::Utils::Outcome<ListRegistryRecordsResult, BedrockAgentCoreControlEr
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, BedrockAgentCoreControlError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<ListWorkloadIdentitiesResult, BedrockAgentCoreControlError> ListWorkloadIdentitiesOutcome;
 typedef Aws::Utils::Outcome<PutResourcePolicyResult, BedrockAgentCoreControlError> PutResourcePolicyOutcome;
+typedef Aws::Utils::Outcome<RotatePaymentConnectorCredentialsResult, BedrockAgentCoreControlError> RotatePaymentConnectorCredentialsOutcome;
 typedef Aws::Utils::Outcome<SetTokenVaultCMKResult, BedrockAgentCoreControlError> SetTokenVaultCMKOutcome;
 typedef Aws::Utils::Outcome<StartPolicyGenerationResult, BedrockAgentCoreControlError> StartPolicyGenerationOutcome;
 typedef Aws::Utils::Outcome<SubmitRegistryRecordForApprovalResult, BedrockAgentCoreControlError> SubmitRegistryRecordForApprovalOutcome;
@@ -728,6 +731,7 @@ typedef std::future<ListRegistryRecordsOutcome> ListRegistryRecordsOutcomeCallab
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<ListWorkloadIdentitiesOutcome> ListWorkloadIdentitiesOutcomeCallable;
 typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
+typedef std::future<RotatePaymentConnectorCredentialsOutcome> RotatePaymentConnectorCredentialsOutcomeCallable;
 typedef std::future<SetTokenVaultCMKOutcome> SetTokenVaultCMKOutcomeCallable;
 typedef std::future<StartPolicyGenerationOutcome> StartPolicyGenerationOutcomeCallable;
 typedef std::future<SubmitRegistryRecordForApprovalOutcome> SubmitRegistryRecordForApprovalOutcomeCallable;
@@ -1194,6 +1198,10 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::Li
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::PutResourcePolicyRequest&,
                            const Model::PutResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutResourcePolicyResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::RotatePaymentConnectorCredentialsRequest&,
+                           const Model::RotatePaymentConnectorCredentialsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    RotatePaymentConnectorCredentialsResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::SetTokenVaultCMKRequest&,
                            const Model::SetTokenVaultCMKOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SetTokenVaultCMKResponseReceivedHandler;

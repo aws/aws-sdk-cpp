@@ -31,6 +31,10 @@ Aws::String UpdateGroupRequest::SerializePayload() const {
     payload.WithArray("Operations", std::move(operationsJsonList));
   }
 
+  if (m_revisionHasBeenSet) {
+    payload.WithString("Revision", m_revision);
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -9,6 +9,7 @@
 #include <aws/elasticache/ElastiCacheRequest.h>
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/elasticache/model/CacheUsageLimits.h>
+#include <aws/elasticache/model/ConnectionType.h>
 #include <aws/elasticache/model/NetworkType.h>
 #include <aws/elasticache/model/Tag.h>
 
@@ -332,6 +333,27 @@ class CreateServerlessCacheRequest : public ElastiCacheRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The connection type for the serverless cache. Must be either <code>vpc</code>
+   * | <code>public</code>. Use <code>vpc</code> to access the cache through a VPC
+   * endpoint, or <code>public</code> to access the cache over the internet. If not
+   * specified, defaults to <code>vpc</code>. This value cannot be changed after the
+   * serverless cache is created. Setting this to <code>public</code> requires Valkey
+   * 9 or above.</p>
+   */
+  inline ConnectionType GetConnectionType() const { return m_connectionType; }
+  inline bool ConnectionTypeHasBeenSet() const { return m_connectionTypeHasBeenSet; }
+  inline void SetConnectionType(ConnectionType value) {
+    m_connectionTypeHasBeenSet = true;
+    m_connectionType = value;
+  }
+  inline CreateServerlessCacheRequest& WithConnectionType(ConnectionType value) {
+    SetConnectionType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_serverlessCacheName;
 
@@ -360,6 +382,8 @@ class CreateServerlessCacheRequest : public ElastiCacheRequest {
   Aws::String m_dailySnapshotTime;
 
   NetworkType m_networkType{NetworkType::NOT_SET};
+
+  ConnectionType m_connectionType{ConnectionType::NOT_SET};
   bool m_serverlessCacheNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_engineHasBeenSet = false;
@@ -374,6 +398,7 @@ class CreateServerlessCacheRequest : public ElastiCacheRequest {
   bool m_snapshotRetentionLimitHasBeenSet = false;
   bool m_dailySnapshotTimeHasBeenSet = false;
   bool m_networkTypeHasBeenSet = false;
+  bool m_connectionTypeHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -5,12 +5,14 @@
 
 #pragma once
 #include <aws/agent-registry-control/AgentRegistryControl_EXPORTS.h>
+#include <aws/agent-registry-control/model/CustomMetadataSchemaComplianceStatus.h>
 #include <aws/agent-registry-control/model/Descriptors.h>
 #include <aws/agent-registry-control/model/Provenance.h>
 #include <aws/agent-registry-control/model/RecordType.h>
 #include <aws/agent-registry-control/model/RegistryRecordStatus.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/Document.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -259,7 +261,11 @@ class GetRegistryRecordResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The provenance lineage entries for the registry record. Populated for records
+   * created by auto-detection; each entry identifies the upstream source that the
+   * record was detected from.</p>
+   */
   inline const Aws::Vector<Provenance>& GetProvenance() const { return m_provenance; }
   template <typename ProvenanceT = Aws::Vector<Provenance>>
   void SetProvenance(ProvenanceT&& value) {
@@ -316,6 +322,43 @@ class GetRegistryRecordResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The custom metadata attached to this registry record. Values are strings
+   * (maximum 128 characters) or booleans.</p>
+   */
+  inline Aws::Utils::DocumentView GetCustomMetadata() const { return m_customMetadata; }
+  template <typename CustomMetadataT = Aws::Utils::Document>
+  void SetCustomMetadata(CustomMetadataT&& value) {
+    m_customMetadataHasBeenSet = true;
+    m_customMetadata = std::forward<CustomMetadataT>(value);
+  }
+  template <typename CustomMetadataT = Aws::Utils::Document>
+  GetRegistryRecordResult& WithCustomMetadata(CustomMetadataT&& value) {
+    SetCustomMetadata(std::forward<CustomMetadataT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether this record's custom metadata conforms to the registry's
+   * current schema. This status is computed at read time against the latest
+   * schema.</p>
+   */
+  inline CustomMetadataSchemaComplianceStatus GetCustomMetadataSchemaComplianceStatus() const {
+    return m_customMetadataSchemaComplianceStatus;
+  }
+  inline void SetCustomMetadataSchemaComplianceStatus(CustomMetadataSchemaComplianceStatus value) {
+    m_customMetadataSchemaComplianceStatusHasBeenSet = true;
+    m_customMetadataSchemaComplianceStatus = value;
+  }
+  inline GetRegistryRecordResult& WithCustomMetadataSchemaComplianceStatus(CustomMetadataSchemaComplianceStatus value) {
+    SetCustomMetadataSchemaComplianceStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -364,6 +407,10 @@ class GetRegistryRecordResult {
 
   Aws::String m_createdBy;
 
+  Aws::Utils::Document m_customMetadata;
+
+  CustomMetadataSchemaComplianceStatus m_customMetadataSchemaComplianceStatus{CustomMetadataSchemaComplianceStatus::NOT_SET};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_registryArnHasBeenSet = false;
@@ -382,6 +429,8 @@ class GetRegistryRecordResult {
   bool m_provenanceHasBeenSet = false;
   bool m_createdByAutoDetectionHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
+  bool m_customMetadataHasBeenSet = false;
+  bool m_customMetadataSchemaComplianceStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

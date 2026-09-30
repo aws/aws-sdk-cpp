@@ -5,7 +5,9 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/marketplace-discovery/MarketplaceDiscovery_EXPORTS.h>
+#include <aws/marketplace-discovery/model/AmazonMachineImageSecurityGroup.h>
 
 #include <utility>
 
@@ -49,9 +51,36 @@ class AmazonMachineImageRecommendation {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The recommended security group configurations for this AMI.</p>
+   */
+  inline const Aws::Vector<AmazonMachineImageSecurityGroup>& GetSecurityGroups() const { return m_securityGroups; }
+  inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
+  template <typename SecurityGroupsT = Aws::Vector<AmazonMachineImageSecurityGroup>>
+  void SetSecurityGroups(SecurityGroupsT&& value) {
+    m_securityGroupsHasBeenSet = true;
+    m_securityGroups = std::forward<SecurityGroupsT>(value);
+  }
+  template <typename SecurityGroupsT = Aws::Vector<AmazonMachineImageSecurityGroup>>
+  AmazonMachineImageRecommendation& WithSecurityGroups(SecurityGroupsT&& value) {
+    SetSecurityGroups(std::forward<SecurityGroupsT>(value));
+    return *this;
+  }
+  template <typename SecurityGroupsT = AmazonMachineImageSecurityGroup>
+  AmazonMachineImageRecommendation& AddSecurityGroups(SecurityGroupsT&& value) {
+    m_securityGroupsHasBeenSet = true;
+    m_securityGroups.emplace_back(std::forward<SecurityGroupsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_instanceType;
+
+  Aws::Vector<AmazonMachineImageSecurityGroup> m_securityGroups;
   bool m_instanceTypeHasBeenSet = false;
+  bool m_securityGroupsHasBeenSet = false;
 };
 
 }  // namespace Model

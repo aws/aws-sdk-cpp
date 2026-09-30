@@ -35,7 +35,7 @@ class VpcConfig {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the VPC.</p>
+   * <p>The Amazon Resource Name (ARN) or ID of the VPC.</p>
    */
   inline const Aws::String& GetVpcArn() const { return m_vpcArn; }
   inline bool VpcArnHasBeenSet() const { return m_vpcArnHasBeenSet; }
@@ -53,7 +53,7 @@ class VpcConfig {
 
   ///@{
   /**
-   * <p>The Amazon Resource Names (ARNs) of the security groups for the VPC
+   * <p>The Amazon Resource Names (ARNs) or IDs of the security groups for the VPC
    * configuration.</p>
    */
   inline const Aws::Vector<Aws::String>& GetSecurityGroupArns() const { return m_securityGroupArns; }
@@ -78,7 +78,7 @@ class VpcConfig {
 
   ///@{
   /**
-   * <p>The Amazon Resource Names (ARNs) of the subnets for the VPC
+   * <p>The Amazon Resource Names (ARNs) or IDs of the subnets for the VPC
    * configuration.</p>
    */
   inline const Aws::Vector<Aws::String>& GetSubnetArns() const { return m_subnetArns; }

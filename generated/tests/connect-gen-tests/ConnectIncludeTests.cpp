@@ -172,7 +172,9 @@
 #include <aws/connect/model/CompleteAttachedFileUploadResult.h>
 #include <aws/connect/model/Condition.h>
 #include <aws/connect/model/ConfigurableNotificationPriority.h>
+#include <aws/connect/model/ConnectionCredentials.h>
 #include <aws/connect/model/ConnectionData.h>
+#include <aws/connect/model/ConnectionType.h>
 #include <aws/connect/model/Contact.h>
 #include <aws/connect/model/ContactAnalysis.h>
 #include <aws/connect/model/ContactAnalysisReference.h>
@@ -834,6 +836,7 @@
 #include <aws/connect/model/ListEntitySecurityProfilesPaginationTraits.h>
 #include <aws/connect/model/ListEntitySecurityProfilesRequest.h>
 #include <aws/connect/model/ListEntitySecurityProfilesResult.h>
+#include <aws/connect/model/ListEvaluationFormAIVersionsPaginationTraits.h>
 #include <aws/connect/model/ListEvaluationFormAIVersionsRequest.h>
 #include <aws/connect/model/ListEvaluationFormAIVersionsResult.h>
 #include <aws/connect/model/ListEvaluationFormVersionsPaginationTraits.h>
@@ -1608,6 +1611,7 @@
 #include <aws/connect/model/VoiceRecordingTrack.h>
 #include <aws/connect/model/WebNotificationContent.h>
 #include <aws/connect/model/WebNotificationSource.h>
+#include <aws/connect/model/Websocket.h>
 #include <aws/connect/model/WidgetDestination.h>
 #include <aws/connect/model/WisdomInfo.h>
 #include <aws/connect/model/WorkloadTypeConcurrency.h>

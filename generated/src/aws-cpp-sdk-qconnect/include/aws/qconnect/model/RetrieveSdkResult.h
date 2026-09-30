@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qconnect/QConnect_EXPORTS.h>
+#include <aws/qconnect/model/RetrieveError.h>
 #include <aws/qconnect/model/RetrieveResult.h>
 
 #include <utility>
@@ -53,6 +54,33 @@ class RetrieveSdkResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The per-association errors returned when one or more knowledge base
+   * associations fail during a <code>Retrieve</code> operation that spans multiple
+   * assistant associations. The overall operation still succeeds and returns the
+   * results from the associations that were queried successfully. This list contains
+   * one entry for each association that failed, up to a maximum of five.</p>
+   */
+  inline const Aws::Vector<RetrieveError>& GetErrors() const { return m_errors; }
+  template <typename ErrorsT = Aws::Vector<RetrieveError>>
+  void SetErrors(ErrorsT&& value) {
+    m_errorsHasBeenSet = true;
+    m_errors = std::forward<ErrorsT>(value);
+  }
+  template <typename ErrorsT = Aws::Vector<RetrieveError>>
+  RetrieveSdkResult& WithErrors(ErrorsT&& value) {
+    SetErrors(std::forward<ErrorsT>(value));
+    return *this;
+  }
+  template <typename ErrorsT = RetrieveError>
+  RetrieveSdkResult& AddErrors(ErrorsT&& value) {
+    m_errorsHasBeenSet = true;
+    m_errors.emplace_back(std::forward<ErrorsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -71,9 +99,12 @@ class RetrieveSdkResult {
  private:
   Aws::Vector<RetrieveResult> m_results;
 
+  Aws::Vector<RetrieveError> m_errors;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_resultsHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

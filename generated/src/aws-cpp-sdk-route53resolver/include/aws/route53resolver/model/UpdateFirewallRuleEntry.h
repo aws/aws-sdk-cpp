@@ -346,17 +346,18 @@ class UpdateFirewallRuleEntry {
    * set exactly one of its members. This setting is mutually exclusive with the
    * top-level <code>FirewallDomainListId</code> and <code>DnsThreatProtection</code>
    * fields. Use one of:</p> <ul> <li> <p>
-   * <code>FirewallAdvancedContentCategory</code> — match an AWS-managed content
-   * category (for example, <code>VIOLENCE_AND_HATE_SPEECH</code>).</p> </li> <li>
-   * <p> <code>FirewallAdvancedThreatCategory</code> — match an AWS-managed advanced
-   * threat category (for example, <code>PHISHING</code>).</p> </li> <li> <p>
-   * <code>DnsThreatProtection</code> — match a built-in DNS Firewall Advanced threat
-   * detector (<code>DGA</code>, <code>DNS_TUNNELING</code>, or
-   * <code>DICTIONARY_DGA</code>).</p> </li> <li> <p>
+   * <code>FirewallAdvancedContentCategory</code> — match an Amazon Web
+   * Services-managed content category (for example,
+   * <code>VIOLENCE_AND_HATE_SPEECH</code>).</p> </li> <li> <p>
+   * <code>FirewallAdvancedThreatCategory</code> — match an Amazon Web
+   * Services-managed advanced threat category (for example,
+   * <code>PHISHING</code>).</p> </li> <li> <p> <code>DnsThreatProtection</code> —
+   * match a built-in DNS Firewall Advanced threat detector (<code>DGA</code>,
+   * <code>DNS_TUNNELING</code>, or <code>DICTIONARY_DGA</code>).</p> </li> <li> <p>
    * <code>PartnerThreatProtection</code> — match a third-party threat feed delivered
-   * through AWS Marketplace. The selected partner must be an active subscription on
-   * the calling account.</p> </li> </ul> <p>To enumerate the values supported in
-   * your account, call <a>ListFirewallRuleTypes</a>.</p>
+   * through Amazon Web Services Marketplace. The selected partner must be an active
+   * subscription on the calling account.</p> </li> </ul> <p>To enumerate the values
+   * supported in your account, call <a>ListFirewallRuleTypes</a>.</p>
    */
   inline const FirewallRuleType& GetFirewallRuleType() const { return m_firewallRuleType; }
   inline bool FirewallRuleTypeHasBeenSet() const { return m_firewallRuleTypeHasBeenSet; }

@@ -137,6 +137,25 @@ class ArgoCdConfigResponse {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The prefix that was configured for the hostname of the Argo CD server
+   * endpoint when the capability was created.</p>
+   */
+  inline const Aws::String& GetEndpointPrefix() const { return m_endpointPrefix; }
+  inline bool EndpointPrefixHasBeenSet() const { return m_endpointPrefixHasBeenSet; }
+  template <typename EndpointPrefixT = Aws::String>
+  void SetEndpointPrefix(EndpointPrefixT&& value) {
+    m_endpointPrefixHasBeenSet = true;
+    m_endpointPrefix = std::forward<EndpointPrefixT>(value);
+  }
+  template <typename EndpointPrefixT = Aws::String>
+  ArgoCdConfigResponse& WithEndpointPrefix(EndpointPrefixT&& value) {
+    SetEndpointPrefix(std::forward<EndpointPrefixT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_namespace;
 
@@ -147,11 +166,14 @@ class ArgoCdConfigResponse {
   ArgoCdNetworkAccessConfigResponse m_networkAccess;
 
   Aws::String m_serverUrl;
+
+  Aws::String m_endpointPrefix;
   bool m_namespaceHasBeenSet = false;
   bool m_awsIdcHasBeenSet = false;
   bool m_rbacRoleMappingsHasBeenSet = false;
   bool m_networkAccessHasBeenSet = false;
   bool m_serverUrlHasBeenSet = false;
+  bool m_endpointPrefixHasBeenSet = false;
 };
 
 }  // namespace Model

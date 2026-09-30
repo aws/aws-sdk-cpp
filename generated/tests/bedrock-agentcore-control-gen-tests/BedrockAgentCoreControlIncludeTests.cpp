@@ -89,6 +89,8 @@
 #include <aws/bedrock-agentcore-control/model/CodeInterpreterSummary.h>
 #include <aws/bedrock-agentcore-control/model/CoinbaseCdpConfigurationInput.h>
 #include <aws/bedrock-agentcore-control/model/CoinbaseCdpConfigurationOutput.h>
+#include <aws/bedrock-agentcore-control/model/CoinbaseCdpRotationTargets.h>
+#include <aws/bedrock-agentcore-control/model/CoinbaseCdpSecret.h>
 #include <aws/bedrock-agentcore-control/model/ComponentConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ComputeConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/Condition.h>
@@ -174,6 +176,7 @@
 #include <aws/bedrock-agentcore-control/model/CredentialProviderConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/CredentialProviderType.h>
 #include <aws/bedrock-agentcore-control/model/CredentialProviderVendorType.h>
+#include <aws/bedrock-agentcore-control/model/CredentialRotationConfig.h>
 #include <aws/bedrock-agentcore-control/model/CredentialsProviderConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/CustomClaimValidationType.h>
 #include <aws/bedrock-agentcore-control/model/CustomConfigurationInput.h>
@@ -727,6 +730,8 @@
 #include <aws/bedrock-agentcore-control/model/RestApiMethod.h>
 #include <aws/bedrock-agentcore-control/model/ResultDestination.h>
 #include <aws/bedrock-agentcore-control/model/RootVolumeConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/RotatePaymentConnectorCredentialsRequest.h>
+#include <aws/bedrock-agentcore-control/model/RotatePaymentConnectorCredentialsResult.h>
 #include <aws/bedrock-agentcore-control/model/RouteToTargetAction.h>
 #include <aws/bedrock-agentcore-control/model/Rule.h>
 #include <aws/bedrock-agentcore-control/model/RuntimeMetadataConfiguration.h>

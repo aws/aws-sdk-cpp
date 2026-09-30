@@ -55,6 +55,10 @@ Aws::String CreatePlanRequest::SerializePayload() const {
     payload.WithObject("reportConfiguration", m_reportConfiguration.Jsonize());
   }
 
+  if (m_serviceQuotaChecksEnabledHasBeenSet) {
+    payload.WithBool("serviceQuotaChecksEnabled", m_serviceQuotaChecksEnabled);
+  }
+
   if (m_nameHasBeenSet) {
     payload.WithString("name", m_name);
   }

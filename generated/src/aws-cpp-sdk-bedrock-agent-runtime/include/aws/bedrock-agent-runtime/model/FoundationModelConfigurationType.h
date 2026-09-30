@@ -10,7 +10,7 @@
 namespace Aws {
 namespace BedrockAgentRuntime {
 namespace Model {
-enum class FoundationModelConfigurationType { NOT_SET, BEDROCK_FOUNDATION_MODEL };
+enum class FoundationModelConfigurationType { NOT_SET, BEDROCK_FOUNDATION_MODEL, MANTLE_FOUNDATION_MODEL };
 
 namespace FoundationModelConfigurationTypeMapper {
 AWS_BEDROCKAGENTRUNTIME_API FoundationModelConfigurationType GetFoundationModelConfigurationTypeForName(const Aws::String& name);

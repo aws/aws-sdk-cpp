@@ -66,6 +66,10 @@ RegistryRecordSummary& RegistryRecordSummary::operator=(JsonView jsonValue) {
     m_updatedAt = jsonValue.GetString("updatedAt");
     m_updatedAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("customMetadata")) {
+    m_customMetadata = jsonValue.GetObject("customMetadata");
+    m_customMetadataHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -118,6 +122,12 @@ JsonValue RegistryRecordSummary::Jsonize() const {
 
   if (m_updatedAtHasBeenSet) {
     payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_customMetadataHasBeenSet) {
+    if (!m_customMetadata.View().IsNull()) {
+      payload.WithObject("customMetadata", JsonValue(m_customMetadata.View()));
+    }
   }
 
   return payload;

@@ -4,9 +4,11 @@
  */
 
 #pragma once
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/marketplace-discovery/MarketplaceDiscovery_EXPORTS.h>
 #include <aws/marketplace-discovery/model/FulfillmentOptionType.h>
+#include <aws/marketplace-discovery/model/SaasQuickLaunchStatus.h>
 
 #include <utility>
 
@@ -120,6 +122,60 @@ class SaasFulfillmentOption {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The date and time when the SaaS product became available for fulfillment.</p>
+   */
+  inline const Aws::Utils::DateTime& GetAvailableFromTime() const { return m_availableFromTime; }
+  inline bool AvailableFromTimeHasBeenSet() const { return m_availableFromTimeHasBeenSet; }
+  template <typename AvailableFromTimeT = Aws::Utils::DateTime>
+  void SetAvailableFromTime(AvailableFromTimeT&& value) {
+    m_availableFromTimeHasBeenSet = true;
+    m_availableFromTime = std::forward<AvailableFromTimeT>(value);
+  }
+  template <typename AvailableFromTimeT = Aws::Utils::DateTime>
+  SaasFulfillmentOption& WithAvailableFromTime(AvailableFromTimeT&& value) {
+    SetAvailableFromTime(std::forward<AvailableFromTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The URL that a buyer uses to launch the seller's SaaS product. This URL is
+   * distinct from <code>fulfillmentUrl</code>, which is the seller's software
+   * registration landing page.</p>
+   */
+  inline const Aws::String& GetLaunchUrl() const { return m_launchUrl; }
+  inline bool LaunchUrlHasBeenSet() const { return m_launchUrlHasBeenSet; }
+  template <typename LaunchUrlT = Aws::String>
+  void SetLaunchUrl(LaunchUrlT&& value) {
+    m_launchUrlHasBeenSet = true;
+    m_launchUrl = std::forward<LaunchUrlT>(value);
+  }
+  template <typename LaunchUrlT = Aws::String>
+  SaasFulfillmentOption& WithLaunchUrl(LaunchUrlT&& value) {
+    SetLaunchUrl(std::forward<LaunchUrlT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether the SaaS product supports quick-launch deployment.</p>
+   */
+  inline SaasQuickLaunchStatus GetQuickLaunch() const { return m_quickLaunch; }
+  inline bool QuickLaunchHasBeenSet() const { return m_quickLaunchHasBeenSet; }
+  inline void SetQuickLaunch(SaasQuickLaunchStatus value) {
+    m_quickLaunchHasBeenSet = true;
+    m_quickLaunch = value;
+  }
+  inline SaasFulfillmentOption& WithQuickLaunch(SaasQuickLaunchStatus value) {
+    SetQuickLaunch(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_fulfillmentOptionId;
 
@@ -130,11 +186,20 @@ class SaasFulfillmentOption {
   Aws::String m_fulfillmentUrl;
 
   Aws::String m_usageInstructions;
+
+  Aws::Utils::DateTime m_availableFromTime{};
+
+  Aws::String m_launchUrl;
+
+  SaasQuickLaunchStatus m_quickLaunch{SaasQuickLaunchStatus::NOT_SET};
   bool m_fulfillmentOptionIdHasBeenSet = false;
   bool m_fulfillmentOptionTypeHasBeenSet = false;
   bool m_fulfillmentOptionDisplayNameHasBeenSet = false;
   bool m_fulfillmentUrlHasBeenSet = false;
   bool m_usageInstructionsHasBeenSet = false;
+  bool m_availableFromTimeHasBeenSet = false;
+  bool m_launchUrlHasBeenSet = false;
+  bool m_quickLaunchHasBeenSet = false;
 };
 
 }  // namespace Model

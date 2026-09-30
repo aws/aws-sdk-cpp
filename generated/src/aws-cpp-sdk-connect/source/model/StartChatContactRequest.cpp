@@ -92,5 +92,18 @@ Aws::String StartChatContactRequest::SerializePayload() const {
     payload.WithArray("DisconnectOnCustomerExit", std::move(disconnectOnCustomerExitJsonList));
   }
 
+  if (m_connectionTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> connectionTypesJsonList(m_connectionTypes.size());
+    for (unsigned connectionTypesIndex = 0; connectionTypesIndex < connectionTypesJsonList.GetLength(); ++connectionTypesIndex) {
+      connectionTypesJsonList[connectionTypesIndex].AsString(
+          ConnectionTypeMapper::GetNameForConnectionType(m_connectionTypes[connectionTypesIndex]));
+    }
+    payload.WithArray("ConnectionTypes", std::move(connectionTypesJsonList));
+  }
+
+  if (m_chatStreamingConfigurationHasBeenSet) {
+    payload.WithObject("ChatStreamingConfiguration", m_chatStreamingConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

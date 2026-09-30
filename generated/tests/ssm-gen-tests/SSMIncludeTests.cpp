@@ -140,6 +140,7 @@
 #include <aws/ssm/model/DeleteResourceDataSyncResult.h>
 #include <aws/ssm/model/DeleteResourcePolicyRequest.h>
 #include <aws/ssm/model/DeleteResourcePolicyResult.h>
+#include <aws/ssm/model/DeletionMode.h>
 #include <aws/ssm/model/DeregisterManagedInstanceRequest.h>
 #include <aws/ssm/model/DeregisterManagedInstanceResult.h>
 #include <aws/ssm/model/DeregisterPatchBaselineForPatchGroupRequest.h>

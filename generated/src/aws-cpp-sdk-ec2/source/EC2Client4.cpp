@@ -23,6 +23,7 @@
 #include <aws/ec2/model/DescribeReservedInstancesListingsRequest.h>
 #include <aws/ec2/model/DescribeReservedInstancesModificationsRequest.h>
 #include <aws/ec2/model/DescribeReservedInstancesOfferingsRequest.h>
+#include <aws/ec2/model/DescribeReservedInstancesRequest.h>
 #include <aws/ec2/model/DescribeRouteServerEndpointsRequest.h>
 #include <aws/ec2/model/DescribeRouteServerPeersRequest.h>
 #include <aws/ec2/model/DescribeRouteServersRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/ec2/model/DisableSerialConsoleAccessRequest.h>
 #include <aws/ec2/model/DisableSnapshotBlockPublicAccessRequest.h>
 #include <aws/ec2/model/DisableTransitGatewayRouteTablePropagationRequest.h>
-#include <aws/ec2/model/DisableVgwRoutePropagationRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,12 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DescribeReservedInstancesOutcome EC2Client::DescribeReservedInstances(const DescribeReservedInstancesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeReservedInstancesOutcome(result.GetResultWithOwnership())
+                            : DescribeReservedInstancesOutcome(std::move(result.GetError()));
+}
 
 DescribeReservedInstancesListingsOutcome EC2Client::DescribeReservedInstancesListings(
     const DescribeReservedInstancesListingsRequest& request) const {
@@ -761,10 +767,4 @@ DisableTransitGatewayRouteTablePropagationOutcome EC2Client::DisableTransitGatew
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DisableTransitGatewayRouteTablePropagationOutcome(result.GetResultWithOwnership())
                             : DisableTransitGatewayRouteTablePropagationOutcome(std::move(result.GetError()));
-}
-
-DisableVgwRoutePropagationOutcome EC2Client::DisableVgwRoutePropagation(const DisableVgwRoutePropagationRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DisableVgwRoutePropagationOutcome(result.GetResultWithOwnership())
-                            : DisableVgwRoutePropagationOutcome(std::move(result.GetError()));
 }

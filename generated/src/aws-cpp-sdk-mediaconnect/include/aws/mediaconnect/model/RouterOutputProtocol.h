@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MediaConnect {
 namespace Model {
-enum class RouterOutputProtocol { NOT_SET, RTP, RIST, SRT_CALLER, SRT_LISTENER };
+enum class RouterOutputProtocol { NOT_SET, RTP, RIST, SRT_CALLER, SRT_LISTENER, RTMP_PUSH };
 
 namespace RouterOutputProtocolMapper {
 AWS_MEDIACONNECT_API RouterOutputProtocol GetRouterOutputProtocolForName(const Aws::String& name);

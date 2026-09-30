@@ -30,6 +30,10 @@ DescribeGroupMembershipResult& DescribeGroupMembershipResult::operator=(const Aw
     m_membershipId = jsonValue.GetString("MembershipId");
     m_membershipIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MembershipArn")) {
+    m_membershipArn = jsonValue.GetString("MembershipArn");
+    m_membershipArnHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("GroupId")) {
     m_groupId = jsonValue.GetString("GroupId");
     m_groupIdHasBeenSet = true;

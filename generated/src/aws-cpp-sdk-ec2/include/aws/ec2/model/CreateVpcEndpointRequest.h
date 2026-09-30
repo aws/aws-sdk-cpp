@@ -59,7 +59,11 @@ class CreateVpcEndpointRequest : public EC2Request {
 
   ///@{
   /**
-   * <p>The type of endpoint.</p> <p>Default: Gateway</p>
+   * <p>The type of endpoint.</p> <p>For more information about the types of VPC
+   * endpoints, see <a
+   * href="https://docs.aws.amazon.com/vpc/latest/privatelink/concepts.html#concepts-vpc-endpoints">VPC
+   * endpoints</a> in the <i>Amazon Web Services PrivateLink User Guide</i>.</p>
+   * <p>Default: Gateway</p>
    */
   inline VpcEndpointType GetVpcEndpointType() const { return m_vpcEndpointType; }
   inline bool VpcEndpointTypeHasBeenSet() const { return m_vpcEndpointTypeHasBeenSet; }
@@ -156,9 +160,13 @@ class CreateVpcEndpointRequest : public EC2Request {
 
   ///@{
   /**
-   * <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in
-   * which to create endpoint network interfaces. For a Gateway Load Balancer
-   * endpoint, you can specify only one subnet.</p>
+   * <p>(Interface, Gateway Load Balancer endpoints, Resource, ServiceNetwork, and
+   * Tunnel endpoints only) The IDs of the subnets in which to create endpoint
+   * network interfaces. For a Gateway Load Balancer endpoint, you can specify only
+   * one subnet. For a <code>Tunnel</code> endpoint, the subnets must be in the
+   * Availability Zones of the resource gateway associated with the shared resource
+   * configuration. An endpoint network interface is created only in an Availability
+   * Zone that the resource gateway is also in.</p>
    */
   inline const Aws::Vector<Aws::String>& GetSubnetIds() const { return m_subnetIds; }
   inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
@@ -182,9 +190,9 @@ class CreateVpcEndpointRequest : public EC2Request {
 
   ///@{
   /**
-   * <p>(Interface endpoint) The IDs of the security groups to associate with the
-   * endpoint network interfaces. If this parameter is not specified, we use the
-   * default security group for the VPC.</p>
+   * <p>(Interface, Resource, ServiceNetwork, and Tunnel endpoints only) The IDs of
+   * the security groups to associate with the endpoint network interfaces. If this
+   * parameter is not specified, we use the default security group for the VPC.</p>
    */
   inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
   inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
@@ -356,8 +364,20 @@ class CreateVpcEndpointRequest : public EC2Request {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of a resource configuration that will be
-   * associated with the VPC endpoint of type resource.</p>
+   * <p>(Resource and Tunnel endpoints only) The Amazon Resource Name (ARN) of a
+   * resource configuration associated with the VPC endpoint. The type of resource
+   * configuration depends on the endpoint type:</p> <ul> <li> <p>For a Resource
+   * endpoint, you can specify a resource configuration that is of type
+   * <code>SINGLE</code>, <code>GROUP</code>, or <code>ARN</code>. To reach a
+   * resource that belongs to a group, specify the parent <code>GROUP</code> resource
+   * configuration.</p> </li> <li> <p>For a Tunnel endpoint, you can specify a
+   * resource configuration that is of type <code>CIDR</code>.</p> </li> </ul> <p>For
+   * more information about the types of resource configurations, see <a
+   * href="https://docs.aws.amazon.com/vpc/latest/privatelink/resource-configuration.html">Types
+   * of resource configurations</a> in the <i>Amazon Web Services PrivateLink User
+   * Guide</i>.</p> <p>This request fails if a VPC endpoint owned by a different
+   * Amazon Web Services account already exists on a resource gateway that is enabled
+   * for <code>ResourceGatewayCharges</code> payer responsibility.</p>
    */
   inline const Aws::String& GetResourceConfigurationArn() const { return m_resourceConfigurationArn; }
   inline bool ResourceConfigurationArnHasBeenSet() const { return m_resourceConfigurationArnHasBeenSet; }

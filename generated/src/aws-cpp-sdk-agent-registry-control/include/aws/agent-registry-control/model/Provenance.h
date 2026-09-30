@@ -23,8 +23,10 @@ namespace AgentRegistryControl {
 namespace Model {
 
 /**
- * <p>One provenance entry describing the lineage of a registry
- * record.</p><p><h3>See Also:</h3>   <a
+ * <p>A provenance entry that describes the lineage of a registry record. Records
+ * that were auto-detected by Amazon Web Services Agent Registry carry a provenance
+ * entry that links the record back to its upstream source.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/Provenance">AWS
  * API Reference</a></p>
  */
@@ -36,7 +38,11 @@ class Provenance {
   AWS_AGENTREGISTRYCONTROL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p>The relationship between the registry record and its upstream source.
+   * <code>DETECTED_FROM</code> indicates that the record was auto-detected from the
+   * source resource.</p>
+   */
   inline ProvenanceRelation GetRelation() const { return m_relation; }
   inline bool RelationHasBeenSet() const { return m_relationHasBeenSet; }
   inline void SetRelation(ProvenanceRelation value) {

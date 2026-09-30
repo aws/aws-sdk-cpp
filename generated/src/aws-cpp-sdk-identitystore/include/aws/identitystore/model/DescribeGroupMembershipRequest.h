@@ -32,7 +32,10 @@ class DescribeGroupMembershipRequest : public IdentityStoreRequest {
 
   ///@{
   /**
-   * <p>The globally unique identifier for the identity store.</p>
+   * <p>The globally unique identifier for the identity store.</p> <p>You can specify
+   * the identity store by ID or by Amazon Resource Name (ARN). For example, identity
+   * store ID <code>d-1234567890</code> or identity store ARN
+   * <code>arn:aws:identitystore::111122223333:identitystore/d-1234567890</code>.</p>
    */
   inline const Aws::String& GetIdentityStoreId() const { return m_identityStoreId; }
   inline bool IdentityStoreIdHasBeenSet() const { return m_identityStoreIdHasBeenSet; }
@@ -51,6 +54,10 @@ class DescribeGroupMembershipRequest : public IdentityStoreRequest {
   ///@{
   /**
    * <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
+   * <p>You can specify the group membership by ID or by Amazon Resource Name (ARN).
+   * For example, membership ID <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE33333</code> or
+   * membership ARN
+   * <code>arn:aws:identitystore:::membership/a1b2c3d4-5678-90ab-cdef-EXAMPLE33333</code>.</p>
    */
   inline const Aws::String& GetMembershipId() const { return m_membershipId; }
   inline bool MembershipIdHasBeenSet() const { return m_membershipIdHasBeenSet; }

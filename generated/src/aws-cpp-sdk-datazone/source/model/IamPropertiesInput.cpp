@@ -22,6 +22,10 @@ IamPropertiesInput& IamPropertiesInput::operator=(JsonView jsonValue) {
     m_glueLineageSyncEnabled = jsonValue.GetBool("glueLineageSyncEnabled");
     m_glueLineageSyncEnabledHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("roleArn")) {
+    m_roleArn = jsonValue.GetString("roleArn");
+    m_roleArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue IamPropertiesInput::Jsonize() const {
 
   if (m_glueLineageSyncEnabledHasBeenSet) {
     payload.WithBool("glueLineageSyncEnabled", m_glueLineageSyncEnabled);
+  }
+
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("roleArn", m_roleArn);
   }
 
   return payload;

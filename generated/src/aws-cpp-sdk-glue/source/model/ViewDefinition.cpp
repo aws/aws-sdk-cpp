@@ -22,6 +22,10 @@ ViewDefinition& ViewDefinition::operator=(JsonView jsonValue) {
     m_isProtected = jsonValue.GetBool("IsProtected");
     m_isProtectedHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("IsManaged")) {
+    m_isManaged = jsonValue.GetBool("IsManaged");
+    m_isManagedHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Definer")) {
     m_definer = jsonValue.GetString("Definer");
     m_definerHasBeenSet = true;
@@ -87,6 +91,10 @@ JsonValue ViewDefinition::Jsonize() const {
 
   if (m_isProtectedHasBeenSet) {
     payload.WithBool("IsProtected", m_isProtected);
+  }
+
+  if (m_isManagedHasBeenSet) {
+    payload.WithBool("IsManaged", m_isManaged);
   }
 
   if (m_definerHasBeenSet) {

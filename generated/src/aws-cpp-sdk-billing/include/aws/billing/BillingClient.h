@@ -460,6 +460,66 @@ class AWS_BILLING_API BillingClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns Business Support charges broken down at the linked account level for
+   * a given billing month.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListBusinessSupportAccountCharges">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListBusinessSupportAccountChargesOutcome ListBusinessSupportAccountCharges(
+      const Model::ListBusinessSupportAccountChargesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListBusinessSupportAccountCharges that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename ListBusinessSupportAccountChargesRequestT = Model::ListBusinessSupportAccountChargesRequest>
+  Model::ListBusinessSupportAccountChargesOutcomeCallable ListBusinessSupportAccountChargesCallable(
+      const ListBusinessSupportAccountChargesRequestT& request) const {
+    return SubmitCallable(&BillingClient::ListBusinessSupportAccountCharges, request);
+  }
+
+  /**
+   * An Async wrapper for ListBusinessSupportAccountCharges that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListBusinessSupportAccountChargesRequestT = Model::ListBusinessSupportAccountChargesRequest>
+  void ListBusinessSupportAccountChargesAsync(const ListBusinessSupportAccountChargesRequestT& request,
+                                              const ListBusinessSupportAccountChargesResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BillingClient::ListBusinessSupportAccountCharges, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the history of Business Support subscription contracts across
+   * accounts.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListBusinessSupportSubscriptionHistory">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListBusinessSupportSubscriptionHistoryOutcome ListBusinessSupportSubscriptionHistory(
+      const Model::ListBusinessSupportSubscriptionHistoryRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListBusinessSupportSubscriptionHistory that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename ListBusinessSupportSubscriptionHistoryRequestT = Model::ListBusinessSupportSubscriptionHistoryRequest>
+  Model::ListBusinessSupportSubscriptionHistoryOutcomeCallable ListBusinessSupportSubscriptionHistoryCallable(
+      const ListBusinessSupportSubscriptionHistoryRequestT& request = {}) const {
+    return SubmitCallable(&BillingClient::ListBusinessSupportSubscriptionHistory, request);
+  }
+
+  /**
+   * An Async wrapper for ListBusinessSupportSubscriptionHistory that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename ListBusinessSupportSubscriptionHistoryRequestT = Model::ListBusinessSupportSubscriptionHistoryRequest>
+  void ListBusinessSupportSubscriptionHistoryAsync(const ListBusinessSupportSubscriptionHistoryResponseReceivedHandler& handler,
+                                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                                   const ListBusinessSupportSubscriptionHistoryRequestT& request = {}) const {
+    return SubmitAsync(&BillingClient::ListBusinessSupportSubscriptionHistory, request, handler, context);
+  }
+
+  /**
    * <p>Returns Support-eligible spend broken down at linked account
    * level.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListEnterpriseSupportLinkedAccountCharges">AWS

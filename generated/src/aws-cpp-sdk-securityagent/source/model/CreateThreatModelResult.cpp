@@ -65,6 +65,10 @@ CreateThreatModelResult& CreateThreatModelResult::operator=(const Aws::AmazonWeb
     m_updatedAt = jsonValue.GetString("updatedAt");
     m_updatedAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("reportDestination")) {
+    m_reportDestination = jsonValue.GetObject("reportDestination");
+    m_reportDestinationHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

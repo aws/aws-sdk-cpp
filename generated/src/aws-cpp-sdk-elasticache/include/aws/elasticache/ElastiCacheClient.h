@@ -94,10 +94,9 @@ class AWS_ELASTICACHE_API ElastiCacheClient : public Aws::Client::AWSXMLClient,
 
   /**
    * <p>A tag is a key-value pair where the key and value are case-sensitive. You can
-   * use tags to categorize and track all your ElastiCache resources, with the
-   * exception of global replication group. When you add or remove tags on
-   * replication groups, those actions will be replicated to all nodes in the
-   * replication group. For more information, see <a
+   * use tags to categorize and track all your ElastiCache resources. When you add or
+   * remove tags on replication groups, those actions will be replicated to all nodes
+   * in the replication group. For more information, see <a
    * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/IAM.ResourceLevelPermissions.html">Resource-level
    * permissions</a>.</p> <p> For example, you can use cost-allocation tags to your
    * ElastiCache resources, Amazon generates a cost allocation report as a
@@ -1904,10 +1903,9 @@ class AWS_ELASTICACHE_API ElastiCacheClient : public Aws::Client::AWSXMLClient,
   /**
    * <p>Lists all tags currently on a named resource.</p> <p> A tag is a key-value
    * pair where the key and value are case-sensitive. You can use tags to categorize
-   * and track all your ElastiCache resources, with the exception of global
-   * replication group. When you add or remove tags on replication groups, those
-   * actions will be replicated to all nodes in the replication group. For more
-   * information, see <a
+   * and track all your ElastiCache resources. When you add or remove tags on
+   * replication groups, those actions will be replicated to all nodes in the
+   * replication group. For more information, see <a
    * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/IAM.ResourceLevelPermissions.html">Resource-level
    * permissions</a>.</p> <p>If the cluster is not in the <i>available</i> state,
    * <code>ListTagsForResource</code> returns an error.</p><p><h3>See Also:</h3>   <a
@@ -2296,10 +2294,9 @@ class AWS_ELASTICACHE_API ElastiCacheClient : public Aws::Client::AWSXMLClient,
   /**
    * <p>Removes the tags identified by the <code>TagKeys</code> list from the named
    * resource. A tag is a key-value pair where the key and value are case-sensitive.
-   * You can use tags to categorize and track all your ElastiCache resources, with
-   * the exception of global replication group. When you add or remove tags on
-   * replication groups, those actions will be replicated to all nodes in the
-   * replication group. For more information, see <a
+   * You can use tags to categorize and track all your ElastiCache resources. When
+   * you add or remove tags on replication groups, those actions will be replicated
+   * to all nodes in the replication group. For more information, see <a
    * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/IAM.ResourceLevelPermissions.html">Resource-level
    * permissions</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RemoveTagsFromResource">AWS

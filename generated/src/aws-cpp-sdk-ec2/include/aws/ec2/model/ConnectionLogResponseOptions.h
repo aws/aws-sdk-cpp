@@ -88,15 +88,35 @@ class ConnectionLogResponseOptions {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether the authorization policy evaluation context is included in
+   * the connection logs for the Client VPN endpoint.</p>
+   */
+  inline bool GetIncludeAuthorizationPolicyContext() const { return m_includeAuthorizationPolicyContext; }
+  inline bool IncludeAuthorizationPolicyContextHasBeenSet() const { return m_includeAuthorizationPolicyContextHasBeenSet; }
+  inline void SetIncludeAuthorizationPolicyContext(bool value) {
+    m_includeAuthorizationPolicyContextHasBeenSet = true;
+    m_includeAuthorizationPolicyContext = value;
+  }
+  inline ConnectionLogResponseOptions& WithIncludeAuthorizationPolicyContext(bool value) {
+    SetIncludeAuthorizationPolicyContext(value);
+    return *this;
+  }
+  ///@}
  private:
   bool m_enabled{false};
 
   Aws::String m_cloudwatchLogGroup;
 
   Aws::String m_cloudwatchLogStream;
+
+  bool m_includeAuthorizationPolicyContext{false};
   bool m_enabledHasBeenSet = false;
   bool m_cloudwatchLogGroupHasBeenSet = false;
   bool m_cloudwatchLogStreamHasBeenSet = false;
+  bool m_includeAuthorizationPolicyContextHasBeenSet = false;
 };
 
 }  // namespace Model

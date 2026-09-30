@@ -91,6 +91,10 @@ ThreatModelJob& ThreatModelJob::operator=(JsonView jsonValue) {
     m_systemOverview = jsonValue.GetString("systemOverview");
     m_systemOverviewHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("reportDestination")) {
+    m_reportDestination = jsonValue.GetObject("reportDestination");
+    m_reportDestinationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -172,6 +176,10 @@ JsonValue ThreatModelJob::Jsonize() const {
 
   if (m_systemOverviewHasBeenSet) {
     payload.WithString("systemOverview", m_systemOverview);
+  }
+
+  if (m_reportDestinationHasBeenSet) {
+    payload.WithObject("reportDestination", m_reportDestination.Jsonize());
   }
 
   return payload;

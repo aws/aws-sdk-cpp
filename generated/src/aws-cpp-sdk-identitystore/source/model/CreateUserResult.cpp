@@ -30,6 +30,14 @@ CreateUserResult& CreateUserResult::operator=(const Aws::AmazonWebServiceResult<
     m_userId = jsonValue.GetString("UserId");
     m_userIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("UserArn")) {
+    m_userArn = jsonValue.GetString("UserArn");
+    m_userArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Revision")) {
+    m_revision = jsonValue.GetString("Revision");
+    m_revisionHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

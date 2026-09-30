@@ -12,6 +12,7 @@
 #include <aws/ec2/model/ClientLoginBannerOptions.h>
 #include <aws/ec2/model/ClientRouteEnforcementOptions.h>
 #include <aws/ec2/model/ConnectionLogOptions.h>
+#include <aws/ec2/model/DevicePostureOptions.h>
 #include <aws/ec2/model/DnsServersOptionsModifyStructure.h>
 #include <aws/ec2/model/SelfServicePortal.h>
 #include <aws/ec2/model/TransitGatewayConfigurationInputStructure.h>
@@ -371,6 +372,26 @@ class ModifyClientVpnEndpointRequest : public EC2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The device posture options for the Client VPN endpoint. Specifying this
+   * parameter replaces the entire device posture configuration for the endpoint. To
+   * remove all device trust providers, specify an empty list.</p>
+   */
+  inline const DevicePostureOptions& GetDevicePostureOptions() const { return m_devicePostureOptions; }
+  inline bool DevicePostureOptionsHasBeenSet() const { return m_devicePostureOptionsHasBeenSet; }
+  template <typename DevicePostureOptionsT = DevicePostureOptions>
+  void SetDevicePostureOptions(DevicePostureOptionsT&& value) {
+    m_devicePostureOptionsHasBeenSet = true;
+    m_devicePostureOptions = std::forward<DevicePostureOptionsT>(value);
+  }
+  template <typename DevicePostureOptionsT = DevicePostureOptions>
+  ModifyClientVpnEndpointRequest& WithDevicePostureOptions(DevicePostureOptionsT&& value) {
+    SetDevicePostureOptions(std::forward<DevicePostureOptionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clientVpnEndpointId;
 
@@ -405,6 +426,8 @@ class ModifyClientVpnEndpointRequest : public EC2Request {
   bool m_disconnectOnSessionTimeout{false};
 
   TransitGatewayConfigurationInputStructure m_transitGatewayConfiguration;
+
+  DevicePostureOptions m_devicePostureOptions;
   bool m_clientVpnEndpointIdHasBeenSet = false;
   bool m_serverCertificateArnHasBeenSet = false;
   bool m_connectionLogOptionsHasBeenSet = false;
@@ -422,6 +445,7 @@ class ModifyClientVpnEndpointRequest : public EC2Request {
   bool m_clientRouteEnforcementOptionsHasBeenSet = false;
   bool m_disconnectOnSessionTimeoutHasBeenSet = false;
   bool m_transitGatewayConfigurationHasBeenSet = false;
+  bool m_devicePostureOptionsHasBeenSet = false;
 };
 
 }  // namespace Model

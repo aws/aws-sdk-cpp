@@ -3087,7 +3087,14 @@ class AWS_DEADLINE_API DeadlineClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates a fleet.</p><p><h3>See Also:</h3>   <a
+   * <p>Updates a fleet.</p>  <p>Workers that are running when you call
+   * <code>UpdateFleet</code> keep the instance type and capabilities that they
+   * launched with until they scale in. Deadline Cloud can schedule jobs that you
+   * submit after the update on these existing workers, so the new configuration
+   * might not take effect immediately. To make sure that all workers use the new
+   * configuration, set <code>maxWorkerCount</code> to 0, use the
+   * <code>ListWorkers</code> operation to confirm that the fleet has no workers, and
+   * then restore <code>maxWorkerCount</code>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateFleet">AWS
    * API Reference</a></p>
    */

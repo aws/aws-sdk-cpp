@@ -185,6 +185,23 @@ class CreatePlanRequest : public ARCRegionswitchRequest {
 
   ///@{
   /**
+   * <p>Specifies whether to enable service quota checks for the Region switch
+   * plan.</p>
+   */
+  inline bool GetServiceQuotaChecksEnabled() const { return m_serviceQuotaChecksEnabled; }
+  inline bool ServiceQuotaChecksEnabledHasBeenSet() const { return m_serviceQuotaChecksEnabledHasBeenSet; }
+  inline void SetServiceQuotaChecksEnabled(bool value) {
+    m_serviceQuotaChecksEnabledHasBeenSet = true;
+    m_serviceQuotaChecksEnabled = value;
+  }
+  inline CreatePlanRequest& WithServiceQuotaChecksEnabled(bool value) {
+    SetServiceQuotaChecksEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The name of a Region switch plan.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
@@ -300,6 +317,8 @@ class CreatePlanRequest : public ARCRegionswitchRequest {
 
   ReportConfiguration m_reportConfiguration;
 
+  bool m_serviceQuotaChecksEnabled{false};
+
   Aws::String m_name;
 
   Aws::Vector<Aws::String> m_regions;
@@ -316,6 +335,7 @@ class CreatePlanRequest : public ARCRegionswitchRequest {
   bool m_associatedAlarmsHasBeenSet = false;
   bool m_triggersHasBeenSet = false;
   bool m_reportConfigurationHasBeenSet = false;
+  bool m_serviceQuotaChecksEnabledHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_regionsHasBeenSet = false;
   bool m_recoveryApproachHasBeenSet = false;

@@ -3966,6 +3966,48 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
+   * <p>Replaces the service-managed credentials of a payment connector with newly
+   * issued credentials.</p> <p>Use this operation only for payment connectors with a
+   * <code>provisionMode</code> of <code>QUICK_CREATE</code>. For payment connectors
+   * with a <code>provisionMode</code> of <code>MANUAL</code>, call
+   * <code>UpdatePaymentCredentialProvider</code> instead after rotating credentials
+   * with the payment provider directly.</p> <p>The rotation finishes before the
+   * response is returned, and only one rotation runs at a time for a given payment
+   * connector. When it succeeds, the new credential is in effect and the payment
+   * connector stays in the <code>READY</code> state. When it fails, an error is
+   * returned, the payment connector and its existing credential are left unchanged,
+   * and you can retry the request.</p> <p>Rotation replaces the credential on the
+   * connector's credential provider, so every payment connector that uses that
+   * provider is affected. Replace any copy of the previous credential that you use
+   * outside AgentCore.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/RotatePaymentConnectorCredentials">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RotatePaymentConnectorCredentialsOutcome RotatePaymentConnectorCredentials(
+      const Model::RotatePaymentConnectorCredentialsRequest& request) const;
+
+  /**
+   * A Callable wrapper for RotatePaymentConnectorCredentials that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename RotatePaymentConnectorCredentialsRequestT = Model::RotatePaymentConnectorCredentialsRequest>
+  Model::RotatePaymentConnectorCredentialsOutcomeCallable RotatePaymentConnectorCredentialsCallable(
+      const RotatePaymentConnectorCredentialsRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::RotatePaymentConnectorCredentials, request);
+  }
+
+  /**
+   * An Async wrapper for RotatePaymentConnectorCredentials that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename RotatePaymentConnectorCredentialsRequestT = Model::RotatePaymentConnectorCredentialsRequest>
+  void RotatePaymentConnectorCredentialsAsync(const RotatePaymentConnectorCredentialsRequestT& request,
+                                              const RotatePaymentConnectorCredentialsResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::RotatePaymentConnectorCredentials, request, handler, context);
+  }
+
+  /**
    * <p>Sets the customer master key (CMK) for a token vault.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/SetTokenVaultCMK">AWS

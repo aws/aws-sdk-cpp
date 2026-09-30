@@ -9,6 +9,7 @@
 #include <aws/appstream/model/DynamicAppProvidersEnabled.h>
 #include <aws/appstream/model/ImagePermissions.h>
 #include <aws/appstream/model/ImageSharedWithOthers.h>
+#include <aws/appstream/model/ImageSoftwareMetadata.h>
 #include <aws/appstream/model/ImageState.h>
 #include <aws/appstream/model/ImageStateChangeReason.h>
 #include <aws/appstream/model/ImageType.h>
@@ -474,6 +475,24 @@ class Image {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The software metadata associated with the image.</p>
+   */
+  inline const ImageSoftwareMetadata& GetImageSoftwareMetadata() const { return m_imageSoftwareMetadata; }
+  inline bool ImageSoftwareMetadataHasBeenSet() const { return m_imageSoftwareMetadataHasBeenSet; }
+  template <typename ImageSoftwareMetadataT = ImageSoftwareMetadata>
+  void SetImageSoftwareMetadata(ImageSoftwareMetadataT&& value) {
+    m_imageSoftwareMetadataHasBeenSet = true;
+    m_imageSoftwareMetadata = std::forward<ImageSoftwareMetadataT>(value);
+  }
+  template <typename ImageSoftwareMetadataT = ImageSoftwareMetadata>
+  Image& WithImageSoftwareMetadata(ImageSoftwareMetadataT&& value) {
+    SetImageSoftwareMetadata(std::forward<ImageSoftwareMetadataT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -520,6 +539,8 @@ class Image {
   bool m_managedSoftwareIncluded{false};
 
   ImageType m_imageType{ImageType::NOT_SET};
+
+  ImageSoftwareMetadata m_imageSoftwareMetadata;
   bool m_nameHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_baseImageArnHasBeenSet = false;
@@ -543,6 +564,7 @@ class Image {
   bool m_imageSharedWithOthersHasBeenSet = false;
   bool m_managedSoftwareIncludedHasBeenSet = false;
   bool m_imageTypeHasBeenSet = false;
+  bool m_imageSoftwareMetadataHasBeenSet = false;
 };
 
 }  // namespace Model

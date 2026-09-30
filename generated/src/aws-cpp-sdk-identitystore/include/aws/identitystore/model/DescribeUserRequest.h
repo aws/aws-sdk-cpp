@@ -37,7 +37,10 @@ class DescribeUserRequest : public IdentityStoreRequest {
    * <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix,
    * and <code>1234567890</code> is a randomly generated string that contains numbers
    * and lower case letters. This value is generated at the time that a new identity
-   * store is created.</p>
+   * store is created.</p> <p>You can specify the identity store by ID or by Amazon
+   * Resource Name (ARN). For example, identity store ID <code>d-1234567890</code> or
+   * identity store ARN
+   * <code>arn:aws:identitystore::111122223333:identitystore/d-1234567890</code>.</p>
    */
   inline const Aws::String& GetIdentityStoreId() const { return m_identityStoreId; }
   inline bool IdentityStoreIdHasBeenSet() const { return m_identityStoreIdHasBeenSet; }
@@ -55,7 +58,10 @@ class DescribeUserRequest : public IdentityStoreRequest {
 
   ///@{
   /**
-   * <p>The identifier for a user in the identity store.</p>
+   * <p>The identifier for a user in the identity store.</p> <p>You can specify the
+   * user by ID or by Amazon Resource Name (ARN). For example, user ID
+   * <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code> or user ARN
+   * <code>arn:aws:identitystore:::user/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
    */
   inline const Aws::String& GetUserId() const { return m_userId; }
   inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }

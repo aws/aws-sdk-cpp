@@ -32,6 +32,27 @@ class ListPurchaseOptionsRequest : public MarketplaceDiscoveryRequest {
 
   ///@{
   /**
+   * <p>A BCP 47 language tag or comma-separated priority list specifying the
+   * preferred locale for response content. See <code>Locale</code> for supported
+   * values, constraints, fallback behavior, and the default locale. If omitted, the
+   * service returns content in the default locale.</p>
+   */
+  inline const Aws::String& GetLocale() const { return m_locale; }
+  inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }
+  template <typename LocaleT = Aws::String>
+  void SetLocale(LocaleT&& value) {
+    m_localeHasBeenSet = true;
+    m_locale = std::forward<LocaleT>(value);
+  }
+  template <typename LocaleT = Aws::String>
+  ListPurchaseOptionsRequest& WithLocale(LocaleT&& value) {
+    SetLocale(std::forward<LocaleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Filters to narrow the results. Multiple filters are combined with AND logic.
    * Multiple values within the same filter are combined with OR logic.</p>
    */
@@ -91,11 +112,14 @@ class ListPurchaseOptionsRequest : public MarketplaceDiscoveryRequest {
   }
   ///@}
  private:
+  Aws::String m_locale;
+
   Aws::Vector<PurchaseOptionFilter> m_filters;
 
   int m_maxResults{0};
 
   Aws::String m_nextToken;
+  bool m_localeHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

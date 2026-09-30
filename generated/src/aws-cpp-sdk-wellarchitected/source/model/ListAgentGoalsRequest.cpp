@@ -31,3 +31,10 @@ void ListAgentGoalsRequest::AddQueryStringParameters(URI& uri) const {
     ss.str("");
   }
 }
+
+ListAgentGoalsRequest::EndpointParameters ListAgentGoalsRequest::GetEndpointContextParams() const {
+  EndpointParameters parameters;
+  // Static context parameters
+  parameters.emplace_back(Aws::String("SubServiceType"), "AGENT", Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+  return parameters;
+}

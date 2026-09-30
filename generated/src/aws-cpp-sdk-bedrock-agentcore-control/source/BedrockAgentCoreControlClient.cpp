@@ -143,6 +143,7 @@
 #include <aws/bedrock-agentcore-control/model/ListTagsForResourceRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListWorkloadIdentitiesRequest.h>
 #include <aws/bedrock-agentcore-control/model/PutResourcePolicyRequest.h>
+#include <aws/bedrock-agentcore-control/model/RotatePaymentConnectorCredentialsRequest.h>
 #include <aws/bedrock-agentcore-control/model/SetTokenVaultCMKRequest.h>
 #include <aws/bedrock-agentcore-control/model/StartPolicyGenerationRequest.h>
 #include <aws/bedrock-agentcore-control/model/SubmitRegistryRecordForApprovalRequest.h>
@@ -2631,6 +2632,33 @@ PutResourcePolicyOutcome BedrockAgentCoreControlClient::PutResourcePolicy(const 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? PutResourcePolicyOutcome(result.GetResultWithOwnership())
                             : PutResourcePolicyOutcome(std::move(result.GetError()));
+}
+
+RotatePaymentConnectorCredentialsOutcome BedrockAgentCoreControlClient::RotatePaymentConnectorCredentials(
+    const RotatePaymentConnectorCredentialsRequest& request) const {
+  if (!request.PaymentManagerIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("RotatePaymentConnectorCredentials", "Required field: PaymentManagerId, is not set");
+    return RotatePaymentConnectorCredentialsOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PaymentManagerId]", false));
+  }
+  if (!request.PaymentConnectorIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("RotatePaymentConnectorCredentials", "Required field: PaymentConnectorId, is not set");
+    return RotatePaymentConnectorCredentialsOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PaymentConnectorId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/payments/managers/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPaymentManagerId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/connectors/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPaymentConnectorId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/rotate-credentials");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RotatePaymentConnectorCredentialsOutcome(result.GetResultWithOwnership())
+                            : RotatePaymentConnectorCredentialsOutcome(std::move(result.GetError()));
 }
 
 SetTokenVaultCMKOutcome BedrockAgentCoreControlClient::SetTokenVaultCMK(const SetTokenVaultCMKRequest& request) const {

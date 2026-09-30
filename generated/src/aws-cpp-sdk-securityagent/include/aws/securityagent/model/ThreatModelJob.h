@@ -12,6 +12,7 @@
 #include <aws/securityagent/model/ErrorInformation.h>
 #include <aws/securityagent/model/IntegratedRepository.h>
 #include <aws/securityagent/model/JobStatus.h>
+#include <aws/securityagent/model/ReportDestination.h>
 #include <aws/securityagent/model/SourceCodeRepository.h>
 
 #include <utility>
@@ -330,6 +331,25 @@ class ThreatModelJob {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The destination for publishing scan reports to an integrated document
+   * provider.</p>
+   */
+  inline const ReportDestination& GetReportDestination() const { return m_reportDestination; }
+  inline bool ReportDestinationHasBeenSet() const { return m_reportDestinationHasBeenSet; }
+  template <typename ReportDestinationT = ReportDestination>
+  void SetReportDestination(ReportDestinationT&& value) {
+    m_reportDestinationHasBeenSet = true;
+    m_reportDestination = std::forward<ReportDestinationT>(value);
+  }
+  template <typename ReportDestinationT = ReportDestination>
+  ThreatModelJob& WithReportDestination(ReportDestinationT&& value) {
+    SetReportDestination(std::forward<ReportDestinationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_threatModelJobId;
 
@@ -360,6 +380,8 @@ class ThreatModelJob {
   ErrorInformation m_errorInformation;
 
   Aws::String m_systemOverview;
+
+  ReportDestination m_reportDestination;
   bool m_threatModelJobIdHasBeenSet = false;
   bool m_threatModelIdHasBeenSet = false;
   bool m_agentSpaceIdHasBeenSet = false;
@@ -375,6 +397,7 @@ class ThreatModelJob {
   bool m_scopeDocsHasBeenSet = false;
   bool m_errorInformationHasBeenSet = false;
   bool m_systemOverviewHasBeenSet = false;
+  bool m_reportDestinationHasBeenSet = false;
 };
 
 }  // namespace Model

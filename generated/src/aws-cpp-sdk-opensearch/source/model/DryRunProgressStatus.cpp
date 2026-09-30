@@ -42,6 +42,13 @@ DryRunProgressStatus& DryRunProgressStatus::operator=(JsonView jsonValue) {
     }
     m_validationFailuresHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AcceptedWarnings")) {
+    Aws::Utils::Array<JsonView> acceptedWarningsJsonList = jsonValue.GetArray("AcceptedWarnings");
+    for (unsigned acceptedWarningsIndex = 0; acceptedWarningsIndex < acceptedWarningsJsonList.GetLength(); ++acceptedWarningsIndex) {
+      m_acceptedWarnings.push_back(acceptedWarningsJsonList[acceptedWarningsIndex].AsString());
+    }
+    m_acceptedWarningsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -71,6 +78,14 @@ JsonValue DryRunProgressStatus::Jsonize() const {
       validationFailuresJsonList[validationFailuresIndex].AsObject(m_validationFailures[validationFailuresIndex].Jsonize());
     }
     payload.WithArray("ValidationFailures", std::move(validationFailuresJsonList));
+  }
+
+  if (m_acceptedWarningsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> acceptedWarningsJsonList(m_acceptedWarnings.size());
+    for (unsigned acceptedWarningsIndex = 0; acceptedWarningsIndex < acceptedWarningsJsonList.GetLength(); ++acceptedWarningsIndex) {
+      acceptedWarningsJsonList[acceptedWarningsIndex].AsString(m_acceptedWarnings[acceptedWarningsIndex]);
+    }
+    payload.WithArray("AcceptedWarnings", std::move(acceptedWarningsJsonList));
   }
 
   return payload;

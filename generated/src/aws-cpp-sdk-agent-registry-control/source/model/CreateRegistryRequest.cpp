@@ -47,6 +47,10 @@ Aws::String CreateRegistryRequest::SerializePayload() const {
     payload.WithObject("approvalConfiguration", m_approvalConfiguration.Jsonize());
   }
 
+  if (m_customMetadataSchemaConfigurationHasBeenSet) {
+    payload.WithObject("customMetadataSchemaConfiguration", m_customMetadataSchemaConfiguration.Jsonize());
+  }
+
   if (m_autoDetectionConfigurationHasBeenSet) {
     payload.WithObject("autoDetectionConfiguration", m_autoDetectionConfiguration.Jsonize());
   }

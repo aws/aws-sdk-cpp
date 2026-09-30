@@ -109,7 +109,8 @@ class StartSessionsStatisticsAggregationRequest : public DeadlineRequest {
 
   ///@{
   /**
-   * <p>The timezone to use for the statistics. Use UTC notation such as "UTC+8."</p>
+   * <p>The time zone to use for the statistics. Use UTC notation such as
+   * "UTC+8."</p>
    */
   inline const Aws::String& GetTimezone() const { return m_timezone; }
   inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
