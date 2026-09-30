@@ -504,10 +504,10 @@ TEST_F(JsonShapeDeserializerTest, TimestampHonorsCodecSettingsDefault) {
     ASSERT_TRUE(got.has_value());
     EXPECT_EQ(got->Seconds(), 0);
   }
-  {  // DATE_TIME: ISO-8601 string wire value read via date-time
-    const Aws::String wire = "{\"t\":\"1970-01-01T00:00:00Z\"}";
+  {  // HTTP_DATE setting drives the typed-read fallback (the only value that changes ReadTimestamp's branch)
+    const Aws::String wire = "{\"t\":\"Thu, 01 Jan 1970 00:00:00 GMT\"}";
     JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(wire.data()), wire.size()),
-                            CodecSettings{TimestampFormatTrait::Format::DATE_TIME});
+                            CodecSettings{TimestampFormatTrait::Format::HTTP_DATE});
     Aws::Crt::Optional<Aws::Utils::DateTime> got;
     d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadTimestamp(m); });
     ASSERT_TRUE(got.has_value());
