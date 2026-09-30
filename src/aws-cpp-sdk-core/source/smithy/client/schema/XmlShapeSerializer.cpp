@@ -152,7 +152,12 @@ class XmlShapeSerializer::Impl final : public InterceptingSerializer {
     Aws::String m_valueName;
   };
 
-  Impl() : m_valueSerializer(this), m_structElementSerializer(this), m_structAttributeSerializer(this), m_inlineAttributeSerializer(this) {
+  explicit Impl(CodecSettings settings)
+      : m_valueSerializer(this),
+        m_structElementSerializer(this),
+        m_structAttributeSerializer(this),
+        m_inlineAttributeSerializer(this),
+        m_settings(settings) {
     m_buf.reserve(8192);
   }
 
@@ -289,6 +294,7 @@ class XmlShapeSerializer::Impl final : public InterceptingSerializer {
   StructAttributeSerializer m_structAttributeSerializer;
   InlineAttributeSerializer m_inlineAttributeSerializer;
   SpecificShapeSerializer m_nullSerializer;
+  CodecSettings m_settings;
 };
 
 void XmlShapeSerializer::Impl::ValueSerializer::WriteStruct(const Schema&, const SerializableStruct& value) {
@@ -363,7 +369,7 @@ void XmlShapeSerializer::Impl::ValueSerializer::WriteString(const Schema&, const
 }
 void XmlShapeSerializer::Impl::ValueSerializer::WriteTimestamp(const Schema& schema, const Aws::Utils::DateTime& value) {
   m_outer->ClosePendingTag();
-  m_outer->AppendRaw(FormatTimestampText(value, ResolveTimestampFormat(schema, TimestampFormatTrait::Format::DATE_TIME)));
+  m_outer->AppendRaw(FormatTimestampText(value, ResolveTimestampFormat(schema, m_outer->m_settings.defaultTimestampFormat)));
 }
 void XmlShapeSerializer::Impl::ValueSerializer::WriteBlob(const Schema&, const Aws::Utils::ByteBuffer& value) {
   m_outer->ClosePendingTag();
@@ -425,7 +431,7 @@ void XmlShapeSerializer::Impl::InlineAttributeSerializer::WriteString(const Sche
   WriteAttr(schema, value);
 }
 void XmlShapeSerializer::Impl::InlineAttributeSerializer::WriteTimestamp(const Schema& schema, const Aws::Utils::DateTime& value) {
-  WriteAttr(schema, FormatTimestampText(value, ResolveTimestampFormat(schema, TimestampFormatTrait::Format::DATE_TIME)));
+  WriteAttr(schema, FormatTimestampText(value, ResolveTimestampFormat(schema, m_outer->m_settings.defaultTimestampFormat)));
 }
 ShapeSerializer& XmlShapeSerializer::Impl::ListItemSerializer::Before(const Schema&) {
   m_outer->WriteStartOpen(m_itemName, m_itemNamespace);
@@ -445,7 +451,7 @@ void XmlShapeSerializer::Impl::XmlMapEntrySerializer::WriteEntry(const Aws::Stri
   m_outer->WriteCloseTag(m_entryName);
 }
 
-XmlShapeSerializer::XmlShapeSerializer() : m_impl(Aws::MakeUnique<Impl>("XmlShapeSerializer")) {}
+XmlShapeSerializer::XmlShapeSerializer(CodecSettings settings) : m_impl(Aws::MakeUnique<Impl>("XmlShapeSerializer", settings)) {}
 XmlShapeSerializer::~XmlShapeSerializer() = default;
 
 void XmlShapeSerializer::WriteStruct(const Schema& schema, const SerializableStruct& value) { m_impl->WriteStruct(schema, value); }

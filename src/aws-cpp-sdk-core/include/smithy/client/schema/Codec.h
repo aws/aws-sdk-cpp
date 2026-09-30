@@ -57,8 +57,12 @@ class SMITHY_API JsonCodec final : public Codec {
 
 class SMITHY_API XmlCodec final : public Codec {
  public:
+  explicit XmlCodec(CodecSettings settings = CodecSettings{TimestampFormatTrait::Format::DATE_TIME}) : m_settings(settings) {}
   SerializerOutcome Serialize(const Schema& schema, const SerializableStruct& shape) const override;
   Aws::UniquePtr<ShapeDeserializer> CreateDeserializer(Aws::Crt::ByteCursor data) const override;
+
+ private:
+  CodecSettings m_settings;
 };
 
 class SMITHY_API CborCodec final : public Codec {
