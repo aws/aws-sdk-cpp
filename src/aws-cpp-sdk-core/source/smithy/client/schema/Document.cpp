@@ -26,7 +26,6 @@ namespace detail {
 Document MakeDocument(std::shared_ptr<const DocumentImpl> impl) { return Document(std::move(impl)); }
 }  // namespace detail
 
-// --- factories: build a base impl and wrap it in the handle ---
 Document Document::Null() { return detail::MakeDocument(DocumentImpl::MakeNull()); }
 
 Document Document::FromBoolean(bool value) { return detail::MakeDocument(DocumentImpl::MakeBoolean(value)); }
@@ -47,7 +46,6 @@ Document Document::FromList(Aws::Vector<Document> value) { return detail::MakeDo
 
 Document Document::FromMap(Aws::Map<Aws::String, Document> value) { return detail::MakeDocument(DocumentImpl::MakeMap(std::move(value))); }
 
-// --- handle delegations ---
 ShapeType Document::GetType() const { return m_impl->GetType(); }
 
 bool Document::IsNull() const { return m_impl->IsNull(); }
@@ -101,7 +99,6 @@ void Document::SerializeContents(ShapeSerializer& serializer, const Schema& sche
 
 bool Document::operator==(const Document& other) const { return m_impl->Equals(*other.m_impl); }
 
-// --- DocumentImpl storage mutators ---
 void DocumentImpl::SetBoolean(bool value) {
   m_type = ShapeType::Boolean;
   m_bool = value;
@@ -142,7 +139,6 @@ void DocumentImpl::SetMap(Aws::Map<Aws::String, Document> value) {
   m_map = std::move(value);
 }
 
-// --- DocumentImpl builders ---
 std::shared_ptr<DocumentImpl> DocumentImpl::MakeNull() { return Aws::MakeShared<DocumentImpl>(DOCUMENT_IMPL_ALLOCATION_TAG); }
 
 std::shared_ptr<DocumentImpl> DocumentImpl::MakeBoolean(bool value) {
@@ -193,7 +189,6 @@ std::shared_ptr<DocumentImpl> DocumentImpl::MakeMap(Aws::Map<Aws::String, Docume
   return impl;
 }
 
-// --- DocumentImpl accessors (relocated verbatim; fields are now DocumentImpl members) ---
 Aws::Crt::Optional<bool> DocumentImpl::AsBoolean() const {
   if (m_type != ShapeType::Boolean) {
     return {};

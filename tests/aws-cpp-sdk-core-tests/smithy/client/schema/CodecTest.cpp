@@ -265,10 +265,9 @@ TEST_F(CodecTest, CborNestedShape) {
 }
 
 namespace {
-// One-member struct { "payload": <document> } that drives the Codec end-to-end. Mirrors the
-// `Person` helper already in this file: self-contained schema built with PutMember, SerializeMembers
-// writes each member, From dispatches by member. The `payload` member MUST be declared on the schema
-// (via PutMember) — the deserializer's ReadStruct routes an incoming key only to a declared member.
+// One-member struct { "payload": <document> } that drives the Codec end-to-end. The `payload` member
+// MUST be declared on the schema (via PutMember) — the deserializer's ReadStruct routes an incoming
+// key only to a declared member.
 class DocHolder final : public SerializableStruct {
  public:
   const Schema& GetSchema() const override { return *m_schema; }
