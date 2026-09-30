@@ -1,3 +1,7 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 #pragma once
 
 #include <aws/core/client/AWSError.h>
@@ -5,16 +9,21 @@
 #include <smithy/Smithy_EXPORTS.h>
 #include <smithy/client/schema/ShapeSerializer.h>
 
+#include <cstdint>
 #include <functional>
 
 namespace smithy {
 namespace schema {
 
-class SMITHY_API CborShapeSerializer final : public ShapeSerializer {
+class SMITHY_API QueryShapeSerializer final : public ShapeSerializer {
  public:
   using SerializerOutcome = Aws::Utils::Outcome<Aws::String, Aws::Client::AWSError<Aws::Client::CoreErrors>>;
-  CborShapeSerializer();
-  ~CborShapeSerializer();
+
+  enum class Flavor { AwsQuery, Ec2Query };
+
+  QueryShapeSerializer();
+  explicit QueryShapeSerializer(Flavor flavor);
+  ~QueryShapeSerializer();
 
   void WriteStruct(const Schema& schema, const SerializableStruct& value) override;
   void WriteList(const Schema& schema, size_t size, const std::function<void(ShapeSerializer&)>& consumer) override;

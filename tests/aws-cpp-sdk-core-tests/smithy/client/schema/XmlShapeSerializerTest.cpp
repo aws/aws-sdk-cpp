@@ -7,6 +7,7 @@
 #include <smithy/client/schema/MapSerializer.h>
 #include <smithy/client/schema/Schema.h>
 #include <smithy/client/schema/SchemaBuilder.h>
+#include <smithy/client/schema/SerdeTraits.h>
 #include <smithy/client/schema/XmlShapeSerializer.h>
 #include <smithy/client/schema/XmlTraits.h>
 
@@ -483,4 +484,30 @@ TEST_F(XmlShapeSerializerTest, FloatNegativeValue) {
   s.WriteStruct(*root, rootStruct);
   auto payload = s.GetPayload().GetResult();
   EXPECT_NE(payload.find("<val>-2.25</val>"), Aws::String::npos);
+}
+
+TEST_F(XmlShapeSerializerTest, TimestampFormatTraitControlsWireForm) {
+  auto root = Schema::StructureBuilder("Root", {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "Root")}}).Build();
+  const Aws::Utils::DateTime dt(1234567890.0);
+  auto httpDate = Schema::CreateMember(
+      "t", ShapeType::Timestamp,
+      {{TimestampFormatTrait::KEY(), Aws::MakeShared<TimestampFormatTrait>("Test", TimestampFormatTrait::Format::HTTP_DATE)}});
+  auto epoch = Schema::CreateMember(
+      "t", ShapeType::Timestamp,
+      {{TimestampFormatTrait::KEY(), Aws::MakeShared<TimestampFormatTrait>("Test", TimestampFormatTrait::Format::EPOCH_SECONDS)}});
+
+  {
+    XmlShapeSerializer s;
+    LambdaStruct rs(*root, [&](ShapeSerializer& ser) { ser.WriteTimestamp(*httpDate, dt); });
+    s.WriteStruct(*root, rs);
+    EXPECT_NE(s.GetPayload().GetResult().find("<t>Fri, 13 Feb 2009 23:31:30 GMT</t>"), Aws::String::npos);
+  }
+  {
+    XmlShapeSerializer s;
+    LambdaStruct rs(*root, [&](ShapeSerializer& ser) { ser.WriteTimestamp(*epoch, dt); });
+    s.WriteStruct(*root, rs);
+    const Aws::String payload = s.GetPayload().GetResult();
+    EXPECT_NE(payload.find("<t>1234567890"), Aws::String::npos);
+    EXPECT_EQ(payload.find("2009-02-13T23:31:30Z"), Aws::String::npos);
+  }
 }

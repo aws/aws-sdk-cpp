@@ -56,10 +56,6 @@ class SMITHY_API InterceptingSerializer : public ShapeSerializer {
     Before(schema).WriteBlob(schema, value);
     After(schema);
   }
-  void WriteEnum(const Schema& schema, int value) override {
-    Before(schema).WriteEnum(schema, value);
-    After(schema);
-  }
   void WriteNull(const Schema& schema) override {
     Before(schema).WriteNull(schema);
     After(schema);

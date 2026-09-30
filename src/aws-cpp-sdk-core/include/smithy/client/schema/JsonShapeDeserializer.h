@@ -8,10 +8,10 @@
 namespace smithy {
 namespace schema {
 
-class SMITHY_API CborShapeDeserializer final : public ShapeDeserializer {
+class SMITHY_API JsonShapeDeserializer final : public ShapeDeserializer {
  public:
-  explicit CborShapeDeserializer(Aws::Crt::ByteCursor data);
-  ~CborShapeDeserializer();
+  explicit JsonShapeDeserializer(Aws::Crt::ByteCursor data);
+  ~JsonShapeDeserializer();
 
   void ReadStruct(const Schema& schema, const StructMemberConsumer& consumer) override;
   void ReadList(const Schema& schema, const ListElementConsumer& consumer) override;

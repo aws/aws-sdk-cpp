@@ -30,6 +30,7 @@ const TraitKey<T>& TraitKey<T>::Instance() {
 
 template class SMITHY_TEMPLATE_EXPORT TraitKey<JsonNameTrait>;
 template class SMITHY_TEMPLATE_EXPORT TraitKey<TimestampFormatTrait>;
+template class SMITHY_TEMPLATE_EXPORT TraitKey<Ec2QueryNameTrait>;
 template class SMITHY_TEMPLATE_EXPORT TraitKey<XmlNameTrait>;
 template class SMITHY_TEMPLATE_EXPORT TraitKey<XmlFlattenedTrait>;
 template class SMITHY_TEMPLATE_EXPORT TraitKey<XmlAttributeTrait>;

@@ -33,7 +33,6 @@ class SMITHY_API ShapeSerializer {
   virtual void WriteString(const Schema& schema, const Aws::String& value) = 0;
   virtual void WriteTimestamp(const Schema& schema, const Aws::Utils::DateTime& value) = 0;
   virtual void WriteBlob(const Schema& schema, const Aws::Utils::ByteBuffer& value) = 0;
-  virtual void WriteEnum(const Schema& schema, int value) = 0;
   virtual void WriteNull(const Schema& schema) = 0;
 };
 
