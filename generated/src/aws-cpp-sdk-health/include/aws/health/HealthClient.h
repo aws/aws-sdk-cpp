@@ -594,6 +594,36 @@ class AWS_HEALTH_API HealthClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns lifecycle information for Amazon Web Services services, including
+   * end-of-life dates, version recommendations, and lifecycle events.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeServiceLifecycle">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeServiceLifecycleOutcome DescribeServiceLifecycle(const Model::DescribeServiceLifecycleRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeServiceLifecycle that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeServiceLifecycleRequestT = Model::DescribeServiceLifecycleRequest>
+  Model::DescribeServiceLifecycleOutcomeCallable DescribeServiceLifecycleCallable(
+      const DescribeServiceLifecycleRequestT& request = {}) const {
+    return SubmitCallable(&HealthClient::DescribeServiceLifecycle, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeServiceLifecycle that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeServiceLifecycleRequestT = Model::DescribeServiceLifecycleRequest>
+  void DescribeServiceLifecycleAsync(const DescribeServiceLifecycleResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                     const DescribeServiceLifecycleRequestT& request = {}) const {
+    return SubmitAsync(&HealthClient::DescribeServiceLifecycle, request, handler, context);
+  }
+
+  /**
    * <p>Disables Health from working with Organizations. To call this operation, you
    * must sign in to the organization's management account. For more information, see
    * <a

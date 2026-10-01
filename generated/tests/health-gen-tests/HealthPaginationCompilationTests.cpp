@@ -11,6 +11,7 @@
 #include <aws/health/model/DescribeAffectedAccountsForOrganizationPaginationTraits.h>
 #include <aws/health/model/DescribeAffectedEntitiesForOrganizationPaginationTraits.h>
 #include <aws/health/model/DescribeEventsPaginationTraits.h>
+#include <aws/health/model/DescribeServiceLifecyclePaginationTraits.h>
 #include <aws/health/model/DescribeAffectedEntitiesPaginationTraits.h>
 #include <aws/health/model/DescribeEventAggregatesPaginationTraits.h>
 #include <aws/health/model/DescribeEventsForOrganizationPaginationTraits.h>

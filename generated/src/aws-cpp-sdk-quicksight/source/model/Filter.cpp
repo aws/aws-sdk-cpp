@@ -50,6 +50,10 @@ Filter& Filter::operator=(JsonView jsonValue) {
     m_nestedFilter = jsonValue.GetObject("NestedFilter");
     m_nestedFilterHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("HierarchyFilter")) {
+    m_hierarchyFilter = jsonValue.GetObject("HierarchyFilter");
+    m_hierarchyFilterHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -86,6 +90,10 @@ JsonValue Filter::Jsonize() const {
 
   if (m_nestedFilterHasBeenSet) {
     payload.WithObject("NestedFilter", m_nestedFilter.Jsonize());
+  }
+
+  if (m_hierarchyFilterHasBeenSet) {
+    payload.WithObject("HierarchyFilter", m_hierarchyFilter.Jsonize());
   }
 
   return payload;

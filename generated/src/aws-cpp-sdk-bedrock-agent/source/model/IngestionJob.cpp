@@ -57,6 +57,10 @@ IngestionJob& IngestionJob::operator=(JsonView jsonValue) {
     m_updatedAt = jsonValue.GetString("updatedAt");
     m_updatedAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("textReadyAt")) {
+    m_textReadyAt = jsonValue.GetString("textReadyAt");
+    m_textReadyAtHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -101,6 +105,10 @@ JsonValue IngestionJob::Jsonize() const {
 
   if (m_updatedAtHasBeenSet) {
     payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_textReadyAtHasBeenSet) {
+    payload.WithString("textReadyAt", m_textReadyAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

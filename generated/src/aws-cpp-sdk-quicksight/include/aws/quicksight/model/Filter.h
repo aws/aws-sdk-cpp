@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/CategoryFilter.h>
+#include <aws/quicksight/model/HierarchyFilter.h>
 #include <aws/quicksight/model/NestedFilter.h>
 #include <aws/quicksight/model/NumericEqualityFilter.h>
 #include <aws/quicksight/model/NumericRangeFilter.h>
@@ -193,6 +194,27 @@ class Filter {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A <code>HierarchyFilter</code> filters data by drilling down through an
+   * ordered list of columns. Each level in the list narrows the data by one column,
+   * and the selected values at each level determine which values are available at
+   * the next.</p>
+   */
+  inline const HierarchyFilter& GetHierarchyFilter() const { return m_hierarchyFilter; }
+  inline bool HierarchyFilterHasBeenSet() const { return m_hierarchyFilterHasBeenSet; }
+  template <typename HierarchyFilterT = HierarchyFilter>
+  void SetHierarchyFilter(HierarchyFilterT&& value) {
+    m_hierarchyFilterHasBeenSet = true;
+    m_hierarchyFilter = std::forward<HierarchyFilterT>(value);
+  }
+  template <typename HierarchyFilterT = HierarchyFilter>
+  Filter& WithHierarchyFilter(HierarchyFilterT&& value) {
+    SetHierarchyFilter(std::forward<HierarchyFilterT>(value));
+    return *this;
+  }
+  ///@}
  private:
   CategoryFilter m_categoryFilter;
 
@@ -209,6 +231,8 @@ class Filter {
   TopBottomFilter m_topBottomFilter;
 
   NestedFilter m_nestedFilter;
+
+  HierarchyFilter m_hierarchyFilter;
   bool m_categoryFilterHasBeenSet = false;
   bool m_numericRangeFilterHasBeenSet = false;
   bool m_numericEqualityFilterHasBeenSet = false;
@@ -217,6 +241,7 @@ class Filter {
   bool m_relativeDatesFilterHasBeenSet = false;
   bool m_topBottomFilterHasBeenSet = false;
   bool m_nestedFilterHasBeenSet = false;
+  bool m_hierarchyFilterHasBeenSet = false;
 };
 
 }  // namespace Model

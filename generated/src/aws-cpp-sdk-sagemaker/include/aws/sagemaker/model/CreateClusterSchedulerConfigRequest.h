@@ -35,7 +35,9 @@ class CreateClusterSchedulerConfigRequest : public SageMakerRequest {
 
   ///@{
   /**
-   * <p>Name for the cluster policy.</p>
+   * <p>The name for the cluster policy. The name must be unique within the SageMaker
+   * AI HyperPod cluster specified by <code>ClusterArn</code>. You can use the same
+   * name in other clusters within a Region or across Regions.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

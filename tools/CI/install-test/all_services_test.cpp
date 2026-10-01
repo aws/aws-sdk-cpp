@@ -157,6 +157,7 @@
 #include <aws/email/SESClient.h>
 #include <aws/emr-containers/EMRContainersClient.h>
 #include <aws/emr-serverless/EMRServerlessClient.h>
+#include <aws/endusermessaging/EndUserMessagingClient.h>
 #include <aws/entityresolution/EntityResolutionClient.h>
 #include <aws/es/ElasticsearchServiceClient.h>
 #include <aws/eventbridge/EventBridgeClient.h>
@@ -231,6 +232,7 @@
 #include <aws/lakeformation/LakeFormationClient.h>
 #include <aws/lambda-core/LambdaCoreClient.h>
 #include <aws/lambda-microvms/LambdaMicrovmsClient.h>
+#include <aws/lambda-web/LambdaWebClient.h>
 #include <aws/lambda/LambdaClient.h>
 #include <aws/launch-wizard/LaunchWizardClient.h>
 #include <aws/lex-models/LexModelBuildingServiceClient.h>

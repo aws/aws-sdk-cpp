@@ -46,6 +46,10 @@ IngestionJobSummary& IngestionJobSummary::operator=(JsonView jsonValue) {
     m_updatedAt = jsonValue.GetString("updatedAt");
     m_updatedAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("textReadyAt")) {
+    m_textReadyAt = jsonValue.GetString("textReadyAt");
+    m_textReadyAtHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("statistics")) {
     m_statistics = jsonValue.GetObject("statistics");
     m_statisticsHasBeenSet = true;
@@ -82,6 +86,10 @@ JsonValue IngestionJobSummary::Jsonize() const {
 
   if (m_updatedAtHasBeenSet) {
     payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_textReadyAtHasBeenSet) {
+    payload.WithString("textReadyAt", m_textReadyAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if (m_statisticsHasBeenSet) {

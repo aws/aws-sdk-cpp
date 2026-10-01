@@ -51,6 +51,9 @@
 #include <aws/health/model/DescribeEventsResult.h>
 #include <aws/health/model/DescribeHealthServiceStatusForOrganizationRequest.h>
 #include <aws/health/model/DescribeHealthServiceStatusForOrganizationResult.h>
+#include <aws/health/model/DescribeServiceLifecyclePaginationTraits.h>
+#include <aws/health/model/DescribeServiceLifecycleRequest.h>
+#include <aws/health/model/DescribeServiceLifecycleResult.h>
 #include <aws/health/model/DisableHealthServiceAccessForOrganizationRequest.h>
 #include <aws/health/model/EnableHealthServiceAccessForOrganizationRequest.h>
 #include <aws/health/model/EntityAccountFilter.h>
@@ -72,12 +75,15 @@
 #include <aws/health/model/EventTypeCategory.h>
 #include <aws/health/model/EventTypeFilter.h>
 #include <aws/health/model/EventTypePersona.h>
+#include <aws/health/model/LifecycleEvent.h>
 #include <aws/health/model/OrganizationAffectedEntitiesErrorItem.h>
 #include <aws/health/model/OrganizationEntityAggregate.h>
 #include <aws/health/model/OrganizationEvent.h>
 #include <aws/health/model/OrganizationEventDetails.h>
 #include <aws/health/model/OrganizationEventDetailsErrorItem.h>
 #include <aws/health/model/OrganizationEventFilter.h>
+#include <aws/health/model/ServiceLifecycle.h>
+#include <aws/health/model/ServiceLifecycleFilter.h>
 
 using HealthIncludeTest = ::testing::Test;
 

@@ -19,12 +19,14 @@
 #include <aws/securityhub/model/GetFindingsV2PaginationTraits.h>
 #include <aws/securityhub/model/GetInsightsPaginationTraits.h>
 #include <aws/securityhub/model/GetRecommendedPolicyV2PaginationTraits.h>
+#include <aws/securityhub/model/GetRemediationsV2PaginationTraits.h>
 #include <aws/securityhub/model/GetResourcesTrendsV2PaginationTraits.h>
 #include <aws/securityhub/model/GetResourcesV2PaginationTraits.h>
 #include <aws/securityhub/model/ListAggregatorsV2PaginationTraits.h>
 #include <aws/securityhub/model/ListConfigurationPoliciesPaginationTraits.h>
 #include <aws/securityhub/model/ListConfigurationPolicyAssociationsPaginationTraits.h>
 #include <aws/securityhub/model/ListEnabledProductsForImportPaginationTraits.h>
+#include <aws/securityhub/model/ListExposuresByRemediationV2PaginationTraits.h>
 #include <aws/securityhub/model/ListFindingAggregatorsPaginationTraits.h>
 #include <aws/securityhub/model/ListFreeTrialStatusesV2PaginationTraits.h>
 #include <aws/securityhub/model/ListInvitationsPaginationTraits.h>
@@ -183,6 +185,18 @@ class SecurityHubPaginationBase {
   }
 
   /**
+   * Create a paginator for GetRemediationsV2 operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetRemediationsV2Request,
+                                    Pagination::GetRemediationsV2PaginationTraits<DerivedClient>>
+  GetRemediationsV2Paginator(const Model::GetRemediationsV2Request& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetRemediationsV2Request,
+                                             Pagination::GetRemediationsV2PaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
    * Create a paginator for GetResourcesTrendsV2 operation
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetResourcesTrendsV2Request,
@@ -250,6 +264,18 @@ class SecurityHubPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEnabledProductsForImportRequest,
                                              Pagination::ListEnabledProductsForImportPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListExposuresByRemediationV2 operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListExposuresByRemediationV2Request,
+                                    Pagination::ListExposuresByRemediationV2PaginationTraits<DerivedClient>>
+  ListExposuresByRemediationV2Paginator(const Model::ListExposuresByRemediationV2Request& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListExposuresByRemediationV2Request,
+                                             Pagination::ListExposuresByRemediationV2PaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

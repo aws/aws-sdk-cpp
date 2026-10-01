@@ -14,6 +14,7 @@
 #include <aws/health/model/DescribeEventTypesPaginationTraits.h>
 #include <aws/health/model/DescribeEventsForOrganizationPaginationTraits.h>
 #include <aws/health/model/DescribeEventsPaginationTraits.h>
+#include <aws/health/model/DescribeServiceLifecyclePaginationTraits.h>
 
 #include <memory>
 
@@ -103,6 +104,18 @@ class HealthPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeEventTypesRequest,
                                              Pagination::DescribeEventTypesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for DescribeServiceLifecycle operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeServiceLifecycleRequest,
+                                    Pagination::DescribeServiceLifecyclePaginationTraits<DerivedClient>>
+  DescribeServiceLifecyclePaginator(const Model::DescribeServiceLifecycleRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeServiceLifecycleRequest,
+                                             Pagination::DescribeServiceLifecyclePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 };

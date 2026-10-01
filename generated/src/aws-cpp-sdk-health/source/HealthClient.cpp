@@ -32,6 +32,7 @@
 #include <aws/health/model/DescribeEventsForOrganizationRequest.h>
 #include <aws/health/model/DescribeEventsRequest.h>
 #include <aws/health/model/DescribeHealthServiceStatusForOrganizationRequest.h>
+#include <aws/health/model/DescribeServiceLifecycleRequest.h>
 #include <aws/health/model/DisableHealthServiceAccessForOrganizationRequest.h>
 #include <aws/health/model/EnableHealthServiceAccessForOrganizationRequest.h>
 #include <smithy/tracing/TracingUtils.h>
@@ -260,6 +261,12 @@ DescribeHealthServiceStatusForOrganizationOutcome HealthClient::DescribeHealthSe
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeHealthServiceStatusForOrganizationOutcome(result.GetResultWithOwnership())
                             : DescribeHealthServiceStatusForOrganizationOutcome(std::move(result.GetError()));
+}
+
+DescribeServiceLifecycleOutcome HealthClient::DescribeServiceLifecycle(const DescribeServiceLifecycleRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeServiceLifecycleOutcome(result.GetResultWithOwnership())
+                            : DescribeServiceLifecycleOutcome(std::move(result.GetError()));
 }
 
 DisableHealthServiceAccessForOrganizationOutcome HealthClient::DisableHealthServiceAccessForOrganization(

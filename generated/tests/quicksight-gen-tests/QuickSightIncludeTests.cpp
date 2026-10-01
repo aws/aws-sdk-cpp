@@ -568,6 +568,8 @@
 #include <aws/quicksight/model/DefaultFormatting.h>
 #include <aws/quicksight/model/DefaultFreeFormLayoutConfiguration.h>
 #include <aws/quicksight/model/DefaultGridLayoutConfiguration.h>
+#include <aws/quicksight/model/DefaultHierarchyFilterDropDownControlOptions.h>
+#include <aws/quicksight/model/DefaultHierarchyFilterListControlOptions.h>
 #include <aws/quicksight/model/DefaultInteractiveLayoutConfiguration.h>
 #include <aws/quicksight/model/DefaultNewSheetConfiguration.h>
 #include <aws/quicksight/model/DefaultPaginatedLayoutConfiguration.h>
@@ -1023,6 +1025,15 @@
 #include <aws/quicksight/model/HeatMapFieldWells.h>
 #include <aws/quicksight/model/HeatMapSortConfiguration.h>
 #include <aws/quicksight/model/HeatMapVisual.h>
+#include <aws/quicksight/model/HierarchyFilter.h>
+#include <aws/quicksight/model/HierarchyFilterDropDownControl.h>
+#include <aws/quicksight/model/HierarchyFilterDropDownControlDisplayOptions.h>
+#include <aws/quicksight/model/HierarchyFilterLevel.h>
+#include <aws/quicksight/model/HierarchyFilterListControl.h>
+#include <aws/quicksight/model/HierarchyFilterListControlDisplayOptions.h>
+#include <aws/quicksight/model/HierarchyFilterListControlSearchOptions.h>
+#include <aws/quicksight/model/HierarchyFilterMatchOperator.h>
+#include <aws/quicksight/model/HierarchyFilterNode.h>
 #include <aws/quicksight/model/HistogramAggregatedFieldWells.h>
 #include <aws/quicksight/model/HistogramBinOptions.h>
 #include <aws/quicksight/model/HistogramBinType.h>

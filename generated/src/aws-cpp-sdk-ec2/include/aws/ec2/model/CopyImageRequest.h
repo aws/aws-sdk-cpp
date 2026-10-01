@@ -217,8 +217,12 @@ class CopyImageRequest : public EC2Request {
    * <p>Specifies whether to copy your user-defined AMI tags to the new AMI.</p>
    * <p>The following tags are not be copied:</p> <ul> <li> <p>System tags (prefixed
    * with <code>aws:</code>)</p> </li> <li> <p>For public and shared AMIs,
-   * user-defined tags that are attached by other Amazon Web Services accounts</p>
-   * </li> </ul> <p>Default: Your user-defined AMI tags are not copied.</p>
+   * user-defined tags that are attached by other Amazon Web Services accounts,
+   * except tags with the <code>ec2:SharedTag/</code> prefix. For more information
+   * about tag sharing, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#sharing-tags">Sharing
+   * tags</a> in the <i>Amazon EC2 User Guide</i>.</p> </li> </ul> <p>Default: Your
+   * user-defined AMI tags are not copied.</p>
    */
   inline bool GetCopyImageTags() const { return m_copyImageTags; }
   inline bool CopyImageTagsHasBeenSet() const { return m_copyImageTagsHasBeenSet; }

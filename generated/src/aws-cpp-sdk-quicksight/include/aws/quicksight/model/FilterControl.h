@@ -13,6 +13,8 @@
 #include <aws/quicksight/model/FilterSliderControl.h>
 #include <aws/quicksight/model/FilterTextAreaControl.h>
 #include <aws/quicksight/model/FilterTextFieldControl.h>
+#include <aws/quicksight/model/HierarchyFilterDropDownControl.h>
+#include <aws/quicksight/model/HierarchyFilterListControl.h>
 
 #include <utility>
 
@@ -187,6 +189,46 @@ class FilterControl {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A control from a hierarchy filter that displays the hierarchy as a list. You
+   * can expand a value to see and select the values beneath it, and select either a
+   * single value or multiple values.</p>
+   */
+  inline const HierarchyFilterListControl& GetHierarchyList() const { return m_hierarchyList; }
+  inline bool HierarchyListHasBeenSet() const { return m_hierarchyListHasBeenSet; }
+  template <typename HierarchyListT = HierarchyFilterListControl>
+  void SetHierarchyList(HierarchyListT&& value) {
+    m_hierarchyListHasBeenSet = true;
+    m_hierarchyList = std::forward<HierarchyListT>(value);
+  }
+  template <typename HierarchyListT = HierarchyFilterListControl>
+  FilterControl& WithHierarchyList(HierarchyListT&& value) {
+    SetHierarchyList(std::forward<HierarchyListT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A control from a hierarchy filter that displays the hierarchy as a dropdown
+   * list. You can expand a value to see and select the values beneath it, and select
+   * either a single value or multiple values.</p>
+   */
+  inline const HierarchyFilterDropDownControl& GetHierarchyDropdown() const { return m_hierarchyDropdown; }
+  inline bool HierarchyDropdownHasBeenSet() const { return m_hierarchyDropdownHasBeenSet; }
+  template <typename HierarchyDropdownT = HierarchyFilterDropDownControl>
+  void SetHierarchyDropdown(HierarchyDropdownT&& value) {
+    m_hierarchyDropdownHasBeenSet = true;
+    m_hierarchyDropdown = std::forward<HierarchyDropdownT>(value);
+  }
+  template <typename HierarchyDropdownT = HierarchyFilterDropDownControl>
+  FilterControl& WithHierarchyDropdown(HierarchyDropdownT&& value) {
+    SetHierarchyDropdown(std::forward<HierarchyDropdownT>(value));
+    return *this;
+  }
+  ///@}
  private:
   FilterDateTimePickerControl m_dateTimePicker;
 
@@ -203,6 +245,10 @@ class FilterControl {
   FilterRelativeDateTimeControl m_relativeDateTime;
 
   FilterCrossSheetControl m_crossSheet;
+
+  HierarchyFilterListControl m_hierarchyList;
+
+  HierarchyFilterDropDownControl m_hierarchyDropdown;
   bool m_dateTimePickerHasBeenSet = false;
   bool m_listHasBeenSet = false;
   bool m_dropdownHasBeenSet = false;
@@ -211,6 +257,8 @@ class FilterControl {
   bool m_sliderHasBeenSet = false;
   bool m_relativeDateTimeHasBeenSet = false;
   bool m_crossSheetHasBeenSet = false;
+  bool m_hierarchyListHasBeenSet = false;
+  bool m_hierarchyDropdownHasBeenSet = false;
 };
 
 }  // namespace Model

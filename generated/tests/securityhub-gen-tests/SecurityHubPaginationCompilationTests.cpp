@@ -20,6 +20,7 @@
 #include <aws/securityhub/model/DescribeStandardsControlsPaginationTraits.h>
 #include <aws/securityhub/model/ListFindingAggregatorsPaginationTraits.h>
 #include <aws/securityhub/model/DescribeProductsPaginationTraits.h>
+#include <aws/securityhub/model/GetRemediationsV2PaginationTraits.h>
 #include <aws/securityhub/model/GetFindingsTrendsV2PaginationTraits.h>
 #include <aws/securityhub/model/ListConfigurationPoliciesPaginationTraits.h>
 #include <aws/securityhub/model/ListEnabledProductsForImportPaginationTraits.h>
@@ -31,6 +32,7 @@
 #include <aws/securityhub/model/GetEnabledStandardsPaginationTraits.h>
 #include <aws/securityhub/model/DescribeStandardsPaginationTraits.h>
 #include <aws/securityhub/model/GetRecommendedPolicyV2PaginationTraits.h>
+#include <aws/securityhub/model/ListExposuresByRemediationV2PaginationTraits.h>
 #include <aws/securityhub/model/ListAggregatorsV2PaginationTraits.h>
 #include <aws/securityhub/model/GetResourcesTrendsV2PaginationTraits.h>
 

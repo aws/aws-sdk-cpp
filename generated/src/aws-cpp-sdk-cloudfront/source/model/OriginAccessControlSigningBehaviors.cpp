@@ -18,6 +18,7 @@ namespace OriginAccessControlSigningBehaviorsMapper {
 static const int never_HASH = HashingUtils::HashString("never");
 static const int always_HASH = HashingUtils::HashString("always");
 static const int no_override_HASH = HashingUtils::HashString("no-override");
+static const int always_amz_auth_HASH = HashingUtils::HashString("always-amz-auth");
 
 OriginAccessControlSigningBehaviors GetOriginAccessControlSigningBehaviorsForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ OriginAccessControlSigningBehaviors GetOriginAccessControlSigningBehaviorsForNam
     return OriginAccessControlSigningBehaviors::always;
   } else if (hashCode == no_override_HASH) {
     return OriginAccessControlSigningBehaviors::no_override;
+  } else if (hashCode == always_amz_auth_HASH) {
+    return OriginAccessControlSigningBehaviors::always_amz_auth;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForOriginAccessControlSigningBehaviors(OriginAccessControlSig
       return "always";
     case OriginAccessControlSigningBehaviors::no_override:
       return "no-override";
+    case OriginAccessControlSigningBehaviors::always_amz_auth:
+      return "always-amz-auth";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

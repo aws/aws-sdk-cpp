@@ -137,6 +137,35 @@ class CreateWorkflowRequest : public TransferRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the log groups to which your workflow logs are sent.</p> <p>To
+   * specify a log group, you must provide the ARN for an existing log group. In this
+   * case, the format of the log group is as follows:</p> <p>
+   * <code>arn:partition:logs:region-name:amazon-account-id:log-group:log-group-name:*</code>
+   * </p> <p>For example,
+   * <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code> </p>
+   */
+  inline const Aws::Vector<Aws::String>& GetStructuredLogDestinations() const { return m_structuredLogDestinations; }
+  inline bool StructuredLogDestinationsHasBeenSet() const { return m_structuredLogDestinationsHasBeenSet; }
+  template <typename StructuredLogDestinationsT = Aws::Vector<Aws::String>>
+  void SetStructuredLogDestinations(StructuredLogDestinationsT&& value) {
+    m_structuredLogDestinationsHasBeenSet = true;
+    m_structuredLogDestinations = std::forward<StructuredLogDestinationsT>(value);
+  }
+  template <typename StructuredLogDestinationsT = Aws::Vector<Aws::String>>
+  CreateWorkflowRequest& WithStructuredLogDestinations(StructuredLogDestinationsT&& value) {
+    SetStructuredLogDestinations(std::forward<StructuredLogDestinationsT>(value));
+    return *this;
+  }
+  template <typename StructuredLogDestinationsT = Aws::String>
+  CreateWorkflowRequest& AddStructuredLogDestinations(StructuredLogDestinationsT&& value) {
+    m_structuredLogDestinationsHasBeenSet = true;
+    m_structuredLogDestinations.emplace_back(std::forward<StructuredLogDestinationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_description;
 
@@ -145,10 +174,13 @@ class CreateWorkflowRequest : public TransferRequest {
   Aws::Vector<WorkflowStep> m_onExceptionSteps;
 
   Aws::Vector<Tag> m_tags;
+
+  Aws::Vector<Aws::String> m_structuredLogDestinations;
   bool m_descriptionHasBeenSet = false;
   bool m_stepsHasBeenSet = false;
   bool m_onExceptionStepsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_structuredLogDestinationsHasBeenSet = false;
 };
 
 }  // namespace Model

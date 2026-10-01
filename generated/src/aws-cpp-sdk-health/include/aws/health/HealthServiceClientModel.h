@@ -38,6 +38,8 @@
 #include <aws/health/model/DescribeEventsResult.h>
 #include <aws/health/model/DescribeHealthServiceStatusForOrganizationRequest.h>
 #include <aws/health/model/DescribeHealthServiceStatusForOrganizationResult.h>
+#include <aws/health/model/DescribeServiceLifecycleRequest.h>
+#include <aws/health/model/DescribeServiceLifecycleResult.h>
 #include <aws/health/model/DisableHealthServiceAccessForOrganizationRequest.h>
 #include <aws/health/model/EnableHealthServiceAccessForOrganizationRequest.h>
 /* End of service model headers required in HealthClient header */
@@ -85,6 +87,7 @@ class DescribeEventTypesRequest;
 class DescribeEventsRequest;
 class DescribeEventsForOrganizationRequest;
 class DescribeHealthServiceStatusForOrganizationRequest;
+class DescribeServiceLifecycleRequest;
 class DisableHealthServiceAccessForOrganizationRequest;
 class EnableHealthServiceAccessForOrganizationRequest;
 /* End of service model forward declarations required in HealthClient header */
@@ -103,6 +106,7 @@ typedef Aws::Utils::Outcome<DescribeEventsResult, HealthError> DescribeEventsOut
 typedef Aws::Utils::Outcome<DescribeEventsForOrganizationResult, HealthError> DescribeEventsForOrganizationOutcome;
 typedef Aws::Utils::Outcome<DescribeHealthServiceStatusForOrganizationResult, HealthError>
     DescribeHealthServiceStatusForOrganizationOutcome;
+typedef Aws::Utils::Outcome<DescribeServiceLifecycleResult, HealthError> DescribeServiceLifecycleOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, HealthError> DisableHealthServiceAccessForOrganizationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, HealthError> EnableHealthServiceAccessForOrganizationOutcome;
 /* End of service model Outcome class definitions */
@@ -120,6 +124,7 @@ typedef std::future<DescribeEventTypesOutcome> DescribeEventTypesOutcomeCallable
 typedef std::future<DescribeEventsOutcome> DescribeEventsOutcomeCallable;
 typedef std::future<DescribeEventsForOrganizationOutcome> DescribeEventsForOrganizationOutcomeCallable;
 typedef std::future<DescribeHealthServiceStatusForOrganizationOutcome> DescribeHealthServiceStatusForOrganizationOutcomeCallable;
+typedef std::future<DescribeServiceLifecycleOutcome> DescribeServiceLifecycleOutcomeCallable;
 typedef std::future<DisableHealthServiceAccessForOrganizationOutcome> DisableHealthServiceAccessForOrganizationOutcomeCallable;
 typedef std::future<EnableHealthServiceAccessForOrganizationOutcome> EnableHealthServiceAccessForOrganizationOutcomeCallable;
 /* End of service model Outcome callable definitions */
@@ -170,6 +175,9 @@ typedef std::function<void(const HealthClient*, const Model::DescribeHealthServi
                            const Model::DescribeHealthServiceStatusForOrganizationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeHealthServiceStatusForOrganizationResponseReceivedHandler;
+typedef std::function<void(const HealthClient*, const Model::DescribeServiceLifecycleRequest&,
+                           const Model::DescribeServiceLifecycleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeServiceLifecycleResponseReceivedHandler;
 typedef std::function<void(const HealthClient*, const Model::DisableHealthServiceAccessForOrganizationRequest&,
                            const Model::DisableHealthServiceAccessForOrganizationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

@@ -113,6 +113,8 @@
 #include <aws/securityhub/model/GetInvitationsCountResult.h>
 #include <aws/securityhub/model/GetMembersResult.h>
 #include <aws/securityhub/model/GetRecommendedPolicyV2Result.h>
+#include <aws/securityhub/model/GetRemediationsV2Request.h>
+#include <aws/securityhub/model/GetRemediationsV2Result.h>
 #include <aws/securityhub/model/GetResourcesStatisticsV2Result.h>
 #include <aws/securityhub/model/GetResourcesTrendsV2Result.h>
 #include <aws/securityhub/model/GetResourcesV2Request.h>
@@ -135,6 +137,7 @@
 #include <aws/securityhub/model/ListConnectorsV2Result.h>
 #include <aws/securityhub/model/ListEnabledProductsForImportRequest.h>
 #include <aws/securityhub/model/ListEnabledProductsForImportResult.h>
+#include <aws/securityhub/model/ListExposuresByRemediationV2Result.h>
 #include <aws/securityhub/model/ListFindingAggregatorsRequest.h>
 #include <aws/securityhub/model/ListFindingAggregatorsResult.h>
 #include <aws/securityhub/model/ListFreeTrialStatusesV2Request.h>
@@ -276,6 +279,7 @@ class GetInsightsRequest;
 class GetInvitationsCountRequest;
 class GetMembersRequest;
 class GetRecommendedPolicyV2Request;
+class GetRemediationsV2Request;
 class GetResourcesStatisticsV2Request;
 class GetResourcesTrendsV2Request;
 class GetResourcesV2Request;
@@ -289,6 +293,7 @@ class ListConfigurationPolicyAssociationsRequest;
 class ListConnectorsRequest;
 class ListConnectorsV2Request;
 class ListEnabledProductsForImportRequest;
+class ListExposuresByRemediationV2Request;
 class ListFindingAggregatorsRequest;
 class ListFreeTrialStatusesV2Request;
 class ListInvitationsRequest;
@@ -393,6 +398,7 @@ typedef Aws::Utils::Outcome<GetInsightsResult, SecurityHubError> GetInsightsOutc
 typedef Aws::Utils::Outcome<GetInvitationsCountResult, SecurityHubError> GetInvitationsCountOutcome;
 typedef Aws::Utils::Outcome<GetMembersResult, SecurityHubError> GetMembersOutcome;
 typedef Aws::Utils::Outcome<GetRecommendedPolicyV2Result, SecurityHubError> GetRecommendedPolicyV2Outcome;
+typedef Aws::Utils::Outcome<GetRemediationsV2Result, SecurityHubError> GetRemediationsV2Outcome;
 typedef Aws::Utils::Outcome<GetResourcesStatisticsV2Result, SecurityHubError> GetResourcesStatisticsV2Outcome;
 typedef Aws::Utils::Outcome<GetResourcesTrendsV2Result, SecurityHubError> GetResourcesTrendsV2Outcome;
 typedef Aws::Utils::Outcome<GetResourcesV2Result, SecurityHubError> GetResourcesV2Outcome;
@@ -406,6 +412,7 @@ typedef Aws::Utils::Outcome<ListConfigurationPolicyAssociationsResult, SecurityH
 typedef Aws::Utils::Outcome<ListConnectorsResult, SecurityHubError> ListConnectorsOutcome;
 typedef Aws::Utils::Outcome<ListConnectorsV2Result, SecurityHubError> ListConnectorsV2Outcome;
 typedef Aws::Utils::Outcome<ListEnabledProductsForImportResult, SecurityHubError> ListEnabledProductsForImportOutcome;
+typedef Aws::Utils::Outcome<ListExposuresByRemediationV2Result, SecurityHubError> ListExposuresByRemediationV2Outcome;
 typedef Aws::Utils::Outcome<ListFindingAggregatorsResult, SecurityHubError> ListFindingAggregatorsOutcome;
 typedef Aws::Utils::Outcome<ListFreeTrialStatusesV2Result, SecurityHubError> ListFreeTrialStatusesV2Outcome;
 typedef Aws::Utils::Outcome<ListInvitationsResult, SecurityHubError> ListInvitationsOutcome;
@@ -510,6 +517,7 @@ typedef std::future<GetInsightsOutcome> GetInsightsOutcomeCallable;
 typedef std::future<GetInvitationsCountOutcome> GetInvitationsCountOutcomeCallable;
 typedef std::future<GetMembersOutcome> GetMembersOutcomeCallable;
 typedef std::future<GetRecommendedPolicyV2Outcome> GetRecommendedPolicyV2OutcomeCallable;
+typedef std::future<GetRemediationsV2Outcome> GetRemediationsV2OutcomeCallable;
 typedef std::future<GetResourcesStatisticsV2Outcome> GetResourcesStatisticsV2OutcomeCallable;
 typedef std::future<GetResourcesTrendsV2Outcome> GetResourcesTrendsV2OutcomeCallable;
 typedef std::future<GetResourcesV2Outcome> GetResourcesV2OutcomeCallable;
@@ -523,6 +531,7 @@ typedef std::future<ListConfigurationPolicyAssociationsOutcome> ListConfiguratio
 typedef std::future<ListConnectorsOutcome> ListConnectorsOutcomeCallable;
 typedef std::future<ListConnectorsV2Outcome> ListConnectorsV2OutcomeCallable;
 typedef std::future<ListEnabledProductsForImportOutcome> ListEnabledProductsForImportOutcomeCallable;
+typedef std::future<ListExposuresByRemediationV2Outcome> ListExposuresByRemediationV2OutcomeCallable;
 typedef std::future<ListFindingAggregatorsOutcome> ListFindingAggregatorsOutcomeCallable;
 typedef std::future<ListFreeTrialStatusesV2Outcome> ListFreeTrialStatusesV2OutcomeCallable;
 typedef std::future<ListInvitationsOutcome> ListInvitationsOutcomeCallable;
@@ -791,6 +800,9 @@ typedef std::function<void(const SecurityHubClient*, const Model::GetMembersRequ
 typedef std::function<void(const SecurityHubClient*, const Model::GetRecommendedPolicyV2Request&,
                            const Model::GetRecommendedPolicyV2Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetRecommendedPolicyV2ResponseReceivedHandler;
+typedef std::function<void(const SecurityHubClient*, const Model::GetRemediationsV2Request&, const Model::GetRemediationsV2Outcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetRemediationsV2ResponseReceivedHandler;
 typedef std::function<void(const SecurityHubClient*, const Model::GetResourcesStatisticsV2Request&,
                            const Model::GetResourcesStatisticsV2Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetResourcesStatisticsV2ResponseReceivedHandler;
@@ -833,6 +845,10 @@ typedef std::function<void(const SecurityHubClient*, const Model::ListEnabledPro
                            const Model::ListEnabledProductsForImportOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListEnabledProductsForImportResponseReceivedHandler;
+typedef std::function<void(const SecurityHubClient*, const Model::ListExposuresByRemediationV2Request&,
+                           const Model::ListExposuresByRemediationV2Outcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListExposuresByRemediationV2ResponseReceivedHandler;
 typedef std::function<void(const SecurityHubClient*, const Model::ListFindingAggregatorsRequest&,
                            const Model::ListFindingAggregatorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListFindingAggregatorsResponseReceivedHandler;

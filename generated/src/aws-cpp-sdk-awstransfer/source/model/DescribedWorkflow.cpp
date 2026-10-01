@@ -51,6 +51,14 @@ DescribedWorkflow& DescribedWorkflow::operator=(JsonView jsonValue) {
     }
     m_tagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("StructuredLogDestinations")) {
+    Aws::Utils::Array<JsonView> structuredLogDestinationsJsonList = jsonValue.GetArray("StructuredLogDestinations");
+    for (unsigned structuredLogDestinationsIndex = 0; structuredLogDestinationsIndex < structuredLogDestinationsJsonList.GetLength();
+         ++structuredLogDestinationsIndex) {
+      m_structuredLogDestinations.push_back(structuredLogDestinationsJsonList[structuredLogDestinationsIndex].AsString());
+    }
+    m_structuredLogDestinationsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -91,6 +99,16 @@ JsonValue DescribedWorkflow::Jsonize() const {
       tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
     }
     payload.WithArray("Tags", std::move(tagsJsonList));
+  }
+
+  if (m_structuredLogDestinationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> structuredLogDestinationsJsonList(m_structuredLogDestinations.size());
+    for (unsigned structuredLogDestinationsIndex = 0; structuredLogDestinationsIndex < structuredLogDestinationsJsonList.GetLength();
+         ++structuredLogDestinationsIndex) {
+      structuredLogDestinationsJsonList[structuredLogDestinationsIndex].AsString(
+          m_structuredLogDestinations[structuredLogDestinationsIndex]);
+    }
+    payload.WithArray("StructuredLogDestinations", std::move(structuredLogDestinationsJsonList));
   }
 
   return payload;

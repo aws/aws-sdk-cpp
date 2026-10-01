@@ -8,6 +8,8 @@
 #include <aws/quicksight/model/DefaultDateTimePickerControlOptions.h>
 #include <aws/quicksight/model/DefaultFilterDropDownControlOptions.h>
 #include <aws/quicksight/model/DefaultFilterListControlOptions.h>
+#include <aws/quicksight/model/DefaultHierarchyFilterDropDownControlOptions.h>
+#include <aws/quicksight/model/DefaultHierarchyFilterListControlOptions.h>
 #include <aws/quicksight/model/DefaultRelativeDateTimeControlOptions.h>
 #include <aws/quicksight/model/DefaultSliderControlOptions.h>
 #include <aws/quicksight/model/DefaultTextAreaControlOptions.h>
@@ -170,6 +172,44 @@ class DefaultFilterControlOptions {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The default options that correspond to the <code>HierarchyList</code> filter
+   * control type.</p>
+   */
+  inline const DefaultHierarchyFilterListControlOptions& GetDefaultHierarchyList() const { return m_defaultHierarchyList; }
+  inline bool DefaultHierarchyListHasBeenSet() const { return m_defaultHierarchyListHasBeenSet; }
+  template <typename DefaultHierarchyListT = DefaultHierarchyFilterListControlOptions>
+  void SetDefaultHierarchyList(DefaultHierarchyListT&& value) {
+    m_defaultHierarchyListHasBeenSet = true;
+    m_defaultHierarchyList = std::forward<DefaultHierarchyListT>(value);
+  }
+  template <typename DefaultHierarchyListT = DefaultHierarchyFilterListControlOptions>
+  DefaultFilterControlOptions& WithDefaultHierarchyList(DefaultHierarchyListT&& value) {
+    SetDefaultHierarchyList(std::forward<DefaultHierarchyListT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The default options that correspond to the <code>HierarchyDropdown</code>
+   * filter control type.</p>
+   */
+  inline const DefaultHierarchyFilterDropDownControlOptions& GetDefaultHierarchyDropdown() const { return m_defaultHierarchyDropdown; }
+  inline bool DefaultHierarchyDropdownHasBeenSet() const { return m_defaultHierarchyDropdownHasBeenSet; }
+  template <typename DefaultHierarchyDropdownT = DefaultHierarchyFilterDropDownControlOptions>
+  void SetDefaultHierarchyDropdown(DefaultHierarchyDropdownT&& value) {
+    m_defaultHierarchyDropdownHasBeenSet = true;
+    m_defaultHierarchyDropdown = std::forward<DefaultHierarchyDropdownT>(value);
+  }
+  template <typename DefaultHierarchyDropdownT = DefaultHierarchyFilterDropDownControlOptions>
+  DefaultFilterControlOptions& WithDefaultHierarchyDropdown(DefaultHierarchyDropdownT&& value) {
+    SetDefaultHierarchyDropdown(std::forward<DefaultHierarchyDropdownT>(value));
+    return *this;
+  }
+  ///@}
  private:
   DefaultDateTimePickerControlOptions m_defaultDateTimePickerOptions;
 
@@ -184,6 +224,10 @@ class DefaultFilterControlOptions {
   DefaultSliderControlOptions m_defaultSliderOptions;
 
   DefaultRelativeDateTimeControlOptions m_defaultRelativeDateTimeOptions;
+
+  DefaultHierarchyFilterListControlOptions m_defaultHierarchyList;
+
+  DefaultHierarchyFilterDropDownControlOptions m_defaultHierarchyDropdown;
   bool m_defaultDateTimePickerOptionsHasBeenSet = false;
   bool m_defaultListOptionsHasBeenSet = false;
   bool m_defaultDropdownOptionsHasBeenSet = false;
@@ -191,6 +235,8 @@ class DefaultFilterControlOptions {
   bool m_defaultTextAreaOptionsHasBeenSet = false;
   bool m_defaultSliderOptionsHasBeenSet = false;
   bool m_defaultRelativeDateTimeOptionsHasBeenSet = false;
+  bool m_defaultHierarchyListHasBeenSet = false;
+  bool m_defaultHierarchyDropdownHasBeenSet = false;
 };
 
 }  // namespace Model

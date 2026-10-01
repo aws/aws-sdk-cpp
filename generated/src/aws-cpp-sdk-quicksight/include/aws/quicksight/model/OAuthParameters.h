@@ -23,8 +23,8 @@ namespace Model {
 /**
  * <p>An object that contains information needed to create a data source connection
  * that uses OAuth client credentials. This option is available for data source
- * connections that are made with Snowflake and Starburst.</p><p><h3>See Also:</h3>
- * <a
+ * connections that are made with Snowflake, Starburst, and
+ * Databricks.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/OAuthParameters">AWS
  * API Reference</a></p>
  */

@@ -43,6 +43,16 @@ Aws::String CreateWorkflowRequest::SerializePayload() const {
     payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
+  if (m_structuredLogDestinationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> structuredLogDestinationsJsonList(m_structuredLogDestinations.size());
+    for (unsigned structuredLogDestinationsIndex = 0; structuredLogDestinationsIndex < structuredLogDestinationsJsonList.GetLength();
+         ++structuredLogDestinationsIndex) {
+      structuredLogDestinationsJsonList[structuredLogDestinationsIndex].AsString(
+          m_structuredLogDestinations[structuredLogDestinationsIndex]);
+    }
+    payload.WithArray("StructuredLogDestinations", std::move(structuredLogDestinationsJsonList));
+  }
+
   return payload.View().WriteReadable();
 }
 

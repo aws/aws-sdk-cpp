@@ -55,12 +55,12 @@ class FreeTrialStatus {
 
   ///@{
   /**
-   * <p>Whether the free trial period is currently active. Valid values:</p> <ul>
-   * <li> <p> <code>ACTIVE</code> specifies that the free trial period is
-   * ongoing.</p> </li> <li> <p> <code>INACTIVE</code> specifies that the free trial
-   * period has ended, or that it never started.</p> </li> </ul> <p>To determine
-   * whether a trial has expired, compare <code>ExpiresAt</code> to the current
-   * time.</p>
+   * <p>Specifies whether the free trial period is currently active. Valid
+   * values:</p> <ul> <li> <p> <code>ACTIVE</code> specifies that the free trial
+   * period is ongoing.</p> </li> <li> <p> <code>INACTIVE</code> specifies that the
+   * free trial period has ended, or that it never started.</p> </li> </ul> <p>To
+   * determine whether a trial has expired, compare <code>ExpiresAt</code> to the
+   * current time.</p>
    */
   inline FreeTrialStatusValue GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

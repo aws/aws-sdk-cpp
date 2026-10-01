@@ -30,6 +30,14 @@ DatabricksParameters& DatabricksParameters::operator=(JsonView jsonValue) {
     m_sqlEndpointPath = jsonValue.GetString("SqlEndpointPath");
     m_sqlEndpointPathHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AuthenticationType")) {
+    m_authenticationType = AuthenticationTypeMapper::GetAuthenticationTypeForName(jsonValue.GetString("AuthenticationType"));
+    m_authenticationTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("OAuthParameters")) {
+    m_oAuthParameters = jsonValue.GetObject("OAuthParameters");
+    m_oAuthParametersHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +54,14 @@ JsonValue DatabricksParameters::Jsonize() const {
 
   if (m_sqlEndpointPathHasBeenSet) {
     payload.WithString("SqlEndpointPath", m_sqlEndpointPath);
+  }
+
+  if (m_authenticationTypeHasBeenSet) {
+    payload.WithString("AuthenticationType", AuthenticationTypeMapper::GetNameForAuthenticationType(m_authenticationType));
+  }
+
+  if (m_oAuthParametersHasBeenSet) {
+    payload.WithObject("OAuthParameters", m_oAuthParameters.Jsonize());
   }
 
   return payload;

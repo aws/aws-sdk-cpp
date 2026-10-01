@@ -10,7 +10,7 @@
 namespace Aws {
 namespace CloudFront {
 namespace Model {
-enum class OriginAccessControlSigningBehaviors { NOT_SET, never, always, no_override };
+enum class OriginAccessControlSigningBehaviors { NOT_SET, never, always, no_override, always_amz_auth };
 
 namespace OriginAccessControlSigningBehaviorsMapper {
 AWS_CLOUDFRONT_API OriginAccessControlSigningBehaviors GetOriginAccessControlSigningBehaviorsForName(const Aws::String& name);

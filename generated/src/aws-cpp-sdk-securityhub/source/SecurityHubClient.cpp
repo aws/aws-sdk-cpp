@@ -95,6 +95,7 @@
 #include <aws/securityhub/model/GetInvitationsCountRequest.h>
 #include <aws/securityhub/model/GetMembersRequest.h>
 #include <aws/securityhub/model/GetRecommendedPolicyV2Request.h>
+#include <aws/securityhub/model/GetRemediationsV2Request.h>
 #include <aws/securityhub/model/GetResourcesStatisticsV2Request.h>
 #include <aws/securityhub/model/GetResourcesTrendsV2Request.h>
 #include <aws/securityhub/model/GetResourcesV2Request.h>
@@ -108,6 +109,7 @@
 #include <aws/securityhub/model/ListConnectorsRequest.h>
 #include <aws/securityhub/model/ListConnectorsV2Request.h>
 #include <aws/securityhub/model/ListEnabledProductsForImportRequest.h>
+#include <aws/securityhub/model/ListExposuresByRemediationV2Request.h>
 #include <aws/securityhub/model/ListFindingAggregatorsRequest.h>
 #include <aws/securityhub/model/ListFreeTrialStatusesV2Request.h>
 #include <aws/securityhub/model/ListInvitationsRequest.h>
@@ -1259,6 +1261,17 @@ GetRecommendedPolicyV2Outcome SecurityHubClient::GetRecommendedPolicyV2(const Ge
                             : GetRecommendedPolicyV2Outcome(std::move(result.GetError()));
 }
 
+GetRemediationsV2Outcome SecurityHubClient::GetRemediationsV2(const GetRemediationsV2Request& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/GetRemediationsV2");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRemediationsV2Outcome(result.GetResultWithOwnership())
+                            : GetRemediationsV2Outcome(std::move(result.GetError()));
+}
+
 GetResourcesStatisticsV2Outcome SecurityHubClient::GetResourcesStatisticsV2(const GetResourcesStatisticsV2Request& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -1406,6 +1419,18 @@ ListEnabledProductsForImportOutcome SecurityHubClient::ListEnabledProductsForImp
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListEnabledProductsForImportOutcome(result.GetResultWithOwnership())
                             : ListEnabledProductsForImportOutcome(std::move(result.GetError()));
+}
+
+ListExposuresByRemediationV2Outcome SecurityHubClient::ListExposuresByRemediationV2(
+    const ListExposuresByRemediationV2Request& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/ListExposuresByRemediationV2");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListExposuresByRemediationV2Outcome(result.GetResultWithOwnership())
+                            : ListExposuresByRemediationV2Outcome(std::move(result.GetError()));
 }
 
 ListFindingAggregatorsOutcome SecurityHubClient::ListFindingAggregators(const ListFindingAggregatorsRequest& request) const {

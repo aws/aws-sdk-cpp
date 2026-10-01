@@ -2491,6 +2491,37 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Retrieves remediation targets for the account, or for all member accounts if
+   * the caller is the delegated administrator. Results are sorted by priority,
+   * highest first, and are paginated. Use <code>TargetUid</code> or
+   * <code>MetadataUid</code> to scope the request to a single target or
+   * finding.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetRemediationsV2">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetRemediationsV2Outcome GetRemediationsV2(const Model::GetRemediationsV2Request& request = {}) const;
+
+  /**
+   * A Callable wrapper for GetRemediationsV2 that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetRemediationsV2RequestT = Model::GetRemediationsV2Request>
+  Model::GetRemediationsV2OutcomeCallable GetRemediationsV2Callable(const GetRemediationsV2RequestT& request = {}) const {
+    return SubmitCallable(&SecurityHubClient::GetRemediationsV2, request);
+  }
+
+  /**
+   * An Async wrapper for GetRemediationsV2 that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetRemediationsV2RequestT = Model::GetRemediationsV2Request>
+  void GetRemediationsV2Async(const GetRemediationsV2ResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                              const GetRemediationsV2RequestT& request = {}) const {
+    return SubmitAsync(&SecurityHubClient::GetRemediationsV2, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves statistical information about Amazon Web Services resources and
    * their associated security findings.</p> <p>You can use the <code>Scopes</code>
    * parameter to define the data boundary for the query. Currently,
@@ -2901,6 +2932,37 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                          const ListEnabledProductsForImportRequestT& request = {}) const {
     return SubmitAsync(&SecurityHubClient::ListEnabledProductsForImport, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the exposure findings tied to a specific remediation target.
+   * Results are sorted by previous severity, highest first, and are
+   * paginated.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListExposuresByRemediationV2">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListExposuresByRemediationV2Outcome ListExposuresByRemediationV2(
+      const Model::ListExposuresByRemediationV2Request& request) const;
+
+  /**
+   * A Callable wrapper for ListExposuresByRemediationV2 that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListExposuresByRemediationV2RequestT = Model::ListExposuresByRemediationV2Request>
+  Model::ListExposuresByRemediationV2OutcomeCallable ListExposuresByRemediationV2Callable(
+      const ListExposuresByRemediationV2RequestT& request) const {
+    return SubmitCallable(&SecurityHubClient::ListExposuresByRemediationV2, request);
+  }
+
+  /**
+   * An Async wrapper for ListExposuresByRemediationV2 that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListExposuresByRemediationV2RequestT = Model::ListExposuresByRemediationV2Request>
+  void ListExposuresByRemediationV2Async(const ListExposuresByRemediationV2RequestT& request,
+                                         const ListExposuresByRemediationV2ResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityHubClient::ListExposuresByRemediationV2, request, handler, context);
   }
 
   /**

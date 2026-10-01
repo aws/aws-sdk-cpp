@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
+#include <aws/quicksight/model/AuthenticationType.h>
+#include <aws/quicksight/model/OAuthParameters.h>
 
 #include <utility>
 
@@ -83,15 +85,57 @@ class DatabricksParameters {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The authentication type that you want to use for your connection. This
+   * parameter accepts OAuth and non-OAuth authentication types.</p>
+   */
+  inline AuthenticationType GetAuthenticationType() const { return m_authenticationType; }
+  inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
+  inline void SetAuthenticationType(AuthenticationType value) {
+    m_authenticationTypeHasBeenSet = true;
+    m_authenticationType = value;
+  }
+  inline DatabricksParameters& WithAuthenticationType(AuthenticationType value) {
+    SetAuthenticationType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An object that contains information needed to create a data source connection
+   * between an Quick Sight account and Databricks.</p>
+   */
+  inline const OAuthParameters& GetOAuthParameters() const { return m_oAuthParameters; }
+  inline bool OAuthParametersHasBeenSet() const { return m_oAuthParametersHasBeenSet; }
+  template <typename OAuthParametersT = OAuthParameters>
+  void SetOAuthParameters(OAuthParametersT&& value) {
+    m_oAuthParametersHasBeenSet = true;
+    m_oAuthParameters = std::forward<OAuthParametersT>(value);
+  }
+  template <typename OAuthParametersT = OAuthParameters>
+  DatabricksParameters& WithOAuthParameters(OAuthParametersT&& value) {
+    SetOAuthParameters(std::forward<OAuthParametersT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_host;
 
   int m_port{0};
 
   Aws::String m_sqlEndpointPath;
+
+  AuthenticationType m_authenticationType{AuthenticationType::NOT_SET};
+
+  OAuthParameters m_oAuthParameters;
   bool m_hostHasBeenSet = false;
   bool m_portHasBeenSet = false;
   bool m_sqlEndpointPathHasBeenSet = false;
+  bool m_authenticationTypeHasBeenSet = false;
+  bool m_oAuthParametersHasBeenSet = false;
 };
 
 }  // namespace Model

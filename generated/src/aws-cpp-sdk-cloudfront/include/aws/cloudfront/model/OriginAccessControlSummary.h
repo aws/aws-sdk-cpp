@@ -118,7 +118,10 @@ class OriginAccessControlSummary {
    * the viewer request contains the <code>Authorization</code> header, CloudFront
    * doesn't sign the origin request, but instead passes along the
    * <code>Authorization</code> header that it received in the viewer request.</p>
-   * </li> </ul>
+   * </li> <li> <p> <code>always-amz-auth</code> – CloudFront signs all origin
+   * requests with Amazon authentication headers, and forwards the viewer's
+   * <code>Authorization</code> header to the origin if one is present. This value is
+   * only valid with Lambda-Web origins.</p> </li> </ul>
    */
   inline OriginAccessControlSigningBehaviors GetSigningBehavior() const { return m_signingBehavior; }
   inline bool SigningBehaviorHasBeenSet() const { return m_signingBehaviorHasBeenSet; }

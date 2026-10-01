@@ -112,6 +112,15 @@ class OriginAccessControlConfig {
    * header to a <a
    * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html">cache
    * policy</a> for all cache behaviors that use origins associated with this origin
+   * access control.</b> </p> </li> <li> <p> <code>always-amz-auth</code> –
+   * CloudFront signs all origin requests with Amazon authentication headers. If the
+   * viewer request contains the <code>Authorization</code> header, then CloudFront
+   * also forwards that header to the origin. This value is only valid with
+   * Lambda-Web origins. <b>WARNING: To forward the <code>Authorization</code> header
+   * from the viewer request, you <i>must</i> add the <code>Authorization</code>
+   * header to a <a
+   * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html">cache
+   * policy</a> for all cache behaviors that use origins associated with this origin
    * access control.</b> </p> </li> </ul>
    */
   inline OriginAccessControlSigningBehaviors GetSigningBehavior() const { return m_signingBehavior; }

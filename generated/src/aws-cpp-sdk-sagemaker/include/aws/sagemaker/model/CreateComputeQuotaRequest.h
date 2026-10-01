@@ -37,7 +37,9 @@ class CreateComputeQuotaRequest : public SageMakerRequest {
 
   ///@{
   /**
-   * <p>Name to the compute allocation definition.</p>
+   * <p>The name of the compute allocation definition. The name must be unique within
+   * the SageMaker AI HyperPod cluster specified by <code>ClusterArn</code>. You can
+   * use the same name in other clusters within a Region or across Regions.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

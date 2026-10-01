@@ -160,6 +160,26 @@ class IngestionJobSummary {
 
   ///@{
   /**
+   * <p>The time at which all text content in the data ingestion job finished
+   * extraction and became available to query.</p> <p>This time isn't returned until
+   * text extraction is complete for all the documents in the job.</p>
+   */
+  inline const Aws::Utils::DateTime& GetTextReadyAt() const { return m_textReadyAt; }
+  inline bool TextReadyAtHasBeenSet() const { return m_textReadyAtHasBeenSet; }
+  template <typename TextReadyAtT = Aws::Utils::DateTime>
+  void SetTextReadyAt(TextReadyAtT&& value) {
+    m_textReadyAtHasBeenSet = true;
+    m_textReadyAt = std::forward<TextReadyAtT>(value);
+  }
+  template <typename TextReadyAtT = Aws::Utils::DateTime>
+  IngestionJobSummary& WithTextReadyAt(TextReadyAtT&& value) {
+    SetTextReadyAt(std::forward<TextReadyAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Contains statistics for the data ingestion job.</p>
    */
   inline const IngestionJobStatistics& GetStatistics() const { return m_statistics; }
@@ -190,6 +210,8 @@ class IngestionJobSummary {
 
   Aws::Utils::DateTime m_updatedAt{};
 
+  Aws::Utils::DateTime m_textReadyAt{};
+
   IngestionJobStatistics m_statistics;
   bool m_knowledgeBaseIdHasBeenSet = false;
   bool m_dataSourceIdHasBeenSet = false;
@@ -198,6 +220,7 @@ class IngestionJobSummary {
   bool m_statusHasBeenSet = false;
   bool m_startedAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
+  bool m_textReadyAtHasBeenSet = false;
   bool m_statisticsHasBeenSet = false;
 };
 

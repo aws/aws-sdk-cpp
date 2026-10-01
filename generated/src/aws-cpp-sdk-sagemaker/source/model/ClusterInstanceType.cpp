@@ -222,6 +222,8 @@ static const int ml_g7_8xlarge_HASH = HashingUtils::HashString("ml.g7.8xlarge");
 static const int ml_g7_12xlarge_HASH = HashingUtils::HashString("ml.g7.12xlarge");
 static const int ml_g7_24xlarge_HASH = HashingUtils::HashString("ml.g7.24xlarge");
 static const int ml_g7_48xlarge_HASH = HashingUtils::HashString("ml.g7.48xlarge");
+static const int ml_c8a_16xlarge_HASH = HashingUtils::HashString("ml.c8a.16xlarge");
+static const int ml_m8a_16xlarge_HASH = HashingUtils::HashString("ml.m8a.16xlarge");
 
 /*
 The if-else chains in this file are converted into a jump table by the compiler,
@@ -853,6 +855,12 @@ static bool GetEnumForNameHelper1(int hashCode, ClusterInstanceType& enumValue) 
     return true;
   } else if (hashCode == ml_g7_48xlarge_HASH) {
     enumValue = ClusterInstanceType::ml_g7_48xlarge;
+    return true;
+  } else if (hashCode == ml_c8a_16xlarge_HASH) {
+    enumValue = ClusterInstanceType::ml_c8a_16xlarge;
+    return true;
+  } else if (hashCode == ml_m8a_16xlarge_HASH) {
+    enumValue = ClusterInstanceType::ml_m8a_16xlarge;
     return true;
   }
   return false;
@@ -1486,6 +1494,12 @@ static bool GetNameForEnumHelper1(ClusterInstanceType enumValue, Aws::String& va
       return true;
     case ClusterInstanceType::ml_g7_48xlarge:
       value = "ml.g7.48xlarge";
+      return true;
+    case ClusterInstanceType::ml_c8a_16xlarge:
+      value = "ml.c8a.16xlarge";
+      return true;
+    case ClusterInstanceType::ml_m8a_16xlarge:
+      value = "ml.m8a.16xlarge";
       return true;
     default:
       return false;

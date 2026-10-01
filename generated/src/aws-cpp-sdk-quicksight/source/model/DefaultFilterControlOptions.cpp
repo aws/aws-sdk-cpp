@@ -46,6 +46,14 @@ DefaultFilterControlOptions& DefaultFilterControlOptions::operator=(JsonView jso
     m_defaultRelativeDateTimeOptions = jsonValue.GetObject("DefaultRelativeDateTimeOptions");
     m_defaultRelativeDateTimeOptionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DefaultHierarchyList")) {
+    m_defaultHierarchyList = jsonValue.GetObject("DefaultHierarchyList");
+    m_defaultHierarchyListHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("DefaultHierarchyDropdown")) {
+    m_defaultHierarchyDropdown = jsonValue.GetObject("DefaultHierarchyDropdown");
+    m_defaultHierarchyDropdownHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -78,6 +86,14 @@ JsonValue DefaultFilterControlOptions::Jsonize() const {
 
   if (m_defaultRelativeDateTimeOptionsHasBeenSet) {
     payload.WithObject("DefaultRelativeDateTimeOptions", m_defaultRelativeDateTimeOptions.Jsonize());
+  }
+
+  if (m_defaultHierarchyListHasBeenSet) {
+    payload.WithObject("DefaultHierarchyList", m_defaultHierarchyList.Jsonize());
+  }
+
+  if (m_defaultHierarchyDropdownHasBeenSet) {
+    payload.WithObject("DefaultHierarchyDropdown", m_defaultHierarchyDropdown.Jsonize());
   }
 
   return payload;

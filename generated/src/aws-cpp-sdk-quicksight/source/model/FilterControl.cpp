@@ -50,6 +50,14 @@ FilterControl& FilterControl::operator=(JsonView jsonValue) {
     m_crossSheet = jsonValue.GetObject("CrossSheet");
     m_crossSheetHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("HierarchyList")) {
+    m_hierarchyList = jsonValue.GetObject("HierarchyList");
+    m_hierarchyListHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("HierarchyDropdown")) {
+    m_hierarchyDropdown = jsonValue.GetObject("HierarchyDropdown");
+    m_hierarchyDropdownHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -86,6 +94,14 @@ JsonValue FilterControl::Jsonize() const {
 
   if (m_crossSheetHasBeenSet) {
     payload.WithObject("CrossSheet", m_crossSheet.Jsonize());
+  }
+
+  if (m_hierarchyListHasBeenSet) {
+    payload.WithObject("HierarchyList", m_hierarchyList.Jsonize());
+  }
+
+  if (m_hierarchyDropdownHasBeenSet) {
+    payload.WithObject("HierarchyDropdown", m_hierarchyDropdown.Jsonize());
   }
 
   return payload;
