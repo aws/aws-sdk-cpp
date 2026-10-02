@@ -4,6 +4,8 @@
  */
 #include <aws/core/utils/DateTime.h>
 #include <aws/testing/AwsCppSdkGTestSuite.h>
+#include <smithy/client/schema/Codec.h>
+#include <smithy/client/schema/Document.h>
 #include <smithy/client/schema/JsonShapeSerializer.h>
 #include <smithy/client/schema/JsonTraits.h>
 #include <smithy/client/schema/MapSerializer.h>
@@ -11,6 +13,7 @@
 #include <smithy/client/schema/SchemaBuilder.h>
 #include <smithy/client/schema/SerdeTraits.h>
 
+#include <cstdlib>
 #include <functional>
 
 #include "SchemaSerializerTestHelpers.h"
@@ -72,6 +75,66 @@ TEST_F(JsonShapeSerializerTest, Double) {
   LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteDouble(*member, 3.14); });
   s.WriteStruct(*root, rootStruct);
   EXPECT_NE(s.GetPayload().GetResult().find("\"ratio\":3.14"), Aws::String::npos);
+}
+
+TEST_F(JsonShapeSerializerTest, TimestampHonorsCodecSettingsDefault) {
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("t", ShapeType::Timestamp);  // no @timestampFormat trait
+  const Aws::Utils::DateTime epoch0(0.0);
+  {  // default settings -> epoch-seconds -> bare number
+    JsonShapeSerializer s;
+    LambdaStruct rs(*root, [&](ShapeSerializer& ser) { ser.WriteTimestamp(*member, epoch0); });
+    s.WriteStruct(*root, rs);
+    EXPECT_NE(s.GetPayload().GetResult().find("\"t\":0"), Aws::String::npos);
+  }
+  {  // DATE_TIME settings -> quoted ISO-8601 string
+    JsonShapeSerializer s(CodecSettings{TimestampFormatTrait::Format::DATE_TIME});
+    LambdaStruct rs(*root, [&](ShapeSerializer& ser) { ser.WriteTimestamp(*member, epoch0); });
+    s.WriteStruct(*root, rs);
+    EXPECT_NE(s.GetPayload().GetResult().find("\"t\":\""), Aws::String::npos);
+  }
+}
+
+TEST_F(JsonShapeSerializerTest, FloatUsesFloatPrecisionRoundTrip) {
+  // A float member must serialize as the shortest decimal that round-trips the float ("3.14"), not
+  // the 17-significant-digit expansion of its widening to double ("3.1400001049041748").
+  JsonShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("f", ShapeType::Float);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteFloat(*member, 3.14f); });
+  s.WriteStruct(*root, rootStruct);
+  EXPECT_EQ(s.GetPayload().GetResult(), "{\"f\":3.14}");
+}
+
+TEST_F(JsonShapeSerializerTest, FloatIntegralKeepsDecimalMarker) {
+  // An integral-valued float keeps the ".0" marker so it round-trips as a floating-point document.
+  JsonShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("f", ShapeType::Float);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteFloat(*member, 2.0f); });
+  s.WriteStruct(*root, rootStruct);
+  EXPECT_EQ(s.GetPayload().GetResult(), "{\"f\":2.0}");
+}
+
+TEST_F(JsonShapeSerializerTest, DoublePreservesPrecisionAndType) {
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("d", ShapeType::Double);
+  {  // precision: a value needing >15 significant digits round-trips exactly
+    const double v = 0.1 + 0.2;  // 0.30000000000000004
+    JsonShapeSerializer s;
+    LambdaStruct rs(*root, [&](ShapeSerializer& ser) { ser.WriteDouble(*member, v); });
+    s.WriteStruct(*root, rs);
+    const Aws::String payload = s.GetPayload().GetResult();
+    const auto pos = payload.find("\"d\":");
+    ASSERT_NE(pos, Aws::String::npos);
+    EXPECT_EQ(std::strtod(payload.c_str() + pos + 4, nullptr), v);
+  }
+  {  // type preservation: an integral-valued double keeps a decimal marker
+    JsonShapeSerializer s;
+    LambdaStruct rs(*root, [&](ShapeSerializer& ser) { ser.WriteDouble(*member, 2.0); });
+    s.WriteStruct(*root, rs);
+    EXPECT_NE(s.GetPayload().GetResult().find("\"d\":2.0"), Aws::String::npos);
+  }
 }
 
 TEST_F(JsonShapeSerializerTest, String) {
@@ -493,4 +556,30 @@ TEST_F(JsonShapeSerializerTest, TimestampFormatTraitControlsWireForm) {
     EXPECT_NE(payload.find("\"t\":1234567890"), Aws::String::npos);
     EXPECT_EQ(payload.find("\"t\":\""), Aws::String::npos);
   }
+}
+
+TEST_F(JsonShapeSerializerTest, DocumentAsStructMember) {
+  JsonShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("doc", ShapeType::Document);
+  Aws::Map<Aws::String, Document> obj;
+  obj.emplace("a", Document::FromInteger(1));
+  Document doc = Document::FromMap(std::move(obj));
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteDocument(*member, doc); });
+  s.WriteStruct(*root, rootStruct);
+  auto outcome = s.GetPayload();
+  ASSERT_TRUE(outcome.IsSuccess());
+  EXPECT_EQ(outcome.GetResult(), "{\"doc\":{\"a\":1}}");
+}
+
+TEST_F(JsonShapeSerializerTest, DocumentAsListElement) {
+  JsonShapeSerializer s;
+  auto member = Schema::CreateMember("doc", ShapeType::Document);
+  s.WriteList(*member, 2, [&](ShapeSerializer& es) {
+    es.WriteDocument(*member, Document::FromString("x"));
+    es.WriteDocument(*member, Document::FromBoolean(true));
+  });
+  auto outcome = s.GetPayload();
+  ASSERT_TRUE(outcome.IsSuccess());
+  EXPECT_EQ(outcome.GetResult(), "[\"x\",true]");
 }

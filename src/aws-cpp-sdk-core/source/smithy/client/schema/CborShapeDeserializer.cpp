@@ -2,8 +2,10 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
+#include <aws/core/utils/logging/LogMacros.h>
 #include <aws/crt/cbor/Cbor.h>
 #include <smithy/client/schema/CborShapeDeserializer.h>
+#include <smithy/client/schema/Document.h>
 
 using namespace smithy::schema;
 using namespace Aws::Utils;
@@ -171,6 +173,12 @@ class CborShapeDeserializer::Impl final : public ShapeDeserializer {
     return ByteBuffer(val->ptr, val->len);
   }
 
+  Aws::Crt::Optional<Document> ReadDocument(const Schema&) override {
+    AWS_LOGSTREAM_WARN("CborShapeDeserializer", "document type is not yet supported by the RPCv2 CBOR protocol");
+    SkipValue();  // consume the whole data item so sibling members stay aligned
+    return {};
+  }
+
   bool IsNull() override {
     auto type = m_decoder.PeekType();
     return type.has_value() && *type == CborType::Null;
@@ -259,4 +267,5 @@ Aws::Crt::Optional<double> CborShapeDeserializer::ReadDouble(const Schema& schem
 Aws::Crt::Optional<Aws::String> CborShapeDeserializer::ReadString(const Schema& schema) { return m_impl->ReadString(schema); }
 Aws::Crt::Optional<DateTime> CborShapeDeserializer::ReadTimestamp(const Schema& schema) { return m_impl->ReadTimestamp(schema); }
 Aws::Crt::Optional<ByteBuffer> CborShapeDeserializer::ReadBlob(const Schema& schema) { return m_impl->ReadBlob(schema); }
+Aws::Crt::Optional<Document> CborShapeDeserializer::ReadDocument(const Schema& schema) { return m_impl->ReadDocument(schema); }
 bool CborShapeDeserializer::IsNull() { return m_impl->IsNull(); }

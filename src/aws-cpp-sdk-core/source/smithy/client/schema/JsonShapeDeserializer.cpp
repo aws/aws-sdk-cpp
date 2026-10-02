@@ -3,11 +3,20 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/memory/AWSMemory.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <smithy/client/schema/Document.h>
+#include <smithy/client/schema/DocumentImpl.h>
 #include <smithy/client/schema/JsonShapeDeserializer.h>
 #include <smithy/client/schema/JsonTraits.h>
 #include <smithy/client/schema/SerdeTraits.h>
 
+#include <cerrno>
+#include <cmath>
+#include <cstdlib>
 #include <cstring>
+#include <functional>
 #include <limits>
 
 using namespace smithy::schema;
@@ -15,7 +24,8 @@ using namespace Aws::Utils;
 
 class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
  public:
-  explicit Impl(Aws::Crt::ByteCursor data) : m_bytes(reinterpret_cast<const char*>(data.ptr), data.len), m_pos(0) {}
+  explicit Impl(Aws::Crt::ByteCursor data, CodecSettings settings)
+      : m_bytes(reinterpret_cast<const char*>(data.ptr), data.len), m_pos(0), m_settings(settings) {}
 
   void ReadStruct(const Schema& schema, const StructMemberConsumer& consumer) override {
     if (PeekNonWs() != '{') {
@@ -134,8 +144,14 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
       if (dend != token.c_str() + token.size()) {
         return {};
       }
+      // Casting a non-finite or out-of-range double to int64_t is undefined behavior.
+      if (!std::isfinite(d) || d < static_cast<double>((std::numeric_limits<int64_t>::min)()) ||
+          d >= static_cast<double>((std::numeric_limits<int64_t>::max)())) {
+        return {};
+      }
       return static_cast<int64_t>(d);
     }
+    // strtoll saturates to INT64_MAX/MIN on overflow; clamping out-of-range plain integers is intentional.
     return static_cast<int64_t>(value);
   }
 
@@ -202,10 +218,8 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
       if (!token.has_value()) {
         return {};
       }
-      const DateFormat df = ResolveTimestampFormat(schema, TimestampFormatTrait::Format::EPOCH_SECONDS) ==
-                                    TimestampFormatTrait::Format::HTTP_DATE
-                                ? DateFormat::RFC822
-                                : DateFormat::ISO_8601;
+      const auto format = ResolveTimestampFormat(schema, m_settings.defaultTimestampFormat);
+      const DateFormat df = format == TimestampFormatTrait::Format::HTTP_DATE ? DateFormat::RFC822 : DateFormat::ISO_8601;
       DateTime parsed(*token, df);
       if (!parsed.WasParseSuccessful()) {
         return {};
@@ -228,6 +242,8 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
     return HashingUtils::Base64Decode(*encoded);
   }
 
+  Aws::Crt::Optional<Document> ReadDocument(const Schema&) override { return ReadDocumentValue(0); }
+
   bool IsNull() override {
     size_t p = m_pos;
     while (p < m_bytes.size() && IsWs(m_bytes[p])) {
@@ -237,6 +253,109 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
   }
 
  private:
+  static constexpr int MAX_DOCUMENT_DEPTH = 64;
+
+  // JSON-flavored document nodes: carries this deserializer's timestamp format so AsBlob/AsTimestamp
+  // on the resulting Document apply JSON coercion (base64 strings, epoch/ISO-8601 timestamps).
+  Document MakeJsonDoc(const std::function<void(DocumentImpl&)>& init) const {
+    auto impl = Aws::MakeShared<JsonDocumentImpl>("JsonDocumentImpl", m_settings.defaultTimestampFormat);
+    init(*impl);
+    return detail::MakeDocument(impl);
+  }
+
+  Aws::Crt::Optional<Document> ReadDocumentValue(int depth) {
+    if (depth >= MAX_DOCUMENT_DEPTH) {
+      SkipValue();
+      return {};
+    }
+    const char c = PeekNonWs();
+    if (c == '{') {
+      ++m_pos;
+      Aws::Map<Aws::String, Document> object;
+      if (PeekNonWs() == '}') {
+        ++m_pos;
+        return MakeJsonDoc([&](DocumentImpl& n) { n.SetMap(std::move(object)); });
+      }
+      while (true) {
+        auto key = ParseString();
+        if (!key.has_value()) {
+          return {};
+        }
+        if (PeekNonWs() == ':') {
+          ++m_pos;
+        }
+        auto value = ReadDocumentValue(depth + 1);
+        if (!value.has_value()) {
+          return {};
+        }
+        object.emplace(std::move(*key), std::move(*value));
+        if (!NextInContainer('}')) {
+          break;
+        }
+      }
+      return MakeJsonDoc([&](DocumentImpl& n) { n.SetMap(std::move(object)); });
+    }
+    if (c == '[') {
+      ++m_pos;
+      Aws::Vector<Document> list;
+      if (PeekNonWs() == ']') {
+        ++m_pos;
+        return MakeJsonDoc([&](DocumentImpl& n) { n.SetList(std::move(list)); });
+      }
+      while (true) {
+        auto value = ReadDocumentValue(depth + 1);
+        if (!value.has_value()) {
+          return {};
+        }
+        list.push_back(std::move(*value));
+        if (!NextInContainer(']')) {
+          break;
+        }
+      }
+      return MakeJsonDoc([&](DocumentImpl& n) { n.SetList(std::move(list)); });
+    }
+    if (c == '"') {
+      auto str = ParseString();
+      if (!str.has_value()) {
+        return {};
+      }
+      return MakeJsonDoc([&](DocumentImpl& n) { n.SetString(std::move(*str)); });
+    }
+    if (Match("true")) {
+      return MakeJsonDoc([](DocumentImpl& n) { n.SetBoolean(true); });
+    }
+    if (Match("false")) {
+      return MakeJsonDoc([](DocumentImpl& n) { n.SetBoolean(false); });
+    }
+    if (Match("null")) {
+      return MakeJsonDoc([](DocumentImpl&) {});  // ShapeType::Null default
+    }
+    if (IsNumberStart(c)) {
+      const Aws::String token = ReadNumberToken();
+      char* end = nullptr;
+      if (token.find_first_of(".eE") != Aws::String::npos) {
+        const double d = std::strtod(token.c_str(), &end);
+        if (end != token.c_str() + token.size()) {
+          return {};
+        }
+        return MakeJsonDoc([&](DocumentImpl& n) { n.SetDouble(d); });
+      }
+      errno = 0;
+      const long long v = std::strtoll(token.c_str(), &end, 10);
+      if (end != token.c_str() + token.size()) {
+        return {};
+      }
+      if (errno == ERANGE) {
+        // Out of int64 range: preserve magnitude as a double rather than clamping.
+        const double d = std::strtod(token.c_str(), nullptr);
+        return MakeJsonDoc([&](DocumentImpl& n) { n.SetDouble(d); });
+      }
+      return MakeJsonDoc([&](DocumentImpl& n) { n.SetInteger(static_cast<int64_t>(v)); });
+    }
+    SkipValue();
+    return {};
+  }
+
   static Aws::String JsonName(const Schema& member) {
     const auto trait = member.GetTrait(JsonNameTrait::KEY());
     return trait ? trait->GetValue() : member.GetMemberName();
@@ -459,10 +578,11 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
 
   Aws::String m_bytes;
   size_t m_pos;
+  CodecSettings m_settings;
 };
 
-JsonShapeDeserializer::JsonShapeDeserializer(Aws::Crt::ByteCursor data)
-    : m_impl(Aws::MakeUnique<Impl>("JsonShapeDeserializer", data)) {}
+JsonShapeDeserializer::JsonShapeDeserializer(Aws::Crt::ByteCursor data, CodecSettings settings)
+    : m_impl(Aws::MakeUnique<Impl>("JsonShapeDeserializer", data, settings)) {}
 JsonShapeDeserializer::~JsonShapeDeserializer() = default;
 
 void JsonShapeDeserializer::ReadStruct(const Schema& schema, const StructMemberConsumer& consumer) { m_impl->ReadStruct(schema, consumer); }
@@ -476,4 +596,5 @@ Aws::Crt::Optional<double> JsonShapeDeserializer::ReadDouble(const Schema& schem
 Aws::Crt::Optional<Aws::String> JsonShapeDeserializer::ReadString(const Schema& schema) { return m_impl->ReadString(schema); }
 Aws::Crt::Optional<DateTime> JsonShapeDeserializer::ReadTimestamp(const Schema& schema) { return m_impl->ReadTimestamp(schema); }
 Aws::Crt::Optional<ByteBuffer> JsonShapeDeserializer::ReadBlob(const Schema& schema) { return m_impl->ReadBlob(schema); }
+Aws::Crt::Optional<smithy::schema::Document> JsonShapeDeserializer::ReadDocument(const Schema& schema) { return m_impl->ReadDocument(schema); }
 bool JsonShapeDeserializer::IsNull() { return m_impl->IsNull(); }

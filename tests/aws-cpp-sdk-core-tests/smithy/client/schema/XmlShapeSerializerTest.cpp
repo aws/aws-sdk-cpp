@@ -4,6 +4,8 @@
  */
 #include <aws/core/utils/DateTime.h>
 #include <aws/testing/AwsCppSdkGTestSuite.h>
+#include <smithy/client/schema/Codec.h>
+#include <smithy/client/schema/Document.h>
 #include <smithy/client/schema/MapSerializer.h>
 #include <smithy/client/schema/Schema.h>
 #include <smithy/client/schema/SchemaBuilder.h>
@@ -98,6 +100,18 @@ TEST_F(XmlShapeSerializerTest, Timestamp) {
   LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteTimestamp(*member, dt); });
   s.WriteStruct(*root, rootStruct);
   EXPECT_NE(s.GetPayload().GetResult().find("<created>2009-02-13T23:31:30Z</created>"), Aws::String::npos);
+}
+
+TEST_F(XmlShapeSerializerTest, TimestampHonorsCodecSettingsDefault) {
+  // Default XML settings serialize date-time (see the Timestamp test); an EPOCH_SECONDS setting
+  // overrides that default for a member with no @timestampFormat trait.
+  XmlShapeSerializer s(CodecSettings{TimestampFormatTrait::Format::EPOCH_SECONDS});
+  auto root = Schema::StructureBuilder("Root", {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "Root")}}).Build();
+  auto member = Schema::CreateMember("created", ShapeType::Timestamp);
+  Aws::Utils::DateTime dt(1234567890.0);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteTimestamp(*member, dt); });
+  s.WriteStruct(*root, rootStruct);
+  EXPECT_NE(s.GetPayload().GetResult().find("<created>1234567890</created>"), Aws::String::npos);
 }
 
 TEST_F(XmlShapeSerializerTest, Blob) {
@@ -510,4 +524,13 @@ TEST_F(XmlShapeSerializerTest, TimestampFormatTraitControlsWireForm) {
     EXPECT_NE(payload.find("<t>1234567890"), Aws::String::npos);
     EXPECT_EQ(payload.find("2009-02-13T23:31:30Z"), Aws::String::npos);
   }
+}
+
+TEST_F(XmlShapeSerializerTest, DocumentIsUnsupported) {
+  XmlShapeSerializer s;
+  auto member = Schema::CreateMember("doc", ShapeType::Document);
+  s.WriteDocument(*member, Document::FromString("x"));
+  auto outcome = s.GetPayload();
+  ASSERT_FALSE(outcome.IsSuccess());
+  EXPECT_EQ(outcome.GetError().GetExceptionName(), "SerializationException");
 }

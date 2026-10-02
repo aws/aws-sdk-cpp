@@ -7,6 +7,7 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <smithy/Smithy_EXPORTS.h>
+#include <smithy/client/schema/Codec.h>
 #include <smithy/client/schema/ShapeSerializer.h>
 
 #include <cstdint>
@@ -22,7 +23,7 @@ class SMITHY_API QueryShapeSerializer final : public ShapeSerializer {
   enum class Flavor { AwsQuery, Ec2Query };
 
   QueryShapeSerializer();
-  explicit QueryShapeSerializer(Flavor flavor);
+  explicit QueryShapeSerializer(Flavor flavor, CodecSettings settings = CodecSettings{TimestampFormatTrait::Format::DATE_TIME});
   ~QueryShapeSerializer();
 
   void WriteStruct(const Schema& schema, const SerializableStruct& value) override;
@@ -38,6 +39,7 @@ class SMITHY_API QueryShapeSerializer final : public ShapeSerializer {
   void WriteTimestamp(const Schema& schema, const Aws::Utils::DateTime& value) override;
   void WriteBlob(const Schema& schema, const Aws::Utils::ByteBuffer& value) override;
   void WriteNull(const Schema& schema) override;
+  void WriteDocument(const Schema& schema, const Document& value) override;
 
   SerializerOutcome GetPayload();
 

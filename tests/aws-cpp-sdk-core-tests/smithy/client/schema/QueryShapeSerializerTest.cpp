@@ -4,6 +4,8 @@
  */
 #include <aws/core/utils/DateTime.h>
 #include <aws/testing/AwsCppSdkGTestSuite.h>
+#include <smithy/client/schema/Codec.h>
+#include <smithy/client/schema/Document.h>
 #include <smithy/client/schema/MapSerializer.h>
 #include <smithy/client/schema/QueryShapeSerializer.h>
 #include <smithy/client/schema/Schema.h>
@@ -288,6 +290,21 @@ TEST_F(QueryShapeSerializerTest, Ec2ListIsFlatWithDotN) {
   EXPECT_EQ(outcome.GetResult(), "Items.1=a&Items.2=b");
 }
 
+TEST_F(QueryShapeSerializerTest, TimestampHonorsCodecSettingsDefault) {
+  // Query's protocol default is date-time; an EPOCH_SECONDS CodecSettings must override it for a
+  // member with no @timestampFormat trait (proves the setting is threaded, not hard-coded).
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("t", ShapeType::Timestamp);
+  const Aws::Utils::DateTime dt(1234567890.0);
+  QueryShapeSerializer s(QueryShapeSerializer::Flavor::AwsQuery, CodecSettings{TimestampFormatTrait::Format::EPOCH_SECONDS});
+  LambdaStruct rs(*root, [&](ShapeSerializer& ser) { ser.WriteTimestamp(*member, dt); });
+  s.WriteStruct(*root, rs);
+  auto out = s.GetPayload();
+  ASSERT_TRUE(out.IsSuccess());
+  EXPECT_NE(out.GetResult().find("t=1234567890"), Aws::String::npos);
+  EXPECT_EQ(out.GetResult().find("%3A"), Aws::String::npos);  // not date-time (no encoded ':')
+}
+
 TEST_F(QueryShapeSerializerTest, TimestampFormatTraitControlsWireForm) {
   auto root = Schema::StructureBuilder("Root").Build();
   const Aws::Utils::DateTime dt(1234567890.0);
@@ -313,4 +330,13 @@ TEST_F(QueryShapeSerializerTest, TimestampFormatTraitControlsWireForm) {
     ASSERT_TRUE(out.IsSuccess());
     EXPECT_NE(out.GetResult().find("%3A"), Aws::String::npos);
   }
+}
+
+TEST_F(QueryShapeSerializerTest, DocumentIsUnsupported) {
+  QueryShapeSerializer s;
+  auto member = Schema::CreateMember("doc", ShapeType::Document);
+  s.WriteDocument(*member, Document::FromString("x"));
+  auto outcome = s.GetPayload();
+  ASSERT_FALSE(outcome.IsSuccess());
+  EXPECT_EQ(outcome.GetError().GetExceptionName(), "SerializationException");
 }

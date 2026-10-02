@@ -6,6 +6,7 @@
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/crt/Optional.h>
 #include <aws/testing/AwsCppSdkGTestSuite.h>
+#include <smithy/client/schema/Document.h>
 #include <smithy/client/schema/MapSerializer.h>
 #include <smithy/client/schema/Schema.h>
 #include <smithy/client/schema/SchemaBuilder.h>
@@ -158,6 +159,21 @@ TEST_F(XmlShapeDeserializerTest, Timestamp) {
   auto payload = Encode(root, [&](ShapeSerializer& ser) { ser.WriteTimestamp(*member, dt); });
 
   XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
+  Aws::Crt::Optional<Aws::Utils::DateTime> got;
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadTimestamp(m); });
+  ASSERT_TRUE(got.has_value());
+  EXPECT_EQ(got.value().Seconds(), 1234567890);
+}
+
+TEST_F(XmlShapeDeserializerTest, TimestampHonorsCodecSettingsDefault) {
+  // XML's default is date-time (see the Timestamp test above); a numeric wire value only parses
+  // under an EPOCH_SECONDS setting for a member with no @timestampFormat trait -- proving the
+  // setting reached ReadTimestamp rather than a hard-coded default.
+  auto root = RootBuilder().PutMember("ts", Schema::CreateTimestamp("T")).Build();
+  const Aws::String payload = "<Root><ts>1234567890</ts></Root>";
+
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()),
+                         CodecSettings{TimestampFormatTrait::Format::EPOCH_SECONDS});
   Aws::Crt::Optional<Aws::Utils::DateTime> got;
   d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadTimestamp(m); });
   ASSERT_TRUE(got.has_value());
@@ -592,4 +608,11 @@ TEST_F(XmlShapeDeserializerTest, TimestampFormatTraitControlsParsing) {
     ASSERT_TRUE(got.has_value());
     EXPECT_EQ(got.value().Seconds(), 1234567890);
   }
+}
+
+TEST_F(XmlShapeDeserializerTest, ReadDocumentIsUnsupported) {
+  Aws::String xml = "<x/>";
+  XmlShapeDeserializer deser(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(xml.c_str()), xml.size()));
+  auto schema = Schema::CreateDocument("smithy.api#Document");
+  EXPECT_FALSE(deser.ReadDocument(*schema).has_value());
 }

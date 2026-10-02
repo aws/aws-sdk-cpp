@@ -3,6 +3,7 @@
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/crt/Types.h>
 #include <smithy/Smithy_EXPORTS.h>
+#include <smithy/client/schema/Codec.h>
 #include <smithy/client/schema/ShapeDeserializer.h>
 
 namespace smithy {
@@ -10,7 +11,7 @@ namespace schema {
 
 class SMITHY_API XmlShapeDeserializer final : public ShapeDeserializer {
  public:
-  explicit XmlShapeDeserializer(Aws::Crt::ByteCursor data);
+  explicit XmlShapeDeserializer(Aws::Crt::ByteCursor data, CodecSettings settings = CodecSettings{TimestampFormatTrait::Format::DATE_TIME});
   ~XmlShapeDeserializer();
 
   bool EnterWrapperElement(const Aws::String& name);
@@ -27,6 +28,7 @@ class SMITHY_API XmlShapeDeserializer final : public ShapeDeserializer {
   Aws::Crt::Optional<Aws::String> ReadString(const Schema& schema) override;
   Aws::Crt::Optional<Aws::Utils::DateTime> ReadTimestamp(const Schema& schema) override;
   Aws::Crt::Optional<Aws::Utils::ByteBuffer> ReadBlob(const Schema& schema) override;
+  Aws::Crt::Optional<Document> ReadDocument(const Schema& schema) override;
 
   bool IsNull() override;
 

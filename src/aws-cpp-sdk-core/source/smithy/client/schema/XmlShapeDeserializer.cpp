@@ -3,7 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <smithy/client/schema/Document.h>
 #include <smithy/client/schema/SerdeTraits.h>
 #include <smithy/client/schema/XmlShapeDeserializer.h>
 #include <smithy/client/schema/XmlTraits.h>
@@ -17,7 +19,8 @@ using namespace Aws::Utils;
 
 class XmlShapeDeserializer::Impl final : public ShapeDeserializer {
  public:
-  explicit Impl(Aws::Crt::ByteCursor data) : m_xml(reinterpret_cast<const char*>(data.ptr), data.len) {
+  explicit Impl(Aws::Crt::ByteCursor data, CodecSettings settings)
+      : m_xml(reinterpret_cast<const char*>(data.ptr), data.len), m_settings(settings) {
     const Element root = FindRoot();
     m_tagBegin = root.tagBegin;
     m_tagEnd = root.tagEnd;
@@ -179,7 +182,7 @@ class XmlShapeDeserializer::Impl final : public ShapeDeserializer {
   Aws::Crt::Optional<Aws::String> ReadString(const Schema&) override { return CurrentText(); }
 
   Aws::Crt::Optional<DateTime> ReadTimestamp(const Schema& schema) override {
-    const auto format = ResolveTimestampFormat(schema, TimestampFormatTrait::Format::DATE_TIME);
+    const auto format = ResolveTimestampFormat(schema, m_settings.defaultTimestampFormat);
     if (format == TimestampFormatTrait::Format::EPOCH_SECONDS) {
       const Aws::String text = CurrentText();
       char* end = nullptr;
@@ -199,6 +202,11 @@ class XmlShapeDeserializer::Impl final : public ShapeDeserializer {
   }
 
   Aws::Crt::Optional<ByteBuffer> ReadBlob(const Schema&) override { return HashingUtils::Base64Decode(CurrentText()); }
+
+  Aws::Crt::Optional<Document> ReadDocument(const Schema&) override {
+    AWS_LOGSTREAM_WARN("XmlShapeDeserializer", "document type is not supported by the REST XML protocol");
+    return {};
+  }
 
   bool IsNull() override { return !m_valid; }
 
@@ -495,10 +503,11 @@ class XmlShapeDeserializer::Impl final : public ShapeDeserializer {
   bool m_flattened = false;
   Aws::String m_flatName;
   Aws::String m_attr;
+  CodecSettings m_settings;
 };
 
-XmlShapeDeserializer::XmlShapeDeserializer(Aws::Crt::ByteCursor data)
-    : m_impl(Aws::MakeUnique<Impl>("XmlShapeDeserializer", data)) {}
+XmlShapeDeserializer::XmlShapeDeserializer(Aws::Crt::ByteCursor data, CodecSettings settings)
+    : m_impl(Aws::MakeUnique<Impl>("XmlShapeDeserializer", data, settings)) {}
 XmlShapeDeserializer::~XmlShapeDeserializer() = default;
 
 bool XmlShapeDeserializer::EnterWrapperElement(const Aws::String& name) { return m_impl->EnterWrapper(name); }
@@ -513,4 +522,5 @@ Aws::Crt::Optional<double> XmlShapeDeserializer::ReadDouble(const Schema& schema
 Aws::Crt::Optional<Aws::String> XmlShapeDeserializer::ReadString(const Schema& schema) { return m_impl->ReadString(schema); }
 Aws::Crt::Optional<DateTime> XmlShapeDeserializer::ReadTimestamp(const Schema& schema) { return m_impl->ReadTimestamp(schema); }
 Aws::Crt::Optional<ByteBuffer> XmlShapeDeserializer::ReadBlob(const Schema& schema) { return m_impl->ReadBlob(schema); }
+Aws::Crt::Optional<smithy::schema::Document> XmlShapeDeserializer::ReadDocument(const Schema& schema) { return m_impl->ReadDocument(schema); }
 bool XmlShapeDeserializer::IsNull() { return m_impl->IsNull(); }
