@@ -18,6 +18,14 @@ namespace Model {
 GitHubResourceCapabilities::GitHubResourceCapabilities(JsonView jsonValue) { *this = jsonValue; }
 
 GitHubResourceCapabilities& GitHubResourceCapabilities::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("triggerFilterGroups")) {
+    Aws::Utils::Array<JsonView> triggerFilterGroupsJsonList = jsonValue.GetArray("triggerFilterGroups");
+    for (unsigned triggerFilterGroupsIndex = 0; triggerFilterGroupsIndex < triggerFilterGroupsJsonList.GetLength();
+         ++triggerFilterGroupsIndex) {
+      m_triggerFilterGroups.push_back(triggerFilterGroupsJsonList[triggerFilterGroupsIndex].AsObject());
+    }
+    m_triggerFilterGroupsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("leaveComments")) {
     m_leaveComments = jsonValue.GetBool("leaveComments");
     m_leaveCommentsHasBeenSet = true;
@@ -31,6 +39,15 @@ GitHubResourceCapabilities& GitHubResourceCapabilities::operator=(JsonView jsonV
 
 JsonValue GitHubResourceCapabilities::Jsonize() const {
   JsonValue payload;
+
+  if (m_triggerFilterGroupsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> triggerFilterGroupsJsonList(m_triggerFilterGroups.size());
+    for (unsigned triggerFilterGroupsIndex = 0; triggerFilterGroupsIndex < triggerFilterGroupsJsonList.GetLength();
+         ++triggerFilterGroupsIndex) {
+      triggerFilterGroupsJsonList[triggerFilterGroupsIndex].AsObject(m_triggerFilterGroups[triggerFilterGroupsIndex].Jsonize());
+    }
+    payload.WithArray("triggerFilterGroups", std::move(triggerFilterGroupsJsonList));
+  }
 
   if (m_leaveCommentsHasBeenSet) {
     payload.WithBool("leaveComments", m_leaveComments);

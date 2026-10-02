@@ -232,6 +232,35 @@ class UpdateIdentityProviderRequest : public CognitoIdentityProviderRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A mapping between the authentication context class reference (ACR) levels of
+   * your user pool and the ACR values of the external OpenID Connect (OIDC) identity
+   * provider (IdP). This mapping has the same behavior as it does when you create an
+   * identity provider. Only OIDC IdPs support ACR mapping.</p> <p>Setting
+   * <code>AcrMapping</code> is available in all feature plans. It isn't restricted
+   * to the Essentials or Plus feature plan.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetAcrMapping() const { return m_acrMapping; }
+  inline bool AcrMappingHasBeenSet() const { return m_acrMappingHasBeenSet; }
+  template <typename AcrMappingT = Aws::Map<Aws::String, Aws::String>>
+  void SetAcrMapping(AcrMappingT&& value) {
+    m_acrMappingHasBeenSet = true;
+    m_acrMapping = std::forward<AcrMappingT>(value);
+  }
+  template <typename AcrMappingT = Aws::Map<Aws::String, Aws::String>>
+  UpdateIdentityProviderRequest& WithAcrMapping(AcrMappingT&& value) {
+    SetAcrMapping(std::forward<AcrMappingT>(value));
+    return *this;
+  }
+  template <typename AcrMappingKeyT = Aws::String, typename AcrMappingValueT = Aws::String>
+  UpdateIdentityProviderRequest& AddAcrMapping(AcrMappingKeyT&& key, AcrMappingValueT&& value) {
+    m_acrMappingHasBeenSet = true;
+    m_acrMapping.emplace(std::forward<AcrMappingKeyT>(key), std::forward<AcrMappingValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_userPoolId;
 
@@ -242,11 +271,14 @@ class UpdateIdentityProviderRequest : public CognitoIdentityProviderRequest {
   Aws::Map<Aws::String, Aws::String> m_attributeMapping;
 
   Aws::Vector<Aws::String> m_idpIdentifiers;
+
+  Aws::Map<Aws::String, Aws::String> m_acrMapping;
   bool m_userPoolIdHasBeenSet = false;
   bool m_providerNameHasBeenSet = false;
   bool m_providerDetailsHasBeenSet = false;
   bool m_attributeMappingHasBeenSet = false;
   bool m_idpIdentifiersHasBeenSet = false;
+  bool m_acrMappingHasBeenSet = false;
 };
 
 }  // namespace Model

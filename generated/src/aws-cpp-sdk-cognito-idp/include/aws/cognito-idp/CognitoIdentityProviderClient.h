@@ -2785,14 +2785,13 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
    * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-terms-documents">Terms
    * documents</a>.</p> <p>To call <code>DescribeTermsByClient</code>, you must have
    * the <code>cognito-idp:DescribeTermsByClient</code> Identity and Access
-   * Management (IAM) permission. This operation additionally validates your
-   * permission for <code>cognito-idp:DescribeTerms</code>, the action for . As a
-   * result, an IAM policy that denies <code>cognito-idp:DescribeTerms</code> also
-   * denies requests to <code>DescribeTermsByClient</code>.</p>  <p>Amazon
-   * Cognito evaluates Identity and Access Management (IAM) policies in requests for
-   * this API operation. For this operation, you must use IAM credentials to
-   * authorize requests, and you must grant yourself the corresponding IAM permission
-   * in a policy.</p> <p class="title"> <b>Learn more</b> </p> <ul> <li> <p> <a
+   * Management (IAM) permission. An IAM policy that denies
+   * <code>cognito-idp:DescribeTerms</code> also denies requests to
+   * <code>DescribeTermsByClient</code>.</p>  <p>Amazon Cognito evaluates
+   * Identity and Access Management (IAM) policies in requests for this API
+   * operation. For this operation, you must use IAM credentials to authorize
+   * requests, and you must grant yourself the corresponding IAM permission in a
+   * policy.</p> <p class="title"> <b>Learn more</b> </p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
    * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
@@ -3108,9 +3107,7 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
   /**
    * <p>Issues an access token for machine-to-machine (M2M) authorization. Your app
    * client provides its client ID and secret, and receives an access token that
-   * authorizes requests to your resource servers. <code>GetClientToken</code>
-   * provides the same functionality as the OAuth2 client-credentials grant; both
-   * authorize an application rather than a user.</p> <p>To use this operation, you
+   * authorizes requests to your resource servers.</p> <p>To use this operation, you
    * must configure the app client with a client secret and enable the
    * <code>ALLOW_CLIENT_TOKEN_AUTH</code> authentication flow. The
    * <code>ALLOW_CLIENT_TOKEN_AUTH</code> flow is mutually exclusive with user

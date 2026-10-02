@@ -43,6 +43,15 @@ AdminRespondToAuthChallengeResult& AdminRespondToAuthChallengeResult::operator=(
     m_authenticationResult = jsonValue.GetObject("AuthenticationResult");
     m_authenticationResultHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AvailableChallenges")) {
+    Aws::Utils::Array<JsonView> availableChallengesJsonList = jsonValue.GetArray("AvailableChallenges");
+    for (unsigned availableChallengesIndex = 0; availableChallengesIndex < availableChallengesJsonList.GetLength();
+         ++availableChallengesIndex) {
+      m_availableChallenges.push_back(
+          ChallengeNameTypeMapper::GetChallengeNameTypeForName(availableChallengesJsonList[availableChallengesIndex].AsString()));
+    }
+    m_availableChallengesHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

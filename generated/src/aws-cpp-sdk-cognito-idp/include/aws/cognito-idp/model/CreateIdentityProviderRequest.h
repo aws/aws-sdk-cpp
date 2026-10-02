@@ -250,6 +250,40 @@ class CreateIdentityProviderRequest : public CognitoIdentityProviderRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A mapping between the authentication context class reference (ACR) levels of
+   * your user pool and the ACR values of the external OpenID Connect (OIDC) identity
+   * provider (IdP). The map is keyed by level, from <code>Level1</code> through
+   * <code>Level4</code>, and each value is the ACR value that the IdP uses for the
+   * corresponding level. Amazon Cognito uses this mapping to translate a requested
+   * user pool ACR level to the value that the IdP expects, and to map an ACR value
+   * that the IdP returns back to a user pool level. When the IdP returns an ACR
+   * value that isn't mapped, Amazon Cognito resolves it to the lowest level. Only
+   * OIDC IdPs support ACR mapping.</p> <p>Setting <code>AcrMapping</code> is
+   * available in all feature plans. It isn't restricted to the Essentials or Plus
+   * feature plan.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetAcrMapping() const { return m_acrMapping; }
+  inline bool AcrMappingHasBeenSet() const { return m_acrMappingHasBeenSet; }
+  template <typename AcrMappingT = Aws::Map<Aws::String, Aws::String>>
+  void SetAcrMapping(AcrMappingT&& value) {
+    m_acrMappingHasBeenSet = true;
+    m_acrMapping = std::forward<AcrMappingT>(value);
+  }
+  template <typename AcrMappingT = Aws::Map<Aws::String, Aws::String>>
+  CreateIdentityProviderRequest& WithAcrMapping(AcrMappingT&& value) {
+    SetAcrMapping(std::forward<AcrMappingT>(value));
+    return *this;
+  }
+  template <typename AcrMappingKeyT = Aws::String, typename AcrMappingValueT = Aws::String>
+  CreateIdentityProviderRequest& AddAcrMapping(AcrMappingKeyT&& key, AcrMappingValueT&& value) {
+    m_acrMappingHasBeenSet = true;
+    m_acrMapping.emplace(std::forward<AcrMappingKeyT>(key), std::forward<AcrMappingValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_userPoolId;
 
@@ -262,12 +296,15 @@ class CreateIdentityProviderRequest : public CognitoIdentityProviderRequest {
   Aws::Map<Aws::String, Aws::String> m_attributeMapping;
 
   Aws::Vector<Aws::String> m_idpIdentifiers;
+
+  Aws::Map<Aws::String, Aws::String> m_acrMapping;
   bool m_userPoolIdHasBeenSet = false;
   bool m_providerNameHasBeenSet = false;
   bool m_providerTypeHasBeenSet = false;
   bool m_providerDetailsHasBeenSet = false;
   bool m_attributeMappingHasBeenSet = false;
   bool m_idpIdentifiersHasBeenSet = false;
+  bool m_acrMappingHasBeenSet = false;
 };
 
 }  // namespace Model

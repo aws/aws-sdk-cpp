@@ -50,9 +50,33 @@ class CarrierLookupRequest : public PinpointSMSVoiceV2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether the service cleanses the phone number that you provide.
+   * When set to <code>true</code>, the service normalizes the phone number according
+   * to the destination country's national numbering plan and dialing rules. The
+   * service returns the cleansed number in E.164 format in the
+   * <code>E164PhoneNumber</code> field and returns the number that you provided in
+   * the <code>OriginalPhoneNumber</code> field.</p>
+   */
+  inline bool GetEnableCleansing() const { return m_enableCleansing; }
+  inline bool EnableCleansingHasBeenSet() const { return m_enableCleansingHasBeenSet; }
+  inline void SetEnableCleansing(bool value) {
+    m_enableCleansingHasBeenSet = true;
+    m_enableCleansing = value;
+  }
+  inline CarrierLookupRequest& WithEnableCleansing(bool value) {
+    SetEnableCleansing(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_phoneNumber;
+
+  bool m_enableCleansing{false};
   bool m_phoneNumberHasBeenSet = false;
+  bool m_enableCleansingHasBeenSet = false;
 };
 
 }  // namespace Model

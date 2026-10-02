@@ -51,6 +51,13 @@ IdentityProviderType& IdentityProviderType::operator=(JsonView jsonValue) {
     }
     m_idpIdentifiersHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AcrMapping")) {
+    Aws::Map<Aws::String, JsonView> acrMappingJsonMap = jsonValue.GetObject("AcrMapping").GetAllObjects();
+    for (auto& acrMappingItem : acrMappingJsonMap) {
+      m_acrMapping[acrMappingItem.first] = acrMappingItem.second.AsString();
+    }
+    m_acrMappingHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("LastModifiedDate")) {
     m_lastModifiedDate = jsonValue.GetDouble("LastModifiedDate");
     m_lastModifiedDateHasBeenSet = true;
@@ -99,6 +106,14 @@ JsonValue IdentityProviderType::Jsonize() const {
       idpIdentifiersJsonList[idpIdentifiersIndex].AsString(m_idpIdentifiers[idpIdentifiersIndex]);
     }
     payload.WithArray("IdpIdentifiers", std::move(idpIdentifiersJsonList));
+  }
+
+  if (m_acrMappingHasBeenSet) {
+    JsonValue acrMappingJsonMap;
+    for (auto& acrMappingItem : m_acrMapping) {
+      acrMappingJsonMap.WithString(acrMappingItem.first, acrMappingItem.second);
+    }
+    payload.WithObject("AcrMapping", std::move(acrMappingJsonMap));
   }
 
   if (m_lastModifiedDateHasBeenSet) {

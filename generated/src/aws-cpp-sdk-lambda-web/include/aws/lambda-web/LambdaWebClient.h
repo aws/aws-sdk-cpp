@@ -16,9 +16,12 @@
 namespace Aws {
 namespace LambdaWeb {
 /**
- * <p>AWS Lambda Web Functions let you run web applications and APIs as HTTP
- * servers on Lambda. A web function has one or more immutable revisions (code and
- * configuration) and one or more endpoints that expose it over HTTPS.</p>
+ * <p> <p>The AWS Lambda Web Functions APIs (<code>LambdaWeb</code>
+ * namespace) are experimental and for internal AWS use only. They are not yet
+ * available to external customers.</p>  <p>AWS Lambda Web Functions let you
+ * run web applications and APIs as HTTP servers on Lambda. A web function has one
+ * or more immutable revisions (code and configuration) and one or more endpoints
+ * that expose it over HTTPS.</p></p>
  */
 class AWS_LAMBDAWEB_API LambdaWebClient : public Aws::Client::AWSJsonClient,
                                           public Aws::Client::ClientWithAsyncTemplateMethods<LambdaWebClient>,
@@ -82,8 +85,9 @@ class AWS_LAMBDAWEB_API LambdaWebClient : public Aws::Client::AWSJsonClient,
    * function, you provide the function name, revision configuration (code and
    * service settings), and endpoint configuration.</p> <p>To use this operation, you
    * must have the <code>CreateWebFunction</code> permission on the web function. You
-   * don't need separate permissions for the initial revision or
-   * endpoint.</p><p><h3>See Also:</h3>   <a
+   * don't need separate permissions for the initial revision or endpoint.</p>
+   * <p>This API is experimental and for internal AWS use only. It is not yet
+   * available to external customers.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/CreateWebFunction">AWS
    * API Reference</a></p>
    */
@@ -112,8 +116,9 @@ class AWS_LAMBDAWEB_API LambdaWebClient : public Aws::Client::AWSJsonClient,
    * <p>Creates an endpoint for a web function. An endpoint exposes the web function
    * over HTTPS and routes traffic to one or more revisions.</p> <p>To use this
    * operation, you must have the <code>CreateWebFunctionEndpoint</code> permission
-   * on the web function, not on the endpoint being created.</p><p><h3>See Also:</h3>
-   * <a
+   * on the web function, not on the endpoint being created.</p>  <p>This API
+   * is experimental and for internal AWS use only. It is not yet available to
+   * external customers.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/CreateWebFunctionEndpoint">AWS
    * API Reference</a></p>
    */
@@ -144,8 +149,9 @@ class AWS_LAMBDAWEB_API LambdaWebClient : public Aws::Client::AWSJsonClient,
    * <p>Creates an immutable revision for a web function. A revision represents a
    * specific version of the function code and configuration.</p> <p>To use this
    * operation, you must have the <code>CreateWebFunctionRevision</code> permission
-   * on the web function, not on the revision being created.</p><p><h3>See Also:</h3>
-   * <a
+   * on the web function, not on the revision being created.</p>  <p>This API
+   * is experimental and for internal AWS use only. It is not yet available to
+   * external customers.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/CreateWebFunctionRevision">AWS
    * API Reference</a></p>
    */
@@ -173,8 +179,9 @@ class AWS_LAMBDAWEB_API LambdaWebClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Removes the resource-based policy from a web function.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Removes the resource-based policy from a web function.</p>  <p>This API
+   * is experimental and for internal AWS use only. It is not yet available to
+   * external customers.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/DeleteResourcePolicy">AWS
    * API Reference</a></p>
    */
@@ -204,7 +211,9 @@ class AWS_LAMBDAWEB_API LambdaWebClient : public Aws::Client::AWSJsonClient,
    * <p>To use this operation, you must have the <code>DeleteWebFunction</code>
    * permission on the web function. You don't need the
    * <code>DeleteWebFunctionRevision</code> or <code>DeleteWebFunctionEndpoint</code>
-   * permission.</p><p><h3>See Also:</h3>   <a
+   * permission.</p>  <p>This API is experimental and for internal AWS use
+   * only. It is not yet available to external customers.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/DeleteWebFunction">AWS
    * API Reference</a></p>
    */
@@ -230,7 +239,9 @@ class AWS_LAMBDAWEB_API LambdaWebClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Deletes a web function endpoint.</p><p><h3>See Also:</h3>   <a
+   * <p>Deletes a web function endpoint.</p>  <p>This API is experimental and
+   * for internal AWS use only. It is not yet available to external customers.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/DeleteWebFunctionEndpoint">AWS
    * API Reference</a></p>
    */
@@ -259,7 +270,9 @@ class AWS_LAMBDAWEB_API LambdaWebClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Deletes a web function revision. You cannot delete a revision that is
-   * currently serving traffic on an endpoint.</p><p><h3>See Also:</h3>   <a
+   * currently serving traffic on an endpoint.</p>  <p>This API is experimental
+   * and for internal AWS use only. It is not yet available to external
+   * customers.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/DeleteWebFunctionRevision">AWS
    * API Reference</a></p>
    */
@@ -287,8 +300,9 @@ class AWS_LAMBDAWEB_API LambdaWebClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Retrieves the resource-based policy attached to a web function.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Retrieves the resource-based policy attached to a web function.</p>
+   * <p>This API is experimental and for internal AWS use only. It is not yet
+   * available to external customers.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/GetResourcePolicy">AWS
    * API Reference</a></p>
    */
@@ -316,7 +330,9 @@ class AWS_LAMBDAWEB_API LambdaWebClient : public Aws::Client::AWSJsonClient,
   /**
    * <p>Retrieves details about your AWS Lambda Web Functions account settings for
    * the current AWS Region, including the quotas that apply to web functions and
-   * your current usage.</p><p><h3>See Also:</h3>   <a
+   * your current usage.</p>  <p>This API is experimental and for internal AWS
+   * use only. It is not yet available to external customers.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/GetWebAccountSettings">AWS
    * API Reference</a></p>
    */
@@ -344,7 +360,9 @@ class AWS_LAMBDAWEB_API LambdaWebClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Retrieves details about a web function, including its current state and
-   * configuration.</p><p><h3>See Also:</h3>   <a
+   * configuration.</p>  <p>This API is experimental and for internal AWS use
+   * only. It is not yet available to external customers.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/GetWebFunction">AWS
    * API Reference</a></p>
    */
@@ -370,7 +388,9 @@ class AWS_LAMBDAWEB_API LambdaWebClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Retrieves details about a web function endpoint, including its current state,
-   * configuration, and domain name.</p><p><h3>See Also:</h3>   <a
+   * configuration, and domain name.</p>  <p>This API is experimental and for
+   * internal AWS use only. It is not yet available to external customers.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/GetWebFunctionEndpoint">AWS
    * API Reference</a></p>
    */
@@ -398,7 +418,9 @@ class AWS_LAMBDAWEB_API LambdaWebClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Retrieves details about a web function revision, including its state and
-   * configuration.</p><p><h3>See Also:</h3>   <a
+   * configuration.</p>  <p>This API is experimental and for internal AWS use
+   * only. It is not yet available to external customers.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/GetWebFunctionRevision">AWS
    * API Reference</a></p>
    */
@@ -425,8 +447,9 @@ class AWS_LAMBDAWEB_API LambdaWebClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Returns a list of tags applied to a web function.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Returns a list of tags applied to a web function.</p>  <p>This API is
+   * experimental and for internal AWS use only. It is not yet available to external
+   * customers.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/ListTags">AWS
    * API Reference</a></p>
    */
@@ -452,8 +475,9 @@ class AWS_LAMBDAWEB_API LambdaWebClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Lists endpoints for a web function. We recommend using pagination to ensure
-   * that the operation returns quickly and successfully.</p><p><h3>See Also:</h3>
-   * <a
+   * that the operation returns quickly and successfully.</p>  <p>This API is
+   * experimental and for internal AWS use only. It is not yet available to external
+   * customers.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/ListWebFunctionEndpoints">AWS
    * API Reference</a></p>
    */
@@ -481,8 +505,9 @@ class AWS_LAMBDAWEB_API LambdaWebClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Lists revisions for a web function. We recommend using pagination to ensure
-   * that the operation returns quickly and successfully.</p><p><h3>See Also:</h3>
-   * <a
+   * that the operation returns quickly and successfully.</p>  <p>This API is
+   * experimental and for internal AWS use only. It is not yet available to external
+   * customers.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/ListWebFunctionRevisions">AWS
    * API Reference</a></p>
    */
@@ -510,8 +535,9 @@ class AWS_LAMBDAWEB_API LambdaWebClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Lists web functions in your account. We recommend using pagination to ensure
-   * that the operation returns quickly and successfully.</p><p><h3>See Also:</h3>
-   * <a
+   * that the operation returns quickly and successfully.</p>  <p>This API is
+   * experimental and for internal AWS use only. It is not yet available to external
+   * customers.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/ListWebFunctions">AWS
    * API Reference</a></p>
    */
@@ -540,7 +566,9 @@ class AWS_LAMBDAWEB_API LambdaWebClient : public Aws::Client::AWSJsonClient,
   /**
    * <p>Adds or updates a resource-based policy on a web function. A resource-based
    * policy grants permissions to other AWS accounts or services to perform actions
-   * on the web function.</p><p><h3>See Also:</h3>   <a
+   * on the web function.</p>  <p>This API is experimental and for internal AWS
+   * use only. It is not yet available to external customers.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/PutResourcePolicy">AWS
    * API Reference</a></p>
    */
@@ -567,7 +595,9 @@ class AWS_LAMBDAWEB_API LambdaWebClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Adds tags to a web function. If a tag key already exists, the existing value
-   * is overwritten with the new value.</p><p><h3>See Also:</h3>   <a
+   * is overwritten with the new value.</p>  <p>This API is experimental and
+   * for internal AWS use only. It is not yet available to external customers.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/TagResource">AWS
    * API Reference</a></p>
    */
@@ -592,7 +622,9 @@ class AWS_LAMBDAWEB_API LambdaWebClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Removes tags from a web function.</p><p><h3>See Also:</h3>   <a
+   * <p>Removes tags from a web function.</p>  <p>This API is experimental and
+   * for internal AWS use only. It is not yet available to external customers.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/UntagResource">AWS
    * API Reference</a></p>
    */
@@ -619,7 +651,9 @@ class AWS_LAMBDAWEB_API LambdaWebClient : public Aws::Client::AWSJsonClient,
   /**
    * <p>Updates the configuration of a web function endpoint. You can modify the
    * authorization type, auto-deployment mode, revision weights, scaling, and
-   * throttling settings.</p><p><h3>See Also:</h3>   <a
+   * throttling settings.</p>  <p>This API is experimental and for internal AWS
+   * use only. It is not yet available to external customers.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/UpdateWebFunctionEndpoint">AWS
    * API Reference</a></p>
    */

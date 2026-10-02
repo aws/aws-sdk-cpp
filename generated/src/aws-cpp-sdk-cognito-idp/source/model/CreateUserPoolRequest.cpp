@@ -144,6 +144,14 @@ Aws::String CreateUserPoolRequest::SerializePayload() const {
     payload.WithObject("IssuerConfiguration", m_issuerConfiguration.Jsonize());
   }
 
+  if (m_acrConfigurationHasBeenSet) {
+    JsonValue acrConfigurationJsonMap;
+    for (auto& acrConfigurationItem : m_acrConfiguration) {
+      acrConfigurationJsonMap.WithObject(acrConfigurationItem.first, acrConfigurationItem.second.Jsonize());
+    }
+    payload.WithObject("AcrConfiguration", std::move(acrConfigurationJsonMap));
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -153,9 +153,9 @@ class CarrierLookupResult {
 
   ///@{
   /**
-   * <p>Describes the type of phone number. Valid values are: MOBILE, LANDLINE,
-   * OTHER, and INVALID. Avoid sending SMS or voice messages to INVALID phone
-   * numbers, as these numbers are unlikely to belong to actual recipients.</p>
+   * <p>Describes the type of phone number. Valid values are: MOBILE, LANDLINE, VOIP,
+   * PREPAID, OTHER, and INVALID. Avoid sending SMS or voice messages to INVALID
+   * phone numbers, as these numbers are unlikely to belong to actual recipients.</p>
    */
   inline PhoneNumberType GetPhoneNumberType() const { return m_phoneNumberType; }
   inline void SetPhoneNumberType(PhoneNumberType value) {
@@ -164,6 +164,26 @@ class CarrierLookupResult {
   }
   inline CarrierLookupResult& WithPhoneNumberType(PhoneNumberType value) {
     SetPhoneNumberType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The phone number exactly as you supplied it in the request. This field is
+   * returned only when you set <code>EnableCleansing</code> to <code>true</code>,
+   * the phone number was cleansed, and a normalized E.164 phone number was returned
+   * in the <code>E164PhoneNumber</code> field.</p>
+   */
+  inline const Aws::String& GetOriginalPhoneNumber() const { return m_originalPhoneNumber; }
+  template <typename OriginalPhoneNumberT = Aws::String>
+  void SetOriginalPhoneNumber(OriginalPhoneNumberT&& value) {
+    m_originalPhoneNumberHasBeenSet = true;
+    m_originalPhoneNumber = std::forward<OriginalPhoneNumberT>(value);
+  }
+  template <typename OriginalPhoneNumberT = Aws::String>
+  CarrierLookupResult& WithOriginalPhoneNumber(OriginalPhoneNumberT&& value) {
+    SetOriginalPhoneNumber(std::forward<OriginalPhoneNumberT>(value));
     return *this;
   }
   ///@}
@@ -201,6 +221,8 @@ class CarrierLookupResult {
 
   PhoneNumberType m_phoneNumberType{PhoneNumberType::NOT_SET};
 
+  Aws::String m_originalPhoneNumber;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_e164PhoneNumberHasBeenSet = false;
@@ -211,6 +233,7 @@ class CarrierLookupResult {
   bool m_mNCHasBeenSet = false;
   bool m_carrierHasBeenSet = false;
   bool m_phoneNumberTypeHasBeenSet = false;
+  bool m_originalPhoneNumberHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

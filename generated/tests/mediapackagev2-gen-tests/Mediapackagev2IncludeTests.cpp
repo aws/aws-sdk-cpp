@@ -125,6 +125,7 @@
 #include <aws/mediapackagev2/model/ListTagsForResourceResult.h>
 #include <aws/mediapackagev2/model/MssManifestLayout.h>
 #include <aws/mediapackagev2/model/MultiviewConfiguration.h>
+#include <aws/mediapackagev2/model/MultiviewFilterConfiguration.h>
 #include <aws/mediapackagev2/model/MultiviewLayoutType.h>
 #include <aws/mediapackagev2/model/OriginEndpointListConfiguration.h>
 #include <aws/mediapackagev2/model/OutputHeaderConfiguration.h>

@@ -7,6 +7,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediapackagev2/Mediapackagev2_EXPORTS.h>
+#include <aws/mediapackagev2/model/MultiviewFilterConfiguration.h>
 
 #include <utility>
 
@@ -152,6 +153,30 @@ class FilterConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Optionally pin this manifest to a single multiview combination, so that
+   * players request it without an <code>aws.multiview</code> query parameter. When
+   * you pin a combination, note that you cannot use the <code>aws.multiview</code>
+   * query parameter for this manifest's endpoint URL, even when that parameter
+   * requests the same combination.</p> <p>This setting is valid only on an origin
+   * endpoint whose channel has an <code>InputType</code> of
+   * <code>MULTIVIEW</code>.</p>
+   */
+  inline const MultiviewFilterConfiguration& GetMultiview() const { return m_multiview; }
+  inline bool MultiviewHasBeenSet() const { return m_multiviewHasBeenSet; }
+  template <typename MultiviewT = MultiviewFilterConfiguration>
+  void SetMultiview(MultiviewT&& value) {
+    m_multiviewHasBeenSet = true;
+    m_multiview = std::forward<MultiviewT>(value);
+  }
+  template <typename MultiviewT = MultiviewFilterConfiguration>
+  FilterConfiguration& WithMultiview(MultiviewT&& value) {
+    SetMultiview(std::forward<MultiviewT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_manifestFilter;
 
@@ -164,12 +189,15 @@ class FilterConfiguration {
   int m_timeDelaySeconds{0};
 
   Aws::Utils::DateTime m_clipStartTime{};
+
+  MultiviewFilterConfiguration m_multiview;
   bool m_manifestFilterHasBeenSet = false;
   bool m_drmSettingsHasBeenSet = false;
   bool m_startHasBeenSet = false;
   bool m_endHasBeenSet = false;
   bool m_timeDelaySecondsHasBeenSet = false;
   bool m_clipStartTimeHasBeenSet = false;
+  bool m_multiviewHasBeenSet = false;
 };
 
 }  // namespace Model

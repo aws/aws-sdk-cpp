@@ -85,6 +85,7 @@
 #include <aws/invoicing/model/ListProcurementPortalsResult.h>
 #include <aws/invoicing/model/ListTagsForResourceRequest.h>
 #include <aws/invoicing/model/ListTagsForResourceResult.h>
+#include <aws/invoicing/model/MarketplacePunchOutPreference.h>
 #include <aws/invoicing/model/ProcurementPortal.h>
 #include <aws/invoicing/model/ProcurementPortalEnv.h>
 #include <aws/invoicing/model/ProcurementPortalName.h>

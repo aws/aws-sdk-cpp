@@ -1,6 +1,0 @@
-{
-  "type": "feature",
-  "category": "aws-cpp-sdk-core",
-  "contributor": "sbiscigl",
-  "description": "Wire HTTP Async API into AwsClient and SmithyClient if using CRT HTTP client"
-}

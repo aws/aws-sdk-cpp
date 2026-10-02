@@ -78,6 +78,14 @@ ProcurementPortalPreference& ProcurementPortalPreference::operator=(JsonView jso
     m_purchaseOrderRetrievalEnabled = jsonValue.GetBool("PurchaseOrderRetrievalEnabled");
     m_purchaseOrderRetrievalEnabledHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MarketplacePunchOutEnabled")) {
+    m_marketplacePunchOutEnabled = jsonValue.GetBool("MarketplacePunchOutEnabled");
+    m_marketplacePunchOutEnabledHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("MarketplacePunchOutPreference")) {
+    m_marketplacePunchOutPreference = jsonValue.GetObject("MarketplacePunchOutPreference");
+    m_marketplacePunchOutPreferenceHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Contacts")) {
     Aws::Utils::Array<JsonView> contactsJsonList = jsonValue.GetArray("Contacts");
     for (unsigned contactsIndex = 0; contactsIndex < contactsJsonList.GetLength(); ++contactsIndex) {
@@ -179,6 +187,14 @@ JsonValue ProcurementPortalPreference::Jsonize() const {
 
   if (m_purchaseOrderRetrievalEnabledHasBeenSet) {
     payload.WithBool("PurchaseOrderRetrievalEnabled", m_purchaseOrderRetrievalEnabled);
+  }
+
+  if (m_marketplacePunchOutEnabledHasBeenSet) {
+    payload.WithBool("MarketplacePunchOutEnabled", m_marketplacePunchOutEnabled);
+  }
+
+  if (m_marketplacePunchOutPreferenceHasBeenSet) {
+    payload.WithObject("MarketplacePunchOutPreference", m_marketplacePunchOutPreference.Jsonize());
   }
 
   if (m_contactsHasBeenSet) {

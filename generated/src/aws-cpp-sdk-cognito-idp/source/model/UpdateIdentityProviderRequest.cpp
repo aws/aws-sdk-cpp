@@ -47,6 +47,14 @@ Aws::String UpdateIdentityProviderRequest::SerializePayload() const {
     payload.WithArray("IdpIdentifiers", std::move(idpIdentifiersJsonList));
   }
 
+  if (m_acrMappingHasBeenSet) {
+    JsonValue acrMappingJsonMap;
+    for (auto& acrMappingItem : m_acrMapping) {
+      acrMappingJsonMap.WithString(acrMappingItem.first, acrMappingItem.second);
+    }
+    payload.WithObject("AcrMapping", std::move(acrMappingJsonMap));
+  }
+
   return payload.View().WriteReadable();
 }
 

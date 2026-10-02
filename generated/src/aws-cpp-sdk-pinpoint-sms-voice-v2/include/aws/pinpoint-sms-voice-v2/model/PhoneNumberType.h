@@ -10,7 +10,7 @@
 namespace Aws {
 namespace PinpointSMSVoiceV2 {
 namespace Model {
-enum class PhoneNumberType { NOT_SET, MOBILE, LANDLINE, OTHER, INVALID };
+enum class PhoneNumberType { NOT_SET, MOBILE, LANDLINE, VOIP, PREPAID, OTHER, INVALID };
 
 namespace PhoneNumberTypeMapper {
 AWS_PINPOINTSMSVOICEV2_API PhoneNumberType GetPhoneNumberTypeForName(const Aws::String& name);

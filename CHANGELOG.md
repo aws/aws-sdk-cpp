@@ -1,3 +1,18 @@
+# 1.11.906 (2026-10-02)
+
+## SDK Highlights
+* **Dependency Update**: Bump jackson-databind from 2.22.0 to 2.22.2 in the code generator
+* **Feature**: Wire HTTP Async API into AwsClient and SmithyClient if using CRT HTTP client
+
+## Service Updates
+* **Cognito Identity Provider**: Amazon Cognito User Pools now supports the OIDC-standard authentication context class reference (ACR) and authentication methods reference (AMR) claims on issued access and Id tokens. Amazon Cognito User Pools also now supports step-up authentication via our existing authentication APIs.
+* **Glue**: Added refresh token grant type to Glue Connection supported OAuth 2.0 grant types
+* **Invoicing**: API and doc updates related to adding MarketplacePunchOutEnabled and MarketplacePunchOutPreference fields to ProcurementPortalPreferences related APIs
+* **Lambda Web**: Documentation update for AWS Lambda Web Functions, clarifies that the LambdaWeb APIs are experimental and not yet available to external customers.
+* **MediaPackageV2**: Dynamic Multiview enables viewers to watch multiple live video streams in a single combined output. Static filter configuration allows users to configure endpoints with layouts and sources without using query parameters. The number of sources per multiview channel has been increased to 50.
+* **Pinpoint SMS Voice V2**: AWS End User Messaging SMS CarrierLookup API now supports phone number cleansing on customer opt-in. when selected, the response includes the additional field "OriginalPhoneNumber". It can also return additional PhoneNumberType enums, VOIP and PREPAID.
+* **SecurityAgent**: Adds trigger filters that control which pull request events, target branches, and labels start an automatic code review.
+
 # 1.11.905 (2026-10-01)
 
 ## Service Updates

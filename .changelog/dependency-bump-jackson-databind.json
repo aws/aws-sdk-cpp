@@ -1,6 +1,0 @@
-{
-  "type": "dependency",
-  "category": "aws-cpp-sdk-core",
-  "contributor": "dependabot[bot]",
-  "description": "Bump jackson-databind from 2.22.0 to 2.22.2 in the code generator"
-}

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/model/AccountRecoverySettingType.h>
+#include <aws/cognito-idp/model/AcrLevelConfigType.h>
 #include <aws/cognito-idp/model/AdminCreateUserConfigType.h>
 #include <aws/cognito-idp/model/AliasAttributeType.h>
 #include <aws/cognito-idp/model/DeletionProtectionType.h>
@@ -797,6 +798,36 @@ class UserPoolType {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The names of the authentication context class reference (ACR) levels for the
+   * user pool. Amazon Cognito always returns the effective configuration, with
+   * default names merged in for any level that you haven't customized.</p>
+   * <p>Configuring custom ACR level names requires the Essentials or Plus feature
+   * plan. To activate this setting, your user pool must be in the <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html">
+   * Essentials tier</a> or higher.</p>
+   */
+  inline const Aws::Map<Aws::String, AcrLevelConfigType>& GetAcrConfiguration() const { return m_acrConfiguration; }
+  inline bool AcrConfigurationHasBeenSet() const { return m_acrConfigurationHasBeenSet; }
+  template <typename AcrConfigurationT = Aws::Map<Aws::String, AcrLevelConfigType>>
+  void SetAcrConfiguration(AcrConfigurationT&& value) {
+    m_acrConfigurationHasBeenSet = true;
+    m_acrConfiguration = std::forward<AcrConfigurationT>(value);
+  }
+  template <typename AcrConfigurationT = Aws::Map<Aws::String, AcrLevelConfigType>>
+  UserPoolType& WithAcrConfiguration(AcrConfigurationT&& value) {
+    SetAcrConfiguration(std::forward<AcrConfigurationT>(value));
+    return *this;
+  }
+  template <typename AcrConfigurationKeyT = Aws::String, typename AcrConfigurationValueT = AcrLevelConfigType>
+  UserPoolType& AddAcrConfiguration(AcrConfigurationKeyT&& key, AcrConfigurationValueT&& value) {
+    m_acrConfigurationHasBeenSet = true;
+    m_acrConfiguration.emplace(std::forward<AcrConfigurationKeyT>(key), std::forward<AcrConfigurationValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -867,6 +898,8 @@ class UserPoolType {
   KeyConfigurationType m_keyConfiguration;
 
   IssuerConfigurationType m_issuerConfiguration;
+
+  Aws::Map<Aws::String, AcrLevelConfigType> m_acrConfiguration;
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_policiesHasBeenSet = false;
@@ -902,6 +935,7 @@ class UserPoolType {
   bool m_userPoolTierHasBeenSet = false;
   bool m_keyConfigurationHasBeenSet = false;
   bool m_issuerConfigurationHasBeenSet = false;
+  bool m_acrConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

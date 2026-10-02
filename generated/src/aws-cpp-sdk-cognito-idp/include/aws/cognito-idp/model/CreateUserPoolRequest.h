@@ -7,6 +7,7 @@
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/model/AccountRecoverySettingType.h>
+#include <aws/cognito-idp/model/AcrLevelConfigType.h>
 #include <aws/cognito-idp/model/AdminCreateUserConfigType.h>
 #include <aws/cognito-idp/model/AliasAttributeType.h>
 #include <aws/cognito-idp/model/DeletionProtectionType.h>
@@ -659,6 +660,44 @@ class CreateUserPoolRequest : public CognitoIdentityProviderRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The custom names for the authentication context class reference (ACR) levels
+   * in your user pool. Amazon Cognito defines four fixed ACR levels that represent
+   * increasing authentication assurance. The combination of authentication factors
+   * that satisfies each level is fixed and you can't change it. With this
+   * configuration, you customize only the URI name that Amazon Cognito reports for
+   * each level in the <code>acr</code> token claim.</p> <p>You can override a subset
+   * of the levels. By default, the levels are named <code>urn:cognito:loa:1</code>
+   * through <code>urn:cognito:loa:4</code>, and Amazon Cognito applies the default
+   * name to any level that you don't specify. Each name must be unique across all
+   * four levels, including any default names that apply to levels you don't
+   * override. A name can contain any character that is valid in a URL or a URN.</p>
+   * <p>Configuring custom ACR level names requires the Essentials or Plus feature
+   * plan. To activate this setting, your user pool must be in the <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html">
+   * Essentials tier</a> or higher.</p>
+   */
+  inline const Aws::Map<Aws::String, AcrLevelConfigType>& GetAcrConfiguration() const { return m_acrConfiguration; }
+  inline bool AcrConfigurationHasBeenSet() const { return m_acrConfigurationHasBeenSet; }
+  template <typename AcrConfigurationT = Aws::Map<Aws::String, AcrLevelConfigType>>
+  void SetAcrConfiguration(AcrConfigurationT&& value) {
+    m_acrConfigurationHasBeenSet = true;
+    m_acrConfiguration = std::forward<AcrConfigurationT>(value);
+  }
+  template <typename AcrConfigurationT = Aws::Map<Aws::String, AcrLevelConfigType>>
+  CreateUserPoolRequest& WithAcrConfiguration(AcrConfigurationT&& value) {
+    SetAcrConfiguration(std::forward<AcrConfigurationT>(value));
+    return *this;
+  }
+  template <typename AcrConfigurationKeyT = Aws::String, typename AcrConfigurationValueT = AcrLevelConfigType>
+  CreateUserPoolRequest& AddAcrConfiguration(AcrConfigurationKeyT&& key, AcrConfigurationValueT&& value) {
+    m_acrConfigurationHasBeenSet = true;
+    m_acrConfiguration.emplace(std::forward<AcrConfigurationKeyT>(key), std::forward<AcrConfigurationValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_poolName;
 
@@ -711,6 +750,8 @@ class CreateUserPoolRequest : public CognitoIdentityProviderRequest {
   KeyConfigurationType m_keyConfiguration;
 
   IssuerConfigurationType m_issuerConfiguration;
+
+  Aws::Map<Aws::String, AcrLevelConfigType> m_acrConfiguration;
   bool m_poolNameHasBeenSet = false;
   bool m_policiesHasBeenSet = false;
   bool m_deletionProtectionHasBeenSet = false;
@@ -737,6 +778,7 @@ class CreateUserPoolRequest : public CognitoIdentityProviderRequest {
   bool m_userPoolTierHasBeenSet = false;
   bool m_keyConfigurationHasBeenSet = false;
   bool m_issuerConfigurationHasBeenSet = false;
+  bool m_acrConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

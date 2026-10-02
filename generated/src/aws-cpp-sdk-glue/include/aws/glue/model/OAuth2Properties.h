@@ -38,7 +38,8 @@ class OAuth2Properties {
   ///@{
   /**
    * <p>The OAuth2 grant type. For example, <code>AUTHORIZATION_CODE</code>,
-   * <code>JWT_BEARER</code>, or <code>CLIENT_CREDENTIALS</code>.</p>
+   * <code>JWT_BEARER</code>, <code>REFRESH_TOKEN</code>, or
+   * <code>CLIENT_CREDENTIALS</code>.</p>
    */
   inline OAuth2GrantType GetOAuth2GrantType() const { return m_oAuth2GrantType; }
   inline bool OAuth2GrantTypeHasBeenSet() const { return m_oAuth2GrantTypeHasBeenSet; }

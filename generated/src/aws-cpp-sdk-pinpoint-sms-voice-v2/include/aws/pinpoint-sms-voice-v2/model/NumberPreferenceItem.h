@@ -22,8 +22,9 @@ namespace PinpointSMSVoiceV2 {
 namespace Model {
 
 /**
- * <p>A single number preference — specifies a pattern type and filter
- * value.</p><p><h3>See Also:</h3>   <a
+ * <p>A single number preference that specifies how to match available phone
+ * numbers. Each preference pairs a match type with one or more filter
+ * values.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/NumberPreferenceItem">AWS
  * API Reference</a></p>
  */

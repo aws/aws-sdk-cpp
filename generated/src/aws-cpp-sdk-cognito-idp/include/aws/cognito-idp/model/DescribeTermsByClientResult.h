@@ -31,7 +31,7 @@ class DescribeTermsByClientResult {
 
   ///@{
   /**
-   * <p>A summary of the requested terms documents. Includes a unique identifier for
+   * <p>A summary of the requested terms documents, including a unique identifier for
    * later changes to the terms documents.</p>
    */
   inline const TermsType& GetTerms() const { return m_terms; }

@@ -22,6 +22,7 @@
 #include <aws/cognito-idp/model/AccountTakeoverActionsType.h>
 #include <aws/cognito-idp/model/AccountTakeoverEventActionType.h>
 #include <aws/cognito-idp/model/AccountTakeoverRiskConfigurationType.h>
+#include <aws/cognito-idp/model/AcrLevelConfigType.h>
 #include <aws/cognito-idp/model/AddCustomAttributesRequest.h>
 #include <aws/cognito-idp/model/AddCustomAttributesResult.h>
 #include <aws/cognito-idp/model/AddUserPoolClientSecretRequest.h>

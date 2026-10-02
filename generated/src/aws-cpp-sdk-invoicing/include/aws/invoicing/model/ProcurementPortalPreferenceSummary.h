@@ -211,6 +211,23 @@ class ProcurementPortalPreferenceSummary {
 
   ///@{
   /**
+   * <p>Indicates whether Marketplace PunchOut is enabled for this procurement portal
+   * preference. Defaults to <code>false</code>.</p>
+   */
+  inline bool GetMarketplacePunchOutEnabled() const { return m_marketplacePunchOutEnabled; }
+  inline bool MarketplacePunchOutEnabledHasBeenSet() const { return m_marketplacePunchOutEnabledHasBeenSet; }
+  inline void SetMarketplacePunchOutEnabled(bool value) {
+    m_marketplacePunchOutEnabledHasBeenSet = true;
+    m_marketplacePunchOutEnabled = value;
+  }
+  inline ProcurementPortalPreferenceSummary& WithMarketplacePunchOutEnabled(bool value) {
+    SetMarketplacePunchOutEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The current status of the e-invoice delivery preference in this summary.</p>
    */
   inline ProcurementPortalPreferenceStatus GetEinvoiceDeliveryPreferenceStatus() const { return m_einvoiceDeliveryPreferenceStatus; }
@@ -361,6 +378,8 @@ class ProcurementPortalPreferenceSummary {
 
   bool m_purchaseOrderRetrievalEnabled{false};
 
+  bool m_marketplacePunchOutEnabled{false};
+
   ProcurementPortalPreferenceStatus m_einvoiceDeliveryPreferenceStatus{ProcurementPortalPreferenceStatus::NOT_SET};
 
   Aws::String m_einvoiceDeliveryPreferenceStatusReason;
@@ -384,6 +403,7 @@ class ProcurementPortalPreferenceSummary {
   bool m_selectorHasBeenSet = false;
   bool m_einvoiceDeliveryEnabledHasBeenSet = false;
   bool m_purchaseOrderRetrievalEnabledHasBeenSet = false;
+  bool m_marketplacePunchOutEnabledHasBeenSet = false;
   bool m_einvoiceDeliveryPreferenceStatusHasBeenSet = false;
   bool m_einvoiceDeliveryPreferenceStatusReasonHasBeenSet = false;
   bool m_purchaseOrderRetrievalPreferenceStatusHasBeenSet = false;

@@ -17,6 +17,8 @@ namespace PhoneNumberTypeMapper {
 
 static const int MOBILE_HASH = HashingUtils::HashString("MOBILE");
 static const int LANDLINE_HASH = HashingUtils::HashString("LANDLINE");
+static const int VOIP_HASH = HashingUtils::HashString("VOIP");
+static const int PREPAID_HASH = HashingUtils::HashString("PREPAID");
 static const int OTHER_HASH = HashingUtils::HashString("OTHER");
 static const int INVALID_HASH = HashingUtils::HashString("INVALID");
 
@@ -26,6 +28,10 @@ PhoneNumberType GetPhoneNumberTypeForName(const Aws::String& name) {
     return PhoneNumberType::MOBILE;
   } else if (hashCode == LANDLINE_HASH) {
     return PhoneNumberType::LANDLINE;
+  } else if (hashCode == VOIP_HASH) {
+    return PhoneNumberType::VOIP;
+  } else if (hashCode == PREPAID_HASH) {
+    return PhoneNumberType::PREPAID;
   } else if (hashCode == OTHER_HASH) {
     return PhoneNumberType::OTHER;
   } else if (hashCode == INVALID_HASH) {
@@ -48,6 +54,10 @@ Aws::String GetNameForPhoneNumberType(PhoneNumberType enumValue) {
       return "MOBILE";
     case PhoneNumberType::LANDLINE:
       return "LANDLINE";
+    case PhoneNumberType::VOIP:
+      return "VOIP";
+    case PhoneNumberType::PREPAID:
+      return "PREPAID";
     case PhoneNumberType::OTHER:
       return "OTHER";
     case PhoneNumberType::INVALID:

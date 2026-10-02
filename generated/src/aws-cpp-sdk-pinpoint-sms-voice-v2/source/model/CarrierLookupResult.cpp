@@ -54,6 +54,10 @@ CarrierLookupResult& CarrierLookupResult::operator=(const Aws::AmazonWebServiceR
     m_phoneNumberType = PhoneNumberTypeMapper::GetPhoneNumberTypeForName(jsonValue.GetString("PhoneNumberType"));
     m_phoneNumberTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("OriginalPhoneNumber")) {
+    m_originalPhoneNumber = jsonValue.GetString("OriginalPhoneNumber");
+    m_originalPhoneNumberHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -357,6 +357,11 @@
 #include <aws/securityagent/model/ThreatStatus.h>
 #include <aws/securityagent/model/ThreatSummary.h>
 #include <aws/securityagent/model/ThrottlingException.h>
+#include <aws/securityagent/model/TriggerEvent.h>
+#include <aws/securityagent/model/TriggerFilter.h>
+#include <aws/securityagent/model/TriggerFilterGroup.h>
+#include <aws/securityagent/model/TriggerFilterMatchMode.h>
+#include <aws/securityagent/model/TriggerFilterType.h>
 #include <aws/securityagent/model/TrustedCaCertificate.h>
 #include <aws/securityagent/model/UntagResourceRequest.h>
 #include <aws/securityagent/model/UntagResourceResult.h>

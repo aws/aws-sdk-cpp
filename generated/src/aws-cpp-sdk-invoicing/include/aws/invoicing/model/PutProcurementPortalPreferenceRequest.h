@@ -11,6 +11,7 @@
 #include <aws/invoicing/Invoicing_EXPORTS.h>
 #include <aws/invoicing/model/Contact.h>
 #include <aws/invoicing/model/EinvoiceDeliveryPreference.h>
+#include <aws/invoicing/model/MarketplacePunchOutPreference.h>
 #include <aws/invoicing/model/ProcurementPortalPreferenceSelector.h>
 #include <aws/invoicing/model/TestEnvPreferenceInput.h>
 
@@ -183,6 +184,42 @@ class PutProcurementPortalPreferenceRequest : public InvoicingRequest {
 
   ///@{
   /**
+   * <p>Whether Marketplace PunchOut is enabled for this connection. Defaults to
+   * false if not provided.</p>
+   */
+  inline bool GetMarketplacePunchOutEnabled() const { return m_marketplacePunchOutEnabled; }
+  inline bool MarketplacePunchOutEnabledHasBeenSet() const { return m_marketplacePunchOutEnabledHasBeenSet; }
+  inline void SetMarketplacePunchOutEnabled(bool value) {
+    m_marketplacePunchOutEnabledHasBeenSet = true;
+    m_marketplacePunchOutEnabled = value;
+  }
+  inline PutProcurementPortalPreferenceRequest& WithMarketplacePunchOutEnabled(bool value) {
+    SetMarketplacePunchOutEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Configuration for Marketplace PunchOut. Required when
+   * MarketplacePunchOutEnabled is true.</p>
+   */
+  inline const MarketplacePunchOutPreference& GetMarketplacePunchOutPreference() const { return m_marketplacePunchOutPreference; }
+  inline bool MarketplacePunchOutPreferenceHasBeenSet() const { return m_marketplacePunchOutPreferenceHasBeenSet; }
+  template <typename MarketplacePunchOutPreferenceT = MarketplacePunchOutPreference>
+  void SetMarketplacePunchOutPreference(MarketplacePunchOutPreferenceT&& value) {
+    m_marketplacePunchOutPreferenceHasBeenSet = true;
+    m_marketplacePunchOutPreference = std::forward<MarketplacePunchOutPreferenceT>(value);
+  }
+  template <typename MarketplacePunchOutPreferenceT = MarketplacePunchOutPreference>
+  PutProcurementPortalPreferenceRequest& WithMarketplacePunchOutPreference(MarketplacePunchOutPreferenceT&& value) {
+    SetMarketplacePunchOutPreference(std::forward<MarketplacePunchOutPreferenceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Updated list of contact information for portal administrators and technical
    * contacts.</p>
    */
@@ -241,6 +278,10 @@ class PutProcurementPortalPreferenceRequest : public InvoicingRequest {
 
   bool m_purchaseOrderRetrievalEnabled{false};
 
+  bool m_marketplacePunchOutEnabled{false};
+
+  MarketplacePunchOutPreference m_marketplacePunchOutPreference;
+
   Aws::Vector<Contact> m_contacts;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
@@ -252,6 +293,8 @@ class PutProcurementPortalPreferenceRequest : public InvoicingRequest {
   bool m_einvoiceDeliveryEnabledHasBeenSet = false;
   bool m_einvoiceDeliveryPreferenceHasBeenSet = false;
   bool m_purchaseOrderRetrievalEnabledHasBeenSet = false;
+  bool m_marketplacePunchOutEnabledHasBeenSet = false;
+  bool m_marketplacePunchOutPreferenceHasBeenSet = false;
   bool m_contactsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };

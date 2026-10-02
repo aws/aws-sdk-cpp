@@ -171,6 +171,13 @@ static const int CONTENT_KEY_PERIOD_TIMING_WITHOUT_KEY_ROTATION_HASH =
     HashingUtils::HashString("CONTENT_KEY_PERIOD_TIMING_WITHOUT_KEY_ROTATION");
 static const int CONTENT_KEY_PERIOD_TIMING_REQUIRES_SPEKE_V2_1_HASH =
     HashingUtils::HashString("CONTENT_KEY_PERIOD_TIMING_REQUIRES_SPEKE_V2_1");
+static const int MULTIVIEW_FILTER_CONFIGURATION_NOT_ALLOWED_HASH = HashingUtils::HashString("MULTIVIEW_FILTER_CONFIGURATION_NOT_ALLOWED");
+static const int MULTIVIEW_FILTER_LAYOUT_NOT_AVAILABLE_HASH = HashingUtils::HashString("MULTIVIEW_FILTER_LAYOUT_NOT_AVAILABLE");
+static const int MULTIVIEW_FILTER_SOURCE_NOT_AVAILABLE_HASH = HashingUtils::HashString("MULTIVIEW_FILTER_SOURCE_NOT_AVAILABLE");
+static const int MULTIVIEW_FILTER_SOURCE_COUNT_MISMATCH_HASH = HashingUtils::HashString("MULTIVIEW_FILTER_SOURCE_COUNT_MISMATCH");
+static const int MULTIVIEW_SOURCE_CHANNEL_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("MULTIVIEW_SOURCE_CHANNEL_LIMIT_EXCEEDED");
+static const int MULTIVIEW_TS_USE_AUDIO_RENDITION_GROUP_DISABLED_HASH =
+    HashingUtils::HashString("MULTIVIEW_TS_USE_AUDIO_RENDITION_GROUP_DISABLED");
 
 /*
 The if-else chains in this file are converted into a jump table by the compiler,
@@ -577,6 +584,24 @@ static bool GetEnumForNameHelper1(int hashCode, ValidationExceptionType& enumVal
     return true;
   } else if (hashCode == CONTENT_KEY_PERIOD_TIMING_REQUIRES_SPEKE_V2_1_HASH) {
     enumValue = ValidationExceptionType::CONTENT_KEY_PERIOD_TIMING_REQUIRES_SPEKE_V2_1;
+    return true;
+  } else if (hashCode == MULTIVIEW_FILTER_CONFIGURATION_NOT_ALLOWED_HASH) {
+    enumValue = ValidationExceptionType::MULTIVIEW_FILTER_CONFIGURATION_NOT_ALLOWED;
+    return true;
+  } else if (hashCode == MULTIVIEW_FILTER_LAYOUT_NOT_AVAILABLE_HASH) {
+    enumValue = ValidationExceptionType::MULTIVIEW_FILTER_LAYOUT_NOT_AVAILABLE;
+    return true;
+  } else if (hashCode == MULTIVIEW_FILTER_SOURCE_NOT_AVAILABLE_HASH) {
+    enumValue = ValidationExceptionType::MULTIVIEW_FILTER_SOURCE_NOT_AVAILABLE;
+    return true;
+  } else if (hashCode == MULTIVIEW_FILTER_SOURCE_COUNT_MISMATCH_HASH) {
+    enumValue = ValidationExceptionType::MULTIVIEW_FILTER_SOURCE_COUNT_MISMATCH;
+    return true;
+  } else if (hashCode == MULTIVIEW_SOURCE_CHANNEL_LIMIT_EXCEEDED_HASH) {
+    enumValue = ValidationExceptionType::MULTIVIEW_SOURCE_CHANNEL_LIMIT_EXCEEDED;
+    return true;
+  } else if (hashCode == MULTIVIEW_TS_USE_AUDIO_RENDITION_GROUP_DISABLED_HASH) {
+    enumValue = ValidationExceptionType::MULTIVIEW_TS_USE_AUDIO_RENDITION_GROUP_DISABLED;
     return true;
   }
   return false;
@@ -985,6 +1010,24 @@ static bool GetNameForEnumHelper1(ValidationExceptionType enumValue, Aws::String
       return true;
     case ValidationExceptionType::CONTENT_KEY_PERIOD_TIMING_REQUIRES_SPEKE_V2_1:
       value = "CONTENT_KEY_PERIOD_TIMING_REQUIRES_SPEKE_V2_1";
+      return true;
+    case ValidationExceptionType::MULTIVIEW_FILTER_CONFIGURATION_NOT_ALLOWED:
+      value = "MULTIVIEW_FILTER_CONFIGURATION_NOT_ALLOWED";
+      return true;
+    case ValidationExceptionType::MULTIVIEW_FILTER_LAYOUT_NOT_AVAILABLE:
+      value = "MULTIVIEW_FILTER_LAYOUT_NOT_AVAILABLE";
+      return true;
+    case ValidationExceptionType::MULTIVIEW_FILTER_SOURCE_NOT_AVAILABLE:
+      value = "MULTIVIEW_FILTER_SOURCE_NOT_AVAILABLE";
+      return true;
+    case ValidationExceptionType::MULTIVIEW_FILTER_SOURCE_COUNT_MISMATCH:
+      value = "MULTIVIEW_FILTER_SOURCE_COUNT_MISMATCH";
+      return true;
+    case ValidationExceptionType::MULTIVIEW_SOURCE_CHANNEL_LIMIT_EXCEEDED:
+      value = "MULTIVIEW_SOURCE_CHANNEL_LIMIT_EXCEEDED";
+      return true;
+    case ValidationExceptionType::MULTIVIEW_TS_USE_AUDIO_RENDITION_GROUP_DISABLED:
+      value = "MULTIVIEW_TS_USE_AUDIO_RENDITION_GROUP_DISABLED";
       return true;
     default:
       return false;

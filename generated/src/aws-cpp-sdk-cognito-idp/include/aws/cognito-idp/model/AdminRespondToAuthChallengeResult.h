@@ -10,6 +10,7 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -185,6 +186,33 @@ class AdminRespondToAuthChallengeResult {
   ///@}
 
   ///@{
+  /**
+   * <p>This response parameter lists the available authentication challenges that
+   * users can select from in <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-selection-sdk.html#authentication-flows-selection-choice">choice-based
+   * authentication</a>. For example, they might be able to choose between passkey
+   * authentication, a one-time password from an SMS message, and a traditional
+   * password.</p>
+   */
+  inline const Aws::Vector<ChallengeNameType>& GetAvailableChallenges() const { return m_availableChallenges; }
+  template <typename AvailableChallengesT = Aws::Vector<ChallengeNameType>>
+  void SetAvailableChallenges(AvailableChallengesT&& value) {
+    m_availableChallengesHasBeenSet = true;
+    m_availableChallenges = std::forward<AvailableChallengesT>(value);
+  }
+  template <typename AvailableChallengesT = Aws::Vector<ChallengeNameType>>
+  AdminRespondToAuthChallengeResult& WithAvailableChallenges(AvailableChallengesT&& value) {
+    SetAvailableChallenges(std::forward<AvailableChallengesT>(value));
+    return *this;
+  }
+  inline AdminRespondToAuthChallengeResult& AddAvailableChallenges(ChallengeNameType value) {
+    m_availableChallengesHasBeenSet = true;
+    m_availableChallenges.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -209,12 +237,15 @@ class AdminRespondToAuthChallengeResult {
 
   AuthenticationResultType m_authenticationResult;
 
+  Aws::Vector<ChallengeNameType> m_availableChallenges;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_challengeNameHasBeenSet = false;
   bool m_sessionHasBeenSet = false;
   bool m_challengeParametersHasBeenSet = false;
   bool m_authenticationResultHasBeenSet = false;
+  bool m_availableChallengesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

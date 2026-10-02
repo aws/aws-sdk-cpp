@@ -42,6 +42,10 @@ FilterConfiguration& FilterConfiguration::operator=(JsonView jsonValue) {
     m_clipStartTime = jsonValue.GetDouble("ClipStartTime");
     m_clipStartTimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Multiview")) {
+    m_multiview = jsonValue.GetObject("Multiview");
+    m_multiviewHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +74,10 @@ JsonValue FilterConfiguration::Jsonize() const {
 
   if (m_clipStartTimeHasBeenSet) {
     payload.WithDouble("ClipStartTime", m_clipStartTime.SecondsWithMSPrecision());
+  }
+
+  if (m_multiviewHasBeenSet) {
+    payload.WithObject("Multiview", m_multiview.Jsonize());
   }
 
   return payload;

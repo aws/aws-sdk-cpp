@@ -4,7 +4,11 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/securityagent/SecurityAgent_EXPORTS.h>
+#include <aws/securityagent/model/TriggerFilterGroup.h>
+
+#include <utility>
 
 namespace Aws {
 namespace Utils {
@@ -28,6 +32,33 @@ class BitbucketResourceCapabilities {
   AWS_SECURITYAGENT_API BitbucketResourceCapabilities(Aws::Utils::Json::JsonView jsonValue);
   AWS_SECURITYAGENT_API BitbucketResourceCapabilities& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_SECURITYAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>The filter groups that control which pull request events start an automatic
+   * code review when <code>leaveComments</code> is enabled. A review starts when any
+   * group matches. If you omit this, a review starts on
+   * <code>PULL_REQUEST_READY_FOR_REVIEW</code> events.</p>
+   */
+  inline const Aws::Vector<TriggerFilterGroup>& GetTriggerFilterGroups() const { return m_triggerFilterGroups; }
+  inline bool TriggerFilterGroupsHasBeenSet() const { return m_triggerFilterGroupsHasBeenSet; }
+  template <typename TriggerFilterGroupsT = Aws::Vector<TriggerFilterGroup>>
+  void SetTriggerFilterGroups(TriggerFilterGroupsT&& value) {
+    m_triggerFilterGroupsHasBeenSet = true;
+    m_triggerFilterGroups = std::forward<TriggerFilterGroupsT>(value);
+  }
+  template <typename TriggerFilterGroupsT = Aws::Vector<TriggerFilterGroup>>
+  BitbucketResourceCapabilities& WithTriggerFilterGroups(TriggerFilterGroupsT&& value) {
+    SetTriggerFilterGroups(std::forward<TriggerFilterGroupsT>(value));
+    return *this;
+  }
+  template <typename TriggerFilterGroupsT = TriggerFilterGroup>
+  BitbucketResourceCapabilities& AddTriggerFilterGroups(TriggerFilterGroupsT&& value) {
+    m_triggerFilterGroupsHasBeenSet = true;
+    m_triggerFilterGroups.emplace_back(std::forward<TriggerFilterGroupsT>(value));
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -61,9 +92,12 @@ class BitbucketResourceCapabilities {
   }
   ///@}
  private:
+  Aws::Vector<TriggerFilterGroup> m_triggerFilterGroups;
+
   bool m_leaveComments{false};
 
   bool m_remediateCode{false};
+  bool m_triggerFilterGroupsHasBeenSet = false;
   bool m_leaveCommentsHasBeenSet = false;
   bool m_remediateCodeHasBeenSet = false;
 };

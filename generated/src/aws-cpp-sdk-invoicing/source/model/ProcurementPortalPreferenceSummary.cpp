@@ -58,6 +58,10 @@ ProcurementPortalPreferenceSummary& ProcurementPortalPreferenceSummary::operator
     m_purchaseOrderRetrievalEnabled = jsonValue.GetBool("PurchaseOrderRetrievalEnabled");
     m_purchaseOrderRetrievalEnabledHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MarketplacePunchOutEnabled")) {
+    m_marketplacePunchOutEnabled = jsonValue.GetBool("MarketplacePunchOutEnabled");
+    m_marketplacePunchOutEnabledHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("EinvoiceDeliveryPreferenceStatus")) {
     m_einvoiceDeliveryPreferenceStatus = ProcurementPortalPreferenceStatusMapper::GetProcurementPortalPreferenceStatusForName(
         jsonValue.GetString("EinvoiceDeliveryPreferenceStatus"));
@@ -132,6 +136,10 @@ JsonValue ProcurementPortalPreferenceSummary::Jsonize() const {
 
   if (m_purchaseOrderRetrievalEnabledHasBeenSet) {
     payload.WithBool("PurchaseOrderRetrievalEnabled", m_purchaseOrderRetrievalEnabled);
+  }
+
+  if (m_marketplacePunchOutEnabledHasBeenSet) {
+    payload.WithBool("MarketplacePunchOutEnabled", m_marketplacePunchOutEnabled);
   }
 
   if (m_einvoiceDeliveryPreferenceStatusHasBeenSet) {

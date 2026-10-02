@@ -19,6 +19,10 @@ Aws::String CarrierLookupRequest::SerializePayload() const {
     payload.WithString("PhoneNumber", m_phoneNumber);
   }
 
+  if (m_enableCleansingHasBeenSet) {
+    payload.WithBool("EnableCleansing", m_enableCleansing);
+  }
+
   return payload.View().WriteReadable();
 }
 

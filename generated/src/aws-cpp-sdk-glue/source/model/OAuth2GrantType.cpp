@@ -18,6 +18,7 @@ namespace OAuth2GrantTypeMapper {
 static const int AUTHORIZATION_CODE_HASH = HashingUtils::HashString("AUTHORIZATION_CODE");
 static const int CLIENT_CREDENTIALS_HASH = HashingUtils::HashString("CLIENT_CREDENTIALS");
 static const int JWT_BEARER_HASH = HashingUtils::HashString("JWT_BEARER");
+static const int REFRESH_TOKEN_HASH = HashingUtils::HashString("REFRESH_TOKEN");
 
 OAuth2GrantType GetOAuth2GrantTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ OAuth2GrantType GetOAuth2GrantTypeForName(const Aws::String& name) {
     return OAuth2GrantType::CLIENT_CREDENTIALS;
   } else if (hashCode == JWT_BEARER_HASH) {
     return OAuth2GrantType::JWT_BEARER;
+  } else if (hashCode == REFRESH_TOKEN_HASH) {
+    return OAuth2GrantType::REFRESH_TOKEN;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForOAuth2GrantType(OAuth2GrantType enumValue) {
       return "CLIENT_CREDENTIALS";
     case OAuth2GrantType::JWT_BEARER:
       return "JWT_BEARER";
+    case OAuth2GrantType::REFRESH_TOKEN:
+      return "REFRESH_TOKEN";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

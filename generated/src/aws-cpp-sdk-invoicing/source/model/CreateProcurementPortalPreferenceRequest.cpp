@@ -63,6 +63,14 @@ Aws::String CreateProcurementPortalPreferenceRequest::SerializePayload() const {
     payload.WithBool("PurchaseOrderRetrievalEnabled", m_purchaseOrderRetrievalEnabled);
   }
 
+  if (m_marketplacePunchOutEnabledHasBeenSet) {
+    payload.WithBool("MarketplacePunchOutEnabled", m_marketplacePunchOutEnabled);
+  }
+
+  if (m_marketplacePunchOutPreferenceHasBeenSet) {
+    payload.WithObject("MarketplacePunchOutPreference", m_marketplacePunchOutPreference.Jsonize());
+  }
+
   if (m_contactsHasBeenSet) {
     Aws::Utils::Array<JsonValue> contactsJsonList(m_contacts.size());
     for (unsigned contactsIndex = 0; contactsIndex < contactsJsonList.GetLength(); ++contactsIndex) {

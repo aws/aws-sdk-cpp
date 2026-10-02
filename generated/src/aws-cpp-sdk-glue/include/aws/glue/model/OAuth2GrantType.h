@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Glue {
 namespace Model {
-enum class OAuth2GrantType { NOT_SET, AUTHORIZATION_CODE, CLIENT_CREDENTIALS, JWT_BEARER };
+enum class OAuth2GrantType { NOT_SET, AUTHORIZATION_CODE, CLIENT_CREDENTIALS, JWT_BEARER, REFRESH_TOKEN };
 
 namespace OAuth2GrantTypeMapper {
 AWS_GLUE_API OAuth2GrantType GetOAuth2GrantTypeForName(const Aws::String& name);

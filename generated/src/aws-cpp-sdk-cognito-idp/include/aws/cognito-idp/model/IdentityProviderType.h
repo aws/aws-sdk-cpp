@@ -251,6 +251,34 @@ class IdentityProviderType {
 
   ///@{
   /**
+   * <p>A mapping between the authentication context class reference (ACR) levels of
+   * your user pool and the ACR values of the external OpenID Connect (OIDC) identity
+   * provider (IdP), so that your application gets a consistent step-up experience
+   * regardless of which IdP authenticated the user. The map is keyed by level, from
+   * <code>Level1</code> through <code>Level4</code>.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetAcrMapping() const { return m_acrMapping; }
+  inline bool AcrMappingHasBeenSet() const { return m_acrMappingHasBeenSet; }
+  template <typename AcrMappingT = Aws::Map<Aws::String, Aws::String>>
+  void SetAcrMapping(AcrMappingT&& value) {
+    m_acrMappingHasBeenSet = true;
+    m_acrMapping = std::forward<AcrMappingT>(value);
+  }
+  template <typename AcrMappingT = Aws::Map<Aws::String, Aws::String>>
+  IdentityProviderType& WithAcrMapping(AcrMappingT&& value) {
+    SetAcrMapping(std::forward<AcrMappingT>(value));
+    return *this;
+  }
+  template <typename AcrMappingKeyT = Aws::String, typename AcrMappingValueT = Aws::String>
+  IdentityProviderType& AddAcrMapping(AcrMappingKeyT&& key, AcrMappingValueT&& value) {
+    m_acrMappingHasBeenSet = true;
+    m_acrMapping.emplace(std::forward<AcrMappingKeyT>(key), std::forward<AcrMappingValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The date and time when the item was modified. Amazon Cognito returns this
    * timestamp in UNIX epoch time format. Your SDK might render the output in a
    * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
@@ -301,6 +329,8 @@ class IdentityProviderType {
 
   Aws::Vector<Aws::String> m_idpIdentifiers;
 
+  Aws::Map<Aws::String, Aws::String> m_acrMapping;
+
   Aws::Utils::DateTime m_lastModifiedDate{};
 
   Aws::Utils::DateTime m_creationDate{};
@@ -310,6 +340,7 @@ class IdentityProviderType {
   bool m_providerDetailsHasBeenSet = false;
   bool m_attributeMappingHasBeenSet = false;
   bool m_idpIdentifiersHasBeenSet = false;
+  bool m_acrMappingHasBeenSet = false;
   bool m_lastModifiedDateHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;
 };

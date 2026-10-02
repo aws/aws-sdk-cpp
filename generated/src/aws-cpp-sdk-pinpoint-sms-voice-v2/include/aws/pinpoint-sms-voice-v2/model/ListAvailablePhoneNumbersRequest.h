@@ -117,8 +117,11 @@ class ListAvailablePhoneNumbersRequest : public PinpointSMSVoiceV2Request {
 
   ///@{
   /**
-   * <p>Optional. If omitted, returns unfiltered available numbers. Max 1 element for
-   * List API.</p>
+   * <p>An optional selection preference used to return only phone numbers that match
+   * a specific digit pattern, such as numbers that start with, end with, or contain
+   * a particular sequence. You can specify at most one preference. Number
+   * preferences apply only to <code>TEN_DLC</code> numbers in the
+   * <code>US</code>.</p>
    */
   inline const Aws::Vector<NumberPreferenceItem>& GetNumberPreference() const { return m_numberPreference; }
   inline bool NumberPreferenceHasBeenSet() const { return m_numberPreferenceHasBeenSet; }
