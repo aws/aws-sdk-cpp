@@ -30,6 +30,19 @@ namespace smithy {
                     Aws::String description
                 );
             public:
+                class ScopedMetricTimer {
+                public:
+                    ScopedMetricTimer(Aws::String metricName, std::shared_ptr<Meter> meter, Aws::Map<Aws::String, Aws::String> attributes);
+                    ~ScopedMetricTimer();
+                    ScopedMetricTimer(const ScopedMetricTimer &) = delete;
+                    ScopedMetricTimer &operator=(const ScopedMetricTimer &) = delete;
+                private:
+                    std::chrono::steady_clock::time_point m_start;
+                    Aws::String m_metricName;
+                    std::shared_ptr<Meter> m_meter;
+                    Aws::Map<Aws::String, Aws::String> m_attributes;
+                };
+
                 TracingUtils() = default;
 
                 static const char COUNT_METRIC_TYPE[];

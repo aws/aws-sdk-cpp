@@ -9,6 +9,7 @@
 #include <aws/core/client/AWSErrorMarshaller.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/utils/threading/Executor.h>
 #include <aws/core/client/DefaultRetryStrategy.h>
 #include <aws/core/AmazonWebServiceRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -138,6 +139,18 @@ public:
         return httpOutcome;
     }
 
+#if defined(AWS_CRT_HTTP_USE_ASYNC_IO)
+    void MakeRequestAsync(const Aws::AmazonWebServiceRequest& request,
+                          Aws::Client::HttpResponseOutcomeReceivedHandler handler,
+                          const std::shared_ptr<Aws::Utils::Threading::Executor>& executor)
+    {
+        m_countedRetryStrategy->ResetAttemptedRetriesCount();
+        const Aws::Http::URI uri("domain.com/something");
+        const auto method = Aws::Http::HttpMethod::HTTP_GET;
+        Aws::Client::AWSClient::AttemptExhaustivelyAsync(uri, request, method, Aws::Auth::SIGV4_SIGNER, std::move(handler), executor);
+    }
+#endif
+
     inline static const char* GetMockAccessKey() { return "AKIDEXAMPLE"; }
     inline static const char* GetMockSecretAccessKey() { return "wJalrXUtnFEMI/K7MDENG+bPxRfiCYEXAMPLEKEY"; }
 
@@ -199,6 +212,23 @@ private:
     mutable long m_attemptedRetries;
 };
 
+class FixedDelayStandardRetryStrategy : public CountedStandardRetryStrategy
+{
+public:
+    FixedDelayStandardRetryStrategy(std::shared_ptr<Aws::Client::RetryQuotaContainer> retryQuotaContainer, long delayMs)
+        : CountedStandardRetryStrategy(std::move(retryQuotaContainer)), m_delayMs(delayMs) {}
+
+    long CalculateDelayBeforeNextRetry(const Aws::Client::AWSError<Aws::Client::CoreErrors>& error, long attemptedRetries) const override
+    {
+        AWS_UNREFERENCED_PARAM(error);
+        AWS_UNREFERENCED_PARAM(attemptedRetries);
+        return m_delayMs;
+    }
+
+private:
+    long m_delayMs;
+};
+
 class MockAWSClientWithStandardRetryStrategy : Aws::Client::AWSClient
 {
 public:
@@ -217,6 +247,18 @@ public:
         Aws::Client::HttpResponseOutcome httpOutcome(Aws::Client::AWSClient::AttemptExhaustively(uri, request, method, Aws::Auth::SIGV4_SIGNER));
         return httpOutcome;
     }
+
+#if defined(AWS_CRT_HTTP_USE_ASYNC_IO)
+    void MakeRequestAsync(const Aws::AmazonWebServiceRequest& request,
+                          Aws::Client::HttpResponseOutcomeReceivedHandler handler,
+                          const std::shared_ptr<Aws::Utils::Threading::Executor>& executor)
+    {
+        m_countedRetryStrategy->ResetAttemptedRetriesCount();
+        const Aws::Http::URI uri("domain.com/something");
+        const auto method = Aws::Http::HttpMethod::HTTP_GET;
+        Aws::Client::AWSClient::AttemptExhaustivelyAsync(uri, request, method, Aws::Auth::SIGV4_SIGNER, std::move(handler), executor);
+    }
+#endif
 
     inline static const char* GetMockAccessKey() { return "AKIDEXAMPLE"; }
     inline static const char* GetMockSecretAccessKey() { return "wJalrXUtnFEMI/K7MDENG+bPxRfiCYEXAMPLEKEY"; }

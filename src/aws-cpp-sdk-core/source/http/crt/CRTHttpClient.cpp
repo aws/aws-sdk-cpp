@@ -10,11 +10,14 @@
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/ratelimiter/RateLimiterInterface.h>
 #include <aws/core/utils/threading/Semaphore.h>
+#include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/threading/WaitGroup.h>
 #include <aws/crt/http/HttpConnectionManager.h>
 #include <aws/crt/http/HttpRequestResponse.h>
+#include <aws/crt/io/Bootstrap.h>
 
 #include <atomic>
+#include <chrono>
 #include <mutex>
 #include <utility>
 
@@ -120,6 +123,8 @@ struct AsyncRequestState {
   std::function<void(std::shared_ptr<Aws::Http::HttpResponse>)> onComplete;
   std::atomic<bool> finished{false};
   std::shared_ptr<Aws::Utils::Threading::WaitGroup> latch;
+  std::weak_ptr<Aws::Crt::Http::HttpClientConnection> connection;
+  Aws::Crt::Io::ScheduledTask timeoutTask;
 
   void Finish() {
     if (finished.exchange(true)) {
@@ -132,29 +137,43 @@ struct AsyncRequestState {
       latch->Done();
     }
   }
+
+  void CompleteWithError(Aws::Client::CoreErrors errorType, const char* errorMessage) {
+    if (finished.exchange(true)) {
+      return;
+    }
+    response->SetClientErrorType(errorType);
+    response->SetClientErrorMessage(errorMessage);
+    if (onComplete) {
+      onComplete(response);
+    }
+    if (latch) {
+      latch->Done();
+    }
+  }
 };
 
 void OnStreamCompleteAsync(int errorCode, const std::shared_ptr<AsyncRequestState>& state) {
+  state->timeoutTask.Cancel();
   if (errorCode) {
-    state->response->SetClientErrorType(Aws::Client::CoreErrors::NETWORK_CONNECTION);
-    state->response->SetClientErrorMessage(aws_error_debug_str(errorCode));
+    state->CompleteWithError(Aws::Client::CoreErrors::NETWORK_CONNECTION, aws_error_debug_str(errorCode));
+  } else {
+    state->Finish();
   }
-
-  state->Finish();
 }
 
 void OnClientConnectionAvailableAsync(const std::shared_ptr<Aws::Crt::Http::HttpClientConnection>& connection, int errorCode,
                                       const std::shared_ptr<AsyncRequestState>& state, const Aws::Http::HttpClient& client) {
   bool shouldContinueRequest = client.ContinueRequest(*state->request);
   if (!shouldContinueRequest) {
-    state->response->SetClientErrorType(Aws::Client::CoreErrors::USER_CANCELLED);
-    state->response->SetClientErrorMessage("Request cancelled by user's continuation handler");
-    state->Finish();
+    state->timeoutTask.Cancel();
+    state->CompleteWithError(Aws::Client::CoreErrors::USER_CANCELLED, "Request cancelled by user's continuation handler");
     return;
   }
 
   int finalErrorCode = errorCode;
   if (connection) {
+    state->connection = connection;
     AWS_LOGSTREAM_DEBUG(CRT_HTTP_CLIENT_TAG, "Obtained connection handle " << (void*)connection.get());
 
     Aws::Crt::Http::HttpRequestOptions requestOptions{};
@@ -198,17 +217,13 @@ void OnClientConnectionAvailableAsync(const std::shared_ptr<Aws::Crt::Http::Http
 
   const char* errorMsg = aws_error_debug_str(finalErrorCode);
   AWS_LOGSTREAM_ERROR(CRT_HTTP_CLIENT_TAG, "Obtaining connection failed because " << errorMsg);
-  state->response->SetClientErrorType(Aws::Client::CoreErrors::NETWORK_CONNECTION);
-  state->response->SetClientErrorMessage(errorMsg);
-
-  state->Finish();
+  state->timeoutTask.Cancel();
+  state->CompleteWithError(Aws::Client::CoreErrors::NETWORK_CONNECTION, errorMsg);
 }
 
 struct SyncRequestState {
   Aws::Utils::Threading::Semaphore signal{0, 1};
   std::shared_ptr<Aws::Http::HttpResponse> response;
-  std::mutex connectionLock;
-  std::shared_ptr<Aws::Http::Connection> connection;
 };
 
 class CRTClientStream : public Aws::Http::ClientStream {
@@ -461,12 +476,9 @@ namespace Aws
             m_connectionPools.clear();
         }
 
-        Aws::Crt::Optional<Aws::Client::AWSError<Aws::Client::CoreErrors>> CRTHttpClient::MakeRequestAsync(
+        Aws::Crt::Optional<Aws::Client::AWSError<Aws::Client::CoreErrors>> CRTHttpClient::SendOneAttemptAsync(
             const std::shared_ptr<HttpRequest>& request,
-            std::function<void(std::shared_ptr<HttpResponse>)> onResponseComplete,
-            std::function<void(const std::shared_ptr<Aws::Http::Connection>&)> onClientConnectionAvailable,
-            Aws::Utils::RateLimits::RateLimiterInterface*,
-            Aws::Utils::RateLimits::RateLimiterInterface*) const
+            std::function<void(std::shared_ptr<HttpResponse>)> onResponseComplete) const
         {
             auto state = Aws::MakeShared<AsyncRequestState>(CRT_HTTP_CLIENT_TAG, request, std::move(onResponseComplete));
 
@@ -494,16 +506,143 @@ namespace Aws
             state->latch = m_requestLatch;
             m_requestLatch->Add();
 
-            connectionManager->AcquireConnection(
-                    [state, this, onClientConnectionAvailable](std::shared_ptr<Crt::Http::HttpClientConnection> connection, int errorCode)
-                    {
-                        if (connection && onClientConnectionAvailable)
+            auto startSend = [state, this, connectionManager]()
+            {
+                if (m_configuration.requestTimeoutMs > 0)
+                {
+                    std::weak_ptr<AsyncRequestState> weakState = state;
+                    state->timeoutTask = m_bootstrap.GetNextEventLoop().Schedule(
+                        [weakState](Aws::Crt::Io::TaskStatus status)
                         {
-                            onClientConnectionAvailable(Aws::MakeShared<CRTConnection>(CRT_HTTP_CLIENT_TAG, connection));
-                        }
-                        OnClientConnectionAvailableAsync(connection, errorCode, state, *this);
-                    });
+                            if (status != Aws::Crt::Io::TaskStatus::RunReady)
+                            {
+                                return;
+                            }
+                            auto state = weakState.lock();
+                            if (!state)
+                            {
+                                return;
+                            }
+                            if (auto connection = state->connection.lock())
+                            {
+                                connection->Close();
+                            }
+                            state->CompleteWithError(Aws::Client::CoreErrors::REQUEST_TIMEOUT, "Request Timeout Has Expired");
+                        },
+                        std::chrono::milliseconds(m_configuration.requestTimeoutMs));
+                }
 
+                connectionManager->AcquireConnection(
+                        [state, this](std::shared_ptr<Crt::Http::HttpClientConnection> connection, int errorCode)
+                        {
+                            OnClientConnectionAvailableAsync(connection, errorCode, state, *this);
+                        });
+            };
+
+            startSend();
+
+            return {};
+        }
+
+        namespace
+        {
+            struct CRTAttemptLoop : std::enable_shared_from_this<CRTAttemptLoop>
+            {
+                HttpClient::PrepareAttempt prepare;
+                HttpClient::EvaluateAttempt evaluate;
+                HttpClient::OnRetryableRequestComplete complete;
+                std::function<void(const std::shared_ptr<HttpRequest>&, std::function<void(std::shared_ptr<HttpResponse>)>)> send;
+                std::function<void(std::function<void(bool)>, std::chrono::milliseconds)> schedule;
+                std::shared_ptr<Aws::Utils::Threading::Executor> executor;
+
+                void RunAttempt()
+                {
+                    auto request = prepare();
+                    auto self = shared_from_this();
+                    if (!request)
+                    {
+                        complete();
+                        return;
+                    }
+                    send(request, [self](std::shared_ptr<HttpResponse> response)
+                    {
+                        auto outcome = self->evaluate(response);
+                        if (outcome.shouldRetry)
+                        {
+                            self->schedule([self](bool canceled)
+                            {
+                                if (canceled || !self->executor->Submit([self]() { self->RunAttempt(); }))
+                                {
+                                    self->complete();
+                                }
+                            }, outcome.backoff);
+                        }
+                        else if (outcome.backoff.count() > 0)
+                        {
+                            self->schedule([self](bool)
+                            {
+                                self->complete();
+                            }, outcome.backoff);
+                        }
+                        else
+                        {
+                            self->complete();
+                        }
+                    });
+                }
+            };
+        }
+
+        Aws::Crt::Optional<Aws::Client::AWSError<Aws::Client::CoreErrors>> CRTHttpClient::MakeRequestAsync(
+            const HttpClient::PrepareAttempt& prepareAttempt,
+            const HttpClient::EvaluateAttempt& evaluateAttempt,
+            const HttpClient::OnRetryableRequestComplete& onComplete,
+            std::shared_ptr<Aws::Utils::Threading::Executor> executor) const
+        {
+            if (!executor)
+            {
+                return Aws::Client::AWSError<Aws::Client::CoreErrors>{Aws::Client::CoreErrors::INVALID_PARAMETER_VALUE,
+                    "InvalidParameterValue",
+                    "an executor is required to run async requests",
+                    false};
+            }
+
+            auto attemptLoop = Aws::MakeShared<CRTAttemptLoop>(CRT_HTTP_CLIENT_TAG);
+            attemptLoop->prepare = prepareAttempt;
+            attemptLoop->evaluate = evaluateAttempt;
+            attemptLoop->executor = std::move(executor);
+
+            auto latch = m_requestLatch;
+            latch->Add();
+            attemptLoop->complete = [onComplete, latch]()
+            {
+                onComplete();
+                latch->Done();
+            };
+
+            const CRTHttpClient* self = this;
+            attemptLoop->send = [self](const std::shared_ptr<HttpRequest>& request,
+                                  std::function<void(std::shared_ptr<HttpResponse>)> onResponse)
+            {
+                auto error = self->SendOneAttemptAsync(request, onResponse);
+                if (error.has_value())
+                {
+                    auto response = Aws::MakeShared<Standard::StandardHttpResponse>(CRT_HTTP_CLIENT_TAG, request);
+                    response->SetResponseCode(Aws::Http::HttpResponseCode::REQUEST_NOT_MADE);
+                    onResponse(std::move(response));
+                }
+            };
+            attemptLoop->schedule = [self](std::function<void(bool)> task, std::chrono::milliseconds delay)
+            {
+                self->m_bootstrap.GetNextEventLoop().Schedule(
+                    [task](Aws::Crt::Io::TaskStatus status)
+                    {
+                        task(status != Aws::Crt::Io::TaskStatus::RunReady);
+                    },
+                    delay);
+            };
+
+            attemptLoop->RunAttempt();
             return {};
         }
 
@@ -511,20 +650,16 @@ namespace Aws
                                                                  Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
                                                                  Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
         {
+            AWS_UNREFERENCED_PARAM(readLimiter);
+            AWS_UNREFERENCED_PARAM(writeLimiter);
             auto sync = Aws::MakeShared<SyncRequestState>(CRT_HTTP_CLIENT_TAG);
 
-            auto error = MakeRequestAsync(request,
+            auto error = SendOneAttemptAsync(request,
                 [sync](std::shared_ptr<HttpResponse> response)
                 {
                     sync->response = std::move(response);
                     sync->signal.Release();
-                },
-                [sync](const std::shared_ptr<Aws::Http::Connection>& connection)
-                {
-                    std::lock_guard<std::mutex> lock(sync->connectionLock);
-                    sync->connection = connection;
-                },
-                readLimiter, writeLimiter);
+                });
 
             if (error.has_value())
             {
@@ -534,29 +669,7 @@ namespace Aws
                 return response;
             }
 
-            if (m_configuration.requestTimeoutMs > 0)
-            {
-                if (!sync->signal.WaitOneFor(m_configuration.requestTimeoutMs))
-                {
-                    std::shared_ptr<Aws::Http::Connection> connection;
-                    {
-                        std::lock_guard<std::mutex> lock(sync->connectionLock);
-                        connection = sync->connection;
-                    }
-                    if (connection)
-                    {
-                        connection->Close();
-                    }
-                    auto response = Aws::MakeShared<Standard::StandardHttpResponse>(CRT_HTTP_CLIENT_TAG, request);
-                    response->SetClientErrorType(Aws::Client::CoreErrors::REQUEST_TIMEOUT);
-                    response->SetClientErrorMessage("Request Timeout Has Expired");
-                    return response;
-                }
-            }
-            else
-            {
-                sync->signal.WaitOne();
-            }
+            sync->signal.WaitOne();
 
             // TODO: is VOX support still a thing? If so we need to add the metrics for it.
             return sync->response;

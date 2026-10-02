@@ -36,6 +36,7 @@ file(GLOB ENDPOINT_SRC "${CMAKE_CURRENT_SOURCE_DIR}/endpoint/*.cpp")
 file(GLOB AWS_CPP_SDK_CORE_TESTS_SRC
   "${CMAKE_CURRENT_SOURCE_DIR}/RunTests.cpp"
   "${CMAKE_CURRENT_SOURCE_DIR}/VersionTests.cpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/smithy/client/AsyncSmithyClientTest.cpp"
   ${AWS_SRC}
   ${AWS_AUTH_SRC}
   ${AWS_CONFIG_SRC}
