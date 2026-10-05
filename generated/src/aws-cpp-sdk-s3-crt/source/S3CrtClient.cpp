@@ -1350,6 +1350,14 @@ void S3CrtClient::GetObjectAsync(const GetObjectRequest& request, const GetObjec
   }
   options.signing_config = &signing_config_override;
 
+  if (request.ShouldValidateResponseChecksum() ||
+      m_clientConfiguration.checksumConfig.responseChecksumValidation == ResponseChecksumValidation::WHEN_SUPPORTED) {
+    Aws::UniquePtr<struct aws_s3_checksum_config> checksumConfig{Aws::New<struct aws_s3_checksum_config>(ALLOCATION_TAG)};
+    checksumConfig->validate_response_checksum = true;
+    userData->checksumConfig = std::move(checksumConfig);
+    options.checksum_config = userData->checksumConfig.get();
+  }
+
   std::shared_ptr<Aws::Crt::Http::HttpRequest> crtHttpRequest = userData->request->ToCrtHttpRequest();
   options.message = crtHttpRequest->GetUnderlyingMessage();
   userData->crtHttpRequest = crtHttpRequest;
