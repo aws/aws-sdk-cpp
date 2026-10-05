@@ -614,5 +614,5 @@ TEST_F(XmlShapeDeserializerTest, ReadDocumentIsUnsupported) {
   Aws::String xml = "<x/>";
   XmlShapeDeserializer deser(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(xml.c_str()), xml.size()));
   auto schema = Schema::CreateDocument("smithy.api#Document");
-  EXPECT_FALSE(deser.ReadDocument(*schema).has_value());
+  EXPECT_EQ(deser.ReadDocument(*schema), nullptr);
 }

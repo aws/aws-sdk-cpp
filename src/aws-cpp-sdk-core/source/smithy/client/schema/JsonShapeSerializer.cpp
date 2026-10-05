@@ -86,7 +86,7 @@ class JsonShapeSerializer::Impl final : public ShapeSerializer {
     m_buf += '"';
   }
   void WriteNull(const Schema&) override { m_buf += "null"; }
-  void WriteDocument(const Schema& schema, const Document& value) override { value.SerializeContents(*this, schema); }
+  void WriteDocument(const Schema& schema, const Document& value) override { value.Serialize(*this, schema); }
 
   // Shortest decimal that round-trips (matches the SDK cJSON writer): 15 significant digits,
   // falling back to 17 (max_digits10, always round-trips) when 15 does not reparse equal.

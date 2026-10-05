@@ -14,7 +14,7 @@ namespace schema {
 class SMITHY_API JsonShapeSerializer final : public ShapeSerializer {
  public:
   using SerializerOutcome = Aws::Utils::Outcome<Aws::String, Aws::Client::AWSError<Aws::Client::CoreErrors>>;
-  explicit JsonShapeSerializer(CodecSettings settings = CodecSettings{TimestampFormatTrait::Format::EPOCH_SECONDS});
+  explicit JsonShapeSerializer(CodecSettings settings = CodecSettings::Json());
   ~JsonShapeSerializer();
 
   void WriteStruct(const Schema& schema, const SerializableStruct& value) override;

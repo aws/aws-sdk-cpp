@@ -11,7 +11,7 @@ namespace schema {
 
 class SMITHY_API XmlShapeDeserializer final : public ShapeDeserializer {
  public:
-  explicit XmlShapeDeserializer(Aws::Crt::ByteCursor data, CodecSettings settings = CodecSettings{TimestampFormatTrait::Format::DATE_TIME});
+  explicit XmlShapeDeserializer(Aws::Crt::ByteCursor data, CodecSettings settings = CodecSettings::Xml());
   ~XmlShapeDeserializer();
 
   bool EnterWrapperElement(const Aws::String& name);
@@ -28,7 +28,7 @@ class SMITHY_API XmlShapeDeserializer final : public ShapeDeserializer {
   Aws::Crt::Optional<Aws::String> ReadString(const Schema& schema) override;
   Aws::Crt::Optional<Aws::Utils::DateTime> ReadTimestamp(const Schema& schema) override;
   Aws::Crt::Optional<Aws::Utils::ByteBuffer> ReadBlob(const Schema& schema) override;
-  Aws::Crt::Optional<Document> ReadDocument(const Schema& schema) override;
+  std::shared_ptr<const Document> ReadDocument(const Schema& schema) override;
 
   bool IsNull() override;
 

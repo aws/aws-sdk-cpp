@@ -173,10 +173,10 @@ class CborShapeDeserializer::Impl final : public ShapeDeserializer {
     return ByteBuffer(val->ptr, val->len);
   }
 
-  Aws::Crt::Optional<Document> ReadDocument(const Schema&) override {
+  std::shared_ptr<const Document> ReadDocument(const Schema&) override {
     AWS_LOGSTREAM_WARN("CborShapeDeserializer", "document type is not yet supported by the RPCv2 CBOR protocol");
     SkipValue();  // consume the whole data item so sibling members stay aligned
-    return {};
+    return nullptr;
   }
 
   bool IsNull() override {
@@ -267,5 +267,7 @@ Aws::Crt::Optional<double> CborShapeDeserializer::ReadDouble(const Schema& schem
 Aws::Crt::Optional<Aws::String> CborShapeDeserializer::ReadString(const Schema& schema) { return m_impl->ReadString(schema); }
 Aws::Crt::Optional<DateTime> CborShapeDeserializer::ReadTimestamp(const Schema& schema) { return m_impl->ReadTimestamp(schema); }
 Aws::Crt::Optional<ByteBuffer> CborShapeDeserializer::ReadBlob(const Schema& schema) { return m_impl->ReadBlob(schema); }
-Aws::Crt::Optional<Document> CborShapeDeserializer::ReadDocument(const Schema& schema) { return m_impl->ReadDocument(schema); }
+std::shared_ptr<const smithy::schema::Document> CborShapeDeserializer::ReadDocument(const Schema& schema) {
+  return m_impl->ReadDocument(schema);
+}
 bool CborShapeDeserializer::IsNull() { return m_impl->IsNull(); }

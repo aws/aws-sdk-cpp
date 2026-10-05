@@ -531,7 +531,7 @@ TEST_F(CborShapeDeserializerTest, ReadDocumentIsUnsupported) {
   const unsigned char cbor[] = {0xf6};  // CBOR null; ReadDocument returns empty regardless of input
   CborShapeDeserializer deser(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(cbor), sizeof(cbor)));
   auto schema = Schema::CreateDocument("smithy.api#Document");
-  EXPECT_FALSE(deser.ReadDocument(*schema).has_value());
+  EXPECT_EQ(deser.ReadDocument(*schema), nullptr);
 }
 
 TEST_F(CborShapeDeserializerTest, ReadDocumentConsumesValueSoTrailingMemberSurvives) {

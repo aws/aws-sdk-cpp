@@ -14,7 +14,7 @@ namespace schema {
 class SMITHY_API XmlShapeSerializer final : public ShapeSerializer {
  public:
   using SerializerOutcome = Aws::Utils::Outcome<Aws::String, Aws::Client::AWSError<Aws::Client::CoreErrors>>;
-  explicit XmlShapeSerializer(CodecSettings settings = CodecSettings{TimestampFormatTrait::Format::DATE_TIME});
+  explicit XmlShapeSerializer(CodecSettings settings = CodecSettings::Xml());
   ~XmlShapeSerializer();
 
   void WriteStruct(const Schema& schema, const SerializableStruct& value) override;

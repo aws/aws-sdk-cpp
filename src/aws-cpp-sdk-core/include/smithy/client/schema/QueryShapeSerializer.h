@@ -23,7 +23,7 @@ class SMITHY_API QueryShapeSerializer final : public ShapeSerializer {
   enum class Flavor { AwsQuery, Ec2Query };
 
   QueryShapeSerializer();
-  explicit QueryShapeSerializer(Flavor flavor, CodecSettings settings = CodecSettings{TimestampFormatTrait::Format::DATE_TIME});
+  explicit QueryShapeSerializer(Flavor flavor, CodecSettings settings = CodecSettings::Query());
   ~QueryShapeSerializer();
 
   void WriteStruct(const Schema& schema, const SerializableStruct& value) override;

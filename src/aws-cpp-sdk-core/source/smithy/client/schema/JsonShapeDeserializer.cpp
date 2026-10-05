@@ -6,8 +6,8 @@
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <smithy/client/schema/AbstractDocument.h>
 #include <smithy/client/schema/Document.h>
-#include <smithy/client/schema/DocumentImpl.h>
 #include <smithy/client/schema/JsonShapeDeserializer.h>
 #include <smithy/client/schema/JsonTraits.h>
 #include <smithy/client/schema/SerdeTraits.h>
@@ -17,6 +17,7 @@
 #include <cstdlib>
 #include <cstring>
 #include <limits>
+#include <memory>
 
 using namespace smithy::schema;
 using namespace Aws::Utils;
@@ -244,10 +245,10 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
     return HashingUtils::Base64Decode(*encoded);
   }
 
-  Aws::Crt::Optional<Document> ReadDocument(const Schema&) override {
+  std::shared_ptr<const Document> ReadDocument(const Schema&) override {
     const size_t start = m_pos;
     auto doc = ReadDocumentValue(0);
-    if (!doc.has_value()) {
+    if (!doc) {
       // A failed parse can stop part-way into the value; rewind and skip it whole so sibling members stay aligned.
       m_pos = start;
       SkipValue();
@@ -270,40 +271,41 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
 
   // JSON-flavored document nodes: carries this deserializer's timestamp format so AsBlob/AsTimestamp
   // on the resulting Document apply JSON coercion (base64 strings, epoch/ISO-8601 timestamps).
-  std::shared_ptr<JsonDocumentImpl> NewJsonNode() const {
-    return Aws::MakeShared<JsonDocumentImpl>("JsonDocumentImpl", m_settings.GetDefaultTimestampFormat());
+  std::shared_ptr<AbstractDocument> NewJsonNode() const {
+    return NewJsonDocument(m_settings.GetDefaultTimestampFormat());
   }
 
-  Aws::Crt::Optional<Document> ReadDocumentValue(int depth) {
+  std::shared_ptr<const Document> ReadDocumentValue(int depth) {
     if (depth >= MAX_DOCUMENT_DEPTH) {
-      return {};
+      return nullptr;
     }
     const char c = PeekNonWs();
     if (c == '{') {
       ++m_pos;
-      Aws::Map<Aws::String, Document> object;
+      Aws::Map<Aws::String, std::shared_ptr<const Document>> object;
       if (PeekNonWs() == '}') {
         ++m_pos;
         auto node = NewJsonNode();
         node->SetMap(std::move(object));
-        return detail::MakeDocument(std::move(node));
+        return node;
       }
       while (true) {
         auto key = ParseString();
         if (!key.has_value()) {
-          return {};
+          return nullptr;
         }
-        if (PeekNonWs() == ':') {
-          ++m_pos;
+        if (PeekNonWs() != ':') {
+          return nullptr;
         }
+        ++m_pos;
         auto value = ReadDocumentValue(depth + 1);
-        if (!value.has_value()) {
-          return {};
+        if (!value) {
+          return nullptr;
         }
-        object.emplace(std::move(*key), std::move(*value));
+        object.emplace(std::move(*key), std::move(value));
         const auto more = NextInContainer('}');
         if (!more.has_value()) {
-          return {};
+          return nullptr;
         }
         if (!*more) {
           break;
@@ -311,26 +313,26 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
       }
       auto node = NewJsonNode();
       node->SetMap(std::move(object));
-      return detail::MakeDocument(std::move(node));
+      return node;
     }
     if (c == '[') {
       ++m_pos;
-      Aws::Vector<Document> list;
+      Aws::Vector<std::shared_ptr<const Document>> list;
       if (PeekNonWs() == ']') {
         ++m_pos;
         auto node = NewJsonNode();
         node->SetList(std::move(list));
-        return detail::MakeDocument(std::move(node));
+        return node;
       }
       while (true) {
         auto value = ReadDocumentValue(depth + 1);
-        if (!value.has_value()) {
-          return {};
+        if (!value) {
+          return nullptr;
         }
-        list.push_back(std::move(*value));
+        list.push_back(std::move(value));
         const auto more = NextInContainer(']');
         if (!more.has_value()) {
-          return {};
+          return nullptr;
         }
         if (!*more) {
           break;
@@ -338,29 +340,29 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
       }
       auto node = NewJsonNode();
       node->SetList(std::move(list));
-      return detail::MakeDocument(std::move(node));
+      return node;
     }
     if (c == '"') {
       auto str = ParseString();
       if (!str.has_value()) {
-        return {};
+        return nullptr;
       }
       auto node = NewJsonNode();
       node->SetString(std::move(*str));
-      return detail::MakeDocument(std::move(node));
+      return node;
     }
     if (Match("true")) {
       auto node = NewJsonNode();
       node->SetBoolean(true);
-      return detail::MakeDocument(std::move(node));
+      return node;
     }
     if (Match("false")) {
       auto node = NewJsonNode();
       node->SetBoolean(false);
-      return detail::MakeDocument(std::move(node));
+      return node;
     }
     if (Match("null")) {
-      return detail::MakeDocument(NewJsonNode());  // ShapeType::Null default
+      return NewJsonNode();  // ShapeType::Null default
     }
     if (IsNumberStart(c)) {
       const Aws::String token = ReadNumberToken();
@@ -368,30 +370,30 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
       if (token.find_first_of(".eE") != Aws::String::npos) {
         const double d = std::strtod(token.c_str(), &end);
         if (end != token.c_str() + token.size()) {
-          return {};
+          return nullptr;
         }
         auto node = NewJsonNode();
         node->SetDouble(d);
-        return detail::MakeDocument(std::move(node));
+        return node;
       }
       errno = 0;
       const long long v = std::strtoll(token.c_str(), &end, 10);
       if (end != token.c_str() + token.size()) {
-        return {};
+        return nullptr;
       }
       if (errno == ERANGE) {
         // Out of int64 range: preserve magnitude as a double rather than clamping.
         const double d = std::strtod(token.c_str(), nullptr);
         auto node = NewJsonNode();
         node->SetDouble(d);
-        return detail::MakeDocument(std::move(node));
+        return node;
       }
       auto node = NewJsonNode();
       node->SetInteger(static_cast<int64_t>(v));
-      return detail::MakeDocument(std::move(node));
+      return node;
     }
     SkipValue();
-    return {};
+    return nullptr;
   }
 
   static Aws::String JsonName(const Schema& member) {
@@ -638,5 +640,7 @@ Aws::Crt::Optional<double> JsonShapeDeserializer::ReadDouble(const Schema& schem
 Aws::Crt::Optional<Aws::String> JsonShapeDeserializer::ReadString(const Schema& schema) { return m_impl->ReadString(schema); }
 Aws::Crt::Optional<DateTime> JsonShapeDeserializer::ReadTimestamp(const Schema& schema) { return m_impl->ReadTimestamp(schema); }
 Aws::Crt::Optional<ByteBuffer> JsonShapeDeserializer::ReadBlob(const Schema& schema) { return m_impl->ReadBlob(schema); }
-Aws::Crt::Optional<smithy::schema::Document> JsonShapeDeserializer::ReadDocument(const Schema& schema) { return m_impl->ReadDocument(schema); }
+std::shared_ptr<const smithy::schema::Document> JsonShapeDeserializer::ReadDocument(const Schema& schema) {
+  return m_impl->ReadDocument(schema);
+}
 bool JsonShapeDeserializer::IsNull() { return m_impl->IsNull(); }

@@ -20,64 +20,60 @@ namespace smithy {
 namespace schema {
 
 class ShapeSerializer;
-class Document;
-class DocumentImpl;
-namespace detail {
-Document MakeDocument(std::shared_ptr<const DocumentImpl> impl);
-}
 
-// A protocol-agnostic open-content value (Smithy `document`). cJSON-free: the tree is held in
-// Aws:: containers and (de)serialized through the schema-serde parsers, not Aws::Utils::Document.
-// Copyable value handle over an immutable, reference-counted DocumentImpl body.
-class SMITHY_API Document final {
+// A protocol-agnostic open-content value (Smithy `document`).
+//
+// Documents are immutable and shared. Each implementation supplies its own coercion rules, so where
+// a document came from decides how a stored String or number is reinterpreted: the From* factories
+// build protocol-agnostic nodes, while a codec's deserializer builds nodes carrying that protocol's
+// rules. Two documents can therefore compare equal and still disagree on AsBlob.
+class SMITHY_API Document {
  public:
-  static Document Null();
-  static Document FromBoolean(bool value);
-  static Document FromInteger(int64_t value);
-  static Document FromDouble(double value);
-  static Document FromString(Aws::String value);
-  static Document FromBlob(Aws::Utils::ByteBuffer value);
-  static Document FromTimestamp(Aws::Utils::DateTime value);
-  static Document FromList(Aws::Vector<Document> value);
-  static Document FromMap(Aws::Map<Aws::String, Document> value);
+  virtual ~Document() = default;
 
-  ShapeType GetType() const;
-  bool IsNull() const;
+  virtual ShapeType GetType() const = 0;
+  virtual bool IsNull() const = 0;
 
-  // Coercing accessors: numeric accessors coerce across the stored int64/double. AsBlob/AsTimestamp
-  // are otherwise agnostic on a value built via From*: only a node already holding a Blob/Timestamp
-  // coerces. A document built by the JSON deserializer additionally base64-decodes a stored String
-  // for AsBlob and parses a stored String/number for AsTimestamp. Empty Optional when coercion is
-  // impossible (schema-serde returns Optional rather than throwing).
-  Aws::Crt::Optional<bool> AsBoolean() const;
-  Aws::Crt::Optional<Aws::String> AsString() const;
-  Aws::Crt::Optional<int> AsInteger() const;
-  Aws::Crt::Optional<int64_t> AsLong() const;
-  Aws::Crt::Optional<double> AsDouble() const;
-  Aws::Crt::Optional<float> AsFloat() const;
-  Aws::Crt::Optional<Aws::Utils::ByteBuffer> AsBlob() const;
-  Aws::Crt::Optional<Aws::Utils::DateTime> AsTimestamp() const;
-  const Aws::Vector<Document>* AsList() const;
-  const Aws::Map<Aws::String, Document>* AsMap() const;
+  // Empty Optional when the value cannot be produced; schema-serde reports absence rather than
+  // throwing. The numeric accessors coerce across the stored int64/double.
+  virtual Aws::Crt::Optional<bool> AsBoolean() const = 0;
+  virtual Aws::Crt::Optional<Aws::String> AsString() const = 0;
+  virtual Aws::Crt::Optional<int> AsInteger() const = 0;
+  virtual Aws::Crt::Optional<int64_t> AsLong() const = 0;
+  virtual Aws::Crt::Optional<double> AsDouble() const = 0;
+  virtual Aws::Crt::Optional<float> AsFloat() const = 0;
+  virtual Aws::Crt::Optional<Aws::Utils::ByteBuffer> AsBlob() const = 0;
+  virtual Aws::Crt::Optional<Aws::Utils::DateTime> AsTimestamp() const = 0;
 
-  const Document* GetMember(const Aws::String& name) const;
-  Aws::Vector<Aws::String> GetMemberNames() const;
+  // Null when this is not a list/map. The returned handle shares the document's immutable storage, so
+  // no container is copied. Elements of AsList and values of AsMap are never null.
+  virtual std::shared_ptr<const Aws::Vector<std::shared_ptr<const Document>>> AsList() const = 0;
+  virtual std::shared_ptr<const Aws::Map<Aws::String, std::shared_ptr<const Document>>> AsMap() const = 0;
+
+  // Null when this is not a map, or has no member under that name.
+  virtual std::shared_ptr<const Document> GetMember(const Aws::String& name) const = 0;
+  virtual Aws::Vector<Aws::String> GetMemberNames() const = 0;
 
   // Walks this value, driving `serializer`'s Write* primitives. `schema` is forwarded verbatim to
   // every call (the JSON leaf and container writers ignore it).
-  void SerializeContents(ShapeSerializer& serializer, const Schema& schema) const;
+  virtual void Serialize(ShapeSerializer& serializer, const Schema& schema) const = 0;
 
-  bool operator==(const Document& other) const;
-  bool operator!=(const Document& other) const { return !(*this == other); }
-
- private:
-  explicit Document(std::shared_ptr<const DocumentImpl> impl);
-  friend Document detail::MakeDocument(std::shared_ptr<const DocumentImpl> impl);
-
-  // Accessors assume a non-moved-from Document; calling them after this Document has been moved
-  // from is undefined behavior by convention.
-  std::shared_ptr<const DocumentImpl> m_impl;
+  static std::shared_ptr<const Document> Null();
+  static std::shared_ptr<const Document> FromBoolean(bool value);
+  static std::shared_ptr<const Document> FromInteger(int64_t value);
+  static std::shared_ptr<const Document> FromDouble(double value);
+  static std::shared_ptr<const Document> FromString(Aws::String value);
+  static std::shared_ptr<const Document> FromBlob(Aws::Utils::ByteBuffer value);
+  static std::shared_ptr<const Document> FromTimestamp(Aws::Utils::DateTime value);
+  static std::shared_ptr<const Document> FromList(Aws::Vector<std::shared_ptr<const Document>> value);
+  static std::shared_ptr<const Document> FromMap(Aws::Map<Aws::String, std::shared_ptr<const Document>> value);
 };
+
+// Content comparison: type, then the value each side reports through its accessors for that type,
+// recursing into children. Note these take references: comparing two shared_ptr<const Document>
+// directly compares addresses, so dereference both sides.
+SMITHY_API bool operator==(const Document& lhs, const Document& rhs);
+SMITHY_API bool operator!=(const Document& lhs, const Document& rhs);
 
 }  // namespace schema
 }  // namespace smithy

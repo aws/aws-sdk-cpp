@@ -22,6 +22,11 @@ class CodecSettings final {
  public:
   explicit CodecSettings(TimestampFormatTrait::Format defaultTimestampFormat) : m_defaultTimestampFormat(defaultTimestampFormat) {}
 
+  // Payload defaults per the SEP's codec-settings-by-protocol table.
+  static CodecSettings Json() { return CodecSettings{TimestampFormatTrait::Format::EPOCH_SECONDS}; }
+  static CodecSettings Xml() { return CodecSettings{TimestampFormatTrait::Format::DATE_TIME}; }
+  static CodecSettings Query() { return CodecSettings{TimestampFormatTrait::Format::DATE_TIME}; }
+
   TimestampFormatTrait::Format GetDefaultTimestampFormat() const { return m_defaultTimestampFormat; }
 
  private:
@@ -45,7 +50,7 @@ class SMITHY_API Codec {
 
 class SMITHY_API JsonCodec final : public Codec {
  public:
-  explicit JsonCodec(CodecSettings settings = CodecSettings{TimestampFormatTrait::Format::EPOCH_SECONDS}) : m_settings(settings) {}
+  explicit JsonCodec(CodecSettings settings = CodecSettings::Json()) : m_settings(settings) {}
   SerializerOutcome Serialize(const Schema& schema, const SerializableStruct& shape) const override;
   Aws::UniquePtr<ShapeDeserializer> CreateDeserializer(Aws::Crt::ByteCursor data) const override;
 
@@ -55,7 +60,7 @@ class SMITHY_API JsonCodec final : public Codec {
 
 class SMITHY_API XmlCodec final : public Codec {
  public:
-  explicit XmlCodec(CodecSettings settings = CodecSettings{TimestampFormatTrait::Format::DATE_TIME}) : m_settings(settings) {}
+  explicit XmlCodec(CodecSettings settings = CodecSettings::Xml()) : m_settings(settings) {}
   SerializerOutcome Serialize(const Schema& schema, const SerializableStruct& shape) const override;
   Aws::UniquePtr<ShapeDeserializer> CreateDeserializer(Aws::Crt::ByteCursor data) const override;
 

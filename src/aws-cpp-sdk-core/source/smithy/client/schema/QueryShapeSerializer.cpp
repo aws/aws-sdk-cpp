@@ -338,8 +338,7 @@ class QueryShapeSerializer::Impl final : public ShapeSerializer {
   Aws::String m_errorMessage;
 };
 
-QueryShapeSerializer::QueryShapeSerializer()
-    : m_impl(Aws::MakeUnique<Impl>("QueryShapeSerializer", false, CodecSettings{TimestampFormatTrait::Format::DATE_TIME})) {}
+QueryShapeSerializer::QueryShapeSerializer() : m_impl(Aws::MakeUnique<Impl>("QueryShapeSerializer", false, CodecSettings::Query())) {}
 QueryShapeSerializer::QueryShapeSerializer(Flavor flavor, CodecSettings settings)
     : m_impl(Aws::MakeUnique<Impl>("QueryShapeSerializer", flavor == Flavor::Ec2Query, settings)) {}
 QueryShapeSerializer::~QueryShapeSerializer() = default;

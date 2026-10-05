@@ -16,6 +16,7 @@
 #include <smithy/client/schema/XmlTraits.h>
 
 #include <functional>
+#include <memory>
 
 #include "SchemaSerializerTestHelpers.h"
 
@@ -273,38 +274,38 @@ class DocHolder final : public SerializableStruct {
   const Schema& GetSchema() const override { return *m_schema; }
 
   void SerializeMembers(ShapeSerializer& serializer) const override {
-    serializer.WriteDocument(*GetSchema().GetMember("payload").value(), m_payload);
+    serializer.WriteDocument(*GetSchema().GetMember("payload").value(), *m_payload);
   }
 
   void From(const Schema& memberSchema, ShapeDeserializer& deserializer) override {
     if (memberSchema.GetMemberName() == "payload") {
       auto doc = deserializer.ReadDocument(memberSchema);
-      if (doc.has_value()) {
-        m_payload = std::move(*doc);
+      if (doc) {
+        m_payload = std::move(doc);
         m_hasPayload = true;
       }
     }
   }
 
-  void SetPayload(Document doc) {
+  void SetPayload(std::shared_ptr<const Document> doc) {
     m_payload = std::move(doc);
     m_hasPayload = true;
   }
   bool HasPayload() const { return m_hasPayload; }
-  const Document& GetPayload() const { return m_payload; }
+  const Document& GetPayload() const { return *m_payload; }
 
  private:
   static std::shared_ptr<const Schema> BuildSchema() {
     return Schema::StructureBuilder("DocHolder").PutMember("payload", Schema::CreateDocument("smithy.api#Document")).Build();
   }
   std::shared_ptr<const Schema> m_schema{BuildSchema()};
-  Document m_payload = Document::Null();
+  std::shared_ptr<const Document> m_payload = Document::Null();
   bool m_hasPayload = false;
 };
 }  // namespace
 
 TEST_F(CodecTest, JsonDocumentMemberRoundTrip) {
-  Aws::Map<Aws::String, Document> obj;
+  Aws::Map<Aws::String, std::shared_ptr<const Document>> obj;
   obj.emplace("name", Document::FromString("hi"));
   obj.emplace("count", Document::FromInteger(3));
 
@@ -326,7 +327,7 @@ TEST_F(CodecTest, JsonDocumentMemberRoundTrip) {
 TEST_F(CodecTest, JsonDocumentLongRungRoundTripsKeepingTag) {
   // JsonDocumentMemberRoundTrip only exercises the Integer rung; this pins serializer/parser agreement
   // on a value too wide for int32.
-  Aws::Map<Aws::String, Document> obj;
+  Aws::Map<Aws::String, std::shared_ptr<const Document>> obj;
   obj.emplace("big", Document::FromInteger(3000000000LL));
 
   DocHolder out;
@@ -341,7 +342,7 @@ TEST_F(CodecTest, JsonDocumentLongRungRoundTripsKeepingTag) {
   DocHolder in;
   codec.DeserializeShape(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(body.c_str()), body.size()), in);
   ASSERT_TRUE(in.HasPayload());
-  const Document* big = in.GetPayload().GetMember("big");
+  auto big = in.GetPayload().GetMember("big");
   ASSERT_NE(big, nullptr);
   EXPECT_EQ(big->GetType(), ShapeType::Long);
   EXPECT_TRUE(in.GetPayload() == out.GetPayload());
@@ -349,7 +350,7 @@ TEST_F(CodecTest, JsonDocumentLongRungRoundTripsKeepingTag) {
 
 TEST_F(CodecTest, CborDocumentMemberSerializeFails) {
   // Documents are not supported by CBOR yet: serializing a struct with a document member fails.
-  Aws::Map<Aws::String, Document> obj;
+  Aws::Map<Aws::String, std::shared_ptr<const Document>> obj;
   obj.emplace("flag", Document::FromBoolean(true));
 
   DocHolder out;
@@ -363,7 +364,7 @@ TEST_F(CodecTest, CborDocumentMemberSerializeFails) {
 
 TEST_F(CodecTest, JsonDocumentBlobRoundTripsAsBase64String) {
   Aws::Utils::ByteBuffer blob(reinterpret_cast<const unsigned char*>("xyz"), 3);
-  Aws::Map<Aws::String, Document> obj;
+  Aws::Map<Aws::String, std::shared_ptr<const Document>> obj;
   obj.emplace("bin", Document::FromBlob(blob));
 
   DocHolder out;
@@ -377,7 +378,7 @@ TEST_F(CodecTest, JsonDocumentBlobRoundTripsAsBase64String) {
   DocHolder in;
   codec.DeserializeShape(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(body.c_str()), body.size()), in);
   ASSERT_TRUE(in.HasPayload());
-  const Document* bin = in.GetPayload().GetMember("bin");
+  auto bin = in.GetPayload().GetMember("bin");
   ASSERT_NE(bin, nullptr);
   // JSON encodes blobs as base64 strings; on read the value is a String whose AsBlob() recovers the
   // original bytes (SEP format-specific coercion).
@@ -388,7 +389,7 @@ TEST_F(CodecTest, JsonDocumentBlobRoundTripsAsBase64String) {
 }
 
 TEST_F(CodecTest, JsonDocumentDoubleRoundTripsWithPrecisionAndType) {
-  Aws::Map<Aws::String, Document> obj;
+  Aws::Map<Aws::String, std::shared_ptr<const Document>> obj;
   obj.emplace("pi", Document::FromDouble(3.141592653589793));
   obj.emplace("whole", Document::FromDouble(2.0));
   DocHolder out;
@@ -402,13 +403,19 @@ TEST_F(CodecTest, JsonDocumentDoubleRoundTripsWithPrecisionAndType) {
   DocHolder in;
   codec.DeserializeShape(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(body.c_str()), body.size()), in);
   ASSERT_TRUE(in.HasPayload());
-  const Document* pi = in.GetPayload().GetMember("pi");
+  auto pi = in.GetPayload().GetMember("pi");
   ASSERT_NE(pi, nullptr);
   ASSERT_TRUE(pi->AsDouble().has_value());
   EXPECT_EQ(pi->AsDouble().value(), 3.141592653589793);
-  const Document* whole = in.GetPayload().GetMember("whole");
+  auto whole = in.GetPayload().GetMember("whole");
   ASSERT_NE(whole, nullptr);
   EXPECT_EQ(whole->GetType(), ShapeType::Double);
+}
+
+TEST_F(CodecTest, CodecSettingsProtocolDefaultsMatchSep) {
+  EXPECT_EQ(CodecSettings::Json().GetDefaultTimestampFormat(), TimestampFormatTrait::Format::EPOCH_SECONDS);
+  EXPECT_EQ(CodecSettings::Xml().GetDefaultTimestampFormat(), TimestampFormatTrait::Format::DATE_TIME);
+  EXPECT_EQ(CodecSettings::Query().GetDefaultTimestampFormat(), TimestampFormatTrait::Format::DATE_TIME);
 }
 
 TEST_F(CodecTest, JsonCodecHttpDateDocumentTimestampParses) {

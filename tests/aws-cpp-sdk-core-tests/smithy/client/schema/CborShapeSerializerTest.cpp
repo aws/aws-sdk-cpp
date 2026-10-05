@@ -1042,7 +1042,7 @@ TEST_F(CborShapeSerializerTest, UnionAsStructure) {
 TEST_F(CborShapeSerializerTest, DocumentIsUnsupported) {
   CborShapeSerializer s;
   auto member = Schema::CreateMember("doc", ShapeType::Document);
-  s.WriteDocument(*member, Document::FromString("x"));
+  s.WriteDocument(*member, *Document::FromString("x"));
   auto outcome = s.GetPayload();
   ASSERT_FALSE(outcome.IsSuccess());
   EXPECT_EQ(outcome.GetError().GetExceptionName(), "SerializationException");

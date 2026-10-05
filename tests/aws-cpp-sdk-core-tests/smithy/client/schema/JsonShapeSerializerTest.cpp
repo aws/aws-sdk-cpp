@@ -562,10 +562,10 @@ TEST_F(JsonShapeSerializerTest, DocumentAsStructMember) {
   JsonShapeSerializer s;
   auto root = Schema::StructureBuilder("Root").Build();
   auto member = Schema::CreateMember("doc", ShapeType::Document);
-  Aws::Map<Aws::String, Document> obj;
+  Aws::Map<Aws::String, std::shared_ptr<const Document>> obj;
   obj.emplace("a", Document::FromInteger(1));
-  Document doc = Document::FromMap(std::move(obj));
-  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteDocument(*member, doc); });
+  auto doc = Document::FromMap(std::move(obj));
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteDocument(*member, *doc); });
   s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
@@ -576,8 +576,8 @@ TEST_F(JsonShapeSerializerTest, DocumentAsListElement) {
   JsonShapeSerializer s;
   auto member = Schema::CreateMember("doc", ShapeType::Document);
   s.WriteList(*member, 2, [&](ShapeSerializer& es) {
-    es.WriteDocument(*member, Document::FromString("x"));
-    es.WriteDocument(*member, Document::FromBoolean(true));
+    es.WriteDocument(*member, *Document::FromString("x"));
+    es.WriteDocument(*member, *Document::FromBoolean(true));
   });
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
