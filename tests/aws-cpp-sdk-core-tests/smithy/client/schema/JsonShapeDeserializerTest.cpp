@@ -535,26 +535,70 @@ TEST_F(JsonShapeDeserializerTest, ReadDocumentBuildsNestedTree) {
 }
 
 TEST_F(JsonShapeDeserializerTest, ReadDocumentIntegerVsDouble) {
-  Aws::String json = "[7,7.0]";
+  Aws::String json = "[7,7.0,3000000000]";
   JsonShapeDeserializer deser(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.c_str()), json.size()));
   auto schema = Schema::CreateDocument("smithy.api#Document");
   auto doc = deser.ReadDocument(*schema);
   ASSERT_TRUE(doc.has_value());
   const auto* list = doc->AsList();
   ASSERT_NE(list, nullptr);
-  ASSERT_EQ(list->size(), 2u);
-  EXPECT_EQ((*list)[0].GetType(), ShapeType::Long);
+  ASSERT_EQ(list->size(), 3u);
+  EXPECT_EQ((*list)[0].GetType(), ShapeType::Integer);
   EXPECT_EQ((*list)[1].GetType(), ShapeType::Double);
+  EXPECT_EQ((*list)[2].GetType(), ShapeType::Long);
+}
+
+TEST_F(JsonShapeDeserializerTest, ReadDocumentAcceptsNestingAtDepthLimit) {
+  // The cap admits MAX_DOCUMENT_DEPTH - 1 containers.
+  Aws::String json(255, '[');
+  json += "1";
+  json.append(255, ']');
+  JsonShapeDeserializer deser(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.c_str()), json.size()));
+  auto schema = Schema::CreateDocument("smithy.api#Document");
+  EXPECT_TRUE(deser.ReadDocument(*schema).has_value());
 }
 
 TEST_F(JsonShapeDeserializerTest, ReadDocumentRejectsExcessiveNesting) {
-  // Locks the MAX_DOCUMENT_DEPTH=64 guard: nesting past the cap yields an empty Optional, not a crash.
-  Aws::String json(70, '[');
+  // Locks the MAX_DOCUMENT_DEPTH guard: nesting past the cap yields an empty Optional, not a crash.
+  Aws::String json(256, '[');
   json += "1";
-  json.append(70, ']');
+  json.append(256, ']');
   JsonShapeDeserializer deser(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.c_str()), json.size()));
   auto schema = Schema::CreateDocument("smithy.api#Document");
   EXPECT_FALSE(deser.ReadDocument(*schema).has_value());
+}
+
+TEST_F(JsonShapeDeserializerTest, ReadDocumentFailureConsumesValueSoTrailingMemberSurvives) {
+  auto root = Schema::StructureBuilder("Root")
+                  .PutMember("doc", Schema::CreateDocument("smithy.api#Document"))
+                  .PutMember("name", Schema::CreateString("S"))
+                  .Build();
+  // First three fail outright; last three would otherwise return a truncated-but-present document.
+  const Aws::Vector<Aws::String> payloads = {
+      "{\"doc\":" + Aws::String(300, '[') + "1" + Aws::String(300, ']') + ",\"name\":\"bob\"}",
+      "{\"doc\":[1.2.3],\"name\":\"bob\"}",
+      "{\"doc\":{1:2},\"name\":\"bob\"}",
+      "{\"doc\":[1,2 3],\"name\":\"bob\"}",
+      "{\"doc\":{\"a\":1 \"b\":2},\"name\":\"bob\"}",
+      "{\"doc\":[1:2],\"name\":\"bob\"}",
+  };
+  for (const auto& json : payloads) {
+    JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()));
+    bool docPresent = true;
+    Aws::String name;
+    d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+      if (m.GetMemberName() == "doc") {
+        docPresent = de.ReadDocument(m).has_value();
+      } else {
+        auto v = de.ReadString(m);
+        if (v.has_value()) {
+          name = v.value();
+        }
+      }
+    });
+    EXPECT_FALSE(docPresent) << json;
+    EXPECT_EQ(name, "bob") << json;
+  }
 }
 
 TEST_F(JsonShapeDeserializerTest, ReadLongRejectsNonFiniteAndOutOfRange) {

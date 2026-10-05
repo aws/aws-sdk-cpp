@@ -474,7 +474,7 @@ TEST_F(JsonShapeSerializerTest, MaxDepthEnforcement) {
     }
     ser.WriteStruct(*nested, LambdaStruct(*nested, [&, remaining](ShapeSerializer& inner) { nest(inner, remaining - 1); }));
   };
-  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { nest(ser, 200); });
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { nest(ser, 1000); });
   s.WriteStruct(*root, rootStruct);
   auto outcome = s.GetPayload();
   ASSERT_FALSE(outcome.IsSuccess());

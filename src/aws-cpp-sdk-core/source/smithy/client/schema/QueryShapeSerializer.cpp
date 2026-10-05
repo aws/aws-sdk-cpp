@@ -64,7 +64,7 @@ class QueryShapeSerializer::Impl final : public ShapeSerializer {
   void WriteString(const Schema&, const Aws::String& value) override { EmitField(StringUtils::URLEncode(value.c_str())); }
   void WriteTimestamp(const Schema& schema, const DateTime& value) override {
     EmitField(StringUtils::URLEncode(
-        FormatTimestampText(value, ResolveTimestampFormat(schema, m_settings.defaultTimestampFormat)).c_str()));
+        FormatTimestampText(value, ResolveTimestampFormat(schema, m_settings.GetDefaultTimestampFormat())).c_str()));
   }
   void WriteBlob(const Schema&, const ByteBuffer& value) override {
     EmitField(StringUtils::URLEncode(HashingUtils::Base64Encode(value).c_str()));

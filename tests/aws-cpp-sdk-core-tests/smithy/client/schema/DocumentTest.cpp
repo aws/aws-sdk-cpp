@@ -22,7 +22,8 @@ TEST_F(SchemaDocumentTest, FactoriesReportType) {
   EXPECT_EQ(Document::Null().GetType(), ShapeType::Null);
   EXPECT_TRUE(Document::Null().IsNull());
   EXPECT_EQ(Document::FromBoolean(true).GetType(), ShapeType::Boolean);
-  EXPECT_EQ(Document::FromInteger(7).GetType(), ShapeType::Long);
+  EXPECT_EQ(Document::FromInteger(7).GetType(), ShapeType::Integer);
+  EXPECT_EQ(Document::FromInteger(3000000000LL).GetType(), ShapeType::Long);
   EXPECT_EQ(Document::FromDouble(1.5).GetType(), ShapeType::Double);
   EXPECT_EQ(Document::FromString("hi").GetType(), ShapeType::String);
   EXPECT_EQ(Document::FromList({}).GetType(), ShapeType::List);
@@ -92,6 +93,17 @@ TEST_F(SchemaDocumentTest, OutOfRangeDoubleDoesNotCoerceToFloat) {
   EXPECT_FALSE(Document::FromDouble(-1e300).AsFloat().has_value());
   // In-range doubles still coerce (with the precision loss the SEP permits).
   EXPECT_FLOAT_EQ(Document::FromDouble(1.5).AsFloat().value(), 1.5f);
+}
+
+TEST_F(SchemaDocumentTest, IntegralTypeTagNarrowsToInt32Range) {
+  EXPECT_EQ(Document::FromInteger(2147483647LL).GetType(), ShapeType::Integer);
+  EXPECT_EQ(Document::FromInteger(-2147483648LL).GetType(), ShapeType::Integer);
+  EXPECT_EQ(Document::FromInteger(2147483648LL).GetType(), ShapeType::Long);
+  EXPECT_EQ(Document::FromInteger(-2147483649LL).GetType(), ShapeType::Long);
+  // The wider tag still coerces through every numeric accessor; only AsInteger rejects it as out of range.
+  EXPECT_EQ(Document::FromInteger(3000000000LL).AsLong().value(), 3000000000LL);
+  EXPECT_DOUBLE_EQ(Document::FromInteger(3000000000LL).AsDouble().value(), 3000000000.0);
+  EXPECT_FALSE(Document::FromInteger(3000000000LL).AsInteger().has_value());
 }
 
 TEST_F(SchemaDocumentTest, EqualityCoversListBlobTimestampVariants) {

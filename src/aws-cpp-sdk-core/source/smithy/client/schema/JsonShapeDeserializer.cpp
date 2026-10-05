@@ -16,7 +16,6 @@
 #include <cmath>
 #include <cstdlib>
 #include <cstring>
-#include <functional>
 #include <limits>
 
 using namespace smithy::schema;
@@ -52,7 +51,8 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
       } else {
         SkipValue();
       }
-      if (!NextInContainer('}')) {
+      const auto more = NextInContainer('}');
+      if (!more.has_value() || !*more) {
         break;
       }
     }
@@ -75,7 +75,8 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
       } else {
         ConsumeOne([&] { consumer(*this); });
       }
-      if (!NextInContainer(']')) {
+      const auto more = NextInContainer(']');
+      if (!more.has_value() || !*more) {
         break;
       }
     }
@@ -105,7 +106,8 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
       } else {
         ConsumeOne([&] { consumer(*key, *this); });
       }
-      if (!NextInContainer('}')) {
+      const auto more = NextInContainer('}');
+      if (!more.has_value() || !*more) {
         break;
       }
     }
@@ -218,7 +220,7 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
       if (!token.has_value()) {
         return {};
       }
-      const auto format = ResolveTimestampFormat(schema, m_settings.defaultTimestampFormat);
+      const auto format = ResolveTimestampFormat(schema, m_settings.GetDefaultTimestampFormat());
       const DateFormat df = format == TimestampFormatTrait::Format::HTTP_DATE ? DateFormat::RFC822 : DateFormat::ISO_8601;
       DateTime parsed(*token, df);
       if (!parsed.WasParseSuccessful()) {
@@ -242,7 +244,16 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
     return HashingUtils::Base64Decode(*encoded);
   }
 
-  Aws::Crt::Optional<Document> ReadDocument(const Schema&) override { return ReadDocumentValue(0); }
+  Aws::Crt::Optional<Document> ReadDocument(const Schema&) override {
+    const size_t start = m_pos;
+    auto doc = ReadDocumentValue(0);
+    if (!doc.has_value()) {
+      // A failed parse can stop part-way into the value; rewind and skip it whole so sibling members stay aligned.
+      m_pos = start;
+      SkipValue();
+    }
+    return doc;
+  }
 
   bool IsNull() override {
     size_t p = m_pos;
@@ -253,19 +264,18 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
   }
 
  private:
-  static constexpr int MAX_DOCUMENT_DEPTH = 64;
+  // Below the serializer's MAX_DEPTH so a document that parses can always be written back, and far
+  // enough below cJSON's 1000 to keep the recursive descent inside a 1 MB stack.
+  static constexpr int MAX_DOCUMENT_DEPTH = 256;
 
   // JSON-flavored document nodes: carries this deserializer's timestamp format so AsBlob/AsTimestamp
   // on the resulting Document apply JSON coercion (base64 strings, epoch/ISO-8601 timestamps).
-  Document MakeJsonDoc(const std::function<void(DocumentImpl&)>& init) const {
-    auto impl = Aws::MakeShared<JsonDocumentImpl>("JsonDocumentImpl", m_settings.defaultTimestampFormat);
-    init(*impl);
-    return detail::MakeDocument(impl);
+  std::shared_ptr<JsonDocumentImpl> NewJsonNode() const {
+    return Aws::MakeShared<JsonDocumentImpl>("JsonDocumentImpl", m_settings.GetDefaultTimestampFormat());
   }
 
   Aws::Crt::Optional<Document> ReadDocumentValue(int depth) {
     if (depth >= MAX_DOCUMENT_DEPTH) {
-      SkipValue();
       return {};
     }
     const char c = PeekNonWs();
@@ -274,7 +284,9 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
       Aws::Map<Aws::String, Document> object;
       if (PeekNonWs() == '}') {
         ++m_pos;
-        return MakeJsonDoc([&](DocumentImpl& n) { n.SetMap(std::move(object)); });
+        auto node = NewJsonNode();
+        node->SetMap(std::move(object));
+        return detail::MakeDocument(std::move(node));
       }
       while (true) {
         auto key = ParseString();
@@ -289,18 +301,26 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
           return {};
         }
         object.emplace(std::move(*key), std::move(*value));
-        if (!NextInContainer('}')) {
+        const auto more = NextInContainer('}');
+        if (!more.has_value()) {
+          return {};
+        }
+        if (!*more) {
           break;
         }
       }
-      return MakeJsonDoc([&](DocumentImpl& n) { n.SetMap(std::move(object)); });
+      auto node = NewJsonNode();
+      node->SetMap(std::move(object));
+      return detail::MakeDocument(std::move(node));
     }
     if (c == '[') {
       ++m_pos;
       Aws::Vector<Document> list;
       if (PeekNonWs() == ']') {
         ++m_pos;
-        return MakeJsonDoc([&](DocumentImpl& n) { n.SetList(std::move(list)); });
+        auto node = NewJsonNode();
+        node->SetList(std::move(list));
+        return detail::MakeDocument(std::move(node));
       }
       while (true) {
         auto value = ReadDocumentValue(depth + 1);
@@ -308,27 +328,39 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
           return {};
         }
         list.push_back(std::move(*value));
-        if (!NextInContainer(']')) {
+        const auto more = NextInContainer(']');
+        if (!more.has_value()) {
+          return {};
+        }
+        if (!*more) {
           break;
         }
       }
-      return MakeJsonDoc([&](DocumentImpl& n) { n.SetList(std::move(list)); });
+      auto node = NewJsonNode();
+      node->SetList(std::move(list));
+      return detail::MakeDocument(std::move(node));
     }
     if (c == '"') {
       auto str = ParseString();
       if (!str.has_value()) {
         return {};
       }
-      return MakeJsonDoc([&](DocumentImpl& n) { n.SetString(std::move(*str)); });
+      auto node = NewJsonNode();
+      node->SetString(std::move(*str));
+      return detail::MakeDocument(std::move(node));
     }
     if (Match("true")) {
-      return MakeJsonDoc([](DocumentImpl& n) { n.SetBoolean(true); });
+      auto node = NewJsonNode();
+      node->SetBoolean(true);
+      return detail::MakeDocument(std::move(node));
     }
     if (Match("false")) {
-      return MakeJsonDoc([](DocumentImpl& n) { n.SetBoolean(false); });
+      auto node = NewJsonNode();
+      node->SetBoolean(false);
+      return detail::MakeDocument(std::move(node));
     }
     if (Match("null")) {
-      return MakeJsonDoc([](DocumentImpl&) {});  // ShapeType::Null default
+      return detail::MakeDocument(NewJsonNode());  // ShapeType::Null default
     }
     if (IsNumberStart(c)) {
       const Aws::String token = ReadNumberToken();
@@ -338,7 +370,9 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
         if (end != token.c_str() + token.size()) {
           return {};
         }
-        return MakeJsonDoc([&](DocumentImpl& n) { n.SetDouble(d); });
+        auto node = NewJsonNode();
+        node->SetDouble(d);
+        return detail::MakeDocument(std::move(node));
       }
       errno = 0;
       const long long v = std::strtoll(token.c_str(), &end, 10);
@@ -348,9 +382,13 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
       if (errno == ERANGE) {
         // Out of int64 range: preserve magnitude as a double rather than clamping.
         const double d = std::strtod(token.c_str(), nullptr);
-        return MakeJsonDoc([&](DocumentImpl& n) { n.SetDouble(d); });
+        auto node = NewJsonNode();
+        node->SetDouble(d);
+        return detail::MakeDocument(std::move(node));
       }
-      return MakeJsonDoc([&](DocumentImpl& n) { n.SetInteger(static_cast<int64_t>(v)); });
+      auto node = NewJsonNode();
+      node->SetInteger(static_cast<int64_t>(v));
+      return detail::MakeDocument(std::move(node));
     }
     SkipValue();
     return {};
@@ -379,15 +417,19 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
     }
   }
 
-  bool NextInContainer(char close) {
+  // True after a separator, false at the closing bracket, absent when the next token is neither. Modeled
+  // readers treat absent as a break; the document parser rejects, so a document never comes back
+  // silently truncated.
+  Aws::Crt::Optional<bool> NextInContainer(char close) {
     const char c = PeekNonWs();
     if (c == ',') {
       ++m_pos;
       return true;
     }
-    if (c == close) {
-      ++m_pos;
+    if (c != close) {
+      return {};
     }
+    ++m_pos;
     return false;
   }
 

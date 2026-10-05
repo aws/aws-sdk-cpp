@@ -18,6 +18,15 @@ namespace schema {
 
 namespace {
 const char DOCUMENT_IMPL_ALLOCATION_TAG[] = "DocumentImpl";
+
+bool FitsInInt32(int64_t value) {
+  return value >= static_cast<int64_t>((std::numeric_limits<int32_t>::min)()) &&
+         value <= static_cast<int64_t>((std::numeric_limits<int32_t>::max)());
+}
+
+bool IsIntegralTag(ShapeType type) { return type == ShapeType::Integer || type == ShapeType::Long; }
+
+std::shared_ptr<DocumentImpl> NewNode() { return Aws::MakeShared<DocumentImpl>(DOCUMENT_IMPL_ALLOCATION_TAG); }
 }  // namespace
 
 Document::Document(std::shared_ptr<const DocumentImpl> impl) : m_impl(std::move(impl)) {}
@@ -26,25 +35,55 @@ namespace detail {
 Document MakeDocument(std::shared_ptr<const DocumentImpl> impl) { return Document(std::move(impl)); }
 }  // namespace detail
 
-Document Document::Null() { return detail::MakeDocument(DocumentImpl::MakeNull()); }
+Document Document::Null() { return detail::MakeDocument(NewNode()); }
 
-Document Document::FromBoolean(bool value) { return detail::MakeDocument(DocumentImpl::MakeBoolean(value)); }
-
-Document Document::FromInteger(int64_t value) { return detail::MakeDocument(DocumentImpl::MakeInteger(value)); }
-
-Document Document::FromDouble(double value) { return detail::MakeDocument(DocumentImpl::MakeDouble(value)); }
-
-Document Document::FromString(Aws::String value) { return detail::MakeDocument(DocumentImpl::MakeString(std::move(value))); }
-
-Document Document::FromBlob(Aws::Utils::ByteBuffer value) { return detail::MakeDocument(DocumentImpl::MakeBlob(std::move(value))); }
-
-Document Document::FromTimestamp(Aws::Utils::DateTime value) {
-  return detail::MakeDocument(DocumentImpl::MakeTimestamp(std::move(value)));
+Document Document::FromBoolean(bool value) {
+  auto impl = NewNode();
+  impl->SetBoolean(value);
+  return detail::MakeDocument(std::move(impl));
 }
 
-Document Document::FromList(Aws::Vector<Document> value) { return detail::MakeDocument(DocumentImpl::MakeList(std::move(value))); }
+Document Document::FromInteger(int64_t value) {
+  auto impl = NewNode();
+  impl->SetInteger(value);
+  return detail::MakeDocument(std::move(impl));
+}
 
-Document Document::FromMap(Aws::Map<Aws::String, Document> value) { return detail::MakeDocument(DocumentImpl::MakeMap(std::move(value))); }
+Document Document::FromDouble(double value) {
+  auto impl = NewNode();
+  impl->SetDouble(value);
+  return detail::MakeDocument(std::move(impl));
+}
+
+Document Document::FromString(Aws::String value) {
+  auto impl = NewNode();
+  impl->SetString(std::move(value));
+  return detail::MakeDocument(std::move(impl));
+}
+
+Document Document::FromBlob(Aws::Utils::ByteBuffer value) {
+  auto impl = NewNode();
+  impl->SetBlob(std::move(value));
+  return detail::MakeDocument(std::move(impl));
+}
+
+Document Document::FromTimestamp(Aws::Utils::DateTime value) {
+  auto impl = NewNode();
+  impl->SetTimestamp(std::move(value));
+  return detail::MakeDocument(std::move(impl));
+}
+
+Document Document::FromList(Aws::Vector<Document> value) {
+  auto impl = NewNode();
+  impl->SetList(std::move(value));
+  return detail::MakeDocument(std::move(impl));
+}
+
+Document Document::FromMap(Aws::Map<Aws::String, Document> value) {
+  auto impl = NewNode();
+  impl->SetMap(std::move(value));
+  return detail::MakeDocument(std::move(impl));
+}
 
 ShapeType Document::GetType() const { return m_impl->GetType(); }
 
@@ -56,7 +95,7 @@ Aws::Crt::Optional<Aws::String> Document::AsString() const { return m_impl->AsSt
 
 Aws::Crt::Optional<int> Document::AsInteger() const {
   auto value = m_impl->AsLong();
-  if (!value.has_value()) {
+  if (!value.has_value() || !FitsInInt32(*value)) {
     return {};
   }
   return static_cast<int>(*value);
@@ -105,7 +144,7 @@ void DocumentImpl::SetBoolean(bool value) {
 }
 
 void DocumentImpl::SetInteger(int64_t value) {
-  m_type = ShapeType::Long;
+  m_type = FitsInInt32(value) ? ShapeType::Integer : ShapeType::Long;
   m_int = value;
 }
 
@@ -139,56 +178,6 @@ void DocumentImpl::SetMap(Aws::Map<Aws::String, Document> value) {
   m_map = std::move(value);
 }
 
-std::shared_ptr<DocumentImpl> DocumentImpl::MakeNull() { return Aws::MakeShared<DocumentImpl>(DOCUMENT_IMPL_ALLOCATION_TAG); }
-
-std::shared_ptr<DocumentImpl> DocumentImpl::MakeBoolean(bool value) {
-  auto impl = Aws::MakeShared<DocumentImpl>(DOCUMENT_IMPL_ALLOCATION_TAG);
-  impl->SetBoolean(value);
-  return impl;
-}
-
-std::shared_ptr<DocumentImpl> DocumentImpl::MakeInteger(int64_t value) {
-  auto impl = Aws::MakeShared<DocumentImpl>(DOCUMENT_IMPL_ALLOCATION_TAG);
-  impl->SetInteger(value);
-  return impl;
-}
-
-std::shared_ptr<DocumentImpl> DocumentImpl::MakeDouble(double value) {
-  auto impl = Aws::MakeShared<DocumentImpl>(DOCUMENT_IMPL_ALLOCATION_TAG);
-  impl->SetDouble(value);
-  return impl;
-}
-
-std::shared_ptr<DocumentImpl> DocumentImpl::MakeString(Aws::String value) {
-  auto impl = Aws::MakeShared<DocumentImpl>(DOCUMENT_IMPL_ALLOCATION_TAG);
-  impl->SetString(std::move(value));
-  return impl;
-}
-
-std::shared_ptr<DocumentImpl> DocumentImpl::MakeBlob(Aws::Utils::ByteBuffer value) {
-  auto impl = Aws::MakeShared<DocumentImpl>(DOCUMENT_IMPL_ALLOCATION_TAG);
-  impl->SetBlob(std::move(value));
-  return impl;
-}
-
-std::shared_ptr<DocumentImpl> DocumentImpl::MakeTimestamp(Aws::Utils::DateTime value) {
-  auto impl = Aws::MakeShared<DocumentImpl>(DOCUMENT_IMPL_ALLOCATION_TAG);
-  impl->SetTimestamp(std::move(value));
-  return impl;
-}
-
-std::shared_ptr<DocumentImpl> DocumentImpl::MakeList(Aws::Vector<Document> value) {
-  auto impl = Aws::MakeShared<DocumentImpl>(DOCUMENT_IMPL_ALLOCATION_TAG);
-  impl->SetList(std::move(value));
-  return impl;
-}
-
-std::shared_ptr<DocumentImpl> DocumentImpl::MakeMap(Aws::Map<Aws::String, Document> value) {
-  auto impl = Aws::MakeShared<DocumentImpl>(DOCUMENT_IMPL_ALLOCATION_TAG);
-  impl->SetMap(std::move(value));
-  return impl;
-}
-
 Aws::Crt::Optional<bool> DocumentImpl::AsBoolean() const {
   if (m_type != ShapeType::Boolean) {
     return {};
@@ -204,7 +193,7 @@ Aws::Crt::Optional<Aws::String> DocumentImpl::AsString() const {
 }
 
 Aws::Crt::Optional<int64_t> DocumentImpl::AsLong() const {
-  if (m_type == ShapeType::Long) {
+  if (IsIntegralTag(m_type)) {
     return m_int;
   }
   if (m_type == ShapeType::Double) {
@@ -222,7 +211,7 @@ Aws::Crt::Optional<double> DocumentImpl::AsDouble() const {
   if (m_type == ShapeType::Double) {
     return m_double;
   }
-  if (m_type == ShapeType::Long) {
+  if (IsIntegralTag(m_type)) {
     return static_cast<double>(m_int);
   }
   return {};
@@ -262,6 +251,7 @@ Aws::Crt::Optional<Aws::Utils::DateTime> JsonDocumentImpl::CoerceTimestamp() con
   // under a string-based default (date-time / http-date). Otherwise the value does not coerce.
   const bool numericFormat = m_defaultStringTimestampFormat == TimestampFormatTrait::Format::EPOCH_SECONDS;
   switch (m_type) {
+    case ShapeType::Integer:
     case ShapeType::Long:
       if (!numericFormat) {
         return {};
@@ -322,6 +312,7 @@ void DocumentImpl::SerializeContents(ShapeSerializer& serializer, const Schema& 
     case ShapeType::Boolean:
       serializer.WriteBoolean(schema, m_bool);
       break;
+    case ShapeType::Integer:
     case ShapeType::Long:
       serializer.WriteLong(schema, m_int);
       break;
@@ -368,6 +359,7 @@ bool DocumentImpl::Equals(const DocumentImpl& other) const {
       return true;
     case ShapeType::Boolean:
       return m_bool == other.m_bool;
+    case ShapeType::Integer:
     case ShapeType::Long:
       return m_int == other.m_int;
     case ShapeType::Double:

@@ -369,7 +369,7 @@ void XmlShapeSerializer::Impl::ValueSerializer::WriteString(const Schema&, const
 }
 void XmlShapeSerializer::Impl::ValueSerializer::WriteTimestamp(const Schema& schema, const Aws::Utils::DateTime& value) {
   m_outer->ClosePendingTag();
-  m_outer->AppendRaw(FormatTimestampText(value, ResolveTimestampFormat(schema, m_outer->m_settings.defaultTimestampFormat)));
+  m_outer->AppendRaw(FormatTimestampText(value, ResolveTimestampFormat(schema, m_outer->m_settings.GetDefaultTimestampFormat())));
 }
 void XmlShapeSerializer::Impl::ValueSerializer::WriteBlob(const Schema&, const Aws::Utils::ByteBuffer& value) {
   m_outer->ClosePendingTag();
@@ -431,7 +431,7 @@ void XmlShapeSerializer::Impl::InlineAttributeSerializer::WriteString(const Sche
   WriteAttr(schema, value);
 }
 void XmlShapeSerializer::Impl::InlineAttributeSerializer::WriteTimestamp(const Schema& schema, const Aws::Utils::DateTime& value) {
-  WriteAttr(schema, FormatTimestampText(value, ResolveTimestampFormat(schema, m_outer->m_settings.defaultTimestampFormat)));
+  WriteAttr(schema, FormatTimestampText(value, ResolveTimestampFormat(schema, m_outer->m_settings.GetDefaultTimestampFormat())));
 }
 ShapeSerializer& XmlShapeSerializer::Impl::ListItemSerializer::Before(const Schema&) {
   m_outer->WriteStartOpen(m_itemName, m_itemNamespace);

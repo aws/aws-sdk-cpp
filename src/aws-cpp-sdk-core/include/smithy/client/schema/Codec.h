@@ -16,10 +16,16 @@ namespace schema {
 
 class Schema;
 
-// Per-protocol timestamp default threaded to a codec's serializer and deserializer.
-struct CodecSettings {
-  explicit CodecSettings(TimestampFormatTrait::Format defaultTimestampFormat) : defaultTimestampFormat(defaultTimestampFormat) {}
-  TimestampFormatTrait::Format defaultTimestampFormat;
+// Per-protocol timestamp default threaded to a codec's serializer and deserializer. The format is the
+// fallback used when a member carries no @timestampFormat trait.
+class CodecSettings final {
+ public:
+  explicit CodecSettings(TimestampFormatTrait::Format defaultTimestampFormat) : m_defaultTimestampFormat(defaultTimestampFormat) {}
+
+  TimestampFormatTrait::Format GetDefaultTimestampFormat() const { return m_defaultTimestampFormat; }
+
+ private:
+  TimestampFormatTrait::Format m_defaultTimestampFormat;
 };
 
 class SMITHY_API Codec {

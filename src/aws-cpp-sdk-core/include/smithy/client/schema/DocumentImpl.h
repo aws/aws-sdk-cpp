@@ -51,7 +51,7 @@ class AWS_CORE_LOCAL DocumentImpl {
   bool Equals(const DocumentImpl& other) const;
 
   // Storage mutators — set m_type + the matching field (std::move for String/Blob/Timestamp/List/Map).
-  // Used only during construction (the Make* factories and the JSON deserializer); nodes are held
+  // Used only during construction (Document's factories and the JSON deserializer); nodes are held
   // const by Document afterward. Public surface is acceptable on an internal AWS_CORE_LOCAL type.
   void SetBoolean(bool value);
   void SetInteger(int64_t value);
@@ -61,16 +61,6 @@ class AWS_CORE_LOCAL DocumentImpl {
   void SetTimestamp(Aws::Utils::DateTime value);
   void SetList(Aws::Vector<Document> value);
   void SetMap(Aws::Map<Aws::String, Document> value);
-
-  static std::shared_ptr<DocumentImpl> MakeNull();
-  static std::shared_ptr<DocumentImpl> MakeBoolean(bool value);
-  static std::shared_ptr<DocumentImpl> MakeInteger(int64_t value);
-  static std::shared_ptr<DocumentImpl> MakeDouble(double value);
-  static std::shared_ptr<DocumentImpl> MakeString(Aws::String value);
-  static std::shared_ptr<DocumentImpl> MakeBlob(Aws::Utils::ByteBuffer value);
-  static std::shared_ptr<DocumentImpl> MakeTimestamp(Aws::Utils::DateTime value);
-  static std::shared_ptr<DocumentImpl> MakeList(Aws::Vector<Document> value);
-  static std::shared_ptr<DocumentImpl> MakeMap(Aws::Map<Aws::String, Document> value);
 
  protected:
   ShapeType m_type = ShapeType::Null;

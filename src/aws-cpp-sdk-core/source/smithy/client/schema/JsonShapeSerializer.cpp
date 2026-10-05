@@ -25,7 +25,7 @@ using namespace smithy::schema;
 using namespace Aws::Utils;
 using SerializerOutcome = Aws::Utils::Outcome<Aws::String, Aws::Client::AWSError<Aws::Client::CoreErrors>>;
 
-static constexpr int MAX_DEPTH = 64;
+static constexpr int MAX_DEPTH = 500;
 
 class JsonShapeSerializer::Impl final : public ShapeSerializer {
  public:
@@ -73,7 +73,7 @@ class JsonShapeSerializer::Impl final : public ShapeSerializer {
   void WriteDouble(const Schema&, double value) override { WriteFloatingPoint(value); }
   void WriteString(const Schema&, const Aws::String& value) override { Aws::Schema::WriteQuotedJsonString(m_buf, value); }
   void WriteTimestamp(const Schema& schema, const DateTime& value) override {
-    const auto format = ResolveTimestampFormat(schema, m_settings.defaultTimestampFormat);
+    const auto format = ResolveTimestampFormat(schema, m_settings.GetDefaultTimestampFormat());
     if (format == TimestampFormatTrait::Format::EPOCH_SECONDS) {
       m_buf += FormatTimestampText(value, format);
     } else {

@@ -323,6 +323,30 @@ TEST_F(CodecTest, JsonDocumentMemberRoundTrip) {
   EXPECT_TRUE(in.GetPayload() == out.GetPayload());
 }
 
+TEST_F(CodecTest, JsonDocumentLongRungRoundTripsKeepingTag) {
+  // JsonDocumentMemberRoundTrip only exercises the Integer rung; this pins serializer/parser agreement
+  // on a value too wide for int32.
+  Aws::Map<Aws::String, Document> obj;
+  obj.emplace("big", Document::FromInteger(3000000000LL));
+
+  DocHolder out;
+  out.SetPayload(Document::FromMap(std::move(obj)));
+
+  JsonCodec codec;
+  auto serialized = codec.Serialize(out.GetSchema(), out);
+  ASSERT_TRUE(serialized.IsSuccess());
+  const auto& body = serialized.GetResult();
+  EXPECT_NE(body.find("\"big\":3000000000"), Aws::String::npos);
+
+  DocHolder in;
+  codec.DeserializeShape(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(body.c_str()), body.size()), in);
+  ASSERT_TRUE(in.HasPayload());
+  const Document* big = in.GetPayload().GetMember("big");
+  ASSERT_NE(big, nullptr);
+  EXPECT_EQ(big->GetType(), ShapeType::Long);
+  EXPECT_TRUE(in.GetPayload() == out.GetPayload());
+}
+
 TEST_F(CodecTest, CborDocumentMemberSerializeFails) {
   // Documents are not supported by CBOR yet: serializing a struct with a document member fails.
   Aws::Map<Aws::String, Document> obj;
@@ -405,4 +429,35 @@ TEST_F(CodecTest, JsonDocumentBigIntegerBecomesDouble) {
   codec.DeserializeShape(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(body.c_str()), body.size()), in);
   ASSERT_TRUE(in.HasPayload());
   EXPECT_EQ(in.GetPayload().GetType(), ShapeType::Double);
+}
+
+TEST_F(CodecTest, JsonDocumentInt64BoundariesStayExactOnLongRung) {
+  const Aws::Vector<Aws::String> digits = {"9223372036854775807", "-9223372036854775808"};
+  for (const auto& text : digits) {
+    const Aws::String body = "{\"payload\":" + text + "}";
+    JsonCodec codec;
+    DocHolder in;
+    codec.DeserializeShape(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(body.c_str()), body.size()), in);
+    ASSERT_TRUE(in.HasPayload()) << text;
+    EXPECT_EQ(in.GetPayload().GetType(), ShapeType::Long) << text;
+    ASSERT_TRUE(in.GetPayload().AsLong().has_value()) << text;
+    EXPECT_FALSE(in.GetPayload().AsInteger().has_value()) << text;
+    auto reserialized = codec.Serialize(in.GetSchema(), in);
+    ASSERT_TRUE(reserialized.IsSuccess()) << text;
+    EXPECT_NE(reserialized.GetResult().find(text), Aws::String::npos) << text;
+  }
+}
+
+TEST_F(CodecTest, JsonDocumentAtReaderDepthLimitStillSerializes) {
+  // The reader's cap must stay under the serializer's: a document nested inside a struct spends an
+  // extra writer level on the wrapper, so an equal pair rejects on write what it just accepted on read.
+  for (int depth : {254, 255}) {
+    Aws::String body = "{\"payload\":" + Aws::String(depth, '[') + "1" + Aws::String(depth, ']') + "}";
+    JsonCodec codec;
+    DocHolder in;
+    codec.DeserializeShape(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(body.c_str()), body.size()), in);
+    ASSERT_TRUE(in.HasPayload()) << "parse failed at depth " << depth;
+    auto reserialized = codec.Serialize(in.GetSchema(), in);
+    EXPECT_TRUE(reserialized.IsSuccess()) << "write failed at depth " << depth;
+  }
 }

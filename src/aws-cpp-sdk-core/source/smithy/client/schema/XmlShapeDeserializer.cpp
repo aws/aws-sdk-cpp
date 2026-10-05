@@ -182,7 +182,7 @@ class XmlShapeDeserializer::Impl final : public ShapeDeserializer {
   Aws::Crt::Optional<Aws::String> ReadString(const Schema&) override { return CurrentText(); }
 
   Aws::Crt::Optional<DateTime> ReadTimestamp(const Schema& schema) override {
-    const auto format = ResolveTimestampFormat(schema, m_settings.defaultTimestampFormat);
+    const auto format = ResolveTimestampFormat(schema, m_settings.GetDefaultTimestampFormat());
     if (format == TimestampFormatTrait::Format::EPOCH_SECONDS) {
       const Aws::String text = CurrentText();
       char* end = nullptr;
