@@ -1,3 +1,11 @@
+# 1.11.907 (2026-10-06)
+
+## SDK Highlights
+* **Bug Fix**: Validate get object checksums when enabled in s3 crt client
+
+## Service Updates
+* **Lambda Web**: Removes operations that are not yet generally available from the Lambda Web.
+
 # 1.11.906 (2026-10-02)
 
 ## SDK Highlights

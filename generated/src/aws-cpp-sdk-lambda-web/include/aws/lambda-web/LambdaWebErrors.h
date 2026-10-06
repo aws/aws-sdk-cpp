@@ -44,9 +44,7 @@ enum class LambdaWebErrors {
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
-  INTERNAL_SERVER,
-  SERVICE_QUOTA_EXCEEDED
+  INTERNAL_SERVER = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1
 };
 
 class AWS_LAMBDAWEB_API LambdaWebError : public Aws::Client::AWSError<LambdaWebErrors> {

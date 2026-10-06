@@ -1,6 +1,0 @@
-{
-  "type": "bugfix",
-  "category": "aws-cpp-sdk-core",
-  "contributor": "sbiscigl",
-  "description": "Validate get object checksums when enabled in s3 crt client"
-}
