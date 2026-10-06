@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <smithy/client/schema/Document.h>
@@ -10,8 +11,6 @@
 #include <smithy/client/schema/XmlShapeDeserializer.h>
 #include <smithy/client/schema/XmlTraits.h>
 
-#include <cmath>
-#include <cstdlib>
 #include <limits>
 
 using namespace smithy::schema;
@@ -137,16 +136,7 @@ class XmlShapeDeserializer::Impl final : public ShapeDeserializer {
   }
 
   Aws::Crt::Optional<int64_t> ReadLong(const Schema&) override {
-    const Aws::String text = CurrentText();
-    if (text.empty()) {
-      return {};
-    }
-    char* end = nullptr;
-    const long long value = std::strtoll(text.c_str(), &end, 10);
-    if (end != text.c_str() + text.size()) {
-      return {};
-    }
-    return static_cast<int64_t>(value);
+    return StringUtils::ParseInt64(CurrentText());
   }
 
   Aws::Crt::Optional<float> ReadFloat(const Schema& schema) override {
@@ -168,15 +158,7 @@ class XmlShapeDeserializer::Impl final : public ShapeDeserializer {
     if (text == "-Infinity") {
       return -std::numeric_limits<double>::infinity();
     }
-    if (text.empty()) {
-      return {};
-    }
-    char* end = nullptr;
-    const double value = std::strtod(text.c_str(), &end);
-    if (end != text.c_str() + text.size()) {
-      return {};
-    }
-    return value;
+    return StringUtils::ParseDouble(text);
   }
 
   Aws::Crt::Optional<Aws::String> ReadString(const Schema&) override { return CurrentText(); }
@@ -184,13 +166,11 @@ class XmlShapeDeserializer::Impl final : public ShapeDeserializer {
   Aws::Crt::Optional<DateTime> ReadTimestamp(const Schema& schema) override {
     const auto format = ResolveTimestampFormat(schema, m_settings.GetDefaultTimestampFormat());
     if (format == TimestampFormatTrait::Format::EPOCH_SECONDS) {
-      const Aws::String text = CurrentText();
-      char* end = nullptr;
-      const double seconds = std::strtod(text.c_str(), &end);
-      if (text.empty() || end != text.c_str() + text.size()) {
+      const auto seconds = StringUtils::ParseDouble(CurrentText());
+      if (!seconds.has_value()) {
         return {};
       }
-      return DateTime(seconds);
+      return DateTime(*seconds);
     }
     const DateFormat df =
         format == TimestampFormatTrait::Format::HTTP_DATE ? DateFormat::RFC822 : DateFormat::ISO_8601;

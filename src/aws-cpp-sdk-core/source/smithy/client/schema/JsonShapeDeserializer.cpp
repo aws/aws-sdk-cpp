@@ -3,18 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/numeric/NumericUtils.h>
 #include <smithy/client/schema/AbstractDocument.h>
 #include <smithy/client/schema/Document.h>
 #include <smithy/client/schema/JsonShapeDeserializer.h>
 #include <smithy/client/schema/JsonTraits.h>
 #include <smithy/client/schema/SerdeTraits.h>
 
-#include <cerrno>
-#include <cmath>
-#include <cstdlib>
 #include <cstring>
 #include <limits>
 #include <memory>
@@ -139,23 +138,16 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
       return {};
     }
     const Aws::String token = ReadNumberToken();
-    char* end = nullptr;
-    const long long value = std::strtoll(token.c_str(), &end, 10);
-    if (end != token.c_str() + token.size()) {
-      char* dend = nullptr;
-      const double d = std::strtod(token.c_str(), &dend);
-      if (dend != token.c_str() + token.size()) {
-        return {};
-      }
-      // Casting a non-finite or out-of-range double to int64_t is undefined behavior.
-      if (!std::isfinite(d) || d < static_cast<double>((std::numeric_limits<int64_t>::min)()) ||
-          d >= static_cast<double>((std::numeric_limits<int64_t>::max)())) {
-        return {};
-      }
-      return static_cast<int64_t>(d);
+    // ParseInt64 saturates, so clamping out-of-range plain integers is intentional.
+    const auto value = StringUtils::ParseInt64(token);
+    if (value.has_value()) {
+      return value;
     }
-    // strtoll saturates to INT64_MAX/MIN on overflow; clamping out-of-range plain integers is intentional.
-    return static_cast<int64_t>(value);
+    const auto d = StringUtils::ParseDouble(token);
+    if (!d.has_value() || !IsRepresentableAsInt64(*d)) {
+      return {};
+    }
+    return static_cast<int64_t>(*d);
   }
 
   Aws::Crt::Optional<float> ReadFloat(const Schema& schema) override {
@@ -188,13 +180,7 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
       SkipValue();
       return {};
     }
-    const Aws::String token = ReadNumberToken();
-    char* end = nullptr;
-    const double value = std::strtod(token.c_str(), &end);
-    if (end != token.c_str() + token.size()) {
-      return {};
-    }
-    return value;
+    return StringUtils::ParseDouble(ReadNumberToken());
   }
 
   Aws::Crt::Optional<Aws::String> ReadString(const Schema&) override {
@@ -208,13 +194,11 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
   Aws::Crt::Optional<DateTime> ReadTimestamp(const Schema& schema) override {
     const char c = PeekNonWs();
     if (IsNumberStart(c)) {
-      const Aws::String token = ReadNumberToken();
-      char* end = nullptr;
-      const double seconds = std::strtod(token.c_str(), &end);
-      if (end != token.c_str() + token.size()) {
+      const auto seconds = StringUtils::ParseDouble(ReadNumberToken());
+      if (!seconds.has_value()) {
         return {};
       }
-      return DateTime(seconds);
+      return DateTime(*seconds);
     }
     if (c == '"') {
       auto token = ParseString();
@@ -366,34 +350,32 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
     }
     if (IsNumberStart(c)) {
       const Aws::String token = ReadNumberToken();
-      char* end = nullptr;
-      if (token.find_first_of(".eE") != Aws::String::npos) {
-        const double d = std::strtod(token.c_str(), &end);
-        if (end != token.c_str() + token.size()) {
-          return nullptr;
-        }
+      const auto v = StringUtils::ParseInt64(token);
+      if (v.has_value() && !SaturatedInt64(*v, token)) {
         auto node = NewJsonNode();
-        node->SetDouble(d);
+        node->SetInteger(*v);
         return node;
       }
-      errno = 0;
-      const long long v = std::strtoll(token.c_str(), &end, 10);
-      if (end != token.c_str() + token.size()) {
+      // Fraction/exponent forms, and integers out of int64 range (magnitude preserved rather than clamped).
+      const auto d = StringUtils::ParseDouble(token);
+      if (!d.has_value()) {
         return nullptr;
       }
-      if (errno == ERANGE) {
-        // Out of int64 range: preserve magnitude as a double rather than clamping.
-        const double d = std::strtod(token.c_str(), nullptr);
-        auto node = NewJsonNode();
-        node->SetDouble(d);
-        return node;
-      }
       auto node = NewJsonNode();
-      node->SetInteger(static_cast<int64_t>(v));
+      node->SetDouble(*d);
       return node;
     }
     SkipValue();
     return nullptr;
+  }
+
+  // True when ParseInt64 clamped an out-of-range integer, detected via its double magnitude.
+  static bool SaturatedInt64(int64_t value, const Aws::String& token) {
+    if (value != (std::numeric_limits<int64_t>::max)() && value != (std::numeric_limits<int64_t>::min)()) {
+      return false;
+    }
+    const auto d = StringUtils::ParseDouble(token);
+    return d.has_value() && (*d > LLONG_MAX_PLUS_ONE || *d < LLONG_MIN_AS_DOUBLE);
   }
 
   static Aws::String JsonName(const Schema& member) {

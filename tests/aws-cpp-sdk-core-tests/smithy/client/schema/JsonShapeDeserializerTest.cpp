@@ -637,7 +637,7 @@ TEST_F(JsonShapeDeserializerTest, ReadLongClampsPlainDigitOverflow) {
       Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(wire.data()), wire.size()));
   Aws::Crt::Optional<int64_t> got;
   d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadLong(m); });
-  // strtoll saturates on overflow; a plain-integer overflow clamps to INT64_MAX rather than dropping.
+  // A plain-integer overflow clamps to INT64_MAX rather than dropping.
   ASSERT_TRUE(got.has_value());
   EXPECT_EQ(got.value(), 9223372036854775807LL);
 }

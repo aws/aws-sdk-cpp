@@ -22,7 +22,7 @@ class CodecSettings final {
  public:
   explicit CodecSettings(TimestampFormatTrait::Format defaultTimestampFormat) : m_defaultTimestampFormat(defaultTimestampFormat) {}
 
-  // Payload defaults per the SEP's codec-settings-by-protocol table.
+  // Default payload timestamp format for each protocol.
   static CodecSettings Json() { return CodecSettings{TimestampFormatTrait::Format::EPOCH_SECONDS}; }
   static CodecSettings Xml() { return CodecSettings{TimestampFormatTrait::Format::DATE_TIME}; }
   static CodecSettings Query() { return CodecSettings{TimestampFormatTrait::Format::DATE_TIME}; }

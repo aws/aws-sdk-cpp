@@ -94,7 +94,7 @@ class JsonShapeSerializer::Impl final : public ShapeSerializer {
     Aws::OStringStream s15;
     s15 << std::setprecision(15) << value;
     Aws::String t15 = s15.str();
-    if (std::strtod(t15.c_str(), nullptr) == value) {
+    if (StringUtils::ConvertToDouble(t15.c_str()) == value) {
       return t15;
     }
     Aws::OStringStream s17;
