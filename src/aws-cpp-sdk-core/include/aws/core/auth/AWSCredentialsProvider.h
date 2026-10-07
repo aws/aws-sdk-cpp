@@ -73,6 +73,12 @@ namespace Aws
              */
             virtual AWSCredentials GetAWSCredentials() = 0;
 
+            /**
+             * Called when a target service rejected the credentials that signed a request. Caching providers
+             * override this to mark theirs for refresh; an override must not discard them.
+             */
+            virtual void Invalidate(const Aws::String& /*rejectedAccessKeyId*/) {}
+
         protected:
             /**
              * The default implementation keeps up with the cache times and lets you know if it's time to refresh your internal caching
