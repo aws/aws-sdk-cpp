@@ -3,20 +3,19 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/auth/CrtCredentialsProvider.h>
+#include <aws/core/auth/CredentialsCachingProvider.h>
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/memory/AWSMemory.h>
-#include <aws/core/utils/threading/ReaderWriterLock.h>
 #include <aws/crt/auth/Credentials.h>
 
 #include <condition_variable>
+#include <limits>
 #include <mutex>
 
 using namespace Aws::Auth;
 using namespace Aws::Utils;
-using namespace Aws::Utils::Threading;
 
 namespace {
-const int FIVE_MINUTES_IN_MILLIS = 5 * 60 * 1000;
 const char* CRT_CREDS_PROVIDER_TAG = "CrtCredentialsProvider";
 
 struct RefreshState {
@@ -27,30 +26,14 @@ struct RefreshState {
 };
 }  // namespace
 
-CrtCredentialsProvider::CrtCredentialsProvider(
-    const std::function<std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider>()>& credentialsProviderFactory,
-    std::chrono::milliseconds providerFuturesTimeoutMs, Aws::Client::UserAgentFeature userAgentFeature, const Aws::String& providerName)
-    : m_credentialsProvider{credentialsProviderFactory()},
+CrtCredentialsProvider::CrtFetchOnlyProvider::CrtFetchOnlyProvider(
+    std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> credentialsProvider,
+    std::chrono::milliseconds providerFuturesTimeoutMs, Aws::Client::UserAgentFeature userAgentFeature)
+    : m_credentialsProvider{std::move(credentialsProvider)},
       m_providerFuturesTimeoutMs{providerFuturesTimeoutMs},
-      m_userAgentFeature{userAgentFeature},
-      m_providerName{providerName} {
-  if (m_credentialsProvider && m_credentialsProvider->IsValid()) {
-    m_state = STATE::INITIALIZED;
-  }
-}
+      m_userAgentFeature{userAgentFeature} {}
 
-CrtCredentialsProvider::~CrtCredentialsProvider() = default;
-
-AWSCredentials CrtCredentialsProvider::GetAWSCredentials() {
-  if (m_state != STATE::INITIALIZED) {
-    return AWSCredentials{};
-  }
-  RefreshIfExpired();
-  const ReaderLockGuard guard(m_reloadLock);
-  return m_credentials;
-}
-
-void CrtCredentialsProvider::Reload() {
+AWSCredentials CrtCredentialsProvider::CrtFetchOnlyProvider::GetAWSCredentials() {
   auto state = Aws::MakeShared<RefreshState>(CRT_CREDS_PROVIDER_TAG);
 
   m_credentialsProvider->GetCredentials([state](const std::shared_ptr<Crt::Auth::Credentials>& crtCredentials, int errorCode) -> void {
@@ -75,22 +58,36 @@ void CrtCredentialsProvider::Reload() {
   if (!credentials.IsEmpty()) {
     credentials.AddUserAgentFeature(m_userAgentFeature);
   }
-  m_credentials = std::move(credentials);
+  return credentials;
 }
 
-void CrtCredentialsProvider::RefreshIfExpired() {
-  ReaderLockGuard guard(m_reloadLock);
-  if (!m_credentials.IsEmpty() && !m_credentials.ExpiresSoon(FIVE_MINUTES_IN_MILLIS)) {
+CrtCredentialsProvider::CrtCredentialsProvider(
+    const std::function<std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider>()>& credentialsProviderFactory,
+    std::chrono::milliseconds providerFuturesTimeoutMs, Aws::Client::UserAgentFeature userAgentFeature, const Aws::String& providerName)
+    : m_credentialsProvider{credentialsProviderFactory()},
+      m_providerName{providerName} {
+  if (m_credentialsProvider && m_credentialsProvider->IsValid()) {
+    m_state = STATE::INITIALIZED;
+    auto fetchOnly = Aws::MakeShared<CrtFetchOnlyProvider>(CRT_CREDS_PROVIDER_TAG, m_credentialsProvider,
+                                                            providerFuturesTimeoutMs, userAgentFeature);
+    m_cachingProvider = Aws::MakeShared<CredentialsCachingProvider>(CRT_CREDS_PROVIDER_TAG, fetchOnly);
+  }
+}
+
+CrtCredentialsProvider::~CrtCredentialsProvider() = default;
+
+AWSCredentials CrtCredentialsProvider::GetAWSCredentials() {
+  if (m_state != STATE::INITIALIZED) {
+    return AWSCredentials{};
+  }
+  return m_cachingProvider->GetAWSCredentials();
+}
+
+void CrtCredentialsProvider::Invalidate(const Aws::String& accessKeyId) {
+  if (m_state != STATE::INITIALIZED) {
     return;
   }
-
-  guard.UpgradeToWriterLock();
-  // double-checked lock to avoid refreshing twice
-  if (!m_credentials.IsEmpty() && !m_credentials.ExpiresSoon(FIVE_MINUTES_IN_MILLIS)) {
-    return;
-  }
-
-  Reload();
+  m_cachingProvider->Invalidate(accessKeyId);
 }
 
 AWSCredentials CrtCredentialsProvider::ExtractCredentialsFromCrt(const Aws::Crt::Auth::Credentials& crtCredentials) {
@@ -100,7 +97,14 @@ AWSCredentials CrtCredentialsProvider::ExtractCredentialsFromCrt(const Aws::Crt:
   const auto secretKeyCursor = crtCredentials.GetSecretAccessKey();
   credentials.SetAWSSecretKey({reinterpret_cast<char*>(secretKeyCursor.ptr), secretKeyCursor.len});
   const auto expiration = crtCredentials.GetExpirationTimepointInSeconds();
-  credentials.SetExpiration(DateTime{static_cast<double>(expiration)});
+  // CRT's leaf providers (e.g. static/profile-file credentials) use UINT64_MAX to mean "never expires";
+  // converting that directly to a time_point would overflow, so map it onto the same sentinel
+  // AWSCredentials' default constructor uses.
+  if (expiration == (std::numeric_limits<uint64_t>::max)()) {
+    credentials.SetExpiration(DateTime((std::chrono::time_point<std::chrono::system_clock>::max)()));
+  } else {
+    credentials.SetExpiration(DateTime{static_cast<double>(expiration)});
+  }
   const auto sessionTokenCursor = crtCredentials.GetSessionToken();
   credentials.SetSessionToken({reinterpret_cast<char*>(sessionTokenCursor.ptr), sessionTokenCursor.len});
   return credentials;

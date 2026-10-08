@@ -28,6 +28,8 @@ namespace Aws
     }
     namespace Auth
     {
+        class CredentialsCachingProvider;
+
         constexpr int REFRESH_THRESHOLD = 1000 * 60 * 5;
 
         constexpr int AWS_CREDENTIAL_PROVIDER_EXPIRATION_GRACE_PERIOD = 5 * 1000;
@@ -233,15 +235,23 @@ namespace Aws
             */
             AWSCredentials GetAWSCredentials() override;
 
-        protected:
-            void Reload() override;
+            // Marks the cached credentials for refresh, only if they are the ones that were rejected.
+            void Invalidate(const Aws::String& accessKeyId) override;
 
         private:
-            bool ExpiresSoon() const;
-            void RefreshIfExpired();
+            // Fetch-only: one Load() call against the EC2 instance metadata service, no cache of its
+            // own. Composed into m_cachingProvider below, which owns the refresh lifecycle.
+            class InstanceProfileFetchOnlyProvider : public AWSCredentialsProvider
+            {
+            public:
+                explicit InstanceProfileFetchOnlyProvider(std::shared_ptr<Aws::Config::AWSProfileConfigLoader> configLoader);
+                AWSCredentials GetAWSCredentials() override;
 
-            std::shared_ptr<Aws::Config::AWSProfileConfigLoader> m_ec2MetadataConfigLoader;
-            long m_loadFrequencyMs;
+            private:
+                std::shared_ptr<Aws::Config::AWSProfileConfigLoader> m_ec2MetadataConfigLoader;
+            };
+
+            std::shared_ptr<CredentialsCachingProvider> m_cachingProvider;
         };
 
         /**

@@ -85,6 +85,7 @@ bool AWSAuthV4Signer::SignRequestWithSigV4a(Aws::Http::HttpRequest& request, con
     AWSCredentials credentials = GetCredentials(request.GetServiceSpecificParameters());
     
     UpdateUserAgentWithCredentialFeatures(request, credentials.GetContext());
+    request.SetSigningAccessKey(credentials.GetAWSAccessKeyId());
     auto crtCredentials = Aws::MakeShared<Aws::Crt::Auth::Credentials>(v4AsymmetricLogTag,
         Aws::Crt::ByteCursorFromCString(credentials.GetAWSAccessKeyId().c_str()),
         Aws::Crt::ByteCursorFromCString(credentials.GetAWSSecretKey().c_str()),

@@ -13,6 +13,8 @@
 
 namespace Aws {
     namespace Auth {
+        class CredentialsCachingProvider;
+
         /**
          * To support usage of SSO credentials
          */
@@ -22,33 +24,40 @@ namespace Aws {
             SSOCredentialsProvider();
             explicit SSOCredentialsProvider(const Aws::String& profile);
             explicit SSOCredentialsProvider(const Aws::String& profile, std::shared_ptr<const Aws::Client::ClientConfiguration> config);
+
             /**
              * Retrieves the credentials if found, otherwise returns empty credential set.
              */
             AWSCredentials GetAWSCredentials() override;
 
+            // Marks the cached credentials for refresh, only if they are the ones that were rejected.
+            void Invalidate(const Aws::String& accessKeyId) override;
+
         private:
-            Aws::UniquePtr<Aws::Internal::SSOCredentialsClient> m_client;
-            Aws::Auth::AWSCredentials m_credentials;
+            // Fetch-only: one SSO token read plus one GetRoleCredentials call, no cache of its own.
+            // Composed into m_cachingProvider below, which owns the refresh lifecycle.
+            class SSOFetchOnlyProvider : public AWSCredentialsProvider
+            {
+            public:
+                SSOFetchOnlyProvider(Aws::String profile, std::shared_ptr<const Aws::Client::ClientConfiguration> config);
+                AWSCredentials GetAWSCredentials() override;
 
-            // Profile description variables
-            Aws::String m_profileToUse;
+            private:
+                Aws::String LoadAccessTokenFile(const Aws::String& ssoAccessTokenPath);
 
-            // The AWS account ID that temporary AWS credentials are resolved for.
-            Aws::String m_ssoAccountId;
-            // The AWS region where the SSO directory for the given sso_start_url is hosted.
-            // This is independent of the general region configuration and MUST NOT be conflated.
-            Aws::String m_ssoRegion;
-            // The expiration time of the accessToken.
-            Aws::Utils::DateTime m_expiresAt;
-            // The SSO Token Provider
-            Aws::Auth::SSOBearerTokenProvider m_bearerTokenProvider;
-            // The client configuration to use
-            std::shared_ptr<const Aws::Client::ClientConfiguration> m_config;
+                Aws::UniquePtr<Aws::Internal::SSOCredentialsClient> m_client;
+                Aws::String m_profileToUse;
+                Aws::String m_ssoAccountId;
+                // The AWS region where the SSO directory for the given sso_start_url is hosted.
+                // This is independent of the general region configuration and MUST NOT be conflated.
+                Aws::String m_ssoRegion;
+                // The expiration time of the accessToken.
+                Aws::Utils::DateTime m_expiresAt;
+                Aws::Auth::SSOBearerTokenProvider m_bearerTokenProvider;
+                std::shared_ptr<const Aws::Client::ClientConfiguration> m_config;
+            };
 
-            void Reload() override;
-            void RefreshIfExpired();
-            Aws::String LoadAccessTokenFile(const Aws::String& ssoAccessTokenPath);
+            std::shared_ptr<CredentialsCachingProvider> m_cachingProvider;
         };
     } // namespace Auth
 } // namespace Aws

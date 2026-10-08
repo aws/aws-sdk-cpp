@@ -22,6 +22,8 @@ class Credentials;
 
 namespace Aws {
 namespace Auth {
+class CredentialsCachingProvider;
+
 /**
  * A utility class for wrapping a cached crt credentials provider.
  */
@@ -37,6 +39,8 @@ class AWS_CORE_API CrtCredentialsProvider : public AWSCredentialsProvider {
    */
   AWSCredentials GetAWSCredentials() override;
 
+  void Invalidate(const Aws::String& accessKeyId) override;
+
  private:
   enum class STATE {
     INITIALIZED,
@@ -44,13 +48,25 @@ class AWS_CORE_API CrtCredentialsProvider : public AWSCredentialsProvider {
   };
 
   static AWSCredentials ExtractCredentialsFromCrt(const Aws::Crt::Auth::Credentials& crtCredentials);
-  void Reload() override;
-  void RefreshIfExpired();
+
+  // Fetch-only: one blocking call into the CRT provider, no cache of its own. Composed into
+  // m_cachingProvider below, which owns the refresh lifecycle.
+  class CrtFetchOnlyProvider : public AWSCredentialsProvider
+  {
+  public:
+      CrtFetchOnlyProvider(std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> credentialsProvider,
+                           std::chrono::milliseconds providerFuturesTimeoutMs,
+                           Aws::Client::UserAgentFeature userAgentFeature);
+      AWSCredentials GetAWSCredentials() override;
+
+  private:
+      std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> m_credentialsProvider;
+      std::chrono::milliseconds m_providerFuturesTimeoutMs;
+      Aws::Client::UserAgentFeature m_userAgentFeature;
+  };
 
   std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> m_credentialsProvider;
-  AWSCredentials m_credentials;
-  std::chrono::milliseconds m_providerFuturesTimeoutMs;
-  Aws::Client::UserAgentFeature m_userAgentFeature;
+  std::shared_ptr<CredentialsCachingProvider> m_cachingProvider;
   Aws::String m_providerName;
   STATE m_state{STATE::NOT_INITIALIZED};
 };

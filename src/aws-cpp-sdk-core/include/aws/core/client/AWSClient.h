@@ -346,6 +346,11 @@ namespace Aws
              * return true if signer's clock is adjusted, false otherwise.
              */
             bool AdjustClockSkew(HttpResponseOutcome& outcome, const char* signerName) const;
+            /**
+             * Tell the credentials provider that a target service rejected the credentials that signed this
+             * attempt. No-op for providers that do not cache.
+             */
+            void NotifyCredentialsRejected(const AWSError<CoreErrors>& error, const Aws::String& accessKeyId) const;
             void AddHeadersToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest, const Http::HeaderValueCollection& headerValues) const;
             void AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest, const std::shared_ptr<Aws::IOStream>& body,
                                          bool needsContentMd5 = false, bool isChunked = false) const;

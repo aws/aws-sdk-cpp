@@ -100,7 +100,9 @@ namespace Aws
             auto region = m_ec2metadataClient->GetCurrentRegion();
 
             Profile profile;
-            profile.SetCredentials(AWSCredentials(accessKey, secretKey, token));
+            profile.SetCredentials(expirationTime.WasParseSuccessful()
+                ? AWSCredentials(accessKey, secretKey, token, expirationTime)
+                : AWSCredentials(accessKey, secretKey, token));
             profile.SetRegion(region);
             profile.SetName(INSTANCE_PROFILE_KEY);
 
